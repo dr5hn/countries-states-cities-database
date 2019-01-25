@@ -5,7 +5,7 @@ ini_set('error_reporting',E_ALL);
 $servername = "localhost";
 $username = "root";
 $password = "mysql";
-$dbname = "test";
+$dbname = "world";
 
 header('Content-type: text/plain');
 
