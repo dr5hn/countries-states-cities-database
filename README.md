@@ -18,7 +18,7 @@ You can manually change the spelling mistakes, or add edit any records, which ar
 Reason behind making this repo. I ran through many websites to get perfect combinations of state, city and countries. Some was with missing states, some with large filesize. So i thought to get it done on my own using PHP Script.
 
 ```
-If you have any suggestions or feedbacks you can write me on
+Contibutions, Suggestions & Feedbacks Most Welcome
 gadadarshan[at]gmail[dot]com
 ```
 
