@@ -29,6 +29,8 @@ $citiesArray = array();
 $stateCityArray = array();
 $countryStateArray = array();
 $countryStateCityArray = array();
+$stateNamesArray = array();
+$cityNamesArray = array();
 
 // Fetching All Countries
 $sql = "SELECT * FROM countries ORDER BY name";
@@ -106,8 +108,8 @@ if ($result->num_rows > 0) {
 // Validating Country Names
 foreach($countriesArray as $country) {
 
-    $countryId = $country['id'];
-    $countryStateCityArray[$k]['id'] = (int)$countryId;
+    $countryId = (int)$country['id'];
+    $countryStateCityArray[$k]['id'] = $countryId;
     $countryStateCityArray[$k]['name'] = utf8_encode($country['name']);
     $countryStateCityArray[$k]['iso3'] = $country['iso3'];
     $countryStateCityArray[$k]['iso2'] = $country['iso2'];
@@ -124,11 +126,11 @@ foreach($countriesArray as $country) {
         while($state = $stateResult->fetch_assoc()) {
 
             // Only States Array
-            $stateId = $state['id'];
+            $stateId = (int)$state['id'];
             $stateName = utf8_encode($state['name']);
             $statesArray[$i]['id'] = $stateId;
             $statesArray[$i]['name'] = utf8_encode($state['name']);
-            $statesArray[$i]['country_id'] = (int)$countryId;
+            $statesArray[$i]['country_id'] = $countryId;
 
             // For Country State Array
             array_push($stateNamesArray,$stateName);
