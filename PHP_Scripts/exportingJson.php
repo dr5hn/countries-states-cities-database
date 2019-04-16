@@ -30,7 +30,7 @@ $stateCityArray = array();
 $countryStateArray = array();
 $countryStateCityArray = array();
 
-// Fetching All Countries 
+// Fetching All Countries
 $sql = "SELECT * FROM countries ORDER BY name";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -48,12 +48,12 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Fetching All States 
+// Fetching All States
 // $sql = "SELECT * FROM states ORDER BY NAME";
 // $result = $conn->query($sql);
 // if ($result->num_rows > 0) {
 //     while($state = $result->fetch_assoc()) {
-        
+
 //         // Only States Array
 //         $statesArray[$i]['id'] = $state['id'];
 //         $statesArray[$i]['name'] = $state['name'];
@@ -94,10 +94,10 @@ if ($result->num_rows > 0) {
 
 //     if ($result->num_rows > 0) {
 //         while($city = $result->fetch_assoc()) {
-//             array_push($cityNamesArray,$city['name']); 
+//             array_push($cityNamesArray,$city['name']);
 //         }
 //     }
-    
+
 //     $stateCityArray[$k]['cities'] = $cityNamesArray;
 //     $k++;
 // endforeach;
@@ -105,14 +105,14 @@ if ($result->num_rows > 0) {
 
 // Validating Country Names
 foreach($countriesArray as $country) {
-    
+
     $countryId = $country['id'];
     $countryStateCityArray[$k]['id'] = (int)$countryId;
-    $countryStateCityArray[$k]['name'] = $country['name'];
+    $countryStateCityArray[$k]['name'] = utf8_encode($country['name']);
     $countryStateCityArray[$k]['iso3'] = $country['iso3'];
     $countryStateCityArray[$k]['iso2'] = $country['iso2'];
     $countryStateCityArray[$k]['phone_code'] = $country['phone_code'];
-    $countryStateCityArray[$k]['capital'] = $country['capital'];
+    $countryStateCityArray[$k]['capital'] = utf8_encode($country['capital']);
     $countryStateCityArray[$k]['currency'] = $country['currency'];
 
     // Fetching All States Based on Country
@@ -122,16 +122,16 @@ foreach($countriesArray as $country) {
     if ($stateResult->num_rows > 0) {
         $stateNamesArray = array();
         while($state = $stateResult->fetch_assoc()) {
-            
+
             // Only States Array
             $stateId = $state['id'];
-            $stateName = $state['name'];
+            $stateName = utf8_encode($state['name']);
             $statesArray[$i]['id'] = $stateId;
-            $statesArray[$i]['name'] = $state['name'];
+            $statesArray[$i]['name'] = utf8_encode($state['name']);
             $statesArray[$i]['country_id'] = (int)$countryId;
 
             // For Country State Array
-            array_push($stateNamesArray,$stateName); 
+            array_push($stateNamesArray,$stateName);
 
             // Fetching All States Based on Country & State
             $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
@@ -144,12 +144,12 @@ foreach($countriesArray as $country) {
                     // Only Cities Array
                     $cityId = $city['id'];
                     $citiesArray[$j]['id'] = $cityId;
-                    $citiesArray[$j]['name'] = $city['name'];
+                    $citiesArray[$j]['name'] = utf8_encode($city['name']);
                     $citiesArray[$j]['state_id'] = $stateId;
                     $citiesArray[$j]['country_id'] = (int)$countryId;
 
                     // For State City Array
-                    array_push($cityNamesArray,$city['name']); 
+                    array_push($cityNamesArray,utf8_encode($city['name']));
 
                     $j++;
                 }
@@ -170,11 +170,11 @@ foreach($countriesArray as $country) {
 
     // Completing Country States Array
     $countryStateArray[$k]['id'] = (int)$row['id'];
-    $countryStateArray[$k]['name'] = $row['name'];
+    $countryStateArray[$k]['name'] = utf8_encode($row['name']);
     $countryStateArray[$k]['iso3'] = $row['iso3'];
     $countryStateArray[$k]['iso2'] = $row['iso2'];
     $countryStateArray[$k]['phone_code'] = $row['phonecode'];
-    $countryStateArray[$k]['capital'] = $row['capital'];
+    $countryStateArray[$k]['capital'] = utf8_encode($row['capital']);
     $countryStateArray[$k]['currency'] = $row['currency'];
     $countryStateArray[$k]['states'] = $stateNamesArray;
 
