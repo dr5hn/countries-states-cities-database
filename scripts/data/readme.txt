@@ -1,0 +1,1 @@
+When you run a script exported jsons will lie in this folder.

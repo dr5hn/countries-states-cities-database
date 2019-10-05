@@ -1,0 +1,172 @@
+Unirest\Response Object
+(
+    [code] => 200
+    [raw_body] => {"data":[{"id":57248,"wikiDataId":"Q490886","type":"CITY","city":"Achalpur","name":"Achalpur","latitude":21.25665,"longitude":77.51006},{"id":57393,"wikiDataId":"Q3606967","type":"CITY","city":"Ahiri","name":"Ahiri","latitude":19.41386,"longitude":80.00359},{"id":57470,"wikiDataId":"Q223517","type":"CITY","city":"Ahmadnagar","name":"Ahmadnagar","latitude":19.09457,"longitude":74.73843},{"id":57208,"wikiDataId":"Q590521","type":"CITY","city":"Ahmadpur","name":"Ahmadpur","latitude":18.70622,"longitude":76.93731},{"id":57711,"type":"CITY","city":"Airoli","name":"Airoli","latitude":19.15096,"longitude":72.99625},{"id":57052,"wikiDataId":"Q584021","type":"CITY","city":"Ajra","name":"Ajra","latitude":16.11601,"longitude":74.21097},{"id":57416,"wikiDataId":"Q239809","type":"CITY","city":"Akalkot","name":"Akalkot","latitude":17.52532,"longitude":76.20611},{"id":147732,"wikiDataId":"Q520510","type":"ADM2","city":"Akola","name":"Akola","latitude":20.5,"longitude":77.16667},{"id":56909,"wikiDataId":"Q589224","type":"CITY","city":"Akot","name":"Akot","latitude":21.0963,"longitude":77.0588},{"id":57391,"wikiDataId":"Q589653","type":"CITY","city":"Alandi","name":"Alandi","latitude":18.67756,"longitude":73.89868}],"links":[{"rel":"first","href":"/v1/geo/countries/Q668/regions/Q1191/cities?offset=0&limit=10"},{"rel":"next","href":"/v1/geo/countries/Q668/regions/Q1191/cities?offset=10&limit=10"},{"rel":"last","href":"/v1/geo/countries/Q668/regions/Q1191/cities?offset=310&limit=10"}],"metadata":{"currentOffset":0,"totalCount":310}}
+    [body] => stdClass Object
+        (
+            [data] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [id] => 57248
+                            [wikiDataId] => Q490886
+                            [type] => CITY
+                            [city] => Achalpur
+                            [name] => Achalpur
+                            [latitude] => 21.25665
+                            [longitude] => 77.51006
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [id] => 57393
+                            [wikiDataId] => Q3606967
+                            [type] => CITY
+                            [city] => Ahiri
+                            [name] => Ahiri
+                            [latitude] => 19.41386
+                            [longitude] => 80.00359
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [id] => 57470
+                            [wikiDataId] => Q223517
+                            [type] => CITY
+                            [city] => Ahmadnagar
+                            [name] => Ahmadnagar
+                            [latitude] => 19.09457
+                            [longitude] => 74.73843
+                        )
+
+                    [3] => stdClass Object
+                        (
+                            [id] => 57208
+                            [wikiDataId] => Q590521
+                            [type] => CITY
+                            [city] => Ahmadpur
+                            [name] => Ahmadpur
+                            [latitude] => 18.70622
+                            [longitude] => 76.93731
+                        )
+
+                    [4] => stdClass Object
+                        (
+                            [id] => 57711
+                            [type] => CITY
+                            [city] => Airoli
+                            [name] => Airoli
+                            [latitude] => 19.15096
+                            [longitude] => 72.99625
+                        )
+
+                    [5] => stdClass Object
+                        (
+                            [id] => 57052
+                            [wikiDataId] => Q584021
+                            [type] => CITY
+                            [city] => Ajra
+                            [name] => Ajra
+                            [latitude] => 16.11601
+                            [longitude] => 74.21097
+                        )
+
+                    [6] => stdClass Object
+                        (
+                            [id] => 57416
+                            [wikiDataId] => Q239809
+                            [type] => CITY
+                            [city] => Akalkot
+                            [name] => Akalkot
+                            [latitude] => 17.52532
+                            [longitude] => 76.20611
+                        )
+
+                    [7] => stdClass Object
+                        (
+                            [id] => 147732
+                            [wikiDataId] => Q520510
+                            [type] => ADM2
+                            [city] => Akola
+                            [name] => Akola
+                            [latitude] => 20.5
+                            [longitude] => 77.16667
+                        )
+
+                    [8] => stdClass Object
+                        (
+                            [id] => 56909
+                            [wikiDataId] => Q589224
+                            [type] => CITY
+                            [city] => Akot
+                            [name] => Akot
+                            [latitude] => 21.0963
+                            [longitude] => 77.0588
+                        )
+
+                    [9] => stdClass Object
+                        (
+                            [id] => 57391
+                            [wikiDataId] => Q589653
+                            [type] => CITY
+                            [city] => Alandi
+                            [name] => Alandi
+                            [latitude] => 18.67756
+                            [longitude] => 73.89868
+                        )
+
+                )
+
+            [links] => Array
+                (
+                    [0] => stdClass Object
+                        (
+                            [rel] => first
+                            [href] => /v1/geo/countries/Q668/regions/Q1191/cities?offset=0&limit=10
+                        )
+
+                    [1] => stdClass Object
+                        (
+                            [rel] => next
+                            [href] => /v1/geo/countries/Q668/regions/Q1191/cities?offset=10&limit=10
+                        )
+
+                    [2] => stdClass Object
+                        (
+                            [rel] => last
+                            [href] => /v1/geo/countries/Q668/regions/Q1191/cities?offset=310&limit=10
+                        )
+
+                )
+
+            [metadata] => stdClass Object
+                (
+                    [currentOffset] => 0
+                    [totalCount] => 310
+                )
+
+        )
+
+    [headers] => Array
+        (
+            [0] => HTTP/1.1 200 OK
+            [Cache-Control] => no-cache, no-store, max-age=0, must-revalidate
+            [Content-Type] => application/json;charset=UTF-8
+            [Date] => Sat, 03 Aug 2019 11:35:56 GMT
+            [Expires] => 0
+            [Pragma] => no-cache
+            [Referrer-Policy] => no-referrer
+            [Server] => RapidAPI-1.0.27
+            [X-Content-Type-Options] => nosniff
+            [X-Frame-Options] => DENY
+            [X-RapidAPI-Region] => AWS - ap-southeast-1
+            [X-RapidAPI-Version] => 1.0.27
+            [X-RateLimit-requests-Limit] => 1000
+            [X-RateLimit-requests-Remaining] => 1000
+            [X-XSS-Protection] => 1 ; mode=block
+            [Content-Length] => 1539
+            [Connection] => keep-alive
+        )
+
+)
+310
