@@ -11,7 +11,7 @@ for ($i=0; $i<25; $i++):
     $response = Unirest\Request::get($url,
         array(
             "X-RapidAPI-Host" => "wft-geo-db.p.rapidapi.com",
-            "X-RapidAPI-Key" => ""
+            "X-RapidAPI-Key" => $API_KEY
         )
     );
     $fp = fopen('data/countries.json', 'a');
