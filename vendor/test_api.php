@@ -5,7 +5,7 @@ include_once 'base.php';
 // $response = Unirest\Request::get("http://geodb-free-service.wirefreethought.com/v1/geo/cities?offset=0&limit=10",
 //   array(
 //     "X-RapidAPI-Host" => "geodb-free-service.wirefreethought.com",
-//     "X-RapidAPI-Key" => ""
+//     "X-RapidAPI-Key" => $API_KEY
 //   )
 // );
 
@@ -15,7 +15,7 @@ include_once 'base.php';
 // $response = Unirest\Request::get("http://geodb-free-service.wirefreethought.com/v1/geo/cities/Q1520",
 //   array(
 //     "X-RapidAPI-Host" => "geodb-free-service.wirefreethought.com",
-//     "X-RapidAPI-Key" => ""
+//     "X-RapidAPI-Key" => $API_KEY
 //   )
 // );
 

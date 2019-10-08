@@ -1,12 +1,13 @@
 <?php
-ini_set('display_errors',1);
-ini_set('error_reporting',E_ALL);
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 
-require_once 'unirest-php/src/Unirest.php';
+require_once 'vendor/autoload.php';
 
 header('Content-type: text/plain');
 
 $NUMBER_OF_SECONDS = 1;
+$API_KEY = ''; // Your RapidApi GeoDBCities Api Key
 
 function slugify($text)
 {
