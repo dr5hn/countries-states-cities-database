@@ -1,12 +1,5 @@
 importScripts('./js/cache-polyfill.js');
 
-CACHE_VERSION = 1;
-var CURRENT_CACHES = {
-    offline: 'offline-v' + CACHE_VERSION
-};
-OFFLINE_URL = 'offline.html';
-FOUR_OH_FOUR_URL = 'four-o-four.html';
-
 self.addEventListener('install', (e) => {
     e.waitUntil(
         caches.open('countrystatecity').then((cache) => {
