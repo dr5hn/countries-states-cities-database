@@ -9,6 +9,9 @@ All Countries, States & Cities are Covered and Populated with Different Combinat
 5. State + Cities `states+cities.json`
 6. Country + State + Cities `countries+states+cities.json OR world.sql`
 
+## Demo
+https://dr5hn.github.io/countries-states-cities-database/
+
 ## Insights
 Total Countries : 247 <br>
 Total States/Regions : 4,850 <br>
@@ -21,7 +24,7 @@ Last Updated On : 5th October 2019
 This Free database dose not guarantee for the complete list of world countries, states and cities.
 You can manually change the spelling mistakes, duplicates or add edit any records, which are not correct.
 
-Reason behind making this repo. I ran through many websites to get perfect combinations of state, city and countries. 
+Reason behind making this repo. I ran through many websites to get perfect combinations of state, city and countries.
 Some was with missing states, some with large filesize. So i thought to get it done on my own using PHP Script.
 ```
 
