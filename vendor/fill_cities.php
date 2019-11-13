@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$file_name = '17.json';
+$file_name = 'ohio.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
 $citiesArray = json_decode($citiesJson, true);
 

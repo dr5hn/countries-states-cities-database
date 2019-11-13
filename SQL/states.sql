@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2019 at 03:32 PM
+-- Generation Time: Nov 13, 2019 at 12:56 PM
 -- Server version: 8.0.15
 -- PHP Version: 7.1.8
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `states` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
   `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB AUTO_INCREMENT=4851 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `states`
@@ -4904,7 +4904,8 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4847, 'Central Province', 171, 'PG', '01', 'CPM', '2019-10-05 12:19:01', '2019-10-05 12:19:01', 1, 'Q874942'),
 (4848, 'Enga Province', 171, 'PG', '19', 'EPW', '2019-10-05 12:19:01', '2019-10-05 12:19:01', 1, 'Q862584'),
 (4849, 'Milne Bay Province', 171, 'PG', '03', 'MBA', '2019-10-05 12:19:01', '2019-10-05 12:19:01', 1, 'Q874962'),
-(4850, 'Western Province', 171, 'PG', '06', 'WPD', '2019-10-05 12:19:01', '2019-10-05 12:19:01', 1, 'Q849790');
+(4850, 'Western Province', 171, 'PG', '06', 'WPD', '2019-10-05 12:19:01', '2019-10-05 12:19:01', 1, 'Q849790'),
+(4851, 'Ohio', 233, 'US', '39', 'OH', '2019-11-12 18:30:00', '2019-11-13 05:54:22', 1, 'Q1397');
 
 --
 -- Indexes for dumped tables
@@ -4925,7 +4926,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4851;
+  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4852;
 --
 -- Constraints for dumped tables
 --
