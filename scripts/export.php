@@ -123,13 +123,12 @@ foreach($countriesArray as $country) {
     }
 
     // Completing Country States Array
-    $countryStateArray[$k]['id'] = (int)$row['id'];
-    $countryStateArray[$k]['name'] = $row['name'];
-    $countryStateArray[$k]['iso3'] = $row['iso3'];
-    $countryStateArray[$k]['iso2'] = $row['iso2'];
-    $countryStateArray[$k]['phone_code'] = $row['phonecode'];
-    $countryStateArray[$k]['capital'] = $row['capital'];
-    $countryStateArray[$k]['currency'] = $row['currency'];
+    $countryStateArray[$k]['name'] = $country['name'];
+    $countryStateArray[$k]['iso3'] = $country['iso3'];
+    $countryStateArray[$k]['iso2'] = $country['iso2'];
+    $countryStateArray[$k]['phone_code'] = $country['phone_code'];
+    $countryStateArray[$k]['capital'] = $country['capital'];
+    $countryStateArray[$k]['currency'] = $country['currency'];
     $countryStateArray[$k]['states'] = $stateNamesArray;
 
     $k++;
