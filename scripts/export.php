@@ -65,9 +65,9 @@ foreach($countriesArray as $country) {
     // Fetching All States Based on Country
     $sql = "SELECT * FROM states WHERE country_id=$countryId ORDER BY NAME";
     $stateResult = $conn->query($sql);
-
+    
+    $stateNamesArray = array();
     if ($stateResult->num_rows > 0) {
-        $stateNamesArray = array();
         while($state = $stateResult->fetch_assoc()) {
 
             // Only States Array
@@ -86,8 +86,8 @@ foreach($countriesArray as $country) {
             $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
             $cityResult = $conn->query($sql);
 
+            $cityNamesArray = array();
             if ($cityResult->num_rows > 0) {
-                $cityNamesArray = array();
                 while($city = $cityResult->fetch_assoc()) {
 
                     // Only Cities Array
@@ -140,33 +140,33 @@ echo 'Total States Count : '.count($statesArray).PHP_EOL;
 echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
 
 // print_r($countriesArray);
-$fp = fopen('data/countries.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($countriesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../countries.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($countriesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 // print_r($statesArray);
-$fp = fopen('data/states.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($statesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../states.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($statesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 // print_r($citiesArray);
-$fp = fopen('data/cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($citiesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../cities.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($citiesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 // print_r($stateCityArray);
-$fp = fopen('data/states+cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($stateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../states+cities.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($stateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 // print_r($countryStateArray);
-$fp = fopen('data/countries+states.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($countryStateArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../countries+states.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($countryStateArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 // print_r($countryStateCityArray);
-$fp = fopen('data/countries+states+cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+$fp = fopen('../countries+states+cities.json', 'w'); // Putting Array to JSON
+fwrite($fp, utf8_decode(json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
 fclose($fp);
 
 
