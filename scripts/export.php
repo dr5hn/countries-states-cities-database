@@ -65,9 +65,10 @@ foreach($countriesArray as $country) {
     // Fetching All States Based on Country
     $sql = "SELECT * FROM states WHERE country_id=$countryId ORDER BY NAME";
     $stateResult = $conn->query($sql);
-
+    
+    $stateNamesArray = array();
     if ($stateResult->num_rows > 0) {
-        $stateNamesArray = array();
+        
         while($state = $stateResult->fetch_assoc()) {
 
             // Only States Array
@@ -85,9 +86,9 @@ foreach($countriesArray as $country) {
             // Fetching All States Based on Country & State
             $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
             $cityResult = $conn->query($sql);
-
+            
+            $cityNamesArray = array();
             if ($cityResult->num_rows > 0) {
-                $cityNamesArray = array();
                 while($city = $cityResult->fetch_assoc()) {
 
                     // Only Cities Array
