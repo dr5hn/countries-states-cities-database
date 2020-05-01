@@ -1,5 +1,5 @@
 <?php
-include_once 'base.php';
+require_once 'base.php';
 
 // Countries // 190/10
 $limit = 10;
@@ -15,7 +15,7 @@ for ($i=0; $i<25; $i++):
         )
     );
     $fp = fopen('data/countries.json', 'a');
-    fwrite($fp, $response->raw_body.PHP_EOL);
+    fwrite($fp, json_encode((array)$response->body->data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_NUMERIC_CHECK).PHP_EOL);
     fclose($fp);
     if ($i%5 == 0): sleep($NUMBER_OF_SECONDS); endif;
     $offset = $limit + 1;

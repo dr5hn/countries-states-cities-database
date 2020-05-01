@@ -1,20 +1,5 @@
 <?php
-ini_set('display_errors',1);
-ini_set('error_reporting',E_ALL);
-
-$servername = "127.0.0.1";
-$username = "root";
-$password = "mysql";
-$dbname = "world";
-
-header('Content-type: text/plain');
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'base.php';
 
 $file_name = 'ohio.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);

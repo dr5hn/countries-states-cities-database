@@ -1,5 +1,5 @@
 <?php
-include_once 'base.php';
+require_once 'base.php';
 
 // Regions
 $countriesJson = file_get_contents("data/countries.json");
@@ -22,7 +22,7 @@ foreach($countriesArray as $country) :
         if (!empty($response->body->data)) {
             $file_name = $country['code'].'.json';
             $fp = fopen('data/states/'.$file_name, 'a');
-            fwrite($fp, $response->raw_body.PHP_EOL);
+            fwrite($fp, json_encode((array)$response->body->data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_NUMERIC_CHECK).PHP_EOL);
             fclose($fp);
             if ($i%5 == 0): sleep($NUMBER_OF_SECONDS); endif;
             $offset = $limit + 1;
