@@ -1,21 +1,5 @@
 <?php
-ini_set('display_errors',1);
-ini_set('error_reporting',E_ALL);
-ini_set('memory_limit', '-1');
-header('Content-type: text/plain');
-date_default_timezone_set('Asia/Kolkata');
-
-$servername = "127.0.0.1";
-$username = "root";
-$password = "mysql"; // DB Password
-$dbname = "world"; // Database Name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once 'vendor/base.php';
 
 $i = 0;
 $j = 0;
@@ -65,7 +49,7 @@ foreach($countriesArray as $country) {
     // Fetching All States Based on Country
     $sql = "SELECT * FROM states WHERE country_id=$countryId ORDER BY NAME";
     $stateResult = $conn->query($sql);
-    
+
     $stateNamesArray = array();
     if ($stateResult->num_rows > 0) {
         while($state = $stateResult->fetch_assoc()) {
@@ -141,33 +125,51 @@ echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
 
 // print_r($countriesArray);
 $fp = fopen('../countries.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($countriesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($countriesArray,  JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
 // print_r($statesArray);
 $fp = fopen('../states.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($statesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($statesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
 // print_r($citiesArray);
 $fp = fopen('../cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($citiesArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($citiesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
 // print_r($stateCityArray);
 $fp = fopen('../states+cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($stateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($stateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
 // print_r($countryStateArray);
 $fp = fopen('../countries+states.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($countryStateArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($countryStateArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
 // print_r($countryStateCityArray);
 $fp = fopen('../countries+states+cities.json', 'w'); // Putting Array to JSON
-fwrite($fp, utf8_decode(json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT)));
+fwrite($fp, json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 fclose($fp);
 
+// | JSON_ERROR_UTF8|JSON_ERROR_UTF16|JSON_THROW_ON_ERROR|JSON_ERROR_DEPTH
 
-?>
+$conn->close();
+
+// function _toIso($value) {
+//     if (mb_detect_encoding($value) === 'UTF-8'):
+//         echo 'old '.$value.PHP_EOL;
+//         echo 'UTF-8'.PHP_EOL;
+//         $value = iconv('UTF-8', 'ISO-8859-1//TRANSLIT//IGNORE', $value);
+//         echo 'omg '.$value.PHP_EOL;
+//         echo gettype($value).PHP_EOL;
+//         $char = "�";
+//         echo var_dump(strpos($value, $char)).PHP_EOL;
+//         if (strpos($value, strval('�')) !== false) {
+//             $value = mb_convert_encoding($value, 'ISO-8859-15', 'UTF-8');
+//             echo 'after '.$value.PHP_EOL;
+//         }
+//     endif;
+//     return $value;
+// }
