@@ -1,5 +1,5 @@
 <?php
-include_once 'base.php';
+require_once 'base.php';
 
 // Cities // 144153/10 = 14415.30
 // 980/apicalls/day/apikey
@@ -23,7 +23,7 @@ for ($i=0; $i<990; $i++):
     );
 
     $fp = fopen($file_name, 'a') or die("Unable to open file!");
-    fwrite($fp, $response->raw_body.PHP_EOL);
+    fwrite($fp, json_encode((array)$response->body->data, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT|JSON_NUMERIC_CHECK).PHP_EOL);
     fclose($fp);
 
     if ($i%5 == 0): sleep($NUMBER_OF_SECONDS); endif;

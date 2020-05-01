@@ -1,25 +1,10 @@
 <?php
-ini_set('display_errors',1);
-ini_set('error_reporting',E_ALL);
-
-$servername = "127.0.0.1";
-$username = "root";
-$password = "mysql";
-$dbname = "world";
-
-header('Content-type: text/plain');
+require_once 'base.php';
 
 $countriesJson = file_get_contents("data/countries.json");
 // print_r($countriesJson);
 $countriesArray = json_decode($countriesJson, true);
 // print_r($countriesArray);
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 $sql = "SELECT * FROM countries ORDER BY name";
 $result = $conn->query($sql);

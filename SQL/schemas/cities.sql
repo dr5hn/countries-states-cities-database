@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15.7
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 05, 2019 at 03:23 PM
--- Server version: 8.0.15
--- PHP Version: 7.1.8
+-- Host: localhost:8889
+-- Generation Time: May 01, 2020 at 01:46 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,20 +27,20 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `cities`;
-CREATE TABLE IF NOT EXISTS `cities` (
-  `id` mediumint(8) unsigned NOT NULL,
+CREATE TABLE `cities` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `state_id` mediumint(8) unsigned NOT NULL,
-  `state_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `country_id` mediumint(8) unsigned NOT NULL,
+  `state_id` mediumint(8) UNSIGNED NOT NULL,
+  `state_code` varchar(255) NOT NULL,
+  `country_id` mediumint(8) UNSIGNED NOT NULL,
   `country_code` char(2) NOT NULL,
   `latitude` decimal(10,8) NOT NULL,
   `longitude` decimal(11,8) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '2013-12-31 19:31:01',
+  `created_at` timestamp NOT NULL DEFAULT '2014-01-01 01:01:01',
   `updated_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
   `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 --
 -- Indexes for dumped tables
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `cities` (
 --
 ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cities_state` (`state_id`),
-  ADD KEY `cities_country` (`country_id`);
+  ADD KEY `cities_test_ibfk_1` (`state_id`),
+  ADD KEY `cities_test_ibfk_2` (`country_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -62,7 +62,8 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT for table `cities`
 --
 ALTER TABLE `cities`
-  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -71,8 +72,8 @@ ALTER TABLE `cities`
 -- Constraints for table `cities`
 --
 ALTER TABLE `cities`
-  ADD CONSTRAINT `rel_cities_state` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
-  ADD CONSTRAINT `rel_cities_country` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
+  ADD CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
+  ADD CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

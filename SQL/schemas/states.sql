@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15.7
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 05, 2019 at 03:24 PM
--- Server version: 8.0.15
--- PHP Version: 7.1.8
+-- Host: localhost:8889
+-- Generation Time: May 01, 2020 at 01:46 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `states`;
-CREATE TABLE IF NOT EXISTS `states` (
-  `id` mediumint(8) unsigned NOT NULL,
+CREATE TABLE `states` (
+  `id` mediumint(8) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `country_id` mediumint(8) unsigned NOT NULL,
+  `country_id` mediumint(8) UNSIGNED NOT NULL,
   `country_code` char(2) NOT NULL,
   `fips_code` varchar(255) DEFAULT NULL,
   `iso2` varchar(255) DEFAULT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `states` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
   `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 --
 -- Indexes for dumped tables
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `states` (
 --
 ALTER TABLE `states`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `country_state` (`country_id`);
+  ADD KEY `country_region` (`country_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -59,7 +59,8 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -68,7 +69,7 @@ ALTER TABLE `states`
 -- Constraints for table `states`
 --
 ALTER TABLE `states`
-  ADD CONSTRAINT `rel_country_state` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
+  ADD CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
