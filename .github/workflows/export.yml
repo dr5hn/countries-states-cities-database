@@ -1,0 +1,48 @@
+name: Export JSON
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**'
+      - '!**.sql'
+      - '!export.php'
+
+jobs:
+  build:
+    name: Export JSON
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: ["7.3"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create & Import DB
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -uroot -proot -e "CREATE DATABASE world;"
+          mysql -uroot -proot -e "SHOW DATABASES;"
+          mysql -uroot -proot world < SQL/world.sql
+        continue-on-error: true
+
+      - name: Composer Dependencies
+        run: cd scripts/vendor && composer install
+
+      - name: Run Export Script
+        run: php scripts/export.php
+        continue-on-error: true
+
+      - name: Commit changed files
+        uses: stefanzweifel/git-auto-commit-action@v2.1.0
+        with:
+          commit_message: Export JSON Files
+          branch: ${{ github.head_ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
