@@ -1,7 +1,4 @@
 ![banner](https://github.com/dr5hn/countries-states-cities-database/raw/master/.github/banner.png)
-<h1 align="center">
-`COUNTRY STATE CITY DATABASE`
-</h1>
 
 <br>
 
