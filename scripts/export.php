@@ -45,6 +45,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateCityArray[$k]['capital'] = $country['capital'];
     $countryStateCityArray[$k]['currency'] = $country['currency'];
+    $countryStateCityArray[$k]['states'] = array();
 
     // Fetching All States Based on Country
     $sql = "SELECT * FROM states WHERE country_id=$countryId ORDER BY NAME";
@@ -64,7 +65,13 @@ foreach($countriesArray as $country) {
             $statesArray[$i]['state_code'] = $state['iso2'];
 
             // For Country State Array
-            array_push($stateNamesArray, $stateName);
+            $stateArr = array(
+                'id' => $stateId,
+                'name' => $stateName,
+                'state_code' => $state['iso2']
+            );
+
+            array_push($stateNamesArray, $stateArr);
 
             // Fetching All States Based on Country & State
             $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
@@ -75,7 +82,7 @@ foreach($countriesArray as $country) {
                 while($city = $cityResult->fetch_assoc()) {
 
                     // Only Cities Array
-                    $cityId = $city['id'];
+                    $cityId = (int)$city['id'];
                     $cityName = $city['name'];
                     $citiesArray[$j]['id'] = $cityId;
                     $citiesArray[$j]['name'] = $cityName;
@@ -87,18 +94,25 @@ foreach($countriesArray as $country) {
                     $citiesArray[$j]['longitude'] = $city['longitude'];
 
                     // For State City Array
-                    array_push($cityNamesArray, $cityName);
+                    array_push($cityNamesArray, array(
+                        'id' => $cityId,
+                        'name' => $cityName,
+                        'latitude' => $city['latitude'],
+                        'longitude' => $city['longitude']
+                    ));
 
                     $j++;
                 }
             }
 
             // Completing CountryStateCity Array State by State
-            $countryStateCityArray[$k]['states'][$stateName] = $cityNamesArray;
+            $stateArr['cities'] = $cityNamesArray;
+            array_push($countryStateCityArray[$k]['states'], $stateArr);
 
             // Completing StateCity Array
             $stateCityArray[$i]['id'] = $stateId;
             $stateCityArray[$i]['name'] = $stateName;
+            $stateCityArray[$i]['state_code'] = $state['iso2'];
             $stateCityArray[$i]['country_id'] = $countryId;
             $stateCityArray[$i]['cities'] = $cityNamesArray;
 
