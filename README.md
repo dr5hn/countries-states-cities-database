@@ -4,20 +4,25 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON & SQL Format
+Full Database of city state country available in JSON, SQL, XML & PLIST Format
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## Formats Available
 - JSON
 - SQL
+- XML
+- PLIST
+- CSV [WIP]
 
 ## Distribution Files Info
-1. Countries `countries.json OR countries.sql`
-2. States `states.json OR states.sql`
-3. Cities `cities.json OR cities.sql`
-4. Country + States `countries+states.json`
-5. State + Cities `states+cities.json`
-6. Country + State + Cities `countries+states+cities.json OR world.sql`
+File | JSON | SQL | XML | PLIST | CSV
+:------------ | :-------------| :-------------| :------------- |:-------------|:-------------
+Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+Country+States | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | WIP
+State+Cities | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | WIP
+Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/

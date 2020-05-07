@@ -15,7 +15,7 @@ $servername = "127.0.0.1";
 $username = "root";
 $password = "root";
 $dbname = "world";
-$port = 8889;
+$port = 3306;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
