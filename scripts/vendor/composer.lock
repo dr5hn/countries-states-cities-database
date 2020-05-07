@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "411cd58d98bc5b0c362532d178483c4d",
+    "content-hash": "5aeab1bfe27d89ef6724453bd2e9fe30",
     "packages": [
         {
             "name": "mashape/unirest-php",
@@ -51,6 +51,56 @@
                 "rest"
             ],
             "time": "2016-08-11T17:49:21+00:00"
+        },
+        {
+            "name": "spatie/array-to-xml",
+            "version": "2.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/array-to-xml.git",
+                "reference": "eb035710f44400ec820c664426a92753b6e19c17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/array-to-xml/zipball/eb035710f44400ec820c664426a92753b6e19c17",
+                "reference": "eb035710f44400ec820c664426a92753b6e19c17",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^7.0",
+                "spatie/phpunit-snapshot-assertions": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ArrayToXml\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://murze.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Convert an array to xml",
+            "homepage": "https://github.com/spatie/array-to-xml",
+            "keywords": [
+                "array",
+                "convert",
+                "xml"
+            ],
+            "time": "2019-06-26T21:53:11+00:00"
         }
     ],
     "packages-dev": [],

@@ -1,4 +1,4 @@
-name: Export JSON
+name: Export
 
 on:
   pull_request:
@@ -6,13 +6,35 @@ on:
       - master
     paths-ignore:
       - '**'
-      - '!**.sql'
-      - '!export.php'
+      - '!sql/**.sql'
+      - '!scripts/export**.php'
+      - '!scripts/export_plist.sh'
 
 jobs:
-  build:
-    name: Export JSON
+  export_plist:
+    name: PLIST
 
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Export Script
+        shell: bash
+        run: |
+          [ -d plist ] || mkdir plist
+          sh ./scripts/export_plist.sh
+
+      - name: Upload PLIST Exports
+        uses: actions/upload-artifact@v2
+        with:
+          name: plist
+          path: plist
+
+  export_json_xml:
+    name: JSON/XML
+    needs: export_plist
     runs-on: ubuntu-latest
 
     strategy:
@@ -23,26 +45,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Download PLIST Export
+        uses: actions/download-artifact@v2
+        with:
+          name: plist
+          path: plist
 
       - name: Create & Import DB
         run: |
+          ls -R
           sudo /etc/init.d/mysql start
           mysql -uroot -proot -e "CREATE DATABASE world;"
           mysql -uroot -proot -e "SHOW DATABASES;"
           mysql -uroot -proot world < SQL/world.sql
-        continue-on-error: true
 
       - name: Composer Dependencies
         run: cd scripts/vendor && composer install
 
-      - name: Run Export Script
-        run: php scripts/export.php
-        continue-on-error: true
+      - name: Run Export Scripts
+        run: |
+          php scripts/export.php
+          php scripts/export_xml.php
 
       - name: Commit changed files
-        uses: stefanzweifel/git-auto-commit-action@v2.1.0
+        uses: stefanzweifel/git-auto-commit-action@v4.1.6
         with:
-          commit_message: Export JSON Files
+          commit_message: Update Exported Files
           branch: ${{ github.head_ref }}
+          commit_user_name: dr5hn
+          commit_user_email: gadadarshan@gmail.com
+          commit_author: Darshan Gada <gadadarshan@gmail.com>
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
