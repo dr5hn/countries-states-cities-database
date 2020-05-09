@@ -1,4 +1,5 @@
 <?php
+# https://symfony.com/doc/current/components/yaml.html#dump-support
 
 require_once 'vendor/base.php';
 use Symfony\Component\Yaml\Yaml;
