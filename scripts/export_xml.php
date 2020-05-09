@@ -2,6 +2,7 @@
 
 // Require Array2XML class which takes a PHP array and changes it to XML
 require_once 'vendor/base.php';
+
 use Spatie\ArrayToXml\ArrayToXml;
 
 $rootDir = dirname(dirname(__FILE__));
@@ -40,7 +41,7 @@ $files = array(
 
 foreach ($files as $root => $v) :
     // Gets JSON file
-    $json = file_get_contents($rootDir.$v['from']);
+    $json = file_get_contents($rootDir . $v['from']);
 
     $csc = array($v['singular'] => json_decode($json, true));
 
@@ -54,9 +55,9 @@ foreach ($files as $root => $v) :
         ['formatOutput' => true]
     );
 
-    $fp = fopen($rootDir.$v['to'], 'w'); // Writing XML to File
+    $fp = fopen($rootDir . $v['to'], 'w'); // Writing XML to File
     fwrite($fp, $xml);
     fclose($fp);
 
-    echo 'XML Exported to '.$v['to'].PHP_EOL;
+    echo 'XML Exported to ' . $rootDir . $v['to'] . PHP_EOL;
 endforeach;

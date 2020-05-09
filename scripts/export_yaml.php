@@ -1,6 +1,8 @@
 <?php
+# https://symfony.com/doc/current/components/yaml.html#dump-support
 
 require_once 'vendor/base.php';
+
 use Symfony\Component\Yaml\Yaml;
 
 $rootDir = dirname(dirname(__FILE__));
@@ -39,17 +41,16 @@ $files = array(
 
 foreach ($files as $root => $v) :
     // Gets JSON file
-    $json = file_get_contents($rootDir.$v['from']);
+    $json = file_get_contents($rootDir . $v['from']);
 
     $csc = array($v['singular'] => json_decode($json));
 
     // Converts PHP Array to YAML
     $yml = Yaml::dump($csc, 7, 2, Yaml::DUMP_OBJECT_AS_MAP);
 
-    $fp = fopen($rootDir.$v['to'], 'w'); // Writing YAML to File
+    $fp = fopen($rootDir . $v['to'], 'w'); // Writing YAML to File
     fwrite($fp, $yml);
     fclose($fp);
 
-    echo memory_get_usage().PHP_EOL;
-    echo 'YAML Exported to '.$v['to'].PHP_EOL;
+    echo 'YAML Exported to ' . $rootDir . $v['to'] . PHP_EOL;
 endforeach;

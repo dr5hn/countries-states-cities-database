@@ -59,7 +59,7 @@ jobs:
           sudo /etc/init.d/mysql start
           mysql -uroot -proot -e "CREATE DATABASE world;"
           mysql -uroot -proot -e "SHOW DATABASES;"
-          mysql -uroot -proot world < SQL/world.sql
+          mysql -uroot -proot world < sql/world.sql
 
       - name: Composer Dependencies
         run: cd scripts/vendor && composer install

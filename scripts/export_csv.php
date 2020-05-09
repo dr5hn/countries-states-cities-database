@@ -29,12 +29,12 @@ foreach ($files as $root => $v) :
 
     // Loop through the associative array.
     fputcsv($fp, array_keys($csc[0]));
-    foreach ($csc as $row):
+    foreach ($csc as $row) :
         // Write the row to the CSV file.
         fputcsv($fp, $row);
     endforeach;
 
     fclose($fp);
 
-    echo 'CSV Exported to ' . $v['to'] . PHP_EOL;
+    echo 'CSV Exported to ' . $rootDir . $v['to'] . PHP_EOL;
 endforeach;
