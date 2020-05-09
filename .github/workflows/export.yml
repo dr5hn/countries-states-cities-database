@@ -7,8 +7,7 @@ on:
     paths-ignore:
       - '**'
       - '!sql/**.sql'
-      - '!scripts/export**.php'
-      - '!scripts/export_plist.sh'
+      - '!scripts/export**'
 
 jobs:
   export_plist:
@@ -33,7 +32,7 @@ jobs:
           path: plist
 
   export_json_xml:
-    name: JSON/XML/YAML
+    name: JSON/XML/YAML/CSV
     needs: export_plist
     runs-on: ubuntu-latest
 
@@ -70,6 +69,7 @@ jobs:
           php scripts/export.php
           php scripts/export_xml.php
           php scripts/export_yaml.php
+          php scripts/export_csv.php
 
       - name: Commit changed files
         uses: stefanzweifel/git-auto-commit-action@v4.1.6

@@ -1,6 +1,5 @@
 <?php
 
-// Require Array2XML class which takes a PHP array and changes it to XML
 require_once 'vendor/base.php';
 use Symfony\Component\Yaml\Yaml;
 
@@ -44,10 +43,10 @@ foreach ($files as $root => $v) :
 
     $csc = array($v['singular'] => json_decode($json));
 
-    // Converts PHP Array to XML with the root element being 'root-element-here'
+    // Converts PHP Array to YAML
     $yml = Yaml::dump($csc, 7, 2, Yaml::DUMP_OBJECT_AS_MAP);
 
-    $fp = fopen($rootDir.$v['to'], 'w'); // Putting Array to XML
+    $fp = fopen($rootDir.$v['to'], 'w'); // Writing YAML to File
     fwrite($fp, $yml);
     fclose($fp);
 
