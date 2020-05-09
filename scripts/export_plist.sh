@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Convert JSON to PLIST
 for f in ./*.json; do
     [ -e "$f" ] || continue
     filename="${f%.*}"
