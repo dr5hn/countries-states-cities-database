@@ -16,6 +16,8 @@ $countryStateCityArray = array();
 $stateNamesArray = array();
 $cityNamesArray = array();
 
+$rootDir = dirname(dirname(__FILE__));
+
 // Fetching All Countries
 $sql = "SELECT * FROM countries ORDER BY name";
 $result = $conn->query($sql);
@@ -138,33 +140,45 @@ echo 'Total States Count : '.count($statesArray).PHP_EOL;
 echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
 
 // print_r($countriesArray);
-$fp = fopen('../countries.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/countries.json';
+$fp = fopen($rootDir . '/countries.json', 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countriesArray,  JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($statesArray);
-$fp = fopen('../states.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/states.json';
+$fp = fopen($rootDir . '/states.json', 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($statesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($citiesArray);
-$fp = fopen('../cities.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/cities.json';
+$fp = fopen($rootDir . '/cities.json', 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($citiesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($stateCityArray);
-$fp = fopen('../states+cities.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/states+cities.json';
+$fp = fopen($rootDir . '/states+cities.json', 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($stateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($countryStateArray);
-$fp = fopen('../countries+states.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/countries+states.json';
+$fp = fopen($rootDir . '/countries+states.json', 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countryStateArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($countryStateCityArray);
-$fp = fopen('../countries+states+cities.json', 'w'); // Putting Array to JSON
+$exportTo = $rootDir . '/countries+states+cities.json';
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // | JSON_ERROR_UTF8|JSON_ERROR_UTF16|JSON_THROW_ON_ERROR|JSON_ERROR_DEPTH
