@@ -33,7 +33,7 @@ jobs:
           path: plist
 
   export_json_xml:
-    name: JSON/XML
+    name: JSON/XML/YAML
     needs: export_plist
     runs-on: ubuntu-latest
 
@@ -69,6 +69,7 @@ jobs:
         run: |
           php scripts/export.php
           php scripts/export_xml.php
+          php scripts/export_yaml.php
 
       - name: Commit changed files
         uses: stefanzweifel/git-auto-commit-action@v4.1.6

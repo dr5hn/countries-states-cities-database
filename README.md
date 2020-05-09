@@ -4,7 +4,7 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, SQL, XML & PLIST Format
+Full Database of city state country available in JSON, SQL, XML, YAML & PLIST Format
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## Formats Available
@@ -12,17 +12,18 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 - SQL
 - XML
 - PLIST
+- YAML
 - CSV [WIP]
 
 ## Distribution Files Info
-File | JSON | SQL | XML | PLIST | CSV
-:------------ | :-------------| :-------------| :------------- |:-------------|:-------------
-Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
-States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
-Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
-Country+States | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | WIP
-State+Cities | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | WIP
-Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+File | JSON | SQL | XML | PLIST | YAML | CSV
+:------------ | :-------------| :-------------| :------------- |:-------------|:-------------|:-------------
+Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+Country+States | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+State+Cities | :white_check_mark: | NA | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
+Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | WIP
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/

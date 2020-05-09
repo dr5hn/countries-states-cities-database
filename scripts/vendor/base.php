@@ -1,7 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('memory_limit', '-1');
-ini_set('error_reporting', E_ALL);
+ini_set('max_execution_time', 300);
+ini_set('error_reporting', E_ALL & ~E_NOTICE);
 date_default_timezone_set('Asia/Kolkata');
 
 require_once __DIR__.'/vendor/autoload.php';
