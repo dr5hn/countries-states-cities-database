@@ -54,7 +54,7 @@ foreach ($files as $root => $v) :
         ['formatOutput' => true]
     );
 
-    $fp = fopen($rootDir.$v['to'], 'w'); // Putting Array to XML
+    $fp = fopen($rootDir.$v['to'], 'w'); // Writing XML to File
     fwrite($fp, $xml);
     fclose($fp);
 

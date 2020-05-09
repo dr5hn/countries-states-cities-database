@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           [ -d plist ] || mkdir plist
-          # sh ./scripts/export_plist.sh
+          sh ./scripts/export_plist.sh
 
       - name: Upload PLIST Exports
         uses: actions/upload-artifact@v2
@@ -66,11 +66,10 @@ jobs:
 
       - name: Run Export Scripts
         run: |
-          # php scripts/export.php
-          # php scripts/export_xml.php
-          # php scripts/export_yaml.php
-          [ -d csv ] || mkdir csv
-          sh ./scripts/export_csv.sh
+          php scripts/export.php
+          php scripts/export_xml.php
+          php scripts/export_yaml.php
+          php scripts/export_csv.php
 
       - name: Commit changed files
         uses: stefanzweifel/git-auto-commit-action@v4.1.6
