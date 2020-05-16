@@ -33,7 +33,7 @@ Total Countries : 247 <br>
 Total States/Regions : 4,852 <br>
 Total Cities/Towns : 141,810 <br>
 
-Last Updated On : 13th November 2019
+Last Updated On : 16th May 2020
 
 ## Notes
 ```
