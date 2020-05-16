@@ -225,11 +225,11 @@ id,name,country_id,country_code,state_code
 561,"Dashkasan District",16,AZ,DAS
 527,"Fizuli District",16,AZ,FUZ
 585,Ganja,16,AZ,GA
+589,Gədəbəy,16,AZ,GAD
 573,"Gobustan District",16,AZ,QOB
 551,"Goranboy District",16,AZ,GOR
 531,Goychay,16,AZ,GOY
 574,"Goygol District",16,AZ,GYG
-589,Gədəbəy,16,AZ,GAD
 571,"Hajigabul District",16,AZ,HAC
 544,"Imishli District",16,AZ,IMI
 564,"Ismailli District",16,AZ,ISM
@@ -1581,6 +1581,7 @@ id,name,country_id,country_code,state_code
 4025,Jharkhand,101,IN,JH
 4026,Karnataka,101,IN,KA
 4028,Kerala,101,IN,KL
+4852,Ladakh,101,IN,LA
 4019,Lakshadweep,101,IN,LD
 4039,"Madhya Pradesh",101,IN,MP
 4008,Maharashtra,101,IN,MH
@@ -2505,13 +2506,14 @@ id,name,country_id,country_code,state_code
 129,Fgura,135,MT,08
 84,Floriana,135,MT,09
 134,Fontana,135,MT,10
-118,Gudja,135,MT,11
-113,Gżira,135,MT,12
 130,Għajnsielem,135,MT,13
 92,Għarb,135,MT,14
 120,Għargħur,135,MT,15
 106,Għasri,135,MT,16
 124,Għaxaq,135,MT,17
+118,Gudja,135,MT,11
+113,Gżira,135,MT,12
+105,Ħamrun,135,MT,18
 93,Iklin,135,MT,19
 99,Kalkara,135,MT,21
 91,Kerċem,135,MT,22
@@ -2561,7 +2563,6 @@ id,name,country_id,country_code,state_code
 80,"Żebbuġ Malta",135,MT,66
 135,Żejtun,135,MT,67
 76,Żurrieq,135,MT,68
-105,Ħamrun,135,MT,18
 2574,"Ralik Chain",137,MH,L
 2573,"Ratak Chain",137,MH,T
 3344,"Adrar Region",139,MR,07
@@ -2947,16 +2948,16 @@ id,name,country_id,country_code,state_code
 1025,Nordland,165,NO,18
 1009,Oppland,165,NO,05
 1007,Oslo,165,NO,03
+1022,Østfold,165,NO,01
 1021,Rogaland,165,NO,11
 1018,"Sogn og Fjordane",165,NO,14
-1013,Svalbard,165,NO,21
 1010,Sør-Trøndelag,165,NO,16
+1013,Svalbard,165,NO,21
 1024,Telemark,165,NO,08
 1015,Troms,165,NO,19
 1006,Trøndelag,165,NO,50
 1014,Vest-Agder,165,NO,10
 1008,Vestfold,165,NO,07
-1022,Østfold,165,NO,01
 3058,"Ad Dakhiliyah Governorate",166,OM,DA
 3047,"Ad Dhahirah Governorate",166,OM,ZA
 3048,"Al Batinah North Governorate",166,OM,BS
@@ -3174,6 +3175,7 @@ id,name,country_id,country_code,state_code
 1629,"Lower Silesian Voivodeship",176,PL,DS
 1638,"Lublin Voivodeship",176,PL,LU
 1631,"Lubusz Voivodeship",176,PL,LB
+1636,"Łódź Voivodeship",176,PL,LD
 1637,"Masovian Voivodeship",176,PL,MZ
 1622,"Opole Voivodeship",176,PL,OP
 1626,"Podkarpackie Voivodeship",176,PL,PK
@@ -3183,7 +3185,6 @@ id,name,country_id,country_code,state_code
 1630,"Świętokrzyskie Voivodeship",176,PL,SK
 1628,"Warmian-Masurian Voivodeship",176,PL,WN
 1633,"West Pomeranian Voivodeship",176,PL,ZP
-1636,"Łódź Voivodeship",176,PL,LD
 2235,"Aveiro District",177,PT,01
 2233,Azores,177,PT,20
 2230,"Beja District",177,PT,02
@@ -3576,8 +3577,8 @@ id,name,country_id,country_code,state_code
 4270,"Ljubljana City Municipality",201,SI,061
 4294,"Ljubno Municipality",201,SI,062
 4351,"Ljutomer Municipality",201,SI,063
-4350,"Logatec Municipality",201,SI,064
 4306,"Log–Dragomer Municipality",201,SI,208
+4350,"Logatec Municipality",201,SI,064
 4174,"Loška Dolina Municipality",201,SI,065
 4158,"Loški Potok Municipality",201,SI,066
 4156,"Lovrenc na Pohorju Municipality",201,SI,167
@@ -4077,10 +4078,10 @@ id,name,country_id,country_code,state_code
 2577,"Plateaux Region",220,TG,P
 2578,"Savanes Region",220,TG,S
 3913,Haʻapai,222,TO,02
+3915,ʻEua,222,TO,01
 3914,Niuas,222,TO,03
 3912,Tongatapu,222,TO,04
 3911,Vavaʻu,222,TO,05
-3915,ʻEua,222,TO,01
 3362,Arima,223,TT,ARI
 3366,Chaguanas,223,TT,CHA
 3354,"Couva-Tabaquite-Talparo Regional Corporation",223,TT,CTT
@@ -4189,8 +4190,8 @@ id,name,country_id,country_code,state_code
 2220,"Samsun Province",225,TR,55
 2183,"Şanlıurfa Province",225,TR,63
 2207,"Siirt Province",225,TR,56
-2225,"Şırnak Province",225,TR,73
 2181,"Sivas Province",225,TR,58
+2225,"Şırnak Province",225,TR,73
 2167,"Tekirdağ Province",225,TR,59
 2199,"Tokat Province",225,TR,60
 2206,"Trabzon Province",225,TR,61
@@ -4754,12 +4755,17 @@ id,name,country_id,country_code,state_code
 3791,"Bắc Ninh",240,VN,56
 3796,"Bến Tre",240,VN,50
 3785,"Bình Dương",240,VN,57
+3830,"Bình Định",240,VN,31
 3797,"Bình Phước",240,VN,58
 3787,"Bình Thuận",240,VN,40
-3830,"Bình Định",240,VN,31
 3778,"Cà Mau",240,VN,59
 3782,"Cao Bằng",240,VN,04
 3806,"Da Nang",240,VN,DN
+3829,"Đắk Lắk",240,VN,33
+3823,"Đắk Nông",240,VN,72
+3773,"Điện Biên",240,VN,71
+3821,"Đồng Nai",240,VN,39
+3769,"Đồng Tháp",240,VN,45
 3813,"Gia Lai",240,VN,30
 3779,"Hà Giang",240,VN,03
 3802,"Hà Nam",240,VN,63
@@ -4804,11 +4810,6 @@ id,name,country_id,country_code,state_code
 3790,"Vĩnh Long",240,VN,49
 3774,"Vĩnh Phúc",240,VN,70
 3784,"Yên Bái",240,VN,06
-3829,"Đắk Lắk",240,VN,33
-3823,"Đắk Nông",240,VN,72
-3773,"Điện Biên",240,VN,71
-3821,"Đồng Nai",240,VN,39
-3769,"Đồng Tháp",240,VN,45
 1242,"'Adan Governorate",245,YE,AD
 1250,"'Amran Governorate",245,YE,AM
 1237,"Abyan Governorate",245,YE,AB

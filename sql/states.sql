@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 01, 2020 at 01:44 PM
+-- Generation Time: May 16, 2020 at 11:50 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -29,16 +30,16 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `states`;
 CREATE TABLE `states` (
   `id` mediumint(8) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` mediumint(8) UNSIGNED NOT NULL,
-  `country_code` char(2) NOT NULL,
-  `fips_code` varchar(255) DEFAULT NULL,
-  `iso2` varchar(255) DEFAULT NULL,
+  `country_code` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fips_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `iso2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
-  `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+  `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `states`
@@ -4905,7 +4906,8 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4848, 'Enga Province', 171, 'PG', '19', 'EPW', '2019-10-05 17:49:01', '2019-10-05 17:49:01', 1, 'Q862584'),
 (4849, 'Milne Bay Province', 171, 'PG', '03', 'MBA', '2019-10-05 17:49:01', '2019-10-05 17:49:01', 1, 'Q874962'),
 (4850, 'Western Province', 171, 'PG', '06', 'WPD', '2019-10-05 17:49:01', '2019-10-05 17:49:01', 1, 'Q849790'),
-(4851, 'Ohio', 233, 'US', '39', 'OH', '2019-11-13 00:00:00', '2019-11-13 11:24:22', 1, 'Q1397');
+(4851, 'Ohio', 233, 'US', '39', 'OH', '2019-11-13 00:00:00', '2019-11-13 11:24:22', 1, 'Q1397'),
+(4852, 'Ladakh', 101, 'IN', NULL, 'LA', '2019-10-05 17:48:57', '2019-10-05 17:48:57', 1, 'MANUAL');
 
 --
 -- Indexes for dumped tables
@@ -4926,7 +4928,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4852;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4853;
 
 --
 -- Constraints for dumped tables
@@ -4937,6 +4939,7 @@ ALTER TABLE `states`
 --
 ALTER TABLE `states`
   ADD CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
