@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 01, 2020 at 01:45 PM
+-- Generation Time: May 16, 2020 at 11:48 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -25,72 +26,66 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `cities`
 --
--- Creation: May 01, 2020 at 09:03 AM
--- Last update: May 01, 2020 at 01:23 PM
---
 
 DROP TABLE IF EXISTS `cities`;
 CREATE TABLE `cities` (
   `id` mediumint(8) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state_id` mediumint(8) UNSIGNED NOT NULL,
-  `state_code` varchar(255) NOT NULL,
+  `state_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` mediumint(8) UNSIGNED NOT NULL,
-  `country_code` char(2) NOT NULL,
+  `country_code` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
   `latitude` decimal(10,8) NOT NULL,
   `longitude` decimal(11,8) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '2014-01-01 01:01:01',
   `updated_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
-  `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+  `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `countries`
 --
--- Creation: May 01, 2020 at 09:03 AM
--- Last update: May 01, 2020 at 01:10 PM
---
 
 DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries` (
   `id` mediumint(8) UNSIGNED NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `iso3` char(3) DEFAULT NULL,
-  `iso2` char(2) DEFAULT NULL,
-  `phonecode` varchar(255) DEFAULT NULL,
-  `capital` varchar(255) DEFAULT NULL,
-  `currency` varchar(255) DEFAULT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `iso3` char(3) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `iso2` char(2) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phonecode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `capital` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `currency` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `native` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emoji` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `emojiU` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
-  `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `states`
 --
--- Creation: May 01, 2020 at 09:03 AM
--- Last update: May 01, 2020 at 01:11 PM
---
 
 DROP TABLE IF EXISTS `states`;
 CREATE TABLE `states` (
   `id` mediumint(8) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` mediumint(8) UNSIGNED NOT NULL,
-  `country_code` char(2) NOT NULL,
-  `fips_code` varchar(255) DEFAULT NULL,
-  `iso2` varchar(255) DEFAULT NULL,
+  `country_code` char(2) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fips_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `iso2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
-  `wikiDataId` varchar(255) DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+  `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
 --
 -- Indexes for dumped tables
@@ -155,6 +150,7 @@ ALTER TABLE `cities`
 --
 ALTER TABLE `states`
   ADD CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
