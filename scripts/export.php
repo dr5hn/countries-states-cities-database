@@ -31,6 +31,9 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['phone_code'] = $row['phonecode'];
         $countriesArray[$m]['capital'] = $row['capital'];
         $countriesArray[$m]['currency'] = $row['currency'];
+        $countriesArray[$m]['native'] = $row['native'];
+        $countriesArray[$m]['emoji'] = $row['emoji'];
+        $countriesArray[$m]['emojiU'] = $row['emojiU'];
 
         $m++;
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 16, 2020 at 11:50 AM
+-- Generation Time: May 24, 2020 at 12:09 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -4907,7 +4907,9 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4849, 'Milne Bay Province', 171, 'PG', '03', 'MBA', '2019-10-05 17:49:01', '2019-10-05 17:49:01', 1, 'Q874962'),
 (4850, 'Western Province', 171, 'PG', '06', 'WPD', '2019-10-05 17:49:01', '2019-10-05 17:49:01', 1, 'Q849790'),
 (4851, 'Ohio', 233, 'US', '39', 'OH', '2019-11-13 00:00:00', '2019-11-13 11:24:22', 1, 'Q1397'),
-(4852, 'Ladakh', 101, 'IN', NULL, 'LA', '2019-10-05 17:48:57', '2019-10-05 17:48:57', 1, 'MANUAL');
+(4852, 'Ladakh', 101, 'IN', NULL, 'LA', '2019-10-05 17:48:57', '2019-10-05 17:48:57', 1, 'MANUAL'),
+(4853, 'West Bengal', 101, 'IN', '28', 'WB', '2019-10-05 17:48:57', '2020-05-24 11:51:17', 1, 'Q1356'),
+(4854, 'Sinop Province', 225, 'TR', '57', '57', '2020-05-24 17:48:46', '2020-05-24 17:48:46', 1, 'Q134413');
 
 --
 -- Indexes for dumped tables
@@ -4928,7 +4930,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4853;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4855;
 
 --
 -- Constraints for dumped tables
