@@ -16,6 +16,6 @@ The following is a set of guidelines for contributing to Contributing to Country
 
 ### Fixing Data By Yourself
 If you want to fix some data and raise a pull request
-- Use `raw/countries.json` to fix countries related data.
-- Use `raw/states.json` to fix states/regions related data.
-- Use `raw/cities.json` to fix cities related data.
+- Use `countries.json` to fix countries related data.
+- Use `states.json` to fix states/regions related data.
+- Use `cities.json` to fix cities related data.
