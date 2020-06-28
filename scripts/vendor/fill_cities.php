@@ -1,7 +1,7 @@
 <?php
 require_once 'base.php';
 
-$file_name = 'JAL.json';
+$file_name = 'RR.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
 $citiesArray = json_decode($citiesJson, true);
 
@@ -10,8 +10,8 @@ if (!empty($citiesArray)) :
         echo '-------------------------------------'.PHP_EOL;
         echo 'Records Check Starts for '.$file_name.PHP_EOL;
         echo '-------------------------------------'.PHP_EOL;
-        $country_code = 'MX';
-        $region_code = 'JAL';
+        $country_code = 'BR';
+        $region_code = 'RR';
 
         # Fetch State
         $sql = "SELECT id, country_id FROM states WHERE country_code='".$country_code."'AND iso2='".$region_code."' LIMIT 1";
@@ -30,12 +30,12 @@ if (!empty($citiesArray)) :
                 if ($result->num_rows > 0) { // If Found Update It
                     echo 'Found... Updating...'.PHP_EOL;
                     while($row = $result->fetch_assoc()) {
-                        $sql = "UPDATE cities SET name='".$city_name."' WHERE id=".$row['id'];
-                        if ($conn->query($sql) === TRUE) {
-                            echo "Record updated successfully".PHP_EOL;
-                        } else {
-                            echo "Error updating record: ".$sql." ".$conn->error.PHP_EOL;
-                        }
+                        // $sql = "UPDATE cities SET name='".$city_name."' WHERE id=".$row['id'];
+                        // if ($conn->query($sql) === TRUE) {
+                        //     echo "Record updated successfully".PHP_EOL;
+                        // } else {
+                        //     echo "Error updating record: ".$sql." ".$conn->error.PHP_EOL;
+                        // }
                     }
                 } else { // Else Insert it
                     echo 'Not Found... Creating...'.PHP_EOL;

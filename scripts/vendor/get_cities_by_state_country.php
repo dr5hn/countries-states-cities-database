@@ -12,10 +12,10 @@ fclose($f);
 
 $file_name = "data/".date("Y_m_d").'_1.json';
 
-$stateFips = 'JAL';
-$countryWiki = 'MX';
+$stateFips = 'RR';
+$countryWiki = 'BR';
 
-for ($i=0; $i<90; $i++): // 900 / 10
+for ($i=0; $i<2; $i++): // 20 / 10
     $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,
@@ -30,7 +30,7 @@ for ($i=0; $i<90; $i++): // 900 / 10
     fclose($fp);
 
     if ($i%5 == 0): sleep($NUMBER_OF_SECONDS); endif;
-    $offset = $limit; // 9810
+    $offset = $limit + 1; // 9810
     $limit = $limit + 10; // 9820
 
     $fps = fopen($counter, 'w');
