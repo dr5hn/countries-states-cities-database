@@ -12,10 +12,10 @@ fclose($f);
 
 $file_name = "data/".date("Y_m_d").'_1.json';
 
-$stateFips = 'RR';
-$countryWiki = 'BR';
+$stateFips = '09';
+$countryWiki = 'PT';
 
-for ($i=0; $i<2; $i++): // 20 / 10
+for ($i=0; $i<58; $i++): // 575 / 10
     $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,

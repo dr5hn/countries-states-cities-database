@@ -1,7 +1,7 @@
 <?php
 require_once 'base.php';
 
-$file_name = 'RR.json';
+$file_name = '09.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
 $citiesArray = json_decode($citiesJson, true);
 
@@ -10,8 +10,8 @@ if (!empty($citiesArray)) :
         echo '-------------------------------------'.PHP_EOL;
         echo 'Records Check Starts for '.$file_name.PHP_EOL;
         echo '-------------------------------------'.PHP_EOL;
-        $country_code = 'BR';
-        $region_code = 'RR';
+        $country_code = 'PT';
+        $region_code = '09';
 
         # Fetch State
         $sql = "SELECT id, country_id FROM states WHERE country_code='".$country_code."'AND iso2='".$region_code."' LIMIT 1";
