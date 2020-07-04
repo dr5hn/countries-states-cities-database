@@ -1,7 +1,7 @@
 <?php
 require_once 'base.php';
 
-$file_name = '09.json';
+$file_name = 'PK_PB.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
 $citiesArray = json_decode($citiesJson, true);
 
@@ -10,8 +10,8 @@ if (!empty($citiesArray)) :
         echo '-------------------------------------'.PHP_EOL;
         echo 'Records Check Starts for '.$file_name.PHP_EOL;
         echo '-------------------------------------'.PHP_EOL;
-        $country_code = 'PT';
-        $region_code = '09';
+        $country_code = 'PK';
+        $region_code = 'PB';
 
         # Fetch State
         $sql = "SELECT id, country_id FROM states WHERE country_code='".$country_code."'AND iso2='".$region_code."' LIMIT 1";
@@ -23,6 +23,7 @@ if (!empty($citiesArray)) :
                 $city_name = $city['name'];
 
                 echo 'Checking For : '.$city_name.PHP_EOL;
+                echo 'Checking For : '.$city['wikiDataId'].PHP_EOL;
                 $city_name = mysqli_real_escape_string($conn, $city_name);
                 $sql = "SELECT id FROM cities WHERE state_id=".$region_id." AND country_id=".$country_id." AND name='".$city_name."'";
                 $result = $conn->query($sql) or die($conn->error);
