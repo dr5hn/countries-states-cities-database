@@ -1998,7 +1998,51 @@ country_state:
     phone_code: +1-441
     capital: Hamilton
     currency: BMD
-    states: {  }
+    states:
+      -
+        id: 4860
+        name: 'Devonshire Parish'
+        state_code: DEV
+      -
+        id: 4862
+        name: 'Hamilton Municipality'
+        state_code: HAM
+      -
+        id: 4861
+        name: 'Hamilton Parish'
+        state_code: HA
+      -
+        id: 4863
+        name: 'Paget Parish'
+        state_code: PAG
+      -
+        id: 4864
+        name: 'Pembroke Parish'
+        state_code: PEM
+      -
+        id: 4865
+        name: 'Saint George''s Municipality'
+        state_code: SG
+      -
+        id: 4866
+        name: 'Saint George''s Parish'
+        state_code: SGE
+      -
+        id: 4867
+        name: 'Sandys Parish'
+        state_code: SAN
+      -
+        id: 4868
+        name: 'Smith''s Parish,'
+        state_code: SMI
+      -
+        id: 4869
+        name: 'Southampton Parish'
+        state_code: SOU
+      -
+        id: 4870
+        name: 'Warwick Parish'
+        state_code: WAR
   -
     name: Bhutan
     iso3: BTN
@@ -13640,10 +13684,6 @@ country_state:
         name: Lima
         state_code: LIM
       -
-        id: 3690
-        name: 'Lima Province'
-        state_code: LMA
-      -
         id: 3678
         name: 'Madre de Dios'
         state_code: MDD
@@ -16586,11 +16626,11 @@ country_state:
       -
         id: 936
         name: Gauteng
-        state_code: GT
+        state_code: GP
       -
         id: 935
         name: KwaZulu-Natal
-        state_code: NL
+        state_code: KZN
       -
         id: 933
         name: Limpopo
