@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 16, 2020 at 11:51 AM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- Generation Time: Aug 15, 2020 at 05:00 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -70,7 +70,7 @@ INSERT INTO `countries` (`id`, `name`, `iso3`, `iso2`, `phonecode`, `capital`, `
 (18, 'Bahrain', 'BHR', 'BH', '973', 'Manama', 'BHD', '‏البحرين', '🇧🇭', 'U+1F1E7 U+1F1ED', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q398'),
 (19, 'Bangladesh', 'BGD', 'BD', '880', 'Dhaka', 'BDT', 'Bangladesh', '🇧🇩', 'U+1F1E7 U+1F1E9', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q902'),
 (20, 'Barbados', 'BRB', 'BB', '+1-246', 'Bridgetown', 'BBD', 'Barbados', '🇧🇧', 'U+1F1E7 U+1F1E7', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q244'),
-(21, 'Belarus', 'BLR', 'BY', '375', 'Minsk', 'BYR', 'Белару́сь', '🇧🇾', 'U+1F1E7 U+1F1FE', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q184'),
+(21, 'Belarus', 'BLR', 'BY', '375', 'Minsk', 'BYN', 'Белару́сь', '🇧🇾', 'U+1F1E7 U+1F1FE', '2018-07-20 20:11:03', '2020-08-15 16:58:19', 1, 'Q184'),
 (22, 'Belgium', 'BEL', 'BE', '32', 'Brussels', 'EUR', 'België', '🇧🇪', 'U+1F1E7 U+1F1EA', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q31'),
 (23, 'Belize', 'BLZ', 'BZ', '501', 'Belmopan', 'BZD', 'Belize', '🇧🇿', 'U+1F1E7 U+1F1FF', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q242'),
 (24, 'Benin', 'BEN', 'BJ', '229', 'Porto-Novo', 'XOF', 'Bénin', '🇧🇯', 'U+1F1E7 U+1F1EF', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q962'),
@@ -175,7 +175,7 @@ INSERT INTO `countries` (`id`, `name`, `iso3`, `iso2`, `phonecode`, `capital`, `
 (123, 'Liberia', 'LBR', 'LR', '231', 'Monrovia', 'LRD', 'Liberia', '🇱🇷', 'U+1F1F1 U+1F1F7', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q1014'),
 (124, 'Libya', 'LBY', 'LY', '218', 'Tripolis', 'LYD', '‏ليبيا', '🇱🇾', 'U+1F1F1 U+1F1FE', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q1016'),
 (125, 'Liechtenstein', 'LIE', 'LI', '423', 'Vaduz', 'CHF', 'Liechtenstein', '🇱🇮', 'U+1F1F1 U+1F1EE', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q347'),
-(126, 'Lithuania', 'LTU', 'LT', '370', 'Vilnius', 'LTL', 'Lietuva', '🇱🇹', 'U+1F1F1 U+1F1F9', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q37'),
+(126, 'Lithuania', 'LTU', 'LT', '370', 'Vilnius', 'EUR', 'Lietuva', '🇱🇹', 'U+1F1F1 U+1F1F9', '2018-07-20 20:11:03', '2020-08-15 16:58:03', 1, 'Q37'),
 (127, 'Luxembourg', 'LUX', 'LU', '352', 'Luxembourg', 'EUR', 'Luxembourg', '🇱🇺', 'U+1F1F1 U+1F1FA', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q32'),
 (128, 'Macau S.A.R.', 'MAC', 'MO', '853', 'Macao', 'MOP', '澳門', '🇲🇴', 'U+1F1F2 U+1F1F4', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, NULL),
 (129, 'Macedonia', 'MKD', 'MK', '389', 'Skopje', 'MKD', 'Северна Македонија', '🇲🇰', 'U+1F1F2 U+1F1F0', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q221'),
@@ -295,8 +295,9 @@ INSERT INTO `countries` (`id`, `name`, `iso3`, `iso2`, `phonecode`, `capital`, `
 (243, 'Wallis And Futuna Islands', 'WLF', 'WF', '681', 'Mata Utu', 'XPF', 'Wallis et Futuna', '🇼🇫', 'U+1F1FC U+1F1EB', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, NULL),
 (244, 'Western Sahara', 'ESH', 'EH', '212', 'El-Aaiun', 'MAD', 'الصحراء الغربية', '🇪🇭', 'U+1F1EA U+1F1ED', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, NULL),
 (245, 'Yemen', 'YEM', 'YE', '967', 'Sanaa', 'YER', 'اليَمَن', '🇾🇪', 'U+1F1FE U+1F1EA', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q805'),
-(246, 'Zambia', 'ZMB', 'ZM', '260', 'Lusaka', 'ZMK', 'Zambia', '🇿🇲', 'U+1F1FF U+1F1F2', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q953'),
-(247, 'Zimbabwe', 'ZWE', 'ZW', '263', 'Harare', 'ZWL', 'Zimbabwe', '🇿🇼', 'U+1F1FF U+1F1FC', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q954');
+(246, 'Zambia', 'ZMB', 'ZM', '260', 'Lusaka', 'ZMW', 'Zambia', '🇿🇲', 'U+1F1FF U+1F1F2', '2018-07-20 20:11:03', '2020-08-15 16:58:10', 1, 'Q953'),
+(247, 'Zimbabwe', 'ZWE', 'ZW', '263', 'Harare', 'ZWL', 'Zimbabwe', '🇿🇼', 'U+1F1FF U+1F1FC', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q954'),
+(248, 'Kosovo', 'XKX', 'XK', '383', 'Pristina', 'EUR', 'Republika e Kosovës', '🇽🇰', 'U+1F1FD U+1F1F0', '2020-08-15 15:33:50', '2020-08-15 15:36:18', 1, 'Q1246');
 
 --
 -- Indexes for dumped tables
@@ -316,7 +317,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
 SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
