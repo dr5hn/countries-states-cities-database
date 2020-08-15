@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 16, 2020 at 11:51 AM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- Generation Time: Aug 15, 2020 at 04:52 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -296,7 +296,8 @@ INSERT INTO `countries` (`id`, `name`, `iso3`, `iso2`, `phonecode`, `capital`, `
 (244, 'Western Sahara', 'ESH', 'EH', '212', 'El-Aaiun', 'MAD', 'الصحراء الغربية', '🇪🇭', 'U+1F1EA U+1F1ED', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, NULL),
 (245, 'Yemen', 'YEM', 'YE', '967', 'Sanaa', 'YER', 'اليَمَن', '🇾🇪', 'U+1F1FE U+1F1EA', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q805'),
 (246, 'Zambia', 'ZMB', 'ZM', '260', 'Lusaka', 'ZMK', 'Zambia', '🇿🇲', 'U+1F1FF U+1F1F2', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q953'),
-(247, 'Zimbabwe', 'ZWE', 'ZW', '263', 'Harare', 'ZWL', 'Zimbabwe', '🇿🇼', 'U+1F1FF U+1F1FC', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q954');
+(247, 'Zimbabwe', 'ZWE', 'ZW', '263', 'Harare', 'ZWL', 'Zimbabwe', '🇿🇼', 'U+1F1FF U+1F1FC', '2018-07-20 20:11:03', '2020-05-16 10:49:11', 1, 'Q954'),
+(248, 'Kosovo', 'XKX', 'XK', '383', 'Pristina', 'EUR', 'Republika e Kosovës', '🇽🇰', 'U+1F1FD U+1F1F0', '2020-08-15 15:33:50', '2020-08-15 15:36:18', 1, 'Q1246');
 
 --
 -- Indexes for dumped tables
@@ -316,7 +317,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
 SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
