@@ -66,6 +66,7 @@ async function filterStates($cid = null) {
   let states = await statesColl.find({ country_id: parseInt($cid) });
   let $states = $('.states-tb');
   $states.html('');
+  $('.cities-tb').html('');
   if (states.length) {
     await states.forEach((s) => {
       $states.append(`
