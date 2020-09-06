@@ -6,17 +6,40 @@ td:hover {
     background: #fafafa;
 }
 
-.cities,
-.countries,
-.states {
-    width: 100%;
+/* Github Button */
+.github {
+    padding: 8px 12px;
+    border-radius: 50px;
+    color: #fff;
+    display: inline-flex;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+}
+
+.github svg {
+    width: 24px;
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+/* Tooltip */
+.tooltip .tooltip-text {
+    visibility: hidden;
+    text-align: center;
+    padding: 2px 6px;
+    position: absolute;
+    z-index: 100;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
 }
 
 /* Code Formatting */
 pre {
     font-family: ibm-plex-mono, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New';
     overflow: hidden;
-    overflow-y: scroll;
     background: rgb(28, 29, 33);
     color: rgb(192, 197, 206);
     padding: 1rem;
@@ -55,4 +78,10 @@ pre {
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
     }
+}
+
+/* Hidden Element */
+textarea {
+    position: absolute;
+    left: -100%;
 }
