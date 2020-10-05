@@ -8,6 +8,11 @@ on:
       - '**'
       - '!sql/**.sql'
       - '!scripts/export**'
+  workflow_dispatch:
+    inputs:
+      pass:
+        description: 'Passcode'
+        required: true
 
 jobs:
   export_json_xml:
