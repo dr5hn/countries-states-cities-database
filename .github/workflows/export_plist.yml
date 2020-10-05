@@ -12,11 +12,12 @@ on:
 jobs:
   export_plist:
     name: PLIST
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'automated') }}
 
     runs-on: macos-latest
 
     steps:
-      if: ${{ contains(github.event.pull_request.labels.*.name, 'automated') }}
+      
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -34,6 +35,7 @@ jobs:
 
   commit_plist:
     name: COMMIT_PLIST
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'automated') }}
     needs: export_plist
     runs-on: ubuntu-latest
 
@@ -43,7 +45,6 @@ jobs:
         php-versions: ["7.4"]
 
     steps:
-      if: ${{ contains(github.event.pull_request.labels.*.name, 'automated') }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
