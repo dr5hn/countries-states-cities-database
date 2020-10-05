@@ -12,7 +12,6 @@ on:
 jobs:
   export_json_xml:
     name: JSON/XML/YAML/CSV
-    needs: export_plist
     runs-on: ubuntu-latest
 
     strategy:
