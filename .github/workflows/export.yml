@@ -1,7 +1,7 @@
-name: Export
+name: Export JSON/XML/YAML/CSV
 
 on:
-  pull_request:
+  push:
     branches:
       - master
     paths-ignore:
@@ -10,27 +10,6 @@ on:
       - '!scripts/export**'
 
 jobs:
-  export_plist:
-    name: PLIST
-
-    runs-on: macos-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run Export Script
-        shell: bash
-        run: |
-          [ -d plist ] || mkdir plist
-          sh ./scripts/export_plist.sh
-
-      - name: Upload PLIST Exports
-        uses: actions/upload-artifact@v2
-        with:
-          name: plist
-          path: plist
-
   export_json_xml:
     name: JSON/XML/YAML/CSV
     needs: export_plist
@@ -39,19 +18,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-versions: ["7.3"]
+        php-versions: ["7.4"]
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-
-      - name: Download PLIST Export
-        uses: actions/download-artifact@v2
-        with:
-          name: plist
-          path: plist
 
       - name: Create & Import DB
         run: |
@@ -71,13 +44,17 @@ jobs:
           php scripts/export_yaml.php
           php scripts/export_csv.php
 
-      - name: Commit changed files
-        uses: stefanzweifel/git-auto-commit-action@v4.1.6
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
         with:
-          commit_message: Update Exported Files
-          branch: ${{ github.head_ref }}
-          commit_user_name: dr5hn
-          commit_user_email: gadadarshan@gmail.com
-          commit_author: Darshan Gada <gadadarshan@gmail.com>
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Add exported JSON, CSV, XML & YAML files
+          committer: Darshan Gada <gadadarshan@gmail.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: true
+          branch: export/Files
+          delete-branch: true
+          title: '[Export] JSON, CSV, XML, YAML & PLIST files'
+          labels: |
+            exports
+            automated
+          reviewers: dr5hn, valerianpereira
