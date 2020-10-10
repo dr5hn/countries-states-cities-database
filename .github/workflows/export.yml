@@ -47,6 +47,7 @@ jobs:
           php scripts/export_xml.php
           php scripts/export_yaml.php
           php scripts/export_csv.php
+          [ -d plist ] || mkdir plist
           python3 scripts/export_plist.py
 
       - name: Create Pull Request
