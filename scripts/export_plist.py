@@ -16,6 +16,7 @@ for csv_file in files:
         result = list(csv.DictReader(f))
 
     filename = os.path.basename(csv_file)
-    plist_file = './plist/' + os.path.splitext(filename)[0] + '.plist'
-    plist_file = open(plist_file, 'wb')
+    plist_file_path = './plist/' + os.path.splitext(filename)[0] + '.plist'
+    plist_file = open(plist_file_path, 'wb')
     plistlib.dump(result, plist_file)
+    print('PLIST Exported to {}'.format(plist_file_path))
