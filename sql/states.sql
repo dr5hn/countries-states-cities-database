@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 15, 2020 at 04:52 PM
+-- Generation Time: Oct 13, 2020 at 10:01 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -4927,7 +4927,8 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4877, 'Gjilan District', 248, 'XK', NULL, NULL, '2020-08-15 16:08:25', '2020-08-15 16:11:03', 1, 'Q1048355'),
 (4878, 'Kosovska Mitrovica District', 248, 'XK', NULL, NULL, '2020-08-15 16:09:53', '2020-08-15 16:11:01', 1, 'Q1046673'),
 (4879, 'Pristina (Priştine)', 248, 'XK', NULL, NULL, '2020-08-15 16:33:03', '2020-08-15 16:33:08', 1, 'Q25270'),
-(4880, 'Autonomous City Of Buenos Aires', 11, 'AR', NULL, 'C', '2020-08-15 16:49:48', '2020-08-15 16:51:39', 1, 'MANUAL');
+(4880, 'Autonomous City Of Buenos Aires', 11, 'AR', NULL, 'C', '2020-08-15 16:49:48', '2020-08-15 16:51:39', 1, 'MANUAL'),
+(4881, 'New Providence', 17, 'BS', '23', 'NP', '2020-10-13 15:26:49', '2020-10-13 15:26:49', 1, 'Q858513');
 
 --
 -- Indexes for dumped tables
@@ -4948,7 +4949,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4881;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4882;
 
 --
 -- Constraints for dumped tables
