@@ -7,6 +7,13 @@
 Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV Format
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
+## API 🚀
+🎉 Introducing **API** for Countries States Cities Database.
+
+[API Documentation](https://countrystatecity.in/)
+
+[![banner](.github/api.png)](https://countrystatecity.in/)
+
 ## Formats Available
 - JSON
 - SQL
@@ -31,9 +38,9 @@ https://dr5hn.github.io/countries-states-cities-database/
 ## Insights
 Total Countries : 248 <br>
 Total States/Regions/Municipalities : 4,873 <br>
-Total Cities/Towns/Districts : 143,887 <br>
+Total Cities/Towns/Districts : 146,106 <br>
 
-Last Updated On : 13th October 2020
+Last Updated On : 24th October 2020
 
 ## Notes
 ```
