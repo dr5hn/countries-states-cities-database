@@ -6,16 +6,18 @@ require_once 'base.php';
 
 $counter = "counter.txt";
 $f = fopen($counter, "r") or die("Unable to open file!");
-$offset = (int)fgets($f); // 9801
+// $offset = (int)fgets($f); // 9801 - For Automated Fetch
+$offset = 1; // For Manual Fetch
 $limit = $offset + 9; // 9801 + 9 = 9810
 fclose($f);
 
-$file_name = "data/".date("Y_m_d").'_1.json';
 
-$stateFips = '02';
-$countryWiki = 'AT';
+$countryWiki = 'PH';
+$stateFips = 'ABR';
 
-for ($i=0; $i<23; $i++): // 575 / 10
+$file_name = "data/".$countryWiki.'_'.$stateFips.'.json';
+
+for ($i=0; $i<36; $i++): // 575 / 10
     $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,

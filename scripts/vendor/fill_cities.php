@@ -1,7 +1,10 @@
 <?php
 require_once 'base.php';
 
-$file_name = 'AT_02.json';
+$country_code = 'PH';
+$region_code = 'ABR';
+
+$file_name = $country_code.'_'.$region_code.'.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
 $citiesArray = json_decode($citiesJson, true);
 
@@ -10,8 +13,6 @@ if (!empty($citiesArray)) :
         echo '-------------------------------------'.PHP_EOL;
         echo 'Records Check Starts for '.$file_name.PHP_EOL;
         echo '-------------------------------------'.PHP_EOL;
-        $country_code = 'AT';
-        $region_code = '2';
 
         # Fetch State
         $sql = "SELECT id, country_id FROM states WHERE country_code='".$country_code."'AND iso2='".$region_code."' LIMIT 1";
@@ -54,12 +55,17 @@ if (!empty($citiesArray)) :
                     echo 'Not Found... Creating...'.PHP_EOL;
                     extract($city);
                     $name = mysqli_real_escape_string($conn, $name);
-                    $sql = "INSERT INTO cities (name, state_id, state_code, country_id, country_code, latitude, longitude, created_at, wikiDataId) VALUES ('$name', '$region_id', '$region_code', '$country_id', '$country_code', '$latitude', '$longitude', NOW(), '$wikiDataId')";
 
-                    if ($conn->query($sql) === TRUE) {
-                        echo "New record created successfully".PHP_EOL;
+                    if ($wikiDataId) {
+                        $sql = "INSERT INTO cities (name, state_id, state_code, country_id, country_code, latitude, longitude, created_at, wikiDataId) VALUES ('$name', '$region_id', '$region_code', '$country_id', '$country_code', '$latitude', '$longitude', NOW(), '$wikiDataId')";
+                    
+                        if ($conn->query($sql) === TRUE) {
+                            echo "New record created successfully".PHP_EOL;
+                        } else {
+                            echo "Error: " . $sql ." ". $conn->error.PHP_EOL;
+                        }
                     } else {
-                        echo "Error: " . $sql ." ". $conn->error.PHP_EOL;
+                        echo 'No WikiData ID Found...'.PHP_EOL;
                     }
                 }
 
