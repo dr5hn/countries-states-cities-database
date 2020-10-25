@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 16, 2020 at 11:48 AM
--- Server version: 5.7.25
--- PHP Version: 7.3.1
+-- Generation Time: Oct 25, 2020 at 02:58 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -59,6 +59,8 @@ CREATE TABLE `countries` (
   `capital` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `currency` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `native` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `region` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subregion` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `emoji` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `emojiU` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
