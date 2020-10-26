@@ -36,7 +36,7 @@ Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_c
 https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
-Total Countries : 248 <br>
+Total Countries : 249 <br>
 Total States/Regions/Municipalities : 4,873 <br>
 Total Cities/Towns/Districts : 146,106 <br>
 
