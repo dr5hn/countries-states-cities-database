@@ -32,6 +32,8 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['capital'] = $row['capital'];
         $countriesArray[$m]['currency'] = $row['currency'];
         $countriesArray[$m]['native'] = $row['native'];
+        $countriesArray[$m]['region'] = $row['region'];
+        $countriesArray[$m]['subregion'] = $row['subregion'];
         $countriesArray[$m]['emoji'] = $row['emoji'];
         $countriesArray[$m]['emojiU'] = $row['emojiU'];
 
@@ -50,6 +52,11 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateCityArray[$k]['capital'] = $country['capital'];
     $countryStateCityArray[$k]['currency'] = $country['currency'];
+    $countryStateCityArray[$k]['native'] = $country['native'];
+    $countryStateCityArray[$k]['region'] = $country['region'];
+    $countryStateCityArray[$k]['subregion'] = $country['subregion'];
+    $countryStateCityArray[$k]['emoji'] = $country['emoji'];
+    $countryStateCityArray[$k]['emojiU'] = $country['emojiU'];
     $countryStateCityArray[$k]['states'] = array();
 
     // Fetching All States Based on Country
@@ -132,6 +139,11 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateArray[$k]['capital'] = $country['capital'];
     $countryStateArray[$k]['currency'] = $country['currency'];
+    $countryStateArray[$k]['native'] = $country['native'];
+    $countryStateArray[$k]['region'] = $country['region'];
+    $countryStateArray[$k]['subregion'] = $country['subregion'];
+    $countryStateArray[$k]['emoji'] = $country['emoji'];
+    $countryStateArray[$k]['emojiU'] = $country['emojiU'];
     $countryStateArray[$k]['states'] = $stateNamesArray;
 
     $k++;
