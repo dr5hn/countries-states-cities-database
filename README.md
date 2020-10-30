@@ -4,7 +4,7 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV Format
+Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## API 🚀
@@ -47,7 +47,7 @@ Last Updated On : 24th October 2020
 This Free database does not guarantee for the complete list of world
 countries, states & cities.
 You can manually change the spelling mistakes, duplicates
-or add edit any records, which are incorrect.
+or add/edit any records, which are incorrect.
 
 Reason behind making this repo: I ran through many websites to get
 perfect combination of state, city & countries.
