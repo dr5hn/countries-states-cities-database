@@ -51,7 +51,7 @@ or add/edit any records, which are incorrect.
 
 Reason behind making this repo: I ran through many websites to get
 perfect combination of state, city & countries.
-Some were with missing states, some with large filesize.
+Some were with missing states while others with large filesize.
 So I thought to get it done on my own using PHP Script.
 ```
 
