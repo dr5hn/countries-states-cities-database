@@ -34,6 +34,7 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['native'] = $row['native'];
         $countriesArray[$m]['region'] = $row['region'];
         $countriesArray[$m]['subregion'] = $row['subregion'];
+        $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
         $countriesArray[$m]['emoji'] = $row['emoji'];
         $countriesArray[$m]['emojiU'] = $row['emojiU'];
 
@@ -55,6 +56,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
+    $countryStateCityArray[$k]['timezones'] = $country['timezones'];
     $countryStateCityArray[$k]['emoji'] = $country['emoji'];
     $countryStateCityArray[$k]['emojiU'] = $country['emojiU'];
     $countryStateCityArray[$k]['states'] = array();
@@ -142,6 +144,7 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['native'] = $country['native'];
     $countryStateArray[$k]['region'] = $country['region'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
+    $countryStateArray[$k]['timezones'] = $country['timezones'];
     $countryStateArray[$k]['emoji'] = $country['emoji'];
     $countryStateArray[$k]['emojiU'] = $country['emojiU'];
     $countryStateArray[$k]['states'] = $stateNamesArray;

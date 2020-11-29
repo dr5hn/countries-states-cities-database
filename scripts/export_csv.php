@@ -31,6 +31,11 @@ foreach ($files as $root => $v) :
     fputcsv($fp, array_keys($csc[0]));
     foreach ($csc as $row) :
         // Write the row to the CSV file.
+        if(is_array($row['timezones'])) {
+            $row['timezones'] = json_encode($row['timezones']);
+            $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
+            $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
+        }
         fputcsv($fp, $row);
     endforeach;
 
