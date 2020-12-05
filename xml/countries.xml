@@ -792,6 +792,27 @@
     <emojiU>U+1F1E7 U+1F1F4</emojiU>
   </country>
   <country>
+    <id>155</id>
+    <name>Bonaire, Sint Eustatius and Saba</name>
+    <iso3>BES</iso3>
+    <iso2>BQ</iso2>
+    <phone_code>599</phone_code>
+    <capital>Kralendijk</capital>
+    <currency>USD</currency>
+    <native>Caribisch Nederland</native>
+    <region>Americas</region>
+    <subregion>Caribbean</subregion>
+    <timezones>
+      <zoneName>America/Anguilla</zoneName>
+      <gmtOffset>-14400</gmtOffset>
+      <gmtOffsetName>UTC-04:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Atlantic Standard Time</tzName>
+    </timezones>
+    <emoji>🇧🇶</emoji>
+    <emojiU>U+1F1E7 U+1F1F6</emojiU>
+  </country>
+  <country>
     <id>28</id>
     <name>Bosnia and Herzegovina</name>
     <iso3>BIH</iso3>
@@ -838,13 +859,19 @@
     <name>Bouvet Island</name>
     <iso3>BVT</iso3>
     <iso2>BV</iso2>
-    <phone_code></phone_code>
+    <phone_code>0055</phone_code>
     <capital></capital>
     <currency>NOK</currency>
     <native>Bouvetøya</native>
     <region></region>
     <subregion></subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Europe/Oslo</zoneName>
+      <gmtOffset>3600</gmtOffset>
+      <gmtOffsetName>UTC+01:00</gmtOffsetName>
+      <abbreviation>CET</abbreviation>
+      <tzName>Central European Time</tzName>
+    </timezones>
     <emoji>🇧🇻</emoji>
     <emojiU>U+1F1E7 U+1F1FB</emojiU>
   </country>
@@ -2614,16 +2641,22 @@
   </country>
   <country>
     <id>96</id>
-    <name>Heard and McDonald Islands</name>
+    <name>Heard Island and McDonald Islands</name>
     <iso3>HMD</iso3>
     <iso2>HM</iso2>
-    <phone_code> </phone_code>
+    <phone_code></phone_code>
     <capital></capital>
     <currency>AUD</currency>
     <native>Heard Island and McDonald Islands</native>
     <region></region>
     <subregion></subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Indian/Kerguelen</zoneName>
+      <gmtOffset>18000</gmtOffset>
+      <gmtOffsetName>UTC+05:00</gmtOffsetName>
+      <abbreviation>TFT</abbreviation>
+      <tzName>French Southern and Antarctic Time</tzName>
+    </timezones>
     <emoji>🇭🇲</emoji>
     <emojiU>U+1F1ED U+1F1F2</emojiU>
   </country>
@@ -3135,7 +3168,13 @@
     <native>Republika e Kosovës</native>
     <region>Europe</region>
     <subregion>Eastern Europe</subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Europe/Belgrade</zoneName>
+      <gmtOffset>3600</gmtOffset>
+      <gmtOffsetName>UTC+01:00</gmtOffsetName>
+      <abbreviation>CET</abbreviation>
+      <tzName>Central European Time</tzName>
+    </timezones>
     <emoji>🇽🇰</emoji>
     <emojiU>U+1F1FD U+1F1F0</emojiU>
   </country>
@@ -4048,21 +4087,6 @@
     </timezones>
     <emoji>🇳🇵</emoji>
     <emojiU>U+1F1F3 U+1F1F5</emojiU>
-  </country>
-  <country>
-    <id>155</id>
-    <name>Netherlands Antilles</name>
-    <iso3>ANT</iso3>
-    <iso2>AN</iso2>
-    <phone_code></phone_code>
-    <capital></capital>
-    <currency></currency>
-    <native></native>
-    <region></region>
-    <subregion></subregion>
-    <timezones></timezones>
-    <emoji></emoji>
-    <emojiU></emojiU>
   </country>
   <country>
     <id>156</id>
@@ -5197,6 +5221,27 @@
     </timezones>
     <emoji>🇸🇬</emoji>
     <emojiU>U+1F1F8 U+1F1EC</emojiU>
+  </country>
+  <country>
+    <id>250</id>
+    <name>Sint Maarten (Dutch part)</name>
+    <iso3>SXM</iso3>
+    <iso2>SX</iso2>
+    <phone_code>1721</phone_code>
+    <capital>Philipsburg</capital>
+    <currency>ANG</currency>
+    <native>Sint Maarten</native>
+    <region>Americas</region>
+    <subregion>Caribbean</subregion>
+    <timezones>
+      <zoneName>America/Anguilla</zoneName>
+      <gmtOffset>-14400</gmtOffset>
+      <gmtOffsetName>UTC-04:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Atlantic Standard Time</tzName>
+    </timezones>
+    <emoji>🇸🇽</emoji>
+    <emojiU>U+1F1F8 U+1F1FD</emojiU>
   </country>
   <country>
     <id>200</id>

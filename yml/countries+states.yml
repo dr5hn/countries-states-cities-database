@@ -2696,6 +2696,26 @@ country_state:
         name: 'Tarija Department'
         state_code: T
   -
+    name: 'Bonaire, Sint Eustatius and Saba'
+    iso3: BES
+    iso2: BQ
+    phone_code: '599'
+    capital: Kralendijk
+    currency: USD
+    native: 'Caribisch Nederland'
+    region: Americas
+    subregion: Caribbean
+    timezones:
+      -
+        zoneName: America/Anguilla
+        gmtOffset: -14400
+        gmtOffsetName: 'UTC-04:00'
+        abbreviation: AST
+        tzName: 'Atlantic Standard Time'
+    emoji: 🇧🇶
+    emojiU: 'U+1F1E7 U+1F1F6'
+    states: {  }
+  -
     name: 'Bosnia and Herzegovina'
     iso3: BIH
     iso2: BA
@@ -2831,13 +2851,19 @@ country_state:
     name: 'Bouvet Island'
     iso3: BVT
     iso2: BV
-    phone_code: ''
+    phone_code: '0055'
     capital: ''
     currency: NOK
     native: Bouvetøya
     region: ''
     subregion: ''
-    timezones: null
+    timezones:
+      -
+        zoneName: Europe/Oslo
+        gmtOffset: 3600
+        gmtOffsetName: 'UTC+01:00'
+        abbreviation: CET
+        tzName: 'Central European Time'
     emoji: 🇧🇻
     emojiU: 'U+1F1E7 U+1F1FB'
     states: {  }
@@ -3195,6 +3221,10 @@ country_state:
         id: 4713
         name: 'Ruse Province'
         state_code: '18'
+      -
+        id: 4882
+        name: Shumen
+        state_code: '27'
       -
         id: 4708
         name: 'Silistra Province'
@@ -8470,16 +8500,22 @@ country_state:
         name: Sud-Est
         state_code: SE
   -
-    name: 'Heard and McDonald Islands'
+    name: 'Heard Island and McDonald Islands'
     iso3: HMD
     iso2: HM
-    phone_code: ' '
+    phone_code: ''
     capital: ''
     currency: AUD
     native: 'Heard Island and McDonald Islands'
     region: ''
     subregion: ''
-    timezones: null
+    timezones:
+      -
+        zoneName: Indian/Kerguelen
+        gmtOffset: 18000
+        gmtOffsetName: 'UTC+05:00'
+        abbreviation: TFT
+        tzName: 'French Southern and Antarctic Time'
     emoji: 🇭🇲
     emojiU: 'U+1F1ED U+1F1F2'
     states: {  }
@@ -11071,7 +11107,13 @@ country_state:
     native: 'Republika e Kosovës'
     region: Europe
     subregion: 'Eastern Europe'
-    timezones: null
+    timezones:
+      -
+        zoneName: Europe/Belgrade
+        gmtOffset: 3600
+        gmtOffsetName: 'UTC+01:00'
+        abbreviation: CET
+        tzName: 'Central European Time'
     emoji: 🇽🇰
     emojiU: 'U+1F1FD U+1F1F0'
     states:
@@ -15260,20 +15302,6 @@ country_state:
         name: 'Western Region'
         state_code: '3'
   -
-    name: 'Netherlands Antilles'
-    iso3: ANT
-    iso2: AN
-    phone_code: ''
-    capital: ''
-    currency: ''
-    native: null
-    region: null
-    subregion: null
-    timezones: null
-    emoji: null
-    emojiU: null
-    states: {  }
-  -
     name: 'Netherlands The'
     iso3: NLD
     iso2: NL
@@ -17392,13 +17420,13 @@ country_state:
         name: 'Ilfov County'
         state_code: IF
       -
-        id: 4760
-        name: 'Maramureș County'
-        state_code: MM
-      -
         id: 4751
         name: 'Mehedinți County'
         state_code: MH
+      -
+        id: 4760
+        name: 'Mureș County'
+        state_code: MM
       -
         id: 4731
         name: 'Neamț County'
@@ -18877,6 +18905,26 @@ country_state:
         id: 4652
         name: 'South West Community Development Council'
         state_code: '05'
+  -
+    name: 'Sint Maarten (Dutch part)'
+    iso3: SXM
+    iso2: SX
+    phone_code: '1721'
+    capital: Philipsburg
+    currency: ANG
+    native: 'Sint Maarten'
+    region: Americas
+    subregion: Caribbean
+    timezones:
+      -
+        zoneName: America/Anguilla
+        gmtOffset: -14400
+        gmtOffsetName: 'UTC-04:00'
+        abbreviation: AST
+        tzName: 'Atlantic Standard Time'
+    emoji: 🇸🇽
+    emojiU: 'U+1F1F8 U+1F1FD'
+    states: {  }
   -
     name: Slovakia
     iso3: SVK
