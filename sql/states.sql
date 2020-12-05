@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 24, 2020 at 02:41 PM
+-- Generation Time: Dec 05, 2020 at 01:25 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -4810,7 +4810,7 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4757, 'Vâlcea County', 181, 'RO', '39', 'VL', '2019-10-05 17:49:00', '2020-05-01 13:11:52', 1, 'Q186838'),
 (4758, 'Vrancea County', 181, 'RO', '40', 'VN', '2019-10-05 17:49:00', '2019-10-05 17:49:00', 1, 'Q182778'),
 (4759, 'Brașov County', 181, 'RO', '09', 'BV', '2019-10-05 17:49:00', '2020-05-01 13:11:52', 1, 'Q182614'),
-(4760, 'Maramureș County', 181, 'RO', '25', 'MM', '2019-10-05 17:49:00', '2020-05-01 13:11:52', 1, 'Q188813'),
+(4760, 'Mureș County', 181, 'RO', '25', 'MM', '2019-10-05 17:49:00', '2020-12-05 13:19:38', 1, 'Q188813'),
 (4761, 'Aiga-i-le-Tai', 191, 'WS', '02', 'AL', '2019-10-05 17:49:00', '2019-10-05 17:49:00', 1, 'Q1144488'),
 (4762, 'Satupa\'itea', 191, 'WS', '09', 'SA', '2019-10-05 17:49:00', '2019-10-05 17:49:00', 1, 'Q651573'),
 (4763, 'A\'ana', 191, 'WS', '01', 'AA', '2019-10-05 17:49:00', '2019-10-05 17:49:00', 1, 'Q1154121'),
@@ -4928,7 +4928,8 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (4878, 'Kosovska Mitrovica District', 248, 'XK', NULL, NULL, '2020-08-15 16:09:53', '2020-08-15 16:11:01', 1, 'Q1046673'),
 (4879, 'Pristina (Priştine)', 248, 'XK', NULL, NULL, '2020-08-15 16:33:03', '2020-08-15 16:33:08', 1, 'Q25270'),
 (4880, 'Autonomous City Of Buenos Aires', 11, 'AR', NULL, 'C', '2020-08-15 16:49:48', '2020-08-15 16:51:39', 1, 'MANUAL'),
-(4881, 'New Providence', 17, 'BS', '23', 'NP', '2020-10-13 15:26:49', '2020-10-13 15:26:49', 1, 'Q858513');
+(4881, 'New Providence', 17, 'BS', '23', 'NP', '2020-10-13 15:26:49', '2020-10-13 15:26:49', 1, 'Q858513'),
+(4882, 'Shumen', 34, 'BG', '54', '27', '2020-12-05 13:23:53', '2020-12-05 13:23:53', 1, 'Q184981');
 
 --
 -- Indexes for dumped tables
@@ -4949,7 +4950,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `states`
 --
 ALTER TABLE `states`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4882;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4883;
 
 --
 -- Constraints for dumped tables
