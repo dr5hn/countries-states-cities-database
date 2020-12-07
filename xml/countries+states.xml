@@ -3225,6 +3225,27 @@
     </states>
   </country_state>
   <country_state>
+    <name>Bonaire, Sint Eustatius and Saba</name>
+    <iso3>BES</iso3>
+    <iso2>BQ</iso2>
+    <phone_code>599</phone_code>
+    <capital>Kralendijk</capital>
+    <currency>USD</currency>
+    <native>Caribisch Nederland</native>
+    <region>Americas</region>
+    <subregion>Caribbean</subregion>
+    <timezones>
+      <zoneName>America/Anguilla</zoneName>
+      <gmtOffset>-14400</gmtOffset>
+      <gmtOffsetName>UTC-04:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Atlantic Standard Time</tzName>
+    </timezones>
+    <emoji>🇧🇶</emoji>
+    <emojiU>U+1F1E7 U+1F1F6</emojiU>
+    <states/>
+  </country_state>
+  <country_state>
     <name>Bosnia and Herzegovina</name>
     <iso3>BIH</iso3>
     <iso2>BA</iso2>
@@ -3383,13 +3404,19 @@
     <name>Bouvet Island</name>
     <iso3>BVT</iso3>
     <iso2>BV</iso2>
-    <phone_code></phone_code>
+    <phone_code>0055</phone_code>
     <capital></capital>
     <currency>NOK</currency>
     <native>Bouvetøya</native>
     <region></region>
     <subregion></subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Europe/Oslo</zoneName>
+      <gmtOffset>3600</gmtOffset>
+      <gmtOffsetName>UTC+01:00</gmtOffsetName>
+      <abbreviation>CET</abbreviation>
+      <tzName>Central European Time</tzName>
+    </timezones>
     <emoji>🇧🇻</emoji>
     <emojiU>U+1F1E7 U+1F1FB</emojiU>
     <states/>
@@ -3808,6 +3835,11 @@
       <id>4713</id>
       <name>Ruse Province</name>
       <state_code>18</state_code>
+    </states>
+    <states>
+      <id>4882</id>
+      <name>Shumen</name>
+      <state_code>27</state_code>
     </states>
     <states>
       <id>4708</id>
@@ -10089,16 +10121,22 @@
     </states>
   </country_state>
   <country_state>
-    <name>Heard and McDonald Islands</name>
+    <name>Heard Island and McDonald Islands</name>
     <iso3>HMD</iso3>
     <iso2>HM</iso2>
-    <phone_code> </phone_code>
+    <phone_code></phone_code>
     <capital></capital>
     <currency>AUD</currency>
     <native>Heard Island and McDonald Islands</native>
     <region></region>
     <subregion></subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Indian/Kerguelen</zoneName>
+      <gmtOffset>18000</gmtOffset>
+      <gmtOffsetName>UTC+05:00</gmtOffsetName>
+      <abbreviation>TFT</abbreviation>
+      <tzName>French Southern and Antarctic Time</tzName>
+    </timezones>
     <emoji>🇭🇲</emoji>
     <emojiU>U+1F1ED U+1F1F2</emojiU>
     <states/>
@@ -13232,7 +13270,13 @@
     <native>Republika e Kosovës</native>
     <region>Europe</region>
     <subregion>Eastern Europe</subregion>
-    <timezones></timezones>
+    <timezones>
+      <zoneName>Europe/Belgrade</zoneName>
+      <gmtOffset>3600</gmtOffset>
+      <gmtOffsetName>UTC+01:00</gmtOffsetName>
+      <abbreviation>CET</abbreviation>
+      <tzName>Central European Time</tzName>
+    </timezones>
     <emoji>🇽🇰</emoji>
     <emojiU>U+1F1FD U+1F1F0</emojiU>
     <states>
@@ -18275,21 +18319,6 @@
     </states>
   </country_state>
   <country_state>
-    <name>Netherlands Antilles</name>
-    <iso3>ANT</iso3>
-    <iso2>AN</iso2>
-    <phone_code></phone_code>
-    <capital></capital>
-    <currency></currency>
-    <native></native>
-    <region></region>
-    <subregion></subregion>
-    <timezones></timezones>
-    <emoji></emoji>
-    <emojiU></emojiU>
-    <states/>
-  </country_state>
-  <country_state>
     <name>Netherlands The</name>
     <iso3>NLD</iso3>
     <iso2>NL</iso2>
@@ -20812,14 +20841,14 @@
       <state_code>IF</state_code>
     </states>
     <states>
-      <id>4760</id>
-      <name>Maramureș County</name>
-      <state_code>MM</state_code>
-    </states>
-    <states>
       <id>4751</id>
       <name>Mehedinți County</name>
       <state_code>MH</state_code>
+    </states>
+    <states>
+      <id>4760</id>
+      <name>Mureș County</name>
+      <state_code>MM</state_code>
     </states>
     <states>
       <id>4731</id>
@@ -22570,6 +22599,27 @@
       <name>South West Community Development Council</name>
       <state_code>05</state_code>
     </states>
+  </country_state>
+  <country_state>
+    <name>Sint Maarten (Dutch part)</name>
+    <iso3>SXM</iso3>
+    <iso2>SX</iso2>
+    <phone_code>1721</phone_code>
+    <capital>Philipsburg</capital>
+    <currency>ANG</currency>
+    <native>Sint Maarten</native>
+    <region>Americas</region>
+    <subregion>Caribbean</subregion>
+    <timezones>
+      <zoneName>America/Anguilla</zoneName>
+      <gmtOffset>-14400</gmtOffset>
+      <gmtOffsetName>UTC-04:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Atlantic Standard Time</tzName>
+    </timezones>
+    <emoji>🇸🇽</emoji>
+    <emojiU>U+1F1F8 U+1F1FD</emojiU>
+    <states/>
   </country_state>
   <country_state>
     <name>Slovakia</name>
