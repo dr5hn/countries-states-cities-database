@@ -32,6 +32,11 @@ $files = array(
         'to' => '/xml/countries+states.xml',
         'singular' => 'country_state',
     ),
+    'countries_cities' => array(
+        'from' => '/countries+cities.json',
+        'to' => '/xml/countries+cities.xml',
+        'singular' => 'country_city',
+    ),
     'countries_states_cities' => array(
         'from' => '/countries+states+cities.json',
         'to' => '/xml/countries+states+cities.xml',
