@@ -32,6 +32,11 @@ $files = array(
         'to' => '/yml/countries+states.yml',
         'singular' => 'country_state',
     ),
+    'countries_cities' => array(
+        'from' => '/countries+cities.json',
+        'to' => '/yml/countries+cities.yml',
+        'singular' => 'country_city',
+    ),
     'countries_states_cities' => array(
         'from' => '/countries+states+cities.json',
         'to' => '/yml/countries+states+cities.yml',

@@ -37,6 +37,7 @@ Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :whit
 States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Country+States | :white_check_mark: | NA | :white_check_mark: | NA | :white_check_mark: | NA
+Country+Cities | :white_check_mark: | NA | :white_check_mark: | NA | :white_check_mark: | NA
 State+Cities | :white_check_mark: | NA | :white_check_mark: | NA | :white_check_mark: | NA
 Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_check_mark: | NA | :white_check_mark: | NA
 
@@ -48,7 +49,7 @@ Total Countries : 250 <br>
 Total States/Regions/Municipalities : 4,874 <br>
 Total Cities/Towns/Districts : 146,156 <br>
 
-Last Updated On : 5th December 2020
+Last Updated On : 22nd December 2020
 
 ## Notes
 ```
