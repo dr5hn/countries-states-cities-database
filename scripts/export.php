@@ -1,17 +1,18 @@
 <?php
 require_once 'vendor/base.php';
 
-$i = 0;
-$j = 0;
-$k = 0;
+$i = 0; // states && states-cities
+$j = 0; // cities
+$k = 0; // countries-states-cities && countries-states
 $l = 0;
-$m = 0;
+$m = 0; // countries
 
 $countriesArray = array();
 $statesArray = array();
 $citiesArray = array();
 $stateCityArray = array();
 $countryStateArray = array();
+$countryCityArray = array();
 $countryStateCityArray = array();
 $stateNamesArray = array();
 $cityNamesArray = array();
@@ -35,6 +36,8 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['region'] = $row['region'];
         $countriesArray[$m]['subregion'] = $row['subregion'];
         $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
+        $countriesArray[$m]['latitude'] = $row['latitude'];
+        $countriesArray[$m]['longitude'] = $row['longitude'];
         $countriesArray[$m]['emoji'] = $row['emoji'];
         $countriesArray[$m]['emojiU'] = $row['emojiU'];
 
@@ -57,8 +60,16 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['region'] = $country['region'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
     $countryStateCityArray[$k]['timezones'] = $country['timezones'];
+    $countryStateCityArray[$k]['latitude'] = $country['latitude'];
+    $countryStateCityArray[$k]['longitude'] = $country['longitude'];
     $countryStateCityArray[$k]['emoji'] = $country['emoji'];
     $countryStateCityArray[$k]['emojiU'] = $country['emojiU'];
+
+    // BREAK:: Sneaking in between to prepare country city array
+    array_push($countryCityArray, $countryStateCityArray[$k]);
+    $countryCityArray[$k]['cities'] = array();
+
+    // CONTINUE:: Filling up CountryStateCity Arry
     $countryStateCityArray[$k]['states'] = array();
 
     // Fetching All States Based on Country
@@ -77,6 +88,8 @@ foreach($countriesArray as $country) {
             $statesArray[$i]['country_id'] = $countryId;
             $statesArray[$i]['country_code'] = $state['country_code'];
             $statesArray[$i]['state_code'] = $state['iso2'];
+            $statesArray[$i]['latitude'] = $state['latitude'];
+            $statesArray[$i]['longitude'] = $state['longitude'];
 
             // For Country State Array
             $stateArr = array(
@@ -87,7 +100,7 @@ foreach($countriesArray as $country) {
 
             array_push($stateNamesArray, $stateArr);
 
-            // Fetching All States Based on Country & State
+            // Fetching All Cities Based on Country & State
             $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
             $cityResult = $conn->query($sql);
 
@@ -127,6 +140,8 @@ foreach($countriesArray as $country) {
             $stateCityArray[$i]['id'] = $stateId;
             $stateCityArray[$i]['name'] = $stateName;
             $stateCityArray[$i]['state_code'] = $state['iso2'];
+            $stateCityArray[$i]['latitude'] = $state['latitude'];
+            $stateCityArray[$i]['longitude'] = $state['longitude'];
             $stateCityArray[$i]['country_id'] = $countryId;
             $stateCityArray[$i]['cities'] = $cityNamesArray;
 
@@ -145,9 +160,30 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['region'] = $country['region'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
     $countryStateArray[$k]['timezones'] = $country['timezones'];
+    $countryStateArray[$k]['latitude'] = $country['latitude'];
+    $countryStateArray[$k]['longitude'] = $country['longitude'];
     $countryStateArray[$k]['emoji'] = $country['emoji'];
     $countryStateArray[$k]['emojiU'] = $country['emojiU'];
     $countryStateArray[$k]['states'] = $stateNamesArray;
+
+    // Fetching All Cities Based on Country
+    $sql = "SELECT id, name, latitude, longitude FROM cities WHERE country_id=$countryId ORDER BY NAME";
+    $citiesResult = $conn->query($sql);
+
+    $citiesNamesArray = array();
+    if ($citiesResult->num_rows > 0) {
+        while($city = $citiesResult->fetch_assoc()) {
+            // For State City Array
+            array_push($citiesNamesArray, array(
+                'id' => (int)$city['id'],
+                'name' => $city['name'],
+                'latitude' => $city['latitude'],
+                'longitude' => $city['longitude']
+            ));
+        }
+    }
+
+    $countryCityArray[$k]['cities'] = $citiesNamesArray;
 
     $k++;
 
@@ -159,36 +195,43 @@ echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
 
 // print_r($countriesArray);
 $exportTo = $rootDir . '/countries.json';
-$fp = fopen($rootDir . '/countries.json', 'w'); // Putting Array to JSON
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countriesArray,  JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($statesArray);
 $exportTo = $rootDir . '/states.json';
-$fp = fopen($rootDir . '/states.json', 'w'); // Putting Array to JSON
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($statesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($citiesArray);
 $exportTo = $rootDir . '/cities.json';
-$fp = fopen($rootDir . '/cities.json', 'w'); // Putting Array to JSON
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($citiesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($stateCityArray);
 $exportTo = $rootDir . '/states+cities.json';
-$fp = fopen($rootDir . '/states+cities.json', 'w'); // Putting Array to JSON
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($stateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
 // print_r($countryStateArray);
 $exportTo = $rootDir . '/countries+states.json';
-$fp = fopen($rootDir . '/countries+states.json', 'w'); // Putting Array to JSON
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countryStateArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
+fclose($fp);
+
+// print_r($countryCityArray);
+$exportTo = $rootDir . '/countries+cities.json';
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
+fwrite($fp, json_encode($countryCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
