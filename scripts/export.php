@@ -58,7 +58,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateCityArray[$k]['capital'] = $country['capital'];
     $countryStateCityArray[$k]['currency'] = $country['currency'];
-    $countryStateCityArray[$k]['currency_symbol'] = $row['currency_symbol'];
+    $countryStateCityArray[$k]['currency_symbol'] = $country['currency_symbol'];
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
