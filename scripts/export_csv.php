@@ -27,15 +27,24 @@ foreach ($files as $root => $v) :
 
     $fp = fopen($rootDir . $v['to'], 'w'); // Putting Array to XML
 
+    // Set headings
+    $headings = $csc[0];
+    unset($headings['timezones']);
+    fputcsv($fp, array_keys($headings));
+
     // Loop through the associative array.
-    fputcsv($fp, array_keys($csc[0]));
     foreach ($csc as $row) :
-        // Write the row to the CSV file.
+        // Update timezones to make readable
         if(is_array($row['timezones'])) {
             $row['timezones'] = json_encode($row['timezones']);
             $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
             $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
         }
+
+        // No translations please.
+        unset($row['translations']);
+
+        // Write the row to the CSV file.
         fputcsv($fp, $row);
     endforeach;
 
