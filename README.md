@@ -6,15 +6,6 @@
 
 Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
-
-## 🔍 Actively Looking for Remote Job Opportunity  (Full Stack Developer with 6+ years exp.)
-- Preferred Remote location (America or Europe). 
-- Ready to work in 75% sync with Remote timezone.
-- **Technologies** -- (Proficient): PHP, NodeJS, AngularJS (Familiar): ReactJS, Python, Dart, Android
-- **Database** -- (Proficient): MySQL, MongoDB, Redis (Familiar): PostgreSQL
-- [My Resume](https://github.com/dr5hn/resume)
-- [Projects](https://github.com/dr5hn/resume/blob/main/projects.md)
-
 ## API 🚀
 🎉 Introducing **API** for Countries States Cities Database.
 
@@ -46,10 +37,10 @@ https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
 Total Countries : 250 <br>
-Total States/Regions/Municipalities : 4,874 <br>
-Total Cities/Towns/Districts : 146,156 <br>
+Total States/Regions/Municipalities : 4,892 <br>
+Total Cities/Towns/Districts : 146,157 <br>
 
-Last Updated On : 22nd December 2020
+Last Updated On : 23rd January 2021
 
 ## Notes
 ```
