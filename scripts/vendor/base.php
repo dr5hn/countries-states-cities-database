@@ -10,13 +10,13 @@ require_once __DIR__.'/vendor/autoload.php';
 header('Content-type: text/plain');
 
 $NUMBER_OF_SECONDS = 1;
-$API_KEY = '5fd075d43amshebc391ff2da4e29p1d5717jsn54d564ec97fa'; // Your RapidApi GeoDBCities Api Key
+$API_KEY = ''; // Your RapidApi GeoDBCities Api Key
 
 $servername = "127.0.0.1";
 $username = "root";
 $password = "root";
 $dbname = "world";
-$port = 8889;
+$port = 3306;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
