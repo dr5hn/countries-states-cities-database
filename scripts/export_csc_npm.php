@@ -21,6 +21,10 @@ if ($result->num_rows > 0) {
         $countriesArray[$i]['name'] = $row['name'];
         $countriesArray[$i]['phonecode'] = $row['phonecode'];
         $countriesArray[$i]['flag'] = $row['emoji'];
+        $countriesArray[$i]['currency'] = $row['currency'];
+        $countriesArray[$i]['latitude'] = $row['latitude'];
+        $countriesArray[$i]['longitude'] = $row['longitude'];
+        $countriesArray[$i]['timezones'] = json_decode($row['timezones'], true);
 
         $i++;
     }
@@ -35,6 +39,8 @@ if ($result->num_rows > 0) {
         $statesArray[$j]['name'] = $row['name'];
         $statesArray[$j]['isoCode'] = $row['iso2'];
         $statesArray[$j]['countryCode'] = $row['country_code'];
+        $statesArray[$j]['latitude'] = $row['latitude'];
+        $statesArray[$j]['longitude'] = $row['longitude'];
 
         $j++;
     }
@@ -49,6 +55,8 @@ if ($result->num_rows > 0) {
         $citiesArray[$k]['name'] = $row['name'];
         $citiesArray[$k]['countryCode'] = $row['country_code'];
         $citiesArray[$k]['stateCode'] = $row['state_code'];
+        $citiesArray[$k]['latitude'] = $row['latitude'];
+        $citiesArray[$k]['longitude'] = $row['longitude'];
 
         $k++;
     }
