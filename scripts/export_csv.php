@@ -29,7 +29,9 @@ foreach ($files as $root => $v) :
 
     // Set headings
     $headings = $csc[0];
-    unset($headings['timezones']);
+
+    // No translations please.
+    unset($headings['translations']);
     fputcsv($fp, array_keys($headings));
 
     // Loop through the associative array.
