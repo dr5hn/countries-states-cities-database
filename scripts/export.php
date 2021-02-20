@@ -33,6 +33,7 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['capital'] = $row['capital'];
         $countriesArray[$m]['currency'] = $row['currency'];
         $countriesArray[$m]['currency_symbol'] = $row['currency_symbol'];
+        $countriesArray[$m]['tld'] = $row['tld'];
         $countriesArray[$m]['native'] = $row['native'];
         $countriesArray[$m]['region'] = $row['region'];
         $countriesArray[$m]['subregion'] = $row['subregion'];
@@ -59,6 +60,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['capital'] = $country['capital'];
     $countryStateCityArray[$k]['currency'] = $country['currency'];
     $countryStateCityArray[$k]['currency_symbol'] = $country['currency_symbol'];
+    $countryStateCityArray[$k]['tld'] = $country['tld'];
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
@@ -161,6 +163,7 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['capital'] = $country['capital'];
     $countryStateArray[$k]['currency'] = $country['currency'];
     $countryStateArray[$k]['currency_symbol'] = $country['currency_symbol'];
+    $countryStateArray[$k]['tld'] = $country['tld'];
     $countryStateArray[$k]['native'] = $country['native'];
     $countryStateArray[$k]['region'] = $country['region'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
