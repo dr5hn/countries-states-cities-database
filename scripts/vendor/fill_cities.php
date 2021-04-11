@@ -1,8 +1,8 @@
 <?php
 require_once 'base.php';
 
-$country_code = 'PH';
-$region_code = 'ABR';
+$country_code = 'DZ';
+$region_code = '22';
 
 $file_name = $country_code.'_'.$region_code.'.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);

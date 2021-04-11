@@ -12,12 +12,12 @@ $limit = $offset + 9; // 9801 + 9 = 9810
 fclose($f);
 
 
-$countryWiki = 'PH';
-$stateFips = 'ABR';
+$countryWiki = 'DZ';
+$stateFips = '22';
 
 $file_name = "data/".$countryWiki.'_'.$stateFips.'.json';
 
-for ($i=0; $i<36; $i++): // 575 / 10
+for ($i=0; $i<5; $i++): // 575 / 10
     $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,
