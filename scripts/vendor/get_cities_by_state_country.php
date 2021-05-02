@@ -11,14 +11,16 @@ $offset = 1; // For Manual Fetch
 $limit = $offset + 9; // 9801 + 9 = 9810
 fclose($f);
 
+// RO-MM - 244
+// RO-MS - 599
 
-$countryWiki = 'DZ';
-$stateFips = '22';
+$countryWiki = 'RO';
+$stateFips = 'MM';
 
 $file_name = "data/".$countryWiki.'_'.$stateFips.'.json';
 
-for ($i=0; $i<5; $i++): // 575 / 10
-    $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10";
+for ($i=0; $i<25; $i++): // 601 / 10
+    $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10&types=CITY";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,
         array(

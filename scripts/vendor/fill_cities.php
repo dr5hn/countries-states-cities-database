@@ -1,8 +1,8 @@
 <?php
 require_once 'base.php';
 
-$country_code = 'DZ';
-$region_code = '22';
+$country_code = 'RO';
+$region_code = 'MM';
 
 $file_name = $country_code.'_'.$region_code.'.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
@@ -38,15 +38,17 @@ if (!empty($citiesArray)) :
 
                 if ($result->num_rows > 0) { // If Found Update It
                     while($row = $result->fetch_assoc()) {
-                        if ($row['name'] != $city_name) {
+                        if (strlen($row['name']) == strlen($city_name)) {
+                            echo 'No Difference..'.PHP_EOL;
+                        } else if (ord($row['name']) != ord($city_name)) {
                             echo 'Found difference in name '.$city['name'].' -- '.$row['name'].PHP_EOL;
                             echo 'Updating...'.PHP_EOL;
-                            $sql = "UPDATE cities SET name='".$city_name."' WHERE id=".$row['id'];
-                            if ($conn->query($sql) === TRUE) {
-                                echo "Record updated successfully".PHP_EOL;
-                            } else {
-                                echo "Error updating record: ".$sql." ".$conn->error.PHP_EOL;
-                            }
+                            // $sql = "UPDATE cities SET name='".$city_name."' WHERE id=".$row['id'];
+                            // if ($conn->query($sql) === TRUE) {
+                            //     echo "Record updated successfully".PHP_EOL;
+                            // } else {
+                            //     echo "Error updating record: ".$sql." ".$conn->error.PHP_EOL;
+                            // }
                         } else {
                             echo 'No Difference..'.PHP_EOL;
                         }
@@ -57,13 +59,13 @@ if (!empty($citiesArray)) :
                     $name = mysqli_real_escape_string($conn, $name);
 
                     if ($wikiDataId) {
-                        $sql = "INSERT INTO cities (name, state_id, state_code, country_id, country_code, latitude, longitude, created_at, wikiDataId) VALUES ('$name', '$region_id', '$region_code', '$country_id', '$country_code', '$latitude', '$longitude', NOW(), '$wikiDataId')";
+                        // $sql = "INSERT INTO cities (name, state_id, state_code, country_id, country_code, latitude, longitude, created_at, wikiDataId) VALUES ('$name', '$region_id', '$region_code', '$country_id', '$country_code', '$latitude', '$longitude', NOW(), '$wikiDataId')";
                     
-                        if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully".PHP_EOL;
-                        } else {
-                            echo "Error: " . $sql ." ". $conn->error.PHP_EOL;
-                        }
+                        // if ($conn->query($sql) === TRUE) {
+                        //     echo "New record created successfully".PHP_EOL;
+                        // } else {
+                        //     echo "Error: " . $sql ." ". $conn->error.PHP_EOL;
+                        // }
                     } else {
                         echo 'No WikiData ID Found...'.PHP_EOL;
                     }
