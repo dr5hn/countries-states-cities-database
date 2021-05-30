@@ -12920,19 +12920,11 @@ state:
     latitude: '21.27865670'
     longitude: '81.86614420'
   -
-    id: 4032
-    name: 'Dadra and Nagar Haveli'
-    country_id: 101
-    country_code: IN
-    state_code: DN
-    latitude: '20.32287780'
-    longitude: '72.96672540'
-  -
     id: 4033
-    name: 'Daman and Diu'
+    name: 'Dadra and Nagar Haveli and Daman and Diu'
     country_id: 101
     country_code: IN
-    state_code: DD
+    state_code: DH
     latitude: '20.39737360'
     longitude: '72.83279910'
   -
@@ -13468,7 +13460,7 @@ state:
     name: 'Alborz Province'
     country_id: 103
     country_code: IR
-    state_code: '32'
+    state_code: '30'
     latitude: '35.99604670'
     longitude: '50.92892460'
   -
@@ -13476,7 +13468,7 @@ state:
     name: 'Ardabil Province'
     country_id: 103
     country_code: IR
-    state_code: '03'
+    state_code: '24'
     latitude: '38.48532760'
     longitude: '47.89112090'
   -
@@ -13484,7 +13476,7 @@ state:
     name: 'Bushehr Province'
     country_id: 103
     country_code: IR
-    state_code: '06'
+    state_code: '18'
     latitude: '28.76207390'
     longitude: '51.51500770'
   -
@@ -13492,7 +13484,7 @@ state:
     name: 'Chaharmahal and Bakhtiari Province'
     country_id: 103
     country_code: IR
-    state_code: '08'
+    state_code: '14'
     latitude: '31.99704190'
     longitude: '50.66138490'
   -
@@ -13500,7 +13492,7 @@ state:
     name: 'East Azerbaijan Province'
     country_id: 103
     country_code: IR
-    state_code: '01'
+    state_code: '03'
     latitude: '37.90357330'
     longitude: '46.26821090'
   -
@@ -13508,7 +13500,7 @@ state:
     name: 'Fars Province'
     country_id: 103
     country_code: IR
-    state_code: '14'
+    state_code: '07'
     latitude: '29.10438130'
     longitude: '53.04589300'
   -
@@ -13516,7 +13508,7 @@ state:
     name: 'Gilan Province'
     country_id: 103
     country_code: IR
-    state_code: '19'
+    state_code: '01'
     latitude: '37.28094550'
     longitude: '49.59241340'
   -
@@ -13528,11 +13520,19 @@ state:
     latitude: '37.28981230'
     longitude: '55.13758340'
   -
+    id: 4920
+    name: 'Hamadan Province'
+    country_id: 103
+    country_code: IR
+    state_code: '13'
+    latitude: '34.91936070'
+    longitude: '47.48329250'
+  -
     id: 3937
     name: 'Hormozgan Province'
     country_id: 103
     country_code: IR
-    state_code: '23'
+    state_code: '22'
     latitude: '27.13872300'
     longitude: '55.13758340'
   -
@@ -13540,7 +13540,7 @@ state:
     name: 'Ilam Province'
     country_id: 103
     country_code: IR
-    state_code: '05'
+    state_code: '16'
     latitude: '33.29576180'
     longitude: '46.67053400'
   -
@@ -13548,7 +13548,7 @@ state:
     name: 'Isfahan Province'
     country_id: 103
     country_code: IR
-    state_code: '04'
+    state_code: '10'
     latitude: '33.27710730'
     longitude: '52.36133780'
   -
@@ -13556,7 +13556,7 @@ state:
     name: 'Kerman Province'
     country_id: 103
     country_code: IR
-    state_code: '15'
+    state_code: '08'
     latitude: '29.48500890'
     longitude: '57.64390480'
   -
@@ -13564,7 +13564,7 @@ state:
     name: 'Kermanshah Province'
     country_id: 103
     country_code: IR
-    state_code: '17'
+    state_code: '05'
     latitude: '34.45762330'
     longitude: '46.67053400'
   -
@@ -13572,7 +13572,7 @@ state:
     name: 'Khuzestan Province'
     country_id: 103
     country_code: IR
-    state_code: '10'
+    state_code: '06'
     latitude: '31.43601490'
     longitude: '49.04131200'
   -
@@ -13580,7 +13580,7 @@ state:
     name: 'Kohgiluyeh and Boyer-Ahmad Province'
     country_id: 103
     country_code: IR
-    state_code: '18'
+    state_code: '17'
     latitude: '30.72458600'
     longitude: '50.84563230'
   -
@@ -13588,7 +13588,7 @@ state:
     name: 'Kurdistan Province'
     country_id: 103
     country_code: IR
-    state_code: '16'
+    state_code: '12'
     latitude: '35.95535790'
     longitude: '47.13621250'
   -
@@ -13596,7 +13596,7 @@ state:
     name: 'Lorestan Province'
     country_id: 103
     country_code: IR
-    state_code: '20'
+    state_code: '15'
     latitude: '33.58183940'
     longitude: '48.39881860'
   -
@@ -13604,7 +13604,7 @@ state:
     name: 'Markazi Province'
     country_id: 103
     country_code: IR
-    state_code: '22'
+    state_code: '00'
     latitude: '34.61230500'
     longitude: '49.85472660'
   -
@@ -13612,7 +13612,7 @@ state:
     name: 'Mazandaran Province'
     country_id: 103
     country_code: IR
-    state_code: '21'
+    state_code: '02'
     latitude: '36.22623930'
     longitude: '52.53186040'
   -
@@ -13620,7 +13620,7 @@ state:
     name: 'North Khorasan Province'
     country_id: 103
     country_code: IR
-    state_code: '31'
+    state_code: '28'
     latitude: '37.47103530'
     longitude: '57.10131880'
   -
@@ -13628,7 +13628,7 @@ state:
     name: 'Qazvin Province'
     country_id: 103
     country_code: IR
-    state_code: '28'
+    state_code: '26'
     latitude: '36.08813170'
     longitude: '49.85472660'
   -
@@ -13636,7 +13636,7 @@ state:
     name: 'Qom Province'
     country_id: 103
     country_code: IR
-    state_code: '26'
+    state_code: '25'
     latitude: '34.64157640'
     longitude: '50.87460350'
   -
@@ -13644,7 +13644,7 @@ state:
     name: 'Razavi Khorasan Province'
     country_id: 103
     country_code: IR
-    state_code: '30'
+    state_code: '09'
     latitude: '35.10202530'
     longitude: '59.10417580'
   -
@@ -13652,7 +13652,7 @@ state:
     name: 'Semnan Province'
     country_id: 103
     country_code: IR
-    state_code: '12'
+    state_code: '20'
     latitude: '35.22555850'
     longitude: '54.43421380'
   -
@@ -13660,7 +13660,7 @@ state:
     name: 'Sistan and Baluchestan'
     country_id: 103
     country_code: IR
-    state_code: '13'
+    state_code: '11'
     latitude: '27.52999060'
     longitude: '60.58206760'
   -
@@ -13676,7 +13676,7 @@ state:
     name: 'Tehran Province'
     country_id: 103
     country_code: IR
-    state_code: '07'
+    state_code: '23'
     latitude: '35.72484160'
     longitude: '51.38165300'
   -
@@ -13684,7 +13684,7 @@ state:
     name: 'West Azarbaijan Province'
     country_id: 103
     country_code: IR
-    state_code: '02'
+    state_code: '04'
     latitude: '37.45500620'
     longitude: '45.00000000'
   -
@@ -13692,7 +13692,7 @@ state:
     name: 'Yazd Province'
     country_id: 103
     country_code: IR
-    state_code: '25'
+    state_code: '21'
     latitude: '32.10063870'
     longitude: '54.43421380'
   -
@@ -13700,7 +13700,7 @@ state:
     name: 'Zanjan Province'
     country_id: 103
     country_code: IR
-    state_code: '11'
+    state_code: '19'
     latitude: '36.50181850'
     longitude: '48.39881860'
   -
@@ -21776,6 +21776,30 @@ state:
     latitude: '47.23057670'
     longitude: '27.78926610'
   -
+    id: 4917
+    name: 'La Colle'
+    country_id: 145
+    country_code: MC
+    state_code: CL
+    latitude: '43.73274650'
+    longitude: '7.41372760'
+  -
+    id: 4918
+    name: 'La Condamine'
+    country_id: 145
+    country_code: MC
+    state_code: CO
+    latitude: '43.73506650'
+    longitude: '7.41990600'
+  -
+    id: 4919
+    name: Moneghetti
+    country_id: 145
+    country_code: MC
+    state_code: MG
+    latitude: '43.73649270'
+    longitude: '7.41533830'
+  -
     id: 1973
     name: 'Arkhangai Province'
     country_id: 146
@@ -27079,6 +27103,14 @@ state:
     state_code: VLA
     latitude: '56.15534650'
     longitude: '40.59266850'
+  -
+    id: 4916
+    name: 'Volgograd Oblast'
+    country_id: 182
+    country_code: RU
+    state_code: VGG
+    latitude: '49.25873930'
+    longitude: '39.81544630'
   -
     id: 1874
     name: 'Vologda Oblast'
