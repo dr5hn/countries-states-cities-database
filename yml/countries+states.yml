@@ -10574,13 +10574,9 @@ country_state:
         name: Chhattisgarh
         state_code: CT
       -
-        id: 4032
-        name: 'Dadra and Nagar Haveli'
-        state_code: DN
-      -
         id: 4033
-        name: 'Daman and Diu'
-        state_code: DD
+        name: 'Dadra and Nagar Haveli and Daman and Diu'
+        state_code: DH
       -
         id: 4021
         name: Delhi
@@ -10935,103 +10931,107 @@ country_state:
       -
         id: 3929
         name: 'Alborz Province'
-        state_code: '32'
+        state_code: '30'
       -
         id: 3934
         name: 'Ardabil Province'
-        state_code: '03'
+        state_code: '24'
       -
         id: 3932
         name: 'Bushehr Province'
-        state_code: '06'
+        state_code: '18'
       -
         id: 3921
         name: 'Chaharmahal and Bakhtiari Province'
-        state_code: '08'
+        state_code: '14'
       -
         id: 3944
         name: 'East Azerbaijan Province'
-        state_code: '01'
+        state_code: '03'
       -
         id: 3939
         name: 'Fars Province'
-        state_code: '14'
+        state_code: '07'
       -
         id: 3920
         name: 'Gilan Province'
-        state_code: '19'
+        state_code: '01'
       -
         id: 3933
         name: 'Golestan Province'
         state_code: '27'
       -
+        id: 4920
+        name: 'Hamadan Province'
+        state_code: '13'
+      -
         id: 3937
         name: 'Hormozgan Province'
-        state_code: '23'
+        state_code: '22'
       -
         id: 3918
         name: 'Ilam Province'
-        state_code: '05'
+        state_code: '16'
       -
         id: 3923
         name: 'Isfahan Province'
-        state_code: '04'
+        state_code: '10'
       -
         id: 3943
         name: 'Kerman Province'
-        state_code: '15'
+        state_code: '08'
       -
         id: 3919
         name: 'Kermanshah Province'
-        state_code: '17'
+        state_code: '05'
       -
         id: 3917
         name: 'Khuzestan Province'
-        state_code: '10'
+        state_code: '06'
       -
         id: 3926
         name: 'Kohgiluyeh and Boyer-Ahmad Province'
-        state_code: '18'
+        state_code: '17'
       -
         id: 3935
         name: 'Kurdistan Province'
-        state_code: '16'
+        state_code: '12'
       -
         id: 3928
         name: 'Lorestan Province'
-        state_code: '20'
+        state_code: '15'
       -
         id: 3916
         name: 'Markazi Province'
-        state_code: '22'
+        state_code: '00'
       -
         id: 3938
         name: 'Mazandaran Province'
-        state_code: '21'
+        state_code: '02'
       -
         id: 3942
         name: 'North Khorasan Province'
-        state_code: '31'
+        state_code: '28'
       -
         id: 3941
         name: 'Qazvin Province'
-        state_code: '28'
+        state_code: '26'
       -
         id: 3922
         name: 'Qom Province'
-        state_code: '26'
+        state_code: '25'
       -
         id: 3927
         name: 'Razavi Khorasan Province'
-        state_code: '30'
+        state_code: '09'
       -
         id: 3940
         name: 'Semnan Province'
-        state_code: '12'
+        state_code: '20'
       -
         id: 3931
         name: 'Sistan and Baluchestan'
-        state_code: '13'
+        state_code: '11'
       -
         id: 3930
         name: 'South Khorasan Province'
@@ -11039,19 +11039,19 @@ country_state:
       -
         id: 3945
         name: 'Tehran Province'
-        state_code: '07'
+        state_code: '23'
       -
         id: 3924
         name: 'West Azarbaijan Province'
-        state_code: '02'
+        state_code: '04'
       -
         id: 3936
         name: 'Yazd Province'
-        state_code: '25'
+        state_code: '21'
       -
         id: 3925
         name: 'Zanjan Province'
-        state_code: '11'
+        state_code: '19'
   -
     name: Iraq
     iso3: IRQ
@@ -16714,7 +16714,19 @@ country_state:
     longitude: '7.40000000'
     emoji: 🇲🇨
     emojiU: 'U+1F1F2 U+1F1E8'
-    states: {  }
+    states:
+      -
+        id: 4917
+        name: 'La Colle'
+        state_code: CL
+      -
+        id: 4918
+        name: 'La Condamine'
+        state_code: CO
+      -
+        id: 4919
+        name: Moneghetti
+        state_code: MG
   -
     name: Mongolia
     iso3: MNG
@@ -20820,6 +20832,10 @@ country_state:
         name: 'Vladimir Oblast'
         state_code: VLA
       -
+        id: 4916
+        name: 'Volgograd Oblast'
+        state_code: VGG
+      -
         id: 1874
         name: 'Vologda Oblast'
         state_code: VLG
@@ -24065,7 +24081,7 @@ country_state:
     iso3: CHE
     iso2: CH
     phone_code: '41'
-    capital: Berne
+    capital: Bern
     currency: CHF
     currency_symbol: CHf
     tld: .ch
