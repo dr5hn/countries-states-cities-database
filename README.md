@@ -13,7 +13,7 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 
 [![banner](.github/api.png)](https://countrystatecity.in/)
 
-## Formats Available
+## Available Formats
 - JSON
 - SQL
 - XML
@@ -42,24 +42,24 @@ Total Cities/Towns/Districts : 147,783 <br>
 
 Last Updated On : 6th June 2021
 
-## Notes
-```
-This Free database does not guarantee for the complete list of world
-countries, states & cities.
-You can manually change the spelling mistakes, duplicates
-or add/edit any records, which are incorrect.
-
-Reason behind making this repo: I ran through many websites to get
-perfect combination of state, city & countries.
-Some were with missing states while others with large filesize.
-So I thought to get it done on my own using PHP Script.
-```
+## License
+This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
 
 ## Contributions
 [Contibution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md)
 
 ## Follow me at
 <a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" /></a> <a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" /></a> <a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" /></a>
+
+## 🙋‍♂️ Support My Work
+<p>
+  <a href="https://www.paypal.me/dr5hn" target="_blank">
+      <img height="50" alt="Support with Paypal" src="https://raw.githubusercontent.com/dr5hn/dr5hn/main/.github/resources/support-paypal.png"/>
+  </a>
+  <a href="https://ko-fi.com/dr5hn" target="_blank">
+      <img height="50" alt="Buy me a coffee" src="https://raw.githubusercontent.com/dr5hn/dr5hn/main/.github/resources/support-buy-coffee.png"/>
+  </a>
+</p>
 
 ## Suggestions / Feedbacks
 ```
