@@ -61,6 +61,9 @@ This **Countries States Cities Database** is made available under the [Open Data
   </a>
 </p>
 
+[![become-a-backer](https://opencollective.com/countries-states-cities/backers.svg?width=890)](https://opencollective.com/countries-states-cities#backers)
+
+
 ## Suggestions / Feedbacks
 ```
 Suggestions & Feedbacks are Most Welcome
