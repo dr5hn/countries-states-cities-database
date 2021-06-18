@@ -3,6 +3,7 @@
 # 🌍 Countries States Cities Database
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
+[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=for-the-badge)](https://plant.treeware.earth/dr5hn/countries-states-cities-database)
 
 Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
@@ -43,10 +44,14 @@ Total Cities/Towns/Districts : 147,783 <br>
 Last Updated On : 6th June 2021
 
 ## License
-This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
+* This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
+* This package is [Treeware](https://treeware.earth). If you use it in production, then we ask that you [**buy the world a tree**](https://plant.treeware.earth/dr5hn/countries-states-cities-database) to thank us for our work. By contributing to the Treeware forest you’ll be creating employment for local families and restoring wildlife habitats.
 
 ## Contributions
 [Contibution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md)
+
+## Licence            
+
 
 ## Follow me at
 <a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" /></a> <a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" /></a> <a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" /></a>
