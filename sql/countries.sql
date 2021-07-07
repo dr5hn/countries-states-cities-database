@@ -46,7 +46,7 @@ CREATE TABLE `countries` (
   `latitude` decimal(10,8) DEFAULT NULL,
   `longitude` decimal(11,8) DEFAULT NULL,
   `emoji` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `emojiU` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,                                                                              ``
+  `emojiU` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
