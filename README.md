@@ -3,7 +3,6 @@
 # 🌍 Countries States Cities Database
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
-[![Buy us a tree](https://img.shields.io/badge/Treeware-%F0%9F%8C%B3-lightgreen?style=for-the-badge)](https://plant.treeware.earth/dr5hn/countries-states-cities-database)
 
 Full Database of city state country available in JSON, SQL, XML, PLIST, YAML & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
