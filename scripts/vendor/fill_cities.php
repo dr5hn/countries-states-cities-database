@@ -1,8 +1,8 @@
 <?php
 require_once 'base.php';
 
-$country_code = 'RO';
-$region_code = 'MM';
+$country_code = 'CL';
+$region_code = 'RM';
 
 $file_name = $country_code.'_'.$region_code.'.json';
 $citiesJson = file_get_contents("data/cities/".$file_name);
@@ -27,23 +27,23 @@ if (!empty($citiesArray)) :
                 echo 'Checking For : '.$city_name.PHP_EOL;
                 echo 'Checking For : '.$city['wikiDataId'].PHP_EOL;
                 $city_name = mysqli_real_escape_string($conn, $city_name);
-                
-                $sql = "SELECT id, name FROM cities WHERE state_id=".$region_id." AND country_id=".$country_id." AND name='".$city_name."';";
-                if ($wikiDataId) {
-                    $sql = "SELECT id, name FROM cities WHERE state_id=".$region_id." AND country_id=".$country_id." AND wikiDataId='".$wikiDataId."';";
-                }
-            
+
+                $sql = "SELECT id, name, wikiDataId FROM cities WHERE state_id=".$region_id." AND country_id=".$country_id." AND name='".$city_name."';";
+                // if ($wikiDataId) {
+                //     $sql = "SELECT id, name FROM cities WHERE state_id=".$region_id." AND country_id=".$country_id." AND wikiDataId='".$wikiDataId."';";
+                // }
+
                 echo $sql.PHP_EOL;
                 $result = $conn->query($sql) or die($conn->error);
 
                 if ($result->num_rows > 0) { // If Found Update It
                     while($row = $result->fetch_assoc()) {
-                        if (strlen($row['name']) == strlen($city_name)) {
-                            echo 'No Difference..'.PHP_EOL;
+                        if (strlen($row['name']) == strlen($city_name) && $row['name'] == $city['name']) {
+                            echo 'Name - No Difference..'.PHP_EOL;
                         } else if (ord($row['name']) != ord($city_name)) {
-                            echo 'Found difference in name '.$city['name'].' -- '.$row['name'].PHP_EOL;
-                            echo 'Updating...'.PHP_EOL;
-                            // $sql = "UPDATE cities SET name='".$city_name."' WHERE id=".$row['id'];
+                            echo 'Found difference in name (new)'.$city['name'].' -- (old)'.$row['name'].PHP_EOL;
+                            // echo 'Fixing Name...'.PHP_EOL;
+                            // $sql = "UPDATE cities SET name='".$city['name']."' WHERE id=".$row['id'];
                             // if ($conn->query($sql) === TRUE) {
                             //     echo "Record updated successfully".PHP_EOL;
                             // } else {
@@ -51,6 +51,18 @@ if (!empty($citiesArray)) :
                             // }
                         } else {
                             echo 'No Difference..'.PHP_EOL;
+                        }
+
+                        // Fix Duplicate Wiki Data ID Issue
+                        if ($row['wikiDataId'] != $wikiDataId) {
+                            echo 'Found difference in WikiDataId (new)'.$city['wikiDataId'].' -- (old)'.$row['wikiDataId'].PHP_EOL;
+                            // echo 'Fixing WikiDataId...'.PHP_EOL;
+                            // $sql = "UPDATE cities SET wikiDataId='".$city['wikiDataId']."' WHERE id=".$row['id'];
+                            // if ($conn->query($sql) === TRUE) {
+                            //     echo "Record updated successfully".PHP_EOL;
+                            // } else {
+                            //     echo "Error updating record: ".$sql." ".$conn->error.PHP_EOL;
+                            // }
                         }
                     }
                 } else { // Else Insert it
@@ -60,7 +72,7 @@ if (!empty($citiesArray)) :
 
                     if ($wikiDataId) {
                         // $sql = "INSERT INTO cities (name, state_id, state_code, country_id, country_code, latitude, longitude, created_at, wikiDataId) VALUES ('$name', '$region_id', '$region_code', '$country_id', '$country_code', '$latitude', '$longitude', NOW(), '$wikiDataId')";
-                    
+
                         // if ($conn->query($sql) === TRUE) {
                         //     echo "New record created successfully".PHP_EOL;
                         // } else {
