@@ -294,7 +294,7 @@
 		<key>capital</key>
 		<string></string>
 		<key>currency</key>
-		<string></string>
+		<string>AAD</string>
 		<key>currency_symbol</key>
 		<string>$</string>
 		<key>emoji</key>
@@ -316,7 +316,7 @@
 		<key>native</key>
 		<string>Antarctica</string>
 		<key>phone_code</key>
-		<string></string>
+		<string>672</string>
 		<key>region</key>
 		<string>Polar</string>
 		<key>subregion</key>
@@ -1968,7 +1968,7 @@
 		<key>longitude</key>
 		<string>15.50000000</string>
 		<key>name</key>
-		<string>Croatia (Hrvatska)</string>
+		<string>Croatia</string>
 		<key>native</key>
 		<string>Hrvatska</string>
 		<key>phone_code</key>
@@ -2872,7 +2872,7 @@
 		<key>native</key>
 		<string>Territoire des Terres australes et antarctiques fr</string>
 		<key>phone_code</key>
-		<string></string>
+		<string>262</string>
 		<key>region</key>
 		<string>Africa</string>
 		<key>subregion</key>
@@ -3520,7 +3520,7 @@
 		<key>native</key>
 		<string>Heard Island and McDonald Islands</string>
 		<key>phone_code</key>
-		<string></string>
+		<string>672</string>
 		<key>region</key>
 		<string></string>
 		<key>subregion</key>
@@ -4177,78 +4177,6 @@
 		<string>[{zoneName:'Pacific\/Enderbury',gmtOffset:46800,gmtOffsetName:'UTC+13:00',abbreviation:'PHOT',tzName:'Phoenix Island Time'},{zoneName:'Pacific\/Kiritimati',gmtOffset:50400,gmtOffsetName:'UTC+14:00',abbreviation:'LINT',tzName:'Line Islands Time'},{zoneName:'Pacific\/Tarawa',gmtOffset:43200,gmtOffsetName:'UTC+12:00',abbreviation:'GILT',tzName:'Gilbert Island Time'}]</string>
 		<key>tld</key>
 		<string>.ki</string>
-	</dict>
-	<dict>
-		<key>capital</key>
-		<string>Pyongyang</string>
-		<key>currency</key>
-		<string>KPW</string>
-		<key>currency_symbol</key>
-		<string>₩</string>
-		<key>emoji</key>
-		<string>🇰🇵</string>
-		<key>emojiU</key>
-		<string>U+1F1F0 U+1F1F5</string>
-		<key>id</key>
-		<string>115</string>
-		<key>iso2</key>
-		<string>KP</string>
-		<key>iso3</key>
-		<string>PRK</string>
-		<key>latitude</key>
-		<string>40.00000000</string>
-		<key>longitude</key>
-		<string>127.00000000</string>
-		<key>name</key>
-		<string>Korea North</string>
-		<key>native</key>
-		<string>북한</string>
-		<key>phone_code</key>
-		<string>850</string>
-		<key>region</key>
-		<string>Asia</string>
-		<key>subregion</key>
-		<string>Eastern Asia</string>
-		<key>timezones</key>
-		<string>[{zoneName:'Asia\/Pyongyang',gmtOffset:32400,gmtOffsetName:'UTC+09:00',abbreviation:'KST',tzName:'Korea Standard Time'}]</string>
-		<key>tld</key>
-		<string>.kp</string>
-	</dict>
-	<dict>
-		<key>capital</key>
-		<string>Seoul</string>
-		<key>currency</key>
-		<string>KRW</string>
-		<key>currency_symbol</key>
-		<string>₩</string>
-		<key>emoji</key>
-		<string>🇰🇷</string>
-		<key>emojiU</key>
-		<string>U+1F1F0 U+1F1F7</string>
-		<key>id</key>
-		<string>116</string>
-		<key>iso2</key>
-		<string>KR</string>
-		<key>iso3</key>
-		<string>KOR</string>
-		<key>latitude</key>
-		<string>37.00000000</string>
-		<key>longitude</key>
-		<string>127.50000000</string>
-		<key>name</key>
-		<string>Korea South</string>
-		<key>native</key>
-		<string>대한민국</string>
-		<key>phone_code</key>
-		<string>82</string>
-		<key>region</key>
-		<string>Asia</string>
-		<key>subregion</key>
-		<string>Eastern Asia</string>
-		<key>timezones</key>
-		<string>[{zoneName:'Asia\/Seoul',gmtOffset:32400,gmtOffsetName:'UTC+09:00',abbreviation:'KST',tzName:'Korea Standard Time'}]</string>
-		<key>tld</key>
-		<string>.kr</string>
 	</dict>
 	<dict>
 		<key>capital</key>
@@ -5676,7 +5604,7 @@
 		<key>longitude</key>
 		<string>5.75000000</string>
 		<key>name</key>
-		<string>Netherlands The</string>
+		<string>Netherlands</string>
 		<key>native</key>
 		<string>Nederland</string>
 		<key>phone_code</key>
@@ -5941,6 +5869,42 @@
 		<string>[{zoneName:'Pacific\/Norfolk',gmtOffset:43200,gmtOffsetName:'UTC+12:00',abbreviation:'NFT',tzName:'Norfolk Time'}]</string>
 		<key>tld</key>
 		<string>.nf</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Pyongyang</string>
+		<key>currency</key>
+		<string>KPW</string>
+		<key>currency_symbol</key>
+		<string>₩</string>
+		<key>emoji</key>
+		<string>🇰🇵</string>
+		<key>emojiU</key>
+		<string>U+1F1F0 U+1F1F5</string>
+		<key>id</key>
+		<string>115</string>
+		<key>iso2</key>
+		<string>KP</string>
+		<key>iso3</key>
+		<string>PRK</string>
+		<key>latitude</key>
+		<string>40.00000000</string>
+		<key>longitude</key>
+		<string>127.00000000</string>
+		<key>name</key>
+		<string>North Korea</string>
+		<key>native</key>
+		<string>북한</string>
+		<key>phone_code</key>
+		<string>850</string>
+		<key>region</key>
+		<string>Asia</string>
+		<key>subregion</key>
+		<string>Eastern Asia</string>
+		<key>timezones</key>
+		<string>[{zoneName:'Asia\/Pyongyang',gmtOffset:32400,gmtOffsetName:'UTC+09:00',abbreviation:'KST',tzName:'Korea Standard Time'}]</string>
+		<key>tld</key>
+		<string>.kp</string>
 	</dict>
 	<dict>
 		<key>capital</key>
@@ -7480,7 +7444,7 @@
 		<key>native</key>
 		<string>South Georgia</string>
 		<key>phone_code</key>
-		<string></string>
+		<string>500</string>
 		<key>region</key>
 		<string>Americas</string>
 		<key>subregion</key>
@@ -7489,6 +7453,42 @@
 		<string>[{zoneName:'Atlantic\/South_Georgia',gmtOffset:-7200,gmtOffsetName:'UTC-02:00',abbreviation:'GST',tzName:'South Georgia and the South Sandwich Islands Time'}]</string>
 		<key>tld</key>
 		<string>.gs</string>
+	</dict>
+	<dict>
+		<key>capital</key>
+		<string>Seoul</string>
+		<key>currency</key>
+		<string>KRW</string>
+		<key>currency_symbol</key>
+		<string>₩</string>
+		<key>emoji</key>
+		<string>🇰🇷</string>
+		<key>emojiU</key>
+		<string>U+1F1F0 U+1F1F7</string>
+		<key>id</key>
+		<string>116</string>
+		<key>iso2</key>
+		<string>KR</string>
+		<key>iso3</key>
+		<string>KOR</string>
+		<key>latitude</key>
+		<string>37.00000000</string>
+		<key>longitude</key>
+		<string>127.50000000</string>
+		<key>name</key>
+		<string>South Korea</string>
+		<key>native</key>
+		<string>대한민국</string>
+		<key>phone_code</key>
+		<string>82</string>
+		<key>region</key>
+		<string>Asia</string>
+		<key>subregion</key>
+		<string>Eastern Asia</string>
+		<key>timezones</key>
+		<string>[{zoneName:'Asia\/Seoul',gmtOffset:32400,gmtOffsetName:'UTC+09:00',abbreviation:'KST',tzName:'Korea Standard Time'}]</string>
+		<key>tld</key>
+		<string>.kr</string>
 	</dict>
 	<dict>
 		<key>capital</key>

@@ -332,9 +332,9 @@
         "name": "Antarctica",
         "iso3": "ATA",
         "iso2": "AQ",
-        "phone_code": "",
+        "phone_code": "672",
         "capital": "",
-        "currency": "",
+        "currency": "AAD",
         "currency_symbol": "$",
         "tld": ".aq",
         "native": "Antarctica",
@@ -2750,7 +2750,7 @@
     },
     {
         "id": 55,
-        "name": "Croatia (Hrvatska)",
+        "name": "Croatia",
         "iso3": "HRV",
         "iso2": "HR",
         "phone_code": "385",
@@ -3810,7 +3810,7 @@
         "name": "French Southern Territories",
         "iso3": "ATF",
         "iso2": "TF",
-        "phone_code": "",
+        "phone_code": "262",
         "capital": "Port-aux-Francais",
         "currency": "EUR",
         "currency_symbol": "€",
@@ -4576,7 +4576,7 @@
         "name": "Heard Island and McDonald Islands",
         "iso3": "HMD",
         "iso2": "HM",
-        "phone_code": "",
+        "phone_code": "672",
         "capital": "",
         "currency": "AUD",
         "currency_symbol": "$",
@@ -5425,88 +5425,6 @@
         "longitude": "173.00000000",
         "emoji": "🇰🇮",
         "emojiU": "U+1F1F0 U+1F1EE"
-    },
-    {
-        "id": 115,
-        "name": "Korea North",
-        "iso3": "PRK",
-        "iso2": "KP",
-        "phone_code": "850",
-        "capital": "Pyongyang",
-        "currency": "KPW",
-        "currency_symbol": "₩",
-        "tld": ".kp",
-        "native": "북한",
-        "region": "Asia",
-        "subregion": "Eastern Asia",
-        "timezones": [
-            {
-                "zoneName": "Asia\/Pyongyang",
-                "gmtOffset": 32400,
-                "gmtOffsetName": "UTC+09:00",
-                "abbreviation": "KST",
-                "tzName": "Korea Standard Time"
-            }
-        ],
-        "translations": {
-            "kr": "조선민주주의인민공화국",
-            "br": "Coreia do Norte",
-            "pt": "Coreia do Norte",
-            "nl": "Noord-Korea",
-            "hr": "Sjeverna Koreja",
-            "fa": "کره جنوبی",
-            "de": "Nordkorea",
-            "es": "Corea del Norte",
-            "fr": "Corée du Nord",
-            "ja": "朝鮮民主主義人民共和国",
-            "it": "Corea del Nord",
-            "cn": "朝鲜"
-        },
-        "latitude": "40.00000000",
-        "longitude": "127.00000000",
-        "emoji": "🇰🇵",
-        "emojiU": "U+1F1F0 U+1F1F5"
-    },
-    {
-        "id": 116,
-        "name": "Korea South",
-        "iso3": "KOR",
-        "iso2": "KR",
-        "phone_code": "82",
-        "capital": "Seoul",
-        "currency": "KRW",
-        "currency_symbol": "₩",
-        "tld": ".kr",
-        "native": "대한민국",
-        "region": "Asia",
-        "subregion": "Eastern Asia",
-        "timezones": [
-            {
-                "zoneName": "Asia\/Seoul",
-                "gmtOffset": 32400,
-                "gmtOffsetName": "UTC+09:00",
-                "abbreviation": "KST",
-                "tzName": "Korea Standard Time"
-            }
-        ],
-        "translations": {
-            "kr": "대한민국",
-            "br": "Coreia do Sul",
-            "pt": "Coreia do Sul",
-            "nl": "Zuid-Korea",
-            "hr": "Južna Koreja",
-            "fa": "کره شمالی",
-            "de": "Südkorea",
-            "es": "Corea del Sur",
-            "fr": "Corée du Sud",
-            "ja": "大韓民国",
-            "it": "Corea del Sud",
-            "cn": "韩国"
-        },
-        "latitude": "37.00000000",
-        "longitude": "127.50000000",
-        "emoji": "🇰🇷",
-        "emojiU": "U+1F1F0 U+1F1F7"
     },
     {
         "id": 248,
@@ -7211,7 +7129,7 @@
     },
     {
         "id": 156,
-        "name": "Netherlands The",
+        "name": "Netherlands",
         "iso3": "NLD",
         "iso2": "NL",
         "phone_code": "31",
@@ -7543,6 +7461,47 @@
         "longitude": "167.95000000",
         "emoji": "🇳🇫",
         "emojiU": "U+1F1F3 U+1F1EB"
+    },
+    {
+        "id": 115,
+        "name": "North Korea",
+        "iso3": "PRK",
+        "iso2": "KP",
+        "phone_code": "850",
+        "capital": "Pyongyang",
+        "currency": "KPW",
+        "currency_symbol": "₩",
+        "tld": ".kp",
+        "native": "북한",
+        "region": "Asia",
+        "subregion": "Eastern Asia",
+        "timezones": [
+            {
+                "zoneName": "Asia\/Pyongyang",
+                "gmtOffset": 32400,
+                "gmtOffsetName": "UTC+09:00",
+                "abbreviation": "KST",
+                "tzName": "Korea Standard Time"
+            }
+        ],
+        "translations": {
+            "kr": "조선민주주의인민공화국",
+            "br": "Coreia do Norte",
+            "pt": "Coreia do Norte",
+            "nl": "Noord-Korea",
+            "hr": "Sjeverna Koreja",
+            "fa": "کره جنوبی",
+            "de": "Nordkorea",
+            "es": "Corea del Norte",
+            "fr": "Corée du Nord",
+            "ja": "朝鮮民主主義人民共和国",
+            "it": "Corea del Nord",
+            "cn": "朝鲜"
+        },
+        "latitude": "40.00000000",
+        "longitude": "127.00000000",
+        "emoji": "🇰🇵",
+        "emojiU": "U+1F1F0 U+1F1F5"
     },
     {
         "id": 164,
@@ -9471,7 +9430,7 @@
         "name": "South Georgia",
         "iso3": "SGS",
         "iso2": "GS",
-        "phone_code": "",
+        "phone_code": "500",
         "capital": "Grytviken",
         "currency": "GBP",
         "currency_symbol": "£",
@@ -9506,6 +9465,47 @@
         "longitude": "-37.00000000",
         "emoji": "🇬🇸",
         "emojiU": "U+1F1EC U+1F1F8"
+    },
+    {
+        "id": 116,
+        "name": "South Korea",
+        "iso3": "KOR",
+        "iso2": "KR",
+        "phone_code": "82",
+        "capital": "Seoul",
+        "currency": "KRW",
+        "currency_symbol": "₩",
+        "tld": ".kr",
+        "native": "대한민국",
+        "region": "Asia",
+        "subregion": "Eastern Asia",
+        "timezones": [
+            {
+                "zoneName": "Asia\/Seoul",
+                "gmtOffset": 32400,
+                "gmtOffsetName": "UTC+09:00",
+                "abbreviation": "KST",
+                "tzName": "Korea Standard Time"
+            }
+        ],
+        "translations": {
+            "kr": "대한민국",
+            "br": "Coreia do Sul",
+            "pt": "Coreia do Sul",
+            "nl": "Zuid-Korea",
+            "hr": "Južna Koreja",
+            "fa": "کره شمالی",
+            "de": "Südkorea",
+            "es": "Corea del Sur",
+            "fr": "Corée du Sud",
+            "ja": "大韓民国",
+            "it": "Corea del Sud",
+            "cn": "韩国"
+        },
+        "latitude": "37.00000000",
+        "longitude": "127.50000000",
+        "emoji": "🇰🇷",
+        "emojiU": "U+1F1F0 U+1F1F7"
     },
     {
         "id": 206,
