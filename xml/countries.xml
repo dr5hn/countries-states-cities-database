@@ -317,9 +317,9 @@
     <name>Antarctica</name>
     <iso3>ATA</iso3>
     <iso2>AQ</iso2>
-    <phone_code></phone_code>
+    <phone_code>672</phone_code>
     <capital></capital>
-    <currency></currency>
+    <currency>AAD</currency>
     <currency_symbol>$</currency_symbol>
     <tld>.aq</tld>
     <native>Antarctica</native>
@@ -2643,7 +2643,7 @@
   </country>
   <country>
     <id>55</id>
-    <name>Croatia (Hrvatska)</name>
+    <name>Croatia</name>
     <iso3>HRV</iso3>
     <iso2>HR</iso2>
     <phone_code>385</phone_code>
@@ -3653,7 +3653,7 @@
     <name>French Southern Territories</name>
     <iso3>ATF</iso3>
     <iso2>TF</iso2>
-    <phone_code></phone_code>
+    <phone_code>262</phone_code>
     <capital>Port-aux-Francais</capital>
     <currency>EUR</currency>
     <currency_symbol>€</currency_symbol>
@@ -4383,7 +4383,7 @@
     <name>Heard Island and McDonald Islands</name>
     <iso3>HMD</iso3>
     <iso2>HM</iso2>
-    <phone_code></phone_code>
+    <phone_code>672</phone_code>
     <capital></capital>
     <currency>AUD</currency>
     <currency_symbol>$</currency_symbol>
@@ -5194,84 +5194,6 @@
     <longitude>173.00000000</longitude>
     <emoji>🇰🇮</emoji>
     <emojiU>U+1F1F0 U+1F1EE</emojiU>
-  </country>
-  <country>
-    <id>115</id>
-    <name>Korea North</name>
-    <iso3>PRK</iso3>
-    <iso2>KP</iso2>
-    <phone_code>850</phone_code>
-    <capital>Pyongyang</capital>
-    <currency>KPW</currency>
-    <currency_symbol>₩</currency_symbol>
-    <tld>.kp</tld>
-    <native>북한</native>
-    <region>Asia</region>
-    <subregion>Eastern Asia</subregion>
-    <timezones>
-      <zoneName>Asia/Pyongyang</zoneName>
-      <gmtOffset>32400</gmtOffset>
-      <gmtOffsetName>UTC+09:00</gmtOffsetName>
-      <abbreviation>KST</abbreviation>
-      <tzName>Korea Standard Time</tzName>
-    </timezones>
-    <translations>
-      <kr>조선민주주의인민공화국</kr>
-      <br>Coreia do Norte</br>
-      <pt>Coreia do Norte</pt>
-      <nl>Noord-Korea</nl>
-      <hr>Sjeverna Koreja</hr>
-      <fa>کره جنوبی</fa>
-      <de>Nordkorea</de>
-      <es>Corea del Norte</es>
-      <fr>Corée du Nord</fr>
-      <ja>朝鮮民主主義人民共和国</ja>
-      <it>Corea del Nord</it>
-      <cn>朝鲜</cn>
-    </translations>
-    <latitude>40.00000000</latitude>
-    <longitude>127.00000000</longitude>
-    <emoji>🇰🇵</emoji>
-    <emojiU>U+1F1F0 U+1F1F5</emojiU>
-  </country>
-  <country>
-    <id>116</id>
-    <name>Korea South</name>
-    <iso3>KOR</iso3>
-    <iso2>KR</iso2>
-    <phone_code>82</phone_code>
-    <capital>Seoul</capital>
-    <currency>KRW</currency>
-    <currency_symbol>₩</currency_symbol>
-    <tld>.kr</tld>
-    <native>대한민국</native>
-    <region>Asia</region>
-    <subregion>Eastern Asia</subregion>
-    <timezones>
-      <zoneName>Asia/Seoul</zoneName>
-      <gmtOffset>32400</gmtOffset>
-      <gmtOffsetName>UTC+09:00</gmtOffsetName>
-      <abbreviation>KST</abbreviation>
-      <tzName>Korea Standard Time</tzName>
-    </timezones>
-    <translations>
-      <kr>대한민국</kr>
-      <br>Coreia do Sul</br>
-      <pt>Coreia do Sul</pt>
-      <nl>Zuid-Korea</nl>
-      <hr>Južna Koreja</hr>
-      <fa>کره شمالی</fa>
-      <de>Südkorea</de>
-      <es>Corea del Sur</es>
-      <fr>Corée du Sud</fr>
-      <ja>大韓民国</ja>
-      <it>Corea del Sud</it>
-      <cn>韩国</cn>
-    </translations>
-    <latitude>37.00000000</latitude>
-    <longitude>127.50000000</longitude>
-    <emoji>🇰🇷</emoji>
-    <emojiU>U+1F1F0 U+1F1F7</emojiU>
   </country>
   <country>
     <id>248</id>
@@ -6898,7 +6820,7 @@
   </country>
   <country>
     <id>156</id>
-    <name>Netherlands The</name>
+    <name>Netherlands</name>
     <iso3>NLD</iso3>
     <iso2>NL</iso2>
     <phone_code>31</phone_code>
@@ -7214,6 +7136,45 @@
     <longitude>167.95000000</longitude>
     <emoji>🇳🇫</emoji>
     <emojiU>U+1F1F3 U+1F1EB</emojiU>
+  </country>
+  <country>
+    <id>115</id>
+    <name>North Korea</name>
+    <iso3>PRK</iso3>
+    <iso2>KP</iso2>
+    <phone_code>850</phone_code>
+    <capital>Pyongyang</capital>
+    <currency>KPW</currency>
+    <currency_symbol>₩</currency_symbol>
+    <tld>.kp</tld>
+    <native>북한</native>
+    <region>Asia</region>
+    <subregion>Eastern Asia</subregion>
+    <timezones>
+      <zoneName>Asia/Pyongyang</zoneName>
+      <gmtOffset>32400</gmtOffset>
+      <gmtOffsetName>UTC+09:00</gmtOffsetName>
+      <abbreviation>KST</abbreviation>
+      <tzName>Korea Standard Time</tzName>
+    </timezones>
+    <translations>
+      <kr>조선민주주의인민공화국</kr>
+      <br>Coreia do Norte</br>
+      <pt>Coreia do Norte</pt>
+      <nl>Noord-Korea</nl>
+      <hr>Sjeverna Koreja</hr>
+      <fa>کره جنوبی</fa>
+      <de>Nordkorea</de>
+      <es>Corea del Norte</es>
+      <fr>Corée du Nord</fr>
+      <ja>朝鮮民主主義人民共和国</ja>
+      <it>Corea del Nord</it>
+      <cn>朝鲜</cn>
+    </translations>
+    <latitude>40.00000000</latitude>
+    <longitude>127.00000000</longitude>
+    <emoji>🇰🇵</emoji>
+    <emojiU>U+1F1F0 U+1F1F5</emojiU>
   </country>
   <country>
     <id>164</id>
@@ -9058,7 +9019,7 @@
     <name>South Georgia</name>
     <iso3>SGS</iso3>
     <iso2>GS</iso2>
-    <phone_code></phone_code>
+    <phone_code>500</phone_code>
     <capital>Grytviken</capital>
     <currency>GBP</currency>
     <currency_symbol>£</currency_symbol>
@@ -9091,6 +9052,45 @@
     <longitude>-37.00000000</longitude>
     <emoji>🇬🇸</emoji>
     <emojiU>U+1F1EC U+1F1F8</emojiU>
+  </country>
+  <country>
+    <id>116</id>
+    <name>South Korea</name>
+    <iso3>KOR</iso3>
+    <iso2>KR</iso2>
+    <phone_code>82</phone_code>
+    <capital>Seoul</capital>
+    <currency>KRW</currency>
+    <currency_symbol>₩</currency_symbol>
+    <tld>.kr</tld>
+    <native>대한민국</native>
+    <region>Asia</region>
+    <subregion>Eastern Asia</subregion>
+    <timezones>
+      <zoneName>Asia/Seoul</zoneName>
+      <gmtOffset>32400</gmtOffset>
+      <gmtOffsetName>UTC+09:00</gmtOffsetName>
+      <abbreviation>KST</abbreviation>
+      <tzName>Korea Standard Time</tzName>
+    </timezones>
+    <translations>
+      <kr>대한민국</kr>
+      <br>Coreia do Sul</br>
+      <pt>Coreia do Sul</pt>
+      <nl>Zuid-Korea</nl>
+      <hr>Južna Koreja</hr>
+      <fa>کره شمالی</fa>
+      <de>Südkorea</de>
+      <es>Corea del Sur</es>
+      <fr>Corée du Sud</fr>
+      <ja>大韓民国</ja>
+      <it>Corea del Sud</it>
+      <cn>韩国</cn>
+    </translations>
+    <latitude>37.00000000</latitude>
+    <longitude>127.50000000</longitude>
+    <emoji>🇰🇷</emoji>
+    <emojiU>U+1F1F0 U+1F1F7</emojiU>
   </country>
   <country>
     <id>206</id>
