@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['name'] = $row['name'];
         $countriesArray[$m]['iso3'] = $row['iso3'];
         $countriesArray[$m]['iso2'] = $row['iso2'];
+        $countriesArray[$m]['numeric_code'] = $row['numeric_code'];
         $countriesArray[$m]['phone_code'] = $row['phonecode'];
         $countriesArray[$m]['capital'] = $row['capital'];
         $countriesArray[$m]['currency'] = $row['currency'];
@@ -56,6 +57,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['name'] = $country['name'];
     $countryStateCityArray[$k]['iso3'] = $country['iso3'];
     $countryStateCityArray[$k]['iso2'] = $country['iso2'];
+    $countryStateCityArray[$k]['numeric_code'] = $country['numeric_code'];
     $countryStateCityArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateCityArray[$k]['capital'] = $country['capital'];
     $countryStateCityArray[$k]['currency'] = $country['currency'];
@@ -161,6 +163,7 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['name'] = $country['name'];
     $countryStateArray[$k]['iso3'] = $country['iso3'];
     $countryStateArray[$k]['iso2'] = $country['iso2'];
+    $countryStateArray[$k]['numeric_code'] = $country['numeric_code'];
     $countryStateArray[$k]['phone_code'] = $country['phone_code'];
     $countryStateArray[$k]['capital'] = $country['capital'];
     $countryStateArray[$k]['currency'] = $country['currency'];
