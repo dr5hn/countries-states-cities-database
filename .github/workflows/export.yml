@@ -35,6 +35,13 @@ jobs:
           extensions: intl #optional
           ini-values: "post_max_size=256M" #optional
 
+      - name: Cleanup world.sql
+        run: |
+          grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
+          echo -e "DROP TABLE IF EXISTS \`countries\`;\n$(cat sql/world.sql)" > sql/world.sql
+          echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
+          echo -e "DROP TABLE IF EXISTS \`cities\`;\n\n$(cat sql/world.sql)" > sql/world.sql
+
       - name: Create & Import DB
         run: |
           ls -R
