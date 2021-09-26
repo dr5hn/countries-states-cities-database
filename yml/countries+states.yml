@@ -14247,12 +14247,6 @@ country_state:
         latitude: '-8.34053890'
         longitude: '115.09195090'
       -
-        id: 1820
-        name: 'Bangka Belitung Islands'
-        state_code: BB
-        latitude: '-2.74105130'
-        longitude: '106.44058720'
-      -
         id: 1810
         name: Banten
         state_code: BT
@@ -14265,41 +14259,17 @@ country_state:
         latitude: '-3.79284510'
         longitude: '102.26076410'
       -
-        id: 1802
-        name: 'Central Java'
-        state_code: JT
-        latitude: '-7.15097500'
-        longitude: '110.14025940'
+        id: 1829
+        name: 'DI Yogyakarta'
+        state_code: YO
+        latitude: '-7.87538490'
+        longitude: '110.42620880'
       -
-        id: 1794
-        name: 'Central Kalimantan'
-        state_code: KT
-        latitude: '-1.68148780'
-        longitude: '113.38235450'
-      -
-        id: 1813
-        name: 'Central Sulawesi'
-        state_code: ST
-        latitude: '-1.43002540'
-        longitude: '121.44561790'
-      -
-        id: 1827
-        name: 'East Java'
-        state_code: JI
-        latitude: '-7.53606390'
-        longitude: '112.23840170'
-      -
-        id: 1804
-        name: 'East Kalimantan'
-        state_code: KI
-        latitude: '0.53865860'
-        longitude: '116.41938900'
-      -
-        id: 1818
-        name: 'East Nusa Tenggara'
-        state_code: NT
-        latitude: '-8.65738190'
-        longitude: '121.07937050'
+        id: 1805
+        name: 'DKI Jakarta'
+        state_code: JK
+        latitude: '-6.20876340'
+        longitude: '106.84559900'
       -
         id: 1812
         name: Gorontalo
@@ -14307,23 +14277,71 @@ country_state:
         latitude: '0.54354420'
         longitude: '123.05676930'
       -
-        id: 1805
-        name: Jakarta
-        state_code: JK
-        latitude: '-6.20876340'
-        longitude: '106.84559900'
-      -
         id: 1815
         name: Jambi
         state_code: JA
         latitude: '-1.61012290'
         longitude: '103.61312030'
       -
+        id: 1825
+        name: 'Jawa Barat'
+        state_code: JB
+        latitude: '-7.09091100'
+        longitude: '107.66888700'
+      -
+        id: 1802
+        name: 'Jawa Tengah'
+        state_code: JT
+        latitude: '-7.15097500'
+        longitude: '110.14025940'
+      -
+        id: 1827
+        name: 'Jawa Timur'
+        state_code: JI
+        latitude: '-7.53606390'
+        longitude: '112.23840170'
+      -
         id: 1806
-        name: Kalimantan
+        name: 'Kalimantan Barat'
         state_code: KA
         latitude: '0.96188340'
         longitude: '114.55484950'
+      -
+        id: 1819
+        name: 'Kalimantan Selatan'
+        state_code: KS
+        latitude: '-3.09264150'
+        longitude: '115.28375850'
+      -
+        id: 1794
+        name: 'Kalimantan Tengah'
+        state_code: KT
+        latitude: '-1.68148780'
+        longitude: '113.38235450'
+      -
+        id: 1804
+        name: 'Kalimantan Timur'
+        state_code: KI
+        latitude: '0.53865860'
+        longitude: '116.41938900'
+      -
+        id: 1824
+        name: 'Kalimantan Utara'
+        state_code: KU
+        latitude: '3.07309290'
+        longitude: '116.04138890'
+      -
+        id: 1820
+        name: 'Kepulauan Bangka Belitung'
+        state_code: BB
+        latitude: '-2.74105130'
+        longitude: '106.44058720'
+      -
+        id: 1807
+        name: 'Kepulauan Riau'
+        state_code: KR
+        latitude: '3.94565140'
+        longitude: '108.14286690'
       -
         id: 1811
         name: Lampung
@@ -14331,47 +14349,29 @@ country_state:
         latitude: '-4.55858490'
         longitude: '105.40680790'
       -
-        id: 1821
-        name: 'Lesser Sunda Islands'
-        state_code: NU
-        latitude: '-9.00000000'
-        longitude: '120.00000000'
-      -
         id: 1800
         name: Maluku
         state_code: MA
         latitude: '-3.23846160'
         longitude: '130.14527340'
       -
-        id: 1823
-        name: 'Maluku Islands'
-        state_code: ML
-        latitude: '-2.86461660'
-        longitude: '129.57659740'
-      -
-        id: 1824
-        name: 'North Kalimantan'
-        state_code: KU
-        latitude: '3.07309290'
-        longitude: '116.04138890'
-      -
         id: 1801
-        name: 'North Maluku'
+        name: 'Maluku Utara'
         state_code: MU
         latitude: '1.57099930'
         longitude: '127.80876930'
       -
-        id: 1808
-        name: 'North Sulawesi'
-        state_code: SA
-        latitude: '0.62469320'
-        longitude: '123.97500180'
+        id: 1814
+        name: 'Nusa Tenggara Barat'
+        state_code: NB
+        latitude: '-8.65293340'
+        longitude: '117.36164760'
       -
-        id: 1792
-        name: 'North Sumatra'
-        state_code: SU
-        latitude: '2.11535470'
-        longitude: '99.54509740'
+        id: 1818
+        name: 'Nusa Tenggara Timur'
+        state_code: NT
+        latitude: '-8.65738190'
+        longitude: '121.07937050'
       -
         id: 1798
         name: Papua
@@ -14379,89 +14379,65 @@ country_state:
         latitude: '-5.01222020'
         longitude: '141.34701590'
       -
+        id: 1799
+        name: 'Papua Barat'
+        state_code: PB
+        latitude: '-1.33611540'
+        longitude: '133.17471620'
+      -
         id: 1809
         name: Riau
         state_code: RI
         latitude: '0.29334690'
         longitude: '101.70682940'
       -
-        id: 1807
-        name: 'Riau Islands'
-        state_code: KR
-        latitude: '3.94565140'
-        longitude: '108.14286690'
-      -
-        id: 1819
-        name: 'South Kalimantan'
-        state_code: KS
-        latitude: '-3.09264150'
-        longitude: '115.28375850'
-      -
-        id: 1795
-        name: 'South Sulawesi'
-        state_code: SN
-        latitude: '-3.66879940'
-        longitude: '119.97405340'
-      -
-        id: 1816
-        name: 'South Sumatra'
-        state_code: SS
-        latitude: '-3.31943740'
-        longitude: '103.91439900'
-      -
-        id: 1796
-        name: 'Southeast Sulawesi'
-        state_code: SG
-        latitude: '-4.14491000'
-        longitude: '122.17460500'
-      -
-        id: 1829
-        name: 'Special Region of Yogyakarta'
-        state_code: YO
-        latitude: '-7.87538490'
-        longitude: '110.42620880'
-      -
-        id: 1803
-        name: Sulawesi
-        state_code: SL
-        latitude: '-1.84790000'
-        longitude: '120.52790000'
-      -
-        id: 1797
-        name: Sumatra
-        state_code: SM
-        latitude: '-0.58972400'
-        longitude: '101.34310580'
-      -
-        id: 1825
-        name: 'West Java'
-        state_code: JB
-        latitude: '-7.09091100'
-        longitude: '107.66888700'
-      -
-        id: 1814
-        name: 'West Nusa Tenggara'
-        state_code: NB
-        latitude: '-8.65293340'
-        longitude: '117.36164760'
-      -
-        id: 1799
-        name: 'West Papua'
-        state_code: PB
-        latitude: '-1.33611540'
-        longitude: '133.17471620'
-      -
         id: 1817
-        name: 'West Sulawesi'
+        name: 'Sulawesi Barat'
         state_code: SR
         latitude: '-2.84413710'
         longitude: '119.23207840'
       -
+        id: 1795
+        name: 'Sulawesi Selatan'
+        state_code: SN
+        latitude: '-3.66879940'
+        longitude: '119.97405340'
+      -
+        id: 1813
+        name: 'Sulawesi Tengah'
+        state_code: ST
+        latitude: '-1.43002540'
+        longitude: '121.44561790'
+      -
+        id: 1796
+        name: 'Sulawesi Tenggara'
+        state_code: SG
+        latitude: '-4.14491000'
+        longitude: '122.17460500'
+      -
+        id: 1808
+        name: 'Sulawesi Utara'
+        state_code: SA
+        latitude: '0.62469320'
+        longitude: '123.97500180'
+      -
         id: 1828
-        name: 'West Sumatra'
+        name: 'Sumatera Barat'
         state_code: SB
         latitude: '-0.73993970'
         longitude: '100.80000510'
+      -
+        id: 1816
+        name: 'Sumatera Selatan'
+        state_code: SS
+        latitude: '-3.31943740'
+        longitude: '103.91439900'
+      -
+        id: 1792
+        name: 'Sumatera Utara'
+        state_code: SU
+        latitude: '2.11535470'
+        longitude: '99.54509740'
   -
     name: Iran
     iso3: IRN
