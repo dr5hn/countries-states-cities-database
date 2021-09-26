@@ -96,6 +96,7 @@ foreach($countriesArray as $country) {
             $statesArray[$i]['country_id'] = $countryId;
             $statesArray[$i]['country_code'] = $state['country_code'];
             $statesArray[$i]['state_code'] = $state['iso2'];
+            $statesArray[$i]['type'] = $state['type'];
             $statesArray[$i]['latitude'] = $state['latitude'];
             $statesArray[$i]['longitude'] = $state['longitude'];
 
@@ -105,7 +106,8 @@ foreach($countriesArray as $country) {
                 'name' => $stateName,
                 'state_code' => $state['iso2'],
                 'latitude' => $state['latitude'],
-                'longitude' => $state['longitude']
+                'longitude' => $state['longitude'],
+                'type' => $state['type']
             );
 
             array_push($stateNamesArray, $stateArr);
