@@ -131,6 +131,7 @@ foreach($countriesArray as $country) {
                     $citiesArray[$j]['country_code'] = $city['country_code'];
                     $citiesArray[$j]['latitude'] = $city['latitude'];
                     $citiesArray[$j]['longitude'] = $city['longitude'];
+                    $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];
 
                     // For State City Array
                     array_push($cityNamesArray, array(
