@@ -8461,56 +8461,56 @@ state:
     longitude: '-79.91927020'
   -
     id: 749
-    name: 'Famagusta District'
+    name: 'Famagusta District (Mağusa)'
     country_id: 57
     country_code: CY
     state_code: '04'
-    type: null
+    type: district
     latitude: '35.28570230'
     longitude: '33.84112880'
   -
     id: 744
-    name: 'Kyrenia District'
+    name: 'Kyrenia District (Keryneia)'
     country_id: 57
     country_code: CY
     state_code: '06'
-    type: null
+    type: district
     latitude: '35.29919400'
     longitude: '33.23632460'
   -
     id: 747
-    name: 'Larnaca District'
+    name: 'Larnaca District (Larnaka)'
     country_id: 57
     country_code: CY
     state_code: '03'
-    type: null
+    type: district
     latitude: '34.85072060'
     longitude: '33.48319060'
   -
     id: 748
-    name: 'Limassol District'
+    name: 'Limassol District (Leymasun)'
     country_id: 57
     country_code: CY
     state_code: '02'
-    type: null
+    type: district
     latitude: '34.70713010'
     longitude: '33.02261740'
   -
     id: 745
-    name: 'Nicosia District'
+    name: 'Nicosia District (Lefkoşa)'
     country_id: 57
     country_code: CY
     state_code: '01'
-    type: null
+    type: district
     latitude: '35.18556590'
     longitude: '33.38227640'
   -
     id: 746
-    name: 'Paphos District'
+    name: 'Paphos District (Pafos)'
     country_id: 57
     country_code: CY
     state_code: '05'
-    type: null
+    type: district
     latitude: '34.91645940'
     longitude: '32.49200880'
   -
@@ -35335,7 +35335,7 @@ state:
     longitude: '9.43165730'
   -
     id: 1641
-    name: Basel-Landschaft
+    name: Basel-Land
     country_id: 214
     country_code: CH
     state_code: BL
@@ -35343,8 +35343,17 @@ state:
     latitude: '47.44181220'
     longitude: '7.76440020'
   -
+    id: 4957
+    name: Basel-Stadt
+    country_id: 214
+    country_code: CH
+    state_code: BS
+    type: null
+    latitude: '47.56666700'
+    longitude: '7.60000000'
+  -
     id: 1645
-    name: 'canton of Bern'
+    name: Bern
     country_id: 214
     country_code: CH
     state_code: BE
@@ -35362,103 +35371,13 @@ state:
     longitude: '7.11726350'
   -
     id: 1647
-    name: 'Canton of Geneva'
+    name: Geneva
     country_id: 214
     country_code: CH
     state_code: GE
     type: null
     latitude: '46.21800730'
     longitude: '6.12169250'
-  -
-    id: 1658
-    name: 'Canton of Jura'
-    country_id: 214
-    country_code: CH
-    state_code: JU
-    type: null
-    latitude: '47.34444740'
-    longitude: '7.14306080'
-  -
-    id: 1663
-    name: 'Canton of Lucerne'
-    country_id: 214
-    country_code: CH
-    state_code: LU
-    type: null
-    latitude: '47.07956710'
-    longitude: '8.16624450'
-  -
-    id: 1659
-    name: 'Canton of Neuchâtel'
-    country_id: 214
-    country_code: CH
-    state_code: NE
-    type: null
-    latitude: '46.98998740'
-    longitude: '6.92927320'
-  -
-    id: 1654
-    name: 'Canton of Schaffhausen'
-    country_id: 214
-    country_code: CH
-    state_code: SH
-    type: null
-    latitude: '47.70093640'
-    longitude: '8.56800400'
-  -
-    id: 1662
-    name: 'Canton of Solothurn'
-    country_id: 214
-    country_code: CH
-    state_code: SO
-    type: null
-    latitude: '47.33207170'
-    longitude: '7.63883850'
-  -
-    id: 1644
-    name: 'Canton of St. Gallen'
-    country_id: 214
-    country_code: CH
-    state_code: SG
-    type: null
-    latitude: '47.14562540'
-    longitude: '9.35043320'
-  -
-    id: 1648
-    name: 'Canton of Valais'
-    country_id: 214
-    country_code: CH
-    state_code: VS
-    type: null
-    latitude: '46.19046140'
-    longitude: '7.54492260'
-  -
-    id: 1651
-    name: 'Canton of Vaud'
-    country_id: 214
-    country_code: CH
-    state_code: VD
-    type: null
-    latitude: '46.56131350'
-    longitude: '6.53676500'
-  -
-    id: 1646
-    name: 'Canton of Zug'
-    country_id: 214
-    country_code: CH
-    state_code: ZG
-    type: null
-    latitude: '47.16615050'
-    longitude: '8.51547490'
-  -
-    id: 1656
-    name: 'canton of Zürich'
-    country_id: 214
-    country_code: CH
-    state_code: ZH
-    type: null
-    latitude: '47.35953600'
-    longitude: '8.63564520'
   -
     id: 1661
     name: Glarus
@@ -35478,6 +35397,33 @@ state:
     latitude: '46.65698710'
     longitude: '9.57802570'
   -
+    id: 1658
+    name: Jura
+    country_id: 214
+    country_code: CH
+    state_code: JU
+    type: null
+    latitude: '47.34444740'
+    longitude: '7.14306080'
+  -
+    id: 1663
+    name: Lucerne
+    country_id: 214
+    country_code: CH
+    state_code: LU
+    type: null
+    latitude: '47.07956710'
+    longitude: '8.16624450'
+  -
+    id: 1659
+    name: Neuchâtel
+    country_id: 214
+    country_code: CH
+    state_code: NE
+    type: null
+    latitude: '46.98998740'
+    longitude: '6.92927320'
+  -
     id: 1652
     name: Nidwalden
     country_id: 214
@@ -35496,6 +35442,15 @@ state:
     latitude: '46.87785800'
     longitude: '8.25124900'
   -
+    id: 1654
+    name: Schaffhausen
+    country_id: 214
+    country_code: CH
+    state_code: SH
+    type: null
+    latitude: '47.70093640'
+    longitude: '8.56800400'
+  -
     id: 1653
     name: Schwyz
     country_id: 214
@@ -35504,6 +35459,24 @@ state:
     type: null
     latitude: '47.02071380'
     longitude: '8.65298840'
+  -
+    id: 1662
+    name: Solothurn
+    country_id: 214
+    country_code: CH
+    state_code: SO
+    type: null
+    latitude: '47.33207170'
+    longitude: '7.63883850'
+  -
+    id: 1644
+    name: 'St. Gallen'
+    country_id: 214
+    country_code: CH
+    state_code: SG
+    type: null
+    latitude: '47.14562540'
+    longitude: '9.35043320'
   -
     id: 1657
     name: Thurgau
@@ -35531,6 +35504,42 @@ state:
     type: null
     latitude: '41.48606470'
     longitude: '-71.53085370'
+  -
+    id: 1648
+    name: Valais
+    country_id: 214
+    country_code: CH
+    state_code: VS
+    type: null
+    latitude: '46.19046140'
+    longitude: '7.54492260'
+  -
+    id: 1651
+    name: Vaud
+    country_id: 214
+    country_code: CH
+    state_code: VD
+    type: null
+    latitude: '46.56131350'
+    longitude: '6.53676500'
+  -
+    id: 1646
+    name: Zug
+    country_id: 214
+    country_code: CH
+    state_code: ZG
+    type: null
+    latitude: '47.16615050'
+    longitude: '8.51547490'
+  -
+    id: 1656
+    name: Zürich
+    country_id: 214
+    country_code: CH
+    state_code: ZH
+    type: null
+    latitude: '47.35953600'
+    longitude: '8.63564520'
   -
     id: 2941
     name: 'Al-Hasakah Governorate'
@@ -37324,731 +37333,731 @@ state:
     longitude: '10.14231720'
   -
     id: 2212
-    name: 'Adana Province'
+    name: Adana
     country_id: 225
     country_code: TR
     state_code: '01'
-    type: null
+    type: province
     latitude: '37.26123150'
     longitude: '35.39050460'
   -
     id: 2155
-    name: 'Adıyaman Province'
+    name: Adıyaman
     country_id: 225
     country_code: TR
     state_code: '02'
-    type: null
+    type: province
     latitude: '37.90782910'
     longitude: '38.48499230'
   -
     id: 2179
-    name: 'Afyonkarahisar Province'
+    name: Afyonkarahisar
     country_id: 225
     country_code: TR
     state_code: '03'
-    type: null
+    type: province
     latitude: '38.73910990'
     longitude: '30.71200230'
   -
     id: 2193
-    name: 'Ağrı Province'
+    name: Ağrı
     country_id: 225
     country_code: TR
     state_code: '04'
-    type: null
+    type: province
     latitude: '39.62692180'
     longitude: '43.02159650'
   -
     id: 2210
-    name: 'Aksaray Province'
+    name: Aksaray
     country_id: 225
     country_code: TR
     state_code: '68'
-    type: null
+    type: province
     latitude: '38.33520430'
     longitude: '33.97500180'
   -
     id: 2161
-    name: 'Amasya Province'
+    name: Amasya
     country_id: 225
     country_code: TR
     state_code: '05'
-    type: null
+    type: province
     latitude: '40.65166080'
     longitude: '35.90379660'
   -
     id: 2217
-    name: 'Ankara Province'
+    name: Ankara
     country_id: 225
     country_code: TR
     state_code: '06'
-    type: null
+    type: province
     latitude: '39.78052450'
     longitude: '32.71813750'
   -
     id: 2169
-    name: 'Antalya Province'
+    name: Antalya
     country_id: 225
     country_code: TR
     state_code: '07'
-    type: null
+    type: province
     latitude: '37.09516720'
     longitude: '31.07937050'
   -
     id: 2185
-    name: 'Ardahan Province'
+    name: Ardahan
     country_id: 225
     country_code: TR
     state_code: '75'
-    type: null
+    type: province
     latitude: '41.11129640'
     longitude: '42.78316740'
   -
     id: 2191
-    name: 'Artvin Province'
+    name: Artvin
     country_id: 225
     country_code: TR
     state_code: '08'
-    type: null
+    type: province
     latitude: '41.07866400'
     longitude: '41.76282230'
   -
     id: 2187
-    name: 'Aydın Province'
+    name: Aydın
     country_id: 225
     country_code: TR
     state_code: '09'
-    type: null
+    type: province
     latitude: '37.81170330'
     longitude: '28.48639630'
   -
     id: 2175
-    name: 'Balıkesir Province'
+    name: Balıkesir
     country_id: 225
     country_code: TR
     state_code: '10'
-    type: null
+    type: province
     latitude: '39.76167820'
     longitude: '28.11226790'
   -
     id: 2148
-    name: 'Bartın Province'
+    name: Bartın
     country_id: 225
     country_code: TR
     state_code: '74'
-    type: null
+    type: province
     latitude: '41.58105090'
     longitude: '32.46097940'
   -
     id: 2194
-    name: 'Batman Province'
+    name: Batman
     country_id: 225
     country_code: TR
     state_code: '72'
-    type: null
+    type: province
     latitude: '37.83624960'
     longitude: '41.36057390'
   -
     id: 2177
-    name: 'Bayburt Province'
+    name: Bayburt
     country_id: 225
     country_code: TR
     state_code: '69'
-    type: null
+    type: province
     latitude: '40.26032000'
     longitude: '40.22804800'
   -
     id: 2221
-    name: 'Bilecik Province'
+    name: Bilecik
     country_id: 225
     country_code: TR
     state_code: '11'
-    type: null
+    type: province
     latitude: '40.05665550'
     longitude: '30.06652360'
   -
     id: 2153
-    name: 'Bingöl Province'
+    name: Bingöl
     country_id: 225
     country_code: TR
     state_code: '12'
-    type: null
+    type: province
     latitude: '39.06263540'
     longitude: '40.76960950'
   -
     id: 2215
-    name: 'Bitlis Province'
+    name: Bitlis
     country_id: 225
     country_code: TR
     state_code: '13'
-    type: null
+    type: province
     latitude: '38.65231330'
     longitude: '42.42020280'
   -
     id: 2172
-    name: 'Bolu Province'
+    name: Bolu
     country_id: 225
     country_code: TR
     state_code: '14'
-    type: null
+    type: province
     latitude: '40.57597660'
     longitude: '31.57880860'
   -
     id: 2209
-    name: 'Burdur Province'
+    name: Burdur
     country_id: 225
     country_code: TR
     state_code: '15'
-    type: null
+    type: province
     latitude: '37.46126690'
     longitude: '30.06652360'
   -
     id: 2163
-    name: 'Bursa Province'
+    name: Bursa
     country_id: 225
     country_code: TR
     state_code: '16'
-    type: null
+    type: province
     latitude: '40.06554590'
     longitude: '29.23207840'
   -
     id: 2216
-    name: 'Çanakkale Province'
+    name: Çanakkale
     country_id: 225
     country_code: TR
     state_code: '17'
-    type: null
+    type: province
     latitude: '40.05101040'
     longitude: '26.98524220'
   -
     id: 2168
-    name: 'Çankırı Province'
+    name: Çankırı
     country_id: 225
     country_code: TR
     state_code: '18'
-    type: null
+    type: province
     latitude: '40.53690730'
     longitude: '33.58838930'
   -
     id: 2173
-    name: 'Çorum Province'
+    name: Çorum
     country_id: 225
     country_code: TR
     state_code: '19'
-    type: null
+    type: province
     latitude: '40.49982110'
     longitude: '34.59862630'
   -
     id: 2157
-    name: 'Denizli Province'
+    name: Denizli
     country_id: 225
     country_code: TR
     state_code: '20'
-    type: null
+    type: province
     latitude: '37.61283950'
     longitude: '29.23207840'
   -
     id: 2226
-    name: 'Diyarbakır Province'
+    name: Diyarbakır
     country_id: 225
     country_code: TR
     state_code: '21'
-    type: null
+    type: province
     latitude: '38.10663720'
     longitude: '40.54268960'
   -
     id: 2202
-    name: 'Düzce Province'
+    name: Düzce
     country_id: 225
     country_code: TR
     state_code: '81'
-    type: null
+    type: province
     latitude: '40.87705310'
     longitude: '31.31927130'
   -
     id: 2151
-    name: 'Edirne Province'
+    name: Edirne
     country_id: 225
     country_code: TR
     state_code: '22'
-    type: null
+    type: province
     latitude: '41.15172220'
     longitude: '26.51379640'
   -
     id: 2159
-    name: 'Elazığ Province'
+    name: Elazığ
     country_id: 225
     country_code: TR
     state_code: '23'
-    type: null
+    type: province
     latitude: '38.49648040'
     longitude: '39.21990290'
   -
     id: 2160
-    name: 'Erzincan Province'
+    name: Erzincan
     country_id: 225
     country_code: TR
     state_code: '24'
-    type: null
+    type: province
     latitude: '39.76819140'
     longitude: '39.05013060'
   -
     id: 2165
-    name: 'Erzurum Province'
+    name: Erzurum
     country_id: 225
     country_code: TR
     state_code: '25'
-    type: null
+    type: province
     latitude: '40.07467990'
     longitude: '41.66945620'
   -
     id: 2164
-    name: 'Eskişehir Province'
+    name: Eskişehir
     country_id: 225
     country_code: TR
     state_code: '26'
-    type: null
+    type: province
     latitude: '39.63296570'
     longitude: '31.26263660'
   -
     id: 2203
-    name: 'Gaziantep Province'
+    name: Gaziantep
     country_id: 225
     country_code: TR
     state_code: '27'
-    type: null
+    type: province
     latitude: '37.07638820'
     longitude: '37.38272340'
   -
     id: 2186
-    name: 'Giresun Province'
+    name: Giresun
     country_id: 225
     country_code: TR
     state_code: '28'
-    type: null
+    type: province
     latitude: '40.64616720'
     longitude: '38.59355110'
   -
     id: 2204
-    name: 'Gümüşhane Province'
+    name: Gümüşhane
     country_id: 225
     country_code: TR
     state_code: '29'
-    type: null
+    type: province
     latitude: '40.28036730'
     longitude: '39.31432530'
   -
     id: 2190
-    name: 'Hakkâri Province'
+    name: Hakkâri
     country_id: 225
     country_code: TR
     state_code: '30'
-    type: null
+    type: province
     latitude: '37.44593190'
     longitude: '43.74498410'
   -
     id: 2211
-    name: 'Hatay Province'
+    name: Hatay
     country_id: 225
     country_code: TR
     state_code: '31'
-    type: null
+    type: province
     latitude: '36.40184880'
     longitude: '36.34980970'
   -
     id: 2166
-    name: 'Iğdır Province'
+    name: Iğdır
     country_id: 225
     country_code: TR
     state_code: '76'
-    type: null
+    type: province
     latitude: '39.88798410'
     longitude: '44.00483650'
   -
     id: 2222
-    name: 'Isparta Province'
+    name: Isparta
     country_id: 225
     country_code: TR
     state_code: '32'
-    type: null
+    type: province
     latitude: '38.02114640'
     longitude: '31.07937050'
   -
     id: 2170
-    name: 'Istanbul Province'
+    name: Istanbul
     country_id: 225
     country_code: TR
     state_code: '34'
-    type: null
+    type: province
     latitude: '41.16343020'
     longitude: '28.76644080'
   -
     id: 2205
-    name: 'İzmir Province'
+    name: İzmir
     country_id: 225
     country_code: TR
     state_code: '35'
-    type: null
+    type: province
     latitude: '38.35916930'
     longitude: '27.26761160'
   -
     id: 2227
-    name: 'Kahramanmaraş Province'
+    name: Kahramanmaraş
     country_id: 225
     country_code: TR
     state_code: '46'
-    type: null
+    type: province
     latitude: '37.75030360'
     longitude: '36.95410700'
   -
     id: 2223
-    name: 'Karabük Province'
+    name: Karabük
     country_id: 225
     country_code: TR
     state_code: '78'
-    type: null
+    type: province
     latitude: '41.18748900'
     longitude: '32.74174190'
   -
     id: 2184
-    name: 'Karaman Province'
+    name: Karaman
     country_id: 225
     country_code: TR
     state_code: '70'
-    type: null
+    type: province
     latitude: '37.24363360'
     longitude: '33.61757700'
   -
     id: 2208
-    name: 'Kars Province'
+    name: Kars
     country_id: 225
     country_code: TR
     state_code: '36'
-    type: null
+    type: province
     latitude: '40.28076360'
     longitude: '42.99195270'
   -
     id: 2197
-    name: 'Kastamonu Province'
+    name: Kastamonu
     country_id: 225
     country_code: TR
     state_code: '37'
-    type: null
+    type: province
     latitude: '41.41038630'
     longitude: '33.69983340'
   -
     id: 2200
-    name: 'Kayseri Province'
+    name: Kayseri
     country_id: 225
     country_code: TR
     state_code: '38'
-    type: null
+    type: province
     latitude: '38.62568540'
     longitude: '35.74068820'
   -
     id: 2154
-    name: 'Kilis Province'
+    name: Kilis
     country_id: 225
     country_code: TR
     state_code: '79'
-    type: null
+    type: province
     latitude: '36.82047750'
     longitude: '37.16873390'
   -
     id: 2178
-    name: 'Kırıkkale Province'
+    name: Kırıkkale
     country_id: 225
     country_code: TR
     state_code: '71'
-    type: null
+    type: province
     latitude: '39.88768780'
     longitude: '33.75552480'
   -
     id: 2176
-    name: 'Kırklareli Province'
+    name: Kırklareli
     country_id: 225
     country_code: TR
     state_code: '39'
-    type: null
+    type: province
     latitude: '41.72597950'
     longitude: '27.48383900'
   -
     id: 2180
-    name: 'Kırşehir Province'
+    name: Kırşehir
     country_id: 225
     country_code: TR
     state_code: '40'
-    type: null
+    type: province
     latitude: '39.22689050'
     longitude: '33.97500180'
   -
     id: 2195
-    name: 'Kocaeli Province'
+    name: Kocaeli
     country_id: 225
     country_code: TR
     state_code: '41'
-    type: null
+    type: province
     latitude: '40.85327040'
     longitude: '29.88152030'
   -
     id: 2171
-    name: 'Konya Province'
+    name: Konya
     country_id: 225
     country_code: TR
     state_code: '42'
-    type: null
+    type: province
     latitude: '37.98381340'
     longitude: '32.71813750'
   -
     id: 2149
-    name: 'Kütahya Province'
+    name: Kütahya
     country_id: 225
     country_code: TR
     state_code: '43'
-    type: null
+    type: province
     latitude: '39.35813700'
     longitude: '29.60354950'
   -
     id: 2158
-    name: 'Malatya Province'
+    name: Malatya
     country_id: 225
     country_code: TR
     state_code: '44'
-    type: null
+    type: province
     latitude: '38.40150570'
     longitude: '37.95362980'
   -
     id: 2198
-    name: 'Manisa Province'
+    name: Manisa
     country_id: 225
     country_code: TR
     state_code: '45'
-    type: null
+    type: province
     latitude: '38.84193730'
     longitude: '28.11226790'
   -
     id: 2224
-    name: 'Mardin Province'
+    name: Mardin
     country_id: 225
     country_code: TR
     state_code: '47'
-    type: null
+    type: province
     latitude: '37.34429290'
     longitude: '40.61964870'
   -
     id: 2156
-    name: 'Mersin Province'
+    name: Mersin
     country_id: 225
     country_code: TR
     state_code: '33'
-    type: null
+    type: province
     latitude: '36.81208580'
     longitude: '34.64147500'
   -
     id: 2182
-    name: 'Muğla Province'
+    name: Muğla
     country_id: 225
     country_code: TR
     state_code: '48'
-    type: null
+    type: province
     latitude: '37.18358190'
     longitude: '28.48639630'
   -
     id: 2162
-    name: 'Muş Province'
+    name: Muş
     country_id: 225
     country_code: TR
     state_code: '49'
-    type: null
+    type: province
     latitude: '38.94618880'
     longitude: '41.75389310'
   -
     id: 2196
-    name: 'Nevşehir Province'
+    name: Nevşehir
     country_id: 225
     country_code: TR
     state_code: '50'
-    type: null
+    type: province
     latitude: '38.69393990'
     longitude: '34.68565090'
   -
     id: 2189
-    name: 'Niğde Province'
+    name: Niğde
     country_id: 225
     country_code: TR
     state_code: '51'
-    type: null
+    type: province
     latitude: '38.09930860'
     longitude: '34.68565090'
   -
     id: 2174
-    name: 'Ordu Province'
+    name: Ordu
     country_id: 225
     country_code: TR
     state_code: '52'
-    type: null
+    type: province
     latitude: '40.79905800'
     longitude: '37.38990050'
   -
     id: 2214
-    name: 'Osmaniye Province'
+    name: Osmaniye
     country_id: 225
     country_code: TR
     state_code: '80'
-    type: null
+    type: province
     latitude: '37.21302580'
     longitude: '36.17626150'
   -
     id: 2219
-    name: 'Rize Province'
+    name: Rize
     country_id: 225
     country_code: TR
     state_code: '53'
-    type: null
+    type: province
     latitude: '40.95814970'
     longitude: '40.92269850'
   -
     id: 2150
-    name: 'Sakarya Province'
+    name: Sakarya
     country_id: 225
     country_code: TR
     state_code: '54'
-    type: null
+    type: province
     latitude: '40.78885500'
     longitude: '30.40595400'
   -
     id: 2220
-    name: 'Samsun Province'
+    name: Samsun
     country_id: 225
     country_code: TR
     state_code: '55'
-    type: null
+    type: province
     latitude: '41.18648590'
     longitude: '36.13226780'
   -
     id: 2183
-    name: 'Şanlıurfa Province'
+    name: Şanlıurfa
     country_id: 225
     country_code: TR
     state_code: '63'
-    type: null
+    type: province
     latitude: '37.35691020'
     longitude: '39.15436770'
   -
     id: 2207
-    name: 'Siirt Province'
+    name: Siirt
     country_id: 225
     country_code: TR
     state_code: '56'
-    type: null
+    type: province
     latitude: '37.86588620'
     longitude: '42.14945230'
   -
     id: 4854
-    name: 'Sinop Province'
+    name: Sinop
     country_id: 225
     country_code: TR
     state_code: '57'
-    type: null
+    type: province
     latitude: '41.55947490'
     longitude: '34.85805320'
   -
     id: 2181
-    name: 'Sivas Province'
+    name: Sivas
     country_id: 225
     country_code: TR
     state_code: '58'
-    type: null
+    type: province
     latitude: '39.44880390'
     longitude: '37.12944970'
   -
     id: 2225
-    name: 'Şırnak Province'
+    name: Şırnak
     country_id: 225
     country_code: TR
     state_code: '73'
-    type: null
+    type: province
     latitude: '37.41874810'
     longitude: '42.49183380'
   -
     id: 2167
-    name: 'Tekirdağ Province'
+    name: Tekirdağ
     country_id: 225
     country_code: TR
     state_code: '59'
-    type: null
+    type: province
     latitude: '41.11212270'
     longitude: '27.26761160'
   -
     id: 2199
-    name: 'Tokat Province'
+    name: Tokat
     country_id: 225
     country_code: TR
     state_code: '60'
-    type: null
+    type: province
     latitude: '40.39027130'
     longitude: '36.62518630'
   -
     id: 2206
-    name: 'Trabzon Province'
+    name: Trabzon
     country_id: 225
     country_code: TR
     state_code: '61'
-    type: null
+    type: province
     latitude: '40.79924100'
     longitude: '39.58479440'
   -
     id: 2192
-    name: 'Tunceli Province'
+    name: Tunceli
     country_id: 225
     country_code: TR
     state_code: '62'
-    type: null
+    type: province
     latitude: '39.30735540'
     longitude: '39.43877780'
   -
     id: 2201
-    name: 'Uşak Province'
+    name: Uşak
     country_id: 225
     country_code: TR
     state_code: '64'
-    type: null
+    type: province
     latitude: '38.54313190'
     longitude: '29.23207840'
   -
     id: 2152
-    name: 'Van Province'
+    name: Van
     country_id: 225
     country_code: TR
     state_code: '65'
-    type: null
+    type: province
     latitude: '38.36794170'
     longitude: '43.71827870'
   -
     id: 2218
-    name: 'Yalova Province'
+    name: Yalova
     country_id: 225
     country_code: TR
     state_code: '77'
-    type: null
+    type: province
     latitude: '40.57759860'
     longitude: '29.20883030'
   -
     id: 2188
-    name: 'Yozgat Province'
+    name: Yozgat
     country_id: 225
     country_code: TR
     state_code: '66'
-    type: null
+    type: province
     latitude: '39.72719790'
     longitude: '35.10778580'
   -
     id: 2213
-    name: 'Zonguldak Province'
+    name: Zonguldak
     country_id: 225
     country_code: TR
     state_code: '67'
-    type: null
+    type: province
     latitude: '41.31249170'
     longitude: '31.85982510'
   -
