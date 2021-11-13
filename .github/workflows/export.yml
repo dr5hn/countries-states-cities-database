@@ -1,4 +1,4 @@
-name: Export JSON/XML/YAML/CSV/PLIST
+name: Export JSON/XML/YAML/CSV
 
 on:
   push:
@@ -18,7 +18,7 @@ on:
 
 jobs:
   export_json_xml:
-    name: JSON/XML/YAML/CSV/PLIST
+    name: JSON/XML/YAML/CSV
     runs-on: ubuntu-latest
 
     strategy:
@@ -61,19 +61,17 @@ jobs:
           php scripts/export_xml.php
           php scripts/export_yaml.php
           php scripts/export_csv.php
-          [ -d plist ] || mkdir plist
-          python3 scripts/export_plist.py
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Add exported JSON, CSV, XML, YAML & PLIST files
+          commit-message: Add exported JSON, CSV, XML & YAML files
           committer: Darshan Gada <gadadarshan@gmail.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: '(chore): Export JSON, CSV, XML, YAML & PLIST files'
+          title: '(chore): Export JSON, CSV, XML & YAML files'
           labels: |
             exports
             automated
