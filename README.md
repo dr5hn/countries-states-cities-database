@@ -36,10 +36,10 @@ https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
 Total Countries : 250 <br>
-Total States/Regions/Municipalities : 4,887 <br>
+Total States/Regions/Municipalities : 4,961 <br>
 Total Cities/Towns/Districts : 148,037 <br>
 
-Last Updated On : 27th November 2021
+Last Updated On : 11th December 2021
 
 ## License
 This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
