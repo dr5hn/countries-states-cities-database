@@ -204,14 +204,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2032,"Tavush Region",12,AM,Armenia,TV,,40.88662960,45.33934900
 2025,"Vayots Dzor Region",12,AM,Armenia,VD,,39.76419960,45.33375280
 2030,Yerevan,12,AM,Armenia,ER,,40.18720230,44.51520900
-3907,"Australian Capital Territory",14,AU,Australia,ACT,,-35.47346790,149.01236790
-3909,"New South Wales",14,AU,Australia,NSW,,-31.25321830,146.92109900
-3910,"Northern Territory",14,AU,Australia,NT,,-19.49141080,132.55096030
-3905,Queensland,14,AU,Australia,QLD,,-20.91757380,142.70279560
-3904,"South Australia",14,AU,Australia,SA,,-30.00023150,136.20915470
-3908,Tasmania,14,AU,Australia,TAS,,-41.45451960,145.97066470
-3903,Victoria,14,AU,Australia,VIC,,,
-3906,"Western Australia",14,AU,Australia,WA,,-27.67281680,121.62830980
+3907,"Australian Capital Territory",14,AU,Australia,ACT,territory,-35.47346790,149.01236790
+3909,"New South Wales",14,AU,Australia,NSW,state,-31.25321830,146.92109900
+3910,"Northern Territory",14,AU,Australia,NT,territory,-19.49141080,132.55096030
+3905,Queensland,14,AU,Australia,QLD,state,-20.91757380,142.70279560
+3904,"South Australia",14,AU,Australia,SA,state,-30.00023150,136.20915470
+3908,Tasmania,14,AU,Australia,TAS,state,-41.45451960,145.97066470
+3903,Victoria,14,AU,Australia,VIC,state,-36.48564230,140.97794250
+3906,"Western Australia",14,AU,Australia,WA,state,-27.67281680,121.62830980
 2062,Burgenland,15,AT,Austria,1,,47.15371650,16.26887970
 2057,Carinthia,15,AT,Austria,2,,46.72220300,14.18058820
 2065,"Lower Austria",15,AT,Austria,3,,48.10807700,15.80495580
@@ -691,19 +691,19 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2659,South,38,CM,Cameroon,SU,,37.63159500,-97.34584090
 2658,Southwest,38,CM,Cameroon,SW,,36.19088130,-95.88974480
 2664,West,38,CM,Cameroon,OU,,37.03649890,-95.67059870
-872,Alberta,39,CA,Canada,AB,,53.93327060,-116.57650350
-875,"British Columbia",39,CA,Canada,BC,,53.72666830,-127.64762050
-867,Manitoba,39,CA,Canada,MB,,53.76086080,-98.81387620
-868,"New Brunswick",39,CA,Canada,NB,,46.56531630,-66.46191640
-877,"Newfoundland and Labrador",39,CA,Canada,NL,,53.13550910,-57.66043640
-878,"Northwest Territories",39,CA,Canada,NT,,64.82554410,-124.84573340
-874,"Nova Scotia",39,CA,Canada,NS,,44.68198660,-63.74431100
-876,Nunavut,39,CA,Canada,NU,,70.29977110,-83.10757700
-866,Ontario,39,CA,Canada,ON,,51.25377500,-85.32321400
-871,"Prince Edward Island",39,CA,Canada,PE,,46.51071200,-63.41681360
-873,Quebec,39,CA,Canada,QC,,52.93991590,-73.54913610
-870,Saskatchewan,39,CA,Canada,SK,,52.93991590,-106.45086390
-869,Yukon,39,CA,Canada,YT,,35.50672150,-97.76254410
+872,Alberta,39,CA,Canada,AB,province,53.93327060,-116.57650350
+875,"British Columbia",39,CA,Canada,BC,province,53.72666830,-127.64762050
+867,Manitoba,39,CA,Canada,MB,province,53.76086080,-98.81387620
+868,"New Brunswick",39,CA,Canada,NB,province,46.56531630,-66.46191640
+877,"Newfoundland and Labrador",39,CA,Canada,NL,province,53.13550910,-57.66043640
+878,"Northwest Territories",39,CA,Canada,NT,territory,64.82554410,-124.84573340
+874,"Nova Scotia",39,CA,Canada,NS,province,44.68198660,-63.74431100
+876,Nunavut,39,CA,Canada,NU,territory,70.29977110,-83.10757700
+866,Ontario,39,CA,Canada,ON,province,51.25377500,-85.32321400
+871,"Prince Edward Island",39,CA,Canada,PE,province,46.51071200,-63.41681360
+873,Quebec,39,CA,Canada,QC,province,52.93991590,-73.54913610
+870,Saskatchewan,39,CA,Canada,SK,province,52.93991590,-106.45086390
+869,Yukon,39,CA,Canada,YT,territory,35.50672150,-97.76254410
 2994,"Barlavento Islands",40,CV,"Cape Verde",B,,16.82368450,-23.99348810
 2999,"Boa Vista",40,CV,"Cape Verde",BV,,38.74346600,-120.73042970
 2996,Brava,40,CV,"Cape Verde",BR,,40.98977780,-73.68357150
@@ -1148,32 +1148,33 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2906,"Sucumbíos Province",64,EC,Ecuador,U,,0.08892310,-76.88975570
 2908,"Tungurahua Province",64,EC,Ecuador,T,,-1.26352840,-78.56608520
 2909,"Zamora-Chinchipe Province",64,EC,Ecuador,Z,,-4.06558920,-78.95035250
-3235,"Alexandria Governorate",65,EG,Egypt,ALX,,30.87605680,29.74260400
-3225,"Aswan Governorate",65,EG,Egypt,ASN,,23.69664980,32.71813750
-3236,"Asyut Governorate",65,EG,Egypt,AST,,27.21338310,31.44561790
-3241,"Beheira Governorate",65,EG,Egypt,BH,,30.84809860,30.34355060
-3230,"Beni Suef Governorate",65,EG,Egypt,BNS,,28.89388370,31.44561790
-3223,"Cairo Governorate",65,EG,Egypt,C,,29.95375640,31.53700030
-3245,"Dakahlia Governorate",65,EG,Egypt,DK,,31.16560440,31.49131820
-3224,"Damietta Governorate",65,EG,Egypt,DT,,31.36257990,31.67393710
-3238,"Faiyum Governorate",65,EG,Egypt,FYM,,29.30840210,30.84284970
-3234,"Gharbia Governorate",65,EG,Egypt,GH,,30.87535560,31.03351000
-3239,"Giza Governorate",65,EG,Egypt,GZ,,28.76662160,29.23207840
-3244,"Ismailia Governorate",65,EG,Egypt,IS,,30.58309340,32.26538870
-3222,"Kafr el-Sheikh Governorate",65,EG,Egypt,KFS,,31.30854440,30.80394740
-3242,"Luxor Governorate",65,EG,Egypt,LX,,25.39444440,32.49200880
-3231,"Matrouh Governorate",65,EG,Egypt,MT,,29.56963500,26.41938900
-3243,"Minya Governorate",65,EG,Egypt,MN,,28.28472900,30.52790960
-3228,"Monufia Governorate",65,EG,Egypt,MNF,,30.59724550,30.98763210
-3246,"New Valley Governorate",65,EG,Egypt,WAD,,24.54556380,27.17353160
-3227,"North Sinai Governorate",65,EG,Egypt,SIN,,30.28236500,33.61757700
-3229,"Port Said Governorate",65,EG,Egypt,PTS,,31.07586060,32.26538870
-3232,"Qalyubia Governorate",65,EG,Egypt,KB,,30.32923680,31.21684660
-3247,"Qena Governorate",65,EG,Egypt,KN,,26.23460330,32.98883190
-3240,"Red Sea Governorate",65,EG,Egypt,BA,,24.68263160,34.15319470
-3226,"Sohag Governorate",65,EG,Egypt,SHG,,26.69383400,32.17460500
-3237,"South Sinai Governorate",65,EG,Egypt,JS,,29.31018280,34.15319470
-3233,"Suez Governorate",65,EG,Egypt,SUZ,,29.36822550,32.17460500
+3235,Alexandria,65,EG,Egypt,ALX,governorate,30.87605680,29.74260400
+3225,Aswan,65,EG,Egypt,ASN,governorate,23.69664980,32.71813750
+3236,Asyut,65,EG,Egypt,AST,governorate,27.21338310,31.44561790
+3241,Beheira,65,EG,Egypt,BH,governorate,30.84809860,30.34355060
+3230,"Beni Suef",65,EG,Egypt,BNS,governorate,28.89388370,31.44561790
+3223,Cairo,65,EG,Egypt,C,governorate,29.95375640,31.53700030
+3245,Dakahlia,65,EG,Egypt,DK,governorate,31.16560440,31.49131820
+3224,Damietta,65,EG,Egypt,DT,governorate,31.36257990,31.67393710
+3238,Faiyum,65,EG,Egypt,FYM,governorate,29.30840210,30.84284970
+3234,Gharbia,65,EG,Egypt,GH,governorate,30.87535560,31.03351000
+3239,Giza,65,EG,Egypt,GZ,governorate,28.76662160,29.23207840
+3244,Ismailia,65,EG,Egypt,IS,governorate,30.58309340,32.26538870
+3222,"Kafr el-Sheikh",65,EG,Egypt,KFS,governorate,31.30854440,30.80394740
+3242,Luxor,65,EG,Egypt,LX,governorate,25.39444440,32.49200880
+3231,Matrouh,65,EG,Egypt,MT,governorate,29.56963500,26.41938900
+3243,Minya,65,EG,Egypt,MN,governorate,28.28472900,30.52790960
+3228,Monufia,65,EG,Egypt,MNF,governorate,30.59724550,30.98763210
+3246,"New Valley",65,EG,Egypt,WAD,governorate,24.54556380,27.17353160
+3227,"North Sinai",65,EG,Egypt,SIN,governorate,30.28236500,33.61757700
+3229,"Port Said",65,EG,Egypt,PTS,governorate,31.07586060,32.26538870
+3232,Qalyubia,65,EG,Egypt,KB,governorate,30.32923680,31.21684660
+3247,Qena,65,EG,Egypt,KN,governorate,26.23460330,32.98883190
+3240,"Red Sea",65,EG,Egypt,BA,governorate,24.68263160,34.15319470
+5067,Sharqia,65,EG,Egypt,SHR,governorate,30.67305450,31.15932470
+3226,Sohag,65,EG,Egypt,SHG,governorate,26.69383400,32.17460500
+3237,"South Sinai",65,EG,Egypt,JS,governorate,29.31018280,34.15319470
+3233,Suez,65,EG,Egypt,SUZ,governorate,29.36822550,32.17460500
 4139,"Ahuachapán Department",66,SV,"El Salvador",AH,,13.82161480,-89.92532330
 4132,"Cabañas Department",66,SV,"El Salvador",CA,,13.86482880,-88.74939980
 4131,"Chalatenango Department",66,SV,"El Salvador",CH,,14.19166480,-89.17059980

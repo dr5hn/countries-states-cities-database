@@ -2056,7 +2056,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: ACT
-    type: null
+    type: territory
     latitude: '-35.47346790'
     longitude: '149.01236790'
   -
@@ -2066,7 +2066,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: NSW
-    type: null
+    type: state
     latitude: '-31.25321830'
     longitude: '146.92109900'
   -
@@ -2076,7 +2076,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: NT
-    type: null
+    type: territory
     latitude: '-19.49141080'
     longitude: '132.55096030'
   -
@@ -2086,7 +2086,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: QLD
-    type: null
+    type: state
     latitude: '-20.91757380'
     longitude: '142.70279560'
   -
@@ -2096,7 +2096,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: SA
-    type: null
+    type: state
     latitude: '-30.00023150'
     longitude: '136.20915470'
   -
@@ -2106,7 +2106,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: TAS
-    type: null
+    type: state
     latitude: '-41.45451960'
     longitude: '145.97066470'
   -
@@ -2116,9 +2116,9 @@ state:
     country_code: AU
     country_name: Australia
     state_code: VIC
-    type: null
-    latitude: null
-    longitude: null
+    type: state
+    latitude: '-36.48564230'
+    longitude: '140.97794250'
   -
     id: 3906
     name: 'Western Australia'
@@ -2126,7 +2126,7 @@ state:
     country_code: AU
     country_name: Australia
     state_code: WA
-    type: null
+    type: state
     latitude: '-27.67281680'
     longitude: '121.62830980'
   -
@@ -6926,7 +6926,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: AB
-    type: null
+    type: province
     latitude: '53.93327060'
     longitude: '-116.57650350'
   -
@@ -6936,7 +6936,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: BC
-    type: null
+    type: province
     latitude: '53.72666830'
     longitude: '-127.64762050'
   -
@@ -6946,7 +6946,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: MB
-    type: null
+    type: province
     latitude: '53.76086080'
     longitude: '-98.81387620'
   -
@@ -6956,7 +6956,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: NB
-    type: null
+    type: province
     latitude: '46.56531630'
     longitude: '-66.46191640'
   -
@@ -6966,7 +6966,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: NL
-    type: null
+    type: province
     latitude: '53.13550910'
     longitude: '-57.66043640'
   -
@@ -6976,7 +6976,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: NT
-    type: null
+    type: territory
     latitude: '64.82554410'
     longitude: '-124.84573340'
   -
@@ -6986,7 +6986,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: NS
-    type: null
+    type: province
     latitude: '44.68198660'
     longitude: '-63.74431100'
   -
@@ -6996,7 +6996,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: NU
-    type: null
+    type: territory
     latitude: '70.29977110'
     longitude: '-83.10757700'
   -
@@ -7006,7 +7006,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: 'ON'
-    type: null
+    type: province
     latitude: '51.25377500'
     longitude: '-85.32321400'
   -
@@ -7016,7 +7016,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: PE
-    type: null
+    type: province
     latitude: '46.51071200'
     longitude: '-63.41681360'
   -
@@ -7026,7 +7026,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: QC
-    type: null
+    type: province
     latitude: '52.93991590'
     longitude: '-73.54913610'
   -
@@ -7036,7 +7036,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: SK
-    type: null
+    type: province
     latitude: '52.93991590'
     longitude: '-106.45086390'
   -
@@ -7046,7 +7046,7 @@ state:
     country_code: CA
     country_name: Canada
     state_code: YT
-    type: null
+    type: territory
     latitude: '35.50672150'
     longitude: '-97.76254410'
   -
@@ -11491,262 +11491,272 @@ state:
     longitude: '-78.95035250'
   -
     id: 3235
-    name: 'Alexandria Governorate'
+    name: Alexandria
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: ALX
-    type: null
+    type: governorate
     latitude: '30.87605680'
     longitude: '29.74260400'
   -
     id: 3225
-    name: 'Aswan Governorate'
+    name: Aswan
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: ASN
-    type: null
+    type: governorate
     latitude: '23.69664980'
     longitude: '32.71813750'
   -
     id: 3236
-    name: 'Asyut Governorate'
+    name: Asyut
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: AST
-    type: null
+    type: governorate
     latitude: '27.21338310'
     longitude: '31.44561790'
   -
     id: 3241
-    name: 'Beheira Governorate'
+    name: Beheira
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: BH
-    type: null
+    type: governorate
     latitude: '30.84809860'
     longitude: '30.34355060'
   -
     id: 3230
-    name: 'Beni Suef Governorate'
+    name: 'Beni Suef'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: BNS
-    type: null
+    type: governorate
     latitude: '28.89388370'
     longitude: '31.44561790'
   -
     id: 3223
-    name: 'Cairo Governorate'
+    name: Cairo
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: C
-    type: null
+    type: governorate
     latitude: '29.95375640'
     longitude: '31.53700030'
   -
     id: 3245
-    name: 'Dakahlia Governorate'
+    name: Dakahlia
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: DK
-    type: null
+    type: governorate
     latitude: '31.16560440'
     longitude: '31.49131820'
   -
     id: 3224
-    name: 'Damietta Governorate'
+    name: Damietta
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: DT
-    type: null
+    type: governorate
     latitude: '31.36257990'
     longitude: '31.67393710'
   -
     id: 3238
-    name: 'Faiyum Governorate'
+    name: Faiyum
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: FYM
-    type: null
+    type: governorate
     latitude: '29.30840210'
     longitude: '30.84284970'
   -
     id: 3234
-    name: 'Gharbia Governorate'
+    name: Gharbia
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: GH
-    type: null
+    type: governorate
     latitude: '30.87535560'
     longitude: '31.03351000'
   -
     id: 3239
-    name: 'Giza Governorate'
+    name: Giza
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: GZ
-    type: null
+    type: governorate
     latitude: '28.76662160'
     longitude: '29.23207840'
   -
     id: 3244
-    name: 'Ismailia Governorate'
+    name: Ismailia
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: IS
-    type: null
+    type: governorate
     latitude: '30.58309340'
     longitude: '32.26538870'
   -
     id: 3222
-    name: 'Kafr el-Sheikh Governorate'
+    name: 'Kafr el-Sheikh'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: KFS
-    type: null
+    type: governorate
     latitude: '31.30854440'
     longitude: '30.80394740'
   -
     id: 3242
-    name: 'Luxor Governorate'
+    name: Luxor
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: LX
-    type: null
+    type: governorate
     latitude: '25.39444440'
     longitude: '32.49200880'
   -
     id: 3231
-    name: 'Matrouh Governorate'
+    name: Matrouh
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: MT
-    type: null
+    type: governorate
     latitude: '29.56963500'
     longitude: '26.41938900'
   -
     id: 3243
-    name: 'Minya Governorate'
+    name: Minya
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: MN
-    type: null
+    type: governorate
     latitude: '28.28472900'
     longitude: '30.52790960'
   -
     id: 3228
-    name: 'Monufia Governorate'
+    name: Monufia
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: MNF
-    type: null
+    type: governorate
     latitude: '30.59724550'
     longitude: '30.98763210'
   -
     id: 3246
-    name: 'New Valley Governorate'
+    name: 'New Valley'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: WAD
-    type: null
+    type: governorate
     latitude: '24.54556380'
     longitude: '27.17353160'
   -
     id: 3227
-    name: 'North Sinai Governorate'
+    name: 'North Sinai'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: SIN
-    type: null
+    type: governorate
     latitude: '30.28236500'
     longitude: '33.61757700'
   -
     id: 3229
-    name: 'Port Said Governorate'
+    name: 'Port Said'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: PTS
-    type: null
+    type: governorate
     latitude: '31.07586060'
     longitude: '32.26538870'
   -
     id: 3232
-    name: 'Qalyubia Governorate'
+    name: Qalyubia
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: KB
-    type: null
+    type: governorate
     latitude: '30.32923680'
     longitude: '31.21684660'
   -
     id: 3247
-    name: 'Qena Governorate'
+    name: Qena
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: KN
-    type: null
+    type: governorate
     latitude: '26.23460330'
     longitude: '32.98883190'
   -
     id: 3240
-    name: 'Red Sea Governorate'
+    name: 'Red Sea'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: BA
-    type: null
+    type: governorate
     latitude: '24.68263160'
     longitude: '34.15319470'
   -
+    id: 5067
+    name: Sharqia
+    country_id: 65
+    country_code: EG
+    country_name: Egypt
+    state_code: SHR
+    type: governorate
+    latitude: '30.67305450'
+    longitude: '31.15932470'
+  -
     id: 3226
-    name: 'Sohag Governorate'
+    name: Sohag
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: SHG
-    type: null
+    type: governorate
     latitude: '26.69383400'
     longitude: '32.17460500'
   -
     id: 3237
-    name: 'South Sinai Governorate'
+    name: 'South Sinai'
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: JS
-    type: null
+    type: governorate
     latitude: '29.31018280'
     longitude: '34.15319470'
   -
     id: 3233
-    name: 'Suez Governorate'
+    name: Suez
     country_id: 65
     country_code: EG
     country_name: Egypt
     state_code: SUZ
-    type: null
+    type: governorate
     latitude: '29.36822550'
     longitude: '32.17460500'
   -

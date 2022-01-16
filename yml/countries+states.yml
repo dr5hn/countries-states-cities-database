@@ -2178,56 +2178,56 @@ country_state:
         state_code: ACT
         latitude: '-35.47346790'
         longitude: '149.01236790'
-        type: null
+        type: territory
       -
         id: 3909
         name: 'New South Wales'
         state_code: NSW
         latitude: '-31.25321830'
         longitude: '146.92109900'
-        type: null
+        type: state
       -
         id: 3910
         name: 'Northern Territory'
         state_code: NT
         latitude: '-19.49141080'
         longitude: '132.55096030'
-        type: null
+        type: territory
       -
         id: 3905
         name: Queensland
         state_code: QLD
         latitude: '-20.91757380'
         longitude: '142.70279560'
-        type: null
+        type: state
       -
         id: 3904
         name: 'South Australia'
         state_code: SA
         latitude: '-30.00023150'
         longitude: '136.20915470'
-        type: null
+        type: state
       -
         id: 3908
         name: Tasmania
         state_code: TAS
         latitude: '-41.45451960'
         longitude: '145.97066470'
-        type: null
+        type: state
       -
         id: 3903
         name: Victoria
         state_code: VIC
-        latitude: null
-        longitude: null
-        type: null
+        latitude: '-36.48564230'
+        longitude: '140.97794250'
+        type: state
       -
         id: 3906
         name: 'Western Australia'
         state_code: WA
         latitude: '-27.67281680'
         longitude: '121.62830980'
-        type: null
+        type: state
   -
     name: Austria
     iso3: AUT
@@ -6849,91 +6849,91 @@ country_state:
         state_code: AB
         latitude: '53.93327060'
         longitude: '-116.57650350'
-        type: null
+        type: province
       -
         id: 875
         name: 'British Columbia'
         state_code: BC
         latitude: '53.72666830'
         longitude: '-127.64762050'
-        type: null
+        type: province
       -
         id: 867
         name: Manitoba
         state_code: MB
         latitude: '53.76086080'
         longitude: '-98.81387620'
-        type: null
+        type: province
       -
         id: 868
         name: 'New Brunswick'
         state_code: NB
         latitude: '46.56531630'
         longitude: '-66.46191640'
-        type: null
+        type: province
       -
         id: 877
         name: 'Newfoundland and Labrador'
         state_code: NL
         latitude: '53.13550910'
         longitude: '-57.66043640'
-        type: null
+        type: province
       -
         id: 878
         name: 'Northwest Territories'
         state_code: NT
         latitude: '64.82554410'
         longitude: '-124.84573340'
-        type: null
+        type: territory
       -
         id: 874
         name: 'Nova Scotia'
         state_code: NS
         latitude: '44.68198660'
         longitude: '-63.74431100'
-        type: null
+        type: province
       -
         id: 876
         name: Nunavut
         state_code: NU
         latitude: '70.29977110'
         longitude: '-83.10757700'
-        type: null
+        type: territory
       -
         id: 866
         name: Ontario
         state_code: 'ON'
         latitude: '51.25377500'
         longitude: '-85.32321400'
-        type: null
+        type: province
       -
         id: 871
         name: 'Prince Edward Island'
         state_code: PE
         latitude: '46.51071200'
         longitude: '-63.41681360'
-        type: null
+        type: province
       -
         id: 873
         name: Quebec
         state_code: QC
         latitude: '52.93991590'
         longitude: '-73.54913610'
-        type: null
+        type: province
       -
         id: 870
         name: Saskatchewan
         state_code: SK
         latitude: '52.93991590'
         longitude: '-106.45086390'
-        type: null
+        type: province
       -
         id: 869
         name: Yukon
         state_code: YT
         latitude: '35.50672150'
         longitude: '-97.76254410'
-        type: null
+        type: territory
   -
     name: 'Cape Verde'
     iso3: CPV
@@ -11130,186 +11130,193 @@ country_state:
     states:
       -
         id: 3235
-        name: 'Alexandria Governorate'
+        name: Alexandria
         state_code: ALX
         latitude: '30.87605680'
         longitude: '29.74260400'
-        type: null
+        type: governorate
       -
         id: 3225
-        name: 'Aswan Governorate'
+        name: Aswan
         state_code: ASN
         latitude: '23.69664980'
         longitude: '32.71813750'
-        type: null
+        type: governorate
       -
         id: 3236
-        name: 'Asyut Governorate'
+        name: Asyut
         state_code: AST
         latitude: '27.21338310'
         longitude: '31.44561790'
-        type: null
+        type: governorate
       -
         id: 3241
-        name: 'Beheira Governorate'
+        name: Beheira
         state_code: BH
         latitude: '30.84809860'
         longitude: '30.34355060'
-        type: null
+        type: governorate
       -
         id: 3230
-        name: 'Beni Suef Governorate'
+        name: 'Beni Suef'
         state_code: BNS
         latitude: '28.89388370'
         longitude: '31.44561790'
-        type: null
+        type: governorate
       -
         id: 3223
-        name: 'Cairo Governorate'
+        name: Cairo
         state_code: C
         latitude: '29.95375640'
         longitude: '31.53700030'
-        type: null
+        type: governorate
       -
         id: 3245
-        name: 'Dakahlia Governorate'
+        name: Dakahlia
         state_code: DK
         latitude: '31.16560440'
         longitude: '31.49131820'
-        type: null
+        type: governorate
       -
         id: 3224
-        name: 'Damietta Governorate'
+        name: Damietta
         state_code: DT
         latitude: '31.36257990'
         longitude: '31.67393710'
-        type: null
+        type: governorate
       -
         id: 3238
-        name: 'Faiyum Governorate'
+        name: Faiyum
         state_code: FYM
         latitude: '29.30840210'
         longitude: '30.84284970'
-        type: null
+        type: governorate
       -
         id: 3234
-        name: 'Gharbia Governorate'
+        name: Gharbia
         state_code: GH
         latitude: '30.87535560'
         longitude: '31.03351000'
-        type: null
+        type: governorate
       -
         id: 3239
-        name: 'Giza Governorate'
+        name: Giza
         state_code: GZ
         latitude: '28.76662160'
         longitude: '29.23207840'
-        type: null
+        type: governorate
       -
         id: 3244
-        name: 'Ismailia Governorate'
+        name: Ismailia
         state_code: IS
         latitude: '30.58309340'
         longitude: '32.26538870'
-        type: null
+        type: governorate
       -
         id: 3222
-        name: 'Kafr el-Sheikh Governorate'
+        name: 'Kafr el-Sheikh'
         state_code: KFS
         latitude: '31.30854440'
         longitude: '30.80394740'
-        type: null
+        type: governorate
       -
         id: 3242
-        name: 'Luxor Governorate'
+        name: Luxor
         state_code: LX
         latitude: '25.39444440'
         longitude: '32.49200880'
-        type: null
+        type: governorate
       -
         id: 3231
-        name: 'Matrouh Governorate'
+        name: Matrouh
         state_code: MT
         latitude: '29.56963500'
         longitude: '26.41938900'
-        type: null
+        type: governorate
       -
         id: 3243
-        name: 'Minya Governorate'
+        name: Minya
         state_code: MN
         latitude: '28.28472900'
         longitude: '30.52790960'
-        type: null
+        type: governorate
       -
         id: 3228
-        name: 'Monufia Governorate'
+        name: Monufia
         state_code: MNF
         latitude: '30.59724550'
         longitude: '30.98763210'
-        type: null
+        type: governorate
       -
         id: 3246
-        name: 'New Valley Governorate'
+        name: 'New Valley'
         state_code: WAD
         latitude: '24.54556380'
         longitude: '27.17353160'
-        type: null
+        type: governorate
       -
         id: 3227
-        name: 'North Sinai Governorate'
+        name: 'North Sinai'
         state_code: SIN
         latitude: '30.28236500'
         longitude: '33.61757700'
-        type: null
+        type: governorate
       -
         id: 3229
-        name: 'Port Said Governorate'
+        name: 'Port Said'
         state_code: PTS
         latitude: '31.07586060'
         longitude: '32.26538870'
-        type: null
+        type: governorate
       -
         id: 3232
-        name: 'Qalyubia Governorate'
+        name: Qalyubia
         state_code: KB
         latitude: '30.32923680'
         longitude: '31.21684660'
-        type: null
+        type: governorate
       -
         id: 3247
-        name: 'Qena Governorate'
+        name: Qena
         state_code: KN
         latitude: '26.23460330'
         longitude: '32.98883190'
-        type: null
+        type: governorate
       -
         id: 3240
-        name: 'Red Sea Governorate'
+        name: 'Red Sea'
         state_code: BA
         latitude: '24.68263160'
         longitude: '34.15319470'
-        type: null
+        type: governorate
+      -
+        id: 5067
+        name: Sharqia
+        state_code: SHR
+        latitude: '30.67305450'
+        longitude: '31.15932470'
+        type: governorate
       -
         id: 3226
-        name: 'Sohag Governorate'
+        name: Sohag
         state_code: SHG
         latitude: '26.69383400'
         longitude: '32.17460500'
-        type: null
+        type: governorate
       -
         id: 3237
-        name: 'South Sinai Governorate'
+        name: 'South Sinai'
         state_code: JS
         latitude: '29.31018280'
         longitude: '34.15319470'
-        type: null
+        type: governorate
       -
         id: 3233
-        name: 'Suez Governorate'
+        name: Suez
         state_code: SUZ
         latitude: '29.36822550'
         longitude: '32.17460500'
-        type: null
+        type: governorate
   -
     name: 'El Salvador'
     iso3: SLV
