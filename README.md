@@ -41,6 +41,13 @@ Total Cities/Towns/Districts : 148,053 <br>
 
 Last Updated On : 16th January 2022
 
+## When's the next API Database Update day?
+I usually update API's database once a quarter.
+
+**Upcoming API Database Update Date:** 17th April 2022
+
+**Please Note:** Even if you've urgency or you're running this API in Production and you find some data missing, the API Database update dates won't be changed at any circumstances.
+
 ## License
 This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
 
