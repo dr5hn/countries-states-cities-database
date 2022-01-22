@@ -8221,12 +8221,12 @@ state:
     longitude: '-74.87410450'
   -
     id: 4921
-    name: Bogotá
+    name: 'Bogotá D.C.'
     country_id: 48
     country_code: CO
     country_name: Colombia
     state_code: DC
-    type: null
+    type: "capital district\t"
     latitude: '4.28204150'
     longitude: '-74.50270420'
   -
@@ -8356,7 +8356,7 @@ state:
     country_code: CO
     country_name: Colombia
     state_code: HUI
-    type: null
+    type: department
     latitude: '2.53593490'
     longitude: '-75.52766990'
   -
@@ -11261,72 +11261,72 @@ state:
     longitude: '126.36335160'
   -
     id: 2923
-    name: 'Azuay Province'
+    name: Azuay
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: A
-    type: null
+    type: province
     latitude: '-2.89430680'
     longitude: '-78.99683440'
   -
     id: 2920
-    name: 'Bolívar Province'
+    name: Bolívar
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: B
-    type: null
+    type: province
     latitude: '-1.70958280'
     longitude: '-79.04504290'
   -
     id: 2917
-    name: 'Cañar Province'
+    name: Cañar
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: F
-    type: null
+    type: province
     latitude: '-2.55893150'
     longitude: '-78.93881910'
   -
     id: 2915
-    name: 'Carchi Province'
+    name: Carchi
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: C
-    type: null
+    type: province
     latitude: '0.50269120'
     longitude: '-77.90425210'
   -
     id: 2925
-    name: 'Chimborazo Province'
+    name: Chimborazo
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: H
-    type: null
+    type: province
     latitude: '-1.66479950'
     longitude: '-78.65432550'
   -
     id: 2921
-    name: 'Cotopaxi Province'
+    name: Cotopaxi
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: X
-    type: null
+    type: province
     latitude: '-0.83842060'
     longitude: '-78.66626780'
   -
     id: 2924
-    name: 'El Oro Province'
+    name: 'El Oro'
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: O
-    type: null
+    type: province
     latitude: '-3.25924130'
     longitude: '-79.95835410'
   -
@@ -11336,157 +11336,167 @@ state:
     country_code: EC
     country_name: Ecuador
     state_code: E
-    type: null
+    type: province
     latitude: '0.96817890'
     longitude: '-79.65172020'
   -
     id: 2905
-    name: 'Galápagos Province'
+    name: Galápagos
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: W
-    type: null
+    type: province
     latitude: '-0.95376910'
     longitude: '-90.96560190'
   -
     id: 2914
-    name: 'Guayas Province'
+    name: Guayas
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: G
-    type: null
+    type: province
     latitude: '-1.95748390'
     longitude: '-79.91927020'
   -
     id: 2911
-    name: 'Imbabura Province'
+    name: Imbabura
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: I
-    type: null
+    type: province
     latitude: '0.34997680'
     longitude: '-78.12601290'
   -
+    id: 5068
+    name: Loja
+    country_id: 64
+    country_code: EC
+    country_name: Ecuador
+    state_code: L
+    type: province
+    latitude: '-3.99313000'
+    longitude: '-79.20422000'
+  -
     id: 2910
-    name: 'Los Ríos Province'
+    name: 'Los Ríos'
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: R
-    type: null
+    type: province
     latitude: '-1.02306070'
     longitude: '-79.46088970'
   -
     id: 2913
-    name: 'Manabí Province'
+    name: Manabí
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: M
-    type: null
+    type: province
     latitude: '-1.05434340'
     longitude: '-80.45264400'
   -
     id: 2918
-    name: 'Morona-Santiago Province'
+    name: Morona-Santiago
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: S
-    type: null
+    type: province
     latitude: '-2.30510620'
     longitude: '-78.11468660'
   -
     id: 2916
-    name: 'Napo Province'
+    name: Napo
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: 'N'
-    type: null
+    type: province
     latitude: '-0.99559640'
     longitude: '-77.81296840'
   -
     id: 2926
-    name: 'Orellana Province'
+    name: Orellana
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: D
-    type: null
+    type: province
     latitude: '-0.45451630'
     longitude: '-76.99502860'
   -
     id: 2907
-    name: 'Pastaza Province'
+    name: Pastaza
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: 'Y'
-    type: null
+    type: province
     latitude: '-1.48822650'
     longitude: '-78.00310570'
   -
     id: 2927
-    name: 'Pichincha Province'
+    name: Pichincha
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: P
-    type: null
+    type: province
     latitude: '-0.14648470'
     longitude: '-78.47519450'
   -
     id: 2912
-    name: 'Santa Elena Province'
+    name: 'Santa Elena'
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: SE
-    type: null
+    type: province
     latitude: '-2.22671050'
     longitude: '-80.85949900'
   -
     id: 2919
-    name: 'Santo Domingo de los Tsáchilas Province'
+    name: 'Santo Domingo de los Tsáchilas'
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: SD
-    type: null
+    type: province
     latitude: '-0.25218820'
     longitude: '-79.18793830'
   -
     id: 2906
-    name: 'Sucumbíos Province'
+    name: Sucumbíos
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: U
-    type: null
+    type: province
     latitude: '0.08892310'
     longitude: '-76.88975570'
   -
     id: 2908
-    name: 'Tungurahua Province'
+    name: Tungurahua
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: T
-    type: null
+    type: province
     latitude: '-1.26352840'
     longitude: '-78.56608520'
   -
     id: 2909
-    name: 'Zamora-Chinchipe Province'
+    name: 'Zamora Chinchipe'
     country_id: 64
     country_code: EC
     country_name: Ecuador
     state_code: Z
-    type: null
+    type: province
     latitude: '-4.06558920'
     longitude: '-78.95035250'
   -
@@ -48336,7 +48346,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: Z
-    type: null
+    type: state
     latitude: '-3.41684270'
     longitude: '-65.85606460'
   -
@@ -48346,7 +48356,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: B
-    type: null
+    type: state
     latitude: '8.59130730'
     longitude: '-63.95861110'
   -
@@ -48356,7 +48366,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: C
-    type: null
+    type: state
     latitude: '6.92694830'
     longitude: '-68.52471490'
   -
@@ -48366,7 +48376,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: D
-    type: null
+    type: state
     latitude: '10.06357580'
     longitude: '-67.28478750'
   -
@@ -48376,7 +48386,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: E
-    type: null
+    type: state
     latitude: '8.62314980'
     longitude: '-70.23710450'
   -
@@ -48386,19 +48396,9 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: F
-    type: null
+    type: state
     latitude: '37.61448380'
     longitude: '-93.41047490'
-  -
-    id: 4855
-    name: 'Capital District'
-    country_id: 239
-    country_code: VE
-    country_name: Venezuela
-    state_code: A
-    type: null
-    latitude: '41.26148460'
-    longitude: '-95.93108070'
   -
     id: 2040
     name: Carabobo
@@ -48406,7 +48406,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: G
-    type: null
+    type: state
     latitude: '10.11764330'
     longitude: '-68.04775090'
   -
@@ -48416,7 +48416,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: H
-    type: null
+    type: state
     latitude: '9.38166820'
     longitude: '-68.33392750'
   -
@@ -48426,9 +48426,19 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: 'Y'
-    type: null
+    type: state
     latitude: '8.84993070'
     longitude: '-61.14031960'
+  -
+    id: 4855
+    name: 'Distrito Capital'
+    country_id: 239
+    country_code: VE
+    country_name: Venezuela
+    state_code: A
+    type: 'capital district'
+    latitude: '41.26148460'
+    longitude: '-95.93108070'
   -
     id: 2035
     name: Falcón
@@ -48436,7 +48446,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: I
-    type: null
+    type: state
     latitude: '11.18106740'
     longitude: '-69.85974060'
   -
@@ -48446,7 +48456,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: W
-    type: null
+    type: 'federal dependency'
     latitude: '10.93770530'
     longitude: '-65.35695730'
   -
@@ -48456,9 +48466,19 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: J
-    type: null
+    type: state
     latitude: '8.74893090'
     longitude: '-66.23671720'
+  -
+    id: 2055
+    name: 'La Guaira'
+    country_id: 239
+    country_code: VE
+    country_name: Venezuela
+    state_code: X
+    type: state
+    latitude: '29.30522680'
+    longitude: '-94.79138540'
   -
     id: 2038
     name: Lara
@@ -48466,7 +48486,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: K
-    type: null
+    type: state
     latitude: '33.98221650'
     longitude: '-118.13227470'
   -
@@ -48476,7 +48496,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: L
-    type: null
+    type: state
     latitude: '20.96737020'
     longitude: '-89.59258570'
   -
@@ -48486,7 +48506,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: M
-    type: null
+    type: state
     latitude: '42.35193830'
     longitude: '-71.52907660'
   -
@@ -48496,7 +48516,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: 'N'
-    type: null
+    type: state
     latitude: '9.32416520'
     longitude: '-63.01475780'
   -
@@ -48506,7 +48526,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: O
-    type: null
+    type: state
     latitude: '10.99707230'
     longitude: '-63.91132960'
   -
@@ -48516,7 +48536,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: P
-    type: null
+    type: state
     latitude: '9.09439990'
     longitude: '-69.09702300'
   -
@@ -48526,7 +48546,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: R
-    type: null
+    type: state
     latitude: '-19.03534500'
     longitude: '-65.25921280'
   -
@@ -48536,7 +48556,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: S
-    type: null
+    type: state
     latitude: '7.91370010'
     longitude: '-72.14161320'
   -
@@ -48546,19 +48566,9 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: T
-    type: null
+    type: state
     latitude: '36.67343430'
     longitude: '-121.62875880'
-  -
-    id: 2055
-    name: Vargas
-    country_id: 239
-    country_code: VE
-    country_name: Venezuela
-    state_code: X
-    type: null
-    latitude: '29.30522680'
-    longitude: '-94.79138540'
   -
     id: 2041
     name: Yaracuy
@@ -48566,7 +48576,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: U
-    type: null
+    type: state
     latitude: '10.33938900'
     longitude: '-68.81088490'
   -
@@ -48576,7 +48586,7 @@ state:
     country_code: VE
     country_name: Venezuela
     state_code: V
-    type: null
+    type: state
     latitude: '10.29102370'
     longitude: '-72.14161320'
   -
