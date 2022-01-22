@@ -9185,7 +9185,7 @@
         "iso2": "CO",
         "numeric_code": "170",
         "phone_code": "57",
-        "capital": "Bogota",
+        "capital": "Bogotá",
         "currency": "COP",
         "currency_name": "Colombian peso",
         "currency_symbol": "$",
@@ -9255,11 +9255,11 @@
             },
             {
                 "id": 4921,
-                "name": "Bogotá",
+                "name": "Bogotá D.C.",
                 "state_code": "DC",
                 "latitude": "4.28204150",
                 "longitude": "-74.50270420",
-                "type": null
+                "type": "capital district\t"
             },
             {
                 "id": 2893,
@@ -9363,7 +9363,7 @@
                 "state_code": "HUI",
                 "latitude": "2.53593490",
                 "longitude": "-75.52766990",
-                "type": null
+                "type": "department"
             },
             {
                 "id": 2889,
@@ -12451,59 +12451,59 @@
         "states": [
             {
                 "id": 2923,
-                "name": "Azuay Province",
+                "name": "Azuay",
                 "state_code": "A",
                 "latitude": "-2.89430680",
                 "longitude": "-78.99683440",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2920,
-                "name": "Bolívar Province",
+                "name": "Bolívar",
                 "state_code": "B",
                 "latitude": "-1.70958280",
                 "longitude": "-79.04504290",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2917,
-                "name": "Cañar Province",
+                "name": "Cañar",
                 "state_code": "F",
                 "latitude": "-2.55893150",
                 "longitude": "-78.93881910",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2915,
-                "name": "Carchi Province",
+                "name": "Carchi",
                 "state_code": "C",
                 "latitude": "0.50269120",
                 "longitude": "-77.90425210",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2925,
-                "name": "Chimborazo Province",
+                "name": "Chimborazo",
                 "state_code": "H",
                 "latitude": "-1.66479950",
                 "longitude": "-78.65432550",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2921,
-                "name": "Cotopaxi Province",
+                "name": "Cotopaxi",
                 "state_code": "X",
                 "latitude": "-0.83842060",
                 "longitude": "-78.66626780",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2924,
-                "name": "El Oro Province",
+                "name": "El Oro",
                 "state_code": "O",
                 "latitude": "-3.25924130",
                 "longitude": "-79.95835410",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2922,
@@ -12511,127 +12511,135 @@
                 "state_code": "E",
                 "latitude": "0.96817890",
                 "longitude": "-79.65172020",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2905,
-                "name": "Galápagos Province",
+                "name": "Galápagos",
                 "state_code": "W",
                 "latitude": "-0.95376910",
                 "longitude": "-90.96560190",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2914,
-                "name": "Guayas Province",
+                "name": "Guayas",
                 "state_code": "G",
                 "latitude": "-1.95748390",
                 "longitude": "-79.91927020",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2911,
-                "name": "Imbabura Province",
+                "name": "Imbabura",
                 "state_code": "I",
                 "latitude": "0.34997680",
                 "longitude": "-78.12601290",
-                "type": null
+                "type": "province"
+            },
+            {
+                "id": 5068,
+                "name": "Loja",
+                "state_code": "L",
+                "latitude": "-3.99313000",
+                "longitude": "-79.20422000",
+                "type": "province"
             },
             {
                 "id": 2910,
-                "name": "Los Ríos Province",
+                "name": "Los Ríos",
                 "state_code": "R",
                 "latitude": "-1.02306070",
                 "longitude": "-79.46088970",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2913,
-                "name": "Manabí Province",
+                "name": "Manabí",
                 "state_code": "M",
                 "latitude": "-1.05434340",
                 "longitude": "-80.45264400",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2918,
-                "name": "Morona-Santiago Province",
+                "name": "Morona-Santiago",
                 "state_code": "S",
                 "latitude": "-2.30510620",
                 "longitude": "-78.11468660",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2916,
-                "name": "Napo Province",
+                "name": "Napo",
                 "state_code": "N",
                 "latitude": "-0.99559640",
                 "longitude": "-77.81296840",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2926,
-                "name": "Orellana Province",
+                "name": "Orellana",
                 "state_code": "D",
                 "latitude": "-0.45451630",
                 "longitude": "-76.99502860",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2907,
-                "name": "Pastaza Province",
+                "name": "Pastaza",
                 "state_code": "Y",
                 "latitude": "-1.48822650",
                 "longitude": "-78.00310570",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2927,
-                "name": "Pichincha Province",
+                "name": "Pichincha",
                 "state_code": "P",
                 "latitude": "-0.14648470",
                 "longitude": "-78.47519450",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2912,
-                "name": "Santa Elena Province",
+                "name": "Santa Elena",
                 "state_code": "SE",
                 "latitude": "-2.22671050",
                 "longitude": "-80.85949900",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2919,
-                "name": "Santo Domingo de los Tsáchilas Province",
+                "name": "Santo Domingo de los Tsáchilas",
                 "state_code": "SD",
                 "latitude": "-0.25218820",
                 "longitude": "-79.18793830",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2906,
-                "name": "Sucumbíos Province",
+                "name": "Sucumbíos",
                 "state_code": "U",
                 "latitude": "0.08892310",
                 "longitude": "-76.88975570",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2908,
-                "name": "Tungurahua Province",
+                "name": "Tungurahua",
                 "state_code": "T",
                 "latitude": "-1.26352840",
                 "longitude": "-78.56608520",
-                "type": null
+                "type": "province"
             },
             {
                 "id": 2909,
-                "name": "Zamora-Chinchipe Province",
+                "name": "Zamora Chinchipe",
                 "state_code": "Z",
                 "latitude": "-4.06558920",
                 "longitude": "-78.95035250",
-                "type": null
+                "type": "province"
             }
         ]
     },
@@ -50491,7 +50499,7 @@
                 "state_code": "Z",
                 "latitude": "-3.41684270",
                 "longitude": "-65.85606460",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2050,
@@ -50499,7 +50507,7 @@
                 "state_code": "B",
                 "latitude": "8.59130730",
                 "longitude": "-63.95861110",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 4856,
@@ -50507,7 +50515,7 @@
                 "state_code": "C",
                 "latitude": "6.92694830",
                 "longitude": "-68.52471490",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2047,
@@ -50515,7 +50523,7 @@
                 "state_code": "D",
                 "latitude": "10.06357580",
                 "longitude": "-67.28478750",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2049,
@@ -50523,7 +50531,7 @@
                 "state_code": "E",
                 "latitude": "8.62314980",
                 "longitude": "-70.23710450",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2039,
@@ -50531,15 +50539,7 @@
                 "state_code": "F",
                 "latitude": "37.61448380",
                 "longitude": "-93.41047490",
-                "type": null
-            },
-            {
-                "id": 4855,
-                "name": "Capital District",
-                "state_code": "A",
-                "latitude": "41.26148460",
-                "longitude": "-95.93108070",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2040,
@@ -50547,7 +50547,7 @@
                 "state_code": "G",
                 "latitude": "10.11764330",
                 "longitude": "-68.04775090",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2034,
@@ -50555,7 +50555,7 @@
                 "state_code": "H",
                 "latitude": "9.38166820",
                 "longitude": "-68.33392750",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2051,
@@ -50563,7 +50563,15 @@
                 "state_code": "Y",
                 "latitude": "8.84993070",
                 "longitude": "-61.14031960",
-                "type": null
+                "type": "state"
+            },
+            {
+                "id": 4855,
+                "name": "Distrito Capital",
+                "state_code": "A",
+                "latitude": "41.26148460",
+                "longitude": "-95.93108070",
+                "type": "capital district"
             },
             {
                 "id": 2035,
@@ -50571,7 +50579,7 @@
                 "state_code": "I",
                 "latitude": "11.18106740",
                 "longitude": "-69.85974060",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2046,
@@ -50579,7 +50587,7 @@
                 "state_code": "W",
                 "latitude": "10.93770530",
                 "longitude": "-65.35695730",
-                "type": null
+                "type": "federal dependency"
             },
             {
                 "id": 2045,
@@ -50587,7 +50595,15 @@
                 "state_code": "J",
                 "latitude": "8.74893090",
                 "longitude": "-66.23671720",
-                "type": null
+                "type": "state"
+            },
+            {
+                "id": 2055,
+                "name": "La Guaira",
+                "state_code": "X",
+                "latitude": "29.30522680",
+                "longitude": "-94.79138540",
+                "type": "state"
             },
             {
                 "id": 2038,
@@ -50595,7 +50611,7 @@
                 "state_code": "K",
                 "latitude": "33.98221650",
                 "longitude": "-118.13227470",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2053,
@@ -50603,7 +50619,7 @@
                 "state_code": "L",
                 "latitude": "20.96737020",
                 "longitude": "-89.59258570",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2037,
@@ -50611,7 +50627,7 @@
                 "state_code": "M",
                 "latitude": "42.35193830",
                 "longitude": "-71.52907660",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2054,
@@ -50619,7 +50635,7 @@
                 "state_code": "N",
                 "latitude": "9.32416520",
                 "longitude": "-63.01475780",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2052,
@@ -50627,7 +50643,7 @@
                 "state_code": "O",
                 "latitude": "10.99707230",
                 "longitude": "-63.91132960",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2036,
@@ -50635,7 +50651,7 @@
                 "state_code": "P",
                 "latitude": "9.09439990",
                 "longitude": "-69.09702300",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2056,
@@ -50643,7 +50659,7 @@
                 "state_code": "R",
                 "latitude": "-19.03534500",
                 "longitude": "-65.25921280",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2048,
@@ -50651,7 +50667,7 @@
                 "state_code": "S",
                 "latitude": "7.91370010",
                 "longitude": "-72.14161320",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2043,
@@ -50659,15 +50675,7 @@
                 "state_code": "T",
                 "latitude": "36.67343430",
                 "longitude": "-121.62875880",
-                "type": null
-            },
-            {
-                "id": 2055,
-                "name": "Vargas",
-                "state_code": "X",
-                "latitude": "29.30522680",
-                "longitude": "-94.79138540",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2041,
@@ -50675,7 +50683,7 @@
                 "state_code": "U",
                 "latitude": "10.33938900",
                 "longitude": "-68.81088490",
-                "type": null
+                "type": "state"
             },
             {
                 "id": 2042,
@@ -50683,7 +50691,7 @@
                 "state_code": "V",
                 "latitude": "10.29102370",
                 "longitude": "-72.14161320",
-                "type": null
+                "type": "state"
             }
         ]
     },

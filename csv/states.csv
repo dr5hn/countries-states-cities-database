@@ -821,7 +821,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2890,Antioquia,48,CO,Colombia,ANT,,7.19860640,-75.34121790
 2881,Arauca,48,CO,Colombia,ARA,,6.54730600,-71.00223110
 2880,Atlántico,48,CO,Colombia,ATL,,10.69661590,-74.87410450
-4921,Bogotá,48,CO,Colombia,DC,,4.28204150,-74.50270420
+4921,"Bogotá D.C.",48,CO,Colombia,DC,"capital district	",4.28204150,-74.50270420
 2893,Bolívar,48,CO,Colombia,BOL,,8.67043820,-74.03001220
 2903,Boyacá,48,CO,Colombia,BOY,,5.45451100,-73.36200300
 2887,Caldas,48,CO,Colombia,CAL,,5.29826000,-75.24790610
@@ -834,7 +834,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2875,Cundinamarca,48,CO,Colombia,CUN,,5.02600300,-74.03001220
 2882,Guainía,48,CO,Colombia,GUA,,2.58539300,-68.52471490
 2888,Guaviare,48,CO,Colombia,GUV,,2.04392400,-72.33111300
-4871,Huila,48,CO,Colombia,HUI,,2.53593490,-75.52766990
+4871,Huila,48,CO,Colombia,HUI,department,2.53593490,-75.52766990
 2889,"La Guajira",48,CO,Colombia,LAG,,11.35477430,-72.52048270
 2886,Magdalena,48,CO,Colombia,MAG,,10.41130140,-74.40566120
 2878,Meta,48,CO,Colombia,MET,,39.76732580,-104.97535950
@@ -1125,29 +1125,30 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4517,"Manatuto District",63,TL,"East Timor",MT,,-8.51556080,126.01592550
 4519,"Manufahi Municipality",63,TL,"East Timor",MF,,-9.01454950,125.82799590
 4514,"Viqueque Municipality",63,TL,"East Timor",VI,,-8.85979180,126.36335160
-2923,"Azuay Province",64,EC,Ecuador,A,,-2.89430680,-78.99683440
-2920,"Bolívar Province",64,EC,Ecuador,B,,-1.70958280,-79.04504290
-2917,"Cañar Province",64,EC,Ecuador,F,,-2.55893150,-78.93881910
-2915,"Carchi Province",64,EC,Ecuador,C,,0.50269120,-77.90425210
-2925,"Chimborazo Province",64,EC,Ecuador,H,,-1.66479950,-78.65432550
-2921,"Cotopaxi Province",64,EC,Ecuador,X,,-0.83842060,-78.66626780
-2924,"El Oro Province",64,EC,Ecuador,O,,-3.25924130,-79.95835410
-2922,Esmeraldas,64,EC,Ecuador,E,,0.96817890,-79.65172020
-2905,"Galápagos Province",64,EC,Ecuador,W,,-0.95376910,-90.96560190
-2914,"Guayas Province",64,EC,Ecuador,G,,-1.95748390,-79.91927020
-2911,"Imbabura Province",64,EC,Ecuador,I,,0.34997680,-78.12601290
-2910,"Los Ríos Province",64,EC,Ecuador,R,,-1.02306070,-79.46088970
-2913,"Manabí Province",64,EC,Ecuador,M,,-1.05434340,-80.45264400
-2918,"Morona-Santiago Province",64,EC,Ecuador,S,,-2.30510620,-78.11468660
-2916,"Napo Province",64,EC,Ecuador,N,,-0.99559640,-77.81296840
-2926,"Orellana Province",64,EC,Ecuador,D,,-0.45451630,-76.99502860
-2907,"Pastaza Province",64,EC,Ecuador,Y,,-1.48822650,-78.00310570
-2927,"Pichincha Province",64,EC,Ecuador,P,,-0.14648470,-78.47519450
-2912,"Santa Elena Province",64,EC,Ecuador,SE,,-2.22671050,-80.85949900
-2919,"Santo Domingo de los Tsáchilas Province",64,EC,Ecuador,SD,,-0.25218820,-79.18793830
-2906,"Sucumbíos Province",64,EC,Ecuador,U,,0.08892310,-76.88975570
-2908,"Tungurahua Province",64,EC,Ecuador,T,,-1.26352840,-78.56608520
-2909,"Zamora-Chinchipe Province",64,EC,Ecuador,Z,,-4.06558920,-78.95035250
+2923,Azuay,64,EC,Ecuador,A,province,-2.89430680,-78.99683440
+2920,Bolívar,64,EC,Ecuador,B,province,-1.70958280,-79.04504290
+2917,Cañar,64,EC,Ecuador,F,province,-2.55893150,-78.93881910
+2915,Carchi,64,EC,Ecuador,C,province,0.50269120,-77.90425210
+2925,Chimborazo,64,EC,Ecuador,H,province,-1.66479950,-78.65432550
+2921,Cotopaxi,64,EC,Ecuador,X,province,-0.83842060,-78.66626780
+2924,"El Oro",64,EC,Ecuador,O,province,-3.25924130,-79.95835410
+2922,Esmeraldas,64,EC,Ecuador,E,province,0.96817890,-79.65172020
+2905,Galápagos,64,EC,Ecuador,W,province,-0.95376910,-90.96560190
+2914,Guayas,64,EC,Ecuador,G,province,-1.95748390,-79.91927020
+2911,Imbabura,64,EC,Ecuador,I,province,0.34997680,-78.12601290
+5068,Loja,64,EC,Ecuador,L,province,-3.99313000,-79.20422000
+2910,"Los Ríos",64,EC,Ecuador,R,province,-1.02306070,-79.46088970
+2913,Manabí,64,EC,Ecuador,M,province,-1.05434340,-80.45264400
+2918,Morona-Santiago,64,EC,Ecuador,S,province,-2.30510620,-78.11468660
+2916,Napo,64,EC,Ecuador,N,province,-0.99559640,-77.81296840
+2926,Orellana,64,EC,Ecuador,D,province,-0.45451630,-76.99502860
+2907,Pastaza,64,EC,Ecuador,Y,province,-1.48822650,-78.00310570
+2927,Pichincha,64,EC,Ecuador,P,province,-0.14648470,-78.47519450
+2912,"Santa Elena",64,EC,Ecuador,SE,province,-2.22671050,-80.85949900
+2919,"Santo Domingo de los Tsáchilas",64,EC,Ecuador,SD,province,-0.25218820,-79.18793830
+2906,Sucumbíos,64,EC,Ecuador,U,province,0.08892310,-76.88975570
+2908,Tungurahua,64,EC,Ecuador,T,province,-1.26352840,-78.56608520
+2909,"Zamora Chinchipe",64,EC,Ecuador,Z,province,-4.06558920,-78.95035250
 3235,Alexandria,65,EG,Egypt,ALX,governorate,30.87605680,29.74260400
 3225,Aswan,65,EG,Egypt,ASN,governorate,23.69664980,32.71813750
 3236,Asyut,65,EG,Egypt,AST,governorate,27.21338310,31.44561790
@@ -4832,31 +4833,31 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4774,Shefa,237,VU,Vanuatu,SEE,,32.80576500,35.16997100
 4777,Tafea,237,VU,Vanuatu,TAE,,-18.72378270,169.06450560
 4772,Torba,237,VU,Vanuatu,TOB,,37.07653000,27.45657300
-2044,Amazonas,239,VE,Venezuela,Z,,-3.41684270,-65.85606460
-2050,Anzoátegui,239,VE,Venezuela,B,,8.59130730,-63.95861110
-4856,Apure,239,VE,Venezuela,C,,6.92694830,-68.52471490
-2047,Aragua,239,VE,Venezuela,D,,10.06357580,-67.28478750
-2049,Barinas,239,VE,Venezuela,E,,8.62314980,-70.23710450
-2039,Bolívar,239,VE,Venezuela,F,,37.61448380,-93.41047490
-4855,"Capital District",239,VE,Venezuela,A,,41.26148460,-95.93108070
-2040,Carabobo,239,VE,Venezuela,G,,10.11764330,-68.04775090
-2034,Cojedes,239,VE,Venezuela,H,,9.38166820,-68.33392750
-2051,"Delta Amacuro",239,VE,Venezuela,Y,,8.84993070,-61.14031960
-2035,Falcón,239,VE,Venezuela,I,,11.18106740,-69.85974060
-2046,"Federal Dependencies of Venezuela",239,VE,Venezuela,W,,10.93770530,-65.35695730
-2045,Guárico,239,VE,Venezuela,J,,8.74893090,-66.23671720
-2038,Lara,239,VE,Venezuela,K,,33.98221650,-118.13227470
-2053,Mérida,239,VE,Venezuela,L,,20.96737020,-89.59258570
-2037,Miranda,239,VE,Venezuela,M,,42.35193830,-71.52907660
-2054,Monagas,239,VE,Venezuela,N,,9.32416520,-63.01475780
-2052,"Nueva Esparta",239,VE,Venezuela,O,,10.99707230,-63.91132960
-2036,Portuguesa,239,VE,Venezuela,P,,9.09439990,-69.09702300
-2056,Sucre,239,VE,Venezuela,R,,-19.03534500,-65.25921280
-2048,Táchira,239,VE,Venezuela,S,,7.91370010,-72.14161320
-2043,Trujillo,239,VE,Venezuela,T,,36.67343430,-121.62875880
-2055,Vargas,239,VE,Venezuela,X,,29.30522680,-94.79138540
-2041,Yaracuy,239,VE,Venezuela,U,,10.33938900,-68.81088490
-2042,Zulia,239,VE,Venezuela,V,,10.29102370,-72.14161320
+2044,Amazonas,239,VE,Venezuela,Z,state,-3.41684270,-65.85606460
+2050,Anzoátegui,239,VE,Venezuela,B,state,8.59130730,-63.95861110
+4856,Apure,239,VE,Venezuela,C,state,6.92694830,-68.52471490
+2047,Aragua,239,VE,Venezuela,D,state,10.06357580,-67.28478750
+2049,Barinas,239,VE,Venezuela,E,state,8.62314980,-70.23710450
+2039,Bolívar,239,VE,Venezuela,F,state,37.61448380,-93.41047490
+2040,Carabobo,239,VE,Venezuela,G,state,10.11764330,-68.04775090
+2034,Cojedes,239,VE,Venezuela,H,state,9.38166820,-68.33392750
+2051,"Delta Amacuro",239,VE,Venezuela,Y,state,8.84993070,-61.14031960
+4855,"Distrito Capital",239,VE,Venezuela,A,"capital district",41.26148460,-95.93108070
+2035,Falcón,239,VE,Venezuela,I,state,11.18106740,-69.85974060
+2046,"Federal Dependencies of Venezuela",239,VE,Venezuela,W,"federal dependency",10.93770530,-65.35695730
+2045,Guárico,239,VE,Venezuela,J,state,8.74893090,-66.23671720
+2055,"La Guaira",239,VE,Venezuela,X,state,29.30522680,-94.79138540
+2038,Lara,239,VE,Venezuela,K,state,33.98221650,-118.13227470
+2053,Mérida,239,VE,Venezuela,L,state,20.96737020,-89.59258570
+2037,Miranda,239,VE,Venezuela,M,state,42.35193830,-71.52907660
+2054,Monagas,239,VE,Venezuela,N,state,9.32416520,-63.01475780
+2052,"Nueva Esparta",239,VE,Venezuela,O,state,10.99707230,-63.91132960
+2036,Portuguesa,239,VE,Venezuela,P,state,9.09439990,-69.09702300
+2056,Sucre,239,VE,Venezuela,R,state,-19.03534500,-65.25921280
+2048,Táchira,239,VE,Venezuela,S,state,7.91370010,-72.14161320
+2043,Trujillo,239,VE,Venezuela,T,state,36.67343430,-121.62875880
+2041,Yaracuy,239,VE,Venezuela,U,state,10.33938900,-68.81088490
+2042,Zulia,239,VE,Venezuela,V,state,10.29102370,-72.14161320
 3794,"An Giang",240,VN,Vietnam,44,,10.52158360,105.12589550
 3770,"Bà Rịa-Vũng Tàu",240,VN,Vietnam,43,,10.54173970,107.24299760
 3815,"Bắc Giang",240,VN,Vietnam,54,,21.28199210,106.19747690
