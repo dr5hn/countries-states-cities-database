@@ -1700,65 +1700,65 @@ state:
     latitude: '40.43682580'
     longitude: '-80.06855320'
   -
-    id: 4880
-    name: 'Autonomous City Of Buenos Aires'
-    country_id: 11
-    country_code: AR
-    country_name: Argentina
-    state_code: C
-    type: null
-    latitude: '-34.60368440'
-    longitude: '-58.38155910'
-  -
     id: 3656
-    name: 'Buenos Aires Province'
+    name: 'Buenos Aires'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: B
-    type: null
+    type: province
     latitude: '-37.20172850'
     longitude: '-59.84106970'
   -
     id: 3647
-    name: 'Catamarca Province'
+    name: Catamarca
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: K
-    type: null
+    type: province
     latitude: '-28.47158770'
     longitude: '-65.78772090'
   -
     id: 3640
-    name: 'Chaco Province'
+    name: Chaco
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: H
-    type: null
+    type: province
     latitude: '-27.42571750'
     longitude: '-59.02437840'
   -
     id: 3651
-    name: 'Chubut Province'
+    name: Chubut
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: U
-    type: null
+    type: province
     latitude: '-43.29342460'
     longitude: '-65.11148180'
   -
+    id: 4880
+    name: 'Ciudad Autónoma de Buenos Aires'
+    country_id: 11
+    country_code: AR
+    country_name: Argentina
+    state_code: C
+    type: city
+    latitude: '-34.60368440'
+    longitude: '-58.38155910'
+  -
     id: 3642
-    name: 'Córdoba Province'
+    name: Córdoba
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: X
-    type: null
-    latitude: null
-    longitude: null
+    type: province
+    latitude: '-31.39928760'
+    longitude: '-64.26438420'
   -
     id: 3638
     name: Corrientes
@@ -1766,37 +1766,37 @@ state:
     country_code: AR
     country_name: Argentina
     state_code: W
-    type: null
+    type: province
     latitude: '-27.46921310'
     longitude: '-58.83063490'
   -
     id: 3654
-    name: 'Entre Ríos Province'
+    name: 'Entre Ríos'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: E
-    type: null
+    type: province
     latitude: '-31.77466540'
     longitude: '-60.49564610'
   -
     id: 3652
-    name: 'Formosa Province'
+    name: Formosa
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: P
-    type: null
+    type: province
     latitude: '-26.18948040'
     longitude: '-58.22428060'
   -
     id: 3645
-    name: 'Jujuy Province'
+    name: Jujuy
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: 'Y'
-    type: null
+    type: province
     latitude: '-24.18433970'
     longitude: '-65.30217700'
   -
@@ -1806,17 +1806,17 @@ state:
     country_code: AR
     country_name: Argentina
     state_code: L
-    type: null
+    type: province
     latitude: '-36.61475730'
     longitude: '-64.28392090'
   -
     id: 3653
-    name: 'La Rioja Province'
+    name: 'La Rioja'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: F
-    type: null
+    type: province
     latitude: '-29.41937930'
     longitude: '-66.85599320'
   -
@@ -1826,117 +1826,117 @@ state:
     country_code: AR
     country_name: Argentina
     state_code: M
-    type: null
+    type: province
     latitude: '-32.88945870'
     longitude: '-68.84583860'
   -
     id: 3644
-    name: 'Misiones Province'
+    name: Misiones
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: 'N'
-    type: null
+    type: province
     latitude: '-27.42692550'
     longitude: '-55.94670760'
   -
     id: 3648
-    name: 'Neuquén Province'
+    name: Neuquén
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: Q
-    type: null
+    type: province
     latitude: '-38.94587000'
     longitude: '-68.07309250'
   -
     id: 3639
-    name: 'Río Negro Province'
+    name: 'Río Negro'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: R
-    type: null
+    type: province
     latitude: '-40.82614340'
     longitude: '-63.02663390'
   -
     id: 3643
-    name: 'Salta Province'
+    name: Salta
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: A
-    type: null
+    type: province
     latitude: '-24.79976880'
     longitude: '-65.41503670'
   -
     id: 3634
-    name: 'San Juan Province'
+    name: 'San Juan'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: J
-    type: null
-    latitude: null
-    longitude: null
+    type: province
+    latitude: '-31.53169760'
+    longitude: '-68.56769620'
   -
     id: 3636
-    name: 'San Luis Province'
+    name: "San Luis\t"
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: D
-    type: null
+    type: province
     latitude: '-33.29620420'
     longitude: '-66.32949480'
   -
     id: 3649
-    name: 'Santa Cruz Province'
+    name: 'Santa Cruz'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: Z
-    type: null
+    type: province
     latitude: '-51.63528210'
     longitude: '-69.24743530'
   -
     id: 3641
-    name: 'Santa Fe Province'
+    name: 'Santa Fe'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: S
-    type: null
+    type: province
     latitude: '-31.58551090'
     longitude: '-60.72380160'
   -
     id: 3635
-    name: 'Santiago del Estero Province'
+    name: 'Santiago del Estero'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: G
-    type: null
+    type: province
     latitude: '-27.78335740'
     longitude: '-64.26416700'
   -
     id: 3650
-    name: 'Tierra del Fuego Province'
+    name: 'Tierra del Fuego'
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: V
-    type: null
+    type: province
     latitude: '-54.80539980'
     longitude: '-68.32420610'
   -
     id: 3637
-    name: 'Tucumán Province'
+    name: Tucumán
     country_id: 11
     country_code: AR
     country_name: Argentina
     state_code: T
-    type: null
+    type: province
     latitude: '-26.82211270'
     longitude: '-65.21929030'
   -
