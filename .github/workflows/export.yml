@@ -6,9 +6,7 @@ on:
       - master
     paths-ignore:
       - '**'
-      - '!sql/cities.sql'
-      - '!sql/states.sql'
-      - '!sql/countries.sql'
+      - '!sql/world.sql'
       - '!scripts/export**'
   workflow_dispatch:
     inputs:
@@ -61,6 +59,9 @@ jobs:
           php scripts/export_xml.php
           php scripts/export_yaml.php
           php scripts/export_csv.php
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world countries > sql/countries.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world states > sql/states.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world cities > sql/cities.sql
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
