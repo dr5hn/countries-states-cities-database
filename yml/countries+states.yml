@@ -8959,6 +8959,13 @@ country_state:
         longitude: '13.90154200'
         type: null
       -
+        id: 5069
+        name: 'Karlovac County'
+        state_code: '05'
+        latitude: '45.26133520'
+        longitude: '15.52542016'
+        type: null
+      -
         id: 742
         name: 'Koprivnica-Križevci County'
         state_code: '06'
@@ -24900,7 +24907,7 @@ country_state:
     iso2: MX
     numeric_code: '484'
     phone_code: '52'
-    capital: 'Mexico City'
+    capital: 'Ciudad de México'
     currency: MXN
     currency_name: 'Mexican peso'
     currency_symbol: $
@@ -25036,8 +25043,15 @@ country_state:
         longitude: '-106.06910040'
         type: null
       -
+        id: 3473
+        name: 'Ciudad de México'
+        state_code: CDMX
+        latitude: '19.43260770'
+        longitude: '-99.13320800'
+        type: null
+      -
         id: 3471
-        name: Coahuila
+        name: 'Coahuila de Zaragoza'
         state_code: COA
         latitude: '27.05867600'
         longitude: '-101.70682940'
@@ -25055,6 +25069,13 @@ country_state:
         state_code: DUR
         latitude: '37.27528000'
         longitude: '-107.88006670'
+        type: null
+      -
+        id: 3450
+        name: 'Estado de México'
+        state_code: MEX
+        latitude: '23.63450100'
+        longitude: '-102.55278400'
         type: null
       -
         id: 3469
@@ -25085,22 +25106,8 @@ country_state:
         longitude: '-103.34943760'
         type: null
       -
-        id: 3450
-        name: México
-        state_code: MEX
-        latitude: '23.63450100'
-        longitude: '-102.55278400'
-        type: null
-      -
-        id: 3473
-        name: 'Mexico City'
-        state_code: CMX
-        latitude: '19.43260770'
-        longitude: '-99.13320800'
-        type: null
-      -
         id: 3474
-        name: Michoacán
+        name: 'Michoacán de Ocampo'
         state_code: MIC
         latitude: '19.56651920'
         longitude: '-101.70682940'
@@ -25198,7 +25205,7 @@ country_state:
         type: null
       -
         id: 3464
-        name: Veracruz
+        name: 'Veracruz de Ignacio de la Llave'
         state_code: VER
         latitude: '19.17377300'
         longitude: '-96.13422410'
