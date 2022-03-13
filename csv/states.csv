@@ -524,11 +524,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3065,"North-West District",29,BW,Botswana,NW,,39.34463070,-76.68542830
 3064,"South-East District",29,BW,Botswana,SE,,31.21637980,-82.35270440
 3063,"Southern District",29,BW,Botswana,SO,,,
-2012,Acre,31,BR,Brazil,AC,,32.93305200,35.08267800
+2012,Acre,31,BR,Brazil,AC,,-9.02379600,-70.81199500
 2007,Alagoas,31,BR,Brazil,AL,,-9.57130580,-36.78195050
 1999,Amapá,31,BR,Brazil,AP,,0.90199250,-52.00295650
 2004,Amazonas,31,BR,Brazil,AM,,-3.07000000,-61.66000000
-2002,Bahia,31,BR,Brazil,BA,,26.11353900,-80.10620400
+2002,Bahia,31,BR,Brazil,BA,,-11.40987400,-41.28085700
 2016,Ceará,31,BR,Brazil,CE,,-5.49839770,-39.32062410
 2017,"Distrito Federal",31,BR,Brazil,DF,,-15.79976540,-47.86447150
 2018,"Espírito Santo",31,BR,Brazil,ES,,-19.18342290,-40.30886260
@@ -789,22 +789,22 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2248,Fujian,45,CN,China,FJ,province,26.48368420,117.92490020
 2275,Gansu,45,CN,China,GS,province,35.75183260,104.28611160
 2279,Guangdong,45,CN,China,GD,province,23.37903330,113.76328280
-2278,"Guangxi Zhuang",45,CN,China,GX,"autonomous region	",23.72475990,108.80761950
+2278,"Guangxi Zhuang",45,CN,China,GX,"autonomous region",23.72475990,108.80761950
 2261,Guizhou,45,CN,China,GZ,province,26.84296450,107.29028390
 2273,Hainan,45,CN,China,HI,province,19.56639470,109.94968600
 2280,Hebei,45,CN,China,HE,province,37.89565940,114.90422080
 2265,Heilongjiang,45,CN,China,HL,province,47.12164720,128.73823100
 2259,Henan,45,CN,China,HA,province,34.29043020,113.38235450
-2267,"Hong Kong SAR",45,CN,China,HK,"special administrative region	",22.31930390,114.16936110
+2267,"Hong Kong SAR",45,CN,China,HK,"special administrative region",22.31930390,114.16936110
 2274,Hubei,45,CN,China,HB,province,30.73781180,112.23840170
 2258,Hunan,45,CN,China,HN,province,36.73412940,-95.93449020
-2269,"Inner Mongolia",45,CN,China,NM,"autonomous region	",43.37822000,115.05948150
+2269,"Inner Mongolia",45,CN,China,NM,"autonomous region",43.37822000,115.05948150
 2250,Jiangsu,45,CN,China,JS,province,33.14017150,119.78892480
 2256,Jiangxi,45,CN,China,JX,province,27.08745640,114.90422080
 2253,Jilin,45,CN,China,JL,province,43.83788300,126.54957200
 2268,Liaoning,45,CN,China,LN,province,41.94365430,122.52903760
 2266,"Macau SAR",45,CN,China,MO,"special administrative region",22.19874500,113.54387300
-2262,"Ningxia Huizu",45,CN,China,NX,"autonomous region	",37.19873100,106.15809370
+2262,"Ningxia Huizu",45,CN,China,NX,"autonomous region",37.19873100,106.15809370
 2270,Qinghai,45,CN,China,QH,province,35.74479800,96.40773580
 2272,Shaanxi,45,CN,China,SN,province,35.39399080,109.18800470
 2252,Shandong,45,CN,China,SD,province,37.80060640,-122.26999180
@@ -820,8 +820,9 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2895,Amazonas,48,CO,Colombia,AMA,,-1.44291230,-71.57239530
 2890,Antioquia,48,CO,Colombia,ANT,,7.19860640,-75.34121790
 2881,Arauca,48,CO,Colombia,ARA,,6.54730600,-71.00223110
+2900,"Archipiélago de San Andrés, Providencia y Santa Catalina",48,CO,Colombia,SAP,,12.55673240,-81.71852530
 2880,Atlántico,48,CO,Colombia,ATL,,10.69661590,-74.87410450
-4921,"Bogotá D.C.",48,CO,Colombia,DC,"capital district	",4.28204150,-74.50270420
+4921,"Bogotá D.C.",48,CO,Colombia,DC,"capital district",4.28204150,-74.50270420
 2893,Bolívar,48,CO,Colombia,BOL,,8.67043820,-74.03001220
 2903,Boyacá,48,CO,Colombia,BOY,,5.45451100,-73.36200300
 2887,Caldas,48,CO,Colombia,CAL,,5.29826000,-75.24790610
@@ -843,7 +844,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2896,Putumayo,48,CO,Colombia,PUT,,0.43595060,-75.52766990
 2874,Quindío,48,CO,Colombia,QUI,,4.46101910,-75.66735600
 2879,Risaralda,48,CO,Colombia,RIS,,5.31584750,-75.99276520
-2900,"San Andrés, Providencia y Santa Catalina",48,CO,Colombia,SAP,,12.55673240,-81.71852530
 2901,Santander,48,CO,Colombia,SAN,,6.64370760,-73.65362090
 2902,Sucre,48,CO,Colombia,SUC,,8.81397700,-74.72328300
 2883,Tolima,48,CO,Colombia,TOL,,4.09251680,-75.15453810
@@ -907,6 +907,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 737,"Brod-Posavina County",55,HR,Croatia,12,,45.26379510,17.32645620
 728,"Dubrovnik-Neretva County",55,HR,Croatia,19,,43.07665880,17.52684710
 743,"Istria County",55,HR,Croatia,18,,45.12864550,13.90154200
+5069,"Karlovac County",55,HR,Croatia,05,,45.26133520,15.52542016
 742,"Koprivnica-Križevci County",55,HR,Croatia,06,,46.15689190,16.83908260
 729,"Krapina-Zagorje County",55,HR,Croatia,02,,46.10133930,15.88096930
 731,"Lika-Senj County",55,HR,Croatia,09,,44.61922180,15.47016080
@@ -1678,42 +1679,42 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3434,"Southern Region",100,IS,Iceland,8,,,
 3436,"Western Region",100,IS,Iceland,3,,,
 3432,Westfjords,100,IS,Iceland,4,,65.91961500,-21.88117640
-4023,"Andaman and Nicobar Islands",101,IN,India,AN,,11.74008670,92.65864010
-4017,"Andhra Pradesh",101,IN,India,AP,,15.91289980,79.73998750
-4024,"Arunachal Pradesh",101,IN,India,AR,,28.21799940,94.72775280
-4027,Assam,101,IN,India,AS,,26.20060430,92.93757390
-4037,Bihar,101,IN,India,BR,,25.09607420,85.31311940
-4031,Chandigarh,101,IN,India,CH,,30.73331480,76.77941790
-4040,Chhattisgarh,101,IN,India,CT,,21.27865670,81.86614420
-4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,,20.39737360,72.83279910
-4021,Delhi,101,IN,India,DL,,28.70405920,77.10249020
-4009,Goa,101,IN,India,GA,,15.29932650,74.12399600
-4030,Gujarat,101,IN,India,GJ,,22.25865200,71.19238050
-4007,Haryana,101,IN,India,HR,,29.05877570,76.08560100
-4020,"Himachal Pradesh",101,IN,India,HP,,31.10482940,77.17339010
-4029,"Jammu and Kashmir",101,IN,India,JK,,33.27783900,75.34121790
-4025,Jharkhand,101,IN,India,JH,,23.61018080,85.27993540
-4026,Karnataka,101,IN,India,KA,,15.31727750,75.71388840
-4028,Kerala,101,IN,India,KL,,10.85051590,76.27108330
-4852,Ladakh,101,IN,India,LA,,34.22684750,77.56194190
-4019,Lakshadweep,101,IN,India,LD,,10.32802650,72.78463360
-4039,"Madhya Pradesh",101,IN,India,MP,,22.97342290,78.65689420
-4008,Maharashtra,101,IN,India,MH,,19.75147980,75.71388840
-4010,Manipur,101,IN,India,MN,,24.66371730,93.90626880
-4006,Meghalaya,101,IN,India,ML,,25.46703080,91.36621600
-4036,Mizoram,101,IN,India,MZ,,23.16454300,92.93757390
-4018,Nagaland,101,IN,India,NL,,26.15843540,94.56244260
-4013,Odisha,101,IN,India,OR,,20.95166580,85.09852360
-4011,Puducherry,101,IN,India,PY,,11.94159150,79.80831330
-4015,Punjab,101,IN,India,PB,,,
-4014,Rajasthan,101,IN,India,RJ,,27.02380360,74.21793260
-4034,Sikkim,101,IN,India,SK,,27.53297180,88.51221780
-4035,"Tamil Nadu",101,IN,India,TN,,11.12712250,78.65689420
-4012,Telangana,101,IN,India,TG,,18.11243720,79.01929970
-4038,Tripura,101,IN,India,TR,,23.94084820,91.98815270
-4022,"Uttar Pradesh",101,IN,India,UP,,26.84670880,80.94615920
-4016,Uttarakhand,101,IN,India,UT,,30.06675300,79.01929970
-4853,"West Bengal",101,IN,India,WB,,22.98675690,87.85497550
+4023,"Andaman and Nicobar Islands",101,IN,India,AN,"Union territory",11.74008670,92.65864010
+4017,"Andhra Pradesh",101,IN,India,AP,state,15.91289980,79.73998750
+4024,"Arunachal Pradesh",101,IN,India,AR,state,28.21799940,94.72775280
+4027,Assam,101,IN,India,AS,state,26.20060430,92.93757390
+4037,Bihar,101,IN,India,BR,state,25.09607420,85.31311940
+4031,Chandigarh,101,IN,India,CH,"Union territory",30.73331480,76.77941790
+4040,Chhattisgarh,101,IN,India,CT,state,21.27865670,81.86614420
+4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,"Union territory",20.39737360,72.83279910
+4021,Delhi,101,IN,India,DL,"Union territory",28.70405920,77.10249020
+4009,Goa,101,IN,India,GA,state,15.29932650,74.12399600
+4030,Gujarat,101,IN,India,GJ,state,22.25865200,71.19238050
+4007,Haryana,101,IN,India,HR,state,29.05877570,76.08560100
+4020,"Himachal Pradesh",101,IN,India,HP,state,31.10482940,77.17339010
+4029,"Jammu and Kashmir",101,IN,India,JK,"Union territory",33.27783900,75.34121790
+4025,Jharkhand,101,IN,India,JH,state,23.61018080,85.27993540
+4026,Karnataka,101,IN,India,KA,state,15.31727750,75.71388840
+4028,Kerala,101,IN,India,KL,state,10.85051590,76.27108330
+4852,Ladakh,101,IN,India,LA,"Union territory",34.22684750,77.56194190
+4019,Lakshadweep,101,IN,India,LD,"Union territory",10.32802650,72.78463360
+4039,"Madhya Pradesh",101,IN,India,MP,state,22.97342290,78.65689420
+4008,Maharashtra,101,IN,India,MH,state,19.75147980,75.71388840
+4010,Manipur,101,IN,India,MN,state,24.66371730,93.90626880
+4006,Meghalaya,101,IN,India,ML,state,25.46703080,91.36621600
+4036,Mizoram,101,IN,India,MZ,state,23.16454300,92.93757390
+4018,Nagaland,101,IN,India,NL,state,26.15843540,94.56244260
+4013,Odisha,101,IN,India,OR,state,20.95166580,85.09852360
+4011,Puducherry,101,IN,India,PY,"Union territory",11.94159150,79.80831330
+4015,Punjab,101,IN,India,PB,state,31.14713050,75.34121790
+4014,Rajasthan,101,IN,India,RJ,state,27.02380360,74.21793260
+4034,Sikkim,101,IN,India,SK,state,27.53297180,88.51221780
+4035,"Tamil Nadu",101,IN,India,TN,state,11.12712250,78.65689420
+4012,Telangana,101,IN,India,TG,state,18.11243720,79.01929970
+4038,Tripura,101,IN,India,TR,state,23.94084820,91.98815270
+4022,"Uttar Pradesh",101,IN,India,UP,state,26.84670880,80.94615920
+4016,Uttarakhand,101,IN,India,UT,state,30.06675300,79.01929970
+4853,"West Bengal",101,IN,India,WB,state,22.98675690,87.85497550
 1822,Aceh,102,ID,Indonesia,AC,,4.69513500,96.74939930
 1826,Bali,102,ID,Indonesia,BA,,-8.34053890,115.09195090
 1810,Banten,102,ID,Indonesia,BT,,-6.40581720,106.06401790
@@ -2688,16 +2689,16 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3475,Campeche,142,MX,Mexico,CAM,,19.83012510,-90.53490870
 3451,Chiapas,142,MX,Mexico,CHP,,16.75693180,-93.12923530
 3447,Chihuahua,142,MX,Mexico,CHH,,28.63299570,-106.06910040
-3471,Coahuila,142,MX,Mexico,COA,,27.05867600,-101.70682940
+3473,"Ciudad de México",142,MX,Mexico,CDMX,,19.43260770,-99.13320800
+3471,"Coahuila de Zaragoza",142,MX,Mexico,COA,,27.05867600,-101.70682940
 3472,Colima,142,MX,Mexico,COL,,19.24523420,-103.72408680
 3453,Durango,142,MX,Mexico,DUR,,37.27528000,-107.88006670
+3450,"Estado de México",142,MX,Mexico,MEX,,23.63450100,-102.55278400
 3469,Guanajuato,142,MX,Mexico,GUA,,21.01901450,-101.25735860
 3459,Guerrero,142,MX,Mexico,GRO,,17.43919260,-99.54509740
 3470,Hidalgo,142,MX,Mexico,HID,,26.10035470,-98.26306840
 4857,Jalisco,142,MX,Mexico,JAL,,20.65953820,-103.34943760
-3450,México,142,MX,Mexico,MEX,,23.63450100,-102.55278400
-3473,"Mexico City",142,MX,Mexico,CMX,,19.43260770,-99.13320800
-3474,Michoacán,142,MX,Mexico,MIC,,19.56651920,-101.70682940
+3474,"Michoacán de Ocampo",142,MX,Mexico,MIC,,19.56651920,-101.70682940
 3465,Morelos,142,MX,Mexico,MOR,,18.68130490,-99.10134980
 3477,Nayarit,142,MX,Mexico,NAY,,21.75138440,-104.84546190
 3452,"Nuevo León",142,MX,Mexico,NLE,,25.59217200,-99.99619470
@@ -2711,7 +2712,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3454,Tabasco,142,MX,Mexico,TAB,,17.84091730,-92.61892730
 3463,Tamaulipas,142,MX,Mexico,TAM,,24.26694000,-98.83627550
 3458,Tlaxcala,142,MX,Mexico,TLA,,19.31815400,-98.23749540
-3464,Veracruz,142,MX,Mexico,VER,,19.17377300,-96.13422410
+3464,"Veracruz de Ignacio de la Llave",142,MX,Mexico,VER,,19.17377300,-96.13422410
 3466,Yucatán,142,MX,Mexico,YUC,,20.70987860,-89.09433770
 3462,Zacatecas,142,MX,Mexico,ZAC,,22.77085550,-102.58324260
 2580,"Chuuk State",143,FM,Micronesia,TRK,,7.13867590,151.55930650
@@ -3004,11 +3005,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 941,Managua,159,NI,Nicaragua,MN,department,12.13916990,-86.33767610
 953,Masaya,159,NI,Nicaragua,MS,department,11.97593280,-86.07334980
 947,Matagalpa,159,NI,Nicaragua,MT,department,12.94984360,-85.43755740
-951,"North Caribbean Coast",159,NI,Nicaragua,AN,"autonomous region	",13.83944560,-83.93208060
+951,"North Caribbean Coast",159,NI,Nicaragua,AN,"autonomous region",13.83944560,-83.93208060
 4964,"Nueva Segovia	",159,NI,Nicaragua,NS,department,13.76570610,-86.53700390
 949,"Río San Juan",159,NI,Nicaragua,SJ,department,11.47816100,-84.77333250
 942,Rivas,159,NI,Nicaragua,RI,department,11.40234900,-85.68457800
-952,"South Caribbean Coast",159,NI,Nicaragua,AS,"autonomous region	",12.19185020,-84.10128610
+952,"South Caribbean Coast",159,NI,Nicaragua,AS,"autonomous region",12.19185020,-84.10128610
 71,"Agadez Region",160,NE,Niger,1,,20.66707520,12.07182810
 72,"Diffa Region",160,NE,Niger,2,,13.67686470,12.71351210
 68,"Dosso Region",160,NE,Niger,3,,13.15139470,3.41955270
@@ -4051,20 +4052,20 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3423,Hsinchu,216,TW,Taiwan,HSQ,county,24.83872260,121.01772460
 3417,Hsinchu,216,TW,Taiwan,HSZ,city,24.81382870,120.96747980
 3411,Hualien,216,TW,Taiwan,HUA,county,23.98715890,121.60157140
-3412,Kaohsiung,216,TW,Taiwan,KHH,"special municipality	",22.62727840,120.30143530
+3412,Kaohsiung,216,TW,Taiwan,KHH,"special municipality",22.62727840,120.30143530
 4965,Keelung,216,TW,Taiwan,KEE,city,25.12418620,121.64758340
 3415,Kinmen,216,TW,Taiwan,KIN,county,24.34877920,118.32856440
 3420,Lienchiang,216,TW,Taiwan,LIE,county,26.15055560,119.92888890
 3413,Miaoli,216,TW,Taiwan,MIA,county,24.56015900,120.82142650
 3407,Nantou,216,TW,Taiwan,NAN,county,23.96099810,120.97186380
-4966,"New Taipei",216,TW,Taiwan,NWT,"special municipality	",24.98752780,121.36459470
+4966,"New Taipei",216,TW,Taiwan,NWT,"special municipality",24.98752780,121.36459470
 3403,Penghu,216,TW,Taiwan,PEN,county,23.57118990,119.57931570
 3405,Pingtung,216,TW,Taiwan,PIF,county,22.55197590,120.54875970
-3406,Taichung,216,TW,Taiwan,TXG,"special municipality	",24.14773580,120.67364820
-3421,Tainan,216,TW,Taiwan,TNN,"special municipality	",22.99972810,120.22702770
-3422,Taipei,216,TW,Taiwan,TPE,"special municipality	",25.03296940,121.56541770
+3406,Taichung,216,TW,Taiwan,TXG,"special municipality",24.14773580,120.67364820
+3421,Tainan,216,TW,Taiwan,TNN,"special municipality",22.99972810,120.22702770
+3422,Taipei,216,TW,Taiwan,TPE,"special municipality",25.03296940,121.56541770
 3410,Taitung,216,TW,Taiwan,TTT,county,22.79724470,121.07137020
-3419,Taoyuan,216,TW,Taiwan,TAO,"special municipality	",24.99362810,121.30097980
+3419,Taoyuan,216,TW,Taiwan,TAO,"special municipality",24.99362810,121.30097980
 3402,Yilan,216,TW,Taiwan,ILA,county,24.70210730,121.73775020
 3416,Yunlin,216,TW,Taiwan,YUN,county,23.70920330,120.43133730
 3397,"districts of Republican Subordination",217,TJ,Tajikistan,RA,,39.08579020,70.24083250
