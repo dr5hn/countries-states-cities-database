@@ -5782,8 +5782,8 @@
         "country_name": "Brazil",
         "state_code": "AC",
         "type": null,
-        "latitude": "32.93305200",
-        "longitude": "35.08267800"
+        "latitude": "-9.02379600",
+        "longitude": "-70.81199500"
     },
     {
         "id": 2007,
@@ -5826,8 +5826,8 @@
         "country_name": "Brazil",
         "state_code": "BA",
         "type": null,
-        "latitude": "26.11353900",
-        "longitude": "-80.10620400"
+        "latitude": "-11.40987400",
+        "longitude": "-41.28085700"
     },
     {
         "id": 2016,
@@ -8696,7 +8696,7 @@
         "country_code": "CN",
         "country_name": "China",
         "state_code": "GX",
-        "type": "autonomous region\t",
+        "type": "autonomous region",
         "latitude": "23.72475990",
         "longitude": "108.80761950"
     },
@@ -8762,7 +8762,7 @@
         "country_code": "CN",
         "country_name": "China",
         "state_code": "HK",
-        "type": "special administrative region\t",
+        "type": "special administrative region",
         "latitude": "22.31930390",
         "longitude": "114.16936110"
     },
@@ -8795,7 +8795,7 @@
         "country_code": "CN",
         "country_name": "China",
         "state_code": "NM",
-        "type": "autonomous region\t",
+        "type": "autonomous region",
         "latitude": "43.37822000",
         "longitude": "115.05948150"
     },
@@ -8861,7 +8861,7 @@
         "country_code": "CN",
         "country_name": "China",
         "state_code": "NX",
-        "type": "autonomous region\t",
+        "type": "autonomous region",
         "latitude": "37.19873100",
         "longitude": "106.15809370"
     },
@@ -9031,6 +9031,17 @@
         "longitude": "-71.00223110"
     },
     {
+        "id": 2900,
+        "name": "Archipiélago de San Andrés, Providencia y Santa Catalina",
+        "country_id": 48,
+        "country_code": "CO",
+        "country_name": "Colombia",
+        "state_code": "SAP",
+        "type": null,
+        "latitude": "12.55673240",
+        "longitude": "-81.71852530"
+    },
+    {
         "id": 2880,
         "name": "Atlántico",
         "country_id": 48,
@@ -9048,7 +9059,7 @@
         "country_code": "CO",
         "country_name": "Colombia",
         "state_code": "DC",
-        "type": "capital district\t",
+        "type": "capital district",
         "latitude": "4.28204150",
         "longitude": "-74.50270420"
     },
@@ -9282,17 +9293,6 @@
         "type": null,
         "latitude": "5.31584750",
         "longitude": "-75.99276520"
-    },
-    {
-        "id": 2900,
-        "name": "San Andrés, Providencia y Santa Catalina",
-        "country_id": 48,
-        "country_code": "CO",
-        "country_name": "Colombia",
-        "state_code": "SAP",
-        "type": null,
-        "latitude": "12.55673240",
-        "longitude": "-81.71852530"
     },
     {
         "id": 2901,
@@ -9986,6 +9986,17 @@
         "type": null,
         "latitude": "45.12864550",
         "longitude": "13.90154200"
+    },
+    {
+        "id": 5069,
+        "name": "Karlovac County",
+        "country_id": 55,
+        "country_code": "HR",
+        "country_name": "Croatia",
+        "state_code": "05",
+        "type": null,
+        "latitude": "45.26133520",
+        "longitude": "15.52542016"
     },
     {
         "id": 742,
@@ -18475,7 +18486,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "AN",
-        "type": null,
+        "type": "Union territory",
         "latitude": "11.74008670",
         "longitude": "92.65864010"
     },
@@ -18486,7 +18497,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "AP",
-        "type": null,
+        "type": "state",
         "latitude": "15.91289980",
         "longitude": "79.73998750"
     },
@@ -18497,7 +18508,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "AR",
-        "type": null,
+        "type": "state",
         "latitude": "28.21799940",
         "longitude": "94.72775280"
     },
@@ -18508,7 +18519,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "AS",
-        "type": null,
+        "type": "state",
         "latitude": "26.20060430",
         "longitude": "92.93757390"
     },
@@ -18519,7 +18530,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "BR",
-        "type": null,
+        "type": "state",
         "latitude": "25.09607420",
         "longitude": "85.31311940"
     },
@@ -18530,7 +18541,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "CH",
-        "type": null,
+        "type": "Union territory",
         "latitude": "30.73331480",
         "longitude": "76.77941790"
     },
@@ -18541,7 +18552,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "CT",
-        "type": null,
+        "type": "state",
         "latitude": "21.27865670",
         "longitude": "81.86614420"
     },
@@ -18552,7 +18563,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "DH",
-        "type": null,
+        "type": "Union territory",
         "latitude": "20.39737360",
         "longitude": "72.83279910"
     },
@@ -18563,7 +18574,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "DL",
-        "type": null,
+        "type": "Union territory",
         "latitude": "28.70405920",
         "longitude": "77.10249020"
     },
@@ -18574,7 +18585,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "GA",
-        "type": null,
+        "type": "state",
         "latitude": "15.29932650",
         "longitude": "74.12399600"
     },
@@ -18585,7 +18596,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "GJ",
-        "type": null,
+        "type": "state",
         "latitude": "22.25865200",
         "longitude": "71.19238050"
     },
@@ -18596,7 +18607,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "HR",
-        "type": null,
+        "type": "state",
         "latitude": "29.05877570",
         "longitude": "76.08560100"
     },
@@ -18607,7 +18618,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "HP",
-        "type": null,
+        "type": "state",
         "latitude": "31.10482940",
         "longitude": "77.17339010"
     },
@@ -18618,7 +18629,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "JK",
-        "type": null,
+        "type": "Union territory",
         "latitude": "33.27783900",
         "longitude": "75.34121790"
     },
@@ -18629,7 +18640,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "JH",
-        "type": null,
+        "type": "state",
         "latitude": "23.61018080",
         "longitude": "85.27993540"
     },
@@ -18640,7 +18651,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "KA",
-        "type": null,
+        "type": "state",
         "latitude": "15.31727750",
         "longitude": "75.71388840"
     },
@@ -18651,7 +18662,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "KL",
-        "type": null,
+        "type": "state",
         "latitude": "10.85051590",
         "longitude": "76.27108330"
     },
@@ -18662,7 +18673,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "LA",
-        "type": null,
+        "type": "Union territory",
         "latitude": "34.22684750",
         "longitude": "77.56194190"
     },
@@ -18673,7 +18684,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "LD",
-        "type": null,
+        "type": "Union territory",
         "latitude": "10.32802650",
         "longitude": "72.78463360"
     },
@@ -18684,7 +18695,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "MP",
-        "type": null,
+        "type": "state",
         "latitude": "22.97342290",
         "longitude": "78.65689420"
     },
@@ -18695,7 +18706,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "MH",
-        "type": null,
+        "type": "state",
         "latitude": "19.75147980",
         "longitude": "75.71388840"
     },
@@ -18706,7 +18717,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "MN",
-        "type": null,
+        "type": "state",
         "latitude": "24.66371730",
         "longitude": "93.90626880"
     },
@@ -18717,7 +18728,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "ML",
-        "type": null,
+        "type": "state",
         "latitude": "25.46703080",
         "longitude": "91.36621600"
     },
@@ -18728,7 +18739,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "MZ",
-        "type": null,
+        "type": "state",
         "latitude": "23.16454300",
         "longitude": "92.93757390"
     },
@@ -18739,7 +18750,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "NL",
-        "type": null,
+        "type": "state",
         "latitude": "26.15843540",
         "longitude": "94.56244260"
     },
@@ -18750,7 +18761,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "OR",
-        "type": null,
+        "type": "state",
         "latitude": "20.95166580",
         "longitude": "85.09852360"
     },
@@ -18761,7 +18772,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "PY",
-        "type": null,
+        "type": "Union territory",
         "latitude": "11.94159150",
         "longitude": "79.80831330"
     },
@@ -18772,9 +18783,9 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "PB",
-        "type": null,
-        "latitude": null,
-        "longitude": null
+        "type": "state",
+        "latitude": "31.14713050",
+        "longitude": "75.34121790"
     },
     {
         "id": 4014,
@@ -18783,7 +18794,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "RJ",
-        "type": null,
+        "type": "state",
         "latitude": "27.02380360",
         "longitude": "74.21793260"
     },
@@ -18794,7 +18805,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "SK",
-        "type": null,
+        "type": "state",
         "latitude": "27.53297180",
         "longitude": "88.51221780"
     },
@@ -18805,7 +18816,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "TN",
-        "type": null,
+        "type": "state",
         "latitude": "11.12712250",
         "longitude": "78.65689420"
     },
@@ -18816,7 +18827,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "TG",
-        "type": null,
+        "type": "state",
         "latitude": "18.11243720",
         "longitude": "79.01929970"
     },
@@ -18827,7 +18838,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "TR",
-        "type": null,
+        "type": "state",
         "latitude": "23.94084820",
         "longitude": "91.98815270"
     },
@@ -18838,7 +18849,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "UP",
-        "type": null,
+        "type": "state",
         "latitude": "26.84670880",
         "longitude": "80.94615920"
     },
@@ -18849,7 +18860,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "UT",
-        "type": null,
+        "type": "state",
         "latitude": "30.06675300",
         "longitude": "79.01929970"
     },
@@ -18860,7 +18871,7 @@
         "country_code": "IN",
         "country_name": "India",
         "state_code": "WB",
-        "type": null,
+        "type": "state",
         "latitude": "22.98675690",
         "longitude": "87.85497550"
     },
@@ -29579,8 +29590,19 @@
         "longitude": "-106.06910040"
     },
     {
+        "id": 3473,
+        "name": "Ciudad de México",
+        "country_id": 142,
+        "country_code": "MX",
+        "country_name": "Mexico",
+        "state_code": "CDMX",
+        "type": null,
+        "latitude": "19.43260770",
+        "longitude": "-99.13320800"
+    },
+    {
         "id": 3471,
-        "name": "Coahuila",
+        "name": "Coahuila de Zaragoza",
         "country_id": 142,
         "country_code": "MX",
         "country_name": "Mexico",
@@ -29610,6 +29632,17 @@
         "type": null,
         "latitude": "37.27528000",
         "longitude": "-107.88006670"
+    },
+    {
+        "id": 3450,
+        "name": "Estado de México",
+        "country_id": 142,
+        "country_code": "MX",
+        "country_name": "Mexico",
+        "state_code": "MEX",
+        "type": null,
+        "latitude": "23.63450100",
+        "longitude": "-102.55278400"
     },
     {
         "id": 3469,
@@ -29656,30 +29689,8 @@
         "longitude": "-103.34943760"
     },
     {
-        "id": 3450,
-        "name": "México",
-        "country_id": 142,
-        "country_code": "MX",
-        "country_name": "Mexico",
-        "state_code": "MEX",
-        "type": null,
-        "latitude": "23.63450100",
-        "longitude": "-102.55278400"
-    },
-    {
-        "id": 3473,
-        "name": "Mexico City",
-        "country_id": 142,
-        "country_code": "MX",
-        "country_name": "Mexico",
-        "state_code": "CMX",
-        "type": null,
-        "latitude": "19.43260770",
-        "longitude": "-99.13320800"
-    },
-    {
         "id": 3474,
-        "name": "Michoacán",
+        "name": "Michoacán de Ocampo",
         "country_id": 142,
         "country_code": "MX",
         "country_name": "Mexico",
@@ -29833,7 +29844,7 @@
     },
     {
         "id": 3464,
-        "name": "Veracruz",
+        "name": "Veracruz de Ignacio de la Llave",
         "country_id": 142,
         "country_code": "MX",
         "country_name": "Mexico",
@@ -33061,7 +33072,7 @@
         "country_code": "NI",
         "country_name": "Nicaragua",
         "state_code": "AN",
-        "type": "autonomous region\t",
+        "type": "autonomous region",
         "latitude": "13.83944560",
         "longitude": "-83.93208060"
     },
@@ -33105,7 +33116,7 @@
         "country_code": "NI",
         "country_name": "Nicaragua",
         "state_code": "AS",
-        "type": "autonomous region\t",
+        "type": "autonomous region",
         "latitude": "12.19185020",
         "longitude": "-84.10128610"
     },
@@ -44578,7 +44589,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "KHH",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "22.62727840",
         "longitude": "120.30143530"
     },
@@ -44644,7 +44655,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "NWT",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "24.98752780",
         "longitude": "121.36459470"
     },
@@ -44677,7 +44688,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "TXG",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "24.14773580",
         "longitude": "120.67364820"
     },
@@ -44688,7 +44699,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "TNN",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "22.99972810",
         "longitude": "120.22702770"
     },
@@ -44699,7 +44710,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "TPE",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "25.03296940",
         "longitude": "121.56541770"
     },
@@ -44721,7 +44732,7 @@
         "country_code": "TW",
         "country_name": "Taiwan",
         "state_code": "TAO",
-        "type": "special municipality\t",
+        "type": "special municipality",
         "latitude": "24.99362810",
         "longitude": "121.30097980"
     },
