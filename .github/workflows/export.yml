@@ -59,9 +59,9 @@ jobs:
           php scripts/export_xml.php
           php scripts/export_yaml.php
           php scripts/export_csv.php
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world countries > sql/countries.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world states > sql/states.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset world cities > sql/cities.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
