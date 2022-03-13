@@ -36,7 +36,7 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`),
   KEY `country_region` (`country_id`),
   CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5069 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=5070 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 
 INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `iso2`, `type`, `latitude`, `longitude`, `created_at`, `updated_at`, `flag`, `wikiDataId`) VALUES
 (1, 'Southern Nations, Nationalities, and Peoples\' Region', 70, 'ET', '54', 'SN', NULL, 6.51569110, 36.95410700, '2019-10-05 23:18:35', '2020-12-21 21:20:21', 1, 'Q203193'),
@@ -5010,7 +5010,8 @@ INSERT INTO `states` (`id`, `name`, `country_id`, `country_code`, `fips_code`, `
 (5064, 'Clipperton', 75, 'FR', 'IP', 'CP', 'dependency', 10.28335410, -109.22542150, '2021-12-11 17:51:55', '2021-12-11 18:12:43', 1, 'Q161258'),
 (5065, 'French Southern and Antarctic Lands', 75, 'FR', 'FS', 'TF', 'overseas territory', -47.54466040, 51.28375420, '2021-12-11 17:52:02', '2021-12-11 18:13:21', 1, 'Q129003'),
 (5067, 'Sharqia', 65, 'EG', '13', 'SHR', 'governorate', 30.67305450, 31.15932470, '2022-01-16 12:06:48', '2022-01-16 12:06:48', 1, 'Q31074'),
-(5068, 'Loja', 64, 'EC', '12', 'L', 'province', -3.99313000, -79.20422000, '2022-01-20 15:19:51', '2022-01-22 14:51:12', 1, 'Q504238');
+(5068, 'Loja', 64, 'EC', '12', 'L', 'province', -3.99313000, -79.20422000, '2022-01-20 15:19:51', '2022-01-22 14:51:12', 1, 'Q504238'),
+(5069, 'Karlovac County', 55, 'HR', '05', '05', NULL, 45.26133520, 15.52542016, '2022-03-04 15:22:53', '2022-03-04 15:22:53', 1, 'Q57071');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
