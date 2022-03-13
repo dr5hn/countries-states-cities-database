@@ -6,7 +6,6 @@ on:
       - master
     paths-ignore:
       - '**'
-      - '!sql/world.sql'
       - '!scripts/export**'
   workflow_dispatch:
     inputs:
