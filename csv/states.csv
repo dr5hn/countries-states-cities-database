@@ -457,6 +457,9 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3383,"Potosí Department",27,BO,Bolivia,P,,-20.62471300,-66.99880110
 3377,"Santa Cruz Department",27,BO,Bolivia,S,,-16.74760370,-62.07509980
 3378,"Tarija Department",27,BO,Bolivia,T,,-21.58315950,-63.95861110
+5086,Bonaire,155,BQ,"Bonaire, Sint Eustatius and Saba",BQ1,"special municipality",12.20189020,-68.26238220
+5087,Saba,155,BQ,"Bonaire, Sint Eustatius and Saba",BQ2,"special municipality",17.63546420,-63.23267630
+5088,"Sint Eustatius",155,BQ,"Bonaire, Sint Eustatius and Saba",BQ3,"special municipality",17.48903060,-62.97355500
 472,"Bosnian Podrinje Canton",28,BA,"Bosnia and Herzegovina",05,,43.68749000,18.82443940
 460,"Brčko District",28,BA,"Bosnia and Herzegovina",BRC,,44.84059440,18.74215300
 471,"Canton 10",28,BA,"Bosnia and Herzegovina",10,,43.95341550,16.94251870
@@ -860,27 +863,27 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2649,Worodougou,54,CI,"Cote D'Ivoire (Ivory Coast)",14,,8.25489620,-6.57833870
 2653,Yamoussoukro,54,CI,"Cote D'Ivoire (Ivory Coast)",YM,,6.82762280,-5.28934330
 2641,"Zanzan Region",54,CI,"Cote D'Ivoire (Ivory Coast)",ZZ,,8.82079040,-3.41955270
-734,"Bjelovar-Bilogora County",55,HR,Croatia,07,,45.89879720,16.84230930
-737,"Brod-Posavina County",55,HR,Croatia,12,,45.26379510,17.32645620
-728,"Dubrovnik-Neretva County",55,HR,Croatia,19,,43.07665880,17.52684710
-743,"Istria County",55,HR,Croatia,18,,45.12864550,13.90154200
-5069,"Karlovac County",55,HR,Croatia,05,,45.26133520,15.52542016
-742,"Koprivnica-Križevci County",55,HR,Croatia,06,,46.15689190,16.83908260
-729,"Krapina-Zagorje County",55,HR,Croatia,02,,46.10133930,15.88096930
-731,"Lika-Senj County",55,HR,Croatia,09,,44.61922180,15.47016080
-726,"Međimurje County",55,HR,Croatia,20,,46.37666440,16.42132980
-740,"Osijek-Baranja County",55,HR,Croatia,14,,45.55764280,18.39421410
-724,"Požega-Slavonia County",55,HR,Croatia,11,,45.34178680,17.81143590
-735,"Primorje-Gorski Kotar County",55,HR,Croatia,08,,45.31739960,14.81674660
-730,"Šibenik-Knin County",55,HR,Croatia,15,,43.92814850,16.10376940
-733,"Sisak-Moslavina County",55,HR,Croatia,03,,45.38379260,16.53809940
-725,"Split-Dalmatia County",55,HR,Croatia,17,,43.52403280,16.81783770
-739,"Varaždin County",55,HR,Croatia,05,,46.23174730,16.33605590
-732,"Virovitica-Podravina County",55,HR,Croatia,10,,45.65579850,17.79324720
-741,"Vukovar-Syrmia County",55,HR,Croatia,16,,45.17735520,18.80535270
-727,"Zadar County",55,HR,Croatia,13,,44.14693900,15.61649430
-738,Zagreb,55,HR,Croatia,21,,45.81501080,15.98191890
-736,"Zagreb County",55,HR,Croatia,01,,45.87066120,16.39549100
+734,Bjelovar-Bilogora,55,HR,Croatia,07,county,45.89879720,16.84230930
+737,Brod-Posavina,55,HR,Croatia,12,county,45.26379510,17.32645620
+728,Dubrovnik-Neretva,55,HR,Croatia,19,county,43.07665880,17.52684710
+743,Istria,55,HR,Croatia,18,county,45.12864550,13.90154200
+5069,Karlovac,55,HR,Croatia,04,county,45.26133520,15.52542016
+742,Koprivnica-Križevci,55,HR,Croatia,06,county,46.15689190,16.83908260
+729,Krapina-Zagorje,55,HR,Croatia,02,county,46.10133930,15.88096930
+731,Lika-Senj,55,HR,Croatia,09,county,44.61922180,15.47016080
+726,Međimurje,55,HR,Croatia,20,county,46.37666440,16.42132980
+740,Osijek-Baranja,55,HR,Croatia,14,county,45.55764280,18.39421410
+724,Požega-Slavonia,55,HR,Croatia,11,county,45.34178680,17.81143590
+735,"Primorje-Gorski Kotar",55,HR,Croatia,08,county,45.31739960,14.81674660
+730,Šibenik-Knin,55,HR,Croatia,15,county,43.92814850,16.10376940
+733,Sisak-Moslavina,55,HR,Croatia,03,county,45.38379260,16.53809940
+725,Split-Dalmatia,55,HR,Croatia,17,county,43.52403280,16.81783770
+739,Varaždin,55,HR,Croatia,05,county,46.23174730,16.33605590
+732,Virovitica-Podravina,55,HR,Croatia,10,county,45.65579850,17.79324720
+741,Vukovar-Syrmia,55,HR,Croatia,16,county,45.17735520,18.80535270
+727,Zadar,55,HR,Croatia,13,county,44.14693900,15.61649430
+736,Zagreb,55,HR,Croatia,01,county,45.87066120,16.39549100
+738,Zagreb,55,HR,Croatia,21,city,45.81501080,15.98191890
 283,"Artemisa Province",56,CU,Cuba,15,,22.75229030,-82.99316070
 286,"Camagüey Province",56,CU,Cuba,09,,21.21672470,-77.74520810
 282,"Ciego de Ávila Province",56,CU,Cuba,08,,21.93295150,-78.56608520
@@ -1586,48 +1589,49 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4896,"Wong Tai Sin",98,HK,"Hong Kong S.A.R.",KWT,,22.33353000,114.19686000
 4893,"Yau Tsim Mong",98,HK,"Hong Kong S.A.R.",KYT,,22.32138000,114.17260000
 4883,"Yuen Long District",98,HK,"Hong Kong S.A.R.",NYL,,22.44559000,114.02218000
-1048,"Bács-Kiskun County",99,HU,Hungary,BK,,46.56614370,19.42724640
-1055,"Baranya County",99,HU,Hungary,BA,,46.04845850,18.27191730
-1060,"Békés County",99,HU,Hungary,BE,,46.67048990,21.04349960
-1036,Békéscsaba,99,HU,Hungary,BC,,46.67359390,21.08773090
-1058,"Borsod-Abaúj-Zemplén County",99,HU,Hungary,BZ,,48.29394010,20.69341120
-1064,Budapest,99,HU,Hungary,BU,,47.49791200,19.04023500
-1031,"Csongrád County",99,HU,Hungary,CS,,46.41670500,20.25661610
-1032,Debrecen,99,HU,Hungary,DE,,47.53160490,21.62731240
-1049,Dunaújváros,99,HU,Hungary,DU,,46.96190590,18.93552270
-1037,Eger,99,HU,Hungary,EG,,47.90253480,20.37722840
-1028,Érd,99,HU,Hungary,ER,,47.39197180,18.90454400
-1044,"Fejér County",99,HU,Hungary,FE,,47.12179320,18.52948150
-1041,Győr,99,HU,Hungary,GY,,47.68745690,17.65039740
-1042,"Győr-Moson-Sopron County",99,HU,Hungary,GS,,47.65092850,17.25058830
-1063,"Hajdú-Bihar County",99,HU,Hungary,HB,,47.46883550,21.54532270
-1040,"Heves County",99,HU,Hungary,HE,,47.80576170,20.20385590
-1027,Hódmezővásárhely,99,HU,Hungary,HV,,46.41812620,20.33003150
-1043,"Jász-Nagykun-Szolnok County",99,HU,Hungary,JN,,47.25555790,20.52324560
-1067,Kaposvár,99,HU,Hungary,KV,,46.35936060,17.79676390
-1056,Kecskemét,99,HU,Hungary,KM,,46.89637110,19.68968610
-1065,Miskolc,99,HU,Hungary,MI,,48.10347750,20.77843840
-1030,Nagykanizsa,99,HU,Hungary,NK,,46.45902180,16.98967960
-1051,"Nógrád County",99,HU,Hungary,NO,,47.90410310,19.04985040
-1034,Nyíregyháza,99,HU,Hungary,NY,,47.94953240,21.72440530
-1053,Pécs,99,HU,Hungary,PS,,46.07273450,18.23226600
-1059,"Pest County",99,HU,Hungary,PE,,47.44800010,19.46181280
-1068,Salgótarján,99,HU,Hungary,ST,,48.09352370,19.79998130
-1035,"Somogy County",99,HU,Hungary,SO,,46.55485900,17.58667320
-1057,Sopron,99,HU,Hungary,SN,,47.68166190,16.58447950
-1045,"Szabolcs-Szatmár-Bereg County",99,HU,Hungary,SZ,,48.03949540,22.00333000
-1029,Szeged,99,HU,Hungary,SD,,46.25301020,20.14142530
-1033,Székesfehérvár,99,HU,Hungary,SF,,47.18602620,18.42213580
-1061,Szekszárd,99,HU,Hungary,SS,,46.34743260,18.70622930
-1047,Szolnok,99,HU,Hungary,SK,,47.16213550,20.18247120
-1052,Szombathely,99,HU,Hungary,SH,,47.23068510,16.62184410
-1066,Tatabánya,99,HU,Hungary,TB,,47.56924600,18.40481800
-1038,"Tolna County",99,HU,Hungary,TO,,46.47627540,18.55706270
-1039,"Vas County",99,HU,Hungary,VA,,47.09291110,16.68121830
-1062,Veszprém,99,HU,Hungary,VM,,47.10280870,17.90930190
-1054,"Veszprém County",99,HU,Hungary,VE,,47.09309740,17.91007630
-1046,"Zala County",99,HU,Hungary,ZA,,46.73844040,16.91522520
-1050,Zalaegerszeg,99,HU,Hungary,ZE,,46.84169360,16.84163220
+1048,Bács-Kiskun,99,HU,Hungary,BK,county,46.56614370,19.42724640
+1055,Baranya,99,HU,Hungary,BA,county,46.04845850,18.27191730
+1060,Békés,99,HU,Hungary,BE,county,46.67048990,21.04349960
+1036,Békéscsaba,99,HU,Hungary,BC,"city with county rights",46.67359390,21.08773090
+1058,Borsod-Abaúj-Zemplén,99,HU,Hungary,BZ,county,48.29394010,20.69341120
+1064,Budapest,99,HU,Hungary,BU,"capital city",47.49791200,19.04023500
+1031,"Csongrád County",99,HU,Hungary,CS,county,46.41670500,20.25661610
+1032,Debrecen,99,HU,Hungary,DE,"city with county rights",47.53160490,21.62731240
+1049,Dunaújváros,99,HU,Hungary,DU,"city with county rights",46.96190590,18.93552270
+1037,Eger,99,HU,Hungary,EG,"city with county rights",47.90253480,20.37722840
+1028,Érd,99,HU,Hungary,ER,"city with county rights",47.39197180,18.90454400
+1044,"Fejér County",99,HU,Hungary,FE,county,47.12179320,18.52948150
+1041,Győr,99,HU,Hungary,GY,"city with county rights",47.68745690,17.65039740
+1042,"Győr-Moson-Sopron County",99,HU,Hungary,GS,county,47.65092850,17.25058830
+1063,"Hajdú-Bihar County",99,HU,Hungary,HB,county,47.46883550,21.54532270
+1040,"Heves County",99,HU,Hungary,HE,county,47.80576170,20.20385590
+1027,Hódmezővásárhely,99,HU,Hungary,HV,"city with county rights",46.41812620,20.33003150
+1043,"Jász-Nagykun-Szolnok County",99,HU,Hungary,JN,county,47.25555790,20.52324560
+1067,Kaposvár,99,HU,Hungary,KV,"city with county rights",46.35936060,17.79676390
+1056,Kecskemét,99,HU,Hungary,KM,"city with county rights",46.89637110,19.68968610
+5085,Komárom-Esztergom,99,HU,Hungary,KE,county,47.57797860,18.12568550
+1065,Miskolc,99,HU,Hungary,MI,"city with county rights",48.10347750,20.77843840
+1030,Nagykanizsa,99,HU,Hungary,NK,"city with county rights",46.45902180,16.98967960
+1051,"Nógrád County",99,HU,Hungary,NO,county,47.90410310,19.04985040
+1034,Nyíregyháza,99,HU,Hungary,NY,"city with county rights",47.94953240,21.72440530
+1053,Pécs,99,HU,Hungary,PS,"city with county rights",46.07273450,18.23226600
+1059,"Pest County",99,HU,Hungary,PE,county,47.44800010,19.46181280
+1068,Salgótarján,99,HU,Hungary,ST,"city with county rights",48.09352370,19.79998130
+1035,"Somogy County",99,HU,Hungary,SO,county,46.55485900,17.58667320
+1057,Sopron,99,HU,Hungary,SN,"city with county rights",47.68166190,16.58447950
+1045,"Szabolcs-Szatmár-Bereg County",99,HU,Hungary,SZ,county,48.03949540,22.00333000
+1029,Szeged,99,HU,Hungary,SD,"city with county rights",46.25301020,20.14142530
+1033,Székesfehérvár,99,HU,Hungary,SF,"city with county rights",47.18602620,18.42213580
+1061,Szekszárd,99,HU,Hungary,SS,"city with county rights",46.34743260,18.70622930
+1047,Szolnok,99,HU,Hungary,SK,"city with county rights",47.16213550,20.18247120
+1052,Szombathely,99,HU,Hungary,SH,"city with county rights",47.23068510,16.62184410
+1066,Tatabánya,99,HU,Hungary,TB,"city with county rights",47.56924600,18.40481800
+1038,"Tolna County",99,HU,Hungary,TO,county,46.47627540,18.55706270
+1039,"Vas County",99,HU,Hungary,VA,county,47.09291110,16.68121830
+1062,Veszprém,99,HU,Hungary,VM,"city with county rights",47.10280870,17.90930190
+1054,"Veszprém County",99,HU,Hungary,VE,county,47.09309740,17.91007630
+1046,"Zala County",99,HU,Hungary,ZA,county,46.73844040,16.91522520
+1050,Zalaegerszeg,99,HU,Hungary,ZE,county,46.84169360,16.84163220
 3431,"Capital Region",100,IS,Iceland,1,,38.56569570,-92.18169490
 3433,"Eastern Region",100,IS,Iceland,7,,,
 3437,"Northeastern Region",100,IS,Iceland,6,,43.29942850,-74.21793260
@@ -1791,133 +1795,131 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1368,"Southern District",106,IL,Israel,D,,40.71375860,-74.00090590
 1371,"Tel Aviv District",106,IL,Israel,TA,,32.09290750,34.80721650
 1679,Abruzzo,107,IT,Italy,65,region,42.19201190,13.72891670
+1727,Agrigento,107,IT,Italy,AG,"free municipal consortium",37.31052020,13.58579780
+1783,Alessandria,107,IT,Italy,AL,province,44.81755870,8.70466270
+1672,Ancona,107,IT,Italy,AN,province,43.54932450,13.26634790
 1716,"Aosta Valley",107,IT,Italy,23,"autonomous region",45.73888780,7.42618660
 1688,Apulia,107,IT,Italy,75,region,40.79283930,17.10119310
+1681,"Ascoli Piceno",107,IT,Italy,AP,province,42.86389330,13.58997330
+1780,Asti,107,IT,Italy,AT,province,44.90076520,8.20643150
+1692,Avellino,107,IT,Italy,AV,province,40.99645100,15.12589550
+1772,Bari,107,IT,Italy,BA,"metropolitan city",41.11714320,16.87187150
+1686,Barletta-Andria-Trani,107,IT,Italy,BT,province,41.20045430,16.20514840
 1706,Basilicata,107,IT,Italy,77,region,40.64307660,15.96998780
-1701,"Benevento Province",107,IT,Italy,BN,province,41.20350930,14.75209390
+1689,Belluno,107,IT,Italy,BL,province,46.24976590,12.19695650
+1701,Benevento,107,IT,Italy,BN,province,41.20350930,14.75209390
+1704,Bergamo,107,IT,Italy,BG,province,45.69826420,9.67726980
+1778,Biella,107,IT,Italy,BI,province,45.56281760,8.05827170
+1684,Bologna,107,IT,Italy,BO,"metropolitan city",44.49488700,11.34261620
+1717,Brescia,107,IT,Italy,BS,province,45.54155260,10.21180190
+1714,Brindisi,107,IT,Italy,BR,province,40.61126630,17.76362100
+1682,Cagliari,107,IT,Italy,CA,"metropolitan city",39.22384110,9.12166130
 1703,Calabria,107,IT,Italy,78,region,39.30877140,16.34637910
+1718,Caltanissetta,107,IT,Italy,CL,"free municipal consortium",37.48601300,14.06149820
 1669,Campania,107,IT,Italy,72,region,40.66708870,15.10681130
+1721,Campobasso,107,IT,Italy,CB,province,41.67388650,14.75209390
+1731,Caserta,107,IT,Italy,CE,province,41.20783540,14.10013260
+1766,Catania,107,IT,Italy,CT,"metropolitan city",37.45154380,15.05574150
+1728,Catanzaro,107,IT,Italy,CZ,province,38.88963480,16.44058720
+1739,Chieti,107,IT,Italy,CH,province,42.03344280,14.37919120
+1740,Como,107,IT,Italy,CO,province,45.80804160,9.08517930
+1742,Cosenza,107,IT,Italy,CS,province,39.56441050,16.25221430
+1751,Cremona,107,IT,Italy,CR,province,45.20143750,9.98365820
+1754,Crotone,107,IT,Italy,KR,province,39.13098560,17.00670310
+1775,Cuneo,107,IT,Italy,CN,province,44.59703140,7.61142170
 1773,Emilia-Romagna,107,IT,Italy,45,region,44.59676070,11.21863960
+1723,Enna,107,IT,Italy,EN,"free municipal consortium",37.56762160,14.27953490
+1744,Fermo,107,IT,Italy,FM,province,43.09313670,13.58997330
+1746,Ferrara,107,IT,Italy,FE,province,44.76636800,11.76440680
+1680,Florence,107,IT,Italy,FI,"metropolitan city",43.76791780,11.25237920
+1771,Foggia,107,IT,Italy,FG,province,41.63844800,15.59433880
+1779,Forlì-Cesena,107,IT,Italy,FC,province,43.99476810,11.98046130
 1756,"Friuli–Venezia Giulia",107,IT,Italy,36,"autonomous region",46.22591770,13.10336460
+1776,Frosinone,107,IT,Italy,FR,province,41.65765280,13.63627150
+1699,Genoa,107,IT,Italy,GE,"metropolitan city",44.40564930,8.94625640
+1777,Gorizia,107,IT,Italy,GO,"decentralized regional entity",45.90538990,13.51637250
+1787,Grosseto,107,IT,Italy,GR,province,42.85180070,11.25237920
+1788,Imperia,107,IT,Italy,IM,province,43.94186600,7.82863680
+1789,Isernia,107,IT,Italy,IS,province,41.58915550,14.19309180
+1781,L'Aquila,107,IT,Italy,AQ,province,42.12563170,13.63627150
+1791,"La Spezia",107,IT,Italy,SP,province,44.24479130,9.76786870
+1674,Latina,107,IT,Italy,LT,province,41.40874760,13.08179030
 1678,Lazio,107,IT,Italy,62,region,45.69916670,-73.65583330
-1727,"Libero consorzio comunale di Agrigento",107,IT,Italy,AG,"free municipal consortium",37.31052020,13.58579780
-1718,"Libero consorzio comunale di Caltanissetta",107,IT,Italy,CL,"free municipal consortium",37.48601300,14.06149820
-1723,"Libero consorzio comunale di Enna",107,IT,Italy,EN,"free municipal consortium",37.56762160,14.27953490
-1729,"Libero consorzio comunale di Ragusa",107,IT,Italy,RG,"free municipal consortium",36.92692730,14.72551290
-1667,"Libero consorzio comunale di Siracusa",107,IT,Italy,SR,"free municipal consortium",37.06569240,15.28571090
-1733,"Libero consorzio comunale di Trapani",107,IT,Italy,TP,"free municipal consortium",38.01831160,12.51482650
+1675,Lecce,107,IT,Italy,LE,province,40.23473930,18.14286690
+1677,Lecco,107,IT,Italy,LC,province,45.93829410,9.38572900
 1768,Liguria,107,IT,Italy,42,region,44.31679170,8.39649380
+1745,Livorno,107,IT,Italy,LI,province,43.02398480,10.66471010
+1747,Lodi,107,IT,Italy,LO,province,45.24050360,9.52925120
 1705,Lombardy,107,IT,Italy,25,region,45.47906710,9.84524330
+1749,Lucca,107,IT,Italy,LU,province,43.83767360,10.49505300
+1750,Macerata,107,IT,Italy,MC,province,43.24593220,13.26634790
+1758,Mantua,107,IT,Italy,MN,province,45.16677280,10.77536130
 1670,Marche,107,IT,Italy,57,region,30.55670700,-81.44930300
-1772,"Metropolitan City of Bari",107,IT,Italy,BA,"metropolitan city",41.11714320,16.87187150
-1684,"Metropolitan City of Bologna",107,IT,Italy,BO,"metropolitan city",44.49488700,11.34261620
-1682,"Metropolitan City of Cagliari",107,IT,Italy,CA,"metropolitan city",39.22384110,9.12166130
-1766,"Metropolitan City of Catania",107,IT,Italy,CT,"metropolitan city",37.45154380,15.05574150
-1680,"Metropolitan City of Florence",107,IT,Italy,FI,"metropolitan city",43.76791780,11.25237920
-1699,"Metropolitan City of Genoa",107,IT,Italy,GE,"metropolitan city",44.40564930,8.94625640
-1770,"Metropolitan City of Messina",107,IT,Italy,ME,"metropolitan city",38.19373350,15.55420570
-1698,"Metropolitan City of Milan",107,IT,Italy,MI,"metropolitan city",45.45862600,9.18187300
-1724,"Metropolitan City of Naples",107,IT,Italy,NA,"metropolitan city",40.90197500,14.33264400
-1668,"Metropolitan City of Palermo",107,IT,Italy,PA,province,38.11569000,13.36148680
-1671,"Metropolitan City of Reggio Calabria",107,IT,Italy,RC,"metropolitan city",38.10843960,15.64370480
-1711,"Metropolitan City of Rome",107,IT,Italy,RM,"metropolitan city",41.90270080,12.49623520
-1710,"Metropolitan City of Turin",107,IT,Italy,TO,"metropolitan city",45.06329900,7.66928900
-1673,"Metropolitan City of Venice",107,IT,Italy,VE,"metropolitan city",45.44146850,12.31526720
+1759,"Massa and Carrara",107,IT,Italy,MS,province,44.22139980,10.03596610
+1760,Matera,107,IT,Italy,MT,province,40.66634960,16.60436360
+1761,"Medio Campidano",107,IT,Italy,VS,province,39.53173890,8.70407500
+1770,Messina,107,IT,Italy,ME,"metropolitan city",38.19373350,15.55420570
+1698,Milan,107,IT,Italy,MI,"metropolitan city",45.45862600,9.18187300
+1757,Modena,107,IT,Italy,MO,province,44.55137990,10.91804800
 1695,Molise,107,IT,Italy,67,region,41.67388650,14.75209390
-1693,"Pesaro and Urbino Province",107,IT,Italy,PU,province,43.61301180,12.71351210
+1769,"Monza and Brianza",107,IT,Italy,MB,province,45.62359900,9.25880150
+1724,Naples,107,IT,Italy,NA,"metropolitan city",40.90197500,14.33264400
+1774,Novara,107,IT,Italy,NO,province,45.54851330,8.51507930
+1790,Nuoro,107,IT,Italy,NU,province,40.32869040,9.45615500
+1786,Oristano,107,IT,Italy,OR,province,40.05990680,8.74811670
+1665,Padua,107,IT,Italy,PD,province,45.36618640,11.82091390
+1668,Palermo,107,IT,Italy,PA,province,38.11569000,13.36148680
+1666,Parma,107,IT,Italy,PR,province,44.80153220,10.32793540
+1676,Pavia,107,IT,Italy,PV,province,45.32181660,8.84662360
+1691,Perugia,107,IT,Italy,PG,province,42.93800400,12.62162110
+1693,"Pesaro and Urbino",107,IT,Italy,PU,province,43.61301180,12.71351210
+1694,Pescara,107,IT,Italy,PE,province,42.35706550,13.96080910
+1696,Piacenza,107,IT,Italy,PC,province,44.82631120,9.52914470
 1702,Piedmont,107,IT,Italy,21,region,45.05223660,7.51538850
-1783,"Province of Alessandria",107,IT,Italy,AL,province,44.81755870,8.70466270
-1672,"Province of Ancona",107,IT,Italy,AN,province,43.54932450,13.26634790
-1681,"Province of Ascoli Piceno",107,IT,Italy,AP,province,42.86389330,13.58997330
-1780,"Province of Asti",107,IT,Italy,AT,province,44.90076520,8.20643150
-1692,"Province of Avellino",107,IT,Italy,AV,province,40.99645100,15.12589550
-1686,"Province of Barletta-Andria-Trani",107,IT,Italy,BT,province,41.20045430,16.20514840
-1689,"Province of Belluno",107,IT,Italy,BL,province,46.24976590,12.19695650
-1704,"Province of Bergamo",107,IT,Italy,BG,province,45.69826420,9.67726980
-1778,"Province of Biella",107,IT,Italy,BI,province,45.56281760,8.05827170
-1717,"Province of Brescia",107,IT,Italy,BS,province,45.54155260,10.21180190
-1714,"Province of Brindisi",107,IT,Italy,BR,province,40.61126630,17.76362100
-1721,"Province of Campobasso",107,IT,Italy,CB,province,41.67388650,14.75209390
-1730,"Province of Carbonia-Iglesias",107,IT,Italy,CI,province,39.25346590,8.57210160
-1731,"Province of Caserta",107,IT,Italy,CE,province,41.20783540,14.10013260
-1728,"Province of Catanzaro",107,IT,Italy,CZ,province,38.88963480,16.44058720
-1739,"Province of Chieti",107,IT,Italy,CH,province,42.03344280,14.37919120
-1740,"Province of Como",107,IT,Italy,CO,province,45.80804160,9.08517930
-1742,"Province of Cosenza",107,IT,Italy,CS,province,39.56441050,16.25221430
-1751,"Province of Cremona",107,IT,Italy,CR,province,45.20143750,9.98365820
-1754,"Province of Crotone",107,IT,Italy,KR,province,39.13098560,17.00670310
-1775,"Province of Cuneo",107,IT,Italy,CN,province,44.59703140,7.61142170
-1744,"Province of Fermo",107,IT,Italy,FM,province,43.09313670,13.58997330
-1746,"Province of Ferrara",107,IT,Italy,FE,province,44.76636800,11.76440680
-1771,"Province of Foggia",107,IT,Italy,FG,province,41.63844800,15.59433880
-1779,"Province of Forlì-Cesena",107,IT,Italy,FC,province,43.99476810,11.98046130
-1776,"Province of Frosinone",107,IT,Italy,FR,province,41.65765280,13.63627150
-1777,"Province of Gorizia",107,IT,Italy,GO,"decentralized regional entity",45.90538990,13.51637250
-1787,"Province of Grosseto",107,IT,Italy,GR,province,42.85180070,11.25237920
-1788,"Province of Imperia",107,IT,Italy,IM,province,43.94186600,7.82863680
-1789,"Province of Isernia",107,IT,Italy,IS,province,41.58915550,14.19309180
-1781,"Province of L'Aquila",107,IT,Italy,AQ,province,42.12563170,13.63627150
-1791,"Province of La Spezia",107,IT,Italy,SP,province,44.24479130,9.76786870
-1674,"Province of Latina",107,IT,Italy,LT,province,41.40874760,13.08179030
-1675,"Province of Lecce",107,IT,Italy,LE,province,40.23473930,18.14286690
-1677,"Province of Lecco",107,IT,Italy,LC,province,45.93829410,9.38572900
-1745,"Province of Livorno",107,IT,Italy,LI,province,43.02398480,10.66471010
-1747,"Province of Lodi",107,IT,Italy,LO,province,45.24050360,9.52925120
-1749,"Province of Lucca",107,IT,Italy,LU,province,43.83767360,10.49505300
-1750,"Province of Macerata",107,IT,Italy,MC,province,43.24593220,13.26634790
-1758,"Province of Mantua",107,IT,Italy,MN,province,45.16677280,10.77536130
-1759,"Province of Massa and Carrara",107,IT,Italy,MS,province,44.22139980,10.03596610
-1760,"Province of Matera",107,IT,Italy,MT,province,40.66634960,16.60436360
-1761,"Province of Medio Campidano",107,IT,Italy,VS,province,39.53173890,8.70407500
-1757,"Province of Modena",107,IT,Italy,MO,province,44.55137990,10.91804800
-1769,"Province of Monza and Brianza",107,IT,Italy,MB,province,45.62359900,9.25880150
-1774,"Province of Novara",107,IT,Italy,NO,province,45.54851330,8.51507930
-1790,"Province of Nuoro",107,IT,Italy,NU,province,40.32869040,9.45615500
-1782,"Province of Ogliastra",107,IT,Italy,OG,province,39.84105360,9.45615500
-1784,"Province of Olbia-Tempio",107,IT,Italy,OT,"metropolitan city",40.82683830,9.27855830
-1786,"Province of Oristano",107,IT,Italy,OR,province,40.05990680,8.74811670
-1665,"Province of Padua",107,IT,Italy,PD,province,45.36618640,11.82091390
-1666,"Province of Parma",107,IT,Italy,PR,province,44.80153220,10.32793540
-1676,"Province of Pavia",107,IT,Italy,PV,province,45.32181660,8.84662360
-1691,"Province of Perugia",107,IT,Italy,PG,province,42.93800400,12.62162110
-1694,"Province of Pescara",107,IT,Italy,PE,province,42.35706550,13.96080910
-1696,"Province of Piacenza",107,IT,Italy,PC,province,44.82631120,9.52914470
-1685,"Province of Pisa",107,IT,Italy,PI,province,43.72283150,10.40171940
-1687,"Province of Pistoia",107,IT,Italy,PT,province,43.95437330,10.89030990
-1690,"Province of Pordenone",107,IT,Italy,PN,"decentralized regional entity",46.03788620,12.71083500
-1697,"Province of Potenza",107,IT,Italy,PZ,province,40.41821940,15.87600400
-1700,"Province of Prato",107,IT,Italy,PO,province,44.04539000,11.11644520
-1707,"Province of Ravenna",107,IT,Italy,RA,province,44.41844430,12.20359980
-1708,"Province of Reggio Emilia",107,IT,Italy,RE,province,44.58565800,10.55647360
-1712,"Province of Rieti",107,IT,Italy,RI,province,42.36744050,12.89750980
-1713,"Province of Rimini",107,IT,Italy,RN,province,44.06782880,12.56951580
-1719,"Province of Rovigo",107,IT,Italy,RO,province,45.02418180,11.82381620
-1720,"Province of Salerno",107,IT,Italy,SA,province,40.42878320,15.21948080
-1722,"Province of Sassari",107,IT,Italy,SS,province,40.79679070,8.57504070
-1732,"Province of Savona",107,IT,Italy,SV,province,44.28879950,8.26505800
-1734,"Province of Siena",107,IT,Italy,SI,province,43.29377320,11.43391480
-1741,"Province of Sondrio",107,IT,Italy,SO,province,46.17276360,9.79949170
-1743,"Province of Taranto",107,IT,Italy,TA,province,40.57409010,17.24299760
-1752,"Province of Teramo",107,IT,Italy,TE,province,42.58956080,13.63627150
-1755,"Province of Terni",107,IT,Italy,TR,province,42.56345340,12.52980280
-1762,"Province of Treviso",107,IT,Italy,TV,province,45.66685170,12.24306170
-1763,"Province of Trieste",107,IT,Italy,TS,"decentralized regional entity",45.68948230,13.78330720
-1764,"Province of Udine",107,IT,Italy,UD,"decentralized regional entity",46.14079720,13.16628960
-1765,"Province of Varese",107,IT,Italy,VA,province,45.79902600,8.73009450
-1726,"Province of Verbano-Cusio-Ossola",107,IT,Italy,VB,province,46.13996880,8.27246490
-1785,"Province of Vercelli",107,IT,Italy,VC,province,45.32022040,8.41850800
-1736,"Province of Verona",107,IT,Italy,VR,province,45.44184980,11.07353160
-1737,"Province of Vibo Valentia",107,IT,Italy,VV,province,38.63785650,16.20514840
-1738,"Province of Vicenza",107,IT,Italy,VI,province,45.69839950,11.56614650
-1735,"Province of Viterbo",107,IT,Italy,VT,province,42.40024200,11.88917210
+1685,Pisa,107,IT,Italy,PI,province,43.72283150,10.40171940
+1687,Pistoia,107,IT,Italy,PT,province,43.95437330,10.89030990
+1690,Pordenone,107,IT,Italy,PN,"decentralized regional entity",46.03788620,12.71083500
+1697,Potenza,107,IT,Italy,PZ,province,40.41821940,15.87600400
+1700,Prato,107,IT,Italy,PO,province,44.04539000,11.11644520
+1729,Ragusa,107,IT,Italy,RG,"free municipal consortium",36.92692730,14.72551290
+1707,Ravenna,107,IT,Italy,RA,province,44.41844430,12.20359980
+1671,"Reggio Calabria",107,IT,Italy,RC,"metropolitan city",38.10843960,15.64370480
+1708,"Reggio Emilia",107,IT,Italy,RE,province,44.58565800,10.55647360
+1712,Rieti,107,IT,Italy,RI,province,42.36744050,12.89750980
+1713,Rimini,107,IT,Italy,RN,province,44.06782880,12.56951580
+1711,Rome,107,IT,Italy,RM,"metropolitan city",41.90270080,12.49623520
+1719,Rovigo,107,IT,Italy,RO,province,45.02418180,11.82381620
+1720,Salerno,107,IT,Italy,SA,province,40.42878320,15.21948080
 1715,Sardinia,107,IT,Italy,88,"autonomous region",40.12087520,9.01289260
+1722,Sassari,107,IT,Italy,SS,province,40.79679070,8.57504070
+1732,Savona,107,IT,Italy,SV,province,44.28879950,8.26505800
 1709,Sicily,107,IT,Italy,82,"autonomous region",37.59999380,14.01535570
+1734,Siena,107,IT,Italy,SI,province,43.29377320,11.43391480
+1667,Siracusa,107,IT,Italy,SR,"free municipal consortium",37.06569240,15.28571090
+1741,Sondrio,107,IT,Italy,SO,province,46.17276360,9.79949170
+1730,"South Sardinia",107,IT,Italy,SU,province,39.38935350,8.93970000
 1767,"South Tyrol",107,IT,Italy,BZ,"autonomous province",46.49494500,11.34026570
+1743,Taranto,107,IT,Italy,TA,province,40.57409010,17.24299760
+1752,Teramo,107,IT,Italy,TE,province,42.58956080,13.63627150
+1755,Terni,107,IT,Italy,TR,province,42.56345340,12.52980280
+1733,Trapani,107,IT,Italy,TP,"free municipal consortium",38.01831160,12.51482650
 1748,Trentino,107,IT,Italy,TN,"autonomous province",46.05120040,11.11753920
 1725,"Trentino-South Tyrol",107,IT,Italy,32,"autonomous region",46.43366620,11.16932960
+1762,Treviso,107,IT,Italy,TV,province,45.66685170,12.24306170
+1763,Trieste,107,IT,Italy,TS,"decentralized regional entity",45.68948230,13.78330720
+1710,Turin,107,IT,Italy,TO,"metropolitan city",45.06329900,7.66928900
 1664,Tuscany,107,IT,Italy,52,region,43.77105130,11.24862080
+1764,Udine,107,IT,Italy,UD,"decentralized regional entity",46.14079720,13.16628960
 1683,Umbria,107,IT,Italy,55,region,42.93800400,12.62162110
+1765,Varese,107,IT,Italy,VA,province,45.79902600,8.73009450
 1753,Veneto,107,IT,Italy,34,region,45.44146620,12.31525950
+1673,Venice,107,IT,Italy,VE,"metropolitan city",45.44146850,12.31526720
+1726,Verbano-Cusio-Ossola,107,IT,Italy,VB,province,46.13996880,8.27246490
+1785,Vercelli,107,IT,Italy,VC,province,45.32022040,8.41850800
+1736,Verona,107,IT,Italy,VR,province,45.44184980,11.07353160
+1737,"Vibo Valentia",107,IT,Italy,VV,province,38.63785650,16.20514840
+1738,Vicenza,107,IT,Italy,VI,province,45.69839950,11.56614650
+1735,Viterbo,107,IT,Italy,VT,province,42.40024200,11.88917210
 3753,"Clarendon Parish",108,JM,Jamaica,13,,17.95571830,-77.24051530
 3749,"Hanover Parish",108,JM,Jamaica,09,,18.40977070,-78.13363800
 3748,"Kingston Parish",108,JM,Jamaica,01,,17.96832710,-76.78270200
@@ -2608,21 +2610,21 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 76,Żurrieq,135,MT,Malta,68,,35.82163060,14.48106480
 2574,"Ralik Chain",137,MH,"Marshall Islands",L,,8.13614600,164.88679560
 2573,"Ratak Chain",137,MH,"Marshall Islands",T,,10.27632760,170.55009370
-3344,"Adrar Region",139,MR,Mauritania,07,,19.86521760,-12.80547530
-3349,"Assaba Region",139,MR,Mauritania,03,,16.77595580,-11.52480550
-3339,"Brakna Region",139,MR,Mauritania,05,,17.23175610,-13.17403480
-3346,"Dakhlet Nouadhibou",139,MR,Mauritania,08,,20.59855880,-16.25221430
-3341,"Gorgol Region",139,MR,Mauritania,04,,15.97173570,-12.62162110
-3350,"Guidimaka Region",139,MR,Mauritania,10,,15.25573310,-12.25479190
-3338,"Hodh Ech Chargui Region",139,MR,Mauritania,01,,18.67370260,-7.09287700
-3351,"Hodh El Gharbi Region",139,MR,Mauritania,02,,16.69121490,-9.54509740
-3342,"Inchiri Region",139,MR,Mauritania,12,,20.02805610,-15.40680790
-3343,"Nouakchott-Nord Region",139,MR,Mauritania,14,,18.11302050,-15.89949560
-3352,"Nouakchott-Ouest Region",139,MR,Mauritania,13,,18.15113570,-15.99349100
-3347,"Nouakchott-Sud Region",139,MR,Mauritania,15,,17.97092880,-15.94648740
-3345,"Tagant Region",139,MR,Mauritania,09,,18.54675270,-9.90181310
-3340,"Tiris Zemmour Region",139,MR,Mauritania,11,,24.57737640,-9.90181310
-3348,"Trarza Region",139,MR,Mauritania,06,,17.86649640,-14.65878210
+3344,Adrar,139,MR,Mauritania,07,region,19.86521760,-12.80547530
+3349,Assaba,139,MR,Mauritania,03,region,16.77595580,-11.52480550
+3339,Brakna,139,MR,Mauritania,05,region,17.23175610,-13.17403480
+3346,"Dakhlet Nouadhibou",139,MR,Mauritania,08,region,20.59855880,-16.25221430
+3341,Gorgol,139,MR,Mauritania,04,region,15.97173570,-12.62162110
+3350,Guidimaka,139,MR,Mauritania,10,region,15.25573310,-12.25479190
+3338,"Hodh Ech Chargui",139,MR,Mauritania,01,region,18.67370260,-7.09287700
+3351,"Hodh El Gharbi",139,MR,Mauritania,02,region,16.69121490,-9.54509740
+3342,Inchiri,139,MR,Mauritania,12,region,20.02805610,-15.40680790
+3343,Nouakchott-Nord,139,MR,Mauritania,14,region,18.11302050,-15.89949560
+3352,Nouakchott-Ouest,139,MR,Mauritania,13,region,18.15113570,-15.99349100
+3347,Nouakchott-Sud,139,MR,Mauritania,15,region,17.97092880,-15.94648740
+3345,Tagant,139,MR,Mauritania,09,region,18.54675270,-9.90181310
+3340,"Tiris Zemmour",139,MR,Mauritania,11,region,24.57737640,-9.90181310
+3348,Trarza,139,MR,Mauritania,06,region,17.86649640,-14.65878210
 3248,Agaléga,140,MU,Mauritius,AG,,-10.40000000,56.61666670
 3262,"Beau Bassin-Rose Hill",140,MU,Mauritius,BR,,-20.22303050,57.46838300
 3251,"Cargados Carajos",140,MU,Mauritius,CC,,-16.58333300,59.61666700
@@ -2640,38 +2642,38 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3249,Rodrigues,140,MU,Mauritius,RO,,-19.72453850,63.42721850
 3257,"Savanne District",140,MU,Mauritius,SA,,-20.47395300,57.48535610
 3252,Vacoas-Phoenix,140,MU,Mauritius,VP,,-20.29840260,57.49383550
-3456,Aguascalientes,142,MX,Mexico,AGU,,21.88525620,-102.29156770
-3457,"Baja California",142,MX,Mexico,BCN,,30.84063380,-115.28375850
-3460,"Baja California Sur",142,MX,Mexico,BCS,,26.04444460,-111.66607250
-3475,Campeche,142,MX,Mexico,CAM,,19.83012510,-90.53490870
-3451,Chiapas,142,MX,Mexico,CHP,,16.75693180,-93.12923530
-3447,Chihuahua,142,MX,Mexico,CHH,,28.63299570,-106.06910040
-3473,"Ciudad de México",142,MX,Mexico,CDMX,,19.43260770,-99.13320800
-3471,"Coahuila de Zaragoza",142,MX,Mexico,COA,,27.05867600,-101.70682940
-3472,Colima,142,MX,Mexico,COL,,19.24523420,-103.72408680
-3453,Durango,142,MX,Mexico,DUR,,37.27528000,-107.88006670
-3450,"Estado de México",142,MX,Mexico,MEX,,23.63450100,-102.55278400
-3469,Guanajuato,142,MX,Mexico,GUA,,21.01901450,-101.25735860
-3459,Guerrero,142,MX,Mexico,GRO,,17.43919260,-99.54509740
-3470,Hidalgo,142,MX,Mexico,HID,,26.10035470,-98.26306840
-4857,Jalisco,142,MX,Mexico,JAL,,20.65953820,-103.34943760
-3474,"Michoacán de Ocampo",142,MX,Mexico,MIC,,19.56651920,-101.70682940
-3465,Morelos,142,MX,Mexico,MOR,,18.68130490,-99.10134980
-3477,Nayarit,142,MX,Mexico,NAY,,21.75138440,-104.84546190
-3452,"Nuevo León",142,MX,Mexico,NLE,,25.59217200,-99.99619470
-3448,Oaxaca,142,MX,Mexico,OAX,,17.07318420,-96.72658890
-3476,Puebla,142,MX,Mexico,PUE,,19.04143980,-98.20627270
-3455,Querétaro,142,MX,Mexico,QUE,,20.58879320,-100.38988810
-3467,"Quintana Roo",142,MX,Mexico,ROO,,19.18173930,-88.47913760
-3461,"San Luis Potosí",142,MX,Mexico,SLP,,22.15646990,-100.98554090
-3449,Sinaloa,142,MX,Mexico,SIN,,25.17210910,-107.47951730
-3468,Sonora,142,MX,Mexico,SON,,37.98294960,-120.38217240
-3454,Tabasco,142,MX,Mexico,TAB,,17.84091730,-92.61892730
-3463,Tamaulipas,142,MX,Mexico,TAM,,24.26694000,-98.83627550
-3458,Tlaxcala,142,MX,Mexico,TLA,,19.31815400,-98.23749540
-3464,"Veracruz de Ignacio de la Llave",142,MX,Mexico,VER,,19.17377300,-96.13422410
-3466,Yucatán,142,MX,Mexico,YUC,,20.70987860,-89.09433770
-3462,Zacatecas,142,MX,Mexico,ZAC,,22.77085550,-102.58324260
+3456,Aguascalientes,142,MX,Mexico,AGU,state,21.88525620,-102.29156770
+3457,"Baja California",142,MX,Mexico,BCN,state,30.84063380,-115.28375850
+3460,"Baja California Sur",142,MX,Mexico,BCS,state,26.04444460,-111.66607250
+3475,Campeche,142,MX,Mexico,CAM,state,19.83012510,-90.53490870
+3451,Chiapas,142,MX,Mexico,CHP,state,16.75693180,-93.12923530
+3447,Chihuahua,142,MX,Mexico,CHH,state,28.63299570,-106.06910040
+3473,"Ciudad de México",142,MX,Mexico,CDMX,"federal district",19.43260770,-99.13320800
+3471,"Coahuila de Zaragoza",142,MX,Mexico,COA,state,27.05867600,-101.70682940
+3472,Colima,142,MX,Mexico,COL,state,19.24523420,-103.72408680
+3453,Durango,142,MX,Mexico,DUR,state,37.27528000,-107.88006670
+3450,"Estado de México",142,MX,Mexico,MEX,state,23.63450100,-102.55278400
+3469,Guanajuato,142,MX,Mexico,GUA,state,21.01901450,-101.25735860
+3459,Guerrero,142,MX,Mexico,GRO,state,17.43919260,-99.54509740
+3470,Hidalgo,142,MX,Mexico,HID,state,26.10035470,-98.26306840
+4857,Jalisco,142,MX,Mexico,JAL,state,20.65953820,-103.34943760
+3474,"Michoacán de Ocampo",142,MX,Mexico,MIC,state,19.56651920,-101.70682940
+3465,Morelos,142,MX,Mexico,MOR,state,18.68130490,-99.10134980
+3477,Nayarit,142,MX,Mexico,NAY,state,21.75138440,-104.84546190
+3452,"Nuevo León",142,MX,Mexico,NLE,state,25.59217200,-99.99619470
+3448,Oaxaca,142,MX,Mexico,OAX,state,17.07318420,-96.72658890
+3476,Puebla,142,MX,Mexico,PUE,state,19.04143980,-98.20627270
+3455,Querétaro,142,MX,Mexico,QUE,state,20.58879320,-100.38988810
+3467,"Quintana Roo",142,MX,Mexico,ROO,state,19.18173930,-88.47913760
+3461,"San Luis Potosí",142,MX,Mexico,SLP,state,22.15646990,-100.98554090
+3449,Sinaloa,142,MX,Mexico,SIN,state,25.17210910,-107.47951730
+3468,Sonora,142,MX,Mexico,SON,state,37.98294960,-120.38217240
+3454,Tabasco,142,MX,Mexico,TAB,state,17.84091730,-92.61892730
+3463,Tamaulipas,142,MX,Mexico,TAM,state,24.26694000,-98.83627550
+3458,Tlaxcala,142,MX,Mexico,TLA,state,19.31815400,-98.23749540
+3464,"Veracruz de Ignacio de la Llave",142,MX,Mexico,VER,state,19.17377300,-96.13422410
+3466,Yucatán,142,MX,Mexico,YUC,state,20.70987860,-89.09433770
+3462,Zacatecas,142,MX,Mexico,ZAC,state,22.77085550,-102.58324260
 2580,"Chuuk State",143,FM,Micronesia,TRK,,7.13867590,151.55930650
 2583,"Kosrae State",143,FM,Micronesia,KSA,,5.30956180,162.98148770
 2581,"Pohnpei State",143,FM,Micronesia,PNI,,6.85412540,158.26238220
@@ -2758,93 +2760,93 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 29,"Tivat Municipality",147,ME,Montenegro,19,,42.42348000,18.71851840
 33,"Ulcinj Municipality",147,ME,Montenegro,20,,41.96527950,19.30694320
 32,"Žabljak Municipality",147,ME,Montenegro,21,,43.15551520,19.12260180
-4928,Agadir-Ida-Ou-Tanane,149,MA,Morocco,AGD,,30.64620910,-9.83390610
-3320,"Al Haouz",149,MA,Morocco,HAO,,31.29567290,-7.87216000
-3267,"Al Hoceïma",149,MA,Morocco,HOC,,35.24455890,-3.93174680
-3266,"Aousserd (EH)",149,MA,Morocco,AOU,,22.55215380,-14.32973530
-3297,"Assa-Zag (EH-partial)",149,MA,Morocco,ASZ,,28.14023950,-9.72326730
-3321,Azilal,149,MA,Morocco,AZI,,32.00426200,-6.57833870
-3272,"Béni Mellal",149,MA,Morocco,BEM,,32.34244300,-6.37579900
-3278,"Béni Mellal-Khénifra",149,MA,Morocco,05,,32.57191840,-6.06791940
-3304,Benslimane,149,MA,Morocco,BES,,33.61896980,-7.13055360
-3285,Berkane,149,MA,Morocco,BER,,34.88408760,-2.34188700
-4929,Berrechid,149,MA,Morocco,BRR,,33.26025230,-7.59848370
-3275,"Boujdour (EH)",149,MA,Morocco,BOD,,26.12524930,-14.48473470
-3270,Boulemane,149,MA,Morocco,BOM,,33.36251590,-4.73033970
-4930,Casablanca,149,MA,Morocco,CAS,,33.57226780,-7.65703260
-3303,Casablanca-Settat,149,MA,Morocco,06,,33.21608720,-7.43813550
-3310,Chefchaouen,149,MA,Morocco,CHE,,35.01817200,-5.14320680
-3274,Chichaoua,149,MA,Morocco,CHI,,31.53835810,-8.76463880
-3302,"Chtouka-Ait Baha",149,MA,Morocco,CHT,,30.10724220,-9.27855830
-3306,"Dakhla-Oued Ed-Dahab (EH)",149,MA,Morocco,12,,22.73378920,-14.28611160
-3290,Drâa-Tafilalet,149,MA,Morocco,08,,31.14995380,-5.39395510
-4931,Driouch,149,MA,Morocco,DRI,,34.97603200,-3.39644930
-3291,"El Hajeb",149,MA,Morocco,HAJ,,33.68573500,-5.36778440
-3280,"El Jadida",149,MA,Morocco,JDI,,33.23163260,-8.50071160
-3309,"El Kelâa des Sraghna",149,MA,Morocco,KES,,32.05227670,-7.35165580
-3299,Errachidia,149,MA,Morocco,ERR,,31.90512750,-4.72775280
-3292,"Es-Semara (EH-partial)",149,MA,Morocco,ESM,,26.74185600,-11.67836710
-3316,Essaouira,149,MA,Morocco,ESI,,31.50849260,-9.75950410
-3300,Fahs-Anjra,149,MA,Morocco,FAH,,35.76019920,-5.66683060
-4932,Fès,149,MA,Morocco,FES,,34.02395790,-5.03675990
-3313,Fès-Meknès,149,MA,Morocco,03,,34.06252900,-4.72775280
-3301,Figuig,149,MA,Morocco,FIG,,32.10926130,-1.22980600
-4933,"Fquih Ben Salah",149,MA,Morocco,FQH,,32.50016800,-6.71007170
-3265,Guelmim,149,MA,Morocco,GUE,,28.98836590,-10.05274980
-3305,"Guelmim-Oued Noun (EH-partial)",149,MA,Morocco,10,,28.48442810,-10.08072980
-4934,Guercif,149,MA,Morocco,GUF,,34.23450360,-3.38130050
-3325,Ifrane,149,MA,Morocco,IFR,,33.52280620,-5.11095520
-3294,"Inezgane-Ait Melloul",149,MA,Morocco,INE,,30.35090980,-9.38951100
-3307,Jerada,149,MA,Morocco,JRA,,34.30617910,-2.17941360
-3308,Kénitra,149,MA,Morocco,KEN,,34.25405030,-6.58901660
-3276,Khémisset,149,MA,Morocco,KHE,,33.81537040,-6.05733020
-3317,Khénifra,149,MA,Morocco,KHN,,32.93404710,-5.66157100
-3326,Khouribga,149,MA,Morocco,KHO,,32.88602300,-6.92086550
-3271,L'Oriental,149,MA,Morocco,02,,37.06968300,-94.51227700
-3293,"Laâyoune (EH)",149,MA,Morocco,LAA,,27.15003840,-13.19907580
-3298,"Laâyoune-Sakia El Hamra (EH-partial)",149,MA,Morocco,11,,27.86831940,-11.98046130
-3268,Larache,149,MA,Morocco,LAR,,35.17442710,-6.14739640
-4936,M’diq-Fnideq,149,MA,Morocco,MDF,,35.77330190,-5.51433000
-4935,Marrakech,149,MA,Morocco,MAR,,31.63460230,-8.07789320
-3288,Marrakesh-Safi,149,MA,Morocco,07,,31.73308330,-8.13385580
-3284,Médiouna,149,MA,Morocco,MED,,33.45409390,-7.51660200
-4937,Meknès,149,MA,Morocco,MEK,,33.88100000,-5.57303970
-4938,Midelt,149,MA,Morocco,MID,,32.68550790,-4.75017090
-4939,Mohammadia,149,MA,Morocco,MOH,,33.68737490,-7.42391420
-3315,"Moulay Yacoub",149,MA,Morocco,MOU,,34.08744790,-5.17840190
-3281,Nador,149,MA,Morocco,NAD,,34.91719260,-2.85771050
-3287,Nouaceur,149,MA,Morocco,NOU,,33.36703930,-7.57325370
-3269,Ouarzazate,149,MA,Morocco,OUA,,30.93354360,-6.93701600
-3319,"Oued Ed-Dahab (EH)",149,MA,Morocco,OUD,,22.73378920,-14.28611160
-4941,Ouezzane,149,MA,Morocco,OUZ,,34.80634500,-5.59145050
-4940,Oujda-Angad,149,MA,Morocco,OUJ,,34.68375040,-2.29932390
-4942,Rabat,149,MA,Morocco,RAB,,33.96919900,-6.92730290
-4927,Rabat-Salé-Kénitra,149,MA,Morocco,04,,34.07686400,-7.34544760
-4943,Rehamna,149,MA,Morocco,REH,,32.20329050,-8.56896710
-3311,Safi,149,MA,Morocco,SAF,,32.29898720,-9.10134980
-4944,Salé,149,MA,Morocco,SAL,,34.03775700,-6.84270730
-3289,Sefrou,149,MA,Morocco,SEF,,33.83052440,-4.83531540
-3282,Settat,149,MA,Morocco,SET,,32.99242420,-7.62226650
-4945,"Sidi Bennour",149,MA,Morocco,SIB,,32.64926020,-8.44714530
-4946,"Sidi Ifni",149,MA,Morocco,SIF,,29.36657970,-10.21084850
-3279,"Sidi Kacem",149,MA,Morocco,SIK,,34.22601720,-5.71291640
-4952,"Sidi Slimane",149,MA,Morocco,SIL,,34.27378280,-5.98059720
-4947,Skhirate-Témara,149,MA,Morocco,SKH,,33.76224250,-7.04190520
-3295,Souss-Massa,149,MA,Morocco,09,,30.27506110,-8.13385580
-3286,"Tan-Tan (EH-partial)",149,MA,Morocco,TNT,,28.03012000,-11.16173560
-4950,Tanger-Assilah,149,MA,Morocco,TNG,,35.76325390,-5.90450980
-3324,"Tanger-Tétouan-Al Hoceïma",149,MA,Morocco,01,,35.26295580,-5.56172790
-3323,Taounate,149,MA,Morocco,TAO,,34.53691700,-4.63986930
-3322,Taourirt,149,MA,Morocco,TAI,,34.21259800,-2.69838680
-4948,"Tarfaya (EH-partial)",149,MA,Morocco,TAF,,27.93777010,-12.92940630
-3314,Taroudannt,149,MA,Morocco,TAR,,30.47271260,-8.87487650
-3312,Tata,149,MA,Morocco,TAT,,29.75087700,-7.97563430
-3296,Taza,149,MA,Morocco,TAZ,,34.27889530,-3.58126920
-3318,Tétouan,149,MA,Morocco,TET,,35.58889950,-5.36255160
-4949,Tinghir,149,MA,Morocco,TIN,,31.48507940,-6.20192980
-3277,Tiznit,149,MA,Morocco,TIZ,,29.69339200,-9.73215700
-4951,Youssoufia,149,MA,Morocco,YUS,,32.02006790,-8.86926480
-3283,Zagora,149,MA,Morocco,ZAG,,30.57860930,-5.89871390
+4928,Agadir-Ida-Ou-Tanane,149,MA,Morocco,AGD,prefecture,30.64620910,-9.83390610
+3320,"Al Haouz",149,MA,Morocco,HAO,province,31.29567290,-7.87216000
+3267,"Al Hoceïma",149,MA,Morocco,HOC,province,35.24455890,-3.93174680
+3266,"Aousserd (EH)",149,MA,Morocco,AOU,province,22.55215380,-14.32973530
+3297,"Assa-Zag (EH-partial)",149,MA,Morocco,ASZ,province,28.14023950,-9.72326730
+3321,Azilal,149,MA,Morocco,AZI,province,32.00426200,-6.57833870
+3272,"Béni Mellal",149,MA,Morocco,BEM,province,32.34244300,-6.37579900
+3278,"Béni Mellal-Khénifra",149,MA,Morocco,05,region,32.57191840,-6.06791940
+3304,Benslimane,149,MA,Morocco,BES,province,33.61896980,-7.13055360
+3285,Berkane,149,MA,Morocco,BER,province,34.88408760,-2.34188700
+4929,Berrechid,149,MA,Morocco,BRR,province,33.26025230,-7.59848370
+3275,"Boujdour (EH)",149,MA,Morocco,BOD,province,26.12524930,-14.48473470
+3270,Boulemane,149,MA,Morocco,BOM,province,33.36251590,-4.73033970
+4930,Casablanca,149,MA,Morocco,CAS,prefecture,33.57226780,-7.65703260
+3303,Casablanca-Settat,149,MA,Morocco,06,region,33.21608720,-7.43813550
+3310,Chefchaouen,149,MA,Morocco,CHE,province,35.01817200,-5.14320680
+3274,Chichaoua,149,MA,Morocco,CHI,province,31.53835810,-8.76463880
+3302,"Chtouka-Ait Baha",149,MA,Morocco,CHT,province,30.10724220,-9.27855830
+3306,"Dakhla-Oued Ed-Dahab (EH)",149,MA,Morocco,12,region,22.73378920,-14.28611160
+3290,Drâa-Tafilalet,149,MA,Morocco,08,region,31.14995380,-5.39395510
+4931,Driouch,149,MA,Morocco,DRI,province,34.97603200,-3.39644930
+3291,"El Hajeb",149,MA,Morocco,HAJ,province,33.68573500,-5.36778440
+3280,"El Jadida",149,MA,Morocco,JDI,province,33.23163260,-8.50071160
+3309,"El Kelâa des Sraghna",149,MA,Morocco,KES,province,32.05227670,-7.35165580
+3299,Errachidia,149,MA,Morocco,ERR,province,31.90512750,-4.72775280
+3292,"Es-Semara (EH-partial)",149,MA,Morocco,ESM,province,26.74185600,-11.67836710
+3316,Essaouira,149,MA,Morocco,ESI,province,31.50849260,-9.75950410
+3300,Fahs-Anjra,149,MA,Morocco,FAH,province,35.76019920,-5.66683060
+4932,Fès,149,MA,Morocco,FES,prefecture,34.02395790,-5.03675990
+3313,Fès-Meknès,149,MA,Morocco,03,region,34.06252900,-4.72775280
+3301,Figuig,149,MA,Morocco,FIG,province,32.10926130,-1.22980600
+4933,"Fquih Ben Salah",149,MA,Morocco,FQH,province,32.50016800,-6.71007170
+3265,Guelmim,149,MA,Morocco,GUE,province,28.98836590,-10.05274980
+3305,"Guelmim-Oued Noun (EH-partial)",149,MA,Morocco,10,region,28.48442810,-10.08072980
+4934,Guercif,149,MA,Morocco,GUF,province,34.23450360,-3.38130050
+3325,Ifrane,149,MA,Morocco,IFR,province,33.52280620,-5.11095520
+3294,"Inezgane-Ait Melloul",149,MA,Morocco,INE,prefecture,30.35090980,-9.38951100
+3307,Jerada,149,MA,Morocco,JRA,province,34.30617910,-2.17941360
+3308,Kénitra,149,MA,Morocco,KEN,province,34.25405030,-6.58901660
+3276,Khémisset,149,MA,Morocco,KHE,province,33.81537040,-6.05733020
+3317,Khénifra,149,MA,Morocco,KHN,province,32.93404710,-5.66157100
+3326,Khouribga,149,MA,Morocco,KHO,province,32.88602300,-6.92086550
+3271,L'Oriental,149,MA,Morocco,02,region,37.06968300,-94.51227700
+3293,"Laâyoune (EH)",149,MA,Morocco,LAA,province,27.15003840,-13.19907580
+3298,"Laâyoune-Sakia El Hamra (EH-partial)",149,MA,Morocco,11,region,27.86831940,-11.98046130
+3268,Larache,149,MA,Morocco,LAR,province,35.17442710,-6.14739640
+4936,M’diq-Fnideq,149,MA,Morocco,MDF,prefecture,35.77330190,-5.51433000
+4935,Marrakech,149,MA,Morocco,MAR,prefecture,31.63460230,-8.07789320
+3288,Marrakesh-Safi,149,MA,Morocco,07,region,31.73308330,-8.13385580
+3284,Médiouna,149,MA,Morocco,MED,province,33.45409390,-7.51660200
+4937,Meknès,149,MA,Morocco,MEK,prefecture,33.88100000,-5.57303970
+4938,Midelt,149,MA,Morocco,MID,province,32.68550790,-4.75017090
+4939,Mohammadia,149,MA,Morocco,MOH,prefecture,33.68737490,-7.42391420
+3315,"Moulay Yacoub",149,MA,Morocco,MOU,province,34.08744790,-5.17840190
+3281,Nador,149,MA,Morocco,NAD,province,34.91719260,-2.85771050
+3287,Nouaceur,149,MA,Morocco,NOU,province,33.36703930,-7.57325370
+3269,Ouarzazate,149,MA,Morocco,OUA,province,30.93354360,-6.93701600
+3319,"Oued Ed-Dahab (EH)",149,MA,Morocco,OUD,province,22.73378920,-14.28611160
+4941,Ouezzane,149,MA,Morocco,OUZ,province,34.80634500,-5.59145050
+4940,Oujda-Angad,149,MA,Morocco,OUJ,prefecture,34.68375040,-2.29932390
+4942,Rabat,149,MA,Morocco,RAB,prefecture,33.96919900,-6.92730290
+4927,Rabat-Salé-Kénitra,149,MA,Morocco,04,region,34.07686400,-7.34544760
+4943,Rehamna,149,MA,Morocco,REH,province,32.20329050,-8.56896710
+3311,Safi,149,MA,Morocco,SAF,province,32.29898720,-9.10134980
+4944,Salé,149,MA,Morocco,SAL,prefecture,34.03775700,-6.84270730
+3289,Sefrou,149,MA,Morocco,SEF,province,33.83052440,-4.83531540
+3282,Settat,149,MA,Morocco,SET,province,32.99242420,-7.62226650
+4945,"Sidi Bennour",149,MA,Morocco,SIB,province,32.64926020,-8.44714530
+4946,"Sidi Ifni",149,MA,Morocco,SIF,province,29.36657970,-10.21084850
+3279,"Sidi Kacem",149,MA,Morocco,SIK,province,34.22601720,-5.71291640
+4952,"Sidi Slimane",149,MA,Morocco,SIL,province,34.27378280,-5.98059720
+4947,Skhirate-Témara,149,MA,Morocco,SKH,prefecture,33.76224250,-7.04190520
+3295,Souss-Massa,149,MA,Morocco,09,region,30.27506110,-8.13385580
+3286,"Tan-Tan (EH-partial)",149,MA,Morocco,TNT,province,28.03012000,-11.16173560
+4950,Tanger-Assilah,149,MA,Morocco,TNG,prefecture,35.76325390,-5.90450980
+3324,"Tanger-Tétouan-Al Hoceïma",149,MA,Morocco,01,region,35.26295580,-5.56172790
+3323,Taounate,149,MA,Morocco,TAO,province,34.53691700,-4.63986930
+3322,Taourirt,149,MA,Morocco,TAI,province,34.21259800,-2.69838680
+4948,"Tarfaya (EH-partial)",149,MA,Morocco,TAF,province,27.93777010,-12.92940630
+3314,Taroudannt,149,MA,Morocco,TAR,province,30.47271260,-8.87487650
+3312,Tata,149,MA,Morocco,TAT,province,29.75087700,-7.97563430
+3296,Taza,149,MA,Morocco,TAZ,province,34.27889530,-3.58126920
+3318,Tétouan,149,MA,Morocco,TET,province,35.58889950,-5.36255160
+4949,Tinghir,149,MA,Morocco,TIN,province,31.48507940,-6.20192980
+3277,Tiznit,149,MA,Morocco,TIZ,province,29.69339200,-9.73215700
+4951,Youssoufia,149,MA,Morocco,YUS,province,32.02006790,-8.86926480
+3283,Zagora,149,MA,Morocco,ZAG,province,30.57860930,-5.89871390
 3327,"Cabo Delgado Province",150,MZ,Mozambique,P,,-12.33354740,39.32062410
 3329,"Gaza Province",150,MZ,Mozambique,G,,-23.02219280,32.71813750
 3330,"Inhambane Province",150,MZ,Mozambique,I,,-22.85279970,34.55087580
@@ -2918,21 +2920,21 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2084,"Sagarmatha Zone",154,NP,Nepal,SA,,27.32382630,86.74163740
 2078,"Seti Zone",154,NP,Nepal,SE,,29.69054270,81.33994140
 2067,"Western Region",154,NP,Nepal,3,,,
-2624,Bonaire,156,NL,Netherlands,BQ1,,12.20189020,-68.26238220
-2613,Drenthe,156,NL,Netherlands,DR,,52.94760120,6.62305860
-2619,Flevoland,156,NL,Netherlands,FL,,52.52797810,5.59535080
-2622,Friesland,156,NL,Netherlands,FR,,53.16416420,5.78175420
-2611,Gelderland,156,NL,Netherlands,GE,,52.04515500,5.87182350
-2617,Groningen,156,NL,Netherlands,GR,,53.21938350,6.56650170
-2615,Limburg,156,NL,Netherlands,LI,,51.44272380,6.06087260
-2623,"North Brabant",156,NL,Netherlands,NB,,51.48265370,5.23216870
-2612,"North Holland",156,NL,Netherlands,NH,,52.52058690,4.78847400
-2618,Overijssel,156,NL,Netherlands,OV,,52.43878140,6.50164110
-2621,Saba,156,NL,Netherlands,BQ2,,17.63546420,-63.23267630
-2616,"Sint Eustatius",156,NL,Netherlands,BQ3,,17.48903060,-62.97355500
-2614,"South Holland",156,NL,Netherlands,ZH,,41.60086810,-87.60698940
-2610,Utrecht,156,NL,Netherlands,UT,,52.09073740,5.12142010
-2620,Zeeland,156,NL,Netherlands,ZE,,51.49403090,3.84968150
+2624,Bonaire,156,NL,Netherlands,BQ1,"special municipality",12.20189020,-68.26238220
+2613,Drenthe,156,NL,Netherlands,DR,province,52.94760120,6.62305860
+2619,Flevoland,156,NL,Netherlands,FL,province,52.52797810,5.59535080
+2622,Friesland,156,NL,Netherlands,FR,province,53.16416420,5.78175420
+2611,Gelderland,156,NL,Netherlands,GE,province,52.04515500,5.87182350
+2617,Groningen,156,NL,Netherlands,GR,province,53.21938350,6.56650170
+2615,Limburg,156,NL,Netherlands,LI,province,51.44272380,6.06087260
+2623,"North Brabant",156,NL,Netherlands,NB,province,51.48265370,5.23216870
+2612,"North Holland",156,NL,Netherlands,NH,province,52.52058690,4.78847400
+2618,Overijssel,156,NL,Netherlands,OV,province,52.43878140,6.50164110
+2621,Saba,156,NL,Netherlands,BQ2,"special municipality",17.63546420,-63.23267630
+2616,"Sint Eustatius",156,NL,Netherlands,BQ3,"special municipality",17.48903060,-62.97355500
+2614,"South Holland",156,NL,Netherlands,ZH,province,41.60086810,-87.60698940
+2610,Utrecht,156,NL,Netherlands,UT,province,52.09073740,5.12142010
+2620,Zeeland,156,NL,Netherlands,ZE,province,51.49403090,3.84968150
 4072,"Auckland Region",158,NZ,"New Zealand",AUK,,-36.66753280,174.77333250
 4074,"Bay of Plenty Region",158,NZ,"New Zealand",BOP,,-37.42339170,176.74163740
 4066,"Canterbury Region",158,NZ,"New Zealand",CAN,,-43.75422750,171.16372450
@@ -3289,6 +3291,16 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2245,"Viana do Castelo",177,PT,Portugal,16,,41.69180460,-8.83445100
 2234,"Vila Real",177,PT,Portugal,17,,41.30035270,-7.74572740
 2237,Viseu,177,PT,Portugal,18,,40.65884240,-7.91475600
+5081,Arecibo,178,PR,"Puerto Rico",AR,state,18.47055556,-66.72083333
+5076,Bayamon,178,PR,"Puerto Rico",BY,state,18.17777778,-66.11333333
+5079,Caguas,178,PR,"Puerto Rico",CG,state,18.23333333,-66.03333333
+5077,Carolina,178,PR,"Puerto Rico",CL,state,18.38888889,-65.96666667
+5080,Guaynabo,178,PR,"Puerto Rico",GN,state,18.36666667,-66.10000000
+5083,Mayagüez,178,PR,"Puerto Rico",MG,state,18.20111111,-67.13972222
+5078,Ponce,178,PR,"Puerto Rico",PO,state,18.00000000,-66.61666667
+5075,"San Juan",178,PR,"Puerto Rico",SJ,state,18.45000000,-66.06666667
+5082,"Toa Baja",178,PR,"Puerto Rico",TB,state,18.44388900,-66.25972200
+5084,"Trujillo Alto",178,PR,"Puerto Rico",TA,state,18.36277800,-66.01750000
 3182,"Al Daayen",179,QA,Qatar,ZA,,25.57845590,51.48213870
 3183,"Al Khor",179,QA,Qatar,KH,,25.68040780,51.49685020
 3177,"Al Rayyan Municipality",179,QA,Qatar,RA,,25.25225510,51.43887130
@@ -4922,6 +4934,9 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3790,"Vĩnh Long",240,VN,Vietnam,49,,10.23957400,105.95719280
 3774,"Vĩnh Phúc",240,VN,Vietnam,70,,21.36088050,105.54743730
 3784,"Yên Bái",240,VN,Vietnam,06,,21.71676890,104.89858780
+5074,"Saint Croix",242,VI,"Virgin Islands (US)",SC,district,17.72935200,-64.73437050
+5073,"Saint John",242,VI,"Virgin Islands (US)",SJ,district,18.33561690,-64.80028000
+5072,"Saint Thomas",242,VI,"Virgin Islands (US)",ST,district,18.34284590,-65.07701800
 1242,"'Adan Governorate",245,YE,Yemen,AD,,12.82574810,44.79438040
 1250,"'Amran Governorate",245,YE,Yemen,AM,,16.25692140,43.94367880
 1237,"Abyan Governorate",245,YE,Yemen,AB,,13.63434130,46.05632120
