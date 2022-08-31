@@ -14,14 +14,14 @@ fclose($f);
 // RO-MM - 244
 // RO-MS - 599
 
-$countryWiki = 'MR';
-$stateFips = '15';
+$countryWiki = 'TN';
+$stateFips = '21';
 
 $file_name = "data/".$countryWiki.'_'.$stateFips.'.json';
-$fetchCitiesOnly = false;
+$fetchCitiesOnly = true;
 $city = $fetchCitiesOnly ? '&types=CITY' : '';
 
-for ($i=0; $i<1; $i++): // 379 / 10
+for ($i=0; $i<3; $i++): // 379 / 10
     $url = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/".$countryWiki."/regions/".$stateFips."/cities?offset=".$offset."&limit=10".$city."&sort=name";
     echo $url.PHP_EOL;
     $response = Unirest\Request::get($url,
