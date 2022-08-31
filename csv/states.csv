@@ -296,11 +296,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 581,"Zangilan District",16,AZ,Azerbaijan,ZAN,,39.08568990,46.65247280
 566,"Zaqatala District",16,AZ,Azerbaijan,ZAQ,,41.59068890,46.72403730
 576,"Zardab District",16,AZ,Azerbaijan,ZAR,,40.21481140,47.71494400
-1992,"Capital Governorate",18,BH,Bahrain,13,,,
-1996,"Central Governorate",18,BH,Bahrain,16,,26.14260930,50.56532940
-1995,"Muharraq Governorate",18,BH,Bahrain,15,,26.26856530,50.64825170
-1994,"Northern Governorate",18,BH,Bahrain,17,,26.15519140,50.48251730
-1993,"Southern Governorate",18,BH,Bahrain,14,,25.93810180,50.57568870
+1992,Capital,18,BH,Bahrain,13,,,
+1996,Central,18,BH,Bahrain,16,,26.14260930,50.56532940
+1995,Muharraq,18,BH,Bahrain,15,,26.26856530,50.64825170
+1994,Northern,18,BH,Bahrain,17,,26.15519140,50.48251730
+1993,Southern,18,BH,Bahrain,14,,25.93810180,50.57568870
 796,"Bagerhat District",19,BD,Bangladesh,05,,22.66024360,89.78954780
 802,Bahadia,19,BD,Bangladesh,33,,23.78987120,90.16714830
 752,"Bandarban District",19,BD,Bangladesh,01,,21.83110020,92.36863210
@@ -704,29 +704,29 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1267,"Ouham-Pendé Prefecture",42,CF,"Central African Republic",OP,,6.48509840,16.15809370
 1252,Sangha-Mbaéré,42,CF,"Central African Republic",SE,,3.43686070,16.34637910
 1261,"Vakaga Prefecture",42,CF,"Central African Republic",VK,,9.51132960,22.23840170
-3583,"Bahr el Gazel",43,TD,Chad,BG,,14.77022660,16.91225100
-3590,"Batha Region",43,TD,Chad,BA,,13.93717750,18.42760470
-3574,Borkou,43,TD,Chad,BO,,17.86888450,18.80761950
-3578,"Ennedi Region",43,TD,Chad,EN,,17.54145780,21.85685860
-3575,Ennedi-Est,43,TD,Chad,EE,,16.34204960,23.00119890
-3584,Ennedi-Ouest,43,TD,Chad,EO,,18.97756300,21.85685860
-3576,"Guéra Region",43,TD,Chad,GR,,11.12190150,18.42760470
-3573,Hadjer-Lamis,43,TD,Chad,HL,,12.45772730,16.72346390
-3588,"Kanem Region",43,TD,Chad,KA,,14.87812620,15.40680790
-3577,"Lac Region",43,TD,Chad,LC,,13.69153770,14.10013260
-3585,"Logone Occidental Region",43,TD,Chad,LO,,8.75967600,15.87600400
-3591,"Logone Oriental Region",43,TD,Chad,LR,,8.31499490,16.34637910
-3589,"Mandoul Region",43,TD,Chad,MA,,8.60309100,17.47951730
-3580,"Mayo-Kebbi Est Region",43,TD,Chad,ME,,9.40460390,14.84546190
-3571,"Mayo-Kebbi Ouest Region",43,TD,Chad,MO,,10.41130140,15.59433880
-3570,"Moyen-Chari Region",43,TD,Chad,MC,,9.06399980,18.42760470
-3586,N'Djamena,43,TD,Chad,ND,,12.13484570,15.05574150
-3582,"Ouaddaï Region",43,TD,Chad,OD,,13.74847600,20.71224650
-3592,"Salamat Region",43,TD,Chad,SA,,10.96916010,20.71224650
-3572,"Sila Region",43,TD,Chad,SI,,12.13074000,21.28450250
-3579,"Tandjilé Region",43,TD,Chad,TA,,9.66257290,16.72346390
-3587,"Tibesti Region",43,TD,Chad,TI,,21.36500310,16.91225100
-3581,"Wadi Fira Region",43,TD,Chad,WF,,15.08924160,21.47528510
+3583,"Bahr el Gazel",43,TD,Chad,BG,province,14.77022660,16.91225100
+3590,Batha,43,TD,Chad,BA,province,13.93717750,18.42760470
+3574,Borkou,43,TD,Chad,BO,province,17.86888450,18.80761950
+5114,Chari-Baguirmi,43,TD,Chad,CB,province,11.46186260,15.24463940
+3575,Ennedi-Est,43,TD,Chad,EE,province,16.34204960,23.00119890
+3584,Ennedi-Ouest,43,TD,Chad,EO,province,18.97756300,21.85685860
+3576,Guéra,43,TD,Chad,GR,province,11.12190150,18.42760470
+3573,Hadjer-Lamis,43,TD,Chad,HL,province,12.45772730,16.72346390
+3588,Kanem,43,TD,Chad,KA,province,14.87812620,15.40680790
+3577,Lac,43,TD,Chad,LC,province,13.69153770,14.10013260
+3585,"Logone Occidental",43,TD,Chad,LO,province,8.75967600,15.87600400
+3591,"Logone Oriental",43,TD,Chad,LR,province,8.31499490,16.34637910
+3589,Mandoul,43,TD,Chad,MA,province,8.60309100,17.47951730
+3580,"Mayo-Kebbi Est",43,TD,Chad,ME,province,9.40460390,14.84546190
+3571,"Mayo-Kebbi Ouest",43,TD,Chad,MO,province,10.41130140,15.59433880
+3570,Moyen-Chari,43,TD,Chad,MC,province,9.06399980,18.42760470
+3586,N'Djamena,43,TD,Chad,ND,province,12.13484570,15.05574150
+3582,Ouaddaï,43,TD,Chad,OD,province,13.74847600,20.71224650
+3592,Salamat,43,TD,Chad,SA,province,10.96916010,20.71224650
+3572,Sila,43,TD,Chad,SI,province,12.13074000,21.28450250
+3579,Tandjilé,43,TD,Chad,TA,province,9.66257290,16.72346390
+3587,Tibesti,43,TD,Chad,TI,province,21.36500310,16.91225100
+3581,"Wadi Fira",43,TD,Chad,WF,province,15.08924160,21.47528510
 2828,"Aisén del General Carlos Ibañez del Campo",44,CL,Chile,AI,,-46.37834500,-72.30076230
 2832,Antofagasta,44,CL,Chile,AN,,-23.83691040,-69.28775350
 2829,"Arica y Parinacota",44,CL,Chile,AP,,-18.59404850,-69.47845410
@@ -757,7 +757,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2259,Henan,45,CN,China,HA,province,34.29043020,113.38235450
 2267,"Hong Kong SAR",45,CN,China,HK,"special administrative region",22.31930390,114.16936110
 2274,Hubei,45,CN,China,HB,province,30.73781180,112.23840170
-2258,Hunan,45,CN,China,HN,province,36.73412940,-95.93449020
+2258,Hunan,45,CN,China,HN,province,27.36830090,109.28193470
 2269,"Inner Mongolia",45,CN,China,NM,"autonomous region",43.37822000,115.05948150
 2250,Jiangsu,45,CN,China,JS,province,33.14017150,119.78892480
 2256,Jiangxi,45,CN,China,JX,province,27.08745640,114.90422080
@@ -1110,33 +1110,33 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2906,Sucumbíos,64,EC,Ecuador,U,province,0.08892310,-76.88975570
 2908,Tungurahua,64,EC,Ecuador,T,province,-1.26352840,-78.56608520
 2909,"Zamora Chinchipe",64,EC,Ecuador,Z,province,-4.06558920,-78.95035250
-3235,Alexandria,65,EG,Egypt,ALX,governorate,30.87605680,29.74260400
-3225,Aswan,65,EG,Egypt,ASN,governorate,23.69664980,32.71813750
-3236,Asyut,65,EG,Egypt,AST,governorate,27.21338310,31.44561790
-3241,Beheira,65,EG,Egypt,BH,governorate,30.84809860,30.34355060
-3230,"Beni Suef",65,EG,Egypt,BNS,governorate,28.89388370,31.44561790
-3223,Cairo,65,EG,Egypt,C,governorate,29.95375640,31.53700030
-3245,Dakahlia,65,EG,Egypt,DK,governorate,31.16560440,31.49131820
-3224,Damietta,65,EG,Egypt,DT,governorate,31.36257990,31.67393710
-3238,Faiyum,65,EG,Egypt,FYM,governorate,29.30840210,30.84284970
-3234,Gharbia,65,EG,Egypt,GH,governorate,30.87535560,31.03351000
-3239,Giza,65,EG,Egypt,GZ,governorate,28.76662160,29.23207840
-3244,Ismailia,65,EG,Egypt,IS,governorate,30.58309340,32.26538870
-3222,"Kafr el-Sheikh",65,EG,Egypt,KFS,governorate,31.30854440,30.80394740
-3242,Luxor,65,EG,Egypt,LX,governorate,25.39444440,32.49200880
-3231,Matrouh,65,EG,Egypt,MT,governorate,29.56963500,26.41938900
-3243,Minya,65,EG,Egypt,MN,governorate,28.28472900,30.52790960
-3228,Monufia,65,EG,Egypt,MNF,governorate,30.59724550,30.98763210
-3246,"New Valley",65,EG,Egypt,WAD,governorate,24.54556380,27.17353160
-3227,"North Sinai",65,EG,Egypt,SIN,governorate,30.28236500,33.61757700
-3229,"Port Said",65,EG,Egypt,PTS,governorate,31.07586060,32.26538870
-3232,Qalyubia,65,EG,Egypt,KB,governorate,30.32923680,31.21684660
-3247,Qena,65,EG,Egypt,KN,governorate,26.23460330,32.98883190
-3240,"Red Sea",65,EG,Egypt,BA,governorate,24.68263160,34.15319470
-5067,Sharqia,65,EG,Egypt,SHR,governorate,30.67305450,31.15932470
-3226,Sohag,65,EG,Egypt,SHG,governorate,26.69383400,32.17460500
-3237,"South Sinai",65,EG,Egypt,JS,governorate,29.31018280,34.15319470
-3233,Suez,65,EG,Egypt,SUZ,governorate,29.36822550,32.17460500
+3235,Alexandria,65,EG,Egypt,ALX,,30.87605680,29.74260400
+3225,Aswan,65,EG,Egypt,ASN,,23.69664980,32.71813750
+3236,Asyut,65,EG,Egypt,AST,,27.21338310,31.44561790
+3241,Beheira,65,EG,Egypt,BH,,30.84809860,30.34355060
+3230,"Beni Suef",65,EG,Egypt,BNS,,28.89388370,31.44561790
+3223,Cairo,65,EG,Egypt,C,,29.95375640,31.53700030
+3245,Dakahlia,65,EG,Egypt,DK,,31.16560440,31.49131820
+3224,Damietta,65,EG,Egypt,DT,,31.36257990,31.67393710
+3238,Faiyum,65,EG,Egypt,FYM,,29.30840210,30.84284970
+3234,Gharbia,65,EG,Egypt,GH,,30.87535560,31.03351000
+3239,Giza,65,EG,Egypt,GZ,,28.76662160,29.23207840
+3244,Ismailia,65,EG,Egypt,IS,,30.58309340,32.26538870
+3222,"Kafr el-Sheikh",65,EG,Egypt,KFS,,31.30854440,30.80394740
+3242,Luxor,65,EG,Egypt,LX,,25.39444440,32.49200880
+3231,Matrouh,65,EG,Egypt,MT,,29.56963500,26.41938900
+3243,Minya,65,EG,Egypt,MN,,28.28472900,30.52790960
+3228,Monufia,65,EG,Egypt,MNF,,30.59724550,30.98763210
+3246,"New Valley",65,EG,Egypt,WAD,,24.54556380,27.17353160
+3227,"North Sinai",65,EG,Egypt,SIN,,30.28236500,33.61757700
+3229,"Port Said",65,EG,Egypt,PTS,,31.07586060,32.26538870
+3232,Qalyubia,65,EG,Egypt,KB,,30.32923680,31.21684660
+3247,Qena,65,EG,Egypt,KN,,26.23460330,32.98883190
+3240,"Red Sea",65,EG,Egypt,BA,,24.68263160,34.15319470
+5067,Sharqia,65,EG,Egypt,SHR,,30.67305450,31.15932470
+3226,Sohag,65,EG,Egypt,SHG,,26.69383400,32.17460500
+3237,"South Sinai",65,EG,Egypt,JS,,29.31018280,34.15319470
+3233,Suez,65,EG,Egypt,SUZ,,29.36822550,32.17460500
 4139,"Ahuachapán Department",66,SV,"El Salvador",AH,,13.82161480,-89.92532330
 4132,"Cabañas Department",66,SV,"El Salvador",CA,,13.86482880,-88.74939980
 4131,"Chalatenango Department",66,SV,"El Salvador",CH,,14.19166480,-89.17059980
@@ -1211,27 +1211,25 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1925,Serua,73,FJ,"Fiji Islands",13,,-18.18047490,178.05097900
 1918,Tailevu,73,FJ,"Fiji Islands",14,,-17.82691110,178.29324800
 1923,"Western Division",73,FJ,"Fiji Islands",W,,42.96621980,-78.70211340
-1509,"Åland Islands",74,FI,Finland,01,,60.17852470,19.91561050
-1511,"Central Finland",74,FI,Finland,08,,62.56667430,25.55494450
-1494,"Central Ostrobothnia",74,FI,Finland,07,,63.56217350,24.00136310
-1492,"Eastern Finland Province",74,FI,Finland,IS,,62.56338910,28.50240420
-1507,"Finland Proper",74,FI,Finland,19,,60.36279140,22.44393690
-1496,Kainuu,74,FI,Finland,05,,64.37365640,28.74374750
-1512,Kymenlaakso,74,FI,Finland,09,,60.78051200,26.88293360
-1500,Lapland,74,FI,Finland,LL,,67.92223040,26.50464380
-1504,"North Karelia",74,FI,Finland,13,,62.80620780,30.15538870
-1505,"Northern Ostrobothnia",74,FI,Finland,14,,65.27949300,26.28904170
-1503,"Northern Savonia",74,FI,Finland,15,,63.08448000,27.02535040
-1508,Ostrobothnia,74,FI,Finland,12,,63.11817570,21.90610620
-1499,"Oulu Province",74,FI,Finland,OL,,65.01207480,25.46504960
-1502,"Päijänne Tavastia",74,FI,Finland,16,,61.32300410,25.73224960
-1506,Pirkanmaa,74,FI,Finland,11,,61.69869180,23.78955980
-1501,Satakunta,74,FI,Finland,17,,61.59327580,22.14830810
-1497,"South Karelia",74,FI,Finland,02,,61.11819490,28.10243720
-1498,"Southern Ostrobothnia",74,FI,Finland,03,,62.94330990,23.52852670
-1495,"Southern Savonia",74,FI,Finland,04,,61.69451480,27.80050150
-1493,"Tavastia Proper",74,FI,Finland,06,,60.90701500,24.30054980
-1510,Uusimaa,74,FI,Finland,18,,60.21872000,25.27162100
+1509,"Åland Islands",74,FI,Finland,01,region,60.17852470,19.91561050
+1511,"Central Finland",74,FI,Finland,08,region,62.56667430,25.55494450
+1494,"Central Ostrobothnia",74,FI,Finland,07,region,63.56217350,24.00136310
+1507,"Finland Proper",74,FI,Finland,19,region,60.36279140,22.44393690
+1496,Kainuu,74,FI,Finland,05,region,64.37365640,28.74374750
+1512,Kymenlaakso,74,FI,Finland,09,region,60.78051200,26.88293360
+1500,Lapland,74,FI,Finland,10,region,67.92223040,26.50464380
+1504,"North Karelia",74,FI,Finland,13,region,62.80620780,30.15538870
+1505,"Northern Ostrobothnia",74,FI,Finland,14,region,65.27949300,26.28904170
+1503,"Northern Savonia",74,FI,Finland,15,region,63.08448000,27.02535040
+1508,Ostrobothnia,74,FI,Finland,12,region,63.11817570,21.90610620
+1502,"Päijänne Tavastia",74,FI,Finland,16,region,61.32300410,25.73224960
+1506,Pirkanmaa,74,FI,Finland,11,region,61.69869180,23.78955980
+1501,Satakunta,74,FI,Finland,17,region,61.59327580,22.14830810
+1497,"South Karelia",74,FI,Finland,02,region,61.11819490,28.10243720
+1498,"Southern Ostrobothnia",74,FI,Finland,03,region,62.94330990,23.52852670
+1495,"Southern Savonia",74,FI,Finland,04,region,61.69451480,27.80050150
+1493,"Tavastia Proper",74,FI,Finland,06,region,60.90701500,24.30054980
+1510,Uusimaa,74,FI,Finland,18,region,60.21872000,25.27162100
 4967,Ain,75,FR,France,01,"metropolitan department",46.06508600,4.88861500
 4968,Aisne,75,FR,France,02,"metropolitan department",49.45289210,3.04651110
 4969,Allier,75,FR,France,03,"metropolitan department",46.36708630,2.58082770
@@ -1741,24 +1739,24 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3924,"West Azarbaijan",103,IR,Iran,04,province,37.45500620,45.00000000
 3936,Yazd,103,IR,Iran,21,province,32.10063870,54.43421380
 3925,Zanjan,103,IR,Iran,19,province,36.50181850,48.39881860
-3964,"Al Anbar Governorate",104,IQ,Iraq,AN,,32.55976140,41.91964710
-3958,"Al Muthanna Governorate",104,IQ,Iraq,MU,,29.91331710,45.29938620
-3956,"Al-Qādisiyyah Governorate",104,IQ,Iraq,QA,,32.04369100,45.14945050
-3955,"Babylon Governorate",104,IQ,Iraq,BB,,32.46819100,44.55019350
-3959,"Baghdad Governorate",104,IQ,Iraq,BG,,33.31526180,44.36606530
-3960,"Basra Governorate",104,IQ,Iraq,BA,,30.51142520,47.82962530
-3954,"Dhi Qar Governorate",104,IQ,Iraq,DQ,,31.10422920,46.36246860
-3965,"Diyala Governorate",104,IQ,Iraq,DI,,33.77334870,45.14945050
-3967,"Dohuk Governorate",104,IQ,Iraq,DA,,36.90772520,43.06316890
-3968,"Erbil Governorate",104,IQ,Iraq,AR,,36.55706280,44.38512630
-3957,"Karbala Governorate",104,IQ,Iraq,KA,,32.40454930,43.86732220
-3971,"Kirkuk Governorate",104,IQ,Iraq,KI,,35.32920140,43.94367880
-3966,"Maysan Governorate",104,IQ,Iraq,MA,,31.87340020,47.13621250
-3962,"Najaf Governorate",104,IQ,Iraq,NA,,31.35174860,44.09603110
-3963,"Nineveh Governorate",104,IQ,Iraq,NI,,36.22957400,42.23624350
-3961,"Saladin Governorate",104,IQ,Iraq,SD,,34.53375270,43.48373800
-3969,"Sulaymaniyah Governorate",104,IQ,Iraq,SU,,35.54663480,45.30036830
-3970,"Wasit Governorate",104,IQ,Iraq,WA,,32.60240940,45.75209850
+3964,"Al Anbar",104,IQ,Iraq,AN,governorate,32.55976140,41.91964710
+3958,"Al Muthanna",104,IQ,Iraq,MU,governorate,29.91331710,45.29938620
+3956,Al-Qādisiyyah,104,IQ,Iraq,QA,governorate,32.04369100,45.14945050
+3955,Babylon,104,IQ,Iraq,BB,governorate,32.46819100,44.55019350
+3959,Baghdad,104,IQ,Iraq,BG,governorate,33.31526180,44.36606530
+3960,Basra,104,IQ,Iraq,BA,governorate,30.51142520,47.82962530
+3954,"Dhi Qar",104,IQ,Iraq,DQ,governorate,31.10422920,46.36246860
+3965,Diyala,104,IQ,Iraq,DI,governorate,33.77334870,45.14945050
+3967,Dohuk,104,IQ,Iraq,DA,governorate,36.90772520,43.06316890
+3968,Erbil,104,IQ,Iraq,AR,governorate,36.55706280,44.38512630
+3957,Karbala,104,IQ,Iraq,KA,governorate,32.40454930,43.86732220
+3971,Kirkuk,104,IQ,Iraq,KI,governorate,35.32920140,43.94367880
+3966,Maysan,104,IQ,Iraq,MA,governorate,31.87340020,47.13621250
+3962,Najaf,104,IQ,Iraq,NA,governorate,31.35174860,44.09603110
+3963,Nineveh,104,IQ,Iraq,NI,governorate,36.22957400,42.23624350
+3961,Saladin,104,IQ,Iraq,SD,governorate,34.53375270,43.48373800
+3969,Sulaymaniyah,104,IQ,Iraq,SU,governorate,35.54663480,45.30036830
+3970,Wasit,104,IQ,Iraq,WA,governorate,32.60240940,45.75209850
 1095,Carlow,105,IE,Ireland,CW,county,52.72322170,-6.81082950
 1088,Cavan,105,IE,Ireland,CN,county,53.97654240,-7.29966230
 1091,Clare,105,IE,Ireland,CE,county,43.04664000,-87.89958100
@@ -1981,18 +1979,18 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 837,"Yamagata Prefecture",109,JP,Japan,06,,38.53705640,140.14351980
 835,"Yamaguchi Prefecture",109,JP,Japan,35,,34.27967690,131.52127420
 852,"Yamanashi Prefecture",109,JP,Japan,19,,35.66351130,138.63888790
-963,"Ajloun Governorate",111,JO,Jordan,AJ,,32.33255840,35.75168440
-965,"Amman Governorate",111,JO,Jordan,AM,,31.94536330,35.92838950
-959,"Aqaba Governorate",111,JO,Jordan,AQ,,29.53208600,35.00628210
-961,"Balqa Governorate",111,JO,Jordan,BA,,32.03668060,35.72884800
-960,"Irbid Governorate",111,JO,Jordan,IR,,32.55696360,35.84789650
-966,"Jerash Governorate",111,JO,Jordan,JA,,32.27472370,35.89609540
-956,"Karak Governorate",111,JO,Jordan,KA,,31.18535270,35.70476820
-964,"Ma'an Governorate",111,JO,Jordan,MN,,30.19267890,35.72493190
-958,"Madaba Governorate",111,JO,Jordan,MD,,31.71960970,35.79327540
-962,"Mafraq Governorate",111,JO,Jordan,MA,,32.34169230,36.20201750
-957,"Tafilah Governorate",111,JO,Jordan,AT,,30.83380630,35.61605130
-967,"Zarqa Governorate",111,JO,Jordan,AZ,,32.06085050,36.09421210
+963,Ajloun,111,JO,Jordan,AJ,,32.33255840,35.75168440
+965,Amman,111,JO,Jordan,AM,,31.94536330,35.92838950
+959,Aqaba,111,JO,Jordan,AQ,,29.53208600,35.00628210
+961,Balqa,111,JO,Jordan,BA,,32.03668060,35.72884800
+960,Irbid,111,JO,Jordan,IR,,32.55696360,35.84789650
+966,Jerash,111,JO,Jordan,JA,,32.27472370,35.89609540
+956,Karak,111,JO,Jordan,KA,,31.18535270,35.70476820
+964,Ma'an,111,JO,Jordan,MN,,30.19267890,35.72493190
+958,Madaba,111,JO,Jordan,MD,,31.71960970,35.79327540
+962,Mafraq,111,JO,Jordan,MA,,32.34169230,36.20201750
+957,Tafilah,111,JO,Jordan,AT,,30.83380630,35.61605130
+967,Zarqa,111,JO,Jordan,AZ,,32.06085050,36.09421210
 145,"Akmola Region",112,KZ,Kazakhstan,AKM,,51.91653200,69.41104940
 151,"Aktobe Region",112,KZ,Kazakhstan,AKT,,48.77970780,57.99743780
 152,Almaty,112,KZ,Kazakhstan,ALA,,43.22201460,76.85124850
@@ -2067,12 +2065,12 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4879,"Pristina (Priştine)",248,XK,Kosovo,XPI,,42.66291380,21.16550280
 3723,"Prizren District",248,XK,Kosovo,XPR,,42.21525220,20.74147720
 4874,"Uroševac District (Ferizaj)",248,XK,Kosovo,XUF,,42.37018440,21.14832810
-977,"Al Ahmadi Governorate",117,KW,Kuwait,AH,,28.57451250,48.10247430
-975,"Al Farwaniyah Governorate",117,KW,Kuwait,FA,,29.27335700,47.94001540
-972,"Al Jahra Governorate",117,KW,Kuwait,JA,,29.99318310,47.76347310
-976,"Capital Governorate",117,KW,Kuwait,KU,,26.22851610,50.58604970
-973,"Hawalli Governorate",117,KW,Kuwait,HA,,29.30567160,48.03076130
-974,"Mubarak Al-Kabeer Governorate",117,KW,Kuwait,MU,,29.21224000,48.06051080
+977,"Al Ahmadi",117,KW,Kuwait,AH,,28.57451250,48.10247430
+975,"Al Farwaniyah",117,KW,Kuwait,FA,,29.27335700,47.94001540
+972,"Al Jahra",117,KW,Kuwait,JA,,29.99318310,47.76347310
+976,Capital,117,KW,Kuwait,KU,,26.22851610,50.58604970
+973,Hawalli,117,KW,Kuwait,HA,,29.30567160,48.03076130
+974,"Mubarak Al-Kabeer",117,KW,Kuwait,MU,,29.21224000,48.06051080
 998,"Batken Region",118,KG,Kyrgyzstan,B,,39.97214250,69.85974060
 1001,Bishkek,118,KG,Kyrgyzstan,GB,,42.87462120,74.56976170
 1004,"Chuy Region",118,KG,Kyrgyzstan,C,,42.56550000,74.40566120
@@ -2219,14 +2217,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4477,"Viļaka Municipality",120,LV,Latvia,108,,57.17222630,27.66731880
 4486,"Viļāni Municipality",120,LV,Latvia,109,,56.54561710,26.91679270
 4430,"Zilupe Municipality",120,LV,Latvia,110,,56.30189850,28.13395900
-2285,"Akkar Governorate",121,LB,Lebanon,AK,,34.53287630,36.13281320
-2283,"Baalbek-Hermel Governorate",121,LB,Lebanon,BH,,34.26585560,36.34980970
-2286,"Beirut Governorate",121,LB,Lebanon,BA,,33.88861060,35.49547720
-2287,"Beqaa Governorate",121,LB,Lebanon,BI,,33.84626620,35.90194890
-2282,"Mount Lebanon Governorate",121,LB,Lebanon,JL,,33.81008580,35.59731390
-2288,"Nabatieh Governorate",121,LB,Lebanon,NA,,33.37716930,35.48382930
-2284,"North Governorate",121,LB,Lebanon,AS,,34.43806250,35.83082330
-2281,"South Governorate",121,LB,Lebanon,JA,,33.27214790,35.20327780
+2285,Akkar,121,LB,Lebanon,AK,,34.53287630,36.13281320
+2283,Baalbek-Hermel,121,LB,Lebanon,BH,,34.26585560,36.34980970
+2286,Beirut,121,LB,Lebanon,BA,,33.88861060,35.49547720
+2287,Beqaa,121,LB,Lebanon,BI,,33.84626620,35.90194890
+2282,"Mount Lebanon",121,LB,Lebanon,JL,,33.81008580,35.59731390
+2288,Nabatieh,121,LB,Lebanon,NA,,33.37716930,35.48382930
+2284,North,121,LB,Lebanon,AS,,34.43806250,35.83082330
+2281,South,121,LB,Lebanon,JA,,33.27214790,35.20327780
 3030,"Berea District",122,LS,Lesotho,D,,41.36616140,-81.85430260
 3029,"Butha-Buthe District",122,LS,Lesotho,B,,-28.76537540,28.24681480
 3026,"Leribe District",122,LS,Lesotho,C,,-28.86380650,28.04788260
@@ -3045,19 +3043,19 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1006,Trøndelag,165,NO,Norway,50,,63.54201250,10.93692670
 1014,Vest-Agder,165,NO,Norway,10,,58.09990810,6.58698090
 1008,Vestfold,165,NO,Norway,07,,59.17078620,10.11443550
-3058,"Ad Dakhiliyah Governorate",166,OM,Oman,DA,,22.85887580,57.53943560
-3047,"Ad Dhahirah Governorate",166,OM,Oman,ZA,,23.21616740,56.49074440
-3048,"Al Batinah North Governorate",166,OM,Oman,BS,,24.34198460,56.72989040
+3058,"Ad Dakhiliyah",166,OM,Oman,DA,,22.85887580,57.53943560
+3047,"Ad Dhahirah",166,OM,Oman,ZA,,23.21616740,56.49074440
+3048,"Al Batinah North",166,OM,Oman,BS,,24.34198460,56.72989040
 3050,"Al Batinah Region",166,OM,Oman,BA,,24.34198460,56.72989040
-3049,"Al Batinah South Governorate",166,OM,Oman,BJ,,23.43149030,57.42397960
-3059,"Al Buraimi Governorate",166,OM,Oman,BU,,24.16714130,56.11422530
-3056,"Al Wusta Governorate",166,OM,Oman,WU,,19.95710780,56.27568460
-3053,"Ash Sharqiyah North Governorate",166,OM,Oman,SS,,22.71411960,58.53080640
+3049,"Al Batinah South",166,OM,Oman,BJ,,23.43149030,57.42397960
+3059,"Al Buraimi",166,OM,Oman,BU,,24.16714130,56.11422530
+3056,"Al Wusta",166,OM,Oman,WU,,19.95710780,56.27568460
+3053,"Ash Sharqiyah North",166,OM,Oman,SS,,22.71411960,58.53080640
 3051,"Ash Sharqiyah Region",166,OM,Oman,SH,,22.71411960,58.53080640
-3054,"Ash Sharqiyah South Governorate",166,OM,Oman,SJ,,22.01582490,59.32519220
-3057,"Dhofar Governorate",166,OM,Oman,ZU,,17.03221210,54.14252140
-3052,"Musandam Governorate",166,OM,Oman,MU,,26.19861440,56.24609490
-3055,"Muscat Governorate",166,OM,Oman,MA,,23.58803070,58.38287170
+3054,"Ash Sharqiyah South",166,OM,Oman,SJ,,22.01582490,59.32519220
+3057,Dhofar,166,OM,Oman,ZU,,17.03221210,54.14252140
+3052,Musandam,166,OM,Oman,MU,,26.19861440,56.24609490
+3055,Muscat,166,OM,Oman,MA,,23.58803070,58.38287170
 3172,"Azad Kashmir",167,PK,Pakistan,JK,,33.92590550,73.78103340
 3174,Balochistan,167,PK,Pakistan,BA,,28.49073320,65.09577920
 3173,"Federally Administered Tribal Areas",167,PK,Pakistan,TA,,32.66747600,69.85974060
@@ -3158,103 +3156,104 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3696,Tacna,173,PE,Peru,TAC,,-18.00656790,-70.24627410
 3689,Tumbes,173,PE,Peru,TUM,,-3.55649210,-80.42708850
 3684,Ucayali,173,PE,Peru,UCA,,-9.82511830,-73.08774900
-1324,Abra,174,PH,Philippines,ABR,,42.49708300,-96.38441000
-1323,"Agusan del Norte",174,PH,Philippines,AGN,,8.94562590,125.53192340
-1326,"Agusan del Sur",174,PH,Philippines,AGS,,8.04638880,126.06153840
-1331,Aklan,174,PH,Philippines,AKL,,11.81661090,122.09415410
-1337,Albay,174,PH,Philippines,ALB,,13.17748270,123.52800720
-1336,Antique,174,PH,Philippines,ANT,,37.03586950,-95.63616940
-1334,Apayao,174,PH,Philippines,APA,,18.01203040,121.17103890
-1341,Aurora,174,PH,Philippines,AUR,,36.97089100,-93.71797900
-1316,"Autonomous Region in Muslim Mindanao",174,PH,Philippines,14,,6.95683130,124.24215970
-1346,Basilan,174,PH,Philippines,BAS,,6.42963490,121.98701650
-1344,Bataan,174,PH,Philippines,BAN,,14.64168420,120.48184460
-1352,Batanes,174,PH,Philippines,BTN,,20.44850740,121.97081290
-1359,Batangas,174,PH,Philippines,BTG,,13.75646510,121.05830760
-1363,Benguet,174,PH,Philippines,BEN,,16.55772570,120.80394740
-1304,"Bicol Region",174,PH,Philippines,05,,13.42098850,123.41367360
-1274,Biliran,174,PH,Philippines,BIL,,11.58331520,124.46418480
-1272,Bohol,174,PH,Philippines,BOH,,9.84999110,124.14354270
-1270,Bukidnon,174,PH,Philippines,BUK,,8.05150540,124.92299460
-1278,Bulacan,174,PH,Philippines,BUL,,14.79427350,120.87990080
-1279,Cagayan,174,PH,Philippines,CAG,,18.24896290,121.87878330
-1342,"Cagayan Valley",174,PH,Philippines,02,,16.97537580,121.81070790
-1294,Calabarzon,174,PH,Philippines,40,,14.10078030,121.07937050
-1283,"Camarines Norte",174,PH,Philippines,CAN,,14.13902650,122.76330360
-1287,"Camarines Sur",174,PH,Philippines,CAS,,13.52501970,123.34861470
-1285,Camiguin,174,PH,Philippines,CAM,,9.17321640,124.72987650
-1292,Capiz,174,PH,Philippines,CAP,,11.55288160,122.74072300
-1314,Caraga,174,PH,Philippines,13,,8.80145620,125.74068820
-1301,Catanduanes,174,PH,Philippines,CAT,,13.70886840,124.24215970
-1307,Cavite,174,PH,Philippines,CAV,,14.47912970,120.89696340
-1306,Cebu,174,PH,Philippines,CEB,,10.31569920,123.88543660
-1345,"Central Luzon",174,PH,Philippines,03,,15.48277220,120.71200230
-1308,"Central Visayas",174,PH,Philippines,07,,9.81687500,124.06414190
-1311,"Compostela Valley",174,PH,Philippines,COM,,7.51251500,126.17626150
-1335,"Cordillera Administrative Region",174,PH,Philippines,15,,17.35125420,121.17188510
-1320,Cotabato,174,PH,Philippines,NCO,,7.20466680,124.23104390
-1319,"Davao del Norte",174,PH,Philippines,DAV,,7.56176990,125.65328480
-1318,"Davao del Sur",174,PH,Philippines,DAS,,6.76626870,125.32842690
-1309,"Davao Occidental",174,PH,Philippines,DVO,,6.09413960,125.60954740
-1289,"Davao Oriental",174,PH,Philippines,DAO,,7.31715850,126.54198870
-1340,"Davao Region",174,PH,Philippines,11,,7.30416220,126.08934060
-1291,"Dinagat Islands",174,PH,Philippines,DIN,,10.12818160,125.60954740
-1290,"Eastern Samar",174,PH,Philippines,EAS,,11.50007310,125.49999080
-1322,"Eastern Visayas",174,PH,Philippines,08,,12.24455330,125.03881640
-1303,Guimaras,174,PH,Philippines,GUI,,10.59286610,122.63250810
-1300,Ifugao,174,PH,Philippines,IFU,,16.83307920,121.17103890
-1298,"Ilocos Norte",174,PH,Philippines,ILN,,18.16472810,120.71155920
-1355,"Ilocos Region",174,PH,Philippines,01,,16.08321440,120.61998950
-1321,"Ilocos Sur",174,PH,Philippines,ILS,,17.22786640,120.57395790
-1315,Iloilo,174,PH,Philippines,ILI,,10.72015010,122.56210630
-1313,Isabela,174,PH,Philippines,ISA,,18.50077590,-67.02434620
-1312,Kalinga,174,PH,Philippines,KAL,,17.47404220,121.35416310
-1317,"La Union",174,PH,Philippines,LUN,,38.87668780,-77.12809120
-1328,Laguna,174,PH,Philippines,LAG,,33.54271890,-117.78535680
-1327,"Lanao del Norte",174,PH,Philippines,LAN,,7.87218110,123.88577470
-1333,"Lanao del Sur",174,PH,Philippines,LAS,,7.82317600,124.41982430
-1332,Leyte,174,PH,Philippines,LEY,,10.86245360,124.88111950
-1330,Maguindanao,174,PH,Philippines,MAG,,6.94225810,124.41982430
-1329,Marinduque,174,PH,Philippines,MAD,,13.47671710,121.90321920
-1338,Masbate,174,PH,Philippines,MAS,,12.35743460,123.55040760
-1347,"Metro Manila",174,PH,Philippines,NCR,,14.60905370,121.02225650
-1299,Mimaropa,174,PH,Philippines,41,,9.84320650,118.73647830
-1343,"Misamis Occidental",174,PH,Philippines,MSC,,8.33749030,123.70706190
-1348,"Misamis Oriental",174,PH,Philippines,MSR,,8.50455580,124.62195920
-1353,"Mountain Province",174,PH,Philippines,MOU,,40.70754370,-73.95010330
-1351,"Negros Occidental",174,PH,Philippines,NEC,,10.29256090,123.02465180
-1350,"Negros Oriental",174,PH,Philippines,NER,,9.62820830,122.98883190
-1339,"Northern Mindanao",174,PH,Philippines,10,,8.02016350,124.68565090
-1349,"Northern Samar",174,PH,Philippines,NSA,,12.36131990,124.77407930
-1360,"Nueva Ecija",174,PH,Philippines,NUE,,15.57837500,121.11126150
-1358,"Nueva Vizcaya",174,PH,Philippines,NUV,,16.33011070,121.17103890
-1356,"Occidental Mindoro",174,PH,Philippines,MDC,,13.10241110,120.76512840
-1354,"Oriental Mindoro",174,PH,Philippines,MDR,,13.05645980,121.40694170
-1361,Palawan,174,PH,Philippines,PLW,,9.83494930,118.73836150
-1365,Pampanga,174,PH,Philippines,PAM,,15.07940900,120.61998950
-1364,Pangasinan,174,PH,Philippines,PAN,,15.89490550,120.28631830
-1275,Quezon,174,PH,Philippines,QUE,,14.03139060,122.11309090
-1273,Quirino,174,PH,Philippines,QUI,,16.27004240,121.53700030
-1271,Rizal,174,PH,Philippines,RIZ,,14.60374460,121.30840880
-1269,Romblon,174,PH,Philippines,ROM,,12.57780160,122.26914600
-1277,Sarangani,174,PH,Philippines,SAR,,5.92671750,124.99475100
-1276,Siquijor,174,PH,Philippines,SIG,,9.19987790,123.59519250
-1310,Soccsksargen,174,PH,Philippines,12,,6.27069180,124.68565090
-1281,Sorsogon,174,PH,Philippines,SOR,,12.99270950,124.01474640
-1280,"South Cotabato",174,PH,Philippines,SCO,,6.33575650,124.77407930
-1284,"Southern Leyte",174,PH,Philippines,SLE,,10.33462060,125.17087410
-1282,"Sultan Kudarat",174,PH,Philippines,SUK,,6.50694010,124.41982430
-1288,Sulu,174,PH,Philippines,SLU,,5.97490110,121.03351000
-1286,"Surigao del Norte",174,PH,Philippines,SUN,,9.51482800,125.69699840
-1296,"Surigao del Sur",174,PH,Philippines,SUR,,8.54049060,126.11447580
-1295,Tarlac,174,PH,Philippines,TAR,,15.47547860,120.59634920
-1293,Tawi-Tawi,174,PH,Philippines,TAW,,5.13381100,119.95092600
-1305,"Western Visayas",174,PH,Philippines,06,,11.00498360,122.53727410
-1297,Zambales,174,PH,Philippines,ZMB,,15.50817660,119.96978080
-1302,"Zamboanga del Norte",174,PH,Philippines,ZAN,,8.38862820,123.16888830
-1357,"Zamboanga del Sur",174,PH,Philippines,ZAS,,7.83830540,123.29666570
-1325,"Zamboanga Peninsula",174,PH,Philippines,09,,8.15407700,123.25879300
-1362,"Zamboanga Sibugay",174,PH,Philippines,ZSI,,7.52252470,122.31075170
+1324,Abra,174,PH,Philippines,ABR,province,42.49708300,-96.38441000
+1323,"Agusan del Norte",174,PH,Philippines,AGN,province,8.94562590,125.53192340
+1326,"Agusan del Sur",174,PH,Philippines,AGS,province,8.04638880,126.06153840
+1331,Aklan,174,PH,Philippines,AKL,province,11.81661090,122.09415410
+1337,Albay,174,PH,Philippines,ALB,province,13.17748270,123.52800720
+1336,Antique,174,PH,Philippines,ANT,province,37.03586950,-95.63616940
+1334,Apayao,174,PH,Philippines,APA,province,18.01203040,121.17103890
+1341,Aurora,174,PH,Philippines,AUR,province,36.97089100,-93.71797900
+1316,"Autonomous Region in Muslim Mindanao",174,PH,Philippines,14,region,6.95683130,124.24215970
+1346,Basilan,174,PH,Philippines,BAS,province,6.42963490,121.98701650
+1344,Bataan,174,PH,Philippines,BAN,province,14.64168420,120.48184460
+1352,Batanes,174,PH,Philippines,BTN,province,20.44850740,121.97081290
+1359,Batangas,174,PH,Philippines,BTG,province,13.75646510,121.05830760
+1363,Benguet,174,PH,Philippines,BEN,province,16.55772570,120.80394740
+1304,Bicol,174,PH,Philippines,05,region,13.42098850,123.41367360
+1274,Biliran,174,PH,Philippines,BIL,province,11.58331520,124.46418480
+1272,Bohol,174,PH,Philippines,BOH,province,9.84999110,124.14354270
+1270,Bukidnon,174,PH,Philippines,BUK,province,8.05150540,124.92299460
+1278,Bulacan,174,PH,Philippines,BUL,province,14.79427350,120.87990080
+1279,Cagayan,174,PH,Philippines,CAG,province,18.24896290,121.87878330
+1342,"Cagayan Valley",174,PH,Philippines,02,region,16.97537580,121.81070790
+1294,Calabarzon,174,PH,Philippines,40,region,14.10078030,121.07937050
+1283,"Camarines Norte",174,PH,Philippines,CAN,province,14.13902650,122.76330360
+1287,"Camarines Sur",174,PH,Philippines,CAS,province,13.52501970,123.34861470
+1285,Camiguin,174,PH,Philippines,CAM,province,9.17321640,124.72987650
+1292,Capiz,174,PH,Philippines,CAP,province,11.55288160,122.74072300
+1314,Caraga,174,PH,Philippines,13,region,8.80145620,125.74068820
+1301,Catanduanes,174,PH,Philippines,CAT,province,13.70886840,124.24215970
+1307,Cavite,174,PH,Philippines,CAV,province,14.47912970,120.89696340
+1306,Cebu,174,PH,Philippines,CEB,province,10.31569920,123.88543660
+1345,"Central Luzon",174,PH,Philippines,03,region,15.48277220,120.71200230
+1308,"Central Visayas",174,PH,Philippines,07,region,9.81687500,124.06414190
+1311,"Compostela Valley",174,PH,Philippines,COM,province,7.51251500,126.17626150
+1335,"Cordillera Administrative",174,PH,Philippines,15,region,17.35125420,121.17188510
+1320,Cotabato,174,PH,Philippines,NCO,province,7.20466680,124.23104390
+1340,Davao,174,PH,Philippines,11,region,7.30416220,126.08934060
+1319,"Davao del Norte",174,PH,Philippines,DAV,province,7.56176990,125.65328480
+1318,"Davao del Sur",174,PH,Philippines,DAS,province,6.76626870,125.32842690
+1309,"Davao Occidental",174,PH,Philippines,DVO,province,6.09413960,125.60954740
+1289,"Davao Oriental",174,PH,Philippines,DAO,province,7.31715850,126.54198870
+1291,"Dinagat Islands",174,PH,Philippines,DIN,province,10.12818160,125.60954740
+1290,"Eastern Samar",174,PH,Philippines,EAS,province,11.50007310,125.49999080
+1322,"Eastern Visayas",174,PH,Philippines,08,region,12.24455330,125.03881640
+1303,Guimaras,174,PH,Philippines,GUI,province,10.59286610,122.63250810
+1300,Ifugao,174,PH,Philippines,IFU,province,16.83307920,121.17103890
+1355,Ilocos,174,PH,Philippines,01,region,16.08321440,120.61998950
+1298,"Ilocos Norte",174,PH,Philippines,ILN,province,18.16472810,120.71155920
+1321,"Ilocos Sur",174,PH,Philippines,ILS,province,17.22786640,120.57395790
+1315,Iloilo,174,PH,Philippines,ILI,province,10.72015010,122.56210630
+1313,Isabela,174,PH,Philippines,ISA,province,18.50077590,-67.02434620
+1312,Kalinga,174,PH,Philippines,KAL,province,17.47404220,121.35416310
+1317,"La Union",174,PH,Philippines,LUN,province,38.87668780,-77.12809120
+1328,Laguna,174,PH,Philippines,LAG,province,33.54271890,-117.78535680
+1327,"Lanao del Norte",174,PH,Philippines,LAN,province,7.87218110,123.88577470
+1333,"Lanao del Sur",174,PH,Philippines,LAS,province,7.82317600,124.41982430
+1332,Leyte,174,PH,Philippines,LEY,province,10.86245360,124.88111950
+1330,Maguindanao,174,PH,Philippines,MAG,province,6.94225810,124.41982430
+1329,Marinduque,174,PH,Philippines,MAD,province,13.47671710,121.90321920
+1338,Masbate,174,PH,Philippines,MAS,province,12.35743460,123.55040760
+1347,"Metro Manila",174,PH,Philippines,NCR,province,14.60905370,121.02225650
+1299,Mimaropa,174,PH,Philippines,41,region,9.84320650,118.73647830
+1343,"Misamis Occidental",174,PH,Philippines,MSC,province,8.33749030,123.70706190
+1348,"Misamis Oriental",174,PH,Philippines,MSR,province,8.50455580,124.62195920
+1353,"Mountain Province",174,PH,Philippines,MOU,province,40.70754370,-73.95010330
+1351,"Negros Occidental",174,PH,Philippines,NEC,province,10.29256090,123.02465180
+1350,"Negros Oriental",174,PH,Philippines,NER,province,9.62820830,122.98883190
+1339,"Northern Mindanao",174,PH,Philippines,10,region,8.02016350,124.68565090
+1349,"Northern Samar",174,PH,Philippines,NSA,province,12.36131990,124.77407930
+1360,"Nueva Ecija",174,PH,Philippines,NUE,province,15.57837500,121.11126150
+1358,"Nueva Vizcaya",174,PH,Philippines,NUV,province,16.33011070,121.17103890
+1356,"Occidental Mindoro",174,PH,Philippines,MDC,province,13.10241110,120.76512840
+1354,"Oriental Mindoro",174,PH,Philippines,MDR,province,13.05645980,121.40694170
+1361,Palawan,174,PH,Philippines,PLW,province,9.83494930,118.73836150
+1365,Pampanga,174,PH,Philippines,PAM,province,15.07940900,120.61998950
+1364,Pangasinan,174,PH,Philippines,PAN,province,15.89490550,120.28631830
+1275,Quezon,174,PH,Philippines,QUE,province,14.03139060,122.11309090
+1273,Quirino,174,PH,Philippines,QUI,province,16.27004240,121.53700030
+1271,Rizal,174,PH,Philippines,RIZ,province,14.60374460,121.30840880
+1269,Romblon,174,PH,Philippines,ROM,province,12.57780160,122.26914600
+1277,Sarangani,174,PH,Philippines,SAR,province,5.92671750,124.99475100
+1276,Siquijor,174,PH,Philippines,SIG,province,9.19987790,123.59519250
+1310,Soccsksargen,174,PH,Philippines,12,region,6.27069180,124.68565090
+1281,Sorsogon,174,PH,Philippines,SOR,province,12.99270950,124.01474640
+1280,"South Cotabato",174,PH,Philippines,SCO,province,6.33575650,124.77407930
+1284,"Southern Leyte",174,PH,Philippines,SLE,province,10.33462060,125.17087410
+1282,"Sultan Kudarat",174,PH,Philippines,SUK,province,6.50694010,124.41982430
+1288,Sulu,174,PH,Philippines,SLU,province,5.97490110,121.03351000
+1286,"Surigao del Norte",174,PH,Philippines,SUN,province,9.51482800,125.69699840
+1296,"Surigao del Sur",174,PH,Philippines,SUR,province,8.54049060,126.11447580
+1295,Tarlac,174,PH,Philippines,TAR,province,15.47547860,120.59634920
+1293,Tawi-Tawi,174,PH,Philippines,TAW,province,5.13381100,119.95092600
+5115,"Western Samar",174,PH,Philippines,WSA,province,12.00002060,124.99124520
+1305,"Western Visayas",174,PH,Philippines,06,region,11.00498360,122.53727410
+1297,Zambales,174,PH,Philippines,ZMB,province,15.50817660,119.96978080
+1302,"Zamboanga del Norte",174,PH,Philippines,ZAN,province,8.38862820,123.16888830
+1357,"Zamboanga del Sur",174,PH,Philippines,ZAS,province,7.83830540,123.29666570
+1325,"Zamboanga Peninsula",174,PH,Philippines,09,region,8.15407700,123.25879300
+1362,"Zamboanga Sibugay",174,PH,Philippines,ZSI,province,7.52252470,122.31075170
 1634,"Greater Poland Voivodeship",176,PL,Poland,WP,,52.27998600,17.35229390
 1625,"Kuyavian-Pomeranian Voivodeship",176,PL,Poland,KP,,53.16483630,18.48342240
 1635,"Lesser Poland Voivodeship",176,PL,Poland,MA,,49.72253060,20.25033580
@@ -4023,20 +4022,20 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1651,Vaud,214,CH,Switzerland,VD,canton,46.56131350,6.53676500
 1646,Zug,214,CH,Switzerland,ZG,canton,47.16615050,8.51547490
 1656,Zürich,214,CH,Switzerland,ZH,canton,47.35953600,8.63564520
-2941,"Al-Hasakah Governorate",215,SY,Syria,HA,,36.40551500,40.79691490
-2944,"Al-Raqqah Governorate",215,SY,Syria,RA,,35.95941060,38.99810520
-2946,"Aleppo Governorate",215,SY,Syria,HL,,36.22623930,37.46813960
-2936,"As-Suwayda Governorate",215,SY,Syria,SU,,32.79891560,36.78195050
-2939,"Damascus Governorate",215,SY,Syria,DI,,33.51514440,36.39313540
-2945,"Daraa Governorate",215,SY,Syria,DR,,32.92488130,36.17626150
-2937,"Deir ez-Zor Governorate",215,SY,Syria,DY,,35.28797980,40.30886260
-2934,"Hama Governorate",215,SY,Syria,HM,,35.18878650,37.21158290
-2942,"Homs Governorate",215,SY,Syria,HI,,34.25671230,38.31657250
-2940,"Idlib Governorate",215,SY,Syria,ID,,35.82687980,36.69572160
-2938,"Latakia Governorate",215,SY,Syria,LA,,35.61297910,36.00232250
-2943,"Quneitra Governorate",215,SY,Syria,QU,,33.07763180,35.89341360
-2935,"Rif Dimashq Governorate",215,SY,Syria,RD,,33.51672890,36.95410700
-2947,"Tartus Governorate",215,SY,Syria,TA,,35.00066520,36.00232250
+2941,Al-Hasakah,215,SY,Syria,HA,,36.40551500,40.79691490
+2944,Al-Raqqah,215,SY,Syria,RA,,35.95941060,38.99810520
+2946,Aleppo,215,SY,Syria,HL,,36.22623930,37.46813960
+2936,As-Suwayda,215,SY,Syria,SU,,32.79891560,36.78195050
+2939,Damascus,215,SY,Syria,DI,,33.51514440,36.39313540
+2945,Daraa,215,SY,Syria,DR,,32.92488130,36.17626150
+2937,"Deir ez-Zor",215,SY,Syria,DY,,35.28797980,40.30886260
+2934,Hama,215,SY,Syria,HM,,35.18878650,37.21158290
+2942,Homs,215,SY,Syria,HI,,34.25671230,38.31657250
+2940,Idlib,215,SY,Syria,ID,,35.82687980,36.69572160
+2938,Latakia,215,SY,Syria,LA,,35.61297910,36.00232250
+2943,Quneitra,215,SY,Syria,QU,,33.07763180,35.89341360
+2935,"Rif Dimashq",215,SY,Syria,RD,,33.51672890,36.95410700
+2947,Tartus,215,SY,Syria,TA,,35.00066520,36.00232250
 3404,Changhua,216,TW,Taiwan,CHA,county,24.05179630,120.51613520
 3408,Chiayi,216,TW,Taiwan,CYI,city,23.45184280,120.25546150
 3418,Chiayi,216,TW,Taiwan,CYQ,county,23.48007510,120.44911130
@@ -4240,29 +4239,30 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3364,"Siparia Regional Corporation",223,TT,"Trinidad And Tobago",SIP,,10.12456260,-61.56032440
 3358,"Tunapuna-Piarco Regional Corporation",223,TT,"Trinidad And Tobago",TUP,,10.68590960,-61.30352480
 3353,"Western Tobago",223,TT,"Trinidad And Tobago",WTO,,11.18970720,-60.77954520
-2550,"Ariana Governorate",224,TN,Tunisia,12,,36.99227510,10.12551640
-2566,"Ben Arous Governorate",224,TN,Tunisia,13,,36.64356060,10.21515780
-2551,"Bizerte Governorate",224,TN,Tunisia,23,,37.16093970,9.63413500
-2558,"Gabès Governorate",224,TN,Tunisia,81,,33.94596480,9.72326730
-2556,"Gafsa Governorate",224,TN,Tunisia,71,,34.37885050,8.66005860
-2552,"Jendouba Governorate",224,TN,Tunisia,32,,36.71818620,8.74811670
-2564,"Kairouan Governorate",224,TN,Tunisia,41,,35.67116630,10.10054690
-2570,"Kasserine Governorate",224,TN,Tunisia,42,,35.08091480,8.66005860
-2572,Kassrine,224,TN,Tunisia,31,,35.17227160,8.83076260
-2562,"Kebili Governorate",224,TN,Tunisia,73,,33.70715510,8.97146230
-2561,"Kef Governorate",224,TN,Tunisia,33,,36.12305120,8.66005860
-2568,"Mahdia Governorate",224,TN,Tunisia,53,,35.33525580,10.89030990
-2555,"Manouba Governorate",224,TN,Tunisia,14,,36.84465040,9.85714160
-2560,"Medenine Governorate",224,TN,Tunisia,82,,33.22805650,10.89030990
-2553,"Monastir Governorate",224,TN,Tunisia,52,,35.76425150,10.81128850
-2557,"Sfax Governorate",224,TN,Tunisia,61,,34.86065810,10.34978950
-2567,"Sidi Bouzid Governorate",224,TN,Tunisia,43,,35.03543860,9.48393920
-2563,"Siliana Governorate",224,TN,Tunisia,34,,36.08872080,9.36453350
-2571,"Sousse Governorate",224,TN,Tunisia,51,,35.90222670,10.34978950
-2559,"Tataouine Governorate",224,TN,Tunisia,83,,32.13441220,10.08072980
-2569,"Tozeur Governorate",224,TN,Tunisia,72,,33.97894910,8.04651850
-2554,"Tunis Governorate",224,TN,Tunisia,11,,36.83749460,10.19273890
-2565,"Zaghouan Governorate",224,TN,Tunisia,22,,36.40911880,10.14231720
+2550,Ariana,224,TN,Tunisia,12,governorate,36.99227510,10.12551640
+2566,"Ben Arous",224,TN,Tunisia,13,governorate,36.64356060,10.21515780
+2551,Bizerte,224,TN,Tunisia,23,governorate,37.16093970,9.63413500
+2558,Gabès,224,TN,Tunisia,81,governorate,33.94596480,9.72326730
+2556,Gafsa,224,TN,Tunisia,71,governorate,34.37885050,8.66005860
+2552,Jendouba,224,TN,Tunisia,32,governorate,36.71818620,8.74811670
+2564,Kairouan,224,TN,Tunisia,41,governorate,35.67116630,10.10054690
+2570,Kasserine,224,TN,Tunisia,42,governorate,35.08091480,8.66005860
+2572,Kassrine,224,TN,Tunisia,31,governorate,35.17227160,8.83076260
+2562,Kebili,224,TN,Tunisia,73,governorate,33.70715510,8.97146230
+2561,Kef,224,TN,Tunisia,33,governorate,36.12305120,8.66005860
+2568,Mahdia,224,TN,Tunisia,53,governorate,35.33525580,10.89030990
+2555,Manouba,224,TN,Tunisia,14,governorate,36.84465040,9.85714160
+2560,Medenine,224,TN,Tunisia,82,governorate,33.22805650,10.89030990
+2553,Monastir,224,TN,Tunisia,52,governorate,35.76425150,10.81128850
+5116,Nabeul,224,TN,Tunisia,21,governorate,36.45245910,10.68032220
+2557,Sfax,224,TN,Tunisia,61,governorate,34.86065810,10.34978950
+2567,"Sidi Bouzid",224,TN,Tunisia,43,governorate,35.03543860,9.48393920
+2563,Siliana,224,TN,Tunisia,34,governorate,36.08872080,9.36453350
+2571,Sousse,224,TN,Tunisia,51,governorate,35.90222670,10.34978950
+2559,Tataouine,224,TN,Tunisia,83,governorate,32.13441220,10.08072980
+2569,Tozeur,224,TN,Tunisia,72,governorate,33.97894910,8.04651850
+2554,Tunis,224,TN,Tunisia,11,governorate,36.83749460,10.19273890
+2565,Zaghouan,224,TN,Tunisia,22,governorate,36.40911880,10.14231720
 2212,Adana,225,TR,Turkey,01,province,37.26123150,35.39050460
 2155,Adıyaman,225,TR,Turkey,02,province,37.90782910,38.48499230
 2179,Afyonkarahisar,225,TR,Turkey,03,province,38.73910990,30.71200230
@@ -4959,27 +4959,27 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5074,"Saint Croix",242,VI,"Virgin Islands (US)",SC,district,17.72935200,-64.73437050
 5073,"Saint John",242,VI,"Virgin Islands (US)",SJ,district,18.33561690,-64.80028000
 5072,"Saint Thomas",242,VI,"Virgin Islands (US)",ST,district,18.34284590,-65.07701800
-1242,"'Adan Governorate",245,YE,Yemen,AD,,12.82574810,44.79438040
-1250,"'Amran Governorate",245,YE,Yemen,AM,,16.25692140,43.94367880
-1237,"Abyan Governorate",245,YE,Yemen,AB,,13.63434130,46.05632120
-1240,"Al Bayda' Governorate",245,YE,Yemen,BA,,14.35886620,45.44980650
-1241,"Al Hudaydah Governorate",245,YE,Yemen,HU,,15.30530720,43.01948970
-1243,"Al Jawf Governorate",245,YE,Yemen,JA,,16.79018190,45.29938620
-1251,"Al Mahrah Governorate",245,YE,Yemen,MR,,16.52384230,51.68342750
-1235,"Al Mahwit Governorate",245,YE,Yemen,MW,,15.39632290,43.56069460
-1246,"Dhamar Governorate",245,YE,Yemen,DH,,14.71953440,44.24790150
-1238,"Hadhramaut Governorate",245,YE,Yemen,HD,,16.93041350,49.36531490
-1244,"Hajjah Governorate",245,YE,Yemen,HJ,,16.11806310,43.32946600
-1233,"Ibb Governorate",245,YE,Yemen,IB,,14.14157170,44.24790150
-1245,"Lahij Governorate",245,YE,Yemen,LA,,13.14895880,44.85054950
-1234,"Ma'rib Governorate",245,YE,Yemen,MA,,15.51588800,45.44980650
-1248,"Raymah Governorate",245,YE,Yemen,RA,,14.62776820,43.71424840
-1249,"Saada Governorate",245,YE,Yemen,SD,,16.84765280,43.94367880
+1242,'Adan,245,YE,Yemen,AD,,12.82574810,44.79438040
+1250,'Amran,245,YE,Yemen,AM,,16.25692140,43.94367880
+1237,Abyan,245,YE,Yemen,AB,,13.63434130,46.05632120
+1240,"Al Bayda'",245,YE,Yemen,BA,,14.35886620,45.44980650
+1241,"Al Hudaydah",245,YE,Yemen,HU,,15.30530720,43.01948970
+1243,"Al Jawf",245,YE,Yemen,JA,,16.79018190,45.29938620
+1251,"Al Mahrah",245,YE,Yemen,MR,,16.52384230,51.68342750
+1235,"Al Mahwit",245,YE,Yemen,MW,,15.39632290,43.56069460
+1246,Dhamar,245,YE,Yemen,DH,,14.71953440,44.24790150
+1238,Hadhramaut,245,YE,Yemen,HD,,16.93041350,49.36531490
+1244,Hajjah,245,YE,Yemen,HJ,,16.11806310,43.32946600
+1233,Ibb,245,YE,Yemen,IB,,14.14157170,44.24790150
+1245,Lahij,245,YE,Yemen,LA,,13.14895880,44.85054950
+1234,Ma'rib,245,YE,Yemen,MA,,15.51588800,45.44980650
+1248,Raymah,245,YE,Yemen,RA,,14.62776820,43.71424840
+1249,Saada,245,YE,Yemen,SD,,16.84765280,43.94367880
+1236,Sana'a,245,YE,Yemen,SN,,15.31689130,44.47480180
 1232,Sana'a,245,YE,Yemen,SA,,15.36944510,44.19100660
-1236,"Sana'a Governorate",245,YE,Yemen,SN,,15.31689130,44.47480180
-1247,"Shabwah Governorate",245,YE,Yemen,SH,,14.75463030,46.51626200
-1239,"Socotra Governorate",245,YE,Yemen,SU,,12.46342050,53.82373850
-1231,"Ta'izz Governorate",245,YE,Yemen,TA,,13.57758860,44.01779890
+1247,Shabwah,245,YE,Yemen,SH,,14.75463030,46.51626200
+1239,Socotra,245,YE,Yemen,SU,,12.46342050,53.82373850
+1231,Ta'izz,245,YE,Yemen,TA,,13.57758860,44.01779890
 1986,"Central Province",246,ZM,Zambia,02,,7.25649960,80.72144170
 1984,"Copperbelt Province",246,ZM,Zambia,08,,-13.05700730,27.54958460
 1991,"Eastern Province",246,ZM,Zambia,03,,23.16696880,49.36531490
