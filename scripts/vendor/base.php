@@ -13,8 +13,8 @@ $NUMBER_OF_SECONDS = 1;
 $API_KEY = ''; // Your RapidApi GeoDBCities Api Key
 
 $servername = "127.0.0.1";
-$username = "root";
-$password = "root";
+$username = "wuser";
+$password = "pass1234";
 $dbname = "world";
 $port = 3306;
 
