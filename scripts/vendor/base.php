@@ -5,6 +5,7 @@ ini_set('max_execution_time', 300);
 ini_set('error_reporting', E_ALL & ~E_NOTICE);
 date_default_timezone_set('Asia/Kolkata');
 
+// comment the following if you want to just export
 require_once __DIR__.'/vendor/autoload.php';
 
 header('Content-type: text/plain');
