@@ -64,16 +64,9 @@ Find this project on [data.world](https://data.world/dr5hn/country-state-city)
 <a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" /></a> <a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" /></a> <a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" /></a>
 
 ## 🙋‍♂️ Support My Work
-<p>
-  <a href="https://www.paypal.me/dr5hn" target="_blank">
-      <img height="50" alt="Support with Paypal" src="https://raw.githubusercontent.com/dr5hn/dr5hn/main/.github/resources/support-paypal.png"/>
-  </a>
-  <a href="https://ko-fi.com/dr5hn" target="_blank">
-      <img height="50" alt="Buy me a coffee" src="https://raw.githubusercontent.com/dr5hn/dr5hn/main/.github/resources/support-buy-coffee.png"/>
-  </a>
-</p>
+[![Github Sponsorship](https://raw.githubusercontent.com/dr5hn/dr5hn/main/.github/resources/github_sponsor_btn.svg)](https://github.com/sponsors/dr5hn)
 
-[![become-a-backer](https://opencollective.com/countries-states-cities/backers.svg?width=890)](https://opencollective.com/countries-states-cities#backers)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/dr5hn)
 
 
 ## Suggestions / Feedbacks
