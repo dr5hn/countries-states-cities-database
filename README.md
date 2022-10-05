@@ -57,6 +57,13 @@ Contribute towards better earth [**buy the world a tree**](https://ecologi.com/d
 ## Contributions
 [Contibution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md)
 
+As always, thanks to our amazing contributors!
+<a href="https://github.com/dr5hn/countries-states-cities-database/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=dr5hn/countries-states-cities-database&anon=1" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 ## Other Publishings
 Find this project on [data.world](https://data.world/dr5hn/country-state-city)
 
