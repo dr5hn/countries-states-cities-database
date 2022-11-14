@@ -44,7 +44,7 @@ Last Updated On : 13th Nov 2022
 ## When's the next API Database Update day?
 I usually update API's database once a quarter.
 
-**Upcoming API Database Update Date:** 9th October 2022
+**Upcoming API Database Update Date:** 3rd December 2022
 
 **Please Note:** Even if you've urgency or you're running this API in Production and you find some data missing, the API Database update dates won't be changed at any circumstances.
 
