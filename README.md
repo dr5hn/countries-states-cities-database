@@ -81,5 +81,4 @@ Find this project on [data.world](https://data.world/dr5hn/country-state-city)
 Suggestions & Feedbacks are Most Welcome
 gadadarshan[at]gmail[dot]com
 ```
-
 That's all Folks. Enjoy.
