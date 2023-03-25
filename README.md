@@ -36,10 +36,10 @@ https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
 Total Countries : 250 <br>
-Total States/Regions/Municipalities : 4,990 <br>
-Total Cities/Towns/Districts : 150,348 <br>
+Total States/Regions/Municipalities : 5,077 <br>
+Total Cities/Towns/Districts : 150,389 <br>
 
-Last Updated On : 6th Mar 2023
+Last Updated On : 25th Mar 2023
 
 ## When's the next API Database Update day?
 I usually update API's database once a quarter.
