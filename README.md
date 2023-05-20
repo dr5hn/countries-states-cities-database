@@ -49,8 +49,6 @@ The API database is regularly updated to ensure the latest data is available to 
 
 Please note that this date is subject to change based on unforeseen circumstances. Although we strive to adhere to the schedule, there may be instances where the update date is missed. We apologize for any inconvenience caused in such cases.
 
-To stay informed about the API updates and any changes to the schedule, we recommend following our official channels or subscribing to our newsletter. We will announce any updates or changes through these channels.
-
 We appreciate your understanding and patience. Thank you for using the Countries States Cities Database!
 
 ## License
