@@ -37,9 +37,9 @@ https://dr5hn.github.io/countries-states-cities-database/
 ## Insights
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,077 <br>
-Total Cities/Towns/Districts : 150,389 <br>
+Total Cities/Towns/Districts : 150,454 <br>
 
-Last Updated On : 25th Mar 2023
+Last Updated On : 22nd May 2023
 
 ## Next API Database Update
 
