@@ -3941,8 +3941,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1146,Burgos,207,ES,Spain,BU,province,42.33807580,-3.58126920
 1190,Caceres,207,ES,Spain,CC,province,39.47163130,-6.42573840
 5096,Cádiz,207,ES,Spain,CA,province,36.51638510,-6.29997670
+5222,Canarias,207,ES,Spain,CN,"autonomous community",28.29160000,16.62910000
 1170,Cantabria,207,ES,Spain,S,province,43.18283960,-3.98784270
 5110,Castellón,207,ES,Spain,CS,province,39.98114350,0.00884070
+5223,Ceuta,207,ES,Spain,CE,"autonomous city in North Africa",35.88900000,-5.31870000
 5105,"Ciudad Real",207,ES,Spain,CR,province,38.98607580,-3.94449750
 5097,Córdoba,207,ES,Spain,CO,province,36.51638510,-6.29997670
 5106,Cuenca,207,ES,Spain,CU,province,40.06200360,-2.16553440
@@ -3961,6 +3963,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5090,Lugo,207,ES,Spain,LU,province,43.01231370,-7.57400960
 1158,Madrid,207,ES,Spain,M,province,40.41675150,-3.70383220
 5101,Málaga,207,ES,Spain,MA,province,36.71820150,-4.51930600
+5224,Melilla,207,ES,Spain,ML,"autonomous city in North Africa",35.29370000,-2.93830000
 1176,Murcia,207,ES,Spain,MU,province,38.13981410,-1.36621600
 1204,Navarra,207,ES,Spain,NA,province,42.69539090,-1.67606910
 5091,Ourense,207,ES,Spain,OR,province,42.33836130,-7.88119510
@@ -4906,25 +4909,25 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5218,"Navassa Island",234,UM,"United States Minor Outlying Islands",76,island,18.41006890,-75.01146120
 5219,"Palmyra Atoll",234,UM,"United States Minor Outlying Islands",95,island,5.88850260,-162.07866560
 5220,"Wake Island",234,UM,"United States Minor Outlying Islands",79,island,19.27961900,166.64993480
-3205,"Artigas Department",235,UY,Uruguay,AR,,-30.61751120,-56.95945590
-3213,"Canelones Department",235,UY,Uruguay,CA,,-34.54087170,-55.93076000
-3211,"Cerro Largo Department",235,UY,Uruguay,CL,,-32.44110320,-54.35217530
-3208,"Colonia Department",235,UY,Uruguay,CO,,-34.12946780,-57.66051840
-3209,"Durazno Department",235,UY,Uruguay,DU,,-33.02324540,-56.02846440
-3203,"Flores Department",235,UY,Uruguay,FS,,-33.57337530,-56.89450280
-3217,"Florida Department",235,UY,Uruguay,FD,,28.03594950,-82.45792890
-3215,"Lavalleja Department",235,UY,Uruguay,LA,,-33.92261750,-54.97657940
-3206,"Maldonado Department",235,UY,Uruguay,MA,,-34.55979320,-54.86285520
-3218,"Montevideo Department",235,UY,Uruguay,MO,,-34.81815870,-56.21382560
-3212,"Paysandú Department",235,UY,Uruguay,PA,,-32.06673660,-57.33647890
-3210,"Río Negro Department",235,UY,Uruguay,RN,,-32.76763560,-57.42952070
-3207,"Rivera Department",235,UY,Uruguay,RV,,-31.48174210,-55.24357590
-3216,"Rocha Department",235,UY,Uruguay,RO,,-33.96900810,-54.02148500
-3220,"Salto Department",235,UY,Uruguay,SA,,-31.38802800,-57.96124550
-3204,"San José Department",235,UY,Uruguay,SJ,,37.34929680,-121.90560490
-3219,"Soriano Department",235,UY,Uruguay,SO,,-33.51027920,-57.74981030
-3221,"Tacuarembó Department",235,UY,Uruguay,TA,,-31.72068370,-55.98598870
-3214,"Treinta y Tres Department",235,UY,Uruguay,TT,,-33.06850860,-54.28586270
+3205,Artigas,235,UY,Uruguay,AR,,-30.61751120,-56.95945590
+3213,Canelones,235,UY,Uruguay,CA,,-34.54087170,-55.93076000
+3211,"Cerro Largo",235,UY,Uruguay,CL,,-32.44110320,-54.35217530
+3208,Colonia,235,UY,Uruguay,CO,,-34.12946780,-57.66051840
+3209,Durazno,235,UY,Uruguay,DU,,-33.02324540,-56.02846440
+3203,Flores,235,UY,Uruguay,FS,,-33.57337530,-56.89450280
+3217,Florida,235,UY,Uruguay,FD,,28.03594950,-82.45792890
+3215,Lavalleja,235,UY,Uruguay,LA,,-33.92261750,-54.97657940
+3206,Maldonado,235,UY,Uruguay,MA,,-34.55979320,-54.86285520
+3218,Montevideo,235,UY,Uruguay,MO,,-34.81815870,-56.21382560
+3212,Paysandú,235,UY,Uruguay,PA,,-32.06673660,-57.33647890
+3210,"Río Negro",235,UY,Uruguay,RN,,-32.76763560,-57.42952070
+3207,Rivera,235,UY,Uruguay,RV,,-31.48174210,-55.24357590
+3216,Rocha,235,UY,Uruguay,RO,,-33.96900810,-54.02148500
+3220,Salto,235,UY,Uruguay,SA,,-31.38802800,-57.96124550
+3204,"San José",235,UY,Uruguay,SJ,,37.34929680,-121.90560490
+3219,Soriano,235,UY,Uruguay,SO,,-33.51027920,-57.74981030
+3221,Tacuarembó,235,UY,Uruguay,TA,,-31.72068370,-55.98598870
+3214,"Treinta y Tres",235,UY,Uruguay,TT,,-33.06850860,-54.28586270
 2540,"Andijan Region",236,UZ,Uzbekistan,AN,,40.76859410,72.23637900
 2541,"Bukhara Region",236,UZ,Uzbekistan,BU,,40.25041620,63.20321510
 2538,"Fergana Region",236,UZ,Uzbekistan,FA,,40.45680810,71.28742090
