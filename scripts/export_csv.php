@@ -37,7 +37,7 @@ foreach ($files as $root => $v) :
     // Loop through the associative array.
     foreach ($csc as $row) :
         // Update timezones to make readable
-        if(is_array($row['timezones'])) {
+        if(is_array($row['timezones']) && !empty($row['timezones'])) {
             $row['timezones'] = json_encode($row['timezones']);
             $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
             $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
