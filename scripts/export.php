@@ -39,6 +39,7 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['native'] = $row['native'];
         $countriesArray[$m]['region'] = $row['region'];
         $countriesArray[$m]['subregion'] = $row['subregion'];
+        $countriesArray[$m]['nationality'] = $row['nationality'];
         $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
         $countriesArray[$m]['translations'] = json_decode($row['translations'], true);
         $countriesArray[$m]['latitude'] = $row['latitude'];
@@ -68,6 +69,7 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
+    $countryStateCityArray[$k]['nationality'] = $country['nationality'];
     $countryStateCityArray[$k]['timezones'] = $country['timezones'];
     $countryStateCityArray[$k]['translations'] = $country['translations'];
     $countryStateCityArray[$k]['latitude'] = $country['latitude'];
@@ -182,6 +184,7 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['native'] = $country['native'];
     $countryStateArray[$k]['region'] = $country['region'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
+    $countryStateArray[$k]['nationality'] = $country['nationality'];
     $countryStateArray[$k]['timezones'] = $country['timezones'];
     $countryStateArray[$k]['translations'] = $country['translations'];
     $countryStateArray[$k]['latitude'] = $country['latitude'];
