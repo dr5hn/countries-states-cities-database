@@ -7,6 +7,11 @@ use Symfony\Component\Yaml\Yaml;
 
 $rootDir = dirname(dirname(__FILE__));
 $files = array(
+    'regions' => array(
+        'from' => '/regions.json',
+        'to' => '/yml/regions.yml',
+        'singular' => 'region',
+    ),
     'countries' => array(
         'from' => '/countries.json',
         'to' => '/yml/countries.yml',
