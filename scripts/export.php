@@ -1,6 +1,7 @@
 <?php
 require_once 'vendor/base.php';
 
+$r = 0; // regions
 $i = 0; // states && states-cities
 $j = 0; // cities
 $k = 0; // countries-states-cities && countries-states
@@ -223,19 +224,19 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         // Pushing it into Fresh Array
-        $regionsArray[$m]['id'] = (int)$row['id'];
-        $regionsArray[$m]['name'] = $row['name'];
-        $regionsArray[$m]['translations'] = json_decode($row['translations'], true);
+        $regionsArray[$r]['id'] = (int)$row['id'];
+        $regionsArray[$r]['name'] = $row['name'];
+        $regionsArray[$r]['translations'] = json_decode($row['translations'], true);
 
-        $m++;
+        $r++;
     }
 }
 
 
+echo 'Total Regions Count : '.count($regionsArray).PHP_EOL;
 echo 'Total Countries Count : '.count($countriesArray).PHP_EOL;
 echo 'Total States Count : '.count($statesArray).PHP_EOL;
 echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
-echo 'Total Regions Count : '.count($regionsArray).PHP_EOL;
 
 // print_r($countriesArray);
 $exportTo = $rootDir . '/countries.json';
