@@ -14,6 +14,7 @@ $stateCityArray = array();
 $countryStateArray = array();
 $countryCityArray = array();
 $countryStateCityArray = array();
+$regionsArray = array();
 $stateNamesArray = array();
 $cityNamesArray = array();
 
@@ -216,9 +217,25 @@ foreach($countriesArray as $country) {
 
 }
 
+// Fetching All Regions
+$sql = "SELECT * FROM regions ORDER BY name";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        // Pushing it into Fresh Array
+        $regionsArray[$m]['id'] = (int)$row['id'];
+        $regionsArray[$m]['name'] = $row['name'];
+        $regionsArray[$m]['translations'] = json_decode($row['translations'], true);
+
+        $m++;
+    }
+}
+
+
 echo 'Total Countries Count : '.count($countriesArray).PHP_EOL;
 echo 'Total States Count : '.count($statesArray).PHP_EOL;
 echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
+echo 'Total Regions Count : '.count($regionsArray).PHP_EOL;
 
 // print_r($countriesArray);
 $exportTo = $rootDir . '/countries.json';
@@ -266,6 +283,13 @@ fclose($fp);
 $exportTo = $rootDir . '/countries+states+cities.json';
 $fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
+fclose($fp);
+
+// print_r($regionsArray);
+$exportTo = $rootDir . '/regions.json';
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
+fwrite($fp, json_encode($regionsArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 

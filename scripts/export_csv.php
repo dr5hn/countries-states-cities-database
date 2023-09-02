@@ -17,6 +17,10 @@ $files = array(
         'from' => '/cities.json',
         'to' => '/csv/cities.csv',
     ),
+    'regions' => array(
+        'from' => '/regions.json',
+        'to' => '/csv/regions.csv',
+    ),
 );
 
 foreach ($files as $root => $v) :
