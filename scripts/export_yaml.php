@@ -12,6 +12,11 @@ $files = array(
         'to' => '/yml/regions.yml',
         'singular' => 'region',
     ),
+    'subregions' => array(
+        'from' => '/subregions.json',
+        'to' => '/yml/subregions.yml',
+        'singular' => 'subregion',
+    ),
     'countries' => array(
         'from' => '/countries.json',
         'to' => '/yml/countries.yml',
