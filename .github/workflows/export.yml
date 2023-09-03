@@ -50,7 +50,7 @@ jobs:
           mysql -V
           mysql -uroot -proot -e "CREATE DATABASE world;"
           mysql -uroot -proot -e "SHOW DATABASES;"
-          mysql -uroot -proot world < sql/world.sql
+          mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
 
       - name: Composer Dependencies
         run: cd scripts/vendor && composer install
