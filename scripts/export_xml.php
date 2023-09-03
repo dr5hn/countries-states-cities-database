@@ -12,6 +12,11 @@ $files = array(
         'to' => '/xml/regions.xml',
         'singular' => 'region',
     ),
+    'subregions' => array(
+        'from' => '/subregions.json',
+        'to' => '/xml/subregions.xml',
+        'singular' => 'subregion',
+    ),
     'countries' => array(
         'from' => '/countries.json',
         'to' => '/xml/countries.xml',
