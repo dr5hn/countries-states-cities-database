@@ -23,6 +23,8 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 ## Distribution Files Info
 File | JSON | SQL | XML | YAML | CSV
 :------------ | :-------------| :-------------| :------------- |:-------------|:-------------
+Regions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
+Subregions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
 States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
 Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
@@ -36,11 +38,12 @@ https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
 Total Regions : 6 <br>
+Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,081 <br>
-Total Cities/Towns/Districts : 150,541 <br>
+Total Cities/Towns/Districts : 150,540 <br>
 
-Last Updated On : 11th Aug 2023
+Last Updated On : 3rd Sept 2023
 
 ## Next API Database Update
 
@@ -66,8 +69,10 @@ If you want to contribute to the database, please follow the guidelines outlined
 - Fork the repository and clone it to your local machine.
 - Make the necessary changes to the data:
   - To fix cities records, update the `sql/world.sql` > cities Table.
-  - To fix states/regions records, update the `sql/world.sql` > states Table.
+  - To fix states/provinces records, update the `sql/world.sql` > states Table.
   - To fix countries records, update the `sql/world.sql` > countries Table.
+  - To fix regions records, update the `sql/world.sql` > regions Table.
+  - To fix subregions records, update the `sql/world.sql` > subregions Table.
 - Once you've made the changes, create a pull request with a clear description of the modifications you've made.
 
 Please make sure to review the guidelines before making any contributions. They will help ensure that your contributions align with the project's standards and make the process smoother for everyone involved.

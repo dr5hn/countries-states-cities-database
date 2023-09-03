@@ -7,17 +7,42 @@ The following is a set of guidelines for contributing to Contributing to Country
 ## How Can I Contribute?
 ### Fixing Data By Yourself
 If you want to fix some data and raise a pull request
-- To fix cities records - You need to update in `sql/world.sql` > cities Table.
-- To fix states/regions records - You need to update in `sql/world.sql` > states Table
-- To fix countries records - You need to update in `sql/world.sql` > countries Table
+- To fix cities records, update the `sql/world.sql` > cities Table.
+- To fix states/provinces records, update the `sql/world.sql` > states Table.
+- To fix countries records, update the `sql/world.sql` > countries Table.
+- To fix regions records, update the `sql/world.sql` > regions Table.
+- To fix subregions records, update the `sql/world.sql` > subregions Table.
 
 ## Glance at Table Structure
+
+### regions.sql
+| Column | Data type | Explanation | Required |
+| ----------------- | --------------- | -------------- | ------------------- |
+| `id` | integer | Unique ID used internally, just increment by one when adding entries to the list. | required
+| `name` | string | The official name of the region. Use WikiData or Wikipedia or some other legitimate source. | required
+| `translations` | text | An array of region name translations |
+| `created_at` | timestamp | Set it using NOW() |
+| `updated_at` | timestamp | Automatically Updated |
+| `flag`| tinyint | 1/0 (automatically set to 1 by default)|
+| `wikiDataId` | string | The unique ID from wikiData.org |
+
+### subregions.sql
+| Column | Data type | Explanation | Required |
+| ----------------- | --------------- | -------------- | ------------------- |
+| `id` | integer | Unique ID used internally, just increment by one when adding entries to the list. | required
+| `name` | string | The official name of the subregion. Use WikiData or Wikipedia or some other legitimate source. | required
+| `translations` | text | An array of subregion name translations |
+| `region_id` | string | Unique id of region from `regions.sql` |
+| `created_at` | timestamp | Set it using NOW() |
+| `updated_at` | timestamp | Automatically Updated |
+| `flag`| tinyint | 1/0 (automatically set to 1 by default)|
+| `wikiDataId` | string | The unique ID from wikiData.org |
 
 ### countries.sql
 | Column | Data type | Explanation | Required |
 | ----------------- | --------------- | -------------- | ------------------- |
 | `id` | integer | Unique ID used internally, just increment by one when adding entries to the list. | required
-| `name` | string | The official name of the state. Use WikiData or Wikipedia or some other legitimate source. | required
+| `name` | string | The official name of the country. Use WikiData or Wikipedia or some other legitimate source. | required
 | `iso2` |char | [ISO3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the parent state |
 | `iso3` | char | [ISO3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the parent country |
 | `numeric_code` | char | Source [ISO Official Site](iso.org/obp/ui/#iso:code:3166:NO) |
@@ -28,7 +53,9 @@ If you want to fix some data and raise a pull request
 | `tld` | string | Domain code of the country |
 | `native` | string | Native name of the country |
 | `region` | string | A region where country belongs to |
+| `region_id` | string | Unique id of region from `regions.sql` |
 | `subregion` | string | A subregion where country belongs to |
+| `subregion_id` | string | Unique id of subregion from `subregions.sql` |
 | `timezones` | text | An array of timezones  |
 | `translations` | text | An array of country name translations |
 | `latitude` | float | Google Maps |
@@ -61,7 +88,7 @@ If you want to fix some data and raise a pull request
 | Column | Data type | Explanation | Required |
 | ----------------- | --------------- | -------------- | -------------- |
 | `id` | integer | Unique ID used internally, just increment by one when adding entries to the list. | required
-| `name` | string | The official name of the state. Use WikiData or Wikipedia or some other legitimate source. | required
+| `name` | string | The official name of the city. Use WikiData or Wikipedia or some other legitimate source. | required
 | `state_id` | integer | Unique id of parent state from `states.sql` | required
 | `state_code` | string | [ISO3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the parent state | required
 | `country_id` | integer | Unique id of parent country from `countries.sql` | required
