@@ -46,7 +46,8 @@ jobs:
       - name: Create & Import DB
         run: |
           ls -R
-          sudo /etc/init.d/mysql start
+          sudo systemctl start mysql.service
+          mysql -V
           mysql -uroot -proot -e "CREATE DATABASE world;"
           mysql -uroot -proot -e "SHOW DATABASES;"
           mysql -uroot -proot world < sql/world.sql
