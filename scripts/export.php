@@ -2,6 +2,7 @@
 require_once 'vendor/base.php';
 
 $r = 0; // regions
+$s = 0; // suberegions
 $i = 0; // states && states-cities
 $j = 0; // cities
 $k = 0; // countries-states-cities && countries-states
@@ -16,6 +17,7 @@ $countryStateArray = array();
 $countryCityArray = array();
 $countryStateCityArray = array();
 $regionsArray = array();
+$subregionsArray = array();
 $stateNamesArray = array();
 $cityNamesArray = array();
 
@@ -185,7 +187,9 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['tld'] = $country['tld'];
     $countryStateArray[$k]['native'] = $country['native'];
     $countryStateArray[$k]['region'] = $country['region'];
+    $countryStateArray[$k]['region_id'] = $country['region_id'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
+    $countryStateArray[$k]['subregion_id'] = $country['subregion_id'];
     $countryStateArray[$k]['nationality'] = $country['nationality'];
     $countryStateArray[$k]['timezones'] = $country['timezones'];
     $countryStateArray[$k]['translations'] = $country['translations'];
@@ -227,13 +231,31 @@ if ($result->num_rows > 0) {
         $regionsArray[$r]['id'] = (int)$row['id'];
         $regionsArray[$r]['name'] = $row['name'];
         $regionsArray[$r]['translations'] = json_decode($row['translations'], true);
+        $regionsArray[$r]['wikiDataId'] = $row['wikiDataId'];
 
         $r++;
     }
 }
 
+// Fetching All Subregions
+$sql = "SELECT * FROM subregions ORDER BY name";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        // Pushing it into Fresh Array
+        $subregionsArray[$s]['id'] = (int)$row['id'];
+        $subregionsArray[$s]['name'] = $row['name'];
+        $subregionsArray[$s]['region_id'] = $row['region_id'];
+        $subregionsArray[$s]['translations'] = json_decode($row['translations'], true);
+        $subregionsArray[$s]['wikiDataId'] = $row['wikiDataId'];
+        $s++;
+    }
+}
+
+
 
 echo 'Total Regions Count : '.count($regionsArray).PHP_EOL;
+echo 'Total Subregions Count : '.count($subregionsArray).PHP_EOL;
 echo 'Total Countries Count : '.count($countriesArray).PHP_EOL;
 echo 'Total States Count : '.count($statesArray).PHP_EOL;
 echo 'Total Cities Count : '.count($citiesArray).PHP_EOL;
@@ -291,6 +313,13 @@ fclose($fp);
 $exportTo = $rootDir . '/regions.json';
 $fp = fopen($exportTo, 'w'); // Putting Array to JSON
 fwrite($fp, json_encode($regionsArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
+echo 'JSON Exported to ' .$exportTo . PHP_EOL;
+fclose($fp);
+
+// print_r($subregionsArray);
+$exportTo = $rootDir . '/subregions.json';
+$fp = fopen($exportTo, 'w'); // Putting Array to JSON
+fwrite($fp, json_encode($subregionsArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
 echo 'JSON Exported to ' .$exportTo . PHP_EOL;
 fclose($fp);
 
