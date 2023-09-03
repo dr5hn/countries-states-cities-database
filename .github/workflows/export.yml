@@ -38,7 +38,7 @@ jobs:
         run: |
           grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`regions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`subregions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
+          echo -e "DROP TABLE IF EXISTS \`subregions\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`countries\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
