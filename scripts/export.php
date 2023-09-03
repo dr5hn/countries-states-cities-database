@@ -42,7 +42,9 @@ if ($result->num_rows > 0) {
         $countriesArray[$m]['tld'] = $row['tld'];
         $countriesArray[$m]['native'] = $row['native'];
         $countriesArray[$m]['region'] = $row['region'];
+        $countriesArray[$m]['region_id'] = $row['region_id'];
         $countriesArray[$m]['subregion'] = $row['subregion'];
+        $countriesArray[$m]['subregion_id'] = $row['subregion_id'];
         $countriesArray[$m]['nationality'] = $row['nationality'];
         $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
         $countriesArray[$m]['translations'] = json_decode($row['translations'], true);
@@ -72,7 +74,9 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['tld'] = $country['tld'];
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
+    $countryStateCityArray[$k]['region_id'] = $country['region_id'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
+    $countryStateCityArray[$k]['subregion_id'] = $country['subregion_id'];
     $countryStateCityArray[$k]['nationality'] = $country['nationality'];
     $countryStateCityArray[$k]['timezones'] = $country['timezones'];
     $countryStateCityArray[$k]['translations'] = $country['translations'];

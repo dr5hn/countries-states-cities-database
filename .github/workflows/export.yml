@@ -38,6 +38,7 @@ jobs:
         run: |
           grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`regions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
+          echo -e "DROP TABLE IF EXISTS \`subregions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`countries\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
@@ -60,6 +61,7 @@ jobs:
           php scripts/export_yaml.php
           php scripts/export_csv.php
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
+          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
