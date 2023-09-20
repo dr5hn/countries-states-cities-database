@@ -27127,7 +27127,28 @@ country_state:
     longitude: '165.50000000'
     emoji: 🇳🇨
     emojiU: 'U+1F1F3 U+1F1E8'
-    states: {  }
+    states:
+      -
+        id: 5227
+        name: 'Loyalty Islands Province'
+        state_code: '03'
+        latitude: '-20.96670000'
+        longitude: '167.23330000'
+        type: province
+      -
+        id: 5226
+        name: 'North Province'
+        state_code: '02'
+        latitude: '-22.27580000'
+        longitude: '166.45800000'
+        type: province
+      -
+        id: 5225
+        name: 'South Province'
+        state_code: '01'
+        latitude: '-22.27580000'
+        longitude: '166.45800000'
+        type: province
   -
     name: 'New Zealand'
     iso3: NZL
@@ -31340,19 +31361,19 @@ country_state:
         longitude: '-67.14029350'
         type: municipalities
       -
-        id: 5081
-        name: Arecibo
-        state_code: AR
-        latitude: '18.47055556'
-        longitude: '-66.72083333'
-        type: region
-      -
         id: 5140
         name: Arecibo
         state_code: '013'
         latitude: '18.47051370'
         longitude: '-66.72184720'
         type: municipalities
+      -
+        id: 5081
+        name: Arecibo
+        state_code: AR
+        latitude: '18.47055556'
+        longitude: '-66.72083333'
+        type: region
       -
         id: 5141
         name: Arroyo
@@ -31543,19 +31564,19 @@ country_state:
         longitude: '-66.79184200'
         type: municipalities
       -
-        id: 5165
-        name: Guaynabo
-        state_code: '061'
-        latitude: '18.36129540'
-        longitude: '-66.11029570'
-        type: municipalities
-      -
         id: 5080
         name: Guaynabo
         state_code: GN
         latitude: '18.36666667'
         longitude: '-66.10000000'
         type: region
+      -
+        id: 5165
+        name: Guaynabo
+        state_code: '061'
+        latitude: '18.36129540'
+        longitude: '-66.11029570'
+        type: municipalities
       -
         id: 5166
         name: Gurabo
@@ -31795,19 +31816,19 @@ country_state:
         longitude: '-67.04110960'
         type: municipalities
       -
-        id: 5075
-        name: 'San Juan'
-        state_code: SJ
-        latitude: '18.45000000'
-        longitude: '-66.06666667'
-        type: region
-      -
         id: 5198
         name: 'San Juan'
         state_code: '127'
         latitude: '18.46320300'
         longitude: '-66.11475710'
         type: municipalities
+      -
+        id: 5075
+        name: 'San Juan'
+        state_code: SJ
+        latitude: '18.45000000'
+        longitude: '-66.06666667'
+        type: region
       -
         id: 5199
         name: 'San Lorenzo'
@@ -38987,19 +39008,19 @@ country_state:
         longitude: '120.44911130'
         type: county
       -
-        id: 3417
-        name: Hsinchu
-        state_code: HSZ
-        latitude: '24.81382870'
-        longitude: '120.96747980'
-        type: city
-      -
         id: 3423
         name: Hsinchu
         state_code: HSQ
         latitude: '24.83872260'
         longitude: '121.01772460'
         type: county
+      -
+        id: 3417
+        name: Hsinchu
+        state_code: HSZ
+        latitude: '24.81382870'
+        longitude: '120.96747980'
+        type: city
       -
         id: 3411
         name: Hualien
