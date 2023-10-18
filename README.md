@@ -86,6 +86,13 @@ As always, thanks to our amazing contributors!
 
 Made with [contrib.rocks](https://contrib.rocks).
 
+## Sponsors
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/dr5hn/static/sponsors.svg">
+    <img src='https://cdn.jsdelivr.net/gh/dr5hn/static/sponsors.svg'/>
+  </a>
+</p>
+
 ## Make the world more Greener 🌴
 Contribute towards better earth [**buy the world a tree**](https://ecologi.com/darshangada?r=60f2a36e67efcb18f734ffb8)
 
