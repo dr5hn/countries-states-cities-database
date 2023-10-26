@@ -37,13 +37,13 @@ Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_c
 https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
-Total Regions :  <br>
-Total Sub Regions :  <br>
-Total Countries :  <br>
+Total Regions : 6 <br>
+Total Sub Regions : 22 <br>
+Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,081 <br>
 Total Cities/Towns/Districts : 150,540 <br>
 
-Last Updated On : 
+Last Updated On : 26th Oct 2023
 
 ## Next API Database Update
 
