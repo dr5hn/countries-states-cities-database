@@ -67,6 +67,24 @@ jobs:
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
 
+      - name: Get Counts from Database
+        run: |
+          region_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.regions;" -s)
+          subregion_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.subregions;" -s)
+          country_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.countries;" -s)
+          state_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.states;" -s)
+          city_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.cities;" -s)
+          current_date=$(date +"%dth %b %Y")
+
+      - name: Update README.md
+        run: |
+          sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
+          sed -i "s/Total Sub Regions : [0-9]* <br>/Total Sub Regions : $subregion_count <br>/" README.md
+          sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md
+          sed -i "s/Total States\/Regions\/Municipalities : [0-9]* <br>/Total States\/Regions\/Municipalities : $state_count <br>/" README.md
+          sed -i "s/Total Cities\/Towns\/Districts : [0-9]* <br>/Total Cities\/Towns\/Districts : $city_count <br>/" README.md
+          sed -i "s/Last Updated On : .*$/Last Updated On : $current_date/" README.md
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
