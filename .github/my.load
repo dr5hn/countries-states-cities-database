@@ -1,0 +1,13 @@
+LOAD DATABASE
+     FROM mysql://root:root@localhost/world
+     INTO postgresql://root:root@localhost/world
+
+ALTER SCHEMA 'world' RENAME TO 'public'
+
+SET client_encoding to 'utf8'
+
+-- Cast type rules
+CAST
+    -- Cast rule for timestamp columns
+    type timestamp to timestamptz
+        drop default drop not null using zero-dates-to-null;
