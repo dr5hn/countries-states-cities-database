@@ -1,4 +1,4 @@
-name: Export JSON/XML/YAML/CSV
+name: Export JSON/XML/YAML/CSV/PSQL
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   export_json_xml:
-    name: JSON/XML/YAML/CSV
+    name: JSON/XML/YAML/CSV/PSQL
     runs-on: ubuntu-latest
 
     strategy:
@@ -27,14 +27,36 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Install PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
           extensions: intl #optional
           ini-values: "post_max_size=256M" #optional
 
-      - name: Cleanup world.sql
+      - name: Setup tools
+        run: |
+          sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+          sudo apt-get update
+          sudo apt-get install -y pgloader
+          sudo apt install postgresql-16 -y
+      
+      - name: Setup MySQL
+        uses: shogo82148/actions-setup-mysql@v1
+        with:
+          mysql-version: "5.7"
+          root-password: root
+
+      - name: Setup PostgreSQL
+        uses: harmon758/postgresql-action@v1
+        with:
+          postgresql version: '16'
+          postgresql db: world
+          postgresql user: root
+          postgresql password: root
+
+      - name: Add clean commands to world.sql
         run: |
           grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`regions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
@@ -43,19 +65,28 @@ jobs:
           echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
 
-      - name: Create & Import DB
+      - name: Import data to MySQL and migrate to PostgreSQL
         run: |
-          ls -R
-          sudo systemctl start mysql.service
-          mysql -V
           mysql -uroot -proot -e "CREATE DATABASE world;"
-          mysql -uroot -proot -e "SHOW DATABASES;"
           mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
+          pgloader --version
+          pgloader .github/my.load
 
+      - name: Setup variables
+        run: |
+          echo "region_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.regions;' -s)" >> $GITHUB_ENV
+          echo "subregion_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.subregions;' -s)" >> $GITHUB_ENV
+          echo "country_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.countries;' -s)" >> $GITHUB_ENV
+          echo "state_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.states;' -s)" >> $GITHUB_ENV
+          echo "city_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.cities;' -s)" >> $GITHUB_ENV
+          echo "current_date=$(date +'%dth %b %Y')" >> $GITHUB_ENV
+        
       - name: Composer Dependencies
-        run: cd scripts/vendor && composer install
+        run: |
+          cd scripts/vendor
+          composer install
 
-      - name: Run Export Scripts
+      - name: Export JSON/XML/YAML/CSV/PSQL
         run: |
           php scripts/export.php
           php scripts/export_xml.php
@@ -66,15 +97,12 @@ jobs:
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
-
-      - name: Get Counts from Database
-        run: |
-          region_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.regions;" -s)
-          subregion_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.subregions;" -s)
-          country_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.countries;" -s)
-          state_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.states;" -s)
-          city_count=$(mysql -uroot -proot -e "SELECT COUNT(*) FROM world.cities;" -s)
-          current_date=$(date +"%dth %b %Y")
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $region_count -t public.regions > psql/regions.sql
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $subregion_count -t public.subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $country_count -t public.countries > psql/countries.sql
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $state_count -t public.states > psql/states.sql
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $city_count -t public.cities > psql/cities.sql
+          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert 10000 -t public.regions -t public.subregions -t public.countries -t public.states -t public.cities > psql/world.sql
 
       - name: Update README.md
         run: |
@@ -88,13 +116,13 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Add exported JSON, CSV, XML & YAML files
+          commit-message: Add exported JSON, CSV, XML & YAML & PSQL files
           committer: Darshan Gada <gadadarshan@gmail.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: '(chore): Export JSON, CSV, XML & YAML files'
+          title: '(chore): Export JSON, CSV, XML & YAML & PSQL files'
           labels: |
             exports
             automated
