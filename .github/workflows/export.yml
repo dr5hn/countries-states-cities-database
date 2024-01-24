@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths-ignore:
-      - '**'
-      - '!scripts/export**'
+      - "**"
+      - "!scripts/export**"
   workflow_dispatch:
     inputs:
       pass:
-        description: 'Passcode'
+        description: "Passcode"
         required: true
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
+          php-version: "8.0"
           extensions: intl #optional
           ini-values: "post_max_size=256M" #optional
 
@@ -41,7 +41,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pgloader
           sudo apt install postgresql-16 -y
-      
+
       - name: Setup MySQL
         uses: shogo82148/actions-setup-mysql@v1
         with:
@@ -51,7 +51,7 @@ jobs:
       - name: Setup PostgreSQL
         uses: harmon758/postgresql-action@v1
         with:
-          postgresql version: '16'
+          postgresql version: "16"
           postgresql db: world
           postgresql user: root
           postgresql password: root
@@ -80,7 +80,7 @@ jobs:
           echo "state_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.states;' -s)" >> $GITHUB_ENV
           echo "city_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.cities;' -s)" >> $GITHUB_ENV
           echo "current_date=$(date +'%dth %b %Y')" >> $GITHUB_ENV
-        
+
       - name: Composer Dependencies
         run: |
           cd scripts/vendor
@@ -122,8 +122,8 @@ jobs:
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: '(chore): Export JSON, CSV, XML & YAML & PSQL files'
+          title: "(chore): Export JSON, CSV, XML & YAML & PSQL files"
           labels: |
             exports
             automated
-          reviewers: dr5hn, valerianpereira
+          reviewers: dr5hn
