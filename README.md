@@ -82,7 +82,7 @@ You can find the detailed contribution guidelines [here](https://github.com/dr5h
 
 ## Repo Activity
 
-![Repo Activity](https://repobeats.axiom.co/api/embed/7866c9790deba0baf63ca1688b209130b306ea4e.svg "Repobeats analytics image")
+![Repo Activity](https://repobeats.axiom.co/api/embed/635051d1a8be17610a967b7b07b65c0148f13654.svg "Repobeats analytics image")
 
 As always, thanks to our amazing contributors!
 
