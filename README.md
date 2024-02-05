@@ -80,7 +80,12 @@ Please make sure to review the guidelines before making any contributions. They 
 
 You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
 
+## Repo Activity
+
+![Repo Activity](https://repobeats.axiom.co/api/embed/7866c9790deba0baf63ca1688b209130b306ea4e.svg "Repobeats analytics image")
+
 As always, thanks to our amazing contributors!
+
 <a href="https://github.com/dr5hn/countries-states-cities-database/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=dr5hn/countries-states-cities-database&anon=1" />
 </a>
