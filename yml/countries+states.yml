@@ -1575,7 +1575,7 @@ country_state:
     emojiU: 'U+1F1E6 U+1F1F6'
     states: {  }
   -
-    name: 'Antigua And Barbuda'
+    name: 'Antigua and Barbuda'
     iso3: ATG
     iso2: AG
     numeric_code: '028'
@@ -10695,133 +10695,6 @@ country_state:
         longitude: '-70.98033100'
         type: null
   -
-    name: 'East Timor'
-    iso3: TLS
-    iso2: TL
-    numeric_code: '626'
-    phone_code: '670'
-    capital: Dili
-    currency: USD
-    currency_name: 'United States dollar'
-    currency_symbol: $
-    tld: .tl
-    native: Timor-Leste
-    region: Asia
-    region_id: '3'
-    subregion: 'South-Eastern Asia'
-    subregion_id: '13'
-    nationality: Timorese
-    timezones:
-      -
-        zoneName: Asia/Dili
-        gmtOffset: 32400
-        gmtOffsetName: 'UTC+09:00'
-        abbreviation: TLT
-        tzName: 'Timor Leste Time'
-    translations:
-      kr: 동티모르
-      pt-BR: 'Timor Leste'
-      pt: 'Timor Leste'
-      nl: Oost-Timor
-      hr: 'Istočni Timor'
-      fa: 'تیمور شرقی'
-      de: Timor-Leste
-      es: 'Timor Oriental'
-      fr: 'Timor oriental'
-      ja: 東ティモール
-      it: 'Timor Est'
-      cn: 东帝汶
-      tr: 'Doğu Timor'
-    latitude: '-8.83333333'
-    longitude: '125.91666666'
-    emoji: 🇹🇱
-    emojiU: 'U+1F1F9 U+1F1F1'
-    states:
-      -
-        id: 4520
-        name: 'Aileu municipality'
-        state_code: AL
-        latitude: '-8.70439940'
-        longitude: '125.60954740'
-        type: null
-      -
-        id: 4518
-        name: 'Ainaro Municipality'
-        state_code: AN
-        latitude: '-9.01131710'
-        longitude: '125.52200120'
-        type: null
-      -
-        id: 4521
-        name: 'Baucau Municipality'
-        state_code: BA
-        latitude: '-8.47143080'
-        longitude: '126.45759910'
-        type: null
-      -
-        id: 4525
-        name: 'Bobonaro Municipality'
-        state_code: BO
-        latitude: '-8.96554060'
-        longitude: '125.25879640'
-        type: null
-      -
-        id: 4522
-        name: 'Cova Lima Municipality'
-        state_code: CO
-        latitude: '-9.26503750'
-        longitude: '125.25879640'
-        type: null
-      -
-        id: 4524
-        name: 'Dili municipality'
-        state_code: DI
-        latitude: '-8.24496130'
-        longitude: '125.58766970'
-        type: null
-      -
-        id: 4516
-        name: 'Ermera District'
-        state_code: ER
-        latitude: '-8.75248020'
-        longitude: '125.39872940'
-        type: null
-      -
-        id: 4523
-        name: 'Lautém Municipality'
-        state_code: LA
-        latitude: '-8.36423070'
-        longitude: '126.90438450'
-        type: null
-      -
-        id: 4515
-        name: 'Liquiçá Municipality'
-        state_code: LI
-        latitude: '-8.66740950'
-        longitude: '125.25879640'
-        type: null
-      -
-        id: 4517
-        name: 'Manatuto District'
-        state_code: MT
-        latitude: '-8.51556080'
-        longitude: '126.01592550'
-        type: null
-      -
-        id: 4519
-        name: 'Manufahi Municipality'
-        state_code: MF
-        latitude: '-9.01454950'
-        longitude: '125.82799590'
-        type: null
-      -
-        id: 4514
-        name: 'Viqueque Municipality'
-        state_code: VI
-        latitude: '-8.85979180'
-        longitude: '126.36335160'
-        type: null
-  -
     name: Ecuador
     iso3: ECU
     iso2: EC
@@ -11749,6 +11622,77 @@ country_state:
         state_code: '86'
         latitude: '57.73773720'
         longitude: '27.13989380'
+        type: null
+  -
+    name: Eswatini
+    iso3: SWZ
+    iso2: SZ
+    numeric_code: '748'
+    phone_code: '268'
+    capital: Mbabane
+    currency: SZL
+    currency_name: Lilangeni
+    currency_symbol: E
+    tld: .sz
+    native: Swaziland
+    region: Africa
+    region_id: '1'
+    subregion: 'Southern Africa'
+    subregion_id: '5'
+    nationality: Swazi
+    timezones:
+      -
+        zoneName: Africa/Mbabane
+        gmtOffset: 7200
+        gmtOffsetName: 'UTC+02:00'
+        abbreviation: SAST
+        tzName: 'South African Standard Time'
+    translations:
+      kr: 에스와티니
+      pt-BR: Suazilândia
+      pt: Suazilândia
+      nl: Swaziland
+      hr: Svazi
+      fa: سوازیلند
+      de: Swasiland
+      es: Suazilandia
+      fr: Swaziland
+      ja: スワジランド
+      it: Swaziland
+      cn: 斯威士兰
+      tr: Esvatini
+    latitude: '-26.50000000'
+    longitude: '31.50000000'
+    emoji: 🇸🇿
+    emojiU: 'U+1F1F8 U+1F1FF'
+    states:
+      -
+        id: 969
+        name: 'Hhohho District'
+        state_code: HH
+        latitude: '-26.13656620'
+        longitude: '31.35416310'
+        type: null
+      -
+        id: 970
+        name: 'Lubombo District'
+        state_code: LU
+        latitude: '-26.78517730'
+        longitude: '31.81070790'
+        type: null
+      -
+        id: 968
+        name: 'Manzini District'
+        state_code: MA
+        latitude: '-26.50819990'
+        longitude: '31.37131640'
+        type: null
+      -
+        id: 971
+        name: 'Shiselweni District'
+        state_code: SH
+        latitude: '-26.98275770'
+        longitude: '31.35416310'
         type: null
   -
     name: Ethiopia
@@ -16602,7 +16546,7 @@ country_state:
       -
         id: 4016
         name: Uttarakhand
-        state_code: UT
+        state_code: UK
         latitude: '30.06675300'
         longitude: '79.01929970'
         type: state
@@ -29571,7 +29515,7 @@ country_state:
         longitude: '-81.07546570'
         type: null
   -
-    name: 'Papua new Guinea'
+    name: 'Papua New Guinea'
     iso3: PNG
     iso2: PG
     numeric_code: '598'
@@ -33309,7 +33253,7 @@ country_state:
     emojiU: 'U+1F1F8 U+1F1ED'
     states: {  }
   -
-    name: 'Saint Kitts And Nevis'
+    name: 'Saint Kitts and Nevis'
     iso3: KNA
     iso2: KN
     numeric_code: '659'
@@ -33627,7 +33571,7 @@ country_state:
     emojiU: 'U+1F1F5 U+1F1F2'
     states: {  }
   -
-    name: 'Saint Vincent And The Grenadines'
+    name: 'Saint Vincent and the Grenadines'
     iso3: VCT
     iso2: VC
     numeric_code: '670'
@@ -37558,7 +37502,7 @@ country_state:
         type: province
       -
         id: 1200
-        name: Léon
+        name: León
         state_code: LE
         latitude: '42.59870410'
         longitude: '-5.56708390'
@@ -38274,7 +38218,7 @@ country_state:
         longitude: '-55.27012350'
         type: null
   -
-    name: 'Svalbard And Jan Mayen Islands'
+    name: 'Svalbard and Jan Mayen Islands'
     iso3: SJM
     iso2: SJ
     numeric_code: '744'
@@ -38316,77 +38260,6 @@ country_state:
     emoji: 🇸🇯
     emojiU: 'U+1F1F8 U+1F1EF'
     states: {  }
-  -
-    name: Swaziland
-    iso3: SWZ
-    iso2: SZ
-    numeric_code: '748'
-    phone_code: '268'
-    capital: Mbabane
-    currency: SZL
-    currency_name: Lilangeni
-    currency_symbol: E
-    tld: .sz
-    native: Swaziland
-    region: Africa
-    region_id: '1'
-    subregion: 'Southern Africa'
-    subregion_id: '5'
-    nationality: Swazi
-    timezones:
-      -
-        zoneName: Africa/Mbabane
-        gmtOffset: 7200
-        gmtOffsetName: 'UTC+02:00'
-        abbreviation: SAST
-        tzName: 'South African Standard Time'
-    translations:
-      kr: 에스와티니
-      pt-BR: Suazilândia
-      pt: Suazilândia
-      nl: Swaziland
-      hr: Svazi
-      fa: سوازیلند
-      de: Swasiland
-      es: Suazilandia
-      fr: Swaziland
-      ja: スワジランド
-      it: Swaziland
-      cn: 斯威士兰
-      tr: Esvatini
-    latitude: '-26.50000000'
-    longitude: '31.50000000'
-    emoji: 🇸🇿
-    emojiU: 'U+1F1F8 U+1F1FF'
-    states:
-      -
-        id: 969
-        name: 'Hhohho District'
-        state_code: HH
-        latitude: '-26.13656620'
-        longitude: '31.35416310'
-        type: null
-      -
-        id: 970
-        name: 'Lubombo District'
-        state_code: LU
-        latitude: '-26.78517730'
-        longitude: '31.81070790'
-        type: null
-      -
-        id: 968
-        name: 'Manzini District'
-        state_code: MA
-        latitude: '-26.50819990'
-        longitude: '31.37131640'
-        type: null
-      -
-        id: 971
-        name: 'Shiselweni District'
-        state_code: SH
-        latitude: '-26.98275770'
-        longitude: '31.35416310'
-        type: null
   -
     name: Sweden
     iso3: SWE
@@ -40398,6 +40271,133 @@ country_state:
         longitude: '-78.52065000'
         type: null
   -
+    name: Timor-Leste
+    iso3: TLS
+    iso2: TL
+    numeric_code: '626'
+    phone_code: '670'
+    capital: Dili
+    currency: USD
+    currency_name: 'United States dollar'
+    currency_symbol: $
+    tld: .tl
+    native: Timor-Leste
+    region: Asia
+    region_id: '3'
+    subregion: 'South-Eastern Asia'
+    subregion_id: '13'
+    nationality: Timorese
+    timezones:
+      -
+        zoneName: Asia/Dili
+        gmtOffset: 32400
+        gmtOffsetName: 'UTC+09:00'
+        abbreviation: TLT
+        tzName: 'Timor Leste Time'
+    translations:
+      kr: 동티모르
+      pt-BR: 'Timor Leste'
+      pt: 'Timor Leste'
+      nl: Oost-Timor
+      hr: 'Istočni Timor'
+      fa: 'تیمور شرقی'
+      de: Timor-Leste
+      es: 'Timor Oriental'
+      fr: 'Timor oriental'
+      ja: 東ティモール
+      it: 'Timor Est'
+      cn: 东帝汶
+      tr: 'Doğu Timor'
+    latitude: '-8.83333333'
+    longitude: '125.91666666'
+    emoji: 🇹🇱
+    emojiU: 'U+1F1F9 U+1F1F1'
+    states:
+      -
+        id: 4520
+        name: 'Aileu municipality'
+        state_code: AL
+        latitude: '-8.70439940'
+        longitude: '125.60954740'
+        type: null
+      -
+        id: 4518
+        name: 'Ainaro Municipality'
+        state_code: AN
+        latitude: '-9.01131710'
+        longitude: '125.52200120'
+        type: null
+      -
+        id: 4521
+        name: 'Baucau Municipality'
+        state_code: BA
+        latitude: '-8.47143080'
+        longitude: '126.45759910'
+        type: null
+      -
+        id: 4525
+        name: 'Bobonaro Municipality'
+        state_code: BO
+        latitude: '-8.96554060'
+        longitude: '125.25879640'
+        type: null
+      -
+        id: 4522
+        name: 'Cova Lima Municipality'
+        state_code: CO
+        latitude: '-9.26503750'
+        longitude: '125.25879640'
+        type: null
+      -
+        id: 4524
+        name: 'Dili municipality'
+        state_code: DI
+        latitude: '-8.24496130'
+        longitude: '125.58766970'
+        type: null
+      -
+        id: 4516
+        name: 'Ermera District'
+        state_code: ER
+        latitude: '-8.75248020'
+        longitude: '125.39872940'
+        type: null
+      -
+        id: 4523
+        name: 'Lautém Municipality'
+        state_code: LA
+        latitude: '-8.36423070'
+        longitude: '126.90438450'
+        type: null
+      -
+        id: 4515
+        name: 'Liquiçá Municipality'
+        state_code: LI
+        latitude: '-8.66740950'
+        longitude: '125.25879640'
+        type: null
+      -
+        id: 4517
+        name: 'Manatuto District'
+        state_code: MT
+        latitude: '-8.51556080'
+        longitude: '126.01592550'
+        type: null
+      -
+        id: 4519
+        name: 'Manufahi Municipality'
+        state_code: MF
+        latitude: '-9.01454950'
+        longitude: '125.82799590'
+        type: null
+      -
+        id: 4514
+        name: 'Viqueque Municipality'
+        state_code: VI
+        latitude: '-8.85979180'
+        longitude: '126.36335160'
+        type: null
+  -
     name: Togo
     iso3: TGO
     iso2: TG
@@ -40597,7 +40597,7 @@ country_state:
         longitude: '-173.99029820'
         type: null
   -
-    name: 'Trinidad And Tobago'
+    name: 'Trinidad and Tobago'
     iso3: TTO
     iso2: TT
     numeric_code: '780'
@@ -41658,7 +41658,7 @@ country_state:
         longitude: '62.45041540'
         type: null
   -
-    name: 'Turks And Caicos Islands'
+    name: 'Turks and Caicos Islands'
     iso3: TCA
     iso2: TC
     numeric_code: '796'
@@ -46876,7 +46876,7 @@ country_state:
         longitude: '-65.07701800'
         type: district
   -
-    name: 'Wallis And Futuna Islands'
+    name: 'Wallis and Futuna Islands'
     iso3: WLF
     iso2: WF
     numeric_code: '876'

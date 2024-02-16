@@ -487,7 +487,7 @@
     },
     {
         "id": 10,
-        "name": "Antigua And Barbuda",
+        "name": "Antigua and Barbuda",
         "iso3": "ATG",
         "iso2": "AG",
         "numeric_code": "028",
@@ -3499,53 +3499,6 @@
         "emojiU": "U+1F1E9 U+1F1F4"
     },
     {
-        "id": 63,
-        "name": "East Timor",
-        "iso3": "TLS",
-        "iso2": "TL",
-        "numeric_code": "626",
-        "phone_code": "670",
-        "capital": "Dili",
-        "currency": "USD",
-        "currency_name": "United States dollar",
-        "currency_symbol": "$",
-        "tld": ".tl",
-        "native": "Timor-Leste",
-        "region": "Asia",
-        "region_id": "3",
-        "subregion": "South-Eastern Asia",
-        "subregion_id": "13",
-        "nationality": "Timorese",
-        "timezones": [
-            {
-                "zoneName": "Asia\/Dili",
-                "gmtOffset": 32400,
-                "gmtOffsetName": "UTC+09:00",
-                "abbreviation": "TLT",
-                "tzName": "Timor Leste Time"
-            }
-        ],
-        "translations": {
-            "kr": "동티모르",
-            "pt-BR": "Timor Leste",
-            "pt": "Timor Leste",
-            "nl": "Oost-Timor",
-            "hr": "Istočni Timor",
-            "fa": "تیمور شرقی",
-            "de": "Timor-Leste",
-            "es": "Timor Oriental",
-            "fr": "Timor oriental",
-            "ja": "東ティモール",
-            "it": "Timor Est",
-            "cn": "东帝汶",
-            "tr": "Doğu Timor"
-        },
-        "latitude": "-8.83333333",
-        "longitude": "125.91666666",
-        "emoji": "🇹🇱",
-        "emojiU": "U+1F1F9 U+1F1F1"
-    },
-    {
         "id": 64,
         "name": "Ecuador",
         "iso3": "ECU",
@@ -3833,6 +3786,53 @@
         "longitude": "26.00000000",
         "emoji": "🇪🇪",
         "emojiU": "U+1F1EA U+1F1EA"
+    },
+    {
+        "id": 212,
+        "name": "Eswatini",
+        "iso3": "SWZ",
+        "iso2": "SZ",
+        "numeric_code": "748",
+        "phone_code": "268",
+        "capital": "Mbabane",
+        "currency": "SZL",
+        "currency_name": "Lilangeni",
+        "currency_symbol": "E",
+        "tld": ".sz",
+        "native": "Swaziland",
+        "region": "Africa",
+        "region_id": "1",
+        "subregion": "Southern Africa",
+        "subregion_id": "5",
+        "nationality": "Swazi",
+        "timezones": [
+            {
+                "zoneName": "Africa\/Mbabane",
+                "gmtOffset": 7200,
+                "gmtOffsetName": "UTC+02:00",
+                "abbreviation": "SAST",
+                "tzName": "South African Standard Time"
+            }
+        ],
+        "translations": {
+            "kr": "에스와티니",
+            "pt-BR": "Suazilândia",
+            "pt": "Suazilândia",
+            "nl": "Swaziland",
+            "hr": "Svazi",
+            "fa": "سوازیلند",
+            "de": "Swasiland",
+            "es": "Suazilandia",
+            "fr": "Swaziland",
+            "ja": "スワジランド",
+            "it": "Swaziland",
+            "cn": "斯威士兰",
+            "tr": "Esvatini"
+        },
+        "latitude": "-26.50000000",
+        "longitude": "31.50000000",
+        "emoji": "🇸🇿",
+        "emojiU": "U+1F1F8 U+1F1FF"
     },
     {
         "id": 70,
@@ -8770,7 +8770,7 @@
     },
     {
         "id": 171,
-        "name": "Papua new Guinea",
+        "name": "Papua New Guinea",
         "iso3": "PNG",
         "iso2": "PG",
         "numeric_code": "598",
@@ -9624,7 +9624,7 @@
     },
     {
         "id": 185,
-        "name": "Saint Kitts And Nevis",
+        "name": "Saint Kitts and Nevis",
         "iso3": "KNA",
         "iso2": "KN",
         "numeric_code": "659",
@@ -9765,7 +9765,7 @@
     },
     {
         "id": 188,
-        "name": "Saint Vincent And The Grenadines",
+        "name": "Saint Vincent and the Grenadines",
         "iso3": "VCT",
         "iso2": "VC",
         "numeric_code": "670",
@@ -10951,7 +10951,7 @@
     },
     {
         "id": 211,
-        "name": "Svalbard And Jan Mayen Islands",
+        "name": "Svalbard and Jan Mayen Islands",
         "iso3": "SJM",
         "iso2": "SJ",
         "numeric_code": "744",
@@ -10995,53 +10995,6 @@
         "longitude": "20.00000000",
         "emoji": "🇸🇯",
         "emojiU": "U+1F1F8 U+1F1EF"
-    },
-    {
-        "id": 212,
-        "name": "Swaziland",
-        "iso3": "SWZ",
-        "iso2": "SZ",
-        "numeric_code": "748",
-        "phone_code": "268",
-        "capital": "Mbabane",
-        "currency": "SZL",
-        "currency_name": "Lilangeni",
-        "currency_symbol": "E",
-        "tld": ".sz",
-        "native": "Swaziland",
-        "region": "Africa",
-        "region_id": "1",
-        "subregion": "Southern Africa",
-        "subregion_id": "5",
-        "nationality": "Swazi",
-        "timezones": [
-            {
-                "zoneName": "Africa\/Mbabane",
-                "gmtOffset": 7200,
-                "gmtOffsetName": "UTC+02:00",
-                "abbreviation": "SAST",
-                "tzName": "South African Standard Time"
-            }
-        ],
-        "translations": {
-            "kr": "에스와티니",
-            "pt-BR": "Suazilândia",
-            "pt": "Suazilândia",
-            "nl": "Swaziland",
-            "hr": "Svazi",
-            "fa": "سوازیلند",
-            "de": "Swasiland",
-            "es": "Suazilandia",
-            "fr": "Swaziland",
-            "ja": "スワジランド",
-            "it": "Swaziland",
-            "cn": "斯威士兰",
-            "tr": "Esvatini"
-        },
-        "latitude": "-26.50000000",
-        "longitude": "31.50000000",
-        "emoji": "🇸🇿",
-        "emojiU": "U+1F1F8 U+1F1FF"
     },
     {
         "id": 213,
@@ -11420,6 +11373,53 @@
         "emojiU": "U+1F1E7 U+1F1F8"
     },
     {
+        "id": 63,
+        "name": "Timor-Leste",
+        "iso3": "TLS",
+        "iso2": "TL",
+        "numeric_code": "626",
+        "phone_code": "670",
+        "capital": "Dili",
+        "currency": "USD",
+        "currency_name": "United States dollar",
+        "currency_symbol": "$",
+        "tld": ".tl",
+        "native": "Timor-Leste",
+        "region": "Asia",
+        "region_id": "3",
+        "subregion": "South-Eastern Asia",
+        "subregion_id": "13",
+        "nationality": "Timorese",
+        "timezones": [
+            {
+                "zoneName": "Asia\/Dili",
+                "gmtOffset": 32400,
+                "gmtOffsetName": "UTC+09:00",
+                "abbreviation": "TLT",
+                "tzName": "Timor Leste Time"
+            }
+        ],
+        "translations": {
+            "kr": "동티모르",
+            "pt-BR": "Timor Leste",
+            "pt": "Timor Leste",
+            "nl": "Oost-Timor",
+            "hr": "Istočni Timor",
+            "fa": "تیمور شرقی",
+            "de": "Timor-Leste",
+            "es": "Timor Oriental",
+            "fr": "Timor oriental",
+            "ja": "東ティモール",
+            "it": "Timor Est",
+            "cn": "东帝汶",
+            "tr": "Doğu Timor"
+        },
+        "latitude": "-8.83333333",
+        "longitude": "125.91666666",
+        "emoji": "🇹🇱",
+        "emojiU": "U+1F1F9 U+1F1F1"
+    },
+    {
         "id": 220,
         "name": "Togo",
         "iso3": "TGO",
@@ -11562,7 +11562,7 @@
     },
     {
         "id": 223,
-        "name": "Trinidad And Tobago",
+        "name": "Trinidad and Tobago",
         "iso3": "TTO",
         "iso2": "TT",
         "numeric_code": "780",
@@ -11750,7 +11750,7 @@
     },
     {
         "id": 227,
-        "name": "Turks And Caicos Islands",
+        "name": "Turks and Caicos Islands",
         "iso3": "TCA",
         "iso2": "TC",
         "numeric_code": "796",
@@ -12732,7 +12732,7 @@
     },
     {
         "id": 243,
-        "name": "Wallis And Futuna Islands",
+        "name": "Wallis and Futuna Islands",
         "iso3": "WLF",
         "iso2": "WF",
         "numeric_code": "876",
