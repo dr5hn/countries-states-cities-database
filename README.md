@@ -44,7 +44,7 @@ Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,084 <br>
 Total Cities/Towns/Districts : 150,573 <br>
 
-Last Updated On : 26th Feb 2024
+Last Updated On : 15th May 2024
 
 ## Next API Database Update
 
