@@ -1,4 +1,4 @@
-name: Export JSON/XML/YAML/CSV/PSQL
+name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   export_json_xml:
-    name: JSON/XML/YAML/CSV/PSQL
+    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
     runs-on: ubuntu-latest
 
     strategy:
@@ -26,6 +26,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -41,6 +46,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pgloader
           sudo apt install postgresql-16 -y
+          python -m pip install --upgrade pip
+          pip install mysql-to-sqlite3
 
       - name: Setup MySQL
         uses: shogo82148/actions-setup-mysql@v1
@@ -86,7 +93,7 @@ jobs:
           cd scripts/vendor
           composer install
 
-      - name: Export JSON/XML/YAML/CSV/PSQL
+      - name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
         run: |
           php scripts/export.php
           php scripts/export_xml.php
@@ -103,6 +110,12 @@ jobs:
           pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $state_count -t public.states > psql/states.sql
           pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $city_count -t public.cities > psql/cities.sql
           pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert 10000 -t public.regions -t public.subregions -t public.countries -t public.states -t public.cities > psql/world.sql
+          mysql2sqlite --version
+          mysql2sqlite -d world -t regions --mysql-password root -u root -f sqlite/regions.sqlite3
+          mysql2sqlite -d world -t subregions --mysql-password root -u root -f sqlite/subregions.sqlite3
+          mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
+          mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
+          mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
 
       - name: Update README.md
         run: |
@@ -116,13 +129,13 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Add exported JSON, CSV, XML & YAML & PSQL files
+          commit-message: Add exported JSON, CSV, XML & YAML & PSQL & SQLITE files
           committer: Darshan Gada <gadadarshan@gmail.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: "(chore): Export JSON, CSV, XML & YAML & PSQL files"
+          title: "(chore): Export JSON, CSV, XML & YAML & PSQL & SQLITE files"
           labels: |
             exports
             automated

@@ -4,7 +4,7 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, SQL, PSQL, XML, YAML & CSV format.
+Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, XML, YAML & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 ## API 🚀
 🎉 Introducing **API** for Countries States Cities Database.
@@ -15,24 +15,25 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 
 ## Available Formats
 - JSON
-- SQL
+- MYSQL
 - PSQL
+- SQLITE
 - XML
 - YAML
 - CSV
 
 ## Distribution Files Info
-File | JSON | SQL | PSQL | XML | YAML | CSV
-:------------ | :-------------| :-------------| :-------------| :------------- |:-------------|:-------------
-Regions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
-Subregions | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
-Countries | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
-States | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
-Cities | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark:
-Country+States | :white_check_mark: | NA | NA | :white_check_mark: | :white_check_mark: | NA
-Country+Cities | :white_check_mark: | NA | NA | :white_check_mark: | :white_check_mark: | NA
-State+Cities | :white_check_mark: | NA | NA | :white_check_mark: | :white_check_mark: | NA
-Country+State+Cities/World | :white_check_mark: |  :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA
+| File                       | JSON               | MYSQL              | PSQL               | SQLITE             | XML                | YAML               | CSV                |
+| :------------------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- |
+| Regions                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Subregions                 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | :white_check_mark: | :white_check_mark: | NA                 |
+| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | :white_check_mark: | :white_check_mark: | NA                 |
+| State+Cities               | :white_check_mark: | NA                 | NA                 | NA                 | :white_check_mark: | :white_check_mark: | NA                 |
+| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 |
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/
