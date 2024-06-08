@@ -76,7 +76,7 @@ jobs:
 
       - name: NMIG
         run: |
-          mv nmig.config.json nmig/config/config.json
+          cp nmig.config.json nmig/config/config.json
           cd nmig
           npm install
           npm run build
