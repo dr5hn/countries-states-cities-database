@@ -65,7 +65,7 @@ jobs:
 
       - name: Setup PostgreSQL DB
         run: |
-          psql -U root -c "CREATE DATABASE world;"
+          psql -U postgres -c "CREATE DATABASE world;"
           psql -U postgres -c "\l"
 
       - name: Setup MySQL DB
