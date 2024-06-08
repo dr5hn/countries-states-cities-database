@@ -13,10 +13,6 @@ on:
         description: "Passcode"
         required: true
 
-env:
-  POSTGRES_PASSWORD: root
-  DB_NAME: world
-
 jobs:
   export_json_xml:
     name: JSON/XML/YAML/CSV/PSQL
