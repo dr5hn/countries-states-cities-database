@@ -53,6 +53,7 @@ jobs:
         run: |
           sudo systemctl start postgresql.service
           pg_isready
+          sudo -u postgres createuser -s -d -r -w root
 
       - name: Add clean commands to world.sql
         run: |
@@ -65,8 +66,8 @@ jobs:
 
       - name: Setup PostgreSQL DB
         run: |
-          psql -U postgres -c "CREATE DATABASE world;"
-          psql -U postgres -c "\l"
+          psql -U root -c "CREATE DATABASE world;"
+          psql -U root -c "\l"
 
       - name: Setup MySQL DB
         run: |
@@ -123,12 +124,12 @@ jobs:
 
       - name: Export PostgreSQL SQL
         run: |
-          pg_dump -U postgres -t regions world > psql/regions.sql
-          pg_dump -U postgres -t subregions world > psql/subregions.sql
-          pg_dump -U postgres -t countries world > psql/countries.sql
-          pg_dump -U postgres -t states world > psql/states.sql
-          pg_dump -U postgres -t cities world > psql/cities.sql
-          pg_dump -U postgres world > psql/world.sql
+          pg_dump -U root -t regions world > psql/regions.sql
+          pg_dump -U root -t subregions world > psql/subregions.sql
+          pg_dump -U root -t countries world > psql/countries.sql
+          pg_dump -U root -t states world > psql/states.sql
+          pg_dump -U root -t cities world > psql/cities.sql
+          pg_dump -U root world > psql/world.sql
 
       - name: Update README.md
         run: |
