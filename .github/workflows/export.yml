@@ -13,48 +13,51 @@ on:
         description: "Passcode"
         required: true
 
+env:
+  POSTGRES_PASSWORD: root
+  DB_NAME: world
+
 jobs:
   export_json_xml:
     name: JSON/XML/YAML/CSV/PSQL
     runs-on: ubuntu-latest
 
     strategy:
+      matrix:
+        php-version: [8.1]
+        node-version: [20.x]
       fail-fast: false
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
+          submodules: true
           ref: ${{ github.head_ref }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.1"
+          php-version: ${{ matrix.php-version }}
           extensions: intl #optional
+          coverage: none
           ini-values: "post_max_size=256M" #optional
 
-      - name: Setup tools
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Start MySQL service
         run: |
-          sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-          sudo apt-get update
-          sudo apt-get install -y pgloader
-          sudo apt install postgresql-16 -y
+          sudo systemctl start mysql.service
+          mysql -V
 
-      - name: Setup MySQL
-        uses: shogo82148/actions-setup-mysql@v1
-        with:
-          mysql-version: "5.7"
-          root-password: root
-
-      - name: Setup PostgreSQL
-        uses: harmon758/postgresql-action@v1
-        with:
-          postgresql version: "16"
-          postgresql db: world
-          postgresql user: root
-          postgresql password: root
+      - name: Start PostgreSQL service
+        run: |
+          sudo systemctl start postgresql.service
+          pg_isready
 
       - name: Add clean commands to world.sql
         run: |
@@ -65,12 +68,25 @@ jobs:
           echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
 
-      - name: Import data to MySQL and migrate to PostgreSQL
+      - name: Setup PostgreSQL DB
         run: |
+          psql -U root -c "CREATE DATABASE world;"
+          psql -U postgres -c "\l"
+
+      - name: Setup MySQL DB
+        run: |
+          ls -R
           mysql -uroot -proot -e "CREATE DATABASE world;"
+          mysql -uroot -proot -e "SHOW DATABASES;"
           mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
-          pgloader --version
-          pgloader .github/my.load
+
+      - name: NMIG
+        run: |
+          mv nmig.config.json nmig/config/config.json
+          cd nmig
+          npm install
+          npm run build
+          npm start
 
       - name: Setup variables
         run: |
@@ -86,23 +102,38 @@ jobs:
           cd scripts/vendor
           composer install
 
-      - name: Export JSON/XML/YAML/CSV/PSQL
+      - name: Export JSON
         run: |
           php scripts/export.php
+
+      - name: Export XML
+        run: |
           php scripts/export_xml.php
+
+      - name: Export YAML
+        run: |
           php scripts/export_yaml.php
+
+      - name: Export CSV
+        run: |
           php scripts/export_csv.php
+
+      - name: Export MySQL SQL
+        run: |
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $region_count -t public.regions > psql/regions.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $subregion_count -t public.subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $country_count -t public.countries > psql/countries.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $state_count -t public.states > psql/states.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert $city_count -t public.cities > psql/cities.sql
-          pg_dump --dbname=postgresql://root:root@localhost/world -Fp --clean --rows-per-insert 10000 -t public.regions -t public.subregions -t public.countries -t public.states -t public.cities > psql/world.sql
+
+      - name: Export PostgreSQL SQL
+        run: |
+          pg_dump -U postgres -t regions world > psql/regions.sql
+          pg_dump -U postgres -t subregions world > psql/subregions.sql
+          pg_dump -U postgres -t countries world > psql/countries.sql
+          pg_dump -U postgres -t states world > psql/states.sql
+          pg_dump -U postgres -t cities world > psql/cities.sql
+          pg_dump -U postgres world > psql/world.sql
 
       - name: Update README.md
         run: |
