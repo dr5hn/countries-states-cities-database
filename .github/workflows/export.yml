@@ -124,12 +124,12 @@ jobs:
         env:
           PGPASSWORD: postgres
         run: |
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --clean > psql/world.sql
 
       - name: Update README.md
         run: |
