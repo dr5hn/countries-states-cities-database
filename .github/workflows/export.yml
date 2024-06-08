@@ -53,7 +53,10 @@ jobs:
         run: |
           sudo systemctl start postgresql.service
           pg_isready
-          sudo -u postgres createuser -s -d -r -w root
+          pg_lsclusters
+          sudo -u postgres psql -c "CREATE DATABASE world;"
+          sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+          sudo -u postgres psql -c "\l"
 
       - name: Add clean commands to world.sql
         run: |
@@ -63,11 +66,6 @@ jobs:
           echo -e "DROP TABLE IF EXISTS \`countries\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
           echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
-
-      - name: Setup PostgreSQL DB
-        run: |
-          psql -U root -c "CREATE DATABASE world;"
-          psql -U root -c "\l"
 
       - name: Setup MySQL DB
         run: |
@@ -123,13 +121,15 @@ jobs:
           mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
 
       - name: Export PostgreSQL SQL
+        env:
+          PGPASSWORD: postgres
         run: |
-          pg_dump -U root -t regions world > psql/regions.sql
-          pg_dump -U root -t subregions world > psql/subregions.sql
-          pg_dump -U root -t countries world > psql/countries.sql
-          pg_dump -U root -t states world > psql/states.sql
-          pg_dump -U root -t cities world > psql/cities.sql
-          pg_dump -U root world > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world > psql/world.sql
 
       - name: Update README.md
         run: |
