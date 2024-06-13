@@ -1,4 +1,4 @@
-name: Export JSON/XML/YAML/CSV/PSQL
+name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   export_json_xml:
-    name: JSON/XML/YAML/CSV/PSQL
+    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
     runs-on: ubuntu-latest
 
     strategy:
@@ -86,7 +86,7 @@ jobs:
           cd scripts/vendor
           composer install
 
-      - name: Export JSON/XML/YAML/CSV/PSQL
+      - name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
         run: |
           php scripts/export.php
           php scripts/export_xml.php
@@ -116,13 +116,13 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          commit-message: Add exported JSON, CSV, XML & YAML & PSQL files
+          commit-message: Add exported JSON, CSV, XML & YAML & PSQL & SQLITE files
           committer: Darshan Gada <gadadarshan@gmail.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: '(chore): Export JSON, CSV, XML & YAML & PSQL files'
+          title: "(chore): Export JSON, CSV, XML & YAML & PSQL & SQLITE files"
           labels: |
             exports
             automated
