@@ -159,11 +159,10 @@ jobs:
           sed -i "s/Last Updated On : .*$/Last Updated On : $current_date/" README.md
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v6
         with:
           commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL & SQLITE files
           committer: Darshan Gada <gadadarshan@gmail.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: true
           branch: export/Files
           delete-branch: true
