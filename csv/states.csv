@@ -1184,6 +1184,12 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2,"Somali Region",70,ET,Ethiopia,SO,,6.66122930,43.79084530
 1,"Southern Nations, Nationalities, and Peoples' Region",70,ET,Ethiopia,SN,,6.51569110,36.95410700
 4,"Tigray Region",70,ET,Ethiopia,TI,,14.03233360,38.31657250
+5229,Eysturoy,72,FO,"Faroe Islands",EY,region,62.19787370,-7.18239060
+5230,"Northern Isles",72,FO,"Faroe Islands",NO,region,62.28056890,6.70170610
+5231,Sandoy,72,FO,"Faroe Islands",SA,region,61.83651690,-6.96301660
+5232,Streymoy,72,FO,"Faroe Islands",ST,region,62.12338200,-7.32641080
+5233,Suðuroy,72,FO,"Faroe Islands",SU,region,61.52118160,-7.00190140
+5234,Vágar,72,FO,"Faroe Islands",VA,region,62.08998350,-7.42768370
 1917,Ba,73,FJ,"Fiji Islands",01,,36.06138930,-95.80058720
 1930,Bua,73,FJ,"Fiji Islands",02,,43.09645840,-89.50088000
 1924,Cakaudrove,73,FJ,"Fiji Islands",03,,-16.58141050,179.51200840
@@ -2476,8 +2482,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 119,Qormi,135,MT,Malta,43,,35.87643880,14.46941860
 111,Qrendi,135,MT,Malta,44,,35.83284880,14.45486210
 83,Rabat,135,MT,Malta,46,,33.97159040,-6.84981290
-87,"Saint Lawrence",135,MT,Malta,50,,38.95780560,-95.25656890
 75,"San Ġwann",135,MT,Malta,49,,35.90773650,14.47524160
+87,"San Lawrenz",135,MT,Malta,50,,38.95780560,-95.25656890
 116,Sannat,135,MT,Malta,52,,36.01926430,14.25994370
 94,"Santa Luċija",135,MT,Malta,53,,35.85614200,14.50436000
 90,"Santa Venera",135,MT,Malta,54,,35.89022010,14.47669740
@@ -3080,6 +3086,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4847,"Central Province",171,PG,"Papua New Guinea",CPM,,,
 4846,"Chimbu Province",171,PG,"Papua New Guinea",CPK,,-6.30876820,144.87312190
 4834,"East New Britain",171,PG,"Papua New Guinea",EBR,,-4.61289430,151.88773210
+5228,"East Sepik",171,PG,"Papua New Guinea",ESW,province,-4.00000000,143.75000000
 4845,"Eastern Highlands Province",171,PG,"Papua New Guinea",EHG,,-6.58616740,145.66896360
 4848,"Enga Province",171,PG,"Papua New Guinea",EPW,,-5.30058490,143.56356370
 4839,Gulf,171,PG,"Papua New Guinea",GPK,,37.05483150,-94.43704190
@@ -3238,22 +3245,22 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1357,"Zamboanga del Sur",174,PH,Philippines,ZAS,province,7.83830540,123.29666570
 1325,"Zamboanga Peninsula",174,PH,Philippines,09,region,8.15407700,123.25879300
 1362,"Zamboanga Sibugay",174,PH,Philippines,ZSI,province,7.52252470,122.31075170
-1634,"Greater Poland Voivodeship",176,PL,Poland,WP,,52.27998600,17.35229390
-1625,"Kuyavian-Pomeranian Voivodeship",176,PL,Poland,KP,,53.16483630,18.48342240
-1635,"Lesser Poland Voivodeship",176,PL,Poland,MA,,49.72253060,20.25033580
-1629,"Lower Silesian Voivodeship",176,PL,Poland,DS,,51.13398610,16.88419610
-1638,"Lublin Voivodeship",176,PL,Poland,LU,,51.24935190,23.10113920
-1631,"Lubusz Voivodeship",176,PL,Poland,LB,,52.22746120,15.25591030
-1636,"Łódź Voivodeship",176,PL,Poland,LD,,51.46347710,19.17269740
-1637,"Masovian Voivodeship",176,PL,Poland,MZ,,51.89271820,21.00216790
-1622,"Opole Voivodeship",176,PL,Poland,OP,,50.80037610,17.93798900
-1626,"Podkarpackie Voivodeship",176,PL,Poland,PK,,50.05747490,22.08956910
-1632,"Podlaskie Voivodeship",176,PL,Poland,PD,,53.06971590,22.96746390
-1624,"Pomeranian Voivodeship",176,PL,Poland,PM,,54.29442520,18.15311640
-1623,"Silesian Voivodeship",176,PL,Poland,SL,,50.57165950,19.32197680
-1630,"Świętokrzyskie Voivodeship",176,PL,Poland,SK,,50.62610410,20.94062790
-1628,"Warmian-Masurian Voivodeship",176,PL,Poland,WN,,53.86711170,20.70278610
-1633,"West Pomeranian Voivodeship",176,PL,Poland,ZP,,53.46578910,15.18225810
+1634,"Greater Poland",176,PL,Poland,30,voivodship,52.27998600,17.35229390
+1630,"Holy Cross",176,PL,Poland,26,voivodship,50.62610410,20.94062790
+1625,Kuyavia-Pomerania,176,PL,Poland,04,voivodship,53.16483630,18.48342240
+1635,"Lesser Poland",176,PL,Poland,12,voivodship,49.72253060,20.25033580
+1629,"Lower Silesia",176,PL,Poland,02,voivodship,51.13398610,16.88419610
+1638,Lublin,176,PL,Poland,06,voivodship,51.24935190,23.10113920
+1631,Lubusz,176,PL,Poland,08,voivodship,52.22746120,15.25591030
+1636,Łódź,176,PL,Poland,10,voivodship,51.46347710,19.17269740
+1637,Mazovia,176,PL,Poland,14,voivodship,51.89271820,21.00216790
+1632,Podlaskie,176,PL,Poland,20,voivodship,53.06971590,22.96746390
+1624,Pomerania,176,PL,Poland,22,voivodship,54.29442520,18.15311640
+1623,Silesia,176,PL,Poland,24,voivodship,50.57165950,19.32197680
+1626,Subcarpathia,176,PL,Poland,18,voivodship,50.05747490,22.08956910
+1622,"Upper Silesia",176,PL,Poland,16,voivodship,50.80037610,17.93798900
+1628,Warmia-Masuria,176,PL,Poland,28,voivodship,53.86711170,20.70278610
+1633,"West Pomerania",176,PL,Poland,32,voivodship,53.46578910,15.18225810
 2233,Açores,177,PT,Portugal,20,,37.74124880,-25.67559440
 2235,Aveiro,177,PT,Portugal,01,,40.72090230,-8.57210160
 2230,Beja,177,PT,Portugal,02,,37.96877860,-7.87216000
