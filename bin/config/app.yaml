@@ -1,0 +1,11 @@
+application:
+  name: ady_microservices_users
+  path_log: "/logs"
+
+database:
+  mysql:
+    hostname: "127.0.0.1"
+    port: "3306"
+    username: "root"
+    password: "asdf1234#"
+    database: "countries-states-cities-database"

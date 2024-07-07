@@ -1,0 +1,51 @@
+#!/usr/bin/env php
+<?php
+
+namespace scripts;
+define('PATH_BASE', __DIR__);
+chdir(PATH_BASE);
+ini_set('memory_limit', -1);
+require_once PATH_BASE.'/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Carbon\Carbon;
+use Symfony\Component\Console\Command\Command;
+
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+class ConsoleApplication extends Application
+{
+    public function __construct()
+    {
+        parent::__construct('Console Application');
+        $commands_dir = array_diff(scandir(PATH_BASE.'/Commands'), array('.', '..'));
+        $classes = [];
+        foreach ($commands_dir as $file){
+            $class_path = 'bin\Commands\\'.basename($file, ".php");
+            $class = new $class_path();
+            if($class instanceof Command){
+                $classes[] = new $class();
+            }
+        }
+        $this->addCommands($classes);
+    }
+
+    public function doRun(InputInterface $input, OutputInterface $output)
+    {
+        // always show the version information except when the user invokes the help
+        // command as that already does it
+        if (($input->hasParameterOption(['--help', '-h']) !== false) || ($input->getFirstArgument() !== null && $input->getFirstArgument() !== 'list')) {
+            $output->writeln($this->getLongVersion(). ' start at ' . Carbon::now() );
+            $output->writeln('');
+        }
+
+        return parent::doRun($input, $output);
+    }
+}
+
+$application = new ConsoleApplication();
+$application->run();

@@ -1,0 +1,22 @@
+{
+    "name": "dr5hn/csc-db",
+    "description": "Full Database of city state country available in JSON and SQL Format All Countries, States & Cities are Covered and Populated with Different Combinations & Versions.",
+    "version": "v0.2",
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "mashape/unirest-php": "^3.0",
+        "spatie/array-to-xml": "^3.3.0",
+        "symfony/yaml": "^6.0",
+        "nesbot/carbon": "^3.6",
+        "symfony/console": "^6.4",
+        "hassankhan/config": "^3.1",
+        "monolog/monolog": "^3.7",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": { "bin\\": ["../bin"] }
+    }
+}
