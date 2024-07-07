@@ -158,7 +158,7 @@ INSERT INTO public.states VALUES (83, 'Rabat', 135, 'MT', '28', '46', NULL, 33.9
 INSERT INTO public.states VALUES (84, 'Floriana', 135, 'MT', '28', '09', NULL, 45.49521850, -73.71395760, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q832807');
 INSERT INTO public.states VALUES (85, 'Żebbuġ Gozo', 135, 'MT', '28', '65', NULL, 36.07164030, 14.24540800, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q179243');
 INSERT INTO public.states VALUES (86, 'Swieqi', 135, 'MT', '28', '57', NULL, 35.91911820, 14.46941860, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q220667');
-INSERT INTO public.states VALUES (87, 'Saint Lawrence', 135, 'MT', '50', '50', NULL, 38.95780560, -95.25656890, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q537308');
+INSERT INTO public.states VALUES (87, 'San Lawrenz', 135, 'MT', '50', '50', NULL, 38.95780560, -95.25656890, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q537308');
 INSERT INTO public.states VALUES (88, 'Birżebbuġa', 135, 'MT', '05', '05', NULL, 35.81359890, 14.52474630, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q258028');
 INSERT INTO public.states VALUES (89, 'Mdina', 135, 'MT', '05', '29', NULL, 35.88809300, 14.40683570, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q207277');
 INSERT INTO public.states VALUES (90, 'Santa Venera', 135, 'MT', '05', '54', NULL, 35.89022010, 14.47669740, '2019-10-05 23:18:36', '2022-08-31 15:52:51', 1, 'Q585420');
@@ -1637,22 +1637,22 @@ INSERT INTO public.states VALUES (1618, 'Kelmė District Municipality', 126, 'LT
 INSERT INTO public.states VALUES (1619, 'Zarasai District Municipality', 126, 'LT', '60', '60', NULL, 55.73096090, 26.24529500, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q664415');
 INSERT INTO public.states VALUES (1620, 'Vilkaviškis District Municipality', 126, 'LT', '60', '56', NULL, 54.65194500, 23.03515500, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q2021318');
 INSERT INTO public.states VALUES (1621, 'Utena County', 126, 'LT', '64', 'UT', NULL, 55.53189690, 25.79046990, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q188659');
-INSERT INTO public.states VALUES (1622, 'Opole Voivodeship', 176, 'PL', '79', 'OP', NULL, 50.80037610, 17.93798900, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54171');
-INSERT INTO public.states VALUES (1623, 'Silesian Voivodeship', 176, 'PL', '83', 'SL', NULL, 50.57165950, 19.32197680, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54181');
-INSERT INTO public.states VALUES (1624, 'Pomeranian Voivodeship', 176, 'PL', '82', 'PM', NULL, 54.29442520, 18.15311640, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54180');
-INSERT INTO public.states VALUES (1625, 'Kuyavian-Pomeranian Voivodeship', 176, 'PL', '73', 'KP', NULL, 53.16483630, 18.48342240, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54153');
-INSERT INTO public.states VALUES (1626, 'Podkarpackie Voivodeship', 176, 'PL', '80', 'PK', NULL, 50.05747490, 22.08956910, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54175');
-INSERT INTO public.states VALUES (1628, 'Warmian-Masurian Voivodeship', 176, 'PL', '85', 'WN', NULL, 53.86711170, 20.70278610, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54184');
-INSERT INTO public.states VALUES (1629, 'Lower Silesian Voivodeship', 176, 'PL', '72', 'DS', NULL, 51.13398610, 16.88419610, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54150');
-INSERT INTO public.states VALUES (1630, 'Świętokrzyskie Voivodeship', 176, 'PL', '84', 'SK', NULL, 50.62610410, 20.94062790, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54183');
-INSERT INTO public.states VALUES (1631, 'Lubusz Voivodeship', 176, 'PL', '76', 'LB', NULL, 52.22746120, 15.25591030, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54157');
-INSERT INTO public.states VALUES (1632, 'Podlaskie Voivodeship', 176, 'PL', '81', 'PD', NULL, 53.06971590, 22.96746390, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54177');
-INSERT INTO public.states VALUES (1633, 'West Pomeranian Voivodeship', 176, 'PL', '87', 'ZP', NULL, 53.46578910, 15.18225810, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54188');
-INSERT INTO public.states VALUES (1634, 'Greater Poland Voivodeship', 176, 'PL', '86', 'WP', NULL, 52.27998600, 17.35229390, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54187');
-INSERT INTO public.states VALUES (1635, 'Lesser Poland Voivodeship', 176, 'PL', '77', 'MA', NULL, 49.72253060, 20.25033580, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54159');
-INSERT INTO public.states VALUES (1636, 'Łódź Voivodeship', 176, 'PL', '74', 'LD', NULL, 51.46347710, 19.17269740, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54158');
-INSERT INTO public.states VALUES (1637, 'Masovian Voivodeship', 176, 'PL', '78', 'MZ', NULL, 51.89271820, 21.00216790, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54169');
-INSERT INTO public.states VALUES (1638, 'Lublin Voivodeship', 176, 'PL', '75', 'LU', NULL, 51.24935190, 23.10113920, '2019-10-05 23:18:43', '2022-08-31 15:52:51', 1, 'Q54155');
+INSERT INTO public.states VALUES (1622, 'Upper Silesia', 176, 'PL', '79', '16', 'voivodship', 50.80037610, 17.93798900, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54171');
+INSERT INTO public.states VALUES (1623, 'Silesia', 176, 'PL', '83', '24', 'voivodship', 50.57165950, 19.32197680, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54181');
+INSERT INTO public.states VALUES (1624, 'Pomerania', 176, 'PL', '82', '22', 'voivodship', 54.29442520, 18.15311640, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54180');
+INSERT INTO public.states VALUES (1625, 'Kuyavia-Pomerania', 176, 'PL', '73', '04', 'voivodship', 53.16483630, 18.48342240, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54153');
+INSERT INTO public.states VALUES (1626, 'Subcarpathia', 176, 'PL', '80', '18', 'voivodship', 50.05747490, 22.08956910, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54175');
+INSERT INTO public.states VALUES (1628, 'Warmia-Masuria', 176, 'PL', '85', '28', 'voivodship', 53.86711170, 20.70278610, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54184');
+INSERT INTO public.states VALUES (1629, 'Lower Silesia', 176, 'PL', '72', '02', 'voivodship', 51.13398610, 16.88419610, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54150');
+INSERT INTO public.states VALUES (1630, 'Holy Cross', 176, 'PL', '84', '26', 'voivodship', 50.62610410, 20.94062790, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54183');
+INSERT INTO public.states VALUES (1631, 'Lubusz', 176, 'PL', '76', '08', 'voivodship', 52.22746120, 15.25591030, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54157');
+INSERT INTO public.states VALUES (1632, 'Podlaskie', 176, 'PL', '81', '20', 'voivodship', 53.06971590, 22.96746390, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54177');
+INSERT INTO public.states VALUES (1633, 'West Pomerania', 176, 'PL', '87', '32', 'voivodship', 53.46578910, 15.18225810, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54188');
+INSERT INTO public.states VALUES (1634, 'Greater Poland', 176, 'PL', '86', '30', 'voivodship', 52.27998600, 17.35229390, '2019-10-05 23:18:43', '2024-07-07 12:45:52', 1, 'Q54187');
+INSERT INTO public.states VALUES (1635, 'Lesser Poland', 176, 'PL', '77', '12', 'voivodship', 49.72253060, 20.25033580, '2019-10-05 23:18:43', '2024-07-07 12:45:37', 1, 'Q54159');
+INSERT INTO public.states VALUES (1636, 'Łódź', 176, 'PL', '74', '10', 'voivodship', 51.46347710, 19.17269740, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54158');
+INSERT INTO public.states VALUES (1637, 'Mazovia', 176, 'PL', '78', '14', 'voivodship', 51.89271820, 21.00216790, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54169');
+INSERT INTO public.states VALUES (1638, 'Lublin', 176, 'PL', '75', '06', 'voivodship', 51.24935190, 23.10113920, '2019-10-05 23:18:43', '2024-07-07 12:45:10', 1, 'Q54155');
 INSERT INTO public.states VALUES (1639, 'Aargau', 214, 'CH', '01', 'AG', 'canton', 47.38766640, 8.25542950, '2019-10-05 23:18:43', '2021-11-13 19:21:51', 1, 'Q11972');
 INSERT INTO public.states VALUES (1640, 'Fribourg', 214, 'CH', '06', 'FR', 'canton', 46.68167480, 7.11726350, '2019-10-05 23:18:43', '2021-11-13 19:21:51', 1, 'Q12640');
 INSERT INTO public.states VALUES (1641, 'Basel-Land', 214, 'CH', '03', 'BL', 'canton', 47.44181220, 7.76440020, '2019-10-05 23:18:43', '2021-11-13 19:21:51', 1, 'Q12146');
@@ -3189,6 +3189,7 @@ INSERT INTO public.states VALUES (3196, 'Bubanza Province', 36, 'BI', '09', 'BB'
 INSERT INTO public.states VALUES (3197, 'Gitega Province', 36, 'BI', '13', 'GI', NULL, -3.49290510, 29.92779470, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q720843');
 INSERT INTO public.states VALUES (3198, 'Bujumbura Mairie Province', 36, 'BI', '24', 'BM', NULL, -3.38841410, 29.34826460, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q1816580');
 INSERT INTO public.states VALUES (3199, 'Ngozi Province', 36, 'BI', '19', 'NG', NULL, -2.89582430, 29.88152030, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q720852');
+INSERT INTO public.states VALUES (3268, 'Larache', 149, 'MA', '01', 'LAR', 'province', 35.17442710, -6.14739640, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q1759567');
 INSERT INTO public.states VALUES (3200, 'Bujumbura Rural Province', 36, 'BI', '25', 'BL', NULL, -3.50901440, 29.46435900, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q645043');
 INSERT INTO public.states VALUES (3201, 'Cankuzo Province', 36, 'BI', '11', 'CA', NULL, -3.15277880, 30.61998950, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q645033');
 INSERT INTO public.states VALUES (3202, 'Bururi Province', 36, 'BI', '10', 'BR', NULL, -3.90068510, 29.51077080, '2019-10-05 23:18:53', '2022-08-31 15:52:51', 1, 'Q431385');
@@ -3252,7 +3253,6 @@ INSERT INTO public.states VALUES (3264, 'Grand Port', 140, 'MU', '14', 'GP', 'di
 INSERT INTO public.states VALUES (3265, 'Guelmim', 149, 'MA', '10', 'GUE', 'province', 28.98836590, -10.05274980, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q923219');
 INSERT INTO public.states VALUES (3266, 'Aousserd (EH)', 149, 'MA', '12', 'AOU', 'province', 22.55215380, -14.32973530, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q972665');
 INSERT INTO public.states VALUES (3267, 'Al Hoceïma', 149, 'MA', '01', 'HOC', 'province', 35.24455890, -3.93174680, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q1969619');
-INSERT INTO public.states VALUES (3268, 'Larache', 149, 'MA', '01', 'LAR', 'province', 35.17442710, -6.14739640, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q1759567');
 INSERT INTO public.states VALUES (3269, 'Ouarzazate', 149, 'MA', '08', 'OUA', 'province', 30.93354360, -6.93701600, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q1629229');
 INSERT INTO public.states VALUES (3270, 'Boulemane', 149, 'MA', '03', 'BOM', 'province', 33.36251590, -4.73033970, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q895063');
 INSERT INTO public.states VALUES (3271, 'L''Oriental', 149, 'MA', '02', '02', 'region', 37.06968300, -94.51227700, '2019-10-05 23:18:53', '2022-05-08 20:45:15', 1, 'Q23048167');
@@ -3369,7 +3369,6 @@ INSERT INTO public.states VALUES (3382, 'Chuquisaca Department', 27, 'BO', '01',
 INSERT INTO public.states VALUES (3383, 'Potosí Department', 27, 'BO', '07', 'P', NULL, -20.62471300, -66.99880110, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q238079');
 INSERT INTO public.states VALUES (3384, 'Saint George Parish', 188, 'VC', '04', '04', NULL, 42.95760900, -81.32670500, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q2300294');
 INSERT INTO public.states VALUES (3385, 'Saint Patrick Parish', 188, 'VC', '05', '05', NULL, 39.75091860, -94.84505560, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q1864637');
-INSERT INTO public.states VALUES (3574, 'Borkou', 43, 'TD', '23', 'BO', 'province', 17.86888450, 18.80761950, '2019-10-05 23:18:55', '2022-08-31 14:16:52', 1, 'Q1139666');
 INSERT INTO public.states VALUES (3386, 'Saint Andrew Parish', 188, 'VC', '02', '02', NULL, 43.02429990, -81.20250000, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q2305115');
 INSERT INTO public.states VALUES (3387, 'Saint David Parish', 188, 'VC', '03', '03', NULL, 43.85230950, -79.52366540, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q2412394');
 INSERT INTO public.states VALUES (3388, 'Grenadines Parish', 188, 'VC', '06', '06', NULL, 13.01229650, -61.22773010, '2019-10-05 23:18:54', '2022-08-31 15:52:51', 1, 'Q2545297');
@@ -3555,6 +3554,7 @@ INSERT INTO public.states VALUES (3570, 'Moyen-Chari', 43, 'TD', '17', 'MC', 'pr
 INSERT INTO public.states VALUES (3571, 'Mayo-Kebbi Ouest', 43, 'TD', '20', 'MO', 'province', 10.41130140, 15.59433880, '2019-10-05 23:18:55', '2022-08-31 14:19:32', 1, 'Q910393');
 INSERT INTO public.states VALUES (3572, 'Sila', 43, 'TD', '25', 'SI', 'province', 12.13074000, 21.28450250, '2019-10-05 23:18:55', '2022-08-31 14:19:32', 1, 'Q1149611');
 INSERT INTO public.states VALUES (3573, 'Hadjer-Lamis', 43, 'TD', '18', 'HL', 'province', 12.45772730, 16.72346390, '2019-10-05 23:18:55', '2022-08-31 14:16:52', 1, 'Q1042437');
+INSERT INTO public.states VALUES (3574, 'Borkou', 43, 'TD', '23', 'BO', 'province', 17.86888450, 18.80761950, '2019-10-05 23:18:55', '2022-08-31 14:16:52', 1, 'Q1139666');
 INSERT INTO public.states VALUES (3575, 'Ennedi-Est', 43, 'TD', '27', 'EE', 'province', 16.34204960, 23.00119890, '2019-10-05 23:18:55', '2022-08-31 14:16:52', 1, 'Q16632169');
 INSERT INTO public.states VALUES (3576, 'Guéra', 43, 'TD', '05', 'GR', 'province', 11.12190150, 18.42760470, '2019-10-05 23:18:55', '2022-08-31 14:19:32', 1, 'Q175706');
 INSERT INTO public.states VALUES (3577, 'Lac', 43, 'TD', '07', 'LC', 'province', 13.69153770, 14.10013260, '2019-10-05 23:18:55', '2022-08-31 14:19:32', 1, 'Q867869');
@@ -5156,13 +5156,20 @@ INSERT INTO public.states VALUES (5224, 'Melilla', 207, 'ES', '', 'ML', 'autonom
 INSERT INTO public.states VALUES (5225, 'South Province', 157, 'NC', '', '01', 'province', -22.27580000, 166.45800000, '2023-09-06 12:55:00', '2023-09-06 12:55:00', 1, 'Q965632');
 INSERT INTO public.states VALUES (5226, 'North Province', 157, 'NC', '', '02', 'province', -22.27580000, 166.45800000, '2023-09-06 12:55:00', '2023-09-06 12:55:00', 1, 'Q1612920');
 INSERT INTO public.states VALUES (5227, 'Loyalty Islands Province', 157, 'NC', '', '03', 'province', -20.96670000, 167.23330000, '2023-09-06 12:55:00', '2023-09-06 12:55:00', 1, 'Q18655787');
+INSERT INTO public.states VALUES (5228, 'East Sepik', 171, 'PG', '11', 'ESW', 'province', -4.00000000, 143.75000000, '2023-08-19 22:24:01', '2023-08-19 22:24:01', 1, 'Q690880');
+INSERT INTO public.states VALUES (5229, 'Eysturoy', 72, 'FO', NULL, 'EY', 'region', 62.19787370, -7.18239060, '2024-07-07 13:28:52', '2024-07-07 13:40:14', 1, '');
+INSERT INTO public.states VALUES (5230, 'Northern Isles', 72, 'FO', NULL, 'NO', 'region', 62.28056890, 6.70170610, '2024-07-07 13:32:29', '2024-07-07 13:35:50', 1, NULL);
+INSERT INTO public.states VALUES (5231, 'Sandoy', 72, 'FO', NULL, 'SA', 'region', 61.83651690, -6.96301660, '2024-07-07 13:32:29', '2024-07-07 13:35:50', 1, NULL);
+INSERT INTO public.states VALUES (5232, 'Streymoy', 72, 'FO', NULL, 'ST', 'region', 62.12338200, -7.32641080, '2024-07-07 13:32:29', '2024-07-07 13:35:50', 1, NULL);
+INSERT INTO public.states VALUES (5233, 'Suðuroy', 72, 'FO', NULL, 'SU', 'region', 61.52118160, -7.00190140, '2024-07-07 13:32:29', '2024-07-07 13:35:50', 1, NULL);
+INSERT INTO public.states VALUES (5234, 'Vágar', 72, 'FO', NULL, 'VA', 'region', 62.08998350, -7.42768370, '2024-07-07 13:32:29', '2024-07-07 13:35:50', 1, NULL);
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5227, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5234, true);
 
 
 --

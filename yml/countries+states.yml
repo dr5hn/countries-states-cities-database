@@ -278,7 +278,7 @@ country_state:
     iso3: ALA
     iso2: AX
     numeric_code: '248'
-    phone_code: +358-18
+    phone_code: 358-18
     capital: Mariehamn
     currency: EUR
     currency_name: Euro
@@ -1142,7 +1142,7 @@ country_state:
     iso3: ASM
     iso2: AS
     numeric_code: '016'
-    phone_code: +1-684
+    phone_code: 1-684
     capital: 'Pago Pago'
     currency: USD
     currency_name: 'US Dollar'
@@ -1439,7 +1439,7 @@ country_state:
     iso3: AIA
     iso2: AI
     numeric_code: '660'
-    phone_code: +1-264
+    phone_code: 1-264
     capital: 'The Valley'
     currency: XCD
     currency_name: 'East Caribbean dollar'
@@ -1579,7 +1579,7 @@ country_state:
     iso3: ATG
     iso2: AG
     numeric_code: '028'
-    phone_code: +1-268
+    phone_code: 1-268
     capital: "St. John's"
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -3574,7 +3574,7 @@ country_state:
     iso3: BRB
     iso2: BB
     numeric_code: '052'
-    phone_code: +1-246
+    phone_code: 1-246
     capital: Bridgetown
     currency: BBD
     currency_name: 'Barbadian dollar'
@@ -4132,7 +4132,7 @@ country_state:
     iso3: BMU
     iso2: BM
     numeric_code: '060'
-    phone_code: +1-441
+    phone_code: 1-441
     capital: Hamilton
     currency: BMD
     currency_name: 'Bermudian dollar'
@@ -6980,7 +6980,7 @@ country_state:
     iso3: CYM
     iso2: KY
     numeric_code: '136'
-    phone_code: +1-345
+    phone_code: 1-345
     capital: 'George Town'
     currency: KYD
     currency_name: 'Cayman Islands dollar'
@@ -10326,7 +10326,7 @@ country_state:
     iso3: DMA
     iso2: DM
     numeric_code: '212'
-    phone_code: +1-767
+    phone_code: 1-767
     capital: Roseau
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -10439,7 +10439,7 @@ country_state:
     iso3: DOM
     iso2: DO
     numeric_code: '214'
-    phone_code: '+1-809 and 1-829'
+    phone_code: '1-809 and 1-829'
     capital: 'Santo Domingo'
     currency: DOP
     currency_name: 'Dominican peso'
@@ -11899,7 +11899,49 @@ country_state:
     longitude: '-7.00000000'
     emoji: 🇫🇴
     emojiU: 'U+1F1EB U+1F1F4'
-    states: {  }
+    states:
+      -
+        id: 5229
+        name: Eysturoy
+        state_code: EY
+        latitude: '62.19787370'
+        longitude: '-7.18239060'
+        type: region
+      -
+        id: 5230
+        name: 'Northern Isles'
+        state_code: 'NO'
+        latitude: '62.28056890'
+        longitude: '6.70170610'
+        type: region
+      -
+        id: 5231
+        name: Sandoy
+        state_code: SA
+        latitude: '61.83651690'
+        longitude: '-6.96301660'
+        type: region
+      -
+        id: 5232
+        name: Streymoy
+        state_code: ST
+        latitude: '62.12338200'
+        longitude: '-7.32641080'
+        type: region
+      -
+        id: 5233
+        name: Suðuroy
+        state_code: SU
+        latitude: '61.52118160'
+        longitude: '-7.00190140'
+        type: region
+      -
+        id: 5234
+        name: Vágar
+        state_code: VA
+        latitude: '62.08998350'
+        longitude: '-7.42768370'
+        type: region
   -
     name: 'Fiji Islands'
     iso3: FJI
@@ -14363,7 +14405,7 @@ country_state:
     iso3: GRD
     iso2: GD
     numeric_code: '308'
-    phone_code: +1-473
+    phone_code: 1-473
     capital: "St. George's"
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -14498,7 +14540,7 @@ country_state:
     iso3: GUM
     iso2: GU
     numeric_code: '316'
-    phone_code: +1-671
+    phone_code: 1-671
     capital: Hagatna
     currency: USD
     currency_name: 'US Dollar'
@@ -14731,7 +14773,7 @@ country_state:
     iso3: GGY
     iso2: GG
     numeric_code: '831'
-    phone_code: +44-1481
+    phone_code: 44-1481
     capital: 'St Peter Port'
     currency: GBP
     currency_name: 'British pound'
@@ -18440,7 +18482,7 @@ country_state:
     iso3: JAM
     iso2: JM
     numeric_code: '388'
-    phone_code: +1-876
+    phone_code: 1-876
     capital: Kingston
     currency: JMD
     currency_name: 'Jamaican dollar'
@@ -18953,7 +18995,7 @@ country_state:
     iso3: JEY
     iso2: JE
     numeric_code: '832'
-    phone_code: +44-1534
+    phone_code: 44-1534
     capital: 'Saint Helier'
     currency: GBP
     currency_name: 'British pound'
@@ -23665,18 +23707,18 @@ country_state:
         longitude: '-6.84981290'
         type: null
       -
-        id: 87
-        name: 'Saint Lawrence'
-        state_code: '50'
-        latitude: '38.95780560'
-        longitude: '-95.25656890'
-        type: null
-      -
         id: 75
         name: 'San Ġwann'
         state_code: '49'
         latitude: '35.90773650'
         longitude: '14.47524160'
+        type: null
+      -
+        id: 87
+        name: 'San Lawrenz'
+        state_code: '50'
+        latitude: '38.95780560'
+        longitude: '-95.25656890'
         type: null
       -
         id: 116
@@ -23830,7 +23872,7 @@ country_state:
     iso3: IMN
     iso2: IM
     numeric_code: '833'
-    phone_code: +44-1624
+    phone_code: 44-1624
     capital: 'Douglas, Isle of Man'
     currency: GBP
     currency_name: 'British pound'
@@ -25465,7 +25507,7 @@ country_state:
     iso3: MSR
     iso2: MS
     numeric_code: '500'
-    phone_code: +1-664
+    phone_code: 1-664
     capital: Plymouth
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -28659,7 +28701,7 @@ country_state:
     iso3: MNP
     iso2: MP
     numeric_code: '580'
-    phone_code: +1-670
+    phone_code: 1-670
     capital: Saipan
     currency: USD
     currency_name: 'United States dollar'
@@ -29591,6 +29633,13 @@ country_state:
         latitude: '-4.61289430'
         longitude: '151.88773210'
         type: null
+      -
+        id: 5228
+        name: 'East Sepik'
+        state_code: ESW
+        latitude: '-4.00000000'
+        longitude: '143.75000000'
+        type: province
       -
         id: 4845
         name: 'Eastern Highlands Province'
@@ -30914,116 +30963,116 @@ country_state:
     states:
       -
         id: 1634
-        name: 'Greater Poland Voivodeship'
-        state_code: WP
+        name: 'Greater Poland'
+        state_code: '30'
         latitude: '52.27998600'
         longitude: '17.35229390'
-        type: null
-      -
-        id: 1625
-        name: 'Kuyavian-Pomeranian Voivodeship'
-        state_code: KP
-        latitude: '53.16483630'
-        longitude: '18.48342240'
-        type: null
-      -
-        id: 1635
-        name: 'Lesser Poland Voivodeship'
-        state_code: MA
-        latitude: '49.72253060'
-        longitude: '20.25033580'
-        type: null
-      -
-        id: 1629
-        name: 'Lower Silesian Voivodeship'
-        state_code: DS
-        latitude: '51.13398610'
-        longitude: '16.88419610'
-        type: null
-      -
-        id: 1638
-        name: 'Lublin Voivodeship'
-        state_code: LU
-        latitude: '51.24935190'
-        longitude: '23.10113920'
-        type: null
-      -
-        id: 1631
-        name: 'Lubusz Voivodeship'
-        state_code: LB
-        latitude: '52.22746120'
-        longitude: '15.25591030'
-        type: null
-      -
-        id: 1636
-        name: 'Łódź Voivodeship'
-        state_code: LD
-        latitude: '51.46347710'
-        longitude: '19.17269740'
-        type: null
-      -
-        id: 1637
-        name: 'Masovian Voivodeship'
-        state_code: MZ
-        latitude: '51.89271820'
-        longitude: '21.00216790'
-        type: null
-      -
-        id: 1622
-        name: 'Opole Voivodeship'
-        state_code: OP
-        latitude: '50.80037610'
-        longitude: '17.93798900'
-        type: null
-      -
-        id: 1626
-        name: 'Podkarpackie Voivodeship'
-        state_code: PK
-        latitude: '50.05747490'
-        longitude: '22.08956910'
-        type: null
-      -
-        id: 1632
-        name: 'Podlaskie Voivodeship'
-        state_code: PD
-        latitude: '53.06971590'
-        longitude: '22.96746390'
-        type: null
-      -
-        id: 1624
-        name: 'Pomeranian Voivodeship'
-        state_code: PM
-        latitude: '54.29442520'
-        longitude: '18.15311640'
-        type: null
-      -
-        id: 1623
-        name: 'Silesian Voivodeship'
-        state_code: SL
-        latitude: '50.57165950'
-        longitude: '19.32197680'
-        type: null
+        type: voivodship
       -
         id: 1630
-        name: 'Świętokrzyskie Voivodeship'
-        state_code: SK
+        name: 'Holy Cross'
+        state_code: '26'
         latitude: '50.62610410'
         longitude: '20.94062790'
-        type: null
+        type: voivodship
+      -
+        id: 1625
+        name: Kuyavia-Pomerania
+        state_code: '04'
+        latitude: '53.16483630'
+        longitude: '18.48342240'
+        type: voivodship
+      -
+        id: 1635
+        name: 'Lesser Poland'
+        state_code: '12'
+        latitude: '49.72253060'
+        longitude: '20.25033580'
+        type: voivodship
+      -
+        id: 1629
+        name: 'Lower Silesia'
+        state_code: '02'
+        latitude: '51.13398610'
+        longitude: '16.88419610'
+        type: voivodship
+      -
+        id: 1638
+        name: Lublin
+        state_code: '06'
+        latitude: '51.24935190'
+        longitude: '23.10113920'
+        type: voivodship
+      -
+        id: 1631
+        name: Lubusz
+        state_code: '08'
+        latitude: '52.22746120'
+        longitude: '15.25591030'
+        type: voivodship
+      -
+        id: 1636
+        name: Łódź
+        state_code: '10'
+        latitude: '51.46347710'
+        longitude: '19.17269740'
+        type: voivodship
+      -
+        id: 1637
+        name: Mazovia
+        state_code: '14'
+        latitude: '51.89271820'
+        longitude: '21.00216790'
+        type: voivodship
+      -
+        id: 1632
+        name: Podlaskie
+        state_code: '20'
+        latitude: '53.06971590'
+        longitude: '22.96746390'
+        type: voivodship
+      -
+        id: 1624
+        name: Pomerania
+        state_code: '22'
+        latitude: '54.29442520'
+        longitude: '18.15311640'
+        type: voivodship
+      -
+        id: 1623
+        name: Silesia
+        state_code: '24'
+        latitude: '50.57165950'
+        longitude: '19.32197680'
+        type: voivodship
+      -
+        id: 1626
+        name: Subcarpathia
+        state_code: '18'
+        latitude: '50.05747490'
+        longitude: '22.08956910'
+        type: voivodship
+      -
+        id: 1622
+        name: 'Upper Silesia'
+        state_code: '16'
+        latitude: '50.80037610'
+        longitude: '17.93798900'
+        type: voivodship
       -
         id: 1628
-        name: 'Warmian-Masurian Voivodeship'
-        state_code: WN
+        name: Warmia-Masuria
+        state_code: '28'
         latitude: '53.86711170'
         longitude: '20.70278610'
-        type: null
+        type: voivodship
       -
         id: 1633
-        name: 'West Pomeranian Voivodeship'
-        state_code: ZP
+        name: 'West Pomerania'
+        state_code: '32'
         latitude: '53.46578910'
         longitude: '15.18225810'
-        type: null
+        type: voivodship
   -
     name: Portugal
     iso3: PRT
@@ -31224,7 +31273,7 @@ country_state:
     iso3: PRI
     iso2: PR
     numeric_code: '630'
-    phone_code: '+1-787 and 1-939'
+    phone_code: '1-787 and 1-939'
     capital: 'San Juan'
     currency: USD
     currency_name: 'United States dollar'
@@ -33257,7 +33306,7 @@ country_state:
     iso3: KNA
     iso2: KN
     numeric_code: '659'
-    phone_code: +1-869
+    phone_code: 1-869
     capital: Basseterre
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -33405,7 +33454,7 @@ country_state:
     iso3: LCA
     iso2: LC
     numeric_code: '662'
-    phone_code: +1-758
+    phone_code: 1-758
     capital: Castries
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -33575,7 +33624,7 @@ country_state:
     iso3: VCT
     iso2: VC
     numeric_code: '670'
-    phone_code: +1-784
+    phone_code: 1-784
     capital: Kingstown
     currency: XCD
     currency_name: 'Eastern Caribbean dollar'
@@ -39938,7 +39987,7 @@ country_state:
     iso3: BHS
     iso2: BS
     numeric_code: '044'
-    phone_code: +1-242
+    phone_code: 1-242
     capital: Nassau
     currency: BSD
     currency_name: 'Bahamian dollar'
@@ -40601,7 +40650,7 @@ country_state:
     iso3: TTO
     iso2: TT
     numeric_code: '780'
-    phone_code: +1-868
+    phone_code: 1-868
     capital: 'Port of Spain'
     currency: TTD
     currency_name: 'Trinidad and Tobago dollar'
@@ -41662,7 +41711,7 @@ country_state:
     iso3: TCA
     iso2: TC
     numeric_code: '796'
-    phone_code: +1-649
+    phone_code: 1-649
     capital: 'Cockburn Town'
     currency: USD
     currency_name: 'United States dollar'
@@ -46774,7 +46823,7 @@ country_state:
     iso3: VGB
     iso2: VG
     numeric_code: '092'
-    phone_code: +1-284
+    phone_code: 1-284
     capital: 'Road Town'
     currency: USD
     currency_name: 'United States dollar'
@@ -46817,7 +46866,7 @@ country_state:
     iso3: VIR
     iso2: VI
     numeric_code: '850'
-    phone_code: +1-340
+    phone_code: 1-340
     capital: 'Charlotte Amalie'
     currency: USD
     currency_name: 'United States dollar'
