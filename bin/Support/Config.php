@@ -39,6 +39,14 @@ class Config
     public function __construct()
     {
         $this->env = new Env(PATH_BASE . '/');
+
+        $_ENV["PHINX_DBHOST"] = $this->getSettings()->get('database.mysql.hostname');
+        $_ENV["PHINX_DBNAME"] = $this->getSettings()->get('database.mysql.database');
+        $_ENV["PHINX_DBUSER"] = $this->getSettings()->get('database.mysql.username');
+        $_ENV["PHINX_DBPASS"] = $this->getSettings()->get('database.mysql.password');
+        $_ENV["PHINX_DBPORT"] = $this->getSettings()->get('database.mysql.port');
+        $_ENV["PHINX_APPENVIRONMENT"] = $this->getEnv()->get('APP_ENVIRONMENT');
+        $_ENV["PHINX_PATH_MIGRATIONS"] = PATH_BASE.'/db';
     }
 
     /**

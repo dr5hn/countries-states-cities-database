@@ -3,15 +3,25 @@
 
 namespace scripts;
 define('PATH_BASE', __DIR__);
-chdir(PATH_BASE);
+chdir(PATH_BASE.'/config');
 ini_set('memory_limit', -1);
 require_once PATH_BASE.'/vendor/autoload.php';
 
+use Phinx\Console\Command\Breakpoint;
+use Phinx\Console\Command\Create;
+use Phinx\Console\Command\ListAliases;
+use Phinx\Console\Command\Migrate;
+use Phinx\Console\Command\Rollback;
+use Phinx\Console\Command\SeedCreate;
+use Phinx\Console\Command\SeedRun;
+use Phinx\Console\Command\Status;
+use Phinx\Console\Command\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Carbon\Carbon;
 use Symfony\Component\Console\Command\Command;
+use bin\Support\Config;
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
@@ -22,6 +32,7 @@ class ConsoleApplication extends Application
     public function __construct()
     {
         parent::__construct('Console Application');
+        Config::getConfig();
         $commands_dir = array_diff(scandir(PATH_BASE.'/Commands'), array('.', '..'));
         $classes = [];
         foreach ($commands_dir as $file){
@@ -32,17 +43,23 @@ class ConsoleApplication extends Application
             }
         }
         $this->addCommands($classes);
+        $this->addCommands([
+            (new Create())->setName('manage:create'),
+            (new Migrate())->setName('manage:migrate'),
+            (new Rollback())->setName('manage:rollback'),
+            (new Status())->setName('manage:status'),
+            (new Breakpoint())->setName('manage:breakpoint'),
+            (new SeedCreate())->setName('seed:create'),
+            (new SeedRun())->setName('seed:run'),
+        ]);
     }
 
     public function doRun(InputInterface $input, OutputInterface $output)
     {
-        // always show the version information except when the user invokes the help
-        // command as that already does it
         if (($input->hasParameterOption(['--help', '-h']) !== false) || ($input->getFirstArgument() !== null && $input->getFirstArgument() !== 'list')) {
             $output->writeln($this->getLongVersion(). ' start at ' . Carbon::now() );
             $output->writeln('');
         }
-
         return parent::doRun($input, $output);
     }
 }
