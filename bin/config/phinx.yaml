@@ -1,0 +1,35 @@
+paths:
+    migrations: '%%PHINX_PATH_MIGRATIONS%%/migrations'
+    seeds: '%%PHINX_PATH_MIGRATIONS%%/seeds'
+environments:
+    default_migration_table: migrations
+    default_environment: '%%PHINX_APPENVIRONMENT%%'
+    production:
+        adapter: mysql
+        host: '%%PHINX_DBHOST%%'
+        name: '%%PHINX_DBNAME%%'
+        user: '%%PHINX_DBUSER%%'
+        pass: '%%PHINX_DBPASS%%'
+        port: '%%PHINX_DBPORT%%'
+        charset: utf8
+        collation: utf8mb4_general_ci
+
+    development:
+        adapter: mysql
+        host: '%%PHINX_DBHOST%%'
+        name: '%%PHINX_DBNAME%%'
+        user: '%%PHINX_DBUSER%%'
+        pass: '%%PHINX_DBPASS%%'
+        port: '%%PHINX_DBPORT%%'
+        charset: utf8
+        collation: utf8mb4_general_ci
+    testing:
+        adapter: mysql
+        host: '%%PHINX_DBHOST%%'
+        name: '%%PHINX_DBNAME%%'
+        user: '%%PHINX_DBUSER%%'
+        pass: '%%PHINX_DBPASS%%'
+        port: '%%PHINX_DBPORT%%'
+        charset: utf8
+        collation: utf8mb4_general_ci
+version_order: creation
