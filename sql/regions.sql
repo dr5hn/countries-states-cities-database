@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.37, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.39, for Linux (x86_64)
 --
 -- Host: localhost    Database: world
 -- ------------------------------------------------------
--- Server version	8.0.37-0ubuntu0.22.04.3
+-- Server version	8.0.39-0ubuntu0.22.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS `regions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `regions` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `translations` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
-  `wikiDataId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
+  `wikiDataId` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -39,7 +39,7 @@ CREATE TABLE `regions` (
 --
 
 /*!40000 ALTER TABLE `regions` DISABLE KEYS */;
-INSERT INTO `regions` VALUES (1,'Africa','{\"kr\":\"아프리카\",\"pt-BR\":\"África\",\"pt\":\"África\",\"nl\":\"Afrika\",\"hr\":\"Afrika\",\"fa\":\"آفریقا\",\"de\":\"Afrika\",\"es\":\"África\",\"fr\":\"Afrique\",\"ja\":\"アフリカ\",\"it\":\"Africa\",\"cn\":\"非洲\",\"tr\":\"Afrika\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q15'),(2,'Americas','{\"kr\":\"아메리카\",\"pt-BR\":\"América\",\"pt\":\"América\",\"nl\":\"Amerika\",\"hr\":\"Amerika\",\"fa\":\"قاره آمریکا\",\"de\":\"Amerika\",\"es\":\"América\",\"fr\":\"Amérique\",\"ja\":\"アメリカ州\",\"it\":\"America\",\"cn\":\"美洲\",\"tr\":\"Amerika\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q828'),(3,'Asia','{\"kr\":\"아시아\",\"pt-BR\":\"Ásia\",\"pt\":\"Ásia\",\"nl\":\"Azië\",\"hr\":\"Ázsia\",\"fa\":\"آسیا\",\"de\":\"Asien\",\"es\":\"Asia\",\"fr\":\"Asie\",\"ja\":\"アジア\",\"it\":\"Asia\",\"cn\":\"亚洲\",\"tr\":\"Asya\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q48'),(4,'Europe','{\"kr\":\"유럽\",\"pt-BR\":\"Europa\",\"pt\":\"Europa\",\"nl\":\"Europa\",\"hr\":\"Európa\",\"fa\":\"اروپا\",\"de\":\"Europa\",\"es\":\"Europa\",\"fr\":\"Europe\",\"ja\":\"ヨーロッパ\",\"it\":\"Europa\",\"cn\":\"欧洲\",\"tr\":\"Avrupa\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q46'),(5,'Oceania','{\"kr\":\"오세아니아\",\"pt-BR\":\"Oceania\",\"pt\":\"Oceania\",\"nl\":\"Oceanië en Australië\",\"hr\":\"Óceánia és Ausztrália\",\"fa\":\"اقیانوسیه\",\"de\":\"Ozeanien und Australien\",\"es\":\"Oceanía\",\"fr\":\"Océanie\",\"ja\":\"オセアニア\",\"it\":\"Oceania\",\"cn\":\"大洋洲\",\"tr\":\"Okyanusya\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q55643'),(6,'Polar','{\"kr\":\"남극\",\"pt-BR\":\"Antártida\",\"pt\":\"Antártida\",\"nl\":\"Antarctica\",\"hr\":\"Antarktika\",\"fa\":\"جنوبگان\",\"de\":\"Antarktika\",\"es\":\"Antártida\",\"fr\":\"Antarctique\",\"ja\":\"南極大陸\",\"it\":\"Antartide\",\"cn\":\"南極洲\",\"tr\":\"Antarktika\"}','2023-08-14 07:11:03','2023-08-14 07:11:03',1,'Q51');
+INSERT INTO `regions` VALUES (1,'Africa','{\"kr\":\"아프리카\",\"pt-BR\":\"África\",\"pt\":\"África\",\"nl\":\"Afrika\",\"hr\":\"Afrika\",\"fa\":\"آفریقا\",\"de\":\"Afrika\",\"es\":\"África\",\"fr\":\"Afrique\",\"ja\":\"アフリカ\",\"it\":\"Africa\",\"cn\":\"非洲\",\"tr\":\"Afrika\",\"ru\":\"Африка\",\"uk\":\"Африка\",\"pl\":\"Afryka\"}','2023-08-14 05:11:03','2023-08-14 05:11:03',1,'Q15'),(2,'Americas','{\"kr\":\"아메리카\",\"pt-BR\":\"América\",\"pt\":\"América\",\"nl\":\"Amerika\",\"hr\":\"Amerika\",\"fa\":\"قاره آمریکا\",\"de\":\"Amerika\",\"es\":\"América\",\"fr\":\"Amérique\",\"ja\":\"アメリカ州\",\"it\":\"America\",\"cn\":\"美洲\",\"tr\":\"Amerika\",\"ru\":\"Америка\",\"uk\":\"Америка\",\"pl\":\"Ameryka\"}','2023-08-14 05:11:03','2024-06-15 22:39:55',1,'Q828'),(3,'Asia','{\"kr\":\"아시아\",\"pt-BR\":\"Ásia\",\"pt\":\"Ásia\",\"nl\":\"Azië\",\"hr\":\"Ázsia\",\"fa\":\"آسیا\",\"de\":\"Asien\",\"es\":\"Asia\",\"fr\":\"Asie\",\"ja\":\"アジア\",\"it\":\"Asia\",\"cn\":\"亚洲\",\"tr\":\"Asya\",\"ru\":\"Азия\",\"uk\":\"Азія\",\"pl\":\"Azja\"}','2023-08-14 05:11:03','2023-08-14 05:11:03',1,'Q48'),(4,'Europe','{\"kr\":\"유럽\",\"pt-BR\":\"Europa\",\"pt\":\"Europa\",\"nl\":\"Europa\",\"hr\":\"Európa\",\"fa\":\"اروپا\",\"de\":\"Europa\",\"es\":\"Europa\",\"fr\":\"Europe\",\"ja\":\"ヨーロッパ\",\"it\":\"Europa\",\"cn\":\"欧洲\",\"tr\":\"Avrupa\",\"ru\":\"Европа\",\"uk\":\"Європа\",\"pl\":\"Europa\"}','2023-08-14 05:11:03','2023-08-14 05:11:03',1,'Q46'),(5,'Oceania','{\"kr\":\"오세아니아\",\"pt-BR\":\"Oceania\",\"pt\":\"Oceania\",\"nl\":\"Oceanië en Australië\",\"hr\":\"Óceánia és Ausztrália\",\"fa\":\"اقیانوسیه\",\"de\":\"Ozeanien und Australien\",\"es\":\"Oceanía\",\"fr\":\"Océanie\",\"ja\":\"オセアニア\",\"it\":\"Oceania\",\"cn\":\"大洋洲\",\"tr\":\"Okyanusya\",\"ru\":\"Океания\",\"uk\":\"Океанія\",\"pl\":\"Oceania\"}','2023-08-14 05:11:03','2023-08-14 05:11:03',1,'Q55643'),(6,'Polar','{\"kr\":\"남극\",\"pt-BR\":\"Antártida\",\"pt\":\"Antártida\",\"nl\":\"Antarctica\",\"hr\":\"Antarktika\",\"fa\":\"جنوبگان\",\"de\":\"Antarktika\",\"es\":\"Antártida\",\"fr\":\"Antarctique\",\"ja\":\"南極大陸\",\"it\":\"Antartide\",\"cn\":\"南極洲\",\"tr\":\"Antarktika\",\"ru\":\"Антарктика\",\"uk\":\"Антарктика\",\"pl\":\"Antarktyka\"}','2023-08-14 05:11:03','2024-06-15 22:50:26',1,'Q51');
 /*!40000 ALTER TABLE `regions` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ INSERT INTO `regions` VALUES (1,'Africa','{\"kr\":\"아프리카\",\"pt-BR\":\"�
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-07-07  8:30:00
+-- Dump completed on 2024-09-04  9:46:18
