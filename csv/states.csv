@@ -1360,12 +1360,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2729,"Ogooué-Lolo Province",79,GA,Gabon,7,,-0.88440930,12.43805810
 2728,"Ogooué-Maritime Province",79,GA,Gabon,8,,-1.34659750,9.72326730
 2723,"Woleu-Ntem Province",79,GA,Gabon,9,,2.29898270,11.44669140
-2666,Banjul,80,GM,"Gambia The",B,,13.45487610,-16.57903230
-2669,"Central River Division",80,GM,"Gambia The",M,,13.59944690,-14.89216680
-2670,"Lower River Division",80,GM,"Gambia The",L,,13.35533060,-15.92299000
-2671,"North Bank Division",80,GM,"Gambia The",N,,13.52854360,-16.01699710
-2668,"Upper River Division",80,GM,"Gambia The",U,,13.42573660,-14.00723480
-2667,"West Coast Division",80,GM,"Gambia The",W,,5.97727980,116.07542880
 901,Abkhazia,81,GE,Georgia,AB,,43.00155440,41.02340700
 900,Adjara,81,GE,Georgia,AJ,,41.60056260,42.06883830
 907,Guria,81,GE,Georgia,GU,,41.94427360,42.04580910
@@ -1457,27 +1451,28 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3868,"Saint John Parish",87,GD,Grenada,04,,30.11183310,-90.48799160
 3866,"Saint Mark Parish",87,GD,Grenada,05,,40.58818630,-73.94957010
 3863,"Saint Patrick Parish",87,GD,Grenada,06,,,
-3671,"Alta Verapaz Department",90,GT,Guatemala,AV,,15.59428830,-90.14949880
-3674,"Baja Verapaz Department",90,GT,Guatemala,BV,,15.12558670,-90.37483540
-3675,"Chimaltenango Department",90,GT,Guatemala,CM,,14.56347870,-90.98206680
-3666,"Chiquimula Department",90,GT,Guatemala,CQ,,14.75149990,-89.47421770
-3662,"El Progreso Department",90,GT,Guatemala,PR,,14.93887320,-90.07467670
-3677,"Escuintla Department",90,GT,Guatemala,ES,,14.19109120,-90.98206680
-3672,"Guatemala Department",90,GT,Guatemala,GU,,14.56494010,-90.52578230
-3670,"Huehuetenango Department",90,GT,Guatemala,HU,,15.58799140,-91.67606910
-3659,"Izabal Department",90,GT,Guatemala,IZ,,15.49765170,-88.86469800
-3658,"Jalapa Department",90,GT,Guatemala,JA,,14.61214460,-89.96267990
-3673,"Jutiapa Department",90,GT,Guatemala,JU,,14.19308020,-89.92532330
-3669,"Petén Department",90,GT,Guatemala,PE,,16.91203300,-90.29957850
-3668,"Quetzaltenango Department",90,GT,Guatemala,QZ,,14.79243300,-91.71495800
-3657,"Quiché Department",90,GT,Guatemala,QC,,15.49838080,-90.98206680
-3664,"Retalhuleu Department",90,GT,Guatemala,RE,,14.52454850,-91.68578800
-3676,"Sacatepéquez Department",90,GT,Guatemala,SA,,14.51783790,-90.71527490
-3667,"San Marcos Department",90,GT,Guatemala,SM,,14.93095690,-91.90992380
-3665,"Santa Rosa Department",90,GT,Guatemala,SR,,38.44057590,-122.70375430
-3661,"Sololá Department",90,GT,Guatemala,SO,,14.74852300,-91.28910360
-3660,"Suchitepéquez Department",90,GT,Guatemala,SU,,14.42159820,-91.40482490
-3663,"Totonicapán Department",90,GT,Guatemala,TO,,14.91734020,-91.36139230
+3671,"Alta Verapaz ",90,GT,Guatemala,16,department,15.59428830,-90.14949880
+3674,"Baja Verapaz ",90,GT,Guatemala,15,department,15.12558670,-90.37483540
+3675,"Chimaltenango ",90,GT,Guatemala,04,department,14.56347870,-90.98206680
+3666,"Chiquimula ",90,GT,Guatemala,20,department,14.75149990,-89.47421770
+3662,"El Progreso ",90,GT,Guatemala,02,department,14.93887320,-90.07467670
+3677,"Escuintla ",90,GT,Guatemala,05,department,14.19109120,-90.98206680
+3672,"Guatemala ",90,GT,Guatemala,01,department,14.56494010,-90.52578230
+3670,"Huehuetenango ",90,GT,Guatemala,13,department,15.58799140,-91.67606910
+3659,"Izabal ",90,GT,Guatemala,18,department,15.49765170,-88.86469800
+3658,"Jalapa ",90,GT,Guatemala,21,department,14.61214460,-89.96267990
+3673,"Jutiapa ",90,GT,Guatemala,22,department,14.19308020,-89.92532330
+3669,"Petén ",90,GT,Guatemala,17,department,16.91203300,-90.29957850
+3668,"Quetzaltenango ",90,GT,Guatemala,09,department,14.79243300,-91.71495800
+3657,"Quiché ",90,GT,Guatemala,14,department,15.49838080,-90.98206680
+3664,"Retalhuleu ",90,GT,Guatemala,11,department,14.52454850,-91.68578800
+3676,"Sacatepéquez ",90,GT,Guatemala,03,department,14.51783790,-90.71527490
+3667,"San Marcos ",90,GT,Guatemala,12,department,14.93095690,-91.90992380
+3665,"Santa Rosa ",90,GT,Guatemala,06,department,38.44057590,-122.70375430
+3661,"Sololá ",90,GT,Guatemala,07,department,14.74852300,-91.28910360
+3660,"Suchitepéquez ",90,GT,Guatemala,10,department,14.42159820,-91.40482490
+3663,"Totonicapán ",90,GT,Guatemala,08,department,14.91734020,-91.36139230
+5239,Zacapa,90,GT,Guatemala,19,department,15.00928280,-89.92532330
 2672,"Beyla Prefecture",92,GN,Guinea,BE,,8.91981780,-8.30884410
 2699,"Boffa Prefecture",92,GN,Guinea,BF,,10.18082540,-14.03916150
 2709,"Boké Prefecture",92,GN,Guinea,BK,,11.08473790,-14.37919120
@@ -1697,6 +1692,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1818,"Nusa Tenggara Timur",102,ID,Indonesia,NT,province,-8.65738190,121.07937050
 1798,Papua,102,ID,Indonesia,PA,province,-5.01222020,141.34701590
 1799,"Papua Barat",102,ID,Indonesia,PB,province,-1.33611540,133.17471620
+5238,"Papua Barat Daya",102,ID,Indonesia,PD,province,-0.90000000,131.40000000
+5236,"Papua Pegunungan",102,ID,Indonesia,PE,province,-4.00000000,139.50000000
+5237,"Papua Selatan",102,ID,Indonesia,PS,province,-6.50000000,139.50000000
+5235,"Papua Tengah",102,ID,Indonesia,PT,province,-4.00000000,136.00000000
 1809,Riau,102,ID,Indonesia,RI,province,0.29334690,101.70682940
 1817,"Sulawesi Barat",102,ID,Indonesia,SR,province,-2.84413710,119.23207840
 1795,"Sulawesi Selatan",102,ID,Indonesia,SN,province,-3.66879940,119.97405340
@@ -4281,6 +4280,12 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3607,"South Eleuthera",17,BS,"The Bahamas",SE,,24.77085620,-76.21314740
 3630,"Spanish Wells",17,BS,"The Bahamas",SW,,26.32505990,-81.79803280
 3599,"West Grand Bahama",17,BS,"The Bahamas",WG,,26.65944700,-78.52065000
+2666,Banjul,80,GM,"The Gambia ",B,,13.45487610,-16.57903230
+2669,"Central River Division",80,GM,"The Gambia ",M,,13.59944690,-14.89216680
+2670,"Lower River Division",80,GM,"The Gambia ",L,,13.35533060,-15.92299000
+2671,"North Bank Division",80,GM,"The Gambia ",N,,13.52854360,-16.01699710
+2668,"Upper River Division",80,GM,"The Gambia ",U,,13.42573660,-14.00723480
+2667,"West Coast Division",80,GM,"The Gambia ",W,,5.97727980,116.07542880
 4520,"Aileu municipality",63,TL,Timor-Leste,AL,,-8.70439940,125.60954740
 4518,"Ainaro Municipality",63,TL,Timor-Leste,AN,,-9.01131710,125.52200120
 4521,"Baucau Municipality",63,TL,Timor-Leste,BA,,-8.47143080,126.45759910
