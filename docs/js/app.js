@@ -127,7 +127,9 @@ function filter(type) {
     td = tr[i].getElementsByTagName("td")[0];
     if (td) {
       txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      // If the data contains the search query, show the row. Otherwise, hide the row.
+      // Also, if the search query is empty, show all rows.
+      if (txtValue.toUpperCase().indexOf(filter) > -1 || filter === "") {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
