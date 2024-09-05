@@ -51,7 +51,7 @@ Last Updated On : 05th Sep 2024
 
 The API database is regularly updated to ensure the latest data is available to users. The next scheduled update is on:
 
-**Upcoming API Database Update Date:** 1st June 2024
+**Upcoming API Database Update Date:** 1st October 2024
 
 Please note that this date is subject to change based on unforeseen circumstances. Although we strive to adhere to the schedule, there may be instances where the update date is missed. We apologize for any inconvenience caused in such cases.
 
