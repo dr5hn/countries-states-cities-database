@@ -1760,7 +1760,7 @@ INSERT INTO public.states VALUES (1825, 'Jawa Barat', 102, 'ID', '30', 'JB', 'pr
 INSERT INTO public.states VALUES (1826, 'Bali', 102, 'ID', '02', 'BA', 'province', -8.34053890, 115.09195090, '2019-10-05 21:48:44', '2022-05-21 20:18:20', 1, 'Q3125978');
 INSERT INTO public.states VALUES (1827, 'Jawa Timur', 102, 'ID', '08', 'JI', 'province', -7.53606390, 112.23840170, '2019-10-05 21:48:44', '2022-05-21 20:18:20', 1, 'Q3586');
 INSERT INTO public.states VALUES (1828, 'Sumatera Barat', 102, 'ID', '24', 'SB', 'province', -0.73993970, 100.80000510, '2019-10-05 21:48:44', '2022-05-21 20:18:20', 1, 'Q2772');
-INSERT INTO public.states VALUES (1829, 'DI Yogyakarta', 102, 'ID', '10', 'YO', 'province', -7.87538490, 110.42620880, '2019-10-05 21:48:44', '2022-05-21 20:18:20', 1, 'Q3741');
+INSERT INTO public.states VALUES (1829, 'DI Yogyakarta', 102, 'ID', '10', 'YO', 'Special region', -7.87538490, 110.42620880, '2019-10-05 21:48:44', '2024-09-07 18:17:08', 1, 'Q3741');
 INSERT INTO public.states VALUES (1830, 'Phoenix Islands', 114, 'KI', '03', 'P', NULL, 33.32843690, -111.98247740, '2019-10-05 21:48:44', '2022-08-31 14:22:51', 1, 'Q271674');
 INSERT INTO public.states VALUES (1831, 'Gilbert Islands', 114, 'KI', '01', 'G', NULL, 0.35242620, 174.75526340, '2019-10-05 21:48:44', '2022-08-31 14:22:51', 1, 'Q271876');
 INSERT INTO public.states VALUES (1832, 'Line Islands', 114, 'KI', '02', 'L', NULL, 1.74294390, -157.21328260, '2019-10-05 21:48:44', '2022-08-31 14:22:51', 1, 'Q55076234');
