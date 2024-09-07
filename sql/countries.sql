@@ -75,4 +75,4 @@ INSERT INTO `countries` VALUES (1,'Afghanistan','AFG','004','AF','93','Kabul','A
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-05 12:08:30
+-- Dump completed on 2024-09-07  9:32:52
