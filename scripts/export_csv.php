@@ -3,7 +3,7 @@
 // Require Array2XML class which takes a PHP array and changes it to XML
 require_once 'vendor/base.php';
 
-$rootDir = dirname(dirname(__FILE__)).'/json';
+$rootDir = dirname(dirname(__FILE__));
 $files = array(
     'countries' => array(
         'from' => '/json/countries.json',

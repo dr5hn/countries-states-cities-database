@@ -5,7 +5,7 @@ require_once 'vendor/base.php';
 
 use Symfony\Component\Yaml\Yaml;
 
-$rootDir = dirname(dirname(__FILE__)).'/json';
+$rootDir = dirname(dirname(__FILE__));
 $files = array(
     'regions' => array(
         'from' => '/json/regions.json',
