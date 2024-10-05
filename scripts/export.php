@@ -21,7 +21,7 @@ $subregionsArray = array();
 $stateNamesArray = array();
 $cityNamesArray = array();
 
-$rootDir = dirname(dirname(__FILE__));
+$rootDir = dirname(dirname(__FILE__)).'/json';
 
 // Fetching All Countries
 $sql = "SELECT * FROM countries ORDER BY name";

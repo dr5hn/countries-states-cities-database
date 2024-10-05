@@ -5,7 +5,7 @@ const db = new loki('csc.db', {
   autosaveInterval: 4000
 });
 
-const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/';
+const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
 const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
 
 async function initializeData() {
