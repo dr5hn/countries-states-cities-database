@@ -19,47 +19,47 @@ class ExportYaml  extends Command
 
         $files = array(
             'regions' => array(
-                'from' => '/regions.json',
+                'from' => '/json/regions.json',
                 'to' => '/yml/regions.yml',
                 'singular' => 'region',
             ),
             'subregions' => array(
-                'from' => '/subregions.json',
+                'from' => '/json/subregions.json',
                 'to' => '/yml/subregions.yml',
                 'singular' => 'subregion',
             ),
             'countries' => array(
-                'from' => '/countries.json',
+                'from' => '/json/countries.json',
                 'to' => '/yml/countries.yml',
                 'singular' => 'country',
             ),
             'states' => array(
-                'from' => '/states.json',
+                'from' => '/json/states.json',
                 'to' => '/yml/states.yml',
                 'singular' => 'state',
             ),
             'cities' => array(
-                'from' => '/cities.json',
+                'from' => '/json/cities.json',
                 'to' => '/yml/cities.yml',
                 'singular' => 'city',
             ),
             'states_cities' => array(
-                'from' => '/states+cities.json',
+                'from' => '/json/states+cities.json',
                 'to' => '/yml/states+cities.yml',
                 'singular' => 'state_city',
             ),
             'countries_states' => array(
-                'from' => '/countries+states.json',
+                'from' => '/json/countries+states.json',
                 'to' => '/yml/countries+states.yml',
                 'singular' => 'country_state',
             ),
             'countries_cities' => array(
-                'from' => '/countries+cities.json',
+                'from' => '/json/countries+cities.json',
                 'to' => '/yml/countries+cities.yml',
                 'singular' => 'country_city',
             ),
             'countries_states_cities' => array(
-                'from' => '/countries+states+cities.json',
+                'from' => '/json/countries+states+cities.json',
                 'to' => '/yml/countries+states+cities.yml',
                 'singular' => 'country_state_city',
             ),

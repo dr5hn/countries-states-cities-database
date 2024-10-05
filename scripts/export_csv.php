@@ -3,26 +3,26 @@
 // Require Array2XML class which takes a PHP array and changes it to XML
 require_once 'vendor/base.php';
 
-$rootDir = dirname(dirname(__FILE__));
+$rootDir = dirname(dirname(__FILE__)).'/json';
 $files = array(
     'countries' => array(
-        'from' => '/countries.json',
+        'from' => '/json/countries.json',
         'to' => '/csv/countries.csv',
     ),
     'states' => array(
-        'from' => '/states.json',
+        'from' => '/json/states.json',
         'to' => '/csv/states.csv',
     ),
     'cities' => array(
-        'from' => '/cities.json',
+        'from' => '/json/cities.json',
         'to' => '/csv/cities.csv',
     ),
     'regions' => array(
-        'from' => '/regions.json',
+        'from' => '/json/regions.json',
         'to' => '/csv/regions.csv',
     ),
     'subregions' => array(
-        'from' => '/subregions.json',
+        'from' => '/json/subregions.json',
         'to' => '/csv/subregions.csv',
     ),
 );

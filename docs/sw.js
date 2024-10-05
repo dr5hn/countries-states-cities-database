@@ -14,9 +14,9 @@ self.addEventListener('install', (e) => {
                 './vendor/dynatable/css/jquery.dynatable.css',
                 './vendor/dynatable/js/jquery.dynatable.js',
                 './vendor/jquery/jquery.min.js',
-                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/countries.json',
-                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/states.json',
-                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/cities.json'
+                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/countries.json',
+                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/states.json',
+                'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/cities.json'
             ]);
         })
     );

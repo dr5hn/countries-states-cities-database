@@ -16,7 +16,7 @@ class ExportJson extends Command
     {
         $db =  Config::getConfig()->getDB();
 
-        $rootDir = PATH_BASE . '../..';
+        $rootDir = PATH_BASE . '../../json';
 
         $r = 0; // regions
         $s = 0; // suberegions
@@ -277,7 +277,7 @@ class ExportJson extends Command
         $output->writeln('Total Countries Count : '.count($countriesArray));
         $output->writeln('Total States Count : '.count($statesArray));
         $output->writeln('Total Cities Count : '.count($citiesArray));
-        
+
         $exportTo = $rootDir . '/countries.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($countriesArray,  JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
@@ -290,53 +290,53 @@ class ExportJson extends Command
         fwrite($fp, json_encode($statesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/cities.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($citiesArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/states+cities.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($stateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/countries+states.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($countryStateArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/countries+cities.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($countryCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/countries+states+cities.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($countryStateCityArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/regions.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($regionsArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo );
         fclose($fp);
-        
+
         $exportTo = $rootDir . '/subregions.json';
         $fp = fopen($exportTo, 'w'); // Putting Array to JSON
         fwrite($fp, json_encode($subregionsArray, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT).PHP_EOL);
         $output->writeln( 'JSON Exported to ' .$exportTo  );
         fclose($fp);
-        
+
 
         $db->close();
 
-        
+
         return 1;
     }
 

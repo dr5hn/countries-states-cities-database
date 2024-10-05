@@ -8,47 +8,47 @@ use Spatie\ArrayToXml\ArrayToXml;
 $rootDir = dirname(dirname(__FILE__));
 $files = array(
     'regions' => array(
-        'from' => '/regions.json',
+        'from' => '/json/regions.json',
         'to' => '/xml/regions.xml',
         'singular' => 'region',
     ),
     'subregions' => array(
-        'from' => '/subregions.json',
+        'from' => '/json/subregions.json',
         'to' => '/xml/subregions.xml',
         'singular' => 'subregion',
     ),
     'countries' => array(
-        'from' => '/countries.json',
+        'from' => '/json/countries.json',
         'to' => '/xml/countries.xml',
         'singular' => 'country',
     ),
     'states' => array(
-        'from' => '/states.json',
+        'from' => '/json/states.json',
         'to' => '/xml/states.xml',
         'singular' => 'state',
     ),
     'cities' => array(
-        'from' => '/cities.json',
+        'from' => '/json/cities.json',
         'to' => '/xml/cities.xml',
         'singular' => 'city',
     ),
     'states_cities' => array(
-        'from' => '/states+cities.json',
+        'from' => '/json/states+cities.json',
         'to' => '/xml/states+cities.xml',
         'singular' => 'state_city',
     ),
     'countries_states' => array(
-        'from' => '/countries+states.json',
+        'from' => '/json/countries+states.json',
         'to' => '/xml/countries+states.xml',
         'singular' => 'country_state',
     ),
     'countries_cities' => array(
-        'from' => '/countries+cities.json',
+        'from' => '/json/countries+cities.json',
         'to' => '/xml/countries+cities.xml',
         'singular' => 'country_city',
     ),
     'countries_states_cities' => array(
-        'from' => '/countries+states+cities.json',
+        'from' => '/json/countries+states+cities.json',
         'to' => '/xml/countries+states+cities.xml',
         'singular' => 'country_state_city',
     ),
