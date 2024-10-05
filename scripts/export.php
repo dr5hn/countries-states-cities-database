@@ -74,9 +74,9 @@ foreach($countriesArray as $country) {
     $countryStateCityArray[$k]['tld'] = $country['tld'];
     $countryStateCityArray[$k]['native'] = $country['native'];
     $countryStateCityArray[$k]['region'] = $country['region'];
-    $countryStateCityArray[$k]['region_id'] = $country['region_id'];
+    $countryStateCityArray[$k]['region_id'] = (int)$country['region_id'];
     $countryStateCityArray[$k]['subregion'] = $country['subregion'];
-    $countryStateCityArray[$k]['subregion_id'] = $country['subregion_id'];
+    $countryStateCityArray[$k]['subregion_id'] = (int)$country['subregion_id'];
     $countryStateCityArray[$k]['nationality'] = $country['nationality'];
     $countryStateCityArray[$k]['timezones'] = $country['timezones'];
     $countryStateCityArray[$k]['translations'] = $country['translations'];
@@ -139,10 +139,10 @@ foreach($countriesArray as $country) {
                     $cityName = $city['name'];
                     $citiesArray[$j]['id'] = $cityId;
                     $citiesArray[$j]['name'] = $cityName;
-                    $citiesArray[$j]['state_id'] = (int)$stateId;
+                    $citiesArray[$j]['state_id'] = $stateId;
                     $citiesArray[$j]['state_code'] = $city['state_code'];
                     $citiesArray[$j]['state_name'] = $stateName;
-                    $citiesArray[$j]['country_id'] = (int)$countryId;
+                    $citiesArray[$j]['country_id'] = $countryId;
                     $citiesArray[$j]['country_code'] = $city['country_code'];
                     $citiesArray[$j]['country_name'] = $countryName;
                     $citiesArray[$j]['latitude'] = $city['latitude'];
@@ -191,9 +191,9 @@ foreach($countriesArray as $country) {
     $countryStateArray[$k]['tld'] = $country['tld'];
     $countryStateArray[$k]['native'] = $country['native'];
     $countryStateArray[$k]['region'] = $country['region'];
-    $countryStateArray[$k]['region_id'] = $country['region_id'];
+    $countryStateArray[$k]['region_id'] = (int)$country['region_id'];
     $countryStateArray[$k]['subregion'] = $country['subregion'];
-    $countryStateArray[$k]['subregion_id'] = $country['subregion_id'];
+    $countryStateArray[$k]['subregion_id'] = (int)$country['subregion_id'];
     $countryStateArray[$k]['nationality'] = $country['nationality'];
     $countryStateArray[$k]['timezones'] = $country['timezones'];
     $countryStateArray[$k]['translations'] = $country['translations'];
@@ -249,13 +249,12 @@ if ($result->num_rows > 0) {
         // Pushing it into Fresh Array
         $subregionsArray[$s]['id'] = (int)$row['id'];
         $subregionsArray[$s]['name'] = $row['name'];
-        $subregionsArray[$s]['region_id'] = $row['region_id'];
+        $subregionsArray[$s]['region_id'] = (int)$row['region_id'];
         $subregionsArray[$s]['translations'] = json_decode($row['translations'], true);
         $subregionsArray[$s]['wikiDataId'] = $row['wikiDataId'];
         $s++;
     }
 }
-
 
 
 echo 'Total Regions Count : '.count($regionsArray).PHP_EOL;
