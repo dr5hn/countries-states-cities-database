@@ -10,7 +10,7 @@
     <title>Country State City Demo</title>
 
     <!-- Vendor CSS -->
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Custom Styles -->
     <link href="css/app.css" rel="stylesheet" />
@@ -38,7 +38,43 @@
 
     <!-- Page Content -->
     <div class="container mx-auto flex flex-wrap py-6 overflow-hidden">
-        <section class="w-full md:w-1/3 flex flex-col px-3">
+        <section class="w-full md:w-1/5 flex flex-col px-3 mb-6">
+            <table id="regions" class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2 items-left">Regions</th>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2">
+                            <input id="search-regions" type="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" oninput="filter('regions')" placeholder="Search Regions..">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="regions-tb overflow-y-scroll">
+                    <!-- Filled via JS -->
+                </tbody>
+            </table>
+        </section>
+        <section class="w-full md:w-1/5 flex flex-col px-3 mb-6">
+            <table id="subregions" class="table-auto">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2">Subregions</th>
+                    </tr>
+                    <tr>
+                        <th class="border px-4 py-2">
+                            <input id="search-subregions" type="search" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" oninput="filter('subregions')" placeholder="Search Subregions..">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="subregions-tb">
+                    <tr>
+                        <td class="border px-4 py-2">Select a region</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="w-full md:w-1/5 flex flex-col px-3">
             <table id="countries" class="table-auto">
                 <thead>
                     <tr>
@@ -59,7 +95,7 @@
                 </tbody>
             </table>
         </section>
-        <section class="w-full md:w-1/3 flex flex-col px-3">
+        <section class="w-full md:w-1/5 flex flex-col px-3">
             <table id="states" class="table-auto">
                 <thead>
                     <tr>
@@ -84,7 +120,7 @@
                 </tbody>
             </table>
         </section>
-        <section class="w-full md:w-1/3 flex flex-col px-3">
+        <section class="w-full md:w-1/5 flex flex-col px-3">
             <table id="cities" class="table-auto">
                 <thead>
                     <tr>
@@ -112,46 +148,29 @@
     </div>
     <!-- /.container -->
 
-    <!--Modal-->
-    <div
-        class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-10">
+    <!-- Modal -->
+    <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center z-10">
         <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
         <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-            <div
-                class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
-                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                    viewBox="0 0 18 18">
-                    <path
-                        d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                    </path>
+            <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                 </svg>
                 <span class="text-sm">(Esc)</span>
             </div>
 
-            <!-- Add margin if you want to see some of the overlay behind the modal-->
             <div class="modal-content py-4 text-left px-6 max-h-screen">
-                <!--Title-->
                 <div class="flex justify-between items-center pb-3">
                     <p class="text-2xl font-bold modal-title"></p>
-
                     <div class="modal-close cursor-pointer z-50">
-                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                            viewBox="0 0 18 18">
-                            <path
-                                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                            </path>
+                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
                         </svg>
                     </div>
                 </div>
-
-                <!--Body-->
                 <pre id="modal-code"></pre>
-
-                <!--Footer-->
                 <div class="flex justify-end pt-2">
-                    <button
-                        class="bg-indigo-500 hover:bg-indigo-700 text-sm text-white p-3 px-4 rounded-lg copy-to-clipboard"
-                        onclick="copyMeOnClipboard()">Copy 📋</button>
+                    <button class="bg-indigo-500 hover:bg-indigo-700 text-sm text-white p-3 px-4 rounded-lg copy-to-clipboard">Copy 📋</button>
                 </div>
             </div>
         </div>
