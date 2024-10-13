@@ -1,30 +1,82 @@
-const db = new loki('csc.db', {
-  autoload: true,
-  autoloadCallback: initializeData,
-  autosave: true,
-  autosaveInterval: 4000
-});
-
-const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
+// IndexedDB setup
+let db;
+const DB_NAME = 'CountryStateCityDB';
+const DB_VERSION = 1;
 const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
+const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+    request.onerror = event => reject("IndexedDB error: " + event.target.error);
+
+    request.onsuccess = event => {
+      db = event.target.result;
+      resolve(db);
+    };
+
+    request.onupgradeneeded = event => {
+      db = event.target.result;
+      COLLECTIONS.forEach(collectionName => {
+        if (!db.objectStoreNames.contains(collectionName)) {
+          const store = db.createObjectStore(collectionName, { keyPath: 'id' });
+
+          // Add indexes based on the collection
+          switch(collectionName) {
+            case 'subregions':
+              store.createIndex('region_id', 'region_id', { unique: false });
+              break;
+            case 'countries':
+              store.createIndex('subregion_id', 'subregion_id', { unique: false });
+              break;
+            case 'states':
+              store.createIndex('country_id', 'country_id', { unique: false });
+              break;
+            case 'cities':
+              store.createIndex('state_id', 'state_id', { unique: false });
+              break;
+          }
+        }
+      });
+    };
+  });
+}
 
 async function initializeData() {
+  await openDB();
   for (const collectionName of COLLECTIONS) {
-    let collection = db.getCollection(collectionName);
-    if (!collection) {
-      collection = db.addCollection(collectionName);
-      const data = await fetchJSON(`${API_BASE}${collectionName}.json`);
-      collection.insert(data);
+    const objectStore = db.transaction(collectionName, 'readonly').objectStore(collectionName);
+    const count = await new Promise(resolve => objectStore.count().onsuccess = e => resolve(e.target.result));
+
+    if (count === 0) {
+      await fetch(`${API_BASE}${collectionName}.json`)
+        .then(response => response.json())
+        .then(async (data) => {
+          const transaction = db.transaction(collectionName, 'readwrite');
+          const store = transaction.objectStore(collectionName);
+          for (const item of data) {
+            store.add(item);
+          }
+          await new Promise(resolve => transaction.oncomplete = resolve);
+        });
     }
+
     if (collectionName === 'regions') {
-      renderRegions(collection.data);
+      const regions = await getAllFromStore('regions');
+      renderRegions(regions);
     }
   }
 }
 
-async function fetchJSON(url) {``
-  const response = await fetch(url);
-  return response.json();
+function getAllFromStore(storeName) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, 'readonly');
+    const store = transaction.objectStore(storeName);
+    const request = store.getAll();
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
 }
 
 function renderRegions(regions) {
@@ -33,7 +85,7 @@ function renderRegions(regions) {
     <tr>
       <td class="border px-4 py-2">
         ${r.name}
-        <button class="tooltip inline-block align-middle float-right" onclick="filterSubregions(${r.id})">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterSubregions('${r.id}')">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -50,15 +102,25 @@ function renderRegions(regions) {
   `).join('');
 }
 
-function filterSubregions(regionId) {
-  const subregions = db.getCollection('subregions');
+async function filterSubregions(regionId) {
+  console.log(typeof regionId);
+  const subregions = await getFromIndex('subregions', 'region_id', parseInt(regionId));
   console.log(subregions);
-  const filteredSubregions = subregions.find({ region_id: regionId });
-  console.log(filteredSubregions);
-  renderSubregions(filteredSubregions);
+  renderSubregions(subregions);
   document.querySelector('.countries-tb').innerHTML = '';
   document.querySelector('.states-tb').innerHTML = '';
   document.querySelector('.cities-tb').innerHTML = '';
+}
+
+async function getFromIndex(storeName, indexName, value) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(storeName, 'readonly');
+    const store = transaction.objectStore(storeName);
+    const index = store.index(indexName);
+    const request = index.getAll(value);
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
 }
 
 function renderSubregions(subregions) {
@@ -67,7 +129,7 @@ function renderSubregions(subregions) {
     <tr>
       <td class="border px-4 py-2">
         ${sr.name}
-        <button class="tooltip inline-block align-middle float-right" onclick="filterCountries(${sr.id})">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterCountries('${sr.id}')">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -84,10 +146,9 @@ function renderSubregions(subregions) {
   `).join('') : '<tr><td class="border px-4 py-2">No Subregions Found.</td></tr>';
 }
 
-function filterCountries(subregionId) {
-  const countries = db.getCollection('countries');
-  const filteredCountries = countries.find({ subregion_id: subregionId });
-  renderCountries(filteredCountries);
+async function filterCountries(subregionId) {
+  const countries = await getFromIndex('countries', 'subregion_id', subregionId);
+  renderCountries(countries);
   document.querySelector('.states-tb').innerHTML = '';
   document.querySelector('.cities-tb').innerHTML = '';
 }
@@ -116,10 +177,9 @@ function renderCountries(countries) {
   `).join('');
 }
 
-function filterStates(countryId) {
-  const states = db.getCollection('states');
-  const filteredStates = states.find({ country_id: countryId });
-  renderStates(filteredStates);
+async function filterStates(countryId) {
+  const states = await getFromIndex('states', 'country_id', countryId);
+  renderStates(states);
   document.querySelector('.cities-tb').innerHTML = '';
 }
 
@@ -130,7 +190,7 @@ function renderStates(states) {
       <td class="border px-4 py-2">
         ${s.name}
         <span class="inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">${s.state_code}</span>
-        <button class="tooltip inline-block align-middle float-right" onclick="filterCities(${s.id})">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterCities('${s.id}')">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -147,10 +207,9 @@ function renderStates(states) {
   `).join('') : '<tr><td class="border px-4 py-2">No States Found.</td></tr>';
 }
 
-function filterCities(stateId) {
-  const cities = db.getCollection('cities');
-  const filteredCities = cities.find({ state_id: stateId });
-  renderCities(filteredCities);
+async function filterCities(stateId) {
+  const cities = await getFromIndex('cities', 'state_id', parseInt(stateId));
+  renderCities(cities);
 }
 
 function renderCities(cities) {
@@ -196,7 +255,7 @@ document.addEventListener('keydown', (evt) => {
   }
 });
 
-function toggleModal(id = null, type = null) {
+async function toggleModal(id = null, type = null) {
   const body = document.querySelector('body');
   const modal = document.querySelector('.modal');
   modal.classList.toggle('opacity-0');
@@ -204,15 +263,25 @@ function toggleModal(id = null, type = null) {
   body.classList.toggle('modal-active');
 
   if (id && type) {
-    const collection = db.getCollection(type);
-    const item = collection.findOne({ id: parseInt(id) });
-    if (item) {
-      const { $loki, meta, ...content } = item;
-      document.querySelector('.modal-title').textContent = content.name;
-      document.getElementById('modal-code').textContent = JSON.stringify(content, null, 2);
-    }
+    const transaction = db.transaction(type, 'readonly');
+    const store = transaction.objectStore(type);
+    const request = store.get(parseInt(id));
+
+    request.onsuccess = (event) => {
+      const item = event.target.result;
+      if (item) {
+        document.querySelector('.modal-title').textContent = item.name;
+        document.getElementById('modal-code').textContent = JSON.stringify(item, null, 2);
+      }
+    };
+
+    request.onerror = (event) => {
+      console.error("Error fetching item:", event.target.error);
+    };
   }
 }
+
+
 // Optimized copy to clipboard function
 const copyToClipboard = () => {
   const copyText = document.getElementById("modal-code").textContent;
@@ -228,3 +297,6 @@ const copyToClipboard = () => {
 }
 
 document.querySelector('.copy-to-clipboard').addEventListener('click', copyToClipboard);
+
+// Add this line to initialize the database when the page loads
+window.addEventListener('load', initializeData);
