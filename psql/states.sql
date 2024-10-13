@@ -1334,7 +1334,7 @@ INSERT INTO public.states VALUES (1375, 'Hainaut', 22, 'BE', '03', 'WHT', NULL, 
 INSERT INTO public.states VALUES (1376, 'Brussels-Capital Region', 22, 'BE', '11', 'BRU', NULL, 50.85034630, 4.35172110, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q240');
 INSERT INTO public.states VALUES (1377, 'East Flanders', 22, 'BE', '08', 'VOV', NULL, 51.03621010, 3.73731240, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q1114');
 INSERT INTO public.states VALUES (1378, 'Namur', 22, 'BE', '07', 'WNA', NULL, 50.46738830, 4.87198540, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q1125');
-INSERT INTO public.states VALUES (1379, 'Luxembourg', 22, 'BE', '06', 'WLX', NULL, 49.81527300, 6.12958300, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q1126');
+INSERT INTO public.states VALUES (1379, 'Luxembourg', 22, 'BE', '06', 'WLX', NULL, 49.96500000, 5.50100000, '2019-10-05 21:48:41', '2024-10-11 14:22:51', 1, 'Q1126');
 INSERT INTO public.states VALUES (1380, 'Wallonia', 22, 'BE', 'WAL', 'WAL', NULL, 50.41756370, 4.45100660, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q231');
 INSERT INTO public.states VALUES (1381, 'Antwerp', 22, 'BE', '01', 'VAN', NULL, 51.21944750, 4.40246430, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q1116');
 INSERT INTO public.states VALUES (1382, 'Walloon Brabant', 22, 'BE', '10', 'WBR', NULL, 50.63324100, 4.52431500, '2019-10-05 21:48:41', '2022-08-31 14:22:51', 1, 'Q1122');
@@ -4969,23 +4969,23 @@ INSERT INTO public.states VALUES (5113, 'Zaragoza', 207, 'ES', NULL, 'Z', 'provi
 INSERT INTO public.states VALUES (5114, 'Chari-Baguirmi', 43, 'TD', '15', 'CB', 'province', 11.46186260, 15.24463940, '2022-08-31 12:46:52', '2022-08-31 12:46:52', 1, 'Q843975');
 INSERT INTO public.states VALUES (5115, 'Western Samar', 174, 'PH', NULL, 'WSA', 'province', 12.00002060, 124.99124520, '2022-08-31 14:09:41', '2022-08-31 14:09:41', 1, 'Q13876');
 INSERT INTO public.states VALUES (5116, 'Nabeul', 224, 'TN', '19', '21', 'governorate', 36.45245910, 10.68032220, '2022-08-31 14:26:14', '2022-08-31 14:27:04', 1, 'Q328145');
-INSERT INTO public.states VALUES (5117, 'Jämtland County', 213, 'SE', '29', '0', 'SE-Z', 63.28306200, 14.23828100, '2022-11-04 08:21:51', '2022-11-04 08:21:51', 1, 'Q103679');
-INSERT INTO public.states VALUES (5118, 'Bethlehem', 169, 'PS', NULL, 'BTH', 'governorate', 31.70539960, 35.19368770, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5119, 'Deir El Balah', 169, 'PS', NULL, 'DEB', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5120, 'Gaza', 169, 'PS', NULL, 'GZA', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5121, 'Hebron', 169, 'PS', NULL, 'HBN', 'governorate', 31.53260010, 35.06394750, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5122, 'Jenin', 169, 'PS', NULL, 'JEN', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5123, 'Jericho and Al Aghwar', 169, 'PS', NULL, 'JRH', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5124, 'Jerusalem', 169, 'PS', NULL, 'JEM', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5125, 'Khan Yunis', 169, 'PS', NULL, 'KYS', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5126, 'Nablus', 169, 'PS', NULL, 'NBS', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5127, 'North Gaza', 169, 'PS', NULL, 'NGZ', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5128, 'Qalqilya', 169, 'PS', NULL, 'QQA', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5129, 'Rafah', 169, 'PS', NULL, 'RFH', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5130, 'Ramallah', 169, 'PS', NULL, 'RBH', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5131, 'Salfit', 169, 'PS', NULL, 'SLT', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5132, 'Tubas', 169, 'PS', NULL, 'TBS', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
-INSERT INTO public.states VALUES (5133, 'Tulkarm', 169, 'PS', NULL, 'TKM', 'governorate', NULL, NULL, '2022-11-06 18:04:06', '2022-11-06 18:04:06', 1, NULL);
+INSERT INTO public.states VALUES (5117, 'Jämtland County', 213, 'SE', '29', 'Z', NULL, 63.28306200, 14.23828100, '2022-11-04 08:21:51', '2024-10-06 21:10:00', 1, 'Q103679');
+INSERT INTO public.states VALUES (5118, 'Bethlehem', 169, 'PS', NULL, 'BTH', 'governorate', 31.70539960, 35.19368770, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q247037');
+INSERT INTO public.states VALUES (5119, 'Deir El Balah', 169, 'PS', NULL, 'DEB', 'governorate', 31.42028970, 34.28616400, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q592249');
+INSERT INTO public.states VALUES (5120, 'Gaza', 169, 'PS', NULL, 'GZA', 'governorate', 31.48723970, 34.14998900, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q762573');
+INSERT INTO public.states VALUES (5121, 'Hebron', 169, 'PS', NULL, 'HBN', 'governorate', 31.53260010, 35.06394750, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q264180');
+INSERT INTO public.states VALUES (5122, 'Jenin', 169, 'PS', NULL, 'JEN', 'governorate', 32.42637610, 35.08568870, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q519311');
+INSERT INTO public.states VALUES (5123, 'Jericho ', 169, 'PS', NULL, 'JRH', 'governorate', 31.96764250, 35.13542790, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q658527');
+INSERT INTO public.states VALUES (5124, 'Jerusalem (Quds)', 169, 'PS', NULL, 'JEM', 'governorate', 31.80203280, 34.95996640, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q941828');
+INSERT INTO public.states VALUES (5125, 'Khan Yunis', 169, 'PS', NULL, 'KYS', 'governorate', 31.32987660, 34.22548330, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q948026');
+INSERT INTO public.states VALUES (5126, 'Nablus', 169, 'PS', NULL, 'NBS', 'governorate', 32.22437550, 35.20647930, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q1074138');
+INSERT INTO public.states VALUES (5127, 'North Gaza', 169, 'PS', NULL, 'NGZ', 'governorate', 31.54750600, 34.42814090, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q181636');
+INSERT INTO public.states VALUES (5128, 'Qalqilya', 169, 'PS', NULL, 'QQA', 'governorate', 32.18103230, 34.99369990, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q1074443');
+INSERT INTO public.states VALUES (5129, 'Rafah', 169, 'PS', NULL, 'RFH', 'governorate', 31.29688990, 34.11166850, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q1074341');
+INSERT INTO public.states VALUES (5130, 'Ramallah', 169, 'PS', NULL, 'RBH', 'governorate', 31.94301450, 34.86456510, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q1093166');
+INSERT INTO public.states VALUES (5131, 'Salfit', 169, 'PS', NULL, 'SLT', 'governorate', 32.11122720, 34.95787690, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q926530');
+INSERT INTO public.states VALUES (5132, 'Tubas', 169, 'PS', NULL, 'TBS', 'governorate', 32.29380430, 34.85109800, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q948228');
+INSERT INTO public.states VALUES (5133, 'Tulkarm', 169, 'PS', NULL, 'TKM', 'governorate', 32.32766720, 34.92311080, '2022-11-06 18:04:06', '2024-10-10 18:37:04', 1, 'Q1093157');
 INSERT INTO public.states VALUES (5134, 'Adjuntas', 178, 'PR', NULL, '001', 'municipalities', 18.16348480, -66.72315800, '2023-03-25 18:29:22', '2023-03-25 18:29:22', 1, 'Q1864884');
 INSERT INTO public.states VALUES (5135, 'Aguada', 178, 'PR', NULL, '003', 'municipalities', 18.38015790, -67.18870400, '2023-03-25 18:29:22', '2023-03-25 18:29:22', 1, 'Q365641');
 INSERT INTO public.states VALUES (5136, 'Aguadilla', 178, 'PR', NULL, '005', 'municipalities', 18.42744540, -67.15406980, '2023-03-25 18:29:22', '2023-03-25 18:29:22', 1, 'Q397826');
@@ -5095,13 +5095,73 @@ INSERT INTO public.states VALUES (5239, 'Zacapa', 90, 'GT', '19', '19', 'departm
 INSERT INTO public.states VALUES (5240, 'Madhesh', 154, 'NP', '2', 'P2', 'province', 26.93918730, 84.42934670, '2019-10-05 21:48:45', '2024-09-05 18:38:00', 1, 'Q25104009');
 INSERT INTO public.states VALUES (5241, 'Sudurpashchim', 154, 'NP', '7', 'P7', 'province', 29.30623710, 79.61354510, '2019-10-05 21:48:45', '2024-09-05 18:38:00', 1, 'Q25104019');
 INSERT INTO public.states VALUES (5242, 'Trashi Yangtse	', 26, 'BT', '15', 'TY', 'District', 27.71758500, 91.19811020, '2019-10-05 21:48:36', '2024-09-06 16:23:38', 1, 'Q600200');
+INSERT INTO public.states VALUES (5243, 'Noord', 13, 'AW', '01', NULL, 'Regions', 12.58243290, -70.06761180, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q2656618');
+INSERT INTO public.states VALUES (5244, 'Oranjestad West', 13, 'AW', '02', NULL, 'Regions', 12.53522930, -70.06284040, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q85791119');
+INSERT INTO public.states VALUES (5245, 'Oranjestad East', 13, 'AW', '03', NULL, 'Regions', 12.51331810, -70.05048180, '2024-10-08 17:51:07', '2024-10-08 18:06:22', 1, 'NULL');
+INSERT INTO public.states VALUES (5246, 'Paradera', 13, 'AW', '04', NULL, 'Regions', 12.53628710, -70.01485110, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q14217403');
+INSERT INTO public.states VALUES (5247, 'San Nicolaas Noord', 13, 'AW', '05', NULL, 'Regions', 12.46427170, -69.94349390, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'NULL');
+INSERT INTO public.states VALUES (5248, 'San Nicolaas Zuid', 13, 'AW', '06', NULL, 'Regions', 12.42785580, -69.93810790, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q2605285');
+INSERT INTO public.states VALUES (5249, 'Santa Cruz', 13, 'AW', '07', NULL, 'Regions', 12.51128360, -69.98769660, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q3558364');
+INSERT INTO public.states VALUES (5250, 'Savaneta', 13, 'AW', '08', NULL, 'Regions', 12.46184190, -69.98558580, '2024-10-08 17:51:07', '2024-10-08 17:51:07', 1, 'Q2665720');
+INSERT INTO public.states VALUES (5251, 'Grand Cayman', 41, 'KY', '01', 'NULL', 'NULL', 19.33012710, -81.41724510, '2024-10-08 18:41:36', '2024-10-08 18:41:36', 1, 'Q737765');
+INSERT INTO public.states VALUES (5252, 'Cayman Brac', 41, 'KY', '02', 'NULL', 'NULL', 19.71999700, -79.89072660, '2024-10-08 18:41:36', '2024-10-08 18:41:36', 1, 'Q111386576');
+INSERT INTO public.states VALUES (5253, 'Little Cayman', 41, 'KY', '03', 'NULL', 'NULL', 19.68567390, -80.11830190, '2024-10-08 18:41:36', '2024-10-08 18:41:36', 1, 'Q27347438');
+INSERT INTO public.states VALUES (5254, 'Agana Heights', 89, 'GU', '01', NULL, 'Village', 13.46575920, 144.73195330, '2024-10-08 19:20:24', '2024-10-08 19:22:32', 1, 'Q2714496');
+INSERT INTO public.states VALUES (5255, 'Asan-Maina', 89, 'GU', '02', NULL, 'Village', 13.47291240, 144.71180410, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q926116');
+INSERT INTO public.states VALUES (5256, 'Barrigada', 89, 'GU', '03', NULL, 'Village', 13.46418270, 144.78822470, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2714489');
+INSERT INTO public.states VALUES (5257, 'Chalan Pago-Ordot', 89, 'GU', '04', NULL, 'Village', 13.43699800, 144.74867080, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482483');
+INSERT INTO public.states VALUES (5258, 'Dededo', 89, 'GU', '05', NULL, 'Village', 13.52289900, 144.79892870, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q1182147');
+INSERT INTO public.states VALUES (5259, 'Hågat', 89, 'GU', '06', NULL, 'Village', 13.38522240, 144.63996980, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q665845');
+INSERT INTO public.states VALUES (5260, 'Umatac (Humåtak)', 89, 'GU', '07', NULL, 'Village', 13.29457770, 144.65382830, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q531529');
+INSERT INTO public.states VALUES (5261, 'Inarajan (Inalåhan)', 89, 'GU', '08', NULL, 'Village', 13.27620490, 144.72038630, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482456');
+INSERT INTO public.states VALUES (5262, 'Merizo (Malesso)', 89, 'GU', '09', NULL, 'Village', 13.26860850, 144.65797490, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482497');
+INSERT INTO public.states VALUES (5263, 'Mangilao', 89, 'GU', '10', NULL, 'Village', 13.44985090, 144.78302680, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2637935');
+INSERT INTO public.states VALUES (5264, 'Mongmong-Toto-Maite', 89, 'GU', '11', NULL, 'Village', 13.46922010, 144.75338080, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q1780393');
+INSERT INTO public.states VALUES (5265, 'Hagåtña', 89, 'GU', '12', NULL, 'Village', 13.47298290, 144.72740380, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q30988');
+INSERT INTO public.states VALUES (5266, 'Piti', 89, 'GU', '13', NULL, 'Village', 13.46474460, 144.68769820, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482463');
+INSERT INTO public.states VALUES (5267, 'Santa Rita (Sånta Rita-Sumai)', 89, 'GU', '14', NULL, 'Village', 13.38678740, 144.66642270, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q1780381');
+INSERT INTO public.states VALUES (5268, 'Sinajana', 89, 'GU', '15', NULL, 'Village', 13.46094860, 144.74612080, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482489');
+INSERT INTO public.states VALUES (5269, 'Talofofo (Talo''fo''fo)', 89, 'GU', '16', NULL, 'Village', 13.35471440, 144.73459730, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482468');
+INSERT INTO public.states VALUES (5270, 'Tamuning', 89, 'GU', '17', NULL, 'Village', 13.49447620, 144.78045820, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q933714');
+INSERT INTO public.states VALUES (5271, 'Yigo', 89, 'GU', '18', NULL, 'Village', 13.57293770, 144.82315220, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2482473');
+INSERT INTO public.states VALUES (5272, 'Yona', 89, 'GU', '19', NULL, 'Village', 13.41020600, 144.75557470, '2024-10-08 19:20:24', '2024-10-08 19:20:24', 1, 'Q2638381');
+INSERT INTO public.states VALUES (5273, 'Blowing Point', 8, 'AI', '01', NULL, 'District', 18.17655530, -63.10212960, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q4928593');
+INSERT INTO public.states VALUES (5274, 'East End', 8, 'AI', '02', NULL, 'District', 18.23561730, -63.01497150, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q5328283');
+INSERT INTO public.states VALUES (5275, 'George Hill', 8, 'AI', '03', NULL, 'District', 18.19978110, -63.07761140, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q5540604');
+INSERT INTO public.states VALUES (5276, 'Island Harbour', 8, 'AI', '04', NULL, 'District', 18.25521250, -63.01405900, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q6083167');
+INSERT INTO public.states VALUES (5277, 'North Hill', 8, 'AI', '05', NULL, 'District', 18.20508630, -63.08584570, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7055619');
+INSERT INTO public.states VALUES (5278, 'North Side', 8, 'AI', '06', NULL, 'District', 18.23005440, -63.05188900, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7056734');
+INSERT INTO public.states VALUES (5279, 'Sandy Ground', 8, 'AI', '07', NULL, 'District', 18.20185510, -63.09734710, '2024-10-09 20:02:24', '2024-10-09 20:25:29', 1, '-63.0973471');
+INSERT INTO public.states VALUES (5280, 'Sandy Hill', 8, 'AI', '08', NULL, 'District', 18.21892100, -63.01299160, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7417283');
+INSERT INTO public.states VALUES (5281, 'South Hill', 8, 'AI', '09', NULL, 'District', 18.18924750, -63.09763670, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7567466');
+INSERT INTO public.states VALUES (5282, 'Stoney Ground', 8, 'AI', '10', NULL, 'District', 18.21791010, -63.04969860, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7619412');
+INSERT INTO public.states VALUES (5283, 'The Farrington', 8, 'AI', '11', NULL, 'District', 18.21347010, -63.02721620, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7733473');
+INSERT INTO public.states VALUES (5284, 'The Quarter', 8, 'AI', '12', NULL, 'District', 18.21453340, -63.05644890, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7758898');
+INSERT INTO public.states VALUES (5285, 'The Valley', 8, 'AI', '13', NULL, 'District', 18.21521660, -63.07006280, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q30994');
+INSERT INTO public.states VALUES (5286, 'West End', 8, 'AI', '14', NULL, 'District', 18.17153940, -63.17191270, '2024-10-09 20:02:24', '2024-10-09 20:02:24', 1, 'Q7985024');
+INSERT INTO public.states VALUES (5287, 'Mariehamn', 2, 'AX', '01', NULL, 'Municipalities', 60.09455780, 19.79505300, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q48329');
+INSERT INTO public.states VALUES (5288, 'Jomala', 2, 'AX', '02', NULL, 'Municipalities', 60.15223910, 19.87479810, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q176178');
+INSERT INTO public.states VALUES (5289, 'Finström', 2, 'AX', '03', NULL, 'Municipalities', 60.22993210, 19.96746360, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q51914');
+INSERT INTO public.states VALUES (5290, 'Lemland', 2, 'AX', '04', NULL, 'Municipalities', 60.06887050, 20.06581400, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q176186');
+INSERT INTO public.states VALUES (5291, 'Saltvik', 2, 'AX', '05', NULL, 'Municipalities', 60.27554460, 20.04131920, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q176196');
+INSERT INTO public.states VALUES (5292, 'Hammarland', 2, 'AX', '06', NULL, 'Municipalities', 60.21641830, 19.71964030, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q134685');
+INSERT INTO public.states VALUES (5293, 'Sund', 2, 'AX', '07', NULL, 'Municipalities', 60.23084760, 19.82397050, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q176201');
+INSERT INTO public.states VALUES (5294, 'Eckerö', 2, 'AX', '08', NULL, 'Municipalities', 60.22318140, 19.53893790, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q51909');
+INSERT INTO public.states VALUES (5295, 'Föglö', 2, 'AX', '09', NULL, 'Municipalities', 60.01462770, 20.39334070, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179722');
+INSERT INTO public.states VALUES (5296, 'Geta', 2, 'AX', '10', NULL, 'Municipalities', 60.37497270, 19.82659620, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q134675');
+INSERT INTO public.states VALUES (5297, 'Vårdö', 2, 'AX', '11', NULL, 'Municipalities', 60.24233960, 20.35281050, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179749');
+INSERT INTO public.states VALUES (5298, 'Brändö', 2, 'AX', '12', NULL, 'Municipalities', 60.41259080, 21.02299420, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179706');
+INSERT INTO public.states VALUES (5299, 'Lumparland', 2, 'AX', '13', NULL, 'Municipalities', 60.11523570, 20.24142800, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q176191');
+INSERT INTO public.states VALUES (5300, 'Kumlinge', 2, 'AX', '14', NULL, 'Municipalities', 60.25992720, 20.75875000, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179726');
+INSERT INTO public.states VALUES (5301, 'Kökar', 2, 'AX', '15', NULL, 'Municipalities', 59.92081700, 20.88853020, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179730');
+INSERT INTO public.states VALUES (5302, 'Sottunga', 2, 'AX', '16', NULL, 'Municipalities', 60.13079770, 20.64598210, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179739');
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5242, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5302, true);
 
 
 --
