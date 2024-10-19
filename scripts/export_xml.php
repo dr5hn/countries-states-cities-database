@@ -31,27 +31,7 @@ $files = array(
         'from' => '/json/cities.json',
         'to' => '/xml/cities.xml',
         'singular' => 'city',
-    ),
-    'states_cities' => array(
-        'from' => '/json/states+cities.json',
-        'to' => '/xml/states+cities.xml',
-        'singular' => 'state_city',
-    ),
-    'countries_states' => array(
-        'from' => '/json/countries+states.json',
-        'to' => '/xml/countries+states.xml',
-        'singular' => 'country_state',
-    ),
-    'countries_cities' => array(
-        'from' => '/json/countries+cities.json',
-        'to' => '/xml/countries+cities.xml',
-        'singular' => 'country_city',
-    ),
-    'countries_states_cities' => array(
-        'from' => '/json/countries+states+cities.json',
-        'to' => '/xml/countries+states+cities.xml',
-        'singular' => 'country_state_city',
-    ),
+    )
 );
 
 foreach ($files as $root => $v) :

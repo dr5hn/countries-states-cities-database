@@ -144,9 +144,6 @@ jobs:
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
-          mysql2sqlite -d world -t countries states --mysql-password root -u root -f sqlite/countries+states.sqlite3
-          mysql2sqlite -d world -t countries cities --mysql-password root -u root -f sqlite/countries+cities.sqlite3
-          mysql2sqlite -d world -t states cities --mysql-password root -u root -f sqlite/states+cities.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
       - name: Export SQL Server
