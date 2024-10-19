@@ -1,0 +1,120 @@
+// schema.prisma
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Region {
+  id           Int        @id @default(autoincrement())
+  name         String     @unique
+  translations Json?
+  wikiDataId   String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  countries    Country[]
+  subregions   Subregion[]
+
+  @@map("regions")
+}
+
+model Subregion {
+  id           Int       @id @default(autoincrement())
+  name         String    @unique
+  translations Json?
+  wikiDataId   String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  region       Region    @relation(fields: [regionId], references: [id])
+  regionId     Int
+  countries    Country[]
+
+  @@index([regionId])
+  @@map("subregions")
+}
+
+model Country {
+  id              Int      @id @default(autoincrement())
+  name            String
+  iso3            String   @unique @db.Char(3)
+  iso2            String   @unique @db.Char(2)
+  numericCode     String?  @db.Char(3)
+  phoneCode       String?
+  capital         String?
+  currency        String?
+  currencyName    String?
+  currencySymbol  String?
+  tld             String?
+  native          String?
+  region          String?
+  subregion       String?
+  latitude        Decimal? @db.Decimal(10, 8)
+  longitude       Decimal? @db.Decimal(11, 8)
+  emoji           String?
+  emojiU          String?
+  timezones       Json?
+  translations    Json?
+  wikiDataId      String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  regionRelation    Region?    @relation(fields: [regionId], references: [id])
+  regionId          Int?
+  subregionRelation Subregion? @relation(fields: [subregionId], references: [id])
+  subregionId       Int?
+
+  states           State[]
+  cities           City[]
+
+  @@index([regionId])
+  @@index([subregionId])
+  @@map("countries")
+}
+
+model State {
+  id         Int      @id @default(autoincrement())
+  name       String
+  countryCode String  @db.Char(2)
+  fipsCode   String?
+  iso2       String?
+  type       String?
+  latitude   Decimal? @db.Decimal(10, 8)
+  longitude  Decimal? @db.Decimal(11, 8)
+  wikiDataId String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  country    Country  @relation(fields: [countryId], references: [id])
+  countryId  Int
+  cities     City[]
+
+  @@index([countryId])
+  @@map("states")
+}
+
+model City {
+  id          Int      @id @default(autoincrement())
+  name        String
+  stateCode   String
+  countryCode String   @db.Char(2)
+  latitude    Decimal  @db.Decimal(10, 8)
+  longitude   Decimal  @db.Decimal(11, 8)
+  wikiDataId  String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  state       State    @relation(fields: [stateId], references: [id])
+  stateId     Int
+  country     Country  @relation(fields: [countryId], references: [id])
+  countryId   Int
+
+  @@index([stateId])
+  @@index([countryId])
+  @@map("cities")
+}

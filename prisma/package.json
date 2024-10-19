@@ -1,0 +1,32 @@
+{
+    "name": "countries-states-cities-database",
+    "version": "1.0.0",
+    "description": "A comprehensive database of countries, states, and cities using Prisma ORM",
+    "main": "index.js",
+    "scripts": {
+      "generate": "prisma generate",
+      "db:push": "prisma db push",
+      "seed": "ts-node prisma/seed.ts"
+    },
+    "keywords": [
+      "prisma",
+      "database",
+      "countries",
+      "states",
+      "cities",
+      "regions",
+      "subregions"
+    ],
+    "author": "Darshan Gada",
+    "license": "MIT",
+    "dependencies": {
+      "@prisma/client": "^4.15.0",
+      "node-fetch": "^3.3.1"
+    },
+    "devDependencies": {
+      "@types/node": "^18.16.16",
+      "prisma": "^4.15.0",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.1.3"
+    }
+  }
