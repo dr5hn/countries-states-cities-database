@@ -18,22 +18,23 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 - MYSQL
 - PSQL
 - SQLITE
+- SQLSERVER
 - XML
 - YAML
 - CSV
 
 ## Distribution Files Info
-| File                       | JSON               | MYSQL              | PSQL               | SQLITE             | XML                | YAML               | CSV                |
-| :------------------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- |
-| Regions                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Subregions                 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| State+Cities               | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 | NA                 |
+| File                       | JSON               | MYSQL              | PSQL               | SQLITE             | SQLSERVER          | XML                | YAML               | CSV                |
+| :------------------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- |
+| Regions                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Subregions                 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| State+Cities               | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 | NA                 |
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/

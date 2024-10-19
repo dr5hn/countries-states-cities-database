@@ -14,8 +14,8 @@ on:
         required: true
 
 jobs:
-  export_json_xml:
-    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE
+  export:
+    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER
     runs-on: ubuntu-latest
 
     strategy:
@@ -146,6 +146,10 @@ jobs:
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
+      - name: Export SQL Server
+        run: |
+          php scripts/export_sql_server.php
+
       - name: Update README.md
         run: |
           sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
@@ -158,12 +162,12 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL & SQLITE files
+          commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE & SQL Server files
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: "(chore): Export JSON, CSV, XML, YAML, MYSQL, PSQL & SQLITE files"
+          title: "(chore): Export JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE & SQL Server files"
           labels: |
             exports
             automated
