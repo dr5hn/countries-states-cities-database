@@ -5155,13 +5155,31 @@ INSERT INTO public.states VALUES (5299, 'Lumparland', 2, 'AX', '13', NULL, 'Muni
 INSERT INTO public.states VALUES (5300, 'Kumlinge', 2, 'AX', '14', NULL, 'Municipalities', 60.25992720, 20.75875000, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179726');
 INSERT INTO public.states VALUES (5301, 'Kökar', 2, 'AX', '15', NULL, 'Municipalities', 59.92081700, 20.88853020, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179730');
 INSERT INTO public.states VALUES (5302, 'Sottunga', 2, 'AX', '16', NULL, 'Municipalities', 60.13079770, 20.64598210, '2024-10-10 15:16:45', '2024-10-10 15:16:45', 1, 'Q179739');
+INSERT INTO public.states VALUES (5303, 'Ayre', 136, 'IM', NULL, '01', 'Sheadings', 54.32975770, -4.60258790, '2024-10-14 16:19:47', '2024-10-15 15:54:08', 1, 'Q2484719');
+INSERT INTO public.states VALUES (5304, 'Garff', 136, 'IM', NULL, '02', 'Sheadings', 54.25687200, -4.55473070, '2024-10-14 16:40:00', '2024-10-15 15:54:08', 1, 'Q2759593');
+INSERT INTO public.states VALUES (5305, 'Glenfaba', 136, 'IM', NULL, '03', 'Sheadings', 54.19855340, -4.81314070, '2024-10-14 16:40:00', '2024-10-15 15:54:08', 1, 'Q432500');
+INSERT INTO public.states VALUES (5306, 'Michael', 136, 'IM', NULL, '04', 'Sheadings', 54.27427780, -4.64273250, '2024-10-14 16:40:00', '2024-10-15 15:54:08', 1, 'Q3307970');
+INSERT INTO public.states VALUES (5307, 'Middle', 136, 'IM', NULL, '05', 'Sheadings', 54.17770520, -4.81064360, '2024-10-14 16:40:00', '2024-10-15 15:54:08', 1, 'Q2484719');
+INSERT INTO public.states VALUES (5308, 'Rushen', 136, 'IM', NULL, '06', 'Sheadings', 54.09574060, -4.82835170, '2024-10-14 16:19:47', '2024-10-15 15:54:08', 1, 'Q2089477');
+INSERT INTO public.states VALUES (5309, 'Grouville', 110, 'JE', NULL, '01', 'Parishes', 49.18212570, -2.09419810, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q2429741');
+INSERT INTO public.states VALUES (5310, 'St Brelade', 110, 'JE', NULL, '02', 'Parishes', 49.18488000, -2.24685080, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q1835699');
+INSERT INTO public.states VALUES (5311, 'St Clement', 110, 'JE', NULL, '03', 'Parishes', 49.16965790, -2.08839340, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q3058160');
+INSERT INTO public.states VALUES (5312, 'St Helier', 110, 'JE', NULL, '04', 'Parishes', 49.18115230, -2.12574260, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q147738');
+INSERT INTO public.states VALUES (5313, 'St John', 110, 'JE', NULL, '05', 'Parishes', 49.23912570, -2.18026840, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q954721');
+INSERT INTO public.states VALUES (5314, 'St Lawrence', 110, 'JE', NULL, '06', 'Parishes', 49.21527480, -2.18207700, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q509090');
+INSERT INTO public.states VALUES (5315, 'St Martin', 110, 'JE', NULL, '07', 'Parishes', 49.21641490, -2.08133390, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q593645');
+INSERT INTO public.states VALUES (5316, 'St Mary', 110, 'JE', NULL, '08', 'Parishes', 49.23781810, -2.19522130, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q2212948');
+INSERT INTO public.states VALUES (5317, 'St Ouen', 110, 'JE', NULL, '09', 'Parishes', 49.23680760, -2.25835970, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q2305318');
+INSERT INTO public.states VALUES (5318, 'St Peter', 110, 'JE', NULL, '10', 'Parishes', 49.21442780, -2.23234310, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q3058152');
+INSERT INTO public.states VALUES (5319, 'St Saviour', 110, 'JE', NULL, '11', 'Parishes', 49.20119890, -2.11257390, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q1808243');
+INSERT INTO public.states VALUES (5320, 'Trinity', 110, 'JE', NULL, '12', 'Parishes', 49.23059000, -2.11999360, '2024-10-14 17:47:47', '2024-10-15 15:29:49', 1, 'Q2594704');
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5302, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5320, true);
 
 
 --
