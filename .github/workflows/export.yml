@@ -148,8 +148,8 @@ jobs:
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
       - name: Export SQL Server
-        run: |
-          php bin/console export:sqlserver
+        working-directory: ./bin
+        run: php console export:sql-server
 
       - name: Update README.md
         run: |
