@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.15 (Ubuntu 14.15-1.pgdg22.04+1)
--- Dumped by pg_dump version 14.15 (Ubuntu 14.15-1.pgdg22.04+1)
+-- Dumped from database version 16.6 (Ubuntu 16.6-1.pgdg24.04+1)
+-- Dumped by pg_dump version 16.6 (Ubuntu 16.6-1.pgdg24.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1186,7 +1186,7 @@ INSERT INTO public.states VALUES (1228, 'Christ Church', 20, 'BB', '01', '01', '
 INSERT INTO public.states VALUES (1229, 'Saint Andrew', 20, 'BB', '02', '02', 'parish', NULL, NULL, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q1647439');
 INSERT INTO public.states VALUES (1230, 'Saint Michael', 20, 'BB', '08', '08', 'parish', 36.03597700, -95.84905200, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q819170');
 INSERT INTO public.states VALUES (1231, 'Ta''izz', 245, 'YE', '25', 'TA', 'governorate', 13.57758860, 44.01779890, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q388330');
-INSERT INTO public.states VALUES (1232, 'Amanat Al Asimah', 245, 'YE', '16', 'SA', 'municioality', 15.36944510, 44.19100660, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q2471');
+INSERT INTO public.states VALUES (1232, 'Amanat Al Asimah', 245, 'YE', '16', 'SA', 'municipality', 15.36944510, 44.19100660, '2019-10-05 21:48:41', '2025-01-02 13:15:48', 1, 'Q2471');
 INSERT INTO public.states VALUES (1233, 'Ibb', 245, 'YE', '23', 'IB', 'governorate', 14.14157170, 44.24790150, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q388274');
 INSERT INTO public.states VALUES (1234, 'Ma''rib', 245, 'YE', '14', 'MA', 'governorate', 15.51588800, 45.44980650, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q498465');
 INSERT INTO public.states VALUES (1235, 'Al Mahwit', 245, 'YE', '10', 'MW', 'governorate', 15.39632290, 43.56069460, '2019-10-05 21:48:41', '2024-12-16 21:17:36', 1, 'Q388280');
@@ -1417,35 +1417,35 @@ INSERT INTO public.states VALUES (1459, 'Iowa', 233, 'US', '19', 'IA', 'state', 
 INSERT INTO public.states VALUES (1460, 'Idaho', 233, 'US', '16', 'ID', 'state', 44.06820190, -114.74204080, '2019-10-05 21:48:42', '2022-03-13 14:29:55', 1, 'Q1221');
 INSERT INTO public.states VALUES (1461, 'Rhode Island', 233, 'US', '44', 'RI', 'state', 41.58009450, -71.47742910, '2019-10-05 21:48:42', '2022-03-13 14:29:55', 1, 'Q1387');
 INSERT INTO public.states VALUES (1462, 'Washington', 233, 'US', '53', 'WA', 'state', 47.75107410, -120.74013850, '2019-10-05 21:48:42', '2022-03-13 14:29:55', 1, 'Q1223');
-INSERT INTO public.states VALUES (1463, 'Shinyanga', 218, 'TZ', '15', '22', 'Region', -3.68099610, 33.42714030, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q153339');
-INSERT INTO public.states VALUES (1464, 'Simiyu', 218, 'TZ', '31', '30', 'Region', -2.83087380, 34.15319470, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q2787568');
-INSERT INTO public.states VALUES (1465, 'Kagera', 218, 'TZ', '19', '05', 'Region', -1.30011150, 31.26263660, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q309190');
-INSERT INTO public.states VALUES (1466, 'Dodoma', 218, 'TZ', '03', '03', 'Region', -6.57382280, 36.26308460, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q213268');
-INSERT INTO public.states VALUES (1467, 'Kilimanjaro', 218, 'TZ', '06', '09', 'Region', -4.13369270, 37.80876930, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q328922');
-INSERT INTO public.states VALUES (1468, 'Mara', 218, 'TZ', '08', '13', 'Region', -1.77535380, 34.15319470, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q458406');
-INSERT INTO public.states VALUES (1469, 'Tabora', 218, 'TZ', '17', '24', 'Region', -5.03421380, 32.80844960, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q153335');
-INSERT INTO public.states VALUES (1470, 'Morogoro', 218, 'TZ', '10', '16', 'Region', -8.81371730, 36.95410700, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q458388');
-INSERT INTO public.states VALUES (1471, 'Zanzibar South', 218, 'TZ', '21', '11', 'Region', -6.26428510, 39.44502810, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q643120');
-INSERT INTO public.states VALUES (1472, 'Pemba South', 218, 'TZ', '20', '10', 'Region', -5.31469610, 39.75495110, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q498067');
-INSERT INTO public.states VALUES (1473, 'Zanzibar North', 218, 'TZ', '22', '07', 'Region', -5.93950930, 39.27910110, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q147116');
-INSERT INTO public.states VALUES (1474, 'Singida', 218, 'TZ', '16', '23', 'Region', -6.74533520, 34.15319470, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q153326');
-INSERT INTO public.states VALUES (1475, 'Zanzibar West', 218, 'TZ', '25', '15', 'Region', -6.22981360, 39.25832930, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q180822');
-INSERT INTO public.states VALUES (1476, 'Mtwara', 218, 'TZ', '11', '17', 'Region', -10.33984550, 40.16574660, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q499465');
-INSERT INTO public.states VALUES (1477, 'Rukwa', 218, 'TZ', '24', '20', 'Region', -8.01094440, 31.44561790, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q153329');
-INSERT INTO public.states VALUES (1478, 'Kigoma', 218, 'TZ', '05', '08', 'Region', -4.88240920, 29.66150550, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q747943');
-INSERT INTO public.states VALUES (1479, 'Mwanza', 218, 'TZ', '12', '18', 'Region', -2.46711970, 32.89868120, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q331153');
-INSERT INTO public.states VALUES (1480, 'Njombe', 218, 'TZ', '30', '29', 'Region', -9.24226320, 35.12687810, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q2086273');
-INSERT INTO public.states VALUES (1481, 'Geita', 218, 'TZ', '28', '27', 'Region', -2.82422570, 32.26538870, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q1848521');
-INSERT INTO public.states VALUES (1482, 'Katavi', 218, 'TZ', '29', '28', 'Region', -6.36771250, 31.26263660, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q2682731');
-INSERT INTO public.states VALUES (1483, 'Lindi', 218, 'TZ', '07', '12', 'Region', -9.23433940, 38.31657250, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q309339');
-INSERT INTO public.states VALUES (1484, 'Manyara', 218, 'TZ', '27', '26', 'Region', -4.31500580, 36.95410700, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q331117');
-INSERT INTO public.states VALUES (1485, 'Pwani', 218, 'TZ', '02', '19', 'Region', -7.32377140, 38.82054540, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q458412');
-INSERT INTO public.states VALUES (1486, 'Ruvuma', 218, 'TZ', '14', '21', 'Region', -10.68787170, 36.26308460, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q115318');
-INSERT INTO public.states VALUES (1487, 'Tanga', 218, 'TZ', '18', '25', 'Region', -5.30497890, 38.31657250, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q389737');
-INSERT INTO public.states VALUES (1488, 'Pemba North', 218, 'TZ', '13', '06', 'Region', -5.03193520, 39.77555710, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q498073');
-INSERT INTO public.states VALUES (1489, 'Iringa', 218, 'TZ', '04', '04', 'Region', -7.78874420, 35.56578620, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q309352');
-INSERT INTO public.states VALUES (1490, 'Dar es Salaam', 218, 'TZ', '23', '02', 'Region', -6.79235400, 39.20832840, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q557539');
-INSERT INTO public.states VALUES (1491, 'Arusha', 218, 'TZ', '26', '01', 'Region', -3.38692540, 36.68299270, '2019-10-05 21:48:42', '2021-10-10 16:07:41', 1, 'Q329261');
+INSERT INTO public.states VALUES (1463, 'Shinyanga', 218, 'TZ', '15', '22', 'region', -3.68099610, 33.42714030, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q153339');
+INSERT INTO public.states VALUES (1464, 'Simiyu', 218, 'TZ', '31', '30', 'region', -2.83087380, 34.15319470, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q2787568');
+INSERT INTO public.states VALUES (1465, 'Kagera', 218, 'TZ', '19', '05', 'region', -1.30011150, 31.26263660, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q309190');
+INSERT INTO public.states VALUES (1466, 'Dodoma', 218, 'TZ', '03', '03', 'region', -6.57382280, 36.26308460, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q213268');
+INSERT INTO public.states VALUES (1467, 'Kilimanjaro', 218, 'TZ', '06', '09', 'region', -4.13369270, 37.80876930, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q328922');
+INSERT INTO public.states VALUES (1468, 'Mara', 218, 'TZ', '08', '13', 'region', -1.77535380, 34.15319470, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q458406');
+INSERT INTO public.states VALUES (1469, 'Tabora', 218, 'TZ', '17', '24', 'region', -5.03421380, 32.80844960, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q153335');
+INSERT INTO public.states VALUES (1470, 'Morogoro', 218, 'TZ', '10', '16', 'region', -8.81371730, 36.95410700, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q458388');
+INSERT INTO public.states VALUES (1471, 'Zanzibar South', 218, 'TZ', '21', '11', 'region', -6.26428510, 39.44502810, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q643120');
+INSERT INTO public.states VALUES (1472, 'Pemba South', 218, 'TZ', '20', '10', 'region', -5.31469610, 39.75495110, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q498067');
+INSERT INTO public.states VALUES (1473, 'Zanzibar North', 218, 'TZ', '22', '07', 'region', -5.93950930, 39.27910110, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q147116');
+INSERT INTO public.states VALUES (1474, 'Singida', 218, 'TZ', '16', '23', 'region', -6.74533520, 34.15319470, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q153326');
+INSERT INTO public.states VALUES (1475, 'Zanzibar West', 218, 'TZ', '25', '15', 'region', -6.22981360, 39.25832930, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q180822');
+INSERT INTO public.states VALUES (1476, 'Mtwara', 218, 'TZ', '11', '17', 'region', -10.33984550, 40.16574660, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q499465');
+INSERT INTO public.states VALUES (1477, 'Rukwa', 218, 'TZ', '24', '20', 'region', -8.01094440, 31.44561790, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q153329');
+INSERT INTO public.states VALUES (1478, 'Kigoma', 218, 'TZ', '05', '08', 'region', -4.88240920, 29.66150550, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q747943');
+INSERT INTO public.states VALUES (1479, 'Mwanza', 218, 'TZ', '12', '18', 'region', -2.46711970, 32.89868120, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q331153');
+INSERT INTO public.states VALUES (1480, 'Njombe', 218, 'TZ', '30', '29', 'region', -9.24226320, 35.12687810, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q2086273');
+INSERT INTO public.states VALUES (1481, 'Geita', 218, 'TZ', '28', '27', 'region', -2.82422570, 32.26538870, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q1848521');
+INSERT INTO public.states VALUES (1482, 'Katavi', 218, 'TZ', '29', '28', 'region', -6.36771250, 31.26263660, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q2682731');
+INSERT INTO public.states VALUES (1483, 'Lindi', 218, 'TZ', '07', '12', 'region', -9.23433940, 38.31657250, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q309339');
+INSERT INTO public.states VALUES (1484, 'Manyara', 218, 'TZ', '27', '26', 'region', -4.31500580, 36.95410700, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q331117');
+INSERT INTO public.states VALUES (1485, 'Pwani', 218, 'TZ', '02', '19', 'region', -7.32377140, 38.82054540, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q458412');
+INSERT INTO public.states VALUES (1486, 'Ruvuma', 218, 'TZ', '14', '21', 'region', -10.68787170, 36.26308460, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q115318');
+INSERT INTO public.states VALUES (1487, 'Tanga', 218, 'TZ', '18', '25', 'region', -5.30497890, 38.31657250, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q389737');
+INSERT INTO public.states VALUES (1488, 'Pemba North', 218, 'TZ', '13', '06', 'region', -5.03193520, 39.77555710, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q498073');
+INSERT INTO public.states VALUES (1489, 'Iringa', 218, 'TZ', '04', '04', 'region', -7.78874420, 35.56578620, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q309352');
+INSERT INTO public.states VALUES (1490, 'Dar es Salaam', 218, 'TZ', '23', '02', 'region', -6.79235400, 39.20832840, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q557539');
+INSERT INTO public.states VALUES (1491, 'Arusha', 218, 'TZ', '26', '01', 'region', -3.38692540, 36.68299270, '2019-10-05 21:48:42', '2025-01-02 13:15:16', 1, 'Q329261');
 INSERT INTO public.states VALUES (1493, 'Tavastia Proper', 74, 'FI', '05', '06', 'region', 60.90701500, 24.30054980, '2019-10-05 21:48:42', '2022-08-31 14:48:33', 1, 'Q5695');
 INSERT INTO public.states VALUES (1494, 'Central Ostrobothnia', 74, 'FI', '16', '07', 'region', 63.56217350, 24.00136310, '2019-10-05 21:48:42', '2022-08-31 14:48:33', 1, 'Q5696');
 INSERT INTO public.states VALUES (1495, 'Southern Savonia', 74, 'FI', '10', '04', 'region', 61.69451480, 27.80050150, '2019-10-05 21:48:42', '2022-08-31 14:48:33', 1, 'Q5693');
@@ -2319,7 +2319,7 @@ INSERT INTO public.states VALUES (2402, 'Monmouthshire', 232, 'GB', 'Y4', 'MON',
 INSERT INTO public.states VALUES (2403, 'Derbyshire', 232, 'GB', 'Y4', 'DBY', 'two-tier county', 53.10467820, -1.56238850, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q11775003');
 INSERT INTO public.states VALUES (2404, 'Glasgow', 232, 'GB', 'V2', 'GLG', 'council area', 55.86423700, -4.25180600, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q4093');
 INSERT INTO public.states VALUES (2405, 'Buckinghamshire', 232, 'GB', 'V2', 'BKM', 'unitary authority', 51.80722040, -0.81276640, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q21694636');
-INSERT INTO public.states VALUES (2406, 'Durham', 232, 'GB', 'D8', 'DUR', 'unitary authority	', 54.72940990, -1.88115980, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q1137286');
+INSERT INTO public.states VALUES (2406, 'Durham', 232, 'GB', 'D8', 'DUR', 'unitary authority', 54.72940990, -1.88115980, '2019-10-05 21:48:47', '2025-01-02 13:16:37', 1, 'Q1137286');
 INSERT INTO public.states VALUES (2407, 'Shropshire', 232, 'GB', 'D8', 'SHR', 'unitary authority', 52.70636570, -2.74178490, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q21694759');
 INSERT INTO public.states VALUES (2408, 'Wirral', 232, 'GB', 'Q1', 'WRL', 'metropolitan district', 53.37271810, -3.07375400, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q11365639');
 INSERT INTO public.states VALUES (2409, 'South Tyneside', 232, 'GB', 'M7', 'STY', 'metropolitan district', 54.96366930, -1.44186340, '2019-10-05 21:48:47', '2024-12-17 20:26:46', 1, 'Q1541228');
@@ -3902,7 +3902,7 @@ INSERT INTO public.states VALUES (4007, 'Haryana', 101, 'IN', '10', 'HR', 'state
 INSERT INTO public.states VALUES (4008, 'Maharashtra', 101, 'IN', '16', 'MH', 'state', 19.75147980, 75.71388840, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1191');
 INSERT INTO public.states VALUES (4009, 'Goa', 101, 'IN', '33', 'GA', 'state', 15.29932650, 74.12399600, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1171');
 INSERT INTO public.states VALUES (4010, 'Manipur', 101, 'IN', '17', 'MN', 'state', 24.66371730, 93.90626880, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1193');
-INSERT INTO public.states VALUES (4011, 'Puducherry', 101, 'IN', '22', 'PY', 'Union territory', 11.94159150, 79.80831330, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q66743');
+INSERT INTO public.states VALUES (4011, 'Puducherry', 101, 'IN', '22', 'PY', 'union territory', 11.94159150, 79.80831330, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q66743');
 INSERT INTO public.states VALUES (4012, 'Telangana', 101, 'IN', '40', 'TG', 'state', 18.11243720, 79.01929970, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q677037');
 INSERT INTO public.states VALUES (4013, 'Odisha', 101, 'IN', '21', 'OR', 'state', 20.95166580, 85.09852360, '2019-10-05 21:48:57', '2022-10-06 10:39:54', 1, 'Q22048');
 INSERT INTO public.states VALUES (4014, 'Rajasthan', 101, 'IN', '24', 'RJ', 'state', 27.02380360, 74.21793260, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1437');
@@ -3910,20 +3910,20 @@ INSERT INTO public.states VALUES (4015, 'Punjab', 101, 'IN', '23', 'PB', 'state'
 INSERT INTO public.states VALUES (4016, 'Uttarakhand', 101, 'IN', '39', 'UK', 'state', 30.06675300, 79.01929970, '2019-10-05 21:48:57', '2024-02-16 18:32:08', 1, 'Q1499');
 INSERT INTO public.states VALUES (4017, 'Andhra Pradesh', 101, 'IN', '02', 'AP', 'state', 15.91289980, 79.73998750, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1159');
 INSERT INTO public.states VALUES (4018, 'Nagaland', 101, 'IN', '20', 'NL', 'state', 26.15843540, 94.56244260, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1599');
-INSERT INTO public.states VALUES (4019, 'Lakshadweep', 101, 'IN', '14', 'LD', 'Union territory', 10.32802650, 72.78463360, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q26927');
+INSERT INTO public.states VALUES (4019, 'Lakshadweep', 101, 'IN', '14', 'LD', 'union territory', 10.32802650, 72.78463360, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q26927');
 INSERT INTO public.states VALUES (4020, 'Himachal Pradesh', 101, 'IN', '11', 'HP', 'state', 31.10482940, 77.17339010, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1177');
-INSERT INTO public.states VALUES (4021, 'Delhi', 101, 'IN', '07', 'DL', 'Union territory', 28.70405920, 77.10249020, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1353');
+INSERT INTO public.states VALUES (4021, 'Delhi', 101, 'IN', '07', 'DL', 'union territory', 28.70405920, 77.10249020, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q1353');
 INSERT INTO public.states VALUES (4022, 'Uttar Pradesh', 101, 'IN', '36', 'UP', 'state', 26.84670880, 80.94615920, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1498');
-INSERT INTO public.states VALUES (4023, 'Andaman and Nicobar Islands', 101, 'IN', '01', 'AN', 'Union territory', 11.74008670, 92.65864010, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q40888');
+INSERT INTO public.states VALUES (4023, 'Andaman and Nicobar Islands', 101, 'IN', '01', 'AN', 'union territory', 11.74008670, 92.65864010, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q40888');
 INSERT INTO public.states VALUES (4024, 'Arunachal Pradesh', 101, 'IN', '30', 'AR', 'state', 28.21799940, 94.72775280, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1162');
 INSERT INTO public.states VALUES (4025, 'Jharkhand', 101, 'IN', '38', 'JH', 'state', 23.61018080, 85.27993540, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1184');
 INSERT INTO public.states VALUES (4026, 'Karnataka', 101, 'IN', '19', 'KA', 'state', 15.31727750, 75.71388840, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1185');
 INSERT INTO public.states VALUES (4027, 'Assam', 101, 'IN', '03', 'AS', 'state', 26.20060430, 92.93757390, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1164');
 INSERT INTO public.states VALUES (4028, 'Kerala', 101, 'IN', '13', 'KL', 'state', 10.85051590, 76.27108330, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1186');
-INSERT INTO public.states VALUES (4029, 'Jammu and Kashmir', 101, 'IN', '12', 'JK', 'Union territory', 33.27783900, 75.34121790, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1180');
+INSERT INTO public.states VALUES (4029, 'Jammu and Kashmir', 101, 'IN', '12', 'JK', 'union territory', 33.27783900, 75.34121790, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q1180');
 INSERT INTO public.states VALUES (4030, 'Gujarat', 101, 'IN', '09', 'GJ', 'state', 22.25865200, 71.19238050, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1061');
-INSERT INTO public.states VALUES (4031, 'Chandigarh', 101, 'IN', '05', 'CH', 'Union territory', 30.73331480, 76.77941790, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q43433');
-INSERT INTO public.states VALUES (4033, 'Dadra and Nagar Haveli and Daman and Diu', 101, 'IN', '32', 'DH', 'Union territory', 20.39737360, 72.83279910, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q66710');
+INSERT INTO public.states VALUES (4031, 'Chandigarh', 101, 'IN', '05', 'CH', 'union territory', 30.73331480, 76.77941790, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q43433');
+INSERT INTO public.states VALUES (4033, 'Dadra and Nagar Haveli and Daman and Diu', 101, 'IN', '32', 'DH', 'union territory', 20.39737360, 72.83279910, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q66710');
 INSERT INTO public.states VALUES (4034, 'Sikkim', 101, 'IN', '29', 'SK', 'state', 27.53297180, 88.51221780, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1505');
 INSERT INTO public.states VALUES (4035, 'Tamil Nadu', 101, 'IN', '25', 'TN', 'state', 11.12712250, 78.65689420, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1445');
 INSERT INTO public.states VALUES (4036, 'Mizoram', 101, 'IN', '31', 'MZ', 'state', 23.16454300, 92.93757390, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1502');
@@ -4632,7 +4632,7 @@ INSERT INTO public.states VALUES (4848, 'Enga', 171, 'PG', '19', 'EPW', 'provinc
 INSERT INTO public.states VALUES (4849, 'Milne Bay', 171, 'PG', '03', 'MBA', 'province', -9.52214510, 150.67496530, '2019-10-05 21:49:01', '2024-12-18 17:49:56', 1, 'Q874962');
 INSERT INTO public.states VALUES (4850, 'Western', 171, 'PG', '06', 'WPD', 'province', NULL, NULL, '2019-10-05 21:49:01', '2024-12-18 17:49:56', 1, 'Q849790');
 INSERT INTO public.states VALUES (4851, 'Ohio', 233, 'US', '39', 'OH', 'state', 40.41728710, -82.90712300, '2019-11-13 04:00:00', '2022-03-13 14:29:55', 1, 'Q1397');
-INSERT INTO public.states VALUES (4852, 'Ladakh', 101, 'IN', NULL, 'LA', 'Union territory', 34.22684750, 77.56194190, '2019-10-05 21:48:57', '2022-03-13 14:39:54', 1, 'Q200667');
+INSERT INTO public.states VALUES (4852, 'Ladakh', 101, 'IN', NULL, 'LA', 'union territory', 34.22684750, 77.56194190, '2019-10-05 21:48:57', '2025-01-02 13:17:20', 1, 'Q200667');
 INSERT INTO public.states VALUES (4853, 'West Bengal', 101, 'IN', '28', 'WB', 'state', 22.98675690, 87.85497550, '2019-10-05 21:48:57', '2022-03-13 11:27:52', 1, 'Q1356');
 INSERT INTO public.states VALUES (4854, 'Sinop', 225, 'TR', '57', '57', 'province', 41.55947490, 34.85805320, '2020-05-24 21:48:46', '2021-10-30 19:16:39', 1, 'Q134413');
 INSERT INTO public.states VALUES (4855, 'Distrito Capital', 239, 'VE', '25', 'A', 'capital district', 41.26148460, -95.93108070, '2019-10-05 21:48:45', '2022-01-22 11:38:16', 1, 'Q492791');
@@ -4727,8 +4727,8 @@ INSERT INTO public.states VALUES (4951, 'Youssoufia', 149, 'MA', '07', 'YUS', 'p
 INSERT INTO public.states VALUES (4952, 'Sidi Slimane', 149, 'MA', '04', 'SIL', 'province', 34.27378280, -5.98059720, '2019-10-05 21:48:53', '2022-05-08 19:15:15', 1, 'Q3408411');
 INSERT INTO public.states VALUES (4953, 'Lualaba', 51, 'CD', '21', 'LU', 'province', -10.48086980, 25.62978160, '2019-10-05 21:48:50', '2024-12-18 16:44:22', 1, 'Q1159531');
 INSERT INTO public.states VALUES (4954, 'Chaiyaphum', 219, 'TH', '26', '36', 'province', 16.00749740, 101.61291720, '2019-10-05 21:48:55', '2024-12-18 17:49:56', 1, 'Q275377');
-INSERT INTO public.states VALUES (4955, 'Mbeya', 218, 'TZ', '09', '14', 'Region', -8.28661120, 32.81325370, '2021-10-10 16:07:41', '2021-10-10 16:10:52', 1, 'Q458382');
-INSERT INTO public.states VALUES (4956, 'Songwe', 218, 'TZ', '32', '31', 'Region', -8.27261200, 31.71131740, '2021-10-10 16:07:41', '2021-10-10 16:11:37', 1, 'Q458382');
+INSERT INTO public.states VALUES (4955, 'Mbeya', 218, 'TZ', '09', '14', 'region', -8.28661120, 32.81325370, '2021-10-10 16:07:41', '2025-01-02 13:15:16', 1, 'Q458382');
+INSERT INTO public.states VALUES (4956, 'Songwe', 218, 'TZ', '32', '31', 'region', -8.27261200, 31.71131740, '2021-10-10 16:07:41', '2025-01-02 13:15:16', 1, 'Q458382');
 INSERT INTO public.states VALUES (4957, 'Basel-Stadt', 214, 'CH', '04', 'BS', 'canton', 47.56666700, 7.60000000, '2021-10-15 19:09:18', '2021-11-13 17:51:51', 1, 'Q12172');
 INSERT INTO public.states VALUES (4958, 'Bono East', 83, 'GH', '', 'BE', 'region', 7.75000000, -1.05000000, '2021-10-30 14:38:55', '2021-10-30 14:38:55', 1, 'Q60764358');
 INSERT INTO public.states VALUES (4959, 'Bono', 83, 'GH', '', 'BO', 'region', 7.65000000, -2.50000000, '2021-10-30 14:38:55', '2021-10-30 14:38:55', 1, 'Q64685186');
@@ -4992,7 +4992,7 @@ INSERT INTO public.states VALUES (5218, 'Navassa Island', 234, 'UM', NULL, '76',
 INSERT INTO public.states VALUES (5219, 'Palmyra Atoll', 234, 'UM', NULL, '95', 'island', 5.88850260, -162.07866560, '2023-03-25 18:38:55', '2023-03-25 18:38:55', 1, 'Q123076');
 INSERT INTO public.states VALUES (5220, 'Wake Island', 234, 'UM', NULL, '79', 'island', 19.27961900, 166.64993480, '2023-03-25 18:38:55', '2023-03-25 18:38:55', 1, 'Q43296');
 INSERT INTO public.states VALUES (5221, 'Asuncion', 172, 'PY', NULL, 'ASU', 'capital', -25.29682970, -57.68066230, '2023-06-28 18:38:55', '2023-06-28 18:38:55', 1, 'Q2933');
-INSERT INTO public.states VALUES (5222, 'Canarias', 207, 'ES', 'IC', 'CN', 'autonomous community', 28.29160000, 16.62910000, '2019-10-05 21:49:00', '2023-07-28 15:38:53', 1, 'Q5813');
+INSERT INTO public.states VALUES (5222, 'Canary Islands', 207, 'ES', 'IC', 'CN', 'autonomous community', 28.29160000, 16.62910000, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5813');
 INSERT INTO public.states VALUES (5223, 'Ceuta', 207, 'ES', '', 'CE', 'autonomous city in North Africa', 35.88900000, -5.31870000, '2023-07-28 16:19:31', '2023-07-28 16:19:31', 1, 'Q25212');
 INSERT INTO public.states VALUES (5224, 'Melilla', 207, 'ES', '', 'ML', 'autonomous city in North Africa', 35.29370000, -2.93830000, '2023-07-28 16:19:31', '2023-07-28 16:19:56', 1, 'Q131981');
 INSERT INTO public.states VALUES (5225, 'South Province', 157, 'NC', '', '01', 'province', -22.27580000, 166.45800000, '2023-09-06 11:25:00', '2023-09-06 11:25:00', 1, 'Q965632');
@@ -5093,13 +5093,30 @@ INSERT INTO public.states VALUES (5319, 'St Saviour', 110, 'JE', NULL, '11', 'pa
 INSERT INTO public.states VALUES (5320, 'Trinity', 110, 'JE', NULL, '12', 'parish', 49.23059000, -2.11999360, '2024-10-14 17:47:47', '2024-12-17 21:07:02', 1, 'Q2594704');
 INSERT INTO public.states VALUES (5321, 'Peja', 248, 'XK', NULL, 'PEJ', 'district', 42.70317090, 20.06168550, '2020-08-15 20:33:03', '2024-12-18 18:08:11', 1, 'Q609247');
 INSERT INTO public.states VALUES (5322, 'Prizren', 248, 'XK', NULL, 'PRI', 'district', 42.23245650, 20.40393660, '2020-08-15 20:33:03', '2024-12-18 18:08:11', 1, 'Q1048331');
+INSERT INTO public.states VALUES (5324, 'Metro Manila(National Capital Region)', 174, 'PH', '00', '00', 'region', 14.56807070, 120.85583270, '2019-10-05 21:48:41', '2024-12-30 19:11:44', 1, 'Q13580');
+INSERT INTO public.states VALUES (5325, 'Andalusia', 207, 'ES', '', 'AN', 'autonomous community', 37.30840610, -7.21644460, '2019-10-05 21:49:00', '2024-12-30 19:15:43', 1, 'Q5783');
+INSERT INTO public.states VALUES (5326, 'Aragon', 207, 'ES', '', 'AR', 'autonomous community', 41.38011140, -2.02031590, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q4040');
+INSERT INTO public.states VALUES (5327, 'Asturias', 207, 'ES', '', 'AS', 'autonomous community', 43.26892790, -7.16832120, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q3934');
+INSERT INTO public.states VALUES (5328, 'Cantabria', 207, 'ES', '', 'CB', 'autonomous community', 43.13497280, -4.66145180, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q3946');
+INSERT INTO public.states VALUES (5329, 'Castile and Leon', 207, 'ES', '', 'CL', 'autonomous community', 41.63384450, -7.07137270, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5739');
+INSERT INTO public.states VALUES (5330, 'Castilla-La Mancha', 207, 'ES', '', 'CM', 'autonomous community', 39.64895440, -5.80632400, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5748');
+INSERT INTO public.states VALUES (5331, 'Catalonia', 207, 'ES', '', 'CT', 'autonomous community', 41.68672110, 0.42393440, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5705');
+INSERT INTO public.states VALUES (5332, 'Basque Country', 207, 'ES', '', 'PV', 'autonomous community', 42.96390850, -3.25058230, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q3995');
+INSERT INTO public.states VALUES (5333, 'Estremadura', 207, 'ES', '', 'EX', 'autonomous community', 39.20849790, -7.41654810, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5777');
+INSERT INTO public.states VALUES (5334, 'Galicia', 207, 'ES', '', 'GA', 'autonomous community', 42.79428750, -9.33959280, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q3908');
+INSERT INTO public.states VALUES (5335, 'Balearic Islands', 207, 'ES', '', 'IB', 'autonomous community', 39.36215860, 1.42334520, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q107356467');
+INSERT INTO public.states VALUES (5336, 'La Rioja', 207, 'ES', '', 'RI', 'autonomous community', 42.28076920, -3.06723480, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5727');
+INSERT INTO public.states VALUES (5337, 'Community of Madrid', 207, 'ES', '', 'MD', 'autonomous community', 40.52445220, -4.47541030, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5756');
+INSERT INTO public.states VALUES (5338, 'Region of Murcia', 207, 'ES', '', 'MC', 'autonomous community', 38.06365820, -2.15547250, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5772');
+INSERT INTO public.states VALUES (5339, 'Navarre', 207, 'ES', '', 'NC', 'autonomous community', 42.61147290, -2.27145430, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q4018');
+INSERT INTO public.states VALUES (5340, 'Valencian Community', 207, 'ES', '', 'VC', 'autonomous community', 39.31088690, -1.73841720, '2019-10-05 21:49:00', '2024-12-30 19:45:18', 1, 'Q5720');
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5322, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5340, true);
 
 
 --
