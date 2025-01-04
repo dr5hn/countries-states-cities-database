@@ -1,81 +1,83 @@
 <?php
 
-
 namespace bin\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 
 class ExportCsv extends Command
 {
-    protected static $defaultName = 'export:export-csv';
+    protected static $defaultName = 'export:csv';
+    protected static $defaultDescription = 'Export data to CSV format';
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    private const FILES = [
+        'countries' => ['from' => '/json/countries.json', 'to' => '/csv/countries.csv'],
+        'states' => ['from' => '/json/states.json', 'to' => '/csv/states.csv'],
+        'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
+        'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
+        'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
+    ];
+
+    private Filesystem $filesystem;
+
+    public function __construct()
     {
-
-        $rootDir = PATH_BASE . '../..';
-
-        $files = array(
-            'countries' => array(
-                'from' => '/json/countries.json',
-                'to' => '/csv/countries.csv',
-            ),
-            'states' => array(
-                'from' => '/json/states.json',
-                'to' => '/csv/states.csv',
-            ),
-            'cities' => array(
-                'from' => '/json/cities.json',
-                'to' => '/csv/cities.csv',
-            ),
-            'regions' => array(
-                'from' => '/json/regions.json',
-                'to' => '/csv/regions.csv',
-            ),
-            'subregions' => array(
-                'from' => '/json/subregions.json',
-                'to' => '/csv/subregions.csv',
-            ),
-        );
-
-        foreach ($files as $root => $v) {
-            // Gets JSON file
-            $json = file_get_contents($rootDir . $v['from']);
-
-            $csc = json_decode($json, true);
-
-            $fp = fopen($rootDir . $v['to'], 'w'); // Putting Array to XML
-
-            // Set headings
-            $headings = $csc[0];
-
-            // No translations please.
-            unset($headings['translations']);
-            fputcsv($fp, array_keys($headings));
-
-            // Loop through the associative array.
-            foreach ($csc as $row) {
-                // Update timezones to make readable
-                if (!empty($row['timezones'])) {
-                    $row['timezones'] = json_encode($row['timezones']);
-                    $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
-                    $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
-                }
-
-                // No translations please.
-                unset($row['translations']);
-
-                // Write the row to the CSV file.
-                fputcsv($fp, $row);
-            };
-
-            fclose($fp);
-
-            $output->writeln( 'CSV Exported to ' . $rootDir . $v['to'] );
-        }
-
-        return 1;
+        parent::__construct(self::$defaultName);
+        $this->filesystem = new Filesystem();
     }
 
+    protected function configure(): void
+    {
+        $this->setHelp('This command exports the database to CSV format');
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $io = new SymfonyStyle($input, $output);
+        $rootDir = dirname(PATH_BASE);
+
+        $io->title('Exporting CSV data to ' . $rootDir);
+
+        try {
+            foreach (self::FILES as $root => $v) {
+                $io->section("Processing: $root");
+
+                $jsonData = $this->filesystem->exists($rootDir . $v['from'])
+                    ? file_get_contents($rootDir . $v['from'])
+                    : throw new \RuntimeException("JSON file not found: {$v['from']}");
+
+                $csc = json_decode($jsonData, true)
+                    ?: throw new \RuntimeException("Invalid JSON in {$v['from']}");
+
+                $fp = fopen($rootDir . $v['to'], 'w');
+
+                // Set headings
+                $headings = $csc[0];
+                unset($headings['translations']);
+                fputcsv($fp, array_keys($headings));
+
+                // Write data
+                foreach ($csc as $row) {
+                    if (!empty($row['timezones'])) {
+                        $row['timezones'] = json_encode($row['timezones']);
+                        $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
+                        $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
+                    }
+                    unset($row['translations']);
+                    fputcsv($fp, $row);
+                }
+
+                fclose($fp);
+                $io->success("Exported $root to CSV");
+            }
+
+            return Command::SUCCESS;
+        } catch (\Exception $e) {
+            $io->error("Export failed: {$e->getMessage()}");
+            return Command::FAILURE;
+        }
+    }
 }

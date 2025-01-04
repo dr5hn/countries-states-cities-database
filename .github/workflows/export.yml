@@ -6,7 +6,7 @@ on:
       - master
     paths-ignore:
       - "**"
-      - "!scripts/export**"
+      - "!bin/Commands/Export**"
   workflow_dispatch:
     inputs:
       pass:
@@ -16,11 +16,11 @@ on:
 jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       matrix:
-        php-version: [8.1]
+        php-version: [8.2]
         node-version: [20.x]
       fail-fast: false
 
@@ -99,24 +99,25 @@ jobs:
 
       - name: Composer Dependencies
         run: |
-          cd scripts/vendor
+          cd bin
           composer install
+          php bin/console list
 
       - name: Export JSON
         run: |
-          php scripts/export.php
+          php bin/console export:json
 
       - name: Export XML
         run: |
-          php scripts/export_xml.php
+          php bin/console export:xml
 
       - name: Export YAML
         run: |
-          php scripts/export_yaml.php
+          php bin/console export:yaml
 
       - name: Export CSV
         run: |
-          php scripts/export_csv.php
+          php bin/console export:csv
 
       - name: Export MySQL SQL
         run: |
@@ -148,7 +149,7 @@ jobs:
 
       - name: Export SQL Server
         run: |
-          php scripts/export_sql_server.php
+          php bin/console export:sqlserver
 
       - name: Update README.md
         run: |
