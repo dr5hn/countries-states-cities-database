@@ -1630,25 +1630,25 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3430,"Southern Peninsula",100,IS,Iceland,2,region,63.91548030,-22.36496670
 3436,Western,100,IS,Iceland,3,region,,
 3432,Westfjords,100,IS,Iceland,4,region,65.91961500,-21.88117640
-4023,"Andaman and Nicobar Islands",101,IN,India,AN,"Union territory",11.74008670,92.65864010
+4023,"Andaman and Nicobar Islands",101,IN,India,AN,"union territory",11.74008670,92.65864010
 4017,"Andhra Pradesh",101,IN,India,AP,state,15.91289980,79.73998750
 4024,"Arunachal Pradesh",101,IN,India,AR,state,28.21799940,94.72775280
 4027,Assam,101,IN,India,AS,state,26.20060430,92.93757390
 4037,Bihar,101,IN,India,BR,state,25.09607420,85.31311940
-4031,Chandigarh,101,IN,India,CH,"Union territory",30.73331480,76.77941790
+4031,Chandigarh,101,IN,India,CH,"union territory",30.73331480,76.77941790
 4040,Chhattisgarh,101,IN,India,CT,state,21.27865670,81.86614420
-4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,"Union territory",20.39737360,72.83279910
-4021,Delhi,101,IN,India,DL,"Union territory",28.70405920,77.10249020
+4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,"union territory",20.39737360,72.83279910
+4021,Delhi,101,IN,India,DL,"union territory",28.70405920,77.10249020
 4009,Goa,101,IN,India,GA,state,15.29932650,74.12399600
 4030,Gujarat,101,IN,India,GJ,state,22.25865200,71.19238050
 4007,Haryana,101,IN,India,HR,state,29.05877570,76.08560100
 4020,"Himachal Pradesh",101,IN,India,HP,state,31.10482940,77.17339010
-4029,"Jammu and Kashmir",101,IN,India,JK,"Union territory",33.27783900,75.34121790
+4029,"Jammu and Kashmir",101,IN,India,JK,"union territory",33.27783900,75.34121790
 4025,Jharkhand,101,IN,India,JH,state,23.61018080,85.27993540
 4026,Karnataka,101,IN,India,KA,state,15.31727750,75.71388840
 4028,Kerala,101,IN,India,KL,state,10.85051590,76.27108330
-4852,Ladakh,101,IN,India,LA,"Union territory",34.22684750,77.56194190
-4019,Lakshadweep,101,IN,India,LD,"Union territory",10.32802650,72.78463360
+4852,Ladakh,101,IN,India,LA,"union territory",34.22684750,77.56194190
+4019,Lakshadweep,101,IN,India,LD,"union territory",10.32802650,72.78463360
 4039,"Madhya Pradesh",101,IN,India,MP,state,22.97342290,78.65689420
 4008,Maharashtra,101,IN,India,MH,state,19.75147980,75.71388840
 4010,Manipur,101,IN,India,MN,state,24.66371730,93.90626880
@@ -1656,7 +1656,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4036,Mizoram,101,IN,India,MZ,state,23.16454300,92.93757390
 4018,Nagaland,101,IN,India,NL,state,26.15843540,94.56244260
 4013,Odisha,101,IN,India,OR,state,20.95166580,85.09852360
-4011,Puducherry,101,IN,India,PY,"Union territory",11.94159150,79.80831330
+4011,Puducherry,101,IN,India,PY,"union territory",11.94159150,79.80831330
 4015,Punjab,101,IN,India,PB,state,31.14713050,75.34121790
 4014,Rajasthan,101,IN,India,RJ,state,27.02380360,74.21793260
 4034,Sikkim,101,IN,India,SK,state,27.53297180,88.51221780
@@ -3131,6 +3131,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1329,Marinduque,174,PH,Philippines,MAD,province,13.47671710,121.90321920
 1338,Masbate,174,PH,Philippines,MAS,province,12.35743460,123.55040760
 1347,"Metro Manila",174,PH,Philippines,NCR,province,14.60905370,121.02225650
+5324,"Metro Manila(National Capital Region)",174,PH,Philippines,00,region,14.56807070,120.85583270
 1299,Mimaropa,174,PH,Philippines,41,region,9.84320650,118.73647830
 1343,"Misamis Occidental",174,PH,Philippines,MSC,province,8.33749030,123.70706190
 1348,"Misamis Oriental",174,PH,Philippines,MSR,province,8.50455580,124.62195920
@@ -3857,22 +3858,34 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5109,Albacete,207,ES,Spain,AB,province,38.99223120,-1.87809890
 5108,Alicante,207,ES,Spain,A,province,38.35795460,-0.54256340
 5095,Almeria,207,ES,Spain,AL,province,36.84152680,-2.47462610
+5325,Andalusia,207,ES,Spain,AN,"autonomous community",37.30840610,-7.21644460
 5093,Araba,207,ES,Spain,VI,province,42.83951190,-3.84237740
+5326,Aragon,207,ES,Spain,AR,"autonomous community",41.38011140,-2.02031590
+5327,Asturias,207,ES,Spain,AS,"autonomous community",43.26892790,-7.16832120
 1160,Asturias,207,ES,Spain,O,province,43.36139530,-5.85932670
 1189,Ávila,207,ES,Spain,AV,province,40.69345110,-4.89356270
 5092,Badajoz,207,ES,Spain,BA,province,38.87937480,-7.02269830
+5335,"Balearic Islands",207,ES,Spain,IB,"autonomous community",39.36215860,1.42334520
 5102,Barcelona,207,ES,Spain,B,province,41.39266790,2.14018910
+5332,"Basque Country",207,ES,Spain,PV,"autonomous community",42.96390850,-3.25058230
 5094,Bizkaia,207,ES,Spain,BI,province,43.21921990,-3.21110870
 1146,Burgos,207,ES,Spain,BU,province,42.33807580,-3.58126920
 1190,Caceres,207,ES,Spain,CC,province,39.47163130,-6.42573840
 5096,Cádiz,207,ES,Spain,CA,province,36.51638510,-6.29997670
-5222,Canarias,207,ES,Spain,CN,"autonomous community",28.29160000,16.62910000
+5222,"Canary Islands",207,ES,Spain,CN,"autonomous community",28.29160000,16.62910000
+5328,Cantabria,207,ES,Spain,CB,"autonomous community",43.13497280,-4.66145180
 1170,Cantabria,207,ES,Spain,S,province,43.18283960,-3.98784270
 5110,Castellón,207,ES,Spain,CS,province,39.98114350,0.00884070
+5329,"Castile and Leon",207,ES,Spain,CL,"autonomous community",41.63384450,-7.07137270
+5330,"Castilla-La Mancha",207,ES,Spain,CM,"autonomous community",39.64895440,-5.80632400
+5331,Catalonia,207,ES,Spain,CT,"autonomous community",41.68672110,0.42393440
 5223,Ceuta,207,ES,Spain,CE,"autonomous city in North Africa",35.88900000,-5.31870000
 5105,"Ciudad Real",207,ES,Spain,CR,province,38.98607580,-3.94449750
+5337,"Community of Madrid",207,ES,Spain,MD,"autonomous community",40.52445220,-4.47541030
 5097,Córdoba,207,ES,Spain,CO,province,36.51638510,-6.29997670
 5106,Cuenca,207,ES,Spain,CU,province,40.06200360,-2.16553440
+5333,Estremadura,207,ES,Spain,EX,"autonomous community",39.20849790,-7.41654810
+5334,Galicia,207,ES,Spain,GA,"autonomous community",42.79428750,-9.33959280
 1191,Gipuzkoa,207,ES,Spain,SS,province,43.14523600,-2.44618250
 5103,Girona,207,ES,Spain,GI,province,41.98034450,2.80115770
 5098,Granada,207,ES,Spain,GR,province,37.18094110,-3.62629100
@@ -3881,6 +3894,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1177,Huesca,207,ES,Spain,HU,province,41.59762750,-0.90566230
 1174,"Islas Baleares",207,ES,Spain,PM,province,39.35877590,2.73563280
 5100,Jaén,207,ES,Spain,J,province,37.78009310,-3.81437450
+5336,"La Rioja",207,ES,Spain,RI,"autonomous community",42.28076920,-3.06723480
 1171,"La Rioja",207,ES,Spain,LO,province,42.28707330,-2.53960300
 1185,"Las Palmas",207,ES,Spain,GC,province,28.29156370,-16.62913040
 1200,León,207,ES,Spain,LE,province,42.59870410,-5.56708390
@@ -3891,9 +3905,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5224,Melilla,207,ES,Spain,ML,"autonomous city in North Africa",35.29370000,-2.93830000
 1176,Murcia,207,ES,Spain,MU,province,38.13981410,-1.36621600
 1204,Navarra,207,ES,Spain,NA,province,42.69539090,-1.67606910
+5339,Navarre,207,ES,Spain,NC,"autonomous community",42.61147290,-2.27145430
 5091,Ourense,207,ES,Spain,OR,province,42.33836130,-7.88119510
 1157,Palencia,207,ES,Spain,P,province,42.00968320,-4.52879490
 1167,Pontevedra,207,ES,Spain,PO,province,42.43385950,-8.65685520
+5338,"Region of Murcia",207,ES,Spain,MC,"autonomous community",38.06365820,-2.15547250
 1147,Salamanca,207,ES,Spain,SA,province,40.95152630,-6.23759470
 5112,"Santa Cruz de Tenerife",207,ES,Spain,TF,province,28.45789140,-16.32135390
 1192,Segovia,207,ES,Spain,SG,province,40.94292960,-4.10889420
@@ -3903,6 +3919,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5111,Teruel,207,ES,Spain,TE,province,40.34504100,-1.11847440
 1205,Toledo,207,ES,Spain,TO,province,39.86232000,-4.06946920
 1175,Valencia,207,ES,Spain,V,province,39.48401080,-0.75328090
+5340,"Valencian Community",207,ES,Spain,VC,"autonomous community",39.31088690,-1.73841720
 1183,Valladolid,207,ES,Spain,VA,province,41.65173750,-4.72449500
 1161,Zamora,207,ES,Spain,ZA,province,41.60957440,-5.89871390
 5113,Zaragoza,207,ES,Spain,Z,province,41.65175010,-0.93000020
@@ -4054,37 +4071,37 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3398,Khatlon,217,TJ,Tajikistan,KT,region,37.91135620,69.09702300
 3397,"Nohiyahoi Tobei Jumhurí ",217,TJ,Tajikistan,RA,"districts under republic administration",39.08579020,70.24083250
 3400,"Sughd ",217,TJ,Tajikistan,SU,region,39.51553260,69.09702300
-1491,Arusha,218,TZ,Tanzania,01,Region,-3.38692540,36.68299270
-1490,"Dar es Salaam",218,TZ,Tanzania,02,Region,-6.79235400,39.20832840
-1466,Dodoma,218,TZ,Tanzania,03,Region,-6.57382280,36.26308460
-1481,Geita,218,TZ,Tanzania,27,Region,-2.82422570,32.26538870
-1489,Iringa,218,TZ,Tanzania,04,Region,-7.78874420,35.56578620
-1465,Kagera,218,TZ,Tanzania,05,Region,-1.30011150,31.26263660
-1482,Katavi,218,TZ,Tanzania,28,Region,-6.36771250,31.26263660
-1478,Kigoma,218,TZ,Tanzania,08,Region,-4.88240920,29.66150550
-1467,Kilimanjaro,218,TZ,Tanzania,09,Region,-4.13369270,37.80876930
-1483,Lindi,218,TZ,Tanzania,12,Region,-9.23433940,38.31657250
-1484,Manyara,218,TZ,Tanzania,26,Region,-4.31500580,36.95410700
-1468,Mara,218,TZ,Tanzania,13,Region,-1.77535380,34.15319470
-4955,Mbeya,218,TZ,Tanzania,14,Region,-8.28661120,32.81325370
-1470,Morogoro,218,TZ,Tanzania,16,Region,-8.81371730,36.95410700
-1476,Mtwara,218,TZ,Tanzania,17,Region,-10.33984550,40.16574660
-1479,Mwanza,218,TZ,Tanzania,18,Region,-2.46711970,32.89868120
-1480,Njombe,218,TZ,Tanzania,29,Region,-9.24226320,35.12687810
-1488,"Pemba North",218,TZ,Tanzania,06,Region,-5.03193520,39.77555710
-1472,"Pemba South",218,TZ,Tanzania,10,Region,-5.31469610,39.75495110
-1485,Pwani,218,TZ,Tanzania,19,Region,-7.32377140,38.82054540
-1477,Rukwa,218,TZ,Tanzania,20,Region,-8.01094440,31.44561790
-1486,Ruvuma,218,TZ,Tanzania,21,Region,-10.68787170,36.26308460
-1463,Shinyanga,218,TZ,Tanzania,22,Region,-3.68099610,33.42714030
-1464,Simiyu,218,TZ,Tanzania,30,Region,-2.83087380,34.15319470
-1474,Singida,218,TZ,Tanzania,23,Region,-6.74533520,34.15319470
-4956,Songwe,218,TZ,Tanzania,31,Region,-8.27261200,31.71131740
-1469,Tabora,218,TZ,Tanzania,24,Region,-5.03421380,32.80844960
-1487,Tanga,218,TZ,Tanzania,25,Region,-5.30497890,38.31657250
-1473,"Zanzibar North",218,TZ,Tanzania,07,Region,-5.93950930,39.27910110
-1471,"Zanzibar South",218,TZ,Tanzania,11,Region,-6.26428510,39.44502810
-1475,"Zanzibar West",218,TZ,Tanzania,15,Region,-6.22981360,39.25832930
+1491,Arusha,218,TZ,Tanzania,01,region,-3.38692540,36.68299270
+1490,"Dar es Salaam",218,TZ,Tanzania,02,region,-6.79235400,39.20832840
+1466,Dodoma,218,TZ,Tanzania,03,region,-6.57382280,36.26308460
+1481,Geita,218,TZ,Tanzania,27,region,-2.82422570,32.26538870
+1489,Iringa,218,TZ,Tanzania,04,region,-7.78874420,35.56578620
+1465,Kagera,218,TZ,Tanzania,05,region,-1.30011150,31.26263660
+1482,Katavi,218,TZ,Tanzania,28,region,-6.36771250,31.26263660
+1478,Kigoma,218,TZ,Tanzania,08,region,-4.88240920,29.66150550
+1467,Kilimanjaro,218,TZ,Tanzania,09,region,-4.13369270,37.80876930
+1483,Lindi,218,TZ,Tanzania,12,region,-9.23433940,38.31657250
+1484,Manyara,218,TZ,Tanzania,26,region,-4.31500580,36.95410700
+1468,Mara,218,TZ,Tanzania,13,region,-1.77535380,34.15319470
+4955,Mbeya,218,TZ,Tanzania,14,region,-8.28661120,32.81325370
+1470,Morogoro,218,TZ,Tanzania,16,region,-8.81371730,36.95410700
+1476,Mtwara,218,TZ,Tanzania,17,region,-10.33984550,40.16574660
+1479,Mwanza,218,TZ,Tanzania,18,region,-2.46711970,32.89868120
+1480,Njombe,218,TZ,Tanzania,29,region,-9.24226320,35.12687810
+1488,"Pemba North",218,TZ,Tanzania,06,region,-5.03193520,39.77555710
+1472,"Pemba South",218,TZ,Tanzania,10,region,-5.31469610,39.75495110
+1485,Pwani,218,TZ,Tanzania,19,region,-7.32377140,38.82054540
+1477,Rukwa,218,TZ,Tanzania,20,region,-8.01094440,31.44561790
+1486,Ruvuma,218,TZ,Tanzania,21,region,-10.68787170,36.26308460
+1463,Shinyanga,218,TZ,Tanzania,22,region,-3.68099610,33.42714030
+1464,Simiyu,218,TZ,Tanzania,30,region,-2.83087380,34.15319470
+1474,Singida,218,TZ,Tanzania,23,region,-6.74533520,34.15319470
+4956,Songwe,218,TZ,Tanzania,31,region,-8.27261200,31.71131740
+1469,Tabora,218,TZ,Tanzania,24,region,-5.03421380,32.80844960
+1487,Tanga,218,TZ,Tanzania,25,region,-5.30497890,38.31657250
+1473,"Zanzibar North",218,TZ,Tanzania,07,region,-5.93950930,39.27910110
+1471,"Zanzibar South",218,TZ,Tanzania,11,region,-6.26428510,39.44502810
+1475,"Zanzibar West",218,TZ,Tanzania,15,region,-6.22981360,39.25832930
 3523,"Amnat Charoen",219,TH,Thailand,37,province,15.86567830,104.62577740
 3519,"Ang Thong",219,TH,Thailand,15,province,14.58960540,100.45505200
 3554,Bangkok,219,TH,Thailand,10,"metropolitan administration",13.75633090,100.50176510
@@ -4601,7 +4618,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2415,"Dumfries and Galloway",232,GB,"United Kingdom",DGY,"council area",55.07010730,-3.60525810
 2511,Dundee,232,GB,"United Kingdom",DND,"council area",56.46201800,-2.97072100
 2508,"Dungannon and South Tyrone",232,GB,"United Kingdom",DGN,"borough council",54.50826840,-6.76658910
-2406,Durham,232,GB,"United Kingdom",DUR,"unitary authority	",54.72940990,-1.88115980
+2406,Durham,232,GB,"United Kingdom",DUR,"unitary authority",54.72940990,-1.88115980
 2532,Ealing,232,GB,"United Kingdom",EAL,"london borough",51.52503660,-0.34139650
 2374,"East Ayrshire",232,GB,"United Kingdom",EAY,"council area",55.45184960,-4.26444780
 2454,"East Dunbartonshire",232,GB,"United Kingdom",EDU,"council area",55.97431620,-4.20229800
@@ -4987,7 +5004,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1243,"Al Jawf",245,YE,Yemen,JA,governorate,16.79018190,45.29938620
 1251,"Al Mahrah",245,YE,Yemen,MR,governorate,16.52384230,51.68342750
 1235,"Al Mahwit",245,YE,Yemen,MW,governorate,15.39632290,43.56069460
-1232,"Amanat Al Asimah",245,YE,Yemen,SA,municioality,15.36944510,44.19100660
+1232,"Amanat Al Asimah",245,YE,Yemen,SA,municipality,15.36944510,44.19100660
 1246,Dhamar,245,YE,Yemen,DH,governorate,14.71953440,44.24790150
 1238,Hadhramaut,245,YE,Yemen,HD,governorate,16.93041350,49.36531490
 1244,Hajjah,245,YE,Yemen,HJ,governorate,16.11806310,43.32946600
