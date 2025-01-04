@@ -98,26 +98,26 @@ jobs:
           echo "current_date=$(date +'%dth %b %Y')" >> $GITHUB_ENV
 
       - name: Composer Dependencies
+        working-directory: ./bin
         run: |
-          cd bin
           composer install
-          php bin/console list
+          php console list
 
       - name: Export JSON
-        run: |
-          php bin/console export:json
+        working-directory: ./bin
+        run: php console export:json
 
       - name: Export XML
-        run: |
-          php bin/console export:xml
+        working-directory: ./bin
+        run: php console export:xml
 
       - name: Export YAML
-        run: |
-          php bin/console export:yaml
+        working-directory: ./bin
+        run: php console export:yaml
 
       - name: Export CSV
-        run: |
-          php bin/console export:csv
+        working-directory: ./bin
+        run: php console export:csv
 
       - name: Export MySQL SQL
         run: |
