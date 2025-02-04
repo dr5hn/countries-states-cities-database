@@ -7,6 +7,8 @@
                 name NVARCHAR(255) NOT NULL,
                 country_id INT NOT NULL,
                 country_code NCHAR(2) NOT NULL,
+	    country_name NVARCHAR(255) NULL,
+	    state_code NCHAR(10) NULL,
                 fips_code NVARCHAR(255) NULL,
                 iso2 NVARCHAR(255) NULL,
                 type NVARCHAR(191) NULL,
