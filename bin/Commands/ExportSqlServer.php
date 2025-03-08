@@ -167,7 +167,15 @@ class ExportSqlServer extends Command
         $rootDir = dirname(PATH_BASE);
 
         $io->title('Exporting SQL Server data to ' . $rootDir);
+
+        // Add a schema creation if it doesn't exist
         $worldSql = "-- Generated at " . date('Y-m-d H:i:s') . "\n\n";
+        $worldSql .= "IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'world')
+        EXEC('CREATE SCHEMA world');\n\n";
+
+        // Add foreign key disabling at the beginning
+        $worldSql .= "-- Disable foreign key constraints\n";
+        $worldSql .= "EXEC sp_MSforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL';\n\n";
 
         try {
             foreach (self::TABLES as $table) {
@@ -196,6 +204,10 @@ class ExportSqlServer extends Command
 
                 $io->success("Exported $table to SQL Server format");
             }
+
+            // Add foreign key re-enabling at the end
+            $worldSql .= "-- Re-enable foreign key constraints\n";
+            $worldSql .= "EXEC sp_MSforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL';\n\n";
 
             $this->filesystem->dumpFile("$rootDir/sqlserver/world.sql", $worldSql);
             $io->success('Successfully generated world.sql');
