@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.6 (Ubuntu 16.6-1.pgdg24.04+1)
--- Dumped by pg_dump version 16.6 (Ubuntu 16.6-1.pgdg24.04+1)
+-- Dumped from database version 16.8 (Ubuntu 16.8-1.pgdg24.04+1)
+-- Dumped by pg_dump version 16.8 (Ubuntu 16.8-1.pgdg24.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -16,12 +16,12 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-ALTER TABLE ONLY public.countries DROP CONSTRAINT countries_subregion_id_fkey;
-ALTER TABLE ONLY public.countries DROP CONSTRAINT countries_region_id_fkey;
-DROP INDEX public.countries_subregion_id_idx;
-DROP INDEX public.countries_region_id_idx;
-ALTER TABLE ONLY public.countries DROP CONSTRAINT countries_pkey;
-DROP TABLE public.countries;
+ALTER TABLE IF EXISTS ONLY public.countries DROP CONSTRAINT IF EXISTS countries_subregion_id_fkey;
+ALTER TABLE IF EXISTS ONLY public.countries DROP CONSTRAINT IF EXISTS countries_region_id_fkey;
+DROP INDEX IF EXISTS public.countries_subregion_id_idx;
+DROP INDEX IF EXISTS public.countries_region_id_idx;
+ALTER TABLE IF EXISTS ONLY public.countries DROP CONSTRAINT IF EXISTS countries_pkey;
+DROP TABLE IF EXISTS public.countries;
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
