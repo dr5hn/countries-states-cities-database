@@ -15,7 +15,7 @@ on:
 
 jobs:
   export:
-    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER
+    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
 
     strategy:
@@ -64,12 +64,18 @@ jobs:
           mongodb-version: '6.0'
           mongodb-replica-set: rs0
 
-      - name: Check MongoDB service
+      - name: Install MongoDB Database Tools
         run: |
-          # Wait for MongoDB to be ready
-          sleep 5
-          echo "Checking MongoDB status..."
-          mongosh --eval "db.runCommand({ ping: 1 })"
+          # Add MongoDB package source
+          wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+          # Install only the MongoDB Database Tools package
+          sudo apt-get update
+          sudo apt-get install -y mongodb-database-tools
+
+          # Verify installation
+          mongoimport --version
 
       - name: Add clean commands to world.sql
         run: |
@@ -172,29 +178,25 @@ jobs:
 
       - name: Import MongoDB
         run: |
-          cd mongodb
-          chmod +x import.sh
-          ./import.sh
+          # Wait for MongoDB to be ready
+          sleep 5
 
-          # Verify data was imported
-          echo "Verifying imported data..."
-          mongosh --eval "
-            db = db.getSiblingDB('world');
-            print('Regions: ' + db.regions.countDocuments());
-            print('Subregions: ' + db.subregions.countDocuments());
-            print('Countries: ' + db.countries.countDocuments());
-            print('States: ' + db.states.countDocuments());
-            print('Cities: ' + db.cities.countDocuments());
-          "
+          echo "Importing collections..."
+          mongoimport --host localhost:27017 --db world --collection regions --file regions.json --jsonArray
+          mongoimport --host localhost:27017 --db world --collection subregions --file subregions.json --jsonArray
+          mongoimport --host localhost:27017 --db world --collection countries --file countries.json --jsonArray
+          mongoimport --host localhost:27017 --db world --collection states --file states.json --jsonArray
+          mongoimport --host localhost:27017 --db world --collection cities --file cities.json --jsonArray
+          echo "Import completed"
 
           # Create a MongoDB dump
-          mongodump --db world --out mongodb-dump
+          mongodump --host localhost:27017 --db world --out mongodb-dump
 
           # Compress the dump
           tar -czvf world-mongodb-dump.tar.gz mongodb-dump
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
-          rm -rf mongodb-dump import.sh
+          rm -rf mongodb-dump
 
       - name: Update README.md
         run: |

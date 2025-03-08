@@ -68,9 +68,6 @@ class ExportMongoDB extends Command
             $this->processStates($io, $rootDir);
             $this->processCities($io, $rootDir);
 
-            // Create a script to import all collections
-            $this->createImportScript($io, $rootDir);
-
             $io->success('MongoDB export completed successfully');
             return Command::SUCCESS;
         } catch (\Exception $e) {
@@ -252,71 +249,5 @@ class ExportMongoDB extends Command
     {
         $outputFile = "$rootDir/mongodb/$collection.json";
         $this->filesystem->dumpFile($outputFile, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
-    }
-
-    private function createImportScript(SymfonyStyle $io, string $rootDir): void
-    {
-        $scriptContent = <<<'BASH'
-#!/bin/bash
-# MongoDB Import Script
-# This script will import all collections into MongoDB
-
-# Configuration
-DB_NAME="world"
-HOST="localhost"
-PORT="27017"
-
-# Function to import a collection
-import_collection() {
-    collection=$1
-    echo "Importing $collection..."
-    mongoimport --host $HOST:$PORT --db $DB_NAME --collection $collection --file $(dirname "$0")/$collection.json --jsonArray
-    echo "Import of $collection completed"
-}
-
-# Make sure MongoDB is running
-echo "Checking MongoDB connection..."
-if ! mongosh --host $HOST:$PORT --eval "db.stats()" > /dev/null; then
-    echo "Cannot connect to MongoDB. Please make sure MongoDB is running."
-    exit 1
-fi
-
-# Create database if it doesn't exist
-mongosh --host $HOST:$PORT --eval "use $DB_NAME"
-
-# Import all collections
-import_collection "regions"
-import_collection "subregions"
-import_collection "countries"
-import_collection "states"
-import_collection "cities"
-
-# Create indexes for better query performance
-echo "Creating indexes..."
-mongosh --host $HOST:$PORT --db $DB_NAME --eval '
-    db.regions.createIndex({ name: 1 });
-    db.subregions.createIndex({ name: 1 });
-    db.subregions.createIndex({ "region.$id": 1 });
-    db.countries.createIndex({ name: 1 });
-    db.countries.createIndex({ iso2: 1 });
-    db.countries.createIndex({ iso3: 1 });
-    db.countries.createIndex({ "region.$id": 1 });
-    db.countries.createIndex({ "subregion.$id": 1 });
-    db.states.createIndex({ name: 1 });
-    db.states.createIndex({ "country.$id": 1 });
-    db.cities.createIndex({ name: 1 });
-    db.cities.createIndex({ "state.$id": 1 });
-    db.cities.createIndex({ "country.$id": 1 });
-    db.cities.createIndex({ location: "2dsphere" });
-'
-
-echo "All collections imported successfully and indexes created"
-BASH;
-
-        $outputFile = "$rootDir/mongodb/import.sh";
-        $this->filesystem->dumpFile($outputFile, $scriptContent);
-        $this->filesystem->chmod($outputFile, 0755);
-
-        $io->info('Created MongoDB import script at ' . $outputFile);
     }
 }
