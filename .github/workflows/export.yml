@@ -58,6 +58,19 @@ jobs:
           sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
           sudo -u postgres psql -c "\l"
 
+      - name: Setup MongoDB
+        uses: supercharge/mongodb-github-action@1.10.0
+        with:
+          mongodb-version: '6.0'
+          mongodb-replica-set: rs0
+
+      - name: Check MongoDB service
+        run: |
+          # Wait for MongoDB to be ready
+          sleep 5
+          echo "Checking MongoDB status..."
+          mongosh --eval "db.runCommand({ ping: 1 })"
+
       - name: Add clean commands to world.sql
         run: |
           grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
@@ -150,6 +163,38 @@ jobs:
       - name: Export SQL Server
         working-directory: ./bin
         run: php console export:sql-server
+
+      - name: Export MongoDB
+        working-directory: ./bin
+        run: |
+          php console export:mongodb
+          ls -la ../mongodb
+
+      - name: Import MongoDB
+        run: |
+          cd mongodb
+          chmod +x import.sh
+          ./import.sh
+
+          # Verify data was imported
+          echo "Verifying imported data..."
+          mongosh --eval "
+            db = db.getSiblingDB('world');
+            print('Regions: ' + db.regions.countDocuments());
+            print('Subregions: ' + db.subregions.countDocuments());
+            print('Countries: ' + db.countries.countDocuments());
+            print('States: ' + db.states.countDocuments());
+            print('Cities: ' + db.cities.countDocuments());
+          "
+
+          # Create a MongoDB dump
+          mongodump --db world --out mongodb-dump
+
+          # Compress the dump
+          tar -czvf world-mongodb-dump.tar.gz mongodb-dump
+          echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
+
+          rm -rf mongodb-dump import.sh
 
       - name: Update README.md
         run: |
