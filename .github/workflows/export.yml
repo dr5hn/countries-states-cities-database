@@ -131,12 +131,12 @@ jobs:
         env:
           PGPASSWORD: postgres
         run: |
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists > psql/world.sql
 
       - name: Export SQLite
         run: |
