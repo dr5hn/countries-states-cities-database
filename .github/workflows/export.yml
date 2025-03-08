@@ -66,13 +66,9 @@ jobs:
 
       - name: Install MongoDB Database Tools
         run: |
-          # Add MongoDB package source
-          wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
-          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
-
-          # Install only the MongoDB Database Tools package
-          sudo apt-get update
-          sudo apt-get install -y mongodb-database-tools
+          # Download MongoDB Database Tools directly
+          wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
+          sudo dpkg -i mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
 
           # Verify installation
           mongoimport --version
