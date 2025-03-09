@@ -70,6 +70,8 @@ jobs:
           wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
           sudo dpkg -i mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
 
+          rm -rf mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
+
           # Verify installation
           mongoimport --version
 
@@ -193,7 +195,7 @@ jobs:
           tar -czvf world-mongodb-dump.tar.gz mongodb-dump
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
-          rm -rf mongodb-dump
+          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json
 
       - name: Update README.md
         run: |
@@ -207,12 +209,12 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE & SQL Server files
+          commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE, MONGODB & SQL Server files
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: "(chore): Export JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE & SQL Server files"
+          title: "(chore): Export JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE, MONGODB & SQL Server files"
           labels: |
             exports
             automated
