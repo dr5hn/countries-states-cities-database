@@ -173,6 +173,7 @@ jobs:
           ls -la ../mongodb
 
       - name: Import MongoDB
+        working-directory: ./mongodb
         run: |
           # Wait for MongoDB to be ready
           sleep 5

@@ -81,20 +81,24 @@ class ExportMongoDB extends Command
         $io->section('Processing regions');
 
         $regions = $this->dataCache['regions'];
+        $processedRegions = [];
 
         // MongoDB format doesn't need significant modifications for regions
-        foreach ($regions as &$region) {
+        foreach ($regions as $region) {
             // Convert id to MongoDB _id format
-            $region['_id'] = (int) $region['id'];
-            unset($region['id']);
+            $processedRegion = $region;
+            $processedRegion['_id'] = (int) $region['id'];
+            unset($processedRegion['id']);
 
             // Parse JSON translations if it's a string
-            if (isset($region['translations']) && is_string($region['translations'])) {
-                $region['translations'] = json_decode($region['translations'], true);
+            if (isset($processedRegion['translations']) && is_string($processedRegion['translations'])) {
+                $processedRegion['translations'] = json_decode($processedRegion['translations'], true);
             }
+
+            $processedRegions[] = $processedRegion;
         }
 
-        $this->saveCollection($rootDir, 'regions', $regions);
+        $this->saveCollection($rootDir, 'regions', $processedRegions);
         $io->info('Regions exported to MongoDB format');
     }
 
@@ -104,37 +108,47 @@ class ExportMongoDB extends Command
 
         $subregions = $this->dataCache['subregions'];
         $regions = $this->dataCache['regions'];
+        $processedSubregions = [];
 
-        // Build region lookup
+        // Build region lookup using original id
         $regionLookup = [];
         foreach ($regions as $region) {
-            $regionLookup[$region['_id']] = $region;
+            $id = (int) $region['id'];
+            $regionLookup[$id] = $region;
         }
 
-        foreach ($subregions as &$subregion) {
+        foreach ($subregions as $subregion) {
+            // Create a new array for the processed subregion
+            $processedSubregion = $subregion;
+
             // Convert id to MongoDB _id format
-            $subregion['_id'] = (int) $subregion['id'];
-            unset($subregion['id']);
+            $processedSubregion['_id'] = (int) $subregion['id'];
+            unset($processedSubregion['id']);
 
             // Parse JSON translations if it's a string
-            if (isset($subregion['translations']) && is_string($subregion['translations'])) {
-                $subregion['translations'] = json_decode($subregion['translations'], true);
+            if (isset($processedSubregion['translations']) && is_string($processedSubregion['translations'])) {
+                $processedSubregion['translations'] = json_decode($processedSubregion['translations'], true);
             }
 
             // Add region reference
-            if (isset($subregion['region_id'])) {
-                $regionId = (int) $subregion['region_id'];
-                $subregion['region'] = [
+            if (isset($processedSubregion['region_id'])) {
+                $regionId = (int) $processedSubregion['region_id'];
+                $processedSubregion['region'] = [
                     '$ref' => 'regions',
                     '$id' => $regionId
                 ];
 
                 // Optionally include region name for convenience
                 if (isset($regionLookup[$regionId])) {
-                    $subregion['region_name'] = $regionLookup[$regionId]['name'];
+                    $processedSubregion['region_name'] = $regionLookup[$regionId]['name'];
                 }
             }
+
+            $processedSubregions[] = $processedSubregion;
         }
+
+        $this->saveCollection($rootDir, 'subregions', $processedSubregions);
+        $io->info('Subregions exported to MongoDB format');
 
         $this->saveCollection($rootDir, 'subregions', $subregions);
         $io->info('Subregions exported to MongoDB format');
@@ -145,39 +159,45 @@ class ExportMongoDB extends Command
         $io->section('Processing countries');
 
         $countries = $this->dataCache['countries'];
+        $processedCountries = [];
 
-        foreach ($countries as &$country) {
+        foreach ($countries as $country) {
+            // Create a new array for the processed country
+            $processedCountry = $country;
+
             // Convert id to MongoDB _id format
-            $country['_id'] = (int) $country['id'];
-            unset($country['id']);
+            $processedCountry['_id'] = (int) $country['id'];
+            unset($processedCountry['id']);
 
             // Parse JSON strings
-            if (isset($country['translations']) && is_string($country['translations'])) {
-                $country['translations'] = json_decode($country['translations'], true);
+            if (isset($processedCountry['translations']) && is_string($processedCountry['translations'])) {
+                $processedCountry['translations'] = json_decode($processedCountry['translations'], true);
             }
 
-            if (isset($country['timezones']) && is_string($country['timezones'])) {
-                $country['timezones'] = json_decode($country['timezones'], true);
+            if (isset($processedCountry['timezones']) && is_string($processedCountry['timezones'])) {
+                $processedCountry['timezones'] = json_decode($processedCountry['timezones'], true);
             }
 
             // Add region reference
-            if (isset($country['region_id'])) {
-                $country['region'] = [
+            if (isset($processedCountry['region_id'])) {
+                $processedCountry['region'] = [
                     '$ref' => 'regions',
-                    '$id' => (int) $country['region_id']
+                    '$id' => (int) $processedCountry['region_id']
                 ];
             }
 
             // Add subregion reference
-            if (isset($country['subregion_id'])) {
-                $country['subregion'] = [
+            if (isset($processedCountry['subregion_id'])) {
+                $processedCountry['subregion'] = [
                     '$ref' => 'subregions',
-                    '$id' => (int) $country['subregion_id']
+                    '$id' => (int) $processedCountry['subregion_id']
                 ];
             }
+
+            $processedCountries[] = $processedCountry;
         }
 
-        $this->saveCollection($rootDir, 'countries', $countries);
+        $this->saveCollection($rootDir, 'countries', $processedCountries);
         $io->info('Countries exported to MongoDB format');
     }
 
@@ -186,22 +206,28 @@ class ExportMongoDB extends Command
         $io->section('Processing states');
 
         $states = $this->dataCache['states'];
+        $processedStates = [];
 
-        foreach ($states as &$state) {
+        foreach ($states as $state) {
+            // Create a new array for the processed state
+            $processedState = $state;
+
             // Convert id to MongoDB _id format
-            $state['_id'] = (int) $state['id'];
-            unset($state['id']);
+            $processedState['_id'] = (int) $state['id'];
+            unset($processedState['id']);
 
             // Add country reference
-            if (isset($state['country_id'])) {
-                $state['country'] = [
+            if (isset($processedState['country_id'])) {
+                $processedState['country'] = [
                     '$ref' => 'countries',
-                    '$id' => (int) $state['country_id']
+                    '$id' => (int) $processedState['country_id']
                 ];
             }
+
+            $processedStates[] = $processedState;
         }
 
-        $this->saveCollection($rootDir, 'states', $states);
+        $this->saveCollection($rootDir, 'states', $processedStates);
         $io->info('States exported to MongoDB format');
     }
 
@@ -210,38 +236,44 @@ class ExportMongoDB extends Command
         $io->section('Processing cities');
 
         $cities = $this->dataCache['cities'];
+        $processedCities = [];
 
-        foreach ($cities as &$city) {
+        foreach ($cities as $city) {
+            // Create a new array for the processed city
+            $processedCity = $city;
+
             // Convert id to MongoDB _id format
-            $city['_id'] = (int) $city['id'];
-            unset($city['id']);
+            $processedCity['_id'] = (int) $city['id'];
+            unset($processedCity['id']);
 
             // Add state reference
-            if (isset($city['state_id'])) {
-                $city['state'] = [
+            if (isset($processedCity['state_id'])) {
+                $processedCity['state'] = [
                     '$ref' => 'states',
-                    '$id' => (int) $city['state_id']
+                    '$id' => (int) $processedCity['state_id']
                 ];
             }
 
             // Add country reference
-            if (isset($city['country_id'])) {
-                $city['country'] = [
+            if (isset($processedCity['country_id'])) {
+                $processedCity['country'] = [
                     '$ref' => 'countries',
-                    '$id' => (int) $city['country_id']
+                    '$id' => (int) $processedCity['country_id']
                 ];
             }
 
             // Convert coordinates to GeoJSON format for MongoDB geospatial queries
-            if (isset($city['latitude']) && isset($city['longitude'])) {
-                $city['location'] = [
+            if (isset($processedCity['latitude']) && isset($processedCity['longitude'])) {
+                $processedCity['location'] = [
                     'type' => 'Point',
-                    'coordinates' => [(float) $city['longitude'], (float) $city['latitude']]
+                    'coordinates' => [(float) $processedCity['longitude'], (float) $processedCity['latitude']]
                 ];
             }
+
+            $processedCities[] = $processedCity;
         }
 
-        $this->saveCollection($rootDir, 'cities', $cities);
+        $this->saveCollection($rootDir, 'cities', $processedCities);
         $io->info('Cities exported to MongoDB format');
     }
 
