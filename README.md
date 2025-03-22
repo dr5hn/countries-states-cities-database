@@ -43,10 +43,10 @@ https://dr5hn.github.io/countries-states-cities-database/
 Total Regions : 6 <br>
 Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
-Total States/Regions/Municipalities : 5,084 <br>
-Total Cities/Towns/Districts : 150,573 <br>
+Total States/Regions/Municipalities : 5,038 <br>
+Total Cities/Towns/Districts : 151,024 <br>
 
-Last Updated On : 23th Dec 2024
+Last Updated On : 08th Mar 2025
 
 ## Next API Database Update
 

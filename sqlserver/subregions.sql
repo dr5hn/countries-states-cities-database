@@ -1,18 +1,18 @@
 -- Table: subregions
 
 
-IF OBJECT_ID('world.subregions', 'U') IS NOT NULL DROP TABLE world.subregions;
-CREATE TABLE world.subregions (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    name NVARCHAR(100) NOT NULL,
-    translations NVARCHAR(MAX),
-    region_id INT NOT NULL,
-    created_at DATETIME2 NULL,
-    updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
-    flag BIT NOT NULL DEFAULT 1,
-    wikiDataId NVARCHAR(255) NULL,
-    CONSTRAINT FK_subregions_regions FOREIGN KEY (region_id) REFERENCES world.regions(id)
-);
+            IF OBJECT_ID('world.subregions', 'U') IS NOT NULL DROP TABLE world.subregions;
+            CREATE TABLE world.subregions (
+                id INT IDENTITY(1,1) PRIMARY KEY,
+                name NVARCHAR(100) NOT NULL,
+                translations NVARCHAR(MAX),
+                region_id INT NOT NULL,
+                created_at DATETIME2 NULL,
+                updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+                flag BIT NOT NULL DEFAULT 1,
+                wikiDataId NVARCHAR(255) NULL,
+                CONSTRAINT FK_subregions_regions FOREIGN KEY (region_id) REFERENCES world.regions(id)
+            );
 
 SET IDENTITY_INSERT world.subregions ON;
 

@@ -1,16 +1,16 @@
 -- Table: regions
 
 
-IF OBJECT_ID('world.regions', 'U') IS NOT NULL DROP TABLE world.regions;
-CREATE TABLE world.regions (
-    id INT IDENTITY(1,1) PRIMARY KEY,
-    name NVARCHAR(100) NOT NULL,
-    translations NVARCHAR(MAX),
-    created_at DATETIME2 NULL,
-    updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
-    flag BIT NOT NULL DEFAULT 1,
-    wikiDataId NVARCHAR(255) NULL
-);
+            IF OBJECT_ID('world.regions', 'U') IS NOT NULL DROP TABLE world.regions;
+            CREATE TABLE world.regions (
+                id INT IDENTITY(1,1) PRIMARY KEY,
+                name NVARCHAR(100) NOT NULL,
+                translations NVARCHAR(MAX),
+                created_at DATETIME2 NULL,
+                updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+                flag BIT NOT NULL DEFAULT 1,
+                wikiDataId NVARCHAR(255) NULL
+            );
 
 SET IDENTITY_INSERT world.regions ON;
 

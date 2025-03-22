@@ -1,5 +1,5 @@
 application:
-  name: ady_microservices_users
+  name: countries-states-cities-database
   path_log: "/logs"
 
 database:
@@ -7,5 +7,5 @@ database:
     hostname: "127.0.0.1"
     port: "3306"
     username: "root"
-    password: "asdf1234#"
-    database: "countries-states-cities-database"
+    password: "root"
+    database: "world"

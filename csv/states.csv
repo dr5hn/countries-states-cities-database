@@ -1630,25 +1630,25 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3430,"Southern Peninsula",100,IS,Iceland,2,region,63.91548030,-22.36496670
 3436,Western,100,IS,Iceland,3,region,,
 3432,Westfjords,100,IS,Iceland,4,region,65.91961500,-21.88117640
-4023,"Andaman and Nicobar Islands",101,IN,India,AN,"Union territory",11.74008670,92.65864010
+4023,"Andaman and Nicobar Islands",101,IN,India,AN,"union territory",11.74008670,92.65864010
 4017,"Andhra Pradesh",101,IN,India,AP,state,15.91289980,79.73998750
 4024,"Arunachal Pradesh",101,IN,India,AR,state,28.21799940,94.72775280
 4027,Assam,101,IN,India,AS,state,26.20060430,92.93757390
 4037,Bihar,101,IN,India,BR,state,25.09607420,85.31311940
-4031,Chandigarh,101,IN,India,CH,"Union territory",30.73331480,76.77941790
+4031,Chandigarh,101,IN,India,CH,"union territory",30.73331480,76.77941790
 4040,Chhattisgarh,101,IN,India,CT,state,21.27865670,81.86614420
-4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,"Union territory",20.39737360,72.83279910
-4021,Delhi,101,IN,India,DL,"Union territory",28.70405920,77.10249020
+4033,"Dadra and Nagar Haveli and Daman and Diu",101,IN,India,DH,"union territory",20.39737360,72.83279910
+4021,Delhi,101,IN,India,DL,"union territory",28.70405920,77.10249020
 4009,Goa,101,IN,India,GA,state,15.29932650,74.12399600
 4030,Gujarat,101,IN,India,GJ,state,22.25865200,71.19238050
 4007,Haryana,101,IN,India,HR,state,29.05877570,76.08560100
 4020,"Himachal Pradesh",101,IN,India,HP,state,31.10482940,77.17339010
-4029,"Jammu and Kashmir",101,IN,India,JK,"Union territory",33.27783900,75.34121790
+4029,"Jammu and Kashmir",101,IN,India,JK,"union territory",33.27783900,75.34121790
 4025,Jharkhand,101,IN,India,JH,state,23.61018080,85.27993540
 4026,Karnataka,101,IN,India,KA,state,15.31727750,75.71388840
 4028,Kerala,101,IN,India,KL,state,10.85051590,76.27108330
-4852,Ladakh,101,IN,India,LA,"Union territory",34.22684750,77.56194190
-4019,Lakshadweep,101,IN,India,LD,"Union territory",10.32802650,72.78463360
+4852,Ladakh,101,IN,India,LA,"union territory",34.22684750,77.56194190
+4019,Lakshadweep,101,IN,India,LD,"union territory",10.32802650,72.78463360
 4039,"Madhya Pradesh",101,IN,India,MP,state,22.97342290,78.65689420
 4008,Maharashtra,101,IN,India,MH,state,19.75147980,75.71388840
 4010,Manipur,101,IN,India,MN,state,24.66371730,93.90626880
@@ -1656,7 +1656,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4036,Mizoram,101,IN,India,MZ,state,23.16454300,92.93757390
 4018,Nagaland,101,IN,India,NL,state,26.15843540,94.56244260
 4013,Odisha,101,IN,India,OR,state,20.95166580,85.09852360
-4011,Puducherry,101,IN,India,PY,"Union territory",11.94159150,79.80831330
+4011,Puducherry,101,IN,India,PY,"union territory",11.94159150,79.80831330
 4015,Punjab,101,IN,India,PB,state,31.14713050,75.34121790
 4014,Rajasthan,101,IN,India,RJ,state,27.02380360,74.21793260
 4034,Sikkim,101,IN,India,SK,state,27.53297180,88.51221780
@@ -3131,6 +3131,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1329,Marinduque,174,PH,Philippines,MAD,province,13.47671710,121.90321920
 1338,Masbate,174,PH,Philippines,MAS,province,12.35743460,123.55040760
 1347,"Metro Manila",174,PH,Philippines,NCR,province,14.60905370,121.02225650
+5324,"Metro Manila(National Capital Region)",174,PH,Philippines,00,region,14.56807070,120.85583270
 1299,Mimaropa,174,PH,Philippines,41,region,9.84320650,118.73647830
 1343,"Misamis Occidental",174,PH,Philippines,MSC,province,8.33749030,123.70706190
 1348,"Misamis Oriental",174,PH,Philippines,MSR,province,8.50455580,124.62195920
@@ -3205,94 +3206,94 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2245,"Viana do Castelo",177,PT,Portugal,16,district,41.69180460,-8.83445100
 2234,"Vila Real",177,PT,Portugal,17,district,41.30035270,-7.74572740
 2237,Viseu,177,PT,Portugal,18,district,40.65884240,-7.91475600
-5134,Adjuntas,178,PR,"Puerto Rico",001,municipalities,18.16348480,-66.72315800
-5135,Aguada,178,PR,"Puerto Rico",003,municipalities,18.38015790,-67.18870400
-5136,Aguadilla,178,PR,"Puerto Rico",005,municipalities,18.42744540,-67.15406980
-5137,"Aguas Buenas",178,PR,"Puerto Rico",007,municipalities,18.25689890,-66.10294420
-5138,Aibonito,178,PR,"Puerto Rico",009,municipalities,18.13995940,-66.26600160
-5139,Añasco,178,PR,"Puerto Rico",011,municipalities,18.28544760,-67.14029350
-5140,Arecibo,178,PR,"Puerto Rico",013,municipalities,18.47051370,-66.72184720
+5134,Adjuntas,178,PR,"Puerto Rico",001,municipality,18.16348480,-66.72315800
+5135,Aguada,178,PR,"Puerto Rico",003,municipality,18.38015790,-67.18870400
+5136,Aguadilla,178,PR,"Puerto Rico",005,municipality,18.42744540,-67.15406980
+5137,"Aguas Buenas",178,PR,"Puerto Rico",007,municipality,18.25689890,-66.10294420
+5138,Aibonito,178,PR,"Puerto Rico",009,municipality,18.13995940,-66.26600160
+5139,Añasco,178,PR,"Puerto Rico",011,municipality,18.28544760,-67.14029350
+5140,Arecibo,178,PR,"Puerto Rico",013,municipality,18.47051370,-66.72184720
 5081,Arecibo,178,PR,"Puerto Rico",AR,region,18.47055556,-66.72083333
-5141,Arroyo,178,PR,"Puerto Rico",015,municipalities,17.99642200,-66.09248790
-5142,Barceloneta,178,PR,"Puerto Rico",017,municipalities,41.38010610,2.18969570
-5143,Barranquitas,178,PR,"Puerto Rico",019,municipalities,18.18662420,-66.30628020
+5141,Arroyo,178,PR,"Puerto Rico",015,municipality,17.99642200,-66.09248790
+5142,Barceloneta,178,PR,"Puerto Rico",017,municipality,41.38010610,2.18969570
+5143,Barranquitas,178,PR,"Puerto Rico",019,municipality,18.18662420,-66.30628020
 5076,Bayamon,178,PR,"Puerto Rico",BY,region,18.17777778,-66.11333333
-5144,Bayamón,178,PR,"Puerto Rico",021,municipalities,18.38939600,-66.16532240
-5145,"Cabo Rojo",178,PR,"Puerto Rico",023,municipalities,18.08662650,-67.14573470
+5144,Bayamón,178,PR,"Puerto Rico",021,municipality,18.38939600,-66.16532240
+5145,"Cabo Rojo",178,PR,"Puerto Rico",023,municipality,18.08662650,-67.14573470
 5079,Caguas,178,PR,"Puerto Rico",CG,region,18.23333333,-66.03333333
-5146,Caguas,178,PR,"Puerto Rico",025,municipalities,18.23879950,-66.03524900
-5147,Camuy,178,PR,"Puerto Rico",027,municipalities,18.48383300,-66.84489940
-5148,Canóvanas,178,PR,"Puerto Rico",029,municipalities,18.37487480,-65.89975330
+5146,Caguas,178,PR,"Puerto Rico",025,municipality,18.23879950,-66.03524900
+5147,Camuy,178,PR,"Puerto Rico",027,municipality,18.48383300,-66.84489940
+5148,Canóvanas,178,PR,"Puerto Rico",029,municipality,18.37487480,-65.89975330
 5077,Carolina,178,PR,"Puerto Rico",CL,region,18.38888889,-65.96666667
-5149,Carolina,178,PR,"Puerto Rico",031,municipalities,18.36808770,-66.04247340
-5150,Cataño,178,PR,"Puerto Rico",033,municipalities,18.44653550,-66.13557750
-5151,Cayey,178,PR,"Puerto Rico",035,municipalities,18.11190510,-66.16600000
-5152,Ceiba,178,PR,"Puerto Rico",037,municipalities,18.24751770,-65.90849530
-5153,Ciales,178,PR,"Puerto Rico",039,municipalities,18.33606220,-66.46878230
-5154,Cidra,178,PR,"Puerto Rico",041,municipalities,18.17579140,-66.16127790
-5155,Coamo,178,PR,"Puerto Rico",043,municipalities,18.07996160,-66.35794730
-5156,Comerío,178,PR,"Puerto Rico",045,municipalities,18.21920010,-66.22560220
-5157,Corozal,178,PR,"Puerto Rico",047,municipalities,18.40308020,-88.39675360
-5158,Culebra,178,PR,"Puerto Rico",049,municipalities,18.31039400,-65.30307050
-5159,Dorado,178,PR,"Puerto Rico",051,municipalities,43.14805560,-77.57722220
-5160,Fajardo,178,PR,"Puerto Rico",053,municipalities,18.32521480,-65.65393560
-5161,Florida,178,PR,"Puerto Rico",054,municipalities,27.66482740,-81.51575350
-5162,Guánica,178,PR,"Puerto Rico",055,municipalities,17.97251450,-66.90862640
-5163,Guayama,178,PR,"Puerto Rico",057,municipalities,17.98413280,-66.11377670
-5164,Guayanilla,178,PR,"Puerto Rico",059,municipalities,18.01913140,-66.79184200
+5149,Carolina,178,PR,"Puerto Rico",031,municipality,18.36808770,-66.04247340
+5150,Cataño,178,PR,"Puerto Rico",033,municipality,18.44653550,-66.13557750
+5151,Cayey,178,PR,"Puerto Rico",035,municipality,18.11190510,-66.16600000
+5152,Ceiba,178,PR,"Puerto Rico",037,municipality,18.24751770,-65.90849530
+5153,Ciales,178,PR,"Puerto Rico",039,municipality,18.33606220,-66.46878230
+5154,Cidra,178,PR,"Puerto Rico",041,municipality,18.17579140,-66.16127790
+5155,Coamo,178,PR,"Puerto Rico",043,municipality,18.07996160,-66.35794730
+5156,Comerío,178,PR,"Puerto Rico",045,municipality,18.21920010,-66.22560220
+5157,Corozal,178,PR,"Puerto Rico",047,municipality,18.40308020,-88.39675360
+5158,Culebra,178,PR,"Puerto Rico",049,municipality,18.31039400,-65.30307050
+5159,Dorado,178,PR,"Puerto Rico",051,municipality,43.14805560,-77.57722220
+5160,Fajardo,178,PR,"Puerto Rico",053,municipality,18.32521480,-65.65393560
+5161,Florida,178,PR,"Puerto Rico",054,municipality,27.66482740,-81.51575350
+5162,Guánica,178,PR,"Puerto Rico",055,municipality,17.97251450,-66.90862640
+5163,Guayama,178,PR,"Puerto Rico",057,municipality,17.98413280,-66.11377670
+5164,Guayanilla,178,PR,"Puerto Rico",059,municipality,18.01913140,-66.79184200
 5080,Guaynabo,178,PR,"Puerto Rico",GN,region,18.36666667,-66.10000000
-5165,Guaynabo,178,PR,"Puerto Rico",061,municipalities,18.36129540,-66.11029570
-5166,Gurabo,178,PR,"Puerto Rico",063,municipalities,18.25439870,-65.97294210
-5167,Hatillo,178,PR,"Puerto Rico",065,municipalities,18.42846420,-66.78753210
-5168,Hormigueros,178,PR,"Puerto Rico",067,municipalities,18.13346380,-67.11281230
-5169,Humacao,178,PR,"Puerto Rico",069,municipalities,18.15157360,-65.82485290
-5170,Isabela,178,PR,"Puerto Rico",071,municipalities,16.97537580,121.81070790
-5171,Jayuya,178,PR,"Puerto Rico",073,municipalities,18.21856740,-66.59156170
-5172,"Juana Díaz",178,PR,"Puerto Rico",075,municipalities,18.05343720,-66.50750790
-5173,Juncos,178,PR,"Puerto Rico",077,municipalities,18.22745580,-65.92099700
-5174,Lajas,178,PR,"Puerto Rico",079,municipalities,18.04996200,-67.05934490
-5175,Lares,178,PR,"Puerto Rico",081,municipalities,34.02508020,-118.45945930
-5176,"Las Marías",178,PR,"Puerto Rico",083,municipalities,35.83822380,-78.61035660
-5177,"Las Piedras",178,PR,"Puerto Rico",085,municipalities,18.18557530,-65.87362450
-5178,Loíza,178,PR,"Puerto Rico",087,municipalities,18.43299040,-65.87836000
-5179,Luquillo,178,PR,"Puerto Rico",089,municipalities,18.37245070,-65.71655110
-5180,Manatí,178,PR,"Puerto Rico",091,municipalities,18.41812150,-66.52627830
-5181,Maricao,178,PR,"Puerto Rico",093,municipalities,18.18079020,-66.97990010
-5182,Maunabo,178,PR,"Puerto Rico",095,municipalities,18.00718850,-65.89932890
+5165,Guaynabo,178,PR,"Puerto Rico",061,municipality,18.36129540,-66.11029570
+5166,Gurabo,178,PR,"Puerto Rico",063,municipality,18.25439870,-65.97294210
+5167,Hatillo,178,PR,"Puerto Rico",065,municipality,18.42846420,-66.78753210
+5168,Hormigueros,178,PR,"Puerto Rico",067,municipality,18.13346380,-67.11281230
+5169,Humacao,178,PR,"Puerto Rico",069,municipality,18.15157360,-65.82485290
+5170,Isabela,178,PR,"Puerto Rico",071,municipality,16.97537580,121.81070790
+5171,Jayuya,178,PR,"Puerto Rico",073,municipality,18.21856740,-66.59156170
+5172,"Juana Díaz",178,PR,"Puerto Rico",075,municipality,18.05343720,-66.50750790
+5173,Juncos,178,PR,"Puerto Rico",077,municipality,18.22745580,-65.92099700
+5174,Lajas,178,PR,"Puerto Rico",079,municipality,18.04996200,-67.05934490
+5175,Lares,178,PR,"Puerto Rico",081,municipality,34.02508020,-118.45945930
+5176,"Las Marías",178,PR,"Puerto Rico",083,municipality,35.83822380,-78.61035660
+5177,"Las Piedras",178,PR,"Puerto Rico",085,municipality,18.18557530,-65.87362450
+5178,Loíza,178,PR,"Puerto Rico",087,municipality,18.43299040,-65.87836000
+5179,Luquillo,178,PR,"Puerto Rico",089,municipality,18.37245070,-65.71655110
+5180,Manatí,178,PR,"Puerto Rico",091,municipality,18.41812150,-66.52627830
+5181,Maricao,178,PR,"Puerto Rico",093,municipality,18.18079020,-66.97990010
+5182,Maunabo,178,PR,"Puerto Rico",095,municipality,18.00718850,-65.89932890
 5083,Mayagüez,178,PR,"Puerto Rico",MG,region,18.20111111,-67.13972222
-5183,Mayagüez,178,PR,"Puerto Rico",097,municipalities,18.20134520,-67.14515490
-5184,Moca,178,PR,"Puerto Rico",099,municipalities,18.39679290,-67.14790350
-5185,Morovis,178,PR,"Puerto Rico",101,municipalities,18.32578500,-66.40655920
-5186,Naguabo,178,PR,"Puerto Rico",103,municipalities,18.21162470,-65.73488410
-5187,Naranjito,178,PR,"Puerto Rico",105,municipalities,18.30078610,-66.24489040
-5188,Orocovis,178,PR,"Puerto Rico",107,municipalities,18.22692240,-66.39116860
-5189,Patillas,178,PR,"Puerto Rico",109,municipalities,18.00373810,-66.01340590
-5190,Peñuelas,178,PR,"Puerto Rico",111,municipalities,18.06335770,-66.72738960
+5183,Mayagüez,178,PR,"Puerto Rico",097,municipality,18.20134520,-67.14515490
+5184,Moca,178,PR,"Puerto Rico",099,municipality,18.39679290,-67.14790350
+5185,Morovis,178,PR,"Puerto Rico",101,municipality,18.32578500,-66.40655920
+5186,Naguabo,178,PR,"Puerto Rico",103,municipality,18.21162470,-65.73488410
+5187,Naranjito,178,PR,"Puerto Rico",105,municipality,18.30078610,-66.24489040
+5188,Orocovis,178,PR,"Puerto Rico",107,municipality,18.22692240,-66.39116860
+5189,Patillas,178,PR,"Puerto Rico",109,municipality,18.00373810,-66.01340590
+5190,Peñuelas,178,PR,"Puerto Rico",111,municipality,18.06335770,-66.72738960
 5078,Ponce,178,PR,"Puerto Rico",PO,region,18.00000000,-66.61666667
-5191,Ponce,178,PR,"Puerto Rico",113,municipalities,18.01107680,-66.61406160
-5192,Quebradillas,178,PR,"Puerto Rico",115,municipalities,18.47383300,-66.93851200
-5193,Rincón,178,PR,"Puerto Rico",117,municipalities,18.34015140,-67.24994590
-5194,"Río Grande",178,PR,"Puerto Rico",119,municipalities,28.81063826,-101.83538780
-5195,"Sabana Grande",178,PR,"Puerto Rico",121,municipalities,18.07773920,-66.96045490
-5196,Salinas,178,PR,"Puerto Rico",123,municipalities,36.67773720,-121.65550130
-5197,"San Germán",178,PR,"Puerto Rico",125,municipalities,18.08070820,-67.04110960
-5198,"San Juan",178,PR,"Puerto Rico",127,municipalities,18.46320300,-66.11475710
+5191,Ponce,178,PR,"Puerto Rico",113,municipality,18.01107680,-66.61406160
+5192,Quebradillas,178,PR,"Puerto Rico",115,municipality,18.47383300,-66.93851200
+5193,Rincón,178,PR,"Puerto Rico",117,municipality,18.34015140,-67.24994590
+5194,"Río Grande",178,PR,"Puerto Rico",119,municipality,28.81063826,-101.83538780
+5195,"Sabana Grande",178,PR,"Puerto Rico",121,municipality,18.07773920,-66.96045490
+5196,Salinas,178,PR,"Puerto Rico",123,municipality,36.67773720,-121.65550130
+5197,"San Germán",178,PR,"Puerto Rico",125,municipality,18.08070820,-67.04110960
+5198,"San Juan",178,PR,"Puerto Rico",127,municipality,18.46320300,-66.11475710
 5075,"San Juan",178,PR,"Puerto Rico",SJ,region,18.45000000,-66.06666667
-5199,"San Lorenzo",178,PR,"Puerto Rico",129,municipalities,18.18869120,-65.97658620
-5200,"San Sebastián",178,PR,"Puerto Rico",131,municipalities,43.31833400,-1.98123130
-5201,"Santa Isabel",178,PR,"Puerto Rico",133,municipalities,17.96607750,-66.40489200
-5202,"Toa Alta",178,PR,"Puerto Rico",135,municipalities,18.38828230,-66.24822370
+5199,"San Lorenzo",178,PR,"Puerto Rico",129,municipality,18.18869120,-65.97658620
+5200,"San Sebastián",178,PR,"Puerto Rico",131,municipality,43.31833400,-1.98123130
+5201,"Santa Isabel",178,PR,"Puerto Rico",133,municipality,17.96607750,-66.40489200
+5202,"Toa Alta",178,PR,"Puerto Rico",135,municipality,18.38828230,-66.24822370
 5082,"Toa Baja",178,PR,"Puerto Rico",TB,region,18.44388900,-66.25972200
-5203,"Toa Baja",178,PR,"Puerto Rico",137,municipalities,18.44447090,-66.25432930
+5203,"Toa Baja",178,PR,"Puerto Rico",137,municipality,18.44447090,-66.25432930
 5084,"Trujillo Alto",178,PR,"Puerto Rico",TA,region,18.36277800,-66.01750000
-5204,"Trujillo Alto",178,PR,"Puerto Rico",139,municipalities,18.35467190,-66.00738760
-5205,Utuado,178,PR,"Puerto Rico",141,municipalities,18.26550950,-66.70045190
-5206,"Vega Alta",178,PR,"Puerto Rico",143,municipalities,18.41217030,-66.33128050
-5207,"Vega Baja",178,PR,"Puerto Rico",145,municipalities,18.44614590,-66.40419670
-5208,Vieques,178,PR,"Puerto Rico",147,municipalities,18.12628540,-65.44009850
-5209,Villalba,178,PR,"Puerto Rico",149,municipalities,18.12175540,-66.49857870
-5210,Yabucoa,178,PR,"Puerto Rico",151,municipalities,18.05052010,-65.87932880
-5211,Yauco,178,PR,"Puerto Rico",153,municipalities,18.03496400,-66.84989830
+5204,"Trujillo Alto",178,PR,"Puerto Rico",139,municipality,18.35467190,-66.00738760
+5205,Utuado,178,PR,"Puerto Rico",141,municipality,18.26550950,-66.70045190
+5206,"Vega Alta",178,PR,"Puerto Rico",143,municipality,18.41217030,-66.33128050
+5207,"Vega Baja",178,PR,"Puerto Rico",145,municipality,18.44614590,-66.40419670
+5208,Vieques,178,PR,"Puerto Rico",147,municipality,18.12628540,-65.44009850
+5209,Villalba,178,PR,"Puerto Rico",149,municipality,18.12175540,-66.49857870
+5210,Yabucoa,178,PR,"Puerto Rico",151,municipality,18.05052010,-65.87932880
+5211,Yauco,178,PR,"Puerto Rico",153,municipality,18.03496400,-66.84989830
 3182,"Al Daayen",179,QA,Qatar,ZA,municipality,25.57845590,51.48213870
 3183,"Al Khor",179,QA,Qatar,KH,municipality,25.68040780,51.49685020
 3177,"Al Rayyan",179,QA,Qatar,RA,municipality,25.25225510,51.43887130
@@ -3857,22 +3858,34 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5109,Albacete,207,ES,Spain,AB,province,38.99223120,-1.87809890
 5108,Alicante,207,ES,Spain,A,province,38.35795460,-0.54256340
 5095,Almeria,207,ES,Spain,AL,province,36.84152680,-2.47462610
+5325,Andalusia,207,ES,Spain,AN,"autonomous community",37.30840610,-7.21644460
 5093,Araba,207,ES,Spain,VI,province,42.83951190,-3.84237740
+5326,Aragon,207,ES,Spain,AR,"autonomous community",41.38011140,-2.02031590
+5327,Asturias,207,ES,Spain,AS,"autonomous community",43.26892790,-7.16832120
 1160,Asturias,207,ES,Spain,O,province,43.36139530,-5.85932670
 1189,Ávila,207,ES,Spain,AV,province,40.69345110,-4.89356270
 5092,Badajoz,207,ES,Spain,BA,province,38.87937480,-7.02269830
+5335,"Balearic Islands",207,ES,Spain,IB,"autonomous community",39.36215860,1.42334520
 5102,Barcelona,207,ES,Spain,B,province,41.39266790,2.14018910
+5332,"Basque Country",207,ES,Spain,PV,"autonomous community",42.96390850,-3.25058230
 5094,Bizkaia,207,ES,Spain,BI,province,43.21921990,-3.21110870
 1146,Burgos,207,ES,Spain,BU,province,42.33807580,-3.58126920
 1190,Caceres,207,ES,Spain,CC,province,39.47163130,-6.42573840
 5096,Cádiz,207,ES,Spain,CA,province,36.51638510,-6.29997670
-5222,Canarias,207,ES,Spain,CN,"autonomous community",28.29160000,16.62910000
+5222,"Canary Islands",207,ES,Spain,CN,"autonomous community",28.29160000,16.62910000
+5328,Cantabria,207,ES,Spain,CB,"autonomous community",43.13497280,-4.66145180
 1170,Cantabria,207,ES,Spain,S,province,43.18283960,-3.98784270
 5110,Castellón,207,ES,Spain,CS,province,39.98114350,0.00884070
-5223,Ceuta,207,ES,Spain,CE,"autonomous city in North Africa",35.88900000,-5.31870000
+5329,"Castile and Leon",207,ES,Spain,CL,"autonomous community",41.63384450,-7.07137270
+5330,"Castilla-La Mancha",207,ES,Spain,CM,"autonomous community",39.64895440,-5.80632400
+5331,Catalonia,207,ES,Spain,CT,"autonomous community",41.68672110,0.42393440
+5223,Ceuta,207,ES,Spain,CE,"autonomous city",35.88900000,-5.31870000
 5105,"Ciudad Real",207,ES,Spain,CR,province,38.98607580,-3.94449750
+5337,"Community of Madrid",207,ES,Spain,MD,"autonomous community",40.52445220,-4.47541030
 5097,Córdoba,207,ES,Spain,CO,province,36.51638510,-6.29997670
 5106,Cuenca,207,ES,Spain,CU,province,40.06200360,-2.16553440
+5333,Estremadura,207,ES,Spain,EX,"autonomous community",39.20849790,-7.41654810
+5334,Galicia,207,ES,Spain,GA,"autonomous community",42.79428750,-9.33959280
 1191,Gipuzkoa,207,ES,Spain,SS,province,43.14523600,-2.44618250
 5103,Girona,207,ES,Spain,GI,province,41.98034450,2.80115770
 5098,Granada,207,ES,Spain,GR,province,37.18094110,-3.62629100
@@ -3881,6 +3894,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1177,Huesca,207,ES,Spain,HU,province,41.59762750,-0.90566230
 1174,"Islas Baleares",207,ES,Spain,PM,province,39.35877590,2.73563280
 5100,Jaén,207,ES,Spain,J,province,37.78009310,-3.81437450
+5336,"La Rioja",207,ES,Spain,RI,"autonomous community",42.28076920,-3.06723480
 1171,"La Rioja",207,ES,Spain,LO,province,42.28707330,-2.53960300
 1185,"Las Palmas",207,ES,Spain,GC,province,28.29156370,-16.62913040
 1200,León,207,ES,Spain,LE,province,42.59870410,-5.56708390
@@ -3888,12 +3902,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5090,Lugo,207,ES,Spain,LU,province,43.01231370,-7.57400960
 1158,Madrid,207,ES,Spain,M,province,40.41675150,-3.70383220
 5101,Málaga,207,ES,Spain,MA,province,36.71820150,-4.51930600
-5224,Melilla,207,ES,Spain,ML,"autonomous city in North Africa",35.29370000,-2.93830000
+5224,Melilla,207,ES,Spain,ML,"autonomous city",35.29370000,-2.93830000
 1176,Murcia,207,ES,Spain,MU,province,38.13981410,-1.36621600
 1204,Navarra,207,ES,Spain,NA,province,42.69539090,-1.67606910
+5339,Navarre,207,ES,Spain,NC,"autonomous community",42.61147290,-2.27145430
 5091,Ourense,207,ES,Spain,OR,province,42.33836130,-7.88119510
 1157,Palencia,207,ES,Spain,P,province,42.00968320,-4.52879490
 1167,Pontevedra,207,ES,Spain,PO,province,42.43385950,-8.65685520
+5338,"Region of Murcia",207,ES,Spain,MC,"autonomous community",38.06365820,-2.15547250
 1147,Salamanca,207,ES,Spain,SA,province,40.95152630,-6.23759470
 5112,"Santa Cruz de Tenerife",207,ES,Spain,TF,province,28.45789140,-16.32135390
 1192,Segovia,207,ES,Spain,SG,province,40.94292960,-4.10889420
@@ -3903,6 +3919,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5111,Teruel,207,ES,Spain,TE,province,40.34504100,-1.11847440
 1205,Toledo,207,ES,Spain,TO,province,39.86232000,-4.06946920
 1175,Valencia,207,ES,Spain,V,province,39.48401080,-0.75328090
+5340,"Valencian Community",207,ES,Spain,VC,"autonomous community",39.31088690,-1.73841720
 1183,Valladolid,207,ES,Spain,VA,province,41.65173750,-4.72449500
 1161,Zamora,207,ES,Spain,ZA,province,41.60957440,-5.89871390
 5113,Zaragoza,207,ES,Spain,Z,province,41.65175010,-0.93000020
@@ -4054,37 +4071,37 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3398,Khatlon,217,TJ,Tajikistan,KT,region,37.91135620,69.09702300
 3397,"Nohiyahoi Tobei Jumhurí ",217,TJ,Tajikistan,RA,"districts under republic administration",39.08579020,70.24083250
 3400,"Sughd ",217,TJ,Tajikistan,SU,region,39.51553260,69.09702300
-1491,Arusha,218,TZ,Tanzania,01,Region,-3.38692540,36.68299270
-1490,"Dar es Salaam",218,TZ,Tanzania,02,Region,-6.79235400,39.20832840
-1466,Dodoma,218,TZ,Tanzania,03,Region,-6.57382280,36.26308460
-1481,Geita,218,TZ,Tanzania,27,Region,-2.82422570,32.26538870
-1489,Iringa,218,TZ,Tanzania,04,Region,-7.78874420,35.56578620
-1465,Kagera,218,TZ,Tanzania,05,Region,-1.30011150,31.26263660
-1482,Katavi,218,TZ,Tanzania,28,Region,-6.36771250,31.26263660
-1478,Kigoma,218,TZ,Tanzania,08,Region,-4.88240920,29.66150550
-1467,Kilimanjaro,218,TZ,Tanzania,09,Region,-4.13369270,37.80876930
-1483,Lindi,218,TZ,Tanzania,12,Region,-9.23433940,38.31657250
-1484,Manyara,218,TZ,Tanzania,26,Region,-4.31500580,36.95410700
-1468,Mara,218,TZ,Tanzania,13,Region,-1.77535380,34.15319470
-4955,Mbeya,218,TZ,Tanzania,14,Region,-8.28661120,32.81325370
-1470,Morogoro,218,TZ,Tanzania,16,Region,-8.81371730,36.95410700
-1476,Mtwara,218,TZ,Tanzania,17,Region,-10.33984550,40.16574660
-1479,Mwanza,218,TZ,Tanzania,18,Region,-2.46711970,32.89868120
-1480,Njombe,218,TZ,Tanzania,29,Region,-9.24226320,35.12687810
-1488,"Pemba North",218,TZ,Tanzania,06,Region,-5.03193520,39.77555710
-1472,"Pemba South",218,TZ,Tanzania,10,Region,-5.31469610,39.75495110
-1485,Pwani,218,TZ,Tanzania,19,Region,-7.32377140,38.82054540
-1477,Rukwa,218,TZ,Tanzania,20,Region,-8.01094440,31.44561790
-1486,Ruvuma,218,TZ,Tanzania,21,Region,-10.68787170,36.26308460
-1463,Shinyanga,218,TZ,Tanzania,22,Region,-3.68099610,33.42714030
-1464,Simiyu,218,TZ,Tanzania,30,Region,-2.83087380,34.15319470
-1474,Singida,218,TZ,Tanzania,23,Region,-6.74533520,34.15319470
-4956,Songwe,218,TZ,Tanzania,31,Region,-8.27261200,31.71131740
-1469,Tabora,218,TZ,Tanzania,24,Region,-5.03421380,32.80844960
-1487,Tanga,218,TZ,Tanzania,25,Region,-5.30497890,38.31657250
-1473,"Zanzibar North",218,TZ,Tanzania,07,Region,-5.93950930,39.27910110
-1471,"Zanzibar South",218,TZ,Tanzania,11,Region,-6.26428510,39.44502810
-1475,"Zanzibar West",218,TZ,Tanzania,15,Region,-6.22981360,39.25832930
+1491,Arusha,218,TZ,Tanzania,01,region,-3.38692540,36.68299270
+1490,"Dar es Salaam",218,TZ,Tanzania,02,region,-6.79235400,39.20832840
+1466,Dodoma,218,TZ,Tanzania,03,region,-6.57382280,36.26308460
+1481,Geita,218,TZ,Tanzania,27,region,-2.82422570,32.26538870
+1489,Iringa,218,TZ,Tanzania,04,region,-7.78874420,35.56578620
+1465,Kagera,218,TZ,Tanzania,05,region,-1.30011150,31.26263660
+1482,Katavi,218,TZ,Tanzania,28,region,-6.36771250,31.26263660
+1478,Kigoma,218,TZ,Tanzania,08,region,-4.88240920,29.66150550
+1467,Kilimanjaro,218,TZ,Tanzania,09,region,-4.13369270,37.80876930
+1483,Lindi,218,TZ,Tanzania,12,region,-9.23433940,38.31657250
+1484,Manyara,218,TZ,Tanzania,26,region,-4.31500580,36.95410700
+1468,Mara,218,TZ,Tanzania,13,region,-1.77535380,34.15319470
+4955,Mbeya,218,TZ,Tanzania,14,region,-8.28661120,32.81325370
+1470,Morogoro,218,TZ,Tanzania,16,region,-8.81371730,36.95410700
+1476,Mtwara,218,TZ,Tanzania,17,region,-10.33984550,40.16574660
+1479,Mwanza,218,TZ,Tanzania,18,region,-2.46711970,32.89868120
+1480,Njombe,218,TZ,Tanzania,29,region,-9.24226320,35.12687810
+1488,"Pemba North",218,TZ,Tanzania,06,region,-5.03193520,39.77555710
+1472,"Pemba South",218,TZ,Tanzania,10,region,-5.31469610,39.75495110
+1485,Pwani,218,TZ,Tanzania,19,region,-7.32377140,38.82054540
+1477,Rukwa,218,TZ,Tanzania,20,region,-8.01094440,31.44561790
+1486,Ruvuma,218,TZ,Tanzania,21,region,-10.68787170,36.26308460
+1463,Shinyanga,218,TZ,Tanzania,22,region,-3.68099610,33.42714030
+1464,Simiyu,218,TZ,Tanzania,30,region,-2.83087380,34.15319470
+1474,Singida,218,TZ,Tanzania,23,region,-6.74533520,34.15319470
+4956,Songwe,218,TZ,Tanzania,31,region,-8.27261200,31.71131740
+1469,Tabora,218,TZ,Tanzania,24,region,-5.03421380,32.80844960
+1487,Tanga,218,TZ,Tanzania,25,region,-5.30497890,38.31657250
+1473,"Zanzibar North",218,TZ,Tanzania,07,region,-5.93950930,39.27910110
+1471,"Zanzibar South",218,TZ,Tanzania,11,region,-6.26428510,39.44502810
+1475,"Zanzibar West",218,TZ,Tanzania,15,region,-6.22981360,39.25832930
 3523,"Amnat Charoen",219,TH,Thailand,37,province,15.86567830,104.62577740
 3519,"Ang Thong",219,TH,Thailand,15,province,14.58960540,100.45505200
 3554,Bangkok,219,TH,Thailand,10,"metropolitan administration",13.75633090,100.50176510
@@ -4601,7 +4618,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2415,"Dumfries and Galloway",232,GB,"United Kingdom",DGY,"council area",55.07010730,-3.60525810
 2511,Dundee,232,GB,"United Kingdom",DND,"council area",56.46201800,-2.97072100
 2508,"Dungannon and South Tyrone",232,GB,"United Kingdom",DGN,"borough council",54.50826840,-6.76658910
-2406,Durham,232,GB,"United Kingdom",DUR,"unitary authority	",54.72940990,-1.88115980
+2406,Durham,232,GB,"United Kingdom",DUR,"unitary authority",54.72940990,-1.88115980
 2532,Ealing,232,GB,"United Kingdom",EAL,"london borough",51.52503660,-0.34139650
 2374,"East Ayrshire",232,GB,"United Kingdom",EAY,"council area",55.45184960,-4.26444780
 2454,"East Dunbartonshire",232,GB,"United Kingdom",EDU,"council area",55.97431620,-4.20229800
@@ -4657,7 +4674,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2494,Lisburn,232,GB,"United Kingdom",LSB,"unitary authority",54.49815840,-6.13067910
 2460,"Lisburn and Castlereagh",232,GB,"United Kingdom",LBC,district,54.49815840,-6.13067910
 2340,Liverpool,232,GB,"United Kingdom",LIV,"metropolitan district",32.65649810,-115.47632410
-2424,London,232,GB,"United Kingdom",LND,"city corporation",51.51234430,-0.09098520
+2424,London,232,GB,"United Kingdom",LND,city,51.51234430,-0.09098520
 2322,Magherafelt,232,GB,"United Kingdom",MFT,"district council",54.75532790,-6.60774870
 2398,Manchester,232,GB,"United Kingdom",MAN,"metropolitan district",53.48075930,-2.24263050
 2381,Medway,232,GB,"United Kingdom",MDW,"unitary authority",42.14176410,-71.39672560
@@ -4987,7 +5004,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1243,"Al Jawf",245,YE,Yemen,JA,governorate,16.79018190,45.29938620
 1251,"Al Mahrah",245,YE,Yemen,MR,governorate,16.52384230,51.68342750
 1235,"Al Mahwit",245,YE,Yemen,MW,governorate,15.39632290,43.56069460
-1232,"Amanat Al Asimah",245,YE,Yemen,SA,municioality,15.36944510,44.19100660
+1232,"Amanat Al Asimah",245,YE,Yemen,SA,municipality,15.36944510,44.19100660
 1246,Dhamar,245,YE,Yemen,DH,governorate,14.71953440,44.24790150
 1238,Hadhramaut,245,YE,Yemen,HD,governorate,16.93041350,49.36531490
 1244,Hajjah,245,YE,Yemen,HJ,governorate,16.11806310,43.32946600

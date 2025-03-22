@@ -1,95 +1,75 @@
 <?php
 
-
 namespace bin\Commands;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\Filesystem\Filesystem;
 use Spatie\ArrayToXml\ArrayToXml;
 
 class ExportXml extends Command
 {
-    protected static $defaultName = 'export:export-xml';
+    protected static $defaultName = 'export:xml';
+    protected static $defaultDescription = 'Export data to XML format';
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    private const FILES = [
+        'regions' => ['from' => '/json/regions.json', 'to' => '/xml/regions.xml', 'singular' => 'region'],
+        'subregions' => ['from' => '/json/subregions.json', 'to' => '/xml/subregions.xml', 'singular' => 'subregion'],
+        'countries' => ['from' => '/json/countries.json', 'to' => '/xml/countries.xml', 'singular' => 'country'],
+        'states' => ['from' => '/json/states.json', 'to' => '/xml/states.xml', 'singular' => 'state'],
+        'cities' => ['from' => '/json/cities.json', 'to' => '/xml/cities.xml', 'singular' => 'city'],
+    ];
+
+    private Filesystem $filesystem;
+
+    public function __construct()
     {
-
-        $rootDir = PATH_BASE . '../..';
-        $files = array(
-            'regions' => array(
-                'from' => '/json/regions.json',
-                'to' => '/xml/regions.xml',
-                'singular' => 'region',
-            ),
-            'subregions' => array(
-                'from' => '/json/subregions.json',
-                'to' => '/xml/subregions.xml',
-                'singular' => 'subregion',
-            ),
-            'countries' => array(
-                'from' => '/json/countries.json',
-                'to' => '/xml/countries.xml',
-                'singular' => 'country',
-            ),
-            'states' => array(
-                'from' => '/json/states.json',
-                'to' => '/xml/states.xml',
-                'singular' => 'state',
-            ),
-            'cities' => array(
-                'from' => '/json/cities.json',
-                'to' => '/xml/cities.xml',
-                'singular' => 'city',
-            ),
-            'states_cities' => array(
-                'from' => '/json/states+cities.json',
-                'to' => '/xml/states+cities.xml',
-                'singular' => 'state_city',
-            ),
-            'countries_states' => array(
-                'from' => '/json/countries+states.json',
-                'to' => '/xml/countries+states.xml',
-                'singular' => 'country_state',
-            ),
-            'countries_cities' => array(
-                'from' => '/json/countries+cities.json',
-                'to' => '/xml/countries+cities.xml',
-                'singular' => 'country_city',
-            ),
-            'countries_states_cities' => array(
-                'from' => '/json/countries+states+cities.json',
-                'to' => '/xml/countries+states+cities.xml',
-                'singular' => 'country_state_city',
-            ),
-        );
-
-        foreach ($files as $root => $v) {
-            // Gets JSON file
-            $json = file_get_contents($rootDir . $v['from']);
-
-            $csc = array($v['singular'] => json_decode($json, true));
-
-            // Converts PHP Array to XML with the root element being 'root-element-here'
-            $xml = ArrayToXml::convert(
-                $csc,
-                $root,
-                false,
-                'UTF-8',
-                '1.0',
-                ['formatOutput' => true]
-            );
-
-            $fp = fopen($rootDir . $v['to'], 'w'); // Writing XML to File
-            fwrite($fp, $xml);
-            fclose($fp);
-
-            $output->writeln('XML Exported to ' . $rootDir . $v['to'] ) ;
-        }
-
-        return 1;
-
+        parent::__construct(self::$defaultName);
+        $this->filesystem = new Filesystem();
     }
 
+    protected function configure(): void
+    {
+        $this->setHelp('This command exports the database to XML format');
+    }
 
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $io = new SymfonyStyle($input, $output);
+        $rootDir = dirname(PATH_BASE);
+
+        $io->title('Exporting XML data to ' . $rootDir);
+
+        try {
+            foreach (self::FILES as $root => $config) {
+                $io->section("Processing: $root");
+
+                $jsonData = $this->filesystem->exists($rootDir . $config['from'])
+                    ? file_get_contents($rootDir . $config['from'])
+                    : throw new \RuntimeException("JSON file not found: {$config['from']}");
+
+                $data = json_decode($jsonData, true)
+                    ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+
+                $xml = ArrayToXml::convert(
+                    [$config['singular'] => $data],
+                    $root,
+                    false,
+                    'UTF-8',
+                    '1.0',
+                    ['formatOutput' => true]
+                );
+
+                $this->filesystem->dumpFile($rootDir . $config['to'], $xml);
+                $io->success("Exported to {$config['to']}");
+            }
+
+            return Command::SUCCESS;
+        } catch (\Exception $e) {
+            $io->error("Export failed: {$e->getMessage()}");
+            return Command::FAILURE;
+        }
+    }
 }

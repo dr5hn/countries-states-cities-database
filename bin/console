@@ -3,7 +3,7 @@
 
 namespace scripts;
 define('PATH_BASE', __DIR__);
-chdir(PATH_BASE.'/config');
+chdir(PATH_BASE);
 ini_set('memory_limit', -1);
 require_once PATH_BASE.'/vendor/autoload.php';
 
@@ -15,13 +15,19 @@ use Phinx\Console\Command\Rollback;
 use Phinx\Console\Command\SeedCreate;
 use Phinx\Console\Command\SeedRun;
 use Phinx\Console\Command\Status;
-use Phinx\Console\Command\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Carbon\Carbon;
 use Symfony\Component\Console\Command\Command;
 use bin\Support\Config;
+use bin\Commands\ExportJson;
+use bin\Commands\ExportCsv;
+use bin\Commands\ExportXml;
+use bin\Commands\ExportYaml;
+use bin\Commands\ExportCscNpm;
+use bin\Commands\ExportPlist;
+use bin\Commands\ExportSqlServer;
 
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
@@ -31,18 +37,32 @@ class ConsoleApplication extends Application
 {
     public function __construct()
     {
-        parent::__construct('Console Application');
+        parent::__construct('World Database Exporter', '1.0.0');
+
         Config::getConfig();
-        $commands_dir = array_diff(scandir(PATH_BASE.'/Commands'), array('.', '..'));
-        $classes = [];
-        foreach ($commands_dir as $file){
-            $class_path = 'bin\Commands\\'.basename($file, ".php");
-            $class = new $class_path();
-            if($class instanceof Command){
-                $classes[] = new $class();
+
+        $commandsDir = PATH_BASE . '/Commands';
+        $commands = [];
+
+        if (!is_dir($commandsDir)) {
+            mkdir($commandsDir, 0755, true);
+        }
+
+        foreach (new \DirectoryIterator($commandsDir) as $file) {
+            if ($file->isDot() || $file->isDir()) {
+                continue;
+            }
+
+            $className = 'bin\\Commands\\' . $file->getBasename('.php');
+            if (class_exists($className)) {
+                $command = new $className();
+                if ($command instanceof Command) {
+                    $commands[] = $command;
+                }
             }
         }
-        $this->addCommands($classes);
+
+        $this->addCommands($commands);
         $this->addCommands([
             (new Create())->setName('manage:create'),
             (new Migrate())->setName('manage:migrate'),
@@ -52,14 +72,23 @@ class ConsoleApplication extends Application
             (new SeedCreate())->setName('seed:create'),
             (new SeedRun())->setName('seed:run'),
         ]);
+        $this->add(new ExportJson());
+        $this->add(new ExportCsv());
+        $this->add(new ExportXml());
+        $this->add(new ExportYaml());
+        $this->add(new ExportCscNpm());
+        $this->add(new ExportPlist());
+        $this->add(new ExportSqlServer());
     }
 
-    public function doRun(InputInterface $input, OutputInterface $output)
+    public function doRun(InputInterface $input, OutputInterface $output): int
     {
-        if (($input->hasParameterOption(['--help', '-h']) !== false) || ($input->getFirstArgument() !== null && $input->getFirstArgument() !== 'list')) {
-            $output->writeln($this->getLongVersion(). ' start at ' . Carbon::now() );
+        if ($input->hasParameterOption(['--help', '-h']) ||
+            ($input->getFirstArgument() !== null && $input->getFirstArgument() !== 'list')) {
+            $output->writeln(sprintf('%s start at %s', $this->getLongVersion(), Carbon::now()));
             $output->writeln('');
         }
+
         return parent::doRun($input, $output);
     }
 }

@@ -6,7 +6,7 @@ on:
       - master
     paths-ignore:
       - "**"
-      - "!scripts/export**"
+      - "!bin/Commands/Export**"
   workflow_dispatch:
     inputs:
       pass:
@@ -16,11 +16,11 @@ on:
 jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       matrix:
-        php-version: [8.1]
+        php-version: [8.2]
         node-version: [20.x]
       fail-fast: false
 
@@ -98,25 +98,26 @@ jobs:
           echo "current_date=$(date +'%dth %b %Y')" >> $GITHUB_ENV
 
       - name: Composer Dependencies
+        working-directory: ./bin
         run: |
-          cd scripts/vendor
           composer install
+          php console list
 
       - name: Export JSON
-        run: |
-          php scripts/export.php
+        working-directory: ./bin
+        run: php console export:json
 
       - name: Export XML
-        run: |
-          php scripts/export_xml.php
+        working-directory: ./bin
+        run: php console export:xml
 
       - name: Export YAML
-        run: |
-          php scripts/export_yaml.php
+        working-directory: ./bin
+        run: php console export:yaml
 
       - name: Export CSV
-        run: |
-          php scripts/export_csv.php
+        working-directory: ./bin
+        run: php console export:csv
 
       - name: Export MySQL SQL
         run: |
@@ -130,12 +131,12 @@ jobs:
         env:
           PGPASSWORD: postgres
         run: |
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists > psql/world.sql
 
       - name: Export SQLite
         run: |
@@ -147,8 +148,8 @@ jobs:
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
       - name: Export SQL Server
-        run: |
-          php scripts/export_sql_server.php
+        working-directory: ./bin
+        run: php console export:sql-server
 
       - name: Update README.md
         run: |
