@@ -5,6 +5,23 @@ const DB_VERSION = 1;
 const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
 
+function deleteDatabase() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.deleteDatabase(DB_NAME);
+
+    request.onsuccess = () => {
+      console.log(`Database ${DB_NAME} successfully deleted`);
+      resolve();
+    };
+
+    request.onerror = (event) => {
+      console.error(`Error deleting database: ${event.target.error}`);
+      reject(event.target.error);
+    };
+  });
+}
+
+
 function openDB() {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
@@ -39,11 +56,20 @@ function openDB() {
           }
         }
       });
+      console.log('Database upgraded');
     };
   });
 }
 
 async function initializeData() {
+  console.log('Initializing data');
+  // Delete existing database if requested via URL parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('reset') === 'true') {
+    await deleteDatabase();
+    window.location.search = '';
+  }
+
   await openDB();
   for (const collectionName of COLLECTIONS) {
     const objectStore = db.transaction(collectionName, 'readonly').objectStore(collectionName);
@@ -85,7 +111,7 @@ function renderRegions(regions) {
     <tr>
       <td class="border px-4 py-2">
         ${r.name}
-        <button class="tooltip inline-block align-middle float-right" onclick="filterSubregions('${r.id}')">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterSubregions(${r.id})">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -103,9 +129,11 @@ function renderRegions(regions) {
 }
 
 async function filterSubregions(regionId) {
-  console.log(typeof regionId);
-  const subregions = await getFromIndex('subregions', 'region_id', parseInt(regionId));
-  console.log(subregions);
+  if (typeof regionId === 'string') {
+    window.location.search = 'reset=true';
+    window.location.reload();
+  }
+  const subregions = await getFromIndex('subregions', 'region_id', regionId);
   renderSubregions(subregions);
   document.querySelector('.countries-tb').innerHTML = '';
   document.querySelector('.states-tb').innerHTML = '';
@@ -129,7 +157,7 @@ function renderSubregions(subregions) {
     <tr>
       <td class="border px-4 py-2">
         ${sr.name}
-        <button class="tooltip inline-block align-middle float-right" onclick="filterCountries('${sr.id}')">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterCountries(${sr.id})">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -190,7 +218,7 @@ function renderStates(states) {
       <td class="border px-4 py-2">
         ${s.name}
         <span class="inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">${s.state_code}</span>
-        <button class="tooltip inline-block align-middle float-right" onclick="filterCities('${s.id}')">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterCities(${s.id})">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
