@@ -282,7 +282,7 @@ class ExportJson extends Command
                     // Pushing it into Fresh Array
                     $subregionsArray[$s]['id'] = (int)$row['id'];
                     $subregionsArray[$s]['name'] = $row['name'];
-                    $subregionsArray[$s]['region_id'] = $row['region_id'];
+                    $subregionsArray[$s]['region_id'] = (int)$row['region_id'];
                     $subregionsArray[$s]['translations'] = json_decode($row['translations'], true);
                     $subregionsArray[$s]['wikiDataId'] = $row['wikiDataId'];
                     $s++;
