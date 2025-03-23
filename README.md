@@ -4,7 +4,7 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, XML, YAML & CSV format.
+Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, XML, YAML, MONGODB & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 ## API 🚀
 🎉 Introducing **API** for Countries States Cities Database.
@@ -19,21 +19,22 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 - PSQL
 - SQLITE
 - SQLSERVER
+- MONGODB
 - XML
 - YAML
 - CSV
 
 ## Distribution Files Info
-| File                       | JSON               | MYSQL              | PSQL               | SQLITE             | SQLSERVER          | XML                | YAML               | CSV                |
-| :------------------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- |
-| Regions                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Subregions                 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 | NA                 |
+| File                       | JSON               | MYSQL              | PSQL               | SQLITE             | SQLSERVER          | MONGODB            | XML                | YAML               | CSV                |
+| :------------------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- | :----------------- |
+| Regions                    | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Subregions                 | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 | NA                 | NA                 |
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/
@@ -51,11 +52,23 @@ Last Updated On : 08th Mar 2025
 
 The API database is regularly updated to ensure the latest data is available to users. The next scheduled update is on:
 
-**Upcoming API Database Update Date:** 8th January 2025
+**Upcoming API Database Update Date:** 8th April 2025
 
 Please note that this date is subject to change based on unforeseen circumstances. Although we strive to adhere to the schedule, there may be instances where the update date is missed. We apologize for any inconvenience caused in such cases.
 
 We appreciate your understanding and patience. Thank you for using the Countries States Cities Database!
+
+## Import MongoDB
+
+How to import MongoDB database?
+
+```bash
+# First extract the tar.gz file
+tar -xzvf world-mongodb-dump.tar.gz
+
+# Then restore the MongoDB dump
+mongorestore --host localhost:27017 --db world mongodb-dump/world
+```
 
 ## License
 This **Countries States Cities Database** is made available under the [Open Database License](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE). Any rights in individual contents of the database are licensed under the [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE).
