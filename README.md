@@ -117,7 +117,10 @@ Made with [contrib.rocks](https://contrib.rocks).
 Contribute towards better earth [**buy the world a tree**](https://ecologi.com/darshangada?r=60f2a36e67efcb18f734ffb8)
 
 ## Other Publishings
-Find this project on [data.world](https://data.world/dr5hn/country-state-city)
+Find this project on 
+* [data.world](https://data.world/dr5hn/country-state-city)
+* [kaggle](https://www.kaggle.com/datasets/darshangada/countries-states-cities-database/data)
+
 
 ## Follow me at
 <a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" /></a> <a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" /></a> <a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" /></a>
