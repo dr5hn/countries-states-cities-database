@@ -235,6 +235,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2025,"Vayots Dzor",12,AM,Armenia,VD,region,39.76419960,45.33375280
 2030,Yerevan,12,AM,Armenia,ER,city,40.18720230,44.51520900
 5243,Noord,13,AW,Aruba,,region,12.58243290,-70.06761180
+5341,Oranjestad,13,AW,Aruba,,"capital city",12.50837050,-70.05452530
 5245,"Oranjestad East",13,AW,Aruba,,region,12.51331810,-70.05048180
 5244,"Oranjestad West",13,AW,Aruba,,region,12.53522930,-70.06284040
 5246,Paradera,13,AW,Aruba,,region,12.53628710,-70.01485110
@@ -368,7 +369,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1381,Antwerp,22,BE,Belgium,VAN,province,51.21944750,4.40246430
 1376,"Brussels-Capital ",22,BE,Belgium,BRU,region,50.85034630,4.35172110
 1377,"East Flanders",22,BE,Belgium,VOV,province,51.03621010,3.73731240
-1373,Flanders,22,BE,Belgium,VLG,province,51.01087060,3.72646130
+1373,Flanders,22,BE,Belgium,VLG,region,51.01087060,3.72646130
 1374,"Flemish Brabant",22,BE,Belgium,VBR,province,50.88154340,4.56459700
 1375,Hainaut,22,BE,Belgium,WHT,province,50.52570760,4.06210170
 1384,Liège,22,BE,Belgium,WLG,province,50.63255740,5.57966620
@@ -526,6 +527,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3138,"Boucle du Mouhoun",35,BF,"Burkina Faso",01,region,12.41660000,-3.41955270
 3121,Bougouriba,35,BF,"Burkina Faso",BGR,province,10.87226460,-3.33889170
 3131,Boulgou,35,BF,"Burkina Faso",BLG,province,11.43367660,-0.37483540
+5343,Boulkiemde,35,BF,"Burkina Faso",BLK,province,12.32244190,-2.47380520
 3153,Cascades,35,BF,"Burkina Faso",02,region,10.40729920,-4.56244260
 3136,Centre,35,BF,"Burkina Faso",03,region,,
 3162,Centre-Est,35,BF,"Burkina Faso",04,region,11.52476740,-0.14949880
@@ -812,37 +814,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1213,Limón,53,CR,"Costa Rica",L,province,9.98963980,-83.03324170
 1210,Puntarenas,53,CR,"Costa Rica",P,province,9.21695310,-83.33618800
 1214,"San José",53,CR,"Costa Rica",SJ,province,9.91297270,-84.07682940
-2634,Abidjan,54,CI,"Cote D'Ivoire (Ivory Coast)",AB,"autonomous district",5.35995170,-4.00825630
-2626,Agnéby,54,CI,"Cote D'Ivoire (Ivory Coast)",16,region,5.32245030,-4.34495290
-2636,Bafing,54,CI,"Cote D'Ivoire (Ivory Coast)",17,region,8.32520470,-7.52472430
-2643,Bas-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",BS,district,5.27983560,-6.15269850
-2635,Bas-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",09,region,5.35679160,-6.74939930
-2654,Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",CM,district,5.55279300,-3.25836260
-2644,Denguélé,54,CI,"Cote D'Ivoire (Ivory Coast)",DN,district,48.07077630,-68.56093410
-2642,Denguélé,54,CI,"Cote D'Ivoire (Ivory Coast)",10,region,9.46623720,-7.43813550
-2645,"Dix-Huit Montagnes",54,CI,"Cote D'Ivoire (Ivory Coast)",06,region,7.37623730,-7.43813550
-2633,Fromager,54,CI,"Cote D'Ivoire (Ivory Coast)",18,region,45.54502130,-73.60462230
-2651,Gôh-Djiboua,54,CI,"Cote D'Ivoire (Ivory Coast)",GD,district,5.87113930,-5.56172790
-2638,Haut-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",02,region,6.87578480,-6.57833870
-2640,Lacs,54,CI,"Cote D'Ivoire (Ivory Coast)",07,region,47.73958660,-70.41866520
-2632,Lacs,54,CI,"Cote D'Ivoire (Ivory Coast)",LC,district,48.19801690,-80.45644120
-2639,Lagunes,54,CI,"Cote D'Ivoire (Ivory Coast)",01,region,5.88273340,-4.23333550
-2627,Lagunes,54,CI,"Cote D'Ivoire (Ivory Coast)",LG,district,5.88273340,-4.23333550
-2631,Marahoué,54,CI,"Cote D'Ivoire (Ivory Coast)",12,region,6.88462070,-5.89871390
-2629,Montagnes,54,CI,"Cote D'Ivoire (Ivory Coast)",MG,district,7.37623730,-7.43813550
-2646,Moyen-Cavally,54,CI,"Cote D'Ivoire (Ivory Coast)",19,region,6.52087930,-7.61142170
-2630,Moyen-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",05,region,6.65149170,-3.50034540
-2655,N'zi-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",11,region,7.24567490,-4.23333550
-2648,Sassandra-Marahoué,54,CI,"Cote D'Ivoire (Ivory Coast)",SM,district,6.88033480,-6.23759470
-2625,Savanes,54,CI,"Cote D'Ivoire (Ivory Coast)",03,region,,
-2628,Sud-Bandama,54,CI,"Cote D'Ivoire (Ivory Coast)",15,region,5.53570830,-5.56172790
-2652,Sud-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",13,region,5.55279300,-3.25836260
-2647,"Vallée du Bandama",54,CI,"Cote D'Ivoire (Ivory Coast)",04,region,8.27897800,-4.89356270
-2637,"Vallée du Bandama",54,CI,"Cote D'Ivoire (Ivory Coast)",VB,district,8.27897800,-4.89356270
-2650,Woroba,54,CI,"Cote D'Ivoire (Ivory Coast)",WR,district,8.24913720,-6.92091350
-2649,Worodougou,54,CI,"Cote D'Ivoire (Ivory Coast)",14,region,8.25489620,-6.57833870
-2653,Yamoussoukro,54,CI,"Cote D'Ivoire (Ivory Coast)",YM,district,6.82762280,-5.28934330
-2641,Zanzan,54,CI,"Cote D'Ivoire (Ivory Coast)",ZZ,district,8.82079040,-3.41955270
 734,Bjelovar-Bilogora,55,HR,Croatia,07,county,45.89879720,16.84230930
 737,Brod-Posavina,55,HR,Croatia,12,county,45.26379510,17.32645620
 728,Dubrovnik-Neretva,55,HR,Croatia,19,county,43.07665880,17.52684710
@@ -1345,13 +1316,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 907,Guria,81,GE,Georgia,GU,region,41.94427360,42.04580910
 905,Imereti,81,GE,Georgia,IM,region,42.23010800,42.90086640
 910,Kakheti,81,GE,Georgia,KA,region,41.64816020,45.69055540
-897,Khelvachauri,81,GE,Georgia,29,municipality,41.58019260,41.66107420
 904,"Kvemo Kartli",81,GE,Georgia,KK,region,41.47918330,44.65604510
 902,Mtskheta-Mtianeti,81,GE,Georgia,MM,region,42.16821850,44.65060580
 909,"Racha-Lechkhumi and Kvemo Svaneti",81,GE,Georgia,RL,region,42.67188730,43.05628360
 908,"Samegrelo-Zemo Svaneti",81,GE,Georgia,SZ,region,42.73522470,42.16893620
 906,Samtskhe-Javakheti,81,GE,Georgia,SJ,region,41.54792960,43.27764000
-898,Senaki,81,GE,Georgia,50,municipality,42.26963600,42.06568960
 903,"Shida Kartli",81,GE,Georgia,SK,region,42.07569440,43.95404620
 899,Tbilisi,81,GE,Georgia,TB,city,41.71513770,44.82709600
 3006,Baden-Württemberg,82,DE,Germany,BW,land,48.66160370,9.35013360
@@ -1482,6 +1451,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2706,Dalaba,92,GN,Guinea,DL,prefecture,10.68681760,-12.24906970
 2688,Dinguiraye,92,GN,Guinea,DI,prefecture,11.68442220,-10.80000510
 2681,Dubréka,92,GN,Guinea,DU,prefecture,9.79073480,-13.51477350
+5344,Faranah,92,GN,Guinea,F,"administrative region",10.54730350,-11.85076440
 2682,Faranah,92,GN,Guinea,FA,prefecture,9.90573990,-10.80000510
 2683,Forécariah,92,GN,Guinea,FO,prefecture,9.38861870,-13.08179030
 2675,Fria,92,GN,Guinea,FR,prefecture,10.36745430,-13.58418710
@@ -1766,6 +1736,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1090,Kilkenny,105,IE,Ireland,KK,county,52.57769570,-7.21800200
 1096,Laois,105,IE,Ireland,LS,county,52.99429500,-7.33230070
 1073,Leinster,105,IE,Ireland,L,province,53.32715380,-7.51408410
+5345,Leitrim,105,IE,Ireland,LM,county,54.13916300,-8.66661110
 1094,Limerick,105,IE,Ireland,LK,county,52.50905170,-8.74749550
 1076,Longford,105,IE,Ireland,LD,county,53.72749820,-7.79315270
 1083,Louth,105,IE,Ireland,LH,county,53.92523240,-6.48894230
@@ -1794,6 +1765,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1672,Ancona,107,IT,Italy,AN,province,43.54932450,13.26634790
 1716,"Aosta Valley",107,IT,Italy,23,"autonomous region",45.73888780,7.42618660
 1688,Apulia,107,IT,Italy,75,region,40.79283930,17.10119310
+1761,Arezzo,107,IT,Italy,AR,province,43.51625330,11.22368720
 1681,"Ascoli Piceno",107,IT,Italy,AP,province,42.86389330,13.58997330
 1780,Asti,107,IT,Italy,AT,province,44.90076520,8.20643150
 1692,Avellino,107,IT,Italy,AV,province,40.99645100,15.12589550
@@ -1845,7 +1817,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1670,Marche,107,IT,Italy,57,region,43.30456200,13.71947000
 1759,"Massa and Carrara",107,IT,Italy,MS,province,44.22139980,10.03596610
 1760,Matera,107,IT,Italy,MT,province,40.66634960,16.60436360
-1761,"Medio Campidano",107,IT,Italy,VS,province,39.53173890,8.70407500
 1757,Modena,107,IT,Italy,MO,province,44.55137990,10.91804800
 1695,Molise,107,IT,Italy,67,region,41.67388650,14.75209390
 1769,"Monza and Brianza",107,IT,Italy,MB,province,45.62359900,9.25880150
@@ -1853,7 +1824,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1790,Nuoro,107,IT,Italy,NU,province,40.32869040,9.45615500
 1786,Oristano,107,IT,Italy,OR,province,40.05990680,8.74811670
 1665,Padua,107,IT,Italy,PD,province,45.36618640,11.82091390
-1668,Palermo,107,IT,Italy,PA,province,38.11569000,13.36148680
+1668,Palermo,107,IT,Italy,PA,"metropolitan city",38.11569000,13.36148680
 1666,Parma,107,IT,Italy,PR,province,44.80153220,10.32793540
 1676,Pavia,107,IT,Italy,PV,province,45.32181660,8.84662360
 1691,Perugia,107,IT,Italy,PG,province,42.93800400,12.62162110
@@ -1899,6 +1870,37 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1737,"Vibo Valentia",107,IT,Italy,VV,province,38.63785650,16.20514840
 1738,Vicenza,107,IT,Italy,VI,province,45.69839950,11.56614650
 1735,Viterbo,107,IT,Italy,VT,province,42.40024200,11.88917210
+2634,Abidjan,54,CI,"Ivory Coast",AB,"autonomous district",5.35995170,-4.00825630
+2626,Agnéby,54,CI,"Ivory Coast",16,region,5.32245030,-4.34495290
+2636,Bafing,54,CI,"Ivory Coast",17,region,8.32520470,-7.52472430
+2643,Bas-Sassandra,54,CI,"Ivory Coast",BS,district,5.27983560,-6.15269850
+2635,Bas-Sassandra,54,CI,"Ivory Coast",09,region,5.35679160,-6.74939930
+2654,Comoé,54,CI,"Ivory Coast",CM,district,5.55279300,-3.25836260
+2644,Denguélé,54,CI,"Ivory Coast",DN,district,48.07077630,-68.56093410
+2642,Denguélé,54,CI,"Ivory Coast",10,region,9.46623720,-7.43813550
+2645,"Dix-Huit Montagnes",54,CI,"Ivory Coast",06,region,7.37623730,-7.43813550
+2633,Fromager,54,CI,"Ivory Coast",18,region,45.54502130,-73.60462230
+2651,Gôh-Djiboua,54,CI,"Ivory Coast",GD,district,5.87113930,-5.56172790
+2638,Haut-Sassandra,54,CI,"Ivory Coast",02,region,6.87578480,-6.57833870
+2640,Lacs,54,CI,"Ivory Coast",07,region,47.73958660,-70.41866520
+2632,Lacs,54,CI,"Ivory Coast",LC,district,48.19801690,-80.45644120
+2639,Lagunes,54,CI,"Ivory Coast",01,region,5.88273340,-4.23333550
+2627,Lagunes,54,CI,"Ivory Coast",LG,district,5.88273340,-4.23333550
+2631,Marahoué,54,CI,"Ivory Coast",12,region,6.88462070,-5.89871390
+2629,Montagnes,54,CI,"Ivory Coast",MG,district,7.37623730,-7.43813550
+2646,Moyen-Cavally,54,CI,"Ivory Coast",19,region,6.52087930,-7.61142170
+2630,Moyen-Comoé,54,CI,"Ivory Coast",05,region,6.65149170,-3.50034540
+2655,N'zi-Comoé,54,CI,"Ivory Coast",11,region,7.24567490,-4.23333550
+2648,Sassandra-Marahoué,54,CI,"Ivory Coast",SM,district,6.88033480,-6.23759470
+2625,Savanes,54,CI,"Ivory Coast",03,region,,
+2628,Sud-Bandama,54,CI,"Ivory Coast",15,region,5.53570830,-5.56172790
+2652,Sud-Comoé,54,CI,"Ivory Coast",13,region,5.55279300,-3.25836260
+2647,"Vallée du Bandama",54,CI,"Ivory Coast",04,region,8.27897800,-4.89356270
+2637,"Vallée du Bandama",54,CI,"Ivory Coast",VB,district,8.27897800,-4.89356270
+2650,Woroba,54,CI,"Ivory Coast",WR,district,8.24913720,-6.92091350
+2649,Worodougou,54,CI,"Ivory Coast",14,region,8.25489620,-6.57833870
+2653,Yamoussoukro,54,CI,"Ivory Coast",YM,district,6.82762280,-5.28934330
+2641,Zanzan,54,CI,"Ivory Coast",ZZ,district,8.82079040,-3.41955270
 3753,Clarendon,108,JM,Jamaica,13,parish,17.95571830,-77.24051530
 3749,Hanover,108,JM,Jamaica,09,parish,18.40977070,-78.13363800
 3748,Kingston,108,JM,Jamaica,01,parish,17.96832710,-76.78270200
@@ -2200,9 +2202,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 456,Triesenberg,125,LI,Liechtenstein,10,commune,47.12245110,9.57019850
 452,Vaduz,125,LI,Liechtenstein,11,commune,47.14103030,9.52092770
 1561,Akmenė,126,LT,Lithuania,01,"district municipality",56.24550290,22.74711690
+1599,Alytus,126,LT,Lithuania,03,"district municipality",54.32974960,24.19609310
 1574,Alytus,126,LT,Lithuania,AL,county,54.20002140,24.15126340
 1605,Alytus,126,LT,Lithuania,02,"district municipality",54.39629380,24.04587610
-1599,Alytus,126,LT,Lithuania,03,"district municipality",54.32974960,24.19609310
+5346,Anykščiai,126,LT,Lithuania,04,"district municipality",55.54755510,24.73181660
 1603,Birštonas,126,LT,Lithuania,05,municipality,54.56696640,24.00930980
 1566,Biržai,126,LT,Lithuania,06,"district municipality",56.20177190,24.75601180
 1579,Druskininkai,126,LT,Lithuania,07,municipality,53.99336850,24.03424380
@@ -2214,28 +2217,28 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1583,Kaišiadorys,126,LT,Lithuania,13,"district municipality",54.85886690,24.42779290
 1591,Kalvarija,126,LT,Lithuania,14,municipality,54.37616740,23.19203210
 1565,Kaunas,126,LT,Lithuania,16,"district municipality",54.99362360,23.63249410
-1580,Kaunas,126,LT,Lithuania,15,"district municipality",54.91453260,23.90535180
 1556,Kaunas,126,LT,Lithuania,KU,county,54.98728630,23.95257360
+1580,Kaunas,126,LT,Lithuania,15,"district municipality",54.91453260,23.90535180
 1575,"Kazlų Rūda",126,LT,Lithuania,17,municipality,54.78075260,23.48402430
 1584,Kėdainiai,126,LT,Lithuania,18,"district municipality",55.35609470,23.98326830
 1618,Kelmė,126,LT,Lithuania,19,"district municipality",55.62663520,22.87817200
-1604,Klaipėda,126,LT,Lithuania,21,"district municipality",55.68416150,21.44164640
 1597,Klaipeda,126,LT,Lithuania,20,"district municipality",55.70329480,21.14427950
 1600,Klaipėda,126,LT,Lithuania,KL,county,55.65197440,21.37439560
+1604,Klaipėda,126,LT,Lithuania,21,"district municipality",55.68416150,21.44164640
 1571,Kretinga,126,LT,Lithuania,22,"district municipality",55.88384200,21.23509190
 1585,Kupiškis,126,LT,Lithuania,23,"district municipality",55.84287410,25.02958160
 1611,Lazdijai,126,LT,Lithuania,24,"district municipality",54.23432670,23.51565050
-1570,Marijampolė,126,LT,Lithuania,MR,county,54.78199710,23.13413650
 1610,Marijampolė,126,LT,Lithuania,25,"district municipality",54.57110940,23.48593710
+1570,Marijampolė,126,LT,Lithuania,MR,county,54.78199710,23.13413650
 1557,Mažeikiai,126,LT,Lithuania,26,"district municipality",56.30924390,22.34146800
 1582,Molėtai,126,LT,Lithuania,27,"district municipality",55.22653090,25.41800110
 1563,Neringa,126,LT,Lithuania,28,municipality,55.45724030,21.08390050
 1612,Pagėgiai,126,LT,Lithuania,29,municipality,55.17213200,21.96836140
 1595,Pakruojis,126,LT,Lithuania,30,"district municipality",56.07326050,23.93899060
 1588,Palanga,126,LT,Lithuania,31,"district municipality",55.92019800,21.06776140
-1614,Panevėžys,126,LT,Lithuania,33,"district municipality",55.61667280,24.31422830
-1558,Panevėžys,126,LT,Lithuania,PN,county,55.97480490,25.07947670
 1589,Panevėžys,126,LT,Lithuania,32,"district municipality",55.73479150,24.35747740
+1558,Panevėžys,126,LT,Lithuania,PN,county,55.97480490,25.07947670
+1614,Panevėžys,126,LT,Lithuania,33,"district municipality",55.61667280,24.31422830
 1616,Pasvalys,126,LT,Lithuania,34,"district municipality",56.06046190,24.39629100
 1553,Plungė,126,LT,Lithuania,35,"district municipality",55.91078400,21.84540690
 1578,Prienai,126,LT,Lithuania,36,"district municipality",54.63835800,23.94680090
@@ -2245,27 +2248,27 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1615,Rokiškis,126,LT,Lithuania,40,"district municipality",55.95550390,25.58592490
 1576,Šakiai,126,LT,Lithuania,41,"district municipality",54.95267100,23.04801990
 1577,Šalčininkai,126,LT,Lithuania,42,"district municipality",54.30976700,25.38756400
-1609,Šiauliai,126,LT,Lithuania,43,"district municipality",55.93490850,23.31368230
 1554,Šiauliai,126,LT,Lithuania,44,"district municipality",55.97214560,23.03323710
+1609,Šiauliai,126,LT,Lithuania,43,"district municipality",55.93490850,23.31368230
 1586,Šiauliai,126,LT,Lithuania,SA,county,55.99857510,23.13800510
 1613,"Šilalė ",126,LT,Lithuania,45,"district municipality",55.49268000,22.18455590
 1607,Šilutė,126,LT,Lithuania,46,"district municipality",55.35041400,21.46598590
 1594,Širvintos,126,LT,Lithuania,47,"district municipality",55.04310200,24.95698100
 1617,Skuodas,126,LT,Lithuania,48,"district municipality",56.27021690,21.52143310
 1560,Švenčionys,126,LT,Lithuania,49,"district municipality",55.10280980,26.00718550
-1572,Tauragė,126,LT,Lithuania,50,"district municipality",55.25036600,22.29095000
 1573,Tauragė,126,LT,Lithuania,TA,county,55.30725860,22.35729390
-1569,Telšiai,126,LT,Lithuania,TE,county,56.10266160,22.11139150
+1572,Tauragė,126,LT,Lithuania,50,"district municipality",55.25036600,22.29095000
 1608,Telšiai,126,LT,Lithuania,51,"district municipality",55.91752150,22.34518400
+1569,Telšiai,126,LT,Lithuania,TE,county,56.10266160,22.11139150
 1593,Trakai,126,LT,Lithuania,52,"district municipality",54.63791130,24.93468940
 1596,Ukmergė,126,LT,Lithuania,53,"district municipality",55.24526500,24.77607490
-1621,Utena,126,LT,Lithuania,UT,county,55.53189690,25.79046990
 1598,Utena,126,LT,Lithuania,54,"district municipality",55.50846140,25.68326420
+1621,Utena,126,LT,Lithuania,UT,county,55.53189690,25.79046990
 1602,Varėna,126,LT,Lithuania,55,"district municipality",54.22033300,24.57899700
 1620,Vilkaviškis,126,LT,Lithuania,56,"district municipality",54.65194500,23.03515500
-1592,Vilnius,126,LT,Lithuania,58,"district municipality",54.77325780,25.58671130
-1606,Vilnius,126,LT,Lithuania,57,"district municipality",54.67107610,25.28787210
 1601,Vilnius,126,LT,Lithuania,VL,county,54.80865020,25.21821390
+1606,Vilnius,126,LT,Lithuania,57,"district municipality",54.67107610,25.28787210
+1592,Vilnius,126,LT,Lithuania,58,"district municipality",54.77325780,25.58671130
 1564,Visaginas,126,LT,Lithuania,59,municipality,55.59411800,26.43079540
 1619,Zarasai,126,LT,Lithuania,60,"district municipality",55.73096090,26.24529500
 1518,Capellen,127,LU,Luxembourg,CA,canton,49.64039310,5.95538460
@@ -2288,7 +2291,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2949,Toliara,130,MG,Madagascar,U,province,-23.35161910,43.68549360
 3096,Balaka,131,MW,Malawi,BA,district,-15.05065950,35.08285880
 3102,Blantyre,131,MW,Malawi,BL,district,-15.67785410,34.95066250
-3092,Central,131,MW,Malawi,C,district,,
+3092,Central,131,MW,Malawi,C,region,,
 3107,Chikwawa,131,MW,Malawi,CK,district,-16.19584460,34.77407930
 3109,Chiradzulu,131,MW,Malawi,CR,district,-15.74231510,35.25879640
 3087,Chitipa,131,MW,Malawi,CT,district,-9.70376550,33.27002530
@@ -2304,6 +2307,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3103,Mulanje,131,MW,Malawi,MU,district,-15.93464340,35.52200120
 3084,Mwanza,131,MW,Malawi,MW,district,-2.46711970,32.89868120
 3104,Mzimba,131,MW,Malawi,MZ,district,-11.74754520,33.52800720
+5347,Neno,131,MW,Malawi,NE,district,-15.69042540,34.22913860
 3095,"Nkhata Bay",131,MW,Malawi,NB,district,-11.71850420,34.33103640
 3100,Nkhotakota,131,MW,Malawi,NK,district,-12.75419610,34.24215970
 3105,Northern,131,MW,Malawi,N,region,,
@@ -3435,6 +3439,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3833,"Christ Church Nichola Town",185,KN,"Saint Kitts and Nevis",01,parish,17.36048120,-62.76178370
 3832,Nevis,185,KN,"Saint Kitts and Nevis",N,state,17.15535580,-62.57960260
 3836,"Saint Anne Sandy Point",185,KN,"Saint Kitts and Nevis",02,parish,17.37253330,-62.84411330
+5348,"Saint George Basseterre",185,KN,"Saint Kitts and Nevis",03,parish,17.26710110,-62.76930010
 3837,"Saint George Gingerland",185,KN,"Saint Kitts and Nevis",04,parish,17.12577590,-62.56198110
 3835,"Saint James Windward",185,KN,"Saint Kitts and Nevis",05,parish,17.17696330,-62.57960260
 3845,"Saint John Capisterre",185,KN,"Saint Kitts and Nevis",06,parish,17.38103410,-62.79118330
@@ -3927,9 +3932,9 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2816,Anuradhapura,208,LK,"Sri Lanka",71,district,8.33183050,80.40290170
 2790,Badulla,208,LK,"Sri Lanka",81,district,6.99340090,81.05498150
 2818,Batticaloa,208,LK,"Sri Lanka",51,district,7.82927810,81.47183870
-2798,Central,208,LK,"Sri Lanka",2,province,,
+2798,Central,208,LK,"Sri Lanka",2,province,7.38164450,80.05812960
 2815,Colombo,208,LK,"Sri Lanka",11,district,6.92695570,79.86173060
-2808,Eastern,208,LK,"Sri Lanka",5,province,,
+2808,Eastern,208,LK,"Sri Lanka",5,province,7.74871760,79.99362660
 2792,Galle,208,LK,"Sri Lanka",31,district,6.05774900,80.21755720
 2804,Gampaha,208,LK,"Sri Lanka",12,district,7.07126190,80.00877460
 2791,Hambantota,208,LK,"Sri Lanka",33,district,6.15358160,81.12714900
@@ -3938,6 +3943,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2788,Kandy,208,LK,"Sri Lanka",21,district,7.29315880,80.63501070
 2797,Kegalle,208,LK,"Sri Lanka",92,district,7.12040530,80.32131060
 2793,Kilinochchi,208,LK,"Sri Lanka",42,district,9.36779710,80.32131060
+5342,Kurunegala,208,LK,"Sri Lanka",61,district,7.72856470,79.90891700
 2805,Mannar,208,LK,"Sri Lanka",43,district,8.98095310,79.90439750
 2810,Matale,208,LK,"Sri Lanka",22,district,7.46596460,80.62342590
 2806,Matara,208,LK,"Sri Lanka",32,district,5.94493480,80.54879970
@@ -3945,17 +3951,17 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2814,Mullaitivu,208,LK,"Sri Lanka",45,district,9.26753880,80.81282540
 2800,"North Central",208,LK,"Sri Lanka",7,province,8.19956380,80.63269160
 2817,"North Western",208,LK,"Sri Lanka",6,province,7.75840910,80.18750650
-2813,Northern,208,LK,"Sri Lanka",4,province,,
+2813,Northern,208,LK,"Sri Lanka",4,province,9.37238330,79.84713770
 2794,"Nuwara Eliya",208,LK,"Sri Lanka",23,district,6.96065320,80.76927580
 2812,Polonnaruwa,208,LK,"Sri Lanka",72,district,7.93955670,81.00034030
 2796,Puttalam,208,LK,"Sri Lanka",62,district,8.02599150,79.84712720
 2807,Ratnapura,208,LK,"Sri Lanka",91,district,6.70551680,80.38483890
 2803,Sabaragamuwa,208,LK,"Sri Lanka",9,province,6.73959410,80.36586500
-2801,Southern,208,LK,"Sri Lanka",3,province,,
+2801,Southern,208,LK,"Sri Lanka",3,province,6.25036500,79.52503880
 2795,Trincomalee,208,LK,"Sri Lanka",53,district,8.60130690,81.11960750
 2811,Uva,208,LK,"Sri Lanka",8,province,6.84276120,81.33994140
 2809,Vavuniya,208,LK,"Sri Lanka",44,district,8.75947390,80.50003340
-2802,Western,208,LK,"Sri Lanka",1,province,,
+2802,Western,208,LK,"Sri Lanka",1,province,6.82823500,79.76864030
 885,"Al Jazirah",209,SD,Sudan,GZ,state,14.88596110,33.43835300
 886,"Al Qadarif",209,SD,Sudan,GD,state,14.02430700,35.36856790
 887,"Blue Nile",209,SD,Sudan,NB,state,47.59867300,-122.33441900
@@ -4398,6 +4404,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 441,Budaka,229,UG,Uganda,217,district,1.10162770,33.93039910
 349,Bududa,229,UG,Uganda,218,district,1.00296930,34.33381230
 387,Bugiri,229,UG,Uganda,201,district,0.53161270,33.75177230
+5350,Bugweri,229,UG,Uganda,235,district,0.62222290,33.44805470
 391,Buhweju,229,UG,Uganda,420,district,-0.29113590,30.29741990
 377,Buikwe,229,UG,Uganda,117,district,0.31440460,32.98883190
 343,Bukedea,229,UG,Uganda,219,district,1.35568980,34.10867930
@@ -4419,6 +4426,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 372,Eastern,229,UG,Uganda,E,region,6.23740360,-0.45023680
 366,Gomba,229,UG,Uganda,121,district,0.22297910,31.67393710
 413,Gulu,229,UG,Uganda,304,district,2.81857760,32.44672380
+5358,Hoima,229,UG,Uganda,403,district,1.56023430,30.52043450
 339,Ibanda,229,UG,Uganda,417,district,-0.09648900,30.57395790
 340,Iganga,229,UG,Uganda,203,district,0.66001370,33.48319060
 383,Isingiro,229,UG,Uganda,418,district,-0.84354300,30.80394740
@@ -4429,28 +4437,36 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 336,Kaberamaido,229,UG,Uganda,213,district,1.69633220,33.21385100
 403,Kagadi,229,UG,Uganda,427,district,0.94007610,30.81256380
 399,Kakumiro,229,UG,Uganda,428,district,0.78080350,31.32413890
+5352,Kalaki,229,UG,Uganda,237,district,1.82956800,33.32930510
 405,Kalangala,229,UG,Uganda,101,district,-0.63505780,32.53727410
 398,Kaliro,229,UG,Uganda,222,district,1.04311070,33.48319060
 394,Kalungu,229,UG,Uganda,122,district,-0.09528310,31.76513620
-382,Kampala,229,UG,Uganda,102,district,0.34759640,32.58251970
+382,Kampala,229,UG,Uganda,102,city,0.34759640,32.58251970
 334,Kamuli,229,UG,Uganda,205,district,0.91871070,33.12390490
 360,Kamwenge,229,UG,Uganda,413,district,0.22579300,30.48184460
 373,Kanungu,229,UG,Uganda,414,district,-0.81952530,29.74260400
 432,Kapchorwa,229,UG,Uganda,206,district,1.33502050,34.39763560
+5351,Kapelebyong,229,UG,Uganda,236,district,2.19597360,33.37213830
+5355,Karenga,229,UG,Uganda,335,district,3.58770480,33.55711290
+5349,Kasanda,229,UG,Uganda,126,district,0.52794910,31.64774850
 440,Kasese,229,UG,Uganda,406,district,0.06462850,30.06652360
 420,Katakwi,229,UG,Uganda,207,district,1.97310300,34.06414190
 368,Kayunga,229,UG,Uganda,112,district,0.98601820,32.85357550
+5360,Kazo,229,UG,Uganda,433,district,-0.05131600,30.75170880
 436,Kibaale,229,UG,Uganda,407,district,0.90668020,31.07937050
 347,Kiboga,229,UG,Uganda,103,district,0.96575900,31.71954590
 338,Kibuku,229,UG,Uganda,227,district,1.04528740,33.79925360
+5359,Kikuube,229,UG,Uganda,432,district,1.31021900,30.32356340
 355,Kiruhura,229,UG,Uganda,419,district,-0.19279980,30.80394740
 346,Kiryandongo,229,UG,Uganda,421,district,2.01799070,32.08374450
 409,Kisoro,229,UG,Uganda,408,district,-1.22094300,29.64991620
+5361,Kitagwenda,229,UG,Uganda,434,district,0.01432970,30.18058940
 348,Kitgum,229,UG,Uganda,305,district,3.33968290,33.16888830
 345,Koboko,229,UG,Uganda,319,district,3.52370580,31.03351000
 401,Kole,229,UG,Uganda,325,district,2.37010970,32.76330360
 443,Kotido,229,UG,Uganda,306,district,3.04156790,33.88577470
 425,Kumi,229,UG,Uganda,208,district,1.48769990,33.93039910
+5353,Kwania,229,UG,Uganda,333,district,1.90119710,32.41264920
 369,Kween,229,UG,Uganda,228,district,1.44387900,34.59713200
 325,Kyankwanzi,229,UG,Uganda,123,district,1.09660370,31.71954590
 437,Kyegegwa,229,UG,Uganda,422,district,0.48181930,31.05500930
@@ -4462,6 +4478,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 433,Luwero,229,UG,Uganda,104,district,0.82711180,32.62774550
 417,Lwengo,229,UG,Uganda,124,district,-0.41652880,31.39989950
 376,Lyantonde,229,UG,Uganda,114,district,-0.22406960,31.21684660
+5356,Madi-Okollo,229,UG,Uganda,336,district,2.86773070,30.92752690
 438,Manafwa,229,UG,Uganda,223,district,0.90635990,34.28660910
 421,Maracha,229,UG,Uganda,320,district,3.28731270,30.94030230
 356,Masaka,229,UG,Uganda,105,district,-0.44636910,31.90179540
@@ -4476,6 +4493,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 327,Mpigi,229,UG,Uganda,106,district,0.22735280,32.32492360
 371,Mubende,229,UG,Uganda,107,district,0.57727580,31.53700030
 410,Mukono,229,UG,Uganda,108,district,0.28354760,32.76330360
+5354,Nabilatuk,229,UG,Uganda,334,district,2.03870330,34.17750230
 393,Nakapiripirit,229,UG,Uganda,311,district,1.96061730,34.59713200
 423,Nakaseke,229,UG,Uganda,116,district,1.22308480,32.08374450
 406,Nakasongola,229,UG,Uganda,109,district,1.34897210,32.44672380
@@ -4489,6 +4507,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 422,Ntoroko,229,UG,Uganda,424,district,1.07881780,30.38966510
 404,Ntungamo,229,UG,Uganda,411,district,-0.98073410,30.25127280
 378,Nwoya,229,UG,Uganda,328,district,2.56244400,31.90179540
+5357,Obongi,229,UG,Uganda,337,district,3.36393610,31.43316460
 374,Omoro,229,UG,Uganda,331,district,2.71522300,32.49200880
 390,Otuke,229,UG,Uganda,329,district,2.52140590,33.34861470
 397,Oyam,229,UG,Uganda,321,district,2.27762810,32.44672380
@@ -4500,6 +4519,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 442,Rubirizi,229,UG,Uganda,425,district,-0.26424100,30.10840330
 331,Rukiga,229,UG,Uganda,431,district,-1.13263370,30.04341200
 324,Rukungiri,229,UG,Uganda,412,district,-0.75184900,29.92779470
+5362,Rwampara,229,UG,Uganda,435,district,-0.73456010,30.32019320
 427,Sembabule,229,UG,Uganda,111,district,0.06377150,31.35416310
 333,Serere,229,UG,Uganda,232,district,1.49940330,33.54900780
 407,Sheema,229,UG,Uganda,426,district,-0.55152980,30.38966510
