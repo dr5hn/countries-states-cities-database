@@ -32,10 +32,9 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 | Countries                  | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | States                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Cities                     | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| State+Cities               | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
-| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 |
+| Country+States             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+Cities             | :white_check_mark: | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 | NA                 |
+| Country+State+Cities/World | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | NA                 | NA                 | NA                 | NA                 |
 
 ## Demo
 https://dr5hn.github.io/countries-states-cities-database/

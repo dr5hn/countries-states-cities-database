@@ -47,7 +47,6 @@ class ExportJson extends Command
             $countriesArray = array();
             $statesArray = array();
             $citiesArray = array();
-            $stateCityArray = array();
             $countryStateArray = array();
             $countryCityArray = array();
             $countryStateCityArray = array();
@@ -120,7 +119,7 @@ class ExportJson extends Command
                 $countryStateCityArray[$k]['emojiU'] = $country['emojiU'];
 
                 // BREAK:: Sneaking in between to prepare country city array
-                array_push($countryCityArray, $countryStateCityArray[$k]);
+                $countryCityArray[$k]['name'] = $country['name'];
                 $countryCityArray[$k]['cities'] = array();
 
                 // CONTINUE:: Filling up CountryStateCity Arry
@@ -158,7 +157,7 @@ class ExportJson extends Command
                             'type' => $state['type']
                         );
 
-                        array_push($stateNamesArray, $stateArr);
+                        array_push($stateNamesArray, $stateName);
 
                         // Fetching All Cities Based on Country & State
                         $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id=$stateId ORDER BY NAME";
@@ -199,58 +198,23 @@ class ExportJson extends Command
                         $stateArr['cities'] = $cityNamesArray;
                         array_push($countryStateCityArray[$k]['states'], $stateArr);
 
-                        // Completing StateCity Array
-                        $stateCityArray[$i]['id'] = $stateId;
-                        $stateCityArray[$i]['name'] = $stateName;
-                        $stateCityArray[$i]['state_code'] = $state['iso2'];
-                        $stateCityArray[$i]['latitude'] = $state['latitude'];
-                        $stateCityArray[$i]['longitude'] = $state['longitude'];
-                        $stateCityArray[$i]['country_id'] = $countryId;
-                        $stateCityArray[$i]['cities'] = $cityNamesArray;
-
                         $i++;
                     }
                 }
 
                 // Completing Country States Array
                 $countryStateArray[$k]['name'] = $country['name'];
-                $countryStateArray[$k]['iso3'] = $country['iso3'];
-                $countryStateArray[$k]['iso2'] = $country['iso2'];
-                $countryStateArray[$k]['numeric_code'] = $country['numeric_code'];
-                $countryStateArray[$k]['phonecode'] = $country['phonecode'];
-                $countryStateArray[$k]['capital'] = $country['capital'];
-                $countryStateArray[$k]['currency'] = $country['currency'];
-                $countryStateArray[$k]['currency_name'] = $country['currency_name'];
-                $countryStateArray[$k]['currency_symbol'] = $country['currency_symbol'];
-                $countryStateArray[$k]['tld'] = $country['tld'];
-                $countryStateArray[$k]['native'] = $country['native'];
-                $countryStateArray[$k]['region'] = $country['region'];
-                $countryStateArray[$k]['region_id'] = (int)$country['region_id'];
-                $countryStateArray[$k]['subregion'] = $country['subregion'];
-                $countryStateArray[$k]['subregion_id'] = (int)$country['subregion_id'];
-                $countryStateArray[$k]['nationality'] = $country['nationality'];
-                $countryStateArray[$k]['timezones'] = $country['timezones'];
-                $countryStateArray[$k]['translations'] = $country['translations'];
-                $countryStateArray[$k]['latitude'] = $country['latitude'];
-                $countryStateArray[$k]['longitude'] = $country['longitude'];
-                $countryStateArray[$k]['emoji'] = $country['emoji'];
-                $countryStateArray[$k]['emojiU'] = $country['emojiU'];
                 $countryStateArray[$k]['states'] = $stateNamesArray;
 
                 // Fetching All Cities Based on Country
-                $sql = "SELECT id, name, latitude, longitude FROM cities WHERE country_id=$countryId ORDER BY NAME";
+                $sql = "SELECT name FROM cities WHERE country_id=$countryId ORDER BY NAME";
                 $citiesResult = $db->query($sql);
 
                 $citiesNamesArray = array();
                 if ($citiesResult->num_rows > 0) {
                     while ($city = $citiesResult->fetch_assoc()) {
                         // For State City Array
-                        array_push($citiesNamesArray, array(
-                            'id' => (int)$city['id'],
-                            'name' => $city['name'],
-                            'latitude' => $city['latitude'],
-                            'longitude' => $city['longitude']
-                        ));
+                        array_push($citiesNamesArray, $city['name']);
                     }
                 }
 
@@ -305,7 +269,6 @@ class ExportJson extends Command
                 '/json/states.json' => $statesArray,
                 '/json/cities.json' => $citiesArray,
                 '/json/countries+states.json' => $countryStateArray,
-                '/json/states+cities.json' => $stateCityArray,
                 '/json/countries+cities.json' => $countryCityArray,
                 '/json/countries+states+cities.json' => $countryStateCityArray
             ];
