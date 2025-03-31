@@ -5049,7 +5049,7 @@ INSERT INTO public.states VALUES (5275, 'George Hill', 8, 'AI', '03', NULL, 'dis
 INSERT INTO public.states VALUES (5276, 'Island Harbour', 8, 'AI', '04', NULL, 'district', 2, NULL, 18.25521250, -63.01405900, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q6083167');
 INSERT INTO public.states VALUES (5277, 'North Hill', 8, 'AI', '05', NULL, 'district', 2, NULL, 18.20508630, -63.08584570, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q7055619');
 INSERT INTO public.states VALUES (5278, 'North Side', 8, 'AI', '06', NULL, 'district', 2, NULL, 18.23005440, -63.05188900, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q7056734');
-INSERT INTO public.states VALUES (5279, 'Sandy Ground', 8, 'AI', '07', NULL, 'district', 2, NULL, 18.20185510, -63.09734710, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, '-63.0973471');
+INSERT INTO public.states VALUES (5279, 'Sandy Ground', 8, 'AI', '07', NULL, 'district', 2, NULL, 18.20185510, -63.09734710, '2024-10-09 20:02:24', '2025-03-29 20:16:09', 1, 'Q2989314');
 INSERT INTO public.states VALUES (5280, 'Sandy Hill', 8, 'AI', '08', NULL, 'district', 2, NULL, 18.21892100, -63.01299160, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q7417283');
 INSERT INTO public.states VALUES (5281, 'South Hill', 8, 'AI', '09', NULL, 'district', 2, NULL, 18.18924750, -63.09763670, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q7567466');
 INSERT INTO public.states VALUES (5282, 'Stoney Ground', 8, 'AI', '10', NULL, 'district', 2, NULL, 18.21791010, -63.04969860, '2024-10-09 20:02:24', '2025-03-22 18:59:30', 1, 'Q7619412');
@@ -5143,13 +5143,87 @@ INSERT INTO public.states VALUES (5370, 'Leeward Islands', 77, 'PF', '02', '02',
 INSERT INTO public.states VALUES (5371, 'Marquesas Islands', 77, 'PF', '03', '03', 'division', NULL, NULL, -9.17852990, -140.97670260, '2025-03-28 16:00:57', '2025-03-28 16:00:57', 1, 'Q172697');
 INSERT INTO public.states VALUES (5372, 'Tuamotu-Gambier', 77, 'PF', '04', '04', 'division', NULL, NULL, -18.32071570, -152.44871660, '2025-03-28 16:00:57', '2025-03-28 16:00:57', 1, 'Q3773321');
 INSERT INTO public.states VALUES (5373, 'Windward Islands', 77, 'PF', '05', '05', 'division', NULL, NULL, -17.42539670, -150.67802270, '2025-03-28 16:00:57', '2025-03-28 16:00:57', 1, 'Q140298');
+INSERT INTO public.states VALUES (5374, 'Western', 5, 'AS', '01', '01', 'district', NULL, NULL, -14.33307510, -170.94315020, '2025-03-28 19:32:48', '2025-03-28 19:32:48', 1, 'Q2437227');
+INSERT INTO public.states VALUES (5375, 'Eastern', 5, 'AS', '02', '02', 'district', NULL, NULL, -14.27560390, -170.80855920, '2025-03-28 19:32:48', '2025-03-28 19:32:48', 1, 'Q2625563');
+INSERT INTO public.states VALUES (5376, 'Manuʻa', 5, 'AS', '03', '03', 'district', NULL, NULL, -14.21126410, -169.71118920, '2025-03-28 19:32:48', '2025-03-28 19:32:48', 1, 'Q1247537');
+INSERT INTO public.states VALUES (5377, 'Swains', 5, 'AS', '04', '04', 'atoll', NULL, NULL, -11.05658780, -171.08829090, '2025-03-28 19:32:48', '2025-03-28 19:32:48', 1, 'Q1128488');
+INSERT INTO public.states VALUES (5378, 'Rose', 5, 'AS', '05', '05', 'atoll', NULL, NULL, -14.54491610, -168.17632920, '2025-03-28 19:32:48', '2025-03-28 19:32:48', 1, 'Q1636779');
+INSERT INTO public.states VALUES (5379, 'Avannaata', 86, 'GL', '01', 'AV', 'municipality', NULL, NULL, 74.10267430, -78.98755600, '2025-03-28 20:49:32', '2025-03-28 20:49:32', 1, 'Q44593409');
+INSERT INTO public.states VALUES (5380, 'Kujalleq', 86, 'GL', '02', 'KU', 'municipality', NULL, NULL, 61.16666930, -50.50997880, '2025-03-28 20:49:32', '2025-03-28 20:49:32', 1, 'Q478813');
+INSERT INTO public.states VALUES (5381, 'Qeqertalik', 86, 'GL', '03', 'QT', 'municipality', NULL, NULL, 68.82495530, -54.76224720, '2025-03-28 20:49:32', '2025-03-28 20:53:54', 1, 'Q44593337');
+INSERT INTO public.states VALUES (5382, 'Qeqqata', 86, 'GL', '04', 'QE', 'municipality', NULL, NULL, 66.08057190, -54.26546390, '2025-03-28 20:49:32', '2025-03-28 20:49:32', 1, 'Q476233');
+INSERT INTO public.states VALUES (5383, 'Sermersooq', 86, 'GL', '05', 'SM', 'municipality', NULL, NULL, 65.08230580, -57.28311950, '2025-03-28 20:49:32', '2025-03-28 20:49:32', 1, 'Q695387');
+INSERT INTO public.states VALUES (5384, 'Basse-Terre', 88, 'GP', '01', '01', 'district', NULL, NULL, 16.10110190, -62.00545460, '2025-03-29 11:46:54', '2025-03-29 11:46:54', 1, 'Q700586');
+INSERT INTO public.states VALUES (5385, 'Pointe-à-Pitre', 88, 'GP', '02', '02', 'district', NULL, NULL, 16.19024380, -61.62917130, '2025-03-29 11:46:54', '2025-03-29 11:46:54', 1, 'Q702083');
+INSERT INTO public.states VALUES (5386, 'Castel', 91, 'GG', '01', '01', 'parish', NULL, NULL, 49.46663810, -2.63785010, '2025-03-29 13:45:34', '2025-03-29 13:45:34', 1, 'Q2070272');
+INSERT INTO public.states VALUES (5387, 'Forest', 91, 'GG', '02', '02', 'parish', NULL, NULL, 49.42677930, -2.61700450, '2025-03-29 13:45:34', '2025-03-29 13:45:34', 1, 'Q2324169');
+INSERT INTO public.states VALUES (5388, 'St Andrew', 91, 'GG', '03', '03', 'parish', NULL, NULL, 49.45058530, -2.60204130, '2025-03-29 13:45:34', '2025-03-29 13:45:34', 1, 'Q2391916');
+INSERT INTO public.states VALUES (5389, 'Alderney', 91, 'GG', '04', '04', 'parish', NULL, NULL, 49.71637100, -2.24033700, '2025-03-29 13:45:34', '2025-03-29 13:45:34', 1, 'Q24695673');
+INSERT INTO public.states VALUES (5390, 'St Martin', 91, 'GG', '05', '05', 'parish', NULL, NULL, 49.43376590, -2.59799650, '2025-03-29 13:45:34', '2025-03-29 13:45:34', 1, 'Q595669');
+INSERT INTO public.states VALUES (5391, 'St Peter Port', 91, 'GG', '06', '06', 'parish', NULL, NULL, 49.45922770, -2.58609300, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q174262');
+INSERT INTO public.states VALUES (5392, 'Sark', 91, 'GG', '07', '07', 'parish', NULL, NULL, 49.42542520, -2.40995270, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q3405693');
+INSERT INTO public.states VALUES (5393, 'St Pierre du Bois', 91, 'GG', '08', '08', 'parish', NULL, NULL, 49.44119220, -2.68438550, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q2164378');
+INSERT INTO public.states VALUES (5394, 'St Sampson', 91, 'GG', '09', '09', 'parish', NULL, NULL, 49.48442020, -2.58103190, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q24695054');
+INSERT INTO public.states VALUES (5395, 'St Saviour', 91, 'GG', '10', '10', 'parish', NULL, NULL, 49.45114440, -2.65977520, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q2106447');
+INSERT INTO public.states VALUES (5396, 'Torteval', 91, 'GG', '11', '11', 'parish', NULL, NULL, 49.42885870, -2.68990940, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q2671049');
+INSERT INTO public.states VALUES (5397, 'Vale', 91, 'GG', '12', '12', 'parish', NULL, NULL, 49.48846050, -2.58075770, '2025-03-29 13:54:33', '2025-03-29 13:54:33', 1, 'Q1809806');
+INSERT INTO public.states VALUES (5398, 'Fort-de-France', 138, 'MQ', '01', '01', 'district', NULL, NULL, 14.64349950, -61.11431890, '2025-03-29 15:39:22', '2025-03-29 15:39:22', 1, 'Q701213');
+INSERT INTO public.states VALUES (5399, 'La Trinité', 138, 'MQ', '02', '02', 'district', NULL, NULL, 14.75519490, -61.20281970, '2025-03-29 15:40:55', '2025-03-29 15:40:55', 1, 'Q701385');
+INSERT INTO public.states VALUES (5400, 'Le Marin', 138, 'MQ', '03', '03', 'district', NULL, NULL, 14.52205810, -61.12011970, '2025-03-29 15:44:02', '2025-03-29 15:44:02', 1, 'Q701446');
+INSERT INTO public.states VALUES (5401, 'Saint-Pierre', 138, 'MQ', '04', '04', 'district', NULL, NULL, 14.74505200, -61.23631840, '2025-03-29 15:44:02', '2025-03-29 15:44:02', 1, 'Q702429');
+INSERT INTO public.states VALUES (5402, 'Dzaoudzi', 141, 'YT', '01', '01', 'commune', NULL, NULL, -12.77606510, 45.25632460, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q846048');
+INSERT INTO public.states VALUES (5403, 'Pamandzi', 141, 'YT', '02', '02', 'commune', NULL, NULL, -12.80096930, 45.26361320, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q1010634');
+INSERT INTO public.states VALUES (5404, 'Mamoudzou', 141, 'YT', '03', '03', 'commune', NULL, NULL, -12.78750520, 45.15522010, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q132676');
+INSERT INTO public.states VALUES (5405, 'Dembeni', 141, 'YT', '04', '04', 'commune', NULL, NULL, -12.85300290, 45.13925120, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087041');
+INSERT INTO public.states VALUES (5406, 'Bandrélé', 141, 'YT', '05', '05', 'commune', NULL, NULL, -12.93380490, 45.14634720, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087100');
+INSERT INTO public.states VALUES (5407, 'Kani Keli', 141, 'YT', '06', '06', 'commune', NULL, NULL, -12.97464500, 45.07951430, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087092');
+INSERT INTO public.states VALUES (5408, 'Boueni', 141, 'YT', '07', '07', 'commune', NULL, NULL, -12.93035660, 45.05747370, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087082');
+INSERT INTO public.states VALUES (5409, 'Chirongui', 141, 'YT', '08', '08', 'commune', NULL, NULL, -12.91752330, 45.10196780, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087001');
+INSERT INTO public.states VALUES (5410, 'Sada', 141, 'YT', '09', '09', 'commune', NULL, NULL, -12.86424390, 45.07224040, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q1920630');
+INSERT INTO public.states VALUES (5411, 'Ouangani', 141, 'YT', '10', '10', 'commune', NULL, NULL, -12.83925080, 45.09716170, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q427213');
+INSERT INTO public.states VALUES (5412, 'Chiconi', 141, 'YT', '11', '11', 'commune', NULL, NULL, -12.83220320, 45.10251220, '2025-03-29 16:28:19', '2025-03-29 16:28:19', 1, 'Q2087010');
+INSERT INTO public.states VALUES (5413, 'Tsingoni', 141, 'YT', '12', '12', 'commune', NULL, NULL, -12.78236960, 45.09220000, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q2087020');
+INSERT INTO public.states VALUES (5414, 'M''Tsangamouji', 141, 'YT', '13', '13', 'commune', NULL, NULL, -12.75500880, 45.04327920, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q955825');
+INSERT INTO public.states VALUES (5415, 'Acoua', 141, 'YT', '14', '14', 'commune', NULL, NULL, -12.72491260, 45.02659610, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q2086991');
+INSERT INTO public.states VALUES (5416, 'Mtsamboro', 141, 'YT', '15', '15', 'commune', NULL, NULL, -12.67625800, 45.02152010, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q745108');
+INSERT INTO public.states VALUES (5417, 'Bandraboua', 141, 'YT', '16', '16', 'commune', NULL, NULL, -12.71756860, 45.08256190, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q691779');
+INSERT INTO public.states VALUES (5418, 'Koungou', 141, 'YT', '17', '17', 'commune', NULL, NULL, -12.74168230, 45.14998710, '2025-03-29 16:28:19', '2025-03-29 16:42:00', 1, 'Q770411');
+INSERT INTO public.states VALUES (5419, 'Saint Peter', 148, 'MS', '01', '01', 'parish', NULL, NULL, 16.77686580, -62.24434020, '2025-03-29 16:49:44', '2025-03-29 16:52:33', 1, 'Q3464018');
+INSERT INTO public.states VALUES (5420, 'Saint Georges', 148, 'MS', '02', '02', 'parish', NULL, NULL, 16.74847550, -62.19074720, '2025-03-29 16:49:44', '2025-03-29 16:52:33', 1, 'Q3463799');
+INSERT INTO public.states VALUES (5421, 'Saint Anthony', 148, 'MS', '03', '03', 'parish', NULL, NULL, 16.70893000, -62.23404970, '2025-03-29 16:49:44', '2025-03-29 16:52:33', 1, 'Q3463656');
+INSERT INTO public.states VALUES (5422, 'Makefu', 162, 'NU', '01', '01', 'village', NULL, NULL, -19.00326180, -169.92047320, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2354077');
+INSERT INTO public.states VALUES (5423, 'Tuapa', 162, 'NU', '02', '02', 'village', NULL, NULL, -18.99125070, -169.90920780, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2350297');
+INSERT INTO public.states VALUES (5424, 'Namukulu', 162, 'NU', '03', '03', 'village', NULL, NULL, -18.98122750, -169.90294220, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2592896');
+INSERT INTO public.states VALUES (5425, 'Hikutavake', 162, 'NU', '04', '04', 'village', NULL, NULL, -18.97755110, -169.89445360, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q1962527');
+INSERT INTO public.states VALUES (5426, 'Toi', 162, 'NU', '05', '05', 'village', NULL, NULL, -18.97376000, -169.86297740, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2619168');
+INSERT INTO public.states VALUES (5427, 'Mutalau', 162, 'NU', '06', '06', 'village', NULL, NULL, -18.96393850, -169.83278630, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2552363');
+INSERT INTO public.states VALUES (5428, 'Lakepa', 162, 'NU', '07', '07', 'village', NULL, NULL, -19.00964250, -169.81200460, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2600860');
+INSERT INTO public.states VALUES (5429, 'Liku', 162, 'NU', '08', '08', 'village', NULL, NULL, -19.05369070, -169.79425910, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2570188');
+INSERT INTO public.states VALUES (5430, 'Hakupu', 162, 'NU', '09', '09', 'village', NULL, NULL, -19.12872750, -169.84921230, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2635174');
+INSERT INTO public.states VALUES (5431, 'Vaiea', 162, 'NU', '10', '10', 'village', NULL, NULL, -19.13083580, -169.89380120, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q3045571');
+INSERT INTO public.states VALUES (5432, 'Avatele', 162, 'NU', '11', '11', 'village', NULL, NULL, -19.12373020, -169.91656780, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2552943');
+INSERT INTO public.states VALUES (5433, 'Tamakautoga', 162, 'NU', '12', '12', 'village', NULL, NULL, -19.10198510, -169.93017210, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q3045565');
+INSERT INTO public.states VALUES (5434, 'Alofi South', 162, 'NU', '13', '13', 'village', NULL, NULL, -19.07359680, -169.94804080, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2254720');
+INSERT INTO public.states VALUES (5435, 'Alofi North', 162, 'NU', '14', '14', 'village', NULL, NULL, -19.04889770, -169.91909050, '2025-03-29 17:13:28', '2025-03-29 17:13:28', 1, 'Q2931057');
+INSERT INTO public.states VALUES (5436, 'Saint-Benoît', 180, 'RE', '01', '01', 'district', NULL, NULL, -21.08100290, 55.31052890, '2025-03-29 18:52:04', '2025-03-29 18:52:04', 1, 'Q702279');
+INSERT INTO public.states VALUES (5437, 'Saint-Denis', 180, 'RE', '02', '02', 'district', NULL, NULL, -20.94334700, 55.34628380, '2025-03-29 18:55:02', '2025-03-29 18:55:02', 1, 'Q653514');
+INSERT INTO public.states VALUES (5438, 'Saint-Paul', 180, 'RE', '03', '03', 'district', NULL, NULL, -21.07249890, 55.17584580, '2025-03-29 18:55:02', '2025-03-29 18:55:02', 1, 'Q612189');
+INSERT INTO public.states VALUES (5439, 'Saint-Pierre', 180, 'RE', '04', '04', 'district', NULL, NULL, -21.23731130, 55.23495980, '2025-03-29 18:55:02', '2025-03-29 18:55:02', 1, 'Q702426');
+INSERT INTO public.states VALUES (5440, 'Alarm Forest', 184, 'SH', '01', '01', 'district', NULL, NULL, -15.94671440, -5.72447520, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q4708386');
+INSERT INTO public.states VALUES (5441, 'Blue Hill', 184, 'SH', '02', '02', 'district', NULL, NULL, -15.98354720, -5.79656520, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q19867646');
+INSERT INTO public.states VALUES (5442, 'Half Tree Hollow', 184, 'SH', '03', '03', 'district', NULL, NULL, -15.93468450, -5.73134770, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q3643946');
+INSERT INTO public.states VALUES (5443, 'Jamestown', 184, 'SH', '04', '04', 'district', NULL, NULL, -15.92883080, -5.72033380, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q30970');
+INSERT INTO public.states VALUES (5444, 'Levelwood', 184, 'SH', '05', '05', 'district', NULL, NULL, -15.97475430, -5.70960800, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q13408049');
+INSERT INTO public.states VALUES (5445, 'Longwood', 184, 'SH', '06', '06', 'district', NULL, NULL, -15.94458630, -5.69502720, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q222213');
+INSERT INTO public.states VALUES (5446, 'Sandy Bay', 184, 'SH', '07', '07', 'district', NULL, NULL, -15.99187410, -5.73991510, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q7417151');
+INSERT INTO public.states VALUES (5447, 'Saint Paul''s', 184, 'SH', '08', '08', 'district', NULL, NULL, -15.98695810, -5.78096580, '2025-03-29 19:35:49', '2025-03-29 19:35:49', 1, 'Q7402003');
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5373, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5447, true);
 
 
 --
