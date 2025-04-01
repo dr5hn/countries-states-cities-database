@@ -3628,7 +3628,7 @@ INSERT INTO public.states VALUES (3728, 'Belgrade', 196, 'RS', 'SE', '00', 'city
 INSERT INTO public.states VALUES (3729, 'Zlatibor', 196, 'RS', 'SE', '16', 'district', NULL, NULL, 43.64541700, 19.71014550, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q478278');
 INSERT INTO public.states VALUES (3731, 'Zaječar', 196, 'RS', 'SE', '15', 'district', NULL, NULL, 43.90150480, 22.27380110, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q967339');
 INSERT INTO public.states VALUES (3732, 'Braničevo', 196, 'RS', 'SE', '11', 'district', NULL, NULL, 44.69822460, 21.54467750, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q861539');
-INSERT INTO public.states VALUES (3733, 'Vojvodina', 196, 'RS', 'VO', 'VO', 'district', NULL, NULL, 45.26086510, 19.83193380, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q44749');
+INSERT INTO public.states VALUES (3733, 'Vojvodina', 196, 'RS', 'VO', 'VO', 'province', NULL, NULL, 45.26086510, 19.83193380, '2019-10-05 21:48:55', '2025-04-01 11:52:26', 1, 'Q44749');
 INSERT INTO public.states VALUES (3734, 'Šumadija', 196, 'RS', 'VO', '12', 'district', NULL, NULL, 44.20506780, 20.78565650, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q544118');
 INSERT INTO public.states VALUES (3736, 'North Banat', 196, 'RS', 'VO', '03', 'district', NULL, NULL, 45.90683900, 19.99934170, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q728041');
 INSERT INTO public.states VALUES (3737, 'Pomoravlje', 196, 'RS', 'VO', '13', 'district', NULL, NULL, 43.95913790, 21.27135300, '2019-10-05 21:48:55', '2024-12-17 20:26:46', 1, 'Q867816');
@@ -4655,7 +4655,7 @@ INSERT INTO public.states VALUES (4876, 'Gjakove', 248, 'XK', NULL, 'XDG', 'dist
 INSERT INTO public.states VALUES (4877, 'Gjilan', 248, 'XK', NULL, 'XGJ', 'district', NULL, NULL, 42.46352060, 21.46940110, '2020-08-15 20:08:25', '2024-12-18 18:08:11', 1, 'Q1048355');
 INSERT INTO public.states VALUES (4878, 'Mitrovica', 248, 'XK', NULL, 'XKM', 'district', NULL, NULL, 42.89139090, 20.86599950, '2020-08-15 20:09:53', '2024-12-18 18:08:11', 1, 'Q1046673');
 INSERT INTO public.states VALUES (4879, 'Pristina', 248, 'XK', NULL, 'XPI', 'district', NULL, NULL, 42.66291380, 21.16550280, '2020-08-15 20:33:03', '2024-12-18 18:08:11', 1, 'Q25270');
-INSERT INTO public.states VALUES (4880, 'Ciudad Autónoma de Buenos Aires', 11, 'AR', '01', 'C', 'city', NULL, NULL, -34.60368440, -58.38155910, '2020-08-15 20:49:48', '2022-03-13 14:39:22', 1, 'Q44754');
+INSERT INTO public.states VALUES (4880, 'Autonomous City of Buenos Aires', 11, 'AR', '01', 'C', 'city', NULL, NULL, -34.60368440, -58.38155910, '2020-08-15 20:49:48', '2025-03-31 14:07:11', 1, 'Q44754');
 INSERT INTO public.states VALUES (4881, 'New Providence', 17, 'BS', '23', 'NP', 'island', NULL, NULL, 40.69843480, -74.40154050, '2020-10-13 19:26:49', '2024-12-17 21:09:07', 1, 'Q858513');
 INSERT INTO public.states VALUES (4882, 'Shumen', 34, 'BG', '54', '27', 'district', NULL, NULL, 43.27123980, 26.93612860, '2020-12-05 17:23:53', '2024-12-17 21:09:07', 1, 'Q184981');
 INSERT INTO public.states VALUES (4883, 'Yuen Long', 98, 'HK', NULL, 'NYL', 'district', NULL, NULL, 22.44559000, 114.02218000, '2021-01-23 15:27:51', '2023-05-20 18:22:51', 1, 'Q871442');
