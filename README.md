@@ -77,22 +77,36 @@ This **Countries States Cities Database** is made available under the [Open Data
 
 :+1::tada: First off, thanks for your interest in contributing! :tada::+1:
 
-If you want to contribute to the database, please follow the guidelines outlined below:
+### Using Our Database Update Tool
 
-### Contributing Guidelines
+We've launched a dedicated web tool to make contributing to this database easier than ever!
 
-- Fork the repository and clone it to your local machine.
-- Make the necessary changes to the data:
-  - To fix cities records, update the `sql/world.sql` > cities Table.
-  - To fix states/provinces records, update the `sql/world.sql` > states Table.
-  - To fix countries records, update the `sql/world.sql` > countries Table.
-  - To fix regions records, update the `sql/world.sql` > regions Table.
-  - To fix subregions records, update the `sql/world.sql` > subregions Table.
-- Once you've made the changes, create a pull request with a clear description of the modifications you've made.
+**[CSC Update Tool](https://manager.countrystatecity.in/)** - Our official tool to submit database change requests
 
-Please make sure to review the guidelines before making any contributions. They will help ensure that your contributions align with the project's standards and make the process smoother for everyone involved.
+[![banner](.github/update-tool.png)](https://manager.countrystatecity.in/)
 
-You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
+The update tool allows you to:
+- Browse and search through all regions, subregions, countries, states, and cities
+- Easily identify and correct outdated or inaccurate data
+- Submit change requests through a streamlined review process
+- Track the status of your submissions
+
+### Alternative Manual Process
+
+If you prefer to contribute directly through GitHub, you can still follow these steps:
+
+1. Fork the repository and clone it to your local machine
+2. Make the necessary changes to the data:
+   - To fix cities records, update the `sql/world.sql` > cities Table
+   - To fix states/provinces records, update the `sql/world.sql` > states Table
+   - To fix countries records, update the `sql/world.sql` > countries Table
+   - To fix regions records, update the `sql/world.sql` > regions Table
+   - To fix subregions records, update the `sql/world.sql` > subregions Table
+3. Once you've made the changes, create a pull request with a clear description of the modifications you've made
+
+Please ensure your contributions align with our data standards and formatting. You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
+
+We review all submissions carefully to maintain data quality and appreciate your help in making this database more accurate and comprehensive.
 
 ## Repo Activity
 
