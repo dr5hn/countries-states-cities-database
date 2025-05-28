@@ -229,7 +229,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           commit-message: |
-            📦 Export database formats - $current_date
+            📦 Export database formats - ${{ env.current_date }}
             
             ✅ All export formats completed successfully:
             - JSON/XML/YAML/CSV: Structured data exports
@@ -237,12 +237,12 @@ jobs:
             - SQLite: Database file exports
             - SQL Server/MongoDB: Alternative format exports
             
-            📊 Total records: $country_count countries, $state_count states, $city_count cities
+            📊 Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: "🚀 Database Export - $current_date"
+          title: "🚀 Database Export - ${{ env.current_date }}"
           body: |
             ## 📦 Database Export Success
             
