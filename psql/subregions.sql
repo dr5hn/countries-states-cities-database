@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.8 (Ubuntu 16.8-1.pgdg24.04+1)
--- Dumped by pg_dump version 16.8 (Ubuntu 16.8-1.pgdg24.04+1)
+-- Dumped from database version 16.9 (Ubuntu 16.9-1.pgdg24.04+1)
+-- Dumped by pg_dump version 16.9 (Ubuntu 16.9-1.pgdg24.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;

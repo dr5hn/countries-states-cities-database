@@ -37,17 +37,31 @@ jobs:
           php-version: ${{ matrix.php-version }}
           extensions: intl #optional
           coverage: none
-          ini-values: "post_max_size=256M" #optional
+          ini-values: "post_max_size=256M, memory_limit=512M" #optional
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: nmig/package-lock.json
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: bin/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('bin/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
 
       - name: Start MySQL service
         run: |
           sudo systemctl start mysql.service
           mysql -V
+          # Wait for MySQL to be ready
+          while ! mysqladmin ping -h"127.0.0.1" --silent; do
+            echo "Waiting for MySQL..."
+            sleep 1
+          done
 
       - name: Start PostgreSQL service
         run: |
@@ -67,9 +81,8 @@ jobs:
       - name: Install MongoDB Database Tools
         run: |
           # Download MongoDB Database Tools directly
-          wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
+          wget -q https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
           sudo dpkg -i mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
-
           rm -rf mongodb-database-tools-ubuntu2204-x86_64-100.7.3.deb
 
           # Verify installation
@@ -86,8 +99,7 @@ jobs:
 
       - name: Setup MySQL DB
         run: |
-          ls -R
-          mysql -uroot -proot -e "CREATE DATABASE world;"
+          mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
           mysql -uroot -proot -e "SHOW DATABASES;"
           mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
 
@@ -98,6 +110,7 @@ jobs:
           npm install
           npm run build
           npm start
+          cd ..
 
       - name: Setup MySQLtoSQLite
         run: |
@@ -138,16 +151,18 @@ jobs:
 
       - name: Export MySQL SQL
         run: |
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
-          mysqldump -uroot -proot --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
+          mkdir -p sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
 
       - name: Export PostgreSQL SQL
         env:
           PGPASSWORD: postgres
         run: |
+          mkdir -p psql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t regions > psql/regions.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t subregions > psql/subregions.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t countries > psql/countries.sql
@@ -157,6 +172,10 @@ jobs:
 
       - name: Export SQLite
         run: |
+          # Clean up any existing SQLite files first
+          rm -rf sqlite/
+          mkdir -p sqlite
+          
           mysql2sqlite -d world -t regions --mysql-password root -u root -f sqlite/regions.sqlite3
           mysql2sqlite -d world -t subregions --mysql-password root -u root -f sqlite/subregions.sqlite3
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
@@ -207,14 +226,48 @@ jobs:
           sed -i "s/Last Updated On : .*$/Last Updated On : $current_date/" README.md
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: Add exported JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE, MONGODB & SQL Server files
+          commit-message: |
+            📦 Export database formats - ${{ env.current_date }}
+            
+            ✅ All export formats completed successfully:
+            - JSON/XML/YAML/CSV: Structured data exports
+            - MySQL/PostgreSQL: SQL dump exports  
+            - SQLite: Database file exports
+            - SQL Server/MongoDB: Alternative format exports
+            
+            📊 Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
           branch: export/Files
           delete-branch: true
-          title: "(chore): Export JSON, CSV, XML, YAML, MYSQL, PSQL, SQLITE, MONGODB & SQL Server files"
+          title: "🚀 Database Export - ${{ env.current_date }}"
+          body: |
+            ## 📦 Database Export Success
+            
+            All export formats have been successfully generated.
+            
+            ### 📊 Data Statistics
+            - **Regions**: ${{ env.region_count }}
+            - **Subregions**: ${{ env.subregion_count }}  
+            - **Countries**: ${{ env.country_count }}
+            - **States**: ${{ env.state_count }}
+            - **Cities**: ${{ env.city_count }}
+            
+            ### ✅ Generated Formats
+            - **JSON** - Structured data format
+            - **XML** - Markup language format  
+            - **YAML** - Human-readable format
+            - **CSV** - Spreadsheet format
+            - **MySQL** - Database dumps
+            - **PostgreSQL** - Database dumps  
+            - **SQLite** - Portable databases
+            - **SQL Server** - T-SQL scripts
+            - **MongoDB** - Collections + dump
+            
+            ---
+            *Generated automatically by GitHub Actions*
           labels: |
             exports
             automated
