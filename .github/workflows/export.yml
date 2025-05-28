@@ -226,7 +226,7 @@ jobs:
           sed -i "s/Last Updated On : .*$/Last Updated On : $current_date/" README.md
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           commit-message: |
             📦 Export database formats - ${{ env.current_date }}
