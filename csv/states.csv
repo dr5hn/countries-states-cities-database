@@ -198,12 +198,12 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5286,"West End",8,AI,Anguilla,,district,18.17153940,-63.17191270
 3708,Barbuda,10,AG,"Antigua and Barbuda",10,dependency,17.62662420,-61.77130280
 3703,Redonda,10,AG,"Antigua and Barbuda",11,dependency,16.93841600,-62.34551480
-3709,"Saint George",10,AG,"Antigua and Barbuda",03,parish,,
-3706,"Saint John",10,AG,"Antigua and Barbuda",04,parish,,
-3707,"Saint Mary",10,AG,"Antigua and Barbuda",05,parish,,
-3705,"Saint Paul",10,AG,"Antigua and Barbuda",06,parish,,
-3704,"Saint Peter",10,AG,"Antigua and Barbuda",07,parish,,
-3710,"Saint Philip",10,AG,"Antigua and Barbuda",08,parish,40.43682580,-80.06855320
+3709,"Saint George",10,AG,"Antigua and Barbuda",03,parish,17.12619290,-61.81921830
+3706,"Saint John",10,AG,"Antigua and Barbuda",04,parish,17.11363380,-61.92827140
+3707,"Saint Mary",10,AG,"Antigua and Barbuda",05,parish,17.05443730,-61.89690370
+3705,"Saint Paul",10,AG,"Antigua and Barbuda",06,parish,17.03193840,-61.81266040
+3704,"Saint Peter",10,AG,"Antigua and Barbuda",07,parish,17.10548380,-61.79123170
+3710,"Saint Philip",10,AG,"Antigua and Barbuda",08,parish,17.06749130,-61.74190260
 4880,"Autonomous City of Buenos Aires",11,AR,Argentina,C,city,-34.60368440,-58.38155910
 3656,"Buenos Aires",11,AR,Argentina,B,province,-37.20172850,-59.84106970
 3647,Catamarca,11,AR,Argentina,K,province,-28.47158770,-65.78772090
@@ -340,7 +340,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 581,Zangilan,16,AZ,Azerbaijan,ZAN,district,39.08568990,46.65247280
 566,Zaqatala,16,AZ,Azerbaijan,ZAQ,district,41.59068890,46.72403730
 576,Zardab,16,AZ,Azerbaijan,ZAR,district,40.21481140,47.71494400
-1992,Capital,18,BH,Bahrain,13,governorate,,
+1992,Capital,18,BH,Bahrain,13,governorate,26.19292740,50.49256700
 1996,Central,18,BH,Bahrain,16,governorate,26.14260930,50.56532940
 1995,Muharraq,18,BH,Bahrain,15,governorate,26.26856530,50.64825170
 1994,Northern,18,BH,Bahrain,17,governorate,26.15519140,50.48251730
@@ -353,16 +353,16 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 753,"Rajshahi ",19,BD,Bangladesh,E,division,24.71057760,88.94138650
 750,"Rangpur ",19,BD,Bangladesh,F,division,25.84833880,88.94138650
 765,"Sylhet ",19,BD,Bangladesh,G,division,24.70498110,91.67606910
-1228,"Christ Church",20,BB,Barbados,01,parish,36.00604070,-95.92112100
-1229,"Saint Andrew",20,BB,Barbados,02,parish,,
-1226,"Saint George",20,BB,Barbados,03,parish,37.09652780,-113.56841640
-1224,"Saint James",20,BB,Barbados,04,parish,48.52356600,-1.32378850
-1227,"Saint John",20,BB,Barbados,05,parish,45.27331530,-66.06330800
-1223,"Saint Joseph",20,BB,Barbados,06,parish,39.76745780,-94.84668100
-1221,"Saint Lucy",20,BB,Barbados,07,parish,38.76146250,-77.44914390
-1230,"Saint Michael",20,BB,Barbados,08,parish,36.03597700,-95.84905200
-1222,"Saint Peter",20,BB,Barbados,09,parish,37.08271190,-94.51712500
-1220,"Saint Philip",20,BB,Barbados,10,parish,35.23311400,-89.43640420
+1228,"Christ Church",20,BB,Barbados,01,parish,13.08528990,-59.62390140
+1229,"Saint Andrew",20,BB,Barbados,02,parish,13.24946070,-59.61269570
+1226,"Saint George",20,BB,Barbados,03,parish,13.14038630,-59.58546770
+1224,"Saint James",20,BB,Barbados,04,parish,13.18793480,-59.66224020
+1227,"Saint John",20,BB,Barbados,05,parish,13.17411180,-59.54045070
+1223,"Saint Joseph",20,BB,Barbados,06,parish,13.20219120,-59.58385770
+1221,"Saint Lucy",20,BB,Barbados,07,parish,13.30458280,-59.65366180
+1230,"Saint Michael",20,BB,Barbados,08,parish,13.11847670,-59.64349020
+1222,"Saint Peter",20,BB,Barbados,09,parish,13.26227090,-59.65113430
+1220,"Saint Philip",20,BB,Barbados,10,parish,13.13095230,-59.50714670
 1225,"Saint Thomas",20,BB,Barbados,11,parish,18.33809650,-64.89409460
 2959,Brest,21,BY,Belarus,BR,oblast,52.52966410,25.46064800
 2955,Gomel,21,BY,Belarus,HO,oblast,52.16487540,29.13332510
@@ -378,7 +378,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1374,"Flemish Brabant",22,BE,Belgium,VBR,province,50.88154340,4.56459700
 1375,Hainaut,22,BE,Belgium,WHT,province,50.52570760,4.06210170
 1384,Liège,22,BE,Belgium,WLG,province,50.63255740,5.57966620
-1372,Limburg,22,BE,Belgium,VLI,province,,
+1372,Limburg,22,BE,Belgium,VLI,province,50.99594620,4.78626450
 1379,Luxembourg,22,BE,Belgium,WLX,province,49.96500000,5.50100000
 1378,Namur,22,BE,Belgium,WNA,province,50.46738830,4.87198540
 1380,Wallonia,22,BE,Belgium,WAL,region,50.41756370,4.45100660
@@ -434,7 +434,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3375,Beni,27,BO,Bolivia,B,department,-14.37827470,-65.09577920
 3382,Chuquisaca,27,BO,Bolivia,H,department,-20.02491440,-64.14782360
 3381,Cochabamba,27,BO,Bolivia,C,department,-17.56816750,-65.47573600
-3380,"La Paz",27,BO,Bolivia,L,department,,
+3380,"La Paz",27,BO,Bolivia,L,department,-14.93157820,-70.82999670
 3376,Oruro,27,BO,Bolivia,O,department,-18.57115790,-67.76159830
 3379,Pando,27,BO,Bolivia,N,department,-10.79889010,-66.99880110
 3383,Potosí,27,BO,Bolivia,P,department,-20.62471300,-66.99880110
@@ -456,16 +456,16 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 465,Una-Sana,28,BA,"Bosnia and Herzegovina",01,canton,44.65031160,16.31716290
 469,"West Herzegovina",28,BA,"Bosnia and Herzegovina",08,canton,43.43692440,17.38488310
 468,Zenica-Doboj,28,BA,"Bosnia and Herzegovina",04,canton,44.21271090,18.16046250
-3067,Central,29,BW,Botswana,CE,district,,
+3067,Central,29,BW,Botswana,CE,district,-21.46037160,23.98865420
 3061,Ghanzi,29,BW,Botswana,GH,district,-21.86523140,21.85685860
 3066,Kgalagadi,29,BW,Botswana,KG,district,-24.75502850,21.85685860
 3062,Kgatleng,29,BW,Botswana,KL,district,-24.19704450,26.23046160
 3069,Kweneng,29,BW,Botswana,KW,district,-23.83672490,25.28375850
 3060,Ngamiland,29,BW,Botswana,NG,city,-19.19053210,23.00119890
 3068,North-East,29,BW,Botswana,NE,district,37.58844610,-94.68637820
-3065,North-West,29,BW,Botswana,NW,district,39.34463070,-76.68542830
-3064,South-East,29,BW,Botswana,SE,district,31.21637980,-82.35270440
-3063,Southern,29,BW,Botswana,SO,district,,
+3065,North-West,29,BW,Botswana,NW,district,-19.48362260,20.44725770
+3064,South-East,29,BW,Botswana,SE,district,-24.98668160,25.52908570
+3063,Southern,29,BW,Botswana,SO,district,-24.90962620,23.05419760
 2012,Acre,31,BR,Brazil,AC,state,-9.02379600,-70.81199500
 2007,Alagoas,31,BR,Brazil,AL,state,-9.57130580,-36.78195050
 1999,Amapá,31,BR,Brazil,AP,state,0.90199250,-52.00295650
@@ -534,7 +534,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3131,Boulgou,35,BF,"Burkina Faso",BLG,province,11.43367660,-0.37483540
 5343,Boulkiemde,35,BF,"Burkina Faso",BLK,province,12.32244190,-2.47380520
 3153,Cascades,35,BF,"Burkina Faso",02,region,10.40729920,-4.56244260
-3136,Centre,35,BF,"Burkina Faso",03,region,,
+3136,Centre,35,BF,"Burkina Faso",03,region,12.33937200,-1.77969740
 3162,Centre-Est,35,BF,"Burkina Faso",04,region,11.52476740,-0.14949880
 3127,Centre-Nord,35,BF,"Burkina Faso",05,region,13.17244640,-0.90566230
 3115,Centre-Ouest,35,BF,"Burkina Faso",06,region,11.87984660,-2.30244600
@@ -626,15 +626,15 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3972,"Svay Rieng",37,KH,Cambodia,20,province,11.14272200,105.82902980
 3975,Takeo,37,KH,Cambodia,21,province,10.93215190,104.79877100
 2663,Adamawa,38,CM,Cameroon,AD,region,9.32647510,12.39838530
-2660,Centre,38,CM,Cameroon,CE,region,,
-2661,East,38,CM,Cameroon,ES,region,39.01853360,-94.27924110
-2656,"Far North",38,CM,Cameroon,EN,region,66.76134510,124.12375300
-2662,Littoral,38,CM,Cameroon,LT,region,48.46227570,-68.51780710
-2665,North,38,CM,Cameroon,NO,region,37.09024000,-95.71289100
-2657,Northwest,38,CM,Cameroon,NW,region,36.37118570,-94.19346060
-2659,South,38,CM,Cameroon,SU,region,37.63159500,-97.34584090
-2658,Southwest,38,CM,Cameroon,SW,region,36.19088130,-95.88974480
-2664,West,38,CM,Cameroon,OU,region,37.03649890,-95.67059870
+2660,Centre,38,CM,Cameroon,CE,region,4.68268980,10.41861010
+2661,East,38,CM,Cameroon,ES,region,3.88837370,11.70249640
+2656,"Far North",38,CM,Cameroon,EN,region,11.50735430,13.23069190
+2662,Littoral,38,CM,Cameroon,LT,region,4.29449680,8.88736580
+2665,North,38,CM,Cameroon,NO,region,8.62805630,11.27232390
+2657,Northwest,38,CM,Cameroon,NW,region,6.43305980,9.74099250
+2659,South,38,CM,Cameroon,SU,region,2.92314930,9.10689990
+2658,Southwest,38,CM,Cameroon,SW,region,5.21789660,7.98072470
+2664,West,38,CM,Cameroon,OU,region,5.53533000,9.91400120
 872,Alberta,39,CA,Canada,AB,province,53.93327060,-116.57650350
 875,"British Columbia",39,CA,Canada,BC,province,53.72666830,-127.64762050
 867,Manitoba,39,CA,Canada,MB,province,53.76086080,-98.81387620
@@ -841,7 +841,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2630,Moyen-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",05,region,6.65149170,-3.50034540
 2655,N'zi-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",11,region,7.24567490,-4.23333550
 2648,Sassandra-Marahoué,54,CI,"Cote D'Ivoire (Ivory Coast)",SM,district,6.88033480,-6.23759470
-2625,Savanes,54,CI,"Cote D'Ivoire (Ivory Coast)",03,region,,
+2625,Savanes,54,CI,"Cote D'Ivoire (Ivory Coast)",03,region,9.63735270,-6.70071860
 2628,Sud-Bandama,54,CI,"Cote D'Ivoire (Ivory Coast)",15,region,5.53570830,-5.56172790
 2652,Sud-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",13,region,5.55279300,-3.25836260
 2647,"Vallée du Bandama",54,CI,"Cote D'Ivoire (Ivory Coast)",04,region,8.27897800,-4.89356270
@@ -1020,16 +1020,16 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2929,Djibouti,60,DJ,Djibouti,DJ,city,11.82513800,42.59027500
 2928,Obock,60,DJ,Djibouti,OB,region,12.38956910,43.01948970
 2931,Tadjourah,60,DJ,Djibouti,TA,region,11.93388850,42.39383750
-4082,"Saint Andrew",61,DM,Dominica,02,parish,,
-4078,"Saint David",61,DM,Dominica,03,parish,,
-4079,"Saint George",61,DM,Dominica,04,parish,,
-4076,"Saint John",61,DM,Dominica,05,parish,,
-4085,"Saint Joseph",61,DM,Dominica,06,parish,39.02227120,-94.71765040
-4083,"Saint Luke",61,DM,Dominica,07,parish,42.10513630,-80.05707220
-4077,"Saint Mark",61,DM,Dominica,08,parish,,
-4080,"Saint Patrick",61,DM,Dominica,09,parish,,
-4084,"Saint Paul",61,DM,Dominica,10,parish,38.86146000,-90.74356190
-4081,"Saint Peter",61,DM,Dominica,11,parish,40.45241940,-80.00850560
+4082,"Saint Andrew",61,DM,Dominica,02,parish,15.54681520,-61.43994240
+4078,"Saint David",61,DM,Dominica,03,parish,15.42418230,-61.36762040
+4079,"Saint George",61,DM,Dominica,04,parish,15.30925320,-61.38706140
+4076,"Saint John",61,DM,Dominica,05,parish,15.57574670,-61.48178530
+4085,"Saint Joseph",61,DM,Dominica,06,parish,15.44758940,-61.46733630
+4083,"Saint Luke",61,DM,Dominica,07,parish,15.25502710,-61.38176360
+4077,"Saint Mark",61,DM,Dominica,08,parish,15.23086360,-61.37248360
+4080,"Saint Patrick",61,DM,Dominica,09,parish,15.28147970,-61.33486030
+4084,"Saint Paul",61,DM,Dominica,10,parish,15.36719130,-61.41210820
+4081,"Saint Peter",61,DM,Dominica,11,parish,15.50215020,-61.48021570
 4114,Azua,62,DO,"Dominican Republic",02,province,18.45527090,-70.73809280
 4105,Baoruco,62,DO,"Dominican Republic",03,province,18.48798980,-71.41822490
 4090,Barahona,62,DO,"Dominican Republic",04,province,18.21390660,-71.10437590
@@ -1117,7 +1117,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4131,Chalatenango,66,SV,"El Salvador",CH,department,14.19166480,-89.17059980
 4137,Cuscatlán,66,SV,"El Salvador",CU,department,13.86619570,-89.05615320
 4134,"La Libertad",66,SV,"El Salvador",LI,department,13.68176610,-89.36062980
-4136,"La Paz",66,SV,"El Salvador",PA,department,,
+4136,"La Paz",66,SV,"El Salvador",PA,department,13.46621480,-89.13699720
 4138,"La Unión ",66,SV,"El Salvador",UN,department,13.48864430,-87.89424510
 4130,Morazán,66,SV,"El Salvador",MO,department,13.76820000,-88.12913870
 4135,"San Miguel",66,SV,"El Salvador",SM,department,13.44510410,-88.24611830
@@ -1295,7 +1295,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4827,Martinique,75,FR,France,972,"overseas region",14.64152800,-61.02417400
 5021,Mayenne,75,FR,France,53,"metropolitan department",48.30668420,-0.64901820
 4797,Mayotte,75,FR,France,976,"overseas region",-12.82750000,45.16624400
-5038,"Métropole de Lyon",75,FR,France,69M,"metropolitan department",45.74826290,4.59584040
+5038,"Métropole de Lyon",75,FR,France,69M,"metropolitan collectivity with special status",45.74826290,4.59584040
 5022,Meurthe-et-Moselle,75,FR,France,54,"metropolitan department",48.95566150,5.71423500
 5023,Meuse,75,FR,France,55,"metropolitan department",49.01246200,4.81087340
 5024,Morbihan,75,FR,France,56,"metropolitan department",47.74395180,-3.44555240
@@ -1399,14 +1399,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2116,Achaea,85,GR,Greece,13,"regional unit",38.11587290,21.95224910
 2123,Aetolia-Acarnania,85,GR,Greece,01,"regional unit",38.70843860,21.37989280
 2098,Arcadia,85,GR,Greece,12,prefecture,37.55578250,22.33377690
-2105,Argolis,85,GR,Greece,11,"regional unit",,
+2105,Argolis,85,GR,Greece,11,"regional unit",37.57109700,22.26347370
 2122,Attica,85,GR,Greece,I,"administrative region",38.04575680,23.85847370
 2126,Boeotia,85,GR,Greece,03,"regional unit",38.36636640,23.09650640
 2128,"Central Greece",85,GR,Greece,H,"administrative region",38.60439840,22.71521310
 2125,"Central Macedonia",85,GR,Greece,B,"administrative region",40.62117300,23.19180210
 2115,Chania,85,GR,Greece,94,"regional unit",35.51382980,24.01803670
 2124,Corfu,85,GR,Greece,22,prefecture,39.62498380,19.92234610
-2129,Corinthia,85,GR,Greece,15,"regional unit",,
+2129,Corinthia,85,GR,Greece,15,"regional unit",37.92064310,22.03965530
 2109,Crete,85,GR,Greece,M,"administrative region",35.24011700,24.80926910
 2130,Drama,85,GR,Greece,52,"regional unit",41.23400230,24.23904980
 2120,"East Attica",85,GR,Greece,A2,"administrative region",38.20540930,23.85847370
@@ -1439,13 +1439,13 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5381,Qeqertalik,86,GL,Greenland,QT,municipality,68.82495530,-54.76224720
 5382,Qeqqata,86,GL,Greenland,QE,municipality,66.08057190,-54.26546390
 5383,Sermersooq,86,GL,Greenland,SM,municipality,65.08230580,-57.28311950
-3867,Carriacou,87,GD,Grenada,10,dependency,12.47858880,-61.44938420
-3865,"Saint Andrew",87,GD,Grenada,01,parish,,
-3869,"Saint David",87,GD,Grenada,02,parish,,
-3864,"Saint George",87,GD,Grenada,03,parish,,
-3868,"Saint John",87,GD,Grenada,04,parish,30.11183310,-90.48799160
-3866,"Saint Mark",87,GD,Grenada,05,parish,40.58818630,-73.94957010
-3863,"Saint Patrick",87,GD,Grenada,06,parish,,
+3867,Carriacou,87,GD,Grenada,10,dependency,12.48289710,-61.50102610
+3865,"Saint Andrew",87,GD,Grenada,01,parish,12.11093730,-61.72935040
+3869,"Saint David",87,GD,Grenada,02,parish,12.04121250,-61.71730420
+3864,"Saint George",87,GD,Grenada,03,parish,12.04788240,-61.83131890
+3868,"Saint John",87,GD,Grenada,04,parish,12.14319830,-61.75857370
+3866,"Saint Mark",87,GD,Grenada,05,parish,12.18577640,-61.73841480
+3863,"Saint Patrick",87,GD,Grenada,06,parish,12.24896480,-61.69578480
 5384,Basse-Terre,88,GP,Guadeloupe,01,district,16.10110190,-62.00545460
 5385,Pointe-à-Pitre,88,GP,Guadeloupe,02,district,16.19024380,-61.62917130
 5254,"Agana Heights",89,GU,Guam,,village,13.46575920,144.73195330
@@ -1652,14 +1652,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1054,"Veszprém County",99,HU,Hungary,VE,county,47.09309740,17.91007630
 1046,"Zala County",99,HU,Hungary,ZA,county,46.73844040,16.91522520
 1050,Zalaegerszeg,99,HU,Hungary,ZE,county,46.84169360,16.84163220
-3431,Capital,100,IS,Iceland,1,region,38.56569570,-92.18169490
-3433,Eastern,100,IS,Iceland,7,region,,
-3437,Northeastern,100,IS,Iceland,6,region,43.29942850,-74.21793260
-3435,Northwestern,100,IS,Iceland,5,region,41.91339320,-73.04716880
-3434,Southern,100,IS,Iceland,8,region,,
+3431,Capital,100,IS,Iceland,1,region,64.10638390,-22.29105810
+3433,Eastern,100,IS,Iceland,7,region,64.95976540,-18.06910380
+3437,Northeastern,100,IS,Iceland,6,region,65.46399840,-19.43273710
+3435,Northwestern,100,IS,Iceland,5,region,65.46218120,-21.02708000
+3434,Southern,100,IS,Iceland,8,region,64.05815480,-22.23117400
 3430,"Southern Peninsula",100,IS,Iceland,2,region,63.91548030,-22.36496670
-3436,Western,100,IS,Iceland,3,region,,
-3432,Westfjords,100,IS,Iceland,4,region,65.91961500,-21.88117640
+3436,Western,100,IS,Iceland,3,region,64.88654670,-24.55592960
+3432,Westfjords,100,IS,Iceland,4,region,65.69368200,-25.39762350
 4023,"Andaman and Nicobar Islands",101,IN,India,AN,"union territory",11.74008670,92.65864010
 4017,"Andhra Pradesh",101,IN,India,AP,state,15.91289980,79.73998750
 4024,"Arunachal Pradesh",101,IN,India,AR,state,28.21799940,94.72775280
@@ -2320,7 +2320,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2949,Toliara,130,MG,Madagascar,U,province,-23.35161910,43.68549360
 3096,Balaka,131,MW,Malawi,BA,district,-15.05065950,35.08285880
 3102,Blantyre,131,MW,Malawi,BL,district,-15.67785410,34.95066250
-3092,Central,131,MW,Malawi,C,region,,
+3092,Central,131,MW,Malawi,C,region,-13.74023640,32.50396190
 3107,Chikwawa,131,MW,Malawi,CK,district,-16.19584460,34.77407930
 3109,Chiradzulu,131,MW,Malawi,CR,district,-15.74231510,35.25879640
 3087,Chitipa,131,MW,Malawi,CT,district,-9.70376550,33.27002530
@@ -2339,14 +2339,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 5347,Neno,131,MW,Malawi,NE,district,-15.69042540,34.22913860
 3095,"Nkhata Bay",131,MW,Malawi,NB,district,-11.71850420,34.33103640
 3100,Nkhotakota,131,MW,Malawi,NK,district,-12.75419610,34.24215970
-3105,Northern,131,MW,Malawi,N,region,,
+3105,Northern,131,MW,Malawi,N,region,-11.04950910,32.63414610
 3085,Nsanje,131,MW,Malawi,NS,district,-16.72882020,35.17087410
 3088,Ntcheu,131,MW,Malawi,NU,district,-14.90375380,34.77407930
 3111,Ntchisi,131,MW,Malawi,NI,district,-13.28419920,33.88577470
 3108,Phalombe,131,MW,Malawi,PH,district,-15.70920380,35.65328480
 3089,Rumphi,131,MW,Malawi,RU,district,-10.78515370,34.33103640
 3086,Salima,131,MW,Malawi,SA,district,-13.68095860,34.41982430
-3106,Southern,131,MW,Malawi,S,region,32.75049570,-97.33154760
+3106,Southern,131,MW,Malawi,S,region,-15.30244780,33.76440830
 3098,Thyolo,131,MW,Malawi,TH,district,-16.12991770,35.12687810
 3083,Zomba,131,MW,Malawi,ZO,district,-15.37658570,35.33565180
 1950,Johor,132,MY,Malaysia,01,state,1.48536820,103.76181540
@@ -2368,7 +2368,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2594,Addu,133,MV,Maldives,01,city,-0.63009950,73.15856260
 2587,"Alif Alif",133,MV,Maldives,02,"administrative atoll",4.08500000,72.85154790
 2600,"Alif Dhaal",133,MV,Maldives,00,"administrative atoll",3.65433020,72.80427970
-2604,Central,133,MV,Maldives,CE,province,,
+2604,Central,133,MV,Maldives,CE,province,2.96933090,72.90826190
 2590,Dhaalu,133,MV,Maldives,17,"administrative atoll",2.84685020,72.94605660
 2599,Faafu,133,MV,Maldives,14,"administrative atoll",3.23094090,72.94605660
 2598,"Gaafu Alif",133,MV,Maldives,27,"administrative atoll",0.61248130,73.32370800
@@ -2379,13 +2379,13 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2596,Kaafu,133,MV,Maldives,26,"administrative atoll",4.45589790,73.55941280
 2601,Laamu,133,MV,Maldives,05,"administrative atoll",1.94307370,73.41802110
 2607,Lhaviyani,133,MV,Maldives,03,"administrative atoll",5.37470210,73.51229280
-2609,Malé,133,MV,Maldives,MLE,"administrative atoll",46.34888670,10.90724890
+2609,Malé,133,MV,Maldives,MLE,"administrative atoll",4.41666300,73.42617980
 2608,Meemu,133,MV,Maldives,12,"administrative atoll",3.00903450,73.51229280
 2592,Noonu,133,MV,Maldives,25,"administrative atoll",5.85512760,73.32370800
-2589,"North Central",133,MV,Maldives,NC,province,,
+2589,"North Central",133,MV,Maldives,NC,province,4.13897880,72.57340290
 2602,Raa,133,MV,Maldives,13,"administrative atoll",5.60064570,72.94605660
 2585,Shaviyani,133,MV,Maldives,24,"administrative atoll",6.17511000,73.13496050
-2605,South,133,MV,Maldives,SU,province,-21.74820060,166.17837390
+2605,South,133,MV,Maldives,SU,province,-0.47831260,73.07683270
 2606,"South Central",133,MV,Maldives,SC,province,7.25649960,80.72144170
 2591,Thaa,133,MV,Maldives,08,"administrative atoll",2.43111610,73.18216230
 2593,"Upper South",133,MV,Maldives,US,province,0.23070000,73.27948460
@@ -2793,7 +2793,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2067,Lumbini,154,NP,Nepal,P5,province,28.02240600,77.78646280
 5240,Madhesh,154,NP,Nepal,P2,province,26.93918730,84.42934670
 5241,Sudurpashchim,154,NP,Nepal,P7,province,29.30623710,79.61354510
-2624,Bonaire,156,NL,Netherlands,BQ1,"special municipality",12.20189020,-68.26238220
 2613,Drenthe,156,NL,Netherlands,DR,province,52.94760120,6.62305860
 2619,Flevoland,156,NL,Netherlands,FL,province,52.52797810,5.59535080
 2622,Friesland,156,NL,Netherlands,FR,province,53.16416420,5.78175420
@@ -2803,8 +2802,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2623,"North Brabant",156,NL,Netherlands,NB,province,51.48265370,5.23216870
 2612,"North Holland",156,NL,Netherlands,NH,province,52.52058690,4.78847400
 2618,Overijssel,156,NL,Netherlands,OV,province,52.43878140,6.50164110
-2621,Saba,156,NL,Netherlands,BQ2,"special municipality",17.63546420,-63.23267630
-2616,"Sint Eustatius",156,NL,Netherlands,BQ3,"special municipality",17.48903060,-62.97355500
 2614,"South Holland",156,NL,Netherlands,ZH,province,51.99667920,4.55973970
 2610,Utrecht,156,NL,Netherlands,UT,province,52.09073740,5.12142010
 2620,Zeeland,156,NL,Netherlands,ZE,province,51.49403090,3.84968150
@@ -3078,14 +3075,14 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1394,"Panamá Oeste",170,PA,Panama,10,province,9.11967510,-79.29021330
 1392,Veraguas,170,PA,Panama,9,province,8.12310330,-81.07546570
 4831,Bougainville,171,PG,"Papua New Guinea",NSB,"autonomous region",-6.37539190,155.38071010
-4847,Central,171,PG,"Papua New Guinea",CPM,province,,
+4847,Central,171,PG,"Papua New Guinea",CPM,province,-9.08496860,146.70727330
 4846,Chimbu,171,PG,"Papua New Guinea",CPK,province,-6.30876820,144.87312190
 4834,"East New Britain",171,PG,"Papua New Guinea",EBR,province,-4.61289430,151.88773210
 5228,"East Sepik",171,PG,"Papua New Guinea",ESW,province,-4.00000000,143.75000000
 4845,"Eastern Highlands",171,PG,"Papua New Guinea",EHG,province,-6.58616740,145.66896360
 4848,Enga,171,PG,"Papua New Guinea",EPW,province,-5.30058490,143.56356370
-4839,Gulf,171,PG,"Papua New Guinea",GPK,province,37.05483150,-94.43704190
-4833,Hela,171,PG,"Papua New Guinea",HLA,province,42.33295160,-83.04826180
+4839,Gulf,171,PG,"Papua New Guinea",GPK,province,-7.64003290,142.18326770
+4833,Hela,171,PG,"Papua New Guinea",HLA,province,-5.66131080,142.08998570
 4832,Jiwaka,171,PG,"Papua New Guinea",JWK,province,-5.86911540,144.69727740
 4843,Madang,171,PG,"Papua New Guinea",MPM,province,-4.98497330,145.13758340
 4842,Manus,171,PG,"Papua New Guinea",MRL,province,-2.09411690,146.87609510
@@ -3097,7 +3094,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4836,Sandaun,171,PG,"Papua New Guinea",SAN,province,-3.71261790,141.68342750
 4844,"Southern Highlands",171,PG,"Papua New Guinea",SHM,province,-6.41790830,143.56356370
 4830,"West New Britain",171,PG,"Papua New Guinea",WBK,province,-5.70474320,150.02594660
-4850,Western,171,PG,"Papua New Guinea",WPD,province,,
+4850,Western,171,PG,"Papua New Guinea",WPD,province,-7.16375370,141.06357050
 4840,"Western Highlands",171,PG,"Papua New Guinea",WHM,province,-5.62681280,144.25931180
 2785,"Alto Paraguay",172,PY,Paraguay,16,department,-20.08525080,-59.47209040
 2784,"Alto Paraná",172,PY,Paraguay,10,department,-25.60755460,-54.96118360
@@ -3117,7 +3114,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2774,Paraguarí,172,PY,Paraguay,9,department,-25.62621740,-57.15206420
 2770,"Presidente Hayes",172,PY,Paraguay,15,department,-23.35126050,-58.73736340
 2776,"San Pedro",172,PY,Paraguay,2,department,-24.19486680,-56.56164700
-3685,Amazonas,173,PE,Peru,AMA,region,,
+3685,Amazonas,173,PE,Peru,AMA,region,-4.98563270,-79.24174360
 3680,Áncash,173,PE,Peru,ANC,region,-9.32504970,-77.56194190
 3699,Apurímac,173,PE,Peru,APU,region,-14.05045330,-73.08774900
 3681,Arequipa,173,PE,Peru,ARE,region,-16.40904740,-71.53745100
@@ -3127,15 +3124,15 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 3691,Cusco,173,PE,Peru,CUS,region,-13.53195000,-71.96746260
 3679,Huancavelica,173,PE,Peru,HUV,region,-12.78619780,-74.97640240
 3687,Huanuco,173,PE,Peru,HUC,region,-9.92076480,-76.24108430
-3700,Ica,173,PE,Peru,ICA,region,42.35288320,-71.04300970
+3700,Ica,173,PE,Peru,ICA,region,-14.20062390,-76.84151950
 3693,Junín,173,PE,Peru,JUN,region,-11.15819250,-75.99263060
-3683,"La Libertad",173,PE,Peru,LAL,region,13.49069700,-89.30846070
+3683,"La Libertad",173,PE,Peru,LAL,region,-7.95408870,-79.61533950
 3702,Lambayeque,173,PE,Peru,LAM,region,-6.71976660,-79.90807570
 3695,Lima,173,PE,Peru,LIM,region,-12.04637310,-77.04275400
 4922,Loreto,173,PE,Peru,LOR,region,-4.37416430,-76.13042640
 3678,"Madre de Dios",173,PE,Peru,MDD,region,-11.76687050,-70.81199530
 3698,Moquegua,173,PE,Peru,MOQ,region,-17.19273610,-70.93281380
-3686,Pasco,173,PE,Peru,PAS,region,46.23050490,-119.09223160
+3686,Pasco,173,PE,Peru,PAS,region,-10.29806400,-76.75061930
 3697,Piura,173,PE,Peru,PIU,region,-5.17828840,-80.65488820
 3682,Puno,173,PE,Peru,PUN,region,-15.84022180,-70.02188050
 3694,"San Martín",173,PE,Peru,SAM,region,37.08494640,-121.61022160
@@ -3174,10 +3171,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1306,Cebu,174,PH,Philippines,CEB,province,10.31569920,123.88543660
 1345,"Central Luzon",174,PH,Philippines,03,region,15.48277220,120.71200230
 1308,"Central Visayas",174,PH,Philippines,07,region,9.81687500,124.06414190
-1311,"Compostela Valley",174,PH,Philippines,COM,province,7.51251500,126.17626150
 1335,"Cordillera Administrative",174,PH,Philippines,15,region,17.35125420,121.17188510
 1320,Cotabato,174,PH,Philippines,NCO,province,7.20466680,124.23104390
 1340,Davao,174,PH,Philippines,11,region,7.30416220,126.08934060
+1311,"Davao de Oro",174,PH,Philippines,COM,province,7.51251500,126.17626150
 1319,"Davao del Norte",174,PH,Philippines,DAV,province,7.56176990,125.65328480
 1318,"Davao del Sur",174,PH,Philippines,DAS,province,6.76626870,125.32842690
 1309,"Davao Occidental",174,PH,Philippines,DVO,province,6.09413960,125.60954740
@@ -3198,15 +3195,15 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1327,"Lanao del Norte",174,PH,Philippines,LAN,province,7.87218110,123.88577470
 1333,"Lanao del Sur",174,PH,Philippines,LAS,province,7.82317600,124.41982430
 1332,Leyte,174,PH,Philippines,LEY,province,10.86245360,124.88111950
-1330,Maguindanao,174,PH,Philippines,MAG,province,6.94225810,124.41982430
+1330,"Maguindanao del Norte",174,PH,Philippines,MGN,province,6.94225810,124.41982430
+1347,"Maguindanao del Sur",174,PH,Philippines,MGS,province,14.60905370,121.02225650
 1329,Marinduque,174,PH,Philippines,MAD,province,13.47671710,121.90321920
 1338,Masbate,174,PH,Philippines,MAS,province,12.35743460,123.55040760
-1347,"Metro Manila",174,PH,Philippines,NCR,province,14.60905370,121.02225650
-5324,"Metro Manila(National Capital Region)",174,PH,Philippines,00,region,14.56807070,120.85583270
 1299,Mimaropa,174,PH,Philippines,41,region,9.84320650,118.73647830
 1343,"Misamis Occidental",174,PH,Philippines,MSC,province,8.33749030,123.70706190
 1348,"Misamis Oriental",174,PH,Philippines,MSR,province,8.50455580,124.62195920
 1353,"Mountain Province",174,PH,Philippines,MOU,province,40.70754370,-73.95010330
+5324,"National Capital Region (Metro Manila)",174,PH,Philippines,00,region,14.56807070,120.85583270
 1351,"Negros Occidental",174,PH,Philippines,NEC,province,10.29256090,123.02465180
 1350,"Negros Oriental",174,PH,Philippines,NER,province,9.62820830,122.98883190
 1339,"Northern Mindanao",174,PH,Philippines,10,region,8.02016350,124.68565090
@@ -3502,11 +3499,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1847,Yamalo-Nenets,182,RU,Russia,YAN,"autonomous district",66.06530570,76.93451930
 1851,Yaroslavl,182,RU,Russia,YAR,"administrative region",57.89915230,38.83886330
 1904,Zabaykalsky,182,RU,Russia,ZAB,"administrative territory",53.09287710,116.96765610
-261,Eastern,183,RW,Rwanda,02,province,,
-262,Kigali,183,RW,Rwanda,01,city,-1.94407270,30.06188510
-263,Northern,183,RW,Rwanda,03,province,,
-259,Southern,183,RW,Rwanda,05,province,,
-260,Western,183,RW,Rwanda,04,province,,
+261,Eastern,183,RW,Rwanda,02,province,-1.74244510,29.76886980
+262,Kigali,183,RW,Rwanda,01,city,-1.92976260,29.96243320
+263,Northern,183,RW,Rwanda,03,province,-1.61085290,29.53320660
+259,Southern,183,RW,Rwanda,05,province,-2.28552020,29.31307560
+260,Western,183,RW,Rwanda,04,province,-2.12500570,28.60901170
 5440,"Alarm Forest",184,SH,"Saint Helena",01,district,-15.94671440,-5.72447520
 5441,"Blue Hill",184,SH,"Saint Helena",02,district,-15.98354720,-5.79656520
 5442,"Half Tree Hollow",184,SH,"Saint Helena",03,district,-15.93468450,-5.73134770
@@ -3648,10 +3645,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 501,"Roche Caiman",197,SC,Seychelles,25,district,-4.63960280,55.46793150
 496,"Saint Louis",197,SC,Seychelles,22,district,38.62700250,-90.19940420
 509,Takamaka,197,SC,Seychelles,23,district,37.96459170,-1.22177270
-914,Eastern,198,SL,"Sierra Leone",E,province,,
-911,Northern,198,SL,"Sierra Leone",N,province,,
-912,Southern,198,SL,"Sierra Leone",S,province,,
-913,Western,198,SL,"Sierra Leone",W,area,40.25459690,-80.24554440
+914,Eastern,198,SL,"Sierra Leone",E,province,8.21016010,-11.59218090
+911,Northern,198,SL,"Sierra Leone",N,province,9.11775710,-12.93301530
+912,Southern,198,SL,"Sierra Leone",S,province,7.70540930,-13.42507660
+913,Western,198,SL,"Sierra Leone",W,area,8.29678710,-13.26997610
 4651,"Central Singapore",199,SG,Singapore,01,district,1.28840000,103.85350000
 4649,"North East",199,SG,Singapore,02,district,1.38240000,103.89720000
 4653,"North West",199,SG,Singapore,03,district,1.41800000,103.82750000
@@ -3876,7 +3873,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4276,Žirovnica,201,SI,Slovenia,192,municipality,46.39544030,14.15396320
 4342,Zreče,201,SI,Slovenia,144,municipality,46.41777860,15.37094310
 4307,Žužemberk,201,SI,Slovenia,193,municipality,45.82003500,14.95359190
-4784,Central,202,SB,"Solomon Islands",CE,province,,
+4784,Central,202,SB,"Solomon Islands",CE,province,-9.02025930,158.25118300
 4781,Choiseul,202,SB,"Solomon Islands",CH,province,-7.05014940,156.95114590
 4785,Guadalcanal,202,SB,"Solomon Islands",GU,province,-9.57732840,160.14558050
 4778,Honiara,202,SB,"Solomon Islands",CT,"capital territory",-9.44563810,159.97289990
@@ -3885,7 +3882,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 4783,Malaita,202,SB,"Solomon Islands",ML,province,-8.94461680,160.90712360
 4787,"Rennell and Bellona",202,SB,"Solomon Islands",RB,province,-11.61314350,160.16939490
 4779,Temotu,202,SB,"Solomon Islands",TE,province,-10.68692900,166.06239790
-4786,Western,202,SB,"Solomon Islands",WE,province,,
+4786,Western,202,SB,"Solomon Islands",WE,province,-7.74998690,155.56423610
 925,Awdal,203,SO,Somalia,AW,region,10.63342850,43.32946600
 917,Bakool,203,SO,Somalia,BK,region,4.36572210,44.09603110
 927,Banaadir,203,SO,Somalia,BN,region,2.11873750,45.33694590
@@ -4616,32 +4613,32 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 330,Yumbe,229,UG,Uganda,313,district,3.46980230,31.24832910
 379,Zombo,229,UG,Uganda,330,district,2.55442930,30.94173680
 4689,"Autonomous Republic of Crimea",230,UA,Ukraine,43,republic,44.95211700,34.10241700
-4680,"Cherkaska oblast",230,UA,Ukraine,71,region,49.44443300,32.05976700
-4692,"Chernihivska oblast",230,UA,Ukraine,74,region,51.49820000,31.28934990
-4678,"Chernivetska oblast",230,UA,Ukraine,77,region,48.29168300,25.93521700
-4675,"Dnipropetrovska oblast",230,UA,Ukraine,12,region,48.46471700,35.04618300
-4691,"Donetska oblast",230,UA,Ukraine,14,region,48.01588300,37.80285000
-4682,"Ivano-Frankivska oblast",230,UA,Ukraine,26,region,48.92263300,24.71111700
-4686,"Kharkivska oblast",230,UA,Ukraine,63,region,49.99350000,36.23038300
-4684,"Khersonska oblast",230,UA,Ukraine,65,region,46.63541700,32.61686700
-4681,"Khmelnytska oblast",230,UA,Ukraine,68,region,49.42298300,26.98713310
-4677,"Kirovohradska oblast",230,UA,Ukraine,35,region,48.50793300,32.26231700
+4680,Cherkaska,230,UA,Ukraine,71,region,49.44443300,32.05976700
+4692,Chernihivska,230,UA,Ukraine,74,region,51.49820000,31.28934990
+4678,Chernivetska,230,UA,Ukraine,77,region,48.29168300,25.93521700
+4675,Dnipropetrovska,230,UA,Ukraine,12,region,48.46471700,35.04618300
+4691,Donetska,230,UA,Ukraine,14,region,48.01588300,37.80285000
+4682,Ivano-Frankivska,230,UA,Ukraine,26,region,48.92263300,24.71111700
+4686,Kharkivska,230,UA,Ukraine,63,region,49.99350000,36.23038300
+4684,Khersonska,230,UA,Ukraine,65,region,46.63541700,32.61686700
+4681,Khmelnytska,230,UA,Ukraine,68,region,49.42298300,26.98713310
+4677,Kirovohradska,230,UA,Ukraine,35,region,48.50793300,32.26231700
 4676,Kyiv,230,UA,Ukraine,30,city,50.45010000,30.52340000
-4671,"Kyivska oblast",230,UA,Ukraine,32,region,50.05295060,30.76671340
-4673,"Luhanska oblast",230,UA,Ukraine,09,region,48.57404100,39.30781500
-4672,"Lvivska oblast",230,UA,Ukraine,46,region,49.83968300,24.02971700
-4679,"Mykolaivska oblast",230,UA,Ukraine,48,region,46.97503300,31.99458290
-4688,"Odeska oblast",230,UA,Ukraine,51,region,46.48458300,30.73260000
-5071,"Poltavska oblast",230,UA,Ukraine,53,region,49.64291960,32.66753390
-4683,"Rivnenska oblast",230,UA,Ukraine,56,region,50.61990000,26.25161700
-1912,Sevastopol,230,UA,Ukraine,40,"administrative region",44.61665000,33.52536710
-4685,"Sumska oblast",230,UA,Ukraine,59,region,50.90770000,34.79810000
-4674,"Ternopilska oblast",230,UA,Ukraine,61,region,49.55351700,25.59476700
-4669,"Vinnytska oblast",230,UA,Ukraine,05,region,49.23308300,28.46821690
-4690,"Volynska oblast",230,UA,Ukraine,07,region,50.74723300,25.32538300
-4670,"Zakarpatska Oblast",230,UA,Ukraine,21,region,48.62080000,22.28788300
-4687,"Zaporizka oblast",230,UA,Ukraine,23,region,47.83880000,35.13956700
-4668,"Zhytomyrska oblast",230,UA,Ukraine,18,region,50.25465000,28.65866690
+4671,Kyivska,230,UA,Ukraine,32,region,50.05295060,30.76671340
+4673,Luhanska,230,UA,Ukraine,09,region,48.57404100,39.30781500
+4672,Lvivska,230,UA,Ukraine,46,region,49.83968300,24.02971700
+4679,Mykolaivska,230,UA,Ukraine,48,region,46.97503300,31.99458290
+4688,Odeska,230,UA,Ukraine,51,region,46.48458300,30.73260000
+5071,Poltavska,230,UA,Ukraine,53,region,49.64291960,32.66753390
+4683,Rivnenska,230,UA,Ukraine,56,region,50.61990000,26.25161700
+1912,Sevastopol,230,UA,Ukraine,40,city,44.61665000,33.52536710
+4685,Sumska,230,UA,Ukraine,59,region,50.90770000,34.79810000
+4674,Ternopilska,230,UA,Ukraine,61,region,49.55351700,25.59476700
+4669,Vinnytska,230,UA,Ukraine,05,region,49.23308300,28.46821690
+4690,Volynska,230,UA,Ukraine,07,region,50.74723300,25.32538300
+4670,Zakarpatska,230,UA,Ukraine,21,region,48.62080000,22.28788300
+4687,Zaporizka,230,UA,Ukraine,23,region,47.83880000,35.13956700
+4668,Zhytomyrska,230,UA,Ukraine,18,region,50.25465000,28.65866690
 3396,"Abu Dhabi",231,AE,"United Arab Emirates",AZ,emirate,24.45388400,54.37734380
 3395,Ajman,231,AE,"United Arab Emirates",AJ,emirate,25.40521650,55.51364330
 3391,Dubai,231,AE,"United Arab Emirates",DU,emirate,25.20484930,55.27078280
