@@ -101,11 +101,11 @@ https://dr5hn.github.io/countries-states-cities-database/
 
 ## Insights
 
-Total Regions : 6 `<br>`
-Total Sub Regions : 22 `<br>`
-Total Countries : 250 `<br>`
-Total States/Regions/Municipalities : 5,038 `<br>`
-Total Cities/Towns/Districts : 151,024 `<br>`
+Total Regions : 6 <br>
+Total Sub Regions : 22 <br>
+Total Countries : 250 <br>
+Total States/Regions/Municipalities : 5,038 <br>
+Total Cities/Towns/Districts : 151,024 <br>
 
 Last Updated On : 05th Jul 2025
 
@@ -204,7 +204,7 @@ Find this project on
 
 ## Follow me at
 
-`<a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" />``</a>` `<a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" />``</a>` `<a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" />``</a>`
+<a href="https://github.com/dr5hn/"><img alt="Github @dr5hn" src="https://img.shields.io/static/v1?logo=github&message=Github&color=black&style=flat-square&label=" /></a> <a href="https://twitter.com/dr5hn/"><img alt="Twitter @dr5hn" src="https://img.shields.io/static/v1?logo=twitter&message=Twitter&color=black&style=flat-square&label=" /></a> <a href="https://www.linkedin.com/in/dr5hn/"><img alt="LinkedIn @dr5hn" src="https://img.shields.io/static/v1?logo=linkedin&message=LinkedIn&color=black&style=flat-square&label=&link=https://twitter.com/dr5hn" /></a>
 
 ## 🙋‍♂️ Support My Work
 
