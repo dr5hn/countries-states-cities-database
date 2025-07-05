@@ -322,7 +322,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 536,Samukh,16,AZ,Azerbaijan,SMX,district,40.76046310,46.40631810
 591,Shabran,16,AZ,Azerbaijan,SBN,district,41.22283760,48.84573040
 579,Shahbuz,16,AZ,Azerbaijan,SAH,district,39.44521030,45.65680090
-518,Shaki,16,AZ,Azerbaijan,SA,district,41.19747530,47.15712410
+518,Shaki,16,AZ,Azerbaijan,SA,municipality,41.19747530,47.15712410
 586,Shaki,16,AZ,Azerbaijan,SAK,district,41.11346620,47.13169270
 529,Shamakhi,16,AZ,Azerbaijan,SMI,district,40.63187310,48.63638010
 583,Shamkir,16,AZ,Azerbaijan,SKR,district,40.82881440,46.01668790
@@ -630,11 +630,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2661,East,38,CM,Cameroon,ES,region,3.88837370,11.70249640
 2656,"Far North",38,CM,Cameroon,EN,region,11.50735430,13.23069190
 2662,Littoral,38,CM,Cameroon,LT,region,4.29449680,8.88736580
-2665,North,38,CM,Cameroon,NO,region,8.62805630,11.27232390
+2665,North,38,CM,Cameroon,NO,region,37.09024000,-95.71289100
 2657,Northwest,38,CM,Cameroon,NW,region,6.43305980,9.74099250
 2659,South,38,CM,Cameroon,SU,region,2.92314930,9.10689990
 2658,Southwest,38,CM,Cameroon,SW,region,5.21789660,7.98072470
-2664,West,38,CM,Cameroon,OU,region,5.53533000,9.91400120
+2664,West,38,CM,Cameroon,OU,region,37.03649890,-95.67059870
 872,Alberta,39,CA,Canada,AB,province,53.93327060,-116.57650350
 875,"British Columbia",39,CA,Canada,BC,province,53.72666830,-127.64762050
 867,Manitoba,39,CA,Canada,MB,province,53.76086080,-98.81387620
@@ -823,17 +823,13 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2626,Agnéby,54,CI,"Cote D'Ivoire (Ivory Coast)",16,region,5.32245030,-4.34495290
 2636,Bafing,54,CI,"Cote D'Ivoire (Ivory Coast)",17,region,8.32520470,-7.52472430
 2643,Bas-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",BS,district,5.27983560,-6.15269850
-2635,Bas-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",09,region,5.35679160,-6.74939930
 2654,Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",CM,district,5.55279300,-3.25836260
 2644,Denguélé,54,CI,"Cote D'Ivoire (Ivory Coast)",DN,district,48.07077630,-68.56093410
-2642,Denguélé,54,CI,"Cote D'Ivoire (Ivory Coast)",10,region,9.46623720,-7.43813550
 2645,"Dix-Huit Montagnes",54,CI,"Cote D'Ivoire (Ivory Coast)",06,region,7.37623730,-7.43813550
 2633,Fromager,54,CI,"Cote D'Ivoire (Ivory Coast)",18,region,45.54502130,-73.60462230
 2651,Gôh-Djiboua,54,CI,"Cote D'Ivoire (Ivory Coast)",GD,district,5.87113930,-5.56172790
 2638,Haut-Sassandra,54,CI,"Cote D'Ivoire (Ivory Coast)",02,region,6.87578480,-6.57833870
-2640,Lacs,54,CI,"Cote D'Ivoire (Ivory Coast)",07,region,47.73958660,-70.41866520
 2632,Lacs,54,CI,"Cote D'Ivoire (Ivory Coast)",LC,district,48.19801690,-80.45644120
-2639,Lagunes,54,CI,"Cote D'Ivoire (Ivory Coast)",01,region,5.88273340,-4.23333550
 2627,Lagunes,54,CI,"Cote D'Ivoire (Ivory Coast)",LG,district,5.88273340,-4.23333550
 2631,Marahoué,54,CI,"Cote D'Ivoire (Ivory Coast)",12,region,6.88462070,-5.89871390
 2629,Montagnes,54,CI,"Cote D'Ivoire (Ivory Coast)",MG,district,7.37623730,-7.43813550
@@ -844,11 +840,10 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 2625,Savanes,54,CI,"Cote D'Ivoire (Ivory Coast)",03,region,9.63735270,-6.70071860
 2628,Sud-Bandama,54,CI,"Cote D'Ivoire (Ivory Coast)",15,region,5.53570830,-5.56172790
 2652,Sud-Comoé,54,CI,"Cote D'Ivoire (Ivory Coast)",13,region,5.55279300,-3.25836260
-2647,"Vallée du Bandama",54,CI,"Cote D'Ivoire (Ivory Coast)",04,region,8.27897800,-4.89356270
 2637,"Vallée du Bandama",54,CI,"Cote D'Ivoire (Ivory Coast)",VB,district,8.27897800,-4.89356270
 2650,Woroba,54,CI,"Cote D'Ivoire (Ivory Coast)",WR,district,8.24913720,-6.92091350
 2649,Worodougou,54,CI,"Cote D'Ivoire (Ivory Coast)",14,region,8.25489620,-6.57833870
-2653,Yamoussoukro,54,CI,"Cote D'Ivoire (Ivory Coast)",YM,district,6.82762280,-5.28934330
+2653,Yamoussoukro,54,CI,"Cote D'Ivoire (Ivory Coast)",YM,"autonomous district",6.82762280,-5.28934330
 2641,Zanzan,54,CI,"Cote D'Ivoire (Ivory Coast)",ZZ,district,8.82079040,-3.41955270
 734,Bjelovar-Bilogora,55,HR,Croatia,07,county,45.89879720,16.84230930
 737,Brod-Posavina,55,HR,Croatia,12,county,45.26379510,17.32645620
@@ -2018,8 +2013,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 145,Akmola,112,KZ,Kazakhstan,AKM,region,51.91653200,69.41104940
 151,Aktobe,112,KZ,Kazakhstan,AKT,region,48.77970780,57.99743780
 143,Almaty,112,KZ,Kazakhstan,ALM,region,45.01192270,78.42293920
-152,Almaty,112,KZ,Kazakhstan,ALA,region,43.22201460,76.85124850
-156,Astana,112,KZ,Kazakhstan,AST,"capital city",51.16052270,71.47035580
+152,Almaty,112,KZ,Kazakhstan,ALA,city,43.22201460,76.85124850
+156,Astana,112,KZ,Kazakhstan,AST,city,51.16052270,71.47035580
 153,Atyrau,112,KZ,Kazakhstan,ATY,region,47.10761880,51.91413300
 155,Baikonur,112,KZ,Kazakhstan,BAY,region,45.96458510,63.30524280
 154,"East Kazakhstan",112,KZ,Kazakhstan,VOS,region,48.70626870,80.79225340
@@ -2030,8 +2025,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 141,Mangystau,112,KZ,Kazakhstan,MAN,region,44.59080200,53.84995080
 144,"North Kazakhstan",112,KZ,Kazakhstan,SEV,region,54.16220660,69.93870710
 146,Pavlodar,112,KZ,Kazakhstan,PAV,region,52.28784440,76.97334530
-149,Turkestan,112,KZ,Kazakhstan,YUZ,region,43.36669580,68.40944050
-148,"West Kazakhstan",112,KZ,Kazakhstan,ZAP,province,49.56797270,50.80666160
+149,Turkistan,112,KZ,Kazakhstan,YUZ,region,43.36669580,68.40944050
+148,"West Kazakhstan",112,KZ,Kazakhstan,ZAP,region,49.56797270,50.80666160
 181,Baringo,113,KE,Kenya,01,county,0.85549880,36.08934060
 210,Bomet,113,KE,Kenya,02,county,-0.80150090,35.30272260
 168,Bungoma,113,KE,Kenya,03,county,0.56952520,34.55837660
@@ -2231,9 +2226,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 456,Triesenberg,125,LI,Liechtenstein,10,commune,47.12245110,9.57019850
 452,Vaduz,125,LI,Liechtenstein,11,commune,47.14103030,9.52092770
 1561,Akmenė,126,LT,Lithuania,01,"district municipality",56.24550290,22.74711690
-1599,Alytus,126,LT,Lithuania,03,"district municipality",54.32974960,24.19609310
-1574,Alytus,126,LT,Lithuania,AL,county,54.20002140,24.15126340
 1605,Alytus,126,LT,Lithuania,02,"district municipality",54.39629380,24.04587610
+1574,Alytus,126,LT,Lithuania,AL,county,54.20002140,24.15126340
 5346,Anykščiai,126,LT,Lithuania,04,"district municipality",55.54755510,24.73181660
 1603,Birštonas,126,LT,Lithuania,05,municipality,54.56696640,24.00930980
 1566,Biržai,126,LT,Lithuania,06,"district municipality",56.20177190,24.75601180
@@ -2245,13 +2239,11 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1555,Jurbarkas,126,LT,Lithuania,12,"district municipality",55.07740700,22.74195690
 1583,Kaišiadorys,126,LT,Lithuania,13,"district municipality",54.85886690,24.42779290
 1591,Kalvarija,126,LT,Lithuania,14,municipality,54.37616740,23.19203210
-1565,Kaunas,126,LT,Lithuania,16,"district municipality",54.99362360,23.63249410
-1556,Kaunas,126,LT,Lithuania,KU,county,54.98728630,23.95257360
 1580,Kaunas,126,LT,Lithuania,15,"district municipality",54.91453260,23.90535180
+1556,Kaunas,126,LT,Lithuania,KU,county,54.98728630,23.95257360
 1575,"Kazlų Rūda",126,LT,Lithuania,17,municipality,54.78075260,23.48402430
 1584,Kėdainiai,126,LT,Lithuania,18,"district municipality",55.35609470,23.98326830
 1618,Kelmė,126,LT,Lithuania,19,"district municipality",55.62663520,22.87817200
-1597,Klaipeda,126,LT,Lithuania,20,"district municipality",55.70329480,21.14427950
 1600,Klaipėda,126,LT,Lithuania,KL,county,55.65197440,21.37439560
 1604,Klaipėda,126,LT,Lithuania,21,"district municipality",55.68416150,21.44164640
 1571,Kretinga,126,LT,Lithuania,22,"district municipality",55.88384200,21.23509190
@@ -2265,7 +2257,6 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1612,Pagėgiai,126,LT,Lithuania,29,municipality,55.17213200,21.96836140
 1595,Pakruojis,126,LT,Lithuania,30,"district municipality",56.07326050,23.93899060
 1588,Palanga,126,LT,Lithuania,31,"district municipality",55.92019800,21.06776140
-1589,Panevėžys,126,LT,Lithuania,32,"district municipality",55.73479150,24.35747740
 1558,Panevėžys,126,LT,Lithuania,PN,county,55.97480490,25.07947670
 1614,Panevėžys,126,LT,Lithuania,33,"district municipality",55.61667280,24.31422830
 1616,Pasvalys,126,LT,Lithuania,34,"district municipality",56.06046190,24.39629100
@@ -2277,9 +2268,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1615,Rokiškis,126,LT,Lithuania,40,"district municipality",55.95550390,25.58592490
 1576,Šakiai,126,LT,Lithuania,41,"district municipality",54.95267100,23.04801990
 1577,Šalčininkai,126,LT,Lithuania,42,"district municipality",54.30976700,25.38756400
-1554,Šiauliai,126,LT,Lithuania,44,"district municipality",55.97214560,23.03323710
-1609,Šiauliai,126,LT,Lithuania,43,"district municipality",55.93490850,23.31368230
 1586,Šiauliai,126,LT,Lithuania,SA,county,55.99857510,23.13800510
+1609,Šiauliai,126,LT,Lithuania,43,"district municipality",55.93490850,23.31368230
 1613,"Šilalė ",126,LT,Lithuania,45,"district municipality",55.49268000,22.18455590
 1607,Šilutė,126,LT,Lithuania,46,"district municipality",55.35041400,21.46598590
 1594,Širvintos,126,LT,Lithuania,47,"district municipality",55.04310200,24.95698100
@@ -2295,9 +2285,8 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1621,Utena,126,LT,Lithuania,UT,county,55.53189690,25.79046990
 1602,Varėna,126,LT,Lithuania,55,"district municipality",54.22033300,24.57899700
 1620,Vilkaviškis,126,LT,Lithuania,56,"district municipality",54.65194500,23.03515500
-1601,Vilnius,126,LT,Lithuania,VL,county,54.80865020,25.21821390
 1606,Vilnius,126,LT,Lithuania,57,"district municipality",54.67107610,25.28787210
-1592,Vilnius,126,LT,Lithuania,58,"district municipality",54.77325780,25.58671130
+1601,Vilnius,126,LT,Lithuania,VL,county,54.80865020,25.21821390
 1564,Visaginas,126,LT,Lithuania,59,municipality,55.59411800,26.43079540
 1619,Zarasai,126,LT,Lithuania,60,"district municipality",55.73096090,26.24529500
 1518,Capellen,127,LU,Luxembourg,CA,canton,49.64039310,5.95538460
@@ -2618,6 +2607,7 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 1980,Selenge,146,MN,Mongolia,049,province,50.00592730,106.44341080
 1977,Sükhbaatar,146,MN,Mongolia,051,province,46.56531630,113.53808360
 1968,Töv,146,MN,Mongolia,047,province,47.21240560,106.41541000
+5453,Ulaanbaatar,146,MN,Mongolia,001,"capital city",47.89153170,106.73672220
 1971,Uvs,146,MN,Mongolia,046,province,49.64497070,93.27365760
 1979,Zavkhan,146,MN,Mongolia,057,province,48.23881470,96.07030190
 23,Andrijevica,147,ME,Montenegro,01,municipality,42.73624770,19.78595560
@@ -2996,18 +2986,22 @@ id,name,country_id,country_code,country_name,state_code,type,latitude,longitude
 668,Želino,129,MK,"North Macedonia",30,municipality,41.90065310,21.11757670
 673,Zrnovci,129,MK,"North Macedonia",33,municipality,41.82282210,22.41722560
 1014,Agder,165,NO,Norway,42,county,58.74069340,6.75315210
+5448,Akershus,165,NO,Norway,32,county,60.02464190,9.74867520
+5449,Buskerud,165,NO,Norway,33,county,60.24322920,7.69873090
+1015,Finnmark,165,NO,Norway,56,county,69.85261320,20.66464210
 1009,Innlandet,165,NO,Norway,34,county,61.19357870,5.50832660
 1026,"Jan Mayen",165,NO,Norway,22,"arctic region",71.03181800,-8.29203460
 1020,"Møre og Romsdal",165,NO,Norway,15,county,62.84068330,7.00714300
 1025,Nordland,165,NO,Norway,18,county,67.69305800,12.70739360
 1007,Oslo,165,NO,Norway,03,county,59.91386880,10.75224540
+5450,Østfold,165,NO,Norway,31,county,59.32190880,10.52257370
 1021,Rogaland,165,NO,Norway,11,county,59.14895440,6.01434320
 1013,Svalbard,165,NO,Norway,21,"arctic region",77.87497250,20.97518210
-1015,"Troms og Finnmark",165,NO,Norway,54,county,69.77890670,18.99401840
+1024,Telemark,165,NO,Norway,40,county,59.40820670,7.17995740
+5451,Troms,165,NO,Norway,55,county,69.42828210,13.96563080
 1006,Trøndelag,165,NO,Norway,50,county,63.54201250,10.93692670
-1024,"Vestfold og Telemark",165,NO,Norway,38,county,59.41174820,7.76471750
+5452,Vestfold,165,NO,Norway,39,county,59.22777900,9.55451380
 1018,Vestland,165,NO,Norway,46,county,60.90694420,3.96270810
-1011,Viken,165,NO,Norway,30,county,59.96530050,7.45051440
 3058,"Ad Dakhiliyah",166,OM,Oman,DA,governorate,22.85887580,57.53943560
 3047,"Ad Dhahirah",166,OM,Oman,ZA,governorate,23.21616740,56.49074440
 3048,"Al Batinah North",166,OM,Oman,BS,governorate,24.34198460,56.72989040
