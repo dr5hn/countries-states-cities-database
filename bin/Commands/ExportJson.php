@@ -142,8 +142,11 @@ class ExportJson extends Command
                         $statesArray[$i]['country_id'] = $countryId;
                         $statesArray[$i]['country_code'] = $state['country_code'];
                         $statesArray[$i]['country_name'] = $state['country_name'];
-                        $statesArray[$i]['state_code'] = $state['iso2'];
+                        $statesArray[$i]['iso2'] = $state['iso2'];
+                        $statesArray[$i]['fips_code'] = $state['fips_code'];
                         $statesArray[$i]['type'] = $state['type'];
+                        $statesArray[$i]['level'] = $state['level'];
+                        $statesArray[$i]['parent_id'] = $state['parent_id'];
                         $statesArray[$i]['latitude'] = $state['latitude'];
                         $statesArray[$i]['longitude'] = $state['longitude'];
 
@@ -151,7 +154,7 @@ class ExportJson extends Command
                         $stateArr = array(
                             'id' => $stateId,
                             'name' => $stateName,
-                            'state_code' => $state['iso2'],
+                            'iso2' => $state['iso2'],
                             'latitude' => $state['latitude'],
                             'longitude' => $state['longitude'],
                             'type' => $state['type']
@@ -173,7 +176,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['id'] = $cityId;
                                 $citiesArray[$j]['name'] = $cityName;
                                 $citiesArray[$j]['state_id'] = (int)$stateId;
-                                $citiesArray[$j]['state_code'] = $city['state_code'];
+                                $citiesArray[$j]['iso2'] = $city['iso2'];
                                 $citiesArray[$j]['state_name'] = $stateName;
                                 $citiesArray[$j]['country_id'] = (int)$countryId;
                                 $citiesArray[$j]['country_code'] = $city['country_code'];
