@@ -176,7 +176,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['id'] = $cityId;
                                 $citiesArray[$j]['name'] = $cityName;
                                 $citiesArray[$j]['state_id'] = (int)$stateId;
-                                $citiesArray[$j]['iso2'] = $city['iso2'];
+                                $citiesArray[$j]['state_code'] = $city['state_code'];
                                 $citiesArray[$j]['state_name'] = $stateName;
                                 $citiesArray[$j]['country_id'] = (int)$countryId;
                                 $citiesArray[$j]['country_code'] = $city['country_code'];
