@@ -256,8 +256,26 @@ class ExportJson extends Command
                 }
             }
 
+            // Fetching All IRS Countries
+            $irsCountriesArray = array();
+            $n = 0;
+            $sql = "SELECT * FROM irs_countries ORDER BY irs_code";
+            $result = $db->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $irsCountriesArray[$n]['id'] = (int)$row['id'];
+                    $irsCountriesArray[$n]['irs_code'] = $row['irs_code'];
+                    $irsCountriesArray[$n]['irs_name'] = $row['irs_name'];
+                    $irsCountriesArray[$n]['country_id'] = $row['country_id'] ? (int)$row['country_id'] : null;
+                    $irsCountriesArray[$n]['iso2_mapping'] = $row['iso2_mapping'];
+                    $irsCountriesArray[$n]['notes'] = $row['notes'];
+                    $n++;
+                }
+            }
+
             $io->writeln('Total Regions Count : ' . count($regionsArray));
             $io->writeln('Total Subregions Count : ' . count($subregionsArray));
+            $io->writeln('Total IRS Countries Count : ' . count($irsCountriesArray));
             $io->writeln('Total Countries Count : ' . count($countriesArray));
             $io->writeln('Total States Count : ' . count($statesArray));
             $io->writeln('Total Cities Count : ' . count($citiesArray));
@@ -268,6 +286,7 @@ class ExportJson extends Command
             $exports = [
                 '/json/regions.json' => $regionsArray,
                 '/json/subregions.json' => $subregionsArray,
+                '/json/irs_countries.json' => $irsCountriesArray,
                 '/json/countries.json' => $countriesArray,
                 '/json/states.json' => $statesArray,
                 '/json/cities.json' => $citiesArray,

@@ -19,6 +19,7 @@ class ExportCsv extends Command
         'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
         'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
+        'irs_countries' => ['from' => '/json/irs_countries.json', 'to' => '/csv/irs_countries.csv'],
     ];
 
     private Filesystem $filesystem;

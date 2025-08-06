@@ -17,6 +17,7 @@ class ExportYaml extends Command
     private const FILES = [
         'regions' => ['from' => '/json/regions.json', 'to' => '/yml/regions.yml', 'singular' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/yml/subregions.yml', 'singular' => 'subregion'],
+        'irs_countries' => ['from' => '/json/irs_countries.json', 'to' => '/yml/irs_countries.yml', 'singular' => 'irs_country'],
         'countries' => ['from' => '/json/countries.json', 'to' => '/yml/countries.yml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/yml/states.yml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/yml/cities.yml', 'singular' => 'city'],

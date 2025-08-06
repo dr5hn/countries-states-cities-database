@@ -88,6 +88,7 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 | :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- |
 | Regions                    | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| IRS Countries              | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | Countries                  | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | States                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | Cities                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
@@ -99,10 +100,35 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 
 https://dr5hn.github.io/countries-states-cities-database/
 
+## IRS Country Codes
+
+🏦 **New Feature: US Internal Revenue Service (IRS) Country Codes**
+
+This database now includes IRS country codes used by the United States Internal Revenue Service for tax purposes. These codes are essential for financial, banking, accounting, and investment applications.
+
+### Key Differences from ISO2 Codes:
+- **Not one-to-one mapping**: Some countries have multiple IRS codes (e.g., 3 codes for Australia, 9 codes for United States)
+- **Territory handling**: Islands and territories get separate IRS codes (e.g., Ashmore and Cartier Islands = AT, maps to Australia)
+- **Outdated names**: Some IRS codes use historical names (e.g., Burma = BU vs Myanmar = MM)
+- **Special codes**: "Other Country" (OC) catch-all code for unspecified countries
+
+### Usage Examples:
+- Burma/Myanmar: IRS code "BU" vs ISO2 code "MM"
+- Australia territories: Main Australia "AU", Ashmore and Cartier Islands "AT"
+- US territories: Main US "US", Virgin Islands "VI", Guam "GU", etc.
+
+The `irs_countries` table includes:
+- `irs_code`: 2-character IRS country code
+- `irs_name`: Official IRS country name
+- `country_id`: Link to main countries table (nullable)
+- `iso2_mapping`: Corresponding ISO2 code for reference
+- `notes`: Special information about territories, outdated names, etc.
+
 ## Insights
 
 Total Regions : 6 <br>
 Total Sub Regions : 22 <br>
+Total IRS Countries : 200+ <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,038 <br>
 Total Cities/Towns/Districts : 151,024 <br>

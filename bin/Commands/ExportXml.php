@@ -17,6 +17,7 @@ class ExportXml extends Command
     private const FILES = [
         'regions' => ['from' => '/json/regions.json', 'to' => '/xml/regions.xml', 'singular' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/xml/subregions.xml', 'singular' => 'subregion'],
+        'irs_countries' => ['from' => '/json/irs_countries.json', 'to' => '/xml/irs_countries.xml', 'singular' => 'irs_country'],
         'countries' => ['from' => '/json/countries.json', 'to' => '/xml/countries.xml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/xml/states.xml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/xml/cities.xml', 'singular' => 'city'],
