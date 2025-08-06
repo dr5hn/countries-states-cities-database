@@ -76,6 +76,7 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 - MYSQL
 - PSQL
 - SQLITE
+- DUCKDB
 - SQLSERVER
 - MONGODB
 - XML
@@ -84,16 +85,16 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 
 ## Distribution Files Info
 
-| File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV |
-| :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- |
-| Regions                    | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Countries                  | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| States                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Cities                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Country+States             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+Cities             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+| File                       | JSON | MYSQL | PSQL | SQLITE | DUCKDB | SQLSERVER | MONGODB | XML | YAML | CSV |
+| :------------------------- | :--- | :---- | :--- | :----- | :----- | :-------- | :------ | :-- | :--- | :-- |
+| Regions                    | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Countries                  | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| States                     | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Cities                     | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Country+States             | ✅   | NA    | NA   | NA     | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+Cities             | ✅   | NA    | NA   | NA     | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | NA  | NA   | NA  |
 
 ## Demo
 
@@ -130,6 +131,7 @@ tar -xzvf world-mongodb-dump.tar.gz
 # Then restore the MongoDB dump
 mongorestore --host localhost:27017 --db world mongodb-dump/world
 ```
+
 
 ## License
 
