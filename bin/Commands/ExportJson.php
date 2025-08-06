@@ -75,9 +75,9 @@ class ExportJson extends Command
                     $countriesArray[$m]['tld'] = $row['tld'];
                     $countriesArray[$m]['native'] = $row['native'];
                     $countriesArray[$m]['region'] = $row['region'];
-                    $countriesArray[$m]['region_id'] = (int)$row['region_id'];
+                    $countriesArray[$m]['region_id'] = $row['region_id'] !== null ? (int)$row['region_id'] : null;
                     $countriesArray[$m]['subregion'] = $row['subregion'];
-                    $countriesArray[$m]['subregion_id'] = (int)$row['subregion_id'];
+                    $countriesArray[$m]['subregion_id'] = $row['subregion_id'] !== null ? (int)$row['subregion_id'] : null;
                     $countriesArray[$m]['nationality'] = $row['nationality'];
                     $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
                     $countriesArray[$m]['translations'] = json_decode($row['translations'], true);
@@ -107,9 +107,9 @@ class ExportJson extends Command
                 $countryStateCityArray[$k]['tld'] = $country['tld'];
                 $countryStateCityArray[$k]['native'] = $country['native'];
                 $countryStateCityArray[$k]['region'] = $country['region'];
-                $countryStateCityArray[$k]['region_id'] = (int)$country['region_id'];
+                $countryStateCityArray[$k]['region_id'] = $country['region_id'] !== null ? (int)$country['region_id'] : null;
                 $countryStateCityArray[$k]['subregion'] = $country['subregion'];
-                $countryStateCityArray[$k]['subregion_id'] = (int)$country['subregion_id'];
+                $countryStateCityArray[$k]['subregion_id'] = $country['subregion_id'] !== null ? (int)$country['subregion_id'] : null;
                 $countryStateCityArray[$k]['nationality'] = $country['nationality'];
                 $countryStateCityArray[$k]['timezones'] = $country['timezones'];
                 $countryStateCityArray[$k]['translations'] = $country['translations'];
