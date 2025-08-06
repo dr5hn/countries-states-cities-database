@@ -190,8 +190,7 @@ jobs:
       - name: Export DuckDB
         run: |
           # Clean up any existing DuckDB files first
-          rm -rf duckdb/
-          mkdir -p duckdb
+          rm -rf duckdb/*.db
           
           # Convert SQLite to DuckDB format
           python3 bin/import_duckdb.py --input sqlite/world.sqlite3 --output duckdb/world.db
