@@ -23,6 +23,8 @@ class ExportCsv extends Command
 
     private const TRANSLATION_FILES = [
         'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
+        'regions' => ['from' => '/json/regions.json', 'place_type' => 'region'],
+        'subregions' => ['from' => '/json/subregions.json', 'place_type' => 'subregion'],
     ];
 
     private Filesystem $filesystem;
