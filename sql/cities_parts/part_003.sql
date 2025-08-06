@@ -1,0 +1,3 @@
+--
+-- Table structure for table `cities`
+--

@@ -1,0 +1,3 @@
+--
+-- Dumping data for table `cities`
+--
