@@ -82,6 +82,28 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 - YAML
 - CSV
 
+## 🔄 Database Schema v2.0 (NEW)
+
+We've introduced an improved database schema (v2.0) that addresses data incoherence issues in the original schema:
+
+### Key Improvements
+- **Fixed geographical classification**: Cities are no longer misclassified as states
+- **Proper hierarchical relationships**: Clear parent-child relationships between geographical entities
+- **Enhanced data integrity**: Resolved duplicate entries and incorrect references
+- **Extended hierarchy**: Support for cities → towns → places structure
+
+### Specific Issues Resolved
+- **Belgium**: Antwerp correctly classified as city (not province)
+- **Albania**: Removed duplicate Tirana entries, properly classified Kavajë
+- **Global**: Systematic approach to geographical entity classification
+
+For detailed information, see [SCHEMA_V2.md](SCHEMA_V2.md)
+
+### Schema v2 Files
+- `sql/world_v2.sql` - New schema definition
+- `sql/migration_v2.sql` - Data migration script
+- `sql/validation_v2.sql` - Validation queries
+
 ## Distribution Files Info
 
 | File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV |
@@ -160,12 +182,14 @@ If you prefer to contribute directly through GitHub, you can still follow these 
 
 1. Fork the repository and clone it to your local machine
 2. Make the necessary changes to the data:
+   - **For v2 schema (recommended)**: Update the `sql/world_v2.sql` and related v2 files
    - To fix cities records, update the `sql/world.sql` > cities Table
    - To fix states/provinces records, update the `sql/world.sql` > states Table
    - To fix countries records, update the `sql/world.sql` > countries Table
    - To fix regions records, update the `sql/world.sql` > regions Table
    - To fix subregions records, update the `sql/world.sql` > subregions Table
-3. Once you've made the changes, create a pull request with a clear description of the modifications you've made
+3. **Note**: Consider using the v2 schema for new contributions as it addresses data classification issues
+4. Once you've made the changes, create a pull request with a clear description of the modifications you've made
 
 Please ensure your contributions align with our data standards and formatting. You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
 
