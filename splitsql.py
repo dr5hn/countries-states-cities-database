@@ -20,6 +20,6 @@ def split_sql_file_by_crlf(input_file, output_dir):
 
 
 if __name__ == "__main__":
-    input_path = 'sql/cities.sql'              
-    output_folder = 'sql/cities_parts'    
+    input_path = 'cities.sql'              
+    output_folder = 'cities_parts'    
     split_sql_file_by_crlf(input_path, output_folder)
