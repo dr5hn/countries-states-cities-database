@@ -132,40 +132,6 @@ tar -xzvf world-mongodb-dump.tar.gz
 mongorestore --host localhost:27017 --db world mongodb-dump/world
 ```
 
-## DuckDB Format
-
-The database is also available in DuckDB format, which provides:
-
-- **47% smaller file size** compared to SQLite (10.0 MB vs 19.0 MB)
-- **Optimized for analytics** and complex queries
-- **High compression** with fast query performance
-
-### Generate DuckDB Database
-
-```bash
-# Install DuckDB Python package
-pip install duckdb
-
-# Generate the DuckDB database
-python3 bin/import_duckdb.py
-
-# Generate with global sequence IDs (WikiData-like)
-python3 bin/import_duckdb.py --global-ids
-```
-
-### Using DuckDB Database
-
-```python
-import duckdb
-
-# Connect and query
-conn = duckdb.connect('duckdb/world.db')
-result = conn.execute("SELECT COUNT(*) FROM cities WHERE country_code = 'US'").fetchone()
-print(f"US Cities: {result[0]}")
-conn.close()
-```
-
-See [duckdb/README.md](duckdb/README.md) for detailed usage instructions.
 
 ## License
 
