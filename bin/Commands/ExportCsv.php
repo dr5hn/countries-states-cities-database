@@ -21,6 +21,10 @@ class ExportCsv extends Command
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
     ];
 
+    private const TRANSLATION_FILES = [
+        'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
+    ];
+
     private Filesystem $filesystem;
 
     public function __construct()
@@ -74,10 +78,47 @@ class ExportCsv extends Command
                 $io->success("Exported $root to CSV");
             }
 
+            // Export translations
+            $io->section("Processing: translations");
+            $this->exportTranslations($rootDir, $io);
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
             $io->error("Export failed: {$e->getMessage()}");
             return Command::FAILURE;
         }
+    }
+
+    private function exportTranslations(string $rootDir, SymfonyStyle $io): void
+    {
+        $translationsCsvPath = $rootDir . '/csv/translations.csv';
+        $fp = fopen($translationsCsvPath, 'w');
+
+        // Write CSV headers
+        fputcsv($fp, ['place_id', 'place_type', 'language', 'translation']);
+
+        // Process each file type that has translations
+        foreach (self::TRANSLATION_FILES as $root => $config) {
+            $jsonData = $this->filesystem->exists($rootDir . $config['from'])
+                ? file_get_contents($rootDir . $config['from'])
+                : throw new \RuntimeException("JSON file not found: {$config['from']}");
+
+            $data = json_decode($jsonData, true)
+                ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+
+            foreach ($data as $item) {
+                if (isset($item['translations']) && is_array($item['translations'])) {
+                    $placeId = $item['id'];
+                    $placeType = $config['place_type'];
+
+                    foreach ($item['translations'] as $language => $translation) {
+                        fputcsv($fp, [$placeId, $placeType, $language, $translation]);
+                    }
+                }
+            }
+        }
+
+        fclose($fp);
+        $io->success("Exported translations to CSV");
     }
 }
