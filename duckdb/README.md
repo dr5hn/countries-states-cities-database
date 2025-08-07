@@ -80,12 +80,7 @@ cities_in_us = conn.execute("SELECT name FROM cities WHERE country_code = 'US' L
 conn.close()
 ```
 
-For a complete example with sample queries, see [`example.py`](example.py):
 
-```bash
-cd duckdb
-python3 example.py
-```
 
 ### CLI Example
 
@@ -101,7 +96,7 @@ duckdb duckdb/world.db -c "SELECT region, COUNT(*) as country_count FROM countri
 - **Timestamp Handling**: The script handles timestamp conversion issues between SQLite and DuckDB by using current timestamps to avoid conversion errors
 - **Global ID Mapping**: When using `--global-ids`, the script maintains proper foreign key relationships by mapping all IDs to a global sequence (similar to WikiData approach)
 - **Enhanced Mode**: Using `--enhanced` flag with pandas provides better performance and more robust data handling
-- **Indexes**: Appropriate indexes are created for foreign key relationships to optimize query performance
+- **Table Optimization**: Tables are sorted by primary key for better query performance (more efficient than indexes for DuckDB)
 - **Data Integrity**: All foreign key relationships are preserved from the original SQLite database
 
 ## Script Improvements

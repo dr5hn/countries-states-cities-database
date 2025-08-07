@@ -207,23 +207,19 @@ def convert_basic(args, sqlite_conn, duck_conn):
     
     return tables
 
-def create_indexes(duck_conn, tables):
-    """Create indexes for better query performance"""
-    print("\nCreating indexes...")
-    indexes = [
-        "CREATE INDEX IF NOT EXISTS idx_cities_state_id ON cities(state_id)",
-        "CREATE INDEX IF NOT EXISTS idx_cities_country_id ON cities(country_id)",
-        "CREATE INDEX IF NOT EXISTS idx_states_country_id ON states(country_id)",
-        "CREATE INDEX IF NOT EXISTS idx_countries_region_id ON countries(region_id)",
-        "CREATE INDEX IF NOT EXISTS idx_countries_subregion_id ON countries(subregion_id)",
-        "CREATE INDEX IF NOT EXISTS idx_subregions_region_id ON subregions(region_id)"
-    ]
-    
-    for idx_sql in indexes:
+def optimize_tables(duck_conn, tables):
+    """Optimize tables by sorting by primary key for better performance"""
+    print("\nOptimizing tables (sorting by primary key)...")
+    for table in tables:
         try:
-            duck_conn.execute(idx_sql)
+            # Sort table by primary key (id) for better query performance
+            # This is more efficient than indexes for DuckDB
+            duck_conn.execute(f"CREATE TABLE {table}_sorted AS SELECT * FROM {table} ORDER BY id")
+            duck_conn.execute(f"DROP TABLE {table}")
+            duck_conn.execute(f"ALTER TABLE {table}_sorted RENAME TO {table}")
+            print(f"  Optimized table: {table}")
         except Exception as e:
-            print(f"Index creation warning: {e}")
+            print(f"Table optimization warning for {table}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description='Convert SQLite database to DuckDB format')
@@ -263,8 +259,8 @@ def main():
         else:
             tables = convert_basic(args, sqlite_conn, duck_conn)
         
-        # Create indexes for performance
-        create_indexes(duck_conn, tables)
+        # Optimize tables by sorting for performance  
+        optimize_tables(duck_conn, tables)
         
         # Final stats
         print("\n=== Conversion Complete ===")
