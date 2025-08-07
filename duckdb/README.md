@@ -80,6 +80,13 @@ cities_in_us = conn.execute("SELECT name FROM cities WHERE country_code = 'US' L
 conn.close()
 ```
 
+For a complete example with sample queries, see [`example.py`](example.py):
+
+```bash
+cd duckdb
+python3 example.py
+```
+
 ### CLI Example
 
 ```bash
