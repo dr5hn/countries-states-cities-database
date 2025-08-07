@@ -163,3 +163,9 @@ SELECT COUNT(*) FROM states WHERE country_code = 'CA'; -- Canadian provinces
 - **Manual method**: Edit `sql/world.sql` directly and create pull request
 - **Table structure**: See `.github/CONTRIBUTING.md` for column specifications
 - **Data sources**: Use WikiData, Wikipedia, or other legitimate geographical sources
+
+### Important notes for agents
+- **Large export files**: MongoDB JSON files and DuckDB databases can be 50MB+ and should not be committed
+- **Build artifacts**: Export files are automatically generated and excluded via .gitignore
+- **GitHub Actions**: Use the automated export workflow for generating all formats rather than manual commits
+- **Development focus**: This is a data repository - focus on data integrity and export functionality, not code architecture
