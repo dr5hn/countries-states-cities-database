@@ -24,6 +24,16 @@ try:
 except ImportError:
     PANDAS_AVAILABLE = False
 
+def get_existing_tables(sqlite_conn):
+    """Get list of tables that actually exist in the SQLite database"""
+    cursor = sqlite_conn.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")
+    existing_tables = [row[0] for row in cursor.fetchall()]
+    
+    # Return tables in dependency order, but only if they exist
+    all_tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+    return [table for table in all_tables if table in existing_tables]
+
 def create_table_ddl(table_name, columns_info):
     """Create DuckDB DDL for a table"""
     type_mapping = {
@@ -72,8 +82,9 @@ def convert_with_pandas_global_ids(args, sqlite_conn, duck_conn):
     
     print("Using enhanced conversion with pandas and proper global ID mapping...")
     
-    # Tables in dependency order
-    tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+    # Get tables that actually exist in the SQLite database
+    tables = get_existing_tables(sqlite_conn)
+    print(f"Found tables: {tables}")
     
     # Create global sequence in DuckDB
     try:
@@ -154,7 +165,9 @@ def convert_basic(args, sqlite_conn, duck_conn):
     """Basic conversion method (fallback when pandas not available)"""
     print("Using basic conversion method...")
     
-    tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+    # Get tables that actually exist in the SQLite database
+    tables = get_existing_tables(sqlite_conn)
+    print(f"Found tables: {tables}")
     
     # Create tables and insert data
     print("Creating tables and inserting data...")
