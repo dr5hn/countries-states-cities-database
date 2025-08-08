@@ -150,6 +150,7 @@ class ExportJson extends Command
                         $statesArray[$i]['parent_id'] = $state['parent_id'];
                         $statesArray[$i]['latitude'] = $state['latitude'];
                         $statesArray[$i]['longitude'] = $state['longitude'];
+                        $statesArray[$i]['timezone'] = $state['timezone'];
 
                         // For Country State Array
                         $stateArr = array(
