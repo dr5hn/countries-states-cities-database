@@ -98,9 +98,14 @@ class ExportSqlServer extends Command
                 country_code NCHAR(2) NOT NULL,
                 fips_code NVARCHAR(255) NULL,
                 iso2 NVARCHAR(255) NULL,
+                iso3166_2 NVARCHAR(10) NULL,
                 type NVARCHAR(191) NULL,
+                level INT NULL,
+                parent_id INT NULL,
+                native NVARCHAR(255) NULL,
                 latitude DECIMAL(10,8) NULL,
                 longitude DECIMAL(11,8) NULL,
+                timezone NVARCHAR(255) NULL,
                 created_at DATETIME2 NULL,
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,
@@ -118,6 +123,7 @@ class ExportSqlServer extends Command
                 country_code NCHAR(2) NOT NULL,
                 latitude DECIMAL(10,8) NOT NULL,
                 longitude DECIMAL(11,8) NOT NULL,
+                timezone NVARCHAR(255) NULL,
                 created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,
@@ -164,7 +170,8 @@ class ExportSqlServer extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        $rootDir = dirname(PATH_BASE);
+        // Ensure PATH_BASE constant is resolved from global namespace
+        $rootDir = dirname(\PATH_BASE);
 
         $io->title('Exporting SQL Server data to ' . $rootDir);
 

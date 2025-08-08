@@ -143,6 +143,7 @@ class ExportJson extends Command
                         $statesArray[$i]['country_code'] = $state['country_code'];
                         $statesArray[$i]['country_name'] = $state['country_name'];
                         $statesArray[$i]['iso2'] = $state['iso2'];
+                        $statesArray[$i]['iso3166_2'] = $state['iso3166_2'];
                         $statesArray[$i]['fips_code'] = $state['fips_code'];
                         $statesArray[$i]['type'] = $state['type'];
                         $statesArray[$i]['level'] = $state['level'];
@@ -155,9 +156,11 @@ class ExportJson extends Command
                             'id' => $stateId,
                             'name' => $stateName,
                             'iso2' => $state['iso2'],
+                            'iso3166_2' => $state['iso3166_2'],
                             'latitude' => $state['latitude'],
                             'longitude' => $state['longitude'],
-                            'type' => $state['type']
+                            'type' => $state['type'],
+                            'timezone' => $state['timezone']
                         );
 
                         array_push($stateNamesArray, $stateName);
@@ -183,6 +186,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['country_name'] = $countryName;
                                 $citiesArray[$j]['latitude'] = $city['latitude'];
                                 $citiesArray[$j]['longitude'] = $city['longitude'];
+                                $citiesArray[$j]['timezone'] = $city['timezone'];
                                 $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];
 
                                 // For State City Array
@@ -190,7 +194,8 @@ class ExportJson extends Command
                                     'id' => $cityId,
                                     'name' => $cityName,
                                     'latitude' => $city['latitude'],
-                                    'longitude' => $city['longitude']
+                                    'longitude' => $city['longitude'],
+                                    'timezone' => $city['timezone']
                                 ));
 
                                 $j++;
