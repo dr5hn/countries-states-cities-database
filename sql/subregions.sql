@@ -54,4 +54,4 @@ INSERT INTO `subregions` VALUES (1,'Northern Africa','{\"br\": \"Afrika an North
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-06 10:01:54
+-- Dump completed on 2025-08-08 13:10:54
