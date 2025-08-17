@@ -22,6 +22,7 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 - [Insights](#insights)
 - [Next API Database Update](#next-api-database-update)
 - [Import MongoDB](#import-mongodb)
+- [Export to DuckDB](#export-to-duckdb)
 - [License](#license)
 - [Contributing](#contributing)
 - [Repo Activity](#repo-activity)
@@ -76,25 +77,27 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 - MYSQL
 - PSQL
 - SQLITE
-- DUCKDB
 - SQLSERVER
 - MONGODB
 - XML
 - YAML
 - CSV
 
+**Note:** DuckDB format is available via manual conversion from SQLite files. See the [Export to DuckDB](#export-to-duckdb) section for instructions.
+
 ## Distribution Files Info
 
-| File                       | JSON | MYSQL | PSQL | SQLITE | DUCKDB | SQLSERVER | MONGODB | XML | YAML | CSV |
-| :------------------------- | :--- | :---- | :--- | :----- | :----- | :-------- | :------ | :-- | :--- | :-- |
-| Regions                    | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Countries                  | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| States                     | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Cities                     | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Country+States             | ✅   | NA    | NA   | NA     | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+Cities             | ✅   | NA    | NA   | NA     | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+| File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV |
+| :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- |
+| Regions                    | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Countries                  | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| States                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Cities                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| Country+States             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+Cities             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+
 
 ## Demo
 
@@ -132,6 +135,35 @@ tar -xzvf world-mongodb-dump.tar.gz
 mongorestore --host localhost:27017 --db world mongodb-dump/world
 ```
 
+## Export to DuckDB
+
+Want to export the database to DuckDB format? You can easily convert the existing SQLite files to DuckDB format using our conversion script.
+
+### Prerequisites
+
+First, install DuckDB Python package:
+
+```bash
+pip install duckdb
+```
+
+### Convert SQLite to DuckDB
+
+Use the provided conversion script to convert SQLite files to DuckDB format:
+
+```bash
+# Convert the complete world database
+python3 bin/import_duckdb.py --input sqlite/world.sqlite3 --output duckdb/world.db
+
+# Convert individual table databases
+python3 bin/import_duckdb.py --input sqlite/regions.sqlite3 --output duckdb/regions.db
+python3 bin/import_duckdb.py --input sqlite/subregions.sqlite3 --output duckdb/subregions.db
+python3 bin/import_duckdb.py --input sqlite/countries.sqlite3 --output duckdb/countries.db
+python3 bin/import_duckdb.py --input sqlite/states.sqlite3 --output duckdb/states.db
+python3 bin/import_duckdb.py --input sqlite/cities.sqlite3 --output duckdb/cities.db
+```
+
+The conversion script will create DuckDB database files that maintain the same structure and data as the original SQLite files, optimized for analytical workloads.
 
 ## License
 

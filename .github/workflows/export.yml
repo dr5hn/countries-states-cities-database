@@ -1,4 +1,4 @@
-name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/DUCKDB/SQLSERVER/MONGODB
+name: Export JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
 
 on:
   push:
@@ -15,7 +15,7 @@ on:
 
 jobs:
   export:
-    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/DUCKDB/SQLSERVER/MONGODB
+    name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
 
     strategy:
@@ -183,24 +183,7 @@ jobs:
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
-      - name: Setup DuckDB
-        run: |
-          pip install duckdb
 
-      - name: Export DuckDB
-        run: |
-          # Clean up any existing DuckDB files first
-          rm -rf duckdb/*.db
-          
-          # Convert SQLite to DuckDB format
-          python3 bin/import_duckdb.py --input sqlite/world.sqlite3 --output duckdb/world.db
-          
-          # Create individual table databases for consistency with other formats
-          python3 bin/import_duckdb.py --input sqlite/regions.sqlite3 --output duckdb/regions.db
-          python3 bin/import_duckdb.py --input sqlite/subregions.sqlite3 --output duckdb/subregions.db
-          python3 bin/import_duckdb.py --input sqlite/countries.sqlite3 --output duckdb/countries.db
-          python3 bin/import_duckdb.py --input sqlite/states.sqlite3 --output duckdb/states.db
-          python3 bin/import_duckdb.py --input sqlite/cities.sqlite3 --output duckdb/cities.db
 
       - name: Export SQL Server
         working-directory: ./bin
@@ -253,7 +236,7 @@ jobs:
             ✅ All export formats completed successfully:
             - JSON/XML/YAML/CSV: Structured data exports
             - MySQL/PostgreSQL: SQL dump exports  
-            - SQLite/DuckDB: Database file exports
+            - SQLite: Database file exports
             - SQL Server/MongoDB: Alternative format exports
             
             📊 Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
@@ -275,14 +258,13 @@ jobs:
             - **Cities**: ${{ env.city_count }}
             
             ### ✅ Generated Formats
-            - **JSON** - Structured data format
+- **JSON** - Structured data format
             - **XML** - Markup language format  
             - **YAML** - Human-readable format
             - **CSV** - Spreadsheet format
             - **MySQL** - Database dumps
             - **PostgreSQL** - Database dumps  
             - **SQLite** - Portable databases
-            - **DuckDB** - Analytical databases
             - **SQL Server** - T-SQL scripts
             - **MongoDB** - Collections + dump
             
