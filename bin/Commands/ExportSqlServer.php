@@ -82,6 +82,8 @@ class ExportSqlServer extends Command
                 longitude DECIMAL(11,8) NULL,
                 emoji NVARCHAR(191) NULL,
                 emojiU NVARCHAR(191) NULL,
+                population BIGINT NULL,
+                gdp BIGINT NULL,
                 created_at DATETIME2 NULL,
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,

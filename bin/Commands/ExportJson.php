@@ -74,6 +74,8 @@ class ExportJson extends Command
                     $countriesArray[$m]['currency_symbol'] = $row['currency_symbol'];
                     $countriesArray[$m]['tld'] = $row['tld'];
                     $countriesArray[$m]['native'] = $row['native'];
+                    $countriesArray[$m]['population'] = $row['population'] !== null ? (int)$row['population'] : null;
+                    $countriesArray[$m]['gdp'] = $row['gdp'] !== null ? (int)$row['gdp'] : null;
                     $countriesArray[$m]['region'] = $row['region'];
                     $countriesArray[$m]['region_id'] = $row['region_id'] !== null ? (int)$row['region_id'] : null;
                     $countriesArray[$m]['subregion'] = $row['subregion'];
@@ -106,6 +108,8 @@ class ExportJson extends Command
                 $countryStateCityArray[$k]['currency_symbol'] = $country['currency_symbol'];
                 $countryStateCityArray[$k]['tld'] = $country['tld'];
                 $countryStateCityArray[$k]['native'] = $country['native'];
+                $countryStateCityArray[$k]['population'] = $country['population'] !== null ? (int)$country['population'] : null;
+                $countryStateCityArray[$k]['gdp'] = $country['gdp'] !== null ? (int)$country['gdp'] : null;
                 $countryStateCityArray[$k]['region'] = $country['region'];
                 $countryStateCityArray[$k]['region_id'] = $country['region_id'] !== null ? (int)$country['region_id'] : null;
                 $countryStateCityArray[$k]['subregion'] = $country['subregion'];
@@ -148,6 +152,7 @@ class ExportJson extends Command
                         $statesArray[$i]['type'] = $state['type'];
                         $statesArray[$i]['level'] = $state['level'];
                         $statesArray[$i]['parent_id'] = $state['parent_id'];
+                        $statesArray[$i]['native'] = $state['native'];
                         $statesArray[$i]['latitude'] = $state['latitude'];
                         $statesArray[$i]['longitude'] = $state['longitude'];
                         $statesArray[$i]['timezone'] = $state['timezone'];
@@ -158,10 +163,11 @@ class ExportJson extends Command
                             'name' => $stateName,
                             'iso2' => $state['iso2'],
                             'iso3166_2' => $state['iso3166_2'],
+                            'native' => $state['native'],
                             'latitude' => $state['latitude'],
                             'longitude' => $state['longitude'],
                             'type' => $state['type'],
-                            'timezone' => $state['timezone']
+                            'timezone' => $state['timezone'],
                         );
 
                         array_push($stateNamesArray, $stateName);

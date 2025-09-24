@@ -38,6 +38,7 @@ Easily access all the tools and services in the Countries States Cities platform
 
 | Tool            | Description                                      | Link                                      |
 |-----------------|--------------------------------------------------|-------------------------------------------|
+| **Documentation** | Complete API documentation and guides           | [docs.countrystatecity.in](https://docs.countrystatecity.in/) |
 | **Demo Database** | Browse the full database online                  | [demo.countrystatecity.in](https://demo.countrystatecity.in/) |
 | **API Service**   | Programmatic access to countries, states, cities | [countrystatecity.in](https://countrystatecity.in/)           |
 | **Export Tool**   | Export data in multiple formats                  | [export.countrystatecity.in](https://export.countrystatecity.in/) |
@@ -47,7 +48,7 @@ Easily access all the tools and services in the Countries States Cities platform
 
 🎉 Introducing **API** for Countries States Cities Database.
 
-[API Documentation](https://countrystatecity.in/)
+[API Documentation](https://docs.countrystatecity.in/)
 
 [![banner](.github/api.png)](https://countrystatecity.in/)
 
