@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: world
 -- ------------------------------------------------------
--- Server version	8.0.43-0ubuntu0.24.04.1
+-- Server version	8.0.43-0ubuntu0.24.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -64,4 +64,4 @@ INSERT INTO `states` VALUES (1,'Southern Nations, Nationalities, and Peoples\'',
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-09-24  7:50:33
+-- Dump completed on 2025-10-07 10:31:14
