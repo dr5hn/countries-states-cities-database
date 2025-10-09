@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict sd2NKi8eSUpPicfHC8YYPcZjH4Kyi3YFcOZwUJnDPqlCycOeNI6dV5irmFdQThL
+\restrict BAKcHR83ccuwd9rkkSs3aghF5SHfVPKrBAeNa1FQ9CLvB98tEcpwnQLEmPMNgMl
 
 -- Dumped from database version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
 -- Dumped by pg_dump version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
@@ -2060,7 +2060,7 @@ INSERT INTO public.states VALUES (2148, 'Bartın', 225, 'TR', '87', '74', 'TR-74
 INSERT INTO public.states VALUES (2149, 'Kütahya', 225, 'TR', '43', '43', 'TR-43', 'province', 1, NULL, 'Kütahya', 39.25225080, 29.49377320, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:15:22', 1, 'Q126874');
 INSERT INTO public.states VALUES (2150, 'Sakarya', 225, 'TR', '54', '54', 'TR-54', 'province', 1, NULL, 'Sakarya', 40.77551880, 30.40208980, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:15:22', 1, 'Q83069');
 INSERT INTO public.states VALUES (2151, 'Edirne', 225, 'TR', '22', '22', 'TR-22', 'province', 1, NULL, 'Edirne', 41.18044990, 26.62224420, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:37', 1, 'Q83102');
-INSERT INTO public.states VALUES (2152, 'Van', 225, 'TR', '65', '65', 'TR-65', 'province', 1, NULL, 'Minibüs', 38.32495990, 43.65898250, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:37', 1, 'Q80550');
+INSERT INTO public.states VALUES (2152, 'Van', 225, 'TR', '65', '65', 'TR-65', 'province', 1, NULL, 'Van', 38.32495990, 43.65898250, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:37', 1, 'Q80550');
 INSERT INTO public.states VALUES (2153, 'Bingöl', 225, 'TR', '12', '12', 'TR-12', 'province', 1, NULL, 'Bingöl', 39.07380300, 40.72961810, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:40', 1, 'Q79760');
 INSERT INTO public.states VALUES (2154, 'Kilis', 225, 'TR', '90', '79', 'TR-79', 'province', 1, NULL, 'Kilis', 36.77972310, 37.14168920, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:40', 1, 'Q128978');
 INSERT INTO public.states VALUES (2155, 'Adıyaman', 225, 'TR', '02', '02', 'TR-02', 'province', 1, NULL, 'Adıyaman', 37.78936000, 38.31411010, 'Europe/Istanbul', '2019-10-05 21:48:46', '2025-09-19 10:16:40', 1, 'Q43924');
@@ -4949,7 +4949,7 @@ INSERT INTO public.states VALUES (5217, 'Midway Islands', 234, 'UM', NULL, '71',
 INSERT INTO public.states VALUES (5218, 'Navassa Island', 234, 'UM', NULL, '76', 'UM-76', 'island', 4, NULL, 'Navassa Island', 18.41006890, -75.01146120, 'America/Port-au-Prince', '2023-03-25 18:38:55', '2025-09-20 18:45:32', 1, 'Q25359');
 INSERT INTO public.states VALUES (5219, 'Palmyra Atoll', 234, 'UM', NULL, '95', 'UM-95', 'island', 4, NULL, 'Palmyra atoll', 5.88850260, -162.07866560, 'Etc/GMT+11', '2023-03-25 18:38:55', '2025-09-20 18:45:36', 1, 'Q123076');
 INSERT INTO public.states VALUES (5220, 'Wake Island', 234, 'UM', NULL, '79', 'UM-79', 'island', 4, NULL, 'Wake Island', 19.27961900, 166.64993480, 'Pacific/Wake', '2023-03-25 18:38:55', '2025-09-20 18:45:36', 1, 'Q43296');
-INSERT INTO public.states VALUES (5221, 'Asuncion', 172, 'PY', NULL, 'ASU', 'PY-ASU', 'capital', 2, NULL, 'Asunción', -25.28004590, -57.63438140, 'America/Asuncion', '2023-06-28 18:38:55', '2025-09-20 18:45:38', 1, 'Q2933');
+INSERT INTO public.states VALUES (5221, 'Asuncion', 172, 'PY', NULL, 'ASU', 'PY-ASU', 'department', NULL, NULL, 'Asunción', -25.28004590, -57.63438140, 'America/Asuncion', '2023-06-28 18:38:55', '2025-09-20 18:45:38', 1, 'Q2933');
 INSERT INTO public.states VALUES (5222, 'Canary Islands', 207, 'ES', 'IC', 'CN', 'ES-CN', 'autonomous community', NULL, NULL, 'Canarias', 28.29357850, -16.62144710, 'Atlantic/Canary', '2019-10-05 21:49:00', '2025-09-20 18:45:38', 1, 'Q5813');
 INSERT INTO public.states VALUES (5223, 'Ceuta', 207, 'ES', '', 'CE', 'ES-CE', 'autonomous city', NULL, NULL, 'Ceuta', 35.88836100, -5.30413800, 'Africa/Ceuta', '2023-07-28 16:19:31', '2025-09-20 18:45:39', 1, 'Q25212');
 INSERT INTO public.states VALUES (5224, 'Melilla', 207, 'ES', '', 'ML', 'ES-ML', 'autonomous city', NULL, NULL, 'Melilla', 35.29370000, -2.93830000, 'Africa/Ceuta', '2023-07-28 16:19:31', '2025-09-20 18:45:39', 1, 'Q131981');
@@ -5221,5 +5221,5 @@ ALTER TABLE ONLY public.states
 -- PostgreSQL database dump complete
 --
 
-\unrestrict sd2NKi8eSUpPicfHC8YYPcZjH4Kyi3YFcOZwUJnDPqlCycOeNI6dV5irmFdQThL
+\unrestrict BAKcHR83ccuwd9rkkSs3aghF5SHfVPKrBAeNa1FQ9CLvB98tEcpwnQLEmPMNgMl
 
