@@ -7,13 +7,17 @@ use Phinx\Migration\AbstractMigration;
 final class FixInvalidTimezones extends AbstractMigration
 {
     /**
-     * Fix invalid and inconsistent timezones in states table.
+     * Fix invalid and inconsistent timezones in states and countries tables.
      * Replace Etc/GMT timezones with proper IANA canonical timezones.
      * Replace America/Kralendijk (non-standard) with America/Curacao.
+     * Add missing canonical timezones to countries that should have them.
      */
     public function change(): void
     {
         $sql = "
+            -- FIX STATES TABLE
+            -- ================
+            
             -- Costa Rica (CR) - Puntarenas: Etc/GMT+6 → America/Costa_Rica
             UPDATE states SET timezone = 'America/Costa_Rica' WHERE id = 1210;
             
@@ -47,6 +51,24 @@ final class FixInvalidTimezones extends AbstractMigration
             
             -- Greenland (GL) - Qeqertalik: Etc/GMT+4 → America/Nuuk
             UPDATE states SET timezone = 'America/Nuuk' WHERE id = 5381;
+            
+            -- FIX COUNTRIES TABLE
+            -- ===================
+            
+            -- Update BQ (Bonaire, Sint Eustatius and Saba) to use America/Curacao
+            UPDATE countries 
+            SET timezones = '[{\"zoneName\":\"America/Curacao\",\"gmtOffset\":-14400,\"gmtOffsetName\":\"UTC-04:00\",\"abbreviation\":\"AST\",\"tzName\":\"Atlantic Standard Time\"}]'
+            WHERE iso2 = 'BQ';
+            
+            -- Add Africa/El_Aaiun to Morocco for Western Sahara
+            UPDATE countries 
+            SET timezones = '[{\"zoneName\":\"Africa/Casablanca\",\"gmtOffset\":3600,\"gmtOffsetName\":\"UTC+01:00\",\"abbreviation\":\"WEST\",\"tzName\":\"Western European Summer Time\"},{\"zoneName\":\"Africa/El_Aaiun\",\"gmtOffset\":3600,\"gmtOffsetName\":\"UTC+01:00\",\"abbreviation\":\"WEST\",\"tzName\":\"Western Sahara Time\"}]'
+            WHERE iso2 = 'MA';
+            
+            -- Add Arctic/Longyearbyen to Norway for Svalbard
+            UPDATE countries 
+            SET timezones = '[{\"zoneName\":\"Europe/Oslo\",\"gmtOffset\":3600,\"gmtOffsetName\":\"UTC+01:00\",\"abbreviation\":\"CET\",\"tzName\":\"Central European Time\"},{\"zoneName\":\"Arctic/Longyearbyen\",\"gmtOffset\":3600,\"gmtOffsetName\":\"UTC+01:00\",\"abbreviation\":\"CET\",\"tzName\":\"Central European Time\"}]'
+            WHERE iso2 = 'NO';
         ";
 
         $this->execute($sql);
