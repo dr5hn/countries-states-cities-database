@@ -191,16 +191,34 @@ The update tool allows you to:
 
 ### Alternative Manual Process
 
-If you prefer to contribute directly through GitHub, you can still follow these steps:
+If you prefer to contribute directly through GitHub, you can now use our **simplified JSON contribution workflow**:
 
-1. Fork the repository and clone it to your local machine
-2. Make the necessary changes to the data:
-   - To fix cities records, update the `sql/world.sql` > cities Table
-   - To fix states/provinces records, update the `sql/world.sql` > states Table
-   - To fix countries records, update the `sql/world.sql` > countries Table
-   - To fix regions records, update the `sql/world.sql` > regions Table
-   - To fix subregions records, update the `sql/world.sql` > subregions Table
-3. Once you've made the changes, create a pull request with a clear description of the modifications you've made
+#### 🎯 Easy JSON-based Contributions (Recommended)
+
+1. **Fork** the repository and clone it to your local machine
+2. **Make changes** to the data in the `contributions/` directory:
+   - **Cities**: Edit country-specific files in `contributions/cities/` (e.g., `US.json`, `IN.json`)
+   - **States**: Edit `contributions/states/states.json`
+   - **Countries**: Edit `contributions/countries/countries.json`
+3. **Add new records** without an `id` field - IDs are auto-generated!
+4. **Run the build script** to generate the database:
+   ```bash
+   python3 bin/build_from_contributions.py
+   ```
+5. **Create a pull request** with a clear description of your changes
+
+**📖 See [contributions/README.md](contributions/README.md) for detailed examples and field reference**
+
+#### Why JSON?
+- ✅ **Easy to edit** - Clear, readable format
+- ✅ **Organized by country** - Find cities quickly
+- ✅ **Auto-ID assignment** - No manual ID management
+- ✅ **Better for Git** - Clearer diffs and easier reviews
+- ✅ **Non-technical friendly** - Anyone can contribute!
+
+**Note:** JSON files in the `contributions/` directory are the source of truth. SQL files are automatically generated during the build process and should not be edited directly.
+
+---
 
 Please ensure your contributions align with our data standards and formatting. You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
 

@@ -1,4 +1,5 @@
 // schema.prisma
+// Updated to match current database schema
 
 datasource db {
   provider = "mysql"
@@ -10,12 +11,13 @@ generator client {
 }
 
 model Region {
-  id           Int        @id @default(autoincrement())
-  name         String     @unique
-  translations Json?
-  wikiDataId   String?
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  id           Int        @id @default(autoincrement()) @db.UnsignedMediumInt
+  name         String     @db.VarChar(255)
+  translations Json?      @db.Text
+  wikiDataId   String?    @db.VarChar(255)
+  flag         Boolean    @default(true) @db.TinyInt
+  createdAt    DateTime   @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt    DateTime   @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   countries    Country[]
   subregions   Subregion[]
@@ -24,15 +26,16 @@ model Region {
 }
 
 model Subregion {
-  id           Int       @id @default(autoincrement())
-  name         String    @unique
-  translations Json?
-  wikiDataId   String?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name         String    @db.VarChar(255)
+  translations Json?     @db.Text
+  wikiDataId   String?   @db.VarChar(255)
+  flag         Boolean   @default(true) @db.TinyInt
+  createdAt    DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   region       Region    @relation(fields: [regionId], references: [id])
-  regionId     Int
+  regionId     Int       @map("region_id") @db.UnsignedMediumInt
   countries    Country[]
 
   @@index([regionId])
@@ -40,34 +43,38 @@ model Subregion {
 }
 
 model Country {
-  id              Int      @id @default(autoincrement())
-  name            String
-  iso3            String   @unique @db.Char(3)
-  iso2            String   @unique @db.Char(2)
-  numericCode     String?  @db.Char(3)
-  phoneCode       String?
-  capital         String?
-  currency        String?
-  currencyName    String?
-  currencySymbol  String?
-  tld             String?
-  native          String?
-  region          String?
-  subregion       String?
-  latitude        Decimal? @db.Decimal(10, 8)
-  longitude       Decimal? @db.Decimal(11, 8)
-  emoji           String?
-  emojiU          String?
-  timezones       Json?
-  translations    Json?
-  wikiDataId      String?
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
+  id              Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name            String    @db.VarChar(255)
+  iso3            String?   @db.Char(3)
+  numericCode     String?   @map("numeric_code") @db.Char(3)
+  iso2            String?   @db.Char(2)
+  phonecode       String?   @db.VarChar(255)
+  capital         String?   @db.VarChar(255)
+  currency        String?   @db.VarChar(255)
+  currencyName    String?   @map("currency_name") @db.VarChar(255)
+  currencySymbol  String?   @map("currency_symbol") @db.VarChar(255)
+  tld             String?   @db.VarChar(255)
+  native          String?   @db.VarChar(255)
+  population      BigInt?   @db.BigInt
+  gdp             BigInt?   @db.BigInt
+  region          String?   @db.VarChar(255)
+  subregion       String?   @db.VarChar(255)
+  nationality     String?   @db.VarChar(255)
+  timezones       Json?     @db.Text
+  translations    Json?     @db.Text
+  latitude        Decimal?  @db.Decimal(10, 8)
+  longitude       Decimal?  @db.Decimal(11, 8)
+  emoji           String?   @db.VarChar(191)
+  emojiU          String?   @db.VarChar(191)
+  wikiDataId      String?   @db.VarChar(255)
+  flag            Boolean   @default(true) @db.TinyInt
+  createdAt       DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt       DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   regionRelation    Region?    @relation(fields: [regionId], references: [id])
-  regionId          Int?
+  regionId          Int?       @map("region_id") @db.UnsignedMediumInt
   subregionRelation Subregion? @relation(fields: [subregionId], references: [id])
-  subregionId       Int?
+  subregionId       Int?       @map("subregion_id") @db.UnsignedMediumInt
 
   states           State[]
   cities           City[]
@@ -78,20 +85,27 @@ model Country {
 }
 
 model State {
-  id         Int      @id @default(autoincrement())
-  name       String
-  countryCode String  @db.Char(2)
-  fipsCode   String?
-  iso2       String?
-  type       String?
-  latitude   Decimal? @db.Decimal(10, 8)
-  longitude  Decimal? @db.Decimal(11, 8)
-  wikiDataId String?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id          Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name        String    @db.VarChar(255)
+  countryCode String    @map("country_code") @db.Char(2)
+  fipsCode    String?   @map("fips_code") @db.VarChar(255)
+  iso2        String?   @db.VarChar(255)
+  iso3166_2   String?   @db.VarChar(255)
+  type        String?   @db.VarChar(191)
+  level       Int?      @db.Int
+  parentId    Int?      @map("parent_id") @db.UnsignedMediumInt
+  native      String?   @db.VarChar(255)
+  latitude    Decimal?  @db.Decimal(10, 8)
+  longitude   Decimal?  @db.Decimal(11, 8)
+  timezone    String?   @db.VarChar(255)
+  translations Json?   @db.Text
+  wikiDataId  String?   @db.VarChar(255)
+  flag        Boolean   @default(true) @db.TinyInt
+  createdAt   DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   country    Country  @relation(fields: [countryId], references: [id])
-  countryId  Int
+  countryId  Int      @map("country_id") @db.UnsignedMediumInt
   cities     City[]
 
   @@index([countryId])
@@ -99,20 +113,24 @@ model State {
 }
 
 model City {
-  id          Int      @id @default(autoincrement())
-  name        String
-  stateCode   String
-  countryCode String   @db.Char(2)
+  id          Int      @id @default(autoincrement()) @db.UnsignedMediumInt
+  name        String   @db.VarChar(255)
+  stateCode   String   @map("state_code") @db.VarChar(255)
+  countryCode String   @map("country_code") @db.Char(2)
   latitude    Decimal  @db.Decimal(10, 8)
   longitude   Decimal  @db.Decimal(11, 8)
-  wikiDataId  String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  native      String?  @db.VarChar(255)
+  timezone    String?  @db.VarChar(255)
+  translations Json?   @db.Text
+  wikiDataId  String?  @db.VarChar(255)
+  flag        Boolean  @default(true) @db.TinyInt
+  createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   state       State    @relation(fields: [stateId], references: [id])
-  stateId     Int
+  stateId     Int      @map("state_id") @db.UnsignedMediumInt
   country     Country  @relation(fields: [countryId], references: [id])
-  countryId   Int
+  countryId   Int      @map("country_id") @db.UnsignedMediumInt
 
   @@index([stateId])
   @@index([countryId])

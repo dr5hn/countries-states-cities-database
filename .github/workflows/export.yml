@@ -88,14 +88,47 @@ jobs:
           # Verify installation
           mongoimport --version
 
-      - name: Add clean commands to world.sql
+      - name: Build from Contributions
         run: |
-          grep -v "DROP TABLE" sql/world.sql > tmpfile && mv tmpfile sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`regions\`;\n\n$(cat sql/world.sql)" > sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`subregions\`;\n$(cat sql/world.sql)" > sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`countries\`;\n$(cat sql/world.sql)" > sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`states\`;\n$(cat sql/world.sql)" > sql/world.sql
-          echo -e "DROP TABLE IF EXISTS \`cities\`;\n$(cat sql/world.sql)" > sql/world.sql
+          echo "🏗️  Building database from contributions..."
+          python3 bin/build_from_contributions.py
+          echo "✅ Build complete"
+
+      - name: Generate SQL from JSON
+        run: |
+          echo "📝 Generating SQL files from JSON..."
+          python3 bin/inject_json_to_mysql.py
+          echo "✅ SQL generation complete"
+
+      - name: Combine SQL files into world.sql
+        run: |
+          echo "📦 Combining SQL files..."
+          # Create header with DROP TABLE commands
+          cat > sql/world.sql << 'EOF'
+          -- -------------------------------------------------------------
+          -- Generated from contributions/
+          -- Combined world database
+          -- -------------------------------------------------------------
+
+          /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+          /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+          /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+          /*!40101 SET NAMES utf8mb4 */;
+          /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+          /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+          /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+          /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+          DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `states`;
+          DROP TABLE IF EXISTS `countries`;
+          DROP TABLE IF EXISTS `subregions`;
+          DROP TABLE IF EXISTS `regions`;
+
+          EOF
+          # Append all table SQL files (they already have CREATE TABLE and INSERT)
+          cat sql/regions.sql sql/subregions.sql sql/countries.sql sql/states.sql sql/cities.sql >> sql/world.sql
+          echo "✅ world.sql created"
 
       - name: Setup MySQL DB
         run: |
@@ -137,6 +170,18 @@ jobs:
         working-directory: ./bin
         run: php console export:json
 
+      - name: Compress Large JSON Files
+        run: |
+          echo "🗜️  Compressing large JSON files..."
+          # Compress countries+states+cities.json (42MB - creates .json.gz)
+          if [ -f json/countries+states+cities.json ]; then
+            gzip -9 -k json/countries+states+cities.json
+            ls -lh json/countries+states+cities.json.gz
+          fi
+          # Note: countries.json, states.json, cities.json are NOT compressed
+          # as they are actively used by the build process
+          echo "✅ JSON compression complete"
+
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
@@ -158,6 +203,30 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
 
+      - name: Generate Schema Files
+        run: |
+          echo "📋 Generating schema files..."
+          # Export MySQL schema only (no data)
+          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sql/schema.sql
+          # Also export for other formats
+          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > psql/schema.sql
+          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sqlserver/schema.sql
+          echo "✅ Schema files generated"
+
+      - name: Compress Large SQL Files
+        run: |
+          echo "🗜️  Compressing large SQL files..."
+          # Compress world.sql (creates world.sql.gz, keeps original)
+          gzip -9 -k sql/world.sql
+          # Compress cities.sql (creates cities.sql.gz, keeps original)
+          gzip -9 -k sql/cities.sql
+          # Show file sizes
+          echo "Original files:"
+          ls -lh sql/world.sql sql/cities.sql
+          echo "Compressed files:"
+          ls -lh sql/world.sql.gz sql/cities.sql.gz
+          echo "✅ Compression complete"
+
       - name: Export PostgreSQL SQL
         env:
           PGPASSWORD: postgres
@@ -170,12 +239,22 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t cities > psql/cities.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists > psql/world.sql
 
+      - name: Compress Large PostgreSQL Files
+        run: |
+          echo "🗜️  Compressing large PostgreSQL files..."
+          # Creates world.sql.gz and cities.sql.gz
+          gzip -9 -k psql/world.sql
+          gzip -9 -k psql/cities.sql
+          echo "Compressed files:"
+          ls -lh psql/world.sql.gz psql/cities.sql.gz
+          echo "✅ PostgreSQL compression complete"
+
       - name: Export SQLite
         run: |
           # Clean up any existing SQLite files first
           rm -rf sqlite/
           mkdir -p sqlite
-          
+
           mysql2sqlite -d world -t regions --mysql-password root -u root -f sqlite/regions.sqlite3
           mysql2sqlite -d world -t subregions --mysql-password root -u root -f sqlite/subregions.sqlite3
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
@@ -183,11 +262,36 @@ jobs:
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
+      - name: Compress Large SQLite Files
+        run: |
+          echo "🗜️  Compressing large SQLite files..."
+          # Compress world.sqlite3 (creates world.sqlite3.gz)
+          gzip -9 -k sqlite/world.sqlite3
+          # Compress cities.sqlite3 (creates cities.sqlite3.gz)
+          gzip -9 -k sqlite/cities.sqlite3
+          echo "Compressed files:"
+          ls -lh sqlite/world.sqlite3.gz sqlite/cities.sqlite3.gz
+          echo "✅ SQLite compression complete"
+
 
 
       - name: Export SQL Server
         working-directory: ./bin
         run: php console export:sql-server
+
+      - name: Compress Large SQL Server Files
+        run: |
+          echo "🗜️  Compressing large SQL Server files..."
+          # Creates world.sql.gz and cities.sql.gz
+          if [ -f sqlserver/world.sql ]; then
+            gzip -9 -k sqlserver/world.sql
+            ls -lh sqlserver/world.sql.gz
+          fi
+          if [ -f sqlserver/cities.sql ]; then
+            gzip -9 -k sqlserver/cities.sql
+            ls -lh sqlserver/cities.sql.gz
+          fi
+          echo "✅ SQL Server compression complete"
 
       - name: Export MongoDB
         working-directory: ./bin

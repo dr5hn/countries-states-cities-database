@@ -5,13 +5,57 @@
 The following is a set of guidelines for contributing to Contributing to Country State City Database. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## How Can I Contribute?
-### Fixing Data By Yourself
-If you want to fix some data and raise a pull request
-- To fix cities records, update the `sql/world.sql` > cities Table.
-- To fix states/provinces records, update the `sql/world.sql` > states Table.
-- To fix countries records, update the `sql/world.sql` > countries Table.
-- To fix regions records, update the `sql/world.sql` > regions Table.
-- To fix subregions records, update the `sql/world.sql` > subregions Table.
+
+### 🎯 Recommended: Using JSON Contribution Files (Easy for Everyone!)
+
+We've made contributing easier! You can now edit simple JSON files organized by country:
+
+#### Adding or Editing Cities
+- **Navigate to** `contributions/cities/` directory
+- **Find your country file** (e.g., `US.json` for United States, `IN.json` for India)
+- **Add or edit cities** in easy-to-read JSON format
+
+**Adding a NEW city** (omit the `id` field):
+```json
+{
+    "name": "New City",
+    "state_id": 1416,
+    "state_code": "CA",
+    "country_id": 233,
+    "country_code": "US",
+    "latitude": "37.77490000",
+    "longitude": "-122.41940000",
+    "timezone": "America/Los_Angeles"
+}
+```
+
+**Editing an EXISTING city** (keep the `id` field):
+```json
+{
+    "id": 1234,
+    "name": "Updated City Name",
+    "state_id": 1416,
+    ...
+}
+```
+
+#### Adding or Editing Countries
+- Edit `contributions/countries/countries.json`
+- Omit `id` field for new countries
+
+#### Adding or Editing States
+- Edit `contributions/states/states.json`
+- Omit `id` field for new states
+
+**📖 For detailed instructions, see [contributions/README.md](../contributions/README.md)**
+
+#### After Making Changes
+Run the build script to generate the database:
+```bash
+python3 bin/build_from_contributions.py
+```
+
+**Note:** SQL files are automatically generated from the JSON contribution files during the build process. Please do not edit SQL files directly.
 
 ## Glance at Table Structure
 
