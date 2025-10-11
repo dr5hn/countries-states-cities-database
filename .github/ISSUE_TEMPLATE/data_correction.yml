@@ -1,0 +1,90 @@
+name: 📝 Data Correction
+description: Report incorrect or outdated data (simplified)
+title: "[Data]: "
+labels: ["data-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Quick Data Correction
+        Use this form for simple data corrections. For complex issues, use the Bug Report template.
+
+        💡 **Tip**: You can also use our [CSC Update Tool](https://manager.countrystatecity.in/) for easier submissions!
+
+  - type: dropdown
+    id: entity-type
+    attributes:
+      label: What needs correction?
+      options:
+        - City
+        - State/Province
+        - Country
+        - Region
+    validations:
+      required: true
+
+  - type: input
+    id: entity-name
+    attributes:
+      label: Entity Name
+      description: Name of the city/state/country
+      placeholder: "e.g., San Francisco"
+    validations:
+      required: true
+
+  - type: input
+    id: parent-entity
+    attributes:
+      label: Parent Entity
+      description: State/Country where this entity is located
+      placeholder: "e.g., California, United States"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: Which field needs correction?
+      options:
+        - Name (spelling/translation)
+        - Coordinates (latitude/longitude)
+        - Timezone
+        - Code (ISO, state code, etc.)
+        - Population
+        - Capital
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: current-value
+    attributes:
+      label: Current (Incorrect) Value
+      placeholder: What is currently in the database?
+    validations:
+      required: true
+
+  - type: input
+    id: correct-value
+    attributes:
+      label: Correct Value
+      placeholder: What should it be?
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source URL
+      description: Link to WikiData, Wikipedia, or official source
+      placeholder: "https://www.wikidata.org/wiki/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any extra context or information
+    validations:
+      required: false

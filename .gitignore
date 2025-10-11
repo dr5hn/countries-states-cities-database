@@ -20,3 +20,33 @@ mongodb/*.json
 nmig/logs_directory/
 nmig/dist/
 nmig/node_modules/
+
+# Exclude uncompressed large SQL files to avoid GitHub file size limits
+# Keep the .gz compressed versions only
+sql/world.sql
+sql/cities.sql
+psql/world.sql
+psql/cities.sql
+sqlserver/world.sql
+sqlserver/cities.sql
+
+# Exclude uncompressed large SQLite files
+sqlite/world.sqlite3
+sqlite/cities.sqlite3
+
+# Exclude uncompressed large JSON combined files
+json/countries+states+cities.json
+
+# Keep these JSON files - they are actively used by build process
+# countries.json, states.json, cities.json are NOT excluded
+
+# Keep schema files - they are small and useful
+!sql/schema.sql
+!psql/schema.sql
+!sqlserver/schema.sql
+
+# Always track ALL compressed files (.gz)
+!*.sql.gz
+!*.json.gz
+!*.sqlite3.gz
+.claude*

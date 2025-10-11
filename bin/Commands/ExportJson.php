@@ -156,6 +156,8 @@ class ExportJson extends Command
                         $statesArray[$i]['latitude'] = $state['latitude'];
                         $statesArray[$i]['longitude'] = $state['longitude'];
                         $statesArray[$i]['timezone'] = $state['timezone'];
+                        $statesArray[$i]['translations'] = json_decode($state['translations'], true);
+                        $statesArray[$i]['wikiDataId'] = $state['wikiDataId'];
 
                         // For Country State Array
                         $stateArr = array(
@@ -194,6 +196,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['latitude'] = $city['latitude'];
                                 $citiesArray[$j]['longitude'] = $city['longitude'];
                                 $citiesArray[$j]['timezone'] = $city['timezone'];
+                                $citiesArray[$j]['translations'] = json_decode($city['translations'], true);
                                 $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];
 
                                 // For State City Array

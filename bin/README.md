@@ -6,12 +6,16 @@ This directory contains the command-line interface (CLI) tools for managing and 
 
 ```
 bin/
-├── Commands/        # Command classes for different export formats
-├── Support/         # Support classes (Config, Env)
-├── config/         # Configuration files (app.yaml, phinx.yaml)
-├── db/             # Database migrations
-├── console         # Main CLI entry point
-└── README.md       # This file
+├── Commands/                    # PHP export command classes
+├── Support/                     # Support classes (Config, Env)
+├── config/                      # Configuration files (app.yaml, phinx.yaml)
+├── db/                          # Database migrations
+├── scripts/                     # Python scripts (organized by purpose)
+│   ├── sync/                    # Bidirectional MySQL ↔ JSON sync
+│   ├── export/                  # Format conversion and export
+│   └── README.md                # Python scripts documentation
+├── console                      # Main CLI entry point (PHP)
+└── README.md                    # This file
 ```
 
 ## Available Commands
@@ -99,6 +103,85 @@ php console manage:breakpoint # Set/unset breakpoint
 php console seed:create      # Create a new seeder
 php console seed:run         # Run database seeds
 ```
+
+### Python Scripts
+
+Python scripts are organized in `scripts/` directory by purpose. See [scripts/README.md](scripts/README.md) for detailed documentation.
+
+#### Sync Scripts (`scripts/sync/`)
+```bash
+# MySQL → JSON (dynamic schema detection)
+python3 scripts/sync/sync_mysql_to_json.py
+
+# JSON → MySQL (auto schema updates)
+python3 scripts/sync/import_json_to_mysql.py [--host HOST --user USER --password PASS]
+```
+
+#### Export Scripts (`scripts/export/`)
+```bash
+# DuckDB export
+python3 scripts/export/import_duckdb.py --input sqlite/world.sqlite3 --output duckdb/world.db
+
+# Apple PLIST export
+python3 scripts/export/export_plist.py
+```
+
+**Requirements**: `pip install mysql-connector-python duckdb`
+
+**📚 Full Python scripts documentation**: See [scripts/README.md](scripts/README.md)
+
+## Bidirectional Workflow
+
+The repository now supports **two contribution workflows**:
+
+### Workflow 1: JSON-First (For Contributors via GitHub Actions)
+```bash
+# 1. Edit JSON files in contributions/
+vim contributions/cities/US.json
+
+# 2. Commit and push
+git add contributions/
+git commit -m "feat: add new cities"
+git push
+
+# 3. GitHub Actions automatically:
+#    - Imports to MySQL (import_json_to_mysql.py) - IDs auto-assigned by MySQL
+#    - Exports from MySQL (php console export:json, export:csv, etc.)
+#    - Creates PR with all updated exports
+```
+
+### Workflow 2: SQL-First (For Maintainers)
+```bash
+# 1. Start MySQL and edit database directly
+sudo systemctl start mysql.service
+mysql -uroot -proot world
+# ... make your changes ...
+
+# 2. Sync MySQL back to JSON
+python3 bin/scripts/sync/sync_mysql_to_json.py
+
+# 3. Review and commit
+git diff
+git add contributions/
+git commit -m "feat: add new cities to database"
+
+# 4. Push - GitHub Actions will handle exports
+git push
+```
+
+### Schema Evolution Handling
+
+When you add NEW columns to your database or JSON:
+
+**If you added column in MySQL:**
+1. Run `python3 bin/scripts/sync/sync_mysql_to_json.py` - it will auto-detect and include new columns
+2. Commit the updated JSON files
+
+**If you added column in JSON:**
+1. Run `python3 bin/scripts/sync/import_json_to_mysql.py` - it will auto-detect and add new columns to MySQL
+2. The schema is updated automatically with proper data types
+
+Both scripts use **dynamic schema detection** - no need to manually update code when adding fields!
 
 ## Configuration
 
