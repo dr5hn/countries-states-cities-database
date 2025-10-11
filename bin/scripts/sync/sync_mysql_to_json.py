@@ -226,14 +226,15 @@ def main():
 
     # Change to project root directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(script_dir)
+    # Go up 3 levels: sync/ -> scripts/ -> bin/ -> project_root
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_dir)))
     os.chdir(project_root)
 
     # Initialize sync
     syncer = MySQLToJSONSync(
         host='localhost',
         user='root',
-        password='root',
+        password='',
         database='world'
     )
 
