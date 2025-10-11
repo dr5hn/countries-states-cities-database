@@ -3,10 +3,11 @@
 MySQL to JSON Sync Script - Bidirectional Bridge for Local Development
 
 This script syncs data from MySQL database back to contribution JSON files.
-It dynamically detects schema changes and preserves all columns from the database.
+It exports ALL columns from MySQL with no exclusions, creating an exact mirror
+of the database state in the contributions/ directory.
 
 Usage:
-    python3 bin/sync_mysql_to_json.py
+    python3 bin/scripts/sync/sync_mysql_to_json.py
 
 Requirements:
     pip install mysql-connector-python
@@ -49,10 +50,13 @@ class MySQLToJSONSync:
 
     def get_excluded_columns(self) -> Set[str]:
         """Columns to exclude from JSON export (internal database fields)"""
-        return {'created_at', 'updated_at', 'flag'}
+        # Export all columns from MySQL to contributions JSON files for exact mirroring
+        return set()
 
     def process_row(self, row: Dict[str, Any], columns: List[str], excluded: Set[str]) -> OrderedDict:
         """Process a database row into JSON-friendly format"""
+        from datetime import datetime, date
+
         result = OrderedDict()
 
         for col in columns:
@@ -66,8 +70,11 @@ class MySQLToJSONSync:
                 result[col] = None
                 continue
 
+            # Handle datetime fields
+            if isinstance(value, (datetime, date)):
+                result[col] = value.isoformat()
             # Handle JSON text fields (timezones, translations)
-            if col in ['timezones', 'translations'] and isinstance(value, str):
+            elif col in ['timezones', 'translations'] and isinstance(value, str):
                 try:
                     result[col] = json.loads(value)
                 except json.JSONDecodeError:
@@ -255,7 +262,6 @@ def main():
         print(f"   📍 Cities: {cities_count:,}")
         print("\n💡 Next steps:")
         print("   1. Review changes: git diff")
-        print("   2. Build JSON: python3 bin/build_from_contributions.py")
         print("   3. Commit: git add . && git commit -m 'sync: update from MySQL'")
 
     except Exception as e:

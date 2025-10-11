@@ -2,14 +2,20 @@
 """
 JSON to MySQL Importer - Dynamic Schema Support
 
-This script imports JSON files to MySQL with dynamic column detection.
-It auto-detects new columns in JSON and adds them to MySQL schema.
+This script imports JSON files from the contributions/ directory to MySQL
+with dynamic column detection. It auto-detects new columns in JSON and adds
+them to MySQL schema.
+
+Source Data:
+    - Countries: contributions/countries/countries.json
+    - States: contributions/states/states.json
+    - Cities: contributions/cities/*.json (209+ country-specific files)
 
 Usage:
-    python3 bin/import_json_to_mysql.py
+    python3 bin/scripts/sync/import_json_to_mysql.py
 
 For GitHub Actions (with environment variables):
-    python3 bin/import_json_to_mysql.py --host $DB_HOST --user $DB_USER --password $DB_PASSWORD
+    python3 bin/scripts/sync/import_json_to_mysql.py --host $DB_HOST --user $DB_USER --password $DB_PASSWORD
 
 Requirements:
     pip install mysql-connector-python
@@ -106,12 +112,20 @@ class JSONToMySQLImporter:
         existing_columns = set(self.get_table_columns(table_name).keys())
         json_fields = set()
 
+        # Define table-specific redundant relationship fields that should never be added
+        # These fields are redundant because we already have _id and _code fields
+        redundant_fields = set()
+        if table_name == 'cities':
+            redundant_fields = {'country_name', 'state_name'}
+        elif table_name == 'states':
+            redundant_fields = {'country_name'}
+
         # Collect all fields from all records
         for record in json_data:
             json_fields.update(record.keys())
 
-        # Find new columns
-        new_columns = json_fields - existing_columns
+        # Find new columns (exclude redundant relationship fields)
+        new_columns = json_fields - existing_columns - redundant_fields
 
         if not new_columns:
             return {}
@@ -178,8 +192,15 @@ class JSONToMySQLImporter:
         # Get current column list
         columns = list(self.get_table_columns(table_name).keys())
 
-        # Remove auto-managed columns
-        insert_columns = [c for c in columns if c not in ['created_at', 'updated_at', 'flag']]
+        # Define table-specific fields to skip during import
+        skip_fields = {'created_at', 'updated_at', 'flag'}
+        if table_name == 'cities':
+            skip_fields.update({'country_name', 'state_name'})
+        elif table_name == 'states':
+            skip_fields.add('country_name')
+
+        # Remove auto-managed and redundant fields
+        insert_columns = [c for c in columns if c not in skip_fields]
 
         # Clear existing data (for full replacement)
         print(f"  🗑️  Truncating existing data...")
@@ -222,18 +243,105 @@ class JSONToMySQLImporter:
 
     def import_countries(self):
         """Import countries from JSON"""
-        json_file = os.path.join('json', 'countries.json')
+        json_file = os.path.join('contributions', 'countries', 'countries.json')
         return self.import_table('countries', json_file)
 
     def import_states(self):
         """Import states from JSON"""
-        json_file = os.path.join('json', 'states.json')
+        json_file = os.path.join('contributions', 'states', 'states.json')
         return self.import_table('states', json_file)
 
     def import_cities(self):
-        """Import cities from JSON"""
-        json_file = os.path.join('json', 'cities.json')
-        return self.import_table('cities', json_file)
+        """Import cities from individual country JSON files"""
+        print(f"\n📦 Importing cities from contributions/cities/*.json")
+
+        cities_dir = os.path.join('contributions', 'cities')
+        if not os.path.exists(cities_dir):
+            print(f"  ❌ Directory not found: {cities_dir}")
+            return 0
+
+        # Collect all city JSON files
+        city_files = sorted([f for f in os.listdir(cities_dir) if f.endswith('.json')])
+
+        if not city_files:
+            print(f"  ⚠ No city JSON files found in {cities_dir}")
+            return 0
+
+        print(f"  📂 Found {len(city_files)} country files to process")
+
+        # Load and merge all city data
+        all_cities = []
+        for city_file in city_files:
+            file_path = os.path.join(cities_dir, city_file)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    cities = json.load(f)
+                    if isinstance(cities, list):
+                        all_cities.extend(cities)
+                        print(f"  ✓ Loaded {len(cities):,} cities from {city_file}")
+                    else:
+                        print(f"  ⚠ Skipping {city_file}: Not a valid array")
+            except Exception as e:
+                print(f"  ❌ Error loading {city_file}: {e}")
+
+        if not all_cities:
+            print(f"  ⚠ No cities loaded from any files")
+            return 0
+
+        print(f"\n  📊 Total cities to import: {len(all_cities):,}")
+
+        # Detect and add new columns
+        new_columns = self.detect_new_columns('cities', all_cities)
+        if new_columns:
+            self.add_columns_to_table('cities', new_columns)
+
+        # Get current column list
+        columns = list(self.get_table_columns('cities').keys())
+
+        # Define fields to skip during import for cities table
+        skip_fields = {'created_at', 'updated_at', 'flag', 'country_name', 'state_name'}
+
+        # Remove auto-managed and redundant fields
+        insert_columns = [c for c in columns if c not in skip_fields]
+
+        # Clear existing data (for full replacement)
+        print(f"  🗑️  Truncating existing data...")
+        self.cursor.execute(f"SET FOREIGN_KEY_CHECKS=0")
+        self.cursor.execute(f"TRUNCATE TABLE cities")
+        self.cursor.execute(f"SET FOREIGN_KEY_CHECKS=1")
+
+        # Prepare insert statement
+        placeholders = ', '.join(['%s'] * len(insert_columns))
+        column_names = ', '.join([f'`{c}`' for c in insert_columns])
+        insert_sql = f"INSERT INTO cities ({column_names}) VALUES ({placeholders})"
+
+        # Batch insert
+        batch_size = 1000
+        inserted = 0
+
+        for i in range(0, len(all_cities), batch_size):
+            batch = all_cities[i:i + batch_size]
+            values = []
+
+            for record in batch:
+                row = []
+                for col in insert_columns:
+                    value = record.get(col)
+                    row.append(self.prepare_value(value, col))
+                values.append(tuple(row))
+
+            try:
+                self.cursor.executemany(insert_sql, values)
+                self.conn.commit()
+                inserted += len(values)
+                print(f"  ✓ Inserted {inserted:,} / {len(all_cities):,} records...", end='\r')
+            except mysql.connector.Error as e:
+                print(f"\n  ❌ Insert failed at record {inserted}: {e}")
+                self.conn.rollback()
+                raise
+
+        print(f"\n  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
+        return inserted
 
     def import_regions(self):
         """Import regions from JSON"""
@@ -264,7 +372,7 @@ def main():
     parser = argparse.ArgumentParser(description='Import JSON to MySQL with dynamic schema support')
     parser.add_argument('--host', default='localhost', help='MySQL host')
     parser.add_argument('--user', default='root', help='MySQL user')
-    parser.add_argument('--password', default='root', help='MySQL password')
+    parser.add_argument('--password', default='', help='MySQL password')
     parser.add_argument('--database', default='world', help='MySQL database')
     args = parser.parse_args()
 
@@ -273,7 +381,8 @@ def main():
 
     # Change to project root directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    project_root = os.path.dirname(script_dir)
+    # Script is in bin/scripts/sync/, so go up 3 levels to reach project root
+    project_root = os.path.dirname(os.path.dirname(os.path.dirname(script_dir)))
     os.chdir(project_root)
 
     # Initialize importer
