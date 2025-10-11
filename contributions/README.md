@@ -88,26 +88,23 @@ Edit `contributions/states/states.json` and add your state:
 
 **Note:** Omit the `id` field for new states - it will be auto-assigned.
 
-## 🛠️ Build Process
+## 🛠️ Submission Process
 
-After making changes to the contribution files, run the build script to generate the final database:
+**For External Contributors:**
 
-```bash
-python3 bin/build_from_contributions.py
-```
+Simply create a pull request with your JSON changes! You don't need to run any build scripts locally.
 
-This will:
-1. ✅ Combine all country city files into one `json/cities.json`
-2. ✅ Auto-assign IDs to new records (those without `id` field)
-3. ✅ Copy countries and states to `json/` directory
-4. ✅ Validate data integrity
+**What happens after you submit:**
+1. ✅ Maintainers review your JSON changes
+2. ✅ GitHub Actions imports to MySQL (IDs auto-assigned by database)
+3. ✅ All export formats (JSON, CSV, SQL, XML, YAML) are regenerated
+4. ✅ Your PR is automatically updated with all exports
 
-Then run the export commands to generate SQL, CSV, and other formats:
-
-```bash
-cd bin
-php console db:export
-```
+**Important:**
+- ✅ **DO**: Edit JSON files in `contributions/` directory
+- ❌ **DON'T**: Edit SQL, CSV, XML, YAML files (auto-generated)
+- ❌ **DON'T**: Run build scripts locally (GitHub Actions handles this)
+- 🔒 **MySQL workflow**: Reserved for maintainers only
 
 ## 📋 Field Reference
 
@@ -171,15 +168,15 @@ Example:
 2. **One change at a time** - Make focused contributions for easier review
 3. **Use official sources** - Reference WikiData, Wikipedia, or official government sources
 4. **Keep formatting** - Maintain the indentation (2 spaces) and structure
-5. **Test your changes** - Run the build script to ensure no errors
+5. **Validate JSON** - Ensure your JSON is valid before submitting
 
 ## 🤝 Submitting Your Contribution
 
 1. **Fork** the repository
 2. **Make your changes** in the `contributions/` directory
-3. **Run the build script** to verify everything works
-4. **Commit your changes** with a clear message
-5. **Create a pull request** with a description of what you changed
+3. **Commit your changes** with a clear message
+4. **Create a pull request** with a description of what you changed
+5. **Wait for GitHub Actions** to run - it will automatically generate all exports
 
 ## 📞 Need Help?
 

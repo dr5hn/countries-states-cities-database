@@ -88,53 +88,24 @@ jobs:
           # Verify installation
           mongoimport --version
 
-      - name: Build from Contributions
-        run: |
-          echo "🏗️  Building database from contributions..."
-          python3 bin/build_from_contributions.py
-          echo "✅ Build complete"
-
-      - name: Generate SQL from JSON
-        run: |
-          echo "📝 Generating SQL files from JSON..."
-          python3 bin/inject_json_to_mysql.py
-          echo "✅ SQL generation complete"
-
-      - name: Combine SQL files into world.sql
-        run: |
-          echo "📦 Combining SQL files..."
-          # Create header with DROP TABLE commands
-          cat > sql/world.sql << 'EOF'
-          -- -------------------------------------------------------------
-          -- Generated from contributions/
-          -- Combined world database
-          -- -------------------------------------------------------------
-
-          /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-          /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-          /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-          /*!40101 SET NAMES utf8mb4 */;
-          /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-          /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-          /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-          /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-          DROP TABLE IF EXISTS `cities`;
-          DROP TABLE IF EXISTS `states`;
-          DROP TABLE IF EXISTS `countries`;
-          DROP TABLE IF EXISTS `subregions`;
-          DROP TABLE IF EXISTS `regions`;
-
-          EOF
-          # Append all table SQL files (they already have CREATE TABLE and INSERT)
-          cat sql/regions.sql sql/subregions.sql sql/countries.sql sql/states.sql sql/cities.sql >> sql/world.sql
-          echo "✅ world.sql created"
-
       - name: Setup MySQL DB
         run: |
+          echo "🗄️  Creating MySQL database..."
           mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
           mysql -uroot -proot -e "SHOW DATABASES;"
-          mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
+          echo "✅ Database created"
+
+      - name: Setup Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mysql-connector-python
+          echo "✅ Python dependencies installed"
+
+      - name: Import JSON to MySQL
+        run: |
+          echo "📥 Importing contributions to MySQL..."
+          python3 bin/scripts/sync/import_json_to_mysql.py --host localhost --user root --password root --database world
+          echo "✅ Import complete - IDs auto-assigned by MySQL"
 
       - name: Setup & Run NMIG (MySQL to PostgreSQL)
         run: |
@@ -202,6 +173,32 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
+          # Export complete world database
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
+
+      - name: Add DROP TABLE commands to world.sql
+        run: |
+          echo "🧹 Adding DROP TABLE commands in correct order..."
+          # Remove any existing DROP TABLE commands
+          grep -v "DROP TABLE" sql/world.sql > sql/world_temp.sql
+          # Create new file with DROP TABLE commands in correct order (reverse of foreign key dependencies)
+          cat > sql/world.sql << 'EOF'
+          -- -------------------------------------------------------------
+          -- Generated from MySQL database
+          -- Combined world database
+          -- -------------------------------------------------------------
+
+          DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `states`;
+          DROP TABLE IF EXISTS `countries`;
+          DROP TABLE IF EXISTS `subregions`;
+          DROP TABLE IF EXISTS `regions`;
+
+          EOF
+          # Append the dump without DROP TABLE commands
+          cat sql/world_temp.sql >> sql/world.sql
+          rm sql/world_temp.sql
+          echo "✅ DROP TABLE commands added"
 
       - name: Generate Schema Files
         run: |
