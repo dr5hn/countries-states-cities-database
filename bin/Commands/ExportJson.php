@@ -87,6 +87,7 @@ class ExportJson extends Command
                     $countriesArray[$m]['longitude'] = $row['longitude'];
                     $countriesArray[$m]['emoji'] = $row['emoji'];
                     $countriesArray[$m]['emojiU'] = $row['emojiU'];
+                    $countriesArray[$m]['wikiDataId'] = $row['wikiDataId'];
 
                     $m++;
                 }
@@ -195,6 +196,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['country_name'] = $countryName;
                                 $citiesArray[$j]['latitude'] = $city['latitude'];
                                 $citiesArray[$j]['longitude'] = $city['longitude'];
+                                $citiesArray[$j]['native'] = $city['native'];
                                 $citiesArray[$j]['timezone'] = $city['timezone'];
                                 $citiesArray[$j]['translations'] = json_decode($city['translations'], true);
                                 $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];

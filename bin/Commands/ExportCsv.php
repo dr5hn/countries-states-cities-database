@@ -23,6 +23,8 @@ class ExportCsv extends Command
 
     private const TRANSLATION_FILES = [
         'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
+        'states' => ['from' => '/json/states.json', 'place_type' => 'state'],
+        'cities' => ['from' => '/json/cities.json', 'place_type' => 'city'],
         'regions' => ['from' => '/json/regions.json', 'place_type' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'place_type' => 'subregion'],
     ];

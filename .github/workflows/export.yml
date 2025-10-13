@@ -197,6 +197,16 @@ jobs:
         working-directory: ./bin
         run: php console export:csv
 
+      - name: Compress Large CSV Files
+        run: |
+          echo "🗜️  Compressing large CSV files..."
+          # Compress translations.csv (large due to normalization of all translations)
+          if [ -f csv/translations.csv ]; then
+            gzip -9 -k csv/translations.csv
+            ls -lh csv/translations.csv.gz
+          fi
+          echo "✅ CSV compression complete"
+
       - name: Export MySQL SQL
         run: |
           mkdir -p sql
