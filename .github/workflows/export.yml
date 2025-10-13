@@ -95,6 +95,15 @@ jobs:
           mysql -uroot -proot -e "SHOW DATABASES;"
           echo "✅ Database created"
 
+      - name: Initialize Database Schema
+        run: |
+          echo "📋 Creating database tables..."
+          mysql -uroot -proot world < bin/db/schema.sql
+          echo "✅ Schema initialized - verifying tables..."
+          mysql -uroot -proot -e "USE world; SHOW TABLES;"
+          mysql -uroot -proot -e "USE world; SHOW CREATE TABLE regions\G" | head -20
+          echo "✅ All tables created successfully"
+
       - name: Setup Python Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -333,13 +342,13 @@ jobs:
         with:
           commit-message: |
             📦 Export database formats - ${{ env.current_date }}
-            
+
             ✅ All export formats completed successfully:
             - JSON/XML/YAML/CSV: Structured data exports
-            - MySQL/PostgreSQL: SQL dump exports  
+            - MySQL/PostgreSQL: SQL dump exports
             - SQLite: Database file exports
             - SQL Server/MongoDB: Alternative format exports
-            
+
             📊 Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
@@ -348,27 +357,27 @@ jobs:
           title: "🚀 Database Export - ${{ env.current_date }}"
           body: |
             ## 📦 Database Export Success
-            
+
             All export formats have been successfully generated.
-            
+
             ### 📊 Data Statistics
             - **Regions**: ${{ env.region_count }}
-            - **Subregions**: ${{ env.subregion_count }}  
+            - **Subregions**: ${{ env.subregion_count }}
             - **Countries**: ${{ env.country_count }}
             - **States**: ${{ env.state_count }}
             - **Cities**: ${{ env.city_count }}
-            
+
             ### ✅ Generated Formats
             - **JSON** - Structured data format
-            - **XML** - Markup language format  
+            - **XML** - Markup language format
             - **YAML** - Human-readable format
             - **CSV** - Spreadsheet format
             - **MySQL** - Database dumps
-            - **PostgreSQL** - Database dumps  
+            - **PostgreSQL** - Database dumps
             - **SQLite** - Portable databases
             - **SQL Server** - T-SQL scripts
             - **MongoDB** - Collections + dump
-            
+
             ---
             *Generated automatically by GitHub Actions*
           labels: |
