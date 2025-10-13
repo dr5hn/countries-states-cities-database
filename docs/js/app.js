@@ -1,9 +1,12 @@
 // IndexedDB setup
 let db;
 const DB_NAME = 'CountryStateCityDB';
-const DB_VERSION = 1;
-const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
-const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
+const DB_VERSION = 2;
+const COLLECTIONS = ['regions', 'subregions', 'countries', 'states'];
+const CONTRIBUTIONS_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/contributions/';
+
+// Cache for loaded cities by country code
+const citiesCache = {};
 
 function deleteDatabase() {
   return new Promise((resolve, reject) => {
@@ -46,12 +49,11 @@ function openDB() {
               break;
             case 'countries':
               store.createIndex('subregion_id', 'subregion_id', { unique: false });
+              store.createIndex('iso2', 'iso2', { unique: false });
               break;
             case 'states':
               store.createIndex('country_id', 'country_id', { unique: false });
-              break;
-            case 'cities':
-              store.createIndex('state_id', 'state_id', { unique: false });
+              store.createIndex('country_code', 'country_code', { unique: false });
               break;
           }
         }
@@ -62,7 +64,7 @@ function openDB() {
 }
 
 async function initializeData() {
-  console.log('Initializing data');
+  console.log('Initializing data from contributions folder');
   // Delete existing database if requested via URL parameter
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('reset') === 'true') {
@@ -71,12 +73,15 @@ async function initializeData() {
   }
 
   await openDB();
+
   for (const collectionName of COLLECTIONS) {
     const objectStore = db.transaction(collectionName, 'readonly').objectStore(collectionName);
     const count = await new Promise(resolve => objectStore.count().onsuccess = e => resolve(e.target.result));
 
     if (count === 0) {
-      await fetch(`${API_BASE}${collectionName}.json`)
+      // Load from contributions folder
+      const url = `${CONTRIBUTIONS_BASE}${collectionName}/${collectionName}.json`;
+      await fetch(url)
         .then(response => response.json())
         .then(async (data) => {
           const transaction = db.transaction(collectionName, 'readwrite');
@@ -85,6 +90,7 @@ async function initializeData() {
             store.add(item);
           }
           await new Promise(resolve => transaction.oncomplete = resolve);
+          console.log(`Loaded ${data.length} ${collectionName} from contributions`);
         });
     }
 
@@ -92,6 +98,18 @@ async function initializeData() {
       const regions = await getAllFromStore('regions');
       renderRegions(regions);
     }
+  }
+
+  // Update statistics in the top bar
+  await updateStatistics();
+
+  // Hide loading overlay after data is loaded
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  if (loadingOverlay) {
+    loadingOverlay.classList.add('opacity-0');
+    setTimeout(() => {
+      loadingOverlay.remove();
+    }, 300);
   }
 }
 
@@ -103,6 +121,28 @@ function getAllFromStore(storeName) {
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => reject(request.error);
   });
+}
+
+async function updateStatistics() {
+  const stats = {
+    regions: await getAllFromStore('regions').then(r => r.length),
+    subregions: await getAllFromStore('subregions').then(r => r.length),
+    countries: await getAllFromStore('countries').then(r => r.length),
+    states: await getAllFromStore('states').then(r => r.length),
+  };
+
+  Object.keys(stats).forEach(key => {
+    const element = document.getElementById(`stat-${key}`);
+    if (element) {
+      element.textContent = stats[key].toLocaleString();
+    }
+  });
+
+  // For cities, we'll show an estimate since they're loaded on-demand
+  const citiesElement = document.getElementById('stat-cities');
+  if (citiesElement) {
+    citiesElement.textContent = '~150k';
+  }
 }
 
 function renderRegions(regions) {
@@ -188,7 +228,7 @@ function renderCountries(countries) {
       <td class="border px-4 py-2">
         <span class="emoji">${c.emoji}</span> ${c.name}
         <span class="inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">${c.iso2}</span>
-        <button class="tooltip inline-block align-middle float-right" onclick="filterStates(${c.id})">
+        <button class="tooltip inline-block align-middle float-right" onclick="filterStates(${c.id}, '${c.iso2}')">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -205,20 +245,20 @@ function renderCountries(countries) {
   `).join('');
 }
 
-async function filterStates(countryId) {
+async function filterStates(countryId, countryCode) {
   const states = await getFromIndex('states', 'country_id', countryId);
-  renderStates(states);
+  renderStates(states, countryCode);
   document.querySelector('.cities-tb').innerHTML = '';
 }
 
-function renderStates(states) {
+function renderStates(states, countryCode) {
   const statesTb = document.querySelector('.states-tb');
   statesTb.innerHTML = states.length ? states.map(s => `
     <tr>
       <td class="border px-4 py-2">
         ${s.name}
-        <span class="inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">${s.iso2}</span>
-        <button class="tooltip inline-block align-middle float-right" onclick="filterCities(${s.id})">
+        <span class="inline-block bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700">${s.state_code || s.iso2}</span>
+        <button class="tooltip inline-block align-middle float-right" onclick="filterCities(${s.id}, '${countryCode}')">
           <svg viewBox="0 0 20 20" fill="currentColor" class="arrow-circle-right w-6 h-6 text-pink-600">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd"></path>
           </svg>
@@ -235,9 +275,27 @@ function renderStates(states) {
   `).join('') : '<tr><td class="border px-4 py-2">No States Found.</td></tr>';
 }
 
-async function filterCities(stateId) {
-  const cities = await getFromIndex('cities', 'state_id', parseInt(stateId));
-  renderCities(cities);
+async function filterCities(stateId, countryCode) {
+  const citiesTb = document.querySelector('.cities-tb');
+
+  // Show loading state
+  citiesTb.innerHTML = '<tr><td class="border px-4 py-2 text-center text-gray-500">Loading cities...</td></tr>';
+
+  try {
+    // Check cache first
+    if (!citiesCache[countryCode]) {
+      const response = await fetch(`${CONTRIBUTIONS_BASE}cities/${countryCode}.json`);
+      citiesCache[countryCode] = await response.json();
+      console.log(`Loaded ${citiesCache[countryCode].length} cities for ${countryCode}`);
+    }
+
+    // Filter cities by state_id
+    const cities = citiesCache[countryCode].filter(c => c.state_id === parseInt(stateId));
+    renderCities(cities);
+  } catch (error) {
+    console.error(`Error loading cities for ${countryCode}:`, error);
+    citiesTb.innerHTML = '<tr><td class="border px-4 py-2 text-center text-red-500">Error loading cities</td></tr>';
+  }
 }
 
 function renderCities(cities) {
@@ -291,21 +349,43 @@ async function toggleModal(id = null, type = null) {
   body.classList.toggle('modal-active');
 
   if (id && type) {
-    const transaction = db.transaction(type, 'readonly');
-    const store = transaction.objectStore(type);
-    const request = store.get(parseInt(id));
+    let item = null;
 
-    request.onsuccess = (event) => {
-      const item = event.target.result;
+    // For cities, search in the cache instead of IndexedDB
+    if (type === 'cities') {
+      // Search through all cached cities
+      for (const countryCode in citiesCache) {
+        const city = citiesCache[countryCode].find(c => c.id === parseInt(id));
+        if (city) {
+          item = city;
+          break;
+        }
+      }
+
       if (item) {
         document.querySelector('.modal-title').textContent = item.name;
         document.getElementById('modal-code').textContent = JSON.stringify(item, null, 2);
+      } else {
+        console.error("City not found in cache:", id);
       }
-    };
+    } else {
+      // For other types, use IndexedDB
+      const transaction = db.transaction(type, 'readonly');
+      const store = transaction.objectStore(type);
+      const request = store.get(parseInt(id));
 
-    request.onerror = (event) => {
-      console.error("Error fetching item:", event.target.error);
-    };
+      request.onsuccess = (event) => {
+        item = event.target.result;
+        if (item) {
+          document.querySelector('.modal-title').textContent = item.name;
+          document.getElementById('modal-code').textContent = JSON.stringify(item, null, 2);
+        }
+      };
+
+      request.onerror = (event) => {
+        console.error("Error fetching item:", event.target.error);
+      };
+    }
   }
 }
 
@@ -326,5 +406,15 @@ const copyToClipboard = () => {
 
 document.querySelector('.copy-to-clipboard').addEventListener('click', copyToClipboard);
 
+// Mobile menu toggle
+document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('show');
+});
+
 // Add this line to initialize the database when the page loads
-window.addEventListener('load', initializeData);
+window.addEventListener('load', () => {
+  console.log('🌍 Loading data from contributions folder...');
+  console.log('📂 Base URL:', CONTRIBUTIONS_BASE);
+  initializeData();
+});

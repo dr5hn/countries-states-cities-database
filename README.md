@@ -75,9 +75,8 @@ Not sure which solution fits your needs? Here's a quick comparison:
 | **Rate Limits** | None | Yes (by plan) | None | None |
 | **Latest Data** | On package update | Always current | Current at export | Current at download |
 | **Custom Filtering** | Code-based | API parameters | Web interface | Manual processing |
-| **Cost** | Free | Free tier + paid plans | Free | Free |
+| **Cost** | Free | Free tier + paid plans | Free + paid credits | Free |
 | **TypeScript Support** | ✅ Full types included | Via client libs | N/A | N/A |
-| **Enterprise SLA** | ❌ No | ✅ Available | ❌ No | ❌ No |
 
 ### 🎯 Recommended Usage
 

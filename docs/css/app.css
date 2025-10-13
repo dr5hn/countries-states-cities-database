@@ -1,50 +1,136 @@
 body {
-    padding-top: 56px;
+    /* padding-top: 56px; */
+}
+
+/* Loading Overlay */
+#loadingOverlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Table container - use overflow: auto instead of overflow-y to prevent horizontal scrollbar */
+.overflow-auto {
+    overflow: auto !important;
+}
+
+/* Hide scrollbar when not hovering to prevent layout shift */
+.overflow-auto::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.overflow-auto:hover::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+}
+
+.overflow-auto:hover::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+td {
+    transition: background 0.2s ease;
 }
 
 td:hover {
-    background: #fafafa;
+    background: #f8fafc;
+}
+
+/* Row styling */
+tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:last-child {
+    border-bottom: none;
 }
 
 /* Github Button */
 .github {
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 50px;
     color: #fff;
     display: inline-flex;
     font-weight: 600;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.github:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
 }
 
 .github svg {
     width: 24px;
     flex-shrink: 0;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 
 /* Tooltip */
 .tooltip .tooltip-text {
     visibility: hidden;
     text-align: center;
-    padding: 2px 6px;
+    padding: 4px 8px;
     position: absolute;
     z-index: 100;
+    white-space: nowrap;
+    margin-top: -2px;
 }
 
 .tooltip:hover .tooltip-text {
     visibility: visible;
 }
 
+/* Action buttons */
+button svg {
+    transition: transform 0.2s ease;
+}
+
+button:hover svg {
+    transform: scale(1.1);
+}
+
 /* Code Formatting */
 pre {
-    font-family: ibm-plex-mono, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New';
-    overflow: hidden;
-    background: rgb(28, 29, 33);
-    color: rgb(192, 197, 206);
-    padding: 1rem;
-    border-radius: 6px;
-    font-size: 13px
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    overflow: auto;
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    max-height: 500px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
 
 /* Github Corner */
@@ -53,19 +139,13 @@ pre {
 }
 
 @keyframes octocat-wave {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: rotate(0);
     }
-
-    20%,
-    60% {
+    20%, 60% {
         transform: rotate(-25deg);
     }
-
-    40%,
-    80% {
+    40%, 80% {
         transform: rotate(10deg);
     }
 }
@@ -74,7 +154,6 @@ pre {
     .github-corner:hover .octo-arm {
         animation: none;
     }
-
     .github-corner .octo-arm {
         animation: octocat-wave 560ms ease-in-out;
     }
@@ -87,5 +166,92 @@ textarea {
 }
 
 .emoji, #modal-code {
-    font-family: "Twemoji Country Flags", ibm-plex-mono, Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New';
+    font-family: "Twemoji Country Flags", 'Monaco', 'Menlo', monospace;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Modal tabs */
+.modal-tab {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.modal-tab.active {
+    background: #4f46e5;
+    color: white;
+}
+
+.modal-tab:hover:not(.active) {
+    background: #e2e8f0;
+}
+
+/* Stat items */
+.stat-item {
+    min-width: 80px;
+}
+
+/* Table cell padding */
+tbody td {
+    padding: 0.75rem 1rem;
+}
+
+/* Empty state styling */
+tbody td.empty-state {
+    padding: 2rem 1rem;
+}
+
+/* Badge styling */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Detail grid */
+#modal-details .detail-item {
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+#modal-details .detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#modal-details .detail-value {
+    font-size: 0.875rem;
+    color: #1e293b;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+/* Mobile menu styling */
+#mobileMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+#mobileMenu.show {
+    max-height: 500px;
 }
