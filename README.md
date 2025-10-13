@@ -331,6 +331,10 @@ Licensed under ODbL v1.0
 
 👍🎉 First off, thanks for your interest in contributing! 🎉👍
 
+### 🚀 Quick Start for New Contributors
+
+**New to contributing?** Check out our [QUICKSTART.md](QUICKSTART.md) guide - you can make your first contribution in just 5 minutes!
+
 ### Using Our Database Update Tool
 
 We've launched a dedicated web tool to make contributing to this database easier than ever!
