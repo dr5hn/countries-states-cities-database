@@ -33,6 +33,7 @@ Save hundreds of hours collecting and maintaining geographical data. Get accurat
 - [Export Tool](#️-export-tool)
 - [Available Formats](#available-formats)
 - [Distribution Files Info](#distribution-files-info)
+- [Recent Improvements](#-recent-improvements)
 - [Demo](#demo)
 - [Insights](#insights)
 - [Import MongoDB](#import-mongodb)
@@ -204,6 +205,42 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 | Country+Cities             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
 | Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
 
+
+## 🚀 Recent Improvements
+
+We've made significant improvements to make contributing easier and reduce repository size:
+
+### ✅ JSON-First Contribution Workflow
+Contributors can now edit simple JSON files in the `contributions/` directory instead of complex SQL files. No local setup required - just edit JSON and submit a PR! GitHub Actions automatically handles all the complex stuff.
+
+**Benefits:**
+- 🎯 **Non-technical friendly** - Anyone can contribute without SQL knowledge
+- 📁 **Organized by country** - Easy to find and edit specific cities
+- 🤖 **Automated pipeline** - GitHub Actions imports to MySQL and regenerates all formats
+- 🔍 **Better reviews** - Clear JSON diffs in pull requests
+
+### ✅ Repository Size Reduced
+Large uncompressed files are now excluded from Git, keeping only compressed `.gz` versions. This reduces clone time significantly.
+
+**Impact:**
+- Repository size reduced from ~2GB to ~1GB
+- Faster clone times for contributors
+- Build artifacts auto-generated, not committed
+
+### ✅ Bidirectional Sync
+New Python scripts enable seamless synchronization between JSON and MySQL with automatic schema detection.
+
+**Features:**
+- JSON → MySQL with auto ID assignment
+- MySQL → JSON for maintainer workflows
+- Dynamic schema updates - no manual migration needed
+
+### ✅ Multi-language Translations
+Full translation support is built into the schema for countries, states, and cities across 19+ languages.
+
+**Supported languages:** Arabic, Brazilian Portuguese, Chinese, Croatian, Dutch, French, German, Hindi, Italian, Japanese, Korean, Persian, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian, and more.
+
+📖 **See [IMPROVEMENTS.md](IMPROVEMENTS.md) for full details on all implemented enhancements.**
 
 ## Demo
 
