@@ -388,7 +388,7 @@ class JSONToMySQLImporter:
 
     def import_regions(self):
         """Import regions from JSON"""
-        json_file = os.path.join('json', 'regions.json')
+        json_file = os.path.join('contributions', 'regions', 'regions.json')
         if os.path.exists(json_file):
             return self.import_table('regions', json_file)
         else:
@@ -397,7 +397,7 @@ class JSONToMySQLImporter:
 
     def import_subregions(self):
         """Import subregions from JSON"""
-        json_file = os.path.join('json', 'subregions.json')
+        json_file = os.path.join('contributions', 'subregions', 'subregions.json')
         if os.path.exists(json_file):
             return self.import_table('subregions', json_file)
         else:

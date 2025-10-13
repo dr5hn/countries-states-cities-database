@@ -251,23 +251,23 @@ def main():
     )
 
     try:
-        # Sync all tables
+        # Sync all tables (in order respecting foreign keys)
+        regions_count = syncer.sync_regions()
+        subregions_count = syncer.sync_subregions()
         countries_count = syncer.sync_countries()
         states_count = syncer.sync_states()
         cities_count = syncer.sync_cities()
 
-        # Optional: Sync regions and subregions if needed
-        # regions_count = syncer.sync_regions()
-        # subregions_count = syncer.sync_subregions()
-
         print("\n" + "=" * 60)
         print("✅ Sync complete!")
+        print(f"   📍 Regions: {regions_count}")
+        print(f"   📍 Subregions: {subregions_count}")
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
         print("\n💡 Next steps:")
         print("   1. Review changes: git diff")
-        print("   3. Commit: git add . && git commit -m 'sync: update from MySQL'")
+        print("   2. Commit: git add . && git commit -m 'sync: update from MySQL'")
 
     except Exception as e:
         print(f"\n❌ Sync failed: {e}")

@@ -6,6 +6,10 @@ This directory contains the source JSON files for contributing to the Countries 
 
 ```
 contributions/
+├── regions/
+│   └── regions.json            (6 regions)
+├── subregions/
+│   └── subregions.json         (22 subregions)
 ├── countries/
 │   └── countries.json          (250 countries)
 ├── states/
@@ -87,6 +91,37 @@ Edit `contributions/states/states.json` and add your state:
 ```
 
 **Note:** Omit the `id` field for new states - it will be auto-assigned.
+
+### Adding a New Region
+
+Edit `contributions/regions/regions.json` and add your region:
+
+```json
+{
+    "name": "New Region",
+    "translations": {
+        "es": "Nueva Región"
+    }
+}
+```
+
+**Note:** Omit the `id` field for new regions - it will be auto-assigned.
+
+### Adding a New Subregion
+
+Edit `contributions/subregions/subregions.json` and add your subregion:
+
+```json
+{
+    "name": "New Subregion",
+    "region_id": 1,
+    "translations": {
+        "es": "Nueva Subregión"
+    }
+}
+```
+
+**Note:** Omit the `id` field for new subregions - it will be auto-assigned.
 
 ## 🛠️ Submission Process
 
