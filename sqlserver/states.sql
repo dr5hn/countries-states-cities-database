@@ -17,6 +17,7 @@
                 latitude DECIMAL(10,8) NULL,
                 longitude DECIMAL(11,8) NULL,
                 timezone NVARCHAR(255) NULL,
+                translations NVARCHAR(MAX),
                 created_at DATETIME2 NULL,
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,
