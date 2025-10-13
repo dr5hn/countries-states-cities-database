@@ -150,62 +150,17 @@ jobs:
         working-directory: ./bin
         run: php console export:json
 
-      - name: Compress Large JSON Files
-        run: |
-          echo "🗜️  Compressing large JSON files..."
-          # Compress countries+states+cities.json (creates .json.gz)
-          if [ -f json/countries+states+cities.json ]; then
-            gzip -9 -k json/countries+states+cities.json
-            ls -lh json/countries+states+cities.json.gz
-          fi
-          # Compress cities.json (160MB - too large for GitHub)
-          if [ -f json/cities.json ]; then
-            gzip -9 -k json/cities.json
-            ls -lh json/cities.json.gz
-          fi
-          echo "✅ JSON compression complete"
-
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
-
-      - name: Compress Large XML Files
-        run: |
-          echo "🗜️  Compressing large XML files..."
-          # Compress cities.xml (151MB - too large for GitHub)
-          if [ -f xml/cities.xml ]; then
-            gzip -9 -k xml/cities.xml
-            ls -lh xml/cities.xml.gz
-          fi
-          echo "✅ XML compression complete"
 
       - name: Export YAML
         working-directory: ./bin
         run: php console export:yaml
 
-      - name: Compress Large YAML Files
-        run: |
-          echo "🗜️  Compressing large YAML files..."
-          # Compress cities.yml (114MB - too large for GitHub)
-          if [ -f yml/cities.yml ]; then
-            gzip -9 -k yml/cities.yml
-            ls -lh yml/cities.yml.gz
-          fi
-          echo "✅ YAML compression complete"
-
       - name: Export CSV
         working-directory: ./bin
         run: php console export:csv
-
-      - name: Compress Large CSV Files
-        run: |
-          echo "🗜️  Compressing large CSV files..."
-          # Compress translations.csv (large due to normalization of all translations)
-          if [ -f csv/translations.csv ]; then
-            gzip -9 -k csv/translations.csv
-            ls -lh csv/translations.csv.gz
-          fi
-          echo "✅ CSV compression complete"
 
       - name: Export MySQL SQL
         run: |
@@ -252,20 +207,6 @@ jobs:
           mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sqlserver/schema.sql
           echo "✅ Schema files generated"
 
-      - name: Compress Large SQL Files
-        run: |
-          echo "🗜️  Compressing large SQL files..."
-          # Compress world.sql (creates world.sql.gz, keeps original)
-          gzip -9 -k sql/world.sql
-          # Compress cities.sql (creates cities.sql.gz, keeps original)
-          gzip -9 -k sql/cities.sql
-          # Show file sizes
-          echo "Original files:"
-          ls -lh sql/world.sql sql/cities.sql
-          echo "Compressed files:"
-          ls -lh sql/world.sql.gz sql/cities.sql.gz
-          echo "✅ Compression complete"
-
       - name: Export PostgreSQL SQL
         env:
           PGPASSWORD: postgres
@@ -277,16 +218,6 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t cities > psql/cities.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists > psql/world.sql
-
-      - name: Compress Large PostgreSQL Files
-        run: |
-          echo "🗜️  Compressing large PostgreSQL files..."
-          # Creates world.sql.gz and cities.sql.gz
-          gzip -9 -k psql/world.sql
-          gzip -9 -k psql/cities.sql
-          echo "Compressed files:"
-          ls -lh psql/world.sql.gz psql/cities.sql.gz
-          echo "✅ PostgreSQL compression complete"
 
       - name: Export SQLite
         run: |
@@ -301,36 +232,9 @@ jobs:
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
-      - name: Compress Large SQLite Files
-        run: |
-          echo "🗜️  Compressing large SQLite files..."
-          # Compress world.sqlite3 (creates world.sqlite3.gz)
-          gzip -9 -k sqlite/world.sqlite3
-          # Compress cities.sqlite3 (creates cities.sqlite3.gz)
-          gzip -9 -k sqlite/cities.sqlite3
-          echo "Compressed files:"
-          ls -lh sqlite/world.sqlite3.gz sqlite/cities.sqlite3.gz
-          echo "✅ SQLite compression complete"
-
-
-
       - name: Export SQL Server
         working-directory: ./bin
         run: php console export:sql-server
-
-      - name: Compress Large SQL Server Files
-        run: |
-          echo "🗜️  Compressing large SQL Server files..."
-          # Creates world.sql.gz and cities.sql.gz
-          if [ -f sqlserver/world.sql ]; then
-            gzip -9 -k sqlserver/world.sql
-            ls -lh sqlserver/world.sql.gz
-          fi
-          if [ -f sqlserver/cities.sql ]; then
-            gzip -9 -k sqlserver/cities.sql
-            ls -lh sqlserver/cities.sql.gz
-          fi
-          echo "✅ SQL Server compression complete"
 
       - name: Export MongoDB
         working-directory: ./bin
@@ -360,6 +264,81 @@ jobs:
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
           rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json
+
+      - name: Compress All Large Files
+        run: |
+          echo "🗜️  Compressing all large files..."
+          echo "================================"
+
+          # JSON Files
+          echo "📄 Compressing JSON files..."
+          if [ -f json/countries+states+cities.json ]; then
+            gzip -9 -k -f json/countries+states+cities.json
+            echo "  ✓ json/countries+states+cities.json.gz"
+          fi
+          if [ -f json/cities.json ]; then
+            gzip -9 -k -f json/cities.json
+            echo "  ✓ json/cities.json.gz"
+          fi
+
+          # XML Files
+          echo "📄 Compressing XML files..."
+          if [ -f xml/cities.xml ]; then
+            gzip -9 -k -f xml/cities.xml
+            echo "  ✓ xml/cities.xml.gz"
+          fi
+
+          # YAML Files
+          echo "📄 Compressing YAML files..."
+          if [ -f yml/cities.yml ]; then
+            gzip -9 -k -f yml/cities.yml
+            echo "  ✓ yml/cities.yml.gz"
+          fi
+
+          # CSV Files
+          echo "📄 Compressing CSV files..."
+          if [ -f csv/translations.csv ]; then
+            gzip -9 -k -f csv/translations.csv
+            echo "  ✓ csv/translations.csv.gz"
+          fi
+
+          # MySQL SQL Files
+          echo "📄 Compressing MySQL SQL files..."
+          gzip -9 -k -f sql/world.sql
+          gzip -9 -k -f sql/cities.sql
+          echo "  ✓ sql/world.sql.gz"
+          echo "  ✓ sql/cities.sql.gz"
+
+          # PostgreSQL SQL Files
+          echo "📄 Compressing PostgreSQL SQL files..."
+          gzip -9 -k -f psql/world.sql
+          gzip -9 -k -f psql/cities.sql
+          echo "  ✓ psql/world.sql.gz"
+          echo "  ✓ psql/cities.sql.gz"
+
+          # SQLite Files
+          echo "📄 Compressing SQLite files..."
+          gzip -9 -k -f sqlite/world.sqlite3
+          gzip -9 -k -f sqlite/cities.sqlite3
+          echo "  ✓ sqlite/world.sqlite3.gz"
+          echo "  ✓ sqlite/cities.sqlite3.gz"
+
+          # SQL Server Files
+          echo "📄 Compressing SQL Server files..."
+          if [ -f sqlserver/world.sql ]; then
+            gzip -9 -k -f sqlserver/world.sql
+            echo "  ✓ sqlserver/world.sql.gz"
+          fi
+          if [ -f sqlserver/cities.sql ]; then
+            gzip -9 -k -f sqlserver/cities.sql
+            echo "  ✓ sqlserver/cities.sql.gz"
+          fi
+
+          echo "================================"
+          echo "✅ All compression complete!"
+          echo ""
+          echo "📊 Compressed file sizes:"
+          ls -lh json/*.gz xml/*.gz yml/*.gz csv/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
 
       - name: Update README.md
         run: |
