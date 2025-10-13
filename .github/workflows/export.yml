@@ -153,22 +153,45 @@ jobs:
       - name: Compress Large JSON Files
         run: |
           echo "🗜️  Compressing large JSON files..."
-          # Compress countries+states+cities.json (42MB - creates .json.gz)
+          # Compress countries+states+cities.json (creates .json.gz)
           if [ -f json/countries+states+cities.json ]; then
             gzip -9 -k json/countries+states+cities.json
             ls -lh json/countries+states+cities.json.gz
           fi
-          # Note: countries.json, states.json, cities.json are NOT compressed
-          # as they are actively used by the build process
+          # Compress cities.json (160MB - too large for GitHub)
+          if [ -f json/cities.json ]; then
+            gzip -9 -k json/cities.json
+            ls -lh json/cities.json.gz
+          fi
           echo "✅ JSON compression complete"
 
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
 
+      - name: Compress Large XML Files
+        run: |
+          echo "🗜️  Compressing large XML files..."
+          # Compress cities.xml (151MB - too large for GitHub)
+          if [ -f xml/cities.xml ]; then
+            gzip -9 -k xml/cities.xml
+            ls -lh xml/cities.xml.gz
+          fi
+          echo "✅ XML compression complete"
+
       - name: Export YAML
         working-directory: ./bin
         run: php console export:yaml
+
+      - name: Compress Large YAML Files
+        run: |
+          echo "🗜️  Compressing large YAML files..."
+          # Compress cities.yml (114MB - too large for GitHub)
+          if [ -f yml/cities.yml ]; then
+            gzip -9 -k yml/cities.yml
+            ls -lh yml/cities.yml.gz
+          fi
+          echo "✅ YAML compression complete"
 
       - name: Export CSV
         working-directory: ./bin
