@@ -216,6 +216,11 @@ class ExportMongoDB extends Command
             $processedState['_id'] = (int) $state['id'];
             unset($processedState['id']);
 
+            // Parse JSON translations if it's a string
+            if (isset($processedState['translations']) && is_string($processedState['translations'])) {
+                $processedState['translations'] = json_decode($processedState['translations'], true);
+            }
+
             // Add country reference
             if (isset($processedState['country_id'])) {
                 $processedState['country'] = [
@@ -245,6 +250,11 @@ class ExportMongoDB extends Command
             // Convert id to MongoDB _id format
             $processedCity['_id'] = (int) $city['id'];
             unset($processedCity['id']);
+
+            // Parse JSON translations if it's a string
+            if (isset($processedCity['translations']) && is_string($processedCity['translations'])) {
+                $processedCity['translations'] = json_decode($processedCity['translations'], true);
+            }
 
             // Add state reference
             if (isset($processedCity['state_id'])) {

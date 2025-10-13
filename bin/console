@@ -25,7 +25,7 @@ use bin\Commands\ExportJson;
 use bin\Commands\ExportCsv;
 use bin\Commands\ExportXml;
 use bin\Commands\ExportYaml;
-use bin\Commands\ExportCscNpm;
+use bin\Commands\ExportMongoDB;
 use bin\Commands\ExportPlist;
 use bin\Commands\ExportSqlServer;
 
@@ -76,9 +76,9 @@ class ConsoleApplication extends Application
         $this->add(new ExportCsv());
         $this->add(new ExportXml());
         $this->add(new ExportYaml());
-        $this->add(new ExportCscNpm());
         $this->add(new ExportPlist());
         $this->add(new ExportSqlServer());
+        $this->add(new ExportMongoDB());
     }
 
     public function doRun(InputInterface $input, OutputInterface $output): int
