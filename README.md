@@ -8,7 +8,7 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, XML, YAML, MONGODB & CSV format.
+Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, SQLSERVER, XML, YAML, MONGODB & CSV format.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## Why Choose This Database?
@@ -20,49 +20,32 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 * ✅ **Every Format You Need** - JSON, SQL, MongoDB, CSV, XML, YAML - use what fits your stack
 * ✅ **100% Free & Open Source** - ODbL licensed with no usage restrictions
 * ✅ **Developer Friendly** - Install via NPM in 1 minute or integrate API in 5 minutes
-* ✅ **Battle-Tested Data** - 95%+ accuracy, verified by community across 250 countries
+* ✅ **Battle-Tested Data** - 92%+ accuracy, verified by community across 250 countries
 
 Save hundreds of hours collecting and maintaining geographical data. Get accurate, structured, ready-to-use data right now.
 
 ## Table of Contents
-
-- [🌍 Countries States Cities Database](#-countries-states-cities-database)
-  - [Why Choose This Database?](#why-choose-this-database)
-  - [Table of Contents](#table-of-contents)
-  - [🌐 CSC Platform Ecosystem](#-csc-platform-ecosystem)
-  - [🔄 Choose Your Integration Method](#-choose-your-integration-method)
-    - [🎯 Recommended Usage](#-recommended-usage)
-  - [📦 NPM Package](#-npm-package)
-  - [API 🚀](#api-)
-  - [🛠️ Export Tool](#️-export-tool)
-    - [Features:](#features)
-  - [Available Formats](#available-formats)
-  - [Distribution Files Info](#distribution-files-info)
-  - [Demo](#demo)
-  - [Insights](#insights)
-  - [Next API Database Update](#next-api-database-update)
-  - [Import MongoDB](#import-mongodb)
-  - [Export to DuckDB](#export-to-duckdb)
-    - [Prerequisites](#prerequisites)
-    - [Convert SQLite to DuckDB](#convert-sqlite-to-duckdb)
-  - [📄 License](#-license)
-    - [What You Can Do:](#what-you-can-do)
-    - [Simple Requirements:](#simple-requirements)
-    - [Quick Attribution:](#quick-attribution)
-  - [Contributing](#contributing)
-    - [Using Our Database Update Tool](#using-our-database-update-tool)
-    - [Alternative Manual Process](#alternative-manual-process)
-      - [🎯 JSON-based Contributions for External Contributors](#-json-based-contributions-for-external-contributors)
-      - [What Happens After Your PR?](#what-happens-after-your-pr)
-      - [Why JSON for Contributors?](#why-json-for-contributors)
-  - [Repo Activity](#repo-activity)
-  - [Sponsors](#sponsors)
-  - [Make the world more Greener 🌴](#make-the-world-more-greener-)
-  - [🌐 Available On Multiple Platforms](#-available-on-multiple-platforms)
-  - [Follow me at](#follow-me-at)
-  - [🙋‍♂️ Support My Work](#️-support-my-work)
-  - [Suggestions / Feedbacks](#suggestions--feedbacks)
-  - [Disclaimer](#disclaimer)
+- [CSC Platform Ecosystem](#-csc-platform-ecosystem)
+- [Choose Your Integration Method](#-choose-your-integration-method)
+- [NPM Package](#-npm-package)
+- [API](#api-)
+- [Export Tool](#️-export-tool)
+- [Available Formats](#available-formats)
+- [Distribution Files Info](#distribution-files-info)
+- [Demo](#demo)
+- [Insights](#insights)
+- [Import MongoDB](#import-mongodb)
+- [Export to DuckDB](#export-to-duckdb)
+- [License](#-license)
+- [Contributing](#contributing)
+- [Repo Activity](#repo-activity)
+- [Sponsors](#sponsors)
+- [Make the world more Greener](#make-the-world-more-greener-)
+- [Available On Multiple Platforms](#-available-on-multiple-platforms)
+- [Follow me at](#follow-me-at)
+- [Support My Work](#️-support-my-work)
+- [Suggestions / Feedbacks](#suggestions--feedbacks)
+- [Disclaimer](#disclaimer)
 
 ## 🌐 CSC Platform Ecosystem
 
@@ -235,16 +218,6 @@ Total States/Regions/Municipalities : 5,038 <br>
 Total Cities/Towns/Districts : 151,024 <br>
 
 Last Updated On : 09th Oct 2025
-
-## Next API Database Update
-
-The API database is regularly updated to ensure the latest data is available to users. The next scheduled update is on:
-
-**Upcoming API Database Update Date:** 8th April 2025
-
-Please note that this date is subject to change based on unforeseen circumstances. Although we strive to adhere to the schedule, there may be instances where the update date is missed. We apologize for any inconvenience caused in such cases.
-
-We appreciate your understanding and patience. Thank you for using the Countries States Cities Database!
 
 ## Import MongoDB
 

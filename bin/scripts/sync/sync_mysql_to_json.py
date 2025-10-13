@@ -71,8 +71,13 @@ class MySQLToJSONSync:
                 continue
 
             # Handle datetime fields
+            # Convert to ISO 8601 format: "2019-10-05T23:18:06" (without microseconds)
             if isinstance(value, (datetime, date)):
-                result[col] = value.isoformat()
+                if isinstance(value, datetime):
+                    # Remove microseconds and format as ISO 8601
+                    result[col] = value.replace(microsecond=0).isoformat()
+                else:
+                    result[col] = value.isoformat()
             # Handle JSON text fields (timezones, translations)
             elif col in ['timezones', 'translations'] and isinstance(value, str):
                 try:

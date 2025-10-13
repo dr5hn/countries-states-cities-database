@@ -123,6 +123,11 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 | `timezone` | No | IANA timezone | `"America/Los_Angeles"` |
 | `translations` | No | Name translations object | `{"es": "San Francisco"}` |
 | `wikiDataId` | No | WikiData identifier | `"Q62"` |
+| `created_at` | No | Creation timestamp (ISO 8601) | `"2019-10-05T23:18:06"` |
+| `updated_at` | No | Last update timestamp (ISO 8601) | `"2025-10-08T14:42:36"` |
+| `flag` | Auto | Active status flag (managed by system) | `1` |
+
+**Note:** The `created_at` and `updated_at` fields are optional. If omitted, MySQL will use default values. When provided, use ISO 8601 format with "T" separator.
 
 ### Finding State IDs
 

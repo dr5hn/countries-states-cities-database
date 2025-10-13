@@ -73,9 +73,9 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 | `id` | integer | Unique ID - omit for new regions (auto-assigned) | Auto
 | `name` | string | The official name of the region. Use WikiData or Wikipedia or some other legitimate source. | required
 | `translations` | text | JSON object with region name translations |
-| `created_at` | timestamp | Automatically set by database |
-| `updated_at` | timestamp | Automatically updated by database |
-| `flag`| boolean | Automatically set to 1 by default |
+| `created_at` | timestamp | Optional - Creation timestamp (ISO 8601 format). If omitted, database uses default value. |
+| `updated_at` | timestamp | Optional - Last update timestamp (ISO 8601 format). If omitted, database auto-updates. |
+| `flag`| boolean | Optional - Auto-managed by system, defaults to 1. Contributors can omit this field. |
 | `wikiDataId` | string | The unique ID from wikiData.org |
 
 ### subregions.sql
@@ -85,9 +85,9 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 | `name` | string | The official name of the subregion. Use WikiData or Wikipedia or some other legitimate source. | required
 | `translations` | text | JSON object with subregion name translations |
 | `region_id` | integer | Unique id of region from `regions.sql` | required
-| `created_at` | timestamp | Automatically set by database |
-| `updated_at` | timestamp | Automatically updated by database |
-| `flag`| boolean | Automatically set to 1 by default |
+| `created_at` | timestamp | Optional - Creation timestamp (ISO 8601 format). If omitted, database uses default value. |
+| `updated_at` | timestamp | Optional - Last update timestamp (ISO 8601 format). If omitted, database auto-updates. |
+| `flag`| boolean | Optional - Auto-managed by system, defaults to 1. Contributors can omit this field. |
 | `wikiDataId` | string | The unique ID from wikiData.org |
 
 ### countries.sql
@@ -118,9 +118,9 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 | `longitude` | decimal | Longitude coordinates |
 | `emoji` | string | A flag emoji icon |
 | `emojiU` | string | A flag emoji unicode characters |
-| `created_at` | timestamp | Automatically set by database |
-| `updated_at` | timestamp | Automatically updated by database |
-| `flag`| boolean | Automatically set to 1 by default |
+| `created_at` | timestamp | Optional - Creation timestamp (ISO 8601 format). If omitted, database uses default value. |
+| `updated_at` | timestamp | Optional - Last update timestamp (ISO 8601 format). If omitted, database auto-updates. |
+| `flag`| boolean | Optional - Auto-managed by system, defaults to 1. Contributors can omit this field. |
 | `wikiDataId` | string | The unique ID from wikiData.org |
 
 ### states.sql
@@ -141,9 +141,9 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 | `longitude` | decimal | Longitude coordinates |
 | `timezone` | string | IANA timezone identifier (e.g., America/New_York) |
 | `translations` | text | JSON object with name translations |
-| `created_at` | timestamp | Automatically set by database |
-| `updated_at` | timestamp | Automatically updated by database |
-| `flag`| boolean | Automatically set to 1 by default |
+| `created_at` | timestamp | Optional - Creation timestamp (ISO 8601 format). If omitted, database uses default value. |
+| `updated_at` | timestamp | Optional - Last update timestamp (ISO 8601 format). If omitted, database auto-updates. |
+| `flag`| boolean | Optional - Auto-managed by system, defaults to 1. Contributors can omit this field. |
 | `wikiDataId` | string | The unique ID from wikiData.org |
 
 ### cities.sql
@@ -160,7 +160,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 | `native` | string | Native name of the city |
 | `timezone` | string | IANA timezone identifier (e.g., America/New_York) |
 | `translations` | text | JSON object with name translations |
-| `created_at` | timestamp | Automatically set by database |
-| `updated_at` | timestamp | Automatically updated by database |
-| `flag`| boolean | Automatically set to 1 by default |
+| `created_at` | timestamp | Optional - Creation timestamp (ISO 8601 format). If omitted, database uses default value. |
+| `updated_at` | timestamp | Optional - Last update timestamp (ISO 8601 format). If omitted, database auto-updates. |
+| `flag`| boolean | Optional - Auto-managed by system, defaults to 1. Contributors can omit this field. |
 | `wikiDataId` | string | The unique ID from wikiData.org |
