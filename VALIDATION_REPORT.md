@@ -25,7 +25,13 @@ A comprehensive validation of all JSON files in the `contributions/` folder was 
 
 **Severity:** Critical  
 **File:** `contributions/cities/GR.json`  
-**Affected Records:** 47 cities  
+**Affected Records:** 47 cities
+
+### Issue #2: Trailing Spaces in City Names ✅ FIXED
+
+**Severity:** Minor (Data Quality)  
+**Files:** Multiple (BD.json, NP.json, IR.json, and 6 others)  
+**Affected Records:** 116 cities total (114 in additional files + 2 in GR.json)  
 
 #### Problem Description
 47 cities in Greece (GR) were incorrectly referencing Kosovo (XK) state IDs instead of Greek state IDs:
@@ -71,6 +77,41 @@ The cities had correct `country_code: "GR"` and `country_id: 85` but wrong `stat
 - ✅ Foreign key constraints validated: all state_ids exist in states.json
 - ✅ Country references remain consistent (country_id: 85, country_code: "GR")
 - ✅ Re-validation shows 0 errors
+
+#### Issue #2 Details
+
+**Problem Description**
+116 cities across 10 country files had trailing or leading whitespace in their names:
+
+| Country Code | Cities Affected |
+|-------------|----------------|
+| BD (Bangladesh) | 52 |
+| NP (Nepal) | 44 |
+| IR (Iran) | 11 |
+| GR (Greece) | 2 |
+| VN (Vietnam) | 2 |
+| BT (Bhutan) | 1 |
+| CH (Switzerland) | 1 |
+| HK (Hong Kong) | 1 |
+| PS (Palestine) | 1 |
+| SA (Saudi Arabia) | 1 |
+
+**Examples:**
+- `"Barisal "` → `"Barisal"` (Bangladesh)
+- `"Kathmandu "` → `"Kathmandu"` (Nepal)
+- `"Philotheou "` → `"Philotheou"` (Greece)
+
+#### Root Cause
+Trailing/leading spaces likely introduced during data entry or import processes.
+
+#### Solution Implemented
+Applied `.strip()` to all city names to remove leading and trailing whitespace while preserving internal spacing.
+
+#### Verification
+- ✅ All 116 cities cleaned
+- ✅ No functional impact on data
+- ✅ Improved data consistency
+- ✅ Re-validation confirms 0 errors
 
 ---
 
@@ -201,13 +242,40 @@ python3 /tmp/validate_contributions.py
 ## Files Modified
 
 ### contributions/cities/GR.json
-- Changed: 47 city records
-- Fields modified: `state_id`, `state_code`
+- Changed: 49 city records (47 state_id fixes + 2 trailing space fixes)
+- Fields modified: `state_id`, `state_code`, `name`
 - Total cities in file: 1,103
 
 **Summary of Changes:**
 - 27 cities: state_id changed from 5321 → 2128, state_code set to "H"
 - 20 cities: state_id changed from 5322 → 2125, state_code set to "B"
+- 2 cities: removed trailing spaces from names
+
+### contributions/cities/BD.json
+- Changed: 52 city records
+- Fields modified: `name` (trailing space removal)
+
+### contributions/cities/NP.json
+- Changed: 44 city records
+- Fields modified: `name` (trailing space removal)
+
+### contributions/cities/IR.json
+- Changed: 11 city records
+- Fields modified: `name` (trailing space removal)
+
+### contributions/cities/VN.json
+- Changed: 2 city records
+- Fields modified: `name` (trailing space removal)
+
+### contributions/cities/BT.json, CH.json, HK.json, PS.json, SA.json
+- Changed: 1 city record each
+- Fields modified: `name` (trailing space removal)
+
+**Total Summary:**
+- **Files Modified:** 10
+- **Total Records Changed:** 165
+- **Critical Fixes:** 47 (referential integrity)
+- **Quality Fixes:** 118 (trailing spaces)
 
 ---
 
