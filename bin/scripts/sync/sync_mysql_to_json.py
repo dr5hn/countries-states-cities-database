@@ -231,6 +231,58 @@ class MySQLToJSONSync:
         print(f"  ✓ Synced {len(subregions)} subregions to {output_file}")
         return len(subregions)
 
+    def sync_sub_localities(self):
+        """Sync sub_localities table to contributions/sub_localities/<COUNTRY_CODE>.json files"""
+        print("\n📦 Syncing sub-localities...")
+
+        # Check if table exists
+        try:
+            self.cursor.execute("SHOW TABLES LIKE 'sub_localities'")
+            if not self.cursor.fetchone():
+                print("  ⚠ sub_localities table does not exist, skipping")
+                return 0
+        except mysql.connector.Error:
+            print("  ⚠ sub_localities table does not exist, skipping")
+            return 0
+
+        columns = self.get_table_columns('sub_localities')
+        excluded = self.get_excluded_columns()
+
+        # Get all unique country codes
+        self.cursor.execute("SELECT DISTINCT country_code FROM sub_localities ORDER BY country_code")
+        country_codes = [row['country_code'] for row in self.cursor.fetchall()]
+
+        if not country_codes:
+            print("  ⚠ No sub-localities found in database")
+            return 0
+
+        total_sub_localities = 0
+        sub_localities_dir = os.path.join('contributions', 'sub_localities')
+
+        # Ensure sub_localities directory exists
+        os.makedirs(sub_localities_dir, exist_ok=True)
+
+        for country_code in country_codes:
+            # Fetch all sub-localities for this country
+            query = f"SELECT * FROM sub_localities WHERE country_code = %s ORDER BY id"
+            self.cursor.execute(query, (country_code,))
+            rows = self.cursor.fetchall()
+
+            sub_localities = []
+            for row in rows:
+                sub_localities.append(self.process_row(row, columns, excluded))
+
+            # Save to country-specific JSON file
+            output_file = os.path.join(sub_localities_dir, f'{country_code}.json')
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(sub_localities, f, ensure_ascii=False, indent=2)
+
+            print(f"  ✓ {country_code}: {len(sub_localities):,} sub-localities → {output_file}")
+            total_sub_localities += len(sub_localities)
+
+        print(f"\n  ✓ Total: {total_sub_localities:,} sub-localities synced to {len(country_codes)} files")
+        return total_sub_localities
+
     def export_schema(self):
         """Export MySQL schema to bin/db/schema.sql using mysqldump"""
         import subprocess
@@ -247,7 +299,7 @@ class MySQLToJSONSync:
         database = self.conn.database
 
         # Tables to export (in correct order respecting foreign keys)
-        tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+        tables = ['regions', 'subregions', 'countries', 'states', 'cities', 'sub_localities']
 
         # Build mysqldump command
         # --no-data: only schema, no data
@@ -359,6 +411,7 @@ def main():
         countries_count = syncer.sync_countries()
         states_count = syncer.sync_states()
         cities_count = syncer.sync_cities()
+        sub_localities_count = syncer.sync_sub_localities()
 
         print("\n" + "=" * 60)
         print("✅ Sync complete!")
@@ -368,6 +421,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Sub-localities: {sub_localities_count:,}")
         print("\n💡 Next steps:")
         print("   1. Review changes: git diff")
         print("   2. Commit: git add . && git commit -m 'sync: update from MySQL'")

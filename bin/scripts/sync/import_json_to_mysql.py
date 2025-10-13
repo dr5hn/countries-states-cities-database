@@ -404,6 +404,113 @@ class JSONToMySQLImporter:
             print(f"  ⚠ {json_file} not found, skipping")
             return 0
 
+    def import_sub_localities(self):
+        """Import sub-localities from individual country JSON files"""
+        print(f"\n📦 Importing sub-localities from contributions/sub_localities/*.json")
+
+        sub_localities_dir = os.path.join('contributions', 'sub_localities')
+        if not os.path.exists(sub_localities_dir):
+            print(f"  ⚠ Directory not found: {sub_localities_dir}, skipping")
+            return 0
+
+        # Collect all sub-locality JSON files
+        sub_locality_files = sorted([f for f in os.listdir(sub_localities_dir) if f.endswith('.json')])
+
+        if not sub_locality_files:
+            print(f"  ⚠ No sub-locality JSON files found in {sub_localities_dir}")
+            return 0
+
+        print(f"  📂 Found {len(sub_locality_files)} country files to process")
+
+        # Load and merge all sub-locality data
+        all_sub_localities = []
+        for sub_locality_file in sub_locality_files:
+            file_path = os.path.join(sub_localities_dir, sub_locality_file)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    sub_localities = json.load(f)
+                    if isinstance(sub_localities, list):
+                        all_sub_localities.extend(sub_localities)
+                        if len(sub_localities) > 0:
+                            print(f"  ✓ Loaded {len(sub_localities):,} sub-localities from {sub_locality_file}")
+                    else:
+                        print(f"  ⚠ Skipping {sub_locality_file}: Not a valid array")
+            except Exception as e:
+                print(f"  ❌ Error loading {sub_locality_file}: {e}")
+
+        if not all_sub_localities:
+            print(f"  ⚠ No sub-localities loaded from any files")
+            return 0
+
+        print(f"\n  📊 Total sub-localities to import: {len(all_sub_localities):,}")
+
+        # Detect and add new columns
+        new_columns = self.detect_new_columns('sub_localities', all_sub_localities)
+        if new_columns:
+            self.add_columns_to_table('sub_localities', new_columns)
+
+        # Get current column list
+        all_columns = list(self.get_table_columns('sub_localities').keys())
+
+        # Define fields to skip during import for sub_localities table
+        always_skip_fields = {'flag', 'country_name', 'state_name', 'city_name'}
+
+        # Fields that are optional
+        optional_fields = {'created_at', 'updated_at'}
+
+        # Determine which fields are actually present in the JSON data
+        json_fields = set()
+        for record in all_sub_localities[:10]:
+            json_fields.update(record.keys())
+
+        # Build final insert column list
+        insert_columns = [
+            c for c in all_columns
+            if c not in always_skip_fields
+            and (c not in optional_fields or c in json_fields)
+        ]
+
+        # Clear existing data
+        print(f"  🗑️  Truncating existing data...")
+        self.cursor.execute(f"SET FOREIGN_KEY_CHECKS=0")
+        self.cursor.execute(f"TRUNCATE TABLE sub_localities")
+        self.cursor.execute(f"SET FOREIGN_KEY_CHECKS=1")
+
+        # Prepare insert statement
+        placeholders = ', '.join(['%s'] * len(insert_columns))
+        column_names = ', '.join([f'`{c}`' for c in insert_columns])
+        insert_sql = f"INSERT INTO sub_localities ({column_names}) VALUES ({placeholders})"
+
+        print(f"  📝 Inserting columns: {', '.join(insert_columns)}")
+
+        # Batch insert
+        batch_size = 1000
+        inserted = 0
+
+        for i in range(0, len(all_sub_localities), batch_size):
+            batch = all_sub_localities[i:i + batch_size]
+            values = []
+
+            for record in batch:
+                row = []
+                for col in insert_columns:
+                    value = record.get(col)
+                    row.append(self.prepare_value(value, col))
+                values.append(tuple(row))
+
+            try:
+                self.cursor.executemany(insert_sql, values)
+                self.conn.commit()
+                inserted += len(values)
+                print(f"  ✓ Inserted {inserted:,} / {len(all_sub_localities):,} records...", end='\r')
+            except mysql.connector.Error as e:
+                print(f"\n  ❌ Insert failed at record {inserted}: {e}")
+                self.conn.rollback()
+                raise
+
+        print(f"\n  ✓ Imported {inserted:,} sub-localities from {len(sub_locality_files)} country files")
+        return inserted
+
     def close(self):
         """Close database connection"""
         self.cursor.close()
@@ -443,6 +550,7 @@ def main():
         countries_count = importer.import_countries()
         states_count = importer.import_states()
         cities_count = importer.import_cities()
+        sub_localities_count = importer.import_sub_localities()
 
         print("\n" + "=" * 60)
         print("✅ Import complete!")
@@ -451,6 +559,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Sub-localities: {sub_localities_count:,}")
 
     except Exception as e:
         print(f"\n❌ Import failed: {e}")

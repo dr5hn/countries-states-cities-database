@@ -76,8 +76,9 @@ model Country {
   subregionRelation Subregion? @relation(fields: [subregionId], references: [id])
   subregionId       Int?       @map("subregion_id") @db.UnsignedMediumInt
 
-  states           State[]
-  cities           City[]
+  states        State[]
+  cities        City[]
+  subLocalities SubLocality[]
 
   @@index([regionId])
   @@index([subregionId])
@@ -104,9 +105,10 @@ model State {
   createdAt   DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
   updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
-  country    Country  @relation(fields: [countryId], references: [id])
-  countryId  Int      @map("country_id") @db.UnsignedMediumInt
-  cities     City[]
+  country       Country       @relation(fields: [countryId], references: [id])
+  countryId     Int           @map("country_id") @db.UnsignedMediumInt
+  cities        City[]
+  subLocalities SubLocality[]
 
   @@index([countryId])
   @@map("states")
@@ -127,12 +129,41 @@ model City {
   createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
   updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
+  state         State         @relation(fields: [stateId], references: [id])
+  stateId       Int           @map("state_id") @db.UnsignedMediumInt
+  country       Country       @relation(fields: [countryId], references: [id])
+  countryId     Int           @map("country_id") @db.UnsignedMediumInt
+  subLocalities SubLocality[]
+
+  @@index([stateId])
+  @@index([countryId])
+  @@map("cities")
+}
+
+model SubLocality {
+  id          Int      @id @default(autoincrement()) @db.UnsignedMediumInt
+  name        String   @db.VarChar(255)
+  stateCode   String   @map("state_code") @db.VarChar(255)
+  countryCode String   @map("country_code") @db.Char(2)
+  latitude    Decimal  @db.Decimal(10, 8)
+  longitude   Decimal  @db.Decimal(11, 8)
+  native      String?  @db.VarChar(255)
+  timezone    String?  @db.VarChar(255)
+  translations Json?   @db.Text
+  wikiDataId  String?  @db.VarChar(255)
+  flag        Boolean  @default(true) @db.TinyInt
+  createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
+
+  city        City     @relation(fields: [cityId], references: [id])
+  cityId      Int      @map("city_id") @db.UnsignedMediumInt
   state       State    @relation(fields: [stateId], references: [id])
   stateId     Int      @map("state_id") @db.UnsignedMediumInt
   country     Country  @relation(fields: [countryId], references: [id])
   countryId   Int      @map("country_id") @db.UnsignedMediumInt
 
+  @@index([cityId])
   @@index([stateId])
   @@index([countryId])
-  @@map("cities")
+  @@map("sub_localities")
 }

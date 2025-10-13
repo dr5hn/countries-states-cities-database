@@ -14,11 +14,15 @@ contributions/
 │   └── countries.json          (250 countries)
 ├── states/
 │   └── states.json             (5,000+ states/provinces)
-└── cities/
-    ├── AD.json                 (Andorra cities)
-    ├── US.json                 (United States cities)
-    ├── IN.json                 (India cities)
-    └── ...                     (209 country files)
+├── cities/
+│   ├── AD.json                 (Andorra cities)
+│   ├── US.json                 (United States cities)
+│   ├── IN.json                 (India cities)
+│   └── ...                     (209 country files)
+└── sub_localities/
+    ├── IN.json                 (India sub-localities)
+    ├── US.json                 (United States sub-localities)
+    └── ...                     (Sub-localities by country)
 ```
 
 ## 🎯 How to Contribute
@@ -123,6 +127,34 @@ Edit `contributions/subregions/subregions.json` and add your subregion:
 
 **Note:** Omit the `id` field for new subregions - it will be auto-assigned.
 
+### Adding a New Sub-Locality
+
+Sub-localities are neighborhoods or areas within a city (e.g., Andheri in Mumbai, Manhattan in New York).
+
+1. **Find the country file**: Navigate to `contributions/sub_localities/` and open the file for your country (e.g., `IN.json` for India)
+
+2. **Add your sub-locality** at the end of the array:
+
+```json
+{
+    "name": "Andheri",
+    "city_id": 133024,
+    "state_id": 4008,
+    "state_code": "MH",
+    "country_id": 101,
+    "country_code": "IN",
+    "latitude": "19.11916667",
+    "longitude": "72.84694444",
+    "timezone": "Asia/Kolkata"
+}
+```
+
+**⚠️ Important:** 
+- Do NOT include an `id` field for new sub-localities! The build system will automatically assign IDs.
+- You must provide a valid `city_id` that references the parent city. Find city IDs in the corresponding `contributions/cities/*.json` file.
+
+**Note:** If the country file doesn't exist, create it as an empty array: `[]`
+
 ## 🛠️ Submission Process
 
 **For External Contributors:**
@@ -163,6 +195,47 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 | `flag` | Auto | Active status flag (managed by system) | `1` |
 
 **Note:** The `created_at` and `updated_at` fields are optional. If omitted, MySQL will use default values. When provided, use ISO 8601 format with "T" separator.
+
+### Sub-Locality Fields
+
+| Field | Required | Description | Example |
+|-------|----------|-------------|---------|
+| `id` | Auto | Unique identifier (omit for new sub-localities) | `1234` |
+| `name` | ✅ Yes | Official sub-locality name | `"Andheri"` |
+| `city_id` | ✅ Yes | ID of parent city | `133024` |
+| `state_id` | ✅ Yes | ID of parent state | `4008` |
+| `state_code` | ✅ Yes | ISO code of parent state | `"MH"` |
+| `country_id` | ✅ Yes | ID of parent country | `101` |
+| `country_code` | ✅ Yes | ISO2 code of parent country | `"IN"` |
+| `latitude` | ✅ Yes | Latitude coordinate | `"19.11916667"` |
+| `longitude` | ✅ Yes | Longitude coordinate | `"72.84694444"` |
+| `native` | No | Native name | `"अंधेरी"` |
+| `timezone` | No | IANA timezone | `"Asia/Kolkata"` |
+| `translations` | No | Name translations object | `{"es": "Andheri"}` |
+| `wikiDataId` | No | WikiData identifier | `"Q12413015"` |
+| `created_at` | No | Creation timestamp (ISO 8601) | `"2021-06-06T13:17:48"` |
+| `updated_at` | No | Last update timestamp (ISO 8601) | `"2025-10-09T10:30:49"` |
+| `flag` | Auto | Active status flag (managed by system) | `1` |
+
+### Finding City IDs
+
+To find the correct `city_id` for a sub-locality:
+
+1. Open `contributions/cities/<COUNTRY_CODE>.json` (e.g., `IN.json` for India)
+2. Search for the parent city name
+3. Use the `id` value
+
+Example:
+```json
+{
+  "id": 133024,
+  "name": "Mumbai",
+  "state_id": 4008,
+  "state_code": "MH",
+  "country_id": 101,
+  "country_code": "IN"
+}
+```
 
 ### Finding State IDs
 

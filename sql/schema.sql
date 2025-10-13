@@ -47,6 +47,40 @@ CREATE TABLE `cities` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `sub_localities`
+--
+
+DROP TABLE IF EXISTS `sub_localities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sub_localities` (
+  `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city_id` mediumint unsigned NOT NULL,
+  `state_id` mediumint unsigned NOT NULL,
+  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country_id` mediumint unsigned NOT NULL,
+  `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `latitude` decimal(10,8) NOT NULL,
+  `longitude` decimal(11,8) NOT NULL,
+  `native` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `timezone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IANA timezone identifier (e.g., America/New_York)',
+  `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT '2014-01-01 06:31:01',
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `flag` tinyint(1) NOT NULL DEFAULT '1',
+  `wikiDataId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
+  PRIMARY KEY (`id`),
+  KEY `sub_localities_ibfk_1` (`city_id`),
+  KEY `sub_localities_ibfk_2` (`state_id`),
+  KEY `sub_localities_ibfk_3` (`country_id`),
+  CONSTRAINT `sub_localities_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`),
+  CONSTRAINT `sub_localities_ibfk_2` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
+  CONSTRAINT `sub_localities_ibfk_3` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `countries`
 --
 
