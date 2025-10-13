@@ -345,7 +345,7 @@ def main():
     syncer = MySQLToJSONSync(
         host='localhost',
         user='root',
-        password='',
+        password='root',
         database='world'
     )
 
