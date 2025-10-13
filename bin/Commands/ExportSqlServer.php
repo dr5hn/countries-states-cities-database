@@ -15,7 +15,7 @@ class ExportSqlServer extends Command
     protected static $defaultName = 'export:sql-server';
     protected static $defaultDescription = 'Export data to SQL Server format';
 
-    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'cities'];
+    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'cities', 'sub_localities'];
     private Filesystem $filesystem;
 
     public function __construct()
@@ -135,6 +135,29 @@ class ExportSqlServer extends Command
                 wikiDataId NVARCHAR(255) NULL,
                 CONSTRAINT FK_cities_states FOREIGN KEY (state_id) REFERENCES world.states(id),
                 CONSTRAINT FK_cities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
+            );",
+            'sub_localities' => "
+            IF OBJECT_ID('world.sub_localities', 'U') IS NOT NULL DROP TABLE world.sub_localities;
+            CREATE TABLE world.sub_localities (
+                id INT IDENTITY(1,1) PRIMARY KEY,
+                name NVARCHAR(255) NOT NULL,
+                city_id INT NOT NULL,
+                state_id INT NOT NULL,
+                state_code NVARCHAR(255) NOT NULL,
+                country_id INT NOT NULL,
+                country_code NCHAR(2) NOT NULL,
+                latitude DECIMAL(10,8) NOT NULL,
+                longitude DECIMAL(11,8) NOT NULL,
+                native NVARCHAR(255) NULL,
+                timezone NVARCHAR(255) NULL,
+                translations NVARCHAR(MAX),
+                created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',
+                updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+                flag BIT NOT NULL DEFAULT 1,
+                wikiDataId NVARCHAR(255) NULL,
+                CONSTRAINT FK_sub_localities_cities FOREIGN KEY (city_id) REFERENCES world.cities(id),
+                CONSTRAINT FK_sub_localities_states FOREIGN KEY (state_id) REFERENCES world.states(id),
+                CONSTRAINT FK_sub_localities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
             );"
         ];
 

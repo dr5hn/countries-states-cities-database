@@ -20,6 +20,7 @@ class ExportXml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/xml/countries.xml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/xml/states.xml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/xml/cities.xml', 'singular' => 'city'],
+        'sub_localities' => ['from' => '/json/sub_localities.json', 'to' => '/xml/sub_localities.xml', 'singular' => 'sub_locality'],
     ];
 
     private Filesystem $filesystem;

@@ -17,6 +17,7 @@ class ExportCsv extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/csv/countries.csv'],
         'states' => ['from' => '/json/states.json', 'to' => '/csv/states.csv'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
+        'sub_localities' => ['from' => '/json/sub_localities.json', 'to' => '/csv/sub_localities.csv'],
         'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
     ];
@@ -25,6 +26,7 @@ class ExportCsv extends Command
         'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
         'states' => ['from' => '/json/states.json', 'place_type' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'place_type' => 'city'],
+        'sub_localities' => ['from' => '/json/sub_localities.json', 'place_type' => 'sub_locality'],
         'regions' => ['from' => '/json/regions.json', 'place_type' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'place_type' => 'subregion'],
     ];

@@ -20,6 +20,7 @@ class ExportYaml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/yml/countries.yml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/yml/states.yml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/yml/cities.yml', 'singular' => 'city'],
+        'sub_localities' => ['from' => '/json/sub_localities.json', 'to' => '/yml/sub_localities.yml', 'singular' => 'sub_locality'],
     ];
 
     private Filesystem $filesystem;
