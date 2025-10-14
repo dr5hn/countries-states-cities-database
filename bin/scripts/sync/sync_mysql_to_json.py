@@ -22,6 +22,7 @@ Requirements:
 import json
 import os
 import sys
+import argparse
 from typing import List, Dict, Any, Set
 import mysql.connector
 from collections import OrderedDict
@@ -332,6 +333,16 @@ class MySQLToJSONSync:
 
 def main():
     """Main execution"""
+    parser = argparse.ArgumentParser(
+        description="Sync MySQL database to JSON contribution files"
+    )
+    parser.add_argument('--host', default='localhost', help='MySQL host')
+    parser.add_argument('--user', default='root', help='MySQL user')
+    parser.add_argument('--password', default='', help='MySQL password')
+    parser.add_argument('--database', default='world', help='MySQL database')
+
+    args = parser.parse_args()
+
     print("🔄 MySQL → JSON Sync (Dynamic Schema Detection)\n")
     print("=" * 60)
 
@@ -343,10 +354,10 @@ def main():
 
     # Initialize sync
     syncer = MySQLToJSONSync(
-        host='localhost',
-        user='root',
-        password='root',
-        database='world'
+        host=args.host,
+        user=args.user,
+        password=args.password,
+        database=args.database
     )
 
     try:
