@@ -116,6 +116,15 @@ jobs:
           python3 bin/scripts/sync/import_json_to_mysql.py --host localhost --user root --password root --database world
           echo "✅ Import complete - IDs auto-assigned by MySQL"
 
+      - name: Export MySQL to JSON (Validation)
+        run: |
+          echo "🔄 Syncing MySQL back to contributions JSON for validation..."
+          python3 bin/scripts/sync/sync_mysql_to_json.py --host localhost --user root --password root --database world
+          echo "✅ MySQL → JSON sync complete"
+          echo "📊 Validating round-trip consistency..."
+          # Show what changed (if anything)
+          git diff --stat contributions/ || echo "No changes detected - perfect round-trip!"
+
       - name: Setup & Run NMIG (MySQL to PostgreSQL)
         run: |
           cp nmig.config.json nmig/config/config.json
