@@ -29,6 +29,7 @@ python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
 
 **Features**:
 - Uses `timezonefinder` library to map lat/lng → IANA timezone
+- **Filters out `Etc/GMT*` timezones** (not proper location-based IANA timezones)
 - Processes cities in batches for efficiency (default: 1000 per batch)
 - Updates only cities without timezone data (timezone IS NULL)
 - Supports dry-run mode for testing
@@ -37,6 +38,8 @@ python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
 **Use case**: Populate timezone data for new cities based on coordinates
 
 **Requirements**: `pip install timezonefinder mysql-connector-python`
+
+**Important**: The script automatically filters out generic `Etc/GMT±N` timezones returned by TimezoneFinder for oceanic locations, ensuring only proper IANA timezones are used. See `TIMEZONE_GUIDE.md` for details.
 
 ### sync_mysql_to_json.py ⭐ NEW
 **MySQL → JSON synchronization with dynamic schema detection**

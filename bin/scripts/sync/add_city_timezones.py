@@ -76,6 +76,13 @@ class CityTimezoneUpdater:
 
             # Get timezone
             tz = self.tf.timezone_at(lat=lat, lng=lng)
+            
+            # Filter out generic Etc/GMT timezones (not location-specific IANA timezones)
+            # These are used for oceanic/remote locations and should not be assigned to cities
+            # They're fixed offset zones without daylight saving or real-world location context
+            if tz and tz.startswith('Etc/GMT'):
+                return None
+            
             return tz
         except Exception as e:
             print(f"  ⚠️  Error getting timezone for ({latitude}, {longitude}): {e}")
