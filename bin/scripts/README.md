@@ -41,6 +41,29 @@ python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
 
 **Important**: The script automatically filters out generic `Etc/GMT±N` timezones returned by TimezoneFinder for oceanic locations, ensuring only proper IANA timezones are used. See `TIMEZONE_GUIDE.md` for details.
 
+### validate_timezones.py ⭐ NEW
+**Validate timezone data quality across countries, states, and cities**
+
+```bash
+# Run validation check
+python3 scripts/sync/validate_timezones.py
+
+# Check cities too (requires MySQL)
+python3 scripts/sync/validate_timezones.py --check-cities
+
+# Generate SQL fixes for problematic states
+python3 scripts/sync/validate_timezones.py --fix-states
+```
+
+**Features**:
+- Checks for `Etc/` timezones in states
+- Validates state timezones exist in countries
+- Detects invalid or deprecated IANA timezones
+- Optional city timezone validation (MySQL required)
+- Generates SQL fix statements
+
+**Use case**: Data quality auditing and validation before releases
+
 ### sync_mysql_to_json.py ⭐ NEW
 **MySQL → JSON synchronization with dynamic schema detection**
 
