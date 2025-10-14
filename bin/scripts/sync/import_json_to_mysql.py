@@ -191,6 +191,13 @@ class JSONToMySQLImporter:
             print(f"  ⚠ No data found in {json_file}")
             return 0
 
+        # Separate records with IDs from those without
+        records_with_id = [r for r in data if r.get('id') is not None]
+        records_without_id = [r for r in data if r.get('id') is None]
+
+        if records_without_id:
+            print(f"  ℹ️  Found {len(records_without_id)} records without IDs (will be auto-assigned)")
+
         # Detect and add new columns
         new_columns = self.detect_new_columns(table_name, data)
         if new_columns:
@@ -231,19 +238,37 @@ class JSONToMySQLImporter:
         self.cursor.execute(f"TRUNCATE TABLE {table_name}")
         self.cursor.execute(f"SET FOREIGN_KEY_CHECKS=1")
 
+        # Insert records with explicit IDs first
+        inserted = 0
+        if records_with_id:
+            print(f"  📝 Inserting {len(records_with_id)} records with explicit IDs...")
+            print(f"     Columns: {', '.join(insert_columns)}")
+            inserted += self._batch_insert_records(table_name, records_with_id, insert_columns)
+
+        # Insert records without IDs (auto-increment will assign them)
+        if records_without_id:
+            # Exclude 'id' column for records without IDs
+            insert_columns_no_id = [c for c in insert_columns if c != 'id']
+            print(f"  📝 Inserting {len(records_without_id)} records without IDs (auto-increment)...")
+            print(f"     Columns: {', '.join(insert_columns_no_id)}")
+            inserted += self._batch_insert_records(table_name, records_without_id, insert_columns_no_id)
+
+        print(f"  ✓ Imported {inserted:,} records to '{table_name}'")
+        return inserted
+
+    def _batch_insert_records(self, table_name: str, records: List[Dict], insert_columns: List[str]) -> int:
+        """Helper method to batch insert records with specific columns"""
         # Prepare insert statement
         placeholders = ', '.join(['%s'] * len(insert_columns))
         column_names = ', '.join([f'`{c}`' for c in insert_columns])
         insert_sql = f"INSERT INTO {table_name} ({column_names}) VALUES ({placeholders})"
 
-        print(f"  📝 Inserting columns: {', '.join(insert_columns)}")
-
         # Batch insert
         batch_size = 1000
         inserted = 0
 
-        for i in range(0, len(data), batch_size):
-            batch = data[i:i + batch_size]
+        for i in range(0, len(records), batch_size):
+            batch = records[i:i + batch_size]
             values = []
 
             for record in batch:
@@ -257,13 +282,13 @@ class JSONToMySQLImporter:
                 self.cursor.executemany(insert_sql, values)
                 self.conn.commit()
                 inserted += len(values)
-                print(f"  ✓ Inserted {inserted:,} / {len(data):,} records...", end='\r')
+                print(f"     ✓ Inserted {inserted:,} / {len(records):,} records...", end='\r')
             except mysql.connector.Error as e:
-                print(f"\n  ❌ Insert failed at record {inserted}: {e}")
+                print(f"\n     ❌ Insert failed at record {inserted}: {e}")
                 self.conn.rollback()
                 raise
 
-        print(f"\n  ✓ Imported {inserted:,} records to '{table_name}'")
+        print()  # New line after progress indicator
         return inserted
 
     def import_countries(self):
