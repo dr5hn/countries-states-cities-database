@@ -13,11 +13,39 @@ scripts/
 
 ## Sync Scripts (`sync/`)
 
+### add_city_timezones.py ⭐ NEW
+**Add timezone data to cities using latitude/longitude coordinates**
+
+```bash
+# Add timezones to all cities
+python3 scripts/sync/add_city_timezones.py
+
+# Custom database credentials
+python3 scripts/sync/add_city_timezones.py --host localhost --user root --password root
+
+# Test with limited cities
+python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
+```
+
+**Features**:
+- Uses `timezonefinder` library to map lat/lng → IANA timezone
+- Processes cities in batches for efficiency (default: 1000 per batch)
+- Updates only cities without timezone data (timezone IS NULL)
+- Supports dry-run mode for testing
+- Transaction-safe with batch commits
+
+**Use case**: Populate timezone data for new cities based on coordinates
+
+**Requirements**: `pip install timezonefinder mysql-connector-python`
+
 ### sync_mysql_to_json.py ⭐ NEW
 **MySQL → JSON synchronization with dynamic schema detection**
 
 ```bash
 python3 scripts/sync/sync_mysql_to_json.py
+
+# With custom credentials
+python3 scripts/sync/sync_mysql_to_json.py --host localhost --user root --password root
 ```
 
 **Features**:
@@ -76,7 +104,7 @@ python3 scripts/export/import_duckdb.py --input sqlite/world.sqlite3 --output du
 Install Python dependencies:
 
 ```bash
-pip install mysql-connector-python duckdb
+pip install mysql-connector-python timezonefinder duckdb
 ```
 
 ## Common Workflows
