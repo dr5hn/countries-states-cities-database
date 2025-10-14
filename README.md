@@ -14,6 +14,7 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 ## Why Choose This Database?
 
 * ✅ **Most Comprehensive** - 151,024+ cities from 250 countries, continuously updated by active community
+* ✅ **Timezone Support** - IANA timezone identifiers for all states and cities based on geographic coordinates
 * ✅ **Multilingual Support** - Built-in translations for countries, states, and cities in 19 languages (Arabic, Chinese, Dutch, French, German, Hindi, Italian, Japanese, Korean, Persian, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian, and more)
 * ✅ **Multiple Integration Options** - NPM package, REST API, Export Tool, or direct downloads
 * ✅ **Production Ready** - Trusted by thousands of developers worldwide in live applications
