@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict kB6IBUJfpsPiltK6fP43MTpD8FGpUfJkpG6bcCyHCsV5cGRMUTilRRybAxmnVR1
+\restrict S7v5MUI2UCUWXZ87ETJM9aYOdinxP7PLZDcxjBfUfGlNLZHPwLQ6O4v8XcBdGo6
 
 -- Dumped from database version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
 -- Dumped by pg_dump version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
@@ -5086,13 +5086,15 @@ INSERT INTO public.states VALUES (5461, 'North Northamptonshire', 232, 'GB', '',
 INSERT INTO public.states VALUES (5462, 'West Northamptonshire', 232, 'GB', '', 'WNH', 'GB-WNH', 'unitary authority', 2, 2336, 'West Northamptonshire', 52.22689770, -1.34831910, 'Europe/London', '{"br": "Sir Northampton ar C''hornôg", "ko": "웨스트 노샘프턴셔", "pt-BR": "Northamptonshire Ocidental", "pt": "Northamptonshire Ocidental", "nl": "West-Northamptonshire", "hr": "Zapadni Northamptonshire", "fa": "وست نورث‌همپتون‌شر", "de": "West-Northamptonshire", "es": "Northamptonshire occidental", "fr": "Northamptonshire occidental", "ja": "ウェスト・ノーサンプトンシャー", "it": "Northamptonshire occidentale", "zh-CN": "西北安普敦郡", "tr": "Batı Northamptonshire", "ru": "Западный Нортгемптоншир", "uk": "Західний Нортгемптоншир", "pl": "Zachodni Northamptonshire", "hi": "पश्चिम नॉर्थम्पटनशायर", "ar": "غرب نورثهامبتونشاير"}', '2025-10-09 18:37:41', '2025-10-09 18:50:46', 1, 'Q111232469', NULL);
 INSERT INTO public.states VALUES (5463, 'Thessaly', 85, 'GR', NULL, 'E', 'GR-E', 'administrative region', 1, NULL, 'Θεσσαλία', 39.57758450, 21.40783680, 'Europe/Athens', '{"br": "Tessalia", "ko": "테살리아", "pt-BR": "Tessália", "pt": "Tessália", "nl": "Thessalië", "hr": "Tesalija", "fa": "تسالی", "de": "Thessalien", "es": "Tesalia", "fr": "Thessalie", "ja": "テッサリア", "it": "Tessaglia", "zh-CN": "色萨利", "tr": "Teselya", "ru": "Фессалия", "uk": "Фессалія", "pl": "Tesalia", "hi": "थेसाली", "ar": "ثيساليا"}', '2025-10-13 21:03:46', '2025-10-14 10:04:42', 1, 'Q22807284', NULL);
 INSERT INTO public.states VALUES (5464, 'North Aegean', 85, 'GR', NULL, 'K', 'GR-K', 'administrative region', 1, NULL, 'Βόρειο Αιγαίο', 38.76453610, 24.70113280, 'Europe/Athens', '{"br": "Egea ar C''hornôg", "ko": "북에게해", "pt-BR": "Egeu do Norte", "pt": "Egeu do Norte", "nl": "Noord-Egeïsche Zee", "hr": "Sjeverni Egej", "fa": "شمال دریای اژه", "de": "Nördliche Ägäis", "es": "Egeo septentrional", "fr": "Égée du Nord", "ja": "北エーゲ海", "it": "Egeo settentrionale", "zh-CN": "北爱琴海", "tr": "Kuzey Ege", "ru": "Северное Эгейское море", "uk": "Північне Егейське море", "pl": "Północne Morze Egejskie", "hi": "उत्तरी ईजियन", "ar": "شمال بحر إيجة"}', '2025-10-13 21:08:32', '2025-10-14 10:04:48', 1, 'Q173620', NULL);
+INSERT INTO public.states VALUES (5465, 'Sidama', 70, 'ET', NULL, 'SI', 'ET-SI', 'region', 1, NULL, 'ሲዳማ', 6.50000000, 38.50000000, 'Africa/Addis_Ababa', '{"br": "Sidama", "ko": "시다마", "pt-BR": "Sidama", "pt": "Sidama", "nl": "Sidama", "hr": "Sidama", "fa": "سیداما", "de": "Sidama", "es": "Sidama", "fr": "Sidama", "ja": "シダマ", "it": "Sidama", "zh-CN": "锡达马", "tr": "Sidama", "ru": "Сидама", "uk": "Сідама", "pl": "Sidama", "hi": "सिदामा", "ar": "سيداما"}', '2025-10-14 13:41:27', '2025-10-14 13:41:27', 1, 'Q30107894', NULL);
+INSERT INTO public.states VALUES (5466, 'Southwest Ethiopia Peoples', 70, 'ET', NULL, 'SW', 'ET-SW', 'region', 1, NULL, 'ደቡብ ምዕራብ የኢትዮጵያ ሕዝቦች', 7.30000000, 36.20000000, 'Africa/Addis_Ababa', '{"br": "Rannvro poblañsoù mervent kornôg Etiopia", "ko": "남서부 에티오피아 민족", "pt-BR": "Povos do Sudoeste da Etiópia", "pt": "Povos do Sudoeste da Etiópia", "nl": "Zuidwest-Ethiopische volkeren", "hr": "Narodi jugozapadne Etiopije", "fa": "مردمان جنوب غربی اتیوپی", "de": "Südwest-Äthiopien-Völker", "es": "Pueblos del suroeste de Etiopía", "fr": "Peuples du sud-ouest de l''Éthiopie", "ja": "南西エチオピア諸民族", "it": "Popoli dell''Etiopia sud-occidentale", "zh-CN": "埃塞俄比亚西南人民", "tr": "Güneybatı Etiyopya Halkları", "ru": "Народы Юго-Западной Эфиопии", "uk": "Народи Південно-Західної Ефіопії", "pl": "Ludy południowo-zachodniej Etiopii", "hi": "दक्षिण-पश्चिम इथियोपिया के लोग", "ar": "شعوب جنوب غرب إثيوبيا"}', '2025-10-14 13:41:27', '2025-10-14 13:41:27', 1, 'Q105085548', NULL);
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5464, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5466, true);
 
 
 --
@@ -5122,5 +5124,5 @@ ALTER TABLE ONLY public.states
 -- PostgreSQL database dump complete
 --
 
-\unrestrict kB6IBUJfpsPiltK6fP43MTpD8FGpUfJkpG6bcCyHCsV5cGRMUTilRRybAxmnVR1
+\unrestrict S7v5MUI2UCUWXZ87ETJM9aYOdinxP7PLZDcxjBfUfGlNLZHPwLQ6O4v8XcBdGo6
 
