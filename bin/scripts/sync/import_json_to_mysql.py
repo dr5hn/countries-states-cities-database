@@ -404,6 +404,15 @@ class JSONToMySQLImporter:
             print(f"  ⚠ {json_file} not found, skipping")
             return 0
 
+    def import_sublocalities(self):
+        """Import sublocalities from JSON"""
+        json_file = os.path.join('contributions', 'sublocalities', 'sublocalities.json')
+        if os.path.exists(json_file):
+            return self.import_table('sublocalities', json_file)
+        else:
+            print(f"  ⚠ {json_file} not found, skipping")
+            return 0
+
     def close(self):
         """Close database connection"""
         self.cursor.close()
@@ -443,6 +452,7 @@ def main():
         countries_count = importer.import_countries()
         states_count = importer.import_states()
         cities_count = importer.import_cities()
+        sublocalities_count = importer.import_sublocalities()
 
         print("\n" + "=" * 60)
         print("✅ Import complete!")
@@ -451,6 +461,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Sublocalities: {sublocalities_count:,}")
 
     except Exception as e:
         print(f"\n❌ Import failed: {e}")

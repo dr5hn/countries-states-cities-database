@@ -14,11 +14,13 @@ contributions/
 │   └── countries.json          (250 countries)
 ├── states/
 │   └── states.json             (5,000+ states/provinces)
-└── cities/
-    ├── AD.json                 (Andorra cities)
-    ├── US.json                 (United States cities)
-    ├── IN.json                 (India cities)
-    └── ...                     (209 country files)
+├── cities/
+│   ├── AD.json                 (Andorra cities)
+│   ├── US.json                 (United States cities)
+│   ├── IN.json                 (India cities)
+│   └── ...                     (209 country files)
+└── sublocalities/
+    └── sublocalities.json      (Sub-localities/neighborhoods within cities)
 ```
 
 ## 🎯 How to Contribute
@@ -123,6 +125,30 @@ Edit `contributions/subregions/subregions.json` and add your subregion:
 
 **Note:** Omit the `id` field for new subregions - it will be auto-assigned.
 
+### Adding a New Sub-locality
+
+Sub-localities are neighborhoods, areas, or districts within a city (e.g., Bandra in Mumbai, Manhattan in New York).
+
+Edit `contributions/sublocalities/sublocalities.json` and add your sub-locality:
+
+```json
+{
+    "name": "Bandra",
+    "city_id": 133024,
+    "state_id": 4008,
+    "state_code": "MH",
+    "country_id": 101,
+    "country_code": "IN",
+    "latitude": "19.05444444",
+    "longitude": "72.84055556",
+    "timezone": "Asia/Kolkata"
+}
+```
+
+**Note:** Omit the `id` field for new sub-localities - it will be auto-assigned.
+
+**Finding the parent city_id:** Look up the city in the appropriate `contributions/cities/<COUNTRY_CODE>.json` file and use its `id` value.
+
 ## 🛠️ Submission Process
 
 **For External Contributors:**
@@ -165,6 +191,29 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 **Note:** The `created_at` and `updated_at` fields are optional. If omitted, MySQL will use default values. When provided, use ISO 8601 format with "T" separator.
 
 **Timezone Support:** The `timezone` field uses [IANA timezone identifiers](https://www.iana.org/time-zones). If omitted for new cities, it can be automatically populated using the `bin/scripts/sync/add_city_timezones.py` script, which determines the timezone from latitude/longitude coordinates.
+
+### Sub-locality Fields
+
+| Field | Required | Description | Example |
+|-------|----------|-------------|---------|
+| `id` | Auto | Unique identifier (omit for new sub-localities) | `1234` |
+| `name` | ✅ Yes | Official sub-locality name | `"Bandra"` |
+| `city_id` | ✅ Yes | ID of parent city | `133024` |
+| `state_id` | ✅ Yes | ID of parent state | `4008` |
+| `state_code` | ✅ Yes | ISO code of parent state | `"MH"` |
+| `country_id` | ✅ Yes | ID of parent country | `101` |
+| `country_code` | ✅ Yes | ISO2 code of parent country | `"IN"` |
+| `latitude` | ✅ Yes | Latitude coordinate | `"19.05444444"` |
+| `longitude` | ✅ Yes | Longitude coordinate | `"72.84055556"` |
+| `timezone` | No | IANA timezone | `"Asia/Kolkata"` |
+| `native` | No | Native name | `"बांद्रा"` |
+| `translations` | No | Name translations object | `{"es": "Bandra"}` |
+| `wikiDataId` | No | WikiData identifier | `"Q257622"` |
+| `created_at` | No | Creation timestamp (ISO 8601) | `"2019-10-05T23:18:06"` |
+| `updated_at` | No | Last update timestamp (ISO 8601) | `"2025-10-08T14:42:36"` |
+| `flag` | Auto | Active status flag (managed by system) | `1` |
+
+**Note:** Sub-localities represent areas within a city (neighborhoods, districts, suburbs, etc.). They should not be confused with independent cities or towns.
 
 ### Finding State IDs
 
