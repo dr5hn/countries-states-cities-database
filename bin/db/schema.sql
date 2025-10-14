@@ -19,11 +19,11 @@ DROP TABLE IF EXISTS `countries`;
 DROP TABLE IF EXISTS `subregions`;
 DROP TABLE IF EXISTS `regions`;
 
--- MySQL dump 10.13  Distrib 9.4.0, for macos15.4 (arm64)
+-- MySQL dump 10.13  Distrib 9.3.0, for macos15.2 (arm64)
 --
 -- Host: localhost    Database: world
 -- ------------------------------------------------------
--- Server version	9.3.0
+-- Server version	8.0.43-0ubuntu0.24.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -137,6 +137,7 @@ CREATE TABLE `states` (
   `level` int DEFAULT NULL,
   `parent_id` int unsigned DEFAULT NULL,
   `native` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `population` bigint unsigned DEFAULT NULL,
   `latitude` decimal(10,8) DEFAULT NULL,
   `longitude` decimal(11,8) DEFAULT NULL,
   `timezone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IANA timezone identifier (e.g., America/New_York)',
@@ -148,7 +149,7 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`),
   KEY `country_region` (`country_id`),
   CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5463 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=5465 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +179,7 @@ CREATE TABLE `cities` (
   KEY `cities_test_ibfk_2` (`country_id`),
   CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
   CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=157044 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=157058 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -190,6 +191,6 @@ CREATE TABLE `cities` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-13 13:22:16
+-- Dump completed on 2025-10-14 10:05:03
 
 SET FOREIGN_KEY_CHECKS=1;
