@@ -164,6 +164,34 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 **Note:** The `created_at` and `updated_at` fields are optional. If omitted, MySQL will use default values. When provided, use ISO 8601 format with "T" separator.
 
+### State Fields
+
+| Field | Required | Description | Example |
+|-------|----------|-------------|---------|
+| `id` | Auto | Unique identifier (omit for new states) | `1416` |
+| `name` | ✅ Yes | Official state/province name | `"California"` |
+| `country_id` | ✅ Yes | ID of parent country | `233` |
+| `country_code` | ✅ Yes | ISO2 code of parent country | `"US"` |
+| `fips_code` | No | FIPS code | `"CA"` |
+| `iso2` | No | ISO 3166-2 code | `"US-CA"` |
+| `type` | No | Administrative division type | `"state"`, `"province"`, `"special administrative region"` |
+| `latitude` | No | Latitude coordinate | `"36.77826100"` |
+| `longitude` | No | Longitude coordinate | `"-119.41793240"` |
+| `timezone` | No | IANA timezone | `"America/Los_Angeles"` |
+| `translations` | No | Name translations object | `{"es": "California"}` |
+| `phonecode` | No | Phone code (for SARs) | `"852"` |
+| `currency` | No | Currency code (for SARs) | `"HKD"` |
+| `currency_name` | No | Currency name (for SARs) | `"Hong Kong dollar"` |
+| `currency_symbol` | No | Currency symbol (for SARs) | `"$"` |
+| `emoji` | No | Emoji flag (for SARs) | `"🇭🇰"` |
+| `emojiU` | No | Emoji Unicode (for SARs) | `"U+1F1ED U+1F1F0"` |
+| `wikiDataId` | No | WikiData identifier | `"Q99"` |
+| `created_at` | No | Creation timestamp (ISO 8601) | `"2019-10-05T21:48:47"` |
+| `updated_at` | No | Last update timestamp (ISO 8601) | `"2025-10-09T13:31:30"` |
+| `flag` | Auto | Active status flag (managed by system) | `1` |
+
+**Special Administrative Regions (SARs):** Hong Kong and Macau are Special Administrative Regions of China with unique attributes like their own phone codes, currencies, and flags. These optional fields (`phonecode`, `currency`, `currency_name`, `currency_symbol`, `emoji`, `emojiU`) allow SARs to retain their distinct identity while being properly categorized under their parent country.
+
 ### Finding State IDs
 
 To find the correct `state_id` and `state_code`:

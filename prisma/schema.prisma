@@ -85,24 +85,30 @@ model Country {
 }
 
 model State {
-  id          Int       @id @default(autoincrement()) @db.UnsignedMediumInt
-  name        String    @db.VarChar(255)
-  countryCode String    @map("country_code") @db.Char(2)
-  fipsCode    String?   @map("fips_code") @db.VarChar(255)
-  iso2        String?   @db.VarChar(255)
-  iso3166_2   String?   @db.VarChar(255)
-  type        String?   @db.VarChar(191)
-  level       Int?      @db.Int
-  parentId    Int?      @map("parent_id") @db.UnsignedMediumInt
-  native      String?   @db.VarChar(255)
-  latitude    Decimal?  @db.Decimal(10, 8)
-  longitude   Decimal?  @db.Decimal(11, 8)
-  timezone    String?   @db.VarChar(255)
-  translations Json?   @db.Text
-  wikiDataId  String?   @db.VarChar(255)
-  flag        Boolean   @default(true) @db.TinyInt
-  createdAt   DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
-  updatedAt   DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
+  id             Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name           String    @db.VarChar(255)
+  countryCode    String    @map("country_code") @db.Char(2)
+  fipsCode       String?   @map("fips_code") @db.VarChar(255)
+  iso2           String?   @db.VarChar(255)
+  iso3166_2      String?   @db.VarChar(255)
+  type           String?   @db.VarChar(191)
+  level          Int?      @db.Int
+  parentId       Int?      @map("parent_id") @db.UnsignedMediumInt
+  native         String?   @db.VarChar(255)
+  latitude       Decimal?  @db.Decimal(10, 8)
+  longitude      Decimal?  @db.Decimal(11, 8)
+  timezone       String?   @db.VarChar(255)
+  translations   Json?     @db.Text
+  phonecode      String?   @db.VarChar(255)
+  currency       String?   @db.VarChar(255)
+  currencyName   String?   @map("currency_name") @db.VarChar(255)
+  currencySymbol String?   @map("currency_symbol") @db.VarChar(255)
+  emoji          String?   @db.VarChar(191)
+  emojiU         String?   @db.VarChar(191)
+  wikiDataId     String?   @db.VarChar(255)
+  flag           Boolean   @default(true) @db.TinyInt
+  createdAt      DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt      DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
   country    Country  @relation(fields: [countryId], references: [id])
   countryId  Int      @map("country_id") @db.UnsignedMediumInt

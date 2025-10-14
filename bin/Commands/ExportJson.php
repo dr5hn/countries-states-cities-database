@@ -158,6 +158,12 @@ class ExportJson extends Command
                         $statesArray[$i]['longitude'] = $state['longitude'];
                         $statesArray[$i]['timezone'] = $state['timezone'];
                         $statesArray[$i]['translations'] = json_decode($state['translations'], true);
+                        $statesArray[$i]['phonecode'] = $state['phonecode'] ?? null;
+                        $statesArray[$i]['currency'] = $state['currency'] ?? null;
+                        $statesArray[$i]['currency_name'] = $state['currency_name'] ?? null;
+                        $statesArray[$i]['currency_symbol'] = $state['currency_symbol'] ?? null;
+                        $statesArray[$i]['emoji'] = $state['emoji'] ?? null;
+                        $statesArray[$i]['emojiU'] = $state['emojiU'] ?? null;
                         $statesArray[$i]['wikiDataId'] = $state['wikiDataId'];
 
                         // For Country State Array
@@ -171,6 +177,12 @@ class ExportJson extends Command
                             'longitude' => $state['longitude'],
                             'type' => $state['type'],
                             'timezone' => $state['timezone'],
+                            'phonecode' => $state['phonecode'] ?? null,
+                            'currency' => $state['currency'] ?? null,
+                            'currency_name' => $state['currency_name'] ?? null,
+                            'currency_symbol' => $state['currency_symbol'] ?? null,
+                            'emoji' => $state['emoji'] ?? null,
+                            'emojiU' => $state['emojiU'] ?? null,
                         );
 
                         array_push($stateNamesArray, $stateName);

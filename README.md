@@ -294,6 +294,14 @@ Licensed under ODbL v1.0
 
 👍🎉 First off, thanks for your interest in contributing! 🎉👍
 
+### Important Documentation
+
+Before contributing, please review these key documents:
+
+- **[Special Administrative Regions (SARs)](docs/SPECIAL_ADMINISTRATIVE_REGIONS.md)** - Understanding how Hong Kong, Macau, and similar regions are handled
+- **[Contributions Guide](contributions/README.md)** - Field reference and submission process
+- **[Schema Reference](sql/schema.sql)** - Complete database schema
+
 ### Using Our Database Update Tool
 
 We've launched a dedicated web tool to make contributing to this database easier than ever!
