@@ -30,7 +30,7 @@ The `Etc/GMT±N` timezones (e.g., `Etc/GMT+5`, `Etc/GMT-3`) are **fixed offset t
 
 **Problem**: These are not proper location-based timezones and create inconsistencies.
 
-**Solution**: The `add_city_timezones.py` script now filters out `Etc/GMT*` timezones and leaves the field NULL if no proper IANA timezone is found.
+**Solution**: The `add_timezones.py` script now filters out `Etc/GMT*` timezones and leaves the field NULL if no proper IANA timezone is found.
 
 ### Special Cases
 
@@ -108,13 +108,13 @@ Cities store a **single timezone string**:
      // no timezone field
    }
    ```
-   The `add_city_timezones.py` script can populate it later.
+   The `add_timezones.py` script can populate it later.
 
 3. **Never use Etc/GMT timezones**: These are not location-specific
    ```json
    // ❌ WRONG
    "timezone": "Etc/GMT-5"
-   
+
    // ✅ CORRECT
    "timezone": "America/New_York"
    ```
@@ -131,13 +131,16 @@ Cities store a **single timezone string**:
 
 ### For Maintainers
 
-#### Populating Missing City Timezones
+#### Populating Missing Timezones
 ```bash
-# Test first with dry-run
-python3 bin/scripts/sync/add_city_timezones.py --limit 100 --dry-run
+# Test first with dry-run (cities only)
+python3 bin/scripts/utility/add_timezones.py --table cities --limit 100 --dry-run
 
-# Run for all cities
-python3 bin/scripts/sync/add_city_timezones.py
+# Test with states
+python3 bin/scripts/utility/add_timezones.py --table states --limit 100 --dry-run
+
+# Run for both cities and states
+python3 bin/scripts/utility/add_timezones.py --table both
 
 # Sync back to JSON
 python3 bin/scripts/sync/sync_mysql_to_json.py
@@ -149,26 +152,26 @@ If `Etc/GMT*` timezones have already been added to the database:
 
 ```sql
 -- Find cities with Etc/GMT timezones
-SELECT id, name, country_code, timezone 
-FROM cities 
+SELECT id, name, country_code, timezone
+FROM cities
 WHERE timezone LIKE 'Etc/GMT%';
 
 -- Set them to NULL so they can be re-processed
-UPDATE cities 
-SET timezone = NULL 
+UPDATE cities
+SET timezone = NULL
 WHERE timezone LIKE 'Etc/GMT%' AND timezone != 'Etc/UTC';
 
 -- Or just remove all Etc/ timezones
-UPDATE cities 
-SET timezone = NULL 
+UPDATE cities
+SET timezone = NULL
 WHERE timezone LIKE 'Etc/%';
 ```
 
 For states:
 ```sql
 -- Find states with Etc/ timezones
-SELECT id, name, country_code, timezone 
-FROM states 
+SELECT id, name, country_code, timezone
+FROM states
 WHERE timezone LIKE 'Etc/%';
 
 -- Clean them up (requires manual review for proper timezone)
@@ -179,7 +182,7 @@ WHERE timezone LIKE 'Etc/%';
 
 ```bash
 # Create a validation script
-python3 bin/scripts/sync/validate_timezones.py
+python3 bin/scripts/utility/validate_timezones.py
 ```
 
 Look for:
@@ -236,26 +239,26 @@ is_valid_iana_timezone("America/Kralendijk")  # False
 
 ## FAQ
 
-**Q: Why does TimezoneFinder return Etc/GMT for some locations?**  
+**Q: Why does TimezoneFinder return Etc/GMT for some locations?**
 A: For locations in international waters or very remote areas without a defined timezone, the library falls back to fixed-offset Etc/GMT zones. We filter these out.
 
-**Q: What should I do if a city has no timezone after running the script?**  
+**Q: What should I do if a city has no timezone after running the script?**
 A: Check if:
 1. The coordinates are correct
 2. The location is in international waters
 3. Consider using the parent state or country timezone as a fallback
 
-**Q: Can I use UTC offset like "+05:00" instead of timezone name?**  
+**Q: Can I use UTC offset like "+05:00" instead of timezone name?**
 A: No. Always use IANA timezone identifiers. Offsets don't capture daylight saving time and other timezone rules.
 
-**Q: What about Antarctica research stations?**  
+**Q: What about Antarctica research stations?**
 A: Antarctica has proper IANA timezones:
 - `Antarctica/McMurdo`
 - `Antarctica/Palmer`
 - `Antarctica/Rothera`
 - etc.
 
-**Q: Should I include historic timezone changes?**  
+**Q: Should I include historic timezone changes?**
 A: No. This database represents current timezone assignments. The IANA database itself handles historical changes.
 
 ## Summary

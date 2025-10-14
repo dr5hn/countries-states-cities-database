@@ -164,7 +164,7 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 **Note:** The `created_at` and `updated_at` fields are optional. If omitted, MySQL will use default values. When provided, use ISO 8601 format with "T" separator.
 
-**Timezone Support:** The `timezone` field uses [IANA timezone identifiers](https://www.iana.org/time-zones). If omitted for new cities, it can be automatically populated using the `bin/scripts/sync/add_city_timezones.py` script, which determines the timezone from latitude/longitude coordinates.
+**Timezone Support:** The `timezone` field uses [IANA timezone identifiers](https://www.iana.org/time-zones). If omitted for new cities, it can be automatically populated using the `bin/scripts/utility/add_timezones.py` script, which determines the timezone from latitude/longitude coordinates.
 
 ### Finding State IDs
 

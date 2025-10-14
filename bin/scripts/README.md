@@ -11,27 +11,34 @@ scripts/
 └── README.md    # This file
 ```
 
-## Sync Scripts (`sync/`)
+## Utility Scripts (`utility/`)
 
-### add_city_timezones.py ⭐ NEW
-**Add timezone data to cities using latitude/longitude coordinates**
+### add_timezones.py ⭐ NEW
+**Add timezone data to cities and states using latitude/longitude coordinates**
 
 ```bash
-# Add timezones to all cities
-python3 scripts/sync/add_city_timezones.py
+# Add timezones to both cities and states (default)
+python3 scripts/utility/add_timezones.py
+
+# Add timezones only to cities
+python3 scripts/utility/add_timezones.py --table cities
+
+# Add timezones only to states
+python3 scripts/utility/add_timezones.py --table states
 
 # Custom database credentials
-python3 scripts/sync/add_city_timezones.py --host localhost --user root --password root
+python3 scripts/utility/add_timezones.py --host localhost --user root --password root
 
-# Test with limited cities
-python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
+# Test with limited records
+python3 scripts/utility/add_timezones.py --limit 100 --dry-run
 ```
 
 **Features**:
 - Uses `timezonefinder` library to map lat/lng → IANA timezone
+- **Supports both cities and states tables**
 - **Filters out `Etc/GMT*` timezones** (not proper location-based IANA timezones)
-- Processes cities in batches for efficiency (default: 1000 per batch)
-- Updates only cities without timezone data (timezone IS NULL)
+- Processes records in batches for efficiency (default: 1000 per batch)
+- Updates only records without timezone data (timezone IS NULL)
 - Supports dry-run mode for testing
 - Transaction-safe with batch commits
 
@@ -46,13 +53,13 @@ python3 scripts/sync/add_city_timezones.py --limit 100 --dry-run
 
 ```bash
 # Run validation check
-python3 scripts/sync/validate_timezones.py
+python3 scripts/utility/validate_timezones.py
 
 # Check cities too (requires MySQL)
-python3 scripts/sync/validate_timezones.py --check-cities
+python3 scripts/utility/validate_timezones.py --check-cities
 
 # Generate SQL fixes for problematic states
-python3 scripts/sync/validate_timezones.py --fix-states
+python3 scripts/utility/validate_timezones.py --fix-states
 ```
 
 **Features**:
