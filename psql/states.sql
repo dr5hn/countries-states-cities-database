@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict S7v5MUI2UCUWXZ87ETJM9aYOdinxP7PLZDcxjBfUfGlNLZHPwLQ6O4v8XcBdGo6
+\restrict Qi5WIGEPeXfEF0rrvrkXFZbVK8we8gv3POXdwUx92Sz7Y0eKaleN9QuK4Pleaoe
 
 -- Dumped from database version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
 -- Dumped by pg_dump version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
@@ -5088,13 +5088,14 @@ INSERT INTO public.states VALUES (5463, 'Thessaly', 85, 'GR', NULL, 'E', 'GR-E',
 INSERT INTO public.states VALUES (5464, 'North Aegean', 85, 'GR', NULL, 'K', 'GR-K', 'administrative region', 1, NULL, 'Βόρειο Αιγαίο', 38.76453610, 24.70113280, 'Europe/Athens', '{"br": "Egea ar C''hornôg", "ko": "북에게해", "pt-BR": "Egeu do Norte", "pt": "Egeu do Norte", "nl": "Noord-Egeïsche Zee", "hr": "Sjeverni Egej", "fa": "شمال دریای اژه", "de": "Nördliche Ägäis", "es": "Egeo septentrional", "fr": "Égée du Nord", "ja": "北エーゲ海", "it": "Egeo settentrionale", "zh-CN": "北爱琴海", "tr": "Kuzey Ege", "ru": "Северное Эгейское море", "uk": "Північне Егейське море", "pl": "Północne Morze Egejskie", "hi": "उत्तरी ईजियन", "ar": "شمال بحر إيجة"}', '2025-10-13 21:08:32', '2025-10-14 10:04:48', 1, 'Q173620', NULL);
 INSERT INTO public.states VALUES (5465, 'Sidama', 70, 'ET', NULL, 'SI', 'ET-SI', 'region', 1, NULL, 'ሲዳማ', 6.50000000, 38.50000000, 'Africa/Addis_Ababa', '{"br": "Sidama", "ko": "시다마", "pt-BR": "Sidama", "pt": "Sidama", "nl": "Sidama", "hr": "Sidama", "fa": "سیداما", "de": "Sidama", "es": "Sidama", "fr": "Sidama", "ja": "シダマ", "it": "Sidama", "zh-CN": "锡达马", "tr": "Sidama", "ru": "Сидама", "uk": "Сідама", "pl": "Sidama", "hi": "सिदामा", "ar": "سيداما"}', '2025-10-14 13:41:27', '2025-10-14 13:41:27', 1, 'Q30107894', NULL);
 INSERT INTO public.states VALUES (5466, 'Southwest Ethiopia Peoples', 70, 'ET', NULL, 'SW', 'ET-SW', 'region', 1, NULL, 'ደቡብ ምዕራብ የኢትዮጵያ ሕዝቦች', 7.30000000, 36.20000000, 'Africa/Addis_Ababa', '{"br": "Rannvro poblañsoù mervent kornôg Etiopia", "ko": "남서부 에티오피아 민족", "pt-BR": "Povos do Sudoeste da Etiópia", "pt": "Povos do Sudoeste da Etiópia", "nl": "Zuidwest-Ethiopische volkeren", "hr": "Narodi jugozapadne Etiopije", "fa": "مردمان جنوب غربی اتیوپی", "de": "Südwest-Äthiopien-Völker", "es": "Pueblos del suroeste de Etiopía", "fr": "Peuples du sud-ouest de l''Éthiopie", "ja": "南西エチオピア諸民族", "it": "Popoli dell''Etiopia sud-occidentale", "zh-CN": "埃塞俄比亚西南人民", "tr": "Güneybatı Etiyopya Halkları", "ru": "Народы Юго-Западной Эфиопии", "uk": "Народи Південно-Західної Ефіопії", "pl": "Ludy południowo-zachodniej Etiopii", "hi": "दक्षिण-पश्चिम इथियोपिया के लोग", "ar": "شعوب جنوب غرب إثيوبيا"}', '2025-10-14 13:41:27', '2025-10-14 13:41:27', 1, 'Q105085548', NULL);
+INSERT INTO public.states VALUES (5467, 'Ad Dali''', 245, 'YE', '10', 'DA', 'YE-DA', 'governorate', NULL, NULL, 'الضالع', 13.70000000, 44.73000000, 'Asia/Aden', '{"br": "Ad Dali''", "ko": "아드달리", "pt-BR": "Ad Dali''", "pt": "Ad Dali''", "nl": "Ad Dali''", "hr": "Ad Dali''", "fa": "الضالع", "de": "Ad-Dali", "es": "Al Dhale", "fr": "Ad Dali''", "ja": "アッダーリー", "it": "Ad Dali''", "zh-CN": "达利", "tr": "Ed Dali", "ru": "Ад-Дали", "uk": "Ад-Далі", "pl": "Ad Dali''", "hi": "अद दालि", "ar": "الضالع"}', '2019-10-05 21:48:41', '2025-10-15 04:31:00', 1, 'Q241087', NULL);
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5466, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5467, true);
 
 
 --
@@ -5124,5 +5125,5 @@ ALTER TABLE ONLY public.states
 -- PostgreSQL database dump complete
 --
 
-\unrestrict S7v5MUI2UCUWXZ87ETJM9aYOdinxP7PLZDcxjBfUfGlNLZHPwLQ6O4v8XcBdGo6
+\unrestrict Qi5WIGEPeXfEF0rrvrkXFZbVK8we8gv3POXdwUx92Sz7Y0eKaleN9QuK4Pleaoe
 
