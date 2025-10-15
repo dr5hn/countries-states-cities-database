@@ -58,14 +58,15 @@ Agent rules — do this
 - If you change schema or fields, run the appropriate sync/import script and validate locally before committing.
 - When adding export features, follow the `bin/Commands/Export*.php` pattern (one command per output format).
 - **ALWAYS document fixes and PRs** in `.github/fixes-docs/`:
-  - Create a summary file (e.g., `FIX_<issue_number>_SUMMARY.md`) with:
+  - Create **only ONE markdown file per Issue/PR** (e.g., `FIX_<issue_number>_SUMMARY.md` or `<TOPIC>_SUMMARY.md`)
+  - The single file should contain:
     - Issue reference and executive summary
     - Countries/entities addressed
     - Changes made (before/after counts, examples)
     - Validation steps and results
-  - Create detailed documentation files for significant changes
-  - Include code examples, data samples, and validation commands
+    - Code examples, data samples, and validation commands
   - Follow existing format in `.github/fixes-docs/` directory
+  - Do NOT create multiple separate files for the same issue/PR
 
 Agent rules — do NOT do this
 - Do NOT commit generated export files (`json/`, `csv/`, `yml/`, `xml/`, `sqlite/`, `duckdb/`, `mongodb/`, `sqlite/`, `sqlserver/`, `psql/` dumps).

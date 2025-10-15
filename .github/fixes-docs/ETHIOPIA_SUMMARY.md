@@ -20,19 +20,31 @@
 
 ## Before vs After
 
-| Metric | Before | After |
-|--------|--------|-------|
-| Ethiopian States | 11 | **13** ✅ |
-| Regional States | 9 | **11** ✅ |
-| Administrations | 2 | 2 |
-| ISO Compliance | ❌ | ✅ |
+| Metric | Before | After | Now |
+|--------|--------|-------|-----|
+| Ethiopian States | 11 | **13** ✅ | **13** ✅ |
+| Regional States | 9 | **11** ✅ | **11** ✅ |
+| Administrations | 2 | 2 | 2 |
+| ISO Compliance | ❌ | ✅ | ✅ |
+| Cities in SI | 0 | 0 | **7** ✅ |
+| Cities in SW | 0 | 0 | **5** ✅ |
+| Cities in SN | 33 | 33 | **21** ✅ |
+| States with Cities | 11 | 11 | **13** ✅ |
 
 ## Files Changed
 - `contributions/states/states.json` (added 2 entries)
+- `contributions/cities/ET.json` (reassigned 12 cities)
+
+## City Reassignment (Completed)
+✅ **Completed**: 2025-10-14  
+- Reassigned 12 cities from SNNPR to new regions
+- 7 cities → Sidama (SI)
+- 5 cities → Southwest Ethiopia Peoples (SW)
+- See: `.github/fixes-docs/ETHIOPIA_CITIES_REASSIGNMENT.md`
 
 ## Next Steps (Future PRs)
-1. Reassign ~12 cities from SNNPR to new regions once state IDs are assigned
-2. Add additional cities for new regions if needed
+1. ✅ ~~Reassign ~12 cities from SNNPR to new regions~~ **COMPLETED**
+2. 🔄 Add additional cities for new regions if available
 
 ## References
 - ISO 3166-2:ET: https://www.iso.org/obp/ui#iso:code:3166:ET
