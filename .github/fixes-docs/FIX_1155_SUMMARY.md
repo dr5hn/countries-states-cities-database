@@ -1,10 +1,14 @@
-# Yemen Ad Dali' Governorate - Detailed Fix Documentation
+# Yemen Missing Governorate Fix - Issue #1155
 
-## Issue Reference
-This fix addresses the missing Ad Dali' (الضالع) governorate in Yemen's administrative divisions.
+## Quick Reference
+
+**Issue**: [#1155](https://github.com/dr5hn/countries-states-cities-database/issues/1155) - Yemen was missing 1 governorate (Ad Dali')  
+**Status**: ✅ Fixed  
+**Date**: 2025-10-15  
 
 ## Problem Description
-According to ISO 3166-2:YE standard, Yemen should have:
+
+According to the [ISO 3166-2:YE standard](https://www.iso.org/obp/ui#iso:code:3166:YE), Yemen should have:
 - 21 governorates
 - 1 municipality (Amanat Al Asimah - the capital)
 - **Total: 22 administrative divisions**
@@ -13,8 +17,72 @@ The database previously only had 21 entries total (20 governorates + 1 municipal
 
 ## Solution Implemented
 
-### Added Entry
+### Ad Dali' Governorate (YE-DA) - Added
+
 Added the missing Ad Dali' governorate to `contributions/states/states.json` with complete data:
+
+**Key Details:**
+- ISO 3166-2 code: YE-DA
+- Type: Governorate
+- Capital: Ad Dali' (الضالع)
+- Native name: الضالع
+- Coordinates: 13.70°N, 44.73°E
+- Timezone: Asia/Aden
+- WikiData ID: Q241087
+- FIPS code: 10
+
+**Naming variations:**
+- English: Ad Dali' (also spelled Ad Dhale', Al Dhale, or Dhale)
+- Native Arabic: الضالع
+
+**Translations:**
+Provided translations in 18 languages following the pattern of existing Yemen governorates:
+- Breton (br), Korean (ko), Portuguese BR (pt-BR), Portuguese (pt)
+- Dutch (nl), Croatian (hr), Persian (fa), German (de)
+- Spanish (es), French (fr), Japanese (ja), Italian (it)
+- Chinese (zh-CN), Turkish (tr), Russian (ru), Ukrainian (uk)
+- Polish (pl), Hindi (hi), Arabic (ar)
+
+## Before vs After
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Yemen States/Governorates | 21 | **22** ✅ |
+| Governorates | 20 | **21** ✅ |
+| Municipalities | 1 | 1 |
+| ISO Compliance | ❌ | ✅ |
+
+## Complete List of Yemen Administrative Divisions
+
+Now includes all 22 entities as per ISO 3166-2:YE:
+
+### Governorates (21)
+1. YE-AB - Abyan
+2. YE-AD - Aden ('Adan)
+3. YE-AM - Amran ('Amran)
+4. YE-BA - Al Bayda'
+5. **YE-DA - Ad Dali'** ⭐ NEW
+6. YE-DH - Dhamar
+7. YE-HD - Hadramawt (Hadhramaut)
+8. YE-HJ - Hajjah
+9. YE-HU - Al Hudaydah
+10. YE-IB - Ibb
+11. YE-JA - Al Jawf
+12. YE-LA - Lahij
+13. YE-MA - Ma'rib
+14. YE-MR - Al Mahrah
+15. YE-MW - Al Mahwit
+16. YE-RA - Raymah
+17. YE-SD - Sa'dah (Saada)
+18. YE-SH - Shabwah
+19. YE-SN - Sana'a
+20. YE-SU - Arkhabil Suqutra (Socotra)
+21. YE-TA - Ta'izz
+
+### Municipality (1)
+22. YE-SA - Amanat Al Asimah (Sana'a Municipality)
+
+## JSON Entry Example
 
 ```json
 {
@@ -60,32 +128,6 @@ Added the missing Ad Dali' governorate to `contributions/states/states.json` wit
 }
 ```
 
-### Key Details
-
-**Geographic Information:**
-- Latitude: 13.70°N
-- Longitude: 44.73°E
-- Timezone: Asia/Aden (consistent with other Yemen governorates)
-
-**Identifiers:**
-- ISO 3166-2 code: YE-DA
-- ISO2: DA
-- FIPS code: 10
-- WikiData ID: Q241087
-
-**Naming:**
-- English: Ad Dali' (also spelled Ad Dhale', Al Dhale, or Dhale)
-- Native Arabic: الضالع
-- Capital city: Ad Dali'
-
-**Translations:**
-Provided translations in 18 languages following the pattern of existing Yemen governorates:
-- Breton (br), Korean (ko), Portuguese BR (pt-BR), Portuguese (pt)
-- Dutch (nl), Croatian (hr), Persian (fa), German (de)
-- Spanish (es), French (fr), Japanese (ja), Italian (it)
-- Chinese (zh-CN), Turkish (tr), Russian (ru), Ukrainian (uk)
-- Polish (pl), Hindi (hi), Arabic (ar)
-
 ## Validation Steps
 
 ### 1. Count Verification
@@ -96,10 +138,15 @@ jq '[.[] | select(.country_code == "YE")] | length' contributions/states/states.
 # Output: 22 ✅
 ```
 
-### 2. ISO Code Completeness
-Verified all 22 ISO codes are present:
-- YE-AB through YE-TA (all present)
-- Including the newly added YE-DA ✅
+### 2. ISO Code Completeness Check
+```bash
+# Verify all 22 ISO codes from ISO 3166-2:YE standard are present
+# Expected codes: YE-AB, YE-AD, YE-AM, YE-BA, YE-DA (new), YE-DH, YE-HD, YE-HJ, 
+#                 YE-HU, YE-IB, YE-JA, YE-LA, YE-MA, YE-MR, YE-MW, YE-RA, 
+#                 YE-SA, YE-SD, YE-SH, YE-SN, YE-SU, YE-TA
+jq '.[] | select(.country_code == "YE") | .iso3166_2' contributions/states/states.json | sort
+# All 22 codes present ✅
+```
 
 ### 3. JSON Validation
 ```bash
@@ -108,13 +155,15 @@ python3 -m json.tool contributions/states/states.json > /dev/null
 ```
 
 ### 4. Data Structure Consistency
-- Follows the same structure as other Yemen governorates
-- All required fields present
-- Translations follow the same pattern
-- No `id` field included (will be auto-assigned by MySQL)
+- ✅ Follows the same structure as other Yemen governorates
+- ✅ All required fields present
+- ✅ Translations follow the same pattern
+- ✅ No `id` field included (will be auto-assigned by MySQL)
+- ✅ Matches field types and formats of existing entries
 
 ## Files Modified
-1. `contributions/states/states.json` - Added 1 new entry
+
+1. **`contributions/states/states.json`** - Added 1 new entry
    - Total states increased from 5000 to 5001
    - Yemen entries increased from 21 to 22
 
@@ -139,21 +188,18 @@ python3 -m json.tool contributions/states/states.json > /dev/null
    - Provides multilingual names and identifiers
 
 ## Historical Context
-Ad Dali' (الضالع) is a governorate in southern Yemen. The name is variously transliterated as:
-- Ad Dali' (most common)
-- Ad Dhale'
-- Al Dhale
-- Dhale
 
-The governorate's capital city shares the same name. The governorate is located in the southern part of Yemen, bordered by several other governorates.
+Ad Dali' (الضالع) is a governorate in southern Yemen. The governorate's capital city shares the same name. The governorate is located in the southern part of Yemen, bordered by several other governorates.
 
 ## Next Steps
+
 None required. The fix is complete. GitHub Actions will:
 1. Import the JSON to MySQL (ID will be auto-assigned)
 2. Generate all export formats (JSON, CSV, SQL, XML, YAML, MongoDB)
 3. Update all distribution files
 
 ## Notes
+
 - Entry inserted before Dhamar in the JSON array to maintain some logical ordering
 - The `id` field is intentionally omitted as per contribution guidelines
 - MySQL AUTO_INCREMENT will assign the ID during import
