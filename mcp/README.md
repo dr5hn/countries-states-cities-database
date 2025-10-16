@@ -1,10 +1,20 @@
-# Wikipedia MCP Server Integration
+# MCP Server Integration (Deprecated for Claude Desktop)
 
-This directory contains configuration and scripts for integrating the Wikipedia MCP (Model Context Protocol) Server with the Countries States Cities Database project.
+> **⚠️ Note**: This directory contains the original Claude Desktop MCP integration. The project has moved to **GitHub Copilot Agent MCP integration** which is configured in `.github/copilot-mcp.json`. 
+>
+> **For Copilot agents working on issues**, see: **`.github/MCP_CONFIGURATION.md`**
+>
+> The scripts and documentation here are preserved for users who want to set up Claude Desktop integration manually, but this is no longer the primary integration method for this project.
+
+---
+
+## Wikipedia MCP Server Integration (Claude Desktop)
+
+This directory contains configuration and scripts for integrating the Wikipedia MCP (Model Context Protocol) Server with Claude Desktop.
 
 ## What is MCP?
 
-The Model Context Protocol (MCP) is a standardized protocol that allows AI assistants (like Claude) to interact with external data sources and tools. By integrating the Wikipedia MCP server, we can enhance our geographical database with rich contextual information from Wikipedia.
+The Model Context Protocol (MCP) is a standardized protocol that allows AI assistants (like Claude Desktop) to interact with external data sources and tools. By integrating the Wikipedia MCP server, you can enhance your Claude Desktop with access to Wikipedia information.
 
 ## Features
 
@@ -16,7 +26,21 @@ With the Wikipedia MCP server integrated, you can:
 - 🗂️ **Extract specific sections** from Wikipedia articles
 - 🔗 **Find related links** within articles
 
-## Use Cases for This Project
+## GitHub Copilot Agent Integration (Recommended)
+
+**The project now uses GitHub Copilot Agent MCP integration** which provides:
+
+- ✅ **Automatic activation** when agents work on issues
+- ✅ **Multiple MCP servers** (Wikipedia, Filesystem, GitHub, Brave Search, PostgreSQL)
+- ✅ **No manual setup required** for contributors
+- ✅ **Enhanced data validation** with multiple sources
+- ✅ **Efficient issue resolution** with comprehensive tooling
+
+**See `.github/MCP_CONFIGURATION.md` for details.**
+
+## Use Cases for Claude Desktop (Manual Setup)
+
+If you want to use MCP with Claude Desktop manually:
 
 1. **Data Enrichment**: Get additional context about countries, states, and cities
 2. **Validation**: Cross-reference geographical data with Wikipedia entries
