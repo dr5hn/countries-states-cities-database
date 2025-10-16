@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "wikipedia": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-wikipedia"],
+      "description": "Access Wikipedia for validating geographical data, population figures, administrative divisions, and historical context"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/home/runner/work/countries-states-cities-database/countries-states-cities-database"],
+      "description": "Enhanced file system access for reading and editing large JSON contribution files"
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "Access GitHub repository data, issues, pull requests, and commit history"
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "description": "Search the web for geographical data validation, official government sources, and current information"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://root:root@localhost/world"],
+      "description": "Direct PostgreSQL database access for querying and validating geographical data"
+    }
+  }
+}
