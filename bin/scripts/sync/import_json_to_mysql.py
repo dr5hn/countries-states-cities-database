@@ -170,13 +170,6 @@ class JSONToMySQLImporter:
         if isinstance(value, bool):
             return 1 if value else 0
 
-        # Handle timestamp fields (created_at, updated_at)
-        # Convert ISO 8601 format to MySQL datetime format
-        if field_name in ['created_at', 'updated_at'] and isinstance(value, str):
-            # ISO format: "2019-10-05T23:18:06" or "2025-10-08T14:42:36"
-            # MySQL wants: "2019-10-05 23:18:06" or "2025-10-08 14:42:36"
-            return value.replace('T', ' ')
-
         return value
 
     def import_table(self, table_name: str, json_file: str):
@@ -206,31 +199,17 @@ class JSONToMySQLImporter:
         # Get current column list
         all_columns = list(self.get_table_columns(table_name).keys())
 
-        # Define table-specific fields to skip during import
-        # These fields are always skipped (auto-managed or redundant)
-        always_skip_fields = {'flag'}
+        # Define fields to skip during import
+        # These are auto-managed by MySQL or redundant relationship fields
+        skip_fields = {'flag', 'created_at', 'updated_at'}  # MySQL handles these with DEFAULT values
         if table_name == 'cities':
-            always_skip_fields.update({'country_name', 'state_name'})
+            skip_fields.update({'country_name', 'state_name'})
         elif table_name == 'states':
-            always_skip_fields.add('country_name')
-
-        # Fields that are optional - only include if present in JSON
-        optional_fields = {'created_at', 'updated_at'}
-
-        # Determine which fields are actually present in the JSON data
-        json_fields = set()
-        for record in data[:10]:  # Sample first 10 records
-            json_fields.update(record.keys())
+            skip_fields.add('country_name')
 
         # Build final insert column list:
-        # - Include all columns from database
-        # - Exclude always_skip_fields
-        # - Exclude optional_fields that aren't in JSON
-        insert_columns = [
-            c for c in all_columns
-            if c not in always_skip_fields
-            and (c not in optional_fields or c in json_fields)
-        ]
+        # Include all columns from database except skip_fields
+        insert_columns = [c for c in all_columns if c not in skip_fields]
 
         # Clear existing data (for full replacement)
         print(f"  🗑️  Truncating existing data...")
@@ -348,27 +327,13 @@ class JSONToMySQLImporter:
         # Get current column list
         all_columns = list(self.get_table_columns('cities').keys())
 
-        # Define fields to skip during import for cities table
-        # These fields are always skipped (auto-managed or redundant)
-        always_skip_fields = {'flag', 'country_name', 'state_name'}
-
-        # Fields that are optional - only include if present in JSON
-        optional_fields = {'created_at', 'updated_at'}
-
-        # Determine which fields are actually present in the JSON data
-        json_fields = set()
-        for record in all_cities[:10]:  # Sample first 10 records
-            json_fields.update(record.keys())
+        # Define fields to skip during import
+        # These are auto-managed by MySQL or redundant relationship fields
+        skip_fields = {'flag', 'created_at', 'updated_at', 'country_name', 'state_name'}
 
         # Build final insert column list:
-        # - Include all columns from database
-        # - Exclude always_skip_fields
-        # - Exclude optional_fields that aren't in JSON
-        insert_columns = [
-            c for c in all_columns
-            if c not in always_skip_fields
-            and (c not in optional_fields or c in json_fields)
-        ]
+        # Include all columns from database except skip_fields
+        insert_columns = [c for c in all_columns if c not in skip_fields]
 
         # Clear existing data (for full replacement)
         print(f"  🗑️  Truncating existing data...")
