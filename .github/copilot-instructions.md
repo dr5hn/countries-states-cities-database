@@ -57,8 +57,9 @@ Agent rules — do this
 - Use `bin/config/app.yaml` to change DB credentials for local testing.
 - If you change schema or fields, run the appropriate sync/import script and validate locally before committing.
 - When adding export features, follow the `bin/Commands/Export*.php` pattern (one command per output format).
-- **ALWAYS document fixes and PRs** in `.github/fixes-docs/`:
-  - Create **only ONE markdown file per Issue/PR** (e.g., `FIX_<issue_number>_SUMMARY.md` or `<TOPIC>_SUMMARY.md`)
+- **ALWAYS document fixes for each issue** in `.github/fixes-docs/`:
+  - Create **only ONE markdown file per Issue** (e.g., `FIX_<issue_number>_SUMMARY.md`)
+  - Even if there are multiple PR for one issue, you should use the same file created by earlier PR and update it.
   - The single file should contain:
     - Issue reference and executive summary
     - Countries/entities addressed
@@ -66,7 +67,8 @@ Agent rules — do this
     - Validation steps and results
     - Code examples, data samples, and validation commands
   - Follow existing format in `.github/fixes-docs/` directory
-  - Do NOT create multiple separate files for the same issue/PR
+  - Do NOT create multiple separate files for the same issue.
+  - **ALWAYS** If you've to work on adding new state and its cities, don't hesitate to run json to mysql command to generate ids and then mysql to json command for state and then work on next task do the same for next task as well don't stop until you've fixed all tasks from issue.
 
 Agent rules — do NOT do this
 - Do NOT commit generated export files (`json/`, `csv/`, `yml/`, `xml/`, `sqlite/`, `duckdb/`, `mongodb/`, `sqlite/`, `sqlserver/`, `psql/` dumps).
