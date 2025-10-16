@@ -39,7 +39,12 @@ class JSONNormalizer:
     """Normalize JSON files by auto-filling missing fields"""
 
     def __init__(self, host='localhost', user='root', password='root', database='world'):
-        """Initialize database connection to fetch current IDs"""
+        """
+        Initialize database connection to fetch current IDs
+
+        Raises:
+            mysql.connector.Error: If MySQL connection fails (critical precondition)
+        """
         try:
             self.conn = mysql.connector.connect(
                 host=host,
@@ -52,24 +57,33 @@ class JSONNormalizer:
             self.cursor = self.cursor = self.conn.cursor(dictionary=True)
             print(f"✓ Connected to MySQL: {user}@{host}/{database}")
         except mysql.connector.Error as e:
-            print(f"⚠ MySQL connection failed: {e}")
-            print("  Will assign IDs starting from 1 (no database verification)")
-            self.conn = None
-            self.cursor = None
+            print(f"\n❌ CRITICAL: MySQL connection failed: {e}")
+            print(f"   Database connection is REQUIRED to prevent ID conflicts")
+            print(f"\n   Troubleshooting steps:")
+            print(f"   1. Ensure MySQL is running: sudo systemctl start mysql.service")
+            print(f"   2. Verify database exists: mysql -u{user} -p{password} -e 'SHOW DATABASES'")
+            print(f"   3. Check credentials: host={host}, user={user}, database={database}")
+            raise
 
     def get_next_id(self, table_name: str) -> int:
-        """Get next available ID from MySQL table"""
-        if not self.cursor:
-            return 1
+        """
+        Get next available ID from MySQL table
 
+        Returns:
+            Next sequential ID based on MAX(id) in table
+
+        Raises:
+            mysql.connector.Error: If query fails
+        """
         try:
             self.cursor.execute(f"SELECT MAX(id) as max_id FROM {table_name}")
             result = self.cursor.fetchone()
             max_id = result['max_id'] if result and result['max_id'] else 0
             return max_id + 1
         except mysql.connector.Error as e:
-            print(f"⚠ Could not fetch max ID from {table_name}: {e}")
-            return 1
+            print(f"\n❌ CRITICAL: Could not fetch max ID from {table_name}: {e}")
+            print(f"   Cannot safely assign IDs without database verification")
+            raise
 
     def normalize_records(self, records: List[Dict], table_name: str) -> tuple[List[Dict], int]:
         """
@@ -194,20 +208,24 @@ def main():
     parser.add_argument('files', nargs='+', help='JSON file(s) to normalize')
     parser.add_argument('--host', default='localhost', help='MySQL host (default: localhost)')
     parser.add_argument('--user', default='root', help='MySQL user (default: root)')
-    parser.add_argument('--password', default='root', help='MySQL password (default: root)')
+    parser.add_argument('--password', default='', help='MySQL password (default: root)')
     parser.add_argument('--database', default='world', help='MySQL database (default: world)')
     args = parser.parse_args()
 
     print("🔧 JSON Normalizer - Auto-fill IDs and Timestamps\n")
     print("=" * 60)
 
-    # Initialize normalizer
-    normalizer = JSONNormalizer(
-        host=args.host,
-        user=args.user,
-        password=args.password,
-        database=args.database
-    )
+    # Initialize normalizer (critical precondition: MySQL connection required)
+    try:
+        normalizer = JSONNormalizer(
+            host=args.host,
+            user=args.user,
+            password=args.password,
+            database=args.database
+        )
+    except mysql.connector.Error:
+        # Error already printed by __init__, exit cleanly
+        sys.exit(1)
 
     try:
         modified_count = 0
