@@ -28,8 +28,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          fetch-depth: 1
           submodules: true
           ref: ${{ github.head_ref }}
+          persist-credentials: true
+          lfs: false
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
