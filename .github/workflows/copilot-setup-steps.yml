@@ -1,0 +1,97 @@
+name: "Copilot Setup Steps"
+
+# Automatically run the setup steps when they are changed to allow for easy validation, and
+# allow manual testing through the repository's "Actions" tab
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    # You can define any steps you want, and they will run before the agent starts.
+    # If you do not check out your code, Copilot will do this for you.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: true
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+          lfs: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: intl #optional
+          coverage: none
+          ini-values: "post_max_size=256M, memory_limit=512M" #optional
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: bin/vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('bin/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Start MySQL service
+        run: |
+          sudo systemctl start mysql.service
+          mysql -V
+          # Wait for MySQL to be ready
+          while ! mysqladmin ping -h"127.0.0.1" --silent; do
+            echo "Waiting for MySQL..."
+            sleep 1
+          done
+
+      - name: Setup MySQL DB
+        run: |
+          echo "🗄️  Creating MySQL database..."
+          mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          mysql -uroot -proot -e "SHOW DATABASES;"
+          echo "✅ Database created"
+
+      - name: Initialize Database Schema
+        run: |
+          echo "📋 Creating database tables..."
+          mysql -uroot -proot world < bin/db/schema.sql
+          echo "✅ Schema initialized - verifying tables..."
+          mysql -uroot -proot -e "USE world; SHOW TABLES;"
+          mysql -uroot -proot -e "USE world; SHOW CREATE TABLE regions\G" | head -20
+          echo "✅ All tables created successfully"
+
+      - name: Setup Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mysql-connector-python
+          echo "✅ Python dependencies installed"
+
+      - name: Import JSON to MySQL
+        run: |
+          echo "📥 Importing contributions to MySQL..."
+          python3 bin/scripts/sync/import_json_to_mysql.py --host localhost --user root --password root --database world
+          echo "✅ Import complete - IDs auto-assigned by MySQL"
+
+      - name: Export MySQL to JSON (Validation)
+        run: |
+          echo "🔄 Syncing MySQL back to contributions JSON for validation..."
+          python3 bin/scripts/sync/sync_mysql_to_json.py --host localhost --user root --password root --database world
+          echo "✅ MySQL → JSON sync complete"
+          echo "📊 Validating round-trip consistency..."
+          # Show what changed (if anything)
+          git diff --stat contributions/ || echo "No changes detected - perfect round-trip!"
+
+      - name: Composer Dependencies
+        working-directory: ./bin
+        run: |
+          composer install
+          php console list
