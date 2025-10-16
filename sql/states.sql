@@ -69,4 +69,4 @@ INSERT INTO `states` VALUES (4970,'Alpes-de-Haute-Provence',75,'FR',NULL,'04','F
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-15  6:31:27
+-- Dump completed on 2025-10-16 12:00:16
