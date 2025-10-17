@@ -24,34 +24,40 @@ Successfully added the missing Namibe province to Angola's administrative divisi
 - **Timezone:** Africa/Luanda
 - **WikiData ID:** Q214246
 - **Native Name:** Namibe
+- **Translations:** 19 languages (ar, br, de, es, fa, fr, hi, hr, it, ja, ko, nl, pl, pt, pt-BR, ru, tr, uk, zh-CN)
 
 ### Cities Added
-Added 5 major cities/municipalities for Namibe province:
+Added 5 major cities/municipalities for Namibe province (all with 19 language translations):
 
 1. **Namibe** - Provincial capital (formerly Moçâmedes)
    - ID: 157068
    - Coordinates: 15.1967°S, 12.1522°E
    - WikiData: Q208045
+   - Translations: 19 languages
 
 2. **Tombua** (formerly Porto Alexandre)
    - ID: 157069
    - Coordinates: 15.7833°S, 11.8667°E
    - WikiData: Q2010906
+   - Translations: 19 languages
 
 3. **Bibala**
    - ID: 157070
    - Coordinates: 14.9333°S, 13.6833°E
    - WikiData: Q2010894
+   - Translations: 19 languages
 
 4. **Virei**
    - ID: 157071
    - Coordinates: 14.4667°S, 13.2667°E
    - WikiData: Q2465824
+   - Translations: 19 languages
 
 5. **Camucuio**
    - ID: 157072
    - Coordinates: 15.4500°S, 12.8833°E
    - WikiData: Q2010896
+   - Translations: 19 languages
 
 ## Before/After Counts
 
@@ -174,7 +180,27 @@ jq '[.[] | select(.state_id == 5469)] | length' contributions/cities/AO.json
   "latitude": "-15.20000000",
   "longitude": "12.15000000",
   "timezone": "Africa/Luanda",
-  "translations": {},
+  "translations": {
+    "br": "Namibe",
+    "ko": "나미브주",
+    "pt-BR": "Namibe",
+    "pt": "Namibe",
+    "nl": "Namibe",
+    "hr": "Namibe",
+    "fa": "نامیبه",
+    "de": "Namibe",
+    "es": "Namibe",
+    "fr": "Namibe",
+    "ja": "ナミベ州",
+    "it": "Namibe",
+    "zh-CN": "纳米贝省",
+    "tr": "Namibe",
+    "ru": "Намибе",
+    "uk": "Намібе",
+    "pl": "Namibe",
+    "hi": "नामिबे",
+    "ar": "ناميبي"
+  },
   "created_at": "2025-10-16T13:21:00",
   "updated_at": "2025-10-16T13:21:00",
   "flag": 1,
@@ -196,7 +222,27 @@ jq '[.[] | select(.state_id == 5469)] | length' contributions/cities/AO.json
   "longitude": "12.15220000",
   "native": "Namibe",
   "timezone": "Africa/Luanda",
-  "translations": {},
+  "translations": {
+    "br": "Namibe",
+    "ko": "나미브",
+    "pt-BR": "Namibe",
+    "pt": "Namibe",
+    "nl": "Namibe",
+    "hr": "Namibe",
+    "fa": "نامیبه",
+    "de": "Namibe",
+    "es": "Namibe",
+    "fr": "Namibe",
+    "ja": "ナミベ",
+    "it": "Namibe",
+    "zh-CN": "纳米贝",
+    "tr": "Namibe",
+    "ru": "Намибе",
+    "uk": "Námібе",
+    "pl": "Namibe",
+    "hi": "नामिबे",
+    "ar": "ناميبي"
+  },
   "created_at": "2025-10-16T13:25:00",
   "updated_at": "2025-10-16T13:25:00",
   "flag": 1,
@@ -259,4 +305,5 @@ mysql -uroot -proot world -e "SELECT iso3166_2, name FROM states WHERE country_c
 ✅ Includes provincial capital and major municipalities  
 ✅ Proper timezone (Africa/Luanda) assigned  
 ✅ Coordinates verified from multiple sources  
-✅ Province and cities successfully integrated into database
+✅ Province and cities successfully integrated into database  
+✅ Complete translations in 19 languages for all entries
