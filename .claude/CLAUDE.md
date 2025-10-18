@@ -209,10 +209,17 @@ grep -A 5 '"name": "United States"' contributions/countries/countries.json  # co
 - Scripts: `bin/config/app.yaml`
 - PHP exports: `Config::getConfig()->getDB()` reads from app.yaml
 - Default: `root:root@localhost/world`
+- **Local Environment**: MySQL runs without password (`root:@localhost/world`)
 
 **Override for GitHub Actions:**
 ```bash
 python3 bin/scripts/sync/import_json_to_mysql.py --host $DB_HOST --user $DB_USER --password $DB_PASSWORD
+```
+
+**Local MySQL commands (no password):**
+```bash
+mysql -uroot world                          # Connect to database
+mysql -uroot -e "USE world; SHOW TABLES;"  # Run queries
 ```
 
 ## Important Rules
@@ -261,3 +268,20 @@ SELECT COUNT(*) FROM cities WHERE country_code = 'US';  -- ~19,824
 - **DuckDB timeout**: Takes 8+ minutes, set timeout to 20+ minutes
 - **Export files missing**: Run exports from `bin/` directory
 - **Round-trip validation fails**: Check for schema mismatches between JSON and MySQL
+
+## Timezone Management
+
+**Tools (Keep these):**
+- `bin/scripts/analysis/timezone_summary.py` - Generate timezone analysis reports
+- `bin/scripts/fixes/timezone_mappings.json` - Geographic timezone reference data
+- `.github/fixes-docs/TIMEZONE_FIX_SUMMARY.md` - Documentation of fixes applied (2025-10-18)
+
+**Completed Fixes (2025-10-18):**
+- Fixed 81 states across 9 countries (US, CA, RU, BR, MX, AU, AR, ID, KZ, CN)
+- Improved timezone utilization from 240 to 299 unique timezones
+- All changes validated against country timezone definitions
+
+**Generate Timezone Reports:**
+```bash
+python3 bin/scripts/analysis/timezone_summary.py  # Full analysis report
+```
