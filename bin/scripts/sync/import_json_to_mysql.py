@@ -161,7 +161,7 @@ class JSONToMySQLImporter:
         """Prepare JSON value for MySQL insertion"""
         if value is None:
             # Provide default timestamp for created_at if missing (new records)
-            # Note: updated_at is left as None so MySQL can use its DEFAULT CURRENT_TIMESTAMP
+            # Note: updated_at is excluded from INSERT (in skip_fields) so MySQL uses DEFAULT CURRENT_TIMESTAMP
             if field_name == 'created_at':
                 return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             return None
@@ -205,7 +205,7 @@ class JSONToMySQLImporter:
 
         # Define fields to skip during import
         # These are auto-managed by MySQL or redundant relationship fields
-        skip_fields = {'flag'}  # Only flag is auto-managed; preserve created_at/updated_at from JSON
+        skip_fields = {'flag', 'updated_at'}  # flag and updated_at are auto-managed by MySQL; preserve created_at from JSON
         if table_name == 'cities':
             skip_fields.update({'country_name', 'state_name'})
         elif table_name == 'states':
@@ -333,7 +333,7 @@ class JSONToMySQLImporter:
 
         # Define fields to skip during import
         # These are auto-managed by MySQL or redundant relationship fields
-        skip_fields = {'flag', 'country_name', 'state_name'}  # Only flag is auto-managed; preserve created_at/updated_at from JSON
+        skip_fields = {'flag', 'updated_at', 'country_name', 'state_name'}  # flag and updated_at are auto-managed by MySQL; preserve created_at from JSON
 
         # Build final insert column list:
         # Include all columns from database except skip_fields
