@@ -307,10 +307,226 @@ mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 - For complex changes, open a PR with export validation counts
 - Always verify schema changes manually
 
+## Data Validation with Wikipedia
+
+### Wikipedia API Integration
+
+When validating or enriching geographical data, use the Wikipedia API directly (see `.github/agent-docs/WIKIPEDIA_API_DOCS.md` for examples).
+
+**Common validation tasks:**
+1. **Verify city/state/country names**: Search Wikipedia to confirm official names and spellings
+2. **Extract coordinates**: Get latitude/longitude from Wikipedia articles
+3. **Find timezone information**: Extract IANA timezone identifiers from infoboxes
+4. **Validate population data**: Cross-reference with Wikipedia demographic data
+5. **Check administrative divisions**: Verify state/province relationships
+
+**Example API calls:**
+
+```bash
+# Get article for a city (e.g., Belgrade)
+curl "https://en.wikipedia.org/w/api.php?action=query&titles=Belgrade&prop=extracts|pageimages|coordinates|info&inprop=url&redirects=&format=json&origin=*"
+
+# Search for a location
+curl "https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&srlimit=20&srsearch=New%20York%20City"
+
+# Get coordinates for a location
+curl "https://en.wikipedia.org/w/api.php?action=query&titles=Paris&prop=coordinates&format=json"
+```
+
+**Best practices:**
+- Always include `&origin=*` to avoid CORS issues when testing in browser
+- Use `redirects=` parameter to follow article redirects automatically
+- Capitalize multi-word search terms (e.g., "New York" not "new york")
+- Extract data from the JSON response and validate against existing database records
+- For batch operations, respect Wikipedia's rate limits (add delays between requests)
+
+**Python example using Wikipedia-API package (recommended):**
+
+```python
+import wikipediaapi
+
+# Initialize Wikipedia client
+wiki = wikipediaapi.Wikipedia(
+    user_agent='countries-states-cities-database/1.0',
+    language='en'
+)
+
+def validate_city_with_wikipedia(city_name, country_code=None):
+    """Validate city data against Wikipedia"""
+    # Try different title formats
+    titles_to_try = [
+        city_name,
+        f"{city_name}, {country_code}" if country_code else None,
+        f"{city_name} (city)"
+    ]
+
+    for title in filter(None, titles_to_try):
+        page = wiki.page(title)
+        if page.exists():
+            return {
+                "title": page.title,
+                "url": page.fullurl,
+                "summary": page.summary[:300],
+                "coordinates": page.coordinates if hasattr(page, 'coordinates') else None,
+                "categories": list(page.categories.keys())[:10]
+            }
+
+    return {"status": "not_found"}
+
+# Or use the built-in validator script:
+# python3 bin/scripts/validation/wikipedia_validator.py --entity "Paris" --type city --country FR
+```
+
+**Important notes:**
+- Wikipedia API documentation: https://www.mediawiki.org/wiki/API:Main_page
+- Use different language Wikipedias for region-specific data (e.g., `de.wikipedia.org` for German cities)
+- Always cite Wikipedia as a source in fix documentation (`.github/fixes-docs/`)
+- MCP servers (like `wikipedia-mcp`) are NOT available in GitHub Actions - use direct HTTP API calls
+
+## 🎯 CRITICAL: Data Enrichment Requirements
+
+### Timezone and Translation Fields are MANDATORY
+
+**NEVER skip adding timezone and translations!** These fields are critical for data quality.
+
+#### Automatic Enrichment Tools
+
+**ALWAYS run these tools after adding or updating ANY data:**
+
+```bash
+# 1. Import to MySQL (assigns IDs)
+python3 bin/scripts/sync/import_json_to_mysql.py
+
+# 2. Add timezone to ALL entries (MySQL-based, very fast)
+python3 bin/scripts/validation/add_timezones.py --table both
+
+# 3. Sync back to JSON (updates timezone in JSON files)
+python3 bin/scripts/sync/sync_mysql_to_json.py
+
+# 4. Add translations from Wikipedia (18+ languages, FREE!)
+python3 bin/scripts/validation/translation_enricher.py \
+    --file contributions/cities/US.json \
+    --type city \
+    --limit 10  # Remove --limit for all records
+
+# 5. Import again (updates translations in MySQL)
+python3 bin/scripts/sync/import_json_to_mysql.py
+
+# 6. Final sync
+python3 bin/scripts/sync/sync_mysql_to_json.py
+
+# 7. Validate with Wikipedia
+python3 bin/scripts/validation/wikipedia_validator.py \
+    --entity "New York City" \
+    --type city \
+    --country US
+```
+
+**These tools are PRE-INSTALLED in GitHub Actions.** No excuses for skipping them!
+
+#### What Each Tool Does
+
+1. **`add_timezones.py`** - Automatically determines IANA timezone from coordinates
+   - Uses timezonefinder library (already included in script)
+   - Works directly with MySQL (VERY FAST - 1000+ cities/minute)
+   - Batch processing with dry-run mode for testing
+   - Handles both cities AND states in one command
+
+2. **`translation_enricher.py`** - Fetches translations from Wikipedia (FREE!)
+   - Supports 18+ major languages (ar, de, es, fr, hi, it, ja, ko, pt, ru, zh, etc.)
+   - Uses Wikipedia language links (no API costs!)
+   - Rate-limited to respect API usage
+   - Authentic translations (actual Wikipedia article titles)
+
+3. **`wikipedia_validator.py`** - Validates data accuracy
+   - Verifies names and coordinates
+   - Fetches WikiData IDs
+   - Cross-references with authoritative sources
+
+#### Quality Requirements
+
+**Minimum acceptable data quality:**
+
+```json
+{
+  "name": "Paris",
+  "country_id": 75,
+  "country_code": "FR",
+  "state_id": 4796,
+  "state_code": "11",
+  "latitude": "48.85661400",
+  "longitude": "2.35222190",
+  "timezone": "Europe/Paris",           // ← REQUIRED
+  "translations": {                     // ← REQUIRED (at least 5-10 languages)
+    "ar": "باريس",
+    "de": "Paris",
+    "es": "París",
+    "fr": "Paris",
+    "ja": "パリ"
+  },
+  "wikiDataId": "Q90",                 // ← HIGHLY RECOMMENDED
+  "native": "Paris"                    // ← RECOMMENDED
+}
+```
+
+**If you submit data without timezone and translations, it will be REJECTED.**
+
+## 📚 Required Documentation Reading
+
+### Before Starting ANY Task
+
+**MUST READ in this order:**
+
+1. **`.github/agent-docs/AI_AGENT_BEST_PRACTICES.md`** ⭐ START HERE
+   - Complete workflow for all common tasks
+   - Tool usage examples
+   - Quality checklist
+   - Common mistakes to avoid
+
+2. **`.github/agent-docs/README.md`**
+   - Overview of all available tools
+   - When to use each tool
+   - GitHub Actions vs local development
+
+3. **`.github/fixes-docs/`** - Review at least 2-3 examples
+   - `AFGHANISTAN_MISSING_WARDAK_PROVINCE.md` - Excellent example of proper state + cities addition
+   - `FIX_1019_SUMMARY.md` - Comprehensive fix documentation
+   - Study the pattern: problem → solution → validation → documentation
+
+4. **This file** (`.github/copilot-instructions.md`)
+   - General rules and workflows
+
+5. **`.claude/CLAUDE.md`**
+   - Deep technical details
+   - Architecture overview
+
+### Available Documentation
+
+**Agent Guides** (`.github/agent-docs/`):
+- `AI_AGENT_BEST_PRACTICES.md` - **START HERE** - Complete best practices guide
+- `README.md` - Tool overview
+- `WIKIPEDIA_API_DOCS.md` - API reference (fallback)
+- `WIKIPEDIA_MCP.md` - MCP reference (local dev only)
+
+**Fix Examples** (`.github/fixes-docs/`):
+- Study existing fixes to understand:
+  - Documentation format
+  - Validation methodology
+  - How to cite sources
+  - Before/after metrics
+
+**Technical Docs**:
+- `.claude/CLAUDE.md` - Architecture and workflows
+- `bin/README.md` - Export commands
+- `bin/scripts/validation/README.md` - Validation tools
+- `contributions/README.md` - Field reference
+
 ## Questions?
 
-- Check `.claude/CLAUDE.md` for detailed documentation
+- **First:** Check `.github/agent-docs/AI_AGENT_BEST_PRACTICES.md` (answers 90% of questions)
+- **Second:** Review examples in `.github/fixes-docs/`
+- **Third:** Check `.claude/CLAUDE.md` for detailed documentation
 - Review `bin/README.md` for export command documentation
-- See `bin/scripts/sync/README.md` for script documentation (if exists)
+- See `bin/scripts/validation/README.md` for validation tools
 - Use [CSC Update Tool](https://manager.countrystatecity.in/) for non-technical contributions
 - Reference WikiData, Wikipedia, or official sources for data accuracy

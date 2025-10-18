@@ -7,10 +7,10 @@ using their latitude and longitude coordinates. It uses the timezonefinder
 library to determine IANA timezone identifiers from geographic coordinates.
 
 Usage:
-    python3 bin/scripts/utility/add_timezones.py
+    python3 bin/scripts/validation/add_timezones.py
 
 For custom database credentials:
-    python3 bin/scripts/utility/add_timezones.py --host localhost --user root --password root --database world
+    python3 bin/scripts/validation/add_timezones.py --host localhost --user root --password root --database world
 
 Options:
     --table TABLE       Process 'cities', 'states', or 'both' (default: both)

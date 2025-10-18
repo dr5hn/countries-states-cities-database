@@ -6,8 +6,8 @@ This script checks for timezone issues in countries, states, and cities.
 It can be used to audit the data and identify any remaining inconsistencies.
 
 Usage:
-    python3 bin/scripts/utility/validate_timezones.py
-    python3 bin/scripts/utility/validate_timezones.py --fix-states
+    python3 bin/scripts/validation/validate_timezones.py
+    python3 bin/scripts/validation/validate_timezones.py --fix-states
 
 Options:
     --fix-states    Generate SQL to fix problematic state timezones

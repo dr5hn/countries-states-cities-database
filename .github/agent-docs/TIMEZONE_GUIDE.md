@@ -134,13 +134,13 @@ Cities store a **single timezone string**:
 #### Populating Missing Timezones
 ```bash
 # Test first with dry-run (cities only)
-python3 bin/scripts/utility/add_timezones.py --table cities --limit 100 --dry-run
+python3 bin/scripts/validation/add_timezones.py --table cities --limit 100 --dry-run
 
 # Test with states
-python3 bin/scripts/utility/add_timezones.py --table states --limit 100 --dry-run
+python3 bin/scripts/validation/add_timezones.py --table states --limit 100 --dry-run
 
 # Run for both cities and states
-python3 bin/scripts/utility/add_timezones.py --table both
+python3 bin/scripts/validation/add_timezones.py --table both
 
 # Sync back to JSON
 python3 bin/scripts/sync/sync_mysql_to_json.py
@@ -181,8 +181,8 @@ WHERE timezone LIKE 'Etc/%';
 #### Validating Timezones
 
 ```bash
-# Create a validation script
-python3 bin/scripts/utility/validate_timezones.py
+# Run validation script
+python3 bin/scripts/validation/validate_timezones.py
 ```
 
 Look for:

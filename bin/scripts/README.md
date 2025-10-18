@@ -8,29 +8,30 @@ Organized collection of Python scripts for data processing, synchronization, and
 scripts/
 ├── sync/        # Bidirectional MySQL ↔ JSON synchronization
 ├── export/      # Export to various formats
+├── validation/  # Data validation and enrichment tools
 └── README.md    # This file
 ```
 
-## Utility Scripts (`utility/`)
+## Validation Scripts (`validation/`)
 
-### add_timezones.py ⭐ NEW
+### add_timezones.py
 **Add timezone data to cities and states using latitude/longitude coordinates**
 
 ```bash
 # Add timezones to both cities and states (default)
-python3 scripts/utility/add_timezones.py
+python3 bin/scripts/validation/add_timezones.py
 
 # Add timezones only to cities
-python3 scripts/utility/add_timezones.py --table cities
+python3 bin/scripts/validation/add_timezones.py --table cities
 
 # Add timezones only to states
-python3 scripts/utility/add_timezones.py --table states
+python3 bin/scripts/validation/add_timezones.py --table states
 
 # Custom database credentials
-python3 scripts/utility/add_timezones.py --host localhost --user root --password root
+python3 bin/scripts/validation/add_timezones.py --host localhost --user root --password root
 
 # Test with limited records
-python3 scripts/utility/add_timezones.py --limit 100 --dry-run
+python3 bin/scripts/validation/add_timezones.py --limit 100 --dry-run
 ```
 
 **Features**:
@@ -46,20 +47,20 @@ python3 scripts/utility/add_timezones.py --limit 100 --dry-run
 
 **Requirements**: `pip install timezonefinder mysql-connector-python`
 
-**Important**: The script automatically filters out generic `Etc/GMT±N` timezones returned by TimezoneFinder for oceanic locations, ensuring only proper IANA timezones are used. See `TIMEZONE_GUIDE.md` for details.
+**Important**: The script automatically filters out generic `Etc/GMT±N` timezones returned by TimezoneFinder for oceanic locations, ensuring only proper IANA timezones are used.
 
-### validate_timezones.py ⭐ NEW
+### validate_timezones.py
 **Validate timezone data quality across countries, states, and cities**
 
 ```bash
 # Run validation check
-python3 scripts/utility/validate_timezones.py
+python3 bin/scripts/validation/validate_timezones.py
 
 # Check cities too (requires MySQL)
-python3 scripts/utility/validate_timezones.py --check-cities
+python3 bin/scripts/validation/validate_timezones.py --check-cities
 
 # Generate SQL fixes for problematic states
-python3 scripts/utility/validate_timezones.py --fix-states
+python3 bin/scripts/validation/validate_timezones.py --fix-states
 ```
 
 **Features**:
