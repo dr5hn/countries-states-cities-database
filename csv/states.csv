@@ -31,6 +31,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 3885,"Sar-e Pol",1,AF,Afghanistan,SAR,AF-SAR,33,province,,,"سرپل پول",36.21662800,65.93336000,Asia/Kabul,Q182487
 3893,Takhar,1,AF,Afghanistan,TAK,AF-TAK,26,province,,,تخار,36.59407320,69.79389960,Asia/Kabul,Q186395
 3898,Urozgan,1,AF,Afghanistan,URU,AF-URU,39,province,,,ارزګان,32.81296810,66.01831850,Asia/Kabul,Q183028
+5468,Wardak,1,AF,Afghanistan,WAR,AF-WAR,,province,,,"میدان وردک",34.30000000,68.50000000,Asia/Kabul,Q171366
 3874,Zabul,1,AF,Afghanistan,ZAB,AF-ZAB,28,province,,,زابل,32.30689420,67.12990400,Asia/Kabul,Q139126
 5298,Brändö,2,AX,"Aland Islands",12,AX-12,12,municipality,3,,Brändö,60.41358730,21.04404980,Europe/Mariehamn,Q179706
 5294,Eckerö,2,AX,"Aland Islands",08,AX-08,08,municipality,3,,Eckerö,60.22318140,19.53893790,Europe/Mariehamn,Q51909
@@ -145,6 +146,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 220,"Lunda Sul",7,AO,Angola,LSU,AO-LSU,18,province,,,"Lunda Sul",-10.14737790,20.99077560,Africa/Luanda,Q219648
 227,Malanje,7,AO,Angola,MAL,AO-MAL,12,province,,,Malanje,-9.53533200,16.93642930,Africa/Luanda,Q219072
 219,Moxico,7,AO,Angola,MOX,AO-MOX,14,province,,,Moxico,-12.72871950,21.27376370,Africa/Luanda,Q173988
+5469,Namibe,7,AO,Angola,NAM,AO-NAM,,province,,,Namibe,-15.20000000,12.15000000,Africa/Luanda,Q214246
 224,Uíge,7,AO,Angola,UIG,AO-UIG,15,province,,,Uíge,-6.95168020,15.47991640,Africa/Luanda,Q216972
 214,Zaire,7,AO,Angola,ZAI,AO-ZAI,16,province,,,Zaire,-6.69251310,13.52930290,Africa/Luanda,Q196674
 5273,"Blowing Point",8,AI,Anguilla,01,AI-01,01,district,2,,"Blowing Point",18.17655530,-63.10212960,America/Anguilla,Q4928593
@@ -260,6 +262,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 525,Kalbajar,16,AZ,Azerbaijan,KAL,AZ-KAL,26,district,,,Kalbəcər,40.10243290,46.03648720,Asia/Baku,Q457513
 567,Kangarli,16,AZ,Azerbaijan,KAN,AZ-KAN,70,district,,,Kangarli,39.36322160,45.20983080,Asia/Baku,Q734030
 590,Khachmaz,16,AZ,Azerbaijan,XAC,AZ-XAC,60,district,,,Xaçmaz,41.45911680,48.80206260,Asia/Baku,Q6398826
+5472,Khankendi,16,AZ,Azerbaijan,XA,AZ-XA,,municipality,,,Xankəndi,39.82660000,46.75560000,Asia/Baku,Q80415
 537,Khizi,16,AZ,Azerbaijan,XIZ,AZ-XIZ,63,district,,,Xızı,40.91094890,49.07292640,Asia/Baku,Q476708
 524,Khojali,16,AZ,Azerbaijan,XCI,AZ-XCI,64,district,,,Xojali,38.75847270,48.85643020,Asia/Baku,Q330790
 549,Kurdamir,16,AZ,Azerbaijan,KUR,AZ-KUR,27,district,,,Kurdamir,40.34552470,48.14889510,Asia/Baku,Q688589
@@ -270,6 +273,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 568,Martuni,16,AZ,Azerbaijan,XVD,AZ-XVD,65,district,,,Martuni,39.81843890,46.74808670,Asia/Baku,Q330813
 555,Masally,16,AZ,Azerbaijan,MAS,AZ-MAS,32,district,,,Masallı,39.03221110,48.67210930,Asia/Baku,Q476695
 580,Mingachevir,16,AZ,Azerbaijan,MI,AZ-MI,33,municipality,,,Mingachevir,40.77025630,47.04960150,Asia/Baku,Q230932
+5470,Naftalan,16,AZ,Azerbaijan,NA,AZ-NA,,municipality,,,Naftalan,40.50610000,46.82440000,Asia/Baku,Q202354
+5471,Nakhchivan,16,AZ,Azerbaijan,NV,AZ-NV,,municipality,,,Naxçıvan,39.20890000,45.41220000,Asia/Baku,Q156203
 562,Nakhchivan,16,AZ,Azerbaijan,NX,AZ-NX,35,"autonomous republic",,,Naxçıvan,39.21749700,45.40696710,Asia/Baku,Q131083
 530,Neftchala,16,AZ,Azerbaijan,NEF,AZ-NEF,36,district,,,Neftçala,39.37905320,49.24860700,Asia/Baku,Q688633
 556,Oghuz,16,AZ,Azerbaijan,OGU,AZ-OGU,37,district,,,Ohz,41.07279240,47.46506720,Asia/Baku,Q643989
@@ -300,8 +305,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 533,Tovuz,16,AZ,Azerbaijan,TOV,AZ-TOV,58,district,,,Tovuz,40.99545230,45.61659070,Asia/Baku,Q388980
 539,Ujar,16,AZ,Azerbaijan,UCA,AZ-UCA,59,district,,,Dedi-qodu,40.51853860,47.64878090,Asia/Baku,Q476703
 550,Yardymli,16,AZ,Azerbaijan,YAR,AZ-YAR,66,district,,,Yarası,38.90289930,48.21329830,Asia/Baku,Q127255
-538,Yevlakh,16,AZ,Azerbaijan,YE,AZ-YE,68,municipality,,,Yevlakh,40.61151360,47.14666860,Asia/Baku,Q175459
 523,Yevlakh,16,AZ,Azerbaijan,YEV,AZ-YEV,67,district,,,Yevlax,40.61151360,47.14666860,Asia/Baku,Q458524
+538,Yevlakh,16,AZ,Azerbaijan,YE,AZ-YE,68,municipality,,,Yevlakh,40.61151360,47.14666860,Asia/Baku,Q175459
 581,Zangilan,16,AZ,Azerbaijan,ZAN,AZ-ZAN,69,district,,,Düşərgə,39.08568990,46.65247280,Asia/Baku,Q249252
 566,Zaqatala,16,AZ,Azerbaijan,ZAQ,AZ-ZAQ,70,district,,,Zaqatala,41.61803210,46.75951260,Asia/Baku,Q147553
 576,Zardab,16,AZ,Azerbaijan,ZAR,AZ-ZAR,71,district,,,"Qaxac etmək",40.21481140,47.71494400,Asia/Baku,Q249293
@@ -310,14 +315,78 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 1995,Muharraq,18,BH,Bahrain,15,BH-15,15,governorate,2,,محارق,26.24659460,50.61641270,Asia/Bahrain,Q375630
 1994,Northern,18,BH,Bahrain,17,BH-17,18,governorate,2,,شمالي,26.27784770,50.41811230,Asia/Bahrain,Q840445
 1993,Southern,18,BH,Bahrain,14,BH-14,17,governorate,2,,الجنوب,25.84000690,50.59026930,Asia/Bahrain,Q838532
+5473,Bagerhat,19,BD,Bangladesh,05,BD-05,,district,2,775,"বাগেরহাট জেলা",22.65833000,89.78333000,Asia/Dhaka,
+5474,Bandarban,19,BD,Bangladesh,01,BD-01,,district,2,803,"বান্দরবান জেলা",22.19534000,92.21946000,Asia/Dhaka,
+5475,Barguna,19,BD,Bangladesh,02,BD-02,,district,2,807,"বরগুনা জেলা",22.15330000,90.11997000,Asia/Dhaka,
 807,"Barisal ",19,BD,Bangladesh,A,BD-A,A,division,,,বরিশাল,22.49340350,90.35480150,Asia/Dhaka,Q459723
+5476,Barishal,19,BD,Bangladesh,06,BD-06,,district,2,807,"বরিশাল জেলা",22.70100000,90.35360000,Asia/Dhaka,
+5477,Bhola,19,BD,Bangladesh,07,BD-07,,district,2,807,"ভোলা জেলা",22.68540000,90.64820000,Asia/Dhaka,
+5478,Bogura,19,BD,Bangladesh,03,BD-03,,district,2,753,"বগুড়া জেলা",24.84656000,89.37764000,Asia/Dhaka,
+5479,Brahmanbaria,19,BD,Bangladesh,04,BD-04,,district,2,803,"ব্রাহ্মণবাড়িয়া জেলা",23.96090000,91.11150000,Asia/Dhaka,
+5480,Chandpur,19,BD,Bangladesh,09,BD-09,,district,2,803,"চাঁদপুর জেলা",23.25130000,90.85180000,Asia/Dhaka,
+5481,"Chapai Nawabganj",19,BD,Bangladesh,45,BD-45,,district,2,753,"চাঁপাইনবাবগঞ্জ জেলা",24.59548000,88.29125000,Asia/Dhaka,
+5482,Chattogram,19,BD,Bangladesh,10,BD-10,,district,2,803,"চট্টগ্রাম জেলা",22.35690000,91.78320000,Asia/Dhaka,
 803,"Chittagong ",19,BD,Bangladesh,B,BD-B,B,division,,,চট্টগ্রাম,22.68004660,91.88399380,Asia/Dhaka,Q158087
+5483,Chuadanga,19,BD,Bangladesh,12,BD-12,,district,2,775,"চুয়াডাঙ্গা জেলা",23.64020000,88.84120000,Asia/Dhaka,
+5484,"Cox's Bazar",19,BD,Bangladesh,11,BD-11,,district,2,803,"কক্সবাজার জেলা",21.43940000,92.00990000,Asia/Dhaka,
+5485,Cumilla,19,BD,Bangladesh,08,BD-08,,district,2,803,"কুমিল্লা জেলা",23.46050000,91.18090000,Asia/Dhaka,
+5486,Dhaka,19,BD,Bangladesh,13,BD-13,,district,2,760,"ঢাকা জেলা",23.81050000,90.40720000,Asia/Dhaka,
 760,"Dhaka ",19,BD,Bangladesh,C,BD-C,C,division,,,ঢাকা,23.94561660,90.25263820,Asia/Dhaka,Q330158
+5487,Dinajpur,19,BD,Bangladesh,14,BD-14,,district,2,750,"দিনাজপুর জেলা",25.62770000,88.63630000,Asia/Dhaka,
+5488,Faridpur,19,BD,Bangladesh,15,BD-15,,district,2,760,"ফরিদপুর জেলা",23.60720000,89.84060000,Asia/Dhaka,
+5489,Feni,19,BD,Bangladesh,16,BD-16,,district,2,803,"ফেনী জেলা",23.01330000,91.40390000,Asia/Dhaka,
+5490,Gaibandha,19,BD,Bangladesh,19,BD-19,,district,2,750,"গাইবান্ধা জেলা",25.32880000,89.54300000,Asia/Dhaka,
+5491,Gazipur,19,BD,Bangladesh,18,BD-18,,district,2,760,"গাজীপুর জেলা",24.09580000,90.41250000,Asia/Dhaka,
+5492,Gopalganj,19,BD,Bangladesh,17,BD-17,,district,2,760,"গোপালগঞ্জ (দ্ব্যর্থতা নিরসন)",23.00550000,89.82660000,Asia/Dhaka,
+5493,Habiganj,19,BD,Bangladesh,20,BD-20,,district,2,765,"হবিগঞ্জ জেলা",24.37440000,91.41530000,Asia/Dhaka,
+5494,Jamalpur,19,BD,Bangladesh,21,BD-21,,district,2,758,"জামালপুর জেলা",25.08330000,89.93330000,Asia/Dhaka,
+5495,Jashore,19,BD,Bangladesh,22,BD-22,,district,2,775,"যশোর জেলা",23.16650000,89.21210000,Asia/Dhaka,
+5496,Jhalakathi,19,BD,Bangladesh,25,BD-25,,district,2,807,"ঝালকাঠি জেলা",22.64020000,90.19870000,Asia/Dhaka,
+5497,Jhenaidah,19,BD,Bangladesh,23,BD-23,,district,2,775,"ঝিনাইদহ জেলা",23.54490000,89.17260000,Asia/Dhaka,
+5498,Joypurhat,19,BD,Bangladesh,24,BD-24,,district,2,753,"জয়পুরহাট জেলা",25.09360000,89.09450000,Asia/Dhaka,
+5499,Khagrachhari,19,BD,Bangladesh,29,BD-29,,district,2,803,"খাগড়াছড়ি জেলা",23.11910000,91.97660000,Asia/Dhaka,
+5500,Khulna,19,BD,Bangladesh,27,BD-27,,district,2,775,"খুলনা জেলা",22.81570000,89.56810000,Asia/Dhaka,
 775,"Khulna ",19,BD,Bangladesh,D,BD-D,D,division,,,খুলনা,22.93720870,89.28527410,Asia/Dhaka,Q501696
+5501,Kishoreganj,19,BD,Bangladesh,26,BD-26,,district,2,760,"কিশোরগঞ্জ জেলা",24.44400000,90.77670000,Asia/Dhaka,
+5502,Kurigram,19,BD,Bangladesh,28,BD-28,,district,2,750,"কুড়িগ্রাম জেলা",25.80550000,89.62770000,Asia/Dhaka,
+5503,Kushtia,19,BD,Bangladesh,30,BD-30,,district,2,775,"কুষ্টিয়া জেলা",23.89070000,89.11890000,Asia/Dhaka,
+5504,Lakshmipur,19,BD,Bangladesh,31,BD-31,,district,2,803,"লক্ষ্মীপুর জেলা",22.94490000,90.82820000,Asia/Dhaka,
+5505,Lalmonirhat,19,BD,Bangladesh,32,BD-32,,district,2,750,"লালমনিরহাট জেলা",25.91780000,89.44520000,Asia/Dhaka,
+5506,Madaripur,19,BD,Bangladesh,36,BD-36,,district,2,760,"মাদারীপুর জেলা",23.17000000,90.18770000,Asia/Dhaka,
+5507,Magura,19,BD,Bangladesh,37,BD-37,,district,2,775,"মাগুরা জেলা",23.48710000,89.41980000,Asia/Dhaka,
+5508,Manikganj,19,BD,Bangladesh,33,BD-33,,district,2,760,"মানিকগঞ্জ জেলা",23.86140000,90.00030000,Asia/Dhaka,
+5509,Meherpur,19,BD,Bangladesh,39,BD-39,,district,2,775,"মেহেরপুর জেলা",23.76210000,88.63180000,Asia/Dhaka,
+5510,Moulvibazar,19,BD,Bangladesh,38,BD-38,,district,2,765,"মৌলভীবাজার জেলা",24.30940000,91.73150000,Asia/Dhaka,
+5511,Munshiganj,19,BD,Bangladesh,35,BD-35,,district,2,760,"মুন্সীগঞ্জ জেলা",23.55180000,90.41220000,Asia/Dhaka,
+5512,Mymensingh,19,BD,Bangladesh,34,BD-34,,district,2,758,"ময়মনসিংহ জেলা",24.75360000,90.40720000,Asia/Dhaka,
 758,"Mymensingh ",19,BD,Bangladesh,H,BD-H,H,division,,,মাইমেনসিংহ,24.74821290,90.40991580,Asia/Dhaka,Q19594930
+5513,Naogaon,19,BD,Bangladesh,48,BD-48,,district,2,753,"নওগাঁ জেলা",24.80420000,88.92540000,Asia/Dhaka,
+5514,Narail,19,BD,Bangladesh,43,BD-43,,district,2,775,"নড়াইল জেলা",23.11630000,89.49980000,Asia/Dhaka,
+5515,Narayanganj,19,BD,Bangladesh,40,BD-40,,district,2,760,"নারায়ণগঞ্জ জেলা",23.63380000,90.50000000,Asia/Dhaka,
+5516,Narsingdi,19,BD,Bangladesh,42,BD-42,,district,2,760,"নরসিংদী জেলা",23.92320000,90.71680000,Asia/Dhaka,
+5517,Natore,19,BD,Bangladesh,44,BD-44,,district,2,753,"নাটোর জেলা",24.42050000,89.00060000,Asia/Dhaka,
+5518,Netrakona,19,BD,Bangladesh,41,BD-41,,district,2,758,"নেত্রকোণা জেলা",24.88090000,90.72770000,Asia/Dhaka,
+5519,Nilphamari,19,BD,Bangladesh,46,BD-46,,district,2,750,"নীলফামারী জেলা",25.93180000,88.85600000,Asia/Dhaka,
+5520,Noakhali,19,BD,Bangladesh,47,BD-47,,district,2,803,"নোয়াখালী জেলা",22.86910000,91.09790000,Asia/Dhaka,
+5521,Pabna,19,BD,Bangladesh,49,BD-49,,district,2,753,"পাবনা জেলা",24.00640000,89.23360000,Asia/Dhaka,
+5522,Panchagarh,19,BD,Bangladesh,52,BD-52,,district,2,750,"পঞ্চগড় জেলা",26.33880000,88.55390000,Asia/Dhaka,
+5523,Patuakhali,19,BD,Bangladesh,51,BD-51,,district,2,807,"পটুয়াখালী জেলা",22.35910000,90.32890000,Asia/Dhaka,
+5524,Pirojpur,19,BD,Bangladesh,50,BD-50,,district,2,807,"পিরোজপুর জেলা",22.57910000,89.97590000,Asia/Dhaka,
+5525,Rajbari,19,BD,Bangladesh,53,BD-53,,district,2,760,"রাজবাড়ী জেলা",23.75740000,89.64470000,Asia/Dhaka,
+5526,Rajshahi,19,BD,Bangladesh,54,BD-54,,district,2,753,"রাজশাহী জেলা",24.37440000,88.60440000,Asia/Dhaka,
 753,"Rajshahi ",19,BD,Bangladesh,E,BD-E,E,division,,,রাজশাহী,24.62854320,89.03768620,Asia/Dhaka,Q379382
+5527,Rangamati,19,BD,Bangladesh,56,BD-56,,district,2,803,"রাঙ্গামাটি জেলা",22.65320000,92.17530000,Asia/Dhaka,
 750,"Rangpur ",19,BD,Bangladesh,F,BD-F,F,division,,,রংপুর,25.63761350,89.08263810,Asia/Dhaka,Q876023
+5528,Rangpur,19,BD,Bangladesh,55,BD-55,,district,2,750,"রংপুর জেলা",25.74660000,89.25080000,Asia/Dhaka,
+5529,Satkhira,19,BD,Bangladesh,58,BD-58,,district,2,775,"সাতক্ষীরা জেলা",22.71590000,89.07060000,Asia/Dhaka,
+5530,Shariatpur,19,BD,Bangladesh,62,BD-62,,district,2,760,"শরীয়তপুর জেলা",23.24230000,90.43480000,Asia/Dhaka,
+5531,Sherpur,19,BD,Bangladesh,57,BD-57,,district,2,758,"শেরপুর জেলা",25.01970000,90.01510000,Asia/Dhaka,
+5532,Sirajganj,19,BD,Bangladesh,59,BD-59,,district,2,753,"সিরাজগঞ্জ জেলা",24.45330000,89.70060000,Asia/Dhaka,
+5533,Sunamganj,19,BD,Bangladesh,61,BD-61,,district,2,765,"সুনামগঞ্জ জেলা",25.06580000,91.39500000,Asia/Dhaka,
 765,"Sylhet ",19,BD,Bangladesh,G,BD-G,G,division,,,সিলেট,24.73588540,91.68524760,Asia/Dhaka,Q459732
+5534,Sylhet,19,BD,Bangladesh,60,BD-60,,district,2,765,"সিলেট জেলা",24.89940000,91.86980000,Asia/Dhaka,
+5535,Tangail,19,BD,Bangladesh,63,BD-63,,district,2,760,"টাঙ্গাইল জেলা",24.24980000,89.91680000,Asia/Dhaka,
+5536,Thakurgaon,19,BD,Bangladesh,64,BD-64,,district,2,750,"ঠাকুরগাঁও জেলা",26.03220000,88.46100000,Asia/Dhaka,
 1228,"Christ Church",20,BB,Barbados,01,BB-01,01,parish,,,"Christ Church",13.08261800,-59.53744510,America/Barbados,Q1626524
 1229,"Saint Andrew",20,BB,Barbados,02,BB-02,02,parish,,,"Saint Andrew",13.24329040,-59.57317000,America/Barbados,Q1647439
 1226,"Saint George",20,BB,Barbados,03,BB-03,03,parish,,,"Saint George",13.13840220,-59.54437210,America/Barbados,Q1647443
