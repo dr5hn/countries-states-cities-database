@@ -31,7 +31,7 @@ from collections import OrderedDict
 class MySQLToJSONSync:
     """Sync MySQL database to JSON contribution files with dynamic schema detection"""
 
-    def __init__(self, host='localhost', user='root', password='root', database='world'):
+    def __init__(self, host='localhost', user='root', password='', database='world'):
         """Initialize database connection"""
         try:
             self.conn = mysql.connector.connect(

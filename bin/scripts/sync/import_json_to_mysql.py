@@ -33,7 +33,7 @@ from datetime import datetime
 class JSONToMySQLImporter:
     """Import JSON to MySQL with dynamic schema detection and updates"""
 
-    def __init__(self, host='localhost', user='root', password='root', database='world'):
+    def __init__(self, host='localhost', user='root', password='', database='world'):
         """Initialize database connection"""
         try:
             self.conn = mysql.connector.connect(
@@ -160,9 +160,9 @@ class JSONToMySQLImporter:
     def prepare_value(self, value: Any, field_name: str) -> Any:
         """Prepare JSON value for MySQL insertion"""
         if value is None:
-            # Provide default timestamp for created_at if missing (new records)
-            # Note: updated_at is excluded from INSERT (in skip_fields) so MySQL uses DEFAULT CURRENT_TIMESTAMP
-            if field_name == 'created_at':
+            # Provide default timestamp for created_at and updated_at if missing (new records)
+            # This ensures new contributions get proper timestamps even if contributor forgets them
+            if field_name in ('created_at', 'updated_at'):
                 return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             return None
 
@@ -205,7 +205,7 @@ class JSONToMySQLImporter:
 
         # Define fields to skip during import
         # These are auto-managed by MySQL or redundant relationship fields
-        skip_fields = {'flag', 'updated_at'}  # flag and updated_at are auto-managed by MySQL; preserve created_at from JSON
+        skip_fields = {'flag'}  # flag is auto-managed by MySQL; preserve created_at and updated_at from JSON
         if table_name == 'cities':
             skip_fields.update({'country_name', 'state_name'})
         elif table_name == 'states':
@@ -333,7 +333,7 @@ class JSONToMySQLImporter:
 
         # Define fields to skip during import
         # These are auto-managed by MySQL or redundant relationship fields
-        skip_fields = {'flag', 'updated_at', 'country_name', 'state_name'}  # flag and updated_at are auto-managed by MySQL; preserve created_at from JSON
+        skip_fields = {'flag', 'country_name', 'state_name'}  # flag is auto-managed by MySQL; preserve created_at and updated_at from JSON
 
         # Build final insert column list:
         # Include all columns from database except skip_fields
