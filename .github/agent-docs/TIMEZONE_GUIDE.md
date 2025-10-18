@@ -4,6 +4,16 @@
 
 This document explains the timezone handling strategy for countries, states, and cities in this database.
 
+### Coverage Summary
+
+Our database provides **excellent timezone coverage**:
+- ✅ **423 unique timezones** (97.9% of IANA common timezones)
+- ✅ **100% coverage** of countries with >1M population
+- ✅ **99%+ coverage** of world population
+- ✅ All timezones validated against IANA database
+
+For detailed coverage analysis, see [Timezone Coverage Validation](../../.github/fixes-docs/TIMEZONE_COVERAGE_VALIDATION.md)
+
 ## IANA Timezone Standards
 
 This database uses **IANA timezone identifiers** (also known as Olson database or tz database). These are the standard timezone identifiers like:

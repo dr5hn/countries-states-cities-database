@@ -217,8 +217,20 @@ Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,038 <br>
 Total Cities/Towns/Districts : 151,024 <br>
+Total Timezones : 423 (97.9% IANA coverage) <br>
 
 Last Updated On : 18th Oct 2025
+
+### Timezone Coverage
+
+Our database includes **423 unique IANA timezone identifiers**, providing **97.9% coverage** of the IANA common timezone database:
+
+- ✅ **100% coverage** of all countries with >1M population
+- ✅ **100% coverage** of all major business and residential timezones
+- ✅ **99%+ coverage** of world population
+- ✅ All timezones validated against official IANA timezone database
+
+For detailed timezone coverage analysis and validation methodology, see [Timezone Coverage Validation](.github/fixes-docs/TIMEZONE_COVERAGE_VALIDATION.md).
 
 ## Import MongoDB
 
