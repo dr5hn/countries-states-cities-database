@@ -43,6 +43,7 @@ class ExportJson extends Command
             $k = 0; // countries-states-cities && countries-states
             $l = 0;
             $m = 0; // countries
+            $n = 0; // sublocalities
 
             $countriesArray = array();
             $statesArray = array();
@@ -52,6 +53,7 @@ class ExportJson extends Command
             $countryStateCityArray = array();
             $regionsArray = array();
             $subregionsArray = array();
+            $sublocalitiesArray = array();
             $stateNamesArray = array();
             $cityNamesArray = array();
 
@@ -273,11 +275,35 @@ class ExportJson extends Command
                 }
             }
 
+            // Fetching All Sublocalities
+            $sql = "SELECT * FROM sublocalities ORDER BY name";
+            $result = $db->query($sql);
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    // Pushing it into Fresh Array
+                    $sublocalitiesArray[$n]['id'] = (int)$row['id'];
+                    $sublocalitiesArray[$n]['name'] = $row['name'];
+                    $sublocalitiesArray[$n]['city_id'] = (int)$row['city_id'];
+                    $sublocalitiesArray[$n]['state_id'] = (int)$row['state_id'];
+                    $sublocalitiesArray[$n]['state_code'] = $row['state_code'];
+                    $sublocalitiesArray[$n]['country_id'] = (int)$row['country_id'];
+                    $sublocalitiesArray[$n]['country_code'] = $row['country_code'];
+                    $sublocalitiesArray[$n]['latitude'] = $row['latitude'];
+                    $sublocalitiesArray[$n]['longitude'] = $row['longitude'];
+                    $sublocalitiesArray[$n]['native'] = $row['native'];
+                    $sublocalitiesArray[$n]['timezone'] = $row['timezone'];
+                    $sublocalitiesArray[$n]['translations'] = json_decode($row['translations'], true);
+                    $sublocalitiesArray[$n]['wikiDataId'] = $row['wikiDataId'];
+                    $n++;
+                }
+            }
+
             $io->writeln('Total Regions Count : ' . count($regionsArray));
             $io->writeln('Total Subregions Count : ' . count($subregionsArray));
             $io->writeln('Total Countries Count : ' . count($countriesArray));
             $io->writeln('Total States Count : ' . count($statesArray));
             $io->writeln('Total Cities Count : ' . count($citiesArray));
+            $io->writeln('Total Sublocalities Count : ' . count($sublocalitiesArray));
 
             // Add a Space
             $io->newLine();
@@ -288,6 +314,7 @@ class ExportJson extends Command
                 '/json/countries.json' => $countriesArray,
                 '/json/states.json' => $statesArray,
                 '/json/cities.json' => $citiesArray,
+                '/json/sublocalities.json' => $sublocalitiesArray,
                 '/json/countries+states.json' => $countryStateArray,
                 '/json/countries+cities.json' => $countryCityArray,
                 '/json/countries+states+cities.json' => $countryStateCityArray

@@ -232,6 +232,41 @@ class MySQLToJSONSync:
         print(f"  ✓ Synced {len(subregions)} subregions to {output_file}")
         return len(subregions)
 
+    def sync_sublocalities(self):
+        """Sync sublocalities table to contributions/sublocalities/sublocalities.json"""
+        print("\n📦 Syncing sublocalities...")
+
+        # Check if sublocalities table exists
+        try:
+            self.cursor.execute("SHOW TABLES LIKE 'sublocalities'")
+            if not self.cursor.fetchone():
+                print("  ⚠ Table 'sublocalities' does not exist, skipping")
+                return 0
+        except Exception as e:
+            print(f"  ⚠ Could not check for sublocalities table: {e}")
+            return 0
+
+        columns = self.get_table_columns('sublocalities')
+        excluded = self.get_excluded_columns()
+
+        self.cursor.execute("SELECT * FROM sublocalities ORDER BY id")
+        rows = self.cursor.fetchall()
+
+        sublocalities = []
+        for row in rows:
+            sublocalities.append(self.process_row(row, columns, excluded))
+
+        # Create sublocalities directory if it doesn't exist
+        sublocalities_dir = os.path.join('contributions', 'sublocalities')
+        os.makedirs(sublocalities_dir, exist_ok=True)
+
+        output_file = os.path.join(sublocalities_dir, 'sublocalities.json')
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(sublocalities, f, ensure_ascii=False, indent=2)
+
+        print(f"  ✓ Synced {len(sublocalities)} sublocalities to {output_file}")
+        return len(sublocalities)
+
     def export_schema(self):
         """Export MySQL schema to bin/db/schema.sql using mysqldump"""
         import subprocess
@@ -248,7 +283,7 @@ class MySQLToJSONSync:
         database = self.conn.database
 
         # Tables to export (in correct order respecting foreign keys)
-        tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+        tables = ['regions', 'subregions', 'countries', 'states', 'cities', 'sublocalities']
 
         # Build mysqldump command
         # --no-data: only schema, no data
@@ -370,6 +405,7 @@ def main():
         countries_count = syncer.sync_countries()
         states_count = syncer.sync_states()
         cities_count = syncer.sync_cities()
+        sublocalities_count = syncer.sync_sublocalities()
 
         print("\n" + "=" * 60)
         print("✅ Sync complete!")
@@ -379,6 +415,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Sublocalities: {sublocalities_count:,}")
         print("\n💡 Next steps:")
         print("   1. Review changes: git diff")
         print("   2. Commit: git add . && git commit -m 'sync: update from MySQL'")

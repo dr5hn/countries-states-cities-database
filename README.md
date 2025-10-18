@@ -201,9 +201,12 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 | Countries                  | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | States                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | Cities                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
+| **Sublocalities** 🆕       | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
 | Country+States             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
 | Country+Cities             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
 | Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+
+**New:** Sublocalities (neighborhoods, districts, areas within cities) are now available as a separate dataset with proper parent-city relationships. See [SUBLOCALITIES.md](docs/SUBLOCALITIES.md) for details.
 
 
 ## Demo
@@ -217,8 +220,11 @@ Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,038 <br>
 Total Cities/Towns/Districts : 151,024 <br>
+**Total Sublocalities/Neighborhoods : 0** 🆕 <br>
 
 Last Updated On : 16th Oct 2025
+
+> **Note:** The sublocalities feature is newly added to help properly categorize neighborhoods, districts, and areas within cities (such as Bandra in Mumbai, Manhattan in New York). See [docs/SUBLOCALITIES.md](docs/SUBLOCALITIES.md) for details on how to contribute sub-locality data.
 
 ## Import MongoDB
 
