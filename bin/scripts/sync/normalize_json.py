@@ -38,7 +38,7 @@ import mysql.connector
 class JSONNormalizer:
     """Normalize JSON files by auto-filling missing fields"""
 
-    def __init__(self, host='localhost', user='root', password='root', database='world'):
+    def __init__(self, host='localhost', user='root', password='', database='world'):
         """
         Initialize database connection to fetch current IDs
 

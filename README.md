@@ -1,4 +1,4 @@
-![banner](https://github.com/dr5hn/countries-states-cities-database/raw/master/.github/banner.png)
+![banner](https://github.com/dr5hn/countries-states-cities-database/raw/master/.github/images/banner.png)
 
 
 # 🌍 Countries States Cities Database
@@ -156,7 +156,7 @@ const californiaCities = City.getCitiesOfState('US', 'CA');
 
 [API Documentation](https://docs.countrystatecity.in/)
 
-[![banner](.github/api.png)](https://countrystatecity.in/)
+[![banner](.github/images/api.png)](https://countrystatecity.in/)
 
 ## 🛠️ Export Tool
 
@@ -166,7 +166,7 @@ Looking to export the Countries States Cities database in your preferred format?
 
 **[Try the Export Tool](https://export.countrystatecity.in/)** - Export data in JSON, CSV, XML, YAML, and more!
 
-[![banner](.github/export-tool.png)](https://export.countrystatecity.in/)
+[![banner](.github/images/export-tool.png)](https://export.countrystatecity.in/)
 
 ### Features:
 - **Multiple Export Formats**: JSON, CSV, XML, YAML, and more
@@ -218,7 +218,7 @@ Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,038 <br>
 Total Cities/Towns/Districts : 151,024 <br>
 
-Last Updated On : 16th Oct 2025
+Last Updated On : 18th Oct 2025
 
 ## Import MongoDB
 
@@ -301,7 +301,7 @@ We've launched a dedicated web tool to make contributing to this database easier
 
 **[CSC Update Tool](https://manager.countrystatecity.in/)** - Our official tool to submit database change requests
 
-[![banner](.github/update-tool.png)](https://manager.countrystatecity.in/)
+[![banner](.github/images/update-tool.png)](https://manager.countrystatecity.in/)
 
 The update tool allows you to:
 

@@ -6,63 +6,42 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a feature! Please describe your idea below.
+        Thanks for suggesting a feature!
 
   - type: dropdown
     id: feature-type
     attributes:
       label: Feature Type
-      description: What type of feature are you requesting?
       options:
         - New data field
         - New export format
         - API enhancement
-        - Documentation improvement
-        - Tool/Script improvement
+        - Documentation
+        - Tool/Script
         - Other
     validations:
       required: true
 
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: Problem Statement
-      description: Is your feature request related to a problem? Please describe.
-      placeholder: "I'm always frustrated when..."
+      label: What do you want?
+      placeholder: Describe your feature request
     validations:
       required: true
 
   - type: textarea
-    id: solution
+    id: why
     attributes:
-      label: Proposed Solution
-      description: Describe the solution you'd like
-      placeholder: A clear and concise description of what you want to happen
+      label: Why is this useful?
+      placeholder: Explain the benefit or problem it solves
     validations:
       required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: Describe alternatives you've considered
-      placeholder: What other solutions have you thought about?
-    validations:
-      required: false
-
-  - type: textarea
-    id: additional
-    attributes:
-      label: Additional Context
-      description: Add any other context, mockups, or examples
-    validations:
-      required: false
 
   - type: checkboxes
-    id: terms
+    id: contribute
     attributes:
       label: Contribution
-      description: Would you be willing to contribute this feature?
       options:
-        - label: I'm willing to submit a PR to implement this feature
+        - label: I can submit a PR for this
           required: false
