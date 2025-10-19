@@ -15,7 +15,7 @@ class ExportMongoDB extends Command
     protected static $defaultName = 'export:mongodb';
     protected static $defaultDescription = 'Export data to MongoDB format';
 
-    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
+    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities', 'sublocalities'];
     private Filesystem $filesystem;
     private array $dataCache = [];
 
@@ -67,6 +67,7 @@ class ExportMongoDB extends Command
             $this->processCountries($io, $rootDir);
             $this->processStates($io, $rootDir);
             $this->processCities($io, $rootDir);
+            $this->processSublocalities($io, $rootDir);
 
             $io->success('MongoDB export completed successfully');
             return Command::SUCCESS;
@@ -285,6 +286,70 @@ class ExportMongoDB extends Command
 
         $this->saveCollection($rootDir, 'cities', $processedCities);
         $io->info('Cities exported to MongoDB format');
+    }
+
+    private function processSublocalities(SymfonyStyle $io, string $rootDir): void
+    {
+        $io->section('Processing sublocalities');
+
+        // Handle case where sublocalities might not exist yet
+        if (!isset($this->dataCache['sublocalities']) || empty($this->dataCache['sublocalities'])) {
+            $io->warning('No sublocalities data found - skipping');
+            return;
+        }
+
+        $sublocalities = $this->dataCache['sublocalities'];
+        $processedSublocalities = [];
+
+        foreach ($sublocalities as $sublocality) {
+            $processedSublocality = $sublocality;
+
+            // Convert id to MongoDB _id format
+            $processedSublocality['_id'] = (int) $sublocality['id'];
+            unset($processedSublocality['id']);
+
+            // Parse JSON translations if it's a string
+            if (isset($processedSublocality['translations']) && is_string($processedSublocality['translations'])) {
+                $processedSublocality['translations'] = json_decode($processedSublocality['translations'], true);
+            }
+
+            // Add city reference
+            if (isset($processedSublocality['city_id'])) {
+                $processedSublocality['city'] = [
+                    '$ref' => 'cities',
+                    '$id' => (int) $processedSublocality['city_id']
+                ];
+            }
+
+            // Add state reference
+            if (isset($processedSublocality['state_id'])) {
+                $processedSublocality['state'] = [
+                    '$ref' => 'states',
+                    '$id' => (int) $processedSublocality['state_id']
+                ];
+            }
+
+            // Add country reference
+            if (isset($processedSublocality['country_id'])) {
+                $processedSublocality['country'] = [
+                    '$ref' => 'countries',
+                    '$id' => (int) $processedSublocality['country_id']
+                ];
+            }
+
+            // Convert coordinates to GeoJSON format for MongoDB geospatial queries
+            if (isset($processedSublocality['latitude']) && isset($processedSublocality['longitude'])) {
+                $processedSublocality['location'] = [
+                    'type' => 'Point',
+                    'coordinates' => [(float) $processedSublocality['longitude'], (float) $processedSublocality['latitude']]
+                ];
+            }
+
+            $processedSublocalities[] = $processedSublocality;
+        }
+
+        $this->saveCollection($rootDir, 'sublocalities', $processedSublocalities);
+        $io->info('Sublocalities exported to MongoDB format');
     }
 
     private function saveCollection(string $rootDir, string $collection, array $data): void
