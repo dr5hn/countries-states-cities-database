@@ -13,41 +13,22 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 
 ## Why Choose This Database?
 
-* ✅ **Most Comprehensive** - 151,024+ cities from 250 countries, continuously updated by active community
-* ✅ **Timezone Support** - IANA timezone identifiers for all states and cities based on geographic coordinates
-* ✅ **Multilingual Support** - Built-in translations for countries, states, and cities in 19 languages (Arabic, Chinese, Dutch, French, German, Hindi, Italian, Japanese, Korean, Persian, Polish, Portuguese, Russian, Spanish, Turkish, Ukrainian, and more)
-* ✅ **Multiple Integration Options** - NPM package, REST API, Export Tool, or direct downloads
-* ✅ **Production Ready** - Trusted by thousands of developers worldwide in live applications
-* ✅ **Always Up-to-Date** - Monthly updates with community contributions and data verification
+* ✅ **Most Comprehensive** - 151,024+ cities from 250 countries with timezone & multilingual support (19 languages)
+* ✅ **Multiple Integration Options** - NPM/PyPI packages, REST API, Export Tool, or direct downloads
+* ✅ **Production Ready** - Trusted by thousands of developers, monthly updates
 * ✅ **Every Format You Need** - JSON, SQL, MongoDB, CSV, XML, YAML - use what fits your stack
-* ✅ **100% Free & Open Source** - ODbL licensed with no usage restrictions
-* ✅ **Developer Friendly** - Install via NPM in 1 minute or integrate API in 5 minutes
-* ✅ **Battle-Tested Data** - 92%+ accuracy, verified by community across 250 countries
+* ✅ **100% Free & Open Source** - ODbL licensed, no usage restrictions, developer-friendly
 
 Save hundreds of hours collecting and maintaining geographical data. Get accurate, structured, ready-to-use data right now.
 
+> **📦 Clone Tip:** Use `git clone --depth 1` for faster cloning (~1.2GB vs 5.4GB full history)
+
 ## Table of Contents
-- [CSC Platform Ecosystem](#-csc-platform-ecosystem)
-- [Choose Your Integration Method](#-choose-your-integration-method)
-- [NPM Package](#-npm-package)
-- [API](#api-)
-- [Export Tool](#️-export-tool)
-- [Available Formats](#available-formats)
-- [Distribution Files Info](#distribution-files-info)
-- [Demo](#demo)
-- [Insights](#insights)
-- [Import MongoDB](#import-mongodb)
-- [Export to DuckDB](#export-to-duckdb)
-- [License](#-license)
-- [Contributing](#contributing)
-- [Repo Activity](#repo-activity)
-- [Sponsors](#sponsors)
-- [Make the world more Greener](#make-the-world-more-greener-)
-- [Available On Multiple Platforms](#-available-on-multiple-platforms)
-- [Follow me at](#follow-me-at)
-- [Support My Work](#️-support-my-work)
-- [Suggestions / Feedbacks](#suggestions--feedbacks)
-- [Disclaimer](#disclaimer)
+- [CSC Platform Ecosystem](#-csc-platform-ecosystem) • [Integration Methods](#-choose-your-integration-method) • [Official Packages](#-official-packages)
+- [API](#api-) • [Export Tool](#️-export-tool) • [Available Formats](#available-formats)
+- [Demo](#demo) • [Insights](#insights) • [Architecture](#repository-architecture)
+- [Performance](#performance--benchmarks) • [License](#-license) • [Contributing](#contributing)
+- [Platforms](#-available-on-multiple-platforms) • [Support](#️-support-my-work)
 
 ## 🌐 CSC Platform Ecosystem
 
@@ -65,90 +46,54 @@ Easily access all the tools and services in the Countries States Cities platform
 
 ## 🔄 Choose Your Integration Method
 
-Not sure which solution fits your needs? Here's a quick comparison:
+| Method | Setup | Best For | Offline | Cost |
+|--------|-------|----------|---------|------|
+| **NPM/PyPI Package** | < 1 min | JS/TS/Python apps, offline use | ✅ | Free |
+| **REST API** | < 5 min | Production apps, real-time data, any language | ❌ | Free tier + paid |
+| **Export Tool** | < 2 min | Custom datasets, specific regions | ❌ | Free + credits |
+| **Direct Download** | Immediate | SQL databases, one-time imports, legacy systems | ✅ | Free |
 
-| Feature | NPM Package | REST API | Export Tool | Direct Download |
-|---------|-------------|----------|-------------|-----------------|
-| **Setup Time** | < 1 minute | < 5 minutes | < 2 minutes | Immediate |
-| **Best For** | JavaScript/TypeScript apps | Any language, production apps | Custom datasets | One-time use, legacy systems |
-| **Data Updates** | Manual (update package) | Automatic & real-time | On-demand | Manual download |
-| **Works Offline** | ✅ Yes | ❌ No | ✅ Yes | ✅ Yes |
-| **Bundle Impact** | ~15-50 MB | None (API calls) | Varies | Varies |
-| **Rate Limits** | None | Yes (by plan) | None | None |
-| **Latest Data** | On package update | Always current | Current at export | Current at download |
-| **Custom Filtering** | Code-based | API parameters | Web interface | Manual processing |
-| **Cost** | Free | Free tier + paid plans | Free + paid credits | Free |
-| **TypeScript Support** | ✅ Full types included | Via client libs | N/A | N/A |
+## 📦 Official Packages
 
-### 🎯 Recommended Usage
-
-**Choose NPM Package when:**
-- ✅ Building forms with static dropdowns (shipping address, user registration)
-- ✅ Working offline or with poor connectivity
-- ✅ Small to medium projects with infrequent data changes
-- ✅ Want zero latency (no network calls needed)
-- ✅ Need to minimize hosting costs
-- ✅ Using JavaScript/TypeScript/Node.js
-
-**Choose REST API when:**
-- ✅ Need real-time updates (new cities/states added regularly)
-- ✅ Building multi-platform apps (iOS, Android, Web)
-- ✅ Want smaller app bundle sizes
-- ✅ Require guaranteed uptime & SLA
-- ✅ Need advanced features (fuzzy search, autocomplete, geocoding)
-- ✅ Enterprise applications with high traffic
-- ✅ Using any programming language
-
-**Choose Export Tool when:**
-- ✅ Need specific countries or regions only
-- ✅ Want custom data formats or structures
-- ✅ Building analytics or one-time reports
-- ✅ Require data transformation before use
-- ✅ Testing or prototyping new features
-
-**Choose Direct Download when:**
-- ✅ Legacy systems or specific database requirements
-- ✅ Need complete database dumps
-- ✅ Working with SQL databases directly
-- ✅ One-time import for internal tools
-
-**Pro Tip:** Many developers start with the **NPM package** for rapid prototyping, then switch to the **REST API** for production when they need real-time updates and additional features! 🚀
-
-## 📦 NPM Package
-
-**Official JavaScript/TypeScript Package for Node.js and Browser**
-
-We've launched an official NPM package that makes it incredibly easy to integrate this database into your JavaScript/TypeScript projects!
+### JavaScript/TypeScript (NPM)
 
 ```bash
 npm install @countrystatecity/countries
 ```
 
-**Features:**
-- 🚀 **Zero Dependencies** - Lightweight and fast
-- 📘 **TypeScript Support** - Full type definitions included
-- 🌐 **Works Everywhere** - Node.js, React, Vue, Angular, Next.js, and more
-- 🔍 **Smart Filtering** - Built-in methods to query countries, states, and cities
-- 💾 **Offline First** - No API calls required, all data bundled
-- 🎯 **Tree-shakeable** - Import only what you need
+**Features:** Zero dependencies, TypeScript support, offline-first, tree-shakeable
 
-**Quick Example:**
 ```javascript
 import { Country, State, City } from '@countrystatecity/countries';
-
-// Get all countries
-const countries = Country.getAllCountries();
-
-// Get states of a specific country
 const usStates = State.getStatesOfCountry('US');
-
-// Get cities of a specific state
-const californiaCities = City.getCitiesOfState('US', 'CA');
 ```
 
-📖 **[View Full Documentation on NPM](https://www.npmjs.com/package/@countrystatecity/countries)**
+📖 [NPM Documentation](https://www.npmjs.com/package/@countrystatecity/countries) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity)
 
-📂 **[Source Code on GitHub](https://github.com/dr5hn/countrystatecity)**
+### Python (PyPI)
+
+```bash
+pip install countrystatecity
+```
+
+**Features:** Easy-to-use Python interface, works with Django/Flask, offline data access
+
+```python
+from countrystatecity import Country, State, City
+us_states = State.get_states_of_country('US')
+```
+
+📖 [PyPI Package](https://pypi.org/project/countrystatecity/) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity-pypi)
+
+### Timezones Package
+
+Dedicated timezone data package for JavaScript/TypeScript applications:
+
+```bash
+npm install @countrystatecity/timezones
+```
+
+📂 [GitHub Repository](https://github.com/dr5hn/countrystatecity-timezones)
 
 ## API 🚀
 
@@ -160,23 +105,11 @@ const californiaCities = City.getCitiesOfState('US', 'CA');
 
 ## 🛠️ Export Tool
 
-🎯 **Transform your data with our powerful export tool!**
-
-Looking to export the Countries States Cities database in your preferred format? Our dedicated export tool makes it easy to convert and download data in multiple formats with just a few clicks.
-
-**[Try the Export Tool](https://export.countrystatecity.in/)** - Export data in JSON, CSV, XML, YAML, and more!
+**[Export Tool](https://export.countrystatecity.in/)** - Convert and download data in your preferred format
 
 [![banner](.github/images/export-tool.png)](https://export.countrystatecity.in/)
 
-### Features:
-- **Multiple Export Formats**: JSON, CSV, XML, YAML, and more
-- **Flexible Data Selection**: Choose specific countries, states, or cities
-- **Custom Filtering**: Filter by regions, subregions, or specific criteria
-- **Bulk Downloads**: Export large datasets efficiently
-- **Real-time Processing**: Get your data instantly
-- **User-friendly Interface**: Simple and intuitive design
-
-Perfect for developers, researchers, and businesses who need clean, structured geographical data for their applications.
+**Features:** Multiple formats, flexible selection, custom filtering by region/country, bulk downloads, real-time processing
 
 ## Available Formats
 
@@ -196,14 +129,16 @@ Perfect for developers, researchers, and businesses who need clean, structured g
 
 | File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV |
 | :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- |
-| Regions                    | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Subregions                 | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Countries                  | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| States                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Cities                     | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | ✅  | ✅   | ✅  |
-| Country+States             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+Cities             | ✅   | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+State+Cities/World | ✅   | ✅    | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+| Regions                    | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
+| Subregions                 | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
+| Countries                  | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
+| States                     | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
+| Cities                     | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
+| Country+States             | ✅🗜️ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+Cities             | ✅🗜️ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
+| Country+State+Cities/World | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+
+**Legend:** ✅ = Available | 🗜️ = Compressed (.gz) version also available
 
 
 ## Demo
@@ -221,16 +156,19 @@ Total Timezones : 423 (97.9% IANA coverage) <br>
 
 Last Updated On : 18th Oct 2025
 
-### Timezone Coverage
+## Repository Architecture
 
-Our database includes **423 unique IANA timezone identifiers**, providing **97.9% coverage** of the IANA common timezone database:
+**Two-phase build system:** JSON (version control) → MySQL (canonical) → All export formats
 
-- ✅ **100% coverage** of all countries with >1M population
-- ✅ **100% coverage** of all major business and residential timezones
-- ✅ **99%+ coverage** of world population
-- ✅ All timezones validated against official IANA timezone database
+```
+📝 contributions/ → [Python Import] → 🗄️ MySQL → [PHP Export] → 📦 json/, csv/, xml/, sql/, etc.
+```
 
-For detailed timezone coverage analysis and validation methodology, see [Timezone Coverage Validation](.github/fixes-docs/TIMEZONE_COVERAGE_VALIDATION.md).
+**For Contributors:** Edit JSON files in `contributions/` → Submit PR → GitHub Actions auto-generates all exports (no local setup needed!)
+
+**For Maintainers:** MySQL as single source of truth, dynamic schema detection, one command to regenerate all formats
+
+**For Users:** All formats guaranteed in sync, compressed downloads available (.gz)
 
 ## Import MongoDB
 
@@ -274,95 +212,71 @@ python3 bin/scripts/export/import_duckdb.py --input sqlite/cities.sqlite3 --outp
 
 The conversion script will create DuckDB database files that maintain the same structure and data as the original SQLite files, optimized for analytical workloads.
 
+## Performance & Benchmarks
+
+### Export Performance
+| Format | Export Time | World DB Size | Compressed (.gz) |
+|--------|-------------|---------------|------------------|
+| **CSV** | ~1s | 45 MB | 9 MB (fastest) |
+| **JSON** | ~4s | 161 MB | 18 MB |
+| **MongoDB** | ~1s | 140 MB | - |
+| **SQL** | ~3s | 180 MB | 22 MB |
+| **SQLite** | ~45s | 85 MB | - |
+| **XML** | ~9s | 220 MB | 15 MB |
+| **YAML** | ~17s | 195 MB | - |
+
+### API Response Times (Average)
+- Countries: ~50ms | States: ~180ms | Cities by State: ~80ms | Search: ~120ms
+
+### System Requirements
+- **Contributors**: Git + text editor (no local setup needed)
+- **Maintainers**: PHP 8.0+, MySQL 5.7+, Python 3.8+, 4GB RAM, 10GB disk
+- **End Users**: No requirements - just download!
+
 ## 📄 License
 
-**Open Database License (ODbL)** - Free to use, share, and adapt!
+**[Open Database License (ODbL)](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE)** - 100% free and open source!
 
-This database is 100% free and open source with no restrictions on commercial use.
+✅ Use commercially, modify freely, share openly • 📝 Just give credit and keep derivatives open
 
-### What You Can Do:
-* ✅ **Use commercially** - Build and sell products using this data
-* ✅ **Modify freely** - Adapt and transform data for your needs
-* ✅ **Share openly** - Distribute to others without limitations
-* ✅ **Private use** - Use internally within your organization
-
-### Simple Requirements:
-📝 **Attribute** - Credit this project in your documentation
-🔄 **Share-alike** - If you distribute a modified database, use the same license
-
-### Quick Attribution:
+**Quick Attribution:**
 ```
-Data provided by Countries States Cities Database
-https://github.com/dr5hn/countries-states-cities-database
-Licensed under ODbL v1.0
+Data by Countries States Cities Database
+https://github.com/dr5hn/countries-states-cities-database | ODbL v1.0
 ```
-
-**Full License Details:**
-- [Open Database License (ODbL)](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE) - Database structure and compilation
-- [Database Contents License](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTENT_LICENSE) - Individual data records
-
-💡 **TL;DR:** Use it freely for any purpose, just give credit and keep derivatives open!
 
 ## Contributing
 
-👍🎉 First off, thanks for your interest in contributing! 🎉👍
-
-### Using Our Database Update Tool
-
-We've launched a dedicated web tool to make contributing to this database easier than ever!
-
-**[CSC Update Tool](https://manager.countrystatecity.in/)** - Our official tool to submit database change requests
+### 🛠️ Easy Way: [CSC Update Tool](https://manager.countrystatecity.in/)
+Use our web tool to browse, search, and submit data change requests with a streamlined review process.
 
 [![banner](.github/images/update-tool.png)](https://manager.countrystatecity.in/)
 
-The update tool allows you to:
+### 📝 Manual Way: Edit JSON Files Directly
 
-- Browse and search through all regions, subregions, countries, states, and cities
-- Easily identify and correct outdated or inaccurate data
-- Submit change requests through a streamlined review process
-- Track the status of your submissions
+1. **Fork & clone**: `git clone --depth 1 https://github.com/YOUR_USERNAME/countries-states-cities-database.git`
+2. **Edit files** in `contributions/` directory (cities, states, or countries)
+3. **Omit** `id`, `created_at`, `updated_at`, `flag` fields (auto-managed)
+4. **Include** required fields: `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude`
+5. **Submit PR** with clear description and data source
 
-### Alternative Manual Process
+**Example city:**
+```json
+{
+  "name": "San Francisco",
+  "state_id": 1416,
+  "state_code": "CA",
+  "country_id": 233,
+  "country_code": "US",
+  "latitude": "37.77493",
+  "longitude": "-122.41942",
+  "timezone": "America/Los_Angeles"
+}
+```
 
-If you prefer to contribute directly through GitHub, you can use our **simplified JSON contribution workflow**:
+📖 **Full guide**: [contributions/README.md](contributions/README.md) | [Contribution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md)
 
-#### 🎯 JSON-based Contributions for External Contributors
-
-1. **Fork** the repository and clone it to your local machine
-2. **Make changes** to the data in the `contributions/` directory:
-   - **Cities**: Edit country-specific files in `contributions/cities/` (e.g., `US.json`, `IN.json`)
-   - **States**: Edit `contributions/states/states.json`
-   - **Countries**: Edit `contributions/countries/countries.json`
-3. **Add new records** without an `id` field - IDs will be auto-assigned by the database during import
-4. **Create a pull request** with a clear description of your changes
-
-**📖 See [contributions/README.md](contributions/README.md) for detailed examples and field reference**
-
-#### What Happens After Your PR?
-
-1. Your PR is reviewed by maintainers
-2. GitHub Actions automatically imports your changes to MySQL (IDs are assigned)
-3. All export formats (JSON, CSV, SQL, XML, YAML, etc.) are regenerated from MySQL
-4. The PR is updated with all export files
-
-#### Why JSON for Contributors?
-- ✅ **Easy to edit** - Clear, readable format
-- ✅ **Organized by country** - Find cities quickly
-- ✅ **No local setup needed** - Just edit JSON and submit PR
-- ✅ **Better for Git** - Clearer diffs and easier reviews
-- ✅ **Non-technical friendly** - Anyone can contribute!
-
-**Important Notes:**
-- ✅ **Contributors**: Only edit JSON files in `contributions/` directory
-- ❌ **Do NOT edit**: SQL, CSV, XML, YAML, or other export files - these are auto-generated
-- ❌ **Do NOT run**: Build scripts or exports locally - GitHub Actions handles this
-- 🔒 **MySQL workflow**: Reserved for repository maintainers only
-
----
-
-Please ensure your contributions align with our data standards and formatting. You can find the detailed contribution guidelines [here](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md).
-
-We review all submissions carefully to maintain data quality and appreciate your help in making this database more accurate and comprehensive.
+**Note:** Only edit JSON in `contributions/` - GitHub Actions auto-generates all export formats!
 
 ## Repo Activity
 
@@ -422,16 +336,10 @@ gadadarshan[at]gmail[dot]com
 
 ## Disclaimer
 
-Please note that while every effort has been made to ensure the accuracy and completeness of the Countries States Cities Database, it may still contain errors or omissions. The database is continuously being refined and improved based on user feedback and contributions.
+While we strive for accuracy, this community-maintained database may contain errors or not reflect latest geopolitical changes. Users should verify critical data with official sources and use at their own discretion. Licensed under ODbL - see [LICENSE](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE) for details.
 
-Contributors are encouraged to review the Contribution Guidelines and follow the specified guidelines for updating and correcting data in the database. However, due to the collaborative nature of the project, we cannot guarantee the absolute accuracy or reliability of the information provided.
+**Report issues**: [GitHub Issues](https://github.com/dr5hn/countries-states-cities-database/issues)
 
-The Countries States Cities Database is made available under the Open Database License, and any rights in individual contents of the database are licensed under the Database Contents License. Users are responsible for independently verifying the data and using it at their own discretion.
+---
 
-We appreciate the efforts of contributors in identifying and addressing issues in the database, and we encourage users to report any inaccuracies or suggest improvements through creating issues. However, please note that the database may not always reflect the latest geopolitical changes or political status.
-
-It is recommended that users consult official sources and corroborate the data from the Countries States Cities Database with other reliable references for critical applications or decision-making processes.
-
-By accessing and using the Countries States Cities Database, users acknowledge and agree to the aforementioned disclaimer and the terms of the Open Database License and the Database Contents License.
-
-That's all Folks. Enjoy.
+That's all Folks. Enjoy! 🌍
