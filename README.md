@@ -83,7 +83,7 @@ from countrystatecity import Country, State, City
 us_states = State.get_states_of_country('US')
 ```
 
-📖 [PyPI Package](https://pypi.org/project/countrystatecity/) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity-pypi)
+📖 [PyPI Package](https://pypi.org/org/countrystatecity/) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity-pypi)
 
 ### Timezones Package
 
@@ -93,7 +93,7 @@ Dedicated timezone data package for JavaScript/TypeScript applications:
 npm install @countrystatecity/timezones
 ```
 
-📂 [GitHub Repository](https://github.com/dr5hn/countrystatecity-timezones)
+📂 [GitHub Repository](https://github.com/dr5hn/countrystatecity)
 
 ## API 🚀
 
