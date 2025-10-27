@@ -1,0 +1,195 @@
+name: Generate Data Changelogs
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'contributions/**'
+      - 'bin/scripts/changelog/**'
+      - '.github/workflows/generate-changelog.yml'
+  workflow_dispatch:
+    inputs:
+      retention_months:
+        description: 'Retention period in months'
+        required: false
+        default: '48'
+      full_history:
+        description: 'Process full git history'
+        type: boolean
+        default: true
+      target_repo:
+        description: 'Target repository (owner/repo)'
+        required: false
+        default: 'dr5hn/csc-changelog'
+
+env:
+  TARGET_REPO: ${{ github.event.inputs.target_repo || 'dr5hn/csc-changelog' }}
+  TARGET_BRANCH: 'main'
+
+jobs:
+  generate-changelogs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full git history needed
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r bin/scripts/changelog/requirements-changelog.txt
+
+      - name: Validate repository
+        run: |
+          echo "Repository: $(pwd)"
+          echo "Git status:"
+          git status
+          echo ""
+          echo "Checking contributions/ directory:"
+          ls -lh contributions/
+          echo ""
+          echo "Recent commits to contributions/:"
+          git log --oneline -10 -- contributions/ || echo "No commits found"
+
+      - name: Generate changelogs
+        run: |
+          echo "================================================"
+          echo "Starting Changelog Generation"
+          echo "================================================"
+
+          RETENTION_MONTHS="${{ github.event.inputs.retention_months || '24' }}"
+
+          python3 bin/scripts/changelog/changelog_generator.py \
+            --retention-months ${RETENTION_MONTHS} \
+            --show-sizes
+
+          echo ""
+          echo "================================================"
+          echo "Generation Complete"
+          echo "================================================"
+
+      - name: Check generated files
+        run: |
+          echo "Changelog directory structure:"
+          tree -L 2 changelogs/ || ls -R changelogs/
+          echo ""
+          echo "File sizes:"
+          du -sh changelogs/
+          du -sh changelogs/countries/ 2>/dev/null || echo "No countries directory"
+          du -sh changelogs/archives/ 2>/dev/null || echo "No archives directory"
+
+      - name: Clone target repository
+        run: |
+          echo "Cloning target repository: $TARGET_REPO"
+          cd ..
+          git clone https://x-access-token:${{ secrets.CHANGELOG_REPO_TOKEN }}@github.com/$TARGET_REPO.git changelog-repo
+          cd changelog-repo
+
+          # Configure git
+          git config user.name "Changelog Bot"
+          git config user.email "bot@changelog.countrystatecity.in"
+
+          # Create new branch for this update
+          BRANCH_NAME="update-changelog-$(date -u '+%Y%m%d-%H%M%S')"
+          git checkout -b $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Copy changelogs to target repo
+        run: |
+          echo "Copying generated changelogs to target repository..."
+          cp -r changelogs/* ../changelog-repo/
+
+          echo ""
+          echo "Files copied to target repo:"
+          ls -lh ../changelog-repo/
+
+      - name: Commit and push to target repo
+        run: |
+          cd ../changelog-repo
+
+          git add .
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "HAS_CHANGES=false" >> $GITHUB_ENV
+          else
+            COMMIT_MSG="📝 Update changelogs - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            COMMIT_MSG="${COMMIT_MSG}\n\nAuto-generated from: ${{ github.repository }}@${{ github.sha }}"
+            COMMIT_MSG="${COMMIT_MSG}\nTriggered by: ${{ github.event_name }}"
+            git commit -m "${COMMIT_MSG}"
+
+            git push origin $BRANCH_NAME
+            echo "HAS_CHANGES=true" >> $GITHUB_ENV
+          fi
+
+      - name: Create Pull Request in target repo
+        if: env.HAS_CHANGES == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.CHANGELOG_REPO_TOKEN }}
+          script: |
+            const [owner, repo] = process.env.TARGET_REPO.split('/');
+
+            const prBody = [
+              '## Automated Changelog Update',
+              '',
+              `🤖 Auto-generated from [\`${context.repo.owner}/${context.repo.repo}\`](https://github.com/${context.repo.owner}/${context.repo.repo})`,
+              '',
+              '### Source',
+              `- Commit: ${context.sha.substring(0, 7)}`,
+              `- Trigger: ${context.eventName}`,
+              `- Message: ${context.payload.head_commit?.message || 'Manual workflow dispatch'}`,
+              '',
+              '### Changes',
+              'This PR contains updated changelog data from the latest database changes.',
+              '',
+              '### Review Checklist',
+              '- [ ] Verify changelog file sizes are reasonable',
+              '- [ ] Check that statistics are updated',
+              '- [ ] Confirm website will display correctly',
+              '',
+              '---',
+              '',
+              '*To merge automatically, approve this PR or configure auto-merge.*'
+            ].join('\n');
+
+            const { data: pr } = await github.rest.pulls.create({
+              owner,
+              repo,
+              title: '📝 Update changelogs - ' + new Date().toISOString().split('T')[0],
+              head: process.env.BRANCH_NAME,
+              base: process.env.TARGET_BRANCH,
+              body: prBody
+            });
+
+            console.log(`Pull request created: ${pr.html_url}`);
+            core.setOutput('pr_url', pr.html_url);
+            core.setOutput('pr_number', pr.number);
+
+      - name: Summary
+        run: |
+          echo "================================================"
+          echo "Changelog Generation Summary"
+          echo "================================================"
+          echo "✅ Changelogs generated successfully"
+          if [ "$HAS_CHANGES" = "true" ]; then
+            echo "✅ Pull request created in $TARGET_REPO"
+            echo "📍 Branch: $BRANCH_NAME"
+          else
+            echo "ℹ️  No changes detected"
+          fi
+          echo ""
+          echo "Target repository: $TARGET_REPO"
+          echo "================================================"

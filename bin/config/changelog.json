@@ -1,0 +1,18 @@
+{
+  "retention_months": 48,
+  "minify_json": true,
+  "archive_enabled": true,
+  "archive_by_year": true,
+  "compact_field_names": false,
+  "max_global_recent_changes": 100,
+  "max_changes_per_file": 1000,
+  "exclude_fields": ["author_email"],
+  "output_dir": "changelogs",
+  "target_paths": [
+    "contributions/cities/",
+    "contributions/states/states.json",
+    "contributions/countries/countries.json"
+  ],
+  "archive_branch": "changelogs-data",
+  "github_pages_enabled": true
+}
