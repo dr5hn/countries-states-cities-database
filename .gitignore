@@ -55,5 +55,10 @@ csv/translations.csv
 !*.sql.gz
 !*.json.gz
 !*.sqlite3.gz
-.claude/*.json
+.claude/*
+!.claude/CLAUDE.md
 gc-keys/
+
+# Changelog files (stored in separate repository)
+changelogs/
+site/
