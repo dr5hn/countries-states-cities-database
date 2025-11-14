@@ -31,7 +31,7 @@ Successfully added the missing Nouvelle-Calédonie (New Caledonia) overseas coll
 Added 1 major city for New Caledonia:
 
 1. **Nouméa** - Capital and largest city
-   - ID: 157075
+   - ID: 157078
    - Coordinates: -22.2758°S, 166.458°E
    - Timezone: Pacific/Noumea
    - WikiData: Q9733
@@ -115,7 +115,7 @@ jq '.[] | select(.name == "Nouvelle-Calédonie")' contributions/states/states.js
 jq '.[] | select(.name == "Nouméa")' contributions/cities/FR.json | jq '{id, name, state_code, timezone, translations}'
 # Output:
 # {
-#   "id": 157075,
+#   "id": 157078,
 #   "name": "Nouméa",
 #   "state_code": "NC",
 #   "timezone": "Pacific/Noumea",
@@ -173,7 +173,7 @@ jq '.[] | select(.name == "Nouméa")' contributions/cities/FR.json | jq '{id, na
 ### City Entry (FR.json)
 ```json
 {
-  "id": 157075,
+  "id": 157078,
   "name": "Nouméa",
   "state_id": 5538,
   "state_code": "NC",
