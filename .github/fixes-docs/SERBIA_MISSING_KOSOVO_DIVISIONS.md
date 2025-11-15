@@ -263,3 +263,18 @@ The five Kosovo-related districts (RS-25, RS-26, RS-27, RS-28, RS-29) and the Ko
 
 ## Next Steps
 No further action needed. The database now contains all 32 administrative divisions for Serbia as specified in ISO 3166-2:RS.
+
+## Update: WikiData IDs Added
+
+Following code review feedback, WikiData IDs have been added to all 6 new administrative divisions:
+
+| ISO Code | Name | WikiData ID | WikiData Link |
+|----------|------|-------------|---------------|
+| RS-KM | Kosovo-Metohija | Q1255 | https://www.wikidata.org/wiki/Q1255 |
+| RS-25 | Kosovo | Q1452368 | https://www.wikidata.org/wiki/Q1452368 |
+| RS-26 | Peć | Q2510536 | https://www.wikidata.org/wiki/Q2510536 |
+| RS-27 | Prizren | Q201085 | https://www.wikidata.org/wiki/Q201085 |
+| RS-28 | Kosovska Mitrovica | Q2017517 | https://www.wikidata.org/wiki/Q2017517 |
+| RS-29 | Kosovo-Pomoravlje | Q124725 | https://www.wikidata.org/wiki/Q124725 |
+
+All WikiData IDs were retrieved from Wikipedia API using the `pageprops.wikibase_item` property.
