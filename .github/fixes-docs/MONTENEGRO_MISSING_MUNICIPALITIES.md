@@ -24,6 +24,7 @@ Added three new municipality entries with complete data:
 - Coordinates: 42.45306°N, 18.53722°E
 - Native Name: Херцег Нови
 - Timezone: Europe/Podgorica
+- WikiData ID: Q187144
 - Translations: 14 languages (ar, de, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, uk)
 
 **Tuzi Municipality (ME-24)**:
@@ -31,6 +32,7 @@ Added three new municipality entries with complete data:
 - Coordinates: 42.36667°N, 19.40000°E
 - Native Name: Тузи
 - Timezone: Europe/Podgorica
+- WikiData ID: Q2656869
 - Translations: 12 languages (de, es, fr, hi, it, ja, ko, nl, pl, pt, ru, uk)
 
 **Zeta Municipality (ME-25)**:
@@ -38,6 +40,7 @@ Added three new municipality entries with complete data:
 - Coordinates: 42.40000°N, 19.25000°E
 - Native Name: Зета
 - Timezone: Europe/Podgorica
+- WikiData ID: Q25411815
 - Translations: 14 languages (ar, de, es, fr, hi, it, ja, ko, nl, pl, pt, ru, tr, uk)
 
 ### 2. Added Cities to `contributions/cities/ME.json`
@@ -45,19 +48,19 @@ Added three new municipality entries with complete data:
 Added 9 major cities/settlements across the three municipalities:
 
 **Herceg-Novi Municipality (4 cities)**:
-1. **Herceg Novi** - 42.45306°N, 18.53722°E (14 translations)
-2. **Igalo** - 42.45583°N, 18.51667°E (7 translations)
-3. **Kamenari** - 42.46167°N, 18.68806°E (0 translations - no Wikipedia page)
-4. **Bijela** - 42.44778°N, 18.65972°E (4 translations)
+1. **Herceg Novi** - 42.45306°N, 18.53722°E (WikiData: Q160115, 14 translations)
+2. **Igalo** - 42.45583°N, 18.51667°E (WikiData: Q988315, 7 translations)
+3. **Kamenari** - 42.46167°N, 18.68806°E (WikiData: none, 0 translations - no Wikipedia page)
+4. **Bijela** - 42.44778°N, 18.65972°E (WikiData: Q808104, 4 translations)
 
 **Tuzi Municipality (3 cities)**:
-1. **Tuzi** - 42.36667°N, 19.40000°E (12 translations)
-2. **Dinoša** - 42.38333°N, 19.38333°E (2 translations)
-3. **Mataguži** - 42.35000°N, 19.41667°E (2 translations)
+1. **Tuzi** - 42.36667°N, 19.40000°E (WikiData: Q1020982, 12 translations)
+2. **Dinoša** - 42.38333°N, 19.38333°E (WikiData: Q3028133, 2 translations)
+3. **Mataguži** - 42.35000°N, 19.41667°E (WikiData: Q2908906, 2 translations)
 
 **Zeta Municipality (2 cities)**:
-1. **Golubovci** - 42.36667°N, 19.23333°E (9 translations)
-2. **Ponari** - 42.40000°N, 19.28333°E (2 translations)
+1. **Golubovci** - 42.36667°N, 19.23333°E (WikiData: Q983622, 9 translations)
+2. **Ponari** - 42.40000°N, 19.28333°E (WikiData: Q23932994, 2 translations)
 
 ### 3. Data Enrichment Process
 
@@ -66,7 +69,8 @@ The following automated tools were used to ensure data quality:
 1. **Import to MySQL**: `import_json_to_mysql.py` - Imported all data and assigned IDs
 2. **Timezone Addition**: `add_timezones.py --table both` - Automatically determined IANA timezones from coordinates
 3. **Translation Enrichment**: Wikipedia API - Fetched authentic translations from Wikipedia language links
-4. **MySQL Sync**: `sync_mysql_to_json.py` - Synced enriched data back to JSON files
+4. **WikiData ID Addition**: Wikipedia API - Obtained WikiData IDs (Q-numbers) for all municipalities and cities
+5. **MySQL Sync**: `sync_mysql_to_json.py` - Synced enriched data back to JSON files
 
 ## Data Sources
 
@@ -137,12 +141,14 @@ $ jq '.[] | select(.country_code == "ME" and (.iso3166_2 | IN("ME-08", "ME-24", 
 - ✅ All 3 municipalities have accurate coordinates
 - ✅ All 3 municipalities have timezones
 - ✅ All 3 municipalities have native names (Cyrillic script)
+- ✅ All 3 municipalities have WikiData IDs
 - ✅ All 3 municipalities have translations (12-14 languages each)
 
 **City Data Quality**:
 - ✅ All 9 cities have accurate coordinates
 - ✅ All 9 cities have timezones
 - ✅ All 9 cities have state_id and state_code
+- ✅ 8/9 cities have WikiData IDs (1 city has no WikiData page)
 - ✅ 8/9 cities have translations (1 city lacks Wikipedia page)
 - ✅ All 9 cities have native names
 
@@ -202,8 +208,9 @@ SELECT COUNT(*) FROM cities WHERE country_code = 'ME' AND state_code IN ('08', '
 - All coordinates are in decimal degrees format (WGS84)
 - Timezones automatically detected using timezonefinder library
 - Translations sourced from Wikipedia language links (authentic, community-maintained)
+- WikiData IDs obtained from Wikipedia pages and cross-referenced with WikiData
 - Native names use Cyrillic script (Montenegrin standard)
-- One city (Kamenari) has no Wikipedia page, thus no translations - this is acceptable
+- One city (Kamenari) has no Wikipedia/WikiData page, thus no WikiData ID or translations - this is acceptable
 
 ## Related Issues
 
