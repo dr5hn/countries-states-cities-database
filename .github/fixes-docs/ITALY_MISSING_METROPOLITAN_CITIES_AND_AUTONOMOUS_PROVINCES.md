@@ -22,6 +22,7 @@
 
 ### Fields Added to Each State
 All 15 new states include complete data:
+- ✅ `id` - Sequential IDs 5626-5640
 - ✅ `name` - Official English name
 - ✅ `native` - Native Italian name
 - ✅ `iso2` - 2-letter ISO code
@@ -37,10 +38,15 @@ All 15 new states include complete data:
 - ✅ `wikiDataId` - WikiData identifier
 - ✅ `translations` - 11 languages (ar, de, es, fr, hi, it, ja, ko, pt, ru, zh)
 - ✅ `fips_code` - 16 (Italy FIPS code)
+- ✅ `flag` - 1 (active)
+- ✅ `created_at` - Timestamp
+- ✅ `updated_at` - Timestamp
+- ✅ `population` - null (can be added later)
 
 ## Metropolitan Cities Added
 
 ### 1. Bari (IT-BA)
+- **ID:** 5626
 - **Native:** Bari
 - **Parent Region:** Apulia (IT-75, id: 1688)
 - **Coordinates:** 41.11714300, 16.87187200
@@ -49,6 +55,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 2. Bologna (IT-BO)
+- **ID:** 5627
 - **Native:** Bologna
 - **Parent Region:** Emilia-Romagna (IT-45, id: 1773)
 - **Coordinates:** 44.49488700, 11.34262100
@@ -57,6 +64,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 3. Cagliari (IT-CA)
+- **ID:** 5628
 - **Native:** Cagliari
 - **Parent Region:** Sardinia (IT-88, id: 1715)
 - **Coordinates:** 39.22380400, 9.12166700
@@ -65,6 +73,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 4. Catania (IT-CT)
+- **ID:** 5629
 - **Native:** Catania
 - **Parent Region:** Sicily (IT-82, id: 1709)
 - **Coordinates:** 37.50287800, 15.08704200
@@ -73,6 +82,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 5. Florence (IT-FI)
+- **ID:** 5630
 - **Native:** Firenze
 - **Parent Region:** Tuscany (IT-52, id: 1664)
 - **Coordinates:** 43.76923100, 11.25588400
@@ -81,6 +91,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 6. Genoa (IT-GE)
+- **ID:** 5631
 - **Native:** Genova
 - **Parent Region:** Liguria (IT-42, id: 1768)
 - **Coordinates:** 44.41149100, 8.93285900
@@ -89,6 +100,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 7. Messina (IT-ME)
+- **ID:** 5632
 - **Native:** Messina
 - **Parent Region:** Sicily (IT-82, id: 1709)
 - **Coordinates:** 38.19395000, 15.55256200
@@ -97,6 +109,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 8. Milan (IT-MI)
+- **ID:** 5633
 - **Native:** Milano
 - **Parent Region:** Lombardy (IT-25, id: 1705)
 - **Coordinates:** 45.46679400, 9.19007200
@@ -105,6 +118,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 9. Naples (IT-NA)
+- **ID:** 5634
 - **Native:** Napoli
 - **Parent Region:** Campania (IT-72, id: 1669)
 - **Coordinates:** 40.85177700, 14.26811700
@@ -113,6 +127,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 10. Reggio Calabria (IT-RC)
+- **ID:** 5635
 - **Native:** Reggio Calabria
 - **Parent Region:** Calabria (IT-78, id: 1703)
 - **Coordinates:** 38.10882200, 15.64392200
@@ -121,6 +136,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 11. Rome (IT-RM)
+- **ID:** 5636
 - **Native:** Roma
 - **Parent Region:** Lazio (IT-62, id: 1678)
 - **Coordinates:** 41.89277000, 12.48366000
@@ -129,6 +145,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 12. Turin (IT-TO)
+- **ID:** 5637
 - **Native:** Torino
 - **Parent Region:** Piedmont (IT-21, id: 1702)
 - **Coordinates:** 45.07049600, 7.68682200
@@ -137,6 +154,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 13. Venice (IT-VE)
+- **ID:** 5638
 - **Native:** Venezia
 - **Parent Region:** Veneto (IT-34, id: 1753)
 - **Coordinates:** 45.43409700, 12.33890600
@@ -147,6 +165,7 @@ All 15 new states include complete data:
 ## Autonomous Provinces Added
 
 ### 14. South Tyrol (IT-BZ)
+- **ID:** 5639
 - **Native:** Bolzano (also known as Alto Adige in Italian, Südtirol in German)
 - **Parent Region:** Trentino-South Tyrol (IT-32, id: 1725)
 - **Coordinates:** 46.49933500, 11.35662200
@@ -155,6 +174,7 @@ All 15 new states include complete data:
 - **Translations:** 11 languages
 
 ### 15. Trentino (IT-TN)
+- **ID:** 5640
 - **Native:** Trento
 - **Parent Region:** Trentino-South Tyrol (IT-32, id: 1725)
 - **Coordinates:** 46.06787800, 11.12108300
@@ -237,6 +257,7 @@ All WikiData IDs verified against https://www.wikidata.org/:
 ### Example: Milan Metropolitan City
 ```json
 {
+  "id": 5633,
   "name": "Milan",
   "country_id": 107,
   "country_code": "IT",
@@ -263,13 +284,18 @@ All WikiData IDs verified against https://www.wikidata.org/:
     "pt": "Milão",
     "ru": "Милан",
     "zh": "米兰"
-  }
+  },
+  "created_at": "2025-11-15 05:35:22",
+  "updated_at": "2025-11-15 05:35:22",
+  "flag": 1,
+  "population": null
 }
 ```
 
 ### Example: South Tyrol Autonomous Province
 ```json
 {
+  "id": 5639,
   "name": "South Tyrol",
   "country_id": 107,
   "country_code": "IT",
@@ -296,7 +322,11 @@ All WikiData IDs verified against https://www.wikidata.org/:
     "pt": "Tirol do Sul",
     "ru": "Южный Тироль",
     "zh": "南蒂罗尔"
-  }
+  },
+  "created_at": "2025-11-15 05:35:22",
+  "updated_at": "2025-11-15 05:35:22",
+  "flag": 1,
+  "population": null
 }
 ```
 
