@@ -52,7 +52,7 @@ Successfully added the missing Niamey urban community to Niger's administrative 
 Added the capital city of Niger:
 
 **Niamey** - National capital and largest city
-- **City ID:** 76744
+- **City ID:** 157147
 - **State:** Niamey (ID: 5685, Code: 8)
 - **Coordinates:** 13.51361111°N, 2.10888889°E
 - **Timezone:** Africa/Niamey
