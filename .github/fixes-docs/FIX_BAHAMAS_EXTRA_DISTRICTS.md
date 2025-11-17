@@ -44,9 +44,11 @@ Updated district names to match official ISO nomenclature:
 ### 3. Added 1 Missing District
 Added the missing district from ISO 3166-2:
 
-| ID   | Name           | ISO2 | Latitude    | Longitude    | Timezone        |
-|------|----------------|------|-------------|--------------|-----------------|
-| 5717 | Moore's Island | MI   | 25.86666700 | -77.96666700 | America/Nassau  |
+| ID   | Name           | ISO2 | Latitude    | Longitude    | Timezone        | WikiData ID |
+|------|----------------|------|-------------|--------------|-----------------|-------------|
+| 5717 | Moore's Island | MI   | 25.86666700 | -77.96666700 | America/Nassau  | Q2702345    |
+
+**Translations Added**: 20 languages (ar, br, de, es, fa, fi, fr, hi, hr, it, ja, ko, nl, pl, pt, pt-BR, ru, tr, uk, zh-CN)
 
 ## Final State Count
 - **Before**: 42 states/districts
