@@ -130,28 +130,28 @@ Fixed incorrect state_id references for cities that were already in the database
 
 #### Chiayi County Cities (3 new)
 1. **Budai** (布袋鎮)
-   - ID: 109042
+   - ID: 157170
    - WikiData: Q715867
    - Coordinates: 23.36°N, 120.17°E
 
 2. **Dalin** (大林鎮)
-   - ID: 109043
+   - ID: 157171
    - WikiData: Q718381
    - Coordinates: 23.599°N, 120.47°E
 
 3. **Minxiong** (民雄鄉)
-   - ID: 109044
+   - ID: 157172
    - WikiData: Q713803
    - Coordinates: 23.550°N, 120.446°E
 
 #### Hsinchu County Cities (2 new)
 1. **Zhubei** (竹北市)
-   - ID: 109045
+   - ID: 157173
    - WikiData: Q29624
    - Coordinates: 24.833°N, 121.012°E
 
 2. **Hukou** (湖口鄉)
-   - ID: 109046
+   - ID: 157174
    - WikiData: Q153830
    - Coordinates: 24.90°N, 121.05°E
 
