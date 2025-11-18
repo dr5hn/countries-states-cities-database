@@ -125,11 +125,11 @@ All entries now match ISO 3166-2:EE standard:
 - ✅ Timezone set to Europe/Tallinn
 - ✅ Database IDs auto-assigned via MySQL import
 - ✅ All municipalities added to contributions/states/states.json
+- ✅ Coordinates (latitude/longitude) - 100% coverage (94/94 entries)
+- ✅ WikiData IDs - 100% coverage (94/94 entries)
 
-### Pending (for GitHub Actions or future updates)
-- ⏳ Coordinates (latitude/longitude) - Currently NULL, will be enriched via Wikipedia API
-- ⏳ Translations - Currently empty object {}, will be enriched via Wikipedia language links
-- ⏳ WikiData IDs - Currently NULL, will be fetched from Wikipedia
+### Optional Future Enhancements
+- ⏳ Translations - Currently empty object {}, can be enriched via Wikipedia language links
 - ⏳ Native names (if different from English)
 - ⏳ Population data (optional)
 
@@ -182,8 +182,8 @@ jq '[.[] | select(.country_code == "EE" and .type == "urban municipality")] | .[
 
 1. **Level designation**: Counties are level 1 (or null in legacy data), municipalities are level 2
 2. **Duplicate names**: Some municipalities have same names as their parent counties (e.g., Tartu county and Tartu urban municipality, Rakvere rural and urban). These are distinct entities with different ISO codes and types.
-3. **Coordinate enrichment**: Wikipedia API was blocked (403 Forbidden) during local development. Coordinates should be enriched via GitHub Actions or manual updates.
-4. **Data quality**: All municipalities have been added with proper structure but require coordinate and translation enrichment for completeness.
+3. **Coordinate sources**: Coordinates obtained from OpenStreetMap and Estonian government sources
+4. **Data quality**: All municipalities have complete geolocation data (coordinates and WikiData IDs)
 
 ## Summary
 
@@ -193,4 +193,6 @@ jq '[.[] | select(.country_code == "EE" and .type == "urban municipality")] | .[
 - ✅ **Total: 94 administrative divisions** for Estonia (was 15)
 - ✅ All ISO 3166-2:EE codes correctly assigned
 - ✅ Parent-child relationships established
-- ⏳ Coordinate and translation enrichment pending
+- ✅ **100% coordinate coverage** (94/94 entries)
+- ✅ **100% WikiData IDs** (94/94 entries)
+- ⏳ Translations can be added as optional enhancement
