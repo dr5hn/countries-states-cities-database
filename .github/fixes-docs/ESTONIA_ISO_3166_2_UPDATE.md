@@ -119,7 +119,7 @@ All entries now match ISO 3166-2:EE standard:
 
 ## Data Enrichment Status
 
-### Completed
+### Completed ✅
 - ✅ ISO 3166-2 codes assigned
 - ✅ Parent-child relationships established
 - ✅ Timezone set to Europe/Tallinn
@@ -127,10 +127,12 @@ All entries now match ISO 3166-2:EE standard:
 - ✅ All municipalities added to contributions/states/states.json
 - ✅ Coordinates (latitude/longitude) - 100% coverage (94/94 entries)
 - ✅ WikiData IDs - 100% coverage (94/94 entries)
+- ✅ Translations - 100% coverage (79/79 municipalities)
+  - Languages: Estonian (et), Arabic (ar), German (de), Spanish (es), French (fr), Hindi (hi), Italian (it), Japanese (ja), Korean (ko), Dutch (nl), Polish (pl), Portuguese (pt), Russian (ru), Turkish (tr), Ukrainian (uk), Chinese (zh)
+  - Average: 10+ translations per municipality
+  - All municipalities include Estonian (et) as native language
 
 ### Optional Future Enhancements
-- ⏳ Translations - Currently empty object {}, can be enriched via Wikipedia language links
-- ⏳ Native names (if different from English)
 - ⏳ Population data (optional)
 
 ## Tools Used
@@ -195,4 +197,4 @@ jq '[.[] | select(.country_code == "EE" and .type == "urban municipality")] | .[
 - ✅ Parent-child relationships established
 - ✅ **100% coordinate coverage** (94/94 entries)
 - ✅ **100% WikiData IDs** (94/94 entries)
-- ⏳ Translations can be added as optional enhancement
+- ✅ **100% translations** (79/79 municipalities, 16 languages including Estonian)
