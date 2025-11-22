@@ -767,7 +767,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 2248,Fujian,45,CN,China,FJ,CN-FJ,07,province,1,,Fujian,26.19321800,118.22087210,Asia/Shanghai,Q41705
 2275,Gansu,45,CN,China,GS,CN-GS,15,province,1,,Gansu,38.00000010,101.99999990,Asia/Shanghai,Q42392
 2279,Guangdong,45,CN,China,GD,CN-GD,30,province,1,,Guangdong,23.13576940,113.19826880,Asia/Shanghai,Q15175
-2278,"Guangxi Zhuang",45,CN,China,GX,CN-GX,16,"autonomous region",1,,"Guangxi Zhuang",24.00000000,109.00000000,Asia/Shanghai,Q15176
+2278,Guangxi,45,CN,China,GX,CN-GX,16,"autonomous region",1,,"Guangxi Zhuang",24.00000000,109.00000000,Asia/Shanghai,Q15176
 2261,Guizhou,45,CN,China,GZ,CN-GZ,18,province,1,,Guizhou,27.00000000,107.00000000,Asia/Shanghai,Q47097
 2273,Hainan,45,CN,China,HI,CN-HI,31,province,1,,Hainan,19.20000010,109.59999990,Asia/Shanghai,Q42200
 2280,Hebei,45,CN,China,HE,CN-HE,10,province,1,,Hebei,39.00000010,116.00000000,Asia/Shanghai,Q21208
@@ -782,7 +782,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 2253,Jilin,45,CN,China,JL,CN-JL,05,province,1,,Jilin,43.83788300,126.54957200,Asia/Shanghai,Q45208
 2268,Liaoning,45,CN,China,LN,CN-LN,19,province,1,,Liaoning,41.23741060,122.99554690,Asia/Shanghai,Q43934
 2266,"Macau SAR",45,CN,China,MO,CN-MO,MC,"special administrative region",1,,"Macau SAR",22.31452850,113.94724460,Asia/Shanghai,Q14773
-2262,"Ningxia Huizu",45,CN,China,NX,CN-NX,21,"autonomous region",1,,"Ningxia Huizu",37.00000010,105.99999990,Asia/Shanghai,Q57448
+2262,Ningxia,45,CN,China,NX,CN-NX,21,"autonomous region",1,,"Ningxia Huizu",37.00000010,105.99999990,Asia/Shanghai,Q57448
 2270,Qinghai,45,CN,China,QH,CN-QH,06,province,1,,Qinghai,36.00000000,96.00000000,Asia/Shanghai,Q45833
 2272,Shaanxi,45,CN,China,SN,CN-SN,26,province,1,,Shaanxi,35.58959590,109.30131070,Asia/Shanghai,Q47974
 2252,Shandong,45,CN,China,SD,CN-SD,25,province,1,,Shandong,36.39898700,118.50556910,Asia/Shanghai,Q43407
@@ -791,8 +791,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 2277,Sichuan,45,CN,China,SC,CN-SC,32,province,1,,Sichuan,30.50000010,102.49999990,Asia/Shanghai,Q19770
 2255,Taiwan,45,CN,China,TW,CN-TW,04,province,1,,Taiwan,23.97393740,120.98201790,Asia/Shanghai,Q57251
 2276,Tianjin,45,CN,China,TJ,CN-TJ,28,municipality,3,,Tianjin,39.08448970,117.19567240,Asia/Shanghai,Q11736
+2264,Tibet,45,CN,China,XZ,CN-XZ,14,"autonomous region",1,,Xizang,29.85564430,90.87498070,Asia/Shanghai,Q17269
 2263,Xinjiang,45,CN,China,XJ,CN-XJ,13,"autonomous region",1,,Xinjiang,42.48049530,85.46334640,Asia/Urumqi,Q34800
-2264,Xizang,45,CN,China,XZ,CN-XZ,14,"autonomous region",1,,Xizang,29.85564430,90.87498070,Asia/Shanghai,Q17269
 2260,Yunnan,45,CN,China,YN,CN-YN,29,province,1,,Yunnan,25.00000000,102.00000000,Asia/Shanghai,Q43194
 2247,Zhejiang,45,CN,China,ZJ,CN-ZJ,02,province,1,,Zhejiang,29.00000010,119.99999990,Asia/Shanghai,Q16967
 2895,Amazonas,48,CO,Colombia,AMA,CO-AMA,01,department,,,Amazonas,-1.30529900,-71.46592120,America/Bogota,Q44724
@@ -1163,11 +1163,11 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5741,Harku,69,EE,Estonia,198,EE-198,,"rural municipality",2,3567,Harku,59.39030000,24.56970000,Europe/Tallinn,Q2627671
 3555,Hiiu,69,EE,Estonia,39,EE-39,02,county,,,Hiiu,59.38302360,24.67038480,Europe/Tallinn,Q1466462
 5742,Hiiumaa,69,EE,Estonia,205,EE-205,,"rural municipality",2,3555,Hiiumaa,58.91670000,22.60000000,Europe/Tallinn,Q15732426
-3569,Ida-Viru,69,EE,Estonia,45,EE-45,03,county,,,Ida-Viru,59.21980300,27.39051620,Europe/Tallinn,Q189963
-3566,Järva,69,EE,Estonia,52,EE-52,04,county,,,Järva,59.00000000,25.86670000,Europe/Tallinn,Q15732430
+3569,Ida-Viru,69,EE,Estonia,44,EE-44,03,county,,,Ida-Viru,59.21980300,27.39051620,Europe/Tallinn,Q189963
+3566,Järva,69,EE,Estonia,51,EE-51,04,county,,,Järva,58.41333570,24.64773500,Europe/Tallinn,Q188068
 5747,Järva,69,EE,Estonia,255,EE-255,,"rural municipality",2,3566,Järva,59.00000000,25.86670000,Europe/Tallinn,Q15732430
 5744,Joelähtme,69,EE,Estonia,245,EE-245,,"rural municipality",2,3567,Joelähtme,59.46670000,25.10000000,Europe/Tallinn,Q2627704
-3565,Jõgeva,69,EE,Estonia,50,EE-50,05,county,,,Jõgeva,58.75000000,26.38330000,Europe/Tallinn,Q2627707
+3565,Jõgeva,69,EE,Estonia,49,EE-49,05,county,,,Jõgeva,58.74410590,26.38724440,Europe/Tallinn,Q189974
 5745,Jõgeva,69,EE,Estonia,247,EE-247,,"rural municipality",2,3565,Jõgeva,58.75000000,26.38330000,Europe/Tallinn,Q2627707
 5746,Jõhvi,69,EE,Estonia,251,EE-251,,"rural municipality",2,3569,Jõhvi,59.35830000,27.42330000,Europe/Tallinn,Q2627709
 5748,Kadrina,69,EE,Estonia,272,EE-272,,"rural municipality",2,3564,Kadrina,59.33330000,26.13330000,Europe/Tallinn,Q2627720
@@ -1182,10 +1182,10 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5802,Kohtla-Järve,69,EE,Estonia,321,EE-321,,"urban municipality",2,3569,Kohtla-Järve,59.39830000,27.27310000,Europe/Tallinn,Q193761
 5756,Kose,69,EE,Estonia,338,EE-338,,"rural municipality",2,3567,Kose,59.18330000,25.16670000,Europe/Tallinn,Q2627764
 5757,Kuusalu,69,EE,Estonia,353,EE-353,,"rural municipality",2,3567,Kuusalu,59.43330000,25.45000000,Europe/Tallinn,Q2627772
-3568,Lääne,69,EE,Estonia,56,EE-56,07,county,,,Lääne,58.67412400,25.81061020,Europe/Tallinn,Q189968
+3568,Lääne,69,EE,Estonia,57,EE-57,07,county,,,Lääne,58.67412400,25.81061020,Europe/Tallinn,Q189968
 5758,Lääne-Harju,69,EE,Estonia,430,EE-430,,"rural municipality",2,3567,Lääne-Harju,59.38330000,24.18330000,Europe/Tallinn,Q15732432
 5761,Lääne-Nigula,69,EE,Estonia,441,EE-441,,"rural municipality",2,3568,Lääne-Nigula,58.86670000,23.78330000,Europe/Tallinn,Q2627784
-3564,Lääne-Viru,69,EE,Estonia,60,EE-60,08,county,,,Lääne-Viru,59.40756660,26.30998700,Europe/Tallinn,Q189952
+3564,Lääne-Viru,69,EE,Estonia,59,EE-59,08,county,,,Lääne-Viru,59.40756660,26.30998700,Europe/Tallinn,Q189952
 5759,Lääneranna,69,EE,Estonia,431,EE-431,,"rural municipality",2,3562,Lääneranna,58.53330000,24.10000000,Europe/Tallinn,Q15732433
 5803,Loksa,69,EE,Estonia,424,EE-424,,"urban municipality",2,3567,Loksa,59.57640000,25.72170000,Europe/Tallinn,Q749031
 5762,Lüganuse,69,EE,Estonia,442,EE-442,,"rural municipality",2,3569,Lüganuse,59.35000000,27.15000000,Europe/Tallinn,Q2627795
@@ -1200,21 +1200,21 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5767,Noo,69,EE,Estonia,528,EE-528,,"rural municipality",2,3557,Noo,58.28330000,26.55000000,Europe/Tallinn,Q2627825
 5768,Otepää,69,EE,Estonia,557,EE-557,,"rural municipality",2,3558,Otepää,58.06670000,26.50000000,Europe/Tallinn,Q658072
 5807,Paide,69,EE,Estonia,567,EE-567,,"urban municipality",2,3566,Paide,58.88560000,25.55690000,Europe/Tallinn,Q193797
-3562,Pärnu,69,EE,Estonia,68,EE-68,11,county,,,Pärnu,58.38060000,24.49890000,Europe/Tallinn,Q134689
+3562,Pärnu,69,EE,Estonia,67,EE-67,11,county,,,Pärnu,58.38708330,24.50283100,Europe/Tallinn,Q185036
 5808,Pärnu,69,EE,Estonia,624,EE-624,,"urban municipality",2,3562,Pärnu,58.38060000,24.49890000,Europe/Tallinn,Q134689
 5769,Peipsiääre,69,EE,Estonia,586,EE-586,,"rural municipality",2,3557,Peipsiääre,58.66670000,27.41670000,Europe/Tallinn,Q15732441
 5773,Põhja-Pärnu,69,EE,Estonia,638,EE-638,,"rural municipality",2,3562,Põhja-Pärnu,58.83330000,24.41670000,Europe/Tallinn,Q2627856
 5770,Põhja-Sakala,69,EE,Estonia,615,EE-615,,"rural municipality",2,3556,Põhja-Sakala,58.48330000,25.53330000,Europe/Tallinn,Q15732443
 5771,Poltsamaa,69,EE,Estonia,618,EE-618,,"rural municipality",2,3565,Poltsamaa,58.65000000,25.96670000,Europe/Tallinn,Q2627867
 5772,Põlva,69,EE,Estonia,622,EE-622,,"rural municipality",2,3563,Põlva,58.06670000,27.05000000,Europe/Tallinn,Q2627872
-3563,Põlva,69,EE,Estonia,64,EE-64,12,county,,,Põlva,58.06670000,27.05000000,Europe/Tallinn,Q2627872
+3563,Põlva,69,EE,Estonia,65,EE-65,12,county,,,Põlva,58.16949240,27.15670660,Europe/Tallinn,Q191813
 5774,Raasiku,69,EE,Estonia,651,EE-651,,"rural municipality",2,3567,Raasiku,59.35000000,25.18330000,Europe/Tallinn,Q2627877
 5775,Rae,69,EE,Estonia,653,EE-653,,"rural municipality",2,3567,Rae,59.35000000,24.96670000,Europe/Tallinn,Q2627878
 5809,Rakvere,69,EE,Estonia,663,EE-663,,"urban municipality",2,3564,Rakvere,59.34700000,26.35580000,Europe/Tallinn,Q193808
 5776,Rakvere,69,EE,Estonia,661,EE-661,,"rural municipality",2,3564,Rakvere,59.34700000,26.35580000,Europe/Tallinn,Q193808
 5780,Räpina,69,EE,Estonia,708,EE-708,,"rural municipality",2,3563,Räpina,58.09830000,27.46390000,Europe/Tallinn,Q2627914
 5777,Rapla,69,EE,Estonia,668,EE-668,,"rural municipality",2,3559,Rapla,58.98330000,24.80000000,Europe/Tallinn,Q2627893
-3559,Rapla,69,EE,Estonia,71,EE-71,13,county,,,Rapla,58.98330000,24.80000000,Europe/Tallinn,Q2627893
+3559,Rapla,69,EE,Estonia,70,EE-70,13,county,,,Rapla,58.94197810,24.69840420,Europe/Tallinn,Q192352
 5779,Rõuge,69,EE,Estonia,698,EE-698,,"rural municipality",2,3560,Rõuge,57.76670000,27.03330000,Europe/Tallinn,Q2627908
 5778,Ruhnu,69,EE,Estonia,689,EE-689,,"rural municipality",2,3561,Ruhnu,57.80000000,23.26670000,Europe/Tallinn,Q672859
 5781,Saarde,69,EE,Estonia,712,EE-712,,"rural municipality",2,3562,Saarde,58.25000000,24.66670000,Europe/Tallinn,Q2627916
@@ -1227,7 +1227,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5811,Tallinn,69,EE,Estonia,784,EE-784,,"urban municipality",2,3567,Tallinn,59.43700000,24.75360000,Europe/Tallinn,Q1770
 5786,Tapa,69,EE,Estonia,792,EE-792,,"rural municipality",2,3564,Tapa,59.26670000,26.03330000,Europe/Tallinn,Q2627948
 5812,Tartu,69,EE,Estonia,793,EE-793,,"urban municipality",2,3557,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972
-3557,Tartu,69,EE,Estonia,79,EE-79,18,county,,,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972
+3557,Tartu,69,EE,Estonia,78,EE-78,18,county,,,Tartu,58.38012070,26.72245000,Europe/Tallinn,Q192370
 5787,Tartu,69,EE,Estonia,796,EE-796,,"rural municipality",2,3557,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972
 5788,Toila,69,EE,Estonia,803,EE-803,,"rural municipality",2,3569,Toila,59.41670000,27.51670000,Europe/Tallinn,Q2627964
 5789,Tori,69,EE,Estonia,809,EE-809,,"rural municipality",2,3562,Tori,58.48330000,24.81670000,Europe/Tallinn,Q2627966
@@ -1235,16 +1235,16 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5791,Türi,69,EE,Estonia,834,EE-834,,"rural municipality",2,3566,Türi,58.80830000,25.43330000,Europe/Tallinn,Q2627979
 5799,Väike-Maarja,69,EE,Estonia,928,EE-928,,"rural municipality",2,3564,Väike-Maarja,59.13330000,26.25000000,Europe/Tallinn,Q2628018
 5792,Valga,69,EE,Estonia,855,EE-855,,"rural municipality",2,3558,Valga,57.78330000,26.05000000,Europe/Tallinn,Q2627988
-3558,Valga,69,EE,Estonia,81,EE-81,19,county,,,Valga,57.78330000,26.05000000,Europe/Tallinn,Q2627988
+3558,Valga,69,EE,Estonia,82,EE-82,19,county,,,Valga,57.77703400,26.03156280,Europe/Tallinn,Q192362
 5793,Viimsi,69,EE,Estonia,890,EE-890,,"rural municipality",2,3567,Viimsi,59.50000000,24.81670000,Europe/Tallinn,Q2627997
 5813,Viljandi,69,EE,Estonia,897,EE-897,,"urban municipality",2,3556,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q193832
-3556,Viljandi,69,EE,Estonia,84,EE-84,20,county,,,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q193832
+3556,Viljandi,69,EE,Estonia,84,EE-84,20,county,,,Viljandi,58.36454000,25.58780740,Europe/Tallinn,Q192061
 5794,Viljandi,69,EE,Estonia,899,EE-899,,"rural municipality",2,3556,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q193832
 5795,Vinni,69,EE,Estonia,901,EE-901,,"rural municipality",2,3564,Vinni,59.35000000,26.43330000,Europe/Tallinn,Q2628002
 5796,Viru-Nigula,69,EE,Estonia,903,EE-903,,"rural municipality",2,3564,Viru-Nigula,59.36670000,26.83330000,Europe/Tallinn,Q2628006
 5797,Vormsi,69,EE,Estonia,907,EE-907,,"rural municipality",2,3568,Vormsi,59.00000000,23.01670000,Europe/Tallinn,Q665175
 5798,Võru,69,EE,Estonia,917,EE-917,,"rural municipality",2,3560,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838
-3560,Võru,69,EE,Estonia,87,EE-87,21,county,,,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838
+3560,Võru,69,EE,Estonia,86,EE-86,21,county,,,Võru,57.81326070,26.98475760,Europe/Tallinn,Q188076
 5814,Võru,69,EE,Estonia,919,EE-919,,"urban municipality",2,3560,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838
 969,Hhohho,212,SZ,Eswatini,HH,SZ-HH,01,region,,,Hhohho,-26.09880120,31.36308220,Africa/Mbabane,Q735570
 970,Lubombo,212,SZ,Eswatini,LU,SZ-LU,02,region,,,Bitch,-26.55452000,31.86191160,Africa/Mbabane,Q856657
@@ -2096,7 +2096,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 2627,Lagunes,54,CI,"Ivory Coast",LG,CI-LG,82,district,2,,"Tombé en panne",5.88273340,-4.23333550,Africa/Abidjan,Q20980365
 2629,Montagnes,54,CI,"Ivory Coast",MG,CI-MG,78,district,2,,Montagnes,6.88716640,-9.10706440,Africa/Abidjan,Q20980366
 2648,Sassandra-Marahoué,54,CI,"Ivory Coast",SM,CI-SM,96,district,2,,Sassandra-Marahoué,6.88033480,-6.23759470,Africa/Abidjan,Q20365127
-2625,Savanes,54,CI,"Ivory Coast",SV,CI-SV,87,district,2,,Savanes,9.63735270,-6.70071860,Africa/Abidjan,Q853460
+2625,Savanes,54,CI,"Ivory Coast",03,CI-03,87,region,1,,Savanes,9.63735270,-6.70071860,Africa/Abidjan,Q853460
 2637,"Vallée du Bandama",54,CI,"Ivory Coast",VB,CI-VB,90,district,2,,"Vallée du Bandama",8.27897800,-4.89356270,Africa/Abidjan,Q21002356
 2650,Woroba,54,CI,"Ivory Coast",WR,CI-WR,97,district,2,,Ver,8.24913720,-6.92091350,Africa/Abidjan,Q20980371
 2653,Yamoussoukro,54,CI,"Ivory Coast",YM,CI-YM,98,"autonomous district",2,,Yamoussoukro,6.82762280,-5.28934330,Africa/Abidjan,Q3768
@@ -2406,8 +2406,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 456,Triesenberg,125,LI,Liechtenstein,10,LI-10,10,commune,,,Triesenberg,47.11861810,9.54336630,Europe/Vaduz,Q49651
 452,Vaduz,125,LI,Liechtenstein,11,LI-11,11,commune,,,Vaduz,47.14103030,9.52092770,Europe/Vaduz,Q1844
 1561,Akmenė,126,LT,Lithuania,01,LT-01,60,"district municipality",1,1586,Akmenė,56.24550290,22.74711690,Europe/Vilnius,Q1023041
-1605,"Alytaus miestas",126,LT,Lithuania,02,LT-02,56,"city municipality",1,1574,"Alytaus miestas",54.39246770,24.10876070,Europe/Vilnius,Q928864
 5722,Alytus,126,LT,Lithuania,03,LT-03,56,"district municipality",1,1574,Alytus,54.39246770,24.10876070,Europe/Vilnius,Q3685407
+1605,Alytus,126,LT,Lithuania,02,LT-02,56,"district municipality",1,1574,Alytus,54.39246770,24.10876070,Europe/Vilnius,Q3685407
 1574,Alytus,126,LT,Lithuania,AL,LT-AL,56,county,,,Alytus,54.39246770,24.10876070,Europe/Vilnius,Q669470
 5346,Anykščiai,126,LT,Lithuania,04,LT-04,60,"district municipality",1,1621,Anykščiai,55.52579350,25.10612470,Europe/Vilnius,Q2089772
 1603,Birštonas,126,LT,Lithuania,05,LT-05,65,municipality,1,1556,Birštonas,54.58641940,24.04217360,Europe/Vilnius,Q2015893
@@ -2422,7 +2422,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 1591,Kalvarija,126,LT,Lithuania,14,LT-14,60,municipality,1,1570,Kalvarija,54.37616740,23.19203210,Europe/Vilnius,Q1461987
 1556,Kaunas,126,LT,Lithuania,KU,LT-KU,57,county,,,Kaunas,54.89821390,23.90448170,Europe/Vilnius,Q853861
 5723,Kaunas,126,LT,Lithuania,16,LT-16,57,"district municipality",1,1556,Kaunas,54.89821390,23.90448170,Europe/Vilnius,Q928949
-1580,"Kauno miestas",126,LT,Lithuania,15,LT-15,57,"city municipality",1,1556,"Kauno miestas",54.89821390,23.90448170,Europe/Vilnius,Q928938
+1580,Kaunas,126,LT,Lithuania,15,LT-15,57,"district municipality",1,1556,Kaunas,54.89821390,23.90448170,Europe/Vilnius,Q928938
 1575,"Kazlų Rūda",126,LT,Lithuania,17,LT-17,56,municipality,1,1570,"Kazlų Rūda",54.75206690,23.49851410,Europe/Vilnius,Q1461972
 1584,Kėdainiai,126,LT,Lithuania,18,LT-18,57,"district municipality",1,1556,Kėdainiai,55.28873220,23.97583590,Europe/Vilnius,Q46786
 1618,Kelmė,126,LT,Lithuania,19,LT-19,60,"district municipality",1,1586,Kelmė,55.62946790,22.93130950,Europe/Vilnius,Q1387044
@@ -2439,10 +2439,10 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 1563,Neringa,126,LT,Lithuania,28,LT-28,60,municipality,1,1600,Neringa,55.47568280,21.09258700,Europe/Vilnius,Q9305847
 1612,Pagėgiai,126,LT,Lithuania,29,LT-29,59,municipality,1,1573,Pagėgiai,55.13325200,21.91043980,Europe/Vilnius,Q2283574
 1595,Pakruojis,126,LT,Lithuania,30,LT-30,65,"district municipality",1,1586,Pakruojis,55.97770840,23.84517970,Europe/Vilnius,Q1657116
-1588,"Palangos miestas",126,LT,Lithuania,31,LT-31,61,"city municipality",1,1600,"Palangos miestas",55.92019800,21.06776140,Europe/Vilnius,Q3685410
+1588,Palanga,126,LT,Lithuania,31,LT-31,61,"district municipality",1,1600,Palanga,55.92019800,21.06776140,Europe/Vilnius,Q3685410
 5721,"Panevėžio miestas",126,LT,Lithuania,32,LT-32,60,"city municipality",1,1558,"Panevėžio miestas",55.73449850,24.35780550,Europe/Vilnius,Q928992
-1558,Panevėžys,126,LT,Lithuania,PN,LT-PN,60,county,,,Panevėžys,55.73449850,24.35780550,Europe/Vilnius,Q188085
 1614,Panevėžys,126,LT,Lithuania,33,LT-33,60,"district municipality",1,1558,Panevėžys,55.73449850,24.35780550,Europe/Vilnius,Q1351758
+1558,Panevėžys,126,LT,Lithuania,PN,LT-PN,60,county,,,Panevėžys,55.73449850,24.35780550,Europe/Vilnius,Q188085
 1616,Pasvalys,126,LT,Lithuania,34,LT-34,60,"district municipality",1,1558,Pasvalys,56.06046190,24.39629100,Europe/Vilnius,Q1461920
 1553,Plungė,126,LT,Lithuania,35,LT-35,24,"district municipality",1,1569,Plungė,55.91078400,21.84540690,Europe/Vilnius,Q404943
 1578,Prienai,126,LT,Lithuania,36,LT-36,56,"district municipality",1,1556,Prienai,54.63835800,23.94680090,Europe/Vilnius,Q47090
@@ -2453,8 +2453,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 1576,Šakiai,126,LT,Lithuania,41,LT-41,56,"district municipality",1,1570,Šakiai,54.95267100,23.04801990,Europe/Vilnius,Q2021307
 1577,Šalčininkai,126,LT,Lithuania,42,LT-42,56,"district municipality",1,1601,Šalčininkai,54.30976700,25.38756400,Europe/Vilnius,Q1799182
 1586,Šiauliai,126,LT,Lithuania,SA,LT-SA,61,county,,,Šiauliai,55.93408230,23.31577750,Europe/Vilnius,Q186410
+1609,Šiauliai,126,LT,Lithuania,43,LT-43,61,"district municipality",1,1586,Šiauliai,55.93408230,23.31577750,Europe/Vilnius,Q4993831
 5724,Šiauliai,126,LT,Lithuania,44,LT-44,61,"district municipality",1,1586,Šiauliai,55.93408230,23.31577750,Europe/Vilnius,Q4993831
-1609,"Šiaulių miestas",126,LT,Lithuania,43,LT-43,61,"city municipality",1,1586,"Šiaulių miestas",55.93408230,23.31577750,Europe/Vilnius,Q928995
 1613,"Šilalė ",126,LT,Lithuania,45,LT-45,59,"district municipality",1,1573,Šilalė,55.49268000,22.18455590,Europe/Vilnius,Q677400
 1607,Šilutė,126,LT,Lithuania,46,LT-46,65,"district municipality",1,1600,Šilutė,55.34137470,21.46056970,Europe/Vilnius,Q282098
 1594,Širvintos,126,LT,Lithuania,47,LT-47,65,"district municipality",1,1601,Širvintos,55.04310200,24.95698100,Europe/Vilnius,Q58882
@@ -2470,8 +2470,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 1621,Utena,126,LT,Lithuania,UT,LT-UT,64,county,,,Utena,55.48718330,25.63862210,Europe/Vilnius,Q188659
 1602,Varėna,126,LT,Lithuania,55,LT-55,65,"district municipality",1,1574,Varėna,54.21217640,24.56737240,Europe/Vilnius,Q1351747
 1620,Vilkaviškis,126,LT,Lithuania,56,LT-56,60,"district municipality",1,1570,Vilkaviškis,54.65194500,23.03515500,Europe/Vilnius,Q2021318
-1606,"Vilniaus miestas",126,LT,Lithuania,57,LT-57,65,"city municipality",1,1601,"Vilniaus miestas",54.68704580,25.28291110,Europe/Vilnius,Q923117
 5725,Vilnius,126,LT,Lithuania,58,LT-58,65,"district municipality",1,1601,Vilnius,54.68704580,25.28291110,Europe/Vilnius,Q928917
+1606,Vilnius,126,LT,Lithuania,57,LT-57,65,"district municipality",1,1601,Vilnius,54.68704580,25.28291110,Europe/Vilnius,Q923117
 1601,Vilnius,126,LT,Lithuania,VL,LT-VL,65,county,,,Vilnius,54.68704580,25.28291110,Europe/Vilnius,Q188061
 1564,Visaginas,126,LT,Lithuania,59,LT-59,60,municipality,1,1621,Visaginas,55.59411800,26.43079540,Europe/Vilnius,Q2558824
 1619,Zarasai,126,LT,Lithuania,60,LT-60,60,"district municipality",1,1621,Zarasai,55.73096090,26.24529500,Europe/Vilnius,Q664415
@@ -2554,7 +2554,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 2596,Kaafu,133,MV,Maldives,26,MV-26,38,"administrative atoll",4,,ކައިފީ,4.35429900,73.57600320,Indian/Maldives,Q1468407
 2601,Laamu,133,MV,Maldives,05,MV-05,05,"administrative atoll",4,,ސަރުކާރު,1.88994180,73.31400270,Indian/Maldives,Q1996432
 2607,Lhaviyani,133,MV,Maldives,03,MV-03,39,"administrative atoll",4,,ލަހަވާނީ,5.39925440,73.52739240,Indian/Maldives,Q1390048
-2609,Malé,133,MV,Maldives,MLE,MV-MLE,40,city,3,,ކުޑަ,4.17798790,73.51073870,Indian/Maldives,Q9347
+2609,Malé,133,MV,Maldives,MLE,MV-MLE,40,"administrative atoll",4,,ކުޑަ,4.17798790,73.51073870,Indian/Maldives,Q9347
 2608,Meemu,133,MV,Maldives,12,MV-12,41,"administrative atoll",4,,މީމު,2.78780940,73.53429870,Indian/Maldives,Q2210716
 2592,Noonu,133,MV,Maldives,25,MV-25,43,"administrative atoll",4,,ނޫނޫނެވެ,5.78675500,73.41843360,Indian/Maldives,Q2406322
 2602,Raa,133,MV,Maldives,13,MV-13,44,"administrative atoll",4,,ރާ,5.66094850,72.76816450,Indian/Maldives,Q1457965
@@ -2646,32 +2646,32 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5306,Michael,136,IM,"Man (Isle of)",04,IM-04,,sheadings,3,,Michael,54.23592070,-4.51476690,Europe/Isle_of_Man,Q3307970
 5307,Middle,136,IM,"Man (Isle of)",05,IM-05,,sheadings,3,,Middle,54.23592070,-4.51476690,Europe/Isle_of_Man,Q2484719
 5308,Rushen,136,IM,"Man (Isle of)",06,IM-06,,sheadings,3,,Rush,54.23592070,-4.51476690,Europe/Isle_of_Man,Q2089477
-5643,Ailinglaplap,137,MH,"Marshall Islands",ALL,MH-ALL,,municipality,,2574,,7.50000000,168.73333333,Pacific/Kwajalein,Q405165
-5644,Ailuk,137,MH,"Marshall Islands",ALK,MH-ALK,,municipality,,2573,,10.31666667,169.93333333,Pacific/Kwajalein,Q405378
-5645,Arno,137,MH,"Marshall Islands",ARN,MH-ARN,,municipality,,2573,,7.08333333,171.70000000,Pacific/Kwajalein,Q694057
-5646,Aur,137,MH,"Marshall Islands",AUR,MH-AUR,,municipality,,2573,,8.20000000,171.10000000,Pacific/Kwajalein,Q260549
-5647,"Bikini & Kili",137,MH,"Marshall Islands",KIL,MH-KIL,,municipality,,2574,,11.60000000,165.40000000,Pacific/Kwajalein,Q152225
-5648,Ebon,137,MH,"Marshall Islands",EBO,MH-EBO,,municipality,,2574,,4.63333333,168.71666667,Pacific/Kwajalein,Q152754
-5649,"Enewetak & Ujelang",137,MH,"Marshall Islands",ENI,MH-ENI,,municipality,,2574,,11.50000000,162.33333333,Pacific/Kwajalein,Q649190
-5650,Jabat,137,MH,"Marshall Islands",JAB,MH-JAB,,municipality,,2574,,7.75000000,168.96666667,Pacific/Kwajalein,Q697805
-5651,Jaluit,137,MH,"Marshall Islands",JAL,MH-JAL,,municipality,,2574,,6.00000000,169.56666667,Pacific/Kwajalein,Q168576
-5652,Kwajalein,137,MH,"Marshall Islands",KWA,MH-KWA,,municipality,,2574,,8.71666667,167.73333333,Pacific/Kwajalein,Q309172
-5653,Lae,137,MH,"Marshall Islands",LAE,MH-LAE,,municipality,,2574,,8.93611111,166.23750000,Pacific/Kwajalein,Q741121
-5654,Lib,137,MH,"Marshall Islands",LIB,MH-LIB,,municipality,,2574,,8.31305556,167.37777778,Pacific/Kwajalein,Q376862
-5655,Likiep,137,MH,"Marshall Islands",LIK,MH-LIK,,municipality,,2573,,9.88498000,169.14345000,Pacific/Kwajalein,Q518353
-5656,Majuro,137,MH,"Marshall Islands",MAJ,MH-MAJ,,municipality,,2573,,7.09180000,171.38020000,Pacific/Kwajalein,Q12919
-5657,Maloelap,137,MH,"Marshall Islands",MAL,MH-MAL,,municipality,,2573,,8.75343611,171.04888889,Pacific/Kwajalein,Q567926
-5658,Mejit,137,MH,"Marshall Islands",MEJ,MH-MEJ,,municipality,,2573,,10.28333333,170.88333333,Pacific/Kwajalein,Q703543
-5659,Mili,137,MH,"Marshall Islands",MIL,MH-MIL,,municipality,,2573,,6.12621667,171.97998056,Pacific/Kwajalein,Q700051
-5660,Namdrik,137,MH,"Marshall Islands",NMK,MH-NMK,,municipality,,2574,,5.61666667,168.11666667,Pacific/Kwajalein,Q697819
-5661,Namu,137,MH,"Marshall Islands",NMU,MH-NMU,,municipality,,2574,,7.98333333,168.17361111,Pacific/Kwajalein,Q703627
+5643,Ailinglaplap,137,MH,"Marshall Islands",ALL,MH-ALL,,municipality,,2574,Ailinglaplap,7.50000000,168.73333333,Pacific/Kwajalein,Q405165
+5644,Ailuk,137,MH,"Marshall Islands",ALK,MH-ALK,,municipality,,2573,Ailuk,10.31666667,169.93333333,Pacific/Kwajalein,Q405378
+5645,Arno,137,MH,"Marshall Islands",ARN,MH-ARN,,municipality,,2573,Arno,7.08333333,171.70000000,Pacific/Kwajalein,Q694057
+5646,Aur,137,MH,"Marshall Islands",AUR,MH-AUR,,municipality,,2573,Aur,8.20000000,171.10000000,Pacific/Kwajalein,Q260549
+5647,"Bikini & Kili",137,MH,"Marshall Islands",KIL,MH-KIL,,municipality,,2574,"Bikini & Kili",11.60000000,165.40000000,Pacific/Kwajalein,Q152225
+5648,Ebon,137,MH,"Marshall Islands",EBO,MH-EBO,,municipality,,2574,Ebon,4.63333333,168.71666667,Pacific/Kwajalein,Q152754
+5649,"Enewetak & Ujelang",137,MH,"Marshall Islands",ENI,MH-ENI,,municipality,,2574,"Enewetak & Ujelang",11.50000000,162.33333333,Pacific/Kwajalein,Q649190
+5650,Jabat,137,MH,"Marshall Islands",JAB,MH-JAB,,municipality,,2574,Jabat,7.75000000,168.96666667,Pacific/Kwajalein,Q697805
+5651,Jaluit,137,MH,"Marshall Islands",JAL,MH-JAL,,municipality,,2574,Jaluit,6.00000000,169.56666667,Pacific/Kwajalein,Q168576
+5652,Kwajalein,137,MH,"Marshall Islands",KWA,MH-KWA,,municipality,,2574,Kwajalein,8.71666667,167.73333333,Pacific/Kwajalein,Q309172
+5653,Lae,137,MH,"Marshall Islands",LAE,MH-LAE,,municipality,,2574,Lae,8.93611111,166.23750000,Pacific/Kwajalein,Q741121
+5654,Lib,137,MH,"Marshall Islands",LIB,MH-LIB,,municipality,,2574,Lib,8.31305556,167.37777778,Pacific/Kwajalein,Q376862
+5655,Likiep,137,MH,"Marshall Islands",LIK,MH-LIK,,municipality,,2573,Likiep,9.88498000,169.14345000,Pacific/Kwajalein,Q518353
+5656,Majuro,137,MH,"Marshall Islands",MAJ,MH-MAJ,,municipality,,2573,Majuro,7.09180000,171.38020000,Pacific/Kwajalein,Q12919
+5657,Maloelap,137,MH,"Marshall Islands",MAL,MH-MAL,,municipality,,2573,Maloelap,8.75343611,171.04888889,Pacific/Kwajalein,Q567926
+5658,Mejit,137,MH,"Marshall Islands",MEJ,MH-MEJ,,municipality,,2573,Mejit,10.28333333,170.88333333,Pacific/Kwajalein,Q703543
+5659,Mili,137,MH,"Marshall Islands",MIL,MH-MIL,,municipality,,2573,Mili,6.12621667,171.97998056,Pacific/Kwajalein,Q700051
+5660,Namdrik,137,MH,"Marshall Islands",NMK,MH-NMK,,municipality,,2574,Namdrik,5.61666667,168.11666667,Pacific/Kwajalein,Q697819
+5661,Namu,137,MH,"Marshall Islands",NMU,MH-NMU,,municipality,,2574,Namu,7.98333333,168.17361111,Pacific/Kwajalein,Q703627
 2574,Ralik,137,MH,"Marshall Islands",L,MH-L,17,chain,4,,Titled,8.23081700,167.79532240,Pacific/Kwajalein,Q697840
 2573,Ratak,137,MH,"Marshall Islands",T,MH-T,17,chain,4,,Ratak,8.61505500,170.82055470,Pacific/Kwajalein,Q700048
-5662,Rongelap,137,MH,"Marshall Islands",RON,MH-RON,,municipality,,2574,,11.31666667,166.78333333,Pacific/Kwajalein,Q542619
-5663,Ujae,137,MH,"Marshall Islands",UJA,MH-UJA,,municipality,,2574,,9.05000000,165.65000000,Pacific/Kwajalein,Q697802
-5664,Utrik,137,MH,"Marshall Islands",UTI,MH-UTI,,municipality,,2573,,11.26730556,169.78426111,Pacific/Kwajalein,Q700015
-5665,Wotho,137,MH,"Marshall Islands",WTH,MH-WTH,,municipality,,2574,,10.10000000,165.96666667,Pacific/Kwajalein,Q175931
-5666,Wotje,137,MH,"Marshall Islands",WTJ,MH-WTJ,,municipality,,2573,,9.43333333,170.01666667,Pacific/Kwajalein,Q518210
+5662,Rongelap,137,MH,"Marshall Islands",RON,MH-RON,,municipality,,2574,Rongelap,11.31666667,166.78333333,Pacific/Kwajalein,Q542619
+5663,Ujae,137,MH,"Marshall Islands",UJA,MH-UJA,,municipality,,2574,Ujae,9.05000000,165.65000000,Pacific/Kwajalein,Q697802
+5664,Utrik,137,MH,"Marshall Islands",UTI,MH-UTI,,municipality,,2573,Utrik,11.26730556,169.78426111,Pacific/Kwajalein,Q700015
+5665,Wotho,137,MH,"Marshall Islands",WTH,MH-WTH,,municipality,,2574,Wotho,10.10000000,165.96666667,Pacific/Kwajalein,Q175931
+5666,Wotje,137,MH,"Marshall Islands",WTJ,MH-WTJ,,municipality,,2573,Wotje,9.43333333,170.01666667,Pacific/Kwajalein,Q518210
 5398,Fort-de-France,138,MQ,Martinique,01,MQ-01,01,district,,,Fort-de-France,14.60279620,-61.06767240,America/Martinique,Q701213
 5399,"La Trinité",138,MQ,Martinique,02,MQ-02,02,district,,,"La Trinité",14.75531610,-61.02872260,America/Martinique,Q701385
 5400,"Le Marin",138,MQ,Martinique,03,MQ-03,03,district,,,"Le Marin",14.52518410,-60.96241510,America/Martinique,Q701446
@@ -3029,7 +3029,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 4067,"Chatham Islands",158,NZ,"New Zealand",CIT,NZ-CIT,10,"special island authority",,,"Chatham Islands",-43.91753400,-176.18734000,Pacific/Chatham,Q26882619
 4068,Gisborne,158,NZ,"New Zealand",GIS,NZ-GIS,F1,region,,,Gisborne,-38.15322870,178.13675240,Pacific/Auckland,Q140246
 4075,"Hawke's Bay",158,NZ,"New Zealand",HKB,NZ-HKB,F2,region,,,"Hawke's Bay",-39.52565120,176.76114570,Pacific/Auckland,Q251825
-4060,Manawatu-Wanganui,158,NZ,"New Zealand",MWT,NZ-MWT,F3,region,,,Manawatu-Wanganui,-39.64077340,175.57135570,Pacific/Auckland,Q139907
+4060,Manawatu-Whanganui,158,NZ,"New Zealand",MWT,NZ-MWT,F3,region,,,Manawatu-Wanganui,-39.64077340,175.57135570,Pacific/Auckland,Q139907
 4063,Marlborough,158,NZ,"New Zealand",MBH,NZ-MBH,F4,region,,,Marlborough,-41.47447470,173.83302630,Pacific/Auckland,Q140083
 4070,Nelson,158,NZ,"New Zealand",NSN,NZ-NSN,F5,region,,,Nelson,-41.27108490,173.28367560,Pacific/Auckland,Q1995856
 4059,Northland,158,NZ,"New Zealand",NTL,NZ-NTL,F6,region,,,Northland,-35.37550910,173.94701060,Pacific/Auckland,Q59596
@@ -3129,86 +3129,86 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 4000,"South Hamgyong",115,KP,"North Korea",08,KP-08,03,province,,,함경남도,40.11991800,127.59909890,Asia/Pyongyang,Q109368
 4003,"South Hwanghae",115,KP,"North Korea",05,KP-05,06,province,,,황해남도,38.26282620,125.47690100,Asia/Pyongyang,Q626052
 3997,"South Pyongan",115,KP,"North Korea",02,KP-02,15,province,,,남평안,39.54165050,126.06476450,Asia/Pyongyang,Q109380
-703,Aerodrom,129,MK,"North Macedonia",801,MK-801,F3,municipality,,,Аеродром,41.96780280,21.50902200,Europe/Skopje,Q1992708
-656,Aračinovo,129,MK,"North Macedonia",802,MK-802,01,municipality,,,Арачиново,42.02529650,21.55776590,Europe/Skopje,Q597345
-716,Berovo,129,MK,"North Macedonia",201,MK-201,04,municipality,,,Берово,41.66973820,22.81737350,Europe/Skopje,Q793727
-679,Bitola,129,MK,"North Macedonia",501,MK-501,06,municipality,,,Битола,41.03633020,21.33219740,Europe/Skopje,Q159380
-649,Bogdanci,129,MK,"North Macedonia",401,MK-401,08,municipality,,,Богданци,41.18696160,22.59602680,Europe/Skopje,Q1992752
-721,Bogovinje,129,MK,"North Macedonia",601,MK-601,C7,municipality,,,Боговиње,41.92363710,20.91638870,Europe/Skopje,Q9035785
-652,Bosilovo,129,MK,"North Macedonia",402,MK-402,11,municipality,,,Босилово,41.48151190,22.77538150,Europe/Skopje,Q1779775
-660,Brvenica,129,MK,"North Macedonia",602,MK-602,12,municipality,,,Брвеница,41.96814820,20.98195860,Europe/Skopje,Q1057563
-694,Butel,129,MK,"North Macedonia",803,MK-803,F4,municipality,,,Бутел,42.08950680,21.46336100,Europe/Skopje,Q935620
-704,Čair,129,MK,"North Macedonia",815,MK-815,C8,municipality,,,Чаир,42.01067110,21.43820770,Europe/Skopje,Q1419314
-676,Čaška,129,MK,"North Macedonia",109,MK-109,C9,municipality,,,Чашка,41.64743800,21.69141150,Europe/Skopje,Q1994547
-702,Centar,129,MK,"North Macedonia",814,MK-814,62,municipality,,,Центар,41.99429550,21.43024940,Europe/Skopje,Q1463152
-720,"Centar Župa",129,MK,"North Macedonia",313,MK-313,18,municipality,,,"Центар Жупа",41.46522590,20.59305480,Europe/Skopje,Q1779085
-644,Češinovo-Obleševo,129,MK,"North Macedonia",210,MK-210,19,municipality,,,Чешиново-Облешево,41.87534490,22.29000450,Europe/Skopje,Q281898
-715,Čučer-Sandevo,129,MK,"North Macedonia",816,MK-816,20,municipality,,,Чучер-Сандево,42.09948690,21.38686110,Europe/Skopje,Q629720
-5726,Debar,129,MK,"North Macedonia",303,MK-303,,municipality,,,,41.52306550,20.52383890,Europe/Skopje,
-645,Debrca,129,MK,"North Macedonia",304,MK-304,F5,municipality,,,Дебарца,41.99643190,21.42394420,Europe/Skopje,Q1323340
-695,Delčevo,129,MK,"North Macedonia",203,MK-203,22,municipality,,,Делчево,41.96683440,22.77677220,Europe/Skopje,Q1323322
-687,"Demir Hisar",129,MK,"North Macedonia",502,MK-502,D3,municipality,,,"Демир Хисар",41.21989670,21.20208720,Europe/Skopje,Q856278
-655,"Demir Kapija",129,MK,"North Macedonia",103,MK-103,25,municipality,,,"Демир Капија",41.40871360,22.24185710,Europe/Skopje,Q2370973
-697,Dojran,129,MK,"North Macedonia",406,MK-406,E5,municipality,,,Дојран,41.22531180,22.70402940,Europe/Skopje,Q1996413
-675,Dolneni,129,MK,"North Macedonia",503,MK-503,28,municipality,,,Долнени,41.48180580,21.40604440,Europe/Skopje,Q1992691
-707,"Gazi Baba",129,MK,"North Macedonia",804,MK-804,32,municipality,,,"Гази Баба",41.99844460,21.47372490,Europe/Skopje,Q2019836
-648,Gevgelija,129,MK,"North Macedonia",405,MK-405,33,municipality,,,Гевгелија,41.13886640,22.50331920,Europe/Skopje,Q2018974
-722,"Gjorče Petrov",129,MK,"North Macedonia",805,MK-805,29,municipality,,,"Ѓорче Петров",42.01746480,21.36427530,Europe/Skopje,Q924278
-693,Gostivar,129,MK,"North Macedonia",604,MK-604,D4,municipality,,,Гостивар,41.79202220,20.90817030,Europe/Skopje,Q521112
-708,Gradsko,129,MK,"North Macedonia",102,MK-102,35,municipality,,,Градско,41.61335680,21.88607700,Europe/Skopje,Q1992701
-690,Ilinden,129,MK,"North Macedonia",807,MK-807,36,municipality,,,Илинден,41.99574430,21.56769750,Europe/Skopje,Q657754
-678,Jegunovce,129,MK,"North Macedonia",606,MK-606,D5,municipality,,,Јегуновце,42.07407200,21.12204780,Europe/Skopje,Q431908
-674,Karbinci,129,MK,"North Macedonia",205,MK-205,40,municipality,,,Карбинци,41.81801590,22.23247580,Europe/Skopje,Q1346554
-681,Karpoš,129,MK,"North Macedonia",808,MK-808,41,municipality,,,Карпош,42.00622790,21.38625690,Europe/Skopje,Q1463246
-713,Kavadarci,129,MK,"North Macedonia",104,MK-104,D6,municipality,,,Кавадарци,41.43328020,22.01225930,Europe/Skopje,Q1155055
-688,Kičevo,129,MK,"North Macedonia",307,MK-307,43,municipality,,,Кичево,41.51291120,20.95250650,Europe/Skopje,Q2018957
-686,"Kisela Voda",129,MK,"North Macedonia",809,MK-809,44,municipality,,,"Кисела Вода",41.97942650,21.43960020,Europe/Skopje,Q1386136
-723,Kočani,129,MK,"North Macedonia",206,MK-206,46,municipality,,,Кочани,41.92113320,22.41141820,Europe/Skopje,Q1819289
-665,Konče,129,MK,"North Macedonia",407,MK-407,47,municipality,,,Конче,41.52056340,22.40363430,Europe/Skopje,Q1992728
-641,Kratovo,129,MK,"North Macedonia",701,MK-701,51,municipality,,,Кратово,42.09621630,22.16867350,Europe/Skopje,Q1992716
-677,"Kriva Palanka",129,MK,"North Macedonia",702,MK-702,52,municipality,,,"Крива Паланка",42.20584540,22.33079650,Europe/Skopje,Q1422453
-647,Krivogaštani,129,MK,"North Macedonia",504,MK-504,53,municipality,,,Кривогаштани,41.32383760,21.38185190,Europe/Skopje,Q2018930
-714,Kruševo,129,MK,"North Macedonia",505,MK-505,54,municipality,,,Крушево,41.37203240,21.24843510,Europe/Skopje,Q2476159
-683,Kumanovo,129,MK,"North Macedonia",703,MK-703,D7,municipality,,,Куманово,42.13591300,21.71854740,Europe/Skopje,Q2352376
-659,Lipkovo,129,MK,"North Macedonia",704,MK-704,59,municipality,,,Липково,42.16582090,21.58434970,Europe/Skopje,Q2041236
-705,Lozovo,129,MK,"North Macedonia",105,MK-105,60,municipality,,,Лозово,41.78181390,21.90008270,Europe/Skopje,Q1996470
-701,"Makedonska Kamenica",129,MK,"North Macedonia",207,MK-207,62,municipality,,,"Македонска Каменица",42.02190960,22.58871900,Europe/Skopje,Q2041219
-692,"Makedonski Brod",129,MK,"North Macedonia",308,MK-308,D8,municipality,,,"Македонски Брод",41.51330880,21.21743290,Europe/Skopje,Q2364199
-669,"Mavrovo i Rostuše",129,MK,"North Macedonia",607,MK-607,E4,municipality,,,"Маврово и Ростуша",41.64411670,20.65908930,Europe/Skopje,Q1323332
-653,Mogila,129,MK,"North Macedonia",506,MK-506,D9,municipality,,,Могила,41.17687760,21.40789680,Europe/Skopje,Q1839369
-664,Negotino,129,MK,"North Macedonia",106,MK-106,69,municipality,,,Неготино,41.48442290,22.09059030,Europe/Skopje,Q3246545
-696,Novaci,129,MK,"North Macedonia",507,MK-507,E1,municipality,,,Новаци,41.04426610,21.45888940,Europe/Skopje,Q2088022
-718,"Novo Selo",129,MK,"North Macedonia",408,MK-408,72,municipality,,,"Ново Село",41.41263250,22.88355560,Europe/Skopje,Q1946579
-699,Ohrid,129,MK,"North Macedonia",310,MK-310,E2,municipality,,,Охрид,41.11702030,20.80177150,Europe/Skopje,Q1125333
-685,Pehčevo,129,MK,"North Macedonia",208,MK-208,78,municipality,,,Пехчево,41.76357290,22.88730170,Europe/Skopje,Q426114
-698,Petrovec,129,MK,"North Macedonia",810,MK-810,79,municipality,,,Петровец,41.90298970,21.68992100,Europe/Skopje,Q1018191
-670,Plasnica,129,MK,"North Macedonia",311,MK-311,80,municipality,,,Пласница,41.45463490,21.10565390,Europe/Skopje,Q2018921
-666,Prilep,129,MK,"North Macedonia",508,MK-508,E3,municipality,,,Прилеп,41.34449840,21.55271150,Europe/Skopje,Q6312454
-646,Probištip,129,MK,"North Macedonia",209,MK-209,83,municipality,,,Пробиштип,41.95891460,22.16686700,Europe/Skopje,Q2270414
-709,Radoviš,129,MK,"North Macedonia",409,MK-409,84,municipality,,,Радовиш,41.64955310,22.47682870,Europe/Skopje,Q2738284
-717,Rankovce,129,MK,"North Macedonia",705,MK-705,85,municipality,,,Ранковце,42.16862010,22.11655180,Europe/Skopje,Q1475001
-712,Resen,129,MK,"North Macedonia",509,MK-509,86,municipality,,,Ресен,41.03276740,20.99177890,Europe/Skopje,Q740591
-691,Rosoman,129,MK,"North Macedonia",107,MK-107,87,municipality,,,Росоман,41.50023710,21.90573220,Europe/Skopje,Q2088585
-667,Saraj,129,MK,"North Macedonia",811,MK-811,90,municipality,,,Сарај,41.99991610,21.32819700,Europe/Skopje,Q1309481
-719,Sopište,129,MK,"North Macedonia",812,MK-812,92,municipality,,,Сопиште,41.84849730,21.29715590,Europe/Skopje,Q2282240
-643,"Staro Nagoričane",129,MK,"North Macedonia",706,MK-706,97,municipality,,,"Старо Нагоричане",42.19901880,21.82941610,Europe/Skopje,Q2128903
-661,Štip,129,MK,"North Macedonia",211,MK-211,98,municipality,,,Штип,41.73747240,22.19358560,Europe/Skopje,Q2423082
-700,Struga,129,MK,"North Macedonia",312,MK-312,E6,municipality,,,Струга,41.17702780,20.67905860,Europe/Skopje,Q749618
-710,Strumica,129,MK,"North Macedonia",410,MK-410,E7,municipality,,,Струмица,41.43780040,22.64274280,Europe/Skopje,Q2308287
-711,Studeničani,129,MK,"North Macedonia",813,MK-813,A2,municipality,,,Студеничани,41.92256390,21.53639650,Europe/Skopje,Q2088034
-680,"Šuto Orizari",129,MK,"North Macedonia",817,MK-817,A3,municipality,,,"Шуто Оризари",42.04054530,21.42359100,Europe/Skopje,Q1020859
-640,"Sveti Nikole",129,MK,"North Macedonia",108,MK-108,A4,municipality,,,"Свети Николе",41.86473390,21.94205060,Europe/Skopje,Q2308277
-654,Tearce,129,MK,"North Macedonia",608,MK-608,A5,municipality,,,Теарце,42.07775110,21.05349230,Europe/Skopje,Q2282274
-663,Tetovo,129,MK,"North Macedonia",609,MK-609,E8,municipality,,,Тетово,42.00682970,20.97285560,Europe/Skopje,Q3245456
-671,Valandovo,129,MK,"North Macedonia",403,MK-403,E9,municipality,,,Валандово,41.33738040,22.51567520,Europe/Skopje,Q2018965
-658,Vasilevo,129,MK,"North Macedonia",404,MK-404,A9,municipality,,,Василево,41.47416990,22.64221280,Europe/Skopje,Q2018980
-651,Veles,129,MK,"North Macedonia",101,MK-101,F1,municipality,,,Велес,41.71886900,21.77056950,Europe/Skopje,Q2088561
-662,Vevčani,129,MK,"North Macedonia",301,MK-301,B3,municipality,,,Вевчани,41.24075430,20.59156490,Europe/Skopje,Q2029825
-672,Vinica,129,MK,"North Macedonia",202,MK-202,B4,municipality,,,Виница,41.86073990,22.59284540,Europe/Skopje,Q2479526
-689,Vrapčište,129,MK,"North Macedonia",603,MK-603,B7,municipality,,,Врапчиште,41.87911600,20.83145000,Europe/Skopje,Q1996740
-706,Zelenikovo,129,MK,"North Macedonia",806,MK-806,C2,municipality,,,Зелениково,41.88604080,21.58696710,Europe/Skopje,Q9050283
-668,Želino,129,MK,"North Macedonia",605,MK-605,C3,municipality,,,Желино,41.92629230,21.11757820,Europe/Skopje,Q1996410
-673,Zrnovci,129,MK,"North Macedonia",204,MK-204,C6,municipality,,,Зрновци,41.83737140,22.42870130,Europe/Skopje,Q950881
+703,Aerodrom,129,MK,"North Macedonia",01,MK-01,F3,municipality,,,Аеродром,41.96780280,21.50902200,Europe/Skopje,Q1992708
+656,Aračinovo,129,MK,"North Macedonia",02,MK-02,01,municipality,,,Арачиново,42.02529650,21.55776590,Europe/Skopje,Q597345
+716,Berovo,129,MK,"North Macedonia",03,MK-03,04,municipality,,,Берово,41.66973820,22.81737350,Europe/Skopje,Q793727
+679,Bitola,129,MK,"North Macedonia",04,MK-04,06,municipality,,,Битола,41.03633020,21.33219740,Europe/Skopje,Q159380
+649,Bogdanci,129,MK,"North Macedonia",05,MK-05,08,municipality,,,Богданци,41.18696160,22.59602680,Europe/Skopje,Q1992752
+721,Bogovinje,129,MK,"North Macedonia",06,MK-06,C7,municipality,,,Боговиње,41.92363710,20.91638870,Europe/Skopje,Q9035785
+652,Bosilovo,129,MK,"North Macedonia",07,MK-07,11,municipality,,,Босилово,41.48151190,22.77538150,Europe/Skopje,Q1779775
+660,Brvenica,129,MK,"North Macedonia",08,MK-08,12,municipality,,,Брвеница,41.96814820,20.98195860,Europe/Skopje,Q1057563
+694,Butel,129,MK,"North Macedonia",09,MK-09,F4,municipality,,,Бутел,42.08950680,21.46336100,Europe/Skopje,Q935620
+704,Čair,129,MK,"North Macedonia",79,MK-79,C8,municipality,,,Чаир,42.01067110,21.43820770,Europe/Skopje,Q1419314
+676,Čaška,129,MK,"North Macedonia",80,MK-80,C9,municipality,,,Чашка,41.64743800,21.69141150,Europe/Skopje,Q1994547
+702,Centar,129,MK,"North Macedonia",77,MK-77,62,municipality,,,Центар,41.99429550,21.43024940,Europe/Skopje,Q1463152
+720,"Centar Župa",129,MK,"North Macedonia",78,MK-78,18,municipality,,,"Центар Жупа",41.46522590,20.59305480,Europe/Skopje,Q1779085
+644,Češinovo-Obleševo,129,MK,"North Macedonia",81,MK-81,19,municipality,,,Чешиново-Облешево,41.87534490,22.29000450,Europe/Skopje,Q281898
+715,Čučer-Sandevo,129,MK,"North Macedonia",82,MK-82,20,municipality,,,Чучер-Сандево,42.09948690,21.38686110,Europe/Skopje,Q629720
+5726,Debar,129,MK,"North Macedonia",303,MK-303,,municipality,,,Дебар,41.52306550,20.52383890,Europe/Skopje,
+645,Debarca,129,MK,"North Macedonia",22,MK-22,F5,municipality,,,Дебарца,41.99643190,21.42394420,Europe/Skopje,Q1323340
+695,Delčevo,129,MK,"North Macedonia",23,MK-23,22,municipality,,,Делчево,41.96683440,22.77677220,Europe/Skopje,Q1323322
+687,"Demir Hisar",129,MK,"North Macedonia",25,MK-25,D3,municipality,,,"Демир Хисар",41.21989670,21.20208720,Europe/Skopje,Q856278
+655,"Demir Kapija",129,MK,"North Macedonia",24,MK-24,25,municipality,,,"Демир Капија",41.40871360,22.24185710,Europe/Skopje,Q2370973
+697,Dojran,129,MK,"North Macedonia",26,MK-26,E5,municipality,,,Дојран,41.22531180,22.70402940,Europe/Skopje,Q1996413
+675,Dolneni,129,MK,"North Macedonia",27,MK-27,28,municipality,,,Долнени,41.48180580,21.40604440,Europe/Skopje,Q1992691
+707,"Gazi Baba",129,MK,"North Macedonia",17,MK-17,32,municipality,,,"Гази Баба",41.99844460,21.47372490,Europe/Skopje,Q2019836
+648,Gevgelija,129,MK,"North Macedonia",18,MK-18,33,municipality,,,Гевгелија,41.13886640,22.50331920,Europe/Skopje,Q2018974
+722,"Gjorče Petrov",129,MK,"North Macedonia",29,MK-29,29,municipality,,,"Ѓорче Петров",42.01746480,21.36427530,Europe/Skopje,Q924278
+693,Gostivar,129,MK,"North Macedonia",19,MK-19,D4,municipality,,,Гостивар,41.79202220,20.90817030,Europe/Skopje,Q521112
+708,Gradsko,129,MK,"North Macedonia",20,MK-20,35,municipality,,,Градско,41.61335680,21.88607700,Europe/Skopje,Q1992701
+690,Ilinden,129,MK,"North Macedonia",34,MK-34,36,municipality,,,Илинден,41.99574430,21.56769750,Europe/Skopje,Q657754
+678,Jegunovce,129,MK,"North Macedonia",35,MK-35,D5,municipality,,,Јегуновце,42.07407200,21.12204780,Europe/Skopje,Q431908
+674,Karbinci,129,MK,"North Macedonia",37,MK-37,40,municipality,,,Карбинци,41.81801590,22.23247580,Europe/Skopje,Q1346554
+681,Karpoš,129,MK,"North Macedonia",38,MK-38,41,municipality,,,Карпош,42.00622790,21.38625690,Europe/Skopje,Q1463246
+713,Kavadarci,129,MK,"North Macedonia",36,MK-36,D6,municipality,,,Кавадарци,41.43328020,22.01225930,Europe/Skopje,Q1155055
+688,Kičevo,129,MK,"North Macedonia",40,MK-40,43,municipality,,,Кичево,41.51291120,20.95250650,Europe/Skopje,Q2018957
+686,"Kisela Voda",129,MK,"North Macedonia",39,MK-39,44,municipality,,,"Кисела Вода",41.97942650,21.43960020,Europe/Skopje,Q1386136
+723,Kočani,129,MK,"North Macedonia",42,MK-42,46,municipality,,,Кочани,41.92113320,22.41141820,Europe/Skopje,Q1819289
+665,Konče,129,MK,"North Macedonia",41,MK-41,47,municipality,,,Конче,41.52056340,22.40363430,Europe/Skopje,Q1992728
+641,Kratovo,129,MK,"North Macedonia",43,MK-43,51,municipality,,,Кратово,42.09621630,22.16867350,Europe/Skopje,Q1992716
+677,"Kriva Palanka",129,MK,"North Macedonia",44,MK-44,52,municipality,,,"Крива Паланка",42.20584540,22.33079650,Europe/Skopje,Q1422453
+647,Krivogaštani,129,MK,"North Macedonia",45,MK-45,53,municipality,,,Кривогаштани,41.32383760,21.38185190,Europe/Skopje,Q2018930
+714,Kruševo,129,MK,"North Macedonia",46,MK-46,54,municipality,,,Крушево,41.37203240,21.24843510,Europe/Skopje,Q2476159
+683,Kumanovo,129,MK,"North Macedonia",47,MK-47,D7,municipality,,,Куманово,42.13591300,21.71854740,Europe/Skopje,Q2352376
+659,Lipkovo,129,MK,"North Macedonia",48,MK-48,59,municipality,,,Липково,42.16582090,21.58434970,Europe/Skopje,Q2041236
+705,Lozovo,129,MK,"North Macedonia",49,MK-49,60,municipality,,,Лозово,41.78181390,21.90008270,Europe/Skopje,Q1996470
+701,"Makedonska Kamenica",129,MK,"North Macedonia",51,MK-51,62,municipality,,,"Македонска Каменица",42.02190960,22.58871900,Europe/Skopje,Q2041219
+692,"Makedonski Brod",129,MK,"North Macedonia",52,MK-52,D8,municipality,,,"Македонски Брод",41.51330880,21.21743290,Europe/Skopje,Q2364199
+669,"Mavrovo and Rostuša",129,MK,"North Macedonia",50,MK-50,E4,municipality,,,"Маврово и Ростуша",41.64411670,20.65908930,Europe/Skopje,Q1323332
+653,Mogila,129,MK,"North Macedonia",53,MK-53,D9,municipality,,,Могила,41.17687760,21.40789680,Europe/Skopje,Q1839369
+664,Negotino,129,MK,"North Macedonia",54,MK-54,69,municipality,,,Неготино,41.48442290,22.09059030,Europe/Skopje,Q3246545
+696,Novaci,129,MK,"North Macedonia",55,MK-55,E1,municipality,,,Новаци,41.04426610,21.45888940,Europe/Skopje,Q2088022
+718,"Novo Selo",129,MK,"North Macedonia",56,MK-56,72,municipality,,,"Ново Село",41.41263250,22.88355560,Europe/Skopje,Q1946579
+699,Ohrid,129,MK,"North Macedonia",58,MK-58,E2,municipality,,,Охрид,41.11702030,20.80177150,Europe/Skopje,Q1125333
+685,Pehčevo,129,MK,"North Macedonia",60,MK-60,78,municipality,,,Пехчево,41.76357290,22.88730170,Europe/Skopje,Q426114
+698,Petrovec,129,MK,"North Macedonia",59,MK-59,79,municipality,,,Петровец,41.90298970,21.68992100,Europe/Skopje,Q1018191
+670,Plasnica,129,MK,"North Macedonia",61,MK-61,80,municipality,,,Пласница,41.45463490,21.10565390,Europe/Skopje,Q2018921
+666,Prilep,129,MK,"North Macedonia",62,MK-62,E3,municipality,,,Прилеп,41.34449840,21.55271150,Europe/Skopje,Q6312454
+646,Probištip,129,MK,"North Macedonia",63,MK-63,83,municipality,,,Пробиштип,41.95891460,22.16686700,Europe/Skopje,Q2270414
+709,Radoviš,129,MK,"North Macedonia",64,MK-64,84,municipality,,,Радовиш,41.64955310,22.47682870,Europe/Skopje,Q2738284
+717,Rankovce,129,MK,"North Macedonia",65,MK-65,85,municipality,,,Ранковце,42.16862010,22.11655180,Europe/Skopje,Q1475001
+712,Resen,129,MK,"North Macedonia",66,MK-66,86,municipality,,,Ресен,41.03276740,20.99177890,Europe/Skopje,Q740591
+691,Rosoman,129,MK,"North Macedonia",67,MK-67,87,municipality,,,Росоман,41.50023710,21.90573220,Europe/Skopje,Q2088585
+667,Saraj,129,MK,"North Macedonia",68,MK-68,90,municipality,,,Сарај,41.99991610,21.32819700,Europe/Skopje,Q1309481
+719,Sopište,129,MK,"North Macedonia",70,MK-70,92,municipality,,,Сопиште,41.84849730,21.29715590,Europe/Skopje,Q2282240
+643,"Staro Nagoričane",129,MK,"North Macedonia",71,MK-71,97,municipality,,,"Старо Нагоричане",42.19901880,21.82941610,Europe/Skopje,Q2128903
+661,Štip,129,MK,"North Macedonia",83,MK-83,98,municipality,,,Штип,41.73747240,22.19358560,Europe/Skopje,Q2423082
+700,Struga,129,MK,"North Macedonia",72,MK-72,E6,municipality,,,Струга,41.17702780,20.67905860,Europe/Skopje,Q749618
+710,Strumica,129,MK,"North Macedonia",73,MK-73,E7,municipality,,,Струмица,41.43780040,22.64274280,Europe/Skopje,Q2308287
+711,Studeničani,129,MK,"North Macedonia",74,MK-74,A2,municipality,,,Студеничани,41.92256390,21.53639650,Europe/Skopje,Q2088034
+680,"Šuto Orizari",129,MK,"North Macedonia",84,MK-84,A3,municipality,,,"Шуто Оризари",42.04054530,21.42359100,Europe/Skopje,Q1020859
+640,"Sveti Nikole",129,MK,"North Macedonia",69,MK-69,A4,municipality,,,"Свети Николе",41.86473390,21.94205060,Europe/Skopje,Q2308277
+654,Tearce,129,MK,"North Macedonia",75,MK-75,A5,municipality,,,Теарце,42.07775110,21.05349230,Europe/Skopje,Q2282274
+663,Tetovo,129,MK,"North Macedonia",76,MK-76,E8,municipality,,,Тетово,42.00682970,20.97285560,Europe/Skopje,Q3245456
+671,Valandovo,129,MK,"North Macedonia",10,MK-10,E9,municipality,,,Валандово,41.33738040,22.51567520,Europe/Skopje,Q2018965
+658,Vasilevo,129,MK,"North Macedonia",11,MK-11,A9,municipality,,,Василево,41.47416990,22.64221280,Europe/Skopje,Q2018980
+651,Veles,129,MK,"North Macedonia",13,MK-13,F1,municipality,,,Велес,41.71886900,21.77056950,Europe/Skopje,Q2088561
+662,Vevčani,129,MK,"North Macedonia",12,MK-12,B3,municipality,,,Вевчани,41.24075430,20.59156490,Europe/Skopje,Q2029825
+672,Vinica,129,MK,"North Macedonia",14,MK-14,B4,municipality,,,Виница,41.86073990,22.59284540,Europe/Skopje,Q2479526
+689,Vrapčište,129,MK,"North Macedonia",16,MK-16,B7,municipality,,,Врапчиште,41.87911600,20.83145000,Europe/Skopje,Q1996740
+706,Zelenikovo,129,MK,"North Macedonia",32,MK-32,C2,municipality,,,Зелениково,41.88604080,21.58696710,Europe/Skopje,Q9050283
+668,Želino,129,MK,"North Macedonia",30,MK-30,C3,municipality,,,Желино,41.92629230,21.11757820,Europe/Skopje,Q1996410
+673,Zrnovci,129,MK,"North Macedonia",33,MK-33,C6,municipality,,,Зрновци,41.83737140,22.42870130,Europe/Skopje,Q950881
 1014,Agder,165,NO,Norway,42,NO-42,19,county,,,Agder,58.71944230,8.03496350,Europe/Oslo,Q2729021
 5448,Akershus,165,NO,Norway,32,NO-32,00,county,,,Akershus,60.03122150,11.31746190,Europe/Oslo,Q50615
 5449,Buskerud,165,NO,Norway,33,NO-33,00,county,,,Buskerud,60.24978760,8.96278680,Europe/Oslo,Q50618
@@ -4494,10 +4494,10 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 3603,"Central Abaco",17,BS,"The Bahamas",CO,BS-CO,37,district,,,"Central Abaco",26.52551050,-77.28381180,America/Nassau,Q2525371
 3631,"Central Andros",17,BS,"The Bahamas",CS,BS-CS,38,district,,,"Central Andros",24.43437490,-77.79340770,America/Nassau,Q2096558
 3596,"Central Eleuthera",17,BS,"The Bahamas",CE,BS-CE,39,district,,,"Central Eleuthera",25.23900000,-76.32916210,America/Nassau,Q938518
-3626,"City of Freeport",17,BS,"The Bahamas",FP,BS-FP,25,district,,,"City of Freeport",26.53568100,-78.69536230,America/Nassau,Q867573
-3621,"Crooked Island and Long Cay",17,BS,"The Bahamas",CK,BS-CK,40,district,,,"Crooked Island and Long Cay",22.74869590,-74.23861630,America/Nassau,Q1140993
+3621,"Crooked Island",17,BS,"The Bahamas",CK,BS-CK,40,district,,,"Crooked Island",22.74869590,-74.23861630,America/Nassau,Q1140993
 3614,"East Grand Bahama",17,BS,"The Bahamas",EG,BS-EG,41,district,,,"East Grand Bahama",26.67722290,-78.01345210,America/Nassau,Q2630334
 3612,Exuma,17,BS,"The Bahamas",EX,BS-EX,10,district,,,Exuma,23.96850000,-76.17990490,America/Nassau,Q1385577
+3626,Freeport,17,BS,"The Bahamas",FP,BS-FP,25,district,,,Freeport,26.53568100,-78.69536230,America/Nassau,Q867573
 3632,"Grand Cay",17,BS,"The Bahamas",GC,BS-GC,42,district,,,"Grand Cay",27.22871910,-78.33243660,America/Nassau,Q2524373
 3613,"Harbour Island",17,BS,"The Bahamas",HI,BS-HI,22,district,,,"Harbour Island",25.50011000,-76.63405110,America/Nassau,Q2357510
 3624,"Hope Town",17,BS,"The Bahamas",HT,BS-HT,43,district,,,"Hope Town",26.54071160,-76.95943790,America/Nassau,Q2699709
@@ -4512,7 +4512,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 3602,"North Eleuthera",17,BS,"The Bahamas",NE,BS-NE,48,district,,,"North Eleuthera",25.37766940,-76.78426550,America/Nassau,Q2705535
 3615,"Ragged Island",17,BS,"The Bahamas",RI,BS-RI,18,district,,,"Ragged Island",22.47655940,-75.80209340,America/Nassau,Q1532634
 3600,"Rum Cay",17,BS,"The Bahamas",RC,BS-RC,49,district,,,"Rum Cay",23.82630650,-74.93268290,America/Nassau,Q21713441
-3627,"San Salvador",17,BS,"The Bahamas",SS,BS-SS,35,district,,,"San Salvador",24.03438160,-74.48513730,America/Nassau,Q845540
+3627,"San Salvador Island",17,BS,"The Bahamas",SS,BS-SS,35,district,,,"San Salvador Island",24.03438160,-74.48513730,America/Nassau,Q845540
 3608,"South Abaco",17,BS,"The Bahamas",SO,BS-SO,50,district,,,"South Abaco",26.00400000,-77.35670720,America/Nassau,Q2703192
 3622,"South Andros",17,BS,"The Bahamas",SA,BS-SA,51,district,,,"South Andros",23.89850000,-77.45654040,America/Nassau,Q2408672
 3607,"South Eleuthera",17,BS,"The Bahamas",SE,BS-SE,52,district,,,"South Eleuthera",24.73107940,-76.29269280,America/Nassau,Q2699715
@@ -4557,7 +4557,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 3363,"Port of Spain",223,TT,"Trinidad and Tobago",POS,TT-POS,05,city,,,"Port of Spain",10.65726780,-61.51801730,America/Port_of_Spain,Q39178
 3368,"Princes Town",223,TT,"Trinidad and Tobago",PRT,TT-PRT,PRT,region,,,"Princes Town",10.20480030,-61.28061860,America/Port_of_Spain,Q2228167
 3356,"Rio Claro-Mayaro",223,TT,"Trinidad and Tobago",MRC,TT-MRC,11,region,,,"Rio Claro-Mayaro",10.25970160,-61.09235030,America/Port_of_Spain,Q2487249
-3359,"San Fernando",223,TT,"Trinidad and Tobago",SFO,TT-SFO,10,city,,,"San Fernando",10.28070690,-61.46458960,America/Port_of_Spain,Q1023712
+3359,"San Fernando",223,TT,"Trinidad and Tobago",SFO,TT-SFO,10,region,,,"San Fernando",10.28070690,-61.46458960,America/Port_of_Spain,Q1023712
 3357,"San Juan-Laventille",223,TT,"Trinidad and Tobago",SJL,TT-SJL,SJL,region,,,"For San Juan Lavent",10.67560660,-61.47101540,America/Port_of_Spain,Q979608
 3361,"Sangre Grande",223,TT,"Trinidad and Tobago",SGE,TT-SGE,SGE,region,,,"Big blood",10.63754020,-61.11774990,America/Port_of_Spain,Q290292
 3364,Siparia,223,TT,"Trinidad and Tobago",SIP,TT-SIP,SIP,region,,,Siparia,10.14716070,-61.57870320,America/Port_of_Spain,Q2679119
@@ -5253,16 +5253,16 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,level
 5709,Alo,243,WF,"Wallis and Futuna Islands",AL,,,"administrative precinct",,,Alo,-14.30938056,-178.12355000,Pacific/Wallis,Q2734700
 5708,Sigave,243,WF,"Wallis and Futuna Islands",SG,,,"administrative precinct",,,Sigavé,-14.29610000,-178.15850000,Pacific/Wallis,Q2554877
 5707,Uvea,243,WF,"Wallis and Futuna Islands",UV,,,"administrative precinct",,,ʻUvea,-13.28333333,-176.20000000,Pacific/Wallis,Q7903676
-1242,'Adan,245,YE,Yemen,AD,YE-AD,02,governorate,,,عدن,12.83333300,44.91666700,Asia/Aden,Q275729
-1250,'Amran,245,YE,Yemen,AM,YE-AM,19,governorate,,,عمران,16.23021800,43.90983400,Asia/Aden,Q275720
 1237,Abyan,245,YE,Yemen,AB,YE-AB,01,governorate,,,أبين,13.78620200,46.14176600,Asia/Aden,Q241774
 5467,"Ad Dali'",245,YE,Yemen,DA,YE-DA,10,governorate,,,الضالع,13.70000000,44.73000000,Asia/Aden,Q241087
+1242,Adan,245,YE,Yemen,AD,YE-AD,02,governorate,,,عدن,12.83333300,44.91666700,Asia/Aden,Q275729
 1240,"Al Bayda'",245,YE,Yemen,BA,YE-BA,20,governorate,,,البيضاء,14.34166000,45.39442200,Asia/Aden,Q221212
 1241,"Al Hudaydah",245,YE,Yemen,HU,YE-HU,08,governorate,,,الحديدة,15.11593260,42.84478500,Asia/Aden,Q275755
 1243,"Al Jawf",245,YE,Yemen,JA,YE-JA,21,governorate,,,الجوف,16.68973300,45.61155600,Asia/Aden,Q328128
 1251,"Al Mahrah",245,YE,Yemen,MR,YE-MR,03,governorate,,,المهرة,17.00000000,51.50000000,Asia/Aden,Q275752
 1235,"Al Mahwit",245,YE,Yemen,MW,YE-MW,10,governorate,,,المحويت,15.38715100,43.56629600,Asia/Aden,Q388280
 1232,"Amanat Al Asimah",245,YE,Yemen,SA,YE-SA,16,municipality,,,"أمانة العاصمة",15.35000000,44.20000000,Asia/Aden,Q2471
+1250,Amran,245,YE,Yemen,AM,YE-AM,19,governorate,,,عمران,16.23021800,43.90983400,Asia/Aden,Q275720
 1246,Dhamar,245,YE,Yemen,DH,YE-DH,11,governorate,,,ذمار,14.73842680,44.27095970,Asia/Aden,Q328193
 1238,Hadhramaut,245,YE,Yemen,HD,YE-HD,04,governorate,,,حضرموت,16.73230220,48.60849670,Asia/Aden,Q241135
 1244,Hajjah,245,YE,Yemen,HJ,YE-HJ,22,governorate,,,حجة,16.00000000,43.25000000,Asia/Aden,Q328158

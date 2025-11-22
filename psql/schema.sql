@@ -29,12 +29,16 @@ CREATE TABLE `cities` (
   `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `country_id` mediumint unsigned NOT NULL,
   `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `level` int DEFAULT NULL,
+  `parent_id` int unsigned DEFAULT NULL,
   `latitude` decimal(10,8) NOT NULL,
   `longitude` decimal(11,8) NOT NULL,
   `native` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `population` bigint unsigned DEFAULT NULL,
   `timezone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IANA timezone identifier (e.g., America/New_York)',
   `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
-  `created_at` timestamp NOT NULL DEFAULT '2014-01-01 06:31:01',
+  `created_at` timestamp NOT NULL DEFAULT '2014-01-01 12:01:01',
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `flag` tinyint(1) NOT NULL DEFAULT '1',
   `wikiDataId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
@@ -43,7 +47,7 @@ CREATE TABLE `cities` (
   KEY `cities_test_ibfk_2` (`country_id`),
   CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
   CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=157196 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=160139 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,4 +179,4 @@ CREATE TABLE `subregions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-11-18 12:10:34
+-- Dump completed on 2025-11-22 10:21:32
