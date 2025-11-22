@@ -113,6 +113,7 @@ class ExportSqlServer extends Command
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,
                 wikiDataId NVARCHAR(255) NULL,
+                population NVARCHAR(255) NULL,
                 CONSTRAINT FK_states_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
             );",
             'cities' => "
@@ -124,9 +125,13 @@ class ExportSqlServer extends Command
                 state_code NVARCHAR(255) NOT NULL,
                 country_id INT NOT NULL,
                 country_code NCHAR(2) NOT NULL,
+                type NVARCHAR(191) NULL,
+                level INT NULL,
+                parent_id INT NULL,
                 latitude DECIMAL(10,8) NOT NULL,
                 longitude DECIMAL(11,8) NOT NULL,
                 native NVARCHAR(255) NULL,
+                population BIGINT NULL,
                 timezone NVARCHAR(255) NULL,
                 translations NVARCHAR(MAX),
                 created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',
