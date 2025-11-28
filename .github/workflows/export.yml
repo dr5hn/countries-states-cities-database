@@ -162,6 +162,16 @@ jobs:
         working-directory: ./bin
         run: php console export:json
 
+      - name: Convert JSON to GeoJSON
+        working-directory: ./bin
+        run: |
+          python3 scripts/export/json_to_geojson.py
+
+      - name: Convert JSON to Toon Format
+        working-directory: ./bin
+        run: |
+          python3 scripts/export/json_to_toon.py
+
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
@@ -292,6 +302,20 @@ jobs:
             gzip -9 -k -f json/cities.json
             echo "  ✓ json/cities.json.gz"
           fi
+          
+          # TOON Files
+          echo "📄 Compressing TOON files..."
+          if [ -f toon/cities.toon ]; then
+            gzip -9 -k -f toon/cities.toon
+            echo "  ✓ toon/cities.toon.gz"
+          fi
+
+          # GEOJSON Files
+          echo "📄 Compressing GEOJSON files..."
+          if [ -f geojson/cities.geojson ]; then
+            gzip -9 -k -f geojson/cities.geojson
+            echo "  ✓ geojson/cities.geojson.gz"
+          fi
 
           # XML Files
           echo "📄 Compressing XML files..."
@@ -350,7 +374,7 @@ jobs:
           echo "✅ All compression complete!"
           echo ""
           echo "📊 Compressed file sizes:"
-          ls -lh json/*.gz xml/*.gz yml/*.gz csv/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
+          ls -lh json/*.gz toon/*.gz geojson/*.gz xml/*.gz yml/*.gz csv/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
 
       - name: Update README.md
         run: |
@@ -368,7 +392,7 @@ jobs:
             📦 Export database formats - ${{ env.current_date }}
 
             ✅ All export formats completed successfully:
-            - JSON/XML/YAML/CSV: Structured data exports
+            - JSON/TOON/GEOJSON/XML/YAML/CSV: Structured data exports
             - MySQL/PostgreSQL: SQL dump exports
             - SQLite: Database file exports
             - SQL Server/MongoDB: Alternative format exports
@@ -393,6 +417,8 @@ jobs:
 
             ### ✅ Generated Formats
             - **JSON** - Structured data format
+            - **TOON** - Structured data format
+            - **GEOJSON** - Structured data format
             - **XML** - Markup language format
             - **YAML** - Human-readable format
             - **CSV** - Spreadsheet format
