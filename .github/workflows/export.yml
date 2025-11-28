@@ -162,6 +162,16 @@ jobs:
         working-directory: ./bin
         run: php console export:json
 
+      - name: Convert JSON to GeoJSON
+        working-directory: ./bin
+        run: |
+          python3 scripts/export/json_to_geojson.py
+
+      - name: Convert JSON to Toon Format
+        working-directory: ./bin
+        run: |
+          python3 scripts/export/json_to_toon.py
+
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
