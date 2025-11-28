@@ -392,7 +392,7 @@ jobs:
             📦 Export database formats - ${{ env.current_date }}
 
             ✅ All export formats completed successfully:
-            - JSON/XML/YAML/CSV: Structured data exports
+            - JSON/TOON/GEOJSON/XML/YAML/CSV: Structured data exports
             - MySQL/PostgreSQL: SQL dump exports
             - SQLite: Database file exports
             - SQL Server/MongoDB: Alternative format exports
@@ -417,6 +417,8 @@ jobs:
 
             ### ✅ Generated Formats
             - **JSON** - Structured data format
+            - **TOON** - Structured data format
+            - **GEOJSON** - Structured data format
             - **XML** - Markup language format
             - **YAML** - Human-readable format
             - **CSV** - Spreadsheet format
