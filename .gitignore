@@ -30,6 +30,8 @@ psql/world.sql
 psql/cities.sql
 sqlserver/world.sql
 sqlserver/cities.sql
+toon/cities.toon
+geojson/cities.geojson
 
 # Exclude uncompressed large SQLite files
 sqlite/world.sqlite3
@@ -55,6 +57,8 @@ csv/translations.csv
 # Always track ALL compressed files (.gz)
 !*.sql.gz
 !*.json.gz
+!*.toon.gz
+!*.geojson.gz
 !*.sqlite3.gz
 .claude/*
 !.claude/CLAUDE.md
