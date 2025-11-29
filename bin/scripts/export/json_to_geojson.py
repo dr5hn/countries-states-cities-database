@@ -45,8 +45,8 @@ def json_points_to_geojson(json_path: str, geojson_path: str) -> None:
 
 
 if __name__ == "__main__":
-    json_dir = Path("./json")
-    geojson_dir = Path("./geojson")
+    json_dir = Path("../json")
+    geojson_dir = Path("../geojson")
 
     # Base names of the files (without extension)
     files = ["cities", "states", "countries"]
