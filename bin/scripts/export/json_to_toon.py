@@ -70,8 +70,8 @@ def json_file_to_toon_file(
 
 
 if __name__ == "__main__":
-    json_dir = Path("./json")
-    toon_dir = Path("./toon")
+    json_dir = Path("../json")
+    toon_dir = Path("../toon")
 
     # List of base filenames (without extension)
     files = ["countries", "cities", "states"]
