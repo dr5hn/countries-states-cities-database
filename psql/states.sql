@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict 61wpxyhyfMAwH9fYeOCciawYwaGwvaQjrTSBGSDge95CRcaHHUIwZtXZwuZaASh
+\restrict 3QwcSocbI58jz5Q5Dnpb6lZ2b5XCTzdgFPV6psICeQdre8Hz3qZb2WFfQsFR17l
 
 -- Dumped from database version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
 -- Dumped by pg_dump version 16.10 (Ubuntu 16.10-1.pgdg24.04+1)
@@ -5384,13 +5384,16 @@ INSERT INTO public.states VALUES (5811, 'Tallinn', 69, 'EE', NULL, '784', 'EE-78
 INSERT INTO public.states VALUES (5812, 'Tartu', 69, 'EE', NULL, '793', 'EE-793', 'urban municipality', 2, 3557, 'Tartu', 58.37800000, 26.72900000, 'Europe/Tallinn', '{"et": "Tartu", "ar": "تارتو", "de": "Tartu", "es": "Tartu", "fr": "Tartu", "it": "Tartu", "ja": "タルトゥ", "ko": "타르투", "nl": "Tartu", "pl": "Tartu", "pt": "Tartu", "ru": "Тарту", "tr": "Tartu", "uk": "Тарту", "zh": "塔尔图", "br": "Tartu", "pt-BR": "Tartu", "hr": "Tartu", "fa": "تارتو", "zh-CN": "塔尔图", "hi": "तारतू"}', '2025-11-18 11:44:31', '2025-11-21 18:52:43', 1, 'Q13972', NULL);
 INSERT INTO public.states VALUES (5813, 'Viljandi', 69, 'EE', NULL, '897', 'EE-897', 'urban municipality', 2, 3556, 'Viljandi', 58.36390000, 25.59000000, 'Europe/Tallinn', '{"et": "Viljandi", "ar": "فيلياندي", "de": "Viljandi", "es": "Viljandi", "fr": "Viljandi", "it": "Viljandi", "ja": "ヴィリャンディ", "ko": "빌리안디", "nl": "Viljandi", "pl": "Viljandi", "pt": "Viljandi", "ru": "Вильянди", "tr": "Viljandi", "uk": "Вільянді", "zh": "維爾揚迪", "br": "Viljandi", "pt-BR": "Viljandi", "hr": "Viljandi", "fa": "ویلجندی", "zh-CN": "维尔扬迪", "hi": "विलजंडी"}', '2025-11-18 11:44:31', '2025-11-21 18:52:44', 1, 'Q193832', NULL);
 INSERT INTO public.states VALUES (5814, 'Võru', 69, 'EE', NULL, '919', 'EE-919', 'urban municipality', 2, 3560, 'Võru', 57.84310000, 27.01420000, 'Europe/Tallinn', '{"br": "Võru", "ko": "버루", "pt-BR": "Võru", "pt": "Võru", "nl": "Võru", "hr": "Võru", "fa": "وورو", "de": "Võru", "es": "Võru", "fr": "Võru", "ja": "ヴォル", "it": "Võru", "zh-CN": "沃鲁", "tr": "Võru", "ru": "Выру", "uk": "Виру", "pl": "Võru", "hi": "वोरु", "ar": "فورو"}', '2025-11-18 11:44:31', '2025-11-21 18:56:00', 1, 'Q193838', NULL);
+INSERT INTO public.states VALUES (5815, 'French Guiana', 76, 'GF', NULL, 'GF', NULL, 'region', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-03 06:37:19', '2025-12-02 19:40:04', 1, NULL, NULL);
+INSERT INTO public.states VALUES (5816, 'Curaçao', 249, 'CW', NULL, '00', NULL, 'country', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-03 06:37:19', '2025-12-02 19:40:07', 1, NULL, NULL);
+INSERT INTO public.states VALUES (5817, 'Western Sahara', 244, 'EH', NULL, '00', NULL, 'region', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2025-12-03 06:37:19', '2025-12-02 19:40:09', 1, NULL, NULL);
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5814, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5817, true);
 
 
 --
@@ -5420,5 +5423,5 @@ ALTER TABLE ONLY public.states
 -- PostgreSQL database dump complete
 --
 
-\unrestrict 61wpxyhyfMAwH9fYeOCciawYwaGwvaQjrTSBGSDge95CRcaHHUIwZtXZwuZaASh
+\unrestrict 3QwcSocbI58jz5Q5Dnpb6lZ2b5XCTzdgFPV6psICeQdre8Hz3qZb2WFfQsFR17l
 
