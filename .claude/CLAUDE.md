@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-A comprehensive geographical database (151k+ cities, 5k+ states, 250 countries) available in 9 formats. This is a **data repository** focused on data integrity and multi-format exports.
+A comprehensive geographical database (153k+ cities, 5k+ states, 250 countries) available in 9 formats. This is a **data repository** focused on data integrity and multi-format exports.
 
 ## Architecture: Two-Phase Build System
 
@@ -26,7 +26,7 @@ contributions/     →  [Python Import]  →  MySQL  →  [PHP Export]  →  jso
 **Phase 2: PHP Export** (`bin/Commands/Export*.php`)
 - Symfony Console commands (one per format)
 - Reads directly from MySQL via SELECT queries
-- Memory limit: unlimited (handles 151k+ records)
+- Memory limit: unlimited
 - Auto-discovered by `bin/console` application
 
 ## Data Contribution Workflows
@@ -73,7 +73,7 @@ mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8
 mysql -uroot -proot --default-character-set=utf8mb4 world < sql/world.sql
 
 # Validate
-mysql -uroot -proot -e "USE world; SELECT COUNT(*) FROM cities;"  # Should be ~151,024
+mysql -uroot -proot -e "USE world; SELECT COUNT(*) FROM cities;"
 ```
 
 ### Import & Export (Local Testing)
@@ -241,7 +241,7 @@ mysql -uroot -e "USE world; SHOW TABLES;"  # Run queries
 
 ## Performance Expectations
 
-- MySQL import: ~3 seconds (151k+ records)
+- MySQL import: ~3 seconds
 - JSON export: ~4 seconds
 - CSV export: ~1 second
 - XML export: ~9 seconds

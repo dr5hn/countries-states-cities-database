@@ -8,15 +8,15 @@
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in JSON, MYSQL, PSQL, SQLITE, SQLSERVER, XML, YAML, MONGODB & CSV format.
+Full Database of city state country available in **11 formats**: JSON, MYSQL, PSQL, SQLITE, SQLSERVER, XML, YAML, MONGODB, CSV, GEOJSON & TOON.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## Why Choose This Database?
 
-* ✅ **Most Comprehensive** - 151,024+ cities from 250 countries with timezone & multilingual support (19 languages)
+* ✅ **Most Comprehensive** - 153K+ cities from 250 countries with 100% timezone coverage & multilingual support (19 languages)
 * ✅ **Multiple Integration Options** - NPM/PyPI packages, REST API, Export Tool, or direct downloads
 * ✅ **Production Ready** - Trusted by thousands of developers, monthly updates
-* ✅ **Every Format You Need** - JSON, SQL, MongoDB, CSV, XML, YAML - use what fits your stack
+* ✅ **Every Format You Need** - JSON, SQL, MongoDB, CSV, XML, YAML, GeoJSON, Toon - use what fits your stack
 * ✅ **100% Free & Open Source** - ODbL licensed, no usage restrictions, developer-friendly
 
 Save hundreds of hours collecting and maintaining geographical data. Get accurate, structured, ready-to-use data right now.
@@ -113,32 +113,38 @@ npm install @countrystatecity/timezones
 
 ## Available Formats
 
-- JSON
-- MYSQL
-- PSQL
-- SQLITE
-- SQLSERVER
-- MONGODB
-- XML
-- YAML
-- CSV
+### Core Formats
+- **JSON** - Lightweight data interchange format
+- **MYSQL** - MySQL database dumps with complete schema
+- **PSQL** - PostgreSQL database exports
+- **SQLITE** - Portable, self-contained database files
+- **SQLSERVER** - Microsoft SQL Server compatible scripts
+- **MONGODB** - NoSQL document collections + dump
+- **XML** - Structured markup language format
+- **YAML** - Human-readable configuration format
+- **CSV** - Spreadsheet-compatible tabular data
 
-**Note:** DuckDB format is available via manual conversion from SQLite files. See the [Export to DuckDB](#export-to-duckdb) section for instructions.
+### Geographic & AI-Optimized Formats
+- **GEOJSON** - RFC 7946 standard for geographic features (Point geometry)
+- **TOON** - Token-Oriented Object Notation for LLM consumption (~40% fewer tokens vs JSON) [📖 Format Spec](https://github.com/toon-format/toon)
+
+### Optional Formats
+- **DuckDB** - Available via manual conversion from SQLite files. See [Export to DuckDB](#export-to-duckdb) for instructions.
 
 ## Distribution Files Info
 
-| File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV |
-| :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- |
-| Regions                    | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
-| Subregions                 | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
-| Countries                  | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
-| States                     | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
-| Cities                     | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | ✅🗜️ | ✅  | ✅🗜️ |
-| Country+States             | ✅🗜️ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+Cities             | ✅🗜️ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  |
-| Country+State+Cities/World | ✅🗜️ | ✅🗜️  | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  |
+| File                       | JSON | MYSQL | PSQL | SQLITE | SQLSERVER | MONGODB | XML | YAML | CSV | GEOJSON | TOON |
+| :------------------------- | :--- | :---- | :--- | :----- | :-------- | :------ | :-- | :--- | :-- | :------ | :--- |
+| Regions                    | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | ✅ | ✅  | ✅ | NA      | NA   |
+| Subregions                 | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | ✅ | ✅  | ✅ | NA      | NA   |
+| Countries                  | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | ✅ | ✅  | ✅ | ✅      | ✅   |
+| States                     | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | ✅ | ✅  | ✅ | ✅      | ✅   |
+| Cities                     | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | ✅ | ✅  | ✅ | ✅    | ✅ |
+| Country+States             | ✅ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  | NA      | NA   |
+| Country+Cities             | ✅ | NA    | NA   | NA     | NA        | NA      | NA  | NA   | NA  | NA      | NA   |
+| Country+State+Cities/World | ✅ | ✅  | ✅   | ✅     | ✅        | ✅      | NA  | NA   | NA  | NA      | NA   |
 
-**Legend:** ✅ = Available | 🗜️ = Compressed (.gz) version also available
+**Legend:** ✅ = Available | NA = Not applicable for this format
 
 
 ## Demo
@@ -150,11 +156,11 @@ https://dr5hn.github.io/countries-states-cities-database/
 Total Regions : 6 <br>
 Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
-Total States/Regions/Municipalities : 5,038 <br>
-Total Cities/Towns/Districts : 151,024 <br>
-Total Timezones : 423 (97.9% IANA coverage) <br>
+Total States/Regions/Municipalities : 5,299 <br>
+Total Cities/Towns/Districts : 153,765 <br>
+Total Timezones : 423 (100% IANA coverage) <br>
 
-Last Updated On : 03th Dec 2025
+Last Updated On : 3rd Dec 2025
 
 ## Repository Architecture
 
@@ -217,13 +223,22 @@ The conversion script will create DuckDB database files that maintain the same s
 ### Export Performance
 | Format | Export Time | World DB Size | Compressed (.gz) |
 |--------|-------------|---------------|------------------|
-| **CSV** | ~1s | 45 MB | 9 MB (fastest) |
-| **JSON** | ~4s | 161 MB | 18 MB |
-| **MongoDB** | ~1s | 140 MB | - |
-| **SQL** | ~3s | 180 MB | 22 MB |
-| **SQLite** | ~45s | 85 MB | - |
-| **XML** | ~9s | 220 MB | 15 MB |
-| **YAML** | ~17s | 195 MB | - |
+| **CSV** | ~1s | 40 MB | 9 MB (fastest) |
+| **JSON** | ~4s | 271 MB | 18 MB |
+| **MongoDB** | ~1s | 30 MB | 20 MB (dump) |
+| **SQL** | ~3s | 86 MB | 22 MB |
+| **SQLite** | ~45s | 89 MB | - |
+| **XML** | ~9s | 91 MB | 15 MB |
+| **YAML** | ~17s | 68 MB | - |
+| **GeoJSON** | ~8s | 208 MB | 24 MB |
+| **Toon** | ~5s | 23 MB | 20 MB |
+
+> **💡 Format Recommendations:**
+> - **Web/Mobile Apps**: Use JSON or CSV for easy parsing
+> - **Databases**: Import SQL, PSQL, or SQLite files directly
+> - **GIS/Mapping**: Use GeoJSON for Leaflet, Mapbox, or PostGIS
+> - **AI/LLM Projects**: Use TOON format to reduce token usage by ~40%
+> - **Analytics**: DuckDB or SQLite for fast analytical queries
 
 ### API Response Times (Average)
 - Countries: ~50ms | States: ~180ms | Cities by State: ~80ms | Search: ~120ms
