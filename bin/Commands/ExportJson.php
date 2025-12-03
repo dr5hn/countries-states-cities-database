@@ -81,6 +81,9 @@ class ExportJson extends Command
                     $countriesArray[$m]['subregion'] = $row['subregion'];
                     $countriesArray[$m]['subregion_id'] = $row['subregion_id'] !== null ? (int)$row['subregion_id'] : null;
                     $countriesArray[$m]['nationality'] = $row['nationality'];
+                    $countriesArray[$m]['area_sq_km'] = $row['area_sq_km'] !== null ? (int)$row['area_sq_km'] : null;
+                    $countriesArray[$m]['postal_code_format'] = $row['postal_code_format'];
+                    $countriesArray[$m]['postal_code_regex'] = $row['postal_code_regex'];
                     $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
                     $countriesArray[$m]['translations'] = json_decode($row['translations'], true);
                     $countriesArray[$m]['latitude'] = $row['latitude'];
@@ -116,6 +119,9 @@ class ExportJson extends Command
                 $countryStateCityArray[$k]['subregion'] = $country['subregion'];
                 $countryStateCityArray[$k]['subregion_id'] = $country['subregion_id'] !== null ? (int)$country['subregion_id'] : null;
                 $countryStateCityArray[$k]['nationality'] = $country['nationality'];
+                $countryStateCityArray[$k]['area_sq_km'] = $country['area_sq_km'] !== null ? (int)$country['area_sq_km'] : null;
+                $countryStateCityArray[$k]['postal_code_format'] = $country['postal_code_format'];
+                $countryStateCityArray[$k]['postal_code_regex'] = $country['postal_code_regex'];
                 $countryStateCityArray[$k]['timezones'] = $country['timezones'];
                 $countryStateCityArray[$k]['translations'] = $country['translations'];
                 $countryStateCityArray[$k]['latitude'] = $country['latitude'];
