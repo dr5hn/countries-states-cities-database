@@ -81,6 +81,9 @@ class ExportJson extends Command
                     $countriesArray[$m]['subregion'] = $row['subregion'];
                     $countriesArray[$m]['subregion_id'] = $row['subregion_id'] !== null ? (int)$row['subregion_id'] : null;
                     $countriesArray[$m]['nationality'] = $row['nationality'];
+                    $countriesArray[$m]['area_sq_km'] = $row['area_sq_km'] !== null ? (int)$row['area_sq_km'] : null;
+                    $countriesArray[$m]['postal_code_format'] = $row['postal_code_format'];
+                    $countriesArray[$m]['postal_code_regex'] = $row['postal_code_regex'];
                     $countriesArray[$m]['timezones'] = json_decode($row['timezones'], true);
                     $countriesArray[$m]['translations'] = json_decode($row['translations'], true);
                     $countriesArray[$m]['latitude'] = $row['latitude'];

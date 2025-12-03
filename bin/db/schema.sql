@@ -19,11 +19,11 @@ DROP TABLE IF EXISTS `countries`;
 DROP TABLE IF EXISTS `subregions`;
 DROP TABLE IF EXISTS `regions`;
 
--- MySQL dump 10.13  Distrib 8.0.43, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 9.3.0, for macos15.2 (arm64)
 --
 -- Host: localhost    Database: world
 -- ------------------------------------------------------
--- Server version	8.0.43-0ubuntu0.24.04.2
+-- Server version	9.3.0
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -101,6 +101,9 @@ CREATE TABLE `countries` (
   `subregion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subregion_id` mediumint unsigned DEFAULT NULL,
   `nationality` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `area_sq_km` double DEFAULT NULL,
+  `postal_code_format` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postal_code_regex` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `timezones` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `latitude` decimal(10,8) DEFAULT NULL,
@@ -195,6 +198,6 @@ CREATE TABLE `cities` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-03  6:37:32
+-- Dump completed on 2025-12-03 18:48:35
 
 SET FOREIGN_KEY_CHECKS=1;
