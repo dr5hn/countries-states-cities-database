@@ -162,7 +162,7 @@ class ExportJson extends Command
                         $statesArray[$i]['timezone'] = $state['timezone'];
                         $statesArray[$i]['translations'] = json_decode($state['translations'], true);
                         $statesArray[$i]['wikiDataId'] = $state['wikiDataId'];
-                        $statesArray[$i]['population'] = $state['population'];
+                        $statesArray[$i]['population'] = $state['population'] !== null ? (int)$state['population'] : null;
 
                         // For Country State Array
                         $stateArr = array(
