@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: world
 -- ------------------------------------------------------
--- Server version	8.0.44-0ubuntu0.24.04.1
+-- Server version	8.0.44-0ubuntu0.24.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -51,4 +51,4 @@ INSERT INTO `regions` VALUES (1,'Africa','{\"br\": \"Afrika\", \"ko\": \"아프�
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-12-03 14:46:09
+-- Dump completed on 2025-12-13  9:10:48
