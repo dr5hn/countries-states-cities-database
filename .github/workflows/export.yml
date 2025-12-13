@@ -234,12 +234,17 @@ jobs:
           PGPASSWORD: postgres
         run: |
           mkdir -p psql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
+
+          # Remove \restrict and \unrestrict commands from all psql files
+          for f in psql/*.sql; do
+            grep -v '^\\\(un\)\?restrict ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+          done
 
       - name: Export SQLite
         run: |
@@ -302,7 +307,7 @@ jobs:
             gzip -9 -k -f json/cities.json
             echo "  ✓ json/cities.json.gz"
           fi
-          
+
           # TOON Files
           echo "📄 Compressing TOON files..."
           if [ -f toon/cities.toon ]; then
