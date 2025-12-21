@@ -1,14 +1,14 @@
-![banner](https://github.com/dr5hn/countries-states-cities-database/raw/master/.github/images/banner.png)
+![banner](.github/images/banner.png)
 
 
 # 🌍 Countries States Cities Database
-[![License: ODbL-1.0](https://img.shields.io/badge/License-ODbL--1.0-brightgreen.svg)](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE)
+[![License: ODbL-1.0](https://img.shields.io/badge/License-ODbL--1.0-brightgreen.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dr5hn/countries-states-cities-database.svg?style=flat-square)](https://github.com/dr5hn/countries-states-cities-database/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/dr5hn/countries-states-cities-database.svg?style=flat-square)](https://github.com/dr5hn/countries-states-cities-database/network)
 ![release](https://img.shields.io/github/v/release/dr5hn/countries-states-cities-database?style=flat-square)
 ![size](https://img.shields.io/github/repo-size/dr5hn/countries-states-cities-database?label=size&style=flat-square)
 
-Full Database of city state country available in **11 formats**: JSON, MYSQL, PSQL, SQLITE, SQLSERVER, XML, YAML, MONGODB, CSV, GEOJSON & TOON.
+Full Database of city state country available in **11+ formats**: JSON, MYSQL, PSQL, SQLITE, SQLSERVER, XML, YAML, MONGODB, CSV, GEOJSON, TOON & more.
 All Countries, States & Cities are Covered & Populated with Different Combinations & Versions.
 
 ## Why Choose This Database?
@@ -21,7 +21,7 @@ All Countries, States & Cities are Covered & Populated with Different Combinatio
 
 Save hundreds of hours collecting and maintaining geographical data. Get accurate, structured, ready-to-use data right now.
 
-> **📦 Clone Tip:** Use `git clone --depth 1` for faster cloning (~1.2GB vs 5.4GB full history)
+> **📦 Clone Tip:** Use `git clone --depth 1` for faster cloning (shallow clone ~1.5GB vs ~9GB full history)
 
 ## Table of Contents
 - [CSC Platform Ecosystem](#-csc-platform-ecosystem) • [Integration Methods](#-choose-your-integration-method) • [Official Packages](#-official-packages)
@@ -37,6 +37,7 @@ Easily access all the tools and services in the Countries States Cities platform
 | Tool            | Description                                      | Link                                      |
 |-----------------|--------------------------------------------------|-------------------------------------------|
 | **NPM Package**   | Official JavaScript/TypeScript package           | [@countrystatecity/countries](https://www.npmjs.com/package/@countrystatecity/countries) |
+| **Encyclopedia**  | Browse geographical data and country profiles    | [countrystatecity.org](https://countrystatecity.org/) |
 | **Documentation** | Complete API documentation and guides           | [docs.countrystatecity.in](https://docs.countrystatecity.in/) |
 | **Demo Database** | Browse the full database online                  | [demo.countrystatecity.in](https://demo.countrystatecity.in/) |
 | **API Service**   | Programmatic access to countries, states, cities | [countrystatecity.in](https://countrystatecity.in/)           |
@@ -68,7 +69,7 @@ import { Country, State, City } from '@countrystatecity/countries';
 const usStates = State.getStatesOfCountry('US');
 ```
 
-📖 [NPM Documentation](https://www.npmjs.com/package/@countrystatecity/countries) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity)
+📖 [NPM Documentation](https://www.npmjs.com/package/@countrystatecity/countries) · 📂 [GitHub](https://github.com/dr5hn/countrystatecity-countries)
 
 ### Python (PyPI)
 
@@ -93,7 +94,7 @@ Dedicated timezone data package for JavaScript/TypeScript applications:
 npm install @countrystatecity/timezones
 ```
 
-📂 [GitHub Repository](https://github.com/dr5hn/countrystatecity)
+📂 [GitHub Repository](https://github.com/dr5hn/countrystatecity-timezones)
 
 ## API 🚀
 
@@ -128,8 +129,8 @@ npm install @countrystatecity/timezones
 - **GEOJSON** - RFC 7946 standard for geographic features (Point geometry)
 - **TOON** - Token-Oriented Object Notation for LLM consumption (~40% fewer tokens vs JSON) [📖 Format Spec](https://github.com/toon-format/toon)
 
-### Optional Formats
-- **DuckDB** - Available via manual conversion from SQLite files. See [Export to DuckDB](#export-to-duckdb) for instructions.
+### Optional Formats (Manual Conversion Required)
+- **DuckDB** - Convert from SQLite files using provided script (not auto-generated). See [Export to DuckDB](#export-to-duckdb) for instructions.
 
 ## Distribution Files Info
 
@@ -158,9 +159,9 @@ Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
-Total Timezones : 423 (100% IANA coverage) <br>
+Total Timezones : 427 (100% IANA coverage) <br>
 
-Last Updated On : 13th Dec 2025
+Last Updated On: December 13, 2025
 
 ## Repository Architecture
 
@@ -238,19 +239,19 @@ The conversion script will create DuckDB database files that maintain the same s
 > - **Databases**: Import SQL, PSQL, or SQLite files directly
 > - **GIS/Mapping**: Use GeoJSON for Leaflet, Mapbox, or PostGIS
 > - **AI/LLM Projects**: Use TOON format to reduce token usage by ~40%
-> - **Analytics**: DuckDB or SQLite for fast analytical queries
+> - **Analytics**: SQLite for ready-to-use queries, or convert to DuckDB for advanced analytics
 
-### API Response Times (Average)
+### API Response Times (Estimated Average)
 - Countries: ~50ms | States: ~180ms | Cities by State: ~80ms | Search: ~120ms
 
 ### System Requirements
 - **Contributors**: Git + text editor (no local setup needed)
-- **Maintainers**: PHP 8.0+, MySQL 5.7+, Python 3.8+, 4GB RAM, 10GB disk
+- **Maintainers**: PHP 8.0+, MySQL 5.7+, Python 3.8+ (with PyMySQL), Composer, 4GB RAM, 10GB disk
 - **End Users**: No requirements - just download!
 
 ## 📄 License
 
-**[Open Database License (ODbL)](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE)** - 100% free and open source!
+**[Open Database License (ODbL)](LICENSE)** - 100% free and open source!
 
 ✅ Use commercially, modify freely, share openly • 📝 Just give credit and keep derivatives open
 
@@ -289,7 +290,7 @@ Use our web tool to browse, search, and submit data change requests with a strea
 }
 ```
 
-📖 **Full guide**: [contributions/README.md](contributions/README.md) | [Contribution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md)
+📖 **Full guide**: [contributions/README.md](contributions/README.md) | [Contribution Guidelines](.github/CONTRIBUTING.md) | [Maintainer Docs](.claude/CLAUDE.md)
 
 **Note:** Only edit JSON in `contributions/` - GitHub Actions auto-generates all export formats!
 
@@ -323,6 +324,7 @@ Find and use this dataset across the web - choose the platform that fits your wo
 
 | Platform | Best For | Access |
 |----------|----------|--------|
+| 📚 **[Encyclopedia](https://countrystatecity.org/)** | Browse country profiles, geographical data | [Visit Encyclopedia](https://countrystatecity.org/) |
 | 📊 **[Kaggle Dataset](https://www.kaggle.com/datasets/darshangada/countries-states-cities-database/data)** | Data science, ML projects, notebooks | [Download on Kaggle](https://www.kaggle.com/datasets/darshangada/countries-states-cities-database/data) |
 | 🗃️ **[Data.world](https://data.world/dr5hn/country-state-city)** | Data collaboration, business analytics | [View on Data.world](https://data.world/dr5hn/country-state-city) |
 | 📦 **[NPM Registry](https://www.npmjs.com/package/@countrystatecity/countries)** | JavaScript/TypeScript developers | `npm install @countrystatecity/countries` |
@@ -351,7 +353,7 @@ gadadarshan[at]gmail[dot]com
 
 ## Disclaimer
 
-While we strive for accuracy, this community-maintained database may contain errors or not reflect latest geopolitical changes. Users should verify critical data with official sources and use at their own discretion. Licensed under ODbL - see [LICENSE](https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE) for details.
+While we strive for accuracy, this community-maintained database may contain errors or not reflect latest geopolitical changes. Users should verify critical data with official sources and use at their own discretion. Licensed under ODbL - see [LICENSE](LICENSE) for details.
 
 **Report issues**: [GitHub Issues](https://github.com/dr5hn/countries-states-cities-database/issues)
 

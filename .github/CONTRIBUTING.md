@@ -68,10 +68,11 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 
 ### Understanding Export Formats
 
-All data you contribute via JSON is automatically exported to **11 different formats**:
+All data you contribute via JSON is automatically exported to **11+ formats**:
 - **Core Formats**: JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV
 - **Geographic Format**: GeoJSON (RFC 7946 standard for mapping applications)
 - **AI-Optimized Format**: TOON (Token-Oriented Object Notation - reduces LLM token usage by ~40%)
+- **Optional Formats**: DuckDB (via manual conversion from SQLite)
 
 You don't need to worry about these formats - they're automatically generated from the MySQL database!
 
