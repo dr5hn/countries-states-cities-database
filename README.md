@@ -100,7 +100,7 @@ npm install @countrystatecity/timezones
 
 🎉 Introducing **REST API** for Countries States Cities Database.
 
-[API Documentation](https://docs.countrystatecity.in/)
+[API](https://countrystatecity.in/)
 
 [![banner](.github/images/api.png)](https://countrystatecity.in/)
 
