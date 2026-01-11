@@ -50,7 +50,6 @@ class ExportJson extends Command
             $countryStateArray = array();
             $countryCityArray = array();
             $countryStateCityArray = array();
-            $stateCityArray = array();
             $regionsArray = array();
             $subregionsArray = array();
             $stateNamesArray = array();
@@ -227,15 +226,6 @@ class ExportJson extends Command
                         $stateArr['cities'] = $cityNamesArray;
                         array_push($countryStateCityArray[$k]['states'], $stateArr);
 
-                        // For States+Cities Array (flat structure with state containing cities)
-                        $stateCityArray[$i]['id'] = $stateId;
-                        $stateCityArray[$i]['name'] = $stateName;
-                        $stateCityArray[$i]['state_code'] = $state['country_code'] . '-' . $state['iso2'];
-                        $stateCityArray[$i]['latitude'] = $state['latitude'];
-                        $stateCityArray[$i]['longitude'] = $state['longitude'];
-                        $stateCityArray[$i]['country_id'] = $countryId;
-                        $stateCityArray[$i]['cities'] = $cityNamesArray;
-
                         $i++;
                     }
                 }
@@ -308,8 +298,7 @@ class ExportJson extends Command
                 '/json/cities.json' => $citiesArray,
                 '/json/countries+states.json' => $countryStateArray,
                 '/json/countries+cities.json' => $countryCityArray,
-                '/json/countries+states+cities.json' => $countryStateCityArray,
-                '/json/states+cities.json' => $stateCityArray
+                '/json/countries+states+cities.json' => $countryStateCityArray
             ];
 
             foreach ($exports as $file => $data) {
