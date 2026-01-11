@@ -51,8 +51,8 @@ csv/translations.csv
 
 # Keep schema files - they are small and useful
 !sql/schema.sql
-!psql/schema.sql
 !sqlserver/schema.sql
+# Note: psql/schema.sql excluded - PostgreSQL schema is properly exported via pg_dump commands
 
 # Always track ALL compressed files (.gz)
 !*.sql.gz

@@ -225,7 +225,6 @@ jobs:
           # Export MySQL schema only (no data)
           mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sql/schema.sql
           # Also export for other formats
-          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > psql/schema.sql
           mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sqlserver/schema.sql
           echo "✅ Schema files generated"
 
