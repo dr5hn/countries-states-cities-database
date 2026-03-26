@@ -224,9 +224,6 @@ jobs:
           echo "📋 Generating schema files..."
           # Export MySQL schema only (no data)
           mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sql/schema.sql
-          # Also export for other formats
-          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > psql/schema.sql
-          mysqldump -uroot -proot --no-data --single-transaction --add-drop-table world > sqlserver/schema.sql
           echo "✅ Schema files generated"
 
       - name: Export PostgreSQL SQL
@@ -234,6 +231,9 @@ jobs:
           PGPASSWORD: postgres
         run: |
           mkdir -p psql
+          # Export PostgreSQL schema only (no data)
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --schema-only --clean --if-exists --no-owner --no-acl > psql/schema.sql
+          # Export individual tables with data
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql

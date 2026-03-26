@@ -52,7 +52,7 @@ csv/translations.csv
 # Keep schema files - they are small and useful
 !sql/schema.sql
 !psql/schema.sql
-!sqlserver/schema.sql
+# Note: sqlserver/schema.sql excluded - not needed for SQL Server exports
 
 # Always track ALL compressed files (.gz)
 !*.sql.gz
