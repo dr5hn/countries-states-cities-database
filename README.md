@@ -161,7 +161,7 @@ Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
 Total Timezones : 427 (100% IANA coverage) <br>
 
-Last Updated On: December 13, 2025
+Last Updated On: March 28, 2026
 
 ## Repository Architecture
 
