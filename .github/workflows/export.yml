@@ -150,6 +150,7 @@ jobs:
           echo "country_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.countries;' -s)" >> $GITHUB_ENV
           echo "state_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.states;' -s)" >> $GITHUB_ENV
           echo "city_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.cities;' -s)" >> $GITHUB_ENV
+          echo "postcode_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(*) FROM world.postcodes;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
           echo "current_date=$(date +'%B %d, %Y')" >> $GITHUB_ENV
 
       - name: Composer Dependencies
@@ -192,6 +193,7 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
           # Export complete world database
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
 
@@ -200,13 +202,15 @@ jobs:
           echo "🧹 Adding DROP TABLE commands in correct order..."
           # Remove any existing DROP TABLE commands
           grep -v "DROP TABLE" sql/world.sql > sql/world_temp.sql
-          # Create new file with DROP TABLE commands in correct order (reverse of foreign key dependencies)
+          # Create new file with DROP TABLE commands in correct order (reverse of foreign key dependencies).
+          # postcodes drops first because it FKs to countries/states/cities.
           cat > sql/world.sql << 'EOF'
           -- -------------------------------------------------------------
           -- Generated from MySQL database
           -- Combined world database
           -- -------------------------------------------------------------
 
+          DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
@@ -239,6 +243,7 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
 
           # Remove \restrict and \unrestrict commands from all psql files
@@ -257,6 +262,7 @@ jobs:
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
+          mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
       - name: Export SQL Server
@@ -281,6 +287,11 @@ jobs:
           mongoimport --host localhost:27017 --db world --collection countries --file countries.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection states --file states.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection cities --file cities.json --jsonArray
+          if [ -s postcodes.json ] && [ "$(jq 'length' postcodes.json)" -gt 0 ]; then
+            mongoimport --host localhost:27017 --db world --collection postcodes --file postcodes.json --jsonArray
+          else
+            echo "Skipping postcodes import — empty or missing"
+          fi
           echo "Import completed"
 
           # Create a MongoDB dump
@@ -290,7 +301,7 @@ jobs:
           tar -czvf world-mongodb-dump.tar.gz mongodb-dump
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
-          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json
+          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json postcodes.json
 
       - name: Compress All Large Files
         run: |
@@ -353,6 +364,10 @@ jobs:
           gzip -9 -k -f sql/cities.sql
           echo "  ✓ sql/world.sql.gz"
           echo "  ✓ sql/cities.sql.gz"
+          if [ -f sql/postcodes.sql ]; then
+            gzip -9 -k -f sql/postcodes.sql
+            echo "  ✓ sql/postcodes.sql.gz"
+          fi
 
           # PostgreSQL SQL Files
           echo "📄 Compressing PostgreSQL SQL files..."
@@ -360,6 +375,10 @@ jobs:
           gzip -9 -k -f psql/cities.sql
           echo "  ✓ psql/world.sql.gz"
           echo "  ✓ psql/cities.sql.gz"
+          if [ -f psql/postcodes.sql ]; then
+            gzip -9 -k -f psql/postcodes.sql
+            echo "  ✓ psql/postcodes.sql.gz"
+          fi
 
           # SQLite Files
           echo "📄 Compressing SQLite files..."
@@ -403,6 +422,7 @@ jobs:
           COUNTRY_COUNT: ${{ env.country_count }}
           STATE_COUNT: ${{ env.state_count }}
           CITY_COUNT: ${{ env.city_count }}
+          POSTCODE_COUNT: ${{ env.postcode_count }}
         with:
           script: |
             const fs = require('fs');
@@ -468,6 +488,7 @@ jobs:
                 `- **Countries**: ${process.env.COUNTRY_COUNT}`,
                 `- **States**: ${process.env.STATE_COUNT}`,
                 `- **Cities**: ${process.env.CITY_COUNT}`,
+                `- **Postcodes**: ${process.env.POSTCODE_COUNT}`,
                 '',
                 '### Formats',
                 'JSON, MySQL, PostgreSQL, SQLite, SQL Server, XML, YAML, CSV, GeoJSON, Toon, MongoDB',
@@ -526,7 +547,7 @@ jobs:
           commit-message: |
             Export database formats - ${{ env.current_date }}
 
-            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
+            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities, ${{ env.postcode_count }} postcodes
             Large files (.gz) uploaded to GitHub Releases instead of git.
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
@@ -542,6 +563,7 @@ jobs:
             - **Countries**: ${{ env.country_count }}
             - **States**: ${{ env.state_count }}
             - **Cities**: ${{ env.city_count }}
+            - **Postcodes**: ${{ env.postcode_count }}
 
             ### What's in this PR
             Small export files (individual table JSON, CSV, SQL schema, etc.) that are useful in the repo.

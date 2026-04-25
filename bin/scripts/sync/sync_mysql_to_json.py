@@ -232,6 +232,50 @@ class MySQLToJSONSync:
         print(f"  ✓ Synced {len(subregions)} subregions to {output_file}")
         return len(subregions)
 
+    def sync_postcodes(self):
+        """Sync postcodes table to contributions/postcodes/<COUNTRY_CODE>.json files (issue #1039)."""
+        print("\n📦 Syncing postcodes...")
+
+        # Skip gracefully if the postcodes table doesn't exist (migration not run)
+        self.cursor.execute("SHOW TABLES LIKE 'postcodes'")
+        if not self.cursor.fetchone():
+            print("  ⚠ Table 'postcodes' does not exist — skipping")
+            return 0
+
+        columns = self.get_table_columns('postcodes')
+        excluded = self.get_excluded_columns()
+
+        # One file per country (mirrors the cities/ pattern)
+        self.cursor.execute("SELECT DISTINCT country_code FROM postcodes ORDER BY country_code")
+        country_codes = [row['country_code'] for row in self.cursor.fetchall()]
+
+        if not country_codes:
+            print("  ⚠ No postcodes in database — skipping file writes")
+            return 0
+
+        postcodes_dir = os.path.join('contributions', 'postcodes')
+        os.makedirs(postcodes_dir, exist_ok=True)
+
+        total = 0
+        for country_code in country_codes:
+            self.cursor.execute(
+                "SELECT * FROM postcodes WHERE country_code = %s ORDER BY id",
+                (country_code,)
+            )
+            rows = self.cursor.fetchall()
+
+            records = [self.process_row(row, columns, excluded) for row in rows]
+
+            output_file = os.path.join(postcodes_dir, f'{country_code}.json')
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(records, f, ensure_ascii=False, indent=2)
+
+            print(f"  ✓ {country_code}: {len(records):,} postcodes → {output_file}")
+            total += len(records)
+
+        print(f"\n  ✓ Total: {total:,} postcodes synced to {len(country_codes)} files")
+        return total
+
     def export_schema(self):
         """Export MySQL schema to bin/db/schema.sql using mysqldump"""
         import subprocess
@@ -247,8 +291,12 @@ class MySQLToJSONSync:
         user = self.conn.user
         database = self.conn.database
 
-        # Tables to export (in correct order respecting foreign keys)
+        # Tables to export (in correct order respecting foreign keys).
+        # postcodes is included only if it exists, since older databases may not have run the migration.
         tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+        self.cursor.execute("SHOW TABLES LIKE 'postcodes'")
+        if self.cursor.fetchone():
+            tables.append('postcodes')
 
         # Build mysqldump command
         # --no-data: only schema, no data
@@ -370,6 +418,7 @@ def main():
         countries_count = syncer.sync_countries()
         states_count = syncer.sync_states()
         cities_count = syncer.sync_cities()
+        postcodes_count = syncer.sync_postcodes()
 
         print("\n" + "=" * 60)
         print("✅ Sync complete!")
@@ -379,6 +428,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Postcodes: {postcodes_count:,}")
         print("\n💡 Next steps:")
         print("   1. Review changes: git diff")
         print("   2. Commit: git add . && git commit -m 'sync: update from MySQL'")

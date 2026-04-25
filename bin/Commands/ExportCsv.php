@@ -19,6 +19,7 @@ class ExportCsv extends Command
         'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
         'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
+        'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/csv/postcodes.csv'],
     ];
 
     private const TRANSLATION_FILES = [
@@ -57,10 +58,19 @@ class ExportCsv extends Command
                     ? file_get_contents($rootDir . $v['from'])
                     : throw new \RuntimeException("JSON file not found: {$v['from']}");
 
-                $csc = json_decode($jsonData, true)
-                    ?: throw new \RuntimeException("Invalid JSON in {$v['from']}");
+                $csc = json_decode($jsonData, true);
+                if (!is_array($csc)) {
+                    throw new \RuntimeException("Invalid JSON in {$v['from']}");
+                }
 
                 $fp = fopen($rootDir . $v['to'], 'w');
+
+                // Skip header writing for empty datasets — write empty CSV
+                if (empty($csc)) {
+                    fclose($fp);
+                    $io->note("Skipping $root (no records)");
+                    continue;
+                }
 
                 // Set headings
                 $headings = $csc[0];

@@ -20,6 +20,7 @@ class ExportYaml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/yml/countries.yml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/yml/states.yml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/yml/cities.yml', 'singular' => 'city'],
+        'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/yml/postcodes.yml', 'singular' => 'postcode'],
     ];
 
     private Filesystem $filesystem;
@@ -50,8 +51,10 @@ class ExportYaml extends Command
                     ? file_get_contents($rootDir . $config['from'])
                     : throw new \RuntimeException("JSON file not found: {$config['from']}");
 
-                $data = json_decode($jsonData, true)
-                    ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+                $data = json_decode($jsonData, true);
+                if (!is_array($data)) {
+                    throw new \RuntimeException("Invalid JSON in {$config['from']}");
+                }
 
                 $yaml = Yaml::dump(
                     [$config['singular'] => $data],
