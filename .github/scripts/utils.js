@@ -57,6 +57,27 @@ const SCHEMA = {
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
     },
   },
+  postcodes: {
+    required: ['code', 'country_id', 'country_code'],
+    optional: [
+      'state_id', 'state_code', 'city_id', 'locality_name', 'type',
+      'latitude', 'longitude', 'source', 'wikiDataId',
+    ],
+    rules: {
+      code: { type: 'string', maxLength: 20, nonEmpty: true },
+      country_id: { type: 'integer', positive: true },
+      country_code: { type: 'string', exactLength: 2 },
+      state_id: { type: 'integer', positive: true },
+      state_code: { type: 'string', maxLength: 255 },
+      city_id: { type: 'integer', positive: true },
+      locality_name: { type: 'string', maxLength: 255 },
+      type: { type: 'string', maxLength: 32 },
+      latitude: { type: 'coordinate', min: -90, max: 90 },
+      longitude: { type: 'coordinate', min: -180, max: 180 },
+      source: { type: 'string', maxLength: 64 },
+      wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
+    },
+  },
 };
 
 /**
@@ -66,6 +87,7 @@ const SCHEMA = {
  */
 function getEntityType(filePath) {
   const normalized = filePath.toLowerCase();
+  if (normalized.includes('postcodes')) return 'postcodes';
   if (normalized.includes('cities')) return 'cities';
   if (normalized.includes('states')) return 'states';
   if (normalized.includes('countries')) return 'countries';
@@ -143,7 +165,8 @@ function validateRecord(record, entityType, index) {
 
   const errors = [];
   const warnings = [];
-  const prefix = `Record ${index + 1}${record.name ? ` ("${record.name}")` : ''}`;
+  const label = record.name || record.code;
+  const prefix = `Record ${index + 1}${label ? ` ("${label}")` : ''}`;
 
   // Check for auto-managed fields that should NOT be present
   for (const field of AUTO_MANAGED_FIELDS) {

@@ -367,6 +367,85 @@ class JSONToMySQLImporter:
         print(f"  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
         return inserted
 
+    def import_postcodes(self):
+        """Import postcodes from individual country JSON files (issue #1039)."""
+        print(f"\n📦 Importing postcodes from contributions/postcodes/*.json")
+
+        postcodes_dir = os.path.join('contributions', 'postcodes')
+        if not os.path.exists(postcodes_dir):
+            print(f"  ⚠ Directory not found: {postcodes_dir} (skipping)")
+            return 0
+
+        # Skip table if migration hasn't been run yet
+        try:
+            self.cursor.execute("SHOW TABLES LIKE 'postcodes'")
+            if not self.cursor.fetchone():
+                print(f"  ⚠ Table 'postcodes' does not exist yet — run migrations first (skipping)")
+                return 0
+        except mysql.connector.Error as e:
+            print(f"  ⚠ Could not verify postcodes table existence: {e} (skipping)")
+            return 0
+
+        postcode_files = sorted(
+            f for f in os.listdir(postcodes_dir)
+            if f.endswith('.json') and f != 'README.md'
+        )
+
+        if not postcode_files:
+            print(f"  ⚠ No postcode JSON files found in {postcodes_dir}")
+            return 0
+
+        print(f"  📂 Found {len(postcode_files)} country files to process")
+
+        all_postcodes = []
+        for pf in postcode_files:
+            file_path = os.path.join(postcodes_dir, pf)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as fh:
+                    rows = json.load(fh)
+                    if isinstance(rows, list):
+                        all_postcodes.extend(rows)
+                        print(f"  ✓ Loaded {len(rows):,} postcodes from {pf}")
+                    else:
+                        print(f"  ⚠ Skipping {pf}: Not a valid array")
+            except Exception as e:
+                print(f"  ❌ Error loading {pf}: {e}")
+
+        if not all_postcodes:
+            print(f"  ⚠ No postcodes loaded from any files")
+            return 0
+
+        print(f"\n  📊 Total postcodes to import: {len(all_postcodes):,}")
+
+        new_columns = self.detect_new_columns('postcodes', all_postcodes)
+        if new_columns:
+            self.add_columns_to_table('postcodes', new_columns)
+
+        all_columns = list(self.get_table_columns('postcodes').keys())
+        skip_fields = {'flag'}
+        insert_columns = [c for c in all_columns if c not in skip_fields]
+
+        print(f"  🗑️  Truncating existing data...")
+        self.cursor.execute("SET FOREIGN_KEY_CHECKS=0")
+        self.cursor.execute("TRUNCATE TABLE postcodes")
+        self.cursor.execute("SET FOREIGN_KEY_CHECKS=1")
+
+        records_with_id = [r for r in all_postcodes if r.get('id') is not None]
+        records_without_id = [r for r in all_postcodes if r.get('id') is None]
+
+        inserted = 0
+        if records_with_id:
+            print(f"  📝 Inserting {len(records_with_id):,} records with explicit IDs...")
+            inserted += self._batch_insert_records('postcodes', records_with_id, insert_columns)
+
+        if records_without_id:
+            insert_columns_no_id = [c for c in insert_columns if c != 'id']
+            print(f"  📝 Inserting {len(records_without_id):,} records without IDs (auto-increment)...")
+            inserted += self._batch_insert_records('postcodes', records_without_id, insert_columns_no_id)
+
+        print(f"  ✓ Imported {inserted:,} postcodes from {len(postcode_files)} country files")
+        return inserted
+
     def import_regions(self):
         """Import regions from JSON"""
         json_file = os.path.join('contributions', 'regions', 'regions.json')
@@ -424,6 +503,7 @@ def main():
         countries_count = importer.import_countries()
         states_count = importer.import_states()
         cities_count = importer.import_cities()
+        postcodes_count = importer.import_postcodes()
 
         print("\n" + "=" * 60)
         print("✅ Import complete!")
@@ -432,6 +512,7 @@ def main():
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
         print(f"   📍 Cities: {cities_count:,}")
+        print(f"   📍 Postcodes: {postcodes_count:,}")
 
     except Exception as e:
         print(f"\n❌ Import failed: {e}")

@@ -81,7 +81,8 @@ async function run() {
 
     for (let i = 0; i < records.length; i++) {
       const record = records[i];
-      const prefix = `${filePath}: Record ${i + 1}${record.name ? ` ("${record.name}")` : ''}`;
+      const label = record.name || record.code;
+      const prefix = `${filePath}: Record ${i + 1}${label ? ` ("${label}")` : ''}`;
 
       if (entityType === 'cities') {
         // Validate country_id exists
@@ -142,6 +143,57 @@ async function run() {
                   `${prefix}: country_code "${record.country_code}" does not match country_id ${record.country_id} (expected "${country.iso2}")`
                 );
               }
+            }
+          }
+        }
+      }
+
+      if (entityType === 'postcodes') {
+        // Validate country_id exists (required FK)
+        if (record.country_id) {
+          const country = countryById.get(Number(record.country_id));
+          if (!country) {
+            errors.push(`${prefix}: country_id ${record.country_id} does not exist`);
+          } else {
+            validCount++;
+            if (record.country_code && country.iso2) {
+              if (record.country_code.toUpperCase() !== country.iso2.toUpperCase()) {
+                errors.push(
+                  `${prefix}: country_code "${record.country_code}" does not match country_id ${record.country_id} (expected "${country.iso2}")`
+                );
+              }
+            }
+          }
+        }
+
+        // Validate state_id exists if provided (optional FK)
+        if (record.state_id != null && states) {
+          const state = stateById.get(Number(record.state_id));
+          if (!state) {
+            errors.push(`${prefix}: state_id ${record.state_id} does not exist`);
+          } else {
+            validCount++;
+            if (record.country_id && Number(state.country_id) !== Number(record.country_id)) {
+              errors.push(
+                `${prefix}: state_id ${record.state_id} ("${state.name}") belongs to country_id ${state.country_id}, not ${record.country_id}`
+              );
+            }
+          }
+        }
+
+        // Validate postcode format against country regex if defined
+        if (record.code && record.country_id) {
+          const country = countryById.get(Number(record.country_id));
+          if (country && country.postal_code_regex) {
+            try {
+              const re = new RegExp(country.postal_code_regex);
+              if (!re.test(record.code)) {
+                errors.push(
+                  `${prefix}: code "${record.code}" does not match postal_code_regex "${country.postal_code_regex}" of ${country.iso2}`
+                );
+              }
+            } catch (e) {
+              // Invalid regex on the country side — skip silently rather than blocking PR
             }
           }
         }
