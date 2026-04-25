@@ -1,0 +1,881 @@
+{
+  "totals": {
+    "input": 9947,
+    "name_unique": 7373,
+    "name_region": 13,
+    "name_ambiguous": 69,
+    "name_conjunction": 25,
+    "no_match": 2467,
+    "proximity_assigned": 2512,
+    "proximity_skipped_or_far": 0,
+    "changed": 9828,
+    "unchanged": 119,
+    "unmapped": 0
+  },
+  "by_sigla": {
+    "TO": 348,
+    "BG": 275,
+    "CN": 270,
+    "BS": 250,
+    "TN": 241,
+    "SA": 214,
+    "PV": 204,
+    "AL": 203,
+    "RM": 200,
+    "CS": 191,
+    "CO": 185,
+    "MI": 172,
+    "TV": 172,
+    "UD": 165,
+    "VI": 156,
+    "VA": 155,
+    "BZ": 149,
+    "VR": 148,
+    "NA": 142,
+    "PD": 135,
+    "CR": 132,
+    "ME": 129,
+    "AV": 128,
+    "CE": 125,
+    "AQ": 124,
+    "RC": 122,
+    "LE": 122,
+    "AT": 121,
+    "FR": 113,
+    "SU": 110,
+    "CH": 109,
+    "PZ": 105,
+    "PG": 103,
+    "CZ": 102,
+    "LC": 101,
+    "SS": 101,
+    "NO": 95,
+    "PA": 93,
+    "SO": 93,
+    "OR": 92,
+    "AO": 91,
+    "BO": 90,
+    "SV": 88,
+    "VC": 87,
+    "VE": 87,
+    "CB": 86,
+    "BI": 86,
+    "VB": 84,
+    "MN": 83,
+    "BN": 82,
+    "PU": 82,
+    "RE": 82,
+    "MO": 79,
+    "NU": 79,
+    "FI": 78,
+    "GE": 78,
+    "RI": 76,
+    "CT": 74,
+    "RO": 74,
+    "BL": 74,
+    "PI": 73,
+    "MC": 70,
+    "AN": 70,
+    "MB": 69,
+    "LO": 68,
+    "IM": 67,
+    "VT": 67,
+    "AR": 64,
+    "PN": 64,
+    "PR": 63,
+    "TE": 63,
+    "FG": 62,
+    "VV": 57,
+    "SI": 56,
+    "PE": 55,
+    "IS": 55,
+    "FC": 51,
+    "FM": 50,
+    "LU": 50,
+    "PC": 50,
+    "RA": 50,
+    "BA": 49,
+    "LT": 49,
+    "AG": 47,
+    "SP": 46,
+    "FE": 44,
+    "TR": 42,
+    "GR": 42,
+    "AP": 41,
+    "TP": 38,
+    "RN": 38,
+    "KR": 36,
+    "MT": 36,
+    "TA": 35,
+    "PT": 33,
+    "LI": 31,
+    "GO": 31,
+    "SR": 29,
+    "BR": 28,
+    "MS": 24,
+    "CL": 23,
+    "EN": 21,
+    "CA": 20,
+    "RG": 18,
+    "PO": 14,
+    "BT": 12,
+    "TS": 11
+  },
+  "changes_by_sigla": {
+    "TO": 348,
+    "BG": 275,
+    "CN": 270,
+    "BS": 250,
+    "TN": 241,
+    "SA": 214,
+    "PV": 204,
+    "AL": 203,
+    "RM": 200,
+    "CS": 191,
+    "CO": 185,
+    "MI": 172,
+    "TV": 172,
+    "UD": 165,
+    "VI": 156,
+    "VA": 155,
+    "BZ": 149,
+    "VR": 148,
+    "NA": 142,
+    "PD": 135,
+    "CR": 132,
+    "ME": 129,
+    "AV": 128,
+    "CE": 125,
+    "AQ": 124,
+    "RC": 122,
+    "LE": 122,
+    "AT": 121,
+    "FR": 113,
+    "SU": 110,
+    "CH": 109,
+    "PZ": 105,
+    "PG": 103,
+    "CZ": 102,
+    "LC": 101,
+    "SS": 101,
+    "NO": 95,
+    "PA": 93,
+    "SO": 93,
+    "OR": 92,
+    "BO": 90,
+    "SV": 88,
+    "VC": 87,
+    "VE": 87,
+    "CB": 86,
+    "BI": 86,
+    "VB": 84,
+    "MN": 83,
+    "BN": 82,
+    "PU": 82,
+    "RE": 82,
+    "MO": 79,
+    "NU": 79,
+    "FI": 78,
+    "GE": 78,
+    "RI": 76,
+    "CT": 74,
+    "RO": 74,
+    "BL": 74,
+    "PI": 73,
+    "MC": 70,
+    "AN": 70,
+    "MB": 69,
+    "LO": 68,
+    "IM": 67,
+    "VT": 67,
+    "AR": 64,
+    "PN": 64,
+    "PR": 63,
+    "TE": 63,
+    "FG": 62,
+    "VV": 57,
+    "SI": 56,
+    "PE": 55,
+    "IS": 55,
+    "FC": 51,
+    "FM": 50,
+    "LU": 50,
+    "PC": 50,
+    "BA": 49,
+    "LT": 49,
+    "AG": 47,
+    "SP": 46,
+    "FE": 44,
+    "TR": 42,
+    "GR": 42,
+    "AP": 41,
+    "TP": 38,
+    "RN": 38,
+    "KR": 36,
+    "MT": 36,
+    "TA": 35,
+    "PT": 33,
+    "RA": 32,
+    "LI": 31,
+    "GO": 31,
+    "SR": 29,
+    "BR": 28,
+    "MS": 24,
+    "CL": 23,
+    "EN": 21,
+    "CA": 20,
+    "RG": 18,
+    "PO": 14,
+    "TS": 11,
+    "BT": 2
+  },
+  "unmapped": [],
+  "possible_duplicates": [
+    {
+      "sigla": "CR",
+      "comune": "Pozzaglio ed Uniti",
+      "cities": [
+        {
+          "id": 58976,
+          "name": "Pozzaglio",
+          "lat": "45.19999000",
+          "lon": "10.05345000"
+        },
+        {
+          "id": 58977,
+          "name": "Pozzaglio ed Uniti",
+          "lat": "45.20027000",
+          "lon": "10.05057000"
+        }
+      ]
+    },
+    {
+      "sigla": "FI",
+      "comune": "Capraia e Limite",
+      "cities": [
+        {
+          "id": 136799,
+          "name": "Capraia e Limite",
+          "lat": "43.74535000",
+          "lon": "10.98342000"
+        },
+        {
+          "id": 139523,
+          "name": "Limite",
+          "lat": "43.74450000",
+          "lon": "10.97996000"
+        }
+      ]
+    },
+    {
+      "sigla": "MN",
+      "comune": "Sermide e Felonica",
+      "cities": [
+        {
+          "id": 60744,
+          "name": "Sermide",
+          "lat": "45.00349000",
+          "lon": "11.29290000"
+        },
+        {
+          "id": 138474,
+          "name": "Felonica",
+          "lat": "44.97898000",
+          "lon": "11.35370000"
+        }
+      ]
+    },
+    {
+      "sigla": "NA",
+      "comune": "Napoli",
+      "cities": [
+        {
+          "id": 140713,
+          "name": "Naples",
+          "lat": "40.85216000",
+          "lon": "14.26811000"
+        },
+        {
+          "id": 140714,
+          "name": "Napoli",
+          "lat": "40.88333000",
+          "lon": "14.41667000"
+        }
+      ]
+    },
+    {
+      "sigla": "PV",
+      "comune": "Corteolona e Genzone",
+      "cities": [
+        {
+          "id": 138065,
+          "name": "Corteolona",
+          "lat": "45.15787000",
+          "lon": "9.37215000"
+        },
+        {
+          "id": 138905,
+          "name": "Genzone",
+          "lat": "45.17962000",
+          "lon": "9.34829000"
+        }
+      ]
+    },
+    {
+      "sigla": "PV",
+      "comune": "Inverno e Monteleone",
+      "cities": [
+        {
+          "id": 139215,
+          "name": "Inverno",
+          "lat": "45.19859000",
+          "lon": "9.38429000"
+        },
+        {
+          "id": 139216,
+          "name": "Inverno e Monteleone",
+          "lat": "45.19787000",
+          "lon": "9.38526000"
+        }
+      ]
+    },
+    {
+      "sigla": "SS",
+      "comune": "Trinità d'Agultu e Vignola",
+      "cities": [
+        {
+          "id": 61530,
+          "name": "Trinità d'Agultu",
+          "lat": "40.98589000",
+          "lon": "8.91377000"
+        },
+        {
+          "id": 61531,
+          "name": "Trinità d'Agultu e Vignola",
+          "lat": "40.98377000",
+          "lon": "8.91562000"
+        }
+      ]
+    },
+    {
+      "sigla": "TO",
+      "comune": "Torino",
+      "cities": [
+        {
+          "id": 61329,
+          "name": "Torino",
+          "lat": "45.13333000",
+          "lon": "7.36667000"
+        },
+        {
+          "id": 61575,
+          "name": "Turin",
+          "lat": "45.07049000",
+          "lon": "7.68682000"
+        }
+      ]
+    }
+  ],
+  "annotations_sample": [
+    {
+      "id": 58202,
+      "name": "Paganico Sabino",
+      "from_state_id": 1678,
+      "from_state_code": "62",
+      "to_state_id": 1712,
+      "to_state_code": "RI",
+      "via": "name_unique",
+      "comune": "Paganico Sabino"
+    },
+    {
+      "id": 58203,
+      "name": "Pagazzano",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1704,
+      "to_state_code": "BG",
+      "via": "name_unique",
+      "comune": "Pagazzano"
+    },
+    {
+      "id": 58204,
+      "name": "Pagliara",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 5632,
+      "to_state_code": "ME",
+      "via": "name_unique",
+      "comune": "Pagliara"
+    },
+    {
+      "id": 58209,
+      "name": "Paglieta",
+      "from_state_id": 1679,
+      "from_state_code": "65",
+      "to_state_id": 1739,
+      "to_state_code": "CH",
+      "via": "name_unique",
+      "comune": "Paglieta"
+    },
+    {
+      "id": 58210,
+      "name": "Pagnacco",
+      "from_state_id": 1756,
+      "from_state_code": "36",
+      "to_state_id": 1764,
+      "to_state_code": "UD",
+      "via": "name_unique",
+      "comune": "Pagnacco"
+    },
+    {
+      "id": 58211,
+      "name": "Pagno",
+      "from_state_id": 1702,
+      "from_state_code": "21",
+      "to_state_id": 1775,
+      "to_state_code": "CN",
+      "via": "name_unique",
+      "comune": "Pagno"
+    },
+    {
+      "id": 58212,
+      "name": "Pagnona",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1677,
+      "to_state_code": "LC",
+      "via": "name_unique",
+      "comune": "Pagnona"
+    },
+    {
+      "id": 58213,
+      "name": "Pago Veiano",
+      "from_state_id": 1669,
+      "from_state_code": "72",
+      "to_state_id": 1701,
+      "to_state_code": "BN",
+      "via": "name_unique",
+      "comune": "Pago Veiano"
+    },
+    {
+      "id": 58214,
+      "name": "Pago del Vallo di Lauro",
+      "from_state_id": 1669,
+      "from_state_code": "72",
+      "to_state_id": 1692,
+      "to_state_code": "AV",
+      "via": "name_unique",
+      "comune": "Pago del Vallo di Lauro"
+    },
+    {
+      "id": 58215,
+      "name": "Paisco Loveno",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1717,
+      "to_state_code": "BS",
+      "via": "name_unique",
+      "comune": "Paisco Loveno"
+    },
+    {
+      "id": 58216,
+      "name": "Paitone",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1717,
+      "to_state_code": "BS",
+      "via": "name_unique",
+      "comune": "Paitone"
+    },
+    {
+      "id": 58217,
+      "name": "Paladina",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1704,
+      "to_state_code": "BG",
+      "via": "name_unique",
+      "comune": "Paladina"
+    },
+    {
+      "id": 58218,
+      "name": "Palagano",
+      "from_state_id": 1773,
+      "from_state_code": "45",
+      "to_state_id": 1757,
+      "to_state_code": "MO",
+      "via": "name_unique",
+      "comune": "Palagano"
+    },
+    {
+      "id": 58219,
+      "name": "Palagianello",
+      "from_state_id": 1688,
+      "from_state_code": "75",
+      "to_state_id": 1743,
+      "to_state_code": "TA",
+      "via": "name_unique",
+      "comune": "Palagianello"
+    },
+    {
+      "id": 58220,
+      "name": "Palagiano",
+      "from_state_id": 1688,
+      "from_state_code": "75",
+      "to_state_id": 1743,
+      "to_state_code": "TA",
+      "via": "name_unique",
+      "comune": "Palagiano"
+    },
+    {
+      "id": 58221,
+      "name": "Palagonia",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 5629,
+      "to_state_code": "CT",
+      "via": "name_unique",
+      "comune": "Palagonia"
+    },
+    {
+      "id": 58222,
+      "name": "Palaia",
+      "from_state_id": 1664,
+      "from_state_code": "52",
+      "to_state_id": 1685,
+      "to_state_code": "PI",
+      "via": "name_unique",
+      "comune": "Palaia"
+    },
+    {
+      "id": 58223,
+      "name": "Palanzano",
+      "from_state_id": 1773,
+      "from_state_code": "45",
+      "to_state_id": 1666,
+      "to_state_code": "PR",
+      "via": "name_unique",
+      "comune": "Palanzano"
+    },
+    {
+      "id": 58224,
+      "name": "Palata",
+      "from_state_id": 1695,
+      "from_state_code": "67",
+      "to_state_id": 1721,
+      "to_state_code": "CB",
+      "via": "name_unique",
+      "comune": "Palata"
+    },
+    {
+      "id": 58225,
+      "name": "Palau",
+      "from_state_id": 1715,
+      "from_state_code": "88",
+      "to_state_id": 1722,
+      "to_state_code": "SS",
+      "via": "name_unique",
+      "comune": "Palau"
+    },
+    {
+      "id": 58226,
+      "name": "Palazzago",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1704,
+      "to_state_code": "BG",
+      "via": "name_unique",
+      "comune": "Palazzago"
+    },
+    {
+      "id": 58228,
+      "name": "Palazzo Adriano",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 1668,
+      "to_state_code": "PA",
+      "via": "name_unique",
+      "comune": "Palazzo Adriano"
+    },
+    {
+      "id": 58229,
+      "name": "Palazzo Canavese",
+      "from_state_id": 1702,
+      "from_state_code": "21",
+      "to_state_id": 5637,
+      "to_state_code": "TO",
+      "via": "name_unique",
+      "comune": "Palazzo Canavese"
+    },
+    {
+      "id": 58230,
+      "name": "Palazzo Pignano",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1751,
+      "to_state_code": "CR",
+      "via": "name_unique",
+      "comune": "Palazzo Pignano"
+    },
+    {
+      "id": 58231,
+      "name": "Palazzo San Gervasio",
+      "from_state_id": 1706,
+      "from_state_code": "77",
+      "to_state_id": 1697,
+      "to_state_code": "PZ",
+      "via": "name_unique",
+      "comune": "Palazzo San Gervasio"
+    },
+    {
+      "id": 58233,
+      "name": "Palazzolo Acreide",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 1667,
+      "to_state_code": "SR",
+      "via": "name_unique",
+      "comune": "Palazzolo Acreide"
+    },
+    {
+      "id": 58234,
+      "name": "Palazzolo Vercellese",
+      "from_state_id": 1702,
+      "from_state_code": "21",
+      "to_state_id": 1785,
+      "to_state_code": "VC",
+      "via": "name_unique",
+      "comune": "Palazzolo Vercellese"
+    },
+    {
+      "id": 58235,
+      "name": "Palazzolo dello Stella",
+      "from_state_id": 1756,
+      "from_state_code": "36",
+      "to_state_id": 1764,
+      "to_state_code": "UD",
+      "via": "name_unique",
+      "comune": "Palazzolo dello Stella"
+    },
+    {
+      "id": 58236,
+      "name": "Palazzolo sull'Oglio",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1717,
+      "to_state_code": "BS",
+      "via": "name_unique",
+      "comune": "Palazzolo sull'Oglio"
+    },
+    {
+      "id": 58237,
+      "name": "Palazzuolo sul Senio",
+      "from_state_id": 1664,
+      "from_state_code": "52",
+      "to_state_id": 5630,
+      "to_state_code": "FI",
+      "via": "name_unique",
+      "comune": "Palazzuolo sul Senio"
+    },
+    {
+      "id": 58238,
+      "name": "Palena",
+      "from_state_id": 1679,
+      "from_state_code": "65",
+      "to_state_id": 1739,
+      "to_state_code": "CH",
+      "via": "name_unique",
+      "comune": "Palena"
+    },
+    {
+      "id": 58239,
+      "name": "Palermiti",
+      "from_state_id": 1703,
+      "from_state_code": "78",
+      "to_state_id": 1728,
+      "to_state_code": "CZ",
+      "via": "name_unique",
+      "comune": "Palermiti"
+    },
+    {
+      "id": 58240,
+      "name": "Palermo",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 1668,
+      "to_state_code": "PA",
+      "via": "name_unique",
+      "comune": "Palermo"
+    },
+    {
+      "id": 58241,
+      "name": "Palestrina",
+      "from_state_id": 1678,
+      "from_state_code": "62",
+      "to_state_id": 5636,
+      "to_state_code": "RM",
+      "via": "name_unique",
+      "comune": "Palestrina"
+    },
+    {
+      "id": 58242,
+      "name": "Palestro",
+      "from_state_id": 1705,
+      "from_state_code": "25",
+      "to_state_id": 1676,
+      "to_state_code": "PV",
+      "via": "name_unique",
+      "comune": "Palestro"
+    },
+    {
+      "id": 58243,
+      "name": "Paliano",
+      "from_state_id": 1678,
+      "from_state_code": "62",
+      "to_state_id": 1776,
+      "to_state_code": "FR",
+      "via": "name_unique",
+      "comune": "Paliano"
+    },
+    {
+      "id": 58246,
+      "name": "Palizzi",
+      "from_state_id": 1703,
+      "from_state_code": "78",
+      "to_state_id": 5635,
+      "to_state_code": "RC",
+      "via": "name_unique",
+      "comune": "Palizzi"
+    },
+    {
+      "id": 58248,
+      "name": "Pallagorio",
+      "from_state_id": 1703,
+      "from_state_code": "78",
+      "to_state_id": 1754,
+      "to_state_code": "KR",
+      "via": "name_unique",
+      "comune": "Pallagorio"
+    },
+    {
+      "id": 58250,
+      "name": "Pallanzeno",
+      "from_state_id": 1702,
+      "from_state_code": "21",
+      "to_state_id": 1726,
+      "to_state_code": "VB",
+      "via": "name_unique",
+      "comune": "Pallanzeno"
+    },
+    {
+      "id": 58251,
+      "name": "Pallare",
+      "from_state_id": 1768,
+      "from_state_code": "42",
+      "to_state_id": 1732,
+      "to_state_code": "SV",
+      "via": "name_unique",
+      "comune": "Pallare"
+    },
+    {
+      "id": 58253,
+      "name": "Palma Campania",
+      "from_state_id": 1669,
+      "from_state_code": "72",
+      "to_state_id": 5634,
+      "to_state_code": "NA",
+      "via": "name_unique",
+      "comune": "Palma Campania"
+    },
+    {
+      "id": 58254,
+      "name": "Palma di Montechiaro",
+      "from_state_id": 1709,
+      "from_state_code": "82",
+      "to_state_id": 1727,
+      "to_state_code": "AG",
+      "via": "name_unique",
+      "comune": "Palma di Montechiaro"
+    },
+    {
+      "id": 58255,
+      "name": "Palmanova",
+      "from_state_id": 1756,
+      "from_state_code": "36",
+      "to_state_id": 1764,
+      "to_state_code": "UD",
+      "via": "name_unique",
+      "comune": "Palmanova"
+    },
+    {
+      "id": 58256,
+      "name": "Palmariggi",
+      "from_state_id": 1688,
+      "from_state_code": "75",
+      "to_state_id": 1675,
+      "to_state_code": "LE",
+      "via": "name_unique",
+      "comune": "Palmariggi"
+    },
+    {
+      "id": 58257,
+      "name": "Palmas Arborea",
+      "from_state_id": 1715,
+      "from_state_code": "88",
+      "to_state_id": 1786,
+      "to_state_code": "OR",
+      "via": "name_unique",
+      "comune": "Palmas Arborea"
+    },
+    {
+      "id": 58258,
+      "name": "Palmi",
+      "from_state_id": 1703,
+      "from_state_code": "78",
+      "to_state_id": 5635,
+      "to_state_code": "RC",
+      "via": "name_unique",
+      "comune": "Palmi"
+    },
+    {
+      "id": 58259,
+      "name": "Palmiano",
+      "from_state_id": 1670,
+      "from_state_code": "57",
+      "to_state_id": 1681,
+      "to_state_code": "AP",
+      "via": "name_unique",
+      "comune": "Palmiano"
+    },
+    {
+      "id": 58260,
+      "name": "Palmoli",
+      "from_state_id": 1679,
+      "from_state_code": "65",
+      "to_state_id": 1739,
+      "to_state_code": "CH",
+      "via": "name_unique",
+      "comune": "Palmoli"
+    },
+    {
+      "id": 58261,
+      "name": "Palo del Colle",
+      "from_state_id": 1688,
+      "from_state_code": "75",
+      "to_state_id": 5626,
+      "to_state_code": "BA",
+      "via": "name_unique",
+      "comune": "Palo del Colle"
+    },
+    {
+      "id": 58263,
+      "name": "Palombara Sabina",
+      "from_state_id": 1678,
+      "from_state_code": "62",
+      "to_state_id": 5636,
+      "to_state_code": "RM",
+      "via": "name_unique",
+      "comune": "Palombara Sabina"
+    }
+  ]
+}
