@@ -338,6 +338,10 @@ jobs:
 
           # CSV Files
           echo "📄 Compressing CSV files..."
+          if [ -f csv/cities.csv ]; then
+            gzip -9 -k -f csv/cities.csv
+            echo "  ✓ csv/cities.csv.gz"
+          fi
           if [ -f csv/translations.csv ]; then
             gzip -9 -k -f csv/translations.csv
             echo "  ✓ csv/translations.csv.gz"
