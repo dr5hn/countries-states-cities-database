@@ -319,7 +319,7 @@ Use our web tool to browse, search, and submit data change requests with a strea
 }
 ```
 
-📖 **Full guide**: [contributions/README.md](contributions/README.md) | [Contribution Guidelines](.github/CONTRIBUTING.md) | [Maintainer Docs](.claude/CLAUDE.md)
+📖 **Full guide**: [contributions/README.md](contributions/README.md) | [Contribution Guidelines](.github/CONTRIBUTING.md) | [Maintainer Docs](.claude/CLAUDE.md) | [Multi-Level Territories Policy](MULTI_LEVEL_TERRITORIES.md) (overseas / dual-ISO entities)
 
 **Note:** Only edit JSON in `contributions/` - GitHub Actions auto-generates all export formats!
 

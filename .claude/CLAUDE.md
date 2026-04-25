@@ -191,6 +191,7 @@ python3 bin/scripts/sync/import_json_to_mysql.py --host $DB_HOST --user $DB_USER
 - Run `normalize_json.py` to pre-assign IDs (optional)
 - Document fixes in `.github/fixes-docs/FIX_<issue_number>_SUMMARY.md` (ONE file per issue)
 - When adding states + cities: run JSON→MySQL→JSON between tasks for ID assignment
+- For overseas / dual-ISO territories (e.g. FR overseas, US territories, CN SARs), see [MULTI_LEVEL_TERRITORIES.md](../MULTI_LEVEL_TERRITORIES.md) before changing country/state records
 
 **DO NOT:**
 - Edit auto-generated dirs: `json/`, `csv/`, `xml/`, `yml/`, `sql/`, etc.
