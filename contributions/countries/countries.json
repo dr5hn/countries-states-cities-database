@@ -9145,7 +9145,7 @@
     "nationality": "Marshallese",
     "area_sq_km": 181.3,
     "postal_code_format": "#####-####",
-    "postal_code_regex": "^969\\d{2}(-\\d{4})$",
+    "postal_code_regex": "^969\\d{2}(?:-\\d{4})?$",
     "timezones": [
       {
         "zoneName": "Pacific/Kwajalein",
