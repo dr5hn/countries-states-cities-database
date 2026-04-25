@@ -21,8 +21,8 @@
     <subregion_id>14</subregion_id>
     <nationality>Afghan</nationality>
     <area_sq_km>647500</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>####</postal_code_format>
+    <postal_code_regex>^(\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Kabul</zoneName>
       <gmtOffset>16200</gmtOffset>
@@ -1613,8 +1613,8 @@
     <subregion_id>14</subregion_id>
     <nationality>Bhutanese</nationality>
     <area_sq_km>47000</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Thimphu</zoneName>
       <gmtOffset>21600</gmtOffset>
@@ -2815,8 +2815,8 @@
     <subregion_id>7</subregion_id>
     <nationality>Caymanian</nationality>
     <area_sq_km>262</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>KY#-####</postal_code_format>
+    <postal_code_regex>^KY\d-\d{4}$</postal_code_regex>
     <timezones>
       <zoneName>America/Cayman</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -4984,8 +4984,8 @@
     <subregion_id>5</subregion_id>
     <nationality>French Southern Territories</nationality>
     <area_sq_km>7829</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Indian/Kerguelen</zoneName>
       <gmtOffset>18000</gmtOffset>
@@ -7197,8 +7197,8 @@
     <subregion_id>15</subregion_id>
     <nationality>Kosovar, Kosovan</nationality>
     <area_sq_km>10908</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Belgrade</zoneName>
       <gmtOffset>3600</gmtOffset>
@@ -8512,8 +8512,8 @@
     <subregion_id>4</subregion_id>
     <nationality>Mauritian</nationality>
     <area_sq_km>2040</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Indian/Mauritius</zoneName>
       <gmtOffset>14400</gmtOffset>
@@ -9305,8 +9305,8 @@
     <subregion_id>5</subregion_id>
     <nationality>Namibian</nationality>
     <area_sq_km>825418</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Africa/Windhoek</zoneName>
       <gmtOffset>7200</gmtOffset>
@@ -11630,8 +11630,8 @@
     <subregion_id>7</subregion_id>
     <nationality>Saint Vincentian, Vincentian</nationality>
     <area_sq_km>389</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>VC####</postal_code_format>
+    <postal_code_regex>^VC\d{4}$</postal_code_regex>
     <timezones>
       <zoneName>America/St_Vincent</zoneName>
       <gmtOffset>-14400</gmtOffset>
@@ -13408,8 +13408,8 @@
     <subregion_id>4</subregion_id>
     <nationality>Tanzanian</nationality>
     <area_sq_km>945087</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Africa/Dar_es_Salaam</zoneName>
       <gmtOffset>10800</gmtOffset>
@@ -13864,8 +13864,8 @@
     <subregion_id>7</subregion_id>
     <nationality>Trinidadian or Tobagonian</nationality>
     <area_sq_km>5128</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>######</postal_code_format>
+    <postal_code_regex>^(\d{6})$</postal_code_regex>
     <timezones>
       <zoneName>America/Port_of_Spain</zoneName>
       <gmtOffset>-14400</gmtOffset>
@@ -14708,8 +14708,8 @@
     <subregion_id>6</subregion_id>
     <nationality>American</nationality>
     <area_sq_km>0</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Midway</zoneName>
       <gmtOffset>-39600</gmtOffset>
@@ -15121,8 +15121,8 @@
     <subregion_id>7</subregion_id>
     <nationality>British Virgin Island</nationality>
     <area_sq_km>153</area_sq_km>
-    <postal_code_format></postal_code_format>
-    <postal_code_regex></postal_code_regex>
+    <postal_code_format>VG####</postal_code_format>
+    <postal_code_regex>^VG\d{4}$</postal_code_regex>
     <timezones>
       <zoneName>America/Tortola</zoneName>
       <gmtOffset>-14400</gmtOffset>
