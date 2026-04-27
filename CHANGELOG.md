@@ -1,5 +1,24 @@
 # Changelog
 
+## ⚠️ Notable: Italy city→province remap (PRs #1395, #1397, #1399 — issue #1349)
+
+In April 2026 all 9,947 Italian cities were re-parented from the 20 Italian *region*-level entities (Tuscany, Lombardy, Sicily, etc.) to their correct ISO 3166-2:IT *province*-level entity (Roma → `RM`, Milan → `MI`, Agrigento → `AG`, Bolzano → `BZ`, etc.).
+
+This is the correct administrative model — Italian cities formally belong to provinces / metropolitan cities / autonomous provinces, not to the higher-level regions — and it fixes the long-standing bug where province-level queries (e.g. cities of `IT/AG`) returned empty arrays.
+
+**Behavior change consumers must be aware of:**
+
+- Querying cities by **region**-level `state_code` (`82` Sicily, `25` Lombardy, `52` Tuscany, etc.) now returns `[]`. Region-level rows still exist in `states.json`, but they no longer have any cities directly attached.
+- To get all cities of a region, traverse the hierarchy: pull `states.json` rows where `parent_id == <region_id>` (provinces / metropolitan cities of that region), then pull cities whose `state_id` is in that set. The `parent_id` and `level` fields on `states.json` were already correct prior to this change — no schema work required.
+
+**Companion cleanups:**
+- `#1397` restored 1,378 corrupted `native` fields on Italian cities (machine-translation artefacts like `Pero` → `Ma`).
+- `#1399` dropped 6 duplicate pairs flagged by the remap (Pozzaglio + Pozzaglio ed Uniti, Torino + Turin, Naples + Napoli, etc.); 9,947 → 9,941 IT cities.
+
+Two additional manual consolidations remain open for maintainer signoff: **Sermide e Felonica** (MN) and **Corteolona e Genzone** (PV).
+
+---
+
 ## 2026-04
 - **2026-04-25** - PR [#1414](https://github.com/dr5hn/countries-states-cities-database/pull/1414): Updated countries (by @dr5hn)
 - **2026-04-25** - PR [#1404](https://github.com/dr5hn/countries-states-cities-database/pull/1404): Updated cities, Updated states, Updated countries (CA, PY) (by @github-actions[bot])
