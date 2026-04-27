@@ -84,8 +84,20 @@ def main() -> int:
         (project_root / "contributions/states/states.json").open(encoding="utf-8")
     )
     th_states = [s for s in states if s.get("country_id") == th_country["id"]]
-    state_by_iso2: Dict[str, dict] = {
-        (s.get("iso2") or "").upper(): s for s in th_states if s.get("iso2")
+    # Resolve by source's Thai-script province name (state.native), NOT by
+    # postal-prefix. Thai Post's 5-digit codes are NOT aligned with ISO 3166-2:TH
+    # for ~10 provinces — Bangkok absorbs Samut Prakan in postal-prefix-land,
+    # so every later province's postal prefix is off-by-one from CSC's iso2.
+    # The source feed nests each postcode under its real province in Thai
+    # script, which is the authoritative join key.
+    state_by_native: Dict[str, dict] = {
+        (s.get("native") or "").strip(): s for s in th_states if s.get("native")
+    }
+    # Source uses "กรุงเทพมหานคร" (formal Bangkok); CSC uses "กรุงเทพฯ" (short form)
+    # CSC also has a typo in Nan's native ("แนน" vs source "น่าน") — alias both.
+    NATIVE_ALIASES: Dict[str, str] = {
+        "กรุงเทพมหานคร": "กรุงเทพฯ",
+        "น่าน": "แนน",
     }
     print(f"Country: Thailand (id={th_country['id']}); states indexed: {len(th_states)}")
 
@@ -97,8 +109,14 @@ def main() -> int:
     skipped_bad_regex = 0
     skipped_no_state = 0
     matched_state = 0
+    unresolved_provinces: set = set()
 
     for prov in provinces:
+        prov_native = (prov.get("name") or "").strip()
+        prov_native_csc = NATIVE_ALIASES.get(prov_native, prov_native)
+        state = state_by_native.get(prov_native_csc)
+        if state is None:
+            unresolved_provinces.add(prov_native)
         for district in prov.get("districts", []) or []:
             district_name = (district.get("name") or "").strip()
             for code_int in district.get("postcodes", []) or []:
@@ -116,11 +134,9 @@ def main() -> int:
                     "country_id": int(th_country["id"]),
                     "country_code": "TH",
                 }
-                iso2 = code[:2]
-                state = state_by_iso2.get(iso2)
                 if state is not None:
                     record["state_id"] = int(state["id"])
-                    record["state_code"] = iso2
+                    record["state_code"] = state.get("iso2")
                     matched_state += 1
                 else:
                     skipped_no_state += 1
@@ -136,6 +152,11 @@ def main() -> int:
     pct = matched_state * 100 // max(1, len(records))
     print(f"  with state:          {matched_state:,} ({pct}%)")
     print(f"  no state FK:         {skipped_no_state:,}")
+    if unresolved_provinces:
+        print(
+            f"  unresolved provinces: "
+            f"{sorted(unresolved_provinces)}"
+        )
 
     if args.dry_run:
         return 0
