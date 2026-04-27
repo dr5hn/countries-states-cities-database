@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-04
+- **2026-04-25** - PR [#1414](https://github.com/dr5hn/countries-states-cities-database/pull/1414): Updated countries (by @dr5hn)
+- **2026-04-25** - PR [#1404](https://github.com/dr5hn/countries-states-cities-database/pull/1404): Updated cities, Updated states, Updated countries (CA, PY) (by @github-actions[bot])
+- **2026-04-25** - PR [#1391](https://github.com/dr5hn/countries-states-cities-database/pull/1391): Updated countries (by @dr5hn)
+- **2026-04-25** - PR [#1390](https://github.com/dr5hn/countries-states-cities-database/pull/1390): Updated states (by @dr5hn)
+- **2026-04-25** - PR [#1389](https://github.com/dr5hn/countries-states-cities-database/pull/1389): Updated states (by @Yi-pixel)
+- **2026-04-25** - PR [#1388](https://github.com/dr5hn/countries-states-cities-database/pull/1388): Updated cities (CA) (by @dr5hn)
+- **2026-04-25** - PR [#1387](https://github.com/dr5hn/countries-states-cities-database/pull/1387): Updated states (by @dr5hn)
+- **2026-04-25** - PR [#1386](https://github.com/dr5hn/countries-states-cities-database/pull/1386): Updated states (by @dr5hn)
+- **2026-04-25** - PR [#1382](https://github.com/dr5hn/countries-states-cities-database/pull/1382): Updated cities, Updated states (CN) (by @Yi-pixel)
+- **2026-04-25** - PR [#1380](https://github.com/dr5hn/countries-states-cities-database/pull/1380): Updated cities (PY) (by @juliomuhlbauer)
+- **2026-04-25** - PR [#1381](https://github.com/dr5hn/countries-states-cities-database/pull/1381): Updated cities (PY) (by @juliomuhlbauer)
+- **2026-04-25** - PR [#1383](https://github.com/dr5hn/countries-states-cities-database/pull/1383): Updated states (by @mrodal)
+
 ## 2026-03
 - **2026-03-28** - PR [#1372](https://github.com/dr5hn/countries-states-cities-database/pull/1372): Updated cities (EG, MY, NG, PH, SA) (by @github-actions[bot])
 - **2026-03-28** - PR [#1371](https://github.com/dr5hn/countries-states-cities-database/pull/1371): Updated cities (MY) (by @dr5hn)
