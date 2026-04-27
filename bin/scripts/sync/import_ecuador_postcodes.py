@@ -148,8 +148,10 @@ def main() -> int:
             lat = float(props.get("lat") or "")
             lon = float(props.get("lon") or "")
             if -90 <= lat <= 90 and -180 <= lon <= 180:
-                record["latitude"] = round(lat, 6)
-                record["longitude"] = round(lon, 6)
+                # String form matches existing contributions/postcodes/*.json
+                # convention (AU, BE, etc.) and avoids float-serialisation drift.
+                record["latitude"] = f"{lat:.6f}"
+                record["longitude"] = f"{lon:.6f}"
         except (TypeError, ValueError):
             pass
         record["type"] = "full"
