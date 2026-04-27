@@ -318,6 +318,10 @@ jobs:
             gzip -9 -k -f json/cities.json
             echo "  ✓ json/cities.json.gz"
           fi
+          if [ -f json/postcodes.json ]; then
+            gzip -9 -k -f json/postcodes.json
+            echo "  ✓ json/postcodes.json.gz"
+          fi
 
           # TOON Files
           echo "📄 Compressing TOON files..."
@@ -339,12 +343,20 @@ jobs:
             gzip -9 -k -f xml/cities.xml
             echo "  ✓ xml/cities.xml.gz"
           fi
+          if [ -f xml/postcodes.xml ]; then
+            gzip -9 -k -f xml/postcodes.xml
+            echo "  ✓ xml/postcodes.xml.gz"
+          fi
 
           # YAML Files
           echo "📄 Compressing YAML files..."
           if [ -f yml/cities.yml ]; then
             gzip -9 -k -f yml/cities.yml
             echo "  ✓ yml/cities.yml.gz"
+          fi
+          if [ -f yml/postcodes.yml ]; then
+            gzip -9 -k -f yml/postcodes.yml
+            echo "  ✓ yml/postcodes.yml.gz"
           fi
 
           # CSV Files
@@ -356,6 +368,10 @@ jobs:
           if [ -f csv/translations.csv ]; then
             gzip -9 -k -f csv/translations.csv
             echo "  ✓ csv/translations.csv.gz"
+          fi
+          if [ -f csv/postcodes.csv ]; then
+            gzip -9 -k -f csv/postcodes.csv
+            echo "  ✓ csv/postcodes.csv.gz"
           fi
 
           # MySQL SQL Files
@@ -386,6 +402,10 @@ jobs:
           gzip -9 -k -f sqlite/cities.sqlite3
           echo "  ✓ sqlite/world.sqlite3.gz"
           echo "  ✓ sqlite/cities.sqlite3.gz"
+          if [ -f sqlite/postcodes.sqlite3 ]; then
+            gzip -9 -k -f sqlite/postcodes.sqlite3
+            echo "  ✓ sqlite/postcodes.sqlite3.gz"
+          fi
 
           # SQL Server Files
           echo "📄 Compressing SQL Server files..."
@@ -396,6 +416,10 @@ jobs:
           if [ -f sqlserver/cities.sql ]; then
             gzip -9 -k -f sqlserver/cities.sql
             echo "  ✓ sqlserver/cities.sql.gz"
+          fi
+          if [ -f sqlserver/postcodes.sql ]; then
+            gzip -9 -k -f sqlserver/postcodes.sql
+            echo "  ✓ sqlserver/postcodes.sql.gz"
           fi
 
           echo "================================"
