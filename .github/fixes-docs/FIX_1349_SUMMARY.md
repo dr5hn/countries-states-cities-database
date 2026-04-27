@@ -148,3 +148,46 @@ The script is idempotent: a second run on already-remapped data produces 0 chang
 - Wikipedia — Provinces of Italy: https://en.wikipedia.org/wiki/Provinces_of_Italy
 - Wikipedia — Metropolitan cities of Italy: https://en.wikipedia.org/wiki/Metropolitan_cities_of_Italy
 - Predecessor fix: `.github/fixes-docs/ITALY_MISSING_METROPOLITAN_CITIES_AND_AUTONOMOUS_PROVINCES.md`
+
+---
+
+## Follow-up: drop placeholder "Provincia ..." rows (2026-04-27)
+
+The reporter on #1349 specifically called out "Provincia di Lucca don't have sense to exist". Those rows were not real comuni — they were **province-level placeholder cities** carried over from the pre-#1395 schema, when cities pointed at regions and a separate "Provincia di X" pseudo-city stood in for the province below the region. After the #1395 remap, every real comune resolves directly to its province via `state_id` / `state_code`, so the placeholders are a duplicate concept and have been removed.
+
+### Selection
+
+- **Range:** ids 59104–59190 inclusive (contiguous, no gaps).
+- **Count:** 87 rows.
+- **Names:** all start with `Provincia ` — covers the standard `Provincia di X` form plus a handful of variants (`Provincia autonoma di Trento`, `Provincia dell' Aquila`, `Provincia Verbano-Cusio-Ossola`).
+
+### Counts
+
+| | Before | After |
+|---|--:|--:|
+| `IT.json` city records | 9,947 | 9,860 |
+| Rows starting with `Provincia ` | 87 | 0 |
+
+(Note: the prompt's expected post-#1479 baseline of 9,941 was off by 6; the correct baseline at the time of this PR was 9,947, confirmed by `git log` and `jq '. \| length'`. Range arithmetic 59190 − 59104 + 1 = 87, not 88.)
+
+### Implementation
+
+`bin/scripts/fixes/italy_drop_provincia_placeholders.py` — defensive double-predicate filter (id range AND name prefix). Refuses to touch rows in the id range that don't match the name prefix (exit 2). Idempotent — second run is a no-op.
+
+### Validation
+
+- ✅ `jq '. | length'` → 9,860.
+- ✅ `jq '[.[] | select(.name | startswith("Provincia "))] | length'` → 0.
+- ✅ No `parent_id` references to the dropped id range.
+- ✅ Neighbour ids 59103 and 59191 preserved.
+- ✅ JSON parses cleanly via `python3 -m json.tool`.
+- ✅ `normalize_json.py` reports "All records already have IDs and timestamps" — no other fields touched.
+
+### Files
+
+- Modified: `contributions/cities/IT.json` (87 rows removed).
+- Added: `bin/scripts/fixes/italy_drop_provincia_placeholders.py`.
+
+### Still open on #1349
+
+Two dedup pairs from the eight flagged in the original remap remain to be merged. They are tracked separately and not closed by this PR.
