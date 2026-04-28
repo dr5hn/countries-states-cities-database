@@ -2768,8 +2768,8 @@
         "subregion_id": 13,
         "nationality": "Cambodian",
         "area_sq_km": 181040,
-        "postal_code_format": "#####",
-        "postal_code_regex": "^(\\d{5})$",
+        "postal_code_format": "######",
+        "postal_code_regex": "^(\\d{6})$",
         "timezones": [
           {
             "zoneName": "Asia/Phnom_Penh",
@@ -4738,8 +4738,8 @@
         "subregion_id": 8,
         "nationality": "Ecuadorian",
         "area_sq_km": 283560,
-        "postal_code_format": "@####@",
-        "postal_code_regex": "^([a-zA-Z]\\d{4}[a-zA-Z])$",
+        "postal_code_format": "######",
+        "postal_code_regex": "^(\\d{6})$",
         "timezones": [
           {
             "zoneName": "America/Guayaquil",
@@ -9685,7 +9685,7 @@
         "nationality": "Marshallese",
         "area_sq_km": 181,
         "postal_code_format": "#####-####",
-        "postal_code_regex": "^969\\d{2}(-\\d{4})$",
+        "postal_code_regex": "^969\\d{2}(?:-\\d{4})?$",
         "timezones": [
           {
             "zoneName": "Pacific/Kwajalein",
@@ -10383,8 +10383,8 @@
         "subregion_id": 12,
         "nationality": "Mongolian",
         "area_sq_km": 1565000,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": "#####",
+        "postal_code_regex": "^(\\d{5})$",
         "timezones": [
           {
             "zoneName": "Asia/Choibalsan",
@@ -10738,8 +10738,8 @@
         "subregion_id": 13,
         "nationality": "Burmese",
         "area_sq_km": 678500,
-        "postal_code_format": "#####",
-        "postal_code_regex": "^(\\d{5})$",
+        "postal_code_format": "#######",
+        "postal_code_regex": "^(\\d{7})$",
         "timezones": [
           {
             "zoneName": "Asia/Yangon",

@@ -2398,8 +2398,8 @@
     <subregion_id>13</subregion_id>
     <nationality>Cambodian</nationality>
     <area_sq_km>181040</area_sq_km>
-    <postal_code_format>#####</postal_code_format>
-    <postal_code_regex>^(\d{5})$</postal_code_regex>
+    <postal_code_format>######</postal_code_format>
+    <postal_code_regex>^(\d{6})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Phnom_Penh</zoneName>
       <gmtOffset>25200</gmtOffset>
@@ -4108,8 +4108,8 @@
     <subregion_id>8</subregion_id>
     <nationality>Ecuadorian</nationality>
     <area_sq_km>283560</area_sq_km>
-    <postal_code_format>@####@</postal_code_format>
-    <postal_code_regex>^([a-zA-Z]\d{4}[a-zA-Z])$</postal_code_regex>
+    <postal_code_format>######</postal_code_format>
+    <postal_code_regex>^(\d{6})$</postal_code_regex>
     <timezones>
       <zoneName>America/Guayaquil</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -8335,7 +8335,7 @@
     <nationality>Marshallese</nationality>
     <area_sq_km>181</area_sq_km>
     <postal_code_format>#####-####</postal_code_format>
-    <postal_code_regex>^969\d{2}(-\d{4})$</postal_code_regex>
+    <postal_code_regex>^969\d{2}(?:-\d{4})?$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Kwajalein</zoneName>
       <gmtOffset>43200</gmtOffset>
@@ -8943,8 +8943,8 @@
     <subregion_id>12</subregion_id>
     <nationality>Mongolian</nationality>
     <area_sq_km>1565000</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Choibalsan</zoneName>
       <gmtOffset>28800</gmtOffset>
@@ -9248,8 +9248,8 @@
     <subregion_id>13</subregion_id>
     <nationality>Burmese</nationality>
     <area_sq_km>678500</area_sq_km>
-    <postal_code_format>#####</postal_code_format>
-    <postal_code_regex>^(\d{5})$</postal_code_regex>
+    <postal_code_format>#######</postal_code_format>
+    <postal_code_regex>^(\d{7})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Yangon</zoneName>
       <gmtOffset>23400</gmtOffset>
