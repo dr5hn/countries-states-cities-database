@@ -452,42 +452,61 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
-            // Find latest feature release (non-prerelease) for base version,
-            // and count existing export prereleases to determine next export number
-            let baseVersion = '0.0';
+            // Find latest feature release for base version, and count existing
+            // export releases for that base version to determine next export number.
+            //
+            // Feature releases match strictly `^v?\d+\.\d+$` (e.g. v3.2, v3.1).
+            // Export releases match `^v?\d+\.\d+-export\.\d+$` (e.g. v3.2-export.1)
+            // and are explicitly excluded from the base-version search even though
+            // they are not flagged as prereleases (they need to be non-prerelease
+            // so downstream tools that pull /releases/latest pick up the data).
+            //
+            // If no feature release is found, the workflow FAILS rather than
+            // falling back to v0.0 — silently shipping v0.0-export.N once is
+            // already one tag too many.
+            const featureRe = /^v?(\d+)\.(\d+)$/;
+            const exportTagPrefix = (m, n) => new RegExp(`^v?${m}\\.${n}-export\\.(\\d+)$`);
+
+            let bestMajor = 0, bestMinor = 0;
             let exportNum = 0;
+            let releases;
             try {
-              const { data: releases } = await github.rest.repos.listReleases({
+              const resp = await github.rest.repos.listReleases({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                per_page: 50,
+                per_page: 100,
               });
+              releases = resp.data;
+            } catch (err) {
+              core.setFailed(`Could not list releases to determine base version: ${err.message}`);
+              return;
+            }
 
-              // Find highest non-prerelease version (manual feature releases)
-              let bestMajor = 0, bestMinor = 0;
-              for (const rel of releases) {
-                if (rel.prerelease) continue;
-                const match = rel.tag_name.match(/^v?(\d+)\.(\d+)/);
-                if (match) {
-                  const m = parseInt(match[1]), n = parseInt(match[2]);
-                  if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
-                    bestMajor = m;
-                    bestMinor = n;
-                  }
-                }
+            for (const rel of releases) {
+              if (rel.prerelease || rel.draft) continue;
+              const match = rel.tag_name.match(featureRe);
+              if (!match) continue;
+              const m = parseInt(match[1]);
+              const n = parseInt(match[2]);
+              if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
+                bestMajor = m;
+                bestMinor = n;
               }
-              baseVersion = `${bestMajor}.${bestMinor}`;
+            }
 
-              // Count existing export releases for this base version
-              for (const rel of releases) {
-                const match = rel.tag_name.match(new RegExp(`^v?${bestMajor}\\.${bestMinor}-export\\.(\\d+)$`));
-                if (match) {
-                  const num = parseInt(match[1]);
-                  if (num >= exportNum) exportNum = num;
-                }
+            if (bestMajor === 0 && bestMinor === 0) {
+              core.setFailed('No feature release matching v\\d+\\.\\d+ found. Cut a v<MAJOR>.<MINOR> release first (gh release create vX.Y --target master), then re-run this workflow.');
+              return;
+            }
+
+            const baseVersion = `${bestMajor}.${bestMinor}`;
+            const exportRe = exportTagPrefix(bestMajor, bestMinor);
+            for (const rel of releases) {
+              const match = rel.tag_name.match(exportRe);
+              if (match) {
+                const num = parseInt(match[1]);
+                if (num > exportNum) exportNum = num;
               }
-            } catch {
-              // No existing releases
             }
 
             exportNum++;
