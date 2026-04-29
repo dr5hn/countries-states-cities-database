@@ -36,21 +36,29 @@ nmig/node_modules/
 # Large uncompressed exports
 sql/world.sql
 sql/cities.sql
+sql/postcodes.sql
 psql/world.sql
 psql/cities.sql
+psql/postcodes.sql
 sqlserver/world.sql
 sqlserver/cities.sql
+sqlserver/postcodes.sql
 toon/cities.toon
 geojson/cities.geojson
 sqlite/world.sqlite3
 sqlite/cities.sqlite3
+sqlite/postcodes.sqlite3
 json/countries+states+cities.json
 json/cities.json
 json/states+cities.json
+json/postcodes.json
 xml/cities.xml
+xml/postcodes.xml
 yml/cities.yml
+yml/postcodes.yml
 csv/translations.csv
 csv/cities.csv
+csv/postcodes.csv
 
 # Keep small files that are useful in git
 # - Schema files (few KB)

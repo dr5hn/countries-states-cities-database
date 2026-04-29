@@ -15,7 +15,7 @@ class ExportMongoDB extends Command
     protected static $defaultName = 'export:mongodb';
     protected static $defaultDescription = 'Export data to MongoDB format';
 
-    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities'];
+    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities', 'postcodes'];
     private Filesystem $filesystem;
     private array $dataCache = [];
 
@@ -67,6 +67,7 @@ class ExportMongoDB extends Command
             $this->processCountries($io, $rootDir);
             $this->processStates($io, $rootDir);
             $this->processCities($io, $rootDir);
+            $this->processPostcodes($io, $rootDir);
 
             $io->success('MongoDB export completed successfully');
             return Command::SUCCESS;
@@ -285,6 +286,56 @@ class ExportMongoDB extends Command
 
         $this->saveCollection($rootDir, 'cities', $processedCities);
         $io->info('Cities exported to MongoDB format');
+    }
+
+    private function processPostcodes(SymfonyStyle $io, string $rootDir): void
+    {
+        $io->section('Processing postcodes');
+
+        $postcodes = $this->dataCache['postcodes'] ?? [];
+        $countries = $this->dataCache['countries'] ?? [];
+        $states = $this->dataCache['states'] ?? [];
+
+        $countryById = [];
+        foreach ($countries as $c) {
+            $countryById[(int) $c['id']] = $c;
+        }
+        $stateById = [];
+        foreach ($states as $s) {
+            $stateById[(int) $s['id']] = $s;
+        }
+
+        $processed = [];
+        foreach ($postcodes as $p) {
+            $row = $p;
+            $row['_id'] = (int) $p['id'];
+            unset($row['id']);
+
+            if (!empty($p['country_id']) && isset($countryById[(int) $p['country_id']])) {
+                $row['country'] = [
+                    '$ref' => 'countries',
+                    '$id'  => (int) $p['country_id'],
+                ];
+            }
+            if (!empty($p['state_id']) && isset($stateById[(int) $p['state_id']])) {
+                $row['state'] = [
+                    '$ref' => 'states',
+                    '$id'  => (int) $p['state_id'],
+                ];
+            }
+
+            if (isset($p['latitude'], $p['longitude']) && $p['latitude'] !== null && $p['longitude'] !== null) {
+                $row['location'] = [
+                    'type'        => 'Point',
+                    'coordinates' => [(float) $p['longitude'], (float) $p['latitude']],
+                ];
+            }
+
+            $processed[] = $row;
+        }
+
+        $this->saveCollection($rootDir, 'postcodes', $processed);
+        $io->info('Postcodes exported to MongoDB format');
     }
 
     private function saveCollection(string $rootDir, string $collection, array $data): void

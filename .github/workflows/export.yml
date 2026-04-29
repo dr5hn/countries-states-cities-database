@@ -140,7 +140,7 @@ jobs:
       - name: Setup MySQLtoSQLite
         run: |
           python -m pip install --upgrade pip
-          pip install "mysql-to-sqlite3" "sqlglot<30"
+          pip install "mysql-to-sqlite3<2.5.6" "sqlglot<30"
           mysql2sqlite --version
 
       - name: Setup variables
@@ -150,6 +150,8 @@ jobs:
           echo "country_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.countries;' -s)" >> $GITHUB_ENV
           echo "state_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.states;' -s)" >> $GITHUB_ENV
           echo "city_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.cities;' -s)" >> $GITHUB_ENV
+          echo "postcode_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(*) FROM world.postcodes;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
+          echo "postcode_country_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(DISTINCT country_code) FROM world.postcodes;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
           echo "current_date=$(date +'%B %d, %Y')" >> $GITHUB_ENV
 
       - name: Composer Dependencies
@@ -192,6 +194,7 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
           # Export complete world database
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
 
@@ -200,13 +203,15 @@ jobs:
           echo "🧹 Adding DROP TABLE commands in correct order..."
           # Remove any existing DROP TABLE commands
           grep -v "DROP TABLE" sql/world.sql > sql/world_temp.sql
-          # Create new file with DROP TABLE commands in correct order (reverse of foreign key dependencies)
+          # Create new file with DROP TABLE commands in correct order (reverse of foreign key dependencies).
+          # postcodes drops first because it FKs to countries/states/cities.
           cat > sql/world.sql << 'EOF'
           -- -------------------------------------------------------------
           -- Generated from MySQL database
           -- Combined world database
           -- -------------------------------------------------------------
 
+          DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
@@ -239,6 +244,7 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
 
           # Remove \restrict and \unrestrict commands from all psql files
@@ -257,6 +263,7 @@ jobs:
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
+          mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
       - name: Export SQL Server
@@ -281,6 +288,11 @@ jobs:
           mongoimport --host localhost:27017 --db world --collection countries --file countries.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection states --file states.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection cities --file cities.json --jsonArray
+          if [ -s postcodes.json ] && [ "$(jq 'length' postcodes.json)" -gt 0 ]; then
+            mongoimport --host localhost:27017 --db world --collection postcodes --file postcodes.json --jsonArray
+          else
+            echo "Skipping postcodes import — empty or missing"
+          fi
           echo "Import completed"
 
           # Create a MongoDB dump
@@ -290,7 +302,7 @@ jobs:
           tar -czvf world-mongodb-dump.tar.gz mongodb-dump
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
-          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json
+          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json postcodes.json
 
       - name: Compress All Large Files
         run: |
@@ -306,6 +318,10 @@ jobs:
           if [ -f json/cities.json ]; then
             gzip -9 -k -f json/cities.json
             echo "  ✓ json/cities.json.gz"
+          fi
+          if [ -f json/postcodes.json ]; then
+            gzip -9 -k -f json/postcodes.json
+            echo "  ✓ json/postcodes.json.gz"
           fi
 
           # TOON Files
@@ -328,6 +344,10 @@ jobs:
             gzip -9 -k -f xml/cities.xml
             echo "  ✓ xml/cities.xml.gz"
           fi
+          if [ -f xml/postcodes.xml ]; then
+            gzip -9 -k -f xml/postcodes.xml
+            echo "  ✓ xml/postcodes.xml.gz"
+          fi
 
           # YAML Files
           echo "📄 Compressing YAML files..."
@@ -335,12 +355,24 @@ jobs:
             gzip -9 -k -f yml/cities.yml
             echo "  ✓ yml/cities.yml.gz"
           fi
+          if [ -f yml/postcodes.yml ]; then
+            gzip -9 -k -f yml/postcodes.yml
+            echo "  ✓ yml/postcodes.yml.gz"
+          fi
 
           # CSV Files
           echo "📄 Compressing CSV files..."
+          if [ -f csv/cities.csv ]; then
+            gzip -9 -k -f csv/cities.csv
+            echo "  ✓ csv/cities.csv.gz"
+          fi
           if [ -f csv/translations.csv ]; then
             gzip -9 -k -f csv/translations.csv
             echo "  ✓ csv/translations.csv.gz"
+          fi
+          if [ -f csv/postcodes.csv ]; then
+            gzip -9 -k -f csv/postcodes.csv
+            echo "  ✓ csv/postcodes.csv.gz"
           fi
 
           # MySQL SQL Files
@@ -349,6 +381,10 @@ jobs:
           gzip -9 -k -f sql/cities.sql
           echo "  ✓ sql/world.sql.gz"
           echo "  ✓ sql/cities.sql.gz"
+          if [ -f sql/postcodes.sql ]; then
+            gzip -9 -k -f sql/postcodes.sql
+            echo "  ✓ sql/postcodes.sql.gz"
+          fi
 
           # PostgreSQL SQL Files
           echo "📄 Compressing PostgreSQL SQL files..."
@@ -356,6 +392,10 @@ jobs:
           gzip -9 -k -f psql/cities.sql
           echo "  ✓ psql/world.sql.gz"
           echo "  ✓ psql/cities.sql.gz"
+          if [ -f psql/postcodes.sql ]; then
+            gzip -9 -k -f psql/postcodes.sql
+            echo "  ✓ psql/postcodes.sql.gz"
+          fi
 
           # SQLite Files
           echo "📄 Compressing SQLite files..."
@@ -363,6 +403,10 @@ jobs:
           gzip -9 -k -f sqlite/cities.sqlite3
           echo "  ✓ sqlite/world.sqlite3.gz"
           echo "  ✓ sqlite/cities.sqlite3.gz"
+          if [ -f sqlite/postcodes.sqlite3 ]; then
+            gzip -9 -k -f sqlite/postcodes.sqlite3
+            echo "  ✓ sqlite/postcodes.sqlite3.gz"
+          fi
 
           # SQL Server Files
           echo "📄 Compressing SQL Server files..."
@@ -373,6 +417,10 @@ jobs:
           if [ -f sqlserver/cities.sql ]; then
             gzip -9 -k -f sqlserver/cities.sql
             echo "  ✓ sqlserver/cities.sql.gz"
+          fi
+          if [ -f sqlserver/postcodes.sql ]; then
+            gzip -9 -k -f sqlserver/postcodes.sql
+            echo "  ✓ sqlserver/postcodes.sql.gz"
           fi
 
           echo "================================"
@@ -388,6 +436,7 @@ jobs:
           sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md
           sed -i "s/Total States\/Regions\/Municipalities : [0-9]* <br>/Total States\/Regions\/Municipalities : $state_count <br>/" README.md
           sed -i "s/Total Cities\/Towns\/Districts : [0-9]* <br>/Total Cities\/Towns\/Districts : $city_count <br>/" README.md
+          sed -i "s/Total Postcodes : [0-9,]* ([0-9]* countries) <br>/Total Postcodes : $postcode_count ($postcode_country_count countries) <br>/" README.md
           sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
 
       - name: Create GitHub Release with exports
@@ -399,47 +448,67 @@ jobs:
           COUNTRY_COUNT: ${{ env.country_count }}
           STATE_COUNT: ${{ env.state_count }}
           CITY_COUNT: ${{ env.city_count }}
+          POSTCODE_COUNT: ${{ env.postcode_count }}
         with:
           script: |
             const fs = require('fs');
             const path = require('path');
 
-            // Find latest feature release (non-prerelease) for base version,
-            // and count existing export prereleases to determine next export number
-            let baseVersion = '0.0';
+            // Find latest feature release for base version, and count existing
+            // export releases for that base version to determine next export number.
+            //
+            // Feature releases match strictly `^v?\d+\.\d+$` (e.g. v3.2, v3.1).
+            // Export releases match `^v?\d+\.\d+-export\.\d+$` (e.g. v3.2-export.1)
+            // and are explicitly excluded from the base-version search even though
+            // they are not flagged as prereleases (they need to be non-prerelease
+            // so downstream tools that pull /releases/latest pick up the data).
+            //
+            // If no feature release is found, the workflow FAILS rather than
+            // falling back to v0.0 — silently shipping v0.0-export.N once is
+            // already one tag too many.
+            const featureRe = /^v?(\d+)\.(\d+)$/;
+            const exportTagPrefix = (m, n) => new RegExp(`^v?${m}\\.${n}-export\\.(\\d+)$`);
+
+            let bestMajor = 0, bestMinor = 0;
             let exportNum = 0;
+            let releases;
             try {
-              const { data: releases } = await github.rest.repos.listReleases({
+              const resp = await github.rest.repos.listReleases({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                per_page: 50,
+                per_page: 100,
               });
+              releases = resp.data;
+            } catch (err) {
+              core.setFailed(`Could not list releases to determine base version: ${err.message}`);
+              return;
+            }
 
-              // Find highest non-prerelease version (manual feature releases)
-              let bestMajor = 0, bestMinor = 0;
-              for (const rel of releases) {
-                if (rel.prerelease) continue;
-                const match = rel.tag_name.match(/^v?(\d+)\.(\d+)/);
-                if (match) {
-                  const m = parseInt(match[1]), n = parseInt(match[2]);
-                  if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
-                    bestMajor = m;
-                    bestMinor = n;
-                  }
-                }
+            for (const rel of releases) {
+              if (rel.prerelease || rel.draft) continue;
+              const match = rel.tag_name.match(featureRe);
+              if (!match) continue;
+              const m = parseInt(match[1]);
+              const n = parseInt(match[2]);
+              if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
+                bestMajor = m;
+                bestMinor = n;
               }
-              baseVersion = `${bestMajor}.${bestMinor}`;
+            }
 
-              // Count existing export releases for this base version
-              for (const rel of releases) {
-                const match = rel.tag_name.match(new RegExp(`^v?${bestMajor}\\.${bestMinor}-export\\.(\\d+)$`));
-                if (match) {
-                  const num = parseInt(match[1]);
-                  if (num >= exportNum) exportNum = num;
-                }
+            if (bestMajor === 0 && bestMinor === 0) {
+              core.setFailed('No feature release matching v\\d+\\.\\d+ found. Cut a v<MAJOR>.<MINOR> release first (gh release create vX.Y --target master), then re-run this workflow.');
+              return;
+            }
+
+            const baseVersion = `${bestMajor}.${bestMinor}`;
+            const exportRe = exportTagPrefix(bestMajor, bestMinor);
+            for (const rel of releases) {
+              const match = rel.tag_name.match(exportRe);
+              if (match) {
+                const num = parseInt(match[1]);
+                if (num > exportNum) exportNum = num;
               }
-            } catch {
-              // No existing releases
             }
 
             exportNum++;
@@ -464,6 +533,7 @@ jobs:
                 `- **Countries**: ${process.env.COUNTRY_COUNT}`,
                 `- **States**: ${process.env.STATE_COUNT}`,
                 `- **Cities**: ${process.env.CITY_COUNT}`,
+                `- **Postcodes**: ${process.env.POSTCODE_COUNT}`,
                 '',
                 '### Formats',
                 'JSON, MySQL, PostgreSQL, SQLite, SQL Server, XML, YAML, CSV, GeoJSON, Toon, MongoDB',
@@ -522,7 +592,7 @@ jobs:
           commit-message: |
             Export database formats - ${{ env.current_date }}
 
-            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities
+            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities, ${{ env.postcode_count }} postcodes
             Large files (.gz) uploaded to GitHub Releases instead of git.
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
@@ -538,6 +608,7 @@ jobs:
             - **Countries**: ${{ env.country_count }}
             - **States**: ${{ env.state_count }}
             - **Cities**: ${{ env.city_count }}
+            - **Postcodes**: ${{ env.postcode_count }}
 
             ### What's in this PR
             Small export files (individual table JSON, CSV, SQL schema, etc.) that are useful in the repo.

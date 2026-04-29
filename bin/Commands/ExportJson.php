@@ -281,11 +281,39 @@ class ExportJson extends Command
                 }
             }
 
+            // Fetching All Postcodes (issue #1039) — graceful skip if table missing
+            $postcodesArray = array();
+            $p = 0;
+            $hasPostcodes = $db->query("SHOW TABLES LIKE 'postcodes'");
+            if ($hasPostcodes && $hasPostcodes->num_rows > 0) {
+                $sql = "SELECT * FROM postcodes ORDER BY country_code, code";
+                $result = $db->query($sql);
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $postcodesArray[$p]['id'] = (int)$row['id'];
+                        $postcodesArray[$p]['code'] = $row['code'];
+                        $postcodesArray[$p]['country_id'] = (int)$row['country_id'];
+                        $postcodesArray[$p]['country_code'] = $row['country_code'];
+                        $postcodesArray[$p]['state_id'] = $row['state_id'] !== null ? (int)$row['state_id'] : null;
+                        $postcodesArray[$p]['state_code'] = $row['state_code'];
+                        $postcodesArray[$p]['city_id'] = $row['city_id'] !== null ? (int)$row['city_id'] : null;
+                        $postcodesArray[$p]['locality_name'] = $row['locality_name'];
+                        $postcodesArray[$p]['type'] = $row['type'];
+                        $postcodesArray[$p]['latitude'] = $row['latitude'];
+                        $postcodesArray[$p]['longitude'] = $row['longitude'];
+                        $postcodesArray[$p]['source'] = $row['source'];
+                        $postcodesArray[$p]['wikiDataId'] = $row['wikiDataId'];
+                        $p++;
+                    }
+                }
+            }
+
             $io->writeln('Total Regions Count : ' . count($regionsArray));
             $io->writeln('Total Subregions Count : ' . count($subregionsArray));
             $io->writeln('Total Countries Count : ' . count($countriesArray));
             $io->writeln('Total States Count : ' . count($statesArray));
             $io->writeln('Total Cities Count : ' . count($citiesArray));
+            $io->writeln('Total Postcodes Count : ' . count($postcodesArray));
 
             // Add a Space
             $io->newLine();
@@ -296,6 +324,7 @@ class ExportJson extends Command
                 '/json/countries.json' => $countriesArray,
                 '/json/states.json' => $statesArray,
                 '/json/cities.json' => $citiesArray,
+                '/json/postcodes.json' => $postcodesArray,
                 '/json/countries+states.json' => $countryStateArray,
                 '/json/countries+cities.json' => $countryCityArray,
                 '/json/countries+states+cities.json' => $countryStateCityArray

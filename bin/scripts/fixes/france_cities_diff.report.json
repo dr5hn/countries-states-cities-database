@@ -1,0 +1,2085 @@
+{
+  "stats": {
+    "upstream_metro_total": 34806,
+    "ours_total": 10079,
+    "matched": 10688,
+    "missing": 24118,
+    "extra": 643,
+    "cross_region_matches": 1194,
+    "coord_mismatches": 4836,
+    "coord_mismatches_skipped_homonym": 1978
+  },
+  "pop_threshold": 2000,
+  "proposed_count": 455,
+  "deferred_count": 23663,
+  "samples": {
+    "missing_top_by_population": [
+      {
+        "insee": "50129",
+        "nom": "Cherbourg-en-Cotentin",
+        "departement": "50",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.6356,
+            49.6277
+          ]
+        },
+        "population": 78258
+      },
+      {
+        "insee": "91228",
+        "nom": "Évry-Courcouronnes",
+        "departement": "91",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.4313,
+            48.6287
+          ]
+        },
+        "population": 66919
+      },
+      {
+        "insee": "93070",
+        "nom": "Saint-Ouen-sur-Seine",
+        "departement": "93",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.3329,
+            48.9118
+          ]
+        },
+        "population": 53615
+      },
+      {
+        "insee": "69149",
+        "nom": "Oullins-Pierre-Bénite",
+        "departement": "69",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            4.8112,
+            45.708
+          ]
+        },
+        "population": 38168
+      },
+      {
+        "insee": "95306",
+        "nom": "Herblay-sur-Seine",
+        "departement": "95",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.1556,
+            49.0052
+          ]
+        },
+        "population": 31779
+      },
+      {
+        "insee": "78158",
+        "nom": "Le Chesnay-Rocquencourt",
+        "departement": "78",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.1188,
+            48.8285
+          ]
+        },
+        "population": 30689
+      },
+      {
+        "insee": "49301",
+        "nom": "Sèvremoine",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.0968,
+            47.0878
+          ]
+        },
+        "population": 25797
+      },
+      {
+        "insee": "49023",
+        "nom": "Beaupréau-en-Mauges",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.9844,
+            47.2028
+          ]
+        },
+        "population": 23989
+      },
+      {
+        "insee": "49092",
+        "nom": "Chemillé-en-Anjou",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.6964,
+            47.2211
+          ]
+        },
+        "population": 21999
+      },
+      {
+        "insee": "85146",
+        "nom": "Montaigu-Vendée",
+        "departement": "85",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.2923,
+            46.9741
+          ]
+        },
+        "population": 21134
+      },
+      {
+        "insee": "49244",
+        "nom": "Mauges-sur-Loire",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.9351,
+            47.3435
+          ]
+        },
+        "population": 18695
+      },
+      {
+        "insee": "49331",
+        "nom": "Segré-en-Anjou Bleu",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.854,
+            47.7111
+          ]
+        },
+        "population": 17667
+      },
+      {
+        "insee": "14762",
+        "nom": "Vire Normandie",
+        "departement": "14",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.87,
+            48.8199
+          ]
+        },
+        "population": 17457
+      },
+      {
+        "insee": "22093",
+        "nom": "Lamballe-Armor",
+        "departement": "22",
+        "region": "53",
+        "target_state": "BRE",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -2.5201,
+            48.4859
+          ]
+        },
+        "population": 17241
+      },
+      {
+        "insee": "49307",
+        "nom": "Loire-Authion",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.3734,
+            47.4695
+          ]
+        },
+        "population": 16765
+      },
+      {
+        "insee": "01033",
+        "nom": "Valserhône",
+        "departement": "01",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            5.7944,
+            46.1234
+          ]
+        },
+        "population": 16712
+      },
+      {
+        "insee": "53062",
+        "nom": "Château-Gontier-sur-Mayenne",
+        "departement": "53",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.701,
+            47.821
+          ]
+        },
+        "population": 16584
+      },
+      {
+        "insee": "49218",
+        "nom": "Montrevault-sur-Èvre",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.0204,
+            47.2494
+          ]
+        },
+        "population": 15726
+      },
+      {
+        "insee": "69019",
+        "nom": "Belleville-en-Beaujolais",
+        "departement": "69",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            4.7291,
+            46.1145
+          ]
+        },
+        "population": 14016
+      },
+      {
+        "insee": "77316",
+        "nom": "Moret-Loing-et-Orvanne",
+        "departement": "77",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.8233,
+            48.3545
+          ]
+        },
+        "population": 12810
+      },
+      {
+        "insee": "33366",
+        "nom": "Saint-André-de-Cubzac",
+        "departement": "33",
+        "region": "75",
+        "target_state": "NAQ",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.4378,
+            44.9945
+          ]
+        },
+        "population": 12626
+      },
+      {
+        "insee": "56078",
+        "nom": "Guidel",
+        "departement": "56",
+        "region": "53",
+        "target_state": "BRE",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -3.4906,
+            47.7938
+          ]
+        },
+        "population": 12338
+      },
+      {
+        "insee": "12176",
+        "nom": "Onet-le-Château",
+        "departement": "12",
+        "region": "76",
+        "target_state": "OCC",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.5614,
+            44.3824
+          ]
+        },
+        "population": 12080
+      },
+      {
+        "insee": "44003",
+        "nom": "Ancenis-Saint-Géréon",
+        "departement": "44",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.1681,
+            47.382
+          ]
+        },
+        "population": 11600
+      },
+      {
+        "insee": "50041",
+        "nom": "La Hague",
+        "departement": "50",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.8214,
+            49.6546
+          ]
+        },
+        "population": 11484
+      },
+      {
+        "insee": "49125",
+        "nom": "Doué-en-Anjou",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.3053,
+            47.1988
+          ]
+        },
+        "population": 11029
+      },
+      {
+        "insee": "49050",
+        "nom": "Brissac Loire Aubance",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.4087,
+            47.3392
+          ]
+        },
+        "population": 10878
+      },
+      {
+        "insee": "24053",
+        "nom": "Boulazac Isle Manoire",
+        "departement": "24",
+        "region": "75",
+        "target_state": "NAQ",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            0.7878,
+            45.1385
+          ]
+        },
+        "population": 10759
+      },
+      {
+        "insee": "76476",
+        "nom": "Port-Jérôme-sur-Seine",
+        "departement": "76",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            0.5834,
+            49.5062
+          ]
+        },
+        "population": 10617
+      },
+      {
+        "insee": "66008",
+        "nom": "Argelès-sur-Mer",
+        "departement": "66",
+        "region": "76",
+        "target_state": "OCC",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            3.0234,
+            42.53
+          ]
+        },
+        "population": 10616
+      },
+      {
+        "insee": "50099",
+        "nom": "Carentan-les-Marais",
+        "departement": "50",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.2118,
+            49.3061
+          ]
+        },
+        "population": 10218
+      },
+      {
+        "insee": "74282",
+        "nom": "Fillière",
+        "departement": "74",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            6.2275,
+            46.0057
+          ]
+        },
+        "population": 10075
+      },
+      {
+        "insee": "14431",
+        "nom": "Mézidon Vallée d'Auge",
+        "departement": "14",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.0169,
+            49.086
+          ]
+        },
+        "population": 9766
+      },
+      {
+        "insee": "49267",
+        "nom": "Saint-Barthélemy-d'Anjou",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.4826,
+            47.4741
+          ]
+        },
+        "population": 9720
+      },
+      {
+        "insee": "76618",
+        "nom": "Petit-Caux",
+        "departement": "76",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            1.2343,
+            49.9612
+          ]
+        },
+        "population": 9513
+      },
+      {
+        "insee": "34079",
+        "nom": "Clermont-l'Hérault",
+        "departement": "34",
+        "region": "76",
+        "target_state": "OCC",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            3.4017,
+            43.6323
+          ]
+        },
+        "population": 9461
+      },
+      {
+        "insee": "01313",
+        "nom": "Prévessin-Moëns",
+        "departement": "01",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            6.0722,
+            46.2594
+          ]
+        },
+        "population": 9153
+      },
+      {
+        "insee": "74112",
+        "nom": "Epagny Metz-Tessy",
+        "departement": "74",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            6.0934,
+            45.943
+          ]
+        },
+        "population": 8925
+      },
+      {
+        "insee": "76305",
+        "nom": "Gonfreville-l'Orcher",
+        "departement": "76",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            0.2223,
+            49.487
+          ]
+        },
+        "population": 8916
+      },
+      {
+        "insee": "49248",
+        "nom": "Ombrée d'Anjou",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.1086,
+            47.7232
+          ]
+        },
+        "population": 8813
+      },
+      {
+        "insee": "59143",
+        "nom": "La Chapelle-d'Armentières",
+        "departement": "59",
+        "region": "32",
+        "target_state": "HDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.8944,
+            50.6641
+          ]
+        },
+        "population": 8754
+      },
+      {
+        "insee": "49080",
+        "nom": "Les Hauts-d'Anjou",
+        "departement": "49",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.5499,
+            47.697
+          ]
+        },
+        "population": 8751
+      },
+      {
+        "insee": "63193",
+        "nom": "Lempdes",
+        "departement": "63",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            3.192,
+            45.7719
+          ]
+        },
+        "population": 8709
+      },
+      {
+        "insee": "93039",
+        "nom": "L'Île-Saint-Denis",
+        "departement": "93",
+        "region": "11",
+        "target_state": "IDF",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            2.3204,
+            48.9465
+          ]
+        },
+        "population": 8696
+      },
+      {
+        "insee": "35334",
+        "nom": "Thorigné-Fouillard",
+        "departement": "35",
+        "region": "53",
+        "target_state": "BRE",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.5866,
+            48.1524
+          ]
+        },
+        "population": 8667
+      },
+      {
+        "insee": "14061",
+        "nom": "Souleuvre en Bocage",
+        "departement": "14",
+        "region": "28",
+        "target_state": "NOR",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.84,
+            48.9616
+          ]
+        },
+        "population": 8629
+      },
+      {
+        "insee": "79079",
+        "nom": "Mauléon",
+        "departement": "79",
+        "region": "75",
+        "target_state": "NAQ",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -0.7565,
+            46.943
+          ]
+        },
+        "population": 8573
+      },
+      {
+        "insee": "38524",
+        "nom": "Varces-Allières-et-Risset",
+        "departement": "38",
+        "region": "84",
+        "target_state": "ARA",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            5.6699,
+            45.0884
+          ]
+        },
+        "population": 8542
+      },
+      {
+        "insee": "56251",
+        "nom": "Theix-Noyalo",
+        "departement": "56",
+        "region": "53",
+        "target_state": "BRE",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -2.6472,
+            47.6304
+          ]
+        },
+        "population": 8500
+      },
+      {
+        "insee": "85288",
+        "nom": "Talmont-Saint-Hilaire",
+        "departement": "85",
+        "region": "52",
+        "target_state": "PDL",
+        "centre": {
+          "type": "Point",
+          "coordinates": [
+            -1.6299,
+            46.4775
+          ]
+        },
+        "population": 8492
+      }
+    ],
+    "cross_region_matches": [
+      {
+        "insee": "01011",
+        "nom": "Apremont",
+        "expected_state": "ARA",
+        "actual_state": "PDL",
+        "csc_id": 39445
+      },
+      {
+        "insee": "01061",
+        "nom": "Brens",
+        "expected_state": "ARA",
+        "actual_state": "OCC",
+        "csc_id": 40275
+      },
+      {
+        "insee": "01063",
+        "nom": "Brion",
+        "expected_state": "ARA",
+        "actual_state": "48",
+        "csc_id": 40319
+      },
+      {
+        "insee": "01068",
+        "nom": "Cerdon",
+        "expected_state": "ARA",
+        "actual_state": "CVL",
+        "csc_id": 40643
+      },
+      {
+        "insee": "01331",
+        "nom": "Saint-Alban",
+        "expected_state": "ARA",
+        "actual_state": "OCC",
+        "csc_id": 45734
+      },
+      {
+        "insee": "01349",
+        "nom": "Saint-Éloi",
+        "expected_state": "ARA",
+        "actual_state": "BFC",
+        "csc_id": 46636
+      },
+      {
+        "insee": "01369",
+        "nom": "Saint-Just",
+        "expected_state": "ARA",
+        "actual_state": "NOR",
+        "csc_id": 46150
+      },
+      {
+        "insee": "01371",
+        "nom": "Saint-Marcel",
+        "expected_state": "ARA",
+        "actual_state": "CVL",
+        "csc_id": 46241
+      },
+      {
+        "insee": "01385",
+        "nom": "Saint-Rémy",
+        "expected_state": "ARA",
+        "actual_state": "NOR",
+        "csc_id": 46508
+      },
+      {
+        "insee": "01387",
+        "nom": "Saint-Sulpice",
+        "expected_state": "ARA",
+        "actual_state": "HDF",
+        "csc_id": 46559
+      },
+      {
+        "insee": "01419",
+        "nom": "Thoiry",
+        "expected_state": "ARA",
+        "actual_state": "IDF",
+        "csc_id": 47243
+      },
+      {
+        "insee": "01446",
+        "nom": "Villeneuve",
+        "expected_state": "ARA",
+        "actual_state": "OCC",
+        "csc_id": 47759
+      },
+      {
+        "insee": "02036",
+        "nom": "Augy",
+        "expected_state": "HDF",
+        "actual_state": "BFC",
+        "csc_id": 39606
+      },
+      {
+        "insee": "02043",
+        "nom": "Bagneux",
+        "expected_state": "HDF",
+        "actual_state": "IDF",
+        "csc_id": 39709
+      },
+      {
+        "insee": "02088",
+        "nom": "Bièvres",
+        "expected_state": "HDF",
+        "actual_state": "IDF",
+        "csc_id": 40040
+      },
+      {
+        "insee": "02122",
+        "nom": "Brie",
+        "expected_state": "HDF",
+        "actual_state": "NAQ",
+        "csc_id": 40305
+      },
+      {
+        "insee": "02142",
+        "nom": "Castres",
+        "expected_state": "HDF",
+        "actual_state": "OCC",
+        "csc_id": 40595
+      },
+      {
+        "insee": "02145",
+        "nom": "Caumont",
+        "expected_state": "HDF",
+        "actual_state": "NOR",
+        "csc_id": 40607
+      },
+      {
+        "insee": "02165",
+        "nom": "Charmes",
+        "expected_state": "HDF",
+        "actual_state": "52",
+        "csc_id": 40806
+      },
+      {
+        "insee": "02175",
+        "nom": "Chavigny",
+        "expected_state": "HDF",
+        "actual_state": "GES",
+        "csc_id": 40862
+      },
+      {
+        "insee": "02198",
+        "nom": "Clamecy",
+        "expected_state": "HDF",
+        "actual_state": "BFC",
+        "csc_id": 41040
+      },
+      {
+        "insee": "02270",
+        "nom": "Douchy",
+        "expected_state": "HDF",
+        "actual_state": "CVL",
+        "csc_id": 41548
+      },
+      {
+        "insee": "02277",
+        "nom": "Épagny",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 48069
+      },
+      {
+        "insee": "02302",
+        "nom": "Faverolles",
+        "expected_state": "HDF",
+        "actual_state": "52",
+        "csc_id": 155743
+      },
+      {
+        "insee": "02316",
+        "nom": "Fleury",
+        "expected_state": "HDF",
+        "actual_state": "GES",
+        "csc_id": 41845
+      },
+      {
+        "insee": "02356",
+        "nom": "Grisolles",
+        "expected_state": "HDF",
+        "actual_state": "OCC",
+        "csc_id": 42215
+      },
+      {
+        "insee": "02498",
+        "nom": "Montaigu",
+        "expected_state": "HDF",
+        "actual_state": "PDL",
+        "csc_id": 44169
+      },
+      {
+        "insee": "02505",
+        "nom": "Montfaucon",
+        "expected_state": "HDF",
+        "actual_state": "OCC",
+        "csc_id": 44230
+      },
+      {
+        "insee": "02523",
+        "nom": "Mont-Saint-Martin",
+        "expected_state": "HDF",
+        "actual_state": "GES",
+        "csc_id": 44157
+      },
+      {
+        "insee": "02530",
+        "nom": "Moulins",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 44394
+      },
+      {
+        "insee": "02573",
+        "nom": "Orgeval",
+        "expected_state": "HDF",
+        "actual_state": "IDF",
+        "csc_id": 44763
+      },
+      {
+        "insee": "02600",
+        "nom": "Pierrepont",
+        "expected_state": "HDF",
+        "actual_state": "GES",
+        "csc_id": 44961
+      },
+      {
+        "insee": "02610",
+        "nom": "Pommiers",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 45152
+      },
+      {
+        "insee": "02636",
+        "nom": "Regny",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 45687
+      },
+      {
+        "insee": "02647",
+        "nom": "Ribeauville",
+        "expected_state": "HDF",
+        "actual_state": "GES",
+        "csc_id": 45490
+      },
+      {
+        "insee": "02671",
+        "nom": "Saint-Aubin",
+        "expected_state": "HDF",
+        "actual_state": "BFC",
+        "csc_id": 45780
+      },
+      {
+        "insee": "02674",
+        "nom": "Saint-Clément",
+        "expected_state": "HDF",
+        "actual_state": "BFC",
+        "csc_id": 45869
+      },
+      {
+        "insee": "02682",
+        "nom": "Saint-Mard",
+        "expected_state": "HDF",
+        "actual_state": "IDF",
+        "csc_id": 46252
+      },
+      {
+        "insee": "02694",
+        "nom": "Saint-Simon",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 46553
+      },
+      {
+        "insee": "02712",
+        "nom": "Sergy",
+        "expected_state": "HDF",
+        "actual_state": "ARA",
+        "csc_id": 46955
+      },
+      {
+        "insee": "02729",
+        "nom": "Soucy",
+        "expected_state": "HDF",
+        "actual_state": "BFC",
+        "csc_id": 47061
+      },
+      {
+        "insee": "02813",
+        "nom": "Villers-le-Sec",
+        "expected_state": "HDF",
+        "actual_state": "55",
+        "csc_id": 156994
+      },
+      {
+        "insee": "03009",
+        "nom": "Aubigny",
+        "expected_state": "ARA",
+        "actual_state": "PDL",
+        "csc_id": 39579
+      },
+      {
+        "insee": "03015",
+        "nom": "Bagneux",
+        "expected_state": "ARA",
+        "actual_state": "IDF",
+        "csc_id": 39709
+      },
+      {
+        "insee": "03042",
+        "nom": "Le Breuil",
+        "expected_state": "ARA",
+        "actual_state": "BFC",
+        "csc_id": 43144
+      },
+      {
+        "insee": "03047",
+        "nom": "La Celle",
+        "expected_state": "ARA",
+        "actual_state": "PAC",
+        "csc_id": 42670
+      },
+      {
+        "insee": "03061",
+        "nom": "Charmes",
+        "expected_state": "ARA",
+        "actual_state": "52",
+        "csc_id": 40806
+      },
+      {
+        "insee": "03062",
+        "nom": "Charroux",
+        "expected_state": "ARA",
+        "actual_state": "NAQ",
+        "csc_id": 40817
+      },
+      {
+        "insee": "03069",
+        "nom": "Châtillon",
+        "expected_state": "ARA",
+        "actual_state": "IDF",
+        "csc_id": 40991
+      },
+      {
+        "insee": "03162",
+        "nom": "Marigny",
+        "expected_state": "ARA",
+        "actual_state": "NOR",
+        "csc_id": 43840
+      }
+    ],
+    "coord_mismatches_top": [
+      {
+        "insee": "62851",
+        "nom": "Vieille-Chapelle",
+        "csc_id": 47674,
+        "csc_state": "PAC",
+        "ours": [
+          43.24963,
+          5.38048
+        ],
+        "upstream": [
+          50.5936,
+          2.7198
+        ],
+        "distance_km": 841.09
+      },
+      {
+        "insee": "22275",
+        "nom": "Saint-Barnabé",
+        "csc_id": 45802,
+        "csc_state": "PAC",
+        "ours": [
+          43.3,
+          5.41667
+        ],
+        "upstream": [
+          48.1387,
+          -2.6995
+        ],
+        "distance_km": 827.75
+      },
+      {
+        "insee": "14756",
+        "nom": "La Villette",
+        "csc_id": 42916,
+        "csc_state": "PAC",
+        "ours": [
+          43.31181,
+          5.37391
+        ],
+        "upstream": [
+          48.9089,
+          -0.5428
+        ],
+        "distance_km": 771.09
+      },
+      {
+        "insee": "76103",
+        "nom": "Bonsecours",
+        "csc_id": 40109,
+        "csc_state": "PAC",
+        "ours": [
+          43.31923,
+          5.38426
+        ],
+        "upstream": [
+          49.4251,
+          1.1353
+        ],
+        "distance_km": 752.84
+      },
+      {
+        "insee": "77314",
+        "nom": "Montolivet",
+        "csc_id": 44296,
+        "csc_state": "PAC",
+        "ours": [
+          43.31715,
+          5.4235
+        ],
+        "upstream": [
+          48.8274,
+          3.4318
+        ],
+        "distance_km": 631.62
+      },
+      {
+        "insee": "68282",
+        "nom": "Romagny",
+        "csc_id": 45571,
+        "csc_state": "NOR",
+        "ours": [
+          48.63931,
+          -0.96605
+        ],
+        "upstream": [
+          47.6091,
+          7.0642
+        ],
+        "distance_km": 606.65
+      },
+      {
+        "insee": "25437",
+        "nom": "Osse",
+        "csc_id": 44791,
+        "csc_state": "BRE",
+        "ours": [
+          48.05542,
+          -1.45029
+        ],
+        "upstream": [
+          47.2718,
+          6.2115
+        ],
+        "distance_km": 580.1
+      },
+      {
+        "insee": "34149",
+        "nom": "Margon",
+        "csc_id": 43836,
+        "csc_state": "CVL",
+        "ours": [
+          48.33568,
+          0.83454
+        ],
+        "upstream": [
+          43.4877,
+          3.3048
+        ],
+        "distance_km": 571.86
+      },
+      {
+        "insee": "04200",
+        "nom": "Salignac",
+        "csc_id": 46750,
+        "csc_state": "NAQ",
+        "ours": [
+          45.01607,
+          -0.37964
+        ],
+        "upstream": [
+          44.1546,
+          5.9889
+        ],
+        "distance_km": 513.22
+      },
+      {
+        "insee": "71584",
+        "nom": "Viré",
+        "csc_id": 47857,
+        "csc_state": "NOR",
+        "ours": [
+          48.83849,
+          -0.88929
+        ],
+        "upstream": [
+          46.4437,
+          4.8483
+        ],
+        "distance_km": 505.45
+      },
+      {
+        "insee": "42166",
+        "nom": "Parigny",
+        "csc_id": 44853,
+        "csc_state": "NOR",
+        "ours": [
+          48.5945,
+          -1.07925
+        ],
+        "upstream": [
+          45.9892,
+          4.093
+        ],
+        "distance_km": 485.71
+      },
+      {
+        "insee": "25267",
+        "nom": "Gennes",
+        "csc_id": 42067,
+        "csc_state": "PDL",
+        "ours": [
+          47.3401,
+          -0.23149
+        ],
+        "upstream": [
+          47.2481,
+          6.1305
+        ],
+        "distance_km": 479.77
+      },
+      {
+        "insee": "69281",
+        "nom": "Marennes",
+        "csc_id": 43822,
+        "csc_state": "NAQ",
+        "ours": [
+          45.8228,
+          -1.10546
+        ],
+        "upstream": [
+          45.6248,
+          4.9097
+        ],
+        "distance_km": 467.35
+      },
+      {
+        "insee": "80225",
+        "nom": "Creuse",
+        "csc_id": 41311,
+        "csc_state": "NAQ",
+        "ours": [
+          46.07523,
+          2.05476
+        ],
+        "upstream": [
+          49.8347,
+          2.1603
+        ],
+        "distance_km": 418.11
+      },
+      {
+        "insee": "89373",
+        "nom": "Saligny",
+        "csc_id": 46752,
+        "csc_state": "PDL",
+        "ours": [
+          46.80833,
+          -1.42726
+        ],
+        "upstream": [
+          48.2169,
+          3.351
+        ],
+        "distance_km": 391.47
+      },
+      {
+        "insee": "36078",
+        "nom": "Fougerolles",
+        "csc_id": 41925,
+        "csc_state": "BFC",
+        "ours": [
+          47.88542,
+          6.40454
+        ],
+        "upstream": [
+          46.572,
+          1.8729
+        ],
+        "distance_km": 371.97
+      },
+      {
+        "insee": "38544",
+        "nom": "Vienne",
+        "csc_id": 47682,
+        "csc_state": "NAQ",
+        "ours": [
+          46.53528,
+          0.45201
+        ],
+        "upstream": [
+          45.5221,
+          4.8803
+        ],
+        "distance_km": 359.9
+      },
+      {
+        "insee": "63430",
+        "nom": "Thiers",
+        "csc_id": 47228,
+        "csc_state": "PAC",
+        "ours": [
+          43.29748,
+          5.38198
+        ],
+        "upstream": [
+          45.8653,
+          3.538
+        ],
+        "distance_km": 320.69
+      },
+      {
+        "insee": "04121",
+        "nom": "Mézel",
+        "csc_id": 44066,
+        "csc_state": "ARA",
+        "ours": [
+          45.75508,
+          3.24225
+        ],
+        "upstream": [
+          43.9979,
+          6.1799
+        ],
+        "distance_km": 302.88
+      },
+      {
+        "insee": "91619",
+        "nom": "Torfou",
+        "csc_id": 47302,
+        "csc_state": "PDL",
+        "ours": [
+          47.03682,
+          -1.11635
+        ],
+        "upstream": [
+          48.5314,
+          2.2335
+        ],
+        "distance_km": 300.39
+      },
+      {
+        "insee": "54364",
+        "nom": "Méréville",
+        "csc_id": 44481,
+        "csc_state": "IDF",
+        "ours": [
+          48.31476,
+          2.08609
+        ],
+        "upstream": [
+          48.589,
+          6.1337
+        ],
+        "distance_km": 300.03
+      },
+      {
+        "insee": "17231",
+        "nom": "Messac",
+        "csc_id": 44032,
+        "csc_state": "BRE",
+        "ours": [
+          47.82399,
+          -1.81085
+        ],
+        "upstream": [
+          45.3492,
+          -0.3147
+        ],
+        "distance_km": 297.98
+      },
+      {
+        "insee": "46207",
+        "nom": "Montredon",
+        "csc_id": 44304,
+        "csc_state": "PAC",
+        "ours": [
+          43.24016,
+          5.36629
+        ],
+        "upstream": [
+          44.6117,
+          2.1818
+        ],
+        "distance_km": 297.12
+      },
+      {
+        "insee": "10394",
+        "nom": "Vallières",
+        "csc_id": 47491,
+        "csc_state": "ARA",
+        "ours": [
+          45.90043,
+          5.93863
+        ],
+        "upstream": [
+          47.9988,
+          4.0601
+        ],
+        "distance_km": 273.43
+      },
+      {
+        "insee": "12161",
+        "nom": "Mouret",
+        "csc_id": 44400,
+        "csc_state": "PAC",
+        "ours": [
+          43.36126,
+          5.43006
+        ],
+        "upstream": [
+          44.5154,
+          2.5174
+        ],
+        "distance_km": 266.17
+      },
+      {
+        "insee": "63382",
+        "nom": "Saint-Pardoux",
+        "csc_id": 46392,
+        "csc_state": "NAQ",
+        "ours": [
+          46.57155,
+          -0.30542
+        ],
+        "upstream": [
+          46.0574,
+          3.003
+        ],
+        "distance_km": 260.42
+      },
+      {
+        "insee": "60200",
+        "nom": "Domfront",
+        "csc_id": 41516,
+        "csc_state": "NOR",
+        "ours": [
+          48.59208,
+          -0.64588
+        ],
+        "upstream": [
+          49.5983,
+          2.5563
+        ],
+        "distance_km": 258.58
+      },
+      {
+        "insee": "16100",
+        "nom": "Chirac",
+        "csc_id": 40913,
+        "csc_state": "OCC",
+        "ours": [
+          44.52289,
+          3.26652
+        ],
+        "upstream": [
+          45.9154,
+          0.6875
+        ],
+        "distance_km": 254.5
+      },
+      {
+        "insee": "17032",
+        "nom": "Ballon",
+        "csc_id": 39754,
+        "csc_state": "PDL",
+        "ours": [
+          48.17317,
+          0.23814
+        ],
+        "upstream": [
+          46.0541,
+          -0.9705
+        ],
+        "distance_km": 252.75
+      },
+      {
+        "insee": "71186",
+        "nom": "Écuelles",
+        "csc_id": 48054,
+        "csc_state": "IDF",
+        "ours": [
+          48.35636,
+          2.82335
+        ],
+        "upstream": [
+          46.9516,
+          5.0708
+        ],
+        "distance_km": 229.63
+      },
+      {
+        "insee": "17202",
+        "nom": "Landes",
+        "csc_id": 43005,
+        "csc_state": "NAQ",
+        "ours": [
+          43.97543,
+          -0.74241
+        ],
+        "upstream": [
+          45.9984,
+          -0.6012
+        ],
+        "distance_km": 225.22
+      },
+      {
+        "insee": "48108",
+        "nom": "La Panouse",
+        "csc_id": 42828,
+        "csc_state": "PAC",
+        "ours": [
+          43.25576,
+          5.42963
+        ],
+        "upstream": [
+          44.7375,
+          3.5885
+        ],
+        "distance_km": 220.98
+      },
+      {
+        "insee": "02270",
+        "nom": "Douchy",
+        "csc_id": 41548,
+        "csc_state": "CVL",
+        "ours": [
+          47.94282,
+          3.05392
+        ],
+        "upstream": [
+          49.7959,
+          3.1296
+        ],
+        "distance_km": 206.13
+      },
+      {
+        "insee": "27360",
+        "nom": "Jumelles",
+        "csc_id": 42590,
+        "csc_state": "PDL",
+        "ours": [
+          47.43511,
+          -0.1037
+        ],
+        "upstream": [
+          48.9194,
+          1.2102
+        ],
+        "distance_km": 191.65
+      },
+      {
+        "insee": "60070",
+        "nom": "Bienville",
+        "csc_id": 40011,
+        "csc_state": "GES",
+        "ours": [
+          48.57582,
+          5.04579
+        ],
+        "upstream": [
+          49.4474,
+          2.8245
+        ],
+        "distance_km": 188.77
+      },
+      {
+        "insee": "41079",
+        "nom": "Les Essarts",
+        "csc_id": 43385,
+        "csc_state": "PDL",
+        "ours": [
+          46.7744,
+          -1.22834
+        ],
+        "upstream": [
+          47.7321,
+          0.7148
+        ],
+        "distance_km": 181.23
+      },
+      {
+        "insee": "14510",
+        "nom": "La Pommeraye",
+        "csc_id": 42836,
+        "csc_state": "PDL",
+        "ours": [
+          47.35562,
+          -0.85892
+        ],
+        "upstream": [
+          48.9102,
+          -0.4163
+        ],
+        "distance_km": 175.95
+      },
+      {
+        "insee": "34236",
+        "nom": "Rouet",
+        "csc_id": 45618,
+        "csc_state": "PAC",
+        "ours": [
+          43.27808,
+          5.39158
+        ],
+        "upstream": [
+          43.8254,
+          3.8184
+        ],
+        "distance_km": 140.63
+      },
+      {
+        "insee": "69062",
+        "nom": "Coise",
+        "csc_id": 41086,
+        "csc_state": "ARA",
+        "ours": [
+          45.52822,
+          6.14389
+        ],
+        "upstream": [
+          45.6133,
+          4.4665
+        ],
+        "distance_km": 130.91
+      },
+      {
+        "insee": "18071",
+        "nom": "Contres",
+        "csc_id": 41156,
+        "csc_state": "CVL",
+        "ours": [
+          47.41754,
+          1.42849
+        ],
+        "upstream": [
+          46.8603,
+          2.4956
+        ],
+        "distance_km": 101.75
+      },
+      {
+        "insee": "60544",
+        "nom": "Rocquencourt",
+        "csc_id": 45552,
+        "csc_state": "IDF",
+        "ours": [
+          48.83783,
+          2.10228
+        ],
+        "upstream": [
+          49.6475,
+          2.4115
+        ],
+        "distance_km": 92.79
+      },
+      {
+        "insee": "27182",
+        "nom": "Courteilles",
+        "csc_id": 41267,
+        "csc_state": "NOR",
+        "ours": [
+          48.77495,
+          -0.19942
+        ],
+        "upstream": [
+          48.7421,
+          0.9987
+        ],
+        "distance_km": 87.9
+      },
+      {
+        "insee": "40271",
+        "nom": "Sainte-Marie-de-Gosse",
+        "csc_id": 46712,
+        "csc_state": "NAQ",
+        "ours": [
+          43.55,
+          -0.23333
+        ],
+        "upstream": [
+          43.5497,
+          -1.2301
+        ],
+        "distance_km": 80.33
+      },
+      {
+        "insee": "89162",
+        "nom": "Évry",
+        "csc_id": 48125,
+        "csc_state": "IDF",
+        "ours": [
+          48.6328,
+          2.44049
+        ],
+        "upstream": [
+          48.2681,
+          3.2611
+        ],
+        "distance_km": 72.85
+      },
+      {
+        "insee": "16208",
+        "nom": "Mareuil",
+        "csc_id": 43825,
+        "csc_state": "NAQ",
+        "ours": [
+          45.45,
+          0.45
+        ],
+        "upstream": [
+          45.7746,
+          -0.1348
+        ],
+        "distance_km": 58.07
+      },
+      {
+        "insee": "62869",
+        "nom": "Wailly",
+        "csc_id": 47936,
+        "csc_state": "HDF",
+        "ours": [
+          50.52287,
+          2.06792
+        ],
+        "upstream": [
+          50.248,
+          2.7197
+        ],
+        "distance_km": 55.4
+      },
+      {
+        "insee": "45258",
+        "nom": "Puiseaux",
+        "csc_id": 45320,
+        "csc_state": "CVL",
+        "ours": [
+          48.09234,
+          2.05967
+        ],
+        "upstream": [
+          48.2084,
+          2.4679
+        ],
+        "distance_km": 32.92
+      },
+      {
+        "insee": "25204",
+        "nom": "Doubs",
+        "csc_id": 41547,
+        "csc_state": "BFC",
+        "ours": [
+          47.19967,
+          6.43487
+        ],
+        "upstream": [
+          46.9321,
+          6.3651
+        ],
+        "distance_km": 30.22
+      },
+      {
+        "insee": "2B096",
+        "nom": "Corte",
+        "csc_id": 41205,
+        "csc_state": "2B",
+        "ours": [
+          42.2731881,
+          8.7394977
+        ],
+        "upstream": [
+          42.2737,
+          9.0691
+        ],
+        "distance_km": 27.12
+      },
+      {
+        "insee": "2B121",
+        "nom": "Galéria",
+        "csc_id": 155275,
+        "csc_state": "2B",
+        "ours": [
+          42.404378,
+          8.3770584
+        ],
+        "upstream": [
+          42.4048,
+          8.706
+        ],
+        "distance_km": 27.01
+      }
+    ],
+    "extra_sample": [
+      {
+        "csc_id": 39273,
+        "name": "Aigueblanche",
+        "state_code": "ARA",
+        "latitude": "45.50455000",
+        "longitude": "6.50184000"
+      },
+      {
+        "csc_id": 39280,
+        "name": "Aillant-sur-Tholon",
+        "state_code": "BFC",
+        "latitude": "47.87426000",
+        "longitude": "3.35049000"
+      },
+      {
+        "csc_id": 39285,
+        "name": "Aime",
+        "state_code": "ARA",
+        "latitude": "45.55559000",
+        "longitude": "6.65042000"
+      },
+      {
+        "csc_id": 39293,
+        "name": "Aix-en-Othe",
+        "state_code": "GES",
+        "latitude": "48.22391000",
+        "longitude": "3.73425000"
+      },
+      {
+        "csc_id": 39302,
+        "name": "Albens",
+        "state_code": "ARA",
+        "latitude": "45.78786000",
+        "longitude": "5.94528000"
+      },
+      {
+        "csc_id": 39328,
+        "name": "Allières-et-Risset",
+        "state_code": "ARA",
+        "latitude": "45.09934000",
+        "longitude": "5.67924000"
+      },
+      {
+        "csc_id": 39334,
+        "name": "Alpes-Maritimes",
+        "state_code": "PAC",
+        "latitude": "43.91307000",
+        "longitude": "7.20436000"
+      },
+      {
+        "csc_id": 39335,
+        "name": "Alpes-de-Haute-Provence",
+        "state_code": "PAC",
+        "latitude": "44.09829000",
+        "longitude": "6.26537000"
+      },
+      {
+        "csc_id": 39371,
+        "name": "Ancenis",
+        "state_code": "PDL",
+        "latitude": "47.36667000",
+        "longitude": "-1.16667000"
+      },
+      {
+        "csc_id": 39374,
+        "name": "Ancy-sur-Moselle",
+        "state_code": "GES",
+        "latitude": "49.05689000",
+        "longitude": "6.05775000"
+      },
+      {
+        "csc_id": 39378,
+        "name": "Andard",
+        "state_code": "PDL",
+        "latitude": "47.45659000",
+        "longitude": "-0.39752000"
+      },
+      {
+        "csc_id": 39389,
+        "name": "Andrezé",
+        "state_code": "PDL",
+        "latitude": "47.17155000",
+        "longitude": "-0.95239000"
+      },
+      {
+        "csc_id": 39395,
+        "name": "Anetz",
+        "state_code": "PDL",
+        "latitude": "47.38059000",
+        "longitude": "-1.10583000"
+      },
+      {
+        "csc_id": 39412,
+        "name": "Anizy-le-Château",
+        "state_code": "HDF",
+        "latitude": "49.50678000",
+        "longitude": "3.45119000"
+      },
+      {
+        "csc_id": 39415,
+        "name": "Annecy-le-Vieux",
+        "state_code": "ARA",
+        "latitude": "45.91971000",
+        "longitude": "6.14393000"
+      },
+      {
+        "csc_id": 39436,
+        "name": "Antrain",
+        "state_code": "BRE",
+        "latitude": "48.46031000",
+        "longitude": "-1.48354000"
+      },
+      {
+        "csc_id": 39466,
+        "name": "Ardennes",
+        "state_code": "GES",
+        "latitude": "49.63202000",
+        "longitude": "4.65369000"
+      },
+      {
+        "csc_id": 39470,
+        "name": "Arenc",
+        "state_code": "PAC",
+        "latitude": "43.31583000",
+        "longitude": "5.36698000"
+      },
+      {
+        "csc_id": 39474,
+        "name": "Argelers",
+        "state_code": "OCC",
+        "latitude": "42.54714000",
+        "longitude": "3.02253000"
+      },
+      {
+        "csc_id": 39480,
+        "name": "Argentat",
+        "state_code": "NAQ",
+        "latitude": "45.09325000",
+        "longitude": "1.93778000"
+      },
+      {
+        "csc_id": 39482,
+        "name": "Argenton-les-Vallées",
+        "state_code": "NAQ",
+        "latitude": "46.98333000",
+        "longitude": "-0.45000000"
+      },
+      {
+        "csc_id": 39492,
+        "name": "Armenonville-les-Gâtineaux",
+        "state_code": "CVL",
+        "latitude": "48.54365000",
+        "longitude": "1.64750000"
+      },
+      {
+        "csc_id": 39512,
+        "name": "Arrou",
+        "state_code": "CVL",
+        "latitude": "48.09768000",
+        "longitude": "1.12851000"
+      },
+      {
+        "csc_id": 39525,
+        "name": "Arthon-en-Retz",
+        "state_code": "PDL",
+        "latitude": "47.11586000",
+        "longitude": "-1.94260000"
+      },
+      {
+        "csc_id": 39547,
+        "name": "Aspach-le-Haut",
+        "state_code": "GES",
+        "latitude": "47.77653000",
+        "longitude": "7.13145000"
+      },
+      {
+        "csc_id": 39558,
+        "name": "Athis-de-l'Orne",
+        "state_code": "NOR",
+        "latitude": "48.81667000",
+        "longitude": "-0.50000000"
+      },
+      {
+        "csc_id": 39565,
+        "name": "Atur",
+        "state_code": "NAQ",
+        "latitude": "45.14086000",
+        "longitude": "0.74701000"
+      },
+      {
+        "csc_id": 39568,
+        "name": "Aube-sur-Rîle",
+        "state_code": "NOR",
+        "latitude": "48.73920000",
+        "longitude": "0.55161000"
+      },
+      {
+        "csc_id": 39575,
+        "name": "Aubevoye",
+        "state_code": "NOR",
+        "latitude": "49.17097000",
+        "longitude": "1.33537000"
+      },
+      {
+        "csc_id": 39576,
+        "name": "Aubie-et-Espessas",
+        "state_code": "NAQ",
+        "latitude": "45.01869000",
+        "longitude": "-0.40297000"
+      }
+    ]
+  }
+}

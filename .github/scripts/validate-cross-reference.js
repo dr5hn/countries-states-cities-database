@@ -10,6 +10,27 @@ const fs = require('fs');
 const path = require('path');
 const { getEntityType, parseJsonFile, loadRepoData } = require('./utils');
 
+// Lazy per-country cities loader — cities live in contributions/cities/{ISO2}.json
+const cityCache = new Map();
+function loadCitiesForCountry(iso2) {
+  if (!iso2) return null;
+  const cc = iso2.toUpperCase();
+  if (cityCache.has(cc)) return cityCache.get(cc);
+  const filePath = path.join(process.cwd(), 'contributions', 'cities', `${cc}.json`);
+  if (!fs.existsSync(filePath)) {
+    cityCache.set(cc, null);
+    return null;
+  }
+  try {
+    const cities = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    cityCache.set(cc, cities);
+    return cities;
+  } catch {
+    cityCache.set(cc, null);
+    return null;
+  }
+}
+
 async function run() {
   const token = process.env.GITHUB_TOKEN;
   const octokit = github.getOctokit(token);
@@ -81,7 +102,8 @@ async function run() {
 
     for (let i = 0; i < records.length; i++) {
       const record = records[i];
-      const prefix = `${filePath}: Record ${i + 1}${record.name ? ` ("${record.name}")` : ''}`;
+      const label = record.name || record.code;
+      const prefix = `${filePath}: Record ${i + 1}${label ? ` ("${label}")` : ''}`;
 
       if (entityType === 'cities') {
         // Validate country_id exists
@@ -142,6 +164,85 @@ async function run() {
                   `${prefix}: country_code "${record.country_code}" does not match country_id ${record.country_id} (expected "${country.iso2}")`
                 );
               }
+            }
+          }
+        }
+      }
+
+      if (entityType === 'postcodes') {
+        // Validate country_id exists (required FK)
+        if (record.country_id) {
+          const country = countryById.get(Number(record.country_id));
+          if (!country) {
+            errors.push(`${prefix}: country_id ${record.country_id} does not exist`);
+          } else {
+            validCount++;
+            if (record.country_code && country.iso2) {
+              if (record.country_code.toUpperCase() !== country.iso2.toUpperCase()) {
+                errors.push(
+                  `${prefix}: country_code "${record.country_code}" does not match country_id ${record.country_id} (expected "${country.iso2}")`
+                );
+              }
+            }
+          }
+        }
+
+        // Validate state_id exists if provided (optional FK)
+        if (record.state_id != null && states) {
+          const state = stateById.get(Number(record.state_id));
+          if (!state) {
+            errors.push(`${prefix}: state_id ${record.state_id} does not exist`);
+          } else {
+            validCount++;
+            if (record.country_id && Number(state.country_id) !== Number(record.country_id)) {
+              errors.push(
+                `${prefix}: state_id ${record.state_id} ("${state.name}") belongs to country_id ${state.country_id}, not ${record.country_id}`
+              );
+            }
+          }
+        }
+
+        // Validate city_id exists if provided (optional FK)
+        if (record.city_id != null && record.country_id) {
+          const country = countryById.get(Number(record.country_id));
+          if (country && country.iso2) {
+            const cities = loadCitiesForCountry(country.iso2);
+            if (cities) {
+              const city = cities.find((c) => Number(c.id) === Number(record.city_id));
+              if (!city) {
+                errors.push(
+                  `${prefix}: city_id ${record.city_id} does not exist in cities/${country.iso2}.json`
+                );
+              } else {
+                validCount++;
+                if (Number(city.country_id) !== Number(record.country_id)) {
+                  errors.push(
+                    `${prefix}: city_id ${record.city_id} ("${city.name}") belongs to country_id ${city.country_id}, not ${record.country_id}`
+                  );
+                }
+                if (record.state_id != null && Number(city.state_id) !== Number(record.state_id)) {
+                  errors.push(
+                    `${prefix}: city_id ${record.city_id} ("${city.name}") belongs to state_id ${city.state_id}, not declared state_id ${record.state_id}`
+                  );
+                }
+              }
+            }
+          }
+        }
+
+        // Validate postcode format against country regex if defined
+        if (record.code && record.country_id) {
+          const country = countryById.get(Number(record.country_id));
+          if (country && country.postal_code_regex) {
+            try {
+              const re = new RegExp(country.postal_code_regex);
+              if (!re.test(record.code)) {
+                errors.push(
+                  `${prefix}: code "${record.code}" does not match postal_code_regex "${country.postal_code_regex}" of ${country.iso2}`
+                );
+              }
+            } catch (e) {
+              // Invalid regex on the country side — skip silently rather than blocking PR
             }
           }
         }

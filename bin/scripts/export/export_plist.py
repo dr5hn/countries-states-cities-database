@@ -11,9 +11,13 @@ files = [
     './csv/countries.csv',
     './csv/states.csv',
     './csv/cities.csv',
+    './csv/postcodes.csv',
 ]
 
 for csv_file in files:
+    if not os.path.exists(csv_file):
+        print('PLIST: skipping missing source {}'.format(csv_file))
+        continue
     with open(csv_file, 'r', encoding='utf-8') as f:
         result = list(csv.DictReader(f))
 

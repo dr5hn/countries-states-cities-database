@@ -15,7 +15,7 @@ class ExportSqlServer extends Command
     protected static $defaultName = 'export:sql-server';
     protected static $defaultDescription = 'Export data to SQL Server format';
 
-    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'cities'];
+    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'cities', 'postcodes'];
     private Filesystem $filesystem;
 
     public function __construct()
@@ -143,6 +143,29 @@ class ExportSqlServer extends Command
                 wikiDataId NVARCHAR(255) NULL,
                 CONSTRAINT FK_cities_states FOREIGN KEY (state_id) REFERENCES world.states(id),
                 CONSTRAINT FK_cities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
+            );",
+            'postcodes' => "
+            IF OBJECT_ID('world.postcodes', 'U') IS NOT NULL DROP TABLE world.postcodes;
+            CREATE TABLE world.postcodes (
+                id INT IDENTITY(1,1) PRIMARY KEY,
+                code NVARCHAR(20) NOT NULL,
+                country_id INT NOT NULL,
+                country_code NCHAR(2) NOT NULL,
+                state_id INT NULL,
+                state_code NVARCHAR(255) NULL,
+                city_id INT NULL,
+                locality_name NVARCHAR(255) NULL,
+                type NVARCHAR(32) NULL,
+                latitude DECIMAL(10,8) NULL,
+                longitude DECIMAL(11,8) NULL,
+                source NVARCHAR(64) NULL,
+                wikiDataId NVARCHAR(255) NULL,
+                created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',
+                updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+                flag BIT NOT NULL DEFAULT 1,
+                CONSTRAINT FK_postcodes_countries FOREIGN KEY (country_id) REFERENCES world.countries(id),
+                CONSTRAINT FK_postcodes_states FOREIGN KEY (state_id) REFERENCES world.states(id),
+                CONSTRAINT FK_postcodes_cities FOREIGN KEY (city_id) REFERENCES world.cities(id)
             );"
         ];
 

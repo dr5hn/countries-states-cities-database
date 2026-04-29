@@ -20,6 +20,7 @@ class ExportXml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/xml/countries.xml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/xml/states.xml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/xml/cities.xml', 'singular' => 'city'],
+        'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/xml/postcodes.xml', 'singular' => 'postcode'],
     ];
 
     private Filesystem $filesystem;
@@ -50,8 +51,10 @@ class ExportXml extends Command
                     ? file_get_contents($rootDir . $config['from'])
                     : throw new \RuntimeException("JSON file not found: {$config['from']}");
 
-                $data = json_decode($jsonData, true)
-                    ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+                $data = json_decode($jsonData, true);
+                if (!is_array($data)) {
+                    throw new \RuntimeException("Invalid JSON in {$config['from']}");
+                }
 
                 $xml = ArrayToXml::convert(
                     [$config['singular'] => $data],
