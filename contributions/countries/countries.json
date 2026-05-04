@@ -11454,8 +11454,8 @@
     "subregion_id": 8,
     "nationality": "Paraguayan",
     "area_sq_km": 406750.0,
-    "postal_code_format": "####",
-    "postal_code_regex": "^(\\d{4})$",
+    "postal_code_format": "####|######",
+    "postal_code_regex": "^(\\d{4}|\\d{6})$",
     "timezones": [
       {
         "zoneName": "America/Asuncion",
