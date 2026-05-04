@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05
+- **2026-04-27** - PR [#1469](https://github.com/dr5hn/countries-states-cities-database/pull/1469): Updated countries (by @dr5hn)
+- **2026-04-27** - PR [#1479](https://github.com/dr5hn/countries-states-cities-database/pull/1479): Updated cities (IT) (by @dr5hn)
+- **2026-04-27** - PR [#1477](https://github.com/dr5hn/countries-states-cities-database/pull/1477): Updated cities (IT) (by @dr5hn)
+- **2026-04-27** - PR [#1395](https://github.com/dr5hn/countries-states-cities-database/pull/1395): Updated cities (IT) (by @dr5hn)
+- **2026-04-27** - PR [#1463](https://github.com/dr5hn/countries-states-cities-database/pull/1463): Updated countries (by @dr5hn)
+
 ## v3.2 — 2026-04-27
 
 Major data-correction release. Behaviour changes for FR/IT consumers — see notable callouts below.
