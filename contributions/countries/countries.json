@@ -10434,8 +10434,8 @@
     "subregion_id": 17,
     "nationality": "Dutch, Netherlandic",
     "area_sq_km": 41526.0,
-    "postal_code_format": "#### @@",
-    "postal_code_regex": "^(\\d{4}\\s?[a-zA-Z]{2})$",
+    "postal_code_format": "####|#### @@",
+    "postal_code_regex": "^(\\d{4}(?:\\s?[A-Za-z]{2})?)$",
     "timezones": [
       {
         "zoneName": "Europe/Amsterdam",
