@@ -13564,8 +13564,8 @@
     "subregion_id": 4,
     "nationality": "Somali, Somalian",
     "area_sq_km": 637657.0,
-    "postal_code_format": "@@  #####",
-    "postal_code_regex": "^([A-Z]{2}\\d{5})$",
+    "postal_code_format": "@@ ##### or ####|#####",
+    "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$",
     "timezones": [
       {
         "zoneName": "Africa/Mogadishu",
