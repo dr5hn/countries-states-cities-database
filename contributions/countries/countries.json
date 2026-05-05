@@ -6974,8 +6974,8 @@
     "subregion_id": 14,
     "nationality": "Iranian, Persian",
     "area_sq_km": 1648000.0,
-    "postal_code_format": "##########",
-    "postal_code_regex": "^(\\d{10})$",
+    "postal_code_format": "#####|##########",
+    "postal_code_regex": "^(\\d{5}(?:\\d{5})?)$",
     "timezones": [
       {
         "zoneName": "Asia/Tehran",
