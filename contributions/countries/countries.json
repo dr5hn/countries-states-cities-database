@@ -2706,7 +2706,7 @@
     "nationality": "Canadian",
     "area_sq_km": 9984670.0,
     "postal_code_format": "@#@ #@#",
-    "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d)$",
+    "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ])(?: ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d))?$",
     "timezones": [
       {
         "zoneName": "America/Atikokan",
