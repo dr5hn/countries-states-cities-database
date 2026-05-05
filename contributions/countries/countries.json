@@ -15398,7 +15398,7 @@
     "nationality": "British, UK",
     "area_sq_km": 244820.0,
     "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-    "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\\s?[0-9][A-Za-z]{2})$",
+    "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})$|^([A-Za-z]{1,2}(?:[0-9][0-9A-Za-z]?(?:\\s?[0-9][A-Za-z]{2})?)?)$",
     "timezones": [
       {
         "zoneName": "Europe/London",
