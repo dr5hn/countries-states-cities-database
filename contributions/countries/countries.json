@@ -2272,7 +2272,7 @@
     "nationality": "BIOT",
     "area_sq_km": 60.0,
     "postal_code_format": "BBND 1ZZ",
-    "postal_code_regex": "BBND 1ZZ",
+    "postal_code_regex": "^(BBND\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "Indian/Chagos",
@@ -4928,7 +4928,7 @@
     "nationality": "Falkland Island",
     "area_sq_km": 12173.0,
     "postal_code_format": "FIQQ 1ZZ",
-    "postal_code_regex": "FIQQ 1ZZ",
+    "postal_code_regex": "^(FIQQ\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "Atlantic/Stanley",
@@ -10253,7 +10253,7 @@
     "nationality": "Nauruan",
     "area_sq_km": 21.0,
     "postal_code_format": "NRU68",
-    "postal_code_regex": "NRU68",
+    "postal_code_regex": "^(NRU68)$",
     "timezones": [
       {
         "zoneName": "Pacific/Nauru",
@@ -11641,7 +11641,7 @@
     "nationality": "Pitcairn Island",
     "area_sq_km": 47.0,
     "postal_code_format": "PCRN 1ZZ",
-    "postal_code_regex": "PCRN 1ZZ",
+    "postal_code_regex": "^(PCRN\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "Pacific/Pitcairn",
@@ -12386,8 +12386,8 @@
     "subregion_id": 3,
     "nationality": "Saint Helenian",
     "area_sq_km": 410.0,
-    "postal_code_format": "STHL 1ZZ",
-    "postal_code_regex": "^(STHL1ZZ)$",
+    "postal_code_format": "STHL 1ZZ|ASCN 1ZZ|TDCU 1ZZ",
+    "postal_code_regex": "^((?:STHL|ASCN|TDCU)\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "Atlantic/St_Helena",
@@ -13689,7 +13689,7 @@
     "nationality": "South Georgia or South Sandwich Islands",
     "area_sq_km": 3903.0,
     "postal_code_format": "SIQQ 1ZZ",
-    "postal_code_regex": "SIQQ 1ZZ",
+    "postal_code_regex": "^(SIQQ\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "Atlantic/South_Georgia",
@@ -15067,7 +15067,7 @@
     "nationality": "Turks and Caicos Island",
     "area_sq_km": 430.0,
     "postal_code_format": "TKCA 1ZZ",
-    "postal_code_regex": "^(TKCA 1ZZ)$",
+    "postal_code_regex": "^(TKCA\\s?1ZZ)$",
     "timezones": [
       {
         "zoneName": "America/Grand_Turk",
