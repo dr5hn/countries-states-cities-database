@@ -14384,8 +14384,8 @@
     "subregion_id": 12,
     "nationality": "Chinese, Taiwanese",
     "area_sq_km": 35980.0,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{5})$",
+    "postal_code_format": "###/#####/######",
+    "postal_code_regex": "^(\\d{3}(?:\\d{2,3})?)$",
     "timezones": [
       {
         "zoneName": "Asia/Taipei",
