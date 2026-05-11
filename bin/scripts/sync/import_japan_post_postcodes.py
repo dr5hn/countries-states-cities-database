@@ -5,7 +5,7 @@ Source data
 -----------
 Japan Post publishes the canonical 7-digit postcode-to-locality mapping at:
 
-  https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
+  https://www.post.japanpost.jp/service/search/zipcode/download/kogaki/zip/ken_all.zip
 
 The file (KEN_ALL.CSV) is **Shift-JIS encoded**, ~12 MB raw, ~125,000 rows
 covering all 47 prefectures. Each row has 15 columns; the relevant ones are:
@@ -43,7 +43,7 @@ What this script does
 Usage
 -----
     python3 -c "import urllib.request; urllib.request.urlretrieve(
-      'https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip',
+      'https://www.post.japanpost.jp/service/search/zipcode/download/kogaki/zip/ken_all.zip',
       '/tmp/ken_all.zip')"
     unzip -o /tmp/ken_all.zip -d /tmp/
 
