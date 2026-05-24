@@ -78,14 +78,23 @@ historical_capital
 ```sql
 SELECT *
 FROM cities
-WHERE type NOT IN (
-  'county', 'regency', 'prefecture', 'parish', 'banner', 'province',
-  'area', 'oblast', 'administrative zone', 'region',
-  'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
+WHERE (
+  type IS NULL          -- keep null-type rows (see "Records with no type")
+  OR type NOT IN (
+    'county', 'regency', 'prefecture', 'parish', 'banner', 'province',
+    'area', 'oblast', 'administrative zone', 'region',
+    'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
+  )
 )
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
 ```
+
+> **Note on `NULL`:** `type NOT IN (...)` evaluates to `UNKNOWN` (not `TRUE`)
+> for rows where `type` is `NULL`, so it would silently drop them. The
+> explicit `type IS NULL OR ...` keeps null-type rows, matching the
+> JavaScript filter below. Drop the `type IS NULL` clause if you'd rather
+> exclude them.
 
 ### JavaScript
 
