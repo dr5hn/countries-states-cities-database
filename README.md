@@ -167,7 +167,8 @@ To edit JSON directly:
 
 [Contributions guide](contributions/README.md) ·
 [Contribution guidelines](.github/CONTRIBUTING.md) ·
-[Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)
+[Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md) ·
+[The `cities.type` field](TYPE_FIELD.md)
 
 > Don't edit the auto-generated directories (`json/`, `csv/`, `xml/`, `yml/`, `sql/`, etc.). They're rebuilt from MySQL on every release.
 
