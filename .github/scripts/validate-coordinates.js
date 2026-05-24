@@ -35,6 +35,7 @@ async function run() {
   } else {
     core.warning('country-bounds.json not found. Skipping coordinate bounds check.');
     core.setOutput('warnings', JSON.stringify([]));
+    core.setOutput('warning_count', '0');
     core.setOutput('checked', '0');
     return;
   }
@@ -103,7 +104,10 @@ async function run() {
     }
   }
 
-  core.setOutput('warnings', JSON.stringify(warnings));
+  // Cap the emitted list (env-var size limit in the report step); emit the
+  // true total separately.
+  core.setOutput('warnings', JSON.stringify(warnings.slice(0, 50)));
+  core.setOutput('warning_count', warnings.length.toString());
   core.setOutput('checked', checked.toString());
 
   core.info(`Coordinate bounds: ${checked} checked, ${warnings.length} warnings`);

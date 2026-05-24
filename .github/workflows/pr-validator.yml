@@ -122,11 +122,14 @@ jobs:
           SCHEMA_RECORD_COUNT: ${{ steps.schema.outputs.record_count }}
           SCHEMA_HAS_ERRORS: ${{ steps.schema.outputs.has_errors }}
           CROSSREF_ERRORS: ${{ steps.crossref.outputs.errors }}
+          CROSSREF_ERROR_COUNT: ${{ steps.crossref.outputs.error_count }}
           CROSSREF_VALID: ${{ steps.crossref.outputs.valid }}
           CROSSREF_HAS_ERRORS: ${{ steps.crossref.outputs.has_errors }}
           COORD_WARNINGS: ${{ steps.coords.outputs.warnings }}
+          COORD_WARNING_COUNT: ${{ steps.coords.outputs.warning_count }}
           COORD_CHECKED: ${{ steps.coords.outputs.checked }}
           DUP_WARNINGS: ${{ steps.duplicates.outputs.warnings }}
+          DUP_WARNING_COUNT: ${{ steps.duplicates.outputs.warning_count }}
           DUP_CHECKED: ${{ steps.duplicates.outputs.checked }}
           URL_ERRORS: ${{ steps.urls.outputs.errors }}
           URL_VALID: ${{ steps.urls.outputs.valid }}
@@ -146,11 +149,14 @@ jobs:
             const schemaRecordCount = parseInt(process.env.SCHEMA_RECORD_COUNT || '0');
             const schemaHasErrors = process.env.SCHEMA_HAS_ERRORS === 'true';
             const crossrefErrors = JSON.parse(process.env.CROSSREF_ERRORS || '[]');
+            const crossrefErrorCount = parseInt(process.env.CROSSREF_ERROR_COUNT || String(crossrefErrors.length));
             const crossrefValid = parseInt(process.env.CROSSREF_VALID || '0');
             const crossrefHasErrors = process.env.CROSSREF_HAS_ERRORS === 'true';
             const coordWarnings = JSON.parse(process.env.COORD_WARNINGS || '[]');
+            const coordWarningCount = parseInt(process.env.COORD_WARNING_COUNT || String(coordWarnings.length));
             const coordChecked = parseInt(process.env.COORD_CHECKED || '0');
             const dupWarnings = JSON.parse(process.env.DUP_WARNINGS || '[]');
+            const dupWarningCount = parseInt(process.env.DUP_WARNING_COUNT || String(dupWarnings.length));
             const dupChecked = parseInt(process.env.DUP_CHECKED || '0');
             const urlErrors = JSON.parse(process.env.URL_ERRORS || '[]');
             const urlValid = parseInt(process.env.URL_VALID || '0');
@@ -219,7 +225,7 @@ jobs:
             report += '\n';
 
             // Cross-Reference
-            if (crossrefValid > 0 || crossrefErrors.length > 0) {
+            if (crossrefValid > 0 || crossrefErrorCount > 0) {
               report += '### Cross-Reference Validation\n';
               if (crossrefValid > 0) {
                 report += `:white_check_mark: ${crossrefValid} reference(s) verified\n`;
@@ -227,15 +233,21 @@ jobs:
               for (const err of crossrefErrors.slice(0, 10)) {
                 report += `- :x: ${err}\n`;
               }
+              if (crossrefErrorCount > 10) {
+                report += `- _...and ${crossrefErrorCount - 10} more errors_\n`;
+              }
               report += '\n';
             }
 
             // Coordinate Bounds
-            if (coordChecked > 0 || coordWarnings.length > 0) {
+            if (coordChecked > 0 || coordWarningCount > 0) {
               report += '### Geo-Bounds Check\n';
-              if (coordWarnings.length > 0) {
+              if (coordWarningCount > 0) {
                 for (const warn of coordWarnings.slice(0, 10)) {
                   report += `- :warning: ${warn}\n`;
+                }
+                if (coordWarningCount > 10) {
+                  report += `- _...and ${coordWarningCount - 10} more warnings_\n`;
                 }
               } else {
                 report += `:white_check_mark: All ${coordChecked} coordinate(s) within expected country bounds\n`;
@@ -244,11 +256,14 @@ jobs:
             }
 
             // Duplicate Detection
-            if (dupChecked > 0 || dupWarnings.length > 0) {
+            if (dupChecked > 0 || dupWarningCount > 0) {
               report += '### Duplicate Detection\n';
-              if (dupWarnings.length > 0) {
+              if (dupWarningCount > 0) {
                 for (const warn of dupWarnings.slice(0, 10)) {
                   report += `- :warning: ${warn}\n`;
+                }
+                if (dupWarningCount > 10) {
+                  report += `- _...and ${dupWarningCount - 10} more potential duplicates_\n`;
                 }
               } else {
                 report += `:white_check_mark: No duplicates found among ${dupChecked} record(s)\n`;
@@ -269,8 +284,8 @@ jobs:
             }
 
             // Summary
-            const totalErrors = schemaErrorCount + crossrefErrors.length;
-            const totalWarnings = schemaWarningCount + coordWarnings.length + dupWarnings.length + urlErrors.length;
+            const totalErrors = schemaErrorCount + crossrefErrorCount;
+            const totalWarnings = schemaWarningCount + coordWarningCount + dupWarningCount + urlErrors.length;
 
             report += '---\n';
             if (needsClarification) {

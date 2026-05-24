@@ -144,7 +144,11 @@ async function run() {
     }
   }
 
-  core.setOutput('warnings', JSON.stringify(warnings));
+  // Cap the emitted list — it is passed to the report step via an environment
+  // variable with a hard size limit, and dense localities can produce
+  // thousands of fuzzy-match warnings. Emit the true total separately.
+  core.setOutput('warnings', JSON.stringify(warnings.slice(0, 50)));
+  core.setOutput('warning_count', warnings.length.toString());
   core.setOutput('checked', checked.toString());
 
   core.info(`Duplicate check: ${checked} records checked, ${warnings.length} potential duplicates`);

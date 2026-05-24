@@ -15,7 +15,7 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
-    optional: ['state_name', 'country_name', 'wikiDataId', 'timezone'],
+    optional: ['state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'level', 'parent_id', 'population', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       state_id: { type: 'integer', positive: true },
