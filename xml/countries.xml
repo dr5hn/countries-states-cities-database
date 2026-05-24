@@ -421,7 +421,7 @@
     <nationality>Anguillan</nationality>
     <area_sq_km>102</area_sq_km>
     <postal_code_format>AI-####</postal_code_format>
-    <postal_code_regex>^(?:AZ)*(\d{4})$</postal_code_regex>
+    <postal_code_regex>^(AI-?\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>America/Anguilla</zoneName>
       <gmtOffset>-14400</gmtOffset>
@@ -1556,8 +1556,8 @@
     <subregion_id>6</subregion_id>
     <nationality>Bermudian, Bermudan</nationality>
     <area_sq_km>53</area_sq_km>
-    <postal_code_format>@@ ##</postal_code_format>
-    <postal_code_regex>^([A-Z]{2}\d{2})$</postal_code_regex>
+    <postal_code_format>@@ ##|@@ @@</postal_code_format>
+    <postal_code_regex>^([A-Z]{2}\s?[A-Z0-9]{2})$</postal_code_regex>
     <timezones>
       <zoneName>Atlantic/Bermuda</zoneName>
       <gmtOffset>-14400</gmtOffset>
@@ -2114,7 +2114,7 @@
     <nationality>BIOT</nationality>
     <area_sq_km>60</area_sq_km>
     <postal_code_format>BBND 1ZZ</postal_code_format>
-    <postal_code_regex>BBND 1ZZ</postal_code_regex>
+    <postal_code_regex>^(BBND\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>Indian/Chagos</zoneName>
       <gmtOffset>21600</gmtOffset>
@@ -2513,7 +2513,7 @@
     <nationality>Canadian</nationality>
     <area_sq_km>9984670</area_sq_km>
     <postal_code_format>@#@ #@#</postal_code_format>
-    <postal_code_regex>^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$</postal_code_regex>
+    <postal_code_regex>^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ])(?: ?(\d[ABCEGHJKLMNPRSTVWXYZ]\d))?$</postal_code_regex>
     <timezones>
       <zoneName>America/Atikokan</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -4572,7 +4572,7 @@
     <nationality>Falkland Island</nationality>
     <area_sq_km>12173</area_sq_km>
     <postal_code_format>FIQQ 1ZZ</postal_code_format>
-    <postal_code_regex>FIQQ 1ZZ</postal_code_regex>
+    <postal_code_regex>^(FIQQ\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>Atlantic/Stanley</zoneName>
       <gmtOffset>-10800</gmtOffset>
@@ -5696,8 +5696,8 @@
     <subregion_id>18</subregion_id>
     <nationality>Channel Island</nationality>
     <area_sq_km>78</area_sq_km>
-    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA</postal_code_format>
-    <postal_code_regex>^((?:(?:[A-PR-UWYZ][A-HK-Y]\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\d[A-HJKPS-UW0-9])\s\d[ABD-HJLNP-UW-Z]{2})|GIR\s?0AA)$</postal_code_regex>
+    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA</postal_code_format>
+    <postal_code_regex>^GIR\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\s?[0-9][A-Z]{2})?$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Guernsey</zoneName>
       <gmtOffset>0</gmtOffset>
@@ -6401,8 +6401,8 @@
     <subregion_id>14</subregion_id>
     <nationality>Iranian, Persian</nationality>
     <area_sq_km>1648000</area_sq_km>
-    <postal_code_format>##########</postal_code_format>
-    <postal_code_regex>^(\d{10})$</postal_code_regex>
+    <postal_code_format>#####|##########</postal_code_format>
+    <postal_code_regex>^(\d{5}(?:\d{5})?)$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Tehran</zoneName>
       <gmtOffset>12600</gmtOffset>
@@ -6856,8 +6856,8 @@
     <subregion_id>18</subregion_id>
     <nationality>Channel Island</nationality>
     <area_sq_km>116</area_sq_km>
-    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA</postal_code_format>
-    <postal_code_regex>^((?:(?:[A-PR-UWYZ][A-HK-Y]\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\d[A-HJKPS-UW0-9])\s\d[ABD-HJLNP-UW-Z]{2})|GIR\s?0AA)$</postal_code_regex>
+    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA</postal_code_format>
+    <postal_code_regex>^GIR\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\s?[0-9][A-Z]{2})?$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Jersey</zoneName>
       <gmtOffset>0</gmtOffset>
@@ -8277,8 +8277,8 @@
     <subregion_id>18</subregion_id>
     <nationality>Manx</nationality>
     <area_sq_km>572</area_sq_km>
-    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA</postal_code_format>
-    <postal_code_regex>^((?:(?:[A-PR-UWYZ][A-HK-Y]\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\d[A-HJKPS-UW0-9])\s\d[ABD-HJLNP-UW-Z]{2})|GIR\s?0AA)$</postal_code_regex>
+    <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA</postal_code_format>
+    <postal_code_regex>^GIR\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\s?[0-9][A-Z]{2})?$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Isle_of_Man</zoneName>
       <gmtOffset>0</gmtOffset>
@@ -9363,7 +9363,7 @@
     <nationality>Nauruan</nationality>
     <area_sq_km>21</area_sq_km>
     <postal_code_format>NRU68</postal_code_format>
-    <postal_code_regex>NRU68</postal_code_regex>
+    <postal_code_regex>^(NRU68)$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Nauru</zoneName>
       <gmtOffset>43200</gmtOffset>
@@ -9476,8 +9476,8 @@
     <subregion_id>17</subregion_id>
     <nationality>Dutch, Netherlandic</nationality>
     <area_sq_km>41526</area_sq_km>
-    <postal_code_format>#### @@</postal_code_format>
-    <postal_code_regex>^(\d{4}\s?[a-zA-Z]{2})$</postal_code_regex>
+    <postal_code_format>####|#### @@</postal_code_format>
+    <postal_code_regex>^(\d{4}(?:\s?[A-Za-z]{2})?)$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Amsterdam</zoneName>
       <gmtOffset>3600</gmtOffset>
@@ -10409,8 +10409,8 @@
     <subregion_id>9</subregion_id>
     <nationality>Panamanian</nationality>
     <area_sq_km>78200</area_sq_km>
-    <postal_code_format>#####</postal_code_format>
-    <postal_code_regex>^(\d{5})$</postal_code_regex>
+    <postal_code_format>@####</postal_code_format>
+    <postal_code_regex>^([A-Z]\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>America/Panama</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -10530,8 +10530,8 @@
     <subregion_id>8</subregion_id>
     <nationality>Paraguayan</nationality>
     <area_sq_km>406750</area_sq_km>
-    <postal_code_format>####</postal_code_format>
-    <postal_code_regex>^(\d{4})$</postal_code_regex>
+    <postal_code_format>####|######</postal_code_format>
+    <postal_code_regex>^(\d{4}|\d{6})$</postal_code_regex>
     <timezones>
       <zoneName>America/Asuncion</zoneName>
       <gmtOffset>-10800</gmtOffset>
@@ -10702,7 +10702,7 @@
     <nationality>Pitcairn Island</nationality>
     <area_sq_km>47</area_sq_km>
     <postal_code_format>PCRN 1ZZ</postal_code_format>
-    <postal_code_regex>PCRN 1ZZ</postal_code_regex>
+    <postal_code_regex>^(PCRN\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Pitcairn</zoneName>
       <gmtOffset>-28800</gmtOffset>
@@ -11402,8 +11402,8 @@
     <subregion_id>3</subregion_id>
     <nationality>Saint Helenian</nationality>
     <area_sq_km>410</area_sq_km>
-    <postal_code_format>STHL 1ZZ</postal_code_format>
-    <postal_code_regex>^(STHL1ZZ)$</postal_code_regex>
+    <postal_code_format>STHL 1ZZ|ASCN 1ZZ|TDCU 1ZZ</postal_code_format>
+    <postal_code_regex>^((?:STHL|ASCN|TDCU)\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>Atlantic/St_Helena</zoneName>
       <gmtOffset>0</gmtOffset>
@@ -12539,8 +12539,8 @@
     <subregion_id>4</subregion_id>
     <nationality>Somali, Somalian</nationality>
     <area_sq_km>637657</area_sq_km>
-    <postal_code_format>@@  #####</postal_code_format>
-    <postal_code_regex>^([A-Z]{2}\d{5})$</postal_code_regex>
+    <postal_code_format>@@ ##### or ####|#####</postal_code_format>
+    <postal_code_regex>^([A-Z]{2}\s*\d{5}|\d{4,5})$</postal_code_regex>
     <timezones>
       <zoneName>Africa/Mogadishu</zoneName>
       <gmtOffset>10800</gmtOffset>
@@ -12654,7 +12654,7 @@
     <nationality>South Georgia or South Sandwich Islands</nationality>
     <area_sq_km>3903</area_sq_km>
     <postal_code_format>SIQQ 1ZZ</postal_code_format>
-    <postal_code_regex>SIQQ 1ZZ</postal_code_regex>
+    <postal_code_regex>^(SIQQ\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>Atlantic/South_Georgia</zoneName>
       <gmtOffset>-7200</gmtOffset>
@@ -13294,8 +13294,8 @@
     <subregion_id>12</subregion_id>
     <nationality>Chinese, Taiwanese</nationality>
     <area_sq_km>35980</area_sq_km>
-    <postal_code_format>#####</postal_code_format>
-    <postal_code_regex>^(\d{5})$</postal_code_regex>
+    <postal_code_format>###|#####|######</postal_code_format>
+    <postal_code_regex>^(\d{3}(?:\d{2,3})?)$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Taipei</zoneName>
       <gmtOffset>28800</gmtOffset>
@@ -14093,7 +14093,7 @@
     <nationality>Turks and Caicos Island</nationality>
     <area_sq_km>430</area_sq_km>
     <postal_code_format>TKCA 1ZZ</postal_code_format>
-    <postal_code_regex>^(TKCA 1ZZ)$</postal_code_regex>
+    <postal_code_regex>^(TKCA\s?1ZZ)$</postal_code_regex>
     <timezones>
       <zoneName>America/Grand_Turk</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -14399,7 +14399,7 @@
     <nationality>British, UK</nationality>
     <area_sq_km>244820</area_sq_km>
     <postal_code_format>@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA</postal_code_format>
-    <postal_code_regex>^([Gg][Ii][Rr]\s?0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\s?[0-9][A-Za-z]{2})$</postal_code_regex>
+    <postal_code_regex>^([Gg][Ii][Rr]\s?0[Aa]{2})$|^([A-Za-z]{1,2}(?:[0-9][0-9A-Za-z]?(?:\s?[0-9][A-Za-z]{2})?)?)$</postal_code_regex>
     <timezones>
       <zoneName>Europe/London</zoneName>
       <gmtOffset>0</gmtOffset>

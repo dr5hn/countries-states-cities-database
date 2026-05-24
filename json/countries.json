@@ -434,7 +434,7 @@
         "nationality": "Anguillan",
         "area_sq_km": 102,
         "postal_code_format": "AI-####",
-        "postal_code_regex": "^(?:AZ)*(\\d{4})$",
+        "postal_code_regex": "^(AI-?\\d{4})$",
         "timezones": [
             {
                 "zoneName": "America\/Anguilla",
@@ -1601,8 +1601,8 @@
         "subregion_id": 6,
         "nationality": "Bermudian, Bermudan",
         "area_sq_km": 53,
-        "postal_code_format": "@@ ##",
-        "postal_code_regex": "^([A-Z]{2}\\d{2})$",
+        "postal_code_format": "@@ ##|@@ @@",
+        "postal_code_regex": "^([A-Z]{2}\\s?[A-Z0-9]{2})$",
         "timezones": [
             {
                 "zoneName": "Atlantic\/Bermuda",
@@ -2175,7 +2175,7 @@
         "nationality": "BIOT",
         "area_sq_km": 60,
         "postal_code_format": "BBND 1ZZ",
-        "postal_code_regex": "BBND 1ZZ",
+        "postal_code_regex": "^(BBND\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "Indian\/Chagos",
@@ -2588,7 +2588,7 @@
         "nationality": "Canadian",
         "area_sq_km": 9984670,
         "postal_code_format": "@#@ #@#",
-        "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ]) ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d)$",
+        "postal_code_regex": "^([ABCEGHJKLMNPRSTVXY]\\d[ABCEGHJKLMNPRSTVWXYZ])(?: ?(\\d[ABCEGHJKLMNPRSTVWXYZ]\\d))?$",
         "timezones": [
             {
                 "zoneName": "America\/Atikokan",
@@ -4711,7 +4711,7 @@
         "nationality": "Falkland Island",
         "area_sq_km": 12173,
         "postal_code_format": "FIQQ 1ZZ",
-        "postal_code_regex": "FIQQ 1ZZ",
+        "postal_code_regex": "^(FIQQ\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "Atlantic\/Stanley",
@@ -5873,8 +5873,8 @@
         "subregion_id": 18,
         "nationality": "Channel Island",
         "area_sq_km": 78,
-        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-        "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$",
+        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
+        "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$",
         "timezones": [
             {
                 "zoneName": "Europe\/Guernsey",
@@ -6602,8 +6602,8 @@
         "subregion_id": 14,
         "nationality": "Iranian, Persian",
         "area_sq_km": 1648000,
-        "postal_code_format": "##########",
-        "postal_code_regex": "^(\\d{10})$",
+        "postal_code_format": "#####|##########",
+        "postal_code_regex": "^(\\d{5}(?:\\d{5})?)$",
         "timezones": [
             {
                 "zoneName": "Asia\/Tehran",
@@ -7073,8 +7073,8 @@
         "subregion_id": 18,
         "nationality": "Channel Island",
         "area_sq_km": 116,
-        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-        "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$",
+        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
+        "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$",
         "timezones": [
             {
                 "zoneName": "Europe\/Jersey",
@@ -8542,8 +8542,8 @@
         "subregion_id": 18,
         "nationality": "Manx",
         "area_sq_km": 572,
-        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-        "postal_code_regex": "^((?:(?:[A-PR-UWYZ][A-HK-Y]\\d[ABEHMNPRV-Y0-9]|[A-PR-UWYZ]\\d[A-HJKPS-UW0-9])\\s\\d[ABD-HJLNP-UW-Z]{2})|GIR\\s?0AA)$",
+        "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|@@# #@@|GIR0AA",
+        "postal_code_regex": "^GIR\\s?0AA$|^[A-Z]{1,2}(?:[0-9][0-9A-Z]?)?(?:\\s?[0-9][A-Z]{2})?$",
         "timezones": [
             {
                 "zoneName": "Europe\/Isle_of_Man",
@@ -9662,7 +9662,7 @@
         "nationality": "Nauruan",
         "area_sq_km": 21,
         "postal_code_format": "NRU68",
-        "postal_code_regex": "NRU68",
+        "postal_code_regex": "^(NRU68)$",
         "timezones": [
             {
                 "zoneName": "Pacific\/Nauru",
@@ -9779,8 +9779,8 @@
         "subregion_id": 17,
         "nationality": "Dutch, Netherlandic",
         "area_sq_km": 41526,
-        "postal_code_format": "#### @@",
-        "postal_code_regex": "^(\\d{4}\\s?[a-zA-Z]{2})$",
+        "postal_code_format": "####|#### @@",
+        "postal_code_regex": "^(\\d{4}(?:\\s?[A-Za-z]{2})?)$",
         "timezones": [
             {
                 "zoneName": "Europe\/Amsterdam",
@@ -10744,8 +10744,8 @@
         "subregion_id": 9,
         "nationality": "Panamanian",
         "area_sq_km": 78200,
-        "postal_code_format": "#####",
-        "postal_code_regex": "^(\\d{5})$",
+        "postal_code_format": "@####",
+        "postal_code_regex": "^([A-Z]\\d{4})$",
         "timezones": [
             {
                 "zoneName": "America\/Panama",
@@ -10869,8 +10869,8 @@
         "subregion_id": 8,
         "nationality": "Paraguayan",
         "area_sq_km": 406750,
-        "postal_code_format": "####",
-        "postal_code_regex": "^(\\d{4})$",
+        "postal_code_format": "####|######",
+        "postal_code_regex": "^(\\d{4}|\\d{6})$",
         "timezones": [
             {
                 "zoneName": "America\/Asuncion",
@@ -11047,7 +11047,7 @@
         "nationality": "Pitcairn Island",
         "area_sq_km": 47,
         "postal_code_format": "PCRN 1ZZ",
-        "postal_code_regex": "PCRN 1ZZ",
+        "postal_code_regex": "^(PCRN\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "Pacific\/Pitcairn",
@@ -11765,8 +11765,8 @@
         "subregion_id": 3,
         "nationality": "Saint Helenian",
         "area_sq_km": 410,
-        "postal_code_format": "STHL 1ZZ",
-        "postal_code_regex": "^(STHL1ZZ)$",
+        "postal_code_format": "STHL 1ZZ|ASCN 1ZZ|TDCU 1ZZ",
+        "postal_code_regex": "^((?:STHL|ASCN|TDCU)\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "Atlantic\/St_Helena",
@@ -12942,8 +12942,8 @@
         "subregion_id": 4,
         "nationality": "Somali, Somalian",
         "area_sq_km": 637657,
-        "postal_code_format": "@@  #####",
-        "postal_code_regex": "^([A-Z]{2}\\d{5})$",
+        "postal_code_format": "@@ ##### or ####|#####",
+        "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$",
         "timezones": [
             {
                 "zoneName": "Africa\/Mogadishu",
@@ -13061,7 +13061,7 @@
         "nationality": "South Georgia or South Sandwich Islands",
         "area_sq_km": 3903,
         "postal_code_format": "SIQQ 1ZZ",
-        "postal_code_regex": "SIQQ 1ZZ",
+        "postal_code_regex": "^(SIQQ\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "Atlantic\/South_Georgia",
@@ -13723,8 +13723,8 @@
         "subregion_id": 12,
         "nationality": "Chinese, Taiwanese",
         "area_sq_km": 35980,
-        "postal_code_format": "#####",
-        "postal_code_regex": "^(\\d{5})$",
+        "postal_code_format": "###|#####|######",
+        "postal_code_regex": "^(\\d{3}(?:\\d{2,3})?)$",
         "timezones": [
             {
                 "zoneName": "Asia\/Taipei",
@@ -14550,7 +14550,7 @@
         "nationality": "Turks and Caicos Island",
         "area_sq_km": 430,
         "postal_code_format": "TKCA 1ZZ",
-        "postal_code_regex": "^(TKCA 1ZZ)$",
+        "postal_code_regex": "^(TKCA\\s?1ZZ)$",
         "timezones": [
             {
                 "zoneName": "America\/Grand_Turk",
@@ -14866,7 +14866,7 @@
         "nationality": "British, UK",
         "area_sq_km": 244820,
         "postal_code_format": "@# #@@|@## #@@|@@# #@@|@@## #@@|@#@ #@@|@@#@ #@@|GIR0AA",
-        "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})|((([A-Za-z][0-9]{1,2})|(([A-Za-z][A-Ha-hJ-Yj-y][0-9]{1,2})|(([A-Za-z][0-9][A-Za-z])|([A-Za-z][A-Ha-hJ-Yj-y][0-9]?[A-Za-z]))))\\s?[0-9][A-Za-z]{2})$",
+        "postal_code_regex": "^([Gg][Ii][Rr]\\s?0[Aa]{2})$|^([A-Za-z]{1,2}(?:[0-9][0-9A-Za-z]?(?:\\s?[0-9][A-Za-z]{2})?)?)$",
         "timezones": [
             {
                 "zoneName": "Europe\/London",
