@@ -48,6 +48,7 @@ async function run() {
   if (!countries) {
     core.warning('Could not load countries.json for cross-reference. Skipping.');
     core.setOutput('errors', JSON.stringify([]));
+    core.setOutput('error_count', '0');
     core.setOutput('valid', '0');
     core.setOutput('has_errors', 'false');
     return;
@@ -250,7 +251,10 @@ async function run() {
     }
   }
 
-  core.setOutput('errors', JSON.stringify(errors));
+  // Cap the emitted list (env-var size limit in the report step); emit the
+  // true total separately. has_errors reflects the full count.
+  core.setOutput('errors', JSON.stringify(errors.slice(0, 50)));
+  core.setOutput('error_count', errors.length.toString());
   core.setOutput('valid', validCount.toString());
   core.setOutput('has_errors', (errors.length > 0).toString());
 
