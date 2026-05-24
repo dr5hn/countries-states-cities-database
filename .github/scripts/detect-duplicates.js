@@ -100,6 +100,13 @@ async function run() {
       for (const existing of candidates) {
         if (!existing.name) continue;
 
+        // Skip self-comparison. For cities the candidate set is the same
+        // contributions file, so an edited record (which keeps its id) would
+        // otherwise match itself. New records carry no id and are unaffected.
+        if (record.id != null && existing.id != null && Number(existing.id) === Number(record.id)) {
+          continue;
+        }
+
         // Fuzzy name match
         const nameDist = levenshteinDistance(record.name, existing.name);
         const isNameMatch = nameDist <= NAME_DISTANCE_THRESHOLD;
