@@ -6,7 +6,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Fields that are auto-managed and must NOT be present in contributions
+// Fields auto-managed by MySQL. Canonical contributions files (round-tripped
+// from the DB) legitimately carry these on every record, so their presence is
+// informational, not a blocking error — the import reassigns/overwrites them.
 const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 
 // Schema definitions derived from schema.sql
@@ -168,11 +170,16 @@ function validateRecord(record, entityType, index) {
   const label = record.name || record.code;
   const prefix = `Record ${index + 1}${label ? ` ("${label}")` : ''}`;
 
-  // Check for auto-managed fields that should NOT be present
-  for (const field of AUTO_MANAGED_FIELDS) {
-    if (field in record) {
-      errors.push(`${prefix}: "${field}" must not be included (auto-managed)`);
-    }
+  // Auto-managed fields are set by MySQL. Canonical records carry all of them
+  // (round-tripped from the DB) and brand-new records carry none — both are
+  // expected, so neither warns. A *partial* set usually means a record was
+  // hand-edited or copied incorrectly, so warn only in that case.
+  const autoPresent = AUTO_MANAGED_FIELDS.filter((f) => f in record);
+  if (autoPresent.length > 0 && autoPresent.length < AUTO_MANAGED_FIELDS.length) {
+    const missing = AUTO_MANAGED_FIELDS.filter((f) => !(f in record));
+    warnings.push(
+      `${prefix}: partial auto-managed fields (has ${autoPresent.join(', ')}; missing ${missing.join(', ')}) — omit all of them on new records`
+    );
   }
 
   // Check required fields

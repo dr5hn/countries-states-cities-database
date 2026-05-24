@@ -117,6 +117,8 @@ jobs:
           DIFF_IS_LARGE: ${{ steps.diff.outputs.is_large }}
           SCHEMA_ERRORS: ${{ steps.schema.outputs.errors }}
           SCHEMA_WARNINGS: ${{ steps.schema.outputs.warnings }}
+          SCHEMA_ERROR_COUNT: ${{ steps.schema.outputs.error_count }}
+          SCHEMA_WARNING_COUNT: ${{ steps.schema.outputs.warning_count }}
           SCHEMA_RECORD_COUNT: ${{ steps.schema.outputs.record_count }}
           SCHEMA_HAS_ERRORS: ${{ steps.schema.outputs.has_errors }}
           CROSSREF_ERRORS: ${{ steps.crossref.outputs.errors }}
@@ -139,6 +141,8 @@ jobs:
             const isLarge = process.env.DIFF_IS_LARGE === 'true';
             const schemaErrors = JSON.parse(process.env.SCHEMA_ERRORS || '[]');
             const schemaWarnings = JSON.parse(process.env.SCHEMA_WARNINGS || '[]');
+            const schemaErrorCount = parseInt(process.env.SCHEMA_ERROR_COUNT || String(schemaErrors.length));
+            const schemaWarningCount = parseInt(process.env.SCHEMA_WARNING_COUNT || String(schemaWarnings.length));
             const schemaRecordCount = parseInt(process.env.SCHEMA_RECORD_COUNT || '0');
             const schemaHasErrors = process.env.SCHEMA_HAS_ERRORS === 'true';
             const crossrefErrors = JSON.parse(process.env.CROSSREF_ERRORS || '[]');
@@ -191,25 +195,25 @@ jobs:
               report += '\n';
             }
 
-            if (schemaErrors.length > 0) {
+            if (schemaErrorCount > 0) {
               report += '\n**Errors (blocking):**\n';
               for (const err of schemaErrors.slice(0, 20)) {
                 report += `- :x: ${err}\n`;
               }
-              if (schemaErrors.length > 20) {
-                report += `- _...and ${schemaErrors.length - 20} more errors_\n`;
+              if (schemaErrorCount > 20) {
+                report += `- _...and ${schemaErrorCount - 20} more errors_\n`;
               }
             }
-            if (schemaWarnings.length > 0) {
+            if (schemaWarningCount > 0) {
               report += '\n**Warnings:**\n';
               for (const warn of schemaWarnings.slice(0, 10)) {
                 report += `- :warning: ${warn}\n`;
               }
-              if (schemaWarnings.length > 10) {
-                report += `- _...and ${schemaWarnings.length - 10} more warnings_\n`;
+              if (schemaWarningCount > 10) {
+                report += `- _...and ${schemaWarningCount - 10} more warnings_\n`;
               }
             }
-            if (schemaErrors.length === 0 && schemaWarnings.length === 0 && schemaRecordCount > 0) {
+            if (schemaErrorCount === 0 && schemaWarningCount === 0 && schemaRecordCount > 0) {
               report += `:white_check_mark: All records passed validation\n`;
             }
             report += '\n';
@@ -265,8 +269,8 @@ jobs:
             }
 
             // Summary
-            const totalErrors = schemaErrors.length + crossrefErrors.length;
-            const totalWarnings = schemaWarnings.length + coordWarnings.length + dupWarnings.length + urlErrors.length;
+            const totalErrors = schemaErrorCount + crossrefErrors.length;
+            const totalWarnings = schemaWarningCount + coordWarnings.length + dupWarnings.length + urlErrors.length;
 
             report += '---\n';
             if (needsClarification) {

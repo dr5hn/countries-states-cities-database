@@ -116,8 +116,16 @@ async function run() {
 
   const hasErrors = allErrors.length > 0;
 
-  core.setOutput('errors', JSON.stringify(allErrors));
-  core.setOutput('warnings', JSON.stringify(allWarnings));
+  // The error/warning lists are passed to the report step via environment
+  // variables, which have a hard size limit — a large malformed file could
+  // overflow it ("Maximum object size exceeded"). Cap the emitted lists, but
+  // emit the true totals separately so the report's counts and "...and N more"
+  // lines stay accurate.
+  const MAX_REPORTED = 50;
+  core.setOutput('errors', JSON.stringify(allErrors.slice(0, MAX_REPORTED)));
+  core.setOutput('warnings', JSON.stringify(allWarnings.slice(0, MAX_REPORTED)));
+  core.setOutput('error_count', allErrors.length.toString());
+  core.setOutput('warning_count', allWarnings.length.toString());
   core.setOutput('record_count', totalRecords.toString());
   core.setOutput('has_errors', hasErrors.toString());
 
