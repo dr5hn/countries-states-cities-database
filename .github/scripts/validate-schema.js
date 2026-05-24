@@ -116,8 +116,19 @@ async function run() {
 
   const hasErrors = allErrors.length > 0;
 
-  core.setOutput('errors', JSON.stringify(allErrors));
-  core.setOutput('warnings', JSON.stringify(allWarnings));
+  // Outputs are passed to the report step via environment variables, which
+  // have a hard size limit. A whole-file edit can legitimately surface
+  // thousands of entries (e.g. auto-managed-field warnings on every existing
+  // row), so cap each list before emitting to avoid "Maximum object size
+  // exceeded". has_errors is computed from the full, uncapped count above.
+  const MAX_REPORTED = 50;
+  const capList = (list) =>
+    list.length <= MAX_REPORTED
+      ? list
+      : [...list.slice(0, MAX_REPORTED), `...and ${list.length - MAX_REPORTED} more`];
+
+  core.setOutput('errors', JSON.stringify(capList(allErrors)));
+  core.setOutput('warnings', JSON.stringify(capList(allWarnings)));
   core.setOutput('record_count', totalRecords.toString());
   core.setOutput('has_errors', hasErrors.toString());
 

@@ -6,7 +6,9 @@
 const fs = require('fs');
 const path = require('path');
 
-// Fields that are auto-managed and must NOT be present in contributions
+// Fields auto-managed by MySQL. Canonical contributions files (round-tripped
+// from the DB) legitimately carry these on every record, so their presence is
+// informational, not a blocking error — the import reassigns/overwrites them.
 const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 
 // Schema definitions derived from schema.sql
@@ -168,10 +170,11 @@ function validateRecord(record, entityType, index) {
   const label = record.name || record.code;
   const prefix = `Record ${index + 1}${label ? ` ("${label}")` : ''}`;
 
-  // Check for auto-managed fields that should NOT be present
+  // Auto-managed fields are expected in canonical (round-tripped) records, so
+  // flag them as a warning rather than a blocking error.
   for (const field of AUTO_MANAGED_FIELDS) {
     if (field in record) {
-      errors.push(`${prefix}: "${field}" must not be included (auto-managed)`);
+      warnings.push(`${prefix}: "${field}" is auto-managed (will be overwritten on import)`);
     }
   }
 
