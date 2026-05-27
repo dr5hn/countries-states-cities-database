@@ -21,7 +21,7 @@ Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
 Total Postcodes : 844248 (125 countries) <br>
 Total Timezones : 427 (100% IANA coverage) <br>
-Last Updated On: May 24, 2026
+Last Updated On: May 27, 2026
 
 ---
 
