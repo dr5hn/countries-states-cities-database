@@ -303,36 +303,48 @@ jobs:
               report += 'Refer to our [Contribution Guidelines](https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md) for details.\n';
             }
 
-            // Find existing bot comment to update (avoid spam)
+            // Post (or update) the report comment. On PRs from forks the
+            // GITHUB_TOKEN is read-only, so comment writes throw "Resource not
+            // accessible by integration". Don't fail the validation over that —
+            // log a warning and rely on the job-summary fallback below.
             const COMMENT_MARKER = '## CSC Validation Report';
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              per_page: 100,
-            });
-
-            const botComment = comments.find(
-              (c) =>
-                (c.user.login === 'github-actions[bot]' || c.user.type === 'Bot') &&
-                c.body.includes(COMMENT_MARKER)
-            );
-
-            if (botComment) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: report,
-              });
-            } else {
-              await github.rest.issues.createComment({
+            try {
+              const { data: comments } = await github.rest.issues.listComments({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: context.payload.pull_request.number,
-                body: report,
+                per_page: 100,
               });
+
+              const botComment = comments.find(
+                (c) =>
+                  (c.user.login === 'github-actions[bot]' || c.user.type === 'Bot') &&
+                  c.body.includes(COMMENT_MARKER)
+              );
+
+              if (botComment) {
+                await github.rest.issues.updateComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: botComment.id,
+                  body: report,
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.pull_request.number,
+                  body: report,
+                });
+              }
+            } catch (err) {
+              const msg = err instanceof Error ? err.message : String(err);
+              core.warning(`Could not post validation comment (likely a fork PR with a read-only token): ${msg}`);
             }
+
+            // Always surface the report in the job summary so it is visible
+            // even when the comment cannot be posted (e.g. fork PRs).
+            await core.summary.addRaw(report).write();
 
             // Apply status labels
             const statusLabels = [];
