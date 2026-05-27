@@ -338,7 +338,8 @@ jobs:
                 });
               }
             } catch (err) {
-              core.warning(`Could not post validation comment (likely a fork PR with a read-only token): ${err.message}`);
+              const msg = err instanceof Error ? err.message : String(err);
+              core.warning(`Could not post validation comment (likely a fork PR with a read-only token): ${msg}`);
             }
 
             // Always surface the report in the job summary so it is visible
