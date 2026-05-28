@@ -80,6 +80,24 @@ const SCHEMA = {
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
     },
   },
+  counties: {
+    required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
+    optional: [
+      'type', 'native', 'level', 'parent_id', 'population', 'timezone',
+      'translations', 'state_name', 'country_name', 'wikiDataId',
+    ],
+    rules: {
+      name: { type: 'string', maxLength: 255, nonEmpty: true },
+      state_id: { type: 'integer', positive: true },
+      state_code: { type: 'string', maxLength: 255, nonEmpty: true },
+      country_id: { type: 'integer', positive: true },
+      country_code: { type: 'string', exactLength: 2 },
+      type: { type: 'string', maxLength: 32 },
+      latitude: { type: 'coordinate', min: -90, max: 90 },
+      longitude: { type: 'coordinate', min: -180, max: 180 },
+      wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
+    },
+  },
 };
 
 /**
@@ -90,6 +108,7 @@ const SCHEMA = {
 function getEntityType(filePath) {
   const normalized = filePath.toLowerCase();
   if (normalized.includes('postcodes')) return 'postcodes';
+  if (normalized.includes('counties')) return 'counties';
   if (normalized.includes('cities')) return 'cities';
   if (normalized.includes('states')) return 'states';
   if (normalized.includes('countries')) return 'countries';
