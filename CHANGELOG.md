@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-06
+- **2026-05-28** - PR [#1561](https://github.com/dr5hn/countries-states-cities-database/pull/1561): Updated cities (US) (by @dr5hn)
+- **2026-05-28** - PR [#1559](https://github.com/dr5hn/countries-states-cities-database/pull/1559): Updated cities (AL, AZ, BE, BR, CN) (by @github-actions[bot])
+- **2026-05-27** - PR [#1557](https://github.com/dr5hn/countries-states-cities-database/pull/1557): Updated cities (AL, AZ, BE, BR, CN) (by @ebarped)
+- **2026-05-27** - PR [#1555](https://github.com/dr5hn/countries-states-cities-database/pull/1555): Updated cities (IN) (by @ebarped)
+
 ## 2026-05
 - **2026-05-24** - PR [#1553](https://github.com/dr5hn/countries-states-cities-database/pull/1553): Updated cities (UY) (by @github-actions[bot])
 - **2026-05-24** - PR [#1549](https://github.com/dr5hn/countries-states-cities-database/pull/1549): Updated cities (UY) (by @dr5hn)
