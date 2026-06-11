@@ -93,8 +93,6 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 <details>
 <summary><strong>Other packages and platforms</strong></summary>
 
-- [`@countrystatecity/countries-browser`](https://github.com/dr5hn/countrystatecity-countries-browser) — CDN-loaded, lazy
-- [`@countrystatecity/timezones`](https://github.com/dr5hn/countrystatecity-timezones) — dedicated timezone data
 - [Database browser](https://demo.countrystatecity.in/) — query and explore live data
 - [Encyclopedia](https://countrystatecity.org/) — country profiles and insights
 - [Community Manager](https://manager.countrystatecity.in/) — submit corrections via web UI
