@@ -66,7 +66,7 @@ import { Country, State, City } from '@countrystatecity/countries';
 const usStates = State.getStatesOfCountry('US');
 ```
 
-[GitHub](https://github.com/dr5hn/countrystatecity-countries) ·
+[GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) ·
 [NPM](https://www.npmjs.com/package/@countrystatecity/countries)
 
 </details>
