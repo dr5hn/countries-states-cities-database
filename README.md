@@ -60,8 +60,10 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 | Package | GitHub | NPM |
 |---------|--------|-----|
 | `@countrystatecity/countries` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries) |
-| `@countrystatecity/countries-browser` | [GitHub](https://github.com/dr5hn/countrystatecity-countries-browser) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries-browser) |
-| `@countrystatecity/timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-timezones) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/timezones) |
+| `@countrystatecity/countries-browser` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries-browser) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries-browser) |
+| `@countrystatecity/currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/currencies) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/currencies) |
+| `@countrystatecity/timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/timezones) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/timezones) |
+| `@countrystatecity/translations` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/translations) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/translations) |
 
 </details>
 
