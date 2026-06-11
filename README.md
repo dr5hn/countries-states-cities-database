@@ -57,34 +57,20 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 <details>
 <summary><strong>NPM (JavaScript / TypeScript)</strong></summary>
 
-```bash
-npm install @countrystatecity/countries
-```
-
-```js
-import { Country, State, City } from '@countrystatecity/countries';
-const usStates = State.getStatesOfCountry('US');
-```
-
-[GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) ·
-[NPM](https://www.npmjs.com/package/@countrystatecity/countries)
+| Package | GitHub | NPM |
+|---------|--------|-----|
+| `@countrystatecity/countries` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries) |
+| `@countrystatecity/countries-browser` | [GitHub](https://github.com/dr5hn/countrystatecity-countries-browser) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries-browser) |
+| `@countrystatecity/timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-timezones) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/timezones) |
 
 </details>
 
 <details>
 <summary><strong>PyPI (Python)</strong></summary>
 
-```bash
-pip install countrystatecity-countries
-```
-
-```python
-from countrystatecity_countries import Country, State, City
-us_states = State.get_states_of_country('US')
-```
-
-[GitHub](https://github.com/dr5hn/countrystatecity-pypi) ·
-[PyPI](https://pypi.org/project/countrystatecity-countries/)
+| Package | GitHub | PyPI |
+|---------|--------|------|
+| `countrystatecity-countries` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi) | [pypi.org](https://pypi.org/project/countrystatecity-countries/) |
 
 </details>
 
