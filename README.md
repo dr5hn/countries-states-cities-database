@@ -73,6 +73,9 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 | Package | GitHub | PyPI |
 |---------|--------|------|
 | `countrystatecity-countries` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi) | [pypi.org](https://pypi.org/project/countrystatecity-countries/) |
+| `countrystatecity-timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi) | [pypi.org](https://pypi.org/project/countrystatecity-timezones/) |
+| `countrystatecity-currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi) | [pypi.org](https://pypi.org/project/countrystatecity-currencies/) |
+| `countrystatecity-translations` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi) | [pypi.org](https://pypi.org/project/countrystatecity-translations/) |
 
 </details>
 
