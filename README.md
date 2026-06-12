@@ -64,6 +64,7 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 | `@countrystatecity/currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/currencies) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/currencies) |
 | `@countrystatecity/timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/timezones) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/timezones) |
 | `@countrystatecity/translations` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/translations) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/translations) |
+| `@countrystatecity/cli` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/cli) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/cli) |
 
 </details>
 
@@ -76,6 +77,7 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 | `countrystatecity-timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/timezones) | [pypi.org](https://pypi.org/project/countrystatecity-timezones/) |
 | `countrystatecity-currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/currencies) | [pypi.org](https://pypi.org/project/countrystatecity-currencies/) |
 | `countrystatecity-translations` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/translations) | [pypi.org](https://pypi.org/project/countrystatecity-translations/) |
+| `countrystatecity-phonecodes` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/phonecodes) | [pypi.org](https://pypi.org/project/countrystatecity-phonecodes/) |
 
 </details>
 
