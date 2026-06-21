@@ -174,6 +174,12 @@ jobs:
         run: |
           python3 scripts/export/json_to_toon.py
 
+      - name: Export Parquet
+        working-directory: ./bin
+        run: |
+          pip install pandas pyarrow
+          python3 scripts/export/json_to_parquet.py
+
       - name: Export XML
         working-directory: ./bin
         run: php console export:xml
@@ -375,6 +381,17 @@ jobs:
             echo "  ✓ csv/postcodes.csv.gz"
           fi
 
+          # Parquet Files (large tables only; small ones are committed to git)
+          echo "📄 Compressing Parquet files..."
+          if [ -f parquet/cities.parquet ]; then
+            gzip -9 -k -f parquet/cities.parquet
+            echo "  ✓ parquet/cities.parquet.gz"
+          fi
+          if [ -f parquet/postcodes.parquet ]; then
+            gzip -9 -k -f parquet/postcodes.parquet
+            echo "  ✓ parquet/postcodes.parquet.gz"
+          fi
+
           # MySQL SQL Files
           echo "📄 Compressing MySQL SQL files..."
           gzip -9 -k -f sql/world.sql
@@ -427,7 +444,7 @@ jobs:
           echo "✅ All compression complete!"
           echo ""
           echo "📊 Compressed file sizes:"
-          ls -lh json/*.gz toon/*.gz geojson/*.gz xml/*.gz yml/*.gz csv/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
+          ls -lh json/*.gz toon/*.gz geojson/*.gz xml/*.gz yml/*.gz csv/*.gz parquet/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
 
       - name: Update README.md
         run: |
@@ -559,6 +576,7 @@ jobs:
               'csv/*.gz',
               'toon/*.gz',
               'geojson/*.gz',
+              'parquet/*.gz',
               'mongodb/world-mongodb-dump.tar.gz',
             ];
 

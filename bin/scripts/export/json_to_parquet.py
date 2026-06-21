@@ -23,7 +23,7 @@ import pyarrow.parquet as pq
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 
-TABLES = ["regions", "subregions", "countries", "states", "cities"]
+TABLES = ["regions", "subregions", "countries", "states", "cities", "postcodes"]
 
 JSON_NESTED_COLS = {"translations", "timezones"}
 
@@ -51,6 +51,13 @@ def flatten_row(row: dict) -> dict:
 
 
 def export_table(table: str, out_dir: str) -> int:
+    src = os.path.join(REPO_ROOT, "json", f"{table}.json")
+    if not os.path.exists(src):
+        # Large tables (cities, postcodes) are only present during a full
+        # export run; skip rather than fail when a source JSON is absent.
+        print(f"  [skip] {table}: source not found ({src})")
+        return 0
+
     data = load_json(table)
     if not data:
         print(f"  [skip] {table}: no records")
