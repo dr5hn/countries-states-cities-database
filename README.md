@@ -4,7 +4,7 @@
 
 # Countries States Cities Database
 
-A comprehensive, community-maintained dataset of **countries, states, cities, and postcodes** — published in 11 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
+A comprehensive, community-maintained dataset of **countries, states, cities, and postcodes** — published in 12 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
 
 [![License: ODbL-1.0](https://img.shields.io/badge/License-ODbL--1.0-brightgreen.svg?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dr5hn/countries-states-cities-database.svg?style=flat-square)](https://github.com/dr5hn/countries-states-cities-database/stargazers)
@@ -114,7 +114,7 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
-- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON)
+- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON), Parquet (columnar, analytics-ready)
 
 | Format | Export time | Size | Compressed |
 |---|---:|---:|---:|
@@ -123,6 +123,7 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 | MySQL SQL | 3s | 86 MB | 22 MB |
 | JSON | 4s | 271 MB | 18 MB |
 | TOON | 5s | 23 MB | 20 MB |
+| Parquet | 7s | 31 MB | 27 MB |
 | GeoJSON | 8s | 208 MB | 24 MB |
 | XML | 9s | 91 MB | 15 MB |
 | YAML | 17s | 68 MB | — |
