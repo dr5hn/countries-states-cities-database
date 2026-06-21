@@ -57,34 +57,27 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 <details>
 <summary><strong>NPM (JavaScript / TypeScript)</strong></summary>
 
-```bash
-npm install @countrystatecity/countries
-```
-
-```js
-import { Country, State, City } from '@countrystatecity/countries';
-const usStates = State.getStatesOfCountry('US');
-```
-
-[GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) ·
-[NPM](https://www.npmjs.com/package/@countrystatecity/countries)
+| Package | GitHub | NPM |
+|---------|--------|-----|
+| `@countrystatecity/countries` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries) |
+| `@countrystatecity/countries-browser` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/countries-browser) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/countries-browser) |
+| `@countrystatecity/currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/currencies) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/currencies) |
+| `@countrystatecity/timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/timezones) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/timezones) |
+| `@countrystatecity/translations` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/translations) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/translations) |
+| `@countrystatecity/cli` | [GitHub](https://github.com/dr5hn/countrystatecity-npm/tree/main/packages/cli) | [npmjs.com](https://www.npmjs.com/package/@countrystatecity/cli) |
 
 </details>
 
 <details>
 <summary><strong>PyPI (Python)</strong></summary>
 
-```bash
-pip install countrystatecity-countries
-```
-
-```python
-from countrystatecity_countries import Country, State, City
-us_states = State.get_states_of_country('US')
-```
-
-[GitHub](https://github.com/dr5hn/countrystatecity-pypi) ·
-[PyPI](https://pypi.org/project/countrystatecity-countries/)
+| Package | GitHub | PyPI |
+|---------|--------|------|
+| `countrystatecity-countries` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/countries) | [pypi.org](https://pypi.org/project/countrystatecity-countries/) |
+| `countrystatecity-timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/timezones) | [pypi.org](https://pypi.org/project/countrystatecity-timezones/) |
+| `countrystatecity-currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/currencies) | [pypi.org](https://pypi.org/project/countrystatecity-currencies/) |
+| `countrystatecity-translations` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/translations) | [pypi.org](https://pypi.org/project/countrystatecity-translations/) |
+| `countrystatecity-phonecodes` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/phonecodes) | [pypi.org](https://pypi.org/project/countrystatecity-phonecodes/) |
 
 </details>
 
@@ -105,8 +98,6 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 <details>
 <summary><strong>Other packages and platforms</strong></summary>
 
-- [`@countrystatecity/countries-browser`](https://github.com/dr5hn/countrystatecity-countries-browser) — CDN-loaded, lazy
-- [`@countrystatecity/timezones`](https://github.com/dr5hn/countrystatecity-timezones) — dedicated timezone data
 - [Database browser](https://demo.countrystatecity.in/) — query and explore live data
 - [Encyclopedia](https://countrystatecity.org/) — country profiles and insights
 - [Community Manager](https://manager.countrystatecity.in/) — submit corrections via web UI
