@@ -62,7 +62,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 **Important for Contributors:**
 - ✅ **DO**: Edit JSON files in `contributions/` directory
 - ❌ **DON'T**: Edit SQL, CSV, XML, YAML, or other export files (auto-generated)
-- ❌ **DON'T**: Edit GeoJSON or TOON format files (auto-generated from database)
+- ❌ **DON'T**: Edit GeoJSON, TOON, or Parquet format files (auto-generated from database)
 - ❌ **DON'T**: Run build scripts or exports locally (GitHub Actions handles this)
 - 🔒 **MySQL workflow**: Reserved for repository maintainers only
 
@@ -72,6 +72,7 @@ All data you contribute via JSON is automatically exported to **11+ formats**:
 - **Core Formats**: JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV
 - **Geographic Format**: GeoJSON (RFC 7946 standard for mapping applications)
 - **AI-Optimized Format**: TOON (Token-Oriented Object Notation - reduces LLM token usage by ~40%)
+- **Analytics Format**: Parquet (columnar, Snappy-compressed - efficient for data science / OLAP tooling)
 - **Optional Formats**: DuckDB (via manual conversion from SQLite)
 
 You don't need to worry about these formats - they're automatically generated from the MySQL database!
