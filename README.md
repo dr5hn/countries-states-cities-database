@@ -25,9 +25,11 @@ Last Updated On: June 21, 2026
 
 ---
 
-<a href="https://makemysitelive.com/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme" target="_blank">
-  <img src=".github/images/makemysitelive-banner.png" alt="Build & Launch Websites Faster with MakeMySiteLive — From the team behind CountryStateCity" width="100%" />
-</a>
+<div align="center">
+  <a href="https://makemysitelive.com/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme">
+    <img src=".github/images/makemysitelive-banner.png" alt="Build & Launch Websites Faster with MakeMySiteLive" width="800" />
+  </a>
+</div>
 
 ---
 
