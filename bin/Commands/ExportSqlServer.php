@@ -172,13 +172,47 @@ class ExportSqlServer extends Command
         return $schemas[$table] ?? throw new \InvalidArgumentException("Unknown table: $table");
     }
 
+    /**
+     * Extract the ordered column names from a table's CREATE TABLE definition.
+     *
+     * Parsing the schema produced by generateTableSchema() keeps the insertable
+     * column set automatically in sync with the schema. Each column is matched as
+     * "<name> <SQL_TYPE> ...", which naturally excludes the CREATE TABLE,
+     * IF OBJECT_ID and CONSTRAINT lines.
+     *
+     * @return string[] Column names in declaration order.
+     */
+    private function getTableColumns(string $table): array
+    {
+        $schema = $this->generateTableSchema($table);
+        preg_match_all(
+            '/^\s*(\w+)\s+(?:INT|BIGINT|BIT|NVARCHAR|NCHAR|DECIMAL|DATETIME2)\b/mi',
+            $schema,
+            $matches
+        );
+
+        return $matches[1];
+    }
+
     private function generateSqlServerInsert(string $tableName, array $data): string
     {
         if (empty($data)) {
             return '';
         }
 
-        $columns = array_keys($data[0]);
+        // Restrict INSERT columns to those declared in the table schema. Source
+        // JSON carries denormalized convenience fields (e.g. country_name,
+        // state_name) that have no matching column in CREATE TABLE and would
+        // otherwise produce INSERT statements that fail on import (issue #1589).
+        $tableColumns = $this->getTableColumns($tableName);
+        $columns = array_values(array_intersect(array_keys($data[0]), $tableColumns));
+
+        if (empty($columns)) {
+            throw new \RuntimeException(
+                "No columns for table '$tableName' match between the JSON source and the schema."
+            );
+        }
+
         $sql = '';
 
         // Chunk the data into groups of 900 (leaving some margin below the 1000 limit)
