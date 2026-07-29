@@ -69,4 +69,4 @@ INSERT INTO `states` VALUES (5010,'Loire',75,'FR',NULL,'42','FR-42','metropolita
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-11  8:36:39
+-- Dump completed on 2026-07-29  8:55:28
