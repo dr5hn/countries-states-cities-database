@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-08
+- **2026-07-29** - PR [#1602](https://github.com/dr5hn/countries-states-cities-database/pull/1602): Updated cities (BE) (by @dr5hn)
+
 ## 2026-07
 - **2026-07-11** - PR [#1598](https://github.com/dr5hn/countries-states-cities-database/pull/1598): Updated cities, Updated countries (NZ, US) (by @github-actions[bot])
 - **2026-07-11** - PR [#1597](https://github.com/dr5hn/countries-states-cities-database/pull/1597): Updated cities (IR) (by @dr5hn)
