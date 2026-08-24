@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 1
           submodules: true
@@ -43,14 +43,14 @@ jobs:
           ini-values: "post_max_size=256M, memory_limit=512M" #optional
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: nmig/package-lock.json
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: bin/vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('bin/composer.lock') }}
@@ -457,7 +457,7 @@ jobs:
           sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
 
       - name: Create GitHub Release with exports
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           CURRENT_DATE: ${{ env.current_date }}
           REGION_COUNT: ${{ env.region_count }}
@@ -605,7 +605,7 @@ jobs:
             core.info('All export assets uploaded to release.');
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           commit-message: |
             Export database formats - ${{ env.current_date }}
