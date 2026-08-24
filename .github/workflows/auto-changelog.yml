@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Slack notification
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:

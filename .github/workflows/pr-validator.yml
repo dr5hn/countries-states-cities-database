@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Remove stale label on new activity
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             try {
@@ -39,10 +39,10 @@ jobs:
             }
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
 
@@ -106,7 +106,7 @@ jobs:
       # Post consolidated validation report
       - name: Post validation report
         if: always()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           PR_FORMAT_RESULTS: ${{ steps.pr_format.outputs.results }}
           PR_FORMAT_NEEDS_CLARIFICATION: ${{ steps.pr_format.outputs.needs_clarification }}
@@ -388,7 +388,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           DIFF_CRITICAL_REASONS: ${{ steps.diff.outputs.critical_reasons }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             if (!process.env.SLACK_WEBHOOK_URL) {
@@ -413,7 +413,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           DIFF_TOTAL_RECORDS: ${{ steps.diff.outputs.total_records }}
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             if (!process.env.SLACK_WEBHOOK_URL) {
