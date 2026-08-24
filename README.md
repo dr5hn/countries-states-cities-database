@@ -46,8 +46,24 @@ curl https://api.countrystatecity.in/v1/countries/IN/states/MH/cities \
   -H "X-CSCAPI-KEY: $YOUR_API_KEY"
 ```
 
-[**Get an API key →**](https://countrystatecity.in/) ·
-[Documentation](https://docs.countrystatecity.in/) ·
+Python applications can use the official sync and async client:
+
+```bash
+pip install countrystatecity-api
+export CSC_API_KEY="YOUR_API_KEY"
+```
+
+```python
+from countrystatecity import CountryStateCity
+
+with CountryStateCity() as client:
+    states = client.get_states_of_country("IN")
+    print([state["name"] for state in states[:3]])
+```
+
+[**Get a free API key →**](https://app.countrystatecity.in/?utm_source=github&utm_medium=repository&utm_campaign=python_packages&utm_content=upstream_readme) ·
+[Compare plans](https://countrystatecity.in/pricing/?utm_source=github&utm_medium=repository&utm_campaign=python_packages&utm_content=upstream_readme) ·
+[Documentation](https://docs.countrystatecity.in/api/introduction?utm_source=github&utm_medium=repository&utm_campaign=python_packages&utm_content=upstream_readme) ·
 [Interactive playground](https://playground.countrystatecity.in/) ·
 [OpenAPI spec](https://github.com/dr5hn/csc-swagger) ·
 [Status](https://status.countrystatecity.in/)
@@ -79,13 +95,18 @@ Build tailored datasets in your browser — pick country, region, format, and fi
 <details>
 <summary><strong>PyPI (Python)</strong></summary>
 
-| Package | GitHub | PyPI |
-|---------|--------|------|
-| `countrystatecity-countries` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/countries) | [pypi.org](https://pypi.org/project/countrystatecity-countries/) |
-| `countrystatecity-timezones` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/timezones) | [pypi.org](https://pypi.org/project/countrystatecity-timezones/) |
-| `countrystatecity-currencies` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/currencies) | [pypi.org](https://pypi.org/project/countrystatecity-currencies/) |
-| `countrystatecity-translations` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/translations) | [pypi.org](https://pypi.org/project/countrystatecity-translations/) |
-| `countrystatecity-phonecodes` | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/phonecodes) | [pypi.org](https://pypi.org/project/countrystatecity-phonecodes/) |
+Use `countrystatecity-api` for live, managed data. The suffixed packages are versioned offline snapshots.
+
+| Package | Use | GitHub | PyPI |
+|---------|-----|--------|------|
+| `countrystatecity-api` | Live REST API client | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/api) | [pypi.org](https://pypi.org/project/countrystatecity-api/) |
+| `countrystatecity-countries` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/countries) | [pypi.org](https://pypi.org/project/countrystatecity-countries/) |
+| `countrystatecity-timezones` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/timezones) | [pypi.org](https://pypi.org/project/countrystatecity-timezones/) |
+| `countrystatecity-currencies` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/currencies) | [pypi.org](https://pypi.org/project/countrystatecity-currencies/) |
+| `countrystatecity-translations` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/translations) | [pypi.org](https://pypi.org/project/countrystatecity-translations/) |
+| `countrystatecity-phonecodes` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/phonecodes) | [pypi.org](https://pypi.org/project/countrystatecity-phonecodes/) |
+| `countrystatecity-regions` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/regions) | [pypi.org](https://pypi.org/project/countrystatecity-regions/) |
+| `countrystatecity-postal-codes` | Offline snapshot | [GitHub](https://github.com/dr5hn/countrystatecity-pypi/tree/main/python/packages/postal_codes) | [pypi.org](https://pypi.org/project/countrystatecity-postal-codes/) |
 
 </details>
 
