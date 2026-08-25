@@ -47,7 +47,28 @@ Each record is a JSON object with the following fields:
 
 ## Sourcing Plan (Combo B, GeoNames-free)
 
-Each country file is sourced from one of:
+> **Scope note:** the table below documents only the **original 8 launch sources**.
+> Since launch, community-contributed pipelines have added postcodes for
+> 100+ more countries — this directory now holds 125 country files with **85
+> distinct `source` tag values** in the data. Most of those later tags are
+> informal per-contributor pipeline names (e.g. `sepomex-via-redrbrt-2016`,
+> `maltapost-via-lucamuscat`) whose licenses are **not yet audited or recorded
+> here**. Do not assume a `source` tag not listed below carries an
+> ODbL/CC-0/public-domain-equivalent license just because it's in this repo.
+>
+> **Known risk — Wikipedia/Wikidata conflation:** several small-territory
+> files use `source` values like `wikipedia-small-territory` or
+> `wikipedia-singleton-territory` (content drawn from Wikipedia, **CC-BY-SA
+> 4.0**, share-alike). These are easy to misread as `wikidata` (**CC-0**, no
+> attribution/share-alike obligations) in the table below — they are not the
+> same license and must not be conflated when assembling attribution.
+>
+> A full per-`source`-tag license audit — recorded as structured data
+> (JSON/YAML), not prose, so a script can consume it reliably — is separate
+> follow-up work and has not been done yet. Until that exists, do not build
+> an automated attribution-assembly step off this table.
+
+Each of the original 8 launch country files was sourced from one of:
 
 | Source | License | Countries covered |
 |--------|---------|-------------------|
@@ -60,7 +81,9 @@ Each country file is sourced from one of:
 | **Australia Post Boundaries** | CC-BY 4.0 | AU |
 | **Statistics Canada FSA** | Open Government | CA |
 
-The `source` field on each record records which pipeline produced it, so attribution can be programmatically assembled at export time.
+The `source` field on each record records which pipeline produced it. For the
+125 country files now present, that field is **not yet** sufficient on its
+own to programmatically assemble attribution — see the scope note above.
 
 ## Adding a Country
 

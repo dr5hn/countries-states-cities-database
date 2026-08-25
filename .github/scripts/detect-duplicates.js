@@ -19,6 +19,22 @@ const {
 const NAME_DISTANCE_THRESHOLD = 2;
 const COORDINATE_DISTANCE_KM = 5;
 
+/**
+ * Build the duplicate-comparison key for a postcode record.
+ * Uses state_id/city_id (FKs) rather than the denormalized state_code, and
+ * normalizes locality_name so a stray-whitespace/case copy still matches.
+ */
+function postcodeKey(record) {
+  return [
+    record.code,
+    record.country_code,
+    record.state_id ?? '',
+    record.city_id ?? '',
+    (record.locality_name || '').trim().toLowerCase(),
+    record.type || '',
+  ].join('|');
+}
+
 async function run() {
   const token = process.env.GITHUB_TOKEN;
   const octokit = github.getOctokit(token);
@@ -55,12 +71,13 @@ async function run() {
     if (!entityType || !fs.existsSync(fullPath)) continue;
 
     // Load existing data for comparison
-    // For cities, load the country-specific file from contributions/ instead of
-    // the full cities.json (153k+ records) to avoid memory and performance issues
+    // For cities and postcodes, load the country-specific file from contributions/
+    // instead of the full aggregate (which doesn't exist for postcodes, and is
+    // 153k+ records for cities) to avoid memory and performance issues
     let existingData = null;
-    if (entityType === 'cities') {
+    if (entityType === 'cities' || entityType === 'postcodes') {
       const countryCode = path.basename(filePath, '.json').toUpperCase();
-      const countryFilePath = path.join(process.cwd(), 'contributions', 'cities', `${countryCode}.json`);
+      const countryFilePath = path.join(process.cwd(), 'contributions', entityType, `${countryCode}.json`);
       if (fs.existsSync(countryFilePath)) {
         const { data: countryData } = parseJsonFile(countryFilePath);
         existingData = countryData;
@@ -80,6 +97,32 @@ async function run() {
 
     for (let i = 0; i < records.length; i++) {
       const record = records[i];
+
+      if (entityType === 'postcodes') {
+        if (!record.code) continue;
+
+        checked++;
+        const prefix = `Record ${i + 1} ("${record.code}")`;
+
+        // Postcode duplicate key: a code legitimately repeats within a country
+        // when it covers a different locality (e.g. shared postal zones across
+        // neighbouring towns) — that alone is not a duplicate. Only flag when
+        // the full (code, country, state, city, locality, type) key repeats.
+        const key = postcodeKey(record);
+        for (const existing of existingData) {
+          if (record.id != null && existing.id != null && Number(existing.id) === Number(record.id)) {
+            continue;
+          }
+          if (postcodeKey(existing) === key) {
+            warnings.push(
+              `${filePath}: ${prefix} appears to be an exact duplicate of existing "${existing.code}" ` +
+              `(id: ${existing.id}) - same code, state, city, locality and type`
+            );
+          }
+        }
+        continue;
+      }
+
       if (!record.name) continue;
 
       checked++;
