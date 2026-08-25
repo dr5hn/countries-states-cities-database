@@ -25,14 +25,37 @@ const COORDINATE_DISTANCE_KM = 5;
  * normalizes locality_name so a stray-whitespace/case copy still matches.
  */
 function postcodeKey(record) {
-  return [
+  return JSON.stringify([
     record.code,
     record.country_code,
     record.state_id ?? '',
     record.city_id ?? '',
     (record.locality_name || '').trim().toLowerCase(),
     record.type || '',
-  ].join('|');
+  ]);
+}
+
+/** Find exact postcode duplicates in one pass through a country file. */
+function findPostcodeDuplicates(records) {
+  const seen = new Map();
+  const duplicates = [];
+  let checked = 0;
+
+  for (let index = 0; index < records.length; index++) {
+    const record = records[index];
+    if (!record.code) continue;
+
+    checked++;
+    const key = postcodeKey(record);
+    const existing = seen.get(key);
+    if (existing) {
+      duplicates.push({ index, record, existing: existing.record });
+    } else {
+      seen.set(key, { index, record });
+    }
+  }
+
+  return { checked, duplicates };
 }
 
 async function run() {
@@ -70,12 +93,30 @@ async function run() {
 
     if (!entityType || !fs.existsSync(fullPath)) continue;
 
-    // Load existing data for comparison
-    // For cities and postcodes, load the country-specific file from contributions/
-    // instead of the full aggregate (which doesn't exist for postcodes, and is
-    // 153k+ records for cities) to avoid memory and performance issues
+    const { data, error } = parseJsonFile(fullPath);
+    if (error || !data) continue;
+
+    const records = Array.isArray(data) ? data : [data];
+
+    if (entityType === 'postcodes') {
+      // A code may legitimately repeat for different localities. The complete
+      // country file is the validation unit, so index each full comparison key
+      // once rather than comparing every row with every other row.
+      const result = findPostcodeDuplicates(records);
+      checked += result.checked;
+      for (const { index, record, existing } of result.duplicates) {
+        warnings.push(
+          `${filePath}: Record ${index + 1} ("${record.code}") appears to be an exact duplicate ` +
+          `of existing "${existing.code}" (id: ${existing.id}) - same code, state, city, locality and type`
+        );
+      }
+      continue;
+    }
+
+    // Load existing data for comparison. For cities, use the country-specific
+    // contribution file instead of the 153k+ record aggregate.
     let existingData = null;
-    if (entityType === 'cities' || entityType === 'postcodes') {
+    if (entityType === 'cities') {
       const countryCode = path.basename(filePath, '.json').toUpperCase();
       const countryFilePath = path.join(process.cwd(), 'contributions', entityType, `${countryCode}.json`);
       if (fs.existsSync(countryFilePath)) {
@@ -90,38 +131,8 @@ async function run() {
       continue;
     }
 
-    const { data, error } = parseJsonFile(fullPath);
-    if (error || !data) continue;
-
-    const records = Array.isArray(data) ? data : [data];
-
     for (let i = 0; i < records.length; i++) {
       const record = records[i];
-
-      if (entityType === 'postcodes') {
-        if (!record.code) continue;
-
-        checked++;
-        const prefix = `Record ${i + 1} ("${record.code}")`;
-
-        // Postcode duplicate key: a code legitimately repeats within a country
-        // when it covers a different locality (e.g. shared postal zones across
-        // neighbouring towns) — that alone is not a duplicate. Only flag when
-        // the full (code, country, state, city, locality, type) key repeats.
-        const key = postcodeKey(record);
-        for (const existing of existingData) {
-          if (record.id != null && existing.id != null && Number(existing.id) === Number(record.id)) {
-            continue;
-          }
-          if (postcodeKey(existing) === key) {
-            warnings.push(
-              `${filePath}: ${prefix} appears to be an exact duplicate of existing "${existing.code}" ` +
-              `(id: ${existing.id}) - same code, state, city, locality and type`
-            );
-          }
-        }
-        continue;
-      }
 
       if (!record.name) continue;
 
@@ -205,4 +216,6 @@ async function run() {
   for (const warn of warnings) core.warning(warn);
 }
 
-run().catch((err) => core.setFailed(err.message));
+if (require.main === module) run().catch((err) => core.setFailed(err.message));
+
+module.exports = { findPostcodeDuplicates, postcodeKey };
