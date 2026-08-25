@@ -2,7 +2,11 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { findPostcodeDuplicates, postcodeKey } = require('./detect-duplicates');
+const {
+  findPostcodeDuplicates,
+  isSelfComparison,
+  postcodeKey,
+} = require('./detect-duplicates');
 
 const base = {
   id: 1,
@@ -64,4 +68,16 @@ test('ignores records without a postcode code', () => {
     checked: 0,
     duplicates: [],
   });
+});
+
+test('skips only the same id-less source record', () => {
+  const record = { name: 'Al Barsha', latitude: '25.1055', longitude: '55.2086' };
+
+  assert.equal(isSelfComparison(record, record), true);
+  assert.equal(isSelfComparison(record, { ...record }), false);
+});
+
+test('skips existing records with the same id', () => {
+  assert.equal(isSelfComparison({ id: 10 }, { id: '10' }), true);
+  assert.equal(isSelfComparison({ id: 10 }, { id: 11 }), false);
 });

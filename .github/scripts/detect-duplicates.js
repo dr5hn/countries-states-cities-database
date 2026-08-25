@@ -11,7 +11,6 @@ const path = require('path');
 const {
   getEntityType,
   parseJsonFile,
-  loadRepoData,
   haversineDistance,
   levenshteinDistance,
   normalizePostcodeCode,
@@ -57,6 +56,15 @@ function findPostcodeDuplicates(records) {
   }
 
   return { checked, duplicates };
+}
+
+/** Return true when a comparison points back to the same source record. */
+function isSelfComparison(record, existing) {
+  return record === existing || (
+    record.id != null &&
+    existing.id != null &&
+    Number(existing.id) === Number(record.id)
+  );
 }
 
 async function run() {
@@ -114,19 +122,18 @@ async function run() {
       continue;
     }
 
-    // Load existing data for comparison. For cities, use the country-specific
-    // contribution file instead of the 153k+ record aggregate.
-    let existingData = null;
-    if (entityType === 'cities') {
-      const countryCode = path.basename(filePath, '.json').toUpperCase();
-      const countryFilePath = path.join(process.cwd(), 'contributions', entityType, `${countryCode}.json`);
-      if (fs.existsSync(countryFilePath)) {
-        const { data: countryData } = parseJsonFile(countryFilePath);
-        existingData = countryData;
-      }
-    } else {
-      existingData = loadRepoData(entityType);
+    // County names commonly repeat across states. The previous loader did not
+    // provide county data, so keep that existing behavior until county-aware
+    // candidate filtering is implemented separately.
+    if (entityType === 'counties') {
+      core.info('County duplicate checking is not enabled.');
+      continue;
     }
+
+    // Contribution files are the current validation unit. Reuse the parsed
+    // objects so an id-less new record can be distinguished from itself while
+    // still being compared with every other record in the file.
+    const existingData = records;
     if (!existingData || existingData.length === 0) {
       core.info(`No existing ${entityType} data found for duplicate check.`);
       continue;
@@ -155,10 +162,9 @@ async function run() {
       for (const existing of candidates) {
         if (!existing.name) continue;
 
-        // Skip self-comparison. For cities the candidate set is the same
-        // contributions file, so an edited record (which keeps its id) would
-        // otherwise match itself. New records carry no id and are unaffected.
-        if (record.id != null && existing.id != null && Number(existing.id) === Number(record.id)) {
+        // Skip the same source object or persisted id. Separate new records
+        // still compare with each other even though neither has an id yet.
+        if (isSelfComparison(record, existing)) {
           continue;
         }
 
@@ -219,4 +225,4 @@ async function run() {
 
 if (require.main === module) run().catch((err) => core.setFailed(err.message));
 
-module.exports = { findPostcodeDuplicates, postcodeKey };
+module.exports = { findPostcodeDuplicates, isSelfComparison, postcodeKey };
