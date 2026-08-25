@@ -14,10 +14,50 @@ const {
   loadRepoData,
   haversineDistance,
   levenshteinDistance,
+  normalizePostcodeCode,
 } = require('./utils');
 
 const NAME_DISTANCE_THRESHOLD = 2;
 const COORDINATE_DISTANCE_KM = 5;
+
+/**
+ * Build the duplicate-comparison key for a postcode record.
+ * Uses state_id/city_id (FKs) rather than the denormalized state_code, and
+ * normalizes locality_name so a stray-whitespace/case copy still matches.
+ */
+function postcodeKey(record) {
+  return JSON.stringify([
+    normalizePostcodeCode(record.code),
+    record.country_code,
+    record.state_id ?? '',
+    record.city_id ?? '',
+    (record.locality_name || '').trim().toLowerCase(),
+    record.type || '',
+  ]);
+}
+
+/** Find exact postcode duplicates in one pass through a country file. */
+function findPostcodeDuplicates(records) {
+  const seen = new Map();
+  const duplicates = [];
+  let checked = 0;
+
+  for (let index = 0; index < records.length; index++) {
+    const record = records[index];
+    if (!record.code) continue;
+
+    checked++;
+    const key = postcodeKey(record);
+    const existing = seen.get(key);
+    if (existing) {
+      duplicates.push({ index, record, existing: existing.record });
+    } else {
+      seen.set(key, { index, record });
+    }
+  }
+
+  return { checked, duplicates };
+}
 
 async function run() {
   const token = process.env.GITHUB_TOKEN;
@@ -54,13 +94,32 @@ async function run() {
 
     if (!entityType || !fs.existsSync(fullPath)) continue;
 
-    // Load existing data for comparison
-    // For cities, load the country-specific file from contributions/ instead of
-    // the full cities.json (153k+ records) to avoid memory and performance issues
+    const { data, error } = parseJsonFile(fullPath);
+    if (error || !data) continue;
+
+    const records = Array.isArray(data) ? data : [data];
+
+    if (entityType === 'postcodes') {
+      // A code may legitimately repeat for different localities. The complete
+      // country file is the validation unit, so index each full comparison key
+      // once rather than comparing every row with every other row.
+      const result = findPostcodeDuplicates(records);
+      checked += result.checked;
+      for (const { index, record, existing } of result.duplicates) {
+        warnings.push(
+          `${filePath}: Record ${index + 1} ("${record.code}") appears to be an exact duplicate ` +
+          `of existing "${existing.code}" (id: ${existing.id}) - same code, state, city, locality and type`
+        );
+      }
+      continue;
+    }
+
+    // Load existing data for comparison. For cities, use the country-specific
+    // contribution file instead of the 153k+ record aggregate.
     let existingData = null;
     if (entityType === 'cities') {
       const countryCode = path.basename(filePath, '.json').toUpperCase();
-      const countryFilePath = path.join(process.cwd(), 'contributions', 'cities', `${countryCode}.json`);
+      const countryFilePath = path.join(process.cwd(), 'contributions', entityType, `${countryCode}.json`);
       if (fs.existsSync(countryFilePath)) {
         const { data: countryData } = parseJsonFile(countryFilePath);
         existingData = countryData;
@@ -73,13 +132,9 @@ async function run() {
       continue;
     }
 
-    const { data, error } = parseJsonFile(fullPath);
-    if (error || !data) continue;
-
-    const records = Array.isArray(data) ? data : [data];
-
     for (let i = 0; i < records.length; i++) {
       const record = records[i];
+
       if (!record.name) continue;
 
       checked++;
@@ -162,4 +217,6 @@ async function run() {
   for (const warn of warnings) core.warning(warn);
 }
 
-run().catch((err) => core.setFailed(err.message));
+if (require.main === module) run().catch((err) => core.setFailed(err.message));
+
+module.exports = { findPostcodeDuplicates, postcodeKey };

@@ -5,6 +5,8 @@ on:
     types: [opened, edited, synchronize]
     paths:
       - 'contributions/**'
+      - '.github/scripts/**'
+      - '.github/workflows/pr-validator.yml'
 
 permissions:
   pull-requests: write
@@ -48,6 +50,9 @@ jobs:
 
       - name: Install dependencies
         run: cd .github/scripts && npm ci --omit=dev
+
+      - name: Test validation scripts
+        run: cd .github/scripts && npm test
 
       # Stage 1: PR Format Check (Idea 1 & 5)
       - name: Validate PR format

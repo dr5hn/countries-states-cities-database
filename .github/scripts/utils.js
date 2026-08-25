@@ -132,6 +132,11 @@ function parseJsonFile(filePath) {
   }
 }
 
+/** Canonical postcode form used by indexed API lookups. */
+function normalizePostcodeCode(code) {
+  return code.trim().replace(/\s+/g, ' ').toUpperCase();
+}
+
 /**
  * Validate a single field value against its schema rule.
  * @param {string} fieldName - Name of the field
@@ -231,6 +236,17 @@ function validateRecord(record, entityType, index) {
     if (!allKnown.includes(field)) {
       warnings.push(`${prefix}: unknown field "${field}"`);
     }
+  }
+
+  if (
+    entityType === 'postcodes' &&
+    typeof record.code === 'string' &&
+    record.code !== normalizePostcodeCode(record.code)
+  ) {
+    errors.push(
+      `${prefix}: "code" must be uppercase with no outer or repeated whitespace ` +
+      `(expected "${normalizePostcodeCode(record.code)}")`
+    );
   }
 
   return { errors, warnings };
@@ -455,6 +471,7 @@ module.exports = {
   SCHEMA,
   getEntityType,
   parseJsonFile,
+  normalizePostcodeCode,
   validateField,
   validateRecord,
   haversineDistance,
