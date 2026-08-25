@@ -122,6 +122,14 @@ async function run() {
       continue;
     }
 
+    // County names commonly repeat across states. The previous loader did not
+    // provide county data, so keep that existing behavior until county-aware
+    // candidate filtering is implemented separately.
+    if (entityType === 'counties') {
+      core.info('County duplicate checking is not enabled.');
+      continue;
+    }
+
     // Contribution files are the current validation unit. Reuse the parsed
     // objects so an id-less new record can be distinguished from itself while
     // still being compared with every other record in the file.
