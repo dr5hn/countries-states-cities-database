@@ -21,6 +21,17 @@ test('normalizes locality names in postcode comparison keys', () => {
   );
 });
 
+test('normalizes postcode case and whitespace in comparison keys', () => {
+  assert.equal(
+    postcodeKey(base),
+    postcodeKey({ ...base, code: '  110001  ' }),
+  );
+  assert.equal(
+    postcodeKey({ ...base, code: 'SW1A 1AA' }),
+    postcodeKey({ ...base, code: 'sw1a   1aa' }),
+  );
+});
+
 test('allows a shared postcode across different locality records', () => {
   const records = [
     base,

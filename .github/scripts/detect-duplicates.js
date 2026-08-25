@@ -14,6 +14,7 @@ const {
   loadRepoData,
   haversineDistance,
   levenshteinDistance,
+  normalizePostcodeCode,
 } = require('./utils');
 
 const NAME_DISTANCE_THRESHOLD = 2;
@@ -26,7 +27,7 @@ const COORDINATE_DISTANCE_KM = 5;
  */
 function postcodeKey(record) {
   return JSON.stringify([
-    record.code,
+    normalizePostcodeCode(record.code),
     record.country_code,
     record.state_id ?? '',
     record.city_id ?? '',
