@@ -52,11 +52,11 @@ Added to `contributions/cities/DE.json` (each inserted alphabetically at its cor
 }
 ```
 
-`id` omitted on both (auto-assigned on import). `type` normalized to lowercase `city`, matching this dataset's convention (the CSC Manager submission used capitalized `City`; `DE.json` uses lowercase exclusively — see also [FIX_1613_SUMMARY.md](./FIX_1613_SUMMARY.md)).
+`id` omitted on both (auto-assigned on import). `type` normalized to lowercase `city`, matching this dataset's convention (the CSC Manager submission used capitalized `City`; `DE.json` uses lowercase exclusively — same normalization applied in the companion PR for issue #1613, https://github.com/dr5hn/countries-states-cities-database/pull/1631).
 
 ## Deliberately omitted: `translations`
 
-No `translations` object was added for either record, following the same precedent as [FIX_1610_SUMMARY.md](./FIX_1610_SUMMARY.md) and [FIX_1613_SUMMARY.md](./FIX_1613_SUMMARY.md) — omitting is valid per schema, and machine-generating 19-language transliterations without a source risks introducing wrong data.
+No `translations` object was added for either record, following the same precedent as [FIX_1610_SUMMARY.md](./FIX_1610_SUMMARY.md) (and the companion #1613 PR above) — omitting is valid per schema, and machine-generating 19-language transliterations without a source risks introducing wrong data.
 
 ## Verification
 - Wikidata `Q370757` (Bensersiel): "Borough from the city of Esens", `P17` Germany, `P625` 53°40'23"N 7°34'35"E — matches submitted coordinates exactly; population (231) matches.
