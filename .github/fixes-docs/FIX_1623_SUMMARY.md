@@ -32,7 +32,7 @@ Investigating the wikiDataId bug surfaced a wider batch issue: id `70312` sits i
 - Each of the 3 replacement Wikidata IDs was checked directly: label, `P17` country (Mexico), `P131` located-in administrative division, and `P625` coordinates, and each coordinate pair matches the corresponding dataset record to within measurement precision.
 - JSON validated after edit (`python3 -m json.tool` / `json.load`).
 - Confirmed no other record in `MX.json` still references `Q3845429` besides the correct owner (`70310`).
-- Duplicate `wikiDataId` groups in `MX.json` overall: **1,939** (before and after this PR — unchanged outside the 4 records touched here). See [#1634](https://github.com/dr5hn/countries-states-cities-database/issues/1634) for the full-file scope.
+- Duplicate `wikiDataId` groups in `MX.json`: **1,939 groups / 5,215 grouped records / 3,276 likely-wrong** before this PR; **1,938 / 5,211 / 3,273** after — this PR's 3 corrections dissolve the one `Q3845429` group from 4 members down to its single rightful owner (`70310`), so the totals do shift slightly, just not by more than that one group. See [#1634](https://github.com/dr5hn/countries-states-cities-database/issues/1634) for the (still-open) full-file scope.
 
 ## Files Changed
 - `contributions/cities/MX.json` — correct 4 fields across 3 records (ids `70311`, `70312`, `70313`).
