@@ -12,6 +12,8 @@ The issue requested adding "Epitacio Huerta" (Michoacán) as a new city, believi
 
 Investigating the wikiDataId bug surfaced a wider batch issue: id `70312` sits in a run of 4 consecutive records (`70310`–`70313`, all `created_at: 2019-10-06`, i.e. imported in the same batch) that **all** carry the identical `wikiDataId: Q3845429`. Only the first of the four (`70310`, Epazoyucan) actually owns that ID — the next three all inherited it incorrectly, almost certainly from a copy/carry-forward bug in the original 2019 import. Each of the other three was individually verified against Wikidata (by name, state, and coordinate match) and corrected.
 
+**This 4-record run is not an isolated incident.** An automated review of this PR (Pullfrog) flagged, and independent verification confirmed, that the same carry-forward pattern spans the entire file: **1,939 duplicate-`wikiDataId` groups covering 5,215 of `MX.json`'s 9,321 records (~3,276 records, ~35% of the file, are very likely wrong)**, with 99% of those groups being consecutive-`id` runs matching this exact shape. This PR fixes only the 4 records that motivated it — **the systemic issue is intentionally not attempted here** (each of the ~3,276 remaining records needs its own individual Wikidata verification; there's no safe bulk fix). Tracked in **[#1634](https://github.com/dr5hn/countries-states-cities-database/issues/1634)**.
+
 ## Changes Made
 
 `contributions/cities/MX.json`:
@@ -30,6 +32,7 @@ Investigating the wikiDataId bug surfaced a wider batch issue: id `70312` sits i
 - Each of the 3 replacement Wikidata IDs was checked directly: label, `P17` country (Mexico), `P131` located-in administrative division, and `P625` coordinates, and each coordinate pair matches the corresponding dataset record to within measurement precision.
 - JSON validated after edit (`python3 -m json.tool` / `json.load`).
 - Confirmed no other record in `MX.json` still references `Q3845429` besides the correct owner (`70310`).
+- Duplicate `wikiDataId` groups in `MX.json` overall: **1,939** (before and after this PR — unchanged outside the 4 records touched here). See [#1634](https://github.com/dr5hn/countries-states-cities-database/issues/1634) for the full-file scope.
 
 ## Files Changed
 - `contributions/cities/MX.json` — correct 4 fields across 3 records (ids `70311`, `70312`, `70313`).
