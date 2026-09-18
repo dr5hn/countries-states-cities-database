@@ -47,7 +47,8 @@ const SCHEMA = {
       'iso3', 'numeric_code', 'iso2', 'phonecode', 'capital', 'currency',
       'currency_name', 'currency_symbol', 'tld', 'native', 'region',
       'region_id', 'subregion', 'subregion_id', 'nationality', 'timezones',
-      'translations', 'latitude', 'longitude', 'emoji', 'emojiU', 'wikiDataId',
+      'translations', 'translations_capital', 'translations_currency_name',
+      'latitude', 'longitude', 'emoji', 'emojiU', 'wikiDataId',
     ],
     rules: {
       name: { type: 'string', maxLength: 100, nonEmpty: true },
