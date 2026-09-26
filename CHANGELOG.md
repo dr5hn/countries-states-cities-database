@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-08
+- **2026-08-25** - PR [#1586](https://github.com/dr5hn/countries-states-cities-database/pull/1586): Updated cities (AE) (by @NailNilo)
 - **2026-08-08** - PR [#1611](https://github.com/dr5hn/countries-states-cities-database/pull/1611): Updated cities (CU) (by @dr5hn)
 - **2026-08-08** - PR [#1600](https://github.com/dr5hn/countries-states-cities-database/pull/1600): Updated cities (GB) (by @suryatejaKONDLA)
 - **2026-08-08** - PR [#1609](https://github.com/dr5hn/countries-states-cities-database/pull/1609): Updated countries (by @cl3mcg)
