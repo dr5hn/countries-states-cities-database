@@ -8,15 +8,20 @@ new ``contributions/counties/US.json`` dataset so they are available
 
 What it does
 ------------
-* Partitions ``cities/US.json`` into settlements (kept) and county/parish rows.
-* Writes the county/parish rows to ``contributions/counties/US.json``, stripping
-  the auto-managed fields (``id``/``created_at``/``updated_at``/``flag``) so the
-  counties table assigns fresh ids on import. All geographic/translation data
-  (name, native, translations, population, coords, timezone, wikiDataId, type)
-  is preserved.
-* Rewrites ``cities/US.json`` without those rows.
+* Partitions ``cities/US.json`` into settlements (kept) and county-level rows:
+  type ``county``/``parish``, plus Alaska boroughs, which were stored with type
+  ``city`` and so were missed by the first run. A consolidated "City and
+  Borough" row only moves when the city already has its own record (same
+  ``wikiDataId``); otherwise it is the city's only record and stays.
+* Appends the county-level rows to ``contributions/counties/US.json`` (existing
+  rows are kept), stripping the auto-managed fields
+  (``id``/``created_at``/``updated_at``/``flag``) so the counties table assigns
+  fresh ids on import. Alaska boroughs get type ``borough``. All other
+  geographic/translation data is preserved.
+* Rewrites ``cities/US.json`` without those rows. Each file keeps its existing
+  trailing-newline style, so only the moved rows show in the diff.
 
-Idempotent: if no county/parish rows remain in cities, it reports and exits
+Idempotent: if no county-level rows remain in cities, it reports and exits
 without touching anything.
 
 Usage
@@ -41,6 +46,27 @@ def strip_auto(record: dict) -> dict:
     return {k: v for k, v in record.items() if k not in AUTO_MANAGED}
 
 
+def is_alaska_borough(record: dict, qid_counts: dict) -> bool:
+    """True for an Alaska borough stored as a city; consolidated ones only if the city has its own row."""
+    name = record.get("name", "")
+    if record.get("state_code") != "AK" or not name.endswith(" Borough"):
+        return False
+    if name.endswith(" City and Borough"):
+        return qid_counts.get(record.get("wikiDataId"), 0) > 1
+    return True
+
+
+def is_county_level(record: dict, qid_counts: dict) -> bool:
+    """True when a cities row is a county-level unit that belongs in the counties dataset."""
+    return record.get("type") in COUNTY_TYPES or is_alaska_borough(record, qid_counts)
+
+
+def write_json(path: Path, rows: list, trailing_newline: bool) -> None:
+    """Write rows as 2-space JSON, keeping the file's existing trailing-newline style."""
+    text = json.dumps(rows, ensure_ascii=False, indent=2)
+    path.write_text(text + ("\n" if trailing_newline else ""), encoding="utf-8")
+
+
 def main() -> int:
     """Relocate (or preview) US county/parish rows from cities to counties."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -51,33 +77,50 @@ def main() -> int:
         print(f"ERROR: {CITIES} not found (run from repo root)", file=sys.stderr)
         return 1
 
-    records = json.loads(CITIES.read_text(encoding="utf-8"))
-    counties = [r for r in records if r.get("type") in COUNTY_TYPES]
-    settlements = [r for r in records if r.get("type") not in COUNTY_TYPES]
+    cities_text = CITIES.read_text(encoding="utf-8")
+    records = json.loads(cities_text)
+    qid_counts = {}
+    for r in records:
+        if r.get("wikiDataId"):
+            qid_counts[r["wikiDataId"]] = qid_counts.get(r["wikiDataId"], 0) + 1
+    counties = [r for r in records if is_county_level(r, qid_counts)]
+    settlements = [r for r in records if not is_county_level(r, qid_counts)]
 
     print(f"{CITIES}: {len(records)} rows -> {len(settlements)} settlements kept, "
-          f"{len(counties)} county/parish to relocate")
+          f"{len(counties)} county-level rows to relocate")
 
     if not counties:
         print("Nothing to relocate (already done).")
         return 0
 
-    counties_out = [strip_auto(r) for r in counties]
+    existing, counties_newline = [], True
+    if COUNTIES.exists():
+        counties_text = COUNTIES.read_text(encoding="utf-8")
+        existing, counties_newline = json.loads(counties_text), counties_text.endswith("\n")
+    seen = {(r.get("state_code"), r.get("name")) for r in existing}
+
+    counties_out = []
+    for r in counties:
+        row = strip_auto(r)
+        if is_alaska_borough(r, qid_counts):
+            row["type"] = "borough"
+        if (row.get("state_code"), row.get("name")) in seen:
+            print(f"  skip (already in counties): {row['name']} ({row['state_code']})")
+            continue
+        counties_out.append(row)
 
     if args.dry_run:
-        print(f"Would write {len(counties_out)} rows to {COUNTIES}")
+        for row in counties_out:
+            print(f"  would move: {row['name']} ({row['state_code']}) type={row.get('type')}")
+        print(f"Would append {len(counties_out)} rows to {COUNTIES} ({len(existing)} existing kept)")
         print(f"Would rewrite {CITIES} with {len(settlements)} rows")
         print("\n(dry run — no changes written)")
         return 0
 
     COUNTIES.parent.mkdir(parents=True, exist_ok=True)
-    COUNTIES.write_text(
-        json.dumps(counties_out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
-    CITIES.write_text(
-        json.dumps(settlements, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
-    )
-    print(f"\nWrote {COUNTIES} ({len(counties_out)} rows)")
+    write_json(COUNTIES, existing + counties_out, counties_newline)
+    write_json(CITIES, settlements, cities_text.endswith("\n"))
+    print(f"\nAppended {len(counties_out)} rows to {COUNTIES} ({len(existing) + len(counties_out)} total)")
     print(f"Rewrote {CITIES} ({len(settlements)} rows)")
     return 0
 
