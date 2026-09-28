@@ -12,7 +12,7 @@ Wikidata match was found for a row, the previous row's ID was carried forward. T
 
 ## Review history
 
-This fix went through seven independent Codex reviews. Every confirmed finding is kept as a regression test,
+This fix went through eight independent Codex reviews. Every confirmed finding is kept as a regression test,
 and all of them pass.
 
 | Round | Finding | Fix | Test |
@@ -24,6 +24,7 @@ and all of them pass.
 | 5 | 3 IDs left blank that were findable: an accent variant (*San Damián Texoloc* vs "Texóloc"), a GeoNames entry moved 178 m (*Ciudad Cerralvo*), and a town record outside the groups holding its municipality's ID (*Polotitlán*) | Unaccented lookups; same-name GeoNames entry within 250 m; move such town records to their seat town; align duplicate copies with their original | 5/5 |
 | 6 | 4 wrong: *Carmen* left blank because its twin *El Carmen Nuevo León* (same population, 475 m) held the ID; *Estancia de Ánimas* and *Marín* left blank as ambiguous; *Venustiano Carranza* (renamed San Pedro Cahro) given its municipality. 1 unresolved: the two *Villaldama* records, 6.5 km apart, treated as one place | Share an ID with a verified twin; pick same-named places by GeoNames municipality; use GeoNames names when Wikidata links to the same GeoNames entry; resolve Wikidata redirects; duplicates only within 3 km | 11/11 (the 6 records, plus 5 settled by the new GeoNames checks) |
 | 7 | 1 wrong of 113: *Pozos de Gamboa* kept Q20264912, an item mixing this town (point, GeoNames link) with Pozo Gamboa in Miguel Auza (parent, INEGI code). 3 blanks resolvable from GeoNames history and a municipal plan | The GeoNames-link rule rejects an item whose own municipality lies over 60 km from its point; 4 reviewed decisions | 4/4 |
+| 8 | The 4 decisions confirmed. But the 60 km check is unsound (*Santa Rosalía* is 104 km from its own municipality's point in Mulegé), and *Villaldama Nuevo León*'s position is no evidence: it had the town record's exact coordinates until an undocumented 2025 move | Replace the distance check with an INEGI identity check; keep *Apetatitlán* by review (GeoNames files it under the wrong municipality); leave *Villaldama Nuevo León* blank | 6/6 |
 
 ## Method
 
@@ -54,8 +55,9 @@ municipality or Mexico City borough — never a river, hill, school…) and eith
   a bare saint name plus one word (*San Hipólito* ↔ "San Hipólito Xochiltenango"). Not treated as the same
   place: "Nuevo X" vs "X", "X Primer/Segundo Sector", "Salto de X", "de la/los …" phrases.
 - **Same GeoNames entry:** the record's GeoNames entry lists one of the entity's names **and** the entity
-  links (P1566) to that very GeoNames entry, and the entity is not a mix of two places (its own municipality,
-  P131, lies within 60 km of its point). This covers renamed places and GeoNames' own alternate names:
+  links (P1566) to that very GeoNames entry, and the entity's INEGI locality code (P1976), when it has one,
+  lies in that GeoNames entry's municipality — so an item mixing two places is rejected (Q20264912 carries
+  Pozo de Gamboa, Pánuco's point and GeoNames link but the INEGI code of Pozo Gamboa, Miguel Auza). This covers renamed places and GeoNames' own alternate names:
   *Venustiano Carranza* = "San Pedro Cahro", *Tepuxtepec* = "Salto de Tepuxtepec", *San Gaspar Tonatico* =
   "Tonatico" (the municipality is a separate record, *Tonatico*).
 - **Guards:** a record named "Barrio Cuarto (La Loma)" does not match an entity calling itself "Barrio Cuarto
@@ -99,9 +101,9 @@ are one place entered twice: the copy takes the original's ID, and the pair is l
 
 ### Reviewed decisions
 
-Four records need evidence the rules cannot read: GeoNames' edit history (a point moved further than the
-matching radius) or an official municipal document. Each was found by review and re-checked here against
-Wikidata and the GeoNames dump:
+Six records need evidence the rules cannot read: GeoNames' edit history (a point moved further than the
+matching radius), an official municipal document, an upstream GeoNames error, or this repository's own
+history. Each was found by review and re-checked here against Wikidata, the GeoNames dump and `git log`:
 
 | Record | ID | Evidence |
 |---|---|---|
@@ -109,6 +111,8 @@ Wikidata and the GeoNames dump:
 | 69871 El Carmen | Q61248206 | El Carmen, Hueypoxtla (150360002). Record population 1,238 = GeoNames 3817826 = the 2010 figure in Hueypoxtla's municipal plan; the neighbouring Tizayuca El Carmen (130690002) has 7,029 |
 | 75372 Teocalco | Q6141720 | GeoNames 9091728: population 1,123 = record, Tlaxcoapan (13-074), point moved 0.46 km in 2026. Q6141720 links to it and is Tlaxcoapan locality 130740004 |
 | 71211 La Ceja | Q61292080 | GeoNames 9512860: population 1,940 = record, Huimilpan (22-008), point moved 1.2 km in 2025. Q61292080 is Huimilpan locality 220080135 |
+| 68306 Apetatitlán Antonio Carbajal | Q20224318 (kept) | The seat town of Apetatitlán de Antonio Carvajal (INEGI 290020001), linked to the record's GeoNames entry 3518140. GeoNames files that entry under neighbouring Contla (29-018) in error, so the INEGI check alone would reject it |
+| 149825 Villaldama Nuevo León | blank | Added in 2022 in the Nuevo León batch with exactly the coordinates of town record 69194; moved 6 km on 6 Aug 2025 with no recorded source. Its current position near GeoNames' municipality point therefore does not show it is the municipality |
 
 ### 3. Remove the ID when nothing verifies
 
@@ -124,21 +128,21 @@ as duplicate records (2 pairs).
 
 | Outcome | Towns & others | `adm2` | Total |
 |---|---:|---:|---:|
-| Existing ID verified and kept (78 updated to the merged Wikidata item) | 1,374 | 356 | **1,730** |
+| Existing ID verified and kept (78 updated to the merged Wikidata item) | 1,373 | 356 | **1,729** |
 | New verified ID (incl. 169 moved to their seat town, 4 reviewed) | 2,872 | 232 | **3,104** |
-| ID removed | 361 | 16 | **377** |
+| ID removed | 362 | 16 | **378** |
 | **Records in duplicate groups** | | | **5,211** |
 
 - Shared-ID groups: **1,938 → 15** (the 15 are genuine duplicate records, see below)
-- Records changed: **3,562** (3 of them outside the duplicate groups), only the `wikiDataId` field; record
+- Records changed: **3,563** (3 of them outside the duplicate groups), only the `wikiDataId` field; record
   count unchanged at 9,321
-- Records with a `wikiDataId`: 9,321 → 8,944
-- **336 of the 377 removed IDs point more than 60 km away** — beyond even the municipality limit
+- Records with a `wikiDataId`: 9,321 → 8,943
+- **336 of the 378 removed IDs point more than 60 km away** — beyond even the municipality limit
 
 ## Verification
 
 - **Regression tests:** round 1 **134/134**, round 2 **8/8**, round 3 **9/9**, round 4 **25/25**, round 5 **5/5**,
-  round 6 **11/11**, round 7 **4/4**; without its reviewed decision *Pozos de Gamboa* is left blank, not given the mixed item. Round-1 expectations whose item Wikidata has since merged are compared as the merged item.
+  round 6 **11/11**, rounds 7–8 **6/6**; without its reviewed decision *Pozos de Gamboa* is left blank, not given the mixed item. Round-1 expectations whose item Wikidata has since merged are compared as the merged item.
 - Town/municipality pairs resolved by provenance: *Medellín* (GeoNames ADM2) keeps municipality Q2541899,
   *Medellín de Bravo* (PPLA2, population 2,725) gets its seat town Q6008533; *Ocuilan* keeps Q3308528,
   *Ocuilan de Arteaga* gets Q55974788; *Coyotepec* keeps Q5180099 and *San Vicente Coyotepec* keeps its
@@ -151,7 +155,7 @@ as duplicate records (2 pairs).
   ("San Damián Texóloc", found via its unaccented alias); *Ciudad Cerralvo* gets Q61127668.
 - Round 6: *Carmen* shares Q3846844 with its twin *El Carmen Nuevo León* (149709, same population 9,568);
   *Venustiano Carranza* gets Q6119540 (its original ID, now a redirect); *Ciudad de Villaldama* (GeoNames
-  town) gets its seat town Q61285822 and *Villaldama Nuevo León* keeps the municipality Q3849516 (see limitations).
+  town) gets its seat town Q61285822; *Villaldama Nuevo León* is left blank (see reviewed decisions).
 - *Condémbaro* gets Q61263614 (Tancítaro), not Q20276537, whose coordinates are 92 km apart; *Barrio Cuarto
   (La Loma)* gets Q49861414 ("Barrio Cuarto", alias "La Loma"), not an entity merging La Loma and La Trampa.
 
@@ -194,9 +198,8 @@ Not changed here.
 - **5 removed IDs sit within 1 km** of the record but could not be verified, deliberately (different
   sectors, old vs new town, possible barrio): Cañada, La Isla Km 10, Mazamitlongo, Monclova Segundo Sector,
   Necaxa.
-- *Villaldama Nuevo León* (149825) keeps municipality Q3849516 on position alone: it has no population or
-  GeoNames match, but sits 1.65 km from GeoNames' Villaldama municipality point and 6.56 km from the town (the
-  town is *Ciudad de Villaldama*, 69194). Review rated this unresolved.
+- The INEGI identity check needs an INEGI code on the item; an item without one (e.g. Q20144006, *Gustavo
+  Adolfo Madero*) is kept on its name and GeoNames link alone.
 - *San Carlos* (73456, Tabasco) keeps Q20136621 on coordinate identity, but that entity is labelled "Caobal"
   and described as "bad geoname 3519588" — identity unresolved.
 
@@ -211,4 +214,4 @@ country needs its own place-type codes, naming conventions and GeoNames dump che
 Revert the commit. No `id`s change, so nothing downstream needs repair.
 
 ## Files Changed
-- `contributions/cities/MX.json` — `wikiDataId` corrected on 3,562 records.
+- `contributions/cities/MX.json` — `wikiDataId` corrected on 3,563 records.
