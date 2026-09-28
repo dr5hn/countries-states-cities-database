@@ -12,7 +12,7 @@ Wikidata match was found for a row, the previous row's ID was carried forward. T
 
 ## Review history
 
-This fix went through four independent Codex reviews. Every confirmed finding is kept as a regression test,
+This fix went through five independent Codex reviews. Every confirmed finding is kept as a regression test,
 and all of them pass.
 
 | Round | Finding | Fix | Test |
@@ -21,6 +21,7 @@ and all of them pass.
 | 2 | More removed: saint-name and honorific forms (*Apoala* = "Santiago Apoala", *Mixquiahuala de Juárez* = "Mixquiahuala") | Recognise those naming conventions | 8/8 |
 | 3 | The `type` field is wrong in both directions, so trusting it swapped town and municipality (*Medellín* is the municipality, *Medellín de Bravo* its seat town) | Decide by the municipality's seat town (P36) and record position | 9/9 |
 | 4 | Still trusting `type` for lone records: 24 records typed `city` are really municipalities and were moved to their seat towns | Decide a record's kind from its **GeoNames provenance** | 25/25 |
+| 5 | 3 IDs left blank that were findable: an accent variant (*San Damián Texoloc* vs "Texóloc"), a GeoNames entry moved 178 m (*Ciudad Cerralvo*), and a town record outside the groups holding its municipality's ID (*Polotitlán*) | Unaccented lookups; same-name GeoNames entry within 250 m; move such town records to their seat town; align duplicate copies with their original | 5/5 |
 
 ## Method
 
@@ -28,10 +29,11 @@ Every change is checked against Wikidata individually. Nothing is inferred from 
 
 ### What kind of place is each record?
 
-`MX.json`'s `type` field is unreliable: **947 records** say the opposite of their source. The 2019 import came
-from GeoNames, so each record is matched to the GeoNames entry at its coordinates (within 25 m, preferring an
-entry with the same name) and takes its kind from that entry — **ADM2 → municipality, PPL… → town**. This
-covers 5,973 records; the rest fall back to `type`.
+`MX.json`'s `type` field is unreliable: **1,543 records** say the opposite of their source. The 2019 import
+came from GeoNames, so each record is matched to its GeoNames entry — a same-name entry within 250 m first
+(GeoNames sometimes moves a point slightly), otherwise the only kind of entry within 25 m (ignoring
+neighbourhood, historical and abandoned entries) — and takes its kind from it: **ADM2 → municipality,
+PPL… → town**. This covers 8,493 records; the rest fall back to `type`.
 
 ### 1. Verify each record's existing ID first
 
@@ -57,15 +59,22 @@ municipality or Mexico City borough — never a river, hill, school…) and eith
 - a **town** record holding a municipality ID moves to that municipality's seat town when it is within 3 km;
 - when two differently named records verify one municipality, the town nearest the seat town gets the seat
   town and the other keeps the municipality;
-- a record that is itself a municipality is never moved to a town, and records whose names reduce to the
-  same form (*Ciudad General Terán* / *General Terán Nuevo León*) are one place entered twice and not split.
+- a record that is itself a municipality is never moved to a town;
+- a town record **outside** the duplicate groups that holds its municipality's ID (*Polotitlán de la
+  Ilustración*) moves to the seat town, so the municipality ID can go to the municipality record
+  (3 records outside the groups change this way).
 
 ### 2. Re-match the rest
 
-Look up the record's name forms among Wikidata labels and aliases in Mexico. A candidate must be the right
-kind for the record, have self-consistent coordinates, and sit within 3 km (towns) or within 60 km in the same
-state (municipalities). Same-named candidates in **different municipalities** → left blank rather than
-guessed. No ID is handed to a second record.
+Look up the record's name forms, as written and unaccented, among Wikidata labels and aliases in Mexico. A
+candidate must be the right kind for the record and sit within 3 km (towns) or within 60 km in the same state
+(municipalities). Candidates with self-consistent coordinates are preferred; one whose coordinates disagree is
+used only if nothing else qualifies and one of its coordinates is within 1 km. Same-named candidates in
+**different municipalities** → left blank rather than guessed. No ID is handed to a second record.
+
+**Duplicate copies.** A later batch re-added some places. Two records in the same shared-ID group, same state
+and same name form, within 3 km and without contradicting populations, are one place entered twice: the copy
+takes the original's ID, and the pair is listed for merging.
 
 ### 3. Remove the ID when nothing verifies
 
@@ -75,39 +84,44 @@ A blank `wikiDataId` is better than one pointing at a different place.
 
 | Outcome | Towns & others | `adm2` | Total |
 |---|---:|---:|---:|
-| Existing ID verified and kept | 1,365 | 423 | **1,788** |
-| New verified ID (incl. 107 moved to their seat town) | 2,801 | 149 | **2,950** |
-| ID removed | 439 | 34 | **473** |
+| Existing ID verified and kept | 1,366 | 359 | **1,725** |
+| New verified ID (incl. 165 moved to their seat town) | 2,849 | 230 | **3,079** |
+| ID removed | 390 | 20 | **410** |
 | **Records in duplicate groups** | | | **5,211** |
 
-- Shared-ID groups: **1,938 → 12** (the 12 are genuine duplicate records, see below)
-- Records changed: **3,423**, only the `wikiDataId` field; record count unchanged at 9,321
-- Records with a `wikiDataId`: 9,321 → 8,848
-- **408 of the 473 removed IDs point more than 60 km away** — beyond even the municipality limit
+- Shared-ID groups: **1,938 → 13** (the 13 are genuine duplicate records, see below)
+- Records changed: **3,489** (3 of them outside the duplicate groups), only the `wikiDataId` field; record
+  count unchanged at 9,321
+- Records with a `wikiDataId`: 9,321 → 8,911
+- **357 of the 410 removed IDs point more than 60 km away** — beyond even the municipality limit
 
 ## Verification
 
-- **Regression tests:** round 1 **134/134**, round 2 **8/8**, round 3 **9/9**, round 4 **25/25**.
+- **Regression tests:** round 1 **134/134**, round 2 **8/8**, round 3 **9/9**, round 4 **25/25**, round 5 **5/5**.
 - Town/municipality pairs resolved by provenance: *Medellín* (GeoNames ADM2) keeps municipality Q2541899,
   *Medellín de Bravo* (PPLA2, population 2,725) gets its seat town Q6008533; *Ocuilan* keeps Q3308528,
   *Ocuilan de Arteaga* gets Q55974788; *Coyotepec* keeps Q5180099 and *San Vicente Coyotepec* keeps its
   town Q61296185.
-- *San Andrés Calpan* (typed `adm2`) is the GeoNames **town** (PPLA2, population 7,161 exact), so it gets its
-  seat-town entity Q20133184 rather than the Calpan municipality.
+- *San Andrés Calpan* (typed `adm2`) is the GeoNames **town** (PPLA2, population 7,161 exact), and *Ciudad
+  General Terán* is the town (PPL, population 6,333 exact; the municipality's entry is 19 km away), so both get
+  their seat-town entities (Q20133184, Q27769173) rather than the municipality their `type` suggested.
+- *Polotitlán* (GeoNames ADM2) gets municipality Q3308505, freed by moving *Polotitlán de la Ilustración*
+  (PPLA2, a record outside the groups) to its seat town Q104154055; *San Damián Texoloc* gets Q61288561
+  ("San Damián Texóloc", found via its unaccented alias); *Ciudad Cerralvo* gets Q61127668.
 - *Condémbaro* gets Q61263614 (Tancítaro), not Q20276537, whose coordinates are 92 km apart; *Barrio Cuarto
   (La Loma)* gets Q49861414 ("Barrio Cuarto", alias "La Loma"), not an entity merging La Loma and La Trampa.
 
 ## Found along the way
 
-**Wrong `type` values (947 records).** GeoNames says 635 records typed `adm2` are towns and 312 typed `city` or
-`section` are municipalities. The IDs here follow the real kind; the `type` field itself should be corrected
-separately.
+**Wrong `type` values (1,543 records).** GeoNames says 1,231 records typed `adm2` are towns and 312 typed
+`city` or `section` are municipalities. The IDs here follow the real kind; the `type` field itself should be
+corrected separately.
 
-**Duplicate records (12 pairs).** Both records of each pair verify the same entity, so both keep it; they
-should be merged separately. Eleven are a later Nuevo León batch (`id` 149xxx) re-adding existing places:
-Agualeguas, Apodaca, Benito Juárez, General Escobedo, General Terán, Sabinas Hidalgo, Doctor Coss, Iturbide,
-Jardines de la Silla, Linares, Parás. The twelfth is *Huixquilucan* / *Huixquilucan de Degollado*
-(Estado de México).
+**Duplicate records (13 pairs).** Both records of each pair describe the same place and hold the same ID;
+they should be merged separately. Twelve are a later Nuevo León batch (`id` 149xxx) re-adding existing places,
+often with identical populations: Agualeguas, Apodaca, Benito Juárez, General Escobedo, General Terán, Sabinas
+Hidalgo, Doctor Coss, Iturbide, Jardines de la Silla, Linares, Parás, Villaldama. The thirteenth is
+*Huixquilucan* / *Huixquilucan de Degollado* (Estado de México).
 
 **Pre-existing state errors.** These records match their entity by name and location, but are filed under
 the wrong state. Not changed here:
@@ -124,13 +138,12 @@ the wrong state. Not changed here:
 
 ## Known limitations
 
-- **14 removed IDs sit within 1 km** of the record but could not be verified mechanically, several of them
+- **13 removed IDs sit within 1 km** of the record but could not be verified mechanically, several of them
   deliberately (different sectors, old vs new town, possible barrio): Carretas, Cañada, Gustavo Adolfo Madero,
   La Isla Km 10, Mazamitlongo, Monclova Segundo Sector, Montenegro la Lana, Necaxa, Nuevo Sitalá, Pozos de
-  Gamboa, San Gaspar Tonatico, San Pedro Mixtepec, Tepuxtepec, Venustiano Carranza.
-- **10 seat-town moves have no GeoNames match** and rely on the record's name and position (each within
-  0.4 km of the seat town): Chapantongo, Jaltepetongo, San Juan Atepec, San Martín de los Canseco, Santa María
-  Alotepec, Santo Domingo Chihuitán, Santo Domingo Petapa, Tamazola, Taretán, Teococuilco de Marcos Pérez.
+  Gamboa, San Gaspar Tonatico, San Pedro Mixtepec, Tepuxtepec.
+- **3 seat-town moves have no GeoNames match** and rely on the record's name and position (each within
+  0.4 km of the seat town): Jaltepetongo, San Martín de los Canseco, Tamazola.
 - *San Carlos* (73456, Tabasco) keeps Q20136621 on coordinate identity, but that entity is labelled "Caobal"
   and described as "bad geoname 3519588" — identity unresolved.
 
@@ -145,4 +158,4 @@ country needs its own place-type codes, naming conventions and GeoNames dump che
 Revert the commit. No `id`s change, so nothing downstream needs repair.
 
 ## Files Changed
-- `contributions/cities/MX.json` — `wikiDataId` corrected on 3,423 records.
+- `contributions/cities/MX.json` — `wikiDataId` corrected on 3,489 records.
