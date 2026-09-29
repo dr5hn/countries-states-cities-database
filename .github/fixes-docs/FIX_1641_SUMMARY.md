@@ -20,22 +20,24 @@ Each country is fixed in its own PR and documented in its own section below.
 | Round | Finding | Fix |
 |---|---|---|
 | 1 | All 6,149 INSEE matches reproduced; samples 59/60 changed and 20/20 kept IDs correct. But: *Marseille Saint-Victor* got the abbey; five records whose coordinates are wrong got a place near those coordinates instead of the commune their department and population name (*Ballon*, *Saint-Leu*, *Saint-François*, *Puiseaux*, *Mareuil*); 13 blanks were findable; the edit-while-running check never re-read the file, a rerun overwrote the report, and a lone "quartier prioritaire" could still be chosen | Census-population check for distant INSEE matches; religious buildings and "quartiers prioritaires" never chosen; spelling-slip matches; "Bourg de" and last-part name forms; four reviewed decisions; the file is re-read before writing and a no-op rerun leaves the report alone |
+| 2 | All 24 changed records correct; all 6,166 INSEE matches reproduced. The edit-while-running check compared only `wikiDataId`, and an aborted run still rewrote the report; a few doc claims overstated | Any change to a planned record's name, state, coordinates, population or ID aborts the run before anything is written; doc corrected |
 
 ### Method
 
 Every record in a shared-QID group is matched again from scratch; nothing is inferred from the shared ID.
 French cities are communes, and every commune item on Wikidata carries its **INSEE code** (P374), which starts
-with the department number — the record's `state_code`. That gives a direct identity check, unlike Mexico.
+with the department number — the record's `state_code`. Department plus name is a strong identity check, which
+Mexico lacked.
 
 1. **INSEE (6,166 records).** The item in the record's department whose French label is the record's name.
    When a commune merger leaves several items on one code (the historic commune and the new one), the one
    without a dissolution date (P576) wins: *Aigre* gets the current commune Q60544458, not the pre-2019
    Q1451759. Accepted within 5 km (6,150 records; 5,911 within 1 km). Farther away only when one of the item's
-   census populations (1990 or later) is within 5% of the record's — then the record's coordinates are
-   wrong, not its identity (16 records, e.g. *Saint-Leu*, population 29,278, is Saint-Leu in Réunion although
-   its coordinates are in Saône-et-Loire; *Ballon*, 823, is Ballon in Charente-Maritime, not the Sarthe
-   village at its coordinates).
-2. **Named place nearby (200 records).** Otherwise: a settlement, neighbourhood or commune within 3 km whose
+   census populations (dated 1990 or later, or undated) is within 5% of the record's — then one of the two
+   points is wrong, not the identity (16 records, e.g. *Saint-Leu*, population 29,278, is Saint-Leu in Réunion
+   although its coordinates are in Saône-et-Loire; *Ballon*, 823, is Ballon in Charente-Maritime, not the
+   Sarthe village at its coordinates).
+2. **Named place nearby (202 records).** Otherwise: a settlement, neighbourhood or commune within 3 km whose
    label or alias, in any language, is the record's name. This catches:
    - renamed communes: *Cadillac* → Cadillac-sur-Garonne; *Cransac* (now Cransac-les-Thermes) and *Céreste*
      (now Céreste-en-Luberon) keep their existing IDs;
@@ -95,16 +97,17 @@ belongs to *Sarrola-Carcopino* 8.7 km away).
 
 ### Found along the way
 
-**Records filed under the wrong department (46).** Matched by name and coordinates, with agreeing populations,
-to a commune in another department — e.g. *Albens* (filed 74, in 73), *Évry* (89 → 91), *Vire* (71 → 14),
+**Records filed under the wrong department (46).** Matched by name and coordinates to a commune in another
+department (populations agree in 43 of the 44 with both figures) — e.g. *Albens* (filed 74, in 73), *Évry* (89 → 91), *Vire* (71 → 14),
 *Pierrefitte-sur-Seine* (95 → 93), and eight Maine-et-Loire villages filed under Loire-Atlantique. Not changed
 here.
 
-**Records with wrong coordinates (16).** Their department and population identify the commune, but the stored
+**Records with wrong coordinates (15).** Their department and population identify the commune, but the stored
 point is elsewhere — *Saint-Leu* (Réunion) and *Saint-François* (Guadeloupe) sit in mainland France, *Ballon*
-252 km away, *Mareuil*, *Puiseaux*, *Doubs*, *Mayenne*, *Buxerolles* 10–58 km away, *Louplande*, *Charmes-la-Grande*
-and *Chef-Boutonne* 6–7 km away, and five Corsican communes (Furiani, Ghisonaccia, Lumio, Morosaglia, Oletta).
-Not changed here.
+252 km away, *Mareuil*, *Puiseaux*, *Doubs*, *Mayenne*, *Buxerolles* 10–58 km away, *Louplande* and
+*Charmes-la-Grande* 6–7 km away, and five Corsican communes (Furiani, Ghisonaccia, Lumio, Morosaglia, Oletta).
+Not changed here. (*Chef-Boutonne* also matched this way, but there the stored point is right — it is by the
+town hall — and it is Wikidata's point for the merged commune that lies 5.8 km off.)
 
 **Departments stored as cities (17).** *Cantal*, *Charente-Maritime*, *Dordogne*, *Département du Vaucluse*,
 *Gers*, *Gironde*, *Haute-Marne*, *Manche*, *Nord*, *Pas-de-Calais*, *Sarthe*, *Seine-et-Marne*, *Territoire
@@ -112,9 +115,11 @@ de Belfort*, *Val-de-Marne*, *Var*, *Vosges*, *Yvelines* are department names wi
 has 1,674,980 people). Their IDs are removed; the records should probably be deleted separately. (*Doubs* and
 *Mayenne* looked like departments too, but their populations are those of the communes Doubs and Mayenne.)
 
-**Outside the shared groups.** *Saint-Julien* (46134, a Marseille quartier filed under department 83) points to
-a commune in Côtes-d'Armor (Q765366); the quartier is Q3462652. Not changed here, since the record is not part of
-a copy-forward group.
+**Outside the shared groups** (not changed here, since these records are not in a copy-forward group):
+*Saint-Julien* (46134, a Marseille quartier filed under department 83) points to a commune in Côtes-d'Armor
+(Q765366), the quartier is Q3462652; *Messac* (44032) holds Q35728287 while its department and population
+identify Q1144439; *Landes* (43005) holds the department Q12563 rather than the commune Q24695;
+*Villegusien-le-Lac* (156001) holds the former commune Q1331384 rather than the current Q28464428.
 
 ### Known limitations
 
@@ -122,8 +127,9 @@ a copy-forward group.
   current commune, not the pre-merger item, by the convention that a city record means the place as it is
   today. The records carry pre-merger populations, so the pre-merger item would be equally defensible.
 - **Left blank:** *Boulazac* (the former commune's point is 7 km from the record and its scope differs from
-  today's Boulazac Isle Manoire), *Fouillard* (two same-named items 0.6 km apart), *Pietranera*, *Port à Binson*,
-  *Saint-Quentin-en-Yvelines* (no matching item), *Sarrola* (conflict above).
+  today's Boulazac Isle Manoire), *Fouillard* (two same-named items 0.6 km apart), *Pietranera*, *Port à Binson*
+  (no matching item), *Saint-Quentin-en-Yvelines* (no settlement item; Q1120022 is the agglomeration),
+  *Sarrola* (conflict above).
 - *Courteilles* (41267) keeps Q34797143, whose INSEE code and point are the former commune merged into
   Giel-Courteilles, although its French Wikipedia link is for Courteilles in Alençon — the item itself is
   inconsistent.

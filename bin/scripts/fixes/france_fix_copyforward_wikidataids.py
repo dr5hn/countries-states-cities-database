@@ -66,6 +66,7 @@ WDQS = 'https://query.wikidata.org/sparql'
 WD_API = 'https://www.wikidata.org/w/api.php'
 
 INSEE_KM, AROUND_KM, FUZZY_KM, FUZZY_EDITS, POP_TOLERANCE = 5.0, 3.0, 1.0, 2, 0.05
+MATCH_FIELDS = ('name', 'state_id', 'state_code', 'latitude', 'longitude', 'population', 'wikiDataId')
 # human settlement, neighbourhood, quarter, and the commune types (a French commune is not a subclass of
 # human settlement on Wikidata): commune of France, commune déléguée, commune associée, commune nouvelle
 PLACE_ROOTS = ('Q486972', 'Q123705', 'Q2983893', 'Q484170', 'Q21869758', 'Q666943', 'Q2989454')
@@ -438,6 +439,20 @@ def main():
     if not changes:
         log('INFO', 'no shared-QID groups left to change: FR.json and the report are left as they are')
         return
+
+    fresh_text = fresh = by_id = None
+    if not args.dry_run:
+        # Re-read: the lookups take minutes, and the file may have been edited meanwhile. Any change to a
+        # planned record's matching inputs (not only its wikiDataId) makes the plan stale.
+        fresh_text = FR_JSON.read_text(encoding='utf-8')
+        fresh = json.loads(fresh_text)
+        by_id = {r['id']: r for r in fresh}
+        planned = {r['id']: r for r in recs}
+        stale = [p['id'] for p in plan if p['id'] not in by_id
+                 or any(by_id[p['id']].get(k) != planned[p['id']].get(k) for k in MATCH_FIELDS)]
+        if stale:
+            sys.exit(f'[ERROR] {len(stale)} records changed while planning (first: {stale[:5]}); '
+                     'FR.json and the report are unchanged. Rerun.')
     REPORT.write_text(json.dumps({
         'summary': {'records_in_groups': len(plan), 'changed': len(changes), 'how': dict(how)},
         'blank': [{k: p.get(k) for k in ('id', 'name', 'state', 'type', 'old', 'how', 'insee_reject') if p.get(k) is not None}
@@ -448,14 +463,6 @@ def main():
     if args.dry_run:
         log('INFO', 'dry run: FR.json not written')
         return
-
-    # Re-read: the lookups take minutes, and the file may have been edited meanwhile.
-    fresh_text = FR_JSON.read_text(encoding='utf-8')
-    fresh = json.loads(fresh_text)
-    by_id = {r['id']: r for r in fresh}
-    stale = [p['id'] for p in plan if p['id'] not in by_id or by_id[p['id']].get('wikiDataId') != p['old']]
-    if stale:
-        sys.exit(f'[ERROR] {len(stale)} records changed while planning (first: {stale[:5]}); nothing written. Rerun.')
     for p in changes:
         by_id[p['id']]['wikiDataId'] = p['new']
     FR_JSON.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + ('\n' if fresh_text.endswith('\n') else ''), encoding='utf-8')
