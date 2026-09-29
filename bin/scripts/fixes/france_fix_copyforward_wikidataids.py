@@ -11,17 +11,22 @@ How a record is matched
    which starts with the department number = the record's ``state_code``. The record takes the item in
    its department whose French label is its name. Several such items (a commune merger leaves the
    historic and the current item on one code) -> the one without a dissolution date (P576). Accepted
-   only within ``INSEE_KM`` of the record.
+   within ``INSEE_KM`` of the record; farther only when one of the item's census populations (1990 or
+   later) is within ``POP_TOLERANCE`` of the record's — then the coordinates are wrong, not the identity.
 2. Nearby named place. Otherwise: an inhabited place (settlement, neighbourhood or commune) within
    ``AROUND_KM`` whose label or alias, in any language, is the record's name. This catches renamed
-   communes, Catalan names and records filed under the wrong department. Order of preference: the
-   record's existing QID; an item whose French label is exactly the name (the locality Berck-Plage, not
-   the commune Berck that lists it as an alias); a commune over other items (e.g. GeoNames-generated
-   stubs), current communes first, then the main item (most Wikipedia articles). "Quartiers
-   prioritaires" (urban-policy zones reusing a neighbourhood's name) are ignored.
-3. Merged commune. Still nothing: the one commune in the department within ``AROUND_KM`` whose name
-   starts with the record's name ("Tignieu" = Tignieu-Jameyzieu).
+   communes, Catalan names and records filed under the wrong department. Never a religious building
+   (an abbey sharing a quartier's name) or a "quartier prioritaire" (an urban-policy zone).
+   Order of preference: the record's existing QID; an item whose French label is exactly the name (the
+   locality Berck-Plage, not the commune Berck that lists it as an alias); a commune over other items (e.g. GeoNames-generated stubs), current communes
+   first, then the main item (most Wikipedia articles). No exact name: the one place within
+   ``FUZZY_KM`` whose name is at most ``FUZZY_EDITS`` letters off ("La Page" = La Plage).
+3. Merged commune. Still nothing: the one commune within ``AROUND_KM`` whose name starts or ends with
+   the record's name ("Tignieu" = Tignieu-Jameyzieu, "Pragoulin" = Saint-Sylvestre-Pragoulin), and
+   whose population is within a factor of two of the record's when both are known.
 4. Otherwise blank: a missing ID is better than one pointing at another place.
+5. ``REVIEWED``: a few records checked by hand, where the right item cannot be reached mechanically
+   (it has no coordinates, or carries a different name form).
 
 A QID then on several records is either one place entered twice (all within ``AROUND_KM``; reported
 for merging) or a conflict (the group record is blanked).
@@ -32,8 +37,9 @@ Usage
     python3 bin/scripts/fixes/france_fix_copyforward_wikidataids.py
 
 Wikidata lookups are cached in ``$CSC_CACHE_DIR`` (default: ``<tmp>/csc-copyforward-fr``), so a rerun
-is fast and an interrupted run resumes. Idempotent: once no shared-QID groups remain, it changes
-nothing. Only the ``wikiDataId`` field is written; the file keeps its formatting.
+is fast and an interrupted run resumes; results reflect Wikidata as of the run (delete the cache to
+refresh). Idempotent: once no shared-QID groups remain it changes nothing, and leaves FR.json and the
+report untouched. Only the ``wikiDataId`` field is written; the file keeps its formatting.
 """
 import argparse
 import http.client
@@ -59,17 +65,39 @@ UA = 'csc-copyforward-fr/1.0 (https://github.com/dr5hn/countries-states-cities-d
 WDQS = 'https://query.wikidata.org/sparql'
 WD_API = 'https://www.wikidata.org/w/api.php'
 
-INSEE_KM, AROUND_KM = 5.0, 3.0
+INSEE_KM, AROUND_KM, FUZZY_KM, FUZZY_EDITS, POP_TOLERANCE = 5.0, 3.0, 1.0, 2, 0.05
 # human settlement, neighbourhood, quarter, and the commune types (a French commune is not a subclass of
 # human settlement on Wikidata): commune of France, commune déléguée, commune associée, commune nouvelle
 PLACE_ROOTS = ('Q486972', 'Q123705', 'Q2983893', 'Q484170', 'Q21869758', 'Q666943', 'Q2989454')
 EXCLUDE_TYPES = {'Q30738636'}  # quartier prioritaire de la politique de la ville
-CITY_PREFIXES = ('marseille ', 'lyon ', 'paris ')  # "Marseille Endoume" is the quartier "Endoume"
+RELIGIOUS_BUILDING = 'Q24398318'  # an abbey, priory or convent sharing a quartier's name is never the place
+# "Marseille Endoume" is the quartier "Endoume"; "Bourg de Joué-sur-Erdre" is the centre of Joué-sur-Erdre
+NAME_PREFIXES = ('marseille ', 'lyon ', 'paris ', 'bourg de ', 'bourg d ')
+# Places Wikidata cannot be matched to mechanically (the item has no coordinates, or a different name form);
+# each checked by hand: record id -> (QID, evidence)
+REVIEWED = {
+    43904: ('Q3463494', 'quartier Saint-Victor, Marseille 7e (item has no coordinates; the nearby Q1858504 is the abbey)'),
+    42904: ('Q3213417', 'quartier La Valentine, Marseille 11e (item has no coordinates; population 3,399 vs 3,212)'),
+    44400: ('Q3233960', 'quartier Les Mourets, Marseille 13e, 0.9 km from the record'),
+    39990: ('Q49346076', 'the settlement item at the record\'s point (3 m); the commune Biéville-Beuville (Q317610) '
+                         'is record 40041\'s ID and its link to this locality is only an alias'),
+}
 
 
 def log(level, msg):
     """Print a log line with a severity prefix."""
     print(f'[{level}] {msg}', flush=True)
+
+
+def edits(a, b):
+    """Levenshtein distance between two strings."""
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
 
 
 def fold(s):
@@ -178,27 +206,63 @@ def dissolved(qids):
 
 
 def item_facts(qids):
-    """{qid: {'p31', 'dissolved', 'sitelinks', 'label_fr' (folded)}} for tie-breaks; cached."""
-    cache = load_cache('facts.json')
+    """{qid: {'p31', 'dissolved', 'sitelinks', 'label_fr', 'labels' (all languages), 'pops' (census >= 1990)}}
+    for tie-breaks and population checks; folded names; cached."""
+    cache = load_cache('facts_v2.json')
     need = sorted(set(qids) - set(cache))
     for i in range(0, len(need), 50):
         d = http_json(WD_API + '?' + urllib.parse.urlencode({
             'action': 'wbgetentities', 'ids': '|'.join(need[i:i + 50]), 'props': 'claims|sitelinks|labels',
-            'languages': 'fr', 'format': 'json'}))
+            'format': 'json'}))
         for q, e in d.get('entities', {}).items():
             cl = e.get('claims', {})
             cache[q] = {'p31': [c['mainsnak']['datavalue']['value']['id'] for c in cl.get('P31', []) if c['mainsnak'].get('datavalue')],
                         'dissolved': bool(cl.get('P576')), 'sitelinks': len(e.get('sitelinks', {})),
-                        'label_fr': fold(e.get('labels', {}).get('fr', {}).get('value', ''))}
-        save_cache('facts.json', cache)
+                        'label_fr': fold(e.get('labels', {}).get('fr', {}).get('value', '')),
+                        'labels': sorted({fold(v['value']) for v in e.get('labels', {}).values()}),
+                        'pops': census(cl.get('P1082', []))}
+        save_cache('facts_v2.json', cache)
         time.sleep(0.5)
     return {q: cache[q] for q in qids if q in cache}
 
 
+def census(claims):
+    """Population values (P1082) dated 1990 or later, or undated."""
+    out = []
+    for c in claims:
+        amount = c['mainsnak'].get('datavalue', {}).get('value', {}).get('amount')
+        years = [int(q['datavalue']['value']['time'][1:5]) for q in c.get('qualifiers', {}).get('P585', []) if q.get('datavalue')]
+        if amount and (not years or max(years) >= 1990):
+            out.append(int(float(amount)))
+    return sorted(set(out))
+
+
+def population_agrees(rec, facts):
+    """True when a census population of the item is within POP_TOLERANCE of the record's population."""
+    pop = rec.get('population') or 0
+    return bool(pop) and any(abs(p - pop) <= POP_TOLERANCE * pop for p in facts.get('pops', []))
+
+
+def religious_buildings(qids):
+    """{qid: True if an instance of (a subclass of) religious building}; cached."""
+    cache = load_cache('religious_buildings.json')
+    need = sorted(set(qids) - set(cache))
+    for i in range(0, len(need), 100):
+        chunk = need[i:i + 100]
+        rows = sparql('SELECT DISTINCT ?item WHERE { VALUES ?item { %s } ?item wdt:P31/wdt:P279* wd:%s . }'
+                      % (' '.join(f'wd:{q}' for q in chunk), RELIGIOUS_BUILDING))
+        hit = {b['item']['value'].rsplit('/', 1)[1] for b in rows}
+        cache.update({q: q in hit for q in chunk})
+        save_cache('religious_buildings.json', cache)
+        time.sleep(1.0)
+    return {q: cache.get(q, False) for q in qids}
+
+
 def around(rec):
     """Inhabited places within AROUND_KM of the record: [(qid, km, [folded labels/aliases])]; cached per record."""
-    cache = load_cache('around.json')
-    key = str(rec['id'])
+    name = f"around_{AROUND_KM}_{'-'.join(PLACE_ROOTS)}.json"  # the cache is only valid for this query
+    cache = load_cache(name)
+    key = f"{rec['id']}@{rec['latitude']},{rec['longitude']}"
     if key not in cache:
         roots = ' '.join(f'wd:{q}' for q in PLACE_ROOTS)
         rows = sparql(f"""SELECT ?item ?dist ?name WHERE {{
@@ -213,16 +277,16 @@ def around(rec):
             found[q][0] = min(found[q][0], float(b['dist']['value']))
             found[q][1].add(fold(b['name']['value']))
         cache[key] = [(q, d, sorted(n)) for q, (d, n) in found.items()]
-        save_cache('around.json', cache)
+        save_cache(name, cache)
         time.sleep(1.0)
     return cache[key]
 
 
 def name_forms(rec):
-    """Folded forms of the record's name: as written, without a bracketed part, without a city prefix."""
+    """Folded forms of the record's name: as written, without a bracketed part, without a city or "Bourg de" prefix."""
     n = rec['name']
     forms = {fold(n), fold(re.sub(r'\s*\(.*?\)\s*', ' ', n))}
-    forms |= {f[len(p):] for f in forms for p in CITY_PREFIXES if f.startswith(p)}
+    forms |= {f[len(p):] for f in forms for p in NAME_PREFIXES if f.startswith(p)}
     return {f for f in forms if f}
 
 
@@ -257,6 +321,12 @@ def build_plan(recs, items):
                 entry.update(new=q, km=round(d, 3), how='insee')
                 plan.append(entry)
                 continue
+            if population_agrees(r, item_facts([q]).get(q, {})):
+                # Same name, same department and the same census population: the record's coordinates are
+                # wrong, not its identity (Ballon, Charente-Maritime; Saint-Leu, Réunion).
+                entry.update(new=q, km=None if d is None else round(d, 1), how='insee, population agrees (coordinates off)')
+                plan.append(entry)
+                continue
             entry['insee_reject'] = f'{q} at {d if d is None else round(d, 1)} km'
         elif len(cands) > 1:
             entry['insee_reject'] = f'{len(cands)} current communes: {sorted(cands)}'
@@ -265,13 +335,23 @@ def build_plan(recs, items):
     log('INFO', f'INSEE matches: {len(plan)} | nearby-place lookups: {len(pending)}')
     for n, (r, entry) in enumerate(pending, 1):
         rc = (float(r['latitude']), float(r['longitude']))
-        hits = [(q, d) for q, d, names in around(r) if name_forms(r) & set(names)]
-        if len({q for q, _ in hits}) > 1:
-            facts = item_facts(sorted({q for q, _ in hits}))
-            hits = [h for h in hits if not set(facts.get(h[0], {}).get('p31', [])) & EXCLUDE_TYPES]
+        places = around(r)
+        facts = item_facts(sorted({q for q, _, _ in places}))
+        built = religious_buildings(sorted({q for q, _, _ in places}))
+        places = [(q, d, n) for q, d, n in places
+                  if not built.get(q) and not set(facts.get(q, {}).get('p31', [])) & EXCLUDE_TYPES]
+        hits = [(q, d) for q, d, names in places if name_forms(r) & set(names)]
+        fuzzy = False
+        if not hits:
+            # One letter or two off (a misspelt record: "La Page" = La Plage), within FUZZY_KM, unique.
+            hits = [(q, d) for q, d, names in places if d <= FUZZY_KM and any(
+                len(a) >= 5 and edits(a, b) <= FUZZY_EDITS for a in name_forms(r) for b in names)]
+            fuzzy = len({q for q, _ in hits}) == 1
+            hits = hits if fuzzy else []
         mine = [h for h in hits if h[0] == r['wikiDataId']]
         if len({q for q, _ in hits}) > 1:
-            facts = item_facts(sorted({q for q, _ in hits}))
+            # An item whose French label IS the record's name beats one matching only by alias or another
+            # language (the locality Berck-Plage, not the commune Berck that lists it as an alias).
             exact = [h for h in hits if facts.get(h[0], {}).get('label_fr') in name_forms(r)]
             hits = exact or hits
         communes = [h for h in hits if h[0] in items]
@@ -282,6 +362,8 @@ def build_plan(recs, items):
             communes = [best] if sum(1 for h in communes if rank(h) == rank(best)) == 1 else communes
         if mine:
             entry.update(new=mine[0][0], km=round(mine[0][1], 3), how='kept: named place nearby')
+        elif fuzzy:
+            entry.update(new=hits[0][0], km=round(hits[0][1], 3), how='near-identical name nearby')
         elif len(communes) == 1:
             entry.update(new=communes[0][0], km=round(communes[0][1], 3), how='named commune nearby')
         elif len({q for q, _ in hits}) == 1 and not communes:
@@ -289,11 +371,19 @@ def build_plan(recs, items):
         elif hits:
             entry.update(new=None, km=None, how=f'ambiguous: {sorted(hits, key=lambda h: h[1])[:3]}')
         else:
-            pre = {q for f in name_forms(r) for (d, lab), qs in by_name.items() if d == r['state_code']
-                   and lab.startswith(f + ' ') for q in qs}
+            # "Tignieu" = Tignieu-Jameyzieu, "Pragoulin" = Saint-Sylvestre-Pragoulin: the record carries the
+            # first or last part of a merged commune's name; the commune must be within AROUND_KM.
+            pre = {q for f in name_forms(r) for (d, lab), qs in by_name.items()
+                   if lab.startswith(f + ' ') or lab.endswith(' ' + f) for q in qs}
             near = [(q, min(km(rc, p) for p in map(point, items[q]['coords']) if p)) for q in pre
                     if any(point(c) for c in items[q]['coords'])]
             near = [(q, d) for q, d in near if d <= AROUND_KM]
+            # ...and its population must not contradict the record's (the department record "Gironde",
+            # 1.67 million people, is not the village Castres-Gironde).
+            pop = r.get('population') or 0
+            pops = item_facts([q for q, _ in near])
+            near = [(q, d) for q, d in near if not pop or not pops.get(q, {}).get('pops')
+                    or any(pop / 2 <= x <= pop * 2 for x in pops[q]['pops'])]
             if len(near) == 1:
                 entry.update(new=near[0][0], km=round(near[0][1], 3), how='merged commune bearing its name')
             else:
@@ -302,6 +392,10 @@ def build_plan(recs, items):
         if n % 50 == 0:
             log('INFO', f'nearby-place lookups {n}/{len(pending)}')
 
+    for p in plan:
+        if p['id'] in REVIEWED:
+            q, why = REVIEWED[p['id']]
+            p.update(new=q, km=None, how=f'reviewed: {why}')
     by_q = defaultdict(list)
     for p in plan:
         if p['new']:
@@ -341,6 +435,9 @@ def main():
     log('INFO', f"kept {sum(1 for p in plan if p['new'] and p['new'] == p['old'])} | new "
                 f"{sum(1 for p in plan if p['new'] and p['new'] != p['old'])} | blank {sum(1 for p in plan if not p['new'])} | {dict(how)}")
     log('INFO', f'duplicate places: {len(dups)} | conflicts blanked: {len(conflicts)}')
+    if not changes:
+        log('INFO', 'no shared-QID groups left to change: FR.json and the report are left as they are')
+        return
     REPORT.write_text(json.dumps({
         'summary': {'records_in_groups': len(plan), 'changed': len(changes), 'how': dict(how)},
         'blank': [{k: p.get(k) for k in ('id', 'name', 'state', 'type', 'old', 'how', 'insee_reject') if p.get(k) is not None}
@@ -348,17 +445,20 @@ def main():
         'duplicate_places': dups, 'conflicts': conflicts,
     }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     log('INFO', f'report written to {REPORT.relative_to(REPO)}')
-    if args.dry_run or not changes:
-        log('INFO', 'dry run: FR.json not written' if args.dry_run else 'no shared-QID groups left: nothing to change')
+    if args.dry_run:
+        log('INFO', 'dry run: FR.json not written')
         return
 
-    by_id = {r['id']: r for r in recs}
-    stale = [p['id'] for p in plan if by_id[p['id']].get('wikiDataId') != p['old']]
+    # Re-read: the lookups take minutes, and the file may have been edited meanwhile.
+    fresh_text = FR_JSON.read_text(encoding='utf-8')
+    fresh = json.loads(fresh_text)
+    by_id = {r['id']: r for r in fresh}
+    stale = [p['id'] for p in plan if p['id'] not in by_id or by_id[p['id']].get('wikiDataId') != p['old']]
     if stale:
         sys.exit(f'[ERROR] {len(stale)} records changed while planning (first: {stale[:5]}); nothing written. Rerun.')
     for p in changes:
         by_id[p['id']]['wikiDataId'] = p['new']
-    FR_JSON.write_text(json.dumps(recs, ensure_ascii=False, indent=2) + ('\n' if text.endswith('\n') else ''), encoding='utf-8')
+    FR_JSON.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + ('\n' if fresh_text.endswith('\n') else ''), encoding='utf-8')
     log('INFO', f'FR.json: wikiDataId updated on {len(changes)} records')
 
 
