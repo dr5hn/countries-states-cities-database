@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile } = require('./utils');
+const { getEntityType, isWithinBounds, parseJsonFile } = require('./utils');
 
 // Buffer distance in degrees (roughly 50km at equator)
 const BUFFER_DEGREES = 0.45;
@@ -86,19 +86,15 @@ async function run() {
 
       checked++;
 
-      const { minLat, maxLat, minLon, maxLon } = bounds;
-
-      // Check with buffer tolerance
-      if (
-        lat < minLat - BUFFER_DEGREES ||
-        lat > maxLat + BUFFER_DEGREES ||
-        lon < minLon - BUFFER_DEGREES ||
-        lon > maxLon + BUFFER_DEGREES
-      ) {
+      // Check with buffer tolerance (several boxes for remote territories; boxes may cross 180°)
+      if (!isWithinBounds(lat, lon, bounds, BUFFER_DEGREES)) {
         const prefix = `Record ${i + 1}${record.name ? ` ("${record.name}")` : ''}`;
+        const boxes = (Array.isArray(bounds) ? bounds : [bounds])
+          .map(({ minLat, maxLat, minLon, maxLon }) => `[${minLat}, ${maxLat}] x [${minLon}, ${maxLon}]`)
+          .join(' or ');
         warnings.push(
           `${filePath}: ${prefix}: coordinates (${lat}, ${lon}) fall outside ${countryCode} bounds ` +
-          `[${minLat}, ${maxLat}] x [${minLon}, ${maxLon}] (with ${BUFFER_DEGREES}deg tolerance)`
+          `${boxes} (with ${BUFFER_DEGREES}deg tolerance)`
         );
       }
     }

@@ -275,6 +275,27 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
 }
 
 /**
+ * Is a coordinate inside a country's bounds (with a buffer in degrees)?
+ * `bounds` is one box {minLat, maxLat, minLon, maxLon} or an array of boxes (a country with remote
+ * territories, e.g. the US with Hawaii). A box whose minLon is greater than its maxLon crosses the
+ * 180° meridian (e.g. Russia, Fiji).
+ * @param {number} lat - Latitude
+ * @param {number} lon - Longitude
+ * @param {object|object[]} bounds - Box or boxes
+ * @param {number} buffer - Tolerance in degrees
+ * @returns {boolean} - True when inside at least one box
+ */
+function isWithinBounds(lat, lon, bounds, buffer = 0) {
+  const boxes = Array.isArray(bounds) ? bounds : [bounds];
+  return boxes.some(({ minLat, maxLat, minLon, maxLon }) => {
+    if (lat < minLat - buffer || lat > maxLat + buffer) return false;
+    return minLon <= maxLon
+      ? lon >= minLon - buffer && lon <= maxLon + buffer
+      : lon >= minLon - buffer || lon <= maxLon + buffer;
+  });
+}
+
+/**
  * Calculate Levenshtein distance between two strings.
  * @param {string} a - First string
  * @param {string} b - Second string
@@ -475,6 +496,7 @@ module.exports = {
   validateField,
   validateRecord,
   haversineDistance,
+  isWithinBounds,
   levenshteinDistance,
   loadRepoData,
   formatReport,
