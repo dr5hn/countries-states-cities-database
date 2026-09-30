@@ -8,27 +8,37 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Philippine municipalities whose point lies in another province
 
-**71 Philippine municipality and city records** take their own Wikidata item's point: the stored point lies in a
+**69 Philippine municipality and city records** take their own Wikidata item's point: the stored point lies in a
 neighbouring province, 7–58 km from the place (Davao City sat in Cotabato province; Lucban and Mauban, Quezon, in
-Laguna; Oroquieta in Zamboanga del Norte). Two were also filed under the wrong province and move with their point:
-*Jose Abad Santos* (Davao Occidental; point and province were Bohol, 476 km away) and *Kibungan* (Benguet; filed
-under Camarines Norte, point in Ilocos Sur).
+Laguna; Oroquieta in Zamboanga del Norte). *Kibungan* (Benguet) was also filed under the wrong
+province (Camarines Norte, point in Ilocos Sur) and moves with its point.
 
 The review of #1664 found these: following the bad point there would have moved the municipality to the wrong
 province.
 
 ### How they were verified
 - **The record is the municipality:** its `wikiDataId` is a municipality or city of the Philippines whose label or
-  alias is the record's name, and the record's population is within ×1.5 of the item's (for most, identical: the
-  2019 import copied it).
+  alias is the record's name, and the record's population is within ×1.5 of the item's (for most, identical; these
+  populations match current Wikidata figures, and for common names the same figure also appears on same-named
+  records elsewhere, so the Wikidata item is the main evidence).
 - **The point is wrong, not the item:** province polygons (geoBoundaries PHL ADM2, as in #1664) put the stored point
   in another province, at least 2 km from the right one, and the item's point inside the item's province.
 
 620 municipality records are more than 5 km from their item's point, but a municipality spans many kilometres, so
 only those whose point lies in another province are changed here.
 
+### After the independent review
+The review (Wikidata items; Nominatim on all old and new points) found 70 of 71 correct. Changes:
+- *Jose Abad Santos* (144184) is left out: it is a copy of record 144949, which is already right; moving it would
+  put two identical records 30 m apart. It waits for the duplicate policy in #1643.
+- *South Upi* (144726) is left out: its old point is inside South Upi, so it does not meet this PR's rule.
+
+Six fixed records now sit within 1 km of an older record carrying the same Wikidata item, filed under the wrong
+province or a region: Kibungan / 82897, Davao City / 82396 "Davao", Tapaz / 85047 "Tapas", M'lang / 144003,
+Lumban / 83217 "Lumbang", San Agustin / 144485. They are duplicates for the #1643 duplicate clean-up.
+
 ### Fix
-`latitude` and `longitude` change on 71 records; `state_id`/`state_code` on 2. All keep `Asia/Manila`.
+`latitude` and `longitude` change on 69 records; `state_id`/`state_code` on 1. All keep `Asia/Manila`.
 
 | id | Municipality | Province | Stored point was in | km off | Population | New point (Wikidata) |
 |---|---|---|---|---:|---:|---|
@@ -65,10 +75,8 @@ only those whose point lies in another province are changed here.
 | 144025 | Malungon | Sarangani | South Cotabato | 34.5 | 78,599 | Q174468 (6.37759, 125.27265) |
 | 144035 | Midsayap | Cotabato | Maguindanao del Norte | 12.4 | 115,735 | Q315283 (7.19167, 124.53333) |
 | 144059 | Pigcawayan | Cotabato | Maguindanao del Norte | 19.7 | 53,593 | Q304654 (7.27898, 124.42425) |
-| 144184 | Jose Abad Santos | Davao Occidental (was Bohol) | Bohol | 476.1 | 72,552 | Q314824 (5.91262, 125.64434) |
 | 144251 | Nabunturan | Davao de Oro | Davao del Norte | 14.3 | 85,949 | Q315570 (7.60341, 125.96705) |
 | 144280 | San Luis | Aurora | Nueva Ecija | 25.3 | 36,841 | Q53092 (15.71667, 121.51667) |
-| 144726 | South Upi | Maguindanao del Sur | Maguindanao del Norte | 6.3 | 27,929 | Q212784 (6.85484, 124.14430) |
 | 144773 | Balbalan | Kalinga | Abra | 26.8 | 13,332 | Q35848 (17.44361, 121.20083) |
 | 144781 | Besao | Mountain Province | Ilocos Sur | 12.1 | 6,315 | Q36012 (17.09528, 120.85611) |
 | 144793 | Calanasan | Apayao | Ilocos Norte | 35.0 | 12,176 | Q29018 (18.25500, 121.04361) |
@@ -108,4 +116,4 @@ only those whose point lies in another province are changed here.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/PH.json` — coordinates on 71 records; `state_id`/`state_code` on 2
+- `contributions/cities/PH.json` — coordinates on 69 records; `state_id`/`state_code` on 1
