@@ -14,7 +14,7 @@ against its neighbours; that misses these, because here the wrong zone is shared
 cities.
 
 ### States
-Twenty-eight Russian federal subjects outside Moscow time were stored as `Europe/Moscow` (Sverdlovsk, Bashkortostan,
+Twenty-seven Russian federal subjects outside Moscow time were stored as `Europe/Moscow` (Sverdlovsk, Bashkortostan,
 Perm, Novosibirsk, Primorsky, Khabarovsk…); each takes its legal zone (tzdata). Kiribati's Gilbert and Line Islands
 were both `Pacific/Enderbury` (Phoenix Islands, UTC+13) and Micronesia's Kosrae `Pacific/Chuuk` (UTC+10).
 
