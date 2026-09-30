@@ -6,13 +6,13 @@
 
 Each finding is verified against an independent source before any change. Fixes land in small PRs, one section each.
 
-## Philippine cities filed under the wrong province
+## Philippine records filed under the wrong province
 
-**1,810 Philippine records** (mostly barangays) move to the province they are in. Most were filed under a small
+**1,789 Philippine records** (mostly barangays) move to the province they are in. Most were filed under a small
 province far away, often the first of a region's provinces in alphabetical order: none of the 277 records filed under
 Bataan was within 60 km of Bataan (they were in Cebu, Bohol and Negros); Abra held Pangasinan's barangays, Antique
-those of Negros Occidental and Iloilo, Benguet those of Bukidnon. In 1,335 of them even the region was wrong. Both the
-2019 import (ids 81xxx–85xxx, 1,026 moved) and a later batch (144xxx–146xxx, 784 moved) are affected.
+those of Negros Occidental and Iloilo, Benguet those of Bukidnon. In 1,329 of them even the region was wrong. Both the
+2019 import (ids 81xxx–85xxx, 1,026 moved) and a later batch (143xxx–146xxx, 763 moved) are affected.
 
 ### How they were verified
 Two sources, both required:
@@ -20,8 +20,8 @@ Two sources, both required:
    a label or alias equal to the record's name and a point within 5 km. Its current "located in" (P131) chain gives
    the CSC province (CSC's Philippine province IDs match their ISO 3166-2 codes).
 2. **GeoNames.** The full Philippine dump's province codes were mapped to CSC provinces by majority vote of the
-   records Wikidata verified (not of the filed provinces, which are unreliable here): 73 codes. At least 4 of the
-   5 nearest mapped places, or a same-named place within 3 km, must lie in the same province.
+   records Wikidata verified (not of the filed provinces, which are unreliable here). At least 4 of the 5 nearest
+   mapped places, or a same-named place within 3 km, must lie in the same province.
 
 | Own Wikidata item (5,357 records) | Filed under a province | Filed under a region |
 |---|---:|---:|
@@ -30,12 +30,28 @@ Two sources, both required:
 | Not the record's place (copy-forward ID, #1641) | 1759 | 291 |
 | No chain to a CSC state | 71 | 73 |
 
-Of the province-filed records Wikidata places elsewhere, **1,810** are confirmed by GeoNames and move; 26 are not
-confirmed and 29 have no single province in their chain (held). The region-filed records it places elsewhere all
-turn out to be in the right region (their province's parent), so they keep their region.
+Of the 1,860 province-filed records Wikidata places elsewhere, 1,810 were confirmed by GeoNames,
+22 were not, and 28 have no single province in their chain.
+The region-filed records it places elsewhere were checked at region level: their chain's province lies in the filed
+region for all but 5, which are held, so region-filed records keep their region.
 
-Not in this PR: the 1759 province-filed records whose Wikidata ID is another place's need a
-different second source (the nearest municipalities), and records filed only under a region stay at region level.
+### After the independent review
+The review tested all 1,810 confirmed points against geoBoundaries' province polygons (NAMRIA/PSA 2020, with
+Maguindanao split into del Norte and del Sur by municipality) and checked 238 with Nominatim: 1,763 correct,
+42 wrong, 5 within 2 km of a border. The wrong ones come from **provinces that were split or created**, where
+Wikidata and GeoNames both still carry the older unit, so the two sources agreed on the wrong answer:
+- 15 Davao Occidental barangays were already filed correctly; they stay (Wikidata still places them in Davao del Sur).
+- 18 records go to **Maguindanao del Sur**, not del Norte: their Wikidata item is in the old Maguindanao (Q13845),
+  dissolved in 2022.
+- 3 go to **Sarangani** (Glan, Malapatan), 2 to **Davao del Norte** (Samal, New Corella), 1 to **Guimaras**
+  (Salvacion, Buenavista) and 1 to **Pangasinan** (Gueset), where the polygons and Nominatim agree.
+- 6 are held at their current state: Osias (its point is in Bukidnon), Kalbugan (in the BARMM Special Geographic
+  Area, which CSC has no state for) and 4 records within about 1 km of the Sultan Kudarat–Maguindanao del Sur border.
+
+So 1,789 records move, 1,764 as first confirmed and 25 to the province the polygons show.
+
+Not in this PR: the 1,759 province-filed records whose Wikidata ID is another place's need a different
+second source; the review sizes the remaining province-filed records outside their province at about 812.
 
 ### Fix
 Only `state_id` and `state_code` change; all keep `Asia/Manila`.
@@ -50,37 +66,41 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | Albay | 145 |
 | Agusan del Norte | 132 |
 | Benguet | 127 |
-| Cagayan | 103 |
+| Cagayan | 102 |
 | Batanes | 76 |
-| Bukidnon | 75 |
 | Oriental Mindoro | 71 |
+| Bukidnon | 70 |
+| Camarines Norte | 42 |
+| Bulacan | 36 |
+| Zamboanga Sibugay | 18 |
+| 1 other provinces | 5 |
 
-| Move (top 20 of 68 pairs) | Records |
+| Move (top 20 of 72 pairs) | Records |
 |---|---:|
 | Abra → Pangasinan | 134 |
 | Antique → Negros Occidental | 106 |
 | Bataan → Cebu | 91 |
 | Benguet → Bukidnon | 68 |
 | Agusan del Norte → Cagayan | 65 |
-| Antique → Iloilo | 63 |
+| Antique → Iloilo | 62 |
 | Bataan → Bohol | 61 |
 | Albay → Camarines Sur | 61 |
 | Bataan → Negros Oriental | 55 |
 | Occidental Mindoro → Batangas | 55 |
 | Occidental Mindoro → Quezon | 50 |
 | Agusan del Norte → Isabela | 50 |
-| Agusan del Sur → Nueva Ecija | 49 |
-| Cagayan → Maguindanao del Norte | 42 |
-| Bukidnon → Cotabato | 39 |
+| Agusan del Sur → Nueva Ecija | 48 |
+| Bukidnon → Cotabato | 38 |
 | Agusan del Sur → Tarlac | 38 |
 | Batanes → Leyte | 37 |
 | Agusan del Sur → Bulacan | 36 |
 | Antique → Capiz | 35 |
-| Benguet → Misamis Oriental | 35 |
-| other pairs | 640 |
+| Cagayan → Sulu | 35 |
+| Benguet → Misamis Oriental | 34 |
+| other pairs | 630 |
 
 <details>
-<summary>All 1,810 records (id, name, was, now, own Wikidata ID)</summary>
+<summary>All 1,789 records (id, name, was, now, own Wikidata ID)</summary>
 
 | id | Name | Was | Now | Wikidata |
 |---|---|---|---|---|
@@ -144,7 +164,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 81324 | Atabayan | Antique | Iloilo | Q31469899 |
 | 81326 | Atipuluhan | Antique | Negros Occidental | Q31470140 |
 | 81328 | Atop-atop | Bataan | Cebu | Q31470242 |
-| 81330 | Aumbay | Benguet | Camiguin | Q31470691 |
+| 81330 | Aumbay | Benguet | Davao del Norte | Q31470691 |
 | 81335 | Aurora | Zamboanga Sibugay | Zamboanga del Sur | Q132015 |
 | 81340 | Aya | Occidental Mindoro | Batangas | Q31471450 |
 | 81341 | Ayugan | Albay | Camarines Sur | Q31471535 |
@@ -613,7 +633,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 83108 | Lila | Bataan | Bohol | Q405141 |
 | 83109 | Lilio | Occidental Mindoro | Laguna | Q31811877 |
 | 83114 | Lim-oo | Batanes | Leyte | Q31811882 |
-| 83119 | Limbaan | Benguet | Misamis Oriental | Q31811887 |
+| 83119 | Limbaan | Benguet | Davao del Norte | Q31811887 |
 | 83122 | Limbuhan | Albay | Masbate | Q31811890 |
 | 83123 | Limon | Batanes | Leyte | Q31811893 |
 | 83124 | Limon | Oriental Mindoro | Romblon | Q31811891 |
@@ -940,7 +960,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 84400 | Salamanca | Antique | Negros Occidental | Q31499316 |
 | 84402 | Salawagan | Benguet | Bukidnon | Q31499398 |
 | 84409 | Salimbalan | Benguet | Bukidnon | Q31499792 |
-| 84417 | Salvacion | Antique | Iloilo | Q31500606 |
+| 84417 | Salvacion | Antique | Guimaras | Q31500606 |
 | 84420 | Salvacion | Batanes | Northern Samar | Q31500650 |
 | 84430 | Sampagar | Benguet | Bukidnon | Q31501110 |
 | 84435 | Sampiro | Occidental Mindoro | Batangas | Q31501256 |
@@ -1110,7 +1130,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 85321 | Yubo | Antique | Negros Occidental | Q31595888 |
 | 85322 | Yumbing | Benguet | Camiguin | Q31595966 |
 | 85323 | Yuni | Occidental Mindoro | Quezon | Q31595996 |
-| 143936 | Damawato | Bukidnon | Sultan Kudarat | Q31560657 |
 | 143939 | Dualing | Bukidnon | Cotabato | Q31571737 |
 | 143941 | Dunguan | Bukidnon | Cotabato | Q31573114 |
 | 143946 | Glad | Bukidnon | Cotabato | Q31457955 |
@@ -1142,22 +1161,19 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144036 | Minapan | Bukidnon | Cotabato | Q31812431 |
 | 144039 | New Cebu | Bukidnon | Cotabato | Q31812613 |
 | 144043 | Noling | Bukidnon | Sultan Kudarat | Q31812653 |
-| 144046 | Osias | Bukidnon | Cotabato | Q31812730 |
 | 144047 | Paatan | Bukidnon | Cotabato | Q31812747 |
 | 144049 | Pagangan | Bukidnon | Cotabato | Q31457641 |
 | 144052 | Palkan | Bukidnon | South Cotabato | Q31458353 |
-| 144055 | Pangyan | Bukidnon | South Cotabato | Q31462122 |
+| 144055 | Pangyan | Bukidnon | Sarangani | Q31462122 |
 | 144057 | Patindeguen | Bukidnon | Cotabato | Q31464304 |
 | 144058 | Pedtad | Bukidnon | Cotabato | Q31465985 |
-| 144062 | Pimbalayan | Bukidnon | Sultan Kudarat | Q31468793 |
 | 144068 | Puloypuloy | Bukidnon | Sultan Kudarat | Q31479916 |
 | 144069 | Punolu | Bukidnon | Cotabato | Q31480317 |
 | 144070 | Puricay | Bukidnon | Sultan Kudarat | Q31480656 |
 | 144071 | Ragandang | Bukidnon | Sultan Kudarat | Q31483266 |
 | 144074 | Saguing | Bukidnon | Cotabato | Q31498553 |
-| 144077 | Sampao | Bukidnon | Sultan Kudarat | Q31501236 |
 | 144080 | Santo Niño | Bukidnon | South Cotabato | Q31512848 |
-| 144082 | Sapu Padidu | Bukidnon | South Cotabato | Q31513504 |
+| 144082 | Sapu Padidu | Bukidnon | Sarangani | Q31513504 |
 | 144084 | Sebu | Bukidnon | South Cotabato | Q31515335 |
 | 144085 | Silway 7 | Bukidnon | South Cotabato | Q31520234 |
 | 144086 | Sinolon | Bukidnon | South Cotabato | Q31521071 |
@@ -1165,7 +1181,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144092 | Taguisa | Bukidnon | Sultan Kudarat | Q31542699 |
 | 144103 | Tomado | Bukidnon | Cotabato | Q31558503 |
 | 144104 | Tran | Bukidnon | Sultan Kudarat | Q31560240 |
-| 144108 | Tuyan | Bukidnon | South Cotabato | Q31565668 |
+| 144108 | Tuyan | Bukidnon | Sarangani | Q31565668 |
 | 144109 | Upper Klinan | Bukidnon | South Cotabato | Q31569431 |
 | 144110 | Upper San Mateo | Bukidnon | Cotabato | Q31569595 |
 | 144124 | Bansalan | Bohol | Davao del Sur | Q314778 |
@@ -1182,7 +1198,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144346 | Basak | Bukidnon | Sultan Kudarat | Q31488188 |
 | 144348 | Batutitik | Bukidnon | South Cotabato | Q31491210 |
 | 144349 | Bau | Bukidnon | Cotabato | Q31491255 |
-| 144350 | Bayasong | Bukidnon | Sultan Kudarat | Q31492544 |
 | 144351 | Bialong | Bukidnon | Cotabato | Q31498182 |
 | 144355 | Bual | Bukidnon | Cotabato | Q31514458 |
 | 144360 | Bulatukan | Bukidnon | Cotabato | Q31517523 |
@@ -1226,19 +1241,18 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144514 | Talacogon | Bulacan | Agusan del Sur | Q627286 |
 | 144519 | Tidman | Bulacan | Surigao del Sur | Q31555326 |
 | 144525 | Unidad | Bulacan | Surigao del Sur | Q31567927 |
-| 144528 | Idtig | Cagayan | Maguindanao del Norte | Q31811469 |
+| 144528 | Idtig | Cagayan | Maguindanao del Sur | Q31811469 |
 | 144534 | Kagay | Cagayan | Sulu | Q31811578 |
 | 144535 | Kajatian | Cagayan | Sulu | Q31811579 |
 | 144536 | Kalang | Cagayan | Sulu | Q31811585 |
-| 144537 | Kalbugan | Cagayan | Maguindanao del Norte | Q31811590 |
 | 144539 | Kambing | Cagayan | Sulu | Q31811601 |
 | 144540 | Kanlagay | Cagayan | Sulu | Q31811605 |
 | 144541 | Kansipati | Cagayan | Sulu | Q31811607 |
 | 144544 | Karungdong | Cagayan | Sulu | Q31811615 |
 | 144546 | Katidtuan | Cagayan | Maguindanao del Norte | Q31811618 |
 | 144547 | Katuli | Cagayan | Maguindanao del Norte | Q31811624 |
-| 144549 | Kitango | Cagayan | Maguindanao del Norte | Q31811657 |
-| 144550 | Kitapak | Cagayan | Maguindanao del Norte | Q31811658 |
+| 144549 | Kitango | Cagayan | Maguindanao del Sur | Q31811657 |
+| 144550 | Kitapak | Cagayan | Maguindanao del Sur | Q31811658 |
 | 144551 | Kolape | Cagayan | Tawi-Tawi | Q31811670 |
 | 144552 | Kulase | Cagayan | Sulu | Q31811683 |
 | 144553 | Kulay-Kulay | Cagayan | Sulu | Q31811684 |
@@ -1249,7 +1263,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144560 | Langpas | Cagayan | Sulu | Q31811779 |
 | 144562 | Larap | Cagayan | Tawi-Tawi | Q31811807 |
 | 144563 | Latung | Cagayan | Sulu | Q31811812 |
-| 144564 | Layog | Cagayan | Maguindanao del Norte | Q31811821 |
+| 144564 | Layog | Cagayan | Maguindanao del Sur | Q31811821 |
 | 144565 | Ligayan | Cagayan | Tawi-Tawi | Q31811876 |
 | 144566 | Limbo | Cagayan | Maguindanao del Norte | Q31811889 |
 | 144568 | Lookan | Cagayan | Tawi-Tawi | Q31811945 |
@@ -1260,7 +1274,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144590 | Marsada | Cagayan | Sulu | Q31812309 |
 | 144594 | Mataya | Cagayan | Maguindanao del Norte | Q31812340 |
 | 144595 | Mauboh | Cagayan | Sulu | Q31812360 |
-| 144596 | Mileb | Cagayan | Maguindanao del Norte | Q31812417 |
+| 144596 | Mileb | Cagayan | Maguindanao del Sur | Q31812417 |
 | 144599 | Municipality of Lantawan | Cagayan | Basilan | Q31814341 |
 | 144601 | Municipality of Sultan Gumander | Cagayan | Lanao del Sur | Q31814404 |
 | 144604 | New Panamao | Cagayan | Sulu | Q31814447 |
@@ -1271,15 +1285,15 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144612 | Awang | Cagayan | Maguindanao del Norte | Q31471303 |
 | 144613 | Bacayawan | Cagayan | Lanao del Sur | Q31796124 |
 | 144614 | Bacolod Grande | Cagayan | Lanao del Sur | Q31473698 |
-| 144616 | Badak | Cagayan | Maguindanao del Norte | Q31474248 |
-| 144617 | Bagan | Cagayan | Maguindanao del Norte | Q31475063 |
+| 144616 | Badak | Cagayan | Maguindanao del Sur | Q31474248 |
+| 144617 | Bagan | Cagayan | Maguindanao del Sur | Q31475063 |
 | 144627 | Pandakan | Cagayan | Sulu | Q31461425 |
 | 144628 | Baka | Cagayan | Maguindanao del Norte | Q31476872 |
 | 144629 | Bakung | Cagayan | Tawi-Tawi | Q31796194 |
 | 144631 | Balas | Cagayan | Basilan | Q31478523 |
 | 144634 | Bangkal | Cagayan | Sulu | Q31483604 |
 | 144636 | Bankaw | Cagayan | Tawi-Tawi | Q31484136 |
-| 144638 | Barurao | Cagayan | Maguindanao del Norte | Q31488037 |
+| 144638 | Barurao | Cagayan | Maguindanao del Sur | Q31488037 |
 | 144640 | Baunu-Timbangan | Cagayan | Sulu | Q31796474 |
 | 144641 | Bawison | Cagayan | Sulu | Q31491687 |
 | 144644 | Begang | Cagayan | Basilan | Q31495237 |
@@ -1293,40 +1307,40 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144667 | Pata | Cagayan | Sulu | Q156225 |
 | 144668 | Bugasan | Cagayan | Maguindanao del Norte | Q31516465 |
 | 144677 | Colonia | Cagayan | Basilan | Q31550016 |
-| 144678 | Dado | Cagayan | Maguindanao del Norte | Q31558386 |
+| 144678 | Dado | Cagayan | Maguindanao del Sur | Q31558386 |
 | 144679 | Dadus | Cagayan | Maguindanao del Norte | Q31558404 |
-| 144680 | Dalican | Cagayan | Maguindanao del Norte | Q31559874 |
+| 144680 | Dalican | Cagayan | Maguindanao del Sur | Q31559874 |
 | 144681 | Dalumangcob | Cagayan | Maguindanao del Norte | Q31560132 |
-| 144682 | Damabalas | Cagayan | Maguindanao del Norte | Q31560626 |
-| 144683 | Damatulan | Cagayan | Maguindanao del Norte | Q31560642 |
-| 144688 | Digal | Cagayan | Maguindanao del Norte | Q31566837 |
+| 144682 | Damabalas | Cagayan | Maguindanao del Sur | Q31560626 |
+| 144683 | Damatulan | Cagayan | Maguindanao del Sur | Q31560642 |
+| 144688 | Digal | Cagayan | Maguindanao del Sur | Q31566837 |
 | 144690 | Dinganen | Cagayan | Maguindanao del Norte | Q31567872 |
 | 144695 | Gang | Cagayan | Maguindanao del Norte | Q31588598 |
 | 144696 | Guiong | Cagayan | Basilan | Q31811376 |
 | 144698 | Pawak | Cagayan | Lanao del Sur | Q31465336 |
 | 144699 | Payuhan | Cagayan | Sulu | Q31465652 |
-| 144701 | Pidsandawan | Cagayan | Maguindanao del Norte | Q31467725 |
+| 144701 | Pidsandawan | Cagayan | Maguindanao del Sur | Q31467725 |
 | 144702 | Pinaring | Cagayan | Maguindanao del Norte | Q31469100 |
 | 144706 | Punay | Cagayan | Sulu | Q31480205 |
 | 144707 | Rimpeso | Cagayan | Maguindanao del Norte | Q31488764 |
-| 144711 | Sambuluan | Cagayan | Maguindanao del Norte | Q31500985 |
+| 144711 | Sambuluan | Cagayan | Maguindanao del Sur | Q31500985 |
 | 144712 | Sanga-Sanga | Cagayan | Tawi-Tawi | Q31509803 |
 | 144714 | Sapa | Cagayan | Tawi-Tawi | Q31513250 |
 | 144716 | Sapadun | Cagayan | Maguindanao del Norte | Q31513320 |
-| 144717 | Satan | Cagayan | Maguindanao del Norte | Q31513807 |
+| 144717 | Satan | Cagayan | Maguindanao del Sur | Q31513807 |
 | 144718 | Semut | Cagayan | Basilan | Q31515925 |
 | 144721 | Simuay | Cagayan | Maguindanao del Norte | Q31520646 |
 | 144723 | Sionogan | Cagayan | Sulu | Q31521243 |
 | 144733 | Tabiauan | Cagayan | Sulu | Q31540914 |
 | 144735 | Tairan Camp | Cagayan | Basilan | Q31542874 |
 | 144742 | Tapayan | Cagayan | Maguindanao del Norte | Q31546273 |
-| 144743 | Tapikan | Cagayan | Maguindanao del Norte | Q31546392 |
+| 144743 | Tapikan | Cagayan | Maguindanao del Sur | Q31546392 |
 | 144747 | Taungoh | Cagayan | Tawi-Tawi | Q31547533 |
 | 144748 | Taviran | Cagayan | Maguindanao del Norte | Q31547601 |
 | 144751 | Tongouson | Cagayan | Tawi-Tawi | Q31558946 |
 | 144756 | Tumbagaan | Cagayan | Tawi-Tawi | Q31563718 |
 | 144757 | Tunggol | Cagayan | Sulu | Q31563984 |
-| 144758 | Tungol | Cagayan | Maguindanao del Norte | Q31563999 |
+| 144758 | Tungol | Cagayan | Maguindanao del Sur | Q31563999 |
 | 144760 | Ungus-Ungus | Cagayan | Tawi-Tawi | Q31567911 |
 | 144762 | Uyaan | Cagayan | Lanao del Sur | Q31570060 |
 | 144764 | Ambuclao | Camarines Norte | Benguet | Q31465455 |
@@ -1371,21 +1385,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144870 | Topdac | Camarines Norte | Benguet | Q31559128 |
 | 144872 | Tublay | Camarines Norte | Benguet | Q30363 |
 | 144874 | Tuding | Camarines Norte | Benguet | Q31562922 |
-| 144886 | Balangonan | Davao Occidental | Davao del Sur | Q31478354 |
-| 144893 | Basiawan | Davao Occidental | Davao del Sur | Q31488818 |
-| 144902 | Bolila | Davao Occidental | Davao del Sur | Q31508479 |
-| 144905 | Buhangin | Davao Occidental | Davao del Sur | Q31516861 |
-| 144912 | Caburan | Davao Occidental | Davao del Sur | Q31524373 |
-| 144952 | Kalbay | Davao Occidental | Davao del Sur | Q31811589 |
-| 144961 | Kinangan | Davao Occidental | Davao del Sur | Q31811650 |
-| 144965 | Lacaron | Davao Occidental | Davao del Sur | Q31811727 |
-| 144967 | Lais | Davao Occidental | Davao del Sur | Q31811741 |
-| 144969 | Lapuan | Davao Occidental | Davao del Sur | Q31811802 |
-| 145004 | Mangili | Davao Occidental | Davao del Sur | Q31812250 |
-| 145026 | Nuing | Davao Occidental | Davao del Sur | Q31812675 |
-| 145033 | Pangian | Davao Occidental | Davao del Sur | Q31461924 |
-| 145065 | Sugal | Davao Occidental | Davao del Sur | Q31536125 |
-| 145074 | Talagutong | Davao Occidental | Davao del Sur | Q31543247 |
 | 145098 | Abut | Agusan del Norte | Isabela | Q31461315 |
 | 145100 | Afusing Centro | Agusan del Norte | Cagayan | Q31461913 |
 | 145102 | Alabug | Agusan del Norte | Cagayan | Q31462925 |
@@ -1595,7 +1594,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 145480 | Entablado | Agusan del Sur | Nueva Ecija | Q31578451 |
 | 145481 | Estipona | Agusan del Sur | Tarlac | Q31579541 |
 | 145482 | Estrella | Agusan del Sur | Nueva Ecija | Q31579577 |
-| 145491 | Gueset | Agusan del Sur | Nueva Ecija | Q31811350 |
+| 145491 | Gueset | Agusan del Sur | Pangasinan | Q31811350 |
 | 145492 | Guiguinto | Agusan del Sur | Bulacan | Q54589 |
 | 145494 | Guisguis | Agusan del Sur | Zambales | Q31811381 |
 | 145495 | Guyong | Agusan del Sur | Bulacan | Q31811398 |
@@ -1906,4 +1905,4 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/PH.json` — `state_id` and `state_code` on 1,810 records
+- `contributions/cities/PH.json` — `state_id` and `state_code` on 1,789 records
