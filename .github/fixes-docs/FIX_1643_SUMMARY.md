@@ -27,14 +27,14 @@ record's `wikiDataId`, checked to be that state by label and description — has
 | 4680 | Cherkaska (UA) | Donetsk Oblast | Q161808 |
 | 4678 | Chernivetska (UA) | near Lviv | Q168856 |
 | 3567 | Harju (EE) | at sea off Hiiumaa | Q180200 |
-| 2654 | Comoé (CI) | Abidjan area | Q16629374 |
-| 4959 | Bono (GH) | Ashanti | Q64685186 |
-| 4961 | Oti (GH) | Greater Accra coast | Q48804004 |
+| 2654 | Comoé (CI) | Lagunes district | Q16629374 |
+| 4959 | Bono (GH) | Bono East | Q64685186 |
+| 4961 | Oti (GH) | Eastern Region | Q48804004 |
 | 1911 | Altai Krai (RU) | Altai Republic | Q5942 |
 | 3470 | Hidalgo (MX) | Nuevo León / Tamaulipas border | Q80903 |
 | 396 | Central (UG) | Northern Region | Q429685 |
 | 1397 | Chiriquí Province (PA) | Panama City | Q739651 |
-| 2878 | Meta (CO) | Vichada | Q238629 |
+| 2878 | Meta (CO) | Casanare–Vichada border | Q238629 |
 | 2826 | La Araucanía (CL) | Los Lagos | Q2176 |
 | 4983 | Charente (FR) | Charente-Maritime | Q3266 |
 | 5054 | Vienne (FR) | the town of Vienne, Isère | Q12804 |
