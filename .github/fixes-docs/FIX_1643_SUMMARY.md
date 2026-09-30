@@ -8,8 +8,8 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Batches of cities filed under one wrong state
 
-**442 cities** from three bulk additions move to the state they are in: Lisbon-area parishes filed under Guarda
-(Portugal, ids 143xxx), villages of Zhytomyr Oblast and three others filed under Poltava (Ukraine, 149xxx) and villages of Nagano filed
+**453 cities** from three bulk additions move to the state they are in: Lisbon-area parishes filed under Guarda
+(Portugal, ids 143xxx), villages of Zhytomyr Oblast and two others filed under Poltava (Ukraine, 149xxx) and villages of Nagano filed
 under Kōchi (Japan, 148xxx). Each batch put all its records under one state; some belong there, many do not.
 
 ### How they were found
@@ -34,11 +34,36 @@ the record's name, and a point within 5 km. Its "located in" (P131) chain then g
 
 The GeoNames candidates include a few records outside the batches (UA 2, JP 9); one of them moves (Ukraine, 109xxx).
 
-*Ōshika* (148260) has only one GeoNames place within 10 km; it agrees with Wikidata (Nagano). *Lisogirka* (149441) is
-held: Wikidata says Vinnytsia, GeoNames Zhytomyr.
+### Added after the independent review
+The review checked every moved point against OpenStreetMap region outlines (442 of 442 inside the new state) and found
+13 records left in the batches that are still misfiled. GeoNames' nearest places pointed to the right state for most;
+they had been held because the Wikidata label differs in form ("Azambuja (town)" vs "Azambuja") or its "located in"
+chain did not resolve. 11 move now; two also get their Wikidata item's point, whose population equals the record's:
+
+| Country | id | City | Was | Now | Note |
+|---|---|---|---|---|---|
+| PT | 143293 | Azambuja (town) | Guarda | Lisbon | |
+| PT | 143347 | Castelo (Lisbon) | Guarda | Lisbon | |
+| PT | 143604 | Santa Catarina | Guarda | Lisbon | |
+| PT | 143609 | Santa Iria da Azóia | Guarda | Lisbon | |
+| PT | 143318 | Cadaval | Guarda | Lisbon | point was in Barrancos (Beja), 218 km away; now Q33661928's (39.24621, -9.06738) |
+| UA | 149427 | Korosten | Poltavska | Zhytomyrska | |
+| UA | 149492 | Ruzhyn (settlement) | Poltavska | Zhytomyrska | |
+| UA | 149503 | Taraschanka | Poltavska | Zhytomyrska | |
+| UA | 149441 | Lisogirka | Poltavska | Vinnytska | OpenStreetMap and Wikidata agree |
+| JP | 148244 | Togari | Kōchi | Nagano | |
+| JP | 148247 | Mitsushima | Kōchi | Nagano | |
+| JP | 148215 | Motoyama | Kōchi | (stays) | point was in Nagoya; now Q735494's (33.75969, 133.58669) in Kōchi |
+
+Still held: *Nyvky* (149465), whose point is in Zhytomyr Oblast but whose Wikidata item is a Kyiv neighbourhood.
+Duplicates among these (Korosten 109801, Ruzhyn 110394, Santa Iria da Azóia 143610 and 89504, Azambuja 89009) wait
+for the duplicate policy.
+
+*Ōshika* (148260) has only one GeoNames place within 10 km; it agrees with Wikidata (Nagano). *Lisogirka* (149441) was held
+(Wikidata says Vinnytsia, GeoNames Zhytomyr) and moved after the review.
 
 ### Fix
-Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
+Only `state_id` and `state_code` change (plus two points, above); every record's `timezone` already fits its new state.
 
 | Country | Move | Records |
 |---|---|---:|
@@ -506,4 +531,4 @@ Only `state_id` and `state_code` change; every record's `timezone` already fits 
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/{PT,UA,JP}.json` — `state_id` and `state_code` on 442 records
+- `contributions/cities/{PT,UA,JP}.json` — `state_id` and `state_code` on 453 records; coordinates on 2
