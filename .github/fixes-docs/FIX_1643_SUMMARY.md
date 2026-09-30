@@ -18,9 +18,13 @@ was checked in three steps:
    `wikiDataId`. Result: **106 confirmed** (the place lies in the neighbours' state, not the filed one), **99 false
    alarms** (it lies in the filed state — mostly border towns) and **100 unresolved** (no same-named item nearby, or
    contained in neither).
-2. **Guards** against a wrong *point* posing as a wrong *state*: set aside every record whose filed state also
-   contains a same-named place (56 — the record may be that place with bad coordinates), and every record whose
-   population disagrees with the matched item's by more than a factor of three (7).
+2. **Guards** against a wrong *point* posing as a wrong *state*: set aside records whose filed state also
+   contains a same-named place on Wikidata (56 — the record may be that place with bad coordinates), and records
+   whose population disagrees with the matched item's by more than a factor of three (7). The name search used
+   exact labels, so it missed namesakes spelt differently or linked only to the country; four of the 44 have one
+   (*Bon-Secours*: the commune Bonsecours in Seine-Maritime; *Ossé*: Osse in Doubs; *Panzhuang*: a town in Hebei;
+   *Kozjak*: a village near Loznica). Each was checked by hand and the move holds: the record's type, population
+   and coordinates match the place in the new state.
 3. **Hand check** of the remaining 48, which rejected four: *Avellaneda* (a partido of Buenos Aires Province, not
    the city), *Bogotá D.C.* (its own capital district), *Nakhchivan* city (its own subdivision, separate from the
    autonomous republic) and *Piobesi Torinese* (a commune of Turin; the matched item is a stub with a wrong
@@ -79,7 +83,18 @@ IDs stay as they are.
 
 ### Verification
 - Every new `state_id` belongs to the record's country and its `iso2` equals the new `state_code`.
+- An independent review checked all 44 against Wikidata and Wikipedia: 44 correct, every new state at the same
+  administrative level as the old one, and every old and new state's own `wikiDataId` right.
 - The 63 records set aside by the guards and the 100 unresolved ones are left unchanged for a hand review.
+
+### Left for follow-up
+- **Duplicates.** About 15 of the moved records duplicate a record already in their new state (10 of the 11
+  Spanish ones, and one each in GR, JO, KE, PH, RS, SA). Merging them is part of the duplicate-records decision.
+- **Wrong `wikiDataId`s** on 7 moved records (19724, 33090, 34691, 34859, 38078, 40109, 97402) point to other
+  places; not changed here.
+- **More of the same:** 12 more Spanish records filed under León lie in other provinces (e.g. El Barco de Ávila,
+  Las Navas del Marqués); *La Villette* (a Marseille quartier filed under Calvados) and *Weiwangzhuang* (Tianjin,
+  filed under Shandong). They were held back or unresolved here and go into the next pass.
 
 ## Rollback
 Revert the commit. No `id`s change.
