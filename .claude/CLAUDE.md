@@ -242,10 +242,11 @@ python3 bin/scripts/analysis/timezone_summary.py
 ## Status Tracking
 
 All CSC status goes in one shared doc, the **CSC Ecosystem Tracker**. Never create a separate tracker, handover or
-status page.
+status page. If you cannot open the doc (no access or no Claude Docs connector), skip this section.
 
 - Doc: https://claude.ai/code/artifact/3d349193-5909-4e99-9376-849c02dd7b31. Edit it only with the Claude Docs
   connector (read / update / batch). Container: `{"kind":"project","id":"3d349193-5909-4e99-9376-849c02dd7b31"}`.
+- This repo's row in *Projects*: "Source data".
 - **Tracker** tab (node `01507658-75c4`) has these sections:
   - *Waiting on you*: the owner's to-dos, as a checklist.
   - *Projects*: one row per repo. Update "Live now" after every deploy.
