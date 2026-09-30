@@ -26,7 +26,7 @@ record's `wikiDataId`, checked to be that state by label and description — has
 | 4669 | Vinnytska (UA) | near Kyiv | Q166709 |
 | 4680 | Cherkaska (UA) | Donetsk Oblast | Q161808 |
 | 4678 | Chernivetska (UA) | near Lviv | Q168856 |
-| 3567 | Harju (EE) | at sea off Hiiumaa | Q180200 |
+| 3567 | Harju (EE) | on Hiiumaa (the village of Pühalepa-Harju) | Q180200 |
 | 2654 | Comoé (CI) | Lagunes district | Q16629374 |
 | 4959 | Bono (GH) | Bono East | Q64685186 |
 | 4961 | Oti (GH) | Eastern Region | Q48804004 |
@@ -51,14 +51,14 @@ their own. Those take the Wikidata point too; for Loire, Mureș and Line Islands
 | 1832 | Line (KI) | Betio, Gilbert Islands (3,290 km away) | Q31866835 |
 | 5010 | Loire (FR) | Maine-et-Loire (the Pays de la Loire region's point) | Q12569 |
 | 4692 | Chernihivska (UA) | Kyiv | Q167874 |
-| 1530 | Denmark (DK) | Funen (Southern Denmark) | Q26073 |
+| 1530 | Denmark (DK) | at sea about 10 km north of Funen | Q26073 |
 | 4915 | Mureș (RO) | Alba County | Q190711 |
-| 3568 | Lääne (EE) | Järva County | Q189968 |
+| 3568 | Lääne (EE) | Jõgeva County (a farm named "Lääne" in Põltsamaa parish) | Q189968 |
 | 1210 | Puntarenas (CR) | at sea off Quepos | Q502170 |
 | 370 | Western (UG) | near Masaka (Central Region) | Q2559188 |
 | 260 | Western (RW) | in Uganda, north of Rwanda | Q737354 |
 | 524 | Khojali (AZ) | Lankaran | Q330790 |
-| 553 | Agdash (AZ) | near Gədəbəy | Q275784 |
+| 553 | Agdash (AZ) | Kalbajar District | Q275784 |
 | 3727 | Moravica (RS) | Pčinja district, by the Kosovo border | Q915380 |
 | 3555 | Hiiu (EE) | near Tallinn (Harju) | Q1466462 |
 
@@ -66,6 +66,7 @@ their own. Those take the Wikidata point too; for Loire, Mureș and Line Islands
 - *Loire*, *Denmark* (Capital Region) and *Mureș* are fixed in the second pass above.
 - *Newfoundland and Labrador* (CA): the Wikidata point is outside the cities' area too; to check.
 - The Danish state is still named *Denmark*; it is the Capital Region (Region Hovedstaden).
+- Lääne and Harju had been geocoded to same-named places elsewhere (a farm, a village).
 
 ## Rollback
 Revert the PR (squash commit). No `id`s change.
