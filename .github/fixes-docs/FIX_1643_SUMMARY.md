@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Towns filed under a neighbouring city's state
 
-**82 cities** move to the state they are in. Most were filed under the nearest large city's authority: Fife towns
+**87 cities** move to the state they are in. Most were filed under the nearest large city's authority: Fife towns
 (*Kirkcaldy*, *Dunfermline*, *Rosyth*) under Edinburgh or West Lothian, *Birkenhead* and *Wallasey* under Liverpool,
 *Penzance* and *St Ives* under the Isles of Scilly, *Ryde* under Portsmouth, *Batley* and *Dewsbury* under Wakefield,
 *Redditch* under Solihull, *Caerphilly* under Cardiff, and Moscow districts under Moscow Oblast.
@@ -19,8 +19,8 @@ CSC states by majority vote of the 2019 import's records whose population matche
 a candidate when all five places, within 15 km and the nearest within 5 km, map to one other state.
 
 ### How they were verified
-Each record's own `wikiDataId` counts only if it is the record's place: a label equal to the record's name, and a
-point within 5 km. Its current "located in" (P131) chain must then reach the GeoNames state and not the filed one.
+Each record's own `wikiDataId` counts only if it is the record's place: a label or alias equal to the record's name
+(for some, the municipality or district of that name), and a point within 5 km. Its current "located in" (P131) chain must then reach the GeoNames state and not the filed one.
 Of 527 candidates outside the countries handled elsewhere, 90 passed. Eight were left out after a hand check:
 - France (6): Saint-Leu is a coordinates error fixed in #1648, Messac's population is the other Messac's, and France
   has its own passes.
@@ -30,7 +30,7 @@ The rest were not moved:
 - Most had no usable Wikidata ID (copy-forward IDs point elsewhere; #1641), or Wikidata confirmed the filed state.
 - In Saint Lucia and Jamaica (Kingston's neighbourhoods) GeoNames uses coarser regions than CSC.
 - Romania's 30 Mureș candidates are artefacts: CSC's Mureș and Maramureș records carry each other's Wikidata IDs, and
-  Mureș' point lies about 150 km outside the county. That goes to the state Wikidata ID fix.
+  Mureș' point lies in Alba County, about 125 km from Mureș' centre. That goes to the state Wikidata ID fix.
 
 ### Fix
 Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
@@ -41,7 +41,7 @@ Only `state_id` and `state_code` change; every record's `timezone` already fits 
 | GB | West Lothian → Fife | 8 |
 | GB | Portsmouth → Isle of Wight | 4 |
 | GB | Plymouth → Cornwall | 4 |
-| RU | Moscow → Moscow | 4 |
+| RU | Moscow Oblast (MOS) → Moscow city (MOW) | 4 |
 | GB | Sandwell → Worcestershire | 3 |
 | GB | Warrington → Cheshire West and Chester | 3 |
 | GB | Clackmannanshire → Fife | 3 |
@@ -159,8 +159,24 @@ Only `state_id` and `state_code` change; every record's `timezone` already fits 
 | RU | 99008 | Khoroshëvo-Mnevniki | Moscow (MOS) | Moscow (MOW) | 182497 | Q630277 (0.8 km) |
 | RU | 99166 | Kommunarka | Moscow (MOS) | Moscow (MOW) | 5223 | Q1780477 (0.0 km) |
 
+### Added after the independent review
+The review found all 82 correct (OpenStreetMap reverse lookup plus each record's Wikidata chain) and five more of the
+same kind, now moved; it also moved one point:
+
+| Country | id | City | Was | Now | Note |
+|---|---|---|---|---|---|
+| GB | 51399 | St Just | Isles of Scilly | Cornwall | St Just in Penwith, on the mainland; its Wikidata ID is St Ives' (#1641) |
+| GB | 51012 | Queensferry | West Lothian | Edinburgh | South Queensferry, in the City of Edinburgh council area |
+| MX | 75197 | Tamándaro | Estado de México | Michoacán de Ocampo | in Jacona; own Wikidata item agrees |
+| NO | 79240 | Hurum | Buskerud | Akershus | in Asker since 2020, like Sætre and Åros; its Wikidata item is the former municipality, which was in Buskerud |
+| NO | 79471 | Røyken | Buskerud | Akershus | as Hurum |
+| GB | 48296 | Ashton in Makerfield | (Wigan, above) | — | point moved from Old Boston, Haydock (St Helens) to the town centre, Q2557991's (53.487, −2.641) |
+
+Also found: moving *Farkadona* (154229) puts it 1.1 km from record 52599 *Farkadóna* in Thessaly, the same place; it
+waits for the duplicate policy. Four other records carry these records' Wikidata IDs by copy-forward (#1641).
+
 ## Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/{GB,GR,MX,NO,RS,RU}.json` — `state_id` and `state_code` on 82 records
+- `contributions/cities/{GB,GR,MX,NO,RS,RU}.json` — `state_id` and `state_code` on 87 records; coordinates on 1
