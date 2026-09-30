@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Spanish cities filed under the wrong province
 
-**88 Spanish cities** move to the province they are in, found by two checks. They include a provincial capital
+**90 Spanish cities** move to the province they are in, found by two checks. They include a provincial capital
 and large towns: *Castelló de la Plana* (180,379 people), *Elche* (243,128), *Alcoy* and *Burriana* filed under
 Valencia; *La Laguna* (150,661), *La Orotava* and *Los Llanos de Aridane* under Las Palmas; the Zaragoza districts
 *Delicias* and *Oliver-Valdefierro* under Huesca.
@@ -24,24 +24,26 @@ The 2019 import copied each city's population from GeoNames, so a record's sourc
 place with the same name (or an alternate name) within 3 km and **exactly the record's population**. GeoNames'
 Spanish second-level codes are the same letters as CSC's province `iso2`. For 57 ES records that entry lies in
 another province; 7 of them (León records) are moved by #1647, still open. For the other 50, the same-named Wikidata
-item within 2 km of the record's point, or the municipality it is located in, carries an INE code:
+item within about 2 km of the record's point, or the municipality it is located in, carries an INE code:
 
 | Result | Records |
 |---|---:|
 | INE province = the GeoNames province, not the filed one | **47** |
-| No same-named item with an INE code (the names are spelled differently): settled by check 2 or by hand | 3 |
+| No same-named item with an INE code (spelled differently, or a district without its own code): settled by check 2 or by hand | 3 |
 
 The 3: *Vallehermosa* is Vallehermoso on La Gomera (check 2). *Arenys de Lledó / Arens de Lledó* is 0.0 km from the
 Teruel municipality Arens de Lledó (INE 44027), with its exact GeoNames population. *El Grao* (16,026 people) is El
 Grau de Castelló: the GeoNames entry with that population is 0.0 km away and the four nearest municipalities are all
 in Castellón.
 
-### Check 2: the record's point (39 records)
-For every ES record, the three nearest of the 8,277 Wikidata municipalities that have an INE code and coordinates.
+### Check 2: the record's point (41 records)
+For every ES record not moved by check 1 or #1647, the three nearest of the 8,277 Wikidata municipalities that have an INE code and coordinates.
 40 records have all three in one province other than the filed one, the nearest under 3 km away. A record moves
 only when its name agrees with that province: it is one of those municipalities (37), or a same-named GeoNames place
 within 3 km lies in that province (2: *Formentera de Segura*, *Vallehermosa*). This catches records whose GeoNames
-population has changed since 2019, such as Castelló de la Plana and Elche.
+population has changed since 2019, such as Castelló de la Plana and Elche. The review found two more that the
+three-nearest rule missed because Madrid municipalities are close by: *El Tiemblo* and *Las Navas del Marqués*, each
+0.2–0.6 km from its Ávila municipality and filed under León.
 
 Held: *La Zubia* (151401), filed under Granada, has the point of La Granada in Barcelona. Its coordinates are
 wrong, not its province; not changed here.
@@ -66,7 +68,7 @@ Only `state_id` and `state_code` change; every record's `timezone` already fits 
 | Valencia → Castellón | 21 |
 | Las Palmas → Santa Cruz de Tenerife | 17 |
 | Huesca → Zaragoza | 8 |
-| 10 other pairs (Huesca → Teruel, León → Ávila, León → Segovia, León → Zamora, Zamora → Teruel, León → Valladolid, Ourense → Lugo, León → Palencia, Alicante → Santa Cruz de Tenerife, León → Burgos) | 17 |
+| 10 other pairs (Huesca → Teruel, León → Ávila (5), León → Segovia, León → Zamora, Zamora → Teruel, León → Valladolid, Ourense → Lugo, León → Palencia, Alicante → Santa Cruz de Tenerife, León → Burgos) | 19 |
 
 The municipality column names the INE municipality the record lies in (its first two digits are the province).
 Check 1 = population fingerprint, 2 = the record's point.
@@ -98,6 +100,7 @@ Check 1 = population fingerprint, 2 = the record's point.
 | 33999 | El Grao | Valencia (V) | Castellón (CS) | 16,026 | Castellón de la Plana (12040) | 1+2 (by hand) |
 | 34000 | El Hoyo de Pinares | León (LE) | Ávila (AV) | 2,183 | El Hoyo de Pinares (05102) | 2 |
 | 34004 | El Paso | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 8,156 | El Paso (38027) | 2 |
+| 34020 | El Tiemblo | León (LE) | Ávila (AV) | 4,526 | El Tiemblo (05241) | 2 (review) |
 | 34030 | Elche | Valencia (V) | Alicante (A) | 243,128 | Elche (03065) | 2 |
 | 34207 | Fonfría | Zamora (ZA) | Teruel (TE) | 35 | Fonfría (44102) | 2 |
 | 34222 | Formentera de Segura | Valencia (V) | Alicante (A) | 2,873 | Formentera del Segura (03070) | 2 |
@@ -117,6 +120,7 @@ Check 1 = population fingerprint, 2 = the record's point.
 | 34923 | La Romana | Valencia (V) | Alicante (A) | 2,672 | La Romana (03114) | 2 |
 | 34925 | La Seca | León (LE) | Valladolid (VA) | 1,013 | La Seca (47158) | 2 |
 | 34934 | La Victoria de Acentejo | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 9,313 | La Victoria de Acentejo (38051) | 2 |
+| 34987 | Las Navas del Marqués | León (LE) | Ávila (AV) | 5,590 | Las Navas del Marqués (05168) | 2 (review) |
 | 34990 | Las Rosas | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 2,000 | Arona (38006) | 1 |
 | 35095 | Lobios | Ourense (OR) | Lugo (LU) | 2,512 | Sober (27059) | 1 |
 | 35105 | Lomo de Arico | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 7,189 | Arico (38005) | 1 |
@@ -147,7 +151,7 @@ Check 1 = population fingerprint, 2 = the record's point.
 | 36978 | Sant Jordi | Valencia (V) | Castellón (CS) | 637 | San Jorge (12099) | 1 |
 | 37180 | Sauzal | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 8,172 | El Sauzal (38041) | 1 |
 | 37247 | Sierra-Engarcerán | Valencia (V) | Castellón (CS) | 1,068 | Sierra Engarcerán (12105) | 1 |
-| 37368 | Tanque | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 3,068 | El Tanque (38044) | 2 |
+| 37368 | Tanque | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 3,068 | Los Silos (38042); name and population are El Tanque (38044) | 2 |
 | 37497 | Torre de la Horadada | Valencia (V) | Alicante (A) | 2,676 | Pilar de la Horadada (03902) | 1 |
 | 37834 | Vall de Ebo | Valencia (V) | Alicante (A) | 346 | Vall de Ebo (03135) | 1 |
 | 37850 | Vallehermosa | Las Palmas (GC) | Santa Cruz de Tenerife (TF) | 2,829 | Vallehermoso (38050) | 2 |
@@ -156,15 +160,15 @@ Check 1 = population fingerprint, 2 = the record's point.
 | 38064 | Villafranca del Cid | Valencia (V) | Castellón (CS) | 2,227 | Villafranca del Cid (12129) | 1 |
 | 38088 | Villajoyosa | Valencia (V) | Alicante (A) | 33,797 | Villajoyosa (03139) | 1 |
 | 38311 | Villasana de Mena | León (LE) | Burgos (BU) | 3,427 | Valle de Mena (09410) | 1 |
-| 38358 | Villavieja | Valencia (V) | Castellón (CS) | 3,352 | Vall de Uxó (12126) | 1 |
+| 38358 | Villavieja | Valencia (V) | Castellón (CS) | 3,352 | Villavieja (12136) | 1 |
 | 38533 | els Poblets | Valencia (V) | Alicante (A) | 3,708 | Els Poblets (03901) | 1 |
 | 38534 | l'Alcora | Valencia (V) | Castellón (CS) | 10,581 | Alcora (12005) | 2 |
 | 38535 | l'Alfàs del Pi | Valencia (V) | Alicante (A) | 20,160 | Alfaz del Pi (03011) | 2 |
 | 38554 | la Nucia | Valencia (V) | Alicante (A) | 18,783 | La Nucía (03094) | 2 |
 
 ### Also found (not changed here)
-- **Duplicates.** 35 of the moved records now sit in the same province as a near-identical record from a later
-  import (ids 152xxx), for example *Elche* and *Elche/Elx*, or *Orcheta* and *Orxeta*. They wait for the
+- **Duplicates.** At least 35 of the moved records (same province, within 1.5 km, similar name) now sit next to a
+  near-identical record from a later import (ids 152xxx), for example *Elche* and *Elche/Elx*, or *Orcheta* and *Orxeta*. They wait for the
   duplicate-merge policy in #1643.
 - **Wrong `wikiDataId`.** 24 of the 88 records carry a Wikidata ID of a place in another province, e.g. *Adzaneta*
   → Q576753 (Aduna, Gipuzkoa), *Villajoyosa* → Q1918587. This is the copy-forward problem of #1641.
@@ -172,7 +176,7 @@ Check 1 = population fingerprint, 2 = the record's point.
   separate fix of `states.json`.
 
 ## Rollback
-Revert the commit. No `id`s change.
+Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/ES.json` — `state_id` and `state_code` on 88 records
+- `contributions/cities/ES.json` — `state_id` and `state_code` on 90 records
