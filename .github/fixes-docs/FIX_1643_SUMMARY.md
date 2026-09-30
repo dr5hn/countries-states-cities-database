@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## States with a wrong or missing Wikidata ID
 
-**256 states** get the Wikidata item that carries their own ISO 3166-2 code. 182 pointed to the wrong item and 74 had
+**261 states** get the right Wikidata item, found through their own ISO 3166-2 code. 187 pointed to the wrong item and 74 had
 none. Many wrong IDs were unrelated things: Icelandic municipalities pointed to The Knesset, bird and mollusc species
 and *OK Computer*; Estonian ones to a Vuelta a España stage and a girls' college in India; São Tomé's districts to the
 Seal of North Dakota and the Lisbon Oceanarium; Ceuta to Tricerro in Italy; Melilla to George II. Others pointed to a
@@ -26,7 +26,7 @@ current item has their code, and those are the candidates below.
 | The ISO-coded item's name matches the state's name; CSC's item has no ISO code of the same country | 215 |
 | CSC's item carries another code of the same country: swapped pairs (Mureș/Maramureș, Buenos Aires city/province, Lankaran city/district) and provinces carrying their community's ID | 26 |
 | Names differ only in form (e.g. Seville → Seville Province, Ad Dali' → Dhale Governorate); checked by hand | 13 |
-| Estonia's EE-430/EE-431: Wikidata gives each code to the other municipality, so these follow the name | 2 |
+| Estonia's EE-430/EE-431: CSC had the two codes the wrong way round, so these follow the name (and the codes are swapped, below) | 2 |
 
 Not changed:
 - **Algeria (7):** CSC's IDs are right, but its ISO codes for the 2019 provinces are shifted (El M'ghair is DZ-57, not
@@ -34,10 +34,27 @@ Not changed:
 - **Rhône (FR-69):** the ISO-coded item is the post-2015 "departmental district"; CSC's item is kept.
 - **Bikini & Kili, Woqooyi Galbeed:** the ISO-coded items don't clearly match. 395 more codes have no Wikidata item.
 
-States by country: BD 63, IS 35, ES 32, EE 26, IT 13, MC 10, ST 7, GB 6, ID 6, LT 6, AZ 5, IN 4, CD 3, TO 3, CA 2, YE 2, BS 2, MA 2, ET 2, DO 2, ME 2, AR 2, RO 2, KE 1, RW 1, SC 1, KI 1, RS 1, NZ 1, CZ 1, AF 1, AO 1, MD 1, PE 1, MK 1, TT 1, PH 1, CI 1, LV 1, TZ 1, FR 1, BE 1.
+States by country: BD 63, IS 37, ES 32, EE 26, IT 13, MC 10, ST 7, ID 6, GB 6, LT 6, AZ 5, CD 4, IN 4, BS 3, TO 3, ME 3, CA 2, YE 2, AR 2, RO 2, MA 2, ET 2, DO 2, KE 1, RW 1, SC 1, PH 1, BE 1, KI 1, CI 1, RS 1, NZ 1, LV 1, CZ 1, TZ 1, FR 1, AF 1, AO 1, MD 1, PE 1, MK 1, TT 1.
+
+### After the independent review
+The review found all 256 correct or better than before (250 correct, 6 arguable) and prompted these changes:
+- **Municipality items instead of the town:** the ISO-coded items for five Icelandic municipalities are the towns, so
+  those states now carry the municipality items (Akureyrarbær, Hafnarfjarðarkaupstaður, Kópavogsbær, Garðabær,
+  Vestmannaeyjabær). The Chatham Islands carry Chatham Islands Territory (the territorial authority), not the
+  archipelago.
+- **Five more ISO matches** that the first pass missed: Akranes, Bolungarvík (IS), Herceg Novi (ME), Ituri (CD) and
+  Moore's Island (BS).
+- **Estonia's EE-430 and EE-431:** ISO, the Estonian EHAK codes and Wikidata agree that EE-430 is Lääneranna and EE-431
+  Lääne-Harju. CSC had them the other way round, so the two states' `iso2`/`iso3166_2` are swapped. No city is
+  filed under either.
+
+The counts of Wikidata codes above depend on the day and on which statements count (best rank or not); the review
+got 5,228–5,361 codes. Still to do: about 28 Icelandic states whose ISO codes have no Wikidata item still carry
+unrelated IDs, and some `type` fields no longer fit (Lankaran city and district are swapped; Dorset is now a
+unitary authority).
 
 ### Fix
-Only `wikiDataId` changes, on 256 states.
+Only `wikiDataId` changes, on 261 states, plus `iso2`/`iso3166_2` on the two Estonian states.
 
 | Country | ISO 3166-2 | State | Was | Now |
 |---|---|---|---|---|
@@ -115,10 +132,12 @@ Only `wikiDataId` changes, on 256 states.
 | BD | BD-64 | Thakurgaon | — | Q2367825 (Thakurgaon District) |
 | BE | BE-VLG | Flanders | Q234 (Flanders) | Q9337 (Flemish Region) |
 | BS | BS-AK | Acklins | Q341919 (Acklins) | Q122687952 (Acklins) |
+| BS | BS-MI | Moore's Island | Q2702345 | Q21713445 (Moore's Island District) |
 | BS | BS-NP | New Providence | Q858513 (New Providence) | Q3339000 (New Providence) |
 | CA | CA-BC | British Columbia | Q1974 (British Columbia) | Q1973 (British Columbia) |
 | CA | CA-PE | Prince Edward Island | Q1979 (Prince Edward Island) | Q1978 (Prince Edward Island) |
 | CD | CD-BC | Kongo Central | Q130588 (Kongo Central) | Q1043494 (Kongo Central) |
+| CD | CD-IT | Ituri | Q750659 | Q24909562 (Ituri Province) |
 | CD | CD-KE | Kasaï Oriental | Q80953 (Kasaï-Oriental) | Q917992 (Kasai-Oriental) |
 | CD | CD-KG | Kwango | Q757095 (Kwango District) | Q24205498 (Kwango Province) |
 | CI | CI-SV | Savanes | Q853460 (Savanes Region) | Q21002161 (Savanes District) |
@@ -136,8 +155,8 @@ Only `wikiDataId` changes, on 256 states.
 | EE | EE-251 | Jõhvi | Q2627709 (Noordstraat) | Q1640282 (Jõhvi Rural Municipality) |
 | EE | EE-255 | Järva | Q15732430 (Gokhale Memorial Girls' College) | Q42808650 (Järva Rural Municipality) |
 | EE | EE-321 | Kohtla-Järve | Q193761 | Q201391 (Kohtla-Järve) |
-| EE | EE-430 | Lääne-Harju | Q15732432 (Anavra, Karditsa) | Q42309166 (Lääne-Harju Rural Municipality) |
-| EE | EE-431 | Lääneranna | Q15732433 (Claudio Pätz) | Q31273628 (Lääneranna Rural Municipality) |
+| EE | EE-430 | Lääneranna | Q15732433 (Claudio Pätz) | Q31273628 (Lääneranna Rural Municipality) |
+| EE | EE-431 | Lääne-Harju | Q15732432 (Anavra, Karditsa) | Q42309166 (Lääne-Harju Rural Municipality) |
 | EE | EE-441 | Lääne-Nigula | Q2627784 (1968 Red Square demonstration) | Q43281154 (Lääne-Nigula Rural Municipality) |
 | EE | EE-442 | Lüganuse | Q2627795 (Iselma endroedyyoungai) | Q44826366 (Lüganuse Rural Municipality) |
 | EE | EE-514 | Narva-Jõesuu | Q995303 | Q43266354 (Narva-Jõesuu City) |
@@ -202,11 +221,13 @@ Only `wikiDataId` changes, on 256 states.
 | IN | IN-DH | Dadra and Nagar Haveli and Daman and Diu | Q66710 (Daman and Diu) | Q77997266 (Dadra and Nagar Haveli and Daman and Diu) |
 | IN | IN-DL | Delhi | Q1353 (Delhi) | Q9357528 (National Capital Territory of Delhi) |
 | IN | IN-JK | Jammu and Kashmir | Q1180 (Jammu and Kashmir) | Q66278313 (Jammu and Kashmir) |
-| IS | IS-AKU | Akureyri | Q133396 (The Knesset) | Q29042 (Akureyri) |
+| IS | IS-AKN | Akranes | Q203163 | Q2476720 (Akraneskaupstaður) |
+| IS | IS-AKU | Akureyri | Q133396 (The Knesset) | Q4317203 (Akureyrarbær) |
 | IS | IS-ARN | Árneshreppur | Q731910 (Giant kingfisher) | Q252238 (Árneshreppur) |
 | IS | IS-ASA | Ásahreppur | Q731911 (Hypselodoris fontandraui) | Q252482 (Ásahreppur) |
 | IS | IS-BLA | Bláskógabyggð | Q839959 (Stub-tailed Spadebill) | Q886944 (Bláskógabyggð) |
 | IS | IS-BOG | Borgarbyggð | Q948607 (Kotex) | Q893528 (Borgarbyggð) |
+| IS | IS-BOL | Bolungarvík | Q739842 | Q1798343 (Bolungarvíkurkaupstaður) |
 | IS | IS-DAB | Dalabyggð | Q1158005 (Dallas Semiconductor) | Q1157787 (Dalabyggð) |
 | IS | IS-DAV | Dalvíkurbyggð | Q1158009 (2012 Dallas Tennis Classic) | Q1158104 (Dalvíkurbyggð) |
 | IS | IS-EOM | Eyja- og Miklaholtshreppur | Q1379862 (Heliodrom camp) | Q1385816 (Eyja- og Miklaholtshreppur) |
@@ -215,14 +236,14 @@ Only `wikiDataId` changes, on 256 states.
 | IS | IS-FJL | Fjallabyggð | Q1421195 (Highway M19) | Q729833 (Fjallabyggð) |
 | IS | IS-FLA | Flóahreppur | Q1428698 (Flight operations quality assurance) | Q962730 (Flóahreppur) |
 | IS | IS-FLR | Fljótsdalshreppur | Q1428695 (focal dystonia) | Q1429028 (Fljótsdalshreppur) |
-| IS | IS-GAR | Garðabær | Q202996 (OK Computer) | Q186142 (Garðabær) |
+| IS | IS-GAR | Garðabær | Q202996 (OK Computer) | Q27015626 (Garðabær) |
 | IS | IS-GRN | Grindavík | Q212876 (Magnentius) | Q2796543 (Grindavíkurbær) |
 | IS | IS-GRU | Grundarfjörður | Q1548758 (Großer Kornberg) | Q1019459 (Grundarfjarðarbær) |
-| IS | IS-HAF | Hafnarfjörður | Q208045 (gold) | Q103725 (Hafnarfjörður) |
+| IS | IS-HAF | Hafnarfjörður | Q208045 (gold) | Q2238508 (Hafnarfjarðarkaupstaður) |
 | IS | IS-HUG | Húnabyggð | Q1639015 (Bolivia Route 31) | Q112288159 (Húnabyggð) |
 | IS | IS-HUV | Húnaþing vestra | Q1639016 (Mother Albania) | Q1652058 (Húnaþing vestra) |
 | IS | IS-HVE | Hveragerði | Q212882 | Q1025701 (Hveragerðisbær) |
-| IS | IS-KOP | Kópavogur | Q208042 (regression analysis) | Q163852 (Kópavogur) |
+| IS | IS-KOP | Kópavogur | Q208042 (regression analysis) | Q27013397 (Kópavogsbær) |
 | IS | IS-MUL | Múlaþing | Q2063295 (Paul Zollinger) | Q96776922 (Múlaþing) |
 | IS | IS-RGE | Rangárþing eystra | Q2131208 (Mangora chicanna) | Q669991 (Rangárþing eystra) |
 | IS | IS-RGY | Rangárþing ytra | Q2131209 (Kunstlinie Almere Flevoland) | Q540016 (Rangárþing ytra) |
@@ -236,7 +257,7 @@ Only `wikiDataId` changes, on 256 states.
 | IS | IS-STR | Strandabyggð | Q2361008 (Bonnie Blue Flag) | Q979864 (Strandabyggð) |
 | IS | IS-SVG | Vogar | Q208047 (1968 Tunnel Rats) | Q3482077 (Vogar) |
 | IS | IS-TJO | Tjörneshreppur | Q2433113 (Florida State Road 817) | Q628888 (Tjörneshreppur) |
-| IS | IS-VEM | Vestmannaeyjar | Q208048 (Band of Brothers) | Q187251 (Vestmannaeyjar) |
+| IS | IS-VEM | Vestmannaeyjar | Q208048 (Band of Brothers) | Q9368476 (Vestmannaeyjabær) |
 | IT | IT-BA | Bari | Q18684135 (Anthony Costello) | Q18241854 (Metropolitan City of Bari) |
 | IT | IT-BO | Bologna | Q18288155 (Metropolitan City of Milan) | Q18288145 (Metropolitan City of Bologna) |
 | IT | IT-CA | Cagliari | Q18241891 (Metropolitan City of Naples) | Q3622022 (Metropolitan City of Cagliari) |
@@ -272,10 +293,11 @@ Only `wikiDataId` changes, on 256 states.
 | MC | MC-SR | Saint-Roman | — | Q99324616 (Saint Roman) |
 | MC | MC-VR | Vallon de la Rousse | — | Q13378479 (Vallon de la Rousse) |
 | MD | MD-LE | Leova | Q862618 (Kungsholmen city district) | Q1826662 (Leova District) |
+| ME | ME-08 | Herceg-Novi | Q187144 | Q3317366 (Herceg Novi Municipality) |
 | ME | ME-24 | Tuzi | Q2656869 (Chirita) | Q12750439 (Tuzi Municipality) |
 | ME | ME-25 | Zeta | Q25411815 | Q12750430 (Zeta Municipality) |
 | MK | MK-303 | Debar | — | Q1344996 (Debar Municipality) |
-| NZ | NZ-CIT | Chatham Islands | Q26882619 (Chatham Islands Council) | Q115459 (Chatham Islands) |
+| NZ | NZ-CIT | Chatham Islands | Q26882619 (Chatham Islands Council) | Q86771569 (Chatham Islands Territory) |
 | PE | PE-LMA | Municipalidad Metropolitana de Lima | Q2868 (Lima) | Q579240 (Lima) |
 | PH | PH-MGN | Maguindanao del Norte | Q13845 (Maguindanao) | Q114019739 (Maguindanao del Norte) |
 | RO | RO-MM | Maramureș | Q190711 (Mureș County) | Q188813 (Maramureș County) |
@@ -302,4 +324,4 @@ Only `wikiDataId` changes, on 256 states.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/states/states.json` — `wikiDataId` on 256 states
+- `contributions/states/states.json` — `wikiDataId` on 261 states; `iso2`/`iso3166_2` on 2
