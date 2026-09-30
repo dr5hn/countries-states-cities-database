@@ -18,11 +18,23 @@ the state itself. Found by the independent review of #1657, then confirmed by th
 | Spanish provinces that are their own parent | 3 |
 
 Asturias, Cantabria and La Rioja are single-province autonomous communities. Their province records (1160, 1170, 1171)
-point to themselves; the community records (5701–5703) were added later and never linked. Every other Spanish
-province points to its community.
+point to themselves; the community records (5701–5703) were added later and never linked.
+
+### Added after the independent review
+The review checked every child state's parent against its Wikidata "located in" chain and ISO 3166-2 membership and
+found four links that point to a real state of the right country, but the wrong one:
+
+| id | State | parent was | Now |
+|---|---|---|---|
+| 3287 | Nouaceur (MA) | 4927 Rabat-Salé-Kénitra | 3303 Casablanca-Settat |
+| 3302 | Chtouka-Aït Baha (MA) | 3303 Casablanca-Settat | 3295 Souss-Massa |
+| 5039 | Haute-Saône (FR) | 4820 Grand-Est | 4825 Bourgogne-Franche-Comté |
+| 5092 | Badajoz (ES) | 5325 Andalusia | 5333 Extremadura |
+
+Left for a decision: Sulu (PH), whose parent is ARMM; the Supreme Court excluded Sulu from Bangsamoro in 2024.
 
 ### Fix
-Only `parent_id` changes, on 11 states.
+Only `parent_id` changes, on 15 states.
 
 | id | State | Country | parent_id was | Now |
 |---|---|---|---|---|
@@ -32,7 +44,7 @@ Only `parent_id` changes, on 11 states.
 | 1171 | La Rioja (province) | ES | 1171 (itself) | 5703 La Rioja |
 
 ### Also found (not changed here)
-The same scan finds 166 states whose `level` is not below their parent's: provinces at level 1 under level-1 regions
+The same scan finds 158 states (after this PR) whose `level` is not below their parent's: provinces at level 1 under level-1 regions
 in Morocco (58), Burkina Faso (45) and Belgium (10); Guinea's prefectures and regions both at level 2 (29); Fiji's
 provinces at level 1 under level-2 divisions (14); two Guinea-Bissau regions at level 1 under a province. Spanish
 provinces are level 1 and their communities have no level. Changing levels could alter what API users get when they
@@ -42,4 +54,4 @@ filter by level, so it waits for a decision in #1643.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/states/states.json` — `parent_id` on 11 states
+- `contributions/states/states.json` — `parent_id` on 15 states
