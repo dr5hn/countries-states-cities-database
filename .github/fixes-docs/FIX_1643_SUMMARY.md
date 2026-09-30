@@ -8,18 +8,20 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## States and cities on the wrong time zone
 
-**95 states and 1,528 cities** get the right IANA time zone. #1649 checked each city against its neighbours;
+**93 states and 1,528 cities** get the right IANA time zone. #1649 checked each city against its neighbours;
 that misses these, because here the wrong zone is shared by a whole state, most of its cities, or a whole country.
 
-### States (95)
+### States (93)
 - **Russia (27):** federal subjects outside Moscow time were stored as `Europe/Moscow`; each takes its legal zone.
 - **Papua New Guinea (21):** every province was on `Pacific/Bougainville` (UTC+11); only Bougainville uses it, the
   rest of the country is on `Pacific/Port_Moresby` (UTC+10).
-- **Indonesia (17):** provinces on central (WITA, UTC+8: Nusa Tenggara, Sulawesi, South/East/North Kalimantan) or
-  eastern time (WIT, UTC+9: Maluku, North Maluku, the Papua provinces) were stored as `Asia/Jakarta` (UTC+7).
+- **Indonesia (17):** provinces on central time (WITA, UTC+8: Nusa Tenggara, Sulawesi, South/East/North
+  Kalimantan) or eastern time (WIT, UTC+9: North Maluku and the five newer Papua provinces) were stored as
+  `Asia/Jakarta` (UTC+7); Maluku and Papua already had `Asia/Jayapura`.
 - **DR Congo (16):** the eastern provinces (Kivu, Katanga, Kasaï, Ituri, Uélé, Maniema, Tshopo…) were on
   `Africa/Kinshasa` (UTC+1); they are on `Africa/Lubumbashi` (UTC+2).
-- **Mongolia (5):** the western aimags (Khovd, Uvs, Zavkhan, Govi-Altai, Bayan-Ölgii) are on `Asia/Hovd` (UTC+7).
+- **Mongolia (3):** Khovd, Uvs and Bayan-Ölgii are on `Asia/Hovd` (UTC+7) in tzdata. Zavkhan and Govi-Altai stay on
+  UTC+8 as tzdata has them (Mongolia's standards agency lists them on UTC+7; disputed).
 - **French Polynesia (4):** the Austral, Leeward, Windward and Tuamotu-Gambier groups were on `Pacific/Gambier`
   (UTC−9); they are on Tahiti time (UTC−10), except the Gambier Islands themselves.
 - **Kiribati (2), Micronesia (2), Greenland (1):** Gilbert and Line Islands had the Phoenix Islands' zone; Kosrae
@@ -67,8 +69,6 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | KI | Line | Pacific/Enderbury | Pacific/Kiritimati |
 | MN | Khovd | Asia/Choibalsan | Asia/Hovd |
 | MN | Uvs | Asia/Choibalsan | Asia/Hovd |
-| MN | Zavkhan | Asia/Choibalsan | Asia/Hovd |
-| MN | Govi-Altai | Asia/Choibalsan | Asia/Hovd |
 | MN | Bayan-Ölgii | Asia/Choibalsan | Asia/Hovd |
 | PF | Austral Islands | Pacific/Gambier | Pacific/Tahiti |
 | PF | Leeward Islands | Pacific/Gambier | Pacific/Tahiti |
@@ -131,10 +131,11 @@ that misses these, because here the wrong zone is shared by a whole state, most 
   cities are on the state's offset, takes their zone (e.g. Sonora on Mexico City time, Alberta on Toronto time).
   Multi-zone areas keep their cities, since there the neighbours share the city's offset.
 - **By hand:** British Columbia's Central Coast and Port McNeill (Vancouver), Peace River (Dawson Creek), Elkford
-  (Edmonton); Amazonas' central municipalities (Manaus) and Atalaia do Norte, Envira, Ipixuna, Itamarati and Tabatinga
-  (Eirunepé, UTC−5); Sakha's cities west of 130°E (Yakutsk).
-- **Guard:** a city is changed only when at least 3 of its 5 nearest same-country cities are filed in the same state,
-  so a record whose point lies in another state is not touched.
+  (Edmonton); Amazonas' central and northern municipalities (Manaus) and Atalaia do Norte, Envira and Ipixuna (Eirunepé,
+  UTC−5); Sakha's Moscow-time cities in Yakutsk-time districts (Yakutsk).
+- **Guard:** a city is changed only when at least 3 of its 5 nearest same-country cities are filed in the same state.
+  This does not catch a batch filed in the wrong state together: the review found two such records moved across a
+  zone line (Milpillas, Puente de Camotlán) and they are left as they were.
 
 | Country | State | City zone was | Now | Cities |
 |---|---|---|---|---:|
@@ -162,10 +163,11 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | ID | Nusa Tenggara Timur | Asia/Jakarta | Asia/Makassar | 18 |
 | ID | Sulawesi Selatan | Asia/Jakarta | Asia/Makassar | 18 |
 | MX | Sinaloa | America/Mexico_City | America/Mazatlan | 18 |
-| RU | Kurgan | Europe/Moscow | Asia/Yekaterinburg | 18 |
 | RU | Khabarovsk | Europe/Moscow | Asia/Vladivostok | 18 |
+| RU | Kurgan | Europe/Moscow | Asia/Yekaterinburg | 18 |
 | RU | Perm | Europe/Moscow | Asia/Yekaterinburg | 18 |
 | RU | Omsk | Europe/Moscow | Asia/Omsk | 17 |
+| BR | Amazonas | America/Sao_Paulo | America/Manaus | 16 |
 | ID | Sulawesi Tenggara | Asia/Jakarta | Asia/Makassar | 16 |
 | RU | Kamchatka | Europe/Moscow | Asia/Kamchatka | 16 |
 | RU | Samara | Europe/Moscow | Europe/Samara | 16 |
@@ -173,7 +175,6 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | CA | British Columbia | America/Toronto | America/Vancouver | 15 |
 | PF | Tuamotu-Gambier | Pacific/Gambier | Pacific/Tahiti | 15 |
 | RU | Khakassia | Europe/Moscow | Asia/Krasnoyarsk | 13 |
-| BR | Amazonas | America/Sao_Paulo | America/Manaus | 12 |
 | RU | Tuva | Europe/Moscow | Asia/Krasnoyarsk | 12 |
 | MX | Sonora | America/Mexico_City | America/Hermosillo | 11 |
 | PF | Windward Islands | Pacific/Gambier | Pacific/Tahiti | 11 |
@@ -200,7 +201,6 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | MX | Baja California | America/Mexico_City | America/Tijuana | 6 |
 | PF | Leeward Islands | Pacific/Gambier | Pacific/Tahiti | 6 |
 | PG | Chimbu | Pacific/Bougainville | Pacific/Port_Moresby | 6 |
-| BR | Amazonas | America/Sao_Paulo | America/Eirunepe | 5 |
 | ID | Gorontalo | Asia/Jakarta | Asia/Makassar | 5 |
 | ID | Papua Barat Daya | Asia/Jakarta | Asia/Jayapura | 5 |
 | PF | Austral Islands | Pacific/Gambier | Pacific/Tahiti | 5 |
@@ -214,7 +214,6 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | ID | Papua Barat | Asia/Jakarta | Asia/Jayapura | 4 |
 | ID | Papua Selatan | Asia/Jakarta | Asia/Jayapura | 4 |
 | MX | Baja California Sur | America/Mexico_City | America/Mazatlan | 4 |
-| MX | Jalisco | America/Mazatlan | America/Mexico_City | 4 |
 | MX | Quintana Roo | America/Mexico_City | America/Cancun | 4 |
 | PG | Central | Pacific/Bougainville | Pacific/Port_Moresby | 4 |
 | PG | Milne Bay | Pacific/Bougainville | Pacific/Port_Moresby | 4 |
@@ -222,7 +221,9 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | PG | Western Highlands | Pacific/Bougainville | Pacific/Port_Moresby | 4 |
 | RU | Kaliningrad | Europe/Moscow | Europe/Kaliningrad | 4 |
 | RU | Khanty-Mansi | Europe/Moscow | Asia/Yekaterinburg | 4 |
+| BR | Amazonas | America/Sao_Paulo | America/Eirunepe | 3 |
 | CA | Manitoba | America/Toronto | America/Winnipeg | 3 |
+| MX | Jalisco | America/Mazatlan | America/Mexico_City | 3 |
 | PG | Hela | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
 | PG | Jiwaka | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
 | PG | Southern Highlands | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
@@ -239,14 +240,15 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | CA | British Columbia | America/Toronto | America/Edmonton | 1 |
 | CD | Lualaba | Africa/Kinshasa | Africa/Lubumbashi | 1 |
 | FM | Kosrae | Pacific/Chuuk | Pacific/Kosrae | 1 |
-| MX | Sonora | America/Chihuahua | America/Hermosillo | 1 |
 | PF | Marquesas Islands | Pacific/Gambier | Pacific/Marquesas | 1 |
 | PG | Manus | Pacific/Bougainville | Pacific/Port_Moresby | 1 |
 | PG | Port Moresby | Pacific/Bougainville | Pacific/Port_Moresby | 1 |
 
 ### Not changed
-- **Uncertain:** Sakha's cities east of 130°E (Verkhoyansk, Oymyakon and Kolyma areas span three zones); Lábrea,
-  Japurá and Juruá in Amazonas.
+- **Uncertain:** Sakha's cities in the Verkhoyansk, Oymyakon and Kolyma areas (three zones); Lábrea in Amazonas.
+  Itamarati and Tabatinga take Manaus time (UTC−4, as English sources give), leaving the São Paulo time they had;
+  Portuguese sources put them on UTC−5.
+- **Not in scope:** Qaanaaq (Greenland) is on `America/Danmarkshavn` (UTC+0).
 - **Multi-zone by design:** US states split between zones (Tennessee, Kentucky, Indiana, Florida, Texas, the Dakotas,
   Nebraska, Kansas, Idaho, Arizona's Navajo Nation) and Mexico's US-border strip (Coahuila, Nuevo León, Tamaulipas,
   Chihuahua).
@@ -257,11 +259,12 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 
 ### Independent review
 Round 1 was reviewed: all 30 states correct (the 27 Russian mappings checked against Russian law and tzdata) and 360
-of 1,069 cities checked by OpenStreetMap, all correct. Round 2 (from that review's findings) adds the rest above.
+of 1,069 cities checked by OpenStreetMap, all correct. Round 2 (from that review's findings) was reviewed in full (all 459 new cities with OpenStreetMap): 455 correct;
+the 2 wrong and 2 uncertain cities and two Mongolian aimags were corrected as described above.
 
 ## Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/states/states.json` — `timezone` on 95 states
-- `contributions/cities/*.json` (13 countries) — `timezone` on 1,528 cities
+- `contributions/states/states.json` — `timezone` on 93 states
+- `contributions/cities/*.json` (12 countries) — `timezone` on 1,528 cities
