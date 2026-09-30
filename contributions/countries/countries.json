@@ -521,8 +521,8 @@
     "timezones": [
       {
         "zoneName": "Antarctica/Casey",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
+        "gmtOffset": 28800,
+        "gmtOffsetName": "UTC+08:00",
         "abbreviation": "AWST",
         "tzName": "Australian Western Standard Time"
       },
@@ -549,10 +549,10 @@
       },
       {
         "zoneName": "Antarctica/McMurdo",
-        "gmtOffset": 46800,
-        "gmtOffsetName": "UTC+13:00",
-        "abbreviation": "NZDT",
-        "tzName": "New Zealand Daylight Time"
+        "gmtOffset": 43200,
+        "gmtOffsetName": "UTC+12:00",
+        "abbreviation": "NZST",
+        "tzName": "New Zealand Standard Time"
       },
       {
         "zoneName": "Antarctica/Palmer",
@@ -584,8 +584,8 @@
       },
       {
         "zoneName": "Antarctica/Vostok",
-        "gmtOffset": 21600,
-        "gmtOffsetName": "UTC+06:00",
+        "gmtOffset": 18000,
+        "gmtOffsetName": "UTC+05:00",
         "abbreviation": "VOST",
         "tzName": "Vostok Station Time"
       }
@@ -971,17 +971,17 @@
     "timezones": [
       {
         "zoneName": "Antarctica/Macquarie",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
-        "abbreviation": "MIST",
-        "tzName": "Macquarie Island Station Time"
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
       },
       {
         "zoneName": "Australia/Adelaide",
-        "gmtOffset": 37800,
-        "gmtOffsetName": "UTC+10:30",
-        "abbreviation": "ACDT",
-        "tzName": "Australian Central Daylight Saving Time"
+        "gmtOffset": 34200,
+        "gmtOffsetName": "UTC+09:30",
+        "abbreviation": "ACST",
+        "tzName": "Australian Central Standard Time"
       },
       {
         "zoneName": "Australia/Brisbane",
@@ -992,17 +992,17 @@
       },
       {
         "zoneName": "Australia/Broken_Hill",
-        "gmtOffset": 37800,
-        "gmtOffsetName": "UTC+10:30",
-        "abbreviation": "ACDT",
-        "tzName": "Australian Central Daylight Saving Time"
+        "gmtOffset": 34200,
+        "gmtOffsetName": "UTC+09:30",
+        "abbreviation": "ACST",
+        "tzName": "Australian Central Standard Time"
       },
       {
         "zoneName": "Australia/Currie",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
-        "abbreviation": "AEDT",
-        "tzName": "Australian Eastern Daylight Saving Time"
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
       },
       {
         "zoneName": "Australia/Darwin",
@@ -1020,10 +1020,10 @@
       },
       {
         "zoneName": "Australia/Hobart",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
-        "abbreviation": "AEDT",
-        "tzName": "Australian Eastern Daylight Saving Time"
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
       },
       {
         "zoneName": "Australia/Lindeman",
@@ -1034,17 +1034,17 @@
       },
       {
         "zoneName": "Australia/Lord_Howe",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
+        "gmtOffset": 37800,
+        "gmtOffsetName": "UTC+10:30",
         "abbreviation": "LHST",
-        "tzName": "Lord Howe Summer Time"
+        "tzName": "Lord Howe Standard Time"
       },
       {
         "zoneName": "Australia/Melbourne",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
-        "abbreviation": "AEDT",
-        "tzName": "Australian Eastern Daylight Saving Time"
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
       },
       {
         "zoneName": "Australia/Perth",
@@ -1055,10 +1055,10 @@
       },
       {
         "zoneName": "Australia/Sydney",
-        "gmtOffset": 39600,
-        "gmtOffsetName": "UTC+11:00",
-        "abbreviation": "AEDT",
-        "tzName": "Australian Eastern Daylight Saving Time"
+        "gmtOffset": 36000,
+        "gmtOffsetName": "UTC+10:00",
+        "abbreviation": "AEST",
+        "tzName": "Australian Eastern Standard Time"
       }
     ],
     "translations": {
@@ -2505,7 +2505,7 @@
     "numeric_code": "108",
     "iso2": "BI",
     "phonecode": "257",
-    "capital": "Bujumbura",
+    "capital": "Gitega",
     "currency": "BIF",
     "currency_name": "Burundian franc",
     "currency_symbol": "FBu",
@@ -3216,17 +3216,17 @@
       },
       {
         "zoneName": "America/Santiago",
-        "gmtOffset": -10800,
-        "gmtOffsetName": "UTC-03:00",
-        "abbreviation": "CLST",
-        "tzName": "Chile Summer Time"
+        "gmtOffset": -14400,
+        "gmtOffsetName": "UTC-04:00",
+        "abbreviation": "CLT",
+        "tzName": "Chile Standard Time"
       },
       {
         "zoneName": "Pacific/Easter",
-        "gmtOffset": -18000,
-        "gmtOffsetName": "UTC-05:00",
-        "abbreviation": "EASST",
-        "tzName": "Easter Island Summer Time"
+        "gmtOffset": -21600,
+        "gmtOffsetName": "UTC-06:00",
+        "abbreviation": "EAST",
+        "tzName": "Easter Island Standard Time"
       },
       {
         "zoneName": "America/Coyhaique",
@@ -3591,9 +3591,9 @@
     "iso2": "CG",
     "phonecode": "242",
     "capital": "Brazzaville",
-    "currency": "CDF",
-    "currency_name": "Congolese Franc",
-    "currency_symbol": "FC",
+    "currency": "XAF",
+    "currency_name": "Central African CFA franc",
+    "currency_symbol": "FCFA",
     "tld": ".cg",
     "native": "République du Congo",
     "population": 6142180,
@@ -5890,17 +5890,17 @@
       },
       {
         "zoneName": "America/Nuuk",
-        "gmtOffset": -10800,
-        "gmtOffsetName": "UTC-03:00",
+        "gmtOffset": -7200,
+        "gmtOffsetName": "UTC-02:00",
         "abbreviation": "WGT",
         "tzName": "West Greenland Time"
       },
       {
         "zoneName": "America/Scoresbysund",
-        "gmtOffset": -3600,
-        "gmtOffsetName": "UTC-01:00",
-        "abbreviation": "EGT",
-        "tzName": "Eastern Greenland Time"
+        "gmtOffset": -7200,
+        "gmtOffsetName": "UTC-02:00",
+        "abbreviation": "WGT",
+        "tzName": "West Greenland Time"
       },
       {
         "zoneName": "America/Thule",
@@ -7474,10 +7474,10 @@
     "timezones": [
       {
         "zoneName": "Asia/Amman",
-        "gmtOffset": 7200,
-        "gmtOffsetName": "UTC+02:00",
-        "abbreviation": "EET",
-        "tzName": "Eastern European Time"
+        "gmtOffset": 10800,
+        "gmtOffsetName": "UTC+03:00",
+        "abbreviation": "+03",
+        "tzName": "Jordan Time"
       }
     ],
     "translations": {
@@ -7536,10 +7536,10 @@
     "timezones": [
       {
         "zoneName": "Asia/Almaty",
-        "gmtOffset": 21600,
-        "gmtOffsetName": "UTC+06:00",
-        "abbreviation": "ALMT",
-        "tzName": "Alma-Ata Time[1"
+        "gmtOffset": 18000,
+        "gmtOffsetName": "UTC+05:00",
+        "abbreviation": "KZT",
+        "tzName": "Kazakhstan Time"
       },
       {
         "zoneName": "Asia/Aqtau",
@@ -7571,10 +7571,10 @@
       },
       {
         "zoneName": "Asia/Qostanay",
-        "gmtOffset": 21600,
-        "gmtOffsetName": "UTC+06:00",
-        "abbreviation": "QYZST",
-        "tzName": "Qyzylorda Summer Time"
+        "gmtOffset": 18000,
+        "gmtOffsetName": "UTC+05:00",
+        "abbreviation": "KZT",
+        "tzName": "Kazakhstan Time"
       },
       {
         "zoneName": "Asia/Qyzylorda",
@@ -9480,10 +9480,10 @@
       },
       {
         "zoneName": "America/Chihuahua",
-        "gmtOffset": -25200,
-        "gmtOffsetName": "UTC-07:00",
-        "abbreviation": "MST",
-        "tzName": "Mountain Standard Time (North America)"
+        "gmtOffset": -21600,
+        "gmtOffsetName": "UTC-06:00",
+        "abbreviation": "CST",
+        "tzName": "Central Standard Time (North America)"
       },
       {
         "zoneName": "America/Hermosillo",
@@ -9529,10 +9529,10 @@
       },
       {
         "zoneName": "America/Ojinaga",
-        "gmtOffset": -25200,
-        "gmtOffsetName": "UTC-07:00",
-        "abbreviation": "MST",
-        "tzName": "Mountain Standard Time (North America)"
+        "gmtOffset": -21600,
+        "gmtOffsetName": "UTC-06:00",
+        "abbreviation": "CST",
+        "tzName": "Central Standard Time (North America)"
       },
       {
         "zoneName": "America/Tijuana",
@@ -10366,7 +10366,7 @@
     "currency": "USD",
     "currency_name": "United States dollar",
     "currency_symbol": "$",
-    "tld": ".an",
+    "tld": ".bq",
     "native": "Caribisch Nederland",
     "population": 26552,
     "gdp": null,
@@ -10563,15 +10563,15 @@
     "timezones": [
       {
         "zoneName": "Pacific/Auckland",
-        "gmtOffset": 46800,
-        "gmtOffsetName": "UTC+13:00",
-        "abbreviation": "NZDT",
-        "tzName": "New Zealand Daylight Time"
+        "gmtOffset": 43200,
+        "gmtOffsetName": "UTC+12:00",
+        "abbreviation": "NZST",
+        "tzName": "New Zealand Standard Time"
       },
       {
         "zoneName": "Pacific/Chatham",
-        "gmtOffset": 49500,
-        "gmtOffsetName": "UTC+13:45",
+        "gmtOffset": 45900,
+        "gmtOffsetName": "UTC+12:45",
         "abbreviation": "CHAST",
         "tzName": "Chatham Standard Time"
       }
@@ -10880,8 +10880,8 @@
     "timezones": [
       {
         "zoneName": "Pacific/Norfolk",
-        "gmtOffset": 43200,
-        "gmtOffsetName": "UTC+12:00",
+        "gmtOffset": 39600,
+        "gmtOffsetName": "UTC+11:00",
         "abbreviation": "NFT",
         "tzName": "Norfolk Time"
       }
@@ -12267,8 +12267,8 @@
       },
       {
         "zoneName": "Europe/Volgograd",
-        "gmtOffset": 14400,
-        "gmtOffsetName": "UTC+04:00",
+        "gmtOffset": 10800,
+        "gmtOffsetName": "UTC+03:00",
         "abbreviation": "MSK",
         "tzName": "Moscow Standard Time"
       }
@@ -12825,8 +12825,8 @@
     "timezones": [
       {
         "zoneName": "Pacific/Apia",
-        "gmtOffset": 50400,
-        "gmtOffsetName": "UTC+14:00",
+        "gmtOffset": 46800,
+        "gmtOffsetName": "UTC+13:00",
         "abbreviation": "WST",
         "tzName": "West Samoa Time"
       }
@@ -13755,10 +13755,10 @@
     "timezones": [
       {
         "zoneName": "Africa/Juba",
-        "gmtOffset": 10800,
-        "gmtOffsetName": "UTC+03:00",
-        "abbreviation": "EAT",
-        "tzName": "East Africa Time"
+        "gmtOffset": 7200,
+        "gmtOffsetName": "UTC+02:00",
+        "abbreviation": "CAT",
+        "tzName": "Central Africa Time"
       }
     ],
     "translations": {
@@ -14327,10 +14327,10 @@
     "timezones": [
       {
         "zoneName": "Asia/Damascus",
-        "gmtOffset": 7200,
-        "gmtOffsetName": "UTC+02:00",
-        "abbreviation": "EET",
-        "tzName": "Eastern European Time"
+        "gmtOffset": 10800,
+        "gmtOffsetName": "UTC+03:00",
+        "abbreviation": "+03",
+        "tzName": "Syria Time"
       }
     ],
     "translations": {
@@ -16637,9 +16637,9 @@
     "iso2": "CW",
     "phonecode": "599",
     "capital": "Willemstad",
-    "currency": "ANG",
-    "currency_name": "Netherlands Antillean guilder",
-    "currency_symbol": "ƒ",
+    "currency": "XCG",
+    "currency_name": "Caribbean guilder",
+    "currency_symbol": "Cg",
     "tld": ".cw",
     "native": "Curaçao",
     "population": 156115,
@@ -16696,9 +16696,9 @@
     "iso2": "SX",
     "phonecode": "1721",
     "capital": "Philipsburg",
-    "currency": "ANG",
-    "currency_name": "Netherlands Antillean guilder",
-    "currency_symbol": "ƒ",
+    "currency": "XCG",
+    "currency_name": "Caribbean guilder",
+    "currency_symbol": "Cg",
     "tld": ".sx",
     "native": "Sint Maarten",
     "population": 41349,
