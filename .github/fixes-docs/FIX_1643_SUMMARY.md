@@ -23,23 +23,24 @@ date are ignored, because a comune that changes province gets a new code.
 | Result | Records |
 |---|---:|
 | ISTAT province = the GeoNames province, not the filed one | **112** |
+| No item with exactly that name; moved after the review found the comune (Cassino d'Alberi, Puia-Villanova, Capanne-Prato-Cinquale) | **3** |
 | Held: the place spans two comuni in different provinces (Ponte a Elsa, Campoleone) | 2 |
-| Held: no ISTAT code on the item or its comune (Puia-Villanova, Capanne-Prato-Cinquale, Cassino d'Alberi) | 3 |
 
-100 of the 112 already carry a `wikiDataId`, and in all 100 it is one of the matched items, the place in the new
+100 of the first 112 already carry a `wikiDataId`, and in all 100 it is one of the matched items, the place in the new
 province; the other 12 have none. Name, point, population and Wikidata ID all describe the same place; only the
 province was wrong. Many are *frazioni* of comuni that merged or sit next to a provincial border, e.g. the
 Valsamoggia villages (Bazzano, Crespellano, Savigno…) under Modena instead of Bologna, the Aprilia villages under
 Rome instead of Latina, Salorno and Proves under Trentino instead of South Tyrol, and Bibione under Udine instead of
 Venice.
 
-Four have a place with the same name in the old province, which CSC does not otherwise hold: *Amato* (the comune in
-Catanzaro), *Casoli* (Chieti), *La Maddalena* (Sassari) and *Massa* (the provincial capital). These records are the
+Four share their name with a comune in the old province, which CSC does not otherwise hold: *Amato* (Catanzaro),
+*Casoli* (Chieti), *La Maddalena* (the island comune, in Gallura Nord-Est Sardegna since April 2025, which CSC does
+not have; Sassari before) and *Massa* (the provincial capital). These records are the
 *frazioni* in Reggio Calabria, Teramo, Capoterra (Cagliari) and Massa e Cozzile (Pistoia), by point, population and
 `wikiDataId`. The missing towns are a coverage gap, not part of this fix.
 
 ### Fix
-**112 cities** move to their province. Only `state_id` and `state_code` change; all keep `Europe/Rome`.
+**115 cities** move to their province. Only `state_id` and `state_code` change; all keep `Europe/Rome`.
 
 | Move | Records |
 |---|---:|
@@ -47,7 +48,7 @@ Catanzaro), *Casoli* (Chieti), *La Maddalena* (Sassari) and *Massa* (the provinc
 | Modena → Bologna | 5 |
 | Rome → Latina | 5 |
 | Treviso → Venice | 4 |
-| 67 other province pairs, 1–3 each | 93 |
+| 69 other province pairs, 1–3 each | 96 |
 
 | id | City | Was filed under | Now | Population | ISTAT code |
 |---|---|---|---|---:|---|
@@ -63,6 +64,7 @@ Catanzaro), *Casoli* (Chieti), *La Maddalena* (Sassari) and *Massa* (the provinc
 | 58900 | Popoli | L'Aquila (AQ) | Pescara (PE) | 5,394 | 068033 |
 | 58941 | Porto d'Adda | Bergamo (BG) | Monza and Brianza (MB) | 1,052 | 108053 |
 | 59098 | Proves - Proveis | Trentino (TN) | South Tyrol (BZ) | 288 | 021069 |
+| 59198 | Puia-Villanova | Treviso (TV) | Pordenone (PN) | 2,167 | 093034 (Prata di Pordenone) |
 | 59217 | Quarantoli | Mantua (MN) | Modena (MO) | 1,059 | 036022 |
 | 59241 | Quero | Treviso (TV) | Belluno (BL) | 1,807 | 025075 |
 | 59274 | Ramiseto | Parma (PR) | Reggio Emilia (RE) | 352 | 035046 |
@@ -116,12 +118,14 @@ Catanzaro), *Casoli* (Chieti), *La Maddalena* (Sassari) and *Massa* (the provinc
 | 136634 | Campo di Carne | Rome (RM) | Latina (LT) | 3,792 | 059001 |
 | 136653 | Campofiorenzo-California | Monza and Brianza (MB) | Lecco (LC) | 1,306 | 097016 |
 | 136663 | Campolongo Maggiore Liettoli | Padua (PD) | Venice (VE) | 3,578 | 027003 |
+| 136760 | Capanne-Prato-Cinquale | Lucca (LU) | Massa and Carrara (MS) | 8,270 | 045011 (Montignoso) |
 | 136848 | Carbonara di Po | Rovigo (RO) | Mantua (MN) | 937 | 020009 |
 | 136949 | Casa Ponte | Milan (MI) | Pavia (PV) | 193 | 018166 |
 | 136963 | Casalazzara | Rome (RM) | Latina (LT) | 1,496 | 059001 |
 | 137056 | Casei | Alessandria (AL) | Pavia (PV) | 2,162 | 018033 |
 | 137083 | Casoli | Chieti (CH) | Teramo (TE) | 1,085 | 067004 |
 | 137090 | Casorzo | Alessandria (AL) | Asti (AT) | 617 | 005020 |
+| 137113 | Cassino d'Alberi | Milan (MI) | Lodi (LO) | 1,048 | 098041 (Mulazzano) |
 | 137170 | Castel di Judica | Enna (EN) | Catania (CT) | 1,754 | 087013 |
 | 137229 | Castelletto | Modena (MO) | Bologna (BO) | 2,125 | 037061 |
 | 137339 | Castiglione | La Spezia (SP) | Genoa (GE) | 466 | 010013 |
@@ -165,7 +169,7 @@ Catanzaro), *Casoli* (Chieti), *La Maddalena* (Sassari) and *Massa* (the provinc
 | 140947 | Orentano | Lucca (LU) | Pisa (PI) | 1,676 | 050009 |
 
 ## Rollback
-Revert the commit. No `id`s change.
+Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/IT.json` — `state_id` and `state_code` on 112 records
+- `contributions/cities/IT.json` — `state_id` and `state_code` on 115 records
