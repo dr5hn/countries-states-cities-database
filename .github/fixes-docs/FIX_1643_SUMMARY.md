@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Towns filed under a neighbouring city's state
 
-**87 cities** move to the state they are in. Most were filed under the nearest large city's authority: Fife towns
+**92 cities** move to the state they are in. Most were filed under the nearest large city's authority: Fife towns
 (*Kirkcaldy*, *Dunfermline*, *Rosyth*) under Edinburgh or West Lothian, *Birkenhead* and *Wallasey* under Liverpool,
 *Penzance* and *St Ives* under the Isles of Scilly, *Ryde* under Portsmouth, *Batley* and *Dewsbury* under Wakefield,
 *Redditch* under Solihull, *Caerphilly* under Cardiff, and Moscow districts under Moscow Oblast.
@@ -172,6 +172,19 @@ same kind, now moved; it also moved one point:
 | NO | 79471 | Røyken | Buskerud | Akershus | as Hurum |
 | GB | 48296 | Ashton in Makerfield | (Wigan, above) | — | point moved from Old Boston, Haydock (St Helens) to the town centre, Q2557991's (53.487, −2.641) |
 
+### Later additions checked against the 2019 import
+Records added after the 2019 import were compared with their ten nearest 2019 records; where most of those lie in
+another state, the record's own Wikidata item (same name, within 5 km) decided. Most such records are filed
+correctly (the 2019 import simply lacks some areas, e.g. Ohio and Mureș). Five were not, and move:
+
+| Country | id | City | Was | Now | Evidence |
+|---|---|---|---|---|---|
+| IN | 147448 | Bhimtal | Uttar Pradesh | Uttarakhand | Nainital district; own Wikidata item Q795774 |
+| IN | 147692 | Bagewadi | Maharashtra | Karnataka | Belagavi district; own Wikidata item Q4841558 |
+| MX | 142385 | El Colomo | Jalisco | Nayarit | Bahía de Banderas; own Wikidata item Q28102158 |
+| PK | 143778 | Umerkot | Punjab | Sindh | Umerkot District; own Wikidata item Q2625910 |
+| UY | 153693 | Barra de Carrasco | Montevideo | Canelones | Ciudad de la Costa; own Wikidata item Q808781 |
+
 Also found: moving *Farkadona* (154229) puts it 1.1 km from record 52599 *Farkadóna* in Thessaly, the same place; it
 waits for the duplicate policy. Four other records carry these records' Wikidata IDs by copy-forward (#1641).
 
@@ -179,4 +192,4 @@ waits for the duplicate policy. Four other records carry these records' Wikidata
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/{GB,GR,MX,NO,RS,RU}.json` — `state_id` and `state_code` on 87 records; coordinates on 1
+- `contributions/cities/{GB,GR,IN,MX,NO,PK,RS,RU,UY}.json` — `state_id` and `state_code` on 92 records; coordinates on 1
