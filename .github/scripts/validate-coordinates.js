@@ -89,12 +89,13 @@ async function run() {
       // Check with buffer tolerance (several boxes for remote territories; boxes may cross 180°)
       if (!isWithinBounds(lat, lon, bounds, BUFFER_DEGREES)) {
         const prefix = `Record ${i + 1}${record.name ? ` ("${record.name}")` : ''}`;
-        const boxes = (Array.isArray(bounds) ? bounds : [bounds])
-          .map(({ minLat, maxLat, minLon, maxLon }) => `[${minLat}, ${maxLat}] x [${minLon}, ${maxLon}]`)
-          .join(' or ');
+        // Name the main box only; countries with remote territories (FR has 13 boxes) would flood the report.
+        const boxes = Array.isArray(bounds) ? bounds : [bounds];
+        const { minLat, maxLat, minLon, maxLon } = boxes[0];
+        const extra = boxes.length > 1 ? ` or ${boxes.length - 1} remote-territory box(es)` : '';
         warnings.push(
           `${filePath}: ${prefix}: coordinates (${lat}, ${lon}) fall outside ${countryCode} bounds ` +
-          `${boxes} (with ${BUFFER_DEGREES}deg tolerance)`
+          `[${minLat}, ${maxLat}] x [${minLon}, ${maxLon}]${extra} (with ${BUFFER_DEGREES}deg tolerance)`
         );
       }
     }

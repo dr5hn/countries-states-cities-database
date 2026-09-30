@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { normalizePostcodeCode, validateRecord } = require('./utils');
+const { isWithinBounds, normalizePostcodeCode, validateRecord } = require('./utils');
 
 const postcode = {
   code: 'SW1A 1AA',
@@ -25,7 +25,6 @@ test('blocks non-canonical postcode codes', () => {
   assert.match(errors[0], /expected "SW1A 1AA"/);
 });
 
-const { isWithinBounds } = require('./utils');
 
 test('bounds: a plain box, with and without the buffer', () => {
   const box = { minLat: 36.0, maxLat: 43.79, minLon: -9.3, maxLon: 4.33 };
