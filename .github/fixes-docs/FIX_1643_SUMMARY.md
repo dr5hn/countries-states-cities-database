@@ -8,8 +8,8 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## States with a wrong or missing Wikidata ID
 
-**261 states** get the right Wikidata item, found through their own ISO 3166-2 code. 187 pointed to the wrong item and 74 had
-none. Many wrong IDs were unrelated things: Icelandic municipalities pointed to The Knesset, bird and mollusc species
+**277 states** get the right Wikidata item: 261 found through their own ISO 3166-2 code, 16 through their
+municipality (below). 203 pointed to the wrong item and 74 had none. Many wrong IDs were unrelated things: Icelandic municipalities pointed to The Knesset, bird and mollusc species
 and *OK Computer*; Estonian ones to a Vuelta a España stage and a girls' college in India; São Tomé's districts to the
 Seal of North Dakota and the Lisbon Oceanarium; Ceuta to Tricerro in Italy; Melilla to George II. Others pointed to a
 related place: Spanish provinces to their autonomous community or capital city, British unitary authorities to their
@@ -34,7 +34,7 @@ Not changed:
 - **Rhône (FR-69):** the ISO-coded item is the post-2015 "departmental district"; CSC's item is kept.
 - **Bikini & Kili, Woqooyi Galbeed:** the ISO-coded items don't clearly match. 395 more codes have no Wikidata item.
 
-States by country: BD 63, IS 37, ES 32, EE 26, IT 13, MC 10, ST 7, ID 6, GB 6, LT 6, AZ 5, CD 4, IN 4, BS 3, TO 3, ME 3, CA 2, YE 2, AR 2, RO 2, MA 2, ET 2, DO 2, KE 1, RW 1, SC 1, PH 1, BE 1, KI 1, CI 1, RS 1, NZ 1, LV 1, CZ 1, TZ 1, FR 1, AF 1, AO 1, MD 1, PE 1, MK 1, TT 1.
+States by country: BD 63, EE 39, IS 37, ES 32, IT 13, MC 10, ST 7, ID 6, GB 6, LT 6, AZ 5, CD 4, IN 4, BS 3, TO 3, PR 3, ME 3, CA 2, YE 2, AR 2, RO 2, MA 2, ET 2, DO 2, KE 1, RW 1, SC 1, PH 1, BE 1, KI 1, CI 1, RS 1, NZ 1, LV 1, CZ 1, TZ 1, FR 1, AF 1, AO 1, MD 1, PE 1, MK 1, TT 1.
 
 ### After the independent review
 The review found all 256 correct or better than before (250 correct, 6 arguable) and prompted these changes:
@@ -53,8 +53,35 @@ got 5,228–5,361 codes. Still to do: about 28 Icelandic states whose ISO codes 
 unrelated IDs, and some `type` fields no longer fit (Lankaran city and district are swapped; Dorset is now a
 unitary authority).
 
+### Found by checking state points
+With the corrected IDs, each state's point was compared with its Wikidata item's point. 16 more states whose ISO
+codes have no Wikidata item turned out to carry an unrelated ID, placing them thousands of km away: three Puerto
+Rico municipalities (Florida carried the US state, Río Grande a Colorado county, San Sebastián the Spanish city)
+now carry the municipality items that #1644 gives their cities, and 13 Estonian municipalities (items in Rome,
+Brittany, Madrid and elsewhere) carry the municipality item with their EHAK code (P1140), the "City" item for the
+urban municipalities.
+
+| Country | ISO 3166-2 | State | Was | Now |
+|---|---|---|---|---|
+| EE | EE-184 | Haapsalu | Q193724 | Q43281004 (Haapsalu City) |
+| EE | EE-296 | Keila | Q999376 | Q23890555 (Keila City) |
+| EE | EE-424 | Loksa | Q749031 | Q23890528 (Loksa City) |
+| EE | EE-503 | Märjamaa | Q2627820 | Q44848112 (Märjamaa Rural Municipality) |
+| EE | EE-528 | Noo | Q2627825 | Q1020142 (Nõo Rural Municipality) |
+| EE | EE-567 | Paide | Q193797 | Q44792192 (Paide City) |
+| EE | EE-661 | Rakvere | Q193808 | Q44857261 (Rakvere Rural Municipality) |
+| EE | EE-663 | Rakvere | Q193808 | Q23890468 (Rakvere City) |
+| EE | EE-732 | Setomaa | Q15732448 | Q42900601 (Setomaa Rural Municipality) |
+| EE | EE-855 | Valga | Q2627988 | Q42846054 (Valga Rural Municipality) |
+| EE | EE-897 | Viljandi | Q193832 | Q23890459 (Viljandi City) |
+| EE | EE-899 | Viljandi | Q193832 | Q15100022 (Viljandi Rural Municipality) |
+| EE | EE-907 | Vormsi | Q665175 | Q426207 (Vormsi Rural Municipality) |
+| PR | PR-054 | Florida | Q812 | Q2271950 (Florida, Puerto Rico) |
+| PR | PR-119 | Río Grande | Q160636 | Q979996 (Río Grande, Puerto Rico) |
+| PR | PR-131 | San Sebastián | Q10313 | Q2413209 (San Sebastián, Puerto Rico) |
+
 ### Fix
-Only `wikiDataId` changes, on 261 states, plus `iso2`/`iso3166_2` on the two Estonian states.
+Only `wikiDataId` changes, on 277 states, plus `iso2`/`iso3166_2` on the two Estonian states.
 
 | Country | ISO 3166-2 | State | Was | Now |
 |---|---|---|---|---|
@@ -324,4 +351,4 @@ Only `wikiDataId` changes, on 261 states, plus `iso2`/`iso3166_2` on the two Est
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/states/states.json` — `wikiDataId` on 261 states; `iso2`/`iso3166_2` on 2
+- `contributions/states/states.json` — `wikiDataId` on 277 states; `iso2`/`iso3166_2` on 2
