@@ -6,7 +6,7 @@
 
 Each finding is verified against an independent source before any change. Fixes land in small PRs, one section each.
 
-## Cities filed under the wrong state: 13 more countries
+## Cities filed under the wrong state: 12 more countries
 
 ### How they were found
 The 2019 import copied each city's population from GeoNames, so a record's source entry is the GeoNames place
@@ -22,14 +22,15 @@ the item with the record's name within 2 km of its point, followed up its "locat
 
 | Result | Records |
 |---|---:|
-| Wikidata agrees with GeoNames; no same-named place in the filed state; populations compatible | **20** |
+| Wikidata agrees with GeoNames; no same-named place in the filed state; populations compatible | **19** |
+| Wikidata agrees, but its region is not in CSC (Dīla, below): held | 1 |
 | Held by a guard, moved after a hand check (Horn, Ngawi) | **2** |
 | Held by a guard (a same-named place in the filed state, or a population mismatch) | 8 |
 | Wikidata says the filed state is right, e.g. Yanam (Puducherry, inside Andhra Pradesh) | 15 |
 | No same-named item nearby, or contained in no or several CSC states | 41 |
 
 ### Fix
-**22 cities** move. Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
+**21 cities** move. Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
 
 | Country | id | City | Was filed under | Now | Population | Matched Wikidata items | Note |
 |---|---|---|---|---|---:|---|---|
@@ -39,7 +40,6 @@ the item with the record's name within 2 km of its point, followed up its "locat
 | DZ | 31357 | Ighram | Tizi Ouzou (15) | Béjaïa (06) | 15,030 | Q2215840 |  |
 | DZ | 31372 | Makouda | Boumerdès (35) | Tizi Ouzou (15) | 34,515 | Q2374784, Q3280947 |  |
 | DZ | 31456 | Tizi Gheniff | Boumerdès (35) | Tizi Ouzou (15) | 27,974 | Q3019923, Q3529984 |  |
-| ET | 38625 | Dīla | Sidama (SI) | Southern Nations, Nationalities, and Peoples (SN) | 158,800 | Q905423 |  |
 | GB | 49213 | Cushendall | Mid and East Antrim (MEA) | Causeway Coast and Glens (CCG) | 1,226 | Q104359932, Q2580652 | Wikidata resolves only to Northern Ireland (the district record carries another item); GeoNames and the 2015 district map say Causeway Coast and Glens |
 | ID | 56886 | Ngawi | Jawa Barat (JB) | Jawa Timur (JI) | 22,412 | Q10773354, Q65299225 | Held by the guard for a population mismatch: the matched Wikidata items are Ngawi district (kecamatan, about 85,800 people); the record is its seat town, in East Java |
 | IN | 132453 | Khailar | Madhya Pradesh (MP) | Uttar Pradesh (UP) | 13,334 | Q2119908 |  |
@@ -62,14 +62,15 @@ The "Matched Wikidata items" column lists the items found at the record's point 
 ### Also found (not changed here)
 - **Khailar** (132453) now duplicates record 147498 in Uttar Pradesh (1.0 km apart, same population and Wikidata
   ID). It waits for the duplicate-merge policy in #1643.
-- **Dīla** (38625): Southern Nations, Nationalities, and Peoples Region was dissolved in 2023; Dilla is now in South
-  Ethiopia Regional State, which CSC does not have, so SNNPR is its nearest CSC state. The record's point is about
-  1 km north-east of the town and falls just inside Sidama.
-- **Wrong `wikiDataId`** on four moved records (the copy-forward problem of #1641): Fallingbrook → Q1744221 (Falher,
-  Alberta), Dīla → Q3033674 (Dodola), Pantai Cenang → Q1923195 (Paka, Terengganu), Smyga → Q219595 (Smila).
+- **Dīla** (38625) is not moved: Southern Nations, Nationalities, and Peoples Region was dissolved in 2023, and
+  Dilla (Gedeo Zone) is now in South Ethiopia Regional State, which CSC does not have yet. The record's point is
+  about 1 km north-east of the town and falls just inside Sidama, so it needs Q905423's point (6.4125, 38.3117) too.
+  Both wait for South Ethiopia and Central Ethiopia to be added as states.
+- **Wrong `wikiDataId`** (the copy-forward problem of #1641) on three moved records, Fallingbrook → Q1744221 (Falher,
+  Alberta), Pantai Cenang → Q1923195 (Paka, Terengganu) and Smyga → Q219595 (Smila), and on Dīla → Q3033674 (Dodola).
 
 ## Rollback
 Revert the commit. No `id`s change.
 
 ## Files Changed
-- `contributions/cities/{CA,CH,DZ,ET,GB,ID,IN,KZ,MY,NO,RS,RU,UA}.json` — `state_id` and `state_code` on 22 records
+- `contributions/cities/{CA,CH,DZ,GB,ID,IN,KZ,MY,NO,RS,RU,UA}.json` — `state_id` and `state_code` on 21 records
