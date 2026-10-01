@@ -21,7 +21,7 @@ population is within 1.5× of the matched commune's and not of the namesake's. *
 
 | Result | Records |
 |---|---:|
-| Move (namesake ruled out by population in 20 of them) | **30** |
+| Move (namesake ruled out by population in 22 of them) | **30** |
 | Held: Wikidata does not lead to a single department (communes merged into new ones, mostly in Maine-et-Loire) | 12 |
 | Held: population close to both the matched commune and the namesake (Chirac, Coise, Courteilles) | 3 |
 
@@ -47,7 +47,7 @@ population is within 1.5× of the matched commune's and not of the namesake's. *
 | 44066 | Mezel | Alpes-de-Haute-Provence (04) | Puy-de-Dôme (63) | Q608101 | yes |
 | 44244 | Montgaillard | Aude (11) | Ariège (09) | Q925331 | yes |
 | 44481 | Méréville | Meurthe-et-Moselle (54) | Essonne (91) | Q123498082, Q257045 | yes |
-| 44853 | Parigny | Loire (42) | Manche (50) | Q1062309, Q49360014 |  |
+| 44853 | Parigny | Loire (42) | Manche (50) | Q1062309, Q49360014 | yes |
 | 44955 | Pierrefitte-sur-Seine | Val-d'Oise (95) | Seine-Saint-Denis (93) | Q1543301, Q253939 |  |
 | 45552 | Rocquencourt | Oise (60) | Yvelines (78) | Q1418760 | yes |
 | 45571 | Romagny | Haut-Rhin (68) | Manche (50) | Q49364067, Q771946 | yes |
