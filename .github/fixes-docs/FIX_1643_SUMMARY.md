@@ -5236,3 +5236,29 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — `timezone` on 95 states
 - `contributions/cities/*.json` (13 countries) — `timezone` on 1,535 cities
+
+## Mexican city types: municipality vs. seat town
+
+### Problem
+`MX.json` mixed municipality records (the territory) and seat towns under the same types (see #1634/#1650).
+
+### Fix
+Convention (also in TYPE_FIELD.md, whose settlement filters now leave out MX `municipality`): `adm1` = state-capital
+town, `adm2` = municipal-seat town (GeoNames PPLA2), `municipality` = the municipal territory (GeoNames ADM2),
+`city` = any other locality. `type` changes on 443 records: 351 become `municipality` (245 from `city`, 105 from
+`adm2`, 1 from `section`), being on their municipality's GeoNames ADM2 point, nearer to it than to any same-named
+town, with a population that is not a town's of that municipality; 92 seat towns become `adm2` (91 from `city`,
+1 from `municipality`).
+
+Left alone: records whose population is exactly a town's (the 2019 import copied GeoNames populations, so this
+identifies the source entry, wherever the town lies in the municipality): 88 seat towns (56 already `adm2`, 32
+made `adm2`) and 26 plain towns; and 8 whose own
+Wikidata item is the seat town while P1376 names a separate municipality. Also unchanged: 141 `adm2` records whose
+source entry is a plain town (PPL); 12 are confirmed seats, 129 need an INEGI seat check.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/MX.json` — `type` on 443 records
+- `TYPE_FIELD.md` — the Mexican convention and the filter snippets
