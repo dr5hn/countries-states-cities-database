@@ -9,8 +9,8 @@ Each finding is verified against an independent source before any change. Fixes 
 ## Puerto Rico: municipalities geocoded to same-named places abroad
 
 ### Problem
-Ten records of `contributions/cities/PR.json` (the 2022 batch, `id` 153xxx) carried the coordinates **and** the
-`wikiDataId` of a same-named place elsewhere — they had been geocoded by name without a country filter:
+Ten records of `contributions/cities/PR.json` (the 2022 batch, `id` 153xxx) carried the coordinates (nine of them also the
+`wikiDataId`) of a same-named place elsewhere — they had been geocoded by name without a country filter:
 
 | id | Record | Was at | Old `wikiDataId` |
 |---|---|---|---|
@@ -54,4 +54,4 @@ already `America/Puerto_Rico`.
 Revert the commit. No `id`s change.
 
 ## Files Changed
-- `contributions/cities/PR.json` — coordinates and `wikiDataId` on 10 records, native name on 1
+- `contributions/cities/PR.json` — coordinates on 10 records, `wikiDataId` on 9, native name on 1
