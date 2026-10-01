@@ -8,8 +8,9 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## States with a wrong or missing Wikidata ID
 
-**277 states** get the right Wikidata item: 261 found through their own ISO 3166-2 code, 16 through their
-municipality (below). 203 pointed to the wrong item and 74 had none. Many wrong IDs were unrelated things: Icelandic municipalities pointed to The Knesset, bird and mollusc species
+**277 states** get a corrected `wikiDataId`: 276 the right Wikidata item (252 whose item carries the state's own
+ISO 3166-2 code, P300, and 24 matched another way: Estonian, Puerto Rico and Icelandic municipality items and the
+Chatham Islands Territory) and one wrong ID removed (Port-Hercule, below). 203 pointed to the wrong item and 74 had none. Many wrong IDs were unrelated things: Icelandic municipalities pointed to The Knesset, bird and mollusc species
 and *OK Computer*; Estonian ones to a Vuelta a España stage and a girls' college in India; São Tomé's districts to the
 Seal of North Dakota and the Lisbon Oceanarium; Ceuta to Tricerro in Italy; Melilla to George II. Others pointed to a
 related place: Spanish provinces to their autonomous community or capital city, British unitary authorities to their
@@ -82,6 +83,12 @@ urban municipalities.
 
 ### Fix
 Only `wikiDataId` changes, on 277 states, plus `iso2`/`iso3166_2` on the two Estonian states.
+
+Scope notes from the review (not changed): EHAK codes are matched as Wikidata records them, which for Märjamaa
+(0503, now 0502) and Valga (0855, now 0857) are the pre-reform codes; Jõhvi's item is the 2005–2025 municipality
+(its successor is Q136536093); Islas Baleares (ES-PM) carries the historical province item, which matches its ISO
+code, not the autonomous community (ES-IB); Saint-Roman's item is the former quarter, replaced by La Rousse in 2012.
+The ISO codes themselves are unchanged.
 
 | Country | ISO 3166-2 | State | Was | Now |
 |---|---|---|---|---|
@@ -181,7 +188,7 @@ Only `wikiDataId` changes, on 277 states, plus `iso2`/`iso3166_2` on the two Est
 | EE | EE-247 | Jõgeva | Q2627707 (10617 Takumi) | Q44624256 (Jõgeva Rural Municipality) |
 | EE | EE-251 | Jõhvi | Q2627709 (Noordstraat) | Q1640282 (Jõhvi Rural Municipality) |
 | EE | EE-255 | Järva | Q15732430 (Gokhale Memorial Girls' College) | Q42808650 (Järva Rural Municipality) |
-| EE | EE-321 | Kohtla-Järve | Q193761 | Q201391 (Kohtla-Järve) |
+| EE | EE-321 | Kohtla-Järve | Q193761 | Q23890605 (Kohtla-Järve City, urban municipality; EHAK 0321) |
 | EE | EE-430 | Lääneranna | Q15732433 (Claudio Pätz) | Q31273628 (Lääneranna Rural Municipality) |
 | EE | EE-431 | Lääne-Harju | Q15732432 (Anavra, Karditsa) | Q42309166 (Lääne-Harju Rural Municipality) |
 | EE | EE-441 | Lääne-Nigula | Q2627784 (1968 Red Square demonstration) | Q43281154 (Lääne-Nigula Rural Municipality) |
@@ -193,7 +200,7 @@ Only `wikiDataId` changes, on 277 states, plus `iso2`/`iso3166_2` on the two Est
 | EE | EE-618 | Poltsamaa | Q2627867 (Nokia 6210) | Q44854656 (Põltsamaa Rural Municipality) |
 | EE | EE-638 | Põhja-Pärnu | Q2627856 | Q42329911 (Põhja-Pärnumaa Rural Municipality) |
 | EE | EE-698 | Rõuge | Q2627908 | Q44511803 (Rõuge Rural Municipality) |
-| EE | EE-735 | Sillamäe | Q193814 (Hīnayāna) | Q207748 (Sillamäe) |
+| EE | EE-735 | Sillamäe | Q193814 (Hīnayāna) | Q23890602 (Sillamäe City, urban municipality) |
 | EE | EE-809 | Tori | Q2627966 (Juris Kalniņš) | Q44492102 (Tori Rural Municipality) |
 | EE | EE-834 | Türi | Q2627979 (Shaktipat) | Q44818587 (Türi Rural Municipality) |
 | EE | EE-928 | Väike-Maarja | Q2628018 (Phaisurellops rugifrons) | Q1020183 (Väike-Maarja Rural Municipality) |
@@ -313,7 +320,7 @@ Only `wikiDataId` changes, on 277 states, plus `iso2`/`iso3166_2` on the two Est
 | MC | MC-MA | Malbousquet | — | Q13378486 (Malbousquet) |
 | MC | MC-MO | Monaco-Ville | Q55103 (Sant'Angelo dei Lombardi) | Q55115 (Monaco-Ville) |
 | MC | MC-MU | Moulins | — | Q13378485 (Moulins) |
-| MC | MC-PH | Port-Hercule | Q1416547 (financial plan) | Q7230673 (Port Hercules) |
+| MC | MC-PH | Port-Hercule | Q1416547 (financial plan) | — (removed; Q7230673 is the port, not the quarter, and no quarter item exists) |
 | MC | MC-SD | Sainte-Dévote | — | Q18635826 (Ravin de Sainte-Dévote) |
 | MC | MC-SO | La Source | — | Q13378482 (La Source) |
 | MC | MC-SP | Spélugues | — | Q13378480 (Spélugues) |
