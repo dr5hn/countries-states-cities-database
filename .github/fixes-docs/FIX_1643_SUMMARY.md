@@ -53,7 +53,8 @@ Seven moved records share a name with a place in the province they were filed un
 population are the other place's:
 - *Corrales*, *La Cuesta* (León) and *San Isidro* (Alicante): 171–1,840 km from the namesake.
 - *Lobios*: 75 km from the Ourense municipality. The record is the parish in Sober, Lugo, so CSC keeps no record
-  for the Ourense municipality (a coverage gap).
+  for the Ourense municipality (a coverage gap). Its stored population, 2,512, is GeoNames' figure, not the
+  parish's (72 in 2019), so the point is the evidence here, not the population.
 - *Fonfría*: population 35, at the Teruel municipality (0.0 km), not the Zamora one.
 - *La Seca*: at the Valladolid municipality (0.1 km), not the place in León.
 - *El Grao*: Castellón's port district, not Valencia's.
@@ -68,7 +69,7 @@ Only `state_id` and `state_code` change; every record's `timezone` already fits 
 | Valencia → Castellón | 21 |
 | Las Palmas → Santa Cruz de Tenerife | 17 |
 | Huesca → Zaragoza | 8 |
-| 10 other pairs (Huesca → Teruel, León → Ávila (5), León → Segovia, León → Zamora, Zamora → Teruel, León → Valladolid, Ourense → Lugo, León → Palencia, Alicante → Santa Cruz de Tenerife, León → Burgos) | 19 |
+| 10 other pairs (Huesca → Teruel, León → Ávila (6), León → Segovia, León → Zamora, Zamora → Teruel, León → Valladolid, Ourense → Lugo, León → Palencia, Alicante → Santa Cruz de Tenerife, León → Burgos) | 19 |
 
 The municipality column names the INE municipality the record lies in (its first two digits are the province).
 Check 1 = population fingerprint, 2 = the record's point.
@@ -170,7 +171,7 @@ Check 1 = population fingerprint, 2 = the record's point.
 - **Duplicates.** At least 35 of the moved records (same province, within 1.5 km, similar name) now sit next to a
   near-identical record from a later import (ids 152xxx), for example *Elche* and *Elche/Elx*, or *Orcheta* and *Orxeta*. They wait for the
   duplicate-merge policy in #1643.
-- **Wrong `wikiDataId`.** 24 of the 88 records carry a Wikidata ID of a place in another province, e.g. *Adzaneta*
+- **Wrong `wikiDataId`.** 24 of the 88 records of the first pass carry a Wikidata ID of a place in another province, e.g. *Adzaneta*
   → Q576753 (Aduna, Gipuzkoa), *Villajoyosa* → Q1918587. This is the copy-forward problem of #1641.
 - **Province Wikidata IDs.** The eight wrong province IDs above, and similar ones in other countries, are left for a
   separate fix of `states.json`.
