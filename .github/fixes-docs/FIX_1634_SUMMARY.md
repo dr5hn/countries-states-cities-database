@@ -32,8 +32,9 @@ Every change is checked against Wikidata individually. Nothing is inferred from 
 
 ### What kind of place is each record?
 
-`MX.json`'s `type` field is unreliable: **1,580 records** say the opposite of their source. The 2019 import
-came from GeoNames, so each record is matched to its GeoNames entry — an entry within 250 m whose name or
+`MX.json`'s `type` field cannot tell a town from its municipality: `adm2` marks a municipality's seat town
+(GeoNames PPLA2) but also some municipalities themselves, and 310 municipality entries are typed `city`. The 2019
+import came from GeoNames, so each record is matched to its GeoNames entry — an entry within 250 m whose name or
 alternate name is the record's name first (GeoNames sometimes moves a point slightly, and lists a seat town
 such as "San Miguel Ahuehuetitlán" with the short name "Ahuehuetitlán"), otherwise the only kind of entry
 within 25 m (ignoring neighbourhood, historical and abandoned entries) — and takes its kind from it:
@@ -161,9 +162,13 @@ as duplicate records (2 pairs).
 
 ## Found along the way
 
-**Wrong `type` values (1,580 records).** GeoNames says 1,264 records typed `adm2` are towns and 316 typed
-`city` or `section` are municipalities. The IDs here follow the real kind; the `type` field itself should be
-corrected separately.
+**`type` values that break the convention.** In CSC, `adm2` marks a municipality's seat town (GeoNames PPLA2,
+1,123 records), `adm1` a state capital, and `municipality` the municipal territory itself (the convention settled
+in #1643). Misfits: 496 records that are the municipality itself are typed `city` (310) or `adm2` (186); 4 more are
+already `municipality`. 59 seat towns are typed `city`. 141 records typed `adm2` match a plain town (GeoNames PPL),
+but a PPL entry does not prove a town is not a seat, so they need a seat check (INEGI) first. An earlier version of
+this summary counted 1,580 wrong types by reading `adm2` as "municipality"; that misread the convention. The IDs
+here follow the real kind; the `type` field itself is not changed here (see #1643).
 
 **Duplicate records (15 pairs).** Both records of each pair describe the same place and hold the same ID;
 they should be merged separately.
