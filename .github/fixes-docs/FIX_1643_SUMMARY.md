@@ -1919,8 +1919,11 @@ posts no longer use; Samoa with American Samoa's code; Chad with Turks and Caico
 
 ### Fix
 Formats and regexes from the UPU addressing sheets and national postal sources; regexes are anchored whole-string
-patterns, and accepted alternatives are listed in the format with `|`. North Korea, the UAE, Hong Kong, Macau and
-Chad have no national postcode scheme and get `null`. Panama's 2026 geocodes (e.g. A3AXE-PLZ29) and older office
+patterns. `postal_code_format` is a display mask (`#` a digit, `@` a letter, or any letter or digit for Ireland and
+Panama) listing the main forms with `|`; the regex also accepts compatible variants (Greek codes without the space,
+Cuban and Salvadoran codes without `CP`, Latvian and Lithuanian codes without the country prefix). The UAE, Hong
+Kong, Macau and Chad have no national postcode scheme, and none is substantiated for North Korea; all five get
+`null`. Panama's 2026 geocodes (e.g. A3AXE-PLZ29) and older office
 codes are both accepted; Vietnam accepts its current five digits and the six-digit legacy codes still stored.
 
 ### Verification
