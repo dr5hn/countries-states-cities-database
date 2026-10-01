@@ -26,7 +26,8 @@ How a record is matched
    whose population is within a factor of two of the record's when both are known.
 4. Otherwise blank: a missing ID is better than one pointing at another place.
 5. ``REVIEWED``: a few records checked by hand, where the right item cannot be reached mechanically
-   (it has no coordinates, or carries a different name form).
+   (it has no coordinates, or carries a different name form). A reviewed record outside the shared-QID
+   groups (its wrong ID was not copied forward, but review found it) joins the plan with its reviewed ID.
 
 A QID then on several records is either one place entered twice (all within ``AROUND_KM``; reported
 for merging) or a conflict (the group record is blanked).
@@ -39,7 +40,10 @@ Usage
 Wikidata lookups are cached in ``$CSC_CACHE_DIR`` (default: ``<tmp>/csc-copyforward-fr``), so a rerun
 is fast and an interrupted run resumes; results reflect Wikidata as of the run (delete the cache to
 refresh). Idempotent: once no shared-QID groups remain it changes nothing, and leaves FR.json and the
-report untouched. Only the ``wikiDataId`` field is written; the file keeps its formatting.
+report untouched. Only the ``wikiDataId`` field is written; the file keeps its formatting. If FR.json
+changes in any way while the lookups run, nothing is written. Files are replaced atomically.
+
+Test (no network): ``python3 -m unittest bin/scripts/fixes/test_france_fix_copyforward_wikidataids.py``
 """
 import argparse
 import http.client
@@ -47,6 +51,7 @@ import json
 import math
 import os
 import re
+import stat
 import sys
 import tempfile
 import time
@@ -82,6 +87,15 @@ REVIEWED = {
     44400: ('Q3233960', 'quartier Les Mourets, Marseille 13e, 0.9 km from the record'),
     39990: ('Q49346076', 'the settlement item at the record\'s point (3 m); the commune Biéville-Beuville (Q317610) '
                          'is record 40041\'s ID and its link to this locality is only an alias'),
+    # Outside the shared-QID groups (found in review): the stored ID is another place.
+    46134: ('Q3462652', 'quartier Saint-Julien, Marseille 12e, 0.5 km from the record, population 10,068 vs 9,939 '
+                        '(was Q765366, a commune in Côtes-d\'Armor 857 km away; filed under department 83 in error)'),
+    44032: ('Q1144439', 'commune Messac, INSEE 17231 = the record\'s department 17, population 104 vs 104 (was '
+                        'Q35728287, the Ille-et-Vilaine settlement at the record\'s point; the point is wrong)'),
+    43005: ('Q24695', 'commune Landes, INSEE 17202 = the record\'s department 17, population 575 vs 575 (was Q12563, '
+                      'the department of Landes; the record\'s point is in that department and is wrong)'),
+    156001: ('Q28464428', 'the current commune Villegusien-le-Lac (2016-), INSEE 52529, population 993 vs 993 (was '
+                          'Q1331384, the commune dissolved in 2015, now a commune déléguée)'),
 }
 
 
@@ -156,9 +170,24 @@ def load_cache(name):
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def write_atomic(path, text):
+    """Write text to path through a sibling temp file and os.replace: an interrupted run never leaves a
+    half-written file. An existing file keeps its permissions."""
+    fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=f'.{path.name}.', suffix='.tmp')
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as fh:
+            fh.write(text)
+        if path.exists():
+            os.chmod(tmp, stat.S_IMODE(path.stat().st_mode))
+        os.replace(tmp, path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
+
+
 def save_cache(name, value):
     """Write a JSON cache file to CACHE."""
-    (CACHE / name).write_text(json.dumps(value, ensure_ascii=False))
+    write_atomic(CACHE / name, json.dumps(value, ensure_ascii=False))
 
 
 def insee_items():
@@ -292,7 +321,8 @@ def name_forms(rec):
 
 
 def build_plan(recs, items):
-    """Return (plan entries for every record in a shared-QID group, duplicate pairs, conflicts)."""
+    """Return (plan entries for every record in a shared-QID group and every REVIEWED record, duplicate
+    pairs, conflicts)."""
     by_name = defaultdict(set)
     for q, it in items.items():
         for code in it['insee']:
@@ -393,6 +423,11 @@ def build_plan(recs, items):
         if n % 50 == 0:
             log('INFO', f'nearby-place lookups {n}/{len(pending)}')
 
+    # A reviewed record outside the groups joins the plan (its wrong ID was found in review, not copied forward).
+    grouped = {r['id'] for r in in_group}
+    plan += [{'id': r['id'], 'name': r['name'], 'state': r['state_code'], 'type': r.get('type'),
+              'old': r.get('wikiDataId'), 'outside_group': True}
+             for r in recs if r['id'] in REVIEWED and r['id'] not in grouped]
     for p in plan:
         if p['id'] in REVIEWED:
             q, why = REVIEWED[p['id']]
@@ -401,11 +436,12 @@ def build_plan(recs, items):
     for p in plan:
         if p['new']:
             by_q[p['new']].append(p)
-    single = {q for q, v in groups.items() if len(v) == 1}
+    planned = {p['id'] for p in plan}
     rec_by_id = {r['id']: r for r in recs}
     dups, conflicts = [], []
     for q, ps in by_q.items():
-        holders = [rec_by_id[p['id']] for p in ps] + (groups[q] if q in single else [])
+        others = [r for r in groups.get(q, []) if r['id'] not in planned]  # holders the plan leaves alone
+        holders = [rec_by_id[p['id']] for p in ps] + others
         if len(holders) < 2:
             continue
         pos = [(float(h['latitude']), float(h['longitude'])) for h in holders]
@@ -414,9 +450,15 @@ def build_plan(recs, items):
             continue
         conflicts.append({'qid': q, 'records': [[h['id'], h['name'], h['state_code']] for h in holders]})
         ordered = sorted(ps, key=lambda p: p['km'] if p['km'] is not None else 9e9)
-        for p in ordered[0 if q in single else 1:]:
+        for p in ordered[0 if others else 1:]:
             p.update(new=None, km=None, how=f"conflict: {q} also matched {[h['id'] for h in holders if h['id'] != p['id']]}")
     return plan, dups, conflicts
+
+
+def snapshot(recs):
+    """Each record's id and matching inputs, in file order. The plan reads every record (a QID's other
+    holders decide conflicts), so any added, removed, reordered or edited record changes the snapshot."""
+    return [tuple(r.get(k) for k in ('id',) + MATCH_FIELDS) for r in recs]
 
 
 def main():
@@ -426,6 +468,10 @@ def main():
     args = ap.parse_args()
     if not FR_JSON.is_file() or not os.access(FR_JSON, os.R_OK | (0 if args.dry_run else os.W_OK)):
         sys.exit(f'[ERROR] {FR_JSON} is missing or not {"readable" if args.dry_run else "writable"}; run from a repo checkout.')
+    # Files are replaced through a temp file beside them, so their directories must be writable.
+    for d in {REPORT.parent} | (set() if args.dry_run else {FR_JSON.parent}):
+        if not os.access(d, os.W_OK | os.X_OK):
+            sys.exit(f'[ERROR] {d} is not writable; check its permissions and rerun.')
     CACHE.mkdir(parents=True, exist_ok=True)
     text = FR_JSON.read_text(encoding='utf-8')
     recs = json.loads(text)
@@ -440,32 +486,33 @@ def main():
         log('INFO', 'no shared-QID groups left to change: FR.json and the report are left as they are')
         return
 
-    fresh_text = fresh = by_id = None
+    fresh_text = fresh = None
     if not args.dry_run:
-        # Re-read: the lookups take minutes, and the file may have been edited meanwhile. Any change to a
-        # planned record's matching inputs (not only its wikiDataId) makes the plan stale.
+        # Re-read: the lookups take minutes, and the file may have been edited meanwhile. Conflict
+        # resolution read records outside the plan too, so a change to any record makes the plan stale.
         fresh_text = FR_JSON.read_text(encoding='utf-8')
         fresh = json.loads(fresh_text)
-        by_id = {r['id']: r for r in fresh}
-        planned = {r['id']: r for r in recs}
-        stale = [p['id'] for p in plan if p['id'] not in by_id
-                 or any(by_id[p['id']].get(k) != planned[p['id']].get(k) for k in MATCH_FIELDS)]
-        if stale:
-            sys.exit(f'[ERROR] {len(stale)} records changed while planning (first: {stale[:5]}); '
-                     'FR.json and the report are unchanged. Rerun.')
-    REPORT.write_text(json.dumps({
-        'summary': {'records_in_groups': len(plan), 'changed': len(changes), 'how': dict(how)},
+        before, after = snapshot(recs), snapshot(fresh)
+        if after != before:
+            changed = sorted({t[0] for t in set(before) ^ set(after)}, key=str)
+            sys.exit(f'[ERROR] FR.json changed while planning ({len(changed)} records added, removed or edited, '
+                     f'first: {changed[:5]}; or records reordered); FR.json and the report are unchanged. Rerun.')
+    outside = sum(1 for p in plan if p.get('outside_group'))
+    write_atomic(REPORT, json.dumps({
+        'summary': {'records_in_groups': len(plan) - outside, 'reviewed_outside_groups': outside,
+                    'changed': len(changes), 'how': dict(how)},
         'blank': [{k: p.get(k) for k in ('id', 'name', 'state', 'type', 'old', 'how', 'insee_reject') if p.get(k) is not None}
                   for p in plan if not p['new']],
         'duplicate_places': dups, 'conflicts': conflicts,
-    }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    }, ensure_ascii=False, indent=2) + '\n')
     log('INFO', f'report written to {REPORT.relative_to(REPO)}')
     if args.dry_run:
         log('INFO', 'dry run: FR.json not written')
         return
+    by_id = {r['id']: r for r in fresh}
     for p in changes:
         by_id[p['id']]['wikiDataId'] = p['new']
-    FR_JSON.write_text(json.dumps(fresh, ensure_ascii=False, indent=2) + ('\n' if fresh_text.endswith('\n') else ''), encoding='utf-8')
+    write_atomic(FR_JSON, json.dumps(fresh, ensure_ascii=False, indent=2) + ('\n' if fresh_text.endswith('\n') else ''))
     log('INFO', f'FR.json: wikiDataId updated on {len(changes)} records')
 
 
