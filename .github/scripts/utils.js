@@ -278,7 +278,8 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
  * Is a coordinate inside a country's bounds (with a buffer in degrees)?
  * `bounds` is one box {minLat, maxLat, minLon, maxLon} or an array of boxes (a country with remote
  * territories, e.g. the US with Hawaii). A box whose minLon is greater than its maxLon crosses the
- * 180° meridian (e.g. Russia, Fiji).
+ * 180° meridian (e.g. Russia, Fiji). The buffer wraps across 180° too, and a buffered box 360° or
+ * more wide covers every longitude.
  * @param {number} lat - Latitude
  * @param {number} lon - Longitude
  * @param {object|object[]} bounds - Box or boxes
@@ -289,9 +290,10 @@ function isWithinBounds(lat, lon, bounds, buffer = 0) {
   const boxes = Array.isArray(bounds) ? bounds : [bounds];
   return boxes.some(({ minLat, maxLat, minLon, maxLon }) => {
     if (lat < minLat - buffer || lat > maxLat + buffer) return false;
-    return minLon <= maxLon
-      ? lon >= minLon - buffer && lon <= maxLon + buffer
-      : lon >= minLon - buffer || lon <= maxLon + buffer;
+    // Width of the buffered box, measured east from its buffered west edge; >= 360 covers every longitude.
+    const width = (minLon <= maxLon ? maxLon - minLon : maxLon - minLon + 360) + 2 * buffer;
+    const east = (((lon - (minLon - buffer)) % 360) + 360) % 360; // degrees east of that edge, 0..360
+    return east <= width;
   });
 }
 

@@ -249,8 +249,10 @@ territories, an array of boxes (the first is the main territory):
 ]
 ```
 A box whose `minLon` is greater than its `maxLon` crosses the 180° meridian (Russia, Fiji): longitudes from
-`minLon` east to 180 and from -180 east to `maxLon` are inside it. The check is `isWithinBounds()` in
-`.github/scripts/utils.js`, with unit tests in `utils.test.js`.
+`minLon` east to 180 and from -180 east to `maxLon` are inside it; the 0.45° tolerance wraps across 180° too.
+Keep remote-territory boxes tight, one per island group: a single box spanning the ocean between territories
+also admits the neighbouring countries (one box over all of France's Indian Ocean islands took in Madagascar).
+The check is `isWithinBounds()` in `.github/scripts/utils.js`, with unit tests in `utils.test.js`.
 
 ### Modifying Slack Notifications
 

@@ -89,7 +89,7 @@ async function run() {
       // Check with buffer tolerance (several boxes for remote territories; boxes may cross 180°)
       if (!isWithinBounds(lat, lon, bounds, BUFFER_DEGREES)) {
         const prefix = `Record ${i + 1}${record.name ? ` ("${record.name}")` : ''}`;
-        // Name the main box only; countries with remote territories (FR has 13 boxes) would flood the report.
+        // Name the main box only; countries with remote territories (FR has 20 boxes) would flood the report.
         const boxes = Array.isArray(bounds) ? bounds : [bounds];
         const { minLat, maxLat, minLon, maxLon } = boxes[0];
         const extra = boxes.length > 1 ? ` or ${boxes.length - 1} remote-territory box(es)` : '';
