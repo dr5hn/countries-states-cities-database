@@ -70,7 +70,7 @@ The review confirmed all 32 values above and pointed to 2026 changes that the fi
 
 | Country | Zone | gmtOffset was | Now | Change |
 |---|---|---:|---:|---|
-| MA, EH | Africa/Casablanca, Africa/El_Aaiun (3 entries) | 3600 | 0 | Permanent UTC+0 from October 2026 |
+| MA, EH | Africa/Casablanca, Africa/El_Aaiun (3 entries) | 3600 | 0 | Permanent UTC+0 from 20 September 2026 |
 | CA | America/Vancouver | −28800 | −25200 | British Columbia on permanent UTC−7 |
 | CA | America/Edmonton | −25200 | −21600 | Alberta on permanent UTC−6 |
 | CA | America/Yellowknife | −25200 | −21600 | Follows Edmonton in tzdata |
@@ -96,4 +96,4 @@ UTC−6 (Inuvik) and Manitoba to permanent UTC−5 (Winnipeg, Rainy River); to b
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/countries/countries.json` — timezone offsets on 33 entries and labels on 6; currency on 3 countries; tld on 1; capital on 1
+- `contributions/countries/countries.json` — timezone offsets on 33 entries (with their labels) and labels only on 4 (Atyrau, Qyzylorda, Anadyr, Khartoum); currency on 3 countries; tld on 1; capital on 1
