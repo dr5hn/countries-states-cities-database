@@ -21,7 +21,7 @@ the state's own `wikiDataId`).
 | … and no same-named place in the filed state, population consistent | **127** |
 | Held back: a same-named place exists in the filed state | 23 |
 | Wikidata agrees with the filed state | 5 |
-| Unresolved (no same-named item nearby, or contained in several) | 51 |
+| Unresolved (no same-named item nearby, or contained in several) | 6 |
 
 For all 127, the new state is the one GeoNames gives too — two independent sources agree.
 
