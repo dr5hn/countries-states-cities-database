@@ -6,10 +6,10 @@
 
 Each finding is verified against an independent source before any change. Fixes land in small PRs, one section each.
 
-## States geocoded to another continent
+## States geocoded outside their territory
 
 ### Problem
-Twenty records in `contributions/states/states.json` carried coordinates on another continent — they had been
+Twenty records in `contributions/states/states.json` carried coordinates outside their own territory, most of them on another continent — they had been
 geocoded by name without a country filter (e.g. Fiji's *Ba* landed on Ba in Oklahoma, *Central* on Los Angeles):
 
 | id | State | Country | Was at |
@@ -43,7 +43,7 @@ point to fall inside the country's bounds. Only `latitude` and `longitude` chang
 ### Verification
 - All 20 new points fall inside their country's bounding box (with the remote-territory boxes from the
   coordinate-validator fix, which Fiji's Lau and Eastern divisions need: they straddle the 180° meridian).
-- The same states were the only state records flagged on another continent by the repo-wide bounds check.
+- The same states were the only state records flagged outside their country by the repo-wide bounds check.
 
 ## Rollback
 Revert the commit. No `id`s change.
