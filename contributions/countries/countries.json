@@ -268,8 +268,8 @@
     "subregion_id": 22,
     "nationality": "American Samoan",
     "area_sq_km": 199.0,
-    "postal_code_format": "#####-####",
-    "postal_code_regex": "96799",
+    "postal_code_format": "96799|96799-####",
+    "postal_code_regex": "^96799(?:-[0-9]{4})?$",
     "timezones": [
       {
         "zoneName": "Pacific/Pago_Pago",
@@ -842,8 +842,8 @@
     "subregion_id": 11,
     "nationality": "Armenian",
     "area_sq_km": 29800.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "####",
+    "postal_code_regex": "^[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Asia/Yerevan",
@@ -3142,8 +3142,8 @@
     "subregion_id": 2,
     "nationality": "Chadian",
     "area_sq_km": 1284000.0,
-    "postal_code_format": "TKCA 1ZZ",
-    "postal_code_regex": "^(TKCA 1ZZ)$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Africa/Ndjamena",
@@ -3984,7 +3984,7 @@
     "nationality": "Cuban",
     "area_sq_km": 110860.0,
     "postal_code_format": "CP #####",
-    "postal_code_regex": "^(?:CP)*(\\d{5})$",
+    "postal_code_regex": "^(?:CP ?)?[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "America/Havana",
@@ -4617,8 +4617,8 @@
     "subregion_id": 9,
     "nationality": "Salvadoran",
     "area_sq_km": 21040.0,
-    "postal_code_format": "CP ####",
-    "postal_code_regex": "^(?:CP)*(\\d{4})$",
+    "postal_code_format": "####",
+    "postal_code_regex": "^(?:CP ?)?[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "America/El_Salvador",
@@ -5817,7 +5817,7 @@
     "nationality": "Greek, Hellenic",
     "area_sq_km": 131940.0,
     "postal_code_format": "### ##",
-    "postal_code_regex": "^(\\d{5})$",
+    "postal_code_regex": "^[0-9]{3} ?[0-9]{2}$",
     "timezones": [
       {
         "zoneName": "Europe/Athens",
@@ -6581,8 +6581,8 @@
     "subregion_id": 9,
     "nationality": "Honduran",
     "area_sq_km": 112090.0,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "#####|@@####",
+    "postal_code_regex": "^(?:[0-9]{5}|[A-Z]{2}[0-9]{4})$",
     "timezones": [
       {
         "zoneName": "America/Tegucigalpa",
@@ -6643,8 +6643,8 @@
     "subregion_id": 12,
     "nationality": "Hong Kong, Hong Kongese",
     "area_sq_km": 1092.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Hong_Kong",
@@ -7098,7 +7098,7 @@
     "nationality": "Irish",
     "area_sq_km": 70280.0,
     "postal_code_format": "@@@ @@@@",
-    "postal_code_regex": "^(D6W|[AC-FHKNPRTV-Y][0-9]{2})\\s?([AC-FHKNPRTV-Y0-9]{4})",
+    "postal_code_regex": "^(?:D6W|[AC-FHKNPRTV-Y][0-9]{2}) ?[AC-FHKNPRTV-Y0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Europe/Dublin",
@@ -7531,8 +7531,8 @@
     "subregion_id": 10,
     "nationality": "Kazakhstani, Kazakh",
     "area_sq_km": 2717300.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "######|@##@#@#",
+    "postal_code_regex": "^(?:[0-9]{6}|[A-Z][0-9]{2}[A-Z][0-9][A-Z][0-9])$",
     "timezones": [
       {
         "zoneName": "Asia/Almaty",
@@ -7773,8 +7773,8 @@
     "subregion_id": 12,
     "nationality": "North Korean",
     "area_sq_km": 120540.0,
-    "postal_code_format": "###-###",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Pyongyang",
@@ -8084,7 +8084,7 @@
     "nationality": "Latvian",
     "area_sq_km": 64589.0,
     "postal_code_format": "LV-####",
-    "postal_code_regex": "^(?:LV)*(\\d{4})$",
+    "postal_code_regex": "^(?:LV-)?[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Europe/Riga",
@@ -8146,7 +8146,7 @@
     "nationality": "Lebanese",
     "area_sq_km": 10400.0,
     "postal_code_format": "#### ####|####",
-    "postal_code_regex": "^(\\d{4}(\\d{4})?)$",
+    "postal_code_regex": "^[0-9]{4}(?: ?[0-9]{4})?$",
     "timezones": [
       {
         "zoneName": "Asia/Beirut",
@@ -8456,7 +8456,7 @@
     "nationality": "Lithuanian",
     "area_sq_km": 65200.0,
     "postal_code_format": "LT-#####",
-    "postal_code_regex": "^(?:LT)*(\\d{5})$",
+    "postal_code_regex": "^(?:LT-)?[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "Europe/Vilnius",
@@ -8579,8 +8579,8 @@
     "subregion_id": 12,
     "nationality": "Macanese, Chinese",
     "area_sq_km": 254.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Macau",
@@ -10627,8 +10627,8 @@
     "subregion_id": 9,
     "nationality": "Nicaraguan",
     "area_sq_km": 129494.0,
-    "postal_code_format": "###-###-#",
-    "postal_code_regex": "^(\\d{7})$",
+    "postal_code_format": "#####",
+    "postal_code_regex": "^[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "America/Managua",
@@ -11323,8 +11323,8 @@
     "subregion_id": 9,
     "nationality": "Panamanian",
     "area_sq_km": 78200.0,
-    "postal_code_format": "@####",
-    "postal_code_regex": "^([A-Z]\\d{4})$",
+    "postal_code_format": "@@@@@-@@@@@|@####|####",
+    "postal_code_regex": "^(?:[A-Z0-9]{5}-?[A-Z0-9]{5}|[A-Z][0-9]{4}|[0-9]{4})$",
     "timezones": [
       {
         "zoneName": "America/Panama",
@@ -12820,8 +12820,8 @@
     "subregion_id": 22,
     "nationality": "Samoan",
     "area_sq_km": 2944.0,
-    "postal_code_format": "AS 96799",
-    "postal_code_regex": "AS 96799",
+    "postal_code_format": "WS####",
+    "postal_code_regex": "^WS[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Pacific/Apia",
@@ -13564,8 +13564,8 @@
     "subregion_id": 4,
     "nationality": "Somali, Somalian",
     "area_sq_km": 637657.0,
-    "postal_code_format": "@@ ##### or ####|#####",
-    "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$",
+    "postal_code_format": "@@ #####|####|#####",
+    "postal_code_regex": "^(?:[A-Z]{2} {0,2}[0-9]{5}|[0-9]{4,5})$",
     "timezones": [
       {
         "zoneName": "Africa/Mogadishu",
@@ -15335,8 +15335,8 @@
     "subregion_id": 11,
     "nationality": "Emirati, Emirian, Emiri",
     "area_sq_km": 82880.0,
-    "postal_code_format": "##### #####",
-    "postal_code_regex": "^\\d{5}-\\d{5}$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Dubai",
@@ -16103,8 +16103,8 @@
     "subregion_id": 13,
     "nationality": "Vietnamese",
     "area_sq_km": 329560.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "#####|######",
+    "postal_code_regex": "^[0-9]{5,6}$",
     "timezones": [
       {
         "zoneName": "Asia/Ho_Chi_Minh",

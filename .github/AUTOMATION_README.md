@@ -115,7 +115,7 @@ contributions/IN/maharashtra.json       # No entity keyword in path
 
 **Problem:** The `country-bounds.json` file contains bounding boxes for ~160 countries. Countries/territories not in this file will skip the coordinate bounds check silently.
 
-**Solution:** The check is non-blocking (warning only), so missing bounds will not reject valid PRs. To add bounds for additional countries, edit `.github/data/country-bounds.json`:
+**Solution:** The check is non-blocking (warning only), so missing bounds will not reject valid PRs. To add bounds for additional countries, edit `.github/data/country-bounds.json` (one box, or an array of boxes for remote territories; see [Updating Country Bounds](#updating-country-bounds)):
 
 ```json
 {
@@ -239,10 +239,20 @@ Note: Scripts that use `@actions/github` will need a valid GitHub context to run
 
 ### Updating Country Bounds
 
-Edit `.github/data/country-bounds.json`. Each country entry needs:
+Edit `.github/data/country-bounds.json`. A country entry is either one box or, for a country with remote
+territories, an array of boxes (the first is the main territory):
 ```json
-"XX": { "minLat": -90, "maxLat": 90, "minLon": -180, "maxLon": 180 }
+"XX": { "minLat": -90, "maxLat": 90, "minLon": -180, "maxLon": 180 },
+"ES": [
+  { "minLat": 36.0, "maxLat": 43.79, "minLon": -9.3, "maxLon": 4.33 },
+  { "minLat": 27.6, "maxLat": 29.5, "minLon": -18.2, "maxLon": -13.3 }
+]
 ```
+A box whose `minLon` is greater than its `maxLon` crosses the 180° meridian (Russia, Fiji): longitudes from
+`minLon` east to 180 and from -180 east to `maxLon` are inside it; the 0.45° tolerance wraps across 180° too.
+Keep remote-territory boxes tight, one per island group: a single box spanning the ocean between territories
+also admits the neighbouring countries (one box over all of France's Indian Ocean islands took in Madagascar).
+The check is `isWithinBounds()` in `.github/scripts/utils.js`, with unit tests in `utils.test.js`.
 
 ### Modifying Slack Notifications
 
