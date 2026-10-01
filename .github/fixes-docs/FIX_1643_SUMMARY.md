@@ -67,9 +67,10 @@ Only `state_id` and `state_code` change (plus two points, above); every record's
 
 | Country | Move | Records |
 |---|---|---:|
-| PT | Guarda → Lisbon | 211 |
-| UA | Poltavska → Zhytomyrska | 154 |
-| JP | Kōchi → Nagano | 73 |
+| PT | Guarda → Lisbon | 216 |
+| UA | Poltavska → Zhytomyrska | 157 |
+| UA | Poltavska → Vinnytska | 1 |
+| JP | Kōchi → Nagano | 75 |
 | UA | Kirovohradska → Dnipropetrovska | 1 |
 | UA | Poltavska → Ternopilska | 1 |
 | UA | Poltavska → Dnipropetrovska | 1 |
