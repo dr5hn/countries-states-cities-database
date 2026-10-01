@@ -4954,3 +4954,9 @@ Revert the PR (squash commit).
 
 ### Files Changed
 - `contributions/countries/countries.json` — postal format and regex on 21 countries
+
+## Inuvik on permanent UTC−6 (tzdata 2026d)
+
+The Northwest Territories moved to permanent UTC−6 on 2026-08-21 (IANA tzdata 2026d). Canada's `America/Inuvik`
+entry in `countries.json` (standard offsets) changes from −25200 / UTC−07:00 / MST to −21600 / UTC−06:00 / CST.
+Rollback: revert the PR. Files: `contributions/countries/countries.json` (1 timezone entry).
