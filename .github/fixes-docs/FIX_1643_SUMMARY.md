@@ -33,7 +33,8 @@ The rest were not moved:
   Mureș' point lies in Alba County, about 125 km from Mureș' centre. That goes to the state Wikidata ID fix.
 
 ### Fix
-Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
+Only `state_id` and `state_code` change, plus the points of Ashton in Makerfield and Barra de Carrasco (below);
+every record's `timezone` already fits its new state.
 
 | Country | Move | Records |
 |---|---|---:|
@@ -183,7 +184,7 @@ correctly (the 2019 import simply lacks some areas, e.g. Ohio and Mureș). Five 
 | IN | 147692 | Bagewadi | Maharashtra | Karnataka | Belagavi district; own Wikidata item Q4841558 |
 | MX | 142385 | El Colomo | Jalisco | Nayarit | Bahía de Banderas; own Wikidata item Q28102158 |
 | PK | 143778 | Umerkot | Punjab | Sindh | Umerkot District; own Wikidata item Q2625910 |
-| UY | 153693 | Barra de Carrasco | Montevideo | Canelones | Ciudad de la Costa; own Wikidata item Q808781 |
+| UY | 153693 | Barra de Carrasco | Montevideo | Canelones | Ciudad de la Costa; own Wikidata item Q808781. Point moved from Carrasco, Montevideo (−34.884, −56.047) to Q808781's (−34.869511, −56.028058) |
 
 Also found: moving *Farkadona* (154229) puts it 1.1 km from record 52599 *Farkadóna* in Thessaly, the same place; it
 waits for the duplicate policy. Four other records carry these records' Wikidata IDs by copy-forward (#1641).
