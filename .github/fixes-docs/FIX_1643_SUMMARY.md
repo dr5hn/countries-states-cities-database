@@ -320,7 +320,7 @@ The ISO codes themselves are unchanged.
 | MC | MC-MA | Malbousquet | — | Q13378486 (Malbousquet) |
 | MC | MC-MO | Monaco-Ville | Q55103 (Sant'Angelo dei Lombardi) | Q55115 (Monaco-Ville) |
 | MC | MC-MU | Moulins | — | Q13378485 (Moulins) |
-| MC | MC-PH | Port-Hercule | Q1416547 (financial plan) | — (removed; Q7230673 is the port, not the quarter, and no quarter item exists) |
+| MC | MC-PH | Port-Hercule | Q1416547 (financial plan) | — (removed; Q7230673 is the port, not the quarter, and no quarter item was verified) |
 | MC | MC-SD | Sainte-Dévote | — | Q18635826 (Ravin de Sainte-Dévote) |
 | MC | MC-SO | La Source | — | Q13378482 (La Source) |
 | MC | MC-SP | Spélugues | — | Q13378480 (Spélugues) |
