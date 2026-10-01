@@ -4867,3 +4867,45 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/PH.json` — coordinates on 69 records; `state_id`/`state_code` on 1
+
+## State levels, Algeria's ISO codes and Sulu's region
+
+### Problem
+- **`level`:** 159 states had a `level` not below their parent's: provinces at level 1 under level-1 regions in
+  Morocco, Burkina Faso and Belgium; Guinea's regions and prefectures both at 2; Fiji's provinces at 1 under
+  level-2 divisions; Spain's provinces at 1 under communities with no level. The docs define `level` as depth
+  within the country (top = 1, next = 2), as France and Italy already follow.
+- **Algeria:** seven of the provinces created in 2019 carried shifted ISO 3166-2 codes (El M'ghair as DZ-49
+  instead of DZ-57, and so on).
+- **Sulu:** filed under Bangsamoro (1316). The Supreme Court excluded Sulu from BARMM in 2024, and Executive
+  Order 91 of 30 July 2025 assigned it to Region IX (PSGC 0906600000).
+
+### Fix
+- `level` on 226 states: Morocco 64 (6 roots get 1, 58 provinces 2), Burkina Faso 45, Belgium 10, Guinea 8
+  (regions → 1), Fiji 19 (4 divisions and Rotuma → 1, 14 provinces → 2), Guinea-Bissau 11, Spain 69
+  (19 communities and autonomous cities → 1, 50 provinces → 2). Every root is 1, every child its parent's + 1.
+- Algeria, `iso2` and `iso3166_2` on 7 states (Ouled Djellal, Touggourt and Djanet were already right):
+
+| id | Province | iso2 was → now | ISO 3166-2 | Wikidata |
+|---|---|---|---|---|
+| 4905 | El M'ghair | 49 → 57 | DZ-57 | Q77103173 |
+| 4906 | El Menia | 50 → 58 | DZ-58 | Q76520264 |
+| 4908 | Bordj Baji Mokhtar | 52 → 50 | DZ-50 | Q76592938 |
+| 4909 | Béni Abbès | 53 → 52 | DZ-52 | Q21606902 |
+| 4910 | Timimoun | 54 → 49 | DZ-49 | Q21606903 |
+| 4913 | In Salah | 57 → 53 | DZ-53 | Q76593022 |
+| 4914 | In Guezzam | 58 → 54 | DZ-54 | Q77102475 |
+
+  No city or postcode refers to these provinces.
+- Sulu (1288): `parent_id` 1316 → 1325 (Zamboanga Peninsula).
+
+### Verification
+- The Algerian codes match each province's Wikidata P300 and the Algerian official gazettes (2021, 2024).
+- Sulu: Wikidata Q13887 P131 is Q13682 (Zamboanga Peninsula) from 2025-07-30; PSA announced the transfer.
+- Each targeted state's level is its parent's + 1; (country, iso2) stays unique; all cities match their state.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/states/states.json` — `level` on 226 states, `iso2`/`iso3166_2` on 7, `parent_id` on 1
