@@ -253,10 +253,12 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 
 ### Not changed
 - **Uncertain:** Sakha's cities in the Verkhoyansk, Oymyakon and Kolyma areas (three zones).
-- **Amazonas** follows IANA's east/west geography, the Tabatinga–Porto Acre line of Decree 2,784/1913 and Law
-  12,876/2013 (the 1913 regulation puts both endpoints in the eastern zone): Itamarati, Tabatinga and Lábrea take
-  `America/Manaus`. A 2019 Ministry of Education (ENEM) notice groups 13 Amazonas municipalities with Acre's time,
-  including Boca do Acre and Jutaí, which IANA explicitly places in the east; that conflict is recorded, not resolved.
+- **Amazonas** follows IANA's east/west geography: the Tabatinga–Porto Acre line of Decree 2,784/1913, as amended by
+  Law 12,876/2013, with UTC−5 west of it. Itamarati and Lábrea lie east of the line and take `America/Manaus`.
+  Tabatinga is the line's starting point; the decree's implementing regulation (Decree 10,546/1913, art. 2(III))
+  puts both endpoint towns in the UTC−4 zone, so it keeps `America/Manaus` too. Practice is disputed: a 2019
+  Ministry of Education (ENEM) notice groups 13 Amazonas municipalities, Tabatinga, Boca do Acre and Jutaí among
+  them, with Acre's time, against IANA's explicit eastern list; the conflict is recorded, not resolved.
 - **Multi-zone by design:** US states split between zones (Tennessee, Kentucky, Indiana, Florida, Texas, the Dakotas,
   Nebraska, Kansas, Idaho, Arizona's Navajo Nation) and Mexico's US-border strip (Coahuila, Nuevo León, Tamaulipas,
   Chihuahua).
