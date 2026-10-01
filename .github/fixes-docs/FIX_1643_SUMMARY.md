@@ -11,8 +11,8 @@ Each finding is verified against an independent source before any change. Fixes 
 **1,785 Philippine records** (mostly barangays) move to the province they are in. Most were filed under a small
 province far away, often the first of a region's provinces in alphabetical order: none of the 277 records filed under
 Bataan was within 60 km of Bataan (they were in Cebu, Bohol and Negros); Abra held Pangasinan's barangays, Antique
-those of Negros Occidental and Iloilo, Benguet those of Bukidnon. In 1,329 of them even the region was wrong. Both the
-2019 import (ids 81xxx–85xxx, 1,026 moved) and a later batch (143xxx–146xxx, 763 moved) are affected.
+those of Negros Occidental and Iloilo, Benguet those of Bukidnon. In 1,325 of them even the region was wrong. Both the
+2019 import (ids 81xxx–85xxx, 1,026 moved) and a later batch (143xxx–146xxx, 759 moved) are affected.
 
 ### How they were verified
 Two sources, both required:
@@ -71,7 +71,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | Cagayan | 102 |
 | Batanes | 76 |
 | Oriental Mindoro | 71 |
-| Bukidnon | 70 |
+| Bukidnon | 66 |
 | Camarines Norte | 42 |
 | Bulacan | 36 |
 | Zamboanga Sibugay | 18 |
@@ -92,7 +92,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | Occidental Mindoro → Quezon | 50 |
 | Agusan del Norte → Isabela | 50 |
 | Agusan del Sur → Nueva Ecija | 48 |
-| Bukidnon → Cotabato | 38 |
+| Bukidnon → Cotabato | 34 |
 | Agusan del Sur → Tarlac | 38 |
 | Batanes → Leyte | 37 |
 | Agusan del Sur → Bulacan | 36 |
