@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Philippine records filed under the wrong province
 
-**1,789 Philippine records** (mostly barangays) move to the province they are in. Most were filed under a small
+**1,785 Philippine records** (mostly barangays) move to the province they are in. Most were filed under a small
 province far away, often the first of a region's provinces in alphabetical order: none of the 277 records filed under
 Bataan was within 60 km of Bataan (they were in Cebu, Bohol and Negros); Abra held Pangasinan's barangays, Antique
 those of Negros Occidental and Iloilo, Benguet those of Bukidnon. In 1,329 of them even the region was wrong. Both the
@@ -45,10 +45,12 @@ Wikidata and GeoNames both still carry the older unit, so the two sources agreed
   dissolved in 2022.
 - 3 go to **Sarangani** (Glan, Malapatan), 2 to **Davao del Norte** (Samal, New Corella), 1 to **Guimaras**
   (Salvacion, Buenavista) and 1 to **Pangasinan** (Gueset), where the polygons and Nominatim agree.
-- 6 are held at their current state: Osias (its point is in Bukidnon), Kalbugan (in the BARMM Special Geographic
-  Area, which CSC has no state for) and 4 records within about 1 km of the Sultan Kudarat–Maguindanao del Sur border.
+- 10 are held at their current state: Osias (its point is in Bukidnon); Kalbugan and, found by the second review,
+  Gocoton, Malingao, Manaulanan and Pedtad, barangays of the BARMM Special Geographic Area (the 2020 polygons and
+  Wikidata still show them in Cotabato; PSA lists them under the SGA's municipalities), which CSC has no state for;
+  and 4 records within about 1 km of the Sultan Kudarat–Maguindanao del Sur border.
 
-So 1,789 records move, 1,764 as first confirmed and 25 to the province the polygons show.
+So 1,785 records move, 1,760 as first confirmed and 25 to the province the polygons show.
 
 Not in this PR: the 1,759 province-filed records whose Wikidata ID is another place's need a different
 second source; the review sizes the remaining province-filed records outside their province at about 812.
@@ -100,7 +102,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | other pairs | 630 |
 
 <details>
-<summary>All 1,789 records (id, name, was, now, own Wikidata ID)</summary>
+<summary>All 1,785 records (id, name, was, now, own Wikidata ID)</summary>
 
 | id | Name | Was | Now | Wikidata |
 |---|---|---|---|---|
@@ -1134,7 +1136,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 143941 | Dunguan | Bukidnon | Cotabato | Q31573114 |
 | 143946 | Glad | Bukidnon | Cotabato | Q31457955 |
 | 143947 | Glamang | Bukidnon | South Cotabato | Q31457985 |
-| 143950 | Gocoton | Bukidnon | Cotabato | Q31458381 |
 | 143955 | Kabalen | Bukidnon | South Cotabato | Q31811566 |
 | 143957 | Kalaisan | Bukidnon | Cotabato | Q31811580 |
 | 143958 | Kalamangog | Bukidnon | Sultan Kudarat | Q31811582 |
@@ -1153,10 +1154,8 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144015 | Malamote | Bukidnon | Cotabato | Q31812141 |
 | 144017 | Malapag | Bukidnon | Cotabato | Q31812146 |
 | 144019 | Malasila | Bukidnon | Cotabato | Q31812150 |
-| 144021 | Malingao | Bukidnon | Cotabato | Q31812179 |
 | 144022 | Malisbeng | Bukidnon | Sultan Kudarat | Q31812183 |
 | 144023 | Malitubog | Bukidnon | Cotabato | Q31812186 |
-| 144027 | Manaulanan | Bukidnon | Cotabato | Q31812232 |
 | 144029 | Manuangan | Bukidnon | Cotabato | Q31812272 |
 | 144036 | Minapan | Bukidnon | Cotabato | Q31812431 |
 | 144039 | New Cebu | Bukidnon | Cotabato | Q31812613 |
@@ -1166,7 +1165,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144052 | Palkan | Bukidnon | South Cotabato | Q31458353 |
 | 144055 | Pangyan | Bukidnon | Sarangani | Q31462122 |
 | 144057 | Patindeguen | Bukidnon | Cotabato | Q31464304 |
-| 144058 | Pedtad | Bukidnon | Cotabato | Q31465985 |
 | 144068 | Puloypuloy | Bukidnon | Sultan Kudarat | Q31479916 |
 | 144069 | Punolu | Bukidnon | Cotabato | Q31480317 |
 | 144070 | Puricay | Bukidnon | Sultan Kudarat | Q31480656 |
@@ -1905,4 +1903,4 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/PH.json` — `state_id` and `state_code` on 1,789 records
+- `contributions/cities/PH.json` — `state_id` and `state_code` on 1,785 records
