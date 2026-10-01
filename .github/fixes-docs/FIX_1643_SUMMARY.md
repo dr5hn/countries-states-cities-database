@@ -8,7 +8,8 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Philippine municipalities whose point lies in another province
 
-**69 Philippine municipality and city records** take their own Wikidata item's point: the stored point lies in a
+**69 Philippine municipality and city records** take their own Wikidata item's point (Maitum and Dilasag take
+GeoNames' on-land point instead, as their item's point is just offshore): the stored point lies in a
 neighbouring province, 7–58 km from the place (Davao City sat in Cotabato province; Lucban and Mauban, Quezon, in
 Laguna; Oroquieta in Zamboanga del Norte). *Kibungan* (Benguet) was also filed under the wrong
 province (Camarines Norte, point in Ilocos Sur) and moves with its point.
@@ -60,7 +61,7 @@ Lumban / 83217 "Lumbang", San Agustin / 144485. They are duplicates for the #164
 | 83198 | Lucban | Quezon | Laguna | 7.4 | 54,134 | Q103941 (14.11333, 121.55694) |
 | 83308 | Madalag | Aklan | Antique | 27.1 | 19,043 | Q626820 (11.52694, 122.30639) |
 | 83313 | Madrid | Surigao del Sur | Agusan del Norte | 26.3 | 16,872 | Q155605 (9.26194, 125.96472) |
-| 83373 | Maitum | Sarangani | Sultan Kudarat | 19.2 | 46,120 | Q174442 (6.03333, 124.48333) |
+| 83373 | Maitum | Sarangani | Sultan Kudarat | 19.2 | 46,120 | GeoNames 1703471 (6.03917, 124.49861); Q174442's point is 1.2 km offshore |
 | 83582 | Marihatag | Surigao del Sur | Agusan del Sur | 54.8 | 19,730 | Q155611 (8.80083, 126.29833) |
 | 83635 | Mauban | Quezon | Laguna | 19.9 | 70,135 | Q103952 (14.19111, 121.73083) |
 | 83646 | Mayantoc | Tarlac | Zambales | 27.1 | 34,091 | Q56444 (15.62028, 120.37750) |
@@ -99,7 +100,7 @@ Lumban / 83217 "Lumbang", San Agustin / 144485. They are duplicates for the #164
 | 145295 | San Manuel | Isabela | Ifugao | 9.7 | 29,693 | Q50164 (17.01667, 121.63333) |
 | 145422 | Cabiao | Nueva Ecija | Pampanga | 10.9 | 89,497 | Q55545 (15.25222, 120.85750) |
 | 145445 | Carranglan | Nueva Ecija | Pangasinan | 20.7 | 43,694 | Q55546 (15.96083, 121.06306) |
-| 145472 | Dilasag | Aurora | Quirino | 27.5 | 17,536 | Q53084 (16.40000, 122.21667) |
+| 145472 | Dilasag | Aurora | Quirino | 27.5 | 17,536 | GeoNames 1714887 (16.39750, 122.21306); Q53084's point is 0.1 km offshore |
 | 145476 | Dingalan | Aurora | Nueva Ecija | 23.8 | 29,286 | Q53087 (15.38333, 121.40000) |
 | 145477 | Dipaculao | Aurora | Quirino | 18.6 | 33,597 | Q53089 (15.98333, 121.63333) |
 | 145556 | Maria Aurora | Aurora | Nueva Ecija | 25.3 | 45,972 | Q53090 (15.79670, 121.47370) |
