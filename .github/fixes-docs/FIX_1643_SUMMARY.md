@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Philippine records filed under the wrong province (second pass)
 
-**477 more Philippine records** move to the province they are in (345 of them to another region too). #1663 moved
+**477 more Philippine records** move to the province they are in (344 of them to another region too). #1663 moved
 records whose own Wikidata item could be verified; these are ones it could not use, mostly because their
 `wikiDataId` is a same-named place elsewhere (copy-forward, #1641). They show the same pattern: 41 Cebu places filed
 under Bataan, Batangas and Quezon ones under Occidental Mindoro, Nueva Ecija ones under Agusan del Sur.
@@ -45,7 +45,7 @@ Pangasinan), and OpenStreetMap confirmed those moves.
 ### Fix
 Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 
-| Move (pairs with 11+ records, of 69) | Records |
+| Move (pairs with 11+ records, of 68) | Records |
 |---|---:|
 | Bataan → Cebu | 41 |
 | Occidental Mindoro → Quezon | 21 |
@@ -63,7 +63,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | Antique → Guimaras | 11 |
 | Albay → Masbate | 11 |
 | Agusan del Norte → Isabela | 11 |
-| other pairs | 205 |
+| other pairs | 204 |
 
 <details>
 <summary>All 477 records (id, name, was, now, nearest Wikidata municipality)</summary>
