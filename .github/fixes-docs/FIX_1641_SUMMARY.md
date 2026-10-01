@@ -106,8 +106,9 @@ belongs to *Sarrola-Carcopino* 8.7 km away).
 
 - After the fix no QID is shared anywhere in FR.json; rerunning the script changes nothing and leaves the report
   untouched.
-- The script writes nothing if FR.json changes in any way while it runs (a record added, removed, reordered, or
-  edited in its id, name, department, coordinates, population or `wikiDataId`), because conflict resolution reads
+- The script aborts without writing FR.json or the report if, while it runs, a record is added, removed or
+  reordered, or edited in its id, name, department, coordinates, population or `wikiDataId` (other fields, such as
+  `native`, are left as they are), because conflict resolution reads
   records outside the plan too. FR.json, the report and the cache are written to a temp file and swapped in.
   `test_france_fix_copyforward_wikidataids.py` (no network) replays the reviewer's case — *Abilly* (unplanned)
   taking Q28520 while *Abbeville* is matched to Q28520 — and checks the run aborts with both files untouched;
@@ -165,7 +166,7 @@ fixed here as reviewed decisions (step 6). *Saint-Julien* is also filed under th
 ```bash
 python3 bin/scripts/fixes/france_fix_copyforward_wikidataids.py --dry-run   # plan + report only
 python3 bin/scripts/fixes/france_fix_copyforward_wikidataids.py             # write FR.json
-python3 -m unittest bin/scripts/fixes/test_france_fix_copyforward_wikidataids.py   # tests, no network
+python3 -m unittest bin/scripts/fixes/test_france_fix_copyforward_wikidataids.py   # tests, no network (Python 3.11+)
 ```
 
 Wikidata lookups are cached in `$CSC_CACHE_DIR` (default `<tmp>/csc-copyforward-fr`).
