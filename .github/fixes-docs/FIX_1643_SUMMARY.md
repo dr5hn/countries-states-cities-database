@@ -8,7 +8,7 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## Philippine records filed under the wrong province (second pass)
 
-**478 more Philippine records** move to the province they are in (345 of them to another region too). #1663 moved
+**477 more Philippine records** move to the province they are in (345 of them to another region too). #1663 moved
 records whose own Wikidata item could be verified; these are ones it could not use, mostly because their
 `wikiDataId` is a same-named place elsewhere (copy-forward, #1641). They show the same pattern: 41 Cebu places filed
 under Bataan, Batangas and Quezon ones under Occidental Mindoro, Nueva Ecija ones under Agusan del Sur.
@@ -25,7 +25,8 @@ The #1663 review showed that Wikidata and GeoNames can agree on an outdated prov
 
 | Result | Records |
 |---|---:|
-| Polygons and Wikidata municipalities agree on another province: **moved** | **478** |
+| Polygons and Wikidata municipalities agree on another province: **moved** | **477** |
+| … but the place is in the BARMM Special Geographic Area (Kabasalan, found by the second review): held | 1 |
 | The record is itself a municipality or city whose point is wrong (see review): not moved | 42 |
 | Wikidata municipalities disagree with the polygons: held | 233 |
 | More than 3 km off the polygons (bad point, or a small island): held | 170 |
@@ -65,7 +66,7 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | other pairs | 205 |
 
 <details>
-<summary>All 478 records (id, name, was, now, nearest Wikidata municipality)</summary>
+<summary>All 477 records (id, name, was, now, nearest Wikidata municipality)</summary>
 
 | id | Name | Was | Now | Nearest municipality |
 |---|---|---|---|---|
@@ -414,7 +415,6 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 | 144520 | Tigao | Bulacan | Surigao del Sur | Cortes (7.6 km) |
 | 144521 | Trento | Bulacan | Agusan del Sur | Trento (7.9 km) |
 | 144526 | Union | Bulacan | Surigao del Norte | ジェネラル・ルナ (5.8 km) |
-| 144532 | Kabasalan | Cagayan | Cotabato | Pikit (2.7 km) |
 | 144559 | Lamitan City | Cagayan | Basilan | Tuburan (9.8 km) |
 | 144576 | Luuk Datan | Cagayan | Tawi-Tawi | Simunul (9.9 km) |
 | 144591 | Marunggas | Cagayan | Sulu | Hadji Panglima Tahil (5.6 km) |
@@ -554,4 +554,4 @@ Only `state_id` and `state_code` change; all keep `Asia/Manila`.
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/cities/PH.json` — `state_id` and `state_code` on 478 records
+- `contributions/cities/PH.json` — `state_id` and `state_code` on 477 records
