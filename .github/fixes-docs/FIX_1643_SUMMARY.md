@@ -9,7 +9,7 @@ Each finding is verified against an independent source before any change. Fixes 
 ## Batches of cities filed under one wrong state
 
 **453 cities** from three bulk additions move to the state they are in: Lisbon-area parishes filed under Guarda
-(Portugal, ids 143xxx), villages of Zhytomyr Oblast and two others filed under Poltava (Ukraine, 149xxx) and villages of Nagano filed
+(Portugal, ids 143xxx), villages of Zhytomyr Oblast and three others filed under Poltava (Ukraine, 149xxx) and villages of Nagano filed
 under Kōchi (Japan, 148xxx). Each batch put all its records under one state; some belong there, many do not.
 
 ### How they were found
