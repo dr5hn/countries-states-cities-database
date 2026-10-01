@@ -44,8 +44,8 @@ Only `parent_id` changes, on 15 states.
 | 1171 | La Rioja (province) | ES | 1171 (itself) | 5703 La Rioja |
 
 ### Also found (not changed here)
-The same scan finds 158 states (after this PR) whose `level` is not below their parent's: provinces at level 1 under level-1 regions
-in Morocco (58), Burkina Faso (45) and Belgium (10); Guinea's prefectures and regions both at level 2 (29); Fiji's
+The same scan finds 159 states (after this PR) whose `level` is not below their parent's: provinces at level 1 under level-1 regions
+in Morocco (59), Burkina Faso (45) and Belgium (10); Guinea's prefectures and regions both at level 2 (29); Fiji's
 provinces at level 1 under level-2 divisions (14); two Guinea-Bissau regions at level 1 under a province. Spanish
 provinces are level 1 and their communities have no level. Changing levels could alter what API users get when they
 filter by level, so it waits for a decision in #1643.
