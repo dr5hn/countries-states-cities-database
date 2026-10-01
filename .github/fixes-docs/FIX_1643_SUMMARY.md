@@ -11,7 +11,7 @@ Each finding is verified against an independent source before any change. Fixes 
 ### How they were found
 The 2019 import copied each city's population from GeoNames, so a record's source entry is the GeoNames place with
 the same name (or an alternate name) within 3 km and **exactly the record's population**. For 167 MX records that
-entry lies in another state; 134 of them are already moved by #1647 and #1652. Of the other 38:
+entry lies in another state; 129 of them are already moved by #1647 and #1652. Of the other 38:
 
 | Result | Records |
 |---|---:|
@@ -25,7 +25,9 @@ population match with the GeoNames entry in the new state shows which place the 
 Hueypoxtla records, were not in that pass.
 
 ### Fix
-**28 cities** move. Only `state_id` and `state_code` change; every record's `timezone` already fits its new state.
+**28 cities** move. Only `state_id` and `state_code` change. Two of them, *El Porvenir* (142453) and *San José del Valle* (142848),
+lie in Bahía de Banderas, whose zone is `America/Bahia_Banderas`; their `timezone` is corrected with the
+time-zone fixes (#1667).
 
 | id | City | Move | Population | Evidence |
 |---|---|---|---:|---|
