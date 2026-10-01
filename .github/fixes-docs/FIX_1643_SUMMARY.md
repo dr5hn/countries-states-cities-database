@@ -50,6 +50,11 @@ not have; Sassari before) and *Massa* (the provincial capital). These records ar
 | Treviso → Venice | 4 |
 | 69 other province pairs, 1–3 each | 96 |
 
+ISTAT codes below are those of the comune the record belongs to on Wikidata. For comuni merged since, they are the
+former codes, with the same province prefix: Polesine Parmense and Zibello (now Polesine Zibello, 034050), Sorbolo
+(Sorbolo Mezzani, 034051), Caminata and Nibbiano (Alta Val Tidone, 033049), Borgofranco sul Po and Carbonara di Po
+(Borgocarbonara, 020073).
+
 | id | City | Was filed under | Now | Population | ISTAT code |
 |---|---|---|---|---:|---|
 | 58286 | Panzano in Chianti | Siena (SI) | Florence (FI) | 1,161 | 048021 |
