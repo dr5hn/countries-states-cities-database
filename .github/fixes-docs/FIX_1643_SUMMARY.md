@@ -1909,3 +1909,23 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/{PT,UA,JP}.json` — `state_id` and `state_code` on 453 records; coordinates on 2
+
+## Departments and council areas stored as cities
+
+### Problem
+The 2019 import brought in French departments and British council areas as city records, typed like towns, so
+they appear in settlement lists.
+
+### Fix
+`type` → `area` on 155 records (73 FR, 82 GB). A record qualifies only if (a) its name carries an administrative
+designator or it is a positively identified unit with no same-named populated place, (b) its population is empty
+or within 5% of the unit's (GeoNames ADM2), (c) its own Wikidata item, if any, is administrative, and (d) no
+same-named populated place has its population. 97 candidates were left alone, among them towns whose point sat on
+the unit's point (Manchester, Birmingham, Leeds, Mayenne, Doubs, Landes) and bare names shared with a town
+(Vienne, Gironde, Kent).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/{FR,GB}.json` — `type` on 155 records
