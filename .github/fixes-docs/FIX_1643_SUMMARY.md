@@ -72,6 +72,8 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | MN | Khovd | Asia/Choibalsan | Asia/Hovd |
 | MN | Uvs | Asia/Choibalsan | Asia/Hovd |
 | MN | Bayan-Ölgii | Asia/Choibalsan | Asia/Hovd |
+| MN | Govi-Altai | Asia/Choibalsan | Asia/Ulaanbaatar |
+| MN | Zavkhan | Asia/Choibalsan | Asia/Ulaanbaatar |
 | PF | Austral Islands | Pacific/Gambier | Pacific/Tahiti |
 | PF | Leeward Islands | Pacific/Gambier | Pacific/Tahiti |
 | PF | Tuamotu-Gambier | Pacific/Gambier | Pacific/Tahiti |
