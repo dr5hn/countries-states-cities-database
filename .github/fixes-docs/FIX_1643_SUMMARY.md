@@ -1909,3 +1909,9 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/{PT,UA,JP}.json` — `state_id` and `state_code` on 453 records; coordinates on 2
+
+## Manitoba on permanent UTC−5 (tzdata 2026e)
+
+Manitoba moves to permanent UTC−5 on 2026-10-31 (IANA tzdata 2026e). Canada's `America/Winnipeg` and
+`America/Rainy_River` entries in `countries.json` (standard offsets) change from −21600 / UTC−06:00 / CST to
+−18000 / UTC−05:00 / EST. Rollback: revert the PR. Files: `contributions/countries/countries.json` (2 entries).
