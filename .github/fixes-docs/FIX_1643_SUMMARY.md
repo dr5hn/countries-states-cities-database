@@ -1,10 +1,11 @@
-# Fix Summary: Data-correctness audit of cities
+# Fix Summary: Data-correctness audit (#1643)
 
 ## Issue Reference
 **Original Issue:** [#1643](https://github.com/dr5hn/countries-states-cities-database/issues/1643) — repo-wide audit of
-`contributions/cities/*.json` for wrong coordinates, wrong states, duplicates and regions stored as cities.
+`contributions/` for wrong coordinates, wrong states, timezones, duplicates and regions stored as cities.
 
-Each finding is verified against an independent source before any change. Fixes land in small PRs, one section each.
+Each finding is verified against an independent source before any change. Fixes land in small PRs, one section each,
+newest last.
 
 ## Puerto Rico: municipalities geocoded to same-named places abroad
 
@@ -50,8 +51,8 @@ already `America/Puerto_Rico`.
   (state PR).
 - All 78 PR.json records now fall inside Puerto Rico's bounding box, and no `wikiDataId` is shared within the file.
 
-## Rollback
+### Rollback
 Revert the commit. No `id`s change.
 
-## Files Changed
+### Files Changed
 - `contributions/cities/PR.json` — coordinates on 10 records, `wikiDataId` on 9, native name on 1
