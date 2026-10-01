@@ -5237,6 +5237,288 @@ Revert the PR (squash commit). No `id`s change.
 - `contributions/states/states.json` — `timezone` on 95 states
 - `contributions/cities/*.json` (13 countries) — `timezone` on 1,535 cities
 
+## Chinese records at (0, 0)
+
+### Problem
+22 records of the later CN county batch (ids 157xxx–159xxx) had coordinates (0, 0). 17 are real places with a
+Wikidata item; 5 are not places: three named "Directly" (the heading for county-level units administered directly
+by a province, mistranslated) and two generic aggregates, Dongbu ("eastern part", Zhongshan) and Chengqu ("urban
+area", Danzhou; its Wikidata link is a disambiguation page).
+
+### Fix
+- 17 records take their Wikidata item's point, and 16 its `wikiDataId` (Shennongjia's is held back, below); native names are corrected (the batch's
+  back-transliterations used wrong characters) and `translations` follow (Latin-script languages the new name,
+  `zh-CN` the native, other scripts the item's Wikidata label, or the new English name where there is none) and seven English names take the established short romanization:
+  Lungchuan → Longchuan, Daicheng → Dacheng, Durbote → Dorbod, Qianguorluosi → Qian Gorlos, Chengduo → Chindu,
+  Simong → Mainling, Shennongjia Forestry → Shennongjia (now `administrative zone`).
+- Removed: 157533 Dongbu, 157656 Chengqu, 157658 / 158123 / 158224 Directly. Their 20 children (Hainan's
+  directly administered cities and counties, Jiyuan, Xiantao, Qianjiang, Tianmen, Shennongjia) keep their state
+  and level; `parent_id` is cleared.
+
+### Verification
+- Each point is the P625 of the record's Wikidata item (a representative point). Jiagedaqi and Songling lie in
+  Inner Mongolia's territory but are administered by Heilongjiang, where CSC files them; that stays.
+- No city or postcode refers to a removed id.
+
+### Held back
+
+- 158228: `wikiDataId` left empty, since Q1359055 is already record 20089's (a duplicate candidate for the #1643 duplicates check).
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (replacement id: none)</summary>
+
+```json
+[
+  {
+    "id": 157533,
+    "name": "Dongbu",
+    "state_id": 2279,
+    "state_code": "GD",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "area",
+    "level": 2,
+    "parent_id": 20451,
+    "latitude": "0E-8",
+    "longitude": "0E-8",
+    "native": "东部",
+    "population": null,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Dongbu",
+      "ko": "동부",
+      "pt-BR": "Dongbu",
+      "pt": "Dongbu",
+      "nl": "Dongbu",
+      "hr": "Dongbu",
+      "fa": "دونگبو",
+      "de": "Dongbu",
+      "es": "Dongbu",
+      "fr": "Dongbu",
+      "ja": "東部",
+      "it": "Dongbu",
+      "zh-CN": "东部",
+      "tr": "Dongbu",
+      "ru": "Дунбу",
+      "uk": "Дунбу",
+      "pl": "Dongbu",
+      "hi": "डोंगबू",
+      "ar": "دونغبو"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-21T20:15:06",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": null
+  },
+  {
+    "id": 157656,
+    "name": "Chengqu",
+    "state_id": 2273,
+    "state_code": "HI",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "area",
+    "level": 2,
+    "parent_id": 157655,
+    "latitude": "0E-8",
+    "longitude": "0E-8",
+    "native": "城区",
+    "population": 450959,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Chengqu",
+      "ko": "청취",
+      "pt-BR": "Chengqu",
+      "pt": "Chengqu",
+      "nl": "Chengqu",
+      "hr": "Chengqu",
+      "fa": "چنگکو",
+      "de": "Chengqu",
+      "es": "Chengqu",
+      "fr": "Chengqu",
+      "ja": "成区",
+      "it": "Chengqu",
+      "zh-CN": "城区",
+      "tr": "Chengqu",
+      "ru": "Чэнцюй",
+      "uk": "Chengqu",
+      "pl": "Chengqu",
+      "hi": "चेंगकू",
+      "ar": "تشينجكو"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-26T18:54:28",
+    "flag": 1,
+    "wikiDataId": "Q424839",
+    "replacement_id": null
+  },
+  {
+    "id": 157658,
+    "name": "Directly",
+    "state_id": 2273,
+    "state_code": "HI",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "0E-8",
+    "longitude": "0E-8",
+    "native": "直接地",
+    "population": null,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "War-eeun",
+      "ko": "곧장",
+      "pt-BR": "Diretamente",
+      "pt": "Diretamente",
+      "nl": "Direct",
+      "hr": "Direktno",
+      "fa": "مستقیماً",
+      "de": "Direkt",
+      "es": "Directamente",
+      "fr": "Directement",
+      "ja": "直接",
+      "it": "Direttamente",
+      "zh-CN": "直接地",
+      "tr": "Doğrudan",
+      "ru": "Напрямую",
+      "uk": "Безпосередньо",
+      "pl": "Bezpośrednio",
+      "hi": "सीधे",
+      "ar": "مباشرة"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-21T20:15:23",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": null
+  },
+  {
+    "id": 158123,
+    "name": "Directly",
+    "state_id": 2259,
+    "state_code": "HA",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "0E-8",
+    "longitude": "0E-8",
+    "native": "直接地",
+    "population": null,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "War-eeun",
+      "ko": "곧장",
+      "pt-BR": "Diretamente",
+      "pt": "Diretamente",
+      "nl": "Direct",
+      "hr": "Direktno",
+      "fa": "مستقیماً",
+      "de": "Direkt",
+      "es": "Directamente",
+      "fr": "Directement",
+      "ja": "直接",
+      "it": "Direttamente",
+      "zh-CN": "直接地",
+      "tr": "Doğrudan",
+      "ru": "Напрямую",
+      "uk": "Безпосередньо",
+      "pl": "Bezpośrednio",
+      "hi": "सीधे",
+      "ar": "مباشرة"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-21T20:18:33",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": null
+  },
+  {
+    "id": 158224,
+    "name": "Directly",
+    "state_id": 2274,
+    "state_code": "HB",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "0E-8",
+    "longitude": "0E-8",
+    "native": "直接地",
+    "population": null,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "War-eeun",
+      "ko": "곧장",
+      "pt-BR": "Diretamente",
+      "pt": "Diretamente",
+      "nl": "Direct",
+      "hr": "Direktno",
+      "fa": "مستقیماً",
+      "de": "Direkt",
+      "es": "Directamente",
+      "fr": "Directement",
+      "ja": "直接",
+      "it": "Direttamente",
+      "zh-CN": "直接地",
+      "tr": "Doğrudan",
+      "ru": "Напрямую",
+      "uk": "Безпосередньо",
+      "pl": "Bezpośrednio",
+      "hi": "सीधे",
+      "ar": "مباشرة"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-21T20:18:56",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows come back with their ids, which are not reused meanwhile (new
+records get ids above the current maximum).
+
+### Files Changed
+- `contributions/cities/CN.json` — 17 records repaired, 20 `parent_id`s cleared, 5 records removed
+
+## Mexican city types: municipality vs. seat town
+
+### Problem
+`MX.json` mixed municipality records (the territory) and seat towns under the same types (see #1634/#1650).
+
+### Fix
+Convention (also in TYPE_FIELD.md, whose settlement filters now leave out MX `municipality`): `adm1` = state-capital
+town, `adm2` = municipal-seat town (GeoNames PPLA2), `municipality` = the municipal territory (GeoNames ADM2),
+`city` = any other locality. `type` changes on 443 records: 351 become `municipality` (245 from `city`, 105 from
+`adm2`, 1 from `section`), being on their municipality's GeoNames ADM2 point, nearer to it than to any same-named
+town, with a population that is not a town's of that municipality; 92 seat towns become `adm2` (91 from `city`,
+1 from `municipality`).
+
+Left alone: records whose population is exactly a town's (the 2019 import copied GeoNames populations, so this
+identifies the source entry, wherever the town lies in the municipality): 88 seat towns (56 already `adm2`, 32
+made `adm2`) and 26 plain towns; and 8 whose own
+Wikidata item is the seat town while P1376 names a separate municipality. Also unchanged: 141 `adm2` records whose
+source entry is a plain town (PPL); 12 are confirmed seats, 129 need an INEGI seat check.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/MX.json` — `type` on 443 records
+- `TYPE_FIELD.md` — the Mexican convention and the filter snippets
+
 ## Duplicate city records merged
 
 ### Problem

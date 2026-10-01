@@ -58,6 +58,13 @@ approximate.
 | `subdistrict` | 1 | ✅ | Subdistrict (populated) |
 | `historical_capital` | 1 | ❌ | Former capital — not a live settlement |
 
+
+### Mexico
+
+In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoNames PPLA2) and
+`municipality` the municipal territory itself (GeoNames ADM2), so a municipality and its seat town can both
+appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexico, leave out `municipality`.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
@@ -73,6 +80,8 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
+In Mexico, also exclude `municipality` (the municipal territory; see [Mexico](#mexico)).
+
 ### SQL
 
 ```sql
@@ -86,6 +95,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
+AND (country_code <> 'MX' OR type IS NULL OR type <> 'municipality')  -- MX municipality = territory
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
 ```
@@ -106,7 +116,9 @@ const EXCLUDED_TYPES = new Set([
 ]);
 
 const settlements = cities.filter(
-  (c) => !EXCLUDED_TYPES.has(c.type) && c.latitude != null && c.longitude != null
+  (c) => !EXCLUDED_TYPES.has(c.type)
+    && !(c.country_code === 'MX' && c.type === 'municipality') // MX municipality = territory
+    && c.latitude != null && c.longitude != null
 );
 ```
 
