@@ -162,12 +162,13 @@ as duplicate records (2 pairs).
 
 ## Found along the way
 
-**`type` values that break the convention (about 510 records).** In CSC, `adm2` normally marks a municipality's
-seat town (GeoNames PPLA2, 1,123 records) and `adm1` a state capital. Misfits: 310 records that are the
-municipality itself are typed `city` (186 more are typed `adm2`, 4 `municipality`), 141 records typed `adm2` are
-plain towns, and 59 seat towns are typed `city`. An earlier version of this summary counted 1,580 wrong types by
-reading `adm2` as "municipality"; that misread the convention. The IDs here follow the real kind; the `type`
-field itself is not changed here and needs a decision on what a municipality record should be typed.
+**`type` values that break the convention.** In CSC, `adm2` marks a municipality's seat town (GeoNames PPLA2,
+1,123 records), `adm1` a state capital, and `municipality` the municipal territory itself (the convention settled
+in #1643). Misfits: 496 records that are the municipality itself are typed `city` (310) or `adm2` (186); 4 more are
+already `municipality`. 59 seat towns are typed `city`. 141 records typed `adm2` match a plain town (GeoNames PPL),
+but a PPL entry does not prove a town is not a seat, so they need a seat check (INEGI) first. An earlier version of
+this summary counted 1,580 wrong types by reading `adm2` as "municipality"; that misread the convention. The IDs
+here follow the real kind; the `type` field itself is not changed here (see #1643).
 
 **Duplicate records (15 pairs).** Both records of each pair describe the same place and hold the same ID;
 they should be merged separately.
