@@ -8,10 +8,10 @@ Each finding is verified against an independent source before any change. Fixes 
 
 ## States and cities on the wrong time zone
 
-**93 states and 1,528 cities** get the right IANA time zone. #1649 checked each city against its neighbours;
+**95 states and 1,535 cities** get the right IANA time zone. #1649 checked each city against its neighbours;
 that misses these, because here the wrong zone is shared by a whole state, most of its cities, or a whole country.
 
-### States (93)
+### States (95)
 - **Russia (27):** federal subjects outside Moscow time were stored as `Europe/Moscow`; each takes its legal zone.
 - **Papua New Guinea (21):** every province was on `Pacific/Bougainville` (UTC+11); only Bougainville uses it, the
   rest of the country is on `Pacific/Port_Moresby` (UTC+10).
@@ -20,8 +20,10 @@ that misses these, because here the wrong zone is shared by a whole state, most 
   `Asia/Jakarta` (UTC+7); Maluku and Papua already had `Asia/Jayapura`.
 - **DR Congo (16):** the eastern provinces (Kivu, Katanga, Kasaï, Ituri, Uélé, Maniema, Tshopo…) were on
   `Africa/Kinshasa` (UTC+1); they are on `Africa/Lubumbashi` (UTC+2).
-- **Mongolia (3):** Khovd, Uvs and Bayan-Ölgii are on `Asia/Hovd` (UTC+7) in tzdata. Zavkhan and Govi-Altai stay on
-  UTC+8 as tzdata has them (Mongolia's standards agency lists them on UTC+7; disputed).
+- **Mongolia (5):** Khovd, Uvs and Bayan-Ölgii are on `Asia/Hovd` (UTC+7) in tzdata. Zavkhan and Govi-Altai follow
+  tzdata too (a #1643 decision): both states move from the `Asia/Choibalsan` alias to `Asia/Ulaanbaatar` (UTC+8), and
+  their two cities, Uliastay and Altai, from `Asia/Hovd`. Mongolia's standards agency lists the two aimags on UTC+7;
+  tzdata follows the observed UTC+8 and records the conflict.
 - **French Polynesia (4):** the Austral, Leeward, Windward and Tuamotu-Gambier groups were on `Pacific/Gambier`
   (UTC−9); they are on Tahiti time (UTC−10), except the Gambier Islands themselves.
 - **Kiribati (2), Micronesia (2), Greenland (1):** Gilbert and Line Islands had the Phoenix Islands' zone; Kosrae
@@ -123,7 +125,7 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | RU | Jewish | Europe/Moscow | Asia/Vladivostok |
 | RU | Zabaykalsky | Europe/Moscow | Asia/Chita |
 
-### Cities (1,528)
+### Cities (1,535)
 - **Single-zone states:** a city on another offset takes the state's zone (Western Australia's towns on Sydney
   time; Mato Grosso, Mato Grosso do Sul, Rondônia and Acre on São Paulo time; Sinaloa; the Indonesian, Papua New
   Guinean, Congolese and Russian cases above). Western Australia's Eucla area (east of 125.5°E, UTC+8:45) is excluded.
@@ -223,7 +225,10 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | RU | Khanty-Mansi | Europe/Moscow | Asia/Yekaterinburg | 4 |
 | BR | Amazonas | America/Sao_Paulo | America/Eirunepe | 3 |
 | CA | Manitoba | America/Toronto | America/Winnipeg | 3 |
-| MX | Jalisco | America/Mazatlan | America/Mexico_City | 3 |
+| MX | Nayarit, Bahía de Banderas (3 filed under Jalisco) | America/Mazatlan | America/Bahia_Banderas | 6 |
+| MN | Zavkhan, Govi-Altai | Asia/Hovd | Asia/Ulaanbaatar | 2 |
+| BR | Amazonas (Lábrea) | America/Sao_Paulo | America/Manaus | 1 |
+| GL | Avannaata (Qaanaaq) | America/Danmarkshavn | America/Nuuk | 1 |
 | PG | Hela | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
 | PG | Jiwaka | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
 | PG | Southern Highlands | Pacific/Bougainville | Pacific/Port_Moresby | 3 |
@@ -245,10 +250,11 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 | PG | Port Moresby | Pacific/Bougainville | Pacific/Port_Moresby | 1 |
 
 ### Not changed
-- **Uncertain:** Sakha's cities in the Verkhoyansk, Oymyakon and Kolyma areas (three zones); Lábrea in Amazonas.
-  Itamarati and Tabatinga take Manaus time (UTC−4, as English sources give), leaving the São Paulo time they had;
-  Portuguese sources put them on UTC−5.
-- **Not in scope:** Qaanaaq (Greenland) is on `America/Danmarkshavn` (UTC+0).
+- **Uncertain:** Sakha's cities in the Verkhoyansk, Oymyakon and Kolyma areas (three zones).
+- **Amazonas** follows IANA's east/west geography, the Tabatinga–Porto Acre line of Decree 2,784/1913 and Law
+  12,876/2013 (the 1913 regulation puts both endpoints in the eastern zone): Itamarati, Tabatinga and Lábrea take
+  `America/Manaus`. A 2019 Ministry of Education (ENEM) notice groups 13 Amazonas municipalities with Acre's time,
+  including Boca do Acre and Jutaí, which IANA explicitly places in the east; that conflict is recorded, not resolved.
 - **Multi-zone by design:** US states split between zones (Tennessee, Kentucky, Indiana, Florida, Texas, the Dakotas,
   Nebraska, Kansas, Idaho, Arizona's Navajo Nation) and Mexico's US-border strip (Coahuila, Nuevo León, Tamaulipas,
   Chihuahua).
@@ -260,11 +266,14 @@ that misses these, because here the wrong zone is shared by a whole state, most 
 ### Independent review
 Round 1 was reviewed: all 30 states correct (the 27 Russian mappings checked against Russian law and tzdata) and 360
 of 1,069 cities checked by OpenStreetMap, all correct. Round 2 (from that review's findings) was reviewed in full (all 459 new cities with OpenStreetMap): 455 correct;
-the 2 wrong and 2 uncertain cities and two Mongolian aimags were corrected as described above.
+the 2 wrong and 2 uncertain cities and two Mongolian aimags were corrected as described above. A second (Codex)
+review found the three Bahía de Banderas records filed under Jalisco given Mexico City's zone (their municipality
+has its own, `America/Bahia_Banderas`) and Lábrea left on São Paulo time; both are fixed, with three more Bahía de
+Banderas records, Qaanaaq and the two Mongolian aimags' cities.
 
 ## Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ## Files Changed
-- `contributions/states/states.json` — `timezone` on 93 states
-- `contributions/cities/*.json` (12 countries) — `timezone` on 1,528 cities
+- `contributions/states/states.json` — `timezone` on 95 states
+- `contributions/cities/*.json` (13 countries) — `timezone` on 1,535 cities
