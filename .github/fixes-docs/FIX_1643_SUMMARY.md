@@ -46244,3 +46244,19 @@ Revert the PR (squash commit). No existing `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — Halabja Governorate added
 - `contributions/cities/*.json` — 253 records
+
+## Missing cities added (second batch)
+
+### Problem
+The missing-cities audit's second batch (1,129 candidates) needed the stricter screen the #1702 review established.
+
+### Fix
+688 new city records (IN 72, VE 69, NO 64, RU 45, AR 33, AF 32, UZ 24, ZA 19, ID 19, UG 19, NG 18, EC 17, MX 17, HR 16, NI 15, …): direct settlement class, non-PPLX GeoNames entry, no duplicate within 10 km or by
+QID (including #1702's creates), state agreed by GeoNames membership and P131, timezone from tzdb geography;
+population only where an own-settlement figure confirms it (666 null). 432 candidates held, 9 more in review.
+
+### Rollback
+Revert the PR (squash commit). New records only; no existing `id` changes.
+
+### Files Changed
+- `contributions/cities/*.json` — 688 new records
