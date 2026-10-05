@@ -65,6 +65,11 @@ In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoN
 `municipality` the municipal territory itself (GeoNames ADM2), so a municipality and its seat town can both
 appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexico, leave out `municipality`.
 
+### Greece
+
+In `GR.json`, `municipality` is a municipal territory (e.g. Lake Plastiras, Pangaio), not a town, and Mount
+Athos's monasteries are `religious`. To list only settlements in Greece, leave out `municipality`.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
@@ -80,7 +85,7 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Mexico, also exclude `municipality` (the municipal territory; see [Mexico](#mexico)).
+In Mexico and Greece, also exclude `municipality` (the municipal territory; see [Mexico](#mexico), [Greece](#greece)).
 
 ### SQL
 
@@ -95,7 +100,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code <> 'MX' OR type IS NULL OR type <> 'municipality')  -- MX municipality = territory
+AND (country_code NOT IN ('MX', 'GR') OR type IS NULL OR type <> 'municipality')  -- MX/GR municipality = territory
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
 ```
@@ -117,7 +122,7 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(c.country_code === 'MX' && c.type === 'municipality') // MX municipality = territory
+    && !(['MX', 'GR'].includes(c.country_code) && c.type === 'municipality') // MX/GR municipality = territory
     && c.latitude != null && c.longitude != null
 );
 ```
