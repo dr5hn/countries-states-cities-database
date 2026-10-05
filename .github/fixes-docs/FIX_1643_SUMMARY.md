@@ -50369,3 +50369,20 @@ Revert the PR (squash commit); the archived row is listed above.
 
 ### Files Changed
 - `contributions/cities/PH.json` — 1 record removed
+
+## Types and points from deep research on places of 50,000+
+
+### Problem
+Identity and level screen hits on large places needed official code tables: territories stored as settlements,
+boroughs typed as cities, and Philippine municipal points lying inside another municipality.
+
+### Fix
+`type` on 579 records (city → area 299, city → province 86, adm2 → area 58, adm3 → province 38, adm2 → section 27, adm3 → area 25, adm1 → area 15, adm1 → province 6, city → section 6, adm2 → province 5, section → area 2, section → city 2, capital → section 2, adm4 → area 1, adm1 → section 1, capital → area 1, city → prefecture 1, city → district 1, city → county 1, district → area 1, district → county 1), mostly by national code tables; `latitude`/`longitude` on 70 (65 Philippine LGUs to their
+ADM3 representative points, 5 Indian towns by census town code). No city -> admN seat-role relabels. 1,323 held, incl. 24 mixed town/district records
+(Jabalpur, Kozhikode, Tiruchirappalli, Essaouira…).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — 673 records
