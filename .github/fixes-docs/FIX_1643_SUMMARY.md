@@ -40248,6 +40248,11 @@ Lugo, carrying Morón de la Frontera's item), Messac (Ille-et-Vilaine's namesake
 - 147455 Birpur removed in favour of 58160 (same town, population 19,932 per Bihar's SEC); 58160 takes Q858315.
 - Held: Baoshan 19317, Nyvky 149465, Bako/Jinka, El Espinal, Kalbugan, La Manzanilla de La Paz, San Diego de
   Alejandría, Tizapán el Alto.
+- Sources: https://www.wikidata.org/wiki/Q9578, https://www.geonames.org/6535413/ (Piobesi Torinese);
+  https://www.aemet.es/es/eltiempo/prediccion/municipios/mos-reguengo-id36033, https://www.wikidata.org/wiki/Q1596023
+  (Mos); https://geo.api.gouv.fr/communes/17231?fields=nom,code,centre,departement,population (Messac);
+  https://www.wikidata.org/wiki/Q575352, https://www.openstreetmap.org/node/1228170241 (Konso);
+  https://sec.bihar.gov.in/ForPublic/NagarPalikaEntryReport.aspx?ID=0, https://www.geonames.org/1275499/ (Birpur).
 
 ### Removed records (archive)
 
