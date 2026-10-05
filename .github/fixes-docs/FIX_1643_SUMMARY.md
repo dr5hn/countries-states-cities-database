@@ -40449,3 +40449,20 @@ Revert the PR (squash commit).
 
 ### Files Changed
 - `contributions/cities/PH.json` — points on 6 records
+
+## Chinese disambiguation IDs (second pass)
+
+### Problem
+After #1679, 758 records of the later CN county batch still carried a Wikidata disambiguation page.
+
+### Fix
+`wikiDataId` on 266 records (263 county-level, 3 prefectures), each only where a unique item's current P442 code,
+its Chinese administrative name, its current P131 chain through the record's own parent, and GeoNames' ADM3/ADM2
+entry (Chinese name and prefecture code) all agree. Coordinates are not changed. Held: 492 (different Chinese names,
+43 parent conflicts such as 158356 Gulou, no unique coded item); Anyuan 158461's point (in Ganzhou) needs a separate fix.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/CN.json` — `wikiDataId` on 266 records
