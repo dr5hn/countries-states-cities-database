@@ -45625,6 +45625,283 @@ Revert the PR (squash commit). No `id`s change.
 - `contributions/states/states.json` — 4 states
 - `contributions/postcodes/VN.json` — `state_id`/`state_code` on 34 postcodes
 
+## City types: administrative units and neighbourhoods typed as settlements
+
+### Problem
+The repo-wide level audit found administrative territories stored as settlements (Belgian provinces, Regierungsbezirke,
+Korean counties, Irish counties, Australian councils, Hungarian districts, Russian raions), city neighbourhoods typed as
+cities, and Chaohu stored as a prefecture although it has been a county-level city under Hefei since 2011.
+
+### Fix
+`type` on 387 records, proven by a GeoNames match plus the record's own Wikidata item (label, point within 5 km,
+current P31): 375 territories to `area`/`county`/`province`/`region`/`regency`, 11 neighbourhoods to `section`, Chaohu to
+`city` at level 2 (city → area 250, city → county 34, adm2 → area 26, section → area 13, city → province 11, adm3 → county 8, adm1 → area 7, adm2 → county 7, city → section 7, adm3 → province 7, city → region 4, city → regency 2, adm3 → area 2, prefecture → city 1, county → section 1, adm4 → region 1, locality → section 1, adm3 → regency 1, adm2 → regency 1, adm4 → county 1, district → section 1, None → section 1). Antiguo Cuscatlán and San Marcos (SV) stay `city` (their own items are
+the towns). 450 US county seats (`city` to `adm2`) are held: #1303's filter treats US `adm2` as counties.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `type` on 387 records; Chaohu's `level` 1 → 2
+
+## GB: towns filed under a neighbouring council
+
+### Problem
+564 British towns were filed under a nearby unitary authority or London borough rather than the county or council
+they are in (e.g. Kent towns under Tower Hamlets, Hampshire towns under Southampton).
+
+### Fix
+`state_id`/`state_code` where the town's own Wikidata item (current P131) and its fingerprinted GeoNames entry agree on
+the council. Cumbria's successor authorities and same-level mismatches without two sources are held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/GB.json` — `state_id`/`state_code` on 564 records
+
+## States: City of Zagreb, Luxembourg's cantons, Saint Helena's territories
+
+### Problem
+ISO 3166-2 lists units CSC lacked: HR-21 City of Zagreb (its cities were under Zagreb County), Luxembourg's LU-LU and
+LU-GR cantons (CSC still had the districts abolished in 2015) and Saint Helena's three constituent territories. Western
+and Eastern Tobago were empty rows for codes withdrawn in 2015; Achaea still carried GR-13, withdrawn in 2016.
+
+### Fix
+New states 5834 City of Zagreb (HR-21), 5835 Luxembourg (LU-LU), 5836 Grevenmacher (LU-GR), 5838 Saint Helena (SH-HL),
+5837 Ascension (SH-AC), 5839 Tristan da Cunha (SH-TA). 49 cities and 1,632 postcodes move by official membership
+(DZS settlements, Luxembourg's CACLR register); Saint Helena's eight districts go under SH-HL (level 2); Olm to
+Capellen. Removed: 1514, 1520, 3353, 3355. Achaea (2116), still a regional unit, keeps its record with
+`iso3166_2` null. The HR and LU postcode importers map to the new states.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 3353,
+    "name": "Western Tobago",
+    "country_id": 223,
+    "country_code": "TT",
+    "fips_code": "03",
+    "iso2": "WTO",
+    "iso3166_2": "TT-WTO",
+    "type": "region",
+    "level": null,
+    "parent_id": null,
+    "native": "Western Tobago",
+    "latitude": "11.15728850",
+    "longitude": "-60.81650130",
+    "timezone": "America/Port_of_Spain",
+    "translations": {
+      "br": "Tobago ar C'hornôg",
+      "ko": "서부 토바고",
+      "pt-BR": "Tobago Ocidental",
+      "pt": "Tobago Ocidental",
+      "nl": "West-Tobago",
+      "hr": "Zapadni Tobago",
+      "fa": "توباگوی غربی",
+      "de": "West-Tobago",
+      "es": "Tobago occidental",
+      "fr": "Tobago occidental",
+      "ja": "西トバゴ",
+      "it": "Tobago occidentale",
+      "zh-CN": "西多巴哥",
+      "tr": "Batı Tobago",
+      "ru": "Западный Тобаго",
+      "uk": "Західне Тобаго",
+      "pl": "Zachodnie Tobago",
+      "hi": "पश्चिमी टोबैगो",
+      "ar": "غرب توباغو"
+    },
+    "created_at": "2019-10-06T08:48:54",
+    "updated_at": "2025-10-09T23:11:09",
+    "flag": 1,
+    "wikiDataId": "Q13365874",
+    "population": null,
+    "replacement_id": 5735
+  },
+  {
+    "id": 3355,
+    "name": "Eastern Tobago",
+    "country_id": 223,
+    "country_code": "TT",
+    "fips_code": "11",
+    "iso2": "ETO",
+    "iso3166_2": "TT-ETO",
+    "type": "region",
+    "level": null,
+    "parent_id": null,
+    "native": "Eastern Tobago",
+    "latitude": "11.28322320",
+    "longitude": "-60.69250660",
+    "timezone": "America/Port_of_Spain",
+    "translations": {
+      "br": "Reter Tobago",
+      "ko": "동부 토바고",
+      "pt-BR": "Tobago Oriental",
+      "pt": "Tobago Oriental",
+      "nl": "Oost-Tobago",
+      "hr": "Istočni Tobago",
+      "fa": "توباگوی شرقی",
+      "de": "Ost-Tobago",
+      "es": "Tobago Oriental",
+      "fr": "Tobago oriental",
+      "ja": "東トバゴ",
+      "it": "Tobago orientale",
+      "zh-CN": "东多巴哥",
+      "tr": "Doğu Tobago",
+      "ru": "Восточный Тобаго",
+      "uk": "Східне Тобаго",
+      "pl": "Wschodnie Tobago",
+      "hi": "पूर्वी टोबैगो",
+      "ar": "شرق توباغو"
+    },
+    "created_at": "2019-10-06T08:48:54",
+    "updated_at": "2025-10-09T23:11:15",
+    "flag": 1,
+    "wikiDataId": "Q13365873",
+    "population": null,
+    "replacement_id": 5735
+  },
+  {
+    "id": 1514,
+    "name": "Luxembourg ",
+    "country_id": 127,
+    "country_code": "LU",
+    "fips_code": "03",
+    "iso2": "L",
+    "iso3166_2": "LU-L",
+    "type": "canton",
+    "level": null,
+    "parent_id": null,
+    "native": "Luxembourg",
+    "latitude": "49.61127680",
+    "longitude": "6.12979900",
+    "timezone": "Europe/Luxembourg",
+    "translations": {
+      "br": "Luksembourg",
+      "ko": "룩셈부르크",
+      "pt-BR": "Luxemburgo",
+      "pt": "Luxemburgo",
+      "nl": "Luxemburg",
+      "hr": "Luksemburg",
+      "fa": "لوکزامبورگ",
+      "de": "Luxemburg",
+      "es": "Luxemburgo",
+      "fr": "Luxembourg",
+      "ja": "ルクセンブルク",
+      "it": "Lussemburgo",
+      "zh-CN": "卢森堡",
+      "tr": "Lüksemburg",
+      "ru": "Люксембург",
+      "uk": "Люксембург",
+      "pl": "Luksemburg",
+      "hi": "लक्ज़मबर्ग",
+      "ar": "لوكسمبورغ"
+    },
+    "created_at": "2019-10-06T08:48:42",
+    "updated_at": "2025-10-09T23:57:10",
+    "flag": 1,
+    "wikiDataId": "Q2032",
+    "population": null,
+    "replacement_id": null
+  },
+  {
+    "id": 1520,
+    "name": "Grevenmacher",
+    "country_id": 127,
+    "country_code": "LU",
+    "fips_code": "02",
+    "iso2": "G",
+    "iso3166_2": "LU-G",
+    "type": "canton",
+    "level": null,
+    "parent_id": null,
+    "native": "Great",
+    "latitude": "49.68085100",
+    "longitude": "6.44075240",
+    "timezone": "Europe/Luxembourg",
+    "translations": {
+      "br": "Grevenmacher",
+      "ko": "그레벤마허",
+      "pt-BR": "Grevenmacher",
+      "pt": "Grevenmacher",
+      "nl": "Grevenmacher",
+      "hr": "Grevenmacher",
+      "fa": "گرونماخر",
+      "de": "Grevenmacher",
+      "es": "Grevenmacher",
+      "fr": "Grevenmacher",
+      "ja": "グレーヴェンマッハー",
+      "it": "Grevenmacher",
+      "zh-CN": "格雷文马赫",
+      "tr": "Grevenmacher",
+      "ru": "Гревенмахер",
+      "uk": "Гревенмахер",
+      "pl": "Grevenmacher",
+      "hi": "ग़्रेवेन्मचेर",
+      "ar": "جريفينماشر"
+    },
+    "created_at": "2019-10-06T08:48:42",
+    "updated_at": "2025-11-09T00:08:52",
+    "flag": 1,
+    "wikiDataId": "Q208284",
+    "population": 5274,
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows are archived below.
+
+### Files Changed
+- `contributions/states/states.json` — 6 added, 8 re-parented, 4 removed, Achaea's ISO code cleared
+- `contributions/cities/HR.json`, `LU.json` — 49 cities
+- `contributions/postcodes/HR.json`, `LU.json`, `SH.json` — 1,632 postcodes
+- `bin/scripts/sync/import_croatia_postcodes.py`, `import_luxembourg_postcodes.py` — mappings
+
+## City names corrected to the source spelling
+
+### Problem
+City names were not standardised: missing diacritics, doubled-letter romanisations (Gavarr, Garrni), Cyrillic in the
+English name, outdated names. The repo-wide names audit compared every record with GeoNames and its own Wikidata item.
+
+### Fix
+`name` on 548 records where the GeoNames name and the record's own Wikidata English label agree exactly (old name a
+label/alias of that item, point within 5 km, GeoNames entry fingerprinted as the record's own); a Latin-language translation
+that repeated the old name follows only where that language's Wikidata label equals the new name. `native` is not guessed. 7,131 candidates are held without two agreeing sources; Beau Bassin,
+La Fortuna and Pejivalle were held in review.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `name` on 548 records, 1,414 translation values
+
+## Cities filed under the wrong state (state-link audit)
+
+### Problem
+The repo-wide state-link audit found 100 records outside GB filed under the wrong state
+(CZ 31, LT 20, DZ 13, MA 8, IT 8, KZ 6, MT 3, NO 3, CD 2, BQ 2, LV 1, IN 1, IS 1, RS 1).
+
+### Fix
+`state_id`/`state_code` where the city's own Wikidata item (current P131) and its fingerprinted GeoNames entry agree on
+the state. Burundi and Burkina Faso's 2025 reforms, LK/PH/LT/IS level differences and Sardinia are left for coordinated
+migrations.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `state_id`/`state_code` on 100 records
+
 ## Greece: Mount Athos and the held records
 
 ### Problem

@@ -21,7 +21,8 @@ What this script does
 ---------------------
 1. Fetches the JSON via urllib (curl is blocked).
 2. Walks 21 source counties (20 CSC counties + Grad Zagreb /
-   City of Zagreb which collapses into CSC iso2 '01' Zagreb).
+   City of Zagreb, CSC iso2 '21'). The source lists Zaprešić (10290)
+   under Grad Zagreb, but it is in Zagreb County, so CODE_TO_ISO2 keeps it on '01'.
 3. Resolves state FK via SOURCE_TO_ISO2 (21-entry hand map
    handling Croatian adjective form -> CSC English county name).
 4. Emits one row per (zip_code, city) tuple.
@@ -30,8 +31,7 @@ What this script does
 Coverage
 --------
 - 905 codes / 100% state FK
-- All 20 CSC HR counties covered
-- Grad Zagreb (city) merged into Zagreb county per CSC convention
+- All 21 CSC HR states covered (20 counties + City of Zagreb, HR-21)
 
 License & attribution
 ---------------------
@@ -63,7 +63,7 @@ SOURCE_URL = (
 # Source Croatian adjective form -> CSC iso2.
 SOURCE_TO_ISO2: Dict[str, str] = {
     "Zagrebačka": "01",                # Zagreb (county)
-    "Grad Zagreb": "01",               # Zagreb (city, merged with county)
+    "Grad Zagreb": "21",               # City of Zagreb (HR-21)
     "Krapinsko-zagorska": "02",        # Krapina-Zagorje
     "Sisačko-moslavačka": "03",        # Sisak-Moslavina
     "Karlovačka": "04",                # Karlovac
@@ -83,6 +83,11 @@ SOURCE_TO_ISO2: Dict[str, str] = {
     "Istarska": "18",                  # Istria
     "Dubrovačko-neretvanska": "19",    # Dubrovnik-Neretva
     "Međimurska": "20",                # Međimurje
+}
+
+# Postcodes the source files under the wrong county -> CSC iso2.
+CODE_TO_ISO2: Dict[str, str] = {
+    "10290": "01",  # Zaprešić: a town in Zagreb County, listed under Grad Zagreb
 }
 
 
@@ -150,7 +155,8 @@ def main() -> int:
             if not regex.match(code):
                 skipped_bad_regex += 1
                 continue
-            if state is None:
+            city_state = state_by_iso2.get(CODE_TO_ISO2[code]) if code in CODE_TO_ISO2 else state
+            if city_state is None:
                 skipped_no_state += 1
 
             key = (code, city_name.lower())
@@ -163,9 +169,9 @@ def main() -> int:
                 "country_id": int(hr_country["id"]),
                 "country_code": "HR",
             }
-            if state is not None:
-                record["state_id"] = int(state["id"])
-                record["state_code"] = state.get("iso2")
+            if city_state is not None:
+                record["state_id"] = int(city_state["id"])
+                record["state_code"] = city_state.get("iso2")
                 matched_state += 1
             if city_name:
                 record["locality_name"] = city_name
