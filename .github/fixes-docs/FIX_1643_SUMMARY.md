@@ -46343,6 +46343,26 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/cities/*.json` — `native`/`translations` on 19 records
 
+## Names, native names and state links (deep research on places of 50,000+)
+
+### Problem
+Name and state-link screen hits on large places needed official-register checks: Chinese native names with wrong
+homophones or truncations, outdated names, cities under the wrong state, and reviewer-found field errors.
+
+### Fix
+410 records: Chinese `native` (and matching `zh-CN`): 254 per the Ministry of Civil Affairs register, 11 towns per other
+government sources; official renames
+(Pandit Deen Dayal Upadhyaya Nagar, Đồng Xoài, Khrustalnyi); 85 state links by the point's administration or official territorial sources (22 official);
+Mazamitla (was Mazamitlongo); Fernando de Noronha on America/Noronha; populations of Gran, Etnedal, Daniel Carrión,
+Qŭrghontepa Tumani, Yongsan-gu, Malingao corrected and Centro/Reducto (Montevideo barrios) cleared. 31 held. Eight renamed records' unrelated
+Wikidata items are replaced (Đồng Xoài Q665981, Maragusan Q315512) or cleared.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — 410 records
+
 ## Duplicate cities merged (official codes)
 
 ### Problem
