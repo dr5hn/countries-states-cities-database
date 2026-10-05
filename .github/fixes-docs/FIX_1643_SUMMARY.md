@@ -6504,3 +6504,25 @@ Revert the PR (squash commit); 158228 comes back with its id.
 
 ### Files Changed
 - `contributions/cities/{CN,FR,ES,IT}.json` — 180 records changed, 1 removed
+
+## Postcodes outside their country
+
+### Problem
+The coordinate validator still flagged 21 postcodes: 3 Australian codes at (0, 0), 6 Somali codes inside Kenya,
+and 12 Danish codes whose centre is at sea.
+
+### Fix
+- AU 6947 Wangara (44896) and 6965 Bibra Lake (44910): Australia Post's points for these PO-box codes
+  (https://auspost.com.au/postcode/wangara, https://auspost.com.au/postcode/bibra-lake).
+- AU 6958 (44904), the Navy warships routing code: point cleared (no place; Defence routes it via Rockingham,
+  https://www.defence.gov.au/sites/default/files/2020-08/NWCC-MailAdvice.pdf); the code stays.
+- SO 31001 Luuq (833300) and 33001/33002 Doolow (833302/833303): their towns' points (Q1878274, Q1017164; GeoNames
+  54715, 60632; OSM agrees on Gedo). These are the towns' points, not verified postal-area centroids.
+- Held: Kaarani 12001/12002 and Kenia 32001 (no same-named place in Gedo confirmed).
+- Not changed: Denmark's 12 sea centres come from the official postal areas, which include coastal water.
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/postcodes/{AU,SO}.json` — points on 6 records
