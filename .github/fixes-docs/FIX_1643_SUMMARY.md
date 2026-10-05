@@ -40467,6 +40467,33 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/cities/CN.json` — `wikiDataId` on 266 records
 
+## States checked against ISO 3166-2
+
+### Problem
+States had not been compared with ISO 3166-2 systematically. iso.org's browsing platform is JavaScript-only, so the
+audit used ISO's machine-readable mirrors
+([Debian iso-codes v4.20.1](https://salsa.debian.org/iso-codes-team/iso-codes/-/raw/v4.20.1/data/iso_3166-2.json),
+[CLDR 48.2](https://raw.githubusercontent.com/unicode-org/cldr/release-48-2/common/subdivisions/en.xml)) and Wikidata P300 with dates.
+
+### Fix
+Every resulting code and parent is in both mirrors. Names on 6 states (Cuanza Sul, Capital Region of Denmark,
+Extremadura, Hörgársveit, Põhja-Pärnumaa, Federal Dependencies); 7 ISO-field corrections on `iso3166_2` (IN-CG, IN-OD,
+IN-TS, whose Wikidata P300 changed on 2023-11-23; BQ-BO, BQ-SA, BQ-SE; MN-1), `iso2` kept as CSC's public key;
+`parent_id` on 10 (Nakhchivan's eight subdivisions under AZ-NX, listed by the
+[Presidential Library](https://nakhchivan.preslib.az/en_a3-0.html); Paris under Île-de-France and Métropole de Lyon
+under Auvergne-Rhône-Alpes, level 2); `wikiDataId` on Hörgársveit (Q1639013 is a Hungarian item; Q1432846 is the
+municipality). Wikidata P300 corroborates the rest. Hörgársveit and Lyon have no P300, so the
+[municipality](https://www.horgarsveit.is/), [service-public.fr](https://lannuaire.service-public.gouv.fr/auvergne-rhone-alpes/rhone/9978f4d2-62b4-4e4d-b1fe-352b9990904a)
+and Lyon's current Wikidata P131 establish those. Mirror snapshots corroborate ISO; they do not certify every live
+assignment.
+Follow-ups: Vietnam's 2025 provinces, Norway's 2024 counties, City of Zagreb, Mount Athos, Luxembourg's cantons.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/states/states.json` — 23 states
+
 ## Duplicate city records merged (audit pass)
 
 ### Problem
