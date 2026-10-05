@@ -45624,3 +45624,20 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — 4 states
 - `contributions/postcodes/VN.json` — `state_id`/`state_code` on 34 postcodes
+
+## City points moved onto the place they name
+
+### Problem
+The repo-wide identity audit found 110 records that clearly name a real town but store a point elsewhere: Indian towns
+at their district's coordinates, Marshall Islands atolls placed in Utah and Ukraine, a point just across a border.
+
+### Fix
+`latitude`/`longitude` on 110 records where a unique same-name GeoNames place with the record's exact population, the
+record's own Wikidata point (within 1 km) and a named OSM settlement point (within 1 km) agree. IN 45, CO 19, PH 14,
+BR 12, GN 5, FR 4, IR 3, MH 2, PG 2, BW, PE, PS, TN 1. Namesakes, moved seats and centroid cases are held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `latitude`/`longitude` on 110 records
