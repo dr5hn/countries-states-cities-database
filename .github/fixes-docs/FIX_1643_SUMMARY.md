@@ -46187,3 +46187,21 @@ Revert the PR (squash commit); the merged rows are archived above.
 - `contributions/states/states.json` — Mount Athos added
 - `contributions/cities/GR.json` — 32 records updated, 6 merged
 - `TYPE_FIELD.md` — Greek `municipality` note
+
+## City points moved onto the place they name
+
+### Problem
+The repo-wide identity audit found records that clearly name a real town but store a point elsewhere: Indian towns at
+their district's coordinates, Marshall Islands atolls placed in Utah and Ukraine, a point just across a border.
+
+### Fix
+`latitude`/`longitude` on 72 records: the record's own GeoNames populated place (exact population), corroborated by a
+named OSM settlement point or official evidence, and usually its own Wikidata point. IN 45, PH 8, FR 4, CO 3, IR 3, MH 2, PG 2, BR 1, BW 1, GN 1, PS 1, TN 1. Held in review: 31
+municipalities/districts whose old point is a valid administrative point, Huaytará, four PH LGUs, Tacloban and Cotabato
+City (filed under the wrong province).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `latitude`/`longitude` on 72 records
