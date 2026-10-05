@@ -46276,3 +46276,21 @@ Revert the PR (squash commit). New records only; no existing `id` changes.
 
 ### Files Changed
 - `contributions/cities/*.json` — 688 new records
+
+## City points moved inside the place they represent (second round)
+
+### Problem
+The identity audit left 2,827 records where GeoNames and the own Wikidata item agree on a point far from CSC's; the
+#1698 review showed a territory record's representative point must not be moved onto its seat town.
+
+### Fix
+`latitude`/`longitude` on 476 records: 342 French/overseas communes whose old point lies outside the official commune
+contour (new point: the commune's own Wikidata point, inside); 129 Philippine LGUs (127 whose old point lies on another
+municipality's land, incl. Monkayo, Lagawe, Bambang; Tacloban and Cotabato City take their own LGU points); Kalba, Gorakhpur, Qila Didar Singh,
+Tórshavn; Marshall (US) lost its longitude sign (timezone now America/Nome). 2,358 held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `latitude`/`longitude` on 476 records; Marshall's `timezone`
