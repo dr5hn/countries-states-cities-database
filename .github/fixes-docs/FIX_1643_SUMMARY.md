@@ -6526,3 +6526,28 @@ Revert the PR (squash commit).
 
 ### Files Changed
 - `contributions/postcodes/{AU,SO}.json` — points on 6 records
+
+## Philippine records outside their province (second pass) and the Special Geographic Area
+
+### Problem
+A fresh audit of all 5,354 PH records against the 2020 province polygons (Maguindanao split per RA 11550) found
+704 points outside their province; and BARMM's Special Geographic Area (SGA), carved out of Cotabato in 2024, had
+no state, so its barangays and municipalities stayed under Cotabato or elsewhere.
+
+### Fix
+- Province moves where an exact GeoNames population fingerprint or the record's own Wikidata item agrees with the
+  polygons (both sources near a border); point fixes for municipality records whose identity is certain, with a
+  point inside the same named municipality corroborated by GeoNames.
+- New state 5829 Special Geographic Area: PSA's PSGC 1999900000, a province-level unit of BARMM (parent 1316),
+  level 1, local `iso2` 19999 (ISO 3166-2 has no code; `iso3166_2` null), no sourced point yet. 13 records move
+  there by their PSGC codes (Gocoton, Malingao, Manaulanan, Pedtad, Nunguan; Kadayangan, Kapalawan, Ligawasan,
+  Malidegao, Nabalawag, Old Kaabakan, Tugunan).
+- Held: the rest of the 704, Kabasalan, Buliok, Damatulan (SGA membership unclear) and Kalbugan (Pagalungan, Maguindanao
+  del Sur per PSA; its point needs fixing first).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change; state 5829 is removed with it.
+
+### Files Changed
+- `contributions/states/states.json` — 1 state added
+- `contributions/cities/PH.json` — state on 151 records (138 provinces, 13 to the SGA), point on 111
