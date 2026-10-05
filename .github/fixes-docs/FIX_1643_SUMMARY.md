@@ -50276,4 +50276,6 @@ records unchanged; populations not added. 4,354 candidate pairs cleared as diffe
 Revert the PR (squash commit); the archived rows are listed above.
 
 ### Files Changed
-- `contributions/cities/JP.json`, `PH.json`, `CN.json`, `ES.json`, `US.json` — 93 records removed
+- `contributions/cities/JP.json`, `PH.json`, `CN.json`, `ES.json`, `US.json` — 93 records removed; four kept
+  records take correct fields from their archived copies (Butuan Q1686, Kunshan parent 149267/level 2, Bayugan
+  Agusan del Sur + Q1694, Bago native)
