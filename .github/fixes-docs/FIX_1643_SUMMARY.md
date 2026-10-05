@@ -45884,3 +45884,20 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `name` on 548 records, 1,414 translation values
+
+## Cities filed under the wrong state (state-link audit)
+
+### Problem
+The repo-wide state-link audit found 100 records outside GB filed under the wrong state
+(CZ 31, LT 20, DZ 13, MA 8, IT 8, KZ 6, MT 3, NO 3, CD 2, BQ 2, LV 1, IN 1, IS 1, RS 1).
+
+### Fix
+`state_id`/`state_code` where the city's own Wikidata item (current P131) and its fingerprinted GeoNames entry agree on
+the state. Burundi and Burkina Faso's 2025 reforms, LK/PH/LT/IS level differences and Sardinia are left for coordinated
+migrations.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `state_id`/`state_code` on 100 records
