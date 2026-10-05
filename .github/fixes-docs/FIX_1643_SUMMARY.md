@@ -45643,3 +45643,19 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `type` on 387 records; Chaohu's `level` 1 → 2
+
+## GB: towns filed under a neighbouring council
+
+### Problem
+564 British towns were filed under a nearby unitary authority or London borough rather than the county or council
+they are in (e.g. Kent towns under Tower Hamlets, Hampshire towns under Southampton).
+
+### Fix
+`state_id`/`state_code` where the town's own Wikidata item (current P131) and its fingerprinted GeoNames entry agree on
+the council. Cumbria's successor authorities and same-level mismatches without two sources are held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/GB.json` — `state_id`/`state_code` on 564 records
