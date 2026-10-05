@@ -46294,3 +46294,19 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `latitude`/`longitude` on 476 records; Marshall's `timezone`
+
+## City types and points from the identity/level triage
+
+### Problem
+The identity and level audits left 63,466 unverified rows. Triage cleared 4,606 records and proved type or point fixes
+for others: districts and divisions stored as cities, neighbourhoods typed `capital`, towns at their district's point.
+
+### Fix
+`type` on 237 records (city → area 171, city → section 22, adm2 → area 18, section → area 8, capital → section 4, adm1 → area 3, city → capital 2, city → province 2, adm3 → area 2, capital → area 1, adm2 → province 1, adm2 → section 1, locality → section 1, None → section 1); `latitude`/`longitude` on Solapur, Latur, Bhandara, Jalaun. Seat-role relabels
+from `city` to `adm1`/`adm2` (1,317 US county seats, Mumbai, Zaragoza) are left out per the 5 Oct decision.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — 241 records
