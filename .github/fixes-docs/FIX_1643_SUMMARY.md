@@ -46294,3 +46294,20 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `latitude`/`longitude` on 476 records; Marshall's `timezone`
+
+## City names (second round, from the names triage)
+
+### Problem
+The names audit left 7,123 unverified rows. Triage cleared 3,112 audit findings (1,868 of them only the optional empty
+`native` screen) and proved 19 renames.
+
+### Fix
+`name` on 19 records where the own Wikidata English label and GeoNames agree (Nur-Sultan → Astana per decree 1017;
+Italian particle casing per ISTAT; Villiers-Saint-Frédéric, Senoncourt-les-Maujouy, Staryi Saltiv, Bidania-Goiatz);
+translations follow only where that language's label equals the new name.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `name` on 19 records, 148 translation values on 18 of them
