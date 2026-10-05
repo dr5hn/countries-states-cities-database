@@ -6534,7 +6534,7 @@ Rerunning the neighbour test and the GeoNames fingerprint on current data (outsi
 candidates, among them a systematic batch: Taiwan (state 2255) held 49 mainland Jiangsu places from the 2019 import.
 
 ### Fix
-`state_id` and `state_code` on 141 records in 13 countries, each with two independent agreeing sources or an official
+`state_id` and `state_code` on 141 records in 14 countries, each with two independent agreeing sources or an official
 one: CN 50 (47 Jiangsu records out of Taiwan), FR 41, GB 15, MX 11, RU 6, RS 5, DZ 3, IN 3, ES 2 and IR, NO, SA, SN,
 TH 1 each. Held: places spanning two provinces (Ponte a Elsa, Campoleone), records whose point is wrong rather than
 their state, conflicting official codes, enclaves. Follow-up: East Attica (GR) holds 91 records, mostly Eastern
@@ -6544,4 +6544,4 @@ Macedonia and Thrace places.
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/*.json` (13 countries) — `state_id` and `state_code` on 141 records
+- `contributions/cities/*.json` (14 countries) — `state_id` and `state_code` on 141 records
