@@ -45605,3 +45605,20 @@ Revert the PR (squash commit); the removed rows come back with their ids.
 
 ### Files Changed
 - `contributions/cities/{PH,MX,IN,JM}.json` — 121 records removed; state on 18
+
+## City names corrected to the source spelling
+
+### Problem
+City names were not standardised: missing diacritics, doubled-letter romanisations (Gavarr, Garrni), Cyrillic in the
+English name, outdated names. The repo-wide names audit compared every record with GeoNames and its own Wikidata item.
+
+### Fix
+`name` on 551 records where the GeoNames name and the record's own Wikidata English label agree exactly (old name a
+label/alias of that item, point within 5 km, GeoNames entry fingerprinted as the record's own); Latin-script translations
+that repeated the old name follow. `native` is not guessed. 7,131 candidates are held without two agreeing sources.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `name` (and repeated Latin translations) on 551 records
