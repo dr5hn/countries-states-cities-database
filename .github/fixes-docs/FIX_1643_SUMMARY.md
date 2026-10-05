@@ -46244,3 +46244,19 @@ Revert the PR (squash commit). No existing `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — Halabja Governorate added
 - `contributions/cities/*.json` — 253 records
+
+## Native name and translations after two renames
+
+### Problem
+#1705 renamed 57975 (Bhawaniganj, a different place, to Bhawani Mandi) and 85535 (Khairpur Tamiwali to Tamewali);
+their `native` and `translations` kept the old forms.
+
+### Fix
+57975: `native` भवानीमंडी, hi/zh-CN from Q2442605, Latin keys copy the name, six non-Latin values for the other place
+removed. 85535: Latin keys follow the new spelling; local-script names stay.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/IN.json`, `PK.json` — 2 records
