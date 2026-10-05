@@ -5400,13 +5400,15 @@ INSERT INTO public.states VALUES (5836, 'Grevenmacher', 127, 'LU', NULL, 'GR', '
 INSERT INTO public.states VALUES (5837, 'Ascension', 184, 'SH', NULL, 'AC', 'SH-AC', 'geographical entity', 1, NULL, 'Ascension', -7.94166667, -14.36250000, 'Atlantic/St_Helena', '{}', '2026-10-05 12:09:53', '2026-10-05 12:09:53', 1, 'Q31890709', NULL);
 INSERT INTO public.states VALUES (5838, 'Saint Helena', 184, 'SH', NULL, 'HL', 'SH-HL', 'geographical entity', 1, NULL, 'Saint Helena', -15.96388889, -5.70694444, 'Atlantic/St_Helena', '{}', '2026-10-05 12:09:53', '2026-10-05 12:09:53', 1, 'Q134978852', NULL);
 INSERT INTO public.states VALUES (5839, 'Tristan da Cunha', 184, 'SH', NULL, 'TA', 'SH-TA', 'geographical entity', 1, NULL, 'Tristan da Cunha', -37.11284000, -12.28343000, 'Atlantic/St_Helena', '{}', '2026-10-05 12:09:53', '2026-10-05 12:09:53', 1, 'Q34625512', NULL);
+INSERT INTO public.states VALUES (5840, 'Mount Athos', 85, 'GR', NULL, '69', 'GR-69', 'self-governed part', 1, NULL, 'Άγιον Όρος', 40.28333333, 24.18333333, 'Europe/Athens', '{}', '2026-10-05 14:45:32', '2026-10-05 14:45:32', 1, 'Q780149', NULL);
+INSERT INTO public.states VALUES (5841, 'Halabja', 104, 'IQ', NULL, 'HA', NULL, 'governorate', NULL, NULL, 'حلبجة', 35.20000000, 46.00000000, 'Asia/Baghdad', '{}', '2026-10-05 14:45:32', '2026-10-05 14:45:32', 1, 'Q15631321', NULL);
 
 
 --
 -- Name: states_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.states_id_seq', 5839, true);
+SELECT pg_catalog.setval('public.states_id_seq', 5841, true);
 
 
 --
