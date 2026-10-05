@@ -45624,3 +45624,22 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — 4 states
 - `contributions/postcodes/VN.json` — `state_id`/`state_code` on 34 postcodes
+
+## City types: administrative units and neighbourhoods typed as settlements
+
+### Problem
+The repo-wide level audit found administrative territories stored as settlements (Belgian provinces, Regierungsbezirke,
+Korean counties, Irish counties, Australian councils, Hungarian districts, Russian raions), city neighbourhoods typed as
+cities, and Chaohu stored as a prefecture although it has been a county-level city under Hefei since 2011.
+
+### Fix
+`type` on 387 records, proven by a GeoNames match plus the record's own Wikidata item (label, point within 5 km,
+current P31): 375 territories to `area`/`county`/`province`/`region`/`regency`, 11 neighbourhoods to `section`, Chaohu to
+`city` at level 2 (city → area 250, city → county 34, adm2 → area 26, section → area 13, city → province 11, adm3 → county 8, adm1 → area 7, adm2 → county 7, city → section 7, adm3 → province 7, city → region 4, city → regency 2, adm3 → area 2, prefecture → city 1, county → section 1, adm4 → region 1, locality → section 1, adm3 → regency 1, adm2 → regency 1, adm4 → county 1, district → section 1, None → section 1). Antiguo Cuscatlán and San Marcos (SV) stay `city` (their own items are
+the towns). 450 US county seats (`city` to `adm2`) are held: #1303's filter treats US `adm2` as counties.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `type` on 387 records; Chaohu's `level` 1 → 2
