@@ -40246,6 +40246,9 @@ for all; own or correctly identified Wikidata item for 57; the Ministry of Inter
 North Aegean, 14 to Thessaly. Fournoi Korseon (154259) and West Lesbos (154262) also take their official seat's point
 (Fournoi 37.57850, 26.48069; Kalloni 39.23318, 26.20724). Held: 5 mixed-identity North Aegean records, 9 Thessaly
 records, 20 Mount Athos monasteries (needs a state: ISO GR-69), 11 records whose point or identity is wrong.
+Sources: GeoNames' Greek dump (https://download.geonames.org/export/dump/GR.zip; seats: Fournoi and Kalloni entries);
+the Ministry of Interior's municipal list (https://www.ypes.gr/wp-content/uploads/2019/04/apof28549-16042019.pdf, seats
+on p. 158); the 2019 Lesbos/Samos split circular (https://www.ypes.gr/wp-content/uploads/2019/08/egk83_20082019.pdf).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
