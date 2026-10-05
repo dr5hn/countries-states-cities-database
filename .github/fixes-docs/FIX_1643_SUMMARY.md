@@ -40233,6 +40233,115 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/cities/*.json` (14 countries) — `state_id` and `state_code` on 141 records
 
+## Sardinia's 2025 provinces
+
+### Problem
+Sardinia's reform (L.R. 7/2021, amended 2023–2024, finalised by resolution 36/34 of 9 July 2025; ISTAT codes from
+1 January 2026) re-created Gallura Nord-Est Sardegna, Ogliastra, Medio Campidano and Sulcis Iglesiente, made Sassari
+a metropolitan city and abolished South Sardinia. CSC still had the old layout, and La Maddalena had no record.
+
+### Fix
+- New states 5830 Gallura Nord-Est Sardegna (OT), 5831 Ogliastra (OG), 5832 Medio Campidano (VS), 5833 Sulcis
+  Iglesiente (CI): level 2 under Sardinia (1715); ISO 3166-2 has no verified codes for them, so `iso3166_2` is null
+  and `iso2` is the abbreviation Italy's own datasets use.
+- Sassari (1722) becomes a `metropolitan city` (item Q106997185); its id and codes stay.
+- 160 cities and 66 postcodes move by municipality (ISTAT's reform crosswalk; the regional municipality lists agree
+  for all 377 comuni). Cities: 54 to Cagliari, 28 Medio Campidano, 26 Gallura, 25 Ogliastra, 26 Sulcis Iglesiente,
+  1 Nuoro. Postcodes: 21, 13, 14, 9, 8 and 1.
+- Sources: ISTAT's crosswalk
+  (https://www.istat.it/wp-content/uploads/2024/09/Codici-statistici-e-denominazioni-delle-unita-amministrative-della-Sardegna.zip)
+  and notice (https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/); the regional
+  authorities (https://www.sardegnaautonomie.it/province); resolution 36/34 of 9 July 2025
+  (https://delibere.regione.sardegna.it/delibera/115602).
+- La Maddalena (Gallura, Q340757, ISTAT 113012) added; 139293 La Maddalena is a hamlet of Capoterra and stays.
+- South Sardinia (1730) removed; nothing refers to it afterwards.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (replacement id: none)</summary>
+
+```json
+[
+  {
+    "id": 1730,
+    "name": "South Sardinia",
+    "country_id": 107,
+    "country_code": "IT",
+    "fips_code": "17",
+    "iso2": "SU",
+    "iso3166_2": "IT-SU",
+    "type": "province",
+    "level": 2,
+    "parent_id": 1715,
+    "native": "Sudinia meridionale",
+    "latitude": "39.38935350",
+    "longitude": "8.93970000",
+    "timezone": "Europe/Rome",
+    "translations": {
+      "br": "Su Sardigna",
+      "ko": "남부 사르데냐",
+      "pt-BR": "Sardenha do Sul",
+      "pt": "Sardenha do Sul",
+      "nl": "Zuid-Sardinië",
+      "hr": "Južna Sardinija",
+      "fa": "ساردینیای جنوبی",
+      "de": "Südsardinien",
+      "es": "Sur de Cerdeña",
+      "fr": "Sardaigne du Sud",
+      "ja": "南サルデーニャ",
+      "it": "Sardegna meridionale",
+      "zh-CN": "南撒丁岛",
+      "tr": "Güney Sardunya",
+      "ru": "Южная Сардиния",
+      "uk": "Південна Сардинія",
+      "pl": "Południowa Sardynia",
+      "hi": "दक्षिण सार्डिनिया",
+      "ar": "جنوب سردينيا"
+    },
+    "created_at": "2019-10-06T08:48:43",
+    "updated_at": "2025-11-09T00:14:55",
+    "flag": 1,
+    "wikiDataId": "Q23498165",
+    "population": 329276,
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); state 1730 comes back with its id.
+
+### Files Changed
+- `contributions/states/states.json` — 4 states added, 1 changed, 1 removed
+- `contributions/cities/IT.json` — state on 160 records, 1 record added
+- `contributions/postcodes/IT.json` — state on 66 records
+
+## Greece: East Attica and Central Greece batches
+
+### Problem
+East Attica (state 2120) held 91 records from elsewhere: 80 places in Eastern Macedonia and Thrace and 11 newer North
+Aegean entries; Central Greece held 23 Thessaly places. The GeoNames fingerprint vote was inverted by the batch
+itself, so each record was checked individually.
+
+### Fix
+`state_id`/`state_code` on 100 records: 80 to Eastern Macedonia and Thrace (same-named GeoNames place within 1.2 km
+for all; own or correctly identified Wikidata item for 57; the Ministry of Interior's municipal list for 23), 6 to the
+North Aegean, 14 to Thessaly. Fournoi Korseon (154259) and West Lesbos (154262) also take their official seat's point
+(Fournoi 37.57850, 26.48069; Kalloni 39.23318, 26.20724). Held: 5 mixed-identity North Aegean records, 9 Thessaly
+records, 20 Mount Athos monasteries (needs a state: ISO GR-69), 11 records whose point or identity is wrong.
+Sources: GeoNames' Greek dump (https://download.geonames.org/export/dump/GR.zip; seats: Fournoi and Kalloni entries);
+the Ministry of Interior's municipal list (https://www.ypes.gr/wp-content/uploads/2019/04/apof28549-16042019.pdf, seats
+on p. 158); the 2019 Lesbos/Samos split circular (https://www.ypes.gr/wp-content/uploads/2019/08/egk83_20082019.pdf).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/GR.json` — state on 100 records, point on 2
+
 ## Wrong points (records whose state was right)
 
 ### Problem
