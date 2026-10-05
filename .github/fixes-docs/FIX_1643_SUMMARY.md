@@ -45605,3 +45605,22 @@ Revert the PR (squash commit); the removed rows come back with their ids.
 
 ### Files Changed
 - `contributions/cities/{PH,MX,IN,JM}.json` — 121 records removed; state on 18
+
+## Vietnam: finishing the 2025 provincial reform
+
+### Problem
+Master already has Vietnam's 34 provincial-level units (#1090, #1092), but Huế still carried the name Thừa Thiên-Huế and the
+`province` type, Hải Phòng, Hồ Chí Minh and Đồng Nai were typed as provinces though they are centrally run
+municipalities, and 34 postcodes had no state.
+
+### Fix
+Huế (3798) renamed and typed `municipality` (Resolution 175, from 2025-01-01); Hải Phòng and Hồ Chí Minh typed
+`municipality`; Đồng Nai typed `municipality` from 2026-04-30 (Resolution 30/2026/QH16); 34 postcodes linked to their
+province by predecessor locality. Held: 397 former district records (territory or settlement), postcode numbers.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/states/states.json` — 4 states
+- `contributions/postcodes/VN.json` — `state_id`/`state_code` on 34 postcodes
