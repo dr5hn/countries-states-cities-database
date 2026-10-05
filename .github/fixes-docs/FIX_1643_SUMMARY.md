@@ -40232,3 +40232,89 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` (14 countries) — `state_id` and `state_code` on 141 records
+
+## Sardinia's 2025 provinces
+
+### Problem
+Sardinia's reform (L.R. 7/2021, amended 2023–2024, finalised by resolution 36/34 of 9 July 2025; ISTAT codes from
+1 January 2026) re-created Gallura Nord-Est Sardegna, Ogliastra, Medio Campidano and Sulcis Iglesiente, made Sassari
+a metropolitan city and abolished South Sardinia. CSC still had the old layout, and La Maddalena had no record.
+
+### Fix
+- New states 5830 Gallura Nord-Est Sardegna (OT), 5831 Ogliastra (OG), 5832 Medio Campidano (VS), 5833 Sulcis
+  Iglesiente (CI): level 2 under Sardinia (1715); ISO 3166-2 has no verified codes for them, so `iso3166_2` is null
+  and `iso2` is the abbreviation Italy's own datasets use.
+- Sassari (1722) becomes a `metropolitan city` (item Q106997185); its id and codes stay.
+- 160 cities and 66 postcodes move by municipality (ISTAT's reform crosswalk; the regional municipality lists agree
+  for all 377 comuni). Cities: 54 to Cagliari, 28 Medio Campidano, 26 Gallura, 25 Ogliastra, 26 Sulcis Iglesiente,
+  1 Nuoro. Postcodes: 21, 13, 14, 9, 8 and 1.
+- Sources: ISTAT's crosswalk
+  (https://www.istat.it/wp-content/uploads/2024/09/Codici-statistici-e-denominazioni-delle-unita-amministrative-della-Sardegna.zip)
+  and notice (https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/); the regional
+  authorities (https://www.sardegnaautonomie.it/province); resolution 36/34 of 9 July 2025
+  (https://delibere.regione.sardegna.it/delibera/115602).
+- La Maddalena (Gallura, Q340757, ISTAT 113012) added; 139293 La Maddalena is a hamlet of Capoterra and stays.
+- South Sardinia (1730) removed; nothing refers to it afterwards.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (replacement id: none)</summary>
+
+```json
+[
+  {
+    "id": 1730,
+    "name": "South Sardinia",
+    "country_id": 107,
+    "country_code": "IT",
+    "fips_code": "17",
+    "iso2": "SU",
+    "iso3166_2": "IT-SU",
+    "type": "province",
+    "level": 2,
+    "parent_id": 1715,
+    "native": "Sudinia meridionale",
+    "latitude": "39.38935350",
+    "longitude": "8.93970000",
+    "timezone": "Europe/Rome",
+    "translations": {
+      "br": "Su Sardigna",
+      "ko": "남부 사르데냐",
+      "pt-BR": "Sardenha do Sul",
+      "pt": "Sardenha do Sul",
+      "nl": "Zuid-Sardinië",
+      "hr": "Južna Sardinija",
+      "fa": "ساردینیای جنوبی",
+      "de": "Südsardinien",
+      "es": "Sur de Cerdeña",
+      "fr": "Sardaigne du Sud",
+      "ja": "南サルデーニャ",
+      "it": "Sardegna meridionale",
+      "zh-CN": "南撒丁岛",
+      "tr": "Güney Sardunya",
+      "ru": "Южная Сардиния",
+      "uk": "Південна Сардинія",
+      "pl": "Południowa Sardynia",
+      "hi": "दक्षिण सार्डिनिया",
+      "ar": "جنوب سردينيا"
+    },
+    "created_at": "2019-10-06T08:48:43",
+    "updated_at": "2025-11-09T00:14:55",
+    "flag": 1,
+    "wikiDataId": "Q23498165",
+    "population": 329276,
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); state 1730 comes back with its id.
+
+### Files Changed
+- `contributions/states/states.json` — 4 states added, 1 changed, 1 removed
+- `contributions/cities/IT.json` — state on 160 records, 1 record added
+- `contributions/postcodes/IT.json` — state on 66 records
