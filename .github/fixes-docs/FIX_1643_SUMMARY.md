@@ -6526,3 +6526,22 @@ Revert the PR (squash commit).
 
 ### Files Changed
 - `contributions/postcodes/{AU,SO}.json` — points on 6 records
+
+## Cities filed under the wrong state (third pass)
+
+### Problem
+Rerunning the neighbour test and the GeoNames fingerprint on current data (outside PH, LK, SL) found 282
+candidates, among them a systematic batch: Taiwan (state 2255) held 49 mainland Jiangsu places from the 2019 import.
+
+### Fix
+`state_id` and `state_code` on 141 records in 13 countries, each with two independent agreeing sources or an official
+one: CN 50 (47 Jiangsu records out of Taiwan), FR 41, GB 15, MX 11, RU 6, RS 5, DZ 3, IN 3, ES 2 and IR, NO, SA, SN,
+TH 1 each. Held: places spanning two provinces (Ponte a Elsa, Campoleone), records whose point is wrong rather than
+their state, conflicting official codes, enclaves. Follow-up: East Attica (GR) holds 91 records, mostly Eastern
+Macedonia and Thrace places.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` (13 countries) — `state_id` and `state_code` on 141 records
