@@ -40246,7 +40246,13 @@ a metropolitan city and abolished South Sardinia. CSC still had the old layout, 
   and `iso2` is the abbreviation Italy's own datasets use.
 - Sassari (1722) becomes a `metropolitan city` (item Q106997185); its id and codes stay.
 - 160 cities and 66 postcodes move by municipality (ISTAT's reform crosswalk; the regional municipality lists agree
-  for all 377 comuni): 75 to Cagliari, 41 Medio Campidano, 40 Gallura, 34 Ogliastra, 34 Sulcis Iglesiente, 2 Nuoro.
+  for all 377 comuni). Cities: 54 to Cagliari, 28 Medio Campidano, 26 Gallura, 25 Ogliastra, 26 Sulcis Iglesiente,
+  1 Nuoro. Postcodes: 21, 13, 14, 9, 8 and 1.
+- Sources: ISTAT's crosswalk
+  (https://www.istat.it/wp-content/uploads/2024/09/Codici-statistici-e-denominazioni-delle-unita-amministrative-della-Sardegna.zip)
+  and notice (https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/); the regional
+  authorities (https://www.sardegnaautonomie.it/province); resolution 36/34 of 9 July 2025
+  (https://delibere.regione.sardegna.it/delibera/115602).
 - La Maddalena (Gallura, Q340757, ISTAT 113012) added; 139293 La Maddalena is a hamlet of Capoterra and stays.
 - South Sardinia (1730) removed; nothing refers to it afterwards.
 
