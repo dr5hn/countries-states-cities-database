@@ -45866,3 +45866,21 @@ Revert the PR (squash commit); the removed rows are archived below.
 - `contributions/cities/HR.json`, `LU.json` — 49 cities
 - `contributions/postcodes/HR.json`, `LU.json`, `SH.json` — 1,632 postcodes
 - `bin/scripts/sync/import_croatia_postcodes.py`, `import_luxembourg_postcodes.py` — mappings
+
+## City names corrected to the source spelling
+
+### Problem
+City names were not standardised: missing diacritics, doubled-letter romanisations (Gavarr, Garrni), Cyrillic in the
+English name, outdated names. The repo-wide names audit compared every record with GeoNames and its own Wikidata item.
+
+### Fix
+`name` on 548 records where the GeoNames name and the record's own Wikidata English label agree exactly (old name a
+label/alias of that item, point within 5 km, GeoNames entry fingerprinted as the record's own); a Latin-language translation
+that repeated the old name follows only where that language's Wikidata label equals the new name. `native` is not guessed. 7,131 candidates are held without two agreeing sources; Beau Bassin,
+La Fortuna and Pejivalle were held in review.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `name` on 548 records, 1,414 translation values
