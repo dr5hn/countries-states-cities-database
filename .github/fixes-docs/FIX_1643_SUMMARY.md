@@ -6545,3 +6545,21 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/MX.json` — `type` on 95 records, `wikiDataId` on 380
+
+## Towns that had no record
+
+### Problem
+For Massa, Amato, Casoli and Lobios the existing same-name records describe other places (#1656, #1657; Massa's
+two are in Pistoia and Macerata), so the town itself had no record. Points are GeoNames', corroborated by Wikidata
+(AEMET's for Fondevila).
+
+### Fix
+New records (ids assigned on import): Massa (MS, adm2, Q13370), Amato (CZ, adm3, Q49280941), Casoli (CH, adm3,
+Q30024027) and Fondevila, the seat of Lobios (OR, adm3, Q20546326). La Maddalena waits for Sardinia's 2025
+provinces (Gallura Nord-Est Sardegna is not in CSC yet).
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/{IT,ES}.json` — 4 records added
