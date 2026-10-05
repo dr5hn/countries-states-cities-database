@@ -40232,3 +40232,23 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` (14 countries) — `state_id` and `state_code` on 141 records
+
+## Greece: East Attica and Central Greece batches
+
+### Problem
+East Attica (state 2120) held 91 records from elsewhere: 80 places in Eastern Macedonia and Thrace and 11 newer North
+Aegean entries; Central Greece held 23 Thessaly places. The GeoNames fingerprint vote was inverted by the batch
+itself, so each record was checked individually.
+
+### Fix
+`state_id`/`state_code` on 100 records: 80 to Eastern Macedonia and Thrace (same-named GeoNames place within 1.2 km
+for all; own or correctly identified Wikidata item for 57; the Ministry of Interior's municipal list for 23), 6 to the
+North Aegean, 14 to Thessaly. Fournoi Korseon (154259) and West Lesbos (154262) also take their official seat's point
+(Fournoi 37.57850, 26.48069; Kalloni 39.23318, 26.20724). Held: 5 mixed-identity North Aegean records, 9 Thessaly
+records, 20 Mount Athos monasteries (needs a state: ISO GR-69), 11 records whose point or identity is wrong.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/GR.json` — state on 100 records, point on 2
