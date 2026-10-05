@@ -6332,3 +6332,85 @@ Revert the PR (squash commit); the removed rows come back with their ids, which 
 
 ### Files Changed
 - `contributions/cities/{IN,MX,PH,PT}.json` — 18 records removed; state and point on 1 kept record
+
+## Ethiopia's 2023 regions
+
+### Problem
+SNNPR was dissolved in August 2023 (Central Ethiopia and South Ethiopia; Sidama and South West Ethiopia had left in
+2020 and 2021). CSC still filed 21 records under SNNPR, and Dīla, Gedeo Zone's seat, under Sidama with a point
+0.7 km off inside Sidama.
+
+### Fix
+- New states 5827 Central Ethiopia (Q122415622) and 5828 South Ethiopia (Q122148951): `type` region, level 1,
+  `Africa/Addis_Ababa`; ISO 3166-2 has no codes yet, so `iso3166_2` is null and `iso2` is GeoNames' local code
+  (55, 56), as for the French Southern Territories' districts.
+- 22 records move by their zone (Wikidata item, regional government zone lists): 8 to Central Ethiopia (Halaba,
+  Gurage, Hadiya, Kembata, Yem) and 14 to South Ethiopia (Gamo, Gofa, Wolaita, Gedeo, South Omo, Ari, Konso).
+- Dīla (38625) takes Q905423's point (6.41250, 38.31167).
+- SNNPR (state 1) is removed; no city, state or postcode refers to it afterwards.
+
+### Left for follow-up
+Wrong `wikiDataId`s on Bako, Felege Neway, Kolito, Lobuni, Sodo, Yem and Dīla (copy-forward, #1641); Konso's exact
+town identity; Q3110186 conflates Bako and Jinka.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (replacement id: none)</summary>
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Southern Nations, Nationalities, and Peoples",
+    "country_id": 70,
+    "country_code": "ET",
+    "fips_code": "54",
+    "iso2": "SN",
+    "iso3166_2": "ET-SN",
+    "type": "region",
+    "level": 1,
+    "parent_id": null,
+    "native": "ደቡብ ብሔር ብሔረሰቦችና ሕዝቦች",
+    "latitude": "6.51569110",
+    "longitude": "36.95410700",
+    "timezone": "Africa/Addis_Ababa",
+    "translations": {
+      "br": "Broadoù, broadelezhioù ha pobloù ar Su",
+      "ko": "남부 국가, 민족 및 민족",
+      "pt-BR": "Nações, Nacionalidades e Povos do Sul",
+      "pt": "Nações, Nacionalidades e Povos do Sul",
+      "nl": "Zuidelijke naties, nationaliteiten en volkeren",
+      "hr": "Južne nacije, narodnosti i ljudi",
+      "fa": "ملت‌ها، ملیت‌ها و مردمان جنوبی",
+      "de": "Südliche Nationen, Nationalitäten und Völker",
+      "es": "Naciones, nacionalidades y pueblos del Sur",
+      "fr": "Nations, nationalités et peuples du Sud",
+      "ja": "南方の諸国、民族、そして人々",
+      "it": "Nazioni, nazionalità e popoli del Sud",
+      "zh-CN": "南方国家、民族和人民",
+      "tr": "Güney Milletleri, Milliyetleri ve Halkları",
+      "ru": "Южные нации, национальности и народы",
+      "uk": "Південні нації, національності та народи",
+      "pl": "Narody, narodowości i ludy Południa",
+      "hi": "दक्षिणी राष्ट्र, राष्ट्रीयताएँ और लोग",
+      "ar": "الأمم والقوميات والشعوب الجنوبية"
+    },
+    "created_at": "2019-10-06T08:48:35",
+    "updated_at": "2025-10-11T06:25:10",
+    "flag": 1,
+    "wikiDataId": "Q203193",
+    "population": null,
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); state 1 comes back with its id.
+
+### Files Changed
+- `contributions/states/states.json` — 2 states added, 1 removed
+- `contributions/cities/ET.json` — state on 22 records, point on 1
