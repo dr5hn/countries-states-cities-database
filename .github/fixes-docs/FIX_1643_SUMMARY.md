@@ -6527,6 +6527,43 @@ Revert the PR (squash commit).
 ### Files Changed
 - `contributions/postcodes/{AU,SO}.json` — points on 6 records
 
+## Mexican seats and settlement Wikidata items
+
+### Problem
+After #1671, 124 records typed `adm2` (municipal seat) have a plain town (GeoNames PPL) as their source, and about
+400 town records carry their municipality's `wikiDataId`.
+
+### Fix
+- `type` → `city` on 95 records that are not their municipality's seat (Wikidata P36/P1376 seat chain, own item,
+  GeoNames); 28 confirmed seats stay `adm2`; El Realito (149723) held.
+- `wikiDataId` on 380 town records: the settlement's own item (label or alias match, point within 5 km, municipality
+  relationship or INEGI code) instead of their municipality's (377) or an unrelated municipality's (3, e.g. Holca
+  had Hoctún's); 17 held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/MX.json` — `type` on 95 records, `wikiDataId` on 380
+
+## Towns that had no record
+
+### Problem
+For Massa, Amato, Casoli and Lobios the existing same-name records describe other places (#1656, #1657; Massa's
+two are in Pistoia and Macerata), so the town itself had no record. Points are GeoNames', corroborated by Wikidata
+(AEMET's for Fondevila).
+
+### Fix
+New records (ids assigned on import): Massa (MS, adm2, Q13370), Amato (CZ, adm3, Q49280941), Casoli (CH, adm3,
+Q30024027) and Fondevila, the seat of Lobios (OR, adm3, Q20546326). La Maddalena waits for Sardinia's 2025
+provinces (Gallura Nord-Est Sardegna is not in CSC yet).
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/{IT,ES}.json` — 4 records added
+
 ## Duplicate city records merged (second pass)
 
 ### Problem
