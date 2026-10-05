@@ -40422,3 +40422,22 @@ Revert the PR (squash commit); 147455 comes back with its id.
 
 ### Files Changed
 - `contributions/cities/{IT,ES,FR,ET,IN}.json` — point or item on 5 records, 1 removed
+
+## Special Geographic Area municipality points
+
+### Problem
+After #1685 the SGA (state 5829) holds its municipality records, but six of their points lay in neighbouring
+municipalities or away from the seat.
+
+### Fix
+`latitude`/`longitude` on six records: the seat named in each Bangsamoro Autonomy Act (section 3), located by an OSM
+node and, where it sits at the seat, the municipality's Wikidata point: 154523 Kapalawan (Manarapan, BAA 45),
+154524 Ligawasan (Bagoinged, BAA 48), 154525 Malidegao (Fort Pikit, BAA 46), 154527 Nabalawag (BAA 43), 154528 Old
+Kaabakan (Nangaan, BAA 44), 154531 Tugunan (Manaulanan, BAA 47). Acts: https://parliament.bangsamoro.gov.ph/. Held:
+Kalbugan, Kabasalan, Buliok, Damatulan (identity with today's barangays unconfirmed).
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/PH.json` — points on 6 records
