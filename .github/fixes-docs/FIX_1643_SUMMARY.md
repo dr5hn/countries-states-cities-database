@@ -6332,3 +6332,20 @@ Revert the PR (squash commit); the removed rows come back with their ids, which 
 
 ### Files Changed
 - `contributions/cities/{IN,MX,PH,PT}.json` — 18 records removed; state and point on 1 kept record
+
+## Towns that had no record
+
+### Problem
+For Massa, Amato, Casoli and Lobios the only CSC record with the name describes a same-named village elsewhere
+(#1656, #1657), so the town had no record.
+
+### Fix
+New records (ids assigned on import): Massa (MS, adm2, Q13370), Amato (CZ, adm3, Q49280941), Casoli (CH, adm3,
+Q30024027) and Fondevila, the seat of Lobios (OR, adm3, Q20546326). La Maddalena waits for Sardinia's 2025
+provinces (Gallura Nord-Est Sardegna is not in CSC yet).
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/{IT,ES}.json` — 4 records added
