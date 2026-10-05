@@ -6531,7 +6531,8 @@ Revert the PR (squash commit).
 
 ### Problem
 A fresh audit of all 5,354 PH records against the 2020 province polygons (Maguindanao split per RA 11550) found
-704 points outside their province; and BARMM's Special Geographic Area (SGA), carved out of Cotabato in 2024, had
+704 points outside their province; and BARMM's Special Geographic Area (SGA; Cotabato barangays that joined BARMM in 2019, organised
+into eight municipalities ratified on 13 April 2024) had
 no state, so its barangays and municipalities stayed under Cotabato or elsewhere.
 
 ### Fix
@@ -6542,7 +6543,10 @@ no state, so its barangays and municipalities stayed under Cotabato or elsewhere
   level 1, local `iso2` 19999 (ISO 3166-2 has no code; `iso3166_2` null), no sourced point yet. 13 records move
   there by their PSGC codes (Gocoton, Malingao, Manaulanan, Pedtad, Nunguan; Kadayangan, Kapalawan, Ligawasan,
   Malidegao, Nabalawag, Old Kaabakan, Tugunan).
-- Held: the rest of the 704, Kabasalan, Buliok, Damatulan (SGA membership unclear) and Kalbugan (Pagalungan, Maguindanao
+- The SGA transfers change the state only: the points of Ligawasan, Malidegao, Old Kaabakan and Tugunan still lie
+  outside their municipality and need fixing separately.
+- Held: the rest of the 704; Kabasalan, Buliok and Damatulan (PSA lists them under Ligawasan and Nabalawag, but the
+  CSC records could not be matched to those barangays with certainty); and Kalbugan (Pagalungan, Maguindanao
   del Sur per PSA; its point needs fixing first).
 
 ### Rollback
