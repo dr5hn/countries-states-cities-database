@@ -46311,3 +46311,18 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `name` on 19 records, 148 translation values on 18 of them
+
+## Native names and translations after the #1709 renames
+
+### Problem
+#1709 renamed 19 cities (Nur-Sultan to Astana, Italian particles…) but left `native` and some translations on the old form.
+
+### Fix
+Astana's translations take Q1520's labels and its `native` the Kazakh Астана; the other records' `native` and
+translations that repeated the old name (case- and apostrophe-insensitive) follow the new name.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — `native`/`translations` on 19 records
