@@ -46205,3 +46205,22 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — `latitude`/`longitude` on 72 records
+
+## Missing cities added
+
+### Problem
+CSC lacked major settlements: Belgrade, Bursa, Gaziantep, Diyarbakır, Chongqing, Mar del Plata, Oujda and others. The
+missing-cities audit compared CSC with every GeoNames seat (PPLC/PPLA/PPLA2) and every place over 15,000 people.
+
+### Fix
+894 new city records (IN 171, VE 54, AR 40, MM 39, EG 37, ET 35, CN 33, ZA 31, GH 24, MY 20, UG 19, NP 19, TR 17, CD 16, BD 15, …), each with a matching Wikidata item (country, point within 5 km, settlement class)
+and no same-name record within 50 km or same item; state checked by the point's location (GeoNames, OSM) and P131.
+Coordinates, timezone and population from GeoNames (source figures; some municipal/metropolitan scope; eleven copied from
+another place left null). Two reviews removed 243 candidates: neighbourhoods and city subdivisions, civil townships and
+mukims, two duplicates under another spelling, Turkish mahalle, and unresolved identities or states.
+
+### Rollback
+Revert the PR (squash commit). New records only; no existing `id` changes.
+
+### Files Changed
+- `contributions/cities/*.json` — 894 new records
