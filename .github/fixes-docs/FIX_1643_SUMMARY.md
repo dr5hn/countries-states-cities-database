@@ -46224,3 +46224,23 @@ Revert the PR (squash commit). New records only; no existing `id` changes.
 
 ### Files Changed
 - `contributions/cities/*.json` — 894 new records
+
+## Cities filed under the wrong state (second round); Halabja governorate
+
+### Problem
+Reviewers found more cities filed under the wrong state (In Salah, Esna, Salé, Klečevce, Zalisne), two records that were
+other places (Bhawaniganj is Bhawani Mandi, Rajasthan; Khairpur Tamiwali's item was a Sindh city), and Halabja, a
+governorate since the 2025 federal law, had no state. First-round holds were re-checked for a second source.
+
+### Fix
+`state_id`/`state_code` on 252 records where official sources or the own Wikidata item and a same-level GeoNames
+match agree (GB 180, LT 26, CZ 8, SI 8, MT 7, MA 5, DZ 4, AM 3, EG 1, IN 1, IT 1, JM 1, MK 1, MX 1, UA 1, LK 1, TZ 1, BQ 1, IQ 1); name/QID on 57975 and 85535. New state 5841 Halabja Governorate (local `iso2` HA, `iso3166_2`
+null: ISO assignment unverified; HA is a local CSC code), with Halabja city moved into it. Sidi
+Ifni 67208 rests on the official HCP commune listing (its GeoNames match is the province).
+
+### Rollback
+Revert the PR (squash commit). No existing `id`s change.
+
+### Files Changed
+- `contributions/states/states.json` — Halabja Governorate added
+- `contributions/cities/*.json` — 253 records
