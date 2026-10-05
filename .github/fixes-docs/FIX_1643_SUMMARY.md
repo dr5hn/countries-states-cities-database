@@ -45624,3 +45624,288 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/states/states.json` — 4 states
 - `contributions/postcodes/VN.json` — `state_id`/`state_code` on 34 postcodes
+
+## Greece: Mount Athos and the held records
+
+### Problem
+CSC had no state for Mount Athos (ISO GR-69, self-governing under Article 105) and filed its 20 monasteries under Central
+Macedonia as cities. #1687 held 25 Greek records whose identity, point or state was unclear.
+
+### Fix
+State 5840 Mount Athos (GR-69, type `self-governed part`, level 1, Q780149); its 20 monasteries move there, typed
+`religious`, three points and one QID repaired. Chios and Samos (towns), Ikaria, Larissa, Lake Plastiras, Rigas Feraios,
+South Pelion, Zagora-Mouresi, Maroneia-Sapes, Pangaio, Topeiros (municipalities) and Rhodope (regional unit, `area`) get
+their points, types, QIDs and regions. Six later copies of towns are merged into the older records. Held: Lemnos, Lesbos,
+Magnesia, Sporades, Evros, Kavala, Samothrace.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 154184,
+    "name": "Drama",
+    "state_id": 2117,
+    "state_code": "A",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "41.26985920",
+    "longitude": "23.54427950",
+    "native": "Δράμα",
+    "population": 44257,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Drama",
+      "ko": "드라마",
+      "pt-BR": "Drama",
+      "pt": "Drama",
+      "nl": "Drama",
+      "hr": "Drama",
+      "fa": "درام",
+      "de": "Drama",
+      "es": "Drama",
+      "fr": "Drame",
+      "ja": "ドラマ",
+      "it": "Dramma",
+      "zh-CN": "戏剧",
+      "tr": "Dram",
+      "ru": "Драма",
+      "uk": "Драма",
+      "pl": "Dramat",
+      "hi": "नाटक",
+      "ar": "دراما"
+    },
+    "created_at": "2024-10-17T06:38:54",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q208606",
+    "replacement_id": 52565
+  },
+  {
+    "id": 154187,
+    "name": "Xanthi",
+    "state_id": 2117,
+    "state_code": "A",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "41.12706480",
+    "longitude": "24.51328930",
+    "native": "Ξάνθη",
+    "population": 58760,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Xanthi",
+      "ko": "잔티",
+      "pt-BR": "Xanthi",
+      "pt": "Xanthi",
+      "nl": "Xanthi",
+      "hr": "Ksanti",
+      "fa": "زانتی",
+      "de": "Xanthi",
+      "es": "Xanthi",
+      "fr": "Xanthi",
+      "ja": "ザンティ",
+      "it": "Xanthi",
+      "zh-CN": "克桑西",
+      "tr": "İskeçe",
+      "ru": "Ксанти",
+      "uk": "Ксанті",
+      "pl": "Ksanti",
+      "hi": "ज़ांथी",
+      "ar": "زانثي"
+    },
+    "created_at": "2024-10-17T06:38:54",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q19896642",
+    "replacement_id": 53353
+  },
+  {
+    "id": 154190,
+    "name": "Orestiada",
+    "state_id": 2117,
+    "state_code": "A",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "41.50437790",
+    "longitude": "26.45344230",
+    "native": "Ορεστιάδα",
+    "population": 18164,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Orestiada",
+      "ko": "오레스티아다",
+      "pt-BR": "Orestiada",
+      "pt": "Orestiada",
+      "nl": "Orestiada",
+      "hr": "Orestijada",
+      "fa": "اورستیادا",
+      "de": "Orestiada",
+      "es": "Orestiada",
+      "fr": "Orestiada",
+      "ja": "オレスティアダ",
+      "it": "Orestiada",
+      "zh-CN": "奥瑞斯蒂亚达",
+      "tr": "Orestiada",
+      "ru": "Орестиада",
+      "uk": "Орестіада",
+      "pl": "Orestiada",
+      "hi": "ओरेस्टियाडा",
+      "ar": "أورستيادا"
+    },
+    "created_at": "2024-10-17T06:38:54",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q16058312",
+    "replacement_id": 53062
+  },
+  {
+    "id": 154192,
+    "name": "Soufli",
+    "state_id": 2117,
+    "state_code": "A",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "41.17943070",
+    "longitude": "25.85285960",
+    "native": "Σουφλί",
+    "population": 3210,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Soufli",
+      "ko": "수플리",
+      "pt-BR": "Soufli",
+      "pt": "Soufli",
+      "nl": "Soefli",
+      "hr": "Sufli",
+      "fa": "سوفلی",
+      "de": "Soufli",
+      "es": "Souflí",
+      "fr": "Soufli",
+      "ja": "スフリ",
+      "it": "Soufli",
+      "zh-CN": "苏夫利",
+      "tr": "Sufli",
+      "ru": "Суфли",
+      "uk": "Суфлі",
+      "pl": "Soufli",
+      "hi": "सौफ्ली",
+      "ar": "سوفلي"
+    },
+    "created_at": "2024-10-17T06:38:54",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q3659144",
+    "replacement_id": 53235
+  },
+  {
+    "id": 154204,
+    "name": "Karditsa",
+    "state_id": 2128,
+    "state_code": "H",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "39.29094900",
+    "longitude": "21.47648600",
+    "native": "Καρδίτσα",
+    "population": 40272,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Karditsa",
+      "ko": "카르디차",
+      "pt-BR": "Carditsa",
+      "pt": "Carditsa",
+      "nl": "Karditsa",
+      "hr": "Karditsa",
+      "fa": "کاردیتسا",
+      "de": "Karditsa",
+      "es": "Karditsa",
+      "fr": "Karditsa",
+      "ja": "カルディツァ",
+      "it": "Karditsa",
+      "zh-CN": "卡尔季察",
+      "tr": "Karditsa",
+      "ru": "Кардица",
+      "uk": "Кардиця",
+      "pl": "Karditsa",
+      "hi": "कार्दित्सा",
+      "ar": "كارديتسا"
+    },
+    "created_at": "2024-10-17T07:18:56",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q212810",
+    "replacement_id": 52713
+  },
+  {
+    "id": 154208,
+    "name": "Trikala",
+    "state_id": 2128,
+    "state_code": "H",
+    "country_id": 85,
+    "country_code": "GR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "39.62747030",
+    "longitude": "21.01346130",
+    "native": "Τρίκαλα",
+    "population": 61608,
+    "timezone": "Europe/Athens",
+    "translations": {
+      "br": "Trikala",
+      "ko": "트리칼라",
+      "pt-BR": "Trikala",
+      "pt": "Trikala",
+      "nl": "Trikala",
+      "hr": "Trikala",
+      "fa": "تریکالا",
+      "de": "Trikala",
+      "es": "Tríkala",
+      "fr": "Trikala",
+      "ja": "トリカラ",
+      "it": "Trikala",
+      "zh-CN": "特里卡拉",
+      "tr": "Trikala",
+      "ru": "Трикала",
+      "uk": "Трикала",
+      "pl": "Trikala",
+      "hi": "त्रिकाल",
+      "ar": "تريكالا"
+    },
+    "created_at": "2024-10-17T07:18:56",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q17320461",
+    "replacement_id": 53291
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the merged rows are archived below.
+
+### Files Changed
+- `contributions/states/states.json` — Mount Athos added
+- `contributions/cities/GR.json` — 32 records updated, 6 merged
+- `TYPE_FIELD.md` — Greek `municipality` note
