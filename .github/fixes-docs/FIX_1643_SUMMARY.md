@@ -45609,7 +45609,7 @@ Revert the PR (squash commit); the removed rows come back with their ids.
 ## Vietnam: finishing the 2025 provincial reform
 
 ### Problem
-Master already has Vietnam's 34 provinces (#1090, #1092), but Huế still carried the name Thừa Thiên-Huế and the
+Master already has Vietnam's 34 provincial-level units (#1090, #1092), but Huế still carried the name Thừa Thiên-Huế and the
 `province` type, Hải Phòng, Hồ Chí Minh and Đồng Nai were typed as provinces though they are centrally run
 municipalities, and 34 postcodes had no state.
 
