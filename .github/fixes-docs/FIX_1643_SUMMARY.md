@@ -6332,3 +6332,21 @@ Revert the PR (squash commit); the removed rows come back with their ids, which 
 
 ### Files Changed
 - `contributions/cities/{IN,MX,PH,PT}.json` — 18 records removed; state and point on 1 kept record
+
+## Mexican seats and settlement Wikidata items
+
+### Problem
+After #1671, 124 records typed `adm2` (municipal seat) have a plain town (GeoNames PPL) as their source, and about
+400 town records carry their municipality's `wikiDataId`.
+
+### Fix
+- `type` → `city` on 95 records that are not their municipality's seat (Wikidata P36/P1376 seat chain, own item,
+  GeoNames); 28 confirmed seats stay `adm2`; El Realito (149723) held.
+- `wikiDataId` on 380 town records: the settlement's own item (label or alias match, point within 5 km, municipality
+  relationship or INEGI code) instead of the municipality's; 17 held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/MX.json` — `type` on 95 records, `wikiDataId` on 380
