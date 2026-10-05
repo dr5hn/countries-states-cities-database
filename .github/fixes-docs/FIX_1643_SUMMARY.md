@@ -40341,3 +40341,84 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/GR.json` — state on 100 records, point on 2
+
+## Wrong points (records whose state was right)
+
+### Problem
+Earlier passes held records whose point, not state, was wrong: Piobesi Torinese (a stub point 18 km south), Mos (in
+Lugo, carrying Morón de la Frontera's item), Messac (Ille-et-Vilaine's namesake), Konso (11 km off) and Birpur
+147455 (elsewhere in Bihar, duplicating 58160).
+
+### Fix
+- 58685 Piobesi Torinese: 44.93294, 7.61012; item Q9578 (ISTAT 001193; GeoNames seat 6535413).
+- 35637 Mos: AEMET's municipal capital Reguengo, 42.19134, −8.64013; item Q1596023 (INE 36033).
+- 44032 Messac: 45.34639, −0.31417 (Q1144439; GeoNames; geo.api.gouv.fr for INSEE 17231).
+- 38668 Konso: 5.34167, 37.44167 (own item Q575352, OSM town node).
+- 147455 Birpur removed in favour of 58160 (same town, population 19,932 per Bihar's SEC); 58160 takes Q858315.
+- Held: Baoshan 19317, Nyvky 149465, Bako/Jinka, El Espinal, Kalbugan, La Manzanilla de La Paz, San Diego de
+  Alejandría, Tizapán el Alto.
+- Sources: https://www.wikidata.org/wiki/Q9578, https://www.geonames.org/6535413/ (Piobesi Torinese);
+  https://www.aemet.es/es/eltiempo/prediccion/municipios/mos-reguengo-id36033, https://www.wikidata.org/wiki/Q1596023
+  (Mos); https://geo.api.gouv.fr/communes/17231?fields=nom,code,centre,departement,population (Messac);
+  https://www.wikidata.org/wiki/Q575352, https://www.openstreetmap.org/node/1228170241 (Konso);
+  https://sec.bihar.gov.in/ForPublic/NagarPalikaEntryReport.aspx?ID=0, https://www.geonames.org/1275499/ (Birpur).
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 147455,
+    "name": "Birpur",
+    "state_id": 4037,
+    "state_code": "BR",
+    "country_id": 101,
+    "country_code": "IN",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "26.53000000",
+    "longitude": "86.25000000",
+    "native": "बीरपुर",
+    "population": 19932,
+    "timezone": "Asia/Kolkata",
+    "translations": {
+      "br": "Birpur",
+      "ko": "비르푸르",
+      "pt-BR": "Birpur",
+      "pt": "Birpur",
+      "nl": "Birpur",
+      "hr": "Birpur",
+      "fa": "بیرپور",
+      "de": "Birpur",
+      "es": "Birpur",
+      "fr": "Birpur",
+      "ja": "ビルプル",
+      "it": "Birpur",
+      "zh-CN": "比尔普尔",
+      "tr": "Birpur",
+      "ru": "Бирпур",
+      "uk": "Бірпур",
+      "pl": "Birpur",
+      "hi": "बीरपुर",
+      "ar": "بيربور"
+    },
+    "created_at": "2021-06-06T22:48:15",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q858315",
+    "replacement_id": 58160
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); 147455 comes back with its id.
+
+### Files Changed
+- `contributions/cities/{IT,ES,FR,ET,IN}.json` — point or item on 5 records, 1 removed
