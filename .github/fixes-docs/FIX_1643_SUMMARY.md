@@ -40466,3 +40466,22 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/CN.json` — `wikiDataId` on 266 records
+
+## States checked against ISO 3166-2
+
+### Problem
+States had not been compared with ISO 3166-2 systematically. iso.org's browsing platform is JavaScript-only, so the
+audit used ISO's machine-readable mirrors (Debian iso-codes, Unicode CLDR) and Wikidata P300 with dates.
+
+### Fix
+Where both mirrors and Wikidata agree: names on 6 states (Cuanza Sul, Capital Region of Denmark, Extremadura,
+Hörgársveit, Põhja-Pärnumaa, Federal Dependencies); `iso3166_2` on 7 that ISO replaced (IN-CG, IN-OD, IN-TS from
+2023-11-23; BQ-BO, BQ-SA, BQ-SE; MN-1), `iso2` kept as CSC's public key; `parent_id` on 10 (Nakhchivan's eight
+subdivisions under AZ-NX; Paris under Île-de-France and Métropole de Lyon under Auvergne-Rhône-Alpes, level 2).
+Follow-ups: Vietnam's 2025 provinces, Norway's 2024 counties, City of Zagreb, Mount Athos, Luxembourg's cantons.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/states/states.json` — 23 states
