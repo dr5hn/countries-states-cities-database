@@ -6345,7 +6345,11 @@ SNNPR was dissolved in August 2023 (Central Ethiopia and South Ethiopia; Sidama 
   `Africa/Addis_Ababa`; ISO 3166-2 has no codes yet, so `iso3166_2` is null and `iso2` is GeoNames' local code
   (55, 56), as for the French Southern Territories' districts.
 - 22 records move by their zone (Wikidata item, regional government zone lists): 8 to Central Ethiopia (Halaba,
-  Gurage, Hadiya, Kembata, Yem) and 14 to South Ethiopia (Gamo, Gofa, Wolaita, Gedeo, South Omo, Ari, Konso).
+  Gurage, East Gurage, Hadiya, Kembata and Tembaro, Yem) and 14 to South Ethiopia (Gamo, Gofa, Wolaita, Gedeo,
+  South Omo, Ari, Konso, Gardula/Dirashe). Sources: Central Ethiopia's (https://cerspo.gov.et/home) and South
+  Ethiopia's (https://www.southethiopiarspo.gov.et/overview/) zone lists; Wikidata Q122415622 and Q122148951;
+  GeoNames' Ethiopian divisions (https://www.geonames.org/ET/administrative-division-ethiopia.html), which give the
+  local codes 55 and 56 and no ISO code.
 - Dīla (38625) takes Q905423's point (6.41250, 38.31167).
 - SNNPR (state 1) is removed; no city, state or postcode refers to it afterwards.
 
