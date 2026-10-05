@@ -40423,6 +40423,33 @@ Revert the PR (squash commit); 147455 comes back with its id.
 ### Files Changed
 - `contributions/cities/{IT,ES,FR,ET,IN}.json` — point or item on 5 records, 1 removed
 
+## Special Geographic Area municipality points
+
+### Problem
+After #1685 the SGA (state 5829) holds its municipality records, but six of their points lay in neighbouring
+municipalities or away from the seat.
+
+### Fix
+`latitude`/`longitude` on six records: the seat named in each Bangsamoro Autonomy Act (section 3), located by an OSM
+node and, where it sits at the seat, the municipality's Wikidata point: 154523 Kapalawan (Manarapan, BAA 45),
+154524 Ligawasan (Bagoinged, BAA 48), 154525 Malidegao (Fort Pikit, BAA 46), 154527 Nabalawag (BAA 43), 154528 Old
+Kaabakan (Nangaan, BAA 44), 154531 Tugunan (Manaulanan, BAA 47). Acts: https://parliament.bangsamoro.gov.ph/. Coordinate
+sources (OSM town/seat nodes, Wikidata):
+  154523: https://www.wikidata.org/wiki/Q31508433, https://www.openstreetmap.org/node/11816318392, https://www.openstreetmap.org/node/1842404784
+  154524: https://www.wikidata.org/wiki/Q31508452, https://www.openstreetmap.org/node/11816318389, https://www.openstreetmap.org/node/12147419226
+  154525: https://www.wikidata.org/wiki/Q31508472, https://www.openstreetmap.org/node/11816318391, https://www.openstreetmap.org/node/12147436579
+  154527: https://www.wikidata.org/wiki/Q31508492, https://www.openstreetmap.org/node/11816318394, https://www.openstreetmap.org/node/12164745844
+  154528: https://www.wikidata.org/wiki/Q31508510, https://www.openstreetmap.org/node/11816318393, https://www.openstreetmap.org/node/9165373558
+  154531: https://www.wikidata.org/wiki/Q31508546, https://www.openstreetmap.org/node/11816318390, https://www.openstreetmap.org/node/12165148933
+Held:
+Kalbugan, Kabasalan, Buliok, Damatulan (identity with today's barangays unconfirmed).
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/PH.json` — points on 6 records
+
 ## Chinese disambiguation IDs (second pass)
 
 ### Problem
