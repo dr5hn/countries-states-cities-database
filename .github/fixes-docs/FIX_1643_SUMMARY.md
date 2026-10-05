@@ -45635,7 +45635,8 @@ Macedonia as cities. #1687 held 25 Greek records whose identity, point or state 
 State 5840 Mount Athos (GR-69, type `self-governed part`, level 1, Q780149); its 20 monasteries move there, typed
 `religious`, three points and one QID repaired. Chios and Samos (towns), Ikaria, Larissa, Lake Plastiras, Rigas Feraios,
 South Pelion, Zagora-Mouresi, Maroneia-Sapes, Pangaio, Topeiros (municipalities) and Rhodope (regional unit, `area`) get
-their points, types, QIDs and regions. Six later copies of towns are merged into the older records. Held: Lemnos, Lesbos,
+their points, types, QIDs and regions. Six later copies of towns are merged into the older records. Review fixes: 2021 ELSTAT populations for five
+monasteries (Zografou carried an Athens municipality's 69,874) and Soufli; Docheiariou's point. Held: Lemnos, Lesbos,
 Magnesia, Sporades, Evros, Kavala, Samothrace.
 
 ### Removed records (archive)
@@ -45903,7 +45904,7 @@ Magnesia, Sporades, Evros, Kavala, Samothrace.
 </details>
 
 ### Rollback
-Revert the PR (squash commit); the merged rows are archived below.
+Revert the PR (squash commit); the merged rows are archived above.
 
 ### Files Changed
 - `contributions/states/states.json` — Mount Athos added
