@@ -249,8 +249,8 @@
     <subregion_id>22</subregion_id>
     <nationality>American Samoan</nationality>
     <area_sq_km>199</area_sq_km>
-    <postal_code_format>#####-####</postal_code_format>
-    <postal_code_regex>96799</postal_code_regex>
+    <postal_code_format>96799|96799-####</postal_code_format>
+    <postal_code_regex>^96799(?:-[0-9]{4})?$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Pago_Pago</zoneName>
       <gmtOffset>-39600</gmtOffset>
@@ -481,8 +481,8 @@
     <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Antarctica/Casey</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
+      <gmtOffset>28800</gmtOffset>
+      <gmtOffsetName>UTC+08:00</gmtOffsetName>
       <abbreviation>AWST</abbreviation>
       <tzName>Australian Western Standard Time</tzName>
     </timezones>
@@ -509,10 +509,10 @@
     </timezones>
     <timezones>
       <zoneName>Antarctica/McMurdo</zoneName>
-      <gmtOffset>46800</gmtOffset>
-      <gmtOffsetName>UTC+13:00</gmtOffsetName>
-      <abbreviation>NZDT</abbreviation>
-      <tzName>New Zealand Daylight Time</tzName>
+      <gmtOffset>43200</gmtOffset>
+      <gmtOffsetName>UTC+12:00</gmtOffsetName>
+      <abbreviation>NZST</abbreviation>
+      <tzName>New Zealand Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Antarctica/Palmer</zoneName>
@@ -544,8 +544,8 @@
     </timezones>
     <timezones>
       <zoneName>Antarctica/Vostok</zoneName>
-      <gmtOffset>21600</gmtOffset>
-      <gmtOffsetName>UTC+06:00</gmtOffsetName>
+      <gmtOffset>18000</gmtOffset>
+      <gmtOffsetName>UTC+05:00</gmtOffsetName>
       <abbreviation>VOST</abbreviation>
       <tzName>Vostok Station Time</tzName>
     </timezones>
@@ -788,8 +788,8 @@
     <subregion_id>11</subregion_id>
     <nationality>Armenian</nationality>
     <area_sq_km>29800</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format>####</postal_code_format>
+    <postal_code_regex>^[0-9]{4}$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Yerevan</zoneName>
       <gmtOffset>14400</gmtOffset>
@@ -906,17 +906,17 @@
     <postal_code_regex>^(\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>Antarctica/Macquarie</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
-      <abbreviation>MIST</abbreviation>
-      <tzName>Macquarie Island Station Time</tzName>
+      <gmtOffset>36000</gmtOffset>
+      <gmtOffsetName>UTC+10:00</gmtOffsetName>
+      <abbreviation>AEST</abbreviation>
+      <tzName>Australian Eastern Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Adelaide</zoneName>
-      <gmtOffset>37800</gmtOffset>
-      <gmtOffsetName>UTC+10:30</gmtOffsetName>
-      <abbreviation>ACDT</abbreviation>
-      <tzName>Australian Central Daylight Saving Time</tzName>
+      <gmtOffset>34200</gmtOffset>
+      <gmtOffsetName>UTC+09:30</gmtOffsetName>
+      <abbreviation>ACST</abbreviation>
+      <tzName>Australian Central Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Brisbane</zoneName>
@@ -927,17 +927,17 @@
     </timezones>
     <timezones>
       <zoneName>Australia/Broken_Hill</zoneName>
-      <gmtOffset>37800</gmtOffset>
-      <gmtOffsetName>UTC+10:30</gmtOffsetName>
-      <abbreviation>ACDT</abbreviation>
-      <tzName>Australian Central Daylight Saving Time</tzName>
+      <gmtOffset>34200</gmtOffset>
+      <gmtOffsetName>UTC+09:30</gmtOffsetName>
+      <abbreviation>ACST</abbreviation>
+      <tzName>Australian Central Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Currie</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
-      <abbreviation>AEDT</abbreviation>
-      <tzName>Australian Eastern Daylight Saving Time</tzName>
+      <gmtOffset>36000</gmtOffset>
+      <gmtOffsetName>UTC+10:00</gmtOffsetName>
+      <abbreviation>AEST</abbreviation>
+      <tzName>Australian Eastern Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Darwin</zoneName>
@@ -955,10 +955,10 @@
     </timezones>
     <timezones>
       <zoneName>Australia/Hobart</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
-      <abbreviation>AEDT</abbreviation>
-      <tzName>Australian Eastern Daylight Saving Time</tzName>
+      <gmtOffset>36000</gmtOffset>
+      <gmtOffsetName>UTC+10:00</gmtOffsetName>
+      <abbreviation>AEST</abbreviation>
+      <tzName>Australian Eastern Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Lindeman</zoneName>
@@ -969,17 +969,17 @@
     </timezones>
     <timezones>
       <zoneName>Australia/Lord_Howe</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
+      <gmtOffset>37800</gmtOffset>
+      <gmtOffsetName>UTC+10:30</gmtOffsetName>
       <abbreviation>LHST</abbreviation>
-      <tzName>Lord Howe Summer Time</tzName>
+      <tzName>Lord Howe Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Melbourne</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
-      <abbreviation>AEDT</abbreviation>
-      <tzName>Australian Eastern Daylight Saving Time</tzName>
+      <gmtOffset>36000</gmtOffset>
+      <gmtOffsetName>UTC+10:00</gmtOffsetName>
+      <abbreviation>AEST</abbreviation>
+      <tzName>Australian Eastern Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Australia/Perth</zoneName>
@@ -990,10 +990,10 @@
     </timezones>
     <timezones>
       <zoneName>Australia/Sydney</zoneName>
-      <gmtOffset>39600</gmtOffset>
-      <gmtOffsetName>UTC+11:00</gmtOffsetName>
-      <abbreviation>AEDT</abbreviation>
-      <tzName>Australian Eastern Daylight Saving Time</tzName>
+      <gmtOffset>36000</gmtOffset>
+      <gmtOffsetName>UTC+10:00</gmtOffsetName>
+      <abbreviation>AEST</abbreviation>
+      <tzName>Australian Eastern Standard Time</tzName>
     </timezones>
     <translations>
       <br>Aostralia</br>
@@ -1717,7 +1717,7 @@
     <currency>USD</currency>
     <currency_name>United States dollar</currency_name>
     <currency_symbol>$</currency_symbol>
-    <tld>.an</tld>
+    <tld>.bq</tld>
     <native>Caribisch Nederland</native>
     <population>26552</population>
     <gdp></gdp>
@@ -2327,7 +2327,7 @@
     <iso2>BI</iso2>
     <numeric_code>108</numeric_code>
     <phonecode>257</phonecode>
-    <capital>Bujumbura</capital>
+    <capital>Gitega</capital>
     <currency>BIF</currency>
     <currency_name>Burundian franc</currency_name>
     <currency_symbol>FBu</currency_symbol>
@@ -2558,10 +2558,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Edmonton</zoneName>
-      <gmtOffset>-25200</gmtOffset>
-      <gmtOffsetName>UTC-07:00</gmtOffsetName>
-      <abbreviation>MST</abbreviation>
-      <tzName>Mountain Standard Time (North America)</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>CST</abbreviation>
+      <tzName>Central Standard Time (North America)</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Fort_Nelson</zoneName>
@@ -2593,10 +2593,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Inuvik</zoneName>
-      <gmtOffset>-25200</gmtOffset>
-      <gmtOffsetName>UTC-07:00</gmtOffsetName>
-      <abbreviation>MST</abbreviation>
-      <tzName>Mountain Standard Time (North America)</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>CST</abbreviation>
+      <tzName>Central Standard Time (North America)</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Iqaluit</zoneName>
@@ -2684,10 +2684,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Vancouver</zoneName>
-      <gmtOffset>-28800</gmtOffset>
-      <gmtOffsetName>UTC-08:00</gmtOffsetName>
-      <abbreviation>PST</abbreviation>
-      <tzName>Pacific Standard Time (North America)</tzName>
+      <gmtOffset>-25200</gmtOffset>
+      <gmtOffsetName>UTC-07:00</gmtOffsetName>
+      <abbreviation>MST</abbreviation>
+      <tzName>Mountain Standard Time (North America)</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Whitehorse</zoneName>
@@ -2705,10 +2705,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Yellowknife</zoneName>
-      <gmtOffset>-25200</gmtOffset>
-      <gmtOffsetName>UTC-07:00</gmtOffsetName>
-      <abbreviation>MST</abbreviation>
-      <tzName>Mountain Standard Time (North America)</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>CST</abbreviation>
+      <tzName>Central Standard Time (North America)</tzName>
     </timezones>
     <translations>
       <br>Kanada</br>
@@ -2929,8 +2929,8 @@
     <subregion_id>2</subregion_id>
     <nationality>Chadian</nationality>
     <area_sq_km>1284000</area_sq_km>
-    <postal_code_format>TKCA 1ZZ</postal_code_format>
-    <postal_code_regex>^(TKCA 1ZZ)$</postal_code_regex>
+    <postal_code_format></postal_code_format>
+    <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Africa/Ndjamena</zoneName>
       <gmtOffset>3600</gmtOffset>
@@ -2997,17 +2997,17 @@
     </timezones>
     <timezones>
       <zoneName>America/Santiago</zoneName>
-      <gmtOffset>-10800</gmtOffset>
-      <gmtOffsetName>UTC-03:00</gmtOffsetName>
-      <abbreviation>CLST</abbreviation>
-      <tzName>Chile Summer Time</tzName>
+      <gmtOffset>-14400</gmtOffset>
+      <gmtOffsetName>UTC-04:00</gmtOffsetName>
+      <abbreviation>CLT</abbreviation>
+      <tzName>Chile Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Pacific/Easter</zoneName>
-      <gmtOffset>-18000</gmtOffset>
-      <gmtOffsetName>UTC-05:00</gmtOffsetName>
-      <abbreviation>EASST</abbreviation>
-      <tzName>Easter Island Summer Time</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>EAST</abbreviation>
+      <tzName>Easter Island Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Coyhaique</zoneName>
@@ -3343,9 +3343,9 @@
     <numeric_code>178</numeric_code>
     <phonecode>242</phonecode>
     <capital>Brazzaville</capital>
-    <currency>CDF</currency>
-    <currency_name>Congolese Franc</currency_name>
-    <currency_symbol>FC</currency_symbol>
+    <currency>XAF</currency>
+    <currency_name>Central African CFA franc</currency_name>
+    <currency_symbol>FCFA</currency_symbol>
     <tld>.cg</tld>
     <native>République du Congo</native>
     <population>6142180</population>
@@ -3585,7 +3585,7 @@
     <nationality>Cuban</nationality>
     <area_sq_km>110860</area_sq_km>
     <postal_code_format>CP #####</postal_code_format>
-    <postal_code_regex>^(?:CP)*(\d{5})$</postal_code_regex>
+    <postal_code_regex>^(?:CP ?)?[0-9]{5}$</postal_code_regex>
     <timezones>
       <zoneName>America/Havana</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -3628,9 +3628,9 @@
     <numeric_code>531</numeric_code>
     <phonecode>599</phonecode>
     <capital>Willemstad</capital>
-    <currency>ANG</currency>
-    <currency_name>Netherlands Antillean guilder</currency_name>
-    <currency_symbol>ƒ</currency_symbol>
+    <currency>XCG</currency>
+    <currency_name>Caribbean guilder</currency_name>
+    <currency_symbol>Cg</currency_symbol>
     <tld>.cw</tld>
     <native>Curaçao</native>
     <population>156115</population>
@@ -4229,8 +4229,8 @@
     <subregion_id>9</subregion_id>
     <nationality>Salvadoran</nationality>
     <area_sq_km>21040</area_sq_km>
-    <postal_code_format>CP ####</postal_code_format>
-    <postal_code_regex>^(?:CP)*(\d{4})$</postal_code_regex>
+    <postal_code_format>####</postal_code_format>
+    <postal_code_regex>^(?:CP ?)?[0-9]{4}$</postal_code_regex>
     <timezones>
       <zoneName>America/El_Salvador</zoneName>
       <gmtOffset>-21600</gmtOffset>
@@ -5334,7 +5334,7 @@
     <nationality>Greek, Hellenic</nationality>
     <area_sq_km>131940</area_sq_km>
     <postal_code_format>### ##</postal_code_format>
-    <postal_code_regex>^(\d{5})$</postal_code_regex>
+    <postal_code_regex>^[0-9]{3} ?[0-9]{2}$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Athens</zoneName>
       <gmtOffset>7200</gmtOffset>
@@ -5401,17 +5401,17 @@
     </timezones>
     <timezones>
       <zoneName>America/Nuuk</zoneName>
-      <gmtOffset>-10800</gmtOffset>
-      <gmtOffsetName>UTC-03:00</gmtOffsetName>
+      <gmtOffset>-7200</gmtOffset>
+      <gmtOffsetName>UTC-02:00</gmtOffsetName>
       <abbreviation>WGT</abbreviation>
       <tzName>West Greenland Time</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Scoresbysund</zoneName>
-      <gmtOffset>-3600</gmtOffset>
-      <gmtOffsetName>UTC-01:00</gmtOffsetName>
-      <abbreviation>EGT</abbreviation>
-      <tzName>Eastern Greenland Time</tzName>
+      <gmtOffset>-7200</gmtOffset>
+      <gmtOffsetName>UTC-02:00</gmtOffsetName>
+      <abbreviation>WGT</abbreviation>
+      <tzName>West Greenland Time</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Thule</zoneName>
@@ -6038,8 +6038,8 @@
     <subregion_id>9</subregion_id>
     <nationality>Honduran</nationality>
     <area_sq_km>112090</area_sq_km>
-    <postal_code_format>#####</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format>#####|@@####</postal_code_format>
+    <postal_code_regex>^(?:[0-9]{5}|[A-Z]{2}[0-9]{4})$</postal_code_regex>
     <timezones>
       <zoneName>America/Tegucigalpa</zoneName>
       <gmtOffset>-21600</gmtOffset>
@@ -6095,8 +6095,8 @@
     <subregion_id>12</subregion_id>
     <nationality>Hong Kong, Hong Kongese</nationality>
     <area_sq_km>1092</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format></postal_code_format>
+    <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Asia/Hong_Kong</zoneName>
       <gmtOffset>28800</gmtOffset>
@@ -6515,7 +6515,7 @@
     <nationality>Irish</nationality>
     <area_sq_km>70280</area_sq_km>
     <postal_code_format>@@@ @@@@</postal_code_format>
-    <postal_code_regex>^(D6W|[AC-FHKNPRTV-Y][0-9]{2})\s?([AC-FHKNPRTV-Y0-9]{4})</postal_code_regex>
+    <postal_code_regex>^(?:D6W|[AC-FHKNPRTV-Y][0-9]{2}) ?[AC-FHKNPRTV-Y0-9]{4}$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Dublin</zoneName>
       <gmtOffset>0</gmtOffset>
@@ -6917,10 +6917,10 @@
     <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Amman</zoneName>
-      <gmtOffset>7200</gmtOffset>
-      <gmtOffsetName>UTC+02:00</gmtOffsetName>
-      <abbreviation>EET</abbreviation>
-      <tzName>Eastern European Time</tzName>
+      <gmtOffset>10800</gmtOffset>
+      <gmtOffsetName>UTC+03:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Arabia Standard Time</tzName>
     </timezones>
     <translations>
       <br>Jordania</br>
@@ -6970,14 +6970,14 @@
     <subregion_id>10</subregion_id>
     <nationality>Kazakhstani, Kazakh</nationality>
     <area_sq_km>2717300</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format>######|@##@#@#</postal_code_format>
+    <postal_code_regex>^(?:[0-9]{6}|[A-Z][0-9]{2}[A-Z][0-9][A-Z][0-9])$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Almaty</zoneName>
-      <gmtOffset>21600</gmtOffset>
-      <gmtOffsetName>UTC+06:00</gmtOffsetName>
-      <abbreviation>ALMT</abbreviation>
-      <tzName>Alma-Ata Time[1</tzName>
+      <gmtOffset>18000</gmtOffset>
+      <gmtOffsetName>UTC+05:00</gmtOffsetName>
+      <abbreviation>KZT</abbreviation>
+      <tzName>Kazakhstan Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Asia/Aqtau</zoneName>
@@ -6997,8 +6997,8 @@
       <zoneName>Asia/Atyrau</zoneName>
       <gmtOffset>18000</gmtOffset>
       <gmtOffsetName>UTC+05:00</gmtOffsetName>
-      <abbreviation>MSD+1</abbreviation>
-      <tzName>Moscow Daylight Time+1</tzName>
+      <abbreviation>KZT</abbreviation>
+      <tzName>Kazakhstan Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Asia/Oral</zoneName>
@@ -7009,17 +7009,17 @@
     </timezones>
     <timezones>
       <zoneName>Asia/Qostanay</zoneName>
-      <gmtOffset>21600</gmtOffset>
-      <gmtOffsetName>UTC+06:00</gmtOffsetName>
-      <abbreviation>QYZST</abbreviation>
-      <tzName>Qyzylorda Summer Time</tzName>
+      <gmtOffset>18000</gmtOffset>
+      <gmtOffsetName>UTC+05:00</gmtOffsetName>
+      <abbreviation>KZT</abbreviation>
+      <tzName>Kazakhstan Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Asia/Qyzylorda</zoneName>
       <gmtOffset>18000</gmtOffset>
       <gmtOffsetName>UTC+05:00</gmtOffsetName>
-      <abbreviation>QYZT</abbreviation>
-      <tzName>Qyzylorda Summer Time</tzName>
+      <abbreviation>KZT</abbreviation>
+      <tzName>Kazakhstan Time</tzName>
     </timezones>
     <translations>
       <br>Kazakstan</br>
@@ -7416,7 +7416,7 @@
     <nationality>Latvian</nationality>
     <area_sq_km>64589</area_sq_km>
     <postal_code_format>LV-####</postal_code_format>
-    <postal_code_regex>^(?:LV)*(\d{4})$</postal_code_regex>
+    <postal_code_regex>^(?:LV-)?[0-9]{4}$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Riga</zoneName>
       <gmtOffset>7200</gmtOffset>
@@ -7473,7 +7473,7 @@
     <nationality>Lebanese</nationality>
     <area_sq_km>10400</area_sq_km>
     <postal_code_format>#### ####|####</postal_code_format>
-    <postal_code_regex>^(\d{4}(\d{4})?)$</postal_code_regex>
+    <postal_code_regex>^[0-9]{4}(?: ?[0-9]{4})?$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Beirut</zoneName>
       <gmtOffset>7200</gmtOffset>
@@ -7758,7 +7758,7 @@
     <nationality>Lithuanian</nationality>
     <area_sq_km>65200</area_sq_km>
     <postal_code_format>LT-#####</postal_code_format>
-    <postal_code_regex>^(?:LT)*(\d{5})$</postal_code_regex>
+    <postal_code_regex>^(?:LT-)?[0-9]{5}$</postal_code_regex>
     <timezones>
       <zoneName>Europe/Vilnius</zoneName>
       <gmtOffset>7200</gmtOffset>
@@ -7871,8 +7871,8 @@
     <subregion_id>12</subregion_id>
     <nationality>Macanese, Chinese</nationality>
     <area_sq_km>254</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format></postal_code_format>
+    <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Asia/Macau</zoneName>
       <gmtOffset>28800</gmtOffset>
@@ -8644,10 +8644,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Chihuahua</zoneName>
-      <gmtOffset>-25200</gmtOffset>
-      <gmtOffsetName>UTC-07:00</gmtOffsetName>
-      <abbreviation>MST</abbreviation>
-      <tzName>Mountain Standard Time (North America)</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>CST</abbreviation>
+      <tzName>Central Standard Time (North America)</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Hermosillo</zoneName>
@@ -8693,10 +8693,10 @@
     </timezones>
     <timezones>
       <zoneName>America/Ojinaga</zoneName>
-      <gmtOffset>-25200</gmtOffset>
-      <gmtOffsetName>UTC-07:00</gmtOffsetName>
-      <abbreviation>MST</abbreviation>
-      <tzName>Mountain Standard Time (North America)</tzName>
+      <gmtOffset>-21600</gmtOffset>
+      <gmtOffsetName>UTC-06:00</gmtOffsetName>
+      <abbreviation>CST</abbreviation>
+      <tzName>Central Standard Time (North America)</tzName>
     </timezones>
     <timezones>
       <zoneName>America/Tijuana</zoneName>
@@ -9132,17 +9132,17 @@
     <postal_code_regex>^(\d{5})$</postal_code_regex>
     <timezones>
       <zoneName>Africa/Casablanca</zoneName>
-      <gmtOffset>3600</gmtOffset>
-      <gmtOffsetName>UTC+01:00</gmtOffsetName>
-      <abbreviation>WEST</abbreviation>
-      <tzName>Western European Summer Time</tzName>
+      <gmtOffset>0</gmtOffset>
+      <gmtOffsetName>UTC±00</gmtOffsetName>
+      <abbreviation>WET</abbreviation>
+      <tzName>Western European Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Africa/El_Aaiun</zoneName>
-      <gmtOffset>3600</gmtOffset>
-      <gmtOffsetName>UTC+01:00</gmtOffsetName>
-      <abbreviation>WEST</abbreviation>
-      <tzName>Western Sahara Time</tzName>
+      <gmtOffset>0</gmtOffset>
+      <gmtOffsetName>UTC±00</gmtOffsetName>
+      <abbreviation>WET</abbreviation>
+      <tzName>Western European Time</tzName>
     </timezones>
     <translations>
       <ko>모로코</ko>
@@ -9594,15 +9594,15 @@
     <postal_code_regex>^(\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Auckland</zoneName>
-      <gmtOffset>46800</gmtOffset>
-      <gmtOffsetName>UTC+13:00</gmtOffsetName>
-      <abbreviation>NZDT</abbreviation>
-      <tzName>New Zealand Daylight Time</tzName>
+      <gmtOffset>43200</gmtOffset>
+      <gmtOffsetName>UTC+12:00</gmtOffsetName>
+      <abbreviation>NZST</abbreviation>
+      <tzName>New Zealand Standard Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Pacific/Chatham</zoneName>
-      <gmtOffset>49500</gmtOffset>
-      <gmtOffsetName>UTC+13:45</gmtOffsetName>
+      <gmtOffset>45900</gmtOffset>
+      <gmtOffsetName>UTC+12:45</gmtOffsetName>
       <abbreviation>CHAST</abbreviation>
       <tzName>Chatham Standard Time</tzName>
     </timezones>
@@ -9654,8 +9654,8 @@
     <subregion_id>9</subregion_id>
     <nationality>Nicaraguan</nationality>
     <area_sq_km>129494</area_sq_km>
-    <postal_code_format>###-###-#</postal_code_format>
-    <postal_code_regex>^(\d{7})$</postal_code_regex>
+    <postal_code_format>#####</postal_code_format>
+    <postal_code_regex>^[0-9]{5}$</postal_code_regex>
     <timezones>
       <zoneName>America/Managua</zoneName>
       <gmtOffset>-21600</gmtOffset>
@@ -9886,8 +9886,8 @@
     <postal_code_regex>^(\d{4})$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Norfolk</zoneName>
-      <gmtOffset>43200</gmtOffset>
-      <gmtOffsetName>UTC+12:00</gmtOffsetName>
+      <gmtOffset>39600</gmtOffset>
+      <gmtOffsetName>UTC+11:00</gmtOffsetName>
       <abbreviation>NFT</abbreviation>
       <tzName>Norfolk Time</tzName>
     </timezones>
@@ -9939,8 +9939,8 @@
     <subregion_id>12</subregion_id>
     <nationality>North Korean</nationality>
     <area_sq_km>120540</area_sq_km>
-    <postal_code_format>###-###</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format></postal_code_format>
+    <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Asia/Pyongyang</zoneName>
       <gmtOffset>32400</gmtOffset>
@@ -10409,8 +10409,8 @@
     <subregion_id>9</subregion_id>
     <nationality>Panamanian</nationality>
     <area_sq_km>78200</area_sq_km>
-    <postal_code_format>@####</postal_code_format>
-    <postal_code_regex>^([A-Z]\d{4})$</postal_code_regex>
+    <postal_code_format>@@@@@-@@@@@|@####|####</postal_code_format>
+    <postal_code_regex>^(?:[A-Z0-9]{5}-?[A-Z0-9]{5}|[A-Z][0-9]{4}|[0-9]{4})$</postal_code_regex>
     <timezones>
       <zoneName>America/Panama</zoneName>
       <gmtOffset>-18000</gmtOffset>
@@ -11120,7 +11120,7 @@
       <gmtOffset>43200</gmtOffset>
       <gmtOffsetName>UTC+12:00</gmtOffsetName>
       <abbreviation>ANAT</abbreviation>
-      <tzName>Anadyr Time[4</tzName>
+      <tzName>Anadyr Time</tzName>
     </timezones>
     <timezones>
       <zoneName>Asia/Barnaul</zoneName>
@@ -11292,8 +11292,8 @@
     </timezones>
     <timezones>
       <zoneName>Europe/Volgograd</zoneName>
-      <gmtOffset>14400</gmtOffset>
-      <gmtOffsetName>UTC+04:00</gmtOffsetName>
+      <gmtOffset>10800</gmtOffset>
+      <gmtOffsetName>UTC+03:00</gmtOffsetName>
       <abbreviation>MSK</abbreviation>
       <tzName>Moscow Standard Time</tzName>
     </timezones>
@@ -11801,12 +11801,12 @@
     <subregion_id>22</subregion_id>
     <nationality>Samoan</nationality>
     <area_sq_km>2944</area_sq_km>
-    <postal_code_format>AS 96799</postal_code_format>
-    <postal_code_regex>AS 96799</postal_code_regex>
+    <postal_code_format>WS####</postal_code_format>
+    <postal_code_regex>^WS[0-9]{4}$</postal_code_regex>
     <timezones>
       <zoneName>Pacific/Apia</zoneName>
-      <gmtOffset>50400</gmtOffset>
-      <gmtOffsetName>UTC+14:00</gmtOffsetName>
+      <gmtOffset>46800</gmtOffset>
+      <gmtOffsetName>UTC+13:00</gmtOffsetName>
       <abbreviation>WST</abbreviation>
       <tzName>West Samoa Time</tzName>
     </timezones>
@@ -12301,9 +12301,9 @@
     <numeric_code>534</numeric_code>
     <phonecode>1721</phonecode>
     <capital>Philipsburg</capital>
-    <currency>ANG</currency>
-    <currency_name>Netherlands Antillean guilder</currency_name>
-    <currency_symbol>ƒ</currency_symbol>
+    <currency>XCG</currency>
+    <currency_name>Caribbean guilder</currency_name>
+    <currency_symbol>Cg</currency_symbol>
     <tld>.sx</tld>
     <native>Sint Maarten</native>
     <population>41349</population>
@@ -12539,8 +12539,8 @@
     <subregion_id>4</subregion_id>
     <nationality>Somali, Somalian</nationality>
     <area_sq_km>637657</area_sq_km>
-    <postal_code_format>@@ ##### or ####|#####</postal_code_format>
-    <postal_code_regex>^([A-Z]{2}\s*\d{5}|\d{4,5})$</postal_code_regex>
+    <postal_code_format>@@ #####|####|#####</postal_code_format>
+    <postal_code_regex>^(?:[A-Z]{2} {0,2}[0-9]{5}|[0-9]{4,5})$</postal_code_regex>
     <timezones>
       <zoneName>Africa/Mogadishu</zoneName>
       <gmtOffset>10800</gmtOffset>
@@ -12771,10 +12771,10 @@
     <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Africa/Juba</zoneName>
-      <gmtOffset>10800</gmtOffset>
-      <gmtOffsetName>UTC+03:00</gmtOffsetName>
-      <abbreviation>EAT</abbreviation>
-      <tzName>East Africa Time</tzName>
+      <gmtOffset>7200</gmtOffset>
+      <gmtOffsetName>UTC+02:00</gmtOffsetName>
+      <abbreviation>CAT</abbreviation>
+      <tzName>Central Africa Time</tzName>
     </timezones>
     <translations>
       <br>Soudan ar Su</br>
@@ -12958,8 +12958,8 @@
       <zoneName>Africa/Khartoum</zoneName>
       <gmtOffset>7200</gmtOffset>
       <gmtOffsetName>UTC+02:00</gmtOffsetName>
-      <abbreviation>EAT</abbreviation>
-      <tzName>Eastern African Time</tzName>
+      <abbreviation>CAT</abbreviation>
+      <tzName>Central Africa Time</tzName>
     </timezones>
     <translations>
       <br>Soudan</br>
@@ -13241,10 +13241,10 @@
     <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Asia/Damascus</zoneName>
-      <gmtOffset>7200</gmtOffset>
-      <gmtOffsetName>UTC+02:00</gmtOffsetName>
-      <abbreviation>EET</abbreviation>
-      <tzName>Eastern European Time</tzName>
+      <gmtOffset>10800</gmtOffset>
+      <gmtOffsetName>UTC+03:00</gmtOffsetName>
+      <abbreviation>AST</abbreviation>
+      <tzName>Arabia Standard Time</tzName>
     </timezones>
     <translations>
       <br>Siria</br>
@@ -14341,8 +14341,8 @@
     <subregion_id>11</subregion_id>
     <nationality>Emirati, Emirian, Emiri</nationality>
     <area_sq_km>82880</area_sq_km>
-    <postal_code_format>##### #####</postal_code_format>
-    <postal_code_regex>^\d{5}-\d{5}$</postal_code_regex>
+    <postal_code_format></postal_code_format>
+    <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Asia/Dubai</zoneName>
       <gmtOffset>14400</gmtOffset>
@@ -15064,8 +15064,8 @@
     <subregion_id>13</subregion_id>
     <nationality>Vietnamese</nationality>
     <area_sq_km>329560</area_sq_km>
-    <postal_code_format>######</postal_code_format>
-    <postal_code_regex>^(\d{6})$</postal_code_regex>
+    <postal_code_format>#####|######</postal_code_format>
+    <postal_code_regex>^[0-9]{5,6}$</postal_code_regex>
     <timezones>
       <zoneName>Asia/Ho_Chi_Minh</zoneName>
       <gmtOffset>25200</gmtOffset>
@@ -15295,10 +15295,10 @@
     <postal_code_regex></postal_code_regex>
     <timezones>
       <zoneName>Africa/El_Aaiun</zoneName>
-      <gmtOffset>3600</gmtOffset>
-      <gmtOffsetName>UTC+01:00</gmtOffsetName>
-      <abbreviation>WEST</abbreviation>
-      <tzName>Western European Summer Time</tzName>
+      <gmtOffset>0</gmtOffset>
+      <gmtOffsetName>UTC±00</gmtOffsetName>
+      <abbreviation>WET</abbreviation>
+      <tzName>Western European Time</tzName>
     </timezones>
     <translations>
       <br>Sahara ar C'hornôg</br>

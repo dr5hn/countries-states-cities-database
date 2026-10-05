@@ -299,8 +299,8 @@
         "subregion_id": 22,
         "nationality": "American Samoan",
         "area_sq_km": 199,
-        "postal_code_format": "#####-####",
-        "postal_code_regex": "96799",
+        "postal_code_format": "96799|96799-####",
+        "postal_code_regex": "^96799(?:-[0-9]{4})?$",
         "timezones": [
           {
             "zoneName": "Pacific/Pago_Pago",
@@ -572,8 +572,8 @@
         "timezones": [
           {
             "zoneName": "Antarctica/Casey",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
+            "gmtOffset": 28800,
+            "gmtOffsetName": "UTC+08:00",
             "abbreviation": "AWST",
             "tzName": "Australian Western Standard Time"
           },
@@ -600,10 +600,10 @@
           },
           {
             "zoneName": "Antarctica/McMurdo",
-            "gmtOffset": 46800,
-            "gmtOffsetName": "UTC+13:00",
-            "abbreviation": "NZDT",
-            "tzName": "New Zealand Daylight Time"
+            "gmtOffset": 43200,
+            "gmtOffsetName": "UTC+12:00",
+            "abbreviation": "NZST",
+            "tzName": "New Zealand Standard Time"
           },
           {
             "zoneName": "Antarctica/Palmer",
@@ -635,8 +635,8 @@
           },
           {
             "zoneName": "Antarctica/Vostok",
-            "gmtOffset": 21600,
-            "gmtOffsetName": "UTC+06:00",
+            "gmtOffset": 18000,
+            "gmtOffsetName": "UTC+05:00",
             "abbreviation": "VOST",
             "tzName": "Vostok Station Time"
           }
@@ -908,8 +908,8 @@
         "subregion_id": 11,
         "nationality": "Armenian",
         "area_sq_km": 29800,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": "####",
+        "postal_code_regex": "^[0-9]{4}$",
         "timezones": [
           {
             "zoneName": "Asia/Yerevan",
@@ -1047,17 +1047,17 @@
         "timezones": [
           {
             "zoneName": "Antarctica/Macquarie",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
-            "abbreviation": "MIST",
-            "tzName": "Macquarie Island Station Time"
+            "gmtOffset": 36000,
+            "gmtOffsetName": "UTC+10:00",
+            "abbreviation": "AEST",
+            "tzName": "Australian Eastern Standard Time"
           },
           {
             "zoneName": "Australia/Adelaide",
-            "gmtOffset": 37800,
-            "gmtOffsetName": "UTC+10:30",
-            "abbreviation": "ACDT",
-            "tzName": "Australian Central Daylight Saving Time"
+            "gmtOffset": 34200,
+            "gmtOffsetName": "UTC+09:30",
+            "abbreviation": "ACST",
+            "tzName": "Australian Central Standard Time"
           },
           {
             "zoneName": "Australia/Brisbane",
@@ -1068,17 +1068,17 @@
           },
           {
             "zoneName": "Australia/Broken_Hill",
-            "gmtOffset": 37800,
-            "gmtOffsetName": "UTC+10:30",
-            "abbreviation": "ACDT",
-            "tzName": "Australian Central Daylight Saving Time"
+            "gmtOffset": 34200,
+            "gmtOffsetName": "UTC+09:30",
+            "abbreviation": "ACST",
+            "tzName": "Australian Central Standard Time"
           },
           {
             "zoneName": "Australia/Currie",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
-            "abbreviation": "AEDT",
-            "tzName": "Australian Eastern Daylight Saving Time"
+            "gmtOffset": 36000,
+            "gmtOffsetName": "UTC+10:00",
+            "abbreviation": "AEST",
+            "tzName": "Australian Eastern Standard Time"
           },
           {
             "zoneName": "Australia/Darwin",
@@ -1096,10 +1096,10 @@
           },
           {
             "zoneName": "Australia/Hobart",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
-            "abbreviation": "AEDT",
-            "tzName": "Australian Eastern Daylight Saving Time"
+            "gmtOffset": 36000,
+            "gmtOffsetName": "UTC+10:00",
+            "abbreviation": "AEST",
+            "tzName": "Australian Eastern Standard Time"
           },
           {
             "zoneName": "Australia/Lindeman",
@@ -1110,17 +1110,17 @@
           },
           {
             "zoneName": "Australia/Lord_Howe",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
+            "gmtOffset": 37800,
+            "gmtOffsetName": "UTC+10:30",
             "abbreviation": "LHST",
-            "tzName": "Lord Howe Summer Time"
+            "tzName": "Lord Howe Standard Time"
           },
           {
             "zoneName": "Australia/Melbourne",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
-            "abbreviation": "AEDT",
-            "tzName": "Australian Eastern Daylight Saving Time"
+            "gmtOffset": 36000,
+            "gmtOffsetName": "UTC+10:00",
+            "abbreviation": "AEST",
+            "tzName": "Australian Eastern Standard Time"
           },
           {
             "zoneName": "Australia/Perth",
@@ -1131,10 +1131,10 @@
           },
           {
             "zoneName": "Australia/Sydney",
-            "gmtOffset": 39600,
-            "gmtOffsetName": "UTC+11:00",
-            "abbreviation": "AEDT",
-            "tzName": "Australian Eastern Daylight Saving Time"
+            "gmtOffset": 36000,
+            "gmtOffsetName": "UTC+10:00",
+            "abbreviation": "AEST",
+            "tzName": "Australian Eastern Standard Time"
           }
         ],
         "translations": {
@@ -1987,7 +1987,7 @@
         "currency": "USD",
         "currency_name": "United States dollar",
         "currency_symbol": "$",
-        "tld": ".an",
+        "tld": ".bq",
         "native": "Caribisch Nederland",
         "population": 26552,
         "gdp": null,
@@ -2687,7 +2687,7 @@
         "iso2": "BI",
         "numeric_code": "108",
         "phonecode": "257",
-        "capital": "Bujumbura",
+        "capital": "Gitega",
         "currency": "BIF",
         "currency_name": "Burundian franc",
         "currency_symbol": "FBu",
@@ -2949,10 +2949,10 @@
           },
           {
             "zoneName": "America/Edmonton",
-            "gmtOffset": -25200,
-            "gmtOffsetName": "UTC-07:00",
-            "abbreviation": "MST",
-            "tzName": "Mountain Standard Time (North America)"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "CST",
+            "tzName": "Central Standard Time (North America)"
           },
           {
             "zoneName": "America/Fort_Nelson",
@@ -2984,10 +2984,10 @@
           },
           {
             "zoneName": "America/Inuvik",
-            "gmtOffset": -25200,
-            "gmtOffsetName": "UTC-07:00",
-            "abbreviation": "MST",
-            "tzName": "Mountain Standard Time (North America)"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "CST",
+            "tzName": "Central Standard Time (North America)"
           },
           {
             "zoneName": "America/Iqaluit",
@@ -3075,10 +3075,10 @@
           },
           {
             "zoneName": "America/Vancouver",
-            "gmtOffset": -28800,
-            "gmtOffsetName": "UTC-08:00",
-            "abbreviation": "PST",
-            "tzName": "Pacific Standard Time (North America)"
+            "gmtOffset": -25200,
+            "gmtOffsetName": "UTC-07:00",
+            "abbreviation": "MST",
+            "tzName": "Mountain Standard Time (North America)"
           },
           {
             "zoneName": "America/Whitehorse",
@@ -3096,10 +3096,10 @@
           },
           {
             "zoneName": "America/Yellowknife",
-            "gmtOffset": -25200,
-            "gmtOffsetName": "UTC-07:00",
-            "abbreviation": "MST",
-            "tzName": "Mountain Standard Time (North America)"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "CST",
+            "tzName": "Central Standard Time (North America)"
           }
         ],
         "translations": {
@@ -3359,8 +3359,8 @@
         "subregion_id": 2,
         "nationality": "Chadian",
         "area_sq_km": 1284000,
-        "postal_code_format": "TKCA 1ZZ",
-        "postal_code_regex": "^(TKCA 1ZZ)$",
+        "postal_code_format": null,
+        "postal_code_regex": null,
         "timezones": [
           {
             "zoneName": "Africa/Ndjamena",
@@ -3438,17 +3438,17 @@
           },
           {
             "zoneName": "America/Santiago",
-            "gmtOffset": -10800,
-            "gmtOffsetName": "UTC-03:00",
-            "abbreviation": "CLST",
-            "tzName": "Chile Summer Time"
+            "gmtOffset": -14400,
+            "gmtOffsetName": "UTC-04:00",
+            "abbreviation": "CLT",
+            "tzName": "Chile Standard Time"
           },
           {
             "zoneName": "Pacific/Easter",
-            "gmtOffset": -18000,
-            "gmtOffsetName": "UTC-05:00",
-            "abbreviation": "EASST",
-            "tzName": "Easter Island Summer Time"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "EAST",
+            "tzName": "Easter Island Standard Time"
           },
           {
             "zoneName": "America/Coyhaique",
@@ -3843,9 +3843,9 @@
         "numeric_code": "178",
         "phonecode": "242",
         "capital": "Brazzaville",
-        "currency": "CDF",
-        "currency_name": "Congolese Franc",
-        "currency_symbol": "FC",
+        "currency": "XAF",
+        "currency_name": "Central African CFA franc",
+        "currency_symbol": "FCFA",
         "tld": ".cg",
         "native": "République du Congo",
         "population": 6142180,
@@ -4125,7 +4125,7 @@
         "nationality": "Cuban",
         "area_sq_km": 110860,
         "postal_code_format": "CP #####",
-        "postal_code_regex": "^(?:CP)*(\\d{5})$",
+        "postal_code_regex": "^(?:CP ?)?[0-9]{5}$",
         "timezones": [
           {
             "zoneName": "America/Havana",
@@ -4178,9 +4178,9 @@
         "numeric_code": "531",
         "phonecode": "599",
         "capital": "Willemstad",
-        "currency": "ANG",
-        "currency_name": "Netherlands Antillean guilder",
-        "currency_symbol": "ƒ",
+        "currency": "XCG",
+        "currency_name": "Caribbean guilder",
+        "currency_symbol": "Cg",
         "tld": ".cw",
         "native": "Curaçao",
         "population": 156115,
@@ -4879,8 +4879,8 @@
         "subregion_id": 9,
         "nationality": "Salvadoran",
         "area_sq_km": 21040,
-        "postal_code_format": "CP ####",
-        "postal_code_regex": "^(?:CP)*(\\d{4})$",
+        "postal_code_format": "####",
+        "postal_code_regex": "^(?:CP ?)?[0-9]{4}$",
         "timezones": [
           {
             "zoneName": "America/El_Salvador",
@@ -6174,7 +6174,7 @@
         "nationality": "Greek, Hellenic",
         "area_sq_km": 131940,
         "postal_code_format": "### ##",
-        "postal_code_regex": "^(\\d{5})$",
+        "postal_code_regex": "^[0-9]{3} ?[0-9]{2}$",
         "timezones": [
           {
             "zoneName": "Europe/Athens",
@@ -6252,17 +6252,17 @@
           },
           {
             "zoneName": "America/Nuuk",
-            "gmtOffset": -10800,
-            "gmtOffsetName": "UTC-03:00",
+            "gmtOffset": -7200,
+            "gmtOffsetName": "UTC-02:00",
             "abbreviation": "WGT",
             "tzName": "West Greenland Time"
           },
           {
             "zoneName": "America/Scoresbysund",
-            "gmtOffset": -3600,
-            "gmtOffsetName": "UTC-01:00",
-            "abbreviation": "EGT",
-            "tzName": "Eastern Greenland Time"
+            "gmtOffset": -7200,
+            "gmtOffsetName": "UTC-02:00",
+            "abbreviation": "WGT",
+            "tzName": "West Greenland Time"
           },
           {
             "zoneName": "America/Thule",
@@ -6998,8 +6998,8 @@
         "subregion_id": 9,
         "nationality": "Honduran",
         "area_sq_km": 112090,
-        "postal_code_format": "#####",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": "#####|@@####",
+        "postal_code_regex": "^(?:[0-9]{5}|[A-Z]{2}[0-9]{4})$",
         "timezones": [
           {
             "zoneName": "America/Tegucigalpa",
@@ -7065,8 +7065,8 @@
         "subregion_id": 12,
         "nationality": "Hong Kong, Hong Kongese",
         "area_sq_km": 1092,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": null,
+        "postal_code_regex": null,
         "timezones": [
           {
             "zoneName": "Asia/Hong_Kong",
@@ -7555,7 +7555,7 @@
         "nationality": "Irish",
         "area_sq_km": 70280,
         "postal_code_format": "@@@ @@@@",
-        "postal_code_regex": "^(D6W|[AC-FHKNPRTV-Y][0-9]{2})\\s?([AC-FHKNPRTV-Y0-9]{4})",
+        "postal_code_regex": "^(?:D6W|[AC-FHKNPRTV-Y][0-9]{2}) ?[AC-FHKNPRTV-Y0-9]{4}$",
         "timezones": [
           {
             "zoneName": "Europe/Dublin",
@@ -8028,10 +8028,10 @@
         "timezones": [
           {
             "zoneName": "Asia/Amman",
-            "gmtOffset": 7200,
-            "gmtOffsetName": "UTC+02:00",
-            "abbreviation": "EET",
-            "tzName": "Eastern European Time"
+            "gmtOffset": 10800,
+            "gmtOffsetName": "UTC+03:00",
+            "abbreviation": "AST",
+            "tzName": "Arabia Standard Time"
           }
         ],
         "translations": {
@@ -8090,15 +8090,15 @@
         "subregion_id": 10,
         "nationality": "Kazakhstani, Kazakh",
         "area_sq_km": 2717300,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": "######|@##@#@#",
+        "postal_code_regex": "^(?:[0-9]{6}|[A-Z][0-9]{2}[A-Z][0-9][A-Z][0-9])$",
         "timezones": [
           {
             "zoneName": "Asia/Almaty",
-            "gmtOffset": 21600,
-            "gmtOffsetName": "UTC+06:00",
-            "abbreviation": "ALMT",
-            "tzName": "Alma-Ata Time[1"
+            "gmtOffset": 18000,
+            "gmtOffsetName": "UTC+05:00",
+            "abbreviation": "KZT",
+            "tzName": "Kazakhstan Time"
           },
           {
             "zoneName": "Asia/Aqtau",
@@ -8118,8 +8118,8 @@
             "zoneName": "Asia/Atyrau",
             "gmtOffset": 18000,
             "gmtOffsetName": "UTC+05:00",
-            "abbreviation": "MSD+1",
-            "tzName": "Moscow Daylight Time+1"
+            "abbreviation": "KZT",
+            "tzName": "Kazakhstan Time"
           },
           {
             "zoneName": "Asia/Oral",
@@ -8130,17 +8130,17 @@
           },
           {
             "zoneName": "Asia/Qostanay",
-            "gmtOffset": 21600,
-            "gmtOffsetName": "UTC+06:00",
-            "abbreviation": "QYZST",
-            "tzName": "Qyzylorda Summer Time"
+            "gmtOffset": 18000,
+            "gmtOffsetName": "UTC+05:00",
+            "abbreviation": "KZT",
+            "tzName": "Kazakhstan Time"
           },
           {
             "zoneName": "Asia/Qyzylorda",
             "gmtOffset": 18000,
             "gmtOffsetName": "UTC+05:00",
-            "abbreviation": "QYZT",
-            "tzName": "Qyzylorda Summer Time"
+            "abbreviation": "KZT",
+            "tzName": "Kazakhstan Time"
           }
         ],
         "translations": {
@@ -8606,7 +8606,7 @@
         "nationality": "Latvian",
         "area_sq_km": 64589,
         "postal_code_format": "LV-####",
-        "postal_code_regex": "^(?:LV)*(\\d{4})$",
+        "postal_code_regex": "^(?:LV-)?[0-9]{4}$",
         "timezones": [
           {
             "zoneName": "Europe/Riga",
@@ -8673,7 +8673,7 @@
         "nationality": "Lebanese",
         "area_sq_km": 10400,
         "postal_code_format": "#### ####|####",
-        "postal_code_regex": "^(\\d{4}(\\d{4})?)$",
+        "postal_code_regex": "^[0-9]{4}(?: ?[0-9]{4})?$",
         "timezones": [
           {
             "zoneName": "Asia/Beirut",
@@ -9008,7 +9008,7 @@
         "nationality": "Lithuanian",
         "area_sq_km": 65200,
         "postal_code_format": "LT-#####",
-        "postal_code_regex": "^(?:LT)*(\\d{5})$",
+        "postal_code_regex": "^(?:LT-)?[0-9]{5}$",
         "timezones": [
           {
             "zoneName": "Europe/Vilnius",
@@ -9141,8 +9141,8 @@
         "subregion_id": 12,
         "nationality": "Macanese, Chinese",
         "area_sq_km": 254,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": null,
+        "postal_code_regex": null,
         "timezones": [
           {
             "zoneName": "Asia/Macau",
@@ -10045,10 +10045,10 @@
           },
           {
             "zoneName": "America/Chihuahua",
-            "gmtOffset": -25200,
-            "gmtOffsetName": "UTC-07:00",
-            "abbreviation": "MST",
-            "tzName": "Mountain Standard Time (North America)"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "CST",
+            "tzName": "Central Standard Time (North America)"
           },
           {
             "zoneName": "America/Hermosillo",
@@ -10094,10 +10094,10 @@
           },
           {
             "zoneName": "America/Ojinaga",
-            "gmtOffset": -25200,
-            "gmtOffsetName": "UTC-07:00",
-            "abbreviation": "MST",
-            "tzName": "Mountain Standard Time (North America)"
+            "gmtOffset": -21600,
+            "gmtOffsetName": "UTC-06:00",
+            "abbreviation": "CST",
+            "tzName": "Central Standard Time (North America)"
           },
           {
             "zoneName": "America/Tijuana",
@@ -10603,17 +10603,17 @@
         "timezones": [
           {
             "zoneName": "Africa/Casablanca",
-            "gmtOffset": 3600,
-            "gmtOffsetName": "UTC+01:00",
-            "abbreviation": "WEST",
-            "tzName": "Western European Summer Time"
+            "gmtOffset": 0,
+            "gmtOffsetName": "UTC±00",
+            "abbreviation": "WET",
+            "tzName": "Western European Time"
           },
           {
             "zoneName": "Africa/El_Aaiun",
-            "gmtOffset": 3600,
-            "gmtOffsetName": "UTC+01:00",
-            "abbreviation": "WEST",
-            "tzName": "Western Sahara Time"
+            "gmtOffset": 0,
+            "gmtOffsetName": "UTC±00",
+            "abbreviation": "WET",
+            "tzName": "Western European Time"
           }
         ],
         "translations": {
@@ -11145,15 +11145,15 @@
         "timezones": [
           {
             "zoneName": "Pacific/Auckland",
-            "gmtOffset": 46800,
-            "gmtOffsetName": "UTC+13:00",
-            "abbreviation": "NZDT",
-            "tzName": "New Zealand Daylight Time"
+            "gmtOffset": 43200,
+            "gmtOffsetName": "UTC+12:00",
+            "abbreviation": "NZST",
+            "tzName": "New Zealand Standard Time"
           },
           {
             "zoneName": "Pacific/Chatham",
-            "gmtOffset": 49500,
-            "gmtOffsetName": "UTC+13:45",
+            "gmtOffset": 45900,
+            "gmtOffsetName": "UTC+12:45",
             "abbreviation": "CHAST",
             "tzName": "Chatham Standard Time"
           }
@@ -11214,8 +11214,8 @@
         "subregion_id": 9,
         "nationality": "Nicaraguan",
         "area_sq_km": 129494,
-        "postal_code_format": "###-###-#",
-        "postal_code_regex": "^(\\d{7})$",
+        "postal_code_format": "#####",
+        "postal_code_regex": "^[0-9]{5}$",
         "timezones": [
           {
             "zoneName": "America/Managua",
@@ -11487,8 +11487,8 @@
         "timezones": [
           {
             "zoneName": "Pacific/Norfolk",
-            "gmtOffset": 43200,
-            "gmtOffsetName": "UTC+12:00",
+            "gmtOffset": 39600,
+            "gmtOffsetName": "UTC+11:00",
             "abbreviation": "NFT",
             "tzName": "Norfolk Time"
           }
@@ -11549,8 +11549,8 @@
         "subregion_id": 12,
         "nationality": "North Korean",
         "area_sq_km": 120540,
-        "postal_code_format": "###-###",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": null,
+        "postal_code_regex": null,
         "timezones": [
           {
             "zoneName": "Asia/Pyongyang",
@@ -12099,8 +12099,8 @@
         "subregion_id": 9,
         "nationality": "Panamanian",
         "area_sq_km": 78200,
-        "postal_code_format": "@####",
-        "postal_code_regex": "^([A-Z]\\d{4})$",
+        "postal_code_format": "@@@@@-@@@@@|@####|####",
+        "postal_code_regex": "^(?:[A-Z0-9]{5}-?[A-Z0-9]{5}|[A-Z][0-9]{4}|[0-9]{4})$",
         "timezones": [
           {
             "zoneName": "America/Panama",
@@ -12931,7 +12931,7 @@
             "gmtOffset": 43200,
             "gmtOffsetName": "UTC+12:00",
             "abbreviation": "ANAT",
-            "tzName": "Anadyr Time[4"
+            "tzName": "Anadyr Time"
           },
           {
             "zoneName": "Asia/Barnaul",
@@ -13103,8 +13103,8 @@
           },
           {
             "zoneName": "Europe/Volgograd",
-            "gmtOffset": 14400,
-            "gmtOffsetName": "UTC+04:00",
+            "gmtOffset": 10800,
+            "gmtOffsetName": "UTC+03:00",
             "abbreviation": "MSK",
             "tzName": "Moscow Standard Time"
           }
@@ -13701,13 +13701,13 @@
         "subregion_id": 22,
         "nationality": "Samoan",
         "area_sq_km": 2944,
-        "postal_code_format": "AS 96799",
-        "postal_code_regex": "AS 96799",
+        "postal_code_format": "WS####",
+        "postal_code_regex": "^WS[0-9]{4}$",
         "timezones": [
           {
             "zoneName": "Pacific/Apia",
-            "gmtOffset": 50400,
-            "gmtOffsetName": "UTC+14:00",
+            "gmtOffset": 46800,
+            "gmtOffsetName": "UTC+13:00",
             "abbreviation": "WST",
             "tzName": "West Samoa Time"
           }
@@ -14291,9 +14291,9 @@
         "numeric_code": "534",
         "phonecode": "1721",
         "capital": "Philipsburg",
-        "currency": "ANG",
-        "currency_name": "Netherlands Antillean guilder",
-        "currency_symbol": "ƒ",
+        "currency": "XCG",
+        "currency_name": "Caribbean guilder",
+        "currency_symbol": "Cg",
         "tld": ".sx",
         "native": "Sint Maarten",
         "population": 41349,
@@ -14569,8 +14569,8 @@
         "subregion_id": 4,
         "nationality": "Somali, Somalian",
         "area_sq_km": 637657,
-        "postal_code_format": "@@ ##### or ####|#####",
-        "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$",
+        "postal_code_format": "@@ #####|####|#####",
+        "postal_code_regex": "^(?:[A-Z]{2} {0,2}[0-9]{5}|[0-9]{4,5})$",
         "timezones": [
           {
             "zoneName": "Africa/Mogadishu",
@@ -14842,10 +14842,10 @@
         "timezones": [
           {
             "zoneName": "Africa/Juba",
-            "gmtOffset": 10800,
-            "gmtOffsetName": "UTC+03:00",
-            "abbreviation": "EAT",
-            "tzName": "East Africa Time"
+            "gmtOffset": 7200,
+            "gmtOffsetName": "UTC+02:00",
+            "abbreviation": "CAT",
+            "tzName": "Central Africa Time"
           }
         ],
         "translations": {
@@ -15059,8 +15059,8 @@
             "zoneName": "Africa/Khartoum",
             "gmtOffset": 7200,
             "gmtOffsetName": "UTC+02:00",
-            "abbreviation": "EAT",
-            "tzName": "Eastern African Time"
+            "abbreviation": "CAT",
+            "tzName": "Central Africa Time"
           }
         ],
         "translations": {
@@ -15392,10 +15392,10 @@
         "timezones": [
           {
             "zoneName": "Asia/Damascus",
-            "gmtOffset": 7200,
-            "gmtOffsetName": "UTC+02:00",
-            "abbreviation": "EET",
-            "tzName": "Eastern European Time"
+            "gmtOffset": 10800,
+            "gmtOffsetName": "UTC+03:00",
+            "abbreviation": "AST",
+            "tzName": "Arabia Standard Time"
           }
         ],
         "translations": {
@@ -16681,8 +16681,8 @@
         "subregion_id": 11,
         "nationality": "Emirati, Emirian, Emiri",
         "area_sq_km": 82880,
-        "postal_code_format": "##### #####",
-        "postal_code_regex": "^\\d{5}-\\d{5}$",
+        "postal_code_format": null,
+        "postal_code_regex": null,
         "timezones": [
           {
             "zoneName": "Asia/Dubai",
@@ -17494,8 +17494,8 @@
         "subregion_id": 13,
         "nationality": "Vietnamese",
         "area_sq_km": 329560,
-        "postal_code_format": "######",
-        "postal_code_regex": "^(\\d{6})$",
+        "postal_code_format": "#####|######",
+        "postal_code_regex": "^[0-9]{5,6}$",
         "timezones": [
           {
             "zoneName": "Asia/Ho_Chi_Minh",
@@ -17766,10 +17766,10 @@
         "timezones": [
           {
             "zoneName": "Africa/El_Aaiun",
-            "gmtOffset": 3600,
-            "gmtOffsetName": "UTC+01:00",
-            "abbreviation": "WEST",
-            "tzName": "Western European Summer Time"
+            "gmtOffset": 0,
+            "gmtOffsetName": "UTC±00",
+            "abbreviation": "WET",
+            "tzName": "Western European Time"
           }
         ],
         "translations": {
