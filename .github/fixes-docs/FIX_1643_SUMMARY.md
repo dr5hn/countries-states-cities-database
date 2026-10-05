@@ -46298,7 +46298,8 @@ Revert the PR (squash commit). No `id`s change.
 ## City names (second round, from the names triage)
 
 ### Problem
-The names audit left 7,123 unverified rows. Triage cleared 3,112 as legitimate and proved 19 renames.
+The names audit left 7,123 unverified rows. Triage cleared 3,112 audit findings (1,868 of them only the optional empty
+`native` screen) and proved 19 renames.
 
 ### Fix
 `name` on 19 records where the own Wikidata English label and GeoNames agree (Nur-Sultan → Astana per decree 1017;
@@ -46309,4 +46310,4 @@ translations follow only where that language's label equals the new name.
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/*.json` — `name` on 19 records
+- `contributions/cities/*.json` — `name` on 19 records, 148 translation values on 18 of them
