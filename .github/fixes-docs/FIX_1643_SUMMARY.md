@@ -6344,7 +6344,14 @@ Changjiang had wrong native characters.
 ### Fix
 - `wikiDataId` on 174 CN records: the 5 former "Directly" children and 169 records whose single same-province
   candidate passes every check (record, Wikidata and GeoNames points within 5 km; exact Chinese administrative name
-  on GeoNames; live P442; current P131 = the record's parent). 758 are held for a later pass.
+  on GeoNames; live P442; current P131 = the record's parent). 758 are held for a later pass. Baisha and Lingshui
+  are 10.6 and 11.9 km from their item's representative point, but the items are the right autonomous counties
+  (P442 469025, 469028), and GeoNames' county entries agree.
+- Sources: each record's new item on Wikidata (e.g. https://www.wikidata.org/wiki/Q1001424) and its GeoNames
+  administrative entry; Hubei's land-resources table for Shennongjia
+  (https://zrzyt.hubei.gov.cn/bmdt/ztzl/cljsydzsdt/shennongjia/202103/t20210329_3428194.shtml); Marseille's 12th
+  arrondissement (https://mairie11-12.marseille.fr/le-12e-arrondissement/saint-julien); AEMET for La Zubia
+  (https://www.aemet.es/es/eltiempo/prediccion/municipios/zubia-la-id18193); Q42275 for Solaro.
 - 158228 Shennongjia removed in favour of 20089 (same forest district; 20089 is GeoNames 1795614's ADM2 entry);
   20089 becomes `administrative zone`, level 2.
 - 157668 Lingao 临高, 157670 Changjiang 昌江 (native and `zh-CN`).
