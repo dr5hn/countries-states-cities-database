@@ -6343,7 +6343,8 @@ After #1671, 124 records typed `adm2` (municipal seat) have a plain town (GeoNam
 - `type` → `city` on 95 records that are not their municipality's seat (Wikidata P36/P1376 seat chain, own item,
   GeoNames); 28 confirmed seats stay `adm2`; El Realito (149723) held.
 - `wikiDataId` on 380 town records: the settlement's own item (label or alias match, point within 5 km, municipality
-  relationship or INEGI code) instead of the municipality's; 17 held.
+  relationship or INEGI code) instead of their municipality's (377) or an unrelated municipality's (3, e.g. Holca
+  had Hoctún's); 17 held.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
