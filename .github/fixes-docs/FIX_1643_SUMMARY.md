@@ -46370,7 +46370,8 @@ After #1713, 145046 (Maragusan, formerly San Mariano) and 154518 both described 
 with the same Wikidata item; 154518 (a 2025 import) had no population and a wrong native name.
 
 ### Fix
-154518 archived into 145046 (older id); no fields moved.
+154518 archived into 145046 (older id). 145046's translations still spelled its former name (San Mariano);
+it takes the Maragusan forms the duplicate carried (Latin keys Maragusan; ko matches Wikidata).
 
 ### Removed records (archive)
 
