@@ -46362,3 +46362,72 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — 410 records
+
+## Second Maragusan record merged
+
+### Problem
+After #1713, 145046 (Maragusan, formerly San Mariano) and 154518 both described Maragusan municipality, Davao de Oro,
+with the same Wikidata item; 154518 (a 2025 import) had no population and a wrong native name.
+
+### Fix
+154518 archived into 145046 (older id); no fields moved.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 154518,
+    "name": "Maragusan",
+    "state_id": 1311,
+    "state_code": "COM",
+    "country_id": 174,
+    "country_code": "PH",
+    "type": "adm3",
+    "level": null,
+    "parent_id": null,
+    "latitude": "7.36115360",
+    "longitude": "126.01042080",
+    "native": "Compostela",
+    "population": null,
+    "timezone": "Asia/Manila",
+    "translations": {
+      "br": "Maragusan",
+      "ko": "마라구산",
+      "pt-BR": "Maragusan",
+      "pt": "Maragusan",
+      "nl": "Maragusan",
+      "hr": "Maragusan",
+      "fa": "ماراگوسان",
+      "de": "Maragusan",
+      "es": "Maragusán",
+      "fr": "Maragusan",
+      "ja": "マラグサン",
+      "it": "Maragusan",
+      "zh-CN": "马拉古桑",
+      "tr": "Maragusan",
+      "ru": "Марагусан",
+      "uk": "Марагусан",
+      "pl": "Maraguski",
+      "hi": "मारागुसन",
+      "ar": "ماراجوسان"
+    },
+    "created_at": "2025-03-21T23:14:16",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q315512",
+    "replacement_id": 145046
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the archived row is listed above.
+
+### Files Changed
+- `contributions/cities/PH.json` — 1 record removed
