@@ -6530,14 +6530,14 @@ Revert the PR (squash commit).
 ## Philippine duplicate records merged
 
 ### Problem
-A later PH batch (ids 144xxx–146xxx, 154xxx) re-added places the 2019 import (81xxx–85xxx) already held; after
+A later PH batch (ids 144xxx–146xxx, 154xxx) re-added places earlier imports (mostly the 2019 batch, 81xxx–85xxx) already held; after
 #1663–#1665 most pairs sat in the same province.
 
 ### Fix
 Decision 1's rule, as in #1675: 698 later records removed in favour of the older id (same own Wikidata item with a
 matching label and its point within 5 km of both records; the same GeoNames entry, 679 of them by exact population;
 no conflicting populations; not a municipality next to its town). 616 kept records take their province where
-GeoNames or Wikidata's P131 chain and the 2020 province polygons agree for both points. Held: 346 candidate pairs
+GeoNames or Wikidata's P131 chain and the 2020 province polygons agree for both points. Held: 346 candidate later records
 that fail a check, the kept province of 80 merged pairs, and the BARMM Special Geographic Area.
 
 ### Removed records (archive)
