@@ -30,9 +30,19 @@
 - **2026-10-01** - PR [#1646](https://github.com/dr5hn/countries-states-cities-database/pull/1646): Updated states (by @dr5hn)
 - **2026-10-01** - PR [#1648](https://github.com/dr5hn/countries-states-cities-database/pull/1648): Updated cities (CL, FR) (by @dr5hn)
 - **2026-10-01** - PR [#1644](https://github.com/dr5hn/countries-states-cities-database/pull/1644): Updated cities (PR) (by @dr5hn)
+
+## 2026-09
 - **2026-09-28** - PR [#1640](https://github.com/dr5hn/countries-states-cities-database/pull/1640): Updated cities (AE, CU, DE, GB, TW) (by @github-actions[bot])
 - **2026-09-28** - PR [#1637](https://github.com/dr5hn/countries-states-cities-database/pull/1637): Updated cities (MX) (by @dr5hn)
 - **2026-09-28** - PR [#1638](https://github.com/dr5hn/countries-states-cities-database/pull/1638): Updated cities (US) (by @dr5hn)
+- **2026-09-26** - PR [#1636](https://github.com/dr5hn/countries-states-cities-database/pull/1636): Updated cities (IN) (by @dr5hn)
+- **2026-09-26** - PR [#1635](https://github.com/dr5hn/countries-states-cities-database/pull/1635): Updated cities, Updated states (TW) (by @joepspsps2)
+- **2026-09-26** - PR [#1632](https://github.com/dr5hn/countries-states-cities-database/pull/1632): Updated cities (DE) (by @rahulpawar-31)
+- **2026-09-26** - PR [#1631](https://github.com/dr5hn/countries-states-cities-database/pull/1631): Updated cities (DE) (by @rahulpawar-31)
+- **2026-09-26** - PR [#1630](https://github.com/dr5hn/countries-states-cities-database/pull/1630): Updated cities (MX) (by @rahulpawar-31)
+- **2026-09-26** - PR [#1629](https://github.com/dr5hn/countries-states-cities-database/pull/1629): Updated cities (IN) (by @rahulpawar-31)
+- **2026-09-26** - PR [#1628](https://github.com/dr5hn/countries-states-cities-database/pull/1628): Updated countries (by @rahulpawar-31)
+- **2026-09-26** - PR [#1625](https://github.com/dr5hn/countries-states-cities-database/pull/1625): Updated cities (DK) (by @ebarped)
 
 ## 2026-08
 - **2026-08-25** - PR [#1586](https://github.com/dr5hn/countries-states-cities-database/pull/1586): Updated cities (AE) (by @NailNilo)
