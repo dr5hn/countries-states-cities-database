@@ -50394,7 +50394,10 @@ Deep research on duplicate hits for mid-sized places found Japanese and Spanish 
 
 ### Fix
 110 newer records archived into the older id (Japan 89 by MIC/census code, Spain 21 by INE code); 22 kept records
-take the correct Wikidata item, name or native from their archived copy (e.g. Higashimatsushima Q511872). No
+carry verified fields from their archived copy and correct labels from official sources (e.g. Higashimatsushima
+Q511872). After review, 12 kept records get corrected labels: Chinese names for 10 Japanese municipalities (MIC name,
+Wikidata zh-hans label), four Higashimatsushima transliterations from the archived copy, and As Pontes de García
+Rodríguez (32533), whose native (INE 15070) and translations rendered the article "As" as the English word "as". No
 population added. 2,877 pairs cleared as different places; 827 held.
 
 ### Removed records (archive)
@@ -55033,4 +55036,4 @@ population added. 2,877 pairs cleared as different places; 827 held.
 Revert the PR (squash commit); the archived rows are listed above.
 
 ### Files Changed
-- `contributions/cities/JP.json`, `ES.json` — 110 removed, 22 corrected
+- `contributions/cities/JP.json`, `ES.json` — 110 removed, 27 corrected
