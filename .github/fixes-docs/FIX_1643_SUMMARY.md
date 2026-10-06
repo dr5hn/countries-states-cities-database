@@ -55175,3 +55175,26 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/` (US, AU, GB, CA, JM, NZ, IE) — 565 records
+
+## City translations and native names in Russia and Mexico
+
+### Problem
+The 2019 import machine-translated romanized names word by word, in translations and natives: Russian natives such as
+Buy "Купить" (to buy), Plyos "Пожалуйста" (please), Never "Никогда"; Mexican natives such as Tuxpan "Esmoquin"
+(tuxedo), Zitlala "Ellos yacen" (they lie), Honey "Miel".
+
+### Fix
+Same rule as #1721-#1727 (own Wikidata item's label or Wikipedia title, identity-checked, disambiguators removed,
+zh-CN simplified, no Latin text in non-Latin keys, pt never from pt-br; else the name for Latin-script languages;
+non-Latin word translations removed, transliterations kept). Natives that translated words take the verified item's
+Russian label (RU) or the record name (MX, where native equals the name); attested local and administrative natives
+stay (Абанский район). Mexican Spanish translations stay the record name, as natives do (labels such as "Municipio de
+Acacoyagua" are not used), and leading type words that are not part of the name are removed ("городской округ
+Бузулук" -> Бузулук). Each change has two place-identity sources; 1,858 records without a second source are held.
+10,399 records (RU 4,141, MX 6,258): 38,284 values replaced, 2,452 removed, 522 natives.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/RU.json`, `MX.json` — 10,399 records
