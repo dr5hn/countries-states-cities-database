@@ -55093,8 +55093,8 @@ Wikidata label of the record's own item in that language (or its Wikipedia title
 removed; the own item counts only when its English label/alias equals the name and its point is within 5 km. With no
 label, Latin-script languages take the name (an attested alias or title is kept); non-Latin values that translate the
 words are removed, transliterations stay, and unclear ones stay unchanged (held). zh-CN titles are written in
-simplified characters. `native` is reset to the name where it translated or added words (54 spelling variants such as
-okina forms kept). 15,232 records: 100,410 values replaced, 5,582 removed, 1,186 natives. 1,003 own items failed the
+simplified characters. `native` is reset to the name where it translated or added words (60 spelling variants such as
+okina, spacing and Center/Centre forms kept). 15,232 records: 100,410 values replaced, 5,580 removed, 1,180 natives. 1,003 own items failed the
 check (name fallback only; QIDs not changed here) and 27,018 unclear non-Latin values were left as they are.
 
 ### Rollback
