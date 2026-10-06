@@ -55115,12 +55115,13 @@ Same rule as #1721 (own Wikidata item's label or Wikipedia title, qualifier remo
 else the name for Latin-script languages; non-Latin word translations removed, transliterations kept, unclear values
 held). Natives are reset to the name where they translated words, added words ("Clutha District") or were corrupted
 ("Artarm"); attested local-language names stay (Irish/English pairs such as An Cabhán / Cavan from the official
-bilingual orders). Val-des-Sources' native "Asbestos" is its pre-2020 name and becomes Val-des-Sources. 8,409 records
-(AU 3,153, GB 3,226, CA 937, JM 669, NZ 128, IE 296): 44,702 values replaced, 5,157 removed, 1,067 natives. 32,544
-unclear non-Latin values left as they are.
+bilingual orders). Val-des-Sources' native "Asbestos" is its pre-2020 name and becomes Val-des-Sources. 8,408 records
+(AU 3,152, GB 3,226, CA 937, JM 669, NZ 128, IE 296): 44,695 values replaced, 5,156 removed, 1,065 natives. 32,544
+unclear non-Latin values left as they are. Review kept five stored transliterations over labels that contain English
+text (e.g. Brill "Brill镇") and two spacing variants in natives (Little Hampton, Rose bank).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/` `AU.json`, `GB.json`, `CA.json`, `JM.json`, `NZ.json`, `IE.json` — 8,409 records
+- `contributions/cities/` `AU.json`, `GB.json`, `CA.json`, `JM.json`, `NZ.json`, `IE.json` — 8,408 records
