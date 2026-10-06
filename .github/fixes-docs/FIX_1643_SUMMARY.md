@@ -50395,8 +50395,13 @@ state, outdated names, Wikidata items that describe other places.
 
 ### Fix
 440 records: 233 state links, 76 names with their native/translation copies, 132 Wikidata items replaced (each
-checked unused) or cleared, Queens to the borough item, Zuunmod's corrupted labels replaced, one Yemeni district
-retyped. 49 held.
+checked unused) or cleared, Queens to the borough item, Zuunmod's corrupted labels replaced where a language label
+exists (br, hr, pt and pt-BR have none and stay held), one Yemeni district retyped. 49 held. After review, 49
+native/translation values on 16 records corrected from Wikidata labels and official sites: localized forms this PR had
+overwritten (Poxoréo, Sopelana, Medina-Sidonia, the Yemeni district's Arabic) and dictionary translations or
+misspellings left on renamed records (Piumhi "Più", Neu-Isenburg "Nuovo Isenburg", Alirajpur "Rajpur"); Indian
+natives stay in Devanagari. Seven inherited Wikidata items cleared: six disambiguation pages and Huixian's item for
+the Henan city of the same name.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
