@@ -55161,13 +55161,16 @@ Polish "Albany (wieś w hrabstwie Green)"; Japanese "ハッディントン (イ�
 East Lothian). #1725 settled that a translation is the place's name only.
 
 ### Fix
-676 listed values in 563 records: trailing qualifiers removed (343 parenthetical, 300 comma), 23 names the translator
-had split rejoined ("فورت، میچل" -> فورت میچل for Fort Mitchell), 7 wrong-area qualifiers removed (Hayfield GB was
-"Iowa"), 2 word translations removed (Wickham ru "воздушный зазор" = air gap; May Pen Proper ru "Может быть, ручка
-правильная"). Official commas kept (Washington, D.C.; Newry, Mourne and Down); 3 unclear values held.
+676 listed values in 563 records; 551 records change (659 values replaced, 2 removed): trailing qualifiers removed (338
+parenthetical and 300 after a comma, 6 values both), 20 names the translator had split rejoined ("فورت، میچل" -> فورت
+میچل for Fort Mitchell), 7 wrong-area qualifiers removed (Hayfield GB was "Iowa"), 2 word translations removed (Wickham
+ru "воздушный зазор" = air gap; May Pen Proper ru "Может быть, ручка правильная"). Kept: official commas (Washington,
+D.C.; Newry, Mourne and Down) and parts of the record's own name ("Робінс (авіабаза)" for Robins Air Force Base,
+"Swindon (borough)" for Borough of Swindon). Held: 6 values (the MCBH acronym, two Japanese values naming another place,
+three names whose word order differs from the record's).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/` (US, AU, GB, CA, JM, NZ, IE) — 557 records
+- `contributions/cities/` (US, AU, GB, CA, JM, NZ, IE) — 551 records
