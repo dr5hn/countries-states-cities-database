@@ -55243,4 +55243,4 @@ source; 266 proposals without one are held. 18,053 records (RO 7,227, PL 2,158, 
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/` (26 country files) — 18,053 records
+- `contributions/cities/` (25 changed country files; 26 countries audited) — 18,053 records
