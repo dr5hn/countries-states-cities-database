@@ -50386,3 +50386,20 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — 673 records
+
+## Names, state links and Wikidata items (deep research on places of 10,000-49,999)
+
+### Problem
+Name and state-link screen hits on mid-sized places, and the remaining reviewer follow-ups: cities under the wrong
+state, outdated names, Wikidata items that describe other places.
+
+### Fix
+440 records: 233 state links, 76 names with their native/translation copies, 132 Wikidata items replaced (each
+checked unused) or cleared, Queens to the borough item, Zuunmod's corrupted labels replaced, one Yemeni district
+retyped. 49 held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — 440 records
