@@ -55243,3 +55243,24 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/` (34 changed country files; 35 countries examined) — 9,621 records
+
+## City translations and native names in France, Italy, Belgium, Luxembourg, Switzerland, Monaco and San Marino
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Borca (IT) native "Un combattente" (a fighter),
+Faetano (SM) "Condizione", Les Bois (CH) "Wald" (forest), Bassenge (BE) "Pool", Aspelt (LU) "Faire un air"; Geneva's
+native was the German exonym "Genf".
+
+### Fix
+Same rule as #1721-#1734 in 7 countries: own Wikidata item's label or Wikipedia title (identity-checked; trailing
+disambiguators and leading type words not in the name removed; zh-CN simplified; no Latin text in non-Latin keys; pt
+never from pt-br), else the name for Latin-script languages; non-Latin word translations removed, transliterations
+kept. Own-language keys keep the name (fr in France and Monaco, it in Italy and San Marino). Natives that translated
+words become the name; attested local forms stay (Roma, Herblay); Swiss and Belgian natives follow the local official
+language (Genève). 19,234 records (FR 9,244, IT 8,574, CH 983, BE 296, LU 120, MC 13, SM 4): 73,062 values replaced, 860 removed, 1,023 natives.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/FR.json`, `IT.json`, `BE.json`, `LU.json`, `CH.json`, `MC.json`, `SM.json` — 19,234 records
