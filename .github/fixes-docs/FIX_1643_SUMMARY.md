@@ -55213,8 +55213,8 @@ simplified; no Latin text in non-Latin keys; pt never from pt-br), else the name
 non-Latin word translations removed, transliterations kept. Natives that translated words take the verified local
 label, a same-place spelling, or the record name; attested Thai, Indonesian and Philippine natives and administrative
 forms stay (อำเภอไชยา, Kabupaten Aceh Barat). Each change has an independent locality source (GeoNames, PSA PSGC); 613
-proposals without one are held. 4,040 records (TH 960, ID 383, PH 2,697): 18,211 values replaced, 766 removed, 1,143
-natives.
+proposals without one are held. After review, 402 more type prefixes removed ("Distretto di", "Reggenza di", "وصاية").
+4,040 records (TH 960, ID 383, PH 2,697): 18,190 values replaced, 766 removed, 1,143 natives.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
