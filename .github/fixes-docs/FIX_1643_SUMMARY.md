@@ -55125,3 +55125,24 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/` `AU.json`, `GB.json`, `CA.json`, `JM.json`, `NZ.json`, `IE.json` — 8,408 records
+
+## City translations and native names in Arabic-speaking countries
+
+### Problem
+The 2019 import machine-translated romanized Arabic names word by word, especially the article: As Said (YE) in German
+"Wie gesagt", As Sars (TN) in French "Comme le SRAS", At Tall (SY) in Dutch "Op hoog", Faqous (EG) in German
+"Häufig gestellte Fragen" (FAQ).
+
+### Fix
+Same rule as #1721/#1722 in SA, YE, SY, IQ, TN, OM, KW, SD, LY, JO, AE, QA, BH, EG, MA, DZ, LB, PS and MR: own
+Wikidata item's label or Wikipedia title (identity-checked; qualifier removed only when it names the record's own
+area; zh-CN simplified; labels with Latin text never used for non-Latin keys; pt never from pt-br), else the name for
+Latin-script languages; non-Latin word translations removed, transliterations kept. Natives that translated words
+take the item's Arabic label (or the name); attested Arabic natives stay. 2,098 records: 9,989 values replaced,
+286 removed, 96 natives; all 58 article cases in these countries included.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/` (19 country files) — 2,098 records
