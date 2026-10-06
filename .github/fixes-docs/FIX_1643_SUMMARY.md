@@ -50397,8 +50397,10 @@ Deep research on duplicate hits for mid-sized places found Japanese and Spanish 
 carry verified fields from their archived copy and correct labels from official sources (e.g. Higashimatsushima
 Q511872). After review, 12 kept records get corrected labels: Chinese names for 10 Japanese municipalities (MIC name,
 Wikidata zh-hans label), four Higashimatsushima transliterations from the archived copy, and As Pontes de García
-Rodríguez (32533), whose native (INE 15070) and translations rendered the article "As" as the English word "as". No
-population added. 2,877 pairs cleared as different places; 827 held.
+Rodríguez (32533), whose native (INE 15070) and translations rendered the article "As" as the English word "as".
+15 kept records take the archived copy's point where that point is within 1 km of the municipality's own Wikidata
+coordinate and at least 1 km closer than the kept point (e.g. Inabe 7.1 km to 0.9 km, Noboribetsu 7.4 km to 0.0 km).
+No population added. 2,877 pairs cleared as different places; 827 held.
 
 ### Removed records (archive)
 
@@ -55036,4 +55038,4 @@ population added. 2,877 pairs cleared as different places; 827 held.
 Revert the PR (squash commit); the archived rows are listed above.
 
 ### Files Changed
-- `contributions/cities/JP.json`, `ES.json` — 110 removed, 27 corrected
+- `contributions/cities/JP.json`, `ES.json` — 110 removed, 38 corrected
