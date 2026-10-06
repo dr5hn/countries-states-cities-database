@@ -55152,3 +55152,22 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/cities/` (19 country files) — 2,098 records
 - `contributions/states/states.json` — 1 record (An Giang)
+
+## Label disambiguators left in US, AU, GB, CA, JM, NZ and IE translations
+
+### Problem
+#1721 and #1722 kept trailing Wikipedia-style qualifiers in some translations (Persian "اکتون، ماین" = Acton, Maine;
+Polish "Albany (wieś w hrabstwie Green)"; Japanese "ハッディントン (イースト・ローデシア)" = East Rhodesia for Haddington,
+East Lothian). #1725 settled that a translation is the place's name only.
+
+### Fix
+676 listed values in 563 records: trailing qualifiers removed (343 parenthetical, 300 comma), 23 names the translator
+had split rejoined ("فورت، میچل" -> فورت میچل for Fort Mitchell), 7 wrong-area qualifiers removed (Hayfield GB was
+"Iowa"), 2 word translations removed (Wickham ru "воздушный зазор" = air gap; May Pen Proper ru "Может быть, ручка
+правильная"). Official commas kept (Washington, D.C.; Newry, Mourne and Down); 3 unclear values held.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/` (US, AU, GB, CA, JM, NZ, IE) — 557 records
