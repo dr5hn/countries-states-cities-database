@@ -55221,3 +55221,25 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/TH.json`, `ID.json`, `PH.json` — 4,040 records
+
+## City translations and native names in Latin America and the Caribbean
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Brazilian natives such as Sarutaiá "Beijo"
+(kiss) and Abaré "Eu cobri" (I covered), Young (UY) "Joven"; translations such as Tota (CO) in German "Gesamt" (total)
+and Colón (CR) in Dutch "Dubbele punt" (colon).
+
+### Fix
+Same rule as #1721-#1730 in 35 countries: own Wikidata item's label or Wikipedia title (identity-checked; trailing
+disambiguators and leading type words not in the name removed, e.g. "Municipio Guasca" -> Guasca; zh-CN simplified;
+no Latin text in non-Latin keys; pt never from pt-br), else the name for Latin-script languages; non-Latin word
+translations removed, transliterations kept. Spanish (Spanish-speaking countries) and Portuguese (Brazil) translations
+stay the record name. Natives that translated words become the name; attested local forms and spelling variants stay.
+Each change has an independent locality source (GeoNames, IBGE); 356 proposals without one are held.
+9,621 records (BR 4,062, CO 957, AR 906, HN 415, LC 389, PA 371, GT 326, PE 325, ...): 33,291 values replaced, 591 removed, 1,130 natives.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/` (35 country files) — 9,621 records
