@@ -55242,4 +55242,4 @@ Each change has an independent locality source (GeoNames, IBGE); 356 proposals w
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/` (35 country files) — 9,621 records
+- `contributions/cities/` (34 changed country files; 35 countries examined) — 9,621 records
