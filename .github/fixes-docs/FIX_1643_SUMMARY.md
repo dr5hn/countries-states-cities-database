@@ -55236,7 +55236,7 @@ no Latin text in non-Latin keys; pt never from pt-br), else the name for Latin-s
 translations removed, transliterations kept. Spanish (Spanish-speaking countries) and Portuguese (Brazil) translations
 stay the record name. Natives that translated words become the name; attested local forms and spelling variants stay.
 Each change has an independent locality source (GeoNames, IBGE); 356 proposals without one are held.
-9,621 records (BR 4,062, CO 957, AR 906, HN 415, LC 389, PA 371, GT 326, PE 325, ...): 33,291 values replaced, 591 removed, 1,130 natives.
+9,621 records (BR 4,062, CO 957, AR 906, HN 415, LC 389, PA 371, GT 326, PE 325, ...): 33,287 values replaced, 591 removed, 1,130 natives.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
