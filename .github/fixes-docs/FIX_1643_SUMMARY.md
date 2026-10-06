@@ -55102,3 +55102,25 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/US.json` — 15,232 records
+
+## City translations and native names in AU, GB, CA, JM, NZ and IE
+
+### Problem
+As in the US (#1721), the 2019 import machine-translated names word by word: natives such as Aberaeron "Extant",
+Amlwch "Increase", Allora "At that time", Ahipara "Crisis", Albanel "Masonry", Bearna "Gap"; translations such as
+Woodbine in French "Chèvrefeuille" (honeysuckle) and Mooncoin in German "Mondmünze".
+
+### Fix
+Same rule as #1721 (own Wikidata item's label or Wikipedia title, qualifier removed, zh-CN in simplified characters;
+else the name for Latin-script languages; non-Latin word translations removed, transliterations kept, unclear values
+held). Natives are reset to the name where they translated words, added words ("Clutha District") or were corrupted
+("Artarm"); attested local-language names stay (Irish/English pairs such as An Cabhán / Cavan from the official
+bilingual orders). Val-des-Sources' native "Asbestos" is its pre-2020 name and becomes Val-des-Sources. 8,409 records
+(AU 3,153, GB 3,226, CA 937, JM 669, NZ 128, IE 296): 44,702 values replaced, 5,157 removed, 1,067 natives. 32,544
+unclear non-Latin values left as they are.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/` `AU.json`, `GB.json`, `CA.json`, `JM.json`, `NZ.json`, `IE.json` — 8,409 records
