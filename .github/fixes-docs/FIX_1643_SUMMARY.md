@@ -55139,10 +55139,12 @@ Wikidata item's label or Wikipedia title (identity-checked; qualifier removed on
 area; zh-CN simplified; labels with Latin text never used for non-Latin keys; pt never from pt-br), else the name for
 Latin-script languages; non-Latin word translations removed, transliterations kept. Natives that translated words
 take the item's Arabic label (or the name); attested Arabic natives stay. 2,098 records: 9,989 values replaced,
-286 removed, 96 natives; all 58 article cases in these countries included.
+286 removed, 96 natives; all 58 article cases in these countries included. Also the state An Giang (VN, 3794):
+pt/pt-BR "Um Giang", es "Un gigante", tr "Bir dev" (a giant) and pl "Giang" become An Giang (Q36592 labels).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/` (19 country files) — 2,098 records
+- `contributions/states/states.json` — 1 record (An Giang)
