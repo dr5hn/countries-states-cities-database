@@ -55039,3 +55039,21 @@ Revert the PR (squash commit); the archived rows are listed above.
 
 ### Files Changed
 - `contributions/cities/JP.json`, `ES.json` — 110 removed, 38 corrected
+
+## Types and points from deep research on places of 10,000-49,999
+
+### Problem
+Identity and level screen hits on mid-sized places: territories stored as settlements (Peruvian provinces, PNG and
+Yemeni districts), urban barrios typed as cities, Philippine municipal points inside another municipality.
+
+### Fix
+`type` on 307 records (city → area 136, adm2 → area 59, city → province 53, adm3 → province 27, adm3 → area 14, adm2 → section 9, adm1 → area 6, district → area 1, adm1 → section 1, capital → section 1); `latitude`/`longitude` on 101 Philippine LGUs (ADM3 representative points). No
+city -> admN relabels; mixed town/district records held (1,117 records held in total). After review, Provincia
+Germán Jordán (9933) drops Q1295948, which is Cliza Municipality; province item Q1424407 matches its population
+(34,498) but its Wikidata point is 49 km away, so it is left for a later check.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/*.json` — 408 records
