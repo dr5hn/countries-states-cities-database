@@ -50396,7 +50396,7 @@ state, outdated names, Wikidata items that describe other places.
 ### Fix
 440 records: 233 state links, 76 names with their native/translation copies, 132 Wikidata items replaced (each
 checked unused) or cleared, Queens to the borough item, Zuunmod's corrupted labels replaced where a language label
-exists (br, hr, pt and pt-BR have none and stay held), one Yemeni district retyped. 49 held. After review, 49
+exists (br, hr, pt and pt-BR have none and stay held), one Yemeni district retyped. 49 held. Six changes dropped at merge because #1719 settled them first: five renamed Spanish records were archived as duplicates (their kept copies already carry the names), and San Juan de Alicante (36843) keeps the verified item Q740204 instead of being cleared. After review, 49
 native/translation values on 16 records corrected from Wikidata labels and official sites: localized forms this PR had
 overwritten (Poxoréo, Sopelana, Medina-Sidonia, the Yemeni district's Arabic) and dictionary translations or
 misspellings left on renamed records (Piumhi "Più", Neu-Isenburg "Nuovo Isenburg", Alirajpur "Rajpur"); Indian
@@ -50407,4 +50407,4 @@ the Henan city of the same name.
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/*.json` — 440 records
+- `contributions/cities/*.json` — 434 records
