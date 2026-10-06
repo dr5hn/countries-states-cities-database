@@ -55188,11 +55188,13 @@ Same rule as #1721-#1727 (own Wikidata item's label or Wikipedia title, identity
 zh-CN simplified, no Latin text in non-Latin keys, pt never from pt-br; else the name for Latin-script languages;
 non-Latin word translations removed, transliterations kept). Natives that translated words take the verified item's
 Russian label (RU) or the record name (MX, where native equals the name); attested local and administrative natives
-stay (Абанский район). Each change has two place-identity sources; 1,858 records without a second source are held.
-10,529 records (RU 4,155, MX 6,374): 39,193 values replaced, 2,457 removed, 522 natives.
+stay (Абанский район). Mexican Spanish translations stay the record name, as natives do (labels such as "Municipio de
+Acacoyagua" are not used), and leading type words that are not part of the name are removed ("городской округ
+Бузулук" -> Бузулук). Each change has two place-identity sources; 1,858 records without a second source are held.
+10,399 records (RU 4,141, MX 6,258): 38,284 values replaced, 2,452 removed, 522 natives.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/RU.json`, `MX.json` — 10,529 records
+- `contributions/cities/RU.json`, `MX.json` — 10,399 records
