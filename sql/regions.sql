@@ -51,4 +51,4 @@ INSERT INTO `regions` VALUES (1,'Africa','{\"br\": \"Afrika\", \"ko\": \"아프�
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-06 12:57:24
+-- Dump completed on 2026-10-06 15:57:56
