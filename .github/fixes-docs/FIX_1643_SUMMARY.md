@@ -55079,3 +55079,26 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/*.json` — 434 records
+
+## US city translations and native names
+
+### Problem
+The 2019 import machine-translated US place names word by word: Advance (MO) was "Vorauszahlung" (prepayment) in
+German, "前進" in Japanese and "Продвигать" (to promote) in Russian; natives too (Agua Dulce "Fresh water", Aitkin
+"Stubborn", Abbeville "Abbeville County"). About 62,000 Latin-script values differed from the name.
+
+### Fix
+Rule approved by the maintainer (as in #1707), applied to all 16,706 US records with translations: a value is the
+Wikidata label of the record's own item in that language (or its Wikipedia title), with a state/county qualifier
+removed; the own item counts only when its English label/alias equals the name and its point is within 5 km. With no
+label, Latin-script languages take the name (an attested alias or title is kept); non-Latin values that translate the
+words are removed, transliterations stay, and unclear ones stay unchanged (held). zh-CN titles are written in
+simplified characters. `native` is reset to the name where it translated or added words (60 spelling variants such as
+okina, spacing and Center/Centre forms kept). 15,232 records: 100,410 values replaced, 5,580 removed, 1,180 natives. 1,003 own items failed the
+check (name fallback only; QIDs not changed here) and 27,018 unclear non-Latin values were left as they are.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/US.json` — 15,232 records
