@@ -107,6 +107,8 @@ CREATE TABLE `countries` (
   `postal_code_regex` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `timezones` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `translations_capital` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `translations_currency_name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `latitude` decimal(10,8) DEFAULT NULL,
   `longitude` decimal(11,8) DEFAULT NULL,
   `emoji` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
