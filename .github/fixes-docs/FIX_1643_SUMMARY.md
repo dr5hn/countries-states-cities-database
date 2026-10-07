@@ -55244,6 +55244,29 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `contributions/cities/` (34 changed country files; 35 countries examined) — 9,621 records
 
+## City translations and native names in Eastern Europe, the Balkans, the Baltics, Turkey and the Caucasus
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Agnita (RO) native "Recunoscut" (recognised),
+Ağlasun (TR) "Hadi ağlayalım" (let's cry), Bag (HU) "Táska" (bag), Sokhumi (GE) "კომბოსტოს" (cabbage); Ukrainian
+natives were often re-transliterated from English (Lyman "Лайман") or kept pre-2024 names (Sheptytskyi "Червоноград").
+
+### Fix
+Same rule as #1721-#1733 in 26 countries: own Wikidata item's label or Wikipedia title (identity-checked; trailing
+disambiguators and leading type words not in the name removed, e.g. "Obec Brloh" -> Brloh; zh-CN simplified; no Latin
+text in non-Latin keys; pt never from pt-br), else the name for Latin-script languages; non-Latin word translations
+removed, transliterations kept. Own-language keys keep the local name (pl, hr, uk, tr). Natives that translated words
+take the verified local label (Cyrillic, Greek, Georgian, Armenian) or the name; for Ukraine the native follows the
+verified Ukrainian label (Лиман, Шептицький). Attested local natives stay. Each change has an independent GeoNames
+source; 266 proposals without one are held. 18,053 records (RO 7,227, PL 2,158, UA 1,566, CZ 1,234, GR 950, HU 916, TR 517, BG 491, ...): 58,335 values replaced, 147 removed,
+1,293 natives.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/` (25 changed country files; 26 countries audited) — 18,053 records
+
 ## City translations and native names in France, Italy, Belgium, Luxembourg, Switzerland, Monaco and San Marino
 
 ### Problem
