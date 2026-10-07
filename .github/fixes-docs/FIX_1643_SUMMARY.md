@@ -55257,7 +55257,8 @@ disambiguators and leading type words not in the name removed; zh-CN simplified;
 never from pt-br), else the name for Latin-script languages; non-Latin word translations removed, transliterations
 kept. Own-language keys keep the name (fr in France and Monaco, it in Italy and San Marino). Natives that translated
 words become the name; attested local forms stay (Roma, Herblay); Swiss and Belgian natives follow the local official
-language (Genève). 19,234 records (FR 9,244, IT 8,574, CH 983, BE 296, LU 120, MC 13, SM 4): 73,062 values replaced, 860 removed, 1,023 natives.
+language (Genève). After review, intrinsic district types are kept for Swiss "Bezirk X" records and
+South Tyrol places keep their German names (Sarentino -> Sarnthein). 19,234 records (FR 9,244, IT 8,574, CH 983, BE 296, LU 120, MC 13, SM 4): 73,049 values replaced, 860 removed, 1,022 natives.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
