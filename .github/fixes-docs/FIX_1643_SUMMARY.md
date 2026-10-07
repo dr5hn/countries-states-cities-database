@@ -55303,7 +55303,9 @@ text in non-Latin keys; pt never from pt-br), else the name for Latin-script lan
 removed, transliterations kept. Own-language keys keep the name (fr in French-speaking countries, pt/pt-BR in
 Portuguese-speaking ones, es GQ, nl AW/BQ). Natives that translated words become the name or the verified local label
 (Amharic, Tigrinya); attested local forms stay (København, Göteborg, Muqdisho). 4,527 records (SE 534, DK 347, NO 345, NG 324, FI 261, ZA 254, MU 141, TZ 137, ET 115, CM 109 and others):
-16,512 values replaced, 545 removed, 1,247 natives.
+16,505 values replaced, 545 removed, 1,244 natives.
+After review: 9 added type words removed ("Quartier Bodi" -> Bodi, Arabic "حي ديدزا" -> ديدزا) and 3 French
+department natives kept (Département de Faro).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
