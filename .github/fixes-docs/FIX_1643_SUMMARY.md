@@ -55393,10 +55393,13 @@ IN got "Mirzapur-cum-Vindhyachal") or carry an alternative name (Zafar UZ got "O
 All 44 were classified with sources: 11 are the same name (e.g. Puducherry/Pondicherry, Along/Aalo) and stay;
 13 are renamed places whose record name is out of date (queued for a separate name change, e.g. Port Blair ->
 Sri Vijaya Puram); 17 records get the values that name the other unit or name back: Latin-script keys to the record name,
-other keys to the stored value. 71 values in 17 records.
+other keys to the stored value. After review: Nishon Tumani is the town Yangi-Nishon (population, point and item), so it keeps
+"Yangi-Nishon" (its record name is queued for correction); Mitsukaidō is a former city merged into Jōsō in 2006, not a
+rename, so its values name Mitsukaidō again; Zyryanovsk hi "Almaty", Dondaicha ja "どんだい茶" (with "tea") and the
+Breton typo "Bokhtat" are fixed. 81 values in 19 records.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `IN.json`, `KH.json`, `MY.json`, `PK.json`, `TM.json`, `TW.json`, `UZ.json` under `contributions/cities/` — 17 records
+- `IN.json`, `JP.json`, `KH.json`, `KZ.json`, `MY.json`, `PK.json`, `TJ.json`, `TM.json`, `TW.json`, `UZ.json` under `contributions/cities/` — 19 records
