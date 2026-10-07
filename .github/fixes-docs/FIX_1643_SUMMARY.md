@@ -55334,3 +55334,24 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `AO.json`, `AS.json`, `BF.json`, `BI.json`, `BJ.json`, `BM.json`, `BQ.json`, `BW.json`, `CD.json`, `CF.json`, `CG.json`, `CI.json`, `CM.json`, `CV.json`, `DJ.json`, `DK.json`, `ER.json`, `ET.json`, `FI.json`, `FJ.json`, `FM.json`, `FO.json`, `GA.json`, `GH.json`, `GL.json`, `GM.json`, `GN.json`, `GQ.json`, `GW.json`, `IM.json`, `IS.json`, `KE.json`, `KI.json`, `KM.json`, `KY.json`, `LR.json`, `LS.json`, `MG.json`, `MH.json`, `ML.json`, `MT.json`, `MU.json`, `MW.json`, `MZ.json`, `NA.json`, `NC.json`, `NE.json`, `NG.json`, `NO.json`, `NR.json`, `PF.json`, `PG.json`, `PW.json`, `RE.json`, `RW.json`, `SB.json`, `SC.json`, `SE.json`, `SL.json`, `SN.json`, `SO.json`, `SS.json`, `ST.json`, `SZ.json`, `TD.json`, `TG.json`, `TO.json`, `TV.json`, `TZ.json`, `UG.json`, `VI.json`, `VU.json`, `WF.json`, `WS.json`, `ZA.json`, `ZM.json`, `ZW.json` under `contributions/cities/` — 4,527 records
+
+## Translations taken from an item matched only by an English alias
+
+### Problem
+The translation rounds (#1721-#1739) accepted a city's own Wikidata item when its English label or alias matched the
+record name. For 313 records only an alias matched, and some of those items name the place differently: Musanze (RW)
+got "Ruhengeri" (its former name), Victoria (MT) got "Rabat" (an alternative name), Villa Adriana (IT) got "Hadrian's
+Villa" (the monument, not the settlement), Cutler Ridge (US) got "Cutler Bay" (a different municipality).
+
+### Fix
+All 313 were classified with sources: 222 are the same name (exonyms and spellings such as Konstanz/Constance) and stay;
+39 are renamed places whose record name is out of date (kept for a separate name change); 39 records (18
+another unit, 15 an alternative name, 4 an outdated label, 2
+a wrong label) get their affected values back: Latin-script keys to the record name, other keys to the stored value.
+195 values in 39 records.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `AM.json`, `AT.json`, `CR.json`, `EC.json`, `ES.json`, `ET.json`, `FR.json`, `GR.json`, `IE.json`, `IQ.json`, `IT.json`, `JO.json`, `LY.json`, `MT.json`, `MX.json`, `NI.json`, `RU.json`, `RW.json`, `US.json`, `YE.json`, `ZA.json` under `contributions/cities/` — 39 records
