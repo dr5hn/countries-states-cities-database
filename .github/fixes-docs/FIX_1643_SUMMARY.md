@@ -55279,10 +55279,12 @@ disambiguators and leading type words not in the name removed, e.g. "Freguesia d
 simplified; no Latin text in non-Latin keys; pt never from pt-br), else the name for Latin-script languages;
 non-Latin word translations removed, transliterations kept. Own-language keys keep the name (es, pt/pt-BR, de, nl).
 Natives that translated words become the name; attested local forms stay (München, Wien, Lisboa, Basque/Catalan/
-Galician names). 15,725 records (ES 6,964, DE 5,471, AT 1,469, NL 1,075, PT 733, AD 9, LI 4): 54,586 values replaced, 383 removed, 3,810 natives.
+Galician names). 15,721 records (ES 6,964, DE 5,467, AT 1,469, NL 1,075, PT 733, AD 9, LI 4): 54,576 values replaced, 381 removed, 3,809 natives.
+After review: 15 values in 12 records corrected ("dos Mártires" -> Mártires, broken Persian "(Saxony)-Anhalt"
+suffixes, two Chinese transliterations kept, Puerto de Pollença native kept).
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `contributions/cities/ES.json`, `PT.json`, `AD.json`, `DE.json`, `AT.json`, `LI.json`, `NL.json` — 15,725 records
+- `contributions/cities/ES.json`, `PT.json`, `AD.json`, `DE.json`, `AT.json`, `LI.json`, `NL.json` — 15,721 records
