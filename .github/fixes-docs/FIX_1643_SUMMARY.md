@@ -55288,3 +55288,25 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/FR.json`, `IT.json`, `BE.json`, `LU.json`, `CH.json`, `MC.json`, `SM.json` — 19,234 records
+
+## City translations and native names in Spain, Portugal, Andorra, Germany, Austria, Liechtenstein and the Netherlands
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Billigheim (DE) native "Billiges Zuhause"
+(cheap home), Apen "Affe" (monkey), Grijota (ES) "Romper" (break), Planken (LI) "Bretter" (boards).
+
+### Fix
+Same rule as #1721-#1735 in 7 countries: own Wikidata item's label or Wikipedia title (identity-checked; trailing
+disambiguators and leading type words not in the name removed, e.g. "Freguesia de Apúlia" -> Apúlia; zh-CN
+simplified; no Latin text in non-Latin keys; pt never from pt-br), else the name for Latin-script languages;
+non-Latin word translations removed, transliterations kept. Own-language keys keep the name (es, pt/pt-BR, de, nl).
+Natives that translated words become the name; attested local forms stay (München, Wien, Lisboa, Basque/Catalan/
+Galician names). 15,721 records (ES 6,964, DE 5,467, AT 1,469, NL 1,075, PT 733, AD 9, LI 4): 54,576 values replaced, 381 removed, 3,809 natives.
+After review: 15 values in 12 records corrected ("dos Mártires" -> Mártires, broken Persian "(Saxony)-Anhalt"
+suffixes, two Chinese transliterations kept, Puerto de Pollença native kept).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `contributions/cities/ES.json`, `PT.json`, `AD.json`, `DE.json`, `AT.json`, `LI.json`, `NL.json` — 15,721 records
