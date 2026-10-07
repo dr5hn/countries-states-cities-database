@@ -55358,3 +55358,26 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `AM.json`, `AT.json`, `AU.json`, `CR.json`, `EC.json`, `ES.json`, `ET.json`, `FR.json`, `GR.json`, `IQ.json`, `IT.json`, `JO.json`, `LY.json`, `MT.json`, `MX.json`, `NI.json`, `PH.json`, `RU.json`, `RW.json`, `US.json`, `YE.json`, `ZA.json` under `contributions/cities/` — 39 records
+
+## City translations and native names in Asia
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Along (IN) native "साथ में" (along with),
+Alot "बहुत" (a lot), Begun "शुरू कर दिया" (has begun), Date (JP) "日付" (calendar date), Taft (IR) "تفت دادن"
+(to sauté), Kamar Boneh (IR) "اتاق استخوان" (bone room), Oral (KZ) "Ауызша" (orally).
+
+### Fix
+Same rule as #1721-#1739 in 27 Asian countries: own Wikidata item's label or Wikipedia title (identity-checked;
+trailing disambiguators and leading type words not in the name removed; zh-CN simplified; no Latin text in non-Latin
+keys), else the name for Latin-script languages; non-Latin word translations removed, transliterations kept.
+Own-language keys (zh-CN in CN/TW/HK/SG, ja JP, ko KR/KP, fa IR/AF, hi IN) take the verified local label, and the
+native is set to the same label where it differed (119 records, e.g. Erattupetta native "एर्नाकुट्टम" -> ईराट्टुपेट्टा).
+Indian natives stay in Devanagari. 5,557 records (IN 2,126, IR 956, JP 623, CN 608, PK 203, IL 111, KR 110, UZ 97, KZ 91, VN 76 and others): 22,884 values replaced, 119 removed,
+684 natives. After review, 39 more leading type words are removed ("Xian de Kangding" -> Kangding, Persian
+"تحصیل بهیره" (Bhera tehsil) -> بهیره) and Gangnam-gu keeps its district word in Ukrainian.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `AF.json`, `BN.json`, `BT.json`, `CN.json`, `IL.json`, `IN.json`, `IR.json`, `JP.json`, `KG.json`, `KH.json`, `KP.json`, `KR.json`, `KZ.json`, `LA.json`, `LK.json`, `MM.json`, `MN.json`, `MV.json`, `MY.json`, `NP.json`, `PK.json`, `TJ.json`, `TL.json`, `TM.json`, `TW.json`, `UZ.json`, `VN.json` under `contributions/cities/` — 5,555 records
