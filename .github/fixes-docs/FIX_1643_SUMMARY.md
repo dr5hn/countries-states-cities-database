@@ -55335,6 +55335,30 @@ Revert the PR (squash commit). No `id`s change.
 ### Files Changed
 - `AO.json`, `AS.json`, `BF.json`, `BI.json`, `BJ.json`, `BM.json`, `BQ.json`, `BW.json`, `CD.json`, `CF.json`, `CG.json`, `CI.json`, `CM.json`, `CV.json`, `DJ.json`, `DK.json`, `ER.json`, `ET.json`, `FI.json`, `FJ.json`, `FM.json`, `FO.json`, `GA.json`, `GH.json`, `GL.json`, `GM.json`, `GN.json`, `GQ.json`, `GW.json`, `IM.json`, `IS.json`, `KE.json`, `KI.json`, `KM.json`, `KY.json`, `LR.json`, `LS.json`, `MG.json`, `MH.json`, `ML.json`, `MT.json`, `MU.json`, `MW.json`, `MZ.json`, `NA.json`, `NC.json`, `NE.json`, `NG.json`, `NO.json`, `NR.json`, `PF.json`, `PG.json`, `PW.json`, `RE.json`, `RW.json`, `SB.json`, `SC.json`, `SE.json`, `SL.json`, `SN.json`, `SO.json`, `SS.json`, `ST.json`, `SZ.json`, `TD.json`, `TG.json`, `TO.json`, `TV.json`, `TZ.json`, `UG.json`, `VI.json`, `VU.json`, `WF.json`, `WS.json`, `ZA.json`, `ZM.json`, `ZW.json` under `contributions/cities/` — 4,527 records
 
+## Translations taken from an item matched only by an English alias
+
+### Problem
+The translation rounds (#1721-#1739) accepted a city's own Wikidata item when its English label or alias matched the
+record name. For 313 records only an alias matched, and some of those items name the place differently: Musanze (RW)
+got "Ruhengeri" (its former name), Victoria (MT) got "Rabat" (an alternative name), Villa Adriana (IT) got "Hadrian's
+Villa" (the monument, not the settlement), Cutler Ridge (US) got "Cutler Bay" (a different municipality).
+
+### Fix
+All 313 were classified with sources: 222 are the same name (exonyms and spellings such as Konstanz/Constance) and
+stay; 39 are renamed places whose record name is out of date (kept for a separate name change); 52 name something
+else (another unit, an alternative or outdated name, or a wrong label), and 36 of those had values to revert: Latin-
+script keys go back to the record name, other keys to the stored value. After review, An Cabhán and Loch Garman
+(county records) and Hooth (a district) keep their translations, Tamaulipas loses a state suffix, Khowa loses the
+non-Latin values that still name Elliot, and word translations left in or restored are removed (Moreland hi "more
+land", Tanner zh-CN "leather worker", Irirum zh-CN "Ireland", Silver Summit ru "silver summit meeting").
+184 values in 39 records.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `AM.json`, `AT.json`, `AU.json`, `CR.json`, `EC.json`, `ES.json`, `ET.json`, `FR.json`, `GR.json`, `IQ.json`, `IT.json`, `JO.json`, `LY.json`, `MT.json`, `MX.json`, `NI.json`, `PH.json`, `RU.json`, `RW.json`, `US.json`, `YE.json`, `ZA.json` under `contributions/cities/` — 39 records
+
 ## City translations and native names in Asia
 
 ### Problem
