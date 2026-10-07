@@ -55310,3 +55310,27 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `contributions/cities/ES.json`, `PT.json`, `AD.json`, `DE.json`, `AT.json`, `LI.json`, `NL.json` — 15,721 records
+
+## City translations and native names in the Nordics, Africa, Oceania and remaining territories
+
+### Problem
+The 2019 import machine-translated names word by word, natives included: Matala (AO) native "Abrir" (to open),
+KaTembe (MZ) "Informação" (information), Mbanza Congo "Na casa do Congo" (in the house of Congo), The Bottom (BQ)
+"De onderkant", Finote Selam (ET) "ፅንስ ኤሊ" (a word-by-word Amharic rendering).
+
+### Fix
+Same rule as #1721-#1738 in 77 countries and territories: own Wikidata item's label or Wikipedia title
+(identity-checked; trailing disambiguators and leading type words not in the name removed; zh-CN simplified; no Latin
+text in non-Latin keys; pt never from pt-br), else the name for Latin-script languages; non-Latin word translations
+removed, transliterations kept. Own-language keys keep the name (fr in French-speaking countries, pt/pt-BR in
+Portuguese-speaking ones, es GQ, nl AW/BQ). Natives that translated words become the name or the verified local label
+(Amharic, Tigrinya); attested local forms stay (København, Göteborg, Muqdisho). 4,527 records (SE 534, DK 347, NO 345, NG 324, FI 261, ZA 254, MU 141, TZ 137, ET 115, CM 109 and others):
+16,505 values replaced, 545 removed, 1,244 natives.
+After review: 9 added type words removed ("Quartier Bodi" -> Bodi, Arabic "حي ديدزا" -> ديدزا) and 3 French
+department natives kept (Département de Faro).
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `AO.json`, `AS.json`, `BF.json`, `BI.json`, `BJ.json`, `BM.json`, `BQ.json`, `BW.json`, `CD.json`, `CF.json`, `CG.json`, `CI.json`, `CM.json`, `CV.json`, `DJ.json`, `DK.json`, `ER.json`, `ET.json`, `FI.json`, `FJ.json`, `FM.json`, `FO.json`, `GA.json`, `GH.json`, `GL.json`, `GM.json`, `GN.json`, `GQ.json`, `GW.json`, `IM.json`, `IS.json`, `KE.json`, `KI.json`, `KM.json`, `KY.json`, `LR.json`, `LS.json`, `MG.json`, `MH.json`, `ML.json`, `MT.json`, `MU.json`, `MW.json`, `MZ.json`, `NA.json`, `NC.json`, `NE.json`, `NG.json`, `NO.json`, `NR.json`, `PF.json`, `PG.json`, `PW.json`, `RE.json`, `RW.json`, `SB.json`, `SC.json`, `SE.json`, `SL.json`, `SN.json`, `SO.json`, `SS.json`, `ST.json`, `SZ.json`, `TD.json`, `TG.json`, `TO.json`, `TV.json`, `TZ.json`, `UG.json`, `VI.json`, `VU.json`, `WF.json`, `WS.json`, `ZA.json`, `ZM.json`, `ZW.json` under `contributions/cities/` — 4,527 records
