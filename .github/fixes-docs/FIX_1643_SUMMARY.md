@@ -55344,13 +55344,13 @@ got "Ruhengeri" (its former name), Victoria (MT) got "Rabat" (an alternative nam
 Villa" (the monument, not the settlement), Cutler Ridge (US) got "Cutler Bay" (a different municipality).
 
 ### Fix
-All 313 were classified with sources: 222 are the same name (exonyms and spellings such as Konstanz/Constance) and stay;
-39 are renamed places whose record name is out of date (kept for a separate name change); 39 records (18
-another unit, 15 an alternative name, 4 an outdated label, 2
-a wrong label) get their affected values back: Latin-script keys to the record name, other keys to the stored value.
-After review: An Cabhán, Loch Garman (county records) and Hooth (a district) keep their county/district translations;
-word translations left in or restored are removed (Moreland hi "more land", Tanner zh-CN "leather worker", Irirum
-zh-CN "Ireland", Loch Garman ja "Lake Garman"), and Khowa loses the non-Latin values that still name Elliot.
+All 313 were classified with sources: 222 are the same name (exonyms and spellings such as Konstanz/Constance) and
+stay; 39 are renamed places whose record name is out of date (kept for a separate name change); 52 name something
+else (another unit, an alternative or outdated name, or a wrong label), and 36 of those had values to revert: Latin-
+script keys go back to the record name, other keys to the stored value. After review, An Cabhán and Loch Garman
+(county records) and Hooth (a district) keep their translations, Tamaulipas loses a state suffix, Khowa loses the
+non-Latin values that still name Elliot, and word translations left in or restored are removed (Moreland hi "more
+land", Tanner zh-CN "leather worker", Irirum zh-CN "Ireland", Silver Summit ru "silver summit meeting").
 184 values in 39 records.
 
 ### Rollback
