@@ -55348,10 +55348,13 @@ All 313 were classified with sources: 222 are the same name (exonyms and spellin
 39 are renamed places whose record name is out of date (kept for a separate name change); 39 records (18
 another unit, 15 an alternative name, 4 an outdated label, 2
 a wrong label) get their affected values back: Latin-script keys to the record name, other keys to the stored value.
-195 values in 39 records.
+After review: An Cabhán, Loch Garman (county records) and Hooth (a district) keep their county/district translations;
+word translations left in or restored are removed (Moreland hi "more land", Tanner zh-CN "leather worker", Irirum
+zh-CN "Ireland", Loch Garman ja "Lake Garman"), and Khowa loses the non-Latin values that still name Elliot.
+184 values in 39 records.
 
 ### Rollback
 Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
-- `AM.json`, `AT.json`, `CR.json`, `EC.json`, `ES.json`, `ET.json`, `FR.json`, `GR.json`, `IE.json`, `IQ.json`, `IT.json`, `JO.json`, `LY.json`, `MT.json`, `MX.json`, `NI.json`, `RU.json`, `RW.json`, `US.json`, `YE.json`, `ZA.json` under `contributions/cities/` — 39 records
+- `AM.json`, `AT.json`, `AU.json`, `CR.json`, `EC.json`, `ES.json`, `ET.json`, `FR.json`, `GR.json`, `IQ.json`, `IT.json`, `JO.json`, `LY.json`, `MT.json`, `MX.json`, `NI.json`, `PH.json`, `RU.json`, `RW.json`, `US.json`, `YE.json`, `ZA.json` under `contributions/cities/` — 39 records
