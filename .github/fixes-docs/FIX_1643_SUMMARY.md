@@ -55381,3 +55381,27 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `AF.json`, `BN.json`, `BT.json`, `CN.json`, `IL.json`, `IN.json`, `IR.json`, `JP.json`, `KG.json`, `KH.json`, `KP.json`, `KR.json`, `KZ.json`, `LA.json`, `LK.json`, `MM.json`, `MN.json`, `MV.json`, `MY.json`, `NP.json`, `PK.json`, `TJ.json`, `TL.json`, `TM.json`, `TW.json`, `UZ.json`, `VN.json` under `contributions/cities/` — 5,555 records
+
+## Asia: translations taken from an item matched only by an English alias
+
+### Problem
+Same issue as #1743, in the Asia round (#1741): 44 records were matched to their Wikidata item only through an English
+alias, and some of those items are a district, tehsil or merged municipality (Abadan TM got "Abadan Etrap", Mirzapur
+IN got "Mirzapur-cum-Vindhyachal") or carry an alternative name (Zafar UZ got "Olmazor").
+
+### Fix
+All 44 were classified with sources: 11 are the same name (e.g. Puducherry/Pondicherry, Along/Aalo) and stay; 13 are
+renamed places whose record name is out of date (queued for a separate name change, e.g. Port Blair -> Sri Vijaya
+Puram); 1 has only a wrong English label (Mengzhou "Meng Prefecture") and 2 alternative names needed no change; 17 get
+the values that name another unit or name back: Latin-script keys to the record name, other keys to the stored value.
+After review: Nishon Tumani is the town Yangi-Nishon (population, point and item), so it keeps "Yangi-Nishon" (its
+record name is queued for correction); Mitsukaidō is a former city merged into Jōsō in 2006, not a rename, so its
+values name Mitsukaidō again; Zyryanovsk hi "Almaty", Dondaicha ja "どんだい茶" (with "tea") and the Breton typo
+"Bokhtat" are fixed. Fort Abbas keeps no ar value: "حصن عباس" (fort of Abbas) was a word translation removed in #1741.
+81 values in 19 records.
+
+### Rollback
+Revert the PR (squash commit). No `id`s change.
+
+### Files Changed
+- `IN.json`, `JP.json`, `KH.json`, `KZ.json`, `MY.json`, `PK.json`, `TJ.json`, `TM.json`, `TW.json`, `UZ.json` under `contributions/cities/` — 19 records
