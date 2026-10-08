@@ -463,6 +463,8 @@ jobs:
 
       - name: Update README.md
         run: |
+          county_total=$(python3 -c 'import sys; print(f"{int(sys.argv[1]):,}")' "$county_count")
+          sed -i "s/\*\*[0-9,]*\*\* counties/**$county_total** counties/" README.md
           sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
           sed -i "s/Total Sub Regions : [0-9]* <br>/Total Sub Regions : $subregion_count <br>/" README.md
           sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md

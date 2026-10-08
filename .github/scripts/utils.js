@@ -200,10 +200,12 @@ function validateRecord(record, entityType, index) {
 
   // Auto-managed fields are set by MySQL. Canonical records carry all of them
   // (round-tripped from the DB) and brand-new records carry none — both are
-  // expected, so neither warns. A *partial* set usually means a record was
-  // hand-edited or copied incorrectly, so warn only in that case.
+  // expected, so neither warns. Counties canonically retain only their ID.
+  // Other partial sets usually mean a record was hand-edited or copied
+  // incorrectly, so warn only in that case.
   const autoPresent = AUTO_MANAGED_FIELDS.filter((f) => f in record);
-  if (autoPresent.length > 0 && autoPresent.length < AUTO_MANAGED_FIELDS.length) {
+  const canonicalCounty = entityType === 'counties' && autoPresent.length === 1 && autoPresent[0] === 'id';
+  if (!canonicalCounty && autoPresent.length > 0 && autoPresent.length < AUTO_MANAGED_FIELDS.length) {
     const missing = AUTO_MANAGED_FIELDS.filter((f) => !(f in record));
     warnings.push(
       `${prefix}: partial auto-managed fields (has ${autoPresent.join(', ')}; missing ${missing.join(', ')}) — omit all of them on new records`

@@ -67,3 +67,71 @@ test('loads county contributions across countries and skips unassigned IDs', () 
     fs.rmSync(root, { recursive: true });
   }
 });
+
+/** Run the real PR validator with local files and GitHub/core stubs. */
+async function validateCountyEdit(records, status = 'modified') {
+  const vm = require('node:vm');
+  const previous = process.cwd();
+  const root = fs.mkdtempSync(path.join(__dirname, '.county-test-'));
+  const outputs = {};
+  const code = fs.readFileSync(path.join(__dirname, 'validate-cross-reference.js'), 'utf8');
+  try {
+    for (const dir of ['counties', 'cities', 'countries', 'states']) {
+      fs.mkdirSync(path.join(root, 'contributions', dir), { recursive: true });
+    }
+    const write = (file, data) => fs.writeFileSync(path.join(root, 'contributions', file), JSON.stringify(data));
+    if (status !== 'removed') write('counties/US.json', records);
+    write('cities/US.json', [{ ...city, county_id: 1 }]);
+    write('countries/countries.json', [{ id: 233, iso2: 'US' }, { id: 75, iso2: 'FR' }]);
+    write('states/states.json', [{ id: 1457, country_id: 233, state_code: 'LA' }, { id: 1427, country_id: 233, state_code: 'AL' }]);
+    process.chdir(root);
+    const fakeGithub = {
+      getOctokit: () => ({ rest: { pulls: { listFiles: async () => ({ data: [
+        { filename: 'contributions/counties/US.json', status },
+      ] }) } } }),
+      context: { payload: { pull_request: { number: 1 } }, repo: { owner: 'fixture', repo: 'fixture' } },
+    };
+    const fakeCore = {
+      setOutput: (key, value) => { outputs[key] = value; },
+      info() {}, error() {}, warning() {}, setFailed(message) { throw new Error(message); },
+    };
+    const sandbox = {
+      require: (key) => key === '@actions/github' ? fakeGithub : key === '@actions/core' ? fakeCore :
+        key === './utils' ? require('./utils') : require(key),
+      process, module: { exports: {} },
+    };
+    await vm.runInNewContext(code + '\nrun()', sandbox);
+    return JSON.parse(outputs.errors);
+  } finally {
+    process.chdir(previous);
+    fs.rmSync(root, { recursive: true });
+  }
+}
+
+test('county-only state edit checks unchanged city links', async () => {
+  assert.match((await validateCountyEdit([{ ...county, state_id: 1427, state_code: 'AL' }])).join('\n'), /cities\/US.json.*belongs to state_id 1427/);
+});
+
+test('county-only country edit checks unchanged city links', async () => {
+  assert.match((await validateCountyEdit([{ ...county, country_id: 75, country_code: 'FR' }])).join('\n'), /cities\/US.json.*belongs to country FR/);
+});
+
+test('county record removal checks unchanged city links', async () => {
+  assert.match((await validateCountyEdit([])).join('\n'), /cities\/US.json.*county_id 1 does not exist/);
+});
+
+test('county file removal checks unchanged city links', async () => {
+  assert.match((await validateCountyEdit([], 'removed')).join('\n'), /cities\/US.json.*county_id 1 does not exist/);
+});
+
+test('county parent_id must exist in county contributions', async () => {
+  assert.match((await validateCountyEdit([{ ...county, parent_id: 999999 }])).join('\n'), /parent_id 999999 does not exist/);
+});
+
+test('county with parent_id requires an explicit id', async () => {
+  assert.match((await validateCountyEdit([county, { ...county, id: undefined, parent_id: 1 }])).join('\n'), /parent_id.*explicit id/);
+});
+
+test('valid county parent and unchanged city links pass', async () => {
+  assert.deepEqual(await validateCountyEdit([county, { ...county, id: 2, parent_id: 1 }]), []);
+});

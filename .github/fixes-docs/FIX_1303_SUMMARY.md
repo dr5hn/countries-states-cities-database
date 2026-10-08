@@ -92,9 +92,11 @@ Alaska has 30 current county-equivalents (19 boroughs, 11 census areas). After t
   for states and cities. County parents use `ON DELETE SET NULL` in MySQL.
 - Full-import reset clears postcodes, cities, counties, states, countries, subregions and regions in that order.
   Import runs counties after states and before cities, inserting explicit IDs before auto-assigned IDs and
-  restoring parent references after all counties exist. Missing county tables/directories are supported.
+  restoring parent references after all counties exist. All county files are preflighted before reset;
+  unreadable, malformed and non-array files stop the import. Only absent county tables/directories are skipped.
 - Reverse sync includes counties in schema dumps, preserves the county files' field/newline style, and does not
-  add null county links to city contributions. The existing US file gains IDs 1–3,081 only; no city links are set.
+  add null county links to city contributions. Source-only state/country names survive round trips.
+  The existing US file gains IDs 1–3,081 only; no city links are set.
 - Added counties to the 12 published formats: JSON, CSV (including translations), XML, YAML, MongoDB, SQL Server,
   GeoJSON, TOON, Parquet, MySQL, PostgreSQL and SQLite. Flat/nested city JSON includes `county_id`; other
   converters carry it through. The workflow exports, compresses and uploads county assets and includes county
@@ -106,26 +108,27 @@ Alaska has 30 current county-equivalents (19 boroughs, 11 census areas). After t
   validation error. Older releases without `counties.json` are accepted.
 - Cross-reference validation loads county contribution files and rejects nonexistent county IDs or links
   across states/countries. County IDs are optional positive integers; county records also receive state and
-  country reference checks.
+  country reference checks. County edits/removals also check existing city links and county parents;
+  parents must exist and children with parents must have explicit IDs. ID-only county records are canonical.
 
 ### Verification (scratch databases only)
 
+The review-fix checks below ran against `3ace9708` plus these fixes. France's 333 county records were
+loaded from `origin/master:contributions/counties/FR.json` for testing only and are not part of the commits.
+
 | Check | Result |
 | --- | --- |
-| Load schema and run full importer on `world_phase2b` (utf8mb4) | 3,081 counties; 153,744 cities; 844,248 postcodes |
-| Full MySQL → contributions sync | County IDs added with every existing value unchanged; all 223 city files byte-identical |
-| PHP exporters with in-memory scratch database config | JSON, CSV, XML, YAML, MongoDB, SQL Server and PLIST succeeded |
-| County dataset in the 12 published formats (and the PLIST/DuckDB helpers) | 3,081 records; SQL Server/MySQL SQL generated and inspected |
-| PostgreSQL | NMIG migrated all seven tables and FKs; county `pg_dump` verified |
-| SQLite and DuckDB | Standalone county and combined database exports contain 3,081 counties |
-| IDs, hierarchy and FK fixture | Mixed explicit/auto IDs, forward parents, missing directory and deletion nullification passed |
-| Phinx upgrade/rollback against master schema | County table and city column created, then actually removed |
-| Legacy master schema/data with no county table; empty/missing county JSON | Import and exporters succeed |
-| `.github/scripts`: `npm ci`, `npm test` | 26/26 pass |
-| Prisma validate vs `origin/master` | Six pre-existing errors in both; no increase |
+| Full importer on `world_phase2b_fix` (utf8mb4) | 6 regions; 22 subregions; 250 countries; 5,317 states; 3,414 counties (3,081 US + 333 FR); 153,744 cities; 844,248 postcodes |
+| County and city MySQL → contributions round trip | US byte-identical; every FR source value preserved with IDs 3,082–3,414; source-only `state_name`/`country_name` preserved; all 223 city files byte-identical |
+| PHP JSON export with isolated scratch config/output | All 3,414 counties and 153,744 cities exported; flat cities include `county_id` |
+| Malformed, non-array and unreadable county-file CLI fixtures | Exit 1 before reset/truncate; counts in all seven populated scratch tables unchanged |
+| Phinx upgrade/rollback and `SHOW COLUMNS` comparison | All 20 county column definitions match `schema.sql`, including types, nullability, keys, defaults and extra attributes |
+| `.github/scripts`: `npm test` | 36/36 pass, including county-only edits/removals, hierarchy, real canonical US records and README refresh |
+| Python: `python -m unittest discover -s bin/scripts/sync -p test_counties.py` | 8/8 pass: preflight safety, optional missing sources, database errors and source-only field round trips |
+| Each of the seven review findings | Regression test fails on the original implementation and passes with the fix |
 
-Generated exports are build artifacts; incidental regenerated reference files are excluded from these commits.
-Both scratch databases are dropped after verification. The main checkout, its config, and MySQL `world` are untouched.
+Generated exports and the temporary FR contribution are excluded from the commits. `world_phase2b_fix`
+was dropped after verification. The main checkout, its config, and MySQL `world` are untouched.
 
 SQL Server uses a noncascading parent FK because its cascade rules reject self-reference cycles
 ([error 1785](https://learn.microsoft.com/en-us/sql/relational-databases/errors-events/mssqlserver-1785-database-engine-error)).

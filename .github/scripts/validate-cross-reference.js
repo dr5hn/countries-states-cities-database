@@ -124,6 +124,19 @@ async function run() {
       f.status !== 'removed'
   );
 
+  // County edits/removals can break unchanged cities and county children.
+  if (files.some(f => f.filename.startsWith('contributions/counties/') && f.filename.endsWith('.json'))) {
+    const included = new Set(contributionFiles.map(f => f.filename));
+    for (const entity of ['cities', 'counties']) {
+      const dir = path.join(process.cwd(), 'contributions', entity);
+      if (!fs.existsSync(dir)) continue;
+      for (const name of fs.readdirSync(dir).filter(f => /^[A-Z]{2}\.json$/.test(f)).sort()) {
+        const filename = `contributions/${entity}/${name}`;
+        if (!included.has(filename)) contributionFiles.push({ filename });
+      }
+    }
+  }
+
   const errors = [];
   let validCount = 0;
 
@@ -148,6 +161,17 @@ async function run() {
         const countyErrors = validateCountyReference(record, counties);
         errors.push(...countyErrors.map(error => `${prefix}: ${error}`));
         if (record.county_id != null && countyErrors.length === 0) validCount++;
+      }
+
+      if (entityType === 'counties' && record.parent_id != null) {
+        if (record.id == null) {
+          errors.push(`${prefix}: counties with parent_id must have an explicit id`);
+        }
+        if (!Number.isInteger(record.parent_id) || record.parent_id <= 0) {
+          errors.push(`${prefix}: parent_id must be a positive integer`);
+        } else if (!counties.has(record.parent_id)) {
+          errors.push(`${prefix}: parent_id ${record.parent_id} does not exist in contributions/counties`);
+        }
       }
 
       if (entityType === 'cities' || entityType === 'counties') {
