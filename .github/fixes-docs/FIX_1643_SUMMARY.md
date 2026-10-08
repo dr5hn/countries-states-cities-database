@@ -65622,3 +65622,25 @@ Bâra, officially Bira; Roșiorii de Vede, officially Roșiori de Vede); those g
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Philippines: barangay points and one province
+
+### Problem
+The smallest-unit research flagged 1,021 Philippine city records whose stored point lies outside the NAMRIA/PSA boundary
+of the barangay or municipality they name (PSA PSGC, 30 June 2026). A flag is not proof of a wrong location: some are
+boundary-edge cases or misplaced source polygons.
+
+### Fix
+- 199 barangay records get a point inside their own barangay: the interior representative point of the NAMRIA/PSA
+  barangay polygon (2025-02-13), rounded to 4 decimals and checked inside the barangay, municipality and province.
+  These are derived, not surveyed coordinates; each record's identity is its current PSGC barangay. Review held six
+  where independent mapping put the village outside the source polygon or the old point sat at its edge (Nueva Fuerza,
+  Malaga, Nueva Vida Sur, Mandih, Puerto Bello), and one whose new point crossed into Aklan by OSM and GADM (Damayan).
+- 1 record moves province by its current PSGC membership (Andres Bonifacio, a barangay of Cadiz City: Antique -> Negros Occidental).
+
+Held (821): 639 municipalities and cities, because a municipality's polygon interior point is not where its town
+is (the proposed points were a median 8.6 km from the stored ones); they need a settlement point such as the poblacion
+in a later round. Others are namesakes, unresolved identities, records on a region, and the six above.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
