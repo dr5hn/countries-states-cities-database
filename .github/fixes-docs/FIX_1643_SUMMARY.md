@@ -55641,3 +55641,40 @@ Revert the PR (squash commit); `county_id` is optional.
 
 ### Files Changed
 - `contributions/cities/FR.json` - 9716 records: county_id
+
+## United States: official structure and county links
+
+### Problem
+US cities carried `city` for nearly every record and no level, the Census distinction between cities, towns, villages,
+boroughs, townships and census-designated places was missing, and cities had no link to the 3,081 counties already in
+`contributions/counties/US.json` (#1303, #1755). States had no level.
+
+### Fix
+Every US city record was matched to the Census 2026 Gazetteer of places and county subdivisions by its exact name
+(LSAD stripped), state and a point within 5 km of the unit's internal point; when several Census units of that name lie
+within 5 km (often a town and a census-designated place of the same name) the record is held. 10,131 records matched
+exactly one unit and now read `level` 3, `type_local` the official Census term (3,662 city, 3,875 census
+designated place, 1,712 town, 848 village, 22 township, 7 borough, and a few Puerto Rico barrios) and `type` the
+standard term (4,062 city, 3,793 locality, 1,455 town, 791 village, 25 municipality, 5 section); county seats
+stay `city`. 9,841 of them get `county_id`: 9,422 places from the 2020 Census place-county relationships
+(PL summary level 155) and 419 county subdivisions (394 town, 21 township, 3 borough, 1 charter township) from their county-subdivision code (confirmed against level 060),
+with 2026 identity guards. 9,343 lie in one county; 498 span several and take the county that holds both the
+record's point and the largest land share.
+Connecticut (117 records) gets no link: its current county equivalents are the nine planning regions, which have no
+county records yet. 56 states, DC and territories get `level` 1; DC, the two commonwealths and three
+territories also get `type_local` (federal district, commonwealth, territory). Names, points, ids and Wikidata items are unchanged.
+
+Held (6,595): 65 whose own Wikidata item contradicts the match (found by the Codex review: whole towns matched to a
+smaller namesake place such as Carmel, NY, and records whose item is another place), 4,920 with several Census units of the name within 5 km, 1,047 with no Census unit of
+that name in the state, 443 whose only namesakes are over 5 km away, and 120 with an earlier-found identity conflict or a
+statistical-only unit.
+
+Source: U.S. Census Bureau (public domain): 2026 Gazetteer files, 2020 Census PL geographic headers, TIGER 2020
+county boundaries.
+
+### Rollback
+Revert the PR (squash commit); `county_id` is optional and no `id` changes.
+
+### Files Changed
+- `contributions/cities/US.json` - 10,131 records: type, type_local, level, county_id
+- `contributions/states/states.json` - 56 records: level (6 also type_local)
