@@ -112,3 +112,32 @@ Matosinhos, found in review), and the 118 countries whose postal source has not 
 
 ### Rollback
 Revert the PR (squash commit); `city_id` is optional.
+
+## Postcodes linked to their city, round 2 (DE, CH, LI, FI, BE)
+
+### Problem
+After #1770, postcodes in Germany, Switzerland, Liechtenstein, Finland and Belgium still had no `city_id`.
+
+### Fix
+7,792 more postcodes now point to their city (DE 5,374, FI 1,572, CH 841, BE 4, LI 1). As in round 1, a link needs exactly one CSC city in the
+postcode's state with the place's name (name, native or translation, after folding) and a source that says the code
+serves it. New in this round, after the round-1 review: the city's point must lie inside the municipality the source
+names, checked against official boundaries, so a same-name place in another municipality is never chosen.
+
+| Country | Linked | Held | Rule | Postcode source and terms |
+|---|---:|---:|---|---|
+| DE | 5,374 | 7,441 | Every OpenPLZ row of the code names one municipality (AGS). The link goes to the city named by the locality when all rows name that locality; otherwise to the municipality the source names as containing the locality (e.g. Wehlen in Stadt Wehlen). Either way exactly one CSC city of that name in the state, and its point lies inside that municipality in [BKG VG250](https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/) (2026-01-01, dl-de/by-2-0). | OpenPLZ locality directory ([DE](https://openplzapi.org/de/Localities), [CH](https://openplzapi.org/ch/Localities), [LI](https://openplzapi.org/li/Localities)); ODbL-1.0 |
+| FI | 1,572 | 2,176 | Normal postcodes (type 1) only; Posti's postcode and all-address files agree on one municipality; one CSC city of that name; its point lies inside that municipality in [Statistics Finland kunta1000k_2026](https://geo.stat.fi/) (CC-BY-4.0) with at least 1 km clearance, because the layer is generalised. | Posti PCF (extract 2026-10-08) and BAF (extract 2026-10-03), both downloaded 2026-10-08; redistribution is permitted if the recipient also gets Posti's current [service description and terms](https://www.posti.fi/mzj3zpe8qb7p/1eKbwM2WAEY5AuGi5TrSZ7/c76a865cf5feb2c527a114b8615e9580/posti-postal-code-services-service-description-and-terms-of-use-20150101.pdf) (s. 2.2) and the download date; no named open licence |
+| CH | 841 | 3,218 | As DE, with BFS commune numbers and [swissBOUNDARIES3D 2026-01](https://data.geo.admin.ch/ch.swisstopo.swissboundaries3d/) (swisstopo OGD terms). Many Swiss codes serve several localities of one commune and link to the commune: code 1073 serves Mollie-Margot and Savigny, both in commune Savigny, and links to Savigny. | OpenPLZ locality directory ([DE](https://openplzapi.org/de/Localities), [CH](https://openplzapi.org/ch/Localities), [LI](https://openplzapi.org/li/Localities)); ODbL-1.0 |
+| BE | 4 | 1,141 | bpost names the locality and its commune, and Statbel's postcode-to-REFNIS table agrees; one CSC city of that name in the state; its point lies inside that commune (Statbel 2025 sectors). | bpost postcode list 2025 (redistribution terms unknown); [Statbel](https://statbel.fgov.be/) crosswalk and sectors (Statbel open-data licence) |
+| LI | 1 | 12 | As CH. | OpenPLZ locality directory ([DE](https://openplzapi.org/de/Localities), [CH](https://openplzapi.org/ch/Localities), [LI](https://openplzapi.org/li/Localities)); ODbL-1.0 |
+
+### Held
+25,287 postcodes in these seven countries keep `city_id` null, including all of Spain (8,124) and Australia
+(3,175): their postcode records come from community mirrors with unknown terms, and no official file with
+usable terms was found (Australia Post licenses its data for commercial use). Others are held for codes spanning several
+municipalities, PO-box and business codes, points outside the named municipality, and Belgian codes whose city sits in
+another CSC state (Belgian cities use the region as their state, the postcodes the province).
+
+### Rollback
+Revert the PR (squash commit); `city_id` is optional.
