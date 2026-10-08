@@ -55619,3 +55619,25 @@ Revert the PR (squash commit). No `id` changes.
 
 ### Files Changed
 - `contributions/cities/*.json` - 41 records: name, native, translations
+
+## France, phase 2: communes linked to their arrondissement
+
+### Problem
+Phase 1 (#1751) typed 9,734 French communes and added the 333 arrondissements to `contributions/counties/FR.json`;
+they received ids 3082-3414 in the export after #1755, so the communes could not point to them before.
+
+### Fix
+Each of those communes gets `county_id`, the id of its arrondissement, from the INSEE COG 2026 commune table (column
+ARR). The arrondissement is always in the commune's own département. Nothing else changes.
+
+18 communes of the Lyon metropolis (state 69M: Lyon, Villeurbanne, Vénissieux…) stay without a link: their
+Arrondissement de Lyon is filed under département 69 (Rhône) and covers communes of both ISO units, while a county
+belongs to one state.
+
+Source: Insee, COG 2026 (1 January 2026), Licence Ouverte 2.0.
+
+### Rollback
+Revert the PR (squash commit); `county_id` is optional.
+
+### Files Changed
+- `contributions/cities/FR.json` - 9716 records: county_id
