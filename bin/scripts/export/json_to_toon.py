@@ -5,7 +5,7 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
     data = json.loads(json_text)
 
     if data == []:
-        return "[0]{}:"
+        return "[]"   # TOON spec 9.1: an empty root array is "[]"; the legacy [0]: form must not be emitted
 
     if not isinstance(data, list) or not data:
         raise ValueError("Expected non-empty top-level JSON array")
