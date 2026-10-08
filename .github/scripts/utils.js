@@ -15,7 +15,7 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
-    optional: ['state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'level', 'parent_id', 'population', 'translations'],
+    optional: ['state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       state_id: { type: 'integer', positive: true },
@@ -25,17 +25,19 @@ const SCHEMA = {
       latitude: { type: 'coordinate', min: -90, max: 90 },
       longitude: { type: 'coordinate', min: -180, max: 180 },
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
+      type_local: { type: 'string', maxLength: 191 },
     },
   },
   states: {
     required: ['name', 'country_id', 'country_code'],
-    optional: ['fips_code', 'iso2', 'type', 'level', 'parent_id', 'native', 'latitude', 'longitude', 'country_name', 'state_code', 'wikiDataId'],
+    optional: ['fips_code', 'iso2', 'type', 'type_local', 'level', 'parent_id', 'native', 'latitude', 'longitude', 'country_name', 'state_code', 'wikiDataId'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
       iso2: { type: 'string', maxLength: 255 },
       type: { type: 'string', maxLength: 191 },
+      type_local: { type: 'string', maxLength: 191 },
       latitude: { type: 'coordinate', min: -90, max: 90 },
       longitude: { type: 'coordinate', min: -180, max: 180 },
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
@@ -83,7 +85,7 @@ const SCHEMA = {
   counties: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
     optional: [
-      'type', 'native', 'level', 'parent_id', 'population', 'timezone',
+      'type', 'type_local', 'native', 'level', 'parent_id', 'population', 'timezone',
       'translations', 'state_name', 'country_name', 'wikiDataId',
     ],
     rules: {
@@ -93,6 +95,7 @@ const SCHEMA = {
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
       type: { type: 'string', maxLength: 32 },
+      type_local: { type: 'string', maxLength: 191 },
       latitude: { type: 'coordinate', min: -90, max: 90 },
       longitude: { type: 'coordinate', min: -180, max: 180 },
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },

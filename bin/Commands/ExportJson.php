@@ -154,6 +154,7 @@ class ExportJson extends Command
                         $statesArray[$i]['iso3166_2'] = $state['iso3166_2'];
                         $statesArray[$i]['fips_code'] = $state['fips_code'];
                         $statesArray[$i]['type'] = $state['type'];
+                        $statesArray[$i]['type_local'] = $state['type_local'] ?? null;
                         $statesArray[$i]['level'] = $state['level'];
                         $statesArray[$i]['parent_id'] = $state['parent_id'];
                         $statesArray[$i]['native'] = $state['native'];
@@ -202,6 +203,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['longitude'] = $city['longitude'];
                                 $citiesArray[$j]['native'] = $city['native'];
                                 $citiesArray[$j]['type'] = $city['type'];
+                                $citiesArray[$j]['type_local'] = $city['type_local'] ?? null;
                                 $citiesArray[$j]['level'] = $city['level'];
                                 $citiesArray[$j]['parent_id'] = $city['parent_id'];
                                 $citiesArray[$j]['population'] = $city['population'] !== null ? (int)$city['population'] : null;

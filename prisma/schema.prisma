@@ -92,6 +92,7 @@ model State {
   iso2        String?   @db.VarChar(255)
   iso3166_2   String?   @db.VarChar(255)
   type        String?   @db.VarChar(191)
+  typeLocal   String?   @map("type_local") @db.VarChar(191)
   level       Int?      @db.Int
   parentId    Int?      @map("parent_id") @db.UnsignedMediumInt
   native      String?   @db.VarChar(255)
@@ -120,6 +121,7 @@ model City {
   latitude    Decimal  @db.Decimal(10, 8)
   longitude   Decimal  @db.Decimal(11, 8)
   native      String?  @db.VarChar(255)
+  typeLocal   String?  @map("type_local") @db.VarChar(191)
   timezone    String?  @db.VarChar(255)
   translations Json?   @db.Text
   wikiDataId  String?  @db.VarChar(255)

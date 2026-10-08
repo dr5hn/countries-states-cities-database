@@ -14,6 +14,15 @@ means, and how to filter the dataset down to genuine settlements.
 > are seats of state-level governments. Cleanup of this inconsistency is
 > tracked in [#1303](https://github.com/dr5hn/countries-states-cities-database/issues/1303).
 
+## Moving to official categories
+
+Countries are being moved, one at a time, to their official administrative categories
+([ADMINISTRATIVE_STRUCTURE.md](ADMINISTRATIVE_STRUCTURE.md)): city `type` becomes a standard English term
+(`municipality`, `city`, `town`, `village`, `locality`, `section`), a new `type_local` field keeps the official local
+term (commune, Gemeinde, municipio), and units between the state and the municipality (arrondissements, Kreise,
+counties) move to the separate `contributions/counties/` dataset. Until a country is moved, its records keep the
+values below.
+
 ## All values
 
 There are **35 distinct values** across **156,025** city rows. Counts are a
@@ -141,4 +150,5 @@ where available — a non-null `population`.
 ## Related
 
 - [#1303 — Counties should be returned separately from cities](https://github.com/dr5hn/countries-states-cities-database/issues/1303) (tracking the cleanup)
+- [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) (official categories, `type_local`, `level`, `parent_id`, the counties dataset)
 - [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)
