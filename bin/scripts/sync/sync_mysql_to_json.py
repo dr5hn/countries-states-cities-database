@@ -296,7 +296,8 @@ class MySQLToJSONSync:
                 fields = ['id'] + [c for c in (old or row) if c != 'id' and c not in excluded]
                 if old:
                     fields += [c for c in columns if c not in fields and c not in excluded and row[c] is not None]
-                records.append(self.process_row(row, fields, excluded))
+                # Preserve source-only fields; database columns still take precedence.
+                records.append(self.process_row({**(old or {}), **row}, fields, excluded))
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(records, f, ensure_ascii=False, indent=2)
                 if original_text.endswith('\n'):

@@ -379,24 +379,22 @@ class JSONToMySQLImporter:
         print(f"  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
         return inserted
 
-    def import_counties(self):
-        """Import counties from individual country JSON files (issue #1303)."""
+    def preflight_counties(self):
+        """Load every county file before any database reset or county truncation."""
         print(f"\n📦 Importing counties from contributions/counties/*.json")
 
         counties_dir = os.path.join('contributions', 'counties')
-        if not os.path.exists(counties_dir):
-            print(f"  ⚠ Directory not found: {counties_dir} (skipping)")
-            return 0
-
-        # Skip table if migration hasn't been run yet
         try:
-            self.cursor.execute("SHOW TABLES LIKE 'counties'")
-            if not self.cursor.fetchone():
-                print(f"  ⚠ Table 'counties' does not exist yet — run migrations first (skipping)")
-                return 0
-        except mysql.connector.Error as e:
-            print(f"  ⚠ Could not verify counties table existence: {e} (skipping)")
-            return 0
+            os.stat(counties_dir)
+        except FileNotFoundError:
+            print(f"  ⚠ Directory not found: {counties_dir} (skipping)")
+            return []
+
+        # Only a genuinely absent table is optional; database errors are fatal.
+        self.cursor.execute("SHOW TABLES LIKE 'counties'")
+        if not self.cursor.fetchone():
+            print("  ⚠ Table 'counties' does not exist yet — run migrations first (skipping)")
+            return []
 
         county_files = sorted(
             f for f in os.listdir(counties_dir)
@@ -405,7 +403,7 @@ class JSONToMySQLImporter:
 
         if not county_files:
             print(f"  ⚠ No county JSON files found in {counties_dir}")
-            return 0
+            return []
 
         print(f"  📂 Found {len(county_files)} country files to process")
 
@@ -415,18 +413,23 @@ class JSONToMySQLImporter:
             try:
                 with open(file_path, 'r', encoding='utf-8') as fh:
                     rows = json.load(fh)
-                    if isinstance(rows, list):
-                        all_counties.extend(rows)
-                        print(f"  ✓ Loaded {len(rows):,} counties from {pf}")
-                    else:
-                        print(f"  ⚠ Skipping {pf}: Not a valid array")
-            except Exception as e:
-                print(f"  ❌ Error loading {pf}: {e}")
+            except (OSError, UnicodeError, json.JSONDecodeError) as e:
+                raise ValueError(f"Cannot load county file {file_path}: {e}") from e
+            if not isinstance(rows, list) or any(not isinstance(row, dict) for row in rows):
+                raise ValueError(f"Cannot load county file {file_path}: expected an array of records")
+            all_counties.extend(rows)
+            print(f"  ✓ Loaded {len(rows):,} counties from {pf}")
 
+        if any(r.get('parent_id') is not None and r.get('id') is None for r in all_counties):
+            raise ValueError('Counties with parent_id must have an explicit id')
+        return all_counties
+
+    def import_counties(self, all_counties=None):
+        """Import preflighted counties, or preflight first when called directly."""
+        if all_counties is None:
+            all_counties = self.preflight_counties()
         if not all_counties:
-            print(f"  ⚠ No counties loaded from any files")
             return 0
-
         print(f"\n  📊 Total counties to import: {len(all_counties):,}")
 
         new_columns = self.detect_new_columns('counties', all_counties)
@@ -438,8 +441,6 @@ class JSONToMySQLImporter:
         insert_columns = [c for c in all_columns if c not in skip_fields]
 
         parents = [(r['parent_id'], r['id']) for r in all_counties if r.get('parent_id') is not None and r.get('id') is not None]
-        if any(r.get('parent_id') is not None and r.get('id') is None for r in all_counties):
-            raise ValueError('Counties with parent_id must have an explicit id')
         insert_columns = [c for c in insert_columns if c != 'parent_id']
 
         print(f"  🗑️  Truncating existing data...")
@@ -464,7 +465,7 @@ class JSONToMySQLImporter:
             self.cursor.executemany("UPDATE counties SET parent_id = %s WHERE id = %s", parents)
             self.conn.commit()
 
-        print(f"  ✓ Imported {inserted:,} counties from {len(county_files)} country files")
+        print(f"  ✓ Imported {inserted:,} counties")
         return inserted
 
     def import_postcodes(self):
@@ -597,13 +598,14 @@ def main():
     )
 
     try:
+        county_data = importer.preflight_counties()
         importer.reset_tables()
         # Import in order (respecting foreign keys)
         regions_count = importer.import_regions()
         subregions_count = importer.import_subregions()
         countries_count = importer.import_countries()
         states_count = importer.import_states()
-        counties_count = importer.import_counties()
+        counties_count = importer.import_counties(county_data)
         cities_count = importer.import_cities()
         postcodes_count = importer.import_postcodes()
 
