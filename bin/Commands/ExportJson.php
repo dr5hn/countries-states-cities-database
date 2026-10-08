@@ -193,6 +193,7 @@ class ExportJson extends Command
                                 $cityName = $city['name'];
                                 $citiesArray[$j]['id'] = $cityId;
                                 $citiesArray[$j]['name'] = $cityName;
+                                $citiesArray[$j]['county_id'] = isset($city['county_id']) ? (int)$city['county_id'] : null;
                                 $citiesArray[$j]['state_id'] = (int)$stateId;
                                 $citiesArray[$j]['state_code'] = $city['state_code'];
                                 $citiesArray[$j]['state_name'] = $stateName;
@@ -215,6 +216,7 @@ class ExportJson extends Command
                                 array_push($cityNamesArray, array(
                                     'id' => $cityId,
                                     'name' => $cityName,
+                                    'county_id' => isset($city['county_id']) ? (int)$city['county_id'] : null,
                                     'latitude' => $city['latitude'],
                                     'longitude' => $city['longitude'],
                                     'timezone' => $city['timezone']
@@ -283,6 +285,34 @@ class ExportJson extends Command
                 }
             }
 
+            // Counties are optional for databases that predate phase 2b.
+            $countiesArray = [];
+            $hasCounties = $db->query("SHOW TABLES LIKE 'counties'");
+            if ($hasCounties && $hasCounties->num_rows > 0) {
+                $result = $db->query("SELECT * FROM counties ORDER BY country_code, id");
+                while ($row = $result->fetch_assoc()) {
+                    $county = [];
+                    $county['id'] = $row['id'] !== null ? (int)$row['id'] : null;
+                    $county['name'] = $row['name'];
+                    $county['state_id'] = $row['state_id'] !== null ? (int)$row['state_id'] : null;
+                    $county['state_code'] = $row['state_code'];
+                    $county['country_id'] = $row['country_id'] !== null ? (int)$row['country_id'] : null;
+                    $county['country_code'] = $row['country_code'];
+                    $county['type'] = $row['type'];
+                    $county['type_local'] = $row['type_local'];
+                    $county['level'] = $row['level'] !== null ? (int)$row['level'] : null;
+                    $county['parent_id'] = $row['parent_id'] !== null ? (int)$row['parent_id'] : null;
+                    $county['latitude'] = $row['latitude'];
+                    $county['longitude'] = $row['longitude'];
+                    $county['native'] = $row['native'];
+                    $county['population'] = $row['population'] !== null ? (int)$row['population'] : null;
+                    $county['timezone'] = $row['timezone'];
+                    $county['translations'] = $row['translations'] !== null ? json_decode($row['translations'], true) : null;
+                    $county['wikiDataId'] = $row['wikiDataId'];
+                    $countiesArray[] = $county;
+                }
+            }
+
             // Fetching All Postcodes (issue #1039) — graceful skip if table missing
             $postcodesArray = array();
             $p = 0;
@@ -314,6 +344,7 @@ class ExportJson extends Command
             $io->writeln('Total Subregions Count : ' . count($subregionsArray));
             $io->writeln('Total Countries Count : ' . count($countriesArray));
             $io->writeln('Total States Count : ' . count($statesArray));
+            $io->writeln('Total Counties Count : ' . count($countiesArray));
             $io->writeln('Total Cities Count : ' . count($citiesArray));
             $io->writeln('Total Postcodes Count : ' . count($postcodesArray));
 
@@ -325,6 +356,7 @@ class ExportJson extends Command
                 '/json/subregions.json' => $subregionsArray,
                 '/json/countries.json' => $countriesArray,
                 '/json/states.json' => $statesArray,
+                '/json/counties.json' => $countiesArray,
                 '/json/cities.json' => $citiesArray,
                 '/json/postcodes.json' => $postcodesArray,
                 '/json/countries+states.json' => $countryStateArray,

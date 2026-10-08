@@ -31,7 +31,7 @@ def get_existing_tables(sqlite_conn):
     existing_tables = [row[0] for row in cursor.fetchall()]
     
     # Return tables in dependency order, but only if they exist
-    all_tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+    all_tables = ['regions', 'subregions', 'countries', 'states', 'counties', 'cities', 'postcodes']
     return [table for table in all_tables if table in existing_tables]
 
 def create_table_ddl(table_name, columns_info):
@@ -146,8 +146,12 @@ def convert_with_pandas_global_ids(args, sqlite_conn, duck_conn):
                     ref_table = "countries"
                 elif col == "state_id":
                     ref_table = "states"
-                elif col == "parent_id" and table == "states":
-                    ref_table = "states"
+                elif col == "county_id":
+                    ref_table = "counties"
+                elif col == "city_id":
+                    ref_table = "cities"
+                elif col == "parent_id" and table in ("states", "counties", "cities"):
+                    ref_table = table
                 
                 # Update foreign key with new global ID
                 if ref_table and ref_table in id_mappings:

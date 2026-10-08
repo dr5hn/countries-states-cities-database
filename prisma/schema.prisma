@@ -78,6 +78,7 @@ model Country {
 
   states           State[]
   cities           City[]
+  counties         County[]
 
   @@index([regionId])
   @@index([subregionId])
@@ -108,6 +109,7 @@ model State {
   country    Country  @relation(fields: [countryId], references: [id])
   countryId  Int      @map("country_id") @db.UnsignedMediumInt
   cities     City[]
+  counties   County[]
 
   @@index([countryId])
   @@map("states")
@@ -129,6 +131,8 @@ model City {
   createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
   updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
+  county      County?  @relation(fields: [countyId], references: [id], onDelete: SetNull)
+  countyId    Int?     @map("county_id") @db.UnsignedMediumInt
   state       State    @relation(fields: [stateId], references: [id])
   stateId     Int      @map("state_id") @db.UnsignedMediumInt
   country     Country  @relation(fields: [countryId], references: [id])
@@ -136,5 +140,40 @@ model City {
 
   @@index([stateId])
   @@index([countryId])
+  @@index([countyId])
   @@map("cities")
+}
+
+model County {
+  id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name         String    @db.VarChar(255)
+  stateId      Int       @map("state_id") @db.UnsignedMediumInt
+  stateCode    String    @map("state_code") @db.VarChar(255)
+  countryId    Int       @map("country_id") @db.UnsignedMediumInt
+  countryCode  String    @map("country_code") @db.Char(2)
+  type         String?   @db.VarChar(191)
+  typeLocal    String?   @map("type_local") @db.VarChar(191)
+  level        Int?
+  parentId     Int?      @map("parent_id") @db.UnsignedMediumInt
+  latitude     Decimal   @db.Decimal(10, 8)
+  longitude    Decimal   @db.Decimal(11, 8)
+  native       String?   @db.VarChar(255)
+  population   BigInt?   @db.UnsignedBigInt
+  timezone     String?   @db.VarChar(255)
+  translations String?   @db.Text
+  wikiDataId   String?   @db.VarChar(255)
+  createdAt    DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
+  flag         Boolean   @default(true)
+
+  state        State     @relation(fields: [stateId], references: [id])
+  country      Country   @relation(fields: [countryId], references: [id])
+  parent       County?   @relation("CountyHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children     County[]  @relation("CountyHierarchy")
+  cities       City[]
+
+  @@index([stateId])
+  @@index([countryId])
+  @@index([parentId])
+  @@map("counties")
 }

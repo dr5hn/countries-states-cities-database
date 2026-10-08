@@ -4,8 +4,11 @@ import fetch from 'node-fetch';
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
 
+/** Fetch an export; counties may be absent in older releases. */
 async function fetchData(endpoint: string) {
   const response = await fetch(`${API_BASE}${endpoint}.json`);
+  if (endpoint === 'counties' && response.status === 404) return [];
+  if (!response.ok) throw new Error(`Failed to fetch ${endpoint}: ${response.status}`);
   return response.json();
 }
 
@@ -88,14 +91,36 @@ async function main() {
   // Fetch all states after insertion
   const stateMap = new Map((await prisma.state.findMany()).map(s => [`${s.name}-${s.countryId}`, s.id]));
 
+  // Map source state IDs to locally seeded IDs before linking counties.
+  const stateIdMap = new Map(states.map(s => [s.id, stateMap.get(`${s.name}-${countryMap.get(s.country_code)}`)]));
+  const counties = await fetchData('counties');
+  await prisma.county.createMany({
+    data: counties.map(c => ({
+      id: c.id, name: c.name,
+      stateId: stateIdMap.get(c.state_id), stateCode: c.state_code,
+      countryId: countryMap.get(c.country_code), countryCode: c.country_code,
+      type: c.type, typeLocal: c.type_local ?? null, level: c.level,
+      latitude: c.latitude, longitude: c.longitude, native: c.native,
+      population: c.population == null ? null : BigInt(c.population),
+      timezone: c.timezone,
+      translations: c.translations == null ? null : JSON.stringify(c.translations),
+      wikiDataId: c.wikiDataId,
+    })),
+    skipDuplicates: true,
+  });
+  // Parents may appear later in the source export.
+  for (const county of counties.filter(c => c.parent_id != null)) {
+    await prisma.county.update({ where: { id: county.id }, data: { parentId: county.parent_id } });
+  }
+
   // Seed Cities
   const cities = await fetchData('cities');
   const cityData = cities
-    .map(({ name, state_name, country_code, state_code, type_local, latitude, longitude, wikiDataId }) => {
+    .map(({ name, county_id, state_name, country_code, state_code, type_local, latitude, longitude, wikiDataId }) => {
       const countryId = countryMap.get(country_code);
       const stateId = stateMap.get(`${state_name}-${countryId}`);
       return stateId && countryId
-        ? { name, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, latitude, longitude, wikiDataId, stateId, countryId }
+        ? { name, countyId: county_id ?? null, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, latitude, longitude, wikiDataId, stateId, countryId }
         : null;
     })
     .filter(Boolean);

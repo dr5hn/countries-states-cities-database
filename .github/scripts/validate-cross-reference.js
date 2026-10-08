@@ -31,6 +31,43 @@ function loadCitiesForCountry(iso2) {
   }
 }
 
+/** Load county IDs from canonical country contribution files, never stale exports. */
+function loadCounties() {
+  const dir = path.join(process.cwd(), 'contributions', 'counties');
+  const byId = new Map();
+  if (!fs.existsSync(dir)) return byId;
+  for (const file of fs.readdirSync(dir).filter(f => /^[A-Z]{2}\.json$/.test(f)).sort()) {
+    const { data, error } = parseJsonFile(path.join(dir, file));
+    if (error || !Array.isArray(data)) throw new Error(`Cannot load counties/${file}: ${error || 'expected an array'}`);
+    for (const county of data) {
+      if (county.id != null) {
+        if (byId.has(Number(county.id))) throw new Error(`Duplicate county id ${county.id}`);
+        byId.set(Number(county.id), county);
+      }
+    }
+  }
+  return byId;
+}
+
+/** Check that a city's optional county belongs to its declared state and country. */
+function validateCountyReference(record, counties) {
+  if (record.county_id == null) return [];
+  if (!Number.isInteger(record.county_id) || record.county_id <= 0) {
+    return ['county_id must be a positive integer'];
+  }
+  const county = counties.get(record.county_id);
+  if (!county) return [`county_id ${record.county_id} does not exist in contributions/counties`];
+  const errors = [];
+  if (Number(county.state_id) !== Number(record.state_id)) {
+    errors.push(`county_id ${record.county_id} belongs to state_id ${county.state_id}, not ${record.state_id}`);
+  }
+  if (Number(county.country_id) !== Number(record.country_id) ||
+      county.country_code !== record.country_code) {
+    errors.push(`county_id ${record.county_id} belongs to country ${county.country_code} (${county.country_id}), not ${record.country_code} (${record.country_id})`);
+  }
+  return errors;
+}
+
 async function run() {
   const token = process.env.GITHUB_TOKEN;
   const octokit = github.getOctokit(token);
@@ -44,6 +81,7 @@ async function run() {
   // Load reference data
   const countries = loadRepoData('countries');
   const states = loadRepoData('states');
+  const counties = loadCounties();
 
   if (!countries) {
     core.warning('Could not load countries.json for cross-reference. Skipping.');
@@ -86,6 +124,19 @@ async function run() {
       f.status !== 'removed'
   );
 
+  // County edits/removals can break unchanged cities and county children.
+  if (files.some(f => f.filename.startsWith('contributions/counties/') && f.filename.endsWith('.json'))) {
+    const included = new Set(contributionFiles.map(f => f.filename));
+    for (const entity of ['cities', 'counties']) {
+      const dir = path.join(process.cwd(), 'contributions', entity);
+      if (!fs.existsSync(dir)) continue;
+      for (const name of fs.readdirSync(dir).filter(f => /^[A-Z]{2}\.json$/.test(f)).sort()) {
+        const filename = `contributions/${entity}/${name}`;
+        if (!included.has(filename)) contributionFiles.push({ filename });
+      }
+    }
+  }
+
   const errors = [];
   let validCount = 0;
 
@@ -107,6 +158,23 @@ async function run() {
       const prefix = `${filePath}: Record ${i + 1}${label ? ` ("${label}")` : ''}`;
 
       if (entityType === 'cities') {
+        const countyErrors = validateCountyReference(record, counties);
+        errors.push(...countyErrors.map(error => `${prefix}: ${error}`));
+        if (record.county_id != null && countyErrors.length === 0) validCount++;
+      }
+
+      if (entityType === 'counties' && record.parent_id != null) {
+        if (record.id == null) {
+          errors.push(`${prefix}: counties with parent_id must have an explicit id`);
+        }
+        if (!Number.isInteger(record.parent_id) || record.parent_id <= 0) {
+          errors.push(`${prefix}: parent_id must be a positive integer`);
+        } else if (!counties.has(record.parent_id)) {
+          errors.push(`${prefix}: parent_id ${record.parent_id} does not exist in contributions/counties`);
+        }
+      }
+
+      if (entityType === 'cities' || entityType === 'counties') {
         // Validate country_id exists
         if (record.country_id) {
           const country = countryById.get(Number(record.country_id));
@@ -262,4 +330,6 @@ async function run() {
   for (const err of errors) core.error(err);
 }
 
-run().catch((err) => core.setFailed(err.message));
+if (require.main === module) run().catch((err) => core.setFailed(err.message));
+
+module.exports = { loadCounties, validateCountyReference };

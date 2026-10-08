@@ -20,6 +20,7 @@ class ExportXml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/xml/countries.xml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/xml/states.xml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/xml/cities.xml', 'singular' => 'city'],
+        'counties' => ['from' => '/json/counties.json', 'to' => '/xml/counties.xml', 'singular' => 'county'],
         'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/xml/postcodes.xml', 'singular' => 'postcode'],
     ];
 
@@ -46,6 +47,11 @@ class ExportXml extends Command
         try {
             foreach (self::FILES as $root => $config) {
                 $io->section("Processing: $root");
+
+                if ($root === 'counties' && !$this->filesystem->exists($rootDir . $config['from'])) {
+                    $io->note('Skipping counties (source missing)');
+                    continue;
+                }
 
                 $jsonData = $this->filesystem->exists($rootDir . $config['from'])
                     ? file_get_contents($rootDir . $config['from'])

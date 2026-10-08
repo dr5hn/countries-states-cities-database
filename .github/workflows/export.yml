@@ -150,6 +150,7 @@ jobs:
           echo "country_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.countries;' -s)" >> $GITHUB_ENV
           echo "state_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.states;' -s)" >> $GITHUB_ENV
           echo "city_count=$(mysql -uroot -proot -e 'SELECT COUNT(*) FROM world.cities;' -s)" >> $GITHUB_ENV
+          echo "county_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(*) FROM world.counties;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
           echo "postcode_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(*) FROM world.postcodes;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
           echo "postcode_country_count=$(mysql -uroot -proot -sN -e 'SELECT COUNT(DISTINCT country_code) FROM world.postcodes;' 2>/dev/null || echo 0)" >> $GITHUB_ENV
           echo "current_date=$(date +'%B %d, %Y')" >> $GITHUB_ENV
@@ -200,6 +201,7 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world counties > sql/counties.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
           # Export complete world database
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
@@ -219,6 +221,7 @@ jobs:
 
           DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `counties`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
           DROP TABLE IF EXISTS `subregions`;
@@ -250,6 +253,7 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
 
@@ -269,6 +273,7 @@ jobs:
           mysql2sqlite -d world -t countries --mysql-password root -u root -f sqlite/countries.sqlite3
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
+          mysql2sqlite -d world -t counties --mysql-password root -u root -f sqlite/counties.sqlite3
           mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
@@ -294,6 +299,11 @@ jobs:
           mongoimport --host localhost:27017 --db world --collection countries --file countries.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection states --file states.json --jsonArray
           mongoimport --host localhost:27017 --db world --collection cities --file cities.json --jsonArray
+          if [ -s counties.json ] && [ "$(jq 'length' counties.json)" -gt 0 ]; then
+            mongoimport --host localhost:27017 --db world --collection counties --file counties.json --jsonArray
+          else
+            echo "Skipping counties import — empty or missing"
+          fi
           if [ -s postcodes.json ] && [ "$(jq 'length' postcodes.json)" -gt 0 ]; then
             mongoimport --host localhost:27017 --db world --collection postcodes --file postcodes.json --jsonArray
           else
@@ -308,7 +318,7 @@ jobs:
           tar -czvf world-mongodb-dump.tar.gz mongodb-dump
           echo "MongoDB dump created at mongodb/world-mongodb-dump.tar.gz"
 
-          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json postcodes.json
+          rm -rf mongodb-dump regions.json subregions.json countries.json states.json cities.json counties.json postcodes.json
 
       - name: Compress All Large Files
         run: |
@@ -329,6 +339,11 @@ jobs:
             gzip -9 -k -f json/postcodes.json
             echo "  ✓ json/postcodes.json.gz"
           fi
+
+          # Counties: separate compressed assets for all formats.
+          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql; do
+            if [ -f "$file" ]; then gzip -9 -k -f "$file"; fi
+          done
 
           # TOON Files
           echo "📄 Compressing TOON files..."
@@ -448,6 +463,8 @@ jobs:
 
       - name: Update README.md
         run: |
+          county_total=$(python3 -c 'import sys; print(f"{int(sys.argv[1]):,}")' "$county_count")
+          sed -i "s/\*\*[0-9,]*\*\* counties/**$county_total** counties/" README.md
           sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
           sed -i "s/Total Sub Regions : [0-9]* <br>/Total Sub Regions : $subregion_count <br>/" README.md
           sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md
@@ -465,6 +482,7 @@ jobs:
           COUNTRY_COUNT: ${{ env.country_count }}
           STATE_COUNT: ${{ env.state_count }}
           CITY_COUNT: ${{ env.city_count }}
+          COUNTY_COUNT: ${{ env.county_count }}
           POSTCODE_COUNT: ${{ env.postcode_count }}
         with:
           script: |
@@ -549,6 +567,7 @@ jobs:
                 `- **Subregions**: ${process.env.SUBREGION_COUNT}`,
                 `- **Countries**: ${process.env.COUNTRY_COUNT}`,
                 `- **States**: ${process.env.STATE_COUNT}`,
+                `- **Counties**: ${process.env.COUNTY_COUNT}`,
                 `- **Cities**: ${process.env.CITY_COUNT}`,
                 `- **Postcodes**: ${process.env.POSTCODE_COUNT}`,
                 '',
@@ -610,7 +629,7 @@ jobs:
           commit-message: |
             Export database formats - ${{ env.current_date }}
 
-            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.city_count }} cities, ${{ env.postcode_count }} postcodes
+            Total records: ${{ env.country_count }} countries, ${{ env.state_count }} states, ${{ env.county_count }} counties, ${{ env.city_count }} cities, ${{ env.postcode_count }} postcodes
             Large files (.gz) uploaded to GitHub Releases instead of git.
           committer: Darshan Gada <gadadarshan@gmail.com>
           signoff: true
@@ -625,6 +644,7 @@ jobs:
             - **Subregions**: ${{ env.subregion_count }}
             - **Countries**: ${{ env.country_count }}
             - **States**: ${{ env.state_count }}
+            - **Counties**: ${{ env.county_count }}
             - **Cities**: ${{ env.city_count }}
             - **Postcodes**: ${{ env.postcode_count }}
 

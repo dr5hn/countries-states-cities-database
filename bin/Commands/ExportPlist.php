@@ -32,7 +32,8 @@ class ExportPlist extends Command
         $io->title('Exporting PLIST data to ' . $rootDir);
 
         // Using Symfony Process component for better process handling
-        $process = new Process(['python3', $rootDir . '/bin/export_plist.py']);
+        $process = new Process(['python3', $rootDir . '/bin/scripts/export/export_plist.py']);
+        $process->setWorkingDirectory($rootDir);
         $process->setTimeout(3600); // 1 hour timeout for large datasets
 
         try {

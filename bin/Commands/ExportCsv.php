@@ -19,6 +19,7 @@ class ExportCsv extends Command
         'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
         'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
+        'counties' => ['from' => '/json/counties.json', 'to' => '/csv/counties.csv'],
         'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/csv/postcodes.csv'],
     ];
 
@@ -26,6 +27,7 @@ class ExportCsv extends Command
         'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
         'states' => ['from' => '/json/states.json', 'place_type' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'place_type' => 'city'],
+        'counties' => ['from' => '/json/counties.json', 'place_type' => 'county'],
         'regions' => ['from' => '/json/regions.json', 'place_type' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'place_type' => 'subregion'],
     ];
@@ -53,6 +55,11 @@ class ExportCsv extends Command
         try {
             foreach (self::FILES as $root => $v) {
                 $io->section("Processing: $root");
+
+                if ($root === 'counties' && !$this->filesystem->exists($rootDir . $v['from'])) {
+                    $io->note('Skipping counties (source missing)');
+                    continue;
+                }
 
                 $jsonData = $this->filesystem->exists($rootDir . $v['from'])
                     ? file_get_contents($rootDir . $v['from'])
@@ -113,12 +120,17 @@ class ExportCsv extends Command
 
         // Process each file type that has translations
         foreach (self::TRANSLATION_FILES as $root => $config) {
+            if ($root === 'counties' && !$this->filesystem->exists($rootDir . $config['from'])) {
+                continue;
+            }
             $jsonData = $this->filesystem->exists($rootDir . $config['from'])
                 ? file_get_contents($rootDir . $config['from'])
                 : throw new \RuntimeException("JSON file not found: {$config['from']}");
 
-            $data = json_decode($jsonData, true)
-                ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+            $data = json_decode($jsonData, true);
+            if (!is_array($data)) {
+                throw new \RuntimeException("Invalid JSON in {$config['from']}");
+            }
 
             foreach ($data as $item) {
                 if (isset($item['translations']) && is_array($item['translations'])) {

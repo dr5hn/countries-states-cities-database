@@ -129,3 +129,16 @@ test('every field used in states.json and countries.json is known to the schema'
     assert.deepEqual([...unknown], [], `${file} has fields the schema does not know`);
   }
 });
+
+test('real canonical US county records produce no warnings', () => {
+  const records = require('../../contributions/counties/US.json');
+  assert.ok(records.length > 0);
+  for (const [index, record] of records.entries()) {
+    assert.deepEqual(validateRecord(record, 'counties', index), { errors: [], warnings: [] });
+  }
+});
+
+test('other partial county managed fields still warn', () => {
+  const record = require('../../contributions/counties/US.json')[0];
+  assert.match(validateRecord({ ...record, flag: 1 }, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+});
