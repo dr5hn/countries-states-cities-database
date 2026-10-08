@@ -55405,3 +55405,19 @@ Revert the PR (squash commit). No `id`s change.
 
 ### Files Changed
 - `IN.json`, `JP.json`, `KH.json`, `KZ.json`, `MY.json`, `PK.json`, `TJ.json`, `TM.json`, `TW.json`, `UZ.json` under `contributions/cities/` — 19 records
+
+## Empty strings stored instead of null
+
+### Problem
+44 cities had `wikiDataId: ""` and 38 states had `fips_code: ""`. The schema uses null for "no value", and the PR
+validator flags the empty strings as an invalid Wikidata id format; exports carried `''` where users expect NULL.
+
+### Fix
+Set those fields to null. No other field changes and no record has a value removed.
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/cities/*.json` - 44 records: wikiDataId "" -> null
+- `contributions/states/states.json` - 38 records: fips_code "" -> null
