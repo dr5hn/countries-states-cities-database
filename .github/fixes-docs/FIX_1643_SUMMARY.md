@@ -65644,3 +65644,26 @@ in a later round. Others are namesakes, unresolved identities, records on a regi
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Romania: native names and translations of the renamed units
+
+### Problem
+After the type word left 2,887 Romanian unit names (#1782), their `native` still read "Comuna Abram". Their
+54,852 existing translation values were reviewed: many carried the type word (copies of the old name, or
+word-for-word translations such as Korean "코무나 1 12월", "commune 1 December", for Comuna 1 Decembrie), while others
+lacked a verified label for the unit.
+
+### Fix
+- `native` = the record's name without the type word, as stored (2,887 records).
+- translations follow the #1643 rule used in the Eastern Europe round (#1734): the record's own Wikidata label in that
+  language where the item is verified as this unit (its SIRUTA code, name and point), with a leading type word removed
+  only where the label carries it; otherwise the name for Latin-script languages; otherwise the key is removed.
+  35,042 values replaced, 19,744 removed, 66 already right. 2,736 own items verified; 151 withheld.
+- after review, a label must also fit the unit: a Latin-script label (other than German) must equal the name after
+  folding accents and case, a German label that differs from the name must match the same item's German Wikipedia title
+  (historic names such as Bildegg for Beltiug), and a non-Latin label must transliterate close to the name; otherwise
+  the name or no value is used. A second review removed one more (Băiuţ's Japanese label named its village). This
+  rejected 1,855 labels such as Turkish "Armutlu" for Turda and the seat village's "Pădina Mare" for the commune Padina.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
