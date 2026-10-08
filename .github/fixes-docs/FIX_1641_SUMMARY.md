@@ -174,8 +174,8 @@ Wikidata lookups are cached in `$CSC_CACHE_DIR` (default `<tmp>/csc-copyforward-
 ## Brazil, Germany, Spain and Austria
 
 **Before:** in `BR.json`, `DE.json`, `ES.json` and `AT.json`, 2,671, 1,278, 1,099 and 935 pairs of neighbouring records
-shared one `wikiDataId` (origin/master 59743ae2). A random sample of 400 cities on 8 Oct 2026 found 16% of city
-Wikidata ids wrong, mostly this pattern.
+shared one `wikiDataId` (origin/master 59743ae2). A random sample of 400 cities on 8 Oct 2026 found 59 wrong Wikidata ids among the
+360 it could decide (16.4%; 40 stayed unresolved), mostly this pattern.
 
 ### Method
 
@@ -191,7 +191,8 @@ Every record in the four files is matched again from scratch; nothing is inferre
 - **Other records** (localities, districts, former municipalities) need an exact label or alias, a point within 5 km
   and a compatible instance-of.
 - A replacement also needs evidence that the current id is another place (a point more than 5 km away, or a
-  different official code); otherwise the record is held. No id is removed.
+  different official code); otherwise the record is held. Eight false links are cleared to null after manual review;
+  no city record is removed.
 
 ### Results
 
@@ -212,8 +213,8 @@ item fits), 3,259 held. Records sharing one id in these four files fell from 9,8
 A Codex review re-extracted every register, fetched every old and new item live and checked all 4,974 code-backed
 targets (all active, matching code, not dissolved or redirected). It found 5 wrong replacements (three villages given
 their parent municipality's item: Albersdorf, Oehling, Raffelstetten; Langenlebarn-Oberaigen given the larger
-Langenlebarn; Neu-Pattern given the abandoned Pattern), now corrected; 46 replacements where the old item is the
-settlement of the same municipality, now kept as they were; and 67 wrong ids the first pass had held, now corrected
+Langenlebarn; Neu-Pattern given the abandoned Pattern), now corrected; 46 replacements that only swapped a municipality's
+item for its main settlement's item or the reverse (not another place), now kept as they were; and 67 wrong ids the first pass had held, now corrected
 with the evidence in its report.
 
 ### Known limitations
