@@ -65498,3 +65498,38 @@ Wikidata label (Q1009), الكاميرون.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Cities moved to their smallest ISO unit: Czechia, Belgium, Ireland, Estonia
+
+### Problem
+A city's `state_id` is the smallest ISO 3166-2 unit that contains it, with the chain above in the states' `parent_id`
+(ADMINISTRATIVE_STRUCTURE.md). 2,224 cities in these four countries pointed to a higher unit instead: Czech cities to
+their kraj rather than their okres, Belgian cities to Flanders or Wallonia rather than their province, Irish cities to
+a province (Leinster, Munster ...) rather than their county, Estonian cities to their county rather than their
+municipality. Another 91 Czech cities sat in the wrong okres.
+
+### Fix
+2,000 cities get the smallest unit's `state_id` and `state_code`, each found from the national register and checked by
+point-in-polygon against official boundaries: Czechia RÚIAN (obec -> okres, ČÚZK), Belgium Statbel REFNIS and 2026
+statistical sectors, Ireland CSO 2022 built-up areas and Tailte Éireann county boundaries, Estonia EHAK. The record's own
+Wikidata code is used where it has one (P7606, P1567, P1140); otherwise the exact official name within the old parent
+plus the point. Prague stays CZ-10 (no ISO unit below it); Dublin and Cork city councils share their county's ISO code.
+
+| Country | In a parent unit | Moved | Wrong okres corrected | Held, still in a parent unit | Held, already in a leaf unit |
+|---|---:|---:|---:|---:|---:|
+| CZ | 1,144 | 1,162 | 91 | 73 | 14 |
+| BE | 548 | 502 | 0 | 46 | 0 |
+| IE | 370 | 216 | 0 | 154 | 0 |
+| EE | 162 | 120 | 0 | 42 | 0 |
+
+Held (329): records flagged by an administrative name or Wikidata class (111; some are regions or districts, others
+places whose Wikidata id points at a county, e.g. Eadestown), namesakes, names with no official match (mostly Irish
+localities without a built-up area of that name), points outside the matched unit, and Estonian codes no longer current
+(28 records of rural municipalities (vald) carry codes from before the 2017 municipal reform, so they stay in
+their county while vald records with current codes move). A hold already in a leaf unit is a record whose current okres
+could not be confirmed; it is left as it is.
+Review added 21 Irish towns found under their bilingual or variant names (Clonmel/Cluain Meala, Tramore/Trá Mhór,
+Bagenalstown/Muinebeag) and one Czech settlement part. Only `state_id` and `state_code` change.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
