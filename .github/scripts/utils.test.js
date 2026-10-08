@@ -94,7 +94,7 @@ test('bounds: CN Paracel and Spratly records are inside, Borneo is not', () => {
 
 test('type_local is a known optional field on cities and states', () => {
   const city = {
-    name: 'Strasbourg', state_id: 4579, state_code: '67', country_id: 75, country_code: 'FR',
+    name: 'Strasbourg', state_id: 5035, state_code: '67', country_id: 75, country_code: 'FR',
     latitude: '48.58', longitude: '7.75', type: 'municipality', type_local: 'commune', level: 4,
   };
   const state = { name: 'Bas-Rhin', country_id: 75, country_code: 'FR', type: 'metropolitan department', type_local: 'département', level: 2 };

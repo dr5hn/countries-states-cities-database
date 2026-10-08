@@ -75,10 +75,10 @@ async function main() {
   // Seed States
   const states = await fetchData('states');
   const stateData = states
-    .map(({ name, country_code, fips_code, iso2, type, latitude, longitude, wikiDataId }) => {
+    .map(({ name, country_code, fips_code, iso2, type, type_local, latitude, longitude, wikiDataId }) => {
       const countryId = countryMap.get(country_code);
       return countryId
-        ? { name, countryCode: country_code, fipsCode: fips_code, iso2, type, latitude, longitude, wikiDataId, countryId }
+        ? { name, countryCode: country_code, fipsCode: fips_code, iso2, type, typeLocal: type_local ?? null, latitude, longitude, wikiDataId, countryId }
         : null;
     })
     .filter(Boolean);
@@ -91,11 +91,11 @@ async function main() {
   // Seed Cities
   const cities = await fetchData('cities');
   const cityData = cities
-    .map(({ name, state_name, country_code, state_code, latitude, longitude, wikiDataId }) => {
+    .map(({ name, state_name, country_code, state_code, type_local, latitude, longitude, wikiDataId }) => {
       const countryId = countryMap.get(country_code);
       const stateId = stateMap.get(`${state_name}-${countryId}`);
       return stateId && countryId
-        ? { name, stateCode: state_code, countryCode: country_code, latitude, longitude, wikiDataId, stateId, countryId }
+        ? { name, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, latitude, longitude, wikiDataId, stateId, countryId }
         : null;
     })
     .filter(Boolean);

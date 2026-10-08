@@ -45,7 +45,7 @@ unit above a city recorded for only 23%. These rules say how each field captures
 | `locality` | a named populated place without its own government | place | census-designated place (US), localidad (MX) |
 | `section` | a part of a municipality kept as its own record | place | commune déléguée (FR), barrio (ES) |
 | `administrative district` | an administrative unit between the state and the municipality | unit | arrondissement (FR), Kreis (DE), raion (RU), tehsil (IN) |
-| `county` | a county | unit | county (US, IE) |
+| `county` | a county that ISO 3166-2 does not list (counties that ISO lists, such as Ireland's, stay states) | unit | county (US) |
 
 A new value needs a maintainer decision and an entry here and in [TYPE_FIELD.md](TYPE_FIELD.md).
 
