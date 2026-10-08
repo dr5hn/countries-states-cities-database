@@ -300,6 +300,54 @@ both kept with the project's audit files: the preparer and matcher reproduce the
 before it is applied) and regenerates the ledger, the counts and the final report. To check a matcher change, look up its official code in
 the register linked above and the item carrying that code; a reviewed change cites its evidence in the overlay.
 
+## China, Russia, the United States and the United Kingdom
+
+**Before:** in `CN.json`, `RU.json`, `US.json` and `GB.json`, 610, 337, 639 and 316 pairs of neighbouring records
+shared one `wikiDataId` (origin/master f96a556e).
+
+### Method
+
+The batch-2 matcher and its review safeguards, with each country's official register: provincial administrative-division
+code tables for China (P442; eight provinces retrievable: Beijing, Liaoning, Jilin, Fujian, Hunan, Hainan, Chongqing,
+Ningxia), Rosstat OKTMO and OKATO for Russia (P764, P721), the Census Gazetteer GEOID and GNIS ids for the US (P774,
+P590) and ONS codes and place names for the UK (P836). The matcher replaces an id only when the record's exact official
+name in its state and level, the item's active code, its label, type and a point within 5 km all agree, and the old item
+is shown to be another place; a village never takes its municipality's item and related identities (capital, seat,
+redirect) are kept. Of the 519 changes, 504 pass these automatic gates and 15 are review decisions. A held id is cleared when its item is verified by official code for a record in another state or country and lies
+over 5 km away (386), or when review showed the item is another place (14).
+
+Review then decided 31 ids by hand, separately from the gates above and each with its own cited sources: 2 Russian
+replacements that had picked a nearby namesake keep their original id, Essoyla gets the verified settlement, and 28
+links already wrong on master are fixed. These override the related-identity rule where review proved it wrong, for
+example a district that carried its seat town's item within 5 km: 14 replaced
+(a district's own item instead of its seat, a village instead of the surrounding town) and 14 cleared (an item for
+another province, a disambiguation page, a village's item on a police-department record). Each is listed with its sources in the audit
+report.
+
+### Results
+
+| Country | Changed | Cleared | Held | Neighbouring pairs sharing an id |
+| --- | --- | --- | --- | --- |
+| CN | 8 | 30 | 4,078 | 610 -> 576 |
+| RU | 59 | 86 | 3,739 | 337 -> 191 |
+| US | 429 | 183 | 2,078 | 639 -> 77 |
+| GB | 23 | 101 | 2,462 | 316 -> 192 |
+
+519 ids changed, 400 wrong links cleared (pending a verified replacement), 12,357 held. China stays mostly held: only eight
+provincial code tables could be retrieved, and the national list was unavailable.
+
+### Known limitations
+
+- 12,357 held records keep their id; China most of all (4,078), then the UK and Russia, where many records are
+  below the level their register covers.
+- 876 groups still share an id: 10 the same place in two records, 698 across states with unresolved members
+  (2 holding a verified identity), 168 in one state with identity not established. Ledger in the audit files.
+
+### Reproduce
+
+Registers and Wikidata responses were saved on 8 October 2026 with URLs, editions and SHA-256 hashes; the matcher writes
+the v1 files and the assembler the final manifest, ledger and counts, kept with the project's audit files.
+
 ## Rollback
 
 Revert the commit. No `id`s change, so nothing downstream needs repair.
@@ -309,6 +357,8 @@ Revert the commit. No `id`s change, so nothing downstream needs repair.
   1,114 and 767 records
 - `contributions/cities/JP.json`, `NL.json`, `RO.json`, `PL.json` — `wikiDataId` corrected on 196, 130,
   311 and 290 records, cleared on 131, 212, 38 and 44
+- `contributions/cities/CN.json`, `RU.json`, `US.json`, `GB.json` — `wikiDataId` corrected on 8, 59,
+  429 and 23 records, cleared on 30, 86, 183 and 101
 - `contributions/cities/FR.json` — `wikiDataId` corrected on 4,597 records
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.py` — the matcher
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.report.json` — blanks and conflict
