@@ -171,11 +171,76 @@ python3 -m unittest bin/scripts/fixes/test_france_fix_copyforward_wikidataids.py
 
 Wikidata lookups are cached in `$CSC_CACHE_DIR` (default `<tmp>/csc-copyforward-fr`).
 
+## Brazil, Germany, Spain and Austria
+
+**Before:** in `BR.json`, `DE.json`, `ES.json` and `AT.json`, 2,671, 1,278, 1,099 and 935 pairs of neighbouring records
+shared one `wikiDataId` (origin/master 59743ae2). A random sample of 400 cities on 8 Oct 2026 found 59 wrong Wikidata ids among the
+360 it could decide (16.4%; 40 stayed unresolved), mostly this pattern.
+
+### Method
+
+Every record in the four files is matched again from scratch; nothing is inferred from the shared id.
+
+- **Municipalities** are matched to the official register by name and state or province, and the Wikidata item
+  carrying the same official code is taken: [IBGE municipalities](https://servicodados.ibge.gov.br/api/v1/localidades/municipios)
+  (BR, P1585), [Destatis GV-ISys, 30 Sep 2026](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html)
+  (DE, AGS, P439), [INE municipality dictionary, 1 Jan 2026](https://www.ine.es/daco/daco42/codmun/diccionario26.xlsx)
+  (ES, P772) and [Statistik Austria Gemeindeverzeichnis, 1 Jan 2026](https://www.statistik.at/fileadmin/pages/453/RegGemVz2026.ods)
+  (AT, GKZ, P964). The item must lie near the record (DE: register and item points both within 5 km; BR: within
+  25 km only with an agreeing item name).
+- **Other records** (localities, districts, former municipalities) need an exact label or alias, a point within 5 km
+  and a compatible instance-of.
+- A replacement also needs evidence that the current id is another place (a point more than 5 km away, or a
+  different official code); otherwise the record is held. Eight false links are cleared to null after manual review;
+  no city record is removed.
+
+### Results
+
+| Country | Changed |
+| --- | --- |
+| BR | 2,432 |
+| DE | 1,087 |
+| ES | 1,114 |
+| AT | 767 |
+
+5,400 ids changed, 8 of them removed (the current item named a non-place or a different place and no
+item fits), 3,259 held. Records sharing one id in these four files fell from 9,879 to
+1,520. Examples: Acaiaca (BR) Q1784836 -> Q1749743 (IBGE 3100401); Absberg (DE) Q255698 -> Q331886
+(AGS 09577111); Ababuj (ES) Q1607619 -> Q594888 (INE 44001); Abfaltersbach (AT) Q292866 -> Q319992 (GKZ 70701).
+
+### Review
+
+A Codex review re-extracted every register, fetched every old and new item live and checked all 4,974 code-backed
+targets (all active, matching code, not dissolved or redirected). It found 5 wrong replacements (three villages given
+their parent municipality's item: Albersdorf, Oehling, Raffelstetten; Langenlebarn-Oberaigen given the larger
+Langenlebarn; Neu-Pattern given the abandoned Pattern), now corrected; 46 replacements that only swapped a municipality's
+item for its main settlement's item or the reverse (not another place), now kept as they were; and 67 wrong ids the first pass had held, now corrected
+with the evidence in its report.
+
+### Known limitations
+
+- 3,259 held records keep their current id: no compatible item, a nearby namesake, the settlement of the
+  same municipality, or no point to prove another place. They need manual research.
+- 46 groups of records now share an id because they are the same place under two spellings or names
+  (Batayporã twice, Ipaussu and Ipauçu, Köpenick and Berlin Köpenick); with the 51 Spanish same-place pairs they are
+  listed in the audit files for a separate merge, not merged here.
+- ES and AT registers carry no coordinates, so their municipality matches rest on name, province and code, with the
+  item's point checked against the record.
+
+### Reproduce
+
+The plan was built from snapshots of the four registers and of Wikidata taken on 8 October 2026; the matcher and the
+snapshots are kept with the project's audit files rather than in this repository, because the matcher replays cached
+inputs and does not download them. To check a single record, look up its official code in the register linked above
+and the Wikidata item carrying that code (P1585, P439, P772 or P964).
+
 ## Rollback
 
 Revert the commit. No `id`s change, so nothing downstream needs repair.
 
 ## Files Changed
+- `contributions/cities/BR.json`, `DE.json`, `ES.json`, `AT.json` — `wikiDataId` corrected on 2,432, 1,087,
+  1,114 and 767 records
 - `contributions/cities/FR.json` — `wikiDataId` corrected on 4,597 records
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.py` — the matcher
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.report.json` — blanks and conflict
