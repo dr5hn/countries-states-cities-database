@@ -30,7 +30,7 @@ const SCHEMA = {
   },
   states: {
     required: ['name', 'country_id', 'country_code'],
-    optional: ['fips_code', 'iso2', 'type', 'type_local', 'level', 'parent_id', 'native', 'latitude', 'longitude', 'country_name', 'state_code', 'wikiDataId'],
+    optional: ['fips_code', 'iso2', 'iso3166_2', 'type', 'type_local', 'level', 'parent_id', 'native', 'latitude', 'longitude', 'timezone', 'translations', 'population', 'country_name', 'state_code', 'wikiDataId'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
@@ -47,9 +47,9 @@ const SCHEMA = {
     required: ['name'],
     optional: [
       'iso3', 'numeric_code', 'iso2', 'phonecode', 'capital', 'currency',
-      'currency_name', 'currency_symbol', 'tld', 'native', 'region',
-      'region_id', 'subregion', 'subregion_id', 'nationality', 'timezones',
-      'translations', 'latitude', 'longitude', 'emoji', 'emojiU', 'wikiDataId',
+      'currency_name', 'currency_symbol', 'tld', 'native', 'population', 'gdp', 'region',
+      'region_id', 'subregion', 'subregion_id', 'nationality', 'area_sq_km', 'postal_code_format',
+      'postal_code_regex', 'timezones', 'translations', 'latitude', 'longitude', 'emoji', 'emojiU', 'wikiDataId',
     ],
     rules: {
       name: { type: 'string', maxLength: 100, nonEmpty: true },

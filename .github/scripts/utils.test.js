@@ -117,3 +117,15 @@ test('type_local is a known optional field on counties', () => {
   };
   assert.deepEqual(validateRecord(county, 'counties', 0), { errors: [], warnings: [] });
 });
+
+test('every field used in states.json and countries.json is known to the schema', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  for (const [file, entity] of [['states/states.json', 'states'], ['countries/countries.json', 'countries']]) {
+    const records = JSON.parse(fs.readFileSync(path.join(__dirname, '../../contributions', file), 'utf8'));
+    const unknown = new Set();
+    records.forEach((r, i) => validateRecord(r, entity, i).warnings
+      .forEach((w) => { const m = w.match(/unknown field "(.+)"/); if (m) unknown.add(m[1]); }));
+    assert.deepEqual([...unknown], [], `${file} has fields the schema does not know`);
+  }
+});
