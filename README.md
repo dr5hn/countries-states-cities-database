@@ -145,7 +145,7 @@ Smaller reference files (countries, states, counties, schema) live in the repo. 
 
 ## What's in the data
 
-- **250** countries · **5,299** states / regions · **3,081** counties · **153,765** cities · **100k+** postcodes across ~50 countries
+- **250** countries · **5,299** states / regions · **3,414** counties · **153,765** cities · **100k+** postcodes across ~50 countries
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
