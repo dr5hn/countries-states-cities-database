@@ -65434,3 +65434,51 @@ Revert the PR (squash commit); no `id` changes.
 ### Files Changed
 - `contributions/states/states.json` - 3,270 records: `level` (11 also get a parent, 3 lose a stale one)
 - `bin/scripts/fixes/state_levels_1766.decisions.csv` - every changed and held state with its reason and sources
+
+## Missing parent units: Malta's regions, Tunisia's districts, the Negros Island Region
+
+### Problem
+After #1766 set each state's level to its depth in the official hierarchy, three official tiers had no state record, so
+their children had the right level but no parent: Malta's 68 local councils (level 2) sit in six regions, Tunisia's 24
+governorates (level 2) in five districts, and three Philippine provinces in the Negros Island Region.
+
+### Fix
+12 states added (level 1, `iso3166_2` null because ISO 3166-2 lists none of them; checked on ISO OBP, Debian iso-codes
+and CLDR) and 95 existing states get their `parent_id`.
+
+| Country | id | Name (native) | iso2 | type / type_local | Children | Wikidata |
+|---|---:|---|---|---|---:|---|
+| MT | 5842 | Northern Region (Reġjun tat-Tramuntana) | `R01` | region / reġjun | 9 | Q20199334 |
+| MT | 5843 | Eastern Region (Reġjun tal-Lvant) | `R02` | region / reġjun | 12 | Q120512582 |
+| MT | 5844 | Western Region (Reġjun tal-Punent) | `R03` | region / reġjun | 10 | Q120512576 |
+| MT | 5845 | Port Region (Reġjun Port) | `R04` | region / reġjun | 11 | Q120512566 |
+| MT | 5846 | Southern Region (Reġjun tan-Nofsinhar) | `R05` | region / reġjun | 12 | Q20199405 |
+| MT | 5847 | Gozo Region (Reġjun Għawdex) | `R06` | region / reġjun | 14 | Q2054290 |
+| TN | 5848 | District 1 (الإقليم الأول) | `D1` | district / إقليم | 4 | — |
+| TN | 5849 | District 2 (الإقليم الثاني) | `D2` | district / إقليم | 6 | — |
+| TN | 5850 | District 3 (الإقليم الثالث) | `D3` | district / إقليم | 6 | — |
+| TN | 5851 | District 4 (الإقليم الرابع) | `D4` | district / إقليم | 4 | — |
+| TN | 5852 | District 5 (الإقليم الخامس) | `D5` | district / إقليم | 4 | — |
+| PH | 5853 | Negros Island Region (Negros Island Region) | `18` | region / rehiyon | 3 | Q17081785 |
+
+- Malta: names, native names and register codes from the [Malta Address Register](https://address.gov.mt/wp-json/gov/v1/regions);
+  `R01`-`R06` add an R because `01`-`06` are already council codes. Membership: [Local Government Act, Cap. 363](https://legislation.mt/eli/cap/363/eng/pdf),
+  art. 37A and the Eleventh Schedule. Points are the regional seats in the [UK PCGN Malta factfile (2025)](https://assets.publishing.service.gov.uk/media/6ab67ebafceb6fb3a6501229/Malta_Toponymic_Factfile.pdf),
+  except Eastern Region: its seat, San Ġwann, is a Northern Region exclave, so it takes Birkirkara's point (an Eastern member; factfile p. 7).
+- Tunisia: [Decree 2023-589](https://www.isie.tn/wp-content/uploads/2023/09/Decret2023_589Arabe.pdf), art. 1, creates the five
+  numbered districts and lists their governorates; [Organic Law 2025-4](https://faolex.fao.org/docs/pdf/tun234003.pdf) makes their
+  councils local authorities. `D1`-`D5` are synthetic codes from the decree's numbering; no official national register code was verified. District council
+  seats rotate, so the points are area centroids of the member governorates (OCHA COD-AB boundaries). No Wikidata item
+  was verified for any district, so `wikiDataId` stays null pending verification.
+- Philippines: [RA 12000 (2024)](https://lawphil.net/statutes/repacts/ra2024/ra_12000_2024.html), section 3, puts Negros
+  Occidental (with Bacolod), Negros Oriental and Siquijor in the region; iso2 `18` is its PSGC region number
+  ([PSA](https://psa.gov.ph/classification/psgc/provinces/1800000000)), like `06` and `07` for its neighbours. Point: area
+  centroid of the three provinces.
+
+Cities keep their state (the council, governorate or province); only states change.
+
+### Rollback
+Revert the PR (squash commit). The 12 new ids (5842-5853) have no cities; reverting removes them and their links.
+
+### Files Changed
+- `contributions/states/states.json` - 12 new states, `parent_id` on 95
