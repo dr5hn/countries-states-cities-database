@@ -348,6 +348,47 @@ provincial code tables could be retrieved, and the national list was unavailable
 Registers and Wikidata responses were saved on 8 October 2026 with URLs, editions and SHA-256 hashes; the matcher writes
 the v1 files and the assembler the final manifest, ledger and counts, kept with the project's audit files.
 
+## Australia, India, the Philippines and Turkey
+
+**Before:** in `AU.json`, `IN.json`, `PH.json` and `TR.json`, 1,953 pairs of neighbouring records shared one `wikiDataId`.
+
+### Method
+
+The batch-3 matcher and its review safeguards, with each country's official code on Wikidata: ABS ASGS 2021 suburb
+and locality (SAL) and LGA codes for Australia (P10112), checked against the Composite Gazetteer of Australia; Census
+2011 town and village codes for India (P5578); PSGC for the Philippines (P988); and Turkey's address-register province,
+district, neighbourhood and village codes (P14358, P14366, P12883, P13588). The matcher replaces an id only when the
+record's exact official name in its state and level, the item's active code, its label, type and a point within 5 km
+all agree, and the old item is shown, by its own official code, to be another place; a village never takes its
+district's item and related identities (capital, seat, redirect) are kept. A held id is cleared only when its item is
+verified by official code for a record in another state and lies over 5 km away (111); each clear names that record.
+Of the 400 changes, 365 pass these automatic gates.
+
+Review then decided 38 ids by hand, separately from the gates and each with its own sources: the automatic match
+for Muratpaşa had taken the district's item for the town, and 37 links already wrong on master are fixed, 34
+replaced (a town's own item instead of its district's, Jaipur city instead of the district, suburbs that carried another
+state's suburb such as Araluen NT with Applecross WA) and 3 cleared (a village carrying a merged item, and two Turkish
+towns carrying a district item 450 km away). Each is listed with its sources in the audit report.
+
+### Results
+
+| Country | Changed | Cleared | Held | Neighbouring pairs sharing an id |
+| --- | --- | --- | --- | --- |
+| AU | 374 | 109 | 1,348 | 782 -> 296 |
+| IN | 5 | 3 | 4,327 | 604 -> 597 |
+| PH | 0 | 0 | 4,544 | 191 -> 191 |
+| TR | 21 | 2 | 963 | 376 -> 356 |
+
+400 ids changed and 114 wrong links cleared (pending a verified replacement), most in Australia; 11,182 held.
+
+### Known limitations
+
+- The Philippines is held entirely: PSA's PSGC workbook returned HTTP 403 and its API needs a token, so no register
+  bytes were verified.
+- India's census codes are from 2011 and the current local-body codes (LGD) sit behind a CAPTCHA; Turkey's register
+  edition is 31 December 2021. Both stay mostly held.
+- 1486 groups still share an id: 1216 across states (13 holding a verified identity) and 270 in one state, identity not established. Ledger in the audit files.
+
 ## Rollback
 
 Revert the commit. No `id`s change, so nothing downstream needs repair.
@@ -359,6 +400,8 @@ Revert the commit. No `id`s change, so nothing downstream needs repair.
   311 and 290 records, cleared on 131, 212, 38 and 44
 - `contributions/cities/CN.json`, `RU.json`, `US.json`, `GB.json` — `wikiDataId` corrected on 8, 59,
   429 and 23 records, cleared on 30, 86, 183 and 101
+- `contributions/cities/AU.json`, `IN.json`, `TR.json` — `wikiDataId` corrected on 374, 5 and
+  21 records, cleared on 109, 3 and 2
 - `contributions/cities/FR.json` — `wikiDataId` corrected on 4,597 records
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.py` — the matcher
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.report.json` — blanks and conflict
