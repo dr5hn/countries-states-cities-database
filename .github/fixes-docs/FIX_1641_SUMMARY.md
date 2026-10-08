@@ -234,6 +234,72 @@ snapshots are kept with the project's audit files rather than in this repository
 inputs and does not download them. To check a single record, look up its official code in the register linked above
 and the Wikidata item carrying that code (P1585, P439, P772 or P964).
 
+## Japan, the Netherlands, Romania and Poland
+
+**Before:** in `JP.json`, `NL.json`, `RO.json` and `PL.json`, 481, 428, 356 and 344 pairs of neighbouring records
+shared one `wikiDataId` (origin/master 6aba19fc).
+
+### Method
+
+Every record in the four files is matched again from scratch, with the five safeguards the review of the previous
+batch asked for. The matcher replaces a record's id (888 records) only when all of these hold:
+
+- its folded name or native name equals an official register row of the same level in its prefecture, province,
+  county or voivodeship: [MIC local government codes](https://www.soumu.go.jp/denshijiti/code.html) (JP, P429),
+  [CBS 86097NED gemeenten and woonplaatsen](https://www.cbs.nl/nl-nl/cijfers/detail/86097NED) (NL, P382 / P981),
+  [INS SIRUTA](https://data.europa.eu/data/datasets/fcba1a54-cffd-422c-b3ac-920f63564085) (RO, P843; corroborated
+  against the live INS locality service) and [GUS TERYT TERC/SIMC](https://eteryt.stat.gov.pl/) (PL, P1653 / P4046);
+- the Wikidata item carries that exact active code, a matching label or alias, a compatible instance-of and a point
+  within 5 km of the record; a village gets the village's item, not its municipality's;
+- the current id is a different place: its point is more than 5 km away and it does not carry the same code;
+- the current item is not a related identity of the same place (kept: 655 records, of which 427 are a capital or
+  main settlement of the other, 190 a same-named parent or seat, 38 a redirect to the target).
+
+### Review
+
+A Codex review fetched every old and new item live and confirmed all 888 matcher replacements. From its sample of
+held and kept records and its check of shared ids it found 92 wrong ids the matcher had left alone (for example Naka,
+Ibaraki carrying the item of Naha, Okinawa). Applied: 38 set to the right item and 54 cleared, plus Ono, Hyogo set to
+its own item. These 39 reviewed corrections rest on the review's identity evidence rather than the safeguards above
+(some items carry no official code, six are 5-19 km from the record). A second review showed that many held records
+share an item whose owner the matcher verified by official code in another prefecture or province (Hakone carried
+Hakodate's item); those 371 links are cleared too. A cleared id is a demonstrably wrong link, removed pending a
+verified replacement; it does not mean that no item exists.
+
+### Results
+
+| Country | Changed | Cleared | Held | Neighbouring pairs sharing an id |
+| --- | --- | --- | --- | --- |
+| JP | 196 | 131 | 389 | 481 -> 279 |
+| NL | 130 | 212 | 398 | 428 -> 77 |
+| RO | 311 | 38 | 358 | 356 -> 11 |
+| PL | 290 | 44 | 60 | 344 -> 10 |
+
+927 ids changed (888 by the matcher, 39 from the review), 425 wrong links cleared, 1205 held. Examples: Abashiri
+(JP) Q2828134 -> Q305640 (MIC 012114); 't Zand (NL) Q2766547 -> Q2384262 (CBS 2758); Aleşd (RO) Q2718372 -> Q16898117
+(SIRUTA 26706); Augustów (PL) Q567332 -> Q464763 (TERYT 0977539).
+
+### Known limitations
+
+- 1205 held records keep their current id, most because no official row of that name and level exists in their region
+  (Japanese and Dutch records below municipality level, romanisations that do not match). They need manual research.
+- 402 groups of records still share an id. 200 are the same place in two records (Kanazawa and
+  Kanazawa-shi; Warsaw twice; Ono and Ono Shi), for a separate merge. 73 span two states with unresolved members
+  and no record verified directly by official code at that item (JP 31, NL 35, RO 1, PL 6); 13 of them hold a
+  matcher-verified identity through a redirect or a capital or seat relation, 60 none. In one state, 6 groups join records verified as
+  different places and 62 have members whose common identity the matcher did not establish; 61 are not yet
+  adjudicated. The ledger is in the audit files.
+- The SIRUTA publisher file was unreachable; a public mirror of the S1 2025 edition was used and checked code by code
+  against the official INS locality service.
+
+### Reproduce
+
+The registers and Wikidata responses were saved on 8 October 2026 with their URLs and SHA-256 hashes. Two steps,
+both kept with the project's audit files: the preparer and matcher reproduce the matcher output, then
+`assemble_final.py` applies the 464 reviewed decisions (`review_overlay.json`, each checked against the data
+before it is applied) and regenerates the ledger, the counts and the final report. To check a matcher change, look up its official code in
+the register linked above and the item carrying that code; a reviewed change cites its evidence in the overlay.
+
 ## Rollback
 
 Revert the commit. No `id`s change, so nothing downstream needs repair.
@@ -241,6 +307,8 @@ Revert the commit. No `id`s change, so nothing downstream needs repair.
 ## Files Changed
 - `contributions/cities/BR.json`, `DE.json`, `ES.json`, `AT.json` — `wikiDataId` corrected on 2,432, 1,087,
   1,114 and 767 records
+- `contributions/cities/JP.json`, `NL.json`, `RO.json`, `PL.json` — `wikiDataId` corrected on 196, 130,
+  311 and 290 records, cleared on 131, 212, 38 and 44
 - `contributions/cities/FR.json` — `wikiDataId` corrected on 4,597 records
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.py` — the matcher
 - `bin/scripts/fixes/france_fix_copyforward_wikidataids.report.json` — blanks and conflict
