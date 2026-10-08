@@ -65482,3 +65482,19 @@ Revert the PR (squash commit). The 12 new ids (5842-5853) have no cities; revert
 
 ### Files Changed
 - `contributions/states/states.json` - 12 new states, `parent_id` on 95
+
+## Whitespace in names
+
+### Problem
+73 records carried stray whitespace: a trailing space or tab in a name (all 20 of Bhutan's districts, Bangladesh's
+divisions, Guatemala's departments, "Brussels-Capital "), or a double space inside a name, native name or translation
+("Paso  Valega", "Ballards  Valley"). Exact-match lookups and joins on these names fail.
+
+### Fix
+Leading and trailing whitespace removed and internal runs of spaces or tabs collapsed to one space: 55 states,
+16 cities and 2 countries (57 names, 32 native names, 10 translation sets).
+No other character changes, except Cameroon's Arabic translation, which was a single space: it takes Cameroon's
+Wikidata label (Q1009), الكاميرون.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
