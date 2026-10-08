@@ -55460,3 +55460,23 @@ Revert the PR (squash commit). No existing `id` changes; the 333 county records 
 - `contributions/cities/FR.json` - 9,734 records: type, type_local, level
 - `contributions/counties/FR.json` - new: 333 arrondissements
 - `contributions/states/states.json` - Alsace: level and parent_id
+
+## The text "NULL" stored instead of null
+
+### Problem
+21 values held the four-letter text "NULL" (or "null") instead of JSON null: 17 state `fips_code`, 2 state
+`wikiDataId` (Aruba) and 2 city `wikiDataId` (Carmen PH, Hotat Bani Tamim SA). Exports carried the string 'NULL',
+and the validator flags the Wikidata ones as an invalid id. Two postcodes had a placeholder locality name: "None"
+(IN 795159) and "-" (BD 5820).
+
+### Fix
+Set them to null. No other field changes. Values such as "NA" (Namibia's code) and the Italian comune None are real
+and stay.
+
+### Rollback
+Revert the PR (squash commit).
+
+### Files Changed
+- `contributions/states/states.json` - 19 values
+- `contributions/cities/PH.json`, `contributions/cities/SA.json` - 1 value each
+- `contributions/postcodes/IN.json`, `contributions/postcodes/BD.json` - 1 locality_name each
