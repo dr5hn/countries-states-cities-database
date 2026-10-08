@@ -159,12 +159,11 @@ CREATE TABLE `states` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `cities`
+-- Table structure for table `counties`
 --
 
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
--- Counties: official administrative units between states and municipalities (#1303).
 CREATE TABLE `counties` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -188,13 +187,20 @@ CREATE TABLE `counties` (
   `wikiDataId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
   PRIMARY KEY (`id`),
   KEY `idx_counties_parent` (`parent_id`),
-  CONSTRAINT `counties_parent_fk` FOREIGN KEY (`parent_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
   KEY `idx_counties_state` (`state_id`),
   KEY `idx_counties_country` (`country_id`),
-  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
-  CONSTRAINT `counties_country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+  CONSTRAINT `counties_country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
+  CONSTRAINT `counties_parent_fk` FOREIGN KEY (`parent_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
+  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3415 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `cities`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cities` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -219,9 +225,9 @@ CREATE TABLE `cities` (
   `wikiDataId` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Rapid API GeoDB Cities',
   PRIMARY KEY (`id`),
   KEY `idx_cities_county` (`county_id`),
-  CONSTRAINT `cities_county_fk` FOREIGN KEY (`county_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
   KEY `cities_test_ibfk_1` (`state_id`),
   KEY `cities_test_ibfk_2` (`country_id`),
+  CONSTRAINT `cities_county_fk` FOREIGN KEY (`county_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
   CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
   CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=165918 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
@@ -270,6 +276,6 @@ CREATE TABLE `postcodes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-08  9:47:47
+-- Dump completed on 2026-10-08 11:14:57
 
 SET FOREIGN_KEY_CHECKS=1;

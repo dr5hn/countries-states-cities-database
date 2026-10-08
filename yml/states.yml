@@ -8187,7 +8187,7 @@ state:
       pl: 'Oranjestad Wschód'
       hi: 'ओरांजेस्टेड पूर्व'
       ar: 'أورانجيستاد الشرقية'
-    wikiDataId: 'NULL'
+    wikiDataId: null
     population: null
   -
     id: 5244
@@ -8304,7 +8304,7 @@ state:
       pl: 'San Nicolaas Noord'
       hi: 'सैन निकोलस नॉर्ड'
       ar: 'سان نيكولاس نورد'
-    wikiDataId: 'NULL'
+    wikiDataId: null
     population: null
   -
     id: 5248
@@ -51594,8 +51594,8 @@ state:
     fips_code: C1
     type: 'European collectivity'
     type_local: null
-    level: '1'
-    parent_id: null
+    level: '2'
+    parent_id: '4820'
     native: Alsace
     latitude: '48.00987120'
     longitude: '7.58750210'
@@ -58072,7 +58072,7 @@ state:
     country_name: Ghana
     iso2: BO
     iso3166_2: GH-BO
-    fips_code: ''
+    fips_code: null
     type: region
     type_local: null
     level: '1'
@@ -58111,7 +58111,7 @@ state:
     country_name: Ghana
     iso2: BE
     iso3166_2: GH-BE
-    fips_code: ''
+    fips_code: null
     type: region
     type_local: null
     level: '1'
@@ -66867,7 +66867,7 @@ state:
     country_name: Hungary
     iso2: KE
     iso3166_2: HU-KE
-    fips_code: ''
+    fips_code: null
     type: county
     type_local: null
     level: '2'
@@ -76366,7 +76366,7 @@ state:
     country_name: Ireland
     iso2: LM
     iso3166_2: IE-LM
-    fips_code: 'NULL'
+    fips_code: null
     type: county
     type_local: null
     level: '1'
@@ -98743,7 +98743,7 @@ state:
     country_name: Malawi
     iso2: NE
     iso3166_2: MW-NE
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -99913,7 +99913,7 @@ state:
     country_name: Maldives
     iso2: '02'
     iso3166_2: MV-02
-    fips_code: ''
+    fips_code: null
     type: 'administrative atoll'
     type_local: null
     level: '4'
@@ -99952,7 +99952,7 @@ state:
     country_name: Maldives
     iso2: '00'
     iso3166_2: MV-00
-    fips_code: ''
+    fips_code: null
     type: 'administrative atoll'
     type_local: null
     level: '4'
@@ -99991,7 +99991,7 @@ state:
     country_name: Maldives
     iso2: '20'
     iso3166_2: MV-20
-    fips_code: ''
+    fips_code: null
     type: 'administrative atoll'
     type_local: null
     level: '4'
@@ -111199,7 +111199,7 @@ state:
     country_name: Mongolia
     iso2: '001'
     iso3166_2: MN-1
-    fips_code: 'NULL'
+    fips_code: null
     type: 'capital city'
     type_local: null
     level: '1'
@@ -118651,7 +118651,7 @@ state:
     country_name: 'New Caledonia'
     iso2: '03'
     iso3166_2: NC-03
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '1'
@@ -118690,7 +118690,7 @@ state:
     country_name: 'New Caledonia'
     iso2: '02'
     iso3166_2: NC-02
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '1'
@@ -118729,7 +118729,7 @@ state:
     country_name: 'New Caledonia'
     iso2: '01'
     iso3166_2: NC-01
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '1'
@@ -163359,7 +163359,7 @@ state:
     country_name: Spain
     iso2: AN
     iso3166_2: ES-AN
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -163437,7 +163437,7 @@ state:
     country_name: Spain
     iso2: AR
     iso3166_2: ES-AR
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -163558,7 +163558,7 @@ state:
     country_name: Spain
     iso2: AV
     iso3166_2: ES-AV
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -163636,7 +163636,7 @@ state:
     country_name: Spain
     iso2: IB
     iso3166_2: ES-IB
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -163714,7 +163714,7 @@ state:
     country_name: Spain
     iso2: PV
     iso3166_2: ES-PV
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -163792,7 +163792,7 @@ state:
     country_name: Spain
     iso2: BU
     iso3166_2: ES-BU
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -164068,7 +164068,7 @@ state:
     country_name: Spain
     iso2: CL
     iso3166_2: ES-CL
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -164107,7 +164107,7 @@ state:
     country_name: Spain
     iso2: CM
     iso3166_2: ES-CM
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -164146,7 +164146,7 @@ state:
     country_name: Spain
     iso2: CT
     iso3166_2: ES-CT
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -164185,7 +164185,7 @@ state:
     country_name: Spain
     iso2: CE
     iso3166_2: ES-CE
-    fips_code: ''
+    fips_code: null
     type: 'autonomous city'
     type_local: null
     level: '1'
@@ -164263,7 +164263,7 @@ state:
     country_name: Spain
     iso2: MD
     iso3166_2: ES-MD
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -164380,7 +164380,7 @@ state:
     country_name: Spain
     iso2: EX
     iso3166_2: ES-EX
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -164419,7 +164419,7 @@ state:
     country_name: Spain
     iso2: GA
     iso3166_2: ES-GA
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -165085,7 +165085,7 @@ state:
     country_name: Spain
     iso2: ML
     iso3166_2: ES-ML
-    fips_code: ''
+    fips_code: null
     type: 'autonomous city'
     type_local: null
     level: '1'
@@ -165202,7 +165202,7 @@ state:
     country_name: Spain
     iso2: NC
     iso3166_2: ES-NC
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -165280,7 +165280,7 @@ state:
     country_name: Spain
     iso2: P
     iso3166_2: ES-P
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -165358,7 +165358,7 @@ state:
     country_name: Spain
     iso2: MC
     iso3166_2: ES-MC
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -165397,7 +165397,7 @@ state:
     country_name: Spain
     iso2: SA
     iso3166_2: ES-SA
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -165475,7 +165475,7 @@ state:
     country_name: Spain
     iso2: SG
     iso3166_2: ES-SG
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -165553,7 +165553,7 @@ state:
     country_name: Spain
     iso2: SO
     iso3166_2: ES-SO
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -165748,7 +165748,7 @@ state:
     country_name: Spain
     iso2: VC
     iso3166_2: ES-VC
-    fips_code: ''
+    fips_code: null
     type: 'autonomous community'
     type_local: null
     level: '1'
@@ -165787,7 +165787,7 @@ state:
     country_name: Spain
     iso2: VA
     iso3166_2: ES-VA
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -165826,7 +165826,7 @@ state:
     country_name: Spain
     iso2: ZA
     iso3166_2: ES-ZA
-    fips_code: ''
+    fips_code: null
     type: province
     type_local: null
     level: '2'
@@ -166489,7 +166489,7 @@ state:
     country_name: 'Sri Lanka'
     iso2: '61'
     iso3166_2: LK-61
-    fips_code: ''
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -184363,7 +184363,7 @@ state:
     country_name: Uganda
     iso2: '235'
     iso3166_2: UG-235
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -185221,7 +185221,7 @@ state:
     country_name: Uganda
     iso2: '403'
     iso3166_2: UG-403
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -185650,7 +185650,7 @@ state:
     country_name: Uganda
     iso2: '237'
     iso3166_2: UG-237
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186001,7 +186001,7 @@ state:
     country_name: Uganda
     iso2: '236'
     iso3166_2: UG-236
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186040,7 +186040,7 @@ state:
     country_name: Uganda
     iso2: '335'
     iso3166_2: UG-335
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186079,7 +186079,7 @@ state:
     country_name: Uganda
     iso2: '126'
     iso3166_2: UG-126
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186235,7 +186235,7 @@ state:
     country_name: Uganda
     iso2: '433'
     iso3166_2: UG-433
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186391,7 +186391,7 @@ state:
     country_name: Uganda
     iso2: '432'
     iso3166_2: UG-432
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186547,7 +186547,7 @@ state:
     country_name: Uganda
     iso2: '434'
     iso3166_2: UG-434
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -186781,7 +186781,7 @@ state:
     country_name: Uganda
     iso2: '333'
     iso3166_2: UG-333
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -187249,7 +187249,7 @@ state:
     country_name: Uganda
     iso2: '336'
     iso3166_2: UG-336
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -187834,7 +187834,7 @@ state:
     country_name: Uganda
     iso2: '334'
     iso3166_2: UG-334
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -188380,7 +188380,7 @@ state:
     country_name: Uganda
     iso2: '337'
     iso3166_2: UG-337
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -188848,7 +188848,7 @@ state:
     country_name: Uganda
     iso2: '435'
     iso3166_2: UG-435
-    fips_code: 'NULL'
+    fips_code: null
     type: district
     type_local: null
     level: '1'
@@ -191344,7 +191344,7 @@ state:
     country_name: 'United Kingdom'
     iso2: BCP
     iso3166_2: GB-BCP
-    fips_code: ''
+    fips_code: null
     type: 'unitary authority'
     type_local: null
     level: '2'
@@ -194269,7 +194269,7 @@ state:
     country_name: 'United Kingdom'
     iso2: AGY
     iso3166_2: GB-AGY
-    fips_code: ''
+    fips_code: null
     type: 'unitary authority'
     type_local: null
     level: '2'
@@ -195010,7 +195010,7 @@ state:
     country_name: 'United Kingdom'
     iso2: LUT
     iso3166_2: GB-LUT
-    fips_code: ''
+    fips_code: null
     type: 'unitary authority'
     type_local: null
     level: '2'
@@ -195868,7 +195868,7 @@ state:
     country_name: 'United Kingdom'
     iso2: NNH
     iso3166_2: GB-NNH
-    fips_code: ''
+    fips_code: null
     type: 'unitary authority'
     type_local: null
     level: '2'
@@ -198754,7 +198754,7 @@ state:
     country_name: 'United Kingdom'
     iso2: WNH
     iso3166_2: GB-WNH
-    fips_code: ''
+    fips_code: null
     type: 'unitary authority'
     type_local: null
     level: '2'

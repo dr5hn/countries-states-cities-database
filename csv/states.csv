@@ -208,10 +208,10 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 2030,Yerevan,12,AM,Armenia,ER,AM-ER,11,city,,3,,Yerevan,40.17771120,44.51262330,Asia/Yerevan,Q1953,
 5243,Noord,13,AW,Aruba,01,AW-01,01,region,,1,,Noord,12.56368050,-70.03298690,America/Aruba,Q2656618,24193
 5341,Oranjestad,13,AW,Aruba,09,AW-09,09,"capital city",,,,Oranjestad,12.52010240,-70.03713290,America/Aruba,Q131243,
-5245,"Oranjestad East",13,AW,Aruba,03,AW-03,03,region,,1,,"Oranjestad East",12.50226960,-70.01495860,America/Aruba,NULL,
+5245,"Oranjestad East",13,AW,Aruba,03,AW-03,03,region,,1,,"Oranjestad East",12.50226960,-70.01495860,America/Aruba,,
 5244,"Oranjestad West",13,AW,Aruba,02,AW-02,02,region,,1,,"Oranjestad West",12.53614860,-70.04305970,America/Aruba,Q85791119,13976
 5246,Paradera,13,AW,Aruba,04,AW-04,04,region,,1,,Paradera,12.53628710,-70.01485110,America/Aruba,Q14217403,13834
-5247,"San Nicolaas Noord",13,AW,Aruba,05,AW-05,05,region,,1,,"San Nicolaas Noord",12.46427170,-69.94349390,America/Aruba,NULL,
+5247,"San Nicolaas Noord",13,AW,Aruba,05,AW-05,05,region,,1,,"San Nicolaas Noord",12.46427170,-69.94349390,America/Aruba,,
 5248,"San Nicolaas Zuid",13,AW,Aruba,06,AW-06,06,region,,1,,"San Nicolaas Zuid",12.42785580,-69.93810790,America/Aruba,Q2605285,
 5249,"Santa Cruz",13,AW,Aruba,07,AW-07,07,region,,1,,"Santa Cruz",12.51128360,-69.98769660,America/Aruba,Q3558364,
 5250,Savaneta,13,AW,Aruba,08,AW-08,08,region,,1,,Savaneta,12.45263850,-69.94965210,America/Aruba,Q2665720,11955
@@ -1313,7 +1313,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 4969,Allier,75,FR,France,03,FR-03,,"metropolitan department",,2,4798,Allier,46.36746410,3.16388280,Europe/Paris,Q3113,334715
 4970,Alpes-de-Haute-Provence,75,FR,France,04,FR-04,,"metropolitan department",,2,4812,Alpes-de-Haute-Provence,44.16408320,6.18785150,Europe/Paris,Q3131,167179
 4972,Alpes-Maritimes,75,FR,France,06,FR-06,,"metropolitan department",,2,4812,Alpes-Maritimes,43.94199960,7.02026550,Europe/Paris,Q3139,1114579
-4811,Alsace,75,FR,France,6AE,FR-6AE,C1,"European collectivity",,1,,Alsace,48.00987120,7.58750210,Europe/Paris,Q1142,1919745
+4811,Alsace,75,FR,France,6AE,FR-6AE,C1,"European collectivity",,2,4820,Alsace,48.00987120,7.58750210,Europe/Paris,Q1142,1919745
 4973,Ardèche,75,FR,France,07,FR-07,,"metropolitan department",,2,4798,Ardèche,44.81519400,4.39865250,Europe/Paris,Q3148,333229
 4974,Ardennes,75,FR,France,08,FR-08,,"metropolitan department",,2,4820,Ardennes,49.69801170,4.67160050,Europe/Paris,Q3164,
 4975,Ariège,75,FR,France,09,FR-09,,"metropolitan department",,2,4799,Ariège,42.94553680,1.40655440,Europe/Paris,Q3184,
@@ -1948,7 +1948,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 1090,Kilkenny,105,IE,Ireland,KK,IE-KK,13,county,,1,1073,Kilkenny,52.56870980,-7.18898310,Europe/Dublin,Q180231,
 1096,Laois,105,IE,Ireland,LS,IE-LS,15,county,,1,1073,Laois,52.99845750,-7.39803380,Europe/Dublin,Q55299,91657
 1073,Leinster,105,IE,Ireland,L,IE-L,L,province,,,,Leinster,53.11846500,-6.99181830,Europe/Dublin,Q159736,2870354
-5345,Leitrim,105,IE,Ireland,LM,IE-LM,NULL,county,,1,1087,Leitrim,54.14016220,-8.05247820,Europe/Dublin,Q107397,
+5345,Leitrim,105,IE,Ireland,LM,IE-LM,,county,,1,1087,Leitrim,54.14016220,-8.05247820,Europe/Dublin,Q107397,
 1094,Limerick,105,IE,Ireland,LK,IE-LK,16,county,,1,1080,Limerick,52.51883160,-8.79583470,Europe/Dublin,Q178283,102287
 1076,Longford,105,IE,Ireland,LD,IE-LD,18,county,,1,1073,Longford,53.72749820,-7.79315270,Europe/Dublin,Q186220,
 1083,Louth,105,IE,Ireland,LH,IE-LH,19,county,,1,1073,Louth,53.90628480,-6.53205020,Europe/Dublin,Q183539,
@@ -2524,7 +2524,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 3103,Mulanje,131,MW,Malawi,MU,MW-MU,29,district,,1,3106,Poporary,-15.91088000,35.54125500,Africa/Blantyre,Q509097,14782
 3084,Mwanza,131,MW,Malawi,MW,MW-MW,25,district,,1,3106,Mwanza,-15.61360310,34.51465950,Africa/Blantyre,Q797933,
 3104,Mzimba,131,MW,Malawi,MZ,MW-MZ,15,district,,1,3105,Immoral,-11.84581020,33.55783190,Africa/Blantyre,Q1045435,936250
-5347,Neno,131,MW,Malawi,NE,MW-NE,NULL,district,,1,3106,"The word",-15.51371830,34.68322050,Africa/Blantyre,Q1195298,
+5347,Neno,131,MW,Malawi,NE,MW-NE,,district,,1,3106,"The word",-15.51371830,34.68322050,Africa/Blantyre,Q1195298,
 3095,"Nkhata Bay",131,MW,Malawi,NB,MW-NB,17,district,,1,3105,Correas,-11.60699500,34.29839070,Africa/Blantyre,Q1051505,14274
 3100,Nkhotakota,131,MW,Malawi,NK,MW-NK,18,district,,1,3092,Blast,-12.83219650,34.03291770,Africa/Blantyre,Q687248,28350
 3105,Northern,131,MW,Malawi,N,MW-N,N,region,,,,Northern,-11.04916520,33.77302610,Africa/Blantyre,Q868827,
@@ -2842,7 +2842,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 1980,Selenge,146,MN,Mongolia,049,MN-049,16,province,,1,,Сэлэнгэ,49.39101360,107.06290340,Asia/Choibalsan,Q234680,
 1977,Sükhbaatar,146,MN,Mongolia,051,MN-051,17,province,,1,,Сүхбаатар,46.20934170,113.50771960,Asia/Choibalsan,Q244804,
 1968,Töv,146,MN,Mongolia,047,MN-047,18,province,,1,,Төв,47.46925380,106.55251610,Asia/Choibalsan,Q276195,94462
-5453,Ulaanbaatar,146,MN,Mongolia,001,MN-1,NULL,"capital city",,1,,Улаанбаатар,47.91846760,106.91770160,Asia/Choibalsan,Q23430,
+5453,Ulaanbaatar,146,MN,Mongolia,001,MN-1,,"capital city",,1,,Улаанбаатар,47.91846760,106.91770160,Asia/Choibalsan,Q23430,
 1971,Uvs,146,MN,Mongolia,046,MN-046,19,province,,1,,Увс,49.63138870,92.95581860,Asia/Hovd,Q192942,82604
 1979,Zavkhan,146,MN,Mongolia,057,MN-057,09,province,,1,,Завхан,48.31333550,96.28505060,Asia/Ulaanbaatar,Q167764,
 23,Andrijevica,147,ME,Montenegro,01,ME-01,01,municipality,,,,Андријевица,42.73624770,19.78595560,Europe/Podgorica,Q2384773,
@@ -4720,7 +4720,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 441,Budaka,229,UG,Uganda,217,UG-217,40,district,,1,372,Budak,1.06581900,34.02089310,Africa/Kampala,Q1362085,
 349,Bududa,229,UG,Uganda,218,UG-218,84,district,,1,372,Bududa,1.02718130,34.39078450,Africa/Kampala,Q1365449,8700
 387,Bugiri,229,UG,Uganda,201,UG-201,66,district,,1,372,Bugiri,0.52072100,33.77506980,Africa/Kampala,Q1229798,31819
-5350,Bugweri,229,UG,Uganda,235,UG-235,NULL,district,,1,372,Bugwy,0.62425640,33.61543830,Africa/Kampala,Q60769694,
+5350,Bugweri,229,UG,Uganda,235,UG-235,,district,,1,372,Bugwy,0.62425640,33.61543830,Africa/Kampala,Q60769694,
 391,Buhweju,229,UG,Uganda,420,UG-420,66,district,,1,370,Buhwe,-0.32032120,30.31620540,Africa/Kampala,Q3537661,
 377,Buikwe,229,UG,Uganda,117,UG-117,82,district,,1,396,"It has been given",0.34057740,33.01077280,Africa/Kampala,Q3321631,18500
 343,Bukedea,229,UG,Uganda,219,UG-219,47,district,,1,372,Boule,1.37070480,34.14247620,Africa/Kampala,Q1375812,13900
@@ -4742,7 +4742,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 372,Eastern,229,UG,Uganda,E,UG-E,E,region,,,,Eastern,0.42323000,33.17126510,Africa/Kampala,Q2559220,
 366,Gomba,229,UG,Uganda,121,UG-121,72,district,,1,396,Mushroom,0.20426630,31.72917720,Africa/Kampala,Q3321637,3011
 413,Gulu,229,UG,Uganda,304,UG-304,30,district,,1,332,Cavalry,2.77023900,32.30442730,Africa/Kampala,Q1028215,233271
-5358,Hoima,229,UG,Uganda,403,UG-403,NULL,district,,1,370,Hoima,1.56619270,31.14809680,Africa/Kampala,Q1186535,143304
+5358,Hoima,229,UG,Uganda,403,UG-403,,district,,1,370,Hoima,1.56619270,31.14809680,Africa/Kampala,Q1186535,143304
 339,Ibanda,229,UG,Uganda,417,UG-417,80,district,,1,370,Ibanda,-0.06121830,30.49161600,Africa/Kampala,Q1318877,126088
 340,Iganga,229,UG,Uganda,203,UG-203,78,district,,1,372,Iganga,0.72219110,33.50169350,Africa/Kampala,Q1229869,56381
 383,Isingiro,229,UG,Uganda,418,UG-418,37,district,,1,370,Isingiro,-0.83886950,30.93565590,Africa/Kampala,Q1318887,39957
@@ -4753,7 +4753,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 336,Kaberamaido,229,UG,Uganda,213,UG-213,80,district,,1,372,Kaberamaido,1.68796740,33.11748880,Africa/Kampala,Q1229906,3400
 403,Kagadi,229,UG,Uganda,427,UG-427,85,district,,1,370,Kagadi,1.02297720,30.83308910,Africa/Kampala,Q38249484,31602
 399,Kakumiro,229,UG,Uganda,428,UG-428,C,district,,1,370,Kakumiro,0.96249320,31.29037890,Africa/Kampala,Q38249480,
-5352,Kalaki,229,UG,Uganda,237,UG-237,NULL,district,,1,372,Kalaki,1.83271640,33.35404480,Africa/Kampala,Q104037541,
+5352,Kalaki,229,UG,Uganda,237,UG-237,,district,,1,372,Kalaki,1.83271640,33.35404480,Africa/Kampala,Q104037541,
 405,Kalangala,229,UG,Uganda,101,UG-101,36,district,,1,396,Kalangala,-0.61419080,32.37556500,Africa/Kampala,Q867219,5200
 398,Kaliro,229,UG,Uganda,222,UG-222,C,district,,1,372,Kaliro,1.08336770,33.48221710,Africa/Kampala,Q1375859,16796
 394,Kalungu,229,UG,Uganda,122,UG-122,91,district,,1,396,Kalungu,-0.09131310,31.81064650,Africa/Kampala,Q3321614,
@@ -4762,27 +4762,27 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 360,Kamwenge,229,UG,Uganda,413,UG-413,81,district,,1,370,Kamwenge,0.33733170,30.61505550,Africa/Kampala,Q1318806,19240
 373,Kanungu,229,UG,Uganda,414,UG-414,82,district,,1,370,Kanungu,-0.70639140,29.71429070,Africa/Kampala,Q1032245,15056
 432,Kapchorwa,229,UG,Uganda,206,UG-206,39,district,,1,372,Kapchorwa,1.33502050,34.39763560,Africa/Kampala,Q1229921,54520
-5351,Kapelebyong,229,UG,Uganda,236,UG-236,NULL,district,,1,372,Kapelebong,2.19708200,33.77726330,Africa/Kampala,Q60769698,
-5355,Karenga,229,UG,Uganda,335,UG-335,NULL,district,,1,332,Karenga,3.70956830,33.77168320,Africa/Kampala,Q97487774,
-5349,Kasanda,229,UG,Uganda,126,UG-126,NULL,district,,1,396,Kasanda,0.55666700,31.80222200,Africa/Kampala,Q38249546,
+5351,Kapelebyong,229,UG,Uganda,236,UG-236,,district,,1,372,Kapelebong,2.19708200,33.77726330,Africa/Kampala,Q60769698,
+5355,Karenga,229,UG,Uganda,335,UG-335,,district,,1,332,Karenga,3.70956830,33.77168320,Africa/Kampala,Q97487774,
+5349,Kasanda,229,UG,Uganda,126,UG-126,,district,,1,396,Kasanda,0.55666700,31.80222200,Africa/Kampala,Q38249546,
 440,Kasese,229,UG,Uganda,406,UG-406,40,district,,1,370,Kasese,0.13104120,30.00479680,Africa/Kampala,Q1229919,101057
 420,Katakwi,229,UG,Uganda,207,UG-207,69,district,,1,372,Katakwi,1.97310300,34.06414190,Africa/Kampala,Q1229930,9100
 368,Kayunga,229,UG,Uganda,112,UG-112,83,district,,1,396,Kayunga,0.98601820,32.85357550,Africa/Kampala,Q1207391,30000
-5360,Kazo,229,UG,Uganda,433,UG-433,NULL,district,,1,370,"A tree",0.02560550,30.77762000,Africa/Kampala,Q97487775,
+5360,Kazo,229,UG,Uganda,433,UG-433,,district,,1,370,"A tree",0.02560550,30.77762000,Africa/Kampala,Q97487775,
 436,Kibaale,229,UG,Uganda,407,UG-407,41,district,,1,370,Kibaale,0.79083300,31.06333300,Africa/Kampala,Q604966,7600
 347,Kiboga,229,UG,Uganda,103,UG-103,42,district,,1,396,Kiboga,0.91485180,31.75089580,Africa/Kampala,Q892064,22400
 338,Kibuku,229,UG,Uganda,227,UG-227,80,district,,1,372,Kibuku,1.05737540,33.80561520,Africa/Kampala,Q1114885,25000
-5359,Kikuube,229,UG,Uganda,432,UG-432,NULL,district,,1,370,"It's 100%",1.31028750,31.00017240,Africa/Kampala,Q60769700,18100
+5359,Kikuube,229,UG,Uganda,432,UG-432,,district,,1,370,"It's 100%",1.31028750,31.00017240,Africa/Kampala,Q60769700,18100
 355,Kiruhura,229,UG,Uganda,419,UG-419,50,district,,1,370,KirUhura,-0.32509080,30.87345990,Africa/Kampala,Q1318865,6900
 346,Kiryandongo,229,UG,Uganda,421,UG-421,47,district,,1,370,Kiryandongo,1.99357990,32.04981790,Africa/Kampala,Q3539116,58489
 409,Kisoro,229,UG,Uganda,408,UG-408,43,district,,1,370,Kisoro,-1.19896120,29.67169750,Africa/Kampala,Q580538,17561
-5361,Kitagwenda,229,UG,Uganda,434,UG-434,NULL,district,,1,370,Kitagwenda,0.01366530,30.32179080,Africa/Kampala,Q85774640,
+5361,Kitagwenda,229,UG,Uganda,434,UG-434,,district,,1,370,Kitagwenda,0.01366530,30.32179080,Africa/Kampala,Q85774640,
 348,Kitgum,229,UG,Uganda,305,UG-305,84,district,,1,332,Kitgum,3.44388450,33.48411720,Africa/Kampala,Q500162,50166
 345,Koboko,229,UG,Uganda,319,UG-319,47,district,,1,332,Koboko,3.53511140,30.98482070,Africa/Kampala,Q1318857,67727
 401,Kole,229,UG,Uganda,325,UG-325,C,district,,1,332,Kole,2.29881580,32.73595220,Africa/Kampala,Q3539151,
 443,Kotido,229,UG,Uganda,306,UG-306,45,district,,1,332,Cotido,2.99518390,34.03421280,Africa/Kampala,Q1318843,53888
 425,Kumi,229,UG,Uganda,208,UG-208,46,district,,1,372,Kumi,1.45654010,33.92191270,Africa/Kampala,Q1151062,
-5353,Kwania,229,UG,Uganda,333,UG-333,NULL,district,,1,332,For,1.90055310,32.77419860,Africa/Kampala,Q60769699,
+5353,Kwania,229,UG,Uganda,333,UG-333,,district,,1,332,For,1.90055310,32.77419860,Africa/Kampala,Q60769699,
 369,Kween,229,UG,Uganda,228,UG-228,83,district,,1,372,Kween,1.35166490,34.56358070,Africa/Kampala,Q3321998,
 325,Kyankwanzi,229,UG,Uganda,123,UG-123,93,district,,1,396,Clean,1.09334700,31.68139240,Africa/Kampala,Q534203,
 437,Kyegegwa,229,UG,Uganda,422,UG-422,41,district,,1,370,Kyegegwa,0.48221320,31.00020480,Africa/Kampala,Q3539256,29400
@@ -4794,7 +4794,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 433,Luwero,229,UG,Uganda,104,UG-104,70,district,,1,396,Seaweed,0.84093560,32.49352730,Africa/Kampala,Q1364817,73644
 417,Lwengo,229,UG,Uganda,124,UG-124,52,district,,1,396,Lwengo,-0.44411810,31.39901870,Africa/Kampala,Q1114954,15527
 376,Lyantonde,229,UG,Uganda,114,UG-114,82,district,,1,396,Lyantonde,-0.25959830,31.18363760,Africa/Kampala,Q1375878,16300
-5356,Madi-Okollo,229,UG,Uganda,336,UG-336,NULL,district,,1,332,Madi-Ooklo,2.86745110,31.23830880,Africa/Kampala,Q97487779,164200
+5356,Madi-Okollo,229,UG,Uganda,336,UG-336,,district,,1,332,Madi-Ooklo,2.86745110,31.23830880,Africa/Kampala,Q97487779,164200
 438,Manafwa,229,UG,Uganda,223,UG-223,41,district,,1,372,Inhanish,0.88134680,34.26955070,Africa/Kampala,Q1375789,16000
 421,Maracha,229,UG,Uganda,320,UG-320,69,district,,1,332,Maracha,3.24784170,30.92791480,Africa/Kampala,Q588927,
 356,Masaka,229,UG,Uganda,105,UG-105,71,district,,1,396,Masaka,-0.48314200,31.83188950,Africa/Kampala,Q1032233,285509
@@ -4809,7 +4809,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 327,Mpigi,229,UG,Uganda,106,UG-106,89,district,,1,396,Mpigi,0.12739550,32.25275170,Africa/Kampala,Q1362109,48461
 371,Mubende,229,UG,Uganda,107,UG-107,56,district,,1,396,"The Valley",0.51542790,31.40954760,Africa/Kampala,Q891962,103473
 410,Mukono,229,UG,Uganda,108,UG-108,90,district,,1,396,Mukono,0.36089910,32.74465990,Africa/Kampala,Q1151066,305945
-5354,Nabilatuk,229,UG,Uganda,334,UG-334,NULL,district,,1,332,Nabilatuk,2.03836660,34.58471250,Africa/Kampala,Q60766910,
+5354,Nabilatuk,229,UG,Uganda,334,UG-334,,district,,1,332,Nabilatuk,2.03836660,34.58471250,Africa/Kampala,Q60766910,
 393,Nakapiripirit,229,UG,Uganda,311,UG-311,91,district,,1,332,"Nakapiripirit Nakapiripirit",1.84899130,34.64254780,Africa/Kampala,Q1375853,3727
 423,Nakaseke,229,UG,Uganda,116,UG-116,69,district,,1,396,Nakaseke,1.00223730,32.17580870,Africa/Kampala,Q432438,8600
 406,Nakasongola,229,UG,Uganda,109,UG-109,73,district,,1,396,Nakasongola,1.32043580,32.48943470,Africa/Kampala,Q976859,11700
@@ -4823,7 +4823,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 422,Ntoroko,229,UG,Uganda,424,UG-424,69,district,,1,370,Nghoroko,0.99157400,30.38495720,Africa/Kampala,Q3539547,
 404,Ntungamo,229,UG,Uganda,411,UG-411,59,district,,1,370,Ntungamo,-0.95509300,30.30239280,Africa/Kampala,Q204642,18854
 378,Nwoya,229,UG,Uganda,328,UG-328,82,district,,1,332,Nwoya,2.52762480,31.87003560,Africa/Kampala,Q3539572,4295
-5357,Obongi,229,UG,Uganda,337,UG-337,NULL,district,,1,332,"You are right",3.36355940,31.53682640,Africa/Kampala,Q97160187,
+5357,Obongi,229,UG,Uganda,337,UG-337,,district,,1,332,"You are right",3.36355940,31.53682640,Africa/Kampala,Q97160187,
 374,Omoro,229,UG,Uganda,331,UG-331,82,district,,1,332,Omoro,2.64434480,32.49753420,Africa/Kampala,Q38249597,
 390,Otuke,229,UG,Uganda,329,UG-329,66,district,,1,332,Otuke,2.47843340,33.39335630,Africa/Kampala,Q3539602,
 397,Oyam,229,UG,Uganda,321,UG-321,C,district,,1,332,Oyam,2.34893450,32.42338600,Africa/Kampala,Q1318833,
@@ -4835,7 +4835,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 442,Rubirizi,229,UG,Uganda,425,UG-425,40,district,,1,370,Rubirizi,-0.25579130,29.93650000,Africa/Kampala,Q3539648,8204
 331,Rukiga,229,UG,Uganda,431,UG-431,97,district,,1,370,Rukiga,-1.14548070,30.05248500,Africa/Kampala,Q38249615,
 324,Rukungiri,229,UG,Uganda,412,UG-412,93,district,,1,370,Rukungiri,-0.69740300,29.89173640,Africa/Kampala,Q289419,43529
-5362,Rwampara,229,UG,Uganda,435,UG-435,NULL,district,,1,370,Rwampara,-0.73503090,30.46091310,Africa/Kampala,Q85798241,
+5362,Rwampara,229,UG,Uganda,435,UG-435,,district,,1,370,Rwampara,-0.73503090,30.46091310,Africa/Kampala,Q85798241,
 427,Sembabule,229,UG,Uganda,111,UG-111,74,district,,1,396,Sembabule,-0.05367920,31.41014590,Africa/Kampala,Q976883,7800
 333,Serere,229,UG,Uganda,232,UG-232,N,district,,1,372,Serene,1.49169890,33.35683680,Africa/Kampala,Q1114927,12700
 407,Sheema,229,UG,Uganda,426,UG-426,73,district,,1,370,Sheema,-0.59187200,30.37404170,Africa/Kampala,Q3539711,98594
