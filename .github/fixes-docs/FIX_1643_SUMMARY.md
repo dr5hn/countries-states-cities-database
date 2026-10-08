@@ -65533,3 +65533,38 @@ Bagenalstown/Muinebeag) and one Czech settlement part. Only `state_id` and `stat
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Cities moved to their smallest ISO unit, round 2
+
+### Problem
+After #1777, 1,277 cities in eleven more countries still pointed to a state that has ISO units below it.
+
+### Fix
+483 cities get the smallest unit's `state_id` and `state_code`, each from the national register with the record's own
+Wikidata code where it has one (else the exact registered name within the old parent), and checked inside the official
+boundary. Philippine highly urbanized and independent component cities belong to no province, so they stay on their
+region. Only `state_id` and `state_code` change.
+
+| Country | Move | In a parent unit | Moved | Held in the parent | Register |
+|---|---|---:|---:|---:|---|
+| PH | region -> province | 575 | 273 | 302 | PSA PSGC (30 June 2026) and NAMRIA/PSA boundaries |
+| GR | region -> regional unit (Achaea, East Attica) | 231 | 55 | 176 | ELSTAT 2021 census settlements and boundaries |
+| MA | region -> province | 125 | 65 | 60 | HCP RGPH 2024 communes, HCP province boundaries |
+| UG | region -> district | 91 | 18 | 73 | UBOS NPHC 2024 districts and subcounties |
+| LK | province -> district | 90 | 31 | 59 | DCS census 2024 units and Survey Department DSD/GND boundaries |
+| MW | region -> district | 61 | 25 | 36 | NSO 2018 census urban areas and bomas |
+| GN | region -> prefecture | 52 | 0 | 52 | INS list only; no official boundaries obtained |
+| FJ | division -> province | 20 | 6 | 14 | FBoS 2017 census towns and province boundaries |
+| AZ | economic region -> district | 17 | 0 | 17 | State Statistical Committee classifier; no official boundaries obtained |
+| LT | county -> municipality | 12 | 9 | 3 | Registrų centras address register, GISCO municipality boundaries |
+| BD | division -> district | 3 | 1 | 2 | BBS district capitals and district boundaries |
+
+Held: namesakes, names with no registered match, points outside the matched unit, codes no longer current, and records
+that are administrative units. Guinea and Azerbaijan are held entirely: their official registers list the units with
+codes, but no official georeferenced boundaries were obtained to check each point. ELSTAT's geographic services are for
+statistical and research use and do not prove administrative borders; this change uses their census membership and
+statistical geography within those limits. Review added 39 places the first pass held, such as Patras and Aigio in Achaea,
+Marathon and Lavrio in East Attica, and Philippine component cities such as Batac and Marawi.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
