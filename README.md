@@ -4,7 +4,7 @@
 
 # Countries States Cities Database
 
-A comprehensive, community-maintained dataset of **countries, states, counties, cities, and postcodes** — published in 14 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
+A comprehensive, community-maintained dataset of **countries, states, counties, cities, and postcodes** — published in 12 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
 
 [![License: ODbL-1.0](https://img.shields.io/badge/License-ODbL--1.0-brightgreen.svg?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dr5hn/countries-states-cities-database.svg?style=flat-square)](https://github.com/dr5hn/countries-states-cities-database/stargazers)
@@ -126,7 +126,7 @@ curl -LO https://github.com/dr5hn/countries-states-cities-database/releases/late
 gunzip json-counties.json.gz
 ```
 
-Smaller reference files (countries, states, schema) live in the repo. Use `git clone --depth 1` for a fast clone.
+Smaller reference files (countries, states, counties, schema) live in the repo. Use `git clone --depth 1` for a fast clone.
 
 </details>
 
@@ -149,7 +149,7 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
-- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON), Parquet (columnar, analytics-ready), PLIST, DuckDB
+- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON), Parquet (columnar, analytics-ready)
 
 | Format | Export time | Size | Compressed |
 |---|---:|---:|---:|

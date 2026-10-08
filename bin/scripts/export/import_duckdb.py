@@ -18,7 +18,9 @@ import os
 from datetime import datetime
 try:
     import pandas as pd
+    import inflect
     PANDAS_AVAILABLE = True
+    p = inflect.engine()
 except ImportError:
     PANDAS_AVAILABLE = False
 
@@ -214,18 +216,7 @@ def convert_basic(args, sqlite_conn, duck_conn):
         if converted_rows:
             placeholders = ', '.join(['?' for _ in column_names])
             insert_sql = f"INSERT INTO {table_name} VALUES ({placeholders})"
-            if PANDAS_AVAILABLE:
-                # DuckDB's native dataframe scan inserts large tables in one operation.
-                df = pd.DataFrame(converted_rows, columns=column_names, dtype=object)
-                duck_conn.execute(f"INSERT INTO {table_name} SELECT * FROM df")
-            else:
-                duck_conn.execute("BEGIN TRANSACTION")
-                try:
-                    duck_conn.executemany(insert_sql, converted_rows)
-                    duck_conn.execute("COMMIT")
-                except Exception:
-                    duck_conn.execute("ROLLBACK")
-                    raise
+            duck_conn.executemany(insert_sql, converted_rows)
         
         # Verify
         count = duck_conn.execute(f"SELECT COUNT(*) FROM {table_name}").fetchone()[0]
@@ -252,7 +243,7 @@ def main():
     parser.add_argument('--global-ids', action='store_true', 
                        help='Use global sequence IDs (WikiData-like) with proper foreign key mapping')
     parser.add_argument('--enhanced', action='store_true',
-                       help='Use enhanced conversion with pandas (requires pandas)')
+                       help='Use enhanced conversion with pandas (requires pandas and inflect)')
     parser.add_argument('--output', default='./duckdb/world.db', help='Output DuckDB path')
     parser.add_argument('--input', default='./sqlite/world.sqlite3', help='Input SQLite path')
     
