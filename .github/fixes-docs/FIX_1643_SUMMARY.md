@@ -55421,3 +55421,42 @@ Revert the PR (squash commit).
 ### Files Changed
 - `contributions/cities/*.json` - 44 records: wikiDataId "" -> null
 - `contributions/states/states.json` - 38 records: fips_code "" -> null
+
+## France, phase 1: official administrative structure
+
+### Problem
+French cities carried generic types (`city`, `adm1`-`adm5`, `section`) and no level, and the arrondissement between
+the département and the commune was missing, so the country's structure could not be read from the data
+(ADMINISTRATIVE_STRUCTURE.md, #1750).
+
+### Fix
+Every FR city record was matched to the official INSEE COG 2026 commune list by name, département and a point within
+10 km (Paris and the Lyon metropolis through the COG CTCD column); 9,734 matched exactly one current commune and now
+read `type` municipality, `type_local` commune, `level` 4.
+The 333 current arrondissements are added to the new `contributions/counties/FR.json` (type administrative district,
+type_local arrondissement, level 3, named as INSEE does, e.g. Arrondissement de Strasbourg), each with its Wikidata
+item (INSEE arrondissement code, P3423), translations from that item and a point that is the mean of its member
+communes' CSC points (for Istres, Die, Condom and Pamiers, where that mean falls outside the arrondissement's IGN
+outline, the seat commune's point). Alsace (European collectivity, FR-6AE) moves from level 1 to 2 under Grand-Est. Names, points,
+ids and Wikidata items of existing cities are unchanged.
+
+Held (801 FR records, listed in the audit files): 376 match a commune déléguée or associée that has no point of its
+own, 369 have no commune of that name in their département, 31 are more than 10 km from the commune, 24 are a former
+commune or commune déléguée whose code a commune nouvelle now reuses (their record and Wikidata item are the old
+commune, e.g. Bazeilles, Confolens, Pontorson), 1 (Nouméa) belongs to New Caledonia's register.
+
+A Codex review re-ran the match independently, checked 488 identity candidates, screened all 324 matched commune
+codes affected by a merger since 2010, and checked all 333 arrondissement points against government commune
+polygons (the four exceptions against IGN outlines); its findings are applied: the 24 former communes held, the 19 Paris and Lyon
+metropolis communes added, 4 arrondissement points moved inside, 12 Persian labels restored to their exact form. Cities get their `county_id` (the arrondissement) once counties have ids in
+MySQL (#1303 phase 2b).
+
+Source: Insee, COG 2026 (1 January 2026), Licence Ouverte 2.0.
+
+### Rollback
+Revert the PR (squash commit). No existing `id` changes; the 333 county records have no id yet.
+
+### Files Changed
+- `contributions/cities/FR.json` - 9,734 records: type, type_local, level
+- `contributions/counties/FR.json` - new: 333 arrondissements
+- `contributions/states/states.json` - Alsace: level and parent_id
