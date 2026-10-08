@@ -158,7 +158,7 @@ Shared utilities in `utils.js`: schema definitions, `loadRepoData()` (tries `con
 - `id` - OMIT for new records (MySQL AUTO_INCREMENT)
 - `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude` - REQUIRED
 - `timezone` (IANA), `wikiDataId` - Optional
-- `type`, `type_local`, `level`, `parent_id` - Optional; follow [ADMINISTRATIVE_STRUCTURE.md](../ADMINISTRATIVE_STRUCTURE.md) (state = smallest ISO 3166-2 unit; units between state and city are city records)
+- `type`, `type_local`, `level`, `parent_id` - Optional; follow [ADMINISTRATIVE_STRUCTURE.md](../ADMINISTRATIVE_STRUCTURE.md) (state = smallest ISO 3166-2 unit; units between state and city go in `contributions/counties/`)
 - `created_at`, `updated_at`, `flag` - OMIT (auto-managed by MySQL)
 
 ### Finding Foreign Keys

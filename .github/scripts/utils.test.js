@@ -109,3 +109,11 @@ test('an over-long type_local is flagged', () => {
   };
   assert.match(validateRecord(city, 'cities', 0).warnings.join('\n'), /type_local.*191/);
 });
+
+test('type_local is a known optional field on counties', () => {
+  const county = {
+    name: 'Arrondissement de Strasbourg', state_id: 5035, state_code: '67', country_id: 75, country_code: 'FR',
+    latitude: '48.58', longitude: '7.75', type: 'administrative district', type_local: 'arrondissement', level: 3,
+  };
+  assert.deepEqual(validateRecord(county, 'counties', 0), { errors: [], warnings: [] });
+});

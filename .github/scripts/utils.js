@@ -85,7 +85,7 @@ const SCHEMA = {
   counties: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
     optional: [
-      'type', 'native', 'level', 'parent_id', 'population', 'timezone',
+      'type', 'type_local', 'native', 'level', 'parent_id', 'population', 'timezone',
       'translations', 'state_name', 'country_name', 'wikiDataId',
     ],
     rules: {
@@ -95,6 +95,7 @@ const SCHEMA = {
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
       type: { type: 'string', maxLength: 32 },
+      type_local: { type: 'string', maxLength: 191 },
       latitude: { type: 'coordinate', min: -90, max: 90 },
       longitude: { type: 'coordinate', min: -180, max: 180 },
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
