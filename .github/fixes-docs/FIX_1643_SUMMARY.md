@@ -55641,3 +55641,35 @@ Revert the PR (squash commit); `county_id` is optional.
 
 ### Files Changed
 - `contributions/cities/FR.json` - 9716 records: county_id
+
+## Italy: official administrative structure
+
+### Problem
+Italian cities carried generic types (`adm3` for most comuni, `city` for many settlements) and no level, and states had
+no Italian category, so the country's structure could not be read from the data (ADMINISTRATIVE_STRUCTURE.md, #1750).
+
+### Fix
+Every IT city record was matched to the ISTAT register of comuni (21 February 2026) by exact name (including
+bilingual forms), province and a point inside or within 2 km of the comune's January 2026 boundary; comuni merged since
+2010 were held rather than matched to their successor. 7,364 records (covering 7,362 distinct comuni) matched exactly one current comune and now read
+`type` municipality, `type_local` comune, `level` 3 (their parent is their province, already their state).
+1,926 records that are not comuni matched exactly one 2021 census locality within 2 km (1,901 centri
+abitati, 24 nuclei abitati, 1 località produttiva): `type` locality, `type_local` the ISTAT category,
+`level` 4, and `parent_id` = the CSC record of their comune where exactly one exists (1,445). 129 states gain their
+Italian category in `type_local` (provincia 82, regione 15, città metropolitana 15, libero consorzio comunale 6, regione autonoma 5, ente di decentramento regionale 4, provincia autonoma 2); their levels and parents were already right. Names, points, ids and
+Wikidata items are unchanged.
+
+Held (566): 77 records whose own Wikidata item is a settlement or frazione of the comune, a province or a former
+comune (found by the Codex review: same name and inside the boundary, but not the comune itself), 284 former
+comuni merged since 2010, 145 with no exact name in their province, and the rest for points
+outside the 2 km rule, several candidate localities, or boundary changes after January. 2 comuni still have two CSC
+records; both are typed and the pairs are listed for a duplicate merge.
+
+Source: ISTAT (CC BY 4.0): comuni register 21 Feb 2026, boundaries 1 Jan 2026, census localities 2021.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
+
+### Files Changed
+- `contributions/cities/IT.json` - 9,290 records: type, type_local, level, parent_id
+- `contributions/states/states.json` - 129 records: type_local
