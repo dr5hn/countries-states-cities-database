@@ -55480,3 +55480,142 @@ Revert the PR (squash commit).
 - `contributions/states/states.json` - 19 values
 - `contributions/cities/PH.json`, `contributions/cities/SA.json` - 1 value each
 - `contributions/postcodes/IN.json`, `contributions/postcodes/BD.json` - 1 locality_name each
+
+## Names round 3: 40 official renames and one identity correction
+
+### Problem
+52 city records were candidates for an official rename (Grahamstown, Port Blair, Kapshagay, Squaw Valley…):
+when translations were rebuilt (#1743, #1746) their own Wikidata item no longer had the record's name as a label.
+41 updates are supported (40 official renames and one town-identity correction, Nishon Tumani → Yangi Nishon);
+11 are held.
+
+### Fix
+Each rename was read in its act (law, decree, gazette notice or registry; for five, marked below, the act text was
+unreachable and the best official source was used instead, e.g. for Makhan Nagar the parliamentary answer recording the
+no-objection, with the state notification known from a contemporary report) and the record was confirmed to be that place, not a merged or split unit.
+`name` takes the official current name in the country's usual romanisation, `native` the official local name, and
+translations follow the approved rule: the label of the record's own Wikidata item, else the new name for Latin-script
+languages; Latin-script values that still named the old place follow the new name, as in #1711 (exact repeats, and
+variant spellings or exonyms of the old name such as Kapchagay, Ordschonikidse or Grahamstad, where the Wikidata label
+in that language is stale). Two own-item labels were rejected as defects in Wikidata and the
+master value kept: Khutir-Mykhailivskyi `ar` (the label adds the Bulgarian "Blagoevgrad") and Bokhtar `br` (the label
+"Bokhtat" is a typo; the Breton article is Bokhtar). In all, 41 names, 39 natives and 300 translation values change
+in 18 country files. Points, states, ids and Wikidata items are unchanged.
+
+| id | Old name | New name | Act |
+| --- | --- | --- | --- |
+| 696 | Berón de Astrada | San Antonio de Itatí | [Corrientes Law 6255, 19 December 2013](https://www.senadoctes.gov.ar/normativas/leyes/6255.pdf) |
+| 8132 | Prishibinskoye | Göytəpə | [Azerbaijan Decision 112, 29 April 1992](https://frameworks.e-qanun.az/7/f_7037.html) |
+| 21796 | Valverde Vega | Sarchí | [Costa Rica Law 9658; effective 7 August 2019](https://www.imprentanacional.go.cr/pub/2019/08/07/ALCA176_07_08_2019.pdf) |
+| 37066 | Santa Maria de Corcó | L'Esquirol | [Catalonia Resolution GRI/1232/2014, 28 May 2014](https://boe.es/diario_boe/txt.php?id=BOE-A-2014-6760) |
+| 39119 | Väståboland | Pargas | [Council decision 6 September 2011; effective 1 January 2012](https://archive.today/20120917223644/http://www.vastaboland.fi/web/aktuellt/2011/sv_SE/stadens_namn_september/) (act text not reachable; secondary official source) |
+| 72418 | Nuevo Vallarta | Nuevo Nayarit | [Nayarit territorial-division decree, 8 July 2022](https://procesolegislativo.congresonayarit.gob.mx/wp-content/uploads/proceso_legislativo/ley_dec/131_PUB_DEC_REF_ART_14_LEY_DIVISION_TERRITORIAL.pdf) |
+| 76055 | Villa Vicente Guerrero | San Pablo del Monte | [Tlaxcala Decree 284; effective 20 December 2016](https://publicaciones.tlaxcala.gob.mx/indices/Ex19122016.pdf) |
+| 142181 | Antonio Escobedo | San Juanito de Escobedo | [Jalisco Decree 17112, published 27 January 1998](https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/nueva_estruc/889463909477.pdf) (act text not reachable; secondary official source) |
+| 82062 | Calolbon | San Andres | [Republic Act 3948, 18 June 1964](https://lawphil.net/statutes/repacts/ra1964/ra_3948_1964.html) |
+| 84159 | Ponot | Jose Dalman | [Batas Pambansa 381, 8 April 1983](https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/32582) |
+| 84762 | Sexmoan | Sasmuan | [Republic Act 6976, 15 January 1991](https://lawphil.net/statutes/repacts/ra1991/ra_6976_1991.html) |
+| 85317 | Wright | Paranas | [Republic Act 6681, 4 November 1988](https://lawphil.net/statutes/repacts/ra1988/ra_6681_1988.html) |
+| 144601 | Municipality of Sultan Gumander | Picong | [Muslim Mindanao Autonomy Act 175, passed 16 December 2004](https://lawphil.net/administ/mmaa/4a/mmaa_175_4a.html) |
+| 99318 | Krasnogvardeyskoye | Biryuch | [Russian Federal Law 7-FZ, 30 January 2007](https://normativ.kontur.ru/document?documentId=102179&moduleId=1) |
+| 99374 | Krasnyy Tkach | Shuvoye | [Russian Government Resolution 610, 21 August 2001](https://www.lawmix.ru/expertlaw/172108) |
+| 101609 | Staryy Urukh | Khatuyey | [Russian Government Resolution 614, 10 November 2004](https://normativ.kontur.ru/document?moduleId=1&documentId=67422) |
+| 109580 | Druzhba | Khutir-Mykhailivskyi | [Ukraine Resolution 3984-IX, 19 September 2024](https://docs.dtkt.ua/doc/3984-20) |
+| 109748 | Kirove | Tavriiske | [Ukraine Resolution 1353-VIII, 12 May 2016](https://docs.dtkt.ua/doc/1353-19) |
+| 110128 | Novohrad-Volynskyi | Zviahel | [Ukraine Resolution 2779-IX, 16 November 2022](https://docs.dtkt.ua/doc/2779-20) |
+| 110143 | Novopskov | Aidar | [Ukraine Resolution 3984-IX, 19 September 2024](https://docs.dtkt.ua/doc/3984-20) |
+| 110200 | Ordzhonikidze | Pokrov | [Ukraine Resolution 1037-VIII, 17 March 2016](https://docs.dtkt.ua/doc/1037-19) |
+| 110201 | Ordzhonikidze | Kaihador | [Ukraine Resolution 1352-VIII; Law 3334-IX commenced 7 September 2023](https://docs.dtkt.ua/doc/1352-19) |
+| 114041 | Citrus Ridge | Four Corners | [US Census Florida name-change register, 2 January 2000](https://www2.census.gov/geo/pdfs/reference/bndrychange/florida.pdf) |
+| 125445 | Rosita North | Chula Vista | [US Census 2010 Texas geographic change notes](https://www2.census.gov/library/publications/decennial/2010/cph-2/cph-2-45.pdf) |
+| 126924 | Squaw Valley | Yokuts Valley | [US BGN Domestic Names Committee 851, 12 January 2023](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/DNC%20851_Jan12%202023_Minutes.pdf) |
+| 129892 | Villa del Carmen | Ciudad del Carmen | [Uruguay Law 20043, 14 June 2022](https://www.impo.com.uy/bases/leyes/20043-2022) |
+| 131031 | Belfast | eMakhazeni | [Government Gazette 32632, Notice 978, 16 October 2009](https://www.justice.gov.za/legislation/notices/2009/20091016_GG32632_%20Notice978_namechanges.pdf) |
+| 131040 | Bochum | Senwabarwana | [SAGNC ministerially approved-name register, 8 November 2002](https://www.dsac.gov.za/sites/default/files/List%20of%20approved%20names%202016.pdf) (act text not reachable; secondary official source) |
+| 131121 | Grahamstown | Makhanda | [Government Gazette 41738, Notice 641, 29 June 2018](https://archive.opengazettes.org.za/archive/ZA/2018/government-gazette-ZA-vol-636-no-41738-dated-2018-06-29.pdf) |
+| 131259 | Somerset East | KwaNojoli | [Government Gazette 48207, Notice 3150, 10 March 2023](https://www.sagns.gov.za/portal/sharing/rest/content/items/02b0bbf2bf6f426db0e9c78f6d794b77/data) |
+| 131328 | uThungulu | King Cetshwayo District Municipality | [KwaZulu-Natal Gazette 1708, Notice 138, 28 July 2016](https://archive.opengazettes.org.za/archive/ZA-NL/2016/provincial-gazette-ZA-NL-vol-10-no-1708-dated-2016-07-28.pdf) |
+| 58103 | Babai | Makhan Nagar | [Madhya Pradesh revenue notification, reported 7 February 2022](https://www.mha.gov.in/MHA1/Par2017/pdfs/par2022-pdfs/LS-19072022/371.pdf) (act text not reachable; secondary official source) |
+| 133482 | Port Blair | Sri Vijaya Puram | [India notification U-13015/1/2018-ANL (Part-1), 13 September 2024](https://pib.gov.in/PressReleasePage.aspx?PRID=2054647) (act text not reachable; secondary official source) |
+| 150618 | Zaboli | Mehrestan | [Iran cabinet decision 1 Aban 1390 (23 October 2011)](https://farsname.ir/%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D9%85%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86/) |
+| 150919 | Zargarmahalleh | Zargar | [Iran cabinet decision 19 Khordad 1400 (9 June 2021)](https://sdil.ac.ir/%D9%85%D8%B5%D9%88%D8%A8%D8%A7%D8%AA-%D9%87%DB%8C%D8%A3%D8%AA-%D8%AF%D9%88%D9%84%D8%AA-%D8%AF%D9%87%D9%87-%D8%B3%D9%88%D9%85-%D8%AE%D8%B1%D8%AF%D8%A7%D8%AF-1400/) |
+| 65689 | Kapshagay | Qonaev | [Kazakhstan Presidential Decree 885, 3 May 2022](https://akorda.kz/ru/o-pereimenovanii-goroda-kapshagaya-almatinskoy-oblasti-v-gorod-konaev-341933) |
+| 65850 | Zyryanovsk | Altai | [Kazakhstan Presidential Decree 821, 28 December 2018](https://kazpravda.kz/uploads/redactors/files/5c2ef08ba4c7a1546580107.pdf) |
+| 106785 | Kolkhozobod | Balkh | [Tajikistan Majlisi Milli Resolution 350, 16 February 2017](https://mmih.adlia.tj/SEARCH/DocumentView?DocumentId=128923) |
+| 106810 | Qŭrghonteppa | Bokhtar | [Tajikistan Majlisi Milli Resolution 511, 16 February 2018](https://tojkiston.ucoz.ru/index/ukazy_i_postanovlenija_po_rajonu/0-5616) |
+| 106909 | Yylanly | Andalyp | [Turkmenistan Majlis resolution, 9 November 2022](https://turkmenistan.gov.tm/ru/post/67749/postanovlenie-medzhlisa-milli-gengesha-turkmenistana-8) |
+| 129962 | Nishon Tumani | Yangi Nishon | [Identity/name correction; official Nishon district registry](https://gov.uz/oz/nishontuman/guides) |
+
+Held (11): Moreland (the act renames the council area, not this suburb), Gode Zone, Hāgere Hiywet, Espiritu, New
+Panamao, Potia (plebiscite result not found), Gitarama, Colonia Nicolich (the law names a wider municipality),
+Closepet, Undurkhaan and Hamza: no in-force act was found or the act covers a different unit. 177 non-Latin
+translation values still transliterate an old name and have no Wikidata label; they are kept as they are rather
+than guessed (list below).
+
+<details><summary>Held translation keys (177)</summary>
+
+| id | Name | Keys kept (no own Wikidata label) |
+| --- | --- | --- |
+| 696 | San Antonio de Itatí | ar, fa, hi, ja, ko, uk |
+| 8132 | Göytəpə | ar, hi, ja, ko, zh-CN |
+| 21796 | Sarchí | fa, hi, ja, ko, uk, zh-CN |
+| 37066 | L'Esquirol | hi, ja, ko, uk, zh-CN |
+| 39119 | Pargas | ar, hi |
+| 58103 | Makhan Nagar | ar, fa, uk |
+| 65689 | Qonaev | hi |
+| 65850 | Altai | ko |
+| 72418 | Nuevo Nayarit | ar, fa, hi, ko, uk |
+| 76055 | San Pablo del Monte | ar, fa, hi, ja, ko, uk |
+| 82062 | San Andres | ar, fa, hi, ru, uk, zh-CN |
+| 84159 | Jose Dalman | ar, fa, hi, ru, uk, zh-CN |
+| 84762 | Sasmuan | fa, hi, ko, ru, uk, zh-CN |
+| 85317 | Paranas | ar, hi, ja, ru, uk, zh-CN |
+| 99318 | Biryuch | hi, ja, ko |
+| 99374 | Shuvoye | ar, fa, hi, ja, ko, uk |
+| 101609 | Khatuyey | ar, fa, hi, ja, ko, zh-CN |
+| 106785 | Balkh | hi, ko, zh-CN |
+| 106909 | Andalyp | ar, hi, ja, ko, uk, zh-CN |
+| 109580 | Khutir-Mykhailivskyi | hi |
+| 109748 | Tavriiske | ar, fa, hi, ja, ko |
+| 110128 | Zviahel | ar, hi |
+| 110143 | Aidar | ar, fa, hi, ko |
+| 110200 | Pokrov | hi |
+| 110201 | Kaihador | ar, fa, hi, ja, ko |
+| 114041 | Four Corners | hi, ja, ko |
+| 125445 | Chula Vista | ar, hi, ja, ko, ru, zh-CN |
+| 126924 | Yokuts Valley | hi, ru |
+| 129892 | Ciudad del Carmen | ar, fa, hi, ja, ko, uk, zh-CN |
+| 129962 | Yangi Nishon | hi, ko, uk, zh-CN |
+| 131031 | eMakhazeni | ar, fa, hi, ja, ko, uk, zh-CN |
+| 131040 | Senwabarwana | ar, fa, hi, ja, ko, uk, zh-CN |
+| 131121 | Makhanda | fa |
+| 131259 | KwaNojoli | hi, ja, ko, uk |
+| 131328 | King Cetshwayo District Municipality | ar, fa, hi, ko, uk |
+| 142181 | San Juanito de Escobedo | ar, fa, hi, ja, ko, uk, zh-CN |
+| 144601 | Picong | ar, fa, hi, ja, ru, uk, zh-CN |
+| 150618 | Mehrestan | hi, ja, ko, uk, zh-CN |
+| 150919 | Zargar | hi, ja, ko, ru, uk, zh-CN |
+
+</details>
+
+<details><summary>Held records (11) and why</summary>
+
+- 6382: The original Victoria G37 order (13 September 2022; effective 26 September) renames the City of Moreland municipal district/council Merri-bek, not a suburban section named Moreland. Q1947531 is the LGA (GeoNames ADM2 7839812, LGA code 25250, populations 147k–171k), whereas master says section/population 2,116.
+- 38641: No Somali regional legal instrument establishing an in-force Gode Zone → Shabelle Zone rename was located. The supplied ICG/FEWS reports do not supply an operative act or rule out zone-boundary restructuring.
+- 38654: Ambo is the same Oromia town: Q1266796, GeoNames 335288, exact stored point and population 99,900 match; native is already አምቦ. Academic/Nordic Africa Institute sources confirm the historical Hagere Hiywet name and reported restoration under the Derg in 1974.
+- 82524: Q39346 and GeoNames 1713752/1713753 identify Banna/Espiritu in Ilocos Norte, PSGC 0102811000; the population 3,566 is the center rather than the municipality’s population. The claimed SP Resolution 120-95 of 20 March 1995 and 10 March 1996 ratification are reported in Wikipedia-derived sources.
+- 144604: The complete original Presidential Decree 1757 of 2 January 1981 was read. Section 1 detaches Marsada, Paiksa and Likba from old Panamao and Jinggan from Talipao and adds them to the newly constituted New Panamao municipality under PD 1663; Section 2 names that reconstituted unit Panglima Estino.
+- 144844: RA 6687 (15 December 1988) was read and renames Potia MUNICIPALITY Lista while confirming its seat at Sta. Maria. RA 11813, which lapsed into law 2 June 2022, was also read; Section 2 expressly conditions Lista → Alfonso Lista on majority plebiscite ratification. No primary ratification outcome/date was located.
+- 102797: Organic Law 29/2005 of 31 December 2005 was read in the original gazette. It reorganizes territorial administration and establishes Muhanga district; it does not expressly rename the Gitarama population-center entry. Applying that district act to this settlement would cross units in a merger/reorganization.
+- 129794: The full original Uruguay Law 19490 (12 May 2017, published 31 May) declares the territorial unit of Nicolich MUNICIPALITY a city and names it General Líber Seregni. This is broader than the Colonia Nicolich settlement (GeoNames 3480820, record population 8,902), including other constituent settlements.
+- 131616: The current district-government history explicitly confirms Closepet → Ramanagara and distinguishes Ramanagara CITY from the district renamed Bangalore South on 23 May 2025. Q13371953, GeoNames 1258744, exact point and population 95,167 confirm the city; the stored Hindi native is inappropriate for this Kannada name.
+- 67739: Q297632 and GeoNames 2029656, exact point/population 22,741, identify the Khentii capital. Contemporary reports describe a Khentii citizens’ council decision on 18 November 2013 naming it Chinggis, but the original council resolution was not recovered.
+- 129932: Q31919174 resolves to city Q891719, GeoNames 1513650, the exact stored Fergana point/population 13,470; it is Hamza/Tinchlik city, not Tashkent’s Hamza/Yashnobod district or the railway station.
+
+</details>
+
+### Rollback
+Revert the PR (squash commit). No `id` changes.
+
+### Files Changed
+- `contributions/cities/*.json` - 41 records: name, native, translations
