@@ -65380,3 +65380,57 @@ identities and the Italian pairs, kept for review.
 
 ### Rollback
 Revert the PR (squash commit); the archived rows below carry every removed record in full.
+
+## State levels and parents (ISO 3166-2 and national sources)
+
+### Problem
+Before this change 3,102 of the 5,317 states had no level. Of the 5,009 states whose `iso3166_2` code is in
+ISO 3166-2, only 1,344 had the level ISO implies: 2,978 had none, 446 sat at level 1 although ISO puts them under another
+unit, and 241 had another value (Russia's federal subjects, for example, at level 2 or 3 with no parent).
+The policy merged in #1750: a state's `level` is its depth in the country's official hierarchy and `parent_id` is the
+unit directly above it when that unit is a state record.
+
+### Fix
+3,270 states in 164 countries change: `level` on all of them, `parent_id` set on 11 and cleared on 3. States with
+no level go from 3,102 to 338, and no state now has the same level as its parent.
+
+- 3,069 take their depth and parent from ISO 3166-2 (Debian iso-codes 4.20.1; CLDR 48.2 agrees on every parent).
+- 201 follow a national source, because the official hierarchy differs from ISO's or ISO has no entry:
+
+| Country | States | Change | Source |
+|---|---:|---|---|
+| MT | 68 | local councils: level 2, parent null (the six regions above them have no state record) | [Local Government Act, Cap. 363, art. 37A](https://legislation.mt/eli/cap/363/eng/pdf) |
+| PR | 68 | municipalities: level 1, counted from Puerto Rico's own country record | [Municipal Code, Law 107-2020, art. 1.006](https://bvirtualogp.pr.gov/ogp/Bvirtual/LeyesOrganicas/pdf/107-2020.pdf#page=8) |
+| HK | 18 | districts: level 1, counted from Hong Kong's own record | [Home Affairs Department](https://www.had.gov.hk/en/public_services/district_governance/dis_officers.htm) |
+| AX | 16 | municipalities: level 1, counted from Åland's own record | [Government of Åland](https://www.aland.ax/en/facts-about-aland) |
+| JE | 12 | parishes: level 1, counted from Jersey's own record | [Government of Jersey](https://www.gov.je/LifeEvents/MovingToJersey/SettlingIn/Pages/ParishLife.aspx) |
+| PH | 9 | 8 provinces under level-1 regions: level 2; Siquijor, Negros Oriental and Negros Occidental lose their old Visayas parent (now in the Negros Island Region, [RA 12000](https://elibrary.judiciary.gov.ph/thebookshelf/showdocs/2/97490), which has no state record); Special Geographic Area 5829: level 1 to null, parent 1316 (BARMM) kept, because it sits inside BARMM (also level 1) and its own depth is unresolved ([Bangsamoro Parliament](https://parliament.bangsamoro.gov.ph/2025/11/18/bill-filed-to-create-two-parliamentary-districts-in-barmms-special-geographic-area/)) | [PSA province register](https://psa.gov.ph/classification/psgc/provinces?vcode=82) |
+| NO | 8 | the 7 counties restored in 2024: level 1; Jan Mayen: level 1, within Norway but outside the county system ([responsibilities for Jan Mayen](https://www.regjeringen.no/no/dokumenter/forvaltningen-av-jan-mayen-ansvarsdelingen-mellom-departementene/id3044302/)) | [Government of Norway, 2024 counties](https://www.regjeringen.no/no/aktuelt/nye-kommunar-og-fylkeskommunar-fra-1.-januar-2024/id3020489/) |
+| IQ | 1 | Halabja: level 2 under Kurdistan Region | [Law 7/2025, Official Gazette 4824](https://moj.gov.iq/upload/pdf/4824_compressed_282.pdf#page=3) |
+| ID | 1 | Jakarta: level 1 (a province, not under an island group) | [Law 2/2024 (Cabinet Secretariat)](https://setkab.go.id/pemerintah-sahkan-undang-undang-daerah-khusus-jakarta/) |
+
+Where the official tier above a state has no state record (Malta's regions, the Negros Island Region), the level counts
+that tier and `parent_id` stays null. Tunisia's 24 governorates keep level 2: the five districts of Decree 2023-589 sit
+above them ([Decree 2023-589](https://www.isie.tn/wp-content/uploads/2023/09/Decret2023_589Arabe.pdf),
+[Organic Law 2025-4](https://faolex.fao.org/docs/pdf/tun234003.pdf)). The France, Italy and US states from the pilots
+were already right.
+
+### Held
+759 states in 49 countries keep their current values. Every changed and held state, with its reason and sources,
+is listed in [`bin/scripts/fixes/state_levels_1766.decisions.csv`](../../bin/scripts/fixes/state_levels_1766.decisions.csv).
+
+| Why | States | Countries |
+|---|---:|---|
+| ISO groups units that are not a tier of government (regions, island groups, provinces); Iceland's 64 municipalities also wait for a check of the mergers since the ISO list | 369 | UG 139, IS 72, ID 44, MW 31, IE 30, MH 26, CV 24, KI 3 |
+| Government depth unresolved: Dominican regions under the 2022 planning law (Law 345-22); Equatorial Guinea's two regions; Saint Kitts and Nevis, where Nevis has its own island administration but setting it alone would put it level with its five level-1 parishes | 68 | DO 42, GQ 10, KN 16 |
+| Reorganised after the ISO list (Burkina Faso 2025: 17 regions, 47 provinces; Burundi 2025: 5 provinces; Angola 2024) | 77 | BF 58, BI 18, AO 1 |
+| Parent tier missing from ISO and CSC (Greater London above the London boroughs) | 33 | GB 33 |
+| Kept from earlier decisions (pilots, extensions, territorial policy, single-commune Monaco) | 66 | FR 2, MA 2, SH 8, US 4, UM 9, ET 2, TF 5, MC 17, XK 7, RS 6, GF 1, BL 1, MF 1, PM 1 |
+| No current national source found | 146 | GU 19, YT 17, AI 14, NU 14, GG 12, BM 9, AW 9, FO 6, IM 6, TC 6, PF 5, AS 5, MQ 4, RE 4, VI 3, NC 3, KY 3, MS 3, GR 2, GP 2 |
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
+
+### Files Changed
+- `contributions/states/states.json` - 3,270 records: `level` (11 also get a parent, 3 lose a stale one)
+- `bin/scripts/fixes/state_levels_1766.decisions.csv` - every changed and held state with its reason and sources
