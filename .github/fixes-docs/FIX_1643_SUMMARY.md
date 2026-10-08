@@ -65533,3 +65533,38 @@ Bagenalstown/Muinebeag) and one Czech settlement part. Only `state_id` and `stat
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Romania: administrative structure (type, type_local, level, parent)
+
+### Problem
+Romania's 7,948 city records mixed communes, towns, municipalities and villages under types such as `adm2` (5,043)
+and `city`, with no level and no link from a village to its commune; a sample matched the register for only 39%.
+
+### Fix
+7,902 records get their type, local type and level from SIRUTA (INS, S1 2026, CC BY 4.0): 7,894 through the SIRUTA
+code on the record's own Wikidata item (P843), 8 by exact name within the county and the point inside the unit's
+official boundary (ANCPI, 2025). 4,351 villages and component localities get `parent_id` = the CSC record of their
+commune (3,817), town (375) or municipality (159), and the six Bucharest sectors point to Bucharest.
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| sat | village | 3 | 4,483 |
+| comună | municipality | 2 | 2,656 |
+| localitate componentă | locality | 3 | 447 |
+| oraș | town | 2 | 210 |
+| municipiu | city | 2 | 100 |
+| sector | section | 3 | 6 |
+
+Level follows the policy: județ 1 (the state), administrative unit (comună, oraș, municipiu) 2, village or component
+locality 3. Bucharest stays a level-2 unit in its state; its six sectors are level 3. 566 locality records have no
+admitted CSC record for their parent unit (544 under communes, 22 under towns or municipalities) and
+13 have more than one candidate, so their parent stays empty.
+
+Held (46): names with no exact match in their county, own Wikidata items that contradict the record, same-name
+units that the boundary cannot separate, and 6 records the review rejected: a section of a village taken for its
+commune (Logreşti), and five hamlets whose Wikidata id belongs to the whole village they are part of (Darova Nouă,
+Livezi-Vale and others; those ids are wrong and are left for a Wikidata round). Names are unchanged here: the 2,936 records named "Comuna X", "Municipiul X"
+or "Oraș X" are a separate change.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
