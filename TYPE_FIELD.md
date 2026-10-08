@@ -14,6 +14,14 @@ means, and how to filter the dataset down to genuine settlements.
 > are seats of state-level governments. Cleanup of this inconsistency is
 > tracked in [#1303](https://github.com/dr5hn/countries-states-cities-database/issues/1303).
 
+## Moving to official categories
+
+Countries are being moved, one at a time, to their official administrative categories
+([ADMINISTRATIVE_STRUCTURE.md](ADMINISTRATIVE_STRUCTURE.md)): `type` becomes a standard English term
+(`municipality`, `city`, `town`, `village`, `locality`, `section`, `administrative district`, `county`), a new
+`type_local` field keeps the official local term (commune, Gemeinde, municipio), and `level` and `parent_id` record
+the hierarchy. Until a country is moved, its records keep the values below.
+
 ## All values
 
 There are **35 distinct values** across **156,025** city rows. Counts are a
@@ -57,6 +65,7 @@ approximate.
 | `religious` | 2 | ❌ | Religious site — not a settlement |
 | `subdistrict` | 1 | ✅ | Subdistrict (populated) |
 | `historical_capital` | 1 | ❌ | Former capital — not a live settlement |
+| `administrative district` | 0 | ❌ | Administrative unit between the state and the municipality (arrondissement, Kreis); added as countries move to [ADMINISTRATIVE_STRUCTURE.md](ADMINISTRATIVE_STRUCTURE.md) |
 
 
 ### Mexico
@@ -80,9 +89,9 @@ future is kept by default.
 **Exclude these types:**
 
 ```
-county, regency, prefecture, parish, banner, province, area, oblast,
-administrative zone, region, abandoned, historical, destroyed, religious,
-historical_capital
+county, administrative district, regency, prefecture, parish, banner,
+province, area, oblast, administrative zone, region, abandoned, historical,
+destroyed, religious, historical_capital
 ```
 
 In Mexico and Greece, also exclude `municipality` (the municipal territory; see [Mexico](#mexico), [Greece](#greece)).
@@ -95,8 +104,8 @@ FROM cities
 WHERE (
   type IS NULL          -- keep null-type rows (see "Records with no type")
   OR type NOT IN (
-    'county', 'regency', 'prefecture', 'parish', 'banner', 'province',
-    'area', 'oblast', 'administrative zone', 'region',
+    'county', 'administrative district', 'regency', 'prefecture', 'parish',
+    'banner', 'province', 'area', 'oblast', 'administrative zone', 'region',
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
@@ -115,8 +124,8 @@ AND longitude IS NOT NULL;
 
 ```js
 const EXCLUDED_TYPES = new Set([
-  'county', 'regency', 'prefecture', 'parish', 'banner', 'province',
-  'area', 'oblast', 'administrative zone', 'region',
+  'county', 'administrative district', 'regency', 'prefecture', 'parish',
+  'banner', 'province', 'area', 'oblast', 'administrative zone', 'region',
   'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital',
 ]);
 
@@ -141,4 +150,5 @@ where available — a non-null `population`.
 ## Related
 
 - [#1303 — Counties should be returned separately from cities](https://github.com/dr5hn/countries-states-cities-database/issues/1303) (tracking the cleanup)
+- [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) (official categories, `type_local`, `level`, `parent_id`)
 - [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)

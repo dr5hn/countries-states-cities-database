@@ -91,3 +91,21 @@ test('bounds: CN Paracel and Spratly records are inside, Borneo is not', () => {
   assert.equal(isWithinBounds(5.9749, 116.0724, bounds.CN, B), false); // Kota Kinabalu, Malaysia
   assert.equal(isWithinBounds(4.39928, 113.99163, bounds.CN, B), false); // Miri, Malaysia
 });
+
+test('type_local is a known optional field on cities and states', () => {
+  const city = {
+    name: 'Strasbourg', state_id: 4579, state_code: '67', country_id: 75, country_code: 'FR',
+    latitude: '48.58', longitude: '7.75', type: 'municipality', type_local: 'commune', level: 4,
+  };
+  const state = { name: 'Bas-Rhin', country_id: 75, country_code: 'FR', type: 'metropolitan department', type_local: 'département', level: 2 };
+  assert.deepEqual(validateRecord(city, 'cities', 0), { errors: [], warnings: [] });
+  assert.deepEqual(validateRecord(state, 'states', 0), { errors: [], warnings: [] });
+});
+
+test('an over-long type_local is flagged', () => {
+  const city = {
+    name: 'X', state_id: 1, state_code: 'X', country_id: 1, country_code: 'FR',
+    latitude: '1', longitude: '1', type_local: 'x'.repeat(192),
+  };
+  assert.match(validateRecord(city, 'cities', 0).warnings.join('\n'), /type_local.*191/);
+});
