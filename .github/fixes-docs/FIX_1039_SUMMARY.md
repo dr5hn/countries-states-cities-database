@@ -77,3 +77,38 @@ All 12 entries reflect universally-documented national postal systems. No extern
 - British Overseas Territories using `XX####` prefixed codes (KY, VG)
 - Sovereign states using a national prefixed-code convention (VC — `VC####`)
 - Inheritance from parent country systems (TF → France, UM → US)
+
+## Postcodes linked to their city (city_id)
+
+### Problem
+None of the 844,248 postcodes in `contributions/postcodes/` carried `city_id`, so a postcode could not be resolved to its
+city and a city's postcodes could not be listed.
+
+### Fix
+172,122 postcodes in 7 countries now point to their city. A link needs exactly one CSC city in the postcode's state
+whose name, native name or a translation equals the place the source gives for the code (after case, accent and
+punctuation folding), plus the country's own check below. Records whose city was merged in #1767 point to the surviving
+record. Only `city_id` changes.
+
+| Country | Linked | Rule | Postcode source and terms |
+|---|---:|---|---|
+| PT | 86,043 | Every CTT street row of the code has the same postal designation and actual locality, and one locality identity (district, concelho, locality) has that name in the state; large-user and PO-box codes held; a municipality record only when it is the named containing concelho. Every target city point was also checked against the CAOP municipality boundaries. | CTT data via [Central de Dados codigos_postais](https://github.com/centraldedados/codigos_postais); terms not audited |
+| JP | 79,287 | All Japan Post rows of the code agree on one municipality and the prefecture; a town-area row links to the municipality (city, town or village) Japan Post names for it; ordinary wards are held. | [Japan Post KEN_ALL, UTF-8](https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html); free to use, no formal licence |
+| IT | 3,637 | All CAP rows of the code name one comune; its ISTAT code, name and province agree with the current [ISTAT register](https://www.istat.it/storage/codici-unita-amministrative/Elenco-comuni-italiani.csv); exactly one CSC comune (level 3) of that name; frazioni held. | CAP lists from [comuni-json](https://github.com/matteocontrini/comuni-json), a community dataset that calls itself unofficial; terms not audited; not a Poste Italiane export |
+| FR | 1,443 | All rows of the code name one INSEE commune whose official name is the locality, in the postcode's department, with no namesake there; one CSC commune (level 4); arrondissement codes held. | [La Poste, base officielle des codes postaux](https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw); Licence Ouverte (etalab-2.0) |
+| US | 720 | The ZCTA lies wholly inside one Census place (its land and water areas equal the overlap); one CSC city of that name (level 3) within 5 km of the Census place point, and the ZCTA point within 5, 8, 15 or 25 km by place size. Partial and multi-place ZCTAs held. These are statistical links, not USPS mailing cities. | Census [2020 ZCTA-to-place relationship](https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_place20_natl.txt) and 2024 ZCTA gazetteer; public domain |
+| AT | 610 | Code, Ortschaft and province match one Ortschaft key with no namesake in the province and one containing Gemeinde; a municipality record only when it is that Gemeinde (Vienna: Gemeinde 90001). | [OpenPLZ](https://www.openplzapi.org/de/austria/) over Statistik Austria data; ODbL-1.0 |
+| AR | 382 | Code and locality carry one Correo locality id; one official [Georef](https://apis.datos.gob.ar/georef/api/localidades?max=5000) "Localidad simple" of that name in the province; one CSC settlement within 3 km of its centroid. | Correo Argentino data via [localidades_AR](https://github.com/androdron/localidades_AR); terms not audited |
+
+Where a source's terms are marked not audited, it is the source the existing postcode records were imported from; this
+change adds no data from it beyond the link.
+
+### Held
+672,126 postcodes keep `city_id` null: postal designations that differ from the actual locality, several candidate
+cities, sub-localities whose city record is a larger unit, large-user and PO-box codes, ZCTAs spanning several places,
+476 Portuguese codes whose only same-name city is in another municipality (Pedroso, Vila Nova de Gaia, and Perafita,
+Matosinhos, found in review), and the 118 countries whose postal source has not yet been checked for what a code covers
+(Mexico, Malta, China, Poland, India, ...).
+
+### Rollback
+Revert the PR (squash commit); `city_id` is optional.
