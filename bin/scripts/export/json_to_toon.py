@@ -4,6 +4,9 @@ from pathlib import Path
 def json_to_toon(json_text: str, delimiter: str = ",") -> str:
     data = json.loads(json_text)
 
+    if data == []:
+        return "[0]{}:"
+
     if not isinstance(data, list) or not data:
         raise ValueError("Expected non-empty top-level JSON array")
 
@@ -74,10 +77,12 @@ if __name__ == "__main__":
     toon_dir = Path("../toon")
 
     # List of base filenames (without extension)
-    files = ["countries", "cities", "states"]
+    files = ["countries", "cities", "states", "counties"]
 
     for name in files:
         json_path = json_dir / f"{name}.json"
+        if name == "counties" and not json_path.exists():
+            continue
         toon_path = toon_dir / f"{name}.toon"
 
         json_file_to_toon_file(json_path, toon_path)

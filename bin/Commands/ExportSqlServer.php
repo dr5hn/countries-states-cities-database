@@ -15,7 +15,7 @@ class ExportSqlServer extends Command
     protected static $defaultName = 'export:sql-server';
     protected static $defaultDescription = 'Export data to SQL Server format';
 
-    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'cities', 'postcodes'];
+    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'counties', 'cities', 'postcodes'];
     private Filesystem $filesystem;
 
     public function __construct()
@@ -120,9 +120,9 @@ class ExportSqlServer extends Command
                 population NVARCHAR(255) NULL,
                 CONSTRAINT FK_states_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
             );",
-            'cities' => "
-            IF OBJECT_ID('world.cities', 'U') IS NOT NULL DROP TABLE world.cities;
-            CREATE TABLE world.cities (
+            'counties' => "
+            IF OBJECT_ID('world.counties', 'U') IS NOT NULL DROP TABLE world.counties;
+            CREATE TABLE world.counties (
                 id INT IDENTITY(1,1) PRIMARY KEY,
                 name NVARCHAR(255) NOT NULL,
                 state_id INT NOT NULL,
@@ -143,6 +143,36 @@ class ExportSqlServer extends Command
                 updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
                 flag BIT NOT NULL DEFAULT 1,
                 wikiDataId NVARCHAR(255) NULL,
+                -- SQL Server forbids cascading self-references (error 1785). Clear child links before deletion.
+                CONSTRAINT FK_counties_parent FOREIGN KEY (parent_id) REFERENCES world.counties(id),
+                CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id),
+                CONSTRAINT FK_counties_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
+            );",
+            'cities' => "
+            IF OBJECT_ID('world.cities', 'U') IS NOT NULL DROP TABLE world.cities;
+            CREATE TABLE world.cities (
+                id INT IDENTITY(1,1) PRIMARY KEY,
+                name NVARCHAR(255) NOT NULL,
+                county_id INT NULL,
+                state_id INT NOT NULL,
+                state_code NVARCHAR(255) NOT NULL,
+                country_id INT NOT NULL,
+                country_code NCHAR(2) NOT NULL,
+                type NVARCHAR(191) NULL,
+                type_local NVARCHAR(191) NULL,
+                level INT NULL,
+                parent_id INT NULL,
+                latitude DECIMAL(10,8) NOT NULL,
+                longitude DECIMAL(11,8) NOT NULL,
+                native NVARCHAR(255) NULL,
+                population BIGINT NULL,
+                timezone NVARCHAR(255) NULL,
+                translations NVARCHAR(MAX),
+                created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',
+                updated_at DATETIME2 NOT NULL DEFAULT GETDATE(),
+                flag BIT NOT NULL DEFAULT 1,
+                wikiDataId NVARCHAR(255) NULL,
+                CONSTRAINT FK_cities_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE SET NULL,
                 CONSTRAINT FK_cities_states FOREIGN KEY (state_id) REFERENCES world.states(id),
                 CONSTRAINT FK_cities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
             );",
@@ -263,20 +293,23 @@ class ExportSqlServer extends Command
                 $jsonFile = "$rootDir/json/$table.json";
                 $sqlFile = "$rootDir/sqlserver/$table.sql";
 
-                if (!$this->filesystem->exists($jsonFile)) {
+                if ($table !== 'counties' && !$this->filesystem->exists($jsonFile)) {
                     throw new \RuntimeException("JSON file not found: $jsonFile");
                 }
 
-                $jsonData = json_decode(file_get_contents($jsonFile), true);
+                $jsonData = $this->filesystem->exists($jsonFile)
+                    ? json_decode(file_get_contents($jsonFile), true) : [];
                 if (json_last_error() !== JSON_ERROR_NONE) {
                     throw new \RuntimeException("Invalid JSON in $jsonFile: " . json_last_error_msg());
                 }
 
                 $sql = "-- Table: $table\n\n" .
                     $this->generateTableSchema($table) . "\n\n" .
+                    ($table === 'counties' ? "ALTER TABLE world.counties NOCHECK CONSTRAINT FK_counties_parent;\n\n" : '') .
                     "SET IDENTITY_INSERT world.$table ON;\n\n" .
                     $this->generateSqlServerInsert($table, $jsonData) .
-                    "SET IDENTITY_INSERT world.$table OFF;\n\n";
+                    "SET IDENTITY_INSERT world.$table OFF;\n\n" .
+                    ($table === 'counties' ? "ALTER TABLE world.counties WITH CHECK CHECK CONSTRAINT FK_counties_parent;\n\n" : '');
 
                 $this->filesystem->dumpFile($sqlFile, $sql);
                 $worldSql .= $sql;

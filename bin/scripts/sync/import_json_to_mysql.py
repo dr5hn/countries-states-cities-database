@@ -115,7 +115,7 @@ class JSONToMySQLImporter:
         # Define table-specific redundant relationship fields that should never be added
         # These fields are redundant because we already have _id and _code fields
         redundant_fields = set()
-        if table_name == 'cities':
+        if table_name in ('cities', 'counties'):
             redundant_fields = {'country_name', 'state_name'}
         elif table_name == 'states':
             redundant_fields = {'country_name'}
@@ -206,7 +206,7 @@ class JSONToMySQLImporter:
         # Define fields to skip during import
         # These are auto-managed by MySQL or redundant relationship fields
         skip_fields = {'flag'}  # flag is auto-managed by MySQL; preserve created_at and updated_at from JSON
-        if table_name == 'cities':
+        if table_name in ('cities', 'counties'):
             skip_fields.update({'country_name', 'state_name'})
         elif table_name == 'states':
             skip_fields.add('country_name')
@@ -273,6 +273,18 @@ class JSONToMySQLImporter:
 
         print()  # New line after progress indicator
         return inserted
+
+    def reset_tables(self):
+        """Clear dependent tables first for a full import, including optional datasets."""
+        self.cursor.execute("SHOW TABLES")
+        existing = {next(iter(row.values())) for row in self.cursor.fetchall()}
+        self.cursor.execute("SET FOREIGN_KEY_CHECKS=0")
+        try:
+            for table in ('postcodes', 'cities', 'counties', 'states', 'countries', 'subregions', 'regions'):
+                if table in existing:
+                    self.cursor.execute(f"TRUNCATE TABLE {table}")
+        finally:
+            self.cursor.execute("SET FOREIGN_KEY_CHECKS=1")
 
     def import_countries(self):
         """Import countries from JSON"""
@@ -365,6 +377,94 @@ class JSONToMySQLImporter:
             inserted += self._batch_insert_records('cities', records_without_id, insert_columns_no_id)
 
         print(f"  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
+        return inserted
+
+    def import_counties(self):
+        """Import counties from individual country JSON files (issue #1303)."""
+        print(f"\n📦 Importing counties from contributions/counties/*.json")
+
+        counties_dir = os.path.join('contributions', 'counties')
+        if not os.path.exists(counties_dir):
+            print(f"  ⚠ Directory not found: {counties_dir} (skipping)")
+            return 0
+
+        # Skip table if migration hasn't been run yet
+        try:
+            self.cursor.execute("SHOW TABLES LIKE 'counties'")
+            if not self.cursor.fetchone():
+                print(f"  ⚠ Table 'counties' does not exist yet — run migrations first (skipping)")
+                return 0
+        except mysql.connector.Error as e:
+            print(f"  ⚠ Could not verify counties table existence: {e} (skipping)")
+            return 0
+
+        county_files = sorted(
+            f for f in os.listdir(counties_dir)
+            if f.endswith('.json') and f != 'README.md'
+        )
+
+        if not county_files:
+            print(f"  ⚠ No county JSON files found in {counties_dir}")
+            return 0
+
+        print(f"  📂 Found {len(county_files)} country files to process")
+
+        all_counties = []
+        for pf in county_files:
+            file_path = os.path.join(counties_dir, pf)
+            try:
+                with open(file_path, 'r', encoding='utf-8') as fh:
+                    rows = json.load(fh)
+                    if isinstance(rows, list):
+                        all_counties.extend(rows)
+                        print(f"  ✓ Loaded {len(rows):,} counties from {pf}")
+                    else:
+                        print(f"  ⚠ Skipping {pf}: Not a valid array")
+            except Exception as e:
+                print(f"  ❌ Error loading {pf}: {e}")
+
+        if not all_counties:
+            print(f"  ⚠ No counties loaded from any files")
+            return 0
+
+        print(f"\n  📊 Total counties to import: {len(all_counties):,}")
+
+        new_columns = self.detect_new_columns('counties', all_counties)
+        if new_columns:
+            self.add_columns_to_table('counties', new_columns)
+
+        all_columns = list(self.get_table_columns('counties').keys())
+        skip_fields = {'flag', 'country_name', 'state_name'}
+        insert_columns = [c for c in all_columns if c not in skip_fields]
+
+        parents = [(r['parent_id'], r['id']) for r in all_counties if r.get('parent_id') is not None and r.get('id') is not None]
+        if any(r.get('parent_id') is not None and r.get('id') is None for r in all_counties):
+            raise ValueError('Counties with parent_id must have an explicit id')
+        insert_columns = [c for c in insert_columns if c != 'parent_id']
+
+        print(f"  🗑️  Truncating existing data...")
+        self.cursor.execute("SET FOREIGN_KEY_CHECKS=0")
+        self.cursor.execute("TRUNCATE TABLE counties")
+        self.cursor.execute("SET FOREIGN_KEY_CHECKS=1")
+
+        records_with_id = [r for r in all_counties if r.get('id') is not None]
+        records_without_id = [r for r in all_counties if r.get('id') is None]
+
+        inserted = 0
+        if records_with_id:
+            print(f"  📝 Inserting {len(records_with_id):,} records with explicit IDs...")
+            inserted += self._batch_insert_records('counties', records_with_id, insert_columns)
+
+        if records_without_id:
+            insert_columns_no_id = [c for c in insert_columns if c != 'id']
+            print(f"  📝 Inserting {len(records_without_id):,} records without IDs (auto-increment)...")
+            inserted += self._batch_insert_records('counties', records_without_id, insert_columns_no_id)
+
+        if parents:
+            self.cursor.executemany("UPDATE counties SET parent_id = %s WHERE id = %s", parents)
+            self.conn.commit()
+
+        print(f"  ✓ Imported {inserted:,} counties from {len(county_files)} country files")
         return inserted
 
     def import_postcodes(self):
@@ -497,11 +597,13 @@ def main():
     )
 
     try:
+        importer.reset_tables()
         # Import in order (respecting foreign keys)
         regions_count = importer.import_regions()
         subregions_count = importer.import_subregions()
         countries_count = importer.import_countries()
         states_count = importer.import_states()
+        counties_count = importer.import_counties()
         cities_count = importer.import_cities()
         postcodes_count = importer.import_postcodes()
 
@@ -511,6 +613,7 @@ def main():
         print(f"   📍 Subregions: {subregions_count}")
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
+        print(f"   📍 Counties: {counties_count:,}")
         print(f"   📍 Cities: {cities_count:,}")
         print(f"   📍 Postcodes: {postcodes_count:,}")
 

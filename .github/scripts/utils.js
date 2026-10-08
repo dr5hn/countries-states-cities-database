@@ -15,9 +15,10 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
-    optional: ['state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'translations'],
+    optional: ['county_id', 'state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
+      county_id: { type: 'integer', positive: true },
       state_id: { type: 'integer', positive: true },
       state_code: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
@@ -94,7 +95,7 @@ const SCHEMA = {
       state_code: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
-      type: { type: 'string', maxLength: 32 },
+      type: { type: 'string', maxLength: 191 },
       type_local: { type: 'string', maxLength: 191 },
       latitude: { type: 'coordinate', min: -90, max: 90 },
       longitude: { type: 'coordinate', min: -180, max: 180 },

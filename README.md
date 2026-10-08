@@ -4,7 +4,7 @@
 
 # Countries States Cities Database
 
-A comprehensive, community-maintained dataset of **countries, states, cities, and postcodes** — published in 12 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
+A comprehensive, community-maintained dataset of **countries, states, counties, cities, and postcodes** — published in 14 formats and free under the [Open Database License](LICENSE) **(attribution required)**.
 
 [![License: ODbL-1.0](https://img.shields.io/badge/License-ODbL--1.0-brightgreen.svg?style=flat-square)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/dr5hn/countries-states-cities-database.svg?style=flat-square)](https://github.com/dr5hn/countries-states-cities-database/stargazers)
@@ -113,11 +113,17 @@ Use `countrystatecity-api` for live, managed data. The suffixed packages are ver
 <details>
 <summary><strong>Direct download (gzipped exports)</strong></summary>
 
+Countries, states, counties, cities, and postcodes are separate datasets. Counties contain official intermediate
+administrative units; cities can link to them through a nullable `county_id`. See
+[the county field shape and link rules](contributions/counties/README.md).
+
 Every format ships as a `.gz` asset on each [GitHub Release](https://github.com/dr5hn/countries-states-cities-database/releases).
 
 ```bash
 curl -LO https://github.com/dr5hn/countries-states-cities-database/releases/latest/download/json-cities.json.gz
 gunzip json-cities.json.gz
+curl -LO https://github.com/dr5hn/countries-states-cities-database/releases/latest/download/json-counties.json.gz
+gunzip json-counties.json.gz
 ```
 
 Smaller reference files (countries, states, schema) live in the repo. Use `git clone --depth 1` for a fast clone.
@@ -139,11 +145,11 @@ Smaller reference files (countries, states, schema) live in the repo. Use `git c
 
 ## What's in the data
 
-- **250** countries · **5,299** states / regions · **153,765** cities · **100k+** postcodes across ~50 countries
+- **250** countries · **5,299** states / regions · **3,081** counties · **153,765** cities · **100k+** postcodes across ~50 countries
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
-- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON), Parquet (columnar, analytics-ready)
+- **Formats:** JSON, MySQL, PostgreSQL, SQLite, SQL Server, MongoDB, XML, YAML, CSV, GeoJSON, [TOON](https://github.com/toon-format/toon) (LLM-optimised, ~40% fewer tokens than JSON), Parquet (columnar, analytics-ready), PLIST, DuckDB
 
 | Format | Export time | Size | Compressed |
 |---|---:|---:|---:|
@@ -167,7 +173,7 @@ The easiest way is the [Community Manager](https://manager.countrystatecity.in/)
 To edit JSON directly:
 
 1. Fork and clone (`git clone --depth 1`).
-2. Edit files under `contributions/cities/`, `contributions/states/`, `contributions/countries/`, or `contributions/postcodes/`.
+2. Edit files under `contributions/cities/`, `contributions/states/`, `contributions/countries/`, `contributions/counties/`, or `contributions/postcodes/`.
 3. **Required** for new cities: `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude`. **Optional**: `timezone`, `wikiDataId`, `native`.
 4. **Omit** `id`, `created_at`, `updated_at`, `flag` — auto-managed on import.
 5. Open a pull request with a clear data source.

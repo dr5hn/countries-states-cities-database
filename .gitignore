@@ -76,3 +76,20 @@ gc-keys/
 changelogs/
 site/
 cache/*
+
+# County exports are release build artifacts.
+json/counties.json
+csv/counties.csv
+xml/counties.xml
+yml/counties.yml
+sql/counties.sql
+psql/counties.sql
+sqlite/counties.sqlite3
+sqlserver/counties.sql
+parquet/counties.parquet
+geojson/counties.geojson
+toon/counties.toon
+plist/*.plist
+*.plist.gz
+*.db.gz
+duckdb/*.db

@@ -20,6 +20,7 @@ class ExportYaml extends Command
         'countries' => ['from' => '/json/countries.json', 'to' => '/yml/countries.yml', 'singular' => 'country'],
         'states' => ['from' => '/json/states.json', 'to' => '/yml/states.yml', 'singular' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'to' => '/yml/cities.yml', 'singular' => 'city'],
+        'counties' => ['from' => '/json/counties.json', 'to' => '/yml/counties.yml', 'singular' => 'county'],
         'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/yml/postcodes.yml', 'singular' => 'postcode'],
     ];
 
@@ -46,6 +47,11 @@ class ExportYaml extends Command
         try {
             foreach (self::FILES as $root => $config) {
                 $io->section("Processing: $root");
+
+                if ($root === 'counties' && !$this->filesystem->exists($rootDir . $config['from'])) {
+                    $io->note('Skipping counties (source missing)');
+                    continue;
+                }
 
                 $jsonData = $this->filesystem->exists($rootDir . $config['from'])
                     ? file_get_contents($rootDir . $config['from'])

@@ -23,7 +23,7 @@ import pyarrow.parquet as pq
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 
-TABLES = ["regions", "subregions", "countries", "states", "cities", "postcodes"]
+TABLES = ["regions", "subregions", "countries", "states", "counties", "cities", "postcodes"]
 
 JSON_NESTED_COLS = {"translations", "timezones"}
 

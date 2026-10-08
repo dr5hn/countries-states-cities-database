@@ -23,8 +23,8 @@ unit above a city recorded for only 23%. These rules say how each field captures
 
 The counties dataset was started for US counties in
 [#1303](https://github.com/dr5hn/countries-states-cities-database/issues/1303) and is extended to every country.
-Counties reach MySQL, the exports and the API in #1303 phase 2b; until then they are a validated contribution
-dataset only.
+Counties reach MySQL and every export format in #1303 phase 2b, with optional city `county_id` links.
+API support and country-by-country link population follow separately.
 
 ## The rules
 
@@ -33,7 +33,7 @@ dataset only.
    own `parent_id` and `level`. Counties carry a `state_id` the same way.
 2. **Official units that ISO 3166-2 does not list are county records.** Arrondissements, Kreise, US counties and
    similar units go in `contributions/counties/<country>.json`. A city links to the county that contains it through
-   `county_id` (added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states.
+   `county_id` (nullable, added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states.
 3. **`level` is the depth in the country's official hierarchy**, with 1 directly under the country. It has the same
    meaning in all three datasets: in France a région is 1, a département 2, an arrondissement 3, a commune 4, a
    commune déléguée 5.

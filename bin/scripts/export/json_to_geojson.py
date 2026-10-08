@@ -85,9 +85,11 @@ if __name__ == "__main__":
     geojson_dir = Path("../geojson")
 
     # Base names of the files (without extension)
-    files = ["cities", "states", "countries"]
+    files = ["cities", "states", "countries", "counties"]
 
     for name in files:
         json_path = json_dir / f"{name}.json"
+        if name == "counties" and not json_path.exists():
+            continue
         geojson_path = geojson_dir / f"{name}.geojson"
         json_points_to_geojson(json_path, geojson_path)
