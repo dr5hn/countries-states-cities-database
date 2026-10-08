@@ -65603,3 +65603,22 @@ Marathon and Lavrio in East Attica, and Philippine component cities such as Bata
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Romania: type words removed from names
+
+### Problem
+2,936 Romanian unit records carried their type in the name ("Comuna Abram", "Municipiul Brăila", "Oraş Agnita"). Since #1780
+the type is in `type` / `type_local` (municipality / comună, city / municipiu, town / oraș), so the name repeats it, and
+searches for the place name miss these records.
+
+### Fix
+2,887 names lose the leading type word ("Comuna" 2,615, "Oraş" 169, "Municipiul" 91, "Comună" 6, "Oraș" 6); the rest of each name is kept exactly as stored, including its diacritic
+forms, so a commune and its same-name village are spelled alike. Most communes now share their name with their seat
+village (Abram the commune, level 2, and Abram the village, level 3, linked by `parent_id`); `type` tells them apart.
+
+Held (49): renames where another record with the same name is a unit itself or still needs its identity resolved, and
+32 whose base name differs from the unit's current official name (e.g. Abrămuţ, renamed Petreu by Law 374/2022;
+Bâra, officially Bira; Roșiorii de Vede, officially Roșiori de Vede); those go to a names round with their sources.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
