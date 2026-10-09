@@ -65880,3 +65880,32 @@ or dissolved since 2010; namesakes; and components with no official hierarchy so
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/DE.json`; no existing `id` changes.
+
+## Austria: Bezirke as counties; city type, level and county links
+
+### Problem
+Austria's 2,360 city records had no level, mixed types (`adm3`, `city`, `capital` ...) and no link to their political
+district; the counties dataset had no Austrian units.
+
+### Fix
+From Statistik Austria (Gemeindeverzeichnis 1 January 2026, weekly register lists of 8 October 2026, Ortschaften
+list) and its 2026 boundary layers:
+
+- **93 counties** in the new `contributions/counties/AT.json` (ids 4213–4305): 79 politische Bezirke and
+  14 Statutarstädte (city with its own statute, district and municipality at once), level 2, each point inside
+  its own polygon. A Statutarstadt is named as its city (Linz, Innsbruck), a district by its official name with the
+  usual -Land form (Krems-Land). Vienna gets no county record: like Berlin and Hamburg it is Land, district and
+  municipality at once, so its city record is level 1.
+- **1,584 municipalities**: 795 Gemeinden and 602 Marktgemeinden (`municipality`), 174 Stadtgemeinden and 13
+  Statutarstädte (`city`); level 3, or 2 for a Statutarstadt.
+- **178 Ortschaften** (`locality`) one level below their Gemeinde; 149 get `parent_id` = their Gemeinde record.
+- **1,761** records get `county_id`.
+
+Each record is matched through the municipality code on its own Wikidata item (P964) or the Ortschaft register, with
+the official name and the point inside the current polygon.
+
+Held (598): 183 items for former municipalities (163 in Styria, whose 2015 reform merged many), codes that do not match one current
+Gemeinde by name and polygon, and settlements whose item does not identify an Ortschaft.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/AT.json`; no existing `id` changes.
