@@ -66363,3 +66363,23 @@ exported). Wikidata (CC0) and [GeoNames](https://www.geonames.org/) (CC BY 4.0) 
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/GR.json`; no existing `id` changes.
+
+## Colombia: municipios (type, local type, level)
+
+### Problem
+Colombia's 1,122 city records had no level and mostly the type `city`, although most are municipios.
+
+### Fix
+From DANE's DIVIPOLA (current municipios, districts and populated centres with their codes) and the DANE MGN
+boundaries: **945 municipios** and **10 distritos** become `municipality` at level 2 (the departamento, or Bogotá D.C., is
+level 1; there is no unit in between, so no county records), with `type_local` municipio or distrito.
+
+Each record is matched through the DANE code on its own Wikidata item, its name, the departamento and the point inside
+the municipio's polygon. A record named as its municipio that carries the municipio's own item is the municipio.
+
+Held (167): records whose item is the municipal seat rather than the municipio (74), items with no municipality code or
+identity, and points outside the municipio or departamento. No populated centre (centro poblado) could be matched to
+its own item yet.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
