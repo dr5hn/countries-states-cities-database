@@ -66272,3 +66272,28 @@ Only `wikiDataId` changes; the structure round follows.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Portugal: municípios and freguesias (type, level, parent)
+
+### Problem
+Portugal's 1,281 city records had no level and mostly the type `city`, whether a município, a freguesia (parish) or a
+village within one.
+
+### Fix
+From the INE 2025 code register (CDA, Deliberação 660/2025) and DGT's CAOP 2025 boundaries:
+
+- **239 municípios** become `municipality / município / 2` (the distrito or autonomous region is level 1; there
+  is no unit in between, so no county records).
+- **287 freguesias** become `section / freguesia / 3`: a freguesia has its own government (junta de freguesia),
+  so it is not a `locality`; it is a part of its município kept as its own record. 231 get `parent_id` = their
+  município record.
+
+Each record is matched through the INE code on its own Wikidata item (P6324), an agreeing name, the right state and,
+on the mainland, the point inside its own polygon (Madeira and the Azores: within 5 km of the item's point, since their
+polygons could not be downloaded).
+
+Held (755): 619 records whose item has no current INE code, 304 villages and places below the freguesia (a later round),
+and records whose name, state or point disagree with their item.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
