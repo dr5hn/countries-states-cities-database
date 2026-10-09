@@ -65779,3 +65779,36 @@ structure of 49 records: 24 núcleos, 7 with several INE codes, 1 collective (Am
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Brazil: administrative structure (type, type_local, level, parent)
+
+### Problem
+Brazil's 5,629 city records had no level and almost all the type `city`, although nearly all are municípios.
+
+### Fix
+5,218 records get their type, local type and level from IBGE (DTB 2025, reference date 31 December 2025): each through
+the IBGE code on its own Wikidata item (P1585), checked against the current name, estado and the 2025 municipal polygon,
+or by exact name with the point inside the polygon.
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| município | municipality | 2 | 5,213 |
+| distrito | section | 3 | 5 |
+
+The estado stays the state (level 1). The 5 distritos get `parent_id` = their município's record.
+Brasília and Fernando de Noronha, which IBGE lists as municipal equivalents, are held.
+
+Which record is the município: a record named as its município that carries the município's own Wikidata item
+(P1585) represents the município, as in the France, Italy and Spain pilots, even though its point is the seat town.
+Wikidata also has a separate item for 1,134 of these seat towns (mostly created from GeoNames, often with only the
+state as parent); the Codex review proposed treating those records as the seat instead. That is not taken: CSC has no
+second record for these municípios, and the earlier pilots hold a record only when its own item is the settlement or
+another same-name record is the municipality.
+
+Held (411): 232 records whose own Wikidata item carries a município code from another estado (most likely a
+copy-forward id or a wrong state; an identity round), 89 where a município and its seat distrito share the name and
+the record could be either, and records with no exact current unit, a missing or redirected item, or a point outside
+the polygon.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
