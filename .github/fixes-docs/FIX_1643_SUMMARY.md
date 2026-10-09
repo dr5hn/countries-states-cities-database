@@ -77216,3 +77216,28 @@ and records with unresolved identity stay held.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Thailand: amphoe and khet as counties; municipalities typed
+
+### Problem
+Thailand's 1,240 city records had no level, and most of them are districts (amphoe, and Bangkok's khet) rather than
+towns: "Amphoe Mueang Chiang Mai" and the like. The counties dataset had no Thai units.
+
+### Fix
+- **928 counties** in the new `contributions/counties/TH.json` (ids 5377–6304): 878 amphoe (อำเภอ) and 50 Bangkok khet (เขต),
+  level 2 under their changwat. Codes and boundaries come from the RTSD/OCHA administrative set, corroborated by the
+  Department of Local Administration's current district names and DOPA's January 2026 counts (the DOPA code file
+  itself could not be reached).
+- **187 municipalities** typed from the Department of Local Administration register: thesaban nakhon (เทศบาลนคร, 26)
+  and thesaban mueang (เทศบาลเมือง, 88) as `city`, thesaban tambon (เทศบาลตำบล, 72) as `town`, level 3; Bangkok
+  (กรุงเทพมหานคร) `city` at level 1. 186 are linked to their amphoe by `county_id`.
+
+Each municipality is matched through its own Wikidata item, the official register name, the changwat and the point
+inside its district.
+
+Held (1053): 909 records that are themselves districts (their item is the amphoe or khet): whether they leave
+cities for the new county records, as US counties did in #1569, is a separate decision; records whose name or item
+names another place, and items that are not a current local government.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/TH.json`; no existing `id` changes.
