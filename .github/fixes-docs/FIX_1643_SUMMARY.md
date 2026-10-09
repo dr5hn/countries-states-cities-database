@@ -77134,3 +77134,32 @@ Wikidata (CC0) and [GeoNames](https://www.geonames.org/) (CC BY 4.0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Switzerland: districts as counties; municipalities, settlements and quarters typed
+
+### Problem
+Switzerland's 1,507 city records had no level and mixed types. A first pass could prove only 108 municipalities
+because most records carried another place's Wikidata item; #1818 repaired 881 of those items.
+
+### Fix
+From the BFS official municipality register (with its 2010–2026 mutations) and swisstopo swissBOUNDARIES3D:
+
+- **126 counties** in the new `contributions/counties/CH.json` (ids 5115–5240): every current district and its
+  equivalent (Bezirk, district, distretto, Wahlkreis, Verwaltungskreis, Graubünden's regions), level 2. Cantons
+  without districts have none.
+- **906 municipalities**: `municipality` (Gemeinde, commune, comune), or `city` where the municipality
+  calls itself Stadt, ville or città on its own official site or documents (116; the Codex review found 33 the first
+  pass missed, such as Aarberg and Chiasso); level 3, or 2 in cantons without districts.
+- **125 settlements** (Ortschaft, localité, località) as `locality` and **281 city quarters and districts**
+  (Quartier, Stadtkreis) as `section`, one level below their municipality; 271 get `parent_id` = their municipality
+  record. A city's statistical quarters and circles are not a government tier, so they are not chained.
+- **1,188** records get `county_id`.
+
+Each municipality is matched through its own Wikidata item's BFS number (P771), name and polygon; a settlement or
+quarter through its own item and a unique containing municipality. `type_local` follows the record's language.
+
+Held (195): 140 district and region records sitting in cities (now counties; a later clean-up), 28 municipalities
+whose item's point lies outside them, and records without a usable item or code.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/CH.json`; no existing `id` changes.
