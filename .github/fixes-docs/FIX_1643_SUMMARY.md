@@ -66187,3 +66187,29 @@ Held: the 93 Austrian counties (their items carry no district code to verify), 1
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived below.
+
+## Japan: municipalities (type, local type, level)
+
+### Problem
+Japan's 1,313 city records had no level and mixed types, whether a city (shi), town (machi/chō), village (mura/son)
+or one of Tokyo's special wards.
+
+### Fix
+From the MIC local-government codes and the current e-Stat code roster with its administrative class:
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| 市 (shi) | city | 2 | 672 |
+| 町 (machi/chō) | town | 2 | 105 |
+| 村 (mura/son) | village | 2 | 39 |
+| 特別区 (Tokyo special ward) | municipality | 2 | 23 |
+
+The prefecture is level 1; the gun (district) is not an administrative tier, so there are no county records.
+Designated, core and special cities are all 市. Each record is matched through the municipal code on its own
+Wikidata item (P429), with agreeing names, the right prefecture and the point inside its own 2020 census boundary.
+
+Held (474): 140 records that come in pairs for the same municipality (a duplicates round), records
+with no usable item or code, former municipalities merged away, and records whose Japanese name disagrees with their item.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
