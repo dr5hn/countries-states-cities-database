@@ -66024,3 +66024,166 @@ disagree.
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/AU.json`; no existing `id` changes.
+
+## Follow-ups from the structure reviews (round 1)
+
+### Problem
+The Austria, Poland, India and Spain reviews found records the pilots had to leave alone: Salzburg and Graz each had two
+city records (and Graz's older one carried the item for Gratwein), Wrocław and Zielona Góra carried their county's
+Wikidata item, the new Polish counties had no Wikidata items, Sivala (Andhra Pradesh) was filed under Maharashtra, and
+"Illes Balears" sat in cities although the province is a state.
+
+### Fix
+- **Salzburg** (3235 merged into 3234) and **Graz** (2123 merged into 2122), into the older id: the survivor takes the
+  city's own item (Q34713, Q13298, each carrying its P964 municipality key), `city / Statutarstadt / 2` and its
+  county (4274, 4280). No postcode or city points to the removed ids.
+- **Wrocław** and **Zielona Góra** get their own city items (Q1799, Q104720: TERYT and SIMC codes match), then
+  `city / gmina miejska / 2` with their city-with-powiat-rights county (3861, 3923), like the other such cities.
+- **367 Polish counties** get their Wikidata item, each verified by its own four-digit TERYT powiat code (P1653), name
+  and voivodeship; 13 are held where the item lacks that code or points to another unit.
+- **Sivala** (147906) moves to Andhra Pradesh: LGD and census village 587709, Konaseema district register.
+- **Illes Balears** (34747) is removed from cities: it is the province (GeoNames ADM2), already state 1174, as the
+  22 "Provincia de" rows removed in #1516.
+
+Held: the 93 Austrian counties (their items carry no district code to verify), 13 Polish counties.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 3235,
+    "name": "Salzburg Stadt",
+    "state_id": 2061,
+    "state_code": "5",
+    "country_id": 15,
+    "country_code": "AT",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "47.80067000",
+    "longitude": "13.04532000",
+    "native": "Salzburg Stadt",
+    "population": null,
+    "timezone": "Europe/Vienna",
+    "translations": {
+      "br": "Salzburg Stadt",
+      "ko": "잘츠부르크 슈타트",
+      "pt-BR": "Salzburg Stadt",
+      "pt": "Salzburg Stadt",
+      "nl": "Salzburg Stadt",
+      "hr": "Salzburg Stadt",
+      "fa": "سالزبورگ اشتات",
+      "de": "Salzburg Stadt",
+      "es": "Salzburg Stadt",
+      "fr": "Salzburg Stadt",
+      "ja": "ザルツブルク市",
+      "it": "Salzburg Stadt",
+      "zh-CN": "萨尔茨堡市",
+      "tr": "Salzburg Stadt",
+      "ru": "Зальцбург Штадт",
+      "uk": "Зальцбург Штат",
+      "pl": "Salzburg Stadt",
+      "hi": "साल्ज़बर्ग शहर",
+      "ar": "مدينة سالزبورغ"
+    },
+    "created_at": "2019-10-06T09:28:32",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q34713",
+    "replacement_id": 3234
+  },
+  {
+    "id": 2123,
+    "name": "Graz Stadt",
+    "state_id": 2059,
+    "state_code": "6",
+    "country_id": 15,
+    "country_code": "AT",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "47.06667000",
+    "longitude": "15.43333000",
+    "native": "Graz Stadt",
+    "population": 576,
+    "timezone": "Europe/Vienna",
+    "translations": {
+      "br": "Graz Stadt",
+      "ko": "그라츠 슈타트",
+      "pt-BR": "Cidade de Graz",
+      "pt": "Cidade de Graz",
+      "nl": "Graz Stadt",
+      "hr": "Grad Graz",
+      "fa": "گراتس اشتات",
+      "de": "Graz Stadt",
+      "es": "Ciudad de Graz",
+      "fr": "Ville de Graz",
+      "ja": "グラーツ市",
+      "it": "Graz Stadt",
+      "zh-CN": "格拉茨城",
+      "tr": "Graz Şehri",
+      "ru": "Грац Штадт",
+      "uk": "Грац (місто)",
+      "pl": "Miasto Graz",
+      "hi": "ग्राज़ स्टैड्ट",
+      "ar": "مدينة غراتس"
+    },
+    "created_at": "2019-10-06T09:28:24",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q13298",
+    "replacement_id": 2122
+  },
+  {
+    "id": 34747,
+    "name": "Illes Balears",
+    "state_id": 1174,
+    "state_code": "PM",
+    "country_id": 207,
+    "country_code": "ES",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "39.60992000",
+    "longitude": "3.02948000",
+    "native": "Islas Baleares",
+    "population": null,
+    "timezone": "Europe/Madrid",
+    "translations": {
+      "br": "Inizi Balear",
+      "ko": "일레스 발레아레스",
+      "pt-BR": "Ilhas Baleares",
+      "pt": "Ilhas Baleares",
+      "nl": "Balearen",
+      "hr": "Balearski otoci",
+      "fa": "ایلز بالئار",
+      "de": "Balearen",
+      "es": "Islas Baleares",
+      "fr": "Îles Baléares",
+      "ja": "バレアレス諸島",
+      "it": "Isole Baleari",
+      "zh-CN": "巴利阿里群岛",
+      "tr": "Balear Adaları",
+      "ru": "Острова Балеарс",
+      "uk": "Балеарські острови",
+      "pl": "Wyspy Baleary",
+      "hi": "इलेस बेलियर्स",
+      "ar": "جزر البليار"
+    },
+    "created_at": "2019-10-06T09:45:52",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q1157982",
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows are archived below.
