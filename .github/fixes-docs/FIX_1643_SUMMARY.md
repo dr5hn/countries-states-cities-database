@@ -80568,3 +80568,38 @@ places had two records (Carmel and Carmel Hamlet, Northdale and Greater Northdal
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Thailand: amphoe and khet as counties; municipalities typed
+
+### Problem
+Thailand's 1,240 city records had no level, and most of them are districts (amphoe, and Bangkok's khet) rather than
+towns: "Amphoe Mueang Chiang Mai" and the like. The counties dataset had no Thai units.
+
+### Fix
+- **928 counties** in the new `contributions/counties/TH.json` (ids 5377–6304): 878 amphoe (อำเภอ) and 50 Bangkok khet (เขต),
+  level 2 under their changwat. Codes and boundaries come from the Royal Thai Survey Department set published by OCHA
+  ROAP (Thailand COD-AB), corroborated by the Department of Local Administration's current district names and DOPA's
+  21 January 2026 counts (the DOPA code file itself could not be reached). County points are administrative interior
+  points derived from those polygons.
+- **186 municipalities** matched to the Department of Local Administration register (10 June 2026): thesaban nakhon
+  (เทศบาลนคร, 26) and thesaban mueang (เทศบาลเมือง, 88) as `city`, thesaban tambon (เทศบาลตำบล, 72) as `town`, at
+  level 3, except Ko Samui and Ko Si Chang, whose municipality covers its whole district and so sits at level 2 with
+  that district as its county. Bangkok (กรุงเทพมหานคร), not in that register, is `city` at level 1 through its own city
+  and ISO-state identity. 186 are linked to their amphoe by `county_id`.
+
+Each municipality is matched through its own Wikidata item, the official register name, the changwat and the point
+inside its district.
+
+Held (1053): 909 records that are themselves districts (their item is the amphoe or khet): whether they leave
+cities for the new county records, as US counties did in #1569, is a separate decision; records whose name or item
+names another place, items that are not a current local government, and ambiguous register joins where a municipality
+and a tambon administrative organization share a name (Kumphawapi, Tha Bo).
+
+### Sources
+Royal Thai Survey Department via OCHA ROAP, [Thailand administrative boundaries (COD-AB)](https://data.humdata.org/dataset/cod-ab-tha),
+[CC BY 3.0 IGO](https://creativecommons.org/licenses/by/3.0/igo/) (boundaries created 1 January 2022, valid
+22 January 2022, reviewed 30 October 2025; adapted here to codes and interior points); Department of Local
+Administration register of local governments (10 June 2026); DOPA counts of 21 January 2026; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/TH.json`; no existing `id` changes.
