@@ -66272,3 +66272,31 @@ Only `wikiDataId` changes; the structure round follows.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Hungary: járások as counties; settlements typed from KSH
+
+### Problem
+Hungary's 1,074 city records had no level and mostly the type `city`, whether a town, a large village or a village,
+and no link to their járás (district); the counties dataset had no Hungarian units.
+
+### Fix
+From the KSH Helységnévtár (gazetteer, current) with each settlement's legal status and járás:
+
+- **195 counties** in the new `contributions/counties/HU.json` (ids 4846–5040): 174 járások under their vármegye and
+  21 Budapest districts (kerület) linked by city records, all level 2. Points are inside each unit's own
+  polygon (seven Wikidata points that were not, Makói járás 17 km out, take the area centroid instead).
+- **313 cities** (város 311, megyei jogú város 2: Baja and Esztergom, which have no ISO unit of their own) and
+  **531 villages** (nagyközség 120, község 411) at level 3, each linked to its járás.
+- **Budapest** is the capital city and its own ISO state: `city / főváros / 1`, no county, as Berlin and Vienna. Its
+  21 district records are `section / kerület / 2`, linked to Budapest and to their district county.
+
+865 records get `county_id` (844 to their járás, 21 Budapest district records to their kerület) and 21 get `parent_id`. Each record is matched through the KSH code on its own
+Wikidata item (P939), with the official name, the unchanged state, the item's point within 5 km and no P131 to a
+separate municipality.
+
+Held (208): 23 cities with county rights sitting in a county state although ISO 3166-2:HU lists each as its own unit
+(Debrecen, Szeged ...) and one village in the wrong county (Szárliget): they move in a later state round; records whose item is a járás rather than a
+settlement; and records whose code or point names another place.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/HU.json`; no existing `id` changes.
