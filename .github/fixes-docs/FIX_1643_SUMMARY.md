@@ -65667,3 +65667,27 @@ lacked a verified label for the unit.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Philippines: seat-area points for municipalities and cities
+
+### Problem
+#1784 held 639 Philippine municipality and city records whose stored point lies outside their own municipality
+(NAMRIA/PSA boundaries; identity from PSA PSGC, 30 June 2026), because a municipal polygon's interior is not where its
+town is.
+
+### Fix
+262 records get a point in their seat barangay: the interior point of the barangay polygon, rounded to 4 decimals and
+checked inside the barangay, municipality and province. For 233 municipalities the barangay is the current PSGC
+Poblacion that contains the town as mapped in OpenStreetMap (matched by current or old PSGC code, or by the record's own
+Wikidata id); for 29 component cities it is the barangay of the city hall named by the city's official address, which
+for some cities (Lipa, Bacoor, Tagum, Tanauan) is a new hall away from the old centre. These are derived seat-area
+points, not surveyed ones; the new points are a median 0.4 km from the mapped town, the old ones 9.9 km.
+
+Unchanged: 130 points within 1 km of their municipal boundary are preserved under that tolerance, not certified; some
+are far from their town (Capas, Sibulan) and are listed for a later round. Held (247): 197 with no explicit
+Poblacion in PSGC, 37 whose mapped town lies outside every Poblacion, 7 cities without an official
+city-hall barangay, 4 with conflicting or missing mapping, and Turtle Islands and San Vicente (Palawan), whose seat
+barangay spans several islands and whose interior point fell on an island away from the town.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
