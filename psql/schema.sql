@@ -32,6 +32,10 @@ ALTER TABLE IF EXISTS ONLY public.cities DROP CONSTRAINT IF EXISTS cities_county
 ALTER TABLE IF EXISTS ONLY public.cities DROP CONSTRAINT IF EXISTS cities_country_id_fkey;
 DROP INDEX IF EXISTS public.subregions_region_id_idx;
 DROP INDEX IF EXISTS public.states_country_id_idx;
+DROP INDEX IF EXISTS public.postcodes_state_id_idx;
+DROP INDEX IF EXISTS public.postcodes_country_id_code_idx;
+DROP INDEX IF EXISTS public.postcodes_code_idx;
+DROP INDEX IF EXISTS public.postcodes_city_id_idx;
 DROP INDEX IF EXISTS public.countries_subregion_id_idx;
 DROP INDEX IF EXISTS public.countries_region_id_idx;
 DROP INDEX IF EXISTS public.counties_state_id_idx;
@@ -43,6 +47,7 @@ DROP INDEX IF EXISTS public.cities_country_id_idx;
 ALTER TABLE IF EXISTS ONLY public.subregions DROP CONSTRAINT IF EXISTS subregions_pkey;
 ALTER TABLE IF EXISTS ONLY public.states DROP CONSTRAINT IF EXISTS states_pkey;
 ALTER TABLE IF EXISTS ONLY public.regions DROP CONSTRAINT IF EXISTS regions_pkey;
+ALTER TABLE IF EXISTS ONLY public.postcodes DROP CONSTRAINT IF EXISTS postcodes_pkey;
 ALTER TABLE IF EXISTS ONLY public.countries DROP CONSTRAINT IF EXISTS countries_pkey;
 ALTER TABLE IF EXISTS ONLY public.counties DROP CONSTRAINT IF EXISTS counties_pkey;
 ALTER TABLE IF EXISTS ONLY public.cities DROP CONSTRAINT IF EXISTS cities_pkey;
@@ -256,6 +261,48 @@ CREATE TABLE public.postcodes (
 
 
 --
+-- Name: TABLE postcodes; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON TABLE public.postcodes IS 'Postal codes (issue #1039) - Tier 4: one row per postcode';
+
+
+--
+-- Name: COLUMN postcodes.code; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.postcodes.code IS 'The postal code value (alphanumeric, country-specific format)';
+
+
+--
+-- Name: COLUMN postcodes.locality_name; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.postcodes.locality_name IS 'Human-readable place name associated with the postcode';
+
+
+--
+-- Name: COLUMN postcodes.type; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.postcodes.type IS 'Granularity: full | outward | sector | district | area';
+
+
+--
+-- Name: COLUMN postcodes.source; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.postcodes.source IS 'Originating data source for license/attribution tracking (e.g. openplz, wikidata, census)';
+
+
+--
+-- Name: COLUMN postcodes."wikiDataId"; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.postcodes."wikiDataId" IS 'Wikidata Q-ID for cross-referencing';
+
+
+--
 -- Name: postcodes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -424,6 +471,14 @@ ALTER TABLE ONLY public.countries
 
 
 --
+-- Name: postcodes postcodes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.postcodes
+    ADD CONSTRAINT postcodes_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: regions regions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -501,6 +556,34 @@ CREATE INDEX countries_region_id_idx ON public.countries USING btree (region_id)
 --
 
 CREATE INDEX countries_subregion_id_idx ON public.countries USING btree (subregion_id);
+
+
+--
+-- Name: postcodes_city_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX postcodes_city_id_idx ON public.postcodes USING btree (city_id);
+
+
+--
+-- Name: postcodes_code_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX postcodes_code_idx ON public.postcodes USING btree (code);
+
+
+--
+-- Name: postcodes_country_id_code_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX postcodes_country_id_code_idx ON public.postcodes USING btree (country_id, code);
+
+
+--
+-- Name: postcodes_state_id_idx; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX postcodes_state_id_idx ON public.postcodes USING btree (state_id);
 
 
 --
