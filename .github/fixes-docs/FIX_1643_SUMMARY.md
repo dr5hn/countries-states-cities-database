@@ -65812,3 +65812,36 @@ the polygon.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Russia: type, local type and level from OKTMO
+
+### Problem
+Russia's 5,572 city records had no level and mostly the type `city`, whether city, urban-type settlement or village.
+
+### Fix
+2,114 records get their official category from Rosstat's OKTMO (October 2026 edition): each through the OKTMO code on
+its own Wikidata item (P764), with the exact Russian name in the right federal subject and the item's points within
+2 km. Level follows the municipal hierarchy: subject 1, municipal district or city okrug 2, urban or rural
+settlement 3, populated place 4 (3 where it sits directly under a district or okrug).
+
+| type | type_local | Records |
+|---|---|---:|
+| city | город | 602 |
+| town | посёлок городского типа, рабочий посёлок, городской посёлок, курортный/дачный посёлок; посёлок with an urban OKTMO code | 392 |
+| village | село, станица, посёлок (rural OKTMO code), деревня, хутор, аул, слобода | 1,118 |
+| locality | населённый пункт | 2 |
+
+Levels: 488 at 3, 1,626 at 4. Urban-type settlements are typed `town` and rural places `village`, because
+the type list allows no other value without a maintainer decision; `type_local` keeps the Russian category. A plain
+посёлок is urban or rural by its OKTMO code: Rosstat numbers urban-type settlements 051–099 and rural places 101–999
+(the Codex review moved 79 such посёлки, e.g. Aykhal and Chersky in Yakutia, from village to town).
+No `parent_id` is set: the populated city is not automatically the city okrug of the same name.
+
+Held (3458): 2,257 whose item has no OKTMO code found among current populated places (some
+are annulled codes, six are subject or district codes such as Moscow's; the official crosswalk of annulled codes could
+not be retrieved), 498 whose item carries only a municipal-unit code, and
+records with name, point or subject conflicts or no item. The 2021 census list with codes and the GKGN official
+coordinates were unavailable, so no name-only fallback was used.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
