@@ -65976,3 +65976,51 @@ itself and stay in).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Australia: local government areas as counties; LGA records and localities typed
+
+### Problem
+Australia's 4,147 city records had no level and mixed types; most are suburbs or localities, some are local government
+areas (LGAs). The counties dataset had no Australian units.
+
+### Fix
+From the ABS ASGS (LGA 2025, Suburbs and Localities 2021) and Geoscape Administrative Boundaries (August 2026), with
+the Queensland place-names gazetteer for suburb/locality terms and the Victorian and Western Australian
+locality-boundary definitions for locality (sources and attribution below):
+
+- **540 counties** in the new `contributions/counties/AU.json` (ids 4306–4845): every local government area and
+  local-government equivalent in ABS LGA 2025 and Geoscape AUG26, named in full as published (Albury City Council),
+  `administrative district` with its legal status as `type_local` (Shire, City, Council, Regional Council ...), level 2,
+  each point inside its own polygon. The equivalents include Darwin Waterfront Precinct Municipality, Weipa Town and the
+  Anangu Pitjantjatjara Yankunytjatjara and Maralinga Tjarutja lands. Unincorporated remainder areas get no county, and
+  the ACT, which has no local government area, has none. Christmas Island and Cocos (Keeling) Islands are separate
+  countries here.
+- **468** records that are an LGA become `municipality` at level 2 with their status as `type_local`, linked to
+  their own county record (the same unit, as a German kreisfreie Stadt).
+- **3,064** suburbs and localities become `locality` at level 3: 399 suburbs and 1,113 localities where the state register
+  gives that term (Queensland, Victoria, Western Australia), and 1,552 as `gazetted locality` (the national
+  register's class) where the state register does not distinguish suburb from locality (NSW, SA, Tasmania, NT, ACT).
+- **3,436** records get `county_id` (the LGA containing the point); 1385 get `parent_id` = their LGA record,
+  only where the whole locality lies inside that LGA.
+
+Each record is matched through the ABS code on its own Wikidata item (P10112 SAL or LGA), with a matching name and
+state and the point inside its own official polygon.
+
+Held (615): records whose item has no current code or names another place, and records whose name, state or point
+disagree.
+
+### Sources and attribution
+- ABS, [ASGS Edition 3](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files)
+  (LGA 2025, SAL 2021), CC BY 4.0.
+- [Geoscape Administrative Boundaries](https://data.gov.au/data/dataset/geoscape-administrative-boundaries), August 2026
+  (LGAs and localities, every state and territory). Incorporates or developed using Administrative Boundaries ©
+  Geoscape Australia licensed by the Commonwealth of Australia under Creative Commons Attribution 4.0 International
+  licence (CC BY 4.0).
+- © State of Queensland (Department of Resources), [place names gazetteer](https://spatial-gis.information.qld.gov.au/arcgis/rest/services/Basemaps/FoundationData/FeatureServer/4),
+  retrieved 9 October 2026, CC BY 4.0.
+- Victoria's [locality names and boundaries](https://www.land.vic.gov.au/place-naming/services-and-resources/locality-names-and-boundary-maps)
+  and Landgate's [administrative boundary data](https://www.landgate.wa.gov.au/location-data-and-services/discovering-landgate-data/administrative-boundary-data/)
+  for the legal term locality. Wikidata items, CC0.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/AU.json`; no existing `id` changes.
