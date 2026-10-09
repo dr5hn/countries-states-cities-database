@@ -66272,3 +66272,31 @@ Only `wikiDataId` changes; the structure round follows.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Greece: regional units as counties; municipalities and settlements typed
+
+### Problem
+Greece's 1,097 city records had no level; most are settlements, some are municipalities (δήμοι), and the counties
+dataset had no Greek units.
+
+### Fix
+From the ELSTAT Kleisthenis register (regions, regional units, municipalities, municipal units, communities,
+settlements) and the official boundaries. The hierarchy is region 1, regional unit 2, municipality 3, municipal unit
+4, community 5, settlement 6.
+
+- **74 counties** in the new `contributions/counties/GR.json` (ids 5041–5114): every regional unit (περιφερειακή
+  ενότητα), level 2. Mount Athos stays a state with no county.
+- **41 municipalities** become `municipality / δήμος / 3` (a municipal territory, as TYPE_FIELD.md describes for Greece).
+- **556 settlements** become `locality / οικισμός / 6`.
+- **597** records get `county_id`, the regional unit containing the point. No `parent_id`: no community is a city
+  record.
+
+Municipalities are matched through the code on their own Wikidata item; a settlement only when its own item is that
+settlement (its GeoNames id equal to the record's source, or its Greek name, point within 1 km, class and parent).
+
+Held (500): 391 records whose item names another place (a Wikidata repair round is under way), 423 settlements whose
+item does not pass the identity gates, 57 records filed under the legacy states Achaea and East Attica, records whose point is
+in another region, municipal units, former units and monasteries.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/GR.json`; no existing `id` changes.
