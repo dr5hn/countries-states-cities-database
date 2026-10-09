@@ -77163,3 +77163,33 @@ whose item's point lies outside them, and records without a usable item or code.
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/CH.json`; no existing `id` changes.
+
+## Ukraine: raions as counties; settlements typed from the KATOTTH codifier
+
+### Problem
+Ukraine's 1,806 city records had no level and mostly the type `city`, whether a city, a settlement or a village, and
+no link to their raion; the counties dataset had no Ukrainian units.
+
+### Fix
+From the Codifier of administrative-territorial units and territories of territorial communities (KATOTTH, Ministry of
+Development, edition of 7 July 2026), which lists every oblast, raion, hromada and settlement with its category:
+
+- **136 counties** in the new `contributions/counties/UA.json` (ids 5241–5376): every raion, level 2, including the ten
+  Crimean raions of the codifier. `name` is the official romanization (Cabinet of Ministers Resolution 55/2010) of the
+  codifier name, `native` the Ukrainian (Bakhchysaraiskyi raion / Бахчисарайський район).
+- **405 cities** (місто), **415 settlements** (селище, the category that replaced the urban-type settlement; typed
+  `town`) and **446 villages** (село) at level 4: oblast 1, raion 2, hromada 3. No hromada is a city record, so no
+  `parent_id`. Sevastopol, a city with special status and its own ISO unit, is `city` at level 1 with no county; Kyiv
+  is held, because its stored Wikidata item is a village (Kvasy, Zakarpattia) rather than the city.
+- **1,266** records get `county_id`.
+
+Each record is matched through the KATOTTH code on its own Wikidata item, its name, the oblast and the point within
+3 km of the item and inside the raion. Records in Crimea, Sevastopol and occupied areas are classified from the
+Ukrainian codifier like any other; nothing else about them changes.
+
+Held (539), for overlapping reasons: name, oblast or point conflicts with the record's item (327 name conflicts),
+missing or non-current codes, former units, unresolved or redirected items, boroughs outside the settlement mapping, and
+12 records in six duplicate pairs sharing one current code (Bila Krynytsia, Denyshi ...), which otherwise pass.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/UA.json`; no existing `id` changes.
