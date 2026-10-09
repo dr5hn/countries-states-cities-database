@@ -65753,3 +65753,29 @@ Seybaplaya ...) have no admitted CSC territorial record yet.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Wikidata repair round 1: records whose wikiDataId named another place
+
+### Problem
+The Spain, Mexico and Romania structure reviews flagged 64 records: 63 whose `wikiDataId` belonged to another place (a
+hamlet carrying its whole village's item, a settlement its municipio's, a Barcelona neighbourhood the municipality of
+the same name, Soba (Cantabria) an item for Japanese noodles) and Ames, which has none.
+
+### Fix
+- 61 records get the item that is that place: 41 verified by the official code on the item (INE P772,
+  INEGI P1976), 20 without one only where the item's GeoNames id is the record's own source id or its local name,
+  point (within 1 km), class and municipio all match (e.g. the five Romanian hamlets).
+- 2 known-wrong ids are cleared where no item passes (La Torrecilla, Los Martínez).
+- El Saucillo (Fraccionamiento) (70198) carried El Saucillo's item and El Saucillo the fraccionamiento's: the pair is
+  swapped back (pullfrog), so no two records share an item.
+- 6 Spanish records get their structure now that identity holds (Can Pastilla, Ciutadella, Coll d'en Rabassa,
+  Lezama and Ses Salines on Menorca as entidades singulares; Soba as a municipio).
+- 2 move province: Lezama (an entidad of Amurrio) Bizkaia → Álava; A Ribeira (in A Estrada) A Coruña → Pontevedra.
+
+By country: ES 54, RO 5, MX 4. Held: Illes Balears, a province record stored as a
+city (a separate decision); Ames, whose only item is the parish of Ames, while the record may be the town; and the
+structure of 49 records: 24 núcleos, 7 with several INE codes, 1 collective (Ames) and 17 whose unit kind is not certified
+(e.g. neighbourhoods without their own INE code).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
