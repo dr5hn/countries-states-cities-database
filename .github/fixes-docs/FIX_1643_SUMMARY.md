@@ -65941,3 +65941,38 @@ established.
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/PL.json`; no existing `id` changes.
+
+## Netherlands: gemeenten and woonplaatsen (type, level, parent)
+
+### Problem
+The Netherlands' 1,651 city records had no level and mostly the type `city`, whether a gemeente (municipality) or a
+woonplaats (a named place within one).
+
+### Fix
+From CBS ([gemeenten on 1 January 2026](https://www.cbs.nl/-/media/cbs/onze-diensten/methoden/classificaties/overig/gemeenten-alfabetisch-2026.xlsx);
+woonplaatsen register [86312NED](https://www.cbs.nl/nl-nl/cijfers/detail/86312ned), BAG February 2026), the Kadaster
+[BAG woonplaats polygons](https://api.pdok.nl/kadaster/bag/ogc/v2/collections/woonplaats/items?f=json&limit=1000)
+(8 October 2026) and the Kadaster [BRK municipality boundaries](https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items?f=json&limit=1000)
+via PDOK. Licences: CBS and BRK CC BY 4.0; BAG Public Domain Mark 1.0; Wikidata CC0.
+
+- **90 gemeenten** become `municipality / gemeente / 2` (province 1).
+- **995 woonplaatsen** become `locality / woonplaats / 3`: the BAG gives a place designation, not a city, town
+  or village category. 275 get `parent_id` = their gemeente record; the rest have no gemeente record yet.
+  This includes Amsterdam, Rotterdam, Utrecht and other cities whose record is the woonplaats: the Netherlands has no
+  current legal city, town or village status (town rights are historical), so they are `locality`, as Mexico's
+  localidades are. To list settlements, use the exclusion filter in TYPE_FIELD.md, not an include list of city,
+  town and village. Amsterdam's `capital` type goes, as Berlin's and Paris's did.
+
+Each record is matched through its own Wikidata item's code (P382 gemeente, P981 BAG woonplaats), with a matching
+name, the right province and the point inside its own official polygon. A record named as its gemeente that carries
+the gemeente's own item is the gemeente; a settlement item with its own BAG code stays a woonplaats.
+
+Held (566): 212 records without a usable Wikidata item, 242 whose item has no current CBS or BAG code, and
+records whose name, item, province or point disagree.
+
+TYPE_FIELD.md gains a Netherlands note: the eight records named "Gemeente …" are municipal territories beside a
+separate record for their town, so a settlement filter leaves them out (the other gemeente records are the place
+itself and stay in).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
