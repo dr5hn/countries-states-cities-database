@@ -80603,3 +80603,37 @@ Administration register of local governments (10 June 2026); DOPA counts of 21 J
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/TH.json`; no existing `id` changes.
+
+## Argentina: departamentos as counties; municipios and localidades typed
+
+### Problem
+Argentina's 1,209 city records had no level and mixed types, and no link to their departamento; the counties dataset
+had no Argentine units.
+
+### Fix
+From INDEC (Censo 2022 codes, hierarchy definition October 2025), the Georef V2 register of local governments and
+BAHRA localities, and the IGN full-resolution boundaries:
+
+- **529 counties** in the new `contributions/counties/AR.json` (ids 6305–6833): 379 departamentos, 135 Buenos Aires partidos and
+  15 CABA comunas, level 2 under their provincia; each point inside its own IGN polygon.
+- **459 local governments** (Municipio 453, Comuna 6) as `municipality`, and **60 localidades**
+  (Localidad simple 48, Componente de localidad compuesta 12) as `locality`. Level follows each province's real tiers:
+  a municipio inside a departamento is level 3 and its localidades 4; a municipio that is its own departamento or
+  partido (every Buenos Aires partido; Chilecito and San Juan, whose ejido is the department) is the same unit as its
+  county, so it is level 2 and its localidades 3 (Mar del Plata, Pigüé ...), as a German kreisfreie Stadt. National
+  sources give no city status, so none is inferred.
+- **519** records get `county_id`.
+
+Each record is matched through the BAHRA id on its own Wikidata item (P13052), agreeing with the INDEC and BAHRA rows;
+a local government also needs a municipality class on its item and an IGN polygon with its official code.
+
+Held (690): records without a matching BAHRA code, points over 3 km from their item, name conflicts, 352 records that are
+themselves departamentos or partidos (now county records; whether they leave cities is a separate decision), and
+places without a local government directly under a departamento (Villa Berna, Leleque).
+
+### Sources
+Instituto Geográfico Nacional (IGN), Instituto Nacional de Estadística y Censos (INDEC), Georef / Datos Argentina
+(CC BY 4.0) and Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/AR.json`; no existing `id` changes.
