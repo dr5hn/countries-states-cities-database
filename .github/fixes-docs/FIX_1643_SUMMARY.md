@@ -65691,3 +65691,33 @@ barangay spans several islands and whose interior point fell on an island away f
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Mexico: administrative structure (type, type_local, level, parent)
+
+### Problem
+Mexico's 9,321 city records had no level; most were typed `city` whether municipality or locality. #1671 typed 443 of
+them (351 municipal territories, 92 seats) by name.
+
+### Fix
+8,345 records get their type, local type and level from INEGI (Marco Geoestadístico 2026, AGEEML catalogue June/August
+2026): each through the official code on its own Wikidata item (P3801 municipality, P1976 locality), checked against the
+current catalogue, its labels and a point within 5 km of the official one; or by exact official name within the estado
+with the point inside the unit's own polygon.
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| municipio | municipality | 2 | 362 |
+| alcaldía | municipality | 2 | 1 |
+| localidad urbana | locality | 3 | 3,470 |
+| localidad rural | locality | 3 | 4,512 |
+
+1,039 localities get `parent_id` = the CSC record of their municipio where exactly one verified one exists. The #1671
+types are kept: no municipal territory becomes a locality.
+
+Held (976): names with no current official match, own Wikidata items that redirect or do not name the record (often a
+copy-forward id: San Francisco del Mar Viejo carries San Francisco del Mar's item), municipal items whose territory is
+unproven, codes no longer in the catalogue, and locality points over 5 km from the official one. 22 municipios created
+since 2010 (San Quintín, Seybaplaya ...) have no CSC territorial record yet.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
