@@ -65845,3 +65845,38 @@ coordinates were unavailable, so no name-only fallback was used.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Germany: Kreise and Regierungsbezirke as counties; city type, level and county links
+
+### Problem
+Germany's 7,107 city records had no level, mixed types (`city`, `adm3`, `capital` ...) and no link to their Kreis;
+the counties dataset had no German units.
+
+### Fix
+From Destatis GV-ISys (30 September 2026, with the official change lists since 2010) and BKG VG250 boundaries
+(1 January 2026), both dl-de/by-2-0:
+
+- **418 counties** in the new `contributions/counties/DE.json` (ids 3415–3832): 19 Regierungsbezirke (level 2) and
+  399 Kreise and kreisfreie Städte (250 Landkreis, 96 kreisfreie Stadt, 41 Kreis, 9 Stadtkreis, 1 Region, 1 Städteregion, 1 Regionalverband), level 2, or 3 under a
+  Regierungsbezirk with `parent_id` set. Each point lies inside its own VG250 polygon; 417 Wikidata items carry
+  the unit's own current code (P440/P1388); Hanau's item still has its old municipal key, and its new Kreis (06415,
+  kreisfrei since 1 January 2026) is confirmed by the register and the city.
+- **5,459 Gemeinden** get type (`municipality`, or `city` for a Stadt), `type_local` (Gemeinde, Stadt, Markt, große
+  Kreisstadt, kreisfreie Stadt, Flecken ...) and level, matched through the AGS on their own Wikidata item (P439) with
+  the point inside the current municipal polygon, or by exact name in the Land. A Gemeinde is one level below its Kreis;
+  a kreisfreie Stadt or Stadtkreis is the same unit as its county and shares its level (40 at 2, 58 at 3); Berlin and
+  Hamburg are level 1.
+- **160** named municipal parts (Berlin Ortsteile, Hamburg, Cologne and Bremen Stadtteile, Saxony Gemeindeteile)
+  become `section` at their official depth. The 44 Saxon Gemeindeteile get `parent_id` = their Gemeinde record;
+  the 116 in Berlin, Hamburg, Cologne and Bremen keep it null, because the borough directly above them (Bezirk,
+  Stadtbezirk) is not a record yet.
+- **5,513** records get `county_id`. A kreisfreie Stadt links to its own county record (the same unit at Kreis
+  level). Berlin and Hamburg get no county record: each is Land, Kreis and Gemeinde at once, so the cities are level 1.
+
+Held (1488): settlements and parts whose own Wikidata item is only a settlement, not a Gemeinde (the review held five more
+such records first matched by name, e.g. Hohenfurch and Kuchen, whose items point to a separate Gemeinde); municipalities merged
+or dissolved since 2010; namesakes; and components with no official hierarchy source. Hanau became kreisfrei on
+1 January 2026: its county is created, the city record is held because its Wikidata item still carries the old key.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/DE.json`; no existing `id` changes.
