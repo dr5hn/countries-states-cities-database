@@ -80568,3 +80568,34 @@ places had two records (Carmel and Carmel Hamlet, Northdale and Greater Northdal
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Argentina: departamentos as counties; municipios and localidades typed
+
+### Problem
+Argentina's 1,209 city records had no level and mixed types, and no link to their departamento; the counties dataset
+had no Argentine units.
+
+### Fix
+From INDEC (Censo 2022 codes, hierarchy definition October 2025), the Georef V2 register of local governments and
+BAHRA localities, and the IGN full-resolution boundaries:
+
+- **529 counties** in the new `contributions/counties/AR.json` (ids 6305–6833): 379 departamentos, 135 Buenos Aires partidos and
+  15 CABA comunas, level 2 under their provincia; each point inside its own IGN polygon.
+- **459 local governments** (Municipio 453, Comuna 6) as `municipality` at level 3, and **60 localidades**
+  (Localidad simple 48, Componente de localidad compuesta 12) as `locality` at level 4. National sources give no city
+  status, so none is inferred.
+- **519** records get `county_id`.
+
+Each record is matched through the BAHRA id on its own Wikidata item (P13052), agreeing with the INDEC and BAHRA rows;
+a local government also needs a municipality class on its item and an IGN polygon with its official code.
+
+Held (690): records without a matching BAHRA code, points over 3 km from their item, name conflicts, 352 records that are
+themselves departamentos or partidos (now county records; whether they leave cities is a separate decision), and
+places without a local government directly under a departamento (Villa Berna, Leleque).
+
+### Sources
+Instituto Geográfico Nacional (IGN), Instituto Nacional de Estadística y Censos (INDEC), Georef / Datos Argentina
+(CC BY 4.0) and Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/AR.json`; no existing `id` changes.
