@@ -1,5 +1,27 @@
 # Changelog
 
+## v4.0 — 2026-10-09
+
+Major release: official administrative structure for 11 countries, a new counties dataset, and six months of data
+corrections ([#1643](https://github.com/dr5hn/countries-states-cities-database/issues/1643)). **Breaking changes: read
+the [v4.0 release notes](https://github.com/dr5hn/countries-states-cities-database/releases/tag/v4.0) before upgrading.**
+
+**Breaking changes:**
+- New `counties` dataset (4,305: US 3,081, DE 418, PL 380, FR 333, AT 93) in every export format, and a nullable
+  `cities.county_id` (29,432 cities linked). The 3,081 US counties moved from `cities` to `counties` with new ids.
+- 4,486 city ids removed: 1,377 duplicates merged into the older record, the 3,081 US counties, and 28 non-places. The
+  mapping is `removed_ids_v3.2_to_v4.0.csv` on the v4.0 release.
+- For US, FR, IT, MX, RO, ES, DE, BR, PL, RU and AT, city `type` is a standard term (`municipality`, `city`, `town`,
+  `village`, `locality`, `section`) and the new `type_local` holds the official local term. `level` is the depth in
+  the official hierarchy (73,230 cities, 4,991 states).
+- 7,527 cities moved to the smallest ISO 3166-2 unit that contains them, or out of a wrong state; 27 states added and
+  6 retired.
+- New columns `cities.type_local`, `cities.county_id` and `states.type_local`.
+- Translations rebuilt for every country from Wikidata labels (109,678 cities).
+
+**Also:** Wikidata ids corrected on 17,455 cities, names on 3,653 and coordinates on 1,457; 1,535 cities and 95 states
+moved to the right time zone; 185,878 postcodes linked to their city.
+
 ## 2026-10
 - **2026-10-01** - PR [#1671](https://github.com/dr5hn/countries-states-cities-database/pull/1671): Updated cities (MX) (by @dr5hn)
 - **2026-10-01** - PR [#1675](https://github.com/dr5hn/countries-states-cities-database/pull/1675): Updated cities (IN, MX, PH, PT) (by @dr5hn)
