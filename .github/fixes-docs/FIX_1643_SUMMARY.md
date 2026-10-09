@@ -77193,3 +77193,26 @@ missing or non-current codes, former units, unresolved or redirected items, boro
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/UA.json`; no existing `id` changes.
+
+## Colombia: municipios (type, local type, level)
+
+### Problem
+Colombia's 1,122 city records had no level and mostly the type `adm2` (979), although most are municipios.
+
+### Fix
+From DANE's DIVIPOLA municipal roster (cut-off 30 December 2024, published 24 January 2025) and the DANE MGN 2025
+boundaries: **945 municipios** and **10 distritos** become `municipality` at level 2 (the departamento, or Bogotá D.C., is
+level 1; there is no unit in between, so no county records), with `type_local` municipio or distrito. DIVIPOLA labels
+every municipal unit "Municipio"; the distritos come from DANE's July 2020 district roster (cited in the MSPS MAITE
+audit, p. 12) and Medellín's Acto Legislativo 01 of 2021.
+
+Each record is matched through the DANE code on its own Wikidata item, its name, the departamento and the point inside
+the municipio's polygon. A record named as its municipio that carries the municipio's own item is the municipio.
+
+Held (167): records whose item is the municipal seat rather than the municipio (74), items with no municipality code or
+identity, and points outside the municipio or departamento. No centro poblado is classified in this pilot: DIVIPOLA
+gives only the broad categories CM and CP, not the local subcategory (corregimiento, inspección de policía, caserío),
+and records with unresolved identity stay held.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
