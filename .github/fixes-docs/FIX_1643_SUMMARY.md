@@ -66187,3 +66187,33 @@ Held: the 93 Austrian counties (their items carry no district code to verify), 1
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived below.
+
+## Czechia: obce and části obce (type, level, parent)
+
+### Problem
+Czechia's 1,355 city records had no level and mostly the type `city`, whether a town, a market town, a village
+municipality or a part of one. Since #1777 each sits in its okres (the ISO district).
+
+### Fix
+From ČÚZK RÚIAN (obce and části obce) and the ČSÚ code lists, current editions:
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| statutární město | city | 3 | 23 |
+| město | city | 3 | 539 |
+| městys | town | 3 | 102 |
+| obec | municipality | 3 | 566 |
+| hlavní město (Prague) | city | 1 | 1 |
+| část obce | section | 2 in Prague, 4 elsewhere | 31 |
+
+Kraj is level 1 and okres 2, so an obec is 3. Prague is kraj, okres and obec at once: level 1, no county, as Berlin
+and Vienna. 24 parts get `parent_id` = their obec record (16 in Prague). No county records: okresy are states.
+
+Each record is matched through the RÚIAN code on its own Wikidata item (P7606 obec, P2788 část obce), with the
+official name and the point inside its own unit.
+
+Held (93): mostly records whose item is an okres rather than a place, or whose point lies in another okres, and
+records whose name disagrees with their item.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
