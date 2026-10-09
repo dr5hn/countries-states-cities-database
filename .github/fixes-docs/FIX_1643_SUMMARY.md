@@ -77106,3 +77106,31 @@ not match the unit.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Greece: Wikidata ids (repair before the settlement round)
+
+### Problem
+The Greece structure pilot held 391 records whose own Wikidata item did not match the record's name: a copied item
+of another place, or a correct item under a different spelling. Each was checked against the ELSTAT register.
+
+### Fix
+- **239 items replaced** by the item that is the record's place: 215 settlements whose item's GeoNames id equals the
+  record's source, 8 by Greek local name, point within 1 km, settlement class and municipality, and 10 municipalities
+  through the item's own ELSTAT code (P1116), official name and the record's point inside the municipality. Examples:
+  Kleitos keeps the old settlement's item, not relocated Neos Kleitos 22 km away; Ouranoupolis gets the place, not a
+  Wikimedia duplicate-page item.
+- 6 more settlements outside the flagged records, found by the Codex review's full-file check, carried the item of a
+  namesake 150-675 km away (Profítis Ilías had the one in Heraklion) and get their own; the "Nomós Kykládon" row's
+  item, another prefecture's, is cleared.
+- 151 records already had the right item and keep it.
+
+Held (6): records where no item passes the gates. Only `wikiDataId` changes; the settlement typing of these records
+follows in a later round.
+
+### Sources
+Hellenic Statistical Authority (ELSTAT), SKA01 register 2026 and the 2011–2022 code crosswalk, https://www.statistics.gr.
+These records parse and adapt the published data; ELSTAT bears no responsibility for the result of modification.
+Wikidata (CC0) and [GeoNames](https://www.geonames.org/) (CC BY 4.0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
