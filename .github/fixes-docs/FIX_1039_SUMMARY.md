@@ -141,3 +141,31 @@ another CSC state (Belgian cities use the region as their state, the postcodes t
 
 ### Rollback
 Revert the PR (squash commit); `city_id` is optional.
+
+## Postcodes linked to their city, round 3 (Luxembourg, Netherlands, Czechia and others)
+
+### Problem
+After #1770 and #1774, postcodes in countries with open official address data were still unlinked.
+
+### Fix
+5,964 more postcodes now point to their city (LU 3,292, NL 2,187, CZ 471, FO 7, RE 4, MQ 2, GP 1). Same rule as round 2: exactly one CSC city with the place's
+name in the postcode's state, every source row of the code in one municipality, and the city's point inside that
+municipality's official boundary. Only `city_id` changes.
+
+| Country | Linked | Rule | Source and terms |
+|---|---:|---|---|
+| LU | 3,292 | All street rows of the code (normal codes, no PO-box ranges) name one commune; the locality or its named commune is one CSC city, inside the commune polygon. | [CACLR national register of localities and streets](https://download.data.public.lu/resources/registre-national-des-localites-et-des-rues/20261005-023253/caclr.xlsx) and [administrative boundaries](https://download.data.public.lu/resources/limites-administratives-du-grand-duche-de-luxembourg/20261005-030016/limadmin.geojson), 2026-10-05; CC0 |
+| NL | 2,187 | Every BAG address indexed under the four-digit postcode area (PC4) lies in one gemeente and province (count queries with zero exceptions, retrieved 2026-10-09); the locality or its gemeente is one CSC city, inside the gemeente polygon. Special delivery endpoints are not certified. | Retrieved from [PDOK Locatieserver](https://api.pdok.nl/bzk/locatieserver/search/v3_1/free) over [BAG](https://api.pdok.nl/kadaster/bag/ogc/v2) (Public Domain Mark 1.0); [BRK administrative units](https://api.pdok.nl/kadaster/brk-administratieve-eenheden/ogc/v1) (CC0) |
+| CZ | 471 | Every RÚIAN address with the code lies in one obec whose okres is the CSC state; the documented locality or obec is one CSC city, inside the obec polygon; special postal types held. | [RÚIAN addresses, 2026-09-30](https://vdp.cuzk.gov.cz/vymenny_format/csv/20260930_OB_ADR_csv.zip) and boundaries (ČÚZK, CC BY 4.0) supply the link. Česká pošta's [code-type file](https://www.ceskaposta.cz/documents/d/guest/csv_psc_a-zip?download=true) (terms unknown) is used only to exclude: a code must be type 1 (ordinary) to be linked |
+| FO | 7 | All official street addresses with the code lie in one locality and municipality; one CSC city, inside the municipality polygon. | Umhvørvisstovan datasets [adressur/us_adr_husanr](https://gis.us.fo/arcgis/rest/services/adressur/us_adr_husanr/MapServer/0) and [fyrisitingarlig_kort/us_kommunur](https://gis.us.fo/arcgis/rest/services/fyrisitingarlig_kort/us_kommunur/MapServer/0), downloaded 2026-10-09 through their web services; reuse under the [Føroyakort terms](https://www.foroyakort.fo/um-foeroyakort/terms-and-conditions-in-english) (June 2019) with attribution to Umhvørvisstovan |
+| RE | 4 | Full La Poste export: all rows of the code name one commune, whose INSEE code and name match the IGN commune; one CSC city of that name in the state, inside the IGN commune polygon. | [La Poste](https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw) and [IGN Admin Express](https://www.data.gouv.fr/datasets/admin-express-admin-express-cog-admin-express-cog-carto-admin-express-cog-carto-pe-admin-express-cog-carto-plus-pe/); Licence Ouverte 2.0 |
+| MQ | 2 | Full La Poste export: all rows of the code name one commune, whose INSEE code and name match the IGN commune; one CSC city of that name in the state, inside the IGN commune polygon. | [La Poste](https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw) and [IGN Admin Express](https://www.data.gouv.fr/datasets/admin-express-admin-express-cog-admin-express-cog-carto-admin-express-cog-carto-pe-admin-express-cog-carto-plus-pe/); Licence Ouverte 2.0 |
+| GP | 1 | Full La Poste export: all rows of the code name one commune, whose INSEE code and name match the IGN commune; one CSC city of that name in the state, inside the IGN commune polygon. | [La Poste](https://datanova.laposte.fr/data-fair/api/v1/datasets/laposte-hexasmal/raw) and [IGN Admin Express](https://www.data.gouv.fr/datasets/admin-express-admin-express-cog-admin-express-cog-carto-admin-express-cog-carto-pe-admin-express-cog-carto-plus-pe/); Licence Ouverte 2.0 |
+
+All 125 countries' remaining postcodes were surveyed for an official, redistributable source; those without one, or
+whose terms are unknown or restrict reuse, stay unlinked (the survey is in the audit files). A source with unknown terms is
+never what supplies a link; it may only rule codes out (the Czech code types above). Åland's 3 candidate codes are held:
+Posti covers Åland at postcode level only, without streets, so a code's full municipal scope cannot be shown.
+
+### Rollback
+Revert the PR (squash commit); `city_id` is optional.
