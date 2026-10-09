@@ -65909,3 +65909,35 @@ Gemeinde by name and polygon, and settlements whose item does not identify an Or
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/AT.json`; no existing `id` changes.
+
+## Poland: powiats as counties; city type, level and county links from TERYT
+
+### Problem
+Poland's 2,810 city records had no level, mostly the type `city` whether gmina, town or village, and no link to their
+powiat; the counties dataset had no Polish units.
+
+### Fix
+From GUS TERYT (TERC units, SIMC places with their official category) and GUGiK PRG boundaries, current editions:
+
+- **380 counties** in the new `contributions/counties/PL.json` (ids 3833–4212): 314 powiats and
+  66 cities with powiat rights (Warsaw included), all level 2 under their województwo, named in the official
+  form (powiat bolesławiecki), each point inside its own PRG polygon.
+- **551** gmina records: 295 urban gminas (gmina miejska, typed `city`: a town with city rights, as a German
+  Stadt), 195 rural and 61 urban-rural gminas (`municipality`); level 3, or 2 for a city with powiat
+  rights, which is powiat and gmina at once.
+- **631 towns** (miasto, `city`) and **1,383 villages** (wieś, `village`) at level 4, below their gmina; the town of
+  an urban-rural gmina is its own SIMC place, not the gmina. 7 other places (osada, kolonia) are `locality`, and 33
+  are `section`: 14 Warsaw districts (dzielnica), 16 city parts (część miasta) and 3 village parts (część). An
+  urban city and its gmina are one unit, so a part of it is one level below the city record and links to it.
+- **2,605** records get `county_id`; 55 get `parent_id` where their immediate parent is a CSC record.
+
+Each record is matched through the TERYT/SIMC code on its own Wikidata item (P1653 gmina, P4046 SIMC), with an
+agreeing official name and the point inside the gmina polygon. Gmina categories come from TERC, place and part
+categories from SIMC (with WMRODZ); none from names.
+
+Held (205): unusable own codes, missing or unresolved items, name, state or containment conflicts, settlement points
+far from their item, duplicate Warsaw identities, items that are a county, and records whose municipal identity is not
+established.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/PL.json`; no existing `id` changes.
