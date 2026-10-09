@@ -31,6 +31,12 @@ Last Updated On: October 09, 2026
   </a>
 </div>
 
+<div align="center">
+  <a href="https://remotegig.in/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme" target="_blank">
+    <img src=".github/images/remotegig-banner.png" alt="Finding a remote job? Go check remotegig.in" />
+  </a>
+</div>
+
 ---
 
 ## Recommended for production
