@@ -66325,3 +66325,41 @@ and records whose name, state or point disagree with their item.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Greece: regional units as counties; municipalities and settlements typed
+
+### Problem
+Greece's 1,097 city records had no level; most are settlements, some are municipalities (δήμοι), and the counties
+dataset had no Greek units.
+
+### Fix
+From the ELSTAT Kleisthenis register (regions, regional units, municipalities, municipal units, communities,
+settlements) and the official boundaries. The hierarchy is region 1, regional unit 2, municipality 3, municipal unit
+4, community 5, settlement 6.
+
+- **74 counties** in the new `contributions/counties/GR.json` (ids 5041–5114): every regional unit (περιφερειακή
+  ενότητα), level 2. Mount Athos stays a state with no county.
+- **41 municipalities** become `municipality / δήμος / 3` (a municipal territory, as TYPE_FIELD.md describes for Greece).
+- **556 settlements** become `locality / οικισμός / 6`.
+- **597** records get `county_id`, the regional unit containing the point. No `parent_id`: no community is a city
+  record.
+
+Municipalities are matched through the code on their own Wikidata item. A settlement is admitted only when its own
+item is that settlement: 508 through a current ten-digit ELSTAT settlement code on the item (P1116), 44 through a
+historical code resolved by the official 2011–2022 crosswalk, and 4 without a code, whose item's GeoNames id equals the
+record's source and has a settlement class. County points are representative positions inside each unit taken from
+Wikidata, not certified centroids or seats.
+
+Held (500): 391 records whose item names another place (a Wikidata repair round is under way), 423 settlements whose
+item does not pass the identity gates, 57 records filed under the legacy states Achaea and East Attica, records whose point is
+in another region, municipal units, former units and monasteries.
+
+### Sources
+Source: Hellenic Statistical Authority (ELSTAT), Register of Municipalities, Communities and Settlements (SKA01, 2026,
+updated through 31 December 2025), the 2011–2022 code crosswalk and the 2021 Population-Housing Census,
+https://www.statistics.gr. These records parse and adapt the published data. ELSTAT bears no responsibility for the
+result of modification. Boundaries: the 2021 census layers hosted by TEE (used only to check containment; no geometry is
+exported). Wikidata (CC0) and [GeoNames](https://www.geonames.org/) (CC BY 4.0) for item and source identity.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/GR.json`; no existing `id` changes.
