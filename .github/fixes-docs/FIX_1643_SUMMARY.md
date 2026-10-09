@@ -65691,3 +65691,33 @@ barangay spans several islands and whose interior point fell on an island away f
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Spain: administrative structure (type, type_local, level, parent)
+
+### Problem
+Spain's 8,328 city records had no level and mostly the type `city`, whether they were municipalities or smaller
+settlements.
+
+### Fix
+7,408 records get their type, local type and level from INE (municipality dictionary at 1 January 2026 with the 2026
+changes; Nomenclátor 2025), almost all (7,407) through the INE code on the record's own Wikidata item (P772), the
+rest by exact name inside the IGN/CNIG municipal polygon:
+
+| type_local | type | level | Records |
+|---|---|---:|---:|
+| municipio | municipality | 3 | 7,360 |
+| entidad singular de población | locality | 4 (5 under a colectivo) | 48 |
+
+Level follows the policy: comunidad 1, provincia 2 (the state), municipio 3; Ceuta and Melilla have no province, so
+their municipalities are level 2. 27 entities get `parent_id` = their municipio's record.
+
+Held (920): 499 núcleos de población (a level below the entidades; a later
+round), records whose own Wikidata item carries several units or another place's code, municipality/settlement
+namesakes, 8 identities the review rejected (Soba carries a Wikidata item for Japanese noodles; Ses Salines on Menorca
+carried the Mallorca municipio's item; Carrizo de la Ribera, El Burgo de Osma and Pradales are settlements carrying their
+municipio's item; Ames is a parish), and 48 records whose own Wikidata item carries an INE code from another
+province (44 municipio, 3 núcleo, 1 entidad codes): these items most likely belong to other places, so they go to an
+identity round that repairs the Wikidata id first, not to a state move.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
