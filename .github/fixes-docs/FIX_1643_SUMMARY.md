@@ -66245,3 +66245,30 @@ records whose name disagrees with their item.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Switzerland: Wikidata ids (repair before the structure round)
+
+### Problem
+The Switzerland structure pilot could prove only 108 of 1,507 records, because most carried a Wikidata item for another
+place: a settlement item made from GeoNames instead of the municipality, a former municipality, or something else
+entirely (Geneva had Genolier's item, Zürich a Zäziwil settlement, Aadorf Pointe-Noire in Congo).
+
+### Fix
+Every CH record was matched to its place against the BFS municipality register (with its 2010–2026 mutations) and
+swissBOUNDARIES3D, then given that place's own item:
+
+- **881 items replaced**: 811 municipalities through the item's own BFS number (P771), with the official name and the record's
+  point inside the municipality; 48 settlements through the item's GeoNames id equal to the record's source; and
+  1 by local name, point, class and municipality; and 21 from the Codex review: Rotkreuz and Winterthur's Tössfeld
+  quarter get their locality item, and district and region records (Graubünden's regions, Interlaken-Oberhasli,
+  Oberaargau, Wahlkreis Werdenberg) that shared another place's item get their own.
+- **11 wrong items cleared** where no right item exists.
+- 494 records already had the right item and keep it.
+
+Held (121): 87 former municipalities merged since 2010, district records, and records with no item that passes the gates.
+District and region records in cities (Region Bernina ...) only get their correct item here; whether they belong in
+cities at all is a later round.
+Only `wikiDataId` changes; the structure round follows.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
