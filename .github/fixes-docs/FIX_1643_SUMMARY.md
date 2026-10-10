@@ -89680,3 +89680,31 @@ boundaries were used); official facts. Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Croatia: typing after the Wikidata repair (pass 2)
+
+### Problem
+The Croatia Wikidata repair (#1877) gave 298 untyped records their own item, and 63 groups of records still shared one
+item, mostly pairs such as "Bjelovar" / "Grad Bjelovar".
+
+### Fix
+- **179 records typed** by the pilot's rules (#1873): 21 `city / grad` and 73 `municipality / općina` at level 2,
+  85 `locality / naselje` at level 3 (Zagreb's at level 2 under the City of Zagreb), each through its own current
+  item, the official name and its point inside the unit or naselje of the DGU register (RPJ).
+- **104 parent links**: naselja to their now-typed grad or općina, including Drniš, Lastovo, Garešnica, Glina and Bale
+  (retyped by #1877). Dvor becomes the naselje under Općina Dvor with its own settlement item.
+- **Grad Virovitica** (54560) is the grad, with the grad's 2021 census population (19,302; the 13,486 it carried is the
+  Virovitica naselje's); the separate "Virovitica" record (54973) is that naselje (GeoNames PPLA 3187694) and stays
+  held until its own settlement item is verified (a merge proposed in research was withdrawn after review).
+- **3 native names** corrected on typed općine: Bale-Valle, Oprtalj-Portole, Tar-Vabriga-Torre Abrega.
+
+Held (171): 122 records in 61 groups that still share an item ("Bjelovar" / "Grad Bjelovar" ...): Wikidata has no
+separate current item for most main naselja, so this pass could not prove which record is the town; a rule for them
+follows in pass 3. Also 49 records whose item, class or point is unresolved (including the Virovitica naselje 54973).
+
+### Sources
+DGU Registar prostornih jedinica (4 October 2026), Croatian Open Licence (Otvorena dozvola); Wikidata (CC0); GeoNames
+(CC BY 4.0, ids only).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
