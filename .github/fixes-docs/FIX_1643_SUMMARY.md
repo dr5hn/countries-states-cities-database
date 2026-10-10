@@ -88436,3 +88436,35 @@ Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); every previous value is in the diff.
+
+## Sweden: kommuner and tätorter typed
+
+### Problem
+Sweden's 808 city records had no level and mixed inherited types (505 `city`, 264 `adm2`, 20 `adm1`, 17 `section`), though
+Sweden has had no legal city status since 1971: the records are municipalities (kommuner) or statistical localities
+(tätorter), and some carry the item of a parish or former municipality.
+
+### Fix
+- **8 records are their kommun** (`municipality / kommun / 2`): Borås, Gotland, Göteborgs stad, Helsingborg, Landskrona, Lidingö, Trollhättan, Västerås. Each carries the kommun's own
+  Wikidata item, with its SCB kommun code (P525), the official name and its point inside the kommun.
+- **517 records are localities** (`locality / tätort / 3`, one småort): each carries the locality's own item
+  with its SCB urban-area code (P775), the official locality name and its point inside the SCB 2023 locality, in its
+  kommun. 23 of them link by `parent_id` to the record of their kommun (Borås, Helsingborg, Västerås ...); the others
+  keep an empty `parent_id`, as their kommun is not a city record.
+
+No record is typed `city`, as no Swedish place holds an official city status.
+
+Held (283; reasons overlap): records whose own item names another place or whose name differs from the official
+locality (90 and 66); records whose own item could not be verified as a current locality (93:
+30 without a locality code, 62 whose code matches no unique current SCB locality, and Öckerö, whose combined area was
+renamed; Stockholm among them); points outside their own locality (119); localities spanning several kommuner,
+whose parent needs a decision (48; Malmö, Lund); items of a parish or former municipality; and records whose own
+locality or municipality item lies in another län (57 and 19). These are item conflicts: every record's point is in its
+stored län, so no state changes.
+
+### Sources
+Statistics Sweden (SCB): kommun codes, tätorter and småorter 2023 with boundaries, RegSO 2025, open data under
+[CC0](https://www.scb.se/vara-tjanster/oppna-data/); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
