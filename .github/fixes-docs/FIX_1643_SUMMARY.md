@@ -89831,3 +89831,31 @@ of the Federal Republic of Nigeria (First Schedule) and state government pages f
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Denmark: kommuner, towns and municipal districts typed
+
+### Problem
+Denmark's 431 city records had 303 `city`, 114 `adm2`, six `adm1`, four `section`, two `capital`, one `municipality`
+and one `locality`, all with no level. The 5 regioner are the ISO states; below them are the 98 kommuner and the towns
+(byer) of Statistics Denmark's urban-area count. CSC holds many pairs such as "Aabenraa" and "Aabenraa Kommune".
+
+### Fix
+**392 records typed** through Statistics Denmark (BY3 urban areas and the kommune list) and DAGI boundaries:
+- all **98 kommuner** as `municipality / kommune` at level 2 (Danish law has no city status); in a pair the
+  "Kommune" record is the municipality;
+- **289 towns** as `town / by` at level 3 with `parent_id` to their kommune record, 1 `village / landsby` and 1 `locality /
+  mindre bebyggelse`; Greve is the coastal Greve Strand (46,106 residents), not the inland village of that name;
+- **3 municipal districts** (Måløv in Ballerup, Vanløse in Copenhagen, Stavtrup in Aarhus) as `section / bydel` at level 3
+  under their kommune (294 parent links in all). The four towns and three districts were added after review.
+**16 Wikidata ids repaired** (15 replaced with the place's own item, 1 cleared): shared items go from 16 groups to none.
+
+Held (39): names that match no current urban area in their kommune, urban areas that span several kommuner (no
+single parent), Copenhagen's city record (its item is wider than the kommune's urban area), Christianshavn and
+Christiansø.
+
+### Sources
+Statistics Denmark byopgørelse and kommune list, DAGI (Klimadatastyrelsen, CC BY 4.0), municipal pages for bydele;
+Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
