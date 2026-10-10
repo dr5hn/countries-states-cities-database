@@ -88945,3 +88945,39 @@ under the owner decision of 10 Oct (a Norway pass applying it follows).
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Germany: Gemeinden represented by their main village's record (pass 2, owner decision 10 Oct)
+
+### Problem
+The Germany pilot (#1799) held 1,488 records (1,483 in its research, 5 more during its review). Many are named after a current Gemeinde and lie inside it, but their
+Wikidata item is the Gemeinde's main settlement or Ortsteil of the same name (Adelzhausen, Aichach, Dülmen). Others are
+Ortsteile held only because their Gemeinde's own record was held.
+
+### Fix
+Owner decision (10 Oct, applied to Belgium in #1867): such a record represents the Gemeinde when no other CSC record
+does. **291 records** get the Gemeinde's own Wikidata item (the one current item whose own P439 is its AGS; the village
+item's own P131 must name that Gemeinde) and are typed as #1799 types a Gemeinde: 100 `city` (Stadt, große Kreisstadt)
+and 191 `municipality` (Gemeinde, Markt, Flecken), with `county_id` to their Kreis and the level of #1799 (3 in Länder
+without Regierungsbezirke, else 4). Names follow Destatis; each point lies inside the
+Gemeinde (BKG VG250, 1 January 2026). No two records represent one Gemeinde. 24 of them were added after review: 5
+held during #1799's review (Hohenfurch, Kolkwitz, Kuchen, Reichling, Schwabsoien) and 19 whose CSC name is a form of the
+official name (Allendorf for Allendorf (Eder), Schongau for "Schongau, St", Seebad Heringsdorf for "Heringsdorf, Ostseebad").
+
+Then **19 parts** whose Gemeinde record is now typed and that an official source names (Hauptsatzung, municipal
+planning documents) are typed `section` (Ortsteil 12, Ortschaft 6, Stadtteil 1), one level below their Gemeinde, with
+`parent_id` to it and its `county_id`; their Wikidata item is kept.
+
+Held (1178; reasons overlap, counted before the review admissions): records with no unique current Gemeinde of that exact name around their point
+(819), own items with an AGS that fails name, Land or point (274), parts whose Gemeinde record is still held
+(292), and records without a verified direct P131 to the intended Gemeinde (117: Land or Kreis
+parents, missing or redirected items, items that already name a municipality). A third pass re-checks the holds for
+official name forms, as the review found for 19 of 50 sampled.
+
+### Sources
+Destatis Gemeindeverzeichnis (30 September 2026), BKG VG250 (1 January 2026) and GN250 (release of 18 September
+2026, data status December 2024), © GeoBasis-DE / BKG,
+[dl-de/by-2-0](https://www.govdata.de/dl-de/by-2-0); municipal statutes and official pages for parts (facts only);
+Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
