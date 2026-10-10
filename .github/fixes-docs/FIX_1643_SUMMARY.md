@@ -85938,3 +85938,30 @@ boundary file, which its publisher says does not give legal boundaries.
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/CA.json`; no existing `id` changes.
+
+## Turkey: Wikidata ids of district municipalities (#1641)
+
+### Problem
+The Turkey pilot (#1845) held 818 records, most because their `wikiDataId` named another place: Abana carried
+Pangai in Tonga, Altınordu and Altınova shared one item, Ondokuzmayıs carried Orhangazi. These are the copy-forward
+ids of #1641.
+
+### Fix
+568 records change only `wikiDataId`:
+- **137 replaced by their district's own item**, the one item whose district code (P14366) equals the official
+  NVİ-MERNİS / TÜİK code, with the district class, its province (P14358) and the record's point inside the district.
+- **176 filled with their district's item without the code**: the only current district-of-Turkey item in that
+  province whose Turkish label or alias is the official district name and whose coordinate lies inside the TÜİK
+  district polygon (or within 5 km of it).
+- **255 cleared**: the stored item is proved to be another place (another province, another name more than 20 km
+  away, another district code or another country), and no item passed either test. A wrong id is worse than none.
+  İznik is among them: its item was ancient Nicaea, a separate item beneath modern İznik.
+
+Kept as they were: Araklı, Kemalpaşa, and the metropolitan items of İstanbul, Ankara and Mersin.
+
+### Sources
+NVİ-MERNİS / TÜİK district codes (TGA, 18 May 2026); TÜİK district geometry (reuse with attribution: Türkiye İstatistik
+Kurumu); Union of Municipalities of Türkiye directories; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); every previous value is in the diff.
