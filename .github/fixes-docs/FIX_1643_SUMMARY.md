@@ -85852,3 +85852,44 @@ inside one region); and East Attica (2120), which still has one city (Lesbos).
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Turkey: ilçe as counties; district municipalities typed
+
+### Problem
+Turkey's 997 city records had no level and a GeoNames-style type (`adm1`, `adm2`), and the counties dataset had no
+Turkish units. Most of the records are district (ilçe) municipalities.
+
+### Fix
+- **973 counties** in the new `contributions/counties/TR.json` (ids 6834–7806): every current ilçe, `administrative
+  district / ilçe`, level 2 under its il (the ISO state), including the 51 central districts officially named Merkez.
+  Codes and names come from the NVİ-MERNİS / TÜİK district list (TGA, published 18 May 2026: 81 il, 973 ilçe), which
+  agrees code for code with TÜİK's district layer. Names are the official ones in Turkish title case (ŞEHİTKAMİL →
+  Şehitkamil). County points are interior points of the TÜİK district polygons.
+- **179 district municipalities typed** `municipality`, with `county_id` to their own ilçe: 147 `ilçe` and
+  32 province centres (`il merkezi`, linked to their Merkez district). Level follows the real tier:
+  - in the 30 metropolitan provinces a district municipality has its ilçe's boundaries (Law 6360 turned their
+    villages and towns into neighbourhoods; Law 5216 article 5), so it is the same unit as the county: **level 2**
+    (127), as a German kreisfreie Stadt (#1799);
+  - in the other 51 provinces it governs the district centre, and belde towns and köy villages sit beside it in the
+    ilçe (İğneada in Demirköy, Sav in Isparta Merkez), so it is **level 3** (52, including all 32 province centres),
+    as Argentina's municipios inside a departamento (#1842).
+
+All 179 records keep their own Wikidata item. Nine carry the official district code (P14366); the other 170 are admitted
+by their item's district or municipality class, name, province and a point within 20 km, the municipality's category
+in the TBB and Interior Ministry directories, and their point inside the matched district.
+
+Held (818): records whose own Wikidata item is another place (557 name or copy-forward conflicts, 567 points over
+20 km from their item); belde towns and köy villages, whose current register could not be retrieved; rows carrying the item of a province-wide metropolitan municipality (25 rows, 21 distinct items, some of them
+misidentified such as Bandırma with Balıkesir's item); neighbourhoods (46) and historical sites (7). The Wikidata
+conflicts go to the #1641 copy-forward work.
+
+### Sources
+NVİ-MERNİS / TÜİK district codes as published by TGA (18 May 2026); TÜİK geometry (provinces and districts),
+reused with attribution under [TÜİK's notice](https://tuik.gov.tr/Kurumsal/Yasal_Uyari): Türkiye İstatistik Kurumu
+(TÜİK), adapted to codes and interior points; municipality categories from the Union of Municipalities of Türkiye
+(TBB) [province](https://www.tbb.gov.tr/tr/il-belediyeleri) and metropolitan/district directories and the Interior
+Ministry's [e-Belediye list](https://www.belediye.gov.tr/belediyeler) (not a complete register), retrieved 9 October
+2026; Wikidata (CC0). The 18 May 2026 date is the TGA file's publication path, not a legal effective date.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/TR.json`; no existing `id` changes.
