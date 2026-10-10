@@ -88578,3 +88578,31 @@ pages for locality terms only; GeoNames (CC BY 4.0, ids only); Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Belgium: municipalities represented by their main village's record (pass 2, owner decision 10 Oct)
+
+### Problem
+The Belgium pilot (#1860) held records named after a municipality whose Wikidata item is the municipality's main
+village of the same name (Aalter, Balen, Dessel). They are the only CSC record for those municipalities.
+
+### Fix
+Owner decision (10 Oct): such a record represents the municipality when no other CSC record does. **331 records**
+(329 municipalities and 2 sections) get the municipality's or section's own Wikidata item (found by its NIS code P1567; the village item's own P131 must name that
+municipality) and are typed: 251 `municipality` (`type_local` gemeente / commune / Gemeinde) and 78 `city` holding the
+official city title (stad / ville / Stadt), all level 4 with `county_id` to their arrondissement (#1860's counties),
+and 2 `section` at level 5 with `parent_id` to their current municipality (Bertogne in Bastogne, Kortessem in
+Hasselt). 309 come from the 415 records the decision covered, 20 from other pass-1 holds that meet the same
+checks (Nivelles, Limbourg, Bastogne), and 2 (Beloeil, Saint-Vith) whose name differs from the village item only in
+spelling or national language, added after review. No record shares a municipality with another.
+
+Held (145; reasons overlap): 46 records whose state is a region instead of the province (for a state round),
+records whose item is another place (Andenne carries Amel's, Charleroi Chapelle-lez-Herlaimont's), names
+outside the current register, points outside the named unit and unresolved city titles.
+
+### Sources
+Statbel (Directorate-General Statistics – Statistics Belgium): REFNIS / NIS6 codes (effective 2025) and statistical
+sectors (2026), [CC BY 4.0](https://statbel.fgov.be/en/cc-40); the Flemish gemeente/stad list and city-title laws for
+`city`; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
