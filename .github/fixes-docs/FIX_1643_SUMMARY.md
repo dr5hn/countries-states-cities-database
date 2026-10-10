@@ -88364,3 +88364,46 @@ Westmorland and Furness, which have no current ISO code on master, were outside 
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## United Kingdom: two-tier districts as counties; cities, towns and parishes typed
+
+### Problem
+The UK's 3,888 city records had no level and a generic type, and the counties dataset had no UK units. In England's
+two-tier areas the state is the county (ISO 3166-2:GB, e.g. Kent), but the district below it (Maidstone) was
+nowhere.
+
+### Fix
+- **164 counties** in the new `contributions/counties/GB.json` (ids 7966–8129): every two-tier district in England,
+  92 non-metropolitan districts and 72 boroughs, `administrative district` at level 3 under their county (England
+  1, county 2), from the ONS Register of Geographic Codes (E07 codes). Unitary authorities, metropolitan districts,
+  London boroughs, Welsh principal areas, Scottish council areas and Northern Ireland districts are already ISO states.
+- **1509 places typed**, each through its own Wikidata item's GSS code (P836) for its civil parish or community, the
+  current register name and parent district, and its point inside that parish:
+  - 9 `city` on the government list of places with city status (Bangor, Chichester, Ely, Hereford, Lichfield, Ripon, Salisbury, Truro, Wells; Bangor is Bangor in
+    Gwynedd);
+  - 512 `town`, parishes or Welsh communities whose council is a town council;
+  - 988 `village`, civil parishes (932, `type_local` civil parish) and Welsh communities (56, `type_local`
+    community) whose council is a parish, community or village council or a parish meeting (Marr).
+
+  Each parish's council style is taken from its district's official directory of parish and town councils
+  (ModernGov and council lists), the council's own site or another official mention, with the council name kept as
+  evidence; the first review found town councils typed village (Borough Green, Costessey, Meltham ...), so every one
+  was checked. (Valley and Wick are Welsh community councils; Crickhowell's town council is in the Powys directory.)
+  Level 4 in a two-tier district (736, linked by `county_id`: 736), level 3 in a unitary area (773).
+
+Held (2319 on current master; reasons overlap): records with no current parish, community or settlement code on their
+own item; parishes whose council style no official source reached here gave, or with another unresolved test;
+Scottish and Northern Ireland places, whose official settlement lists are statistical; 78 records whose point lies in
+another ISO unit than their state (424 before #1852 moved 344 and removed 2); 223 records whose own item is another
+place; and 48 remaining candidates for rows that are themselves an ISO unit (108 before #1852 removed 58 and typed
+Brighton and Hove and Wrexham as cities).
+
+### Sources
+Office for National Statistics: Register of Geographic Codes, Local Authority Districts, parishes and communities
+(full-resolution boundaries clipped to the coastline), current editions, [Open Government Licence
+v3](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), Contains OS data © Crown copyright
+and database right; gov.uk list of cities with city status; district councils' directories of parish and town
+councils and the councils' own sites, for each council's name and style (facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/GB.json`; no existing `id` changes.
