@@ -89764,3 +89764,37 @@ works). Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Croatia: unit and main naselje pairs (pass 3)
+
+### Problem
+After #1877 and #1886, 62 groups of Croatian records still shared one Wikidata item, mostly a pair such as "Bjelovar"
+and "Grad Bjelovar": one record for the grad or općina and one for its main naselje (settlement), both carrying the
+unit's item because Wikidata rarely has a separate item for the naselje. The review of #1886 showed the two are
+different places (Virovitica: the grad's GeoNames ADM2 and the town's PPLA), so they are not merged.
+
+### Fix
+Maintainer rule (10 Oct), checked against the DGU register of spatial units (RPJ):
+- **58 unit records** ("Grad X" / "Općina X" whose point lies inside unit X) keep the unit's own item and are typed
+  `city / grad` or `municipality / općina` at level 2;
+- **58 main naselja** (plain "X" whose point lies inside the naselje X) become `locality / naselje` at level 3 with
+  `parent_id` to their unit record; 3 get their own settlement item, and 55 pointers are null because no uniquely
+  qualifying current settlement item was found in the bounded search (the unit's item belongs to the unit record;
+  stubs such as Q49280827 for Virovitica lack a settlement class and a direct P131 to the unit, so they do not qualify);
+- **17 more naselja** link to their now-typed unit; **population** follows scope where the 2021 census
+  gives both (the unit's total on the unit record, the town's on the naselje, as for Virovitica).
+
+Held (8 records in 4 pairs): Borovo / Borovo Selo, Grad Osijek, Grad Split and Novigrad, whose points do not
+fit the named unit and naselje.
+
+### Sources
+Državna geodetska uprava, Registar prostornih jedinica ([AU feed](https://geoportal.dgu.hr/services/atom/au/xml),
+[archive](https://geoportal.dgu.hr/services/atom/INSPIRE_Administrative_Units_(AU).zip), updated 4 October 2026; the
+archive retained on 10 October and hash-verified), under the [Croatian Open Licence](https://narodne-novine.nn.hr/clanci/sluzbeni/full/2017_07_67_1577.html):
+names, boundaries and immediate-parent references were used to verify classifications and links; stored points are
+unchanged and no polygon was altered. Državni zavod za statistiku, Census 2021 population by
+[naselje](https://podaci.dzs.hr/media/rqybclnx/popis_2021-stanovnistvo_po_naseljima.xlsx) and by
+[grad/općina](https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx). Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
