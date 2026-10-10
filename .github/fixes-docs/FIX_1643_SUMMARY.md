@@ -89620,3 +89620,34 @@ facts); Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Germany: official name forms and the remaining holds (pass 3)
+
+### Problem
+Germany pass 2 (#1871) held 1,178 records. Its review found that 19 of 50 sampled holds qualified: the name check
+accepted only exact Destatis names, and Wikidata labels were read in de and en but not mul.
+
+### Fix
+A CSC name now matches the Destatis name with the status suffix, a trailing parenthetical or locative qualifier
+("Allendorf (Eder)", "Burgberg i.Allgäu", "Sachsen b.Ansbach"), the minority-language part of a bilingual name, or an
+official designation it carries ("Seebad Heringsdorf") removed; labels are read in mul, de and en. Every other check
+of #1871 stays. **258 records typed**:
+- 86 Gemeinden: 39 `city` (Stadt, große Kreisstadt, kreisfreie Stadt) and 47 `municipality` (Gemeinde, Markt), with `county_id`
+  to their Kreis and #1799's level; 19 switch from their main settlement's item to the Gemeinde's own item (owner
+  decision of 10 Oct), the others already carry it;
+- 172 parts as `section` (Ortschaft 36, Ortsteil 94, Stadtteil 33, Teilort 1, Gemeindeteil 1, Stadtbezirk 1, Wohnplatz 1), each named by an official municipal source, with `parent_id` to their
+  Gemeinde record, one level below it, and its `county_id` (5 added after review: Bad Kösen, Birgte, Leitzkau,
+  Morsum, Seedorf).
+
+Held (920; reasons overlap): records with no Gemeinde or part of an allowed name form at their point, parts whose
+Gemeinde record is not yet typed, items whose own P131 is not the Gemeinde, and 58 records whose item another record also
+carries (5 for a Gemeinde, 53 for a part); a shared item does not prove they are one place, so identity and items are
+resolved before any duplicate merge.
+
+### Sources
+Destatis Gemeindeverzeichnis (30 September 2026), BKG VG250 (1 January 2026) and GN250, © GeoBasis-DE / BKG,
+[dl-de/by-2-0](https://www.govdata.de/dl-de/by-2-0); municipal statutes and official pages for parts (facts only);
+Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
