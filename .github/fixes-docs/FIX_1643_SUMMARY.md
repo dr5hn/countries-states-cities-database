@@ -89708,3 +89708,31 @@ DGU Registar prostornih jedinica (4 October 2026), Croatian Open Licence (Otvore
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Jamaica: towns typed; copied Wikidata ids repaired
+
+### Problem
+Jamaica's 836 city records were typed `city`, `adm1`, `section`, `capital` or `adm2` (670, 89, 59, 14 and 4) with no level, and 787 carried the Wikidata
+item of another place, mostly ids shifted from a neighbouring row (#1641): 46 items were shared by two or more records.
+
+### Fix
+- **61 records typed** below their parish (the ISO state; its municipal corporation governs the whole parish,
+  so there is no separate municipal tier): Montego Bay `city / city` at level 2; 44 `town` at level 2 (21
+  parish capitals and other official towns, `type_local` town; 23 STATIN urban centres, `type_local` urban area);
+  16 `locality / community` at level 2; 20 of these records were added after review, once their own item was
+  restored here. Spanish Town is
+  typed town from the current JIS parish capital-town wording; some JIS heritage pages call it a city, and no current
+  statutory city conferral was verified.
+- **787 Wikidata ids repaired**: 29 replaced with the place's own item, 758 cleared where the old item is proven to be
+  another place. Shared items go from 46 groups to 1: two Alligator Pond records (62303, 62304) are the same community
+  with its own item, and the newer goes to a duplicates round (merge into the older id). A follow-up pass looks for each cleared record's own item.
+
+Held (775; reasons overlap): 383 records whose official category or scope is not established yet, Portmore and its places
+(the 2016 City Municipality's current boundary and ISO scope are unverified), Kingston (its point lies in St Andrew
+while the record is filed under Kingston parish) and its sections, and two records filed in the wrong parish.
+
+### Sources
+Local Governance Act 2016 (Jamaica), STATIN census urban areas and communities (official facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); every previous value is in the diff.
