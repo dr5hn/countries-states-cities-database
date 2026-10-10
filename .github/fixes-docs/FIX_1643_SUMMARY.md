@@ -89888,3 +89888,35 @@ facts); municipal pages for districts; Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Peru: provincias as counties; distritos and places typed
+
+### Problem
+Peru's 492 city records had generic types (adm3, province, city, adm1, adm2) and no level; the counties dataset had no
+Peruvian units. The departamentos (regiones), Callao and Lima Metropolitana are the ISO states; below them are 196
+provincias and about 1,890 distritos (each with a district municipality). Many records carried a Wikidata id copied
+from a neighbouring row (#1641): 71 items were shared by two or more records.
+
+### Fix
+- **194 counties** in the new `contributions/counties/PE.json` (ids 8173–8366): every provincia except Lima and Callao, which are
+  coextensive with their state, `administrative district / provincia` at level 2, each with its own item and INEI
+  UBIGEO code.
+- **232 distritos** typed `municipality / distrito`: 225 at level 3 with `county_id` to their provincia, and 7 in Lima and
+  Callao at level 2 without a county (their provincia is the state itself); 89 were added after review, once this
+  PR's item repair gave them their own distrito item. **12 centros poblados** one level below their distrito
+  (`city / ciudad`, `town / villa`, `village / pueblo` by the INEI category).
+- **236 Wikidata ids changed** (0 cleared): the typed records' own items and repairs on held records. Shared items go
+  from 71 groups to 16.
+
+Held (248; reasons overlap): the 130 rows in cities that are a provincia itself, plus 44 other held rows carrying a
+provincia's item (moving such unit rows to the counties dataset waits for the owner decision on the Thailand and
+Argentina rows), records whose item is still unresolved, and 7 records in the wrong state.
+
+### Sources
+INEI UBIGEO 2022 register (ODbL), checked against INEI's 2026 SISCONCODE catalogue; the 2017 census directory of
+centros poblados (codes and names) and the March 2017 Directorio Nacional de Municipalidades (capital categories);
+INEI IDE provincia and distrito boundaries (2023) for containment only, no polygons redistributed (no separate open
+licence verified for the catalogue, boundaries or directories; facts only). Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/PE.json`; no existing `id` changes.
