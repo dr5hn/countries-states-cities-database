@@ -88549,3 +88549,32 @@ for 11 (Aksaray, Sivas, Elazığ ...) the centre's own record is held or missing
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Canada: municipalities and localities typed after the Wikidata repair (pass 2)
+
+### Problem
+The Canada pilot (#1848) held records whose Wikidata item was another place or missing; #1855 repaired 108 items and
+cleared 125. Records whose only hold reason was their own item can now be checked again.
+
+### Fix
+**101 records typed** by #1848's rules:
+- 18 `city`, 21 `town`, 1 `village` and 12 `municipality` from the provincial legal status (Ontario, Quebec, BC, Alberta,
+  Saskatchewan, Manitoba, Newfoundland and Labrador, Yukon and Nova Scotia registers), each matched through its own
+  seven-digit census subdivision code (P3012), name, province and point; single-tier municipalities at level 2,
+  Ontario lower tiers, Quebec MRC members and BC regional-district members at level 3 with `county_id`;
+- 49 `locality` (community, neighbourhood, quartier ...) inside a municipality that has its own typed record, at that
+  municipality's level plus one with `parent_id` to it and its `county_id`.
+Prince Edward is a single-tier "County of" (`municipality`, `type_local` county, no county link).
+
+Held (343; reasons overlap): 125 records whose item #1855 cleared, 98 records without a separately typed municipal parent
+(including non-localities such as administrative regions and records with unresolved community identity),
+former or dissolved units, codes outside the 2025 census subdivisions, and Moose Factory (its official community
+and the stored point disagree).
+
+### Sources
+Statistics Canada 2025 census subdivision boundaries and CGNDB place names (Open Government Licence – Canada);
+provincial municipal registers (Quebec MAMH, CC BY 4.0; Ontario; others for status facts); municipal neighbourhood
+pages for locality terms only; GeoNames (CC BY 4.0, ids only); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
