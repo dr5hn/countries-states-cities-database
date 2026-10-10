@@ -88468,3 +88468,33 @@ Statistics Sweden (SCB): kommun codes, tätorter and småorter 2023 with boundar
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Belgium: administrative arrondissements as counties; cities, municipalities and sections typed
+
+### Problem
+Belgium's 550 city records had no level and a generic type, and the counties dataset had no Belgian units. Most
+records name a municipality or a section (deelgemeente / section de commune, a municipality merged since 1977).
+
+### Fix
+- **43 counties** in the new `contributions/counties/BE.json` (ids 8130–8172): every administrative arrondissement,
+  `administrative district / arrondissement` (arrondissement administratif in Wallonia), level 3 under its province
+  (region 1, province 2), and Brussels-Capital's single arrondissement at level 2.
+- **74 records typed**, each through its own Wikidata item's NIS code (P1567), the official name and its point inside
+  the unit: 6 `city` holding the official city title (Blankenberge, Brugge, Brussels, Fosses-la-Ville, Hannut, Waremme; `type_local` stad / ville), 1 `municipality`
+  (Anderlecht) at level 4 (Brussels: 3), and 67 `section` (`type_local` deelgemeente / section de commune) at level 5,
+  each linked by `county_id` to its arrondissement. Statbel's current list (565 municipalities after the 1 January 2025
+  mergers) is followed.
+
+Held (476; reasons overlap): 415 records whose own item did not pass as a municipality or section: many carry the main
+village of their municipality (Balen, Dessel; Wavre the city settlement), which a second pass now treats as the
+municipality (owner decision, 10 Oct), and some carry another place's item (Aiseau carries Aartselaar's, Andenne
+Amel's, Beyne-Heusay Beveren's), which needs repair. Also records whose state is
+a region instead of the province (the smallest ISO unit; 46, for a state round), names that differ from the own
+item, and points outside the unit.
+
+### Sources
+Statbel (Directorate-General Statistics – Statistics Belgium): REFNIS / NIS codes (effective 2025) and statistical
+sectors (2026), [CC BY 4.0](https://statbel.fgov.be/en/cc-40), adapted to codes and interior points; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/BE.json`; no existing `id` changes.
