@@ -88606,3 +88606,342 @@ sectors (2026), [CC BY 4.0](https://statbel.fgov.be/en/cc-40); the Flemish gemee
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Follow-ups from the Turkey, UK, Belgium and Norway pilots (round 5)
+
+### Problem
+- Seven Turkish records named "Merkez" are the central district (ilçe) of their province, which is already a county
+  record, and the province centre has its own record (Tunceli, Gümüşhane, Batman, Muş, Adıyaman, Yalova, Zonguldak).
+- Southampton (153932) had a point 39 km away, in Hampshire.
+- Belgian records filed under a region instead of their province (the smallest ISO unit), and records whose Wikidata
+  item is another place (Andenne carried Amel's, Charleroi Chapelle-lez-Herlaimont's).
+- Norwegian places held by #1861 because the scope of their by (town) status was not proved, and records in a fylke
+  that does not contain them.
+
+### Fix
+- **7 Merkez rows removed** (replacement none: the district is the county record, the centre a different place). No
+  postcode, city, county or state refers to them. The other 11 Merkez rows held by #1865 follow in a later round.
+- **Southampton** gets its own item's point (Q79848), inside the ONS boundary, and state STH.
+- **Belgium**: 29 records moved to the province that contains them (Statbel 2025 boundaries, over 30 m from a boundary;
+  9 of them are rows for a province itself, now in that province and held for removal); 15 records named after a
+  current municipality get the municipality's own item and are typed as #1867 types municipalities (4 also move to
+  their province): 13 carried another place's item, and Butgenbach and La Calamine carried their own main settlement's
+  item (owner decision of 10 Oct); 23 items that are provably another place are cleared and the
+  records stay held.
+- **Norway**: 14 kommuner whose by status covers the whole municipality are typed `city / by / 2` (Stavanger, Kristiansand,
+  Tromsø, Fredrikstad ...; Trondheim gets `by` and level 2), and 3 towns inside a kommune are typed `town / by / 3` as in
+  #1861 (Hønefoss, Mo i Rana, Florø), linked to their kommune where it has a record; 25 records moved to the fylke
+  that contains them (Kartverket fylker, current 15; Lenvik, Skånland, Svelvik ...).
+
+Held (75): Belgian records with no current municipality of that name around their point, Norwegian places whose by
+status scope is still unproved, and Grimstad and Risør, which are named after a kommune with no other record and so fall
+under the owner decision of 10 Oct (a Norway pass applying it follows).
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (replacement id: none)</summary>
+
+```json
+[
+  {
+    "id": 108179,
+    "name": "Merkez",
+    "state_id": 2192,
+    "state_code": "62",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm1",
+    "level": null,
+    "parent_id": null,
+    "latitude": "39.17114000",
+    "longitude": "39.55570000",
+    "native": "Merkez",
+    "population": null,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:23",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q4924439",
+    "replacement_id": null
+  },
+  {
+    "id": 108181,
+    "name": "Merkez",
+    "state_id": 2204,
+    "state_code": "29",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm2",
+    "level": null,
+    "parent_id": null,
+    "latitude": "40.46843000",
+    "longitude": "39.67441000",
+    "native": "Merkez",
+    "population": null,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:23",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q1999114",
+    "replacement_id": null
+  },
+  {
+    "id": 108186,
+    "name": "Merkez",
+    "state_id": 2194,
+    "state_code": "72",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "37.84362000",
+    "longitude": "41.18341000",
+    "native": "Merkez",
+    "population": 723,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:23",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q1902897",
+    "replacement_id": null
+  },
+  {
+    "id": 108191,
+    "name": "Merkez",
+    "state_id": 2162,
+    "state_code": "49",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm3",
+    "level": null,
+    "parent_id": null,
+    "latitude": "38.83793000",
+    "longitude": "41.48332000",
+    "native": "Merkez",
+    "population": null,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:23",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q2012030",
+    "replacement_id": null
+  },
+  {
+    "id": 108194,
+    "name": "Merkez",
+    "state_id": 2155,
+    "state_code": "02",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm1",
+    "level": null,
+    "parent_id": null,
+    "latitude": "37.74454000",
+    "longitude": "38.26801000",
+    "native": "Merkez",
+    "population": null,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:23",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q13428422",
+    "replacement_id": null
+  },
+  {
+    "id": 108665,
+    "name": "Merkez",
+    "state_id": 2218,
+    "state_code": "77",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm1",
+    "level": null,
+    "parent_id": null,
+    "latitude": "40.65501000",
+    "longitude": "29.27693000",
+    "native": "Merkez",
+    "population": 71289,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:26",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q1966811",
+    "replacement_id": null
+  },
+  {
+    "id": 108755,
+    "name": "Merkez",
+    "state_id": 2213,
+    "state_code": "67",
+    "country_id": 225,
+    "country_code": "TR",
+    "type": "adm1",
+    "level": null,
+    "parent_id": null,
+    "latitude": "41.45139000",
+    "longitude": "31.79305000",
+    "native": "Merkez",
+    "population": 101749,
+    "timezone": "Europe/Istanbul",
+    "translations": {
+      "br": "Merkez",
+      "ko": "메르케즈",
+      "pt-BR": "Merkez",
+      "pt": "Merkez",
+      "nl": "Merkez",
+      "hr": "Merkez",
+      "fa": "مرکز",
+      "de": "Merkez",
+      "es": "Merkez",
+      "fr": "Merkez",
+      "ja": "メルケス",
+      "it": "Merkez",
+      "zh-CN": "梅尔克兹",
+      "tr": "Merkez",
+      "ru": "Меркез",
+      "uk": "Меркез",
+      "pl": "Merkez",
+      "hi": "मर्केज़",
+      "ar": "مركز"
+    },
+    "created_at": "2019-10-06T10:31:27",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q14528487",
+    "replacement_id": null
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows are archived in this section.

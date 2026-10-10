@@ -2,8 +2,8 @@
   {
     "id": 8608,
     "name": "Aalst",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1377,
+    "state_code": "VOV",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -213,7 +213,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21770026"
+    "wikiDataId": null
   },
   {
     "id": 8613,
@@ -393,11 +393,13 @@
     "id": 8617,
     "name": "Andenne",
     "state_id": 1378,
+    "county_id": 8171,
     "state_code": "WNA",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "ville",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.48941000",
     "longitude": "5.09513000",
@@ -429,7 +431,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21770061"
+    "wikiDataId": "Q333466"
   },
   {
     "id": 8618,
@@ -1467,8 +1469,8 @@
   {
     "id": 8642,
     "name": "Basse Lasne",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1382,
+    "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -2426,11 +2428,13 @@
     "id": 8664,
     "name": "Beyne-Heusay",
     "state_id": 1384,
+    "county_id": 8159,
     "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "commune",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.62251000",
     "longitude": "5.66508000",
@@ -2462,7 +2466,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31498075"
+    "wikiDataId": "Q681039"
   },
   {
     "id": 8665,
@@ -2683,8 +2687,8 @@
   {
     "id": 8670,
     "name": "Blégny",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1384,
+    "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -3680,7 +3684,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q12994"
+    "wikiDataId": null
   },
   {
     "id": 8693,
@@ -3860,11 +3864,13 @@
     "id": 8697,
     "name": "Butgenbach",
     "state_id": 1384,
+    "county_id": 8160,
     "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "Gemeinde",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.42689000",
     "longitude": "6.20504000",
@@ -3896,7 +3902,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21770544"
+    "wikiDataId": "Q160005"
   },
   {
     "id": 8698,
@@ -4033,12 +4039,14 @@
   {
     "id": 8701,
     "name": "Charleroi",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1375,
+    "county_id": 8152,
+    "state_code": "WHT",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "ville",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.41136000",
     "longitude": "4.44448000",
@@ -4070,7 +4078,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21770582"
+    "wikiDataId": "Q81046"
   },
   {
     "id": 8702,
@@ -4112,7 +4120,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21770582"
+    "wikiDataId": null
   },
   {
     "id": 8703,
@@ -4592,8 +4600,8 @@
   {
     "id": 8714,
     "name": "Court-Saint-Étienne",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1382,
+    "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -5326,7 +5334,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21768651"
+    "wikiDataId": null
   },
   {
     "id": 8731,
@@ -6025,8 +6033,8 @@
   {
     "id": 8747,
     "name": "Enghien",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1375,
+    "state_code": "WHT",
     "country_id": 22,
     "country_code": "BE",
     "type": "adm4",
@@ -6324,7 +6332,7 @@
     "created_at": "2019-10-06T09:29:25",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21768790"
+    "wikiDataId": null
   },
   {
     "id": 8754,
@@ -6848,8 +6856,8 @@
   {
     "id": 8766,
     "name": "Flémalle-Haute",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1384,
+    "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -7020,12 +7028,14 @@
   {
     "id": 8770,
     "name": "Frameries",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1375,
+    "county_id": 8153,
+    "state_code": "WHT",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "commune",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.40578000",
     "longitude": "3.89603000",
@@ -7056,7 +7066,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q720478"
+    "wikiDataId": "Q666751"
   },
   {
     "id": 8771,
@@ -7495,8 +7505,8 @@
   {
     "id": 8781,
     "name": "Genk",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1372,
+    "state_code": "VLI",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -7796,11 +7806,13 @@
     "id": 8788,
     "name": "Glabbeek",
     "state_id": 1374,
+    "county_id": 8135,
     "state_code": "VBR",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "gemeente",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.87267000",
     "longitude": "4.95615000",
@@ -7832,7 +7844,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21769047"
+    "wikiDataId": "Q984868"
   },
   {
     "id": 8789,
@@ -8180,7 +8192,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21767627"
+    "wikiDataId": null
   },
   {
     "id": 8797,
@@ -8229,8 +8241,8 @@
   {
     "id": 8798,
     "name": "Halle",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1374,
+    "state_code": "VBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -8271,8 +8283,8 @@
   {
     "id": 8799,
     "name": "Hamme",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1377,
+    "state_code": "VOV",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -8531,8 +8543,8 @@
   {
     "id": 8805,
     "name": "Hastière-Lavaux",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1378,
+    "state_code": "WNA",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -8742,7 +8754,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31824028"
+    "wikiDataId": null
   },
   {
     "id": 8810,
@@ -8834,12 +8846,14 @@
   {
     "id": 8812,
     "name": "Herbeumont",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1379,
+    "county_id": 8168,
+    "state_code": "WLX",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "commune",
+    "level": 4,
     "parent_id": null,
     "latitude": "49.78086000",
     "longitude": "5.23580000",
@@ -8871,7 +8885,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21767768"
+    "wikiDataId": "Q713353"
   },
   {
     "id": 8813,
@@ -9137,11 +9151,13 @@
     "id": 8819,
     "name": "Herstal",
     "state_id": 1384,
+    "county_id": 8159,
     "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "ville",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.66415000",
     "longitude": "5.62346000",
@@ -9173,7 +9189,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21767799"
+    "wikiDataId": "Q211033"
   },
   {
     "id": 8820,
@@ -9303,7 +9319,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q21767811"
+    "wikiDataId": null
   },
   {
     "id": 8823,
@@ -9737,7 +9753,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21767894"
+    "wikiDataId": null
   },
   {
     "id": 8833,
@@ -10659,8 +10675,8 @@
   {
     "id": 8854,
     "name": "Kapellen",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1381,
+    "state_code": "VAN",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -11524,17 +11540,19 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21767334"
+    "wikiDataId": null
   },
   {
     "id": 8874,
     "name": "La Calamine",
     "state_id": 1384,
+    "county_id": 8160,
     "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "Gemeinde",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.71809000",
     "longitude": "6.01107000",
@@ -11565,7 +11583,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q16216319"
+    "wikiDataId": "Q159864"
   },
   {
     "id": 8875,
@@ -12662,11 +12680,13 @@
     "id": 8900,
     "name": "Liège",
     "state_id": 1384,
+    "county_id": 8159,
     "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "ville",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.63373000",
     "longitude": "5.56749000",
@@ -12697,7 +12717,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21765593"
+    "wikiDataId": "Q3992"
   },
   {
     "id": 8901,
@@ -12791,11 +12811,13 @@
     "id": 8903,
     "name": "Lokeren",
     "state_id": 1377,
+    "county_id": 8150,
     "state_code": "VOV",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "stad",
+    "level": 4,
     "parent_id": null,
     "latitude": "51.10364000",
     "longitude": "3.99339000",
@@ -12827,7 +12849,7 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31824081"
+    "wikiDataId": "Q12910"
   },
   {
     "id": 8904,
@@ -12964,8 +12986,8 @@
   {
     "id": 8907,
     "name": "Louvain-la-Neuve",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1382,
+    "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -13222,11 +13244,13 @@
     "id": 8913,
     "name": "Maasmechelen",
     "state_id": 1372,
+    "county_id": 8164,
     "state_code": "VLI",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "gemeente",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.96545000",
     "longitude": "5.69452000",
@@ -13258,13 +13282,13 @@
     "created_at": "2019-10-06T09:29:26",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31824086"
+    "wikiDataId": "Q329633"
   },
   {
     "id": 8914,
     "name": "Machelen",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1374,
+    "state_code": "VBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -14251,8 +14275,8 @@
   {
     "id": 8937,
     "name": "Moerbeke",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1377,
+    "state_code": "VOV",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -14381,12 +14405,14 @@
   {
     "id": 8940,
     "name": "Mons",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1375,
+    "county_id": 8153,
+    "state_code": "WHT",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "ville",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.45413000",
     "longitude": "3.95229000",
@@ -14418,7 +14444,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21765930"
+    "wikiDataId": "Q83407"
   },
   {
     "id": 8941,
@@ -14460,7 +14486,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T17:11:50",
     "flag": 1,
-    "wikiDataId": "Q21765930"
+    "wikiDataId": null
   },
   {
     "id": 8942,
@@ -15071,8 +15097,8 @@
   {
     "id": 8956,
     "name": "Nieuwerkerken",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1372,
+    "state_code": "VLI",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -15544,7 +15570,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21766148"
+    "wikiDataId": null
   },
   {
     "id": 8967,
@@ -15674,7 +15700,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q18479689"
+    "wikiDataId": null
   },
   {
     "id": 8970,
@@ -16537,13 +16563,13 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764321"
+    "wikiDataId": null
   },
   {
     "id": 8990,
     "name": "Perwez",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1382,
+    "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -16848,8 +16874,8 @@
   {
     "id": 8997,
     "name": "Province de Liège",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1384,
+    "state_code": "WLG",
     "country_id": 22,
     "country_code": "BE",
     "type": "province",
@@ -16890,8 +16916,8 @@
   {
     "id": 8998,
     "name": "Province de Namur",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1378,
+    "state_code": "WNA",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -16932,8 +16958,8 @@
   {
     "id": 8999,
     "name": "Province du Brabant Wallon",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1382,
+    "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -16974,8 +17000,8 @@
   {
     "id": 9000,
     "name": "Province du Hainaut",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1375,
+    "state_code": "WHT",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -17016,8 +17042,8 @@
   {
     "id": 9002,
     "name": "Provincie Antwerpen",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1381,
+    "state_code": "VAN",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -17058,8 +17084,8 @@
   {
     "id": 9003,
     "name": "Provincie Limburg",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1372,
+    "state_code": "VLI",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -17100,8 +17126,8 @@
   {
     "id": 9004,
     "name": "Provincie Oost-Vlaanderen",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1377,
+    "state_code": "VOV",
     "country_id": 22,
     "country_code": "BE",
     "type": "province",
@@ -17142,8 +17168,8 @@
   {
     "id": 9005,
     "name": "Provincie Vlaams-Brabant",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1374,
+    "state_code": "VBR",
     "country_id": 22,
     "country_code": "BE",
     "type": "province",
@@ -17184,8 +17210,8 @@
   {
     "id": 9006,
     "name": "Provincie West-Vlaanderen",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1383,
+    "state_code": "VWV",
     "country_id": 22,
     "country_code": "BE",
     "type": "province",
@@ -17481,7 +17507,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764452"
+    "wikiDataId": null
   },
   {
     "id": 9013,
@@ -17531,11 +17557,13 @@
     "id": 9014,
     "name": "Ramillies",
     "state_id": 1382,
+    "county_id": 8136,
     "state_code": "WBR",
     "country_id": 22,
     "country_code": "BE",
-    "type": "city",
-    "level": null,
+    "type": "municipality",
+    "type_local": "commune",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.63395000",
     "longitude": "4.90119000",
@@ -17567,7 +17595,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764462"
+    "wikiDataId": "Q531456"
   },
   {
     "id": 9015,
@@ -17697,7 +17725,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q21764482"
+    "wikiDataId": null
   },
   {
     "id": 9018,
@@ -18011,11 +18039,13 @@
     "id": 9025,
     "name": "Roeselare",
     "state_id": 1383,
+    "county_id": 8142,
     "state_code": "VWV",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
-    "level": null,
+    "type_local": "stad",
+    "level": 4,
     "parent_id": null,
     "latitude": "50.94653000",
     "longitude": "3.12269000",
@@ -18047,7 +18077,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764555"
+    "wikiDataId": "Q211037"
   },
   {
     "id": 9026,
@@ -19038,7 +19068,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q21764811"
+    "wikiDataId": null
   },
   {
     "id": 9049,
@@ -19254,7 +19284,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764821"
+    "wikiDataId": null
   },
   {
     "id": 9054,
@@ -19340,7 +19370,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q21764825"
+    "wikiDataId": null
   },
   {
     "id": 9056,
@@ -19468,7 +19498,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31521115"
+    "wikiDataId": null
   },
   {
     "id": 9059,
@@ -20208,7 +20238,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q12376730"
+    "wikiDataId": null
   },
   {
     "id": 9076,
@@ -20431,8 +20461,8 @@
   {
     "id": 9081,
     "name": "Tielt",
-    "state_id": 1373,
-    "state_code": "VLG",
+    "state_id": 1383,
+    "state_code": "VWV",
     "country_id": 22,
     "country_code": "BE",
     "type": "adm3",
@@ -22208,7 +22238,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q31581536"
+    "wikiDataId": null
   },
   {
     "id": 9122,
@@ -23214,7 +23244,7 @@
     "created_at": "2019-10-06T09:29:27",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31596621"
+    "wikiDataId": null
   },
   {
     "id": 9145,
@@ -23653,8 +23683,8 @@
   {
     "id": 9155,
     "name": "Éghezée",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1378,
+    "state_code": "WNA",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -23695,8 +23725,8 @@
   {
     "id": 9156,
     "name": "Érezée",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1379,
+    "state_code": "WLX",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
@@ -23737,8 +23767,8 @@
   {
     "id": 9157,
     "name": "Étalle",
-    "state_id": 1380,
-    "state_code": "WAL",
+    "state_id": 1379,
+    "state_code": "WLX",
     "country_id": 22,
     "country_code": "BE",
     "type": "city",
