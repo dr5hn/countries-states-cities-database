@@ -88606,3 +88606,34 @@ sectors (2026), [CC BY 4.0](https://statbel.fgov.be/en/cc-40); the Flemish gemee
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Croatia: gradovi, općine and naselja typed
+
+### Problem
+Croatia's 680 city records had no level and generic types (adm1, adm2, city). The 20 županije and the City of
+Zagreb are the ISO states; below them are 556 local government units (128 gradovi and 428 općine) and about 6,760
+naselja (statistical settlements).
+
+### Fix
+**357 records typed** through their own Wikidata item, name, state and point inside the unit of the State Geodetic
+Administration's register of spatial units (DGU RPJ, current), with the category from the law on the areas of
+counties, cities and municipalities:
+- 81 `city` (`type_local` grad) and 199 `municipality` (`type_local` općina) at level 2;
+- the City of Zagreb record as `city / grad` at level 1: it is its own ISO unit (HR-21), with no county;
+- 76 `locality` (`type_local` naselje) at level 3; 38 link by `parent_id` to their grad or općina record, and
+  the others keep no parent because that record is missing or held. Croatian law gives naselja no town/village
+  status, so none is inferred from Wikidata labels.
+Owner decision of 10 Oct: Drniš, Lastovo and Veliki Grđevac carried their main settlement's item and are the only
+record of their grad or općina, so they get the unit's own item and its type.
+
+Held (323; reasons overlap): 279 records whose Wikidata item is another place (copy-forward ids; 244 of them
+point to a place in another županija), which a Croatia Wikidata repair round will fix first; records whose point lies
+outside the matched unit; parts or local boards that are not a registered naselje; and two settlements in Zagreb whose
+level (2 or 3) needs a policy decision.
+
+### Sources
+DGU Registar prostornih jedinica (current archive), Croatian Open Licence (Otvorena dozvola), adapted to categories
+and point checks; Zakon o područjima županija, gradova i općina u Republici Hrvatskoj (official facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
