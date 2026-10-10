@@ -88498,3 +88498,31 @@ sectors (2026), [CC BY 4.0](https://statbel.fgov.be/en/cc-40), adapted to codes 
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/BE.json`; no existing `id` changes.
+
+## Norway: kommuner, byer and tettsteder typed
+
+### Problem
+Norway's 731 city records had no level and mixed inherited types (282 `city`, 417 `adm2`, 15 `adm1`, 13 `locality`). They
+are municipalities (kommuner), towns with by status, or statistical urban settlements (tettsteder).
+
+### Fix
+- **275 records are their kommune** (level 2), each carrying the kommune's own Wikidata item with its 2026
+  kommune number (P2504), the official name and its point inside it: 265 `municipality / kommune`, and 10 `city / by`
+  where the kommune holds by status (Alta, Bergen, Harstad, Larvik, Levanger, Lyngdal, Sauda, Sortland, Stjørdal, Stord).
+- **199 records are places inside a kommune** (level 3): 23 `town / by`, places with by status by council decision
+  (Svolvær, Sandnessjøen, Jessheim ...), and 176 `locality / tettsted`, each with its SSB tettsted code and its point inside
+  the tettsted. 144 of them link by `parent_id` to the record of their kommune; the rest keep it empty, as their kommune
+  is not a city record.
+
+Held (257): records with no unique current kommune or tettsted code on their own item (145; Oslo and Drammen among them),
+items of a former kommune (86: 85 dissolved in the 2020 reform, and the dissolved settlement Eike; the 2024
+re-established kommuner were checked separately), kommuner whose by status was not confirmed at
+kommune level (36; Trondheim, Stavanger, Tromsø, Kristiansand, for a follow-up), and records in another fylke (29).
+
+### Sources
+Kartverket kommune numbers and Statistics Norway (SSB) tettsteder 2026 with boundaries (dated 1 January 2026), © Kartverket and ©
+Statistisk sentralbyrå, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); municipal council decisions on by
+status (facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
