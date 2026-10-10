@@ -89859,3 +89859,32 @@ Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Finland: municipalities, towns and districts typed
+
+### Problem
+Finland's 441 city records were typed adm3, city, section, adm1 or capital with no level, and 137 carried the Wikidata
+item of another place. Many records are former municipalities merged since 2005 (Alahärmä, Alastaro, Anjala).
+
+### Fix
+**282 records typed** through Statistics Finland's 2026 municipality and region identities and urban settlement
+(taajama) data, each through its own item, name and point inside the municipality; town status (kaupunki) is
+attested by the municipality's own publications and the Association of Finnish Municipalities' entries:
+- 101 `city / kaupunki` (municipalities with town status) and 159 `municipality / kunta` at level 2 (mainland Finland;
+  Åland is the separate country AX and unchanged); 1 record named after its municipality switches to the
+  municipality's own item (owner decision of 10 Oct); 110 of these were added after review, once this PR's item
+  repair gave them their own municipal item;
+- 6 `locality / taajama` and 16 `section / kaupunginosa` (six Helsinki and ten Tampere districts) at level 3 with
+  `parent_id` to their municipality record (22 links).
+**137 Wikidata ids repaired** on held records (134 replaced with the place's own item, 3 cleared).
+
+Held (158; reasons overlap): 72 former municipalities (merged or abolished, some before 2005: Jäppilä 2004, Kiikka 1981) whose
+item is the former unit (the current taajama of that name is not proved to be what the record means), names that
+match no current urban settlement, settlements that span municipalities, and 6 records in the wrong region.
+
+### Sources
+Statistics Finland municipality and urban-settlement classifications, Maanmittauslaitos municipal boundaries (official
+facts); municipal pages for districts; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
