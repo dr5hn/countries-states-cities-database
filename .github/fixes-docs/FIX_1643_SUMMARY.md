@@ -85893,3 +85893,48 @@ Ministry's [e-Belediye list](https://www.belediye.gov.tr/belediyeler) (not a com
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/TR.json`; no existing `id` changes.
+
+## Canada: upper-tier units and Nova Scotia county municipalities as counties; municipalities typed
+
+### Problem
+Canada's 1,091 city records had no level and mostly a generic or GeoNames type (`adm1`, `section` for Toronto and
+Longueuil, `capital` for Ottawa), and the counties dataset had no Canadian units.
+
+### Fix
+- **159 county records** in the new `contributions/counties/CA.json` (ids 7807–7965), all at level 2: 150 upper-tier
+  units or MRC equivalents, 93 in Quebec (87 MRC, the agglomerations of Montréal, Québec, Longueuil and La Tuque and the
+  communauté maritime des Îles-de-la-Madeleine, which exercise MRC powers, and the Kativik regional administration),
+  30 in Ontario (counties, regional municipalities, united counties, the District Municipality of Muskoka) and 27 BC regional
+  districts; plus the 9 Nova Scotia county municipalities, which are single-tier: Nova Scotia's towns, district and
+  regional municipalities are their level-2 peers, not inside them. Type `administrative district`, with the official
+  designation in `type_local`. Census divisions that are statistical only (Alberta, Saskatchewan, Manitoba,
+  Newfoundland and Labrador, PEI, the territories) are not created; New Brunswick's regional service commissions are
+  not either, as service-delivery bodies the province says are not a level of government.
+- **610 municipalities typed** from their official status: 298 `city` (city, ville, cité), 180 `town`, 14 `village`
+  and 118 `municipality` (municipalité, district municipality, rural municipality, township ...), with that
+  status in `type_local`. Level 3 inside a legal upper tier (386, linked by `county_id` to it: 386), level 2 where there is
+  none (224): single-tier cities such as Toronto, Ottawa, Hamilton, Calgary, Edmonton and Winnipeg, Laval and Gatineau
+  (which exercise their own MRC powers), Nova Scotia's towns and regional municipalities, and every municipality in the
+  provinces without an upper tier.
+
+Each record is matched through its own Wikidata item's census subdivision code (P3012, seven digits), its name,
+province and point inside that subdivision, then checked against the province's current register of municipal
+status.
+
+Held (481): records whose own item is another place (242, among them Montréal and Halifax) or has no
+current census subdivision code (185); records whose own item lies in another province (127; the state is not
+changed here); former municipalities, settlements and components (43); dissolved units (23); and records
+whose current status could not be verified (New Brunswick after its 2023 reform, unreachable registers).
+
+### Sources
+Statistics Canada, Standard Geographical Classification 2021 and the 2025 census subdivision boundaries (reference
+date 1 January 2025), [Open Government Licence – Canada](https://open.canada.ca/en/open-government-licence-canada);
+Quebec MAMH Répertoire des municipalités ([CC BY 4.0](https://www.donneesquebec.ca/recherche/dataset/repertoire-des-municipalites-du-quebec));
+Ontario list of municipalities (Open Government Licence – Ontario); Nova Scotia municipal boundaries (Open Government
+Licence – Nova Scotia); British Columbia, Alberta, Saskatchewan, Manitoba and Newfoundland and Labrador municipal
+registers, used to verify current status; Wikidata (CC0). County points are interior points of a verified member census
+subdivision; Nova Scotia's are interior points of the county municipality's polygon in the provincial cartographic
+boundary file, which its publisher says does not give legal boundaries.
+
+### Rollback
+Revert the PR (squash commit): this deletes `contributions/counties/CA.json`; no existing `id` changes.
