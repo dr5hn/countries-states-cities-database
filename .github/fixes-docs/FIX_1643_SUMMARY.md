@@ -89557,3 +89557,38 @@ GeoNames (CC BY 4.0, ids only).
 
 ### Rollback
 Revert the PR (squash commit); every previous value is in the diff.
+
+## Uruguay: municipios, ciudades, villas, pueblos and localities typed
+
+### Problem
+Uruguay's 2,009 city records had no level and almost all had no type; 1,823 had no Wikidata item. The 19
+departamentos are the ISO states; 136 municipios (Law 19,272) are elected local governments that cover part of the
+country, and INE's 2023 census lists 652 localities.
+
+### Fix
+**400 records typed**, through the official INE 2023 locality whose name equals the record's (accents and case
+normalised) and whose boundary contains its point, or through the record's own Wikidata item:
+- 79 `municipality` (`type_local` municipio) at level 2. Owner decision of 10 Oct (as Belgium #1867 and Germany
+  #1871): a record named after its municipio that carried its main town's item, with no other record for the
+  municipio, gets the municipio's own Wikidata item;
+- 13 `city` (ciudad), 8 `town` (villa) and 36 `village` (pueblo) by the official legal category (law or departmental
+  decree, including Fray Marcos raised to ciudad in 2018 and pueblos declared by law or Paysandú decree), and 239
+  `locality` (localidad) where the sources establish no more specific category (INE 2023 gives no legal category);
+- level 2 outside every municipio, level 3 inside one, with `parent_id` to the municipio when it has a record
+  (83 links); no counties;
+- **Montevideo** (maintainer rule, 10 Oct): the city is `city / ciudad` at level 2 (it spans the eight municipios of
+  the departamento), and 25 barrios from the official barrio list are `section / barrio` at level 3 under it.
+10 records were added after review (five municipios held over name forms such as Paso de Carrasco / Paso
+Carrasco and Joaquín Suárez / Suárez, and five pueblos). 320 records get a Wikidata item: the municipios' own items, and items for records that had none where exactly one
+current item matches name, class, parent and point within 1 km.
+
+Held (1609; reasons overlap): 1418 records that fail the unique same-name, same-departamento, point-in-boundary match with an INE
+2023 locality (rural parajes, places INE does not list, parts, or name forms), 143 localities whose boundary crosses a municipio boundary, and records
+whose item or point conflicts.
+
+### Sources
+INE Uruguay census localities and barrios 2023 (free use with attribution to the Instituto Nacional de Estadística),
+IDE Uruguay / OPP municipios layer (March 2025), laws and decrees on IMPO for categories (official facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
