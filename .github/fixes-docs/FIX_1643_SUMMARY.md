@@ -89798,3 +89798,36 @@ unchanged and no polygon was altered. Državni zavod za statistiku, Census 2021 
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Nigeria: LGAs and places typed; Wikidata ids repaired
+
+### Problem
+Nigeria's 513 city records were typed adm2, adm1, city, capital or section with no level, and 315 carried the
+Wikidata item of another CSC place (ids copied from a neighbouring row, #1641): 64 items were shared by two or more
+records.
+
+### Fix
+- **39 local governments** typed `municipality` at level 2 under their state: 37 `local government area` and 2 FCT
+  `area council`, each through INEC's official roster, the record's point inside the LGA and its own item. 9 records
+  named after their LGA, with no other record for the LGA, are the LGA (owner decision of 10 Oct): 8 switch from their
+  headquarters town's item to the LGA's own item, and Oye-Ekiti already carries it (Efon-Alaaye, Ila Orangun, Maiduguri
+  and Oye-Ekiti added after review).
+  No counties.
+- **81 places** at level 3: 23 `city` (the state capitals named in the Constitution's First Schedule, and
+  Abuja), 33 `town` (official government wording) and 25 `locality / settlement`; `parent_id` only where the
+  containing LGA has a typed record (1 links).
+- **321 Wikidata ids repaired** on records that stay held for typing: 231 replaced with the place's own item and
+  90 cleared (84 copied from another place, 3 other kinds of entity, 3 items that no longer exist). Of the 321, 315 were
+  copy-forward ids, 3 missing items, 2 incompatible items and 1 a facility. No Nigerian record shares an item afterwards.
+
+Held (392; reasons overlap): mostly records whose item was repaired here, for a typing pass; places whose official
+scope is unresolved; records whose stored state does not contain their point; and Modakeke, whose stored point lies in
+Irewole while the government lists it under Ife East (point to be checked).
+
+### Sources
+INEC official LGA and area council roster (official facts); GRID3 boundaries (CC BY 4.0) and OCHA COD-AB boundaries
+(CC BY 3.0 IGO); GeoNames geographical data (CC BY 4.0: names, coordinates, feature and admin codes); the Constitution
+of the Federal Republic of Nigeria (First Schedule) and state government pages for categories; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
