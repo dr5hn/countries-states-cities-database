@@ -89526,3 +89526,34 @@ tettsted, or by status not yet proved.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section.
+
+## Croatia: Wikidata ids repaired
+
+### Problem
+The Croatia pilot (#1873) held 279 records because their Wikidata item names another place, mostly ids copied from a
+neighbouring row (#1641): Bestovje, Bibinje and Bijelo Brdo all carried Q651934; 239 pointed to a place in another
+županija.
+
+### Fix
+**270 wikiDataId values changed** (and the type of 5 records, below):
+- **244 replaced** with the place's own item: a grad or općina by its own current item with the official name, the
+  correct county chain and its point inside the same unit of the DGU register of spatial units (RPJ); a naselje by its
+  own item when name, point within 1 km, settlement class and direct P131 to its grad or općina agree;
+- **26 cleared** where the old item is proven to be another place and no replacement is certain yet (Brezovac, Reka
+  and Osljak each have two candidates).
+Where a grad or općina has its own "Grad X" / "Općina X" record, the plain-name record is its main naselje and gets the
+settlement's own item, not the unit's (Križevci, Makarska, Trogir ...; the owner decision of 10 Oct applies only when no
+other record represents the unit). This corrects 5 records that #1873 typed as their unit (Drniš, Lastovo, Garešnica, Glina, Bale):
+they become `locality / naselje / 3`, with their parent left for the duplicates pass.
+Records sharing one Wikidata id in Croatia go from 149 groups to 63. Most of the remaining are pairs such as "Bjelovar"
+and "Grad Bjelovar": two records for one grad with the same item. They go to a Croatia pass that merges true
+duplicates into the older id, separates main naselja from their grad, and types the repaired records.
+
+Held (15): records whose correct scope or geometry is still open.
+
+### Sources
+DGU Registar prostornih jedinica (4 October 2026 snapshot), Croatian Open Licence (Otvorena dozvola); Wikidata (CC0);
+GeoNames (CC BY 4.0, ids only).
+
+### Rollback
+Revert the PR (squash commit); every previous value is in the diff.
