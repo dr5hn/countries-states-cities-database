@@ -88981,3 +88981,38 @@ Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Croatia: gradovi, općine and naselja typed
+
+### Problem
+Croatia's 680 city records had no level and generic types (adm1, adm2, city). The 20 županije and the City of
+Zagreb are the ISO states; below them are 556 local government units (128 gradovi and 428 općine) and about 6,760
+naselja (statistical settlements).
+
+### Fix
+**376 records typed** through their own Wikidata item, name, state and point inside the unit of the State Geodetic
+Administration's register of spatial units (DGU RPJ, current), with the category from the law on the areas of
+counties, cities and municipalities:
+- 86 `city` (`type_local` grad) and 206 `municipality` (`type_local` općina) at level 2;
+- the City of Zagreb record as `city / grad` at level 1: it is its own ISO unit (HR-21), with no county; its naselja
+  Horvati, Lučko and Zadvorsko are `locality / naselje` at level 2 with `parent_id` to it (no unit lies between);
+- 80 other naselja as `locality` (`type_local` naselje) at level 3. 42 of the 83 naselja link by `parent_id` to their
+  grad, općina or Zagreb record; the others keep no parent because that record is missing or held. Croatian law gives
+  naselja no town/village status, so none is inferred from Wikidata labels.
+Owner decision of 10 Oct: Drniš, Lastovo, Veliki Grđevac, Grad Omiš, Nin and Skradin carried their main settlement's
+item and are the only record of their grad or općina, so they get the unit's own item and its type.
+19 records were added after review: those last three, eight municipalities that already carry their own item but
+whose Wikidata coordinates lie outside the unit (the CSC point is inside: Biograd na Moru, Vodice, Erdut ...), Borovo
+Selo (an official alias of Borovo), the three Zagreb naselja and four other naselja.
+
+Held (304; reasons overlap): 279 records flagged because their own item's name conflicts with the record (mostly
+copy-forward ids; 239 point to a place in another županija; Bale-Valle 54385 is a bilingual duplicate of Bale 54384
+and stays for a duplicates round), which a Croatia Wikidata repair round will resolve; records whose point lies outside
+the matched unit; and items with section, district or local-board scope.
+
+### Sources
+DGU Registar prostornih jedinica (current archive), Croatian Open Licence (Otvorena dozvola), adapted to categories
+and point checks; Zakon o područjima županija, gradova i općina u Republici Hrvatskoj (official facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
