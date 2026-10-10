@@ -89651,3 +89651,32 @@ Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Honduras: municipios typed; copied Wikidata ids repaired
+
+### Problem
+Honduras's 545 city records were almost all typed `city` with no level, and 403 carried an item that names another
+place, mostly ids copied from a neighbouring row (#1641): 103 items were shared by two or more records.
+
+### Fix
+- **129 municipios** typed `municipality / municipio` at level 2 under their departamento, each through the official
+  roster, the record's point inside the INE municipio and its own current municipality item; a municipio whose
+  cabecera holds the title ciudad stays the municipio. 2 switch from their main town's item to the municipio's own
+  item (owner decision of 10 Oct). Where CSC has both a municipio record and its town (Choluteca / Ciudad Choluteca,
+  Guata / La Guata, Las Vegas / Las Vegas Santa Barbara, San José / San José de Copán, San Francisco de La Paz,
+  Santa Rita / Santa Rita Copán), the municipio record is the municipality and the town keeps its own settlement
+  item (corrected after review). **2 aldeas** `village / aldea` at level 3 with `parent_id` to their municipio. No counties.
+- **398 Wikidata ids repaired** on records that stay held for typing: 75 replaced with the record's own item,
+  323 cleared where the old item is another place. Shared items go from 103 groups to none.
+
+Held (411; reasons overlap): records whose point lies outside the municipio their name and item point to
+(361), names that are not an official municipio name (213; many are aldeas or caseríos for a typing pass
+after this repair), and points on a departamento or municipio boundary.
+
+### Sources
+INE Honduras: the DEE 2024 municipio roster, the census municipio and departamento boundaries (MUNICIPIOS_CNPV,
+DEPARTAMENTOS_CNPV) and the LUGARES_2026_v2 place layer for aldea codes, categories and points (no official aldea
+boundaries were used); official facts. Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
