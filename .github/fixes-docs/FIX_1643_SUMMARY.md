@@ -89592,3 +89592,31 @@ IDE Uruguay / OPP municipios layer (March 2025), laws and decrees on IMPO for ca
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Panama: distritos, corregimientos and places typed; copied Wikidata ids repaired
+
+### Problem
+Panama's 551 city records had generic types (adm2, adm3, city, area) and no level, and 447 carried the Wikidata item
+of another CSC record (ids copied from a neighbouring row, #1641): 43 items were shared by two or more records.
+
+### Fix
+- **59 distritos** (municipal governments) typed `municipality / distrito` at level 2 under their provincia or comarca;
+  **16 corregimientos** `section / corregimiento` at level 3, 14 with `parent_id` to their distrito record (Guabito
+  and Santa Fe wait for theirs); Panama City, Colón and La Chorrera `city / ciudad` at level 3 below the district
+  that contains them (they span several corregimientos and are not their parent; La Chorrera added after review);
+  7 populated places `locality / lugar poblado` one level below their unit (Vista Alegre added after review). Each through its own
+  item, name and point inside the unit of INEC's current division (2023 changes applied); no counties.
+- **450 Wikidata ids repaired** on records that stay held for typing: 172 replaced with the record's own item
+  (name, class, parent and point within 1 km), 278 cleared: 275 carried another CSC record's item, and 3 a same-name
+  place elsewhere (El Porvenir, La Loma, Río Grande). No
+  Panamanian record shares an item afterwards.
+
+Held (466; reasons overlap): mostly the 450 records whose item was repaired here, for a Panama typing pass; Naso
+places (three of its corregimiento boundaries are missing from the official layer); and namesakes in another province.
+
+### Sources
+INEC Panama división político-administrativa and IGN Tommy Guardia boundaries and populated places (official
+facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
