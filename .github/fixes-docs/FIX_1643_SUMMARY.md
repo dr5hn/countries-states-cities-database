@@ -88526,3 +88526,26 @@ status (facts); Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Turkey: district municipalities typed after the Wikidata repair (pass 2)
+
+### Problem
+The Turkey pilot (#1845) held records whose Wikidata item was another place. #1850 repaired those items, so the
+district municipalities among them can now be typed.
+
+### Fix
+**298 records typed** `municipality` with `county_id` to their own ilçe (the counties of #1845), by the pilot's rules:
+- 166 district municipalities in the 30 metropolitan provinces at level 2 (their boundaries are the ilçe's);
+- 124 district municipalities elsewhere at level 3, beside the towns and villages of their ilçe;
+- 8 province centres (`il merkezi`) at level 3, linked to their central (Merkez) district.
+Each is matched through its own current district or municipality item (name, province, and its point inside the
+district; the province centres also through the TBB list of province municipalities); 117 carry the district code P14366.
+
+Held (502): records whose item was cleared and has no replacement yet, records whose point lies outside the
+district, towns and villages whose current register was not reached, and the 18 rows named "Merkez". These carry the
+central district's own item, so they are the district (a county record), not the province centre, and go to a removal
+round: 7 sit beside a typed province-centre record (Tunceli, Gümüşhane, Batman, Muş, Adıyaman, Yalova, Zonguldak), and
+for 11 (Aksaray, Sivas, Elazığ ...) the centre's own record is held or missing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
