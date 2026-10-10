@@ -89736,3 +89736,31 @@ Local Governance Act 2016 (Jamaica), STATIN census urban areas and communities (
 
 ### Rollback
 Revert the PR (squash commit); every previous value is in the diff.
+
+## Bulgaria: obshtini, towns and villages typed
+
+### Problem
+Bulgaria's 504 city records were typed city, adm2, adm1, adm3, section or capital with no level. The 28 oblasti are the ISO states;
+below them are 265 obshtini (municipalities) and their settlements, in the NSI EKATTE register.
+
+### Fix
+**500 records typed** through the EKATTE register (codes, names, settlement type) and each record's own item,
+name and point inside the unit:
+- 256 `municipality / община` at level 2. 31 records named after their obshtina that carried its centre town's
+  item, with no other record for the obshtina, get the obshtina's own item (owner decision of 10 Oct);
+- 205 `city / град` (settlements with town status) and 38 `village / село` at level 3, with `parent_id` to their obshtina
+  record; 1 `section / квартал` at level 4 under its town (244 parent links in all). No counties.
+43 of these were added after review: obshtini and settlements whose own item this PR repairs.
+**45 Wikidata ids repaired** on held records (44 replaced with the place's own item, 1 cleared).
+
+Held (4; reasons overlap): records whose item is another place (repaired here, typed later), municipality codes
+or scope not yet verified, and records whose stored oblast does not contain them.
+
+### Sources
+NSI EKATTE register and administrative boundaries, used only for facts (settlement type, municipality membership,
+codes); no NSI file or derived collection is redistributed. The NSI statistical information licence v2.0 and the
+spatial archive's access terms govern the register itself (its clauses 2.1.1-2.1.3 restrict derivative and collective
+works). Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
