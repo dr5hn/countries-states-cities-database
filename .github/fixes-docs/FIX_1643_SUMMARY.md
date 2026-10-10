@@ -88407,3 +88407,32 @@ councils and the councils' own sites, for each council's name and style (facts);
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/GB.json`; no existing `id` changes.
+
+## Canada: Wikidata ids of city records (#1641)
+
+### Problem
+The Canada pilot (#1848) held records whose `wikiDataId` named another place: Montréal carried Q2826806, Halifax
+Q1001810. These are the copy-forward ids of #1641.
+
+### Fix
+233 records change only `wikiDataId`:
+- **31 municipalities get their own item** by its census subdivision code (P3012, seven digits), with the official
+  English or French name, the province, the record's point inside the subdivision and the province's municipal
+  register: Montréal Q340, Halifax Q2141 ...
+- **73 communities that are not municipalities get their own item**: 42 whose GeoNames id (P1566) is the record's
+  GeoNames source, and 31 by name, a point within 1 km, a settlement class and the right municipality or province.
+- **4 more found by the review**: Richmond (BC) and Maple Ridge, whose old item was a namesake, and the localities
+  Landmark and La Haute-Saint-Charles.
+- **125 cleared**: the stored item is proved to be another place (Halifax, Haldimand and Haliburton Village
+  shared one item, as did Golden and Goulds) and no own item passed the tests. A wrong id is worse than none.
+
+61 records keep their item, already right. Held (91): former municipalities (named with their successor),
+ambiguous communities, and records without a reachable register row.
+
+### Sources
+Statistics Canada, SGC 2021 and 2025 census subdivision boundaries (Open Government Licence – Canada); provincial
+municipal registers (Quebec MAMH, CC BY 4.0; Ontario; others for status facts); GeoNames (CC BY 4.0, ids only);
+Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); every previous value is in the diff.
