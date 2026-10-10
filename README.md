@@ -25,11 +25,10 @@ Last Updated On: October 10, 2026
 
 ---
 
-<div align="center">
-  <a href="https://makemysitelive.com/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme" target="_blank">
-    <img src=".github/images/makemysitelive-banner.png" alt="Build & Launch Websites Faster with MakeMySiteLive" />
-  </a>
-</div>
+<p align="center">
+  <a href="https://makemysitelive.com/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme" target="_blank"><img src=".github/images/makemysitelive-banner.png" alt="Build & Launch Websites Faster with MakeMySiteLive" width="49%" /></a>
+  <a href="https://remotegig.in/?utm_source=csc-db&utm_medium=banner&utm_campaign=readme" target="_blank"><img src=".github/images/remotegig-banner.png" alt="Finding a remote job? Go check remotegig.in" width="49%" /></a>
+</p>
 
 ---
 
