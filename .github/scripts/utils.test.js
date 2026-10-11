@@ -118,6 +118,24 @@ test('type_local is a known optional field on counties', () => {
   assert.deepEqual(validateRecord(county, 'counties', 0), { errors: [], warnings: [] });
 });
 
+test('population_year is a known optional field on cities', () => {
+  const city = {
+    name: 'Strasbourg', state_id: 5035, state_code: '67', country_id: 75, country_code: 'FR',
+    latitude: '48.58', longitude: '7.75', population: 291313, population_year: 2022,
+  };
+  assert.deepEqual(validateRecord(city, 'cities', 0), { errors: [], warnings: [] });
+});
+
+test('a population_year that is not a past year is flagged', () => {
+  const base = {
+    name: 'X', state_id: 1, state_code: 'X', country_id: 1, country_code: 'FR',
+    latitude: '1', longitude: '1', population: 1000,
+  };
+  for (const year of [new Date().getFullYear() + 1, 22, '2022a', 2022.5]) {
+    assert.match(validateRecord({ ...base, population_year: year }, 'cities', 0).warnings.join('\n'), /population_year/, String(year));
+  }
+});
+
 test('every field used in states.json and countries.json is known to the schema', () => {
   const fs = require('node:fs');
   const path = require('node:path');

@@ -166,6 +166,7 @@ class ExportSqlServer extends Command
                 longitude DECIMAL(11,8) NOT NULL,
                 native NVARCHAR(255) NULL,
                 population BIGINT NULL,
+                population_year SMALLINT NULL,
                 timezone NVARCHAR(255) NULL,
                 translations NVARCHAR(MAX),
                 created_at DATETIME2 NOT NULL DEFAULT '2014-01-01 12:01:01',

@@ -217,6 +217,7 @@ CREATE TABLE `cities` (
   `longitude` decimal(11,8) NOT NULL,
   `native` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `population` bigint unsigned DEFAULT NULL,
+  `population_year` smallint unsigned DEFAULT NULL COMMENT 'Reference year of population (census or official estimate)',
   `timezone` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'IANA timezone identifier (e.g., America/New_York)',
   `translations` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NOT NULL DEFAULT '2014-01-01 12:01:01',

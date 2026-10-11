@@ -172,7 +172,8 @@ You don't need to worry about these formats - they're automatically generated fr
 | `latitude` | decimal | Latitude coordinates | required
 | `longitude` | decimal | Longitude coordinates | required
 | `native` | string | Native name of the city |
-| `population` | integer | Population of the city - [Wikipedia](https://en.wikipedia.org/wiki/List_of_cities_by_population) |
+| `population` | integer | Population of the city, from the national statistics office (census or official estimate) for the place the record represents |
+| `population_year` | integer | Reference year of `population` (e.g. `2022` for the 2022 census). Set it whenever you set `population` |
 | `type` | string | Type of settlement (city, town, village, etc.) |
 | `level` | integer | Administrative level |
 | `parent_id` | integer | ID of parent administrative division |
@@ -236,8 +237,10 @@ You don't need to worry about these formats - they're automatically generated fr
 ### Population Data (Optional but Recommended)
 
 When adding population data:
-- Use recent census data or official estimates
-- Include source year if possible in PR description
+- Use recent census data or official estimates from the national statistics office
+- Count the same place the record represents: a municipality record gets the municipality's figure, a town record
+  the town's (not its municipality's or urban area's)
+- For cities, set `population_year` to the census or estimate reference year, and link the source in the PR description
 - Round to reasonable precision (avoid false precision)
 - **Format**: Integer (e.g., `1000000` not `"1,000,000"`)
 

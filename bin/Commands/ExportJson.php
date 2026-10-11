@@ -208,6 +208,7 @@ class ExportJson extends Command
                                 $citiesArray[$j]['level'] = $city['level'];
                                 $citiesArray[$j]['parent_id'] = $city['parent_id'];
                                 $citiesArray[$j]['population'] = $city['population'] !== null ? (int)$city['population'] : null;
+                                $citiesArray[$j]['population_year'] = isset($city['population_year']) ? (int)$city['population_year'] : null;
                                 $citiesArray[$j]['timezone'] = $city['timezone'];
                                 $citiesArray[$j]['translations'] = $city['translations'] !== null ? json_decode($city['translations'], true) : null;
                                 $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];
