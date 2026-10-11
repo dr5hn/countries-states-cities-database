@@ -90113,3 +90113,38 @@ lists (official facts); STATIN community list (official facts); Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); 62304 is archived above with its replacement.
+
+## Serbia: gradovi, opštine and settlements typed
+
+### Problem
+Serbia's 380 city records were typed city, adm3, adm2, locality, adm1 or capital with no level and no parent link, and
+many carried the Wikidata item of another place or of their main town.
+
+### Fix
+**354 records typed** from the registers of the Statistical Office of the Republic of Serbia (RZS), each through its
+official code, own item, name and point inside its unit:
+- 24 `city / grad` and 101 `municipality / opština`: the local self-government units. Levels follow the states: in
+  Vojvodina the okrug is level 2, so units are level 3; elsewhere units are level 2. Belgrade is coextensive with its
+  ISO unit RS-00 and is a city at level 1; 4 of its city municipalities (Lazarevac, Obrenovac, Surčin, Zemun) are
+  `section / gradska opština` at level 2 under it. Records named after their unit that carried its main town's item
+  switch to the unit's own item where no other record represents the unit (owner decision of 10 Oct).
+- 225 settlements (naselja) one level below their unit: 10 urban settlements `city / grad` and 215 `locality /
+  naselje` (RZS marks them "other settlement", which does not establish selo); 195 `parent_id` links to the unit or
+  city municipality directly above. A link stays empty where that unit has no record yet, so no tier is skipped.
+**58 Wikidata ids changed**: main-town items switched to the unit's own item, copied items replaced with the
+place's own item, and 10 items of another place cleared. Records whose identity was settled by their repaired item
+were then typed (review). Kosovo records are not changed.
+
+Held (26): points that lie in another okrug or outside their own unit, and records that match an okrug (already a
+state) rather than a settlement.
+
+### Sources
+Republički zavod za statistiku, current registers of [municipalities and cities](https://www.stat.gov.rs/media/412350/sifarnikgradovi-opstine-tekucestanje.xlsx)
+and [settlements](https://www.stat.gov.rs/media/412351/sifarniknaselja-tekucestanje.xlsx) (state of 1 January 2026), reused with
+attribution under the [RZS terms](https://www.stat.gov.rs/sr-latn/copyright/): codes, categories and immediate parents
+were matched to the records; the 2022 census geometry was used only to check points and is not copied.
+[Law on the Territorial Organisation of the Republic of Serbia](https://mduls.gov.rs/wp-content/uploads/zakon_o_teritorijalnoj_organizaciji_republike_srbije.pdf?script=lat)
+(official facts); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
