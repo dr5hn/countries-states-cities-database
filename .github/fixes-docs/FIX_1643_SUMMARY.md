@@ -100750,3 +100750,45 @@ screen (a role signal, not an official seat register). Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## United Kingdom pass 3: places outside parishes and community councils
+
+### Problem
+2,319 UK city records had no level: places in unparished parts of England, Scottish and Northern Irish places, and some
+units. Pass 1 (#1849) typed places by their parish or community council's official style, which these lack.
+
+### Fix
+**697 records typed** from the official statistical place layers, each by its own item's code or exact name with its
+point inside the layer's polygon and not inside a live civil parish or Welsh community: ONS Built-up Areas 2022 for
+England and Wales, and 22 built-up area sub-divisions from the 2011 edition; NRS Settlements and Localities 2020 for
+Scotland; NISRA settlements 2015 for Northern Ireland. A built-up area or settlement is a town or village by the
+layer's own size classification, a locality or sub-division inside a larger place is a section with `parent_id` to that
+place's record (21 links), and places with city status by letters patent are cities (the Cabinet Office list).
+119 link to their district's county record. The review moved 303 records whose point lies in a live parish (259 in
+England) or a Welsh town or community council (44, e.g. Beaumaris, Builth Wells, Llanrwst) back to held, for a
+council-style round: their council's style decides their type.
+
+| type / type_local | Records |
+|---|---|
+| `town / built-up area` | 215 |
+| `village / settlement` | 173 |
+| `town / settlement` | 153 |
+| `section / locality` | 87 |
+| `city / city` | 40 |
+| `village / built-up area` | 15 |
+| `section / built-up area sub-division` | 14 |
+
+Held (1,622): records with no official layer polygon containing their point under their name; 492 + 303 parished or
+community-council places (council-style round); 450 whose item is shared or another place's; 131 that are units
+(option (c)); 80 whose stored state conflicts with their current local authority and 44 whose authority-to-ISO crosswalk
+is unresolved. Reasons overlap.
+
+### Sources
+Source: Office for National Statistics, Built-up Areas 2022, built-up area sub-divisions 2011, civil parishes and Local
+Authority Districts 2026, licensed under the Open Government Licence v3.0; contains OS data © Crown copyright and
+database right 2011, 2022 and 2026. National Records of Scotland, settlements and localities 2020, and the Scottish
+Government urban-rural classification 2020 (OGL v3). NISRA settlements 2015 (OGL v3, Source: NISRA). Cabinet Office
+list of cities (OGL v3). Wikidata (CC0). No point was changed.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
