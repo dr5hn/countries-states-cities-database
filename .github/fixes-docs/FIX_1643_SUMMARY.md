@@ -121822,3 +121822,34 @@ records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Vietnam pilot: centrally run cities and graded urban places
+
+### Problem
+None of Vietnam's 491 city records had a level or an official local term. Since 1 July 2025 (Resolution 202/2025/QH15,
+Law 72/2025/QH15) Vietnam has 34 provincial units and no district tier: former provincial cities, towns and districts
+are no longer administrative units, and about 3,321 communes, wards and special zones sit directly below the province.
+
+### Fix
+**22 records typed**: 5 centrally run cities (thành phố trực thuộc trung ương: Da Nang, Haiphong, Ho Chi Minh City, Huế, Cần Thơ) as `city`
+at level 1, as Zagreb (Huế's record represents the municipality and keeps its former urban core's item; Cần Thơ's is the
+older central-city record); and 17 urban places with a national urban grade carried into the 2026 classification by
+Resolution 111/2025/UBTVQH15 (Article 15) and, where obtained, the provincial announcement (e.g. 180/QĐ-UBND Bắc Ninh,
+837/QĐ-UBND Hà Tĩnh, 768/QĐ-UBND Thanh Hóa, 755/QĐ-UBND Khánh Hòa, 560/QĐ-UBND Quảng Ninh; Cà Mau's annex not yet
+obtained), as `city` (grade II) or `town` (grade III) at level 2 directly under the province, with the grade as type_local
+(15 grade II, 2 grade III). An urban place is not a government tier and may span several new communes; no parent.
+**19 Wikidata ids cleared**: each pointed to another place (Cam Ranh carried Bỉm Sơn's item). Vietnam still has 74 groups
+of records sharing one Wikidata item (388 records); they need an identity audit of their own. Hanoi and Đồng Nai (a
+centrally run city since 30 April 2026) have no city record; they are added in a follow-up.
+
+The other 469 records wait for a decision on Vietnam's post-2025 model (listed in the research with evidence): communes
+and wards as basic local governments, and former district and city rows by option (c). Master's states already follow
+the 34 national units while ISO 3166-2 still lists the 63 old ones; no state changes here.
+
+### Sources
+Vietnamese National Assembly and Government legal texts and provincial urban-classification decisions (official
+documents, cited for facts); the national register of administrative units (2025); Wikidata (CC0). Matching them to
+records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
