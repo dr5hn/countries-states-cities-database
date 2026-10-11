@@ -100632,3 +100632,31 @@ they were replaced).
 
 ### Rollback
 Revert the PR (squash commit); the county records 8367-8871 and the city changes go with it.
+
+## Uruguay pass 3: census localities typed from INE
+
+### Problem
+1,609 Uruguayan city records had no level, 1,550 of them no type at all (an import of 2019), most without a Wikidata
+item and some sharing one wrongly (Las Piedras and Las Toscas carried the same item).
+
+### Fix
+**210 records typed** under the Uruguay pilot's rules (#1879): all but one matched to a same-departamento INE census
+locality point (2011/2023) by its official name, or an independently resolved official name form, within 2 km (no
+own-item INE code was needed); Parque Rodó matched an INE barrio polygon under Montevideo. Types: 176 `locality /
+localidad`, 13 `city / ciudad`, 20 `town / villa or pueblo` by their legal category and 1 Montevideo barrio, at
+level 2 or 3 below their departamento or municipio, with 99 parent links to the municipio record. **177
+Wikidata ids changed**: own settlement items given where exactly one fits, and 8 items of another place cleared.
+
+Held (1399): 1,391 records that match no INE census locality by name within 2 km (many may be rural places or
+estancias outside the census locality list), records whose legal category or municipio is unresolved, and two pairs of
+records for one census locality (Poblado Uruguay / Uruguay and another), kept for a duplicates round.
+
+### Sources
+INE Uruguay 2011 and 2023 locality points and 2023 barrio polygons (their metadata permit free use citing INE); the
+INE locality codifier 1963-2023 and the 2004 register of legal categories, used as factual sources (no standard
+redistribution licence verified; `localidad` means no legal category was found in them, not that none exists); laws
+and official attestations checked one by one; IDE Uruguay municipios 2025 (Licencia de Datos Abiertos de Uruguay),
+used to check points; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.

@@ -384,8 +384,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.87722000",
     "longitude": "-56.02972000",
@@ -426,7 +427,8 @@
     "country_id": 235,
     "country_code": "UY",
     "type": "city",
-    "level": null,
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.75240000",
     "longitude": "-56.00259000",
@@ -457,7 +459,7 @@
     "created_at": "2019-10-06T10:37:12",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q808781"
+    "wikiDataId": null
   },
   {
     "id": 129782,
@@ -717,8 +719,9 @@
     "state_code": "DU",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.05658000",
     "longitude": "-56.47652000",
@@ -749,7 +752,7 @@
     "created_at": "2019-10-06T10:37:12",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q31890171"
+    "wikiDataId": "Q5818023"
   },
   {
     "id": 129789,
@@ -1376,7 +1379,7 @@
     "created_at": "2019-10-06T10:37:12",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q630016"
+    "wikiDataId": null
   },
   {
     "id": 129804,
@@ -1805,8 +1808,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "town",
+    "type_local": "villa",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.59454000",
     "longitude": "-56.25334000",
@@ -1837,7 +1841,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q657514"
+    "wikiDataId": null
   },
   {
     "id": 129815,
@@ -2056,9 +2060,10 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": "section",
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129782,
     "latitude": "-30.26204000",
     "longitude": "-57.58174000",
     "native": "Las Piedras",
@@ -2129,7 +2134,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q984757"
+    "wikiDataId": null
   },
   {
     "id": 129822,
@@ -2348,8 +2353,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": "adm1",
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.37028000",
     "longitude": "-54.16750000",
@@ -2840,7 +2846,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T14:39:31",
     "flag": 1,
-    "wikiDataId": "Q984873"
+    "wikiDataId": null
   },
   {
     "id": 129839,
@@ -3059,8 +3065,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": "adm1",
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.31710000",
     "longitude": "-58.08072000",
@@ -3268,8 +3275,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.58550000",
     "longitude": "-56.70097000",
@@ -3770,8 +3778,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.34631000",
     "longitude": "-58.10094000",
@@ -3895,8 +3904,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": "adm1",
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.33750000",
     "longitude": "-56.71361000",
@@ -3978,8 +3988,9 @@
     "state_code": "DU",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.35360000",
     "longitude": "-56.52498000",
@@ -4690,8 +4701,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": "adm1",
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.23333000",
     "longitude": "-54.38333000",
@@ -5025,8 +5037,9 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": "city",
-    "level": null,
+    "type": "town",
+    "type_local": "villa",
+    "level": 3,
     "parent_id": null,
     "latitude": "-33.39811000",
     "longitude": "-58.32177000",
@@ -5057,7 +5070,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T14:38:56",
     "flag": 1,
-    "wikiDataId": "Q32022851"
+    "wikiDataId": "Q1514901"
   },
   {
     "id": 129892,
@@ -6966,7 +6979,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T17:11:50",
     "flag": 1,
-    "wikiDataId": "Q6197335"
+    "wikiDataId": null
   },
   {
     "id": 153706,
@@ -7293,7 +7306,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T16:59:27",
     "flag": 1,
-    "wikiDataId": "Q56671640"
+    "wikiDataId": null
   },
   {
     "id": 153714,
@@ -7466,9 +7479,10 @@
     "state_code": "MO",
     "country_id": 235,
     "country_code": "UY",
-    "type": "capital",
-    "level": null,
-    "parent_id": null,
+    "type": "section",
+    "type_local": "barrio",
+    "level": 3,
+    "parent_id": 129833,
     "latitude": "-34.90800000",
     "longitude": "-56.17100000",
     "native": "Parque Rodó",
@@ -7498,7 +7512,7 @@
     "created_at": "2019-10-06T10:37:13",
     "updated_at": "2025-12-02T17:11:50",
     "flag": 1,
-    "wikiDataId": "Q124499800"
+    "wikiDataId": null
   },
   {
     "id": 153719,
@@ -7796,8 +7810,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.44187256",
     "longitude": "-56.44619290",
@@ -7839,9 +7854,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.86259000",
     "longitude": "-54.94713495",
     "native": null,
@@ -7851,7 +7867,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q808940"
   },
   {
     "id": 162144,
@@ -8035,8 +8051,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.83596986",
     "longitude": "-54.64756738",
@@ -8047,7 +8064,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1303777"
   },
   {
     "id": 162153,
@@ -8077,8 +8094,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43145291",
     "longitude": "-57.25225518",
@@ -8089,7 +8107,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2099003"
   },
   {
     "id": 162155,
@@ -8142,9 +8160,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129847,
     "latitude": "-34.62706906",
     "longitude": "-56.25443695",
     "native": null,
@@ -8154,7 +8173,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1665201"
   },
   {
     "id": 162158,
@@ -8163,9 +8182,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129809,
     "latitude": "-34.71830821",
     "longitude": "-56.04729034",
     "native": null,
@@ -8226,9 +8246,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.77949982",
     "longitude": "-55.55302918",
     "native": null,
@@ -8238,7 +8259,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q625750"
   },
   {
     "id": 162162,
@@ -8268,8 +8289,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.84150699",
     "longitude": "-55.97828902",
@@ -8280,7 +8302,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984852"
   },
   {
     "id": 162164,
@@ -8289,8 +8311,9 @@
     "state_code": "RN",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.16885929",
     "longitude": "-58.35645975",
@@ -8301,7 +8324,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984727"
   },
   {
     "id": 162165,
@@ -8331,9 +8354,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.77918510",
     "longitude": "-55.56634582",
     "native": null,
@@ -8343,7 +8367,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q545655"
   },
   {
     "id": 162167,
@@ -8394,9 +8418,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.82370203",
     "longitude": "-55.31605936",
     "native": null,
@@ -8406,7 +8431,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984693"
   },
   {
     "id": 162170,
@@ -8436,9 +8461,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.76481373",
     "longitude": "-55.64583836",
     "native": null,
@@ -8448,7 +8474,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q816012"
   },
   {
     "id": 162172,
@@ -8457,9 +8483,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.79148850",
     "longitude": "-55.51583842",
     "native": null,
@@ -8469,7 +8496,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q855464"
   },
   {
     "id": 162173,
@@ -8520,9 +8547,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.89977376",
     "longitude": "-54.81163589",
     "native": null,
@@ -8532,7 +8560,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1009497"
   },
   {
     "id": 162176,
@@ -8562,8 +8590,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.77159320",
     "longitude": "-55.80061602",
@@ -8574,7 +8603,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1411480"
   },
   {
     "id": 162178,
@@ -8583,8 +8612,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.51400139",
     "longitude": "-54.52784566",
@@ -8595,7 +8625,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1440500"
   },
   {
     "id": 162179,
@@ -8626,9 +8656,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.90285189",
     "longitude": "-54.82767209",
     "native": null,
@@ -8638,7 +8669,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q992675"
   },
   {
     "id": 162181,
@@ -8712,9 +8743,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129809,
     "latitude": "-34.71066975",
     "longitude": "-56.05297641",
     "native": null,
@@ -8724,7 +8756,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1292823"
   },
   {
     "id": 162185,
@@ -8733,8 +8765,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.77054228",
     "longitude": "-55.84143861",
@@ -8745,7 +8778,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1970117"
   },
   {
     "id": 162186,
@@ -8754,8 +8787,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.81251505",
     "longitude": "-55.32982491",
@@ -8766,7 +8800,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q582146"
   },
   {
     "id": 162187,
@@ -8775,8 +8809,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.81348624",
     "longitude": "-55.94009496",
@@ -8787,7 +8822,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1020954"
   },
   {
     "id": 162188,
@@ -8840,9 +8875,10 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129823,
     "latitude": "-34.69918940",
     "longitude": "-56.73201328",
     "native": null,
@@ -8852,7 +8888,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1010384"
   },
   {
     "id": 162191,
@@ -8861,9 +8897,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129794,
     "latitude": "-34.79204412",
     "longitude": "-55.99592788",
     "native": null,
@@ -8873,7 +8910,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2524816"
   },
   {
     "id": 162192,
@@ -8947,8 +8984,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.73611459",
     "longitude": "-56.43347909",
@@ -8959,7 +8997,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1231337"
   },
   {
     "id": 162196,
@@ -8990,9 +9028,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.73412309",
     "longitude": "-55.68353483",
     "native": null,
@@ -9002,7 +9041,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1368993"
   },
   {
     "id": 162198,
@@ -9011,9 +9050,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.87048564",
     "longitude": "-55.11246282",
     "native": null,
@@ -9023,7 +9063,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987073"
   },
   {
     "id": 162199,
@@ -9076,8 +9116,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.74226798",
     "longitude": "-56.45396097",
@@ -9088,7 +9129,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q383094"
   },
   {
     "id": 162202,
@@ -9140,8 +9181,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.53053569",
     "longitude": "-54.52914866",
@@ -9152,7 +9194,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2439134"
   },
   {
     "id": 162205,
@@ -9183,9 +9225,10 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129882,
     "latitude": "-31.08394756",
     "longitude": "-56.00099640",
     "native": null,
@@ -9195,7 +9238,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1004963"
   },
   {
     "id": 162207,
@@ -9204,8 +9247,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.39785187",
     "longitude": "-58.15758522",
@@ -9216,7 +9260,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1046658"
   },
   {
     "id": 162208,
@@ -9225,9 +9269,10 @@
     "state_code": "RN",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
+    "parent_id": 129893,
     "latitude": "-32.42263037",
     "longitude": "-57.39383800",
     "native": null,
@@ -9237,7 +9282,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1007589"
   },
   {
     "id": 162209,
@@ -9246,9 +9291,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.88136085",
     "longitude": "-55.04896626",
     "native": null,
@@ -9258,7 +9304,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q975553"
   },
   {
     "id": 162210,
@@ -9288,8 +9334,9 @@
     "state_code": "RN",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.81630683",
     "longitude": "-57.04478956",
@@ -9374,8 +9421,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.93361307",
     "longitude": "-55.54570550",
@@ -9386,7 +9434,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q961792"
   },
   {
     "id": 162216,
@@ -9395,8 +9443,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.47301430",
     "longitude": "-54.96686994",
@@ -9437,9 +9486,10 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129823,
     "latitude": "-34.61474393",
     "longitude": "-56.65667174",
     "native": null,
@@ -9449,7 +9499,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q808938"
   },
   {
     "id": 162219,
@@ -9721,9 +9771,10 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129835,
     "latitude": "-33.81124680",
     "longitude": "-58.26577286",
     "native": null,
@@ -9733,7 +9784,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q395880"
   },
   {
     "id": 162232,
@@ -9742,8 +9793,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.34328726",
     "longitude": "-57.26630125",
@@ -9754,7 +9806,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1110810"
   },
   {
     "id": 162233,
@@ -9829,8 +9881,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43809567",
     "longitude": "-57.19567257",
@@ -9841,7 +9894,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1289570"
   },
   {
     "id": 162237,
@@ -9982,8 +10035,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.08975480",
     "longitude": "-56.91441333",
@@ -9994,7 +10048,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1143065"
   },
   {
     "id": 162244,
@@ -10069,9 +10123,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.90894536",
     "longitude": "-54.85149538",
     "native": null,
@@ -10081,7 +10136,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q585137"
   },
   {
     "id": 162248,
@@ -10090,8 +10145,9 @@
     "state_code": "FD",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.25942799",
     "longitude": "-55.10330357",
@@ -10133,9 +10189,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.87345531",
     "longitude": "-55.13992085",
     "native": null,
@@ -10145,7 +10202,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1010378"
   },
   {
     "id": 162251,
@@ -10176,8 +10233,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.82423124",
     "longitude": "-54.62706157",
@@ -10188,7 +10246,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q641627"
   },
   {
     "id": 162253,
@@ -10285,8 +10343,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.35244193",
     "longitude": "-58.00147205",
@@ -10297,7 +10356,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1005309"
   },
   {
     "id": 162258,
@@ -10306,9 +10365,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129790,
     "latitude": "-34.33668954",
     "longitude": "-53.79420145",
     "native": null,
@@ -10318,7 +10378,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q808782"
   },
   {
     "id": 162259,
@@ -10371,8 +10431,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.34054984",
     "longitude": "-56.66705967",
@@ -10383,7 +10444,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1010391"
   },
   {
     "id": 162262,
@@ -10414,8 +10475,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.34865835",
     "longitude": "-56.39474899",
@@ -10523,9 +10585,10 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129843,
     "latitude": "-32.83435060",
     "longitude": "-56.42625065",
     "native": null,
@@ -10535,7 +10598,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q581007"
   },
   {
     "id": 162269,
@@ -10588,8 +10651,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "villa",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.87799451",
     "longitude": "-55.46204390",
@@ -10600,7 +10664,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q569882"
   },
   {
     "id": 162272,
@@ -10609,8 +10673,9 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.83050650",
     "longitude": "-57.78802156",
@@ -10621,7 +10686,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1425155"
   },
   {
     "id": 162273,
@@ -10652,8 +10717,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.96677822",
     "longitude": "-55.40730575",
@@ -10664,7 +10730,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2117336"
   },
   {
     "id": 162275,
@@ -10739,8 +10805,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.72551900",
     "longitude": "-54.37847384",
@@ -10751,7 +10818,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q473176"
   },
   {
     "id": 162279,
@@ -10826,9 +10893,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129841,
     "latitude": "-34.66138361",
     "longitude": "-55.99303425",
     "native": null,
@@ -10838,7 +10906,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q552052"
   },
   {
     "id": 162283,
@@ -10847,8 +10915,9 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-33.42003846",
     "longitude": "-58.33491895",
@@ -10859,7 +10928,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q201731"
   },
   {
     "id": 162284,
@@ -10933,8 +11002,9 @@
     "state_code": "DU",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.18443122",
     "longitude": "-55.69553713",
@@ -10945,7 +11015,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984837"
   },
   {
     "id": 162288,
@@ -11018,8 +11088,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.80269006",
     "longitude": "-55.35515691",
@@ -11030,7 +11101,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q815779"
   },
   {
     "id": 162292,
@@ -11039,9 +11110,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.84612793",
     "longitude": "-55.29651367",
     "native": null,
@@ -11051,7 +11123,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984849"
   },
   {
     "id": 162293,
@@ -11060,8 +11132,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.21582816",
     "longitude": "-54.37454976",
@@ -11072,7 +11145,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q985145"
   },
   {
     "id": 162294,
@@ -11081,8 +11154,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.43733423",
     "longitude": "-54.55119255",
@@ -11093,7 +11167,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1323889"
   },
   {
     "id": 162295,
@@ -11102,8 +11176,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.73990283",
     "longitude": "-56.02793428",
@@ -11114,7 +11189,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1799010"
   },
   {
     "id": 162296,
@@ -11145,9 +11220,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.77943832",
     "longitude": "-55.56135220",
     "native": null,
@@ -11157,7 +11233,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1799208"
   },
   {
     "id": 162298,
@@ -11421,9 +11497,10 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129799,
     "latitude": "-33.54963974",
     "longitude": "-58.21098950",
     "native": null,
@@ -11433,7 +11510,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q947532"
   },
   {
     "id": 162311,
@@ -11715,8 +11792,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.51486530",
     "longitude": "-54.68643659",
@@ -11727,7 +11805,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q166068"
   },
   {
     "id": 162325,
@@ -12056,8 +12134,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.37282891",
     "longitude": "-54.19330991",
@@ -12068,7 +12147,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1455608"
   },
   {
     "id": 162341,
@@ -12077,8 +12156,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.35018829",
     "longitude": "-54.15546103",
@@ -12089,7 +12169,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1799235"
   },
   {
     "id": 162342,
@@ -12098,9 +12178,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129794,
     "latitude": "-34.78843034",
     "longitude": "-56.01768022",
     "native": null,
@@ -12110,7 +12191,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1108771"
   },
   {
     "id": 162343,
@@ -12119,9 +12200,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129841,
     "latitude": "-34.78486213",
     "longitude": "-55.97202931",
     "native": null,
@@ -12131,7 +12213,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1868714"
   },
   {
     "id": 162344,
@@ -12162,9 +12244,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129841,
     "latitude": "-34.77466944",
     "longitude": "-55.97491984",
     "native": null,
@@ -12174,7 +12257,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1271428"
   },
   {
     "id": 162346,
@@ -12226,9 +12309,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129874,
     "latitude": "-34.70965359",
     "longitude": "-56.05752321",
     "native": null,
@@ -12238,7 +12322,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2525727"
   },
   {
     "id": 162349,
@@ -12268,8 +12352,9 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.42621759",
     "longitude": "-56.47248439",
@@ -12280,7 +12365,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1055955"
   },
   {
     "id": 162351,
@@ -12289,8 +12374,9 @@
     "state_code": "LA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.87775721",
     "longitude": "-54.72666918",
@@ -12301,7 +12387,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q928534"
   },
   {
     "id": 162352,
@@ -12354,9 +12440,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.85607852",
     "longitude": "-55.10370687",
     "native": null,
@@ -12375,8 +12462,9 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.42466761",
     "longitude": "-56.46815456",
@@ -12387,7 +12475,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984716"
   },
   {
     "id": 162356,
@@ -12418,9 +12506,10 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129782,
     "latitude": "-30.21165542",
     "longitude": "-57.60505298",
     "native": null,
@@ -12461,9 +12550,10 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129782,
     "latitude": "-30.29081794",
     "longitude": "-57.60048101",
     "native": null,
@@ -12473,7 +12563,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1004938"
   },
   {
     "id": 162360,
@@ -12525,9 +12615,10 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129782,
     "latitude": "-30.27273957",
     "longitude": "-57.57143440",
     "native": null,
@@ -12589,9 +12680,10 @@
     "state_code": "AR",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129782,
     "latitude": "-30.38662087",
     "longitude": "-57.61417005",
     "native": null,
@@ -12601,7 +12693,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984850"
   },
   {
     "id": 162366,
@@ -12673,9 +12765,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129874,
     "latitude": "-34.63302443",
     "longitude": "-55.96125556",
     "native": null,
@@ -12685,7 +12778,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q551839"
   },
   {
     "id": 162370,
@@ -12781,9 +12874,10 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129885,
     "latitude": "-32.62375814",
     "longitude": "-54.75210854",
     "native": null,
@@ -12793,7 +12887,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2122508"
   },
   {
     "id": 162375,
@@ -12802,9 +12896,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129816,
     "latitude": "-34.59150927",
     "longitude": "-54.12827114",
     "native": null,
@@ -12814,7 +12909,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1799011"
   },
   {
     "id": 162376,
@@ -12866,8 +12961,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.74157149",
     "longitude": "-53.26178380",
@@ -12878,7 +12974,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1800382"
   },
   {
     "id": 162379,
@@ -12951,8 +13047,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.75492555",
     "longitude": "-55.71684737",
@@ -12963,7 +13060,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q952273"
   },
   {
     "id": 162383,
@@ -12972,9 +13069,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.77128598",
     "longitude": "-55.58374943",
     "native": null,
@@ -12984,7 +13082,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q260096"
   },
   {
     "id": 162384,
@@ -13058,9 +13156,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129880,
     "latitude": "-34.71672491",
     "longitude": "-56.07457324",
     "native": null,
@@ -13070,7 +13169,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2525747"
   },
   {
     "id": 162388,
@@ -13143,8 +13242,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.83648409",
     "longitude": "-55.99732643",
@@ -13155,7 +13255,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q796390"
   },
   {
     "id": 162392,
@@ -13164,8 +13264,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.92144163",
     "longitude": "-54.97867211",
@@ -13176,7 +13277,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1368145"
   },
   {
     "id": 162393,
@@ -13185,8 +13286,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.85675046",
     "longitude": "-56.01089738",
@@ -13197,7 +13299,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1018088"
   },
   {
     "id": 162394,
@@ -13206,9 +13308,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129840,
     "latitude": "-34.76577408",
     "longitude": "-55.25567045",
     "native": null,
@@ -13218,7 +13321,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1022302"
   },
   {
     "id": 162395,
@@ -13314,8 +13417,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.82699561",
     "longitude": "-55.96743350",
@@ -13326,7 +13430,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q723697"
   },
   {
     "id": 162400,
@@ -13357,9 +13461,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.82753962",
     "longitude": "-55.30228955",
     "native": null,
@@ -13369,7 +13474,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1005765"
   },
   {
     "id": 162402,
@@ -13443,8 +13548,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.78132641",
     "longitude": "-55.87596334",
@@ -13455,7 +13561,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984189"
   },
   {
     "id": 162406,
@@ -13464,9 +13570,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129802,
     "latitude": "-34.71975825",
     "longitude": "-55.88074666",
     "native": null,
@@ -13476,7 +13583,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q735816"
   },
   {
     "id": 162407,
@@ -13485,9 +13592,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.76308274",
     "longitude": "-55.61794531",
     "native": null,
@@ -13497,7 +13605,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1552958"
   },
   {
     "id": 162408,
@@ -13658,8 +13766,9 @@
     "state_code": "DU",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.10296059",
     "longitude": "-55.13351442",
@@ -13670,7 +13779,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1055823"
   },
   {
     "id": 162416,
@@ -13679,8 +13788,9 @@
     "state_code": "FD",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.10296059",
     "longitude": "-55.13351442",
@@ -13700,8 +13810,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.10296059",
     "longitude": "-55.13351442",
@@ -13939,9 +14050,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.76258978",
     "longitude": "-55.65876654",
     "native": null,
@@ -13951,7 +14063,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984848"
   },
   {
     "id": 162429,
@@ -13960,9 +14072,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129818,
     "latitude": "-34.75900291",
     "longitude": "-56.24169312",
     "native": null,
@@ -13972,7 +14085,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1136423"
   },
   {
     "id": 162430,
@@ -14003,8 +14116,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.76892663",
     "longitude": "-55.82111462",
@@ -14015,7 +14129,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984184"
   },
   {
     "id": 162432,
@@ -14219,8 +14333,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.08200049",
     "longitude": "-56.31002074",
@@ -14231,7 +14346,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q985070"
   },
   {
     "id": 162442,
@@ -14369,9 +14484,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.78064168",
     "longitude": "-55.41967212",
     "native": null,
@@ -14381,7 +14497,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1684143"
   },
   {
     "id": 162449,
@@ -14737,8 +14853,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "city",
+    "type_local": "ciudad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.61125388",
     "longitude": "-55.82779825",
@@ -14749,7 +14866,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2093549"
   },
   {
     "id": 162466,
@@ -14823,9 +14940,10 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129843,
     "latitude": "-32.68843456",
     "longitude": "-56.47841067",
     "native": null,
@@ -14835,7 +14953,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q588130"
   },
   {
     "id": 162470,
@@ -14952,9 +15070,10 @@
     "state_code": "RN",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129893,
     "latitude": "-32.56012974",
     "longitude": "-57.48335177",
     "native": null,
@@ -14964,7 +15083,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984722"
   },
   {
     "id": 162476,
@@ -14995,8 +15114,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.50002678",
     "longitude": "-57.13330392",
@@ -15007,7 +15127,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2118590"
   },
   {
     "id": 162478,
@@ -15058,8 +15178,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.79359672",
     "longitude": "-55.91041324",
@@ -15070,7 +15191,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1324503"
   },
   {
     "id": 162481,
@@ -15079,9 +15200,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.78587790",
     "longitude": "-55.44756221",
     "native": null,
@@ -15091,7 +15213,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q646255"
   },
   {
     "id": 162482,
@@ -15252,9 +15374,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.79053388",
     "longitude": "-55.49688217",
     "native": null,
@@ -15264,7 +15387,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984941"
   },
   {
     "id": 162490,
@@ -15273,9 +15396,10 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129799,
     "latitude": "-33.56493646",
     "longitude": "-58.42607153",
     "native": null,
@@ -15285,7 +15409,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1798728"
   },
   {
     "id": 162491,
@@ -15294,8 +15418,9 @@
     "state_code": "FD",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.61088060",
     "longitude": "-55.33251254",
@@ -15359,8 +15484,9 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.62343457",
     "longitude": "-57.57228435",
@@ -15371,7 +15497,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q985053"
   },
   {
     "id": 162495,
@@ -15445,9 +15571,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.79018204",
     "longitude": "-55.47309696",
     "native": null,
@@ -15457,7 +15584,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984838"
   },
   {
     "id": 162499,
@@ -15466,9 +15593,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.78873190",
     "longitude": "-55.53645234",
     "native": null,
@@ -15478,7 +15606,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2223003"
   },
   {
     "id": 162500,
@@ -15487,8 +15615,9 @@
     "state_code": "FS",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "villa",
+    "level": 3,
     "parent_id": null,
     "latitude": "-33.96131118",
     "longitude": "-57.08857130",
@@ -15499,7 +15628,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1020807"
   },
   {
     "id": 162501,
@@ -15530,8 +15659,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.00633678",
     "longitude": "-57.64765580",
@@ -15542,7 +15672,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1004983"
   },
   {
     "id": 162503,
@@ -15661,9 +15791,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129842,
     "latitude": "-34.83374357",
     "longitude": "-56.03387784",
     "native": null,
@@ -15673,7 +15804,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q381679"
   },
   {
     "id": 162509,
@@ -15704,8 +15835,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.19697079",
     "longitude": "-57.10693162",
@@ -15716,7 +15848,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1143273"
   },
   {
     "id": 162511,
@@ -15747,9 +15879,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129847,
     "latitude": "-34.62306146",
     "longitude": "-56.25669110",
     "native": null,
@@ -15759,7 +15892,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q29376"
   },
   {
     "id": 162513,
@@ -15790,9 +15923,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129794,
     "latitude": "-34.78737326",
     "longitude": "-55.98016973",
     "native": null,
@@ -15802,7 +15936,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1043520"
   },
   {
     "id": 162515,
@@ -15833,8 +15967,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.84672867",
     "longitude": "-55.99934875",
@@ -15845,7 +15980,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q723692"
   },
   {
     "id": 162517,
@@ -16029,9 +16164,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129802,
     "latitude": "-34.69701027",
     "longitude": "-55.89484826",
     "native": null,
@@ -16041,7 +16177,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q29378"
   },
   {
     "id": 162526,
@@ -16050,9 +16186,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129819,
     "latitude": "-34.67124830",
     "longitude": "-56.16759759",
     "native": null,
@@ -16062,7 +16199,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1470253"
   },
   {
     "id": 162527,
@@ -16071,8 +16208,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.77603633",
     "longitude": "-55.89531832",
@@ -16083,7 +16221,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1137249"
   },
   {
     "id": 162528,
@@ -16092,9 +16230,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129815,
     "latitude": "-34.78802673",
     "longitude": "-55.48101489",
     "native": null,
@@ -16104,7 +16243,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1324139"
   },
   {
     "id": 162529,
@@ -16113,9 +16252,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129880,
     "latitude": "-34.71296784",
     "longitude": "-56.06918312",
     "native": null,
@@ -16125,7 +16265,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q723686"
   },
   {
     "id": 162530,
@@ -16134,8 +16274,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.59483706",
     "longitude": "-56.16874317",
@@ -16146,7 +16287,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2524812"
   },
   {
     "id": 162531,
@@ -16155,9 +16296,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129778,
     "latitude": "-34.76838520",
     "longitude": "-55.77485394",
     "native": null,
@@ -16220,9 +16362,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129794,
     "latitude": "-34.79542974",
     "longitude": "-55.98293207",
     "native": null,
@@ -16232,7 +16375,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1799165"
   },
   {
     "id": 162535,
@@ -16307,8 +16450,9 @@
     "state_code": "TT",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-33.25301859",
     "longitude": "-53.90484651",
@@ -16319,7 +16463,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q700231"
   },
   {
     "id": 162539,
@@ -16415,8 +16559,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.21851237",
     "longitude": "-57.92621636",
@@ -16427,7 +16572,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1056173"
   },
   {
     "id": 162544,
@@ -16436,8 +16581,9 @@
     "state_code": "CL",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-32.75605702",
     "longitude": "-53.71664911",
@@ -16448,7 +16594,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1005797"
   },
   {
     "id": 162545,
@@ -16501,9 +16647,10 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129789,
     "latitude": "-33.98918087",
     "longitude": "-58.23601242",
     "native": null,
@@ -16610,8 +16757,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43490106",
     "longitude": "-57.29481591",
@@ -16622,7 +16770,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q653685"
   },
   {
     "id": 162553,
@@ -16631,8 +16779,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.44294149",
     "longitude": "-57.17166027",
@@ -16643,7 +16792,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q917640"
   },
   {
     "id": 162554,
@@ -16761,8 +16910,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43415417",
     "longitude": "-57.24220172",
@@ -16773,7 +16923,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984843"
   },
   {
     "id": 162560,
@@ -16782,8 +16932,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43420016",
     "longitude": "-57.26410288",
@@ -16794,7 +16945,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1470467"
   },
   {
     "id": 162561,
@@ -16803,8 +16954,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.43373048",
     "longitude": "-57.25791622",
@@ -16815,7 +16967,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1522467"
   },
   {
     "id": 162562,
@@ -16824,8 +16976,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.20319299",
     "longitude": "-58.06737158",
@@ -16836,7 +16989,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1634041"
   },
   {
     "id": 162563,
@@ -16845,9 +16998,10 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129789,
     "latitude": "-33.96285298",
     "longitude": "-58.33224461",
     "native": null,
@@ -16857,7 +17011,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q140250"
   },
   {
     "id": 162564,
@@ -16866,9 +17020,10 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129789,
     "latitude": "-33.95386560",
     "longitude": "-58.35359889",
     "native": null,
@@ -16909,8 +17064,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.98080166",
     "longitude": "-58.22956247",
@@ -16996,9 +17152,10 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
+    "parent_id": 129807,
     "latitude": "-32.38435672",
     "longitude": "-56.90863781",
     "native": null,
@@ -17008,7 +17165,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984728"
   },
   {
     "id": 162571,
@@ -17081,8 +17238,9 @@
     "state_code": "FD",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.99535298",
     "longitude": "-55.64858290",
@@ -17093,7 +17251,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987044"
   },
   {
     "id": 162575,
@@ -17146,8 +17304,9 @@
     "state_code": "FD",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.47859588",
     "longitude": "-55.15359453",
@@ -17158,7 +17317,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1891873"
   },
   {
     "id": 162578,
@@ -17254,8 +17413,9 @@
     "state_code": "LA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.39476135",
     "longitude": "-55.29924256",
@@ -17406,9 +17566,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.88071291",
     "longitude": "-54.97533712",
     "native": null,
@@ -17418,7 +17579,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984715"
   },
   {
     "id": 162590,
@@ -17427,8 +17588,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.79033803",
     "longitude": "-55.32493377",
@@ -17448,8 +17610,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.78855331",
     "longitude": "-55.38347368",
@@ -17460,7 +17623,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q943708"
   },
   {
     "id": 162592,
@@ -17491,9 +17654,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.88037957",
     "longitude": "-54.98531105",
     "native": null,
@@ -17512,9 +17676,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.87410824",
     "longitude": "-55.09224406",
     "native": null,
@@ -17524,7 +17689,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1072583"
   },
   {
     "id": 162595,
@@ -17533,9 +17698,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.88858231",
     "longitude": "-54.98850594",
     "native": null,
@@ -17545,7 +17711,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987082"
   },
   {
     "id": 162596,
@@ -17598,9 +17764,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.90809585",
     "longitude": "-54.97987085",
     "native": null,
@@ -17610,7 +17777,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1009696"
   },
   {
     "id": 162599,
@@ -17795,9 +17962,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.89305984",
     "longitude": "-55.25068378",
     "native": null,
@@ -17807,7 +17975,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1891624"
   },
   {
     "id": 162608,
@@ -17816,9 +17984,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.89138194",
     "longitude": "-55.22900992",
     "native": null,
@@ -17828,7 +17997,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987098"
   },
   {
     "id": 162609,
@@ -17837,9 +18006,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129840,
     "latitude": "-34.79171649",
     "longitude": "-55.23482132",
     "native": null,
@@ -17849,7 +18019,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2177463"
   },
   {
     "id": 162610,
@@ -17858,9 +18028,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.87866772",
     "longitude": "-54.77189330",
     "native": null,
@@ -17870,7 +18041,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1238874"
   },
   {
     "id": 162611,
@@ -17922,9 +18093,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.88803414",
     "longitude": "-54.79856481",
     "native": null,
@@ -17934,7 +18106,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q805484"
   },
   {
     "id": 162614,
@@ -17943,9 +18115,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.84975765",
     "longitude": "-55.03069314",
     "native": null,
@@ -17955,7 +18128,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1806458"
   },
   {
     "id": 162615,
@@ -18006,9 +18179,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.85175183",
     "longitude": "-54.70841319",
     "native": null,
@@ -18018,7 +18192,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1704376"
   },
   {
     "id": 162618,
@@ -18027,9 +18201,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129860,
     "latitude": "-34.86465123",
     "longitude": "-54.75465491",
     "native": null,
@@ -18039,7 +18214,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1295228"
   },
   {
     "id": 162619,
@@ -18070,9 +18245,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129825,
     "latitude": "-34.89063977",
     "longitude": "-54.97274226",
     "native": null,
@@ -18082,7 +18258,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987077"
   },
   {
     "id": 162621,
@@ -18264,8 +18440,9 @@
     "state_code": "PA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.83962539",
     "longitude": "-57.89027470",
@@ -18459,8 +18636,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.91984831",
     "longitude": "-55.57334986",
@@ -18471,7 +18649,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984713"
   },
   {
     "id": 162639,
@@ -18546,8 +18724,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.43914237",
     "longitude": "-54.71414056",
@@ -18558,7 +18737,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1055678"
   },
   {
     "id": 162643,
@@ -18588,8 +18767,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.92619403",
     "longitude": "-55.55599742",
@@ -18609,8 +18789,9 @@
     "state_code": "RV",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-30.87980681",
     "longitude": "-55.58169171",
@@ -18621,7 +18802,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984691"
   },
   {
     "id": 162646,
@@ -18782,9 +18963,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129790,
     "latitude": "-34.27528523",
     "longitude": "-53.78335489",
     "native": null,
@@ -18794,7 +18976,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q397984"
   },
   {
     "id": 162654,
@@ -18868,9 +19050,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129790,
     "latitude": "-34.40086904",
     "longitude": "-53.78987383",
     "native": null,
@@ -18880,7 +19063,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1024895"
   },
   {
     "id": 162658,
@@ -18889,9 +19072,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129790,
     "latitude": "-34.15744716",
     "longitude": "-53.69339438",
     "native": null,
@@ -18901,7 +19085,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984724"
   },
   {
     "id": 162659,
@@ -18954,9 +19138,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129816,
     "latitude": "-34.61605455",
     "longitude": "-54.15227875",
     "native": null,
@@ -18966,7 +19151,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q624505"
   },
   {
     "id": 162662,
@@ -18997,9 +19182,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129790,
     "latitude": "-34.44508400",
     "longitude": "-53.91061999",
     "native": null,
@@ -19009,7 +19195,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1554640"
   },
   {
     "id": 162664,
@@ -19018,9 +19204,10 @@
     "state_code": "RO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129816,
     "latitude": "-34.54441596",
     "longitude": "-54.07253037",
     "native": null,
@@ -19030,7 +19217,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q2219211"
   },
   {
     "id": 162665,
@@ -19061,8 +19248,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.35776366",
     "longitude": "-57.87448809",
@@ -19073,7 +19261,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q644348"
   },
   {
     "id": 162667,
@@ -19191,8 +19379,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 3,
     "parent_id": null,
     "latitude": "-31.18144655",
     "longitude": "-56.36639405",
@@ -19212,8 +19401,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.33778634",
     "longitude": "-57.40668813",
@@ -19224,7 +19414,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1110740"
   },
   {
     "id": 162674,
@@ -19276,8 +19466,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.56345294",
     "longitude": "-57.61672822",
@@ -19288,7 +19479,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1031469"
   },
   {
     "id": 162677,
@@ -19406,9 +19597,10 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129801,
     "latitude": "-34.44375611",
     "longitude": "-57.14746068",
     "native": null,
@@ -19418,7 +19610,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q888942"
   },
   {
     "id": 162683,
@@ -19449,8 +19641,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.74089901",
     "longitude": "-56.41304592",
@@ -19461,7 +19654,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1945844"
   },
   {
     "id": 162685,
@@ -19470,9 +19663,10 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129801,
     "latitude": "-34.36947704",
     "longitude": "-57.04790425",
     "native": null,
@@ -19482,7 +19676,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q733747"
   },
   {
     "id": 162686,
@@ -19579,8 +19773,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.36324597",
     "longitude": "-55.87317148",
@@ -19591,7 +19786,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q750835"
   },
   {
     "id": 162691,
@@ -19926,9 +20121,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129846,
     "latitude": "-34.88229902",
     "longitude": "-55.19707372",
     "native": null,
@@ -20767,8 +20963,9 @@
     "state_code": "TA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.72300515",
     "longitude": "-56.09330004",
@@ -21586,8 +21783,9 @@
     "state_code": "DU",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-32.56660212",
     "longitude": "-55.49100280",
@@ -21598,7 +21796,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q60464691"
   },
   {
     "id": 162786,
@@ -27698,8 +27896,9 @@
     "state_code": "SJ",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-34.46948750",
     "longitude": "-56.75243874",
@@ -29084,8 +29283,9 @@
     "state_code": "CO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.06551667",
     "longitude": "-57.72277921",
@@ -29096,7 +29296,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q88418609"
   },
   {
     "id": 163143,
@@ -41750,9 +41950,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129874,
     "latitude": "-34.69142374",
     "longitude": "-56.10708261",
     "native": null,
@@ -42611,9 +42812,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129824,
     "latitude": "-34.68640681",
     "longitude": "-56.39551915",
     "native": null,
@@ -42623,7 +42825,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q110636202"
   },
   {
     "id": 163787,
@@ -42653,8 +42855,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.68142013",
     "longitude": "-56.28625704",
@@ -42665,7 +42868,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q122087921"
   },
   {
     "id": 163789,
@@ -42800,9 +43003,10 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129848,
     "latitude": "-34.92030478",
     "longitude": "-54.89821302",
     "native": null,
@@ -42812,7 +43016,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q987051"
   },
   {
     "id": 163796,
@@ -42821,8 +43025,9 @@
     "state_code": "MA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.83303975",
     "longitude": "-54.65028414",
@@ -44480,8 +44685,9 @@
     "state_code": "SA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 2,
     "parent_id": null,
     "latitude": "-31.45449737",
     "longitude": "-56.38029507",
@@ -45173,9 +45379,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129875,
     "latitude": "-34.70005404",
     "longitude": "-55.51873984",
     "native": null,
@@ -45185,7 +45392,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1034610"
   },
   {
     "id": 163909,
@@ -45320,8 +45527,9 @@
     "state_code": "SO",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "town",
+    "type_local": "pueblo",
+    "level": 2,
     "parent_id": null,
     "latitude": "-33.80798217",
     "longitude": "-58.26612922",
@@ -45782,8 +45990,9 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
     "parent_id": null,
     "latitude": "-34.77426078",
     "longitude": "-55.85668521",
@@ -45794,7 +46003,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q984779"
   },
   {
     "id": 163938,
@@ -45993,9 +46202,10 @@
     "state_code": "CA",
     "country_id": 235,
     "country_code": "UY",
-    "type": null,
-    "level": null,
-    "parent_id": null,
+    "type": "locality",
+    "type_local": "localidad",
+    "level": 3,
+    "parent_id": 129880,
     "latitude": "-34.74018736",
     "longitude": "-56.10953340",
     "native": null,
@@ -46005,7 +46215,7 @@
     "created_at": "2026-05-24T12:01:37",
     "updated_at": "2026-05-24T12:01:37",
     "flag": 1,
-    "wikiDataId": null
+    "wikiDataId": "Q1791090"
   },
   {
     "id": 163948,
