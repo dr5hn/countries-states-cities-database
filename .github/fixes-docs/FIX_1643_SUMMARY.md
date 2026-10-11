@@ -134535,3 +134535,23 @@ only); Wikidata (CC0). Matching them to records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Italy pass 4: former comuni linked to their new comune
+
+### Problem
+Italy pass 3 (#1934) added missing current comuni, including the merger successors used here (e.g. Ledro, formed on
+1 January 2010); their records got ids in release v4.0-export.49.
+The former comuni inside them were untyped or had no parent.
+
+### Fix
+**181 former comuni linked** with `parent_id` to the record of the comune that absorbed them (89 comuni): 31 were already
+typed as their census locality; **150 are typed** now as the ISTAT 2021 census locality of the same name inside that comune
+(`locality / centro abitato`, level 4), as pass 2 did. The review also cleared the Italian comune's item from Monaco-Ville's
+record. Held (4): records whose locality or point is not settled.
+
+### Sources
+ISTAT 2021 census localities and comuni boundaries (CC BY 4.0, Fonte: ISTAT). Matching them to records is CSC's own
+processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
