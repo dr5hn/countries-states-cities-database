@@ -121790,3 +121790,35 @@ identities. Matching them to records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Saint Lucia pilot: city, town-council seats and census settlements
+
+### Problem
+Saint Lucia's 479 city records had no level or local term, most census settlements were typed `city`, and
+almost all of them carried one of only ten Wikidata items: nine are other populated seats and one is Zahlé in Lebanon.
+
+### Fix
+**444 records typed** at level 2 under their quarter (the ISO states): Castries `city / city`; the other main populated seats as
+`town` (the pilot's mapping), with the local term the official census and Habitat classification gives them (3 town,
+5 village; this is not a claim about today's councils, which the Constituency Councils Act organises as 15 constituency
+councils); and 435 census settlements, matched by name and
+quarter to the Central Statistical Office's 2010 settlement codes, as `locality / settlement`. The research left the
+settlements' standard type open for want of an urban/rural crosswalk; I typed them `locality`, as master types other
+census settlements without municipal status (Mexico's localidades, Spain's entidades), which claims neither urban nor
+rural. **469 Wikidata items cleared**: each belonged to another place. The item on "Town" (Soufrière) stays for now: it
+may be Soufrière's census core rather than another place. No names or points change.
+
+Held (35): settlements with no unique exact match in the 2010 code list (names with "/" kept as master has them), and
+Canaries, whose record sits in the wrong quarter. 46 possible duplicate pairs are listed for a duplicates round.
+
+### Sources
+Source: The Central Statistical Office of Saint Lucia. Contains information licensed under the
+[Open Licence Agreement of The Central Statistical Office of Saint Lucia](https://stats.gov.lc/terms-and-conditions/open-licence-agreement/)
+(2010 census settlement codes and classifications). This product was adapted from the information of The Central
+Statistical Office of Saint Lucia, which is licensed under the Open Licence Agreement of The Central Statistical Office
+of Saint Lucia. The Habitat report and the Constituency Councils Act are cited for facts only (not covered by that
+licence); GeoNames (CC BY 4.0) and Wikidata (CC0) for identities. Matching them to
+records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
