@@ -28,7 +28,7 @@ const SCHEMA = {
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
       type_local: { type: 'string', maxLength: 191 },
       // Reference year of `population` (census or official estimate); no future years.
-      population_year: { type: 'integer', min: 1800, max: new Date().getFullYear() },
+      population_year: { type: 'integer', jsonNumber: true, min: 1800, max: new Date().getFullYear() },
     },
   },
   states: {
@@ -168,6 +168,8 @@ function validateField(fieldName, value, rule) {
   }
 
   if (rule.type === 'integer') {
+    // jsonNumber: the value must be a JSON number; Number([2022]) would otherwise pass as 2022.
+    if (rule.jsonNumber && typeof value !== 'number') return `"${fieldName}" must be a number, got ${JSON.stringify(value)}`;
     const num = Number(value);
     if (!Number.isInteger(num)) return `"${fieldName}" must be an integer, got "${value}"`;
     if (rule.positive && num <= 0) return `"${fieldName}" must be positive, got ${num}`;

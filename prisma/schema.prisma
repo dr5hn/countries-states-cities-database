@@ -124,6 +124,7 @@ model City {
   longitude   Decimal  @db.Decimal(11, 8)
   native      String?  @db.VarChar(255)
   typeLocal   String?  @map("type_local") @db.VarChar(191)
+  populationYear Int?  @map("population_year") @db.UnsignedSmallInt
   timezone    String?  @db.VarChar(255)
   translations Json?   @db.Text
   wikiDataId  String?  @db.VarChar(255)

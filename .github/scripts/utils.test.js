@@ -131,8 +131,8 @@ test('a population_year that is not a past year is flagged', () => {
     name: 'X', state_id: 1, state_code: 'X', country_id: 1, country_code: 'FR',
     latitude: '1', longitude: '1', population: 1000,
   };
-  for (const year of [new Date().getFullYear() + 1, 22, '2022a', 2022.5]) {
-    assert.match(validateRecord({ ...base, population_year: year }, 'cities', 0).warnings.join('\n'), /population_year/, String(year));
+  for (const year of [new Date().getFullYear() + 1, 22, '2022a', 2022.5, '2022', [2022], ['2022'], [[2022]], true]) {
+    assert.match(validateRecord({ ...base, population_year: year }, 'cities', 0).warnings.join('\n'), /population_year/, JSON.stringify(year));
   }
 });
 

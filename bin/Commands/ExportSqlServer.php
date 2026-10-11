@@ -219,7 +219,7 @@ class ExportSqlServer extends Command
     {
         $schema = $this->generateTableSchema($table);
         preg_match_all(
-            '/^\s*(\w+)\s+(?:INT|BIGINT|BIT|NVARCHAR|NCHAR|DECIMAL|DATETIME2)\b/mi',
+            '/^\s*(\w+)\s+(?:INT|BIGINT|SMALLINT|BIT|NVARCHAR|NCHAR|DECIMAL|DATETIME2)\b/mi',
             $schema,
             $matches
         );
