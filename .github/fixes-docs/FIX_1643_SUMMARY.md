@@ -134555,3 +134555,28 @@ processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Greece pass 2: settlements and municipalities
+
+### Problem
+After the Greece pilot (#1825: 74 regional units as counties, 41 municipalities, 556 settlements), 484 Greek records had
+no level, most of them settlements.
+
+### Fix
+**435 records typed** as the pilot: 415 `locality / οικισμός` (settlements of ELSTAT's 2021 census list, by code) at level 6 and
+20 `municipality / δήμος` at level 3, each with its regional unit as county; 0 get `parent_id` to the record of the unit
+directly above where one exists. Held (49): settlements without a unique ELSTAT match, and 20 monasteries typed
+`religious` (Mount Athos and elsewhere), listed as proposals under the multi-level territories policy. Four older pairs
+of records share one Wikidata item (Heraklion 52666/153541, Néa Poteídaia 53027/53028, Paranésti 53096/154195,
+Prosotsáni 53145/154196); this PR changes none of their items, and they go to the next duplicates round.
+
+### Sources
+Source: Hellenic Statistical Authority (ELSTAT), Register of Municipalities, Communes and Settlements
+([SKA01, 2026](https://www.statistics.gr/en/statistics/-/publication/SKA01/2026), updated to 31 December 2025), the
+2011-2022 settlement-code crosswalk, and the [2021 Population-Housing Census](https://www.statistics.gr/en/2021-census-res-pop-results),
+https://www.statistics.gr (workbooks obtained through the archived [greek-ota mirror](https://github.com/achilleskal/greek-ota/tree/ffbeff3d6db5097aed8edf89d737926362a792c4/sources)).
+CSC parses and adapts the published data for these 435 records. ELSTAT bears no responsibility for the modified result.
+ELSTAT's census map service was used only to check points; GeoNames (CC BY 4.0) and Wikidata (CC0) for identities.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
