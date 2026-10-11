@@ -100349,3 +100349,34 @@ population is set here); time zones from the point with timezonefinder's boundar
 
 ### Rollback
 Revert the PR (squash commit); the added records then disappear on the next import.
+
+## Philippines: cities, municipalities and barangays typed from PSGC
+
+### Problem
+None of the Philippines' 4,544 city records had a level or a link to the unit above, most were typed city whatever
+they were (city, municipality or barangay), and many shared or carried another place's Wikidata item.
+
+### Fix
+**2128 records typed** from the Philippine Standard Geographic Code (PSA, second quarter 2026), each through its PSGC
+code, own item, official name and point inside the named unit:
+- 61 `city / city` and 826 `municipality / municipality` at level 3 under their province (NCR cities at level 2 under
+  the region, which has no province). Highly urbanized and independent component cities keep the province ISO gives
+  them; their independence is recorded in the evidence, not as a new type.
+- 1241 barangays `section / barangay` at level 4 (NCR: 3), as Portugal's freguesias: a barangay has its own elected
+  government. 756 link to their city or municipality record with `parent_id`; the rest have no record above them yet.
+**350 Wikidata ids changed**: copied items replaced with the place's own item, and 296 items that name another
+place or a non-place (a government agency, a television programme) cleared. The review restored four own items the
+research had cleared, and three clears whose item may also name the record's own settlement are withdrawn (held).
+
+Held (2418): records whose PSGC identity is not settled, points outside the named unit or province, records in a
+province other than the smallest ISO one, several CSC records for one PSGC unit (a later duplicates round), and
+records that still share an item with another record: 285 shared groups (587 records) remain, all inherited and all
+on held records except San Jose and Agcogon; they need a duplicates and scope round.
+
+### Sources
+Philippine Statistics Authority, Philippine Standard Geographic Code, 2Q 2026 [publication datafile](https://psa.gov.ph/system/files/scd/PSGC-2Q-2026-Publication-Datafile.xlsx), CC BY 4.0 under
+the [PSA terms of use](https://psa.gov.ph/terms-of-use); OCHA COD-AB Philippines boundaries (CC BY-IGO), used only to
+check points; Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
