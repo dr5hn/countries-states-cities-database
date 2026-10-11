@@ -108475,3 +108475,37 @@ U.S. Census Bureau, INE Uruguay); Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section with their replacements.
+
+## Population pass 3: official populations by official code (MX, PL, NL, AT, CZ, CH, NO, SE)
+
+### Problem
+As in pass 2 (#1913), city populations had no reference year and many counted a different place or scope than the
+record represents.
+
+### Fix
+**13,541 records** get the statistics office's figure for exactly the unit they represent, with its `population_year`,
+joined by the record's official code (from the country pilots, or the code on its own Wikidata item), never by name.
+Mexican localidades get the locality's own census count and municipios the whole municipio; Polish urban-rural gminy
+the whole gmina and their towns the town's count; Norwegian and Swedish tettsteder/tätorter the statistical urban area.
+Units whose territory changed after the table's geography date (mergers, splits, new localities) are left unchanged.
+
+| Country | Records | Source | Year |
+|---|---|---|---|
+| MX | 7,722 localidades and municipios | [INEGI, Censo de Población y Vivienda 2020 (ITER), by localidad or municipio code](https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip) | 2020 |
+| AT | 1,582 Gemeinden | [Statistik Austria, population at 1 January 2026 by Gemeindekennziffer (Gemeindeverzeichnis 2026)](https://www.statistik.at/fileadmin/pages/453/RegGemVz2026.ods) | 2026 |
+| PL | 1,165 gminy and towns | [GUS, population at 31 December 2025 by TERYT code (whole gmina, or the town of an urban-rural gmina)](https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5468/6/40/1/ludnosc.stan_i_struktura_31.12.2025.zip) | 2025 |
+| CZ | 1,056 obce | [ČSÚ, population at 1 January 2026 by obec code (OBY02A)](https://data.csu.gov.cz/opendata/sady/OBY02A/distribuce/csv) | 2026 |
+| CH | 904 communes | [BFS, STATPOP permanent resident population 2025 by commune number (geography of 6 April 2025; communes merged in 2026 left unchanged)](https://www.pxweb.bfs.admin.ch/pxweb/en/px-x-0102010000_101/) | 2025 |
+| SE | 524 tätorter and kommuner | [SCB, population at 31 December 2025: kommuner (BefolkningCKM) and tätorter in their 2023 boundaries (MI0810, FortatUtglesRegion); SCB perturbs small counts (CKM)](https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__MI__MI0810__MI0810A/FortatUtglesRegion/) | 2025 |
+| NO | 498 kommuner and tettsteder | [SSB, population at 1 January 2026: kommuner from table 07459, tettsteder from table 04859](https://www.ssb.no/statbank/table/07459) | 2026 |
+| NL | 90 gemeenten | [CBS, registered population at 1 January 2026 by gemeente code (table 03759ned)](https://opendata.cbs.nl/#/CBS/nl/dataset/03759ned/table) | 2026 |
+
+The Netherlands is mostly left unchanged: no official code-joined population for whole woonplaatsen was found for this
+pass, so only gemeente records are set.
+
+### Sources
+MX: [INEGI terms of free use](https://www.inegi.org.mx/inegi/terminos.html), Fuente: INEGI; AT: reuse with attribution, Quelle: STATISTIK AUSTRIA; PL: [GUS terms](https://stat.gov.pl/copyright): reuse with source attribution, Źródło: GUS; CZ: [CC BY 4.0](https://csu.gov.cz/podminky_pro_vyuzivani_a_dalsi_zverejnovani_statistickych_udaju_csu), Zdroj: ČSÚ; CH: [STAT-TAB open use](https://www.bfs.admin.ch/bfs/en/home/fso/swiss-federal-statistical-office/terms-of-use.html), Source: FSO; SE: CC0, Källa: SCB; NO: [CC BY 4.0](https://www.ssb.no/en/diverse/lisens), Kilde: SSB; NL: [CC BY 4.0](https://www.cbs.nl/en-gb/about-us/website/copyright), Bron: CBS. Figures copied as published; matching them to records by official code and adding the reference year in
+`population_year` is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
