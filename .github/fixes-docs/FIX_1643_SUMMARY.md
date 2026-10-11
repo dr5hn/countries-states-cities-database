@@ -100660,3 +100660,42 @@ used to check points; Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Russia pass 3: municipal districts and urban okrugs as counties, settlements linked
+
+### Problem
+Russia had no county records, so its settlements had no link to the municipal district or urban okrug above them,
+the most common parent gap in the 11 Oct accuracy sample.
+
+### Fix
+**821 county records** (ids 8872-9725, with gaps where the review held 33), `administrative district / <official term>`, level 2 under their subject, from
+the current OKTMO edition (October 2026, change 951; section 1, with effective dates): name romanized by BGN/PCGN as
+CSC writes Russian places ("Altayskiy District", ё as ë), native the official Russian name, the unit's own Wikidata
+item, its IANA time zone, and a point inside the unit from an open source: the unit's own Wikidata item (CC0), the
+administrative centre's CSC record, or the centre's GeoNames row (CC BY 4.0). The review checked each point against
+OpenStreetMap unit boundaries and moved or held those outside.
+
+| type_local | Counties |
+|---|---|
+| муниципальный район | 508 |
+| городской округ | 285 |
+| муниципальный округ | 28 |
+
+**1,241 settlements linked** with `county_id`: OKTMO is hierarchical; a settlement belongs to the first-tier unit whose
+8-digit code its current populated-place code starts with, or, under an urban or rural поселение, to the unit its
+settlement code rolls up to (first five digits plus 000), with both current classifier rows required. Moscow and Saint Petersburg intra-city territories are listed
+only, not created.
+
+Held: 1,444 counties (976 without a unique own Wikidata item; 429 whose item is still on an existing city
+row, a unit row for option (c); 2 without a named centre; 4 + 33 without an open point inside the unit) and the
+2,253 settlements that would link to them; Crimea, Sevastopol and the
+occupied Ukrainian territories unchanged. Some linked settlements still share an inherited item with another record
+(a duplicates round).
+
+### Sources
+Rosstat, OKTMO (October 2026 edition, change 951), sections 1 and 2, reused under [Rosstat's terms](https://rosstat.gov.ru/storage/2018/08-23/6RswQtD5/usl-od.pdf)
+(reuse and redistribution with a link to the source); Wikidata (CC0) for unit items and most points; GeoNames (CC BY
+4.0) and existing CSC records for centre points. OpenStreetMap boundaries (ODbL) were used only to check points.
+
+### Rollback
+Revert the PR (squash commit); the county records 8872-9725 and the links go with it.
