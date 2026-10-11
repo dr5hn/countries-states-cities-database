@@ -118257,3 +118257,31 @@ to confirm names; nothing from it is in the data.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Italy pass 2: held comuni, former comuni, Naples quartieri
+
+### Problem
+After the Italy pilot, 566 Italian records had no level: comuni the pilot could not settle, former comuni merged into
+another since 2014, and quartieri of Naples and other big cities.
+
+### Fix
+**87 records typed**: 8 current comuni (`municipality / comune`, level 3) settled by the ISTAT code on their own Wikidata item
+and the comune polygon; 51 former comuni and settlements typed as the ISTAT 2021 census locality of the same name
+(`locality / centro abitato`, level 4), linked to the comune that contains them where that comune has a settled record
+(the review admitted 38 whose comune has none yet; they get no parent for now); 28 quartieri (`section / quartiere`, level 5),
+all in Naples. 13 get `parent_id`; the quartieri get none, because a parent must be one level up and Naples'
+municipalità (level 4) have no records yet. 5 Wikidata ids changed (items of other places cleared, one own item set).
+
+Held (479): former comuni without one distinct verified successor record (about 190 before the review's admissions),
+former comuni with no unique same-name census locality (72), and records whose current identity is not settled.
+ISTAT lists 7,894 comuni; after this PR 7,370 of their codes have a typed record. The other 524 are a typing gap, not a
+count of missing records: some are records not yet settled, others may have no record; the next Italian pass checks
+each. No point changes here; points outside their unit are listed for that pass.
+
+### Sources
+ISTAT (comuni, [variazioni amministrative](https://www.istat.it/classificazione/variazioni-amministrative-e-territoriali-dei-comuni/),
+2021 census localities and boundaries; CC BY 4.0, Fonte: ISTAT); Comune di Napoli open data (quartieri; CC BY 4.0);
+Wikidata (CC0). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
