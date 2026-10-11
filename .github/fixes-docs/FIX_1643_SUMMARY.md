@@ -121762,3 +121762,31 @@ instrument was not verified, so no table, name or geometry is copied. Provincial
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Saudi Arabia pilot: cities and towns by municipal status
+
+### Problem
+None of Saudi Arabia's 400 city records had a level or an official local term.
+
+### Fix
+**72 records typed** by their municipal role: 20 `city / مدينة` (regional capitals and the cities of the amanah list) and
+52 `town / بلدية` (other seats of a baladiyah, a municipality), at the depth of the governorate and centre chain observed
+in the 2024 statistics (no verified governorate or centre record is linked yet, so no parent; some older governorate-scoped
+records remain). Hail and Tabarjal each have two records, both typed. The review withdrew 'Ushash (the municipal seat of
+that name is a namesake 289 km away), held five records whose seat identity is not proved, and typed seven more seats.
+20 Wikidata ids changed: 20 cleared because they were unrelated entities (people, a taxon, a disambiguation page,
+places elsewhere). Governorates (محافظة, 140 observed) belong in contributions/counties/SA.json; they wait for a verified
+national list with codes.
+
+Held (328): places with no municipal seat role in the sources (which does not prove they have none), unresolved
+identities (namesakes, a unit or its seat), and places whose depth in the statutory hierarchy is not settled.
+
+### Sources
+GASTAT 2024 statistics (sheet 6-2: municipalities by governorate and centre) and the Ministry of Municipalities and
+Housing's 2022 appendix, used only to confirm each place's municipal role and chain: no open licence was established for
+the GASTAT workbook, and the ministry's open-data policy carries attribution and purpose conditions, so only these
+generic facts are recorded (no names, points or geometry copied); GeoNames (CC BY 4.0) and Wikidata (CC0) for
+identities. Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
