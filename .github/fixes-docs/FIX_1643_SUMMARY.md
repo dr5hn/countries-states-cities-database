@@ -114349,3 +114349,35 @@ Royal Thai Survey Department district boundaries via OCHA ROAP (CC BY 3.0 IGO), 
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section with their replacements.
+
+## Population pass 4: official populations by official code (CA, AU, BE, DK, FI, PT, RO, TR)
+
+### Problem
+As in passes 2 and 3 (#1913, #1922), these countries' populations had no reference year and often counted a different
+place or scope than the record represents.
+
+### Fix
+**10,939 records** get the statistics office's figure for exactly the unit they represent, with its `population_year`,
+joined by the record's official code (from the country pilots, or the code on its own Wikidata item), never by name.
+Romanian communes and towns get the whole UAT's census count and their villages the village's own count; Danish town
+records the urban area (by); Turkish province-centre records the centre's count. Units whose territory changed after
+the table's geography date are left unchanged: most Australian localities, and Canadian municipalities whose
+boundaries changed after 1 January 2021 (61, found in review from provincial notices and StatCan's interim lists).
+
+| Country | Records | Source | Year |
+|---|---|---|---|
+| RO | 7,749 UATs and localities | [INS, 2021 Census (RPL 2021, definitive table 1.22) by SIRUTA code: whole municipiu, oraș or comună for UAT records, the component locality for village records](https://www.recensamantromania.ro/) | 2021 |
+| AU | 681 LGAs and localities | [ABS: 2021 Census by suburb and locality (SAL) for gazetted localities whose boundary has not changed since; 2025 estimated resident population by LGA](https://www.abs.gov.au/census/find-census-data/datapacks) | 2021 / 2025 |
+| CA | 564 municipalities | [Statistics Canada, 2021 Census population by census subdivision (table 98-10-0002)](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201) | 2021 |
+| PT | 485 municípios and freguesias | [INE Portugal, Census 2021 by município and freguesia code](https://tabulador.ine.pt/) | 2021 |
+| TR | 477 district municipalities and province centres | [TÜİK, ADNKS 2025: whole ilçe, and the il or ilçe centre for centre records](https://veriportali.tuik.gov.tr/) | 2025 |
+| DK | 372 kommuner and byer | [Statistics Denmark, population at 1 January 2026 by kommune and by urban area (byer)](https://www.statbank.dk/) | 2026 |
+| BE | 351 municipalities | [Statbel, population at 1 January 2026 by NIS municipality code](https://statbel.fgov.be/) | 2026 |
+| FI | 260 municipalities | [Statistics Finland, population at 31 December 2025 by municipality code](https://stat.fi/) | 2025 |
+
+### Sources
+RO: Sursa: INS, RPL2021 table 1.22 (no licence is stated for the workbook; the figures are used as official facts; SIRUTA codes CC BY 4.0); AU: [CC BY 4.0](https://www.abs.gov.au/website-privacy-copyright-and-disclaimer), Source: ABS; CA: [Statistics Canada Open Licence](https://www.statcan.gc.ca/en/terms-conditions/open-licence); PT: CC BY 4.0, Fonte: INE; TR: TÜİK terms: reuse with source attribution, Kaynak: TÜİK; DK: CC BY 4.0, Kilde: Danmarks Statistik; BE: CC BY 4.0, Bron/Source: Statbel; FI: [CC BY 4.0](https://stat.fi/org/lainsaadanto/copyright_en.html), Source: Statistics Finland. Figures copied as published; matching them to records by official code and adding the reference year in
+`population_year` is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
