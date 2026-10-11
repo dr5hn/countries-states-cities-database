@@ -15,7 +15,7 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
-    optional: ['county_id', 'state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'translations'],
+    optional: ['county_id', 'state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'population_year', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       county_id: { type: 'integer', positive: true },
@@ -27,6 +27,8 @@ const SCHEMA = {
       longitude: { type: 'coordinate', min: -180, max: 180 },
       wikiDataId: { type: 'string', pattern: /^Q\d+$/ },
       type_local: { type: 'string', maxLength: 191 },
+      // Reference year of `population` (census or official estimate); no future years.
+      population_year: { type: 'integer', jsonNumber: true, min: 1800, max: new Date().getFullYear() },
     },
   },
   states: {
@@ -166,9 +168,14 @@ function validateField(fieldName, value, rule) {
   }
 
   if (rule.type === 'integer') {
+    // jsonNumber: the value must be a JSON number; Number([2022]) would otherwise pass as 2022.
+    if (rule.jsonNumber && typeof value !== 'number') return `"${fieldName}" must be a number, got ${JSON.stringify(value)}`;
     const num = Number(value);
     if (!Number.isInteger(num)) return `"${fieldName}" must be an integer, got "${value}"`;
     if (rule.positive && num <= 0) return `"${fieldName}" must be positive, got ${num}`;
+    if ((rule.min !== undefined && num < rule.min) || (rule.max !== undefined && num > rule.max)) {
+      return `"${fieldName}" must be between ${rule.min} and ${rule.max}, got ${num}`;
+    }
   }
 
   if (rule.type === 'coordinate') {

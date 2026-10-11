@@ -116,11 +116,11 @@ async function main() {
   // Seed Cities
   const cities = await fetchData('cities');
   const cityData = cities
-    .map(({ name, county_id, state_name, country_code, state_code, type_local, latitude, longitude, wikiDataId }) => {
+    .map(({ name, county_id, state_name, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId }) => {
       const countryId = countryMap.get(country_code);
       const stateId = stateMap.get(`${state_name}-${countryId}`);
       return stateId && countryId
-        ? { name, countyId: county_id ?? null, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, latitude, longitude, wikiDataId, stateId, countryId }
+        ? { name, countyId: county_id ?? null, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId }
         : null;
     })
     .filter(Boolean);

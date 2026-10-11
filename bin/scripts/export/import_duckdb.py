@@ -39,6 +39,7 @@ def create_table_ddl(table_name, columns_info):
     type_mapping = {
         'INTEGER': 'INTEGER',
         'MEDIUMINT': 'INTEGER', 
+        'SMALLINT': 'INTEGER',
         'TINYINT': 'TINYINT',
         'VARCHAR': 'VARCHAR',
         'CHARACTER': 'VARCHAR',
