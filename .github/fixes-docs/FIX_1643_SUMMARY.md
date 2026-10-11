@@ -120423,3 +120423,34 @@ Matching records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Italy pass 3: current comuni with no record
+
+### Problem
+ISTAT lists 7,894 current comuni (register of 21 February 2026, changes to 11 October 2026). Joined by ISTAT code,
+7238 have a record with their own code. Of the rest, 400 have no record for the current comune (settlements
+and former comuni inside them may have records): 111 were created by a merger since 2014, 4 were renamed, and 285 were never
+added. 125 more have a typed comune record with no Wikidata item or an older name form, and 131 are held for
+identity.
+
+### Fix
+**361 comuni added** as `municipality / comune`, level 3, in the province or metropolitan city that contains them:
+ISTAT name (the bilingual form where ISTAT gives one), own Wikidata item (the one item with that ISTAT code), point from
+that item (CC0; GeoNames, CC BY 4.0, for 7) checked inside the comune polygon, timezone Europe/Rome, and ISTAT's resident
+population at 1 January 2026 with `population_year` 2026. New records get their ids at the next export.
+**151 records corrected**: 125 comune records without a Wikidata item get the comune's own item, and 64 take the official
+name (e.g. Popoli → Popoli Terme, Proves - Proveis → Proves/Proveis). The review also fixed held records: 11 carried
+another comune's or a deleted item, 11 a locality item that belongs elsewhere (cleared), and San Pancrazio takes its
+official bilingual name San Pancrazio/St. Pankraz.
+
+Held (170): comuni whose only candidate point duplicates an existing record within a metre, unsettled identities,
+and missing comuni without a unique item or point. 184 former comuni are candidates to link to a new comune once
+the next export assigns ids: 30 are already typed localities; the others need typing (and four a point check) first.
+
+### Sources
+ISTAT [Elenco comuni italiani](https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/),
+SITUAS changes, boundaries and resident population (CC BY 4.0, Fonte: ISTAT); Wikidata (CC0); GeoNames (CC BY 4.0).
+Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); the new records are removed with it.
