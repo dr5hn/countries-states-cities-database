@@ -118285,3 +118285,28 @@ Wikidata (CC0). Matching them to records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Follow-ups 8: Turkey's Merkez rows, Smolenskiy municipal okrug
+
+### Problem
+Eight Turkish city records named "Merkez" were the central district (merkez ilçe) of their province, not a place, and
+their province centre had no record of its own. In Russia, Smolenskiy municipal okrug was held in Russia pass 4 (#1921)
+for want of an open interior point; its review found one on its own Wikidata item.
+
+### Fix
+**8 Merkez rows turned into their province centre** under the owner's option (c), as Sivas was in #1878: Aksaray, Burdur, Uşak, Elazığ, Bitlis, Afyonkarahisar, Nevşehir, Amasya.
+Each takes the centre's name, own Wikidata item and labels, `municipality / il merkezi` level 3 under its central
+district county (as Sivas), its TÜİK ADNKS 2025 population with `population_year` 2025, and the centre's own Wikidata
+point. Point rule for this round: the centre's own normal-rank, non-deprecated Wikidata coordinate (CC0) where it
+lies inside the current TÜİK central-district polygon, else the stored point only when it also lies inside that polygon;
+all eight own points qualified. Bitlis's (coarse) and Amasya's own points sit at the edge of the town rather than its
+centre, though nearer than the old points; a later point pass can refine them. Nothing else referred to the rows.
+**Smolenskiy Municipal Okrug created** as county 10669 (OKTMO 66544000, own item Q1193104, its own interior point) and
+2 settlements linked to it by OKTMO code.
+
+### Sources
+TÜİK ADNKS 2025 (reuse with credit, Kaynak: TÜİK) and its central-district polygons (used only to check points);
+Rosstat OKTMO; OpenStreetMap relation 1694050 (ODbL, used only to check the point); Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); the county id 10669 is free again after a revert.
