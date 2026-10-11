@@ -134381,3 +134381,22 @@ OpenStreetMap boundaries (ODbL, used only to check points); Wikidata (CC0) and G
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Russia pass 5: the review's corrections
+
+### Problem
+Russia pass 5 (#1940) merged without its Codex review's corrections: the research build stopped on an error and the
+merge check accepted an unchanged branch. The review (all of #1940's own changes correct) had listed 131 values on
+68 records. The merge check now also requires every review correction to be on the branch.
+
+### Fix
+Exactly the review's values: **17 records typed** (14 surviving administrative centres of removed rayon rows, now typed as
+settlements with their county, and three sampled holds), **50 Wikidata items cleared** that Russian settlements' records shared
+with other places (four of them on records in Ukraine, Hong Kong and the French Southern Territories), and **15 native
+names** set to the Russian form.
+
+### Sources
+As #1940: Rosstat OKTMO (1 October 2026 edition) and change notices; BGN/PCGN; Wikidata (CC0); GeoNames (CC BY 4.0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
