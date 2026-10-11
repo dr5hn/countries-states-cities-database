@@ -100289,3 +100289,63 @@ public domain (U.S. Government work).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Major places by tier: Tier 1 and Tier 2 coverage, 18 missing places added
+
+### Problem
+The owner's goal (11 Oct 2026) is to cover major places by tier first: Tier 1 is every national capital and the seat
+of every state; Tier 2 is every county or district seat and every place of 100,000 or more. Some were missing.
+
+### Coverage found (research snapshot of 11 Oct, master 66dd1abe with 152,977 cities)
+| Tier | Identified targets | Covered | Of them by a unit row | Missing, held |
+|---|---|---|---|---|
+| 1 | 4,835 | 4,267 (88%) | 918 | 560 |
+| 2 | 28,825 | 23,157 (80%) | 4,560 | 5,657 |
+
+Targets are the places the research identified from GeoNames (PPLC, PPLA, PPLA2, populated places of 100,000+),
+checked against official capital lists where they disagree; the list is not proof that every seat or every place of
+100,000+ worldwide was found. 2,947 seat obligations (624 Tier 1, 2,323 Tier 2) were not resolved to a place and 114
+need an official list to settle a conflict. "By a unit row" means the place is represented only by an administrative
+row (municipality, prefecture, district or county type), which option (c) handles as in #1907. The review replayed
+the coverage against the current master (152,738 cities): 4,266 and 23,244 before these additions.
+
+### Fix
+**18 missing places added**, each with its own Wikidata item (settlement class), its smallest represented ISO state,
+a time zone from its point, native name in the local form where there is one, and no duplicate found by item, name or
+point in the search made; `type` city with no level where the country has no merged pilot. Ids are assigned on import.
+The review moved Bu'aale's point 18.7 km into the town (the GeoNames point lay in a village of the district) and added
+Savar (Bangladesh), whose own city item is separate from its upazila's.
+
+| Place | Country | State | Item | Tier |
+|---|---|---|---|---|
+| Bala Murghab | AF | BDG | Q3633185 | 2 |
+| Warder | ET | SO | Q635334 | 2 |
+| Kareli | GE | SK | Q1987828 | 2 |
+| Khānaqīn | IQ | DI | Q1004283 | 2 |
+| Moung Ruessei | KH | 2 | Q6919167 | 2 |
+| Karabulak | KZ | 33 | Q2121436 | 2 |
+| Aksuat | KZ | 10 | Q2752954 | 2 |
+| Amarapura | MM | 04 | Q454949 | 2 |
+| Nkurenkuru | NA | KW | Q918461 | 1 |
+| Bu’aale | SO | JD | Q997314 | 1 |
+| Borama | SO | AW | Q893092 | 2/1 |
+| Juba | SS | EC | Q1947 | 1/2 |
+| Bor | SS | JG | Q893274 | 1 |
+| Ma‘bar | YE | DH | Q6860386 | 2 |
+| Vaileka | FJ | 11 | Q2705079 | 1 |
+| Freetown | AG | 08 | Q1942963 | 1 |
+| Hella | IS | RGY | Q1602650 | 1 |
+| Savar | BD | 13 | Q23958347 | 2 |
+
+Held: 10,039 ledger entries, not proved missing places: 5,952 missing places without full create proof
+(4,119 of them without a unique own Wikidata item), 3,061 seat obligations not resolved to a place, and 1,026
+official population joins to settle in the population passes.
+
+### Sources
+GeoNames (CC BY 4.0, [geonames.org](https://www.geonames.org/)) for targets and points, a screening signal without a
+census year; Wikidata (CC0) for items; official capital lists and statistics-office pages as facts for identity, with
+no redistribution licence claimed; UN Demographic Yearbook and statistics offices for the population research (no
+population is set here); time zones from the point with timezonefinder's boundary data, IANA tzdb 2026e identifiers.
+
+### Rollback
+Revert the PR (squash commit); the added records then disappear on the next import.
