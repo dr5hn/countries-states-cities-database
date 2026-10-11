@@ -114381,3 +114381,30 @@ RO: Sursa: INS, RPL2021 table 1.22 (no licence is stated for the workbook; the f
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Philippines pass 2: held records typed, moved to their province, open-licence points
+
+### Problem
+After the Philippines pilot (#1912) and duplicates round 7 (#1920), 2,170 Philippine records still had no level:
+records in the wrong province, points outside their named PSGC unit, and identities the pilot could not settle.
+
+### Fix
+**960 records typed** under the pilot's PSGC rules: 49 `city / city` and 390 `municipality / municipality` at level 3 under
+their province (NCR at 2), and 521 `section / barangay` one level below, 442 with `parent_id` to their city or
+municipality. **106 records moved** to the state (the smallest ISO unit) that contains both their point and their PSGC unit, as
+#1663-#1665 did: 105 to a province and one (Del Monte, a Quezon City barangay) to Metro Manila (NCR). **378 points replaced**, where the stored point lay outside the record's own PSGC unit, with
+the place's own Wikidata point (CC0) or GeoNames point (CC BY 4.0) lying inside it. **84 Wikidata ids changed** (own item
+by PSGC code, or an item of another place or a non-place item cleared; the review cleared or replaced 69 more,
+including items of other places kept on newly typed records).
+
+Held (1210): identities still not settled, points with no open source inside the unit, and 400 pairs of records for
+one PSGC unit, listed for the next duplicates round. Inherited shared items remain on some records (347 groups);
+none is added by this PR.
+
+### Sources
+Philippine Statistics Authority, PSGC 2Q 2026 [publication datafile](https://psa.gov.ph/system/files/scd/PSGC-2Q-2026-Publication-Datafile.xlsx) (CC BY 4.0
+under the [PSA terms](https://psa.gov.ph/terms-of-use)); OCHA COD-AB Philippines boundaries (CC BY-IGO), used only to check
+points and provinces; Wikidata (CC0) and GeoNames (CC BY 4.0) for points.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
