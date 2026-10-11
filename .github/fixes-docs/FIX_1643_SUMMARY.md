@@ -134425,3 +134425,32 @@ the IANA tz database (public domain). Matching them to records is CSC's own proc
 
 ### Rollback
 Revert the PR (squash commit); the two new records are removed with it.
+
+## Portugal pass 2: cidades, vilas, freguesias and lugares
+
+### Problem
+After the Portugal pilot (#1824: 239 municípios, 287 freguesias), 748 Portuguese records had no level: places with
+official city or town status, freguesias, lugares, former administrative units and unresolved identities.
+
+### Fix
+**255 records typed**: 18 places with official city status as `city / cidade` and 134 with town status as `town / vila` (each by
+its elevation law or INE's official lists V05909 and V00135), at level 3 one level below their município; 13 more
+`section / freguesia` at level 3 (current CAOP); and 90 `locality / lugar` at level 4, by INE's 2021 lugar codes. The
+immediate parent is linked when its record exists (106 links: cidades and vilas to their município, freguesias to
+their município, lugares to their freguesia), otherwise left empty. **234 Wikidata ids changed** (161 cleared as another place, the rest set to the
+place's own item). A cidade and its município or freguesia are different places with different items. The review
+added Aldeia Nova de São Bento (a vila under its new name) and cleared 14 more items of other places on held records;
+those 14 stay held for their type.
+
+Held (493): 45 records named after their município with no separate município record (Braga, Coimbra, Beja...); under
+the owner's 10 October rule they are the municipality, applied in the next pass. Also held: former or unresolved
+administrative units, lugares without a unique 2021 code, and homonyms.
+
+### Sources
+DGT CAOP, current edition (CC BY 4.0, Fonte: DGT; for current parish relationships); INE lists of cidades and vilas
+(V05909, V00135) and Censos 2021 BGRI and lugares (CC BY 4.0, Fonte: INE; 2021 census partitions); Diário da República
+and Assembleia da República elevation laws (facts: legal status); Wikidata (CC0) and GeoNames (CC BY 4.0). Matching them to records is
+CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
