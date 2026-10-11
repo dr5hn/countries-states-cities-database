@@ -100595,3 +100595,40 @@ GeoNames (CC BY 4.0) as corroboration only.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section with their replacements.
+
+## Indonesia: kabupaten and kota as counties, kota cities, seat towns
+
+### Problem
+Indonesia's 829 city records had no level and no county: 394 were typed regency (a kabupaten itself, not a place),
+others city, adm2 or adm3, and many shared one Wikidata item. The kabupaten and kota tier had no records.
+
+### Fix
+Rules (maintainer, 11 Oct, following Germany #1799 and option (c) #1907): kabupaten and kota are the units between
+the province and the village, so they are county records at level 2; a kota is also a city, so its city record is
+`city / kota / 2` linked to its county record; desa are `village / desa` and kelurahan `section / kelurahan` at level 4.
+- **505 county records** (ids 8367-8871): 408 `administrative district / kabupaten` and 97 `/ kota`, level 2,
+  from the current Kemendagri code list (Kepmendagri 300.2.2-2138/2025 as amended by 300.2.2-2430/2025), each with
+  its own Wikidata item, its IANA time zone (Central Kalimantan is Asia/Pontianak) and a point inside the unit from
+  an openly licensed source: the unit's own Wikidata item (CC0) or the GeoNames seat (CC BY 4.0).
+- **77 kota city records** typed `city / kota / 2` and linked to their kota county.
+- **5 regency rows turned into their seat town** (option (c)): official name, the town's own item, a point inside
+  the town from its own item or GeoNames, translations from the town item, population cleared: Tamiang Layang, Buranga,
+  Nanga Bulik, Pulang Pisau and Tideng Pale. No seat town already had its own record, so no row was removed.
+- **12 places**: 8 `section / kelurahan` and 4 `village / desa` at level 4, linked to their county
+  (the seat towns above are typed the same way).
+
+Held (744: 735 cities, 9 counties): regency rows whose seat town is not proved to be one desa or kelurahan with its own item, towns spanning
+several units, 13 records that are a kecamatan (district) itself (a later decision on the kecamatan tier), 13 records
+whose point lies in another province, 9 counties whose identity or open-licence point is unsettled (Minahasa Selatan:
+no open point inside it) and Saumlaki (likewise), and records that share an item
+with the unit or kota they name (inherited groups, kept until each record's own item is proved).
+
+### Sources
+Kementerian Dalam Negeri, Kepmendagri 300.2.2-2138/2025 and 300.2.2-2430/2025 on administrative codes (legal texts,
+exempt from copyright under Law 28/2014 Article 42); BPS code bridging (facts); Wikidata (CC0) for items and most points; GeoNames (CC BY
+4.0) for 26 county points and one town point. Badan Informasi Geospasial boundaries were used only to check that each
+point lies inside its unit; no BIG coordinate or name is copied (the review caught BIG points in the first build and
+they were replaced).
+
+### Rollback
+Revert the PR (squash commit); the county records 8367-8871 and the city changes go with it.
