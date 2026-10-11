@@ -89011,8 +89011,11 @@ and stays for a duplicates round), which a Croatia Wikidata repair round will re
 the matched unit; and items with section, district or local-board scope.
 
 ### Sources
-DGU Registar prostornih jedinica (current archive), Croatian Open Licence (Otvorena dozvola), adapted to categories
-and point checks; Zakon o područjima županija, gradova i općina u Republici Hrvatskoj (official facts); Wikidata (CC0).
+Državna geodetska uprava, Registar prostornih jedinica ([AU feed](https://geoportal.dgu.hr/services/atom/au/xml),
+[archive](https://geoportal.dgu.hr/services/atom/INSPIRE_Administrative_Units_(AU).zip), updated 4 October 2026), under the
+[Croatian Open Licence](https://narodne-novine.nn.hr/clanci/sluzbeni/full/2017_07_67_1577.html): names, boundaries and
+immediate-parent references were used to verify classifications, links and points; no polygon was altered. Zakon o područjima županija, gradova i općina u
+Republici Hrvatskoj (official facts). Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
@@ -89552,8 +89555,13 @@ duplicates into the older id, separates main naselja from their grad, and types 
 Held (15): records whose correct scope or geometry is still open.
 
 ### Sources
-DGU Registar prostornih jedinica (4 October 2026 snapshot), Croatian Open Licence (Otvorena dozvola); Wikidata (CC0);
-GeoNames (CC BY 4.0, ids only).
+Državna geodetska uprava, Registar prostornih jedinica ([AU feed](https://geoportal.dgu.hr/services/atom/au/xml),
+[archive](https://geoportal.dgu.hr/services/atom/INSPIRE_Administrative_Units_(AU).zip), updated 4 October 2026), under the
+[Croatian Open Licence](https://narodne-novine.nn.hr/clanci/sluzbeni/full/2017_07_67_1577.html): names, boundaries and
+immediate-parent references were used to verify classifications, links and points; no polygon was altered. Wikidata (CC0).
+GeoNames geographical data ([Croatia dump](https://download.geonames.org/export/dump/HR.zip),
+[CC BY 4.0](https://download.geonames.org/export/dump/readme.txt)): names, coordinates, feature codes and
+administrative context used for source-identity checks.
 
 ### Rollback
 Revert the PR (squash commit); every previous value is in the diff.
@@ -89703,8 +89711,15 @@ separate current item for most main naselja, so this pass could not prove which 
 follows in pass 3. Also 49 records whose item, class or point is unresolved (including the Virovitica naselje 54973).
 
 ### Sources
-DGU Registar prostornih jedinica (4 October 2026), Croatian Open Licence (Otvorena dozvola); Wikidata (CC0); GeoNames
-(CC BY 4.0, ids only).
+Državna geodetska uprava, Registar prostornih jedinica ([AU feed](https://geoportal.dgu.hr/services/atom/au/xml),
+[archive](https://geoportal.dgu.hr/services/atom/INSPIRE_Administrative_Units_(AU).zip), updated 4 October 2026), under the
+[Croatian Open Licence](https://narodne-novine.nn.hr/clanci/sluzbeni/full/2017_07_67_1577.html): names, boundaries and
+immediate-parent references were used to verify classifications, links and points; no polygon was altered.
+Državni zavod za statistiku, Census 2021 population by
+[grad/općina](https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx) (Grad Virovitica).
+Wikidata (CC0). GeoNames geographical data ([Croatia dump](https://download.geonames.org/export/dump/HR.zip),
+[CC BY 4.0](https://download.geonames.org/export/dump/readme.txt)): names, coordinates, feature codes and
+administrative context used for source-identity checks.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
@@ -89920,3 +89935,87 @@ licence verified for the catalogue, boundaries or directories; facts only). Wiki
 
 ### Rollback
 Revert the PR (squash commit): this deletes `contributions/counties/PE.json`; no existing `id` changes.
+
+## Follow-ups (round 7)
+
+### Problem
+- Jamaica: Alligator Pond had two records, 62303 and 62304 (review of #1888). Denham Town 62509 had no Wikidata id
+  after #1888 cleared a copied one.
+- Nigeria: Modakeke 77032 (review of #1890) had its point in Irewole, 31.7 km from the town, which lies in Ife East.
+
+### Fix
+- **Alligator Pond 62304 removed, replacement 62303**: same STATIN community (12068), same item Q4732659, same
+  population; 62303 is older and keeps its point. Nothing refers to 62304.
+- **Denham Town 62509**: its own item Q5256997 (Kingston neighbourhood, exact name). Point, type and parent unchanged.
+- **Modakeke 77032**: point 7.47931667, 4.53130167, the exact-name settlement in GRID3 NGA Settlement Names (ward
+  Modakeke 2, Ife East); OCHA boundaries agree, and Osun State and INEC list Modakeke under Ife East (SALB places the
+  point in Ife North; not used). Typed `locality / settlement / 3` as the Nigeria pilot types places; no parent, since
+  no city record represents Ife East.
+
+Held (8): the 8 Turkish "Merkez" rows from #1878 (Aksaray, Burdur, Uşak, Elazığ, Bitlis, Afyonkarahisar, Nevşehir,
+Amasya). Each is the central ilçe and no other record is its province centre, but neither its stored point nor the
+centre's own point is proved inside the centre municipality.
+
+Also: the Sources of the Croatia sections above (#1873, #1877, #1886) now give the publishers' full names, the dataset
+and licence links and the adaptation, as the #1893 review asked.
+
+### Sources
+GRID3 NGA Settlement Names and OCHA COD-AB Nigeria (CC BY 4.0 / CC BY 3.0 IGO); Osun State Government and INEC ward
+lists (official facts); STATIN community list (official facts); Wikidata (CC0).
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 62304,
+    "name": "Alligator Pond",
+    "state_id": 3754,
+    "state_code": "12",
+    "country_id": 108,
+    "country_code": "JM",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "17.88369000",
+    "longitude": "-77.56068000",
+    "native": "Alligator Pond",
+    "population": 1826,
+    "timezone": "America/Jamaica",
+    "translations": {
+      "br": "Alligator Pond",
+      "ko": "악어 연못",
+      "pt-BR": "Alligator Pond",
+      "pt": "Alligator Pond",
+      "nl": "Alligator Pond",
+      "hr": "Alligator Pond",
+      "fa": "الیگیتور پاند",
+      "de": "Alligator Pond",
+      "es": "Alligator Pond",
+      "fr": "Alligator Pond",
+      "ja": "アリゲーターポンド",
+      "it": "Alligator Pond",
+      "zh-CN": "鳄鱼池",
+      "tr": "Alligator Pond",
+      "ru": "Аллигатор-Понд",
+      "uk": "Ставок Алігаторів",
+      "pl": "Alligator Pond",
+      "hi": "मगरमच्छ तालाब",
+      "ar": "بركة التمساح"
+    },
+    "created_at": "2019-10-06T10:07:27",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q4732659",
+    "replacement_id": 62303
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); 62304 is archived above with its replacement.
