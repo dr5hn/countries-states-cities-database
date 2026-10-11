@@ -100414,3 +100414,184 @@ FR: [Licence Ouverte 2.0](https://www.insee.fr/fr/information/2008466), source I
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Russia pass 2: settlements typed through current OKTMO codes, 3 unit rows removed
+
+### Problem
+Pass 1 (#1800) held 3,458 Russian records: 2,257 had no usable current populated-place code on their own Wikidata
+item (most an annulled code, some a current subject or municipal-unit code such as Moscow's 45000000), and 498 carried
+the item of a municipal unit rather than a settlement.
+
+### Fix
+**1,381 settlements typed** at their pass-1 depth, each through a current OKTMO populated-place code: either its own
+item's code, or an annulled code that Rosstat's official change notices (523 notices, 2016-2026) map to exactly one
+current populated place whose name and point match. Types follow pass 1: city for город; town for urban-type places
+(посёлок городского типа, рабочий посёлок, городской and курортный посёлок, and a plain посёлок whose OKTMO code is in
+the urban series 051-099); village for село, деревня, станица, хутор and a plain посёлок in the rural series 101-999:
+
+| type / type_local | Records |
+|---|---|
+| `village / село` | 436 |
+| `city / город` | 338 |
+| `village / посёлок` | 194 |
+| `town / посёлок городского типа` | 170 |
+| `town / рабочий посёлок` | 134 |
+| `town / посёлок` | 34 |
+| `village / деревня` | 28 |
+| `village / станица` | 24 |
+| `town / городской посёлок` | 18 |
+| `locality / населённый пункт` | 3 |
+| `town / курортный посёлок` | 1 |
+| `village / хутор` | 1 |
+
+**3 unit rows removed** (option (c), owner 11 Oct): Zaokskiy, Suvorovskiy and Yasnogorskiy Rayon, whose
+administrative centres already have their own records (`replacement_id`).
+
+Not in this PR: the municipal districts and urban okrugs as county records and the settlements' links to them (pass 3;
+the national register portals were unreachable this round), and records whose annulled code maps to no unique
+current place, Crimea, Sevastopol and the occupied Ukrainian territories (unchanged, as in pass 1).
+
+### Sources
+Rosstat, OKTMO (current edition) and its change notices 2016-2026 (official classifier, facts); Wikidata (CC0);
+GeoNames (CC BY 4.0) as corroboration only.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 102644,
+    "name": "Zaokskiy Rayon",
+    "state_id": 1895,
+    "state_code": "TUL",
+    "country_id": 182,
+    "country_code": "RU",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "54.66667000",
+    "longitude": "37.50000000",
+    "native": "Заокский район",
+    "population": null,
+    "timezone": "Europe/Moscow",
+    "translations": {
+      "br": "Rayon Zaokskiy",
+      "ko": "자옥스키 레이온",
+      "pt-BR": "Zaokskiy Rayon",
+      "pt": "Zaokskiy Rayon",
+      "nl": "Zaokskiy Rayon",
+      "hr": "Zaokski rajon",
+      "fa": "شهرستان زائوسکی",
+      "de": "Zaokskiy Rayon",
+      "es": "Distrito de Zaokskiy",
+      "fr": "Rayon de Zaokski",
+      "ja": "ザオクスキー・ラヨン",
+      "it": "Zaokskiy Rayon",
+      "zh-CN": "扎奥克区",
+      "tr": "Zaokskiy Rayonu",
+      "ru": "Заокский район",
+      "uk": "Заокський район",
+      "pl": "Rejon Zaokski",
+      "hi": "ज़ाओकस्की रेयोन",
+      "ar": "رايون زاوكسكي"
+    },
+    "created_at": "2019-10-06T10:17:53",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q2218580",
+    "replacement_id": 102643
+  },
+  {
+    "id": 101689,
+    "name": "Suvorovskiy Rayon",
+    "state_id": 1895,
+    "state_code": "TUL",
+    "country_id": 182,
+    "country_code": "RU",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "54.16667000",
+    "longitude": "36.58333000",
+    "native": "Суворовский район",
+    "population": null,
+    "timezone": "Europe/Moscow",
+    "translations": {
+      "br": "Rayon Suvorovski",
+      "ko": "수보로프스키 레이온",
+      "pt-BR": "Suvorovskiy Rayon",
+      "pt": "Suvorovskiy Rayon",
+      "nl": "Suvorovskiy Rayon",
+      "hr": "Suvorovski rajon",
+      "fa": "شهرستان سووروفسکی",
+      "de": "Suvorovskiy Rayon",
+      "es": "Distrito de Suvorovskiy",
+      "fr": "Rayon Souvorovski",
+      "ja": "スヴォロフスキー・レーヨン",
+      "it": "Suvorovskiy Rayon",
+      "zh-CN": "苏沃洛夫斯基区",
+      "tr": "Suvorovskiy Rayonu",
+      "ru": "Суворовский район",
+      "uk": "Суворовський район",
+      "pl": "Rejon Suworowski",
+      "hi": "सुवोरोव्स्की रेयन",
+      "ar": "رايون سوفوروفسكي"
+    },
+    "created_at": "2019-10-06T10:17:44",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q1655678",
+    "replacement_id": 101687
+  },
+  {
+    "id": 102514,
+    "name": "Yasnogorskiy Rayon",
+    "state_id": 1895,
+    "state_code": "TUL",
+    "country_id": 182,
+    "country_code": "RU",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "54.50000000",
+    "longitude": "37.75000000",
+    "native": "Ясногорский район",
+    "population": null,
+    "timezone": "Europe/Moscow",
+    "translations": {
+      "br": "Rayon Yasnogorski",
+      "ko": "야스노고르스키 레이온",
+      "pt-BR": "Rayon de Yasnogorskiy",
+      "pt": "Rayon de Yasnogorskiy",
+      "nl": "Yasnogorskiy Rayon",
+      "hr": "Jasnogorski rajon",
+      "fa": "شهرستان یاسنوگورسکی",
+      "de": "Jasnogorski Rayon",
+      "es": "Distrito de Yasnogorskiy",
+      "fr": "Rayon de Yasnogorskiy",
+      "ja": "ヤスノゴルスキー・レーヨン",
+      "it": "Yasnogorskiy Rayon",
+      "zh-CN": "亚斯诺戈尔斯基区",
+      "tr": "Yasnogorskiy Rayonu",
+      "ru": "Ясногорский район",
+      "uk": "Ясногірський район",
+      "pl": "Rejon Jasnogorski",
+      "hi": "यास्नोगोर्स्की रेयोन",
+      "ar": "منطقة ياسنوجورسكي"
+    },
+    "created_at": "2019-10-06T10:17:52",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q1658415",
+    "replacement_id": 102513
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows are archived in this section with their replacements.
