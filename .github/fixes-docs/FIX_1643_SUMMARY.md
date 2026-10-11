@@ -114408,3 +114408,38 @@ points and provinces; Wikidata (CC0) and GeoNames (CC BY 4.0) for points.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Spain pass 2: held records typed from the INE Nomenclátor
+
+### Problem
+After the Spain pilot, 911 Spanish records had no level: settlements below the municipio (entidades singulares and
+núcleos de población) and records whose identity the pilot could not settle.
+
+### Fix
+**732 records typed** with the pilot's values: 634 `locality / entidad singular de población` one level below their municipio
+(level 4, or 5 where an entidad colectiva sits between them: a Galician or Asturian parroquia, or a Murcia
+pedanía), 72 `locality / núcleo de población` one level below their entidad, and
+26 `municipality / municipio` level 3 (records whose identity this pass settled by INE code and the yearly INE
+municipality changes since 2000). 60 get `parent_id` to the record of the unit one level up; where that unit has no
+record, the record gets no parent (the review cleared 36 links that skipped a level). A núcleo that is its entidad's
+only núcleo and has its name is typed as the entidad. **118 Wikidata ids changed**: the own item where exactly one item has
+the record's INE code, or an item of another place cleared. The review admitted 17 held records and separated four
+settlements from the municipio they had been taken for.
+
+Held (179): municipio-or-settlement identity still open, no exact unit in the containing polygon, several candidate
+units. 19 record pairs are listed for the next duplicates round (some possibly one unit, some only sharing a Wikidata
+item), with O Incio and Yerri, which the pilot typed as municipios but which the review found to be settlements; no
+point changes here.
+
+### Sources
+INE [Nomenclátor](https://www.ine.es/nomen2/index.do) 2025 (entidades and núcleos, 11-digit codes) and
+[yearly municipality changes](https://www.ine.es/daco/daco42/codmun/codmun_anual.htm), under the
+[INE reuse conditions](https://www.ine.es/ss/Satellite?L=0&c=Page&cid=1254735849170&p=1254735849170&pagename=Ayuda%2FINELayout)
+(Fuente: INE, adapted by CSC); IGN/CNIG [municipal boundaries](https://centrodedescargas.cnig.es/CentroDescargas/documentos/atom/au/lineas_limite_gml.zip)
+([CC BY 4.0 compatible](https://centrodedescargas.cnig.es/CentroDescargas/politica-datos), © Instituto Geográfico
+Nacional, used to check points); [GeoNames](https://download.geonames.org/export/dump/ES.zip)
+([CC BY 4.0](https://download.geonames.org/export/dump/readme.txt), names and ids used to match records); Wikidata
+(CC0). Matching the units to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
