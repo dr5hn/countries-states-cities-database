@@ -134400,3 +134400,28 @@ As #1940: Rosstat OKTMO (1 October 2026 edition) and change notices; BGN/PCGN; W
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Follow-ups 9: Hanoi and Dong Nai, Vietnam's shared Wikidata items, Kirov time zones, two Turkish points
+
+### Problem
+The Vietnam review (#1939) found that Hanoi and Dong Nai, centrally run cities, had no city record, and that
+66 Wikidata items were each shared by several Vietnamese records (363 records). In Russia, 35 of Kirov Oblast's current records used
+Europe/Moscow although the tz database gives the oblast Europe/Kirov. Amasya's and Bitlis's points (#1933) sat at the
+edge of the town.
+
+### Fix
+**Hanoi and Dong Nai added** as `city / thành phố trực thuộc trung ương` at level 1, as Da Nang: own Wikidata item, a point in the
+urban centre (Hanoi's item point, CC0; for Dong Nai, the GeoNames point of Biên Hòa, its administrative centre, CC BY 4.0,
+as Da Nang's record uses its urban point; the review replaced the item's territory point 43 km away), Asia/Ho_Chi_Minh, and the official 2025 average population of the whole city (Hanoi from the national statistical
+yearbook, Dong Nai from its statistics office). They get ids at the next export.
+**297 Wikidata items cleared** in 66 shared groups: each group keeps the item on the record that is the item's own place
+and clears it from the others, which are other places; no Vietnamese item is shared afterwards.
+**35 Kirov Oblast time zones** set to Europe/Kirov. **2 points** (Amasya, Bitlis) set to their GeoNames town point (CC BY 4.0),
+nearer the town centre.
+
+### Sources
+Vietnamese legal texts and statistics publications (facts: status and population); Wikidata (CC0); GeoNames (CC BY 4.0);
+the IANA tz database (public domain). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); the two new records are removed with it.
