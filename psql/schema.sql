@@ -82,6 +82,7 @@ CREATE TABLE public.cities (
     longitude numeric(11,8) NOT NULL,
     native character varying(255),
     population bigint,
+    population_year integer,
     timezone character varying(255),
     translations text,
     created_at timestamp without time zone DEFAULT '2014-01-01 12:01:01'::timestamp without time zone NOT NULL,
@@ -89,6 +90,13 @@ CREATE TABLE public.cities (
     flag smallint DEFAULT 1 NOT NULL,
     "wikiDataId" character varying(255)
 );
+
+
+--
+-- Name: COLUMN cities.population_year; Type: COMMENT; Schema: public; Owner: -
+--
+
+COMMENT ON COLUMN public.cities.population_year IS 'Reference year of population (census or official estimate)';
 
 
 --
