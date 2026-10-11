@@ -21,7 +21,7 @@ Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
 Total Postcodes : 844248 (125 countries) <br>
 Total Timezones : 427 (100% IANA coverage) <br>
-Last Updated On: October 10, 2026
+Last Updated On: October 11, 2026
 
 ---
 
@@ -144,7 +144,7 @@ Smaller reference files (countries, states, counties, schema) live in the repo. 
 
 ## What's in the data
 
-- **250** countries · **5,329** states / regions · **8,366** counties · **153,513** cities · **840k+** postcodes across 125 countries
+- **250** countries · **5,329** states / regions · **10,635** counties · **153,513** cities · **840k+** postcodes across 125 countries
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
