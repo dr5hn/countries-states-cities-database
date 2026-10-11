@@ -134544,7 +134544,7 @@ Italy pass 3 (#1934) added missing current comuni, including the merger successo
 The former comuni inside them were untyped or had no parent.
 
 ### Fix
-**181 former comuni linked** with `parent_id` to the record of the comune that absorbed them (89 comuni): 31 were already
+**180 former comuni linked** with `parent_id` to the record of the comune that absorbed them (89 comuni): 30 were already
 typed as their census locality; **150 are typed** now as the ISTAT 2021 census locality of the same name inside that comune
 (`locality / centro abitato`, level 4), as pass 2 did. The review also cleared the Italian comune's item from Monaco-Ville's
 record. Held (4): records whose locality or point is not settled.
