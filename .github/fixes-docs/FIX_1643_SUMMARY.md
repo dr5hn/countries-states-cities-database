@@ -100235,3 +100235,34 @@ check points and is not copied into the records.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived in this section with their replacements.
+
+## Guatemala: municipios typed
+
+### Problem
+Guatemala's 382 city records had no level, and 97 of them shared 20 Wikidata items between them (Moyuta's item was on
+50 records).
+
+### Fix
+**303 records typed `municipality / municipio` at level 2** under their departamento (an ISO state), each through
+its current official municipio code (INE), its own municipal item, its official name and a point inside the
+municipio in both the SEGEPLAN and IGN municipal layers; Guatemala City is the municipio (its item covers both, and
+no other record represents the municipio). **3 towns** typed `town / pueblo` at level 3, where the municipality's
+adopted plan names the category: Almolonga (2025), Ciudad Tecún Umán (Ayutla) and San José Ojetenam, under their
+municipio record where one exists.
+**139 Wikidata ids changed**: records get their municipio's or settlement's own item, and 4 items of another
+place are cleared. No Guatemalan record shares an item afterwards.
+
+Held (76): settlements whose official category or extent is not established (the inspected INE 2018 place lists
+carry no category, and no complete national category register was found), settlements named like a municipio that
+has its own record, and points that fall in another municipio or where the two municipal layers disagree.
+
+### Sources
+Instituto Nacional de Estadística: [municipal projections 2015-2035](https://www.ine.gob.gt/ine/wp-content/uploads/2020/08/Estimaciones-y-Proyecciones-Municipales-2015-2035.xlsx)
+(municipio codes and names; no open licence established, used for facts) and the 2018 census populated places (CC BY,
+version not stated); SEGEPLAN and IGN municipal boundaries, used only to check points; municipal development plans
+(PDM-OT, official facts); Wikidata (CC0). The SEGEPLAN 2026 municipal allocation list (CC BY-NC 2.0) was used in the
+research to match municipio codes and name forms; the review confirmed every municipio's name independently from the
+INE workbook and the boundary layers, and this PR changes no names, so nothing from that list enters the data.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
