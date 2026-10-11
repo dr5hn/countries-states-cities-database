@@ -108574,3 +108574,32 @@ right 2026), used only to check points; Wikidata (CC0). No point was changed.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Mexico pass 2: the untyped records matched to the INEGI catalogue
+
+### Problem
+976 Mexican city records had no level after the Mexico pilot (#1794), which matched records through the INEGI code on
+their own Wikidata item; most of these items carry no code, or the wrong one.
+
+### Fix
+**394 records typed** under the pilot's rules from the current INEGI catalogue (Catálogo Único de Claves, June/August
+2026 cuts): 200 `municipality / municipio` and 7 Mexico City `municipality / alcaldía` at level 2, and 187 localidades at level
+3 (`locality / localidad urbana` 89, `localidad rural` 98, by INEGI's ámbito, as the pilot), 79 of them linked to their municipio record. Each matched by its exact official name or name form within its state and municipio, with its
+stored point within 2 km of the locality's catalogue point (or inside the municipio), and no other CSC record being
+that place. **181 Wikidata ids set or repaired**: redirects resolved to their canonical item, municipal items given
+to records named after their municipio (owner decision of 10 Oct), and items of a distinct locality replaced with the
+record's own item, each the only item with that INEGI code. Four items that also describe the record's own place are
+kept until their identity is settled. Stored points are unchanged.
+
+Held (582): names that did not match a catalogue name literally in their state (447 at screening; the review
+admitted 21 of them by accented, short or historical name forms), 106 whose namesake lies in another municipio, close
+namesakes, points over 2 km from the locality, and 7 localities already represented by another record (duplicates round).
+
+### Sources
+Fuente: INEGI, Catálogo Único de Claves de Áreas Geoestadísticas Estatales, Municipales y Localidades (June/August
+2026) and Marco Geoestadístico (Encuesta Intercensal 2025, 2026 edition), under INEGI's
+[Términos de Libre Uso](https://www.inegi.org.mx/inegi/terminos.html); the matching is CSC's own work, not INEGI's.
+Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
