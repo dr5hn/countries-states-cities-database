@@ -100699,3 +100699,54 @@ Rosstat, OKTMO (October 2026 edition, change 951), sections 1 and 2, reused unde
 
 ### Rollback
 Revert the PR (squash commit); the county records 8872-9725 and the links go with it.
+
+## United States pass 2: 5,556 held places typed through their own Census codes
+
+### Problem
+Pass 1 held 6,595 US city records, 4,920 of them because a same-named Census unit lay within 5 km (most often the
+place and its own county subdivision, such as Abbeville city and Abbeville CCD).
+
+### Fix
+**5,546 records typed** under the pass-1 rules through two routes: Census units (places and county subdivisions),
+where the record's own Wikidata item gives the Census code (FIPS place code or GEOID) and the 2026 Gazetteer and its
+official names give the legal status, and USGS GNIS populated places (104), where the item gives the GNIS id and the
+place must not be part of a current municipality. Incorporated places by their legal term, CDPs as locality, New England and other MCD towns as town, boroughs as municipality / borough,
+county seats typed city with their official term kept; GNIS unincorporated communities as locality only with an exact
+own item and GNIS feature. 5,335 get their county (2020 Census geography); 25 points that lay outside their place
+(2025 TIGER) move to the place's 2026 Gazetteer internal point. The review withdrew ten admissions that are now parts
+of a municipality (Barnesboro, Spangler, Batesburg, Leesville, Dutch Harbor, Hazelwood, Lakewood, Tujunga, Wasco) or a
+former CDP absorbed by another (Cutler Ridge), and typed Franklinton a town and Plover a village (not county seats).
+
+| type / type_local | Records |
+|---|---|
+| `city / city` | 3,109 |
+| `municipality / borough` | 708 |
+| `town / town` | 586 |
+| `village / village` | 432 |
+| `locality / census designated place` | 387 |
+| `city / town` | 120 |
+| `locality / unincorporated community` | 93 |
+| `city / borough` | 46 |
+| `city / village` | 33 |
+| `city / census designated place` | 14 |
+| `municipality / township` | 8 |
+| `municipality / municipality` | 3 |
+| `section / barrio` | 3 |
+| `city / unincorporated community` | 2 |
+| `city / municipality` | 1 |
+| `city / township` | 1 |
+
+Held (1,039): records with no Census code or no current own item; codes that point to a county, another state, a
+discontinued unit or an unsupported category; conflicting identifiers; name variants without an own code; current
+neighbourhoods or municipal parts; and city-county balance scopes. 17 GNIS communities inside incorporated places need a
+scope decision (e.g. Laveen AZ, Osterville MA). Some held records still carry the item of a typed neighbour (e.g. Bath
+Beach, NY carries Bath, Pennsylvania's): a Wikidata cleanup round.
+
+### Sources
+U.S. Census Bureau, [2026 Gazetteer files](https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/)
+(places, counties, county subdivisions, internal points), TIGER/Line 2025 place boundaries (to check points) and the
+2020 PL 94-171 files; USGS GNIS; all public domain (U.S. Government works). GeoNames (CC BY 4.0) for the county-seat
+screen (a role signal, not an official seat register). Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
