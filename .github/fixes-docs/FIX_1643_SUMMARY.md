@@ -108509,3 +108509,35 @@ MX: [INEGI terms of free use](https://www.inegi.org.mx/inegi/terminos.html), Fue
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Russia pass 4: the remaining municipal districts and okrugs as counties
+
+### Problem
+Pass 3 (#1917) held 1,444 Russian first-tier municipal units, 976 of them only because the unit has no unique own
+Wikidata item, so the settlements under them had no county.
+
+### Fix
+**943 more county records** (ids 9726-10668), with the same rules as #1917: current OKTMO section-1 unit (October 2026
+edition), BGN/PCGN name with ë, official Russian native, IANA time zone. 905 have no Wikidata item, since a county record does
+not need one (never the centre's or a former unit's item); the review found the own item of 23 that the first build
+missed (items with a shortened or eleven-digit code, or none). Each point is the administrative centre's existing CSC
+record, the centre's GeoNames row (CC BY 4.0) or the unit's own item, and lies inside the unit by its OpenStreetMap
+boundary (used only to check).
+
+| type_local | Counties |
+|---|---|
+| муниципальный округ | 831 |
+| городской округ | 99 |
+| муниципальный район | 13 |
+
+**1,353 settlements linked** to their county by OKTMO code, as in #1917.
+
+Held: 70 counties with no open point inside the unit and subject, and the 106 settlements under them.
+
+### Sources
+Rosstat, OKTMO (October 2026 edition), sections 1 and 2, under [Rosstat's terms](https://rosstat.gov.ru/storage/2018/08-23/6RswQtD5/usl-od.pdf)
+(reuse with a link to the source); existing CSC records and GeoNames (CC BY 4.0) for centre points; Wikidata (CC0);
+OpenStreetMap boundaries (ODbL) only to check points.
+
+### Rollback
+Revert the PR (squash commit); the county records 9726-10668 and the links go with it.
