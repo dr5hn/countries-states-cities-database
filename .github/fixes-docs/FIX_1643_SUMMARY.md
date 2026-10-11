@@ -108541,3 +108541,36 @@ OpenStreetMap boundaries (ODbL) only to check points.
 
 ### Rollback
 Revert the PR (squash commit); the county records 9726-10668 and the links go with it.
+
+## United Kingdom pass 4: parished places by their council's official style
+
+### Problem
+795 UK records were reconsidered: 492 held in pass 3 and 303 the review of #1919 returned to held because their point
+lies in a live civil parish or Welsh community (37 of the 795 have no verified parish or community match). Their type follows their parish, town or community council's official style (pass 1 rule, #1849).
+
+### Fix
+**340 records typed** by their council's official style: 322 the parish's main settlement or the whole parish (name
+match with the council, point inside the parish by the ONS boundary), and 18 smaller settlements linked as sections: a town council `town / town`, a parish council
+`village / parish`, a Welsh community council `village / community`, a parish meeting without a council `village /
+parish meeting`; a smaller place inside a parish is a `section` (no official local term, so no type_local) with
+`parent_id` to the parish's record (18 links).
+161 link to their district's county record. Level is one below the unit directly above.
+
+| type / type_local | Records |
+|---|---|
+| `village / parish` | 222 |
+| `town / town` | 94 |
+| `section / -` | 18 |
+| `village / community` | 5 |
+| `village / parish meeting` | 1 |
+
+Held (455): smaller places or main settlements whose identity needs an official decision, councils whose style was not
+established, shared or copied items, and points in another parish.
+
+### Sources
+Councils' own pages and principal authorities' directories of parish and town councils (official facts); ONS civil
+parish and Welsh community boundaries (Open Government Licence v3.0; contains OS data © Crown copyright and database
+right 2026), used only to check points; Wikidata (CC0). No point was changed.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
