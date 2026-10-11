@@ -134480,3 +134480,30 @@ DGT CAOP (CC BY 4.0) for municípios and codes; INE Censos 2021 (CC BY 4.0, Font
 
 ### Rollback
 Revert the PR (squash commit); the new records are removed with it.
+
+## Austria pass 2: former municipalities and Ortschaften, city districts, held Gemeinden
+
+### Problem
+After the Austria pilot (#1805), 584 Austrian records had no level, 268 of them in Styria: mostly municipalities merged
+away in the 2015 Styrian structural reform, plus districts of Graz, Vienna and other cities, and Ortschaften.
+
+### Fix
+**416 records typed**: 342 `locality / Ortschaft` from Statistik Austria's register of Ortschaften (185 of them former municipalities,
+now an Ortschaft of the municipality that absorbed them), at level 4 under their Gemeinde (level 3 under a Statutarstadt);
+38 city districts as `section` with the official term (Stadtbezirk, Gemeindebezirk, Stadtteil) one level below their city;
+36 Gemeinden the pilot held, typed as the pilot (13 Gemeinde, 19 Marktgemeinde, 4 Stadtgemeinde) under their Bezirk county.
+254 get `parent_id` (one level up only). **172 Wikidata items cleared** that identify another municipality or locality, a
+distinct parent municipality, or no place at all; a former municipality's own item stays on the record that is now its
+Ortschaft (148 of the 185 keep theirs). The review added 36 clears of borrowed items (one on an Australian record, Abbey)
+and typed seven more Ortschaften; Haus and Haus im Ennstal, two records for one place, go to the next duplicates round.
+
+Held (168): names with no unique current Ortschaft in the municipality containing the point, and records whose
+municipality code, name or polygon is not settled.
+
+### Sources
+Datenquelle: STATISTIK AUSTRIA (data.statistik.gv.at): municipality boundaries and Ortschaft centres under CC BY 4.0,
+the Ortschaften and Gemeinden register tables under the publisher's terms of use (attribution, modifications marked);
+the classifications are adapted by CSC. Wikidata (CC0). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
