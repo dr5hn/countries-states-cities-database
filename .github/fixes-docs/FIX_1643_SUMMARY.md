@@ -100380,3 +100380,37 @@ check points; Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Population pass 2: official populations by official code (FR, ES, IT, DE, BR, JP)
+
+### Problem
+City populations had no reference year, and many came from GeoNames, often counting the main town rather than the
+whole municipality the record represents.
+
+### Fix
+**36,039 municipality records** get the statistics office's figure for the whole municipality and its `population_year`.
+Each record is joined to the official table by its official code (from the country pilots, or the code on its own
+Wikidata item), never by name; only records typed as the unit the table counts (commune, municipio, comune,
+Gemeinde, município, shi/machi/mura and Tokyo's special wards) are changed; parts, sections, settlements and former
+municipalities are not. Many old figures counted a same-named settlement rather than the whole municipality (in
+Italy 1,463 records rise more than 2x), so the changes reflect scope as much as growth. Paris, Lyon and Marseille use
+INSEE's whole-commune figures; Japan's 20 designated cities use the whole city, never a ward.
+
+| Country | Records | Source | Year |
+|---|---|---|---|
+| FR | 9,730 communes | [INSEE, populations de référence 2023 (population municipale), in force 1 January 2026](https://www.insee.fr/fr/statistiques/fichier/8680726/ensemble.zip) | 2023 |
+| ES | 7,361 municipios | [INE, Padrón municipal at 1 January 2025 (published 11 December 2025)](https://www.ine.es/pob_xls/pobmun.zip) | 2025 |
+| IT | 6,990 comuni | [ISTAT, resident population at 1 January 2026 (POSAS, provisional estimate)](https://demo.istat.it/data/posas/POSAS_2026_it_Comuni.zip) | 2026 |
+| DE | 5,836 Gemeinden | [Destatis, Gemeindeverzeichnis GV-ISys Q3 2026, population at 31 December 2025 (census 2022 basis)](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV3QAktuell.xlsx?__blob=publicationFile) | 2025 |
+| BR | 5,213 municípios | [IBGE, population estimates 2025 (DOU table)](https://ftp.ibge.gov.br/Estimativas_de_Populacao/Estimativas_2025/estimativa_dou_2025.xls) | 2025 |
+| JP | 909 municipalities | [Statistics Bureau of Japan, 2020 Population Census, basic complete tabulation](https://www.e-stat.go.jp/stat-search/file-download?fileKind=0&statInfId=000032142402) | 2020 |
+
+Left unchanged: Italy's 373 Sardinian comuni, whose new 2026 codes are not yet in this ISTAT population edition, and
+Montalto Pavese, which absorbed Lirio on 31 January 2026 (the table still counts its old territory). Japan's table has
+1,741 municipalities; the 832 without a matching typed record are not changed.
+
+### Sources
+FR: [Licence Ouverte 2.0](https://www.insee.fr/fr/information/2008466), source Insee; ES: [CC BY 4.0](https://www.ine.es/dyngs/AYU/index.htm?cid=125), Fuente: INE (published 11 December 2025), figures copied unchanged; IT: [CC BY 4.0](https://www.istat.it/note-legali/), Source: ISTAT, figures copied unchanged; DE: [reuse with source credit](https://www.destatis.de/DE/Service/Impressum/_inhalt.html), Source: Statistisches Bundesamt (Destatis); BR: Fonte: IBGE (no explicit reuse licence found in the file or its methodology, which bears © IBGE 2025; the figures are used as official facts); JP: [e-Stat terms](https://www.e-stat.go.jp/terms-of-use) (CC BY 4.0 compatible), Source: Statistics Bureau of Japan via e-Stat. Figures are copied as published, with the reference year in `population_year`.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
