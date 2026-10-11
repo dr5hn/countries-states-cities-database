@@ -120454,3 +120454,301 @@ Matching them to records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); the new records are removed with it.
+
+## Taiwan pilot: township-level units and cities
+
+### Problem
+None of Taiwan's 383 city records had a level or an official local term; their types were legacy values (22
+`city`, the rest older township or district categories), and 13 rows were counties (ISO states) stored as cities.
+
+### Fix
+From the Ministry of the Interior's register of county and township codes, **374 records typed**. Of the 353 township-level
+units at level 2, 190 are self-governing and typed `municipality` (146 township, 38 urban township, 6 mountain indigenous
+district), and the 163 ordinary districts (區) are `section / district`: under the Local Government Act (arts. 3, 5,
+58) they are parts of their city, run by a mayor-appointed administrator (the register's 164th, Taoyuan District, has
+no record); 14 county-administered cities (縣轄市) as `city / city` at level 2; and 7 records for cities that are
+themselves ISO states (Taipei, Kaohsiung, Taichung, Tainan, Taoyuan, Hsinchu City, Chiayi City) as `city / city` at level 1,
+as Zagreb and Oslo. 133 districts link to their city-state's record; New Taipei and Keelung have no city record, so
+their districts get no parent. County rows follow the owner's option (c): **6 removed** because their seat has its own
+record (e.g. Penghu County → Magong), and 7 turned into their seat city, keeping their name and taking the city's own
+Wikidata point (CC0) instead of a county point. 8 Wikidata ids set to the record's own item. The review also corrected
+four labels on Miaoli and Jincheng (a county label, a label of another place, and two romanisation typos).
+
+Held (3): Jiufen, Pizitou and Zhongxing New Village are places inside a township, not units in the register. Official
+English name forms that differ from master's (95 from the register's English supplement, 7 for city-states) are listed
+for a later round; no rename here. Also deferred: 8 points that do not match their unit and 3 offshore cases, and six
+Wikidata items shared between a Chinese and a Taiwanese record, inherited and outside this pilot.
+
+### Sources
+Ministry of the Interior / National Land Surveying and Mapping Center: county and township codes
+([catalogue 102011](https://data.gov.tw/dataset/102011), metadata of 16 September 2026, retrieved 11 October 2026),
+August 2026 village boundaries, and the township English-name supplement of 23 March 2023, under the
+[Open Government Data License 1.0](https://data.gov.tw/license) (CC BY 4.0 compatible); Wikidata (CC0). The Local
+Government Act and the Ministry's indigenous-district announcement are cited for facts only. Matching them to records is CSC's own processing.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 109005,
+    "name": "Chiayi",
+    "state_id": 5704,
+    "state_code": "CYQ",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "county",
+    "level": null,
+    "parent_id": null,
+    "latitude": "23.46333000",
+    "longitude": "120.58166000",
+    "native": "嘉義縣",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "مقاطعة تشيايي",
+      "br": "Kontelezh Chiayi",
+      "de": "Landkreis Chiayi",
+      "es": "Condado de Chiayi",
+      "fa": "شهرستان چیایی",
+      "fr": "Comté de Chiayi",
+      "hi": "चियाई काउंटी",
+      "hr": "Okrug Chiayi",
+      "it": "Contea di Chiayi",
+      "ja": "嘉義県",
+      "ko": "치아이 현",
+      "nl": "Chiayi County",
+      "pl": "Powiat Chiayi",
+      "pt": "Condado de Chiayi",
+      "pt-BR": "Condado de Chiayi",
+      "ru": "Уезд Цзяи",
+      "tr": "Chiayi İlçesi",
+      "uk": "Округ Цзяї",
+      "zh-CN": "嘉义县"
+    },
+    "created_at": "2019-10-05T23:31:28",
+    "updated_at": "2025-12-02T17:29:54",
+    "flag": 1,
+    "wikiDataId": "Q166977",
+    "replacement_id": 164003
+  },
+  {
+    "id": 109011,
+    "name": "Hsinchu",
+    "state_id": 5705,
+    "state_code": "HSQ",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "county",
+    "level": null,
+    "parent_id": null,
+    "latitude": "24.67416000",
+    "longitude": "121.16111000",
+    "native": "新竹縣",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "مقاطعة هسينشو",
+      "br": "Hsinchu",
+      "de": "Hsinchu",
+      "es": "Hsinchu",
+      "fa": "شهرستان هسینچو",
+      "fr": "Hsinchu",
+      "hi": "सिंचु काउंटी",
+      "hr": "Hsinchu",
+      "it": "Hsinchu",
+      "ja": "新竹県",
+      "ko": "신주 현",
+      "nl": "Hsinchu",
+      "pl": "Hsinchu",
+      "pt": "Hsinchu",
+      "pt-BR": "Hsinchu",
+      "ru": "Округ Синьчжу",
+      "tr": "Hsinchu",
+      "uk": "Округ Сіньчжу",
+      "zh-CN": "新竹县"
+    },
+    "created_at": "2019-10-05T23:31:29",
+    "updated_at": "2025-12-02T17:01:58",
+    "flag": 1,
+    "wikiDataId": "Q74054",
+    "replacement_id": 160130
+  },
+  {
+    "id": 109017,
+    "name": "Kinmen",
+    "state_id": 3415,
+    "state_code": "KIN",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "county",
+    "level": null,
+    "parent_id": null,
+    "latitude": "24.45333000",
+    "longitude": "118.38861000",
+    "native": "金門縣",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "مقاطعة كينمن",
+      "br": "Kontelezh Kinmen",
+      "de": "Landkreis Kinmen",
+      "es": "Condado de Kinmen",
+      "fa": "شهرستان کینمن",
+      "fr": "Comté de Kinmen",
+      "hi": "किनमेन काउंटी",
+      "hr": "Okrug Kinmen",
+      "it": "Contea di Kinmen",
+      "ja": "金門県",
+      "ko": "진먼 현",
+      "nl": "Kinmen County",
+      "pl": "Hrabstwo Kinmen",
+      "pt": "Condado de Kinmen",
+      "pt-BR": "Condado de Kinmen",
+      "ru": "уезд Цзиньмэнь",
+      "tr": "Kinmen İlçesi",
+      "uk": "Округ Кінмень",
+      "zh-CN": "金门县"
+    },
+    "created_at": "2019-10-05T23:31:29",
+    "updated_at": "2025-12-02T17:29:54",
+    "flag": 1,
+    "wikiDataId": "Q249870",
+    "replacement_id": 109014
+  },
+  {
+    "id": 109018,
+    "name": "Lienchiang",
+    "state_id": 3420,
+    "state_code": "LIE",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "26.37004000",
+    "longitude": "120.49545000",
+    "native": "連江",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "لينشيانغ",
+      "br": "Lienchiang",
+      "de": "Lienchiang",
+      "es": "Lienchiang",
+      "fa": "لینچیانگ",
+      "fr": "Lienchiang",
+      "hi": "लियानचियांग",
+      "hr": "Lienchiang",
+      "it": "Lienchiang",
+      "ja": "連江市",
+      "ko": "롄장",
+      "nl": "Lienchiang",
+      "pl": "Lienchiang",
+      "pt": "Liênchiang",
+      "pt-BR": "Liênchiang",
+      "ru": "Ляньцзян",
+      "tr": "Liençiang",
+      "uk": "Lienchiang",
+      "zh-CN": "连江"
+    },
+    "created_at": "2019-10-05T23:31:29",
+    "updated_at": "2025-12-02T16:59:27",
+    "flag": 1,
+    "wikiDataId": "Q249872",
+    "replacement_id": 109022
+  },
+  {
+    "id": 109024,
+    "name": "Penghu",
+    "state_id": 3403,
+    "state_code": "PEN",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "county",
+    "level": null,
+    "parent_id": null,
+    "latitude": "23.57111000",
+    "longitude": "119.61138000",
+    "native": "澎湖縣",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "مقاطعة بينغو",
+      "br": "Penghu",
+      "de": "Penghu",
+      "es": "Penghu",
+      "fa": "شهرستان پنگو",
+      "fr": "Penghu",
+      "hi": "पेंघु काउंटी",
+      "hr": "Penghu",
+      "it": "Penghu",
+      "ja": "澎湖県",
+      "ko": "펑후현",
+      "nl": "Penghu",
+      "pl": "Penghu",
+      "pt": "Penghu",
+      "pt-BR": "Penghu",
+      "ru": "Уезд Пэнху",
+      "tr": "Penghu",
+      "uk": "Повіт Пенху",
+      "zh-CN": "澎湖县"
+    },
+    "created_at": "2019-10-05T23:31:29",
+    "updated_at": "2025-12-02T17:29:54",
+    "flag": 1,
+    "wikiDataId": "Q198525",
+    "replacement_id": 109020
+  },
+  {
+    "id": 109040,
+    "name": "Yunlin",
+    "state_id": 3416,
+    "state_code": "YUN",
+    "country_id": 216,
+    "country_code": "TW",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "23.70701000",
+    "longitude": "120.38481000",
+    "native": "雲林",
+    "population": null,
+    "timezone": "Asia/Taipei",
+    "translations": {
+      "ar": "يونلين",
+      "br": "Yunlin",
+      "de": "Yunlin",
+      "es": "Yunlin",
+      "fa": "یونلین",
+      "fr": "Yunlin",
+      "hi": "यूनलिन",
+      "hr": "Yunlin",
+      "it": "Yunlin",
+      "ja": "雲林",
+      "ko": "윈린",
+      "nl": "Yunlin",
+      "pl": "Yunlin",
+      "pt": "Yun Lin",
+      "pt-BR": "Yun Lin",
+      "ru": "Юньлинь",
+      "tr": "Yunlin",
+      "uk": "Юньлінь",
+      "zh-CN": "云林"
+    },
+    "created_at": "2019-10-05T23:31:29",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q153221",
+    "replacement_id": 109008
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
