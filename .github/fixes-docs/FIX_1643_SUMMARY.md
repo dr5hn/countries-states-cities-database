@@ -100266,3 +100266,26 @@ INE workbook and the boundary layers, and this PR changes no names, so nothing f
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Population pass 1: United States, Census Bureau Vintage 2025
+
+### Problem
+City populations had no reference year (#1905 added `population_year`), and many US figures were old or wrong
+(Bangor, Maine carried 1,437; Danville, Virginia 927).
+
+### Fix
+**2950 US city records** get the Census Bureau's Vintage 2025 population estimate for the incorporated place (city
+proper, the scope the record represents) and `population_year` 2025. Each record was matched to its Census place
+through the tier research (own Wikidata item, name, state and point); a record matched by two Census places is left
+out, and the review re-joined every figure by its Census place code (it corrected 10 that had taken a same-name
+smaller town's figure, Garden City, Kansas among them). Consolidated city-counties whose Census figure is only the
+balance (Indianapolis, Nashville, Louisville, Athens, Butte), Honolulu (a census-designated place) and Hartsville,
+Tennessee (whose figure is its county's) keep their current population for now.
+
+### Sources
+U.S. Census Bureau, Population Estimates Program, Vintage 2025, Annual Estimates of the Resident Population for
+Incorporated Places ([SUB-IP-EST2025-POP](https://www2.census.gov/programs-surveys/popest/tables/2020-2025/cities/totals/SUB-IP-EST2025-POP.xlsx)),
+public domain (U.S. Government work).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
