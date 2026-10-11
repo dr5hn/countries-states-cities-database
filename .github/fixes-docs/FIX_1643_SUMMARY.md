@@ -134454,3 +134454,29 @@ CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Portugal pass 3: the owner's municipality rule
+
+### Problem
+45 Portuguese records named after their município, such as Braga, Coimbra and Beja, carried the item of the main town
+and no other record represented the município; Portugal pass 2 (#1943) held them. Some municípios had no record at all.
+
+### Fix
+Under the owner's rule of 10 October (applied in Belgium #1867 and Germany #1871: such a record IS the municipality),
+**50 records made municipalities**: each takes the município's own Wikidata item (the one item with its DTMN code) and
+`municipality / município` at level 2, as the pilot's records; name, native and point stay. They include four records
+pass 2 had just typed as a cidade or vila or whose item it had cleared (Oliveira de Azeméis, Torre de Moncorvo, Vila
+Nova de Gaia, Arruda dos Vinhos): no other record represents their município, so the rule makes them the municipality.
+**5 municípios added** that had no record (Ferreira do Alentejo, Seia, Vila Nova de Cerveira, Vila Real, Ribeira Grande), each with its own item, a point from it (CC0) or GeoNames (CC BY
+4.0), and its 2021 census population; same-named records nearby are different scopes (a freguesia, or a place outside
+the município) and stay. Every one of the 308 municípios then has a record with its own code: 294 typed as municipalities,
+14 represented by records still to be typed. New records get ids at the next export. Three older pairs of records
+share one Wikidata item (Oeiras 89354/143514, Vila Franca de Xira 89649/143738, Vialonga 89638/143726); none involves
+this PR's records, and they go to the next duplicates round.
+
+### Sources
+DGT CAOP (CC BY 4.0) for municípios and codes; INE Censos 2021 (CC BY 4.0, Fonte: INE); Wikidata (CC0); GeoNames (CC BY
+4.0). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); the new records are removed with it.
