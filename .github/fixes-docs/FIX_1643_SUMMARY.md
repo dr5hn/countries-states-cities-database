@@ -134507,3 +134507,31 @@ the classifications are adapted by CSC. Wikidata (CC0). Matching them to records
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Netherlands pass 2: wijken, buurten, stadsdelen, woonplaatsen and former municipalities
+
+### Problem
+After the Netherlands pilot (#1809: 90 gemeenten, 995 woonplaatsen), 566 Dutch records had no level: CBS neighbourhoods
+and districts (Amsterdam-Zuidoost, Angelslo, Aldlân-Oost), woonplaatsen the pilot did not reach, and municipalities
+merged away (Aalburg, 2019).
+
+### Fix
+**351 records typed**: 48 wijken and 277 buurten from CBS's Wijk- en Buurtkaart 2026 as `section / wijk` and `section / buurt`
+(gemeente 2, wijk 3, buurt 4), and Amsterdam's stadsdeel as `section / stadsdeel` with its wijken and buurten one level
+below each (Amsterdam is a woonplaats at level 3); 20 records as `locality / woonplaats` from the BAG register (13 of them former
+municipalities, now the woonplaats of the same name in the current gemeente). 12 get `parent_id` to the unit directly
+above; where that unit has no record, none. Under the owner's municipality rule (10 October), 5 records named after
+their gemeente with no other record for it (Enschede, Harderwijk, Oldenzaal, Purmerend, Beuningen) become `municipality /
+gemeente` with the gemeente's own item, as the review found. **107 Wikidata ids changed** (91 cleared as another place
+or a different unit; 18 held records get only an item change).
+
+Held (215): names matching several CBS or BAG units, and records whose identity is not settled.
+
+### Sources
+CBS Wijk- en Buurtkaart 2026 versie 0 (collection of 16 June 2026), woonplaatsen table 86312NED (1 January 2026) and
+municipal merger history 70739NED (CC BY 4.0, Bron: CBS); BAG via Kadaster (Public Domain Mark 1.0, daily extract of 10
+October 2026); Kadaster BRK municipal boundaries (used to check containment); Amsterdam's own district data (facts
+only); Wikidata (CC0). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
