@@ -103,6 +103,9 @@ historical_capital
 ```
 
 In Mexico and Greece, also exclude `municipality` (the municipal territory; see [Mexico](#mexico), [Greece](#greece)).
+In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
+`đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
+`city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
 ### SQL
@@ -118,7 +121,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('MX', 'GR') OR type IS NULL OR type <> 'municipality')  -- MX/GR municipality = territory
+AND (country_code NOT IN ('MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- MX/GR/VN municipality = territory
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -141,7 +144,7 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['MX', 'GR'].includes(c.country_code) && c.type === 'municipality') // MX/GR municipality = territory
+    && !(['MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // MX/GR/VN municipality = territory
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
