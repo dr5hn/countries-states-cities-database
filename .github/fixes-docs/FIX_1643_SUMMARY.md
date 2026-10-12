@@ -148595,3 +148595,31 @@ OpenStreetMap relation 5672135 (© OpenStreetMap contributors, ODbL 1.0) used on
 ### Rollback
 Revert the PR (squash commit); the removed prefecture rows are archived here with their replacement ids; new county ids
 are 12062-12157.
+
+## Turkey pass 3: the ilçe-centre rows
+
+### Problem
+After Turkey passes 1 and 2, 502 Turkish city records had no level, most of them legacy `adm2` rows named after an ilçe
+(district) whose centre town and municipality they represent, and many with no Wikidata item.
+
+### Fix
+**481 records typed** under the merged Turkish model: each is the centre town and municipality of one current ilçe,
+matched by province, official name and a point inside the ilçe, `municipality / ilçe` (223 in metropolitan provinces at
+level 2, 258 at level 3), linked to the existing ilçe county. **206 Wikidata ids set** (the town's or municipality's own item,
+unused elsewhere). **29 points** that lay outside their own ilçe replaced with an open-source point inside it. Ondokuzmayıs
+renamed to its current official name, **19 Mayıs** (Samsun); 26 native names and translations on 16 records fixed.
+
+Held (21): names that match no unique current ilçe or municipality, points outside the matched ilçe with no open point
+inside it, Adalar (archipelago item scope), and two duplicate pairs for the duplicates round (Çanakkale, Çorum).
+
+Point ledger (source feature, URL, edition, retrieval, hash, licence, method):
+[TR_points_2026-10.csv](ledgers/TR_points_2026-10.csv).
+
+### Sources
+TÜİK ilçe layer (https://cip.tuik.gov.tr/assets/geometri/nuts4.json, containment check only) and the TGA district code list;
+Union of Municipalities of Turkey directories (https://www.tbb.gov.tr/tr/buyuksehir-belediyeleri,
+https://www.tbb.gov.tr/tr/il-belediyeleri) and the Ministry of Interior municipality list for municipal categories (facts
+only); Wikidata (CC0); points from 15 GeoNames CC BY 4.0, 13 Wikidata structured data CC0, 1 OpenStreetMap ODbL 1.0, copied as published and rounded to eight decimals.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
