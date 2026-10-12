@@ -141537,3 +141537,24 @@ own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Philippines pass 3: held records settled, wrong items cleared
+
+### Problem
+After Philippines passes 1-2 (#1912, #1928), 1,160 Philippine records had no level.
+
+### Fix
+**64 records typed** under the pilot's PSGC rules (21 municipalities, 42 barangays as `section / barangay`, 1 city), 35 linked to their
+city or municipality; **9 moved** to the province that contains both their point and their PSGC unit; **54 points** set to the
+place's own Wikidata or GeoNames point inside its unit. **136 Wikidata items cleared** that belong to another place (on typed and
+held records).
+
+Held (1096): official identity still unresolved, several records for one PSGC unit (listed for a duplicates round), no
+exact PSGC name form, or no open point inside the unit.
+
+### Sources
+PSA PSGC (latest quarter; CC BY 4.0 under the PSA terms); OCHA COD-AB Philippines boundaries (CC BY-IGO) only to check;
+Wikidata (CC0) and GeoNames (CC BY 4.0) for identities and points. Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
