@@ -142119,3 +142119,38 @@ publishes them; field values and labels copied from Wikidata (CC0). Matching rec
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Australia pass 2: the unlevelled records
+
+### Problem
+615 Australian city records had no level after the Australia pilot (#1811), most because their Wikidata item is another
+place or carries no locality code.
+
+### Fix
+**502 records typed** under the pilot's rules, settled by the official registers rather than the item: 466 localities
+(`locality`, level 3: 224 `gazetted locality`, 178 `locality`, 64 `suburb`), each with one exact official name (or name
+form) in its state and its stored point inside that locality's current polygon; 36 LGA records (`municipality`, level 2,
+with the council's own term, e.g. City, Council, Regional Council). **498 county links** by unique point containment in a
+current LGA and **324 parent links** under the pilot's whole-polygon gate. **411 Wikidata ids set** to the record's own
+item (exactly one item with its SAL or LGA code) and **10 cleared** where the item is provably another place; an item
+that names the record's own place under a former name is kept (Tasman Peninsula is Tasman Council, LGA65210). Points
+are unchanged.
+
+Held (113): stored point outside the named locality (74, for a point round), the name in the gazetteer belongs to another
+kind of feature (a parish, homestead, park, station or survey marker; 15), city-centre records with no gazetted name form
+(18), no unique official name, and four candidates for the duplicates round (Pottsville Beach and
+Pottsville, Saint Helena and St Helena, Wollongong and Yeppoon city centres).
+
+### Sources and attribution
+- ABS, [ASGS Edition 3](https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files)
+  (LGA 2025, SAL 2021), CC BY 4.0.
+- [Geoscape Administrative Boundaries](https://data.gov.au/data/dataset/geoscape-administrative-boundaries), August 2026.
+  Incorporates or developed using Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of
+  Australia under Creative Commons Attribution 4.0 International licence
+  ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)); retrieved October 2026 and processed by CSC (point-in-polygon
+  matching only, no geometry copied).
+- © State of Queensland (Department of Resources), [place names gazetteer](https://spatial-gis.information.qld.gov.au/arcgis/rest/services/Basemaps/FoundationData/FeatureServer/4), CC BY 4.0.
+- Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
