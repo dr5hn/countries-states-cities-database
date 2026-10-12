@@ -142154,3 +142154,393 @@ Pottsville, Saint Helena and St Helena, Wollongong and Yeppoon city centres).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Duplicates round 12
+
+### Problem
+Brazil pass 2 (#1962), Mexico pass 3 (#1963), Australia pass 2 (#1965) and Philippines pass 3 (#1961) and their reviews
+left pairs of records that might be one place, among them 383 Philippine pair hypotheses across 502 records.
+
+### Fix
+**8 duplicate records merged into the older id** (MX 3, PH 3, AU 2). Each pair was proved one place by its official code, name and
+point:
+- Mexico: San Antonio del Coyote (050170012), La Isla (Kilómetro 10) (301750030) and Santa María Citendeje
+  (150480015), each pair inside one INEGI locality polygon; the survivor takes the current INEGI name, the own locality
+  item and the 2020 census population.
+- Australia: Pottsville Beach is a historical name of Pottsville (SAL13269); Saint Helena and St Helena are one Victorian
+  locality (SAL22339, ABS writes Saint as St). St Helena's survivor takes the removed record's point, which lies inside the
+  locality (GeoNames 11704312, CC BY 4.0), its name, the locality typing and its county.
+- Philippines: Molundo and Mulondo (PSGC 1903619000), Delfin Albano and "Municipality of Delfin Albano"
+  (0203118000), and two Balagtas records near Ormoc, Leyte (one GeoNames settlement 1728579; the younger one sat in the
+  Eastern Visayas region record, not another province); Mulondo takes the municipality's current name, typing, own item and its 2024 population, Delfin Albano
+  the year (2024) of its population.
+
+6 survivors updated; nothing referred to the removed rows. 5 more Philippine records lose a Wikidata item that
+now redirects to a different place (Balagtas, Mabuhay, San Pedro, Santa Maria, Talisay), as does the Balagtas survivor; three
+literal labels are corrected (Coyote is not the animal; St Helena is not the island) and Coyote takes its verified
+timezone America/Monterrey.
+
+Held (387): most of the Philippine pairs lie in different provinces on master or are a barangay and its municipality;
+four Brazilian município/seat-town pairs (Batayporã, Ipaussu, Piumhi, Poxoréu) and Santa Terezinha (the younger
+record's point and scope unresolved); Wollongong and Yeppoon city
+centres (part of a locality, not the whole).
+
+### Sources
+INEGI [AGEEML](https://www.inegi.org.mx/app/ageeml/) and Marco Geoestadístico 2026 under INEGI's
+[Términos de Libre Uso](https://www.inegi.org.mx/inegi/terminos.html); ABS ASGS SAL 2021 (CC BY 4.0) and Geoscape
+Administrative Boundaries (© Geoscape Australia, licensed by the Commonwealth of Australia, CC BY 4.0); PSA PSGC (CC BY
+4.0); GeoNames ([CC BY 4.0](https://download.geonames.org/export/dump/readme.txt)); Wikidata (CC0). Matching records is
+CSC's own processing.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 6914,
+    "name": "Pottsville Beach",
+    "state_id": 3909,
+    "state_code": "NSW",
+    "country_id": 14,
+    "country_code": "AU",
+    "type": "section",
+    "level": null,
+    "parent_id": null,
+    "latitude": "-28.38853000",
+    "longitude": "153.56564000",
+    "native": "Pottsville Beach",
+    "population": 3298,
+    "timezone": "Australia/Sydney",
+    "translations": {
+      "br": "Pottsville Beach",
+      "ko": "포츠빌 비치",
+      "pt-BR": "Pottsville Beach",
+      "pt": "Pottsville Beach",
+      "nl": "Pottsville Beach",
+      "hr": "Pottsville Beach",
+      "de": "Pottsville Beach",
+      "es": "Pottsville Beach",
+      "fr": "Pottsville Beach",
+      "ja": "ポッツビルビーチ",
+      "it": "Pottsville Beach",
+      "tr": "Pottsville Beach",
+      "ru": "Поттсвилл-Бич",
+      "pl": "Pottsville Beach",
+      "hi": "पॉट्सविले बीच"
+    },
+    "created_at": "2019-10-06T09:29:12",
+    "updated_at": "2025-12-02T14:38:56",
+    "flag": 1,
+    "wikiDataId": "Q7235406",
+    "replacement_id": 6913
+  },
+  {
+    "id": 7325,
+    "name": "St Helena",
+    "state_id": 3903,
+    "county_id": 4437,
+    "state_code": "VIC",
+    "country_id": 14,
+    "country_code": "AU",
+    "type": "locality",
+    "type_local": "locality",
+    "level": 3,
+    "parent_id": null,
+    "latitude": "-37.68988000",
+    "longitude": "145.12315000",
+    "native": "St Helena",
+    "population": 2890,
+    "timezone": "Australia/Melbourne",
+    "translations": {
+      "br": "St Helena",
+      "ko": "세인트헬레나",
+      "pt-BR": "St Helena",
+      "pt": "St Helena",
+      "nl": "St Helena",
+      "hr": "St Helena",
+      "fa": "سنت هلنا",
+      "de": "St Helena",
+      "es": "St Helena",
+      "fr": "St Helena",
+      "ja": "セントヘレナ",
+      "it": "St Helena",
+      "zh-CN": "圣赫勒拿岛",
+      "tr": "St Helena",
+      "ru": "Святая Елена",
+      "uk": "Свята Єлена",
+      "pl": "St Helena",
+      "hi": "सेंट हेलेना",
+      "ar": "سانت هيلينا"
+    },
+    "created_at": "2019-10-06T09:29:15",
+    "updated_at": "2025-12-02T14:39:55",
+    "flag": 1,
+    "wikiDataId": "Q7593327",
+    "replacement_id": 7111
+  },
+  {
+    "id": 73379,
+    "name": "San Antonio del Coyote",
+    "state_id": 3471,
+    "state_code": "COA",
+    "country_id": 142,
+    "country_code": "MX",
+    "type": "locality",
+    "type_local": "localidad urbana",
+    "level": 3,
+    "parent_id": null,
+    "latitude": "25.69444000",
+    "longitude": "-103.28556000",
+    "native": "San Antonio del Coyote",
+    "population": 9213,
+    "population_year": 2020,
+    "timezone": "America/Monterrey",
+    "translations": {
+      "br": "San Antonio del Coyote",
+      "ko": "샌 안토니오 델 코요테",
+      "pt-BR": "San Antonio del Coyote",
+      "pt": "San Antonio del Coyote",
+      "nl": "San Antonio del Coyote",
+      "hr": "San Antonio del Coyote",
+      "fa": "سن آنتونیو دل کایوت",
+      "de": "San Antonio del Coyote",
+      "es": "San Antonio del Coyote",
+      "fr": "San Antonio del Coyote",
+      "ja": "サンアントニオデルコヨーテ",
+      "it": "San Antonio del Coyote",
+      "tr": "San Antonio del Coyote",
+      "ru": "Сан-Антонио-дель-Койоте",
+      "uk": "Сан-Антоніо-дель-Койот",
+      "pl": "San Antonio del Coyote",
+      "hi": "सैन एंटोनियो डेल कोयोट",
+      "ar": "سان أنطونيو ديل كايوتي"
+    },
+    "created_at": "2019-10-06T10:09:37",
+    "updated_at": "2025-12-02T14:39:55",
+    "flag": 1,
+    "wikiDataId": "Q20134420",
+    "replacement_id": 69520
+  },
+  {
+    "id": 74892,
+    "name": "Santiago Citendejé",
+    "state_id": 3450,
+    "state_code": "MEX",
+    "country_id": 142,
+    "country_code": "MX",
+    "type": "locality",
+    "type_local": "localidad urbana",
+    "level": 3,
+    "parent_id": null,
+    "latitude": "19.78139000",
+    "longitude": "-99.92917000",
+    "native": "Santiago Citendejé",
+    "population": 7052,
+    "population_year": 2020,
+    "timezone": "America/Mexico_City",
+    "translations": {
+      "br": "Santiago Citendejé",
+      "ko": "산티아고 시텐데헤",
+      "pt-BR": "Santiago Citendejé",
+      "pt": "Santiago Citendejé",
+      "nl": "Santiago Citendejé",
+      "hr": "Santiago Citendejé",
+      "fa": "سانتیاگو سیتندژ",
+      "de": "Santiago Citendejé",
+      "es": "Santiago Citendejé",
+      "fr": "Santiago Citendejé",
+      "ja": "サンティアゴ・シテンデヘ",
+      "it": "Santiago Citendejé",
+      "zh-CN": "圣地亚哥·西滕德耶",
+      "tr": "Santiago Citendejé",
+      "ru": "Сантьяго-Ситиденехе",
+      "uk": "Сантьяго Сітендехе",
+      "pl": "Santiago Citendejé",
+      "hi": "सैंटियागो सिटेंडेजे",
+      "ar": "سانتياغو سيتينديجي"
+    },
+    "created_at": "2019-10-06T10:10:04",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q20240433",
+    "replacement_id": 74729
+  },
+  {
+    "id": 71327,
+    "name": "La Isla Km 10",
+    "state_id": 3464,
+    "state_code": "VER",
+    "country_id": 142,
+    "country_code": "MX",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "20.60677000",
+    "longitude": "-97.49950000",
+    "native": "La Isla Km 10",
+    "population": 3500,
+    "timezone": "America/Mexico_City",
+    "translations": {
+      "br": "La Isla Km 10",
+      "ko": "라 이슬라 10km",
+      "pt-BR": "A Ilha Km 10",
+      "pt": "A Ilha Km 10",
+      "nl": "Het eiland Km 10",
+      "hr": "La Isla, km 10",
+      "fa": "لا ایسلا، کیلومتر ۱۰",
+      "de": "La Isla Km 10",
+      "es": "La Isla Km 10",
+      "fr": "La Isla Km 10",
+      "ja": "ラ・イスラ 10 キロ",
+      "it": "La Isla Km 10",
+      "zh-CN": "拉伊斯拉 10 公里",
+      "tr": "La Isla Km 10",
+      "ru": "Ла Исла Км 10",
+      "uk": "Ла-Ісла, км 10",
+      "pl": "La Isla Km 10",
+      "hi": "ला इस्ला किमी 10",
+      "ar": "لا إيسلا كم 10"
+    },
+    "created_at": "2019-10-06T10:08:52",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 71326
+  },
+  {
+    "id": 145250,
+    "name": "Municipality of Delfin Albano",
+    "state_id": 1313,
+    "state_code": "ISA",
+    "country_id": 174,
+    "country_code": "PH",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "17.26667000",
+    "longitude": "121.73333000",
+    "native": "Municipality of Delfin Albano",
+    "population": null,
+    "timezone": "Asia/Manila",
+    "translations": {
+      "br": "Municipality of Delfin Albano",
+      "ko": "델핀 알바노 시정촌",
+      "pt-BR": "Municipality of Delfin Albano",
+      "pt": "Municipality of Delfin Albano",
+      "nl": "Municipality of Delfin Albano",
+      "hr": "Municipality of Delfin Albano",
+      "fa": "شهرداری دلفین آلبانو",
+      "de": "Municipality of Delfin Albano",
+      "es": "Municipality of Delfin Albano",
+      "fr": "Municipality of Delfin Albano",
+      "ja": "デルフィン・アルバノ市",
+      "it": "Municipality of Delfin Albano",
+      "zh-CN": "德尔芬阿尔巴诺市",
+      "tr": "Municipality of Delfin Albano",
+      "ru": "Муниципалитет Дельфин-Альбано",
+      "uk": "Муніципалітет Дельфін Альбано",
+      "pl": "Municipality of Delfin Albano",
+      "hi": "डेल्फ़िन अल्बानो नगर पालिका",
+      "ar": "بلدية دلفين ألبانو"
+    },
+    "created_at": "2020-10-25T04:55:28",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q31814305",
+    "replacement_id": 145175
+  },
+  {
+    "id": 148066,
+    "name": "Balagtas",
+    "state_id": 1322,
+    "state_code": "08",
+    "country_id": 174,
+    "country_code": "PH",
+    "type": "city",
+    "level": null,
+    "parent_id": null,
+    "latitude": "11.13333333",
+    "longitude": "124.51916667",
+    "native": "Balagtas",
+    "population": 2293,
+    "timezone": "Asia/Manila",
+    "translations": {
+      "br": "Balagtas",
+      "ko": "발라그타스",
+      "pt-BR": "Balagtas",
+      "pt": "Balagtas",
+      "nl": "Balagtas",
+      "hr": "Balagtas",
+      "fa": "بالاگتاس",
+      "de": "Balagtas",
+      "es": "Balagtas",
+      "fr": "Balagtas",
+      "ja": "バラグタス",
+      "it": "Balagtas",
+      "zh-CN": "巴拉格塔斯",
+      "tr": "Balagtas",
+      "ru": "Балагтас",
+      "uk": "Балагтас",
+      "pl": "Balagtas",
+      "hi": "बालागटस",
+      "ar": "بالاغتاس"
+    },
+    "created_at": "2021-07-18T03:26:14",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q31477947",
+    "replacement_id": 81435
+  },
+  {
+    "id": 154674,
+    "name": "Mulondo",
+    "state_id": 1333,
+    "state_code": "LAS",
+    "country_id": 174,
+    "country_code": "PH",
+    "type": "municipality",
+    "type_local": "municipality",
+    "level": 3,
+    "parent_id": null,
+    "latitude": "7.91700000",
+    "longitude": "124.36240000",
+    "native": "Mulondo",
+    "population": null,
+    "timezone": "Asia/Manila",
+    "translations": {
+      "br": "Mulondo",
+      "ko": "물론도",
+      "pt-BR": "Mulondo",
+      "pt": "Mulondo",
+      "nl": "Mulondo",
+      "hr": "Mulondo",
+      "fa": "مولوندو",
+      "de": "Mulondo",
+      "es": "Mulondo",
+      "fr": "Mulondo",
+      "ja": "ムロンド",
+      "it": "Mulondo",
+      "zh-CN": "穆隆多",
+      "tr": "Mulondo",
+      "ru": "Мулондо",
+      "uk": "Мулондо",
+      "pl": "Mulondo",
+      "hi": "मुलोंडो",
+      "ar": "مولوندو"
+    },
+    "created_at": "2025-03-24T23:21:08",
+    "updated_at": "2025-12-02T17:11:50",
+    "flag": 1,
+    "wikiDataId": "Q177004",
+    "replacement_id": 144597
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
