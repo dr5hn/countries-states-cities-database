@@ -147958,3 +147958,47 @@ Wikidata (CC0). Matching records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## China phase 3: Fujian and Hunan (model of #1975 and #1979)
+
+### Problem
+Fujian's and Hunan's prefectures, districts, counties and county-level cities were city records, and many carried another
+place's Wikidata item (Anjiang had Altay Prefecture's, in Xinjiang) or a wrong Chinese name.
+
+### Fix
+Same model as the China pilot and phase 2 (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **228 counties** (`administrative district`, official local term, official code): Fujian 92 and Hunan 136; 23 prefecture-level
+  units at level 2 and the districts, counties, autonomous counties and county-level cities at level 3 under their
+  prefecture, named "<Name> District / County / City". 160 carry their own Wikidata item where no city keeps it.
+- **66 district rows become sections (区)** at level 3, linked to their own county, with no city parent yet (the prefecture
+  rows are not proved to be the city itself).
+- **29 county-level cities stay cities** (`city / 市`, level 3) linked to their own county. Where two rows name one
+  place (Jian'ou, Jinshi, Leiyang, Lengshuijiang, Lianyuan, Xiangxiang), only the older is typed; the other is held for
+  the duplicates round.
+- 95 county links; 65 points replaced with the unit's own open point checked inside it.
+- **253 items cleared**: 11 district items under the model, 181 items for another place or province, and
+  61 disambiguation pages.
+- **148 native names and translations on 248 records fixed** (wrong characters, namesakes, machine translations), e.g.
+  Quanzhou's Licheng 鲤城; every native and translation field of the 429 rows read was screened.
+
+No row is removed and no prefecture row is converted (their city counterparts are not proved). Kinmen (157292) keeps
+its record, item, point and state; only a generic Turkish label is corrected. Licheng 157270 (point in Xianyou) and
+Hongjiang (two rows) are held.
+
+Held (367 records keep a hold on at least one field): prefecture rows, township rows, county seats, duplicate pairs and
+the cases above.
+
+Point ledger (every county and section point: source item or feature, revision, licence, method, containment check):
+[CN_phase3_points_2026-10.csv](ledgers/CN_phase3_points_2026-10.csv).
+
+### Sources
+Fujian Department of Civil Affairs register, 30 June 2026 edition (published 10 July 2026,
+https://mzt.fujian.gov.cn/gk/tzgg/202607/t20260710_7176497.htm); Hunan Department of Civil Affairs register, 31 December 2025
+edition (https://mzt.hunan.gov.cn/mzt/xxgk/tjsj/202512/t20251231_33884260.html); names, codes, categories and parentage used
+as official facts (Copyright Law of the PRC, Article 5). The national Ministry of Civil Affairs edition could not be reached.
+Points: Wikidata P625 (CC0); GeoNames (https://www.geonames.org/, CC BY 4.0, copied as published, rounded to eight decimals);
+OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0). geoBoundaries and OSM boundaries used only to check
+containment; nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 11494-11721.
