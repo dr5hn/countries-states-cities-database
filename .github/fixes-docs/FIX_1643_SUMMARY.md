@@ -142584,3 +142584,37 @@ Houston super neighborhoods, City of Baltimore neighborhoods. Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Points re-sourced from open sources
+
+### Problem
+Points must come from an openly licensed source or a documented legal basis (owner decision of 12 Oct). Two earlier
+changes took points from government sources that state no open licence: 144 town points (100 Argentine from IGN, 44
+Peruvian from INEI) copied when #1907 turned unit rows into their seat towns, and 529 Argentine departamento points
+derived from the intersection of IGN polygons and IGN-sourced Georef polygons.
+
+### Fix
+**143 of the 144 town points** replaced with the town's own open point: 133 from its own Wikidata item (P625, CC0) and 10 from its own
+GeoNames populated-place row (CC BY 4.0), each checked against the town's identity and inside its unit.
+**523 departamento points** replaced with the centroid Georef publishes for that unit (Servicio de Normalización de Datos
+Geográficos, datos.gob.ar, CC BY 4.0), each inside its unit. Only latitude and longitude change; values are written to
+eight decimals.
+
+Held (8): Piura (no single open point of its own passes the checks); six departamentos whose published Georef
+centroid falls outside the unit (La Costa, Almirante Brown, Luján de Cuyo, La Poma, San Lorenzo, Islas del Atlántico Sur);
+Maluku Tenggara Barat. Piura and the six held departamentos keep unresolved source-rights holds. Maluku Tenggara
+Barat's stored regency point has fresh open support from its own GeoNames ADM2 row; the separate Saumlaki town
+conversion remains held.
+
+### Sources
+- Town points: Wikidata structured data, CC0 1.0 (https://www.wikidata.org/wiki/Wikidata:Licensing); GeoNames,
+  https://www.geonames.org/, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), provided as is
+  without warranty (see the dump readme and disclaimer, https://download.geonames.org/export/dump/readme.txt).
+- Departamento points: Georef, Servicio de Normalización de Datos Geográficos de Argentina (Datos Argentina),
+  https://apis.datos.gob.ar/georef/api/v2.0/departamentos.json, under its terms
+  (https://datosgobar.github.io/georef-ar-api/terms/), CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+- Modification: the copied coordinates are rounded to eight decimals. IGN, INEI and BIG geometry and BAHRA were used only
+  to check identity and containment; nothing is copied from them. Keep this notice with redistributed data.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
