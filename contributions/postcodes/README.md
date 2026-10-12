@@ -78,8 +78,15 @@ Each of the original 8 launch country files was sourced from one of:
 | **India Post pincode CSV** | Open (gov.in) | IN |
 | **Japan Post KEN_ALL.csv** | Free (no formal license) | JP |
 | **France La Poste** (data.gouv.fr) | etalab-2.0 | FR |
-| **Australia Post Boundaries** | CC-BY 4.0 | AU |
+| ~~Australia Post Boundaries~~ (launch claim, never confirmed; see the note below) | — | AU |
 | **Statistics Canada FSA** | Open Government | CA |
+
+**Australia (since #1973):** the launch file came from a community copy of Australia Post data that is not licensed
+for redistribution, so its names and points were removed. Codes now come from the Australian Bureau of Statistics Postal
+Areas 2021 (`abs-poa-2021`; © Commonwealth of Australia (ABS), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)),
+the GeoNames postal code dump (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)) and,
+for single codes, Wikidata (CC0) and a CC BY 4.0 publication. ABS postal areas are a statistical approximation, not
+Australia Post's delivery list.
 
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
