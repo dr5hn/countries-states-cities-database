@@ -147104,3 +147104,48 @@ Wikidata (CC0), GeoNames (CC BY 4.0) for identity checks.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived here with their replacement ids.
+
+## Netherlands pass 3: woonplaatsen with an official city identity
+
+### Problem
+Dutch woonplaatsen were all typed `locality / woonplaats` (#1809, pass 2), so Amsterdam, Rotterdam, Utrecht and
+Groningen read as localities. The Netherlands has no legal city status today, and the owner's decision of 12 October
+asked for places with a documented city identity to be `city`, by an official and reproducible test rather than a
+population cut-off.
+
+### Fix
+**115 woonplaatsen typed `city`** (`type_local` stays `woonplaats`; level, parent, name, point and item unchanged).
+A woonplaats qualifies when an official source names that settlement itself as a city, and no current municipal text
+calls it a village:
+- **89 from the Rijksdienst voor het Cultureel Erfgoed (RCE) historic-city inventory**: the principal city maps and
+  Figure 6 of "Een nieuwe kaart van Nederland in 1575" (2016) and its urban-growth dataset, each matched to the record's
+  own BAG woonplaats by name and overlapping geometry (83 from the map index and report, 6 from the growth dataset);
+- **26 from the municipality's own publications** calling the place a city (stad, stadje, vestingstad, polderstad,
+  industriestad, regiostad), for example Assen, Drachten, Emmeloord, Oss, Spijkenisse, Winschoten and Zaandam.
+
+Not promoted on their own: historical city-rights grants (some covered rural multi-village jurisdictions), statistical
+urbanity or population, and a municipality's name (Zaanstad, Haarlemmermeer and Sittard-Geleen are not passed to a
+constituent woonplaats). Same-name places are matched by geometry: Hengelo (Gelderland), Oosterhout (Gelderland) and
+Valkenburg (Zuid-Holland) stay localities.
+
+Held (903): mostly woonplaatsen with no settlement-specific city identity in these sources yet (a hold is not a finding
+that no source calls the place a city); Montfort, Westkapelle and Zoutelande, which have historic-city evidence but
+which their municipality currently calls villages; records whose identity crosswalk is not unique; and Gemeente
+Appingedam (record scope).
+
+TYPE_FIELD.md now explains that a Dutch woonplaats can be `city` or `locality`, and that older `city` records outside this
+set were not reviewed, so `type = 'city'` alone is not a full list of Dutch cities.
+
+Evidence ledger (per record: BAG woonplaats code, Wikidata item, route, source, locator, the passage for municipal
+sources, the format retrieved and the SHA-256 of the retained bytes; for Emmeloord and Spijkenisse that is a text extract,
+as the original could not be downloaded): [NL_city_identity_2026-10.csv](ledgers/NL_city_identity_2026-10.csv).
+
+### Sources
+BAG woonplaatsen via Kadaster (Public Domain Mark 1.0, 12 October 2026, https://api.pdok.nl/kadaster/bag/ogc/v2); CBS gemeenten
+1 January 2026 (CC BY 4.0, Bron: CBS); RCE "Een nieuwe kaart van Nederland in 1575" (2016,
+https://www.cultureelerfgoed.nl/documenten/2016/01/01/een-nieuwe-kaart-van-nederland-in-1575) and its verstedelijking WFS
+layers (https://services.rce.geovoorziening.nl/verstedelijking/wfs); municipal publications linked per record in the
+ledger; Wikidata (CC0). RCE and municipal texts are used as facts about city identity; no text, geometry or point is copied.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.

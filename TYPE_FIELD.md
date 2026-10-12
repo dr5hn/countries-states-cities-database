@@ -81,7 +81,13 @@ Athos's monasteries are `religious`. To list only settlements in Greece, leave o
 
 ### Netherlands
 
-In `NL.json`, `municipality` is a gemeente and `locality` a BAG woonplaats (a named place within a gemeente). Most
+In `NL.json`, `municipality` is a gemeente. A BAG woonplaats (a named place within a gemeente) is `city` when an official
+source names that place itself as a city (the Rijksdienst voor het Cultureel Erfgoed's historic-city inventory or the
+municipality's own publication, with no current municipal text calling it a village; see the
+[evidence ledger](.github/fixes-docs/ledgers/NL_city_identity_2026-10.csv)), and `locality` otherwise; both keep
+`type_local` `woonplaats`. This is a documented identity, not a legal status, as the Netherlands has no statutory city
+category today. Older `city` records outside the woonplaats set (Eindhoven, Delft) were not reviewed, so `type = 'city'`
+alone is not a complete list of Dutch cities; use the settlement filter below. Most
 gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. Eight records named
 "Gemeente …" (Gemeente Groningen, Gemeente Stadskanaal …) are the municipal territory beside a separate record for the
 town (Groningen, Stadskanaal). To list only settlements in the Netherlands, leave out the records whose name starts
