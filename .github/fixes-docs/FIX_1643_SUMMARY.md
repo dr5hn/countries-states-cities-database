@@ -135376,3 +135376,29 @@ only, nothing copied); field values copied from Wikidata (CC0) and GeoNames (CC 
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## Jamaica pass 2: communities and towns
+
+### Problem
+After the Jamaica pilot (#1888: Montego Bay as the city, 44 towns and urban areas, 16 communities), 774 of Jamaica's 835
+city records had
+no level; most are communities of the national statistics office's census list.
+
+### Fix
+**596 records typed** as the pilot, at level 2 under their parish: 569 `locality / community` (each exactly one community of
+STATIN's 2022 preliminary coded community list in that parish, corroborated by PIOJ's map based on the 2011 census) and
+27 towns: 17 `town / town` from the Jamaica Information Service's parish profiles, as the pilot, and 10 `town / urban area` by
+STATIN's urban classification. Kingston's record stays untyped, as on master. 4 records get their own Wikidata item (the one item for that community). No names or points change.
+
+Held (178): names matching several communities or none, and places whose parish is in doubt.
+
+### Sources
+Statistical Institute of Jamaica (STATIN): [population and dwelling counts by community, Census 2022 (preliminary)](https://statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx)
+and urban classification, used for facts (each place's category and code) under [STATIN's terms of use](https://statinja.gov.jm/terms-of-use.aspx)
+(derived works with attribution; data owned by STATIN; matched to CSC records by CSC). STATIN's 2022 community and
+enumeration-district geometry may not be redistributed without its permission, and none is. Jamaica Information Service
+parish profiles (facts); PIOJ's census-based community map (used with acknowledgement of PIOJ and STATIN). GeoNames (CC BY 4.0) and Wikidata (CC0) for identities. Matching them to
+records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
