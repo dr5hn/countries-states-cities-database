@@ -88,6 +88,14 @@ the GeoNames postal code dump (`geonames-postal`; [CC BY 4.0](https://download.g
 for single codes, Wikidata (CC0) and a CC BY 4.0 publication. ABS postal areas are a statistical approximation, not
 Australia Post's delivery list.
 
+**Spain (since #1974):** the earlier ES rows held INE municipality codes, not postcodes, and were replaced. Codes come
+from CartoCiudad's province address files, edition 04/2026 (`cartociudad`; Centro de Descargas del CNIG,
+https://centrodedescargas.cnig.es/CentroDescargas/cartociudad, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+Credit: "Obra derivada de CartoCiudad 2026 CC-BY 4.0 scne.es". Modification: addresses aggregated to one row per postcode
+with its province, single municipality and mean point; per-code ledger in
+`.github/fixes-docs/ledgers/ES_postcodes_cartociudad_2026-04.csv`. This is the source's observed address coverage, not
+Correos' delivery list.
+
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
 own to programmatically assemble attribution — see the scope note above.
