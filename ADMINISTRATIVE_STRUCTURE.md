@@ -30,7 +30,9 @@ API support and country-by-country link population follow separately.
 
 1. **`state_id` is the smallest ISO 3166-2 unit that contains the place.** For France that is the département, for
    Spain and Italy the province. The units above it (région, comunidad autónoma) are linked through the states'
-   own `parent_id` and `level`. Counties carry a `state_id` the same way.
+   own `parent_id` and `level`. Counties carry a `state_id` the same way. Where a national reform has replaced the
+   units ISO 3166-2 still lists, the states follow the current national units and the fix summary records the mapping
+   to the ISO codes (Vietnam's 34 provincial units since July 2025).
 2. **Official units that ISO 3166-2 does not list are county records.** Arrondissements, Kreise, US counties and
    similar units go in `contributions/counties/<country>.json`. A city links to the county that contains it through
    `county_id` (nullable, added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states.
@@ -43,6 +45,22 @@ API support and country-by-country link population follow separately.
 5. **`type` is a standard English term; `type_local` is the official local term.** City and county `type` values come
    from the lists below, so apps can compare countries; `type_local` keeps the country's own word. For states `type`
    stays the ISO 3166-2 category and `type_local` holds the national term.
+6. **A section sits under the record directly above it, or under the city that contains it.** A neighbourhood,
+   barrio, bairro, community area or barangay is a `section`. Its `parent_id` is the record directly above it in the
+   official hierarchy when that record exists in cities. When it does not, and the city publishes the unit as part of
+   the city (or the city spans several units, as Montevideo spans eight municipios), `parent_id` is the city that
+   contains it and `level` is one below that city. A section can have its own elected government and official code (a
+   Philippine barangay): `section` says the unit sits inside a city or municipality, not that it has no government.
+   This containment case is the one exception to rule 4; otherwise a record is never linked to a parent two tiers up.
+7. **A place that is also an administrative unit has two records.** The unit goes in counties with its official code;
+   the city or town goes in cities and links to it through `county_id` (Indonesia's kota; China's county-level cities
+   and urban districts). The city record keeps the place's own identity, item and point, not the unit's.
+8. **Points come from open sources.** `latitude` and `longitude` are copied only from an openly licensed source
+   (Wikidata P625, CC0; GeoNames, CC BY 4.0; OpenStreetMap, ODbL; an official register under CC BY or a named OGL
+   version) or a source whose legal basis is documented, and lie inside the record's own unit. A point checked by hand
+   is still a copy of its source. Official geometry without an open licence is used only to check containment: no
+   point is copied from it or generated from it. Each fix summary names the source and licence of every copied point,
+   and CC BY notices travel with the redistributed data.
 
 ### City `type` values for countries that have been moved
 
@@ -53,7 +71,7 @@ API support and country-by-country link population follow separately.
 | `town` | an official town category | town (US), oraș (RO) |
 | `village` | an official village category | village (US), sat (RO) |
 | `locality` | a named populated place without its own government | census-designated place (US), localidad (MX) |
-| `section` | a part of a municipality kept as its own record | commune déléguée (FR), barrio (ES) |
+| `section` | a part of a municipality or city kept as its own record (rule 6) | commune déléguée (FR), barrio (ES), community area (US, Chicago), barangay (PH) |
 
 ### County `type` values
 
@@ -79,6 +97,7 @@ Today Strasbourg (id 47110) is a city typed `adm1` with no `level`; this is the 
 ## Rollout
 
 Existing records still carry older values (many cities say `city` or `adm1`–`adm5`, most states have no `level`, and
-China's prefectures and counties are still city records). Counties go into MySQL and the exports first (#1303 phase
+China's prefectures and counties are still city records; they move to counties, with real cities kept as city
+records under rule 7, starting with a pilot). Counties go into MySQL and the exports first (#1303 phase
 2b); then countries are moved one at a time, matched to their official register by code, starting with France. Each
 country's changes are documented under [#1643](https://github.com/dr5hn/countries-states-cities-database/issues/1643).
