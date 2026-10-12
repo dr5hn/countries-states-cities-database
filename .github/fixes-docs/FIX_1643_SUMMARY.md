@@ -139376,3 +139376,25 @@ Wikidata (CC0) for identities; UNAH's map service only to check. Matching them t
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Nigeria pass 2: LGAs, area councils, towns and settlements
+
+### Problem
+After the Nigeria pilot (#1890: 39 LGAs, 81 places), 392 Nigerian records had no level, 202 of them old `adm2` rows.
+
+### Fix
+**297 records typed** as the pilot: 108 `municipality / local government area` and 2 FCT `municipality / area council` at level 2
+(the First Schedule of the Constitution and INEC's LGA register), and 187 places at level 3 (2 cities, 11 towns, 174
+`locality / settlement`), 27 linked to their LGA's record. 45 Wikidata ids set to the place's own item.
+
+Held (95): names matching several LGAs or places, and places whose LGA is in doubt.
+
+### Sources
+The Constitution's First Schedule and INEC's LGA register (facts); GRID3 operational state and LGA boundaries and
+settlement points for Nigeria (2020 edition, released March 2021; CC BY 4.0; eHealth Africa and Proxy Logics, settlement
+points with Oak Ridge National Laboratory), the main containment and named-place check; OCHA COD-AB Nigeria (CC BY 3.0 IGO)
+and UN SALB boundaries (non-commercial terms) used only to check, nothing copied; GeoNames (CC BY 4.0) and Wikidata
+(CC0) for identities. Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
