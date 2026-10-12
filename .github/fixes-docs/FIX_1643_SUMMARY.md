@@ -148084,3 +148084,40 @@ Ministry of Civil Affairs edition and Heilongjiang's register could not be reach
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 11910-12061.
+
+## India pass 3: records still without a level
+
+### Problem
+After India pass 2 (#1972) and duplicates round 13 (#1980), 1,989 Indian city records had no level: towns and villages
+the urban-body roster did not reach, sub-district rows and records in districts with no county yet (India pass 4, #1983,
+has since created those counties).
+
+### Fix
+**260 records typed** under the India pass 2 model as merged, each by an LGD match in its state and its current district
+(name or a documented transliteration, the stored point inside the district), with the place's own LGD or Census code
+deciding between namesakes; a town with its own urban body is that body, not the revenue village of the same name:
+- **166 urban bodies** as `municipality` at level 3 with the state's own term from the LGD (municipality 61, town panchayat 36, municipal council 16, municipal committee 14, notified area council 9, municipal corporation 7, nagar panchayat 7, town municipal council 6, municipality(nagar palika) 4, city municipal council 3, cantonment board 2, town committee 1);
+- **60 villages and 34 census towns** from the LGD village roster as `locality / village` or `locality / census town`
+  (by the official (CT) name form or the place's Census town code) at level 4, with no parent as the sub-district tier is
+  not stored.
+
+County links to the existing district counties. **22 Wikidata ids set** (the only item carrying the body's or village's
+own LGD or Census code) and **59 cleared** (items for another place of the same name). Points, names and states unchanged.
+
+Held (1725): records in districts that had no county (India pass 4 reran them), records with no unique LGD match in the
+stored point's district, sub-district rows (a tehsil or taluk is not a place unless its headquarters town is matched),
+possible sections of cities, and 11 records whose place identity is not proved (Lumding Railway Colony, Bargarh,
+Kenduadih, Ernakulam, Giridih, Nanded, Sangli, Bihpuriagaon, Balugaon, Karamsad, Saswad). The research also proposed moving
+Indian native names from Devanagari into each state's own script and replacing translations with Wikidata labels; these
+are left out because the documented rule keeps Indian natives in Devanagari, pending the owner's decision.
+
+### Sources
+Local Government Directory (https://lgdirectory.gov.in; Ministry of Panchayati Raj), districts, sub-districts, urban
+bodies and the village roster downloaded 12 October 2026, reproduced with source acknowledgement under its copyright
+policy (https://lgdirectory.gov.in/copyRightPolicy.do) and terms (https://lgdirectory.gov.in/termsconditions.do); codes,
+names, categories and hierarchy only. Census of India 2011 codes (reference facts). Wikidata (CC0).
+GeoNames (CC BY 4.0) transliterations and OpenStreetMap district boundaries (ODbL) used only to check names and
+containment; nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
