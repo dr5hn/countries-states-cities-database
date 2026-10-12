@@ -139306,3 +139306,29 @@ records is CSC's own processing.
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids, and county ids
 10670, 10671, 10672 are free again.
+
+## Germany pass 4: former municipalities, city districts and held Gemeinden
+
+### Problem
+After Germany passes 1-3 (#1799, #1871, #1883), 920 German records had no level: municipalities merged away since 1990
+(most in Saxony-Anhalt and Thuringia), districts of Berlin, Hamburg and other cities, and Gemeinden the earlier passes held.
+
+### Fix
+**388 records typed**: 139 former municipalities as the Ortsteil or Ortschaft of the Gemeinde that absorbed them
+(`section`, with the term the Gemeinde's statute uses: Ortschaft, Ortsteil, Ortsbezirk or Stadtteil), one level below that
+Gemeinde; 31 city districts as `section` (Berlin Ortsteile, Hamburg and other Stadtteile and Stadtbezirke) one level below
+the immediate official unit (a Bezirk or Stadtbezirk where there is one; no tier is skipped);
+and 202 Gemeinden and Städte settled by their AGS, typed as the earlier passes under their county. 68 get `parent_id`.
+**299 Wikidata ids changed**: the own item set by AGS where exactly one item has it, or an item of another place cleared (125).
+The review admitted 16 more records (incl. Osternienburger Land) and cleared 45 borrowed items, two on foreign records
+(Cazenga in Angola, Imphal East in India) that carried German items.
+
+Held (532): names with no unique part in the Gemeinde's statute, and records whose AGS or polygon is not settled.
+
+### Sources
+Destatis Gemeindeverzeichnis and name and boundary changes (dl-de/by-2-0, Quelle: Statistisches Bundesamt); Berlin's
+ALKIS Ortsteile (dl-de/zero-2-0); municipal statutes (Hauptsatzungen) and city pages for facts only; Wikidata (CC0);
+GeoNames (CC BY 4.0). Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
