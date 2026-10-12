@@ -148828,3 +148828,38 @@ government town and history publications and the 2013 English trademark report (
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## China phase 8: Hubei; Guizhou held (model of #1975 to #1987)
+
+### Problem
+Hubei's and Guizhou's prefectures, districts, counties and county-level cities were city records, many with another
+place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **115 Hubei counties** (`administrative district`, official local term, official code): 16 prefecture-level units at level 2
+  and their districts, counties, autonomous counties and county-level cities at level 3, named "<Name> District / County /
+  City"; the pilot's Xiantao county (#1975) is kept unchanged. 72 carry their own Wikidata item where no city keeps it.
+- **37 district rows become sections (区)** at level 3, linked to their own county, with no city parent yet.
+- **21 county-level cities stay cities** (`city / 市`, level 3) linked to their own county.
+- 59 points replaced with the unit's own open point checked inside its county; **128 items cleared** (71 other wrong
+  entities, 47 disambiguation pages, 10 district items under the model); **66 native names and translations on 161
+  records fixed** in Hubei and Guizhou.
+
+Guizhou's structure is held: its civil-affairs register could not be retrieved, so only its item and name fixes are made.
+No row is removed and no prefecture row is converted.
+
+Held (299 records keep a hold on at least one field): all Guizhou typing, prefecture rows, township rows, county seats,
+duplicate pairs.
+
+Point ledger: [CN_phase8_points_2026-10.csv](ledgers/CN_phase8_points_2026-10.csv).
+
+### Sources
+Hubei Department of Civil Affairs register, 31 December 2025 edition (published 5 January 2026,
+https://mzt.hubei.gov.cn/ywzc/ywzc/qhc/202601/t20260105_5848413.shtml); names, codes, categories and parentage used as
+official facts (Copyright Law of the PRC, Article 5). The national Ministry of Civil
+Affairs edition and Guizhou's register could not be reached. Points: 172 Wikidata P625 (CC0), 3 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12519-12633.
