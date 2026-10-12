@@ -142154,3 +142154,37 @@ Pottsville, Saint Helena and St Helena, Wollongong and Yeppoon city centres).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## United States pass 3: the unlevelled records
+
+### Problem
+1,046 US city records still had no level after US passes 1-2 (#1918 and earlier), 271 of them city neighbourhoods typed
+`section` with no level and no parent.
+
+### Fix
+**394 records typed** under the US rules of passes 1-2:
+- **99 neighbourhoods** as `section` at level 4 under their city's record (Chicago 45, New York City 43, Phoenix 6, Baltimore 3, Houston 2), with the city's own term:
+  Chicago `community area` (45), New York and Baltimore `neighborhood` (46; New York by NYC Planning's neighborhood tabulation names), Phoenix
+  `urban village` (6), Houston `super neighborhood`; each point inside the named unit and the city.
+- **135 incorporated places and county subdivisions** at level 3 by their Census class (town 33, township 40,
+  city 27, borough 19, village 13, municipality 3): one exact current Census name (or official name form)
+  in the state with the stored point inside its TIGER/Line polygon.
+- **88 CDPs** as `locality / census designated place` and **72 GNIS populated places** as `locality / unincorporated
+  community` (one exact GNIS feature in the state within 2 km, outside any incorporated place).
+
+**264 county links** (largest land share for multi-county places) and **99 parent links**. **92 Wikidata ids set**
+(the only item with the record's Census code or GNIS id) and **52 cleared** where the item is provably another place.
+Points are unchanged.
+
+Held (652): former Census units deleted, split or merged, and communities whose current status needs reconciling;
+records whose own item is a county (99); GNIS points inside an incorporated place; no exact current unit or
+name form; 36 records that duplicate an already typed record for the same Census unit (duplicates round).
+
+### Sources
+US Census Bureau 2026 Gazetteer, 2025 TIGER/Line and TIGERweb (1 January 2026) and USGS GNIS (September 2026): US
+Government works, public domain. City lists used to confirm names and containment only, nothing copied: City of Chicago
+community areas, NYC Planning neighborhood tabulation areas (NYC Open Data), City of Phoenix urban villages, City of
+Houston super neighborhoods, City of Baltimore neighborhoods. Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
