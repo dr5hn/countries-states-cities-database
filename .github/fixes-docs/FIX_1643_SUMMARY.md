@@ -146496,3 +146496,89 @@ for states; ODbL 1.0 for districts and sub-districts), nothing copied. Points an
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids; new county ids are
 10673-11268.
+
+## China pilot: units to counties, places kept as cities (owner decision of 12 Oct 2026)
+
+### Problem
+China's 4,157 city records follow an older scheme: prefectures, counties, districts and county-level cities are city
+records. Under ADMINISTRATIVE_STRUCTURE.md these are units (counties), while the cities people know stay cities (rule 7).
+This pilot applies that to Beijing, Shanghai, Suzhou (with Kunshan), Huai'an with Jinhu, and Xiantao.
+
+### Fix
+**45 counties** (`administrative district`, official local term): 35 at level 2 (the 16 Beijing and 16 Shanghai districts
+directly under their municipality, Suzhou and Huai'an prefectures, Xiantao directly under Hubei) and 10 at level 3
+under their prefecture (Suzhou's five districts and four county-level cities, Jinhu), each with its official code, its
+own Wikidata item where no city keeps it, and its own open point checked inside the unit.
+**64 city updates**: 35 district rows become sections (区) of their city under rule 6, e.g. Haidian under Beijing at
+level 2 and Gusu under Suzhou at level 3; Pudong and the other Shanghai districts are sections at level 2 with no city
+parent, as CSC has no Shanghai city record. Kunshan stays a city (市) at level 3 linked to its own county. 51 county links,
+29 points replaced with the place's own open point inside its district, 49 items of other places cleared (e.g.
+Baoshan carried Baoji's). The Suzhou prefecture row is removed; the prefecture is now a county and Suzhou city (20150)
+stays the city.
+
+Held (23): Baoshan (state versus point), possible duplicates (Changshu/Yushan, Zhangjiagang, Taicang, Xiantao), Huai'an's
+other units, township rows (Liangxiang, Mudu, Songling, Zhouzhuang) and the Licheng conversion (its point is not yet
+checked inside the subdistrict).
+
+### Sources
+Dated official registers: Beijing (16 July 2026), Shanghai (27 July 2026), Jiangsu (as of 31 December 2025) and Hubei
+(2025 year end); names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5).
+The national Ministry of Civil Affairs edition could not be reached. Points: Wikidata P625 (CC0) and GeoNames (CC BY
+4.0); geoBoundaries CHN ADM3 (ODbL 1.0, OSM-derived) used only to check containment.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 149267,
+    "name": "Suzhou",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "31.31112300",
+    "longitude": "120.62128810",
+    "native": "苏州",
+    "population": 12748262,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Suzhou",
+      "ko": "쑤저우시",
+      "pt-BR": "Suzhou",
+      "pt": "Suzhou",
+      "nl": "Suzhou",
+      "hr": "Suzhou",
+      "fa": "سوژو",
+      "de": "Suzhou",
+      "es": "Suzhou",
+      "fr": "Suzhou",
+      "ja": "蘇州市",
+      "it": "Suzhou",
+      "zh-CN": "苏州",
+      "tr": "Wuzhong",
+      "ru": "Сучжоу",
+      "uk": "Сучжоу",
+      "pl": "Suzhou",
+      "hi": "सूझोऊ",
+      "ar": "سوجو"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:39:13",
+    "flag": 1,
+    "wikiDataId": "Q42622",
+    "replacement_id": 20150
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed prefecture row is archived here; new county ids are 11269-11313.
