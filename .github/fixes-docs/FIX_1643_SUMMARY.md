@@ -142584,3 +142584,31 @@ Houston super neighborhoods, City of Baltimore neighborhoods. Wikidata (CC0).
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Points re-sourced from open sources
+
+### Problem
+Points must come from an openly licensed source or a documented legal basis (owner decision of 12 Oct). Two earlier
+changes copied points from government sources that state no open licence: 100 Argentine and 43 Peruvian town points
+taken from IGN and INEI when #1907 turned unit rows into their seat towns, and 529 Argentine departamento points derived
+from IGN polygons.
+
+### Fix
+**143 town points** replaced with the town's own open point: 133 from its own Wikidata item (P625, CC0) and 10 from its own
+GeoNames populated-place row (CC BY 4.0), each checked against the town's identity and inside its unit.
+**523 departamento points** replaced with the centroid Georef publishes for that unit (Servicio de Normalización de Datos
+Geográficos, datos.gob.ar, CC BY 4.0), each inside its unit. Only latitude and longitude change; values are written to
+eight decimals.
+
+Held (8): Piura (no single open point of its own passes the checks); six departamentos whose published Georef
+centroid falls outside the unit (La Costa, Almirante Brown, Luján de Cuyo, La Poma, San Lorenzo, Islas del Atlántico Sur);
+Maluku Tenggara Barat (its current point is its own GeoNames regency row, CC BY 4.0, so it is not an unlicensed copy).
+The old values of the held records still need an open replacement.
+
+### Sources
+Wikidata structured data, CC0 1.0. GeoNames, https://www.geonames.org/, CC BY 4.0. Georef (Datos Argentina),
+https://apis.datos.gob.ar/georef/api/v2.0/departamentos.json, CC BY 4.0. IGN, INEI and BIG geometry used only to check
+containment; nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
