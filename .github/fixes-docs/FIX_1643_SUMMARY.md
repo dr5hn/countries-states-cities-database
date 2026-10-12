@@ -148802,3 +148802,25 @@ reference check; no point generated from it.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived here with their replacement ids.
+
+## China phase 7: Hebei and Henan, names and items only
+
+### Problem
+Hebei's and Henan's city records carry wrong Chinese names, machine-translated labels and Wikidata items for other places.
+Their structure (counties, sections, county-level cities) waits for the provincial registers, which could not be
+retrieved from either civil-affairs site.
+
+### Fix
+Name and item repairs only; no county, typing, link, point or removal:
+- **106 native names and translations on 227 records fixed** (wrong characters, namesakes, machine translations,
+  obsolete categories), each by the official unit name or an exact named populated place; 1 primary name corrected.
+- **87 Wikidata items cleared**: 41 items for another place, unit, province or concept, and 46 disambiguation pages. No new item is set.
+
+Held (412 records): all structural changes in both provinces until the registers are retrieved.
+
+### Sources
+Official unit names from provincial and municipal government publications (facts); GeoNames (CC BY 4.0) and Wikidata
+(CC0) for place identity; no point or geometry copied.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
