@@ -139332,3 +139332,25 @@ GeoNames (CC BY 4.0). Matching them to records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Panama pass 2: corregimientos and lugares poblados
+
+### Problem
+After the Panama pilot (#1881: 59 distritos, 16 corregimientos, Panama City, Colón and La Chorrera), 466 Panamanian
+records had no level, most of them corregimientos.
+
+### Fix
+**376 records typed** as the pilot: 269 `section / corregimiento` (INEC's corregimiento codes): 268 at level 3 below their distrito,
+and Puerto Obaldía at level 2 directly below Guna Yala (INEC's Guna Yala distrito is a display device, not a tier); and
+107 `locality / lugar poblado` (INEC census 2023 places with codes) one level below their corregimiento. 247 get `parent_id`
+to the record of the unit directly above; where it has no record, none.
+
+Held (90): names matching several INEC units or none, and records whose distrito or corregimiento is in doubt.
+
+### Sources
+INEC Panamá, corregimiento list and census 2023 places (CC BY 4.0, Fuente: INEC); ANATI's 2025 populated-places map
+(facts only, no licence verified); GeoNames (CC BY 4.0) and Wikidata (CC0) for identities. Matching them to records is
+CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
