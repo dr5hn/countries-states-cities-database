@@ -148828,3 +148828,39 @@ government town and history publications and the 2013 English trademark report (
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## China phase 10: Hebei structure (model of #1975 to #1987)
+
+### Problem
+Hebei's prefectures, districts, counties and county-level cities were city records. Phase 7 (#1990) fixed their names and
+items but held the structure, because the provincial civil-affairs register could not be downloaded.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **178 counties** (`administrative district`, official local term, official code): 11 prefecture-level cities at level 2 and
+  their districts, counties, autonomous counties and county-level cities at level 3, named "<Name> District / County /
+  City". Each unit's code, name and parent agree in two sources: the register and the unit's own Wikidata entry (P442
+  code, Chinese name, current P131 parent). Dingzhou and Xinji follow the register's printed parents (Baoding,
+  Shijiazhuang); Xiong'an's three counties stay under Baoding, as printed. 127 carry their own Wikidata item where no
+  city keeps it.
+- **45 district rows become sections (区)** at level 3, linked to their own county, with no city parent yet.
+- **21 county-level cities stay cities** (`city / 市`, level 3) linked to their own county.
+- 65 points replaced with the unit's own open point checked inside its county; 9 more wrong items cleared and 2 native
+  names fixed.
+
+No row is removed and no prefecture row is converted.
+
+Held (203 records keep a hold on at least one field): prefecture rows, township rows, county seats, duplicate pairs.
+
+Point ledger: [CN_phase10_points_2026-10.csv](ledgers/CN_phase10_points_2026-10.csv).
+
+### Sources
+Hebei Department of Civil Affairs register, 30 June 2026 edition (published 3 July 2026,
+https://minzheng.hebei.gov.cn/detail?id=1050734), read from its 44-page republication by Hebei news
+(https://hs.hebccw.cn/system/2026/07/08/102201960.shtml) because the original attachment could not be downloaded; each
+county-level row is recorded by page and row and checked against the unit's own Wikidata entry. Names, codes, categories
+and parentage used as official facts (Copyright Law of the PRC, Article 5). Points: 239 Wikidata P625 (CC0), 3 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals), 2 OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12341-12518.
