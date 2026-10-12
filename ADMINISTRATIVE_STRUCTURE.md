@@ -30,9 +30,13 @@ API support and country-by-country link population follow separately.
 
 1. **`state_id` is the smallest ISO 3166-2 unit that contains the place.** For France that is the département, for
    Spain and Italy the province. The units above it (région, comunidad autónoma) are linked through the states'
-   own `parent_id` and `level`. Counties carry a `state_id` the same way. Where a national reform has replaced the
-   units ISO 3166-2 still lists, the states follow the current national units and the fix summary records the mapping
-   to the ISO codes (Vietnam's 34 provincial units since July 2025).
+   own `parent_id` and `level`. Counties carry a `state_id` the same way. Where a documented national reform has
+   replaced the units ISO 3166-2 still lists, `state_id` follows the current national unit: the fix summary records the
+   reform's date and sources and a dated old-to-new crosswalk of codes, names, scope and ISO mapping, marking any code
+   the project assigned itself, and the state `type` uses the national category (an exception to rule 5). Vietnam since
+   July 2025: 34 provincial states at level 1, communes, wards and special zones (`municipality / xã | phường | đặc khu`)
+   at level 2 with no district tier; a former city keeps its own urban-place record rather than becoming a same-named
+   new ward.
 2. **Official units that ISO 3166-2 does not list are county records.** Arrondissements, Kreise, US counties and
    similar units go in `contributions/counties/<country>.json`. A city links to the county that contains it through
    `county_id` (nullable, added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states.
@@ -45,22 +49,32 @@ API support and country-by-country link population follow separately.
 5. **`type` is a standard English term; `type_local` is the official local term.** City and county `type` values come
    from the lists below, so apps can compare countries; `type_local` keeps the country's own word. For states `type`
    stays the ISO 3166-2 category and `type_local` holds the national term.
-6. **A section sits under the record directly above it, or under the city that contains it.** A neighbourhood,
-   barrio, bairro, community area or barangay is a `section`. Its `parent_id` is the record directly above it in the
-   official hierarchy when that record exists in cities. When it does not, and the city publishes the unit as part of
-   the city (or the city spans several units, as Montevideo spans eight municipios), `parent_id` is the city that
-   contains it and `level` is one below that city. A section can have its own elected government and official code (a
-   Philippine barangay): `section` says the unit sits inside a city or municipality, not that it has no government.
-   This containment case is the one exception to rule 4; otherwise a record is never linked to a parent two tiers up.
-7. **A place that is also an administrative unit has two records.** The unit goes in counties with its official code;
-   the city or town goes in cities and links to it through `county_id` (Indonesia's kota; China's county-level cities
-   and urban districts). The city record keeps the place's own identity, item and point, not the unit's.
-8. **Points come from open sources.** `latitude` and `longitude` are copied only from an openly licensed source
-   (Wikidata P625, CC0; GeoNames, CC BY 4.0; OpenStreetMap, ODbL; an official register under CC BY or a named OGL
-   version) or a source whose legal basis is documented, and lie inside the record's own unit. A point checked by hand
-   is still a copy of its source. Official geometry without an open licence is used only to check containment: no
-   point is copied from it or generated from it. Each fix summary names the source and licence of every copied point,
-   and CC BY notices travel with the redistributed data.
+6. **A section keeps its official parent, or uses a documented urban-containment parent.** A neighbourhood, barrio,
+   bairro, community area or barangay may be a `section`. In a statutory hierarchy a section keeps its official depth
+   and its `parent_id` is its verified immediate parent in cities, or null when that parent is missing or in another
+   dataset; a known tier is never skipped (a Philippine barangay under its city or municipality). A section can have
+   its own elected government and official code: `section` says the unit sits inside a city or municipality, not that
+   it has no government. **Urban-containment model:** for neighbourhoods a city publishes as parts of itself, the fix
+   summary may record that the city is their parent, with `level` one below the city. This is a documented exception to
+   rules 3 and 4, recorded per city (US neighbourhoods in #1967; Montevideo, a city at level 2 with its barrios at level
+   3 under it). Adding municipio or ward records later does not silently replace these urban parents; that ancestry is
+   documented separately. A city spanning several units is not by itself a reason to use this model.
+7. **An intermediate unit and its place can both be kept, when both are verified.** Rules 1-2 decide where a unit goes;
+   basic municipalities are not duplicated into counties. Where a unit is also a place people know as a city, as
+   Indonesia's kota and China's county-level cities and urban districts, the unit goes in counties (matched to its
+   official code in a source ledger) and an existing, verified city, seat town or urban part stays in cities, linked
+   through `county_id` to its county in the same state. A place record is never created from a unit's name alone; it
+   keeps its own identity and level (a kota city and its county are both level 2, the city's `parent_id` null under a
+   state). A kota's city and county may share its own Wikidata item and a point that suits both; distinct places never
+   share an item. Kecamatan, when added, sit at level 3, and desa and kelurahan are not linked straight to a kota.
+8. **Points come from open sources, with a ledger.** `latitude` and `longitude` are copied only from an openly
+   licensed source (Wikidata P625, CC0; GeoNames, CC BY 4.0; OpenStreetMap, ODbL; an official register under CC BY or
+   OGL, naming its jurisdiction and version) or a source whose legal basis for copying is documented, and lie inside the
+   record's own unit. A point checked by hand is still a copy of its source. Official geometry with no open licence or
+   documented legal basis is used only for reference checks: no point is copied or generated from it. Each fix summary
+   links a per-record ledger (record id, source feature and URL, edition, retrieval time and hash, method, licence or
+   legal basis). Attribution, licence and modification notices travel with the exports, API and package documentation;
+   OSM reuse also meets ODbL share-alike. Legacy points with unresolved rights stay listed as holds until replaced.
 
 ### City `type` values for countries that have been moved
 
