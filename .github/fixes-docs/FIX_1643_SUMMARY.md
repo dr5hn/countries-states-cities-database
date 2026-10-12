@@ -147104,3 +147104,48 @@ Wikidata (CC0), GeoNames (CC BY 4.0) for identity checks.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived here with their replacement ids.
+
+## China phase 2: Chongqing and Guangdong (model of the China pilot, #1975)
+
+### Problem
+Chongqing's and Guangdong's districts, counties and prefectures were city records, several with another place's
+Wikidata item or a machine-translated Chinese name (Banan as 香蕉 "banana", Chikan as 痴汉, Taishan as 泰山).
+
+### Fix
+Same model as the pilot (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **180 counties** (`administrative district`, official local term, official code): Chongqing's 37 districts, counties and
+  autonomous counties at level 2 (directly under the municipality, including the Liangjiang New Area by the civil-affairs
+  notice of 5 December 2025), and Guangdong's 21 prefecture-level cities at level 2 with their 122 districts, county-level
+  cities, counties and autonomous counties at level 3. 114 carry their own Wikidata item where no city keeps it.
+- **89 district rows become sections (区)**: 24 under Chongqing city (164574, now `city / 市`, level 1) at level 2, and
+  65 in Guangdong at level 3 with no city parent yet, because the prefecture rows they hang under are not proved
+  to be the city itself (rule 6 allows a null parent when the city record is missing). Each section is the statutory
+  district, rural territory included.
+- **20 county-level cities stay cities** (`city / 市`, level 3) linked to their own county.
+- 109 county links; 87 points replaced with the unit's own open point checked inside it; 96 wrong items cleared
+  (another place's item, or a disambiguation page); 27 wrong Chinese names and their translations fixed.
+
+No row is removed and no prefecture row is converted: the prefecture rows (Guangzhou, Foshan, Dongguan, ...) sit on the
+prefecture's point, and their city counterpart is not proved, so they are held. Ten towns have two city rows each
+(Gaozhou, Huazhou, Lianjiang, Lianzhou, Puning, Taishan, Wuchuan, Xingning, Xinyi, Yangchun): the older row is typed and
+the other (157470, 157480, 157482, 157485, 157486, 157487, 157508, 157522, 157530, 157548) is held for the duplicates round.
+
+Held (225 records keep a hold on at least one field): all of Tianjin (its civil-affairs register could not be retrieved,
+so its 16 districts wait), prefecture rows, township and subdistrict rows, county seats and the duplicates above.
+
+Point ledger (every county and section point: source item or feature, revision, licence, method, containment check):
+[CN_phase2_points_2026-10.csv](ledgers/CN_phase2_points_2026-10.csv).
+
+### Sources
+Guangdong Department of Civil Affairs register as of 30 June 2026 (https://smzt.gd.gov.cn/qhgk/xzqhdmxx/2026nd/xzqhdm/index.html);
+Chongqing Civil Affairs Bureau register of December 2025 (published 19 January 2026,
+https://mzj.cq.gov.cn/zwgk_218/zfxxgkml/tzgg/202601/t20260119_15332641.html) and change notice of 5 December 2025
+(https://mzj.cq.gov.cn/zwgk_218/zfxxgkml/tzgg/202512/t20251205_15215632.html); names, codes, categories and parentage used as
+official facts (Copyright Law of the PRC, Article 5). Points: Wikidata P625 (CC0, https://www.wikidata.org/wiki/Wikidata:Licensing);
+GeoNames (https://www.geonames.org/, CC BY 4.0, https://creativecommons.org/licenses/by/4.0/; copied as published, rounded to
+eight decimals); OpenStreetMap nodes for Guangming and Meixian (© OpenStreetMap contributors, ODbL 1.0,
+https://www.openstreetmap.org/copyright). geoBoundaries CHN ADM3 (ODbL 1.0, OpenStreetMap-derived) and OSM boundary relations
+used only to check containment; nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 11314-11493.
