@@ -148121,3 +148121,84 @@ containment; nothing copied from them.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Duplicates round 14
+
+### Problem
+The China phases (#1979, #1982, #1984) held the younger of two city rows naming one unit, and India pass 3 (#1981)
+listed 770 pairs of Indian records that might be one place.
+
+### Fix
+**1 duplicate record merged into the older id**: 57650 Alwaye into 57647 Aluva (Kerala). Both rows are the Aluva
+municipality (LGD urban body 252211, Ernakulam district), 0.4 km apart, and Alwaye is its former name. The survivor keeps
+its own item, point, typing, county and native name (Indian natives stay in Devanagari). The removed row's translations
+reading "always" go with it (India pass 3, #1981, had already cleared its Alwar district item).
+
+Held (62 newly checked pairs): 59 China pairs for unit/place scope (rule 7) or unresolved original identity, and three
+Indian pairs where a town and a namesake revenue village or outgrowth exist side by side (Harda / Harda Khas, Nawabganj,
+Kanakapura); 777 pairs held in earlier rounds were skipped without new evidence.
+
+### Sources
+Local Government Directory (https://lgdirectory.gov.in, owner download of 12 October 2026, reproduced with source
+acknowledgement under its copyright policy https://lgdirectory.gov.in/copyRightPolicy.do); Government of Kerala
+publications and the Aluva municipality site (facts only); GeoNames (CC BY 4.0) and Wikidata (CC0) for identity checks;
+no point copied.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 57650,
+    "name": "Alwaye",
+    "state_id": 4028,
+    "county_id": 11074,
+    "state_code": "KL",
+    "country_id": 101,
+    "country_code": "IN",
+    "type": "municipality",
+    "type_local": "municipality",
+    "level": 3,
+    "parent_id": null,
+    "latitude": "10.10649000",
+    "longitude": "76.35484000",
+    "native": "अलवाए",
+    "population": 23703,
+    "timezone": "Asia/Kolkata",
+    "translations": {
+      "br": "Bepred",
+      "ko": "항상",
+      "pt-BR": "Sempre",
+      "pt": "Sempre",
+      "nl": "Altijd",
+      "hr": "Uvijek",
+      "fa": "آلوای",
+      "de": "Immer",
+      "es": "Siempre",
+      "fr": "Toujours",
+      "ja": "アルウェイ",
+      "it": "Sempre",
+      "zh-CN": "阿尔韦耶",
+      "tr": "Her zaman",
+      "ru": "Всегда",
+      "uk": "Завжди",
+      "pl": "Zawsze",
+      "hi": "अलवाए",
+      "ar": "دائما"
+    },
+    "created_at": "2019-10-06T09:53:43",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 57647
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed row is archived here with its replacement id.
