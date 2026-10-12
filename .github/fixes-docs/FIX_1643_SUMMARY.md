@@ -148665,3 +148665,140 @@ nothing copied from the boundaries.
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 12158-12340.
+
+## Vietnam pass 3: former district rows
+
+### Problem
+Vietnam ended its district tier on 1 July 2025 (Resolution 203/2025/QH15). After pass 2 (#1977), 422 Vietnamese records
+had no level, 382 of them triaged as rows for former districts (huyện, quận, thị xã) that no longer exist (three of
+those, Mộc Châu, Đa Krông and Thị Trấn Tân Thành, have no established territorial identity yet).
+
+### Fix
+Model of #1977, option (c) of ADMINISTRATIVE_STRUCTURE.md, nothing new:
+- **240 former district rows converted** into the commune or ward that took the district's seat town (226 xã, 13 phường,
+  1 đặc khu; `municipality`, level 2, no parent), each proved by the province's dated National Assembly Standing
+  Committee resolution clause that formed the successor from the old seat town, and its code in the national list of
+  12 October 2026. The row keeps its id and takes the successor's official name and the seat town's own point (GeoNames,
+  inside the successor commune); the former district's population, translations and 55 district items are cleared, as
+  they describe the removed unit (no current-code item is proved for the successor).
+- **2 rows removed** for an existing record of the seat place: Huyện Lâm Hà for Đinh Văn, Huyện Phú Quốc for Dương Đông.
+- **6 urban places typed** `city / đô thị loại II` (whole urban areas graded II), as #1977 did: Thái Bình and Hưng Yên
+  (Decision 610/QĐ-UBND, Hưng Yên, 3 March 2026), Bỉm Sơn (Decision 768, Thanh Hóa), Pleiku (Decision 1832, Gia Lai) and the
+  others by Decision 772 (Cần Thơ); the Hưng Yên and Thanh Hóa decisions were read from mirrors of the signed text.
+
+Held (174): former districts whose seat town split between communes, whose successor is not proved by a dated clause, or
+whose identity or alias bridge, open seat point or reference check is missing; the three rows above; and urban places
+without a proved current grade. Two holds are already proved by their enacted clauses and go to the next round: Mường Lát
+130364 (Resolution 1686 Article 1(126)) and Nam Giang 130375 (Thạnh Mỹ, Resolution 1659 Article 1(71)).
+
+Point ledger (each point: GeoNames feature id and URL, dump URL, edition, retrieval, hash, licence, method):
+[VN_round3_points_2026-10.csv](ledgers/VN_round3_points_2026-10.csv). Conversion ledger (former district, successor name, code
+and category, old seat feature, resolution and clause, national-list cells):
+[VN_round3_conversions_2026-10.csv](ledgers/VN_round3_conversions_2026-10.csv).
+
+### Sources
+Cục Thống kê – Bộ Tài chính (Statistics Office, Ministry of Finance; www.nso.gov.vn, reuse terms
+https://www.nso.gov.vn/?lang=th) national administrative-unit list, exported 12 October 2026
+(https://danhmuchanhchinh.nso.gov.vn/), and the province resolutions of the National Assembly Standing Committee (2025) on
+the reorganisation of commune-level units; facts used, no text copied. Points: GeoNames (https://www.geonames.org/, CC BY
+4.0, the named seat-town feature, copied as published and rounded to eight decimals). Boundary geometry used only as a
+reference check; no point generated from it.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 130346,
+    "name": "Huyện Lâm Hà",
+    "state_id": 3818,
+    "state_code": "35",
+    "country_id": 240,
+    "country_code": "VN",
+    "type": "adm2",
+    "level": null,
+    "parent_id": null,
+    "latitude": "11.81890000",
+    "longitude": "108.21215000",
+    "native": "Huyện Lâm Hà",
+    "population": 144707,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "translations": {
+      "br": "Huyện Lâm Hà",
+      "ko": "후옌 램 하",
+      "pt-BR": "Huyện Lâm Hà",
+      "pt": "Huyện Lâm Hà",
+      "nl": "Huyện Lâm Hà",
+      "hr": "Huyện Lâm Hà",
+      "fa": "هویون لام هام",
+      "de": "Huyện Lâm Hà",
+      "es": "Huyện Lâm Hà",
+      "fr": "Huyện Lâm Hà",
+      "ja": "フエン・ラム・ハ",
+      "it": "Huyện Lâm Hà",
+      "zh-CN": "林河",
+      "tr": "Huyện Lâm Hà",
+      "ru": "Huyện Lâm Hà",
+      "uk": "Хуєн Лам Ха",
+      "pl": "Huyện Lâm Hà",
+      "hi": "Huyện Lâm Hà",
+      "ar": "Huyện Lâm Hà"
+    },
+    "created_at": "2019-10-06T10:37:15",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 130633
+  },
+  {
+    "id": 130400,
+    "name": "Huyện Phú Quốc",
+    "state_id": 3794,
+    "state_code": "44",
+    "country_id": 240,
+    "country_code": "VN",
+    "type": "adm2",
+    "level": null,
+    "parent_id": null,
+    "latitude": "10.25516000",
+    "longitude": "104.01455000",
+    "native": "Huyện Phú Quốc",
+    "population": 179480,
+    "timezone": "Asia/Ho_Chi_Minh",
+    "translations": {
+      "br": "Huyện Phú Quốc",
+      "ko": "후옌 푸 꾸옥",
+      "pt-BR": "Huyện Phú Quốc",
+      "pt": "Huyện Phú Quốc",
+      "nl": "Huyện Phú Quốc",
+      "hr": "Huyện Phú Quốc",
+      "fa": "هویون فو کوئوک",
+      "de": "Huyện Phú Quốc",
+      "es": "Huyện Phú Quốc",
+      "fr": "Huyện Phú Quốc",
+      "ja": "フエン・フーコック",
+      "it": "Huyện Phú Quốc",
+      "zh-CN": "富国县",
+      "tr": "Huyện Phú Quốc",
+      "ru": "Huyện Phú Quốc",
+      "uk": "Хуєн Фукуок",
+      "pl": "Huyện Phú Quốc",
+      "hi": "Huyện Phú Quốc",
+      "ar": "هوين فو كووك"
+    },
+    "created_at": "2019-10-06T10:37:16",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 130199
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed rows are archived here with their replacement ids.
