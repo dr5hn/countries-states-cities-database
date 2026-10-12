@@ -147958,3 +147958,35 @@ Wikidata (CC0). Matching records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## India pass 3: records still without a level
+
+### Problem
+After India pass 2 (#1972), 1,997 Indian city records had no level: towns and villages the urban-body roster did not
+reach, sub-district rows and records whose district county did not exist yet.
+
+### Fix
+**273 records typed** under the India pass 2 model as merged, each by one exact LGD match in its state and its current
+district (name or a documented transliteration, the stored point inside the district):
+- **133 urban bodies** as `municipality` at level 3 with the state's own term from the LGD (municipality 48, town panchayat 30, municipal council 13, municipal committee 10, municipal corporation 7, town municipal council 6, notified area council 6, municipality(nagar palika) 4, nagar panchayat 4, city municipal council 3, town committee 1, municipal board 1);
+- **105 villages and 35 census towns** from the LGD village roster as `locality / village` or `locality / census town`
+  (only where the LGD name carries the official (CT) form) at level 4, with no parent as the sub-district tier is not stored.
+
+273 county links to the existing district counties. **22 Wikidata ids set** (the only item carrying the body's or
+village's own code) and **56 cleared** (items for another place of the same name). Points, names and states unchanged.
+
+Held (1719): 914 records whose current district has no county yet (districts created since the 2011 census, for a
+county round), records with no unique LGD match in the stored point's district, sub-district rows (a tehsil or taluk is
+not a place unless its headquarters town is matched), and possible sections of cities. The research also proposed moving
+Indian native names from Devanagari into each state's own script and replacing translations with Wikidata labels; these
+are left out because the documented rule keeps Indian natives in Devanagari, pending the owner's decision.
+
+### Sources
+Local Government Directory (https://lgdirectory.gov.in; Ministry of Panchayati Raj), districts, sub-districts, urban
+bodies and the village roster downloaded 12 October 2026, reproduced with source acknowledgement under its copyright
+policy (https://lgdirectory.gov.in/copyRightPolicy.do); codes, names, categories and hierarchy only. Wikidata (CC0).
+GeoNames (CC BY 4.0) transliterations and OpenStreetMap district boundaries (ODbL) used only to check names and
+containment; nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
