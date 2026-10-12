@@ -142544,3 +142544,43 @@ CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## United States pass 3: the unlevelled records
+
+### Problem
+1,046 US city records still had no level after US passes 1-2 (#1918 and earlier), 271 of them city neighbourhoods typed
+`section` with no level and no parent.
+
+### Fix
+**391 records typed** under the US rules of passes 1-2:
+- **99 neighbourhoods** as `section` at level 4 under their city's record (Chicago 45, New York City 43, Phoenix 6, Baltimore 3, Houston 2), with the city's own term:
+  Chicago `community area` (45), New York and Baltimore `neighborhood` (46; New York by NYC Planning's 2020 neighborhood tabulation areas, the current
+  release, a statistical geography rather than legal neighbourhood boundaries), Phoenix
+  `urban village` (6), Houston `super neighborhood`; each point inside the named unit and the city.
+- **137 incorporated places and county subdivisions** at level 3 by their Census class (town 33, township 41,
+  city 27, borough 19, village 14, municipality 3): one exact current Census name (or official name form)
+  in the state with the stored point inside its TIGER/Line polygon.
+- **95 CDPs** as `locality / census designated place` and **60 GNIS populated places** as `locality / unincorporated
+  community` (one exact GNIS feature in the state within 2 km, outside any incorporated place or CDP).
+
+**261 county links** (largest land share for multi-county places) and **99 parent links**. **92 Wikidata ids set**
+(the only item with the record's Census code or GNIS id) and **62 cleared** where the item is provably another place,
+among them items copied forward from the next record (Barstow Heights had Barstow's, Kew Gardens and Kew Gardens Hills
+had Keuka Park's).
+Points are unchanged.
+
+Held (655): former Census units deleted, split or merged, and communities whose current status needs reconciling
+(the review typed four more whose current unit it proved);
+records whose own item is a county (99); GNIS points inside an incorporated place; no exact current unit or
+name form; 36 records that duplicate an already typed record for the same Census unit, plus six more the review
+found (Jefferson, Lake Purdy, Nurillo, Village Park, Waldon, Wedgewood), for the duplicates round; Okauchee Lake (inside
+an incorporated place).
+
+### Sources
+US Census Bureau 2026 Gazetteer, 2025 TIGER/Line, TIGERweb (1 January 2026) and the 2020 place-to-county relationship
+files, and USGS GNIS (September 2026): US Government works, public domain. City lists used to confirm names and containment only, nothing copied: City of Chicago
+community areas, NYC Planning neighborhood tabulation areas (NYC Open Data), City of Phoenix urban villages, City of
+Houston super neighborhoods, City of Baltimore neighborhoods. Wikidata (CC0).
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
