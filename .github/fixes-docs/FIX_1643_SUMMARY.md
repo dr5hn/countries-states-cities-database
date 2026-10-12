@@ -148202,3 +148202,396 @@ no point copied.
 
 ### Rollback
 Revert the PR (squash commit); the removed row is archived here with its replacement id.
+
+## China phase 5: Jiangsu (rest); Zhejiang held (model of #1975, #1979, #1982 and #1984)
+
+### Problem
+Jiangsu's prefectures, districts, counties and county-level cities outside the pilot (Suzhou, Huai'an, Jinhu) were city
+records: each prefecture had a prefecture row beside its city's record, and the district rows hung under the prefecture
+rows. Many rows in Jiangsu and Zhejiang carried another place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **96 Jiangsu counties** (`administrative district`, official local term, official code): 11 prefecture-level cities at level 2,
+  and their districts, counties and county-level cities at level 3, named "<Name> District / County / City"; the pilot's
+  Suzhou and Huai'an counties are kept and reused as parents. 67 carry their own Wikidata item where no city keeps it.
+- **8 prefecture rows removed for their city's record** (option (c), as Suzhou in the pilot): Nanjing, Wuxi,
+  Changzhou, Nantong, Yancheng, Yangzhou, Zhenjiang and Taizhou. Each prefecture is now a county; each city record was
+  proved by its official name and category, an exact GeoNames populated place and its own point inside the prefecture.
+- **47 district rows become sections (区)** at level 3, linked to their own county, under their city's record where it is
+  proved (Xuanwu under Nanjing) and with no city parent otherwise.
+- **17 county-level cities stay cities** (`city / 市`, level 3) linked to their own county, and the **8 prefecture cities**
+  kept above stay at level 2 linked to their prefecture county (as Suzhou); where two rows name one unit, only the older is
+  typed.
+- 64 points replaced with the unit's own open point checked inside its county; **78 items cleared** (48 other wrong
+  entities, 18 disambiguation pages, 12 district items under the model); **51 native names and translations on
+  117 records fixed** in Jiangsu and Zhejiang (e.g. Guli 古丽, Sanmao 三茅, Puyang 浦阳); every native and translation field of the 288 rows read was screened.
+
+Zhejiang's structure is held: its civil-affairs register could not be retrieved (timeouts), so only independent item
+and name fixes are made there.
+
+Held (272 records keep a hold on at least one field): all Zhejiang typing, township rows, county seats, duplicate pairs.
+
+Point ledger (every county point, every city point this PR sets or reselects for a new county link):
+[CN_phase5_points_2026-10.csv](ledgers/CN_phase5_points_2026-10.csv).
+
+### Sources
+Jiangsu Department of Civil Affairs register, 30 June 2026 edition (published 2 July 2026,
+https://mzt.jiangsu.gov.cn/art/2026/7/2/art_78635_11723214.html) and the provincial government's English names
+(https://en.jiangsu.gov.cn/col/col88907/index.html); names, codes, categories and parentage used as official facts (Copyright
+Law of the PRC, Article 5). The national Ministry of Civil Affairs edition and Zhejiang's register could not be reached.
+Points: 158 Wikidata P625 (CC0) and 10 GeoNames (https://www.geonames.org/, CC BY 4.0, copied as published,
+rounded to eight decimals); no OpenStreetMap point is copied. geoBoundaries (OSM-derived, ODbL) and, for Yixing,
+OpenStreetMap relation 5672135 (© OpenStreetMap contributors, ODbL 1.0) used only to check containment.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 149263,
+    "name": "Nanjing",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "32.04382840",
+    "longitude": "118.77886310",
+    "native": "南京",
+    "population": 9314685,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Nanjing",
+      "ko": "난징시",
+      "pt-BR": "Nanquim",
+      "pt": "Nanquim",
+      "nl": "Nanjing",
+      "hr": "Nanjing",
+      "fa": "نانجینگ",
+      "de": "Nanjing",
+      "es": "Nankín",
+      "fr": "Nankin",
+      "ja": "南京市",
+      "it": "Nanchino",
+      "zh-CN": "南京",
+      "tr": "Nankin",
+      "ru": "Нанкин",
+      "uk": "Нанкін",
+      "pl": "Nankin",
+      "hi": "नानजिंग",
+      "ar": "نانجينغ"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:42:17",
+    "flag": 1,
+    "wikiDataId": "Q16666",
+    "replacement_id": 19941
+  },
+  {
+    "id": 149264,
+    "name": "Wuxi",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "31.57766260",
+    "longitude": "120.29527520",
+    "native": "无锡",
+    "population": 7462135,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Wuxi",
+      "ko": "우시시",
+      "pt-BR": "Wuxi",
+      "pt": "Wuxi",
+      "nl": "Wuxi",
+      "hr": "Wuxi",
+      "fa": "ووشی",
+      "de": "Wuxi",
+      "es": "Wuxi",
+      "fr": "Wuxi",
+      "ja": "無錫市",
+      "it": "Wuxi",
+      "zh-CN": "无锡",
+      "tr": "Wuxi",
+      "ru": "Уси",
+      "uk": "Усі",
+      "pl": "Wuxi",
+      "hi": "वुक्सि",
+      "ar": "ووشي"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:39:15",
+    "flag": 1,
+    "wikiDataId": "Q42651",
+    "replacement_id": 20239
+  },
+  {
+    "id": 149266,
+    "name": "ChangZhou",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "31.81226230",
+    "longitude": "119.96915390",
+    "native": "常州",
+    "population": 5278121,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "ChangZhou",
+      "ko": "창저우시",
+      "pt-BR": "Changzhou",
+      "pt": "Changzhou",
+      "nl": "Changzhou",
+      "hr": "ChangZhou",
+      "fa": "چانگژو",
+      "de": "Changzhou",
+      "es": "Changzhou",
+      "fr": "Changzhou",
+      "ja": "常州市",
+      "it": "Changzhou",
+      "zh-CN": "常州",
+      "tr": "Changzhou",
+      "ru": "Чанчжоу",
+      "uk": "Чанчжоу",
+      "pl": "Changzhou",
+      "hi": "चंग्ज़्हौ",
+      "ar": "تشانغتشو"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:38:04",
+    "flag": 1,
+    "wikiDataId": "Q57970",
+    "replacement_id": 19379
+  },
+  {
+    "id": 149268,
+    "name": "NanTong",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "31.98278960",
+    "longitude": "120.89045880",
+    "native": "南通",
+    "population": 0,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "NanTong",
+      "ko": "난퉁",
+      "pt-BR": "Nan Tong",
+      "pt": "Nan Tong",
+      "nl": "NanTong",
+      "hr": "NanTong",
+      "fa": "نانتونگ",
+      "de": "NanTong",
+      "es": "NanTong",
+      "fr": "NanTong",
+      "ja": "南通",
+      "it": "NanTong",
+      "zh-CN": "南通",
+      "tr": "NanTong",
+      "ru": "Наньтун",
+      "uk": "Наньтун",
+      "pl": "NanTong",
+      "hi": "नान्चॉन्ग",
+      "ar": "نانتونغ"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:38:01",
+    "flag": 1,
+    "wikiDataId": "Q57947",
+    "replacement_id": 19949
+  },
+  {
+    "id": 149271,
+    "name": "Yancheng",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "33.34955900",
+    "longitude": "120.15770190",
+    "native": "盐城",
+    "population": 1615717,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Yancheng",
+      "ko": "옌청시",
+      "pt-BR": "Yancheng",
+      "pt": "Yancheng",
+      "nl": "Yancheng",
+      "hr": "Yancheng",
+      "fa": "یانچنگ",
+      "de": "Yancheng",
+      "es": "Yancheng",
+      "fr": "Yancheng",
+      "ja": "塩城市",
+      "it": "Yancheng",
+      "zh-CN": "盐城",
+      "tr": "Yancheng",
+      "ru": "Яньчэн",
+      "uk": "Яньчен",
+      "pl": "Yancheng",
+      "hi": "यांचेंग",
+      "ar": "يانتشنغ"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q57866",
+    "replacement_id": 20340
+  },
+  {
+    "id": 149272,
+    "name": "Yangzhou",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "32.39685540",
+    "longitude": "119.40776580",
+    "native": "扬州",
+    "population": 4559797,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Yangzhou",
+      "ko": "양저우시",
+      "pt-BR": "Yangzhou",
+      "pt": "Yangzhou",
+      "nl": "Yangzhou",
+      "hr": "Yangzhou",
+      "fa": "یانگژو",
+      "de": "Yangzhou",
+      "es": "Yangzhou",
+      "fr": "Yangzhou",
+      "ja": "揚州市",
+      "it": "Yangzhou",
+      "zh-CN": "扬州",
+      "tr": "Yangzhou",
+      "ru": "Янчжоу",
+      "uk": "Янчжоу",
+      "pl": "Yangzhou",
+      "hi": "यांग्ज़्हौ",
+      "ar": "يانغتشو"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:38:15",
+    "flag": 1,
+    "wikiDataId": "Q57906",
+    "replacement_id": 20349
+  },
+  {
+    "id": 149273,
+    "name": "ZhenJiang",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "32.18919590",
+    "longitude": "119.42000690",
+    "native": "镇江",
+    "population": 3210418,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "ZhenJiang",
+      "ko": "전장시",
+      "pt-BR": "Zhenjiang",
+      "pt": "Zhenjiang",
+      "nl": "Zhenjiang",
+      "hr": "ZhenJiang",
+      "fa": "جنجیانگ",
+      "de": "Zhenjiang",
+      "es": "Zhenjiang",
+      "fr": "Zhenjiang",
+      "ja": "鎮江市",
+      "it": "Zhenjiang",
+      "zh-CN": "镇江",
+      "tr": "Zhenjiang",
+      "ru": "Чжэньцзян",
+      "uk": "Чженьцзян",
+      "pl": "Zhenjiang",
+      "hi": "ज़हेनजियांग",
+      "ar": "تشنجيانغ"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-11-26T18:38:06",
+    "flag": 1,
+    "wikiDataId": "Q57958",
+    "replacement_id": 20441
+  },
+  {
+    "id": 149274,
+    "name": "TaiZhou",
+    "state_id": 2250,
+    "state_code": "JS",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "32.45797290",
+    "longitude": "119.91811740",
+    "native": "台州",
+    "population": 0,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "TaiZhou",
+      "ko": "타이저우",
+      "pt-BR": "Taizhou",
+      "pt": "Taizhou",
+      "nl": "TaiZhou",
+      "hr": "TaiZhou",
+      "fa": "تایژو",
+      "de": "TaiZhou",
+      "es": "Tai Zhou",
+      "fr": "Taizhou",
+      "ja": "泰州",
+      "it": "Taizhou",
+      "zh-CN": "台州",
+      "tr": "TaiZhou",
+      "ru": "Тайчжоу",
+      "uk": "Тайчжоу",
+      "pl": "TaiZhou",
+      "hi": "ताइझोउ",
+      "ar": "تايتشو"
+    },
+    "created_at": "2025-05-06T04:43:47",
+    "updated_at": "2025-12-02T14:39:31",
+    "flag": 1,
+    "wikiDataId": "Q24809",
+    "replacement_id": 20163
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed prefecture rows are archived here with their replacement ids; new county ids
+are 12062-12157.
