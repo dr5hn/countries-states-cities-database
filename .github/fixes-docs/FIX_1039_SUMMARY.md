@@ -200,3 +200,90 @@ statistical approximation, not Australia Post's delivery list.
 
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source is not open).
+
+## Spain: real postcodes from CartoCiudad (owner decision of 12 Oct 2026)
+
+### Problem
+All 8,124 Spanish "postcodes" were INE municipality codes, not postcodes: 01001 was Alegría-Dulantzi, whose postcodes are
+01193 and 01240 (decision review decisions_1).
+
+### Fix
+The 8,124 rows are removed and **10,851 real postcodes** created, one per distinct five-digit code found on the 15,618,724
+addresses of CartoCiudad's 52 province files (layer `portalpk_publi`, field `cod_postal`; 325 empty or malformed values
+skipped). Each row has source `cartociudad`; **10,704** carry their province (state) because all their addresses lie in one
+province, taken from each file's province label (147 codes span provinces, 2 of them three, and have none);
+**6,381** link to their municipality's city record because all their addresses lie in one municipality whose CSC record
+is verified by its INE code; `locality_name` is that municipality's name where there is only one. The point is the mean
+of the code's address points (ETRS89, or REGCAN95 in the Canaries), a derived value; it is withheld (null) on 26 codes
+where that mean falls outside Spain or outside the code's own province or municipality. Leading zeros are kept. New rows
+get new ids on import: the 8,124 old ids were municipality identities and are not reused. The removed rows were not
+postcodes, so they are not archived here; they stay in git history. This is the source's address coverage of April
+2026, not a certified copy of Correos' delivery list.
+
+Ledger: per postcode (addresses, points, provinces, INE municipalities, source files) in
+[ES_postcodes_cartociudad_2026-04.csv](ledgers/ES_postcodes_cartociudad_2026-04.csv); per source file (full SHA-256, bytes, edition, local
+retrieval time, licence, method) in [ES_postcodes_cartociudad_2026-04.sources.json](ledgers/ES_postcodes_cartociudad_2026-04.sources.json).
+
+| Province | Addresses | Codes |
+| --- | ---: | ---: |
+| Araba/Álava | 52,528 | 84 |
+| Albacete | 188,636 | 134 |
+| Alacant/Alicante | 558,417 | 213 |
+| Almería | 296,709 | 166 |
+| Asturias | 336,086 | 401 |
+| Ávila | 191,378 | 148 |
+| A Coruña | 317,927 | 377 |
+| Badajoz | 338,650 | 214 |
+| Illes Balears | 418,098 | 159 |
+| Barcelona | 1,165,281 | 394 |
+| Burgos | 270,877 | 222 |
+| Cáceres | 285,310 | 244 |
+| Cádiz | 376,772 | 115 |
+| Cantabria | 203,616 | 216 |
+| Castelló/Castellón | 262,806 | 134 |
+| Ceuta | 7,469 | 5 |
+| Ciudad Real | 246,473 | 130 |
+| Córdoba | 302,102 | 142 |
+| Cuenca | 213,797 | 182 |
+| Girona | 374,999 | 253 |
+| Granada | 441,330 | 200 |
+| Guadalajara | 225,663 | 181 |
+| Gipuzkoa | 71,266 | 113 |
+| Huelva | 247,480 | 103 |
+| Huesca | 118,006 | 272 |
+| Jaén | 301,934 | 173 |
+| Las Palmas | 245,149 | 144 |
+| La Rioja | 143,770 | 130 |
+| León | 360,864 | 418 |
+| Lleida | 218,832 | 303 |
+| Lugo | 216,443 | 462 |
+| Madrid | 930,532 | 306 |
+| Málaga | 519,814 | 160 |
+| Melilla | 11,674 | 6 |
+| Murcia | 479,813 | 212 |
+| Navarra | 177,712 | 265 |
+| Ourense | 233,419 | 296 |
+| Palencia | 111,279 | 132 |
+| Pontevedra | 336,530 | 378 |
+| Salamanca | 232,766 | 274 |
+| Segovia | 145,906 | 203 |
+| Sevilla | 683,257 | 155 |
+| Soria | 114,248 | 97 |
+| Tarragona | 368,257 | 213 |
+| Santa Cruz de Tenerife | 283,015 | 216 |
+| Teruel | 129,684 | 210 |
+| Toledo | 446,892 | 235 |
+| València/Valencia | 710,063 | 298 |
+| Valladolid | 175,995 | 192 |
+| Bizkaia | 97,331 | 144 |
+| Zamora | 199,413 | 297 |
+| Zaragoza | 232,456 | 279 |
+
+### Sources
+Obra derivada de CartoCiudad 2026 CC-BY 4.0 scne.es: CartoCiudad province GeoPackages, edition 04/2026, Centro de
+Descargas del CNIG (https://centrodedescargas.cnig.es/CentroDescargas/cartociudad), licensed under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/). Modification: addresses aggregated to one row per postcode, with the
+province, single municipality and mean point derived as described.
+
+### Rollback
+Revert the PR (squash commit).
