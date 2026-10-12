@@ -147958,3 +147958,36 @@ Wikidata (CC0). Matching records is CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); removed rows are archived in this file with their replacement ids.
+
+## India pass 4: the missing district counties and the records waiting for them
+
+### Problem
+India pass 2 (#1972) created 595 district counties and held 188 (161 because the district's Wikidata item sits on a city
+record, 27 for want of an open point). India pass 3 (#1981) held 914 records only because their district had no county.
+
+### Fix
+**188 district counties** as pass 2 (`administrative district / district`, level 2, LGD district code in the evidence),
+among them districts created since 2011 (Markapuram, Polavaram, North Delhi). Under the China rule (#1975, #1979) a county
+takes its own Wikidata item only where no city or county keeps it: 18 do, 170 stay null (no item moves off a city).
+Points copied from open sources and checked inside the district boundary: 162 Wikidata P625, 15 GeoNames ADM2 and
+11 named OpenStreetMap nodes (a representative point, not the district headquarters).
+
+**413 records typed** in the new districts by the India pass 3 test (one exact LGD match in the checked current district):
+248 urban bodies as `municipality` with the state's own term (level 3), 113 villages and 52 census towns as `locality`
+(level 4); each linked to its county. Names, native names (Devanagari), translations, items, points and states unchanged.
+
+Held (501): several LGD places of the same name in the district, no exact name, sub-district rows without a matched
+headquarters town, possible sections; one district (no open point).
+
+Point ledger (every county point: source, feature, edition, retrieval, hash, licence, method):
+[IN_district_points_2026-10.csv](ledgers/IN_district_points_2026-10.csv).
+
+### Sources
+Local Government Directory (https://lgdirectory.gov.in; Ministry of Panchayati Raj), owner download of 12 October 2026,
+reproduced with source acknowledgement under its copyright policy (https://lgdirectory.gov.in/copyRightPolicy.do); codes,
+names, categories and hierarchy only. Points: Wikidata P625 (CC0); GeoNames (https://www.geonames.org/, CC BY 4.0, copied
+as published, rounded to eight decimals); OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0). OpenStreetMap
+district boundaries used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes on cities; new county ids are 11722-11909.
