@@ -200,3 +200,85 @@ statistical approximation, not Australia Post's delivery list.
 
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source is not open).
+
+## Spain: real postcodes from CartoCiudad (owner decision of 12 Oct 2026)
+
+### Problem
+All 8,124 Spanish "postcodes" were INE municipality codes, not postcodes: 01001 was Alegría-Dulantzi, whose postcodes are
+01193 and 01240 (decision review decisions_1).
+
+### Fix
+The 8,124 rows are removed and **10,851 real postcodes** created, one per distinct five-digit code found on the 15,618,724
+addresses of CartoCiudad's 52 province files (layer `portalpk_publi`, field `cod_postal`; 325 empty or malformed values
+skipped). Each row has source `cartociudad`; **10,675** carry their province (state) because all their addresses lie in one
+province (176 codes span two provinces and have none); **6,313** link to their municipality's city record because all
+their addresses lie in one municipality whose CSC record is verified by its INE code; `locality_name` is that
+municipality's name where there is only one. The point is the mean of the code's address points (ETRS89, or REGCAN95 in
+the Canaries), a derived value. Leading zeros are kept. New rows get their ids on import. The removed rows were not
+postcodes, so they are not archived here; they stay in git history.
+
+Per-postcode ledger (addresses, provinces, INE municipalities): [ES_postcodes_cartociudad_2026-04.csv](ledgers/ES_postcodes_cartociudad_2026-04.csv).
+
+| Province file | Addresses | Codes | SHA-256 |
+| --- | ---: | ---: | --- |
+| ALAVA | 52,528 | 84 | `1aa868bca107fb09…` |
+| ALBACETE | 188,636 | 134 | `2cb0a5c102ba5580…` |
+| ALICANTE | 558,417 | 213 | `832cb97543a19226…` |
+| ALMERIA | 296,709 | 166 | `514440306cc7a743…` |
+| ASTURIAS | 336,086 | 401 | `51769566d87c49c7…` |
+| AVILA | 191,378 | 148 | `e291f83a403e4d8c…` |
+| A_CORUNA | 317,927 | 377 | `8f6d92669e76bf59…` |
+| BADAJOZ | 338,650 | 214 | `ea92b9f68ff4bb24…` |
+| BALEARES | 418,098 | 159 | `9d04c9f1544c5095…` |
+| BARCELONA | 1,165,281 | 394 | `02d0467ae327cd8d…` |
+| BURGOS | 270,877 | 222 | `de2c6fc414f7b6f5…` |
+| CACERES | 285,310 | 244 | `7b6c914e085b5877…` |
+| CADIZ | 376,772 | 115 | `d0987a18be27cada…` |
+| CANTABRIA | 203,616 | 216 | `3023a148b8a58e75…` |
+| CASTELLON | 262,806 | 134 | `0a7969df94ba5259…` |
+| CEUTA | 7,469 | 5 | `f1a69367295364a4…` |
+| CIUDAD_REAL | 246,473 | 130 | `595b17942d1ba5ae…` |
+| CORDOBA | 302,102 | 142 | `783115d1bea83d18…` |
+| CUENCA | 213,797 | 182 | `edd45b3d95a282c7…` |
+| GIRONA | 374,999 | 253 | `372115ef433c67f4…` |
+| GRANADA | 441,330 | 200 | `9a62e8b256e2d310…` |
+| GUADALAJARA | 225,663 | 181 | `ff6b0be5607a0770…` |
+| GUIPUZCOA | 71,266 | 113 | `7d14178d399f48e6…` |
+| HUELVA | 247,480 | 103 | `74fbfbcaf51c57ef…` |
+| HUESCA | 118,006 | 272 | `776b7ad0463b50fe…` |
+| JAEN | 301,934 | 173 | `5abc21fd6603152f…` |
+| LAS_PALMAS | 245,149 | 144 | `d7034840e1c4f147…` |
+| LA_RIOJA | 143,770 | 130 | `47aafcfd3f1c056e…` |
+| LEON | 360,864 | 418 | `5ffa5c9614a59725…` |
+| LLEIDA | 218,832 | 303 | `8e5eca4a9b6a54d5…` |
+| LUGO | 216,443 | 462 | `3d2d91c3923b9500…` |
+| MADRID | 930,532 | 306 | `78ccfc557dbf72aa…` |
+| MALAGA | 519,814 | 160 | `0e93e8e5fdf42bb9…` |
+| MELILLA | 11,674 | 6 | `b8b27aca6e76cd7f…` |
+| MURCIA | 479,813 | 212 | `87aa80d3fc1cb7b2…` |
+| NAVARRA | 177,712 | 265 | `9da824010261454a…` |
+| OURENSE | 233,419 | 296 | `fd12e96f6e8ea400…` |
+| PALENCIA | 111,279 | 132 | `12fb806d53690413…` |
+| PONTEVEDRA | 336,530 | 378 | `8ad77902ddfc593a…` |
+| SALAMANCA | 232,766 | 274 | `8dda47787b867bb2…` |
+| SEGOVIA | 145,906 | 203 | `fe7b386a3c33a49c…` |
+| SEVILLA | 683,257 | 155 | `1d0feef80cf1a596…` |
+| SORIA | 114,248 | 97 | `dcc75aa273669665…` |
+| TARRAGONA | 368,257 | 213 | `7aa8f388d52d4b4c…` |
+| TENERIFE | 283,015 | 216 | `7defaf4a20773e86…` |
+| TERUEL | 129,684 | 210 | `1dd0fb2402a118ed…` |
+| TOLEDO | 446,892 | 235 | `8f383a826a4bcb7a…` |
+| VALENCIA | 710,063 | 298 | `c3e61fb9c4e7fea8…` |
+| VALLADOLID | 175,995 | 192 | `27ffb166f9bac4fd…` |
+| VIZCAYA | 97,331 | 144 | `a0901f84d3090de2…` |
+| ZAMORA | 199,413 | 297 | `3733959648c0e92c…` |
+| ZARAGOZA | 232,456 | 279 | `b48b914c9958e03a…` |
+
+### Sources
+Obra derivada de CartoCiudad 2026 CC-BY 4.0 scne.es: CartoCiudad province GeoPackages, edition 04/2026, Centro de
+Descargas del CNIG (https://centrodedescargas.cnig.es/CentroDescargas/cartociudad), licensed under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/). Modification: addresses aggregated to one row per postcode, with the
+province, single municipality and mean point derived as described.
+
+### Rollback
+Revert the PR (squash commit).
