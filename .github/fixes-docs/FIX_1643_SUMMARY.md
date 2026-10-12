@@ -141560,3 +141560,47 @@ Wikidata (CC0) and GeoNames (CC BY 4.0) for identities and points. Matching them
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Brazil pass 2: the unlevelled records
+
+### Problem
+411 Brazilian city records had no level after the Brazil pilot (#1797): municípios whose Wikidata item carried no IBGE
+code or another place's code, and records that are not municípios (districts, bairros, villages).
+
+### Fix
+**328 records typed** under the pilot's rules: 305 `municipality / município` (level 2) from IBGE's territorial
+division (DTB 2025, reference date 31 December 2025), each matched through the IBGE code (P1585) on exactly one active
+Wikidata item, confirmed by name, estado and the 2025 municipal polygon; 1 `section / distrito` (level 3, Jardim
+Paulista under São Paulo, DTB 2025 and São Paulo Lei 11.220/1992); 14 `section / bairro` (level 4: 13 Florianópolis
+bairros by its 2026 district decree, São Pedro in Teresópolis from the Censo 2022 bairros); 8 `locality` by the IBGE
+Censo 2022 locality term (3 povoado, 3 vila, 2 outras localidades; level 4, one
+below their distrito). 2 parent links, each exactly one level up; the others have no CSC record for their distrito.
+A record named as its município and carrying the município's own item is the município (owner decision of 10 Oct).
+
+**299 Wikidata ids set** (each record's own item by its IBGE code; correct own items under another name form and
+correct redirects are kept) and **13 cleared** where the item is provably another place. **4 points** moved
+to their own item's Wikidata point (P625, CC0) where the stored point lay outside their own municipality and the
+new point lies inside it.
+
+Held (83): 7 records whose IBGE code or item is that of a município that already has a typed record (Altônia,
+Belém de São Francisco, Brodósqui, Embu das Artes, Itamaracá, Lagoa do Itaenga, Campo Grande RN / Augusto Severo): a
+duplicates round settles whether each pair is one place; Brasília, Fernando de Noronha and Planaltina DF (legal term and depth need a decision); município or
+seat identity not settled by an own code; no exact coded locality or section; points outside their own municipality
+with no single open replacement. Nine Wikidata items already shared by two Brazilian records on master (these pairs
+and Batayporã, Ipaussu/Ipauçu, Piumhi, Poxoréu, Santa Terezinha) are unchanged here and go to the same duplicates round.
+
+### Sources
+Instituto Brasileiro de Geografia e Estatística (IBGE):
+[DTB 2025](https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip)
+and the [Censo 2022 localities](https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/),
+districts and bairros, public IBGE data with no explicit standard licence, used for category, code and hierarchy facts
+only (no source name, point or geometry copied);
+[Malha Municipal 2025](https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip),
+"licença compatível com Creative Commons BY 4.0" per its [technical note](https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf),
+for containment checks only. Florianópolis [Decreto 29.142/2026](https://strapi.redeplanejamento.pmf.sc.gov.br/uploads/Decreto_n_29_142_2026_4bcc423a61.pdf)
+and São Paulo [Lei 11.220/1992](https://legislacao.prefeitura.sp.gov.br/lei-11220-de-20-de-maio-de-1992) (official acts).
+Wikidata (CC0) for items and the 4 points; GeoNames ([CC BY 4.0](https://download.geonames.org/export/dump/readme.txt))
+for source identity checks.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
