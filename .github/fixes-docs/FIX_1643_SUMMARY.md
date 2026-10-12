@@ -139354,3 +139354,25 @@ CSC's own processing.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Honduras pass 2: municipios and aldeas
+
+### Problem
+After the Honduras pilot (#1884: 129 municipios, 2 aldeas), 414 Honduran records had no level.
+
+### Fix
+**215 records typed** as the pilot: 159 `municipality / municipio` at level 2 (by INE Honduras's municipio codes; a municipio record and
+its town of the same name stay separate scopes) and 56 `village / aldea` at level 3 under their municipio's record (56 parent links).
+Honduras then has records for 288 of its 298 municipios.
+
+Held (199): unresolved source identities, point or state conflicts, conflicting INE codes, records whose parent one
+level up has no record, and town records without a verified official category. Caserío codes are available (INE 2013,
+via UNAH); the seven matched caseríos wait until their aldea has a record, so no tier is skipped. Most new municipio
+records have no Wikidata item yet; each is identified by its INE code and boundary.
+
+### Sources
+INE Honduras municipio codes and 2013 census places (facts only; no open licence verified); GeoNames (CC BY 4.0) and
+Wikidata (CC0) for identities; UNAH's map service only to check. Matching them to records is CSC's own processing.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
