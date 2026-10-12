@@ -148802,3 +148802,29 @@ reference check; no point generated from it.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived here with their replacement ids.
+
+## China phase 7: Hebei and Henan, names and items only
+
+### Problem
+Hebei's and Henan's city records carry wrong Chinese names, machine-translated labels and Wikidata items for other places.
+Their structure (counties, sections, county-level cities) waits for the provincial registers, which could not be
+retrieved from either civil-affairs site.
+
+### Fix
+Name and item repairs only; no county, typing, link, point or removal:
+- **108 native names and translation maps on 233 records fixed** (234 records in all; wrong characters, namesakes,
+  machine translations, obsolete categories), mostly by the place's own Wikidata name, code and parent and exact named
+  GeoNames places, and for some by government town or history publications and the 2013 English trademark report
+  (Zhaoling District, Luohe); Linxi 林西 corrected in review; 1 primary name corrected.
+- **87 Wikidata items cleared**: 41 items for another place, unit, province or concept, and 46 disambiguation pages. No new item is set.
+
+Held (412 records): all structural changes in both provinces until the registers are retrieved. The Hebei civil-affairs
+register (30 June 2026, published 3 July) is readable in a news republication of its 44 pages, but the original attachment
+could not be retrieved and the pages are not yet extracted; Henan's site returns 403.
+
+### Sources
+Wikidata (CC0) names, codes and parents and GeoNames (CC BY 4.0) named places for spelling and identity; municipal
+government town and history publications and the 2013 English trademark report (facts); no point or geometry copied.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
