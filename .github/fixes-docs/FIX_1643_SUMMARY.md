@@ -141604,3 +141604,40 @@ for source identity checks.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## Mexico pass 3: the still unlevelled records
+
+### Problem
+582 Mexican city records still had no level after Mexico pass 2 (#1925).
+
+### Fix
+**117 records typed** under the pilot's rules (#1794) from the current INEGI catalogue (AGEEML, June 2026 municipios,
+August 2026 localidades): 19 `municipality / municipio` at level 2 and 98 localidades at level 3
+(`locality / localidad urbana` 54, `localidad rural` 44, by INEGI's ámbito). Each is matched by the INEGI code on its own
+Wikidata item, checked against current status, name, state and the 2026 municipal polygon; by one exact official
+name in the municipio that contains its point; or (added by the review, 25 records) by a source fingerprint that prints
+both the stored name and the full INEGI name, with its point inside the same locality polygon and one active own item
+for the code. San Juan Quiahue is the municipio of San Juan Quiahije (INEGI 20213; Quiahue is the spelling CONAC and
+Oaxaca's finance office print), under the owner decision of 10 Oct. **40 parent links** to the municipio record, 16 of them on
+localidades typed earlier. **17 Wikidata ids** canonicalised or set to the record's own item and **3 cleared**
+where the item is provably another place (the records Aduana del Sásabe, Ameca and Teocaltiche carried the items of
+Adolfo Ruiz Cortines, Tala and Yahualica de González Gallo; their typing stays held). Stored points are unchanged.
+
+Held (465): no own current code or exact official name found by the literal-name screen (223; a screen,
+not proof that no official form exists), exact namesakes only in other municipios
+(65), localidades INEGI has retired (estatus Baja, 96), stored points outside their municipio
+(33), codes and points in another state (19), localidades already represented by another record
+(9, duplicates round), three more pairs that share one current locality code (Coyote / San Antonio del
+Coyote, La Isla Km 10, Santa María / Santiago Citendejé; not typed twice, for the duplicates round), and other unsettled
+identities.
+
+### Sources
+Fuente: INEGI, [Catálogo Único de Claves de Áreas Geoestadísticas Estatales, Municipales y Localidades](https://www.inegi.org.mx/app/ageeml/)
+(June/August 2026) and [Marco Geoestadístico 2026](https://www.inegi.org.mx/app/biblioteca/ficha.html?upc=794551196649),
+under INEGI's [Términos de Libre Uso](https://www.inegi.org.mx/inegi/terminos.html); the matching is CSC's own work, not
+INEGI's. Wikidata (CC0). The [GeoNames Mexico dump](https://download.geonames.org/export/dump/MX.zip)
+([CC BY 4.0](https://download.geonames.org/export/dump/readme.txt)) for names, source points and identity checks; no point
+is copied.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
