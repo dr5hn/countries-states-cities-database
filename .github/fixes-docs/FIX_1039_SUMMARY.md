@@ -169,3 +169,34 @@ Posti covers Åland at postcode level only, without streets, so a code's full mu
 
 ### Rollback
 Revert the PR (squash commit); `city_id` is optional.
+
+## Australia: postcodes from open sources (owner decision of 12 Oct 2026)
+
+### Problem
+The 3,175 Australian postcodes came from a community copy of Australia Post's list, which is licensed for commercial
+use and not for redistribution; the README's "Australia Post Boundaries, CC-BY 4.0" could not be confirmed.
+
+### Fix
+**3173 postcodes kept**, each re-sourced to an openly licensed source that lists it: 2641 from the Australian Bureau of
+Statistics Postal Areas 2021 (`abs-poa-2021`), 530 PO-box and other non-street codes from the GeoNames postal code dump
+(`geonames-postal`), 0200 (Australian National University) from Wikidata (`wikidata`) and 9726 (Gold Coast MC) from an
+author's published address under CC BY 4.0 (`sattler-2019-bmc`). The mirror's locality names and points are cleared on
+every row: none of these sources gives an open locality name or point for the postcode area, and none is generated.
+18 codes lose their state: 15 postal areas span more than one state or territory and 3 lie in Other Territories.
+**2 codes removed** (9464, 9999): none of the checked open sources (ABS POA 2021, the GeoNames postal dump,
+Wikidata, G-NAF, Queensland open data) supports them under an ODbL-compatible licence. ABS postal areas are a
+statistical approximation, not Australia Post's delivery list.
+
+### Sources
+- Australian Bureau of Statistics, Postal Areas (POA) 2021 and the POA 2021 Mesh Block allocation file (ASGS Edition 3,
+  July 2021), © Commonwealth of Australia (ABS), licensed under CC BY 4.0
+  (https://creativecommons.org/licenses/by/4.0/); codes and states taken, names and points not.
+- GeoNames postal code dump for AU (https://download.geonames.org/export/zip/), CC BY 4.0 per its readme; codes only.
+- Wikidata (CC0): Q127990's postal code qualifier 0200.
+- Sattler, Hing and Vertullo, BMC Musculoskeletal Disorders 2019 (https://doi.org/10.1186/s12891-019-2415-5), CC BY 4.0:
+  postcode 9726 in an author address.
+- Modification: one row per code, the source tag set, names and points removed. G-NAF was checked; its end-user licence
+  adds a condition ODbL cannot carry, so nothing is taken from it.
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source is not open).
