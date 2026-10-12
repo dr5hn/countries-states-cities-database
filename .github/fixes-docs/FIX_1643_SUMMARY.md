@@ -148828,3 +148828,28 @@ government town and history publications and the 2013 English trademark report (
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes.
+
+## China phase 9: Sichuan and Yunnan, names and items only
+
+### Problem
+Sichuan's and Yunnan's city records carry wrong Chinese names, machine-translated labels and Wikidata items for other places.
+Their structure (counties, sections, county-level cities) waits for the provincial registers, which could not be
+retrieved from either civil-affairs site.
+
+### Fix
+Name and item repairs only; no county, typing, link, point or removal:
+- **117 native names and translation maps on 235 records fixed** (235 records in all; wrong characters, namesakes,
+  machine translations, obsolete categories), mostly by the place's own Wikidata name, code and parent and exact named
+  GeoNames places.
+- **114 Wikidata items cleared**: 34 items for another place, unit, province or concept, and 80 disambiguation pages. No new item is set.
+
+Held (389 records): all structural changes in both provinces until the registers are retrieved. The Sichuan civil-affairs
+register (June 2026 edition) and the Yunnan register (3 August 2026) could not be retrieved: both civil-affairs sites
+timed out.
+
+### Sources
+Wikidata (CC0) names, codes and parents and GeoNames (CC BY 4.0) named places for spelling and identity; municipal
+government publications where cited (facts); no point or geometry copied.
+
+### Rollback
+Revert the PR (squash commit); no `id` changes.
