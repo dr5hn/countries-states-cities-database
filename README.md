@@ -210,6 +210,12 @@ Data by Countries States Cities Database
 https://github.com/dr5hn/countries-states-cities-database | ODbL v1.0
 ```
 
+Some records also carry names or points copied from open sources that ask for credit: [GeoNames](https://www.geonames.org/)
+([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
+(ODbL 1.0) and [Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing) (CC0). Points are selected per record and
+rounded to eight decimals; the per-record source ledgers are in [.github/fixes-docs/ledgers/](.github/fixes-docs/ledgers/).
+Keep these credits when you redistribute the data.
+
 ---
 
 ## Support

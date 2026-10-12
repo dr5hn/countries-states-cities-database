@@ -14,7 +14,7 @@ similar units. ISO-listed subdivisions stay in `states`; settlements stay in `ci
 | `type`, `type_local` | nullable string, max 191 | Standard English term and official local term. See the policy's allowed county types. |
 | `level` | nullable integer | Depth in the country's official hierarchy, starting at 1. |
 | `parent_id` | nullable positive integer | Another county directly above this unit; null when its parent is a state. |
-| `latitude`, `longitude` | decimal strings | Required centroid coordinates, within −90…90 and −180…180. |
+| `latitude`, `longitude` | decimal strings | Required representative point inside the unit (copied from an open source, not necessarily a calculated centroid), within −90…90 and −180…180. |
 | `native` | nullable string, max 255 | Native name. |
 | `population` | nullable nonnegative integer | Population when known. |
 | `timezone` | nullable string, max 255 | IANA timezone. |
