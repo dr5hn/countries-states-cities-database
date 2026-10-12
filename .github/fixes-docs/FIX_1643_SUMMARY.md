@@ -148595,3 +148595,41 @@ OpenStreetMap relation 5672135 (© OpenStreetMap contributors, ODbL 1.0) used on
 ### Rollback
 Revert the PR (squash commit); the removed prefecture rows are archived here with their replacement ids; new county ids
 are 12062-12157.
+
+## China phase 6: Liaoning and Jilin (model of #1975 to #1986)
+
+### Problem
+Liaoning's and Jilin's prefectures, districts, counties and county-level cities were city records, many with another
+place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **183 counties** (`administrative district`, official local term, official code): Liaoning 114 and Jilin 69; 23 prefecture-level
+  units (including the Yanbian Korean Autonomous Prefecture) at level 2, and their districts, counties, autonomous counties
+  and county-level cities at level 3, named "<Name> District / County / City". 119 carry their own Wikidata item where no
+  city keeps it.
+- **77 district rows become sections (区)** at level 3, linked to their own county; 0 under their city's record where it is
+  proved, the rest with no city parent yet.
+- **35 county-level cities stay cities** (`city / 市`, level 3) linked to their own county.
+- 110 points replaced with the unit's own open point checked inside its county; **102 items cleared** (51 other wrong
+  entities, including a person, 28 disambiguation pages, 23 district items under the model); **63 native names and
+  translations on 125 records fixed**; every native and translation field of the 256 rows read was screened.
+
+No row is removed and no prefecture row is converted (their city counterparts are not proved).
+
+Held (256 records keep a hold on at least one field): prefecture rows, township rows, county seats, duplicate pairs.
+
+Point ledger (every county point and every city point this PR sets or reselects for a new county link):
+[CN_phase6_points_2026-10.csv](ledgers/CN_phase6_points_2026-10.csv).
+
+### Sources
+Liaoning Department of Civil Affairs register, 30 June 2026 edition (published 1 July 2026,
+https://mzt.ln.gov.cn/mzt/zfxxgk/fdzdgknr/lzyj/mztgfxwj/gggs/2026063015091795886/); Jilin Department of Civil Affairs
+register published 28 July 2026 (https://mzt.jl.gov.cn/mztyw_74291/qhdm/fgwj/202607/t20260728_9671500.html); names, codes,
+categories and parentage used as official facts (Copyright Law of the PRC, Article 5). The national Ministry of Civil
+Affairs edition could not be reached. Points: 279 Wikidata P625 (CC0), 10 GeoNames (https://www.geonames.org/, CC BY 4.0,
+copied as published, rounded to eight decimals), 6 OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12158-12340.
