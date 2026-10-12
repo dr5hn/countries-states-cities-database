@@ -148043,3 +148043,44 @@ district boundaries used only to check containment.
 
 ### Rollback
 Revert the PR (squash commit); no `id` changes on cities; new county ids are 11722-11909.
+
+## China phase 4: Shandong; Heilongjiang held (model of #1975, #1979 and #1982)
+
+### Problem
+Shandong's prefectures, districts, counties and county-level cities were city records, many with another place's
+Wikidata item or a wrong Chinese name; Heilongjiang's records have the same problems.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **152 Shandong counties** (`administrative district`, official local term, official code): 16 prefecture-level cities at level 2,
+  and the districts, counties and county-level cities at level 3 under their prefecture, named "<Name> District / County /
+  City". 101 carry their own Wikidata item where no city keeps it.
+- **53 district rows become sections (区)** at level 3, linked to their own county, with no city parent yet.
+- **26 county-level cities stay cities** (`city / 市`, level 3) linked to their own county. Where two rows name one unit
+  (25 groups), only the older is typed; the other is held for the duplicates round.
+- 78 points replaced with the unit's own open point checked inside its own county.
+- **155 items cleared** (97 other wrong entities, such as Taikang's Qitaihe, 46 disambiguation pages, and 12 district items
+  under the model: eleven moved to their county, Penglai's withheld as other rows keep it) and
+  **130 native names and translations on 232 records fixed** across Shandong and Heilongjiang (wrong characters, namesakes,
+  machine translations, misspelt romanisations, obsolete county categories such as Nenjiang 嫩江市 and Chiping, now a
+  district); every native and translation field of the 422 rows read was screened; unverified variants are not certified.
+
+Heilongjiang's structure is held: its civil-affairs register (December 2025) could not be retrieved (gateway errors and
+timeouts), so only its independent item and name fixes are made. No row is removed and no prefecture row is converted.
+
+Held (378 records keep a hold on at least one field): all Heilongjiang typing, prefecture rows, township rows, county
+seats and duplicate pairs.
+
+Point ledger (every county point, every city point this PR sets, and Zoucheng's unchanged point reselected for its county
+link: source item or feature, revision, licence, method):
+[CN_phase4_points_2026-10.csv](ledgers/CN_phase4_points_2026-10.csv).
+
+### Sources
+Shandong Department of Civil Affairs register, 31 December 2025 edition (http://mzt.shandong.gov.cn/art/2025/12/31/art_15318_10333878.html);
+names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). The national
+Ministry of Civil Affairs edition and Heilongjiang's register could not be reached. Points: Wikidata P625 (CC0); GeoNames
+(https://www.geonames.org/, CC BY 4.0, copied as published, rounded to eight decimals) and OpenStreetMap nodes
+(© OpenStreetMap contributors, ODbL 1.0) where used. geoBoundaries used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 11910-12061.
