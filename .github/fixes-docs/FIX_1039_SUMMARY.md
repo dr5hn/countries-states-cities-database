@@ -287,3 +287,25 @@ province, single municipality and mean point derived as described.
 
 ### Rollback
 Revert the PR (squash commit).
+
+## India: PIN codes linked to their city (LGD)
+
+### Problem
+India's 19,100 PIN codes (source India Post) had no city link. India pass 2 (#1972) gave 2,343 Indian city records their
+official LGD code (urban local body or village), and the LGD publishes which PIN codes serve each body and village.
+
+### Fix
+**2,689 PIN codes linked** (`city_id`) to the one typed CSC city whose LGD code the LGD maps to that PIN, where the PIN's
+state agrees with the city's. **12 PIN codes get their state corrected or filled** where every LGD mapping row puts the PIN
+in one state and the stored locality corroborates it. Nothing else changes; no PIN is added or removed.
+
+Held (16,411): PINs that no typed CSC city maps to (most: the places they serve have no typed record yet), PINs absent from
+the LGD mapping files, PINs that map to more than one typed city or state, and state disagreements without corroboration.
+A link means the PIN serves that city's area; a PIN can also serve villages not in the dataset.
+
+### Sources
+Local Government Directory (lgdirectory.gov.in), Ministry of Panchayati Raj: "Pincode to Urban Mapping" and "Pincode to
+Village Mapping", downloaded 12 Oct 2026 (facts: codes and their links; the terms recorded in the India research).
+
+### Rollback
+Revert the PR (squash commit).
