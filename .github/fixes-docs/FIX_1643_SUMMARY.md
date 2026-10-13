@@ -157823,3 +157823,45 @@ clock histories. Past decisions kept: #99 and #102, #337 and #1025, #1184 and #1
 
 ### Rollback
 Revert the PR (squash commit); no data changes.
+
+## Special territories, round 2: Crimea and Sevastopol under KATOTTG; two West Bank settlements
+
+### Problem
+Most Crimean and Sevastopol records used Russian-style romanisations and many carried another place's Wikidata item
+(286 were held in #2005 for sharing one), against the stance that places in Ukraine follow Ukraine's own codifier.
+Two Israeli settlements in the West Bank, Har Adar and Modiin Ilit, were stored under Israel, and East Jerusalem's
+clock was Gaza's.
+
+### Fix
+- **Crimea and Sevastopol (309 records):** 283 names set to the official romanisation of the record's own
+  KATOTTG name (Resolution 55), only where the KATOTTG code matches, e.g. Armyansk → Armiansk, Feodosiya → Feodosiia, Yevpatoriya → Yevpatoriia. **24 of them are renames
+  enacted by Ukrainian law and recorded in KATOTTG, most restoring Crimean Tatar names in place of Soviet-era ones:**
+  Frunze → Bahaily, Ilychyovo → Kara-Kuiu, Kalinino → Umiut, Kirovskoye → Isliam-Terek, Leninskoye → Kyr-Bailar, Voykovo → Katyrlez, Kuibyshevo → Albat, Pravda → Der-Emes, Lenino → Yedy-Kuiu, Ostrovskoye → Kyiat, Zavet-Leninskiy → Kuchuk-Alkaly, Krasnoznamenka → Staryi Mlyn, Komsomol’skoye → Bakachyk-Kyiat, Stakhanovka → Beshuili-Iliak, Chapayevka → Cherkez-Tobai, Oktyabr'skoye → Melek-Chesme, Krasnoarmeyskoye → Myrza-Koiash, Pionerskoye → Dzholman, Sovkhoznoye → Karakul, Krasnoperekops’k → Yany Kapu, Krasnoflotskoye → Kainash, Kirovo → Karsa, Ilyichevo → Kyianly, Pobednoye → Pobiedne. 120 natives set to the official Ukrainian name; 248 own Wikidata items set and 15 cleared that
+  belong to another place. On the 300 reviewed records, translations keep names attested for the same place in
+  that language, checked on the place's own item and, where needed, its articles (article qualifiers such as
+  "(Krym)" removed; labels of another place rejected): 534 values replaced and 4576 keys left out where no
+  attested name was found (consumers should fall back to `name`). Russian-language forms stay in `ru` where attested;
+  other attested exonyms stay in their language keys. No point, population, state or type changes.
+- **West Bank:** Har Adar (57475) and Modiin Ilit (57514) move from IL to PS, Jerusalem (JEM) and Ramallah and
+  al-Bireh (RBH) governorates, and from `IL.json` to `PS.json`. Both lie inside the West Bank in UN OCHA's settlement data and outside the 1949 line
+  (784 m and 2.6 km east), confirmed against the geoBoundaries governorates (checks only, nothing copied). Their Hebrew
+  names and `Asia/Jerusalem` clock stay: IANA's `Asia/Jerusalem` follows Israeli civil time, which these localities
+  use. Nirit (57526) stays held (its point is 125 m west of the line); Bāqa al-Gharbiyye (164832) is outside the West
+  Bank and stays in Israel.
+- **East Jerusalem (154002):** clock `Asia/Gaza` (the Gaza Strip's zone) to `Asia/Jerusalem`, IANA's zone for the
+  official civil time in Jerusalem. This is the one value the field can hold; IANA notes that clocks within Jerusalem
+  can differ, and Palestinian institutions there may keep `Asia/Hebron` time.
+- **Not in this PR:** the ten "Gorodskoy okrug" unit rows (109610-109619) are not removed here; their removal, each
+  pointing to its seat town as an administrative seat (not the same place), is queued for v5.0.0. 39 records
+  are held with their reasons (legacy raion and borough rows, nine Sevastopol settlements KATOTTG codes under Crimea,
+  items carried by several entities).
+
+### Sources
+Ukraine's KATOTTG, 7 July 2026, Order 1321 (Ministry for Development of Communities and Territories, CC BY 4.0,
+credited in the README); Cabinet of Ministers Resolution 55 (2010) romanisation table; Resolution 807-IX (raions);
+Wikidata items and labels (CC0), with Wikipedia articles read only to check a label (no text copied); IANA tzdb 2026e.
+Checks only, nothing copied: UN OCHA settlement and Green Line layers (no open licence established for the service) and
+geoBoundaries PSE ADM2 (CC BY 4.0).
+
+### Rollback
+Revert the PR (squash commit); no record is created or removed.
