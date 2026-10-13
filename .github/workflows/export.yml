@@ -12,11 +12,22 @@ on:
       pass:
         description: "Passcode"
         required: true
+      mode:
+        description: "candidate: build and keep the files as a workflow artifact, publish nothing; production: tag, release and export PR (current master only)"
+        required: true
+        default: candidate
+        type: choice
+        options:
+          - candidate
+          - production
 
 jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
+    env:
+      # Push-triggered runs and runs without a mode only build a candidate; publishing needs an explicit production run
+      MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'candidate' }}
     permissions:
       contents: write        # release, tag, assets and the export branch
       pull-requests: write   # the export PR and its labels
@@ -31,6 +42,7 @@ jobs:
       # Exports are built from the current master commit only: a release names the commit its data came from, and the
       # default token cannot publish from a source whose workflow files differ from master's (old runs included)
       - name: Require the current master commit
+        if: env.MODE == 'production'
         uses: actions/github-script@v8
         with:
           script: |
@@ -480,6 +492,42 @@ jobs:
           echo "📊 Compressed file sizes:"
           ls -lh json/*.gz toon/*.gz geojson/*.gz xml/*.gz yml/*.gz csv/*.gz parquet/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
 
+      - name: Checksums for the candidate
+        if: env.MODE == 'candidate'
+        run: |
+          mkdir -p candidate-notices && cp .github/licenses/*.txt candidate-notices/
+          shopt -s nullglob
+          files=(json/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz xml/*.gz yml/*.gz csv/*.gz toon/*.gz geojson/*.gz \
+                 parquet/*.gz mongodb/world-mongodb-dump.tar.gz candidate-notices/*.txt)
+          [ ${#files[@]} -gt 1 ] || { echo "::error::no export files to keep"; exit 1; }
+          sha256sum "${files[@]}" > CANDIDATE_SHA256SUMS
+          echo "source ${GITHUB_SHA} ref ${GITHUB_REF} run ${GITHUB_RUN_ID}" > CANDIDATE_SOURCE
+          wc -l CANDIDATE_SHA256SUMS
+
+      - name: Keep the candidate as a workflow artifact (nothing is published)
+        if: env.MODE == 'candidate'
+        uses: actions/upload-artifact@v4
+        with:
+          name: export-candidate-${{ github.sha }}
+          path: |
+            json/*.gz
+            sql/*.gz
+            psql/*.gz
+            sqlite/*.gz
+            sqlserver/*.gz
+            xml/*.gz
+            yml/*.gz
+            csv/*.gz
+            toon/*.gz
+            geojson/*.gz
+            parquet/*.gz
+            mongodb/world-mongodb-dump.tar.gz
+            candidate-notices/*.txt
+            CANDIDATE_SHA256SUMS
+            CANDIDATE_SOURCE
+          if-no-files-found: error
+          retention-days: 30
+
       - name: Update README.md
         run: |
           county_total=$(python3 -c 'import sys; print(f"{int(sys.argv[1]):,}")' "$county_count")
@@ -493,6 +541,7 @@ jobs:
           sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
 
       - name: Create GitHub Release with exports
+        if: env.MODE == 'production'
         uses: actions/github-script@v8
         env:
           CURRENT_DATE: ${{ env.current_date }}
@@ -716,6 +765,7 @@ jobs:
             core.info(`Release published with all export assets and ${noticeAssets.length} notices.`);
 
       - name: Create Pull Request
+        if: env.MODE == 'production'
         uses: peter-evans/create-pull-request@v8
         with:
           commit-message: |
