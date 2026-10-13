@@ -91,7 +91,7 @@ record already complies.
 | Gibraltar | `GI` has no states or cities yet (a coverage gap). | Coverage is incomplete. |
 | Åland | `AX`: 16 states, 12 cities. Finland's state 1509 (`FI-01`, Åland Islands) is a catalogue entry with no places. | None: 1509 was restored as the same entity it denoted before #1144; #1144's removal of duplicate Finnish place rows stands, so Åland's places stay under `AX`. |
 
-Counts and ids are from `contributions/` on master at `dea03811` (13 October 2026). They describe stored rows, not
+Counts and ids are from `contributions/` on master at `dea03811` (13 October 2026), except the restoration of state 1509 (FI-01) in #2020. They describe stored rows, not
 complete coverage or a finished place-by-place check of identity, language, clock or point source. Changes already made
 have their sources and record ids in [FIX_1643_SUMMARY.md](.github/fixes-docs/FIX_1643_SUMMARY.md); open work is listed
 here.

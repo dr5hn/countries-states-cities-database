@@ -157973,10 +157973,14 @@ the duplicate Finnish place rows, but it also removed state 1509, Finland's `FI-
 - State 1509 is restored as the same entity it denoted before #1144: Åland, `FI-01`, Wikidata Q5689 (whose ISO
   3166-2 code is `FI-01`). This is not id reuse: the number keeps its meaning. It has no cities; Åland's places stay
   under `AX`.
-- Fields as 1509 had them, with the current schema (`type_local` null and `level` 1, like Finland's other regions).
+- Fields as 1509 had them, with the current schema: `type` region, `level` 1, and `type_local` "landskap", the Swedish
+  national category (ISO 3166-2 newsletter II-3, page 23; Statistics Finland's 2026 Swedish classification, Landskapen).
   The native name is now Swedish "Åland", Åland's official language, in place of a copy of the English name.
-- Point from Q5689's own coordinate (P625, CC0), revision 2556518875, retrieved 13 October 2026: 60.25, 20.0. It
-  replaces 1509's earlier point, which had no recorded source.
+- Translations: 13 of 1509's earlier values are attested by Q5689's labels or aliases or by CLDR 48.2.0's name for AX
+  and are kept. The other six (de, nl, pt, pt-BR, fa, hi) had no checked source and now use Q5689's own labels (CC0,
+  revision 2556518875).
+- Point from Q5689's own coordinate (P625, CC0), revision 2556518875: 60.25, 20.0, precision one arcminute. It replaces
+  1509's earlier point, which had no recorded source. Ledger: `.github/fixes-docs/ledgers/points_aland_1509_ledger.csv`.
 - `MULTI_LEVEL_TERRITORIES.md` moves Åland from the known gaps to the precedent table;
   `DISPUTED_AND_SPECIAL_TERRITORIES.md` records the restoration.
 
