@@ -148967,3 +148967,95 @@ surveyed boundary, and nothing copied from them.
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 12634-12662.
+
+## China phase 12: Jiangxi, and Xianyang in Shaanxi (model of #1975 to #1995)
+
+### Problem
+Jiangxi's and Shaanxi's prefectures, districts, counties and county-level cities were city records, many with another
+place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **126 counties** (`administrative district`, official local term, official code): Jiangxi 111 (11 prefecture cities at level 2,
+  their districts, counties and county-level cities at level 3) and Shaanxi 15 (Xianyang and its units, the only part of
+  Shaanxi's register recovered). Each unit agrees in two sources, the register copy and its own Wikidata entry (code, name,
+  current parent). 91 carry their own Wikidata item where no city keeps it.
+- **1 prefecture row removed** for its city's record (option (c)): Ji'an prefecture 158503 for Ji'an city 19762, proved by
+  the exact GeoNames populated place (1806445); its 12 references now point to the city or, for Jinggangshan, to none.
+- **29 district rows become sections (区)** at level 3, linked to their own county, 2 under their proved city.
+- **14 county-level cities stay cities** (`city / 市`) linked to their own county.
+- 42 points replaced with the unit's own open point checked inside its county; **67 items cleared** (15 other wrong
+  entities, 43 disambiguation pages, 9 district items under the model); **67 native names and translations on 153
+  records fixed** in both provinces.
+
+The rest of Shaanxi's structure is held: only the Xianyang excerpt of its register was recovered.
+
+Held (241 records keep a hold on at least one field): the rest of Shaanxi, other prefecture rows (Ganzhou, Jingdezhen),
+townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase12_points_2026-10.csv](ledgers/CN_phase12_points_2026-10.csv).
+
+### Sources
+Jiangxi Department of Civil Affairs register, 30 June 2026 edition, read from its 8 July 2026 news republication
+(https://jx.ifeng.com/c/8uZimtYflRy) because the original could not be downloaded; Shaanxi civil-affairs register, 31 July
+2026 edition, Xianyang excerpt read from a local news republication (https://xianyang.bendibao.com/news/2026828/19830.shtm);
+each unit checked against its own Wikidata entry. Names, codes, categories and parentage used as official facts (Copyright
+Law of the PRC, Article 5). Points: 166 Wikidata P625 (CC0), 3 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 158503,
+    "name": "Ji'an",
+    "state_id": 2256,
+    "state_code": "JX",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "27.09373490",
+    "longitude": "114.96135500",
+    "native": "吉安",
+    "population": 4469176,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Ji'an",
+      "ko": "지안시",
+      "pt-BR": "Ji'an",
+      "pt": "Ji'an",
+      "nl": "Ji'an",
+      "hr": "Ji'an",
+      "fa": "ژی ان",
+      "de": "Ji’an",
+      "es": "Ji'an",
+      "fr": "Ji'an",
+      "ja": "吉安市",
+      "it": "Ji'an",
+      "zh-CN": "吉安",
+      "tr": "Ji'an",
+      "ru": "Цзиань",
+      "uk": "Цзіань",
+      "pl": "Ji'an",
+      "hi": "जियां",
+      "ar": "جيآن"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-26T18:40:09",
+    "flag": 1,
+    "wikiDataId": "Q363262",
+    "replacement_id": 19762
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed prefecture row is archived here; new county ids are 12663-12788.
