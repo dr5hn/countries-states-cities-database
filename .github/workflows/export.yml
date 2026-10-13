@@ -12,14 +12,35 @@ on:
       pass:
         description: "Passcode"
         required: true
+      mode:
+        description: "candidate: build and keep the files as a workflow artifact, publish nothing; production: tag, release and export PR (current master only)"
+        required: true
+        default: candidate
+        type: choice
+        options:
+          - candidate
+          - production
 
 jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
+    env:
+      # Push-triggered runs and runs without a mode only build a candidate; publishing needs an explicit production run
+      MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'candidate' }}
     permissions:
-      contents: write        # release, tag, assets and the export branch
-      pull-requests: write   # the export PR and its labels
+      contents: read   # the build never writes; publishing happens in the publish job
+    outputs:
+      artifact: ${{ steps.meta.outputs.artifact }}
+      region_count: ${{ steps.meta.outputs.region_count }}
+      subregion_count: ${{ steps.meta.outputs.subregion_count }}
+      country_count: ${{ steps.meta.outputs.country_count }}
+      state_count: ${{ steps.meta.outputs.state_count }}
+      city_count: ${{ steps.meta.outputs.city_count }}
+      county_count: ${{ steps.meta.outputs.county_count }}
+      postcode_count: ${{ steps.meta.outputs.postcode_count }}
+      postcode_country_count: ${{ steps.meta.outputs.postcode_country_count }}
+      current_date: ${{ steps.meta.outputs.current_date }}
 
     strategy:
       matrix:
@@ -28,12 +49,20 @@ jobs:
       fail-fast: false
 
     steps:
-      # Exports are built from the current master commit only: a release names the commit its data came from, and the
-      # default token cannot publish from a source whose workflow files differ from master's (old runs included)
+      # Production exports are built from the current master commit only: a release names the commit its data came from,
+      # and the default token cannot publish from a source whose workflow files differ from master's (old runs included).
+      # They also need the repository variable EXPORT_PRODUCTION_ENABLED = true, unset while exports are paused.
       - name: Require the current master commit
+        if: env.MODE == 'production'
         uses: actions/github-script@v8
+        env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
         with:
           script: |
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
             const { data: master } = await github.rest.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -50,7 +79,7 @@ jobs:
           fetch-depth: 1
           submodules: true
           ref: ${{ github.head_ref }}
-          persist-credentials: true
+          persist-credentials: false
           lfs: false
 
       - name: Setup PHP
@@ -492,9 +521,199 @@ jobs:
           sed -i "s/Total Postcodes : [0-9,]* ([0-9]* countries) <br>/Total Postcodes : $postcode_count ($postcode_country_count countries) <br>/" README.md
           sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
 
+      - name: Check every file a release carries
+        run: |
+          # Fails when any expected export is missing or empty, or the required notice is absent (both modes)
+          required=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+          )
+          for file in "${required[@]}"; do
+            [ -s "$file" ] || { echo "::error::missing or empty required export: $file"; exit 1; }
+          done
+          [ -s .github/licenses/Unicode-3.0.txt ] || { echo "::error::Required notice Unicode-3.0.txt is missing"; exit 1; }
+          echo "${#required[@]} exports and the notices present"
+
+      - name: Package the build with its checksums
+        run: |
+          mkdir -p export-notices && cp .github/licenses/*.txt export-notices/
+          # The small files a production export PR would commit: tracked and new unignored files in the export folders,
+          # the schema, the README and contributions, as generated by this run
+          git ls-files -z --cached --others --exclude-standard -- json csv xml yml toon geojson parquet sql psql sqlite \
+            sqlserver bin/db/schema.sql README.md contributions | grep -zv '\.gz$' | tar --null -czf export-small-files.tar.gz -T -
+          files=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+            export-notices/*.txt export-small-files.tar.gz
+          )
+          sha256sum "${files[@]}" > EXPORT_SHA256SUMS
+          echo "source ${GITHUB_SHA} ref ${GITHUB_REF} run ${GITHUB_RUN_ID} attempt ${GITHUB_RUN_ATTEMPT}" > EXPORT_SOURCE
+          wc -l EXPORT_SHA256SUMS
+
+      - name: Record the build
+        id: meta
+        run: |
+          echo "artifact=export-build-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "region_count=${region_count}" >> "$GITHUB_OUTPUT"
+          echo "subregion_count=${subregion_count}" >> "$GITHUB_OUTPUT"
+          echo "country_count=${country_count}" >> "$GITHUB_OUTPUT"
+          echo "state_count=${state_count}" >> "$GITHUB_OUTPUT"
+          echo "city_count=${city_count}" >> "$GITHUB_OUTPUT"
+          echo "county_count=${county_count}" >> "$GITHUB_OUTPUT"
+          echo "postcode_count=${postcode_count}" >> "$GITHUB_OUTPUT"
+          echo "postcode_country_count=${postcode_country_count}" >> "$GITHUB_OUTPUT"
+          echo "current_date=${current_date}" >> "$GITHUB_OUTPUT"
+
+      - name: Keep the build as a workflow artifact (candidate runs end here; nothing is published)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.artifact }}
+          path: |
+            json/*.gz
+            sql/*.gz
+            psql/*.gz
+            sqlite/*.gz
+            sqlserver/*.gz
+            xml/*.gz
+            yml/*.gz
+            csv/*.gz
+            toon/*.gz
+            geojson/*.gz
+            parquet/*.gz
+            mongodb/world-mongodb-dump.tar.gz
+            export-notices/*.txt
+            export-small-files.tar.gz
+            EXPORT_SHA256SUMS
+            EXPORT_SOURCE
+          if-no-files-found: error
+          retention-days: 30
+
+  # Publishing: only a production run with the switch on, after a successful build of this same commit. This job holds
+  # the write token and runs no build or dependency scripts: it places the verified build files and publishes them.
+  publish:
+    name: Publish the release and export PR
+    needs: export
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'production' && vars.EXPORT_PRODUCTION_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write        # release, tag, assets and the export branch
+      pull-requests: write   # the export PR and its labels
+    env:
+      region_count: ${{ needs.export.outputs.region_count }}
+      subregion_count: ${{ needs.export.outputs.subregion_count }}
+      country_count: ${{ needs.export.outputs.country_count }}
+      state_count: ${{ needs.export.outputs.state_count }}
+      city_count: ${{ needs.export.outputs.city_count }}
+      county_count: ${{ needs.export.outputs.county_count }}
+      postcode_count: ${{ needs.export.outputs.postcode_count }}
+      postcode_country_count: ${{ needs.export.outputs.postcode_country_count }}
+      current_date: ${{ needs.export.outputs.current_date }}
+
+    steps:
+      - name: Checkout the source commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: true
+          lfs: false
+
+      - name: Download this run's build
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.export.outputs.artifact }}
+          path: ${{ runner.temp }}/build
+
+      - name: Verify and place the build
+        run: |
+          cd "$RUNNER_TEMP/build"
+          sha256sum -c --quiet EXPORT_SHA256SUMS
+          grep -q "^source ${GITHUB_SHA} " EXPORT_SOURCE || { echo "::error::the build is not from this commit"; exit 1; }
+          tar -xzf export-small-files.tar.gz -C "$GITHUB_WORKSPACE"
+          # copy exactly the verified exports named in the checksum list; any failed copy stops the job
+          n=0
+          while IFS= read -r f; do
+            cp --parents "$f" "$GITHUB_WORKSPACE/"; n=$((n + 1))
+          done < <(cut -c 67- EXPORT_SHA256SUMS | grep '\.gz$' | grep -vx 'export-small-files.tar.gz')
+          [ "$n" -eq 38 ] || { echo "::error::expected 38 exports in the build, placed $n"; exit 1; }
+          echo "placed $n exports and the small files"
+
       - name: Create GitHub Release with exports
         uses: actions/github-script@v8
         env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
           CURRENT_DATE: ${{ env.current_date }}
           REGION_COUNT: ${{ env.region_count }}
           SUBREGION_COUNT: ${{ env.subregion_count }}
@@ -508,6 +727,10 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
             // Master may have moved during the build: check again before anything is created
             const { data: master } = await github.rest.repos.getBranch({
               owner: context.repo.owner,
@@ -718,6 +941,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
+          base: master
           commit-message: |
             Export database formats - ${{ env.current_date }}
 
