@@ -157942,3 +157942,70 @@ Facts only, from: [Law 19214](https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=247863
 
 ### Rollback
 Revert the PR (squash commit); no record is created or removed.
+
+## Source credits and notices for the 63 registered gaps
+
+### Problem
+The v5 source register found 63 sources whose credit or modification notice did not reach users of the data
+(for example ABS postal areas, IGN CartoCiudad, Posti, Føroyakort, KATOTTG, Stats NZ, GeoNames postal), and the 666-point
+ledger of #1969 was never published.
+
+### Fix
+- `.github/licenses/SOURCES.txt`: 63 sources with their edition, licence, the credit each requires (word for word where
+  the provider prescribes it, e.g. CartoCiudad's "Obra derivada de") and what CSC changed. Every release attaches every
+  file in that folder (#2010), so the credits travel with each export.
+- `.github/licenses/Posti-postal-code-terms.txt`: Posti's terms, which must reach recipients of its postcode data.
+- `.github/fixes-docs/ledgers/points_1969_ledger.csv`: source, revision, licence and method for each of #1969's 666 points.
+- README points to the notice file. 233 unresolved sources are represented by a closing under-review statement; they
+  are not individually listed or certified as cleared.
+
+### Rollback
+Revert the PR (squash commit); no data changes.
+
+## Åland: Finland's state FI-01 restored (state 1509)
+
+### Problem
+Finland's states had no `FI-01` Åland, although ISO 3166-2:FI lists it and other territories with their own country
+code also appear as a state of the country that governs them (`MULTI_LEVEL_TERRITORIES.md`). #1144 rightly removed
+the duplicate Finnish place rows, but it also removed state 1509, Finland's `FI-01` entry.
+
+### Fix
+- State 1509 is restored as the same entity it denoted before #1144: Åland, `FI-01`, Wikidata Q5689 (whose ISO
+  3166-2 code is `FI-01`). This is not id reuse: the number keeps its meaning. It has no cities; Åland's places stay
+  under `AX`.
+- Fields as 1509 had them, with the current schema: `type` region, `level` 1, and `type_local` "landskap", the Swedish
+  national category (ISO 3166-2 newsletter II-3, page 23; Statistics Finland's 2026 Swedish classification, Landskapen).
+  The native name is now Swedish "Åland", Åland's official language, in place of a copy of the English name.
+- Translations: 13 of 1509's earlier values are attested by Q5689's labels or aliases or by CLDR 48.2.0's name for AX
+  and are kept. The other six (de, nl, pt, pt-BR, fa, hi) had no checked source and now use Q5689's own labels (CC0,
+  revision 2556518875).
+- Point from Q5689's own coordinate (P625, CC0), revision 2556518875: 60.25, 20.0, precision one arcminute. It replaces
+  1509's earlier point, which had no recorded source. Ledger: `.github/fixes-docs/ledgers/points_aland_1509_ledger.csv`.
+- `MULTI_LEVEL_TERRITORIES.md` moves Åland from the known gaps to the precedent table;
+  `DISPUTED_AND_SPECIAL_TERRITORIES.md` records the restoration.
+
+### Rollback
+Revert the PR (squash commit); no other record refers to state 1509.
+
+## States: translation defects in 527 states (states_translations_1)
+
+### Problem
+A full screen of the 101,343 translation values on all 5,328 states found 1,593 defective values. Some name
+something else: common words ("Kinmen" as "relatives", "Tartar" as dental tartar, "Tubas" as the instrument), or
+other places (Hindi "Baku" on three Azerbaijani districts, Korean "Somalia" on Ethiopia's Somali Region). Others are
+Wikipedia disambiguation titles ("Tartar (значения)"), text in the wrong script, or one definition in place of a name.
+
+### Fix
+- 1,292 values replaced by the item's own Wikidata label in that language (CC0), after checking that the item is the
+  state (ISO 3166-2 code or name, country and territory). Stored items that were another entity were not used
+  (Mustvee's stored item is a poet, Saue's a bird). A geographic note in brackets is kept where it is part of the
+  attested name, e.g. "Bay (Somália)".
+- 301 values removed where no semantically usable name in the right language was attested. Eleven Turkish labels that
+  were English ("Trashigang District") are among them, and Kikuube's Japanese キブベ県, a
+  spelling the Japanese article corrected to キクベ県 in 2020 (no licensed source for the corrected form yet). No key was created.
+- 26,524 values remain held as candidates or unresolved checks, unchanged. 14,902 of them are copies of the English
+  name, kept under the translation rule. Monaco-Ville's Russian name "Монако (город)" is attested and stays.
+- No political qualifier was changed. Taiwan and Palestine are touched only for wrong words (Kinmen, Tubas).
+
+### Rollback
+Revert the PR (squash commit); every changed state's earlier translations are in the manifest's `before`.

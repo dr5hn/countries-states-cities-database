@@ -228,7 +228,7 @@ Official registers matched to records (categories, codes and unit names) also as
 
 Country names in some languages follow [Unicode CLDR](https://cldr.unicode.org/) 48.2: Copyright © 2015-2024 Unicode, Inc., under the [Unicode License v3](.github/licenses/Unicode-3.0.txt), whose notice must travel with copies.
 
-Keep these credits when you redistribute the data.
+Source credits and notices for 63 sources are in [.github/licenses/SOURCES.txt](.github/licenses/SOURCES.txt); export releases attach it with the other notices. The register also identifies 233 sources whose redistribution basis remains under review. Keep the applicable credits and notices when redistributing the data.
 
 ---
 
