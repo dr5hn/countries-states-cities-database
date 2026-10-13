@@ -149218,3 +149218,143 @@ a reference check, not a survey of 2026 boundaries; nothing copied from it.
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 13150-13176.
+
+## China phase 17: Qinghai, Tibet and Xinjiang (model of #1975 to #2000)
+
+### Problem
+Qinghai's, Tibet's and Xinjiang's prefectures, autonomous prefectures, districts, counties and county-level cities were city
+records, many with another place's Wikidata item or a wrong Chinese name (Rikaze was 里风).
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **260 counties** (`administrative district`, official local term, official code): Qinghai 53, Tibet 81 and Xinjiang 126.
+  Prefecture-level units (prefecture cities, autonomous prefectures and prefectures, 地区) are at level 2 with their children
+  at level 3; Xinjiang's 13 county-level cities listed directly under the region in its register (Shihezi, Aral, Tumxuk,
+  Wujiaqu and others) are at level 2, as the register places them. The provinces' own registers are the source; every unit's
+  Chinese name matches its own Wikidata entry, 257 its code and 258 its parent. The exceptions follow the register: Haidong
+  and Caohu City have no active Wikidata code; the Da Qaidam Administrative Committee has no official code (kept empty);
+  Tacheng and Altay are prefecture-level in the register although Wikidata places them under Ili. 217 carry their own
+  Wikidata item where no city keeps it.
+- **2 prefecture rows removed** for their city's record (option (c)): Urumqi 20204 for Ürümqi 20484 and Xigazê 159765 for
+  Rikaze 20041, each proved by the exact GeoNames populated place; their 25 references now point to the city or to none.
+- **27 district rows become sections (区)** at level 3, linked to their own county, 8 under their proved city.
+- **28 county-level cities stay cities** (`city / 市`; 16 at level 3 and 12 directly under Xinjiang at level 2) linked to their
+  own county, and the two prefecture cities kept above (Ürümqi, Rikaze) at level 2.
+- 49 points replaced with the unit's own open point checked inside its county; **103 items cleared** (32 other wrong
+  entities, 68 disambiguation pages, 3 district items moved to their county); **130 native names fixed and
+  the translations of 178 records** (178 records in all).
+
+Held (291 records keep a hold on at least one field): prefecture rows not proved, townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase17_points_2026-10.csv](ledgers/CN_phase17_points_2026-10.csv).
+
+### Sources
+Qinghai Department of Civil Affairs register as of 31 July 2026 (https://mzt.qinghai.gov.cn/html/show-13599.html, DOC
+attachment); Tibet Department of Civil Affairs register as of 30 June 2026
+(https://mzt.xizang.gov.cn/zxzx/tzgg/202607/t20260729_551733.html); Xinjiang Department of Civil Affairs register as of 30 June
+2026 (https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d.shtml, 67 page images). Names,
+codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). Points:
+308 Wikidata P625 (CC0), 21 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals), 1 OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0).
+Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived) and OpenStreetMap relations 2734500, 2744882,
+2745213, 2747165, 2748332, 2748334, 2748433, 5662610, 5662612, 9051185, 9068337, 9068418, 9077256, 11033793, 12279740,
+15340171, 18470226, 18472100, 20281769, 20378208 and 20460284 (© OpenStreetMap contributors, ODbL 1.0); reference checks,
+nothing copied from them.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 20204,
+    "name": "Urumqi",
+    "state_id": 2263,
+    "state_code": "XJ",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "43.82440740",
+    "longitude": "87.61390380",
+    "native": "乌鲁木齐市",
+    "population": 4054369,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Ürümqi",
+      "ko": "우루무치시",
+      "pt-BR": "Ürümqi",
+      "pt": "Ürümqi",
+      "nl": "Ürümqi",
+      "hr": "Urumqi",
+      "fa": "اورومچی",
+      "de": "Ürümqi",
+      "es": "Urumqi",
+      "fr": "Ürümqi",
+      "ja": "ウルムチ市",
+      "it": "Ürümqi",
+      "zh-CN": "乌鲁木齐市",
+      "tr": "Urumçi",
+      "ru": "Урумчи",
+      "uk": "Урумчі",
+      "pl": "Urumczi",
+      "hi": "उरुमची",
+      "ar": "أورومتشي"
+    },
+    "created_at": "2019-10-06T09:39:42",
+    "updated_at": "2025-11-26T18:44:49",
+    "flag": 1,
+    "wikiDataId": "Q16959",
+    "replacement_id": 20484
+  },
+  {
+    "id": 159765,
+    "name": "Xigazê",
+    "state_id": 2264,
+    "state_code": "XZ",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "29.10584060",
+    "longitude": "86.87539830",
+    "native": "希加泽",
+    "population": null,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Xigazê",
+      "ko": "시가제",
+      "pt-BR": "Xigazê",
+      "pt": "Xigazê",
+      "nl": "Xigazê",
+      "hr": "Xigazê",
+      "fa": "شیگازه",
+      "de": "Xigazê",
+      "es": "Xigazê",
+      "fr": "Xigazê",
+      "ja": "シガゼ",
+      "it": "Xigazê",
+      "zh-CN": "希加泽",
+      "tr": "Xigazê",
+      "ru": "Шигазе",
+      "uk": "Шігазе",
+      "pl": "Xigazê",
+      "hi": "Xigaze",
+      "ar": "شيغازي"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-21T20:26:17",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 20041
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed prefecture rows are archived here; new county ids are 13177-13436.
