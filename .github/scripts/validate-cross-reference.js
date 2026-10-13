@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile, loadRepoData } = require('./utils');
+const { getEntityType, parseJsonFile } = require('./utils');
 
 // Lazy per-country cities loader — cities live in contributions/cities/{ISO2}.json
 const cityCache = new Map();
@@ -49,6 +49,55 @@ function loadCounties() {
   return byId;
 }
 
+/** Canonical countries or states: a missing, malformed, non-array or duplicate-id file fails, never falls back to exports. */
+function loadCanonical(entity) {
+  const file = path.join(process.cwd(), 'contributions', entity, `${entity}.json`);
+  const { data, error } = fs.existsSync(file) ? parseJsonFile(file) : { error: 'missing' };
+  if (error || !Array.isArray(data)) throw new Error(`Cannot load contributions/${entity}/${entity}.json: ${error || 'expected an array'}`);
+  const ids = new Set();
+  for (const r of data) {
+    if (ids.has(Number(r.id))) throw new Error(`Duplicate ${entity} id ${r.id}`);
+    ids.add(Number(r.id));
+  }
+  return data;
+}
+
+/** Every canonical city across country files, by id (loaded once, only when a parent link needs checking). */
+let allCities = null;
+function loadAllCities() {
+  if (allCities) return allCities;
+  allCities = new Map();
+  const dir = path.join(process.cwd(), 'contributions', 'cities');
+  for (const file of fs.readdirSync(dir).filter(f => /^[A-Z]{2}\.json$/.test(f)).sort()) {
+    const { data, error } = parseJsonFile(path.join(dir, file));
+    if (error || !Array.isArray(data)) throw new Error(`Cannot load cities/${file}: ${error || 'expected an array'}`);
+    for (const c of data) if (c.id != null) allCities.set(Number(c.id), c);
+  }
+  return allCities;
+}
+
+/** A city's parent must exist, not be itself, share its country and state (null state included) and not loop. */
+function validateCityParent(record, cities) {
+  if (record.parent_id == null) return [];
+  if (!Number.isInteger(record.parent_id) || record.parent_id <= 0) return ['parent_id must be a positive integer'];
+  if (record.id != null && record.parent_id === Number(record.id)) return ['parent_id points to the city itself'];
+  const parent = cities.get(record.parent_id);
+  if (!parent) return [`parent_id ${record.parent_id} does not exist in contributions/cities`];
+  const errors = [];
+  if (parent.country_code !== record.country_code) {
+    errors.push(`parent_id ${record.parent_id} is in country ${parent.country_code}, not ${record.country_code}`);
+  }
+  if ((parent.state_id ?? null) !== (record.state_id ?? null)) {
+    errors.push(`parent_id ${record.parent_id} is in state ${parent.state_id ?? 'none'}, not ${record.state_id ?? 'none'}`);
+  }
+  const seen = new Set([Number(record.id)]);
+  for (let p = parent; p && p.parent_id != null; p = cities.get(p.parent_id)) {
+    if (seen.has(Number(p.id))) { errors.push(`parent_id ${record.parent_id} leads to a loop`); break; }
+    seen.add(Number(p.id));
+  }
+  return errors;
+}
+
 /** Check that a city's optional county belongs to its declared state and country. */
 function validateCountyReference(record, counties) {
   if (record.county_id == null) return [];
@@ -79,8 +128,9 @@ async function run() {
   }
 
   // Load reference data
-  const countries = loadRepoData('countries');
-  const states = loadRepoData('states');
+  // Canonical reference data only; a missing or malformed file fails the run (never a silent skip or stale export)
+  const countries = loadCanonical('countries');
+  const states = loadCanonical('states');
   const counties = loadCounties();
 
   if (!countries) {
@@ -125,7 +175,8 @@ async function run() {
   );
 
   // County edits/removals can break unchanged cities and county children.
-  if (files.some(f => f.filename.startsWith('contributions/counties/') && f.filename.endsWith('.json'))) {
+  // County, state or country edits/removals can break unchanged cities (county links, null-state eligibility).
+  if (files.some(f => /^contributions\/(counties|states|countries)\//.test(f.filename) && f.filename.endsWith('.json'))) {
     const included = new Set(contributionFiles.map(f => f.filename));
     for (const entity of ['cities', 'counties']) {
       const dir = path.join(process.cwd(), 'contributions', entity);
@@ -156,6 +207,10 @@ async function run() {
       const record = records[i];
       const label = record.name || record.code;
       const prefix = `${filePath}: Record ${i + 1}${label ? ` ("${label}")` : ''}`;
+
+      if (entityType === 'cities' && record.parent_id != null) {
+        errors.push(...validateCityParent(record, loadAllCities()).map(error => `${prefix}: ${error}`));
+      }
 
       if (entityType === 'cities') {
         const countyErrors = validateCountyReference(record, counties);
@@ -341,4 +396,4 @@ async function run() {
 
 if (require.main === module) run().catch((err) => core.setFailed(err.message));
 
-module.exports = { loadCounties, validateCountyReference };
+module.exports = { loadCounties, validateCountyReference, validateCityParent, loadCanonical };

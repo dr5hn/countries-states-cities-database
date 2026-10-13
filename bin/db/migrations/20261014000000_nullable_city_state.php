@@ -16,6 +16,9 @@ final class NullableCityState extends AbstractMigration
             ->changeColumn('state_id', 'integer', $mediumInt + ['null' => true, 'default' => null])
             ->changeColumn('state_code', 'string', ['limit' => 255, 'null' => true, 'default' => null])
             ->update();
+        // the pair is set together or null together
+        $this->execute('ALTER TABLE cities ADD CONSTRAINT cities_state_pair CHECK ' .
+            '((state_id IS NULL AND state_code IS NULL) OR (state_id IS NOT NULL AND state_code IS NOT NULL))');
     }
 
     /** Restore NOT NULL; refuses while any city has no state, so no row is lost or invented. */
@@ -25,6 +28,7 @@ final class NullableCityState extends AbstractMigration
         if ((int) $rows['n'] > 0) {
             throw new \RuntimeException("{$rows['n']} cities have no state; move them to a state before reverting this migration");
         }
+        $this->execute('ALTER TABLE cities DROP CHECK cities_state_pair');
         $mediumInt = ['signed' => false, 'limit' => MysqlAdapter::INT_MEDIUM];
         $this->table('cities')
             ->changeColumn('state_id', 'integer', $mediumInt + ['null' => false])

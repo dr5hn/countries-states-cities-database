@@ -15,14 +15,15 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
 
     def format_value(v):
         if isinstance(v, bool):
-            s = "true" if v else "false"
-        elif v is None:
-            s = ""
-        else:
-            s = str(v)
+            return "true" if v else "false"
+        if v is None:
+            return "null"   # TOON's null literal; a blank cell decodes as an empty string (v5: null city states)
+        s = str(v)
 
         if not s:
             return s
+        if s in ("true", "false", "null"):
+            return f'"{s}"'   # a string spelled like a literal stays a string
 
         if s[0].isspace() or s[-1].isspace() or delimiter in s or "\n" in s:
             s = s.replace('"', '\\"')

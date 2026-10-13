@@ -22,7 +22,7 @@ const SCHEMA = {
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       county_id: { type: 'integer', positive: true },
-      state_id: { type: 'integer', positive: true },
+      state_id: { type: 'integer', positive: true, jsonNumber: true },   // a JSON number: "1", true or [1] are refused
       state_code: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },

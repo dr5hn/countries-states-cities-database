@@ -18,6 +18,23 @@ bin/
 └── README.md                    # This file
 ```
 
+## Cities without a state (v5.0.0)
+
+A city of a country with no states (Western Sahara) has `state_id` and `state_code` both null; every other city has
+both set. The pair is always present and never half null. How each format writes it:
+
+| Format | A city with no state |
+|---|---|
+| `cities.json` | `"state_id": null, "state_code": null, "state_name": null` |
+| `countries+states+cities.json` | listed in the country's own `cities` array (beside `states`; empty for most countries), once |
+| CSV, PLIST | empty fields (read an empty `state_id` or `state_code` as null) |
+| XML | empty `<state_id/>`, `<state_code/>`, `<state_name/>` elements (read as null) |
+| YAML, TOON, Parquet | `null` (Parquet integer columns are nullable 64-bit integers) |
+| MySQL, PostgreSQL, SQLite, SQL Server | `NULL`, with a check that both are null together |
+| MongoDB | null fields and no `state` reference |
+
+To list a country's cities whatever their state, filter on `country_id` (or `country_code`), not on a join with states.
+
 ## Available Commands
 
 All commands can be executed from the `bin` directory using `php console [command]`

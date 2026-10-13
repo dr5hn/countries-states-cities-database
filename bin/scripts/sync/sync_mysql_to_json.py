@@ -180,6 +180,7 @@ class MySQLToJSONSync:
                 old = existing.get(row['id'])
                 fields = [c for c in old if c in columns] if old else list(columns)
                 fields += [c for c in columns if c not in fields and row[c] is not None]
+                fields += [c for c in ('state_id', 'state_code') if c in columns and c not in fields]   # required, even when null (v5)
                 city = self.process_row(row, fields, excluded)
                 if city.get('county_id') is None:
                     city.pop('county_id', None)

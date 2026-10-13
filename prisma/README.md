@@ -31,6 +31,10 @@ npm run seed
 
 ## Notes
 
+- A city of a country with no states (Western Sahara, v5.0.0) has a null `state`; every other city has one. Deleting
+  a state that cities use is refused (`onDelete: Restrict`). The seed stops with an error on a city whose state fields
+  are missing, half null or inconsistent, rather than skipping it; run `node --test prisma/city-state.test.ts` to check
+  the mapping.
 - The seeding process can take a while due to the large amount of data being processed.
 - Ensure you have a stable internet connection as the script fetches data from GitHub.
 - The database structure is designed to balance normalization and query performance.

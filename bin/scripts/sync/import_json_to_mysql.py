@@ -30,6 +30,34 @@ import mysql.connector
 from datetime import datetime
 
 
+def check_city_states(cities, countries, states):
+    """Errors for city state pairs: both keys present; null together only when the country has no states (v5);
+    otherwise a positive integer id naming a state of the same country, with a matching state_code."""
+    with_states = {s.get('country_id') for s in states}
+    by_id = {s['id']: s for s in states}
+    errors = []
+    for c in cities:
+        label = f"city {c.get('id', '(new)')} {c.get('name', '')}"
+        if 'state_id' not in c or 'state_code' not in c:
+            errors.append(f"{label}: state_id and state_code are required (null only for a country with no states)")
+            continue
+        sid, code = c['state_id'], c['state_code']
+        if sid is None and code is None:
+            if c.get('country_id') in with_states:
+                errors.append(f"{label}: no state, but country {c.get('country_code')} has states")
+        elif sid is None or code is None:
+            errors.append(f"{label}: state_id and state_code must both be set or both be null")
+        elif isinstance(sid, bool) or not isinstance(sid, int) or sid <= 0:
+            errors.append(f"{label}: state_id {sid!r} is not a positive integer")
+        elif sid not in by_id:
+            errors.append(f"{label}: state_id {sid} does not exist")
+        elif by_id[sid].get('country_id') != c.get('country_id'):
+            errors.append(f"{label}: state {sid} belongs to country {by_id[sid].get('country_id')}, not {c.get('country_id')}")
+        elif code not in (by_id[sid].get('state_code'), by_id[sid].get('iso2')):
+            errors.append(f"{label}: state_code {code!r} does not match state {sid}")
+    return errors
+
+
 class JSONToMySQLImporter:
     """Import JSON to MySQL with dynamic schema detection and updates"""
 
@@ -73,7 +101,8 @@ class JSONToMySQLImporter:
         if field_name == 'id':
             return "MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT"
         elif field_name.endswith('_id'):
-            return "MEDIUMINT UNSIGNED NOT NULL"
+            # nullable: a new column cannot be NOT NULL on a filled table, and some links are optional (v5: city state)
+            return "MEDIUMINT UNSIGNED DEFAULT NULL"
         elif field_name.endswith('_code') and len(str(sample)) <= 3:
             return f"VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL"
         elif field_name in ['latitude', 'longitude']:
@@ -379,6 +408,26 @@ class JSONToMySQLImporter:
         print(f"  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
         return inserted
 
+    def preflight_city_states(self):
+        """Check every city's state pair against canonical countries and states before any table is reset."""
+        def load(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as fh:
+                    rows = json.load(fh)
+            except (OSError, UnicodeError, json.JSONDecodeError) as e:
+                raise ValueError(f"Cannot load {path}: {e}") from e
+            if not isinstance(rows, list):
+                raise ValueError(f"Cannot load {path}: expected an array of records")
+            return rows
+        countries = load(os.path.join('contributions', 'countries', 'countries.json'))
+        states = load(os.path.join('contributions', 'states', 'states.json'))
+        cities_dir = os.path.join('contributions', 'cities')
+        cities = [c for f in sorted(os.listdir(cities_dir)) if f.endswith('.json') for c in load(os.path.join(cities_dir, f))]
+        errors = check_city_states(cities, countries, states)
+        if errors:
+            raise ValueError(f"{len(errors)} cities have an invalid state: " + '; '.join(errors[:20]))
+        print(f"  ✓ City state pairs checked ({len(cities):,} cities)")
+
     def preflight_counties(self):
         """Load every county file before any database reset or county truncation."""
         print(f"\n📦 Importing counties from contributions/counties/*.json")
@@ -599,6 +648,7 @@ def main():
 
     try:
         county_data = importer.preflight_counties()
+        importer.preflight_city_states()   # before any reset: a bad state pair leaves the database untouched
         importer.reset_tables()
         # Import in order (respecting foreign keys)
         regions_count = importer.import_regions()

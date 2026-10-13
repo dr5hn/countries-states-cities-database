@@ -134,7 +134,7 @@ model City {
 
   county      County?  @relation(fields: [countyId], references: [id], onDelete: SetNull)
   countyId    Int?     @map("county_id") @db.UnsignedMediumInt
-  state       State?   @relation(fields: [stateId], references: [id])
+  state       State?   @relation(fields: [stateId], references: [id], onDelete: Restrict)   // as the MySQL foreign key: a used state cannot be deleted
   stateId     Int?     @map("state_id") @db.UnsignedMediumInt
   country     Country  @relation(fields: [countryId], references: [id])
   countryId   Int      @map("country_id") @db.UnsignedMediumInt

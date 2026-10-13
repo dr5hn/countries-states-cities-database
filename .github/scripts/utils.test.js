@@ -194,3 +194,11 @@ test('counties still require a state', () => {
   assert.ok(errors.some((e) => e.includes('missing required field "state_id"')));
 });
 
+
+test('a city state_id must be a JSON number (no strings, booleans, arrays or fractions)', () => {
+  for (const bad of ['1', true, [1], { id: 1 }, 1.5]) {
+    const { errors } = validateRecord(city({ state_id: bad, state_code: 'XX' }), 'cities', 0);
+    assert.ok(errors.length > 0, `accepted ${JSON.stringify(bad)}`);
+  }
+  assert.deepEqual(validateRecord(city({ state_id: 7, state_code: 'XX' }), 'cities', 0).errors, []);
+});
