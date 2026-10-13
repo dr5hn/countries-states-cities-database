@@ -157942,3 +157942,22 @@ Facts only, from: [Law 19214](https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=247863
 
 ### Rollback
 Revert the PR (squash commit); no record is created or removed.
+
+## Source credits and notices for the 63 registered gaps
+
+### Problem
+The v5 source register found 63 sources whose credit or modification notice did not reach users of the data
+(for example ABS postal areas, IGN CartoCiudad, Posti, Føroyakort, KATOTTG, Stats NZ, GeoNames postal), and the 666-point
+ledger of #1969 was never published.
+
+### Fix
+- `.github/licenses/SOURCES.txt`: 63 sources with their edition, licence, the credit each requires (word for word where
+  the provider prescribes it, e.g. CartoCiudad's "Obra derivada de") and what CSC changed. Every release attaches every
+  file in that folder (#2010), so the credits travel with each export.
+- `.github/licenses/Posti-postal-code-terms.txt`: Posti's terms, which must reach recipients of its postcode data.
+- `.github/fixes-docs/ledgers/points_1969_ledger.csv`: source, revision, licence and method for each of #1969's 666 points.
+- README points to the notice file. 233 unresolved sources are represented by a closing under-review statement; they
+  are not individually listed or certified as cleared.
+
+### Rollback
+Revert the PR (squash commit); no data changes.
