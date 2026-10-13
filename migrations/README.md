@@ -15,8 +15,8 @@ Both are done before v5.0.0 is published. Until then, no release carries these f
 | `removed_ids.jsonl` | One line per removal in the interval, ids created and removed in between included. Each line has the reviewed event, the removed row (`before`), `present_at_from` and `current_targets`, which follows later removals to the records that exist in this release. |
 | `removed_ids.csv` | v4.0's columns `record, old_id, name, country_code, state_code, outcome, new_table, new_id, source`, then `relation, automatic_redirect, event_commit`. One row per current target. A removal with no successor has one row with empty `new_table` and `new_id`. |
 | `added_ids.jsonl` | Every id present in this release and not in the earlier one: table, id, name, file and the commit that added it. |
-| `identity_changes.jsonl` | Reviewed identity events for ids that kept their number, with the row before and after (see below). |
-| `changed_fields.jsonl` | One line per changed field of a record present in both releases. Each line gives `before` and `after` as typed JSON (`1`, `1.0` and `true` differ), plus `before_present` and `after_present`, so a missing field and a null one can be told apart. `translations` is compared per language (`translations.de`), or as a whole when one side is not an object. `created_at`, `updated_at` and `flag` are left out, because MySQL sets them. |
+| `identity_changes.jsonl` | Reviewed identity decisions on ids that kept their number at the time, with the row before and after, the current targets and, for a repurpose, the later removal that repaired it (see below). |
+| `changed_fields.jsonl` | One line per changed field of a record present in both releases. Each line gives `before` and `after` as typed JSON (`1`, `1.0` and `true` differ), plus `before_present` and `after_present`, so a missing field and a null one can be told apart. `translations` is compared per language (`translations.de`), or as a whole when one side is not an object. By policy, `created_at`, `updated_at` and `flag` are left out: they are bookkeeping, not facts about the place (the importer keeps the values a file gives and fills missing ones). |
 | `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (2), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
 
 ## Outcomes and relations
@@ -24,7 +24,7 @@ Both are done before v5.0.0 is published. Until then, no release carries these f
 | Outcome | Meaning | Targets (relation) | Redirect automatically? |
 |---|---|---|---|
 | `merged_same_entity` | A proved duplicate of the same place, kept under another id in the same table | exactly one (`merged_same_entity`) | only when the event says `automatic_redirect: true` |
-| `administrative_seat` | A row for an administrative unit, removed; the town where the unit's seat is is a different place | the seat town (`administrative_seat`), plus the unit's own record elsewhere (`moved_dataset`) | no |
+| `administrative_seat` | A row for an administrative unit, removed; the town where the unit's seat is is a different place | the seat town (`administrative_seat`), and the unit's own record elsewhere (`moved_dataset`) when one exists | no |
 | `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table | no |
 | `territorial_successor` | A unit replaced after a merger or reform | the successor (`territorial_successor`) | no |
 | `split_into` | A unit split into several | two or more (`split_into`) | no |
@@ -34,11 +34,18 @@ Both are done before v5.0.0 is published. Until then, no release carries these f
 (A merged into B, B later merged into C) resolves to C in `current_targets`. It redirects automatically only if every
 hop does.
 
-An identity event (`"event_type": "identity"`) records an id that kept its number while what it denotes was reviewed.
-- `reclassified_same_entity`: the same place, with its category or depth corrected. No targets.
-- `dual_role`: the row stands for both a unit and its seat. The target, if any, is the unit's own record (`moved_dataset`).
-- `repurposed`: the number came to denote another entity. The targets are where the earlier entity is now
-  (`prior_identity`).
+An identity event (`"event_type": "identity"`) records a review of what an id denotes, at the commit where its record
+changed while keeping the number (the four outcomes of decisions_4_final.md):
+- `classification`: the same entity, with its category or depth corrected. No targets.
+- `dual_role`: the row stands for a place and its unit. The target, if any, is the unit's own record (`moved_dataset`).
+- `repurpose`: the number came to denote another entity. The targets are where the earlier entity is now
+  (`prior_identity`). A repurposed id may not remain at `--to`: it must be retired by a later reviewed removal (the old
+  id keeps its earlier meaning, the other entity gets a fresh id), or the generator refuses.
+- `unresolved`: what the row first denoted is not established. No targets.
+
+`current_targets` follows each target forward in history. A removal passes to its own targets. A repurpose passes to
+the earlier entity (`prior_identity`), and an `unresolved` decision keeps the key: both end any automatic redirect. A
+path that ends in a removal with no successor is listed with `"end": <outcome>` and no table or id.
 
 ## The ledger (`events.jsonl`)
 
@@ -70,12 +77,16 @@ published `removed_ids_v3.2_to_v4.0.csv`. It is prepared with the workflow integ
 
 It exits 1 and writes nothing when any of these happens:
 
+- An event's commit is not on the release line: inside the interval, before `--from` on its first-parent history,
+  or after `--to` on a later release's. Events before `--from` are checked against history too.
 - A removal at any first-parent commit between the two releases has no reviewed event for that commit.
 - An event's `before_commit`, `before_path` or `before_row_sha256` does not match the actual removal, or an event in
   the interval matches no removal.
 - A target does not exist right after the event's commit.
 - The ledger breaks the outcome rules above.
 - An id is missing at either end, malformed, duplicated across files, or a retired or reserved id is in use.
+- A repurposed id still denotes the other entity at `--to`.
+- An input holds a value that is not standard JSON (`NaN`, `Infinity`, a number too large for a float).
 
 Ids may be missing in between: contributors may omit ids on new rows until the import assigns them. Every id must
 be final at `--to`.
@@ -98,7 +109,15 @@ python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <
  "notices": [".github/licenses/SOURCES.txt"]}
 ```
 
-The same inputs always give byte-identical files. On today's repository, a run reads about a million rows, needs
-about 2.4 GB of memory and takes 25 to 65 seconds.
+The same inputs always give byte-identical files. The files are written to a staging folder and swapped in at the
+end, so a failed run keeps the earlier output.
+
+Measured on a laptop (Apple silicon), on the repository of 14 October 2026 (about 1,018,000 keyed rows, 543 MB of
+source JSON):
+
+| Interval | Commits | Time | Peak memory |
+|---|---:|---:|---:|
+| #2009 to master, checking 9,862 earlier events | 7 | 42 s | 2.4 GB |
+| v4.0 to master, cumulative (refused on 339 held events) | 207 | 61 s | 2.8 GB |
 
 Tests: `cd bin/scripts/release && python3 -m unittest test_migrations`. The tests run on scratch git repositories.

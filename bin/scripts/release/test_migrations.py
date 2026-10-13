@@ -2,6 +2,7 @@
 import io
 import json
 import subprocess
+import sys
 import tempfile
 import unittest
 from contextlib import redirect_stderr
@@ -54,13 +55,20 @@ def removal(table, i, commit, parent, path, row, outcome, targets, auto=False, *
     """A reviewed removal event as the ledger stores it."""
     return {'schema_version': 1, 'old_table': table, 'old_id': i, 'event_commit': commit, 'before_commit': parent,
             'before_path': path, 'before_row_sha256': row_hash(row), 'outcome': outcome, 'targets': targets,
-            'automatic_redirect': auto, 'review_status': 'reviewed', 'evidence': [{'note': 'test'}],
+            'automatic_redirect': auto, 'review_status': 'reviewed', 'evidence': [{'url': 'https://example.invalid/test'}],
             'review': {'reason': 'test', 'reviewer': 'test'}, **extra}
 
 
 def target(table, i, relation):
     """One event target."""
     return {'table': table, 'id': i, 'relation': relation}
+
+
+def identity_event(i, commit, before_row, outcome, targets, table='cities'):
+    """A reviewed identity event as the ledger stores it."""
+    return {'schema_version': 1, 'event_type': 'identity', 'table': table, 'id': i, 'event_commit': commit,
+            'before_row_sha256': row_hash(before_row), 'outcome': outcome, 'targets': targets, 'automatic_redirect': False,
+            'review_status': 'reviewed', 'evidence': [{'url': 'https://example.invalid/test'}], 'review': {'reason': 'test', 'reviewer': 'test'}}
 
 
 class Case(unittest.TestCase):
@@ -131,6 +139,9 @@ class EventSchemaTest(unittest.TestCase):
     def test_provenance_is_required(self):
         """Missing reason, evidence, commit SHAs or a before row that does not hash are refused."""
         for name, e in {'no reason': self.base(review={'reviewer': 'x'}), 'no evidence': self.base(evidence=[]),
+                        'null evidence': self.base(evidence=[None]), 'empty evidence': self.base(evidence=[{}]),
+                        'boolean schema version': self.base(schema_version=True), 'list table': self.base(old_table=['cities']),
+                        'dict outcome': self.base(outcome={'a': 1}), 'self target': self.base(targets=[target('cities', 2, 'merged_same_entity')]),
                         'short commit': self.base(event_commit='abc'), 'bad before': self.base(before=city(2, 'Other')),
                         'float id': self.base(old_id=2.0), 'bool id': self.base(old_id=True)}.items():
             self.assertTrue(event_errors(e, 'e'), name)
@@ -162,7 +173,7 @@ class HistoryTest(Case):
         self.assertEqual([(a['id'], a['added_commit']) for a in added], [(3, c1)])
         self.assertEqual(changed, [{'table': 'cities', 'id': 1, 'field': 'type', 'before': None, 'after': 'town', 'before_present': False, 'after_present': True}])
         self.assertEqual(per_table['cities'], {'from_total': 2, 'to_total': 2, 'removed': 1, 'added': 1, 'changed_records': 1,
-                                               'removal_events': 1, 'created_and_removed_in_interval': 0})
+                                               'removal_events': 1, 'identity_events': 0, 'created_and_removed_in_interval': 0})
         header = (out / 'removed_ids.csv').read_text().splitlines()[0].split(',')
         self.assertEqual(header[:9], ['record', 'old_id', 'name', 'country_code', 'state_code', 'outcome', 'new_table', 'new_id', 'source'])
         self.assertEqual(rows[0][:8], ['city', 2, 'Twin', 'XX', 'AA', 'merged_same_entity', 'cities', 1])
@@ -255,15 +266,51 @@ class HistoryTest(Case):
     def test_identity_event(self):
         """A reviewed identity event is emitted where the record changed and kept its id; elsewhere it is refused."""
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'Regency'), city(2, 'Two')]})
-        c1 = self.repo.commit({CITY: [city(1, 'Seat town'), city(2, 'Two')]})
-        ev = {'schema_version': 1, 'event_type': 'identity', 'table': 'cities', 'id': 1, 'event_commit': c1,
-              'before_row_sha256': row_hash(city(1, 'Regency')), 'outcome': 'repurposed',
-              'targets': [target('cities', 2, 'prior_identity')], 'automatic_redirect': False,
-              'review_status': 'reviewed', 'evidence': [{'note': 'test'}], 'review': {'reason': 'test', 'reviewer': 'test'}}
+        c1 = self.repo.commit({CITY: [city(1, 'Regency', type='municipality'), city(2, 'Two')]})
+        ev = identity_event(1, c1, city(1, 'Regency'), 'classification', [])
         (_, _, _, identity, *_), out = self.gen(c0, c1, [ev])
-        self.assertEqual((identity[0]['before']['name'], identity[0]['after']['name']), ('Regency', 'Seat town'))
+        self.assertEqual((identity[0]['before'].get('type'), identity[0]['after']['type']), (None, 'municipality'))
         c2 = self.repo.commit({'contributions/cities/YY.json': []})
         self.refused(c0, c2, [dict(ev, event_commit=c2)], 'did not change there')
+
+    def test_repurpose_needs_remediation_and_ends_redirects(self):
+        """A repurposed id may not remain at --to; once retired, an earlier merge into it resolves to the entity the
+        number used to denote, with no automatic redirect."""
+        counties = 'contributions/counties/XX.json'
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'A'), city(2, 'B Regency')], counties: [{'id': 9, 'name': 'B Regency'}]})
+        c1 = self.repo.commit({CITY: [city(2, 'B Regency')]})
+        c2 = self.repo.commit({CITY: [city(2, 'B Town')]})
+        c3 = self.repo.commit({CITY: [city(3, 'B Town')]})
+        merge = removal('cities', 1, c1, c0, CITY, city(1, 'A'), 'merged_same_entity', [target('cities', 2, 'merged_same_entity')], auto=True)
+        repurpose = identity_event(2, c2, city(2, 'B Regency'), 'repurpose', [target('counties', 9, 'prior_identity')])
+        self.refused(c0, c2, [merge, repurpose], 'still denotes the other entity')
+        retire = removal('cities', 2, c3, c2, CITY, city(2, 'B Town'), 'administrative_seat',
+                         [target('cities', 3, 'administrative_seat'), target('counties', 9, 'moved_dataset')])
+        (removed, rows, _, identity, *_), _ = self.gen(c0, c3, [merge, repurpose, retire])
+        self.assertEqual(removed[0]['current_targets'], [{'table': 'counties', 'id': 9, 'relations': ['merged_same_entity', 'prior_identity'],
+                                                         'automatic_redirect': False}])
+        self.assertEqual(identity[0]['remediation']['event_commit'], c3)
+        self.assertNotIn('yes', [r[10] for r in rows])
+
+    def test_events_off_the_release_line_are_refused(self):
+        """An event on a branch that never joined the release line is refused, not ignored."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
+        self.repo.run('checkout', '-q', '-b', 'side')
+        s1 = self.repo.commit({CITY: [city(1, 'One')]})
+        self.repo.run('checkout', '-q', 'main')
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town'), city(2, 'Two')]})
+        held = dict(removal('cities', 2, s1, c0, CITY, city(2, 'Two'), 'no_successor', []), review_status='held')
+        self.refused(c0, c1, [held], 'not on the release line')
+
+    def test_earlier_events_are_checked_against_history(self):
+        """An earlier removal that did not happen, or whose before row does not match, is refused."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        good = removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', [])
+        self.gen(c1, c2, [good])
+        self.refused(c1, c2, [dict(good, before_row_sha256='0' * 64)], 'does not match history')
+        self.refused(c1, c2, [removal('cities', 1, c1, c0, CITY, city(1, 'One'), 'no_successor', [])], 'does not match history|was not removed')
 
     def test_reads_use_the_resolved_sha(self):
         """After resolving --to once, no git read uses the movable branch name."""
@@ -295,3 +342,40 @@ class HistoryTest(Case):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class RobustnessTest(Case):
+    """Malformed numbers, deep chains, write failures and diagnostics."""
+
+    def test_nan_in_source_is_refused(self):
+        """NaN is not JSON: a source file holding it is refused before anything is written."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        (self.repo.root / CITY).write_text('[{"id": 1, "name": "One", "country_code": "XX", "state_code": "AA", "population": NaN}]')
+        self.repo.run('add', '-A'); self.repo.run('commit', '-q', '-m', 'nan')
+        self.refused(c0, self.repo.run('rev-parse', 'HEAD'), [], 'invalid JSON')
+
+    def test_long_chain_without_recursion(self):
+        """A valid chain longer than Python's recursion limit resolves."""
+        gate = m.Gate({}, {}, set())
+        n = sys.getrecursionlimit() + 500
+        for i in range(1, n):
+            gate.timeline[('cities', i)].append((i, 'removal', {'targets': [target('cities', i + 1, 'merged_same_entity')], 'automatic_redirect': True, 'outcome': 'merged_same_entity'}))
+        got = m.resolve_targets(gate, {('cities', n): {}}, [target('cities', 1, 'merged_same_entity')], 0, True)
+        self.assertEqual((got[0]['id'], len(got[0]['relations']), got[0]['automatic_redirect']), (n, n, True))
+
+    def test_write_failure_keeps_the_earlier_output(self):
+        """When the files cannot be written, the earlier complete output stays and the error says so."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        _, out = self.gen(c0, c1, [])
+        before = {p.name: p.read_bytes() for p in out.iterdir()}
+        (self.dir / '.out.staging').write_text('blocks the staging folder')
+        with self.assertRaises(m.OutputError):
+            self.gen(c0, c1, [])
+        self.assertEqual({p.name: p.read_bytes() for p in out.iterdir()}, before)
+
+    def test_idless_rows_are_located(self):
+        """Rows still without an id at --to are named by file and row."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        c1 = self.repo.commit({'contributions/cities/YY.json': [{'name': 'New'}]})
+        self.refused(c0, c1, [], 'contributions/cities/YY.json row 0')
