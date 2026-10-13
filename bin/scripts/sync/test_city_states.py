@@ -208,7 +208,7 @@ class ColumnTypeTest(unittest.TestCase):
             self.assertEqual(got['county_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL', values)
             self.assertEqual(got['parent_id'], 'INT UNSIGNED DEFAULT NULL', values)
             self.assertEqual(got['country_id'], 'MEDIUMINT UNSIGNED NOT NULL', values)
-        self.assertEqual(self.types('counties', [{'state_id': None}])['state_id'], 'MEDIUMINT UNSIGNED NOT NULL')
+        self.assertEqual(self.types('counties', [{'state_id': 1}])['state_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL')   # v5: several regions
         self.assertEqual(self.types('states', [{'parent_id': None}])['parent_id'], 'INT UNSIGNED DEFAULT NULL')
 
     def test_inferred_links_count_omitted_keys(self):

@@ -15,7 +15,7 @@ class ExportSqlServer extends Command
     protected static $defaultName = 'export:sql-server';
     protected static $defaultDescription = 'Export data to SQL Server format';
 
-    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'counties', 'cities', 'postcodes'];
+    private const TABLES = ['regions', 'subregions', 'countries', 'states', 'counties', 'county_states', 'cities', 'postcodes'];
     private Filesystem $filesystem;
 
     public function __construct()
@@ -125,8 +125,8 @@ class ExportSqlServer extends Command
             CREATE TABLE world.counties (
                 id INT IDENTITY(1,1) PRIMARY KEY,
                 name NVARCHAR(255) NOT NULL,
-                state_id INT NOT NULL,
-                state_code NVARCHAR(255) NOT NULL,
+                state_id INT NULL,
+                state_code NVARCHAR(255) NULL,
                 country_id INT NOT NULL,
                 country_code NCHAR(2) NOT NULL,
                 type NVARCHAR(191) NULL,
@@ -146,7 +146,18 @@ class ExportSqlServer extends Command
                 -- SQL Server forbids cascading self-references (error 1785). Clear child links before deletion.
                 CONSTRAINT FK_counties_parent FOREIGN KEY (parent_id) REFERENCES world.counties(id),
                 CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id),
-                CONSTRAINT FK_counties_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
+                CONSTRAINT FK_counties_countries FOREIGN KEY (country_id) REFERENCES world.countries(id),
+                CONSTRAINT CK_counties_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR (state_id IS NOT NULL AND state_code IS NOT NULL))
+            );",
+            // v5: the regions of a county of several regions (its own state_id is NULL), one row per pair
+            'county_states' => "
+            IF OBJECT_ID('world.county_states', 'U') IS NOT NULL DROP TABLE world.county_states;
+            CREATE TABLE world.county_states (
+                county_id INT NOT NULL,
+                state_id INT NOT NULL,
+                CONSTRAINT PK_county_states PRIMARY KEY (county_id, state_id),
+                CONSTRAINT FK_county_states_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE,
+                CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)
             );",
             'cities' => "
             IF OBJECT_ID('world.cities', 'U') IS NOT NULL DROP TABLE world.cities;
@@ -271,6 +282,25 @@ class ExportSqlServer extends Command
         return $sql;
     }
 
+    /** One {county_id, state_id} row per listed region of each county in counties.json (none when it is absent). */
+    private function countyStateRows(string $countiesFile): array
+    {
+        if (!$this->filesystem->exists($countiesFile)) {
+            return [];
+        }
+        $counties = json_decode(file_get_contents($countiesFile), true);
+        if (!is_array($counties)) {
+            throw new \RuntimeException("Invalid JSON in $countiesFile");
+        }
+        $rows = [];
+        foreach ($counties as $county) {
+            foreach ($county['states'] ?? [] as $region) {
+                $rows[] = ['county_id' => (int)$county['id'], 'state_id' => (int)$region['state_id']];
+            }
+        }
+        return $rows;
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -294,6 +324,16 @@ class ExportSqlServer extends Command
 
                 $jsonFile = "$rootDir/json/$table.json";
                 $sqlFile = "$rootDir/sqlserver/$table.sql";
+
+                if ($table === 'county_states') {
+                    // rows come from the states lists in counties.json; the table has no identity column
+                    $sql = "-- Table: $table\n\n" . $this->generateTableSchema($table) . "\n\n" .
+                        $this->generateSqlServerInsert($table, $this->countyStateRows("$rootDir/json/counties.json"));
+                    $this->filesystem->dumpFile($sqlFile, $sql);
+                    $worldSql .= $sql;
+                    $io->success("Exported $table to SQL Server format");
+                    continue;
+                }
 
                 if ($table !== 'counties' && !$this->filesystem->exists($jsonFile)) {
                     throw new \RuntimeException("JSON file not found: $jsonFile");

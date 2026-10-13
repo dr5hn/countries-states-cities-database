@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import fetch from 'node-fetch';
-import { cityStateId, localStateIds } from './city-state';
+import { cityStateId, countyStates, localStateIds } from './city-state';
 
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
@@ -92,10 +92,17 @@ async function main() {
   // Map source state ids to seeded ids by country and state code (names repeat within a country, codes do not)
   const stateIdMap = localStateIds(states, await prisma.state.findMany(), countryMap);
   const counties = await fetchData('counties');
+  const stateCtx = {
+    sourceStates: new Map(states.map(s => [s.id, { country_code: s.country_code, iso2: s.iso2 }])),
+    countriesWithStates: new Set(states.map(s => s.country_code)),
+    seededStateId: stateIdMap,
+  };
+  // v5: a county of several regions has no state; its regions are seeded below. An inconsistent county stops the seed.
+  const countyPlaces = new Map(counties.map(c => [c.id, countyStates(c, stateCtx)]));
   await prisma.county.createMany({
     data: counties.map(c => ({
       id: c.id, name: c.name,
-      stateId: stateIdMap.get(c.state_id), stateCode: c.state_code,
+      stateId: countyPlaces.get(c.id).stateId, stateCode: c.state_code ?? null,
       countryId: countryMap.get(c.country_code), countryCode: c.country_code,
       type: c.type, typeLocal: c.type_local ?? null, level: c.level,
       latitude: c.latitude, longitude: c.longitude, native: c.native,
@@ -110,14 +117,13 @@ async function main() {
   for (const county of counties.filter(c => c.parent_id != null)) {
     await prisma.county.update({ where: { id: county.id }, data: { parentId: county.parent_id } });
   }
+  await prisma.countyState.createMany({
+    data: [...countyPlaces].flatMap(([countyId, place]) => place.regions.map(stateId => ({ countyId, stateId }))),
+    skipDuplicates: true,
+  });
 
   // Seed Cities: a stateless city (a country with no states, v5) gets a null state; an inconsistent city stops the seed
   const cities = await fetchData('cities');
-  const stateCtx = {
-    sourceStates: new Map(states.map(s => [s.id, { country_code: s.country_code, iso2: s.iso2 }])),
-    countriesWithStates: new Set(states.map(s => s.country_code)),
-    seededStateId: stateIdMap,
-  };
   const cityData = cities.map((city) => {
     const { name, county_id, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId } = city;
     const countryId = countryMap.get(country_code);

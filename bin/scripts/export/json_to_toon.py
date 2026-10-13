@@ -38,6 +38,8 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
             if isinstance(v, dict):
                 inner = "|".join(f"{k}={v[k]}" for k in v)
                 vals.append(format_value(inner))
+            elif isinstance(v, list):   # a county's states (v5): compact JSON text, as in Parquet
+                vals.append(format_value(json.dumps(v, ensure_ascii=False, separators=(",", ":"))))
             else:
                 vals.append(format_value(v))
         return delimiter.join(vals)

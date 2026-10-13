@@ -53,13 +53,48 @@ export function cityStateId(city: SourceCity, ctx: StateContext): number | null 
     return null;
   }
   if (sid == null || code == null) throw new Error(`${label}: state_id and state_code must both be set or both be null`);
+  return seededState(label, sid, code, city.country_code, ctx);
+}
+
+/** The seeded id of a state given by a source (state_id, state_code) pair of a record in this country; throws otherwise. */
+function seededState(label: string, sid: unknown, code: unknown, countryCode: string, ctx: StateContext): number {
   if (typeof sid !== 'number' || !Number.isInteger(sid) || sid <= 0) throw new Error(`${label}: state_id ${JSON.stringify(sid)} is not a positive integer`);
   const state = ctx.sourceStates.get(sid);
   if (!state) throw new Error(`${label}: state_id ${sid} does not exist`);
-  if (state.country_code !== city.country_code) throw new Error(`${label}: state ${sid} is in ${state.country_code}, not ${city.country_code}`);
+  if (state.country_code !== countryCode) throw new Error(`${label}: state ${sid} is in ${state.country_code}, not ${countryCode}`);
   if (!state.iso2) throw new Error(`${label}: state ${sid} has no state code to check against`);
   if (state.iso2 !== code) throw new Error(`${label}: state_code ${code} does not match state ${sid} (${state.iso2})`);
   const seeded = ctx.seededStateId.get(sid);
   if (seeded == null) throw new Error(`${label}: state ${sid} was not seeded`);
   return seeded;
+}
+
+/** A source county's state fields, as in json/counties.json (v5: states lists the regions of a county of several). */
+export interface SourceCounty {
+  id?: number;
+  name?: string;
+  state_id?: number | null;
+  state_code?: string | null;
+  states?: readonly { state_id: number; state_code: string }[] | null;
+  country_code: string;
+}
+
+/**
+ * The seeded state of a source county, or (v5, decision B6) the seeded regions of a county of several regions: a
+ * county has its own state and no list, or a null pair and two or more distinct regions of its country. Anything else
+ * throws, so no county is seeded in the wrong place.
+ */
+export function countyStates(county: SourceCounty, ctx: StateContext): { stateId: number | null; regions: number[] } {
+  const label = `county ${county.id ?? '(new)'} ${county.name ?? ''}`.trim();
+  const { state_id: sid, state_code: code, states } = county;
+  if (sid != null && code != null) {
+    if (states != null) throw new Error(`${label}: a county with a state cannot also list states`);
+    return { stateId: seededState(label, sid, code, county.country_code, ctx), regions: [] };
+  }
+  if (sid != null || code != null) throw new Error(`${label}: state_id and state_code must both be set or both be null`);
+  const ids = (states ?? []).map(r => r.state_id);
+  if (!Array.isArray(states) || states.length < 2 || new Set(ids).size !== ids.length) {
+    throw new Error(`${label}: a county with no state lists two or more distinct regions in states`);
+  }
+  return { stateId: null, regions: states.map(r => seededState(`${label}: states entry`, r.state_id, r.state_code, county.country_code, ctx)) };
 }

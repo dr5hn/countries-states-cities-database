@@ -1,7 +1,7 @@
 // Run: node --test prisma/city-state.test.ts (Node 23.6 or later reads the TypeScript directly)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cityStateId, localStateIds, type StateContext } from './city-state.ts';
+import { cityStateId, countyStates, localStateIds, type StateContext } from './city-state.ts';
 
 const ctx: StateContext = {
   sourceStates: new Map([[1457, { country_code: 'US', iso2: 'LA' }]]),
@@ -45,4 +45,32 @@ test('no escape paths: a stateless city needs state_name null, and a state needs
   assert.throws(() => cityStateId(noName, ctx), /needs state_name: null/);
   const noCode = { ...ctx, sourceStates: new Map([[1457, { country_code: 'US', iso2: null }]]) };
   assert.throws(() => cityStateId({ ...us, state_code: 'WRONG' }, noCode), /has no state code/);
+});
+
+// v5 (decision B6): a county of several regions has no state of its own and lists its regions
+const nz: StateContext = {
+  sourceStates: new Map([[4060, { country_code: 'NZ', iso2: 'MWT' }], [4061, { country_code: 'NZ', iso2: 'WKO' }],
+    [1457, { country_code: 'US', iso2: 'LA' }]]),
+  countriesWithStates: new Set(['NZ', 'US']),
+  seededStateId: new Map([[4060, 30], [4061, 31], [1457, 7]]),
+};
+const regions = [{ state_id: 4060, state_code: 'MWT' }, { state_id: 4061, state_code: 'WKO' }];
+const waitomo = { id: 9, name: 'Waitomo District', country_code: 'NZ', state_id: null, state_code: null, states: regions };
+
+test('maps a county to its seeded state, or a county of several regions to its seeded regions', () => {
+  assert.deepEqual(countyStates({ ...waitomo, state_id: 4061, state_code: 'WKO', states: null }, nz), { stateId: 31, regions: [] });
+  assert.deepEqual(countyStates(waitomo, nz), { stateId: null, regions: [30, 31] });
+});
+
+test('throws instead of seeding an inconsistent county', () => {
+  const bad = [
+    [{ ...waitomo, states: undefined }, /two or more distinct regions/],
+    [{ ...waitomo, states: [regions[0]] }, /two or more distinct regions/],
+    [{ ...waitomo, states: [regions[0], regions[0]] }, /two or more distinct regions/],
+    [{ ...waitomo, state_id: 4061, state_code: 'WKO' }, /cannot also list states/],
+    [{ ...waitomo, state_code: 'WKO' }, /both be set or both be null/],
+    [{ ...waitomo, states: [regions[0], { state_id: 1457, state_code: 'LA' }] }, /is in US, not NZ/],
+    [{ ...waitomo, states: [regions[0], { state_id: 4061, state_code: 'XX' }] }, /does not match/],
+  ] as const;
+  for (const [county, re] of bad) assert.throws(() => countyStates(county, nz), re);
 });

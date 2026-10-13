@@ -251,6 +251,7 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world counties > sql/counties.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world county_states > sql/county_states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
           # Export complete world database
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
@@ -270,6 +271,7 @@ jobs:
 
           DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `county_states`;
           DROP TABLE IF EXISTS `counties`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
@@ -303,6 +305,7 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t county_states > psql/county_states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
 
@@ -323,6 +326,7 @@ jobs:
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world -t counties --mysql-password root -u root -f sqlite/counties.sqlite3
+          mysql2sqlite -d world -t county_states --mysql-password root -u root -f sqlite/county_states.sqlite3
           mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 

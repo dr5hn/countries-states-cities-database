@@ -26,6 +26,11 @@ class JsonToToonTest(unittest.TestCase):
         out = json_to_toon('[{"name": "null"}, {"name": "true"}]')
         self.assertEqual(out.splitlines()[1:], ['  "null"', '  "true"'])
 
+    def test_list_is_json_text(self):
+        """A list (a county's states, v5) is one quoted cell of compact JSON, never a Python repr."""
+        out = json_to_toon('[{"id": 9, "states": [{"state_id": 4060, "state_code": "MWT"}, {"state_id": 4061, "state_code": "WKO"}]}]')
+        self.assertEqual(out.splitlines()[1], '  9,"[{\\"state_id\\":4060,\\"state_code\\":\\"MWT\\"},{\\"state_id\\":4061,\\"state_code\\":\\"WKO\\"}]"')
+
 
 if __name__ == "__main__":
     unittest.main()

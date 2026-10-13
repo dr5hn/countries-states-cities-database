@@ -27,7 +27,7 @@ import sys
 import argparse
 from typing import List, Dict, Any, Set
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from city_states import check_references  # noqa: E402
+from city_states import check_counties, check_references  # noqa: E402
 import mysql.connector
 from datetime import datetime
 
@@ -39,7 +39,7 @@ LINK_TYPES = {
     ('countries', 'subregion_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
     ('subregions', 'region_id'): "MEDIUMINT UNSIGNED NOT NULL",
     ('states', 'parent_id'): "INT UNSIGNED DEFAULT NULL",
-    ('counties', 'state_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('counties', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",   # null for a county of several regions (v5)
     ('counties', 'parent_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
     ('cities', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
     ('cities', 'county_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
@@ -47,6 +47,26 @@ LINK_TYPES = {
     ('postcodes', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
     ('postcodes', 'city_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
 }
+
+
+def load_rows(path):
+    """The array of records in one contributions file; an unreadable file or another shape is refused by name."""
+    try:
+        with open(path, 'r', encoding='utf-8') as fh:
+            rows = json.load(fh)
+    except (OSError, UnicodeError, json.JSONDecodeError) as e:
+        raise ValueError(f"Cannot load {path}: {e}") from e
+    if not isinstance(rows, list):
+        raise ValueError(f"Cannot load {path}: expected an array of records")
+    return rows
+
+
+def reference_rows():
+    """Countries, states and every city from contributions/, for the reference checks."""
+    cities_dir = os.path.join('contributions', 'cities')
+    return (load_rows(os.path.join('contributions', 'countries', 'countries.json')),
+            load_rows(os.path.join('contributions', 'states', 'states.json')),
+            [c for f in sorted(os.listdir(cities_dir)) if f.endswith('.json') for c in load_rows(os.path.join(cities_dir, f))])
 
 
 class JSONToMySQLImporter:
@@ -143,8 +163,10 @@ class JSONToMySQLImporter:
         # Define table-specific redundant relationship fields that should never be added
         # These fields are redundant because we already have _id and _code fields
         redundant_fields = set()
-        if table_name in ('cities', 'counties'):
+        if table_name == 'cities':
             redundant_fields = {'country_name', 'state_name'}
+        elif table_name == 'counties':
+            redundant_fields = {'country_name', 'state_name', 'states'}   # states: rows of county_states, not a column
         elif table_name == 'states':
             redundant_fields = {'country_name'}
 
@@ -311,7 +333,7 @@ class JSONToMySQLImporter:
         existing = {next(iter(row.values())) for row in self.cursor.fetchall()}
         self.cursor.execute("SET FOREIGN_KEY_CHECKS=0")
         try:
-            for table in ('postcodes', 'cities', 'counties', 'states', 'countries', 'subregions', 'regions'):
+            for table in ('postcodes', 'cities', 'county_states', 'counties', 'states', 'countries', 'subregions', 'regions'):
                 if table in existing:
                     self.cursor.execute(f"TRUNCATE TABLE {table}")
         finally:
@@ -412,19 +434,7 @@ class JSONToMySQLImporter:
 
     def preflight_city_states(self):
         """Check every city's state pair against canonical countries and states before any table is reset."""
-        def load(path):
-            try:
-                with open(path, 'r', encoding='utf-8') as fh:
-                    rows = json.load(fh)
-            except (OSError, UnicodeError, json.JSONDecodeError) as e:
-                raise ValueError(f"Cannot load {path}: {e}") from e
-            if not isinstance(rows, list):
-                raise ValueError(f"Cannot load {path}: expected an array of records")
-            return rows
-        countries = load(os.path.join('contributions', 'countries', 'countries.json'))
-        states = load(os.path.join('contributions', 'states', 'states.json'))
-        cities_dir = os.path.join('contributions', 'cities')
-        cities = [c for f in sorted(os.listdir(cities_dir)) if f.endswith('.json') for c in load(os.path.join(cities_dir, f))]
+        countries, states, cities = reference_rows()
         errors = check_references(countries, states, cities)
         if errors:
             raise ValueError(f"{len(errors)} reference problems (countries, states or city state pairs): " + '; '.join(errors[:20]))
@@ -479,6 +489,18 @@ class JSONToMySQLImporter:
 
         if any(r.get('parent_id') is not None and r.get('id') is None for r in all_counties):
             raise ValueError('Counties with parent_id must have an explicit id')
+        countries, states, cities = reference_rows()
+        errors = check_counties(countries, states, all_counties, cities)
+        if errors:
+            raise ValueError(f"{len(errors)} county reference problems (county states or city county links): " + '; '.join(errors[:20]))
+        # a county of several regions needs the v5 migration: nullable county state and the county_states table
+        if any(r.get('state_id') is None for r in all_counties):
+            self.cursor.execute("SHOW TABLES LIKE 'county_states'")
+            migrated = self.cursor.fetchone() is not None
+            self.cursor.execute("SHOW COLUMNS FROM counties WHERE Field IN ('state_id', 'state_code')")
+            if not migrated or any(r['Null'] != 'YES' for r in self.cursor.fetchall()):
+                raise ValueError("counties need migration 20261015000000 (county_states, nullable county state); run migration "
+                                 "20261015000000 before importing a county of several regions")
         return all_counties
 
     def import_counties(self, all_counties=None):
@@ -494,7 +516,7 @@ class JSONToMySQLImporter:
             self.add_columns_to_table('counties', new_columns)
 
         all_columns = list(self.get_table_columns('counties').keys())
-        skip_fields = {'flag', 'country_name', 'state_name'}
+        skip_fields = {'flag', 'country_name', 'state_name', 'states'}
         insert_columns = [c for c in all_columns if c not in skip_fields]
 
         parents = [(r['parent_id'], r['id']) for r in all_counties if r.get('parent_id') is not None and r.get('id') is not None]
@@ -521,6 +543,16 @@ class JSONToMySQLImporter:
         if parents:
             self.cursor.executemany("UPDATE counties SET parent_id = %s WHERE id = %s", parents)
             self.conn.commit()
+
+        # A county of several regions: one county_states row per listed region (checked in the preflight)
+        relation = sorted((r['id'], e['state_id']) for r in all_counties if r.get('states') for e in r['states'])
+        self.cursor.execute("SHOW TABLES LIKE 'county_states'")
+        if self.cursor.fetchone() is not None:
+            self.cursor.execute("DELETE FROM county_states")
+            if relation:
+                self.cursor.executemany("INSERT INTO county_states (county_id, state_id) VALUES (%s, %s)", relation)
+            self.conn.commit()
+            print(f"  ✓ Linked {len({c for c, _ in relation}):,} counties to {len(relation):,} regions")
 
         print(f"  ✓ Imported {inserted:,} counties")
         return inserted

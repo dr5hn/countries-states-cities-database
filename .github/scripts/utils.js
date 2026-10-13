@@ -91,9 +91,11 @@ const SCHEMA = {
   },
   counties: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
+    // v5 (decision B6): a county of several regions has state_id and state_code both null and lists them in states
+    nullablePairs: [['state_id', 'state_code']],
     optional: [
       'type', 'type_local', 'native', 'level', 'parent_id', 'population', 'timezone',
-      'translations', 'state_name', 'country_name', 'wikiDataId',
+      'translations', 'state_name', 'country_name', 'wikiDataId', 'states',
     ],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
@@ -268,6 +270,8 @@ function validateRecord(record, entityType, index) {
     }
   }
 
+  if (entityType === 'counties') errors.push(...countyRegionErrors(record, prefix));
+
   if (
     entityType === 'postcodes' &&
     typeof record.code === 'string' &&
@@ -280,6 +284,26 @@ function validateRecord(record, entityType, index) {
   }
 
   return { errors, warnings };
+}
+
+/**
+ * Errors for a county's regions (v5, decision B6): with no state (both keys null) it lists two or more distinct
+ * {state_id, state_code} regions in states; with a state it lists none. A half pair is reported by validateRecord.
+ */
+function countyRegionErrors(record, prefix) {
+  const listed = record.states;
+  if (record.state_id === null && record.state_code === null) {
+    const several = `${prefix}: a county with no state lists two or more distinct regions in states`;
+    if (!Array.isArray(listed)) return [several];
+    const shapeOk = (r) => r !== null && typeof r === 'object' && !Array.isArray(r) &&
+      Object.keys(r).sort().join(',') === 'state_code,state_id' && Number.isInteger(r.state_id) && r.state_id > 0 &&
+      typeof r.state_code === 'string' && r.state_code.trim() !== '';
+    if (!listed.every(shapeOk)) {
+      return [`${prefix}: each region in states needs a positive integer state_id and a non-empty state_code, nothing else`];
+    }
+    return listed.length >= 2 && new Set(listed.map((r) => r.state_id)).size === listed.length ? [] : [several];
+  }
+  return listed == null ? [] : [`${prefix}: a county with a state cannot also list states (states is for a county of several regions)`];
 }
 
 /**

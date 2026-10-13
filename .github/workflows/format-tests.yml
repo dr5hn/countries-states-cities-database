@@ -1,7 +1,8 @@
 name: Format and import tests
 
-# Unit tests for the import, sync, export converters, export checker, PR validator scripts and Prisma mapping, and a
-# round trip of a test-only city with no state through MySQL and every export format. It also runs on draft PRs, which
+# Unit tests for the import, sync, export converters, export checkers, PR validator scripts and Prisma mapping, and a
+# round trip of a test-only city with no state and of a real county of several regions (v5) through MySQL and every
+# export format. It also runs on draft PRs, which
 # the PR Validator skips. Read-only: no commits, releases or comments.
 on:
   pull_request:
@@ -90,7 +91,9 @@ jobs:
       - name: Migration up, down and refused down
         env:
           MYSQL_PASSWORD: root
-        run: php bin/db/tests/test_nullable_city_state_migration.php
+        run: |
+          php bin/db/tests/test_nullable_city_state_migration.php
+          php bin/db/tests/test_county_states_migration.php
 
       - name: Import the data with a test-only city that has no state
         run: |
@@ -112,8 +115,12 @@ jobs:
       - name: Export every format
         working-directory: bin
         run: |
-          for command in export:json export:csv export:xml export:yaml export:mongodb; do php console "$command"; done
-          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities
+          for command in export:json export:csv export:xml export:yaml export:mongodb export:sql-server; do php console "$command"; done
+          python3 scripts/export/json_to_toon.py
+          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities counties
 
       - name: Check the city with no state in each format
         run: python3 bin/db/tests/check_null_state_exports.py 999001 EH
+
+      - name: Check a county of several regions in each format (Taupō District, four regions)
+        run: python3 bin/db/tests/check_county_states_exports.py 14024

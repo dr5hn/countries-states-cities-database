@@ -15,6 +15,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- Drop existing tables in reverse dependency order
 DROP TABLE IF EXISTS `postcodes`;
 DROP TABLE IF EXISTS `cities`;
+DROP TABLE IF EXISTS `county_states`;
 DROP TABLE IF EXISTS `counties`;
 DROP TABLE IF EXISTS `states`;
 DROP TABLE IF EXISTS `countries`;
@@ -167,8 +168,8 @@ CREATE TABLE `states` (
 CREATE TABLE `counties` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_id` mediumint unsigned NOT NULL,
-  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_id` mediumint unsigned DEFAULT NULL COMMENT 'NULL only for a county of several regions, listed in county_states (v5)',
+  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` mediumint unsigned NOT NULL,
   `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -191,8 +192,25 @@ CREATE TABLE `counties` (
   KEY `idx_counties_country` (`country_id`),
   CONSTRAINT `counties_country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
   CONSTRAINT `counties_parent_fk` FOREIGN KEY (`parent_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
-  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
+  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
+  CONSTRAINT `counties_state_pair` CHECK (((`state_id` IS NULL) AND (`state_code` IS NULL)) OR ((`state_id` IS NOT NULL) AND (`state_code` IS NOT NULL)))
 ) ENGINE=InnoDB AUTO_INCREMENT=12341 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `county_states`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `county_states` (
+  `county_id` mediumint unsigned NOT NULL,
+  `state_id` mediumint unsigned NOT NULL,
+  PRIMARY KEY (`county_id`,`state_id`),
+  KEY `idx_county_states_state` (`state_id`),
+  CONSTRAINT `county_states_county_fk` FOREIGN KEY (`county_id`) REFERENCES `counties` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `county_states_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Regions of a county of several regions (v5); a county with its own state has no rows';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

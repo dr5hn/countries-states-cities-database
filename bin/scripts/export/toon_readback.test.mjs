@@ -22,3 +22,10 @@ test('a stateless city, a normal city, literal-looking strings and booleans read
   ];
   assert.deepEqual(decode(convert(rows)), rows);
 });
+
+test("a county's list of regions reads back as the same JSON text", () => {
+  const states = [{ state_id: 4060, state_code: 'MWT' }, { state_id: 4061, state_code: 'WKO' }];
+  const [row] = decode(convert([{ id: 9, state_id: null, states }]));
+  assert.equal(row.state_id, null);
+  assert.deepEqual(JSON.parse(row.states), states);
+});
