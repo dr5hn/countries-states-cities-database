@@ -193,6 +193,15 @@ async function run() {
           }
         }
 
+        // A city with no state (v5): allowed only when its country has no states at all (e.g. Western Sahara), so a
+        // missing state is never a shortcut for an unresolved one
+        if (entityType === 'cities' && record.state_id === null && states) {
+          const hasStates = states.some((s) => Number(s.country_id) === Number(record.country_id));
+          if (hasStates) {
+            errors.push(`${prefix}: state_id is null but country ${record.country_code} has states; set the state`);
+          }
+        }
+
         // Validate state_id exists
         if (record.state_id && states) {
           const state = stateById.get(Number(record.state_id));

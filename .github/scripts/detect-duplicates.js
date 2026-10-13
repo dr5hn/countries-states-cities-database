@@ -153,6 +153,10 @@ async function run() {
         candidates = existingData.filter(
           (e) => Number(e.state_id) === Number(record.state_id)
         );
+      } else if (entityType === 'cities' && record.state_id === null) {   // v5: cities of a country with no states
+        candidates = existingData.filter(
+          (e) => e.state_id === null && Number(e.country_id) === Number(record.country_id)
+        );
       } else if (entityType === 'states' && record.country_id) {
         candidates = existingData.filter(
           (e) => Number(e.country_id) === Number(record.country_id)

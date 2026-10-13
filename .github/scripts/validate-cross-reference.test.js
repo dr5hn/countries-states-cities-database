@@ -135,3 +135,55 @@ test('county with parent_id requires an explicit id', async () => {
 test('valid county parent and unchanged city links pass', async () => {
   assert.deepEqual(await validateCountyEdit([county, { ...county, id: 2, parent_id: 1 }]), []);
 });
+
+/** Run the real PR validator on one edited city file, with the given countries and states. */
+async function validateCityEdit(cc, cities, countries, states) {
+  const vm = require('node:vm');
+  const previous = process.cwd();
+  const root = fs.mkdtempSync(path.join(__dirname, '.city-test-'));
+  const outputs = {};
+  const code = fs.readFileSync(path.join(__dirname, 'validate-cross-reference.js'), 'utf8');
+  try {
+    for (const dir of ['counties', 'cities', 'countries', 'states']) {
+      fs.mkdirSync(path.join(root, 'contributions', dir), { recursive: true });
+    }
+    const write = (file, data) => fs.writeFileSync(path.join(root, 'contributions', file), JSON.stringify(data));
+    write(`cities/${cc}.json`, cities);
+    write('countries/countries.json', countries);
+    write('states/states.json', states);
+    process.chdir(root);
+    const fakeGithub = {
+      getOctokit: () => ({ rest: { pulls: { listFiles: async () => ({ data: [
+        { filename: `contributions/cities/${cc}.json`, status: 'modified' },
+      ] }) } } }),
+      context: { payload: { pull_request: { number: 1 } }, repo: { owner: 'fixture', repo: 'fixture' } },
+    };
+    const fakeCore = {
+      setOutput: (key, value) => { outputs[key] = value; },
+      info() {}, error() {}, warning() {}, setFailed(message) { throw new Error(message); },
+    };
+    const sandbox = {
+      require: (key) => key === '@actions/github' ? fakeGithub : key === '@actions/core' ? fakeCore :
+        key === './utils' ? require('./utils') : require(key),
+      process, module: { exports: {} },
+    };
+    await vm.runInNewContext(code + '\nrun()', sandbox);
+    return JSON.parse(outputs.errors);
+  } finally {
+    process.chdir(previous);
+    fs.rmSync(root, { recursive: true });
+  }
+}
+
+const countriesEHUS = [{ id: 244, iso2: 'EH' }, { id: 233, iso2: 'US' }];
+const statesUS = [{ id: 1457, country_id: 233, state_code: 'LA' }];
+
+test('a city with no state passes when its country has no states (v5)', async () => {
+  const smara = { id: 1, name: 'Smara', state_id: null, state_code: null, country_id: 244, country_code: 'EH', latitude: '26.74', longitude: '-11.67' };
+  assert.deepEqual(await validateCityEdit('EH', [smara], countriesEHUS, statesUS), []);
+});
+
+test('a city with no state fails when its country has states (v5)', async () => {
+  const orphan = { id: 2, name: 'Orphan', state_id: null, state_code: null, country_id: 233, country_code: 'US', latitude: '30', longitude: '-90' };
+  assert.match((await validateCityEdit('US', [orphan], countriesEHUS, statesUS)).join('\n'), /state_id is null but country US has states/);
+});

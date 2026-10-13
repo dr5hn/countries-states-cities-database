@@ -118,9 +118,11 @@ async function main() {
   const cityData = cities
     .map(({ name, county_id, state_name, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId }) => {
       const countryId = countryMap.get(country_code);
-      const stateId = stateMap.get(`${state_name}-${countryId}`);
-      return stateId && countryId
-        ? { name, countyId: county_id ?? null, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId }
+      // A city of a country with no states (v5) has a null state; any other city needs its state to resolve
+      const stateless = state_code == null && state_name == null;
+      const stateId = stateless ? null : stateMap.get(`${state_name}-${countryId}`);
+      return countryId && (stateless || stateId)
+        ? { name, countyId: county_id ?? null, stateCode: state_code ?? null, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId }
         : null;
     })
     .filter(Boolean);

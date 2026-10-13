@@ -27,6 +27,11 @@ TABLES = ["regions", "subregions", "countries", "states", "counties", "cities", 
 
 JSON_NESTED_COLS = {"translations", "timezones"}
 
+# Integer columns, stored as nullable 64-bit integers: without this pandas turns an integer column with any null into
+# floats (county_id 5192 became 5192.0). In v5 a city's state_id can be null (a country with no states).
+INT_COLS = {"id", "state_id", "country_id", "county_id", "parent_id", "region_id", "subregion_id", "city_id",
+            "level", "population", "population_year", "gdp"}
+
 
 def load_json(table: str) -> list:
     path = os.path.join(REPO_ROOT, "json", f"{table}.json")
@@ -50,6 +55,17 @@ def flatten_row(row: dict) -> dict:
     return out
 
 
+def typed_frame(flat: list) -> pd.DataFrame:
+    """DataFrame of flattened rows with every integer column as nullable Int64; fails on a non-integer value."""
+    df = pd.DataFrame(flat)
+    for col in INT_COLS & set(df.columns):
+        values = pd.to_numeric(df[col], errors="raise")
+        if not values.dropna().apply(float.is_integer if values.dtype.kind == "f" else lambda _: True).all():
+            raise ValueError(f"{col}: non-integer value")
+        df[col] = values.astype("Int64")
+    return df
+
+
 def export_table(table: str, out_dir: str) -> int:
     src = os.path.join(REPO_ROOT, "json", f"{table}.json")
     if not os.path.exists(src):
@@ -64,7 +80,7 @@ def export_table(table: str, out_dir: str) -> int:
         return 0
 
     flat = [flatten_row(r) for r in data]
-    df = pd.DataFrame(flat)
+    df = typed_frame(flat)
 
     out_path = os.path.join(out_dir, f"{table}.parquet")
     pq.write_table(

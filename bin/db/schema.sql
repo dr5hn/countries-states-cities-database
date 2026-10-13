@@ -204,9 +204,9 @@ CREATE TABLE `counties` (
 CREATE TABLE `cities` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_id` mediumint unsigned NOT NULL,
+  `state_id` mediumint unsigned DEFAULT NULL COMMENT 'NULL only for a city of a country with no states (v5)',
   `county_id` mediumint unsigned DEFAULT NULL,
-  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` mediumint unsigned NOT NULL,
   `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
