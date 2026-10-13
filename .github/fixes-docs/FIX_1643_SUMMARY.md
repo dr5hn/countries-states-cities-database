@@ -157745,3 +157745,46 @@ provincia. Time zones from IANA tzdata 2026e.
 
 ### Rollback
 Revert the PR (squash commit); new county ids are 13797-13852.
+
+## Special territories, round 1: CLDR country names, Crimean clocks, East Jerusalem, Gunwi
+
+### Problem
+Decisions round 2 (translations name the same entity; clocks follow IANA) found small errors that change no id, English name,
+country code or country membership: country translations that named another entity (Persian names of the two Koreas swapped), borrowed
+labels on Kazanskaya, a wrong item on Imlili,
+East Jerusalem's point 21 km west of the city, and 34 Crimean records on the Kyiv clock. Gunwi county moved from North
+Gyeongsang to Daegu on 1 July 2023 (Law 19155) and two records still sat in North Gyeongsang.
+
+### Fix
+- **Country translations that named another entity (4 values in 4 countries), to the CLDR 48.2 default name:**
+  - Western Sahara (244): fa `جمهوری دموکراتیک عربی صحرا` → `صحرای غربی`
+  - Cyprus (57): tr `Kuzey Kıbrıs Türk Cumhuriyeti` → `Kıbrıs`
+  - North Korea (115): fa `کره جنوبی` → `کرهٔ شمالی`
+  - South Korea (116): fa `کره شمالی` → `کرهٔ جنوبی`
+  All 475 cells of 25 special-case countries were compared. Values that name the same entity stay, including spellings,
+  customary exonyms, long and short forms, and forms with a political qualifier (Taiwan's Japanese and Chinese names,
+  Palestine's "occupied" forms): changing a qualifier is a display-convention change for the next major release, not an
+  error fix. English names, natives, codes and memberships do not change.
+- **Kazanskaya 98927 and 98928:** translations kept only where the place's own Wikidata item has the label: 98928's
+  `de`, `es` and `pl` replaced by its own item's labels, Kazan's `喀山` and `Kazán` removed, and unattested keys left
+  out (consumers should fall back to `name` for a missing key).
+- **Imlili 67134:** item Q2676569 (Imilchil, about 1,440 km away) cleared; no replacement.
+- **East Jerusalem 154002:** point from its own item Q212938 (Wikidata CC0), inside OCHA's East Jerusalem extent and the
+  Jerusalem governorate (checks only, nothing copied from them); the old point was 21.2 km west, outside both.
+- **Crimea and Sevastopol:** 32 city records and the two state records from `Europe/Kyiv` / `Europe/Kiev` to
+  `Europe/Simferopol`, the IANA zone for Crimea; the other 337 city records there already had it. Every point lies
+  inside its own state (geoBoundaries UKR ADM1, ODbL, check only). Membership stays Ukraine; a clock is not membership.
+- **Gunwi 65355 and 65431:** state 3855 (KR-47) to 3846 (KR-27 Daegu); no state is added or removed. Both typed in the
+  #2008 model, held there only for this move: Gunwi-gun `municipality / 군` at level 2, its seat Kunwi `town / 읍` at
+  level 3 under it. From review: Gunwi-gun's German `Gunwi-Pistole` (a machine translation) becomes `Gunwi`, its own
+  item's label, and its Breton key (also a weapon word) is left out; Kunwi's native and Korean name `쿤위`, a
+  back-transliteration of the Latin name, become `군위` (the county office's 군위읍, without the suffix, as for other
+  eup records).
+
+### Sources
+Unicode CLDR 48.2 (cldr-json 48.2.0, commit bb334e8d), Unicode License v3, notice in `.github/licenses/Unicode-3.0.txt` and credited in the
+README; Wikidata items Q4207701, Q3277197, Q900, Q2676569 and Q212938 (CC0); IANA tzdb 2026e (public domain);
+Korean Law 19155 and the Ministry of the Interior and Safety's administrative codes (facts only).
+
+### Rollback
+Revert the PR (squash commit); no record is created or removed.

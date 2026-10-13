@@ -222,6 +222,8 @@ Official registers matched to records (categories, codes and unit names) also as
 - [Stats NZ](https://www.stats.govt.nz/about-us/copyright/), territorial authorities and urban-rural areas 2026 (CC BY 4.0): this work is based on Stats NZ data licensed for reuse under CC BY 4.0
 - Ville de Luxembourg, quartiers on [data.public.lu](https://data.public.lu/) (CC BY 4.0)
 
+Country names in some languages follow [Unicode CLDR](https://cldr.unicode.org/) 48.2: Copyright © 2015-2024 Unicode, Inc., under the [Unicode License v3](.github/licenses/Unicode-3.0.txt), whose notice must travel with copies.
+
 Keep these credits when you redistribute the data.
 
 ---
