@@ -221,6 +221,7 @@ Official registers matched to records (categories, codes and unit names) also as
 - [Central Statistics Office](https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/) and Tailte Éireann, Census 2022 built-up areas (CC BY 4.0)
 - [Stats NZ](https://www.stats.govt.nz/about-us/copyright/), territorial authorities and urban-rural areas 2026 (CC BY 4.0): this work is based on Stats NZ data licensed for reuse under CC BY 4.0
 - Ville de Luxembourg, quartiers on [data.public.lu](https://data.public.lu/) (CC BY 4.0)
+- [Ministry for Development of Communities and Territories of Ukraine](https://mindev.gov.ua/), Codifier of administrative-territorial units and territories of territorial communities (KATOTTG), 7 July 2026 (CC BY 4.0): names and codes matched to records; CSC romanised the names under Cabinet of Ministers Resolution 55 (2010)
 
 Country names in some languages follow [Unicode CLDR](https://cldr.unicode.org/) 48.2: Copyright © 2015-2024 Unicode, Inc., under the [Unicode License v3](.github/licenses/Unicode-3.0.txt), whose notice must travel with copies.
 
