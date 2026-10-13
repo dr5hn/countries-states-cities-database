@@ -86,7 +86,7 @@ async function validateCountyEdit(records, status = 'modified') {
     write('states/states.json', [{ id: 1457, country_id: 233, state_code: 'LA' }, { id: 1427, country_id: 233, state_code: 'AL' }]);
     process.chdir(root);
     const fakeGithub = {
-      getOctokit: () => ({ rest: { pulls: { listFiles: async () => ({ data: [
+      getOctokit: () => ({ paginate: async (fn, params) => (await fn(params)).data, rest: { pulls: { listFiles: async () => ({ data: [
         { filename: 'contributions/counties/US.json', status },
       ] }) } } }),
       context: { payload: { pull_request: { number: 1 } }, repo: { owner: 'fixture', repo: 'fixture' } },
