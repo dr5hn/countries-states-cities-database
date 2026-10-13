@@ -288,6 +288,12 @@ def git(repo, *args):
     return r.stdout
 
 
+def top_level(repo):
+    """The repository's top folder. git resolves pathspecs such as contributions/ from the working folder, so every
+    read runs from the top: a --repo inside the repository would otherwise list no files and write empty releases."""
+    return git(repo, 'rev-parse', '--show-toplevel').decode().strip()
+
+
 def resolve(repo, ref):
     """The commit SHA a ref names, resolved once; every later read uses the SHA, never the movable name."""
     if not ref or ref.startswith('-'):
@@ -837,6 +843,7 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
     checked by the same walk, which then starts at the first parent of the oldest of them."""
     removals, identities, restorations = load_ledger(ledger)
     reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
+    repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
     every = {k[2] for d in (removals, identities, restorations) for k in d}
     interval, place = place_commits(repo, frm, to, every)

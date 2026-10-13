@@ -9,8 +9,15 @@ from contextlib import redirect_stderr
 from pathlib import Path
 from unittest import mock
 
-import migrations as m
-from migrations import MigrationError, event_errors, field_changes, generate, row_hash
+import importlib.util
+
+# Loaded from this folder by path: the repository's top-level migrations/ folder would shadow `import migrations`
+# when the tests run from the repository root.
+_spec = importlib.util.spec_from_file_location('release_migrations', Path(__file__).resolve().with_name('migrations.py'))
+m = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(m)
+MigrationError, event_errors, field_changes, generate, row_hash = (m.MigrationError, m.event_errors, m.field_changes,
+                                                                   m.generate, m.row_hash)
 
 CITY = 'contributions/cities/XX.json'
 
@@ -551,6 +558,18 @@ class HistoryTest(Case):
         (removed, *_), _ = self.gen(c0, c4, events + [again], out='out2')
         self.assertEqual(removed[0]['current_targets'], [{'table': None, 'id': None, 'end': 'no_successor',
                                                           'relations': ['merged_same_entity', 'restored'], 'automatic_redirect': False}])
+
+    def test_runs_from_a_subdirectory(self):
+        """--repo may name any folder inside the repository: pathspecs resolve from its top level, so a run from a
+        subdirectory reads the same files instead of an empty tree."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        events = [removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', [])]
+        ledger = self.dir / 'events.jsonl'
+        ledger.write_text(''.join(json.dumps(e) + '\n' for e in events))
+        (removed, _, _, _, changed, per_table, _), _ = generate(self.repo.root / 'contributions' / 'cities', c0, c1, ledger,
+                                                                self.reserved, self.meta, self.dir / 'sub')
+        self.assertEqual(([r['old_id'] for r in removed], len(changed), per_table['cities']['from_total']), ([2], 1, 2))
 
     def test_reads_use_the_resolved_sha(self):
         """After resolving --to once, no git read uses the movable branch name."""

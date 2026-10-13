@@ -148,7 +148,8 @@ be final at `--to`.
 
 ## Generating the files
 
-Pass commit SHAs, not branch names. `--from` is the previous **successful published** snapshot, not a failed draft
+Pass commit SHAs, not branch names. `--repo` may name any folder inside the repository; every read runs from its
+top level. `--from` is the previous **successful published** snapshot, not a failed draft
 or a feature tag. `--to` is the release candidate. Both must be on one first-parent line and come from a full clone.
 For v5.0.0, run it twice: v4.0 to v5 (cumulative) and export.51 to v5 (the step since the last export).
 
@@ -180,4 +181,5 @@ commits walked, not the length of the interval:
 | #2009 to master (9 commits), checking 9,862 earlier events and the 1509 restoration | 203 | 68 s | 2.8 GB |
 | v4.0 to master, cumulative (refused on exactly the 339 held events) | 208 | 66 s | 3.5 GB |
 
-Tests: `cd bin/scripts/release && python3 -m unittest test_migrations`. The tests run on scratch git repositories.
+Tests: `python3 -m unittest bin/scripts/release/test_migrations.py` from the repository root, or
+`cd bin/scripts/release && python3 -m unittest test_migrations`. The tests run on scratch git repositories.
