@@ -96,6 +96,16 @@ with its province, single municipality and mean point; per-code ledger in
 `.github/fixes-docs/ledgers/ES_postcodes_cartociudad_2026-04.csv`. This is the source's observed address coverage, not
 Correos' delivery list.
 
+**Portugal (since October 2026):** the earlier PT rows came from a CTT-derived compilation whose redistribution basis
+was not established. Locality names and points now come from the GeoNames postal code dump of 13 October 2026
+(`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source: GeoNames,
+Portuguese postal code dump, 13 October 2026". Modification: only codes CSC already had are kept; a code whose dump rows
+give different localities or points has that field left empty; regions are mapped to CSC states by GeoNames' published
+code table; city links are rebuilt only where one same-named city lies inside the code's municipality. Points are
+GeoNames' estimates, not delivery-area centroids. Edition ledger:
+`.github/fixes-docs/ledgers/PT_postcodes_geonames_2026-10.sources.json`. 1,112 codes the dump does not list are queued
+for removal in v5.0.0; they keep their earlier values until then.
+
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
 own to programmatically assemble attribution — see the scope note above.

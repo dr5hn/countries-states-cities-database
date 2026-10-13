@@ -313,3 +313,42 @@ https://lgdirectory.gov.in/termsconditions.do. Only codes and their links are us
 
 ### Rollback
 Revert the PR (squash commit).
+
+## Portugal: postcodes from the GeoNames postal dump (decisions_5, 14 Oct 2026)
+
+### Problem
+The 197,024 Portuguese postcodes (`ctt`) came from a CTT-derived compilation (centraldedados/codigos_postais). The
+edition imported and the upstream grant to redistribute CTT's postal database were never established; a public
+mirror does not establish them. Under the v5 source decision (decisions_5), such a cohort is re-derived from an open
+replacement product.
+
+### Fix
+**195,912 postcodes kept** with their ids: every code the GeoNames postal code dump of 13 October 2026 lists for
+Portugal. Each is re-derived from that dump (`geonames-postal`, CC BY 4.0):
+- Locality name: 192,762 from the dump (130,010 differ only in letter case from the old upper-case names). 3,150 are
+  left empty because the dump gives several different localities for the code; none is picked.
+- Point: 194,605 rows get the dump's point. 1,307 stay empty because the dump's points for the code disagree.
+  The points are GeoNames' estimates, not delivery-area centroids, and change no city or seat point.
+- State: from the dump's region code by GeoNames' published code table; all agree with the current state links.
+- City link: kept on 76,485 rows, changed on 1 (6200-238: Teixoso to Covilhã, as the dump gives Covilhã), cleared on
+  9,067 and added on 5,554. A link is made only when exactly one city of that name is in the code's state and lies
+  inside the municipality the dump names (CAOP2025 boundaries, used to check, not copied). Client and PO-box codes
+  the old importer excluded stay unlinked (4,067), and the Pedroso/Perafita cases held in #1770 stay unlinked.
+
+**Not in this PR:** 1,112 codes the dump does not list are queued for removal in v5.0.0 (no ids are removed between
+majors). They keep their earlier values until then; exports are paused until v5.0.0, so they are not published
+again. 1,860 codes the dump has and CSC does not are not added (decisions_5, rule 3). The CTT importer is retired: it
+now refuses to run, since it would reimport the replaced copy.
+
+### Sources
+- GeoNames postal code dump for PT (https://download.geonames.org/export/zip/PT.zip), Last-Modified 13 October 2026,
+  SHA-256 fed2fe35…bf3f, CC BY 4.0 per its readme. Credit: "Source: GeoNames, Portuguese postal code dump, 13 October
+  2026". Ledger: `.github/fixes-docs/ledgers/PT_postcodes_geonames_2026-10.sources.json`; entry 64 in
+  `.github/licenses/SOURCES.txt`.
+- Direção-Geral do Território, CAOP2025 municipal boundaries (CC BY 4.0): used only to check that a linked city lies in
+  the code's municipality.
+- Research: Codex pc_rebuild_1 (every row's decision, before and after value and evidence; 50 rows checked by hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
