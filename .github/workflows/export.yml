@@ -17,6 +17,9 @@ jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write        # release, tag, assets and the export branch
+      pull-requests: write   # the export PR and its labels
 
     strategy:
       matrix:
@@ -25,6 +28,22 @@ jobs:
       fail-fast: false
 
     steps:
+      # Exports are built from the current master commit only: a release names the commit its data came from, and the
+      # default token cannot publish from a source whose workflow files differ from master's (old runs included)
+      - name: Require the current master commit
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { data: master } = await github.rest.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: 'master',
+            });
+            if (context.ref !== 'refs/heads/master' || context.sha !== master.commit.sha) {
+              core.setFailed('Exports require the current master commit; start a new run on master');
+              return;
+            }
+
       - name: Checkout
         uses: actions/checkout@v5
         with:
@@ -489,11 +508,36 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
+            // Master may have moved during the build: check again before anything is created
+            const { data: master } = await github.rest.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: 'master',
+            });
+            if (context.ref !== 'refs/heads/master' || context.sha !== master.commit.sha) {
+              core.setFailed('Exports require the current master commit; start a new run on master');
+              return;
+            }
+
+            // Third-party notices must travel with every release (e.g. Unicode-3.0 for CLDR country names). Read and
+            // check them before anything is created, so a missing or unreadable notice stops the run.
+            const noticeDir = '.github/licenses';
+            if (!fs.existsSync(noticeDir)) {
+              core.setFailed(`${noticeDir} is missing; required notices cannot be published`);
+              return;
+            }
+            const noticeFiles = fs.readdirSync(noticeDir).filter(f => f.endsWith('.txt'));
+            if (!noticeFiles.includes('Unicode-3.0.txt')) {   // required while country translations carry CLDR names
+              core.setFailed('Required notice Unicode-3.0.txt is missing');
+              return;
+            }
+            const noticeAssets = noticeFiles.map(f => ({ name: `NOTICE-${f}`, data: fs.readFileSync(path.join(noticeDir, f)) }));
+
             // Find latest feature release for base version, and count existing
             // export releases for that base version to determine next export number.
             //
-            // Feature releases match strictly `^v?\d+\.\d+$` (e.g. v3.2, v3.1).
-            // Export releases match `^v?\d+\.\d+-export\.\d+$` (e.g. v3.2-export.1)
+            // Feature releases match `^v?\d+\.\d+(\.\d+)?$` (e.g. v4.0, v5.0.0); the newest by all three numbers wins,
+            // and its own spelling is the export prefix. Export releases are `<feature>-export.N` (e.g. v4.0-export.51)
             // and are explicitly excluded from the base-version search even though
             // they are not flagged as prereleases (they need to be non-prerelease
             // so downstream tools that pull /releases/latest pick up the data).
@@ -501,10 +545,10 @@ jobs:
             // If no feature release is found, the workflow FAILS rather than
             // falling back to v0.0 — silently shipping v0.0-export.N once is
             // already one tag too many.
-            const featureRe = /^v?(\d+)\.(\d+)$/;
-            const exportTagPrefix = (m, n) => new RegExp(`^v?${m}\\.${n}-export\\.(\\d+)$`);
+            const featureRe = /^v?(\d+)\.(\d+)(?:\.(\d+))?$/;
 
             let bestMajor = 0, bestMinor = 0;
+            let bestPatch = 0, baseVersion;
             let exportNum = 0;
             let releases;
             try {
@@ -523,21 +567,24 @@ jobs:
               if (rel.prerelease || rel.draft) continue;
               const match = rel.tag_name.match(featureRe);
               if (!match) continue;
-              const m = parseInt(match[1]);
-              const n = parseInt(match[2]);
-              if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
+              const m = parseInt(match[1], 10);
+              const n = parseInt(match[2], 10);
+              const p = parseInt(match[3] ?? '0', 10);
+              if (!baseVersion || m > bestMajor ||
+                  (m === bestMajor && (n > bestMinor || (n === bestMinor && p > bestPatch)))) {
                 bestMajor = m;
                 bestMinor = n;
+                bestPatch = p;
+                baseVersion = rel.tag_name.replace(/^v/, '');
               }
             }
 
-            if (bestMajor === 0 && bestMinor === 0) {
-              core.setFailed('No feature release matching v\\d+\\.\\d+ found. Cut a v<MAJOR>.<MINOR> release first (gh release create vX.Y --target master), then re-run this workflow.');
+            if (!baseVersion) {
+              core.setFailed('No feature release matching v<MAJOR>.<MINOR>[.<PATCH>] found. Cut a feature release first (gh release create vX.Y.Z --target master), then re-run this workflow.');
               return;
             }
 
-            const baseVersion = `${bestMajor}.${bestMinor}`;
-            const exportRe = exportTagPrefix(bestMajor, bestMinor);
+            const exportRe = new RegExp(`^v?${baseVersion.replaceAll('.', '\\.')}-export\\.(\\d+)$`);
             for (const rel of releases) {
               const match = rel.tag_name.match(exportRe);
               if (match) {
@@ -546,16 +593,36 @@ jobs:
               }
             }
 
+            // Tags left by a failed attempt count too, so a number is never reused
+            const { data: tagRefs } = await github.rest.git.listMatchingRefs({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `tags/v${baseVersion}-export.`,
+            });
+            for (const r of tagRefs) {
+              const match = r.ref.replace('refs/tags/', '').match(exportRe);
+              if (match && parseInt(match[1]) > exportNum) exportNum = parseInt(match[1]);
+            }
+
             exportNum++;
             const tag = `v${baseVersion}-export.${exportNum}`;
 
             core.info(`Base version: v${baseVersion}, creating export release ${tag}...`);
 
-            // Create export release as prerelease (doesn't override latest feature release)
+            // Reserve a fresh tag at the source commit; an existing tag makes this fail rather than point elsewhere
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${tag}`,
+              sha: context.sha,
+            });
+
+            // Create a draft; publish only after every asset and notice upload succeeds
             const { data: release } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: tag,
+              target_commitish: context.sha,   // tag the exact source commit the data was built from
               name: tag,
               body: [
                 `## ${tag} - ${process.env.CURRENT_DATE}`,
@@ -574,14 +641,18 @@ jobs:
                 '### Formats',
                 'JSON, MySQL, PostgreSQL, SQLite, SQL Server, XML, YAML, CSV, GeoJSON, Toon, MongoDB, Parquet',
                 '',
+                '### Licence and credits',
+                'ODbL 1.0, attribution required. Some values come from sources that ask for credit (see the README). Their',
+                'notices are attached as `NOTICE-*.txt` and must be kept with every copy of this data.',
+                '',
                 '---',
                 '*Auto-generated by GitHub Actions export workflow*',
               ].join('\n'),
-              draft: false,
+              draft: true,
               prerelease: false,
             });
 
-            core.info(`Release created: ${release.html_url}`);
+            core.info(`Draft release created: ${release.html_url}`);
 
             // Upload all .gz files and mongodb dump
             const uploadPatterns = [
@@ -621,7 +692,28 @@ jobs:
               }
             }
 
-            core.info('All export assets uploaded to release.');
+            for (const asset of noticeAssets) {
+              core.info(`Uploading ${asset.name}...`);
+              await github.rest.repos.uploadReleaseAsset({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                release_id: release.id,
+                name: asset.name,
+                data: asset.data,
+              });
+            }
+
+            // Every asset and notice is attached: publish (an exception above leaves the draft unpublished)
+            await github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.id,
+              draft: false,
+              prerelease: false,
+              make_latest: 'true',
+            });
+
+            core.info(`Release published with all export assets and ${noticeAssets.length} notices.`);
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
