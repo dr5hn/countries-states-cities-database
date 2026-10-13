@@ -157907,3 +157907,38 @@ municipality. Time zones from IANA tzdb.
 
 ### Rollback
 Revert the PR (squash commit); new county ids are 13853-13903; no record is removed.
+
+## State reforms: six states whose category or local name changed by law
+
+### Problem
+Six states changed category or official local name by law while keeping the same territory, and still carried the old
+values.
+
+### Fix
+Same states, same ids, codes and English names; only the category and local name change:
+- **North Jeolla (3851)**, Law 19214, in force 18 January 2024: `type` province → special self-governing province; `type_local` None → 특별자치도; `native` 전라북도 → 전북특별자치도; Korean translation likewise.
+- **Gangwon (3862)**, Law 18875, in force 11 June 2023: `type_local` None → 특별자치도; `native` 강원도 → 강원특별자치도; Korean translation likewise.
+- **Somerset (2386)** and **North Yorkshire (2522)**, the Structural Changes Orders 2022 (SI 2022/329 and 2022/328): the
+  orders commenced on 18 March 2022 and the county councils took on unitary functions on 1 April 2023: `type` two-tier
+  county → unitary authority. Somerset's Korean name `공중제비` (the word for a somersault, an old machine translation)
+  becomes `서머싯`.
+- **Bắc Ninh (3791)**, National Assembly Resolution 39/2026/QH16, in force 20 September 2026, and **Quảng Ninh (3814)**,
+  Resolution 36/2026/QH16, in force 1 September 2026: each became a centrally governed city over its whole former
+  area: `type` province → municipality, `type_local` thành phố trực thuộc trung ương; Quảng Ninh's Korean name drops 성
+  ("province"): `꽝닌성` → `꽝닌`, like the other centrally governed cities (하노이, 하이퐁, 다낭).
+
+Not here: territorial reforms (Cuando Cubango's split in Angola, Varakļāni's merger into Madona in Latvia) wait for
+v5.0.0; Burundi's 2023 provinces, Burkina Faso's 2025 regions and the split of administrative Cumbria are held until
+their enacted texts and dependent places are proved.
+
+### Sources
+Facts only, from: [Law 19214](https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=247863&efYd=20240118&chrClsCd=010202) and
+[Law 18875](https://law.go.kr/LSW/lsRvsDocListP.do?chrClsCd=010202&lsId=014291&lsRvsGubun=all) (Korea);
+[SI 2022/329](https://www.legislation.gov.uk/uksi/2022/329/pdfs/uksiem_20220329_en.pdf) and
+[SI 2022/328](https://www.legislation.gov.uk/uksi/2022/328/pdfs/uksiem_20220328_en.pdf) (UK, Open Government Licence);
+[Resolution 39/2026/QH16](https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/9/nq39.nqtl_tpbn_0001.signed.pdf) and
+[Resolution 36/2026/QH16](https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-so-36-2026-qh16-thanh-lap-thanh-pho-quang-ninh-tu-1-9-2026-119260903082603583.htm)
+(Vietnam). ISO 3166-2 codes and English names unchanged.
+
+### Rollback
+Revert the PR (squash commit); no record is created or removed.
