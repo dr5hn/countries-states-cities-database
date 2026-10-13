@@ -157943,7 +157943,7 @@ Facts only, from: [Law 19214](https://www.law.go.kr/LSW/lsInfoR.do?lsiSeq=247863
 ### Rollback
 Revert the PR (squash commit); no record is created or removed.
 
-## Source credits: one notice file for every source that asks for credit
+## Source credits and notices for the 63 registered gaps
 
 ### Problem
 The v5 source register found 63 sources whose credit or modification notice did not reach users of the data
@@ -157956,8 +157956,8 @@ ledger of #1969 was never published.
   file in that folder (#2010), so the credits travel with each export.
 - `.github/licenses/Posti-postal-code-terms.txt`: Posti's terms, which must reach recipients of its postcode data.
 - `.github/fixes-docs/ledgers/points_1969_ledger.csv`: source, revision, licence and method for each of #1969's 666 points.
-- README points to the notice file. 233 sources whose redistribution basis is still being confirmed are named as under
-  review, not as cleared.
+- README points to the notice file. 233 unresolved sources are represented by a closing under-review statement; they
+  are not individually listed or certified as cleared.
 
 ### Rollback
 Revert the PR (squash commit); no data changes.

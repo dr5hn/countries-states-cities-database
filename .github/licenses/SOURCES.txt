@@ -11,7 +11,7 @@ https://creativecommons.org/licenses/by/4.0/
 Credit: Based on Australian Bureau of Statistics data, ASGS Edition 3, Postal Areas 2021 and Mesh Block
 allocation. © Commonwealth of Australia. CC BY 4.0.
 Source:
-https://www.abs.gov.au/
+https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/non-abs-structures/postal-areas
 Changes by CSC: CSC selected one record per postcode and mapped state membership, removing earlier locality
 names and points.
 Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
@@ -84,15 +84,19 @@ Reuse: Japan Post does not assert copyright in these postcode data and permits t
 
 7. Base officielle des codes postaux
 Publisher: La Poste
-Edition: edition not recorded; checked 13 October 2026
+Edition: last update of the imported snapshot not recovered; checked by CSC 13 October 2026
 Licence: Licence Ouverte 2.0
-https://www.etalab.gouv.fr/licence-ouverte-open-licence/
-Credit: Source: La Poste, Base officielle des codes postaux, edition not recorded; checked 13 October 2026.
+https://github.com/etalab/licence-ouverte/blob/master/LO.md
+Credit: Source: La Poste, Base officielle des codes postaux; last update of the imported snapshot not
+recovered (CSC check: 13 October 2026).
+Open condition: Licence Ouverte asks for the date of the last update of the reused information. The date of
+the snapshot CSC imported has not been recovered; this notice does not complete that condition.
 Source:
 https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/
 Changes by CSC: CSC selected postcode and locality values, matched them to its records and adapted their
 structure.
-Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+Reuse: Retain the source and the date of the last update of the reused information; do not mislead recipients
+about its content, source or update date.
 
 8. Locality directories for Austria, Switzerland and Germany
 Publisher: OpenPLZ
@@ -124,16 +128,20 @@ required by that licence.
 
 10. Postal Code File (PCF)
 Publisher: Posti
-Edition: edition not recorded; checked 8 October 2026; file dated 8 October 2026
+Edition: imported edition not recorded; scope-check file dated 8 October 2026
 Licence: Posti Postal Code Services terms, effective 1 January 2015
 https://www.posti.fi/en/for-businesses/customer-support/postal-code-services
-Credit: Source: Posti, Postal Code File (PCF), edition not recorded; checked 8 October 2026; file dated 8
-October 2026.
+Credit: Source: Posti, Postal Code File (PCF); imported edition not recorded; scope-check file dated 8 October
+2026.
 Source:
 https://www.posti.fi/webpcode/
 Changes by CSC: CSC selected postcode and name values and mapped regional membership.
-Recorded data download date: 8 October 2026.
-The terms of use are in Posti-postal-code-terms.txt in the same folder.
+PCF scope-check download: 8 October 2026. The download date of the material first imported has not been
+recovered.
+Open condition: Posti's terms require the download date of the material to be passed to recipients; this
+notice does not complete that condition for the imported PCF values.
+The terms are in Posti-postal-code-terms.txt in the repository, attached to export releases as
+NOTICE-Posti-postal-code-terms.txt.
 Reuse: Pass the current service description, terms of use and data download date to every recipient.
 
 11. What is the evidence to support early supervised exercise therapy after primary total knee replacement? A
@@ -226,8 +234,8 @@ Credit: Copyright © 2015-2024 Unicode, Inc. Unicode CLDR 48.2.0, Unicode Licens
 Source:
 https://github.com/unicode-org/cldr-json/tree/48.2.0
 Changes by CSC: CSC selected territory names for its existing country translation fields.
-Reuse: Keep the complete Unicode-3.0.txt notice from the same folder with every copy of the Unicode data or
-software.
+Reuse: Keep the complete Unicode-3.0.txt notice (attached to export releases as NOTICE-Unicode-3.0.txt) with
+every copy of the Unicode data or software.
 
 18. Time Zone Database
 Publisher: Internet Assigned Numbers Authority (IANA)
@@ -310,11 +318,12 @@ Reuse: Credit the source, retain the licence link and supplied notices, and iden
 endorsement.
 
 24. Register of Spatial Units (RPE)
-Publisher: GURS, Slovenia
+Publisher: Geodetska uprava Republike Slovenije (GURS), Slovenia
 Edition: WFS snapshot, 13 October 2026
 Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
-Credit: Source: GURS, Slovenia, Register of Spatial Units (RPE), WFS snapshot, 13 October 2026.
+Provider terms: https://www.e-prostor.gov.si/dostopi/javni-dostop/
+Credit: Geodetska uprava Republike Slovenije, Register of Spatial Units (RPE), WFS snapshot 13 October 2026.
 Source:
 https://ipi.eprostor.gov.si/wfs-si-gurs-rpe/wfs
 Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
@@ -355,7 +364,7 @@ Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
 Credit: Source: Australian Bureau of Statistics (ABS), ASGS Local Government Areas, Edition 3, LGA 2025.
 Source:
-https://www.abs.gov.au/
+https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files
 Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
 Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
 endorsement.
@@ -367,7 +376,7 @@ Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
 https://creativecommons.org/licenses/by/4.0/
 Credit: Source: Australian Bureau of Statistics (ABS), ASGS Suburbs and Localities, Edition 3, SAL 2021.
 Source:
-https://www.abs.gov.au/
+https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files
 Changes by CSC: CSC matched names and codes to its records and mapped locality categories.
 Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
 endorsement.
@@ -577,26 +586,26 @@ Reuse: These US Government works are in the public domain; no source attribution
 Publisher: Institut national de la statistique et des études économiques (INSEE)
 Edition: 2026
 Licence: Licence Ouverte 2.0
-https://www.etalab.gouv.fr/licence-ouverte-open-licence/
-Credit: Source: Institut national de la statistique et des études économiques (INSEE), Code officiel
-géographique, 2026.
+https://github.com/etalab/licence-ouverte/blob/master/LO.md
+Credit: Source : Insee — Code officiel géographique, 2026.
 Source:
 https://www.insee.fr/fr/information/2560452
 Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
-Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+Reuse: Retain the source and the date of the last update of the reused information; do not mislead recipients
+about its content, source or update date.
 
 46. Marseille quartier geography
 Publisher: Institut national de la statistique et des études économiques (INSEE)
 Edition: 2014 geography; published 18 November 2015
 Licence: Licence Ouverte 2.0
-https://www.etalab.gouv.fr/licence-ouverte-open-licence/
-Credit: Source: Institut national de la statistique et des études économiques (INSEE), Marseille quartier
-geography, 2014 geography; published 18 November 2015.
+https://github.com/etalab/licence-ouverte/blob/master/LO.md
+Credit: Source : Insee — Marseille quartier geography, 2014 geography; published 18 November 2015.
 Source:
 https://www.insee.fr/fr/statistiques/2385003
 Changes by CSC: CSC matched neighbourhood names and codes to its records and mapped categories and parent
 links.
-Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+Reuse: Retain the source and the date of the last update of the reused information; do not mislead recipients
+about its content, source or update date.
 
 47. Elenco comuni, SITUAS and territorial mutations
 Publisher: Istituto Nazionale di Statistica (ISTAT)
@@ -623,18 +632,25 @@ Changes by CSC: CSC matched names and codes to its records and mapped locality c
 Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
 endorsement.
 
-49. NLSC Taiwan administrative data
+49. NLSC Taiwan administrative data (three datasets)
 Publisher: Ministry of the Interior / National Land Surveying and Mapping Center
-Edition: Catalogue 102011, metadata 16 September 2026; related editions August 2026 and 23 March 2023
+Edition: per dataset, below
 Licence: Open Government Data License 1.0
 https://data.gov.tw/license
-Credit: Ministry of the Interior / National Land Surveying and Mapping Center, NLSC Taiwan administrative
-data, catalogue 102011 (metadata 16 September 2026), August 2026 and 23 March 2023. The Open Data is made
-available to the public under the Open Government Data License, User can make use of it when complying to the
-condition and obligation of its terms. Open Government Data License: https://data.gov.tw/license
-Source:
-https://data.gov.tw/dataset/102011
-Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Datasets:
+- 代碼服務－鄉鎮市區清單(戶政), household-registration township codes; catalogue 102011, metadata updated 16
+  September 2026; https://data.gov.tw/dataset/102011
+- 村(里)界(TWD97經緯度), village boundaries and names; edition 17 August 2026;
+  https://maps.nlsc.gov.tw/pro/download.jsp
+- 鄉鎮市區界線(TWD97經緯度), township boundaries and official English names; edition 23 March 2023;
+  https://maps.nlsc.gov.tw/pro/download.jsp
+Credit: Ministry of the Interior / National Land Surveying and Mapping Center: 代碼服務－鄉鎮市區清單(戶政)
+(catalogue 102011, 16 September 2026); 村(里)界(TWD97經緯度) (17 August 2026); 鄉鎮市區界線(TWD97經緯度) (23 March
+2023). The Open Data is made available to the public under the Open Government Data License, User can make use
+of it when complying to the condition and obligation of its terms. Open Government Data License:
+https://data.gov.tw/license
+Changes by CSC: CSC copied township and village names and codes, and English names, matched them to its
+records and mapped categories and parent links.
 Reuse: Keep the provider and dataset attribution and licence statement.
 
 50. Census settlement register
@@ -662,20 +678,21 @@ Source:
 https://www.posti.fi/webpcode/
 Changes by CSC: CSC used municipal coverage to link postcodes to its municipalities.
 Recorded data download date: 8 October 2026.
-The terms of use are in Posti-postal-code-terms.txt in the same folder.
+The terms are in Posti-postal-code-terms.txt in the repository, attached to export releases as
+NOTICE-Posti-postal-code-terms.txt.
 Reuse: Pass the current service description, terms of use and data download date to every recipient.
 
 52. Populations de référence (population municipale)
 Publisher: Institut national de la statistique et des études économiques (INSEE)
 Edition: 2023; in force 1 January 2026
 Licence: Licence Ouverte 2.0
-https://www.etalab.gouv.fr/licence-ouverte-open-licence/
-Credit: Source: Institut national de la statistique et des études économiques (INSEE), Populations de
-référence (population municipale), 2023; in force 1 January 2026.
+https://github.com/etalab/licence-ouverte/blob/master/LO.md
+Credit: Source : Insee — Populations de référence (population municipale), 2023; in force 1 January 2026.
 Source:
 https://www.insee.fr/fr/statistiques/fichier/8680726/ensemble.zip
 Changes by CSC: CSC matched published population figures to its records and added population_year.
-Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+Reuse: Retain the source and the date of the last update of the reused information; do not mislead recipients
+about its content, source or update date.
 
 53. Resident population (POSAS provisional estimate)
 Publisher: Istituto Nazionale di Statistica (ISTAT)
@@ -698,7 +715,7 @@ https://www.destatis.de/DE/Service/Impressum/_inhalt.html
 Credit: Source: Statistisches Bundesamt (Destatis), Gemeindeverzeichnis GV-ISys population, Q3 2026;
 population at 31 December 2025, on the census 2022 basis.
 Source:
-https://www.destatis.de/
+https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV3QAktuell.xlsx?__blob=publicationFile
 Changes by CSC: CSC copied published figures unchanged, matched them to municipalities by code and added
 population_year.
 Reuse: Retain the Destatis source credit and identify changes; do not imply Destatis endorsement.
@@ -819,4 +836,5 @@ population_year.
 Reuse: These US Government works are in the public domain; no source attribution is required.
 
 Sources under review
-The redistribution basis for further sources is being confirmed.
+The redistribution basis for 233 further sources remains under review; this notice does not certify those
+sources as cleared.
