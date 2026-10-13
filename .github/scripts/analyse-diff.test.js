@@ -102,3 +102,12 @@ test('a new record without an id in the PR is an addition, and a removal beside 
   assert.equal(out.analysis_incomplete, 'false');
   assert.match(out.critical_reasons, /removed: id 2/);
 });
+
+for (const status of ['changed', 'unchanged', 'some-future-status']) {
+  test(`a states file listed as "${status}" is still compared, so a removal cannot slip past`, async () => {
+    const { dir, head } = mergeRepo();
+    const out = await analyse(dir, head, [{ filename: STATES, status }]);
+    assert.equal(out.is_critical, 'true', status);
+    assert.match(out.critical_reasons, /removed: id 2/);
+  });
+}

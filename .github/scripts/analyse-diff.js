@@ -85,6 +85,7 @@ async function run() {
         break;
       case 'modified':
       case 'renamed':
+      case 'changed':
         operations.modified++;
         break;
       case 'removed':
@@ -114,10 +115,14 @@ async function run() {
 
     // Record deletions within a changed states or countries file: compare the persisted ids of the file on the merge
     // base with the merged file, so formatting, renames and duplicate names cannot hide a removed record. A file that
-    // cannot be compared makes the analysis incomplete, which the report shows and the final step fails on.
-    if ((file.status === 'modified' || file.status === 'renamed') && (entityType === 'states' || entityType === 'countries')) {
+    // cannot be compared makes the analysis incomplete, which the report shows and the final step fails on. Every
+    // status but a new file (added, copied) or a whole-file removal is compared, so an unexpected status (changed,
+    // unchanged, a future one) cannot skip the check.
+    const newFile = file.status === 'added' || file.status === 'copied';
+    if (!newFile && file.status !== 'removed' && (entityType === 'states' || entityType === 'countries')) {
       try {
-        const before = recordIds(baseJson(pr, file.previous_filename || filePath), `${filePath} on the base`, false);
+        const basePath = file.status === 'renamed' && file.previous_filename ? file.previous_filename : filePath;
+        const before = recordIds(baseJson(pr, basePath), `${basePath} on the base`, false);
         const { data, error } = parseJsonFile(path.join(process.cwd(), filePath));
         if (error || data === undefined) throw new Error(`${filePath} in the PR cannot be parsed`);
         const after = recordIds(data, `${filePath} in the PR`, true);
