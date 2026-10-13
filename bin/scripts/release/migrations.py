@@ -22,6 +22,7 @@ Usage:
 import argparse
 import bisect
 import csv
+import functools
 import hashlib
 import json
 import math
@@ -58,6 +59,7 @@ IDENTITY_OUTCOMES = {   # decisions_4_final.md
 }
 EVENT_TYPES = ('removal', 'identity', 'restoration')
 REPLACEMENT_KINDS = ('fresh', 'existing')   # the other entity of a repurposed id: a never-used id, or a proved existing one
+STABLE_IDS = ('wikiDataId', 'iso3166_2', 'iso3')   # identifiers of the entity itself; a restoration binds at least one
 EXPANSION_LIMIT = 1_000_000   # target paths visited from one record; real chains are short, branching ones can multiply
 SHA1, SHA256 = re.compile(r'[0-9a-f]{40}'), re.compile(r'[0-9a-f]{64}')
 META_KEYS = ('data_version', 'contract_version', 'policy_version', 'data_schema_version')
@@ -171,9 +173,10 @@ def event_errors(e, where):
         need(sha1('retirement_commit'), 'retirement_commit must be a full commit SHA')
         need(sha256('retired_row_sha256') and sha256('restored_row_sha256'), 'retired_row_sha256 and restored_row_sha256 must be SHA-256s')
         same = e.get('same_identity')
-        need(isinstance(same, dict) and len(same) > 0 and all(
-            k not in MANAGED | {'id'} and (is_str(v) or positive_id(v)) for k, v in same.items()),
-            'same_identity must map identifying fields (not id or managed fields) to the string or integer both rows hold')
+        need(isinstance(same, dict) and any(k in STABLE_IDS for k in same) and all(
+            k not in MANAGED | {'id'} and ((is_str(v) and v.strip()) or positive_id(v)) for k, v in same.items()),
+            f'same_identity must bind at least one of {", ".join(STABLE_IDS)}, each field (not id or managed fields) '
+            'mapped to the nonblank string or integer both rows hold')
     else:
         need(sha256('before_row_sha256'), 'before_row_sha256 must be a SHA-256')
         if 'before' in e:
@@ -361,12 +364,19 @@ class State:
         return {k: (self.path.pop(k), self.rows.pop(k)) for k in self.by_path.pop(path, set())}
 
 
-def snapshot(repo, sha):
-    """The full namespace at a commit. Rows without an id yet are kept as pending: history may have them."""
+def snapshot(repo, sha, table=None):
+    """The namespace at a commit, of one table or all. Rows without an id yet are kept as pending: history may have them."""
     s = State()
     for t, path in files_of(repo, sha):
-        s.put(t, path, *parse_file(repo, sha, path, strict=False), sha)
+        if table in (None, t):
+            s.put(t, path, *parse_file(repo, sha, path, strict=False), sha)
     return s
+
+
+@functools.lru_cache(maxsize=4)
+def table_rows(repo, sha, table):
+    """The rows of one table at a commit, read once per (commit, table) for restorations; callers must not change them."""
+    return snapshot(repo, sha, table).rows
 
 
 def idless(state):
@@ -374,30 +384,15 @@ def idless(state):
     return [f'{p} row {n} (since {sha[:12]})' for p, (sha, rows) in sorted(state.pending.items()) for n in rows]
 
 
-def changed_rows(repo, parent, commit):
-    """{key: (path, row)} before and after one commit, over the contributions files it changed; a key twice is refused."""
-    raw = git(repo, 'diff', '--name-status', '--no-renames', '-z', parent, commit, '--', 'contributions/').decode().split('\0')
-    then, now = {}, {}
-    for status, path in zip(raw[0::2], raw[1::2]):
-        t = table_of(path)
-        for side, sha, absent in ((then, parent, 'A'), (now, commit, 'D')):
-            if not t or status == absent:
-                continue
-            for r in parse_file(repo, sha, path, strict=False)[0]:
-                if (t, r['id']) in side:
-                    raise MigrationError(f'{t} id {r["id"]} is duplicated at {sha[:12]}: {side[(t, r["id"])][0]} and {path}')
-                side[(t, r['id'])] = (path, r)
-    return then, now
-
-
 def retired_row(repo, commit, key, later):
-    """The row of key removed at commit, which must come before later on later's first-parent line."""
+    """The row of key removed at commit, which must come before later on later's first-parent line. The key's whole
+    table is read on both sides, so a copy left in another file is seen, and a duplicate id is refused."""
     if commit == later or commit not in first_parent_line(repo, later):
         raise MigrationError(f'retirement_commit {commit[:12]} is not earlier on the first-parent line')
-    then, now = changed_rows(repo, git(repo, 'rev-parse', f'{commit}^1').decode().strip(), commit)
-    if key not in then or key in now:
+    then = table_rows(repo, git(repo, 'rev-parse', f'{commit}^1').decode().strip(), key[0])
+    if key not in then or key in table_rows(repo, commit, key[0]):
         raise MigrationError(f'{key[0]} {key[1]} was not removed at retirement_commit {commit[:12]}')
-    return then[key][1]
+    return then[key]
 
 
 def walk(repo, base, frm, to, on_commit, progress=None):
@@ -447,16 +442,18 @@ def walk(repo, base, frm, to, on_commit, progress=None):
 
 
 class Gate:
-    """Checks each commit's removals, additions and events against the ledger. Before --from it checks the events
-    only; inside the interval every removal also needs its event and a retired or reserved id may not return unless a
-    reviewed restoration brings it back. Keeps a timeline of removal and identity events per key for target resolution."""
+    """Checks each commit's removals, additions and events against the ledger. Before --from it checks the events,
+    and an id a reviewed removal retired may not return unless a reviewed restoration brings it back; inside the
+    interval every removal also needs its event, and the same holds for reserved ids. Keeps a timeline of removal,
+    identity and restoration events per key for target resolution."""
 
     def __init__(self, removals, identities, restorations=None, reserved=(), interval=(), repo=None):
-        """Events keyed (table, id, commit), ids reserved before the walk, the interval's commits and the repository."""
+        """Events keyed (table, id, commit), ids reserved at --from, the interval's commits and the repository."""
         self.removals, self.identities, self.restorations = removals, identities, restorations or {}
-        self.reserved, self.retired, self.interval, self.repo = set(reserved), set(reserved), set(interval), repo
+        self.reserved, self.retired, self.interval, self.repo = frozenset(reserved), set(), set(interval), repo
         self.errors, self.used, self.events, self.identity = [], set(), [], []
         self.added_at, self.restored, self.repurposed, self.remediated = {}, {}, {}, {}
+        self.first_seen, self.removed_ever = {}, set()   # first addition in the walk, and every id the walk saw removed
         self.timeline = defaultdict(list)   # key -> [(commit index, kind, event)] in history order
         self.at = defaultdict(list)         # commit -> [(kind, key, event)] for identity and restoration events
         for kind, events in (('identity', identities), ('restoration', self.restorations)):
@@ -471,10 +468,12 @@ class Gate:
             if kind == 'restoration' and self.restoration_ok(i, c, key, e, added, state):
                 restored_here.add(key[:2])
         for k in added:
-            if inside and k in self.retired and k not in restored_here:
+            if (k in self.retired or (inside and k in self.reserved)) and k not in restored_here:
                 err(f'{k[0]} {k[1]} is a retired or reserved id and is in use again at {c[:12]}')
             self.added_at[k] = (i, c)
+            self.first_seen.setdefault(k, (i, c))
         for k in removed:
+            self.removed_ever.add(k)
             e = self.removals.get((k[0], k[1], c))
             if inside or e is not None:
                 self.retired.add(k)
@@ -514,14 +513,18 @@ class Gate:
                     if (t['table'], t['id']) not in state.rows:
                         err(f'{k[0]} {k[1]} at {c[:12]}: identity target {t["table"]} {t["id"]} does not exist after that commit')
                 if e['outcome'] == 'repurpose':
-                    self.repurposed[k] = (i, c, e)
+                    if k in self.repurposed:
+                        err(f'{k[0]} {k[1]} at {c[:12]}: repurposed again while the repurpose at {self.repurposed[k][1][:12]} is '
+                            'not remediated; retire the id with retires_repurpose first')
+                    self.repurposed.setdefault(k, (i, c, e))
                 self.identity.append((k, c, e, before[k][1], state.rows[k], inside))
                 self.timeline[k].append((i, 'identity', e))
 
     def retirement_ok(self, i, c, k, e):
         """The removal of a repurposed id must say it retires that repurpose and name the replacement id of the entity
         the number came to denote: a fresh id first added after the repurpose and never reserved, or an existing id
-        that was already there before this commit. Its earlier identity is the repurpose's prior_identity."""
+        that was already there before this commit. A fresh id is first added after the repurpose, was never removed in
+        the walk and is not reserved. Its earlier identity is the repurpose's prior_identity."""
         rp, fix, err = self.repurposed.pop(k, None), e.get('retires_repurpose'), self.errors.append
         where = f'{k[0]} {k[1]} at {c[:12]}'
         if rp is None:
@@ -534,11 +537,13 @@ class Gate:
                 'and the replacement id of the entity the number came to denote')
             return
         rkey = (fix['replacement']['table'], fix['replacement']['id'])
-        first = self.added_at.get(rkey)
+        first = self.first_seen.get(rkey)
         if fix['identity_event_commit'] != rc:
             err(f'{where}: retires_repurpose names {fix["identity_event_commit"][:12]}, but the repurpose is at {rc[:12]}')
-        elif fix['replacement_kind'] == 'fresh' and not (first and first[0] > ri and rkey not in self.reserved):
-            err(f'{where}: the fresh replacement {rkey[0]} {rkey[1]} must first appear after the repurpose and never be reserved')
+        elif fix['replacement_kind'] == 'fresh' and not (first and first[0] > ri and rkey not in self.reserved
+                                                         and rkey not in self.removed_ever):
+            err(f'{where}: the fresh replacement {rkey[0]} {rkey[1]} must first appear after the repurpose, never have been '
+                'removed and never be reserved; declare an id used before existing')
         elif fix['replacement_kind'] == 'existing' and first and first[0] >= i:
             err(f'{where}: the existing replacement {rkey[0]} {rkey[1]} first appears at this commit; declare it fresh')
         else:
@@ -546,8 +551,9 @@ class Gate:
 
     def restoration_ok(self, i, c, key, e, added, state):
         """A reviewed restoration brings a retired id back for the same entity: the id returns at this commit with the
-        reviewed row, it was removed at retirement_commit (earlier on this line) with the reviewed row, and both rows
-        hold the same identifying values. Marks the event used; returns whether it holds."""
+        reviewed row, it was removed at retirement_commit (earlier on this line) with the reviewed row, both rows hold
+        the same_identity values, and no stable identifier both rows hold differs. Marks the event used; returns whether
+        it holds."""
         k, err, where = key[:2], self.errors.append, f'{key[0]} {key[1]} at {c[:12]}'
         self.used.add(('restoration',) + key)
         if e['review_status'] != 'reviewed':
@@ -568,12 +574,15 @@ class Gate:
             problems.append('retired_row_sha256 does not match the row removed at retirement_commit')
         problems += [f'{f} is not {v!r} in both the retired and the restored row'
                      for f, v in sorted(e['same_identity'].items()) if canon(old.get(f)) != canon(v) or canon(new.get(f)) != canon(v)]
+        problems += [f'{f} differs between the retired and the restored row ({old[f]!r}, {new[f]!r})' for f in STABLE_IDS
+                     if old.get(f) not in (None, '') and new.get(f) not in (None, '') and canon(old[f]) != canon(new[f])]
         for p in problems:
             err(f'{where}: {p}')
         if problems:
             return False
         self.retired.discard(k)
         self.restored[k] = (i, c, e)
+        self.timeline[k].append((i, 'restoration', e))
         return True
 
     def next_event(self, key, after):
@@ -586,7 +595,8 @@ class Gate:
 def resolve_targets(gate, final, targets, index, auto):
     """Follow targets forward in history to what stands for them at --to, without recursion. A removal passes to its
     targets; a repurpose passes to the entity the number used to denote (prior_identity), never redirecting
-    automatically; an unresolved identity keeps the key but ends any automatic redirect. A path that ends in a
+    automatically; an unresolved identity keeps the key but ends any automatic redirect. A removal followed by a
+    restoration of the same id continues at that id (relation restored), never automatically. A path that ends in a
     removal with no successor is reported with that outcome. Every step moves to a strictly later event, so each path
     ends; identical results are listed once. Branching histories can multiply paths, so more than EXPANSION_LIMIT steps
     from one record is an error."""
@@ -613,10 +623,16 @@ def resolve_targets(gate, final, targets, index, auto):
             continue
         i, kind, e = nxt
         if kind == 'removal':
+            back = gate.next_event(key, i)
+            if back and back[1] == 'restoration':   # the same entity came back under this id
+                stack.append((t, back[0], relations + ['restored'], False))
+                continue
             if not e['targets']:
                 emit({'table': None, 'id': None, 'end': e['outcome'], 'relations': relations, 'automatic_redirect': False})
             for t2 in reversed(e['targets']):
                 stack.append((t2, i, relations + [t2['relation']], redirect and e['automatic_redirect']))
+        elif kind == 'restoration':
+            stack.append((t, i, relations, False))
         elif e['outcome'] == 'repurpose':
             for t2 in reversed(e['targets']):
                 stack.append((t2, i, relations + ['prior_identity'], False))
@@ -654,20 +670,22 @@ def label(row):
 def build(start, state, gate, order):
     """The release files' content: removed events, CSV rows, added ids, identity events, changed fields and counts.
     The removal that retires a repurposed id maps the id to its earlier identity (current_targets) and lists the
-    entity the number came to denote separately (later_entity_targets); neither redirects automatically."""
+    entity the number came to denote separately (later_entity_targets); neither redirects automatically. An id the
+    same entity got back later maps to itself from that restoration on."""
     final = state.rows
     removed = []
     for k, c, e, row, inside in gate.events:
         if not inside:
             continue
         entry = {**e, 'before': row, 'present_at_from': k in start, 'present_at_to': k in final}
-        if k in gate.restored and gate.restored[k][0] > order[c]:
-            entry['restored_at'] = gate.restored[k][1]   # the same entity came back later under this id
-        fix = gate.remediated.get((k, c))
+        back, fix = gate.next_event(k, order[c]), gate.remediated.get((k, c))
         if fix:
             ri, rc, rep, _ = fix
             entry.update(repurposed_at=rc, current_targets=resolve_targets(gate, final, rep['targets'], ri, False),
                          later_entity_targets=resolve_targets(gate, final, e['targets'], order[c], False))
+        elif back and back[1] == 'restoration':   # the same entity came back later under this id
+            entry.update(restored_at=back[2]['event_commit'], current_targets=resolve_targets(
+                gate, final, [{'table': k[0], 'id': k[1], 'relation': 'restored'}], back[0], False))
         else:
             entry['current_targets'] = resolve_targets(gate, final, e['targets'], order[c], e['automatic_redirect'])
         removed.append(entry)
@@ -818,7 +836,7 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
         base = git(repo, 'rev-parse', f'{max(earlier, key=position.get)}^1').decode().strip()
         log(f'checking events at {len(earlier)} earlier commits by walking from {base[:12]}')
     gate = Gate(applies(removals), applies(identities), applies(restorations), reserved, interval, repo)
-    order, retired_at_from = {}, set(reserved)
+    order, retired_at_from = {}, set(reserved)   # replaced at --from when the walk starts earlier
     log(f'walking to {to[:12]}; {len(interval)} commits since --from {frm[:12]}')
 
     def on_commit(i, c, *rest):
@@ -827,7 +845,7 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
         gate(i, c, *rest)
         if c == frm:
             retired_at_from.clear()
-            retired_at_from.update(gate.retired)
+            retired_at_from.update(gate.retired | (gate.reserved - gate.restored.keys()))
 
     start, state = walk(repo, base, frm, to, on_commit, progress=log)
     errors = gate.errors + [f'{k[0]} {k[1]} is retired or reserved but present at --from' for k in sorted(retired_at_from & start.keys())]

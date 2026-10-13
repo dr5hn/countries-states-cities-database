@@ -347,6 +347,39 @@ class HistoryTest(Case):
         self.refused(c0, c2, [repurpose, retire], 'must first appear after the repurpose')
         self.gen(c0, c2, [repurpose, dict(retire, retires_repurpose={**fix, 'replacement_kind': 'existing'})])
 
+    def test_restored_replacement_is_not_fresh(self):
+        """An id retired and restored before the repurpose was used before: 'fresh' is refused, 'existing' accepted."""
+        counties = 'contributions/counties/XX.json'
+        three = city(3, 'B Town', wikiDataId='Q3')
+        c0 = self.repo.commit({**self.base_files, CITY: [city(2, 'B Regency'), three], counties: [{'id': 9, 'name': 'B Regency'}]})
+        c1 = self.repo.commit({CITY: [city(2, 'B Regency')]})
+        c2 = self.repo.commit({CITY: [city(2, 'B Town')]})
+        c3 = self.repo.commit({CITY: [city(2, 'B Town'), three]})
+        c4 = self.repo.commit({CITY: [three]})
+        events = [removal('cities', 3, c1, c0, CITY, three, 'no_successor', []),
+                  identity_event(2, c2, city(2, 'B Regency'), 'repurpose', [target('counties', 9, 'prior_identity')]),
+                  restoration('cities', 3, c3, c1, three, three, {'wikiDataId': 'Q3'})]
+        fix = {'identity_event_commit': c2, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        retire = removal('cities', 2, c4, c3, CITY, city(2, 'B Town'), 'merged_same_entity', [target('cities', 3, 'merged_same_entity')],
+                         retires_repurpose=fix)
+        self.refused(c0, c4, events + [retire], 'must first appear after the repurpose')
+        self.gen(c0, c4, events + [dict(retire, retires_repurpose={**fix, 'replacement_kind': 'existing'})])
+
+    def test_second_repurpose_needs_the_first_remediated(self):
+        """An id repurposed twice before the first repurpose is remediated is refused, wherever the events fall."""
+        counties = 'contributions/counties/XX.json'
+        c0 = self.repo.commit({**self.base_files, CITY: [city(2, 'A')], counties: [{'id': 8, 'name': 'B'}, {'id': 9, 'name': 'A'}]})
+        c1 = self.repo.commit({CITY: [city(2, 'B')]})
+        c2 = self.repo.commit({CITY: [city(2, 'C')]})
+        c3 = self.repo.commit({CITY: [city(3, 'C')]})
+        fix = {'identity_event_commit': c2, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        events = [identity_event(2, c1, city(2, 'A'), 'repurpose', [target('counties', 9, 'prior_identity')]),
+                  identity_event(2, c2, city(2, 'B'), 'repurpose', [target('counties', 8, 'prior_identity')]),
+                  removal('cities', 2, c3, c2, CITY, city(2, 'C'), 'merged_same_entity', [target('cities', 3, 'merged_same_entity')],
+                          retires_repurpose=fix)]
+        for frm in (c0, c2):
+            self.refused(frm, c3, events, 'repurposed again')
+
     def test_events_off_the_release_line_are_refused(self):
         """An event on a branch that never joined the release line is refused, not ignored."""
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
@@ -410,6 +443,64 @@ class HistoryTest(Case):
         self.refused(c1, c2, [restoration('cities', 2, c2, c1, old, new, {'wikiDataId': 'Q9'})], 'wikiDataId is not')
         self.refused(c1, c2, [dict(back, restored_row_sha256='0' * 64)], 'restored_row_sha256 does not match')
         self.refused(c1, c2, [dict(back, retirement_commit=c2)], 'not earlier on the first-parent line')
+
+    def test_restoration_needs_a_matching_stable_identifier(self):
+        """same_identity must bind a stable identifier; a shared country is not enough, and a conflicting identifier
+        held by both rows refuses the restoration."""
+        schema = restoration('cities', 2, 'a' * 40, 'b' * 40, city(2, 'Two'), city(2, 'Two'), {'country_code': 'XX'})
+        self.assertTrue(event_errors(schema, 'e'))
+        self.assertTrue(event_errors(dict(schema, same_identity={'wikiDataId': ' '}), 'e'))
+        old, new = city(2, 'Two', wikiDataId='Q2', iso3166_2='XX-2'), city(2, 'Other', wikiDataId='Q99', iso3166_2='XX-2')
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), old]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One'), new]})
+        events = [removal('cities', 2, c1, c0, CITY, old, 'no_successor', []),
+                  restoration('cities', 2, c2, c1, old, new, {'iso3166_2': 'XX-2'})]
+        self.refused(c0, c2, events, 'wikiDataId differs')
+
+    def test_unreviewed_return_before_from_is_refused(self):
+        """An id retired by a reviewed event that returns without a restoration is refused even when it leaves again
+        before --from."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two', wikiDataId='Q2')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One'), city(2, 'Else', wikiDataId='Q99')]})
+        c3 = self.repo.commit({CITY: [city(1, 'One')]})
+        c4 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        events = [removal('cities', 2, c1, c0, CITY, city(2, 'Two', wikiDataId='Q2'), 'no_successor', []),
+                  removal('cities', 2, c3, c2, CITY, city(2, 'Else', wikiDataId='Q99'), 'no_successor', [])]
+        for frm in (c0, c3):
+            self.refused(frm, c4, events, 'in use again')
+
+    def test_restoration_retirement_is_read_over_the_whole_table(self):
+        """A retirement that deleted one copy of an id still present in another file is not a retirement."""
+        other, old = 'contributions/cities/YY.json', city(2, 'Two', wikiDataId='Q2')
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), old], other: [old]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({other: []})
+        c3 = self.repo.commit({CITY: [city(1, 'One'), old]})
+        self.refused(c2, c3, [restoration('cities', 2, c3, c1, old, old, {'wikiDataId': 'Q2'})], 'cities id 2 is duplicated')
+
+    def test_restoration_resumes_target_resolution(self):
+        """A merge into an id that later retires and is restored maps to the restored id, never automatically; a
+        second retirement ends the path again."""
+        two = city(2, 'Two', wikiDataId='Q2')
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), two]})
+        c1 = self.repo.commit({CITY: [two]})
+        c2 = self.repo.commit({CITY: []})
+        c3 = self.repo.commit({CITY: [two]})
+        c4 = self.repo.commit({CITY: []})
+        events = [removal('cities', 1, c1, c0, CITY, city(1, 'One'), 'merged_same_entity', [target('cities', 2, 'merged_same_entity')], auto=True),
+                  removal('cities', 2, c2, c1, CITY, two, 'no_successor', []),
+                  restoration('cities', 2, c3, c2, two, two, {'wikiDataId': 'Q2'})]
+        (removed, rows, *_), _ = self.gen(c0, c3, events)
+        back = {'table': 'cities', 'id': 2, 'automatic_redirect': False}
+        self.assertEqual([r['current_targets'] for r in removed], [[{**back, 'relations': ['merged_same_entity', 'restored']}],
+                                                                   [{**back, 'relations': ['restored']}]])
+        self.assertEqual([(r[1], r[7], r[9], r[10]) for r in rows], [(1, 2, 'merged_same_entity>restored', 'no'), (2, 2, 'restored', 'no')])
+        again = removal('cities', 2, c4, c3, CITY, two, 'no_successor', [])
+        (removed, *_), _ = self.gen(c0, c4, events + [again], out='out2')
+        self.assertEqual(removed[0]['current_targets'], [{'table': None, 'id': None, 'end': 'no_successor',
+                                                          'relations': ['merged_same_entity', 'restored'], 'automatic_redirect': False}])
 
     def test_reads_use_the_resolved_sha(self):
         """After resolving --to once, no git read uses the movable branch name."""

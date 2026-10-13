@@ -15,7 +15,7 @@ Both are done before v5.0.0 is published. Until then, no release carries these f
 | `removed_ids.jsonl` | One line per removal in the interval, ids created and removed in between included. Each line has the reviewed event, the removed row (`before`), `present_at_from`, `present_at_to` and `current_targets`, which follows later removals to the records that exist in this release. The removal of a repurposed id also has `repurposed_at` and `later_entity_targets` (see below). `restored_at` marks an id the same entity got back later. |
 | `removed_ids.csv` | v4.0's columns `record, old_id, name, country_code, state_code, outcome, new_table, new_id, source`, then `relation, automatic_redirect, event_commit`. One row per current target. A removal with no successor has one row with empty `new_table` and `new_id`. Rows for `later_entity_targets` follow, with a `relation` starting `later_entity>` and `automatic_redirect` `no`. |
 | `added_ids.jsonl` | Every id present in this release and not in the earlier one: table, id, name, file and the commit that added it. An id a reviewed restoration brought back also has `restored` (its event and retirement commits). |
-| `identity_changes.jsonl` | Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A decision made before `--from` is listed again, with `event_before_from: true`, when its id is retired in this interval. |
+| `identity_changes.jsonl` | Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A repurpose decided before `--from` is listed again, with `event_before_from: true`, when the removal that retires it (`retires_repurpose`) is in this interval; other earlier decisions are not repeated. |
 | `changed_fields.jsonl` | One line per changed field of a record present in both releases. Each line gives `before` and `after` as typed JSON (`1`, `1.0` and `true` differ), plus `before_present` and `after_present`, so a missing field and a null one can be told apart. `translations` is compared per language (`translations.de`), or as a whole when one side is not an object. By policy, `created_at`, `updated_at` and `flag` are left out: they are bookkeeping, not facts about the place (the importer keeps the values a file gives and fills missing ones). |
 | `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (2), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
 
@@ -40,22 +40,28 @@ changed while keeping the number (the four outcomes of decisions_4_final.md):
 - `dual_role`: the row stands for a place and its unit. The target, if any, is the unit's own record (`moved_dataset`).
 - `repurpose`: the number came to denote another entity. The targets are where the earlier entity is now
   (`prior_identity`). A repurposed id may not remain at `--to`. It must be retired by a later reviewed removal that
-  says so in `retires_repurpose` (below). The old id then keeps its earlier meaning: its `current_targets` are the
+  says so in `retires_repurpose` (below), before it can be repurposed again: a second repurpose of an id whose first is
+  not yet remediated is refused. The old id then keeps its earlier meaning: its `current_targets` are the
   repurpose's `prior_identity`, and the entity the number came to denote is listed apart in `later_entity_targets`.
   Neither redirects automatically.
 - `unresolved`: what the row first denoted is not established. No targets.
 
 `current_targets` follows each target forward in history. A removal passes to its own targets. A repurpose passes to
 the earlier entity (`prior_identity`), and an `unresolved` decision keeps the key: both end any automatic redirect. A
+removal followed by a restoration of the same id continues at that id, with the relation `restored` and no automatic
+redirect; the removal's own line then maps the id to itself. A
 path that ends in a removal with no successor is listed with `"end": <outcome>` and no table or id. Each step moves to a
 later event, so every path ends. Identical results are listed once. More than 1,000,000 steps from one record (only
 possible with a large fan-out of splits) is refused as an expansion limit.
 
 A restoration (`"event_type": "restoration"`) brings a retired id back for the **same** entity, such as Finland's
 state FI-01 (states 1509), retired by #1144 and restored by #2020. It is checked against history: the id returns at
-`event_commit` with the row hashed in `restored_row_sha256`; it was removed at `retirement_commit`, earlier on the same
-first-parent line, with the row hashed in `retired_row_sha256`; and both rows hold the values in `same_identity`. Any
-other return of a retired or reserved id is refused.
+`event_commit` with the row hashed in `restored_row_sha256`; it left its whole table at `retirement_commit`, earlier on
+the same first-parent line, with the row hashed in `retired_row_sha256`; both rows hold the values in `same_identity`;
+and no stable identifier (`wikiDataId`, `iso3166_2`, `iso3`) that both rows hold differs. `same_identity` must bind at
+least one of those three with a nonblank value: a shared country, category or name does not prove the same entity. An
+id a reviewed removal retired may return only this way, before `--from` as well as inside the interval; a reserved id
+may not be present at `--from` or return inside the interval without it.
 
 ## The ledger (`events.jsonl`)
 
@@ -90,8 +96,9 @@ The removal that retires a repurposed id names the repair:
 ```
 
 The replacement must be one of the removal's targets, and the removal cannot redirect automatically. `fresh` means a
-never-used id that first appears after the repurpose and is not reserved; `existing` means an id that was already
-there before this removal, proved the same entity by the review.
+never-used id: it first appears after the repurpose, was never removed (and so never restored) in the history read,
+and is not reserved. `existing` means an id that was already there before this removal, proved the same entity by the
+review.
 
 A restoration event:
 
@@ -126,9 +133,10 @@ It exits 1 and writes nothing when any of these happens:
 - A target does not exist right after the event's commit.
 - The ledger breaks the outcome rules above, or an evidence item is not a URL with a host or a manifest with its hash.
 - An id is missing at either end, malformed, or duplicated, at any commit the walk reads; a retired or reserved id
-  is in use without a reviewed restoration.
-- A repurposed id still denotes the other entity at `--to`, or is removed without `retires_repurpose`, or its
-  replacement is not what `replacement_kind` says.
+  is in use without a reviewed restoration; a restoration binds no stable identifier, or the two rows' identifiers
+  differ.
+- A repurposed id still denotes the other entity at `--to`, is repurposed again before the first repurpose is
+  remediated, or is removed without `retires_repurpose`, or its replacement is not what `replacement_kind` says.
 - An input holds a value that is not standard JSON (`NaN`, `Infinity`, a number too large for a float), or bytes that
   are not UTF-8. The message names the file, and the commit for a source file.
 
@@ -159,12 +167,13 @@ where it is. If a run is stopped between the two renames of the swap, the last c
 the next run puts it back before doing anything else. Run one generator at a time per output folder. A staging folder
 left by a stopped run is never reused; delete it by hand.
 
-Measured on a laptop (Apple silicon), on the repository of 14 October 2026 (about 1,018,000 keyed rows, 543 MB of
-source JSON). With earlier events the walk starts at the oldest of them, so the cost follows the commits walked:
+Measured on a laptop (Apple silicon), on the repository of 14 October 2026 (master `2f0ce218`, about 1,018,000 keyed
+rows, 543 MB of source JSON). With earlier events the walk starts at the oldest of them, so the cost follows the
+commits walked, not the length of the interval:
 
 | Interval | Commits walked | Time | Peak memory |
 |---|---:|---:|---:|
-| #2009 to master (8 commits), checking 9,862 earlier events and the 1509 restoration | 202 | 63 s | 2.7 GB |
-| v4.0 to master, cumulative (refused on the 339 held events) | 207 | 62 s | 2.8 GB |
+| #2009 to master (9 commits), checking 9,862 earlier events and the 1509 restoration | 203 | 68 s | 2.8 GB |
+| v4.0 to master, cumulative (refused on exactly the 339 held events) | 208 | 66 s | 3.5 GB |
 
 Tests: `cd bin/scripts/release && python3 -m unittest test_migrations`. The tests run on scratch git repositories.
