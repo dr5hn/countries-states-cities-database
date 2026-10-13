@@ -148930,3 +148930,37 @@ Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived, OD
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 12519-12633.
+
+## China phase 11: Hainan; Guangxi held (model of #1975 to #1994)
+
+### Problem
+Hainan's prefecture cities, districts and directly administered county-level units were city records; many rows in
+Hainan and Guangxi carried another place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **29 Hainan counties** (`administrative district`, official local term, official code): four prefecture cities and the
+  counties, autonomous counties and county-level cities directly under the province at level 2, and the districts at
+  level 3 under their prefecture city, named "<Name> District / County / City". 18 carry their own Wikidata item.
+- **9 district rows become sections (区)** at level 3, linked to their own county.
+- **3 county-level cities stay cities** (`city / 市`) linked to their own county.
+- 12 points replaced with the unit's own open point checked inside its county; **51 items cleared** (20 other wrong
+  entities, 26 disambiguation pages, 5 district items under the model); **56 native names and translations on 104
+  records fixed** in Hainan and Guangxi.
+
+Guangxi's structure is held: its register workbook could not be retrieved, so only its item and name fixes are made. No
+row is removed.
+
+Held (181 records keep a hold on at least one field): all Guangxi typing, prefecture rows, townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase11_points_2026-10.csv](ledgers/CN_phase11_points_2026-10.csv).
+
+### Sources
+Hainan Department of Civil Affairs, "2025年海南省行政区划代码信息表", published 27 January 2026
+(https://mz.hainan.gov.cn/smzt/0400/202601/a1452ed0822745babf246f405371277b.shtml), read from its Internet Archive
+capture of 13 May 2026 because the site could not be reached; names, codes, categories and parentage used as official facts
+(Copyright Law of the PRC, Article 5). Points: 40 Wikidata P625 (CC0), 1 OpenStreetMap nodes (© OpenStreetMap contributors, ODbL 1.0).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12634-12662.
