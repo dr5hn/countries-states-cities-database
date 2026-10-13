@@ -75,7 +75,7 @@ async function run() {
   // 5. Determine if this is a data PR (changes to contributions/)
   const files = await listChangedFiles(octokit, github.context, pr);
 
-  const isDataPR = files.some((f) => f.filename.startsWith('contributions/'));
+  const isDataPR = files.some((f) => f.filename.startsWith('contributions/') || (f.previous_filename || '').startsWith('contributions/'));
 
   // For data PRs without issue linkage AND vague description, this is critical
   const needsClarification =

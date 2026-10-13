@@ -14,10 +14,20 @@ const fs = require('fs');
 const path = require('path');
 const { getEntityType, parseJsonFile, listChangedFiles, baseJson } = require('./utils');
 
-/** The persisted ids of a parsed states or countries file; throws when it is not an array of records with ids. */
-function recordIds(data, where) {
+/**
+ * The persisted ids of a parsed states or countries file. Every record must have a positive integer id, else its
+ * removal could not be seen; with allowNew, a record without an id is a new one (contributors omit ids, the import
+ * assigns them) and is skipped. Throws when the file is not an array of records, an id is invalid or repeated.
+ */
+function recordIds(data, where, allowNew) {
   if (!Array.isArray(data)) throw new Error(`${where} is not an array of records`);
-  const ids = data.map((r) => r && r.id).filter((id) => id !== undefined && id !== null);
+  const ids = [];
+  data.forEach((r, i) => {
+    if (!r || typeof r !== 'object' || Array.isArray(r)) throw new Error(`${where} row ${i} is not a record`);
+    if (allowNew && (r.id === undefined || r.id === null)) return;
+    if (!Number.isSafeInteger(r.id) || r.id <= 0) throw new Error(`${where} row ${i} has no positive integer id`);
+    ids.push(r.id);
+  });
   if (new Set(ids).size !== ids.length) throw new Error(`${where} repeats an id`);
   return new Set(ids);
 }
@@ -46,6 +56,20 @@ async function run() {
   for (const file of files) {
     const filePath = file.filename;
     const entityType = getEntityType(filePath);
+
+    // A renamed file is judged by where it came from too: a states or countries file moved out of its own folder,
+    // or to a name that is not JSON, is a deleted file, whatever the destination looks like.
+    const fromPath = file.status === 'renamed' ? file.previous_filename || '' : '';
+    const fromType = fromPath.startsWith('contributions/') && fromPath.endsWith('.json') ? getEntityType(fromPath) : null;
+    if (fromType) {
+      entityTypes.add(fromType);
+      labels.add(`data:${fromType}`);
+      const staysPut = filePath.startsWith('contributions/') && filePath.endsWith('.json') && entityType === fromType;
+      if ((fromType === 'states' || fromType === 'countries') && !staysPut) {
+        isCritical = true;
+        criticalReasons.push(`Deletion of ${fromType} file: ${fromPath} (moved to ${filePath})`);
+      }
+    }
 
     if (!filePath.startsWith('contributions/') || !filePath.endsWith('.json')) continue;
 
@@ -93,10 +117,10 @@ async function run() {
     // cannot be compared makes the analysis incomplete, which the report shows and the final step fails on.
     if ((file.status === 'modified' || file.status === 'renamed') && (entityType === 'states' || entityType === 'countries')) {
       try {
-        const before = recordIds(baseJson(pr, file.previous_filename || filePath), `${filePath} on the base`);
+        const before = recordIds(baseJson(pr, file.previous_filename || filePath), `${filePath} on the base`, false);
         const { data, error } = parseJsonFile(path.join(process.cwd(), filePath));
         if (error || data === undefined) throw new Error(`${filePath} in the PR cannot be parsed`);
-        const after = recordIds(data, `${filePath} in the PR`);
+        const after = recordIds(data, `${filePath} in the PR`, true);
         const removed = [...before].filter((id) => !after.has(id));
         if (removed.length > 0) {
           isCritical = true;

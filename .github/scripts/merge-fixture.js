@@ -34,7 +34,10 @@ function mergeRepo({
   write('contributions/postcodes/XX.json', '[]\n');
   git('add', '-A'); git('commit', '-q', '-m', 'base');
   git('checkout', '-q', '-b', 'pr');
-  if (afterPath !== STATES) git('mv', STATES, afterPath);
+  if (afterPath !== STATES) {
+    fs.mkdirSync(path.join(dir, path.dirname(afterPath)), { recursive: true });
+    git('mv', STATES, afterPath);
+  }
   write(afterPath, after);
   fs.rmSync(path.join(dir, 'contributions/postcodes/XX.json'));
   write('contributions/postcodes/YY.json', '[]\n');

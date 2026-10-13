@@ -168,7 +168,7 @@ const { getOctokit } = require('@actions/github');
 const { listChangedFiles, baseJson } = require('./utils');
 const { mergeRepo, inDir } = require('./merge-fixture');
 const context = { repo: { owner: 'fixture', repo: 'fixture' } };
-const refused = { paginate: async () => { throw new Error('Sorry, this diff is taking too long to generate.'); }, rest: { pulls: { listFiles() {} } } };
+const refused = { rest: { pulls: { listFiles: async () => { throw new Error('Sorry, this diff is taking too long to generate.'); } } } };
 const GIT_LIST = [
   { filename: 'contributions/postcodes/XX.json', status: 'removed' },
   { filename: 'contributions/postcodes/YY.json', status: 'added' },
@@ -202,8 +202,47 @@ test('listChangedFiles reads the PR from git when GitHub cannot produce the diff
 
 test('listChangedFiles reads the PR from git when GitHub returns its 3,000-file cap', async () => {
   const { dir, head } = mergeRepo();
-  const capped = { paginate: async () => Array.from({ length: 3000 }, (_, i) => ({ filename: `f${i}`, status: 'added' })), rest: { pulls: { listFiles() {} } } };
+  const capped = { rest: { pulls: { listFiles: async ({ page }) => ({ data: Array.from({ length: 100 }, (_, i) => ({ filename: `f${page}-${i}`, status: 'added' })) }) } } };
   assert.deepEqual(await inDir(dir, () => listChangedFiles(capped, context, { number: 7, head: { sha: head } })), GIT_LIST);
+});
+
+/** A real Octokit whose fetch serves `pages` of files and answers HTTP 409 from page `failAt` on. */
+function octokitFailingAt(pages, failAt) {
+  const fetch = async (url) => {
+    const page = Number(new URL(url).searchParams.get('page') || 1);
+    if (page >= failAt) return new Response(JSON.stringify({ message: 'Conflict' }), { status: 409, headers: { 'content-type': 'application/json' } });
+    const headers = { 'content-type': 'application/json', link: `<https://api.github.com/repos/fixture/fixture/pulls/7/files?per_page=100&page=${page + 1}>; rel="next"` };
+    return new Response(JSON.stringify(pages[page - 1]), { status: 200, headers });
+  };
+  return getOctokit('test-token', { request: { fetch } });
+}
+
+test('an HTTP 409 on any page is a failed listing, read from git, not an empty or partial list', async () => {
+  const { dir, head } = mergeRepo();
+  const first = Array.from({ length: 100 }, (_, i) => ({ filename: `scripts/s${i}.js`, status: 'modified' }));
+  for (const failAt of [1, 2]) {
+    const files = await inDir(dir, () => listChangedFiles(octokitFailingAt([first], failAt), context, { number: 7, head: { sha: head } }));
+    assert.deepEqual(files, GIT_LIST, `409 on page ${failAt}`);
+  }
+});
+
+test('the git listing includes a submodule change even when .gitmodules says ignore = all', async () => {
+  const { dir, head } = mergeRepo();
+  const run = (...args) => execFileSync('git', args, { cwd: dir, encoding: 'utf8' });
+  const commit = run('rev-parse', 'HEAD').trim();
+  require('node:fs').writeFileSync(require('node:path').join(dir, '.gitmodules'), '[submodule "vendor"]\n\tpath = vendor\n\turl = ./vendor\n\tignore = all\n');
+  run('add', '.gitmodules');
+  run('update-index', '--add', '--cacheinfo', `160000,${commit},vendor`);
+  run('commit', '-q', '-m', 'base: a submodule');
+  run('checkout', '-q', '-b', 'pr2');
+  run('update-index', '--cacheinfo', `160000,${head},vendor`);
+  run('commit', '-q', '-m', 'pr: move the submodule');
+  const prHead = run('rev-parse', 'HEAD').trim();
+  run('checkout', '-q', 'main');
+  run('commit', '-q', '--allow-empty', '-m', 'base moves');
+  run('merge', '-q', '--no-ff', '-m', 'merge', 'pr2');
+  const files = await inDir(dir, () => listChangedFiles(refused, context, { number: 8, head: { sha: prHead } }));
+  assert.deepEqual(files, [{ filename: 'vendor', status: 'modified' }]);
 });
 
 test('listChangedFiles refuses a checkout that is not this PR\'s merge commit', async () => {

@@ -534,7 +534,8 @@ function mergeParents(pr) {
 
 /**
  * Files a pull request changes, as [{filename, status, previous_filename?}] objects. Reads every page of the GitHub
- * API. GitHub refuses to list the files of a very large diff ("this diff is taking too long to generate"), as with a
+ * API itself, 100 files at a time (Octokit's paginator treats HTTP 409 as an empty page, which would pass a failed
+ * listing off as a short one). GitHub refuses to list the files of a very large diff ("this diff is taking too long to generate"), as with a
  * full-country postcode rebuild, and lists at most 3,000 files; in either case, or on any other API failure, the
  * list is read from git instead: what merging the PR changes, HEAD^1..HEAD of its verified merge commit. That is the
  * data that would land, which is what the validators check (for a branch that repeats edits already on the base it
@@ -543,13 +544,18 @@ function mergeParents(pr) {
 async function listChangedFiles(octokit, context, pr) {
   let reason;
   try {
-    const files = await octokit.paginate(octokit.rest.pulls.listFiles, {
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      pull_number: pr.number,
-      per_page: 100,
-    });
-    if (files.length < API_FILE_CAP) return files;
+    const files = [];
+    for (let page = 1; files.length < API_FILE_CAP; page++) {
+      const { data } = await octokit.rest.pulls.listFiles({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        pull_number: pr.number,
+        per_page: 100,
+        page,
+      });
+      files.push(...data);
+      if (data.length < 100) return files;
+    }
     reason = `GitHub lists at most ${API_FILE_CAP} files of a PR and returned ${files.length}`;
   } catch (apiError) {
     reason = `GitHub could not list the PR's files (${apiError.message})`;
@@ -557,7 +563,7 @@ async function listChangedFiles(octokit, context, pr) {
   let out;
   try {
     const [base] = mergeParents(pr);
-    out = git(['diff', '--name-status', '--no-renames', '-z', base, 'HEAD']);
+    out = git(['diff', '--name-status', '--no-renames', '--ignore-submodules=none', '-z', base, 'HEAD']);
   } catch (gitError) {
     throw new Error(`${reason}, and git could not either (${gitError.message.split('\n')[0]})`);
   }

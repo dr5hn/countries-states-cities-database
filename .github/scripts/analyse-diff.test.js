@@ -78,3 +78,27 @@ test('a states file that cannot be compared makes the analysis incomplete', asyn
   assert.equal(out.analysis_incomplete, 'true');
   assert.match(out.incomplete_reasons, /Could not compare the records of contributions\/states\/states.json/);
 });
+
+for (const [label, moved] of [['out of contributions', 'archive/regions.json'], ['to a non-JSON name', 'contributions/states/states.txt'],
+  ['into another entity folder', 'contributions/cities/XX.json']]) {
+  test(`a states file renamed ${label} is a deleted states file`, async () => {
+    const { dir, head } = mergeRepo({ afterPath: moved, after: pretty([{ id: 1, name: 'Kept' }, { id: 2, name: 'Gone' }]) });
+    const out = await analyse(dir, head, [{ filename: moved, status: 'renamed', previous_filename: STATES }]);
+    assert.equal(out.is_critical, 'true', label);
+    assert.match(out.critical_reasons, new RegExp(`Deletion of states file: contributions/states/states.json \\(moved to ${moved.replace('.', '\\.')}\\)`));
+  });
+}
+
+test('a base record without an id cannot be compared, so the analysis is incomplete', async () => {
+  const { dir, head } = mergeRepo({ before: pretty([{ name: 'Kept' }, { name: 'Gone' }]), after: pretty([{ name: 'Kept' }]) });
+  const out = await analyse(dir, head, REFUSED);
+  assert.equal(out.analysis_incomplete, 'true');
+  assert.match(out.incomplete_reasons, /row 0 has no positive integer id/);
+});
+
+test('a new record without an id in the PR is an addition, and a removal beside it is still found', async () => {
+  const { dir, head } = mergeRepo({ after: pretty([{ id: 1, name: 'Kept' }, { name: 'New' }]) });
+  const out = await analyse(dir, head, REFUSED);
+  assert.equal(out.analysis_incomplete, 'false');
+  assert.match(out.critical_reasons, /removed: id 2/);
+});
