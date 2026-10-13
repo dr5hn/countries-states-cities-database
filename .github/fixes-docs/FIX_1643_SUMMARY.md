@@ -157907,3 +157907,29 @@ municipality. Time zones from IANA tzdb.
 
 ### Rollback
 Revert the PR (squash commit); new county ids are 13853-13903; no record is removed.
+
+## State reforms: six states whose category or local name changed by law
+
+### Problem
+Six states changed category or official local name by law while keeping the same territory, and still carried the old
+values.
+
+### Fix
+Same states, same ids, codes and English names; only the category and local name change:
+- **North Jeolla (3851)**, Law 19214, in force 18 January 2024: `type` province → special self-governing province; `type_local` None → 특별자치도; `native` 전라북도 → 전북특별자치도; Korean translation likewise.
+- **Gangwon (3862)**, Law 18875, in force 11 June 2023: `type_local` None → 특별자치도; `native` 강원도 → 강원특별자치도; Korean translation likewise.
+- **Somerset (2386)** and **North Yorkshire (2522)**, the Structural Changes Orders 2022 (SI 2022/329 and 2022/328), in
+  force 1 April 2023: the county councils became unitary authorities: `type` two-tier county → unitary authority.
+- **Bắc Ninh (3791)**, National Assembly Resolution 39/2026/QH16, in force 20 September 2026, and **Quảng Ninh (3814)**,
+  Resolution 36/2026/QH16, in force 1 September 2026: each became a centrally governed city over its whole former
+  area: `type` province → municipality, `type_local` thành phố trực thuộc trung ương.
+
+Not here: territorial reforms (Cuando Cubango's split in Angola, Varakļāni's merger into Madona in Latvia) wait for
+v5.0.0; Burundi's 2023 provinces, Burkina Faso's 2025 regions and the split of administrative Cumbria are held until
+their enacted texts and dependent places are proved.
+
+### Sources
+The laws and orders named above (facts only); ISO 3166-2 codes and English names unchanged.
+
+### Rollback
+Revert the PR (squash commit); no record is created or removed.
