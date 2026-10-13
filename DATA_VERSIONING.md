@@ -7,72 +7,109 @@ releases.
 ## What an id denotes
 
 A **key** is a table plus an id, for example `cities` 1403 or `states` 1509. A key identifies one geographic entity,
-such as a town, a municipality or a region. It does not identify a fixed set of attributes.
+such as a town, a municipality or a province. It does not identify a fixed set of attributes.
 
-- Facts about the entity are corrected under the same key: its spelling, local name, translations, point, clock,
-  Wikidata item, type and level, and its links to a parent, county or state.
+- Facts about the entity are corrected under the same key: its spelling, local name, translations, coordinates
+  (`latitude`, `longitude`), time zone (`timezone`), Wikidata item, type and level, and its links to a parent, county
+  or state.
 - A different entity never gets an existing key. A different settlement, territorial unit, part of a unit or
   successor after a reform gets its own key, and the records are linked.
 - A retired key is never used for anything else. The release that retires it says what became of the entity. The
   only way back is a reviewed restoration of the **same** entity, checked against the row the key had when it was
-  retired: Finland's region FI-01 (`states` 1509) is the first.
-- One record may stand for a unit and its main place only where the country's documented model allows it
-  (ADMINISTRATIVE_STRUCTURE.md, rule 7). Such a dual record does not make the seat town equal to the unit's
-  territory.
+  retired. Both rows must carry the same stable identifier, such as the Wikidata item or the ISO 3166-2 code, and no
+  conflicting one. Åland (FI-01, `states` 1509) is the first.
+- A `dual_role` decision needs evidence for both roles under the country's published model, and creates no automatic
+  redirect. Under rule 7 of [ADMINISTRATIVE_STRUCTURE.md](ADMINISTRATIVE_STRUCTURE.md), an intermediate unit has its
+  own county record, and a separately verified place keeps its city record, identity and level, linked through
+  `county_id`. A shared Wikidata item allowed by that model does not make a seat town equal to the unit's territory.
 
 Some records predate typing, and what they first denoted (a town, or the municipality around it) can no longer be
-established. Each release lists these keys as `unresolved` in its identity file, with what is known. A later type,
-level or link is kept on such a key only when the evidence ties it to the entity the key already denoted; otherwise
-the key keeps the value it had in v4.0. If you need strict territorial scope, exclude these keys by that list.
+established. These keys get an `unresolved` identity decision, and never redirect automatically. A later type, local
+type (`type_local`), level, `parent_id` or `county_id` is kept on such a key only when the evidence ties it to the
+entity the key already denoted; otherwise the field keeps its v4.0 value, or stays absent if it had none. An unproved
+change of Wikidata item keeps the v4.0 item; if evidence proves that old item wrong but proves no replacement, the key
+has no item. Facts that are proved stay; unproved assertions that would tie the key to another entity do not ship.
+
+`identity_changes.jsonl` holds the decisions made in its release's interval, so a key missing from a later file is
+not resolved by that. Every `unresolved` decision concerns a change made since v4.0, so the cumulative identity file
+from v4.0 that comes with v5.0.0 holds them all. To know the keys unresolved now, start from that file and apply each
+later release's decisions in order, keeping each key's latest one. If you need strict territorial scope, exclude
+those keys.
 
 ## What each kind of release may change
 
-Releases are tagged `vMAJOR.MINOR.PATCH`, for example `v5.0.0` and then `v5.1.0`. The exports of a release are
-tagged `v5.0.0-export.1`, `v5.0.0-export.2` and so on.
+Releases are numbered `vMAJOR.MINOR.PATCH`, for example `v5.0.0` and then `v5.1.0`. Each published export of a
+release has its own tag, `v5.0.0-export.1`, `v5.0.0-export.2` and so on, bound to the commit it was built from. Two
+exports of one release can hold different data; each follows the rules for a regular release below.
 
 | Change | Regular release (minor or patch) | Major release |
 |---|---|---|
-| Correct a fact about the same entity (name, translation, point, clock, item, population) | yes | yes |
+| Correct a fact about the same entity (name, translation, coordinates, time zone, item, population) | yes | yes |
 | Correct a type, level or parent under the published rules | yes | yes |
 | Add records (new places, counties, postcodes) | yes | yes |
 | Move a misfiled place to its proved state or country | yes | yes |
 | Remove a key, or move it to another table | no | yes |
-| Repair a key that came to denote another entity (the key retires with its first meaning; the other entity gets a new key) | no | yes |
-| Change a field's meaning, a nullability, a table's scope or a documented query | no | yes |
+| Repair a key that came to denote another entity (the key retires with its first meaning; the other entity gets a fresh, never-used key, or an existing key already proved to denote it) | no | yes |
+| Change a field's meaning or nullability, an id namespace, a table's scope, how countries, codes or letter case are written, or an incompatible schema or documented query rule | no | yes |
 
-Between majors, a record that turns out to be a unit, a duplicate or invalid stays in the data, typed as what it is.
-Its removal is queued for the next major.
+The results of an unchanged query may change when facts about the same entity are corrected.
+
+Between majors, existing keys stay lookupable. A record found to be a unit or invalid is classified or flagged only
+where the published model allows it; otherwise that change is held. Both keys of a duplicate stay, with the proof
+recorded. Removing a key or moving it to another table waits for the next major.
 
 ## Pinning and migrating
 
-Pin a release by its tag or commit, not by "latest". The API and the packages report the data version they serve.
+Pin the exact export tag and its commit, or the commit of the snapshot your product actually ships, not "latest". A
+package version or an API protocol version alone does not name a data snapshot. The API and the packages report the
+data version they serve; a live API client picks its data version as the API documentation describes.
 
-Each release attaches migration files, described in [migrations/README.md](migrations/README.md):
+Each release attaches migration files to its GitHub release, described in
+[migrations/README.md](migrations/README.md). They cover `countries`, `states`, `counties`, `cities` and `postcodes`.
+They do not describe changes to the separate `regions` and `subregions` grouping tables.
 
-- `removed_ids.jsonl` and `removed_ids.csv`: every key that left the data, with its reviewed outcome and the records
-  that exist now (`current_targets`). Only `merged_same_entity` with `automatic_redirect: true` may be redirected
-  without a look. A seat town is a different place from the unit whose seat it is. For a repaired key,
-  `current_targets` is the entity it first denoted, and `later_entity_targets` the new key of the entity it came to
-  denote: check which one you stored.
-- `added_ids.jsonl`, `changed_fields.jsonl` and `identity_changes.jsonl`: what was added, which fields changed (typed,
-  with presence flags), and the identity decisions.
-- `release_manifest.json`: the versions, both commits, the counts and the checksums.
+- `removed_ids.jsonl` and `removed_ids.csv`: every removal event in the interval, with its reviewed outcome. This is a
+  history of events, not the list of keys absent at the end: check `present_at_from` and `present_at_to`. A key
+  present at the end is not retired because a removal event names it. `restored_at` marks a removal undone later by a
+  reviewed restoration; its `current_targets` then follow the restored key. `present_at_from: false` marks a key
+  your baseline never held.
+- `current_targets` follows each removal's relations to the end of the interval. It may list one or more
+  `{table, id}` targets (several after a split), be empty when the outcome has no successor, or hold a terminal
+  `{"table": null, "id": null, "end": <outcome>}` when a chain ends in a removal with no successor. Only a target with
+  `automatic_redirect: true` may be redirected without a look: every step to it is a reviewed `merged_same_entity`,
+  and a repurpose or an `unresolved` decision on the way ends that. A seat town is a different place from the unit
+  whose seat it is.
+- For a repaired key, `current_targets` is the entity it first denoted, and `later_entity_targets` the replacement key
+  of the entity it came to denote: check which one you stored. The removal's `retires_repurpose.replacement_kind`
+  says whether the replacement is `fresh` (never used before) or `existing`, and the identity decision's `remediation`
+  records it too. Neither mapping redirects automatically, and an existing replacement is not in `added_ids.jsonl`.
+- `added_ids.jsonl`: keys present at the end and not at the start. A restored key appears with `restored` when your
+  baseline lacks it; a key present at both ends does not appear, even if it was removed and restored in between.
+- `changed_fields.jsonl`: the fields that changed on keys present at both ends, typed, with presence flags.
+- `identity_changes.jsonl`: the identity decisions made in the interval (see above).
+- `release_manifest.json`: the versions, both commits (`from.sha` and `to.sha`), the counts and the checksums.
 
-To migrate stored ids, apply the files of each release since the one you pinned, in order. The files describe the
-step from the previous published release. v5.0.0 also carries the cumulative files from v4.0.
+To migrate stored ids, take a set whose `release_manifest.json` starts at your snapshot (`from.sha`) and ends at the
+one you move to (`to.sha`), and apply it; then do the same with the next release's set. Each set describes the step
+from the previous published snapshot. v5.0.0 carries two: the cumulative set from v4.0, and the step from the last v4
+export (`v4.0-export.51`). Apply the one whose `from.sha` is your snapshot, never both.
 
-Example: map stored city ids that were merged into another record.
+Example: list the stored city ids that may be redirected to another record.
 
 ```bash
 python3 -c "
 import json
 for line in open('removed_ids.jsonl', encoding='utf-8'):
     e = json.loads(line)
+    if e['old_table'] != 'cities':
+        continue
     for t in e['current_targets']:
         if t['automatic_redirect']:
             print(e['old_table'], e['old_id'], '->', t['table'], t['id'])
 "
 ```
+
+It prints the mappings; updating your stored ids is up to you.
 
 ## Support
 
