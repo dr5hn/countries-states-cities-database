@@ -223,6 +223,7 @@ Official registers matched to records (categories, codes and unit names) also as
 - [Stats NZ](https://www.stats.govt.nz/about-us/copyright/), territorial authorities and urban-rural areas 2026 (CC BY 4.0): this work is based on Stats NZ data licensed for reuse under CC BY 4.0
 - Ville de Luxembourg, quartiers on [data.public.lu](https://data.public.lu/) (CC BY 4.0)
 - [Ministry for Development of Communities and Territories of Ukraine](https://mindev.gov.ua/), Codifier of administrative-territorial units and territories of territorial communities (KATOTTG), 7 July 2026 (CC BY 4.0): names and codes matched to records; CSC romanised the names under Cabinet of Ministers Resolution 55 (2010)
+- [Statistics South Africa](https://www.statssa.gov.za/), Census 2011 main places, distributed by UCT Libraries: main-place codes and classes matched to records; the mapping to `type` is CSC's
 
 Country names in some languages follow [Unicode CLDR](https://cldr.unicode.org/) 48.2: Copyright © 2015-2024 Unicode, Inc., under the [Unicode License v3](.github/licenses/Unicode-3.0.txt), whose notice must travel with copies.
 

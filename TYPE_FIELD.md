@@ -101,6 +101,13 @@ suburb is `section`. A place the New Zealand Geographic Board lists as an offici
 type Town) or that its council names as a town is at least `town`, whatever its size class (Fairlie, Waiouru). The
 classes are statistical sizes, not city status. District and city councils are county records (#2006).
 
+### South Africa
+
+In `ZA.json`, places have no legal town or city status. A place matched to a Statistics South Africa Census 2011 main
+place is `locality` with `type_local` `main place`: a statistical class, not a legal status or a population threshold.
+Local municipalities stored as cities are `municipality / local municipality` at level 3. Metropolitan and district
+municipalities are county records; rows for them in `ZA.json` are typed `county` and wait for removal in v5.0.0.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
