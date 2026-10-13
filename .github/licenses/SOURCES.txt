@@ -1,0 +1,822 @@
+This notice identifies the sources used in the Countries States Cities Database (CSC), their licences,
+required credits and CSC’s changes. Keep this notice and the accompanying licence notices with all copies of
+the data and pass them to recipients. Preserve the credits, licence links and change notices when reusing the
+data; each linked licence sets the full terms of reuse.
+
+1. Postal Areas 2021 and Mesh Block allocation
+Publisher: Australian Bureau of Statistics (ABS)
+Edition: ASGS Edition 3, July 2021
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Based on Australian Bureau of Statistics data, ASGS Edition 3, Postal Areas 2021 and Mesh Block
+allocation. © Commonwealth of Australia. CC BY 4.0.
+Source:
+https://www.abs.gov.au/
+Changes by CSC: CSC selected one record per postcode and mapped state membership, removing earlier locality
+names and points.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+2. CACLR national register of localities and streets
+Publisher: Administration du cadastre et de la topographie (ACT), Luxembourg
+Edition: edition not recorded; checked 12 October 2026
+Licence: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Credit: Source: Administration du cadastre et de la topographie (ACT), Luxembourg, CACLR national register of
+localities and streets, edition not recorded; checked 12 October 2026.
+Source:
+https://data.public.lu/api/1/datasets/registre-national-des-localites-et-des-rues/
+Changes by CSC: CSC selected postcode, locality and canton combinations, mapped cantons to its regions and
+omitted unassigned postcodes.
+Reuse: CC0 imposes no attribution requirement.
+
+3. CartoCiudad postal addresses (portalpk_publi)
+Publisher: Instituto Geográfico Nacional (IGN) / Centro Nacional de Información Geográfica (CNIG), Spain
+Edition: April 2026, 52 province files
+Licence: IGN product licence (CC BY 4.0 compatible)
+https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf
+Credit: Obra derivada de CartoCiudad 04/2026 CC-BY 4.0 scne.es/productos.html#CartoCiudad
+Source:
+https://centrodedescargas.cnig.es/CentroDescargas/cartociudad
+Changes by CSC: CSC selected distinct postcodes, assigned provinces and municipalities where addresses agreed,
+averaged address coordinates and withheld 26 invalid averages.
+Reuse: Retain this derivative credit visibly with the data and in any dataset or service metadata; identify
+further changes.
+
+4. Australian postal code dump
+Publisher: GeoNames
+Edition: Downloaded 12 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: GeoNames, Australian postal code dump, Downloaded 12 October 2026.
+Source:
+https://download.geonames.org/export/zip/AU.zip
+Changes by CSC: CSC selected postcode values from the Australian postal code dump and matched them to its
+records.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+5. All India Pincode Directory
+Publisher: Department of Posts, India; Open Government Data Platform India
+Edition: edition not recorded; checked 13 October 2026
+Licence: Government Open Data License India (GODL)
+https://data.gov.in/government-open-data-license-india
+Credit: Department of Posts. (n.d.). All India Pincode Directory [Data set]. Open Government Data Platform
+India. https://data.gov.in/catalog/all-india-pincode-directory. Published under Government Open Data License
+India: https://data.gov.in/government-open-data-license-india.
+Source:
+https://data.gov.in/catalog/all-india-pincode-directory
+Changes by CSC: CSC selected a representative post office for each postcode, mapped administrative fields and
+added its identifiers.
+Reuse: Acknowledge the provider, source and licence using GODL section 5 or an accepted data citation; do not
+imply endorsement.
+
+6. KEN_ALL postcode and address data
+Publisher: Japan Post
+Edition: edition not recorded; checked 13 October 2026
+Licence: Japan Post copyright non-assertion and free redistribution terms
+https://www.post.japanpost.jp/zipcode/dl/readme.html
+Credit: Source: Japan Post, KEN_ALL postcode and address data, edition not recorded; checked 13 October 2026.
+Source:
+https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html
+Changes by CSC: CSC converted and deduplicated postcode and address rows and mapped administrative fields.
+Reuse: Japan Post does not assert copyright in these postcode data and permits their free redistribution.
+
+7. Base officielle des codes postaux
+Publisher: La Poste
+Edition: edition not recorded; checked 13 October 2026
+Licence: Licence Ouverte 2.0
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Credit: Source: La Poste, Base officielle des codes postaux, edition not recorded; checked 13 October 2026.
+Source:
+https://www.data.gouv.fr/fr/datasets/base-officielle-des-codes-postaux/
+Changes by CSC: CSC selected postcode and locality values, matched them to its records and adapted their
+structure.
+Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+
+8. Locality directories for Austria, Switzerland and Germany
+Publisher: OpenPLZ
+Edition: edition not recorded; checked 13 October 2026
+Licence: Open Database License 1.0 (ODbL)
+https://opendatacommons.org/licenses/odbl/1-0/
+Credit: Contains information from OpenPLZ, https://www.openplzapi.org/, made available under the Open Database
+License (ODbL) 1.0, https://opendatacommons.org/licenses/odbl/1-0/.
+Source:
+https://www.openplzapi.org/en/faq/
+Changes by CSC: CSC selected postcode and locality values, matched regional names to its states and merged
+records by postcode.
+Reuse: Keep attribution and ODbL notices, share adapted databases under ODbL and provide the access to data
+required by that licence.
+
+9. New Zealand postcode compilation from OpenStreetMap/Nominatim
+Publisher: OpenStreetMap contributors; compiled by WaimateWihongi
+Edition: edition not recorded; checked 13 October 2026
+Licence: Open Database License 1.0 (ODbL)
+https://opendatacommons.org/licenses/odbl/1-0/
+Credit: © OpenStreetMap contributors. Compiled via WaimateWihongi/nz-postcodes. Data available under the Open
+Database License 1.0. https://www.openstreetmap.org/copyright
+Source:
+https://github.com/WaimateWihongi/nz-postcodes
+Changes by CSC: CSC selected one record per postcode, retained source names and coordinates and mapped
+recognised regional names to its regions.
+Reuse: Keep attribution and ODbL notices, share adapted databases under ODbL and provide the access to data
+required by that licence.
+
+10. Postal Code File (PCF)
+Publisher: Posti
+Edition: edition not recorded; checked 8 October 2026; file dated 8 October 2026
+Licence: Posti Postal Code Services terms, effective 1 January 2015
+https://www.posti.fi/en/for-businesses/customer-support/postal-code-services
+Credit: Source: Posti, Postal Code File (PCF), edition not recorded; checked 8 October 2026; file dated 8
+October 2026.
+Source:
+https://www.posti.fi/webpcode/
+Changes by CSC: CSC selected postcode and name values and mapped regional membership.
+Recorded data download date: 8 October 2026.
+The terms of use are in Posti-postal-code-terms.txt in the same folder.
+Reuse: Pass the current service description, terms of use and data download date to every recipient.
+
+11. What is the evidence to support early supervised exercise therapy after primary total knee replacement? A
+systematic review and meta-analysis (author address)
+Publisher: BMC Musculoskeletal Disorders; authors Larissa Nicole Sattler, Wayne Anthony Hing and Christopher
+John Vertullo
+Edition: 2019, volume 20, article 42; DOI 10.1186/s12891-019-2415-5
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Sattler, Hing and Vertullo (2019), BMC Musculoskeletal Disorders,
+https://doi.org/10.1186/s12891-019-2415-5. CC BY 4.0. Postcode 9726 extracted from an author address.
+Source:
+https://doi.org/10.1186/s12891-019-2415-5
+© The Author(s). 2019
+Changes by CSC: CSC extracted postcode 9726 from an author address.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+12. Address register adressur/us_adr_husanr
+Publisher: Faroese Environment Agency, Umhvørvisstovan
+Edition: edition not recorded; checked 9 October 2026
+Licence: Føroyakort terms, June 2019
+https://www.foroyakort.fo/um-foeroyakort/terms-and-conditions-in-english
+Credit: Data from the Faroese Environment Agency, Umhvørvisstovan: adressur/us_adr_husanr, webservice; checked
+9 October 2026.
+Source:
+https://gis.us.fo/arcgis/rest/services/adressur/us_adr_husanr/MapServer/0
+Changes by CSC: CSC selected distinct postcodes and locality names and mapped municipalities to its regions.
+Reuse: Retain the agency, dataset and webservice credit and pass on the terms link; if other sources are
+credited on a service front page, credit the agency there too.
+
+13. Geographical database
+Publisher: GeoNames
+Edition: Daily country dumps, October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: GeoNames, Geographical database, Daily country dumps, October 2026.
+Source:
+https://download.geonames.org/export/dump/
+Changes by CSC: CSC matched names, identifiers, codes, population and points to its records, mapped
+classifications and formatted coordinates.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+14. Structured entity data
+Publisher: Wikidata contributors
+Edition: edition not recorded; checked 13 October 2026
+Licence: CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Credit: Source: Wikidata contributors, Structured entity data, edition not recorded; checked 13 October 2026.
+Source:
+https://www.wikidata.org/wiki/Wikidata:Data_access
+Changes by CSC: CSC selected entity names, translations, identifiers, codes, points and parent relationships
+and matched them to its records.
+Reuse: CC0 imposes no attribution requirement.
+
+15. OpenStreetMap database and Nominatim results
+Publisher: OpenStreetMap contributors
+Edition: edition not recorded; checked 13 October 2026
+Licence: Open Database License 1.0 (ODbL)
+https://opendatacommons.org/licenses/odbl/1-0/
+Credit: © OpenStreetMap contributors. Data available under the Open Database License 1.0.
+https://www.openstreetmap.org/copyright
+Source:
+https://www.openstreetmap.org/
+Changes by CSC: CSC selected names, points and codes, matched them to its records and formatted coordinates.
+Reuse: Keep attribution and ODbL notices, share adapted databases under ODbL and provide the access to data
+required by that licence.
+
+16. Servicio de Normalización de Datos Geográficos de Argentina (Georef)
+Publisher: Georef / Datos Argentina
+Edition: API v2.0 bulk snapshots, October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Georef / Datos Argentina, Servicio de Normalización de Datos Geográficos de Argentina
+(Georef), API v2.0 bulk snapshots, October 2026.
+Source:
+https://apis.datos.gob.ar/georef/api/v2.0/departamentos.json
+Changes by CSC: CSC matched names and codes to its records, mapped categories and parent links and used
+published departamento centres.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+17. CLDR country display names
+Publisher: Unicode, Inc.
+Edition: cldr-json 48.2.0; commit bb334e8d
+Licence: Unicode License v3 (Unicode-3.0)
+https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/LICENSE
+Credit: Copyright © 2015-2024 Unicode, Inc. Unicode CLDR 48.2.0, Unicode License v3.
+Source:
+https://github.com/unicode-org/cldr-json/tree/48.2.0
+Changes by CSC: CSC selected territory names for its existing country translation fields.
+Reuse: Keep the complete Unicode-3.0.txt notice from the same folder with every copy of the Unicode data or
+software.
+
+18. Time Zone Database
+Publisher: Internet Assigned Numbers Authority (IANA)
+Edition: 2026d and 2026e
+Licence: Public domain
+https://data.iana.org/time-zones/tzdb-2026e/LICENSE
+Credit: Source: Internet Assigned Numbers Authority (IANA), Time Zone Database, 2026d and 2026e.
+Source:
+https://www.iana.org/time-zones
+Changes by CSC: CSC selected time zone identifiers, UTC offsets and daylight saving information for its time
+zone fields.
+Reuse: The database is in the public domain; no licence attribution is required.
+
+19. KATOTTG codifier of administrative-territorial units and territorial communities
+Publisher: Ministry for Development of Communities and Territories of Ukraine
+Edition: 7 July 2026; Order 1321
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Ministry for Development of Communities and Territories of Ukraine, KATOTTG codifier of
+administrative-territorial units and territorial communities, 7 July 2026; Order 1321.
+Source:
+https://mindev.gov.ua/storage/app/sites/1/uploaded-files/kodifikator-07-07.xlsx
+Changes by CSC: CSC matched names, codes, categories and parent links to its records and romanised Ukrainian
+names under Cabinet of Ministers Resolution 55 (2010).
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+20. Territorial Authority areas
+Publisher: Stats NZ
+Edition: 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: This work is based on/includes Stats NZ’s data which are licensed by Stats NZ for reuse under the
+Creative Commons Attribution 4.0 International licence.
+Source:
+https://datafinder.stats.govt.nz/
+Crown copyright ©
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+21. Urban Rural areas
+Publisher: Stats NZ
+Edition: 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: This work is based on/includes Stats NZ’s data which are licensed by Stats NZ for reuse under the
+Creative Commons Attribution 4.0 International licence.
+Source:
+https://datafinder.stats.govt.nz/
+Crown copyright ©
+Changes by CSC: CSC matched names and codes to its records and mapped urban and rural categories.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+22. Census built-up areas
+Publisher: Central Statistics Office (CSO), Ireland, and Tailte Éireann
+Edition: Census 2022; CSV published 27 September 2023
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Central Statistics Office (CSO), Ireland, and Tailte Éireann, Census built-up areas, Census
+2022; CSV published 27 September 2023.
+Source:
+https://www.cso.ie/en/media/csoie/census/census2022/SAPS_2022_BUA_270923.csv
+Changes by CSC: CSC matched names and codes to its records and mapped built-up area categories.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+23. REGPJ spatial-unit register
+Publisher: Statistical Office of the Slovak Republic
+Edition: REGPJ2020 workbook; archive entries 30 April 2024; page updated 18 August 2025
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistical Office of the Slovak Republic, REGPJ spatial-unit register, REGPJ2020 workbook;
+archive entries 30 April 2024; page updated 18 August 2025.
+Source:
+https://slovak.statistics.sk/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+24. Register of Spatial Units (RPE)
+Publisher: GURS, Slovenia
+Edition: WFS snapshot, 13 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: GURS, Slovenia, Register of Spatial Units (RPE), WFS snapshot, 13 October 2026.
+Source:
+https://ipi.eprostor.gov.si/wfs-si-gurs-rpe/wfs
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+25. Administrative and Settlement Division
+Publisher: Maa- ja Ruumiamet (Land and Spatial Development Board), Estonia
+Edition: Export, 2 September 2026
+Licence: MTP open public data terms
+https://kataster.ee/sites/default/files/documents/2024-03/MTP_andmeteenuste_kasutustingimused.pdf
+Credit: Source: Maa- ja Ruumiamet (Land and Spatial Development Board), Estonia, Administrative and Settlement
+Division, Export, 2 September 2026.
+Source:
+https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html
+Changes by CSC: CSC matched official unit names and codes to its records and mapped categories and parent
+links.
+Reuse: Public and commercial reuse is permitted under the linked MTP terms.
+
+26. Local Government Directory: district, sub-district, urban local body and village registers
+Publisher: Ministry of Panchayati Raj, India
+Edition: Downloads, 12 October 2026
+Licence: Local Government Directory copyright policy
+https://lgdirectory.gov.in/copyRightPolicy.do
+Credit: Source: Ministry of Panchayati Raj, India, Local Government Directory: district, sub-district, urban
+local body and village registers, Downloads, 12 October 2026.
+Source:
+https://lgdirectory.gov.in/
+Changes by CSC: CSC selected and matched names and codes to its records and mapped categories and parent
+links.
+Reuse: Acknowledge LGD prominently, reproduce its material accurately and avoid misleading or derogatory
+contexts.
+
+27. ASGS Local Government Areas
+Publisher: Australian Bureau of Statistics (ABS)
+Edition: Edition 3, LGA 2025
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Australian Bureau of Statistics (ABS), ASGS Local Government Areas, Edition 3, LGA 2025.
+Source:
+https://www.abs.gov.au/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+28. ASGS Suburbs and Localities
+Publisher: Australian Bureau of Statistics (ABS)
+Edition: Edition 3, SAL 2021
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Australian Bureau of Statistics (ABS), ASGS Suburbs and Localities, Edition 3, SAL 2021.
+Source:
+https://www.abs.gov.au/
+Changes by CSC: CSC matched names and codes to its records and mapped locality categories.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+29. Municipal code and administrative-class roster
+Publisher: Statistics Bureau of Japan / e-Stat
+Edition: edition not recorded; checked 13 October 2026
+Licence: Government Standard Terms 2.0 (CC BY 4.0 compatible)
+https://www.e-stat.go.jp/terms-of-use
+Credit: Source: Statistics Bureau of Japan / e-Stat, Municipal code and administrative-class roster, edition
+not recorded; checked 13 October 2026.
+Source:
+https://data.e-stat.go.jp/lod/
+Changes by CSC: CSC matched municipal codes to its records and mapped administrative classes and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+Compatible licence: https://creativecommons.org/licenses/by/4.0/
+
+30. Municipality and status classifiers
+Publisher: Czech Statistical Office (ČSÚ)
+Edition: edition not recorded; checked 13 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Czech Statistical Office (ČSÚ), Municipality and status classifiers, edition not recorded;
+checked 13 October 2026.
+Source:
+https://csu.gov.cz/
+Changes by CSC: CSC matched municipality codes to its records and mapped status categories.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+31. Gemeenten register
+Publisher: Statistics Netherlands (CBS)
+Edition: 1 January 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Netherlands (CBS), Gemeenten register, 1 January 2026.
+Source:
+https://www.cbs.nl/-/media/cbs/onze-diensten/methoden/classificaties/overig/gemeenten-alfabetisch-2026.xlsx
+Changes by CSC: CSC matched municipality names and codes to its records and mapped categories and parent
+links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+32. Woonplaatsen table
+Publisher: Statistics Netherlands (CBS)
+Edition: 86312NED, 1 January 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Netherlands (CBS), Woonplaatsen table, 86312NED, 1 January 2026.
+Source:
+https://www.cbs.nl/nl-nl/cijfers/detail/86312ned
+Changes by CSC: CSC matched locality names and codes to its records and assigned parent municipalities.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+33. Wijk- en Buurtkaart
+Publisher: Statistics Netherlands (CBS)
+Edition: 2026 versie 0; collection 16 June 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Netherlands (CBS), Wijk- en Buurtkaart, 2026 versie 0; collection 16 June 2026.
+Source:
+https://www.cbs.nl/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+34. Municipality merger history
+Publisher: Statistics Netherlands (CBS)
+Edition: 70739NED; edition not recorded; checked 13 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Netherlands (CBS), Municipality merger history, 70739NED; edition not recorded;
+checked 13 October 2026.
+Source:
+https://www.cbs.nl/
+Changes by CSC: CSC used municipality codes and successor relationships to update its parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+35. Standard Geographical Classification
+Publisher: Statistics Canada
+Edition: 2021
+Licence: Statistics Canada Open Licence
+https://www.statcan.gc.ca/en/terms-conditions/open-licence
+Credit: Adapted from Statistics Canada, Statistics Canada Standard Geographical Classification, 2021. This
+does not constitute an endorsement by Statistics Canada of this product.
+Source:
+https://www.statcan.gc.ca/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Keep the prescribed adaptation credit, reproduce source information accurately and do not imply
+Statistics Canada endorsement.
+
+36. Census subdivision boundary file
+Publisher: Statistics Canada
+Edition: 2025; reference date 1 January 2025
+Licence: Statistics Canada Open Licence
+https://www.statcan.gc.ca/en/terms-conditions/open-licence
+Credit: Adapted from Statistics Canada, Statistics Canada census subdivision boundary file, 2025, reference
+date 1 January 2025. This does not constitute an endorsement by Statistics Canada of this product.
+Source:
+https://www12.statcan.gc.ca/census-recensement/
+Changes by CSC: CSC derived internal points from census subdivision boundaries and used containment to assign
+parent links.
+Reuse: Keep the prescribed adaptation credit, reproduce source information accurately and do not imply
+Statistics Canada endorsement.
+
+37. Canadian Geographical Names Database
+Publisher: Natural Resources Canada
+Edition: edition not recorded; checked 13 October 2026
+Licence: Open Government Licence – Canada
+https://open.canada.ca/en/open-government-licence-canada
+Credit: Source: Natural Resources Canada, Canadian Geographical Names Database. Contains information licensed
+under the Open Government Licence – Canada.
+Source:
+https://geonames.nrcan.gc.ca/
+Changes by CSC: CSC matched locality names and status information to its records.
+Reuse: Keep the source and Open Government Licence – Canada acknowledgement; do not imply official
+endorsement.
+
+38. REFNIS/NIS/NIS6 register
+Publisher: Statbel
+Edition: Effective 2025
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statbel, REFNIS/NIS/NIS6 register, Effective 2025.
+Source:
+https://statbel.fgov.be/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+39. Statistical sectors
+Publisher: Statbel
+Edition: 2025/2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statbel, Statistical sectors, 2025/2026.
+Source:
+https://statbel.fgov.be/
+Changes by CSC: CSC matched sector codes to its records and derived internal points for its counties.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+40. Census communities and urban classification
+Publisher: Statistical Institute of Jamaica (STATIN)
+Edition: Census 2022 preliminary; 2016 governance context
+Licence: STATIN data licence and derived-work attribution terms
+https://statinja.gov.jm/terms-of-use.aspx
+Credit: Source: Statistical Institute of Jamaica (STATIN), Census 2022 preliminary community data and urban
+classification. Copyright in the source data is held by STATIN.
+Source:
+https://statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx
+Changes by CSC: CSC matched community codes to its records and adapted category classifications.
+Reuse: Credit STATIN, acknowledge its rights and identify changes; STATIN accepts no responsibility for
+third-party interpretations and does not endorse this product.
+
+41. City, municipality and settlement registers
+Publisher: Statistical Office of the Republic of Serbia (RZS)
+Edition: 1 January 2026
+Licence: RZS reproduction and distribution terms
+https://www.stat.gov.rs/sr-latn/copyright/
+Credit: Izvor: RZS — Serbia RZS city/municipality and settlement registers, 1 January 2026.
+Source:
+https://www.stat.gov.rs/media/412350/sifarnikgradovi-opstine-tekucestanje.xlsx
+Preračunao / Modifikovao: Countries States Cities Database.
+Napomena o izmeni: CSC matched codes to its records and adapted categories and immediate parent links.
+Reuse: Credit RZS and clearly identify any modifications and their author.
+
+42. Gazetteer places, counties and county subdivisions
+Publisher: US Census Bureau
+Edition: 2026
+Licence: US Government public domain (17 USC 105)
+https://www.govinfo.gov/content/pkg/USCODE-2022-title17/html/USCODE-2022-title17-chap1-sec105.htm
+Credit: Source: US Census Bureau, Gazetteer places, counties and county subdivisions, 2026.
+Source:
+https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/
+Changes by CSC: CSC matched codes, names and published internal points to its records and mapped categories
+and parent links.
+Reuse: These US Government works are in the public domain; no source attribution is required.
+
+43. PL 94-171 and place/county relationship tables
+Publisher: US Census Bureau
+Edition: 2020
+Licence: US Government public domain (17 USC 105)
+https://www.govinfo.gov/content/pkg/USCODE-2022-title17/html/USCODE-2022-title17-chap1-sec105.htm
+Credit: Source: US Census Bureau, PL 94-171 and place/county relationship tables, 2020.
+Source:
+https://www2.census.gov/geo/docs/maps-data/data/rel2020/
+Changes by CSC: CSC matched codes and identity information to its records and mapped categories and parent
+links.
+Reuse: These US Government works are in the public domain; no source attribution is required.
+
+44. Geographic Names Information System (GNIS)
+Publisher: US Geological Survey (USGS)
+Edition: September 2026
+Licence: US Government public domain (17 USC 105)
+https://www.govinfo.gov/content/pkg/USCODE-2022-title17/html/USCODE-2022-title17-chap1-sec105.htm
+Credit: Source: US Geological Survey (USGS), Geographic Names Information System (GNIS), September 2026.
+Source:
+https://www.usgs.gov/us-board-on-geographic-names/domestic-names
+Changes by CSC: CSC matched place names, identifiers and feature classifications to its records.
+Reuse: These US Government works are in the public domain; no source attribution is required.
+
+45. Code officiel géographique
+Publisher: Institut national de la statistique et des études économiques (INSEE)
+Edition: 2026
+Licence: Licence Ouverte 2.0
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Credit: Source: Institut national de la statistique et des études économiques (INSEE), Code officiel
+géographique, 2026.
+Source:
+https://www.insee.fr/fr/information/2560452
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+
+46. Marseille quartier geography
+Publisher: Institut national de la statistique et des études économiques (INSEE)
+Edition: 2014 geography; published 18 November 2015
+Licence: Licence Ouverte 2.0
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Credit: Source: Institut national de la statistique et des études économiques (INSEE), Marseille quartier
+geography, 2014 geography; published 18 November 2015.
+Source:
+https://www.insee.fr/fr/statistiques/2385003
+Changes by CSC: CSC matched neighbourhood names and codes to its records and mapped categories and parent
+links.
+Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+
+47. Elenco comuni, SITUAS and territorial mutations
+Publisher: Istituto Nazionale di Statistica (ISTAT)
+Edition: 2026; checked 13 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Istituto Nazionale di Statistica (ISTAT), Elenco comuni, SITUAS and territorial mutations,
+2026; checked 13 October 2026.
+Source:
+https://www.istat.it/classificazione/codici-dei-comuni-delle-province-e-delle-regioni/
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+48. Census locality data
+Publisher: Istituto Nazionale di Statistica (ISTAT)
+Edition: 2021
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Istituto Nazionale di Statistica (ISTAT), Census locality data, 2021.
+Source:
+https://www.istat.it/
+Changes by CSC: CSC matched names and codes to its records and mapped locality categories and parent links.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+49. NLSC Taiwan administrative data
+Publisher: Ministry of the Interior / National Land Surveying and Mapping Center
+Edition: Catalogue 102011, metadata 16 September 2026; related editions August 2026 and 23 March 2023
+Licence: Open Government Data License 1.0
+https://data.gov.tw/license
+Credit: Ministry of the Interior / National Land Surveying and Mapping Center, NLSC Taiwan administrative
+data, catalogue 102011 (metadata 16 September 2026), August 2026 and 23 March 2023. The Open Data is made
+available to the public under the Open Government Data License, User can make use of it when complying to the
+condition and obligation of its terms. Open Government Data License: https://data.gov.tw/license
+Source:
+https://data.gov.tw/dataset/102011
+Changes by CSC: CSC matched names and codes to its records and mapped categories and parent links.
+Reuse: Keep the provider and dataset attribution and licence statement.
+
+50. Census settlement register
+Publisher: Central Statistical Office of Saint Lucia
+Edition: 2010
+Licence: CSO Saint Lucia Open Licence
+https://stats.gov.lc/terms-and-conditions/open-licence-agreement/
+Credit: Source: The Central Statistical Office of Saint Lucia. Contains information licensed under the Open
+Licence Agreement of The Central Statistical Office of Saint Lucia.
+Source:
+https://stats.gov.lc/
+Adaptation notice: This product was adapted from the information of The Central Statistical Office of Saint
+Lucia, which is licensed under the Open Licence Agreement of The Central Statistical Office of Saint Lucia.
+Changes by CSC: CSC matched settlement codes to its records and mapped categories.
+Reuse: Keep both the source acknowledgement and the adaptation notice, with the licence link; do not imply
+official endorsement.
+
+51. Basic Address File (BAF)
+Publisher: Posti
+Edition: Extract, 3 October 2026
+Licence: Posti Postal Code Services terms, effective 1 January 2015
+https://www.posti.fi/en/for-businesses/customer-support/postal-code-services
+Credit: Source: Posti, Basic Address File (BAF), Extract, 3 October 2026.
+Source:
+https://www.posti.fi/webpcode/
+Changes by CSC: CSC used municipal coverage to link postcodes to its municipalities.
+Recorded data download date: 8 October 2026.
+The terms of use are in Posti-postal-code-terms.txt in the same folder.
+Reuse: Pass the current service description, terms of use and data download date to every recipient.
+
+52. Populations de référence (population municipale)
+Publisher: Institut national de la statistique et des études économiques (INSEE)
+Edition: 2023; in force 1 January 2026
+Licence: Licence Ouverte 2.0
+https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Credit: Source: Institut national de la statistique et des études économiques (INSEE), Populations de
+référence (population municipale), 2023; in force 1 January 2026.
+Source:
+https://www.insee.fr/fr/statistiques/fichier/8680726/ensemble.zip
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Keep the source and edition or update date, and do not imply official endorsement.
+
+53. Resident population (POSAS provisional estimate)
+Publisher: Istituto Nazionale di Statistica (ISTAT)
+Edition: 1 January 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Istituto Nazionale di Statistica (ISTAT), Resident population (POSAS provisional estimate), 1
+January 2026.
+Source:
+https://demo.istat.it/data/posas/POSAS_2026_it_Comuni.zip
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+54. Gemeindeverzeichnis GV-ISys population
+Publisher: Statistisches Bundesamt (Destatis)
+Edition: Q3 2026; population at 31 December 2025, on the census 2022 basis
+Licence: Destatis source-attributed reuse terms
+https://www.destatis.de/DE/Service/Impressum/_inhalt.html
+Credit: Source: Statistisches Bundesamt (Destatis), Gemeindeverzeichnis GV-ISys population, Q3 2026;
+population at 31 December 2025, on the census 2022 basis.
+Source:
+https://www.destatis.de/
+Changes by CSC: CSC copied published figures unchanged, matched them to municipalities by code and added
+population_year.
+Reuse: Retain the Destatis source credit and identify changes; do not imply Destatis endorsement.
+
+55. Population Census, basic complete tabulation
+Publisher: Statistics Bureau of Japan / e-Stat
+Edition: 2020
+Licence: e-Stat terms (CC BY 4.0 compatible)
+https://www.e-stat.go.jp/terms-of-use
+Credit: Source: Statistics Bureau of Japan / e-Stat, Population Census, basic complete tabulation, 2020.
+Source:
+https://www.e-stat.go.jp/stat-search/file-download?fileKind=0&statInfId=000032142402
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+Compatible licence: https://creativecommons.org/licenses/by/4.0/
+
+56. Population by municipality code (OBY02A)
+Publisher: Czech Statistical Office (ČSÚ)
+Edition: 1 January 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Czech Statistical Office (ČSÚ), Population by municipality code (OBY02A), 1 January 2026.
+Source:
+https://data.csu.gov.cz/opendata/sady/OBY02A/distribuce/csv
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+57. Population by municipality and urban settlement
+Publisher: Statistics Norway (SSB)
+Edition: 1 January 2026; tables 07459 and 04859
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Norway (SSB), Population by municipality and urban settlement, 1 January 2026;
+tables 07459 and 04859.
+Source:
+https://www.ssb.no/statbank/table/07459
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+58. Registered population by municipality code
+Publisher: Statistics Netherlands (CBS)
+Edition: 1 January 2026; table 03759ned
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Netherlands (CBS), Registered population by municipality code, 1 January 2026;
+table 03759ned.
+Source:
+https://opendata.cbs.nl/#/CBS/nl/dataset/03759ned/table
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+59. Census population by suburb/locality and estimated resident population by Local Government Area
+Publisher: Australian Bureau of Statistics (ABS)
+Edition: 2021 Census SAL; 2025 LGA estimates
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Australian Bureau of Statistics (ABS), Census population by suburb/locality and estimated
+resident population by Local Government Area, 2021 Census SAL; 2025 LGA estimates.
+Source:
+https://www.abs.gov.au/census/find-census-data/datapacks
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+60. Census population by census subdivision
+Publisher: Statistics Canada
+Edition: 2021; table 98-10-0002
+Licence: Statistics Canada Open Licence
+https://www.statcan.gc.ca/en/terms-conditions/open-licence
+Credit: Adapted from Statistics Canada, Statistics Canada, 2021 Census population by census subdivision (table
+98-10-0002), 2021; Statistics Canada, 2021 Census population by census subdivision (table 98-10-0002). This
+does not constitute an endorsement by Statistics Canada of this product.
+Source:
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810000201
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Keep the prescribed adaptation credit, reproduce source information accurately and do not imply
+Statistics Canada endorsement.
+
+61. Population by NIS municipality code
+Publisher: Statbel
+Edition: 1 January 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statbel, Population by NIS municipality code, 1 January 2026.
+Source:
+https://statbel.fgov.be/
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+62. Population by municipality code
+Publisher: Statistics Finland
+Edition: 31 December 2025
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: Statistics Finland, Population by municipality code, 31 December 2025.
+Source:
+https://stat.fi/
+Changes by CSC: CSC matched published population figures to its records and added population_year.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+63. Population Estimates Program, Annual Estimates of the Resident Population for Incorporated Places
+Publisher: US Census Bureau
+Edition: Vintage 2025; SUB-IP-EST2025-POP
+Licence: US Government public domain (17 USC 105)
+https://www.govinfo.gov/content/pkg/USCODE-2022-title17/html/USCODE-2022-title17-chap1-sec105.htm
+Credit: Source: US Census Bureau, Population Estimates Program, Annual Estimates of the Resident Population
+for Incorporated Places, Vintage 2025; SUB-IP-EST2025-POP.
+Source:
+https://www2.census.gov/programs-surveys/popest/tables/2020-2025/cities/totals/SUB-IP-EST2025-POP.xlsx
+Changes by CSC: CSC matched published population estimates to its incorporated-place records and added
+population_year.
+Reuse: These US Government works are in the public domain; no source attribution is required.
+
+Sources under review
+The redistribution basis for further sources is being confirmed.
