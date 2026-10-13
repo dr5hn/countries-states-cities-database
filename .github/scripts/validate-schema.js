@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile, validateRecord, AUTO_MANAGED_FIELDS } = require('./utils');
+const { getEntityType, parseJsonFile, validateRecord, AUTO_MANAGED_FIELDS, listChangedFiles } = require('./utils');
 
 async function run() {
   const token = process.env.GITHUB_TOKEN;
@@ -21,12 +21,7 @@ async function run() {
   }
 
   // Get changed files
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 300,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const contributionFiles = files.filter(
     (f) =>

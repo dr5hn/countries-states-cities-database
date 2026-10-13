@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 // Fields auto-managed by MySQL. Canonical contributions files (round-tripped
 // from the DB) legitimately carry these on every record, so their presence is
@@ -502,7 +503,51 @@ function formatReport(results) {
   return report;
 }
 
+const GIT_STATUS = { A: 'added', M: 'modified', D: 'removed', T: 'modified' };
+const GIT_BUFFER = 256 * 1024 * 1024;   // a full-country postcode file diff runs to tens of megabytes
+
+/**
+ * Files a pull request changes, as [{filename, status}] objects (with `patch` when the API supplies one). Reads every
+ * page of the GitHub API. GitHub refuses to list the files of a very large diff ("this diff is taking too long to
+ * generate"), as with a full-country postcode rebuild; then the list is read from git instead. The workflow checks
+ * out the PR's merge commit with its first parent (fetch-depth: 2), so HEAD^1..HEAD is exactly what the PR changes.
+ */
+async function listChangedFiles(octokit, context, pr) {
+  try {
+    return await octokit.paginate(octokit.rest.pulls.listFiles, {
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      pull_number: pr.number,
+      per_page: 100,
+    });
+  } catch (apiError) {
+    let out;
+    try {
+      out = execFileSync('git', ['diff', '--name-status', '--no-renames', '-z', 'HEAD^1', 'HEAD'],
+        { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
+    } catch (gitError) {
+      throw new Error(`GitHub could not list the PR's files (${apiError.message}), and git could not either `
+        + `(${gitError.message.split('\n')[0]}); check out the merge commit with fetch-depth: 2`);
+    }
+    console.warn(`GitHub could not list the PR's files (${apiError.message}); read them from git instead.`);
+    const parts = out.split('\0').filter(Boolean);
+    const files = [];
+    for (let i = 0; i + 1 < parts.length; i += 2) {
+      files.push({ filename: parts[i + 1], status: GIT_STATUS[parts[i][0]] || 'modified' });
+    }
+    return files;
+  }
+}
+
+/** The unified diff the PR makes to one file, read from git (HEAD^1..HEAD of the merge commit). */
+function gitFilePatch(filePath) {
+  return execFileSync('git', ['diff', '--no-renames', 'HEAD^1', 'HEAD', '--', filePath],
+    { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
+}
+
 module.exports = {
+  listChangedFiles,
+  gitFilePatch,
   AUTO_MANAGED_FIELDS,
   SCHEMA,
   getEntityType,

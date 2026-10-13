@@ -160,3 +160,37 @@ test('other partial county managed fields still warn', () => {
   const record = require('../../contributions/counties/US.json')[0];
   assert.match(validateRecord({ ...record, flag: 1 }, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
 });
+
+// Changed-file listing: the API first, git when GitHub cannot produce the diff (very large data files).
+const os = require('node:os');
+const { listChangedFiles, gitFilePatch } = require('./utils');
+const { mergeRepo, inDir } = require('./merge-fixture');
+const context = { repo: { owner: 'fixture', repo: 'fixture' } };
+
+test('listChangedFiles returns every page the API gives', async () => {
+  const pages = [{ filename: 'contributions/cities/XX.json', status: 'modified', patch: '@@' }];
+  const octokit = { paginate: async (fn, params) => { assert.equal(params.pull_number, 7); return pages; }, rest: { pulls: { listFiles() {} } } };
+  assert.deepEqual(await listChangedFiles(octokit, context, { number: 7 }), pages);
+});
+
+test('listChangedFiles reads the PR from git when GitHub cannot produce the diff', async () => {
+  const octokit = { paginate: async () => { throw new Error('Sorry, this diff is taking too long to generate.'); }, rest: { pulls: { listFiles() {} } } };
+  const files = await inDir(mergeRepo(), () => listChangedFiles(octokit, context, { number: 7 }));
+  assert.deepEqual(files, [
+    { filename: 'contributions/postcodes/XX.json', status: 'removed' },
+    { filename: 'contributions/postcodes/YY.json', status: 'added' },
+    { filename: 'contributions/states/states.json', status: 'modified' },
+  ]);
+});
+
+test('listChangedFiles names both failures when git cannot read the PR either', async () => {
+  const fsn = require('node:fs');
+  const octokit = { paginate: async () => { throw new Error('diff too long'); }, rest: { pulls: { listFiles() {} } } };
+  const empty = fsn.mkdtempSync(require('node:path').join(os.tmpdir(), 'csc-nogit-'));
+  await assert.rejects(inDir(empty, () => listChangedFiles(octokit, context, { number: 7 })), /diff too long.*fetch-depth: 2/s);
+});
+
+test('gitFilePatch gives the PR diff of one file', async () => {
+  const patch = await inDir(mergeRepo(), () => gitFilePatch('contributions/states/states.json'));
+  assert.match(patch, /^-    "name": "Gone"$/m);
+});

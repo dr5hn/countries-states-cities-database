@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, isWithinBounds, parseJsonFile } = require('./utils');
+const { getEntityType, isWithinBounds, parseJsonFile, listChangedFiles } = require('./utils');
 
 // Buffer distance in degrees (roughly 50km at equator)
 const BUFFER_DEGREES = 0.45;
@@ -41,12 +41,7 @@ async function run() {
   }
 
   // Get changed files
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 300,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const contributionFiles = files.filter(
     (f) =>

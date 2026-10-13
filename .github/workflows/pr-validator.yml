@@ -42,6 +42,10 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          # The PR's merge commit and its first parent: when GitHub cannot list a very large PR's files, the
+          # validators read them from git (HEAD^1..HEAD).
+          fetch-depth: 2
 
       - name: Setup Node.js
         uses: actions/setup-node@v5

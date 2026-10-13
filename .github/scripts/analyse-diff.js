@@ -11,7 +11,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile } = require('./utils');
+const { getEntityType, parseJsonFile, listChangedFiles, gitFilePatch } = require('./utils');
 
 async function run() {
   const token = process.env.GITHUB_TOKEN;
@@ -24,12 +24,7 @@ async function run() {
   }
 
   // Get changed files
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 300,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const labels = new Set();
   const operations = { added: 0, modified: 0, removed: 0 };
@@ -85,8 +80,20 @@ async function run() {
     // Check for record deletions within modified files (patch analysis)
     // Only flag as critical when actual records are removed (name field deleted
     // without a corresponding addition), not simple field edits
-    if (file.status === 'modified' && file.patch && (entityType === 'states' || entityType === 'countries')) {
-      const patchLines = file.patch.split('\n');
+    if (file.status === 'modified' && (entityType === 'states' || entityType === 'countries')) {
+      // The API leaves out the patch of a large diff, and a listing read from git has none: read it from git, and
+      // treat a diff that cannot be read as a possible deletion rather than skip the check.
+      let patch = file.patch;
+      if (patch === undefined) {
+        try {
+          patch = gitFilePatch(filePath);
+        } catch (err) {
+          isCritical = true;
+          criticalReasons.push(`Could not read the diff of ${filePath} (${err.message.split('\n')[0]}); check it for removed records by hand`);
+          patch = '';
+        }
+      }
+      const patchLines = patch.split('\n');
       const deletedNames = new Set();
       const addedNames = new Set();
 

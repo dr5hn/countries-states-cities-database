@@ -6,6 +6,7 @@
 
 const core = require('@actions/core');
 const github = require('@actions/github');
+const { listChangedFiles } = require('./utils');
 
 async function run() {
   const token = process.env.GITHUB_TOKEN;
@@ -72,12 +73,7 @@ async function run() {
     justificationPatterns.some((p) => p.test(body)) || body.trim().length > 100;
 
   // 5. Determine if this is a data PR (changes to contributions/)
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 100,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const isDataPR = files.some((f) => f.filename.startsWith('contributions/'));
 
