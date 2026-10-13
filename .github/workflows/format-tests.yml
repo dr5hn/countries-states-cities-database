@@ -44,15 +44,11 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: '20'   # the PR Validator's version
+          node-version: '24'   # as the PR Validator; its lock needs >=22 (content-type 3)
 
       - name: PR validator script tests
         working-directory: .github/scripts
         run: npm ci --omit=dev && npm test
-
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '24'
 
       - name: Prisma state mapping tests
         run: node --test prisma/city-state.test.ts

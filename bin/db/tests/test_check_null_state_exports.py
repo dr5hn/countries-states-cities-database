@@ -4,11 +4,15 @@ Run: python3 -m unittest discover -s bin/db/tests -p 'test_*.py'"""
 import csv
 import json
 import plistlib
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
 
 from check_null_state_exports import main
+
+CHECKER = str(Path(__file__).with_name('check_null_state_exports.py'))
 
 EH = {'id': 9, 'name': 'Test', 'state_id': None, 'state_code': None, 'state_name': None, 'country_id': 244}
 US = {'id': 1, 'name': 'Other', 'state_id': 5, 'state_code': 'LA', 'state_name': 'L', 'country_id': 233}
@@ -35,8 +39,14 @@ def write_exports(root, xml_eh=XML_EH, mongo_eh=None):
     mongo = mongo_eh or {**{k: v for k, v in EH.items() if k != 'id'}, '_id': 9}
     Path(root, 'mongodb/cities.json').write_text(json.dumps([mongo, {'_id': 1, 'state_id': 5, 'state': {'$id': 5}}]))
     import pandas as pd
-    df = pd.DataFrame({'id': [9, 1], 'state_id': pd.array([None, 5], dtype='Int64'), 'state_code': [None, 'LA']})
-    df.to_parquet(Path(root, 'parquet/cities.parquet'))
+    parquet_frame().to_parquet(Path(root, 'parquet/cities.parquet'))
+
+
+def parquet_frame():
+    """The Parquet cities table: the stateless city and one normal city, with all three state columns."""
+    import pandas as pd
+    return pd.DataFrame({'id': [9, 1], 'state_id': pd.array([None, 5], dtype='Int64'), 'state_code': [None, 'LA'],
+                         'state_name': [None, 'L']})
 
 
 class CheckerTest(unittest.TestCase):
@@ -79,6 +89,39 @@ class CheckerTest(unittest.TestCase):
             """Remove state_name from the stateless city."""
             Path(root, 'json/cities.json').write_text(json.dumps([{k: v for k, v in EH.items() if k != 'state_name'}, US]))
         self.assertProblem('json/cities.json: state fields are not null', change=drop)
+
+    def test_json_null_document(self):
+        """A JSON export that is the literal null is a problem, and the command exits 1."""
+        for rel in ('json/cities.json', 'json/countries+states+cities.json', 'mongodb/cities.json'):
+            null = lambda root, rel=rel: Path(root, rel).write_text('null')
+            self.assertProblem(f'{rel}: cannot be read', change=null)
+            with tempfile.TemporaryDirectory() as root:
+                write_exports(root)
+                null(root)
+                run = subprocess.run([sys.executable, CHECKER, '9', 'EH'], cwd=root, capture_output=True, text=True)
+                self.assertEqual(run.returncode, 1, f'{rel}: {run.stdout}{run.stderr}')
+
+    def test_json_root_must_hold_records(self):
+        """An object root, or a row that is not an object, is a problem."""
+        for text in ('{"cities": []}', '[9, 1]'):
+            self.assertProblem('json/cities.json: cannot be read',
+                               change=lambda root, text=text: Path(root, 'json/cities.json').write_text(text))
+
+    def test_parquet_state_fields(self):
+        """Each Parquet state column must exist and be null for the stateless city."""
+        def rewrite(edit):
+            """A change that rewrites the Parquet table after applying edit to it."""
+            def change(root):
+                """Apply the edit and write the table back."""
+                df = parquet_frame()
+                edit(df)
+                df.to_parquet(Path(root, 'parquet/cities.parquet'))
+            return change
+        for col, value in (('state_id', 5), ('state_code', 'LA'), ('state_name', 'Louisiana')):
+            self.assertProblem('parquet: a state column is missing',
+                               change=rewrite(lambda df, col=col: df.drop(columns=[col], inplace=True)))
+            self.assertProblem('parquet: state fields are not null',
+                               change=rewrite(lambda df, col=col, value=value: df.loc.__setitem__((0, col), value)))
 
 
 if __name__ == '__main__':

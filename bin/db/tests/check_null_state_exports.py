@@ -28,6 +28,14 @@ def _read(root, rel, parse, problems):
         return None
 
 
+def _records(path):
+    """The JSON array of record objects in a generated file; null, an object root or a non-object row is a ValueError."""
+    doc = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(doc, list) or not all(isinstance(r, dict) for r in doc):
+        raise ValueError('not a JSON array of objects')
+    return doc
+
+
 def _yaml(path):
     """The list of cities in the YAML export."""
     import yaml
@@ -40,15 +48,14 @@ def main(city_id, country, root='.'):
     """Check each format under root; return the problems found."""
     problems = []
     need = lambda ok, msg: ok or problems.append(msg)
-    load_json = lambda p: json.loads(p.read_text(encoding='utf-8'))
 
-    flat = _read(root, 'json/cities.json', load_json, problems)
+    flat = _read(root, 'json/cities.json', _records, problems)
     if flat is not None:
         hits = [c for c in flat if c.get('id') == city_id]
         need(len(hits) == 1, f'json/cities.json: city {city_id} appears {len(hits)} times')
         need(len(hits) == 1 and all(k in hits[0] and hits[0][k] is None for k in STATE), 'json/cities.json: state fields are not null')
 
-    nested = _read(root, 'json/countries+states+cities.json', load_json, problems)
+    nested = _read(root, 'json/countries+states+cities.json', _records, problems)
     if nested is not None and flat is not None:
         ids = [c['id'] for n in nested for c in n.get('cities', [])] + [c['id'] for n in nested for s in n['states'] for c in s['cities']]
         need(sorted(ids) == sorted(c['id'] for c in flat), 'countries+states+cities.json: cities are not each listed exactly once')
@@ -76,7 +83,7 @@ def main(city_id, country, root='.'):
         y = [c for c in y if c.get('id') == city_id]
         need(len(y) == 1 and all(k in y[0] and y[0][k] is None for k in STATE), 'yml/cities.yml: state fields are not null')
 
-    mongo = _read(root, 'mongodb/cities.json', load_json, problems)
+    mongo = _read(root, 'mongodb/cities.json', _records, problems)
     if mongo is not None:
         mongo = [c for c in mongo if c.get('_id') == city_id]
         need(len(mongo) == 1 and all(k in mongo[0] and mongo[0][k] is None for k in STATE) and 'state' not in mongo[0],
@@ -88,11 +95,12 @@ def main(city_id, country, root='.'):
         return pd.read_parquet(path)
     df = _read(root, 'parquet/cities.parquet', parquet, problems)
     if df is not None:
-        need({'state_id', 'state_code'} <= set(df.columns), 'parquet: state_id or state_code column is missing')
-        if {'state_id', 'state_code'} <= set(df.columns):
+        missing = sorted({'id', *STATE} - set(df.columns))
+        need(not missing, f"parquet: a state column is missing ({', '.join(missing)})")
+        if not missing:
             need(str(df['state_id'].dtype) == 'Int64', f"parquet: state_id is {df['state_id'].dtype}, not Int64")
             row = df[df['id'] == city_id]
-            need(len(row) == 1 and row['state_id'].isna().iloc[0] and row['state_code'].isna().iloc[0], 'parquet: state fields are not null')
+            need(len(row) == 1 and all(row[k].isna().iloc[0] for k in STATE), 'parquet: state fields are not null')
             need(int(df['state_id'].notna().sum()) == len(df) - 1, 'parquet: another city lost its state')
     return problems
 
