@@ -115,6 +115,7 @@ The same dual-representation already applies to several other countries in this 
 | `US`   | U.S. Virgin Islands                        | `VI`             |        1413 | outlying area                                 |
 | `US`   | U.S. Minor Outlying Islands                | `UM`             |        1432 | outlying area                                 |
 | `NO`   | Svalbard                                   | `SJ` (shared)    |        1013 | arctic region; Jan Mayen is state `1026`      |
+| `FI`   | Åland Islands                              | `AX`             |        1509 | autonomous region; catalogue entry only, its places stay under `AX` |
 
 ### Known gaps (territories *only* modeled as countries)
 
@@ -128,7 +129,6 @@ For honest scoping, the following ISO 3166-1 entries are *not* currently dual-mo
 | `CW`   | Curaçao                               | Netherlands (`NL`)   |
 | `SX`   | Sint Maarten (Dutch part)             | Netherlands (`NL`)   |
 | `BQ`   | Bonaire, Sint Eustatius and Saba      | Netherlands (`NL`)   |
-| `AX`   | Åland Islands                         | Finland (`FI`): restoring `FI-01` as an empty catalogue entry is decided; data PR pending |
 | `BV`   | Bouvet Island                         | Norway (`NO`)        |
 | `CC`   | Cocos (Keeling) Islands               | Australia (`AU`)     |
 | `CX`   | Christmas Island                      | Australia (`AU`)     |
