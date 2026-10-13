@@ -4,6 +4,10 @@
 **Issue:** [Data]: Somalia region missing  
 **Problem:** Somalia was missing 2 regions out of the 18 regions listed in ISO 3166-2:SO standard
 
+> **Note (13 October 2026):** the five cities' current ids are 160112-160116. The original merge (#1265) gave
+> them 157165-157169, and they had become 160112-160116 by #1289. The ids first written here, 104821-104825,
+> belong to Suriname records and must not be used for these cities.
+
 ## Executive Summary
 Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia's administrative divisions, bringing the total from 16 to 18 regions, matching the ISO 3166-2:SO standard. Added 5 major cities across the two new regions.
 
@@ -32,19 +36,19 @@ Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia
 - **ISO 3166-2 Code:** SO-WO
 - **ISO2 Code:** WO
 - **Region ID:** 5700
-- **Native Name:** Maroodi Jeex (formerly known as Woqooyi Galbeed, renamed in 2007)
+- **Native Name:** Maroodi Jeex (the name the Somaliland administration uses; ISO 3166-2 lists SO-WO as Woqooyi Galbeed)
 - **Coordinates:** 9.563°N, 44.067°E
 - **Timezone:** Africa/Mogadishu
 - **WikiData ID:** Q10326669
 - **Type:** region
-- **Note:** This region was renamed from "Woqooyi Galbeed" to "Maroodi Jeex" in 2007, but the ISO 3166-2 code SO-WO remains unchanged
+- **Note:** Whether Maroodi Jeex covers the same ground as ISO's Woqooyi Galbeed is under review; the record stays under Somalia (SO). See [DISPUTED_AND_SPECIAL_TERRITORIES.md](../../DISPUTED_AND_SPECIAL_TERRITORIES.md)
 
 ### Cities Added
 
 #### Sool Region Cities (3)
 
 1. **Las Anod** (Capital of Sool)
-   - **ID:** 104821
+   - **ID:** 160112
    - **Native Name:** Laascaanood
    - **Coordinates:** 8.476°N, 47.357°E
    - **WikiData:** Q1017223
@@ -52,7 +56,7 @@ Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia
    - **State Code:** SO
 
 2. **Aynaba**
-   - **ID:** 104822
+   - **ID:** 160113
    - **Native Name:** Caynabo
    - **Coordinates:** 8.950°N, 46.417°E
    - **WikiData:** Q4058907
@@ -60,7 +64,7 @@ Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia
    - **State Code:** SO
 
 3. **Hudun**
-   - **ID:** 104823
+   - **ID:** 160114
    - **Native Name:** Xudun
    - **Coordinates:** 9.154°N, 47.477°E
    - **WikiData:** Q3388333
@@ -70,7 +74,7 @@ Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia
 #### Woqooyi Galbeed Region Cities (2)
 
 1. **Hargeisa** (Capital of Woqooyi Galbeed/Maroodi Jeex)
-   - **ID:** 104824
+   - **ID:** 160115
    - **Native Name:** Hargeysa
    - **Coordinates:** 9.563°N, 44.067°E
    - **WikiData:** Q168652
@@ -79,7 +83,7 @@ Successfully added the two missing regions (Sool and Woqooyi Galbeed) to Somalia
    - **Note:** Hargeisa is the second-largest city in Somalia
 
 2. **Gabiley**
-   - **ID:** 104825
+   - **ID:** 160116
    - **Native Name:** Gabiley
    - **Coordinates:** 9.700°N, 43.624°E
    - **WikiData:** Q1016892
@@ -221,7 +225,7 @@ jq '[.[] | select(.country_code == "SO")] | sort_by(.iso3166_2) | .[] | .iso3166
   "longitude": "47.35700000",
   "native": "Laascaanood",
   "wikiDataId": "Q1017223",
-  "id": 104821,
+  "id": 160112,
   "timezone": "Africa/Mogadishu",
   "translations": {},
   "created_at": "2025-11-17T04:43:46",
@@ -242,7 +246,7 @@ jq '[.[] | select(.country_code == "SO")] | sort_by(.iso3166_2) | .[] | .iso3166
   "longitude": "44.06750000",
   "native": "Hargeysa",
   "wikiDataId": "Q168652",
-  "id": 104824,
+  "id": 160115,
   "timezone": "Africa/Mogadishu",
   "translations": {},
   "created_at": "2025-11-17T04:43:46",
@@ -263,18 +267,20 @@ jq '[.[] | select(.country_code == "SO")] | sort_by(.iso3166_2) | .[] | .iso3166
 3. Added region entries to `contributions/states/states.json`
 4. Manually assigned IDs (5699 for Sool, 5700 for Woqooyi Galbeed)
 5. Researched and added major cities for each region
-6. Assigned city IDs (104821-104825)
+6. Assigned city IDs (see the note at the top for their actual ids)
 7. Added proper timezone (Africa/Mogadishu) for all entries
 8. Validated JSON structure and data completeness
 
 ### ID Assignment
 - **State IDs:** Manually assigned sequential IDs (5699, 5700) after finding max existing ID (5698)
-- **City IDs:** Manually assigned sequential IDs (104821-104825) after finding max existing ID (104820)
+- **City IDs:** current ids 160112-160116; the original merge used 157165-157169 (see the note at the top). The
+  104821-104825 first written here were never their ids.
 - **Timestamps:** Auto-generated in ISO 8601 format (YYYY-MM-DDTHH:MM:SS)
 
 ### Translation Note
-- Translations were left empty (`{}`) to be populated by the automated GitHub Actions workflow
-- The workflow will run `translation_enricher.py` to fetch translations from Wikipedia
+The original note described automatic Wikipedia enrichment. From 13 October 2026, new or reviewed translations follow
+the attested same-place rule in [contributions/README.md](../../contributions/README.md#names-native-names-and-translations).
+Do not rerun `translation_enricher.py` until its sources and identity checks are reviewed.
 
 ## References
 
@@ -301,15 +307,15 @@ jq '[.[] | select(.country_code == "SO")] | sort_by(.iso3166_2) | .[] | .iso3166
 
 ## Historical Notes
 
-### Woqooyi Galbeed Naming
-The region "Woqooyi Galbeed" (meaning "North West" in Somali) was officially renamed to "Maroodi Jeex" in 2007. However:
-- The ISO 3166-2 code **SO-WO** remains unchanged
-- Some international organizations (OCHA, FAO) still use "Woqooyi Galbeed"
-- For consistency with ISO 3166-2:SO, the database uses "Woqooyi Galbeed" as the primary name
-- The native name field contains "Maroodi Jeex" to reflect current usage
+### Woqooyi Galbeed naming and catalogue scope
+State 5700 keeps the ISO catalogue name Woqooyi Galbeed and code SO-WO. Its `native` value is Maroodi Jeex, a name used
+by the Somaliland administration. Whether that administrative unit covers the same ground as the ISO unit is under
+review; the value is not treated as proof of a rename with unchanged boundaries.
 
-### Political Context
-Both Sool and Woqooyi Galbeed/Maroodi Jeex regions are part of the disputed territory between Somalia and Somaliland. This database follows the ISO 3166-2:SO standard which lists them as regions of Somalia.
+### Territorial context
+The database stores these regional catalogue entries and their places under SO. This does not decide recognition,
+sovereignty or present control; ISO catalogue names, locally used names and current boundaries are checked separately.
+See [Disputed and special territories](../../DISPUTED_AND_SPECIAL_TERRITORIES.md).
 
 ## Compliance Checklist
 
@@ -321,13 +327,8 @@ Both Sool and Woqooyi Galbeed/Maroodi Jeex regions are part of the disputed terr
 ✅ Coordinates verified from Wikipedia  
 ✅ Native names included for all entries  
 ✅ JSON structure validated  
-⏳ Translations to be added by automated workflow
+⏳ Further translations need attested same-place names under the current contribution rule
 
-## Next Steps
-
-The following will be handled by the GitHub Actions workflow:
-1. Run `import_json_to_mysql.py` to import new data to MySQL
-2. Run `add_timezones.py` to verify timezone data (already set correctly)
-3. Run `sync_mysql_to_json.py` to sync any updates back to JSON
-4. Run `translation_enricher.py` to add translations from Wikipedia
-5. Final validation and export generation
+## Further work
+This is a historical import note. Further corrections follow the current contribution, naming, source-rights and
+release rules; the old automated translation-enrichment plan is superseded.

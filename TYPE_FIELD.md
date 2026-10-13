@@ -180,3 +180,4 @@ where available — a non-null `population`.
 - [#1303 — Counties should be returned separately from cities](https://github.com/dr5hn/countries-states-cities-database/issues/1303) (tracking the cleanup)
 - [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) (official categories, `type_local`, `level`, `parent_id`, the counties dataset)
 - [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)
+- [Disputed and special territories](DISPUTED_AND_SPECIAL_TERRITORIES.md)

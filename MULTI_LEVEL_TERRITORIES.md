@@ -16,13 +16,17 @@ When ISO models a place at two levels, this database does too.
 
 ## Policy
 
-**Both representations are kept in sync. Neither is canonical; both are first-class.**
+**Both the country lookup and the overlapping subdivision catalogue entry are kept. Place records have one country;
+a catalogue entry does not give them a second owner.**
 
 For each multi-level territory:
 
 1. There is a row in `contributions/countries/countries.json` (with its own `id`, `iso2`, `iso3`).
 2. There is a row in `contributions/states/states.json` whose `country_code` points at the **parent** state (e.g. `FR`, `US`, `CN`), and whose `iso2` / `state_code` matches the territory.
-3. Cities under the territory live in `contributions/cities/<TERRITORY_ISO2>.json` (e.g. `MQ.json`), and reference both their `country_id` (= the territory) and their `state_id` (= the territory-as-subdivision-of-parent).
+3. Cities under the territory live in `contributions/cities/<TERRITORY_ISO2>.json` (e.g. `MQ.json`), with the territory's
+   own country and the smallest applicable subdivision of that same country where the model has one. They do not take a
+   parent-country state only because the territory also has a subdivision entry there. Special cases are in
+   [DISPUTED_AND_SPECIAL_TERRITORIES.md](DISPUTED_AND_SPECIAL_TERRITORIES.md).
 
 ## The 12 French Overseas Territories
 
@@ -59,18 +63,19 @@ In short: removing the country-level record (Option A in #1352) is a **breaking 
 
 Pick the model that matches the question being asked.
 
-### "Give me everything in the French Republic" (metropolitan + DROM + collectivities)
+### "Give me places in the French Republic, including the listed overseas territories"
 
-Use the `FR` country, then traverse via `state_id`:
+Use an explicit set of countries:
 
 ```sql
 SELECT c.*
 FROM cities c
-JOIN states s ON c.state_id = s.id
-WHERE s.country_code = 'FR';   -- includes all 12 overseas territories
+WHERE c.country_code IN
+  ('FR','GF','PF','TF','GP','MQ','YT','NC','RE','PM','BL','MF','WF');
 ```
 
-This works because every overseas territory has a state row whose `country_code = 'FR'`.
+An FR subdivision entry does not make overseas city rows point to it: each territory keeps its own country, and
+coverage can still be incomplete.
 
 ### "Give me only Martinique" (the territory in isolation)
 
@@ -123,7 +128,7 @@ For honest scoping, the following ISO 3166-1 entries are *not* currently dual-mo
 | `CW`   | Curaçao                               | Netherlands (`NL`)   |
 | `SX`   | Sint Maarten (Dutch part)             | Netherlands (`NL`)   |
 | `BQ`   | Bonaire, Sint Eustatius and Saba      | Netherlands (`NL`)   |
-| `AX`   | Åland Islands                         | Finland (`FI`)       |
+| `AX`   | Åland Islands                         | Finland (`FI`): restoring `FI-01` as an empty catalogue entry is decided; data PR pending |
 | `BV`   | Bouvet Island                         | Norway (`NO`)        |
 | `CC`   | Cocos (Keeling) Islands               | Australia (`AU`)     |
 | `CX`   | Christmas Island                      | Australia (`AU`)     |
@@ -149,7 +154,8 @@ We considered this. It was rejected for the rationale-section reasons above. If 
 4. Updates to `country-bounds.json` and the coordinate validator to handle the new "FR includes both metropolitan and tropical" bounding box (otherwise every Martinique city would fail validation).
 5. Coordinated releases with [csc-export-tool](https://github.com/dr5hn/csc-export-tool), [countrystatecity-countries (NPM)](https://github.com/dr5hn/countrystatecity-countries), and [countrystatecity-pypi](https://github.com/dr5hn/countrystatecity-pypi).
 
-That work is large and risky, and the **current dual-representation is internally consistent and ISO-compliant**. There is no functional defect today; only a labelling preference.
+Keeping both lookups is compatible with one country per place; the place links follow the rule above. This does not
+certify that every current code, name or link is ISO-compliant.
 
 ### Smaller follow-ups that *are* in scope (separate issues / PRs)
 
@@ -162,4 +168,5 @@ That work is large and risky, and the **current dual-representation is internall
 - Issue: [#1352 — France data: missing cities and regions misclassified](https://github.com/dr5hn/countries-states-cities-database/issues/1352)
 - Maintainer docs: [`.claude/CLAUDE.md`](.claude/CLAUDE.md) — see the *Important Rules* section.
 - Contributor docs: [`contributions/README.md`](contributions/README.md)
+- Disputed territories and overlapping catalogue entries: [Disputed and special territories](DISPUTED_AND_SPECIAL_TERRITORIES.md)
 - Related ISO standards: [ISO 3166-1](https://www.iso.org/iso-3166-country-codes.html) (countries), [ISO 3166-2](https://www.iso.org/standard/72483.html) (subdivisions).
