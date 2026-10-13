@@ -152722,3 +152722,189 @@ published, rounded to eight decimals) and Wikidata P625 (CC0). BIG June 2026 bou
 
 ### Rollback
 Revert the PR (squash commit); the removed regency rows are archived here with their replacement ids.
+
+## China phase 18: Guangxi and Shaanxi (model of #1975 to #2001)
+
+### Problem
+Guangxi's and Shaanxi's prefectures, districts, counties and county-level cities were city records, a few with a cut-down
+Chinese name (Hezhou was 贺, Longzhou 龙). Shaanxi's Xianyang was done in #1996.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **227 counties** (`administrative district`, official local term, official code): Guangxi 125 and Shaanxi 102 (all of
+  Shaanxi except Xianyang's 15, which #1996 added). 23 prefecture-level cities at level 2, their districts, counties,
+  autonomous counties and county-level cities at level 3. Each unit is in the province's register and agrees with its own
+  Wikidata entry on code, Chinese name and current parent. 166 carry their own Wikidata item where no city keeps it.
+- **3 prefecture rows removed** for their city's record (option (c)): Xi'an 158764 for 20329, Tongchuan 158778 for 20188 and
+  Yulin (Shaanxi) 158845 for 20399, each proved by the exact GeoNames populated place; their 29 references now point to the
+  city or to none.
+- **68 district rows become sections (区)** at level 3, linked to their own county, 15 of them under their proved city
+  (Xi'an, Tongchuan, Yulin).
+- **14 county-level cities stay cities** (`city / 市`, level 3) linked to their own county, and the 3 prefecture cities kept above
+  at level 2.
+- **8 towns linked to the county they lie in** (county link only, no new type: Guozhen, Jinji, Luorong, Nandu, Yashan,
+  Yuxia, Lingcheng, Yangshuo).
+- 80 points replaced with the record's own open point checked inside its county; **11 district items moved from the city
+  row to the district's county** (no other item changes); **4 native names fixed**
+  (Hezhou 贺州, Yizhou 宜州, Jiangzhou 江州, Longzhou 龙州) and Wuzhou's cut-down Chinese and Japanese names (梧 to 梧州, 梧州市).
+
+Held (247 records keep a hold on at least one field; the reasons overlap): 162 get no new type or level; 154 keep their old
+point, whose source and copying rights are not established; others keep an unresolved place, territory or seat classification, a duplicate
+question, the inherited population or a translated name. Named cases: Guangxi's two Yulin prefecture rows, Lingcheng and
+Beiliu (old town or current city), Baihe (identity), Chang'an (ancient city or current district), and 10 duplicate groups
+(all rows kept; at most the older row is newly typed: six groups such as Guiping, Hancheng and Huayin are typed, four,
+Pingnan, Yangshuo, Guangxi's Yulin and Lingcheng/Beiliu, are not). Twelve new counties have no timezone yet. Xianyang's
+records are unchanged.
+
+Point ledger: [CN_phase18_points_2026-10.csv](ledgers/CN_phase18_points_2026-10.csv).
+
+### Sources
+Guangxi Department of Civil Affairs register as of 31 December 2025 (published 23 January 2026; original XLS
+http://mzt.gxzf.gov.cn/gg/P020260123658536937994.xls, Internet Archive capture of 14 May 2026). Shaanxi Department of Civil
+Affairs register as of 31 December 2025 (published 27 January 2026;
+https://mzt.shaanxi.gov.cn/bs/bmcx/201711/t20171107_2703806.html, Internet Archive capture of 15 June 2026); it is older than
+the July 2026 edition used for Xianyang, so each unit was also checked against its own Wikidata entry. Names, codes, categories
+and parentage used as official facts (Copyright Law of the PRC, Article 5). Points: 302 Wikidata P625 (CC0), 18 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived) and OpenStreetMap relations 11578047 and
+2099451 (© OpenStreetMap contributors, ODbL 1.0); reference checks, nothing copied from them.
+
+### Removed records (archive)
+
+<details>
+<summary>Full rows as removed (with the id that replaces each)</summary>
+
+```json
+[
+  {
+    "id": 158764,
+    "name": "Xi'an",
+    "state_id": 2272,
+    "state_code": "SN",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "34.26100400",
+    "longitude": "108.94233630",
+    "native": "西安",
+    "population": 0,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Xi'an",
+      "ko": "시안시",
+      "pt-BR": "Xi'an",
+      "pt": "Xian",
+      "nl": "Xi'an",
+      "hr": "Xi'an",
+      "fa": "شی‌آن",
+      "de": "Xi’an",
+      "es": "Xi'an",
+      "fr": "Xi'an",
+      "ja": "西安市",
+      "it": "Xi'an",
+      "zh-CN": "西安",
+      "tr": "Xi'an",
+      "ru": "Сиань",
+      "uk": "Сіань",
+      "pl": "Xi’an",
+      "hi": "शिआन",
+      "ar": "شيان"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-26T18:38:23",
+    "flag": 1,
+    "wikiDataId": "Q5826",
+    "replacement_id": 20329
+  },
+  {
+    "id": 158778,
+    "name": "Tongchuan",
+    "state_id": 2272,
+    "state_code": "SN",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "34.89727290",
+    "longitude": "108.94038450",
+    "native": "铜川",
+    "population": 223603,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Tongchuan",
+      "ko": "퉁촨시",
+      "pt-BR": "Tongchuan",
+      "pt": "Tongchuan",
+      "nl": "Tongchuan",
+      "hr": "Tongchuan",
+      "fa": "تونگچوان",
+      "de": "Tongchuan",
+      "es": "Tongchuan",
+      "fr": "Tongchuan",
+      "ja": "銅川市",
+      "it": "Tongchuan",
+      "zh-CN": "铜川",
+      "tr": "Tongchuan",
+      "ru": "Тунчуань",
+      "uk": "Тунчуань",
+      "pl": "Tongchuan",
+      "hi": "टोन्गचुआन",
+      "ar": "تونغتشوان"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-26T18:13:25",
+    "flag": 1,
+    "wikiDataId": "Q514608",
+    "replacement_id": 20188
+  },
+  {
+    "id": 158845,
+    "name": "Yulin",
+    "state_id": 2272,
+    "state_code": "SN",
+    "country_id": 45,
+    "country_code": "CN",
+    "type": "prefecture",
+    "level": 1,
+    "parent_id": null,
+    "latitude": "38.28516570",
+    "longitude": "109.72906190",
+    "native": "榆林",
+    "population": 0,
+    "timezone": "Asia/Shanghai",
+    "translations": {
+      "br": "Yulin",
+      "ko": "율린",
+      "pt-BR": "Yulin",
+      "pt": "Yulin",
+      "nl": "Yulin",
+      "hr": "Yulin",
+      "fa": "یولین",
+      "de": "Yulin",
+      "es": "Yulin",
+      "fr": "Yulin",
+      "ja": "ユリン",
+      "it": "Yulin",
+      "zh-CN": "榆林",
+      "tr": "Yulin",
+      "ru": "Юлин",
+      "uk": "Юлін",
+      "pl": "Yulin",
+      "hi": "युलिन",
+      "ar": "يولين"
+    },
+    "created_at": "2014-01-01T17:31:01",
+    "updated_at": "2025-11-26T18:40:44",
+    "flag": 1,
+    "wikiDataId": null,
+    "replacement_id": 20399
+  }
+]
+```
+
+</details>
+
+### Rollback
+Revert the PR (squash commit); the removed prefecture rows are archived here; new county ids are 13437-13663.
