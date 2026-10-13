@@ -157986,3 +157986,26 @@ the duplicate Finnish place rows, but it also removed state 1509, Finland's `FI-
 
 ### Rollback
 Revert the PR (squash commit); no other record refers to state 1509.
+
+## States: translation defects in 527 states (states_translations_1)
+
+### Problem
+A full screen of the 101,343 translation values on all 5,328 states found 1,593 defective values. Some name
+something else: common words ("Kinmen" as "relatives", "Tartar" as dental tartar, "Tubas" as the instrument), or
+other places (Hindi "Baku" on three Azerbaijani districts, Korean "Somalia" on Ethiopia's Somali Region). Others are
+Wikipedia disambiguation titles ("Tartar (значения)"), text in the wrong script, or one definition in place of a name.
+
+### Fix
+- 1,292 values replaced by the item's own Wikidata label in that language (CC0), after checking that the item is the
+  state (ISO 3166-2 code or name, country and territory). Stored items that were another entity were not used
+  (Mustvee's stored item is a poet, Saue's a bird). A geographic note in brackets is kept where it is part of the
+  attested name, e.g. "Bay (Somália)".
+- 301 values removed where no semantically usable name in the right language was attested. Eleven Turkish labels that
+  were English ("Trashigang District") are among them, and Kikuube's Japanese キブベ県, a
+  spelling the Japanese article corrected to キクベ県 in 2020 (no licensed source for the corrected form yet). No key was created.
+- 26,524 values remain held as candidates or unresolved checks, unchanged. 14,902 of them are copies of the English
+  name, kept under the translation rule. Monaco-Ville's Russian name "Монако (город)" is attested and stays.
+- No political qualifier was changed. Taiwan and Palestine are touched only for wrong words (Kinmen, Tubas).
+
+### Rollback
+Revert the PR (squash commit); every changed state's earlier translations are in the manifest's `before`.
