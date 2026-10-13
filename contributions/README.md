@@ -166,6 +166,27 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 **Timezone Support:** The `timezone` field uses [IANA timezone identifiers](https://www.iana.org/time-zones). If omitted for new cities, it can be automatically populated using the `bin/scripts/validation/add_timezones.py` script, which determines the timezone from latitude/longitude coordinates.
 
+### Names, native names and translations
+
+- `name` is the place's English or international name (#1379).
+- `native` is the record's attested local name in the language and script used locally, from a source whose terms allow
+  it to be redistributed. In India, use the record's own code-matched local-language name in the LGD where it exists, or
+  a licensed official local naming source, and keep a verified Hindi form in `translations.hi`. Where several local
+  languages apply, say in the PR which one you chose and why, and keep the other attested local forms in their language
+  keys. Never pick a script from the country or state alone. If the evidence is missing, stale, about a namesake or
+  unresolved, hold the record; never fill the gap with a machine transliteration.
+- `translations` hold only an attested name of this same place in that language: from a licensed naming source, or a
+  checked label on the place's own, verified Wikidata item. Check the record's identity and scope, what the label means
+  and the language key; an item match alone is not enough. A language may use the place's name unchanged, if that form
+  is attested. For new or actively reviewed values, leave out a key with no attested name; consumers should fall back
+  to `name`. Unresolved existing name copies follow the
+  [evidence-led transition](../DISPUTED_AND_SPECIAL_TERRITORIES.md#earlier-methods-replaced-from-13-october-2026). Do not
+  machine-translate, and do not copy a label from another place (for example Kazan's name on a village called
+  Kazanskaya).
+- Country names and their `translations` follow the versioned Unicode CLDR convention, with its documented short and
+  variant choices, in [DISPUTED_AND_SPECIAL_TERRITORIES.md](../DISPUTED_AND_SPECIAL_TERRITORIES.md). A naming PR records
+  the CLDR edition, locale and key it used.
+
 ### Finding State IDs
 
 To find the correct `state_id` and `state_code`:
