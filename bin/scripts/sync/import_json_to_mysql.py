@@ -26,36 +26,10 @@ import os
 import sys
 import argparse
 from typing import List, Dict, Any, Set
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from city_states import check_references  # noqa: E402
 import mysql.connector
 from datetime import datetime
-
-
-def check_city_states(cities, countries, states):
-    """Errors for city state pairs: both keys present; null together only when the country has no states (v5);
-    otherwise a positive integer id naming a state of the same country, with a matching state_code."""
-    with_states = {s.get('country_id') for s in states}
-    by_id = {s['id']: s for s in states}
-    errors = []
-    for c in cities:
-        label = f"city {c.get('id', '(new)')} {c.get('name', '')}"
-        if 'state_id' not in c or 'state_code' not in c:
-            errors.append(f"{label}: state_id and state_code are required (null only for a country with no states)")
-            continue
-        sid, code = c['state_id'], c['state_code']
-        if sid is None and code is None:
-            if c.get('country_id') in with_states:
-                errors.append(f"{label}: no state, but country {c.get('country_code')} has states")
-        elif sid is None or code is None:
-            errors.append(f"{label}: state_id and state_code must both be set or both be null")
-        elif isinstance(sid, bool) or not isinstance(sid, int) or sid <= 0:
-            errors.append(f"{label}: state_id {sid!r} is not a positive integer")
-        elif sid not in by_id:
-            errors.append(f"{label}: state_id {sid} does not exist")
-        elif by_id[sid].get('country_id') != c.get('country_id'):
-            errors.append(f"{label}: state {sid} belongs to country {by_id[sid].get('country_id')}, not {c.get('country_id')}")
-        elif code not in (by_id[sid].get('state_code'), by_id[sid].get('iso2')):
-            errors.append(f"{label}: state_code {code!r} does not match state {sid}")
-    return errors
 
 
 class JSONToMySQLImporter:
@@ -92,6 +66,10 @@ class JSONToMySQLImporter:
         # Remove None values
         non_null_values = [v for v in sample_values if v is not None]
 
+        # A link column is nullable only when some record has no value for it (all records are sampled for links)
+        if field_name.endswith('_id') and field_name != 'parent_id' and len(non_null_values) < len(sample_values):
+            return "MEDIUMINT UNSIGNED DEFAULT NULL"
+
         if not non_null_values:
             return "VARCHAR(255) DEFAULT NULL"
 
@@ -101,8 +79,7 @@ class JSONToMySQLImporter:
         if field_name == 'id':
             return "MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT"
         elif field_name.endswith('_id'):
-            # nullable: a new column cannot be NOT NULL on a filled table, and some links are optional (v5: city state)
-            return "MEDIUMINT UNSIGNED DEFAULT NULL"
+            return "MEDIUMINT UNSIGNED NOT NULL"
         elif field_name.endswith('_code') and len(str(sample)) <= 3:
             return f"VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL"
         elif field_name in ['latitude', 'longitude']:
@@ -163,7 +140,9 @@ class JSONToMySQLImporter:
         new_column_types = {}
         for field in new_columns:
             # Collect sample values for this field
-            samples = [record.get(field) for record in json_data if field in record][:100]
+            samples = [record.get(field) for record in json_data if field in record]
+            if not field.endswith('_id'):
+                samples = samples[:100]   # links are checked on every record; other types on a sample
             column_type = self.infer_column_type(field, samples)
             new_column_types[field] = column_type
 
@@ -423,10 +402,16 @@ class JSONToMySQLImporter:
         states = load(os.path.join('contributions', 'states', 'states.json'))
         cities_dir = os.path.join('contributions', 'cities')
         cities = [c for f in sorted(os.listdir(cities_dir)) if f.endswith('.json') for c in load(os.path.join(cities_dir, f))]
-        errors = check_city_states(cities, countries, states)
+        errors = check_references(countries, states, cities)
         if errors:
-            raise ValueError(f"{len(errors)} cities have an invalid state: " + '; '.join(errors[:20]))
-        print(f"  ✓ City state pairs checked ({len(cities):,} cities)")
+            raise ValueError(f"{len(errors)} reference problems (countries, states or city state pairs): " + '; '.join(errors[:20]))
+        # a stateless city needs the v5 migration: nullable state columns and the pair check
+        if any(c.get('state_id') is None for c in cities):
+            self.cursor.execute("SHOW COLUMNS FROM cities WHERE Field IN ('state_id', 'state_code')")
+            strict = [r['Field'] for r in self.cursor.fetchall() if r['Null'] != 'YES']
+            if strict:
+                raise ValueError(f"cities.{', '.join(strict)} cannot be null yet; run migration 20261014000000 before importing a city with no state")
+        print(f"  ✓ Countries, states and city state pairs checked ({len(cities):,} cities)")
 
     def preflight_counties(self):
         """Load every county file before any database reset or county truncation."""

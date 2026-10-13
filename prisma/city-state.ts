@@ -8,6 +8,30 @@ export interface SourceCity {
   country_code: string;
 }
 
+/**
+ * Seeded state ids for source state ids, matched by country and state code (two states of one country may share a
+ * name, never a code). Throws on a seeded key used twice or a source state that has no seeded match.
+ */
+export function localStateIds(
+  sourceStates: { id: number; country_code: string; iso2?: string | null }[],
+  seeded: { id: number; countryId: number; iso2?: string | null }[],
+  countryIdByIso2: Map<string, number>,
+): Map<number, number> {
+  const byKey = new Map<string, number>();
+  for (const s of seeded) {
+    const key = `${s.countryId}:${s.iso2 ?? ''}`;
+    if (!s.iso2 || byKey.has(key)) throw new Error(`seeded state ${s.id}: code ${JSON.stringify(s.iso2)} is missing or used twice in country ${s.countryId}`);
+    byKey.set(key, s.id);
+  }
+  const out = new Map<number, number>();
+  for (const s of sourceStates) {
+    const local = byKey.get(`${countryIdByIso2.get(s.country_code)}:${s.iso2 ?? ''}`);
+    if (local == null) throw new Error(`source state ${s.id} (${s.country_code}-${s.iso2}) has no seeded state`);
+    out.set(s.id, local);
+  }
+  return out;
+}
+
 /** What the mapping needs: source states by id, countries that have states, and seeded ids for source state ids. */
 export interface StateContext {
   sourceStates: Map<number, { country_code: string; iso2?: string | null }>;
@@ -24,7 +48,7 @@ export function cityStateId(city: SourceCity, ctx: StateContext): number | null 
   if (!('state_id' in city) || !('state_code' in city)) throw new Error(`${label}: state_id and state_code are required`);
   const { state_id: sid, state_code: code, state_name: stateName } = city;
   if (sid == null && code == null) {
-    if (stateName != null) throw new Error(`${label}: state_name is set but the state is null`);
+    if (!('state_name' in city) || stateName !== null) throw new Error(`${label}: a city with no state needs state_name: null`);
     if (ctx.countriesWithStates.has(city.country_code)) throw new Error(`${label}: no state, but ${city.country_code} has states`);
     return null;
   }
@@ -33,7 +57,8 @@ export function cityStateId(city: SourceCity, ctx: StateContext): number | null 
   const state = ctx.sourceStates.get(sid);
   if (!state) throw new Error(`${label}: state_id ${sid} does not exist`);
   if (state.country_code !== city.country_code) throw new Error(`${label}: state ${sid} is in ${state.country_code}, not ${city.country_code}`);
-  if (state.iso2 != null && state.iso2 !== code) throw new Error(`${label}: state_code ${code} does not match state ${sid} (${state.iso2})`);
+  if (!state.iso2) throw new Error(`${label}: state ${sid} has no state code to check against`);
+  if (state.iso2 !== code) throw new Error(`${label}: state_code ${code} does not match state ${sid} (${state.iso2})`);
   const seeded = ctx.seededStateId.get(sid);
   if (seeded == null) throw new Error(`${label}: state ${sid} was not seeded`);
   return seeded;

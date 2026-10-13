@@ -83,7 +83,7 @@ async function validateCountyEdit(records, status = 'modified') {
     if (status !== 'removed') write('counties/US.json', records);
     write('cities/US.json', [{ ...city, county_id: 1 }]);
     write('countries/countries.json', [{ id: 233, iso2: 'US' }, { id: 75, iso2: 'FR' }]);
-    write('states/states.json', [{ id: 1457, country_id: 233, state_code: 'LA' }, { id: 1427, country_id: 233, state_code: 'AL' }]);
+    write('states/states.json', [{ id: 1457, country_id: 233, country_code: 'US', iso2: 'LA', state_code: 'LA' }, { id: 1427, country_id: 233, country_code: 'US', iso2: 'AL', state_code: 'AL' }]);
     process.chdir(root);
     const fakeGithub = {
       getOctokit: () => ({ rest: { pulls: { listFiles: async () => ({ data: [
@@ -164,15 +164,15 @@ async function validateCityEdit(cc, cities, countries, states, opts = {}) {
     };
     const fakeCore = {
       setOutput: (key, value) => { outputs[key] = value; },
-      info() {}, error() {}, warning() {}, setFailed(message) { throw new Error(message); },
+      info() {}, error() {}, warning() {}, setFailed(message) { if (opts.entry !== 'main') throw new Error(message); outputs.failed = message; },
     };
     const sandbox = {
       require: (key) => key === '@actions/github' ? fakeGithub : key === '@actions/core' ? fakeCore :
         key === './utils' ? require('./utils') : require(key),
       process, module: { exports: {} },
     };
-    await vm.runInNewContext(code + '\nrun()', sandbox);
-    return JSON.parse(outputs.errors);
+    await vm.runInNewContext(code + `\n${opts.entry || 'run'}()`, sandbox);
+    return opts.entry === 'main' ? outputs : JSON.parse(outputs.errors);
   } finally {
     process.chdir(previous);
     fs.rmSync(root, { recursive: true });
@@ -180,7 +180,7 @@ async function validateCityEdit(cc, cities, countries, states, opts = {}) {
 }
 
 const countriesEHUS = [{ id: 244, iso2: 'EH' }, { id: 233, iso2: 'US' }];
-const statesUS = [{ id: 1457, country_id: 233, state_code: 'LA' }];
+const statesUS = [{ id: 1457, country_id: 233, country_code: 'US', iso2: 'LA', state_code: 'LA' }];
 
 test('a city with no state passes when its country has no states (v5)', async () => {
   const smara = { id: 1, name: 'Smara', state_id: null, state_code: null, country_id: 244, country_code: 'EH', latitude: '26.74', longitude: '-11.67' };
@@ -204,7 +204,7 @@ test('a malformed states file fails the check instead of skipping it', async () 
 
 test('a states-only edit rechecks unchanged stateless cities', async () => {
   const smara = { id: 1, name: 'Smara', state_id: null, state_code: null, country_id: 244, country_code: 'EH', latitude: '26.74', longitude: '-11.67' };
-  const statesWithEH = [...statesUS, { id: 9999, country_id: 244, state_code: 'XX' }];
+  const statesWithEH = [...statesUS, { id: 9999, country_id: 244, country_code: 'EH', iso2: 'XX', state_code: 'XX' }];
   const errs = await validateCityEdit('US', [], countriesEHUS, statesWithEH,
     { changed: ['contributions/states/states.json'], extraCities: { EH: [smara] } });
   assert.match(errs.join('\n'), /cities\/EH.json.*state_id is null but country EH has states/);
@@ -223,4 +223,24 @@ test('city parents must exist, share country and state, and not loop', async () 
   const crossState = [{ ...base, id: 16, name: 'Child', parent_id: 17 }];
   const us = { 'US': [usCity({ id: 17, name: 'US parent', state_id: 1457, state_code: 'LA' })] };
   assert.match((await validateCityEdit('EH', crossState, countriesEHUS, statesUS, { extraCities: us })).join('\n'), /is in country US, not EH/);
+});
+
+test('a check that cannot run reports one error and fails, never a pass', async () => {
+  const out = await validateCityEdit('US', [usCity()], countriesEHUS, statesUS, { statesRaw: null, entry: 'main' });
+  assert.equal(out.has_errors, 'true');
+  assert.equal(out.error_count, '1');
+  assert.match(JSON.parse(out.errors)[0], /could not run: Cannot load contributions\/states/);
+  assert.match(out.failed, /Cannot load/);
+});
+
+test('a state record without a usable country is refused, not read as "no states"', async () => {
+  const broken = JSON.stringify([{ id: 1457, name: 'Louisiana', state_code: 'LA', iso2: 'LA' }]);
+  await assert.rejects(validateCityEdit('US', [usCity()], countriesEHUS, statesUS, { statesRaw: broken }), /Invalid reference data: state 1457/);
+});
+
+test('a city id in two country files is refused before parent links are checked', async () => {
+  const base = { country_id: 244, country_code: 'EH', state_id: null, state_code: null, latitude: '26', longitude: '-11' };
+  const eh = [{ ...base, id: 700, name: 'EH 700' }, { ...base, id: 701, name: 'Child', parent_id: 700 }];
+  const us = { US: [usCity({ id: 700, name: 'US 700', state_id: 1457, state_code: 'LA' })] };
+  await assert.rejects(validateCityEdit('EH', eh, countriesEHUS, statesUS, { extraCities: us }), /city id 700 is in both/);
 });

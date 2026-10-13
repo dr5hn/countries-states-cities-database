@@ -173,8 +173,9 @@ jobs:
           python3 bin/scripts/sync/sync_mysql_to_json.py --host localhost --user root --password root --database world
           echo "✅ MySQL → JSON sync complete"
           echo "📊 Validating round-trip consistency..."
-          # Show what changed (if anything)
-          git diff --stat contributions/ || echo "No changes detected - perfect round-trip!"
+          git diff --stat contributions/
+          # fails when a record that had an id comes back changed or missing (new ids for id-less rows are expected)
+          python3 bin/scripts/sync/check_round_trip.py --ref HEAD
 
       - name: Setup & Run NMIG (MySQL to PostgreSQL)
         run: |

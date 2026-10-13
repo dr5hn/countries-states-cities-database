@@ -62,6 +62,31 @@ function loadCanonical(entity) {
   return data;
 }
 
+/** Check the reference inventory itself: a wrong country or state record must not decide which countries have states. */
+function checkInventory(countries, states) {
+  const problems = [];
+  const byId = new Map();
+  const codes = new Set();
+  for (const c of countries) {
+    if (!c || !Number.isInteger(c.id) || c.id <= 0 || typeof c.iso2 !== 'string' || !/^[A-Z]{2}$/.test(c.iso2)) {
+      problems.push(`country ${JSON.stringify(c && c.id)} needs a positive integer id and a two-letter iso2`);
+    } else if (codes.has(c.iso2)) {
+      problems.push(`country iso2 ${c.iso2} is duplicated`);
+    } else {
+      byId.set(c.id, c);
+      codes.add(c.iso2);
+    }
+  }
+  for (const s of states) {
+    const country = s && byId.get(s.country_id);
+    if (!s || !Number.isInteger(s.id) || s.id <= 0) problems.push(`state ${JSON.stringify(s && s.id)} needs a positive integer id`);
+    else if (!country) problems.push(`state ${s.id}: country_id ${JSON.stringify(s.country_id)} is not a known country`);
+    else if (s.country_code !== country.iso2) problems.push(`state ${s.id}: country_code ${JSON.stringify(s.country_code)} is not ${country.iso2}`);
+    else if (typeof s.iso2 !== 'string' || !s.iso2) problems.push(`state ${s.id} has no state code (iso2)`);
+  }
+  if (problems.length) throw new Error(`Invalid reference data: ${problems.slice(0, 10).join('; ')}`);
+}
+
 /** Every canonical city across country files, by id (loaded once, only when a parent link needs checking). */
 let allCities = null;
 function loadAllCities() {
@@ -71,7 +96,12 @@ function loadAllCities() {
   for (const file of fs.readdirSync(dir).filter(f => /^[A-Z]{2}\.json$/.test(f)).sort()) {
     const { data, error } = parseJsonFile(path.join(dir, file));
     if (error || !Array.isArray(data)) throw new Error(`Cannot load cities/${file}: ${error || 'expected an array'}`);
-    for (const c of data) if (c.id != null) allCities.set(Number(c.id), c);
+    for (const c of data) {
+      if (c.id == null) continue;   // a new city gets its id on import
+      if (!Number.isInteger(c.id) || c.id <= 0) throw new Error(`cities/${file}: id ${JSON.stringify(c.id)} is not a positive integer`);
+      if (allCities.has(c.id)) throw new Error(`city id ${c.id} is in both ${allCities.get(c.id).__file} and cities/${file}`);
+      allCities.set(c.id, Object.defineProperty({ ...c }, '__file', { value: `cities/${file}` }));
+    }
   }
   return allCities;
 }
@@ -131,6 +161,7 @@ async function run() {
   // Canonical reference data only; a missing or malformed file fails the run (never a silent skip or stale export)
   const countries = loadCanonical('countries');
   const states = loadCanonical('states');
+  checkInventory(countries, states);
   const counties = loadCounties();
 
   if (!countries) {
@@ -394,6 +425,19 @@ async function run() {
   for (const err of errors) core.error(err);
 }
 
-if (require.main === module) run().catch((err) => core.setFailed(err.message));
+/** Run the check; a failure that stops it is reported as one error, so the report can never read "All checks passed". */
+async function main() {
+  try {
+    await run();
+  } catch (err) {
+    core.setOutput('errors', JSON.stringify([`The cross-reference check could not run: ${err.message}`]));
+    core.setOutput('error_count', '1');
+    core.setOutput('valid', '0');
+    core.setOutput('has_errors', 'true');
+    core.setFailed(err.message);
+  }
+}
 
-module.exports = { loadCounties, validateCountyReference, validateCityParent, loadCanonical };
+if (require.main === module) main();
+
+module.exports = { loadCounties, validateCountyReference, validateCityParent, loadCanonical, checkInventory };

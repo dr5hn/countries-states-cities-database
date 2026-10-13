@@ -45,7 +45,7 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
     lines = []
     lines.append(f"[{len(data)}]" + "{" + ",".join(columns) + "}:")
     for row in data:
-        lines.append(encode_row(row))
+        lines.append("  " + encode_row(row))   # rows sit one level below their header (TOON spec 9.3)
 
     return "\n".join(lines)
 
