@@ -389,6 +389,37 @@ towns carrying a district item 450 km away). Each is listed with its sources in 
   edition is 31 December 2021. Both stay mostly held.
 - 1486 groups still share an id: 1216 across states (13 holding a verified identity) and 270 in one state, identity not established. Ledger in the audit files.
 
+## Items shared by more than one record
+
+### Problem
+On master 2,907 Wikidata items sat on more than one city record (7,228 records). An item is one place, so at most one
+record can own it. Most of the others carried it because an old import copied a neighbour's or a parent's item forward:
+the Russian village Kazanskaya carried Q900, the item for the city of Kazan.
+
+### Fix
+Every shared item was read from Wikidata (labels and aliases in every language, P31, P17, P625, sitelinks; revision
+recorded). A record owns the item when the item's label or an alias equals its name or native name, the item is in its
+country, its point is within 10 km (25 km for an administrative unit or a record with no level) and its kind fits the
+record. **3,174 records lose an item that is another place (1,941 items)**:
+- 2956 another named place more than 25 km away;
+- 119 another named place whose own record keeps the item;
+- 76 a place in another country;
+- 18 a disambiguation page;
+- 5 not a place;
+1,704 owners keep their item. 77 pairs where both records are the same place go to the duplicates round
+unchanged. No new item is set in this round. Most changes by country: 281 IN, 216 IR, 153 TZ, 112 KZ, 97 RU, 97 KR, 96 PY, 78 MY, 73 BA, 69 CU.
+
+Held (2,196): 1230 records that may be the item's place under another name form or level (a city
+and its municipality share one name), 117 with a related name or scope, 163 where another place is not proved,
+54 possible spellings, 79 same place at another level, 18 items with conflicting points and
+11 records in groups with several owners; 286 records in Crimea and Sevastopol (listed only, owner direction needed);
+238 records in Slovakia, Slovenia, Estonia, Ireland, New Zealand and Luxembourg, where other open work covers them.
+
+Ledger of every clear (item, revision, reason, owner): [WD_shared_item_clears_2026-10.csv](ledgers/WD_shared_item_clears_2026-10.csv).
+
+### Sources
+Wikidata (CC0), read through the API in batches of 50 with each item's revision recorded.
+
 ## Rollback
 
 Revert the commit. No `id`s change, so nothing downstream needs repair.
