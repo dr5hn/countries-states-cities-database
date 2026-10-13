@@ -157705,3 +157705,43 @@ Central Statistics Office, Census 2022 built-up areas, and Tailte Éireann, 2019
 City Council and Dún Laoghaire–Rathdown County Council publications (facts only); Maa- ja
 Ruumiamet, administrative and settlement division of 2 September 2026. CSO, Tailte Éireann and Maa- ja Ruumiamet are credited in the README. Wikidata (CC0)
 for own-code lookups only. Boundaries are used only to check that a point lies inside its unit.
+
+## Chile and South Korea: first typing pass
+
+### Problem
+None of the 617 city records of Chile and South Korea had a level or an official local category (their types were old
+values such as city, adm1, adm2 and area), Chile's provincias were missing, and many Korean records carried the item of
+another si or gun.
+
+### Fix
+Each country's own register, in the merged model (Peru #1901 for Chile, Japan's municipalities for Korea); no new rule:
+- **Chile:** the **56 provincias become counties** (`administrative district / provincia`, level 2, SUBDERE CUT code,
+  55 with their own Wikidata item, open point, IANA zone; Aysén's four take America/Coyhaique, its zone since tzdata
+  2025b). **308 records typed**: 304 `municipality / comuna` at level 3 (306 records link to their provincia),
+  and 4 settlements at level 4 under their comuna (`city / ciudad` 2, `town / pueblo` 2).
+- **South Korea: 221 typed.** The basic local governments are level 2 under their province or metropolitan city:
+  69 `city / 시`, 59 `municipality / 군`, 51 autonomous `municipality / 구` and Jeju's 2 administrative cities (`city / 행정시`);
+  the metropolitan, special and special self-governing cities that are their own ISO unit are `city` at level 1 like
+  Prague (7); 30 `town / 읍`, 2 `section / 동` and 1 `village / 리` sit below their si or gun.
+- Items: **16 set** from a unique official-code match, **9 cleared** that belong to another place (the other wrong items on
+  these records were already cleared by #2005).
+
+Held (88, all Korean): 38 records in South Jeolla and Gwangju, which merged on 1 July 2026 into one integrated
+special city that the state list does not yet show (a state update first); 34 urban seats kept beside their si's own
+record (two scopes, not duplicates); Gunwi, which moved to Daegu in 2023; and records with no unique official match or an
+unproved depth. 16 points outside their unit are left for a later round.
+
+Point ledger: [CL_world3_points_2026-10.csv](ledgers/CL_world3_points_2026-10.csv).
+
+### Sources
+Chile: SUBDERE's Códigos Únicos Territoriales (CUT 2018 v04; official codes, names and hierarchy as facts); INE's
+[Ciudades, pueblos, aldeas y caseríos (March 2019)](https://geoarchivos.ine.cl/File/pub/Cd_pb_Al_Cs_2019.pdf) as the category check for
+the four settlements, and its 2017 census boundaries (CC BY-SA 4.0) used only to check that points lie inside; no INE
+name, point or geometry is copied. South Korea: the Ministry of the Interior and
+Safety's administrative standard codes (code.go.kr, 1 October 2026) and its 2026 local government register (official
+codes, categories and structure as facts; no names, points or geometry copied; existing names kept). Points:
+53 Wikidata P625, 3 GeoNames ADM2 (Wikidata CC0; GeoNames CC BY 4.0, credited in the README), each checked inside its
+provincia. Time zones from IANA tzdata 2026e.
+
+### Rollback
+Revert the PR (squash commit); new county ids are 13797-13852.
