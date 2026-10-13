@@ -4,8 +4,23 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 
-/** A scratch repository whose HEAD merges a PR branch into the base, as actions/checkout leaves a pull_request. */
-function mergeRepo() {
+const STATES = 'contributions/states/states.json';
+
+/** Pretty-printed JSON, one field per line, as the repository stores it. */
+function pretty(rows) {
+  return `${JSON.stringify(rows, null, 2)}\n`;
+}
+
+/**
+ * A scratch repository whose HEAD merges a PR branch into a base that moved on, as actions/checkout leaves a
+ * pull_request. The PR rewrites the states file (`before` on the base, `after` at `afterPath` in the PR), deletes
+ * one postcode file and adds another. Returns { dir, head } with the PR's head commit.
+ */
+function mergeRepo({
+  before = pretty([{ id: 1, name: 'Kept' }, { id: 2, name: 'Gone' }]),
+  after = pretty([{ id: 1, name: 'Kept' }]),
+  afterPath = STATES,
+} = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'csc-merge-'));
   const git = (...args) => execFileSync('git', args, { cwd: dir, encoding: 'utf8' });
   const write = (name, text) => {
@@ -15,20 +30,21 @@ function mergeRepo() {
   git('init', '-q', '-b', 'main');
   git('config', 'user.email', 't@example.invalid');
   git('config', 'user.name', 'test');
-  const states = (rows) => `${JSON.stringify(rows, null, 2)}\n`;   // pretty-printed, one field per line, as in the repo
-  write('contributions/states/states.json', states([{ id: 1, name: 'Kept' }, { id: 2, name: 'Gone' }]));
+  write(STATES, before);
   write('contributions/postcodes/XX.json', '[]\n');
   git('add', '-A'); git('commit', '-q', '-m', 'base');
   git('checkout', '-q', '-b', 'pr');
-  write('contributions/states/states.json', states([{ id: 1, name: 'Kept' }]));
+  if (afterPath !== STATES) git('mv', STATES, afterPath);
+  write(afterPath, after);
   fs.rmSync(path.join(dir, 'contributions/postcodes/XX.json'));
   write('contributions/postcodes/YY.json', '[]\n');
   git('add', '-A'); git('commit', '-q', '-m', 'pr');
+  const head = git('rev-parse', 'HEAD').trim();
   git('checkout', '-q', 'main');
   write('README.md', 'base moved on\n');
   git('add', '-A'); git('commit', '-q', '-m', 'base moves');
   git('merge', '-q', '--no-ff', '-m', 'merge', 'pr');
-  return dir;
+  return { dir, head };
 }
 
 /** Run fn with the working directory set to dir. */
@@ -38,4 +54,4 @@ async function inDir(dir, fn) {
   try { return await fn(); } finally { process.chdir(back); }
 }
 
-module.exports = { mergeRepo, inDir };
+module.exports = { mergeRepo, inDir, pretty, STATES };

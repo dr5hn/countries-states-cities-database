@@ -504,50 +504,81 @@ function formatReport(results) {
 }
 
 const GIT_STATUS = { A: 'added', M: 'modified', D: 'removed', T: 'modified' };
-const GIT_BUFFER = 256 * 1024 * 1024;   // a full-country postcode file diff runs to tens of megabytes
+const GIT_BUFFER = 256 * 1024 * 1024;   // the name list of a large PR, and a full states or countries file
+const API_FILE_CAP = 3000;              // GitHub lists at most 3,000 files of a pull request
+
+/** Run git in the working directory and return its stdout. */
+function git(args) {
+  return execFileSync('git', args, { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
+}
 
 /**
- * Files a pull request changes, as [{filename, status}] objects (with `patch` when the API supplies one). Reads every
- * page of the GitHub API. GitHub refuses to list the files of a very large diff ("this diff is taking too long to
- * generate"), as with a full-country postcode rebuild; then the list is read from git instead. The workflow checks
- * out the PR's merge commit with its first parent (fetch-depth: 2), so HEAD^1..HEAD is exactly what the PR changes.
+ * The parents [base, head] of the checked-out commit, verified to be this pull request's merge commit (the workflow
+ * checks out refs/pull/N/merge with fetch-depth: 2). Throws when HEAD is anything else, so a listing or comparison
+ * never silently uses some other commit.
+ */
+function mergeParents(pr) {
+  const headSha = pr && pr.head && pr.head.sha;
+  let parents = [];
+  try {
+    parents = git(['rev-list', '--parents', '-n', '1', 'HEAD']).trim().split(/\s+/).slice(1);
+  } catch (err) {
+    throw new Error(`cannot read the checked-out commit (${err.message.split('\n')[0]})`);
+  }
+  if (parents.length !== 2 || !headSha || parents[1] !== headSha) {
+    throw new Error(`HEAD is not this PR's merge commit (parents: ${parents.join(', ') || 'none'}; PR head: ${headSha || 'unknown'}); `
+      + 'check out the pull_request merge ref with fetch-depth: 2');
+  }
+  return parents;
+}
+
+/**
+ * Files a pull request changes, as [{filename, status, previous_filename?}] objects. Reads every page of the GitHub
+ * API. GitHub refuses to list the files of a very large diff ("this diff is taking too long to generate"), as with a
+ * full-country postcode rebuild, and lists at most 3,000 files; in either case, or on any other API failure, the
+ * list is read from git instead: what merging the PR changes, HEAD^1..HEAD of its verified merge commit. That is the
+ * data that would land, which is what the validators check (for a branch that repeats edits already on the base it
+ * can list fewer files than GitHub's three-dot view). Throws, naming both causes, when git cannot read it either.
  */
 async function listChangedFiles(octokit, context, pr) {
+  let reason;
   try {
-    return await octokit.paginate(octokit.rest.pulls.listFiles, {
+    const files = await octokit.paginate(octokit.rest.pulls.listFiles, {
       owner: context.repo.owner,
       repo: context.repo.repo,
       pull_number: pr.number,
       per_page: 100,
     });
+    if (files.length < API_FILE_CAP) return files;
+    reason = `GitHub lists at most ${API_FILE_CAP} files of a PR and returned ${files.length}`;
   } catch (apiError) {
-    let out;
-    try {
-      out = execFileSync('git', ['diff', '--name-status', '--no-renames', '-z', 'HEAD^1', 'HEAD'],
-        { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
-    } catch (gitError) {
-      throw new Error(`GitHub could not list the PR's files (${apiError.message}), and git could not either `
-        + `(${gitError.message.split('\n')[0]}); check out the merge commit with fetch-depth: 2`);
-    }
-    console.warn(`GitHub could not list the PR's files (${apiError.message}); read them from git instead.`);
-    const parts = out.split('\0').filter(Boolean);
-    const files = [];
-    for (let i = 0; i + 1 < parts.length; i += 2) {
-      files.push({ filename: parts[i + 1], status: GIT_STATUS[parts[i][0]] || 'modified' });
-    }
-    return files;
+    reason = `GitHub could not list the PR's files (${apiError.message})`;
   }
+  let out;
+  try {
+    const [base] = mergeParents(pr);
+    out = git(['diff', '--name-status', '--no-renames', '-z', base, 'HEAD']);
+  } catch (gitError) {
+    throw new Error(`${reason}, and git could not either (${gitError.message.split('\n')[0]})`);
+  }
+  console.warn(`${reason}; read what the merge changes from git instead.`);
+  const parts = out.split('\0').filter(Boolean);
+  const files = [];
+  for (let i = 0; i + 1 < parts.length; i += 2) {
+    files.push({ filename: parts[i + 1], status: GIT_STATUS[parts[i][0]] || 'modified' });
+  }
+  return files;
 }
 
-/** The unified diff the PR makes to one file, read from git (HEAD^1..HEAD of the merge commit). */
-function gitFilePatch(filePath) {
-  return execFileSync('git', ['diff', '--no-renames', 'HEAD^1', 'HEAD', '--', filePath],
-    { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
+/** A JSON file as it stood on the PR's merge base (the merge commit's first parent), parsed. Throws when unreadable. */
+function baseJson(pr, filePath) {
+  const [base] = mergeParents(pr);
+  return JSON.parse(git(['show', `${base}:${filePath}`]));
 }
 
 module.exports = {
   listChangedFiles,
-  gitFilePatch,
+  baseJson,
   AUTO_MANAGED_FIELDS,
   SCHEMA,
   getEntityType,

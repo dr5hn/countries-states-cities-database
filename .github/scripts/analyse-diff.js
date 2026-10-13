@@ -5,13 +5,22 @@
  * - Operations (additions, modifications, deletions)
  * - Record counts (flag large contributions > 500)
  * - Critical changes (deletions in states/countries)
+ * - Whether the analysis is complete (analysis_incomplete): a states/countries file it could not compare
  */
 
 const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile, listChangedFiles, gitFilePatch } = require('./utils');
+const { getEntityType, parseJsonFile, listChangedFiles, baseJson } = require('./utils');
+
+/** The persisted ids of a parsed states or countries file; throws when it is not an array of records with ids. */
+function recordIds(data, where) {
+  if (!Array.isArray(data)) throw new Error(`${where} is not an array of records`);
+  const ids = data.map((r) => r && r.id).filter((id) => id !== undefined && id !== null);
+  if (new Set(ids).size !== ids.length) throw new Error(`${where} repeats an id`);
+  return new Set(ids);
+}
 
 async function run() {
   const token = process.env.GITHUB_TOKEN;
@@ -31,6 +40,7 @@ async function run() {
   const entityTypes = new Set();
   let isCritical = false;
   let criticalReasons = [];
+  const incompleteReasons = [];
   let totalRecords = 0;
 
   for (const file of files) {
@@ -50,6 +60,7 @@ async function run() {
         operations.added++;
         break;
       case 'modified':
+      case 'renamed':
         operations.modified++;
         break;
       case 'removed':
@@ -77,44 +88,24 @@ async function run() {
       }
     }
 
-    // Check for record deletions within modified files (patch analysis)
-    // Only flag as critical when actual records are removed (name field deleted
-    // without a corresponding addition), not simple field edits
-    if (file.status === 'modified' && (entityType === 'states' || entityType === 'countries')) {
-      // The API leaves out the patch of a large diff, and a listing read from git has none: read it from git, and
-      // treat a diff that cannot be read as a possible deletion rather than skip the check.
-      let patch = file.patch;
-      if (patch === undefined) {
-        try {
-          patch = gitFilePatch(filePath);
-        } catch (err) {
+    // Record deletions within a changed states or countries file: compare the persisted ids of the file on the merge
+    // base with the merged file, so formatting, renames and duplicate names cannot hide a removed record. A file that
+    // cannot be compared makes the analysis incomplete, which the report shows and the final step fails on.
+    if ((file.status === 'modified' || file.status === 'renamed') && (entityType === 'states' || entityType === 'countries')) {
+      try {
+        const before = recordIds(baseJson(pr, file.previous_filename || filePath), `${filePath} on the base`);
+        const { data, error } = parseJsonFile(path.join(process.cwd(), filePath));
+        if (error || data === undefined) throw new Error(`${filePath} in the PR cannot be parsed`);
+        const after = recordIds(data, `${filePath} in the PR`);
+        const removed = [...before].filter((id) => !after.has(id));
+        if (removed.length > 0) {
           isCritical = true;
-          criticalReasons.push(`Could not read the diff of ${filePath} (${err.message.split('\n')[0]}); check it for removed records by hand`);
-          patch = '';
+          criticalReasons.push(
+            `Record deletions detected in ${entityType} file: ${filePath} (${removed.length} record(s) removed: id ${removed.slice(0, 5).join(', ')})`
+          );
         }
-      }
-      const patchLines = patch.split('\n');
-      const deletedNames = new Set();
-      const addedNames = new Set();
-
-      for (const line of patchLines) {
-        const nameMatch = line.match(/"name"\s*:\s*"([^"]+)"/);
-        if (nameMatch) {
-          if (line.startsWith('-') && !line.startsWith('---')) {
-            deletedNames.add(nameMatch[1]);
-          } else if (line.startsWith('+') && !line.startsWith('+++')) {
-            addedNames.add(nameMatch[1]);
-          }
-        }
-      }
-
-      // Only flag names that were deleted without a corresponding addition
-      const actuallyRemoved = [...deletedNames].filter((name) => !addedNames.has(name));
-      if (actuallyRemoved.length > 0) {
-        isCritical = true;
-        criticalReasons.push(
-          `Record deletions detected in ${entityType} file: ${filePath} (${actuallyRemoved.length} record(s) removed: ${actuallyRemoved.slice(0, 5).join(', ')})`
-        );
+      } catch (err) {
+        incompleteReasons.push(`Could not compare the records of ${filePath} with the base (${err.message.split('\n')[0]}); check it for removed records by hand`);
       }
     }
   }
@@ -154,6 +145,8 @@ async function run() {
   core.setOutput('is_large', (totalRecords > 500).toString());
   core.setOutput('operations', JSON.stringify(operations));
   core.setOutput('entity_types', JSON.stringify(Array.from(entityTypes)));
+  core.setOutput('analysis_incomplete', (incompleteReasons.length > 0).toString());
+  core.setOutput('incomplete_reasons', JSON.stringify(incompleteReasons));
 
   // Log summary
   core.info(`Entity types: ${Array.from(entityTypes).join(', ') || 'none'}`);
@@ -163,6 +156,7 @@ async function run() {
   if (isCritical) {
     for (const reason of criticalReasons) core.warning(`CRITICAL: ${reason}`);
   }
+  for (const reason of incompleteReasons) core.warning(`INCOMPLETE: ${reason}`);
 }
 
 run().catch((err) => core.setFailed(err.message));
