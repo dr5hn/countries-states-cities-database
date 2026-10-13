@@ -93,6 +93,14 @@ gemeente records are also the place itself (Haarlem, Hilversum) and belong in a 
 town (Groningen, Stadskanaal). To list only settlements in the Netherlands, leave out the records whose name starts
 with "Gemeente ".
 
+### New Zealand
+
+In `NZ.json`, settlements have no legal status. `type_local` keeps Stats NZ's 2026 urban-rural class and `type` follows
+it: a major or large urban area is `city`, a medium or small urban area is `town`, a rural settlement is `locality` and a
+suburb is `section`. A place the New Zealand Geographic Board lists as an official town (LINZ NZ Place Names, feature
+type Town) or that its council names as a town is at least `town`, whatever its size class (Fairlie, Waiouru). The
+classes are statistical sizes, not city status. District and city councils are county records (#2006).
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
