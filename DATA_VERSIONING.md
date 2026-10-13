@@ -31,16 +31,17 @@ change of Wikidata item keeps the v4.0 item; if evidence proves that old item wr
 has no item. Facts that are proved stay; unproved assertions that would tie the key to another entity do not ship.
 
 `identity_changes.jsonl` holds the decisions made in its release's interval, so a key missing from a later file is
-not resolved by that. Every `unresolved` decision concerns a change made since v4.0, so the cumulative identity file
-from v4.0 that comes with v5.0.0 holds them all. To know the keys unresolved now, start from that file and apply each
-later release's decisions in order, keeping each key's latest one. If you need strict territorial scope, exclude
-those keys.
+not resolved by that. Before v5.0.0 is published, its cumulative identity file must also provide a complete reviewed
+baseline of every retained unresolved key, including legacy rows unchanged since v4.0. Starting from that verified
+baseline, apply subsequent identity decisions in order and retain each key's latest decision. Absence from a later
+file does not resolve a key. Strict territorial consumers exclude the keys whose latest decision is unresolved.
 
 ## What each kind of release may change
 
 Releases are numbered `vMAJOR.MINOR.PATCH`, for example `v5.0.0` and then `v5.1.0`. Each published export of a
-release has its own tag, `v5.0.0-export.1`, `v5.0.0-export.2` and so on, bound to the commit it was built from. Two
-exports of one release can hold different data; each follows the rules for a regular release below.
+release has its own tag, `v5.0.0-export.1`, `v5.0.0-export.2` and so on, bound to the commit it was built from.
+Exports can hold different data. Changes between published snapshots within one major follow the regular-release
+rules below. The first published export of a new major may include the changes allowed only in a major.
 
 | Change | Regular release (minor or patch) | Major release |
 |---|---|---|
@@ -82,7 +83,9 @@ They do not describe changes to the separate `regions` and `subregions` grouping
 - For a repaired key, `current_targets` is the entity it first denoted, and `later_entity_targets` the replacement key
   of the entity it came to denote: check which one you stored. The removal's `retires_repurpose.replacement_kind`
   says whether the replacement is `fresh` (never used before) or `existing`, and the identity decision's `remediation`
-  records it too. Neither mapping redirects automatically, and an existing replacement is not in `added_ids.jsonl`.
+  records it too. Neither mapping redirects automatically. An existing replacement may appear in `added_ids.jsonl` if
+  it was absent from your baseline and is present at the target; `replacement_kind` is not an added-file membership
+  test.
 - `added_ids.jsonl`: keys present at the end and not at the start. A restored key appears with `restored` when your
   baseline lacks it; a key present at both ends does not appear, even if it was removed and restored in between.
 - `changed_fields.jsonl`: the fields that changed on keys present at both ends, typed, with presence flags.
