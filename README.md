@@ -214,6 +214,11 @@ Some records also carry names or points copied from open sources that ask for cr
 ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
 (ODbL 1.0) and [Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing) (CC0). Points are selected per record and
 rounded to eight decimals; the per-record source ledgers are in [.github/fixes-docs/ledgers/](.github/fixes-docs/ledgers/).
+Official registers matched to records (categories, codes and unit names) also ask for credit:
+- [Statistical Office of the Slovak Republic](https://slovak.statistics.sk/wps/portal/ext/aboutus/webpage/terms/), register of spatial units REGPJ (CC BY 4.0)
+- [Geodetska uprava Republike Slovenije](https://www.e-prostor.gov.si/dostopi/javni-dostop/) (GURS), register of spatial units RPE, 13 October 2026 (CC BY 4.0)
+- [Maa- ja Ruumiamet](https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html), administrative and settlement division, 2 September 2026 (public data terms)
+
 Keep these credits when you redistribute the data.
 
 ---
