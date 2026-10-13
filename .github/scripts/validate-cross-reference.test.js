@@ -11,7 +11,7 @@ const city = {
   name: 'Test city', state_id: 1457, state_code: 'LA',
   country_id: 233, country_code: 'US', latitude: '30.0', longitude: '-92.0',
 };
-const county = { id: 1, name: 'Acadia', state_id: 1457, country_id: 233, country_code: 'US' };
+const county = { id: 1, name: 'Acadia', state_id: 1457, state_code: 'LA', country_id: 233, country_code: 'US' };
 const counties = new Map([[county.id, county]]);
 
 test('city county_id is optional and nullable', () => {
@@ -150,6 +150,7 @@ async function validateCityEdit(cc, cities, countries, states, opts = {}) {
     const write = (file, data) => fs.writeFileSync(path.join(root, 'contributions', file), JSON.stringify(data));
     write(`cities/${cc}.json`, cities);
     for (const [file, data] of Object.entries(opts.extraCities || {})) write(`cities/${file}.json`, data);
+    for (const [file, data] of Object.entries(opts.counties || {})) write(`counties/${file}.json`, data);
     write('countries/countries.json', countries);
     if (opts.statesRaw !== undefined) {
       if (opts.statesRaw !== null) fs.writeFileSync(path.join(root, 'contributions/states/states.json'), opts.statesRaw);
@@ -222,7 +223,7 @@ test('city parents must exist, share country and state, and not loop', async () 
   assert.match((await validateCityEdit('EH', loop, countriesEHUS, statesUS)).join('\n'), /leads to a loop/);
   const crossState = [{ ...base, id: 16, name: 'Child', parent_id: 17 }];
   const us = { 'US': [usCity({ id: 17, name: 'US parent', state_id: 1457, state_code: 'LA' })] };
-  assert.match((await validateCityEdit('EH', crossState, countriesEHUS, statesUS, { extraCities: us })).join('\n'), /is in country US, not EH/);
+  assert.match((await validateCityEdit('EH', crossState, countriesEHUS, statesUS, { extraCities: us })).join('\n'), /is in country US \(233\), not EH \(244\)/);
 });
 
 test('a check that cannot run reports one error and fails, never a pass', async () => {
@@ -243,4 +244,40 @@ test('a city id in two country files is refused before parent links are checked'
   const eh = [{ ...base, id: 700, name: 'EH 700' }, { ...base, id: 701, name: 'Child', parent_id: 700 }];
   const us = { US: [usCity({ id: 700, name: 'US 700', state_id: 1457, state_code: 'LA' })] };
   await assert.rejects(validateCityEdit('EH', eh, countriesEHUS, statesUS, { extraCities: us }), /city id 700 is in both/);
+});
+
+// The canonical shape: states carry iso2 and no state_code
+const statesReal = [{ id: 1457, country_id: 233, country_code: 'US', iso2: 'LA' }];
+const laCity = usCity({ id: 30, name: 'Lafayette', state_id: 1457, state_code: 'LA' });
+
+test('a city state_code is compared with the state iso2 when states have no state_code', async () => {
+  assert.deepEqual(await validateCityEdit('US', [laCity], countriesEHUS, statesReal), []);
+  const wrong = await validateCityEdit('US', [{ ...laCity, state_code: 'WRONG' }], countriesEHUS, statesReal);
+  assert.match(wrong.join('\n'), /state_code "WRONG" does not match state_id 1457 \(expected "LA"\)/);
+  const missing = await validateCityEdit('US', [{ ...laCity, state_code: undefined }], countriesEHUS, statesReal);
+  assert.match(missing.join('\n'), /state_code undefined does not match/);
+});
+
+test('a states-only code edit fails unchanged cities and counties that still carry the old code', async () => {
+  const errs = await validateCityEdit('US', [laCity], countriesEHUS, [{ ...statesReal[0], iso2: 'LB' }],
+    { changed: ['contributions/states/states.json'], counties: { US: [county] } });
+  assert.match(errs.join('\n'), /cities\/US.json.*state_code "LA" does not match state_id 1457 \(expected "LB"\)/);
+  assert.match(errs.join('\n'), /counties\/US.json.*state_code "LA" does not match state_id 1457 \(expected "LB"\)/);
+});
+
+test('a parent with malformed country, state or file is refused, not trusted', async () => {
+  const child = usCity({ id: 41, name: 'Child', state_id: 1457, state_code: 'LA', parent_id: 40 });
+  const parent = usCity({ id: 40, name: 'Parent', state_id: 1457, state_code: 'LA' });
+  assert.deepEqual(await validateCityEdit('US', [parent, child], countriesEHUS, statesReal), []);
+  // unedited parent in another country's file: only the child's file is in the PR
+  const elsewhere = (bad) => validateCityEdit('US', [child], countriesEHUS, statesReal, { extraCities: { EH: [bad] } });
+  assert.match((await elsewhere({ ...parent, country_id: 244 })).join('\n'), /parent_id 40 cannot be checked: its country_id 244 and country_code "US" do not name one country/);
+  assert.match((await elsewhere(parent)).join('\n'), /parent_id 40 cannot be checked: it is filed in cities\/EH.json, not cities\/US.json/);
+  for (const [bad, expected] of [
+    [{ ...parent, state_code: 'ZZ' }, /cannot be checked: its state_id 1457 and state_code "ZZ" do not name a state of US/],
+    [{ ...parent, state_id: null, state_code: null }, /cannot be checked: it has no state, but US has states/],
+    [{ ...parent, country_id: '233' }, /cannot be checked: its country_id "233"/],
+  ]) {
+    assert.match((await validateCityEdit('US', [bad, child], countriesEHUS, statesReal)).join('\n'), expected);
+  }
 });

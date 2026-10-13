@@ -204,6 +204,10 @@ When you add NEW columns to your database or JSON:
 1. Run `python3 bin/scripts/sync/import_json_to_mysql.py` - it will auto-detect and add new columns to MySQL
 2. The schema is updated automatically with proper data types
 
+A link column (`..._id`) that an older database lacks gets the type declared in `bin/db/schema.sql` whatever the
+records hold: `country_id` is always NOT NULL, a city's `state_id`, `county_id` and `parent_id` are always nullable.
+Any other new link column is nullable when some record has no value for it (an omitted key counts).
+
 Both scripts use **dynamic schema detection** - no need to manually update code when adding fields!
 
 ## Configuration

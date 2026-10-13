@@ -1,13 +1,16 @@
 name: Format and import tests
 
-# Unit tests for the import, sync, export converters and Prisma mapping, and a round trip of a test-only city with no
-# state through MySQL and every export format. Read-only: no commits, releases or comments.
+# Unit tests for the import, sync, export converters, export checker, PR validator scripts and Prisma mapping, and a
+# round trip of a test-only city with no state through MySQL and every export format. It also runs on draft PRs, which
+# the PR Validator skips. Read-only: no commits, releases or comments.
 on:
   pull_request:
     paths:
       - 'bin/**'
       - 'prisma/**'
+      - '.github/scripts/**'
       - '.github/workflows/format-tests.yml'
+      - '.github/workflows/pr-validator.yml'
   workflow_dispatch:
 
 permissions:
@@ -35,6 +38,17 @@ jobs:
 
       - name: Export converter tests
         run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
+
+      - name: Export checker tests
+        run: python -m unittest discover -s bin/db/tests -p 'test_*.py'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'   # the PR Validator's version
+
+      - name: PR validator script tests
+        working-directory: .github/scripts
+        run: npm ci --omit=dev && npm test
 
       - uses: actions/setup-node@v5
         with:
@@ -88,6 +102,8 @@ jobs:
           printf '%s\n' '[{"id": 999001, "name": "TEST ONLY stateless city", "state_id": null, "state_code": null,' \
             '"country_id": 244, "country_code": "EH", "latitude": "26.73900000", "longitude": "-11.67100000"}]' \
             > contributions/cities/EH.json
+          # what the import receives, fixture included: the round trip is compared with this copy
+          cp -R contributions "$RUNNER_TEMP/contributions-imported"
           mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
           mysql -uroot -proot world < bin/db/schema.sql
           python3 bin/scripts/sync/import_json_to_mysql.py --host 127.0.0.1 --user root --password root --database world
@@ -95,7 +111,7 @@ jobs:
       - name: Sync back and compare
         run: |
           python3 bin/scripts/sync/sync_mysql_to_json.py --host 127.0.0.1 --user root --password root --database world
-          python3 bin/scripts/sync/check_round_trip.py --ref HEAD
+          python3 bin/scripts/sync/check_round_trip.py --snapshot "$RUNNER_TEMP/contributions-imported"
 
       - name: Export every format
         working-directory: bin

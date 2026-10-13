@@ -46,11 +46,13 @@ $nullable = fn (): bool => count(array_filter(
 )) === 2;
 $stateless = "INSERT INTO cities (id, name, state_id, state_code, country_id, country_code, latitude, longitude) VALUES (1, 'Smara', NULL, NULL, 244, 'EH', 26.7, -11.6)";
 $halfNull = "INSERT INTO cities (id, name, state_id, state_code, country_id, country_code, latitude, longitude) VALUES (3, 'Bad', NULL, 'LA', 233, 'US', 30, -90)";
+$halfNullCode = "INSERT INTO cities (id, name, state_id, state_code, country_id, country_code, latitude, longitude) VALUES (4, 'Bad', 1457, NULL, 233, 'US', 30, -90)";
 
 // fresh schema
 $pdo->exec($stateless);
 $pdo->exec("INSERT INTO cities (id, name, state_id, state_code, country_id, country_code, latitude, longitude) VALUES (2, 'Baton Rouge', 1457, 'LA', 233, 'US', 30.4, -91.1)");
 $refused($halfNull, 3819, 'fresh schema, half-null pair');
+$refused($halfNullCode, 3819, 'fresh schema, state without its code');
 $refused('DELETE FROM states WHERE id = 1457', 1451, 'deleting a state that a city uses');
 
 // upgrade and rollback through the migration itself
@@ -76,6 +78,7 @@ if (!$nullable()) {
 }
 $pdo->exec($stateless);
 $refused($halfNull, 3819, 'upgraded schema, half-null pair');
+$refused($halfNullCode, 3819, 'upgraded schema, state without its code');
 
 $server->exec("DROP DATABASE `{$db}`");
 if ($failures) {

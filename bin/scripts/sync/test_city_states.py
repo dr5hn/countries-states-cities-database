@@ -53,13 +53,26 @@ class CheckReferencesTest(unittest.TestCase):
         self.assertProblem('do not name one known country', cities=[city(country_code='US')])
         self.assertProblem('not a positive integer', cities=[city(country_id=233, country_code='US', state_id=True, state_code='LA')])
 
+    def test_country_id_types(self):
+        """True, '244', 244.0, a fraction or no country_id never pass as a country (True == 1 as a dictionary key)."""
+        for bad in (True, '244', 244.0, 244.5, None):
+            self.assertProblem(f'country_id {bad!r} is not a positive integer', cities=[city(country_id=bad)])
+        self.assertProblem('country_id None is not a positive integer',
+                           cities=[{k: v for k, v in city().items() if k != 'country_id'}])
+        for bad in (True, 233.0, '233'):
+            self.assertProblem(f'state 1457: country_id {bad!r} is not a positive integer', states=[dict(STATES[0], country_id=bad)])
+        # True would otherwise find country 1
+        self.assertProblem('country_id True is not a positive integer', countries=COUNTRIES + [{'id': 1, 'iso2': 'AF'}],
+                           cities=[city(country_id=True, country_code='AF')])
+
     def test_inventory_rejections(self):
         """A wrong country or state inventory is refused instead of being used to decide who has states."""
         self.assertProblem('id or iso2 is duplicated', countries=COUNTRIES + [{'id': 245, 'iso2': 'US'}])
         self.assertProblem('two-letter iso2', countries=COUNTRIES + [{'id': 246, 'iso2': 'usa'}])
         self.assertProblem('id is duplicated', states=STATES + [dict(STATES[0], iso2='LB')])
-        self.assertProblem('is not a known country', states=[{'id': 1457, 'iso2': 'LA', 'country_code': 'US'}],
+        self.assertProblem('country_id None is not a positive integer', states=[{'id': 1457, 'iso2': 'LA', 'country_code': 'US'}],
                            cities=[city(country_id=233, country_code='US')])
+        self.assertProblem('country_id 999 is not a known country', states=[dict(STATES[0], country_id=999)])
         self.assertProblem("country_code 'EH' is not US", states=[dict(STATES[0], country_code='EH')])
         self.assertProblem('has no state code', states=[dict(STATES[0], iso2=None)])
 
@@ -136,6 +149,75 @@ class ImporterTest(unittest.TestCase):
         self.assertEqual(stop.exception.code, 1)
         self.assertNotIn('reset_tables', calls)
         self.assertFalse([c for c in calls if c.startswith('import_')])
+
+
+@unittest.skipUnless(mysql_available(), 'mysql-connector-python is not installed')
+class ImporterCommandTest(ImporterTest):
+    """The real command, with the real preflights and a stub database, stops before any reset for each bad country id."""
+
+    def test_bad_country_ids_never_reset(self):
+        """For each invalid country id the command exits 1 having called no reset, truncate or import."""
+        import import_json_to_mysql as module
+        calls = []
+
+        class Recording(module.JSONToMySQLImporter):
+            """The real importer with a stub connection; reset, imports and close are only recorded."""
+
+            def __init__(self, **_):
+                """No database: a stub cursor answers the column query."""
+                self.conn, self.cursor = Mock(), Mock()
+                self.cursor.fetchall.return_value = []
+
+            def __getattribute__(self, name):
+                """Record and skip every step that would write."""
+                if name == 'reset_tables' or name.startswith(('import_', 'truncate')) or name == 'close':
+                    return lambda *a: calls.append(name) or 0
+                return super().__getattribute__(name)
+
+        for bad in (True, '244', 244.0, 244.5, None):
+            calls.clear()
+            Path('contributions/cities/EH.json').write_text(json.dumps([city(country_id=bad)]))
+            with patch.object(module, 'JSONToMySQLImporter', Recording), patch.object(sys, 'argv', ['import']), \
+                    patch.object(os, 'chdir'), contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as stop:
+                    module.main()
+            self.assertEqual(stop.exception.code, 1, bad)
+            self.assertEqual(calls, ['close'], bad)
+
+
+@unittest.skipUnless(mysql_available(), 'mysql-connector-python is not installed')
+class ColumnTypeTest(unittest.TestCase):
+    """Link columns added to an older database get their declared type, whatever the records hold."""
+
+    def setUp(self):
+        """An importer that reports no existing columns."""
+        from import_json_to_mysql import JSONToMySQLImporter
+        self.importer = JSONToMySQLImporter.__new__(JSONToMySQLImporter)
+        self.importer.get_table_columns = lambda table: {'id': 'int'}
+
+    def types(self, table, records):
+        """Column types the importer would add for these records."""
+        return self.importer.detect_new_columns(table, records)
+
+    def test_declared_links(self):
+        """All-null, mixed, all-present and late values give the declared type; a sample never relaxes country_id."""
+        for values in ([None, None], [None, 1], [1, 1], [None] * 150 + [1], [1]):
+            records = [{'state_id': v, 'county_id': v, 'parent_id': v, 'country_id': v} for v in values]
+            got = self.types('cities', records)
+            self.assertEqual(got['state_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL', values)
+            self.assertEqual(got['county_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL', values)
+            self.assertEqual(got['parent_id'], 'INT UNSIGNED DEFAULT NULL', values)
+            self.assertEqual(got['country_id'], 'MEDIUMINT UNSIGNED NOT NULL', values)
+        self.assertEqual(self.types('counties', [{'state_id': None}])['state_id'], 'MEDIUMINT UNSIGNED NOT NULL')
+        self.assertEqual(self.types('states', [{'parent_id': None}])['parent_id'], 'INT UNSIGNED DEFAULT NULL')
+
+    def test_inferred_links_count_omitted_keys(self):
+        """An undeclared link is nullable when any record lacks a value, an omitted key included."""
+        self.assertEqual(self.types('cities', [{'zone_id': 1}, {}])['zone_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL')
+        self.assertEqual(self.types('cities', [{'zone_id': 1}] * 150 + [{'zone_id': None}])['zone_id'],
+                         'MEDIUMINT UNSIGNED DEFAULT NULL')
+        self.assertEqual(self.types('cities', [{'zone_id': 1}, {'zone_id': 2}])['zone_id'], 'MEDIUMINT UNSIGNED NOT NULL')
+        self.assertEqual(self.types('cities', [{'zone_id': None}])['zone_id'], 'MEDIUMINT UNSIGNED DEFAULT NULL')
 
 
 @unittest.skipUnless(mysql_available(), 'mysql-connector-python is not installed')

@@ -35,9 +35,12 @@ def _states(states, countries, errors):
         if not isinstance(s, dict) or not positive_id(s.get('id')):
             errors.append(f'state row {n}: needs a positive integer id')
             continue
-        country = countries.get(s.get('country_id'))
+        # True, 1.0 and 1 are equal dictionary keys, so the type is checked before the lookup
+        country = countries.get(s['country_id']) if positive_id(s.get('country_id')) else None
         if s['id'] in by_id:
             errors.append(f"state {s['id']}: id is duplicated")
+        elif not positive_id(s.get('country_id')):
+            errors.append(f"state {s['id']}: country_id {s.get('country_id')!r} is not a positive integer")
         elif country is None:
             errors.append(f"state {s['id']}: country_id {s.get('country_id')!r} is not a known country")
         elif s.get('country_code') != country['iso2']:
@@ -63,7 +66,10 @@ def check_references(countries, states, cities):
             errors.append('a city row is not an object')
             continue
         label = f"city {c.get('id', '(new)')} {c.get('name', '')}".rstrip()
-        country = by_country.get(c.get('country_id'))
+        if not positive_id(c.get('country_id')):
+            errors.append(f"{label}: country_id {c.get('country_id')!r} is not a positive integer")
+            continue
+        country = by_country.get(c['country_id'])
         if country is None or c.get('country_code') != country['iso2']:
             errors.append(f"{label}: country_id {c.get('country_id')!r} and country_code {c.get('country_code')!r} do not name one known country")
             continue

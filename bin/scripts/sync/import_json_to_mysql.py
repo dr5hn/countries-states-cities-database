@@ -31,6 +31,23 @@ from city_states import check_references  # noqa: E402
 import mysql.connector
 from datetime import datetime
 
+# Link columns as declared in bin/db/schema.sql, used when an older database lacks one. They are resolved before any
+# sample: data cannot relax a required link or tighten an optional one. ('*', field) applies to every table.
+LINK_TYPES = {
+    ('*', 'country_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('countries', 'region_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('countries', 'subregion_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('subregions', 'region_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('states', 'parent_id'): "INT UNSIGNED DEFAULT NULL",
+    ('counties', 'state_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('counties', 'parent_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'county_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'parent_id'): "INT UNSIGNED DEFAULT NULL",
+    ('postcodes', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('postcodes', 'city_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+}
+
 
 class JSONToMySQLImporter:
     """Import JSON to MySQL with dynamic schema detection and updates"""
@@ -61,13 +78,20 @@ class JSONToMySQLImporter:
             columns[row['Field']] = row['Type']
         return columns
 
-    def infer_column_type(self, field_name: str, sample_values: List[Any]) -> str:
-        """Infer MySQL column type from JSON field and sample values"""
+    def infer_column_type(self, field_name: str, sample_values: List[Any], table_name: str = '') -> str:
+        """Infer MySQL column type from JSON field and sample values; declared link columns win over samples"""
+        declared = LINK_TYPES.get((table_name, field_name)) or LINK_TYPES.get(('*', field_name))
+        if declared:
+            return declared
+        if field_name == 'parent_id':
+            return "INT UNSIGNED DEFAULT NULL"   # optional by definition: a top-level record has no parent
+
         # Remove None values
         non_null_values = [v for v in sample_values if v is not None]
 
-        # A link column is nullable only when some record has no value for it (all records are sampled for links)
-        if field_name.endswith('_id') and field_name != 'parent_id' and len(non_null_values) < len(sample_values):
+        # Another link column is nullable when some record has no value for it (every record is sampled, an omitted
+        # key counting as no value)
+        if field_name.endswith('_id') and len(non_null_values) < len(sample_values):
             return "MEDIUMINT UNSIGNED DEFAULT NULL"
 
         if not non_null_values:
@@ -90,8 +114,6 @@ class JSONToMySQLImporter:
             return "BIGINT UNSIGNED DEFAULT NULL"
         elif field_name == 'level':
             return "INT DEFAULT NULL"
-        elif field_name == 'parent_id':
-            return "INT UNSIGNED DEFAULT NULL"
 
         # Infer from sample value type
         if isinstance(sample, bool):
@@ -139,11 +161,12 @@ class JSONToMySQLImporter:
         # Infer types for new columns
         new_column_types = {}
         for field in new_columns:
-            # Collect sample values for this field
-            samples = [record.get(field) for record in json_data if field in record]
-            if not field.endswith('_id'):
-                samples = samples[:100]   # links are checked on every record; other types on a sample
-            column_type = self.infer_column_type(field, samples)
+            # Links are checked on every record (a record without the key has no link); other types on a sample
+            if field.endswith('_id'):
+                samples = [record.get(field) for record in json_data]
+            else:
+                samples = [record.get(field) for record in json_data if field in record][:100]
+            column_type = self.infer_column_type(field, samples, table_name)
             new_column_types[field] = column_type
 
         return new_column_types

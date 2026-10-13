@@ -106,16 +106,40 @@ function loadAllCities() {
   return allCities;
 }
 
-/** A city's parent must exist, not be itself, share its country and state (null state included) and not loop. */
-function validateCityParent(record, cities) {
+/**
+ * Why an indexed city cannot be trusted as a parent, or null: its country id and code must name one country, it must sit
+ * in that country's file, and its state pair must name a state of that country by its iso2 (both null only when the
+ * country has no states). ref holds countryById, stateById and countriesWithStates from the checked inventory.
+ */
+function parentRecordProblem(p, ref) {
+  const country = Number.isInteger(p.country_id) ? ref.countryById.get(p.country_id) : undefined;
+  if (!country || p.country_code !== country.iso2) {
+    return `its country_id ${JSON.stringify(p.country_id)} and country_code ${JSON.stringify(p.country_code)} do not name one country`;
+  }
+  if (p.__file !== `cities/${country.iso2}.json`) return `it is filed in ${p.__file}, not cities/${country.iso2}.json`;
+  if (p.state_id === null && p.state_code === null) {
+    return ref.countriesWithStates.has(country.id) ? `it has no state, but ${country.iso2} has states` : null;
+  }
+  const state = Number.isInteger(p.state_id) ? ref.stateById.get(p.state_id) : undefined;
+  if (!state || Number(state.country_id) !== country.id || p.state_code !== state.iso2) {
+    return `its state_id ${JSON.stringify(p.state_id)} and state_code ${JSON.stringify(p.state_code)} do not name a state of ${country.iso2}`;
+  }
+  return null;
+}
+
+/** A city's parent must exist, be a valid record itself, not be the city, share its country and state (null state
+ * included) and not loop. */
+function validateCityParent(record, cities, ref) {
   if (record.parent_id == null) return [];
   if (!Number.isInteger(record.parent_id) || record.parent_id <= 0) return ['parent_id must be a positive integer'];
   if (record.id != null && record.parent_id === Number(record.id)) return ['parent_id points to the city itself'];
   const parent = cities.get(record.parent_id);
   if (!parent) return [`parent_id ${record.parent_id} does not exist in contributions/cities`];
+  const bad = parentRecordProblem(parent, ref);
+  if (bad) return [`parent_id ${record.parent_id} cannot be checked: ${bad}`];
   const errors = [];
-  if (parent.country_code !== record.country_code) {
-    errors.push(`parent_id ${record.parent_id} is in country ${parent.country_code}, not ${record.country_code}`);
+  if (parent.country_id !== record.country_id || parent.country_code !== record.country_code) {
+    errors.push(`parent_id ${record.parent_id} is in country ${parent.country_code} (${parent.country_id}), not ${record.country_code} (${record.country_id})`);
   }
   if ((parent.state_id ?? null) !== (record.state_id ?? null)) {
     errors.push(`parent_id ${record.parent_id} is in state ${parent.state_id ?? 'none'}, not ${record.state_id ?? 'none'}`);
@@ -189,6 +213,8 @@ async function run() {
       stateById.set(Number(s.id), s);
     }
   }
+  const countriesWithStates = new Set(states.map((s) => Number(s.country_id)));
+  const ref = { countryById, stateById, countriesWithStates };
 
   // Get changed files
   const { data: files } = await octokit.rest.pulls.listFiles({
@@ -240,7 +266,7 @@ async function run() {
       const prefix = `${filePath}: Record ${i + 1}${label ? ` ("${label}")` : ''}`;
 
       if (entityType === 'cities' && record.parent_id != null) {
-        errors.push(...validateCityParent(record, loadAllCities()).map(error => `${prefix}: ${error}`));
+        errors.push(...validateCityParent(record, loadAllCities(), ref).map(error => `${prefix}: ${error}`));
       }
 
       if (entityType === 'cities') {
@@ -282,8 +308,7 @@ async function run() {
         // A city with no state (v5): allowed only when its country has no states at all (e.g. Western Sahara), so a
         // missing state is never a shortcut for an unresolved one
         if (entityType === 'cities' && record.state_id === null && states) {
-          const hasStates = states.some((s) => Number(s.country_id) === Number(record.country_id));
-          if (hasStates) {
+          if (countriesWithStates.has(Number(record.country_id))) {
             errors.push(`${prefix}: state_id is null but country ${record.country_code} has states; set the state`);
           }
         }
@@ -301,13 +326,11 @@ async function run() {
                 `${prefix}: state_id ${record.state_id} ("${state.name}") belongs to country_id ${state.country_id}, not ${record.country_id}`
               );
             }
-            // Validate state_code matches
-            if (record.state_code && state.state_code) {
-              if (record.state_code !== state.state_code && record.state_code !== state.iso2) {
-                errors.push(
-                  `${prefix}: state_code "${record.state_code}" does not match state_id ${record.state_id} (expected "${state.state_code || state.iso2}")`
-                );
-              }
+            // The code must be the state's own iso2, always (canonical states have no separate state_code)
+            if (record.state_code !== state.iso2) {
+              errors.push(
+                `${prefix}: state_code ${JSON.stringify(record.state_code)} does not match state_id ${record.state_id} (expected "${state.iso2}")`
+              );
             }
           }
         }
@@ -440,4 +463,4 @@ async function main() {
 
 if (require.main === module) main();
 
-module.exports = { loadCounties, validateCountyReference, validateCityParent, loadCanonical, checkInventory };
+module.exports = { loadCounties, validateCountyReference, validateCityParent, parentRecordProblem, loadCanonical, checkInventory };
