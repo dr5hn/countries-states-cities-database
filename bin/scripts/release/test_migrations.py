@@ -444,6 +444,56 @@ class HistoryTest(Case):
         self.refused(c1, c2, [dict(back, restored_row_sha256='0' * 64)], 'restored_row_sha256 does not match')
         self.refused(c1, c2, [dict(back, retirement_commit=c2)], 'not earlier on the first-parent line')
 
+    def test_restoration_cannot_undo_a_repurpose_retirement(self):
+        """The row removed to remediate a repurpose is the later entity: restoring it under the old id is refused,
+        wherever the restoration falls."""
+        counties = 'contributions/counties/XX.json'
+        a, b = city(2, 'A', wikiDataId='Q2'), city(2, 'B', wikiDataId='Q3')
+        c0 = self.repo.commit({**self.base_files, CITY: [a], counties: [{'id': 9, 'name': 'A'}]})
+        c1 = self.repo.commit({CITY: [b]})
+        c2 = self.repo.commit({CITY: [city(3, 'B', wikiDataId='Q3')]})
+        c3 = self.repo.commit({CITY: [b, city(3, 'B', wikiDataId='Q3')]})
+        c4 = self.repo.commit({CITY: [b, city(3, 'B', wikiDataId='Q3', type='town')]})
+        fix = {'identity_event_commit': c1, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        events = [identity_event(2, c1, a, 'repurpose', [target('counties', 9, 'prior_identity')]),
+                  removal('cities', 2, c2, c1, CITY, b, 'merged_same_entity', [target('cities', 3, 'merged_same_entity')],
+                          retires_repurpose=fix),
+                  restoration('cities', 2, c3, c2, b, b, {'wikiDataId': 'Q3'})]
+        for frm in (c0, c3):
+            self.refused(frm, c4, events, 'cannot restore the later entity')
+
+    def test_restoration_must_name_the_latest_retirement(self):
+        """A restoration bound to an older retirement of the id is refused once the id has left again since."""
+        counties = 'contributions/counties/XX.json'
+        a, b = city(2, 'A', wikiDataId='Q2'), city(2, 'B', wikiDataId='Q3')
+        c0 = self.repo.commit({**self.base_files, CITY: [a], counties: [{'id': 9, 'name': 'A'}]})
+        c1 = self.repo.commit({CITY: []})
+        c2 = self.repo.commit({CITY: [a]})
+        c3 = self.repo.commit({CITY: [b]})
+        c4 = self.repo.commit({CITY: [city(3, 'B', wikiDataId='Q3')]})
+        c5 = self.repo.commit({CITY: [a, city(3, 'B', wikiDataId='Q3')]})
+        fix = {'identity_event_commit': c3, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        events = [removal('cities', 2, c1, c0, CITY, a, 'no_successor', []),
+                  restoration('cities', 2, c2, c1, a, a, {'wikiDataId': 'Q2'}),
+                  identity_event(2, c3, a, 'repurpose', [target('counties', 9, 'prior_identity')]),
+                  removal('cities', 2, c4, c3, CITY, b, 'merged_same_entity', [target('cities', 3, 'merged_same_entity')],
+                          retires_repurpose=fix),
+                  restoration('cities', 2, c5, c1, a, a, {'wikiDataId': 'Q2'})]
+        self.refused(c0, c5, events, 'is not the latest disappearance')
+
+    def test_restored_id_that_leaves_again_needs_a_new_restoration(self):
+        """After a reviewed restoration, a later disappearance retires the id again, even before --from without a
+        ledger event, so an unreviewed return is refused."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two', wikiDataId='Q2')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One'), city(2, 'Two', wikiDataId='Q2')]})
+        c3 = self.repo.commit({CITY: [city(1, 'One')]})
+        c4 = self.repo.commit({CITY: [city(1, 'One'), city(2, 'Else', wikiDataId='Q3')]})
+        c5 = self.repo.commit({CITY: [city(1, 'One', type='town'), city(2, 'Else', wikiDataId='Q3')]})
+        events = [removal('cities', 2, c1, c0, CITY, city(2, 'Two', wikiDataId='Q2'), 'no_successor', []),
+                  restoration('cities', 2, c2, c1, city(2, 'Two', wikiDataId='Q2'), city(2, 'Two', wikiDataId='Q2'), {'wikiDataId': 'Q2'})]
+        self.refused(c4, c5, events, 'in use again')
+
     def test_restoration_needs_a_matching_stable_identifier(self):
         """same_identity must bind a stable identifier; a shared country is not enough, and a conflicting identifier
         held by both rows refuses the restoration."""

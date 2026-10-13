@@ -454,6 +454,7 @@ class Gate:
         self.errors, self.used, self.events, self.identity = [], set(), [], []
         self.added_at, self.restored, self.repurposed, self.remediated = {}, {}, {}, {}
         self.first_seen, self.removed_ever = {}, set()   # first addition in the walk, and every id the walk saw removed
+        self.latest_removal = {}   # key -> the commit of its latest disappearance in the walk
         self.timeline = defaultdict(list)   # key -> [(commit index, kind, event)] in history order
         self.at = defaultdict(list)         # commit -> [(kind, key, event)] for identity and restoration events
         for kind, events in (('identity', identities), ('restoration', self.restorations)):
@@ -474,8 +475,9 @@ class Gate:
             self.first_seen.setdefault(k, (i, c))
         for k in removed:
             self.removed_ever.add(k)
+            self.latest_removal[k] = c
             e = self.removals.get((k[0], k[1], c))
-            if inside or e is not None:
+            if inside or e is not None or k in self.restored:   # a restored id that leaves again needs a new restoration
                 self.retired.add(k)
             if e is None:
                 if inside or k in self.repurposed:
@@ -551,9 +553,10 @@ class Gate:
 
     def restoration_ok(self, i, c, key, e, added, state):
         """A reviewed restoration brings a retired id back for the same entity: the id returns at this commit with the
-        reviewed row, it was removed at retirement_commit (earlier on this line) with the reviewed row, both rows hold
-        the same_identity values, and no stable identifier both rows hold differs. Marks the event used; returns whether
-        it holds."""
+        reviewed row, it was removed at retirement_commit (earlier on this line, and its latest disappearance in the walk)
+        with the reviewed row, both rows hold the same_identity values, and no stable identifier both rows hold differs.
+        A removal that remediated a repurpose took away the later entity, so it cannot be restored. Marks the event
+        used; returns whether it holds."""
         k, err, where = key[:2], self.errors.append, f'{key[0]} {key[1]} at {c[:12]}'
         self.used.add(('restoration',) + key)
         if e['review_status'] != 'reviewed':
@@ -566,6 +569,14 @@ class Gate:
             old = retired_row(self.repo, e['retirement_commit'], k, c)
         except MigrationError as x:
             err(f'{where}: {x}')
+            return False
+        if (k, e['retirement_commit']) in self.remediated:
+            err(f'{where}: cannot restore the later entity under an id retired to remediate a repurpose at '
+                f'{e["retirement_commit"][:12]}')
+            return False
+        if k in self.latest_removal and self.latest_removal[k] != e['retirement_commit']:
+            err(f'{where}: retirement_commit {e["retirement_commit"][:12]} is not the latest disappearance '
+                f'{self.latest_removal[k][:12]} observed in the walk')
             return False
         new, problems = state.rows[k], []
         if row_hash(new) != e['restored_row_sha256']:
@@ -624,7 +635,7 @@ def resolve_targets(gate, final, targets, index, auto):
         i, kind, e = nxt
         if kind == 'removal':
             back = gate.next_event(key, i)
-            if back and back[1] == 'restoration':   # the same entity came back under this id
+            if back and back[1] == 'restoration' and back[2]['retirement_commit'] == e['event_commit']:   # same entity back
                 stack.append((t, back[0], relations + ['restored'], False))
                 continue
             if not e['targets']:
@@ -683,7 +694,7 @@ def build(start, state, gate, order):
             ri, rc, rep, _ = fix
             entry.update(repurposed_at=rc, current_targets=resolve_targets(gate, final, rep['targets'], ri, False),
                          later_entity_targets=resolve_targets(gate, final, e['targets'], order[c], False))
-        elif back and back[1] == 'restoration':   # the same entity came back later under this id
+        elif back and back[1] == 'restoration' and back[2]['retirement_commit'] == c:   # the same entity came back later
             entry.update(restored_at=back[2]['event_commit'], current_targets=resolve_targets(
                 gate, final, [{'table': k[0], 'id': k[1], 'relation': 'restored'}], back[0], False))
         else:
@@ -855,7 +866,8 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
                for kind, d in (('identity', gate.identities), ('restoration', gate.restorations))
                for k in sorted(d) if (kind,) + k not in gate.used]
     errors += [f'{k[0]} {k[1]} was repurposed at {c[:12]} and still denotes the other entity at --to; retire it with its earlier '
-               f'identity and give that entity a fresh id' for k, (_, c, _) in sorted(gate.repurposed.items()) if k in state.rows]
+               f'identity and give that entity a fresh or proved existing replacement id'
+               for k, (_, c, _) in sorted(gate.repurposed.items()) if k in state.rows]
     if errors:
         raise MigrationError(f'{len(errors)} problem(s):\n  ' + '\n  '.join(errors[:50]) + ('\n  ...' if len(errors) > 50 else ''))
     content = build(start, state, gate, order)

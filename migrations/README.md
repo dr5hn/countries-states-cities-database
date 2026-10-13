@@ -58,7 +58,10 @@ A restoration (`"event_type": "restoration"`) brings a retired id back for the *
 state FI-01 (states 1509), retired by #1144 and restored by #2020. It is checked against history: the id returns at
 `event_commit` with the row hashed in `restored_row_sha256`; it left its whole table at `retirement_commit`, earlier on
 the same first-parent line, with the row hashed in `retired_row_sha256`; both rows hold the values in `same_identity`;
-and no stable identifier (`wikiDataId`, `iso3166_2`, `iso3`) that both rows hold differs. `same_identity` must bind at
+and no stable identifier (`wikiDataId`, `iso3166_2`, `iso3`) that both rows hold differs. `retirement_commit` must be
+the id's latest disappearance in the history read, and a removal that remediated a repurpose (it took away the later
+entity) cannot be restored. A restored id that leaves again, even before `--from` without a ledger event, needs a new
+restoration to return. `same_identity` must bind at
 least one of those three with a nonblank value: a shared country, category or name does not prove the same entity. An
 id a reviewed removal retired may return only this way, before `--from` as well as inside the interval; a reserved id
 may not be present at `--from` or return inside the interval without it.
@@ -162,10 +165,11 @@ python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <
 ```
 
 The same inputs always give byte-identical files. The files are written to a new staging folder
-(`.<out>.staging-<random>`) and swapped in at the end, so a failed run keeps the earlier output, and the error says
-where it is. If a run is stopped between the two renames of the swap, the last complete output is in `.<out>.previous`;
-the next run puts it back before doing anything else. Run one generator at a time per output folder. A staging folder
-left by a stopped run is never reused; delete it by hand.
+(`.<out>.staging-<random>`) and swapped in at the end, so a failed run keeps the earlier output; when writing fails,
+the error says where that output is. If a run is stopped between the two renames of the swap, the last complete
+output is in `.<out>.previous`. When a validated run reaches the write stage, it restores `.<out>.previous` before
+creating its staging folder. If validation fails earlier, the last complete files remain in that backup. Run one
+generator at a time per output folder. A staging folder left by a stopped run is never reused; delete it by hand.
 
 Measured on a laptop (Apple silicon), on the repository of 14 October 2026 (master `2f0ce218`, about 1,018,000 keyed
 rows, 543 MB of source JSON). With earlier events the walk starts at the oldest of them, so the cost follows the
