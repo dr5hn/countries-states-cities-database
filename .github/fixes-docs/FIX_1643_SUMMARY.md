@@ -157677,3 +157677,31 @@ to eight decimals. The registers are credited in the README.
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived here; new county ids are 13743-13796.
+
+## Smallest ISO unit, round 3: Ireland and Estonia
+
+### Problem
+Round 1 (#1777) moved most Irish and Estonian cities to their county or municipality, but left 154 Irish records on a
+province and 42 Estonian records on a county (rule 1: a city's state is the smallest ISO 3166-2 unit containing it). The
+first typing passes (#2004, #2006) cannot type them until their state is right.
+
+### Fix
+**66 records moved** to the unit that contains them, each matched to its own official unit with its point inside it:
+- Estonia 32: 27 municipality rows to their own municipality (Anija vald, Antsla vald, Haljala vald, Jõgeva vald and others) and
+  5 settlements (Ruhnu, Saku, Vaiatu, Antsla, Viimsi): their current official name, type and county were matched to the
+  current EHAK unit of the 2 September 2026 register, the unchanged point lies inside it, and the unit was crosswalked to its
+  ISO code (old Wikidata items and codes of former municipalities are not used as proof).
+- Ireland 34: 12 towns (Buncrana, Derrybeg, Dingle, Dungloe, Graiguenamanagh, Inishcrone, Portraine, Rathwire, Tobercurry, Abbeyfeale, Eadestown, Kells), each identified by its CSO 2022 built-up
+  area, its own Wikidata item and GeoNames feature, or its council, and lying inside its county; and 22 Dublin neighbourhoods
+  (Artane, Ballyfermot, Ballymun, Beaumont, Blackrock, Cabra and others), each identified by its own Wikidata item and GeoNames feature and named on Dublin
+  City Council's neighbourhood map (Blackrock by Dún Laoghaire–Rathdown), with its point inside county Dublin.
+
+Held (130): Ireland 120 (mostly places with no separate built-up area of their own name, points outside
+the matched unit, records that are not places, unresolved scopes and namesakes; not yet checked one by one) and Estonia
+10 (points outside their unit, the Jõhvi and Toila merger, which the state list does not yet reflect, and a namesake).
+
+### Sources
+Central Statistics Office, Census 2022 built-up areas, and Tailte Éireann, 2019 county boundaries (both CC BY 4.0); Dublin
+City Council and Dún Laoghaire–Rathdown County Council publications (facts only); Maa- ja
+Ruumiamet, administrative and settlement division of 2 September 2026. CSO, Tailte Éireann and Maa- ja Ruumiamet are credited in the README. Wikidata (CC0)
+for own-code lookups only. Boundaries are used only to check that a point lies inside its unit.
