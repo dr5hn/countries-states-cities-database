@@ -149134,3 +149134,47 @@ Containment checked against geoBoundaries (OSM-derived, ODbL) and, for Jiayuguan
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 12933-13032.
+
+## China phase 13: Tianjin and Zhejiang (model of #1975 to #1996)
+
+### Problem
+Tianjin's districts and Zhejiang's prefectures, districts, counties and county-level cities were city records. Earlier
+phases (#1979, #1986) fixed many of their names and items but held the structure: neither register could be downloaded.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **117 counties** (`administrative district`, official local term, official code): Tianjin's 16 districts at level 2 directly under
+  the municipality, and Zhejiang's 11 prefecture cities at level 2 with their districts, counties, autonomous county and
+  county-level cities at level 3, named "<Name> District / County / City".
+  Each unit agrees in two sources, the register and its own Wikidata entry: for Tianjin on code, name and parent; for
+  Zhejiang, whose published table has no codes, on name, category and parent, with the code from the unit's own Wikidata
+  P442. 79
+  carry their own Wikidata item where no city keeps it.
+- **51 district rows become sections (区)**, linked to their own county: Tianjin's 16 at level 2 (directly under the
+  municipality, as Beijing and Shanghai) and Zhejiang's at level 3 (with Jiaojiang, already a section, 52 linked sections in
+  all).
+- **20 county-level cities stay cities** (`city / 市`) linked to their own county.
+- 55 points replaced with the unit's own open point checked inside its county; **24 district items moved to their new county**
+  (none is a wrong item); **26 native names fixed and
+  the translations of 41 records** (41 records in all).
+
+No row is removed and no prefecture row is converted.
+
+Held (206 records keep a hold on at least one field): prefecture rows, townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase13_points_2026-10.csv](ledgers/CN_phase13_points_2026-10.csv).
+
+### Sources
+Tianjin civil-affairs register, published 31 July 2026 ("截至2026年7月31日"), read from its complete news reproduction of
+26 August 2026 (https://www.sohu.com/a/1067674344_121123818; county codes are the six-digit prefixes of its printed township
+codes); Zhejiang's 2025 annual administrative-division statistics, read from the
+Hangzhou CPPCC government republication of 8 January 2026 (https://www.hzzx.gov.cn/cshz/content/2026-01/08/content_9158827.htm);
+the original civil-affairs sites could not be reached. Names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). Points:
+172 Wikidata P625 (CC0), 17 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived, ODbL), prefecture unions of their official
+children, and OpenStreetMap relations 4591409, 4591384, 3221183, 12555971, 3221184, 10724589, 4571617, 4571847, 10320333,
+3239536 and 8921635 (© OpenStreetMap contributors, ODbL 1.0); nothing copied from them. English names follow the government's
+English pages and the 2013 trademark report; township spellings use named GeoNames features and own Wikidata entries.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 13033-13149.
