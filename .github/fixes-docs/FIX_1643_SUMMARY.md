@@ -149098,3 +149098,39 @@ geoBoundaries (OSM-derived, ODbL) used only to check containment.
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 12789-12932.
+
+## China phase 14: Gansu; Shanxi held (model of #1975 to #1996)
+
+### Problem
+Gansu's and Shanxi's prefectures, districts, counties and county-level cities were city records, many with another
+place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **100 counties** (`administrative district`, official local term, official code): 14 prefecture-level units at level 2 and their
+  districts, counties, autonomous counties and county-level cities at level 3, named "<Name> District / County / City".
+  Each unit agrees in two sources, the register and its own Wikidata entry (code, Chinese name, current parent). 81
+  carry their own Wikidata item where no city keeps it.
+- Jiayuguan has no county tier (its three districts were abolished in 2019); its rows are not given counties.
+- **13 district rows become sections (区)** at level 3, linked to their own county.
+- **3 county-level cities stay cities** (`city / 市`) linked to their own county.
+- 16 points replaced with the unit's own open point checked inside its county; **62 items cleared**; **55 native names fixed and
+  the translations of 132 records** (133 records in all).
+
+No row is removed and no prefecture row is converted.
+
+Held (239 records keep a hold on at least one field): all Shanxi typing (no register was retrieved), prefecture rows, townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase14_points_2026-10.csv](ledgers/CN_phase14_points_2026-10.csv).
+
+### Sources
+Gansu Department of Civil Affairs register, 31 December 2025 edition, read from the complete XLSX linked by its Qingyang news
+republication of 23 January 2026 (https://www.yinxiangqingyang.com/2026/0123/901355.shtml,
+https://upload.yinxiangqingyang.com/2026/0123/1769173659623.xlsx), because the government site returned HTTP 412; the
+government's own attachment bytes were not retrieved or compared. Names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). Points:
+115 Wikidata P625 (CC0), 1 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+Containment checked against geoBoundaries (OSM-derived, ODbL) and, for Jiayuguan, OpenStreetMap relation 165664 (version 21,
+20 August 2026; © OpenStreetMap contributors, ODbL 1.0); nothing copied from them.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12933-13032.
