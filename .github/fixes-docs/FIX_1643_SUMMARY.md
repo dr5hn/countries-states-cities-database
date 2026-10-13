@@ -157865,3 +157865,45 @@ geoBoundaries PSE ADM2 (CC BY 4.0).
 
 ### Rollback
 Revert the PR (squash commit); no record is created or removed.
+
+## South Africa and Armenia: first typing pass
+
+### Problem
+None of the 683 city records of South Africa and Armenia had a level or an official local category (old values such as
+adm1, adm2 and city), South Africa's metropolitan and district municipalities were stored as cities beside their seat
+towns, and some records carried another unit's Wikidata item.
+
+### Fix
+Each country's own register, in the merged model; one country note (South Africa, in TYPE_FIELD.md):
+- **South Africa:** the **51 metropolitan and district municipalities become counties** (`administrative district`, level 2,
+  Municipal Demarcation Board code, own Wikidata item, open point checked inside, IANA zone). Their 51 rows in `ZA.json`
+  are typed as what they are (`county / metropolitan municipality` or `county / district municipality`, level 2, linked
+  to their county), so settlement filters leave them out; they are **not removed here** (no id is removed before
+  v5.0.0) and their removal is queued, each pointing to its county and, separately, to its seat town. 18 local
+  municipalities stored as cities are `municipality / local municipality` at level 3; 224 places matched to Stats SA
+  Census 2011 main places are `locality / main place` (a statistical class, documented in TYPE_FIELD.md, not a legal
+  status). Sekhukhune (DC47) is held: its seat has no record.
+- **Armenia:** the consolidated communities under the law in force on 19 September 2026: 47 `municipality / համայնք`
+  at level 2; 7 cities `city / քաղաք` and 250 villages `village / գյուղ` at level 3 under their community
+  (parent null where the community has no record); Yerevan `city` at level 1 with its districts as sections. Kasakh is
+  held: the classifier city it had matched is Aparan, 7.6 km away.
+- Items: **17 set** from a unique official-code match, **6 cleared** that belong to another place (two of them
+  Belarusian: Horad Brest and Horad Hrodna carried Baranavichy's item). Each kept municipality row and its new county
+  share the municipality's own item: the same entity in two datasets, as structure rule 7 allows for verified dual
+  records, until the rows are removed in v5.0.0.
+
+Held (412): all 328 Belarusian records (the full SOATO classifier, ОКРБ 003-2017, with its rural-council tier was not
+available), and South African and Armenian records with unproved identities, retired census codes or states to fix.
+
+Point ledger: [ZA_world4_points_2026-10.csv](ledgers/ZA_world4_points_2026-10.csv).
+
+### Sources
+South Africa: Municipal Demarcation Board municipal registers (2021 and 2026 layers; codes, categories and hierarchy
+as facts only, its terms restrict reuse; nothing else copied); Statistics South Africa Census 2011 main places,
+distributed by UCT Libraries (credited in the README). Armenia: the law on administrative-territorial division as
+incorporated on 19 September 2026 (ARLIS) and ArmStat's statistical classifier (facts only). Points:
+50 Wikidata, 1 GeoNames (Wikidata CC0; GeoNames CC BY 4.0, credited in the README), each checked inside its
+municipality. Time zones from IANA tzdb.
+
+### Rollback
+Revert the PR (squash commit); new county ids are 13853-13903; no record is removed.
