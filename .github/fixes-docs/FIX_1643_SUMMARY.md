@@ -149061,3 +149061,37 @@ Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived, OD
 
 ### Rollback
 Revert the PR (squash commit); the removed prefecture row is archived here; new county ids are 12663-12788.
+
+## China phase 15: Yunnan (model of #1975 to #1996)
+
+### Problem
+Yunnan's prefectures, autonomous prefectures, districts, counties and county-level cities were city records. Phase 9
+(#1992) fixed their names and items but held the structure: the 2026 register could not be downloaded.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **144 counties** (`administrative district`, official local term, official code): 16 prefecture-level units at level 2 and their
+  districts, counties, autonomous counties and county-level cities at level 3, named "<Name> District / County / City".
+  Each unit agrees in two sources, the register and its own Wikidata entry (code, Chinese name, current parent). 117
+  carry their own Wikidata item where no city keeps it.
+- Lanping (533325) is held: the register and its Wikidata entry disagree on the name.
+- **17 district rows become sections (区)** at level 3, linked to their own county.
+- **12 county-level cities stay cities** (`city / 市`) linked to their own county.
+- 26 points replaced with the unit's own open point checked inside its county; **5 items cleared**; **0 native names fixed and
+  the translations of 5 records** (5 records in all).
+
+No row is removed and no prefecture row is converted.
+
+Held (156 records keep a hold on at least one field): prefecture rows, townships, seats, duplicate pairs, Lanping.
+
+Point ledger: [CN_phase15_points_2026-10.csv](ledgers/CN_phase15_points_2026-10.csv).
+
+### Sources
+Yunnan Department of Civil Affairs register, as of 30 June 2025, read from its Internet Archive capture
+(https://web.archive.org/web/20251205135158id_/https://ynmz.yn.gov.cn/cms/quhuadaima.html); the 3 August 2026 edition could
+not be retrieved, so each unit's current parent is confirmed by its own Wikidata entry. Names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). Points:
+170 Wikidata P625 (CC0), 13 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+geoBoundaries (OSM-derived, ODbL) used only to check containment.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 12789-12932.
