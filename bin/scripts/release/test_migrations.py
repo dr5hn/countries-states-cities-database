@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stderr
 from pathlib import Path
+from unittest import mock
 
 import migrations as m
 from migrations import MigrationError, event_errors, field_changes, generate, row_hash
@@ -57,6 +58,14 @@ def removal(table, i, commit, parent, path, row, outcome, targets, auto=False, *
             'before_path': path, 'before_row_sha256': row_hash(row), 'outcome': outcome, 'targets': targets,
             'automatic_redirect': auto, 'review_status': 'reviewed', 'evidence': [{'url': 'https://example.invalid/test'}],
             'review': {'reason': 'test', 'reviewer': 'test'}, **extra}
+
+
+def restoration(table, i, commit, retired_commit, retired, restored, same):
+    """A reviewed restoration event as the ledger stores it."""
+    return {'schema_version': 1, 'event_type': 'restoration', 'table': table, 'id': i, 'event_commit': commit,
+            'retirement_commit': retired_commit, 'retired_row_sha256': row_hash(retired), 'restored_row_sha256': row_hash(restored),
+            'same_identity': same, 'review_status': 'reviewed', 'evidence': [{'url': 'https://example.invalid/test'}],
+            'review': {'reason': 'test', 'reviewer': 'test'}}
 
 
 def target(table, i, relation):
@@ -143,7 +152,22 @@ class EventSchemaTest(unittest.TestCase):
                         'boolean schema version': self.base(schema_version=True), 'list table': self.base(old_table=['cities']),
                         'dict outcome': self.base(outcome={'a': 1}), 'self target': self.base(targets=[target('cities', 2, 'merged_same_entity')]),
                         'short commit': self.base(event_commit='abc'), 'bad before': self.base(before=city(2, 'Other')),
-                        'float id': self.base(old_id=2.0), 'bool id': self.base(old_id=True)}.items():
+                        'float id': self.base(old_id=2.0), 'bool id': self.base(old_id=True),
+                        'url without host': self.base(evidence=[{'url': 'http://'}]),
+                        'blank manifest': self.base(evidence=[{'manifest': ' ', 'sha256': '0' * 64}]),
+                        'url with spaces': self.base(evidence=[{'url': 'https://example.invalid/a b'}])}.items():
+            self.assertTrue(event_errors(e, 'e'), name)
+        self.assertEqual(event_errors(self.base(evidence=[{'manifest': 'research/x.json', 'sha256': '0' * 64}]), 'e'), [])
+
+    def test_retiring_a_repurpose_is_declared_in_full(self):
+        """retires_repurpose needs its fields, a replacement among the targets, and no automatic redirect."""
+        fix = {'identity_event_commit': 'c' * 40, 'replacement': {'table': 'cities', 'id': 1}, 'replacement_kind': 'fresh'}
+        ok = self.base(automatic_redirect=False, retires_repurpose=fix)
+        self.assertEqual(event_errors(ok, 'e'), [])
+        for name, e in {'redirect': self.base(retires_repurpose=fix),
+                        'replacement not a target': self.base(automatic_redirect=False, retires_repurpose={**fix, 'replacement': {'table': 'cities', 'id': 7}}),
+                        'no successor': self.base(outcome='no_successor', automatic_redirect=False, targets=[], retires_repurpose=fix),
+                        'bad kind': self.base(automatic_redirect=False, retires_repurpose={**fix, 'replacement_kind': 'any'})}.items():
             self.assertTrue(event_errors(e, 'e'), name)
 
 
@@ -172,7 +196,7 @@ class HistoryTest(Case):
         self.assertEqual(removed[0]['current_targets'], [{'table': 'cities', 'id': 1, 'relations': ['merged_same_entity'], 'automatic_redirect': True}])
         self.assertEqual([(a['id'], a['added_commit']) for a in added], [(3, c1)])
         self.assertEqual(changed, [{'table': 'cities', 'id': 1, 'field': 'type', 'before': None, 'after': 'town', 'before_present': False, 'after_present': True}])
-        self.assertEqual(per_table['cities'], {'from_total': 2, 'to_total': 2, 'removed': 1, 'added': 1, 'changed_records': 1,
+        self.assertEqual(per_table['cities'], {'from_total': 2, 'to_total': 2, 'removed': 1, 'added': 1, 'restored': 0, 'changed_records': 1,
                                                'removal_events': 1, 'identity_events': 0, 'created_and_removed_in_interval': 0})
         header = (out / 'removed_ids.csv').read_text().splitlines()[0].split(',')
         self.assertEqual(header[:9], ['record', 'old_id', 'name', 'country_code', 'state_code', 'outcome', 'new_table', 'new_id', 'source'])
@@ -273,9 +297,9 @@ class HistoryTest(Case):
         c2 = self.repo.commit({'contributions/cities/YY.json': []})
         self.refused(c0, c2, [dict(ev, event_commit=c2)], 'did not change there')
 
-    def test_repurpose_needs_remediation_and_ends_redirects(self):
-        """A repurposed id may not remain at --to; once retired, an earlier merge into it resolves to the entity the
-        number used to denote, with no automatic redirect."""
+    def repurpose_history(self):
+        """City 1 merges into city 2; city 2 then comes to denote a town (the regency stays county 9); city 2 retires and
+        the town gets fresh city 3. Returns the commits and the merge, repurpose and retirement events."""
         counties = 'contributions/counties/XX.json'
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'A'), city(2, 'B Regency')], counties: [{'id': 9, 'name': 'B Regency'}]})
         c1 = self.repo.commit({CITY: [city(2, 'B Regency')]})
@@ -283,14 +307,45 @@ class HistoryTest(Case):
         c3 = self.repo.commit({CITY: [city(3, 'B Town')]})
         merge = removal('cities', 1, c1, c0, CITY, city(1, 'A'), 'merged_same_entity', [target('cities', 2, 'merged_same_entity')], auto=True)
         repurpose = identity_event(2, c2, city(2, 'B Regency'), 'repurpose', [target('counties', 9, 'prior_identity')])
+        fix = {'identity_event_commit': c2, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        retire = removal('cities', 2, c3, c2, CITY, city(2, 'B Town'), 'merged_same_entity',
+                         [target('cities', 3, 'merged_same_entity')], retires_repurpose=fix)
+        return (c0, c1, c2, c3), (merge, repurpose, retire)
+
+    def test_repurpose_needs_remediation_and_maps_to_the_earlier_identity(self):
+        """A repurposed id may not remain at --to, nor disappear without naming the other entity's replacement. Once
+        retired, the id and an earlier merge into it map to the entity the number first denoted, never automatically;
+        the town's fresh id is listed apart. Both placements of the repurpose give the same mapping."""
+        (c0, c1, c2, c3), (merge, repurpose, retire) = self.repurpose_history()
         self.refused(c0, c2, [merge, repurpose], 'still denotes the other entity')
-        retire = removal('cities', 2, c3, c2, CITY, city(2, 'B Town'), 'administrative_seat',
-                         [target('cities', 3, 'administrative_seat'), target('counties', 9, 'moved_dataset')])
-        (removed, rows, _, identity, *_), _ = self.gen(c0, c3, [merge, repurpose, retire])
+        bare = {k: v for k, v in retire.items() if k != 'retires_repurpose'}
+        self.refused(c0, c3, [merge, repurpose, bare], 'needs retires_repurpose')
+        regency = [{'table': 'counties', 'id': 9, 'relations': ['prior_identity'], 'automatic_redirect': False}]
+        town = [{'table': 'cities', 'id': 3, 'relations': ['merged_same_entity'], 'automatic_redirect': False}]
+        for frm in (c0, c2):
+            (removed, rows, _, identity, *_), _ = self.gen(frm, c3, [merge, repurpose, retire], out=f'out-{frm[:6]}')
+            own = [r for r in removed if r['old_id'] == 2][0]
+            self.assertEqual((own['current_targets'], own['later_entity_targets'], own['repurposed_at']), (regency, town, c2))
+            self.assertEqual(identity[0]['remediation']['replacement'], {'table': 'cities', 'id': 3})
+            self.assertEqual(identity[0]['event_before_from'], frm == c2)
+            self.assertNotIn('yes', [r[10] for r in rows])
+            self.assertIn(['cities', 3, 'later_entity>merged_same_entity'], [[r[6], r[7], r[9]] for r in rows])
+        (removed, *_), _ = self.gen(c0, c3, [merge, repurpose, retire])
         self.assertEqual(removed[0]['current_targets'], [{'table': 'counties', 'id': 9, 'relations': ['merged_same_entity', 'prior_identity'],
                                                          'automatic_redirect': False}])
-        self.assertEqual(identity[0]['remediation']['event_commit'], c3)
-        self.assertNotIn('yes', [r[10] for r in rows])
+
+    def test_fresh_replacement_must_be_new(self):
+        """A 'fresh' replacement that existed before the repurpose is refused; declared 'existing' it is accepted."""
+        counties = 'contributions/counties/XX.json'
+        c0 = self.repo.commit({**self.base_files, CITY: [city(2, 'B Regency'), city(3, 'B Town')], counties: [{'id': 9, 'name': 'B Regency'}]})
+        c1 = self.repo.commit({CITY: [city(2, 'B Town'), city(3, 'B Town')]})
+        c2 = self.repo.commit({CITY: [city(3, 'B Town')]})
+        repurpose = identity_event(2, c1, city(2, 'B Regency'), 'repurpose', [target('counties', 9, 'prior_identity')])
+        fix = {'identity_event_commit': c1, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'}
+        retire = removal('cities', 2, c2, c1, CITY, city(2, 'B Town'), 'merged_same_entity', [target('cities', 3, 'merged_same_entity')],
+                         retires_repurpose=fix)
+        self.refused(c0, c2, [repurpose, retire], 'must first appear after the repurpose')
+        self.gen(c0, c2, [repurpose, dict(retire, retires_repurpose={**fix, 'replacement_kind': 'existing'})])
 
     def test_events_off_the_release_line_are_refused(self):
         """An event on a branch that never joined the release line is refused, not ignored."""
@@ -309,8 +364,52 @@ class HistoryTest(Case):
         c2 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
         good = removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', [])
         self.gen(c1, c2, [good])
-        self.refused(c1, c2, [dict(good, before_row_sha256='0' * 64)], 'does not match history')
-        self.refused(c1, c2, [removal('cities', 1, c1, c0, CITY, city(1, 'One'), 'no_successor', [])], 'does not match history|was not removed')
+        self.refused(c1, c2, [dict(good, before_row_sha256='0' * 64)], 'before_row_sha256 does not match')
+        self.refused(c1, c2, [removal('cities', 1, c1, c0, CITY, city(1, 'One'), 'no_successor', [])], 'no such removal')
+
+    def test_earlier_events_get_the_same_checks(self):
+        """Before --from, a missing target, a held removal or identity event, a held event for a removal that never
+        happened, and a duplicate id in the history are refused, as they would be inside the interval."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        c3 = self.repo.commit({CITY: [city(1, 'One', type='village')]})
+        missing = removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'merged_same_entity', [target('cities', 999, 'merged_same_entity')])
+        self.refused(c2, c3, [missing], 'target cities 999 does not exist')
+        held = dict(removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', []), review_status='held')
+        self.refused(c2, c3, [held], 'held, not reviewed')
+        ghost = dict(removal('cities', 7, c1, c0, CITY, city(7, 'Ghost'), 'no_successor', []), review_status='held')
+        self.refused(c2, c3, [ghost], 'no such removal')
+        dual = identity_event(1, c2, city(1, 'One'), 'dual_role', [target('counties', 999, 'moved_dataset')])
+        self.refused(c2, c3, [dual], 'identity target counties 999 does not exist')
+        self.refused(c2, c3, [dict(identity_event(1, c2, city(1, 'One'), 'classification', []), review_status='held')], 'identity event is held')
+        d0 = self.repo.commit({CITY: [city(1, 'One'), city(5, 'Five'), city(5, 'Five again')]})
+        d1 = self.repo.commit({CITY: [city(1, 'One')]})
+        d2 = self.repo.commit({CITY: [city(1, 'One', type='city')]})
+        twice = removal('cities', 5, d1, d0, CITY, city(5, 'Five again'), 'no_successor', [])
+        self.refused(d1, d2, [twice], 'cities id 5 is duplicated')
+
+    def test_restoration_brings_back_the_same_entity(self):
+        """A retired id may return only with a reviewed restoration bound to its retirement and the same identity;
+        it is then an addition marked restored, accepted at a later --from, and unreviewed returns still fail."""
+        old, new = city(2, 'Two', wikiDataId='Q2'), city(2, 'Two', wikiDataId='Q2', type='town')
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), old]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        c2 = self.repo.commit({CITY: [city(1, 'One'), new]})
+        c3 = self.repo.commit({CITY: [city(1, 'One'), city(2, 'Two', wikiDataId='Q2', type='village')]})
+        retire = removal('cities', 2, c1, c0, CITY, old, 'no_successor', [])
+        back = restoration('cities', 2, c2, c1, old, new, {'wikiDataId': 'Q2'})
+        self.refused(c1, c2, [retire], 'in use again')
+        (_, _, added, *_), _ = self.gen(c1, c2, [retire, back])
+        self.assertEqual(added[0]['restored'], {'event_commit': c2, 'retirement_commit': c1})
+        (removed, _, added, _, _, per_table, _), _ = self.gen(c0, c2, [retire, back])
+        self.assertEqual((removed[0]['present_at_to'], removed[0]['restored_at'], added), (True, c2, []))
+        self.gen(c2, c3, [retire, back])
+        self.reserved.write_text(json.dumps({'table': 'cities', 'id': 2}) + '\n')
+        self.gen(c1, c2, [back])
+        self.refused(c1, c2, [restoration('cities', 2, c2, c1, old, new, {'wikiDataId': 'Q9'})], 'wikiDataId is not')
+        self.refused(c1, c2, [dict(back, restored_row_sha256='0' * 64)], 'restored_row_sha256 does not match')
+        self.refused(c1, c2, [dict(back, retirement_commit=c2)], 'not earlier on the first-parent line')
 
     def test_reads_use_the_resolved_sha(self):
         """After resolving --to once, no git read uses the movable branch name."""
@@ -324,6 +423,40 @@ class HistoryTest(Case):
         finally:
             m.git = real
         self.assertEqual([a for a in calls if any('moving' in str(x) for x in a)], [('rev-parse', '--verify', '--quiet', 'moving^{commit}')])
+
+    def test_future_event_when_to_is_the_root(self):
+        """A later release's event is ignored when --to is the root commit, with or without it."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Two')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]})
+        later = dict(removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', []), review_status='held')
+        self.gen(c0, c0, [later])
+        self.gen(c0, c0, [], out='out2')
+
+    def cli(self, ledger, meta=None):
+        """Run the command line on the scratch repository; returns (exit code, stderr)."""
+        err = io.StringIO()
+        with redirect_stderr(err):
+            code = m.main(['--from', 'HEAD', '--to', 'HEAD', '--ledger', str(ledger), '--reserved', str(self.reserved),
+                           '--meta', str(meta or self.meta), '--out', str(self.dir / 'cli'), '--repo', str(self.repo.root)])
+        return code, err.getvalue()
+
+    def test_cli_names_inputs_that_are_not_utf8(self):
+        """A bad byte in the ledger, the release metadata or a source file exits 1 naming the input, with no traceback."""
+        self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        bad = self.dir / 'bad.jsonl'
+        bad.write_bytes(b'{"x": "\xff"}\n')
+        self.assertEqual(self.cli(bad)[0], 1)
+        self.assertIn('not UTF-8', self.cli(bad)[1])
+        empty, meta = self.dir / 'empty.jsonl', self.dir / 'bad_meta.json'
+        empty.write_text('')
+        meta.write_bytes(b'{"data_version": "\xff"}')
+        self.assertIn('release metadata', self.cli(empty, meta)[1])
+        (self.repo.root / CITY).write_bytes(b'[{"id": 1, "name": "\xff"}]')
+        self.repo.run('add', '-A'); self.repo.run('commit', '-q', '-m', 'bad byte')
+        code, err = self.cli(empty)
+        self.assertEqual(code, 1)
+        self.assertIn(f'{CITY} at', err)
+        self.assertNotIn('Traceback', err)
 
     def test_cli_refuses_a_malformed_ledger(self):
         """A target without a relation makes the command exit 1 with a readable message."""
@@ -340,10 +473,6 @@ class HistoryTest(Case):
         self.assertFalse((self.dir / 'cli').exists())
 
 
-if __name__ == '__main__':
-    unittest.main()
-
-
 class RobustnessTest(Case):
     """Malformed numbers, deep chains, write failures and diagnostics."""
 
@@ -353,6 +482,17 @@ class RobustnessTest(Case):
         (self.repo.root / CITY).write_text('[{"id": 1, "name": "One", "country_code": "XX", "state_code": "AA", "population": NaN}]')
         self.repo.run('add', '-A'); self.repo.run('commit', '-q', '-m', 'nan')
         self.refused(c0, self.repo.run('rev-parse', 'HEAD'), [], 'invalid JSON')
+
+    def test_branching_chain_is_not_a_cycle(self):
+        """Seven levels in which two units are each split into the same next two resolve to those two, listed once."""
+        gate = m.Gate({}, {})
+        for level in range(7):
+            for unit in (2 * level + 1, 2 * level + 2):
+                gate.timeline[('cities', unit)].append((level + 1, 'removal', {
+                    'outcome': 'split_into', 'automatic_redirect': False,
+                    'targets': [target('cities', 2 * level + 3, 'split_into'), target('cities', 2 * level + 4, 'split_into')]}))
+        got = m.resolve_targets(gate, {('cities', 15): {}, ('cities', 16): {}}, [target('cities', 1, 'split_into')], 0, False)
+        self.assertEqual(sorted(x['id'] for x in got), [15, 16])
 
     def test_long_chain_without_recursion(self):
         """A valid chain longer than Python's recursion limit resolves."""
@@ -364,18 +504,40 @@ class RobustnessTest(Case):
         self.assertEqual((got[0]['id'], len(got[0]['relations']), got[0]['automatic_redirect']), (n, n, True))
 
     def test_write_failure_keeps_the_earlier_output(self):
-        """When the files cannot be written, the earlier complete output stays and the error says so."""
+        """When the files cannot be written, the earlier complete output stays and the error says where it is."""
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
         c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
         _, out = self.gen(c0, c1, [])
         before = {p.name: p.read_bytes() for p in out.iterdir()}
-        (self.dir / '.out.staging').write_text('blocks the staging folder')
-        with self.assertRaises(m.OutputError):
-            self.gen(c0, c1, [])
+        with mock.patch.object(m.csv, 'writer', side_effect=OSError('disk full')):
+            with self.assertRaisesRegex(m.OutputError, 'last complete output is in'):
+                self.gen(c0, c1, [])
         self.assertEqual({p.name: p.read_bytes() for p in out.iterdir()}, before)
+        self.assertEqual(sorted(p.name for p in self.dir.iterdir() if p.name.startswith('.out')), [])
+
+    def test_restart_after_an_interrupted_swap(self):
+        """A run stopped between the two renames left the last output in .out.previous; the next run puts it back
+        first, so a failure then still leaves it in place, and a good run replaces it."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        _, out = self.gen(c0, c1, [])
+        before = {p.name: p.read_bytes() for p in out.iterdir()}
+        out.rename(self.dir / '.out.previous')
+        with mock.patch.object(m.csv, 'writer', side_effect=OSError('disk full')):
+            with self.assertRaises(m.OutputError):
+                self.gen(c0, c1, [])
+        self.assertEqual({p.name: p.read_bytes() for p in out.iterdir()}, before)
+        out.rename(self.dir / '.out.previous')
+        self.gen(c0, c1, [])
+        self.assertEqual({p.name: p.read_bytes() for p in out.iterdir()}, before)
+        self.assertFalse((self.dir / '.out.previous').exists())
 
     def test_idless_rows_are_located(self):
         """Rows still without an id at --to are named by file and row."""
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
         c1 = self.repo.commit({'contributions/cities/YY.json': [{'name': 'New'}]})
         self.refused(c0, c1, [], 'contributions/cities/YY.json row 0')
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -10,8 +10,10 @@ Walks the first-parent history of contributions/ between two pinned commits and 
   release_manifest.json                release versions, both commits, totals and counts that reconcile, file SHA-256s
 It writes nothing and exits 1 when a removal has no reviewed event at the commit where it happened, an event's parent
 commit, path or before-row hash is wrong, a target is wrong or missing at that commit, a redirect is not a reviewed
-same-entity merge, a repurposed id still denotes the other entity at --to, an id is missing, malformed or duplicated,
-or a retired or reserved id is in use. An output failure keeps the earlier output.
+same-entity merge, a repurposed id still denotes the other entity at --to or is retired without naming the other
+entity's replacement, an id is missing, malformed or duplicated, or a retired or reserved id is in use without a
+reviewed restoration of the same entity. Events before --from get the same checks. An output failure keeps the
+earlier output.
 
 Usage:
   python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <candidate sha> \\
@@ -28,8 +30,10 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import urlsplit
 
 TABLES = {'countries': 'contributions/countries/countries.json', 'states': 'contributions/states/states.json',
           'counties': 'contributions/counties', 'cities': 'contributions/cities', 'postcodes': 'contributions/postcodes'}
@@ -52,6 +56,9 @@ IDENTITY_OUTCOMES = {   # decisions_4_final.md
     'repurpose': ({'prior_identity'}, 'prior_identity', 1, None),  # the number came to denote another entity; the earlier one
     'unresolved': (set(), None, 0, 0),                           # what the row first denoted is not established
 }
+EVENT_TYPES = ('removal', 'identity', 'restoration')
+REPLACEMENT_KINDS = ('fresh', 'existing')   # the other entity of a repurposed id: a never-used id, or a proved existing one
+EXPANSION_LIMIT = 1_000_000   # target paths visited from one record; real chains are short, branching ones can multiply
 SHA1, SHA256 = re.compile(r'[0-9a-f]{40}'), re.compile(r'[0-9a-f]{64}')
 META_KEYS = ('data_version', 'contract_version', 'policy_version', 'data_schema_version')
 FORMAT_VERSION = 2
@@ -119,14 +126,29 @@ def relation_table_ok(relation, old_table, table):
 
 
 def evidence_ok(item):
-    """A usable evidence object: a research manifest with its SHA-256, or a source URL."""
-    return isinstance(item, dict) and (
-        (is_str(item.get('manifest')) and bool(item['manifest']) and is_str(item.get('sha256')) and bool(SHA256.fullmatch(item['sha256'])))
-        or (is_str(item.get('url')) and item['url'].startswith(('https://', 'http://'))))
+    """A usable evidence object: {"manifest": <non-blank path>, "sha256": <its SHA-256>}, or {"url": <http(s) URL with a
+    host>}. Only the shape is checked; sources are never fetched."""
+    if not isinstance(item, dict):
+        return False
+    if is_str(item.get('manifest')) and item['manifest'].strip():
+        return is_str(item.get('sha256')) and bool(SHA256.fullmatch(item['sha256']))
+    url = item.get('url')
+    if not is_str(url) or any(ch.isspace() for ch in url):
+        return False
+    try:
+        parts = urlsplit(url)
+        return parts.scheme in ('https', 'http') and bool(parts.hostname)
+    except ValueError:
+        return False
+
+
+def key_ok(t):
+    """A {"table", "id"} object naming a known table and a positive integer id."""
+    return isinstance(t, dict) and is_str(t.get('table'), TABLES) and positive_id(t.get('id'))
 
 
 def event_errors(e, where):
-    """Schema errors of one ledger event, a removal (the default) or an identity event; empty when valid."""
+    """Schema errors of one ledger event: a removal (the default), an identity event or a restoration; empty when valid."""
     if not isinstance(e, dict):
         return [f'{where}: not a JSON object']
     errs = []
@@ -136,15 +158,26 @@ def event_errors(e, where):
             errs.append(f'{where}: {msg}')
 
     kind = e.get('event_type', 'removal')
+    sha1 = lambda k: is_str(e.get(k)) and bool(SHA1.fullmatch(e[k]))
+    sha256 = lambda k: is_str(e.get(k)) and bool(SHA256.fullmatch(e[k]))
     need(type(e.get('schema_version')) is int and e['schema_version'] == 1, 'schema_version must be the integer 1')
-    need(is_str(kind, ('removal', 'identity')), f'event_type {kind!r} is not removal or identity')
+    if not is_str(kind, EVENT_TYPES):
+        return errs + [f'{where}: event_type {kind!r} is not one of {", ".join(EVENT_TYPES)}']
     tkey, ikey = ('old_table', 'old_id') if kind == 'removal' else ('table', 'id')
     need(is_str(e.get(tkey), TABLES), f'{tkey} {e.get(tkey)!r} is not a known table')
     need(positive_id(e.get(ikey)), f'{ikey} must be a positive integer')
-    need(is_str(e.get('event_commit')) and bool(SHA1.fullmatch(e['event_commit'])), 'event_commit must be a full commit SHA')
-    need(is_str(e.get('before_row_sha256')) and bool(SHA256.fullmatch(e['before_row_sha256'])), 'before_row_sha256 must be a SHA-256')
-    if 'before' in e:
-        need(isinstance(e['before'], dict) and row_hash(e['before']) == e.get('before_row_sha256'), 'before does not hash to before_row_sha256')
+    need(sha1('event_commit'), 'event_commit must be a full commit SHA')
+    if kind == 'restoration':
+        need(sha1('retirement_commit'), 'retirement_commit must be a full commit SHA')
+        need(sha256('retired_row_sha256') and sha256('restored_row_sha256'), 'retired_row_sha256 and restored_row_sha256 must be SHA-256s')
+        same = e.get('same_identity')
+        need(isinstance(same, dict) and len(same) > 0 and all(
+            k not in MANAGED | {'id'} and (is_str(v) or positive_id(v)) for k, v in same.items()),
+            'same_identity must map identifying fields (not id or managed fields) to the string or integer both rows hold')
+    else:
+        need(sha256('before_row_sha256'), 'before_row_sha256 must be a SHA-256')
+        if 'before' in e:
+            need(isinstance(e['before'], dict) and row_hash(e['before']) == e.get('before_row_sha256'), 'before does not hash to before_row_sha256')
     if kind == 'removal':
         need(is_str(e.get('before_commit')) and bool(SHA1.fullmatch(e['before_commit'])), 'before_commit must be a full commit SHA')
         need(is_str(e.get('before_path')) and e['before_path'].startswith('contributions/'), 'before_path must be a contributions/ path')
@@ -155,7 +188,9 @@ def event_errors(e, where):
     need(isinstance(review, dict) and all(is_str(review.get(k)) and review[k].strip() for k in ('reason', 'reviewer')),
          'a reviewed event needs review.reason and review.reviewer')
     need(isinstance(e.get('evidence'), list) and len(e['evidence']) > 0 and all(evidence_ok(x) for x in e['evidence']),
-         'a reviewed event needs evidence: objects with a manifest and its sha256, or a source url')
+         'a reviewed event needs evidence: objects with a manifest and its sha256, or an http(s) url with a host')
+    if kind == 'restoration':
+        return errs
     need(type(e.get('automatic_redirect')) is bool, 'automatic_redirect must be true or false')
     rules = REMOVAL_OUTCOMES if kind == 'removal' else IDENTITY_OUTCOMES
     outcome, targets = e.get('outcome'), e.get('targets')
@@ -175,35 +210,52 @@ def event_errors(e, where):
     need(required is None or any(isinstance(t, dict) and t.get('relation') == required for t in targets), f'{outcome} needs a {required} target')
     need(not e.get('automatic_redirect') or (kind == 'removal' and outcome == 'merged_same_entity'),
          'automatic_redirect is allowed only for a reviewed merged_same_entity removal')
+    if 'retires_repurpose' in e:
+        fix = e['retires_repurpose']
+        ok = (kind == 'removal' and isinstance(fix, dict) and is_str(fix.get('identity_event_commit'))
+              and bool(SHA1.fullmatch(fix['identity_event_commit'])) and key_ok(fix.get('replacement'))
+              and is_str(fix.get('replacement_kind'), REPLACEMENT_KINDS))
+        need(ok, 'retires_repurpose needs identity_event_commit, replacement {table, id} and replacement_kind fresh or existing')
+        if ok:
+            need((fix['replacement']['table'], fix['replacement']['id']) in keys, 'the replacement must be one of the targets')
+            need(e.get('automatic_redirect') is False, 'the removal that retires a repurposed id cannot redirect automatically')
     return errs
+
+
+def read_utf8(path, what):
+    """A file's text; bytes that are not UTF-8 are refused with the file named."""
+    try:
+        return Path(path).read_bytes().decode('utf-8')
+    except UnicodeDecodeError as err:
+        raise MigrationError(f'{what} {path}: not UTF-8 ({err.reason} at byte {err.start})') from err
 
 
 def read_jsonl(path, what):
     """Objects of a JSON Lines file, with the line number of any malformed line."""
     out = []
-    for n, line in enumerate(Path(path).read_text(encoding='utf-8').splitlines(), 1):
+    for n, line in enumerate(read_utf8(path, what).splitlines(), 1):
         if line.strip():
             out.append((n, strict_json(line, f'{what} {path} line {n}')))
     return out
 
 
 def load_ledger(path):
-    """Removal and identity events keyed by (table, id, event_commit); any schema error or repeated key fails."""
-    removals, identities, errors = {}, {}, []
+    """Removal, identity and restoration events, each keyed by (table, id, event_commit); any schema error or repeated
+    key fails."""
+    index, errors = {kind: {} for kind in EVENT_TYPES}, []
     for n, e in read_jsonl(path, 'ledger'):
         errs = event_errors(e, f'ledger line {n}')
         if errs:
             errors += errs
             continue
-        removal = e.get('event_type', 'removal') == 'removal'
-        key = (e['old_table'], e['old_id'], e['event_commit']) if removal else (e['table'], e['id'], e['event_commit'])
-        index = removals if removal else identities
-        if key in index:
-            errors.append(f'ledger line {n}: {key[0]} {key[1]} at {key[2][:12]} appears twice')
-        index[key] = e
+        kind = e.get('event_type', 'removal')
+        key = (e['old_table'], e['old_id'], e['event_commit']) if kind == 'removal' else (e['table'], e['id'], e['event_commit'])
+        if key in index[kind]:
+            errors.append(f'ledger line {n}: {kind} of {key[0]} {key[1]} at {key[2][:12]} appears twice')
+        index[kind][key] = e
     if errors:
         raise MigrationError(f'{len(errors)} ledger problem(s):\n  ' + '\n  '.join(errors[:50]))
-    return removals, identities
+    return index['removal'], index['identity'], index['restoration']
 
 
 def load_reserved(path):
@@ -218,7 +270,7 @@ def load_reserved(path):
 
 def load_meta(path):
     """Release metadata: the four version strings and a non-empty list of notices (paths or URLs)."""
-    meta = strict_json(Path(path).read_text(encoding='utf-8'), f'release metadata {path}')
+    meta = strict_json(read_utf8(path, 'release metadata'), f'release metadata {path}')
     bad = [k for k in META_KEYS if not (isinstance(meta, dict) and is_str(meta.get(k)) and meta[k].strip())]
     if bad or not (isinstance(meta.get('notices'), list) and meta['notices'] and all(is_str(x) and x for x in meta['notices'])):
         raise MigrationError(f'release metadata {path}: needs non-empty {", ".join(META_KEYS)} and a list of notices (missing or bad: {bad})')
@@ -258,7 +310,11 @@ def table_of(path):
 
 def parse_file(repo, sha, path, strict):
     """Keyed rows and the row numbers of id-less rows of one file at a commit; strict refuses id-less rows."""
-    rows = strict_json(git(repo, 'show', f'{sha}:{path}').decode('utf-8'), f'{path} at {sha[:12]}')
+    try:
+        text = git(repo, 'show', f'{sha}:{path}').decode('utf-8')
+    except UnicodeDecodeError as err:
+        raise MigrationError(f'{path} at {sha[:12]}: not UTF-8 ({err.reason} at byte {err.start})') from err
+    rows = strict_json(text, f'{path} at {sha[:12]}')
     if not isinstance(rows, list) or not all(isinstance(r, dict) for r in rows):
         raise MigrationError(f'{path} at {sha[:12]}: expected an array of objects')
     keyed, pending = [], []
@@ -306,22 +362,63 @@ class State:
 
 
 def snapshot(repo, sha):
-    """The full namespace at a commit (strict: every row has a valid, unique id)."""
+    """The full namespace at a commit. Rows without an id yet are kept as pending: history may have them."""
     s = State()
     for t, path in files_of(repo, sha):
-        rows, _ = parse_file(repo, sha, path, strict=True)
-        s.put(t, path, rows, [], sha)
+        s.put(t, path, *parse_file(repo, sha, path, strict=False), sha)
     return s
 
 
-def walk(repo, frm, to, on_commit, progress=None):
-    """Apply each first-parent commit's contributions changes to the --from namespace, calling
-    on_commit(index, sha, parent, removed, added, before, state) after each; returns the start rows and the final state."""
-    lines = git(repo, 'rev-list', '--first-parent', '--reverse', '--parents', f'{frm}..{to}').decode().split('\n')
+def idless(state):
+    """Rows still without an id, named by file, row and the commit that last wrote the file."""
+    return [f'{p} row {n} (since {sha[:12]})' for p, (sha, rows) in sorted(state.pending.items()) for n in rows]
+
+
+def changed_rows(repo, parent, commit):
+    """{key: (path, row)} before and after one commit, over the contributions files it changed; a key twice is refused."""
+    raw = git(repo, 'diff', '--name-status', '--no-renames', '-z', parent, commit, '--', 'contributions/').decode().split('\0')
+    then, now = {}, {}
+    for status, path in zip(raw[0::2], raw[1::2]):
+        t = table_of(path)
+        for side, sha, absent in ((then, parent, 'A'), (now, commit, 'D')):
+            if not t or status == absent:
+                continue
+            for r in parse_file(repo, sha, path, strict=False)[0]:
+                if (t, r['id']) in side:
+                    raise MigrationError(f'{t} id {r["id"]} is duplicated at {sha[:12]}: {side[(t, r["id"])][0]} and {path}')
+                side[(t, r['id'])] = (path, r)
+    return then, now
+
+
+def retired_row(repo, commit, key, later):
+    """The row of key removed at commit, which must come before later on later's first-parent line."""
+    if commit == later or commit not in first_parent_line(repo, later):
+        raise MigrationError(f'retirement_commit {commit[:12]} is not earlier on the first-parent line')
+    then, now = changed_rows(repo, git(repo, 'rev-parse', f'{commit}^1').decode().strip(), commit)
+    if key not in then or key in now:
+        raise MigrationError(f'{key[0]} {key[1]} was not removed at retirement_commit {commit[:12]}')
+    return then[key][1]
+
+
+def walk(repo, base, frm, to, on_commit, progress=None):
+    """Apply each first-parent commit after base, up to --to, to the namespace at base, calling
+    on_commit(index, sha, parent, removed, added, before, state) after each. base is --from, or an earlier commit on its
+    first-parent line when earlier events must be checked. Returns the rows at --from and the final state; every row
+    must have its id at --from and at --to."""
+    lines = git(repo, 'rev-list', '--first-parent', '--reverse', '--parents', f'{base}..{to}').decode().split('\n')
     commits = [ln.split() for ln in lines if ln.strip()]
-    state = snapshot(repo, frm)
-    start = dict(state.rows)
-    parent = frm
+    state, start = snapshot(repo, base), None
+
+    def at_from():
+        """The rows at --from, which must all have their ids."""
+        left = idless(state)
+        if left:
+            raise MigrationError(f'{len(left)} rows have no id at --from {frm[:12]}: ' + '; '.join(left[:20]))
+        return dict(state.rows)
+
+    if base == frm:
+        start = at_from()
+    parent = base
     for i, (c, first_parent, *_) in enumerate(commits, 1):
         if first_parent != parent:
             raise MigrationError(f'--from {frm[:12]} is not on the first-parent history of --to {to[:12]}')
@@ -337,47 +434,60 @@ def walk(repo, frm, to, on_commit, progress=None):
                 new_keys |= state.by_path[p]
         on_commit(i, c, parent, sorted(before.keys() - new_keys), sorted(new_keys - before.keys()), before, state)
         parent = c
+        if c == frm:
+            start = at_from()
         if progress and (i % 25 == 0 or i == len(commits)):
             progress(f'{i}/{len(commits)} commits')
-    if parent != to:
-        raise MigrationError(f'--to {to[:12]} does not descend from --from {frm[:12]}')
-    left = [f'{p} row {n} (since {sha[:12]})' for p, (sha, rows) in sorted(state.pending.items()) for n in rows]
+    if parent != to or start is None:
+        raise MigrationError(f'--to {to[:12]} does not descend from --from {frm[:12]} on its first-parent line')
+    left = idless(state)
     if left:
         raise MigrationError(f'{len(left)} rows have no id at --to; allocate ids in the source before generating: ' + '; '.join(left[:20]))
     return start, state
 
 
 class Gate:
-    """Checks each commit's removals, additions and identity events against the ledger and reserved ids, and keeps a
-    timeline of every event per key for target resolution."""
+    """Checks each commit's removals, additions and events against the ledger. Before --from it checks the events
+    only; inside the interval every removal also needs its event and a retired or reserved id may not return unless a
+    reviewed restoration brings it back. Keeps a timeline of removal and identity events per key for target resolution."""
 
-    def __init__(self, removals, identities, retired):
-        """Events in the interval, keyed (table, id, commit), and every id that may not appear again."""
-        self.removals, self.identities, self.retired = removals, identities, set(retired)
-        self.errors, self.used, self.events, self.identity, self.added_at = [], set(), [], [], {}
+    def __init__(self, removals, identities, restorations=None, reserved=(), interval=(), repo=None):
+        """Events keyed (table, id, commit), ids reserved before the walk, the interval's commits and the repository."""
+        self.removals, self.identities, self.restorations = removals, identities, restorations or {}
+        self.reserved, self.retired, self.interval, self.repo = set(reserved), set(reserved), set(interval), repo
+        self.errors, self.used, self.events, self.identity = [], set(), [], []
+        self.added_at, self.restored, self.repurposed, self.remediated = {}, {}, {}, {}
         self.timeline = defaultdict(list)   # key -> [(commit index, kind, event)] in history order
-        self.identity_at = defaultdict(list)
-        for key, e in identities.items():
-            self.identity_at[key[2]].append((key, e))
+        self.at = defaultdict(list)         # commit -> [(kind, key, event)] for identity and restoration events
+        for kind, events in (('identity', identities), ('restoration', self.restorations)):
+            for key, e in events.items():
+                self.at[key[2]].append((kind, key, e))
 
     def __call__(self, i, c, parent, removed, added, before, state):
         """Check one commit after it has been applied to the namespace."""
-        err = self.errors.append
+        inside, err = c in self.interval, self.errors.append
+        restored_here = set()
+        for kind, key, e in self.at.get(c, []):
+            if kind == 'restoration' and self.restoration_ok(i, c, key, e, added, state):
+                restored_here.add(key[:2])
         for k in added:
-            if k in self.retired:
+            if inside and k in self.retired and k not in restored_here:
                 err(f'{k[0]} {k[1]} is a retired or reserved id and is in use again at {c[:12]}')
-            self.added_at[k] = c
+            self.added_at[k] = (i, c)
         for k in removed:
-            self.retired.add(k)
-            path, row = before[k]
             e = self.removals.get((k[0], k[1], c))
+            if inside or e is not None:
+                self.retired.add(k)
             if e is None:
-                err(f'{k[0]} {k[1]} was removed at {c[:12]} but has no ledger event for that commit')
+                if inside or k in self.repurposed:
+                    err(f'{k[0]} {k[1]} was removed at {c[:12]} but has no ledger event for that commit')
+                self.repurposed.pop(k, None)
                 continue
             self.used.add((k[0], k[1], c))
             if e['review_status'] != 'reviewed':
                 err(f'{k[0]} {k[1]} at {c[:12]}: the event is {e["review_status"]}, not reviewed')
                 continue
+            path, row = before[k]
             if e['before_commit'] != parent or e['before_path'] != path:
                 err(f'{k[0]} {k[1]} at {c[:12]}: event before {e["before_commit"][:12]} {e["before_path"]}, actual {parent[:12]} {path}')
             if row_hash(row) != e['before_row_sha256']:
@@ -385,9 +495,12 @@ class Gate:
             for t in e['targets']:
                 if (t['table'], t['id']) not in state.rows:
                     err(f'{k[0]} {k[1]} at {c[:12]}: target {t["table"]} {t["id"]} does not exist after that commit')
-            self.events.append((k, c, e, row))
+            self.retirement_ok(i, c, k, e)
+            self.events.append((k, c, e, row, inside))
             self.timeline[k].append((i, 'removal', e))
-        for key, e in self.identity_at.get(c, []):
+        for kind, key, e in self.at.get(c, []):
+            if kind != 'identity':
+                continue
             k = key[:2]
             self.used.add(('identity',) + key)
             if e['review_status'] != 'reviewed':
@@ -400,8 +513,68 @@ class Gate:
                 for t in e['targets']:
                     if (t['table'], t['id']) not in state.rows:
                         err(f'{k[0]} {k[1]} at {c[:12]}: identity target {t["table"]} {t["id"]} does not exist after that commit')
-                self.identity.append((k, c, e, before[k][1], state.rows[k]))
+                if e['outcome'] == 'repurpose':
+                    self.repurposed[k] = (i, c, e)
+                self.identity.append((k, c, e, before[k][1], state.rows[k], inside))
                 self.timeline[k].append((i, 'identity', e))
+
+    def retirement_ok(self, i, c, k, e):
+        """The removal of a repurposed id must say it retires that repurpose and name the replacement id of the entity
+        the number came to denote: a fresh id first added after the repurpose and never reserved, or an existing id
+        that was already there before this commit. Its earlier identity is the repurpose's prior_identity."""
+        rp, fix, err = self.repurposed.pop(k, None), e.get('retires_repurpose'), self.errors.append
+        where = f'{k[0]} {k[1]} at {c[:12]}'
+        if rp is None:
+            if fix is not None:
+                err(f'{where}: retires_repurpose, but no reviewed repurpose of this id comes before it')
+            return
+        ri, rc, rep = rp
+        if fix is None:
+            err(f'{where}: removes an id repurposed at {rc[:12]}; the event needs retires_repurpose naming that repurpose '
+                'and the replacement id of the entity the number came to denote')
+            return
+        rkey = (fix['replacement']['table'], fix['replacement']['id'])
+        first = self.added_at.get(rkey)
+        if fix['identity_event_commit'] != rc:
+            err(f'{where}: retires_repurpose names {fix["identity_event_commit"][:12]}, but the repurpose is at {rc[:12]}')
+        elif fix['replacement_kind'] == 'fresh' and not (first and first[0] > ri and rkey not in self.reserved):
+            err(f'{where}: the fresh replacement {rkey[0]} {rkey[1]} must first appear after the repurpose and never be reserved')
+        elif fix['replacement_kind'] == 'existing' and first and first[0] >= i:
+            err(f'{where}: the existing replacement {rkey[0]} {rkey[1]} first appears at this commit; declare it fresh')
+        else:
+            self.remediated[(k, c)] = (ri, rc, rep, e)
+
+    def restoration_ok(self, i, c, key, e, added, state):
+        """A reviewed restoration brings a retired id back for the same entity: the id returns at this commit with the
+        reviewed row, it was removed at retirement_commit (earlier on this line) with the reviewed row, and both rows
+        hold the same identifying values. Marks the event used; returns whether it holds."""
+        k, err, where = key[:2], self.errors.append, f'{key[0]} {key[1]} at {c[:12]}'
+        self.used.add(('restoration',) + key)
+        if e['review_status'] != 'reviewed':
+            err(f'{where}: the restoration event is {e["review_status"]}, not reviewed')
+            return False
+        if k not in added:
+            err(f'{where}: restoration event, but the id does not return at that commit')
+            return False
+        try:
+            old = retired_row(self.repo, e['retirement_commit'], k, c)
+        except MigrationError as x:
+            err(f'{where}: {x}')
+            return False
+        new, problems = state.rows[k], []
+        if row_hash(new) != e['restored_row_sha256']:
+            problems.append('restored_row_sha256 does not match the returned row')
+        if row_hash(old) != e['retired_row_sha256']:
+            problems.append('retired_row_sha256 does not match the row removed at retirement_commit')
+        problems += [f'{f} is not {v!r} in both the retired and the restored row'
+                     for f, v in sorted(e['same_identity'].items()) if canon(old.get(f)) != canon(v) or canon(new.get(f)) != canon(v)]
+        for p in problems:
+            err(f'{where}: {p}')
+        if problems:
+            return False
+        self.retired.discard(k)
+        self.restored[k] = (i, c, e)
+        return True
 
     def next_event(self, key, after):
         """The first event on a key at a commit later than the given index, or None."""
@@ -414,24 +587,34 @@ def resolve_targets(gate, final, targets, index, auto):
     """Follow targets forward in history to what stands for them at --to, without recursion. A removal passes to its
     targets; a repurpose passes to the entity the number used to denote (prior_identity), never redirecting
     automatically; an unresolved identity keeps the key but ends any automatic redirect. A path that ends in a
-    removal with no successor is reported with that outcome."""
-    out, stack, steps = [], [(t, index, [t['relation']], auto) for t in reversed(targets)], 0
-    limit = 4 * (sum(len(v) for v in gate.timeline.values()) + len(targets)) + 16
+    removal with no successor is reported with that outcome. Every step moves to a strictly later event, so each path
+    ends; identical results are listed once. Branching histories can multiply paths, so more than EXPANSION_LIMIT steps
+    from one record is an error."""
+    out, seen, steps = [], set(), 0
+    stack = [(t, index, [t['relation']], auto) for t in reversed(targets)]
+
+    def emit(item):
+        """Add one resolved target unless the same one is already listed."""
+        if canon(item) not in seen:
+            seen.add(canon(item))
+            out.append(item)
+
     while stack:
         steps += 1
-        if steps > limit:
-            raise MigrationError('a target chain does not end; check the ledger for cycles')
+        if steps > EXPANSION_LIMIT:
+            raise MigrationError(f'the target paths from {canon(targets)[:200]} take more than {EXPANSION_LIMIT:,} steps; '
+                                 'check the ledger for an unintended fan-out of split events')
         t, at, relations, redirect = stack.pop()
         key = (t['table'], t['id'])
         nxt = gate.next_event(key, at)
         if nxt is None:
             if key in final:
-                out.append({'table': key[0], 'id': key[1], 'relations': relations, 'automatic_redirect': redirect})
+                emit({'table': key[0], 'id': key[1], 'relations': relations, 'automatic_redirect': redirect})
             continue
         i, kind, e = nxt
         if kind == 'removal':
             if not e['targets']:
-                out.append({'table': None, 'id': None, 'end': e['outcome'], 'relations': relations, 'automatic_redirect': False})
+                emit({'table': None, 'id': None, 'end': e['outcome'], 'relations': relations, 'automatic_redirect': False})
             for t2 in reversed(e['targets']):
                 stack.append((t2, i, relations + [t2['relation']], redirect and e['automatic_redirect']))
         elif e['outcome'] == 'repurpose':
@@ -469,34 +652,54 @@ def label(row):
 
 
 def build(start, state, gate, order):
-    """The release files' content: removed events, CSV rows, added ids, identity events, changed fields and counts."""
+    """The release files' content: removed events, CSV rows, added ids, identity events, changed fields and counts.
+    The removal that retires a repurposed id maps the id to its earlier identity (current_targets) and lists the
+    entity the number came to denote separately (later_entity_targets); neither redirects automatically."""
     final = state.rows
     removed = []
-    for k, c, e, row in gate.events:
-        removed.append({**e, 'before': row, 'present_at_from': k in start, 'present_at_to': False,
-                        'current_targets': resolve_targets(gate, final, e['targets'], order[c], e['automatic_redirect'])})
+    for k, c, e, row, inside in gate.events:
+        if not inside:
+            continue
+        entry = {**e, 'before': row, 'present_at_from': k in start, 'present_at_to': k in final}
+        if k in gate.restored and gate.restored[k][0] > order[c]:
+            entry['restored_at'] = gate.restored[k][1]   # the same entity came back later under this id
+        fix = gate.remediated.get((k, c))
+        if fix:
+            ri, rc, rep, _ = fix
+            entry.update(repurposed_at=rc, current_targets=resolve_targets(gate, final, rep['targets'], ri, False),
+                         later_entity_targets=resolve_targets(gate, final, e['targets'], order[c], False))
+        else:
+            entry['current_targets'] = resolve_targets(gate, final, e['targets'], order[c], e['automatic_redirect'])
+        removed.append(entry)
+    retirement_of = {(k, fix[1]): (c, fix[3]) for (k, c), fix in gate.remediated.items()}
     identity = []
-    for k, c, e, before, after in gate.identity:
-        later = gate.next_event(k, order[c])
-        while later and later[1] != 'removal':
-            later = gate.next_event(k, later[0])
+    for k, c, e, before, after, inside in gate.identity:
+        fix = retirement_of.get((k, c))
+        if not inside and not (fix and fix[0] in gate.interval):
+            continue   # an earlier decision is listed again only when its id is retired in this interval
         remediation = None
-        if later:
-            r = later[2]
-            remediation = {'event_commit': r['event_commit'], 'outcome': r['outcome'],
-                           'current_targets': resolve_targets(gate, final, r['targets'], later[0], r['automatic_redirect'])}
-        identity.append({**e, 'before': before, 'after': after, 'present_at_to': k in final, 'remediation': remediation,
-                         'current_targets': resolve_targets(gate, final, e['targets'], order[c], False)})
+        if fix:
+            rc, r = fix
+            remediation = {'event_commit': rc, 'outcome': r['outcome'], 'replacement': r['retires_repurpose']['replacement'],
+                           'replacement_kind': r['retires_repurpose']['replacement_kind'],
+                           'later_entity_targets': resolve_targets(gate, final, r['targets'], order[rc], False)}
+        identity.append({**e, 'before': before, 'after': after, 'event_before_from': not inside, 'present_at_to': k in final,
+                         'remediation': remediation, 'current_targets': resolve_targets(gate, final, e['targets'], order[c], False)})
     rows = []
     for r in removed:
         b, t = r['before'], r['old_table']
         base = [SINGULAR[t], r['old_id'], label(b), b.get('country_code', b.get('iso2') if t == 'countries' else '') or '',
                 b.get('state_code', b.get('iso2') if t == 'states' else '') or '', r['outcome']]
-        tail = [r.get('event_pr_url') or '']
-        rows += [base + [ct['table'] or '', ct['id'] or ''] + tail + ['>'.join(ct['relations']), 'yes' if ct['automatic_redirect'] else 'no', r['event_commit']]
-                 for ct in r['current_targets']] or [base + ['', ''] + tail + ['', 'no', r['event_commit']]]
-    added = [{'table': k[0], 'id': k[1], 'name': label(final[k]), 'path': state.path[k], 'added_commit': gate.added_at.get(k)}
-             for k in sorted(final.keys() - start.keys())]
+        line = lambda ct, relation, auto: (base + [ct.get('table') or '', ct.get('id') or '', r.get('event_pr_url') or '',
+                                                   relation, 'yes' if auto else 'no', r['event_commit']])
+        rows += [line(ct, '>'.join(ct['relations']), ct['automatic_redirect']) for ct in r['current_targets']] or [line({}, '', False)]
+        rows += [line(ct, '>'.join(['later_entity'] + ct['relations']), False) for ct in r.get('later_entity_targets', [])]
+    added = []
+    for k in sorted(final.keys() - start.keys()):
+        a = {'table': k[0], 'id': k[1], 'name': label(final[k]), 'path': state.path[k], 'added_commit': gate.added_at[k][1]}
+        if k in gate.restored:
+            a['restored'] = {'event_commit': gate.restored[k][1], 'retirement_commit': gate.restored[k][2]['retirement_commit']}
+        added.append(a)
     changed, counts = [], Counter()
     for k in sorted(start.keys() & final.keys()):
         if start[k] is final[k]:
@@ -512,6 +715,7 @@ def build(start, state, gate, order):
         if n_from - n_removed + n_added != n_to:
             raise MigrationError(f'{t}: counts do not reconcile ({n_from} - {n_removed} + {n_added} != {n_to})')
         per_table[t] = {'from_total': n_from, 'to_total': n_to, 'removed': n_removed, 'added': n_added,
+                        'restored': sum(1 for a in added if a['table'] == t and 'restored' in a),
                         'changed_records': len({c['id'] for c in changed if c['table'] == t}),
                         'removal_events': sum(1 for r in removed if r['old_table'] == t),
                         'identity_events': sum(1 for x in identity if x['table'] == t),
@@ -525,17 +729,17 @@ NAMES = ('removed_ids.jsonl', 'removed_ids.csv', 'added_ids.jsonl', 'identity_ch
 
 
 def write(out, removed, rows, added, identity, changed, per_table, field_counts, head):
-    """Write the six files into a staging folder, then swap it in for the output folder; on any failure the earlier
-    output stays as it was. Returns the SHA-256 of each data file."""
+    """Write the six files into a new staging folder, then swap it in for the output folder. The complete output is
+    never deleted before its replacement is installed: a backup an interrupted run left in .<out>.previous is put back
+    first, and the backup is removed only after the swap. Returns the SHA-256 of each data file."""
     out = Path(out)
-    staging, previous = out.parent / f'.{out.name}.staging', out.parent / f'.{out.name}.previous'
+    previous, staging = out.parent / f'.{out.name}.previous', None
     dump = lambda items: ''.join(json.dumps(i, ensure_ascii=False, sort_keys=True, allow_nan=False) + '\n' for i in items)
     try:
         out.parent.mkdir(parents=True, exist_ok=True)
-        for leftover in (staging, previous):
-            if leftover.exists():
-                shutil.rmtree(leftover)   # only this tool's own working folders, from an interrupted run
-        staging.mkdir()
+        if previous.exists() and not out.exists():
+            os.replace(previous, out)   # an interrupted swap left the last complete output here
+        staging = Path(tempfile.mkdtemp(prefix=f'.{out.name}.staging-', dir=out.parent))   # unique: never another run's
         (staging / 'removed_ids.jsonl').write_text(dump(removed), encoding='utf-8')
         with open(staging / 'removed_ids.csv', 'w', newline='', encoding='utf-8') as f:
             w = csv.writer(f, lineterminator='\n')
@@ -547,6 +751,8 @@ def write(out, removed, rows, added, identity, changed, per_table, field_counts,
         sums = {n: hashlib.sha256((staging / n).read_bytes()).hexdigest() for n in NAMES}
         manifest = {**head, 'tables': per_table, 'changed_field_counts': field_counts, 'files': sums}
         (staging / 'release_manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True, allow_nan=False) + '\n', encoding='utf-8')
+        if previous.exists():
+            shutil.rmtree(previous)   # an older backup: the complete output is in out
         if out.exists():
             os.replace(out, previous)
         try:
@@ -555,13 +761,22 @@ def write(out, removed, rows, added, identity, changed, per_table, field_counts,
             if previous.exists() and not out.exists():
                 os.replace(previous, out)
             raise
-        if previous.exists():
-            shutil.rmtree(previous)
-        return sums
     except (OSError, ValueError) as err:
-        if staging.exists():
+        if staging and staging.exists():
             shutil.rmtree(staging, ignore_errors=True)
-        raise OutputError(f'could not write {out}: {err}') from err
+        kept = next((str(p) for p in (out, previous) if p.exists()), None)
+        raise OutputError(f'could not write {out}: {err}' + (f'; the last complete output is in {kept}' if kept else '')) from err
+    shutil.rmtree(previous, ignore_errors=True)   # a leftover is replaced by the next run, never read
+    return sums
+
+
+def on_line_after(repo, commit, to):
+    """Whether commit is later than to on a line whose first parents pass through to (works when to is the root)."""
+    line = first_parent_line(repo, commit, to)
+    if not line:
+        return False
+    r = subprocess.run(['git', '-C', str(repo), 'rev-parse', '--verify', '--quiet', f'{line[-1]}^1'], capture_output=True)
+    return r.returncode == 0 and r.stdout.decode().strip() == to
 
 
 def place_commits(repo, frm, to, commits):
@@ -577,7 +792,7 @@ def place_commits(repo, frm, to, commits):
             place[c] = 'before'
         else:
             r = subprocess.run(['git', '-C', str(repo), 'cat-file', '-e', f'{c}^{{commit}}'], capture_output=True)
-            if r.returncode == 0 and to in first_parent_line(repo, c, to + '^'):
+            if r.returncode == 0 and on_line_after(repo, c, to):
                 place[c] = 'after'
             else:
                 off.append(c)
@@ -587,68 +802,42 @@ def place_commits(repo, frm, to, commits):
     return interval, place
 
 
-def verify_earlier(repo, removals, identities):
-    """Check events before --from against history, commit by commit, reading only the files each commit changed (an id
-    that leaves one file can only reappear in a file the same commit changed): a removal's parent, path and before-row
-    hash must match and the id must be gone at its commit; an identity event's record must have changed there.
-    Rows without an id yet, allowed in history, are skipped."""
-    errors, by_commit = [], defaultdict(list)
-    for key, e in list(removals.items()) + list(identities.items()):
-        by_commit[key[2]].append((key, e))
-    for c, items in sorted(by_commit.items()):
-        parent = git(repo, 'rev-parse', f'{c}^1').decode().strip()
-        raw = git(repo, 'diff', '--name-status', '--no-renames', '-z', parent, c, '--', 'contributions/').decode().split('\0')
-        changed = [(s, p) for s, p in zip(raw[0::2], raw[1::2]) if table_of(p)]
-        then, now = {}, {}
-        for status, path in changed:
-            if status != 'A':
-                then.update({(table_of(path), r['id']): (path, r) for r in parse_file(repo, parent, path, strict=False)[0]})
-            if status != 'D':
-                now.update({(table_of(path), r['id']): (path, r) for r in parse_file(repo, c, path, strict=False)[0]})
-        for key, e in items:
-            k = key[:2]
-            if e.get('event_type', 'removal') == 'removal':
-                if e['before_commit'] != parent:
-                    errors.append(f"{k[0]} {k[1]} at {c[:12]}: before_commit is not the commit's first parent")
-                elif k not in then or then[k][0] != e['before_path'] or row_hash(then[k][1]) != e['before_row_sha256']:
-                    errors.append(f'{k[0]} {k[1]} at {c[:12]}: the before row, path or hash does not match history')
-                elif k in now:
-                    errors.append(f'{k[0]} {k[1]} at {c[:12]}: the id was not removed at that commit')
-            elif k not in then or k not in now or row_hash(then[k][1]) != e['before_row_sha256'] or canon(then[k][1]) == canon(now[k][1]):
-                errors.append(f'{k[0]} {k[1]} at {c[:12]}: the identity event does not match history')
-    return errors
-
-
 def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
-    problem in the inputs or the history, OutputError when the files cannot be written."""
-    removals, identities = load_ledger(ledger)
+    problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
+    checked by the same walk, which then starts at the first parent of the oldest of them."""
+    removals, identities, restorations = load_ledger(ledger)
     reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
-    interval, place = place_commits(repo, frm, to, {k[2] for k in removals} | {k[2] for k in identities})
-    earlier_r = {k: e for k, e in removals.items() if place[k[2]] == 'before'}
-    earlier_i = {k: e for k, e in identities.items() if place[k[2]] == 'before'}
-    log(f'checking {len(earlier_r)} earlier removal and {len(earlier_i)} earlier identity events against history')
-    errors = verify_earlier(repo, {k: e for k, e in earlier_r.items() if e['review_status'] == 'reviewed'},
-                            {k: e for k, e in earlier_i.items() if e['review_status'] == 'reviewed'})
-    retired = set(reserved) | {k[:2] for k in earlier_r}
-    repurposed = {k[:2]: k[2] for k, e in identities.items() if place[k[2]] in ('before', 'in') and e.get('outcome') == 'repurpose'}
-    gate = Gate({k: e for k, e in removals.items() if place[k[2]] == 'in'}, {k: e for k, e in identities.items() if place[k[2]] == 'in'}, retired)
-    order = {}
-    log(f'walking {len(interval)} commits from {frm[:12]} to {to[:12]}')
+    every = {k[2] for d in (removals, identities, restorations) for k in d}
+    interval, place = place_commits(repo, frm, to, every)
+    applies = lambda d: {k: e for k, e in d.items() if place[k[2]] != 'after'}   # a later release's events wait for it
+    base, earlier = frm, {c for c in every if place[c] == 'before'}
+    if earlier:
+        position = {c: n for n, c in enumerate(first_parent_line(repo, frm))}
+        base = git(repo, 'rev-parse', f'{max(earlier, key=position.get)}^1').decode().strip()
+        log(f'checking events at {len(earlier)} earlier commits by walking from {base[:12]}')
+    gate = Gate(applies(removals), applies(identities), applies(restorations), reserved, interval, repo)
+    order, retired_at_from = {}, set(reserved)
+    log(f'walking to {to[:12]}; {len(interval)} commits since --from {frm[:12]}')
 
     def on_commit(i, c, *rest):
-        """Remember each commit's position, then run the gate on it."""
+        """Remember each commit's position, run the gate on it, and note what is retired at --from."""
         order[c] = i
         gate(i, c, *rest)
+        if c == frm:
+            retired_at_from.clear()
+            retired_at_from.update(gate.retired)
 
-    start, state = walk(repo, frm, to, on_commit, progress=log)
-    errors += gate.errors + [f'{k[0]} {k[1]} is retired or reserved but present at --from' for k in sorted(retired & start.keys())]
+    start, state = walk(repo, base, frm, to, on_commit, progress=log)
+    errors = gate.errors + [f'{k[0]} {k[1]} is retired or reserved but present at --from' for k in sorted(retired_at_from & start.keys())]
     errors += [f'{k[0]} {k[1]}: event at {k[2][:12]}, but no such removal happened at that commit'
-               for k in sorted(gate.removals.keys() - gate.used)]
-    errors += [f'{k[0]} {k[1]}: identity event at {k[2][:12]} was not checked' for k in sorted(gate.identities) if ('identity',) + k not in gate.used]
+               for k in sorted(gate.removals.keys()) if k not in gate.used]
+    errors += [f'{k[0]} {k[1]}: {kind} event at {k[2][:12]} was not checked; the record did not change at that commit'
+               for kind, d in (('identity', gate.identities), ('restoration', gate.restorations))
+               for k in sorted(d) if (kind,) + k not in gate.used]
     errors += [f'{k[0]} {k[1]} was repurposed at {c[:12]} and still denotes the other entity at --to; retire it with its earlier '
-               f'identity and give that entity a fresh id' for k, c in sorted(repurposed.items()) if k in state.rows]
+               f'identity and give that entity a fresh id' for k, (_, c, _) in sorted(gate.repurposed.items()) if k in state.rows]
     if errors:
         raise MigrationError(f'{len(errors)} problem(s):\n  ' + '\n  '.join(errors[:50]) + ('\n  ...' if len(errors) > 50 else ''))
     content = build(start, state, gate, order)
