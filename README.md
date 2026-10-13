@@ -218,6 +218,7 @@ Official registers matched to records (categories, codes and unit names) also as
 - [Statistical Office of the Slovak Republic](https://slovak.statistics.sk/wps/portal/ext/aboutus/webpage/terms/), register of spatial units REGPJ (CC BY 4.0)
 - [Geodetska uprava Republike Slovenije](https://www.e-prostor.gov.si/dostopi/javni-dostop/) (GURS), register of spatial units RPE, 13 October 2026 (CC BY 4.0)
 - [Maa- ja Ruumiamet](https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html), administrative and settlement division, 2 September 2026 (public data terms)
+- [Central Statistics Office](https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/) and Tailte Éireann, Census 2022 built-up areas (CC BY 4.0)
 
 Keep these credits when you redistribute the data.
 

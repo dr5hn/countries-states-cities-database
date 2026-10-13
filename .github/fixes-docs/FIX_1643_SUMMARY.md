@@ -157129,3 +157129,26 @@ linked the hierarchy fields and rounded copied points to eight decimals. The reg
 
 ### Rollback
 Revert the PR (squash commit); the removed rows are archived here; new county ids are 13664-13742.
+
+## Smallest ISO unit, round 3: Ireland and Estonia
+
+### Problem
+Round 1 (#1777) moved most Irish and Estonian cities to their county or municipality, but left 154 Irish records on a
+province and 42 Estonian records on a county (rule 1: a city's state is the smallest ISO 3166-2 unit containing it). The
+first typing passes (#2004, #2006) cannot type them until their state is right.
+
+### Fix
+**39 records moved** to the unit that contains them, each matched to its own official unit with its point inside it:
+- Estonia 30: 27 municipality rows to their own municipality (Anija vald, Antsla vald, Haljala vald, Jõgeva vald and others), matched by their
+  EHAK code in the 2 September 2026 register, and 3 settlements (Ruhnu, Saku, Vaiatu).
+- Ireland 9: Buncrana, Derrybeg, Dingle, Dungloe, Graiguenamanagh, Inishcrone, Portraine, Rathwire, Tobercurry, each matched to its CSO 2022 built-up area and lying inside its county.
+
+Held (157): Ireland 145: 79 with no official register name (mostly Dublin suburbs such as Artane, Ballymun
+and Blackrock, which the CSO counts inside Dublin city), 36 whose point lies outside the matched unit, 18 that are not
+places, 8 with an unresolved scope and 4 namesakes; Estonia 12: 8 points outside, 3 affected by the Jõhvi and
+Toila merger (the state list needs updating first) and 1 namesake.
+
+### Sources
+Central Statistics Office and Tailte Éireann, Census 2022 built-up areas and county boundaries (CC BY 4.0); Maa- ja
+Ruumiamet, administrative and settlement division of 2 September 2026; both are credited in the README. Wikidata (CC0)
+for own-code lookups only. Boundaries are used only to check that a point lies inside its unit.
