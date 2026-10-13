@@ -39,13 +39,20 @@ jobs:
       fail-fast: false
 
     steps:
-      # Exports are built from the current master commit only: a release names the commit its data came from, and the
-      # default token cannot publish from a source whose workflow files differ from master's (old runs included)
+      # Production exports are built from the current master commit only: a release names the commit its data came from,
+      # and the default token cannot publish from a source whose workflow files differ from master's (old runs included).
+      # They also need the repository variable EXPORT_PRODUCTION_ENABLED = true, unset while exports are paused.
       - name: Require the current master commit
         if: env.MODE == 'production'
         uses: actions/github-script@v8
+        env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
         with:
           script: |
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
             const { data: master } = await github.rest.repos.getBranch({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -62,7 +69,7 @@ jobs:
           fetch-depth: 1
           submodules: true
           ref: ${{ github.head_ref }}
-          persist-credentials: true
+          persist-credentials: ${{ env.MODE == 'production' }}   # candidate builds never hold the write token in .git
           lfs: false
 
       - name: Setup PHP
@@ -492,16 +499,118 @@ jobs:
           echo "📊 Compressed file sizes:"
           ls -lh json/*.gz toon/*.gz geojson/*.gz xml/*.gz yml/*.gz csv/*.gz parquet/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz 2>/dev/null || true
 
+      - name: Update README.md
+        run: |
+          county_total=$(python3 -c 'import sys; print(f"{int(sys.argv[1]):,}")' "$county_count")
+          sed -i "s/\*\*[0-9,]*\*\* counties/**$county_total** counties/" README.md
+          sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
+          sed -i "s/Total Sub Regions : [0-9]* <br>/Total Sub Regions : $subregion_count <br>/" README.md
+          sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md
+          sed -i "s/Total States\/Regions\/Municipalities : [0-9]* <br>/Total States\/Regions\/Municipalities : $state_count <br>/" README.md
+          sed -i "s/Total Cities\/Towns\/Districts : [0-9]* <br>/Total Cities\/Towns\/Districts : $city_count <br>/" README.md
+          sed -i "s/Total Postcodes : [0-9,]* ([0-9]* countries) <br>/Total Postcodes : $postcode_count ($postcode_country_count countries) <br>/" README.md
+          sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
+
+      - name: Check every file a release carries
+        run: |
+          # Fails when any expected export is missing or empty, or the required notice is absent (both modes)
+          required=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+          )
+          for file in "${required[@]}"; do
+            [ -s "$file" ] || { echo "::error::missing or empty required export: $file"; exit 1; }
+          done
+          [ -s .github/licenses/Unicode-3.0.txt ] || { echo "::error::Required notice Unicode-3.0.txt is missing"; exit 1; }
+          echo "${#required[@]} exports and the notices present"
+
       - name: Checksums for the candidate
         if: env.MODE == 'candidate'
         run: |
           mkdir -p candidate-notices && cp .github/licenses/*.txt candidate-notices/
-          shopt -s nullglob
-          files=(json/*.gz sql/*.gz psql/*.gz sqlite/*.gz sqlserver/*.gz xml/*.gz yml/*.gz csv/*.gz toon/*.gz geojson/*.gz \
-                 parquet/*.gz mongodb/world-mongodb-dump.tar.gz candidate-notices/*.txt)
-          [ ${#files[@]} -gt 1 ] || { echo "::error::no export files to keep"; exit 1; }
+          # The small files a production export PR would commit: tracked and new unignored files in the export folders,
+          # the schema, the README and contributions, as generated by this run
+          git ls-files -z --cached --others --exclude-standard -- json csv xml yml toon geojson parquet sql psql sqlite \
+            sqlserver bin/db/schema.sql README.md contributions | grep -zv '\.gz$' | tar --null -czf candidate-small-files.tar.gz -T -
+          files=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+            candidate-notices/*.txt candidate-small-files.tar.gz
+          )
           sha256sum "${files[@]}" > CANDIDATE_SHA256SUMS
-          echo "source ${GITHUB_SHA} ref ${GITHUB_REF} run ${GITHUB_RUN_ID}" > CANDIDATE_SOURCE
+          echo "source ${GITHUB_SHA} ref ${GITHUB_REF} run ${GITHUB_RUN_ID} attempt ${GITHUB_RUN_ATTEMPT}" > CANDIDATE_SOURCE
           wc -l CANDIDATE_SHA256SUMS
 
       - name: Keep the candidate as a workflow artifact (nothing is published)
@@ -523,27 +632,17 @@ jobs:
             parquet/*.gz
             mongodb/world-mongodb-dump.tar.gz
             candidate-notices/*.txt
+            candidate-small-files.tar.gz
             CANDIDATE_SHA256SUMS
             CANDIDATE_SOURCE
           if-no-files-found: error
           retention-days: 30
 
-      - name: Update README.md
-        run: |
-          county_total=$(python3 -c 'import sys; print(f"{int(sys.argv[1]):,}")' "$county_count")
-          sed -i "s/\*\*[0-9,]*\*\* counties/**$county_total** counties/" README.md
-          sed -i "s/Total Regions : [0-9]* <br>/Total Regions : $region_count <br>/" README.md
-          sed -i "s/Total Sub Regions : [0-9]* <br>/Total Sub Regions : $subregion_count <br>/" README.md
-          sed -i "s/Total Countries : [0-9]* <br>/Total Countries : $country_count <br>/" README.md
-          sed -i "s/Total States\/Regions\/Municipalities : [0-9]* <br>/Total States\/Regions\/Municipalities : $state_count <br>/" README.md
-          sed -i "s/Total Cities\/Towns\/Districts : [0-9]* <br>/Total Cities\/Towns\/Districts : $city_count <br>/" README.md
-          sed -i "s/Total Postcodes : [0-9,]* ([0-9]* countries) <br>/Total Postcodes : $postcode_count ($postcode_country_count countries) <br>/" README.md
-          sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
-
       - name: Create GitHub Release with exports
-        if: env.MODE == 'production'
+        if: env.MODE == 'production' && vars.EXPORT_PRODUCTION_ENABLED == 'true'
         uses: actions/github-script@v8
         env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
           CURRENT_DATE: ${{ env.current_date }}
           REGION_COUNT: ${{ env.region_count }}
           SUBREGION_COUNT: ${{ env.subregion_count }}
@@ -557,6 +656,10 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
             // Master may have moved during the build: check again before anything is created
             const { data: master } = await github.rest.repos.getBranch({
               owner: context.repo.owner,
@@ -765,7 +868,7 @@ jobs:
             core.info(`Release published with all export assets and ${noticeAssets.length} notices.`);
 
       - name: Create Pull Request
-        if: env.MODE == 'production'
+        if: env.MODE == 'production' && vars.EXPORT_PRODUCTION_ENABLED == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           commit-message: |
