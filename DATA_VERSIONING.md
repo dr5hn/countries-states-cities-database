@@ -13,15 +13,17 @@ such as a town, a municipality or a region. It does not identify a fixed set of 
   Wikidata item, type and level, and its links to a parent, county or state.
 - A different entity never gets an existing key. A different settlement, territorial unit, part of a unit or
   successor after a reform gets its own key, and the records are linked.
-- A retired key is never used again. The release that retires it says what became of the entity.
+- A retired key is never used for anything else. The release that retires it says what became of the entity. The
+  only way back is a reviewed restoration of the **same** entity, checked against the row the key had when it was
+  retired: Finland's region FI-01 (`states` 1509) is the first.
 - One record may stand for a unit and its main place only where the country's documented model allows it
   (ADMINISTRATIVE_STRUCTURE.md, rule 7). Such a dual record does not make the seat town equal to the unit's
   territory.
 
 Some records predate typing, and what they first denoted (a town, or the municipality around it) can no longer be
-established. Each release lists these keys as `unresolved` in its identity file, with what is known. On these keys,
-a municipal type states the national category, not a proved territorial boundary. If you need strict territorial
-scope, exclude them by that list.
+established. Each release lists these keys as `unresolved` in its identity file, with what is known. A later type,
+level or link is kept on such a key only when the evidence ties it to the entity the key already denoted; otherwise
+the key keeps the value it had in v4.0. If you need strict territorial scope, exclude these keys by that list.
 
 ## What each kind of release may change
 
@@ -35,7 +37,7 @@ tagged `v5.0.0-export.1`, `v5.0.0-export.2` and so on.
 | Add records (new places, counties, postcodes) | yes | yes |
 | Move a misfiled place to its proved state or country | yes | yes |
 | Remove a key, or move it to another table | no | yes |
-| Repair a key that came to denote another entity | no | yes |
+| Repair a key that came to denote another entity (the key retires with its first meaning; the other entity gets a new key) | no | yes |
 | Change a field's meaning, a nullability, a table's scope or a documented query | no | yes |
 
 Between majors, a record that turns out to be a unit, a duplicate or invalid stays in the data, typed as what it is.
@@ -48,8 +50,10 @@ Pin a release by its tag or commit, not by "latest". The API and the packages re
 Each release attaches migration files, described in [migrations/README.md](migrations/README.md):
 
 - `removed_ids.jsonl` and `removed_ids.csv`: every key that left the data, with its reviewed outcome and the records
-  that exist now. Only `merged_same_entity` with `automatic_redirect: true` may be redirected without a look. A seat
-  town is a different place from the unit whose seat it is.
+  that exist now (`current_targets`). Only `merged_same_entity` with `automatic_redirect: true` may be redirected
+  without a look. A seat town is a different place from the unit whose seat it is. For a repaired key,
+  `current_targets` is the entity it first denoted, and `later_entity_targets` the new key of the entity it came to
+  denote: check which one you stored.
 - `added_ids.jsonl`, `changed_fields.jsonl` and `identity_changes.jsonl`: what was added, which fields changed (typed,
   with presence flags), and the identity decisions.
 - `release_manifest.json`: the versions, both commits, the counts and the checksums.
