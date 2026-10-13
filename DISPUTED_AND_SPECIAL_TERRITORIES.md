@@ -89,9 +89,9 @@ record already complies.
 | Kashmir, Arunachal Pradesh | Places stored under `IN`, `PK` and `CN` units. | Not yet checked place by place. |
 | Falkland Islands; South Georgia and the South Sandwich Islands | `FK` and `GS` have no states or cities yet (coverage gaps). Argentina's county 6832 has no cities linked to it. | Coverage is incomplete; county 6832's point source and represented scope are under review. |
 | Gibraltar | `GI` has no states or cities yet (a coverage gap). | Coverage is incomplete. |
-| Åland | `AX`: 16 states, 12 cities. Finland's states do not include `FI-01` Åland. | Decided: restore `FI-01` as an empty catalogue state of `FI` in a separate data PR, keeping `AX`'s places. The former state 1509 is checked before it is restored, and #1144's removal of duplicate Finnish place rows stands. |
+| Åland | `AX`: 16 states, 12 cities. Finland's state 1509 (`FI-01`, Åland Islands) is a catalogue entry with no places. | None: 1509 was restored as the same entity it denoted before #1144; #1144's removal of duplicate Finnish place rows stands, so Åland's places stay under `AX`. |
 
-Counts and ids are from `contributions/` on master at `dea03811` (13 October 2026). They describe stored rows, not
+Counts and ids are from `contributions/` on master at `dea03811` (13 October 2026), except the restoration of state 1509 (FI-01) in #2020. They describe stored rows, not
 complete coverage or a finished place-by-place check of identity, language, clock or point source. Changes already made
 have their sources and record ids in [FIX_1643_SUMMARY.md](.github/fixes-docs/FIX_1643_SUMMARY.md); open work is listed
 here.
