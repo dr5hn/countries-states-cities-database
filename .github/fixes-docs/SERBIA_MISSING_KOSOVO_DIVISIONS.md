@@ -216,12 +216,9 @@ All 6 new administrative divisions include:
 
 ## Political Context
 
-**Note:** These administrative divisions are part of Serbia's official administrative structure according to Serbian law and the ISO 3166-2 standard. The territory of Kosovo declared independence in 2008 and is recognized by 108 UN members, but Serbia still considers it an autonomous province. This database follows the ISO 3166-2 standard which reflects Serbia's legal position.
-
-The five Kosovo-related districts (RS-25, RS-26, RS-27, RS-28, RS-29) and the Kosovo-Metohija autonomous province (RS-KM) are included to ensure:
-1. Compliance with ISO 3166-2:RS standard
-2. Completeness of Serbia's claimed administrative structure
-3. Consistency with other international databases
+**Note (updated 13 October 2026):** these six entries are Serbia's units in the ISO 3166-2:RS catalogue. A catalogue
+entry is a lookup code, not a position on Kosovo's status. Places in Kosovo are stored under the separate entry `XK`, and
+these six units hold no places. See [DISPUTED_AND_SPECIAL_TERRITORIES.md](../../DISPUTED_AND_SPECIAL_TERRITORIES.md).
 
 ## References
 

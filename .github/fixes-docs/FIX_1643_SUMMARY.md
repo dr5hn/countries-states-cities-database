@@ -157788,3 +157788,38 @@ Korean Law 19155 and the Ministry of the Interior and Safety's administrative co
 
 ### Rollback
 Revert the PR (squash commit); no record is created or removed.
+
+## Docs: disputed and special territories, and the naming rule
+
+### Problem
+No page said how the database treats disputed territories, so each case was argued afresh. The Serbia note justified
+Serbia's Kosovo units by "Serbia's legal position" and a dated recognition count; the Somalia note gave five city ids that
+belong to other records and stated a Somaliland renaming as fact; and the naming rule existed only in PR notes.
+
+### Fix
+- **[DISPUTED_AND_SPECIAL_TERRITORIES.md](../../DISPUTED_AND_SPECIAL_TERRITORIES.md)** (new, linked from the README, TYPE_FIELD.md and
+  MULTI_LEVEL_TERRITORIES.md): codes are lookups, not rulings; ISO 3166 as the default catalogue with XK and project codes
+  marked as extensions; one country per place, overlapping subdivisions kept as catalogue entries with no places from
+  the other country (a unit that overlaps only partly may keep its own country's places); a versioned CLDR naming
+  convention; IANA clocks; no invented codes; removals and model changes only in a major release, with crosswalks.
+  It lists the earlier methods these rules replace. A status table shows
+  where master does not yet follow it (Taiwan and Hong Kong rows under China, Western Sahara, two West Bank settlements,
+  Palestine's English name, Ukraine's unit rows, Åland).
+- **contributions/README.md:** the naming rule for `name`, `native` and `translations`.
+- **Serbia note:** catalogue wording. **Somalia note:** city ids corrected to 160112-160116; Maroodi Jeex described as the
+  Somaliland administration's name.
+- **Earlier sections of this file** that say "Indian natives stay in Devanagari" record the rule at the time. From 13
+  October 2026 `native` is the record's attested local name and the Hindi form stays in `translations.hi`. Indian natives
+  are reviewed record by record in a later round; nothing changes in bulk. See "Earlier methods replaced" in
+  [DISPUTED_AND_SPECIAL_TERRITORIES.md](../../DISPUTED_AND_SPECIAL_TERRITORIES.md).
+- **MULTI_LEVEL_TERRITORIES.md:** says that a territory's places have one country (as master already stores them) and
+  that Åland's FI-01 entry is to be restored.
+
+### Sources
+ISO 3166-1 and 3166-2 supply the code catalogues; Unicode CLDR 48.2.0 the display-name convention; IANA tzdb 2026e the
+clock histories. Past decisions kept: #99 and #102, #337 and #1025, #1184 and #1261, #1329 and #1334. #574, #585 and
+#586 adopted no Taiwan rename; their separate outcomes are on the policy page. #1379's English `name` rule stays; its
+`native` rule is replaced by the local-name rule. Decided with an independent Codex review of every case.
+
+### Rollback
+Revert the PR (squash commit); no data changes.
