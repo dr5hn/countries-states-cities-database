@@ -158009,3 +158009,66 @@ Wikipedia disambiguation titles ("Tartar (значения)"), text in the wrong
 
 ### Rollback
 Revert the PR (squash commit); every changed state's earlier translations are in the manifest's `before`.
+
+## Kazakhstan, Tanzania and Algeria: first typing pass
+
+### Problem
+None of the 872 city records of Kazakhstan, Tanzania and Algeria had a level or an official local category (old values
+such as adm1, adm2 and city). Kazakh and Tanzanian districts were stored as cities, Kazakhstan's districts had no
+county records, and some records carried another place's Wikidata item.
+
+### Fix
+Each country's own register, in the merged model; country notes for Kazakhstan and Tanzania in TYPE_FIELD.md. A record
+is typed only where the evidence binds it to the entity the category belongs to (the identity rule of 13 October 2026):
+a shared name, a point inside the unit or the main town's item is not enough.
+- **Kazakhstan** (KATO classifier NK RK 11-2025, updated 18 September 2026): **119 districts (аудан) become counties**
+  (`administrative district`, level 2, KATO code, own Wikidata item, name and native form from Wikidata, open point
+  checked inside the district, IANA zone). 219 records typed: 76 `city / қала` (Almaty and Astana at level 1, cities of
+  regional significance at 2, of district significance at 3), 43 `town / кент` and 95 `village / ауыл` at level 3, or 4
+  inside a rural okrug. Five district rows stored as cities are typed `county / аудан` at level 2; they are **not
+  removed here** (no id is removed before v5.0.0) and their removal is queued. Four of them (Bukhar-Zhyrau, Maktaaral,
+  Saryagash, Sozak) are the same district as a new county record and share its own item, as the South African district
+  rows did in #2013; each links to its county. **One city added: Botakara** (166304), the seat town of
+  Bukhar-Zhyrau district (`town / кент`, level 3, KATO 354030100, own item and point), which no record represented. 48
+  districts are not created yet: Aktogay needs its boundary bound to the Karaganda district, Abay Qalasy's record is the
+  city administration rather than the district, and the others lack a unique boundary match or a confirmed native form.
+  `county_id` is the containing district: 73 towns and villages in a rural okrug (level 4) link to their district (level 2),
+  with an empty `parent_id` because the okrug has no record.
+- **Tanzania** (2022 census volumes and ward file, 2026 council directory): Tunduma (154658) is the town council itself
+  (its item's GeoNames feature is the council's own) and is `municipality / Halmashauri ya Mji` at level 2; the separate
+  populated place Tunduma (149063) stays as it is. Five district rows (Ilemela, Kondoa, Mkuranga, Mvomero, Same) are
+  typed `county / wilaya` at level 2 and their removal is queued; Mkwajuni is a ward, `section / kata` at level 4. The
+  25 other records named after a council (Arusha, Dar es Salaam, Dodoma, Mwanza, ...) are the towns and cities
+  themselves, not the councils, and are held. No Tanzanian county is created yet: districts and councils are not
+  separated with own items and points.
+- **Algeria** (ONS national geographic code 2021; Law 26-06 of 4 April 2026 creating eleven wilayas; decree 26-253 of
+  15 July 2026 on dairas): 235 communes `municipality / commune` at level 3, each with its own commune item or commune
+  feature. Six of them are in Laghouat and Batna, which kept them under articles 7 and 9 of Law 26-06. Aïn El Berd is
+  the commune; its item was the daira's and is cleared. Ouargla 146202 is the same place as 31396 (same populated place,
+  item and commune code): 31396 is typed, 146202 is held and its merge is queued. Six records whose item and feature
+  describe the town rather than the commune are held (Adrar, Boumerdas, Boû Arfa, Constantine, Larbaâ, Médéa).
+- Items: **71 set** from a unique own-code match, **6 cleared** that belong to another place (among them Larbaâ's, the
+  Larbaâ in Batna, and Qogham's, the village Bayaldyr near Kentau). Four new shared items, each a district row and its
+  own county record; two existing shares stay (Akkol and Akkol' 65596/65597, identity unresolved; the Ouargla pair).
+
+Held (411): Kazakhstan 54 (e.g. Abay Qalasy, a city administration or the whole district; namesakes such as Akkol' and
+Aksu; records in states the 2022 reform changed), Tanzania 302 (no complete register of villages and towns below the
+wards; records named after a council), Algeria 55 (communes in the eleven new wilayas until a dated state reform,
+separate agglomerations, unproved identities). Names, native forms, states and points of existing records are
+unchanged.
+
+Point ledger: [KZ_world5_points_2026-10.csv](ledgers/KZ_world5_points_2026-10.csv).
+
+### Sources
+Kazakhstan: Bureau of National Statistics KATO classifier and the law on administrative-territorial structure.
+Tanzania: National Bureau of Statistics 2022 Population and Housing Census (volumes 1A-1C, ward file) and the PO-RALG
+2026 council directory. Algeria: ONS Code géographique national 2021 and the Journal officiel (Law 26-06, decree
+26-253). All of these are used for codes, categories and hierarchy as facts only (no open licence); nothing else is
+copied. Names and native forms of new records: Wikidata (CC0); Martuk's native form from GeoNames (CC BY 4.0). Points:
+117 Wikidata, 3 GeoNames (Bulandy, Makat and Maktaaral districts), copied as published and rounded to eight decimals;
+each county point checked inside its district's OSM/geoBoundaries 2017 boundary (reference only, not copied; current
+extents not certified), and the three districts added after review also inside their current OpenStreetMap boundary
+(reference only). Time zones from IANA tzdb 2026e.
+
+### Rollback
+Revert the PR (squash commit); new county ids are 13904-14022 and the new city is 166304; no record is removed.
