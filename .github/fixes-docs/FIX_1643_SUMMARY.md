@@ -149178,3 +149178,43 @@ English pages and the 2013 trademark report; township spellings use named GeoNam
 
 ### Rollback
 Revert the PR (squash commit); no row is removed; new county ids are 13033-13149.
+
+## China phase 16: Ningxia; Inner Mongolia held (model of #1975 to #1996)
+
+### Problem
+Ningxia's and Inner Mongolia's prefectures, leagues, districts, banners, counties and county-level cities were city records,
+many with another place's Wikidata item or a wrong Chinese name.
+
+### Fix
+Same model as the earlier China phases (ADMINISTRATIVE_STRUCTURE.md rules 6 and 7), nothing new:
+- **27 counties** (`administrative district`, official local term, official code): 5 prefecture-level units at level 2 and their
+  districts, counties and county-level city at level 3, named "<Name> District / County / City".
+  Each unit agrees in two sources, the register and its own Wikidata entry (code, Chinese name, current parent). 17
+  carry their own Wikidata item where no city keeps it.
+- **9 district rows become sections (区)** at level 3, linked to their own county.
+- **1 county-level city stays a city** (`city / 市`) linked to its own county.
+- 9 points replaced with the unit's own open point checked inside its county; **39 items cleared** (22 disambiguation pages,
+  16 other subjects, 1 district item moved to its county); **81 native names fixed and
+  the translations of 108 records** (108 records in all).
+
+No row is removed and no prefecture row is converted.
+
+Held (170 records keep a hold on at least one field): all Inner Mongolia typing (no register was retrieved), prefecture rows,
+townships, seats, duplicate pairs.
+
+Point ledger: [CN_phase16_points_2026-10.csv](ledgers/CN_phase16_points_2026-10.csv).
+
+### Sources
+Ningxia Department of Civil Affairs register as of 30 June 2026, published 6 July 2026
+(https://mca.nx.gov.cn/xwzx/tzgg/202607/t20260706_5282444.html, PDF
+https://mca.nx.gov.cn/xwzx/tzgg/202607/P020260706597229656116.pdf); the Hongsibu spelling follows Ningxia's place-name
+publication (https://mca.nx.gov.cn/zzb/mzdt_71747/202512/t20251223_5116399.html). Inner Mongolia's name fixes use a 2024
+government procurement document listing its units (page 16; it has no codes and is not the civil-affairs register,
+https://www.ccgp-neimenggu.gov.cn/gpx-bid-file/150001/gpx-tender/2024/10/24/402881d2929fd3f40192bda2ca6447ea.pdf), each unit's own
+Wikidata name, code and parent, and named GeoNames places for older spellings. Names, codes, categories and parentage used as official facts (Copyright Law of the PRC, Article 5). Points:
+36 Wikidata P625 (CC0), 3 GeoNames (CC BY 4.0, copied as published, rounded to eight decimals).
+Containment checked against geoBoundaries gbOpen CHN ADM3 (2017, OSM-derived; © OpenStreetMap contributors, ODbL 1.0),
+a reference check, not a survey of 2026 boundaries; nothing copied from it.
+
+### Rollback
+Revert the PR (squash commit); no row is removed; new county ids are 13150-13176.
