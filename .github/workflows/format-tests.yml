@@ -1,0 +1,119 @@
+name: Format and import tests
+
+# Unit tests for the import, sync, export converters, export checker, PR validator scripts and Prisma mapping, and a
+# round trip of a test-only city with no state through MySQL and every export format. It also runs on draft PRs, which
+# the PR Validator skips. Read-only: no commits, releases or comments.
+on:
+  pull_request:
+    paths:
+      - 'bin/**'
+      - 'prisma/**'
+      - '.github/scripts/**'
+      - '.github/workflows/format-tests.yml'
+      - '.github/workflows/pr-validator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Python dependencies
+        run: pip install mysql-connector-python pyyaml pandas pyarrow
+
+      - name: Import and sync tests
+        run: python -m unittest discover -s bin/scripts/sync -p 'test_*.py'
+
+      - name: Export converter tests
+        run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
+
+      - name: Export checker tests
+        run: python -m unittest discover -s bin/db/tests -p 'test_*.py'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'   # as the PR Validator; its lock needs >=22 (content-type 3)
+
+      - name: PR validator script tests
+        working-directory: .github/scripts
+        run: npm ci --omit=dev && npm test
+
+      - name: Prisma state mapping tests
+        run: node --test prisma/city-state.test.ts
+
+      - name: TOON read back with the reference reader
+        run: |
+          npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0
+          node --test bin/scripts/export/toon_readback.test.mjs
+
+  round-trip:
+    name: MySQL round trip and export formats
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: PHP dependencies
+        working-directory: bin
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Python dependencies
+        run: pip install mysql-connector-python pyyaml pandas pyarrow
+
+      - name: Start MySQL
+        run: |
+          sudo systemctl start mysql.service
+          until mysqladmin ping -h127.0.0.1 -uroot -proot --silent; do sleep 1; done
+
+      - name: Migration up, down and refused down
+        env:
+          MYSQL_PASSWORD: root
+        run: php bin/db/tests/test_nullable_city_state_migration.php
+
+      - name: Import the data with a test-only city that has no state
+        run: |
+          # TEST DATA ONLY: written in this runner, never committed
+          printf '%s\n' '[{"id": 999001, "name": "TEST ONLY stateless city", "state_id": null, "state_code": null,' \
+            '"country_id": 244, "country_code": "EH", "latitude": "26.73900000", "longitude": "-11.67100000"}]' \
+            > contributions/cities/EH.json
+          # what the import receives, fixture included: the round trip is compared with this copy
+          cp -R contributions "$RUNNER_TEMP/contributions-imported"
+          mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          mysql -uroot -proot world < bin/db/schema.sql
+          python3 bin/scripts/sync/import_json_to_mysql.py --host 127.0.0.1 --user root --password root --database world
+
+      - name: Sync back and compare
+        run: |
+          python3 bin/scripts/sync/sync_mysql_to_json.py --host 127.0.0.1 --user root --password root --database world
+          python3 bin/scripts/sync/check_round_trip.py --snapshot "$RUNNER_TEMP/contributions-imported"
+
+      - name: Export every format
+        working-directory: bin
+        run: |
+          for command in export:json export:csv export:xml export:yaml export:mongodb; do php console "$command"; done
+          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities
+
+      - name: Check the city with no state in each format
+        run: python3 bin/db/tests/check_null_state_exports.py 999001 EH

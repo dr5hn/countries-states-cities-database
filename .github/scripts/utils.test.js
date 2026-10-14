@@ -162,6 +162,48 @@ test('other partial county managed fields still warn', () => {
   assert.match(validateRecord({ ...record, flag: 1 }, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
 });
 
+// v5: cities without a state (countries with no states, e.g. Western Sahara)
+const city = (extra) => ({ name: 'Smara', country_id: 244, country_code: 'EH', latitude: '26.74', longitude: '-11.67', ...extra });
+
+test('a city may have state_id and state_code both null', () => {
+  const { errors } = validateRecord(city({ state_id: null, state_code: null }), 'cities', 0);
+  assert.deepEqual(errors, []);
+});
+
+test('a half-null state pair is an error', () => {
+  const a = validateRecord(city({ state_id: null, state_code: 'XX' }), 'cities', 0).errors;
+  const b = validateRecord(city({ state_id: 5, state_code: null }), 'cities', 0).errors;
+  assert.ok(a.some((e) => e.includes('must both be set or both be null')));
+  assert.ok(b.some((e) => e.includes('must both be set or both be null')));
+});
+
+test('the state keys stay required even when null is allowed', () => {
+  const { errors } = validateRecord(city({}), 'cities', 0);
+  assert.ok(errors.some((e) => e.includes('missing required field "state_id"')));
+  assert.ok(errors.some((e) => e.includes('missing required field "state_code"')));
+});
+
+test('a set state pair keeps its rules (positive id, non-empty code)', () => {
+  const zero = validateRecord(city({ state_id: 0, state_code: 'XX' }), 'cities', 0).errors;
+  const empty = validateRecord(city({ state_id: 5, state_code: ' ' }), 'cities', 0).errors;
+  assert.ok(zero.some((e) => e.includes('must be positive')));
+  assert.ok(empty.some((e) => e.includes('must not be empty')));
+});
+
+test('counties still require a state', () => {
+  const { errors } = validateRecord({ name: 'X', state_id: null, state_code: null, country_id: 1, country_code: 'AA', latitude: '1', longitude: '1' }, 'counties', 0);
+  assert.ok(errors.some((e) => e.includes('missing required field "state_id"')));
+});
+
+
+test('a city state_id must be a JSON number (no strings, booleans, arrays or fractions)', () => {
+  for (const bad of ['1', true, [1], { id: 1 }, 1.5]) {
+    const { errors } = validateRecord(city({ state_id: bad, state_code: 'XX' }), 'cities', 0);
+    assert.ok(errors.length > 0, `accepted ${JSON.stringify(bad)}`);
+  }
+  assert.deepEqual(validateRecord(city({ state_id: 7, state_code: 'XX' }), 'cities', 0).errors, []);
+});
+
 // Changed-file listing: the API first, git when GitHub cannot or will not list them all (very large data PRs).
 const os = require('node:os');
 const { getOctokit } = require('@actions/github');

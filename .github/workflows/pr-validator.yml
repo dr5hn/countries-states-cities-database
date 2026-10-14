@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'   # the lock needs >=22 (content-type 3)
 
       - name: Install dependencies
         run: cd .github/scripts && npm ci --omit=dev
@@ -137,6 +137,8 @@ jobs:
           CROSSREF_ERROR_COUNT: ${{ steps.crossref.outputs.error_count }}
           CROSSREF_VALID: ${{ steps.crossref.outputs.valid }}
           CROSSREF_HAS_ERRORS: ${{ steps.crossref.outputs.has_errors }}
+          CROSSREF_OUTCOME: ${{ steps.crossref.outcome }}
+          SCHEMA_OUTCOME: ${{ steps.schema.outcome }}
           COORD_WARNINGS: ${{ steps.coords.outputs.warnings }}
           COORD_WARNING_COUNT: ${{ steps.coords.outputs.warning_count }}
           COORD_CHECKED: ${{ steps.coords.outputs.checked }}
@@ -311,8 +313,15 @@ jobs:
               report += '\n';
             }
 
+            // A check that failed without reporting any error still counts as one: it never reads as passed
+            const stepFailures = [['Schema', process.env.SCHEMA_OUTCOME, schemaErrorCount], ['Cross-reference', process.env.CROSSREF_OUTCOME, crossrefErrorCount]]
+              .filter(([, outcome, count]) => outcome === 'failure' && count === 0).map(([name]) => name);
+            for (const name of stepFailures) {
+              report += `:x: The ${name} check did not complete; see the workflow log.\n\n`;
+            }
+
             // Summary
-            const totalErrors = schemaErrorCount + crossrefErrorCount;
+            const totalErrors = schemaErrorCount + crossrefErrorCount + stepFailures.length;
             const totalWarnings = schemaWarningCount + coordWarningCount + dupWarningCount + urlErrors.length;
 
             report += '---\n';
