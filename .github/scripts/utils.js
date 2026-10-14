@@ -294,16 +294,33 @@ function countyRegionErrors(record, prefix) {
   const listed = record.states;
   if (record.state_id === null && record.state_code === null) {
     const several = `${prefix}: a county with no state lists two or more distinct regions in states`;
-    if (!Array.isArray(listed)) return [several];
+    // the regions are county_states rows keyed by the county's id, so the id must be given (the importer refuses too)
+    const id = Number.isInteger(record.id) && record.id > 0 ? [] : [`${prefix}: a county of several regions needs an explicit positive integer id`];
+    if (!Array.isArray(listed)) return [...id, several];
     const shapeOk = (r) => r !== null && typeof r === 'object' && !Array.isArray(r) &&
       Object.keys(r).sort().join(',') === 'state_code,state_id' && Number.isInteger(r.state_id) && r.state_id > 0 &&
       typeof r.state_code === 'string' && r.state_code.trim() !== '';
     if (!listed.every(shapeOk)) {
-      return [`${prefix}: each region in states needs a positive integer state_id and a non-empty state_code, nothing else`];
+      return [...id, `${prefix}: each region in states needs a positive integer state_id and a non-empty state_code, nothing else`];
     }
-    return listed.length >= 2 && new Set(listed.map((r) => r.state_id)).size === listed.length ? [] : [several];
+    return listed.length >= 2 && new Set(listed.map((r) => r.state_id)).size === listed.length ? id : [...id, several];
   }
   return listed == null ? [] : [`${prefix}: a county with a state cannot also list states (states is for a county of several regions)`];
+}
+
+/**
+ * The whole shape of one county record (v5, decision B6), for checks that see a county without validateRecord (the
+ * cross-reference scans unchanged county files too): both state keys present, set or null together, then the
+ * region rules of countyRegionErrors.
+ */
+function countyShapeErrors(record, prefix) {
+  if (!('state_id' in record) || !('state_code' in record)) {
+    return [`${prefix}: state_id and state_code are required (both null only for a county of several regions)`];
+  }
+  if ((record.state_id === null) !== (record.state_code === null)) {
+    return [`${prefix}: state_id and state_code must both be set or both be null`];
+  }
+  return countyRegionErrors(record, prefix);
 }
 
 /**
@@ -623,6 +640,7 @@ function baseJson(pr, filePath) {
 }
 
 module.exports = {
+  countyShapeErrors,
   listChangedFiles,
   baseJson,
   AUTO_MANAGED_FIELDS,

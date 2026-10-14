@@ -49,6 +49,10 @@ LINK_TYPES = {
 }
 
 
+MIGRATION_20261015 = ("counties need migration 20261015000000 (county_states, nullable county state); run migration "
+                      "20261015000000 before importing a county of several regions")
+
+
 def load_rows(path):
     """The array of records in one contributions file; an unreadable file or another shape is refused by name."""
     try:
@@ -457,9 +461,12 @@ class JSONToMySQLImporter:
             print(f"  ⚠ Directory not found: {counties_dir} (skipping)")
             return []
 
-        # Only a genuinely absent table is optional; database errors are fatal.
+        # Only a genuinely absent table is optional; database errors are fatal. An older database may skip counties
+        # only while no county needs the v5 schema: a county of several regions refuses before any reset.
         self.cursor.execute("SHOW TABLES LIKE 'counties'")
         if not self.cursor.fetchone():
+            if self.counties_need_regions(counties_dir):
+                raise ValueError(MIGRATION_20261015)
             print("  ⚠ Table 'counties' does not exist yet — run migrations first (skipping)")
             return []
 
@@ -498,10 +505,23 @@ class JSONToMySQLImporter:
             self.cursor.execute("SHOW TABLES LIKE 'county_states'")
             migrated = self.cursor.fetchone() is not None
             self.cursor.execute("SHOW COLUMNS FROM counties WHERE Field IN ('state_id', 'state_code')")
-            if not migrated or any(r['Null'] != 'YES' for r in self.cursor.fetchall()):
-                raise ValueError("counties need migration 20261015000000 (county_states, nullable county state); run migration "
-                                 "20261015000000 before importing a county of several regions")
+            nullable = {r['Field']: r['Null'] for r in self.cursor.fetchall()}
+            if not migrated or nullable != {'state_id': 'YES', 'state_code': 'YES'}:   # both columns, both nullable
+                raise ValueError(MIGRATION_20261015)
         return all_counties
+
+    @staticmethod
+    def counties_need_regions(counties_dir):
+        """Whether any readable county file holds a county of several regions (null state or a states list). Used only
+        when the counties table is absent; an unreadable file is skipped there, as the whole dataset is."""
+        for name in sorted(f for f in os.listdir(counties_dir) if f.endswith('.json')):
+            try:
+                rows = load_rows(os.path.join(counties_dir, name))
+            except ValueError:
+                continue
+            if any(isinstance(r, dict) and (r.get('state_id') is None or r.get('states') is not None) for r in rows):
+                return True
+        return False
 
     def import_counties(self, all_counties=None):
         """Import preflighted counties, or preflight first when called directly."""

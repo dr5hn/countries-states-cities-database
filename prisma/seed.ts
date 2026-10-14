@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import fetch from 'node-fetch';
-import { cityStateId, countyStates, localStateIds } from './city-state';
+import { countyStates, localStateIds, seedCityRow } from './city-state';
 
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
@@ -124,13 +124,9 @@ async function main() {
 
   // Seed Cities: a stateless city (a country with no states, v5) gets a null state; an inconsistent city stops the seed
   const cities = await fetchData('cities');
-  const cityData = cities.map((city) => {
-    const { name, county_id, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId } = city;
-    const countryId = countryMap.get(country_code);
-    if (!countryId) throw new Error(`city ${city.id} ${name}: country ${country_code} was not seeded`);
-    const stateId = cityStateId(city, stateCtx);
-    return { name, countyId: county_id ?? null, stateCode: state_code ?? null, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId };
-  });
+  // a linked city must sit in its county's country and in its state or one of its regions (v5); otherwise the seed stops
+  const countyIndex = new Map(counties.map(c => [c.id, { country_code: c.country_code, place: countyPlaces.get(c.id) }]));
+  const cityData = cities.map((city) => seedCityRow(city, { countryMap, stateCtx, counties: countyIndex }));
 
   await prisma.city.createMany({ data: cityData, skipDuplicates: true });
 

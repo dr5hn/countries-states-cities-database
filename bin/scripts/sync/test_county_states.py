@@ -112,13 +112,19 @@ class ImporterCountyTest(unittest.TestCase):
         self.importer = JSONToMySQLImporter.__new__(JSONToMySQLImporter)
         self.importer.cursor, self.importer.conn = Mock(), Mock()
 
-    def preflight(self, migrated=True):
-        """Run the county preflight with the database reporting the migration as applied or not."""
+    def preflight(self, migrated=True, counties_table=True, columns=('state_id', 'state_code')):
+        """Run the county preflight with the database reporting the migration as applied or not, the counties table
+        present or not, and which state columns SHOW COLUMNS returns."""
         last = {}
         self.importer.cursor.execute.side_effect = lambda sql, *a: last.update(sql=sql)
-        self.importer.cursor.fetchone.side_effect = lambda: None if ('county_states' in last['sql'] and not migrated) else {'t': 'x'}
-        self.importer.cursor.fetchall.return_value = [{'Field': 'state_id', 'Null': 'YES' if migrated else 'NO'},
-                                                      {'Field': 'state_code', 'Null': 'YES' if migrated else 'NO'}]
+
+        def fetchone():
+            """Answer SHOW TABLES for counties and county_states."""
+            if "'counties'" in last['sql']:
+                return {'t': 'counties'} if counties_table else None
+            return {'t': 'county_states'} if migrated else None
+        self.importer.cursor.fetchone.side_effect = fetchone
+        self.importer.cursor.fetchall.return_value = [{'Field': c, 'Null': 'YES' if migrated else 'NO'} for c in columns]
         with contextlib.redirect_stdout(io.StringIO()):
             return self.importer.preflight_counties()
 
@@ -133,6 +139,22 @@ class ImporterCountyTest(unittest.TestCase):
         Path('contributions/counties/NZ.json').write_text(json.dumps([county(states=[PAIRS[0]])]))
         with self.assertRaisesRegex(ValueError, 'county reference problems'):
             self.preflight()
+
+    def test_older_database_without_counties_refuses_several_regions(self):
+        """With no counties table, a county of several regions refuses before any reset; one-state counties still skip,
+        and an unreadable file is still skipped as before."""
+        with self.assertRaisesRegex(ValueError, 'run migration 20261015000000'):
+            self.preflight(counties_table=False)
+        Path('contributions/counties/NZ.json').write_text(json.dumps([ONE_REGION]))
+        Path('contributions/cities/NZ.json').write_text(json.dumps([city(county_id=8)]))
+        self.assertEqual(self.preflight(counties_table=False), [])
+        Path('contributions/counties/ZZ.json').write_text('{')
+        self.assertEqual(self.preflight(counties_table=False), [])
+
+    def test_both_state_columns_must_be_reported(self):
+        """A column query that does not return both state columns is not proof of the migration."""
+        with self.assertRaisesRegex(ValueError, 'run migration 20261015000000'):
+            self.preflight(columns=('state_id',))
 
     def test_relation_rows_not_a_column(self):
         """states never becomes a column; each listed region becomes one county_states row after the counties."""

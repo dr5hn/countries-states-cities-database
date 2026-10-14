@@ -177,5 +177,11 @@ linked to every region it lies in, in v5.0.0.
 - Research: Codex nz_regions_1 (all 149 New Zealand city rows and 54 county rows audited; 0 held).
 
 ### Rollback
-Revert the PR; then run the migration's `down` (refused while a county of several regions remains, so revert the data
-first).
+In this order (reverting the code first would remove the migration that the rollback needs):
+1. **Data:** restore `contributions/counties/NZ.json` and `contributions/cities/NZ.json` as they were before this PR
+   and reimport with this PR's importer, or delete counties 14023-14029 and the six `county_id` links (their sixteen
+   `county_states` rows go with the counties).
+2. **Schema:** with this PR's migration file still present, run `cd bin && php console manage:rollback -t
+   20261014000000`. It is refused while a county has no state or a region row exists; afterwards `manage:status` shows
+   20261015000000 down and the `county_states` table is gone.
+3. **Code:** revert the rest of the PR.

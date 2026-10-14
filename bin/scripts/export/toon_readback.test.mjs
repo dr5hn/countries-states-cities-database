@@ -29,3 +29,8 @@ test("a county's list of regions reads back as the same JSON text", () => {
   assert.equal(row.state_id, null);
   assert.deepEqual(JSON.parse(row.states), states);
 });
+
+test('strings that look like numbers, colons, brackets and backslashes read back as the same strings', () => {
+  const rows = [{ id: 4213, state_id: 2062, state_code: '1', latitude: '-38.86700000', code: '01', a: 'x:y', b: '[x]', c: '#1', d: 'a\\b', e: '' }];
+  assert.deepEqual(decode(convert(rows)), rows);
+});

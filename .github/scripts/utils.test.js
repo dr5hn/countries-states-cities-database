@@ -211,6 +211,22 @@ test('each listed region is a positive state_id and a non-empty state_code, noth
   }
 });
 
+test('a county of several regions needs an explicit positive integer id', () => {
+  for (const id of [undefined, null, '9', 0, 9.5]) {
+    const { errors } = validateRecord(nzCounty({ id, states: regions }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('needs an explicit positive integer id')), JSON.stringify(id));
+  }
+});
+
+test('countyShapeErrors reports missing pair keys and half pairs as well as list rules', () => {
+  const { countyShapeErrors } = require('./utils');
+  const { state_id: _s, ...noStateKey } = nzCounty({ states: regions });
+  assert.deepEqual(countyShapeErrors(nzCounty({ states: regions }), 'c'), []);
+  assert.match(countyShapeErrors(noStateKey, 'c').join('\n'), /state_id and state_code are required/);
+  assert.match(countyShapeErrors(nzCounty({ state_code: 'WKO', states: regions }), 'c').join('\n'), /both be set or both be null/);
+  assert.match(countyShapeErrors(nzCounty({ states: [regions[0]] }), 'c').join('\n'), /two or more distinct regions/);
+});
+
 test('a county with its own state cannot also list states; a half pair is still an error', () => {
   const both = validateRecord(nzCounty({ state_id: 4061, state_code: 'WKO', states: regions }), 'counties', 0).errors;
   assert.ok(both.some((e) => e.includes('cannot also list states')));

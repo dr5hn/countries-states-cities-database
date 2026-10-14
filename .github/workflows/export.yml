@@ -394,7 +394,8 @@ jobs:
           fi
 
           # Counties: separate compressed assets for all formats.
-          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql; do
+          # county_states: the regions of counties of several regions (v5), released beside each table-shaped county file
+          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql csv/county_states.csv sql/county_states.sql psql/county_states.sql sqlite/county_states.sqlite3 sqlserver/county_states.sql; do
             if [ -f "$file" ]; then gzip -9 -k -f "$file"; fi
           done
 
@@ -532,6 +533,7 @@ jobs:
           required=(
             csv/cities.csv.gz
             csv/counties.csv.gz
+            csv/county_states.csv.gz
             csv/postcodes.csv.gz
             csv/translations.csv.gz
             geojson/cities.geojson.gz
@@ -546,18 +548,22 @@ jobs:
             parquet/postcodes.parquet.gz
             psql/cities.sql.gz
             psql/counties.sql.gz
+            psql/county_states.sql.gz
             psql/postcodes.sql.gz
             psql/world.sql.gz
             sql/cities.sql.gz
             sql/counties.sql.gz
+            sql/county_states.sql.gz
             sql/postcodes.sql.gz
             sql/world.sql.gz
             sqlite/cities.sqlite3.gz
             sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
             sqlite/postcodes.sqlite3.gz
             sqlite/world.sqlite3.gz
             sqlserver/cities.sql.gz
             sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
             sqlserver/postcodes.sql.gz
             sqlserver/world.sql.gz
             toon/cities.toon.gz
@@ -573,6 +579,7 @@ jobs:
             [ -s "$file" ] || { echo "::error::missing or empty required export: $file"; exit 1; }
           done
           [ -s .github/licenses/Unicode-3.0.txt ] || { echo "::error::Required notice Unicode-3.0.txt is missing"; exit 1; }
+          python3 bin/scripts/export/check_county_states_csv.py   # the CSV companion lists exactly json/counties.json's regions
           echo "${#required[@]} exports and the notices present"
 
       - name: Package the build with its checksums
@@ -585,6 +592,7 @@ jobs:
           files=(
             csv/cities.csv.gz
             csv/counties.csv.gz
+            csv/county_states.csv.gz
             csv/postcodes.csv.gz
             csv/translations.csv.gz
             geojson/cities.geojson.gz
@@ -599,18 +607,22 @@ jobs:
             parquet/postcodes.parquet.gz
             psql/cities.sql.gz
             psql/counties.sql.gz
+            psql/county_states.sql.gz
             psql/postcodes.sql.gz
             psql/world.sql.gz
             sql/cities.sql.gz
             sql/counties.sql.gz
+            sql/county_states.sql.gz
             sql/postcodes.sql.gz
             sql/world.sql.gz
             sqlite/cities.sqlite3.gz
             sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
             sqlite/postcodes.sqlite3.gz
             sqlite/world.sqlite3.gz
             sqlserver/cities.sql.gz
             sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
             sqlserver/postcodes.sql.gz
             sqlserver/world.sql.gz
             toon/cities.toon.gz

@@ -34,3 +34,19 @@ test('export workflow refreshes county total in the current README format', () =
     fs.rmSync(temp, { recursive: true });
   }
 });
+
+test('export workflow compresses, requires and checksums every county_states companion (v5)', () => {
+  const root = path.resolve(__dirname, '../..');
+  const workflow = fs.readFileSync(path.join(root, '.github/workflows/export.yml'), 'utf8');
+  const step = (name) => workflow.split(`      - name: ${name}\n`)[1].split('\n      - name:')[0];
+  const compress = step('Compress All Large Files');
+  const required = step('Check every file a release carries');
+  const packaged = step('Package the build with its checksums');
+  for (const file of ['csv/county_states.csv', 'sql/county_states.sql', 'psql/county_states.sql', 'sqlite/county_states.sqlite3',
+    'sqlserver/county_states.sql']) {
+    assert.ok(compress.includes(` ${file} `) || compress.includes(` ${file};`), `${file} is not compressed`);
+    assert.match(required, new RegExp(`^\\s+${file.replace(/[.+]/g, '\\$&')}\\.gz$`, 'm'), `${file}.gz is not required`);
+    assert.match(packaged, new RegExp(`^\\s+${file.replace(/[.+]/g, '\\$&')}\\.gz$`, 'm'), `${file}.gz is not checksummed`);
+  }
+  assert.match(required, /check_county_states_csv\.py/, 'the CSV companion is not compared with json/counties.json');
+});

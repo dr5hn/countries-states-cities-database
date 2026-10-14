@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile, listChangedFiles } = require('./utils');
+const { getEntityType, parseJsonFile, listChangedFiles, countyShapeErrors } = require('./utils');
 
 // Lazy per-country cities loader — cities live in contributions/cities/{ISO2}.json
 const cityCache = new Map();
@@ -275,6 +275,9 @@ async function run() {
         errors.push(...countyErrors.map(error => `${prefix}: ${error}`));
         if (record.county_id != null && countyErrors.length === 0) validCount++;
       }
+
+      // Every scanned county, changed or not, gets the whole shape check (v5, decision B6)
+      if (entityType === 'counties') errors.push(...countyShapeErrors(record, prefix));
 
       // A county of several regions (v5): each listed region is a state of the county's country, by its own code
       if (entityType === 'counties' && Array.isArray(record.states)) {

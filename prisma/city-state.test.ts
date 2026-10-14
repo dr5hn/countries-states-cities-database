@@ -1,7 +1,7 @@
 // Run: node --test prisma/city-state.test.ts (Node 23.6 or later reads the TypeScript directly)
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { cityStateId, countyStates, localStateIds, type StateContext } from './city-state.ts';
+import { cityStateId, countyStates, localStateIds, seedCityRow, type StateContext } from './city-state.ts';
 
 const ctx: StateContext = {
   sourceStates: new Map([[1457, { country_code: 'US', iso2: 'LA' }]]),
@@ -73,4 +73,46 @@ test('throws instead of seeding an inconsistent county', () => {
     [{ ...waitomo, states: [regions[0], { state_id: 4061, state_code: 'XX' }] }, /does not match/],
   ] as const;
   for (const [county, re] of bad) assert.throws(() => countyStates(county, nz), re);
+});
+
+test('a county needs both state keys, an explicit id when it spans regions, and exact region entries', () => {
+  const { state_id: _s, state_code: _c, ...noKeys } = waitomo;
+  const { state_code: _code, ...noCode } = waitomo;
+  const bad = [
+    [noKeys, /state_id and state_code are required/],
+    [noCode, /state_id and state_code are required/],
+    [{ ...waitomo, id: undefined }, /explicit positive integer id/],
+    [{ ...waitomo, id: '9' as unknown as number }, /explicit positive integer id/],
+    [{ ...waitomo, states: [regions[0], { ...regions[1], name: 'Waikato' }] }, /only state_id and state_code/],
+    [{ ...waitomo, states: [regions[0], 'WKO' as unknown as typeof regions[0]] }, /only state_id and state_code/],
+  ] as const;
+  for (const [county, re] of bad) assert.throws(() => countyStates(county, nz), re);
+});
+
+// the seed's city rows: a linked city must sit in its county's country and in its state or one of its regions
+const seedCtx = {
+  countryMap: new Map([['NZ', 158], ['US', 233]]),
+  stateCtx: nz,
+  counties: new Map([[9, { country_code: 'NZ', place: { stateId: null, regions: [30, 31] } }],
+    [8, { country_code: 'NZ', place: { stateId: 31, regions: [] } }]]),
+};
+const teKuiti = { id: 1, name: 'Te Kuiti', country_code: 'NZ', state_id: 4061, state_code: 'WKO', state_name: 'Waikato', county_id: 9,
+  latitude: '-38.33', longitude: '175.17' };
+
+test('seeds a city in a county of several regions, or in its own-state county, with its county id', () => {
+  assert.equal(seedCityRow(teKuiti, seedCtx).countyId, 9);
+  assert.equal(seedCityRow({ ...teKuiti, county_id: 8 }, seedCtx).countyId, 8);
+  assert.equal(seedCityRow({ ...teKuiti, county_id: null }, seedCtx).countyId, null);
+});
+
+test('refuses a city outside its county instead of seeding it', () => {
+  const bop = { ...nz, sourceStates: new Map([...nz.sourceStates, [4074, { country_code: 'NZ', iso2: 'BOP' }]]),
+    seededStateId: new Map([...nz.seededStateId, [4074, 40]]) };
+  const ctx = { ...seedCtx, stateCtx: bop };
+  assert.throws(() => seedCityRow({ ...teKuiti, state_id: 4074, state_code: 'BOP' }, ctx), /not in county 9's state or regions/);
+  assert.throws(() => seedCityRow({ ...teKuiti, county_id: 8, state_id: 4060, state_code: 'MWT' }, seedCtx), /not in county 8's state or regions/);
+  const la = { ...teKuiti, country_code: 'US', state_id: 1457, state_code: 'LA', state_name: 'Louisiana' };
+  assert.throws(() => seedCityRow(la, seedCtx), /county 9 is in NZ, not US/);
+  assert.throws(() => seedCityRow({ ...teKuiti, county_id: 77 }, seedCtx), /county_id 77 does not exist/);
+  assert.throws(() => seedCityRow({ ...teKuiti, county_id: '9' as unknown as number }, seedCtx), /county_id .* is not a positive integer/);
 });
