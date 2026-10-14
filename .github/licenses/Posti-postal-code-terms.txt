@@ -1,0 +1,330 @@
+POSTI: SERVICE DESCRIPTION AND TERMS OF USE, POSTAL CODE SERVICES (1 January 2015)
+Source: https://www.posti.fi/en/for-businesses/customer-support/postal-code-services
+Text extracted from Posti's PDF (SHA-256 d8464513011134d1989008a4a2402436d6d32beab845a485d17e762173ae364a), one column
+after the other in reading order; the appendix tables keep their layout.
+
+SERVICE DESCRIPTION AND TERMS OF USE   1 (5)
+POSTAL CODE SERVICES
+1.1.2015
+
+1. SERVICE CONTENT
+The services consist of the postal code system and basic
+and changed information contained by domestic address
+files in a fixed format. The services are described below on
+a file-specific basis.
+
+1.1 POSTAL CODE DATA FILE
+The postal code data file contains the current general
+postal codes and names of postal outlets, as well as
+abbreviations of the outlets in Finnish and in Swedish. The
+file also indicates the primary municipality and region
+code for the postal code, and the language distribution in
+the municipality.
+
+Postal code boundaries do not always follow the
+municipal boundaries; therefore, a single postal code can
+apply to one or more municipalities.
+
+The information is updated once a week, with the updated
+material being available on Saturdays after 3:00 p.m.
+
+The record description is in Appendix 1.
+1.2 BASIC ADDRESS FILE
+The basic address file contains the current general postal
+codes, outlet names and their abbreviations, street
+information at building number intervals, if required (if a
+single street is divided into several postal codes),
+municipality codes, and municipality names in Finnish
+and in Swedish. Municipality information is indicated at
+the street or building number level.
+
+The information is updated once a week, with the updated
+material being available on Saturdays after 3:00 p.m.
+
+The record description is in Appendix 2.
+
+1.3 POSTAL CODE CHANGES
+The service is used to update a postal code file which has
+been delivered earlier or downloaded by the customer.
+The file contains any changes that have taken place
+during the past month: new, changed, and discontinued
+postal codes and changes in postal outlet names,
+including abbreviations and codes in Finnish and in
+Swedish.
+
+Posti Posti
+
+The municipality data in the file indicates the primary
+municipality of the postal code in question.
+
+The information is updated once a month, with the
+material being available on the third weekday of each
+month. If there are no changes during an extraction
+period, the file will be blank.
+
+The record description is in Appendix 3.
+
+2. TERMS OF USE FOR THE SERVICES
+The files are freely downloadable in the format and service
+channels presented in the service description. The data
+can be disclosed to third parties but it must be ensured
+that the recipient of the data is aware of the terms of use
+for the service as well as the download date.
+
+2.1 USING THE SERVICES
+The information provided is always based on the
+information included in Posti’s postal code system. The
+system data is based on information provided for Posti by
+municipalities and postal code information updated by
+Posti. Posti does not check the information received from
+municipalities.
+
+Posti delivers the information available to self-service
+channels.
+
+2.2 THE CUSTOMER’S RESPONSIBILITIES
+The customer is responsible for using current Service
+Description and Terms of Use. The document must be
+retrieved from Posti’s website when necessary. Updating
+date of the document is indicated on the website.
+
+The customer is responsible for retrieving the postal code
+material, unpacking packaged files, handling and using
+the material, and updating its systems.
+
+The customer is responsible for ensuring that – upon any
+disclosure of the material to third parties – the recipient
+also receives the updated service description, terms of
+use, and the download date of the material.
+
+2.3 POSTI’S RESPONSIBILITIES
+Posti is responsible for offering updated information
+available for retrieval on time as set out in the service
+description, unless otherwise stated later in this section.
+
+Domicile: Helsinki
+
+Business ID: 0109357-9, VAT reg.
+
+Posti is not responsible for damage caused by delayed,
+altered, or lost data due to equipment failure,
+communications or system disruptions, or other similar
+reasons.
+
+Posti does not guarantee that the information is fully
+faultless. There may be errors in the information caused
+by recurring changes or the party reporting the changes.
+Posti is not responsible for errors in information that were
+not caused by Posti’s negligence.
+
+Posti is not responsible for any information user
+obligations towards third parties.
+
+Posti is not responsible for the uninterrupted availability
+of service channels or the updating frequency of the
+information.
+
+2.4 LIMITATION OF THE SERVICES
+In the services, information about Åland Islands is only at
+a postal code level without any street data.
+
+The services contain information about public postal
+codes.
+
+3. SERVICE ACTIVATION
+The material contained by the postal code services is
+available as self-services only. The material is available
+for free download without any separate agreement or
+order from the Posti website and FTP server.
+
+Data records in the material have a fixed length. Material-
+specific field lists are attached to this document. The files
+are available as ZIP folders. The data files are in Unix
+format and new line character is LF (Line Feed). The
+character set is ISO Latin-1. Any changes in character sets
+are to be produced by the customer.
+
+If required, the customer must obtain suitable unpacking
+software.
+
+The latest material is also available as an unpackaged
+version in the “./unzip” subdirectory.
+
+3.1 NAMING THE MATERIAL
+The material is located in a single directory in Posti’s
+server. The material has been named as follows:
+
+Postcode File: PCF_<yyyymmdd>.zip
+Basic Address File: BAF_<yyyymmdd>.zip
+Postal Code Changes: POM_<yyyymmdd>.zip
+
+<yyyymmdd> = extraction date.
+
+Unpackaged version has extension “.dat” instead of “.zip”
+
+2
+
+3.2 RETRIEVING THE MATERIAL FROM THE POSTI WEBSITE
+The service description and terms of use for the services,
+as well as frequently asked questions, are available at
+Posti’s website. The files are available for download on
+service-specific pages.
+
+The material can be retrieved through a view of Posti’s
+server. The page of the desired service contains
+instructions for downloading the material. The customer
+can save the selected file in its data medium by clicking
+the desired file (see above). The server view is browser-
+specific.
+
+The material can be retrieved through a view of Posti’s
+server, from where the customer can save the files
+selected in its data medium.
+
+3.3 RETRIEVING THE MATERIAL FROM THE POSTI FTP SERVER
+The material is available for download from Posti’s FTP
+server at ftp2.itella.com. The FTP server is intended
+particularly for the automatic transfer of change files.
+The username required for login is postcode and the
+password is postcode.
+
+The solutions required are determined by the customer’s
+system environment and applications. If required, the
+customer needs to consult its technical experts.
+
+The protocol is FTP (SSH/SFTP support will be available
+later).
+
+3.4 ARCHIVE DIRECTORY
+Previous files are available in the archive directory
+(“./arch”). Files are available for three months.
+
+3.5 APPENDICES
+Appendix 1: Postcode File Record Description
+Appendix 2: Basic Address File Record Description
+Appendix 3: Postal Code Changes Record Description
+
+                                                                                                       3
+
+                                                             APPENDIX 1: Postcode File Record Description
+
+Data                                        Initial position              Length   Content
+1. Record identifier                                         1            x (5)     POS NO.
+2. Running date                                              6            x (8)     yyyymmdd
+3. Postal code                                               14           x (5)
+4. Postal code name in Finnish                               19           x (30)
+5. Postal code name in Swedish                               49           x (30)
+6. Postal code name abbreviation in Finnish                  79           x (12)
+7. Postal code name abbreviation in Swedish                  91           x (12)
+8. Date of entry into force                                  103          x (8)     yyyymmdd
+9. Type code                                                 111          x (1)     1 = Normal
+                                                                                    postcode
+                                                                                    2 = PO Box
+                                                                                    postcode
+                                                                                    3 = Corporate
+                                                                                    postal code
+                                                                                    4 = Compilation
+                                                                                    postcode
+                                                                                    5 = Reply Mail
+                                                                                    postcode
+                                                                                    6 = SmartPOST
+                                                                                    (Parcel machine)
+                                                                                    7 = Pick-up Point
+                                                                                    postcode
+                                                                                    8 = Technical
+                                                                                    postcode
+10. Administrative region code                              112           x (5)     [1]
+11. Administrative region name in Finnish                   117           x (30)    [1]
+12. Administrative region name in Swedish                   147           x (30)    [1]
+13. Municipality code                                       177           x (3)
+14. Municipality name in Finnish                            180           x (20)
+15. Municipality name in Swedish                            200           x (20)
+16. Municipality language distribution code                 220           x (1)     1 = Finnish
+                                                                                    2, 3 = bilingual
+                                                                                    4 = Swedish
+
+Record length 220 characters
+
+[1] International NUTS3-code and region name in Finnish and in Swedish.
+                                                                                      4
+
+APPENDIX 2: Basic Address File Record Description
+
+Data                                                      Initial position   Length   Content
+
+1. Record identifier                                      1                  x (5)
+2. Running date                                           6                  x (8)    yyyymmdd
+3. Postal code                                            14                 x (5)
+4. Postal code name in Finnish                            19                 x (30)
+5. Postal code name in Swedish                            49                 x (30)
+6. Postal code name abbreviation in Finnish               79                 x (12)
+7. Postal code name abbreviation in Swedish               91                 x (12)
+8. Street (location) name in Finnish                      103                x (30)
+9. Street (location) name in Swedish                      133                x (30)
+10. Blank                                                 163                x (12)
+11. Blank                                                 175                x (12)
+12. Building data type                                    187                x (1)    1 = odd
+                                                                                      2 = even
+13. Smallest building number (information about an odd/even building)
+14. Building number 1                                     188                x (5)
+15. Building delivery letter 1                            193                x (1)
+16. Punctuation mark                                      194                x (1)
+17. Building number 2                                     195                x (5)
+18. Building delivery letter 2                            200                x (1)
+
+19. Highest building number (information about an odd/even building)
+20. Building number 1                                     201                x (5)
+21. Building delivery letter 1                            206                x (1)
+22. Punctuation mark                                      207                x (1)
+23. Building number 2                                     208                x (5)
+24. Building delivery letter 2                            213                x (1)
+25. Municipality code                                     214                x (3)
+26. Municipality name in Finnish                          217                x (20)
+27. Municipality name in Swedish                          237                x (20)
+
+Record length 256 characters
+                                                                                                           5
+
+                                                      APPENDIX 3: Postal Code Changes Record Description
+
+Data                                    Initial position    Length       Content
+Record identifier                                           1             x (4)
+Level                                                       5             x (1)           1 = postal code level
+Running date                                                6             x (8)           yyyymmdd
+Extraction start date                                       14            x (8)           yyyymmdd
+Extraction end date                                         22            x (8)           yyyymmdd
+Old postal code                                             30            x (5)
+Old postal code name in Finnish                             35            x (30)
+Old postal code name in Swedish                             65            x (30)
+Old postal code name abbreviation in Finnish                95            x (12)
+Old postal code name abbreviation in Swedish                107           x (12)
+Reserve                                                     119           x (131)
+New postal code                                             250           x (5)
+New postal code name in Finnish                             255           x (30)
+New postal code name in Swedish                             285           x (30)
+New postal code name abbreviation in Finnish                315           x (12)
+New postal code name abbreviation in Swedish                327           x (12)
+Municipality code                                           339           x (3)
+Municipality name in Finnish                                342           x (20)
+Municipality name in Swedish                                362           x (20)
+Administrative region code                                  382           x (2)           [1]
+Administrative region name in Finnish                       384           x (30)          [1]
+Administrative region name in Swedish                       414           x (30)          [1]
+Change date                                                 444           x (8)           yyyymmdd
+Event code                                                  452           x (2)           1 = change of name
+                                                                                          2 = postal code closed
+                                                                                          3 = new postal code
+                                                                                          4 = postal code merged
+                                                                                          5 = postal code reactivation
+                                                                                          6 = postal code replaced by
+                                                                                          new postal code
+
+Record length 453 characters
+
+[1] Regions. The administrative region code is not unique. International NUTS3-code can be determined by region
+name.
+
+Etelä-Savo FI131, Pohjois-Savo FI132, Pohjois-Karjala FI133, Kainuu FI134, Uusimaa FI181, Itä-Uusimaa FI182,
+Varsinais-Suomi FI183, Kanta-Häme FI184, Päijät-Häme FI185, Kymenlaakso FI186, Etelä-Karjala FI187, Satakunta
+FI191, Pirkanmaa FI192, Keski-Suomi FI193, Etelä-Pohjanmaa FI194, Pohjanmaa FI195, Keski-Pohjanmaa FI1A1,
+Pohjois-Pohjanmaa FI1A2, Lappi FI1A3, Ahvenanmaa FI200

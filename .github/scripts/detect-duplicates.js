@@ -14,6 +14,7 @@ const {
   haversineDistance,
   levenshteinDistance,
   normalizePostcodeCode,
+  listChangedFiles,
 } = require('./utils');
 
 const NAME_DISTANCE_THRESHOLD = 2;
@@ -78,12 +79,7 @@ async function run() {
   }
 
   // Get changed files
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 300,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const contributionFiles = files.filter(
     (f) =>

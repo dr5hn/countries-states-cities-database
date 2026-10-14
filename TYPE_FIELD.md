@@ -108,6 +108,25 @@ place is `locality` with `type_local` `main place`: a statistical class, not a l
 Local municipalities stored as cities are `municipality / local municipality` at level 3. Metropolitan and district
 municipalities are county records; rows for them in `ZA.json` are typed `county` and wait for removal in v5.0.0.
 
+### Kazakhstan
+
+In `KZ.json`, the category is the one in the KATO classifier: `city / қала`, `town / кент`, `village / ауыл`. Cities
+of republican significance are at level 1, of regional significance at 2 and of district significance at 3. A town or
+village is at 3, or at 4 when it lies in a rural okrug; a "conditional" city or village administration in KATO is not
+a unit and adds no level. Districts (аудан) are county records; rows for districts in `KZ.json` are typed `county`, and
+their removal is queued for a major release. Where a district row and a county record share the district's own
+Wikidata item, they are the same entity. `county_id` is the containing district, so a village in a rural okrug (level 4) links to
+its district (level 2); `parent_id` is the record directly above, and is empty when that tier has no record.
+
+### Tanzania
+
+In `TZ.json`, a record that is itself a city, municipal or town council is `municipality` at level 2 with the
+council's Swahili category (`Halmashauri ya Jiji`, `Halmashauri ya Manispaa`, `Halmashauri ya Mji`). A record of the
+town or city a council is named after is not the council: it keeps its own identity and is not typed until a register
+of settlements binds it. Levels follow the census hierarchy: region 1, district or council
+2, division 3, ward (`section / kata`) 4. Rows for districts are typed `county / wilaya` at level 2, and their removal is
+queued for a major release; Tanzania has no county records yet.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
