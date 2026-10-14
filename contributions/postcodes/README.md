@@ -127,7 +127,9 @@ redistribution basis was not established. Names, points and states now come from
 13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
 GeoNames, Romanian postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
 empty. Edition ledger: `.github/fixes-docs/ledgers/RO_postcodes_geonames_2026-10.sources.json`. 12 rows the
-dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then. The dump writes
+Romanian with the legacy cedilla letters ş ţ Ş Ţ; CSC stores them as the correct comma-below ș ț Ș Ț, and changes
+nothing else in a label.
 
 **Poland (since October 2026):** the earlier PL rows came from a copy of the postcode list (mberezinski/kody-pocztowe-geo) whose
 redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
