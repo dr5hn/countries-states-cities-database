@@ -106,6 +106,15 @@ GeoNames' estimates, not delivery-area centroids. Edition ledger:
 `.github/fixes-docs/ledgers/PT_postcodes_geonames_2026-10.sources.json`. 1,112 codes the dump does not list are queued
 for removal in v5.0.0; they keep their earlier values until then.
 
+**Mexico (since October 2026):** the earlier MX rows came from a 2016 mirror of SEPOMEX data whose redistribution basis
+was not established. Each row is one postcode and settlement (asentamiento). Names and points now come from the GeoNames
+postal code dump of 13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)).
+Credit: "Source: GeoNames, Mexican postal code dump, 13 October 2026". Modification: a row is kept only when the dump
+lists its settlement under the same code (exactly, or after an accent, case and punctuation fold); it takes that
+row's name, point and state. Points are GeoNames' estimates. Edition ledger:
+`.github/fixes-docs/ledgers/MX_postcodes_geonames_2026-10.sources.json`. 451 rows whose settlement or code the dump
+does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
 own to programmatically assemble attribution — see the scope note above.
