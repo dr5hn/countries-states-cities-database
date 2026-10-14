@@ -158112,3 +158112,24 @@ any name or native value.
 
 ### Rollback
 Revert the PR (squash commit).
+
+## United States Minor Outlying Islands: country point off null island
+
+### Problem
+Country 234 (UM) had latitude 0, longitude 0: "null island" in the Gulf of Guinea, thousands of kilometres from any of
+its islands. Found while fixing the zero-coordinate sync bug (#2032).
+
+### Fix
+One record, two fields: latitude 0 → 19.30000000 and longitude 0 → 166.63333300, Wikidata's point for UM (on Wake
+Island, one of its islands; CSC's Wake Island state 5220 sits at 19.28, 166.65). UM's islands are spread across the
+Pacific and Caribbean, so no single point is central; this is the open, cited one. Ledger:
+`.github/fixes-docs/ledgers/UM_country_point_2026-10.csv`.
+
+DR Congo (country 51) at 0, 25 was checked too and is left as it is: like 155 of the 250 country points (e.g.
+India 20, 77; France 46, 2) it is a whole-degree approximate point, and it lies inside the country, near Kisangani.
+
+### Sources
+- Wikidata Q16645, P625 (CC0 1.0), revision 2555301063, retrieved 14 Oct 2026.
+
+### Rollback
+Revert the PR (squash commit).
