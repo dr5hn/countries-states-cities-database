@@ -1,0 +1,121 @@
+{
+  "country_code": "GR",
+  "identity": "code",
+  "source_tag": "openstreetmap",
+  "legacy_source_tag": "elta-via-MentatInnovations",
+  "original_disposition": "d",
+  "state_mapping": {
+    "positive_state_links": false,
+    "reason": "No OSM country-specific administrative boundary join established"
+  },
+  "rows_kept": 1204,
+  "queued_for_v5_removal": 46,
+  "consumer_consequence": "Greece retains 1204 same-scope postcode IDs (1204 codes), queues 46 IDs for v5, retains 43 fresh labels, 57 source-supported point pairs and 0 state links, and clears 0 existing city links on kept rows.",
+  "product": "OpenStreetMap validated country screen",
+  "counts": {
+    "rows_on_master": 1250,
+    "unique_codes_on_master": 1250,
+    "replacement_rows": 1414,
+    "replacement_unique_codes": 1414,
+    "queued": 46,
+    "queued_code_absent": 46,
+    "kept": 1204,
+    "state_links_changed": 0,
+    "state_links_cleared": 0,
+    "state_links_added": 0,
+    "state_links_reassigned": 0,
+    "nonnull_after_locality_name": 43,
+    "nonnull_after_latitude": 57,
+    "nonnull_after_longitude": 57,
+    "nonnull_after_state_id": 0,
+    "nonnull_after_state_code": 0,
+    "nonnull_after_city_id": 0,
+    "nonnull_after_source": 1204,
+    "nonnull_after_wikiDataId": 0,
+    "queued_code_present": 0,
+    "queued_product_unverified": 0,
+    "new_codes_not_added": 210,
+    "kept_unique_codes": 1204,
+    "master_repeated_code_groups": 0
+  },
+  "changed_field_counts": {
+    "locality_name": 1204,
+    "latitude": 1204,
+    "longitude": 1204,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 1204,
+    "wikiDataId": 0
+  },
+  "cleared_nonnull_field_counts": {
+    "locality_name": 1161,
+    "latitude": 1147,
+    "longitude": 1147,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 0,
+    "wikiDataId": 0
+  },
+  "city_links": {
+    "null_unchanged": 1204,
+    "kept": 0,
+    "changed": 0,
+    "cleared": 0,
+    "newly_linked": 0
+  },
+  "field_hold_row_counts": {
+    "Missing or disagreeing same-scope labels; old name not grandfathered": 1161,
+    "Missing, ambiguous, inconsistent or coarser administrative scope; no old-state candidate selection": 1204,
+    "No country-specific OSM administrative boundary join established; no postcode-prefix state inference": 1204,
+    "No replacement product identifier and geographic city-scope predicate established for this source; city link cleared or remains null": 1204,
+    "Missing, invalid or disagreeing published pairs; no generated centroid or city point fallback": 1147
+  },
+  "identity_scope_note": null,
+  "replacement_coverage_measured": true,
+  "distribution_notices": ".github/licenses/pc_rebuild_7-distribution-notices.txt",
+  "research_master_sha": "cdb667f14d90838f7fd04a63f26541f4e2366f73",
+  "queue_policy": "v5 major only; no_successor; IDs reserved in research only; no redirects or edits here",
+  "point_scope": "GeoNames published estimates, TW administrative centres and guarded multi-object OSM medians; no postal centroid or current routing certification",
+  "field_scope": "Unanimous fresh same-identity values; null on disagreement/missing scope; no old-field grandfathering or old-state candidate selection",
+  "city_scope": "A positive source-specific identifier and geographic same-entity predicate were not established from these inputs; alias existence alone cannot preserve an old link.",
+  "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Brel%5B%22boundary%22%3D%22administrative%22%5D%5B%22ISO3166-1%22%3D%22GR%22%5D%5B%22admin_level%22%3D%222%22%5D-%3E.b%3B.b+map_to_area-%3E.a%3B%28.b%3Bnwr%28area.a%29%5B%22addr%3Apostcode%22%5D%3Bnwr%28area.a%29%5B%22postal_code%22%5D%3B%29%3Bout+meta+geom%3B",
+  "edition": "bounded Overpass country snapshot 2026-10-14T03:30:21Z",
+  "sha256": "ab5e954ffb92632c048af5271695da42b54943bcd7f3a2f3e2ea92e75a7829e1",
+  "bytes": 92606227,
+  "retrieved_at_utc": "2026-10-14T03:32:43.382507+00:00",
+  "licence": "ODbL 1.0",
+  "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "credit": "© OpenStreetMap contributors",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "boundary_checks": [
+    {
+      "relation_id": 192307,
+      "version": 449,
+      "timestamp": "2026-07-31T20:41:47Z",
+      "checked": true,
+      "missing": [],
+      "unsupported": [],
+      "polygonize_errors": {
+        "outer": {
+          "cuts": 0,
+          "dangles": 0,
+          "invalid": 0
+        },
+        "inner": {
+          "cuts": 0,
+          "dangles": 0,
+          "invalid": 0
+        }
+      },
+      "bounds": [
+        19.1127535,
+        34.7188863,
+        29.68381,
+        41.7488889
+      ]
+    }
+  ],
+  "scope": "Bounded country screen; complete geometry and country containment checked; guarded multi-object medians only; no current routing certification."
+}

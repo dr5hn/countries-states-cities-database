@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Singleton-postcode UK overseas territories importer for issue #1039.
+"""RETIRED. Singleton-postcode UK overseas territories importer for issue #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: FK, GS, IO, NR, PN, SH, TC: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger.
+Legacy source tags: wikipedia-singleton-territory. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -68,6 +74,8 @@ TERRITORIES: Dict[str, List[tuple]] = {
 
 
 def main() -> int:
+    print("[ERROR] retired: FK, GS, IO, NR, PN, SH, TC: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy wikipedia-singleton-territory. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
