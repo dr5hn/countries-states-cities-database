@@ -123,6 +123,11 @@ interval; only a later release's events are ignored.
 line. Removals in ledger events before `--from` are added automatically. The list for v5.0.0 starts from v4.0's
 published `removed_ids_v3.2_to_v4.0.csv`. It is prepared with the workflow integration.
 
+The importer (`bin/scripts/sync/import_json_to_mysql.py`) reads the same files, `events.jsonl` (its removals) and
+`migrations/reserved_ids.jsonl`, and starts the ids it assigns to new records above the highest retired or reserved id
+of each table, so a retired id is never handed to a new record. MySQL also keeps them above the highest id present. A
+malformed line in either file stops the import.
+
 ## What makes the generator refuse
 
 It exits 1 and writes nothing when any of these happens:

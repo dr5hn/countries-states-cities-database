@@ -49,6 +49,35 @@ LINK_TYPES = {
 }
 
 
+def retired_id_floor(migrations_dir=os.path.join('migrations')):
+    """Highest id per table that the id ledger retired or reserved, so auto-assigned ids never reuse one.
+
+    Reads removal events (old_table, old_id) from events.jsonl and {table, id} rows from reserved_ids.jsonl when they
+    exist. A malformed line stops the import: guessing past it could hand a retired id to a new record."""
+    floor = {}
+    for name, tkey, ikey in (('events.jsonl', 'old_table', 'old_id'), ('reserved_ids.jsonl', 'table', 'id')):
+        path = os.path.join(migrations_dir, name)
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding='utf-8') as f:
+            for n, line in enumerate(f, 1):
+                if not line.strip():
+                    continue
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError as e:
+                    sys.exit(f"❌ {path}:{n} is not JSON ({e}); fix the ledger line before importing")
+                if not isinstance(row, dict):
+                    sys.exit(f"❌ {path}:{n} is not a JSON object; fix the ledger line before importing")
+                if name == 'events.jsonl' and row.get('event_type', 'removal') != 'removal':
+                    continue   # identity and restoration events retire nothing
+                table, rid = row.get(tkey), row.get(ikey)
+                if not isinstance(table, str) or not isinstance(rid, int) or isinstance(rid, bool) or rid <= 0:
+                    sys.exit(f"❌ {path}:{n} needs {tkey} and a positive integer {ikey}; fix the ledger line before importing")
+                floor[table] = max(floor.get(table, 0), rid)
+    return floor
+
+
 MIGRATION_20261015 = ("counties need migration 20261015000000 (county_states, nullable county state); run migration "
                       "20261015000000 before importing a county of several regions")
 
@@ -76,6 +105,8 @@ def reference_rows():
 class JSONToMySQLImporter:
     """Import JSON to MySQL with dynamic schema detection and updates"""
 
+    id_floor: Dict[str, int] = {}   # per table, from the id ledger; __init__ reads it (tests may build without it)
+
     def __init__(self, host='localhost', user='root', password='', database='world'):
         """Initialize database connection"""
         try:
@@ -90,6 +121,7 @@ class JSONToMySQLImporter:
             )
             self.cursor = self.conn.cursor(dictionary=True)
             print(f"✓ Connected to MySQL: {user}@{host}/{database}")
+            self.id_floor = retired_id_floor()
         except mysql.connector.Error as e:
             print(f"❌ MySQL connection failed: {e}")
             sys.exit(1)
@@ -298,6 +330,9 @@ class JSONToMySQLImporter:
 
     def _batch_insert_records(self, table_name: str, records: List[Dict], insert_columns: List[str]) -> int:
         """Helper method to batch insert records with specific columns"""
+        if 'id' not in insert_columns and self.id_floor.get(table_name):
+            # Auto-assigned ids start above every id the ledger retired or reserved; InnoDB also stays above max(id)
+            self.cursor.execute(f"ALTER TABLE {table_name} AUTO_INCREMENT = {self.id_floor[table_name] + 1}")
         # Prepare insert statement
         placeholders = ', '.join(['%s'] * len(insert_columns))
         column_names = ', '.join([f'`{c}`' for c in insert_columns])
