@@ -7,27 +7,48 @@ there. Every county, that one and all others, must then have the same state pair
 format: the states list in YAML, XML, MongoDB, Parquet and TOON (read with the reference reader), the county_states
 rows in CSV, PLIST and SQL Server, and the state columns of each counties file, SQL Server's included. Counts are
 never used in place of equality. Exits 1 with the problems, or 0 after printing what it checked.
+
+Each file is read by a strict loader before anything is compared, and a structural fault fails the whole file: a
+repeated key, header or column; a wrong envelope or root (a null root fails the file, it is never skipped); stray
+XML or property-list content; CSV quoting a lenient reader would repair; non-canonical TOON numbers; invalid UTF-8;
+a Parquet column stored with the wrong physical type. Ids must be positive integers of the format's own integer type
+(or canonical integer text in text formats) and nulls must use the format's own null encoding.
+
+SQL Server: this is not a general SQL validator. It accepts exactly the statements this repository's exporter
+(bin/Commands/ExportSqlServer.php) writes for world.counties and world.county_states: the drop/create scaffold, the
+identity and constraint switches, and INSERT statements whose rows are parsed completely (one value per column,
+exact separators, nothing left over). Comments are removed first, so a commented-out insert adds no rows. Any other
+statement is refused, not interpreted.
 """
 import csv
-from collections import Counter
+import io
 import json
 import plistlib
 import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET  # parses the export just generated in this run, not outside input
+from collections import Counter
 from pathlib import Path
 
-from check_null_state_exports import _read, _records, _yaml
+from check_null_state_exports import _read
 
 TOON_READER_DIR = Path(__file__).resolve().parents[2] / 'scripts' / 'export'   # where CI installs @toon-format/toon
 TOON_DECODE = ("const { decode } = await import('@toon-format/toon'); const fs = await import('node:fs'); "
-               "process.stdout.write(JSON.stringify(decode(fs.readFileSync(process.argv[1], 'utf8'))))")
-
+               "const text = new TextDecoder('utf-8', { fatal: true }).decode(fs.readFileSync(process.argv[1])); "
+               "process.stdout.write(JSON.stringify(decode(text)))")
 
 MISSING, INVALID, BAD = '(missing)', '(invalid list)', '(invalid value)'   # never equal to a real id, code, pair or list
 POSITIVE_INT_TEXT = re.compile(r'[1-9][0-9]*')
+SAFE_INT = 2 ** 53 - 1   # the largest integer the JavaScript TOON reader keeps exact
+SQL_NUMBER = re.compile(r'-?[0-9]+(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?')
+COUNTY_STATES_DDL = ('CONSTRAINT PK_county_states PRIMARY KEY (county_id, state_id)',
+                     'FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',
+                     'FOREIGN KEY (state_id) REFERENCES world.states(id)')
+COUNTIES_DDL = ('id INT IDENTITY(1,1) PRIMARY KEY', 'state_id INT NULL', 'state_code NVARCHAR(255) NULL')
 
+
+# --- values -------------------------------------------------------------------------------------------------------
 
 def _native_id(v):
     """An id from a typed format (JSON, YAML, MongoDB, TOON, Parquet): a positive int, never a boolean or a fraction;
@@ -48,6 +69,16 @@ def _text_code(v):
     return None if v == '' else v if isinstance(v, str) else BAD
 
 
+def _typed_id(v):
+    """A nullable id from a typed format: null, or a positive int (never a boolean or a fraction)."""
+    return None if v is None else _native_id(v)
+
+
+def _typed_code(v):
+    """A nullable state code from a typed format: null, or a non-empty string."""
+    return None if v is None else v if isinstance(v, str) and v else BAD
+
+
 def _regions(listed):
     """A states list as a sorted tuple of (state_id, state_code), or None when it is not a list of exact pairs with
     integer-typed positive ids and non-empty codes (no coercion: 4060.75, "4060" and true are not 4060)."""
@@ -58,21 +89,222 @@ def _regions(listed):
     return tuple(sorted((r['state_id'], r['state_code']) for r in listed))
 
 
+def _list_value(listed):
+    """What a format holds for one county's list: None for no list, the regions tuple, or INVALID."""
+    if listed is None:
+        return None
+    regions = _regions(listed)
+    return INVALID if regions is None else regions
+
+
+def _flat_row_ok(row):
+    """Whether a CSV or PLIST row is whole: no surplus-cell key and no missing (None) cell anywhere."""
+    return None not in row and all(v is not None for v in row.values())
+
+
+def _blank(text):
+    """Whether XML text or a tail is only whitespace (indentation)."""
+    return not (text or '').strip()
+
+
+# --- strict loaders: each returns records or raises, so _read reports the whole file ---------------------------------
+
+def _utf8(path):
+    """The file's text; invalid UTF-8 is an error, never replaced."""
+    return Path(path).read_bytes().decode('utf-8')
+
+
+def _no_duplicates(pairs):
+    """A JSON object from its pairs; a repeated key is an error, not an overwrite."""
+    out = {}
+    for key, value in pairs:
+        if key in out:
+            raise ValueError(f'duplicate key {key!r}')
+        out[key] = value
+    return out
+
+
+def _reject_constant(name):
+    """NaN and Infinity are not JSON."""
+    raise ValueError(f'non-standard JSON constant {name}')
+
+
+def _json(text):
+    """Strict JSON: no repeated key in any object, no NaN or Infinity."""
+    return json.loads(text, object_pairs_hook=_no_duplicates, parse_constant=_reject_constant)
+
+
+def _record_list(doc, what):
+    """doc as a list of record dicts; null, another root or a non-object row is an error."""
+    if not isinstance(doc, list) or not all(isinstance(r, dict) for r in doc):
+        raise ValueError(f'{what}: expected an array of records, got {type(doc).__name__}')
+    return doc
+
+
+def _load_json(path):
+    """A JSON array of records (json/counties.json, mongodb/counties.json)."""
+    return _record_list(_json(_utf8(path)), 'JSON')
+
+
+def _load_yaml(path):
+    """The exporter's YAML envelope {county: [records]}, with no repeated mapping key at any depth."""
+    import yaml
+
+    class Strict(getattr(yaml, 'CSafeLoader', yaml.SafeLoader)):
+        """The safe loader, refusing a repeated mapping key instead of keeping the last value."""
+
+        def construct_mapping(self, node, deep=False):
+            """Check the keys of one mapping, then build it."""
+            seen = set()
+            for key_node, _ in node.value:
+                key = self.construct_object(key_node, deep=True)
+                if key in seen:
+                    raise ValueError(f'YAML: duplicate key {key!r} at line {key_node.start_mark.line + 1}')
+                seen.add(key)
+            return super().construct_mapping(node, deep)
+
+    doc = yaml.load(_utf8(path), Loader=Strict)
+    if not isinstance(doc, dict) or list(doc) != ['county']:
+        raise ValueError(f'YAML: expected the envelope {{county: [...]}}, got '
+                         f'{list(doc) if isinstance(doc, dict) else type(doc).__name__}')
+    return _record_list(doc['county'], 'YAML county')
+
+
+def _csv_lexical(text):
+    """Refuse CSV that a lenient reader would repair: a quote inside an unquoted cell, text after a closing quote, or a
+    quoted cell still open at the end. Doubled quotes inside a quoted cell and embedded newlines stay legal."""
+    start, plain, quoted, closing = range(4)
+    state, line = start, 1
+    for ch in text:
+        if state == start:
+            state = quoted if ch == '"' else start if ch in ',\r\n' else plain
+        elif state == plain:
+            if ch == '"':
+                raise ValueError(f'CSV line {line}: a quote inside an unquoted cell')
+            if ch in ',\r\n':
+                state = start
+        elif state == quoted:
+            if ch == '"':
+                state = closing
+        elif ch == '"':
+            state = quoted   # a doubled quote inside a quoted cell
+        elif ch in ',\r\n':
+            state = start
+        else:
+            raise ValueError(f'CSV line {line}: text after a closing quote')
+        if ch == '\n':
+            line += 1
+    if state == quoted:
+        raise ValueError('CSV: a quoted cell is not closed')
+
+
+def _load_csv(path):
+    """Rows of a CSV export as dicts by header name, after the lexical check, read with strict=True. Header names must
+    be unique. A row with fewer or more cells than the header is kept but marked with a None key (as csv.DictReader
+    marks surplus cells), so _flat_row_ok() refuses it before any field is read."""
+    text = _utf8(path)
+    _csv_lexical(text)
+    rows = list(csv.reader(io.StringIO(text, newline=''), strict=True))
+    if not rows:
+        raise ValueError('CSV: no header')
+    header = rows[0]
+    repeated = sorted(name for name, n in Counter(header).items() if n > 1)
+    if repeated:
+        raise ValueError(f'CSV: repeated column {repeated}')
+    out = []
+    for row in rows[1:]:
+        d = dict(zip(header, row))
+        if len(row) != len(header):
+            d[None] = f'{len(row)} cells for {len(header)} columns'
+        out.append(d)
+    return out
+
+
+class _NoDuplicateDict(dict):
+    """A property-list dict that refuses a repeated key instead of keeping the last value."""
+
+    def __setitem__(self, key, value):
+        """Set a key once."""
+        if key in self:
+            raise ValueError(f'PLIST: duplicate key {key!r}')
+        super().__setitem__(key, value)
+
+
+def _plist_xml_grammar(data):
+    """The exporter's XML property list: one <plist> holding exactly one <array> of <dict>s whose children alternate
+    <key> and <string> leaves. Any other element, attribute (but plist's version), nested tag or non-whitespace text is
+    an error, so plistlib never gets to drop it."""
+    root = ET.fromstring(data)
+    if root.tag != 'plist' or set(root.attrib) - {'version'} or not _blank(root.text) or len(root) != 1:
+        raise ValueError('PLIST: expected <plist> holding one <array>')
+    array = root[0]
+    if array.tag != 'array' or array.attrib or not _blank(array.text) or not _blank(array.tail):
+        raise ValueError('PLIST: expected one <array> of records')
+    for record in array:
+        if record.tag != 'dict' or record.attrib or not _blank(record.text) or not _blank(record.tail):
+            raise ValueError(f'PLIST: <{record.tag}> where a record <dict> belongs')
+        children = list(record)
+        if len(children) % 2:
+            raise ValueError('PLIST: a record has a key without a value')
+        for i, child in enumerate(children):
+            want = 'key' if i % 2 == 0 else 'string'
+            if child.tag != want or len(child) or child.attrib or not _blank(child.tail):
+                raise ValueError(f'PLIST: <{child.tag}> where a leaf <{want}> belongs')
+
+
+def _load_plist(path):
+    """A property list of records: XML (grammar-checked first) or binary, with no repeated key."""
+    data = Path(path).read_bytes()
+    if data.startswith(b'bplist00'):
+        doc = plistlib.loads(data, fmt=plistlib.FMT_BINARY, dict_type=_NoDuplicateDict)
+    else:
+        _plist_xml_grammar(data)
+        doc = plistlib.loads(data, fmt=plistlib.FMT_XML, dict_type=_NoDuplicateDict)
+    return _record_list(doc, 'PLIST')
+
+
+def _load_xml(path):
+    """The county elements of the XML export: root <counties> holding only <county> records, without attributes and
+    with only whitespace between elements, down to each county's own fields."""
+    root = ET.parse(path).getroot()
+    if root.tag != 'counties' or root.attrib or not _blank(root.text):
+        raise ValueError(f'XML: expected the root <counties>, got <{root.tag}>')
+    for county in root:
+        if county.tag != 'county' or county.attrib or not _blank(county.text) or not _blank(county.tail):
+            raise ValueError(f'XML: <{county.tag}> where a <county> record belongs, or text or attributes on it')
+        for field in county:
+            if not _blank(field.tail):
+                raise ValueError(f'XML: text after <{field.tag}> in a county')
+    return list(root)
+
+
+def _xml_leaf(parent, tag):
+    """The text of exactly one leaf element <tag> under parent ('' when empty): MISSING when absent, BAD when repeated,
+    nested or carrying attributes (such as xsi:nil). Every XML scalar the checker reads goes through here."""
+    found = parent.findall(tag)
+    if not found:
+        return MISSING
+    if len(found) > 1 or len(found[0]) or found[0].attrib:
+        return BAD
+    return found[0].text or ''
+
+
 def _xml_regions(county):
-    """An XML county's list: MISSING without a states element, None for one empty <states/>, the regions when every
-    states element holds exactly one leaf state_id (positive integer text) and one leaf state_code and nothing else,
-    INVALID for anything else."""
+    """An XML county's list: MISSING without a states element, None for one empty <states/> without attributes, the
+    regions when every states element holds exactly one leaf state_id (positive integer text) and one leaf state_code
+    and nothing else, INVALID for anything else."""
     listed = county.findall('states')
     if not listed:
         return MISSING
-    blank = lambda t: not (t or '').strip()
-    if len(listed) == 1 and len(listed[0]) == 0 and blank(listed[0].text):
+    if any(el.attrib for el in listed):
+        return INVALID
+    if len(listed) == 1 and len(listed[0]) == 0 and _blank(listed[0].text):
         return None
     pairs = []
     for el in listed:
         children = list(el)
-        if not blank(el.text) or sorted(c.tag for c in children) != ['state_code', 'state_id'] \
-                or any(len(c) or not blank(c.tail) for c in children):
+        if not _blank(el.text) or sorted(c.tag for c in children) != ['state_code', 'state_id'] \
+                or any(not _blank(c.tail) for c in children):
             return INVALID
         sid_text, code = _xml_leaf(el, 'state_id'), _xml_leaf(el, 'state_code')
         sid = BAD if sid_text in (MISSING, BAD) else _text_id(sid_text, nullable=False)
@@ -82,80 +314,86 @@ def _xml_regions(county):
     return _list_value(pairs)
 
 
-def _list_value(listed):
-    """What a format holds for one county's list: None for no list, the regions tuple, or INVALID."""
-    if listed is None:
-        return None
-    regions = _regions(listed)
-    return INVALID if regions is None else regions
-
-
-def _authority_errors(counties):
-    """Every county of json/counties.json must be well formed: a unique positive integer id, both state keys, and either
-    its own complete state pair with no list, or two explicit nulls and two or more distinct regions."""
-    errors, seen = [], set()
-    for c in counties:
-        cid = c.get('id')
-        if type(cid) is not int or cid <= 0:
-            errors.append(f'json/counties.json: county id {cid!r} is not a positive integer')
-            continue
-        if cid in seen:
-            errors.append(f'json/counties.json: county id {cid} is duplicated')
-        seen.add(cid)
-        if 'state_id' not in c or 'state_code' not in c:
-            errors.append(f'json/counties.json: county {cid} lacks a state key')
-        elif c['state_id'] is not None or c['state_code'] is not None:
-            if c['state_id'] is None or c['state_code'] is None:
-                errors.append(f'json/counties.json: county {cid} has no regions but not a full state pair')
-            elif _native_id(c['state_id']) is BAD or not isinstance(c['state_code'], str) or not c['state_code']:
-                errors.append(f'json/counties.json: county {cid} has an invalid state pair')
-            elif c.get('states') is not None:
-                errors.append(f'json/counties.json: county {cid} has a state and a states list')
+def _toon_cells(row):
+    """The raw cells of one tabular TOON row, split on commas outside quoted cells (backslash escapes inside)."""
+    cells, cell, quoted, escaped = [], [], False, False
+    for ch in row:
+        if quoted:
+            cell.append(ch)
+            if escaped:
+                escaped = False
+            elif ch == '\\':
+                escaped = True
+            elif ch == '"':
+                quoted = False
+        elif ch == '"':
+            quoted = True
+            cell.append(ch)
+        elif ch == ',':
+            cells.append(''.join(cell))
+            cell = []
         else:
-            regions = _regions(c.get('states'))
-            if not regions or len(regions) < 2 or len({sid for sid, _ in regions}) != len(regions) \
-                    or any(sid <= 0 or not isinstance(code, str) or not code for sid, code in regions):
-                errors.append(f'json/counties.json: county {cid} has a null state pair, so it needs two or more distinct regions')
-    return errors
+            cell.append(ch)
+    cells.append(''.join(cell))
+    return cells
 
 
-def _csv_rows(path):
-    """Rows of a CSV export as dicts by header name. A row with fewer or more cells than the header is kept but marked
-    with a None key (as csv.DictReader marks surplus cells), so _flat_row_ok() refuses it before any field is read."""
-    with open(path, encoding='utf-8', newline='') as fh:
-        rows = list(csv.reader(fh))
-    header, out = rows[0] if rows else [], []
-    for row in rows[1:]:
-        d = dict(zip(header, row))
-        if len(row) != len(header):
-            d[None] = f'{len(row)} cells for {len(header)} columns'
-        out.append(d)
-    return out
-
-
-def _flat_row_ok(row):
-    """Whether a CSV or PLIST row is whole: no surplus-cell key and no missing (None) cell anywhere."""
-    return None not in row and all(v is not None for v in row.values())
-
-
-def _xml_leaf(parent, tag):
-    """The text of exactly one leaf element <tag> under parent ('' when empty): MISSING when absent, BAD when repeated or
-    when it has child elements. Every XML scalar the checker reads goes through here."""
-    found = parent.findall(tag)
-    if not found:
-        return MISSING
-    if len(found) > 1 or len(found[0]):
-        return BAD
-    return found[0].text or ''
-
-
-def _toon(path):
-    """The rows of a TOON export, decoded by the reference reader (@toon-format/toon) under Node."""
+def _load_toon(path):
+    """The rows of a TOON export. Before the reference reader (@toon-format/toon under Node, which decodes the whole
+    document with fatal UTF-8) turns numbers into JavaScript numbers, the raw id and state_id cells must be canonical
+    positive integers within JavaScript's exact range (state_id may be the literal null), so 9.0000000000000001 is
+    never rounded into 9."""
+    text = _utf8(path)
+    lines = text.split('\n')
+    header = re.fullmatch(r'\[(\d+)\]\{([^}]*)\}:', lines[0])
+    if header is None:
+        raise ValueError('TOON: expected a table of records, [N]{fields}:')
+    fields = header.group(2).split(',')
+    for n, line in enumerate(lines[1:], 2):
+        cells = _toon_cells(line[2:]) if line.startswith('  ') else None
+        if cells is None or len(cells) != len(fields):
+            continue   # the reference reader refuses a malformed row
+        raw = dict(zip(fields, cells))
+        for field, nullable in (('id', False), ('state_id', True)):
+            value = raw.get(field)
+            if value is None or (nullable and value == 'null'):
+                continue
+            if not POSITIVE_INT_TEXT.fullmatch(value) or int(value) > SAFE_INT:
+                raise ValueError(f'TOON line {n}: {field} {value!r} is not a canonical positive integer')
     run = subprocess.run(['node', '--input-type=module', '-e', TOON_DECODE, str(Path(path).resolve())], cwd=TOON_READER_DIR,
                          capture_output=True, text=True, timeout=600)
     if run.returncode != 0:
         raise ValueError(f'the TOON reference reader failed: {run.stderr.strip()[-300:]}')
-    return json.loads(run.stdout)
+    return _record_list(json.loads(run.stdout), 'TOON')
+
+
+def _load_parquet(path):
+    """The compared columns of the Parquet counties table, read from their physical Arrow storage (never through
+    pandas' metadata-driven casts): unique column names, physical and as pandas would name them; integer storage for
+    id and state_id; string storage (or null storage when every value is null) for state_code and states."""
+    import pyarrow.parquet as pq
+    import pyarrow.types as pat
+    table = pq.read_table(path)
+    names = table.column_names
+    if len(set(names)) != len(names):
+        raise ValueError(f'Parquet: repeated column in {names}')
+    meta = table.schema.metadata or {}
+    if b'pandas' in meta:
+        columns = json.loads(meta[b'pandas']).get('columns', [])
+        named = [c.get('name') for c in columns if isinstance(c.get('name'), str)]
+        aliased = [c for c in columns if isinstance(c.get('name'), str) and c.get('name') != c.get('field_name')]
+        if len(set(named)) != len(named) or aliased:
+            raise ValueError('Parquet: pandas metadata gives two columns one name, or renames a column')
+    text = lambda t: pat.is_string(t) or pat.is_large_string(t) or pat.is_null(t)   # an all-null text column may be null-typed
+    wanted = {'id': pat.is_integer, 'state_id': pat.is_integer, 'state_code': text, 'states': text}
+    missing = sorted(set(wanted) - set(names))
+    if missing:
+        raise ValueError(f"Parquet: a column is missing ({', '.join(missing)})")
+    for name, ok in wanted.items():
+        if not ok(table.schema.field(name).type):
+            raise ValueError(f'Parquet: {name} is stored as {table.schema.field(name).type}')
+    columns = {name: table.column(name).to_pylist() for name in wanted}
+    return [dict(zip(wanted, values)) for values in zip(*columns.values())]
 
 
 class SqlText(str):
@@ -175,59 +413,162 @@ def _sql_code(v):
     return None if v is None else str(v) if isinstance(v, SqlText) and v else BAD
 
 
-def _typed_id(v):
-    """A nullable id from a typed format: null, or a positive int (never a boolean or a fraction)."""
-    return None if v is None else _native_id(v)
-
-
-def _typed_code(v):
-    """A nullable state code from a typed format: null, or a non-empty string."""
-    return None if v is None else v if isinstance(v, str) and v else BAD
-
-
-def _sql_values(row):
-    """The values of one SQL Server VALUES row, '(1, N'a,b', NULL)', as Python values (None for NULL)."""
-    out, i, n = [], 0, len(row)
+def _sql_statements(text):
+    """The comment-free statements of a SQL Server script, split on semicolons outside quoted literals. An unterminated
+    comment or literal, or text after the last semicolon, is an error."""
+    out, cur, i, n = [], [], 0, len(text)
     while i < n:
-        if row[i] in ' ,':
-            i += 1
-        elif row.startswith("N'", i) or row[i] == "'":
-            i += 2 if row[i] == 'N' else 1
-            buf = []
+        if text.startswith('--', i):
+            j = text.find('\n', i)
+            i = n if j < 0 else j
+        elif text.startswith('/*', i):
+            j = text.find('*/', i + 2)
+            if j < 0:
+                raise ValueError('SQL: a block comment is not closed')
+            cur.append(' ')
+            i = j + 2
+        elif text[i] == "'":
+            j = i + 1
             while True:
-                if row[i] == "'" and row[i + 1:i + 2] == "'":
-                    buf.append("'")
-                    i += 2
-                elif row[i] == "'":
-                    i += 1
+                if j >= n:
+                    raise ValueError('SQL: a quoted literal is not closed')
+                if text.startswith("''", j):
+                    j += 2
+                elif text[j] == "'":
                     break
                 else:
-                    buf.append(row[i])
-                    i += 1
-            out.append(SqlText(''.join(buf)))
+                    j += 1
+            cur.append(text[i:j + 1])
+            i = j + 1
+        elif text[i] == ';':
+            out.append(''.join(cur).strip())
+            cur = []
+            i += 1
         else:
-            j = i
-            while j < n and row[j] != ',':
-                j += 1
-            token = row[i:j].strip()
-            out.append(None if token == 'NULL' else token)
-            i = j
-    return out
+            cur.append(text[i])
+            i += 1
+    if ''.join(cur).strip():
+        raise ValueError(f"SQL: text after the last statement: {''.join(cur).strip()[:60]!r}")
+    return [s for s in out if s]
 
 
-def _sql_inserts(text, table):
-    """Every row inserted into world.<table>, as dicts by column name (values as text, None for NULL)."""
-    rows = []
-    for m in re.finditer(rf'INSERT INTO world\.{table} \(([^)]*)\) VALUES\n(.*?);\n', text, re.S):
-        cols = [c.strip() for c in m.group(1).split(',')]
-        for line in m.group(2).split('\n'):
-            line = line.strip().rstrip(',')
-            if line.startswith('(') and line.endswith(')'):
-                values = _sql_values(line[1:-1])
-                if len(values) != len(cols):
-                    raise ValueError(f'a {table} row has {len(values)} values for {len(cols)} columns')
-                rows.append(dict(zip(cols, values)))
-    return rows
+def _sql_rows(values, ncols):
+    """Every row of an INSERT's VALUES list, consumed completely: '(v, v),\\n(v, v)', each value NULL, N'text' or a
+    number, exactly ncols per row, commas between values and between rows, nothing left over."""
+    rows, i, n = [], 0, len(values)
+
+    def skip(i):
+        """Past whitespace."""
+        while i < n and values[i] in ' \t\r\n':
+            i += 1
+        return i
+
+    i = skip(0)
+    while True:
+        if i >= n or values[i] != '(':
+            raise ValueError(f'SQL: expected a row at {values[i:i + 30]!r}')
+        i += 1
+        row = []
+        while True:
+            i = skip(i)
+            if values.startswith('NULL', i):
+                row.append(None)
+                i += 4
+            elif values.startswith("N'", i):
+                j = i + 2
+                while True:
+                    if j >= n:
+                        raise ValueError('SQL: a quoted value is not closed')
+                    if values.startswith("''", j):
+                        j += 2
+                    elif values[j] == "'":
+                        break
+                    else:
+                        j += 1
+                row.append(SqlText(values[i + 2:j].replace("''", "'")))
+                i = j + 1
+            else:
+                m = SQL_NUMBER.match(values, i)
+                if not m:
+                    raise ValueError(f'SQL: expected a value at {values[i:i + 30]!r}')
+                row.append(m.group())
+                i = m.end()
+            i = skip(i)
+            if i < n and values[i] == ',':
+                i += 1
+                continue
+            if i < n and values[i] == ')':
+                i += 1
+                break
+            raise ValueError(f'SQL: expected , or ) at {values[i:i + 30]!r}')
+        if len(row) != ncols:
+            raise ValueError(f'SQL: a row has {len(row)} values for {ncols} columns')
+        rows.append(row)
+        i = skip(i)
+        if i >= n:
+            return rows
+        if values[i] != ',':
+            raise ValueError(f'SQL: expected , between rows at {values[i:i + 30]!r}')
+        i = skip(i + 1)
+
+
+def _load_sql(path, table):
+    """The rows a SQL Server export inserts into world.<table>, and its CREATE TABLE statement. Only the statements the
+    exporter writes for that table are accepted (see the module docstring); any other statement is an error."""
+    norm = lambda s: re.sub(r'\s+', ' ', s).strip()
+    scaffold = {f"IF OBJECT_ID('world.{table}', 'U') IS NOT NULL DROP TABLE world.{table}",
+                f'SET IDENTITY_INSERT world.{table} ON', f'SET IDENTITY_INSERT world.{table} OFF',
+                f'ALTER TABLE world.{table} NOCHECK CONSTRAINT FK_{table}_parent',
+                f'ALTER TABLE world.{table} WITH CHECK CHECK CONSTRAINT FK_{table}_parent'}
+    insert = re.compile(rf'INSERT\s+INTO\s+world\.{table}\s*\(([^)]*)\)\s*VALUES\s(.*)\Z', re.S)
+    creates, rows = [], []
+    for statement in _sql_statements(_utf8(path)):
+        if norm(statement) in scaffold:
+            continue
+        if norm(statement).startswith(f'CREATE TABLE world.{table} ('):
+            creates.append(norm(statement))
+            continue
+        m = insert.match(statement)
+        if not m:
+            raise ValueError(f'SQL: a statement the exporter does not write: {norm(statement)[:80]!r}')
+        columns = [c.strip() for c in m.group(1).split(',')]
+        if len(set(columns)) != len(columns):
+            raise ValueError(f'SQL: repeated column in {columns}')
+        rows += [dict(zip(columns, values)) for values in _sql_rows(m.group(2), len(columns))]
+    if len(creates) != 1:
+        raise ValueError(f'SQL: expected one CREATE TABLE world.{table}, found {len(creates)}')
+    return rows, creates[0]
+
+
+# --- the JSON authority -------------------------------------------------------------------------------------------
+
+def _authority_errors(counties):
+    """Every county of json/counties.json must be well formed: a unique positive integer id, the keys state_id,
+    state_code and states (a missing states is not null), and either its own complete state pair with states null, or
+    two explicit nulls and two or more distinct regions."""
+    errors, seen = [], set()
+    for c in counties:
+        cid = c.get('id')
+        if type(cid) is not int or cid <= 0:
+            errors.append(f'json/counties.json: county id {cid!r} is not a positive integer')
+            continue
+        if cid in seen:
+            errors.append(f'json/counties.json: county id {cid} is duplicated')
+        seen.add(cid)
+        if any(k not in c for k in ('state_id', 'state_code', 'states')):
+            errors.append(f'json/counties.json: county {cid} lacks state_id, state_code or states')
+        elif c['state_id'] is not None or c['state_code'] is not None:
+            if c['state_id'] is None or c['state_code'] is None:
+                errors.append(f'json/counties.json: county {cid} has no regions but not a full state pair')
+            elif _native_id(c['state_id']) is BAD or not isinstance(c['state_code'], str) or not c['state_code']:
+                errors.append(f'json/counties.json: county {cid} has an invalid state pair')
+            elif c['states'] is not None:
+                errors.append(f'json/counties.json: county {cid} has a state and a states list')
+        else:
+            regions = _regions(c['states'])
+            if not regions or len(regions) < 2 or len({sid for sid, _ in regions}) != len(regions):
+                errors.append(f'json/counties.json: county {cid} has a null state pair, so it needs two or more distinct regions')
+    return errors
 
 
 def main(county_id, root='.'):
@@ -235,14 +576,14 @@ def main(county_id, root='.'):
     problems = []
     need = lambda ok, msg: ok or problems.append(msg)
 
-    counties = _read(root, 'json/counties.json', _records, problems)
+    counties = _read(root, 'json/counties.json', _load_json, problems)
     if counties is None:
         return problems
     authority = _authority_errors(counties)
     problems += authority
     if authority:
         return problems
-    truth = {c['id']: ((c['state_id'], c['state_code']), _list_value(c.get('states'))) for c in counties}
+    truth = {c['id']: ((c['state_id'], c['state_code']), _list_value(c['states'])) for c in counties}
     pair, regions = truth.get(county_id, ((0, 0), None))
     if pair != (None, None) or not regions:
         problems.append(f'json/counties.json: county {county_id} needs a null state pair and two or more distinct regions')
@@ -274,21 +615,20 @@ def main(county_id, root='.'):
             return MISSING
         return (to_id(row['state_id']), to_code(row['state_code']))
 
-    for fmt, parse in (('csv', _csv_rows), ('plist', lambda p: plistlib.loads(p.read_bytes()))):
-        rows = _read(root, f'{fmt}/counties.{fmt}', parse, problems)
+    for fmt, load in (('csv', _load_csv), ('plist', _load_plist)):
+        rows = _read(root, f'{fmt}/counties.{fmt}', load, problems)
         if rows is not None:
-            # a short CSV row gives None cells and a long one a None key: neither is the empty null encoding
             # a row with a missing or surplus cell is refused whole, before any of its fields is read
             compare(f'{fmt}/counties.{fmt}', [(_text_id(r.get('id'), nullable=False) if _flat_row_ok(r) else BAD,
                                                keyed_pair(r, _text_id, _text_code) if _flat_row_ok(r) else BAD, None) for r in rows],
                     with_regions=False)
-        rel = _read(root, f'{fmt}/county_states.{fmt}', parse, problems)
+        rel = _read(root, f'{fmt}/county_states.{fmt}', load, problems)
         if rel is not None:
             got = Counter((_text_id(r.get('county_id'), nullable=False), _text_id(r.get('state_id'), nullable=False),
                            _text_code(r.get('state_code'))) if _flat_row_ok(r) else (BAD, BAD, BAD) for r in rel)
             need(got == Counter(triples), f'{fmt}/county_states.{fmt}: regions differ from json/counties.json')
 
-    xml = _read(root, 'xml/counties.xml', lambda p: ET.parse(p).getroot(), problems)
+    xml = _read(root, 'xml/counties.xml', _load_xml, problems)
     if xml is not None:
         rows = []
         for e in xml:
@@ -297,59 +637,56 @@ def main(county_id, root='.'):
             rows.append((BAD if cid in (MISSING, BAD) else _text_id(cid, nullable=False), pair, _xml_regions(e)))
         compare('xml/counties.xml', rows)
 
-    for rel, parse, key in (('yml/counties.yml', _yaml, 'id'), ('mongodb/counties.json', _records, '_id')):
-        rows = _read(root, rel, parse, problems)
-        if rows is not None:
-            compare(rel, [(_native_id(r.get(key)), keyed_pair(r, _typed_id, _typed_code),
-                           _list_value(r['states']) if 'states' in r else MISSING) for r in rows])
-            if key == '_id':
-                refs = {r.get('_id'): (r.get('state') or {}).get('$id') for r in rows}
-                wrong = [cid for cid, ((sid, _), _) in truth.items() if refs.get(cid) != sid]
-                need(not wrong, f'mongodb/counties.json: county {wrong[0]} has state reference {refs.get(wrong[0])}, expected {truth[wrong[0]][0][0]}' if wrong else '')
+    yml = _read(root, 'yml/counties.yml', _load_yaml, problems)
+    if yml is not None:
+        compare('yml/counties.yml', [(_native_id(r.get('id')), keyed_pair(r, _typed_id, _typed_code),
+                                      _list_value(r['states']) if 'states' in r else MISSING) for r in yml])
 
-    def parquet(path):
-        """The counties table of the Parquet export."""
-        import pandas as pd
-        return pd.read_parquet(path)
+    mongo = _read(root, 'mongodb/counties.json', _load_json, problems)
+    if mongo is not None:
+        compare('mongodb/counties.json', [(_native_id(r.get('_id')), keyed_pair(r, _typed_id, _typed_code),
+                                           _list_value(r['states']) if 'states' in r else MISSING) for r in mongo])
+        # the state reference: absent without an own state, else exactly {"$ref": "states", "$id": <int state_id>}
+        refs = {_native_id(r.get('_id')): r.get('state', MISSING) for r in mongo}
+        wrong = [cid for cid, ((sid, _), _) in truth.items() if cid in refs and not (
+            refs[cid] is MISSING if sid is None else
+            isinstance(refs[cid], dict) and set(refs[cid]) == {'$ref', '$id'} and refs[cid]['$ref'] == 'states'
+            and type(refs[cid]['$id']) is int and refs[cid]['$id'] == sid)]
+        need(not wrong, f'mongodb/counties.json: county {wrong[0]} has state reference {refs[wrong[0]]!r}, expected '
+             f'{"none" if truth[wrong[0]][0][0] is None else {"$ref": "states", "$id": truth[wrong[0]][0][0]}}' if wrong else '')
 
     def json_text(value):
-        """A list stored as JSON text (Parquet, TOON): None for null, the regions, or INVALID."""
+        """A list stored as JSON text (Parquet, TOON): None for null, the regions, or INVALID (repeated keys included)."""
         if value is None:
             return None
         if not isinstance(value, str):
             return INVALID
         try:
-            return _list_value(json.loads(value))
+            return _list_value(_json(value))
         except ValueError:
             return INVALID
 
-    df = _read(root, 'parquet/counties.parquet', parquet, problems)
-    if df is not None:
-        missing = sorted({'id', 'state_id', 'state_code', 'states'} - set(df.columns))
-        need(not missing, f"parquet: a column is missing ({', '.join(missing)})")
-        if not missing:
-            need(str(df['state_id'].dtype) == 'Int64', f"parquet: state_id is {df['state_id'].dtype}, not Int64")
-            cols = df[['id', 'state_id', 'state_code', 'states']]
-            rows = cols.astype(object).where(cols.notna(), None).to_dict('records')
-            compare('parquet', [(_native_id(r['id']), (_typed_id(r['state_id']), _typed_code(r['state_code'])), json_text(r['states']))
-                                for r in rows])
+    parquet = _read(root, 'parquet/counties.parquet', _load_parquet, problems)
+    if parquet is not None:
+        compare('parquet', [(_native_id(r['id']), (_typed_id(r['state_id']), _typed_code(r['state_code'])), json_text(r['states']))
+                            for r in parquet])
 
-    toon = _read(root, 'toon/counties.toon', _toon, problems)
+    toon = _read(root, 'toon/counties.toon', _load_toon, problems)
     if toon is not None:
         compare('toon/counties.toon', [(_native_id(r.get('id')), keyed_pair(r, _typed_id, _typed_code),
                                         json_text(r['states']) if 'states' in r else MISSING) for r in toon])
 
-    sql = _read(root, 'sqlserver/counties.sql', lambda p: _sql_inserts(p.read_text(encoding='utf-8'), 'counties'), problems)
+    sql = _read(root, 'sqlserver/counties.sql', lambda p: _load_sql(p, 'counties'), problems)
     if sql is not None:
-        compare('sqlserver/counties.sql', [(_sql_id(r.get('id'), nullable=False), keyed_pair(r, _sql_id, _sql_code), None) for r in sql],
+        rows, ddl = sql
+        need(all(d in ddl for d in COUNTIES_DDL), 'sqlserver/counties.sql: the counties table needs its id key and a nullable state pair')
+        compare('sqlserver/counties.sql', [(_sql_id(r.get('id'), nullable=False), keyed_pair(r, _sql_id, _sql_code), None) for r in rows],
                 with_regions=False)
-    text = _read(root, 'sqlserver/county_states.sql', lambda p: p.read_text(encoding='utf-8'), problems)
-    if text is not None:
-        ddl = ('PRIMARY KEY (county_id, state_id)', 'FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',
-               'FOREIGN KEY (state_id) REFERENCES world.states(id)')
-        need(all(d in text for d in ddl), 'sqlserver/county_states.sql: the table needs its composite key and both foreign keys')
-        got = Counter((_sql_id(r['county_id'], nullable=False), _sql_id(r['state_id'], nullable=False))
-                      for r in _sql_inserts(text, 'county_states'))
+    rel = _read(root, 'sqlserver/county_states.sql', lambda p: _load_sql(p, 'county_states'), problems)
+    if rel is not None:
+        rows, ddl = rel
+        need(all(d in ddl for d in COUNTY_STATES_DDL), 'sqlserver/county_states.sql: the table needs its composite key and both foreign keys')
+        got = Counter((_sql_id(r.get('county_id'), nullable=False), _sql_id(r.get('state_id'), nullable=False)) for r in rows)
         need(got == Counter((c, s) for c, s, _ in triples), 'sqlserver/county_states.sql: regions differ from json/counties.json')
     return problems
 

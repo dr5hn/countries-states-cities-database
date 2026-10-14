@@ -57,7 +57,7 @@ def write_exports(root, counties=None, edit=None):
                      if r['states'] else '<states/>') + '</county>' for r in rows('xml'))
     Path(root, 'xml/counties.xml').write_text(f'<counties>{xml}</counties>')
     import yaml
-    Path(root, 'yml/counties.yml').write_text(yaml.safe_dump({'counties': rows('yml')}))
+    Path(root, 'yml/counties.yml').write_text(yaml.safe_dump({'county': rows('yml')}))   # the exporter's singular envelope
     mongo = [{**{k: v for k, v in r.items() if k != 'id'}, '_id': r['id'], **({'state': {'$ref': 'states', '$id': r['state_id']}} if r.get('state_id') else {})}
              for r in rows('mongodb')]
     Path(root, 'mongodb/counties.json').write_text(json.dumps(mongo))
@@ -71,7 +71,9 @@ def write_exports(root, counties=None, edit=None):
     cols = list(sq[0])
     cols.remove('states')
     Path(root, 'sqlserver/counties.sql').write_text(
-        'CREATE TABLE world.counties (\n    id INT IDENTITY(1,1) PRIMARY KEY,\n    state_id INT NULL\n);\n\n'
+        "IF OBJECT_ID('world.counties', 'U') IS NOT NULL DROP TABLE world.counties;\n"
+        'CREATE TABLE world.counties (\n    id INT IDENTITY(1,1) PRIMARY KEY,\n    state_id INT NULL,\n    state_code NVARCHAR(255) NULL\n);\n\n'
+        'SET IDENTITY_INSERT world.counties ON;\n\n'
         f"INSERT INTO world.counties ({', '.join(cols)}) VALUES\n"
         + ',\n'.join('(' + ', '.join(sql_value(r[c]) for c in cols) + ')' for r in sq) + ';\n')
     pairs = [(r['id'], s['state_id']) for r in sq for s in r['states'] or []]
@@ -241,7 +243,7 @@ class FormatAuditRegressionTest(unittest.TestCase):
         if fmt == 'yml':
             p = root / 'yml/counties.yml'
             doc = yaml.safe_load(p.read_text())
-            change(doc['counties'])
+            change(doc['county'])
             p.write_text(yaml.safe_dump(doc))
         elif fmt in ('json', 'mongodb'):
             p = root / f'{fmt}/counties.json'
@@ -506,3 +508,345 @@ class StructureRegressionTest(FormatAuditRegressionTest):
                     self.xml_case(root, alter)
                 with self.subTest(county=ci, region=si, field=tag, kind=kind):
                     self.assertNotEqual(self.problems(change), [])
+
+
+class Round5RegressionTest(unittest.TestCase):
+    """Codex review_county_regions_5's systematic audit (structure-audit.py, structure-supplement.py,
+    final-parser-probes.py): 69 false passes in eight classes, plus its refusal and compatibility controls. Every
+    'refuse' case must report a problem, every 'pass' case none."""
+
+    @staticmethod
+    def run_case(change, counties=None):
+        """Problems after writing the fixture (or one built from counties) and applying change(root)."""
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            write_exports(root, counties=counties)
+            change(root)
+            return main(9, root)
+
+    @staticmethod
+    def text(rel, old, new):
+        """A change replacing one exact fragment of a text export."""
+        def change(root):
+            """Replace the fragment."""
+            p = root / rel
+            data = p.read_text()
+            assert old in data, (rel, old)
+            p.write_text(data.replace(old, new, 1))
+        return change
+
+    @staticmethod
+    def append(rel, extra):
+        """A change appending text to an export."""
+        return lambda root: (root / rel).write_text((root / rel).read_text() + extra)
+
+    @staticmethod
+    def xml(change):
+        """A change to the XML tree."""
+        import xml.etree.ElementTree as ET
+
+        def apply(root):
+            """Parse, change, write back."""
+            p = root / 'xml/counties.xml'
+            tree = ET.parse(p)
+            change(tree.getroot())
+            tree.write(p, encoding='unicode')
+        return apply
+
+    @staticmethod
+    def mongo(change):
+        """A change to the MongoDB rows."""
+        def apply(root):
+            """Load, change, write back."""
+            p = root / 'mongodb/counties.json'
+            rows = json.loads(p.read_text())
+            change(rows)
+            p.write_text(json.dumps(rows))
+        return apply
+
+    @staticmethod
+    def parquet_frame(change):
+        """A change to the Parquet table through pandas."""
+        def apply(root):
+            """Load, change, write back."""
+            import pandas as pd
+            p = root / 'parquet/counties.parquet'
+            df = pd.read_parquet(p)
+            change(df)
+            df.to_parquet(p)
+        return apply
+
+    @staticmethod
+    def parquet_state_id(array):
+        """A change storing state_id with another physical type, keeping the pandas metadata."""
+        def apply(root):
+            """Replace the physical state_id column."""
+            import pyarrow.parquet as pq
+            p = root / 'parquet/counties.parquet'
+            old = pq.read_table(p)
+            pq.write_table(old.set_column(old.column_names.index('state_id'), 'state_id', array()), p)
+        return apply
+
+    @staticmethod
+    def toon_rows(change):
+        """A change rewriting the TOON export from changed fixture rows."""
+        def apply(root):
+            """Convert the changed rows."""
+            rows = copy.deepcopy(COUNTIES)
+            change(rows)
+            (root / 'toon/counties.toon').write_text(json_to_toon(json.dumps(rows)))
+        return apply
+
+    def cases(self):
+        """(name, change, expected) for every audited mutation and control."""
+        import pyarrow as pa
+        import xml.etree.ElementTree as ET
+        T, A = self.text, self.append
+        out = [('positive', lambda r: None, 'pass')]
+        # 1. repeated keys, headers and columns
+        for rel, key, good, bad in (('json/counties.json', 'id', '9', '999'), ('json/counties.json', 'state_id', 'null', '999'),
+                                    ('mongodb/counties.json', '_id', '9', '999'), ('mongodb/counties.json', 'state_id', 'null', '999')):
+            out.append((f'{rel}_duplicate_{key}', T(rel, f'"{key}": {good}', f'"{key}": {bad}, "{key}": {good}'), 'refuse'))
+        for rel in ('json/counties.json', 'mongodb/counties.json'):
+            out.append((f'{rel}_duplicate_region_key', T(rel, '"state_id": 4060', '"state_id": 999, "state_id": 4060'), 'refuse'))
+        out.append(('yaml_duplicate_own_key', T('yml/counties.yml', '  state_id: 4059', '  state_id: 999\n  state_id: 4059'), 'refuse'))
+        out.append(('yaml_duplicate_region_key', T('yml/counties.yml', '    state_id: 4060', '    state_id: 999\n    state_id: 4060'), 'refuse'))
+        for table in ('counties', 'county_states'):
+            out.append((f'plist_{table}_duplicate_key', T(f'plist/{table}.plist', '<key>state_id</key>',
+                                                           '<key>state_id</key><string>999</string><key>state_id</key>'), 'refuse'))
+
+            def dup_csv(root, table=table):
+                """Prepend a second state_id column with contradictory cells."""
+                p = root / f'csv/{table}.csv'
+                with p.open(newline='') as fh:
+                    rows = list(csv.reader(fh))
+                with p.open('w', newline='') as fh:
+                    csv.writer(fh).writerows([['state_id'] + rows[0]] + [['999'] + row for row in rows[1:]])
+            out.append((f'csv_{table}_duplicate_header', dup_csv, 'refuse'))
+
+            def dup_sql(root, table=table):
+                """Add a repeated SQL column with one conflicting value per row."""
+                import re
+                p = root / f'sqlserver/{table}.sql'
+                data = p.read_text().replace(f'INSERT INTO world.{table} (', f'INSERT INTO world.{table} (state_id, ', 1)
+                start = data.index(' VALUES\n') + len(' VALUES\n')
+                p.write_text(data[:start] + re.sub(r'(?m)^\(', '(999, ', data[start:]))
+            out.append((f'sql_{table}_duplicate_column', dup_sql, 'refuse'))
+        out.append(('toon_duplicate_header', T('toon/counties.toon', '{id,', '{id,id,'), 'refuse'))
+        dup_text = json.dumps(REGIONS).replace('"state_id": 4060', '"state_id": 999, "state_id": 4060')
+        out.append(('parquet_duplicate_embedded_json_key', self.parquet_frame(lambda df: df.__setitem__('states', [dup_text, None])), 'refuse'))
+        out.append(('toon_duplicate_embedded_json_key', self.toon_rows(lambda rows: rows[0].update(states=dup_text)), 'refuse'))
+
+        def aliased(root):
+            """Two physical columns that pandas metadata names id."""
+            import pandas as pd
+            import pyarrow.parquet as pq
+            p = root / 'parquet/counties.parquet'
+            df = pd.read_parquet(p)
+            df.insert(0, 'bad_id', [999, 999])
+            table = pa.Table.from_pandas(df, preserve_index=False)
+            meta = dict(table.schema.metadata)
+            pandas_meta = json.loads(meta[b'pandas'])
+            pandas_meta['columns'][0]['name'] = 'id'
+            meta[b'pandas'] = json.dumps(pandas_meta).encode()
+            pq.write_table(table.replace_schema_metadata(meta), p)
+        out.append(('parquet_aliased_duplicate_id', aliased, 'refuse'))
+        # 2. envelopes and roots
+        out += [('xml_wrong_root', self.xml(lambda t: setattr(t, 'tag', 'cities')), 'refuse'),
+                ('xml_wrong_record_tag', self.xml(lambda t: setattr(t[0], 'tag', 'city')), 'refuse'),
+                ('yaml_wrong_wrapper', T('yml/counties.yml', 'county:', 'cities:'), 'refuse'),
+                ('yaml_ignored_extra_records', T('yml/counties.yml', 'county:', 'ignored:\n- id: 999\n  state_id: 999\n  state_code: BAD\n  states: null\ncounty:'), 'refuse'),
+                ('yaml_ignored_trailing_records', A('yml/counties.yml', '\nextra:\n- id: 999\n  state_id: 999\n  state_code: BAD\n  states: null\n'), 'refuse'),
+                ('toon_null_root', lambda r: (r / 'toon/counties.toon').write_text('null'), 'refuse'),
+                ('toon_empty_root', lambda r: (r / 'toon/counties.toon').write_text(''), 'refuse')]
+        for table in ('counties', 'county_states'):
+            rel = f'plist/{table}.plist'
+            out += [(f'plist_{table}_wrong_wrapper', lambda r, rel=rel: (T(rel, '<plist version="1.0">', '<wrong version="1.0">')(r), T(rel, '</plist>', '</wrong>')(r)), 'refuse'),
+                    (f'plist_{table}_ignored_root', T(rel, '<array>', '<array><dict><key>id</key><string>999</string></dict></array><array>'), 'refuse'),
+                    (f'plist_{table}_null_root', lambda r, rel=rel: (r / rel).write_bytes(plistlib.dumps(None, fmt=plistlib.FMT_BINARY)), 'refuse'),
+                    (f'plist_{table}_empty_xml_root', lambda r, rel=rel: (r / rel).write_bytes(b'<?xml version="1.0"?><plist version="1.0"/>'), 'refuse'),
+                    (f'plist_{table}_trailing_data', lambda r, rel=rel: (r / rel).write_bytes((r / rel).read_bytes() + b'junk'), 'refuse'),
+                    # 3. a nested tag hiding contradictory text inside a property-list string
+                    (f'plist_{table}_nested_scalar', T(rel, '<string>4059</string>' if table == 'counties' else '<string>4060</string>',
+                                                      '<string>999<unknown/>' + ('4059' if table == 'counties' else '4060') + '</string>'), 'refuse')]
+
+            def binary(root, rel=rel):
+                """The same records as a binary property list (valid)."""
+                (root / rel).write_bytes(plistlib.dumps(plistlib.loads((root / rel).read_bytes()), fmt=plistlib.FMT_BINARY))
+            out.append((f'plist_{table}_binary_valid', binary, 'pass'))
+        with tempfile.TemporaryDirectory() as d:
+            write_exports(Path(d))
+            for table in ('counties', 'county_states'):
+                rows = plistlib.loads((Path(d) / f'plist/{table}.plist').read_bytes())
+                for ri, row in enumerate(rows):
+                    for key in row:
+                        def null_cell(root, table=table, rows=rows, ri=ri, key=key):
+                            """A binary property list with one None cell."""
+                            changed = copy.deepcopy(rows)
+                            changed[ri][key] = None
+                            (root / f'plist/{table}.plist').write_bytes(plistlib.dumps(changed, fmt=plistlib.FMT_BINARY))
+                        out.append((f'plist_{table}_{ri}_{key}_None', null_cell, 'refuse'))
+        # 3. XML attributes and mixed content
+        out += [('xml_county_mixed_text', self.xml(lambda t: setattr(t[0], 'text', 'broken')), 'refuse'),
+                ('xml_scalar_mixed_tail', self.xml(lambda t: setattr(t[0].find('state_id'), 'tail', '999')), 'refuse'),
+                ('xml_region_element_mixed_tail', self.xml(lambda t: setattr(t[0].find('states'), 'tail', '999')), 'refuse'),
+                ('xml_scalar_nil_attribute', self.xml(lambda t: t[1].find('state_id').set('{http://www.w3.org/2001/XMLSchema-instance}nil', 'true')), 'refuse'),
+                ('xml_empty_states_attribute', self.xml(lambda t: t[1].find('states').set('state_id', '999')), 'refuse')]
+        # 8. the JSON authority's states key
+        out.append(('json_missing_normal_states', T('json/counties.json', '"states": null, ', ''), 'refuse'))
+        # 4. CSV quoting
+        out += [('csv_unclosed_quote_relation', T('csv/county_states.csv', '4061,WKO\n', '4061,"WKO'), 'refuse'),
+                ('csv_junk_after_empty_quote', T('csv/county_states.csv', '4061,WKO', '4061,""WKO'), 'refuse')]
+        # 5. SQL Server: only the exporter's statements, rows consumed completely
+        for table, extra in (('counties', "INSERT INTO world.counties (id, state_id, state_code) VALUES (999, 4059, N'NTL');\n"),
+                             ('county_states', 'INSERT INTO world.county_states (county_id, state_id) VALUES (9, 999);\n')):
+            rel = f'sqlserver/{table}.sql'
+            out += [(f'sql_{table}_ignored_extra_insert', A(rel, extra), 'refuse'),
+                    (f'sql_{table}_commented_insert', T(rel, 'INSERT INTO world.', '/* INSERT INTO world.'), 'refuse'),
+                    (f'sql_{table}_ignored_broken_row', T(rel, ' VALUES\n', ' VALUES\nBROKEN ROW,\n'), 'refuse')]
+
+            def balanced(root, rel=rel):
+                """Wrap every insert in a closed block comment."""
+                p = root / rel
+                before, rest = p.read_text().split('INSERT INTO', 1)
+                p.write_text(before + '/* INSERT INTO' + rest + '*/\n')
+            out.append((f'sql_{table}_balanced_commented_insert', balanced, 'refuse'))
+        out += [('sql_counties_post_update', A('sqlserver/counties.sql', 'UPDATE world.counties SET state_id=999 WHERE id=1;\n'), 'refuse'),
+                ('sql_relation_post_delete', A('sqlserver/county_states.sql', 'DELETE FROM world.county_states;\n'), 'refuse'),
+                ('sql_relation_missing_row_separator', T('sqlserver/county_states.sql', '(9, 4060),\n', '(9, 4060)\n'), 'refuse'),
+                ('sql_relation_extra_value_separator', T('sqlserver/county_states.sql', '(9, 4060)', '(9,, 4060)'), 'refuse'),
+                ('sql_counties_missing_value_separator', T('sqlserver/counties.sql', "4059, N'NTL'", "4059 N'NTL'"), 'refuse'),
+                ('sql_relation_disabled_constraint', T('sqlserver/county_states.sql',
+                                                        '    CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)',
+                                                        '    -- CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)'), 'refuse'),
+                ('sql_no_county_table', T('sqlserver/counties.sql', 'CREATE TABLE world.counties', 'CREATE TABLE world.wrong_table'), 'refuse')]
+        # 6. MongoDB state references
+        out += [('mongo_wrong_reference_collection', self.mongo(lambda rows: rows[1]['state'].update({'$ref': 'countries'})), 'refuse'),
+                ('mongo_missing_reference_collection', self.mongo(lambda rows: rows[1]['state'].pop('$ref')), 'refuse'),
+                ('mongo_float_reference_id', self.mongo(lambda rows: rows[1]['state'].update({'$id': 4059.0})), 'refuse')]
+        for i, val in enumerate([False, [], '', {}, {'$ref': 'states', '$id': None}, {'$ref': 'states'}]):
+            out.append((f'mongo_null_pair_reference_{i}', self.mongo(lambda rows, val=val: rows[0].update(state=val)), 'refuse'))
+        for value in (True, 4059.0, '4059', 0, -1, None):
+            out.append((f'mongo_own_type_{value!r}', self.mongo(lambda rows, value=value: rows[1].update(state_id=value)), 'refuse'))
+        # 7. no conversion before validation: TOON numbers and bytes, Parquet storage
+        out += [('toon_fraction_rounded_county_id', T('toon/counties.toon', '  9,', '  9.0000000000000001,'), 'refuse'),
+                ('toon_fraction_rounded_state_id', T('toon/counties.toon', ',4059,', ',4059.0000000000001,'), 'refuse'),
+                ('toon_invalid_utf8', lambda r: (r / 'toon/counties.toon').write_bytes((r / 'toon/counties.toon').read_bytes().replace(b'Waitomo', b'Waitom\xff')), 'refuse'),
+                ('parquet_physical_float_4059.0', self.parquet_state_id(lambda: pa.array([None, 4059.0], type=pa.float64())), 'refuse'),
+                ('parquet_physical_float_4059.75', self.parquet_state_id(lambda: pa.array([None, 4059.75], type=pa.float64())), 'refuse'),
+                ('parquet_nan_null_laundering', self.parquet_state_id(lambda: pa.array([float('nan'), 4059.0], type=pa.float64(), from_pandas=False)), 'refuse'),
+                ('parquet_physical_string_id', self.parquet_state_id(lambda: pa.array([None, '4059'], type=pa.string())), 'refuse'),
+                ('parquet_trailing_bytes', lambda r: (r / 'parquet/counties.parquet').write_bytes((r / 'parquet/counties.parquet').read_bytes() + b'junk'), 'refuse')]
+        for raw in ('[]', '{}', '"bad"', 'null', '[{"state_id": 4060.5, "state_code": "MWT"}]'):
+            out.append((f'parquet_bad_list_{raw}', self.parquet_frame(lambda df, raw=raw: df.__setitem__('states', [raw, None])), 'refuse'))
+            out.append((f'toon_bad_list_{raw}', self.toon_rows(lambda rows, raw=raw: rows[0].update(states=raw)), 'refuse'))
+        # malformed files and invalid UTF-8 anywhere
+        for rel in ('json/counties.json', 'csv/counties.csv', 'csv/county_states.csv', 'plist/counties.plist', 'plist/county_states.plist',
+                    'xml/counties.xml', 'yml/counties.yml', 'mongodb/counties.json', 'parquet/counties.parquet', 'toon/counties.toon',
+                    'sqlserver/counties.sql', 'sqlserver/county_states.sql'):
+            out.append((f'malformed_{rel}', lambda r, rel=rel: (r / rel).write_bytes(b'\xffbroken'), 'refuse'))
+        for rel, old, new in (('json/counties.json', b'Waitomo', b'Waitom\xff'), ('mongodb/counties.json', b'Waitomo', b'Waitom\xff'),
+                              ('yml/counties.yml', b'Waitomo', b'Waitom\xff'), ('csv/counties.csv', b'Waitomo', b'Waitom\xff'),
+                              ('xml/counties.xml', b'NTL', b'N\xffL'), ('sqlserver/counties.sql', b'Waitomo', b'Waitom\xff')):
+            out.append((f'invalid_utf8_{rel}', lambda r, rel=rel, old=old, new=new: (r / rel).write_bytes((r / rel).read_bytes().replace(old, new)), 'refuse'))
+        out += [('yaml_multi_document', A('yml/counties.yml', '\n---\ncounty: []\n'), 'refuse'),
+                ('json_trailing_document', A('json/counties.json', '\n[]'), 'refuse'),
+                ('toon_trailing_document', A('toon/counties.toon', '\nextra: 999'), 'refuse')]
+        # every CSV row one cell short or long, in both files
+        with tempfile.TemporaryDirectory() as d:
+            write_exports(Path(d))
+            for table in ('counties', 'county_states'):
+                with (Path(d) / f'csv/{table}.csv').open(newline='') as fh:
+                    original = list(csv.reader(fh))
+                for ri in range(1, len(original)):
+                    for pos in range(len(original[0]) + 1):
+                        for kind in ('remove', 'insert'):
+                            if kind == 'remove' and pos == len(original[0]):
+                                continue
+
+                            def cell(root, table=table, original=original, ri=ri, pos=pos, kind=kind):
+                                """One row one cell short or long."""
+                                rows = copy.deepcopy(original)
+                                rows[ri].pop(pos) if kind == 'remove' else rows[ri].insert(pos, 'x')
+                                with (root / f'csv/{table}.csv').open('w', newline='') as fh:
+                                    csv.writer(fh).writerows(rows)
+                            out.append((f'csv_{table}_{ri}_{pos}_{kind}', cell, 'refuse'))
+        # compatibility controls: order, indentation, column order, binary property lists
+        for table in ('counties', 'county_states'):
+            def reorder(root, table=table):
+                """Reverse records and columns together."""
+                p = root / f'csv/{table}.csv'
+                with p.open(newline='') as fh:
+                    rows = list(csv.reader(fh))
+                with p.open('w', newline='') as fh:
+                    csv.writer(fh).writerows([list(reversed(rows[0]))] + [list(reversed(row)) for row in reversed(rows[1:])])
+            out.append((f'csv_{table}_ordering', reorder, 'pass'))
+        out.append(('xml_indented', self.xml(lambda t: ET.indent(t)), 'pass'))
+
+        def reverse_json(rel):
+            """Reverse counties and the target's regions in a JSON export."""
+            def apply(root):
+                """Load, reverse, write."""
+                rows = json.loads((root / rel).read_text())
+                rows[0]['states'].reverse()
+                rows.reverse()
+                (root / rel).write_text(json.dumps(rows))
+            return apply
+
+        def reverse_yaml(root):
+            """Reverse counties and regions in YAML."""
+            import yaml
+            doc = yaml.safe_load((root / 'yml/counties.yml').read_text())
+            doc['county'][0]['states'].reverse()
+            doc['county'].reverse()
+            (root / 'yml/counties.yml').write_text(yaml.safe_dump(doc))
+
+        def reverse_xml(t):
+            """Reverse counties and the target's regions in XML."""
+            states = t[0].findall('states')
+            for s in states:
+                t[0].remove(s)
+            for s in reversed(states):
+                t[0].append(s)
+            t[:] = list(reversed(list(t)))
+
+        def reverse_parquet(root):
+            """Reverse rows and the target's regions in Parquet."""
+            import pandas as pd
+            p = root / 'parquet/counties.parquet'
+            df = pd.read_parquet(p)
+            df.loc[0, 'states'] = json.dumps(list(reversed(REGIONS)))
+            df.iloc[::-1].to_parquet(p)
+
+        def reverse_toon(rows):
+            """Reverse rows and regions for TOON."""
+            rows[0]['states'].reverse()
+            rows.reverse()
+        out += [('json_ordering', reverse_json('json/counties.json'), 'pass'), ('mongodb_ordering', reverse_json('mongodb/counties.json'), 'pass'),
+                ('yml_ordering', reverse_yaml, 'pass'), ('xml_ordering', self.xml(reverse_xml), 'pass'),
+                ('parquet_ordering', reverse_parquet, 'pass'), ('toon_ordering', self.toon_rows(reverse_toon), 'pass')]
+        return out
+
+    def test_every_case(self):
+        """Every refuse case reports a problem; every pass case none."""
+        cases = self.cases()
+        self.assertGreater(len(cases), 170)
+        for name, change, expected in cases:
+            with self.subTest(name):
+                found = self.run_case(change)
+                if expected == 'pass':
+                    self.assertEqual(found, [], name)
+                else:
+                    self.assertNotEqual(found, [], name)
+
+    def test_rebuilt_fixtures(self):
+        """A valid U+FFFD code corrupted to an invalid byte only in TOON, and a code with a quote left unquoted only in
+        CSV, are refused; both untouched fixtures pass."""
+        for code, rel, old, new in (('�', 'toon/counties.toon', '�'.encode(), b'\xff'),
+                                    ('N"TL', 'csv/counties.csv', b'"N""TL"', b'N"TL')):
+            counties = copy.deepcopy(COUNTIES)
+            counties[1]['state_code'] = code
+            with self.subTest(code=code):
+                self.assertEqual(self.run_case(lambda r: None, counties), [])
+                self.assertNotEqual(self.run_case(lambda r, rel=rel, old=old, new=new: (r / rel).write_bytes(
+                    (r / rel).read_bytes().replace(old, new)), counties), [])
