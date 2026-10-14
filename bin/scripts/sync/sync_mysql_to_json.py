@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from city_states import check_references  # noqa: E402
 import mysql.connector
 from collections import OrderedDict
+from decimal import Decimal
 
 
 class MySQLToJSONSync:
@@ -93,9 +94,9 @@ class MySQLToJSONSync:
                     result[col] = json.loads(value)
                 except json.JSONDecodeError:
                     result[col] = value
-            # Convert Decimal to string for coordinates
+            # Convert Decimal to fixed-point text for coordinates: str() writes an exact zero, Decimal('0E-8'), as '0E-8'
             elif col in ['latitude', 'longitude']:
-                result[col] = str(value) if value is not None else None
+                result[col] = format(value, 'f') if isinstance(value, Decimal) else str(value)
             # Convert integer fields
             elif col == 'id' or col.endswith('_id') or col in ['level', 'population', 'gdp']:
                 result[col] = int(value) if value is not None else None
