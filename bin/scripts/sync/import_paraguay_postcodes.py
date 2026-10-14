@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Paraguay -> contributions/postcodes/PY.json importer for issue #1039.
+"""RETIRED. Paraguay -> contributions/postcodes/PY.json importer for issue #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: PY: none established in bounded screen; unsupported rows wait for the v5 ledger.
+Legacy source tags: dinacopa-via-3lD4m14n. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -74,8 +80,6 @@ import zipfile
 from pathlib import Path
 from typing import Dict, List
 
-import dbfread
-
 
 SOURCE_URL = (
     "https://raw.githubusercontent.com/3lD4m14n/mapa-codigos-postales-paraguay/"
@@ -119,6 +123,10 @@ def fetch_zip(url: str) -> bytes:
 
 
 def main() -> int:
+    print("[ERROR] retired: PY: none established in bounded screen; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy dinacopa-via-3lD4m14n. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
+    import dbfread
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local zip (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""El Salvador -> contributions/postcodes/SV.json importer for #1039.
+"""RETIRED. El Salvador -> contributions/postcodes/SV.json importer for #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: SV: OpenStreetMap validated country screen; unsupported rows wait for the v5 ledger.
+Legacy source tags: correos-el-salvador-via-micryptosv. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -61,6 +67,8 @@ def fetch_csv(url: str) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: SV: OpenStreetMap validated country screen; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy correos-el-salvador-via-micryptosv. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None)
     parser.add_argument("--dry-run", action="store_true")
