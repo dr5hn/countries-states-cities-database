@@ -34,3 +34,15 @@ test('strings that look like numbers, colons, brackets and backslashes read back
   const rows = [{ id: 4213, state_id: 2062, state_code: '1', latitude: '-38.86700000', code: '01', a: 'x:y', b: '[x]', c: '#1', d: 'a\\b', e: '' }];
   assert.deepEqual(decode(convert(rows)), rows);
 });
+
+test('every string is quoted exactly as the reference encoder quotes it (Unicode digits stay bare)', async () => {
+  const { encode } = await import('@toon-format/toon');
+  const strings = ['١', '१२', '１', '١.٢', '1', '01', '-38.86700000', '1e3', 'x:y', '[x]', '#1', 'a\\b', 'say "hi"', '', 'null',
+    ' lead', 'tab\there', 'Taupō District', 'Ōamaru', 'São Paulo', '-', 'k=v|k2=v2'];
+  for (const s of strings) {
+    const rows = [{ id: 1, v: s }];
+    const ours = convert(rows).split('\n')[1];
+    const reference = encode(rows).split('\n')[1];
+    assert.equal(ours, reference, JSON.stringify(s));
+  }
+});

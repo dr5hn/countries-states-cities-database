@@ -52,13 +52,13 @@ def write_exports(root, counties=None, edit=None):
                     w.writerows(data)
             else:
                 Path(root, f'plist/{name}.plist').write_bytes(dump(data))
-    xml = ''.join('<county>' + f"<id>{r['id']}</id>" + ''.join(f'<{k}/>' if r[k] is None else f'<{k}>{r[k]}</{k}>' for k in ('state_id', 'state_code'))
+    xml = ''.join('<county>' + f"<id>{r['id']}</id>" + ''.join(f'<{k}/>' if r[k] is None else f'<{k}>{r[k]}</{k}>' for k in ('state_id', 'state_code') if k in r)
                   + (''.join(f"<states><state_id>{s['state_id']}</state_id><state_code>{s['state_code']}</state_code></states>" for s in r['states'])
                      if r['states'] else '<states/>') + '</county>' for r in rows('xml'))
     Path(root, 'xml/counties.xml').write_text(f'<counties>{xml}</counties>')
     import yaml
     Path(root, 'yml/counties.yml').write_text(yaml.safe_dump({'counties': rows('yml')}))
-    mongo = [{**{k: v for k, v in r.items() if k != 'id'}, '_id': r['id'], **({'state': {'$ref': 'states', '$id': r['state_id']}} if r['state_id'] else {})}
+    mongo = [{**{k: v for k, v in r.items() if k != 'id'}, '_id': r['id'], **({'state': {'$ref': 'states', '$id': r['state_id']}} if r.get('state_id') else {})}
              for r in rows('mongodb')]
     Path(root, 'mongodb/counties.json').write_text(json.dumps(mongo))
     import pandas as pd
@@ -147,7 +147,34 @@ class CheckerTest(unittest.TestCase):
     def test_regions_must_be_distinct(self):
         """The same region twice in every format is not a county of several regions."""
         twice = [{**COUNTIES[0], 'states': [REGIONS[0], REGIONS[0]]}, COUNTIES[1]]
-        self.assertProblem('json/counties.json: county 9 needs a null state pair and two or more distinct regions', counties=twice)
+        self.assertProblem('json/counties.json: county 9 has a null state pair, so it needs two or more distinct regions', counties=twice)
+
+    def test_missing_pair_keys_are_not_null(self):
+        """A target county without its state keys (YAML, MongoDB) or empty elements (XML) is a problem, not a null pair."""
+        def drop(rows):
+            """Remove the target county's pair keys."""
+            del rows[0]['state_id'], rows[0]['state_code']
+        for fmt, where in (('yml', 'yml/counties.yml'), ('mongodb', 'mongodb/counties.json'), ('xml', 'xml/counties.xml')):
+            self.assertProblem(f'{where}: county 9', edit=target(fmt, drop))
+
+    def test_invalid_list_is_not_no_list(self):
+        """A malformed states list on a one-state county is a problem, not the expected absence of a list."""
+        self.assertProblem('yml/counties.yml: county 1', edit=target('yml', lambda rows: rows[1].update(states=[{'state_id': 1}])))
+
+    def test_extra_and_missing_counties(self):
+        """A county that json/counties.json does not have, or one it has but a format lacks, is a problem."""
+        extra = {'id': 99999, 'name': 'Extra', 'state_id': 4059, 'state_code': 'NTL', 'states': None, 'country_id': 158}
+        self.assertProblem('csv/counties.csv: counties differ', edit=target('csv', lambda rows: rows.append(extra)))
+        self.assertProblem('toon/counties.toon: counties differ', edit=target('toon', lambda rows: rows.pop()))
+        self.assertProblem('xml/counties.xml: county 9 appears 2 times', edit=target('xml', lambda rows: rows.append(dict(rows[0]))))
+
+    def test_every_county_of_several_regions_is_checked(self):
+        """A second county of several regions with a repeated region fails, though the requested county 9 is valid."""
+        repeated = {'id': 10, 'name': 'Twice', 'state_id': None, 'state_code': None, 'states': [REGIONS[0], REGIONS[0]], 'country_id': 158}
+        self.assertProblem('json/counties.json: county 10', counties=COUNTIES + [repeated])
+        self.assertProblem('json/counties.json: county 2 has a state and a states list',
+                           counties=COUNTIES + [{**COUNTIES[1], 'id': 2, 'states': REGIONS}])
+        self.assertProblem('json/counties.json: county id 1 is duplicated', counties=COUNTIES + [COUNTIES[1]])
 
     def test_sql_server_relation_ddl(self):
         """The county_states table needs its composite key and both foreign keys."""

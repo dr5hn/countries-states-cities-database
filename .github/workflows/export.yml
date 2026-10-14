@@ -724,7 +724,8 @@ jobs:
           while IFS= read -r f; do
             cp --parents "$f" "$GITHUB_WORKSPACE/"; n=$((n + 1))
           done < <(cut -c 67- EXPORT_SHA256SUMS | grep '\.gz$' | grep -vx 'export-small-files.tar.gz')
-          [ "$n" -eq 38 ] || { echo "::error::expected 38 exports in the build, placed $n"; exit 1; }
+          # the number of exports the build lists and the release gate requires (export-readme.test.js keeps them equal)
+          [ "$n" -eq 43 ] || { echo "::error::expected 43 exports in the build, placed $n"; exit 1; }
           echo "placed $n exports and the small files"
 
       - name: Create GitHub Release with exports

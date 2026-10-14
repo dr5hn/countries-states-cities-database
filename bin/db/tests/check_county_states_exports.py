@@ -24,14 +24,52 @@ TOON_DECODE = ("const { decode } = await import('@toon-format/toon'); const fs =
                "process.stdout.write(JSON.stringify(decode(fs.readFileSync(process.argv[1], 'utf8'))))")
 
 
+MISSING, INVALID = '(missing)', '(invalid list)'   # never equal to a real pair or region list
+
+
 def _regions(listed):
-    """A states list as a sorted tuple of (state_id, state_code), or None when it is null or not a list of pairs."""
+    """A states list as a sorted tuple of (state_id, state_code), or None when it is not a list of exact pairs."""
     if not isinstance(listed, list) or not all(isinstance(r, dict) and set(r) == {'state_id', 'state_code'} for r in listed):
         return None
     try:
         return tuple(sorted((int(r['state_id']), r['state_code']) for r in listed))
     except (TypeError, ValueError):
         return None
+
+
+def _list_value(listed):
+    """What a format holds for one county's list: None for no list, the regions tuple, or INVALID."""
+    if listed is None:
+        return None
+    regions = _regions(listed)
+    return INVALID if regions is None else regions
+
+
+def _authority_errors(counties):
+    """Every county of json/counties.json must be well formed: a unique positive integer id, both state keys, and either
+    its own complete state pair with no list, or two explicit nulls and two or more distinct regions."""
+    errors, seen = [], set()
+    for c in counties:
+        cid = c.get('id')
+        if type(cid) is not int or cid <= 0:
+            errors.append(f'json/counties.json: county id {cid!r} is not a positive integer')
+            continue
+        if cid in seen:
+            errors.append(f'json/counties.json: county id {cid} is duplicated')
+        seen.add(cid)
+        if 'state_id' not in c or 'state_code' not in c:
+            errors.append(f'json/counties.json: county {cid} lacks a state key')
+        elif c['state_id'] is not None or c['state_code'] is not None:
+            if c['state_id'] is None or c['state_code'] is None:
+                errors.append(f'json/counties.json: county {cid} has no regions but not a full state pair')
+            elif c.get('states') is not None:
+                errors.append(f'json/counties.json: county {cid} has a state and a states list')
+        else:
+            regions = _regions(c.get('states'))
+            if not regions or len(regions) < 2 or len({sid for sid, _ in regions}) != len(regions) \
+                    or any(sid <= 0 or not isinstance(code, str) or not code for sid, code in regions):
+                errors.append(f'json/counties.json: county {cid} has a null state pair, so it needs two or more distinct regions')
+    return errors
 
 
 def _csv_rows(path):
@@ -117,35 +155,47 @@ def main(county_id, root='.'):
     counties = _read(root, 'json/counties.json', _records, problems)
     if counties is None:
         return problems
-    truth = {}   # county id -> (state_id, state_code, regions or None)
-    for c in counties:
-        regions = _regions(c.get('states')) if c.get('states') is not None else None
-        truth[c.get('id')] = (c.get('state_id'), c.get('state_code'), regions)
-        if c.get('states') is None:
-            need(c.get('state_id') is not None and c.get('state_code') is not None,
-                 f"json/counties.json: county {c.get('id')} has no regions but not a full state pair")
-    mine = truth.get(county_id)
-    if mine is None or mine[0] is not None or mine[1] is not None or not mine[2] or len(mine[2]) < 2 \
-            or len({sid for sid, _ in mine[2]}) != len(mine[2]):
+    authority = _authority_errors(counties)
+    problems += authority
+    if authority:
+        return problems
+    truth = {c['id']: ((c['state_id'], c['state_code']), _list_value(c.get('states'))) for c in counties}
+    pair, regions = truth.get(county_id, ((0, 0), None))
+    if pair != (None, None) or not regions:
         problems.append(f'json/counties.json: county {county_id} needs a null state pair and two or more distinct regions')
         return problems
-    triples = sorted((cid, sid, code) for cid, (_, _, regions) in truth.items() if regions for sid, code in regions)
+    triples = sorted((cid, sid, code) for cid, (_, listed) in truth.items() if listed for sid, code in listed)
 
-    def pairs_check(where, got):
-        """got: county id -> (state_id, state_code); each county's pair must equal the authority's."""
-        wrong = [cid for cid, (sid, code, _) in truth.items() if got.get(cid) != (sid, code)]
-        need(not wrong, f'{where}: county {wrong[0]} has state pair {got.get(wrong[0])}, expected {truth[wrong[0]][:2]}'
-             + (f' ({len(wrong)} counties differ)' if len(wrong) > 1 else '') if wrong else '')
+    def compare(where, rows, with_regions=True):
+        """rows: (county id, state pair, regions) per record of one format. Every county must appear once, the id sets
+        must be equal, and each county's pair (and regions) must equal the authority's."""
+        got, dup = {}, set()
+        for cid, got_pair, got_regions in rows:
+            if cid in got:
+                dup.add(cid)
+            got[cid] = (got_pair, got_regions)
+        for cid in sorted(dup, key=str)[:1]:
+            problems.append(f'{where}: county {cid} appears {sum(1 for r in rows if r[0] == cid)} times')
+        if set(got) != set(truth):
+            extra, missing = sorted(set(got) - set(truth), key=str), sorted(set(truth) - set(got), key=str)
+            problems.append(f'{where}: counties differ from json/counties.json (extra {extra[:3]}, missing {missing[:3]})')
+        wrong = [cid for cid in truth if cid in got and (got[cid][0] != truth[cid][0] or (with_regions and got[cid][1] != truth[cid][1]))]
+        if wrong:
+            cid = wrong[0]
+            problems.append(f'{where}: county {cid} has {got[cid][0]} and regions {got[cid][1]}, expected {truth[cid][0]} and '
+                            f'{truth[cid][1]}' + (f' ({len(wrong)} counties differ)' if len(wrong) > 1 else ''))
 
-    def regions_check(where, got):
-        """got: county id -> regions tuple or None; each county's regions must equal the authority's."""
-        wrong = [cid for cid, (_, _, regions) in truth.items() if got.get(cid) != regions]
-        need(not wrong, f'{where}: county {wrong[0]} has regions {got.get(wrong[0])}, expected {truth[wrong[0]][2]}' if wrong else '')
+    def keyed_pair(row, to_id=lambda v: v, to_code=lambda v: v):
+        """A record's state pair, or MISSING when either key is absent."""
+        if 'state_id' not in row or 'state_code' not in row:
+            return MISSING
+        return (to_id(row['state_id']), to_code(row['state_code']))
 
     for fmt, parse in (('csv', _csv_rows), ('plist', lambda p: plistlib.loads(p.read_bytes()))):
         rows = _read(root, f'{fmt}/counties.{fmt}', parse, problems)
         if rows is not None:
-            pairs_check(f'{fmt}/counties.{fmt}', {_as_int(r.get('id')): (_as_int(r.get('state_id')), _as_code(r.get('state_code'))) for r in rows})
+            compare(f'{fmt}/counties.{fmt}', [(_as_int(r.get('id')), keyed_pair(r, _as_int, _as_code), None) for r in rows],
+                    with_regions=False)
         rel = _read(root, f'{fmt}/county_states.{fmt}', parse, problems)
         if rel is not None:
             got = sorted((_as_int(r.get('county_id')), _as_int(r.get('state_id')), r.get('state_code')) for r in rel)
@@ -153,48 +203,64 @@ def main(county_id, root='.'):
 
     xml = _read(root, 'xml/counties.xml', lambda p: ET.parse(p).getroot(), problems)
     if xml is not None:
-        pairs, regions = {}, {}
+        rows = []
         for e in xml:
-            cid = _as_int(e.findtext('id'))
-            pairs[cid] = (_as_int(e.findtext('state_id')), _as_code(e.findtext('state_code')))
-            listed = [{'state_id': s.findtext('state_id'), 'state_code': s.findtext('state_code')} for s in e.findall('states')
-                      if s.find('state_id') is not None]
-            regions[cid] = _regions(listed) if listed else None
-        pairs_check('xml/counties.xml', pairs)
-        regions_check('xml/counties.xml', regions)
+            has_pair = e.find('state_id') is not None and e.find('state_code') is not None
+            listed = e.findall('states')
+            full = [s for s in listed if s.find('state_id') is not None]
+            if not listed:
+                value = MISSING
+            elif not full:
+                value = None if len(listed) == 1 else INVALID
+            else:
+                value = INVALID if len(full) != len(listed) else _list_value(
+                    [{'state_id': s.findtext('state_id'), 'state_code': s.findtext('state_code')} for s in full])
+            rows.append((_as_int(e.findtext('id')),
+                         (_as_int(e.findtext('state_id')), _as_code(e.findtext('state_code'))) if has_pair else MISSING, value))
+        compare('xml/counties.xml', rows)
 
     for rel, parse, key in (('yml/counties.yml', _yaml, 'id'), ('mongodb/counties.json', _records, '_id')):
         rows = _read(root, rel, parse, problems)
         if rows is not None:
-            pairs_check(rel, {r.get(key): (r.get('state_id'), r.get('state_code')) for r in rows})
-            regions_check(rel, {r.get(key): _regions(r.get('states')) if r.get('states') is not None else None for r in rows})
+            compare(rel, [(r.get(key), keyed_pair(r), _list_value(r['states']) if 'states' in r else MISSING) for r in rows])
             if key == '_id':
                 refs = {r.get('_id'): (r.get('state') or {}).get('$id') for r in rows}
-                wrong = [cid for cid, (sid, _, _) in truth.items() if refs.get(cid) != sid]
-                need(not wrong, f'mongodb/counties.json: county {wrong[0]} has state reference {refs.get(wrong[0])}, expected {truth[wrong[0]][0]}' if wrong else '')
+                wrong = [cid for cid, ((sid, _), _) in truth.items() if refs.get(cid) != sid]
+                need(not wrong, f'mongodb/counties.json: county {wrong[0]} has state reference {refs.get(wrong[0])}, expected {truth[wrong[0]][0][0]}' if wrong else '')
 
     def parquet(path):
         """The counties table of the Parquet export."""
         import pandas as pd
         return pd.read_parquet(path)
+
+    def json_text(value):
+        """A list stored as JSON text (Parquet, TOON): None for null, the regions, or INVALID."""
+        if value is None:
+            return None
+        if not isinstance(value, str):
+            return INVALID
+        try:
+            return _list_value(json.loads(value))
+        except ValueError:
+            return INVALID
+
     df = _read(root, 'parquet/counties.parquet', parquet, problems)
     if df is not None:
         missing = sorted({'id', 'state_id', 'state_code', 'states'} - set(df.columns))
         need(not missing, f"parquet: a column is missing ({', '.join(missing)})")
         if not missing:
             need(str(df['state_id'].dtype) == 'Int64', f"parquet: state_id is {df['state_id'].dtype}, not Int64")
-            rows = df[['id', 'state_id', 'state_code', 'states']].astype(object).where(df[['id', 'state_id', 'state_code', 'states']].notna(), None).to_dict('records')
-            pairs_check('parquet', {_as_int(r['id']): (_as_int(r['state_id']), _as_code(r['state_code'])) for r in rows})
-            regions_check('parquet', {_as_int(r['id']): _regions(json.loads(r['states'])) if r['states'] else None for r in rows})
+            cols = df[['id', 'state_id', 'state_code', 'states']]
+            rows = cols.astype(object).where(cols.notna(), None).to_dict('records')
+            compare('parquet', [(_as_int(r['id']), (_as_int(r['state_id']), _as_code(r['state_code'])), json_text(r['states'])) for r in rows])
 
     toon = _read(root, 'toon/counties.toon', _toon, problems)
     if toon is not None:
-        pairs_check('toon/counties.toon', {r.get('id'): (r.get('state_id'), r.get('state_code')) for r in toon})
-        regions_check('toon/counties.toon', {r.get('id'): _regions(json.loads(r['states'])) if isinstance(r.get('states'), str) else None for r in toon})
+        compare('toon/counties.toon', [(r.get('id'), keyed_pair(r), json_text(r['states']) if 'states' in r else MISSING) for r in toon])
 
     sql = _read(root, 'sqlserver/counties.sql', lambda p: _sql_inserts(p.read_text(encoding='utf-8'), 'counties'), problems)
     if sql is not None:
-        pairs_check('sqlserver/counties.sql', {_as_int(r.get('id')): (_as_int(r.get('state_id')), r.get('state_code')) for r in sql})
+        compare('sqlserver/counties.sql', [(_as_int(r.get('id')), keyed_pair(r, _as_int), None) for r in sql], with_regions=False)
     text = _read(root, 'sqlserver/county_states.sql', lambda p: p.read_text(encoding='utf-8'), problems)
     if text is not None:
         ddl = ('PRIMARY KEY (county_id, state_id)', 'FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',

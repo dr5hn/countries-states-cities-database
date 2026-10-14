@@ -5,7 +5,7 @@ from pathlib import Path
 # The quoting rules of the TOON reference encoder (@toon-format/toon 4.4.0, isSafeUnquoted and escapeString): a string
 # is written bare only when the reader gives it back as the same string. "1" or "-38.86700000" unquoted would read back
 # as numbers, "null" as null.
-NUMERIC_LIKE = re.compile(r"^[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?$", re.I)
+NUMERIC_LIKE = re.compile(r"^[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?$", re.I | re.ASCII)   # JavaScript \d: ASCII digits only
 
 
 def is_safe_unquoted(s: str, delimiter: str) -> bool:
