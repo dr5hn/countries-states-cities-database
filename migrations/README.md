@@ -5,10 +5,9 @@ release's, so you can update ids stored in your own systems. They are generated,
 [`bin/scripts/release/migrations.py`](../bin/scripts/release/migrations.py) from this folder's ledger and the git
 history of `contributions/`.
 
-**Status:** the generator is in place, but the export workflow does not run it yet. `events.jsonl` holds every removal
-since v4.0 (10,201) and the 1509 restoration. 9,862 removals are reviewed; 339 cities removals are still `held`, so
-the generator refuses every release until they are decided. The workflow and those decisions come before v5.0.0 is
-published. Until then, no release carries these files.
+**Status:** the export workflow runs the generator (below), but `events.jsonl`, which holds every removal
+since v4.0 (10,201) and the 1509 restoration, still has 339 cities removals `held` (9,862 are reviewed). The generator
+refuses every release until they are decided, so until then no release carries these files.
 
 ## The files
 
@@ -156,10 +155,35 @@ be final at `--to`.
 
 ## Generating the files
 
+The export workflow's `migrations` job runs
+[`bin/scripts/release/release_migrations.py`](../bin/scripts/release/release_migrations.py) on a full clone after a
+successful build, and the publish job attaches what it writes to the release, checked against its checksums:
+
+| Asset | What it is |
+|---|---|
+| `migrations-from-<tag>.tar.gz` | The files above, from that published release to this one. One is cumulative, from the newest feature release of the previous major (v4.0 for v5 data); one is a step, from the newest export release of the same major (from v5.0.0's second export on). A single archive when both are the same commit. |
+| `MIGRATIONS_SHA256SUMS` | The SHA-256 of each archive. |
+
+[`release_meta.json`](release_meta.json) holds the contract, policy and data-schema versions and the notices. The run
+adds `data_version`: the newest published feature release of the contract's major, which names the export, or
+`<major>-candidate` before that release is cut. A production run refuses until it is cut, so v5 data is never
+published as a v4.0 export. A failed `migrations` job stops publishing; a candidate build still keeps its exports.
+
+Every id must be final at the candidate commit (assign ids with the import and sync, or `normalize_json.py`, first),
+so each export's tag can be the start of the next step file. v4.0-export.51's tag cannot: its 10,851 Spanish postcodes
+got their ids at export and were synced back later. So v5.0.0's first export carries only the cumulative file from
+v4.0, which also serves users of any v4.0 export, who look up the ids they hold.
+
+```bash
+python3 bin/scripts/release/release_migrations.py --to <candidate sha> --out <new folder> [--production]
+```
+
+To run the generator by hand instead:
+
 Pass commit SHAs, not branch names. `--repo` may name any folder inside the repository; every read runs from its
 top level. `--from` is the previous **successful published** snapshot, not a failed draft
 or a feature tag. `--to` is the release candidate. Both must be on one first-parent line and come from a full clone.
-For v5.0.0, run it twice: v4.0 to v5 (cumulative) and export.51 to v5 (the step since the last export).
+For v5.0.0, from v4.0 (the cumulative file; see above for why not from export.51).
 
 ```bash
 python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <candidate sha> \
@@ -190,4 +214,4 @@ commits walked, not the length of the interval:
 | v4.0 to master, cumulative (refused on exactly the 339 held events) | 208 | 66 s | 3.5 GB |
 
 Tests: `python3 -m unittest bin/scripts/release/test_migrations.py` from the repository root, or
-`cd bin/scripts/release && python3 -m unittest test_migrations`. The tests run on scratch git repositories.
+`cd bin/scripts/release && python3 -m unittest test_migrations test_release_migrations`. The tests run on scratch git repositories.
