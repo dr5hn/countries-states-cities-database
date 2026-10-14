@@ -688,6 +688,7 @@ jobs:
       contents: read   # reads the history and the list of published releases
     outputs:
       artifact: ${{ steps.generate.outputs.artifact }}
+      data_version: ${{ steps.generate.outputs.data_version }}
     steps:
       - name: Checkout the source commit with its full history and tags
         uses: actions/checkout@v5
@@ -706,6 +707,8 @@ jobs:
           flag=(); [ "$MODE" = production ] && flag=(--production)
           python3 bin/scripts/release/release_migrations.py --to "$GITHUB_SHA" --out "$RUNNER_TEMP/migrations" "${flag[@]}"
           echo "artifact=migrations-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          python3 -c 'import json, sys; print("data_version=" + json.load(open(sys.argv[1]))["data_version"])' \
+            "$RUNNER_TEMP/migrations/release_meta.json" >> "$GITHUB_OUTPUT"
 
       - name: Keep the migration files as a workflow artifact
         uses: actions/upload-artifact@v4
@@ -787,6 +790,7 @@ jobs:
         uses: actions/github-script@v8
         env:
           EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
+          MIGRATIONS_DATA_VERSION: ${{ needs.migrations.outputs.data_version }}
           CURRENT_DATE: ${{ env.current_date }}
           REGION_COUNT: ${{ env.region_count }}
           SUBREGION_COUNT: ${{ env.subregion_count }}
@@ -848,12 +852,12 @@ jobs:
             let exportNum = 0;
             let releases;
             try {
-              const resp = await github.rest.repos.listReleases({
+              // every page: with more than 100 releases the newest feature release could be on a later one
+              releases = await github.paginate(github.rest.repos.listReleases, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 per_page: 100,
               });
-              releases = resp.data;
             } catch (err) {
               core.setFailed(`Could not list releases to determine base version: ${err.message}`);
               return;
@@ -877,6 +881,11 @@ jobs:
 
             if (!baseVersion) {
               core.setFailed('No feature release matching v<MAJOR>.<MINOR>[.<PATCH>] found. Cut a feature release first (gh release create vX.Y.Z --target master), then re-run this workflow.');
+              return;
+            }
+            // The migration files carry the data version the migrations job picked the same way; they must agree
+            if (baseVersion !== process.env.MIGRATIONS_DATA_VERSION) {
+              core.setFailed(`This export would be named for v${baseVersion}, but its migration files say ${process.env.MIGRATIONS_DATA_VERSION}; start a new run`);
               return;
             }
 

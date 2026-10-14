@@ -7,7 +7,8 @@ The two --from snapshots are picked from the repository's published GitHub relea
 - step: the newest export release of that same major (v<feature>-export.N), e.g. v5.0.0-export.1 for the next v5
   export. An earlier major's export is not used: its tag may hold rows whose ids the export assigned and synced back
   later (v4.0-export.51 has 10,851), and the generator needs every id at --from. v5.0.0's own first export carries
-  only the cumulative file, which covers users of any v4.0 export: they look up the ids they hold.
+  only the cumulative file: users of a later v4.0 export use it to remap the ids they store (its added ids and
+  changed fields are relative to v4.0) and load the v5 data fresh.
 migrations.py runs from each to --to; each output folder is packed as migrations-from-<tag>.tar.gz, and
 MIGRATIONS_SHA256SUMS and MIGRATIONS_SOURCE are written next to them. data_version is the newest published feature
 release of the contract's major, the base the publish job names the export after; before that release is cut (a

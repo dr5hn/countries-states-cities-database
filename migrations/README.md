@@ -172,7 +172,9 @@ published as a v4.0 export. A failed `migrations` job stops publishing; a candid
 Every id must be final at the candidate commit (assign ids with the import and sync, or `normalize_json.py`, first),
 so each export's tag can be the start of the next step file. v4.0-export.51's tag cannot: its 10,851 Spanish postcodes
 got their ids at export and were synced back later. So v5.0.0's first export carries only the cumulative file from
-v4.0, which also serves users of any v4.0 export, who look up the ids they hold.
+v4.0. It lists every id event since v4.0, so a user of any v4.0 export can look up each id they store (where a
+removed one went). Its added ids and changed fields are relative to v4.0, not to a later export: users of a later
+export load the v5 data fresh and use the file to remap the ids they store, not to patch their copy.
 
 ```bash
 python3 bin/scripts/release/release_migrations.py --to <candidate sha> --out <new folder> [--production]
