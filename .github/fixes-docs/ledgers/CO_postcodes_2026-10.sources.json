@@ -1,0 +1,22 @@
+{
+  "country_code": "CO",
+  "identity": "postcode",
+  "source_tag": "4-72-official",
+  "state_mapping": "The six-digit code's department prefix, agreeing with DANE codes, mapped explicitly to ISO (e.g. 05 -> ANT, 08 -> ATL, 76 -> VAC); 22 old links corrected",
+  "rows_kept": 3672,
+  "queued_for_v5_removal": 4,
+  "consumer_consequence": "Colombia retains 3,672 official full-code IDs and their re-derived department links, corrects 22 links, queues 4 absent codes, and keeps locality labels and points null.",
+  "product": "4-72 official postal code shapefile (Unidad Código Postal Colombia)",
+  "url": "https://visor.codigopostal.gov.co/472/visor/Shapefile_Codigo_Postal.zip",
+  "last_modified": "Tue, 28 Jun 2016 19:42:41 GMT",
+  "bytes": 68521569,
+  "sha256": "121d26a488ae9b2dd73e72e2d9495a9b892ca3068b95fe969fc64610d7615ff8",
+  "retrieved_at_utc": "2026-10-14T02:30:43.060990+00:00",
+  "licence": "4-72 Cláusula de Licencia Abierta",
+  "licence_url": "https://visor.codigopostal.gov.co/472/visor/Clausula_Licencia_Abierta.pdf",
+  "licence_sha256": "78a301079fdd0ef473b264123185ff3ddf70a84d3f26cfa5669d2aa3bcac9198",
+  "licence_text": ".github/licenses/4-72-Clausula-Licencia-Abierta.txt",
+  "credit": "Fuente: MINTIC-Servicios Postales Nacionales 4-72 (Unidad Código Postal Colombia)",
+  "data_last_updated": "28 June 2016 (HTTP Last-Modified of the shapefile)",
+  "note": "Only codes and their department prefixes are used; locality names and points stay empty. The datos.gov.co portal table (CC BY-SA 4.0) was a check only."
+}

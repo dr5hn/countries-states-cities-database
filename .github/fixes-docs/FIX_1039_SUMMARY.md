@@ -479,3 +479,71 @@ Later #1039 work can restore coverage from an open source with full codes.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Ten countries: postcodes from open sources (decisions_5, 14 Oct 2026)
+
+### Problem
+The postcodes of Indonesia, Brazil, South Africa, Norway, Italy, the Netherlands, Colombia, Hungary, Malaysia and Turkey
+came from legacy copies whose redistribution basis was never established (e.g. pentagonal/Indonesia-Postal-Code,
+mevdschee/postcodes-nl, JohaAlarcon/Load_postal_code). Under the v5 source decision (decisions_5), each is re-derived from
+an open product: the GeoNames postal code dump (snapshot of 13 October 2026, CC BY 4.0) for eight countries, Kadaster's
+BAG register via PDOK (Public Domain Mark) for the Netherlands, and 4-72's official postal code shapefile (its open
+clause) for Colombia.
+
+### Fix
+**38,777 rows kept** with their ids, each matched on its own identity (code, or code with its locality, regency, district
+or delivery kind), never by a coarser label:
+
+| Country | Row identity | Product | Kept | Queued for v5 |
+|---|---|---|---:|---:|
+| Indonesia | postcode and regency/city | GeoNames | 8,054 | 313 |
+| Brazil | postcode | GeoNames | 5,302 | 390 |
+| South Africa | postcode, town and delivery kind | GeoNames | 731 | 4,954 |
+| Norway | postcode | GeoNames | 5,105 | 17 |
+| Italy | postcode (CAP) | GeoNames | 4,558 | 120 |
+| Netherlands | PC4 | Kadaster BAG (PDOK) | 4,072 | 0 |
+| Colombia | postcode | 4-72 official shapefile | 3,672 | 4 |
+| Hungary | postcode and settlement/district | GeoNames | 3,228 | 341 |
+| Malaysia | postcode and locality | GeoNames | 2,632 | 301 |
+| Turkey | postcode and district | GeoNames | 1,423 | 1,348 |
+
+- Where the source's rows for one identity disagree, that field is left empty; no row is picked. Points are the
+  sources' published estimates; Indonesia holds 304 points reused across different counties, and the Netherlands and
+  Colombia get no points.
+- States come from each source's region code by an explicit published table, never by name.
+- City links: Italy's 3,551 are cleared (the dump cannot re-derive the ISTAT comune they relied on); the Netherlands'
+  are re-derived from BAG and BRK (2,111 kept, 2 changed, 74 cleared, 502 added). No other links are made.
+- South Africa keeps only generic code/locality rows: street and PO-box rows have no discriminator in the dump.
+
+Consumer consequence, per country:
+
+- Indonesia retains 8,054 regency/city-scoped postcode IDs covering 7,966 codes, replaces their labels with open administrative labels and queues 313 unsupported tuples; 3,829 estimates and 7,804 province links remain.
+- Brazil retains 5,302 supported code IDs, queues 390 unsupported IDs in v5, and offers 5,302 published estimates with no city links.
+- South Africa retains 731 generic code/locality IDs covering 700 codes, loses 4,954 unsupported locality or delivery-kind IDs in v5, and retains no province links.
+- Norway retains 5,105 supported code IDs, queues 17 unsupported IDs in v5, and offers 5,105 published estimates with no city links.
+- Italy retains 4,558 CAP IDs and queues 120 absent codes, clears 2,836 ambiguous labels and all 3,551 linked kept rows, and holds 67 province assignments.
+- The Netherlands retains all 4,072 existing PC4 IDs, supplies 3,997 unanimous locality labels and 2,615 guarded city links, and adds no PC6 codes or postcode points.
+- Colombia retains 3,672 official full-code IDs and their re-derived department links, corrects 22 links, queues 4 absent codes, and keeps locality labels and points null.
+- Hungary retains 3,228 supported code/locality IDs, queues 341 unsupported IDs in v5, and offers 3,228 published estimates with no city links.
+- Malaysia retains 2,632 supported code/locality IDs, queues 301 unsupported IDs in v5, and offers 2,629 published estimates with no city links.
+- Turkey retains 1,423 supported code/district IDs, queues 1,348 unsupported IDs in v5, and offers 767 published estimates with no city links.
+
+**Not in this PR:** 7,788 rows are queued for removal in v5.0.0 (no ids are removed between majors); they keep their
+earlier values until then, and exports are paused until v5.0.0. 1,438 codes the sources have and CSC does not are not
+added (rule 3). The ten legacy importers are retired and refuse to run.
+
+### Sources
+- GeoNames postal code dump (https://download.geonames.org/export/zip/allCountries.zip), snapshot of 13 October 2026,
+  CC BY 4.0. Credit: "Source: GeoNames, <Indonesian, Brazilian, South African, Norwegian, Italian, Hungarian,
+  Malaysian, Turkish> postal code dump, 13 October 2026". SOURCES.txt entries 73 to 80.
+- Kadaster BAG via PDOK (Public Domain Mark 1.0); BRK administrative units via PDOK (CC0 1.0), used only to check city
+  links. SOURCES.txt entry 81.
+- MINTIC-Servicios Postales Nacionales 4-72 (Unidad Código Postal Colombia), official shapefile last updated 28 June
+  2016, under its open clause (`.github/licenses/4-72-Clausula-Licencia-Abierta.txt`). SOURCES.txt entry 82.
+- Edition ledgers: `.github/fixes-docs/ledgers/<CC>_postcodes_2026-10.sources.json`.
+- Research: Codex pc_rebuild_6 (every row's decision, before and after value and evidence; 20 rows per country checked
+  by hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).

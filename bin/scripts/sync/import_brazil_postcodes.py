@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Brazil CEP -> contributions/postcodes/BR.json importer for issue #1039.
+"""RETIRED. Brazil CEP -> contributions/postcodes/BR.json importer for issue #1039.
+
+Retired on 14 October 2026: Brazil postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy Maahzuka/database-CEPS copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -93,6 +98,9 @@ def format_cep(raw) -> Optional[str]:
 
 
 def main() -> int:
+    print("[ERROR] retired: BR postcodes come from the GeoNames postal code dump now; rerunning this would reimport the "
+          "legacy Maahzuka/database-CEPS copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="/tmp/mx_ceps.xlsx",
                         help="Path to ceps.xlsx (default: /tmp/mx_ceps.xlsx)")

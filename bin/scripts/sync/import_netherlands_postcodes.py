@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Netherlands -> contributions/postcodes/NL.json importer for issue #1039.
+"""RETIRED. Netherlands -> contributions/postcodes/NL.json importer for issue #1039.
+
+Retired on 14 October 2026: Netherlands postcodes are now re-derived from Kadaster's BAG register (via PDOK) (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy mevdschee/postcodes-nl copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -103,6 +108,9 @@ def resolve_archive_url() -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: NL postcodes come from Kadaster's BAG register (via PDOK) now; rerunning this would reimport the "
+          "legacy mevdschee/postcodes-nl copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local 7z (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")
