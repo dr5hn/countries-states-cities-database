@@ -388,3 +388,53 @@ importer is retired: it now refuses to run.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Sweden, Romania, Poland, Ukraine and Argentina: postcodes from the GeoNames postal dumps (decisions_5, 14 Oct 2026)
+
+### Problem
+The postcodes of these five countries came from community copies of national postcode lists whose upstream grant to
+redistribute was never established: Sweden `se-zipcode` (zegl/sweden-zipcode), Romania `ro-coduri-postale`
+(alexionegit/coduripostaleRomaniaPS), Poland `kody-pocztowe-geo` (mberezinski/kody-pocztowe-geo), Ukraine
+`ukrposhta-via-rvolykh` (rvolykh/UAPostcodes) and Argentina `correo-argentino-via-androdron` (androdron/localidades_AR).
+A mirror does not establish that grant. Under the v5 source decision (decisions_5), each cohort is re-derived from an
+open replacement: the GeoNames postal code dump of 13 October 2026 (`geonames-postal`, CC BY 4.0).
+
+### Fix
+**72,706 rows kept** with their ids. Sweden, Romania and Poland have one row per postcode, so a row is kept when the dump
+lists its code (as Portugal). Ukraine and Argentina have one row per postcode and locality, so a row is kept only when
+the dump lists that locality under the same code, exactly or after an accent, case and punctuation fold (as Mexico).
+Each kept row takes the dump's values:
+
+| Country | Rows | Kept | Name changed | Point changed | State changed | City link | Queued for v5 |
+|---|---:|---:|---:|---:|---:|---|---:|
+| Sweden | 16,392 | 16,390 | 16,368 | 16,390 | 3,253 (3,214 were empty) | none, as before | 2 |
+| Romania | 13,751 | 13,739 | 13,739 | 13,738 | 1 | none, as before | 12 |
+| Poland | 22,090 | 19,394 | 3,144 | 19,394 | 8 cleared | none, as before | 2,696 |
+| Ukraine | 15,086 | 10,659 | 18 | 10,659 | 0 | none, as before | 4,427 |
+| Argentina | 23,184 | 12,524 | 178 | 12,524 | 16 | 329 cleared | 10,660 |
+
+- Where the dump's rows for one code give different names or points, that field is left empty; no row is picked
+  (Poland: 3,082 codes). Points are GeoNames' estimates, not delivery-area centroids, and change no city point.
+- States come from the dump's region code by GeoNames' published code table for each country, never by name. Ukraine's
+  postal codes 12 and 13 are swapped against the gazetteer, mapped by the published Order 121 allocation.
+- Argentina's 329 city links are cleared: they were made from a Correo locality id that the dump does not carry, so
+  they cannot be re-derived. No new links are made in any of the five countries.
+
+**Not in this PR:** 17,797 rows are queued for removal in v5.0.0 (no ids are removed between majors): Sweden 2,
+Romania 12 and Poland 2,696 whose codes the dump does not list; Ukraine 1,416 such rows plus 3,011 whose locality it does
+not list under their code; Argentina 519 plus 10,141. They keep their earlier values until then; exports are paused
+until v5.0.0, so they are not published again. 40,599 codes the dumps have and CSC does not are not added (rule 3). The
+five old importers are retired: Sweden's, Poland's, Ukraine's and Argentina's refuse to run, and Romania's step in the
+shared SK/RO/SI batch refuses while Slovakia and Slovenia still run.
+
+### Sources
+- GeoNames postal code dumps for SE, RO, PL, UA and AR (https://download.geonames.org/export/zip/), Last-Modified 13
+  October 2026, CC BY 4.0 per their readme. Credit: "Source: GeoNames, <Swedish, Romanian, Polish, Ukrainian, Argentine>
+  postal code dump, 13 October 2026". Ledgers with each dump's SHA-256: `.github/fixes-docs/ledgers/<CC>_postcodes_geonames_2026-10.sources.json`;
+  entries 66 to 70 in `.github/licenses/SOURCES.txt`.
+- Research: Codex pc_rebuild_3 (every row's decision, before and after value and evidence; 30 rows per country checked by
+  hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
