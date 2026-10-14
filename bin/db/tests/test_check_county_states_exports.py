@@ -409,3 +409,100 @@ class FormatAuditRegressionTest(unittest.TestCase):
         for name, change in cases:
             with self.subTest(name):
                 self.assertNotEqual(self.problems(change), [], name)
+
+
+class StructureRegressionTest(FormatAuditRegressionTest):
+    """Codex review_county_regions_4: a CSV row must be exactly as wide as its header, and every XML scalar the checker
+    reads must be exactly one leaf element. The review's cases, then one generic test per rule."""
+
+    test_positive_fixture_passes = test_every_audited_mutation_is_refused = None   # inherited helpers only
+
+    def csv_rows(self, root):
+        """The raw rows of csv/counties.csv, header first."""
+        with open(root / 'csv/counties.csv', newline='', encoding='utf-8') as fh:
+            return list(csv.reader(fh))
+
+    def write_csv(self, root, rows):
+        """Write raw rows back to csv/counties.csv."""
+        with open(root / 'csv/counties.csv', 'w', newline='', encoding='utf-8') as fh:
+            csv.writer(fh).writerows(rows)
+
+    def test_review_cases(self):
+        """A trailing cell dropped after the state cells (target and normal county); a nested or a conflicting
+        duplicate XML id, state_id or state_code on the target county."""
+        import xml.etree.ElementTree as ET
+
+        def drop_last(index):
+            """Drop the last cell of one data row."""
+            def change(root):
+                """Rewrite the CSV with one row a cell short."""
+                rows = self.csv_rows(root)
+                rows[index] = rows[index][:-1]
+                self.write_csv(root, rows)
+            return change
+        for index in (1, 2):
+            self.assertNotEqual(self.problems(drop_last(index)), [], f'row {index}')
+        for tag in ('id', 'state_id', 'state_code'):
+            def nested(root, tag=tag):
+                """Give the target's field a child element."""
+                self.xml_case(root, lambda tree: tree[0].find(tag).append(ET.fromstring('<broken>999</broken>')))
+
+            def duplicate(root, tag=tag):
+                """Add a conflicting second field to the target."""
+                self.xml_case(root, lambda tree: tree[0].append(ET.fromstring(f'<{tag}>999</{tag}>')))
+            self.assertNotEqual(self.problems(nested), [], f'nested {tag}')
+            self.assertNotEqual(self.problems(duplicate), [], f'duplicate {tag}')
+
+    def test_csv_row_short_or_long_at_any_position(self):
+        """Removing or inserting one cell at any position of any data row is refused."""
+        with tempfile.TemporaryDirectory() as d:
+            write_exports(Path(d))
+            rows = self.csv_rows(Path(d))
+        width = len(rows[0])
+        for index in range(1, len(rows)):
+            for pos in range(width + 1):
+                for kind in ('short', 'long'):
+                    if kind == 'short' and pos == width:
+                        continue
+
+                    def change(root, index=index, pos=pos, kind=kind):
+                        """One row one cell short or long at pos."""
+                        rows = self.csv_rows(root)
+                        row = rows[index]
+                        rows[index] = row[:pos] + row[pos + 1:] if kind == 'short' else row[:pos] + ['x'] + row[pos:]
+                        self.write_csv(root, rows)
+                    with self.subTest(row=index, pos=pos, kind=kind):
+                        self.assertNotEqual(self.problems(change), [])
+
+    def test_xml_field_duplicated_or_nested_anywhere(self):
+        """Every XML scalar the checker reads, on every county and in every region, refuses a duplicate copy (same text
+        or another) and a nested child."""
+        import xml.etree.ElementTree as ET
+        with tempfile.TemporaryDirectory() as d:
+            write_exports(Path(d))
+            tree = ET.parse(Path(d) / 'xml/counties.xml').getroot()
+        targets = []
+        for ci, county in enumerate(tree):
+            for tag in ('id', 'state_id', 'state_code'):
+                targets.append((ci, None, tag))
+            for si, el in enumerate(county.findall('states')):
+                for tag in ('state_id', 'state_code'):
+                    if el.find(tag) is not None:
+                        targets.append((ci, si, tag))
+        self.assertGreaterEqual(len(targets), 10)
+        for ci, si, tag in targets:
+            for kind in ('duplicate-same', 'duplicate-other', 'nested'):
+                def change(root, ci=ci, si=si, tag=tag, kind=kind):
+                    """Mutate one XML scalar field."""
+                    def alter(tree):
+                        """Duplicate or nest the field."""
+                        parent = tree[ci] if si is None else tree[ci].findall('states')[si]
+                        field = parent.find(tag)
+                        if kind == 'nested':
+                            field.append(ET.fromstring('<broken>999</broken>'))
+                        else:
+                            twin = ET.fromstring(f'<{tag}>{field.text or "" if kind == "duplicate-same" else "999"}</{tag}>')
+                            parent.insert(list(parent).index(field) + 1, twin)
+                    self.xml_case(root, alter)
+                with self.subTest(county=ci, region=si, field=tag, kind=kind):
+                    self.assertNotEqual(self.problems(change), [])

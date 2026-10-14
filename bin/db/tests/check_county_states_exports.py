@@ -74,8 +74,9 @@ def _xml_regions(county):
         if not blank(el.text) or sorted(c.tag for c in children) != ['state_code', 'state_id'] \
                 or any(len(c) or not blank(c.tail) for c in children):
             return INVALID
-        sid, code = _text_id(el.find('state_id').text or '', nullable=False), el.find('state_code').text or ''
-        if sid is BAD or not code:
+        sid_text, code = _xml_leaf(el, 'state_id'), _xml_leaf(el, 'state_code')
+        sid = BAD if sid_text in (MISSING, BAD) else _text_id(sid_text, nullable=False)
+        if sid is BAD or code in (MISSING, BAD) or not code:
             return INVALID
         pairs.append({'state_id': sid, 'state_code': code})
     return _list_value(pairs)
@@ -119,9 +120,33 @@ def _authority_errors(counties):
 
 
 def _csv_rows(path):
-    """Rows of a CSV export."""
+    """Rows of a CSV export as dicts by header name. A row with fewer or more cells than the header is kept but marked
+    with a None key (as csv.DictReader marks surplus cells), so _flat_row_ok() refuses it before any field is read."""
     with open(path, encoding='utf-8', newline='') as fh:
-        return list(csv.DictReader(fh))
+        rows = list(csv.reader(fh))
+    header, out = rows[0] if rows else [], []
+    for row in rows[1:]:
+        d = dict(zip(header, row))
+        if len(row) != len(header):
+            d[None] = f'{len(row)} cells for {len(header)} columns'
+        out.append(d)
+    return out
+
+
+def _flat_row_ok(row):
+    """Whether a CSV or PLIST row is whole: no surplus-cell key and no missing (None) cell anywhere."""
+    return None not in row and all(v is not None for v in row.values())
+
+
+def _xml_leaf(parent, tag):
+    """The text of exactly one leaf element <tag> under parent ('' when empty): MISSING when absent, BAD when repeated or
+    when it has child elements. Every XML scalar the checker reads goes through here."""
+    found = parent.findall(tag)
+    if not found:
+        return MISSING
+    if len(found) > 1 or len(found[0]):
+        return BAD
+    return found[0].text or ''
 
 
 def _toon(path):
@@ -253,22 +278,23 @@ def main(county_id, root='.'):
         rows = _read(root, f'{fmt}/counties.{fmt}', parse, problems)
         if rows is not None:
             # a short CSV row gives None cells and a long one a None key: neither is the empty null encoding
-            compare(f'{fmt}/counties.{fmt}', [(_text_id(r.get('id'), nullable=False),
-                                               BAD if None in r else keyed_pair(r, _text_id, _text_code), None) for r in rows],
+            # a row with a missing or surplus cell is refused whole, before any of its fields is read
+            compare(f'{fmt}/counties.{fmt}', [(_text_id(r.get('id'), nullable=False) if _flat_row_ok(r) else BAD,
+                                               keyed_pair(r, _text_id, _text_code) if _flat_row_ok(r) else BAD, None) for r in rows],
                     with_regions=False)
         rel = _read(root, f'{fmt}/county_states.{fmt}', parse, problems)
         if rel is not None:
             got = Counter((_text_id(r.get('county_id'), nullable=False), _text_id(r.get('state_id'), nullable=False),
-                           BAD if None in r else _text_code(r.get('state_code'))) for r in rel)
+                           _text_code(r.get('state_code'))) if _flat_row_ok(r) else (BAD, BAD, BAD) for r in rel)
             need(got == Counter(triples), f'{fmt}/county_states.{fmt}: regions differ from json/counties.json')
 
     xml = _read(root, 'xml/counties.xml', lambda p: ET.parse(p).getroot(), problems)
     if xml is not None:
         rows = []
         for e in xml:
-            has_pair = e.find('state_id') is not None and e.find('state_code') is not None
-            pair = (_text_id(e.find('state_id').text or ''), _text_code(e.find('state_code').text or '')) if has_pair else MISSING
-            rows.append((_text_id(e.findtext('id'), nullable=False), pair, _xml_regions(e)))
+            cid, sid, code = (_xml_leaf(e, tag) for tag in ('id', 'state_id', 'state_code'))
+            pair = MISSING if MISSING in (sid, code) else BAD if BAD in (sid, code) else (_text_id(sid), _text_code(code))
+            rows.append((BAD if cid in (MISSING, BAD) else _text_id(cid, nullable=False), pair, _xml_regions(e)))
         compare('xml/counties.xml', rows)
 
     for rel, parse, key in (('yml/counties.yml', _yaml, 'id'), ('mongodb/counties.json', _records, '_id')):
