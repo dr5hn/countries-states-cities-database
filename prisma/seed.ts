@@ -21,7 +21,7 @@ async function main() {
   await prisma.region.createMany({
     data: regions.map(({ name, translations, wikiDataId }) => ({
       name,
-      translations,
+      translations: translations == null ? null : JSON.stringify(translations),
       wikiDataId,
     })),
     skipDuplicates: true,
@@ -35,7 +35,7 @@ async function main() {
   const subregionData = subregions
     .map(({ name, translations, wikiDataId, region }) => {
       const regionId = regionMap.get(region);
-      return regionId ? { name, translations, wikiDataId, regionId } : null;
+      return regionId ? { name, translations: translations == null ? null : JSON.stringify(translations), wikiDataId, regionId } : null;
     })
     .filter(Boolean);
 
@@ -64,8 +64,8 @@ async function main() {
     longitude: country.longitude,
     emoji: country.emoji,
     emojiU: country.emojiU,
-    timezones: country.timezones,
-    translations: country.translations,
+    timezones: country.timezones == null ? null : JSON.stringify(country.timezones),
+    translations: country.translations == null ? null : JSON.stringify(country.translations),
     wikiDataId: country.wikiDataId,
     regionId: regionMap.get(country.region) || null,
     subregionId: subregionMap.get(country.subregion) || null,
