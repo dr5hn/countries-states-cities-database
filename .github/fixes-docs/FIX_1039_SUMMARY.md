@@ -352,3 +352,203 @@ now refuses to run, since it would reimport the replaced copy.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Mexico: postcodes from the GeoNames postal dump (decisions_5, 14 Oct 2026)
+
+### Problem
+The 144,600 Mexican postcode rows (`sepomex-via-redrbrt-2016`) came from an April 2016 mirror of SEPOMEX data
+(redrbrt/sepomex-zip-codes). The upstream grant to redistribute SEPOMEX's data was never established, and a mirror does
+not establish it. Under the v5 source decision (decisions_5), such a cohort is re-derived from an open replacement.
+Each Mexican row is one postcode and settlement (asentamiento): 144,600 rows for 32,467 codes.
+
+### Fix
+**144,149 rows kept** with their ids: every (postcode, settlement) pair that the GeoNames postal code dump of 13
+October 2026 lists. The settlement is matched under the same code, exactly after removing the old importer's
+", <ciudad>" and ", NULL" suffixes (144,116), or by a unique accent, case and punctuation fold (33). Each kept row
+takes that dump row's values (`geonames-postal`, CC BY 4.0):
+- Locality name: the dump's settlement name (144,077 changed, mostly the old suffix removed).
+- Point: the dump's point on all 144,149 rows, which had none. These are GeoNames' estimates, not settlement centroids.
+- State: from the dump's state code (INEGI entity code) by the importer's mapping; all agree with the current links.
+- City link: none, as before. No rule for linking a Mexican settlement to a city was ever established.
+
+**Not in this PR:** 451 rows are queued for removal in v5.0.0 (no ids are removed between majors): 385 whose
+settlement the dump does not list under their code, and 66 whose code it does not list at all. They keep their earlier
+values until then; exports are paused until v5.0.0, so they are not published again. 17 new codes and 502 new
+settlements in the dump are not added (decisions_5, rule 3). 22 pairs of rows whose names differ only in accents,
+punctuation or whitespace keep both ids, each on its own exact match, and are flagged for a later identity review. The SEPOMEX-mirror
+importer is retired: it now refuses to run.
+
+### Sources
+- GeoNames postal code dump for MX (https://download.geonames.org/export/zip/MX.zip), Last-Modified 13 October 2026,
+  SHA-256 afda57c8…5905, CC BY 4.0 per its readme. Credit: "Source: GeoNames, Mexican postal code dump, 13 October
+  2026". Ledger: `.github/fixes-docs/ledgers/MX_postcodes_geonames_2026-10.sources.json`; entry 65 in
+  `.github/licenses/SOURCES.txt`.
+- Research: Codex pc_rebuild_2 (every row's match, before and after value and evidence; 50 rows checked by hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
+
+## Sweden, Romania, Poland, Ukraine and Argentina: postcodes from the GeoNames postal dumps (decisions_5, 14 Oct 2026)
+
+### Problem
+The postcodes of these five countries came from community copies of national postcode lists whose upstream grant to
+redistribute was never established: Sweden `se-zipcode` (zegl/sweden-zipcode), Romania `ro-coduri-postale`
+(alexionegit/coduripostaleRomaniaPS), Poland `kody-pocztowe-geo` (mberezinski/kody-pocztowe-geo), Ukraine
+`ukrposhta-via-rvolykh` (rvolykh/UAPostcodes) and Argentina `correo-argentino-via-androdron` (androdron/localidades_AR).
+A mirror does not establish that grant. Under the v5 source decision (decisions_5), each cohort is re-derived from an
+open replacement: the GeoNames postal code dump of 13 October 2026 (`geonames-postal`, CC BY 4.0).
+
+### Fix
+**72,706 rows kept** with their ids. Sweden, Romania and Poland have one row per postcode, so a row is kept when the dump
+lists its code (as Portugal). Ukraine and Argentina have one row per postcode and locality, so a row is kept only when
+the dump lists that locality under the same code, exactly or after an accent, case and punctuation fold (as Mexico).
+Each kept row takes the dump's values:
+
+| Country | Rows | Kept | Name changed | Point changed | State changed | City link | Queued for v5 |
+|---|---:|---:|---:|---:|---:|---|---:|
+| Sweden | 16,392 | 16,390 | 16,368 | 16,390 | 3,253 (3,214 were empty) | none, as before | 2 |
+| Romania | 13,751 | 13,739 | 13,739 | 13,738 | 1 | none, as before | 12 |
+| Poland | 22,090 | 19,394 | 3,144 | 19,394 | 8 cleared | none, as before | 2,696 |
+| Ukraine | 15,086 | 10,659 | 18 | 10,659 | 0 | none, as before | 4,427 |
+| Argentina | 23,184 | 12,524 | 178 | 12,524 | 16 | 329 cleared | 10,660 |
+
+- Where the dump's rows for one code give different names or points, that field is left empty; no row is picked
+  (Poland: 3,082 codes). Points are GeoNames' estimates, not delivery-area centroids, and change no city point.
+- States come from the dump's region code by GeoNames' published code table for each country, never by name. Ukraine's
+  postal codes 12 and 13 are swapped against the gazetteer, mapped by the published Order 121 allocation.
+- Argentina's 329 city links are cleared: they were made from a Correo locality id that the dump does not carry, so
+  they cannot be re-derived. No new links are made in any of the five countries.
+
+**Not in this PR:** 17,797 rows are queued for removal in v5.0.0 (no ids are removed between majors): Sweden 2,
+Romania 12 and Poland 2,696 whose codes the dump does not list; Ukraine 1,416 such rows plus 3,011 whose locality it does
+not list under their code; Argentina 519 plus 10,141. They keep their earlier values until then; exports are paused
+until v5.0.0, so they are not published again. 40,599 codes the dumps have and CSC does not are not added (rule 3). The
+five old importers are retired: Sweden's, Poland's, Ukraine's and Argentina's refuse to run, and Romania's step in the
+shared SK/RO/SI batch refuses while Slovakia and Slovenia still run.
+
+### Sources
+- GeoNames postal code dumps for SE, RO, PL, UA and AR (https://download.geonames.org/export/zip/), Last-Modified 13
+  October 2026, CC BY 4.0 per their readme. Credit: "Source: GeoNames, <Swedish, Romanian, Polish, Ukrainian, Argentine>
+  postal code dump, 13 October 2026". Ledgers with each dump's SHA-256: `.github/fixes-docs/ledgers/<CC>_postcodes_geonames_2026-10.sources.json`;
+  entries 66 to 70 in `.github/licenses/SOURCES.txt`.
+- Research: Codex pc_rebuild_3 (every row's decision, before and after value and evidence; 30 rows per country checked by
+  hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
+
+## Malta and China: postcodes from GeoNames and OpenStreetMap (decisions_5, 14 Oct 2026)
+
+### Problem
+Malta's 26,593 postcodes (`maltapost-via-lucamuscat`) were full delivery codes scraped from MaltaPost's address search
+(lucamuscat/Scrape_Malta_Addresses); China's 22,656 (`china-post-via-mumuy`) came from mumuy/data_post. Neither copy's
+redistribution basis was ever established. GeoNames, the replacement used for other countries, is coarser here: for
+Malta it lists only the 73 three-letter prefixes, and for China only the general codes ending in 00. A prefix or a general
+code is a different, larger entity than a delivery code, so it cannot keep a delivery code's id (pc_rebuild_4).
+
+### Fix
+**4,181 rows kept** with their ids:
+- **China, 2,280 from GeoNames:** the codes the Chinese postal code dump of 13 October 2026 lists (`geonames-postal`, CC BY
+  4.0). Each takes the dump's locality, point and state, and its type becomes `area`; 12 state links change.
+- **China 1,121 and Malta 780 from OpenStreetMap:** codes confirmed by postcode-tagged OpenStreetMap objects (`addr:postcode` or `postal_code`) (`osm`, ODbL 1.0, ©
+  OpenStreetMap contributors; Geofabrik extracts with data up to 2026-10-13T20:21:31Z). A code is confirmed only by
+  objects wholly inside the checked country polygon with no contrary country tag. Its locality is kept only where every
+  object agrees, and its point is the median of the objects (never one address), else empty. Malta: 642 localities and
+  191 points; the old scraped street names and points are cleared where OSM gives none. The 850 Chinese codes that OSM
+  also confirms keep the GeoNames fields.
+- Per-code evidence (OSM object ids and versions, extract cutoff) for all 1,901 OSM-derived codes:
+  `.github/fixes-docs/ledgers/postcodes_osm_2026-10_evidence.csv`.
+
+**Coverage consequence:** Malta keeps 780 of 26,593 full postcodes (2.9%) and China 3,401 of 22,656 (15%). **Not in this
+PR:** the other 25,813 Maltese and 19,255 Chinese rows are queued for removal in v5.0.0 (no ids are removed between
+majors); they keep their earlier values until then, and exports are paused until v5.0.0. No prefix or general code is
+added (rule 3): a coarser code does not replace a delivery code. The two legacy importers are retired and refuse to run.
+Later #1039 work can restore coverage from an open source with full codes.
+
+### Sources
+- GeoNames postal code dump for CN (https://download.geonames.org/export/zip/CN.zip), Last-Modified 13 October 2026, CC BY
+  4.0. Credit: "Source: GeoNames, Chinese postal code dump, 13 October 2026". Ledger
+  `.github/fixes-docs/ledgers/CN_postcodes_geonames_2026-10.sources.json`; SOURCES.txt entry 71.
+- OpenStreetMap, © OpenStreetMap contributors, ODbL 1.0, Geofabrik extracts malta-261013 and china-261013 (data up to
+  2026-10-13T20:21:31Z). Ledgers `MT_postcodes_osm_2026-10.sources.json` and `CN_postcodes_osm_2026-10.sources.json`;
+  SOURCES.txt entry 72 (postcode-specific; entry 15 remains the general OpenStreetMap and Nominatim entry).
+- Research: Codex pc_rebuild_4 and pc_rebuild_5, with every row's decision and evidence and rows checked by hand.
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
+
+## Ten countries: postcodes from open sources (decisions_5, 14 Oct 2026)
+
+### Problem
+The postcodes of Indonesia, Brazil, South Africa, Norway, Italy, the Netherlands, Colombia, Hungary, Malaysia and Turkey
+came from legacy copies whose redistribution basis was never established (e.g. pentagonal/Indonesia-Postal-Code,
+mevdschee/postcodes-nl, JohaAlarcon/Load_postal_code). Under the v5 source decision (decisions_5), each is re-derived from
+an open product: the GeoNames postal code dump (snapshot of 13 October 2026, CC BY 4.0) for eight countries, Kadaster's
+BAG register via PDOK (Public Domain Mark) for the Netherlands, and 4-72's official postal code shapefile (its open
+clause) for Colombia.
+
+### Fix
+**38,777 rows kept** with their ids, each matched on its own identity (code, or code with its locality, regency, district
+or delivery kind), never by a coarser label:
+
+| Country | Row identity | Product | Kept | Queued for v5 |
+|---|---|---|---:|---:|
+| Indonesia | postcode and regency/city | GeoNames | 8,054 | 313 |
+| Brazil | postcode | GeoNames | 5,302 | 390 |
+| South Africa | postcode, town and delivery kind | GeoNames | 731 | 4,954 |
+| Norway | postcode | GeoNames | 5,105 | 17 |
+| Italy | postcode (CAP) | GeoNames | 4,558 | 120 |
+| Netherlands | PC4 | Kadaster BAG (PDOK) | 4,072 | 0 |
+| Colombia | postcode | 4-72 official shapefile | 3,672 | 4 |
+| Hungary | postcode and settlement/district | GeoNames | 3,228 | 341 |
+| Malaysia | postcode and locality | GeoNames | 2,632 | 301 |
+| Turkey | postcode and district | GeoNames | 1,423 | 1,348 |
+
+- Where the source's rows for one identity disagree, that field is left empty; no row is picked. Points are the
+  sources' published estimates; Indonesia holds 304 points reused across different counties, and the Netherlands and
+  Colombia get no points.
+- States come from each source's region code by an explicit published table, never by name.
+- City links: Italy's 3,551 are cleared (the dump cannot re-derive the ISTAT comune they relied on); the Netherlands'
+  are re-derived from BAG and BRK (2,111 kept, 2 changed, 74 cleared, 502 added). No other links are made.
+- South Africa keeps only generic code/locality rows: street and PO-box rows have no discriminator in the dump.
+
+Consumer consequence, per country:
+
+- Indonesia retains 8,054 regency/city-scoped postcode IDs covering 7,966 codes, replaces their labels with open administrative labels and queues 313 unsupported tuples; 3,829 estimates and 7,804 province links remain.
+- Brazil retains 5,302 supported code IDs, queues 390 unsupported IDs in v5, and offers 5,302 published estimates with no city links.
+- South Africa retains 731 generic code/locality IDs covering 700 codes, loses 4,954 unsupported locality or delivery-kind IDs in v5, and retains no province links.
+- Norway retains 5,105 supported code IDs, queues 17 unsupported IDs in v5, and offers 5,105 published estimates with no city links.
+- Italy retains 4,558 CAP IDs and queues 120 absent codes, clears 2,836 ambiguous labels and all 3,551 linked kept rows, and holds 67 province assignments.
+- The Netherlands retains all 4,072 existing PC4 IDs, supplies 3,997 unanimous locality labels and 2,615 guarded city links, and adds no PC6 codes or postcode points.
+- Colombia retains 3,672 official full-code IDs and their re-derived department links, corrects 22 links, queues 4 absent codes, and keeps locality labels and points null.
+- Hungary retains 3,228 supported code/locality IDs, queues 341 unsupported IDs in v5, and offers 3,228 published estimates with no city links.
+- Malaysia retains 2,632 supported code/locality IDs, queues 301 unsupported IDs in v5, and offers 2,629 published estimates with no city links.
+- Turkey retains 1,423 supported code/district IDs, queues 1,348 unsupported IDs in v5, and offers 767 published estimates with no city links.
+
+**Not in this PR:** 7,788 rows are queued for removal in v5.0.0 (no ids are removed between majors); they keep their
+earlier values until then, and exports are paused until v5.0.0. 1,438 codes the sources have and CSC does not are not
+added (rule 3). The ten legacy importers are retired and refuse to run.
+
+### Sources
+- GeoNames postal code dump (https://download.geonames.org/export/zip/allCountries.zip), snapshot of 13 October 2026,
+  CC BY 4.0. Credit: "Source: GeoNames, <Indonesian, Brazilian, South African, Norwegian, Italian, Hungarian,
+  Malaysian, Turkish> postal code dump, 13 October 2026". SOURCES.txt entries 73 to 80.
+- Kadaster BAG via PDOK (Public Domain Mark 1.0); BRK administrative units via PDOK (CC0 1.0), used only to check city
+  links. SOURCES.txt entry 81.
+- MINTIC-Servicios Postales Nacionales 4-72 (Unidad Código Postal Colombia), official shapefile; download object
+  HTTP Last-Modified: 28 June 2016; DBF header last update: `2013-10-07`; DBF/SHP/SHX ZIP member timestamps:
+  7 October 2013. Original XML metadata date fields (YYYYMMDD): `CreaDate=20130920`, `ModDate=20120120`,
+  `SyncDate=20120120`, `mdDateSt=20120120`; XML SHA-256:
+  `066ff6a9abe64a9ca2224af9efd6916cdba256d3b66b8ddce6a9d6f8059b12a3`. These source metadata timestamps do not
+  certify current postal routing. Original source metadata and the full open clause are retained in
+  `.github/licenses/4-72-Clausula-Licencia-Abierta.txt` and the edition ledger. SOURCES.txt entry 82.
+- Edition ledgers: `.github/fixes-docs/ledgers/<CC>_postcodes_2026-10.sources.json`.
+- Research: Codex pc_rebuild_6 (every row's decision, before and after value and evidence; 20 rows per country checked
+  by hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).

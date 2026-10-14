@@ -24,6 +24,8 @@ import os
 import sys
 import argparse
 from typing import List, Dict, Any, Set
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from city_states import check_references  # noqa: E402
 import mysql.connector
 from collections import OrderedDict
 
@@ -161,6 +163,8 @@ class MySQLToJSONSync:
         # Ensure cities directory exists
         os.makedirs(cities_dir, exist_ok=True)
 
+        # Build every country's file first, check all of it, and only then write: a bad pair leaves the files untouched
+        outputs = []
         for country_code in country_codes:
             # Fetch all cities for this country
             query = f"SELECT * FROM cities WHERE country_code = %s ORDER BY id"
@@ -180,13 +184,23 @@ class MySQLToJSONSync:
                 old = existing.get(row['id'])
                 fields = [c for c in old if c in columns] if old else list(columns)
                 fields += [c for c in columns if c not in fields and row[c] is not None]
+                fields += [c for c in ('state_id', 'state_code') if c in columns and c not in fields]   # required, even when null (v5)
                 city = self.process_row(row, fields, excluded)
                 if city.get('county_id') is None:
                     city.pop('county_id', None)
                 cities.append(city)
+            outputs.append((country_code, output_file, original_text, cities))
 
+        self.cursor.execute("SELECT id, iso2 FROM countries")
+        countries = self.cursor.fetchall()
+        self.cursor.execute("SELECT id, country_id, country_code, iso2 FROM states")
+        states = self.cursor.fetchall()
+        errors = check_references(countries, states, [c for *_, cities in outputs for c in cities])
+        if errors:
+            raise ValueError(f"{len(errors)} reference problems; no city file was written: " + '; '.join(errors[:20]))
+
+        for country_code, output_file, original_text, cities in outputs:
             # Save to country-specific JSON file
-            output_file = os.path.join(cities_dir, f'{country_code}.json')
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(cities, f, ensure_ascii=False, indent=2)
                 if original_text.endswith('\n'):

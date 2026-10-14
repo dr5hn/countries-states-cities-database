@@ -154,8 +154,8 @@ class ExportSqlServer extends Command
                 id INT IDENTITY(1,1) PRIMARY KEY,
                 name NVARCHAR(255) NOT NULL,
                 county_id INT NULL,
-                state_id INT NOT NULL,
-                state_code NVARCHAR(255) NOT NULL,
+                state_id INT NULL,
+                state_code NVARCHAR(255) NULL,
                 country_id INT NOT NULL,
                 country_code NCHAR(2) NOT NULL,
                 type NVARCHAR(191) NULL,
@@ -175,7 +175,8 @@ class ExportSqlServer extends Command
                 wikiDataId NVARCHAR(255) NULL,
                 CONSTRAINT FK_cities_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE SET NULL,
                 CONSTRAINT FK_cities_states FOREIGN KEY (state_id) REFERENCES world.states(id),
-                CONSTRAINT FK_cities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id)
+                CONSTRAINT FK_cities_countries FOREIGN KEY (country_id) REFERENCES world.countries(id),
+                CONSTRAINT CK_cities_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR (state_id IS NOT NULL AND state_code IS NOT NULL))
             );",
             'postcodes' => "
             IF OBJECT_ID('world.postcodes', 'U') IS NOT NULL DROP TABLE world.postcodes;

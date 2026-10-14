@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import fetch from 'node-fetch';
+import { cityStateId, localStateIds } from './city-state';
 
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
@@ -88,11 +89,8 @@ async function main() {
 
   await prisma.state.createMany({ data: stateData, skipDuplicates: true });
 
-  // Fetch all states after insertion
-  const stateMap = new Map((await prisma.state.findMany()).map(s => [`${s.name}-${s.countryId}`, s.id]));
-
-  // Map source state IDs to locally seeded IDs before linking counties.
-  const stateIdMap = new Map(states.map(s => [s.id, stateMap.get(`${s.name}-${countryMap.get(s.country_code)}`)]));
+  // Map source state ids to seeded ids by country and state code (names repeat within a country, codes do not)
+  const stateIdMap = localStateIds(states, await prisma.state.findMany(), countryMap);
   const counties = await fetchData('counties');
   await prisma.county.createMany({
     data: counties.map(c => ({
@@ -113,17 +111,20 @@ async function main() {
     await prisma.county.update({ where: { id: county.id }, data: { parentId: county.parent_id } });
   }
 
-  // Seed Cities
+  // Seed Cities: a stateless city (a country with no states, v5) gets a null state; an inconsistent city stops the seed
   const cities = await fetchData('cities');
-  const cityData = cities
-    .map(({ name, county_id, state_name, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId }) => {
-      const countryId = countryMap.get(country_code);
-      const stateId = stateMap.get(`${state_name}-${countryId}`);
-      return stateId && countryId
-        ? { name, countyId: county_id ?? null, stateCode: state_code, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId }
-        : null;
-    })
-    .filter(Boolean);
+  const stateCtx = {
+    sourceStates: new Map(states.map(s => [s.id, { country_code: s.country_code, iso2: s.iso2 }])),
+    countriesWithStates: new Set(states.map(s => s.country_code)),
+    seededStateId: stateIdMap,
+  };
+  const cityData = cities.map((city) => {
+    const { name, county_id, country_code, state_code, type_local, population_year, latitude, longitude, wikiDataId } = city;
+    const countryId = countryMap.get(country_code);
+    if (!countryId) throw new Error(`city ${city.id} ${name}: country ${country_code} was not seeded`);
+    const stateId = cityStateId(city, stateCtx);
+    return { name, countyId: county_id ?? null, stateCode: state_code ?? null, countryCode: country_code, typeLocal: type_local ?? null, populationYear: population_year ?? null, latitude, longitude, wikiDataId, stateId, countryId };
+  });
 
   await prisma.city.createMany({ data: cityData, skipDuplicates: true });
 

@@ -16,11 +16,14 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
+    // v5: a city of a country with no states (e.g. Western Sahara) has state_id and state_code both null.
+    // Both keys stay required; the pair is either fully set or fully null (checked in validateRecord).
+    nullablePairs: [['state_id', 'state_code']],
     optional: ['county_id', 'state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'population_year', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       county_id: { type: 'integer', positive: true },
-      state_id: { type: 'integer', positive: true },
+      state_id: { type: 'integer', positive: true, jsonNumber: true },   // a JSON number: "1", true or [1] are refused
       state_code: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
@@ -220,8 +223,21 @@ function validateRecord(record, entityType, index) {
     );
   }
 
+  // A nullable pair (cities' state_id/state_code) must be fully set or fully null; both keys stay required
+  const nullPaired = new Set();
+  for (const pair of schema.nullablePairs || []) {
+    const isNull = pair.map((f) => f in record && record[f] === null);
+    if (isNull.every(Boolean)) {
+      pair.forEach((f) => nullPaired.add(f));
+    } else if (isNull.some(Boolean)) {
+      errors.push(`${prefix}: ${pair.join(' and ')} must both be set or both be null`);
+      pair.filter((f, i) => isNull[i]).forEach((f) => nullPaired.add(f));
+    }
+  }
+
   // Check required fields
   for (const field of schema.required) {
+    if (nullPaired.has(field)) continue;
     if (!(field in record) || record[field] === null || record[field] === undefined) {
       errors.push(`${prefix}: missing required field "${field}"`);
     } else {

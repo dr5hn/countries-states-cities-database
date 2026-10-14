@@ -1,0 +1,19 @@
+{
+  "country_code": "RO",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/RO.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:57 GMT",
+  "bytes": 287176,
+  "sha256": "272e579c651cfb26fc8c3b7340e1927f2ac7c483730da4651640829141144815",
+  "retrieved_at_utc": "2026-10-14T00:41:25.810135+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Romanian postal code dump, 13 October 2026.",
+  "identity": "one row per postcode; a row is kept when the dump lists its code",
+  "changes_by_csc": "Existing rows the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added.",
+  "state_mapping": "GeoNames admin1 number to the CSC state iso2 by the provider table https://www.geonames.org/RO/administrative-division-romania.html",
+  "rows_kept": 13739,
+  "queued_for_v5_removal": 12,
+  "new_codes_not_added": 24175
+}

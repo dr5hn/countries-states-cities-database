@@ -18,6 +18,29 @@ bin/
 └── README.md                    # This file
 ```
 
+## Cities without a state (v5.0.0)
+
+A city of a country with no states (Western Sahara) has `state_id` and `state_code` both null; every other city has
+both set. The pair is always present and never half null. How each format writes it:
+
+| Format | A city with no state |
+|---|---|
+| `cities.json` | `"state_id": null, "state_code": null, "state_name": null` |
+| `countries+states+cities.json` | listed in the country's own `cities` array (beside `states`; empty for most countries), once |
+| CSV, PLIST | empty `state_id`, `state_code` and `state_name` fields (read an empty value in these three as null) |
+| XML | empty `<state_id/>`, `<state_code/>`, `<state_name/>` elements (read as null) |
+| YAML, TOON, Parquet | `null` (Parquet integer columns are nullable 64-bit integers) |
+| MySQL (`schema.sql`, migration), SQL Server | `NULL`, with a check that both are null together (MySQL enforces it from 8.0.16) |
+| PostgreSQL, SQLite (converted from MySQL) | `NULL`; the converters copy columns and keys, not the pair check |
+| MongoDB | null fields and no `state` reference |
+
+To list a country's cities whatever their state, filter on `country_id` (or `country_code`), not on a join with states.
+
+**Upgrading an existing MySQL database:** run migration `20261014000000_nullable_city_state` before importing a city
+with no state. The importer refuses such a city while `cities.state_id` or `state_code` is still NOT NULL, and its
+automatic column detection never relaxes an existing column. Rolling the migration back is refused while any city has
+no state.
+
 ## Available Commands
 
 All commands can be executed from the `bin` directory using `php console [command]`
@@ -180,6 +203,10 @@ When you add NEW columns to your database or JSON:
 **If you added column in JSON:**
 1. Run `python3 bin/scripts/sync/import_json_to_mysql.py` - it will auto-detect and add new columns to MySQL
 2. The schema is updated automatically with proper data types
+
+A link column (`..._id`) that an older database lacks gets the type declared in `bin/db/schema.sql` whatever the
+records hold: `country_id` is always NOT NULL, a city's `state_id`, `county_id` and `parent_id` are always nullable.
+Any other new link column is nullable when some record has no value for it (an omitted key counts).
 
 Both scripts use **dynamic schema detection** - no need to manually update code when adding fields!
 
