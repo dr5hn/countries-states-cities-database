@@ -44,9 +44,10 @@ class RetiredIdFloorTest(unittest.TestCase):
         self.assertEqual(retired_id_floor(self.dir), {'cities': 166400, 'postcodes': 900000})
 
     def test_malformed_lines_stop_the_import(self):
-        """Not JSON, not an object, or no positive integer id: the import stops instead of guessing."""
+        """Not JSON, not an object, no positive integer id, or an unknown event type: the import stops instead of guessing."""
         for bad in ('{not json', '[1, 2]', json.dumps({'old_table': 'cities', 'old_id': '7'}),
-                    json.dumps({'old_table': 'cities', 'old_id': True}), json.dumps({'old_id': 7})):
+                    json.dumps({'old_table': 'cities', 'old_id': True}), json.dumps({'old_id': 7}),
+                    json.dumps({'event_type': 'retirement', 'old_table': 'cities', 'old_id': 7})):
             write_lines(os.path.join(self.dir, 'events.jsonl'), [bad])
             with self.assertRaises(SystemExit, msg=bad):
                 retired_id_floor(self.dir)

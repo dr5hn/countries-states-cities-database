@@ -69,8 +69,12 @@ def retired_id_floor(migrations_dir=os.path.join('migrations')):
                     sys.exit(f"❌ {path}:{n} is not JSON ({e}); fix the ledger line before importing")
                 if not isinstance(row, dict):
                     sys.exit(f"❌ {path}:{n} is not a JSON object; fix the ledger line before importing")
-                if name == 'events.jsonl' and row.get('event_type', 'removal') != 'removal':
-                    continue   # identity and restoration events retire nothing
+                if name == 'events.jsonl':
+                    kind = row.get('event_type', 'removal')
+                    if kind in ('identity', 'restoration'):
+                        continue   # they retire nothing
+                    if kind != 'removal':
+                        sys.exit(f"❌ {path}:{n} has unknown event_type {kind!r}; fix the ledger line before importing")
                 table, rid = row.get(tkey), row.get(ikey)
                 if not isinstance(table, str) or not isinstance(rid, int) or isinstance(rid, bool) or rid <= 0:
                     sys.exit(f"❌ {path}:{n} needs {tkey} and a positive integer {ikey}; fix the ledger line before importing")
