@@ -15,10 +15,15 @@ a Parquet column stored with the wrong physical type. Ids must be positive integ
 (or canonical integer text in text formats) and nulls must use the format's own null encoding.
 
 SQL Server: this is not a general SQL validator. It accepts exactly the statements this repository's exporter
-(bin/Commands/ExportSqlServer.php) writes for world.counties and world.county_states: the drop/create scaffold, the
-identity and constraint switches, and INSERT statements whose rows are parsed completely (one value per column,
-exact separators, nothing left over). Comments are removed first, so a commented-out insert adds no rows. Any other
-statement is refused, not interpreted.
+(bin/Commands/ExportSqlServer.php) writes for world.counties and world.county_states, in the exporter's order: the
+DROP and CREATE scaffold (CREATE checked declaration by declaration), counties' constraint and identity switches
+around the inserts, and INSERT statements whose rows are parsed completely (one value per column, exact
+separators, nothing left over). Column names written [x] or "x" are the same column as x. Comments are removed
+first, so a commented-out insert adds no rows. Any other statement is refused, not interpreted.
+
+Scope: the checker guards the exporters' own output against regressions: a wrong, missing, repeated or reordered
+value, record or statement. It is not a hardened parser for arbitrary hand-edited files; it fails closed on the
+malformations an exporter bug could plausibly produce, and on the malformations reviews have reported.
 """
 import csv
 import io
@@ -42,10 +47,18 @@ MISSING, INVALID, BAD = '(missing)', '(invalid list)', '(invalid value)'   # nev
 POSITIVE_INT_TEXT = re.compile(r'[1-9][0-9]*')
 SAFE_INT = 2 ** 53 - 1   # the largest integer the JavaScript TOON reader keeps exact
 SQL_NUMBER = re.compile(r'-?[0-9]+(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?')
-COUNTY_STATES_DDL = ('CONSTRAINT PK_county_states PRIMARY KEY (county_id, state_id)',
-                     'FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',
-                     'FOREIGN KEY (state_id) REFERENCES world.states(id)')
-COUNTIES_DDL = ('id INT IDENTITY(1,1) PRIMARY KEY', 'state_id INT NULL', 'state_code NVARCHAR(255) NULL')
+# The CREATE TABLE declarations ExportSqlServer.php writes: all of county_states', and the compared ones of counties
+COUNTY_STATES_DDL = {'county_id INT NOT NULL', 'state_id INT NOT NULL',
+                     'CONSTRAINT PK_county_states PRIMARY KEY (county_id, state_id)',
+                     'CONSTRAINT FK_county_states_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',
+                     'CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)'}
+COUNTIES_DDL = {'id INT IDENTITY(1,1) PRIMARY KEY', 'state_id INT NULL', 'state_code NVARCHAR(255) NULL',
+                'CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id)',
+                'CONSTRAINT CK_counties_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR '
+                '(state_id IS NOT NULL AND state_code IS NOT NULL))'}
+# The exporter's statement order per file (bin/Commands/ExportSqlServer.php execute())
+SQL_ORDER = {'counties': re.compile(r'drop create nocheck identity_on( insert)* identity_off check'),
+             'county_states': re.compile(r'drop create( insert)*')}
 
 
 # --- values -------------------------------------------------------------------------------------------------------
@@ -348,15 +361,21 @@ def _load_toon(path):
     header = re.fullmatch(r'\[(\d+)\]\{([^}]*)\}:', lines[0])
     if header is None:
         raise ValueError('TOON: expected a table of records, [N]{fields}:')
-    fields = header.group(2).split(',')
+    fields = []
+    for name in _toon_cells(header.group(2)):   # quoted or bare, around spaces: decoded as the reference reader does
+        name = name.strip()
+        fields.append(json.loads(name) if name.startswith('"') else name)
+    for name in ('id', 'state_id'):
+        if fields.count(name) != 1:
+            raise ValueError(f'TOON: the header names {name} {fields.count(name)} times')
     for n, line in enumerate(lines[1:], 2):
         cells = _toon_cells(line[2:]) if line.startswith('  ') else None
         if cells is None or len(cells) != len(fields):
             continue   # the reference reader refuses a malformed row
         raw = dict(zip(fields, cells))
         for field, nullable in (('id', False), ('state_id', True)):
-            value = raw.get(field)
-            if value is None or (nullable and value == 'null'):
+            value = raw[field].strip()
+            if nullable and value == 'null':
                 continue
             if not POSITIVE_INT_TEXT.fullmatch(value) or int(value) > SAFE_INT:
                 raise ValueError(f'TOON line {n}: {field} {value!r} is not a canonical positive integer')
@@ -512,32 +531,83 @@ def _sql_rows(values, ncols):
         i = skip(i + 1)
 
 
-def _load_sql(path, table):
-    """The rows a SQL Server export inserts into world.<table>, and its CREATE TABLE statement. Only the statements the
-    exporter writes for that table are accepted (see the module docstring); any other statement is an error."""
-    norm = lambda s: re.sub(r'\s+', ' ', s).strip()
-    scaffold = {f"IF OBJECT_ID('world.{table}', 'U') IS NOT NULL DROP TABLE world.{table}",
-                f'SET IDENTITY_INSERT world.{table} ON', f'SET IDENTITY_INSERT world.{table} OFF',
-                f'ALTER TABLE world.{table} NOCHECK CONSTRAINT FK_{table}_parent',
-                f'ALTER TABLE world.{table} WITH CHECK CHECK CONSTRAINT FK_{table}_parent'}
-    insert = re.compile(rf'INSERT\s+INTO\s+world\.{table}\s*\(([^)]*)\)\s*VALUES\s(.*)\Z', re.S)
-    creates, rows = [], []
-    for statement in _sql_statements(_utf8(path)):
-        if norm(statement) in scaffold:
+def _sql_name(name):
+    """A column name as SQL Server resolves it: [x] and "x" are x, and names are compared without case."""
+    name = name.strip()
+    if len(name) > 1 and (name[0], name[-1]) in (('[', ']'), ('"', '"')):
+        name = name[1:-1]
+    return name.lower()
+
+
+def _sql_declarations(create, table):
+    """The declarations of a whitespace-normalised 'CREATE TABLE world.<table> (...)', split on commas outside
+    parentheses and quoted literals. Text after the closing parenthesis, or a column or constraint declared twice, is
+    an error."""
+    body = create[len(f'CREATE TABLE world.{table} ('):]
+    decls, cur, depth, i = [], [], 1, 0
+    while i < len(body):
+        ch = body[i]
+        if ch == "'":
+            j = i + 1
+            while j < len(body) and not (body[j] == "'" and not body.startswith("''", j)):
+                j += 2 if body.startswith("''", j) else 1
+            cur.append(body[i:j + 1])
+            i = j + 1
             continue
-        if norm(statement).startswith(f'CREATE TABLE world.{table} ('):
-            creates.append(norm(statement))
+        if ch == '(':
+            depth += 1
+        elif ch == ')':
+            depth -= 1
+            if depth == 0:
+                decls.append(''.join(cur).strip())
+                if body[i + 1:].strip():
+                    raise ValueError(f'SQL: text after CREATE TABLE world.{table} (...): {body[i + 1:].strip()[:40]!r}')
+                break
+        elif ch == ',' and depth == 1:
+            decls.append(''.join(cur).strip())
+            cur = []
+            i += 1
+            continue
+        cur.append(ch)
+        i += 1
+    else:
+        raise ValueError(f'SQL: CREATE TABLE world.{table} is not closed')
+    names = [d.split()[1] if d.startswith('CONSTRAINT ') else d.split()[0] for d in decls if d]
+    if len(set(map(_sql_name, names))) != len(names):
+        raise ValueError(f'SQL: a column or constraint of world.{table} is declared twice')
+    return set(decls)
+
+
+def _load_sql(path, table):
+    """The rows a SQL Server export inserts into world.<table>, and its CREATE TABLE declarations. Only the statements the
+    exporter writes for that table, in its order, are accepted (see the module docstring); anything else is an error."""
+    norm = lambda s: re.sub(r'\s+', ' ', s).strip()
+    kinds_of = {f"IF OBJECT_ID('world.{table}', 'U') IS NOT NULL DROP TABLE world.{table}": 'drop',
+                f'SET IDENTITY_INSERT world.{table} ON': 'identity_on', f'SET IDENTITY_INSERT world.{table} OFF': 'identity_off',
+                f'ALTER TABLE world.{table} NOCHECK CONSTRAINT FK_{table}_parent': 'nocheck',
+                f'ALTER TABLE world.{table} WITH CHECK CHECK CONSTRAINT FK_{table}_parent': 'check'}
+    insert = re.compile(rf'INSERT\s+INTO\s+world\.{table}\s*\(([^)]*)\)\s*VALUES\s(.*)\Z', re.S)
+    kinds, decls, rows = [], None, []
+    for statement in _sql_statements(_utf8(path)):
+        n = norm(statement)
+        if n in kinds_of:
+            kinds.append(kinds_of[n])
+            continue
+        if n.startswith(f'CREATE TABLE world.{table} ('):
+            kinds.append('create')
+            decls = _sql_declarations(n, table)
             continue
         m = insert.match(statement)
         if not m:
-            raise ValueError(f'SQL: a statement the exporter does not write: {norm(statement)[:80]!r}')
-        columns = [c.strip() for c in m.group(1).split(',')]
+            raise ValueError(f'SQL: a statement the exporter does not write: {n[:80]!r}')
+        kinds.append('insert')
+        columns = [_sql_name(c) for c in m.group(1).split(',')]
         if len(set(columns)) != len(columns):
-            raise ValueError(f'SQL: repeated column in {columns}')
+            raise ValueError(f'SQL: a column is named twice in {m.group(1).strip()[:80]!r}')
         rows += [dict(zip(columns, values)) for values in _sql_rows(m.group(2), len(columns))]
-    if len(creates) != 1:
-        raise ValueError(f'SQL: expected one CREATE TABLE world.{table}, found {len(creates)}')
-    return rows, creates[0]
+    if not SQL_ORDER[table].fullmatch(' '.join(kinds)):
+        raise ValueError(f"SQL: statements {' '.join(kinds)!r} are not the exporter's order for world.{table}")
+    return rows, decls
 
 
 # --- the JSON authority -------------------------------------------------------------------------------------------
@@ -662,9 +732,10 @@ def main(county_id, root='.'):
         if not isinstance(value, str):
             return INVALID
         try:
-            return _list_value(_json(value))
+            decoded = _json(value)
         except ValueError:
             return INVALID
+        return _list_value(decoded) if isinstance(decoded, list) else INVALID   # the text "null" is not a null list
 
     parquet = _read(root, 'parquet/counties.parquet', _load_parquet, problems)
     if parquet is not None:
@@ -679,13 +750,13 @@ def main(county_id, root='.'):
     sql = _read(root, 'sqlserver/counties.sql', lambda p: _load_sql(p, 'counties'), problems)
     if sql is not None:
         rows, ddl = sql
-        need(all(d in ddl for d in COUNTIES_DDL), 'sqlserver/counties.sql: the counties table needs its id key and a nullable state pair')
+        need(COUNTIES_DDL <= ddl, 'sqlserver/counties.sql: the counties table lacks its id key, nullable state pair, state key or pair check')
         compare('sqlserver/counties.sql', [(_sql_id(r.get('id'), nullable=False), keyed_pair(r, _sql_id, _sql_code), None) for r in rows],
                 with_regions=False)
     rel = _read(root, 'sqlserver/county_states.sql', lambda p: _load_sql(p, 'county_states'), problems)
     if rel is not None:
         rows, ddl = rel
-        need(all(d in ddl for d in COUNTY_STATES_DDL), 'sqlserver/county_states.sql: the table needs its composite key and both foreign keys')
+        need(ddl == COUNTY_STATES_DDL, 'sqlserver/county_states.sql: the table is not the exporter\'s (two columns, composite key, both foreign keys)')
         got = Counter((_sql_id(r.get('county_id'), nullable=False), _sql_id(r.get('state_id'), nullable=False)) for r in rows)
         need(got == Counter((c, s) for c, s, _ in triples), 'sqlserver/county_states.sql: regions differ from json/counties.json')
     return problems

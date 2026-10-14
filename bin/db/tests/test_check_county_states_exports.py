@@ -70,19 +70,30 @@ def write_exports(root, counties=None, edit=None):
     sq = rows('sqlserver')
     cols = list(sq[0])
     cols.remove('states')
+    # the scaffold, DDL declarations and statement order ExportSqlServer.php writes (other county columns left out)
     Path(root, 'sqlserver/counties.sql').write_text(
+        '-- Table: counties\n\n'
         "IF OBJECT_ID('world.counties', 'U') IS NOT NULL DROP TABLE world.counties;\n"
-        'CREATE TABLE world.counties (\n    id INT IDENTITY(1,1) PRIMARY KEY,\n    state_id INT NULL,\n    state_code NVARCHAR(255) NULL\n);\n\n'
+        'CREATE TABLE world.counties (\n    id INT IDENTITY(1,1) PRIMARY KEY,\n    name NVARCHAR(255) NOT NULL,\n'
+        '    state_id INT NULL,\n    state_code NVARCHAR(255) NULL,\n    country_id INT NOT NULL,\n'
+        '    -- SQL Server forbids cascading self-references (error 1785). Clear child links before deletion.\n'
+        '    CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id),\n'
+        '    CONSTRAINT CK_counties_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR (state_id IS NOT NULL AND state_code IS NOT NULL))\n);\n\n'
+        'ALTER TABLE world.counties NOCHECK CONSTRAINT FK_counties_parent;\n\n'
         'SET IDENTITY_INSERT world.counties ON;\n\n'
         f"INSERT INTO world.counties ({', '.join(cols)}) VALUES\n"
-        + ',\n'.join('(' + ', '.join(sql_value(r[c]) for c in cols) + ')' for r in sq) + ';\n')
+        + ',\n'.join('(' + ', '.join(sql_value(r[c]) for c in cols) + ')' for r in sq) + ';\n\n'
+        'SET IDENTITY_INSERT world.counties OFF;\n\n'
+        'ALTER TABLE world.counties WITH CHECK CHECK CONSTRAINT FK_counties_parent;\n\n')
     pairs = [(r['id'], s['state_id']) for r in sq for s in r['states'] or []]
     Path(root, 'sqlserver/county_states.sql').write_text(
+        '-- Table: county_states\n\n'
+        "IF OBJECT_ID('world.county_states', 'U') IS NOT NULL DROP TABLE world.county_states;\n"
         'CREATE TABLE world.county_states (\n    county_id INT NOT NULL,\n    state_id INT NOT NULL,\n'
         '    CONSTRAINT PK_county_states PRIMARY KEY (county_id, state_id),\n'
         '    CONSTRAINT FK_county_states_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE,\n'
         '    CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)\n);\n\n'
-        'INSERT INTO world.county_states (county_id, state_id) VALUES\n' + ',\n'.join(f'({a}, {b})' for a, b in pairs) + ';\n')
+        'INSERT INTO world.county_states (county_id, state_id) VALUES\n' + ',\n'.join(f'({a}, {b})' for a, b in pairs) + ';\n\n')
 
 
 def target(fmt_wanted, change):
@@ -184,7 +195,7 @@ class CheckerTest(unittest.TestCase):
             """Remove the foreign key to states from the generated DDL."""
             p = Path(root, 'sqlserver/county_states.sql')
             p.write_text(p.read_text().replace('    CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)\n', ''))
-        self.assertProblem('sqlserver/county_states.sql: the table needs', change=strip)
+        self.assertProblem("sqlserver/county_states.sql: the table is not the exporter's", change=strip)
 
     def test_command_exit_code(self):
         """The command exits 1 when a problem is found and 0 when none is."""
@@ -850,3 +861,89 @@ class Round5RegressionTest(unittest.TestCase):
                 self.assertEqual(self.run_case(lambda r: None, counties), [])
                 self.assertNotEqual(self.run_case(lambda r, rel=rel, old=old, new=new: (r / rel).write_bytes(
                     (r / rel).read_bytes().replace(old, new)), counties), [])
+
+
+
+class Round6RegressionTest(Round5RegressionTest):
+    """Codex review_county_regions_6: SQL identifier aliases, the exporter's SQL scaffold order and exact DDL, TOON
+    header spellings, and the text "null" against a real null in every format."""
+
+    test_every_case = test_rebuilt_fixtures = None   # inherited helpers only
+
+    def round6_cases(self):
+        """(name, change, expected) for the round-6 mutations and their controls."""
+        T, A = self.text, self.append
+        out = [('positive', lambda r: None, 'pass')]
+        # 1. a column named twice under another spelling
+        for table, first in (('counties', '(9, '), ('county_states', '(9, ')):
+            for alias in ('[state_id]', '"state_id"', 'STATE_ID'):
+                def aliased(root, table=table, alias=alias):
+                    """Prepend an aliased state_id column with a contradictory value in every row."""
+                    import re
+                    p = root / f'sqlserver/{table}.sql'
+                    data = p.read_text().replace(f'INSERT INTO world.{table} (', f'INSERT INTO world.{table} ({alias}, ', 1)
+                    start = data.index(' VALUES\n') + len(' VALUES\n')
+                    end = data.index(';', start)
+                    p.write_text(data[:start] + re.sub(r'(?m)^\(', '(999, ', data[start:end]) + data[end:])
+                out.append((f'sql_{table}_duplicate_alias_{alias}', aliased, 'refuse'))
+        # 2. the exporter's statements, in its order, with its exact declarations
+        counties, relation = 'sqlserver/counties.sql', 'sqlserver/county_states.sql'
+        out += [('sql_counties_trailing_drop', A(counties, "IF OBJECT_ID('world.counties', 'U') IS NOT NULL DROP TABLE world.counties;\n"), 'refuse'),
+                ('sql_county_states_trailing_drop', A(relation, "IF OBJECT_ID('world.county_states', 'U') IS NOT NULL DROP TABLE world.county_states;\n"), 'refuse'),
+                ('sql_counties_identity_on_missing', T(counties, 'SET IDENTITY_INSERT world.counties ON;', ''), 'refuse'),
+                ('sql_counties_identity_off_missing', T(counties, 'SET IDENTITY_INSERT world.counties OFF;', ''), 'refuse'),
+                ('sql_counties_parent_switch_missing', T(counties, 'ALTER TABLE world.counties NOCHECK CONSTRAINT FK_counties_parent;', ''), 'refuse'),
+                ('sql_county_states_identity_switch', T(relation, 'INSERT INTO', 'SET IDENTITY_INSERT world.county_states ON;\nINSERT INTO'), 'refuse'),
+                ('sql_counties_create_unconsumed_text', T(counties, ')\n);\n\nALTER', ')\n) BROKEN TEXT;\n\nALTER'), 'refuse'),
+                ('sql_county_states_create_unconsumed_text', T(relation, 'world.states(id)\n);', 'world.states(id)\n) BROKEN TEXT;'), 'refuse'),
+                ('sql_county_states_quoted_foreign_key', T(relation, '    CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)\n',
+                                                          "    note NVARCHAR(255) DEFAULT N'FOREIGN KEY (state_id) REFERENCES world.states(id)'\n"), 'refuse'),
+                ('sql_counties_state_id_not_null', T(counties, 'state_id INT NULL', 'state_id INT NOT NULL'), 'refuse'),
+                ('sql_counties_pair_check_dropped', T(counties, ',\n    CONSTRAINT CK_counties_state_pair', ',\n    -- CONSTRAINT CK_counties_state_pair'), 'refuse')]
+        for table in ('counties', 'county_states'):
+            def before_create(root, table=table):
+                """Move the insert statement before the DROP and CREATE."""
+                p = root / f'sqlserver/{table}.sql'
+                data = p.read_text()
+                start = data.index(f'INSERT INTO world.{table}')
+                end = data.index(';', start) + 2
+                insert = data[start:end]
+                data = data[:start] + data[end:]
+                at = data.index('IF OBJECT_ID')
+                p.write_text(data[:at] + insert + data[at:])
+            out.append((f'sql_{table}_insert_before_create', before_create, 'refuse'))
+        # 3. TOON header names, quoted or spaced, before the raw-number gate
+        out += [('toon_quoted_header_id_control', T('toon/counties.toon', '{id,', '{"id",'), 'pass'),
+                ('toon_quoted_header_state_id_control', T('toon/counties.toon', ',state_id,', ',"state_id",'), 'pass'),
+                ('toon_quoted_header_id_rounded', lambda r: (T('toon/counties.toon', '{id,', '{"id",')(r), T('toon/counties.toon', '  9,', '  9.0000000000000001,')(r)), 'refuse'),
+                ('toon_quoted_header_state_id_rounded', lambda r: (T('toon/counties.toon', ',state_id,', ',"state_id",')(r), T('toon/counties.toon', ',4059,', ',4059.0000000000001,')(r)), 'refuse'),
+                ('toon_spaced_header_id_rounded', lambda r: (T('toon/counties.toon', '{id,', '{ id,')(r), T('toon/counties.toon', '  9,', '  9.0000000000000001,')(r)), 'refuse'),
+                ('toon_spaced_header_state_id_rounded', lambda r: (T('toon/counties.toon', ',state_id,', ', state_id,')(r), T('toon/counties.toon', ',4059,', ',4059.0000000000001,')(r)), 'refuse'),
+                ('toon_missing_state_id_header', T('toon/counties.toon', ',state_id,', ',stateid,'), 'refuse')]
+        # 4. the text "null" is never a null, in any format
+        out += [('json_states_text_null', T('json/counties.json', '"states": null', '"states": "null"'), 'refuse'),
+                ('mongodb_state_id_text_null', T('mongodb/counties.json', '"state_id": null', '"state_id": "null"'), 'refuse'),
+                ('mongodb_states_text_null', T('mongodb/counties.json', '"states": null', '"states": "null"'), 'refuse'),
+                ('yml_state_id_text_null', T('yml/counties.yml', '  state_id: null', "  state_id: 'null'"), 'refuse'),
+                ('yml_states_text_null', T('yml/counties.yml', '  states: null', "  states: 'null'"), 'refuse'),
+                ('xml_state_id_text_null', self.xml(lambda t: setattr(t[0].find('state_id'), 'text', 'null')), 'refuse'),
+                ('xml_state_code_text_null', self.xml(lambda t: setattr(t[0].find('state_code'), 'text', 'null')), 'refuse'),
+                ('csv_state_id_text_null', T('csv/counties.csv', '9,Waitomo District,,', '9,Waitomo District,null,'), 'refuse'),
+                ('plist_state_id_text_null', T('plist/counties.plist', '<key>state_id</key>\n\t\t<string></string>', '<key>state_id</key>\n\t\t<string>null</string>'), 'refuse'),
+                ('sql_state_id_text_null', T(counties, 'NULL, NULL', "N'null', NULL"), 'refuse'),
+                ('sql_state_code_text_null', T(counties, 'NULL, NULL', "NULL, N'null'"), 'refuse'),
+                ('parquet_states_text_null', self.parquet_frame(lambda df: df.__setitem__('states', [df.loc[0, 'states'], 'null'])), 'refuse'),
+                ('parquet_state_code_text_null', self.parquet_frame(lambda df: df.__setitem__('state_code', ['null', df.loc[1, 'state_code']])), 'refuse'),
+                ('toon_states_text_null', self.toon_rows(lambda rows: rows[1].update(states='null')), 'refuse'),
+                ('toon_state_id_text_null', T('toon/counties.toon', '  9,Waitomo District,null,', '  9,Waitomo District,"null",'), 'refuse')]
+        return out
+
+    def test_round6_cases(self):
+        """Every refuse case reports a problem; every pass case none."""
+        for name, change, expected in self.round6_cases():
+            with self.subTest(name):
+                found = self.run_case(change)
+                if expected == 'pass':
+                    self.assertEqual(found, [], name)
+                else:
+                    self.assertNotEqual(found, [], name)
