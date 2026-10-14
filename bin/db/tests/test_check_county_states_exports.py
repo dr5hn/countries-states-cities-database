@@ -196,3 +196,216 @@ class CheckerTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class FormatAuditRegressionTest(unittest.TestCase):
+    """Codex review_county_regions_3's audits as regressions: the 62-case format matrix
+    (runs/review_county_regions_3/checker-format-audit.py), its nine scalar cases (checker-scalar-audit.py) and the
+    short CSV row (checker-missing-cells-audit.py). Every mutation must be refused; the complete fixture must pass."""
+
+    def problems(self, change):
+        """Problems after writing the complete fixture and applying change(root)."""
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            write_exports(root)
+            change(root)
+            return main(9, root)
+
+    @staticmethod
+    def xml_case(root, change):
+        """Change the XML tree only."""
+        import xml.etree.ElementTree as ET
+        p = root / 'xml/counties.xml'
+        tree = ET.parse(p)
+        change(tree.getroot())
+        tree.write(p, encoding='unicode')
+
+    def xml_list(self, root, text, index):
+        """Replace one county's XML states elements with literal XML."""
+        import xml.etree.ElementTree as ET
+
+        def change(tree):
+            """Swap the states elements of county element index."""
+            county = tree[index]
+            for e in list(county.findall('states')):
+                county.remove(e)
+            for e in ET.fromstring('<new>' + text + '</new>'):
+                county.append(e)
+        self.xml_case(root, change)
+
+    @staticmethod
+    def structured(root, fmt, change):
+        """Change YAML, MongoDB, JSON, TOON or Parquet rows in their exported representation."""
+        import yaml
+        import pandas as pd
+        if fmt == 'yml':
+            p = root / 'yml/counties.yml'
+            doc = yaml.safe_load(p.read_text())
+            change(doc['counties'])
+            p.write_text(yaml.safe_dump(doc))
+        elif fmt in ('json', 'mongodb'):
+            p = root / f'{fmt}/counties.json'
+            doc = json.loads(p.read_text())
+            change(doc)
+            p.write_text(json.dumps(doc))
+        elif fmt == 'toon':
+            doc = copy.deepcopy(COUNTIES)
+            change(doc)
+            (root / 'toon/counties.toon').write_text(json_to_toon(json.dumps(doc)))
+        else:
+            p = root / 'parquet/counties.parquet'
+            df = pd.read_parquet(p)
+            change(df)
+            df.to_parquet(p)
+
+    def identity_mutation(self, root, fmt, mutation):
+        """missing_pair, missing_county, extra_county or duplicate_county in one format's own representation."""
+        import pandas as pd
+        key = '_id' if fmt == 'mongodb' else 'id'
+
+        def rows_change(rows):
+            """The mutation on a list of row dicts."""
+            if mutation == 'missing_pair':
+                rows[0].pop('state_id', None)
+                rows[0].pop('state_code', None)
+            elif mutation == 'missing_county':
+                rows.pop()
+            elif mutation == 'extra_county':
+                rows.append({**rows[1], key: 99999})
+            else:
+                rows.append(copy.deepcopy(rows[0]))
+        if fmt in ('yml', 'mongodb', 'toon'):
+            self.structured(root, fmt, rows_change)
+        elif fmt == 'xml':
+            def alter(tree):
+                """The mutation on the XML tree."""
+                if mutation == 'missing_pair':
+                    for k in ('state_id', 'state_code'):
+                        tree[0].remove(tree[0].find(k))
+                elif mutation == 'missing_county':
+                    tree.remove(tree[-1])
+                else:
+                    e = copy.deepcopy(tree[1 if mutation == 'extra_county' else 0])
+                    if mutation == 'extra_county':
+                        e.find('id').text = '99999'
+                    tree.append(e)
+            self.xml_case(root, alter)
+        elif fmt == 'parquet':
+            p = root / 'parquet/counties.parquet'
+            df = pd.read_parquet(p)
+            if mutation == 'missing_pair':
+                df = df.drop(columns=['state_id', 'state_code'])
+            elif mutation == 'missing_county':
+                df = df.iloc[:1]
+            else:
+                extra = df.iloc[[1 if mutation == 'extra_county' else 0]].copy()
+                if mutation == 'extra_county':
+                    extra.loc[:, 'id'] = 99999
+                df = pd.concat([df, extra], ignore_index=True)
+            df.to_parquet(p)
+        elif fmt in ('csv', 'plist'):
+            p = root / f'{fmt}/counties.{fmt}'
+            rows = list(csv.DictReader(p.open())) if fmt == 'csv' else plistlib.loads(p.read_bytes())
+            rows_change(rows)
+            if fmt == 'plist':
+                p.write_bytes(plistlib.dumps(rows))
+            else:
+                fields = list(rows[0])
+                with p.open('w', newline='') as fh:
+                    w = csv.DictWriter(fh, fieldnames=fields)
+                    w.writeheader()
+                    w.writerows([{k: v for k, v in r.items() if k in fields} for r in rows])
+        else:
+            p = root / 'sqlserver/counties.sql'
+            text = p.read_text()
+            if mutation == 'missing_pair':
+                text = text.replace('state_id', 'unused_state_id').replace('state_code', 'unused_state_code')
+            else:
+                start = text.index(' VALUES\n') + len(' VALUES\n')
+                end = text.index(';\n', start)
+                lines = text[start:end].splitlines()
+                if mutation == 'missing_county':
+                    lines = lines[:1]
+                else:
+                    lines.append(lines[1 if mutation == 'extra_county' else 0].rstrip(','))
+                if mutation == 'extra_county':
+                    lines[-1] = lines[-1].replace('(1,', '(99999,', 1)
+                text = text[:start] + ',\n'.join(line.rstrip(',') for line in lines) + text[end:]
+            p.write_text(text)
+
+    def cases(self):
+        """Every (name, change) of the three audits."""
+        out = []
+        for name, text, index in (
+                ('xml_normal_states_only_code', '<states><state_code>NTL</state_code></states>', 1),
+                ('xml_normal_states_text', '<states>broken-list</states>', 1),
+                ('xml_normal_states_unknown_child', '<states><oops>1</oops></states>', 1),
+                ('xml_normal_states_two_empty', '<states/><states/>', 1),
+                ('xml_target_states_missing_code', '<states><state_id>4060</state_id></states><states><state_id>4061</state_id><state_code>WKO</state_code></states>', 0),
+                ('xml_target_states_extra_key', '<states><state_id>4060</state_id><state_code>MWT</state_code><extra>bad</extra></states><states><state_id>4061</state_id><state_code>WKO</state_code></states>', 0),
+                ('xml_target_states_duplicate_child', '<states><state_id>4060</state_id><state_id>999</state_id><state_code>MWT</state_code></states><states><state_id>4061</state_id><state_code>WKO</state_code></states>', 0),
+                ('xml_target_states_mixed_empty', '<states/><states><state_id>4060</state_id><state_code>MWT</state_code></states><states><state_id>4061</state_id><state_code>WKO</state_code></states>', 0),
+                ('xml_normal_states_missing', '', 1)):
+            out.append((name, lambda root, t=text, i=index: self.xml_list(root, t, i)))
+        for fmt in ('csv', 'plist', 'xml', 'yml', 'mongodb', 'parquet', 'toon', 'sqlserver'):
+            for mutation in ('missing_pair', 'missing_county', 'extra_county', 'duplicate_county'):
+                out.append((f'{fmt}_{mutation}', lambda root, f=fmt, m=mutation: self.identity_mutation(root, f, m)))
+        for fmt in ('yml', 'mongodb', 'toon', 'parquet'):
+            for val in ([{'state_id': 1}], 'bad-list', [], {'state_id': 1}):
+                def change(root, fmt=fmt, val=val):
+                    """A malformed non-null states value on the one-state county."""
+                    if fmt == 'parquet':
+                        self.structured(root, fmt, lambda df: df.__setitem__('states', [df.loc[0, 'states'], json.dumps(val)]))
+                    else:
+                        self.structured(root, fmt, lambda rows: rows[1].update(states=val))
+                out.append((f'{fmt}_invalid_states_{json.dumps(val)}', change))
+        for fmt in ('csv', 'plist', 'xml', 'sqlserver'):
+            def broken(root, fmt=fmt):
+                """A null state id replaced by non-null text in one flat format."""
+                if fmt == 'xml':
+                    self.xml_case(root, lambda tree: setattr(tree[0].find('state_id'), 'text', 'broken'))
+                elif fmt == 'plist':
+                    p = root / 'plist/counties.plist'
+                    rows = plistlib.loads(p.read_bytes())
+                    rows[0]['state_id'] = 'broken'
+                    p.write_bytes(plistlib.dumps(rows))
+                elif fmt == 'csv':
+                    p = root / 'csv/counties.csv'
+                    rows = list(csv.DictReader(p.open()))
+                    rows[0]['state_id'] = 'broken'
+                    with p.open('w', newline='') as fh:
+                        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+                        w.writeheader()
+                        w.writerows(rows)
+                else:
+                    p = root / 'sqlserver/counties.sql'
+                    p.write_text(p.read_text().replace('NULL, NULL', "N'broken', NULL", 1))
+            out.append((f'{fmt}_invalid_nonnull_state_id', broken))
+        for fmt in ('yml', 'mongodb', 'toon'):
+            key = '_id' if fmt == 'mongodb' else 'id'
+            out.append((f'{fmt}_boolean_county_id', lambda root, f=fmt, k=key: self.structured(root, f, lambda rows: rows[1].update({k: True}))))
+            out.append((f'{fmt}_fractional_region_id', lambda root, f=fmt: self.structured(root, f, lambda rows: rows[0]['states'][0].update(state_id=4060.75))))
+        out.append(('parquet_fractional_county_id', lambda root: self.structured(root, 'parquet', lambda df: df.__setitem__('id', [9.0, 1.75]))))
+        out.append(('json_authority_fractional_region_id', lambda root: self.structured(root, 'json', lambda rows: rows[0]['states'][0].update(state_id=4060.75))))
+        out.append(('json_authority_string_region_id', lambda root: self.structured(root, 'json', lambda rows: rows[0]['states'][0].update(state_id='4060'))))
+
+        def short_row(root):
+            """The target county's CSV record cut to its first two cells (DictReader then gives None cells)."""
+            p = root / 'csv/counties.csv'
+            lines = p.read_text().splitlines()
+            lines[1] = ','.join(lines[1].split(',')[:2])
+            p.write_text('\n'.join(lines) + '\n')
+        out.append(('csv_short_row', short_row))
+        return out
+
+    def test_positive_fixture_passes(self):
+        """The complete fixture has no problems."""
+        self.assertEqual(self.problems(lambda root: None), [])
+
+    def test_every_audited_mutation_is_refused(self):
+        """Each of the audits' mutations yields at least one problem and never raises."""
+        cases = self.cases()
+        self.assertEqual(len(cases), 71)   # 61 format-matrix mutations, 9 scalar cases, 1 short row, besides the positive
+        for name, change in cases:
+            with self.subTest(name):
+                self.assertNotEqual(self.problems(change), [], name)
