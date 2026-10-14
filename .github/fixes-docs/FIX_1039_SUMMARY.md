@@ -352,3 +352,39 @@ now refuses to run, since it would reimport the replaced copy.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Mexico: postcodes from the GeoNames postal dump (decisions_5, 14 Oct 2026)
+
+### Problem
+The 144,600 Mexican postcode rows (`sepomex-via-redrbrt-2016`) came from an April 2016 mirror of SEPOMEX data
+(redrbrt/sepomex-zip-codes). The upstream grant to redistribute SEPOMEX's data was never established, and a mirror does
+not establish it. Under the v5 source decision (decisions_5), such a cohort is re-derived from an open replacement.
+Each Mexican row is one postcode and settlement (asentamiento): 144,600 rows for 32,467 codes.
+
+### Fix
+**144,149 rows kept** with their ids: every (postcode, settlement) pair that the GeoNames postal code dump of 13
+October 2026 lists. The settlement is matched under the same code, exactly after removing the old importer's
+", <ciudad>" and ", NULL" suffixes (144,116), or by a unique accent, case and punctuation fold (33). Each kept row
+takes that dump row's values (`geonames-postal`, CC BY 4.0):
+- Locality name: the dump's settlement name (144,077 changed, mostly the old suffix removed).
+- Point: the dump's point on all 144,149 rows, which had none. These are GeoNames' estimates, not settlement centroids.
+- State: from the dump's state code (INEGI entity code) by the importer's mapping; all agree with the current links.
+- City link: none, as before. No rule for linking a Mexican settlement to a city was ever established.
+
+**Not in this PR:** 451 rows are queued for removal in v5.0.0 (no ids are removed between majors): 385 whose
+settlement the dump does not list under their code, and 66 whose code it does not list at all. They keep their earlier
+values until then; exports are paused until v5.0.0, so they are not published again. 17 new codes and 502 new
+settlements in the dump are not added (decisions_5, rule 3). 22 pairs of rows whose names differ only in accents,
+punctuation or whitespace keep both ids, each on its own exact match, and are flagged for a later identity review. The SEPOMEX-mirror
+importer is retired: it now refuses to run.
+
+### Sources
+- GeoNames postal code dump for MX (https://download.geonames.org/export/zip/MX.zip), Last-Modified 13 October 2026,
+  SHA-256 afda57c8…5905, CC BY 4.0 per its readme. Credit: "Source: GeoNames, Mexican postal code dump, 13 October
+  2026". Ledger: `.github/fixes-docs/ledgers/MX_postcodes_geonames_2026-10.sources.json`; entry 65 in
+  `.github/licenses/SOURCES.txt`.
+- Research: Codex pc_rebuild_2 (every row's match, before and after value and evidence; 50 rows checked by hand).
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).
