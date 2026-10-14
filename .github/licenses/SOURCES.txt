@@ -927,6 +927,35 @@ their names, points and states from it, and added no new codes. Points are GeoNa
 Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
 endorsement.
 
+71. Chinese postal code dump
+Publisher: GeoNames
+Edition: 13 October 2026 (Last-Modified 13 October 2026 02:03:10 GMT); downloaded 14 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: GeoNames, Chinese postal code dump, 13 October 2026.
+Source:
+https://download.geonames.org/export/zip/CN.zip
+Changes by CSC: CSC kept the Chinese general postcodes it already had that the dump lists, took their names,
+points and states from it, typed them as areas, and added no new codes. Points are GeoNames' estimates.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
+72. OpenStreetMap postcodes for Malta and China
+Publisher: OpenStreetMap contributors; extracts by Geofabrik
+Edition: Geofabrik extracts malta-261013 and china-261013, data up to 2026-10-13T20:21:31Z
+Licence: Open Database License 1.0 (ODbL)
+https://opendatacommons.org/licenses/odbl/1-0/
+Credit: © OpenStreetMap contributors. Data available under the Open Database License 1.0.
+https://www.openstreetmap.org/copyright
+Source:
+https://download.geofabrik.de/europe/malta.html
+https://download.geofabrik.de/asia/china.html
+Changes by CSC: CSC kept the Maltese and Chinese postcodes it already had that postcode-tagged OpenStreetMap
+objects (addr:postcode or postal_code) inside the country confirm, took a locality only where the objects agree and a point as their median, and
+added no new codes. Each code's objects are listed in .github/fixes-docs/ledgers/postcodes_osm_2026-10_evidence.csv.
+Reuse: Keep attribution and ODbL notices, share adapted databases under ODbL and provide the access to data
+required by that licence.
+
 Sources under review
 The redistribution basis for 233 further sources remains under review; this notice does not certify those
 sources as cleared.

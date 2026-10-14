@@ -438,3 +438,44 @@ shared SK/RO/SI batch refuses while Slovakia and Slovenia still run.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Malta and China: postcodes from GeoNames and OpenStreetMap (decisions_5, 14 Oct 2026)
+
+### Problem
+Malta's 26,593 postcodes (`maltapost-via-lucamuscat`) were full delivery codes scraped from MaltaPost's address search
+(lucamuscat/Scrape_Malta_Addresses); China's 22,656 (`china-post-via-mumuy`) came from mumuy/data_post. Neither copy's
+redistribution basis was ever established. GeoNames, the replacement used for other countries, is coarser here: for
+Malta it lists only the 73 three-letter prefixes, and for China only the general codes ending in 00. A prefix or a general
+code is a different, larger entity than a delivery code, so it cannot keep a delivery code's id (pc_rebuild_4).
+
+### Fix
+**4,181 rows kept** with their ids:
+- **China, 2,280 from GeoNames:** the codes the Chinese postal code dump of 13 October 2026 lists (`geonames-postal`, CC BY
+  4.0). Each takes the dump's locality, point and state, and its type becomes `area`; 12 state links change.
+- **China 1,121 and Malta 780 from OpenStreetMap:** codes confirmed by postcode-tagged OpenStreetMap objects (`addr:postcode` or `postal_code`) (`osm`, ODbL 1.0, ©
+  OpenStreetMap contributors; Geofabrik extracts with data up to 2026-10-13T20:21:31Z). A code is confirmed only by
+  objects wholly inside the checked country polygon with no contrary country tag. Its locality is kept only where every
+  object agrees, and its point is the median of the objects (never one address), else empty. Malta: 642 localities and
+  191 points; the old scraped street names and points are cleared where OSM gives none. The 850 Chinese codes that OSM
+  also confirms keep the GeoNames fields.
+- Per-code evidence (OSM object ids and versions, extract cutoff) for all 1,901 OSM-derived codes:
+  `.github/fixes-docs/ledgers/postcodes_osm_2026-10_evidence.csv`.
+
+**Coverage consequence:** Malta keeps 780 of 26,593 full postcodes (2.9%) and China 3,401 of 22,656 (15%). **Not in this
+PR:** the other 25,813 Maltese and 19,255 Chinese rows are queued for removal in v5.0.0 (no ids are removed between
+majors); they keep their earlier values until then, and exports are paused until v5.0.0. No prefix or general code is
+added (rule 3): a coarser code does not replace a delivery code. The two legacy importers are retired and refuse to run.
+Later #1039 work can restore coverage from an open source with full codes.
+
+### Sources
+- GeoNames postal code dump for CN (https://download.geonames.org/export/zip/CN.zip), Last-Modified 13 October 2026, CC BY
+  4.0. Credit: "Source: GeoNames, Chinese postal code dump, 13 October 2026". Ledger
+  `.github/fixes-docs/ledgers/CN_postcodes_geonames_2026-10.sources.json`; SOURCES.txt entry 71.
+- OpenStreetMap, © OpenStreetMap contributors, ODbL 1.0, Geofabrik extracts malta-261013 and china-261013 (data up to
+  2026-10-13T20:21:31Z). Ledgers `MT_postcodes_osm_2026-10.sources.json` and `CN_postcodes_osm_2026-10.sources.json`;
+  SOURCES.txt entry 72 (postcode-specific; entry 15 remains the general OpenStreetMap and Nominatim entry).
+- Research: Codex pc_rebuild_4 and pc_rebuild_5, with every row's decision and evidence and rows checked by hand.
+
+### Rollback
+Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
+established).

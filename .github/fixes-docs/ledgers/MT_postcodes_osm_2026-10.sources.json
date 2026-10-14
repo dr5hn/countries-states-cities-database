@@ -1,0 +1,19 @@
+{
+  "country_code": "MT",
+  "product": "OpenStreetMap, Geofabrik extract",
+  "licence": "ODbL 1.0",
+  "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "credit": "© OpenStreetMap contributors. Data available under the Open Database License 1.0. https://www.openstreetmap.org/copyright",
+  "evidence": ".github/fixes-docs/ledgers/postcodes_osm_2026-10_evidence.csv",
+  "confirmation_rule": "a code is confirmed by normalized addr:postcode or postal_code tags on OSM nodes, ways or relations wholly inside the checked country polygon, with no contrary addr:country tag; CSC CN excludes HK, MO and TW",
+  "field_rule": "locality only where every object agrees; point as the median of the objects (never one address), else null; points formatted to eight decimals; no other field from OpenStreetMap",
+  "url": "https://download.geofabrik.de/europe/malta-261013.osm.pbf",
+  "last_modified": "Tue, 13 Oct 2026 23:24:13 GMT",
+  "bytes": 8930887,
+  "sha256": "0a580e78257a4f81f32cb4decbd08d6601f82938494f8224f86ad2c0b0de580b",
+  "retrieved_at_utc": "2026-10-14T01:05:32.377819+00:00",
+  "replication_timestamp": "2026-10-13T20:21:31Z",
+  "replication_sequence": "4936",
+  "rows_kept_from_osm": 780,
+  "queued_for_v5_removal": 25813
+}
