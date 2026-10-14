@@ -41,7 +41,10 @@ API support and country-by-country link population follow separately.
    new ward.
 2. **Official units that ISO 3166-2 does not list are county records.** Arrondissements, Kreise, US counties and
    similar units go in `contributions/counties/<country>.json`. A city links to the county that contains it through
-   `county_id` (nullable, added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states.
+   `county_id` (nullable, added with #1303 phase 2b). Counties that ISO lists, such as Ireland's, stay states. A county
+   that lies in several ISO states (New Zealand's cross-region district councils) is one record with no state of its
+   own and its regions listed in `states` (v5.0.0, see [counties/README.md](contributions/counties/README.md)); a
+   linked city keeps its own state, which must be one of them.
 3. **`level` is the depth in the country's official hierarchy**, with 1 directly under the country. It has the same
    meaning in all three datasets: in France a région is 1, a département 2, an arrondissement 3, a commune 4, a
    commune déléguée 5.

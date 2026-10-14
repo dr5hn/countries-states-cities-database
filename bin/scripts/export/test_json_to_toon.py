@@ -26,6 +26,21 @@ class JsonToToonTest(unittest.TestCase):
         out = json_to_toon('[{"name": "null"}, {"name": "true"}]')
         self.assertEqual(out.splitlines()[1:], ['  "null"', '  "true"'])
 
+    def test_list_is_json_text(self):
+        """A list (a county's states, v5) is one quoted cell of compact JSON, never a Python repr."""
+        out = json_to_toon('[{"id": 9, "states": [{"state_id": 4060, "state_code": "MWT"}, {"state_id": 4061, "state_code": "WKO"}]}]')
+        self.assertEqual(out.splitlines()[1], '  9,"[{\\"state_id\\":4060,\\"state_code\\":\\"MWT\\"},{\\"state_id\\":4061,\\"state_code\\":\\"WKO\\"}]"')
+
+    def test_strings_that_look_like_numbers_stay_strings(self):
+        """A string state code "1" or a coordinate string is quoted (it would decode as a number); numbers are not."""
+        out = json_to_toon('[{"id": 4213, "state_id": 2062, "state_code": "1", "latitude": "-38.86700000", "code": "01"}]')
+        self.assertEqual(out.splitlines()[1], '  4213,2062,"1","-38.86700000","01"')
+
+    def test_quoting_matches_the_reference_encoder(self):
+        """Colons, brackets, a leading # and backslashes are quoted and escaped as the TOON reference encoder does."""
+        out = json_to_toon('[{"a": "x:y", "b": "[x]", "c": "#1", "d": "a\\\\b", "e": ""}]')
+        self.assertEqual(out.splitlines()[1], '  "x:y","[x]","#1","a\\\\b",""')
+
 
 if __name__ == "__main__":
     unittest.main()

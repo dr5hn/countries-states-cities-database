@@ -6,7 +6,9 @@ import unittest
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from json_to_parquet import typed_frame
+import json
+
+from json_to_parquet import flatten_row, typed_frame
 
 
 def read_back(rows):
@@ -37,6 +39,16 @@ class ParquetIntegerTest(unittest.TestCase):
         """A non-integer value in an integer column stops the export."""
         with self.assertRaises(ValueError):
             typed_frame([{'id': 1, 'state_id': 1.5}])
+
+    def test_county_of_several_regions(self):
+        """A county with no state keeps a null int64 state_id and its regions as JSON text; a one-state county has none."""
+        states = [{'state_id': 4060, 'state_code': 'MWT'}, {'state_id': 4061, 'state_code': 'WKO'}]
+        rows = [flatten_row({'id': 9, 'state_id': None, 'state_code': None, 'states': states}),
+                flatten_row({'id': 8, 'state_id': 4059, 'state_code': 'NTL', 'states': None})]
+        t = read_back(rows)
+        self.assertEqual(t.schema.field('state_id').type, pa.int64())
+        self.assertEqual(t.column('state_id').to_pylist(), [None, 4059])
+        self.assertEqual([json.loads(v) if v else v for v in t.column('states').to_pylist()], [states, None])
 
 
 if __name__ == '__main__':

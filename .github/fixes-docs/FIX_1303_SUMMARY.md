@@ -142,3 +142,46 @@ Back up county contribution files (including their assigned IDs) and any populat
 Run Phinx rollback for this migration: it removes the city FK/column before dropping counties. Revert the phase 2b
 commits to restore the source/schema/export paths. Contribution JSON remains available for a later reimport; the
 migration rollback removes county rows and city links from MySQL. The earlier phase 2a data moves are independent.
+
+## v5.0.0: counties of several regions; New Zealand's seven cross-region councils (decision B6)
+
+### Problem
+Seven of New Zealand's district councils lie in two or more regions (ISO 3166-2 states): Waitomo, Taupō, Rotorua,
+Stratford, Rangitikei, Tararua and Waitaki. A county had exactly one `state_id`, so these councils were held out of the
+54 territorial-authority counties (#2006): filing one under its seat's region would have put land of other regions
+under the wrong state. Decision B6 (decisions_2_final.md, owner decision of 13 Oct 2026) keeps each as one county
+linked to every region it lies in, in v5.0.0.
+
+### Fix
+- **Schema (held for v5.0.0, stacked on #2016):** a county has either its own state, or `state_id` and `state_code`
+  both null and its regions in `states` (two or more). MySQL stores the list in `county_states (county_id, state_id)`
+  with both foreign keys; migration `20261015000000_county_states` adds it and makes the county state pair nullable
+  with a both-or-neither check. The importer, sync, validators, Prisma seed and every export format carry the list
+  (bin/README.md has the format table); a city linked to such a county keeps its own state, which must be one of the
+  county's.
+- **Data:** seven counties, ids 14023-14029, `administrative district` / `district council`, level 2, each with its
+  own Wikidata area item and that item's own P625 point (CC0), rounded to the schema's eight decimals (half-even; only
+  Waitomo's 175.18333333333 loses digits). Sixteen region links from Stats NZ's Meshblock Higher Geographies 2026 land
+  concordance. Six towns linked to their council: Taupo and Turangi (Taupō), Rotorua (Rotorua), Stratford
+  (Stratford), Bulls (Rangitikei), Oamaru (Waitaki). Names follow the official Stats NZ register except Taupō, where
+  the council and the area item use the macron; Rangitikei keeps the official spelling (LINZ declined the macron on
+  3 December 2024); Rotorua District stays the area's name beside the council's "Rotorua Lakes Council" brand. No
+  record is removed and no other value changes. Stratford's stored town point is 965 m outside its own urban area;
+  it is flagged for a later point review, and both points lie in the same council and region, so the link stands.
+
+### Sources
+- Wikidata (CC0): the seven area items and their P625 statements, each pinned to a revision; point ledger in
+  `.github/fixes-docs/ledgers/NZ_cross_region_councils_points.csv`.
+- Stats NZ Geographic Data Service, Meshblock Higher Geographies 2026 and Urban Rural / Territorial Authority 2026
+  (CC BY 4.0): region membership of each council and each linked town (concordance only; no geometry copied).
+- Research: Codex nz_regions_1 (all 149 New Zealand city rows and 54 county rows audited; 0 held).
+
+### Rollback
+In this order (reverting the code first would remove the migration that the rollback needs):
+1. **Data:** restore `contributions/counties/NZ.json` and `contributions/cities/NZ.json` as they were before this PR
+   and reimport with this PR's importer, or delete counties 14023-14029 and the six `county_id` links (their sixteen
+   `county_states` rows go with the counties).
+2. **Schema:** with this PR's migration file still present, run `cd bin && php console manage:rollback -t
+   20261014000000`. It is refused while a county has no state or a region row exists; afterwards `manage:status` shows
+   20261015000000 down and the `county_states` table is gone.
+3. **Code:** revert the rest of the PR.

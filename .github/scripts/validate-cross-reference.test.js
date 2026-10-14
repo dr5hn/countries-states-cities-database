@@ -132,6 +132,41 @@ test('county with parent_id requires an explicit id', async () => {
   assert.match((await validateCountyEdit([county, { ...county, id: undefined, parent_id: 1 }])).join('\n'), /parent_id.*explicit id/);
 });
 
+// v5 (decision B6): a county of several regions, here spanning Louisiana and Alabama
+const spanning = { ...county, state_id: null, state_code: null, states: [{ state_id: 1427, state_code: 'AL' }, { state_id: 1457, state_code: 'LA' }] };
+
+test('a city may link to a county of several regions that lists its state', () => {
+  const several = new Map([[1, spanning]]);
+  assert.deepEqual(validateCountyReference({ ...city, county_id: 1 }, several), []);
+  const other = new Map([[1, { ...spanning, states: spanning.states.slice(0, 1) }]]);
+  assert.match(validateCountyReference({ ...city, county_id: 1 }, other).join('\n'), /county_id 1 lists states 1427, not 1457/);
+});
+
+test('a county of several regions passes with real regions and unchanged city links', async () => {
+  assert.deepEqual(await validateCountyEdit([spanning]), []);
+});
+
+test('each listed region must exist, belong to the country and use its own code', async () => {
+  const bad = (entry) => validateCountyEdit([{ ...spanning, states: [spanning.states[1], entry] }]);
+  assert.match((await bad({ state_id: 99, state_code: 'ZZ' })).join('\n'), /states entry 99 does not exist/);
+  assert.match((await bad({ state_id: 1427, state_code: 'XX' })).join('\n'), /states entry 1427: state_code "XX" does not match/);
+});
+
+test('every county the cross-reference scans gets the full shape check, unchanged ones included', async () => {
+  const cases = [
+    [{ ...spanning, id: undefined }, /needs an explicit positive integer id/],
+    [{ ...spanning, id: '1' }, /needs an explicit positive integer id/],
+    [{ ...spanning, state_code: 'LA' }, /both be set or both be null/],
+    [{ ...spanning, states: spanning.states.slice(0, 1) }, /two or more distinct regions/],
+    [{ ...spanning, states: [spanning.states[0], spanning.states[0]] }, /two or more distinct regions/],
+    [{ ...spanning, states: [spanning.states[0], { ...spanning.states[1], name: 'x' }] }, /each region in states/],
+    [{ ...county, states: spanning.states }, /cannot also list states/],
+  ];
+  for (const [record, re] of cases) {
+    assert.match((await validateCountyEdit([record])).join('\n'), re, JSON.stringify(record));
+  }
+});
+
 test('valid county parent and unchanged city links pass', async () => {
   assert.deepEqual(await validateCountyEdit([county, { ...county, id: 2, parent_id: 1 }]), []);
 });

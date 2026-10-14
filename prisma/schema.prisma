@@ -110,6 +110,7 @@ model State {
   countryId  Int      @map("country_id") @db.UnsignedMediumInt
   cities     City[]
   counties   County[]
+  countyRegions CountyState[]
 
   @@index([countryId])
   @@map("states")
@@ -148,8 +149,9 @@ model City {
 model County {
   id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
   name         String    @db.VarChar(255)
-  stateId      Int       @map("state_id") @db.UnsignedMediumInt
-  stateCode    String    @map("state_code") @db.VarChar(255)
+  // v5 (decision B6): null for a county of several regions, which lists them in regions (county_states)
+  stateId      Int?      @map("state_id") @db.UnsignedMediumInt
+  stateCode    String?   @map("state_code") @db.VarChar(255)
   countryId    Int       @map("country_id") @db.UnsignedMediumInt
   countryCode  String    @map("country_code") @db.Char(2)
   type         String?   @db.VarChar(191)
@@ -167,14 +169,27 @@ model County {
   updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
   flag         Boolean   @default(true)
 
-  state        State     @relation(fields: [stateId], references: [id])
+  state        State?    @relation(fields: [stateId], references: [id], onDelete: Restrict)   // as the MySQL foreign key
   country      Country   @relation(fields: [countryId], references: [id])
   parent       County?   @relation("CountyHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
   children     County[]  @relation("CountyHierarchy")
   cities       City[]
+  regions      CountyState[]
 
   @@index([stateId])
   @@index([countryId])
   @@index([parentId])
   @@map("counties")
+}
+
+/// v5 (decision B6): the regions of a county of several regions, one row per (county, state)
+model CountyState {
+  countyId Int    @map("county_id") @db.UnsignedMediumInt
+  stateId  Int    @map("state_id") @db.UnsignedMediumInt
+  county   County @relation(fields: [countyId], references: [id], onDelete: Cascade)
+  state    State  @relation(fields: [stateId], references: [id])
+
+  @@id([countyId, stateId])
+  @@index([stateId])
+  @@map("county_states")
 }

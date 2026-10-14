@@ -1,7 +1,8 @@
 name: Format and import tests
 
-# Unit tests for the import, sync, export converters, export checker, PR validator scripts and Prisma mapping, and a
-# round trip of a test-only city with no state through MySQL and every export format. It also runs on draft PRs, which
+# Unit tests for the import, sync, export converters, export checkers, PR validator scripts and Prisma mapping, and a
+# round trip of a test-only city with no state and of a real county of several regions (v5) through MySQL and every
+# export format. It also runs on draft PRs, which
 # the PR Validator skips. Read-only: no commits, releases or comments.
 on:
   pull_request:
@@ -39,12 +40,15 @@ jobs:
       - name: Export converter tests
         run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
 
-      - name: Export checker tests
-        run: python -m unittest discover -s bin/db/tests -p 'test_*.py'
-
       - uses: actions/setup-node@v5
         with:
           node-version: '24'   # as the PR Validator; its lock needs >=22 (content-type 3)
+
+      - name: TOON reference reader (used by the export checker and the read-back test)
+        run: npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0
+
+      - name: Export checker tests
+        run: python -m unittest discover -s bin/db/tests -p 'test_*.py'
 
       - name: PR validator script tests
         working-directory: .github/scripts
@@ -54,9 +58,7 @@ jobs:
         run: node --test prisma/city-state.test.ts
 
       - name: TOON read back with the reference reader
-        run: |
-          npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0
-          node --test bin/scripts/export/toon_readback.test.mjs
+        run: node --test bin/scripts/export/toon_readback.test.mjs
 
   round-trip:
     name: MySQL round trip and export formats
@@ -90,7 +92,9 @@ jobs:
       - name: Migration up, down and refused down
         env:
           MYSQL_PASSWORD: root
-        run: php bin/db/tests/test_nullable_city_state_migration.php
+        run: |
+          php bin/db/tests/test_nullable_city_state_migration.php
+          php bin/db/tests/test_county_states_migration.php
 
       - name: Import the data with a test-only city that has no state
         run: |
@@ -112,8 +116,19 @@ jobs:
       - name: Export every format
         working-directory: bin
         run: |
-          for command in export:json export:csv export:xml export:yaml export:mongodb; do php console "$command"; done
-          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities
+          for command in export:json export:csv export:xml export:yaml export:mongodb export:sql-server; do php console "$command"; done
+          python3 scripts/export/json_to_toon.py
+          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities counties
 
       - name: Check the city with no state in each format
         run: python3 bin/db/tests/check_null_state_exports.py 999001 EH
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Check a county of several regions in each format (Taupō District, four regions)
+        run: |
+          npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0   # the checker reads TOON with it
+          python3 bin/db/tests/check_county_states_exports.py 14024
+          python3 bin/scripts/export/check_county_states_csv.py

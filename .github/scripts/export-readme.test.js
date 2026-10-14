@@ -34,3 +34,33 @@ test('export workflow refreshes county total in the current README format', () =
     fs.rmSync(temp, { recursive: true });
   }
 });
+
+test('export workflow compresses, requires and checksums every county_states companion (v5)', () => {
+  const root = path.resolve(__dirname, '../..');
+  const workflow = fs.readFileSync(path.join(root, '.github/workflows/export.yml'), 'utf8');
+  const step = (name) => workflow.split(`      - name: ${name}\n`)[1].split('\n      - name:')[0];
+  const compress = step('Compress All Large Files');
+  const required = step('Check every file a release carries');
+  const packaged = step('Package the build with its checksums');
+  for (const file of ['csv/county_states.csv', 'sql/county_states.sql', 'psql/county_states.sql', 'sqlite/county_states.sqlite3',
+    'sqlserver/county_states.sql']) {
+    assert.ok(compress.includes(` ${file} `) || compress.includes(` ${file};`), `${file} is not compressed`);
+    assert.match(required, new RegExp(`^\\s+${file.replace(/[.+]/g, '\\$&')}\\.gz$`, 'm'), `${file}.gz is not required`);
+    assert.match(packaged, new RegExp(`^\\s+${file.replace(/[.+]/g, '\\$&')}\\.gz$`, 'm'), `${file}.gz is not checksummed`);
+  }
+  assert.match(required, /check_county_states_csv\.py/, 'the CSV companion is not compared with json/counties.json');
+});
+
+test('the publish step expects exactly as many exports as the build checksums and the release gate require', () => {
+  const root = path.resolve(__dirname, '../..');
+  const workflow = fs.readFileSync(path.join(root, '.github/workflows/export.yml'), 'utf8');
+  const step = (name) => workflow.split(`      - name: ${name}\n`)[1].split('\n      - name:')[0];
+  const listed = (body, name) => body.split(`${name}=(\n`)[1].split('\n          )')[0].split(/\s+/).filter(Boolean);
+  const built = listed(step('Package the build with its checksums'), 'files').filter((f) => f.endsWith('.gz') && f !== 'export-small-files.tar.gz');
+  const required = listed(step('Check every file a release carries'), 'required');
+  const placement = step('Verify and place the build');
+  const counts = [...placement.matchAll(/-eq (\d+)\b|expected (\d+) exports/g)].map((m) => Number(m[1] || m[2]));
+  assert.deepEqual([...required].sort(), [...built].sort(), 'the release gate and the checksum list name different exports');
+  assert.ok(counts.length >= 2, 'the placement step has no expected export count');
+  for (const n of counts) assert.equal(n, built.length, `the placement step expects ${n} exports; the build lists ${built.length}`);
+});

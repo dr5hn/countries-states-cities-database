@@ -31,6 +31,10 @@ npm run seed
 
 ## Notes
 
+- A county of several regions (v5.0.0) has a null `state` and lists its regions in `regions` (`CountyState`, table
+  `county_states`); every other county has a `state` and no regions. The seed stops on an inconsistent county
+  (missing state keys, a half pair, no explicit id, fewer than two distinct regions, an entry with other keys) and on a
+  city linked to a county of another country, or whose state is not the county's state or one of its regions.
 - A city of a country with no states (Western Sahara, v5.0.0) has a null `state`; every other city has one. Deleting
   a state that cities use is refused (`onDelete: Restrict`). The seed matches states by country and state code (some
   states of one country share a name). It stops with an error on a city whose state fields

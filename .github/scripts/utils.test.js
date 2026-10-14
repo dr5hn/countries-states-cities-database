@@ -190,9 +190,49 @@ test('a set state pair keeps its rules (positive id, non-empty code)', () => {
   assert.ok(empty.some((e) => e.includes('must not be empty')));
 });
 
-test('counties still require a state', () => {
-  const { errors } = validateRecord({ name: 'X', state_id: null, state_code: null, country_id: 1, country_code: 'AA', latitude: '1', longitude: '1' }, 'counties', 0);
-  assert.ok(errors.some((e) => e.includes('missing required field "state_id"')));
+// v5 (decision B6): a county of several regions has no state of its own and lists its regions
+const nzCounty = (extra) => ({ id: 9, name: 'Waitomo District', state_id: null, state_code: null, country_id: 158, country_code: 'NZ',
+  latitude: '-38.35', longitude: '175.18', ...extra });
+const regions = [{ state_id: 4060, state_code: 'MWT' }, { state_id: 4061, state_code: 'WKO' }];
+
+test('a county with no state needs two or more regions in states', () => {
+  assert.deepEqual(validateRecord(nzCounty({ states: regions }), 'counties', 0), { errors: [], warnings: [] });
+  for (const states of [undefined, null, [], [regions[0]], [regions[0], regions[0]]]) {
+    const { errors } = validateRecord(nzCounty({ states }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('two or more distinct regions')), JSON.stringify(states));
+  }
+});
+
+test('each listed region is a positive state_id and a non-empty state_code, nothing else', () => {
+  for (const bad of [{ state_id: '4061', state_code: 'WKO' }, { state_id: 4061, state_code: '' }, { state_id: 4061 },
+    { state_id: 4061, state_code: 'WKO', name: 'Waikato' }, 'WKO']) {
+    const { errors } = validateRecord(nzCounty({ states: [regions[0], bad] }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('each region in states')), JSON.stringify(bad));
+  }
+});
+
+test('a county of several regions needs an explicit positive integer id', () => {
+  for (const id of [undefined, null, '9', 0, 9.5]) {
+    const { errors } = validateRecord(nzCounty({ id, states: regions }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('needs an explicit positive integer id')), JSON.stringify(id));
+  }
+});
+
+test('countyShapeErrors reports missing pair keys and half pairs as well as list rules', () => {
+  const { countyShapeErrors } = require('./utils');
+  const { state_id: _s, ...noStateKey } = nzCounty({ states: regions });
+  assert.deepEqual(countyShapeErrors(nzCounty({ states: regions }), 'c'), []);
+  assert.match(countyShapeErrors(noStateKey, 'c').join('\n'), /state_id and state_code are required/);
+  assert.match(countyShapeErrors(nzCounty({ state_code: 'WKO', states: regions }), 'c').join('\n'), /both be set or both be null/);
+  assert.match(countyShapeErrors(nzCounty({ states: [regions[0]] }), 'c').join('\n'), /two or more distinct regions/);
+});
+
+test('a county with its own state cannot also list states; a half pair is still an error', () => {
+  const both = validateRecord(nzCounty({ state_id: 4061, state_code: 'WKO', states: regions }), 'counties', 0).errors;
+  assert.ok(both.some((e) => e.includes('cannot also list states')));
+  const half = validateRecord(nzCounty({ state_code: 'WKO', states: regions }), 'counties', 0).errors;
+  assert.ok(half.some((e) => e.includes('must both be set or both be null')));
+  assert.deepEqual(validateRecord(nzCounty({ state_id: 4061, state_code: 'WKO' }), 'counties', 0).errors, []);
 });
 
 

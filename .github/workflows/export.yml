@@ -251,6 +251,7 @@ jobs:
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world counties > sql/counties.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world county_states > sql/county_states.sql
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
           # Export complete world database
           mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
@@ -270,6 +271,7 @@ jobs:
 
           DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `county_states`;
           DROP TABLE IF EXISTS `counties`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
@@ -303,6 +305,7 @@ jobs:
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t county_states > psql/county_states.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
 
@@ -323,6 +326,7 @@ jobs:
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world -t counties --mysql-password root -u root -f sqlite/counties.sqlite3
+          mysql2sqlite -d world -t county_states --mysql-password root -u root -f sqlite/county_states.sqlite3
           mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
@@ -390,7 +394,8 @@ jobs:
           fi
 
           # Counties: separate compressed assets for all formats.
-          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql; do
+          # county_states: the regions of counties of several regions (v5), released beside each table-shaped county file
+          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql csv/county_states.csv sql/county_states.sql psql/county_states.sql sqlite/county_states.sqlite3 sqlserver/county_states.sql; do
             if [ -f "$file" ]; then gzip -9 -k -f "$file"; fi
           done
 
@@ -528,6 +533,7 @@ jobs:
           required=(
             csv/cities.csv.gz
             csv/counties.csv.gz
+            csv/county_states.csv.gz
             csv/postcodes.csv.gz
             csv/translations.csv.gz
             geojson/cities.geojson.gz
@@ -542,18 +548,22 @@ jobs:
             parquet/postcodes.parquet.gz
             psql/cities.sql.gz
             psql/counties.sql.gz
+            psql/county_states.sql.gz
             psql/postcodes.sql.gz
             psql/world.sql.gz
             sql/cities.sql.gz
             sql/counties.sql.gz
+            sql/county_states.sql.gz
             sql/postcodes.sql.gz
             sql/world.sql.gz
             sqlite/cities.sqlite3.gz
             sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
             sqlite/postcodes.sqlite3.gz
             sqlite/world.sqlite3.gz
             sqlserver/cities.sql.gz
             sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
             sqlserver/postcodes.sql.gz
             sqlserver/world.sql.gz
             toon/cities.toon.gz
@@ -569,6 +579,7 @@ jobs:
             [ -s "$file" ] || { echo "::error::missing or empty required export: $file"; exit 1; }
           done
           [ -s .github/licenses/Unicode-3.0.txt ] || { echo "::error::Required notice Unicode-3.0.txt is missing"; exit 1; }
+          python3 bin/scripts/export/check_county_states_csv.py   # the CSV companion lists exactly json/counties.json's regions
           echo "${#required[@]} exports and the notices present"
 
       - name: Package the build with its checksums
@@ -581,6 +592,7 @@ jobs:
           files=(
             csv/cities.csv.gz
             csv/counties.csv.gz
+            csv/county_states.csv.gz
             csv/postcodes.csv.gz
             csv/translations.csv.gz
             geojson/cities.geojson.gz
@@ -595,18 +607,22 @@ jobs:
             parquet/postcodes.parquet.gz
             psql/cities.sql.gz
             psql/counties.sql.gz
+            psql/county_states.sql.gz
             psql/postcodes.sql.gz
             psql/world.sql.gz
             sql/cities.sql.gz
             sql/counties.sql.gz
+            sql/county_states.sql.gz
             sql/postcodes.sql.gz
             sql/world.sql.gz
             sqlite/cities.sqlite3.gz
             sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
             sqlite/postcodes.sqlite3.gz
             sqlite/world.sqlite3.gz
             sqlserver/cities.sql.gz
             sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
             sqlserver/postcodes.sql.gz
             sqlserver/world.sql.gz
             toon/cities.toon.gz
@@ -708,7 +724,8 @@ jobs:
           while IFS= read -r f; do
             cp --parents "$f" "$GITHUB_WORKSPACE/"; n=$((n + 1))
           done < <(cut -c 67- EXPORT_SHA256SUMS | grep '\.gz$' | grep -vx 'export-small-files.tar.gz')
-          [ "$n" -eq 38 ] || { echo "::error::expected 38 exports in the build, placed $n"; exit 1; }
+          # the number of exports the build lists and the release gate requires (export-readme.test.js keeps them equal)
+          [ "$n" -eq 43 ] || { echo "::error::expected 43 exports in the build, placed $n"; exit 1; }
           echo "placed $n exports and the small files"
 
       - name: Create GitHub Release with exports

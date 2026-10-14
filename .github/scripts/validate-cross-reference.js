@@ -8,7 +8,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const fs = require('fs');
 const path = require('path');
-const { getEntityType, parseJsonFile, listChangedFiles } = require('./utils');
+const { getEntityType, parseJsonFile, listChangedFiles, countyShapeErrors } = require('./utils');
 
 // Lazy per-country cities loader — cities live in contributions/cities/{ISO2}.json
 const cityCache = new Map();
@@ -152,7 +152,7 @@ function validateCityParent(record, cities, ref) {
   return errors;
 }
 
-/** Check that a city's optional county belongs to its declared state and country. */
+/** Check that a city's optional county belongs to its declared state (or lists it, v5) and country. */
 function validateCountyReference(record, counties) {
   if (record.county_id == null) return [];
   if (!Number.isInteger(record.county_id) || record.county_id <= 0) {
@@ -161,7 +161,13 @@ function validateCountyReference(record, counties) {
   const county = counties.get(record.county_id);
   if (!county) return [`county_id ${record.county_id} does not exist in contributions/counties`];
   const errors = [];
-  if (Number(county.state_id) !== Number(record.state_id)) {
+  if (county.state_id == null && Array.isArray(county.states)) {
+    // a county of several regions (v5): the city's state must be one of them
+    const ids = county.states.map((s) => Number(s && s.state_id));
+    if (!ids.includes(Number(record.state_id))) {
+      errors.push(`county_id ${record.county_id} lists states ${ids.join(', ')}, not ${record.state_id}`);
+    }
+  } else if (Number(county.state_id) !== Number(record.state_id)) {
     errors.push(`county_id ${record.county_id} belongs to state_id ${county.state_id}, not ${record.state_id}`);
   }
   if (Number(county.country_id) !== Number(record.country_id) ||
@@ -268,6 +274,26 @@ async function run() {
         const countyErrors = validateCountyReference(record, counties);
         errors.push(...countyErrors.map(error => `${prefix}: ${error}`));
         if (record.county_id != null && countyErrors.length === 0) validCount++;
+      }
+
+      // Every scanned county, changed or not, gets the whole shape check (v5, decision B6)
+      if (entityType === 'counties') errors.push(...countyShapeErrors(record, prefix));
+
+      // A county of several regions (v5): each listed region is a state of the county's country, by its own code
+      if (entityType === 'counties' && Array.isArray(record.states)) {
+        for (const entry of record.states) {
+          const id = entry && entry.state_id;
+          const state = stateById.get(Number(id));
+          if (!state) {
+            errors.push(`${prefix}: states entry ${id} does not exist`);
+          } else if (Number(state.country_id) !== Number(record.country_id)) {
+            errors.push(`${prefix}: states entry ${id} ("${state.name}") belongs to country_id ${state.country_id}, not ${record.country_id}`);
+          } else if (entry.state_code !== state.iso2) {
+            errors.push(`${prefix}: states entry ${id}: state_code ${JSON.stringify(entry.state_code)} does not match (expected "${state.iso2}")`);
+          } else {
+            validCount++;
+          }
+        }
       }
 
       if (entityType === 'counties' && record.parent_id != null) {

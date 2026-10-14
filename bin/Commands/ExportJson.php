@@ -318,6 +318,16 @@ class ExportJson extends Command
             $countiesArray = [];
             $hasCounties = $db->query("SHOW TABLES LIKE 'counties'");
             if ($hasCounties && $hasCounties->num_rows > 0) {
+                // v5: a county of several regions has no state of its own; its regions come from county_states
+                $regions = [];
+                $hasRegions = $db->query("SHOW TABLES LIKE 'county_states'");
+                if ($hasRegions && $hasRegions->num_rows > 0) {
+                    $links = $db->query("SELECT cs.county_id, cs.state_id, s.iso2 FROM county_states cs " .
+                        "JOIN states s ON s.id = cs.state_id ORDER BY cs.county_id, cs.state_id");
+                    while ($link = $links->fetch_assoc()) {
+                        $regions[(int)$link['county_id']][] = ['state_id' => (int)$link['state_id'], 'state_code' => $link['iso2']];
+                    }
+                }
                 $result = $db->query("SELECT * FROM counties ORDER BY country_code, id");
                 while ($row = $result->fetch_assoc()) {
                     $county = [];
@@ -325,6 +335,7 @@ class ExportJson extends Command
                     $county['name'] = $row['name'];
                     $county['state_id'] = $row['state_id'] !== null ? (int)$row['state_id'] : null;
                     $county['state_code'] = $row['state_code'];
+                    $county['states'] = $regions[(int)$row['id']] ?? null;   // null: the county has its own state
                     $county['country_id'] = $row['country_id'] !== null ? (int)$row['country_id'] : null;
                     $county['country_code'] = $row['country_code'];
                     $county['type'] = $row['type'];
