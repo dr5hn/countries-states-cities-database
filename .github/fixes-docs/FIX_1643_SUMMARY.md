@@ -158095,3 +158095,20 @@ Exactly four letters change, and nothing else: Ş→Ș, ş→ș, Ţ→Ț, ţ→�
 
 ### Rollback
 Revert the PR (squash commit).
+
+## Romania: ă instead of ã in five town records (follow-up to #2027)
+
+### Problem
+Romanian has no ã; it is an old encoding stand-in for ă. #2027 replaced it in 132 city records, but five "Oraș …"
+town records still had it: Băile Govora, Băile Olănești, Măgurele, Mărășești and Întorsura Buzăului.
+
+### Fix
+Exactly one letter changes, ã→ă: 115 times in 82 values (each record's name, native and the translations that copy
+them, including the Turkish copy, whose cedilla ş is kept). No other field or record changes; RO.json now has no ã in
+any name or native value.
+
+### Sources
+- Romanian alphabet (ă is a letter, ã is not); the five towns' official names, e.g. Wikidata Q855719 (Băile Govora).
+
+### Rollback
+Revert the PR (squash commit).
