@@ -552,3 +552,34 @@ added (rule 3). The ten legacy importers are retired and refuse to run.
 ### Rollback
 Revert the PR (squash commit); the old rows are in git history (not archived here, as their source basis is not
 established).
+
+## Final postcode rebuild (decisions_5, 14 Oct 2026)
+
+### Problem
+The last 52 legacy sources cover 80,355 postcode IDs in 89 countries and territories. Their redistribution basis
+was not established. A public mirror or an observed code alone cannot preserve a locality-scoped ID.
+
+### Fix
+26,527 existing IDs in 62 countries and territories take the research's same-identity values. Missing or
+disagreeing fields clear; 478 old city links clear. Points are published GeoNames estimates, Taiwan administrative
+centres or guarded OSM medians. Great Britain retains area prefixes without labels, county links or generated points.
+All 50 legacy scripts refuse to run; sources with no importer: manual. No codes, IDs or redirects are added.
+
+### Counts
+| Original group | Sources | Countries / territories | Rows | Kept | Queued for v5 |
+|---|---:|---:|---:|---:|---:|
+| b | 32 | 67 | 31,020 | 25,311 | 5,709 |
+| d | 20 | 22 | 49,335 | 1,216 | 48,119 |
+| Total | 52 | 89 | 80,355 | 26,527 | 53,828 |
+
+### Sources
+GeoNames postal snapshot of 13 October 2026 (CC BY 4.0); August 2026 OS Code-Point Open (OGL v3.0);
+Chunghwa Post datasets 25489 and 37759 (OGDL-Taiwan 1.0); bounded OSM country snapshots (ODbL 1.0).
+README paragraphs and country edition ledgers record the consumer consequences. SOURCES.txt entries
+83–86 and `.github/licenses/pc_rebuild_7-distribution-notices.txt` retain the research notices verbatim, including OS, Royal Mail and ONS credits.
+
+### v5 queue
+53,828 IDs wait for the v5 ledger and keep their current records here: no removals or namespace events are applied.
+Queues are `no_successor`, without redirects; ID reservations remain research proposals. Paraguay acquisition and
+Cambodia distribution holds, and other bounded acquisition gaps, remain explicit. They do not prove that open data
+is absent worldwide. Research: pc_rebuild_7, exhaustive claim audit and 373 individually inspected kept rows.

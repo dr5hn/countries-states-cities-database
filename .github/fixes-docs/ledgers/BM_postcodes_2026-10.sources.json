@@ -1,0 +1,259 @@
+{
+  "country_code": "BM",
+  "identity": "code",
+  "source_tag": "geonames-postal",
+  "legacy_source_tag": "wikipedia-small-territory",
+  "original_disposition": "b",
+  "state_mapping": [
+    {
+      "source_admin1": "01",
+      "source_admin2": "",
+      "names": [
+        [
+          "Devonshire Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 18,
+      "proof": []
+    },
+    {
+      "source_admin1": "02",
+      "source_admin2": "",
+      "names": [
+        [
+          "Hamilton",
+          ""
+        ]
+      ],
+      "resolved_iso2": [
+        "HA"
+      ],
+      "held_source_rows": 0,
+      "proof": [
+        {
+          "id": 3122,
+          "subdivisionId": 3573195,
+          "asciiName": "Hamilton",
+          "iso3166_2": "HA",
+          "isoRegionCode": null,
+          "fips": "02",
+          "geonamesAdmCode": "02",
+          "name": "Hamilton",
+          "typeLabel": "parish",
+          "typeId": 30,
+          "capital": null,
+          "capitalId": null,
+          "capitalAsciiName": null,
+          "population": 5584,
+          "languages": null,
+          "continentCode": "NA",
+          "validFrom": null,
+          "validTill": null,
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Hamilton_Parish%2C_Bermuda",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "source_admin1": "03",
+      "source_admin2": "",
+      "names": [
+        [
+          "Hamilton",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 7,
+      "proof": []
+    },
+    {
+      "source_admin1": "04",
+      "source_admin2": "",
+      "names": [
+        [
+          "Paget Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 8,
+      "proof": []
+    },
+    {
+      "source_admin1": "05",
+      "source_admin2": "",
+      "names": [
+        [
+          "Pembroke Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 17,
+      "proof": []
+    },
+    {
+      "source_admin1": "06",
+      "source_admin2": "",
+      "names": [
+        [
+          "Saint George",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 5,
+      "proof": []
+    },
+    {
+      "source_admin1": "07",
+      "source_admin2": "",
+      "names": [
+        [
+          "Saint George’s Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 11,
+      "proof": []
+    },
+    {
+      "source_admin1": "08",
+      "source_admin2": "",
+      "names": [
+        [
+          "Sandys Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 9,
+      "proof": []
+    },
+    {
+      "source_admin1": "09",
+      "source_admin2": "",
+      "names": [
+        [
+          "Smith’s Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 10,
+      "proof": []
+    },
+    {
+      "source_admin1": "10",
+      "source_admin2": "",
+      "names": [
+        [
+          "Southampton Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 9,
+      "proof": []
+    },
+    {
+      "source_admin1": "11",
+      "source_admin2": "",
+      "names": [
+        [
+          "Warwick Parish",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 12,
+      "proof": []
+    }
+  ],
+  "rows_kept": 11,
+  "queued_for_v5_removal": 0,
+  "consumer_consequence": "Bermuda retains 11 same-scope postcode IDs (11 codes), queues 0 IDs for v5, retains 8 fresh labels, 9 source-supported point pairs and 1 state links, and clears 0 existing city links on kept rows.",
+  "product": "GeoNames postal snapshot 13 October 2026",
+  "counts": {
+    "rows_on_master": 11,
+    "unique_codes_on_master": 11,
+    "replacement_rows": 112,
+    "replacement_unique_codes": 81,
+    "kept": 11,
+    "state_links_changed": 1,
+    "state_links_cleared": 0,
+    "state_links_added": 1,
+    "state_links_reassigned": 0,
+    "nonnull_after_locality_name": 8,
+    "nonnull_after_latitude": 9,
+    "nonnull_after_longitude": 9,
+    "nonnull_after_state_id": 1,
+    "nonnull_after_state_code": 1,
+    "nonnull_after_city_id": 0,
+    "nonnull_after_source": 11,
+    "nonnull_after_wikiDataId": 0,
+    "queued": 0,
+    "queued_code_absent": 0,
+    "queued_code_present": 0,
+    "queued_product_unverified": 0,
+    "new_codes_not_added": 70,
+    "kept_unique_codes": 11,
+    "master_repeated_code_groups": 0
+  },
+  "changed_field_counts": {
+    "locality_name": 11,
+    "latitude": 9,
+    "longitude": 9,
+    "state_id": 1,
+    "state_code": 1,
+    "city_id": 0,
+    "source": 11,
+    "wikiDataId": 0
+  },
+  "cleared_nonnull_field_counts": {
+    "locality_name": 3,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 0,
+    "wikiDataId": 0
+  },
+  "city_links": {
+    "null_unchanged": 11,
+    "kept": 0,
+    "changed": 0,
+    "cleared": 0,
+    "newly_linked": 0
+  },
+  "field_hold_row_counts": {
+    "No replacement product identifier and geographic city-scope predicate established for this source; city link cleared or remains null": 11,
+    "Missing, ambiguous, inconsistent or coarser administrative scope; no old-state candidate selection": 10,
+    "Postal administrative namespace unresolved, missing, inconsistent or outside current CSC state scope": 10,
+    "Missing or disagreeing same-scope labels; old name not grandfathered": 3,
+    "Missing, invalid or disagreeing published pairs; no generated centroid or city point fallback": 2
+  },
+  "identity_scope_note": null,
+  "replacement_coverage_measured": true,
+  "distribution_notices": ".github/licenses/pc_rebuild_7-distribution-notices.txt",
+  "research_master_sha": "cdb667f14d90838f7fd04a63f26541f4e2366f73",
+  "queue_policy": "v5 major only; no_successor; IDs reserved in research only; no redirects or edits here",
+  "point_scope": "GeoNames published estimates, TW administrative centres and guarded multi-object OSM medians; no postal centroid or current routing certification",
+  "field_scope": "Unanimous fresh same-identity values; null on disagreement/missing scope; no old-field grandfathering or old-state candidate selection",
+  "city_scope": "A positive source-specific identifier and geographic same-entity predicate were not established from these inputs; alias existence alone cannot preserve an old link.",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "6508a8b2e73ef6339741ba116257b5c987ffcf4b3844e625bd30ca7546d5bb2f",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, BM postal code dump, 13 October 2026.",
+  "note": "Published estimates only, with the research precision holds; no current routing certification."
+}
