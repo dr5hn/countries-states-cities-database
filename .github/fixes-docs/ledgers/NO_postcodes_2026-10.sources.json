@@ -1,0 +1,19 @@
+{
+  "country_code": "NO",
+  "identity": "postcode",
+  "source_tag": "geonames-postal",
+  "state_mapping": "Current SSB municipality and county codes establish each prefix (e.g. 3201 -> 32, 0301 -> 03); postal GN 12 is Oslo, not ISO 12",
+  "rows_kept": 5105,
+  "queued_for_v5_removal": 17,
+  "consumer_consequence": "Norway retains 5,105 supported code IDs, queues 17 unsupported IDs in v5, and offers 5,105 published estimates with no city links.",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "adde45e0fc980e2c36f54ffae0870f47dcec2c06eca45ba6b0c5b6984d6da1ce",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Norwegian postal code dump, 13 October 2026."
+}

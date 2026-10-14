@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Norway Bring -> contributions/postcodes/NO.json importer for issue #1039.
+"""RETIRED. Norway Bring -> contributions/postcodes/NO.json importer for issue #1039.
+
+Retired on 14 October 2026: Norway postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy Bring's postnummerregister copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -47,6 +52,9 @@ from typing import Dict, List, Optional
 
 
 def main() -> int:
+    print("[ERROR] retired: NO postcodes come from the GeoNames postal code dump now; rerunning this would reimport the "
+          "legacy Bring's postnummerregister copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="/tmp/no_postnumre.txt")
     parser.add_argument("--dry-run", action="store_true")
