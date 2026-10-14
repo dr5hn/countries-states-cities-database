@@ -13,7 +13,7 @@ generator client {
 model Region {
   id           Int        @id @default(autoincrement()) @db.UnsignedMediumInt
   name         String     @db.VarChar(255)
-  translations Json?      @db.Text
+  translations String?    @db.Text
   wikiDataId   String?    @db.VarChar(255)
   flag         Boolean    @default(true) @db.TinyInt
   createdAt    DateTime   @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -28,7 +28,7 @@ model Region {
 model Subregion {
   id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
   name         String    @db.VarChar(255)
-  translations Json?     @db.Text
+  translations String?   @db.Text
   wikiDataId   String?   @db.VarChar(255)
   flag         Boolean   @default(true) @db.TinyInt
   createdAt    DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -60,8 +60,8 @@ model Country {
   region          String?   @db.VarChar(255)
   subregion       String?   @db.VarChar(255)
   nationality     String?   @db.VarChar(255)
-  timezones       Json?     @db.Text
-  translations    Json?     @db.Text
+  timezones       String?   @db.Text
+  translations    String?   @db.Text
   latitude        Decimal?  @db.Decimal(10, 8)
   longitude       Decimal?  @db.Decimal(11, 8)
   emoji           String?   @db.VarChar(191)
@@ -100,7 +100,7 @@ model State {
   latitude    Decimal?  @db.Decimal(10, 8)
   longitude   Decimal?  @db.Decimal(11, 8)
   timezone    String?   @db.VarChar(255)
-  translations Json?   @db.Text
+  translations String? @db.Text
   wikiDataId  String?   @db.VarChar(255)
   flag        Boolean   @default(true) @db.TinyInt
   createdAt   DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -127,7 +127,7 @@ model City {
   typeLocal   String?  @map("type_local") @db.VarChar(191)
   populationYear Int?  @map("population_year") @db.UnsignedSmallInt
   timezone    String?  @db.VarChar(255)
-  translations Json?   @db.Text
+  translations String? @db.Text
   wikiDataId  String?  @db.VarChar(255)
   flag        Boolean  @default(true) @db.TinyInt
   createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)

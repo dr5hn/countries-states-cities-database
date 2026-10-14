@@ -5,12 +5,12 @@ import { countyStates, localStateIds, seedCityRow } from './city-state';
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
 
-/** Fetch an export; counties may be absent in older releases. */
-async function fetchData(endpoint: string) {
+/** Fetch an export's rows (untyped JSON); counties may be absent in older releases. */
+async function fetchData(endpoint: string): Promise<any[]> {
   const response = await fetch(`${API_BASE}${endpoint}.json`);
   if (endpoint === 'counties' && response.status === 404) return [];
   if (!response.ok) throw new Error(`Failed to fetch ${endpoint}: ${response.status}`);
-  return response.json();
+  return (await response.json()) as any[];
 }
 
 async function main() {
@@ -21,7 +21,7 @@ async function main() {
   await prisma.region.createMany({
     data: regions.map(({ name, translations, wikiDataId }) => ({
       name,
-      translations,
+      translations: translations == null ? null : JSON.stringify(translations),
       wikiDataId,
     })),
     skipDuplicates: true,
@@ -35,7 +35,7 @@ async function main() {
   const subregionData = subregions
     .map(({ name, translations, wikiDataId, region }) => {
       const regionId = regionMap.get(region);
-      return regionId ? { name, translations, wikiDataId, regionId } : null;
+      return regionId ? { name, translations: translations == null ? null : JSON.stringify(translations), wikiDataId, regionId } : null;
     })
     .filter(Boolean);
 
@@ -64,8 +64,8 @@ async function main() {
     longitude: country.longitude,
     emoji: country.emoji,
     emojiU: country.emojiU,
-    timezones: country.timezones,
-    translations: country.translations,
+    timezones: country.timezones == null ? null : JSON.stringify(country.timezones),
+    translations: country.translations == null ? null : JSON.stringify(country.translations),
     wikiDataId: country.wikiDataId,
     regionId: regionMap.get(country.region) || null,
     subregionId: subregionMap.get(country.subregion) || null,
@@ -93,12 +93,12 @@ async function main() {
   const stateIdMap = localStateIds(states, await prisma.state.findMany(), countryMap);
   const counties = await fetchData('counties');
   const stateCtx = {
-    sourceStates: new Map(states.map(s => [s.id, { country_code: s.country_code, iso2: s.iso2 }])),
-    countriesWithStates: new Set(states.map(s => s.country_code)),
+    sourceStates: new Map(states.map(s => [s.id, { country_code: s.country_code, iso2: s.iso2 }] as const)),
+    countriesWithStates: new Set<string>(states.map(s => s.country_code)),
     seededStateId: stateIdMap,
   };
   // v5: a county of several regions has no state; its regions are seeded below. An inconsistent county stops the seed.
-  const countyPlaces = new Map(counties.map(c => [c.id, countyStates(c, stateCtx)]));
+  const countyPlaces = new Map(counties.map(c => [c.id, countyStates(c, stateCtx)] as const));
   await prisma.county.createMany({
     data: counties.map(c => ({
       id: c.id, name: c.name,
@@ -125,7 +125,7 @@ async function main() {
   // Seed Cities: a stateless city (a country with no states, v5) gets a null state; an inconsistent city stops the seed
   const cities = await fetchData('cities');
   // a linked city must sit in its county's country and in its state or one of its regions (v5); otherwise the seed stops
-  const countyIndex = new Map(counties.map(c => [c.id, { country_code: c.country_code, place: countyPlaces.get(c.id) }]));
+  const countyIndex = new Map(counties.map(c => [c.id, { country_code: c.country_code, place: countyPlaces.get(c.id) }] as const));
   const cityData = cities.map((city) => seedCityRow(city, { countryMap, stateCtx, counties: countyIndex }));
 
   await prisma.city.createMany({ data: cityData, skipDuplicates: true });
