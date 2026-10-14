@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Turkey -> contributions/postcodes/TR.json importer for issue #1039.
+"""RETIRED. Turkey -> contributions/postcodes/TR.json importer for issue #1039.
+
+Retired on 14 October 2026: Turkey postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy muratgozel/turkey-neighbourhoods copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -62,6 +67,9 @@ def fetch_json(url: str) -> List[List[str]]:
 
 
 def main() -> int:
+    print("[ERROR] retired: TR postcodes come from the GeoNames postal code dump now; rerunning this would reimport the "
+          "legacy muratgozel/turkey-neighbourhoods copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local JSON (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

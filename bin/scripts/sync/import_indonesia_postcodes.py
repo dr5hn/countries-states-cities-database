@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Indonesia -> contributions/postcodes/ID.json importer for issue #1039.
+"""RETIRED. Indonesia -> contributions/postcodes/ID.json importer for issue #1039.
+
+Retired on 14 October 2026: Indonesia postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy pentagonal/Indonesia-Postal-Code copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -104,6 +109,9 @@ def fetch_json(url: str) -> List[dict]:
 
 
 def main() -> int:
+    print("[ERROR] retired: ID postcodes come from the GeoNames postal code dump now; rerunning this would reimport the "
+          "legacy pentagonal/Indonesia-Postal-Code copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None)
     parser.add_argument("--dry-run", action="store_true")
