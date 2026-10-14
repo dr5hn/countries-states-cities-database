@@ -158072,3 +158072,26 @@ extents not certified), and the three districts added after review also inside t
 
 ### Rollback
 Revert the PR (squash commit); new county ids are 13904-14022 and the new city is 166304; no record is removed.
+
+## Romania: comma-below ș and ț in names, postcode labels and translations (ro_orthography_1)
+
+### Problem
+Romanian is written with comma-below ș ț Ș Ț. The cedilla letters ş ţ Ş Ţ are a legacy encoding stand-in from older
+character sets. #1904 corrected the native names, but 2,218 Romanian city names, 5,628 postcode labels (from the
+GeoNames dump) and 10,384 city translations still used the cedilla forms, so the same place was spelled two ways
+inside CSC. After normalization, 2,511 additional postcode labels exactly match at least one city native name anywhere in Romania (1,860 within the same state). These are spelling candidates; all 13,751 postcode city_id values remain null, and this PR adds no city links.
+
+### Fix
+Exactly four letters change, and nothing else: Ş→Ș, ş→ș, Ţ→Ț, ţ→ț.
+- 2,218 city names (English exonyms such as Bucharest are untouched).
+- 5,628 postcode labels (the README and the GeoNames credit entry note the change).
+- 10,384 city translations: 10,347 equal the same record's name or native after only the four-letter mapping, plus 37 explicitly reviewed Romanian-name variants, across 18 allowed locales whose CLDR 48 main exemplar sets omit ş and ţ. Other spelling and mixed-script defects are unchanged.
+- All 1,265 affected Turkish translations are preserved (1,263 city values and 2 state values); every other Turkish value is also unchanged.
+
+### Sources
+- Unicode Standard, chapter 7 (Romanian comma-below versus Turkish cedilla); CLDR 48 main exemplar sets.
+- Research: Codex ro_orthography_1 (every change and exclusion, 50 checked by hand). Codex had first advised keeping
+  the literal GeoNames labels in #2028's exact rebuild, and agreed to this correction as a separate, documented step.
+
+### Rollback
+Revert the PR (squash commit).

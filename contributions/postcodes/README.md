@@ -96,6 +96,86 @@ with its province, single municipality and mean point; per-code ledger in
 `.github/fixes-docs/ledgers/ES_postcodes_cartociudad_2026-04.csv`. This is the source's observed address coverage, not
 Correos' delivery list.
 
+**Portugal (since October 2026):** the earlier PT rows came from a CTT-derived compilation whose redistribution basis
+was not established. Locality names and points now come from the GeoNames postal code dump of 13 October 2026
+(`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source: GeoNames,
+Portuguese postal code dump, 13 October 2026". Modification: only codes CSC already had are kept; a code whose dump rows
+give different localities or points has that field left empty; regions are mapped to CSC states by GeoNames' published
+code table; city links are rebuilt only where one same-named city lies inside the code's municipality. Points are
+GeoNames' estimates, not delivery-area centroids. Edition ledger:
+`.github/fixes-docs/ledgers/PT_postcodes_geonames_2026-10.sources.json`. 1,112 codes the dump does not list are queued
+for removal in v5.0.0; they keep their earlier values until then.
+
+**Mexico (since October 2026):** the earlier MX rows came from a 2016 mirror of SEPOMEX data whose redistribution basis
+was not established. Each row is one postcode and settlement (asentamiento). Names and points now come from the GeoNames
+postal code dump of 13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)).
+Credit: "Source: GeoNames, Mexican postal code dump, 13 October 2026". Modification: a row is kept only when the dump
+lists its settlement under the same code (exactly, or after an accent, case and punctuation fold); it takes that
+row's name, point and state. Points are GeoNames' estimates. Edition ledger:
+`.github/fixes-docs/ledgers/MX_postcodes_geonames_2026-10.sources.json`. 451 rows whose settlement or code the dump
+does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Sweden (since October 2026):** the earlier SE rows came from a copy of the postcode list (zegl/sweden-zipcode) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Swedish postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/SE_postcodes_geonames_2026-10.sources.json`. 2 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Romania (since October 2026):** the earlier RO rows came from a copy of the postcode list (alexionegit/coduripostaleRomaniaPS) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Romanian postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/RO_postcodes_geonames_2026-10.sources.json`. 12 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then. The dump writes
+Romanian with the legacy cedilla letters ş ţ Ş Ţ; CSC stores them as the correct comma-below ș ț Ș Ț, and changes
+nothing else in a label.
+
+**Poland (since October 2026):** the earlier PL rows came from a copy of the postcode list (mberezinski/kody-pocztowe-geo) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Polish postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/PL_postcodes_geonames_2026-10.sources.json`. 2,696 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Ukraine (since October 2026):** the earlier UA rows came from a copy of the postcode list (rvolykh/UAPostcodes) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Ukrainian postal code dump, 13 October 2026". Each row is one postcode and locality; a row is kept only when the dump lists its locality under the same code
+(exactly, or after an accent, case and punctuation fold). A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/UA_postcodes_geonames_2026-10.sources.json`. 4,427 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Argentina (since October 2026):** the earlier AR rows came from a copy of the postcode list (androdron/localidades_AR) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Argentine postal code dump, 13 October 2026". Each row is one postcode and locality; a row is kept only when the dump lists its locality under the same code
+(exactly, or after an accent, case and punctuation fold). A field the dump's rows disagree on is left
+empty. City links are cleared: the dump has no Correo locality id to re-derive them. Edition ledger: `.github/fixes-docs/ledgers/AR_postcodes_geonames_2026-10.sources.json`. 10,660 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Malta (since October 2026):** the earlier MT rows were full delivery codes (`AAA NNNN`) scraped from MaltaPost's
+address search (lucamuscat/Scrape_Malta_Addresses), whose redistribution basis was not established. No complete nationwide open listing of Malta's full codes
+was verified; GeoNames has only the 73 three-letter prefixes, a different and larger entity. OpenStreetMap provides
+partial full-code observations. So only the 780 codes
+that OpenStreetMap (`osm`; © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright); Geofabrik
+extracts with data up to 2026-10-13T20:21:31Z) confirm are kept: a code is confirmed by postcode-tagged OpenStreetMap
+objects (addr:postcode or postal_code) inside Malta, its locality is kept only where those objects agree, and its point is their median (else empty).
+**Coverage consequence:** Malta keeps 780 of its 26,593 full postcodes (2.9%); the other 25,813 are queued for removal in
+v5.0.0 and keep their earlier values until then. Per-code evidence (OSM object ids and versions):
+`.github/fixes-docs/ledgers/postcodes_osm_2026-10_evidence.csv`; edition ledger:
+`.github/fixes-docs/ledgers/MT_postcodes_osm_2026-10.sources.json`.
+
+**China (since October 2026):** the earlier CN rows (mumuy/data_post) had no established redistribution basis. GeoNames
+lists only China's general codes, ending in 00: the 2,280 CSC codes it lists keep their ids and take its name, point and
+state (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt); credit "Source: GeoNames,
+Chinese postal code dump, 13 October 2026"), with type `area`. 1,121 more codes are confirmed by OpenStreetMap (`osm`; © OpenStreetMap contributors, [ODbL 1.0](https://www.openstreetmap.org/copyright); Geofabrik
+extracts with data up to 2026-10-13T20:21:31Z), by the
+same rule as Malta. **Coverage consequence:** China keeps 3,401 of its 22,656 postcodes (15%); the other 19,255 are
+queued for removal in v5.0.0 and keep their earlier values until then. Edition ledgers:
+`.github/fixes-docs/ledgers/CN_postcodes_geonames_2026-10.sources.json` and `CN_postcodes_osm_2026-10.sources.json`; OSM
+evidence as for Malta.
+
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
 own to programmatically assemble attribution — see the scope note above.
