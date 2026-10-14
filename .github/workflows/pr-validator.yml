@@ -42,11 +42,15 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          # The PR's merge commit and its first parent: when GitHub cannot list a very large PR's files, the
+          # validators read them from git (HEAD^1..HEAD).
+          fetch-depth: 2
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'   # the lock needs >=22 (content-type 3)
 
       - name: Install dependencies
         run: cd .github/scripts && npm ci --omit=dev
@@ -120,6 +124,9 @@ jobs:
           DIFF_CRITICAL_REASONS: ${{ steps.diff.outputs.critical_reasons }}
           DIFF_TOTAL_RECORDS: ${{ steps.diff.outputs.total_records }}
           DIFF_IS_LARGE: ${{ steps.diff.outputs.is_large }}
+          DIFF_OUTCOME: ${{ steps.diff.outcome }}
+          DIFF_ANALYSIS_INCOMPLETE: ${{ steps.diff.outputs.analysis_incomplete }}
+          DIFF_INCOMPLETE_REASONS: ${{ steps.diff.outputs.incomplete_reasons }}
           SCHEMA_ERRORS: ${{ steps.schema.outputs.errors }}
           SCHEMA_WARNINGS: ${{ steps.schema.outputs.warnings }}
           SCHEMA_ERROR_COUNT: ${{ steps.schema.outputs.error_count }}
@@ -130,6 +137,8 @@ jobs:
           CROSSREF_ERROR_COUNT: ${{ steps.crossref.outputs.error_count }}
           CROSSREF_VALID: ${{ steps.crossref.outputs.valid }}
           CROSSREF_HAS_ERRORS: ${{ steps.crossref.outputs.has_errors }}
+          CROSSREF_OUTCOME: ${{ steps.crossref.outcome }}
+          SCHEMA_OUTCOME: ${{ steps.schema.outcome }}
           COORD_WARNINGS: ${{ steps.coords.outputs.warnings }}
           COORD_WARNING_COUNT: ${{ steps.coords.outputs.warning_count }}
           COORD_CHECKED: ${{ steps.coords.outputs.checked }}
@@ -147,6 +156,12 @@ jobs:
             const criticalReasons = JSON.parse(process.env.DIFF_CRITICAL_REASONS || '[]');
             const totalRecords = parseInt(process.env.DIFF_TOTAL_RECORDS || '0');
             const isLarge = process.env.DIFF_IS_LARGE === 'true';
+            // The analysis must have finished and compared every states/countries file it changed
+            const incompleteReasons = JSON.parse(process.env.DIFF_INCOMPLETE_REASONS || '[]');
+            if (process.env.DIFF_OUTCOME !== 'success') {
+              incompleteReasons.unshift(`The diff analysis did not finish (${process.env.DIFF_OUTCOME || 'not run'}); see its step log`);
+            }
+            const analysisIncomplete = incompleteReasons.length > 0 || process.env.DIFF_ANALYSIS_INCOMPLETE === 'true';
             const schemaErrors = JSON.parse(process.env.SCHEMA_ERRORS || '[]');
             const schemaWarnings = JSON.parse(process.env.SCHEMA_WARNINGS || '[]');
             const schemaErrorCount = parseInt(process.env.SCHEMA_ERROR_COUNT || String(schemaErrors.length));
@@ -187,6 +202,16 @@ jobs:
               report += '### :rotating_light: Critical Change Detected\n';
               report += '> This PR contains changes that require explicit maintainer approval.\n\n';
               for (const reason of criticalReasons) {
+                report += `- ${reason}\n`;
+              }
+              report += '\n';
+            }
+
+            // Incomplete analysis: the checks could not cover the whole change
+            if (analysisIncomplete) {
+              report += '### :x: Coverage incomplete\n';
+              report += '> The validators could not check everything this PR changes; the job fails until they can.\n\n';
+              for (const reason of incompleteReasons) {
                 report += `- ${reason}\n`;
               }
               report += '\n';
@@ -288,8 +313,15 @@ jobs:
               report += '\n';
             }
 
+            // A check that failed without reporting any error still counts as one: it never reads as passed
+            const stepFailures = [['Schema', process.env.SCHEMA_OUTCOME, schemaErrorCount], ['Cross-reference', process.env.CROSSREF_OUTCOME, crossrefErrorCount]]
+              .filter(([, outcome, count]) => outcome === 'failure' && count === 0).map(([name]) => name);
+            for (const name of stepFailures) {
+              report += `:x: The ${name} check did not complete; see the workflow log.\n\n`;
+            }
+
             // Summary
-            const totalErrors = schemaErrorCount + crossrefErrorCount;
+            const totalErrors = schemaErrorCount + crossrefErrorCount + stepFailures.length;
             const totalWarnings = schemaWarningCount + coordWarningCount + dupWarningCount + urlErrors.length;
 
             report += '---\n';
@@ -298,7 +330,9 @@ jobs:
               report += 'Please provide context about what this change does and why, or link a related issue.\n\n';
             }
 
-            if (totalErrors === 0 && totalWarnings === 0) {
+            if (analysisIncomplete) {
+              report += `:x: **Coverage incomplete, ${totalErrors} error(s), ${totalWarnings} warning(s)** | Status: Not ready (see Coverage incomplete above)\n`;
+            } else if (totalErrors === 0 && totalWarnings === 0) {
               report += ':white_check_mark: **All checks passed** | Status: Ready for review\n';
             } else if (totalErrors === 0) {
               report += `:white_check_mark: **0 errors, ${totalWarnings} warning(s)** | Status: Ready for review (with warnings)\n`;
@@ -353,7 +387,7 @@ jobs:
 
             // Apply status labels
             const statusLabels = [];
-            if (totalErrors > 0) {
+            if (totalErrors > 0 || analysisIncomplete) {
               statusLabels.push('needs-changes');
             } else {
               statusLabels.push('ready-for-review');
@@ -435,3 +469,11 @@ jobs:
               author: pr.user.login,
               recordCount: process.env.DIFF_TOTAL_RECORDS,
             }));
+
+      # Fail the job, after every check, the report and the notifications have run, when the diff analysis did not
+      # finish or could not compare a states/countries file: labels and comments are advisory, a failed job is not.
+      - name: Fail on incomplete analysis
+        if: always() && (steps.diff.outcome != 'success' || steps.diff.outputs.analysis_incomplete == 'true')
+        run: |
+          echo "::error::The diff analysis could not cover the whole change; see the validation report."
+          exit 1

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""China -> contributions/postcodes/CN.json importer for issue #1039.
+"""RETIRED. China -> contributions/postcodes/CN.json importer for issue #1039.
+
+Retired on 14 October 2026: China postcodes now come from the GeoNames postal code dump and OpenStreetMap (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Malta and China: postcodes from GeoNames and OpenStreetMap"). The
+redistribution basis of the mumuy/data_post copy below was not established, so this script refuses to run. It is kept
+for the record of how the earlier rows were made.
 
 Source data
 -----------
@@ -146,6 +151,9 @@ def fetch_json(url: str) -> dict:
 
 
 def main() -> int:
+    print("[ERROR] retired: CN postcodes come from GeoNames and OpenStreetMap now; rerunning this would reimport the "
+          "mumuy/data_post copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local JSON (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

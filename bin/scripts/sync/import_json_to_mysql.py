@@ -26,8 +26,27 @@ import os
 import sys
 import argparse
 from typing import List, Dict, Any, Set
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from city_states import check_references  # noqa: E402
 import mysql.connector
 from datetime import datetime
+
+# Link columns as declared in bin/db/schema.sql, used when an older database lacks one. They are resolved before any
+# sample: data cannot relax a required link or tighten an optional one. ('*', field) applies to every table.
+LINK_TYPES = {
+    ('*', 'country_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('countries', 'region_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('countries', 'subregion_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('subregions', 'region_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('states', 'parent_id'): "INT UNSIGNED DEFAULT NULL",
+    ('counties', 'state_id'): "MEDIUMINT UNSIGNED NOT NULL",
+    ('counties', 'parent_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'county_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('cities', 'parent_id'): "INT UNSIGNED DEFAULT NULL",
+    ('postcodes', 'state_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+    ('postcodes', 'city_id'): "MEDIUMINT UNSIGNED DEFAULT NULL",
+}
 
 
 class JSONToMySQLImporter:
@@ -59,10 +78,21 @@ class JSONToMySQLImporter:
             columns[row['Field']] = row['Type']
         return columns
 
-    def infer_column_type(self, field_name: str, sample_values: List[Any]) -> str:
-        """Infer MySQL column type from JSON field and sample values"""
+    def infer_column_type(self, field_name: str, sample_values: List[Any], table_name: str = '') -> str:
+        """Infer MySQL column type from JSON field and sample values; declared link columns win over samples"""
+        declared = LINK_TYPES.get((table_name, field_name)) or LINK_TYPES.get(('*', field_name))
+        if declared:
+            return declared
+        if field_name == 'parent_id':
+            return "INT UNSIGNED DEFAULT NULL"   # optional by definition: a top-level record has no parent
+
         # Remove None values
         non_null_values = [v for v in sample_values if v is not None]
+
+        # Another link column is nullable when some record has no value for it (every record is sampled, an omitted
+        # key counting as no value)
+        if field_name.endswith('_id') and len(non_null_values) < len(sample_values):
+            return "MEDIUMINT UNSIGNED DEFAULT NULL"
 
         if not non_null_values:
             return "VARCHAR(255) DEFAULT NULL"
@@ -84,8 +114,6 @@ class JSONToMySQLImporter:
             return "BIGINT UNSIGNED DEFAULT NULL"
         elif field_name == 'level':
             return "INT DEFAULT NULL"
-        elif field_name == 'parent_id':
-            return "INT UNSIGNED DEFAULT NULL"
 
         # Infer from sample value type
         if isinstance(sample, bool):
@@ -133,9 +161,12 @@ class JSONToMySQLImporter:
         # Infer types for new columns
         new_column_types = {}
         for field in new_columns:
-            # Collect sample values for this field
-            samples = [record.get(field) for record in json_data if field in record][:100]
-            column_type = self.infer_column_type(field, samples)
+            # Links are checked on every record (a record without the key has no link); other types on a sample
+            if field.endswith('_id'):
+                samples = [record.get(field) for record in json_data]
+            else:
+                samples = [record.get(field) for record in json_data if field in record][:100]
+            column_type = self.infer_column_type(field, samples, table_name)
             new_column_types[field] = column_type
 
         return new_column_types
@@ -379,6 +410,32 @@ class JSONToMySQLImporter:
         print(f"  ✓ Imported {inserted:,} cities from {len(city_files)} country files")
         return inserted
 
+    def preflight_city_states(self):
+        """Check every city's state pair against canonical countries and states before any table is reset."""
+        def load(path):
+            try:
+                with open(path, 'r', encoding='utf-8') as fh:
+                    rows = json.load(fh)
+            except (OSError, UnicodeError, json.JSONDecodeError) as e:
+                raise ValueError(f"Cannot load {path}: {e}") from e
+            if not isinstance(rows, list):
+                raise ValueError(f"Cannot load {path}: expected an array of records")
+            return rows
+        countries = load(os.path.join('contributions', 'countries', 'countries.json'))
+        states = load(os.path.join('contributions', 'states', 'states.json'))
+        cities_dir = os.path.join('contributions', 'cities')
+        cities = [c for f in sorted(os.listdir(cities_dir)) if f.endswith('.json') for c in load(os.path.join(cities_dir, f))]
+        errors = check_references(countries, states, cities)
+        if errors:
+            raise ValueError(f"{len(errors)} reference problems (countries, states or city state pairs): " + '; '.join(errors[:20]))
+        # a stateless city needs the v5 migration: nullable state columns and the pair check
+        if any(c.get('state_id') is None for c in cities):
+            self.cursor.execute("SHOW COLUMNS FROM cities WHERE Field IN ('state_id', 'state_code')")
+            strict = [r['Field'] for r in self.cursor.fetchall() if r['Null'] != 'YES']
+            if strict:
+                raise ValueError(f"cities.{', '.join(strict)} cannot be null yet; run migration 20261014000000 before importing a city with no state")
+        print(f"  ✓ Countries, states and city state pairs checked ({len(cities):,} cities)")
+
     def preflight_counties(self):
         """Load every county file before any database reset or county truncation."""
         print(f"\n📦 Importing counties from contributions/counties/*.json")
@@ -599,6 +656,7 @@ def main():
 
     try:
         county_data = importer.preflight_counties()
+        importer.preflight_city_states()   # before any reset: a bad state pair leaves the database untouched
         importer.reset_tables()
         # Import in order (respecting foreign keys)
         regions_count = importer.import_regions()

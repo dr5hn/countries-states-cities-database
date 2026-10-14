@@ -1,0 +1,18 @@
+{
+  "country_code": "MX",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/MX.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:45 GMT",
+  "bytes": 2012281,
+  "sha256": "afda57c8bb4bfb272533f214d17260337aa7e1be79773bdc53260a9c28865905",
+  "retrieved_at_utc": "2026-10-13T18:58:50.341276+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Mexican postal code dump, 13 October 2026.",
+  "changes_by_csc": "Existing MX (postcode, settlement) rows whose settlement the dump lists, exactly or after an accent, case and punctuation fold under the same code, were kept and took the dump's name, point and state; points formatted to eight decimals; no new codes or settlements added; no city links.",
+  "state_mapping": "Postal admin1 (INEGI entity code) to the CSC state iso2 by the importer's 32-entry map",
+  "rows_kept": 144149,
+  "queued_for_v5_removal": 451,
+  "new_codes_not_added": 17
+}

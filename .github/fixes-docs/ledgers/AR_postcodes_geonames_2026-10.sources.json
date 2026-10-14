@@ -1,0 +1,19 @@
+{
+  "country_code": "AR",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/AR.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:00 GMT",
+  "bytes": 208552,
+  "sha256": "47f6cefc5facc020ebe2dfd77528ccef0ee01503c3ce14716658d4fad0ee1266",
+  "retrieved_at_utc": "2026-10-14T00:41:25.942682+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Argentine postal code dump, 13 October 2026.",
+  "identity": "one row per postcode and locality; a row is kept when the dump lists its locality under the same code, exactly or after an accent, case and punctuation fold",
+  "changes_by_csc": "Existing rows the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added; city links cleared, as the dump carries no Correo locality id to re-derive them.",
+  "state_mapping": "Postal admin1 is the ISO province letter, mapped to the CSC state iso2 (https://www.geonames.org/AR/administrative-division-argentina.html)",
+  "rows_kept": 12524,
+  "queued_for_v5_removal": 10660,
+  "new_codes_not_added": 112
+}

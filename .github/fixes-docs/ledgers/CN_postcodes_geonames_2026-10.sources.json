@@ -1,0 +1,18 @@
+{
+  "country_code": "CN",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/CN.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:10 GMT",
+  "bytes": 42326,
+  "sha256": "1942c2d1d9f85ae616f8a4a5c50435d6acca701fb5c8644cba7256b455282a3f",
+  "retrieved_at_utc": "2026-10-14T00:42:20.860415+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Chinese postal code dump, 13 October 2026.",
+  "identity": "GeoNames lists China's general codes (ending in 00); a CSC row is kept when the dump lists its code, and its type becomes 'area'",
+  "changes_by_csc": "Existing codes the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added.",
+  "state_mapping": "GeoNames admin1 to the CSC state iso2 by the provider table https://www.geonames.org/CN/administrative-division-china.html",
+  "rows_kept_from_geonames": 2280,
+  "queued_for_v5_removal": 19255
+}

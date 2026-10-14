@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Portugal CTT -> contributions/postcodes/PT.json importer for issue #1039.
+"""RETIRED. Portugal CTT -> contributions/postcodes/PT.json importer for issue #1039.
+
+Retired on 14 October 2026: PT postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Portugal: postcodes from the GeoNames postal dump"). The
+redistribution basis of the CTT-derived copy below was not established, so this script refuses to run.
+It is kept for the record of how the earlier rows were made.
 
 Source data
 -----------
@@ -72,6 +77,9 @@ def csv_district_to_iso2(csv_district: str) -> Optional[str]:
 
 
 def main() -> int:
+    print("[ERROR] retired: PT postcodes come from the GeoNames postal code dump now; rerunning this would reimport "
+          "the CTT-derived copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="/tmp/pt_codigos.csv")
     parser.add_argument("--dry-run", action="store_true")

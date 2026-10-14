@@ -28,7 +28,9 @@ API support and country-by-country link population follow separately.
 
 ## The rules
 
-1. **`state_id` is the smallest ISO 3166-2 unit that contains the place.** For France that is the département, for
+1. **`state_id` is the smallest ISO 3166-2 unit that contains the place.** (A country with no states, such as
+   Western Sahara, has its cities with `state_id` and `state_code` both null: v5.0.0, see
+   [DISPUTED_AND_SPECIAL_TERRITORIES.md](DISPUTED_AND_SPECIAL_TERRITORIES.md).) For France that is the département, for
    Spain and Italy the province. The units above it (région, comunidad autónoma) are linked through the states'
    own `parent_id` and `level`. Counties carry a `state_id` the same way. Where a documented national reform has
    replaced the units ISO 3166-2 still lists, `state_id` follows the current national unit: the fix summary records the

@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Poland -> contributions/postcodes/PL.json importer for issue #1039.
+"""RETIRED. Poland -> contributions/postcodes/PL.json importer for issue #1039.
+
+Retired on 14 October 2026: Poland postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Sweden, Romania, Poland, Ukraine and Argentina: postcodes from the GeoNames
+postal dumps"). The redistribution basis of the mberezinski/kody-pocztowe-geo copy below was not established, so this script refuses
+to run. It is kept for the record of how the earlier rows were made.
 
 Source data
 -----------
@@ -69,6 +74,9 @@ def parse_coord(v: str) -> Optional[str]:
 
 
 def main() -> int:
+    print("[ERROR] retired: PL postcodes come from the GeoNames postal code dump now; rerunning this would "
+          "reimport the mberezinski/kody-pocztowe-geo copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="/tmp/pl_kody.csv")
     parser.add_argument("--dry-run", action="store_true")

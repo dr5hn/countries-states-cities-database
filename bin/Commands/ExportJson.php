@@ -27,6 +27,34 @@ class ExportJson extends Command
         $this->setHelp('This command exports the database to JSON format');
     }
 
+    /** One city row of cities.json; state fields are null for a city of a country with no states (v5). */
+    private function cityRow(array $city, ?int $stateId, ?string $stateName, int $countryId, string $countryName): array
+    {
+        return [
+            'id' => (int)$city['id'],
+            'name' => $city['name'],
+            'county_id' => isset($city['county_id']) ? (int)$city['county_id'] : null,
+            'state_id' => $stateId,
+            'state_code' => $city['state_code'],
+            'state_name' => $stateName,
+            'country_id' => $countryId,
+            'country_code' => $city['country_code'],
+            'country_name' => $countryName,
+            'latitude' => $city['latitude'],
+            'longitude' => $city['longitude'],
+            'native' => $city['native'],
+            'type' => $city['type'],
+            'type_local' => $city['type_local'] ?? null,
+            'level' => $city['level'],
+            'parent_id' => $city['parent_id'],
+            'population' => $city['population'] !== null ? (int)$city['population'] : null,
+            'population_year' => isset($city['population_year']) ? (int)$city['population_year'] : null,
+            'timezone' => $city['timezone'],
+            'translations' => $city['translations'] !== null ? json_decode($city['translations'], true) : null,
+            'wikiDataId' => $city['wikiDataId'],
+        ];
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -191,27 +219,7 @@ class ExportJson extends Command
                                 // Only Cities Array
                                 $cityId = (int)$city['id'];
                                 $cityName = $city['name'];
-                                $citiesArray[$j]['id'] = $cityId;
-                                $citiesArray[$j]['name'] = $cityName;
-                                $citiesArray[$j]['county_id'] = isset($city['county_id']) ? (int)$city['county_id'] : null;
-                                $citiesArray[$j]['state_id'] = (int)$stateId;
-                                $citiesArray[$j]['state_code'] = $city['state_code'];
-                                $citiesArray[$j]['state_name'] = $stateName;
-                                $citiesArray[$j]['country_id'] = (int)$countryId;
-                                $citiesArray[$j]['country_code'] = $city['country_code'];
-                                $citiesArray[$j]['country_name'] = $countryName;
-                                $citiesArray[$j]['latitude'] = $city['latitude'];
-                                $citiesArray[$j]['longitude'] = $city['longitude'];
-                                $citiesArray[$j]['native'] = $city['native'];
-                                $citiesArray[$j]['type'] = $city['type'];
-                                $citiesArray[$j]['type_local'] = $city['type_local'] ?? null;
-                                $citiesArray[$j]['level'] = $city['level'];
-                                $citiesArray[$j]['parent_id'] = $city['parent_id'];
-                                $citiesArray[$j]['population'] = $city['population'] !== null ? (int)$city['population'] : null;
-                                $citiesArray[$j]['population_year'] = isset($city['population_year']) ? (int)$city['population_year'] : null;
-                                $citiesArray[$j]['timezone'] = $city['timezone'];
-                                $citiesArray[$j]['translations'] = $city['translations'] !== null ? json_decode($city['translations'], true) : null;
-                                $citiesArray[$j]['wikiDataId'] = $city['wikiDataId'];
+                                $citiesArray[$j] = $this->cityRow($city, $stateId, $stateName, $countryId, $countryName);
 
                                 // For State City Array
                                 array_push($cityNamesArray, array(
@@ -232,6 +240,26 @@ class ExportJson extends Command
                         array_push($countryStateCityArray[$k]['states'], $stateArr);
 
                         $i++;
+                    }
+                }
+
+                // v5: cities of a country with no states (e.g. Western Sahara) have a null state; they go in the flat
+                // list with null state fields and in this country's own `cities` array (empty for most countries)
+                $countryStateCityArray[$k]['cities'] = array();
+                $sql = "SELECT * FROM cities WHERE country_id=$countryId AND state_id IS NULL ORDER BY NAME";
+                $directResult = $db->query($sql);
+                if ($directResult->num_rows > 0) {
+                    while ($city = $directResult->fetch_assoc()) {
+                        $citiesArray[$j] = $this->cityRow($city, null, null, $countryId, $country['name']);
+                        array_push($countryStateCityArray[$k]['cities'], array(
+                            'id' => (int)$city['id'],
+                            'name' => $city['name'],
+                            'county_id' => isset($city['county_id']) ? (int)$city['county_id'] : null,
+                            'latitude' => $city['latitude'],
+                            'longitude' => $city['longitude'],
+                            'timezone' => $city['timezone']
+                        ));
+                        $j++;
                     }
                 }
 

@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 // Fields auto-managed by MySQL. Canonical contributions files (round-tripped
 // from the DB) legitimately carry these on every record, so their presence is
@@ -15,11 +16,14 @@ const AUTO_MANAGED_FIELDS = ['id', 'created_at', 'updated_at', 'flag'];
 const SCHEMA = {
   cities: {
     required: ['name', 'state_id', 'state_code', 'country_id', 'country_code', 'latitude', 'longitude'],
+    // v5: a city of a country with no states (e.g. Western Sahara) has state_id and state_code both null.
+    // Both keys stay required; the pair is either fully set or fully null (checked in validateRecord).
+    nullablePairs: [['state_id', 'state_code']],
     optional: ['county_id', 'state_name', 'country_name', 'wikiDataId', 'timezone', 'native', 'type', 'type_local', 'level', 'parent_id', 'population', 'population_year', 'translations'],
     rules: {
       name: { type: 'string', maxLength: 255, nonEmpty: true },
       county_id: { type: 'integer', positive: true },
-      state_id: { type: 'integer', positive: true },
+      state_id: { type: 'integer', positive: true, jsonNumber: true },   // a JSON number: "1", true or [1] are refused
       state_code: { type: 'string', maxLength: 255, nonEmpty: true },
       country_id: { type: 'integer', positive: true },
       country_code: { type: 'string', exactLength: 2 },
@@ -219,8 +223,21 @@ function validateRecord(record, entityType, index) {
     );
   }
 
+  // A nullable pair (cities' state_id/state_code) must be fully set or fully null; both keys stay required
+  const nullPaired = new Set();
+  for (const pair of schema.nullablePairs || []) {
+    const isNull = pair.map((f) => f in record && record[f] === null);
+    if (isNull.every(Boolean)) {
+      pair.forEach((f) => nullPaired.add(f));
+    } else if (isNull.some(Boolean)) {
+      errors.push(`${prefix}: ${pair.join(' and ')} must both be set or both be null`);
+      pair.filter((f, i) => isNull[i]).forEach((f) => nullPaired.add(f));
+    }
+  }
+
   // Check required fields
   for (const field of schema.required) {
+    if (nullPaired.has(field)) continue;
     if (!(field in record) || record[field] === null || record[field] === undefined) {
       errors.push(`${prefix}: missing required field "${field}"`);
     } else {
@@ -502,7 +519,88 @@ function formatReport(results) {
   return report;
 }
 
+const GIT_STATUS = { A: 'added', M: 'modified', D: 'removed', T: 'modified' };
+const GIT_BUFFER = 256 * 1024 * 1024;   // the name list of a large PR, and a full states or countries file
+const API_FILE_CAP = 3000;              // GitHub lists at most 3,000 files of a pull request
+
+/** Run git in the working directory and return its stdout. */
+function git(args) {
+  return execFileSync('git', args, { encoding: 'utf8', maxBuffer: GIT_BUFFER, stdio: ['ignore', 'pipe', 'pipe'] });
+}
+
+/**
+ * The parents [base, head] of the checked-out commit, verified to be this pull request's merge commit (the workflow
+ * checks out refs/pull/N/merge with fetch-depth: 2). Throws when HEAD is anything else, so a listing or comparison
+ * never silently uses some other commit.
+ */
+function mergeParents(pr) {
+  const headSha = pr && pr.head && pr.head.sha;
+  let parents = [];
+  try {
+    parents = git(['rev-list', '--parents', '-n', '1', 'HEAD']).trim().split(/\s+/).slice(1);
+  } catch (err) {
+    throw new Error(`cannot read the checked-out commit (${err.message.split('\n')[0]})`);
+  }
+  if (parents.length !== 2 || !headSha || parents[1] !== headSha) {
+    throw new Error(`HEAD is not this PR's merge commit (parents: ${parents.join(', ') || 'none'}; PR head: ${headSha || 'unknown'}); `
+      + 'check out the pull_request merge ref with fetch-depth: 2');
+  }
+  return parents;
+}
+
+/**
+ * Files a pull request changes, as [{filename, status, previous_filename?}] objects. Reads every page of the GitHub
+ * API itself, 100 files at a time (Octokit's paginator treats HTTP 409 as an empty page, which would pass a failed
+ * listing off as a short one). GitHub refuses to list the files of a very large diff ("this diff is taking too long to generate"), as with a
+ * full-country postcode rebuild, and lists at most 3,000 files; in either case, or on any other API failure, the
+ * list is read from git instead: what merging the PR changes, HEAD^1..HEAD of its verified merge commit. That is the
+ * data that would land, which is what the validators check (for a branch that repeats edits already on the base it
+ * can list fewer files than GitHub's three-dot view). Throws, naming both causes, when git cannot read it either.
+ */
+async function listChangedFiles(octokit, context, pr) {
+  let reason;
+  try {
+    const files = [];
+    for (let page = 1; files.length < API_FILE_CAP; page++) {
+      const { data } = await octokit.rest.pulls.listFiles({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        pull_number: pr.number,
+        per_page: 100,
+        page,
+      });
+      files.push(...data);
+      if (data.length < 100) return files;
+    }
+    reason = `GitHub lists at most ${API_FILE_CAP} files of a PR and returned ${files.length}`;
+  } catch (apiError) {
+    reason = `GitHub could not list the PR's files (${apiError.message})`;
+  }
+  let out;
+  try {
+    const [base] = mergeParents(pr);
+    out = git(['diff', '--name-status', '--no-renames', '--ignore-submodules=none', '-z', base, 'HEAD']);
+  } catch (gitError) {
+    throw new Error(`${reason}, and git could not either (${gitError.message.split('\n')[0]})`);
+  }
+  console.warn(`${reason}; read what the merge changes from git instead.`);
+  const parts = out.split('\0').filter(Boolean);
+  const files = [];
+  for (let i = 0; i + 1 < parts.length; i += 2) {
+    files.push({ filename: parts[i + 1], status: GIT_STATUS[parts[i][0]] || 'modified' });
+  }
+  return files;
+}
+
+/** A JSON file as it stood on the PR's merge base (the merge commit's first parent), parsed. Throws when unreadable. */
+function baseJson(pr, filePath) {
+  const [base] = mergeParents(pr);
+  return JSON.parse(git(['show', `${base}:${filePath}`]));
+}
+
 module.exports = {
+  listChangedFiles,
+  baseJson,
   AUTO_MANAGED_FIELDS,
   SCHEMA,
   getEntityType,

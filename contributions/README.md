@@ -149,8 +149,8 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 |-------|----------|-------------|---------|
 | `id` | Auto | Unique identifier (omit for new cities) | `1234` |
 | `name` | ✅ Yes | Official city name | `"San Francisco"` |
-| `state_id` | ✅ Yes | ID of parent state | `1416` |
-| `state_code` | ✅ Yes | ISO code of parent state | `"CA"` |
+| `state_id` | ✅ Yes | ID of parent state; `null` only for a city of a country with no states (e.g. Western Sahara), together with `state_code` | `1416` |
+| `state_code` | ✅ Yes | ISO code of parent state; `null` exactly when `state_id` is `null` | `"CA"` |
 | `country_id` | ✅ Yes | ID of parent country | `233` |
 | `country_code` | ✅ Yes | ISO2 code of parent country | `"US"` |
 | `latitude` | ✅ Yes | Latitude coordinate | `"37.77490000"` |
