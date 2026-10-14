@@ -8,6 +8,7 @@ on:
   pull_request:
     paths:
       - 'bin/**'
+      - 'migrations/**'
       - 'prisma/**'
       - '.github/scripts/**'
       - '.github/workflows/format-tests.yml'
