@@ -115,6 +115,43 @@ row's name, point and state. Points are GeoNames' estimates. Edition ledger:
 `.github/fixes-docs/ledgers/MX_postcodes_geonames_2026-10.sources.json`. 451 rows whose settlement or code the dump
 does not list are queued for removal in v5.0.0; they keep their earlier values until then.
 
+**Sweden (since October 2026):** the earlier SE rows came from a copy of the postcode list (zegl/sweden-zipcode) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Swedish postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/SE_postcodes_geonames_2026-10.sources.json`. 2 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Romania (since October 2026):** the earlier RO rows came from a copy of the postcode list (alexionegit/coduripostaleRomaniaPS) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Romanian postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/RO_postcodes_geonames_2026-10.sources.json`. 12 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Poland (since October 2026):** the earlier PL rows came from a copy of the postcode list (mberezinski/kody-pocztowe-geo) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Polish postal code dump, 13 October 2026". A row is kept when the dump lists its code. A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/PL_postcodes_geonames_2026-10.sources.json`. 2,696 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Ukraine (since October 2026):** the earlier UA rows came from a copy of the postcode list (rvolykh/UAPostcodes) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Ukrainian postal code dump, 13 October 2026". Each row is one postcode and locality; a row is kept only when the dump lists its locality under the same code
+(exactly, or after an accent, case and punctuation fold). A field the dump's rows disagree on is left
+empty. Edition ledger: `.github/fixes-docs/ledgers/UA_postcodes_geonames_2026-10.sources.json`. 4,427 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
+**Argentina (since October 2026):** the earlier AR rows came from a copy of the postcode list (androdron/localidades_AR) whose
+redistribution basis was not established. Names, points and states now come from the GeoNames postal code dump of
+13 October 2026 (`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source:
+GeoNames, Argentine postal code dump, 13 October 2026". Each row is one postcode and locality; a row is kept only when the dump lists its locality under the same code
+(exactly, or after an accent, case and punctuation fold). A field the dump's rows disagree on is left
+empty. City links are cleared: the dump has no Correo locality id to re-derive them. Edition ledger: `.github/fixes-docs/ledgers/AR_postcodes_geonames_2026-10.sources.json`. 10,660 rows the
+dump does not list are queued for removal in v5.0.0; they keep their earlier values until then.
+
 The `source` field on each record records which pipeline produced it. For the
 125 country files now present, that field is **not yet** sufficient on its
 own to programmatically assemble attribution — see the scope note above.
