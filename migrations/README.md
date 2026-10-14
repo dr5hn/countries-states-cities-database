@@ -5,8 +5,10 @@ release's, so you can update ids stored in your own systems. They are generated,
 [`bin/scripts/release/migrations.py`](../bin/scripts/release/migrations.py) from this folder's ledger and the git
 history of `contributions/`.
 
-**Status:** the generator is in place, but the export workflow does not run it yet and `events.jsonl` is still empty.
-Both are done before v5.0.0 is published. Until then, no release carries these files.
+**Status:** the generator is in place, but the export workflow does not run it yet. `events.jsonl` holds every removal
+since v4.0 (10,201) and the 1509 restoration. 9,862 removals are reviewed; 339 cities removals are still `held`, so
+the generator refuses every release until they are decided. The workflow and those decisions come before v5.0.0 is
+published. Until then, no release carries these files.
 
 ## The files
 
@@ -89,7 +91,8 @@ An identity event uses `table` and `id` in place of `old_table` and `old_id`, an
 
 `evidence` is a non-empty list. Each item is either a source URL, `{"url": "https://<host>/<path>"}` (http or https,
 with a host and no spaces), or a research manifest and its hash, `{"manifest": "research/<file>.json", "sha256":
-"<64 hex digits>"}`. Only the shape is checked; sources are not fetched.
+"<64 hex digits>"}`. Only the shape is checked; sources are not fetched. Research manifests are kept in the maintainers' audit workspace,
+not in this repository; `event_pr_url` links the public PR that made the change.
 
 The removal that retires a repurposed id names the repair:
 
@@ -121,7 +124,7 @@ interval; only a later release's events are ignored.
 
 `--reserved` names every id that left the data before `--from` and must never return, as `{"table", "id"}` per
 line. Removals in ledger events before `--from` are added automatically. The list for v5.0.0 starts from v4.0's
-published `removed_ids_v3.2_to_v4.0.csv`. It is prepared with the workflow integration.
+published `removed_ids_v3.2_to_v4.0.csv`: its 4,492 ids are in [`reserved_ids.jsonl`](reserved_ids.jsonl).
 
 The importer (`bin/scripts/sync/import_json_to_mysql.py`) reads the same files, `events.jsonl` (its removals) and
 `migrations/reserved_ids.jsonl`, and starts the ids it assigns to new records above the highest retired or reserved id
@@ -160,7 +163,7 @@ For v5.0.0, run it twice: v4.0 to v5 (cumulative) and export.51 to v5 (the step 
 
 ```bash
 python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <candidate sha> \
-  --ledger migrations/events.jsonl --reserved <reserved_ids.jsonl> --meta <release_meta.json> --out build/migrations
+  --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl --meta <release_meta.json> --out build/migrations
 ```
 
 `release_meta.json` looks like this:
