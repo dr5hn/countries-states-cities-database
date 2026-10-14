@@ -38,6 +38,9 @@ jobs:
       - name: Import and sync tests
         run: python -m unittest discover -s bin/scripts/sync -p 'test_*.py'
 
+      - name: Release migration tests
+        run: python -m unittest discover -s bin/scripts/release -p 'test_*.py'
+
       - name: Export converter tests
         run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
 
