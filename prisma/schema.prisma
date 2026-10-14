@@ -169,7 +169,7 @@ model County {
   updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
   flag         Boolean   @default(true)
 
-  state        State?    @relation(fields: [stateId], references: [id])
+  state        State?    @relation(fields: [stateId], references: [id], onDelete: Restrict)   // as the MySQL foreign key
   country      Country   @relation(fields: [countryId], references: [id])
   parent       County?   @relation("CountyHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
   children     County[]  @relation("CountyHierarchy")
