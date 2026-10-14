@@ -34,9 +34,26 @@ def sql_value(v):
     return 'NULL' if v is None else f"N'{v}'" if isinstance(v, str) else str(v)
 
 
-def write_exports(root, counties=None, edit=None):
-    """A complete set of exports from these counties; edit(fmt, rows) may change the rows one format receives."""
+STATES = [{'id': 4059, 'name': 'Northland', 'country_id': 158, 'country_code': 'NZ', 'iso2': 'NTL'},
+          {'id': 4060, 'name': 'Manawatu-Whanganui', 'country_id': 158, 'country_code': 'NZ', 'iso2': 'MWT'},
+          {'id': 4061, 'name': 'Waikato', 'country_id': 158, 'country_code': 'NZ', 'iso2': 'WKO'}]
+
+
+def write_contributions(root, counties):
+    """The source of truth the checker derives its expectations from: contributions/counties/NZ.json in the
+    contributions form (states only on a county of several regions) and contributions/states/states.json."""
+    Path(root, 'contributions/counties').mkdir(parents=True, exist_ok=True)
+    Path(root, 'contributions/states').mkdir(parents=True, exist_ok=True)
+    source = [{k: v for k, v in c.items() if k != 'states' or v is not None} for c in counties]
+    Path(root, 'contributions/counties/NZ.json').write_text(json.dumps(source))
+    Path(root, 'contributions/states/states.json').write_text(json.dumps(STATES))
+
+
+def write_exports(root, counties=None, edit=None, source=None):
+    """A complete set of exports from these counties, and the contributions they come from (source, by default the
+    same counties); edit(fmt, rows) may change the rows one format receives."""
     base = counties or COUNTIES
+    write_contributions(root, source or base)
     rows = lambda fmt: (edit(fmt, copy.deepcopy(base)) if edit else None) or copy.deepcopy(base)
     for d in ('json', 'csv', 'plist', 'xml', 'yml', 'mongodb', 'parquet', 'toon', 'sqlserver'):
         Path(root, d).mkdir()
@@ -75,15 +92,18 @@ def write_exports(root, counties=None, edit=None):
         '-- Table: counties\n\n'
         "IF OBJECT_ID('world.counties', 'U') IS NOT NULL DROP TABLE world.counties;\n"
         'CREATE TABLE world.counties (\n    id INT IDENTITY(1,1) PRIMARY KEY,\n    name NVARCHAR(255) NOT NULL,\n'
-        '    state_id INT NULL,\n    state_code NVARCHAR(255) NULL,\n    country_id INT NOT NULL,\n'
+        '    state_id INT NULL,\n    state_code NVARCHAR(255) NULL,\n    country_id INT NOT NULL,\n    parent_id INT NULL,\n'
         '    -- SQL Server forbids cascading self-references (error 1785). Clear child links before deletion.\n'
+        '    CONSTRAINT FK_counties_parent FOREIGN KEY (parent_id) REFERENCES world.counties(id),\n'
         '    CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id),\n'
         '    CONSTRAINT CK_counties_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR (state_id IS NOT NULL AND state_code IS NOT NULL))\n);\n\n'
         'ALTER TABLE world.counties NOCHECK CONSTRAINT FK_counties_parent;\n\n'
         'SET IDENTITY_INSERT world.counties ON;\n\n'
-        f"INSERT INTO world.counties ({', '.join(cols)}) VALUES\n"
-        + ',\n'.join('(' + ', '.join(sql_value(r[c]) for c in cols) + ')' for r in sq) + ';\n\n'
-        'SET IDENTITY_INSERT world.counties OFF;\n\n'
+        # batches of 900 rows, as the exporter chunks them (SQL Server takes at most 1,000 per INSERT)
+        + ''.join(f"INSERT INTO world.counties ({', '.join(cols)}) VALUES\n"
+                  + ',\n'.join('(' + ', '.join(sql_value(r[c]) for c in cols) + ')' for r in sq[i:i + 900]) + ';\n\n'
+                  for i in range(0, len(sq), 900))
+        + 'SET IDENTITY_INSERT world.counties OFF;\n\n'
         'ALTER TABLE world.counties WITH CHECK CHECK CONSTRAINT FK_counties_parent;\n\n')
     pairs = [(r['id'], s['state_id']) for r in sq for s in r['states'] or []]
     Path(root, 'sqlserver/county_states.sql').write_text(
@@ -146,7 +166,7 @@ class CheckerTest(unittest.TestCase):
                                 ('parquet', 'state_code', 'parquet'), ('yml', 'state_id', 'yml/counties.yml'),
                                 ('toon', 'state_code', 'toon/counties.toon'), ('sqlserver', 'state_code', 'sqlserver/counties.sql')):
             self.assertProblem(f'{where}: county 1', edit=target(fmt, lambda rows, key=key: rows[1].update({key: None})))
-        self.assertProblem('json/counties.json: county 1 has no regions but not a full state pair',
+        self.assertProblem('json/counties.json: county 1',
                            edit=target('json', lambda rows: rows[1].update(state_code=None)))
 
     def test_regions_must_match_everywhere(self):
@@ -160,7 +180,7 @@ class CheckerTest(unittest.TestCase):
     def test_regions_must_be_distinct(self):
         """The same region twice in every format is not a county of several regions."""
         twice = [{**COUNTIES[0], 'states': [REGIONS[0], REGIONS[0]]}, COUNTIES[1]]
-        self.assertProblem('json/counties.json: county 9 has a null state pair, so it needs two or more distinct regions', counties=twice)
+        self.assertProblem('contributions/counties/NZ.json: county 9 has a null state pair, so it needs two or more distinct regions', counties=twice)
 
     def test_missing_pair_keys_are_not_null(self):
         """A target county without its state keys (YAML, MongoDB) or empty elements (XML) is a problem, not a null pair."""
@@ -184,10 +204,10 @@ class CheckerTest(unittest.TestCase):
     def test_every_county_of_several_regions_is_checked(self):
         """A second county of several regions with a repeated region fails, though the requested county 9 is valid."""
         repeated = {'id': 10, 'name': 'Twice', 'state_id': None, 'state_code': None, 'states': [REGIONS[0], REGIONS[0]], 'country_id': 158}
-        self.assertProblem('json/counties.json: county 10', counties=COUNTIES + [repeated])
-        self.assertProblem('json/counties.json: county 2 has a state and a states list',
+        self.assertProblem('contributions/counties/NZ.json: county 10', counties=COUNTIES + [repeated])
+        self.assertProblem('contributions/counties/NZ.json: county 2 needs its own complete state pair and no states list',
                            counties=COUNTIES + [{**COUNTIES[1], 'id': 2, 'states': REGIONS}])
-        self.assertProblem('json/counties.json: county id 1 is duplicated', counties=COUNTIES + [COUNTIES[1]])
+        self.assertProblem('contributions/counties/NZ.json: county id 1 is duplicated', counties=COUNTIES + [COUNTIES[1]])
 
     def test_sql_server_relation_ddl(self):
         """The county_states table needs its composite key and both foreign keys."""
@@ -195,7 +215,7 @@ class CheckerTest(unittest.TestCase):
             """Remove the foreign key to states from the generated DDL."""
             p = Path(root, 'sqlserver/county_states.sql')
             p.write_text(p.read_text().replace('    CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)\n', ''))
-        self.assertProblem("sqlserver/county_states.sql: the table is not the exporter's", change=strip)
+        self.assertProblem('sqlserver/county_states.sql: cannot be read: SQL: CREATE TABLE world.county_states has an empty declaration', change=strip)
 
     def test_command_exit_code(self):
         """The command exits 1 when a problem is found and 0 when none is."""
@@ -947,3 +967,90 @@ class Round6RegressionTest(Round5RegressionTest):
                     self.assertEqual(found, [], name)
                 else:
                     self.assertNotEqual(found, [], name)
+
+
+
+class Round7RegressionTest(Round5RegressionTest):
+    """Codex review_county_regions_7: SQL produced by plausible exporter-source changes (undeclared INSERT columns, a
+    constraint switch without its constraint, an empty declaration, an INSERT over SQL Server's 1,000 rows), and a
+    wrong ExportJson that every derived format repeats: the checker's expectations come from contributions/, not from
+    json/counties.json."""
+
+    test_every_case = test_rebuilt_fixtures = None   # inherited helpers only
+
+    @staticmethod
+    def many(n):
+        """COUNTIES plus n one-state counties, ids 100 upwards."""
+        return COUNTIES + [{'id': 100 + i, 'name': f'County {i}', 'state_id': 4059, 'state_code': 'NTL', 'states': None,
+                            'country_id': 158} for i in range(n)]
+
+    def run_with(self, change, counties=None, source=None):
+        """Problems after writing exports (from counties) and contributions (from source) and applying change."""
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            write_exports(root, counties=counties, source=source)
+            change(root)
+            return main(9, root)
+
+    def test_sql_from_exporter_source_changes(self):
+        """Each emitted consequence of an exporter-source change is refused; the unchanged files pass."""
+        T = self.text
+        counties = 'sqlserver/counties.sql'
+        self.assertEqual(self.run_with(lambda r: None), [])
+
+        def undeclared_states(root):
+            """array_intersect dropped: the JSON-only states field becomes an INSERT column."""
+            import re
+            p = root / counties
+            data = p.read_text().replace('INSERT INTO world.counties (', 'INSERT INTO world.counties (states, ', 1)
+            start = data.index(' VALUES\n') + len(' VALUES\n')
+            end = data.index(';', start)
+            p.write_text(data[:start] + re.sub(r'(?m)^\(', "(N'x', ", data[start:end]) + data[end:])
+        for name, change in (
+                ('sql_undeclared_states', undeclared_states),
+                ('sql_missing_parent_constraint', T(counties, '    CONSTRAINT FK_counties_parent FOREIGN KEY (parent_id) REFERENCES world.counties(id),\n', '')),
+                ('sql_internal_double_create_comma', T(counties, 'REFERENCES world.counties(id),', 'REFERENCES world.counties(id),,')),
+                ('sql_relation_trailing_create_comma', T('sqlserver/county_states.sql', 'REFERENCES world.states(id)\n);', 'REFERENCES world.states(id),\n);'))):
+            with self.subTest(name):
+                self.assertNotEqual(self.run_with(change), [], name)
+
+    def test_insert_batches_at_most_1000_rows(self):
+        """1,001 counties in batches of 900 and 101 pass; the same rows in one INSERT of 1,001 are refused."""
+        counties = self.many(999)
+        self.assertEqual(len(counties), 1001)
+        self.assertEqual(self.run_with(lambda r: None, counties=counties), [])
+
+        def one_batch(root):
+            """Join the two batches into one statement."""
+            p = root / 'sqlserver/counties.sql'
+            data = p.read_text()
+            first = data.index('INSERT INTO world.counties')
+            second = data.index('INSERT INTO world.counties', first + 1)
+            values_start = data.index(' VALUES\n', second) + len(' VALUES\n')
+            joined = data[:data.rindex(';', first, second)] + ',\n' + data[values_start:]
+            p.write_text(joined)
+        self.assertNotEqual(self.run_with(one_batch, counties=counties), [])
+
+    def test_expectations_come_from_contributions(self):
+        """An ExportJson that drops the one-state counties, or writes full ISO codes as region codes, is repeated by
+        every derived format; comparing with contributions/ refuses both. Unchanged exports pass."""
+        missing_own = [c for c in COUNTIES if c['state_id'] is None]
+        self.assertNotEqual(self.run_with(lambda r: None, counties=missing_own, source=COUNTIES), [])
+        iso = copy.deepcopy(COUNTIES)
+        iso[0]['states'] = [{'state_id': s['state_id'], 'state_code': 'NZ-' + s['state_code']} for s in REGIONS]
+        found = self.run_with(lambda r: None, counties=iso, source=COUNTIES)
+        self.assertTrue(any(p.startswith('json/counties.json') for p in found), found)
+        self.assertTrue(any(p.startswith('csv/county_states.csv') for p in found), found)
+
+    def test_contributions_must_be_well_formed(self):
+        """A county without an id, a repeated id, or a region code that is not its state's iso2 in contributions/ is
+        reported, not used as an expectation."""
+        for name, change in (
+                ('no id', lambda c: c[1].pop('id')),
+                ('repeated id', lambda c: c.append(dict(c[1]))),
+                ('region code not iso2', lambda c: c[0]['states'][0].update(state_code='XX'))):
+            source = copy.deepcopy(COUNTIES)
+            change(source)
+            with self.subTest(name):
+                found = self.run_with(lambda r: None, source=source)
+                self.assertTrue(any(p.startswith('contributions/') for p in found), found)

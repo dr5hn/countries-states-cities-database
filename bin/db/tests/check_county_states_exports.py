@@ -2,11 +2,14 @@
 """Check counties of several regions in every export format, after import and export (v5, decision B6).
 
 Run from the repository root after the exports:  python3 bin/db/tests/check_county_states_exports.py <county id>
-json/counties.json is the authority. The given county must have a null state pair and two or more distinct regions
-there. Every county, that one and all others, must then have the same state pair and the same regions in every other
-format: the states list in YAML, XML, MongoDB, Parquet and TOON (read with the reference reader), the county_states
-rows in CSV, PLIST and SQL Server, and the state columns of each counties file, SQL Server's included. Counts are
-never used in place of equality. Exits 1 with the problems, or 0 after printing what it checked.
+The expectations come from the source of truth, as the importer reads it: contributions/counties/*.json (each county's
+id, own state pair, and regions) and contributions/states/states.json (a region's code is its state's iso2, as the
+export joins it). The given county must have a null state pair and two or more distinct regions there. Every county,
+that one and all others, must then have the same state pair and the same regions in every format, json/counties.json
+included: the states list in JSON, YAML, XML, MongoDB, Parquet and TOON (read with the reference reader), the
+county_states rows in CSV, PLIST and SQL Server, and the state columns of each counties file, SQL Server's included.
+So a wrong ExportJson, which every derived format would repeat, still fails. Counts are never used in place of
+equality. Exits 1 with the problems, or 0 after printing what it checked.
 
 Each file is read by a strict loader before anything is compared, and a structural fault fails the whole file: a
 repeated key, header or column; a wrong envelope or root (a null root fails the file, it is never skipped); stray
@@ -16,9 +19,10 @@ a Parquet column stored with the wrong physical type. Ids must be positive integ
 
 SQL Server: this is not a general SQL validator. It accepts exactly the statements this repository's exporter
 (bin/Commands/ExportSqlServer.php) writes for world.counties and world.county_states, in the exporter's order: the
-DROP and CREATE scaffold (CREATE checked declaration by declaration), counties' constraint and identity switches
-around the inserts, and INSERT statements whose rows are parsed completely (one value per column, exact
-separators, nothing left over). Column names written [x] or "x" are the same column as x. Comments are removed
+DROP and CREATE scaffold (CREATE checked declaration by declaration, none empty), counties' constraint and identity
+switches around the inserts (naming the parent constraint CREATE declares), and INSERT statements of at most 1,000
+rows (SQL Server's limit; the exporter writes 900) into declared columns, parsed completely (one value per column,
+exact separators, nothing left over). Column names written [x] or "x" are the same column as x. Comments are removed
 first, so a commented-out insert adds no rows. Any other statement is refused, not interpreted.
 
 Scope: the checker guards the exporters' own output against regressions: a wrong, missing, repeated or reordered
@@ -53,10 +57,12 @@ COUNTY_STATES_DDL = {'county_id INT NOT NULL', 'state_id INT NOT NULL',
                      'CONSTRAINT FK_county_states_counties FOREIGN KEY (county_id) REFERENCES world.counties(id) ON DELETE CASCADE',
                      'CONSTRAINT FK_county_states_states FOREIGN KEY (state_id) REFERENCES world.states(id)'}
 COUNTIES_DDL = {'id INT IDENTITY(1,1) PRIMARY KEY', 'state_id INT NULL', 'state_code NVARCHAR(255) NULL',
+                'CONSTRAINT FK_counties_parent FOREIGN KEY (parent_id) REFERENCES world.counties(id)',   # the switches name it
                 'CONSTRAINT FK_counties_states FOREIGN KEY (state_id) REFERENCES world.states(id)',
                 'CONSTRAINT CK_counties_state_pair CHECK ((state_id IS NULL AND state_code IS NULL) OR '
                 '(state_id IS NOT NULL AND state_code IS NOT NULL))'}
 # The exporter's statement order per file (bin/Commands/ExportSqlServer.php execute())
+SQL_MAX_ROWS = 1000   # rows one INSERT ... VALUES may carry in SQL Server (error 10738); the exporter writes 900
 SQL_ORDER = {'counties': re.compile(r'drop create nocheck identity_on( insert)* identity_off check'),
              'county_states': re.compile(r'drop create( insert)*')}
 
@@ -572,7 +578,9 @@ def _sql_declarations(create, table):
         i += 1
     else:
         raise ValueError(f'SQL: CREATE TABLE world.{table} is not closed')
-    names = [d.split()[1] if d.startswith('CONSTRAINT ') else d.split()[0] for d in decls if d]
+    if '' in decls:
+        raise ValueError(f'SQL: CREATE TABLE world.{table} has an empty declaration (two commas, or one before the closing parenthesis)')
+    names = [d.split()[1] if d.startswith('CONSTRAINT ') else d.split()[0] for d in decls]
     if len(set(map(_sql_name, names))) != len(names):
         raise ValueError(f'SQL: a column or constraint of world.{table} is declared twice')
     return set(decls)
@@ -587,7 +595,7 @@ def _load_sql(path, table):
                 f'ALTER TABLE world.{table} NOCHECK CONSTRAINT FK_{table}_parent': 'nocheck',
                 f'ALTER TABLE world.{table} WITH CHECK CHECK CONSTRAINT FK_{table}_parent': 'check'}
     insert = re.compile(rf'INSERT\s+INTO\s+world\.{table}\s*\(([^)]*)\)\s*VALUES\s(.*)\Z', re.S)
-    kinds, decls, rows = [], None, []
+    kinds, decls, rows, inserted = [], None, [], set()
     for statement in _sql_statements(_utf8(path)):
         n = norm(statement)
         if n in kinds_of:
@@ -604,41 +612,74 @@ def _load_sql(path, table):
         columns = [_sql_name(c) for c in m.group(1).split(',')]
         if len(set(columns)) != len(columns):
             raise ValueError(f'SQL: a column is named twice in {m.group(1).strip()[:80]!r}')
-        rows += [dict(zip(columns, values)) for values in _sql_rows(m.group(2), len(columns))]
+        batch = _sql_rows(m.group(2), len(columns))
+        if len(batch) > SQL_MAX_ROWS:
+            raise ValueError(f'SQL: one INSERT carries {len(batch)} rows; SQL Server takes at most {SQL_MAX_ROWS}')
+        inserted |= set(columns)
+        rows += [dict(zip(columns, values)) for values in batch]
     if not SQL_ORDER[table].fullmatch(' '.join(kinds)):
         raise ValueError(f"SQL: statements {' '.join(kinds)!r} are not the exporter's order for world.{table}")
+    declared = {_sql_name(d.split()[0]) for d in decls if not d.startswith('CONSTRAINT ')}
+    undeclared = sorted(inserted - declared)
+    if undeclared:
+        raise ValueError(f'SQL: INSERT into world.{table} names columns CREATE does not declare: {undeclared}')
+    constraints = {_sql_name(d.split()[1]) for d in decls if d.startswith('CONSTRAINT ')}
+    if {'nocheck', 'check'} & set(kinds) and _sql_name(f'FK_{table}_parent') not in constraints:
+        raise ValueError(f'SQL: the constraint switches name FK_{table}_parent, which CREATE does not declare')
     return rows, decls
 
 
-# --- the JSON authority -------------------------------------------------------------------------------------------
+# --- the source of truth ------------------------------------------------------------------------------------------
 
-def _authority_errors(counties):
-    """Every county of json/counties.json must be well formed: a unique positive integer id, the keys state_id,
-    state_code and states (a missing states is not null), and either its own complete state pair with states null, or
-    two explicit nulls and two or more distinct regions."""
-    errors, seen = [], set()
-    for c in counties:
-        cid = c.get('id')
-        if type(cid) is not int or cid <= 0:
-            errors.append(f'json/counties.json: county id {cid!r} is not a positive integer')
+def _expected(root):
+    """(expectations, problems) from contributions/ as the importer reads it: county id -> ((state_id, state_code),
+    regions or None). A county of several regions has a null pair and two or more distinct regions, each listed with
+    its state's iso2 from states.json (the code the export joins); every other county has its own complete pair and no
+    list. A county without a positive integer id (run the import and sync first), a repeated id, or another shape is
+    reported, never used as an expectation."""
+    problems, truth = [], {}
+    try:
+        states = _record_list(_json(_utf8(Path(root, 'contributions/states/states.json'))), 'states.json')
+        files = sorted(Path(root, 'contributions/counties').glob('*.json'))
+    except (OSError, ValueError) as e:
+        return {}, [f'contributions/states/states.json: cannot be read: {e}']
+    iso2 = {s.get('id'): s.get('iso2') for s in states}
+    if not files:
+        problems.append('contributions/counties: no county files')
+    for f in files:
+        rel = f'contributions/counties/{f.name}'
+        try:
+            counties = _record_list(_json(_utf8(f)), rel)
+        except (OSError, ValueError) as e:
+            problems.append(f'{rel}: cannot be read: {e}')
             continue
-        if cid in seen:
-            errors.append(f'json/counties.json: county id {cid} is duplicated')
-        seen.add(cid)
-        if any(k not in c for k in ('state_id', 'state_code', 'states')):
-            errors.append(f'json/counties.json: county {cid} lacks state_id, state_code or states')
-        elif c['state_id'] is not None or c['state_code'] is not None:
-            if c['state_id'] is None or c['state_code'] is None:
-                errors.append(f'json/counties.json: county {cid} has no regions but not a full state pair')
-            elif _native_id(c['state_id']) is BAD or not isinstance(c['state_code'], str) or not c['state_code']:
-                errors.append(f'json/counties.json: county {cid} has an invalid state pair')
-            elif c['states'] is not None:
-                errors.append(f'json/counties.json: county {cid} has a state and a states list')
-        else:
-            regions = _regions(c['states'])
-            if not regions or len(regions) < 2 or len({sid for sid, _ in regions}) != len(regions):
-                errors.append(f'json/counties.json: county {cid} has a null state pair, so it needs two or more distinct regions')
-    return errors
+        for c in counties:
+            cid = c.get('id')
+            if type(cid) is not int or cid <= 0:
+                problems.append(f'{rel}: county {c.get("name")!r} has no positive integer id; run the import and sync first')
+                continue
+            if cid in truth:
+                problems.append(f'{rel}: county id {cid} is duplicated')
+                continue
+            if 'state_id' not in c or 'state_code' not in c:
+                problems.append(f'{rel}: county {cid} lacks state_id or state_code')
+                continue
+            sid, code, listed = c['state_id'], c['state_code'], c.get('states')
+            if sid is not None or code is not None:
+                if _native_id(sid) is BAD or not isinstance(code, str) or not code or listed is not None:
+                    problems.append(f'{rel}: county {cid} needs its own complete state pair and no states list')
+                    continue
+                truth[cid] = ((sid, code), None)
+                continue
+            regions = _regions(listed)
+            if not regions or len(regions) < 2 or len({r for r, _ in regions}) != len(regions):
+                problems.append(f'{rel}: county {cid} has a null state pair, so it needs two or more distinct regions')
+                continue
+            if any(iso2.get(r) != rcode for r, rcode in regions):
+                problems.append(f"{rel}: county {cid} lists a region whose code is not its state's iso2 in states.json")
+                continue
+            truth[cid] = ((None, None), regions)
+    return truth, problems
 
 
 def main(county_id, root='.'):
@@ -646,17 +687,13 @@ def main(county_id, root='.'):
     problems = []
     need = lambda ok, msg: ok or problems.append(msg)
 
-    counties = _read(root, 'json/counties.json', _load_json, problems)
-    if counties is None:
+    truth, source = _expected(root)
+    problems += source
+    if source:
         return problems
-    authority = _authority_errors(counties)
-    problems += authority
-    if authority:
-        return problems
-    truth = {c['id']: ((c['state_id'], c['state_code']), _list_value(c['states'])) for c in counties}
     pair, regions = truth.get(county_id, ((0, 0), None))
     if pair != (None, None) or not regions:
-        problems.append(f'json/counties.json: county {county_id} needs a null state pair and two or more distinct regions')
+        problems.append(f'contributions/counties: county {county_id} needs a null state pair and two or more distinct regions')
         return problems
     triples = sorted((cid, sid, code) for cid, (_, listed) in truth.items() if listed for sid, code in listed)
 
@@ -684,6 +721,12 @@ def main(county_id, root='.'):
         if 'state_id' not in row or 'state_code' not in row:
             return MISSING
         return (to_id(row['state_id']), to_code(row['state_code']))
+
+    # json/counties.json is one format among the others: it must carry states explicitly (null on a one-state county)
+    exported = _read(root, 'json/counties.json', _load_json, problems)
+    if exported is not None:
+        compare('json/counties.json', [(_native_id(r.get('id')), keyed_pair(r, _typed_id, _typed_code),
+                                        _list_value(r['states']) if 'states' in r else MISSING) for r in exported])
 
     for fmt, load in (('csv', _load_csv), ('plist', _load_plist)):
         rows = _read(root, f'{fmt}/counties.{fmt}', load, problems)
