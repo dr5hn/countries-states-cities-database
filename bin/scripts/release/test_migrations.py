@@ -709,6 +709,16 @@ class HistoryTest(Case):
         self.gen(c0, c0, [later])
         self.gen(c0, c0, [], out='out2')
 
+    def test_held_identity_with_malformed_prior_entity(self):
+        """A held identity event's prior_entity is never read: a malformed one waits harmlessly in a later release and,
+        inside the interval, the event is refused as held rather than crashing the walk."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        for n, bad in enumerate((None, [], 'ended', {'recorded_later': 'x'}, {'recorded_later': {'event_commit': 7}})):
+            held = dict(identity_event(1, c1, city(1, 'One'), 'repurpose', []), review_status='held', prior_entity=bad)
+            self.gen(c0, c0, [held], out=f'held{n}')
+            self.refused(c0, c1, [held], 'identity event is held')
+
     def cli(self, ledger, meta=None):
         """Run the command line on the scratch repository; returns (exit code, stderr)."""
         err = io.StringIO()

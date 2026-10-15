@@ -487,7 +487,7 @@ class Gate:
         for kind, events in (('identity', identities), ('restoration', self.restorations)):
             for key, e in events.items():
                 self.at[key[2]].append((kind, key, e))
-                later = e.get('prior_entity', {}).get('recorded_later')
+                later = recorded_later_of(e)
                 if later:
                     self.at[later['event_commit']].append(('prior_representation', key, e))
 
@@ -894,6 +894,14 @@ def place_commits(repo, frm, to, commits):
     return interval, place
 
 
+def recorded_later_of(e):
+    """The recorded_later binding of a reviewed event, or None. Held placeholders are only checked for their core
+    fields, so their prior_entity may be malformed and is never read."""
+    prior = e.get('prior_entity') if e.get('review_status') == 'reviewed' else None
+    later = prior.get('recorded_later') if isinstance(prior, dict) else None
+    return later if isinstance(later, dict) and isinstance(later.get('event_commit'), str) else None
+
+
 def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
     problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
@@ -903,12 +911,11 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
     repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
     every = {k[2] for d in (removals, identities, restorations) for k in d}
-    every.update(e['prior_entity']['recorded_later']['event_commit'] for e in identities.values()
-                 if 'recorded_later' in e.get('prior_entity', {}))
+    every.update(later['event_commit'] for e in identities.values() if (later := recorded_later_of(e)))
     interval, place = place_commits(repo, frm, to, every)
     applies = lambda d: {k: e for k, e in d.items() if place[k[2]] != 'after'}   # a later release's events wait for it
     for e in applies(identities).values():
-        later = e.get('prior_entity', {}).get('recorded_later')
+        later = recorded_later_of(e)
         if later and not on_line_after(repo, later['event_commit'], e['event_commit']):
             raise MigrationError(f'{e["table"]} {e["id"]}: recorded_later must follow its identity event on the release line')
     base, earlier = frm, {c for c in every if place[c] == 'before'}
@@ -936,8 +943,8 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
                for kind, d in (('identity', gate.identities), ('restoration', gate.restorations))
                for k in sorted(d) if (kind,) + k not in gate.used]
     errors += [f'{k[0]} {k[1]}: recorded_later representation was not checked'
-               for k, e in gate.identities.items() if 'recorded_later' in e.get('prior_entity', {})
-               and place[e['prior_entity']['recorded_later']['event_commit']] != 'after'
+               for k, e in gate.identities.items() if (later := recorded_later_of(e))
+               and place[later['event_commit']] != 'after'
                and ('prior_representation',) + k not in gate.used]
     errors += [f'{k[0]} {k[1]} was repurposed at {c[:12]} and still denotes the other entity at --to; retire it with its earlier '
                f'identity and give that entity a fresh or proved existing replacement id'
