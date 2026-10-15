@@ -876,6 +876,36 @@ class BaselineTest(Case):
             path.write_text(json.dumps(e) + '\n' + json.dumps(second) + '\n')
             self.refused(c0, c1, [], 'duplicate key or mixed')
 
+    def test_merge_into_baseline_key_is_not_automatic(self):
+        """A merge made after the baseline into a key it lists never redirects automatically, cumulative or step."""
+        one, twin = city(1, 'One'), city(2, 'Twin')
+        c0 = self.repo.commit({**self.base_files, CITY: [one, twin]})
+        c1 = self.repo.commit({}, 'baseline')
+        c2 = self.repo.commit({CITY: [one]})
+        self.baseline(c1, one)
+        ev = removal('cities', 2, c2, c1, CITY, twin, 'merged_same_entity', [target('cities', 1, 'merged_same_entity')], auto=True)
+        for frm, out in ((c0, 'cumulative'), (c1, 'step')):
+            content, _ = self.gen(frm, c2, [ev], out=out)
+            self.assertEqual(content[0][0]['current_targets'],
+                             [{'table': 'cities', 'id': 1, 'relations': ['merged_same_entity'], 'automatic_redirect': False}])
+
+    def test_merge_redirect_follows_latest_identity_decision(self):
+        """A key classified before the merge redirects automatically; reopened as unresolved before it, it does not."""
+        one, twin = city(1, 'One'), city(2, 'Twin')
+        c0 = self.repo.commit({**self.base_files, CITY: [one, twin]})
+        c1 = self.repo.commit({}, 'baseline')
+        c2 = self.repo.commit({}, 'classified')
+        c3 = self.repo.commit({}, 'reopened')
+        c4 = self.repo.commit({CITY: [one]})
+        self.baseline(c1, one)
+        review = lambda c, outcome: dict(identity_event(1, c, one, outcome, []), decision_only=True, after_row_sha256=row_hash(one))
+        merge = removal('cities', 2, c4, c3, CITY, twin, 'merged_same_entity', [target('cities', 1, 'merged_same_entity')], auto=True)
+        content, _ = self.gen(c0, c4, [review(c2, 'classification'), merge], out='classified')
+        self.assertTrue(content[0][0]['current_targets'][0]['automatic_redirect'])
+        for frm, out in ((c0, 'reopened'), (c3, 'reopened_step')):
+            content, _ = self.gen(frm, c4, [review(c2, 'classification'), review(c3, 'unresolved'), merge], out=out)
+            self.assertFalse(content[0][0]['current_targets'][0]['automatic_redirect'])
+
     def test_missing_inventory_fails_closed(self):
         """Accidentally omitting the baseline file cannot produce an apparently complete release."""
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'Legacy')]})

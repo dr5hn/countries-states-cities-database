@@ -692,6 +692,16 @@ class Gate:
         self.timeline[k].append((i, 'restoration', e))
         return True
 
+    def identity_at(self, key, at):
+        """The latest identity decision on a key at or before the given index (the same commit included), or None."""
+        latest = None
+        for i, kind, e in self.timeline.get(key, []):
+            if i > at:
+                break
+            if kind == 'identity':
+                latest = e
+        return latest
+
     def next_event(self, key, after):
         """The first event on a key at a commit later than the given index, or None."""
         events = self.timeline.get(key, [])
@@ -702,7 +712,8 @@ class Gate:
 def resolve_targets(gate, final, targets, index, auto):
     """Follow targets forward in history to what stands for them at --to, without recursion. A removal passes to its
     targets; a repurpose passes to the entity the number used to denote (prior_identity), never redirecting
-    automatically; an unresolved identity keeps the key but ends any automatic redirect. A removal followed by a
+    automatically; an unresolved identity, at or before the step that enters a key or later, keeps the key but ends
+    any automatic redirect. A removal followed by a
     restoration of the same id continues at that id (relation restored), never automatically. A path that ends in a
     removal with no successor is reported with that outcome. Every step moves to a strictly later event, so each path
     ends; identical results are listed once. Branching histories can multiply paths, so more than EXPANSION_LIMIT steps
@@ -723,6 +734,8 @@ def resolve_targets(gate, final, targets, index, auto):
                                  'check the ledger for an unintended fan-out of split events')
         t, at, relations, redirect = stack.pop()
         key = (t['table'], t['id'])
+        if redirect and (gate.identity_at(key, at) or {}).get('outcome') == 'unresolved':
+            redirect = False   # a key still unresolved where the chain enters it is never an automatic redirect
         nxt = gate.next_event(key, at)
         if nxt is None:
             if key in final:
