@@ -32,9 +32,18 @@ has no item. Facts that are proved stay; unproved assertions that would tie the 
 
 `identity_changes.jsonl` holds the decisions made in its release's interval, so a key missing from a later file is
 not resolved by that. Before v5.0.0 is published, its cumulative identity file must also provide a complete reviewed
-baseline of every retained unresolved key, including legacy rows unchanged since v4.0. Starting from that verified
-baseline, apply subsequent identity decisions in order and retain each key's latest decision. Absence from a later
-file does not resolve a key. Strict territorial consumers exclude the keys whose latest decision is unresolved.
+baseline of every retained unresolved key, including legacy rows unchanged since v4.0. The reviewed input is
+[`migrations/unresolved_baseline.jsonl`](migrations/unresolved_baseline.jsonl): each key binds its snapshot commit,
+full-row hash, reason, decision round, review and evidence. It does not fabricate a changed-row event. The generator
+validates the snapshot and includes it in the cumulative file as `baseline: true` (migration format 3). Keep that
+baseline immutable; later releases append decisions to the ordinary ledger. A guarded `decision_only` identity
+event permits a later review without a scalar edit. See [the input and ordering rules](migrations/README.md#reviewed-unresolved-baseline).
+
+Starting from that verified baseline, apply subsequent identity decisions in first-parent order and retain each
+key's latest decision; reviewed removals retire keys. Absence from a later file does not resolve a key. Field
+admission does not itself replace an explicit unresolved identity decision. Strict territorial consumers exclude
+retained keys whose latest decision is unresolved. Inventory disclosure does not close a substantive publication
+hold or authorise an otherwise unproved transfer.
 
 ## What each kind of release may change
 
