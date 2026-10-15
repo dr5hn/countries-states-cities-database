@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import fetch from 'node-fetch';
-import { countyStates, localStateIds, seedCityRow } from './city-state';
+import { countyStates, localStateIds, seedCityRow } from './city-state.ts';
 
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
