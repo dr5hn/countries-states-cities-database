@@ -4,9 +4,11 @@ This project provides a Prisma schema and seeding script for a comprehensive dat
 
 ## Setup
 
+Use Node 24 or Node 26; the seed uses Node's built-in TypeScript support and `fetch`.
+
 1. Install dependencies:
    ```
-   npm install
+   npm ci
    ```
 
 2. Set up your database and update the `DATABASE_URL` in your `.env` file.
