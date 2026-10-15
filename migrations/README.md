@@ -17,9 +17,45 @@ it claims nothing beyond that.
 | `removed_ids.jsonl` | One line per removal in the interval, ids created and removed in between included. Each line has the reviewed event, the removed row (`before`), `present_at_from`, `present_at_to` and `current_targets`, which follows later removals to the records that exist in this release. The removal of a repurposed id also has `repurposed_at` and `later_entity_targets` (see below). `restored_at` marks an id the same entity got back later. |
 | `removed_ids.csv` | v4.0's columns `record, old_id, name, country_code, state_code, outcome, new_table, new_id, source`, then `relation, automatic_redirect, event_commit`. One row per current target. A removal with no successor has one row with empty `new_table` and `new_id`. Rows for `later_entity_targets` follow, with a `relation` starting `later_entity>` and `automatic_redirect` `no`. |
 | `added_ids.jsonl` | Every id present in this release and not in the earlier one: table, id, name, file and the commit that added it. An id a reviewed restoration brought back also has `restored` (its event and retirement commits). |
-| `identity_changes.jsonl` | Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A repurpose decided before `--from` is listed again, with `event_before_from: true`, when the removal that retires it (`retires_repurpose`) is in this interval; other earlier decisions are not repeated. |
+| `identity_changes.jsonl` | The reviewed unresolved snapshot (`baseline: true`) when its anchor is in the interval, then later identity decisions in first-parent order. Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A repurpose decided before `--from` is listed again, with `event_before_from: true`, when the removal that retires it (`retires_repurpose`) is in this interval; other earlier decisions are not repeated. |
 | `changed_fields.jsonl` | One line per changed field of a record present in both releases. Each line gives `before` and `after` as typed JSON (`1`, `1.0` and `true` differ), plus `before_present` and `after_present`, so a missing field and a null one can be told apart. `translations` is compared per language (`translations.de`), or as a whole when one side is not an object. By policy, `created_at`, `updated_at` and `flag` are left out: they are bookkeeping, not facts about the place (the importer keeps the values a file gives and fills missing ones). |
-| `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (2), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
+| `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (3), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
+
+## Reviewed unresolved baseline
+
+`unresolved_baseline.jsonl` is the reviewed inventory of every retained unresolved key at `baseline_commit`,
+including rows unchanged since v4.0. It is an input, separate from `events.jsonl`: a snapshot disclosure does not
+claim a scalar change happened at that commit. Each line has `schema_version: 1`, `table`, `id`, a full
+`baseline_commit`, canonical full `row_sha256`, `outcome: "unresolved"`, `reason`, `decision_round`,
+`review_status: "reviewed"`, `review` (reason and reviewer), and nonempty `evidence` with the ledger's URL/manifest
+rules. Audit manifest pointers refer to the retained csc-data-audit evidence bundle; their SHA-256 identifies the
+exact bytes. The generator checks their shape without fetching sources. Review establishes inventory completeness;
+Git validates the keys and guards, not the semantic adequacy of the evidence.
+
+The default input is `unresolved_baseline.jsonl` beside `--ledger`; `--baseline PATH` overrides that location.
+The file is required; an empty inventory is valid only when review found no unresolved keys. All entries share one
+anchor. Duplicate keys, malformed provenance, a missing/stale row at the anchor, a key already repurposed, removed
+or reserved, an off-line anchor, or a conflicting identity event at that commit fail before output is written.
+At the initial v5 pin every baseline key must remain present at `--to`; later reviewed removals and repurposes may
+retire it through the normal ledger gates. Keep the baseline immutable and ship it with the generator and ledger.
+
+The first cumulative v4-to-v5 file carries all baseline entries with `event_type: "identity"`, `baseline: true`,
+`event_commit` equal to the reviewed anchor, identical `before`/`after` rows, no targets and no redirect. Its
+`row_sha256` is a snapshot guard, not a `before_row_sha256` claim about an invented transition. Migration format
+version 3 distinguishes this addition. The manifest records the baseline's SHA-256, anchor and key count.
+The output is ordered by first-parent commit, then key; a step interval excludes decisions at or before `--from`.
+A future anchor waits for its release. Historical guards are still checked when the anchor precedes `--from`.
+
+Consumers start from the verified v5 baseline, apply later identity decisions in order and retain the latest outcome
+per `(table, id)`; apply reviewed removals as retirements. An omitted key stays unresolved until an explicit later
+decision resolves it or a reviewed removal retires it. Category-field admission alone does not replace an explicit
+unresolved identity decision. The 117 listed rename keys and 12 Russian rayon mappings remain publication holds;
+including them in this inventory does not approve their transfer assertions or close those holds.
+
+A later review can resolve identity without editing the data: append a normal reviewed identity event with
+`decision_only: true`, `before_row_sha256` and `after_row_sha256` guarding the unchanged row at that review commit.
+Only `classification`, `dual_role` and `unresolved` allow this form; a repurpose still requires a real transition
+and its existing remediation checks. Evidence, review, target and history checks remain mandatory.
 
 ## Outcomes and relations
 

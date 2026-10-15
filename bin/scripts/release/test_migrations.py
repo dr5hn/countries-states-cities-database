@@ -98,6 +98,7 @@ class Case(unittest.TestCase):
         self.repo = Repo(self.dir)
         self.base_files = {'contributions/countries/countries.json': [{'id': 1, 'name': 'X', 'iso2': 'XX'}],
                            'contributions/states/states.json': [{'id': 1, 'name': 'A', 'iso2': 'AA', 'country_code': 'XX'}]}
+        (self.dir / 'unresolved_baseline.jsonl').write_text('')
         self.reserved = self.dir / 'reserved.jsonl'
         self.reserved.write_text('')
         self.meta = self.dir / 'meta.json'
@@ -824,6 +825,132 @@ class RobustnessTest(Case):
         c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
         c1 = self.repo.commit({'contributions/cities/YY.json': [{'name': 'New'}]})
         self.refused(c0, c1, [], 'contributions/cities/YY.json row 0')
+
+
+class BaselineTest(Case):
+    """Snapshot disclosures and later decisions work even when no scalar changes."""
+
+    def baseline(self, commit, row, **changes):
+        """Write one reviewed unresolved snapshot; return its input object."""
+        entry = {'schema_version': 1, 'table': 'cities', 'id': row['id'], 'baseline_commit': commit,
+                 'row_sha256': row_hash(row), 'outcome': 'unresolved', 'reason': 'original scope unproved',
+                 'decision_round': '4c', 'review_status': 'reviewed',
+                 'review': {'reviewer': 'test', 'reason': 'reviewed legacy hold'},
+                 'evidence': [{'url': 'https://example.invalid/decision'}], **changes}
+        (self.dir / 'unresolved_baseline.jsonl').write_text(json.dumps(entry) + '\n')
+        return entry
+
+    def test_unchanged_legacy_row_is_published(self):
+        """A row identical to --from still gets a baseline identity and reconciled output hashes/counts."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        self.baseline(c1, row)
+        content, out = self.gen(c0, c1, [])
+        self.assertEqual(content[4], [])
+        e, = content[3]
+        self.assertTrue(e['baseline'])
+        self.assertEqual((e['before'], e['after'], e['present_at_to']), (row, row, True))
+        manifest = json.loads((out / 'release_manifest.json').read_text())
+        self.assertEqual(manifest['tables']['cities']['identity_events'], 1)
+        self.assertEqual(manifest['migration_format_version'], 3)
+        self.assertEqual(manifest['unresolved_baseline']['keys'], 1)
+        self.assertEqual(manifest['files']['identity_changes.jsonl'], m.hashlib.sha256((out / 'identity_changes.jsonl').read_bytes()).hexdigest())
+
+    def test_baseline_validation_refuses_bad_inputs(self):
+        """Bad keys, empty provenance, wrong guards, duplicates and mixed anchors cannot be published."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        for changes in ({'id': True}, {'reason': ' '}, {'decision_round': ''}, {'evidence': []},
+                        {'review_status': 'held'}, {'outcome': 'classification'}, {'row_sha256': 'bad'}):
+            with self.subTest(changes=changes):
+                self.baseline(c1, row, **changes)
+                self.refused(c0, c1, [], 'unresolved baseline')
+        for changes in ({'row_sha256': '0' * 64}, {'id': 9}):
+            self.baseline(c1, row, **changes)
+            self.refused(c0, c1, [], 'baseline row missing or row_sha256')
+        e = self.baseline(c1, row)
+        path = self.dir / 'unresolved_baseline.jsonl'
+        for second in (e, {**e, 'id': 2, 'baseline_commit': c0}):
+            path.write_text(json.dumps(e) + '\n' + json.dumps(second) + '\n')
+            self.refused(c0, c1, [], 'duplicate key or mixed')
+
+    def test_missing_inventory_fails_closed(self):
+        """Accidentally omitting the baseline file cannot produce an apparently complete release."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'Legacy')]})
+        (self.dir / 'unresolved_baseline.jsonl').unlink()
+        with self.assertRaises(FileNotFoundError):
+            self.gen(c0, c0, [])
+
+    def test_future_and_off_line_snapshots(self):
+        """A later snapshot waits; an unrelated commit or invented SHA is rejected."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        self.baseline(c1, row)
+        content, _ = self.gen(c0, c0, [])
+        self.assertEqual(content[3], [])
+        self.baseline('f' * 40, row)
+        self.refused(c0, c1, [], 'not on the release line')
+        self.repo.run('checkout', '-q', '-b', 'side', c0)
+        side = self.repo.commit({}, 'side')
+        self.baseline(side, row)
+        self.refused(c0, c1, [], 'not on the release line')
+
+    def test_root_and_step_intervals_validate_without_repeating(self):
+        """An anchor at the root or exactly --from is checked but is not repeated in a later step file."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        self.baseline(c0, row)
+        content, _ = self.gen(c0, c1, [])
+        self.assertEqual(content[3], [])
+        self.baseline(c0, row, row_sha256='0' * 64)
+        self.refused(c0, c1, [], 'row_sha256')
+
+    def test_later_review_without_data_edit_resolves_in_order(self):
+        """A guarded decision on an unchanged row follows the baseline; a step carries only the new decision."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        c2 = self.repo.commit({}, 'identity review')
+        self.baseline(c1, row)
+        ev = dict(identity_event(1, c2, row, 'classification', []), decision_only=True, after_row_sha256=row_hash(row))
+        content, _ = self.gen(c0, c2, [ev])
+        self.assertEqual([e['outcome'] for e in content[3]], ['unresolved', 'classification'])
+        content, _ = self.gen(c1, c2, [ev], out='step')
+        self.assertEqual([e['outcome'] for e in content[3]], ['classification'])
+        self.refused(c0, c2, [dict(ev, after_row_sha256='0' * 64)], 'after_row_sha256')
+        self.refused(c0, c2, [identity_event(1, c2, row, 'classification', [])], 'did not change there')
+        for changes in ({'decision_only': 'true'}, {'decision_only': False}, {'outcome': 'repurpose'},
+                        {'after_row_sha256': None}):
+            self.assertTrue(event_errors({**ev, **changes}, 'e'))
+
+    def test_later_removal_clears_active_hold(self):
+        """A cumulative file preserves the historical disclosure, while the reviewed removal retires the key."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        c2 = self.repo.commit({CITY: []})
+        self.baseline(c1, row)
+        ev = removal('cities', 1, c2, c1, CITY, row, 'no_successor', [])
+        content, _ = self.gen(c0, c2, [ev])
+        self.assertFalse(content[3][0]['present_at_to'])
+        self.assertEqual(content[0][0]['old_id'], 1)
+        self.baseline(c2, row)
+        self.refused(c0, c2, [ev], 'baseline row missing')
+
+    def test_repurpose_and_same_commit_conflicts_are_refused(self):
+        """A known transfer cannot be masked by an unresolved snapshot, nor can two decisions share its position."""
+        old, later = city(1, 'Old'), city(1, 'Other')
+        c0 = self.repo.commit({**self.base_files, CITY: [old]})
+        c1 = self.repo.commit({CITY: [later]})
+        ev = dict(identity_event(1, c1, old, 'repurpose', []), prior_entity={
+            'status': 'unrecorded', 'reason': 'separate original', 'evidence': [{'url': 'https://example.invalid/original'}]})
+        self.baseline(c1, later)
+        self.refused(c0, c1, [ev], 'baseline key was repurposed')
+        self.refused(c0, c1, [identity_event(1, c1, old, 'classification', [])], 'baseline conflicts')
 
 
 if __name__ == '__main__':
