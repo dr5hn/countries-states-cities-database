@@ -5,9 +5,10 @@ release's, so you can update ids stored in your own systems. They are generated,
 [`bin/scripts/release/migrations.py`](../bin/scripts/release/migrations.py) from this folder's ledger and the git
 history of `contributions/`.
 
-**Status:** the export workflow runs the generator (below), but `events.jsonl`, which holds every removal
-since v4.0 (10,201) and the 1509 restoration, still has 339 cities removals `held` (9,862 are reviewed). The generator
-refuses every release until they are decided, so until then no release carries these files.
+**Status:** `events.jsonl` holds every removal since v4.0 (10,201) and the 1509 restoration, and every one is
+reviewed. The generator accepts the cumulative interval from v4.0, and the export workflow (below) attaches its files
+to each export release. A removal whose successor could not be proved is recorded as `no_successor` with no target;
+it claims nothing beyond that.
 
 ## The files
 
@@ -214,6 +215,7 @@ commits walked, not the length of the interval:
 |---|---:|---:|---:|
 | #2009 to master (9 commits), checking 9,862 earlier events and the 1509 restoration | 203 | 68 s | 2.8 GB |
 | v4.0 to master, cumulative (refused on exactly the 339 held events) | 208 | 66 s | 3.5 GB |
+| v4.0 to master `2a04cd21`, cumulative, every event reviewed (15 October) | 229 | 117 s | 3.2 GB |
 
 Tests: `python3 -m unittest bin/scripts/release/test_migrations.py` from the repository root, or
 `cd bin/scripts/release && python3 -m unittest test_migrations test_release_migrations`. The tests run on scratch git repositories.
