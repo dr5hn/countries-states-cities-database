@@ -4,7 +4,7 @@ This project provides a Prisma schema and seeding script for a comprehensive dat
 
 ## Setup
 
-Use Node 24 or Node 26; the seed uses Node's built-in TypeScript support and `fetch`.
+Use Node 24 or Node 26; the seed checks types before running with Node's built-in TypeScript support and `fetch`.
 
 1. Install dependencies:
    ```

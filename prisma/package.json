@@ -7,7 +7,7 @@
     "scripts": {
       "generate": "prisma generate",
       "db:push": "prisma db push",
-      "seed": "node seed.ts"
+      "seed": "tsc --project tsconfig.json && node seed.ts"
     },
     "keywords": [
       "prisma",
