@@ -41,10 +41,27 @@ changed while keeping the number (the four outcomes of decisions_4_final.md):
 - `classification`: the same entity, with its category or depth corrected. No targets.
 - `dual_role`: the row stands for a place and its unit. The target, if any, is the unit's own record (`moved_dataset`).
 - `repurpose`: the number came to denote another entity. The targets are where the earlier entity is now
-  (`prior_identity`). A repurposed id may not remain at `--to`. It must be retired by a later reviewed removal that
+  (`prior_identity`), which must exist at the event commit. If the earlier entity has no separate record there,
+  use `targets: []` with an explicit `prior_entity`: `status` is `ended` (the entity ceased to exist) or `unrecorded`
+  (it has no separate record), `reason` explains the finding, and `evidence` is a non-empty list with the same
+  URL/manifest rules as event evidence. This declares absence of a record at conversion, not uncertainty about the original
+  identity, and makes no claim that the later entity is its territorial successor. For example:
+  `"prior_entity": {"status": "ended", "reason": "District tier ended on 2025-07-01; no separate original record",
+  "evidence": [{"url": "https://example.org/reform-instrument"}]}`.
+  If an original entity was unrecorded at conversion but gained a separate representation later, its declaration
+  may include `recorded_later: {"event_commit": "<full SHA>", "target": {"table": "cities", "id": 123},
+  "row_sha256": "<full row hash>"}`. The commit must follow the identity event on the same first-parent line;
+  the target must be added or change there and match the full hash. The declaration needs evidence for that original identity,
+  not just a matching item. Resolution starts at that later representation and follows subsequent events; it stays
+  unrecorded for a release before that commit. `ended` cannot use this field.
+  A nonempty `prior_identity` mapping and `prior_entity` are mutually exclusive; other outcomes cannot use it.
+  Identity output retains the declaration; the remediation removal carries it alongside empty `current_targets`
+  unless `recorded_later` applies. With no applicable later representation, a target chain entering such a repurpose
+  ends with `end: "ended"` or `"unrecorded"` and the declaration.
+  A repurposed id may not remain at `--to`. It must be retired by a later reviewed removal that
   says so in `retires_repurpose` (below), before it can be repurposed again: a second repurpose of an id whose first is
   not yet remediated is refused. The old id then keeps its earlier meaning: its `current_targets` are the
-  repurpose's `prior_identity`, and the entity the number came to denote is listed apart in `later_entity_targets`.
+  repurpose's `prior_identity` (or its `recorded_later` representation), and the entity the number came to denote is listed apart in `later_entity_targets`.
   Neither redirects automatically.
 - `unresolved`: what the row first denoted is not established. No targets.
 

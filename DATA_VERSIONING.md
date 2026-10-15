@@ -83,7 +83,13 @@ They do not describe changes to the separate `regions` and `subregions` grouping
 - For a repaired key, `current_targets` is the entity it first denoted, and `later_entity_targets` the replacement key
   of the entity it came to denote: check which one you stored. The removal's `retires_repurpose.replacement_kind`
   says whether the replacement is `fresh` (never used before) or `existing`, and the identity decision's `remediation`
-  records it too. Neither mapping redirects automatically. An existing replacement may appear in `added_ids.jsonl` if
+  records it too. If the original entity has no separate record, the reviewed identity declares `targets: []` and
+  `prior_entity` with status `ended` or `unrecorded`, a reason and evidence. The remediation removal preserves that
+  declaration with empty `current_targets`; a chain entering it ends with that status. If the original entity gained
+  a separate representation later, an evidenced `recorded_later` declaration binds its commit, target and full-row
+  hash. `current_targets` then follows that representation from that commit (see migrations/README.md). This is an evidenced absence
+  of representation, not an unresolved identity or a claim of territorial succession. The later entity still needs
+  its replacement key and the repurposed key still must retire. Neither mapping redirects automatically. An existing replacement may appear in `added_ids.jsonl` if
   it was absent from your baseline and is present at the target; `replacement_kind` is not an added-file membership
   test.
 - `added_ids.jsonl`: keys present at the end and not at the start. A restored key appears with `restored` when your

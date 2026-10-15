@@ -341,6 +341,123 @@ class HistoryTest(Case):
         self.assertEqual(removed[0]['current_targets'], [{'table': 'counties', 'id': 9, 'relations': ['merged_same_entity', 'prior_identity'],
                                                          'automatic_redirect': False}])
 
+    def test_no_record_repurpose_schema(self):
+        """Empty mappings need their own explicit, evidenced declaration; existing target rules remain strict."""
+        prior = {'status': 'unrecorded', 'reason': 'No separate original record at conversion',
+                 'evidence': [{'url': 'https://example.invalid/inventory'}]}
+        event = identity_event(2, 'a' * 40, city(2, 'Old'), 'repurpose', [])
+        self.assertTrue(event_errors(event, 'test'))
+        self.assertFalse(event_errors(dict(event, prior_entity=prior), 'test'))
+        for bad in (None, [], {}, {**prior, 'status': 'unknown'}, {**prior, 'status': []},
+                    {**prior, 'reason': ' '}, {**prior, 'evidence': []},
+                    {**prior, 'evidence': [{'url': 'file:///tmp/source'}]}):
+            with self.subTest(prior=bad):
+                self.assertTrue(event_errors(dict(event, prior_entity=bad), 'test'))
+        for bad in (dict(event, prior_entity=prior, targets=[target('counties', 9, 'prior_identity')]),
+                    dict(event, prior_entity=prior, outcome='classification'),
+                    dict(event, prior_entity=prior, automatic_redirect=True),
+                    dict(event, prior_entity=prior, review={}),
+                    dict(event, prior_entity=prior, evidence=[]),
+                    removal('cities', 2, 'a' * 40, 'b' * 40, CITY, city(2, 'Old'),
+                            'no_successor', [], prior_entity=prior),
+                    dict(restoration('cities', 2, 'a' * 40, 'b' * 40, city(2, 'Old'), city(2, 'Old'),
+                                     {'wikiDataId': 'Q1'}), prior_entity=prior)):
+            with self.subTest(event=bad):
+                self.assertTrue(event_errors(bad, 'test'))
+
+    def test_no_record_repurpose_still_needs_complete_remediation(self):
+        """Both statuses keep all history, hash, replacement and retirement gates and never redirect."""
+        (c0, c1, c2, c3), (merge, original, retire) = self.repurpose_history()
+        for status in ('ended', 'unrecorded'):
+            prior = {'status': status, 'reason': 'Reviewed absence of a separate original record',
+                     'evidence': [{'url': 'https://example.invalid/inventory'}]}
+            rep = dict(original, targets=[], prior_entity=prior)
+            self.refused(c0, c2, [merge, rep], 'still denotes the other entity')
+            self.refused(c0, c3, [merge, rep, {k: v for k, v in retire.items() if k != 'retires_repurpose'}],
+                         'needs retires_repurpose')
+            self.refused(c0, c3, [merge, dict(rep, before_row_sha256='0' * 64), retire], 'identity before_row_sha256')
+            self.refused(c0, c3, [merge, rep, dict(retire, retires_repurpose={**retire['retires_repurpose'],
+                         'replacement_kind': 'existing'})], 'first appears at this commit')
+            for frm in (c0, c2):
+                (removed, rows, _, identity, *_), _ = self.gen(frm, c3, [merge, rep, retire],
+                                                              out=f'no-record-{status}-{frm[:6]}')
+                own = next(r for r in removed if r['old_id'] == 2)
+                self.assertEqual(own['current_targets'], [])
+                self.assertEqual(own['prior_entity'], prior)
+                self.assertEqual(identity[0]['prior_entity'], prior)
+                self.assertEqual(identity[0]['current_targets'], [])
+                self.assertEqual(own['later_entity_targets'][0]['id'], 3)
+                self.assertFalse(own['later_entity_targets'][0]['automatic_redirect'])
+                self.assertEqual(identity[0]['event_before_from'], frm == c2)
+                self.assertNotIn('yes', [r[10] for r in rows])
+                if frm == c0:
+                    terminal = next(r for r in removed if r['old_id'] == 1)['current_targets'][0]
+                    self.assertEqual(terminal['end'], status)
+                    self.assertEqual(terminal['prior_entity'], prior)
+                    self.assertIsNone(terminal['id'])
+                    self.assertFalse(terminal['automatic_redirect'])
+        self.refused(c0, c3, [merge, dict(original, targets=[target('counties', 999, 'prior_identity')]), retire],
+                     'identity target counties 999')
+
+    def test_recorded_later_schema(self):
+        """Delayed representation is only for unrecorded entities and binds an exact different key, commit and row."""
+        later = {'event_commit': 'b' * 40, 'target': {'table': 'counties', 'id': 9}, 'row_sha256': 'c' * 64}
+        prior = {'status': 'unrecorded', 'reason': 'Original unit first represented later',
+                 'evidence': [{'url': 'https://example.invalid/proof'}], 'recorded_later': later}
+        event = dict(identity_event(2, 'a' * 40, city(2, 'Unit'), 'repurpose', []), prior_entity=prior)
+        self.assertFalse(event_errors(event, 'test'))
+        for bad in (None, {}, {**later, 'event_commit': 'bad'}, {**later, 'row_sha256': False},
+                    {**later, 'target': {'table': 'cities', 'id': 2}}, {**later, 'target': {'table': 'cities', 'id': True}}):
+            with self.subTest(later=bad):
+                self.assertTrue(event_errors(dict(event, prior_entity={**prior, 'recorded_later': bad}), 'test'))
+        self.assertTrue(event_errors(dict(event, prior_entity={**prior, 'status': 'ended'}), 'test'))
+
+    def test_recorded_later_is_temporal_hash_checked_and_follows_later_events(self):
+        """A prior entity can gain representation later; future mappings wait, and bad timing/rows are refused."""
+        counties = 'contributions/counties/XX.json'
+        original, town, unit = city(2, 'Unit'), city(2, 'Town'), {'id': 9, 'name': 'Unit'}
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'A'), original], counties: []})
+        c1 = self.repo.commit({CITY: [original]})
+        c2 = self.repo.commit({CITY: [town]})
+        c3 = self.repo.commit({CITY: [city(3, 'Town')]})
+        c4 = self.repo.commit({counties: [unit]})
+        c5 = self.repo.commit({counties: [{'id': 10, 'name': 'Unit'}]})
+        c6 = self.repo.commit({})
+        merge = removal('cities', 1, c1, c0, CITY, city(1, 'A'), 'merged_same_entity',
+                        [target('cities', 2, 'merged_same_entity')], auto=True)
+        later = {'event_commit': c4, 'target': {'table': 'counties', 'id': 9}, 'row_sha256': row_hash(unit)}
+        prior = {'status': 'unrecorded', 'reason': 'Unit not independently recorded until later',
+                 'evidence': [{'url': 'https://example.invalid/proof'}], 'recorded_later': later}
+        rep = dict(identity_event(2, c2, original, 'repurpose', []), prior_entity=prior)
+        retire = removal('cities', 2, c3, c2, CITY, town, 'merged_same_entity',
+                         [target('cities', 3, 'merged_same_entity')], retires_repurpose={
+                             'identity_event_commit': c2, 'replacement': {'table': 'cities', 'id': 3}, 'replacement_kind': 'fresh'})
+        move = removal('counties', 9, c5, c4, counties, unit, 'merged_same_entity',
+                       [target('counties', 10, 'merged_same_entity')], auto=True)
+        events = [merge, rep, retire, move]
+        (removed, _, _, identity, *_), _ = self.gen(c0, c3, events, out='before-recorded')
+        self.assertEqual(identity[0]['current_targets'], [])
+        self.assertEqual(removed[0]['current_targets'][0]['end'], 'unrecorded')
+        for frm in (c0, c2, c4):
+            (removed, _, _, identity, *_), _ = self.gen(frm, c5, events, out=f'after-recorded-{frm[:6]}')
+            own = next(r for r in removed if r['old_table'] == 'cities' and r['old_id'] == 2) if frm != c4 else None
+            if own:
+                self.assertEqual(own['current_targets'][0]['id'], 10)
+                self.assertFalse(own['current_targets'][0]['automatic_redirect'])
+                self.assertEqual(own['prior_entity'], prior)
+            if identity:
+                self.assertEqual(identity[0]['current_targets'][0]['id'], 10)
+        for update, pattern in (({'row_sha256': '0' * 64}, 'row_sha256 does not match'),
+                                ({'target': {'table': 'counties', 'id': 99}}, 'target missing'),
+                                ({'event_commit': c0}, 'must follow its identity event'),
+                                ({'event_commit': c1}, 'must follow its identity event'),
+                                ({'event_commit': c2}, 'must follow its identity event'),
+                                ({'event_commit': 'f' * 40}, 'not on the release line'),
+                                ({'event_commit': c6, 'target': {'table': 'counties', 'id': 10},
+                                  'row_sha256': row_hash({'id': 10, 'name': 'Unit'})}, 'target did not change')):
+            bad = dict(rep, prior_entity={**prior, 'recorded_later': {**later, **update}})
+            self.refused(c0, c6, [merge, bad, retire, move], pattern)
+
     def test_fresh_replacement_must_be_new(self):
         """A 'fresh' replacement that existed before the repurpose is refused; declared 'existing' it is accepted."""
         counties = 'contributions/counties/XX.json'
@@ -591,6 +708,16 @@ class HistoryTest(Case):
         later = dict(removal('cities', 2, c1, c0, CITY, city(2, 'Two'), 'no_successor', []), review_status='held')
         self.gen(c0, c0, [later])
         self.gen(c0, c0, [], out='out2')
+
+    def test_held_identity_with_malformed_prior_entity(self):
+        """A held identity event's prior_entity is never read: a malformed one waits harmlessly in a later release and,
+        inside the interval, the event is refused as held rather than crashing the walk."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One', type='town')]})
+        for n, bad in enumerate((None, [], 'ended', {'recorded_later': 'x'}, {'recorded_later': {'event_commit': 7}})):
+            held = dict(identity_event(1, c1, city(1, 'One'), 'repurpose', []), review_status='held', prior_entity=bad)
+            self.gen(c0, c0, [held], out=f'held{n}')
+            self.refused(c0, c1, [held], 'identity event is held')
 
     def cli(self, ledger, meta=None):
         """Run the command line on the scratch repository; returns (exit code, stderr)."""

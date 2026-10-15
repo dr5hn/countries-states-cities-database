@@ -192,6 +192,8 @@ def event_errors(e, where):
          'a reviewed event needs review.reason and review.reviewer')
     need(isinstance(e.get('evidence'), list) and len(e['evidence']) > 0 and all(evidence_ok(x) for x in e['evidence']),
          'a reviewed event needs evidence: objects with a manifest and its sha256, or an http(s) url with a host')
+    if 'prior_entity' in e:
+        need(kind == 'identity' and e.get('outcome') == 'repurpose', 'prior_entity is only for a repurpose identity')
     if kind == 'restoration':
         return errs
     need(type(e.get('automatic_redirect')) is bool, 'automatic_redirect must be true or false')
@@ -200,6 +202,24 @@ def event_errors(e, where):
     if not is_str(outcome, rules) or not isinstance(targets, list):
         return errs + [f'{where}: outcome {outcome!r} unknown for a {kind} event, or targets not a list (use [] for none)']
     allowed, required, fewest, most = rules[outcome]
+    if 'prior_entity' in e:
+        prior = e['prior_entity']
+        no_record = kind == 'identity' and outcome == 'repurpose' and not targets
+        need(no_record, 'prior_entity is allowed only on a repurpose identity with targets []')
+        need(isinstance(prior, dict) and is_str(prior.get('status'), ('ended', 'unrecorded'))
+             and is_str(prior.get('reason')) and bool(prior['reason'].strip())
+             and isinstance(prior.get('evidence'), list) and bool(prior['evidence'])
+             and all(evidence_ok(x) for x in prior['evidence']),
+             'prior_entity needs status ended or unrecorded, a nonblank reason and usable evidence')
+        if isinstance(prior, dict) and 'recorded_later' in prior:
+            later = prior['recorded_later']
+            need(prior.get('status') == 'unrecorded' and isinstance(later, dict)
+                 and is_str(later.get('event_commit')) and bool(SHA1.fullmatch(later['event_commit']))
+                 and key_ok(later.get('target')) and (later['target']['table'], later['target']['id']) != (e[tkey], e[ikey])
+                 and is_str(later.get('row_sha256')) and bool(SHA256.fullmatch(later['row_sha256'])),
+                 'recorded_later needs an unrecorded prior entity, event_commit, a different target and row_sha256')
+        if no_record:
+            required, fewest = None, 0
     keys = set()
     for t in targets:
         ok = (isinstance(t, dict) and is_str(t.get('table'), TABLES) and positive_id(t.get('id'))
@@ -460,12 +480,16 @@ class Gate:
         self.errors, self.used, self.events, self.identity = [], set(), [], []
         self.added_at, self.restored, self.repurposed, self.remediated = {}, {}, {}, {}
         self.first_seen, self.removed_ever = {}, set()   # first addition in the walk, and every id the walk saw removed
+        self.prior_records = {}   # identity key -> (later representation index, target) validated against that commit
         self.latest_removal = {}   # key -> the commit of its latest disappearance in the walk
         self.timeline = defaultdict(list)   # key -> [(commit index, kind, event)] in history order
         self.at = defaultdict(list)         # commit -> [(kind, key, event)] for identity and restoration events
         for kind, events in (('identity', identities), ('restoration', self.restorations)):
             for key, e in events.items():
                 self.at[key[2]].append((kind, key, e))
+                later = recorded_later_of(e)
+                if later:
+                    self.at[later['event_commit']].append(('prior_representation', key, e))
 
     def __call__(self, i, c, parent, removed, added, before, state):
         """Check one commit after it has been applied to the namespace."""
@@ -527,6 +551,23 @@ class Gate:
                     self.repurposed.setdefault(k, (i, c, e))
                 self.identity.append((k, c, e, before[k][1], state.rows[k], inside))
                 self.timeline[k].append((i, 'identity', e))
+
+        for kind, key, e in self.at.get(c, []):
+            if kind != 'prior_representation':
+                continue
+            self.used.add((kind,) + key)
+            later = e['prior_entity']['recorded_later']
+            t = later['target']
+            row = state.rows.get((t['table'], t['id']))
+            if c == e['event_commit'] or ('identity',) + key not in self.used:
+                err(f'{key[0]} {key[1]}: recorded_later must follow its identity event on the release line')
+            elif row is None or row_hash(row) != later['row_sha256']:
+                err(f'{key[0]} {key[1]}: recorded_later target missing or row_sha256 does not match at {c[:12]}')
+            elif (t['table'], t['id']) not in added and ((t['table'], t['id']) not in before
+                    or canon(before[(t['table'], t['id'])][1]) == canon(row)):
+                err(f'{key[0]} {key[1]}: recorded_later target did not change at {c[:12]}')
+            else:
+                self.prior_records[key] = (i, dict(t, relation='prior_identity'))
 
     def retirement_ok(self, i, c, k, e):
         """The removal of a repurposed id must say it retires that repurpose and name the replacement id of the entity
@@ -651,11 +692,25 @@ def resolve_targets(gate, final, targets, index, auto):
         elif kind == 'restoration':
             stack.append((t, i, relations, False))
         elif e['outcome'] == 'repurpose':
+            if not e['targets']:
+                later = gate.prior_records.get((e['table'], e['id'], e['event_commit']))
+                if later:
+                    stack.append((later[1], later[0], relations + ['prior_identity'], False))
+                else:
+                    emit({'table': None, 'id': None, 'end': e['prior_entity']['status'], 'prior_entity': e['prior_entity'],
+                          'relations': relations + ['prior_identity'], 'automatic_redirect': False})
             for t2 in reversed(e['targets']):
                 stack.append((t2, i, relations + ['prior_identity'], False))
         else:
             stack.append((t, i, relations, redirect and e['outcome'] != 'unresolved'))
     return out
+
+
+def prior_targets(gate, final, event, index):
+    """Resolve the original entity from its historical targets or its evidenced later representation."""
+    later = gate.prior_records.get((event['table'], event['id'], event['event_commit']))
+    targets, at = ([later[1]], later[0]) if later else (event['targets'], index)
+    return resolve_targets(gate, final, targets, at, False)
 
 
 def delta(field, b, a):
@@ -698,8 +753,10 @@ def build(start, state, gate, order):
         back, fix = gate.next_event(k, order[c]), gate.remediated.get((k, c))
         if fix:
             ri, rc, rep, _ = fix
-            entry.update(repurposed_at=rc, current_targets=resolve_targets(gate, final, rep['targets'], ri, False),
+            entry.update(repurposed_at=rc, current_targets=prior_targets(gate, final, rep, ri),
                          later_entity_targets=resolve_targets(gate, final, e['targets'], order[c], False))
+            if 'prior_entity' in rep:
+                entry['prior_entity'] = rep['prior_entity']
         elif back and back[1] == 'restoration' and back[2]['retirement_commit'] == c:   # the same entity came back later
             entry.update(restored_at=back[2]['event_commit'], current_targets=resolve_targets(
                 gate, final, [{'table': k[0], 'id': k[1], 'relation': 'restored'}], back[0], False))
@@ -719,7 +776,7 @@ def build(start, state, gate, order):
                            'replacement_kind': r['retires_repurpose']['replacement_kind'],
                            'later_entity_targets': resolve_targets(gate, final, r['targets'], order[rc], False)}
         identity.append({**e, 'before': before, 'after': after, 'event_before_from': not inside, 'present_at_to': k in final,
-                         'remediation': remediation, 'current_targets': resolve_targets(gate, final, e['targets'], order[c], False)})
+                         'remediation': remediation, 'current_targets': prior_targets(gate, final, e, order[c])})
     rows = []
     for r in removed:
         b, t = r['before'], r['old_table']
@@ -837,6 +894,14 @@ def place_commits(repo, frm, to, commits):
     return interval, place
 
 
+def recorded_later_of(e):
+    """The recorded_later binding of a reviewed event, or None. Held placeholders are only checked for their core
+    fields, so their prior_entity may be malformed and is never read."""
+    prior = e.get('prior_entity') if e.get('review_status') == 'reviewed' else None
+    later = prior.get('recorded_later') if isinstance(prior, dict) else None
+    return later if isinstance(later, dict) and isinstance(later.get('event_commit'), str) else None
+
+
 def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
     problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
@@ -846,8 +911,13 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
     repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
     every = {k[2] for d in (removals, identities, restorations) for k in d}
+    every.update(later['event_commit'] for e in identities.values() if (later := recorded_later_of(e)))
     interval, place = place_commits(repo, frm, to, every)
     applies = lambda d: {k: e for k, e in d.items() if place[k[2]] != 'after'}   # a later release's events wait for it
+    for e in applies(identities).values():
+        later = recorded_later_of(e)
+        if later and not on_line_after(repo, later['event_commit'], e['event_commit']):
+            raise MigrationError(f'{e["table"]} {e["id"]}: recorded_later must follow its identity event on the release line')
     base, earlier = frm, {c for c in every if place[c] == 'before'}
     if earlier:
         position = {c: n for n, c in enumerate(first_parent_line(repo, frm))}
@@ -872,6 +942,10 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
     errors += [f'{k[0]} {k[1]}: {kind} event at {k[2][:12]} was not checked; the record did not change at that commit'
                for kind, d in (('identity', gate.identities), ('restoration', gate.restorations))
                for k in sorted(d) if (kind,) + k not in gate.used]
+    errors += [f'{k[0]} {k[1]}: recorded_later representation was not checked'
+               for k, e in gate.identities.items() if (later := recorded_later_of(e))
+               and place[later['event_commit']] != 'after'
+               and ('prior_representation',) + k not in gate.used]
     errors += [f'{k[0]} {k[1]} was repurposed at {c[:12]} and still denotes the other entity at --to; retire it with its earlier '
                f'identity and give that entity a fresh or proved existing replacement id'
                for k, (_, c, _) in sorted(gate.repurposed.items()) if k in state.rows]
