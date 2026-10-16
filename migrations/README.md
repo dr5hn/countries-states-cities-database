@@ -204,12 +204,18 @@ The immutable unresolved baseline continues to use `baseline_commit`.
 3. Finalise every new row's id before the check: id-less rows are allowed in intermediate history, not at `--to`.
    All existing review, target, retirement, repurpose, baseline and restoration gates remain in force. A repurpose
    that still leaves the id denoting the other entity at the preview is refused; PR keys do not waive remediation.
-4. The `Ledger migrations` PR job checks the merge preview with `--pending-pr <number>`. Only events naming that
+4. **Merge a PR that carries PR-keyed events with "Squash and merge".** The association must be a single-parent
+   commit that holds the whole change: "Create a merge commit" gives a two-parent commit, and "Rebase and merge"
+   spreads the change over several commits, so either leaves the events unresolvable and the next export refuses
+   until the ledger is fixed. Nothing wrong is published; releases stop. Allowing only squash merging in the
+   repository settings removes the risk.
+5. The `Ledger migrations` PR job checks the merge preview with `--pending-pr <number>`. Only events naming that
    number bind directly to `--to`; other PR keys still require verified associations. Pending mode requires a
    two-parent preview and refuses a PR already present in the saved associations or the base's historical suffixes.
-   CI also verifies GitHub's current unmerged preview SHA. Its tree and first parent are the eventual squash inputs;
-   all data gates run unchanged. After squash merge, GitHub's merged SHA becomes the association, independent of
-   title edits. Without pending mode an unmerged PR key fails. Use pending mode only for a merge preview, never to generate published release files.
+   CI also checks that the PR is still open and that the preview's second parent is the PR's current head (GitHub's
+   live merge_commit_sha is not compared: it moves when the base advances). The preview's tree and first parent are
+   the eventual squash inputs; all data gates run unchanged. After the merge, GitHub's merged SHA becomes the
+   association; the title plays no part, so editing it is harmless. Without pending mode an unmerged PR key fails. Use pending mode only for a merge preview, never to generate published release files.
 
 For example, a reviewed no-successor removal in PR 2050 uses this event shape (replace the guards and provenance):
 
