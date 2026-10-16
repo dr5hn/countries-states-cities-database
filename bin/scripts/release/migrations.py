@@ -48,7 +48,7 @@ MANAGED = {'created_at', 'updated_at', 'flag'}
 REMOVAL_OUTCOMES = {
     'merged_same_entity': ({'merged_same_entity'}, 'merged_same_entity', 1, 1),
     'administrative_seat': ({'administrative_seat', 'moved_dataset'}, 'administrative_seat', 1, None),
-    'moved_dataset': ({'moved_dataset'}, 'moved_dataset', 1, None),
+    'moved_dataset': ({'moved_dataset', 'administrative_seat'}, 'moved_dataset', 1, None),
     'territorial_successor': ({'territorial_successor'}, 'territorial_successor', 1, None),
     'split_into': ({'split_into'}, 'split_into', 2, None),
     'namespace_replaced': (set(), None, 0, 0), 'invalid_record': (set(), None, 0, 0), 'no_successor': (set(), None, 0, 0),

@@ -408,6 +408,16 @@ class EventSchemaTest(unittest.TestCase):
         self.assertEqual(event_errors(seat, 'e'), [])
         self.assertEqual(event_errors(self.base(outcome='no_successor', automatic_redirect=False, targets=[]), 'e'), [])
 
+    def test_dataset_move_keeps_separate_reviewed_seat(self):
+        """A dataset move requires its unit target, permits a distinct seat, and never redirects."""
+        moved = self.base(outcome='moved_dataset', automatic_redirect=False,
+                          targets=[target('counties', 9, 'moved_dataset'), target('cities', 1, 'administrative_seat')])
+        self.assertEqual(event_errors(moved, 'e'), [])
+        self.assertTrue(event_errors(dict(moved, automatic_redirect=True), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('cities', 1, 'administrative_seat')]), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('counties', 9, 'administrative_seat')]), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('cities', 1, 'moved_dataset')]), 'e'))
+
     def test_unsafe_redirects_and_targets_are_refused(self):
         """Wrong-table merge, seat labelled merge, two merge targets, one-target split, no relation, null targets."""
         cases = {
