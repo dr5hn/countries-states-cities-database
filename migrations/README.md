@@ -63,7 +63,7 @@ and its existing remediation checks. Evidence, review, target and history checks
 |---|---|---|---|
 | `merged_same_entity` | A proved duplicate of the same place, kept under another id in the same table | exactly one (`merged_same_entity`) | only when the event says `automatic_redirect: true` |
 | `administrative_seat` | A row for an administrative unit, removed; the town where the unit's seat is is a different place | the seat town (`administrative_seat`), and the unit's own record elsewhere (`moved_dataset`) when one exists | no |
-| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table | no |
+| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table; an independently reviewed seat may also be listed (`administrative_seat`, cities to cities only). The unit target remains required | no |
 | `territorial_successor` | A unit replaced after a merger or reform | the successor (`territorial_successor`) | no |
 | `split_into` | A unit split into several | two or more (`split_into`) | no |
 | `namespace_replaced`, `invalid_record`, `no_successor` | No successor, for the reviewed reason given | `[]` | no |
