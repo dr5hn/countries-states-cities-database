@@ -176,10 +176,20 @@ interval; only a later release's events are ignored.
 ## A data PR carries its own events
 
 Use a full `event_commit` SHA (existing ledgers keep working), or omit it and use a positive integer
-`event_pr`, for removals, identity decisions and restorations alike. With `event_pr: 2050`, the generator finds the
-single commit on `--to`'s entire first-parent history whose subject ends exactly in `(#2050)`. No match or several
-matches fails; a mention in a commit body or on a side branch does not count. Squash-merge the PR with that suffix.
-The lookup includes history before `--from`. An explicit `event_commit` always takes precedence, including in
+`event_pr`, for removals, identity decisions and restorations alike. Each PR key requires a saved GitHub
+association, `{"event_pr": 2050, "merge_commit_sha": "<full SHA>"}`, in `--pr-commits` (default:
+`pr_commits.jsonl` beside the ledger). Missing, duplicate or malformed associations fail. The associated commit must
+have exactly one parent and belong to the pinned ledger's first-parent line. Titles never establish an association:
+merges, cherry-picks, reverts and edited suffixes cannot substitute for GitHub's `merge_commit_sha`.
+The PR check and export wrapper fetch each PR-only key from GitHub's pulls API, require it to be merged, and refuse
+any disagreement with saved associations in `migrations/pr_commits.jsonl` (initially empty). They need read access
+only. The export saves the verified map as `pr_commits.jsonl` inside every migration archive, covered by the archive
+checksum, so the same inputs can be replayed offline with `--pr-commits <saved-map>`; use trusted committed or
+exported evidence for offline runs. Do not invent mappings from titles.
+`--ledger-tip` pins the authoritative ledger history (default: HEAD, resolved once); it may include events after
+`--to`. Such later events, including held events, wait for their release. For historical regeneration, supply the
+ledger's pinned tip and its saved map, rather than searching arbitrary branches. Explicit `event_commit` keys
+always take precedence, including in
 pending mode: existing events may retain `event_pr` as metadata without changing their meaning. Generated JSONL and CSV always record the resolved full
 `event_commit` SHA; JSONL also retains `event_pr`. Reference fields such as `retirement_commit`,
 `retires_repurpose.identity_event_commit` and `recorded_later.event_commit` still require full historical SHAs.
@@ -195,8 +205,11 @@ The immutable unresolved baseline continues to use `baseline_commit`.
    All existing review, target, retirement, repurpose, baseline and restoration gates remain in force. A repurpose
    that still leaves the id denoting the other entity at the preview is refused; PR keys do not waive remediation.
 4. The `Ledger migrations` PR job checks the merge preview with `--pending-pr <number>`. Only events naming that
-   number bind directly to `--to`; other PR keys still resolve by subject. Without that option an unmerged PR key
-   fails. Use pending mode only for a merge preview, never to generate published release files.
+   number bind directly to `--to`; other PR keys still require verified associations. Pending mode requires a
+   two-parent preview and refuses a PR already present in the saved associations or the base's historical suffixes.
+   CI also verifies GitHub's current unmerged preview SHA. Its tree and first parent are the eventual squash inputs;
+   all data gates run unchanged. After squash merge, GitHub's merged SHA becomes the association, independent of
+   title edits. Without pending mode an unmerged PR key fails. Use pending mode only for a merge preview, never to generate published release files.
 
 For example, a reviewed no-successor removal in PR 2050 uses this event shape (replace the guards and provenance):
 
@@ -209,20 +222,35 @@ For example, a reviewed no-successor removal in PR 2050 uses this event shape (r
  "evidence": [{"url": "https://example.org/source"}]}
 ```
 
-The read-only [`ledger-migrations.yml`](../.github/workflows/ledger-migrations.yml) runs for PR changes under
-`contributions/**`, `migrations/**` and `bin/scripts/release/**`, including drafts. It fetches full history and tags,
-compares v4.0 to the merge preview with candidate metadata (`data_version: "5-candidate"`), and fails on any
-generator error. It publishes and comments nothing. Make `Ledger migrations` a required status check in the
-repository's branch protection/ruleset to enforce the gate at merge. Its single walk takes about two minutes and
-3.2 GB; newer runs cancel older runs for the same PR, and the job has a 15-minute timeout.
+The read-only [`ledger-migrations.yml`](../.github/workflows/ledger-migrations.yml) reports `Ledger migrations`
+on every PR, including drafts. A complete local Git diff skips only the expensive validation step when no path
+under `contributions/`, `migrations/`, `bin/scripts/release/` or the workflow itself changed; docs/export-only PRs
+still receive a successful required status. Relevant PRs fetch full history and tags and compare v4.0 to the merge
+preview. CI and export share source-metadata validation before adding `data_version`, derived from the validated
+contract major (`5-candidate` for contract 5). The job publishes and comments nothing. Require `Ledger migrations`
+in branch protection/rulesets. Its single walk takes about two minutes and 3.2 GB, with a 15-minute timeout;
+newer runs cancel older runs for the same PR.
 
-To reproduce locally in a full clone with the merge preview available, create candidate metadata from
-`migrations/release_meta.json`, adding `"data_version": "5-candidate"`, then run:
+To reproduce a PR check in a full clone with `gh` signed in, prepare the same verified inputs, then run the generator:
 
 ```bash
-python3 bin/scripts/release/migrations.py --from v4.0 --to <merge-preview-sha> --pending-pr 2050 \
+export PENDING_PR=2050 MERGE_SHA=<merge-preview-sha>
+python3 - <<'PYCODE'
+import json, os, sys
+from pathlib import Path
+sys.path.insert(0, 'bin/scripts/release')
+from release_migrations import github_pr_commits, load_source_meta
+meta = load_source_meta('migrations/release_meta.json')
+meta['data_version'] = f"{meta['contract_version']}-candidate"
+Path('/tmp/ledger-meta.json').write_text(json.dumps(meta))
+Path('/tmp/ledger-prs.jsonl').write_text(github_pr_commits(
+    Path.cwd(), 'migrations/events.jsonl', 'migrations/pr_commits.jsonl',
+    int(os.environ['PENDING_PR']), os.environ['MERGE_SHA']))
+PYCODE
+python3 bin/scripts/release/migrations.py --from v4.0 --to "$MERGE_SHA" --pending-pr "$PENDING_PR" \
+  --ledger-tip "$MERGE_SHA" --pr-commits /tmp/ledger-prs.jsonl \
   --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl \
-  --meta <candidate-meta.json> --out <scratch-output-folder>
+  --meta /tmp/ledger-meta.json --out <scratch-output-folder>
 ```
 
 ## The reserved ids
@@ -240,7 +268,7 @@ malformed line in either file stops the import.
 
 It exits 1 and writes nothing when any of these happens:
 
-- A PR-keyed event has no unique squash subject on `--to`'s first-parent line (unless it names `--pending-pr`).
+- A PR-keyed event has no verified association to a single-parent commit on the pinned ledger line, or a pending PR already occurs in base history.
 - An event's commit is not on the release line: inside the interval, before `--from` on its first-parent history,
   or after `--to` on a later release's (also when `--to` is the first commit).
 - A removal at any first-parent commit between the two releases has no reviewed event for that commit.

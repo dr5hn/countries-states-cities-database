@@ -46,8 +46,8 @@ retained keys whose latest decision is unresolved. Inventory disclosure does not
 hold or authorise an otherwise unproved transfer.
 
 Data PRs carry their reviewed ledger events in the same PR: use a positive integer `event_pr` instead of
-`event_commit`. The generator resolves the unique first-parent squash subject ending in `(#N)` and publishes the
-resolved commit SHA. The `Ledger migrations` PR check uses `--pending-pr N` to validate those events against the
+`event_commit`. The generator requires GitHub's verified `merge_commit_sha` association on the pinned ledger's
+first-parent line and publishes that single-parent squash SHA; subjects are not proof. The `Ledger migrations` PR check uses `--pending-pr N` to validate those events against the
 merge preview before merge; the historical row, target, baseline and identity rules still apply. See
 [how to add events in a data PR](migrations/README.md#a-data-pr-carries-its-own-events). Existing SHA-keyed events
 remain valid. Require that check in branch protection to block merges on ledger errors.

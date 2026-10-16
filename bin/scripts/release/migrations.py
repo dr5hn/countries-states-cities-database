@@ -13,8 +13,8 @@ commit, path or before-row hash is wrong, a target is wrong or missing at that c
 same-entity merge, a repurposed id still denotes the other entity at --to or is retired without naming the other
 entity's replacement, an id is missing, malformed or duplicated, or a retired or reserved id is in use without a
 reviewed restoration of the same entity. Events before --from get the same checks. An output failure keeps the
-earlier output. Events may name event_pr instead of event_commit: the unique first-parent squash subject ending
-in (#N) resolves the PR to a commit. --pending-pr N binds only that PR's events to --to for a merge-preview check;
+earlier output. Events may name event_pr instead of event_commit: the saved GitHub merge_commit_sha association
+resolves the PR to a single-parent squash commit on the pinned ledger line. --pending-pr N binds only that PR's events to --to for a merge-preview check;
 published release runs must omit it. Generated events always carry the resolved event_commit SHA.
 
 Usage:
@@ -272,12 +272,25 @@ def read_jsonl(path, what):
     return out
 
 
-def load_ledger(path, repo, to, pending_pr=None):
-    """Resolve PR keys to first-parent commits, then index events by (table, id, event_commit). Schema errors,
-    missing/ambiguous PR subjects and duplicate resolved keys fail. Explicit SHAs take precedence over PR metadata;
-    only a PR-keyed pending event binds directly to to."""
+def load_pr_commits(path):
+    """Read the saved GitHub associations; duplicate or malformed proofs fail closed."""
+    prs = {}
+    for n, proof in read_jsonl(path, 'PR commits'):
+        if not (isinstance(proof, dict) and positive_id(proof.get('event_pr'))
+                and is_str(proof.get('merge_commit_sha')) and SHA1.fullmatch(proof['merge_commit_sha'])):
+            raise MigrationError(f'PR commits line {n}: needs event_pr and full merge_commit_sha')
+        pr = proof['event_pr']
+        if pr in prs:
+            raise MigrationError(f'PR commits line {n}: duplicate event_pr {pr}')
+        prs[pr] = proof['merge_commit_sha']
+    return prs
+
+
+def load_ledger(path, repo, to, pending_pr=None, pr_commits_path=None, ledger_tip=None):
+    """Bind PR keys using saved GitHub associations on the pinned ledger line, then index events.
+    Explicit SHA keys retain their historical meaning. Pending keys model a single-parent squash of the preview."""
     index, errors = {kind: {} for kind in EVENT_TYPES}, []
-    prs = None
+    proofs, line, resolved = None, None, {}
     for n, e in read_jsonl(path, 'ledger'):
         errs = event_errors(e, f'ledger line {n}')
         if errs:
@@ -285,24 +298,33 @@ def load_ledger(path, repo, to, pending_pr=None):
             continue
         if 'event_commit' not in e:
             pr = e['event_pr']
-            if pr == pending_pr:
+            if proofs is None:
+                proof_path = Path(pr_commits_path) if pr_commits_path else Path(path).with_name('pr_commits.jsonl')
+                proofs = load_pr_commits(proof_path) if proof_path.exists() else {}
+                line = set(first_parent_line(repo, ledger_tip))
+            if pr in resolved:
+                commit = resolved[pr]
+            elif pr == pending_pr:
+                parents = git(repo, 'rev-list', '--parents', '-n', '1', to).decode().split()[1:]
+                if len(parents) != 2:
+                    raise MigrationError('pending PR requires a two-parent merge preview')
+                subjects = git(repo, 'log', '--first-parent', '--format=%s', parents[0]).decode().splitlines()
+                if pr in proofs or any(subject.endswith(f'(#{pr})') for subject in subjects):
+                    raise MigrationError(f'pending event_pr {pr} already exists in base history or PR associations')
                 commit = to
             else:
-                if prs is None:
-                    prs = defaultdict(list)
-                    for line in git(repo, 'log', '--first-parent', '--format=%H%x00%s', to).decode().split('\n'):
-                        if not line:
-                            continue
-                        sha, subject = line.split('\0', 1)
-                        match = re.search(r'\(#([1-9][0-9]*)\)$', subject)
-                        if match:
-                            prs[int(match[1])].append(sha)
-                matches = prs[pr]
-                if len(matches) != 1:
-                    errors.append(f'ledger line {n}: event_pr {pr} matches {len(matches)} first-parent commits of --to; '
-                                  f'expected exactly one subject ending "(#{pr})"')
+                commit = proofs.get(pr)
+                if commit is None:
+                    errors.append(f'ledger line {n}: event_pr {pr} has no verified PR association')
                     continue
-                commit = matches[0]
+                if commit not in line:
+                    errors.append(f'ledger line {n}: event_pr {pr} association is not on the pinned ledger first-parent line')
+                    continue
+                parents = git(repo, 'rev-list', '--parents', '-n', '1', commit).decode().split()[1:]
+                if len(parents) != 1:
+                    errors.append(f'ledger line {n}: event_pr {pr} association must name a single-parent squash commit')
+                    continue
+            resolved[pr] = commit
             e = {**e, 'event_commit': commit}
         kind = e.get('event_type', 'removal')
         key = (e['old_table'], e['old_id'], e['event_commit']) if kind == 'removal' else (e['table'], e['id'], e['event_commit'])
@@ -993,7 +1015,7 @@ def recorded_later_of(e):
 
 
 def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None, baseline_path=None,
-             pending_pr=None):
+             pending_pr=None, pr_commits_path=None, ledger_tip=None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
     problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
     checked by the same walk, which then starts at the first parent of the oldest of them."""
@@ -1001,7 +1023,8 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
         raise MigrationError('pending_pr must be a positive integer')
     repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
-    removals, identities, restorations = load_ledger(ledger, repo, to, pending_pr)
+    removals, identities, restorations = load_ledger(ledger, repo, to, pending_pr, pr_commits_path,
+                                                     resolve(repo, ledger_tip or 'HEAD'))
     reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
     baseline_path = Path(baseline_path) if baseline_path is not None else Path(ledger).with_name('unresolved_baseline.jsonl')
     baseline = load_baseline(baseline_path)
@@ -1067,6 +1090,8 @@ def main(argv=None):
     p.add_argument('--from', dest='frm', required=True, help='commit of the previous successful published snapshot')
     p.add_argument('--to', required=True, help='commit of this release candidate')
     p.add_argument('--pending-pr', type=int, help='bind this PR number to --to (PR merge preview only)')
+    p.add_argument('--pr-commits', help='saved GitHub PR associations (default: pr_commits.jsonl beside ledger)')
+    p.add_argument('--ledger-tip', help='pinned ledger history tip, including later events (default: HEAD)')
     p.add_argument('--ledger', required=True, help='reviewed events, one JSON object per line (migrations/events.jsonl)')
     p.add_argument('--baseline', help='reviewed unresolved snapshot (default: unresolved_baseline.jsonl beside --ledger)')
     p.add_argument('--reserved', required=True, help='ids retired before --from, {"table","id"} per line')
@@ -1077,7 +1102,7 @@ def main(argv=None):
     try:
         content, sums = generate(a.repo, a.frm, a.to, a.ledger, a.reserved, a.meta, a.out,
                                  log=lambda m: print(f'[INFO] {m}', file=sys.stderr), baseline_path=a.baseline,
-                                 pending_pr=a.pending_pr)
+                                 pending_pr=a.pending_pr, pr_commits_path=a.pr_commits, ledger_tip=a.ledger_tip)
     except MigrationError as err:
         print(f'[ERROR] {err}\nFix the ledger, reserved ids or source named above and run again; nothing was written.', file=sys.stderr)
         return 1
