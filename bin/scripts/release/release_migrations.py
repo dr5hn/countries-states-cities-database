@@ -96,6 +96,15 @@ def load_source_meta(path):
     return meta
 
 
+def merge_parents(repo, sha):
+    """The parents of a commit in the local clone; ReleaseError when the commit is not there."""
+    out = subprocess.run(['git', '-C', str(repo), 'rev-list', '--parents', '-n', '1', sha],
+                         capture_output=True, text=True, timeout=60)
+    if out.returncode:
+        raise ReleaseError(f'commit {sha[:12]} is not in this clone; fetch the full history')
+    return out.stdout.split()[1:]
+
+
 def github_pr_commits(repo, ledger, saved, pending_pr=None, preview=None):
     """Fetch authoritative merge SHAs for PR-only keys; a saved association must agree with GitHub.
     The returned JSONL is kept with export artifacts for offline generator replay. No subject is proof."""
@@ -114,13 +123,23 @@ def github_pr_commits(repo, ledger, saved, pending_pr=None, preview=None):
         pr = json.loads(result.stdout)
         if not isinstance(pr, dict):
             raise ReleaseError(f'PR {number}: invalid GitHub response')
-        sha = pr.get('merge_commit_sha')
-        if pr.get('number') != number or not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha):
-            raise ReleaseError(f'PR {number}: missing GitHub merge_commit_sha association')
+        if pr.get('number') != number:
+            raise ReleaseError(f'PR {number}: invalid GitHub response')
         if number == pending_pr:
-            if pr.get('merged') is not False or sha != preview or number in known:
-                raise ReleaseError(f'pending PR {number}: already merged, saved, or preview disagrees with GitHub')
+            # The checked commit is the run's merge preview (github.sha). GitHub's live merge_commit_sha moves whenever
+            # the base advances and is empty while the PR conflicts, so it is not compared; what must hold is that the
+            # PR is open and unsaved and that the preview merges the PR's current head.
+            head = (pr.get('head') or {}).get('sha') if isinstance(pr.get('head'), dict) else None
+            if pr.get('merged') is not False or number in known:
+                raise ReleaseError(f'pending PR {number}: already merged or already saved')
+            parents = merge_parents(repo, preview)
+            if len(parents) != 2 or not isinstance(head, str) or parents[1] != head:
+                raise ReleaseError(f'pending PR {number}: the checked commit is not a merge preview of the current PR '
+                                   'head; rerun the check on the latest push')
             continue
+        sha = pr.get('merge_commit_sha')
+        if not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha):
+            raise ReleaseError(f'PR {number}: missing GitHub merge_commit_sha association')
         if pr.get('merged') is not True or (number in known and known[number] != sha):
             raise ReleaseError(f'PR {number}: unmerged or saved association disagrees with GitHub')
         proofs.append(json.dumps({'event_pr': number, 'merge_commit_sha': sha}, sort_keys=True) + '\n')

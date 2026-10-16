@@ -73,12 +73,22 @@ class Inputs(unittest.TestCase):
             self.fetch(response, returncode=1)
 
     def test_pending_api_preview_parity(self):
-        """Pending associations are temporary and require GitHub's current unmerged preview."""
-        response = {'number': 42, 'merged': False, 'merge_commit_sha': self.sha}
-        self.assertEqual(self.fetch(response, 42, self.sha), '')
-        for bad in ({**response, 'merged': True}, {**response, 'merge_commit_sha': 'b' * 40}):
-            with self.subTest(response=bad), self.assertRaisesRegex(_m.ReleaseError, 'preview disagrees'):
-                self.fetch(bad, 42, self.sha)
+        """A pending PR must be open and unsaved, and the checked commit must merge its current head. GitHub's live
+        merge_commit_sha is not compared: it moves when the base advances and is empty while the PR conflicts."""
+        head = 'c' * 40
+        response = {'number': 42, 'merged': False, 'merge_commit_sha': self.sha, 'head': {'sha': head}}
+        with mock.patch.object(_m, 'merge_parents', return_value=['a' * 40, head]):
+            self.assertEqual(self.fetch(response, 42, self.sha), '')
+            for moved in ({**response, 'merge_commit_sha': 'b' * 40}, {**response, 'merge_commit_sha': None}):
+                with self.subTest(response=moved):   # base advanced, or the PR conflicts: still checked
+                    self.assertEqual(self.fetch(moved, 42, self.sha), '')
+            with self.assertRaisesRegex(_m.ReleaseError, 'already merged'):
+                self.fetch({**response, 'merged': True}, 42, self.sha)
+            with self.assertRaisesRegex(_m.ReleaseError, 'not a merge preview'):
+                self.fetch({**response, 'head': {'sha': 'd' * 40}}, 42, self.sha)
+        with mock.patch.object(_m, 'merge_parents', return_value=[head]), \
+                self.assertRaisesRegex(_m.ReleaseError, 'not a merge preview'):
+            self.fetch(response, 42, self.sha)
 
     def test_legacy_pr_metadata_needs_no_api(self):
         """The existing SHA-keyed ledger does not acquire an API dependency per event."""
