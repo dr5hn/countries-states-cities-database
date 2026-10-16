@@ -1145,3 +1145,15 @@ https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 CSC selected province/seat facts, not the map. Official legal texts and national registers were used for
 reform identity, extent and dates; no protected page design, maps or bulk geometry are redistributed.
 The event ledger links the legal sources; migrations/reforms_v5.md discloses the project codes.
+
+Open postcode additions (postcodes_open_v5_build_1; October 2026)
+OSM data © OpenStreetMap contributors, https://www.openstreetmap.org/copyright, ODbL 1.0.
+GeoNames postal data: Source: GeoNames, https://www.geonames.org/, CC BY 4.0.
+Licence: https://creativecommons.org/licenses/by/4.0/ ; https://opendatacommons.org/licenses/odbl/1-0/
+Editions: OSM 13–16 October 2026 (exact per-object/query editions in ledger); GeoNames retrieved 16 October 2026.
+CSC changes: selects address-supported codes, normalizes code presentation, retains unanimous labels,
+uses only identical published GeoNames estimated point pairs, and leaves unsupported links/points null.
+No individual address coordinate is published as a postcode point. Coverage is partial, not a routing guarantee.
+Iran five-digit observations denote postal areas, not complete ten-digit delivery codes; China GeoNames rows are general areas.
+Country/code/locality scope is explicit per row. Removed IDs remain retired; every addition has a fresh ID.
+Per-record provenance: .github/fixes-docs/ledgers/postcodes_open_v5_additions.jsonl (object IDs/versions or source lines, hashes, licence, edition and field basis).
