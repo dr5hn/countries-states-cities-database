@@ -106,7 +106,7 @@ def merge_parents(repo, sha):
 
 
 def github_pr_commits(repo, ledger, saved, pending_pr=None, preview=None):
-    """Fetch authoritative merge SHAs for PR-only keys; a saved association must agree with GitHub.
+    """Fetch authoritative merge SHAs for PR-only keys, including removal_batch lines; a saved association must agree with GitHub.
     The returned JSONL is kept with export artifacts for offline generator replay. No subject is proof."""
     known = load_pr_commits(saved) if Path(saved).exists() else {}
     numbers = {e['event_pr'] for _, e in read_jsonl(ledger, 'ledger')

@@ -52,7 +52,8 @@ LINK_TYPES = {
 def retired_id_floor(migrations_dir=os.path.join('migrations')):
     """Highest id per table that the id ledger retired or reserved, so auto-assigned ids never reuse one.
 
-    Reads removal events (old_table, old_id) from events.jsonl and {table, id} rows from reserved_ids.jsonl when they
+    Reads removal events and every removal_batch row (shared old_table, row old_id) from events.jsonl,
+    and {table, id} rows from reserved_ids.jsonl when they
     exist. A malformed line stops the import: guessing past it could hand a retired id to a new record."""
     floor = {}
     for name, tkey, ikey in (('events.jsonl', 'old_table', 'old_id'), ('reserved_ids.jsonl', 'table', 'id')):
@@ -73,12 +74,17 @@ def retired_id_floor(migrations_dir=os.path.join('migrations')):
                     kind = row.get('event_type', 'removal')
                     if kind in ('identity', 'restoration'):
                         continue   # they retire nothing
-                    if kind != 'removal':
+                    if kind not in ('removal', 'removal_batch'):
                         sys.exit(f"❌ {path}:{n} has unknown event_type {kind!r}; fix the ledger line before importing")
-                table, rid = row.get(tkey), row.get(ikey)
-                if not isinstance(table, str) or not isinstance(rid, int) or isinstance(rid, bool) or rid <= 0:
-                    sys.exit(f"❌ {path}:{n} needs {tkey} and a positive integer {ikey}; fix the ledger line before importing")
-                floor[table] = max(floor.get(table, 0), rid)
+                rows = row.get('rows') if name == 'events.jsonl' and row.get('event_type') == 'removal_batch' else [row]
+                if not isinstance(rows, list) or not rows:
+                    sys.exit(f"❌ {path}:{n} row 0: batch rows must be a nonempty list")
+                for i, item in enumerate(rows, 1):
+                    table = row.get(tkey)
+                    rid = item.get(ikey) if isinstance(item, dict) else None
+                    if not isinstance(table, str) or type(rid) is not int or rid <= 0:
+                        sys.exit(f"❌ {path}:{n} row {i} needs {tkey} and a positive integer {ikey}; fix the ledger line before importing")
+                    floor[table] = max(floor.get(table, 0), rid)
     return floor
 
 

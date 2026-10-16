@@ -90,6 +90,16 @@ class Inputs(unittest.TestCase):
                 self.assertRaisesRegex(_m.ReleaseError, 'not a merge preview'):
             self.fetch(response, 42, self.sha)
 
+    def test_batch_pr_keys(self):
+        """A PR-keyed batch is discovered once, even alongside another line for the same PR."""
+        self.ledger.write_text(json.dumps({'event_type': 'removal_batch', 'event_pr': 42,
+                                         'rows': [{'old_id': 1}, {'old_id': 2}]}) + '\n{"event_pr": 42}\n')
+        self.assertEqual(json.loads(self.fetch({'number': 42, 'merged': True, 'merge_commit_sha': self.sha})),
+                         {'event_pr': 42, 'merge_commit_sha': self.sha})
+        with mock.patch.object(_m, 'merge_parents', return_value=['b' * 40, 'c' * 40]):
+            self.assertEqual(self.fetch({'number': 42, 'merged': False, 'head': {'sha': 'c' * 40}},
+                                        42, self.sha), '')
+
     def test_legacy_pr_metadata_needs_no_api(self):
         """The existing SHA-keyed ledger does not acquire an API dependency per event."""
         self.ledger.write_text(json.dumps({'event_pr': 42, 'event_commit': self.sha}) + '\n')
