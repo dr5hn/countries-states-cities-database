@@ -315,14 +315,18 @@ jobs:
           done
 
       - name: Check the SQL dumps load back
-        # Every INSERT names its columns (--complete-insert, --column-inserts), so a row lands in the right column or
-        # fails loudly in an older table (#2053). Load both world dumps into fresh databases and compare each table
-        # with its source by row count and a per-row checksum; a dump that does not reproduce the data fails the build.
+        # Two checks. Every INSERT must name its columns (--complete-insert, --column-inserts), so a row lands in the
+        # right column or fails loudly in an older table (#2053); a positional INSERT anywhere fails the build. Then
+        # both world dumps are loaded into fresh databases and each table is compared with its source by row count
+        # and a per-row checksum, so a dump that does not reproduce the data fails too.
         env:
           PGPASSWORD: postgres
         run: |
           set -euo pipefail
           tables="regions subregions countries states cities counties county_states postcodes"
+          if grep -lE '^INSERT INTO [^ ]+ VALUES' sql/*.sql psql/*.sql; then
+            echo "::error::the files above contain INSERTs without column names"; exit 1
+          fi
           mysql -uroot -proot -e "DROP DATABASE IF EXISTS world_check; CREATE DATABASE world_check CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
           mysql -uroot -proot --default-character-set=utf8mb4 world_check < sql/world.sql
           for t in $tables; do
