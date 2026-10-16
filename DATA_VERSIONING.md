@@ -116,8 +116,12 @@ They do not describe changes to the separate `regions` and `subregions` grouping
 
 To migrate stored ids, take a set whose `release_manifest.json` starts at your snapshot (`from.sha`) and ends at the
 one you move to (`to.sha`), and apply it; then do the same with the next release's set. Each set describes the step
-from the previous published snapshot. v5.0.0 carries two: the cumulative set from v4.0, and the step from the last v4
-export (`v4.0-export.51`). Apply the one whose `from.sha` is your snapshot, never both.
+from the previous published snapshot. v5.0.0 carries one: the cumulative set from v4.0. There is no step from a later v4
+export: the source of `v4.0-export.51` held postcodes whose ids the export assigned and synced back later, and every id
+must be known at both ends. If you use a later v4 export, load the v5 data fresh and use the cumulative set to map the
+ids you stored; do not patch that export with its added or changed files, which are relative to v4.0 (see
+[migrations/README.md](migrations/README.md#generating-the-files)). From the second v5 export on, each release also carries
+the step from the previous v5 export.
 
 Example: list the stored city ids that may be redirected to another record.
 
