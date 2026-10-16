@@ -4,6 +4,9 @@ import importlib.util
 import tarfile
 import tempfile
 import unittest
+import json
+import subprocess
+from unittest import mock
 from pathlib import Path
 
 # Loaded by path, as test_migrations.py loads migrations.py, so the tests also run from the repository root
@@ -14,6 +17,85 @@ _spec.loader.exec_module(_m)
 pick, pack = _m.pick, _m.pack
 
 TAGS = ['v3.2', 'v4.0', 'v4.0-export.9', 'v4.0-export.51', 'v4.0-export.10', 'export-20250101', 'v2.0']
+
+
+class Inputs(unittest.TestCase):
+    """CI and export share metadata and authoritative PR association validation."""
+
+    def setUp(self):
+        """Create minimal source inputs, without network access."""
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.meta = self.root / 'release_meta.json'
+        self.ledger = self.root / 'events.jsonl'
+        self.saved = self.root / 'pr_commits.jsonl'
+        self.ledger.write_text('{"event_pr": 42}\n')
+        self.sha = 'a' * 40
+
+    def test_source_meta_parity(self):
+        """Both callers reject bad contract majors and source data_version before filling candidate fields."""
+        for meta in ({'contract_version': 'banana'}, {'contract_version': '5', 'data_version': 'wrong'},
+                     [], {'contract_version': True}, {'contract_version': '0'}):
+            self.meta.write_text(json.dumps(meta))
+            with self.subTest(meta=meta), self.assertRaises(_m.ReleaseError):
+                _m.load_source_meta(self.meta)
+        self.meta.write_text('{"contract_version": "6"}')
+        validated = _m.load_source_meta(self.meta)
+        self.assertEqual(f"{validated['contract_version']}-candidate", '6-candidate')
+        wrapper = Path(_m.__file__).read_text()
+        workflow = Path(_m.__file__).resolve().parents[3] / '.github/workflows/ledger-migrations.yml'
+        self.assertIn("meta = load_source_meta(repo / 'migrations/release_meta.json')", wrapper)
+        self.assertIn("meta = load_source_meta('migrations/release_meta.json')", workflow.read_text())
+
+    def fetch(self, response, pending=None, preview=None, returncode=0):
+        """Call the production association helper with a deterministic GitHub response."""
+        result = subprocess.CompletedProcess([], returncode, json.dumps(response), 'API unavailable')
+        with mock.patch.object(_m.subprocess, 'run', return_value=result) as run:
+            value = _m.github_pr_commits(self.root, self.ledger, self.saved, pending, preview)
+            run.assert_called_once_with(['gh', 'api', 'repos/{owner}/{repo}/pulls/42'], cwd=self.root,
+                                        capture_output=True, text=True, timeout=60)
+            return value
+
+    def test_github_association_and_disagreement(self):
+        """Only the merged PR's API SHA is saved; missing, unmerged, forged or disagreeing responses fail."""
+        response = {'number': 42, 'merged': True, 'merge_commit_sha': self.sha}
+        self.assertEqual(json.loads(self.fetch(response)), {'event_pr': 42, 'merge_commit_sha': self.sha})
+        self.saved.write_text(json.dumps({'event_pr': 42, 'merge_commit_sha': 'b' * 40}) + '\n')
+        with self.assertRaisesRegex(_m.ReleaseError, 'disagrees'):
+            self.fetch(response)
+        self.saved.unlink()
+        for bad in ({**response, 'merged': False}, {**response, 'merge_commit_sha': None},
+                    {**response, 'number': 99}, [], {}):
+            with self.subTest(response=bad), self.assertRaises(_m.ReleaseError):
+                self.fetch(bad)
+        with self.assertRaisesRegex(_m.ReleaseError, 'could not verify'):
+            self.fetch(response, returncode=1)
+
+    def test_pending_api_preview_parity(self):
+        """A pending PR must be open and unsaved, and the checked commit must merge its current head. GitHub's live
+        merge_commit_sha is not compared: it moves when the base advances and is empty while the PR conflicts."""
+        head = 'c' * 40
+        response = {'number': 42, 'merged': False, 'merge_commit_sha': self.sha, 'head': {'sha': head}}
+        with mock.patch.object(_m, 'merge_parents', return_value=['a' * 40, head]):
+            self.assertEqual(self.fetch(response, 42, self.sha), '')
+            for moved in ({**response, 'merge_commit_sha': 'b' * 40}, {**response, 'merge_commit_sha': None}):
+                with self.subTest(response=moved):   # base advanced, or the PR conflicts: still checked
+                    self.assertEqual(self.fetch(moved, 42, self.sha), '')
+            with self.assertRaisesRegex(_m.ReleaseError, 'already merged'):
+                self.fetch({**response, 'merged': True}, 42, self.sha)
+            with self.assertRaisesRegex(_m.ReleaseError, 'not a merge preview'):
+                self.fetch({**response, 'head': {'sha': 'd' * 40}}, 42, self.sha)
+        with mock.patch.object(_m, 'merge_parents', return_value=[head]), \
+                self.assertRaisesRegex(_m.ReleaseError, 'not a merge preview'):
+            self.fetch(response, 42, self.sha)
+
+    def test_legacy_pr_metadata_needs_no_api(self):
+        """The existing SHA-keyed ledger does not acquire an API dependency per event."""
+        self.ledger.write_text(json.dumps({'event_pr': 42, 'event_commit': self.sha}) + '\n')
+        with mock.patch.object(_m.subprocess, 'run') as run:
+            self.assertEqual(_m.github_pr_commits(self.root, self.ledger, self.saved), '')
+            run.assert_not_called()
 
 
 class Pick(unittest.TestCase):
