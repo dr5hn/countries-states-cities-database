@@ -119,11 +119,12 @@ def is_str(v, *allowed):
 
 
 def relation_table_ok(relation, old_table, table):
-    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city."""
+    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city
+    named for a removed city row (a unit row in cities), as migrations/README.md says."""
     if relation in ('merged_same_entity', 'territorial_successor', 'split_into'):
         return table == old_table
     if relation == 'administrative_seat':
-        return table == 'cities'
+        return table == 'cities' and old_table == 'cities'
     if relation == 'moved_dataset':
         return table != old_table
     return relation == 'prior_identity'

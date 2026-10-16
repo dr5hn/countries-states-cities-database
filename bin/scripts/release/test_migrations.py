@@ -1001,6 +1001,13 @@ class HistoryTest(Case):
             self.gen(c0, c0, [held], out=f'held{n}')
             self.refused(c0, c1, [held], 'identity event is held')
 
+    def test_seat_target_only_for_city_rows(self):
+        """A seat target is a city named for a removed city row; a removal from another table cannot list one."""
+        self.assertTrue(m.relation_table_ok('administrative_seat', 'cities', 'cities'))
+        for old, table in (('counties', 'cities'), ('states', 'cities'), ('cities', 'counties')):
+            with self.subTest(old=old, table=table):
+                self.assertFalse(m.relation_table_ok('administrative_seat', old, table))
+
     def cli(self, ledger, meta=None):
         """Run the command line on the scratch repository; returns (exit code, stderr)."""
         err = io.StringIO()
