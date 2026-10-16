@@ -245,16 +245,16 @@ jobs:
       - name: Export MySQL SQL
         run: |
           mkdir -p sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world counties > sql/counties.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world county_states > sql/county_states.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world regions > sql/regions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world subregions > sql/subregions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world countries > sql/countries.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world states > sql/states.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world cities > sql/cities.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world counties > sql/counties.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world county_states > sql/county_states.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world postcodes > sql/postcodes.sql
           # Export complete world database
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world > sql/world.sql
 
       - name: Add DROP TABLE commands to world.sql
         run: |
@@ -299,20 +299,50 @@ jobs:
           # Export PostgreSQL schema only (no data)
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --schema-only --clean --if-exists --no-owner --no-acl > psql/schema.sql
           # Export individual tables with data
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t county_states > psql/county_states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t county_states > psql/county_states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl > psql/world.sql
 
           # Remove \restrict and \unrestrict commands from all psql files
           for f in psql/*.sql; do
             grep -v '^\\\(un\)\?restrict ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
           done
+
+      - name: Check the SQL dumps load back
+        # Two checks. Every INSERT must name its columns (--complete-insert, --column-inserts), so a row lands in the
+        # right column or fails loudly in an older table (#2053); a positional INSERT anywhere fails the build. Then
+        # both world dumps are loaded into fresh databases and each table is compared with its source by row count
+        # and a per-row checksum, so a dump that does not reproduce the data fails too.
+        env:
+          PGPASSWORD: postgres
+        run: |
+          set -euo pipefail
+          tables="regions subregions countries states cities counties county_states postcodes"
+          if grep -lE '^INSERT INTO [^ ]+ VALUES' sql/*.sql psql/*.sql; then
+            echo "::error::the files above contain INSERTs without column names"; exit 1
+          fi
+          mysql -uroot -proot -e "DROP DATABASE IF EXISTS world_check; CREATE DATABASE world_check CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          mysql -uroot -proot --default-character-set=utf8mb4 world_check < sql/world.sql
+          for t in $tables; do
+            a=$(mysql -uroot -proot -N -e "CHECKSUM TABLE world.$t" | cut -f2)
+            b=$(mysql -uroot -proot -N -e "CHECKSUM TABLE world_check.$t" | cut -f2)
+            [ "$a" = "$b" ] || { echo "::error::sql/world.sql does not reproduce $t (checksum $a vs $b)"; exit 1; }
+          done
+          psql -h localhost -U postgres -q -c "DROP DATABASE IF EXISTS world_check;" -c "CREATE DATABASE world_check;"
+          psql -h localhost -U postgres -q -v ON_ERROR_STOP=1 -d world_check -f psql/world.sql > /dev/null
+          for t in $tables; do
+            q="SELECT count(*) || ':' || coalesce(sum(hashtext(r::text)::bigint), 0) FROM public.$t r"
+            a=$(psql -h localhost -U postgres -At -d world -c "$q")
+            b=$(psql -h localhost -U postgres -At -d world_check -c "$q")
+            [ "$a" = "$b" ] || { echo "::error::psql/world.sql does not reproduce $t ($a vs $b)"; exit 1; }
+          done
+          echo "SQL dumps load back and match the source for: $tables"
 
       - name: Export SQLite
         run: |
