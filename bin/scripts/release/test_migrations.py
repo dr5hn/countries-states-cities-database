@@ -124,6 +124,13 @@ def pr_event(event, number):
     return {**{k: v for k, v in event.items() if k != 'event_commit'}, 'event_pr': number}
 
 
+def batch(events):
+    """Compact events whose shared removal fields are identical."""
+    keys = {'old_id', 'before_path', 'before_row_sha256'}
+    return {**{k: v for k, v in events[0].items() if k not in keys},
+            'event_type': 'removal_batch', 'rows': [{k: e[k] for k in keys} for e in events]}
+
+
 class PREventsTest(Case):
     """PR keys resolve once, before the existing history and identity gates."""
 
@@ -149,6 +156,56 @@ class PREventsTest(Case):
                               [target('cities', 1, 'merged_same_entity')], auto=True), 42)
         self.associate(42, c1)
         return c0, c1, ev
+
+    def test_batch_parity_and_existing_gates(self):
+        """Expanded and compact PR events publish identical bytes and retain every removal guard."""
+        c0, c1, ev = self.setup_removal()
+        _, expanded = self.gen(c0, c1, [ev], out='expanded')
+        _, compact = self.gen(c0, c1, [batch([ev])], out='compact')
+        self.assertEqual({p.name: p.read_bytes() for p in expanded.iterdir()},
+                         {p.name: p.read_bytes() for p in compact.iterdir()})
+        self.refused(c0, c1, [ev, batch([ev])], 'line 2 row 1.*appears twice')
+        for changes, error in (({'before_row_sha256': '0' * 64}, 'before_row_sha256'),
+                               ({'before_path': 'contributions/cities/YY.json'}, 'event before'),
+                               ({'targets': [target('cities', 99, 'merged_same_entity')]}, 'target cities 99'),
+                               ({'review_status': 'held'}, 'held, not reviewed')):
+            with self.subTest(changes=changes):
+                self.refused(c0, c1, [batch([{**ev, **changes}])], error)
+        (self.dir / 'pr_commits.jsonl').unlink()
+        self.refused(c0, c1, [batch([ev])], 'line 1 row 1.*no verified PR association')
+        preview = self.preview(c0, c1)
+        self.gen(c0, preview, [batch([ev])], out='pending_batch', pending_pr=42)
+
+    def test_bad_batches(self):
+        """Malformed lists, extra/missing row keys, duplicates and non-removal schemas name line and row."""
+        c0, c1, ev = self.setup_removal()
+        good = batch([ev])
+        cases = [(dict(good, **{key: ev[key]}), 0) for key in ('old_id', 'before_path', 'before_row_sha256')]
+        cases += [(dict(good, event_type=kind), 0) for kind in ('identity', 'restoration', 'identity_batch')]
+        cases += [(dict(good, rows=rows), 0) for rows in ([], None, {}, 'rows')]
+        cases += [(dict(good, rows=[row]), 1) for row in
+                  (None, {}, {**good['rows'][0], 'event_type': 'identity'},
+                   {**good['rows'][0], 'before': {}}, {**good['rows'][0], 'old_id': True})]
+        cases += [(dict(good, rows=good['rows'] * 2), 2),
+                  (dict(good, outcome='repurpose'), 1),
+                  (dict(good, prior_entity={}), 1),
+                  (dict(good, automatic_redirect=True, outcome='namespace_replaced', targets=[]), 1)]
+        for malformed, row in cases:
+            with self.subTest(batch=malformed):
+                self.refused(c0, c1, [malformed], f'line 1 row {row}')
+
+    def test_multirow_batch_expansion(self):
+        """Each row reaches the ordinary loader independently, including an invalid second row."""
+        c0, c1, ev = self.setup_removal()
+        c2 = self.repo.commit({CITY: [city(1, 'One'), city(3, 'Three'), city(4, 'Four')]})
+        c3 = self.repo.commit({CITY: [city(1, 'One')]})
+        events = [removal('cities', i, c3, c2, CITY, city(i, name), 'no_successor', [])
+                  for i, name in ((3, 'Three'), (4, 'Four'))]
+        _, expanded = self.gen(c2, c3, [ev, *events], out='many_expanded')
+        _, compact = self.gen(c2, c3, [ev, batch(events)], out='many_compact')
+        self.assertEqual({p.name: p.read_bytes() for p in expanded.iterdir()},
+                         {p.name: p.read_bytes() for p in compact.iterdir()})
+        self.refused(c2, c3, [ev, batch([events[0], {**events[1], 'old_id': '4'}])], 'line 2 row 2')
 
     def test_schema_requires_a_valid_key(self):
         """PR keys are positive JSON integers; explicit SHA keys keep the old metadata behavior."""
@@ -407,6 +464,16 @@ class EventSchemaTest(unittest.TestCase):
                          targets=[target('cities', 1, 'administrative_seat'), target('counties', 9, 'moved_dataset')])
         self.assertEqual(event_errors(seat, 'e'), [])
         self.assertEqual(event_errors(self.base(outcome='no_successor', automatic_redirect=False, targets=[]), 'e'), [])
+
+    def test_dataset_move_keeps_separate_reviewed_seat(self):
+        """A dataset move requires its unit target, permits a distinct seat, and never redirects."""
+        moved = self.base(outcome='moved_dataset', automatic_redirect=False,
+                          targets=[target('counties', 9, 'moved_dataset'), target('cities', 1, 'administrative_seat')])
+        self.assertEqual(event_errors(moved, 'e'), [])
+        self.assertTrue(event_errors(dict(moved, automatic_redirect=True), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('cities', 1, 'administrative_seat')]), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('counties', 9, 'administrative_seat')]), 'e'))
+        self.assertTrue(event_errors(dict(moved, targets=[target('cities', 1, 'moved_dataset')]), 'e'))
 
     def test_unsafe_redirects_and_targets_are_refused(self):
         """Wrong-table merge, seat labelled merge, two merge targets, one-target split, no relation, null targets."""
@@ -990,6 +1057,13 @@ class HistoryTest(Case):
             held = dict(identity_event(1, c1, city(1, 'One'), 'repurpose', []), review_status='held', prior_entity=bad)
             self.gen(c0, c0, [held], out=f'held{n}')
             self.refused(c0, c1, [held], 'identity event is held')
+
+    def test_seat_target_only_for_city_rows(self):
+        """A seat target is a city named for a removed city row; a removal from another table cannot list one."""
+        self.assertTrue(m.relation_table_ok('administrative_seat', 'cities', 'cities'))
+        for old, table in (('counties', 'cities'), ('states', 'cities'), ('cities', 'counties')):
+            with self.subTest(old=old, table=table):
+                self.assertFalse(m.relation_table_ok('administrative_seat', old, table))
 
     def cli(self, ledger, meta=None):
         """Run the command line on the scratch repository; returns (exit code, stderr)."""

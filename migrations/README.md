@@ -63,7 +63,7 @@ and its existing remediation checks. Evidence, review, target and history checks
 |---|---|---|---|
 | `merged_same_entity` | A proved duplicate of the same place, kept under another id in the same table | exactly one (`merged_same_entity`) | only when the event says `automatic_redirect: true` |
 | `administrative_seat` | A row for an administrative unit, removed; the town where the unit's seat is is a different place | the seat town (`administrative_seat`), and the unit's own record elsewhere (`moved_dataset`) when one exists | no |
-| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table | no |
+| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table; an independently reviewed seat may also be listed (`administrative_seat`, cities to cities only). The unit target remains required | no |
 | `territorial_successor` | A unit replaced after a merger or reform | the successor (`territorial_successor`) | no |
 | `split_into` | A unit split into several | two or more (`split_into`) | no |
 | `namespace_replaced`, `invalid_record`, `no_successor` | No successor, for the reviewed reason given | `[]` | no |
@@ -135,6 +135,25 @@ There is one JSON object per line, cumulative across releases. A removal event h
  "review_status": "reviewed", "review": {"reason": "...", "reviewer": "..."},
  "evidence": [{"manifest": "research/<manifest>.json", "sha256": "<its SHA-256>"}]}
 ```
+
+For a bulk removal cohort whose other fields are identical, use one `removal_batch` line to avoid
+repeating review and evidence thousands of times. Its schema is the ordinary removal schema above, except
+`event_type` is `"removal_batch"` and the three per-row keys are moved into `rows`:
+
+```json
+{"event_type": "removal_batch", "schema_version": 1, "old_table": "postcodes",
+ "event_pr": 2055, "before_commit": "<full parent SHA>", "outcome": "namespace_replaced",
+ "automatic_redirect": false, "targets": [], "review_status": "reviewed",
+ "review": {"reason": "...", "reviewer": "..."}, "evidence": [{"url": "https://example.org/source"}],
+ "rows": [{"old_id": 123, "before_path": "contributions/postcodes/ES.json", "before_row_sha256": "<SHA-256>"}]}
+```
+
+`rows` must be a nonempty list with distinct `old_id` values. Every row has exactly `old_id`, `before_path`
+and `before_row_sha256`; none may appear in the shared fields. Batches represent removals only, never identity
+or restoration events. Each row expands to an ordinary removal before validation, including PR resolution and
+pending mode, history guards, targets, retirement and duplicate checks. Published files are byte-identical to
+those from the expanded events (without an explicit `event_type`). Diagnostics use one-based row indexes;
+row 0 identifies malformed shared fields or the row list. Use separate cohorts when any shared field differs.
 
 `before_row_sha256` is the SHA-256 of the row as UTF-8
 `json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(',', ':'))`. An event may also carry the full

@@ -43,6 +43,21 @@ class RetiredIdFloorTest(unittest.TestCase):
             {'table': 'postcodes', 'id': 900000}, {'table': 'cities', 'id': 166350}, ''])
         self.assertEqual(retired_id_floor(self.dir), {'cities': 166400, 'postcodes': 900000})
 
+    def test_batch_rows_set_floor(self):
+        """Every batch row contributes its id, alongside ordinary removals and reserved ids."""
+        write_lines(os.path.join(self.dir, 'events.jsonl'), [
+            {'old_table': 'cities', 'old_id': 7},
+            {'event_type': 'removal_batch', 'old_table': 'postcodes',
+             'rows': [{'old_id': 900001}, {'old_id': 900099}, {'old_id': 900002}]},
+            {'event_type': 'removal_batch', 'old_table': 'cities', 'rows': [{'old_id': 8}]}])
+        write_lines(os.path.join(self.dir, 'reserved_ids.jsonl'), [{'table': 'cities', 'id': 9}])
+        self.assertEqual(retired_id_floor(self.dir), {'postcodes': 900099, 'cities': 9})
+        for rows in ([], None, [None], [{'old_id': True}], [{'old_id': '12'}]):
+            write_lines(os.path.join(self.dir, 'events.jsonl'), [
+                {'event_type': 'removal_batch', 'old_table': 'postcodes', 'rows': rows}])
+            with self.subTest(rows=rows), self.assertRaisesRegex(SystemExit, 'row [01]'):
+                retired_id_floor(self.dir)
+
     def test_malformed_lines_stop_the_import(self):
         """Not JSON, not an object, no positive integer id, or an unknown event type: the import stops instead of guessing."""
         for bad in ('{not json', '[1, 2]', json.dumps({'old_table': 'cities', 'old_id': '7'}),

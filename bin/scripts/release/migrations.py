@@ -48,7 +48,7 @@ MANAGED = {'created_at', 'updated_at', 'flag'}
 REMOVAL_OUTCOMES = {
     'merged_same_entity': ({'merged_same_entity'}, 'merged_same_entity', 1, 1),
     'administrative_seat': ({'administrative_seat', 'moved_dataset'}, 'administrative_seat', 1, None),
-    'moved_dataset': ({'moved_dataset'}, 'moved_dataset', 1, None),
+    'moved_dataset': ({'moved_dataset', 'administrative_seat'}, 'moved_dataset', 1, None),
     'territorial_successor': ({'territorial_successor'}, 'territorial_successor', 1, None),
     'split_into': ({'split_into'}, 'split_into', 2, None),
     'namespace_replaced': (set(), None, 0, 0), 'invalid_record': (set(), None, 0, 0), 'no_successor': (set(), None, 0, 0),
@@ -119,11 +119,12 @@ def is_str(v, *allowed):
 
 
 def relation_table_ok(relation, old_table, table):
-    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city."""
+    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city
+    named for a removed city row (a unit row in cities), as migrations/README.md says."""
     if relation in ('merged_same_entity', 'territorial_successor', 'split_into'):
         return table == old_table
     if relation == 'administrative_seat':
-        return table == 'cities'
+        return table == 'cities' and old_table == 'cities'
     if relation == 'moved_dataset':
         return table != old_table
     return relation == 'prior_identity'
@@ -272,6 +273,39 @@ def read_jsonl(path, what):
     return out
 
 
+def ledger_events(path):
+    """Expand removal batches before the ordinary per-event schema and history checks.
+
+    Batch row indexes are one-based and retained in every loader diagnostic.
+    """
+    keys = {'old_id', 'before_path', 'before_row_sha256'}
+    for n, event in read_jsonl(path, 'ledger'):
+        if not isinstance(event, dict) or event.get('event_type') != 'removal_batch':
+            if isinstance(event, dict) and 'rows' in event:
+                raise MigrationError(f'ledger line {n} row 0 (shared): only removal_batch may contain rows')
+            yield n, event
+            continue
+        where = f'ledger line {n} row 0 (shared)'
+        if keys & event.keys():
+            raise MigrationError(f'{where}: batch shared fields contain per-row keys')
+        rows = event.get('rows')
+        if not isinstance(rows, list) or not rows:
+            raise MigrationError(f'{where}: batch rows must be a nonempty list')
+        shared = {k: v for k, v in event.items() if k not in ('event_type', 'rows')}
+        seen = set()
+        for i, row in enumerate(rows, 1):
+            where = f'ledger line {n} row {i}'
+            if not isinstance(row, dict) or row.keys() != keys:
+                raise MigrationError(f'{where}: batch row needs exactly old_id, before_path, before_row_sha256')
+            errs = event_errors({**shared, **row}, where)
+            if errs:
+                raise MigrationError('\n'.join(errs))
+            if row['old_id'] in seen:
+                raise MigrationError(f'{where}: duplicate batch old_id {row["old_id"]}')
+            seen.add(row['old_id'])
+            yield f'{n} row {i}', {**shared, **row}
+
+
 def load_pr_commits(path):
     """Read the saved GitHub associations; duplicate or malformed proofs fail closed."""
     prs = {}
@@ -291,7 +325,7 @@ def load_ledger(path, repo, to, pending_pr=None, pr_commits_path=None, ledger_ti
     Explicit SHA keys retain their historical meaning. Pending keys model a single-parent squash of the preview."""
     index, errors = {kind: {} for kind in EVENT_TYPES}, []
     proofs, line, resolved = None, None, {}
-    for n, e in read_jsonl(path, 'ledger'):
+    for n, e in ledger_events(path):
         errs = event_errors(e, f'ledger line {n}')
         if errs:
             errors += errs
