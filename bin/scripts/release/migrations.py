@@ -48,7 +48,7 @@ MANAGED = {'created_at', 'updated_at', 'flag'}
 REMOVAL_OUTCOMES = {
     'merged_same_entity': ({'merged_same_entity'}, 'merged_same_entity', 1, 1),
     'administrative_seat': ({'administrative_seat', 'moved_dataset'}, 'administrative_seat', 1, None),
-    'moved_dataset': ({'moved_dataset'}, 'moved_dataset', 1, None),
+    'moved_dataset': ({'moved_dataset', 'administrative_seat'}, 'moved_dataset', 1, None),
     'territorial_successor': ({'territorial_successor'}, 'territorial_successor', 1, None),
     'split_into': ({'split_into'}, 'split_into', 2, None),
     'namespace_replaced': (set(), None, 0, 0), 'invalid_record': (set(), None, 0, 0), 'no_successor': (set(), None, 0, 0),
@@ -119,11 +119,12 @@ def is_str(v, *allowed):
 
 
 def relation_table_ok(relation, old_table, table):
-    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city."""
+    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city
+    named for a removed city row (a unit row in cities), as migrations/README.md says."""
     if relation in ('merged_same_entity', 'territorial_successor', 'split_into'):
         return table == old_table
     if relation == 'administrative_seat':
-        return table == 'cities'
+        return table == 'cities' and old_table == 'cities'
     if relation == 'moved_dataset':
         return table != old_table
     return relation == 'prior_identity'
