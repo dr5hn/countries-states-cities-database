@@ -716,6 +716,7 @@ jobs:
     timeout-minutes: 60
     permissions:
       contents: read   # reads the history and the list of published releases
+      pull-requests: read # verifies PR-only events against GitHub merge_commit_sha
     outputs:
       artifact: ${{ steps.generate.outputs.artifact }}
       data_version: ${{ steps.generate.outputs.data_version }}
