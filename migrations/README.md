@@ -173,6 +173,58 @@ A restoration event:
 A `held` event is a placeholder. It fails the release wherever it applies, before `--from` as well as inside the
 interval; only a later release's events are ignored.
 
+## A data PR carries its own events
+
+Use a full `event_commit` SHA (existing ledgers keep working), or omit it and use a positive integer
+`event_pr`, for removals, identity decisions and restorations alike. With `event_pr: 2050`, the generator finds the
+single commit on `--to`'s entire first-parent history whose subject ends exactly in `(#2050)`. No match or several
+matches fails; a mention in a commit body or on a side branch does not count. Squash-merge the PR with that suffix.
+The lookup includes history before `--from`. An explicit `event_commit` always takes precedence, including in
+pending mode: existing events may retain `event_pr` as metadata without changing their meaning. Generated JSONL and CSV always record the resolved full
+`event_commit` SHA; JSONL also retains `event_pr`. Reference fields such as `retirement_commit`,
+`retires_repurpose.identity_event_commit` and `recorded_later.event_commit` still require full historical SHAs.
+The immutable unresolved baseline continues to use `baseline_commit`.
+
+1. Open the data PR to obtain its number. Append reviewed events to `migrations/events.jsonl` in that same PR,
+   replacing each new event's `event_commit` with `event_pr: <that number>` (a JSON integer). Include the evidence,
+   review, outcome and targets as usual; no follow-up ledger PR is needed after squash merge.
+2. For a removal, set `before_commit` to the merge preview's first parent (the current base-branch SHA),
+   `before_path` to the row's original path, and `before_row_sha256` to its full canonical row hash at that parent.
+   Refresh these guards when the base changes. Identity and restoration hashes keep their existing rules.
+3. Finalise every new row's id before the check: id-less rows are allowed in intermediate history, not at `--to`.
+   All existing review, target, retirement, repurpose, baseline and restoration gates remain in force. A repurpose
+   that still leaves the id denoting the other entity at the preview is refused; PR keys do not waive remediation.
+4. The `Ledger migrations` PR job checks the merge preview with `--pending-pr <number>`. Only events naming that
+   number bind directly to `--to`; other PR keys still resolve by subject. Without that option an unmerged PR key
+   fails. Use pending mode only for a merge preview, never to generate published release files.
+
+For example, a reviewed no-successor removal in PR 2050 uses this event shape (replace the guards and provenance):
+
+```json
+{"schema_version": 1, "old_table": "cities", "old_id": 123, "event_pr": 2050,
+ "before_commit": "<full base SHA>", "before_path": "contributions/cities/XX.json",
+ "before_row_sha256": "<canonical full-row SHA-256>", "outcome": "no_successor", "targets": [],
+ "automatic_redirect": false, "review_status": "reviewed",
+ "review": {"reason": "<reviewed finding>", "reviewer": "<reviewer>"},
+ "evidence": [{"url": "https://example.org/source"}]}
+```
+
+The read-only [`ledger-migrations.yml`](../.github/workflows/ledger-migrations.yml) runs for PR changes under
+`contributions/**`, `migrations/**` and `bin/scripts/release/**`, including drafts. It fetches full history and tags,
+compares v4.0 to the merge preview with candidate metadata (`data_version: "5-candidate"`), and fails on any
+generator error. It publishes and comments nothing. Make `Ledger migrations` a required status check in the
+repository's branch protection/ruleset to enforce the gate at merge. Its single walk takes about two minutes and
+3.2 GB; newer runs cancel older runs for the same PR, and the job has a 15-minute timeout.
+
+To reproduce locally in a full clone with the merge preview available, create candidate metadata from
+`migrations/release_meta.json`, adding `"data_version": "5-candidate"`, then run:
+
+```bash
+python3 bin/scripts/release/migrations.py --from v4.0 --to <merge-preview-sha> --pending-pr 2050 \
+  --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl \
+  --meta <candidate-meta.json> --out <scratch-output-folder>
+```
+
 ## The reserved ids
 
 `--reserved` names every id that left the data before `--from` and must never return, as `{"table", "id"}` per
@@ -188,6 +240,7 @@ malformed line in either file stops the import.
 
 It exits 1 and writes nothing when any of these happens:
 
+- A PR-keyed event has no unique squash subject on `--to`'s first-parent line (unless it names `--pending-pr`).
 - An event's commit is not on the release line: inside the interval, before `--from` on its first-parent history,
   or after `--to` on a later release's (also when `--to` is the first commit).
 - A removal at any first-parent commit between the two releases has no reviewed event for that commit.

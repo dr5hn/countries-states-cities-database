@@ -1,0 +1,51 @@
+name: Ledger migration check
+
+on:
+  pull_request:
+    paths:
+      - 'contributions/**'
+      - 'migrations/**'
+      - 'bin/scripts/release/**'
+      - '.github/workflows/ledger-migrations.yml'
+
+permissions:
+  contents: read
+
+# One cumulative walk per PR at a time (about 2 minutes and 3.2 GB from v4.0).
+concurrency:
+  group: ledger-migrations-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  ledger-migrations:
+    name: Ledger migrations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }} # pull_request merge preview, not the PR branch head
+          fetch-depth: 0        # full first-parent history and tags, including v4.0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate the candidate ledger
+        env:
+          PENDING_PR: ${{ github.event.number }}
+          MERGE_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          meta = json.loads(Path('migrations/release_meta.json').read_text())
+          meta['data_version'] = '5-candidate'
+          (Path(os.environ['RUNNER_TEMP']) / 'release_meta.json').write_text(json.dumps(meta))
+          PY
+          python3 bin/scripts/release/migrations.py \
+            --from v4.0 --to "$MERGE_SHA" --pending-pr "$PENDING_PR" \
+            --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl \
+            --meta "$RUNNER_TEMP/release_meta.json" --out "$RUNNER_TEMP/ledger-migrations"

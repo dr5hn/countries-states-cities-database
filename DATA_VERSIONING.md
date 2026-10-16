@@ -45,6 +45,13 @@ admission does not itself replace an explicit unresolved identity decision. Stri
 retained keys whose latest decision is unresolved. Inventory disclosure does not close a substantive publication
 hold or authorise an otherwise unproved transfer.
 
+Data PRs carry their reviewed ledger events in the same PR: use a positive integer `event_pr` instead of
+`event_commit`. The generator resolves the unique first-parent squash subject ending in `(#N)` and publishes the
+resolved commit SHA. The `Ledger migrations` PR check uses `--pending-pr N` to validate those events against the
+merge preview before merge; the historical row, target, baseline and identity rules still apply. See
+[how to add events in a data PR](migrations/README.md#a-data-pr-carries-its-own-events). Existing SHA-keyed events
+remain valid. Require that check in branch protection to block merges on ledger errors.
+
 ## What each kind of release may change
 
 Releases are numbered `vMAJOR.MINOR.PATCH`, for example `v5.0.0` and then `v5.1.0`. Each published export of a

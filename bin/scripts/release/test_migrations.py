@@ -105,11 +105,11 @@ class Case(unittest.TestCase):
         self.meta.write_text(json.dumps({'data_version': '5.0.0', 'contract_version': '5', 'policy_version': '1',
                                          'data_schema_version': '5', 'notices': ['NOTICE']}))
 
-    def gen(self, frm, to, events, out='out'):
+    def gen(self, frm, to, events, out='out', **kwargs):
         """Run generate() with these ledger events; returns (content, out path)."""
         ledger = self.dir / 'events.jsonl'
         ledger.write_text(''.join(json.dumps(e) + '\n' for e in events))
-        content, _ = generate(self.repo.root, frm, to, ledger, self.reserved, self.meta, self.dir / out)
+        content, _ = generate(self.repo.root, frm, to, ledger, self.reserved, self.meta, self.dir / out, **kwargs)
         return content, self.dir / out
 
     def refused(self, frm, to, events, pattern):
@@ -117,6 +117,189 @@ class Case(unittest.TestCase):
         with self.assertRaisesRegex(MigrationError, pattern):
             self.gen(frm, to, events, out='refused')
         self.assertFalse((self.dir / 'refused').exists())
+
+
+def pr_event(event, number):
+    """Replace a fixture's commit key with a PR number, as a data PR would do."""
+    return {**{k: v for k, v in event.items() if k != 'event_commit'}, 'event_pr': number}
+
+
+class PREventsTest(Case):
+    """PR keys resolve once, before the existing history and identity gates."""
+
+    def setup_removal(self, message='Remove twin (#42)'):
+        """A removed city and its PR-keyed reviewed event."""
+        c0 = self.repo.commit({**self.base_files, CITY: [city(1, 'One'), city(2, 'Twin')]})
+        c1 = self.repo.commit({CITY: [city(1, 'One')]}, message)
+        ev = pr_event(removal('cities', 2, c1, c0, CITY, city(2, 'Twin'), 'merged_same_entity',
+                              [target('cities', 1, 'merged_same_entity')], auto=True), 42)
+        return c0, c1, ev
+
+    def test_schema_requires_a_valid_key(self):
+        """PR keys are positive JSON integers; explicit SHA keys keep the old metadata behavior."""
+        _, _, ev = self.setup_removal()
+        self.assertEqual(event_errors(ev, 'test'), [])
+        for bad in (True, False, 0, -1, 42.0, '42', None, [], {}):
+            with self.subTest(pr=bad):
+                self.assertTrue(event_errors(dict(ev, event_pr=bad), 'test'))
+        self.assertEqual(event_errors(dict(ev, event_commit='a' * 40), 'test'), [])
+        self.assertTrue(event_errors(dict(ev, event_commit=None), 'test'))
+        self.assertTrue(event_errors({k: v for k, v in ev.items() if k != 'event_pr'}, 'test'))
+
+    def test_subject_resolution_and_published_sha(self):
+        """A historical PR resolves by its subject suffix, before --from too, and publishes its full SHA."""
+        c0, c1, ev = self.setup_removal()
+        c2 = self.repo.commit({}, 'next release')
+        content, out = self.gen(c0, c2, [ev])
+        self.assertEqual(content[0][0]['event_commit'], c1)
+        self.assertEqual(json.loads((out / 'removed_ids.jsonl').read_text())['event_commit'], c1)
+        self.assertEqual(content[1][0][-1], c1)
+        self.assertEqual(content[0][0]['event_pr'], 42)
+        self.assertNotIn('event_commit', ev)
+        self.refused(c1, c2, [dict(ev, before_row_sha256='0' * 64)], 'before_row_sha256')
+        content, _ = self.gen(c1, c2, [ev], out='step')
+        self.assertEqual(content[0], [])
+
+    def test_no_match_requires_exact_suffix_on_release_line(self):
+        """Body mentions, embedded suffixes, other PRs and side-branch commits cannot bind an event."""
+        for message in ('Remove (#42) trailing', 'Remove (#420)', 'Remove\n\nDetails (#42)', 'Remove (#042)'):
+            with self.subTest(message=message):
+                c0, c1, ev = self.setup_removal(message)
+                self.refused(c0, c1, [ev], 'event_pr 42 matches 0 first-parent commits')
+        self.repo.run('checkout', '-q', '-b', 'side')
+        side = self.repo.commit({}, 'Only a side branch (#42)')
+        self.refused(c0, c1, [ev], 'matches 0')
+        self.repo.run('checkout', '-q', 'main')
+        self.repo.run('merge', '--no-ff', '-m', 'Merge side branch', side)
+        head = self.repo.run('rev-parse', 'HEAD')
+        self.refused(c0, head, [ev], 'matches 0')
+
+    def test_multiple_matches_are_refused(self):
+        """Two matching subjects on the first-parent line are ambiguous, including one before --from."""
+        c0, c1, ev = self.setup_removal()
+        c2 = self.repo.commit({}, 'Another subject (#42)')
+        self.refused(c0, c2, [ev], 'event_pr 42 matches 2 first-parent commits')
+        self.refused(c1, c2, [ev], 'matches 2')
+
+    def test_mixed_keys_and_duplicate_resolved_key(self):
+        """SHA and PR events can coexist; two keys resolving to the same event are still duplicates."""
+        c0, c1, ev = self.setup_removal()
+        c2 = self.repo.commit({CITY: []}, 'Remove final city (#43)')
+        old = removal('cities', 1, c2, c1, CITY, city(1, 'One'), 'no_successor', [])
+        content, _ = self.gen(c0, c2, [ev, old])
+        self.assertEqual([e['event_commit'] for e in content[0]], [c1, c2])
+        self.refused(c0, c1, [ev, {**{k: v for k, v in ev.items() if k != 'event_pr'}, 'event_commit': c1}],
+                     'appears twice')
+
+    def test_explicit_commit_keeps_legacy_pr_metadata(self):
+        """Existing SHAs are authoritative even with PR metadata or a matching pending PR option."""
+        c0, c1, ev = self.setup_removal('Legacy SHA event')
+        c2 = self.repo.commit({}, 'Preview')
+        for pr in (42, None, 'legacy metadata'):
+            legacy = dict(ev, event_commit=c1, event_pr=pr)
+            content, _ = self.gen(c0, c2, [legacy], pending_pr=42)
+            self.assertEqual(content[0][0]['event_commit'], c1)
+            self.assertEqual(content[0][0]['event_pr'], pr)
+
+    def test_resolved_removal_keeps_all_guards(self):
+        """PR resolution preserves the before-parent/path/hash, target and review gates."""
+        c0, c1, ev = self.setup_removal()
+        for changes, pattern in (({'before_commit': c1}, 'event before'),
+                                 ({'before_path': 'contributions/cities/YY.json'}, 'event before'),
+                                 ({'before_row_sha256': '0' * 64}, 'before_row_sha256'),
+                                 ({'targets': [target('cities', 9, 'merged_same_entity')]}, 'target cities 9'),
+                                 ({'review_status': 'held'}, 'held, not reviewed')):
+            with self.subTest(changes=changes):
+                self.refused(c0, c1, [dict(ev, **changes)], pattern)
+
+    def test_pending_pr_binds_merge_preview_only_for_own_events(self):
+        """The preview's first parent is the base; only this PR overrides subject lookup, with output SHA retained."""
+        c0, c1, ev = self.setup_removal()
+        self.repo.run('checkout', '-q', '-b', 'pr')
+        self.repo.commit({CITY: []}, 'Remove one city')
+        self.repo.run('checkout', '-q', 'main')
+        self.repo.run('merge', '--no-ff', '-m', 'Merge preview', 'pr')
+        preview = self.repo.run('rev-parse', 'HEAD')
+        pending = pr_event(removal('cities', 1, preview, c1, CITY, city(1, 'One'), 'no_successor', []), 43)
+        self.refused(c0, preview, [ev, pending], 'event_pr 43 matches 0')
+        content, _ = self.gen(c0, preview, [ev, pending], pending_pr=43)
+        self.assertEqual([e['event_commit'] for e in content[0]], [c1, preview])
+        self.assertEqual(content[0][1]['before_commit'], c1)
+        with self.assertRaisesRegex(MigrationError, 'no ledger event'):
+            self.gen(c0, preview, [ev], pending_pr=43)
+        with self.assertRaisesRegex(MigrationError, 'event_pr 44 matches 0'):
+            self.gen(c0, preview, [ev, pending, dict(pending, event_pr=44)], pending_pr=43)
+
+    def test_pending_pr_overrides_subject_and_validates_input(self):
+        """Pending mode deliberately binds --to even if that PR subject exists; invalid numbers are refused."""
+        c0, c1, ev = self.setup_removal()
+        c2 = self.repo.commit({}, 'Preview (#42)')
+        with self.assertRaisesRegex(MigrationError, 'no ledger event|no such removal'):
+            self.gen(c0, c2, [ev], pending_pr=42)
+        for bad in (0, -1, True, '42', 42.0):
+            with self.subTest(pending_pr=bad), self.assertRaisesRegex(MigrationError, 'pending_pr must be a positive integer'):
+                self.gen(c0, c1, [ev], pending_pr=bad)
+
+    def test_pending_pr_cli(self):
+        """The CLI passes pending PR mode through and rejects a non-positive number without output."""
+        c0, c1, ev = self.setup_removal('Preview')
+        ledger = self.dir / 'events.jsonl'
+        ledger.write_text(json.dumps(ev) + '\n')
+        args = ['--from', c0, '--to', c1, '--ledger', str(ledger), '--reserved', str(self.reserved),
+                '--meta', str(self.meta), '--repo', str(self.repo.root), '--out', str(self.dir / 'cli')]
+        self.assertEqual(m.main(args + ['--pending-pr', '42']), 0)
+        with redirect_stderr(io.StringIO()):
+            self.assertEqual(m.main(args + ['--pending-pr', '0']), 1)
+
+    def test_repurpose_keyed_by_pr_still_needs_retirement(self):
+        """A PR-keyed repurpose must retire the reused id with its replacement, also for step releases."""
+        old, later = city(2, 'Unit'), city(2, 'Town')
+        county = 'contributions/counties/XX.json'
+        c0 = self.repo.commit({**self.base_files, CITY: [old], county: []})
+        c1 = self.repo.commit({CITY: [later], county: [{'id': 9, 'name': 'Unit'}]}, 'Reclassify (#42)')
+        rep = pr_event(identity_event(2, c1, old, 'repurpose', [target('counties', 9, 'prior_identity')]), 42)
+        self.refused(c0, c1, [rep], 'still denotes the other entity')
+        c2 = self.repo.commit({CITY: [city(3, 'Town')]}, 'Retire reused id (#43)')
+        retire = pr_event(removal('cities', 2, c2, c1, CITY, later, 'merged_same_entity',
+                                 [target('cities', 3, 'merged_same_entity')], retires_repurpose={
+                                     'identity_event_commit': c1, 'replacement': {'table': 'cities', 'id': 3},
+                                     'replacement_kind': 'fresh'}), 43)
+        for frm in (c0, c1):
+            content, out = self.gen(frm, c2, [rep, retire])
+            self.assertEqual(content[3][0]['event_commit'], c1)
+            self.assertEqual(content[3][0]['remediation']['event_commit'], c2)
+            self.assertEqual(content[0][0]['later_entity_targets'][0]['id'], 3)
+            self.assertEqual(json.loads((out / 'identity_changes.jsonl').read_text())['event_commit'], c1)
+        self.refused(c0, c2, [rep, {k: v for k, v in retire.items() if k != 'retires_repurpose'}], 'needs retires_repurpose')
+
+    def test_restoration_keyed_by_pr_and_pending_pr(self):
+        """A PR-keyed restoration binds the same stable identity and publishes the resolved restoration SHA."""
+        old = city(2, 'Two', wikiDataId='Q2')
+        c0 = self.repo.commit({**self.base_files, CITY: [old]})
+        c1 = self.repo.commit({CITY: []}, 'Retire (#41)')
+        c2 = self.repo.commit({CITY: [old]}, 'Restore (#42)')
+        retire = pr_event(removal('cities', 2, c1, c0, CITY, old, 'no_successor', []), 41)
+        back = pr_event(restoration('cities', 2, c2, c1, old, old, {'wikiDataId': 'Q2'}), 42)
+        for pending in (None, 42):
+            content, _ = self.gen(c1, c2, [retire, back], pending_pr=pending)
+            self.assertEqual(content[2][0]['restored']['event_commit'], c2)
+        self.refused(c0, c2, [retire, dict(back, same_identity={'wikiDataId': 'Q9'})], 'wikiDataId is not')
+        self.refused(c0, c2, [retire, dict(back, restored_row_sha256='0' * 64)], 'restored_row_sha256')
+        self.refused(c0, c2, [retire], 'retired or reserved')
+
+    def test_baseline_conflict_after_pr_resolution(self):
+        """Resolving a PR cannot evade the conflict with the immutable baseline at the same commit."""
+        row = city(1, 'One')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({}, 'Review (#42)')
+        baseline = {'schema_version': 1, 'table': 'cities', 'id': 1, 'baseline_commit': c1,
+                    'row_sha256': row_hash(row), 'outcome': 'unresolved', 'reason': 'test', 'decision_round': 'test',
+                    'review_status': 'reviewed', 'review': {'reason': 'test', 'reviewer': 'test'},
+                    'evidence': [{'url': 'https://example.invalid/test'}]}
+        (self.dir / 'unresolved_baseline.jsonl').write_text(json.dumps(baseline) + '\n')
+        ev = pr_event(dict(identity_event(1, c1, row, 'classification', []), decision_only=True,
+                           after_row_sha256=row_hash(row)), 42)
+        self.refused(c0, c1, [ev], 'baseline conflicts')
 
 
 class EventSchemaTest(unittest.TestCase):

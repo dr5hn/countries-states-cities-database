@@ -13,7 +13,9 @@ commit, path or before-row hash is wrong, a target is wrong or missing at that c
 same-entity merge, a repurposed id still denotes the other entity at --to or is retired without naming the other
 entity's replacement, an id is missing, malformed or duplicated, or a retired or reserved id is in use without a
 reviewed restoration of the same entity. Events before --from get the same checks. An output failure keeps the
-earlier output.
+earlier output. Events may name event_pr instead of event_commit: the unique first-parent squash subject ending
+in (#N) resolves the PR to a commit. --pending-pr N binds only that PR's events to --to for a merge-preview check;
+published release runs must omit it. Generated events always carry the resolved event_commit SHA.
 
 Usage:
   python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <candidate sha> \\
@@ -168,7 +170,10 @@ def event_errors(e, where):
     tkey, ikey = ('old_table', 'old_id') if kind == 'removal' else ('table', 'id')
     need(is_str(e.get(tkey), TABLES), f'{tkey} {e.get(tkey)!r} is not a known table')
     need(positive_id(e.get(ikey)), f'{ikey} must be a positive integer')
-    need(sha1('event_commit'), 'event_commit must be a full commit SHA')
+    if 'event_commit' in e:
+        need(sha1('event_commit'), 'event_commit must be a full commit SHA')
+    else:
+        need(positive_id(e.get('event_pr')), 'event_pr must be a positive integer when event_commit is absent')
     if kind == 'restoration':
         need(sha1('retirement_commit'), 'retirement_commit must be a full commit SHA')
         need(sha256('retired_row_sha256') and sha256('restored_row_sha256'), 'retired_row_sha256 and restored_row_sha256 must be SHA-256s')
@@ -267,15 +272,38 @@ def read_jsonl(path, what):
     return out
 
 
-def load_ledger(path):
-    """Removal, identity and restoration events, each keyed by (table, id, event_commit); any schema error or repeated
-    key fails."""
+def load_ledger(path, repo, to, pending_pr=None):
+    """Resolve PR keys to first-parent commits, then index events by (table, id, event_commit). Schema errors,
+    missing/ambiguous PR subjects and duplicate resolved keys fail. Explicit SHAs take precedence over PR metadata;
+    only a PR-keyed pending event binds directly to to."""
     index, errors = {kind: {} for kind in EVENT_TYPES}, []
+    prs = None
     for n, e in read_jsonl(path, 'ledger'):
         errs = event_errors(e, f'ledger line {n}')
         if errs:
             errors += errs
             continue
+        if 'event_commit' not in e:
+            pr = e['event_pr']
+            if pr == pending_pr:
+                commit = to
+            else:
+                if prs is None:
+                    prs = defaultdict(list)
+                    for line in git(repo, 'log', '--first-parent', '--format=%H%x00%s', to).decode().split('\n'):
+                        if not line:
+                            continue
+                        sha, subject = line.split('\0', 1)
+                        match = re.search(r'\(#([1-9][0-9]*)\)$', subject)
+                        if match:
+                            prs[int(match[1])].append(sha)
+                matches = prs[pr]
+                if len(matches) != 1:
+                    errors.append(f'ledger line {n}: event_pr {pr} matches {len(matches)} first-parent commits of --to; '
+                                  f'expected exactly one subject ending "(#{pr})"')
+                    continue
+                commit = matches[0]
+            e = {**e, 'event_commit': commit}
         kind = e.get('event_type', 'removal')
         key = (e['old_table'], e['old_id'], e['event_commit']) if kind == 'removal' else (e['table'], e['id'], e['event_commit'])
         if key in index[kind]:
@@ -964,14 +992,17 @@ def recorded_later_of(e):
     return later if isinstance(later, dict) and isinstance(later.get('event_commit'), str) else None
 
 
-def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None, baseline_path=None):
+def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None, baseline_path=None,
+             pending_pr=None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
     problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
     checked by the same walk, which then starts at the first parent of the oldest of them."""
-    removals, identities, restorations = load_ledger(ledger)
-    reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
+    if pending_pr is not None and not positive_id(pending_pr):
+        raise MigrationError('pending_pr must be a positive integer')
     repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
+    removals, identities, restorations = load_ledger(ledger, repo, to, pending_pr)
+    reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
     baseline_path = Path(baseline_path) if baseline_path is not None else Path(ledger).with_name('unresolved_baseline.jsonl')
     baseline = load_baseline(baseline_path)
     every = {k[2] for d in (removals, identities, restorations) for k in d}
@@ -1035,6 +1066,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     p.add_argument('--from', dest='frm', required=True, help='commit of the previous successful published snapshot')
     p.add_argument('--to', required=True, help='commit of this release candidate')
+    p.add_argument('--pending-pr', type=int, help='bind this PR number to --to (PR merge preview only)')
     p.add_argument('--ledger', required=True, help='reviewed events, one JSON object per line (migrations/events.jsonl)')
     p.add_argument('--baseline', help='reviewed unresolved snapshot (default: unresolved_baseline.jsonl beside --ledger)')
     p.add_argument('--reserved', required=True, help='ids retired before --from, {"table","id"} per line')
@@ -1044,7 +1076,8 @@ def main(argv=None):
     a = p.parse_args(argv)
     try:
         content, sums = generate(a.repo, a.frm, a.to, a.ledger, a.reserved, a.meta, a.out,
-                                 log=lambda m: print(f'[INFO] {m}', file=sys.stderr), baseline_path=a.baseline)
+                                 log=lambda m: print(f'[INFO] {m}', file=sys.stderr), baseline_path=a.baseline,
+                                 pending_pr=a.pending_pr)
     except MigrationError as err:
         print(f'[ERROR] {err}\nFix the ledger, reserved ids or source named above and run again; nothing was written.', file=sys.stderr)
         return 1
