@@ -132,9 +132,9 @@ Downstream projects (csc-export-tool, countrystatecity npm/pypi packages) downlo
 |----------|---------|---------|
 | `export.yml` | Manual / changes to `bin/Commands/Export**` | Full export pipeline, uploads to Releases + PR |
 | `pr-validator.yml` | PR touching `contributions/` | Schema validation, cross-refs, coordinates, duplicates, auto-labels |
-| `auto-changelog.yml` | PR merged to master | Appends one-liner to `CHANGELOG.md` via PR |
+| `auto-changelog.yml` | PR merged to master | Slack message for each merged PR |
 | `stale-cleanup.yml` | Weekly (Sunday) | Warn PRs inactive 21+ days, close at 30+ |
-| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status |
+| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status; opens the weekly `CHANGELOG.md` PR |
 | `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
 | `format-tests.yml` | PR touching `bin/`, `migrations/`, `prisma/` or `.github/scripts/` | Format, import and release-tool tests |
 | `ledger-migrations.yml` | Every PR (required check) | Validates the PR's migration ledger events against its merge preview |

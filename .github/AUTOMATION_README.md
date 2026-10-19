@@ -11,9 +11,9 @@ Unzip `csc-github-automation.zip` into your repository root. This adds/updates t
 unzip csc-github-automation.zip -d .
 ```
 
-### Step 2: Create required labels
+### Step 2: Push the files
 
-Push the files to your default branch, then trigger the label setup:
+Push the files to your default branch:
 
 ```bash
 git add .github/ CHANGELOG.md
@@ -53,13 +53,9 @@ The `node_modules/` directory is gitignored and installed fresh by GitHub Action
 
 ### Blocker 1: Branch Protection Rules
 
-**Problem:** The auto-changelog workflow pushes directly to the default branch. If you have branch protection rules requiring PR reviews for all commits, this push will fail.
+**Problem:** A workflow that pushes directly to a protected default branch fails.
 
-**Solution:** Add `github-actions[bot]` to the list of users/apps that can bypass branch protection:
-1. Go to **Settings** > **Branches** > your default branch protection rule
-2. Under "Allow specified actors to bypass required pull requests", add `github-actions[bot]`
-
-Alternatively, if you do not want direct pushes, modify `auto-changelog.yml` to open a PR instead of pushing directly.
+**Solution:** None needed here. The weekly changelog update in `weekly-digest.yml` opens a PR (branch `changelog/weekly-<date>`) instead of pushing, and `auto-changelog.yml` only sends a Slack message.
 
 ### Blocker 2: Missing Data Files for Cross-Reference
 
@@ -155,8 +151,8 @@ contributions/IN/maharashtra.json       # No entity keyword in path
 | `pr-validator.yml` | PR opened/edited/sync | All validation checks, auto-labelling, report comment |
 | `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
 | `stale-cleanup.yml` | Weekly (Sunday) | Warn/close inactive PRs, remove stale label on activity |
-| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status |
-| `auto-changelog.yml` | PR merged | Append changelog entry, notify Slack |
+| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status; opens the weekly `CHANGELOG.md` PR |
+| `auto-changelog.yml` | PR merged | Slack message for each merged PR |
 
 ### Scripts (`.github/scripts/`)
 
