@@ -2,6 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const { execFileSync } = require('node:child_process');
 const { isWithinBounds, normalizePostcodeCode, validateRecord } = require('./utils');
 
 const postcode = {
@@ -159,4 +160,192 @@ test('real canonical US county records produce no warnings', () => {
 test('other partial county managed fields still warn', () => {
   const record = require('../../contributions/counties/US.json')[0];
   assert.match(validateRecord({ ...record, flag: 1 }, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+});
+
+// v5: cities without a state (countries with no states, e.g. Western Sahara)
+const city = (extra) => ({ name: 'Smara', country_id: 244, country_code: 'EH', latitude: '26.74', longitude: '-11.67', ...extra });
+
+test('a city may have state_id and state_code both null', () => {
+  const { errors } = validateRecord(city({ state_id: null, state_code: null }), 'cities', 0);
+  assert.deepEqual(errors, []);
+});
+
+test('a half-null state pair is an error', () => {
+  const a = validateRecord(city({ state_id: null, state_code: 'XX' }), 'cities', 0).errors;
+  const b = validateRecord(city({ state_id: 5, state_code: null }), 'cities', 0).errors;
+  assert.ok(a.some((e) => e.includes('must both be set or both be null')));
+  assert.ok(b.some((e) => e.includes('must both be set or both be null')));
+});
+
+test('the state keys stay required even when null is allowed', () => {
+  const { errors } = validateRecord(city({}), 'cities', 0);
+  assert.ok(errors.some((e) => e.includes('missing required field "state_id"')));
+  assert.ok(errors.some((e) => e.includes('missing required field "state_code"')));
+});
+
+test('a set state pair keeps its rules (positive id, non-empty code)', () => {
+  const zero = validateRecord(city({ state_id: 0, state_code: 'XX' }), 'cities', 0).errors;
+  const empty = validateRecord(city({ state_id: 5, state_code: ' ' }), 'cities', 0).errors;
+  assert.ok(zero.some((e) => e.includes('must be positive')));
+  assert.ok(empty.some((e) => e.includes('must not be empty')));
+});
+
+// v5 (decision B6): a county of several regions has no state of its own and lists its regions
+const nzCounty = (extra) => ({ id: 9, name: 'Waitomo District', state_id: null, state_code: null, country_id: 158, country_code: 'NZ',
+  latitude: '-38.35', longitude: '175.18', ...extra });
+const regions = [{ state_id: 4060, state_code: 'MWT' }, { state_id: 4061, state_code: 'WKO' }];
+
+test('a county with no state needs two or more regions in states', () => {
+  assert.deepEqual(validateRecord(nzCounty({ states: regions }), 'counties', 0), { errors: [], warnings: [] });
+  for (const states of [undefined, null, [], [regions[0]], [regions[0], regions[0]]]) {
+    const { errors } = validateRecord(nzCounty({ states }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('two or more distinct regions')), JSON.stringify(states));
+  }
+});
+
+test('each listed region is a positive state_id and a non-empty state_code, nothing else', () => {
+  for (const bad of [{ state_id: '4061', state_code: 'WKO' }, { state_id: 4061, state_code: '' }, { state_id: 4061 },
+    { state_id: 4061, state_code: 'WKO', name: 'Waikato' }, 'WKO']) {
+    const { errors } = validateRecord(nzCounty({ states: [regions[0], bad] }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('each region in states')), JSON.stringify(bad));
+  }
+});
+
+test('a county of several regions needs an explicit positive integer id', () => {
+  for (const id of [undefined, null, '9', 0, 9.5]) {
+    const { errors } = validateRecord(nzCounty({ id, states: regions }), 'counties', 0);
+    assert.ok(errors.some((e) => e.includes('needs an explicit positive integer id')), JSON.stringify(id));
+  }
+});
+
+test('countyShapeErrors reports missing pair keys and half pairs as well as list rules', () => {
+  const { countyShapeErrors } = require('./utils');
+  const { state_id: _s, ...noStateKey } = nzCounty({ states: regions });
+  assert.deepEqual(countyShapeErrors(nzCounty({ states: regions }), 'c'), []);
+  assert.match(countyShapeErrors(noStateKey, 'c').join('\n'), /state_id and state_code are required/);
+  assert.match(countyShapeErrors(nzCounty({ state_code: 'WKO', states: regions }), 'c').join('\n'), /both be set or both be null/);
+  assert.match(countyShapeErrors(nzCounty({ states: [regions[0]] }), 'c').join('\n'), /two or more distinct regions/);
+});
+
+test('a county with its own state cannot also list states; a half pair is still an error', () => {
+  const both = validateRecord(nzCounty({ state_id: 4061, state_code: 'WKO', states: regions }), 'counties', 0).errors;
+  assert.ok(both.some((e) => e.includes('cannot also list states')));
+  const half = validateRecord(nzCounty({ state_code: 'WKO', states: regions }), 'counties', 0).errors;
+  assert.ok(half.some((e) => e.includes('must both be set or both be null')));
+  assert.deepEqual(validateRecord(nzCounty({ state_id: 4061, state_code: 'WKO' }), 'counties', 0).errors, []);
+});
+
+
+test('a city state_id must be a JSON number (no strings, booleans, arrays or fractions)', () => {
+  for (const bad of ['1', true, [1], { id: 1 }, 1.5]) {
+    const { errors } = validateRecord(city({ state_id: bad, state_code: 'XX' }), 'cities', 0);
+    assert.ok(errors.length > 0, `accepted ${JSON.stringify(bad)}`);
+  }
+  assert.deepEqual(validateRecord(city({ state_id: 7, state_code: 'XX' }), 'cities', 0).errors, []);
+});
+
+// Changed-file listing: the API first, git when GitHub cannot or will not list them all (very large data PRs).
+const os = require('node:os');
+const { getOctokit } = require('@actions/github');
+const { listChangedFiles, baseJson } = require('./utils');
+const { mergeRepo, inDir } = require('./merge-fixture');
+const context = { repo: { owner: 'fixture', repo: 'fixture' } };
+const refused = { rest: { pulls: { listFiles: async () => { throw new Error('Sorry, this diff is taking too long to generate.'); } } } };
+const GIT_LIST = [
+  { filename: 'contributions/postcodes/XX.json', status: 'removed' },
+  { filename: 'contributions/postcodes/YY.json', status: 'added' },
+  { filename: 'contributions/states/states.json', status: 'modified' },
+];
+
+test('listChangedFiles follows every API page, 100 files at a time', async () => {
+  const pages = [Array.from({ length: 100 }, (_, i) => ({ filename: `contributions/cities/C${i}.json`, status: 'modified' })),
+    [{ filename: 'contributions/states/states.json', status: 'modified' }]];
+  const requests = [];
+  const fetch = async (url) => {
+    const u = new URL(url);
+    requests.push(u);
+    const page = Number(u.searchParams.get('page') || 1);
+    const headers = { 'content-type': 'application/json' };
+    if (page < pages.length) headers.link = `<https://api.github.com/repos/fixture/fixture/pulls/7/files?per_page=100&page=${page + 1}>; rel="next"`;
+    return new Response(JSON.stringify(pages[page - 1]), { status: 200, headers });
+  };
+  const files = await listChangedFiles(getOctokit('test-token', { request: { fetch } }), context, { number: 7 });
+  assert.equal(files.length, 101);
+  assert.equal(files[100].filename, 'contributions/states/states.json');
+  assert.equal(requests[0].pathname, '/repos/fixture/fixture/pulls/7/files');
+  assert.equal(requests[0].searchParams.get('per_page'), '100');
+  assert.equal(requests.length, 2);
+});
+
+test('listChangedFiles reads the PR from git when GitHub cannot produce the diff', async () => {
+  const { dir, head } = mergeRepo();
+  assert.deepEqual(await inDir(dir, () => listChangedFiles(refused, context, { number: 7, head: { sha: head } })), GIT_LIST);
+});
+
+test('listChangedFiles reads the PR from git when GitHub returns its 3,000-file cap', async () => {
+  const { dir, head } = mergeRepo();
+  const capped = { rest: { pulls: { listFiles: async ({ page }) => ({ data: Array.from({ length: 100 }, (_, i) => ({ filename: `f${page}-${i}`, status: 'added' })) }) } } };
+  assert.deepEqual(await inDir(dir, () => listChangedFiles(capped, context, { number: 7, head: { sha: head } })), GIT_LIST);
+});
+
+/** A real Octokit whose fetch serves `pages` of files and answers HTTP 409 from page `failAt` on. */
+function octokitFailingAt(pages, failAt) {
+  const fetch = async (url) => {
+    const page = Number(new URL(url).searchParams.get('page') || 1);
+    if (page >= failAt) return new Response(JSON.stringify({ message: 'Conflict' }), { status: 409, headers: { 'content-type': 'application/json' } });
+    const headers = { 'content-type': 'application/json', link: `<https://api.github.com/repos/fixture/fixture/pulls/7/files?per_page=100&page=${page + 1}>; rel="next"` };
+    return new Response(JSON.stringify(pages[page - 1]), { status: 200, headers });
+  };
+  return getOctokit('test-token', { request: { fetch } });
+}
+
+test('an HTTP 409 on any page is a failed listing, read from git, not an empty or partial list', async () => {
+  const { dir, head } = mergeRepo();
+  const first = Array.from({ length: 100 }, (_, i) => ({ filename: `scripts/s${i}.js`, status: 'modified' }));
+  for (const failAt of [1, 2]) {
+    const files = await inDir(dir, () => listChangedFiles(octokitFailingAt([first], failAt), context, { number: 7, head: { sha: head } }));
+    assert.deepEqual(files, GIT_LIST, `409 on page ${failAt}`);
+  }
+});
+
+test('the git listing includes a submodule change even when .gitmodules says ignore = all', async () => {
+  const { dir, head } = mergeRepo();
+  const run = (...args) => execFileSync('git', args, { cwd: dir, encoding: 'utf8' });
+  const commit = run('rev-parse', 'HEAD').trim();
+  require('node:fs').writeFileSync(require('node:path').join(dir, '.gitmodules'), '[submodule "vendor"]\n\tpath = vendor\n\turl = ./vendor\n\tignore = all\n');
+  run('add', '.gitmodules');
+  run('update-index', '--add', '--cacheinfo', `160000,${commit},vendor`);
+  run('commit', '-q', '-m', 'base: a submodule');
+  run('checkout', '-q', '-b', 'pr2');
+  run('update-index', '--cacheinfo', `160000,${head},vendor`);
+  run('commit', '-q', '-m', 'pr: move the submodule');
+  const prHead = run('rev-parse', 'HEAD').trim();
+  run('checkout', '-q', 'main');
+  run('commit', '-q', '--allow-empty', '-m', 'base moves');
+  run('merge', '-q', '--no-ff', '-m', 'merge', 'pr2');
+  const files = await inDir(dir, () => listChangedFiles(refused, context, { number: 8, head: { sha: prHead } }));
+  assert.deepEqual(files, [{ filename: 'vendor', status: 'modified' }]);
+});
+
+test('listChangedFiles refuses a checkout that is not this PR\'s merge commit', async () => {
+  const { dir } = mergeRepo();
+  await assert.rejects(inDir(dir, () => listChangedFiles(refused, context, { number: 7, head: { sha: '0'.repeat(40) } })),
+    /too long to generate.*not this PR's merge commit/s);
+  await assert.rejects(inDir(dir, async () => {
+    execFileSync('git', ['checkout', '-q', 'HEAD^1']);
+    return listChangedFiles(refused, context, { number: 7, head: { sha: '0'.repeat(40) } });
+  }), /not this PR's merge commit \(parents: [0-9a-f]{40};/);
+});
+
+test('listChangedFiles names both failures when git cannot read the PR either', async () => {
+  const fsn = require('node:fs');
+  const empty = fsn.mkdtempSync(require('node:path').join(os.tmpdir(), 'csc-nogit-'));
+  await assert.rejects(inDir(empty, () => listChangedFiles(refused, context, { number: 7, head: { sha: 'a'.repeat(40) } })),
+    /too long to generate.*git could not either.*cannot read the checked-out commit/s);
+});
+
+test('baseJson reads a file as it stood on the PR\'s merge base', async () => {
+  const { dir, head } = mergeRepo();
+  const rows = await inDir(dir, () => baseJson({ head: { sha: head } }, 'contributions/states/states.json'));
+  assert.deepEqual(rows.map((r) => r.id), [1, 2]);
 });

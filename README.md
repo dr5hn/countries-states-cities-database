@@ -19,9 +19,9 @@ Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
-Total Postcodes : 844248 (125 countries) <br>
+Total Postcodes : 725993 (116 countries) <br>
 Total Timezones : 427 (100% IANA coverage) <br>
-Last Updated On: October 11, 2026
+Last Updated On: October 19, 2026
 
 ---
 
@@ -144,7 +144,7 @@ Smaller reference files (countries, states, counties, schema) live in the repo. 
 
 ## What's in the data
 
-- **250** countries · **5,329** states / regions · **10,636** counties · **153,513** cities · **840k+** postcodes across 125 countries
+- **250** countries · **5,329** states / regions · **14,058** counties · **153,513** cities · **840k+** postcodes across 125 countries
 - **19 languages** of country and state names plus native script
 - **100% IANA timezone coverage** for cities
 - **Validated foreign keys** on every contribution
@@ -175,7 +175,9 @@ To edit JSON directly:
 2. Edit files under `contributions/cities/`, `contributions/states/`, `contributions/countries/`, `contributions/counties/`, or `contributions/postcodes/`.
 3. **Required** for new cities: `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude`. **Optional**: `timezone`, `wikiDataId`, `native`.
 4. **Omit** `id`, `created_at`, `updated_at`, `flag` — auto-managed on import.
-5. Open a pull request with a clear data source.
+5. Open a pull request with a clear data source. If it removes, repurposes or restores ids, include its reviewed
+   [ledger events keyed by `event_pr`](migrations/README.md#a-data-pr-carries-its-own-events) in that same PR.
+   The `Ledger migrations` check validates the merge preview; all ids must be final at that preview.
 
 ```json
 {
@@ -194,6 +196,8 @@ To edit JSON directly:
 [Contributions guide](contributions/README.md) ·
 [Contribution guidelines](.github/CONTRIBUTING.md) ·
 [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md) ·
+[Data versioning](DATA_VERSIONING.md) ·
+[Disputed and special territories](DISPUTED_AND_SPECIAL_TERRITORIES.md) ·
 [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) ·
 [The `cities.type` field](TYPE_FIELD.md)
 
@@ -209,6 +213,24 @@ Licensed under the [Open Database License (ODbL v1.0)](LICENSE). Commercial use,
 Data by Countries States Cities Database
 https://github.com/dr5hn/countries-states-cities-database | ODbL v1.0
 ```
+
+Some records also carry names or points copied from open sources that ask for credit: [GeoNames](https://www.geonames.org/)
+([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
+(ODbL 1.0) and [Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing) (CC0). Points are selected per record and
+rounded to eight decimals; the per-record source ledgers are in [.github/fixes-docs/ledgers/](.github/fixes-docs/ledgers/).
+Official registers matched to records (categories, codes and unit names) also ask for credit:
+- [Statistical Office of the Slovak Republic](https://slovak.statistics.sk/wps/portal/ext/aboutus/webpage/terms/), register of spatial units REGPJ (CC BY 4.0)
+- [Geodetska uprava Republike Slovenije](https://www.e-prostor.gov.si/dostopi/javni-dostop/) (GURS), register of spatial units RPE, 13 October 2026 (CC BY 4.0)
+- [Maa- ja Ruumiamet](https://geoportaal.maaamet.ee/est/Ruumiandmed/Haldus-ja-asustusjaotus-p119.html), administrative and settlement division, 2 September 2026 (public data terms)
+- [Central Statistics Office](https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/) and Tailte Éireann, Census 2022 built-up areas (CC BY 4.0)
+- [Stats NZ](https://www.stats.govt.nz/about-us/copyright/), territorial authorities and urban-rural areas 2026 (CC BY 4.0): this work is based on Stats NZ data licensed for reuse under CC BY 4.0
+- Ville de Luxembourg, quartiers on [data.public.lu](https://data.public.lu/) (CC BY 4.0)
+- [Ministry for Development of Communities and Territories of Ukraine](https://mindev.gov.ua/), Codifier of administrative-territorial units and territories of territorial communities (KATOTTG), 7 July 2026 (CC BY 4.0): names and codes matched to records; CSC romanised the names under Cabinet of Ministers Resolution 55 (2010)
+- [Statistics South Africa](https://www.statssa.gov.za/), Census 2011 main places, distributed by UCT Libraries: main-place codes and classes matched to records; the mapping to `type` is CSC's
+
+Country names in some languages follow [Unicode CLDR](https://cldr.unicode.org/) 48.2: Copyright © 2015-2024 Unicode, Inc., under the [Unicode License v3](.github/licenses/Unicode-3.0.txt), whose notice must travel with copies.
+
+Source credits and notices for 63 sources are in [.github/licenses/SOURCES.txt](.github/licenses/SOURCES.txt); export releases attach it with the other notices. The register also identifies 233 sources whose redistribution basis remains under review. Keep the applicable credits and notices when redistributing the data.
 
 ---
 

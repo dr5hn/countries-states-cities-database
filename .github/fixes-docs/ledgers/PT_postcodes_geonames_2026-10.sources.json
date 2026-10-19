@@ -1,0 +1,19 @@
+{
+  "country_code": "PT",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/PT.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:57 GMT",
+  "bytes": "1078788",
+  "sha256": "fed2fe35a800618a58e5387cdbf769e24bff3606db083af90548e21f5e74bf3f",
+  "retrieved_at_utc": "2026-10-13T18:58:50.212014+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "GeoNames (https://www.geonames.org/), CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).",
+  "changes_by_csc": "Existing PT codes that the dump lists were kept; their locality names and points were taken from it and withheld where the dump's rows for one code disagree; regions mapped to CSC state iso2; points formatted to eight decimals; city links rebuilt or cleared; no new codes added.",
+  "state_mapping": "GeoNames admin1 code to the CSC state iso2 by the provider table https://www.geonames.org/PT/administrative-division-portugal.html",
+  "point_scope": "Published estimated postcode/place coordinates, as is; never a city, seat or municipality coordinate correction or a certified postcode-area centroid.",
+  "rows_kept": 195912,
+  "codes_absent_queued_for_v5_removal": 1112,
+  "new_codes_not_added": 1860
+}

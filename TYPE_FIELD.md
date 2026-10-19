@@ -81,11 +81,51 @@ Athos's monasteries are `religious`. To list only settlements in Greece, leave o
 
 ### Netherlands
 
-In `NL.json`, `municipality` is a gemeente and `locality` a BAG woonplaats (a named place within a gemeente). Most
+In `NL.json`, `municipality` is a gemeente. A BAG woonplaats (a named place within a gemeente) is `city` when an official
+source names that place itself as a city (the Rijksdienst voor het Cultureel Erfgoed's historic-city inventory or the
+municipality's own publication, with no current municipal text calling it a village; see the
+[evidence ledger](.github/fixes-docs/ledgers/NL_city_identity_2026-10.csv)), and `locality` otherwise; both keep
+`type_local` `woonplaats`. This is a documented identity, not a legal status, as the Netherlands has no statutory city
+category today. Older `city` records outside the woonplaats set (Eindhoven, Delft) were not reviewed, so `type = 'city'`
+alone is not a complete list of Dutch cities; use the settlement filter below. Most
 gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. Eight records named
 "Gemeente …" (Gemeente Groningen, Gemeente Stadskanaal …) are the municipal territory beside a separate record for the
 town (Groningen, Stadskanaal). To list only settlements in the Netherlands, leave out the records whose name starts
 with "Gemeente ".
+
+### New Zealand
+
+In `NZ.json`, settlements have no legal status. `type_local` keeps Stats NZ's 2026 urban-rural class and `type` follows
+it: a major or large urban area is `city`, a medium or small urban area is `town`, a rural settlement is `locality` and a
+suburb is `section`. A place the New Zealand Geographic Board lists as an official town (LINZ NZ Place Names, feature
+type Town) or that its council names as a town is at least `town`, whatever its size class (Fairlie, Waiouru). The
+classes are statistical sizes, not city status. District and city councils are county records (#2006).
+
+### South Africa
+
+In `ZA.json`, places have no legal town or city status. A place matched to a Statistics South Africa Census 2011 main
+place is `locality` with `type_local` `main place`: a statistical class, not a legal status or a population threshold.
+Local municipalities stored as cities are `municipality / local municipality` at level 3. Metropolitan and district
+municipalities are county records; rows for them in `ZA.json` are typed `county` and wait for removal in v5.0.0.
+
+### Kazakhstan
+
+In `KZ.json`, the category is the one in the KATO classifier: `city / қала`, `town / кент`, `village / ауыл`. Cities
+of republican significance are at level 1, of regional significance at 2 and of district significance at 3. A town or
+village is at 3, or at 4 when it lies in a rural okrug; a "conditional" city or village administration in KATO is not
+a unit and adds no level. Districts (аудан) are county records; rows for districts in `KZ.json` are typed `county`, and
+their removal is queued for a major release. Where a district row and a county record share the district's own
+Wikidata item, they are the same entity. `county_id` is the containing district, so a village in a rural okrug (level 4) links to
+its district (level 2); `parent_id` is the record directly above, and is empty when that tier has no record.
+
+### Tanzania
+
+In `TZ.json`, a record that is itself a city, municipal or town council is `municipality` at level 2 with the
+council's Swahili category (`Halmashauri ya Jiji`, `Halmashauri ya Manispaa`, `Halmashauri ya Mji`). A record of the
+town or city a council is named after is not the council: it keeps its own identity and is not typed until a register
+of settlements binds it. Levels follow the census hierarchy: region 1, district or council
+2, division 3, ward (`section / kata`) 4. Rows for districts are typed `county / wilaya` at level 2, and their removal is
+queued for a major release; Tanzania has no county records yet.
 
 ## Filtering to genuine settlements
 
@@ -103,6 +143,9 @@ historical_capital
 ```
 
 In Mexico and Greece, also exclude `municipality` (the municipal territory; see [Mexico](#mexico), [Greece](#greece)).
+In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
+`đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
+`city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
 ### SQL
@@ -118,7 +161,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('MX', 'GR') OR type IS NULL OR type <> 'municipality')  -- MX/GR municipality = territory
+AND (country_code NOT IN ('MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- MX/GR/VN municipality = territory
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -141,7 +184,7 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['MX', 'GR'].includes(c.country_code) && c.type === 'municipality') // MX/GR municipality = territory
+    && !(['MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // MX/GR/VN municipality = territory
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
@@ -163,3 +206,4 @@ where available — a non-null `population`.
 - [#1303 — Counties should be returned separately from cities](https://github.com/dr5hn/countries-states-cities-database/issues/1303) (tracking the cleanup)
 - [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) (official categories, `type_local`, `level`, `parent_id`, the counties dataset)
 - [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)
+- [Disputed and special territories](DISPUTED_AND_SPECIAL_TERRITORIES.md)

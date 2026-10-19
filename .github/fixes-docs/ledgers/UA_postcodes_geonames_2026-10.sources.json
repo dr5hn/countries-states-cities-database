@@ -1,0 +1,19 @@
+{
+  "country_code": "UA",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/UA.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:04:01 GMT",
+  "bytes": 421615,
+  "sha256": "18aad52a15ee2f8c4453945d23eefd45d3ec2add98785fc84f8412db6af0224b",
+  "retrieved_at_utc": "2026-10-14T00:41:25.812063+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Ukrainian postal code dump, 13 October 2026.",
+  "identity": "one row per postcode and locality; a row is kept when the dump lists its locality under the same code, exactly or after an accent, case and punctuation fold",
+  "changes_by_csc": "Existing rows the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added.",
+  "state_mapping": "GeoNames admin1 to the CSC state iso2 by the provider table https://www.geonames.org/UA/administrative-division-ukraine.html; postal 12 and 13 follow the published Order 121 allocation (12 -> 32, 13 -> 30)",
+  "rows_kept": 10659,
+  "queued_for_v5_removal": 4427,
+  "new_codes_not_added": 12910
+}

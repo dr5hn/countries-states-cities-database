@@ -4,9 +4,11 @@ This project provides a Prisma schema and seeding script for a comprehensive dat
 
 ## Setup
 
+Use Node 24 or Node 26; the seed checks types before running with Node's built-in TypeScript support and `fetch`.
+
 1. Install dependencies:
    ```
-   npm install
+   npm ci
    ```
 
 2. Set up your database and update the `DATABASE_URL` in your `.env` file.
@@ -31,6 +33,15 @@ npm run seed
 
 ## Notes
 
+- A county of several regions (v5.0.0) has a null `state` and lists its regions in `regions` (`CountyState`, table
+  `county_states`); every other county has a `state` and no regions. The seed stops on an inconsistent county
+  (missing state keys, a half pair, no explicit id, fewer than two distinct regions, an entry with other keys) and on a
+  city linked to a county of another country, or whose state is not the county's state or one of its regions.
+- A city of a country with no states (Western Sahara, v5.0.0) has a null `state`; every other city has one. Deleting
+  a state that cities use is refused (`onDelete: Restrict`). The seed matches states by country and state code (some
+  states of one country share a name). It stops with an error on a city whose state fields
+  are missing, half null or inconsistent, rather than skipping it; run `node --test prisma/city-state.test.ts` to check
+  the mapping.
 - The seeding process can take a while due to the large amount of data being processed.
 - Ensure you have a stable internet connection as the script fetches data from GitHub.
 - The database structure is designed to balance normalization and query performance.

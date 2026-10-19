@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Brunei -> contributions/postcodes/BN.json importer for issue #1039.
+"""RETIRED. Brunei -> contributions/postcodes/BN.json importer for issue #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: BN: OpenStreetMap validated country screen; unsupported rows wait for the v5 ledger.
+Legacy source tags: brunei-post-via-xplorasia. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -73,6 +79,8 @@ def fetch_csv(url: str) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: BN: OpenStreetMap validated country screen; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy brunei-post-via-xplorasia. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local CSV (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

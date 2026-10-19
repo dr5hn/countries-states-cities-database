@@ -15,6 +15,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- Drop existing tables in reverse dependency order
 DROP TABLE IF EXISTS `postcodes`;
 DROP TABLE IF EXISTS `cities`;
+DROP TABLE IF EXISTS `county_states`;
 DROP TABLE IF EXISTS `counties`;
 DROP TABLE IF EXISTS `states`;
 DROP TABLE IF EXISTS `countries`;
@@ -155,7 +156,7 @@ CREATE TABLE `states` (
   PRIMARY KEY (`id`),
   KEY `country_region` (`country_id`),
   CONSTRAINT `country_region_final` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5854 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=5859 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,8 +168,8 @@ CREATE TABLE `states` (
 CREATE TABLE `counties` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_id` mediumint unsigned NOT NULL,
-  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_id` mediumint unsigned DEFAULT NULL COMMENT 'NULL only for a county of several regions, listed in county_states (v5)',
+  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` mediumint unsigned NOT NULL,
   `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -191,8 +192,25 @@ CREATE TABLE `counties` (
   KEY `idx_counties_country` (`country_id`),
   CONSTRAINT `counties_country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
   CONSTRAINT `counties_parent_fk` FOREIGN KEY (`parent_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
-  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10670 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+  CONSTRAINT `counties_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
+  CONSTRAINT `counties_state_pair` CHECK ((((`state_id` is null) and (`state_code` is null)) or ((`state_id` is not null) and (`state_code` is not null))))
+) ENGINE=InnoDB AUTO_INCREMENT=14102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `county_states`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `county_states` (
+  `county_id` mediumint unsigned NOT NULL,
+  `state_id` mediumint unsigned NOT NULL,
+  PRIMARY KEY (`county_id`,`state_id`),
+  KEY `idx_county_states_state` (`state_id`),
+  CONSTRAINT `county_states_county_fk` FOREIGN KEY (`county_id`) REFERENCES `counties` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `county_states_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Regions of a county of several regions (v5); a county with its own state has no rows';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,9 +222,9 @@ CREATE TABLE `counties` (
 CREATE TABLE `cities` (
   `id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `state_id` mediumint unsigned NOT NULL,
+  `state_id` mediumint unsigned DEFAULT NULL COMMENT 'NULL only for a city of a country with no states (v5)',
   `county_id` mediumint unsigned DEFAULT NULL,
-  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country_id` mediumint unsigned NOT NULL,
   `country_code` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -230,8 +248,9 @@ CREATE TABLE `cities` (
   KEY `cities_test_ibfk_2` (`country_id`),
   CONSTRAINT `cities_county_fk` FOREIGN KEY (`county_id`) REFERENCES `counties` (`id`) ON DELETE SET NULL,
   CONSTRAINT `cities_ibfk_1` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`),
-  CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=166304 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+  CONSTRAINT `cities_ibfk_2` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
+  CONSTRAINT `cities_state_pair` CHECK ((((`state_id` is null) and (`state_code` is null)) or ((`state_id` is not null) and (`state_code` is not null))))
+) ENGINE=InnoDB AUTO_INCREMENT=168770 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,7 +284,7 @@ CREATE TABLE `postcodes` (
   CONSTRAINT `postcodes_city_fk` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`) ON DELETE SET NULL,
   CONSTRAINT `postcodes_country_fk` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
   CONSTRAINT `postcodes_state_fk` FOREIGN KEY (`state_id`) REFERENCES `states` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=844249 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT COMMENT='Postal codes (issue #1039) - Tier 4: one row per postcode';
+) ENGINE=InnoDB AUTO_INCREMENT=859399 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT COMMENT='Postal codes (issue #1039) - Tier 4: one row per postcode';
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -277,6 +296,6 @@ CREATE TABLE `postcodes` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-11 21:20:06
+-- Dump completed on 2026-10-19 12:29:42
 
 SET FOREIGN_KEY_CHECKS=1;

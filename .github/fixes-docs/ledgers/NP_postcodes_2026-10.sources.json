@@ -1,0 +1,120 @@
+{
+  "country_code": "NP",
+  "identity": "code_locality",
+  "source_tag": "openstreetmap",
+  "legacy_source_tag": "nepal-post-via-sprupak07",
+  "original_disposition": "d",
+  "state_mapping": {
+    "positive_state_links": false,
+    "reason": "No OSM country-specific administrative boundary join established"
+  },
+  "rows_kept": 2,
+  "queued_for_v5_removal": 915,
+  "consumer_consequence": "Nepal retains 2 same-scope postcode IDs (2 codes), queues 915 IDs for v5, retains 2 fresh labels, 0 source-supported point pairs and 0 state links, and clears 0 existing city links on kept rows.",
+  "product": "OpenStreetMap validated country screen",
+  "counts": {
+    "rows_on_master": 917,
+    "unique_codes_on_master": 917,
+    "replacement_rows": 251,
+    "replacement_unique_codes": 251,
+    "queued": 915,
+    "queued_code_absent": 746,
+    "queued_code_present": 169,
+    "kept": 2,
+    "state_links_changed": 0,
+    "state_links_cleared": 0,
+    "state_links_added": 0,
+    "state_links_reassigned": 0,
+    "nonnull_after_locality_name": 2,
+    "nonnull_after_latitude": 0,
+    "nonnull_after_longitude": 0,
+    "nonnull_after_state_id": 0,
+    "nonnull_after_state_code": 0,
+    "nonnull_after_city_id": 0,
+    "nonnull_after_source": 2,
+    "nonnull_after_wikiDataId": 0,
+    "queued_product_unverified": 0,
+    "new_codes_not_added": 80,
+    "kept_unique_codes": 2,
+    "master_repeated_code_groups": 0
+  },
+  "changed_field_counts": {
+    "locality_name": 1,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 2,
+    "wikiDataId": 0
+  },
+  "cleared_nonnull_field_counts": {
+    "locality_name": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 0,
+    "wikiDataId": 0
+  },
+  "city_links": {
+    "null_unchanged": 2,
+    "kept": 0,
+    "changed": 0,
+    "cleared": 0,
+    "newly_linked": 0
+  },
+  "field_hold_row_counts": {
+    "Missing, invalid or disagreeing published pairs; no generated centroid or city point fallback": 2,
+    "Missing, ambiguous, inconsistent or coarser administrative scope; no old-state candidate selection": 2,
+    "No country-specific OSM administrative boundary join established; no postcode-prefix state inference": 2,
+    "No replacement product identifier and geographic city-scope predicate established for this source; city link cleared or remains null": 2
+  },
+  "identity_scope_note": null,
+  "replacement_coverage_measured": true,
+  "distribution_notices": ".github/licenses/pc_rebuild_7-distribution-notices.txt",
+  "research_master_sha": "cdb667f14d90838f7fd04a63f26541f4e2366f73",
+  "queue_policy": "v5 major only; no_successor; IDs reserved in research only; no redirects or edits here",
+  "point_scope": "GeoNames published estimates, TW administrative centres and guarded multi-object OSM medians; no postal centroid or current routing certification",
+  "field_scope": "Unanimous fresh same-identity values; null on disagreement/missing scope; no old-field grandfathering or old-state candidate selection",
+  "city_scope": "A positive source-specific identifier and geographic same-entity predicate were not established from these inputs; alias existence alone cannot preserve an old link.",
+  "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A90%5D%3Brel%5B%22boundary%22%3D%22administrative%22%5D%5B%22ISO3166-1%22%3D%22NP%22%5D%5B%22admin_level%22%3D%222%22%5D-%3E.b%3B.b+map_to_area-%3E.a%3B%28.b%3Bnwr%28area.a%29%5B%22addr%3Apostcode%22%5D%3Bnwr%28area.a%29%5B%22postal_code%22%5D%3B%29%3Bout+meta+geom%3B",
+  "edition": "bounded Overpass country snapshot 2026-10-14T03:32:26Z",
+  "sha256": "1b14293afd2bb750a78bf1536650e39c4059920eebf201f649725915aac7b577",
+  "bytes": 4220042,
+  "retrieved_at_utc": "2026-10-14T03:34:15.856095+00:00",
+  "licence": "ODbL 1.0",
+  "licence_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "credit": "© OpenStreetMap contributors",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "boundary_checks": [
+    {
+      "relation_id": 184633,
+      "version": 610,
+      "timestamp": "2026-10-07T09:48:14Z",
+      "checked": true,
+      "missing": [],
+      "unsupported": [],
+      "polygonize_errors": {
+        "outer": {
+          "cuts": 0,
+          "dangles": 0,
+          "invalid": 0
+        },
+        "inner": {
+          "cuts": 0,
+          "dangles": 0,
+          "invalid": 0
+        }
+      },
+      "bounds": [
+        80.0570812,
+        26.3477581,
+        88.2015257,
+        30.446945
+      ]
+    }
+  ],
+  "scope": "Bounded country screen; complete geometry and country containment checked; guarded multi-object medians only; no current routing certification."
+}

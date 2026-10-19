@@ -81,7 +81,7 @@ class ExportCsv extends Command
 
                 // Set headings
                 $headings = $csc[0];
-                unset($headings['translations']);
+                unset($headings['translations'], $headings['states']);   // nested lists get their own CSV files
                 fputcsv($fp, array_keys($headings));
 
                 // Write data
@@ -91,7 +91,7 @@ class ExportCsv extends Command
                         $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
                         $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
                     }
-                    unset($row['translations']);
+                    unset($row['translations'], $row['states']);
                     fputcsv($fp, $row);
                 }
 
@@ -103,11 +103,35 @@ class ExportCsv extends Command
             $io->section("Processing: translations");
             $this->exportTranslations($rootDir, $io);
 
+            // v5: the regions of each county of several regions, one row per (county_id, state_id)
+            if ($this->filesystem->exists($rootDir . self::FILES['counties']['from'])) {
+                $io->section("Processing: county_states");
+                $this->exportCountyStates($rootDir, $io);
+            }
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
             $io->error("Export failed: {$e->getMessage()}");
             return Command::FAILURE;
         }
+    }
+
+    /** Write csv/county_states.csv (county_id, state_id, state_code) from the states lists in json/counties.json. */
+    private function exportCountyStates(string $rootDir, SymfonyStyle $io): void
+    {
+        $counties = json_decode(file_get_contents($rootDir . self::FILES['counties']['from']), true);
+        if (!is_array($counties)) {
+            throw new \RuntimeException('Invalid JSON in ' . self::FILES['counties']['from']);
+        }
+        $fp = fopen($rootDir . '/csv/county_states.csv', 'w');
+        fputcsv($fp, ['county_id', 'state_id', 'state_code']);
+        foreach ($counties as $county) {
+            foreach ($county['states'] ?? [] as $region) {
+                fputcsv($fp, [$county['id'], $region['state_id'], $region['state_code']]);
+            }
+        }
+        fclose($fp);
+        $io->success('Exported county_states to CSV');
     }
 
     private function exportTranslations(string $rootDir, SymfonyStyle $io): void

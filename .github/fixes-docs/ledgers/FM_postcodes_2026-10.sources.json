@@ -1,0 +1,241 @@
+{
+  "country_code": "FM",
+  "identity": "code",
+  "source_tag": "geonames-postal",
+  "legacy_source_tag": "manual",
+  "original_disposition": "b",
+  "state_mapping": [
+    {
+      "source_admin1": "01",
+      "source_admin2": "",
+      "names": [
+        [
+          "State of Kosrae",
+          ""
+        ]
+      ],
+      "resolved_iso2": [
+        "KSA"
+      ],
+      "held_source_rows": 0,
+      "proof": [
+        {
+          "id": 2101,
+          "subdivisionId": 2082036,
+          "asciiName": "State of Kosrae",
+          "iso3166_2": "KSA",
+          "isoRegionCode": "",
+          "fips": "01",
+          "geonamesAdmCode": "01",
+          "name": "Kosrae",
+          "typeLabel": "state",
+          "typeId": 398,
+          "capital": "Toynim",
+          "capitalId": 2081342,
+          "capitalAsciiName": "Tofol",
+          "population": 7686,
+          "languages": null,
+          "continentCode": "OC",
+          "validFrom": null,
+          "validTill": null,
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Kosrae",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "source_admin1": "02",
+      "source_admin2": "",
+      "names": [
+        [
+          "State of Pohnpei",
+          ""
+        ]
+      ],
+      "resolved_iso2": [
+        "PNI"
+      ],
+      "held_source_rows": 0,
+      "proof": [
+        {
+          "id": 2102,
+          "subdivisionId": 2081550,
+          "asciiName": "State of Pohnpei",
+          "iso3166_2": "PNI",
+          "isoRegionCode": "",
+          "fips": "02",
+          "geonamesAdmCode": "02",
+          "name": "Pohnpei",
+          "typeLabel": "state",
+          "typeId": 398,
+          "capital": "Kolonia",
+          "capitalId": 2082038,
+          "capitalAsciiName": "Kolonia Town",
+          "population": 34486,
+          "languages": null,
+          "continentCode": "OC",
+          "validFrom": null,
+          "validTill": null,
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Pohnpei_State",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "source_admin1": "03",
+      "source_admin2": "",
+      "names": [
+        [
+          "State of Chuuk",
+          ""
+        ]
+      ],
+      "resolved_iso2": [
+        "TRK"
+      ],
+      "held_source_rows": 0,
+      "proof": [
+        {
+          "id": 2104,
+          "subdivisionId": 2082282,
+          "asciiName": "State of Chuuk",
+          "iso3166_2": "TRK",
+          "isoRegionCode": "",
+          "fips": "03",
+          "geonamesAdmCode": "03",
+          "name": "Chuuk",
+          "typeLabel": "state",
+          "typeId": 398,
+          "capital": "Weno",
+          "capitalId": 2081114,
+          "capitalAsciiName": "Weno",
+          "population": 54595,
+          "languages": null,
+          "continentCode": "OC",
+          "validFrom": null,
+          "validTill": null,
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Chuuk_State",
+          "level": 1
+        }
+      ]
+    },
+    {
+      "source_admin1": "04",
+      "source_admin2": "",
+      "names": [
+        [
+          "State of Yap",
+          ""
+        ]
+      ],
+      "resolved_iso2": [
+        "YAP"
+      ],
+      "held_source_rows": 0,
+      "proof": [
+        {
+          "id": 2106,
+          "subdivisionId": 2081175,
+          "asciiName": "State of Yap",
+          "iso3166_2": "YAP",
+          "isoRegionCode": "",
+          "fips": "04",
+          "geonamesAdmCode": "04",
+          "name": "Yap",
+          "typeLabel": "state",
+          "typeId": 398,
+          "capital": "Colonia",
+          "capitalId": 7648112,
+          "capitalAsciiName": "Colonia",
+          "population": 11241,
+          "languages": null,
+          "continentCode": "OC",
+          "validFrom": null,
+          "validTill": null,
+          "wikipediaUrl": "https://en.wikipedia.org/wiki/Yap_State",
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "rows_kept": 4,
+  "queued_for_v5_removal": 0,
+  "consumer_consequence": "Micronesia retains 4 same-scope postcode IDs (4 codes), queues 0 IDs for v5, retains 4 fresh labels, 0 source-supported point pairs and 4 state links, and clears 0 existing city links on kept rows.",
+  "product": "GeoNames postal snapshot 13 October 2026",
+  "counts": {
+    "rows_on_master": 4,
+    "unique_codes_on_master": 4,
+    "replacement_rows": 4,
+    "replacement_unique_codes": 4,
+    "kept": 4,
+    "state_links_changed": 0,
+    "state_links_cleared": 0,
+    "state_links_added": 0,
+    "state_links_reassigned": 0,
+    "nonnull_after_locality_name": 4,
+    "nonnull_after_latitude": 0,
+    "nonnull_after_longitude": 0,
+    "nonnull_after_state_id": 4,
+    "nonnull_after_state_code": 4,
+    "nonnull_after_city_id": 0,
+    "nonnull_after_source": 4,
+    "nonnull_after_wikiDataId": 0,
+    "queued": 0,
+    "queued_code_absent": 0,
+    "queued_code_present": 0,
+    "queued_product_unverified": 0,
+    "new_codes_not_added": 0,
+    "kept_unique_codes": 4,
+    "master_repeated_code_groups": 0
+  },
+  "changed_field_counts": {
+    "locality_name": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 4,
+    "wikiDataId": 0
+  },
+  "cleared_nonnull_field_counts": {
+    "locality_name": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 0,
+    "wikiDataId": 0
+  },
+  "city_links": {
+    "null_unchanged": 4,
+    "kept": 0,
+    "changed": 0,
+    "cleared": 0,
+    "newly_linked": 0
+  },
+  "field_hold_row_counts": {
+    "Missing, invalid or disagreeing published pairs; no generated centroid or city point fallback": 4,
+    "Published point is reused across four distinct state/island postcode identities; point precision held": 4,
+    "No replacement product identifier and geographic city-scope predicate established for this source; city link cleared or remains null": 4
+  },
+  "identity_scope_note": null,
+  "replacement_coverage_measured": true,
+  "distribution_notices": ".github/licenses/pc_rebuild_7-distribution-notices.txt",
+  "research_master_sha": "cdb667f14d90838f7fd04a63f26541f4e2366f73",
+  "queue_policy": "v5 major only; no_successor; IDs reserved in research only; no redirects or edits here",
+  "point_scope": "GeoNames published estimates, TW administrative centres and guarded multi-object OSM medians; no postal centroid or current routing certification",
+  "field_scope": "Unanimous fresh same-identity values; null on disagreement/missing scope; no old-field grandfathering or old-state candidate selection",
+  "city_scope": "A positive source-specific identifier and geographic same-entity predicate were not established from these inputs; alias existence alone cannot preserve an old link.",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "91569e9dfc6c9dda48301b917ecd6a2b9afdc670adbc82a0d4ed7f4df4c0f9bf",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, FM postal code dump, 13 October 2026.",
+  "note": "Published estimates only, with the research precision holds; no current routing certification."
+}

@@ -1,0 +1,19 @@
+{
+  "country_code": "SE",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/SE.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:59 GMT",
+  "bytes": 96641,
+  "sha256": "dadf2e925eba7d92b38aac787bcc75d94017a87eae6cdfa292f2ba7e02e37901",
+  "retrieved_at_utc": "2026-10-14T00:41:25.821329+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Swedish postal code dump, 13 October 2026.",
+  "identity": "one row per postcode; a row is kept when the dump lists its code",
+  "changes_by_csc": "Existing rows the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added.",
+  "state_mapping": "Mixed postal admin1 (ISO letter or GeoNames number) to the CSC state iso2 by the provider table https://www.geonames.org/SE/administrative-division-sweden.html",
+  "rows_kept": 16390,
+  "queued_for_v5_removal": 2,
+  "new_codes_not_added": 2497
+}

@@ -31,6 +31,11 @@ class CountySyncTests(unittest.TestCase):
                            country_id=233, country_code='US', latitude='30.00000000',
                            longitude='-92.00000000')
         self.file.write_text(json.dumps([self.county]))
+        # the county preflight checks counties and city links against these (v5)
+        self.countries, self.states = [{'id': 233, 'iso2': 'US'}], [{'id': 1457, 'country_id': 233, 'country_code': 'US', 'iso2': 'LA'}]
+        for path, rows in {'countries/countries.json': self.countries, 'states/states.json': self.states, 'cities/US.json': []}.items():
+            Path('contributions', path).parent.mkdir(parents=True, exist_ok=True)
+            Path('contributions', path).write_text(json.dumps(rows))
         self.importer = JSONToMySQLImporter.__new__(JSONToMySQLImporter)
         self.importer.cursor = Mock()
         self.importer.cursor.fetchone.return_value = {'table': 'counties'}
@@ -132,8 +137,12 @@ class CountySyncTests(unittest.TestCase):
         stored[0]['latitude'] = '31.00000000'
         syncer = MySQLToJSONSync.__new__(MySQLToJSONSync)
         syncer.cursor = Mock()
-        syncer.cursor.fetchone.return_value = {'table': 'counties'}
-        syncer.cursor.fetchall.side_effect = [[{'country_code': 'US'}], stored]
+        answers = {'DISTINCT': [{'country_code': 'US'}], 'FROM countries': self.countries, 'FROM states': self.states,
+                   'FROM cities': [], 'FROM counties WHERE': stored}
+        last = {}
+        syncer.cursor.execute.side_effect = lambda sql, *a: last.update(sql=sql)
+        syncer.cursor.fetchone.side_effect = lambda: None if 'county_states' in last['sql'] else {'table': 'counties'}
+        syncer.cursor.fetchall.side_effect = lambda: next(v for k, v in answers.items() if k in last['sql'])
         syncer.get_table_columns = Mock(return_value=list(self.county))
         self.assertEqual(syncer.sync_counties(), 1)
         self.assertEqual(json.loads(self.file.read_text()), [dict(source, latitude='31.00000000')])

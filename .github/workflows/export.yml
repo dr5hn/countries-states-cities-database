@@ -12,11 +12,35 @@ on:
       pass:
         description: "Passcode"
         required: true
+      mode:
+        description: "candidate: build and keep the files as a workflow artifact, publish nothing; production: tag, release and export PR (current master only)"
+        required: true
+        default: candidate
+        type: choice
+        options:
+          - candidate
+          - production
 
 jobs:
   export:
     name: JSON/XML/YAML/CSV/MYSQL/PSQL/SQLITE/SQLSERVER/MONGODB
     runs-on: ubuntu-24.04
+    env:
+      # Push-triggered runs and runs without a mode only build a candidate; publishing needs an explicit production run
+      MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'candidate' }}
+    permissions:
+      contents: read   # the build never writes; publishing happens in the publish job
+    outputs:
+      artifact: ${{ steps.meta.outputs.artifact }}
+      region_count: ${{ steps.meta.outputs.region_count }}
+      subregion_count: ${{ steps.meta.outputs.subregion_count }}
+      country_count: ${{ steps.meta.outputs.country_count }}
+      state_count: ${{ steps.meta.outputs.state_count }}
+      city_count: ${{ steps.meta.outputs.city_count }}
+      county_count: ${{ steps.meta.outputs.county_count }}
+      postcode_count: ${{ steps.meta.outputs.postcode_count }}
+      postcode_country_count: ${{ steps.meta.outputs.postcode_country_count }}
+      current_date: ${{ steps.meta.outputs.current_date }}
 
     strategy:
       matrix:
@@ -25,13 +49,37 @@ jobs:
       fail-fast: false
 
     steps:
+      # Production exports are built from the current master commit only: a release names the commit its data came from,
+      # and the default token cannot publish from a source whose workflow files differ from master's (old runs included).
+      # They also need the repository variable EXPORT_PRODUCTION_ENABLED = true, unset while exports are paused.
+      - name: Require the current master commit
+        if: env.MODE == 'production'
+        uses: actions/github-script@v8
+        env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
+        with:
+          script: |
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
+            const { data: master } = await github.rest.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: 'master',
+            });
+            if (context.ref !== 'refs/heads/master' || context.sha !== master.commit.sha) {
+              core.setFailed('Exports require the current master commit; start a new run on master');
+              return;
+            }
+
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 1
           submodules: true
           ref: ${{ github.head_ref }}
-          persist-credentials: true
+          persist-credentials: false
           lfs: false
 
       - name: Setup PHP
@@ -125,8 +173,9 @@ jobs:
           python3 bin/scripts/sync/sync_mysql_to_json.py --host localhost --user root --password root --database world
           echo "✅ MySQL → JSON sync complete"
           echo "📊 Validating round-trip consistency..."
-          # Show what changed (if anything)
-          git diff --stat contributions/ || echo "No changes detected - perfect round-trip!"
+          git diff --stat contributions/
+          # fails when a record that had an id comes back changed or missing (new ids for id-less rows are expected)
+          python3 bin/scripts/sync/check_round_trip.py --ref HEAD
 
       - name: Setup & Run NMIG (MySQL to PostgreSQL)
         run: |
@@ -196,15 +245,16 @@ jobs:
       - name: Export MySQL SQL
         run: |
           mkdir -p sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world regions > sql/regions.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world subregions > sql/subregions.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world countries > sql/countries.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world states > sql/states.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world cities > sql/cities.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world counties > sql/counties.sql
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world postcodes > sql/postcodes.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world regions > sql/regions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world subregions > sql/subregions.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world countries > sql/countries.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world states > sql/states.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world cities > sql/cities.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world counties > sql/counties.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world county_states > sql/county_states.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world postcodes > sql/postcodes.sql
           # Export complete world database
-          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks world > sql/world.sql
+          mysqldump -uroot -proot --single-transaction --add-drop-table --disable-keys --set-charset --skip-add-locks --complete-insert world > sql/world.sql
 
       - name: Add DROP TABLE commands to world.sql
         run: |
@@ -221,6 +271,7 @@ jobs:
 
           DROP TABLE IF EXISTS `postcodes`;
           DROP TABLE IF EXISTS `cities`;
+          DROP TABLE IF EXISTS `county_states`;
           DROP TABLE IF EXISTS `counties`;
           DROP TABLE IF EXISTS `states`;
           DROP TABLE IF EXISTS `countries`;
@@ -248,19 +299,50 @@ jobs:
           # Export PostgreSQL schema only (no data)
           pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --schema-only --clean --if-exists --no-owner --no-acl > psql/schema.sql
           # Export individual tables with data
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
-          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --inserts --clean --if-exists --no-owner --no-acl > psql/world.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t regions > psql/regions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t subregions > psql/subregions.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t countries > psql/countries.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t states > psql/states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t cities > psql/cities.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t counties > psql/counties.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t county_states > psql/county_states.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl -t postcodes > psql/postcodes.sql
+          pg_dump --dbname=postgresql://postgres:postgres@localhost/world -Fp --column-inserts --rows-per-insert=1000 --clean --if-exists --no-owner --no-acl > psql/world.sql
 
           # Remove \restrict and \unrestrict commands from all psql files
           for f in psql/*.sql; do
             grep -v '^\\\(un\)\?restrict ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
           done
+
+      - name: Check the SQL dumps load back
+        # Two checks. Every INSERT must name its columns (--complete-insert, --column-inserts), so a row lands in the
+        # right column or fails loudly in an older table (#2053); a positional INSERT anywhere fails the build. Then
+        # both world dumps are loaded into fresh databases and each table is compared with its source by row count
+        # and a per-row checksum, so a dump that does not reproduce the data fails too.
+        env:
+          PGPASSWORD: postgres
+        run: |
+          set -euo pipefail
+          tables="regions subregions countries states cities counties county_states postcodes"
+          if grep -lE '^INSERT INTO [^ ]+ VALUES' sql/*.sql psql/*.sql; then
+            echo "::error::the files above contain INSERTs without column names"; exit 1
+          fi
+          mysql -uroot -proot -e "DROP DATABASE IF EXISTS world_check; CREATE DATABASE world_check CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          mysql -uroot -proot --default-character-set=utf8mb4 world_check < sql/world.sql
+          for t in $tables; do
+            a=$(mysql -uroot -proot -N -e "CHECKSUM TABLE world.$t" | cut -f2)
+            b=$(mysql -uroot -proot -N -e "CHECKSUM TABLE world_check.$t" | cut -f2)
+            [ "$a" = "$b" ] || { echo "::error::sql/world.sql does not reproduce $t (checksum $a vs $b)"; exit 1; }
+          done
+          psql -h localhost -U postgres -q -c "DROP DATABASE IF EXISTS world_check;" -c "CREATE DATABASE world_check;"
+          psql -h localhost -U postgres -q -v ON_ERROR_STOP=1 -d world_check -f psql/world.sql > /dev/null
+          for t in $tables; do
+            q="SELECT count(*) || ':' || coalesce(sum(hashtext(r::text)::bigint), 0) FROM public.$t r"
+            a=$(psql -h localhost -U postgres -At -d world -c "$q")
+            b=$(psql -h localhost -U postgres -At -d world_check -c "$q")
+            [ "$a" = "$b" ] || { echo "::error::psql/world.sql does not reproduce $t ($a vs $b)"; exit 1; }
+          done
+          echo "SQL dumps load back and match the source for: $tables"
 
       - name: Export SQLite
         run: |
@@ -274,6 +356,7 @@ jobs:
           mysql2sqlite -d world -t states --mysql-password root -u root -f sqlite/states.sqlite3
           mysql2sqlite -d world -t cities --mysql-password root -u root -f sqlite/cities.sqlite3
           mysql2sqlite -d world -t counties --mysql-password root -u root -f sqlite/counties.sqlite3
+          mysql2sqlite -d world -t county_states --mysql-password root -u root -f sqlite/county_states.sqlite3
           mysql2sqlite -d world -t postcodes --mysql-password root -u root -f sqlite/postcodes.sqlite3
           mysql2sqlite -d world --mysql-password root -u root -f sqlite/world.sqlite3
 
@@ -341,7 +424,8 @@ jobs:
           fi
 
           # Counties: separate compressed assets for all formats.
-          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql; do
+          # county_states: the regions of counties of several regions (v5), released beside each table-shaped county file
+          for file in json/counties.json csv/counties.csv xml/counties.xml yml/counties.yml geojson/counties.geojson toon/counties.toon parquet/counties.parquet sql/counties.sql psql/counties.sql sqlite/counties.sqlite3 sqlserver/counties.sql csv/county_states.csv sql/county_states.sql psql/county_states.sql sqlite/county_states.sqlite3 sqlserver/county_states.sql; do
             if [ -f "$file" ]; then gzip -9 -k -f "$file"; fi
           done
 
@@ -473,9 +557,271 @@ jobs:
           sed -i "s/Total Postcodes : [0-9,]* ([0-9]* countries) <br>/Total Postcodes : $postcode_count ($postcode_country_count countries) <br>/" README.md
           sed -i "s/Last Updated On: .*$/Last Updated On: $current_date/" README.md
 
+      - name: Check every file a release carries
+        run: |
+          # Fails when any expected export is missing or empty, or the required notice is absent (both modes)
+          required=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/county_states.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/county_states.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/county_states.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+          )
+          for file in "${required[@]}"; do
+            [ -s "$file" ] || { echo "::error::missing or empty required export: $file"; exit 1; }
+          done
+          [ -s .github/licenses/Unicode-3.0.txt ] || { echo "::error::Required notice Unicode-3.0.txt is missing"; exit 1; }
+          python3 bin/scripts/export/check_county_states_csv.py   # the CSV companion lists exactly json/counties.json's regions
+          echo "${#required[@]} exports and the notices present"
+
+      - name: Package the build with its checksums
+        run: |
+          mkdir -p export-notices && cp .github/licenses/*.txt export-notices/
+          # The small files a production export PR would commit: tracked and new unignored files in the export folders,
+          # the schema, the README and contributions, as generated by this run
+          git ls-files -z --cached --others --exclude-standard -- json csv xml yml toon geojson parquet sql psql sqlite \
+            sqlserver bin/db/schema.sql README.md contributions | grep -zv '\.gz$' | tar --null -czf export-small-files.tar.gz -T -
+          files=(
+            csv/cities.csv.gz
+            csv/counties.csv.gz
+            csv/county_states.csv.gz
+            csv/postcodes.csv.gz
+            csv/translations.csv.gz
+            geojson/cities.geojson.gz
+            geojson/counties.geojson.gz
+            json/cities.json.gz
+            json/counties.json.gz
+            json/countries+states+cities.json.gz
+            json/postcodes.json.gz
+            mongodb/world-mongodb-dump.tar.gz
+            parquet/cities.parquet.gz
+            parquet/counties.parquet.gz
+            parquet/postcodes.parquet.gz
+            psql/cities.sql.gz
+            psql/counties.sql.gz
+            psql/county_states.sql.gz
+            psql/postcodes.sql.gz
+            psql/world.sql.gz
+            sql/cities.sql.gz
+            sql/counties.sql.gz
+            sql/county_states.sql.gz
+            sql/postcodes.sql.gz
+            sql/world.sql.gz
+            sqlite/cities.sqlite3.gz
+            sqlite/counties.sqlite3.gz
+            sqlite/county_states.sqlite3.gz
+            sqlite/postcodes.sqlite3.gz
+            sqlite/world.sqlite3.gz
+            sqlserver/cities.sql.gz
+            sqlserver/counties.sql.gz
+            sqlserver/county_states.sql.gz
+            sqlserver/postcodes.sql.gz
+            sqlserver/world.sql.gz
+            toon/cities.toon.gz
+            toon/counties.toon.gz
+            xml/cities.xml.gz
+            xml/counties.xml.gz
+            xml/postcodes.xml.gz
+            yml/cities.yml.gz
+            yml/counties.yml.gz
+            yml/postcodes.yml.gz
+            export-notices/*.txt export-small-files.tar.gz
+          )
+          sha256sum "${files[@]}" > EXPORT_SHA256SUMS
+          echo "source ${GITHUB_SHA} ref ${GITHUB_REF} run ${GITHUB_RUN_ID} attempt ${GITHUB_RUN_ATTEMPT}" > EXPORT_SOURCE
+          wc -l EXPORT_SHA256SUMS
+
+      - name: Record the build
+        id: meta
+        run: |
+          echo "artifact=export-build-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "region_count=${region_count}" >> "$GITHUB_OUTPUT"
+          echo "subregion_count=${subregion_count}" >> "$GITHUB_OUTPUT"
+          echo "country_count=${country_count}" >> "$GITHUB_OUTPUT"
+          echo "state_count=${state_count}" >> "$GITHUB_OUTPUT"
+          echo "city_count=${city_count}" >> "$GITHUB_OUTPUT"
+          echo "county_count=${county_count}" >> "$GITHUB_OUTPUT"
+          echo "postcode_count=${postcode_count}" >> "$GITHUB_OUTPUT"
+          echo "postcode_country_count=${postcode_country_count}" >> "$GITHUB_OUTPUT"
+          echo "current_date=${current_date}" >> "$GITHUB_OUTPUT"
+
+      - name: Keep the build as a workflow artifact (candidate runs end here; nothing is published)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.artifact }}
+          path: |
+            json/*.gz
+            sql/*.gz
+            psql/*.gz
+            sqlite/*.gz
+            sqlserver/*.gz
+            xml/*.gz
+            yml/*.gz
+            csv/*.gz
+            toon/*.gz
+            geojson/*.gz
+            parquet/*.gz
+            mongodb/world-mongodb-dump.tar.gz
+            export-notices/*.txt
+            export-small-files.tar.gz
+            EXPORT_SHA256SUMS
+            EXPORT_SOURCE
+          if-no-files-found: error
+          retention-days: 30
+
+  # Migration files (migrations/README.md): how this build's ids relate to the last major and the last export. Runs after
+  # a successful build, on its own runner with the full history the generator walks; publishing needs it to succeed.
+  migrations:
+    name: Release migration files
+    needs: export
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read   # reads the history and the list of published releases
+      pull-requests: read # verifies PR-only events against GitHub merge_commit_sha
+    outputs:
+      artifact: ${{ steps.generate.outputs.artifact }}
+      data_version: ${{ steps.generate.outputs.data_version }}
+    steps:
+      - name: Checkout the source commit with its full history and tags
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+          lfs: false
+
+      - name: Generate the migration files
+        id: generate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'candidate' }}
+        run: |
+          flag=(); [ "$MODE" = production ] && flag=(--production)
+          python3 bin/scripts/release/release_migrations.py --to "$GITHUB_SHA" --out "$RUNNER_TEMP/migrations" "${flag[@]}"
+          echo "artifact=migrations-${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          python3 -c 'import json, sys; print("data_version=" + json.load(open(sys.argv[1]))["data_version"])' \
+            "$RUNNER_TEMP/migrations/release_meta.json" >> "$GITHUB_OUTPUT"
+
+      - name: Keep the migration files as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.generate.outputs.artifact }}
+          path: |
+            ${{ runner.temp }}/migrations/migrations-from-*.tar.gz
+            ${{ runner.temp }}/migrations/MIGRATIONS_SHA256SUMS
+            ${{ runner.temp }}/migrations/MIGRATIONS_SOURCE
+          if-no-files-found: error
+          retention-days: 30
+
+  # Publishing: only a production run with the switch on, after a successful build of this same commit. This job holds
+  # the write token and runs no build or dependency scripts: it places the verified build files and publishes them.
+  publish:
+    name: Publish the release and export PR
+    needs: [export, migrations]
+    if: github.event_name == 'workflow_dispatch' && inputs.mode == 'production' && vars.EXPORT_PRODUCTION_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write        # release, tag, assets and the export branch
+      pull-requests: write   # the export PR and its labels
+    env:
+      region_count: ${{ needs.export.outputs.region_count }}
+      subregion_count: ${{ needs.export.outputs.subregion_count }}
+      country_count: ${{ needs.export.outputs.country_count }}
+      state_count: ${{ needs.export.outputs.state_count }}
+      city_count: ${{ needs.export.outputs.city_count }}
+      county_count: ${{ needs.export.outputs.county_count }}
+      postcode_count: ${{ needs.export.outputs.postcode_count }}
+      postcode_country_count: ${{ needs.export.outputs.postcode_country_count }}
+      current_date: ${{ needs.export.outputs.current_date }}
+
+    steps:
+      - name: Checkout the source commit
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 1
+          persist-credentials: true
+          lfs: false
+
+      - name: Download this run's build
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.export.outputs.artifact }}
+          path: ${{ runner.temp }}/build
+
+      - name: Verify and place the build
+        run: |
+          cd "$RUNNER_TEMP/build"
+          sha256sum -c --quiet EXPORT_SHA256SUMS
+          grep -q "^source ${GITHUB_SHA} " EXPORT_SOURCE || { echo "::error::the build is not from this commit"; exit 1; }
+          tar -xzf export-small-files.tar.gz -C "$GITHUB_WORKSPACE"
+          # copy exactly the verified exports named in the checksum list; any failed copy stops the job
+          n=0
+          while IFS= read -r f; do
+            cp --parents "$f" "$GITHUB_WORKSPACE/"; n=$((n + 1))
+          done < <(cut -c 67- EXPORT_SHA256SUMS | grep '\.gz$' | grep -vx 'export-small-files.tar.gz')
+          # the number of exports the build lists and the release gate requires (export-readme.test.js keeps them equal)
+          [ "$n" -eq 43 ] || { echo "::error::expected 43 exports in the build, placed $n"; exit 1; }
+          echo "placed $n exports and the small files"
+
+      - name: Download and verify this run's migration files
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.migrations.outputs.artifact }}
+          path: ${{ runner.temp }}/migrations
+
+      - name: Check the migration files
+        run: |
+          cd "$RUNNER_TEMP/migrations"
+          grep -qx "source ${GITHUB_SHA}" MIGRATIONS_SOURCE || { echo "::error::the migration files are not from this commit"; exit 1; }
+          sha256sum -c --strict MIGRATIONS_SHA256SUMS
+          n=$(wc -l < MIGRATIONS_SHA256SUMS); [ "$n" -ge 1 ] || { echo "::error::no migration archive"; exit 1; }
+          echo "verified $n migration archive(s)"
+
       - name: Create GitHub Release with exports
         uses: actions/github-script@v8
         env:
+          EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
+          MIGRATIONS_DATA_VERSION: ${{ needs.migrations.outputs.data_version }}
           CURRENT_DATE: ${{ env.current_date }}
           REGION_COUNT: ${{ env.region_count }}
           SUBREGION_COUNT: ${{ env.subregion_count }}
@@ -489,11 +835,40 @@ jobs:
             const fs = require('fs');
             const path = require('path');
 
+            if (process.env.EXPORT_PRODUCTION_ENABLED !== 'true') {
+              core.setFailed('Production exports are paused (repository variable EXPORT_PRODUCTION_ENABLED is not true)');
+              return;
+            }
+            // Master may have moved during the build: check again before anything is created
+            const { data: master } = await github.rest.repos.getBranch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              branch: 'master',
+            });
+            if (context.ref !== 'refs/heads/master' || context.sha !== master.commit.sha) {
+              core.setFailed('Exports require the current master commit; start a new run on master');
+              return;
+            }
+
+            // Third-party notices must travel with every release (e.g. Unicode-3.0 for CLDR country names). Read and
+            // check them before anything is created, so a missing or unreadable notice stops the run.
+            const noticeDir = '.github/licenses';
+            if (!fs.existsSync(noticeDir)) {
+              core.setFailed(`${noticeDir} is missing; required notices cannot be published`);
+              return;
+            }
+            const noticeFiles = fs.readdirSync(noticeDir).filter(f => f.endsWith('.txt'));
+            if (!noticeFiles.includes('Unicode-3.0.txt')) {   // required while country translations carry CLDR names
+              core.setFailed('Required notice Unicode-3.0.txt is missing');
+              return;
+            }
+            const noticeAssets = noticeFiles.map(f => ({ name: `NOTICE-${f}`, data: fs.readFileSync(path.join(noticeDir, f)) }));
+
             // Find latest feature release for base version, and count existing
             // export releases for that base version to determine next export number.
             //
-            // Feature releases match strictly `^v?\d+\.\d+$` (e.g. v3.2, v3.1).
-            // Export releases match `^v?\d+\.\d+-export\.\d+$` (e.g. v3.2-export.1)
+            // Feature releases match `^v?\d+\.\d+(\.\d+)?$` (e.g. v4.0, v5.0.0); the newest by all three numbers wins,
+            // and its own spelling is the export prefix. Export releases are `<feature>-export.N` (e.g. v4.0-export.51)
             // and are explicitly excluded from the base-version search even though
             // they are not flagged as prereleases (they need to be non-prerelease
             // so downstream tools that pull /releases/latest pick up the data).
@@ -501,19 +876,19 @@ jobs:
             // If no feature release is found, the workflow FAILS rather than
             // falling back to v0.0 — silently shipping v0.0-export.N once is
             // already one tag too many.
-            const featureRe = /^v?(\d+)\.(\d+)$/;
-            const exportTagPrefix = (m, n) => new RegExp(`^v?${m}\\.${n}-export\\.(\\d+)$`);
+            const featureRe = /^v?(\d+)\.(\d+)(?:\.(\d+))?$/;
 
             let bestMajor = 0, bestMinor = 0;
+            let bestPatch = 0, baseVersion;
             let exportNum = 0;
             let releases;
             try {
-              const resp = await github.rest.repos.listReleases({
+              // every page: with more than 100 releases the newest feature release could be on a later one
+              releases = await github.paginate(github.rest.repos.listReleases, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 per_page: 100,
               });
-              releases = resp.data;
             } catch (err) {
               core.setFailed(`Could not list releases to determine base version: ${err.message}`);
               return;
@@ -523,21 +898,29 @@ jobs:
               if (rel.prerelease || rel.draft) continue;
               const match = rel.tag_name.match(featureRe);
               if (!match) continue;
-              const m = parseInt(match[1]);
-              const n = parseInt(match[2]);
-              if (m > bestMajor || (m === bestMajor && n > bestMinor)) {
+              const m = parseInt(match[1], 10);
+              const n = parseInt(match[2], 10);
+              const p = parseInt(match[3] ?? '0', 10);
+              if (!baseVersion || m > bestMajor ||
+                  (m === bestMajor && (n > bestMinor || (n === bestMinor && p > bestPatch)))) {
                 bestMajor = m;
                 bestMinor = n;
+                bestPatch = p;
+                baseVersion = rel.tag_name.replace(/^v/, '');
               }
             }
 
-            if (bestMajor === 0 && bestMinor === 0) {
-              core.setFailed('No feature release matching v\\d+\\.\\d+ found. Cut a v<MAJOR>.<MINOR> release first (gh release create vX.Y --target master), then re-run this workflow.');
+            if (!baseVersion) {
+              core.setFailed('No feature release matching v<MAJOR>.<MINOR>[.<PATCH>] found. Cut a feature release first (gh release create vX.Y.Z --target master), then re-run this workflow.');
+              return;
+            }
+            // The migration files carry the data version the migrations job picked the same way; they must agree
+            if (baseVersion !== process.env.MIGRATIONS_DATA_VERSION) {
+              core.setFailed(`This export would be named for v${baseVersion}, but its migration files say ${process.env.MIGRATIONS_DATA_VERSION}; start a new run`);
               return;
             }
 
-            const baseVersion = `${bestMajor}.${bestMinor}`;
-            const exportRe = exportTagPrefix(bestMajor, bestMinor);
+            const exportRe = new RegExp(`^v?${baseVersion.replaceAll('.', '\\.')}-export\\.(\\d+)$`);
             for (const rel of releases) {
               const match = rel.tag_name.match(exportRe);
               if (match) {
@@ -546,16 +929,36 @@ jobs:
               }
             }
 
+            // Tags left by a failed attempt count too, so a number is never reused
+            const { data: tagRefs } = await github.rest.git.listMatchingRefs({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `tags/v${baseVersion}-export.`,
+            });
+            for (const r of tagRefs) {
+              const match = r.ref.replace('refs/tags/', '').match(exportRe);
+              if (match && parseInt(match[1]) > exportNum) exportNum = parseInt(match[1]);
+            }
+
             exportNum++;
             const tag = `v${baseVersion}-export.${exportNum}`;
 
             core.info(`Base version: v${baseVersion}, creating export release ${tag}...`);
 
-            // Create export release as prerelease (doesn't override latest feature release)
+            // Reserve a fresh tag at the source commit; an existing tag makes this fail rather than point elsewhere
+            await github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: `refs/tags/${tag}`,
+              sha: context.sha,
+            });
+
+            // Create a draft; publish only after every asset and notice upload succeeds
             const { data: release } = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: tag,
+              target_commitish: context.sha,   // tag the exact source commit the data was built from
               name: tag,
               body: [
                 `## ${tag} - ${process.env.CURRENT_DATE}`,
@@ -574,14 +977,22 @@ jobs:
                 '### Formats',
                 'JSON, MySQL, PostgreSQL, SQLite, SQL Server, XML, YAML, CSV, GeoJSON, Toon, MongoDB, Parquet',
                 '',
+                '### Licence and credits',
+                'ODbL 1.0, attribution required. Some values come from sources that ask for credit (see the README). Their',
+                'notices are attached as `NOTICE-*.txt` and must be kept with every copy of this data.',
+                '',
+                '### Migration files',
+                'Each `migrations-from-<release>.tar.gz` says how ids changed since that release: removals and where they went,',
+                'added ids, identity decisions and changed fields. See migrations/README.md.',
+                '',
                 '---',
                 '*Auto-generated by GitHub Actions export workflow*',
               ].join('\n'),
-              draft: false,
+              draft: true,
               prerelease: false,
             });
 
-            core.info(`Release created: ${release.html_url}`);
+            core.info(`Draft release created: ${release.html_url}`);
 
             // Upload all .gz files and mongodb dump
             const uploadPatterns = [
@@ -621,11 +1032,48 @@ jobs:
               }
             }
 
-            core.info('All export assets uploaded to release.');
+            // Migration files (migrations/README.md): one archive per earlier release, as verified above
+            const migrationDir = path.join(process.env.RUNNER_TEMP, 'migrations');
+            const migrationFiles = fs.readdirSync(migrationDir).filter(f => /^migrations-from-.+\.tar\.gz$/.test(f));
+            if (migrationFiles.length === 0) throw new Error('no migration archive to attach');
+            for (const f of [...migrationFiles.sort(), 'MIGRATIONS_SHA256SUMS']) {
+              core.info(`Uploading ${f}...`);
+              await github.rest.repos.uploadReleaseAsset({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                release_id: release.id,
+                name: f,
+                data: fs.readFileSync(path.join(migrationDir, f)),
+              });
+            }
+
+            for (const asset of noticeAssets) {
+              core.info(`Uploading ${asset.name}...`);
+              await github.rest.repos.uploadReleaseAsset({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                release_id: release.id,
+                name: asset.name,
+                data: asset.data,
+              });
+            }
+
+            // Every asset and notice is attached: publish (an exception above leaves the draft unpublished)
+            await github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.id,
+              draft: false,
+              prerelease: false,
+              make_latest: 'true',
+            });
+
+            core.info(`Release published with all export assets and ${noticeAssets.length} notices.`);
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
         with:
+          base: master
           commit-message: |
             Export database formats - ${{ env.current_date }}
 

@@ -1,0 +1,20 @@
+{
+  "country_code": "ID",
+  "identity": "postcode and regency/city",
+  "source_tag": "geonames-postal",
+  "state_mapping": "Postal admin1 is the BPS province code (e.g. 31 -> JK, 33 -> JT), checked against the GeoNames county parent; historical postal 91/94 scopes predate the Papua splits, so those 250 province links are cleared",
+  "rows_kept": 8054,
+  "queued_for_v5_removal": 313,
+  "consumer_consequence": "Indonesia retains 8,054 regency/city-scoped postcode IDs covering 7,966 codes, replaces their labels with open administrative labels and queues 313 unsupported tuples; 3,829 estimates and 7,804 province links remain.",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "c94e06b43c5e70b924392b09a9c657f59e50dfbcb45516fc0c70cd1ec73a10e1",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Indonesian postal code dump, 13 October 2026.",
+  "labels": "Regency/city labels from the GeoNames administrative code table admin2Codes.txt (retrieved 2026-10-14T02:24:10.665479+00:00, SHA-256 0dbb9988fa9388021efe026ed16de0b89f56314f2dfd0abb4a51e17b8c55f29f); BPS statutory county headings used only as a check"
+}

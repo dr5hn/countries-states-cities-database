@@ -12,6 +12,7 @@ files = [
     './csv/states.csv',
     './csv/cities.csv',
     './csv/counties.csv',
+    './csv/county_states.csv',   # v5: regions of counties of several regions
     './csv/postcodes.csv',
 ]
 
