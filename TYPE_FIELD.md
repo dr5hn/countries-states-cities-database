@@ -127,6 +127,33 @@ of settlements binds it. Levels follow the census hierarchy: region 1, district 
 2, division 3, ward (`section / kata`) 4. Rows for districts are typed `county / wilaya` at level 2, and their removal is
 queued for a major release; Tanzania has no county records yet.
 
+### United States
+
+For reviewed US places, `type` follows the Census Bureau's official legal/statistical
+area description (LSAD), rather than population size or county-seat status:
+LSAD 25 is `city / city`, 43 `town / town`, 47 `village / village`, and
+21 `borough / borough`. A census-designated place (LSAD 57, FUNCSTAT S) is
+`locality / census designated place`, including large CDPs. Puerto Rico's
+statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`); all Puerto Rico
+rows remain held here because municipio versus town identity is not proved.
+Functioning minor civil divisions use their own legal category: towns, cities,
+boroughs and villages as above; townships and plantations use `municipality`
+with `type_local` `township` or `plantation`. These reviewed entities are level 3
+under the state/county framework. GNIS populated-place names alone do not establish
+legal incorporation or authorize a containing town's population.
+
+A village or CDP inside a same-named town is a separate entity. Each binding must
+agree with its row's own Wikidata GNIS (P590), FIPS (P774), or explicit instance
+class (P31), without a conflicting identifier. Rows without an item cannot bind
+a county subdivision with a nearby same-named place or CDP. Ambiguous matches,
+duplicate keys on one Census entity, special consolidated governments and unproved
+legacy identities stay held; this convention does not assert that every existing
+US row is reviewed. Population 2020 is the count of the bound entity itself.
+A missing county link is filled only when the whole entity belongs to one county.
+See the [2024 Gazetteer LSAD and FUNCSTAT fields](https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip),
+[Census LSAD definitions](https://www.census.gov/library/reference/code-lists/legal-status-codes.html)
+and the [per-record evidence ledger](.github/fixes-docs/ledgers/us_places_v5x.jsonl).
+
 ### Uruguay
 
 In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or
