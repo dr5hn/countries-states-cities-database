@@ -1,12 +1,21 @@
+import { gunzipSync } from 'node:zlib';
 import { PrismaClient } from '@prisma/client';
-import fetch from 'node-fetch';
-import { countyStates, localStateIds, seedCityRow } from './city-state';
+import { countyStates, localStateIds, seedCityRow } from './city-state.ts';
 
 const prisma = new PrismaClient();
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
+// Large exports are not in git: they are assets of each export release (json-<name>.json.gz).
+const RELEASE_BASE = 'https://github.com/dr5hn/countries-states-cities-database/releases/latest/download/';
+const RELEASE_ONLY = new Set(['cities']);
 
-/** Fetch an export's rows (untyped JSON); counties may be absent in older releases. */
+/** Fetch an export's rows (untyped JSON): small tables from master, large ones from the latest export release;
+ * counties may be absent in older releases. */
 async function fetchData(endpoint: string): Promise<any[]> {
+  if (RELEASE_ONLY.has(endpoint)) {
+    const response = await fetch(`${RELEASE_BASE}json-${endpoint}.json.gz`);
+    if (!response.ok) throw new Error(`Failed to fetch ${endpoint} from the latest release: ${response.status}`);
+    return JSON.parse(gunzipSync(Buffer.from(await response.arrayBuffer())).toString('utf8')) as any[];
+  }
   const response = await fetch(`${API_BASE}${endpoint}.json`);
   if (endpoint === 'counties' && response.status === 404) return [];
   if (!response.ok) throw new Error(`Failed to fetch ${endpoint}: ${response.status}`);
