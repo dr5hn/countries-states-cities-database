@@ -157,10 +157,9 @@ Arabic (ar), Bengali (bn), German (de), Spanish (es), French (fr), Hindi (hi), I
 
 ### Tool Dependencies
 
-All tools are **pre-installed in GitHub Actions**:
+Install them before running the tools:
 
 ```bash
-# Installed automatically by copilot-setup-steps.yml
 pip install Wikipedia-API timezonefinder mysql-connector-python
 ```
 

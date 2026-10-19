@@ -1,4 +1,4 @@
-name: Issue Auto-Assign
+name: Issue data-correction template
 
 on:
   issues:
@@ -8,123 +8,13 @@ permissions:
   issues: write
 
 jobs:
-  auto-assign:
-    name: Auto-assign to Copilot
+  data-correction-template:
+    name: Data-correction template
+    if: github.event.label.name == 'data-correction'
     runs-on: ubuntu-latest
 
     steps:
-      - name: Assign to Copilot on auto-fix label
-        if: |
-          github.event.label.name == 'auto-fix' ||
-          github.event.label.name == 'copilot'
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const issue = context.payload.issue;
-
-            // Assign to Copilot
-            try {
-              await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                assignees: ['copilot'],
-              });
-
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                body: [
-                  ':robot: This issue has been assigned to **Copilot** for automated resolution.',
-                  '',
-                  'Copilot will analyse the issue and open a draft PR with the proposed fix.',
-                  'A maintainer will review the changes before merging.',
-                  '',
-                  '_If Copilot cannot resolve this automatically, a maintainer will follow up manually._',
-                ].join('\n'),
-              });
-
-              core.info(`Issue #${issue.number} assigned to Copilot.`);
-            } catch (err) {
-              core.warning(`Could not assign to Copilot: ${err.message}`);
-
-              // Fallback: add comment directing maintainer
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                body: ':robot: Attempted to auto-assign this issue to Copilot, but assignment was not possible. A maintainer will review this manually.',
-              });
-            }
-
-      - name: Label critical issues
-        if: github.event.label.name == 'critical'
-        uses: actions/github-script@v8
-        with:
-          script: |
-            const issue = context.payload.issue;
-
-            // Assign to maintainer
-            try {
-              await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issue.number,
-                assignees: ['dr5hn'],
-              });
-            } catch (err) {
-              core.warning(`Could not assign to maintainer: ${err.message}`);
-            }
-
-            // Notify via Slack if webhook is configured
-            const webhookUrl = process.env.SLACK_WEBHOOK_URL;
-            if (webhookUrl) {
-              const https = require('https');
-              const payload = JSON.stringify({
-                attachments: [{
-                  color: '#FF0000',
-                  blocks: [
-                    {
-                      type: 'header',
-                      text: { type: 'plain_text', text: ':rotating_light: Critical Issue', emoji: true },
-                    },
-                    {
-                      type: 'section',
-                      fields: [
-                        { type: 'mrkdwn', text: `*Issue:* <${issue.html_url}|#${issue.number}> ${issue.title}` },
-                        { type: 'mrkdwn', text: `*Author:* ${issue.user.login}` },
-                      ],
-                    },
-                  ],
-                }],
-              });
-
-              const url = new URL(webhookUrl);
-              const data = payload;
-              await new Promise((resolve) => {
-                const req = https.request({
-                  hostname: url.hostname,
-                  path: url.pathname,
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(data) },
-                }, (res) => {
-                  if (res.statusCode !== 200) core.warning(`Slack responded with ${res.statusCode}`);
-                  resolve();
-                });
-                req.on('error', (err) => {
-                  core.warning(`Slack error: ${err.message}`);
-                  resolve();
-                });
-                req.write(data);
-                req.end();
-              });
-            }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
       - name: Add template for data corrections
-        if: github.event.label.name == 'data-correction'
         uses: actions/github-script@v8
         with:
           script: |

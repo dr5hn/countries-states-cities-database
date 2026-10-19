@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '24'   # the lock needs >=22 (content-type 3)
+          node-version: '26'   # the lock needs >=22 (content-type 3)
 
       - name: Install dependencies
         run: cd .github/scripts && npm ci --omit=dev
