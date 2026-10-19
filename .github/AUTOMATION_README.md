@@ -11,9 +11,9 @@ Unzip `csc-github-automation.zip` into your repository root. This adds/updates t
 unzip csc-github-automation.zip -d .
 ```
 
-### Step 2: Create required labels
+### Step 2: Push the files
 
-Push the files to your default branch, then trigger the label setup:
+Push the files to your default branch:
 
 ```bash
 git add .github/ CHANGELOG.md
@@ -21,7 +21,7 @@ git commit -m "feat: add repository automation workflows"
 git push origin master
 ```
 
-Then go to **Actions** tab > **Setup Repository Labels** > **Run workflow**. This creates all 20 required labels automatically.
+This repository's labels already exist. The one-time label workflow was removed after it had done its job.
 
 ### Step 3: Add Slack webhook (optional but recommended)
 
@@ -53,23 +53,11 @@ The `node_modules/` directory is gitignored and installed fresh by GitHub Action
 
 ### Blocker 1: Branch Protection Rules
 
-**Problem:** The auto-changelog workflow pushes directly to the default branch. If you have branch protection rules requiring PR reviews for all commits, this push will fail.
+**Problem:** A workflow that pushes directly to a protected default branch fails.
 
-**Solution:** Add `github-actions[bot]` to the list of users/apps that can bypass branch protection:
-1. Go to **Settings** > **Branches** > your default branch protection rule
-2. Under "Allow specified actors to bypass required pull requests", add `github-actions[bot]`
+**Solution:** None needed here. The weekly changelog update in `weekly-digest.yml` opens a PR (branch `changelog/weekly-<date>`) instead of pushing, and `auto-changelog.yml` only sends a Slack message.
 
-Alternatively, if you do not want direct pushes, modify `auto-changelog.yml` to open a PR instead of pushing directly.
-
-### Blocker 2: Copilot Not Available as Assignee
-
-**Problem:** The issue auto-assign workflow tries to assign issues to `copilot`. If Copilot coding agent is not enabled for your repo, this will fail silently (the workflow has a fallback comment).
-
-**Solution:** Ensure Copilot coding agent is enabled:
-1. **Settings** > **Copilot** > **Coding agent** > Enable
-2. If using organisation settings, ensure the org policy allows Copilot on your repo
-
-### Blocker 3: Missing Data Files for Cross-Reference
+### Blocker 2: Missing Data Files for Cross-Reference
 
 **Problem:** The cross-reference validation (`validate-cross-reference.js`) tries to load `countries.json` and `states.json` from the repo root, `json/`, or `data/` directories. If these files are not in any of those paths, cross-reference checks will be skipped.
 
@@ -85,7 +73,7 @@ const possiblePaths = [
 ];
 ```
 
-### Blocker 4: Contributions Directory Structure
+### Blocker 3: Contributions Directory Structure
 
 **Problem:** The validation scripts determine entity type from the file path by looking for "cities", "states", or "countries" in the path string. If your `contributions/` directory uses a different naming convention, entity detection will fail.
 
@@ -105,13 +93,13 @@ contributions/IN/maharashtra.json       # No entity keyword in path
 
 **Solution:** Ensure contribution files have the entity type ("cities", "states", or "countries") somewhere in the file path or filename.
 
-### Blocker 5: GitHub Actions Minutes
+### Blocker 4: GitHub Actions Minutes
 
 **Problem:** The PR validator runs multiple Node.js scripts per PR. Each run uses approximately 1-2 minutes of GitHub Actions time.
 
 **Solution:** Public repositories get unlimited free Actions minutes. Since `dr5hn/countries-states-cities-database` is public, this is not an issue. If you ever make it private, be aware of the 2,000 minutes/month limit on the free tier.
 
-### Blocker 6: Country Bounds Coverage
+### Blocker 5: Country Bounds Coverage
 
 **Problem:** The `country-bounds.json` file contains bounding boxes for ~160 countries. Countries/territories not in this file will skip the coordinate bounds check silently.
 
@@ -128,25 +116,25 @@ contributions/IN/maharashtra.json       # No entity keyword in path
 }
 ```
 
-### Blocker 7: Existing PR Template Conflict
+### Blocker 6: Existing PR Template Conflict
 
 **Problem:** If you already have a `.github/PULL_REQUEST_TEMPLATE.md`, this will overwrite it.
 
 **Solution:** Review the new template and merge any existing content you want to keep before committing.
 
-### Blocker 8: Large Repository Checkout Time
+### Blocker 7: Large Repository Checkout Time
 
 **Problem:** The PR validator uses `fetch-depth: 0` (full clone) for diff analysis. On a large repo, this can be slow.
 
 **Solution:** If checkout time becomes an issue, change to `fetch-depth: 1` in the workflow. This will still work for most validations but may limit some diff analysis features. The cross-reference validation loads JSON files from the checked-out repo, so having the full tree is important.
 
-### Blocker 9: Rate Limits on Source URL Checks
+### Blocker 8: Rate Limits on Source URL Checks
 
 **Problem:** The source URL checker makes HTTP HEAD requests to verify URLs. Some websites block automated requests or rate-limit them.
 
 **Solution:** The checker is limited to 5 URLs per PR and has a 10-second timeout. Results are warnings only (non-blocking). If a legitimate source URL fails the check, it will not prevent the PR from being reviewed.
 
-### Blocker 10: Concurrent PR Updates
+### Blocker 9: Concurrent PR Updates
 
 **Problem:** If multiple commits are pushed rapidly to a PR, multiple workflow runs may start. The concurrency group setting cancels older runs, but the validation comment might briefly show stale results.
 
@@ -161,11 +149,10 @@ contributions/IN/maharashtra.json       # No entity keyword in path
 | File | Trigger | Purpose |
 |------|---------|---------|
 | `pr-validator.yml` | PR opened/edited/sync | All validation checks, auto-labelling, report comment |
-| `issue-autoassign.yml` | Issue labelled | Assign to Copilot on `auto-fix`/`copilot` label |
+| `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
 | `stale-cleanup.yml` | Weekly (Sunday) | Warn/close inactive PRs, remove stale label on activity |
-| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status |
-| `auto-changelog.yml` | PR merged | Append changelog entry, notify Slack |
-| `setup-labels.yml` | Manual trigger | One-time: create all required labels |
+| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status; opens the weekly `CHANGELOG.md` PR |
+| `auto-changelog.yml` | PR merged | Slack message for each merged PR |
 
 ### Scripts (`.github/scripts/`)
 
