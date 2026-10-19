@@ -1158,3 +1158,19 @@ No individual address coordinate is published as a postcode point. Coverage is p
 Iran five-digit observations denote postal areas, not complete ten-digit delivery codes; China GeoNames rows are general areas.
 Country/code/locality scope is explicit per row. Removed IDs remain retired; every addition has a fresh ID.
 Per-record provenance: .github/fixes-docs/ledgers/postcodes_open_v5_additions.jsonl (object IDs/versions or source lines, hashes, licence, edition and field basis).
+
+
+US counties and population scope corrections (us_counties_v5_build_1, October 2026)
+Publisher: United States Census Bureau; US Geological Survey (identity checks).
+Edition: 2024 Census Gazetteer counties, places and county subdivisions; 2020 Census PL 94-171 geography;
+2022 Connecticut county-to-county-subdivision crosswalk; 2010 Gazetteer used only to check historical counts.
+Source: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/
+https://www2.census.gov/geo/docs/reference/ct_change/ct_cou_to_cousub_crosswalk.txt
+https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/
+Licence/legal basis: US federal works, public domain under 17 USC 105. No endorsement implied.
+CSC changes: selected official county-equivalent names and internal points, formatted coordinates to eight decimals,
+assigned fresh CSC IDs, replaced the CT statistical framework, recorded the Alaska split, linked proved places,
+and corrected or cleared populations of the wrong scope. No Census GEOID column exists in counties; codes stay in the ledger.
+Wikidata, https://www.wikidata.org/, CC0 1.0, was used for identity checking, not as a population or point source.
+Per-record source files, editions, URLs, retrieval times, hashes and methods:
+.github/fixes-docs/ledgers/us_counties_v5.jsonl ; retained acquisition bytes in the maintainer audit work bundle.
