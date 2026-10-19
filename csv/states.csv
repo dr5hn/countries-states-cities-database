@@ -135,9 +135,10 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 218,Benguela,7,AO,Angola,BGU,AO-BGU,01,province,,1,,Benguela,-12.91046570,14.03566080,Africa/Luanda,Q212786,561775
 212,Bié,7,AO,Angola,BIE,AO-BIE,02,province,,1,,Bié,-12.26304850,17.49678120,Africa/Luanda,Q213977,
 228,Cabinda,7,AO,Angola,CAB,AO-CAB,03,province,,1,,Cabinda,-5.05639500,12.32117490,Africa/Luanda,Q168787,
-226,"Cuando Cubango",7,AO,Angola,CCU,AO-CCU,04,province,,,,"Quando Cubango",-16.04576940,19.56215320,Africa/Luanda,Q215268,534002
+5857,Cuando,7,AO,Angola,CUB,AO-CUB,,province,província,1,,Cuando,-15.79664000,20.36642000,Africa/Luanda,,
 217,"Cuanza Norte",7,AO,Angola,CNO,AO-CNO,05,province,,1,,"Cuanza Norte",-9.02967520,15.09263240,Africa/Luanda,Q216834,443386
 216,"Cuanza Sul",7,AO,Angola,CUS,AO-CUS,06,province,,1,,Quanza,-10.77075270,15.09757120,Africa/Luanda,Q216998,
+5856,Cubango,7,AO,Angola,CBG,AO-CBG,,province,província,1,,Cubango,-14.70247000,17.69655000,Africa/Luanda,,
 215,Cunene,7,AO,Angola,CNN,AO-CNN,07,province,,1,,Cunene,-16.55685360,15.78673190,Africa/Luanda,Q216987,
 213,Huambo,7,AO,Angola,HUA,AO-HUA,08,province,,1,,Huambo,-12.60763180,15.74110390,Africa/Luanda,Q218848,
 225,Huíla,7,AO,Angola,HUI,AO-HUI,09,province,,1,,Huíla,-14.69578080,15.09762930,Africa/Luanda,Q214572,
@@ -1165,12 +1166,12 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 3555,Hiiu,69,EE,Estonia,39,EE-39,02,county,,1,,Hiiu,58.83333333,22.66666667,Europe/Tallinn,Q1466462,3986
 5742,Hiiumaa,69,EE,Estonia,205,EE-205,,"rural municipality",,2,3555,Hiiumaa,58.91670000,22.60000000,Europe/Tallinn,Q31277892,
 3569,Ida-Viru,69,EE,Estonia,45,EE-45,03,county,,1,,Ida-Viru,59.21980300,27.39051620,Europe/Tallinn,Q189963,130156
-3566,Järva,69,EE,Estonia,52,EE-52,04,county,,1,,Järva,58.41333570,24.64773500,Europe/Tallinn,Q188068,29693
 5747,Järva,69,EE,Estonia,255,EE-255,,"rural municipality",,2,3566,Järva,59.00000000,25.86670000,Europe/Tallinn,Q42808650,
+3566,Järva,69,EE,Estonia,52,EE-52,04,county,,1,,Järva,58.41333570,24.64773500,Europe/Tallinn,Q188068,29693
 5744,Joelähtme,69,EE,Estonia,245,EE-245,,"rural municipality",,2,3567,Joelähtme,59.46670000,25.10000000,Europe/Tallinn,Q993036,
 3565,Jõgeva,69,EE,Estonia,50,EE-50,05,county,,1,,Jõgeva,58.74410590,26.38724440,Europe/Tallinn,Q189974,5112
 5745,Jõgeva,69,EE,Estonia,247,EE-247,,"rural municipality",,2,3565,Jõgeva,58.75000000,26.38330000,Europe/Tallinn,Q44624256,
-5746,Jõhvi,69,EE,Estonia,251,EE-251,,"rural municipality",,2,3569,Jõhvi,59.35830000,27.42330000,Europe/Tallinn,Q1640282,
+5855,Jõhvi,69,EE,Estonia,250,EE-250,,"rural municipality",vald,2,3569,"Jõhvi vald",59.35917000,27.42111000,Europe/Tallinn,,
 5748,Kadrina,69,EE,Estonia,272,EE-272,,"rural municipality",,2,3564,Kadrina,59.33330000,26.13330000,Europe/Tallinn,Q2627720,
 5749,Kambja,69,EE,Estonia,283,EE-283,,"rural municipality",,2,3557,Kambja,58.26670000,26.68330000,Europe/Tallinn,Q2627724,
 5750,Kanepi,69,EE,Estonia,284,EE-284,,"rural municipality",,2,3563,Kanepi,58.00000000,26.90000000,Europe/Tallinn,Q2627725,
@@ -1201,8 +1202,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 5767,Noo,69,EE,Estonia,528,EE-528,,"rural municipality",,2,3557,Noo,58.28330000,26.55000000,Europe/Tallinn,Q1020142,
 5768,Otepää,69,EE,Estonia,557,EE-557,,"rural municipality",,2,3558,Otepää,58.06670000,26.50000000,Europe/Tallinn,Q44509132,
 5807,Paide,69,EE,Estonia,567,EE-567,,"urban municipality",,2,3566,Paide,58.88560000,25.55690000,Europe/Tallinn,Q44792192,
-3562,Pärnu,69,EE,Estonia,68,EE-68,11,county,,1,,Pärnu,58.38708330,24.50283100,Europe/Tallinn,Q185036,41520
 5808,Pärnu,69,EE,Estonia,624,EE-624,,"urban municipality",,2,3562,Pärnu,58.38060000,24.49890000,Europe/Tallinn,Q134689,
+3562,Pärnu,69,EE,Estonia,68,EE-68,11,county,,1,,Pärnu,58.38708330,24.50283100,Europe/Tallinn,Q185036,41520
 5769,Peipsiääre,69,EE,Estonia,586,EE-586,,"rural municipality",,2,3557,Peipsiääre,58.66670000,27.41670000,Europe/Tallinn,Q44490248,
 5773,Põhja-Pärnumaa,69,EE,Estonia,638,EE-638,,"rural municipality",,2,3562,Põhja-Pärnu,58.83330000,24.41670000,Europe/Tallinn,Q42329911,
 5770,Põhja-Sakala,69,EE,Estonia,615,EE-615,,"rural municipality",,2,3556,Põhja-Sakala,58.48330000,25.53330000,Europe/Tallinn,Q31273591,
@@ -1214,8 +1215,8 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 5809,Rakvere,69,EE,Estonia,663,EE-663,,"urban municipality",,2,3564,Rakvere,59.34700000,26.35580000,Europe/Tallinn,Q23890468,
 5776,Rakvere,69,EE,Estonia,661,EE-661,,"rural municipality",,2,3564,Rakvere,59.34700000,26.35580000,Europe/Tallinn,Q44857261,
 5780,Räpina,69,EE,Estonia,708,EE-708,,"rural municipality",,2,3563,Räpina,58.09830000,27.46390000,Europe/Tallinn,Q2627914,
-5777,Rapla,69,EE,Estonia,668,EE-668,,"rural municipality",,2,3559,Rapla,58.98330000,24.80000000,Europe/Tallinn,Q2627893,
 3559,Rapla,69,EE,Estonia,71,EE-71,13,county,,1,,Rapla,58.94197810,24.69840420,Europe/Tallinn,Q192352,5355
+5777,Rapla,69,EE,Estonia,668,EE-668,,"rural municipality",,2,3559,Rapla,58.98330000,24.80000000,Europe/Tallinn,Q2627893,
 5779,Rõuge,69,EE,Estonia,698,EE-698,,"rural municipality",,2,3560,Rõuge,57.76670000,27.03330000,Europe/Tallinn,Q44511803,
 5778,Ruhnu,69,EE,Estonia,689,EE-689,,"rural municipality",,2,3561,Ruhnu,57.80000000,23.26670000,Europe/Tallinn,Q672859,
 5781,Saarde,69,EE,Estonia,712,EE-712,,"rural municipality",,2,3562,Saarde,58.25000000,24.66670000,Europe/Tallinn,Q2627916,
@@ -1227,10 +1228,9 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 5810,Sillamäe,69,EE,Estonia,735,EE-735,,"urban municipality",,2,3569,Sillamäe,59.39690000,27.76310000,Europe/Tallinn,Q23890602,
 5811,Tallinn,69,EE,Estonia,784,EE-784,,"urban municipality",,2,3567,Tallinn,59.43700000,24.75360000,Europe/Tallinn,Q1770,
 5786,Tapa,69,EE,Estonia,792,EE-792,,"rural municipality",,2,3564,Tapa,59.26670000,26.03330000,Europe/Tallinn,Q2627948,
-5812,Tartu,69,EE,Estonia,793,EE-793,,"urban municipality",,2,3557,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972,
 3557,Tartu,69,EE,Estonia,79,EE-79,18,county,,1,,Tartu,58.38012070,26.72245000,Europe/Tallinn,Q192370,97759
+5812,Tartu,69,EE,Estonia,793,EE-793,,"urban municipality",,2,3557,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972,
 5787,Tartu,69,EE,Estonia,796,EE-796,,"rural municipality",,2,3557,Tartu,58.37800000,26.72900000,Europe/Tallinn,Q13972,
-5788,Toila,69,EE,Estonia,803,EE-803,,"rural municipality",,2,3569,Toila,59.41670000,27.51670000,Europe/Tallinn,Q2627964,
 5789,Tori,69,EE,Estonia,809,EE-809,,"rural municipality",,2,3562,Tori,58.48330000,24.81670000,Europe/Tallinn,Q44492102,
 5790,Tõrva,69,EE,Estonia,824,EE-824,,"rural municipality",,2,3558,Tõrva,58.00000000,25.93330000,Europe/Tallinn,Q2627973,
 5791,Türi,69,EE,Estonia,834,EE-834,,"rural municipality",,2,3566,Türi,58.80830000,25.43330000,Europe/Tallinn,Q44818587,
@@ -1238,14 +1238,14 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 5792,Valga,69,EE,Estonia,855,EE-855,,"rural municipality",,2,3558,Valga,57.78330000,26.05000000,Europe/Tallinn,Q42846054,
 3558,Valga,69,EE,Estonia,81,EE-81,19,county,,1,,Valga,57.77703400,26.03156280,Europe/Tallinn,Q192362,
 5793,Viimsi,69,EE,Estonia,890,EE-890,,"rural municipality",,2,3567,Viimsi,59.50000000,24.81670000,Europe/Tallinn,Q2627997,
+5794,Viljandi,69,EE,Estonia,899,EE-899,,"rural municipality",,2,3556,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q15100022,
 5813,Viljandi,69,EE,Estonia,897,EE-897,,"urban municipality",,2,3556,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q23890459,
 3556,Viljandi,69,EE,Estonia,84,EE-84,20,county,,1,,Viljandi,58.36454000,25.58780740,Europe/Tallinn,Q192061,17255
-5794,Viljandi,69,EE,Estonia,899,EE-899,,"rural municipality",,2,3556,Viljandi,58.36390000,25.59000000,Europe/Tallinn,Q15100022,
 5795,Vinni,69,EE,Estonia,901,EE-901,,"rural municipality",,2,3564,Vinni,59.35000000,26.43330000,Europe/Tallinn,Q2628002,
 5796,Viru-Nigula,69,EE,Estonia,903,EE-903,,"rural municipality",,2,3564,Viru-Nigula,59.36670000,26.83330000,Europe/Tallinn,Q2628006,
 5797,Vormsi,69,EE,Estonia,907,EE-907,,"rural municipality",,2,3568,Vormsi,59.00000000,23.01670000,Europe/Tallinn,Q426207,
-5798,Võru,69,EE,Estonia,917,EE-917,,"rural municipality",,2,3560,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838,
 3560,Võru,69,EE,Estonia,87,EE-87,21,county,,1,,Võru,57.81326070,26.98475760,Europe/Tallinn,Q188076,12112
+5798,Võru,69,EE,Estonia,917,EE-917,,"rural municipality",,2,3560,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838,
 5814,Võru,69,EE,Estonia,919,EE-919,,"urban municipality",,2,3560,Võru,57.84310000,27.01420000,Europe/Tallinn,Q193838,
 969,Hhohho,212,SZ,Eswatini,HH,SZ-HH,01,region,,1,,Hhohho,-26.09880120,31.36308220,Africa/Mbabane,Q735570,320651
 970,Lubombo,212,SZ,Eswatini,LU,SZ-LU,02,region,,1,,Bitch,-26.55452000,31.86191160,Africa/Mbabane,Q856657,
@@ -1290,6 +1290,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 1925,Serua,73,FJ,"Fiji Islands",13,FJ-13,05,province,,2,1929,Serua,-18.18047490,178.05097900,Pacific/Fiji,Q1208362,
 1918,Tailevu,73,FJ,"Fiji Islands",14,FJ-14,40,province,,2,1929,Tailev,-17.82691110,178.29324800,Pacific/Fiji,Q1365322,64552
 1923,Western,73,FJ,"Fiji Islands",W,FJ-W,05,division,,1,,Western,-18.00000000,177.50000000,Pacific/Fiji,Q1062451,
+1509,"Åland Islands",74,FI,Finland,01,FI-01,01,region,landskap,1,,Åland,60.25000000,20.00000000,Europe/Mariehamn,Q5689,
 1511,"Central Finland",74,FI,Finland,08,FI-08,13,region,,1,,"Suomen keskus",62.60936580,25.57946100,Europe/Helsinki,Q5697,275104
 1494,"Central Ostrobothnia",74,FI,Finland,07,FI-07,16,region,,1,,"Keskeinen ostrobothnia",63.64765570,24.11141130,Europe/Helsinki,Q5696,67736
 1507,"Finland Proper",74,FI,Finland,19,FI-19,02,region,,1,,Suomi,60.30361130,22.41130840,Europe/Helsinki,Q5712,485567
@@ -2330,13 +2331,13 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 4418,Limbaži,120,LV,Latvia,054,LV-054,18,municipality,,1,,Limbaži,57.51465860,24.71315360,Europe/Riga,Q1579076,6517
 4401,Līvāni,120,LV,Latvia,056,LV-056,90,municipality,,1,,Līvāni,56.35509420,26.17251900,Europe/Riga,Q2277489,6758
 4501,Ludza,120,LV,Latvia,058,LV-058,19,municipality,,1,,Ludza,56.54595900,27.71431990,Europe/Riga,Q932445,7332
-4433,Madona,120,LV,Latvia,059,LV-059,20,municipality,,1,,Madona,56.85174670,26.21847690,Europe/Riga,Q2198472,6575
+5858,Madona,120,LV,Latvia,059,LV-059,,municipality,novads,1,,"Madonas novads",56.85329000,26.21698000,Europe/Riga,,
 4450,Mārupe,120,LV,Latvia,062,LV-062,95,municipality,,1,,Mārupe,56.89657170,24.04600490,Europe/Riga,Q2232018,19096
 4416,Ogre,120,LV,Latvia,067,LV-067,21,municipality,,1,,Ogre,56.81473550,24.60445550,Europe/Riga,Q2321579,
 4417,Olaine,120,LV,Latvia,068,LV-068,A2,municipality,,1,,Olaine,56.79059060,23.93319810,Europe/Riga,Q2451375,9654
 4483,Preiļi,120,LV,Latvia,073,LV-073,22,municipality,,1,,Preiļi,56.29373660,26.72667340,Europe/Riga,Q2277469,5767
-4509,Rēzekne,120,LV,Latvia,REZ,LV-REZ,23,"state city",,1,,Rēzekne,56.50628100,27.33066230,Europe/Riga,Q180379,26429
 4455,Rēzekne,120,LV,Latvia,077,LV-077,53,municipality,,1,,Rēzekne,56.50628100,27.33066230,Europe/Riga,Q1518841,26429
+4509,Rēzekne,120,LV,Latvia,REZ,LV-REZ,23,"state city",,1,,Rēzekne,56.50628100,27.33066230,Europe/Riga,Q180379,26429
 4491,Riga,120,LV,Latvia,RIX,LV-RIX,25,"state city",,1,,Riga,56.94964870,24.10518650,Europe/Riga,Q1773,
 4493,Ropaži,120,LV,Latvia,080,LV-080,B5,municipality,,1,,Ropaži,56.97137710,24.63072330,Europe/Riga,Q11068461,1803
 4402,Salaspils,120,LV,Latvia,087,LV-087,C3,municipality,,1,,Salaspils,56.86081520,24.34978810,Europe/Riga,Q2140753,17865
@@ -2348,7 +2349,6 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 4409,Tukums,120,LV,Latvia,099,LV-099,29,municipality,,1,,Tukums,56.96728680,23.15243790,Europe/Riga,Q369007,16182
 4425,Valka,120,LV,Latvia,101,LV-101,30,municipality,,1,,Valka,57.77439000,26.01700500,Europe/Riga,Q1945263,
 4473,Valmiera,120,LV,Latvia,113,LV-113,31,municipality,,1,,Valmiera,57.53846590,25.42636180,Europe/Riga,Q97233086,22812
-4431,Varakļāni,120,LV,Latvia,102,LV-102,E1,municipality,,1,,Varakļāni,56.60887430,26.75390930,Europe/Riga,Q432596,1619
 4421,Ventspils,120,LV,Latvia,VEN,LV-VEN,32,"state city",,1,,Ventspils,57.39039180,21.56359910,Europe/Riga,Q104036,32723
 4403,Ventspils,120,LV,Latvia,106,LV-106,33,municipality,,1,,Ventspils,57.39039180,21.56359910,Europe/Riga,Q1345325,32723
 2285,Akkar,121,LB,Lebanon,AK,LB-AK,10,governorate,,1,,الحبار,34.55550090,36.20164530,Asia/Beirut,Q556146,
@@ -3278,22 +3278,22 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 4534,Ngiwal,168,PW,Palau,228,PW-228,14,state,,1,,Ngiwal,7.54073160,134.72982020,Pacific/Palau,Q1154101,282
 4526,Peleliu,168,PW,Palau,350,PW-350,15,state,,1,,"Turn over",7.01137970,134.24606500,Pacific/Palau,Q497981,484
 4535,Sonsorol,168,PW,Palau,370,PW-370,16,state,,1,,Sonsorol,5.32681190,132.22391170,Pacific/Palau,Q866699,40
-5118,Bethlehem,169,PS,"Palestinian Territory Occupied",BTH,PS-BTH,,governorate,,1,,"بيت لحم",31.70539960,35.19368770,Asia/Gaza,Q247037,
-5119,"Deir El Balah",169,PS,"Palestinian Territory Occupied",DEB,PS-DEB,,governorate,,1,,"دير البلح",31.42028970,34.28616400,Asia/Gaza,Q592249,
-5120,Gaza,169,PS,"Palestinian Territory Occupied",GZA,PS-GZA,,governorate,,1,,غزة,31.48723970,34.14998900,Asia/Gaza,Q762573,
-5121,Hebron,169,PS,"Palestinian Territory Occupied",HBN,PS-HBN,,governorate,,1,,الخليل,31.53260010,35.06394750,Asia/Gaza,Q264180,
-5122,Jenin,169,PS,"Palestinian Territory Occupied",JEN,PS-JEN,,governorate,,1,,جنين,32.42637610,35.08568870,Asia/Gaza,Q519311,49908
-5123,Jericho,169,PS,"Palestinian Territory Occupied",JRH,PS-JRH,,governorate,,1,,أريحا,31.96764250,35.13542790,Asia/Gaza,Q658527,20907
-5124,"Jerusalem (Quds)",169,PS,"Palestinian Territory Occupied",JEM,PS-JEM,,governorate,,1,,القدس,31.80203280,34.95996640,Asia/Gaza,Q941828,
-5125,"Khan Yunis",169,PS,"Palestinian Territory Occupied",KYS,PS-KYS,,governorate,,1,,"خان يونس",31.32987660,34.22548330,Asia/Gaza,Q948026,
-5126,Nablus,169,PS,"Palestinian Territory Occupied",NBS,PS-NBS,,governorate,,1,,نابلس,32.22437550,35.20647930,Asia/Gaza,Q1074138,
-5127,"North Gaza",169,PS,"Palestinian Territory Occupied",NGZ,PS-NGZ,,governorate,,1,,"شمال غزة",31.54750600,34.42814090,Asia/Gaza,Q181636,
-5128,Qalqilya,169,PS,"Palestinian Territory Occupied",QQA,PS-QQA,,governorate,,1,,قلقيلية,32.18103230,34.99369990,Asia/Gaza,Q1074443,
-5129,Rafah,169,PS,"Palestinian Territory Occupied",RFH,PS-RFH,,governorate,,1,,رفح,31.29688990,34.11166850,Asia/Gaza,Q1074341,171899
-5130,Ramallah,169,PS,"Palestinian Territory Occupied",RBH,PS-RBH,,governorate,,1,,"رام الله",31.94301450,34.86456510,Asia/Gaza,Q1093166,
-5131,Salfit,169,PS,"Palestinian Territory Occupied",SLT,PS-SLT,,governorate,,1,,سلفيت,32.11122720,34.95787690,Asia/Gaza,Q926530,10911
-5132,Tubas,169,PS,"Palestinian Territory Occupied",TBS,PS-TBS,,governorate,,1,,طوباس,32.29380430,34.85109800,Asia/Gaza,Q948228,
-5133,Tulkarm,169,PS,"Palestinian Territory Occupied",TKM,PS-TKM,,governorate,,1,,طولكرم,32.32766720,34.92311080,Asia/Gaza,Q1093157,64532
+5118,Bethlehem,169,PS,Palestine,BTH,PS-BTH,,governorate,,1,,"بيت لحم",31.70539960,35.19368770,Asia/Gaza,Q247037,
+5119,"Deir El Balah",169,PS,Palestine,DEB,PS-DEB,,governorate,,1,,"دير البلح",31.42028970,34.28616400,Asia/Gaza,Q592249,
+5120,Gaza,169,PS,Palestine,GZA,PS-GZA,,governorate,,1,,غزة,31.48723970,34.14998900,Asia/Gaza,Q762573,
+5121,Hebron,169,PS,Palestine,HBN,PS-HBN,,governorate,,1,,الخليل,31.53260010,35.06394750,Asia/Gaza,Q264180,
+5122,Jenin,169,PS,Palestine,JEN,PS-JEN,,governorate,,1,,جنين,32.42637610,35.08568870,Asia/Gaza,Q519311,49908
+5123,Jericho,169,PS,Palestine,JRH,PS-JRH,,governorate,,1,,أريحا,31.96764250,35.13542790,Asia/Gaza,Q658527,20907
+5124,"Jerusalem (Quds)",169,PS,Palestine,JEM,PS-JEM,,governorate,,1,,القدس,31.80203280,34.95996640,Asia/Gaza,Q941828,
+5125,"Khan Yunis",169,PS,Palestine,KYS,PS-KYS,,governorate,,1,,"خان يونس",31.32987660,34.22548330,Asia/Gaza,Q948026,
+5126,Nablus,169,PS,Palestine,NBS,PS-NBS,,governorate,,1,,نابلس,32.22437550,35.20647930,Asia/Gaza,Q1074138,
+5127,"North Gaza",169,PS,Palestine,NGZ,PS-NGZ,,governorate,,1,,"شمال غزة",31.54750600,34.42814090,Asia/Gaza,Q181636,
+5128,Qalqilya,169,PS,Palestine,QQA,PS-QQA,,governorate,,1,,قلقيلية,32.18103230,34.99369990,Asia/Gaza,Q1074443,
+5129,Rafah,169,PS,Palestine,RFH,PS-RFH,,governorate,,1,,رفح,31.29688990,34.11166850,Asia/Gaza,Q1074341,171899
+5130,Ramallah,169,PS,Palestine,RBH,PS-RBH,,governorate,,1,,"رام الله",31.94301450,34.86456510,Asia/Gaza,Q1093166,
+5131,Salfit,169,PS,Palestine,SLT,PS-SLT,,governorate,,1,,سلفيت,32.11122720,34.95787690,Asia/Gaza,Q926530,10911
+5132,Tubas,169,PS,Palestine,TBS,PS-TBS,,governorate,,1,,طوباس,32.29380430,34.85109800,Asia/Gaza,Q948228,
+5133,Tulkarm,169,PS,Palestine,TKM,PS-TKM,,governorate,,1,,طولكرم,32.32766720,34.92311080,Asia/Gaza,Q1093157,64532
 1393,"Bocas del Toro",170,PA,Panama,1,PA-1,01,province,,1,,"Bocas del Toro",9.34029640,-82.24181690,America/Panama,Q217138,
 1397,"Chiriquí Province",170,PA,Panama,4,PA-4,02,province,,1,,"Chiriquí Province",8.42972222,-82.43000000,America/Panama,Q739651,471071
 1387,Coclé,170,PA,Panama,2,PA-2,03,province,,1,,Coclé,8.57431370,-80.44490590,America/Panama,Q825799,268264
@@ -4160,19 +4160,18 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 3860,Busan,116,KR,"South Korea",26,KR-26,10,"metropolitan city",,1,,부산,35.17955430,129.07564160,Asia/Seoul,Q16520,
 3846,Daegu,116,KR,"South Korea",27,KR-27,15,"metropolitan city",,1,,대구,35.87143540,128.60144500,Asia/Seoul,Q20927,
 3850,Daejeon,116,KR,"South Korea",30,KR-30,19,"metropolitan city",,1,,대전,36.35041190,127.38454750,Asia/Seoul,Q20921,1470336
-3862,Gangwon,116,KR,"South Korea",42,KR-42,06,"special self-governing province",,1,,강원도,37.88500000,127.72970000,Asia/Seoul,Q41071,
-3858,Gwangju,116,KR,"South Korea",29,KR-29,18,"metropolitan city",,1,,광주,35.15954540,126.85260120,Asia/Seoul,Q41283,1398538
+3862,Gangwon,116,KR,"South Korea",42,KR-42,06,"special self-governing province",특별자치도,1,,강원특별자치도,37.88500000,127.72970000,Asia/Seoul,Q41071,
 3847,Gyeonggi,116,KR,"South Korea",41,KR-41,13,province,,1,,경기도,37.28846750,127.05352310,Asia/Seoul,Q20937,13511676
 3848,Incheon,116,KR,"South Korea",28,KR-28,12,"metropolitan city",,1,,인천,37.45625570,126.70520620,Asia/Seoul,Q20934,3039450
 3853,Jeju,116,KR,"South Korea",49,KR-49,01,"special self-governing province",,1,,제주,33.49982890,126.53139020,Asia/Seoul,Q41164,
+5854,"Jeonnam-Gwangju Integrated Special City",116,KR,"South Korea",12,KR-12,,"integrated special city",통합특별시,1,,전남광주통합특별시,35.15472000,126.91556000,Asia/Seoul,,
 3854,"North Chungcheong",116,KR,"South Korea",43,KR-43,05,province,,1,,충청북도,36.63570000,127.49150000,Asia/Seoul,Q41066,1578934
 3855,"North Gyeongsang",116,KR,"South Korea",47,KR-47,14,province,,1,,경상북도,36.57540000,128.50580000,Asia/Seoul,Q41154,2546960
-3851,"North Jeolla",116,KR,"South Korea",45,KR-45,03,province,,1,,전라북도,35.81989990,127.10900000,Asia/Seoul,Q41157,1769607
+3851,"North Jeolla",116,KR,"South Korea",45,KR-45,03,"special self-governing province",특별자치도,1,,전북특별자치도,35.81989990,127.10900000,Asia/Seoul,Q41157,1769607
 3861,"Sejong City",116,KR,"South Korea",50,KR-50,22,"special self-governing city",,1,,세종시,36.47999990,127.28900000,Asia/Seoul,Q20929,394630
 3849,Seoul,116,KR,"South Korea",11,KR-11,11,"special city",,1,,서울,37.56653500,126.97796920,Asia/Seoul,Q8684,
 3859,"South Chungcheong",116,KR,"South Korea",44,KR-44,17,province,,1,,충청남도,36.65930000,126.67290000,Asia/Seoul,Q41070,2123037
 3857,"South Gyeongsang",116,KR,"South Korea",48,KR-48,20,province,,1,,경상남도,35.23820000,128.69250000,Asia/Seoul,Q41151,3447687
-3856,"South Jeolla",116,KR,"South Korea",46,KR-46,16,province,,1,,전라남도,34.81590000,126.46290000,Asia/Seoul,Q41161,1817697
 3852,Ulsan,116,KR,"South Korea",31,KR-31,21,"metropolitan city",,1,,울산,35.53837730,129.31135960,Asia/Seoul,Q41278,1095014
 2092,"Central Equatoria",206,SS,"South Sudan",EC,SS-EC,44,state,,1,,"Central Equatoria",5.00000000,31.50000000,Africa/Juba,Q487709,1103592
 2093,"Eastern Equatoria",206,SS,"South Sudan",EE,SS-EE,57,state,,1,,"Eastern Equatoria",5.28393200,33.59123290,Africa/Juba,Q488519,4393765
@@ -4857,7 +4856,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 370,Western,229,UG,Uganda,W,UG-W,W,region,,,,Western,-0.65000000,30.68330000,Africa/Kampala,Q2559188,
 330,Yumbe,229,UG,Uganda,313,UG-313,97,district,,1,332,Hello,3.49141060,31.28591490,Africa/Kampala,Q1362587,65882
 379,Zombo,229,UG,Uganda,330,UG-330,82,district,,1,332,Vertical,2.52511640,30.88973230,Africa/Kampala,Q3539730,
-4689,"Autonomous Republic of Crimea",230,UA,Ukraine,43,UA-43,11,republic,,1,,"Автономна Республіка Крим",45.68569520,33.93294110,Europe/Kiev,Q756294,
+4689,"Autonomous Republic of Crimea",230,UA,Ukraine,43,UA-43,11,republic,,1,,"Автономна Республіка Крим",45.68569520,33.93294110,Europe/Simferopol,Q756294,
 4680,Cherkaska,230,UA,Ukraine,71,UA-71,01,region,,1,,"Черкаська область",49.44472222,32.06027778,Europe/Kiev,Q161808,
 4692,Chernihivska,230,UA,Ukraine,74,UA-74,02,region,,1,,"Чернігівська область",51.34000000,32.06000000,Europe/Kiev,Q167874,
 4678,Chernivetska,230,UA,Ukraine,77,UA-77,03,region,,1,,"Чернівецька область",48.28000000,26.01000000,Europe/Kiev,Q168856,890457
@@ -4876,7 +4875,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 4688,Odeska,230,UA,Ukraine,51,UA-51,17,region,,1,,"Одеська область",46.11472260,29.95671930,Europe/Kiev,Q171852,
 5071,Poltavska,230,UA,Ukraine,53,UA-53,18,region,,1,,"Полтавська область",49.86078090,33.74987870,Europe/Kiev,Q169501,
 4683,Rivnenska,230,UA,Ukraine,56,UA-56,19,region,,1,,"Рівненська область",50.59736670,26.26467460,Europe/Kiev,Q174187,1141784
-1912,Sevastopol,230,UA,Ukraine,40,UA-40,20,city,,1,,Севастополь,44.60544340,33.52208420,Europe/Kiev,Q7525,
+1912,Sevastopol,230,UA,Ukraine,40,UA-40,20,city,,1,,Севастополь,44.60544340,33.52208420,Europe/Simferopol,Q7525,
 4685,Sumska,230,UA,Ukraine,59,UA-59,21,region,,1,,"Сумська область",50.76965180,34.32893050,Europe/Kiev,Q170446,
 4674,Ternopilska,230,UA,Ukraine,61,UA-61,22,region,,1,,"Тернопільська область",49.64092890,25.49427240,Europe/Kiev,Q173407,1021713
 4669,Vinnytska,230,UA,Ukraine,05,UA-05,23,region,,1,,"Вінницька область",48.93333333,28.68333333,Europe/Kiev,Q166709,1509515
@@ -5029,7 +5028,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 5461,"North Northamptonshire",232,GB,"United Kingdom",NNH,GB-NNH,,"unitary authority",,2,2336,"North Northamptonshire",52.41710850,-0.95355110,Europe/London,Q60790121,373871
 2430,"North Somerset",232,GB,"United Kingdom",NSM,GB-NSM,J4,"unitary authority",,2,2336,"North Somerset",51.39663050,-2.76912890,Europe/London,Q178196,224578
 2521,"North Tyneside",232,GB,"United Kingdom",NTY,GB-NTY,J5,"metropolitan district",,2,2336,"North Tyneside",55.02979940,-1.50825600,Europe/London,Q1120443,215025
-2522,"North Yorkshire",232,GB,"United Kingdom",NYK,GB-NYK,NIR,"two-tier county",,2,2336,"North Yorkshire",54.09159280,-1.53591130,Europe/London,Q21241814,
+2522,"North Yorkshire",232,GB,"United Kingdom",NYK,GB-NYK,NIR,"unitary authority",,2,2336,"North Yorkshire",54.09159280,-1.53591130,Europe/London,Q21241814,
 2337,"Northern Ireland",232,GB,"United Kingdom",NIR,GB-NIR,NIR,province,,1,,"Northern Ireland",54.58598360,-6.95915540,Europe/London,Q26,
 2365,Northumberland,232,GB,"United Kingdom",NBL,GB-NBL,J6,"unitary authority",,2,2336,Northumberland,55.25000000,-2.00055900,Europe/London,Q23079,
 2359,Nottingham,232,GB,"United Kingdom",NGM,GB-NGM,H6,"unitary authority",,2,2336,Nottingham,52.95478320,-1.15810860,Europe/London,Q21885994,331077
@@ -5063,7 +5062,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 2407,Shropshire,232,GB,"United Kingdom",SHR,GB-SHR,D8,"unitary authority",,2,2336,Shropshire,52.65233930,-2.79586790,Europe/London,Q21694759,
 2427,Slough,232,GB,"United Kingdom",SLG,GB-SLG,H9,"unitary authority",,2,2336,Slough,51.51053840,-0.59504060,Europe/London,Q21163036,
 2469,Solihull,232,GB,"United Kingdom",SOL,GB-SOL,M2,"metropolitan district",,2,2336,Solihull,52.41181100,-1.77761000,Europe/London,Q1925858,
-2386,Somerset,232,GB,"United Kingdom",SOM,GB-SOM,F4,"two-tier county",,2,2336,Somerset,51.08333300,-3.00000000,Europe/London,Q21694741,
+2386,Somerset,232,GB,"United Kingdom",SOM,GB-SOM,F4,"unitary authority",,2,2336,Somerset,51.08333300,-3.00000000,Europe/London,Q21694741,
 2377,"South Ayrshire",232,GB,"United Kingdom",SAY,GB-SAY,W4,"council area",,2,2335,"South Ayrshire",55.29981800,-4.64598840,Europe/London,Q209131,112260
 2400,"South Gloucestershire",232,GB,"United Kingdom",SGC,GB-SGC,M6,"unitary authority",,2,2336,"South Gloucestershire",51.54919160,-2.48095280,Europe/London,Q1369280,306332
 2362,"South Lanarkshire",232,GB,"United Kingdom",SLK,GB-SLK,W5,"council area",,2,2335,"South Lanarkshire",55.58316340,-3.83322120,Europe/London,Q209142,334030
@@ -5246,7 +5245,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 2041,Yaracuy,239,VE,Venezuela,U,VE-U,22,state,,1,,Yaracuy,10.30403120,-68.70140180,America/Caracas,Q201121,690852
 2042,Zulia,239,VE,Venezuela,V,VE-V,23,state,,1,,Zulia,10.10650990,-71.86413070,America/Caracas,Q43269,5125579
 3794,"An Giang",240,VN,Vietnam,44,VN-44,01,province,,1,,"An Giang",10.31886720,105.04324880,Asia/Ho_Chi_Minh,Q36592,4952238
-3791,"Bắc Ninh",240,VN,Vietnam,56,VN-56,74,province,,1,,"Bắc Ninh",21.17815150,106.07100780,Asia/Ho_Chi_Minh,Q33408,287658
+3791,"Bắc Ninh",240,VN,Vietnam,56,VN-56,74,municipality,"thành phố trực thuộc trung ương",1,,"Bắc Ninh",21.17815150,106.07100780,Asia/Ho_Chi_Minh,Q33408,287658
 3778,"Cà Mau",240,VN,Vietnam,59,VN-59,77,province,,1,,"Cà Mau",9.17620030,105.15084150,Asia/Ho_Chi_Minh,Q33354,
 4925,"Cần Thơ",240,VN,Vietnam,CT,VN-CT,87,municipality,,1,,"Cần Thơ",10.03646340,105.78758210,Asia/Ho_Chi_Minh,Q216075,4199824
 3782,"Cao Bằng",240,VN,Vietnam,04,VN-04,05,province,,1,,"Cao Bằng",22.66578100,106.25878240,Asia/Ho_Chi_Minh,Q36865,
@@ -5271,7 +5270,7 @@ id,name,country_id,country_code,country_name,iso2,iso3166_2,fips_code,type,type_
 3786,"Ninh Bình",240,VN,Vietnam,18,VN-18,59,province,,1,,"Ninh Bình",20.25061490,105.97445360,Asia/Ho_Chi_Minh,Q36900,4412264
 3801,"Phú Thọ",240,VN,Vietnam,68,VN-68,83,province,,1,,"Phú Thọ",21.30075380,105.13496040,Asia/Ho_Chi_Minh,Q36610,91650
 3828,"Quảng Ngãi",240,VN,Vietnam,29,VN-29,63,province,,1,,"Quảng Ngãi",15.12138730,108.80441450,Asia/Ho_Chi_Minh,Q33304,278496
-3814,"Quảng Ninh",240,VN,Vietnam,13,VN-13,30,province,,1,,"Quảng Ninh",21.17180460,107.20127420,Asia/Ho_Chi_Minh,Q33396,
+3814,"Quảng Ninh",240,VN,Vietnam,13,VN-13,30,municipality,"thành phố trực thuộc trung ương",1,,"Quảng Ninh",21.17180460,107.20127420,Asia/Ho_Chi_Minh,Q33396,
 3803,"Quảng Trị",240,VN,Vietnam,25,VN-25,64,province,,1,,"Quảng Trị",17.30246660,106.66242870,Asia/Ho_Chi_Minh,Q36579,
 3812,"Sơn La",240,VN,Vietnam,05,VN-05,32,province,,1,,"Sơn La",21.32696010,103.91438420,Asia/Ho_Chi_Minh,Q33379,106052
 3826,"Tây Ninh",240,VN,Vietnam,37,VN-37,33,province,,1,,"Tây Ninh",11.31365550,106.09669690,Asia/Ho_Chi_Minh,Q36608,135254
