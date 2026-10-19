@@ -183,7 +183,7 @@ python3 bin/scripts/sync/import_json_to_mysql.py --host $DB_HOST --user $DB_USER
 ```
 
 **Secrets used by workflows:**
-- `GITHUB_TOKEN` — Auto-provided, used by PR validator, changelog, triage
+- `GITHUB_TOKEN` — Auto-provided, used by the PR validator, the weekly digest and changelog PR, stale cleanup and the data-correction template
 - `SLACK_WEBHOOK_URL` — Optional, for Slack notifications across all workflows
 
 ## Important Rules
