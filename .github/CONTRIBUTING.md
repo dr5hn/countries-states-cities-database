@@ -108,7 +108,7 @@ You don't need to worry about these formats - they're automatically generated fr
 | `id` | integer | Unique ID - omit for new countries (auto-assigned) | Auto
 | `name` | string | The official name of the country. Use WikiData or Wikipedia or some other legitimate source. | required
 | `iso3` | string | [ISO3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code of the country |
-| `numeric_code` | string | Numeric ISO code - Source [ISO Official Site](iso.org/obp/ui/#iso:code:3166:NO) |
+| `numeric_code` | string | [ISO 3166-1 numeric](https://www.iso.org/obp/ui/#search) code, three digits with leading zeros (e.g. `020` Andorra). It is also the country's UN M49 code: to group countries by the UN geoscheme, join it to the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/) instead of using `region` and `subregion`. Taiwan (`158`) is not in that table, and Kosovo's `926` is not a UN code |
 | `iso2` | string | [ISO3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code of the country |
 | `phonecode` | string | Phone code of the country |
 | `capital` | string | Capital city of the country |
@@ -119,9 +119,9 @@ You don't need to worry about these formats - they're automatically generated fr
 | `native` | string | Native name of the country |
 | `population` | integer | Population of the country - [Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population) |
 | `gdp` | integer | GDP of the country - [Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)) |
-| `region` | string | A region where country belongs to |
+| `region` | string | The country's region in this project's grouping, which is not UN M49 (see `numeric_code`) |
 | `region_id` | integer | Unique id of region from `regions.sql` |
-| `subregion` | string | A subregion where country belongs to |
+| `subregion` | string | The country's subregion in this project's grouping: 9 countries differ from UN M49, e.g. Mexico (Northern America here, Central America in M49) and Cyprus (Southern Europe here, Western Asia in M49) |
 | `subregion_id` | integer | Unique id of subregion from `subregions.sql` |
 | `nationality` | string | Nationality/demonym of the country |
 | `timezones` | text | JSON array of timezones  |
