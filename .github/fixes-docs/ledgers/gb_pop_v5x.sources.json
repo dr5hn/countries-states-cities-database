@@ -2,7 +2,7 @@
   "ledger": "gb_pop_v5x.jsonl",
   "base_commit": "4b182956de8f253c8bc39e56297723d1b67014af",
   "records": 3747,
-  "full_ledger_sha256": "dedb4dbe20898d65d82b037bfe8ae66572d8d7f5ff5152fa73aa3a9e6d5a71bc",
+  "full_ledger_sha256": "bd5162e91c9a3b720eb2709ae444bdf455c3322270390fa7e96a34338480027b",
   "sources": [
     {
       "source_id": "gb3_ons_faq.html",
@@ -328,6 +328,32 @@
       "wire_sha256": "8c3328f6bdaaf8c0b0a612a5e2e8a7f39cbb71c17876706ddad1708af1fa938e",
       "wire_bytes": 851784,
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_3/sources/bua22_geom_02700_2220fb650f8d.json"
+    },
+    {
+      "source_id": "gb1_wd_completion_022.json",
+      "path": "sources/gb1_wd_completion_022.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5089980%7CQ5099267%7CQ5104873%7CQ5104893%7CQ5105176%7CQ5115914%7CQ5126097%7CQ5130128%7CQ5130366%7CQ5131603%7CQ5131710%7CQ5132825%7CQ5138606%7CQ5139618%7CQ5140287%7CQ5140559%7CQ5141092%7CQ5141668%7CQ5169012%7CQ5171740%7CQ5173140%7CQ5173626%7CQ5173848%7CQ5173908%7CQ5179503%7CQ5179814%7CQ5182980%7CQ5184679%7CQ5187455%7CQ5188314%7CQ5188613%7CQ5190499%7CQ5192880%7CQ5197228%7CQ5197445%7CQ5211618%7CQ5211630%7CQ5225309%7CQ5227510%7CQ5253057%7CQ5262556%7CQ5273619%7CQ5275671%7CQ5283458%7CQ5286983%7CQ5296701%7CQ5301155%7CQ5306087%7CQ5306868%7CQ5314885&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5089980%7CQ5099267%7CQ5104873%7CQ5104893%7CQ5105176%7CQ5115914%7CQ5126097%7CQ5130128%7CQ5130366%7CQ5131603%7CQ5131710%7CQ5132825%7CQ5138606%7CQ5139618%7CQ5140287%7CQ5140559%7CQ5141092%7CQ5141668%7CQ5169012%7CQ5171740%7CQ5173140%7CQ5173626%7CQ5173848%7CQ5173908%7CQ5179503%7CQ5179814%7CQ5182980%7CQ5184679%7CQ5187455%7CQ5188314%7CQ5188613%7CQ5190499%7CQ5192880%7CQ5197228%7CQ5197445%7CQ5211618%7CQ5211630%7CQ5225309%7CQ5227510%7CQ5253057%7CQ5262556%7CQ5273619%7CQ5275671%7CQ5283458%7CQ5286983%7CQ5296701%7CQ5301155%7CQ5306087%7CQ5306868%7CQ5314885&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "edition": "Own-item claims at retrieval",
+      "retrieved_at": "2026-10-10T02:17:26.646283+00:00",
+      "sha256": "91ea33aee5c5a738fd7a536b7e822efab33c1e48568114f092e1e69f9094d8e6",
+      "bytes": 888718,
+      "licence": "CC0 1.0",
+      "content_type": "application/json; charset=utf-8",
+      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_022.json"
+    },
+    {
+      "source_id": "gb1_wd_completion_024.json",
+      "path": "sources/gb1_wd_completion_024.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5572916%7CQ5589826%7CQ5597359%7CQ5598721%7CQ5599264%7CQ5603927%7CQ5610201%7CQ5611582%7CQ5616341%7CQ5619241%7CQ5619265%7CQ5637957%7CQ5638103%7CQ5641345%7CQ5644231%7CQ5647343%7CQ5674615%7CQ5675266%7CQ5675394%7CQ5681495%7CQ5682480%7CQ5690152%7CQ5690269%7CQ5694415%7CQ5757909%7CQ5759735%7CQ5763841%7CQ5765741%7CQ5767637%7CQ5771888%7CQ58090%7CQ58094%7CQ58097%7CQ58125%7CQ58126%7CQ58134%7CQ58270%7CQ5881488%7CQ5884715%7CQ5887146%7CQ5897836%7CQ5898181%7CQ5902902%7CQ5912898%7CQ5913028%7CQ5945609%7CQ5945974%7CQ5948671%7CQ5962455%7CQ6032919&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5572916%7CQ5589826%7CQ5597359%7CQ5598721%7CQ5599264%7CQ5603927%7CQ5610201%7CQ5611582%7CQ5616341%7CQ5619241%7CQ5619265%7CQ5637957%7CQ5638103%7CQ5641345%7CQ5644231%7CQ5647343%7CQ5674615%7CQ5675266%7CQ5675394%7CQ5681495%7CQ5682480%7CQ5690152%7CQ5690269%7CQ5694415%7CQ5757909%7CQ5759735%7CQ5763841%7CQ5765741%7CQ5767637%7CQ5771888%7CQ58090%7CQ58094%7CQ58097%7CQ58125%7CQ58126%7CQ58134%7CQ58270%7CQ5881488%7CQ5884715%7CQ5887146%7CQ5897836%7CQ5898181%7CQ5902902%7CQ5912898%7CQ5913028%7CQ5945609%7CQ5945974%7CQ5948671%7CQ5962455%7CQ6032919&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "edition": "Own-item claims at retrieval",
+      "retrieved_at": "2026-10-10T02:17:43.298631+00:00",
+      "sha256": "b24df8165d650a1fc5461df41bbaff3124c54a538ef796a4ee7d8680a88c474b",
+      "bytes": 884599,
+      "licence": "CC0 1.0",
+      "content_type": "application/json; charset=utf-8",
+      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_024.json"
     },
     {
       "source_id": "gb1_wd_001.json",
@@ -1218,6 +1244,19 @@
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_3/sources/bua22_geom_00060_d7a91f79fc25.json"
     },
     {
+      "source_id": "gb1_wd_completion_030.json",
+      "path": "sources/gb1_wd_completion_030.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7618210%7CQ7618492%7CQ7619236%7CQ7620330%7CQ7654068%7CQ7682579%7CQ7683545%7CQ7698820%7CQ7703721%7CQ7796462%7CQ7796484%7CQ7796696%7CQ7797574%7CQ7799313%7CQ7800730%7CQ7807653%7CQ7823763%7CQ7830119%7CQ7838896%7CQ7842157%7CQ7842265%7CQ7852544%7CQ7857481%7CQ7859766%7CQ7861831%7CQ7878794%7CQ7879919%7CQ7884080%7CQ7898478%7CQ7898869%7CQ7963802%7CQ7971050%7CQ7973288%7CQ7978376%7CQ7983059%7CQ79848%7CQ7984873%7CQ7987310%7CQ7989350%7CQ7989852%7CQ7990637%7CQ7991955%7CQ7992390%7CQ7994159%7CQ7996551%7CQ7998220%7CQ8003516%7CQ8022880%7CQ8023760%7CQ8032282&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7618210%7CQ7618492%7CQ7619236%7CQ7620330%7CQ7654068%7CQ7682579%7CQ7683545%7CQ7698820%7CQ7703721%7CQ7796462%7CQ7796484%7CQ7796696%7CQ7797574%7CQ7799313%7CQ7800730%7CQ7807653%7CQ7823763%7CQ7830119%7CQ7838896%7CQ7842157%7CQ7842265%7CQ7852544%7CQ7857481%7CQ7859766%7CQ7861831%7CQ7878794%7CQ7879919%7CQ7884080%7CQ7898478%7CQ7898869%7CQ7963802%7CQ7971050%7CQ7973288%7CQ7978376%7CQ7983059%7CQ79848%7CQ7984873%7CQ7987310%7CQ7989350%7CQ7989852%7CQ7990637%7CQ7991955%7CQ7992390%7CQ7994159%7CQ7996551%7CQ7998220%7CQ8003516%7CQ8022880%7CQ8023760%7CQ8032282&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
+      "edition": "Own-item claims at retrieval",
+      "retrieved_at": "2026-10-10T02:18:38.187944+00:00",
+      "sha256": "44c122c1fcdd56c6e591115a727260a83bc4fe3e838f3454b8a024b2733da7c7",
+      "bytes": 943822,
+      "licence": "CC0 1.0",
+      "content_type": "application/json; charset=utf-8",
+      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_030.json"
+    },
+    {
       "source_id": "gb3_bua22_geom_00960_a09d279342f4.json",
       "path": "sources/gb3_bua22_geom_00960_a09d279342f4.json",
       "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2808%2C2812%2C2813%2C2814%2C2819%2C2820%2C2821%2C2822%2C2823%2C2827%2C2828%2C2833%2C2843%2C2847%2C2851%2C2864%2C2866%2C2867%2C2871%2C2876%2C2882%2C2883%2C2884%2C2886%2C2887%2C2889%2C2891%2C2898%2C2901%2C2903%2C2904%2C2906%2C2907%2C2910%2C2913%2C2914%2C2915%2C2918%2C2919%2C2922%2C2927%2C2929%2C2935%2C2939%2C2941%2C2944%2C2946%2C2951%2C2952%2C2956%2C2958%2C2959%2C2960%2C2962%2C2966%2C2968%2C2976%2C2990%2C2991%2C2995&outFields=%2A&returnGeometry=true&outSR=4326",
@@ -1300,6 +1339,18 @@
       "licence": "CC0 1.0",
       "content_type": "application/json; charset=utf-8",
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_004.json"
+    },
+    {
+      "source_id": "nisra_2015_review_build2.pdf",
+      "path": "sources/nisra_2015_review_build2.pdf",
+      "url": "https://www.nisra.gov.uk/files/nisra/publications/review-of-the-statistical-classification-and-delineation-of-settlements-march-2015.pdf",
+      "resolved_url": "https://www.nisra.gov.uk/files/nisra/publications/review-of-the-statistical-classification-and-delineation-of-settlements-march-2015.pdf",
+      "edition": "Review of statistical classification and delineation of settlements, March 2015",
+      "retrieved_at": "2026-10-19T17:11:51.477516+00:00",
+      "sha256": "3a01e977de6005a1c06a29f6eeebb6679075a06dc483af5f91a8657628dbb170",
+      "bytes": 1289428,
+      "licence": "Open Government Licence v3.0",
+      "content_type": "application/pdf"
     },
     {
       "source_id": "gb1_wd_completion_006.json",
@@ -1669,19 +1720,6 @@
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_entity_Q116772.json"
     },
     {
-      "source_id": "gb1_wd_completion_024.json",
-      "path": "sources/gb1_wd_completion_024.json",
-      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5572916%7CQ5589826%7CQ5597359%7CQ5598721%7CQ5599264%7CQ5603927%7CQ5610201%7CQ5611582%7CQ5616341%7CQ5619241%7CQ5619265%7CQ5637957%7CQ5638103%7CQ5641345%7CQ5644231%7CQ5647343%7CQ5674615%7CQ5675266%7CQ5675394%7CQ5681495%7CQ5682480%7CQ5690152%7CQ5690269%7CQ5694415%7CQ5757909%7CQ5759735%7CQ5763841%7CQ5765741%7CQ5767637%7CQ5771888%7CQ58090%7CQ58094%7CQ58097%7CQ58125%7CQ58126%7CQ58134%7CQ58270%7CQ5881488%7CQ5884715%7CQ5887146%7CQ5897836%7CQ5898181%7CQ5902902%7CQ5912898%7CQ5913028%7CQ5945609%7CQ5945974%7CQ5948671%7CQ5962455%7CQ6032919&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5572916%7CQ5589826%7CQ5597359%7CQ5598721%7CQ5599264%7CQ5603927%7CQ5610201%7CQ5611582%7CQ5616341%7CQ5619241%7CQ5619265%7CQ5637957%7CQ5638103%7CQ5641345%7CQ5644231%7CQ5647343%7CQ5674615%7CQ5675266%7CQ5675394%7CQ5681495%7CQ5682480%7CQ5690152%7CQ5690269%7CQ5694415%7CQ5757909%7CQ5759735%7CQ5763841%7CQ5765741%7CQ5767637%7CQ5771888%7CQ58090%7CQ58094%7CQ58097%7CQ58125%7CQ58126%7CQ58134%7CQ58270%7CQ5881488%7CQ5884715%7CQ5887146%7CQ5897836%7CQ5898181%7CQ5902902%7CQ5912898%7CQ5913028%7CQ5945609%7CQ5945974%7CQ5948671%7CQ5962455%7CQ6032919&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "edition": "Own-item claims at retrieval",
-      "retrieved_at": "2026-10-10T02:17:43.298631+00:00",
-      "sha256": "b24df8165d650a1fc5461df41bbaff3124c54a538ef796a4ee7d8680a88c474b",
-      "bytes": 884599,
-      "licence": "CC0 1.0",
-      "content_type": "application/json; charset=utf-8",
-      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_024.json"
-    },
-    {
       "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1002153%7CQ1002453%7CQ1007093%7CQ1009261%7CQ1009861%7CQ1009979%7CQ1010108%7CQ1010161%7CQ1010166%7CQ1010263%7CQ1010313%7CQ1010396%7CQ1010405%7CQ1010428%7CQ1010552%7CQ1011133%7CQ1011227%7CQ1011272%7CQ1011363%7CQ1011526%7CQ1011562%7CQ1011584%7CQ1011681%7CQ1011685%7CQ1011778%7CQ1011829%7CQ1011954%7CQ1011963%7CQ1012069%7CQ1012481%7CQ1013600%7CQ1013970%7CQ1014104%7CQ1016707%7CQ1017010%7CQ1017068%7CQ1018225%7CQ1018429%7CQ1018505%7CQ1019479%7CQ1020030%7CQ1022488%7CQ1023939%7CQ1025076%7CQ1026799&props=claims%7Clabels%7Caliases%7Cdescriptions&languages=en%7Cmul%7Ccy%7Cgd&format=json",
       "edition": "Live literal item claims and names",
       "retrieved_at": "2026-10-11T22:12:42.144296+00:00",
@@ -1965,6 +2003,18 @@
       "licence": "CC0 1.0",
       "content_type": "application/json; charset=utf-8",
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_000.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21694695%7CQ21694711%7CQ21694733%7CQ21694741%7CQ21694746%7CQ21694759%7CQ21694786%7CQ21695028%7CQ2173387%7CQ217840%7CQ2180939%7CQ2183593%7CQ2187025%7CQ2188542%7CQ21885975%7CQ21886128%7CQ21971261%7CQ2197644%7CQ2201577%7CQ2204693%7CQ2215951%7CQ2227059%7CQ2227457%7CQ2230626%7CQ2234580%7CQ2237663%7CQ2240072%7CQ2250802%7CQ2254553%7CQ2256037%7CQ2261341%7CQ2261452%7CQ2262154%7CQ22695642%7CQ22704075%7CQ22718431%7CQ2273077%7CQ2273904%7CQ2281103%7CQ2290294%7CQ22912809%7CQ2292556%7CQ2294753%7CQ2294793%7CQ2298952&props=claims%7Clabels%7Caliases%7Cdescriptions&languages=en%7Cmul%7Ccy%7Cgd&format=json",
+      "edition": "Live literal item claims and names",
+      "retrieved_at": "2026-10-11T22:12:45.401742+00:00",
+      "licence": "CC0 1.0",
+      "path": "sources/gb5_wd_items_007.json",
+      "sha256": "301868c47fa51fca76c0f2dc95661b461f727c2c87189220bcb305385bd86c04",
+      "bytes": 1052235,
+      "status": "success",
+      "source_id": "gb5_wd_items_007.json",
+      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_5/sources/wd_items_007.json"
     },
     {
       "source_id": "gb1_wd_entity_Q1013528.json",
@@ -2266,31 +2316,6 @@
       "licence": "CC0 1.0",
       "content_type": "application/json; charset=UTF-8",
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_entity_Q1170470.json"
-    },
-    {
-      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21694695%7CQ21694711%7CQ21694733%7CQ21694741%7CQ21694746%7CQ21694759%7CQ21694786%7CQ21695028%7CQ2173387%7CQ217840%7CQ2180939%7CQ2183593%7CQ2187025%7CQ2188542%7CQ21885975%7CQ21886128%7CQ21971261%7CQ2197644%7CQ2201577%7CQ2204693%7CQ2215951%7CQ2227059%7CQ2227457%7CQ2230626%7CQ2234580%7CQ2237663%7CQ2240072%7CQ2250802%7CQ2254553%7CQ2256037%7CQ2261341%7CQ2261452%7CQ2262154%7CQ22695642%7CQ22704075%7CQ22718431%7CQ2273077%7CQ2273904%7CQ2281103%7CQ2290294%7CQ22912809%7CQ2292556%7CQ2294753%7CQ2294793%7CQ2298952&props=claims%7Clabels%7Caliases%7Cdescriptions&languages=en%7Cmul%7Ccy%7Cgd&format=json",
-      "edition": "Live literal item claims and names",
-      "retrieved_at": "2026-10-11T22:12:45.401742+00:00",
-      "licence": "CC0 1.0",
-      "path": "sources/gb5_wd_items_007.json",
-      "sha256": "301868c47fa51fca76c0f2dc95661b461f727c2c87189220bcb305385bd86c04",
-      "bytes": 1052235,
-      "status": "success",
-      "source_id": "gb5_wd_items_007.json",
-      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_5/sources/wd_items_007.json"
-    },
-    {
-      "source_id": "gb1_wd_completion_022.json",
-      "path": "sources/gb1_wd_completion_022.json",
-      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5089980%7CQ5099267%7CQ5104873%7CQ5104893%7CQ5105176%7CQ5115914%7CQ5126097%7CQ5130128%7CQ5130366%7CQ5131603%7CQ5131710%7CQ5132825%7CQ5138606%7CQ5139618%7CQ5140287%7CQ5140559%7CQ5141092%7CQ5141668%7CQ5169012%7CQ5171740%7CQ5173140%7CQ5173626%7CQ5173848%7CQ5173908%7CQ5179503%7CQ5179814%7CQ5182980%7CQ5184679%7CQ5187455%7CQ5188314%7CQ5188613%7CQ5190499%7CQ5192880%7CQ5197228%7CQ5197445%7CQ5211618%7CQ5211630%7CQ5225309%7CQ5227510%7CQ5253057%7CQ5262556%7CQ5273619%7CQ5275671%7CQ5283458%7CQ5286983%7CQ5296701%7CQ5301155%7CQ5306087%7CQ5306868%7CQ5314885&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5089980%7CQ5099267%7CQ5104873%7CQ5104893%7CQ5105176%7CQ5115914%7CQ5126097%7CQ5130128%7CQ5130366%7CQ5131603%7CQ5131710%7CQ5132825%7CQ5138606%7CQ5139618%7CQ5140287%7CQ5140559%7CQ5141092%7CQ5141668%7CQ5169012%7CQ5171740%7CQ5173140%7CQ5173626%7CQ5173848%7CQ5173908%7CQ5179503%7CQ5179814%7CQ5182980%7CQ5184679%7CQ5187455%7CQ5188314%7CQ5188613%7CQ5190499%7CQ5192880%7CQ5197228%7CQ5197445%7CQ5211618%7CQ5211630%7CQ5225309%7CQ5227510%7CQ5253057%7CQ5262556%7CQ5273619%7CQ5275671%7CQ5283458%7CQ5286983%7CQ5296701%7CQ5301155%7CQ5306087%7CQ5306868%7CQ5314885&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "edition": "Own-item claims at retrieval",
-      "retrieved_at": "2026-10-10T02:17:26.646283+00:00",
-      "sha256": "91ea33aee5c5a738fd7a536b7e822efab33c1e48568114f092e1e69f9094d8e6",
-      "bytes": 888718,
-      "licence": "CC0 1.0",
-      "content_type": "application/json; charset=utf-8",
-      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_022.json"
     },
     {
       "source_id": "gb1_wd_entity_Q1065474.json",
@@ -3978,19 +4003,6 @@
       "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_entity_Q1011948.json"
     },
     {
-      "source_id": "gb1_wd_completion_030.json",
-      "path": "sources/gb1_wd_completion_030.json",
-      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7618210%7CQ7618492%7CQ7619236%7CQ7620330%7CQ7654068%7CQ7682579%7CQ7683545%7CQ7698820%7CQ7703721%7CQ7796462%7CQ7796484%7CQ7796696%7CQ7797574%7CQ7799313%7CQ7800730%7CQ7807653%7CQ7823763%7CQ7830119%7CQ7838896%7CQ7842157%7CQ7842265%7CQ7852544%7CQ7857481%7CQ7859766%7CQ7861831%7CQ7878794%7CQ7879919%7CQ7884080%7CQ7898478%7CQ7898869%7CQ7963802%7CQ7971050%7CQ7973288%7CQ7978376%7CQ7983059%7CQ79848%7CQ7984873%7CQ7987310%7CQ7989350%7CQ7989852%7CQ7990637%7CQ7991955%7CQ7992390%7CQ7994159%7CQ7996551%7CQ7998220%7CQ8003516%7CQ8022880%7CQ8023760%7CQ8032282&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "resolved_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7618210%7CQ7618492%7CQ7619236%7CQ7620330%7CQ7654068%7CQ7682579%7CQ7683545%7CQ7698820%7CQ7703721%7CQ7796462%7CQ7796484%7CQ7796696%7CQ7797574%7CQ7799313%7CQ7800730%7CQ7807653%7CQ7823763%7CQ7830119%7CQ7838896%7CQ7842157%7CQ7842265%7CQ7852544%7CQ7857481%7CQ7859766%7CQ7861831%7CQ7878794%7CQ7879919%7CQ7884080%7CQ7898478%7CQ7898869%7CQ7963802%7CQ7971050%7CQ7973288%7CQ7978376%7CQ7983059%7CQ79848%7CQ7984873%7CQ7987310%7CQ7989350%7CQ7989852%7CQ7990637%7CQ7991955%7CQ7992390%7CQ7994159%7CQ7996551%7CQ7998220%7CQ8003516%7CQ8022880%7CQ8023760%7CQ8032282&props=claims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Ccy%7Cgd&format=json",
-      "edition": "Own-item claims at retrieval",
-      "retrieved_at": "2026-10-10T02:18:38.187944+00:00",
-      "sha256": "44c122c1fcdd56c6e591115a727260a83bc4fe3e838f3454b8a024b2733da7c7",
-      "bytes": 943822,
-      "licence": "CC0 1.0",
-      "content_type": "application/json; charset=utf-8",
-      "reused_archive_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/research/gb_pilot/work_gb_pilot_1/sources/wd_completion_030.json"
-    },
-    {
       "source_id": "gb1_wd_entity_Q1013550.json",
       "path": "sources/gb1_wd_entity_Q1013550.json",
       "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1013550.json",
@@ -4335,6 +4347,7 @@
     "2022_BUA_or_NI_settlement_source_has_no_same_section",
     "administrative_or_unsupported_row_type",
     "locality_scope_not_same_as_whole_BUA_or_settlement",
+    "multi_place_count",
     "named_source_boundary_invalid",
     "no_own_item_and_row_entity_scope_not_explicit",
     "no_published_count_for_this_official_geography",
