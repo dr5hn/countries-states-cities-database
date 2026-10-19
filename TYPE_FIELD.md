@@ -154,6 +154,33 @@ See the [2024 Gazetteer LSAD and FUNCSTAT fields](https://www2.census.gov/geo/do
 [Census LSAD definitions](https://www.census.gov/library/reference/code-lists/legal-status-codes.html)
 and the [per-record evidence ledger](.github/fixes-docs/ledgers/us_places_v5x.jsonl).
 
+### Uruguay
+
+In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or
+`village / pueblo`; the existing `town / pueblo` spelling of the English category is corrected only
+on independently bound rows. A census locality without an established finer legal category is
+`locality / localidad`. These are categories, never population thresholds. The open INE
+*Toponimia y categorización jurídica oficial de las localidades* register is historical (2004,
+georeferenced 2025), so it alone does not establish a place's current legal status. Legislative
+category acts, for example [Law 12,297 (25 de Agosto)](https://www.impo.com.uy/bases/leyes/12297-1956),
+provide the legal basis for these terms. The [evidence ledger](.github/fixes-docs/ledgers/uy_types_v5x.jsonl)
+keeps each applied category and any field held for further legal review.
+A `municipality / municipio` denotes the territorial local-government unit established under
+[Law 19,272](https://www.impo.com.uy/bases/leyes/19272-2014), at level 2 beneath the departamento
+(level 1). Its seat locality is a different entity; locality census counts are never municipal counts.
+A locality wholly within one municipio has level 3; a locality outside the municipal layer has
+level 2. Partial overlaps and localities crossing municipios have their level held for review.
+The documented Montevideo urban-containment model keeps the city at level 2 and its official
+`section / barrio` records at level 3, with Montevideo as their city parent. Barrios are not
+independent census localities and do not receive Montevideo's total population.
+`parent_id` should identify the verified immediate same-dataset parent, or be null when that
+parent has no record. This patch makes no ancestry changes; containment alone is not a reviewed parent link. Legacy `adm1` rows remain held where their unit/place identity
+cannot be reconciled under the published model; no unit is relabelled as its seat.
+Population uses INE's `POB_TOT_23`: persons enumerated by the census operation or administrative
+enumeration, excluding people experiencing street homelessness. It is not the departamento total.
+INE permits free reuse with source attribution in the dataset's embedded metadata; the ledger
+retains that notice, the Uruguay Open Data Licence reference, edition, retrieval time and checksums.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
