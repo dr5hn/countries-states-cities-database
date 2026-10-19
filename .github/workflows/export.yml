@@ -684,7 +684,7 @@ jobs:
           echo "current_date=${current_date}" >> "$GITHUB_OUTPUT"
 
       - name: Keep the build as a workflow artifact (candidate runs end here; nothing is published)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.meta.outputs.artifact }}
           path: |
@@ -742,7 +742,7 @@ jobs:
             "$RUNNER_TEMP/migrations/release_meta.json" >> "$GITHUB_OUTPUT"
 
       - name: Keep the migration files as a workflow artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ${{ steps.generate.outputs.artifact }}
           path: |
@@ -783,7 +783,7 @@ jobs:
           lfs: false
 
       - name: Download this run's build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: ${{ needs.export.outputs.artifact }}
           path: ${{ runner.temp }}/build
@@ -804,7 +804,7 @@ jobs:
           echo "placed $n exports and the small files"
 
       - name: Download and verify this run's migration files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: ${{ needs.migrations.outputs.artifact }}
           path: ${{ runner.temp }}/migrations
