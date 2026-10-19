@@ -1,0 +1,241 @@
+{
+ "ledger": "uy_types_v5x.compact.jsonl",
+ "records": 2008,
+ "base_commit": [
+  "126aeb116ed09ef5bbc5b7813d4559ec3a8a2672"
+ ],
+ "full_ledger_sha256": "6c6ea3b4a952769c1fd7e011c9d2de1d34dd549aa3158dddbee5c7af9c4e6f3e",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Existing local category retained on same independently bound entity; English term follows published mapping; historical register retained for conflict review",
+  "Exact normalized own name + same ISO departamento + stored point within 500m of INE polygon; unique row-to-locality; own Wikidata contradictions held. No source point copied.",
+  "INE 2023 statistical locality; no finer legal status asserted"
+ ],
+ "sources": [
+  {
+   "edition": "INE Unidades Geoestadisticas Censo 2023; live retrieval",
+   "licence": "INE: free use with attribution to Instituto Nacional de Estadistica; embedded official metadata",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:34:51.187645+00:00",
+   "sha256": "7df176f6637425452636e89a6c4d04e2781debe27e012b9c3d3cc8f1322ec3e7",
+   "source_id": "ine_units_2023_current.zip",
+   "url": "https://www5.ine.gub.uy/documents/CENSO%202023/Cartografia/Vectoriales/Unidades%20Geoestadisticas%20Censo%202023.zip"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:10.320933+00:00",
+   "sha256": "323e994de0bb27d85932773ccefc375c29b01b9b84250078ea2f0084d4e60e8b",
+   "source_id": "wd_current_007.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2117336%7CQ2117342%7CQ2118562%7CQ2118570%7CQ2118579%7CQ2118581%7CQ2118590%7CQ2122508%7CQ2148485%7CQ2153350%7CQ2153353%7CQ2153361%7CQ2177463%7CQ218465%7CQ218472%7CQ2219211%7CQ2219299%7CQ2219573%7CQ2222751%7CQ2223003%7CQ2227041%7CQ2227047%7CQ225647%7CQ2298580%7CQ2303870%7CQ2389008%7CQ2439134%7CQ247843%7CQ2524812%7CQ2524816%7CQ2525104%7CQ2525581%7CQ2525727%7CQ2525747%7CQ260096%7CQ261771%7CQ281754%7CQ282394%7CQ284634%7CQ289379&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:43:22.704395+00:00",
+   "sha256": "591f7668bb3556c4dc698af2eddba9c8840246435038546f6e4793c756ad84b2",
+   "source_id": "wd_current_099.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1021711%7CQ123582749%7CQ123705%7CQ1761572%7CQ185113%7CQ3257686%7CQ3957%7CQ486972%7CQ4946461%7CQ5084%7CQ515%7CQ532%7CQ62129985%7CQ62130005%7CQ7930989%7CQ902814&format=json"
+  },
+  {
+   "edition": "2025 IDE municipal polygons",
+   "licence": "Licencia de Datos Abiertos Uruguay v0.1; evidence ide_municipios_2025_metadata.xml",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:46:31.320470+00:00",
+   "sha256": "d92b5cbc957da8fe85fc2edf118bdfbc7b72dcc0cf087f9e218944c27caff545",
+   "source_id": "ide_municipios_2025.geojson",
+   "url": "https://mapas.ide.uy/geoserver-vectorial/ideuy/municipios_20250507/wfs?service=WFS&request=GetFeature&version=2.0.0&typeNames=ideuy%3Amunicipios_20250507&outputFormat=application%2Fjson&srsName=EPSG%3A4326"
+  },
+  {
+   "edition": "2025",
+   "licence": "Official factual reference; no standardized open licence verified",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:45:51.628638+00:00",
+   "sha256": "68f30b3ae64b35a796986dde32146f137da91e130be00af85d41c3438a29a3e0",
+   "source_id": "ide_municipios_2025_metadata.xml",
+   "url": "https://visualizador.ide.uy/geonetwork/srv/api/records/82c71a84-97ac-4cf1-8ac9-c0296b2383ad/formatters/xml"
+  },
+  {
+   "edition": "Law 19,272, consolidated current text",
+   "licence": "Official factual reference; no standardized open licence verified",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:41:29.390260+00:00",
+   "sha256": "c5d1803c72e8b0fbc73b2b49e9793e3a07d1e6fcaa17c0148aeb21142693a0d6",
+   "source_id": "law_19272.html",
+   "url": "https://www.impo.com.uy/bases/leyes/19272-2014"
+  },
+  {
+   "edition": "INE Unidades Geoestadisticas Censo 2023; live retrieval",
+   "licence": "INE: free use with attribution to Instituto Nacional de Estadistica; embedded official metadata",
+   "member": "loc_23_pg.gpkg",
+   "retrieved_at": "2026-10-19T14:34:51.187645+00:00",
+   "sha256": "cabe2b0307851b4b4f83ff997defe11162af7f9f201ab8649448e506963cedd0",
+   "source_id": "ine_units_2023_current.zip#loc_23_pg.gpkg",
+   "url": "https://www5.ine.gub.uy/documents/CENSO%202023/Cartografia/Vectoriales/Unidades%20Geoestadisticas%20Censo%202023.zip"
+  },
+  {
+   "edition": "INE Unidades Geoestadisticas Censo 2023; live retrieval",
+   "licence": "INE: free use with attribution to Instituto Nacional de Estadistica; embedded official metadata",
+   "member": "Metadato_loc_23_pg.pdf",
+   "retrieved_at": "2026-10-19T14:34:51.187645+00:00",
+   "sha256": "17be4581d49ae5f4360bb48c16c7739a2a2f7e1d89abb2dd764ea4237884bf12",
+   "source_id": "ine_units_2023_current.zip#Metadato_loc_23_pg.pdf",
+   "url": "https://www5.ine.gub.uy/documents/CENSO%202023/Cartografia/Vectoriales/Unidades%20Geoestadisticas%20Censo%202023.zip"
+  },
+  {
+   "edition": "Licencia de Datos Abiertos Uruguay",
+   "licence": "Official factual reference; no standardized open licence verified",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:46:31.321740+00:00",
+   "sha256": "ee78c585910e1222af58f2c1ccb0a21a1492e01b84cecfaf09b03c4059e54497",
+   "source_id": "uy_open_data_licence.pdf",
+   "url": "https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/documentos/publicaciones/licencia_de_datos_abiertos_0.pdf"
+  },
+  {
+   "edition": "2004",
+   "licence": "INE: free use with attribution to Instituto Nacional de Estadistica; embedded official metadata",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:45:48.333117+00:00",
+   "sha256": "b0db4faa2e58d295087c1a19c1db8b6218bf13d08bdf1f932d97ba85b340af50",
+   "source_id": "ine_category_2004_curl.zip",
+   "url": "https://www5.ine.gub.uy/documents/Cartograf%C3%ADa/toponimicos/2004_Toponimia_y_categorizaciion_jur%C3%ADdica_oficial_de_las_localidades_urbanas_de_Uruguay.zip"
+  },
+  {
+   "edition": "INE 2004-category dataset metadata",
+   "licence": "INE: free use with attribution to Instituto Nacional de Estadistica; embedded official metadata",
+   "member": null,
+   "retrieved_at": "2026-10-10T12:56:00.707472+00:00",
+   "sha256": "11c8d1ba28fb2a15a16b2577fd62ee8a217142fd45c453a73905d6c4d58a1cf9",
+   "source_id": "ine_toponimia_metadata_2004.pdf",
+   "url": "https://www5.ine.gub.uy/documents/Cartograf%C3%ADa/toponimicos/Metadato_toponimico_2004.pdf"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:09.972747+00:00",
+   "sha256": "6959e882ed89e0811a1ae22af21b691a792ee75b0cd3ae011ef9af3a03ba02cf",
+   "source_id": "wd_current_006.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1891624%7CQ1891873%7CQ1943036%7CQ1945844%7CQ1946004%7CQ1946193%7CQ1964560%7CQ1970117%7CQ2000138%7CQ201731%7CQ2020681%7CQ2033390%7CQ204526%7CQ2048153%7CQ2051645%7CQ2053981%7CQ2053987%7CQ2055619%7CQ2055627%7CQ2055646%7CQ2055651%7CQ2055653%7CQ208904%7CQ208905%7CQ2093378%7CQ2093549%7CQ2093578%7CQ2094814%7CQ2094894%7CQ2095080%7CQ2096039%7CQ2096045%7CQ2096693%7CQ2097679%7CQ2099003%7CQ2100066%7CQ2100076%7CQ2117317%7CQ2117319%7CQ2117330&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:10.382894+00:00",
+   "sha256": "564687f0c3bd26fe59742dfc3f59c1c9510383d0148b44066c8d59f1b400cef5",
+   "source_id": "wd_current_008.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q292835%7CQ29376%7CQ29378%7CQ29382%7CQ29585%7CQ309442%7CQ31880994%7CQ31892887%7CQ32453%7CQ335506%7CQ366924%7CQ3698900%7CQ374670%7CQ381679%7CQ383094%7CQ384933%7CQ387511%7CQ389478%7CQ395880%7CQ397958%7CQ397975%7CQ397984%7CQ404803%7CQ408664%7CQ423201%7CQ429855%7CQ455084%7CQ473176%7CQ475116%7CQ4863727%7CQ489450%7CQ503373%7CQ509760%7CQ510570%7CQ510639%7CQ518618%7CQ5190320%7CQ519177%7CQ525163%7CQ529894&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:37:27.692936+00:00",
+   "sha256": "e01c746671599bee11119beea97e048b162e0b1a47cc00be51f0405b06909e43",
+   "source_id": "wd_current_010.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q653685%7CQ657514%7CQ664156%7CQ681212%7CQ681463%7CQ691513%7CQ700196%7CQ700214%7CQ700217%7CQ700220%7CQ700223%7CQ700224%7CQ700226%7CQ700227%7CQ700230%7CQ700231%7CQ700233%7CQ700234%7CQ700237%7CQ700239%7CQ703051%7CQ703834%7CQ712567%7CQ713012%7CQ719194%7CQ723686%7CQ723692%7CQ723697%7CQ733747%7CQ735816%7CQ738250%7CQ743957%7CQ747819%7CQ750835%7CQ751376%7CQ753192%7CQ770683%7CQ771442%7CQ77780827%7CQ7930332&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:08.131083+00:00",
+   "sha256": "a37a31c28bb4686127b9abb6fbed8ff3ca9251eabe1418761aa4370f7855bd49",
+   "source_id": "wd_current_004.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1440500%7CQ1441880%7CQ1445630%7CQ1452089%7CQ145465%7CQ1455608%7CQ1470253%7CQ1470467%7CQ147368%7CQ1508561%7CQ1514901%7CQ1522467%7CQ1523721%7CQ1531615%7CQ1532147%7CQ1549798%7CQ1552943%7CQ1552958%7CQ1554640%7CQ1566400%7CQ15696770%7CQ1604881%7CQ162416%7CQ16258%7CQ16301508%7CQ1632917%7CQ1634041%7CQ1642369%7CQ1658795%7CQ166068%7CQ1661914%7CQ166455%7CQ1665201%7CQ1668942%7CQ1670190%7CQ1673970%7CQ1684143%7CQ1704376%7CQ1709570%7CQ1710515&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:37:36.571189+00:00",
+   "sha256": "4801f080d7651d28ebc563a3e8d283d0d6cf6ee0215a933386e726f92534d179",
+   "source_id": "wd_current_011.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q796390%7CQ805484%7CQ805486%7CQ805555%7CQ808257%7CQ808781%7CQ808782%7CQ808783%7CQ808938%7CQ808940%7CQ808946%7CQ808947%7CQ808949%7CQ808950%7CQ808953%7CQ812539%7CQ812707%7CQ812710%7CQ814888%7CQ815778%7CQ815779%7CQ815782%7CQ816012%7CQ816336%7CQ822131%7CQ830390%7CQ833016%7CQ841342%7CQ842472%7CQ844914%7CQ849835%7CQ855464%7CQ855498%7CQ855645%7CQ862508%7CQ868205%7CQ8773451%7CQ88418609%7CQ888942%7CQ893173&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:37:44.853794+00:00",
+   "sha256": "a19229a4a3e53f588e5e52e35f4c4bf5947e4ed6441da172872a1788a80101e8",
+   "source_id": "wd_current_012.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q911248%7CQ911276%7CQ917640%7CQ928534%7CQ937059%7CQ938166%7CQ940362%7CQ943708%7CQ944394%7CQ946150%7CQ947532%7CQ952273%7CQ953667%7CQ957863%7CQ958365%7CQ961792%7CQ97168938%7CQ972190%7CQ975553%7CQ983435%7CQ984180%7CQ984184%7CQ984189%7CQ984193%7CQ984197%7CQ984382%7CQ984385%7CQ984388%7CQ984390%7CQ984422%7CQ984425%7CQ984512%7CQ984518%7CQ984523%7CQ984691%7CQ984692%7CQ984693%7CQ984713%7CQ984715%7CQ984716&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:12.104616+00:00",
+   "sha256": "410cfc5a2d44a787f1ea93a62d859e94ed8284a8704045fbc426900468a57c1e",
+   "source_id": "wd_current_009.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q530827%7CQ534550%7CQ545655%7CQ546964%7CQ551839%7CQ551848%7CQ552052%7CQ56064%7CQ56069%7CQ569882%7CQ570722%7CQ577535%7CQ581007%7CQ5818023%7CQ582146%7CQ585137%7CQ587656%7CQ588130%7CQ588205%7CQ592790%7CQ6009580%7CQ603086%7CQ60464691%7CQ605136%7CQ615470%7CQ615727%7CQ616593%7CQ624502%7CQ624505%7CQ625750%7CQ630016%7CQ630222%7CQ6336405%7CQ639340%7CQ641627%7CQ642059%7CQ643320%7CQ644348%7CQ646255%7CQ646498&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:05.719270+00:00",
+   "sha256": "4715be15987fe6654b0a294684d2747b0cd3c9a59c36acd12621b910fb80c6f7",
+   "source_id": "wd_current_001.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1010384%7CQ1010391%7CQ1010400%7CQ1013691%7CQ1014315%7CQ1017387%7CQ1018088%7CQ1020369%7CQ1020376%7CQ1020386%7CQ1020391%7CQ1020396%7CQ1020402%7CQ1020807%7CQ1020820%7CQ1020954%7CQ1020969%7CQ1020973%7CQ1021487%7CQ1022299%7CQ1022302%7CQ1022303%7CQ1022308%7CQ1022310%7CQ1022313%7CQ1022528%7CQ1023521%7CQ1023540%7CQ1024895%7CQ1026307%7CQ1027379%7CQ1030198%7CQ1031469%7CQ1033715%7CQ1034180%7CQ10345885%7CQ1034610%7CQ1035207%7CQ1043520%7CQ1043575&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:05.719417+00:00",
+   "sha256": "5031009b2e189869cd3d6727cb8eabbf0513f3b32a585c1961864b00a5494324",
+   "source_id": "wd_current_002.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1046658%7CQ1047068%7CQ1047072%7CQ1047121%7CQ1050009%7CQ1052099%7CQ1052104%7CQ1054447%7CQ1055678%7CQ1055816%7CQ1055823%7CQ1055903%7CQ1055955%7CQ1056015%7CQ1056030%7CQ1056173%7CQ1056180%7CQ1056196%7CQ1072583%7CQ10868203%7CQ110636202%7CQ1108771%7CQ1108777%7CQ1110716%7CQ1110740%7CQ1110764%7CQ1110810%7CQ1128223%7CQ1136423%7CQ1137249%7CQ1143043%7CQ1143065%7CQ1143068%7CQ1143273%7CQ1166990%7CQ11679525%7CQ11773386%7CQ1184943%7CQ12155875%7CQ121961&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:07.675655+00:00",
+   "sha256": "a0accfba99a2b99504f74d5c4f4ecb3ad7fac1554f8d0c070bb7849120eaf593",
+   "source_id": "wd_current_003.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1220484%7CQ122087921%7CQ122396855%7CQ1229079%7CQ1231337%7CQ1238874%7CQ1241377%7CQ1271428%7CQ1279702%7CQ1281233%7CQ1289570%7CQ1292823%7CQ1295228%7CQ1303777%7CQ1304029%7CQ1305312%7CQ1313974%7CQ1323889%7CQ1324095%7CQ1324101%7CQ1324139%7CQ1324497%7CQ1324503%7CQ1324532%7CQ1335%7CQ1346670%7CQ13479688%7CQ1368145%7CQ1368993%7CQ1368999%7CQ1369005%7CQ1369750%7CQ1369753%7CQ1385563%7CQ1395812%7CQ140250%7CQ1411480%7CQ1416678%7CQ1425155%7CQ1425335&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:05.718010+00:00",
+   "sha256": "864450a473f5cbefa208458f241d73a60c198db24812caf6f1c34ad5e17a6416",
+   "source_id": "wd_current_000.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1003589%7CQ1004035%7CQ1004920%7CQ1004922%7CQ1004925%7CQ1004930%7CQ1004938%7CQ1004942%7CQ1004955%7CQ1004963%7CQ1004971%7CQ1004983%7CQ1004993%7CQ1005003%7CQ1005240%7CQ1005259%7CQ1005301%7CQ1005309%7CQ1005607%7CQ1005720%7CQ1005725%7CQ1005742%7CQ1005765%7CQ1005781%7CQ1005797%7CQ1005809%7CQ1005816%7CQ1006155%7CQ1006165%7CQ1007576%7CQ1007583%7CQ1007589%7CQ1007597%7CQ1007603%7CQ1007618%7CQ1009497%7CQ1009502%7CQ1009696%7CQ1010338%7CQ1010378&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:38:02.572218+00:00",
+   "sha256": "45b6d7ea77450508e6e393e6e337153d029c198c720a1cbf847dc3f04f5b9a84",
+   "source_id": "wd_current_014.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q984942%7CQ984944%7CQ985021%7CQ985053%7CQ985061%7CQ985070%7CQ985110%7CQ985145%7CQ985379%7CQ986342%7CQ986346%7CQ986348%7CQ986657%7CQ987035%7CQ987044%7CQ987051%7CQ987058%7CQ987067%7CQ987073%7CQ987077%7CQ987082%7CQ987098%7CQ992675%7CQ997676%7CQ997833%7CQ999572&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:36:08.251169+00:00",
+   "sha256": "9005afbf30a34b7d0874f139e70a6e673fd713a687e7904c6b3b48d9814167f1",
+   "source_id": "wd_current_005.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1714088%7CQ1727968%7CQ1740145%7CQ1753541%7CQ17633166%7CQ177318%7CQ1783586%7CQ1784163%7CQ1784539%7CQ1784710%7CQ1788762%7CQ1791090%7CQ1794811%7CQ1798631%7CQ1798728%7CQ1798733%7CQ1799010%7CQ1799011%7CQ1799079%7CQ1799165%7CQ1799171%7CQ1799208%7CQ1799235%7CQ1800382%7CQ1800499%7CQ1800517%7CQ180318%7CQ1805150%7CQ1806010%7CQ1806458%7CQ1806459%7CQ1806473%7CQ18418589%7CQ18419049%7CQ1868714%7CQ1870484%7CQ1870552%7CQ1886592%7CQ1890255%7CQ1891613&format=json"
+  },
+  {
+   "edition": "Literal own Wikidata items, redirect resolution disabled",
+   "licence": "CC0 1.0 (Wikidata structured data)",
+   "member": null,
+   "retrieved_at": "2026-10-19T14:37:53.202241+00:00",
+   "sha256": "1f9acf08533e4eed604ecf20799b9ec16fd39f703b9877c1ac74e999e422fbe1",
+   "source_id": "wd_current_013.json",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q984719%7CQ984720%7CQ984722%7CQ984724%7CQ984725%7CQ984726%7CQ984727%7CQ984728%7CQ984730%7CQ984757%7CQ984771%7CQ984774%7CQ984779%7CQ984782%7CQ984835%7CQ984836%7CQ984837%7CQ984838%7CQ984839%7CQ984842%7CQ984843%7CQ984844%7CQ984846%7CQ984848%7CQ984849%7CQ984850%7CQ984852%7CQ984854%7CQ984866%7CQ984869%7CQ984873%7CQ984899%7CQ984915%7CQ984919%7CQ984924%7CQ984926%7CQ984929%7CQ984932%7CQ984935%7CQ984941&format=json"
+  }
+ ]
+}

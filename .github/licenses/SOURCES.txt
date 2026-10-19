@@ -1176,3 +1176,21 @@ Per-record source files, editions, URLs, retrieval times, hashes and methods:
 .github/fixes-docs/ledgers/us_counties_v5.jsonl ; retained acquisition bytes in the maintainer audit work bundle.
 
 New England town additions (2026-10): US Census Bureau 2024 Gazetteer, TIGERweb ACS2024 and 2020 Census PL 94-171; public domain US Government work (17 USC 105). Points copied from INTPTLAT/INTPTLONG; decimal formatting only. Per-record provenance: .github/fixes-docs/ledgers/ne_towns_v5.jsonl.
+
+Uruguay locality types and Census 2023 populations (uy_types_v5x, October 2026)
+Publisher: Instituto Nacional de Estadistica (INE), Uruguay.
+Credit: Fuente: Instituto Nacional de Estadistica, Censo de Poblacion, Hogares y Viviendas 2023.
+Source: https://www5.ine.gub.uy/documents/CENSO%202023/Cartografia/Vectoriales/Unidades%20Geoestadisticas%20Censo%202023.zip
+Edition: Census 2023; retrieved 19 October 2026; archive SHA-256 7df176f6637425452636e89a6c4d04e2781debe27e012b9c3d3cc8f1322ec3e7.
+Reuse permission: embedded Metadato_loc_23_pg.pdf states that use is free with attribution to INE.
+The Uruguay Open Data Licence reference retained in the evidence bundle is:
+https://www.gub.uy/agencia-gobierno-electronico-sociedad-informacion-conocimiento/sites/agencia-gobierno-electronico-sociedad-informacion-conocimiento/files/documentos/publicaciones/licencia_de_datos_abiertos_0.pdf
+The dataset-specific permission above is the directly verified INE reuse notice; no additional licence designation is inferred from a catalogue belonging to a different dataset.
+Historical legal-category checking: INE Toponimia y categorizacion juridica oficial de las localidades, 2004 register georeferenced in 2025; free use with INE attribution per its official metadata.
+Municipal containment: IDE Uruguay, Municipios 2025 (GTLA), Licencia de Datos Abiertos Uruguay v0.1, as declared in the dataset's IDE metadata.
+Metadata: https://visualizador.ide.uy/geonetwork/srv/api/records/82c71a84-97ac-4cf1-8ac9-c0296b2383ad/formatters/xml
+Identity checks: Wikidata structured data, CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications by CSC: selected unique bindings to existing keys, copied locality POB_TOT_23 with population_year 2023, harmonised supported English category terms, and checked municipal containment for level. No source coordinate was copied or generated; no identity, name, id, table, point or parent link was transferred.
+Population scope: POB_TOT_23 includes census and administrative enumeration, excluding persons in street homelessness. Counts for localidades are not municipio or departamento totals; no aggregate is copied to a component locality.
+Retain source credit, licence references and modification notice with redistributed data. No endorsement is implied.
+Per-record provenance: .github/fixes-docs/ledgers/uy_types_v5x.jsonl . Exact source bytes, member hashes and explicit holds are retained in the maintainer's uy_types_v5x audit work folder.
