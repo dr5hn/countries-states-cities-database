@@ -25,9 +25,9 @@ satisfy two claims.
 
 | Case | Places belong to | Overlapping catalogue entries |
 |---|---|---|
-| Taiwan | `TW` | `CN-TW` |
-| Hong Kong, Macao | `HK`, `MO` | `CN-HK`, `CN-MO` |
-| Western Sahara | Verified Western Sahara places use `EH` | Moroccan units keep their catalogue identities with no `EH` places under them; units that overlap only partly may keep verified `MA` places |
+| Taiwan | `TW`: 22 states, 377 cities. `CN-TW` (state 2255) is an empty catalogue entry: its 20 unit rows (159996 to 160015) retired in #2057, each mapped to its `TW` state. The Japanese and Chinese country translations use the CLDR 48.2.0 form 台湾 (v5). | None. |
+| Hong Kong, Macao | `HK`: 18 districts, 27 cities. `MO`: no states or cities yet (a coverage gap). `CN-HK` (state 2267) and `CN-MO` (2266) are empty catalogue entries: the 18 `CN-HK` district rows (159978 to 159995) retired in #2057, each mapped to its `HK` state. | Fill the `MO` coverage gap. |
+| Western Sahara | `EH`: no states (no ISO subdivisions); 3 cities with no state in `EH.json`, Gueltat Zemmour 67127, Imlili 67134 and Smara 67220 (#2057, ids kept). The province rows 67064, 67089, 67154, 67182 and 67115 retired to their Moroccan states. `EH` coordinate bounds added. | None. |
 | Kosovo | `XK` | Serbia's `RS-KM` and `RS-25` to `RS-29` |
 | Crimea, Sevastopol and other places in Ukraine | `UA` | none |
 | Abkhazia, South Ossetia | `GE` | none |
@@ -44,8 +44,8 @@ satisfy two claims.
 | Åland | `AX` | see the status table |
 
 **Names.** Country display names follow a documented, versioned convention based on Unicode CLDR (edition 48.2.0 for
-this policy), including deliberately chosen short or variant forms: the English name chosen for `PS` in the next major
-release is CLDR's short form "Palestine". Each change records the CLDR edition, locale and key it used; a same-entity
+this policy), including deliberately chosen short or variant forms: the English name for `PS` from v5 is
+CLDR's short form "Palestine". Each change records the CLDR edition, locale and key it used; a same-entity
 form that differs from the CLDR default is not an error for that reason alone. A translation that names a different
 entity is an error and is corrected in an ordinary release. Changing a translation that names the right entity with a
 political qualifier is a display-convention change: the owner checks the proposed forms and their effect on apps first,
@@ -78,12 +78,12 @@ record already complies.
 
 | Case | Today | Still to do |
 |---|---|---|
-| Taiwan | `TW`: 22 states, 377 cities. `CN-TW` (state 2255) still has 20 rows, 159996 to 160015, for Taiwan's own units. The Japanese and Chinese country translations carry a qualifier (台湾（中華民国）, 中国台湾). | Retire the 20 rows with a crosswalk to the matching `TW` states. The CLDR form 台湾 for both translations. Both in the major release. |
-| Hong Kong, Macao | `HK`: 18 districts, 27 cities. `MO`: no states or cities yet (a coverage gap). `CN-HK` (state 2267) still has 18 district rows, 159978 to 159995; `CN-MO` (2266) has none. | Retire the 18 rows with a crosswalk to the matching `HK` states (major release). |
-| Western Sahara | `EH` has no states or cities. Three cities sit under the Moroccan unit Oued Ed-Dahab (EH): 67064 Aousserd, 67134 Imlili, 67182 Oued-Ed-Dahab. | Seven records are under review one by one (67064, 67089, 67127, 67134, 67154, 67182, 67220). Places proved to be in Western Sahara move to `EH` once a city can be stored without a state, as `EH` has no ISO subdivisions (schema change, major release). Imlili's wrong Wikidata item was cleared in #2009. |
+| Taiwan | `TW`: 22 states, 377 cities. `CN-TW` (state 2255) is an empty catalogue entry: its 20 unit rows (159996 to 160015) retired in #2057, each mapped to its `TW` state. The Japanese and Chinese country translations use the CLDR 48.2.0 form 台湾 (v5). | None. |
+| Hong Kong, Macao | `HK`: 18 districts, 27 cities. `MO`: no states or cities yet (a coverage gap). `CN-HK` (state 2267) and `CN-MO` (2266) are empty catalogue entries: the 18 `CN-HK` district rows (159978 to 159995) retired in #2057, each mapped to its `HK` state. | Fill the `MO` coverage gap. |
+| Western Sahara | `EH`: no states (no ISO subdivisions); 3 cities with no state in `EH.json`, Gueltat Zemmour 67127, Imlili 67134 and Smara 67220 (#2057, ids kept). The province rows 67064, 67089, 67154, 67182 and 67115 retired to their Moroccan states. `EH` coordinate bounds added. | None. |
 | Kosovo | `XK`: 7 states, 59 cities. Serbia's six Kosovo units, states 5688 to 5693, hold no places. | None. |
-| Palestine | `PS`: 16 states, 132 cities. English name "Palestinian Territory Occupied", and "occupied" forms in five translations (ru, uk, pl, hi, ar). East Jerusalem's point fixed in #2009. Har Adar (57475) and Modiin Ilit (57514), West Bank settlements, are stored under `IL`. | English display name "Palestine" (CLDR 48.2.0 short form), keeping the old name as an alias, and the CLDR forms of the five translations (major release, after the owner's check). Move the two settlements to `PS` with their governorate after review. Nirit (57526) and Bāqa el Gharbīya (164832) stay held for boundary review; the whole of Jerusalem stays a record distinct from its parts. |
-| Ukraine | Crimea and Sevastopol: 369 cities under `UA`, all on `Europe/Simferopol` since #2009. Ten rows named "Gorodskoy okrug …" (109610 to 109619) use Russian unit names. | Review the ten rows as units, and reopen the 286 Crimean and Sevastopol records held in #2005 under the current Ukrainian codifier (KATOTTG), its enacted names and romanisation. All 286 still exist; 285 still share a Wikidata item with another record, and 110403 needs its own identity check. |
+| Palestine | `PS`: 16 states, 132 cities. English name "Palestine" (CLDR 48.2.0 short form) and the CLDR short forms of the ru, uk, pl, hi and ar translations (v5); the former name "Palestinian Territory Occupied" stays machine-readable as the before value in the migration files' `changed_fields.jsonl`. East Jerusalem's point fixed in #2009. Har Adar (57475) and Modiin Ilit (57514) moved to `PS` in #2012. | Nirit (57526) and Bāqa el Gharbīya (164832) stay held for boundary review; the whole of Jerusalem stays a record distinct from its parts. |
+| Ukraine | Crimea and Sevastopol: 369 cities under `UA`, all on `Europe/Simferopol` since #2009. The ten "Gorodskoy okrug …" unit rows (109610 to 109619) retired in #2057 as the seat of their town. | Reopen the 286 Crimean and Sevastopol records held in #2005 under the current Ukrainian codifier (KATOTTG), its enacted names and romanisation. All 286 still exist; 285 still share a Wikidata item with another record, and 110403 needs its own identity check. |
 | Cyprus | `CY`: 6 states, 96 cities. Turkish country name "Kıbrıs" since #2009. | None. |
 | Georgia, Moldova, Azerbaijan, Syria, Somalia | Places stored under `GE`, `MD`, `AZ`, `SY`, `SO`. | Membership is kept. Local-name, item, scope and clock reviews remain open where found, including dated renaming research in Azerbaijan for Askyaran (8046), Martakert (8114) and Novyy Karanlug (8125). Somalia's state 5700 has the native name Maroodi Jeex, the name the Somaliland administration uses; whether it covers the same ground as ISO's Woqooyi Galbeed is under review. |
 | Kashmir, Arunachal Pradesh | Places stored under `IN`, `PK` and `CN` units. | Not yet checked place by place. |

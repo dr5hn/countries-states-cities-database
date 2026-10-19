@@ -32,9 +32,25 @@ has no item. Facts that are proved stay; unproved assertions that would tie the 
 
 `identity_changes.jsonl` holds the decisions made in its release's interval, so a key missing from a later file is
 not resolved by that. Before v5.0.0 is published, its cumulative identity file must also provide a complete reviewed
-baseline of every retained unresolved key, including legacy rows unchanged since v4.0. Starting from that verified
-baseline, apply subsequent identity decisions in order and retain each key's latest decision. Absence from a later
-file does not resolve a key. Strict territorial consumers exclude the keys whose latest decision is unresolved.
+baseline of every retained unresolved key, including legacy rows unchanged since v4.0. The reviewed input is
+[`migrations/unresolved_baseline.jsonl`](migrations/unresolved_baseline.jsonl): each key binds its snapshot commit,
+full-row hash, reason, decision round, review and evidence. It does not fabricate a changed-row event. The generator
+validates the snapshot and includes it in the cumulative file as `baseline: true` (migration format 3). Keep that
+baseline immutable; later releases append decisions to the ordinary ledger. A guarded `decision_only` identity
+event permits a later review without a scalar edit. See [the input and ordering rules](migrations/README.md#reviewed-unresolved-baseline).
+
+Starting from that verified baseline, apply subsequent identity decisions in first-parent order and retain each
+key's latest decision; reviewed removals retire keys. Absence from a later file does not resolve a key. Field
+admission does not itself replace an explicit unresolved identity decision. Strict territorial consumers exclude
+retained keys whose latest decision is unresolved. Inventory disclosure does not close a substantive publication
+hold or authorise an otherwise unproved transfer.
+
+Data PRs carry their reviewed ledger events in the same PR: use a positive integer `event_pr` instead of
+`event_commit`. The generator requires GitHub's verified `merge_commit_sha` association on the pinned ledger's
+first-parent line and publishes that single-parent squash SHA; subjects are not proof. The `Ledger migrations` PR check uses `--pending-pr N` to validate those events against the
+merge preview before merge; the historical row, target, baseline and identity rules still apply. See
+[how to add events in a data PR](migrations/README.md#a-data-pr-carries-its-own-events). Existing SHA-keyed events
+remain valid. Require that check in branch protection to block merges on ledger errors.
 
 ## What each kind of release may change
 
@@ -83,7 +99,13 @@ They do not describe changes to the separate `regions` and `subregions` grouping
 - For a repaired key, `current_targets` is the entity it first denoted, and `later_entity_targets` the replacement key
   of the entity it came to denote: check which one you stored. The removal's `retires_repurpose.replacement_kind`
   says whether the replacement is `fresh` (never used before) or `existing`, and the identity decision's `remediation`
-  records it too. Neither mapping redirects automatically. An existing replacement may appear in `added_ids.jsonl` if
+  records it too. If the original entity has no separate record, the reviewed identity declares `targets: []` and
+  `prior_entity` with status `ended` or `unrecorded`, a reason and evidence. The remediation removal preserves that
+  declaration with empty `current_targets`; a chain entering it ends with that status. If the original entity gained
+  a separate representation later, an evidenced `recorded_later` declaration binds its commit, target and full-row
+  hash. `current_targets` then follows that representation from that commit (see migrations/README.md). This is an evidenced absence
+  of representation, not an unresolved identity or a claim of territorial succession. The later entity still needs
+  its replacement key and the repurposed key still must retire. Neither mapping redirects automatically. An existing replacement may appear in `added_ids.jsonl` if
   it was absent from your baseline and is present at the target; `replacement_kind` is not an added-file membership
   test.
 - `added_ids.jsonl`: keys present at the end and not at the start. A restored key appears with `restored` when your
@@ -94,8 +116,12 @@ They do not describe changes to the separate `regions` and `subregions` grouping
 
 To migrate stored ids, take a set whose `release_manifest.json` starts at your snapshot (`from.sha`) and ends at the
 one you move to (`to.sha`), and apply it; then do the same with the next release's set. Each set describes the step
-from the previous published snapshot. v5.0.0 carries two: the cumulative set from v4.0, and the step from the last v4
-export (`v4.0-export.51`). Apply the one whose `from.sha` is your snapshot, never both.
+from the previous published snapshot. v5.0.0 carries one: the cumulative set from v4.0. There is no step from a later v4
+export: the source of `v4.0-export.51` held postcodes whose ids the export assigned and synced back later, and every id
+must be known at both ends. If you use a later v4 export, load the v5 data fresh and use the cumulative set to map the
+ids you stored; do not patch that export with its added or changed files, which are relative to v4.0 (see
+[migrations/README.md](migrations/README.md#generating-the-files)). From the second v5 export on, each release also carries
+the step from the previous v5 export.
 
 Example: list the stored city ids that may be redirected to another record.
 

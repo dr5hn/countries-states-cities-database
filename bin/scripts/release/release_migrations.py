@@ -29,6 +29,8 @@ import sys
 import tarfile
 from pathlib import Path
 
+from migrations import MigrationError, load_pr_commits, read_jsonl, resolve
+
 FEATURE = re.compile(r'^v?(\d+)\.(\d+)(?:\.(\d+))?$')
 EXPORT = re.compile(r'^v?(\d+)\.(\d+)(?:\.(\d+))?-export\.(\d+)$')
 GENERATOR_TIMEOUT = 45 * 60   # seconds per run; a full v4.0 run takes about 75 s on a laptop
@@ -84,6 +86,66 @@ def pack(folder, target):
         gz.write(buf.getvalue())
 
 
+def load_source_meta(path):
+    """Validate source metadata before either export or CI adds its generated data_version."""
+    meta = json.loads(Path(path).read_text(encoding='utf-8'))
+    if not (isinstance(meta, dict) and isinstance(meta.get('contract_version'), str)
+            and re.fullmatch(r'[1-9]\d*', meta['contract_version']) and 'data_version' not in meta):
+        raise ReleaseError('migrations/release_meta.json needs a whole-number contract_version and no '
+                           'data_version (the run fills it in)')
+    return meta
+
+
+def merge_parents(repo, sha):
+    """The parents of a commit in the local clone; ReleaseError when the commit is not there."""
+    out = subprocess.run(['git', '-C', str(repo), 'rev-list', '--parents', '-n', '1', sha],
+                         capture_output=True, text=True, timeout=60)
+    if out.returncode:
+        raise ReleaseError(f'commit {sha[:12]} is not in this clone; fetch the full history')
+    return out.stdout.split()[1:]
+
+
+def github_pr_commits(repo, ledger, saved, pending_pr=None, preview=None):
+    """Fetch authoritative merge SHAs for PR-only keys, including removal_batch lines; a saved association must agree with GitHub.
+    The returned JSONL is kept with export artifacts for offline generator replay. No subject is proof."""
+    known = load_pr_commits(saved) if Path(saved).exists() else {}
+    numbers = {e['event_pr'] for _, e in read_jsonl(ledger, 'ledger')
+               if isinstance(e, dict) and 'event_commit' not in e and type(e.get('event_pr')) is int
+               and e['event_pr'] > 0}
+    if pending_pr is not None:
+        numbers.add(pending_pr)
+    proofs = []
+    for number in sorted(numbers):
+        result = subprocess.run(['gh', 'api', f'repos/{{owner}}/{{repo}}/pulls/{number}'],
+                                cwd=repo, capture_output=True, text=True, timeout=60)
+        if result.returncode:
+            raise ReleaseError(f'could not verify PR {number}: {result.stderr.strip()}')
+        pr = json.loads(result.stdout)
+        if not isinstance(pr, dict):
+            raise ReleaseError(f'PR {number}: invalid GitHub response')
+        if pr.get('number') != number:
+            raise ReleaseError(f'PR {number}: invalid GitHub response')
+        if number == pending_pr:
+            # The checked commit is the run's merge preview (github.sha). GitHub's live merge_commit_sha moves whenever
+            # the base advances and is empty while the PR conflicts, so it is not compared; what must hold is that the
+            # PR is open and unsaved and that the preview merges the PR's current head.
+            head = (pr.get('head') or {}).get('sha') if isinstance(pr.get('head'), dict) else None
+            if pr.get('merged') is not False or number in known:
+                raise ReleaseError(f'pending PR {number}: already merged or already saved')
+            parents = merge_parents(repo, preview)
+            if len(parents) != 2 or not isinstance(head, str) or parents[1] != head:
+                raise ReleaseError(f'pending PR {number}: the checked commit is not a merge preview of the current PR '
+                                   'head; rerun the check on the latest push')
+            continue
+        sha = pr.get('merge_commit_sha')
+        if not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha):
+            raise ReleaseError(f'PR {number}: missing GitHub merge_commit_sha association')
+        if pr.get('merged') is not True or (number in known and known[number] != sha):
+            raise ReleaseError(f'PR {number}: unmerged or saved association disagrees with GitHub')
+        proofs.append(json.dumps({'event_pr': number, 'merge_commit_sha': sha}, sort_keys=True) + '\n')
+    return ''.join(proofs)
+
+
 def main():
     """Pick the intervals, run the generator for each and pack the results; returns the exit code."""
     ap = argparse.ArgumentParser(description=__doc__.split('\n\n')[0])
@@ -98,10 +160,7 @@ def main():
             raise ReleaseError(f'--to must be a full commit SHA, got {args.to!r}')
         if out.exists():
             raise ReleaseError(f'{out} exists; pass a new folder')
-        meta = json.loads((repo / 'migrations' / 'release_meta.json').read_text(encoding='utf-8'))
-        if not re.fullmatch(r'[1-9]\d*', str(meta.get('contract_version', ''))) or 'data_version' in meta:
-            raise ReleaseError('migrations/release_meta.json needs a whole-number contract_version and no '
-                               'data_version (the run fills it in)')
+        meta = load_source_meta(repo / 'migrations/release_meta.json')
         major = int(meta['contract_version'])
         cumulative, step, data_version, newest = pick(published_tags(repo), major)
         print(f'[INFO] contract {major}: cumulative from {cumulative}, step from {step}, data_version {data_version}')
@@ -117,23 +176,29 @@ def main():
         out.mkdir(parents=True)
         meta_path = out / 'release_meta.json'
         meta_path.write_text(json.dumps({**meta, 'data_version': data_version or f'{major}-candidate'}), encoding='utf-8')
+        ledger_tip = resolve(repo, 'HEAD')
+        proof_path = out / 'MIGRATIONS_PR_COMMITS.jsonl'
+        proof_path.write_text(github_pr_commits(repo, repo / 'migrations/events.jsonl',
+                                                repo / 'migrations/pr_commits.jsonl'), encoding='utf-8')
         sums = []
         for tag, sha in froms.items():
             print(f'[INFO] generating {tag} ({sha[:12]}) to {args.to[:12]}', flush=True)
             run = subprocess.run([sys.executable, str(repo / 'bin/scripts/release/migrations.py'), '--repo', str(repo),
                                   '--from', sha, '--to', args.to, '--ledger', str(repo / 'migrations/events.jsonl'),
                                   '--reserved', str(repo / 'migrations/reserved_ids.jsonl'), '--meta', str(meta_path),
+                                  '--pr-commits', str(proof_path), '--ledger-tip', ledger_tip,
                                   '--out', str(out / f'migrations-from-{tag}')], timeout=GENERATOR_TIMEOUT)
             if run.returncode:
                 raise ReleaseError(f'the generator refused {tag} to {args.to[:12]} (see its messages above)')
             target = out / f'migrations-from-{tag}.tar.gz'
+            (out / f'migrations-from-{tag}' / 'pr_commits.jsonl').write_bytes(proof_path.read_bytes())
             pack(out / f'migrations-from-{tag}', target)
             sums.append(f'{hashlib.sha256(target.read_bytes()).hexdigest()}  {target.name}\n')
         (out / 'MIGRATIONS_SHA256SUMS').write_text(''.join(sums), encoding='utf-8')
         (out / 'MIGRATIONS_SOURCE').write_text(f'source {args.to}\n', encoding='utf-8')
         print(f'[INFO] wrote {len(sums)} migration archive(s) to {out}')
         return 0
-    except (ReleaseError, OSError, ValueError, subprocess.TimeoutExpired) as e:
+    except (ReleaseError, MigrationError, OSError, ValueError, subprocess.TimeoutExpired) as e:
         print(f'[ERROR] {e}', file=sys.stderr)
         return 1
 

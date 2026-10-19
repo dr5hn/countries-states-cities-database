@@ -13,7 +13,9 @@ commit, path or before-row hash is wrong, a target is wrong or missing at that c
 same-entity merge, a repurposed id still denotes the other entity at --to or is retired without naming the other
 entity's replacement, an id is missing, malformed or duplicated, or a retired or reserved id is in use without a
 reviewed restoration of the same entity. Events before --from get the same checks. An output failure keeps the
-earlier output.
+earlier output. Events may name event_pr instead of event_commit: the saved GitHub merge_commit_sha association
+resolves the PR to a single-parent squash commit on the pinned ledger line. --pending-pr N binds only that PR's events to --to for a merge-preview check;
+published release runs must omit it. Generated events always carry the resolved event_commit SHA.
 
 Usage:
   python3 bin/scripts/release/migrations.py --from <published snapshot sha> --to <candidate sha> \\
@@ -46,7 +48,7 @@ MANAGED = {'created_at', 'updated_at', 'flag'}
 REMOVAL_OUTCOMES = {
     'merged_same_entity': ({'merged_same_entity'}, 'merged_same_entity', 1, 1),
     'administrative_seat': ({'administrative_seat', 'moved_dataset'}, 'administrative_seat', 1, None),
-    'moved_dataset': ({'moved_dataset'}, 'moved_dataset', 1, None),
+    'moved_dataset': ({'moved_dataset', 'administrative_seat'}, 'moved_dataset', 1, None),
     'territorial_successor': ({'territorial_successor'}, 'territorial_successor', 1, None),
     'split_into': ({'split_into'}, 'split_into', 2, None),
     'namespace_replaced': (set(), None, 0, 0), 'invalid_record': (set(), None, 0, 0), 'no_successor': (set(), None, 0, 0),
@@ -63,7 +65,7 @@ STABLE_IDS = ('wikiDataId', 'iso3166_2', 'iso3')   # identifiers of the entity i
 EXPANSION_LIMIT = 1_000_000   # target paths visited from one record; real chains are short, branching ones can multiply
 SHA1, SHA256 = re.compile(r'[0-9a-f]{40}'), re.compile(r'[0-9a-f]{64}')
 META_KEYS = ('data_version', 'contract_version', 'policy_version', 'data_schema_version')
-FORMAT_VERSION = 2
+FORMAT_VERSION = 3
 MISSING = object()
 
 
@@ -117,11 +119,12 @@ def is_str(v, *allowed):
 
 
 def relation_table_ok(relation, old_table, table):
-    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city."""
+    """Whether a target table fits its relation: same-entity, successor and split stay in the table; a seat is a city
+    named for a removed city row (a unit row in cities), as migrations/README.md says."""
     if relation in ('merged_same_entity', 'territorial_successor', 'split_into'):
         return table == old_table
     if relation == 'administrative_seat':
-        return table == 'cities'
+        return table == 'cities' and old_table == 'cities'
     if relation == 'moved_dataset':
         return table != old_table
     return relation == 'prior_identity'
@@ -168,7 +171,10 @@ def event_errors(e, where):
     tkey, ikey = ('old_table', 'old_id') if kind == 'removal' else ('table', 'id')
     need(is_str(e.get(tkey), TABLES), f'{tkey} {e.get(tkey)!r} is not a known table')
     need(positive_id(e.get(ikey)), f'{ikey} must be a positive integer')
-    need(sha1('event_commit'), 'event_commit must be a full commit SHA')
+    if 'event_commit' in e:
+        need(sha1('event_commit'), 'event_commit must be a full commit SHA')
+    else:
+        need(positive_id(e.get('event_pr')), 'event_pr must be a positive integer when event_commit is absent')
     if kind == 'restoration':
         need(sha1('retirement_commit'), 'retirement_commit must be a full commit SHA')
         need(sha256('retired_row_sha256') and sha256('restored_row_sha256'), 'retired_row_sha256 and restored_row_sha256 must be SHA-256s')
@@ -192,6 +198,13 @@ def event_errors(e, where):
          'a reviewed event needs review.reason and review.reviewer')
     need(isinstance(e.get('evidence'), list) and len(e['evidence']) > 0 and all(evidence_ok(x) for x in e['evidence']),
          'a reviewed event needs evidence: objects with a manifest and its sha256, or an http(s) url with a host')
+    if 'prior_entity' in e:
+        need(kind == 'identity' and e.get('outcome') == 'repurpose', 'prior_entity is only for a repurpose identity')
+    if 'decision_only' in e:
+        need(kind == 'identity' and e['decision_only'] is True
+             and is_str(e.get('outcome'), ('classification', 'dual_role', 'unresolved'))
+             and sha256('after_row_sha256'),
+             'decision_only needs a non-repurpose identity, true and after_row_sha256')
     if kind == 'restoration':
         return errs
     need(type(e.get('automatic_redirect')) is bool, 'automatic_redirect must be true or false')
@@ -200,6 +213,24 @@ def event_errors(e, where):
     if not is_str(outcome, rules) or not isinstance(targets, list):
         return errs + [f'{where}: outcome {outcome!r} unknown for a {kind} event, or targets not a list (use [] for none)']
     allowed, required, fewest, most = rules[outcome]
+    if 'prior_entity' in e:
+        prior = e['prior_entity']
+        no_record = kind == 'identity' and outcome == 'repurpose' and not targets
+        need(no_record, 'prior_entity is allowed only on a repurpose identity with targets []')
+        need(isinstance(prior, dict) and is_str(prior.get('status'), ('ended', 'unrecorded'))
+             and is_str(prior.get('reason')) and bool(prior['reason'].strip())
+             and isinstance(prior.get('evidence'), list) and bool(prior['evidence'])
+             and all(evidence_ok(x) for x in prior['evidence']),
+             'prior_entity needs status ended or unrecorded, a nonblank reason and usable evidence')
+        if isinstance(prior, dict) and 'recorded_later' in prior:
+            later = prior['recorded_later']
+            need(prior.get('status') == 'unrecorded' and isinstance(later, dict)
+                 and is_str(later.get('event_commit')) and bool(SHA1.fullmatch(later['event_commit']))
+                 and key_ok(later.get('target')) and (later['target']['table'], later['target']['id']) != (e[tkey], e[ikey])
+                 and is_str(later.get('row_sha256')) and bool(SHA256.fullmatch(later['row_sha256'])),
+                 'recorded_later needs an unrecorded prior entity, event_commit, a different target and row_sha256')
+        if no_record:
+            required, fewest = None, 0
     keys = set()
     for t in targets:
         ok = (isinstance(t, dict) and is_str(t.get('table'), TABLES) and positive_id(t.get('id'))
@@ -242,15 +273,93 @@ def read_jsonl(path, what):
     return out
 
 
-def load_ledger(path):
-    """Removal, identity and restoration events, each keyed by (table, id, event_commit); any schema error or repeated
-    key fails."""
+def ledger_events(path):
+    """Expand removal batches before the ordinary per-event schema and history checks.
+
+    Batch row indexes are one-based and retained in every loader diagnostic.
+    """
+    keys = {'old_id', 'before_path', 'before_row_sha256'}
+    for n, event in read_jsonl(path, 'ledger'):
+        if not isinstance(event, dict) or event.get('event_type') != 'removal_batch':
+            if isinstance(event, dict) and 'rows' in event:
+                raise MigrationError(f'ledger line {n} row 0 (shared): only removal_batch may contain rows')
+            yield n, event
+            continue
+        where = f'ledger line {n} row 0 (shared)'
+        if keys & event.keys():
+            raise MigrationError(f'{where}: batch shared fields contain per-row keys')
+        rows = event.get('rows')
+        if not isinstance(rows, list) or not rows:
+            raise MigrationError(f'{where}: batch rows must be a nonempty list')
+        shared = {k: v for k, v in event.items() if k not in ('event_type', 'rows')}
+        seen = set()
+        for i, row in enumerate(rows, 1):
+            where = f'ledger line {n} row {i}'
+            if not isinstance(row, dict) or row.keys() != keys:
+                raise MigrationError(f'{where}: batch row needs exactly old_id, before_path, before_row_sha256')
+            errs = event_errors({**shared, **row}, where)
+            if errs:
+                raise MigrationError('\n'.join(errs))
+            if row['old_id'] in seen:
+                raise MigrationError(f'{where}: duplicate batch old_id {row["old_id"]}')
+            seen.add(row['old_id'])
+            yield f'{n} row {i}', {**shared, **row}
+
+
+def load_pr_commits(path):
+    """Read the saved GitHub associations; duplicate or malformed proofs fail closed."""
+    prs = {}
+    for n, proof in read_jsonl(path, 'PR commits'):
+        if not (isinstance(proof, dict) and positive_id(proof.get('event_pr'))
+                and is_str(proof.get('merge_commit_sha')) and SHA1.fullmatch(proof['merge_commit_sha'])):
+            raise MigrationError(f'PR commits line {n}: needs event_pr and full merge_commit_sha')
+        pr = proof['event_pr']
+        if pr in prs:
+            raise MigrationError(f'PR commits line {n}: duplicate event_pr {pr}')
+        prs[pr] = proof['merge_commit_sha']
+    return prs
+
+
+def load_ledger(path, repo, to, pending_pr=None, pr_commits_path=None, ledger_tip=None):
+    """Bind PR keys using saved GitHub associations on the pinned ledger line, then index events.
+    Explicit SHA keys retain their historical meaning. Pending keys model a single-parent squash of the preview."""
     index, errors = {kind: {} for kind in EVENT_TYPES}, []
-    for n, e in read_jsonl(path, 'ledger'):
+    proofs, line, resolved = None, None, {}
+    for n, e in ledger_events(path):
         errs = event_errors(e, f'ledger line {n}')
         if errs:
             errors += errs
             continue
+        if 'event_commit' not in e:
+            pr = e['event_pr']
+            if proofs is None:
+                proof_path = Path(pr_commits_path) if pr_commits_path else Path(path).with_name('pr_commits.jsonl')
+                proofs = load_pr_commits(proof_path) if proof_path.exists() else {}
+                line = set(first_parent_line(repo, ledger_tip))
+            if pr in resolved:
+                commit = resolved[pr]
+            elif pr == pending_pr:
+                parents = git(repo, 'rev-list', '--parents', '-n', '1', to).decode().split()[1:]
+                if len(parents) != 2:
+                    raise MigrationError('pending PR requires a two-parent merge preview')
+                subjects = git(repo, 'log', '--first-parent', '--format=%s', parents[0]).decode().splitlines()
+                if pr in proofs or any(subject.endswith(f'(#{pr})') for subject in subjects):
+                    raise MigrationError(f'pending event_pr {pr} already exists in base history or PR associations')
+                commit = to
+            else:
+                commit = proofs.get(pr)
+                if commit is None:
+                    errors.append(f'ledger line {n}: event_pr {pr} has no verified PR association')
+                    continue
+                if commit not in line:
+                    errors.append(f'ledger line {n}: event_pr {pr} association is not on the pinned ledger first-parent line')
+                    continue
+                parents = git(repo, 'rev-list', '--parents', '-n', '1', commit).decode().split()[1:]
+                if len(parents) != 1:
+                    errors.append(f'ledger line {n}: event_pr {pr} association must name a single-parent squash commit')
+                    continue
+            resolved[pr] = commit
+            e = {**e, 'event_commit': commit}
         kind = e.get('event_type', 'removal')
         key = (e['old_table'], e['old_id'], e['event_commit']) if kind == 'removal' else (e['table'], e['id'], e['event_commit'])
         if key in index[kind]:
@@ -259,6 +368,30 @@ def load_ledger(path):
     if errors:
         raise MigrationError(f'{len(errors)} ledger problem(s):\n  ' + '\n  '.join(errors[:50]))
     return index['removal'], index['identity'], index['restoration']
+
+
+def load_baseline(path):
+    """Read one reviewed snapshot of unresolved keys; it is separate from historical scalar-change events."""
+    out, commit = {}, None
+    for n, e in read_jsonl(path, 'unresolved baseline'):
+        where = f'unresolved baseline {path} line {n}'
+        if not (key_ok(e) and type(e.get('schema_version')) is int and e['schema_version'] == 1
+                and e.get('outcome') == 'unresolved' and e.get('review_status') == 'reviewed'
+                and is_str(e.get('baseline_commit')) and SHA1.fullmatch(e['baseline_commit'])
+                and is_str(e.get('row_sha256')) and SHA256.fullmatch(e['row_sha256'])
+                and all(is_str(e.get(k)) and e[k].strip() for k in ('reason', 'decision_round'))
+                and isinstance(e.get('review'), dict)
+                and all(is_str(e['review'].get(k)) and e['review'][k].strip() for k in ('reason', 'reviewer'))
+                and isinstance(e.get('evidence'), list) and e['evidence'] and all(evidence_ok(x) for x in e['evidence'])):
+            raise MigrationError(f'{where}: needs a reviewed unresolved key, baseline_commit, row_sha256, '
+                                 'reason, decision_round, review and usable evidence')
+        key = (e['table'], e['id'], e['baseline_commit'])
+        if key in out or (commit is not None and commit != key[2]):
+            raise MigrationError(f'{where}: duplicate key or mixed baseline commits')
+        commit = key[2]
+        out[key] = {**e, 'event_type': 'identity', 'event_commit': commit, 'baseline': True,
+                    'automatic_redirect': False, 'targets': []}
+    return out
 
 
 def load_reserved(path):
@@ -419,6 +552,7 @@ def walk(repo, base, frm, to, on_commit, progress=None):
 
     if base == frm:
         start = at_from()
+    on_commit(0, base, None, [], [], {}, state)   # also permits a baseline at the root or exactly --from
     parent = base
     for i, (c, first_parent, *_) in enumerate(commits, 1):
         if first_parent != parent:
@@ -460,12 +594,16 @@ class Gate:
         self.errors, self.used, self.events, self.identity = [], set(), [], []
         self.added_at, self.restored, self.repurposed, self.remediated = {}, {}, {}, {}
         self.first_seen, self.removed_ever = {}, set()   # first addition in the walk, and every id the walk saw removed
+        self.prior_records = {}   # identity key -> (later representation index, target) validated against that commit
         self.latest_removal = {}   # key -> the commit of its latest disappearance in the walk
         self.timeline = defaultdict(list)   # key -> [(commit index, kind, event)] in history order
         self.at = defaultdict(list)         # commit -> [(kind, key, event)] for identity and restoration events
         for kind, events in (('identity', identities), ('restoration', self.restorations)):
             for key, e in events.items():
                 self.at[key[2]].append((kind, key, e))
+                later = recorded_later_of(e)
+                if later:
+                    self.at[later['event_commit']].append(('prior_representation', key, e))
 
     def __call__(self, i, c, parent, removed, added, before, state):
         """Check one commit after it has been applied to the namespace."""
@@ -510,12 +648,16 @@ class Gate:
                 continue
             k = key[:2]
             self.used.add(('identity',) + key)
+            row_before = before[k][1] if k in before else state.rows.get(k)
             if e['review_status'] != 'reviewed':
                 err(f'{k[0]} {k[1]} at {c[:12]}: the identity event is {e["review_status"]}, not reviewed')
-            elif k not in before or k not in state.rows or canon(before[k][1]) == canon(state.rows[k]):
+            elif k not in state.rows or k in added or (not e.get('decision_only')
+                    and (k not in before or canon(row_before) == canon(state.rows[k]))):
                 err(f'{k[0]} {k[1]} at {c[:12]}: identity event, but the record did not change there while keeping its id')
-            elif row_hash(before[k][1]) != e['before_row_sha256']:
+            elif row_hash(row_before) != e['before_row_sha256']:
                 err(f'{k[0]} {k[1]} at {c[:12]}: identity before_row_sha256 does not match')
+            elif e.get('decision_only') and row_hash(state.rows[k]) != e['after_row_sha256']:
+                err(f'{k[0]} {k[1]} at {c[:12]}: decision_only after_row_sha256 does not match')
             else:
                 for t in e['targets']:
                     if (t['table'], t['id']) not in state.rows:
@@ -525,7 +667,39 @@ class Gate:
                         err(f'{k[0]} {k[1]} at {c[:12]}: repurposed again while the repurpose at {self.repurposed[k][1][:12]} is '
                             'not remediated; retire the id with retires_repurpose first')
                     self.repurposed.setdefault(k, (i, c, e))
-                self.identity.append((k, c, e, before[k][1], state.rows[k], inside))
+                self.identity.append((k, c, e, row_before, state.rows[k], inside))
+                self.timeline[k].append((i, 'identity', e))
+
+        for kind, key, e in self.at.get(c, []):
+            if kind != 'prior_representation':
+                continue
+            self.used.add((kind,) + key)
+            later = e['prior_entity']['recorded_later']
+            t = later['target']
+            row = state.rows.get((t['table'], t['id']))
+            if c == e['event_commit'] or ('identity',) + key not in self.used:
+                err(f'{key[0]} {key[1]}: recorded_later must follow its identity event on the release line')
+            elif row is None or row_hash(row) != later['row_sha256']:
+                err(f'{key[0]} {key[1]}: recorded_later target missing or row_sha256 does not match at {c[:12]}')
+            elif (t['table'], t['id']) not in added and ((t['table'], t['id']) not in before
+                    or canon(before[(t['table'], t['id'])][1]) == canon(row)):
+                err(f'{key[0]} {key[1]}: recorded_later target did not change at {c[:12]}')
+            else:
+                self.prior_records[key] = (i, dict(t, relation='prior_identity'))
+
+    def baseline_at(self, i, c, entries, state):
+        """Validate an unchanged row at the reviewed snapshot, without inventing a scalar transition."""
+        for key, e in entries:
+            k = key[:2]
+            if k not in state.rows or row_hash(state.rows[k]) != e['row_sha256']:
+                self.errors.append(f'{k[0]} {k[1]}: baseline row missing or row_sha256 does not match at {c[:12]}')
+            elif k in self.removed_ever or k in self.reserved or k in self.repurposed:
+                self.errors.append(f'{k[0]} {k[1]}: baseline key was repurposed, removed or reserved')
+            elif key in self.identities:
+                self.errors.append(f'{k[0]} {k[1]}: baseline conflicts with an identity event at the same commit')
+            else:
+                row = state.rows[k]
+                self.identity.append((k, c, e, row, row, c in self.interval))
                 self.timeline[k].append((i, 'identity', e))
 
     def retirement_ok(self, i, c, k, e):
@@ -602,6 +776,16 @@ class Gate:
         self.timeline[k].append((i, 'restoration', e))
         return True
 
+    def identity_at(self, key, at):
+        """The latest identity decision on a key at or before the given index (the same commit included), or None."""
+        latest = None
+        for i, kind, e in self.timeline.get(key, []):
+            if i > at:
+                break
+            if kind == 'identity':
+                latest = e
+        return latest
+
     def next_event(self, key, after):
         """The first event on a key at a commit later than the given index, or None."""
         events = self.timeline.get(key, [])
@@ -612,7 +796,8 @@ class Gate:
 def resolve_targets(gate, final, targets, index, auto):
     """Follow targets forward in history to what stands for them at --to, without recursion. A removal passes to its
     targets; a repurpose passes to the entity the number used to denote (prior_identity), never redirecting
-    automatically; an unresolved identity keeps the key but ends any automatic redirect. A removal followed by a
+    automatically; an unresolved identity, at or before the step that enters a key or later, keeps the key but ends
+    any automatic redirect. A removal followed by a
     restoration of the same id continues at that id (relation restored), never automatically. A path that ends in a
     removal with no successor is reported with that outcome. Every step moves to a strictly later event, so each path
     ends; identical results are listed once. Branching histories can multiply paths, so more than EXPANSION_LIMIT steps
@@ -633,6 +818,8 @@ def resolve_targets(gate, final, targets, index, auto):
                                  'check the ledger for an unintended fan-out of split events')
         t, at, relations, redirect = stack.pop()
         key = (t['table'], t['id'])
+        if redirect and (gate.identity_at(key, at) or {}).get('outcome') == 'unresolved':
+            redirect = False   # a key still unresolved where the chain enters it is never an automatic redirect
         nxt = gate.next_event(key, at)
         if nxt is None:
             if key in final:
@@ -651,11 +838,25 @@ def resolve_targets(gate, final, targets, index, auto):
         elif kind == 'restoration':
             stack.append((t, i, relations, False))
         elif e['outcome'] == 'repurpose':
+            if not e['targets']:
+                later = gate.prior_records.get((e['table'], e['id'], e['event_commit']))
+                if later:
+                    stack.append((later[1], later[0], relations + ['prior_identity'], False))
+                else:
+                    emit({'table': None, 'id': None, 'end': e['prior_entity']['status'], 'prior_entity': e['prior_entity'],
+                          'relations': relations + ['prior_identity'], 'automatic_redirect': False})
             for t2 in reversed(e['targets']):
                 stack.append((t2, i, relations + ['prior_identity'], False))
         else:
             stack.append((t, i, relations, redirect and e['outcome'] != 'unresolved'))
     return out
+
+
+def prior_targets(gate, final, event, index):
+    """Resolve the original entity from its historical targets or its evidenced later representation."""
+    later = gate.prior_records.get((event['table'], event['id'], event['event_commit']))
+    targets, at = ([later[1]], later[0]) if later else (event['targets'], index)
+    return resolve_targets(gate, final, targets, at, False)
 
 
 def delta(field, b, a):
@@ -698,8 +899,10 @@ def build(start, state, gate, order):
         back, fix = gate.next_event(k, order[c]), gate.remediated.get((k, c))
         if fix:
             ri, rc, rep, _ = fix
-            entry.update(repurposed_at=rc, current_targets=resolve_targets(gate, final, rep['targets'], ri, False),
+            entry.update(repurposed_at=rc, current_targets=prior_targets(gate, final, rep, ri),
                          later_entity_targets=resolve_targets(gate, final, e['targets'], order[c], False))
+            if 'prior_entity' in rep:
+                entry['prior_entity'] = rep['prior_entity']
         elif back and back[1] == 'restoration' and back[2]['retirement_commit'] == c:   # the same entity came back later
             entry.update(restored_at=back[2]['event_commit'], current_targets=resolve_targets(
                 gate, final, [{'table': k[0], 'id': k[1], 'relation': 'restored'}], back[0], False))
@@ -708,7 +911,7 @@ def build(start, state, gate, order):
         removed.append(entry)
     retirement_of = {(k, fix[1]): (c, fix[3]) for (k, c), fix in gate.remediated.items()}
     identity = []
-    for k, c, e, before, after, inside in gate.identity:
+    for k, c, e, before, after, inside in sorted(gate.identity, key=lambda x: (order[x[1]], x[0])):
         fix = retirement_of.get((k, c))
         if not inside and not (fix and fix[0] in gate.interval):
             continue   # an earlier decision is listed again only when its id is retired in this interval
@@ -719,7 +922,7 @@ def build(start, state, gate, order):
                            'replacement_kind': r['retires_repurpose']['replacement_kind'],
                            'later_entity_targets': resolve_targets(gate, final, r['targets'], order[rc], False)}
         identity.append({**e, 'before': before, 'after': after, 'event_before_from': not inside, 'present_at_to': k in final,
-                         'remediation': remediation, 'current_targets': resolve_targets(gate, final, e['targets'], order[c], False)})
+                         'remediation': remediation, 'current_targets': prior_targets(gate, final, e, order[c])})
     rows = []
     for r in removed:
         b, t = r['before'], r['old_table']
@@ -837,23 +1040,48 @@ def place_commits(repo, frm, to, commits):
     return interval, place
 
 
-def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None):
+def recorded_later_of(e):
+    """The recorded_later binding of a reviewed event, or None. Held placeholders are only checked for their core
+    fields, so their prior_entity may be malformed and is never read."""
+    prior = e.get('prior_entity') if e.get('review_status') == 'reviewed' else None
+    later = prior.get('recorded_later') if isinstance(prior, dict) else None
+    return later if isinstance(later, dict) and isinstance(later.get('event_commit'), str) else None
+
+
+def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=lambda m: None, baseline_path=None,
+             pending_pr=None, pr_commits_path=None, ledger_tip=None):
     """Validate the inputs, walk the history, check every event and write the files; raises MigrationError on any
     problem in the inputs or the history, OutputError when the files cannot be written. Events before --from are
     checked by the same walk, which then starts at the first parent of the oldest of them."""
-    removals, identities, restorations = load_ledger(ledger)
-    reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
+    if pending_pr is not None and not positive_id(pending_pr):
+        raise MigrationError('pending_pr must be a positive integer')
     repo = top_level(repo)
     frm, to = resolve(repo, frm_ref), resolve(repo, to_ref)
+    removals, identities, restorations = load_ledger(ledger, repo, to, pending_pr, pr_commits_path,
+                                                     resolve(repo, ledger_tip or 'HEAD'))
+    reserved, meta = load_reserved(reserved_path), load_meta(meta_path)
+    baseline_path = Path(baseline_path) if baseline_path is not None else Path(ledger).with_name('unresolved_baseline.jsonl')
+    baseline = load_baseline(baseline_path)
     every = {k[2] for d in (removals, identities, restorations) for k in d}
+    every.update(k[2] for k in baseline)
+    every.update(later['event_commit'] for e in identities.values() if (later := recorded_later_of(e)))
     interval, place = place_commits(repo, frm, to, every)
     applies = lambda d: {k: e for k, e in d.items() if place[k[2]] != 'after'}   # a later release's events wait for it
+    for e in applies(identities).values():
+        later = recorded_later_of(e)
+        if later and not on_line_after(repo, later['event_commit'], e['event_commit']):
+            raise MigrationError(f'{e["table"]} {e["id"]}: recorded_later must follow its identity event on the release line')
     base, earlier = frm, {c for c in every if place[c] == 'before'}
     if earlier:
         position = {c: n for n, c in enumerate(first_parent_line(repo, frm))}
-        base = git(repo, 'rev-parse', f'{max(earlier, key=position.get)}^1').decode().strip()
+        oldest = max(earlier, key=position.get)
+        parents = git(repo, 'rev-list', '--parents', '-n', '1', oldest).decode().split()
+        base = parents[1] if len(parents) > 1 else oldest
         log(f'checking events at {len(earlier)} earlier commits by walking from {base[:12]}')
     gate = Gate(applies(removals), applies(identities), applies(restorations), reserved, interval, repo)
+    baseline_at = defaultdict(list)
+    for k, e in applies(baseline).items():
+        baseline_at[k[2]].append((k, e))
     order, retired_at_from = {}, set(reserved)   # replaced at --from when the walk starts earlier
     log(f'walking to {to[:12]}; {len(interval)} commits since --from {frm[:12]}')
 
@@ -861,6 +1089,7 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
         """Remember each commit's position, run the gate on it, and note what is retired at --from."""
         order[c] = i
         gate(i, c, *rest)
+        gate.baseline_at(i, c, baseline_at.get(c, []), rest[-1])
         if c == frm:
             retired_at_from.clear()
             retired_at_from.update(gate.retired | (gate.reserved - gate.restored.keys()))
@@ -872,6 +1101,10 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
     errors += [f'{k[0]} {k[1]}: {kind} event at {k[2][:12]} was not checked; the record did not change at that commit'
                for kind, d in (('identity', gate.identities), ('restoration', gate.restorations))
                for k in sorted(d) if (kind,) + k not in gate.used]
+    errors += [f'{k[0]} {k[1]}: recorded_later representation was not checked'
+               for k, e in gate.identities.items() if (later := recorded_later_of(e))
+               and place[later['event_commit']] != 'after'
+               and ('prior_representation',) + k not in gate.used]
     errors += [f'{k[0]} {k[1]} was repurposed at {c[:12]} and still denotes the other entity at --to; retire it with its earlier '
                f'identity and give that entity a fresh or proved existing replacement id'
                for k, (_, c, _) in sorted(gate.repurposed.items()) if k in state.rows]
@@ -879,7 +1112,9 @@ def generate(repo, frm_ref, to_ref, ledger, reserved_path, meta_path, out, log=l
         raise MigrationError(f'{len(errors)} problem(s):\n  ' + '\n  '.join(errors[:50]) + ('\n  ...' if len(errors) > 50 else ''))
     content = build(start, state, gate, order)
     head = {'migration_format_version': FORMAT_VERSION, 'release': meta, 'from': {'ref': frm_ref, 'sha': frm},
-            'to': {'ref': to_ref, 'sha': to}, 'first_parent_commits': len(interval), 'managed_fields_excluded': sorted(MANAGED)}
+            'to': {'ref': to_ref, 'sha': to}, 'first_parent_commits': len(interval), 'managed_fields_excluded': sorted(MANAGED),
+            'unresolved_baseline': {'sha256': hashlib.sha256(Path(baseline_path).read_bytes()).hexdigest(),
+                                    'keys': len(baseline), 'commit': next(iter(baseline))[2] if baseline else None}}
     return content, write(out, *content, head)
 
 
@@ -888,7 +1123,11 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     p.add_argument('--from', dest='frm', required=True, help='commit of the previous successful published snapshot')
     p.add_argument('--to', required=True, help='commit of this release candidate')
+    p.add_argument('--pending-pr', type=int, help='bind this PR number to --to (PR merge preview only)')
+    p.add_argument('--pr-commits', help='saved GitHub PR associations (default: pr_commits.jsonl beside ledger)')
+    p.add_argument('--ledger-tip', help='pinned ledger history tip, including later events (default: HEAD)')
     p.add_argument('--ledger', required=True, help='reviewed events, one JSON object per line (migrations/events.jsonl)')
+    p.add_argument('--baseline', help='reviewed unresolved snapshot (default: unresolved_baseline.jsonl beside --ledger)')
     p.add_argument('--reserved', required=True, help='ids retired before --from, {"table","id"} per line')
     p.add_argument('--meta', required=True, help='release metadata JSON: versions and notices')
     p.add_argument('--out', required=True, help='folder for the release files')
@@ -896,7 +1135,8 @@ def main(argv=None):
     a = p.parse_args(argv)
     try:
         content, sums = generate(a.repo, a.frm, a.to, a.ledger, a.reserved, a.meta, a.out,
-                                 log=lambda m: print(f'[INFO] {m}', file=sys.stderr))
+                                 log=lambda m: print(f'[INFO] {m}', file=sys.stderr), baseline_path=a.baseline,
+                                 pending_pr=a.pending_pr, pr_commits_path=a.pr_commits, ledger_tip=a.ledger_tip)
     except MigrationError as err:
         print(f'[ERROR] {err}\nFix the ledger, reserved ids or source named above and run again; nothing was written.', file=sys.stderr)
         return 1

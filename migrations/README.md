@@ -17,9 +17,45 @@ it claims nothing beyond that.
 | `removed_ids.jsonl` | One line per removal in the interval, ids created and removed in between included. Each line has the reviewed event, the removed row (`before`), `present_at_from`, `present_at_to` and `current_targets`, which follows later removals to the records that exist in this release. The removal of a repurposed id also has `repurposed_at` and `later_entity_targets` (see below). `restored_at` marks an id the same entity got back later. |
 | `removed_ids.csv` | v4.0's columns `record, old_id, name, country_code, state_code, outcome, new_table, new_id, source`, then `relation, automatic_redirect, event_commit`. One row per current target. A removal with no successor has one row with empty `new_table` and `new_id`. Rows for `later_entity_targets` follow, with a `relation` starting `later_entity>` and `automatic_redirect` `no`. |
 | `added_ids.jsonl` | Every id present in this release and not in the earlier one: table, id, name, file and the commit that added it. An id a reviewed restoration brought back also has `restored` (its event and retirement commits). |
-| `identity_changes.jsonl` | Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A repurpose decided before `--from` is listed again, with `event_before_from: true`, when the removal that retires it (`retires_repurpose`) is in this interval; other earlier decisions are not repeated. |
+| `identity_changes.jsonl` | The reviewed unresolved snapshot (`baseline: true`) when its anchor is in the interval, then later identity decisions in first-parent order. Reviewed identity decisions on ids that kept their number at the time, with the row before and after and the current targets. A repurpose has `remediation`: the removal that retired the id and the other entity's replacement. A repurpose decided before `--from` is listed again, with `event_before_from: true`, when the removal that retires it (`retires_repurpose`) is in this interval; other earlier decisions are not repeated. |
 | `changed_fields.jsonl` | One line per changed field of a record present in both releases. Each line gives `before` and `after` as typed JSON (`1`, `1.0` and `true` differ), plus `before_present` and `after_present`, so a missing field and a null one can be told apart. `translations` is compared per language (`translations.de`), or as a whole when one side is not an object. By policy, `created_at`, `updated_at` and `flag` are left out: they are bookkeeping, not facts about the place (the importer keeps the values a file gives and fills missing ones). |
-| `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (2), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
+| `release_manifest.json` | The release metadata (data, contract, policy and data-schema versions, notices), the two commit SHAs, the migration format version (3), totals per table at both ends, and the removed, added and changed counts, which reconcile (`from_total - removed + added = to_total`). It also has counts per field path and the SHA-256 of every file above. |
+
+## Reviewed unresolved baseline
+
+`unresolved_baseline.jsonl` is the reviewed inventory of every retained unresolved key at `baseline_commit`,
+including rows unchanged since v4.0. It is an input, separate from `events.jsonl`: a snapshot disclosure does not
+claim a scalar change happened at that commit. Each line has `schema_version: 1`, `table`, `id`, a full
+`baseline_commit`, canonical full `row_sha256`, `outcome: "unresolved"`, `reason`, `decision_round`,
+`review_status: "reviewed"`, `review` (reason and reviewer), and nonempty `evidence` with the ledger's URL/manifest
+rules. Audit manifest pointers refer to the retained csc-data-audit evidence bundle; their SHA-256 identifies the
+exact bytes. The generator checks their shape without fetching sources. Review establishes inventory completeness;
+Git validates the keys and guards, not the semantic adequacy of the evidence.
+
+The default input is `unresolved_baseline.jsonl` beside `--ledger`; `--baseline PATH` overrides that location.
+The file is required; an empty inventory is valid only when review found no unresolved keys. All entries share one
+anchor. Duplicate keys, malformed provenance, a missing/stale row at the anchor, a key already repurposed, removed
+or reserved, an off-line anchor, or a conflicting identity event at that commit fail before output is written.
+At the initial v5 pin every baseline key must remain present at `--to`; later reviewed removals and repurposes may
+retire it through the normal ledger gates. Keep the baseline immutable and ship it with the generator and ledger.
+
+The first cumulative v4-to-v5 file carries all baseline entries with `event_type: "identity"`, `baseline: true`,
+`event_commit` equal to the reviewed anchor, identical `before`/`after` rows, no targets and no redirect. Its
+`row_sha256` is a snapshot guard, not a `before_row_sha256` claim about an invented transition. Migration format
+version 3 distinguishes this addition. The manifest records the baseline's SHA-256, anchor and key count.
+The output is ordered by first-parent commit, then key; a step interval excludes decisions at or before `--from`.
+A future anchor waits for its release. Historical guards are still checked when the anchor precedes `--from`.
+
+Consumers start from the verified v5 baseline, apply later identity decisions in order and retain the latest outcome
+per `(table, id)`; apply reviewed removals as retirements. An omitted key stays unresolved until an explicit later
+decision resolves it or a reviewed removal retires it. Category-field admission alone does not replace an explicit
+unresolved identity decision. The 117 listed rename keys and 12 Russian rayon mappings remain publication holds;
+including them in this inventory does not approve their transfer assertions or close those holds.
+
+A later review can resolve identity without editing the data: append a normal reviewed identity event with
+`decision_only: true`, `before_row_sha256` and `after_row_sha256` guarding the unchanged row at that review commit.
+Only `classification`, `dual_role` and `unresolved` allow this form; a repurpose still requires a real transition
+and its existing remediation checks. Evidence, review, target and history checks remain mandatory.
 
 ## Outcomes and relations
 
@@ -27,7 +63,7 @@ it claims nothing beyond that.
 |---|---|---|---|
 | `merged_same_entity` | A proved duplicate of the same place, kept under another id in the same table | exactly one (`merged_same_entity`) | only when the event says `automatic_redirect: true` |
 | `administrative_seat` | A row for an administrative unit, removed; the town where the unit's seat is is a different place | the seat town (`administrative_seat`), and the unit's own record elsewhere (`moved_dataset`) when one exists | no |
-| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table | no |
+| `moved_dataset` | The record now lives in another table (e.g. a district moved from cities to counties) | the new record (`moved_dataset`), in another table; an independently reviewed seat may also be listed (`administrative_seat`, cities to cities only). The unit target remains required | no |
 | `territorial_successor` | A unit replaced after a merger or reform | the successor (`territorial_successor`) | no |
 | `split_into` | A unit split into several | two or more (`split_into`) | no |
 | `namespace_replaced`, `invalid_record`, `no_successor` | No successor, for the reviewed reason given | `[]` | no |
@@ -41,10 +77,27 @@ changed while keeping the number (the four outcomes of decisions_4_final.md):
 - `classification`: the same entity, with its category or depth corrected. No targets.
 - `dual_role`: the row stands for a place and its unit. The target, if any, is the unit's own record (`moved_dataset`).
 - `repurpose`: the number came to denote another entity. The targets are where the earlier entity is now
-  (`prior_identity`). A repurposed id may not remain at `--to`. It must be retired by a later reviewed removal that
+  (`prior_identity`), which must exist at the event commit. If the earlier entity has no separate record there,
+  use `targets: []` with an explicit `prior_entity`: `status` is `ended` (the entity ceased to exist) or `unrecorded`
+  (it has no separate record), `reason` explains the finding, and `evidence` is a non-empty list with the same
+  URL/manifest rules as event evidence. This declares absence of a record at conversion, not uncertainty about the original
+  identity, and makes no claim that the later entity is its territorial successor. For example:
+  `"prior_entity": {"status": "ended", "reason": "District tier ended on 2025-07-01; no separate original record",
+  "evidence": [{"url": "https://example.org/reform-instrument"}]}`.
+  If an original entity was unrecorded at conversion but gained a separate representation later, its declaration
+  may include `recorded_later: {"event_commit": "<full SHA>", "target": {"table": "cities", "id": 123},
+  "row_sha256": "<full row hash>"}`. The commit must follow the identity event on the same first-parent line;
+  the target must be added or change there and match the full hash. The declaration needs evidence for that original identity,
+  not just a matching item. Resolution starts at that later representation and follows subsequent events; it stays
+  unrecorded for a release before that commit. `ended` cannot use this field.
+  A nonempty `prior_identity` mapping and `prior_entity` are mutually exclusive; other outcomes cannot use it.
+  Identity output retains the declaration; the remediation removal carries it alongside empty `current_targets`
+  unless `recorded_later` applies. With no applicable later representation, a target chain entering such a repurpose
+  ends with `end: "ended"` or `"unrecorded"` and the declaration.
+  A repurposed id may not remain at `--to`. It must be retired by a later reviewed removal that
   says so in `retires_repurpose` (below), before it can be repurposed again: a second repurpose of an id whose first is
   not yet remediated is refused. The old id then keeps its earlier meaning: its `current_targets` are the
-  repurpose's `prior_identity`, and the entity the number came to denote is listed apart in `later_entity_targets`.
+  repurpose's `prior_identity` (or its `recorded_later` representation), and the entity the number came to denote is listed apart in `later_entity_targets`.
   Neither redirects automatically.
 - `unresolved`: what the row first denoted is not established. No targets.
 
@@ -83,6 +136,25 @@ There is one JSON object per line, cumulative across releases. A removal event h
  "evidence": [{"manifest": "research/<manifest>.json", "sha256": "<its SHA-256>"}]}
 ```
 
+For a bulk removal cohort whose other fields are identical, use one `removal_batch` line to avoid
+repeating review and evidence thousands of times. Its schema is the ordinary removal schema above, except
+`event_type` is `"removal_batch"` and the three per-row keys are moved into `rows`:
+
+```json
+{"event_type": "removal_batch", "schema_version": 1, "old_table": "postcodes",
+ "event_pr": 2055, "before_commit": "<full parent SHA>", "outcome": "namespace_replaced",
+ "automatic_redirect": false, "targets": [], "review_status": "reviewed",
+ "review": {"reason": "...", "reviewer": "..."}, "evidence": [{"url": "https://example.org/source"}],
+ "rows": [{"old_id": 123, "before_path": "contributions/postcodes/ES.json", "before_row_sha256": "<SHA-256>"}]}
+```
+
+`rows` must be a nonempty list with distinct `old_id` values. Every row has exactly `old_id`, `before_path`
+and `before_row_sha256`; none may appear in the shared fields. Batches represent removals only, never identity
+or restoration events. Each row expands to an ordinary removal before validation, including PR resolution and
+pending mode, history guards, targets, retirement and duplicate checks. Published files are byte-identical to
+those from the expanded events (without an explicit `event_type`). Diagnostics use one-based row indexes;
+row 0 identifies malformed shared fields or the row list. Use separate cohorts when any shared field differs.
+
 `before_row_sha256` is the SHA-256 of the row as UTF-8
 `json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(',', ':'))`. An event may also carry the full
 `before` row, which must hash to that value. Other fields (`event_pr_url`, `effective_date`, ...) are passed through.
@@ -120,6 +192,92 @@ A restoration event:
 A `held` event is a placeholder. It fails the release wherever it applies, before `--from` as well as inside the
 interval; only a later release's events are ignored.
 
+## A data PR carries its own events
+
+Use a full `event_commit` SHA (existing ledgers keep working), or omit it and use a positive integer
+`event_pr`, for removals, identity decisions and restorations alike. Each PR key requires a saved GitHub
+association, `{"event_pr": 2050, "merge_commit_sha": "<full SHA>"}`, in `--pr-commits` (default:
+`pr_commits.jsonl` beside the ledger). Missing, duplicate or malformed associations fail. The associated commit must
+have exactly one parent and belong to the pinned ledger's first-parent line. Titles never establish an association:
+merges, cherry-picks, reverts and edited suffixes cannot substitute for GitHub's `merge_commit_sha`.
+The PR check and export wrapper fetch each PR-only key from GitHub's pulls API, require it to be merged, and refuse
+any disagreement with saved associations in `migrations/pr_commits.jsonl` (initially empty). They need read access
+only. The export saves the verified map as `pr_commits.jsonl` inside every migration archive, covered by the archive
+checksum, so the same inputs can be replayed offline with `--pr-commits <saved-map>`; use trusted committed or
+exported evidence for offline runs. Do not invent mappings from titles.
+`--ledger-tip` pins the authoritative ledger history (default: HEAD, resolved once); it may include events after
+`--to`. Such later events, including held events, wait for their release. For historical regeneration, supply the
+ledger's pinned tip and its saved map, rather than searching arbitrary branches. Explicit `event_commit` keys
+always take precedence, including in
+pending mode: existing events may retain `event_pr` as metadata without changing their meaning. Generated JSONL and CSV always record the resolved full
+`event_commit` SHA; JSONL also retains `event_pr`. Reference fields such as `retirement_commit`,
+`retires_repurpose.identity_event_commit` and `recorded_later.event_commit` still require full historical SHAs.
+The immutable unresolved baseline continues to use `baseline_commit`.
+
+1. Open the data PR to obtain its number. Append reviewed events to `migrations/events.jsonl` in that same PR,
+   replacing each new event's `event_commit` with `event_pr: <that number>` (a JSON integer). Include the evidence,
+   review, outcome and targets as usual; no follow-up ledger PR is needed after squash merge.
+2. For a removal, set `before_commit` to the merge preview's first parent (the current base-branch SHA),
+   `before_path` to the row's original path, and `before_row_sha256` to its full canonical row hash at that parent.
+   Refresh these guards when the base changes. Identity and restoration hashes keep their existing rules.
+3. Finalise every new row's id before the check: id-less rows are allowed in intermediate history, not at `--to`.
+   All existing review, target, retirement, repurpose, baseline and restoration gates remain in force. A repurpose
+   that still leaves the id denoting the other entity at the preview is refused; PR keys do not waive remediation.
+4. **Merge a PR that carries PR-keyed events with "Squash and merge".** The association must be a single-parent
+   commit that holds the whole change: "Create a merge commit" gives a two-parent commit, and "Rebase and merge"
+   spreads the change over several commits, so either leaves the events unresolvable and the next export refuses
+   until the ledger is fixed. Nothing wrong is published; releases stop. Allowing only squash merging in the
+   repository settings removes the risk.
+5. The `Ledger migrations` PR job checks the merge preview with `--pending-pr <number>`. Only events naming that
+   number bind directly to `--to`; other PR keys still require verified associations. Pending mode requires a
+   two-parent preview and refuses a PR already present in the saved associations or the base's historical suffixes.
+   CI also checks that the PR is still open and that the preview's second parent is the PR's current head (GitHub's
+   live merge_commit_sha is not compared: it moves when the base advances). The preview's tree and first parent are
+   the eventual squash inputs; all data gates run unchanged. After the merge, GitHub's merged SHA becomes the
+   association; the title plays no part, so editing it is harmless. Without pending mode an unmerged PR key fails. Use pending mode only for a merge preview, never to generate published release files.
+
+For example, a reviewed no-successor removal in PR 2050 uses this event shape (replace the guards and provenance):
+
+```json
+{"schema_version": 1, "old_table": "cities", "old_id": 123, "event_pr": 2050,
+ "before_commit": "<full base SHA>", "before_path": "contributions/cities/XX.json",
+ "before_row_sha256": "<canonical full-row SHA-256>", "outcome": "no_successor", "targets": [],
+ "automatic_redirect": false, "review_status": "reviewed",
+ "review": {"reason": "<reviewed finding>", "reviewer": "<reviewer>"},
+ "evidence": [{"url": "https://example.org/source"}]}
+```
+
+The read-only [`ledger-migrations.yml`](../.github/workflows/ledger-migrations.yml) reports `Ledger migrations`
+on every PR, including drafts. A complete local Git diff skips only the expensive validation step when no path
+under `contributions/`, `migrations/`, `bin/scripts/release/` or the workflow itself changed; docs/export-only PRs
+still receive a successful required status. Relevant PRs fetch full history and tags and compare v4.0 to the merge
+preview. CI and export share source-metadata validation before adding `data_version`, derived from the validated
+contract major (`5-candidate` for contract 5). The job publishes and comments nothing. Require `Ledger migrations`
+in branch protection/rulesets. Its single walk takes about two minutes and 3.2 GB, with a 15-minute timeout;
+newer runs cancel older runs for the same PR.
+
+To reproduce a PR check in a full clone with `gh` signed in, prepare the same verified inputs, then run the generator:
+
+```bash
+export PENDING_PR=2050 MERGE_SHA=<merge-preview-sha>
+python3 - <<'PYCODE'
+import json, os, sys
+from pathlib import Path
+sys.path.insert(0, 'bin/scripts/release')
+from release_migrations import github_pr_commits, load_source_meta
+meta = load_source_meta('migrations/release_meta.json')
+meta['data_version'] = f"{meta['contract_version']}-candidate"
+Path('/tmp/ledger-meta.json').write_text(json.dumps(meta))
+Path('/tmp/ledger-prs.jsonl').write_text(github_pr_commits(
+    Path.cwd(), 'migrations/events.jsonl', 'migrations/pr_commits.jsonl',
+    int(os.environ['PENDING_PR']), os.environ['MERGE_SHA']))
+PYCODE
+python3 bin/scripts/release/migrations.py --from v4.0 --to "$MERGE_SHA" --pending-pr "$PENDING_PR" \
+  --ledger-tip "$MERGE_SHA" --pr-commits /tmp/ledger-prs.jsonl \
+  --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl \
+  --meta /tmp/ledger-meta.json --out <scratch-output-folder>
+```
+
 ## The reserved ids
 
 `--reserved` names every id that left the data before `--from` and must never return, as `{"table", "id"}` per
@@ -135,6 +293,7 @@ malformed line in either file stops the import.
 
 It exits 1 and writes nothing when any of these happens:
 
+- A PR-keyed event has no verified association to a single-parent commit on the pinned ledger line, or a pending PR already occurs in base history.
 - An event's commit is not on the release line: inside the interval, before `--from` on its first-parent history,
   or after `--to` on a later release's (also when `--to` is the first commit).
 - A removal at any first-parent commit between the two releases has no reviewed event for that commit.

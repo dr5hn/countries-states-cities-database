@@ -175,7 +175,9 @@ To edit JSON directly:
 2. Edit files under `contributions/cities/`, `contributions/states/`, `contributions/countries/`, `contributions/counties/`, or `contributions/postcodes/`.
 3. **Required** for new cities: `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude`. **Optional**: `timezone`, `wikiDataId`, `native`.
 4. **Omit** `id`, `created_at`, `updated_at`, `flag` — auto-managed on import.
-5. Open a pull request with a clear data source.
+5. Open a pull request with a clear data source. If it removes, repurposes or restores ids, include its reviewed
+   [ledger events keyed by `event_pr`](migrations/README.md#a-data-pr-carries-its-own-events) in that same PR.
+   The `Ledger migrations` check validates the merge preview; all ids must be final at that preview.
 
 ```json
 {

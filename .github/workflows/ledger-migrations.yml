@@ -1,0 +1,72 @@
+name: Ledger migration check
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+# One cumulative walk per PR at a time (about 2 minutes and 3.2 GB from v4.0).
+concurrency:
+  group: ledger-migrations-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  ledger-migrations:
+    name: Ledger migrations
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.sha }} # merge preview, whose first parent is the base
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check changed paths
+        id: paths
+        run: |
+          python3 - <<'PY'
+          import os
+          import subprocess
+          from pathlib import Path
+          paths = subprocess.check_output(['git', 'diff', '--name-only', '-z', 'HEAD^1', 'HEAD']).split(b'\0')
+          relevant = any(p.startswith((b'contributions/', b'migrations/', b'bin/scripts/release/'))
+                         or p == b'.github/workflows/ledger-migrations.yml' for p in paths)
+          with Path(os.environ['GITHUB_OUTPUT']).open('a') as out:
+              out.write(f'relevant={str(relevant).lower()}\n')
+          print('Ledger walk required' if relevant else 'No relevant changes; ledger check passed')
+          PY
+
+      - name: Validate the candidate ledger
+        if: steps.paths.outputs.relevant == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PENDING_PR: ${{ github.event.number }}
+          MERGE_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+          sys.path.insert(0, 'bin/scripts/release')
+          from release_migrations import github_pr_commits, load_source_meta
+          meta = load_source_meta('migrations/release_meta.json')
+          meta['data_version'] = f"{meta['contract_version']}-candidate"
+          temp = Path(os.environ['RUNNER_TEMP'])
+          (temp / 'release_meta.json').write_text(json.dumps(meta))
+          (temp / 'pr_commits.jsonl').write_text(github_pr_commits(
+              Path.cwd(), 'migrations/events.jsonl', 'migrations/pr_commits.jsonl',
+              int(os.environ['PENDING_PR']), os.environ['MERGE_SHA']))
+          PY
+          python3 bin/scripts/release/migrations.py \
+            --from v4.0 --to "$MERGE_SHA" --pending-pr "$PENDING_PR" --ledger-tip "$MERGE_SHA" \
+            --ledger migrations/events.jsonl --reserved migrations/reserved_ids.jsonl \
+            --pr-commits "$RUNNER_TEMP/pr_commits.jsonl" \
+            --meta "$RUNNER_TEMP/release_meta.json" --out "$RUNNER_TEMP/ledger-migrations"
