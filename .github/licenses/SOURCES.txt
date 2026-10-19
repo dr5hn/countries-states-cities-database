@@ -1176,3 +1176,5 @@ Per-record source files, editions, URLs, retrieval times, hashes and methods:
 .github/fixes-docs/ledgers/us_counties_v5.jsonl ; retained acquisition bytes in the maintainer audit work bundle.
 
 New England town additions (2026-10): US Census Bureau 2024 Gazetteer, TIGERweb ACS2024 and 2020 Census PL 94-171; public domain US Government work (17 USC 105). Points copied from INTPTLAT/INTPTLONG; decimal formatting only. Per-record provenance: .github/fixes-docs/ledgers/ne_towns_v5.jsonl.
+
+US place categories and 2020 populations (us_places_v5x_build_2): US Census Bureau 2024 Gazetteer and TIGERweb ACS2024; 2010 Gazetteer for legacy identity continuity; 2020 Census PL94-171 geography POP100 (total resident population); USGS GNIS populated places. Census/GNIS are public domain US federal works, 17 USC 105. Own-item Wikidata P590/P774/P31 identity evidence is CC0. Puerto Rico held pending municipio/town identity proof. No points copied or moved. Exact source features, URLs, editions, retrieval dates, SHA-256, binding methods and holds: .github/fixes-docs/ledgers/us_places_v5x.jsonl; retained inputs in the csc-data-audit run.
