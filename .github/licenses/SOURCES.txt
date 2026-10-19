@@ -1208,3 +1208,14 @@ Source: Northern Ireland Statistics and Research Agency (www.nisra.gov.uk). Cont
 Wikidata own-item identity evidence is CC0 1.0. No coordinates or identifiers are changed. Selected counts are copied without arithmetic adjustments; withheld values remain unchanged.
 Open Government Licence v3.0: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 Per-record binding and source dates/hashes: .github/fixes-docs/ledgers/gb_pop_v5x.jsonl and gb_pop_v5x.sources.json.
+
+AU 2021 Census population update (au_pop_v5x)
+Based on Australian Bureau of Statistics data. ABS data used with permission from the Australian Bureau of Statistics.
+Source: Australian Bureau of Statistics, 2021 Census of Population and Housing, General Community Profile (G01, Tot_P_P), Urban Centres and Localities (UCL) and Suburbs and Localities (SAL), Census date 10 August 2021; ASGS Edition 3 UCL 2021 and SAL 2021 digital boundaries (GDA2020). Census packs and UCL boundaries accessed 19 October 2026; archived SAL boundaries captured 9 October 2026.
+https://www.abs.gov.au/census/find-census-data/datapacks
+https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026
+Retained newer counts: Australian Bureau of Statistics, Regional population 2024-25, 30 June 2025 preliminary estimated resident population, 2025 LGA boundaries; archive captured 11 October 2026.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+https://www.abs.gov.au/website-privacy-copyright-and-disclaimer
+Modifications: CSC selects and joins published total-person counts to existing records using identity and boundary evidence, adds the reference year and retains more recent verified counts. No counts are interpolated or recomputed. This processing and the identity decisions are CSC work; ABS does not endorse this database or these modifications. ABS logos, coats of arms and third-party materials are excluded.
+Identity support: Wikidata structured statements, CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/); per-file original capture dates and SHA-256 hashes are in au_pop_v5x.sources.json. Failed live requests are not evidence.
