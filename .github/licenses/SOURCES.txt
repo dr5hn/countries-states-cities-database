@@ -1262,3 +1262,23 @@ Licence: Government of Japan Standard Terms of Use 2.0 (compatible with CC BY 4.
 
 INSEE: Populations de référence 2023 (published 18 December 2025; effective 1 January 2026), population municipale, geography 1 January 2025. Source: https://www.insee.fr/fr/statistiques/8680726. Licence Ouverte / Open Licence 2.0 (Etalab), https://www.etalab.gouv.fr/licence-ouverte-open-licence/.
 Modifications: selected and linked population municipale and its reference year to existing rows for the same entity; conflicting identities, mergers/splits after the stored year and sections without a count held. COG 2026 (INSEE, same licence), geo.api.gouv.fr (Licence Ouverte 2.0), and Wikidata (CC0) used for identity checks. Per-record review: .github/fixes-docs/ledgers/fr_pop_v5x.jsonl and fr_pop_v5x.sources.json.
+
+Croatian Census 2021 population corrections (hr_pop_v5x)
+Provider: Croatian Bureau of Statistics (DZS / Državni zavod za statistiku).
+Dataset: Statistika u nizu: Popis stanovništva, kućanstava i stanova 2021. - stanovništvo.
+Dataset URI: https://data.gov.hr/ckan/dataset/statistika-u-nizu-popis-stanovnistva-kucanstava-i-stanova-2021
+Dataset metadata last modified: 2026-07-16T11:55:08.447686.
+Licence: Croatian Open Licence (Otvorena dozvola / Otvorena dozvola (OD)), explicitly assigned to this dataset by data.gov.hr (license_id: open-license).
+Licence text: https://data.gov.hr/otvorena-dozvola
+Licence identifier: https://data.gov.hr/id/licence/otvorena-dozvola-rh
+Licence quote: “Informacije i metapodaci mogu se koristiti u komercijalnu i nekomercijalnu svrhu” (commercial and noncommercial use permitted).
+The retained current portal licence text permits reproduction, distribution, adaptation and combination; requires source, last modification date and dataset link, and identification of modifications.
+Tables: https://podaci.dzs.hr/media/rqybclnx/popis_2021-stanovnistvo_po_naseljima.xlsx
+https://podaci.dzs.hr/media/td3jvrbu/popis_2021-stanovnistvo_po_gradovima_opcinama.xlsx
+Edition: final 2021 Census, total resident population, all sexes; fetched 2026-10-20.
+Modifications: selected, matched and reformatted totals for the same verified Croatian cities/municipalities or settlements; population reference year added as 2021. No boundary, name, type, coordinate, identifier or hierarchy edits. No endorsement by DZS is implied.
+Identity support: Državna geodetska uprava (DGU), Register of Spatial Units (RPJ), INSPIRE Administrative Units, captured 2026-10-10; ATOM edition 2026-10-04, latest feature timestamps retained in the audit.
+DGU dataset: https://geoportal.nipp.hr/geonetwork/srv/api/records/08b28e14-01d7-4142-ae8e-217bf2a8d21b/formatters/xml
+DGU download: https://geoportal.dgu.hr/services/atom/INSPIRE_Administrative_Units_(AU).zip
+DGU licence: Croatian Open Licence, per dataset-specific NIPP metadata; adaptations: code/name hierarchy extraction and raw polygon containment checks. ATOM restriction discrepancy retained in source receipt.
+Wikidata structured identity evidence: CC0 1.0, literal own-item responses captured 2026-10-10 (exact acquisition times, API URLs and revisions in the source manifest). Counts come from DZS. These captures are dated evidence, not a claim that Wikidata was refreshed today.
