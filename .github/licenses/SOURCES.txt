@@ -1289,3 +1289,10 @@ INSEE, Code officiel geographique 2026 (COG): https://www.insee.fr/fr/informatio
 French commune reference centres: https://geo.api.gouv.fr/ ; Licence Ouverte 2.0.
 IBGE municipality codes and simplified municipal boundaries: https://servicodados.ibge.gov.br/ ; public data, attribution to Instituto Brasileiro de Geografia e Estatistica.
 US Census GNIS identifiers: existing #2070 ne_towns_v5 ledger; US government public domain.
+
+Czech Statistical Office (ČSÚ) — Czech city populations (cz_pop_v5x)
+Datasets: Obyvatelstvo - stav a věková struktura, OBY02A (2026-01-01), https://csu.gov.cz/produkty/spv_oby02_cr ; 2021 Census, Počet obyvatel a počet obydlených bytů, https://csu.gov.cz/produkty/vysledky-scitani-2021-otevrena-data .
+Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ . ČSÚ open-data terms: https://csu.gov.cz/podminky_pro_vyuzivani_a_dalsi_zverejnovani_statistickych_udaju_csu .
+Exact publisher licence text: “Statistické informace Českého statistického úřadu zveřejněné prostřednictvím internetových stránek https://csu.gov.cz jsou licencovány v souladu s CC BY 4.0.”
+Modifications: Selected total population observations, matched by own official entity codes to existing CSC records, normalized numeric values and added population reference years. This is derived CSC data, not an unchanged official ČSÚ statistical publication. No endorsement implied.
+Identity evidence: ČÚZK RÚIAN archived code lists and geometries; Wikidata structured data CC0 1.0. Full source receipts and qualifications are in cz_pop_v5x.sources.json.
