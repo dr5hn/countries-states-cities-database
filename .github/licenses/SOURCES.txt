@@ -1247,5 +1247,12 @@ Modifications: selected and matched official municipio, entidad singular and nú
 Identity corroboration: Wikidata structured data, CC0 1.0; original archive dates and SHA-256 in es_pop_v5x.sources.json.
 Boundary corroboration: Obra derivada de BDLJE CC-BY 4.0 Instituto Geográfico Nacional (ign.es), edition 10 August 2026; municipal containment only.
 
+Portugal populations (pt_pop_v5x): Source: Instituto Nacional de Estatística (INE Portugal / Statistics Portugal), Censos 2021, resident population, BGRI 2021 and Lugares 2021, reference year 2021.
+https://mapas.ine.pt/download/index2021.phtml
+https://mapas.ine.pt/download/index2021Lugares.phtml
+Reuse: Creative Commons Attribution 4.0 (CC BY 4.0); attribution and reference period required. Terms: https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_cont_inst&INST=3585857
+Modifications: CSC contributors selected and linked independently verified existing entities, summed census subsection/section counts to the same DICOFRE parish, and corrected population and population_year. INE does not endorse these modifications. Geometry used for identity validation only.
+Identity corroboration: INE CDA2025 and Wikidata contributors (structured data CC0). Per-record decisions and sources: .github/fixes-docs/ledgers/pt_pop_v5x.jsonl and pt_pop_v5x.sources.json.
+
 Statistisches Bundesamt (Destatis): Gemeindeverzeichnis GV-ISys, 30 September 2026 quarterly edition; official Gemeinde populations at 31 December 2025 (Zensus 2022 basis). Datenlizenz Deutschland – Namensnennung – Version 2.0, https://www.govdata.de/dl-de/by-2-0. Source: https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html
 Modifications: population values selected by the same Gemeinde identity and linked to existing DE city rows; population_year supplied or corrected to the source reference year. Conflicting or unproved identities held. BKG VG250 (1 January 2026, dl-de/by-2-0) and Wikidata (CC0) used only as supporting identity evidence. Per-record decisions: .github/fixes-docs/ledgers/de_pop_v5x.jsonl and de_pop_v5x.sources.json.
