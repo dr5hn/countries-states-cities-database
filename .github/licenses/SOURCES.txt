@@ -1243,3 +1243,10 @@ Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.o
 Modifications: selected and matched official municipio, entidad singular and núcleo records to existing ES city rows; corrected only population and population_year. Conflicting or unresolved identities retained unchanged. INE does not endorse this reuse.
 Identity corroboration: Wikidata structured data, CC0 1.0; original archive dates and SHA-256 in es_pop_v5x.sources.json.
 Boundary corroboration: Obra derivada de BDLJE CC-BY 4.0 Instituto Geográfico Nacional (ign.es), edition 10 August 2026; municipal containment only.
+
+Portugal populations (pt_pop_v5x): Source: Instituto Nacional de Estatística (INE Portugal / Statistics Portugal), Censos 2021, resident population, BGRI 2021 and Lugares 2021, reference year 2021.
+https://mapas.ine.pt/download/index2021.phtml
+https://mapas.ine.pt/download/index2021Lugares.phtml
+Reuse: Creative Commons Attribution 4.0 (CC BY 4.0); attribution and reference period required. Terms: https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_cont_inst&INST=3585857
+Modifications: CSC contributors selected and linked independently verified existing entities, summed census subsection/section counts to the same DICOFRE parish, and corrected population and population_year. INE does not endorse these modifications. Geometry used for identity validation only.
+Identity corroboration: INE CDA2025 and Wikidata contributors (structured data CC0). Per-record decisions and sources: .github/fixes-docs/ledgers/pt_pop_v5x.jsonl and pt_pop_v5x.sources.json.
