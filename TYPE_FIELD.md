@@ -97,6 +97,21 @@ A CSD and its same-named population centre are distinct entities; a CSD total or
 Sources: [2021 Census Dictionary, CSD](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo012),
 2021 boundary attributes and 2025 CSD register, under the Statistics Canada Open Licence.
 
+### Australia
+
+In `AU.json`, an LGA row is the local-government territory: `municipality` at level 2,
+with its jurisdiction-published status in `type_local` (for example City, Shire, Council,
+Regional Council, Aboriginal Shire or Municipality). City status on an LGA does not make
+it the separate town of that name. Bind a namesake row using its own Wikidata item,
+official ABS LGA code/name/state and the unchanged point inside its LGA boundary.
+A gazetted populated place is `locality` at level 3, with its gazetteer class in
+`type_local`, only when name, state, point and its own place item agree.
+The reviewed [AU type ledger](.github/fixes-docs/ledgers/types_au_v5x.jsonl) and
+[shared source catalogue](.github/fixes-docs/ledgers/types_au_v5x.sources.json) retain
+exact edition, retrieval date, source hash and attribution. Conflicting identity,
+former-unit statements or an out-of-boundary point remain held; no coordinate, name,
+identifier, parent or table change is authorized by this type correction.
+
 ### Mexico
 
 In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoNames PPLA2) and
