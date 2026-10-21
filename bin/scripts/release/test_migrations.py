@@ -1302,6 +1302,19 @@ class BaselineTest(Case):
                         {'after_row_sha256': None}):
             self.assertTrue(event_errors({**ev, **changes}, 'e'))
 
+    def test_decision_only_refused_where_the_record_changed(self):
+        """decision_only guards an unchanged row; a decision made with a data change is an ordinary identity event."""
+        row = city(1, 'Legacy')
+        c0 = self.repo.commit({**self.base_files, CITY: [row]})
+        c1 = self.repo.commit({})
+        self.baseline(c1, row)
+        typed = dict(row, type='town')
+        c2 = self.repo.commit({CITY: [typed]}, 'typed with its decision')
+        ordinary = identity_event(1, c2, row, 'classification', [])
+        content, _ = self.gen(c0, c2, [ordinary])
+        self.assertEqual([e['outcome'] for e in content[3]], ['unresolved', 'classification'])
+        self.refused(c0, c2, [dict(ordinary, decision_only=True, after_row_sha256=row_hash(typed))], 'record changed there')
+
     def test_later_removal_clears_active_hold(self):
         """A cumulative file preserves the historical disclosure, while the reviewed removal retires the key."""
         row = city(1, 'Legacy')
