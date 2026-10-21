@@ -68,11 +68,42 @@ approximate.
 | `historical_capital` | 1 | ❌ | Former capital — not a live settlement |
 
 
+### Germany
+
+Destatis GV-ISys Textkennzeichen describes the municipality's official legal class:
+60 → `municipality / Markt`, 61 → `city / kreisfreie Stadt`, 62 → `city / Stadtkreis`,
+63 → `city / Stadt`, 64 → `municipality / Gemeinde`, 67 → `city / große Kreisstadt`.
+The class follows the Land's municipal law as recorded in the federal register, not a population threshold.
+The 30 September 2026 edition and its GV100AD record description are the source of these codes.
+Land is level 1; a current Regierungsbezirk adds a tier, as does a Kreis; an independent city skips the Kreis tier.
+Gemeindeverbände are cooperative administrative bodies, not an extra territorial tier for these municipality rows.
+A missing Kreis link is not filled by this classification patch. Sections and former municipalities cannot borrow a successor's class.
+Sources: [Destatis GV-ISys](https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html),
+Data licence Germany – attribution – version 2.0 (dl-de/by-2-0).
+
+### Canada
+
+Statistics Canada's census subdivision (CSD) type records the municipal designation adopted by provincial or territorial law;
+it also includes statistical equivalents that must not be inferred to be legal municipalities.
+For independently bound legal CSDs: CY/C → `city / city`, T/TV → `town / town`, VL → `village / village`,
+V → `city / ville`, MÉ → `municipality / municipalité`, MU/M → `municipality / municipality`,
+TP → `municipality / township`, CT → `municipality / canton`, P → `municipality / paroisse`,
+DM → `municipality / district municipality`, RM → `municipality / rural municipality`,
+MD → `municipality / municipal district`, HAM → `locality / hamlet`, SV → `village / summer village`,
+SM → `municipality / specialized municipality`.
+Unlisted classes, nonmunicipal statistical CSDs and ambiguous former municipalities remain held.
+Province/territory is level 1; existing documented level 2 or 3 is retained, otherwise the province/CD/CSD hierarchy gives level 3.
+A CSD and its same-named population centre are distinct entities; a CSD total or class is never assigned to the latter.
+Sources: [2021 Census Dictionary, CSD](https://www12.statcan.gc.ca/census-recensement/2021/ref/dict/az/definition-eng.cfm?ID=geo012),
+2021 boundary attributes and 2025 CSD register, under the Statistics Canada Open Licence.
+
 ### Mexico
 
 In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoNames PPLA2) and
 `municipality` the municipal territory itself (GeoNames ADM2), so a municipality and its seat town can both
 appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexico, leave out `municipality`.
+
+For reviewed rows, INEGI catalogue AMBITO U/R maps to `locality / localidad urbana` or `locality / localidad rural` at level 3; cabecera is a seat role and does not itself establish urban class. A legacy place-typed row is corrected to `municipality / municipio` at level 2 only when its literal v4 own item is the municipio (own P3801 and municipality class), the official code/name/state and current municipal polygon agree, and the unchanged point lies inside that territory. An item naming the seat cannot take its municipality's class.
 
 ### Greece
 
