@@ -658,6 +658,8 @@ class Gate:
                 err(f'{k[0]} {k[1]} at {c[:12]}: identity before_row_sha256 does not match')
             elif e.get('decision_only') and row_hash(state.rows[k]) != e['after_row_sha256']:
                 err(f'{k[0]} {k[1]} at {c[:12]}: decision_only after_row_sha256 does not match')
+            elif e.get('decision_only') and k in before and canon(row_before) != canon(state.rows[k]):
+                err(f'{k[0]} {k[1]} at {c[:12]}: decision_only, but the record changed there; use an ordinary identity event')
             else:
                 for t in e['targets']:
                     if (t['table'], t['id']) not in state.rows:
