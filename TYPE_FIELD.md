@@ -212,6 +212,28 @@ enumeration, excluding people experiencing street homelessness. It is not the de
 INE permits free reuse with source attribution in the dataset's embedded metadata; the ledger
 retains that notice, the Uruguay Open Data Licence reference, edition, retrieval time and checksums.
 
+### Ukraine
+
+For independently bound Ukrainian rows, the Ministry's KATOTTH codifier
+(7 July 2026, Order 1321; original Order 290 of 26 November 2020,
+category appendix in the edition of Order 48 of 19 January 2024) maps
+M (М) to `city / місто`, X (Х) to `town / селище`, and C (С) to
+`village / село`. The codifier uses Latin category letters. X is the current
+settlement category, including former urban-type settlements; an old urban-type
+label alone does not establish today's category.
+Ordinary settlements are level 4: oblast 1, raion 2, hromada 3, settlement 4.
+K is `city / місто, що має спеціальний статус` at level 1 (Kyiv or Sevastopol).
+B, район у місті, maps to `section / район у місті`; a district directly
+under a special-status city is level 2. P, район, belongs in counties at level 2;
+H, територіальна громада, is the basic municipality at level 3; O denotes
+an oblast or the Autonomous Republic of Crimea at level 1 in states.
+These unit categories never authorize replacing a unit with its seat.
+Legacy or reformed units whose v4 scope is unproved remain held in this regular release.
+Only type, local type and level change; the territorial policy and stored membership stay in force.
+The [compact ledger](.github/fixes-docs/ledgers/types_ua_v5x.jsonl) records applied bindings and official-bound holds.
+Sources: [Ministry codifier and category appendix](https://mininfra.gov.ua/diialnist/rozvytok-mistsevoho-samovriaduvannia/kodyfikator-administratyvno-terytorialnykh-odynyts-ta-terytorii-terytorialnykh-hromad),
+CC BY 4.0. Wikidata's KATOTTH property is P9435, and KOATUU is P1077.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
