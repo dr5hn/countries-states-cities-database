@@ -234,6 +234,31 @@ The [compact ledger](.github/fixes-docs/ledgers/types_ua_v5x.jsonl) records appl
 Sources: [Ministry codifier and category appendix](https://mininfra.gov.ua/diialnist/rozvytok-mistsevoho-samovriaduvannia/kodyfikator-administratyvno-terytorialnykh-odynyts-ta-terytorii-terytorialnykh-hromad),
 CC BY 4.0. Wikidata's KATOTTH property is P9435, and KOATUU is P1077.
 
+### Portugal
+
+Reviewed concelhos use `municipality / município` at level 2; current freguesias
+use `section / freguesia` at level 3, beneath the district or autonomous region
+(level 1) and municipality (level 2). A freguesia is a territorial unit with its
+own government, not automatically its same-named settlement.
+Legal cidades use `city / cidade` and vilas `town / vila`, at level 3 under
+PT.json's existing place convention; lugares use `locality / lugar` at level 4.
+Legal place status does not establish that the place is a civil parish.
+A cidade or vila requires its dated elevation law; population and administrative-seat
+status do not determine the category. Santa Catarina da Serra is a vila under
+[Lei n.º 65/2001, de 12 de julho](https://files.diariodarepublica.pt/1s/2001/07/160a00/42374237.pdf).
+A municipality and its seat can share a name: the row's own Wikidata item,
+own P6324 (DICOFRE) code, official CAOP name/district and containing boundary
+decide its identity. A former parish cannot borrow a current successor's class.
+Conflicting codes, ambiguous identities, and unproved literal v4 continuity remain held.
+Only type, local type and level change; existing ancestry and membership are retained.
+The [compact ledger](.github/fixes-docs/ledgers/types_pt_v5x.jsonl) records changed rows
+and holds with an official binding; its adjacent sources registry records revisions,
+editions, licence notices, retrieval dates and exact response hashes.
+Source: DGT [CAOP2025](https://www.dgterritorio.gov.pt/atividades/cartografia/cartografia-tematica/caop),
+licence **CC-BY 4.0**. DGT's exact licence statement is preserved in the sources registry:
+reuse is free, with attribution to Direção-Geral do Território. Island containment uses
+Esri Portugal's CAOP2025 mirror under CC-BY-4.0; no geometry or points are copied into rows.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
