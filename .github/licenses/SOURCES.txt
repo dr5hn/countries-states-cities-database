@@ -1306,3 +1306,124 @@ Corroboration: Wikidata structured data (CC0); geo.api.gouv.fr (Licence Ouverte 
 Modifications: selected and linked official register entries to existing FR/ES/IT rows; corrected only type, type_local and level. No endorsement by source institutions. Evidence: .github/fixes-docs/ledgers/types_eu3_v5x.jsonl and sibling .sources.json; exact retrieval dates, archive editions and SHA-256 retained. Ambiguous identities held unchanged.
 
 Destatis GV-ISys 30.09.2026 and GV100AD class codes; dl-de/by-2-0. Statistics Canada Census 2021 CSD attributes, boundaries and 2025 register; Statistics Canada Open Licence (OGL-Canada). INEGI ITER 2020 and current locality catalogue; Términos de Libre Uso. Wikidata own-item statements: CC0. Modifications: selected existing same-entity type, type_local and level facts; no endorsement. Per-row evidence: .github/fixes-docs/ledgers/types_decamx_v5x.jsonl and sibling .sources.json.
+
+Central Statistics Office (Ireland) — ie_nz_pop_v5x
+Dataset: Census 2022 Small Area Population Statistics, Built Up Areas, SAPS_2022_BUA_270923.csv (27 September 2023); https://www.cso.ie/en/census/census2022/census2022smallareapopulationstatistics/ .
+Exact licence statement: “Statistical information on this website is accessible free of charge and licensed under Creative Commons Attribution (CC BY 4.0).”
+Terms: https://www.cso.ie/en/aboutus/whoweare/copyrightpolicy/ ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: Selected total persons (T1_1AGETT), joined by own BUA code, GUID and name to same-entity existing CSC rows; normalized integer population and added 2022 reference year. Derived data; no endorsement implied.
+
+Stats NZ — ie_nz_pop_v5x
+Datasets consulted: Subnational population estimates at 30 June 2025; POPES_SUB_009 (urban rural, 2025 boundaries); 2026 Urban Rural Areas and 2025 Regional Council boundaries. https://www.stats.govt.nz/information-releases/subnational-population-estimates-at-30-june-2025/ .
+Exact licence statement: “Unless otherwise specified, content we produce is licensed under the Creative Commons Attribution 4.0 International licence.”
+Terms: https://www.stats.govt.nz/about-us/copyright/ ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: This work is based on/includes Stats NZ’s data which are licensed by Stats NZ for reuse under the Creative Commons Attribution 4.0 International licence. Geographic identity screening only; all NZ population edits held because latest same-entity counts could not be retrieved (official SDMX HTTP 401). No territorial-authority, regional or same-name SA2 count substituted for an urban area or suburb.
+
+Tailte Éireann / CSO / Department of Housing — ie_nz_pop_v5x
+Datasets: Urban Areas National Statistical Boundaries 2022 Ungeneralised; National Statutory County Boundaries 2019.
+Exact licence statement: “Tailte Éireann content published as open data is licenced under a Creative Commons Attribution 4.0 International (CC BY 4.0) licence, details found at the above link.”
+Terms: https://www.arcgis.com/sharing/rest/content/items/d0c61d4988a941f59f901d6c86811638?f=pjson ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: Selected names/codes and computed original-point containment in unmodified official polygons; no boundary repair or coordinate movement.
+
+Wikidata contributors — ie_nz_pop_v5x
+Dataset: literal own-item claims and labels, archived API responses with original retrieval dates; https://www.wikidata.org/wiki/Wikidata:Licensing . Structured data: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: Selected active P31/P131, own identifiers and names for same-entity checks; no population is taken from Wikidata. Captures are archived evidence, not assertions of live-current item contents.
+
+Baltic population v5.x / IS
+Provider: Statistics Iceland / Hagstofa Íslands.
+Datasets: MAN10001: Population by municipality, sex, citizenship and quarters (2026Q2); MAN02005: Population by municipality, age and sex (1 January 2026).
+Dataset URL: https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog
+Licence: CC BY 4.0; https://creativecommons.org/licenses/by/4.0/
+Exact licence quote: "Creative Commons Attribution 4.0 International (CC BY 4.0) license."
+Licence statement URL: https://statice.is/publications/open-data-access/
+Retrieved: 22 October 2026; exact response hashes and times in sources.csv.
+Modifications: selected and reformatted same-entity population totals; population_year added. Identity checks and matching are CSC audit work; no endorsement by the agency is implied.
+
+Baltic population v5.x / SK
+Provider: Statistical Office of the Slovak Republic.
+Datasets: STATdata om7101mr: Number of the Population by Sex - Municipalities (monthly); end-of-period total, 31 July 2026.
+Dataset URL: https://statdata.statistics.sk/public/api/dc/public/om7101mr/info
+Licence: CC BY 4.0; https://creativecommons.org/licenses/by/4.0/
+Exact licence quote: "Creative Commons Attribution License (cc-by) 4.0"
+Licence statement URL: https://statdat.statistics.sk/help/accessibility.html
+Retrieved: 22 October 2026; exact response hashes and times in sources.csv.
+Modifications: selected and reformatted same-entity population totals; population_year added. Identity checks and matching are CSC audit work; no endorsement by the agency is implied.
+
+Identity sources for Baltic population v5.x
+Slovakia: ÚGKK SR, INSPIRE Administrative units, national municipality/district/region boundaries, captured 22 October 2026.
+Dataset and exact licence label "CC BY 4.0": https://www.skgeodesy.sk/geoportal-en/inspire/download-data/?forceBrowserDetector=blind
+Download: https://opendata.skgeodesy.sk/static/INSPIRE/Administrative_units/inspire_au_gpkg.zip
+Iceland: Náttúrufræðistofnun / National Land Survey, municipal boundary timeline. Agency open-data terms explicitly name "CC BY 4.0 (Attribution 4.0 International Deed)".
+Metadata: https://geoportal.gis.is/geonetwork/srv/api/records/%7BC544E41F-CDEF-4BA0-AE14-294152F2E91A%7D/formatters/xml
+Agency licence: https://www.natt.is/is/midlun/opin-gogn
+WFS: https://gis.lmi.is/geoserver/wfs
+Wikidata structured identity evidence: CC0 1.0; literal own-item and ancestry captures, current 22 October 2026 and hash-verified archived Slovak captures dated in their receipts.
+Modifications: extracted official codes, names, hierarchy, dates and point-in-polygon diagnostics; no source geometry is shipped in repository ledgers. Counts come only from statistics offices.
+
+Statistics Norway (SSB) — nordic_pop_v5x
+Datasets: SSB tables 01222 (end 2026Q2, 30 June 2026) and 04859 (urban settlements, 1 January 2026).
+Dataset URLs: https://data.ssb.no/api/v0/en/table/04859; https://data.ssb.no/api/v0/en/table/01222
+Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Exact publisher licence statement: “Like the rest of ssb.no, the APIs use the license CC BY 4.0 .”
+Publisher terms: https://www.ssb.no/en/omssb/tjenester-og-verktoy/api
+Modifications: Selected published population observations, normalized numeric values, matched only to the same existing entity, and added reference years. Derived CSC data; modified from official statistics; no endorsement implied. Own-item identity evidence is Wikidata structured data, CC0 1.0, https://www.wikidata.org/wiki/Wikidata:Licensing .
+
+Statistics Sweden (SCB) — nordic_pop_v5x
+Datasets: SCB FortatUtglesRegion, population 31 December 2025 on T2023 locality boundaries; published CKM protected counts used verbatim.
+Dataset URLs: https://api.scb.se/OV0104/v1/doris/en/ssd/MI/MI0810/MI0810A/FortatUtglesRegion
+Licence: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/
+Exact publisher licence statement: “We use the licence CC0 for this data, which means that you may use and disseminate or provide such data without any requirement to state the source.”
+Publisher terms: https://www.scb.se/en/About-us/about-the-website-and-terms-of-use/open-data-api/
+Modifications: Selected published population observations, normalized numeric values, matched only to the same existing entity, and added reference years. Derived CSC data; modified from official statistics; no endorsement implied. Own-item identity evidence is Wikidata structured data, CC0 1.0, https://www.wikidata.org/wiki/Wikidata:Licensing .
+
+Statbel — nordic_pop_v5x
+Datasets: Statbel OPENDATA_SECTOREN_2026, 1 January 2026; exact complete official NIS6 section sector aggregation.
+Dataset URLs: https://statbel.fgov.be/sites/default/files/files/opendata/bevolking/sectoren/OPENDATA_SECTOREN_2026.zip
+Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Exact publisher licence statement: “Statbel’s open data are published under the Creative Commons Attribution 4.0 license (CC BY 4.0).”
+Publisher terms: https://statbel.fgov.be/en/open-data
+Modifications: Selected published population observations, normalized numeric values, matched only to the same existing entity, and added reference years. Summed the complete set of explicitly registered statistical sectors within each own NIS6 section. Derived CSC data; modified from official statistics; no endorsement implied. Own-item identity evidence is Wikidata structured data, CC0 1.0, https://www.wikidata.org/wiki/Wikidata:Licensing .
+
+STATEC — nordic_pop_v5x
+Datasets: STATEC LUSTAT DF_X021 version 1.1, Population by canton and municipality, 1 January 2026.
+Dataset URLs: https://lustat.statec.lu/rest/data/LU1,DF_X021,1.1/all?startPeriod=2026
+Licence: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/
+Exact publisher licence statement: “Open Data and Intellectual property (Copyright) This portal, all its elements (including the layout) as well as the information and services are published by STATEC, unless otherwise indicated, without restriction, under the terms of the Universal Transfer in the Public Domain Creative Commons CC0 1.0 .”
+Publisher terms: https://statistiques.public.lu/en/support/notice.html
+Modifications: Selected published population observations, normalized numeric values, matched only to the same existing entity, and added reference years. Derived CSC data; modified from official statistics; no endorsement implied. Own-item identity evidence is Wikidata structured data, CC0 1.0, https://www.wikidata.org/wiki/Wikidata:Licensing .
+
+Statistics Denmark — candidate screening
+Datasets: StatBank BY3 urban areas (1 January 2026) and FOLK1A (2026Q3).
+Exact licence statement: “This corresponds to the licence named Creative Commons, CC 4.0 BY.”
+Publisher terms: https://www.dst.dk/en/Statistik/hjaelp-til-statistikbanken/api ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: candidate and scope comparisons only; all Danish rows held and no Danish population observation admitted.
+
+Kartverket — identity boundary evidence
+Dataset: Administrative units / Kommune, extracted 10 October 2026, source edition December 2025. © Kartverket. https://www.kartverket.no/ .
+Exact licence statement: “Kartverkets gratisprodukt er lisensierte etter Creative Commons Navngivelse 4.0 international (CC BY 4.0) .”
+Publisher terms: https://www.kartverket.no/api-og-data/vilkar-for-bruk ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: CSC projected official rings, joined components and tested unchanged points inside their own municipality. No official geometry is distributed in CSC city records.
+
+Finnish Environment Institute (Syke) — identity and reference-year screening
+Dataset: YKR urban settlements 2025, YKRTaajamat2025.zip. Lähde: Syke/YKR.
+Exact licence statement: “Aineisto kuuluu SYKEn avoimiin aineistoihin (CC BY 4.0).”
+Publisher metadata: https://metadata.ymparisto.fi/dataset/%7B28F79998-B5E2-4085-AF80-FB3FA5E9F9BA%7D ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: compared official urban identifiers, original points and population attributes to Statistics Finland tables; unresolved population reference/scope remains held. No Syke population was admitted.
+
+National Land Survey of Finland — supporting municipal identity evidence
+Dataset: Administrative units, NLS INSPIRE administrative boundaries, delivered 10 October 2026. Contains data from the National Land Survey of Finland.
+Exact licence statement: “Open data by National Land Survey of Finland is licensed under a Creative Commons Attribution 4.0 International License .”
+Publisher terms: https://www.maanmittauslaitos.fi/en/opendata-licence-cc40 ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: retained prior point-containment evidence for candidate screening; no Finnish population admitted.
+
+Statistics Finland — candidate screening
+Dataset: StatFin 15an, Urban settlements by population and population density, 2024; official TA codes and reference metadata.
+Exact licence statement: “Statistics Finland's open data materials and public content of the web service are covered by the Creative Commons Attribution 4.0 International licence.”
+Publisher terms: https://stat.fi/en/about-us/get-to-know-statistics-finland/legislation/terms-of-use ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: candidate/code/reference-year comparisons only; no Finnish population observation admitted.
+
+Administration du cadastre et de la topographie (ACT) — identity boundary evidence
+Dataset: Limites administratives du Grand-Duché de Luxembourg, 5 October 2026, limadmin.geojson.
+Publisher page and exact licence statement: https://data.public.lu/fr/datasets/limites-administratives-du-grand-duche-de-luxembourg/ — “Creative Commons Zero (CC0)”.
+Licence: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: CSC tested unchanged record points against official commune polygons and retained commune/canton codes; no original geometry is distributed in CSC city records.
