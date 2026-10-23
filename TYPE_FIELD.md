@@ -360,4 +360,4 @@ where available — a non-null `population`.
 CN city `level` follows depth in the official hierarchy: prefecture 2, county-level unit 3, township 4.
 Districts directly under province-level municipalities are 2; their townships are 3, as are townships directly under no-county prefectures such as Dongguan and Zhongshan.
 Unproved tiers, own-item/type conflicts and excluded territories remain held in the [per-record ledger](.github/fixes-docs/ledgers/cn_levels_v5x.jsonl).
-Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 124 of the 335 prefecture rows are in such groups.
+Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 125 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019.
