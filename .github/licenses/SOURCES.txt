@@ -1440,3 +1440,23 @@ Dataset: Limites administratives du Grand-Duché de Luxembourg, 5 October 2026, 
 Publisher page and exact licence statement: https://data.public.lu/fr/datasets/limites-administratives-du-grand-duche-de-luxembourg/ — “Creative Commons Zero (CC0)”.
 Licence: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ .
 Modifications: CSC tested unchanged record points against official commune polygons and retained commune/canton codes; no original geometry is distributed in CSC city records.
+
+Istituto Nazionale di Statistica (ISTAT) — Italian locality populations (it_pop2_v5x)
+Datasets: Località puntuali italiane 2021 (POP21 resident population, 31 December 2021), Località italiane 2021 polygons, and administrative boundaries 1 January 2026.
+Dataset page: https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/
+Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ .
+Exact agency licence statement: “Salvo diversa indicazione, tutti i contenuti pubblicati su questo sito sono soggetti alla licenza Creative Commons – Attribuzione – versione 4.0.” https://www.istat.it/note-legali/
+Modifications: selected own-locality POP21 observations; matched official locality codes and boundaries to existing CSC rows, normalized integers and added the 2021 reference year. Derived data and matching are not an unchanged ISTAT publication. No endorsement implied.
+
+Asia miscellaneous population v5.x / TW
+Provider: Ministry of the Interior, Taiwan; Department of Household Registration and National Land Surveying and Mapping Center.
+Datasets: 現住人口數按性別及原住民身分分（新增區域代碼） (ODRP013), September 2026 household-registration population, total persons; VILLAGE_NLSC_1150817 village administrative boundaries (17 August 2026), identity containment only.
+Population dataset and latest period catalogue: https://www.ris.gov.tw/rs-opendata/api/Main/docs/v1
+Population URL: https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509 (all four pages).
+Boundary metadata: https://data.gov.tw/dataset/7438
+Licence: Open Government Data License, version 1.0; https://data.gov.tw/license
+Exact agency licence declaration: "採政府資料開放授權條款－第 1 版發布"; https://www.ris.gov.tw/app/portal/133
+Exact licence clause 4.2 quote: "The License is compatible with the Creative Commons Attribution License 4.0 International."
+Retrieved: population and agency terms 23 October 2026; boundary source archive 11 October 2026, SHA-256 verified on reuse. Exact timestamps and hashes: sources.csv.
+Modifications: selected same-entity totals, summed the published village totals by exact official unit code, reformatted counts and added population_year 2026. No names, points, types, ids or units changed. No endorsement by the agency is implied.
+Identity corroboration: Wikidata structured own-item claims, CC0 1.0; literal revisions captured 23 October 2026. No Wikidata population is copied.
