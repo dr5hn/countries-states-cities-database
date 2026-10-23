@@ -1,0 +1,316 @@
+{
+ "ledger": "asia_misc_pop_v5x.jsonl",
+ "records": 1249,
+ "base_commit": [
+  "cc7cf13bbfd86110ff6658097802d57d81be5319"
+ ],
+ "full_ledger_sha256": "ca7b0f488e7ba22e49ac94b7d91240949c1249e19924a35245e417ab676e6fc2",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Use the already-archived, SHA-256 verified independent NLSC VILLAGE_NLSC_1150817 raw polygons, not the blocked TGOS township download. Recompute every current row and own-item point with raw shapefile parts and odd-even ring crossings; an STRtree indexes only bounding boxes. No boundary repair, coordinate transformation or point movement. The code/node membership comes from the raw official attributes. Empty or conflicting containment remains held.",
+  "Use only the literal own Wikidata item and current reference-date P31/P131/P5020 claims. Require a unique official code, compatible existing type/type_local/level, native name, same stored state, consistent non-null parent_id, and exact stored point and own-item point inside raw official August 2026 village geometry of that unit. Administrative city units may aggregate all and only their official township codes; never substitute the central district or a seat.",
+  "Country gate precedes count use. Taiwan agency declaration names OGDL 1.0; its clause 4.2 explicitly states CC BY 4.0 compatibility. KR table-specific compatible KOGL not established; RS and CY only unnamed attribution permission: hold licence, exception is owner decision. MT HTTP 403 prevents licence/count verification: hold access without workaround.",
+  "Consult the pinned unresolved baseline plus later identity events. For a changed unresolved key require identical v4.0 own item, name/native, administrative type, stored state and exact original point; the independently verified own official unit binding then establishes the same original entity. Changed county-to-seat own items remain held. Emit an ordinary reviewed classification event with unequal current before/after hashes, event_pr 0 and the compact ledger SHA-256; never decision_only.",
+  "MOI household-registration table ODRP013, latest advertised period 11509 (2026-09-30), as captured 2026-10-23. All four pages (7,781 unique village codes) exhaustively captured; each people_total equals male+female. Sum only villages with the exact eight-digit own township code, or every township of the own five-digit city-unit code. Official township names and county names/codes reconcile one-to-one with all 368 codes in the national boundary archive. No newer stored-year value or own-item dated claim matching the stored population is replaced.",
+  "Change only population and population_year; preserve every other field and row. Exact changed-file bytes, canonical row hashes and scalar presence/value/type guards apply before any write. Only files actually written are guarded; a later master with byte-identical guarded inputs is accepted."
+ ],
+ "sources": [
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_licence",
+   "retrieved_at": "2026-10-23T09:20:48.960197+00:00",
+   "sha256": "76fa629d0b7b5e069c8afc8526ab0cb7ebe2955a4d351818223676f063af0ddd",
+   "status": 200,
+   "url": "https://data.gov.tw/license"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_declaration",
+   "retrieved_at": "2026-10-23T09:22:05.939632+00:00",
+   "sha256": "0975181570aed8a10a6f3044e5b775c4d1940cc3cf2eee6951a1ba58cca04a24",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/app/portal/133"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_api_catalogue",
+   "retrieved_at": "2026-10-23T09:22:05.939719+00:00",
+   "sha256": "af9b5420ca0126cf7f7c05e74b3746ae7492b3354a440331326d6d3205c2347b",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/rs-opendata/api/Main/docs/v1"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_classes.json",
+   "retrieved_at": "2026-10-23T09:26:57.739290+00:00",
+   "sha256": "01e1b0b480efe2da3cad7bb2278bbbdb0c604dbc8b9a477d19e7c97e3813af16",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q705296%7CQ713146%7CQ83020%7CQ171441%7CQ12039044%7CQ47248051%7CQ486972%7CQ2225003%7CQ2367508%7CQ515%7CQ1549591%7CQ10876480%7CQ108178728%7CQ17194218%7CQ56061%7CQ17194217%7CQ17362920%7CQ515716&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "2026-08-17 edition; download catalog updated 2026-08-31; current name supplement",
+   "error": null,
+   "path": "sources/reused/nlsc_village_boundaries_20260817.zip",
+   "retrieved_at": "2026-10-11T17:29:25.993460+00:00",
+   "sha256": "bb650bc70c29bdd9dcc559367395a148b3ca9a0e833f9d29d1258aeac1ce5674",
+   "status": 200,
+   "url": "https://maps.nlsc.gov.tw/download/村(里)界(TWD97經緯度).zip"
+  },
+  {
+   "edition": "catalog metadata 2026-08-25; Open Government Data License 1.0",
+   "error": null,
+   "path": "sources/reused/catalog_village_boundaries.html",
+   "retrieved_at": "2026-10-11T17:31:22.462809+00:00",
+   "sha256": "37d41dcf0d91f1c5b72e768e2bb26af5c7325f66423648259d74daeb278ad6f4",
+   "status": 200,
+   "url": "https://data.gov.tw/dataset/7438"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_village_catalogue_current",
+   "retrieved_at": "2026-10-23T09:26:57.744932+00:00",
+   "sha256": "8958bbfe64111f2fdc6337e09a3212d24db06000f5968bc8b41cad0a207f8756",
+   "status": 200,
+   "url": "https://data.gov.tw/dataset/7438"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_2.json",
+   "retrieved_at": "2026-10-23T09:25:57.256538+00:00",
+   "sha256": "0adec793f5019ffac62ae87d29533d6f4fff9261bda823f66b96696239addb25",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q569760%7CQ569763%7CQ569768%7CQ569814%7CQ570079%7CQ570090%7CQ570097%7CQ570104%7CQ570112%7CQ570238%7CQ570245%7CQ570249%7CQ570254%7CQ570267%7CQ570349%7CQ570355%7CQ570363%7CQ570382%7CQ570387%7CQ570493%7CQ570501%7CQ570509%7CQ570582%7CQ570588%7CQ570601%7CQ570880%7CQ633500%7CQ63706%7CQ669566%7CQ680842%7CQ698046%7CQ698050%7CQ700818%7CQ701428%7CQ701497%7CQ701634%7CQ701639%7CQ701651%7CQ701665%7CQ701693&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_0.json",
+   "retrieved_at": "2026-10-23T09:25:57.256629+00:00",
+   "sha256": "801cf0141e31da89c85269c6cb8b40d3d4ee4664d37222beb9a739c8301a12eb",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1135297%7CQ115256%7CQ1186585%7CQ1186591%7CQ133865%7CQ138671%7CQ138820%7CQ140631%7CQ153221%7CQ153830%7CQ166977%7CQ172146%7CQ175581%7CQ181557%7CQ1867%7CQ194989%7CQ195215%7CQ197859%7CQ197930%7CQ198525%7CQ211505%7CQ237258%7CQ244898%7CQ245023%7CQ249868%7CQ249870%7CQ249872%7CQ249904%7CQ249994%7CQ249995%7CQ249996%7CQ252864%7CQ252951%7CQ254626%7CQ262171%7CQ262471%7CQ263915%7CQ271060%7CQ271073%7CQ271094&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_ODRP013_11509",
+   "retrieved_at": "2026-10-23T09:23:27.807403+00:00",
+   "sha256": "5d4c6a3cf45cd861e345fc12350c8659b3bfa3be86b5bbc1b5d78f6049a8413b",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_ODRP013_11509_page2",
+   "retrieved_at": "2026-10-23T09:26:04.845520+00:00",
+   "sha256": "f0b126462e6ae316fbd35bbc904611f9aea85ad0763da669e487599019d9079e",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509?PAGE=2"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_ODRP013_11509_page3",
+   "retrieved_at": "2026-10-23T09:26:05.780514+00:00",
+   "sha256": "9b572eee64da2f1443bcdbc6fd82a858db4c9b70866189bdc91e7cf85bbdacdc",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509?PAGE=3"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_ODRP013_11509_page4",
+   "retrieved_at": "2026-10-23T09:26:06.722392+00:00",
+   "sha256": "3557397a02a87bbb376aa614a83e7824632a029a7083328c5ddb07f2eedd167f",
+   "status": 200,
+   "url": "https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509?PAGE=4"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_3.json",
+   "retrieved_at": "2026-10-23T09:25:57.256668+00:00",
+   "sha256": "13712e4d5355c1c6f19fa7914ce93969f0e1335f87ce686336ad6bb6be07ca92",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q702125%7CQ703607%7CQ703924%7CQ706261%7CQ706284%7CQ706299%7CQ706308%7CQ706439%7CQ706455%7CQ706494%7CQ706505%7CQ706511%7CQ706517%7CQ706520%7CQ706522%7CQ706539%7CQ706544%7CQ706550%7CQ706556%7CQ706572%7CQ706696%7CQ706699%7CQ706704%7CQ706707%7CQ706720%7CQ706727%7CQ706732%7CQ706749%7CQ706754%7CQ706758%7CQ707524%7CQ707552%7CQ707563%7CQ707578%7CQ707728%7CQ707733%7CQ707741%7CQ707749%7CQ707754%7CQ707761&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_6.json",
+   "retrieved_at": "2026-10-23T09:26:01.106756+00:00",
+   "sha256": "2b43da92c5c75a3dab77b92ff28655733909a6bb17502a858006b542cef54fa6",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q708820%7CQ708996%7CQ709000%7CQ709004%7CQ709009%7CQ709013%7CQ709018%7CQ709022%7CQ709025%7CQ709034%7CQ709917%7CQ709939%7CQ709957%7CQ709970%7CQ709980%7CQ709989%7CQ710023%7CQ710033%7CQ710042%7CQ710206%7CQ710222%7CQ710226%7CQ710242%7CQ710249%7CQ710264%7CQ710268%7CQ710273%7CQ710281%7CQ710286%7CQ710293%7CQ710313%7CQ712753%7CQ712769%7CQ712778%7CQ712831%7CQ712837%7CQ712843%7CQ712856%7CQ712871%7CQ712894&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_7.json",
+   "retrieved_at": "2026-10-23T09:26:02.132244+00:00",
+   "sha256": "c027b23b4daf0f8d7daed0af30c7270b265aece32d9937859677fac644e8cb61",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q712911%7CQ712915%7CQ712920%7CQ712925%7CQ712929%7CQ712931%7CQ712942%7CQ712944%7CQ712947%7CQ712950%7CQ712956%7CQ712965%7CQ712969%7CQ712972%7CQ712977%7CQ712982%7CQ712988%7CQ712993%7CQ713026%7CQ713031%7CQ713033%7CQ713036%7CQ713045%7CQ713047%7CQ713050%7CQ713055%7CQ713075%7CQ713087%7CQ713090%7CQ713142%7CQ713310%7CQ713314%7CQ713331%7CQ713336%7CQ713346%7CQ713367%7CQ713377%7CQ713381%7CQ713385%7CQ713556&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_1.json",
+   "retrieved_at": "2026-10-23T09:25:57.254583+00:00",
+   "sha256": "bdeffb06ef2597c902ce2c471a555a95e0793dc7d98efae42f29be2854dd3268",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q271124%7CQ271134%7CQ271143%7CQ271151%7CQ271167%7CQ29624%7CQ309356%7CQ309382%7CQ30965326%7CQ31093%7CQ32728%7CQ340192%7CQ372120%7CQ373768%7CQ44581%7CQ473035%7CQ49106070%7CQ516297%7CQ56042%7CQ569465%7CQ569469%7CQ569533%7CQ569538%7CQ569548%7CQ569553%7CQ569604%7CQ569608%7CQ569611%7CQ569614%7CQ569640%7CQ569644%7CQ569647%7CQ569652%7CQ569657%7CQ569695%7CQ569697%7CQ569700%7CQ569703%7CQ569714%7CQ569753&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_9.json",
+   "retrieved_at": "2026-10-23T09:26:04.170065+00:00",
+   "sha256": "1b8fa7ffb0306d1a888709f6c6571fefd5505e572672d6742e8f10afada35a0e",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q715876%7CQ715951%7CQ717437%7CQ718014%7CQ718021%7CQ718205%7CQ718212%7CQ718221%7CQ718226%7CQ718340%7CQ718356%7CQ718362%7CQ718365%7CQ718369%7CQ718371%7CQ718372%7CQ718377%7CQ718381%7CQ718384%7CQ718388%7CQ718400%7CQ718412%7CQ718417%7CQ718421%7CQ718425%7CQ718428%7CQ718433%7CQ718437%7CQ74052%7CQ74054%7CQ82357&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_8.json",
+   "retrieved_at": "2026-10-23T09:26:03.383401+00:00",
+   "sha256": "d982dd36402d84779e66629b4fcd82780382a717bd6c5a710144c8dbcc293f64",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q713564%7CQ713576%7CQ713582%7CQ713592%7CQ713602%7CQ713611%7CQ713721%7CQ713724%7CQ713729%7CQ713736%7CQ713742%7CQ713745%7CQ713748%7CQ713751%7CQ713755%7CQ713758%7CQ713762%7CQ713764%7CQ713767%7CQ713771%7CQ713773%7CQ713780%7CQ713784%7CQ713791%7CQ713793%7CQ713798%7CQ713803%7CQ713806%7CQ713809%7CQ713813%7CQ713817%7CQ714614%7CQ714903%7CQ715171%7CQ715654%7CQ715660%7CQ715860%7CQ715864%7CQ715867%7CQ715873&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_5.json",
+   "retrieved_at": "2026-10-23T09:26:00.378244+00:00",
+   "sha256": "0ee96458579672e8e6374f2e17e26e4d1fde341c2914d35e5a3c6e6c1be558ff",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q708201%7CQ708207%7CQ708212%7CQ708216%7CQ708219%7CQ708224%7CQ708227%7CQ708234%7CQ708239%7CQ708243%7CQ708248%7CQ708252%7CQ708258%7CQ708264%7CQ708375%7CQ708391%7CQ708400%7CQ708408%7CQ708418%7CQ708437%7CQ708441%7CQ708626%7CQ708650%7CQ708657%7CQ708664%7CQ708672%7CQ708677%7CQ708690%7CQ708696%7CQ708701%7CQ708705%7CQ708711%7CQ708718%7CQ708723%7CQ708728%7CQ708734%7CQ708790%7CQ708799%7CQ708809%7CQ708815&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/TW_wd_batch_4.json",
+   "retrieved_at": "2026-10-23T09:25:59.936981+00:00",
+   "sha256": "86eb39b019e2b78b332f4d770c1a7136024f8deaa193a83bc7e3e770731ca2fb",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q707766%7CQ707772%7CQ707798%7CQ707803%7CQ707815%7CQ707824%7CQ707836%7CQ707843%7CQ707851%7CQ707860%7CQ707867%7CQ707892%7CQ707897%7CQ707988%7CQ707992%7CQ708004%7CQ708010%7CQ708013%7CQ708017%7CQ708020%7CQ708025%7CQ708030%7CQ708075%7CQ708080%7CQ708083%7CQ708086%7CQ708090%7CQ708094%7CQ708098%7CQ708103%7CQ708109%7CQ708115%7CQ708120%7CQ708127%7CQ708132%7CQ708137%7CQ708142%7CQ708182%7CQ708188%7CQ708194&props=claims%7Clabels&languages=en%7Czh&format=json"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/KR_useGuide",
+   "retrieved_at": "2026-10-23T09:23:52.882762+00:00",
+   "sha256": "7ebcd56e292f95cb51b28e4f78cf63c7b5dd244b7284875fad464ac41aafec09",
+   "status": 200,
+   "url": "https://kosis.kr/serviceInfo/useGuide.do"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/KR_applicationClause",
+   "retrieved_at": "2026-10-23T09:23:52.885991+00:00",
+   "sha256": "19d2acff4e9951380b66c5e4e138ecadb7e8a8646164cc6f6f657fbe79d3ca3c",
+   "status": 200,
+   "url": "https://kosis.kr/serviceInfo/applicationClause.do"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/KR_table",
+   "retrieved_at": "2026-10-23T09:20:48.963236+00:00",
+   "sha256": "ffcccacb89bdf63667d3c2cead4ef3394da36cd886ac5b05ebae3333f8208b26",
+   "status": 200,
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1B040A3&conn_path=I2&language=en"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": "<urlopen error timed out>",
+   "path": "sources/KR_kogl",
+   "retrieved_at": "2026-10-23T09:20:48.963352+00:00",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "status": null,
+   "url": "https://www.kogl.or.kr/info/license.do"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/RS_copyright",
+   "retrieved_at": "2026-10-23T09:22:05.936694+00:00",
+   "sha256": "ed330fe67cdb88ca232e04bdb4274c2c96cd7fd5c5afd50f34de576651924ef2",
+   "status": 200,
+   "url": "https://www.stat.gov.rs/en-US/copyright/"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/RS_copyright_sr",
+   "retrieved_at": "2026-10-23T09:22:05.938917+00:00",
+   "sha256": "7fa6fcca5f526f6ebf3a7cb34f479748618d20832445dccfa808afa5bb7bcd43",
+   "status": 200,
+   "url": "https://www.stat.gov.rs/sr-cyrl/copyright/"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/RS_database",
+   "retrieved_at": "2026-10-23T09:23:52.886168+00:00",
+   "sha256": "1d5536e8a8854b54a3950aaf387ca9235500b5bc67f1bdf917791969a5c9c387",
+   "status": 200,
+   "url": "https://data.stat.gov.rs/?languageCode=en-US"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/CY_reuse",
+   "retrieved_at": "2026-10-23T09:22:51.070027+00:00",
+   "sha256": "3d998c777da41b63efaf005ad5f0261d6bd52e6505e4d5c9822fca394e221ff2",
+   "status": 200,
+   "url": "https://www.cystat.gov.cy/StaticPage?id=1491&language=en"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": null,
+   "path": "sources/CY_conditions",
+   "retrieved_at": "2026-10-23T09:22:51.071623+00:00",
+   "sha256": "6b6c2143652eb3e6217d303b2c46f8c326aa39def43c5277be050a2139da6028",
+   "status": 200,
+   "url": "https://www.cystat.gov.cy/StaticPage?id=1245&language=en"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": "HTTP Error 403: Forbidden",
+   "path": "sources/MT_terms",
+   "retrieved_at": "2026-10-23T09:20:50.174154+00:00",
+   "sha256": "cf2f5d5f5233b3cf6311155c0d51a017a53dae11441c0ded081ba72d2c70aeaf",
+   "status": 403,
+   "url": "https://nso.gov.mt/terms-of-use/"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": "HTTP Error 403: Forbidden",
+   "path": "sources/MT_census",
+   "retrieved_at": "2026-10-23T09:20:50.310603+00:00",
+   "sha256": "c76319eeef71989c785efb83859400292dfb944bbf5d43ab0cb436758230638a",
+   "status": 403,
+   "url": "https://nso.gov.mt/themes_publications/census-of-population-and-housing-2021-final-report/"
+  },
+  {
+   "edition": "Captured 23 October 2026; literal revision or reference date in response",
+   "error": "HTTP Error 403: Forbidden",
+   "path": "sources/MT_population",
+   "retrieved_at": "2026-10-23T09:20:50.318709+00:00",
+   "sha256": "465346ea38925297847bb51dd2f3ce7df98580c97e9ff30ef90be74fa1087a15",
+   "status": 403,
+   "url": "https://nso.gov.mt/population-and-migration/"
+  }
+ ]
+}
