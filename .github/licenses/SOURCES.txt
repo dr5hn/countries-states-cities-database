@@ -1307,6 +1307,19 @@ Modifications: selected and linked official register entries to existing FR/ES/I
 
 Destatis GV-ISys 30.09.2026 and GV100AD class codes; dl-de/by-2-0. Statistics Canada Census 2021 CSD attributes, boundaries and 2025 register; Statistics Canada Open Licence (OGL-Canada). INEGI ITER 2020 and current locality catalogue; Términos de Libre Uso. Wikidata own-item statements: CC0. Modifications: selected existing same-entity type, type_local and level facts; no endorsement. Per-row evidence: .github/fixes-docs/ledgers/types_decamx_v5x.jsonl and sibling .sources.json.
 
+Central Statistical Bureau of Latvia — lvnz_pop_v5x
+Datasets: IRD081, Population by sex and age group in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 1970–2026; 2026-01-01 total persons, updated 1 October 2026. IRS031 consulted for cross-reference.
+Data: https://api.stat.gov.lv/api/v2/tables/IRD081/metadata?lang=en ; https://api.stat.gov.lv/api/v2/tables/IRS031/metadata?lang=en .
+Exact licence statement: “Data is sourced from official statistical databases and is provided free of charge under the CC BY 4.0 license. The servers are hosted on government infrastructure in Latvia.”
+Terms: https://mcp.stat.gov.lv/?lang=en ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: Selected total persons using the existing row's own active ATVK code; normalized integer population and added reference year 2026. No municipal or densely populated area total assigned to a different town entity. Boundary archive download failed and was not used. Derived work; no endorsement implied.
+
+Wikidata contributors — lvnz_pop_v5x
+Dataset: archived literal own-item claims, labels, points and parent municipality identifiers; original capture dates retained.
+Exact licence statement: “All structured data (i.e. the main, Property, Lexeme, and EntitySchema namespaces) is released into the public domain under Creative Commons Zero .”
+Terms: https://www.wikidata.org/wiki/Wikidata:Licensing ; https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: Selected active P31, P131, P1115, P300 and P625 for identity binding; no Wikidata population used.
+
 Central Statistics Office (Ireland) — ie_nz_pop_v5x
 Dataset: Census 2022 Small Area Population Statistics, Built Up Areas, SAPS_2022_BUA_270923.csv (27 September 2023); https://www.cso.ie/en/census/census2022/census2022smallareapopulationstatistics/ .
 Exact licence statement: “Statistical information on this website is accessible free of charge and licensed under Creative Commons Attribution (CC BY 4.0).”
