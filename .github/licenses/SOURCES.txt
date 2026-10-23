@@ -1475,3 +1475,11 @@ Dataset pages: https://demo.istat.it/app/?a=2026&i=POS&l=it and https://situas.i
 Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ .
 Exact agency licence statement: “Salvo diversa indicazione, tutti i contenuti pubblicati su questo sito sono soggetti alla licenza Creative Commons – Attribuzione – versione 4.0.” https://www.istat.it/note-legali/
 Modifications: selected own-comune all-age resident totals (age code 999), normalized integers, linked documented January 2026 province/code recodings and official boundaries to existing CSC entities, and added reference year 2026. Derived matching and selections are not an unchanged ISTAT publication. No endorsement implied.
+
+Latin America population v5.x / Guatemala
+Agency: Instituto Nacional de Estadística (INE), Guatemala.
+Dataset: Censo 2018, Lugares Poblados; Cuadro A1.2, población total censada por municipio (column E); A1.3 and populated-place centroids consulted for scope.
+Dataset and licence statement: https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados
+Exact licence quote: "Creative Commons Attribution"; CKAN license_id "cc-by"; licence URL http://www.opendefinition.org/licenses/cc-by
+Retrieved: 2026-10-23T14:55:39Z. Exact file SHA-256 and per-record cell pointers retained in the latam_pop_v5x ledger and sources.csv in the audit delivery.
+Modifications: selected same-entity municipio totals, reformatted integer counts and added population_year 2018. No agency endorsement implied.
