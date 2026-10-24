@@ -1,0 +1,788 @@
+{
+ "ledger": "shared_items_v5x.jsonl",
+ "records": 1385,
+ "base_commit": [
+  "e787e5d9d872cba43d7a63ec0317dd4ea01d3591"
+ ],
+ "full_ledger_sha256": "50a84363cefbcae3d0e66e60cf3f45a0d5dac5b8d56c83ba6bbb47a181cea8e7",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Exact NFC casefold row-name/native to item labels; explicit direct P31 class allowlists; non-deprecated current P131 ancestry to pinned state; all Earth P625 points <=10km. Whole-group holds for unknown identity, redirects and special/disputed territories. Duplicate requires prior #2005 finding, all current ownership gates, matching name/native/state/scope/level/population. Clear requires exactly one owner and a differently named distant place or explicit distinct administrative scope. No fuzzy match proves ownership. Population, links, full row and state are retained for review; none is modified."
+ ],
+ "sources": [
+  {
+   "audit_artifact": "sources/classes_00000_299a6a90472c.json",
+   "bytes": 748142,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:21:07.389344+00:00",
+   "sha256": "c701997ad4e123365fa9e812d65ec2e3d3d62bb3420ff80e386362f21a4bdefb",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1044880%7CQ1059478%7CQ106078286%7CQ106079704%7CQ1062593%7CQ106389302%7CQ1065118%7CQ1066984%7CQ1070990%7CQ108178728%7CQ108454666%7CQ108454687%7CQ10864048%7CQ1093829%7CQ1115575%7CQ1122492%7CQ11233245%7CQ1137833%7CQ114072597%7CQ1149652%7CQ1161185%7CQ1200957%7CQ12131624%7CQ123266%7CQ12357832%7CQ123705%7CQ123754112%7CQ12624746%7CQ12806962%7CQ12813115%7CQ1288520%7CQ1289426%7CQ1298632%7CQ130108094%7CQ13025342%7CQ1306755%7CQ13416557%7CQ1349648%7CQ13539802%7CQ136721998%7CQ141639222%7CQ14762300%7CQ14839548%7CQ14942893%7CQ1504917%7CQ15092344%7CQ15105893%7CQ1512109%7CQ15127012%7CQ15141625&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/classes_00050_e73e512ed192.json",
+   "bytes": 1215639,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:21:11.222302+00:00",
+   "sha256": "f6fe80659c0bfe7a80e0490e53e0c84a9441e5b9ebb4b50b36fe373ec4d8bc3f",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q15284%7CQ1549591%7CQ16085106%7CQ16127605%7CQ1637706%7CQ16858213%7CQ17343829%7CQ174844%7CQ1780506%7CQ18511725%7CQ1852859%7CQ18657584%7CQ18691601%7CQ18810091%7CQ188509%7CQ18918041%7CQ1901835%7CQ192287%7CQ20019082%7CQ200250%7CQ20202352%7CQ2039348%7CQ2074737%7CQ21507383%7CQ2154459%7CQ21672098%7CQ2198484%7CQ2264924%7CQ2276925%7CQ2292572%7CQ23442%7CQ24764%7CQ250811%7CQ2514025%7CQ2555896%7CQ2590631%7CQ263639%7CQ2679157%7CQ27020041%7CQ27587207%7CQ28659128%7CQ29045252%7CQ2911266%7CQ2914501%7CQ2915776%7CQ2983893%7CQ2989400%7CQ2989470%7CQ2989649%7CQ29946056&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/shared_00150_b103173b9436.json",
+   "bytes": 5701029,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:44.415278+00:00",
+   "sha256": "b1fd1849d407382a3d81f598d731b4d9c5a8257f52e87e15e0d73426fcbabb0f",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q152491%7CQ1525355%7CQ1526230%7CQ1526235%7CQ1538697%7CQ155241%7CQ155259%7CQ155309%7CQ155499%7CQ155625%7CQ155917%7CQ156053%7CQ156107%7CQ156195%7CQ156225%7CQ157053%7CQ1572418%7CQ1574991%7CQ1575400%7CQ1577772%7CQ158053%7CQ158799%7CQ158928%7CQ15980715%7CQ1609645%7CQ1617334%7CQ163888%7CQ1647907%7CQ1648200%7CQ1649363%7CQ16572%7CQ1658752%7CQ1660264%7CQ170688%7CQ1710%7CQ172%7CQ1725%7CQ1728955%7CQ173449%7CQ174091%7CQ174123%7CQ174468%7CQ174689%7CQ1747725%7CQ1748735%7CQ175163%7CQ175283%7CQ175480%7CQ1755744%7CQ175596&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/classes_00100_1bd970a67401.json",
+   "bytes": 1196419,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:21:14.607420+00:00",
+   "sha256": "67825791a6e912bf87f1747530c826fe9de278083222680ddd5c6ab2a1853564",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3032103%7CQ3076994%7CQ3148864%7CQ3184121%7CQ318727%7CQ3257686%7CQ3327862%7CQ3327903%7CQ3374262%7CQ3455524%7CQ3491915%7CQ3504085%7CQ3565075%7CQ3685462%7CQ369385%7CQ378636%7CQ3957%7CQ4100864%7CQ41067667%7CQ4249901%7CQ42744322%7CQ46831%7CQ473972%7CQ484170%7CQ486972%7CQ4944632%7CQ494721%7CQ498162%7CQ5084%7CQ5123999%7CQ515%7CQ5154320%7CQ51929311%7CQ52152600%7CQ5283489%7CQ5283558%7CQ532%7CQ55557858%7CQ55558200%7CQ558330%7CQ56061%7CQ56436498%7CQ56557504%7CQ56575365%7CQ57058%7CQ605291%7CQ618123%7CQ61878%7CQ620509%7CQ63209072&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "Repository provenance; Wikidata CC0",
+   "sha256": "9bc1ef6dc816a78faf1bcb2e845f1e2596bc3cbf074e9755a3440be3bd5e91d1",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/.github/fixes-docs/ledgers/WD_shared_item_clears_2026-10.csv"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "9e91e00d249114fa4e1f46919542cfaa1a6de8dc5a01b4787094777604be7107",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CA.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "e5bd59239f8416c24fd266d88e84f80165929b9abe1dd8b1fdcac23a7fb6557a",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/states/states.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00300_05392fdd7f53.json",
+   "bytes": 3232911,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:57.684312+00:00",
+   "sha256": "11dba03bb6f73d8b75530f50b0767e29731b8aec04e557254bbcb9e5d1968ac7",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2430177%7CQ243327%7CQ2434300%7CQ243853%7CQ2443901%7CQ2453443%7CQ2472571%7CQ2490965%7CQ2501809%7CQ2542407%7CQ2544316%7CQ2545249%7CQ255578%7CQ2577440%7CQ2606051%7CQ2614246%7CQ2616779%7CQ2627750%7CQ2629639%7CQ2630618%7CQ2634871%7CQ2639152%7CQ2641873%7CQ2652141%7CQ2669058%7CQ2677372%7CQ269070%7CQ270%7CQ2718737%7CQ2724633%7CQ2734216%7CQ2734562%7CQ2737155%7CQ273775%7CQ273828%7CQ274313%7CQ275015%7CQ275295%7CQ275910%7CQ2784057%7CQ2802663%7CQ281213%7CQ28587%7CQ2861086%7CQ286266%7CQ2868%7CQ28729532%7CQ28733%7CQ28735%7CQ28979&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/classes_00150_237dac0d7cb0.json",
+   "bytes": 289827,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:21:17.633904+00:00",
+   "sha256": "bebf7488df9dc10ef5f0a189946c712412f6412064cd744b4a2f29bb283f4b3d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6838244%7CQ692581%7CQ702492%7CQ748149%7CQ748331%7CQ751030%7CQ7635776%7CQ7930989%7CQ79323854%7CQ839954%7CQ84669937%7CQ8501237%7CQ896881%7CQ902814%7CQ917092%7CQ925381%7CQ9383952%7CQ953822%7CQ990488&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "128bd6a54e8e3e9cf49d6845f345f6e54d56b51f112f4fb0b402ef927e71a725",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PL.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c7e72db2deea023b155618d1234fab6ccea3fc9e477c51c6b03324dbef6e09b0",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PH.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00250_4e08c384993e.json",
+   "bytes": 2661291,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:53.537170+00:00",
+   "sha256": "0ac8b46ea33e64f8fd7c8b38d1fc995de636812932cc5ee87b18e36c45638b05",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q202665%7CQ2038566%7CQ2060398%7CQ2061938%7CQ207030%7CQ2074140%7CQ2080938%7CQ208162%7CQ2087146%7CQ208835%7CQ209016%7CQ2098901%7CQ210287%7CQ2119813%7CQ212432%7CQ212830%7CQ213248%7CQ213442%7CQ216077%7CQ217681%7CQ2180312%7CQ2186176%7CQ2187%7CQ2191860%7CQ2217567%7CQ2228620%7CQ2234599%7CQ22396255%7CQ224603%7CQ2259583%7CQ2269248%7CQ227034%7CQ227072%7CQ2286310%7CQ230146%7CQ2307520%7CQ2311253%7CQ2324737%7CQ2330097%7CQ2330467%7CQ2337446%7CQ23671107%7CQ23696468%7CQ2372709%7CQ23734992%7CQ23736977%7CQ237655%7CQ2393606%7CQ240239%7CQ2429122&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "4a05219e54780d9e28bfa403be6dc923b020892541294917cab1e4f873755b33",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PE.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00400_8c95cf5d0e0a.json",
+   "bytes": 3260776,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:07.807791+00:00",
+   "sha256": "fb3346f606c13089dec6470807168b3fe064694b27436d7c2a8bb4be94c6339c",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q324293%7CQ328661%7CQ3299624%7CQ3301181%7CQ3303148%7CQ335141%7CQ335518%7CQ3400742%7CQ34405%7CQ34412%7CQ349979%7CQ3505782%7CQ3523969%7CQ3551%7CQ356607%7CQ35698950%7CQ35884%7CQ36034%7CQ360702%7CQ363166%7CQ3696182%7CQ37104%7CQ371640%7CQ372414%7CQ37785893%7CQ3788531%7CQ37895136%7CQ37898550%7CQ37898792%7CQ37957051%7CQ37959133%7CQ37968517%7CQ3806140%7CQ3831%7CQ3929948%7CQ3959001%7CQ3965143%7CQ4001295%7CQ40419%7CQ404362%7CQ404484%7CQ40450%7CQ404529%7CQ404599%7CQ40517%7CQ40521%7CQ41183%7CQ41474%7CQ416748%7CQ42056&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c06354f36bb61511117d516a6f86f83bccb22fb552b2f3b49717517410c354aa",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "2710d2839b4750aa092ac24390cfaa38878b81a65b1fb03e8f070241880cbe04",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/MA.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "440caa281cb4d0fda44dda8dd5f9a6b88711dcfdb87bd03c35880f22823cc221",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/AO.json"
+  },
+  {
+   "audit_artifact": "sources/parents0_00100_42c47e01cc1f.json",
+   "bytes": 1900424,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:21.460779+00:00",
+   "sha256": "3c8e65b329a9731e3887830998da089d741b64339fc47763e97ed770315a0b43",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q210493%7CQ211243%7CQ211652%7CQ21194116%7CQ21195454%7CQ21195916%7CQ2125592%7CQ212748%7CQ215755%7CQ21580219%7CQ21595827%7CQ21667268%7CQ21667444%7CQ217646%7CQ217698%7CQ2282190%7CQ2300713%7CQ2365710%7CQ2379199%7CQ2380900%7CQ2444345%7CQ24686331%7CQ251277%7CQ25565036%7CQ25565099%7CQ257946%7CQ2610748%7CQ2617150%7CQ2619261%7CQ2620113%7CQ26323%7CQ2634156%7CQ2672761%7CQ269031%7CQ270114%7CQ2711262%7CQ27125857%7CQ2725489%7CQ27477634%7CQ27517125%7CQ27588827%7CQ277164%7CQ27754046%7CQ282304%7CQ2864042%7CQ2980705%7CQ30002%7CQ302637%7CQ30340%7CQ3044674&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/shared_00450_e3bd29e559af.json",
+   "bytes": 3086918,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:12.185300+00:00",
+   "sha256": "7460ad091a100dac5cef709f39aae57ed7e2943e0175866811e7be17ea6a8ffd",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q42062%7CQ42067%7CQ42069%7CQ42078%7CQ42083%7CQ42088%7CQ42094%7CQ42095%7CQ42096%7CQ42105%7CQ42109%7CQ42112%7CQ42114%7CQ42116%7CQ42124%7CQ42129%7CQ42137%7CQ42140%7CQ42142%7CQ42146%7CQ42148%7CQ42157%7CQ42159%7CQ4240606%7CQ425804%7CQ4261659%7CQ427367%7CQ427557%7CQ428532%7CQ428587%7CQ4352079%7CQ4358737%7CQ4454%7CQ452634%7CQ45313%7CQ460812%7CQ470188%7CQ47535%7CQ486235%7CQ489829%7CQ490928%7CQ493030%7CQ49354%7CQ49375%7CQ495809%7CQ4996407%7CQ50158%7CQ50171%7CQ50174%7CQ50180&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "a88ef49ccf0553a2c067ddb0e51c357245329e8e39d99ae7a35f4661291f83a8",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/RU.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00500_625a0b4a0a54.json",
+   "bytes": 4323150,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:17.259966+00:00",
+   "sha256": "e5ff079186cfe68ad2197399c9e292b2b083f10a7e6588b725878940f3e248d9",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q502212%7CQ514165%7CQ515947%7CQ51685%7CQ5217%7CQ524250%7CQ52467%7CQ52470%7CQ533157%7CQ5395%7CQ541522%7CQ54553%7CQ546955%7CQ549807%7CQ554294%7CQ55551%7CQ55570%7CQ55595%7CQ555956%7CQ55724%7CQ55727%7CQ55730%7CQ55741%7CQ557934%7CQ567193%7CQ569634%7CQ569800%7CQ571051%7CQ573771%7CQ577336%7CQ577415%7CQ57756%7CQ57818%7CQ581480%7CQ581562%7CQ58178%7CQ58401%7CQ58422%7CQ584880%7CQ58650%7CQ58675%7CQ58695%7CQ587080%7CQ58710%7CQ587114%7CQ588787%7CQ59173%7CQ59223%7CQ594843%7CQ602426&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "4b733cd5e708614e831b7f926965a8c325b1515cbc573e618107e6043e0e9adc",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/HR.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00650_a3a586404690.json",
+   "bytes": 917439,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:29.409546+00:00",
+   "sha256": "9d4476d96dae66d411529777af21c44beddee800e1e300dcc18715b89001c1e8",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q894763%7CQ916988%7CQ92324%7CQ930449%7CQ934465%7CQ936794%7CQ937701%7CQ938379%7CQ953543%7CQ957192%7CQ963782%7CQ970433%7CQ971498%7CQ9733%7CQ974969%7CQ975264%7CQ988568%7CQ990371%7CQ991171%7CQ997593%7CQ997623%7CQ997767&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "8ee578a9e014c98f4da65cbff44b9b0014a4c2842740f64fb23cd6687cf46ffa",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/FR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0e96ad103dd38e6239ccb16c07931d3e53fbae7d505d203327165256050d0f3c",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/NC.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00100_b5ba23602841.json",
+   "bytes": 2018501,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:37.663742+00:00",
+   "sha256": "b5d22caa7df466667701a6e3f9fb1de6e5b931247ee25731b35ca9fb9945635c",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1331447%7CQ1333077%7CQ1333417%7CQ1335331%7CQ1337399%7CQ1337641%7CQ1341574%7CQ1342853%7CQ1343673%7CQ1344661%7CQ1344683%7CQ1344702%7CQ1344742%7CQ1344805%7CQ1344820%7CQ1346536%7CQ1351046%7CQ1354108%7CQ1355370%7CQ135696%7CQ1357984%7CQ1359073%7CQ1359204%7CQ1359226%7CQ1359300%7CQ1359319%7CQ135993%7CQ1360089%7CQ1360781%7CQ1362055%7CQ1362431%7CQ1362530%7CQ1365505%7CQ1367949%7CQ1371321%7CQ1374728%7CQ1374860%7CQ1374884%7CQ1375588%7CQ1375638%7CQ1441781%7CQ145015%7CQ1456393%7CQ147171%7CQ149190%7CQ149271%7CQ15148890%7CQ151958%7CQ15212080%7CQ15245&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/parents1_00100_8e584b1f3735.json",
+   "bytes": 1914894,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:50.649659+00:00",
+   "sha256": "2ed85698a3272b9719874e08d37d14c24193b37aa75c02b553fd9005cce12911",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6268840%7CQ644300%7CQ750775%7CQ7663%7CQ774452%7CQ789075%7CQ7932%7CQ794828%7CQ804279%7CQ884%7CQ89918869%7CQ907457%7CQ918274%7CQ928%7CQ97495609&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/replacements_000.json",
+   "bytes": 10660,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:07.547059+00:00",
+   "sha256": "cd2f6f954caed618fead3f3854cbace9d0e3920fdf27359e7b0e9d339d0b3edf",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2832.5+59.75%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Volkhovskiy+rayon%22%2C+%22%D0%92%D0%BE%D0%BB%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28102348+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2848.16667+42.08333%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Derbentskiy+Rayon%22%2C+%22%D0%94%D0%B5%D1%80%D0%B1%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%2898266+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-56.20575+-26.83268%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22San+Pedro+del+Paran%C3%A1%22%29%29+BIND%2889832+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2829.08333+50.33333%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Korostyshiv+Raion%22%2C+%22%D0%9A%D0%BE%D1%80%D0%BE%D1%81%D1%82%D0%B8%D1%88%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28109803+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2828.16667+50.0%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Chudniv+Raion%22%2C+%22%D0%A7%D1%83%D0%B4%D0%BD%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28109521+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c0cf523a96e13133be122ca10f5f4b35e3b1b36643ad66d75a4aeb087762b4a9",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CN.json"
+  },
+  {
+   "audit_artifact": "sources/parents1_00000_4f164dda1e64.json",
+   "bytes": 2961041,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:43.516201+00:00",
+   "sha256": "e91984a699dc57bef2520e1dd255873c7b27fd4bc64099990662b72f2879a75f",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1008%7CQ102446300%7CQ102456379%7CQ102463833%7CQ103672%7CQ103691%7CQ103776933%7CQ103821003%7CQ103821232%7CQ105075%7CQ10512366%7CQ10545517%7CQ106600909%7CQ106915%7CQ1134770%7CQ11825609%7CQ12015831%7CQ1274555%7CQ1276056%7CQ1277889%7CQ1278749%7CQ1279066%7CQ1279146%7CQ1279468%7CQ1279518%7CQ1282135%7CQ1285937%7CQ1286037%7CQ1286111%7CQ1286169%7CQ1286194%7CQ1286402%7CQ1286443%7CQ1286560%7CQ1289256%7CQ133356%7CQ1333965%7CQ1357083%7CQ13662%7CQ139319%7CQ1437277%7CQ1438443%7CQ1501849%7CQ15180%7CQ1540303%7CQ1568659%7CQ1572225%7CQ1607407%7CQ164421%7CQ1656206&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/parents0_00200_7a7c06a9e6e7.json",
+   "bytes": 2483321,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:30.547173+00:00",
+   "sha256": "8a969c19b2decab4c36cec6e291024e83c0837ce0da509967798a9cb3fbf7cf6",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q4478534%7CQ4496818%7CQ4508712%7CQ468557%7CQ475087%7CQ475775%7CQ476420%7CQ476867%7CQ47929%7CQ4813459%7CQ4813897%7CQ4813936%7CQ4813962%7CQ4815665%7CQ4815903%7CQ4816031%7CQ4816043%7CQ4816385%7CQ4816564%7CQ4819054%7CQ484556%7CQ484578%7CQ487648%7CQ488499%7CQ493841%7CQ493961%7CQ495998%7CQ497788%7CQ498276%7CQ498857%7CQ501277%7CQ501935%7CQ505018%7CQ5060786%7CQ5060853%7CQ5060857%7CQ5060895%7CQ5060917%7CQ5060966%7CQ5060971%7CQ5060975%7CQ508153%7CQ5089562%7CQ509651%7CQ510198%7CQ515299%7CQ515491%7CQ516336%7CQ526862%7CQ54073&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/shared_00350_11d86affefb1.json",
+   "bytes": 5228649,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:03.559118+00:00",
+   "sha256": "e18ed49e63375193a46cf7f06a720dfee00fe2365079225885bf0e4d612c92d0",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2934594%7CQ2981190%7CQ2996236%7CQ30104%7CQ30934%7CQ3099965%7CQ3112862%7CQ3119166%7CQ312357%7CQ31238%7CQ314393%7CQ314438%7CQ314468%7CQ314864%7CQ31488818%7CQ31494148%7CQ314965%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31504415%7CQ31507397%7CQ31507590%7CQ31512763%7CQ31513084%7CQ31527287%7CQ31543717%7CQ31549942%7CQ31549980%7CQ31587610%7CQ31590994%7CQ316019%7CQ3178416%7CQ31796209%7CQ31811865%7CQ31811921%7CQ31812020%7CQ31812176%7CQ31812298%7CQ31812619%7CQ31845177%7CQ3187118%7CQ31878240%7CQ31890677%7CQ31899768%7CQ31904480%7CQ31905194%7CQ320049%7CQ322986%7CQ3235210&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "2ff774afd3c6811e20b7913fd37d9bd8b644a05e068f1612676e7ddd3f486c57",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/JP.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "f2173654b6226050a1def678828b3636a2f7f81db418b6d95b157d8bcea434df",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CR.json"
+  },
+  {
+   "audit_artifact": "sources/parents0_00150_f5ba29e59614.json",
+   "bytes": 2104434,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:25.492775+00:00",
+   "sha256": "b6ab145fd2bd152b0dc70c91dcb5bc1aa5000d63b263e846370a4a8752ca2688",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q30649704%7CQ30973974%7CQ3098803%7CQ31072005%7CQ31550517%7CQ3318908%7CQ33935%7CQ349976%7CQ349983%7CQ349985%7CQ363076%7CQ3696278%7CQ3708674%7CQ3708696%7CQ372791%7CQ373023%7CQ373564%7CQ376598%7CQ38927%7CQ395166%7CQ3965667%7CQ401686%7CQ404116%7CQ404429%7CQ404636%7CQ404763%7CQ4059685%7CQ4061904%7CQ4100485%7CQ4115455%7CQ41161%7CQ4120574%7CQ4124744%7CQ4145559%7CQ416922%7CQ416988%7CQ4220224%7CQ42505%7CQ425996%7CQ426130%7CQ42622%7CQ42651%7CQ426644%7CQ42666%7CQ426996%7CQ42780%7CQ42956%7CQ430780%7CQ4316648%7CQ4478459&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0591790fb75a3de5b2a2d997d9238c418dcac94a91762dd902dc89569259826a",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/SY.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "240ad949c6c71b92837dfce381221e03e182552009a95bda7864c62a45c2ee36",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/VC.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "26c3be913717ab9473ded42ae9d0779a38dc70f32fba3ba5a32d73d37307c856",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/KR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "e314bdd00bb78f792c11ae1aa8d7b736f39b6fb330ba0480dbc000f7c7d9a393",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/AF.json"
+  },
+  {
+   "audit_artifact": "sources/parents0_00250_4cebb420c6ef.json",
+   "bytes": 2187378,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:34.656451+00:00",
+   "sha256": "f846c259aeb761d49d4253444bb88a6e6e677e98a918c2bf1a396680b8efc6bf",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q542822%7CQ56489562%7CQ570884%7CQ571033%7CQ571219%7CQ571808%7CQ573124%7CQ57719%7CQ578285%7CQ57906%7CQ57931%7CQ57947%7CQ57958%7CQ57970%7CQ58210%7CQ58273%7CQ582935%7CQ58576%7CQ58584%7CQ58691%7CQ59107%7CQ59132%7CQ59144%7CQ591781%7CQ59184%7CQ59189%7CQ59209%7CQ59213%7CQ59233%7CQ626062%7CQ628690%7CQ64832%7CQ65084837%7CQ65405%7CQ654050%7CQ666884%7CQ675722%7CQ68534%7CQ68682%7CQ68814%7CQ71204%7CQ71247%7CQ71284%7CQ71339%7CQ71355%7CQ714984%7CQ715812%7CQ73045%7CQ73119%7CQ73156&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0b8dbf7052dc43ce9b0ade6045e62da9aba79b63be467721159ae3b01783e256",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/US.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00550_39cb38aa6fbe.json",
+   "bytes": 2464543,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:21.459230+00:00",
+   "sha256": "839b76d587ad75b6e3fc13bf69a5d92e0b4b1197d825535dcce9f0aa9236cfa0",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q604609%7CQ605002%7CQ605105%7CQ606345%7CQ607961%7CQ608320%7CQ608483%7CQ609421%7CQ609975%7CQ616048%7CQ61985%7CQ622613%7CQ622740%7CQ626721%7CQ631152%7CQ632361%7CQ637330%7CQ641992%7CQ643386%7CQ645183%7CQ646886%7CQ651101%7CQ65270%7CQ658240%7CQ662799%7CQ666700%7CQ6885757%7CQ690255%7CQ693367%7CQ693679%7CQ699125%7CQ706857%7CQ71305%7CQ71323%7CQ713307%7CQ713317%7CQ713340%7CQ713362%7CQ71373%7CQ71455%7CQ71489%7CQ717743%7CQ719069%7CQ719085%7CQ720028%7CQ720668%7CQ720699%7CQ720705%7CQ720750%7CQ725168&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/parents0_00000_b56421727bcb.json",
+   "bytes": 1528637,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:12.817147+00:00",
+   "sha256": "9469ee541c3e87ca903fe05003cd9889d75684caa4743a03a0662b023b3a0426",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1001390%7CQ103515203%7CQ103821086%7CQ103858737%7CQ103860660%7CQ104217623%7CQ10428388%7CQ10526837%7CQ10545820%7CQ10545822%7CQ1063417%7CQ106394831%7CQ10699377%7CQ10707705%7CQ10718290%7CQ10718422%7CQ10718423%7CQ107251867%7CQ10728034%7CQ1073093%7CQ108419054%7CQ108469253%7CQ111310%7CQ1119478%7CQ1119818%7CQ1131900%7CQ1134097%7CQ1135612%7CQ113673%7CQ113692%7CQ1144110%7CQ117091%7CQ11720%7CQ11825773%7CQ120717618%7CQ12104648%7CQ12243955%7CQ12354866%7CQ126995%7CQ128104%7CQ12942349%7CQ12945777%7CQ12983743%7CQ1321140%7CQ133180%7CQ133862337%7CQ135648597%7CQ136418676%7CQ1366060%7CQ13669&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "e933de058dcb29a1e1617f218f8707f5586a72755d747f7d3e6a5cca0a64dc7d",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/UA.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00600_197e7b23d228.json",
+   "bytes": 2991736,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:19:26.096637+00:00",
+   "sha256": "f09abb663056e4b28b46f8969f81bc02b2283238153f6807189c1ac4492ecf1b",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q72877%7CQ732594%7CQ735645%7CQ7498993%7CQ75230%7CQ75268%7CQ75379%7CQ754761%7CQ75933%7CQ75953%7CQ76001%7CQ762724%7CQ767820%7CQ774508%7CQ785966%7CQ786795%7CQ791271%7CQ791673%7CQ796770%7CQ798382%7CQ79980%7CQ802142%7CQ813337%7CQ814616%7CQ814826%7CQ814900%7CQ81909%7CQ820280%7CQ823493%7CQ825272%7CQ837161%7CQ837425%7CQ850395%7CQ850508%7CQ855059%7CQ855719%7CQ858382%7CQ861270%7CQ861580%7CQ863727%7CQ866021%7CQ868527%7CQ873536%7CQ877190%7CQ877609%7CQ888701%7CQ888964%7CQ890671%7CQ892548%7CQ894114&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "32db69010de15664e967cf695f45b44a43cb6631bf8fee01bfe3e5dc379b2a4c",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/MU.json"
+  },
+  {
+   "audit_artifact": "sources/parents1_00050_d5d496c4ef16.json",
+   "bytes": 1693184,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:46.996040+00:00",
+   "sha256": "7fddc7d86abf111a50e3a57752070787df818a6765363fdfa50a96305d9e2320",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1661796%7CQ1693076%7CQ1797344%7CQ1797349%7CQ1854679%7CQ20078046%7CQ2086960%7CQ2171766%7CQ2184%7CQ22%7CQ2217289%7CQ2299057%7CQ2315423%7CQ2343261%7CQ237535%7CQ2456359%7CQ2478439%7CQ2483390%7CQ2610703%7CQ2620746%7CQ2709587%7CQ28179%7CQ28208%7CQ2996962%7CQ304295%7CQ305259%7CQ3246884%7CQ339637%7CQ34266%7CQ3615618%7CQ3655980%7CQ4084076%7CQ4111617%7CQ4124452%7CQ4124741%7CQ41275%7CQ4234003%7CQ429506%7CQ4299177%7CQ4318699%7CQ4408465%7CQ477558%7CQ494131%7CQ526400%7CQ548518%7CQ56438871%7CQ56508194%7CQ56508196%7CQ5763489%7CQ604615&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "426979ae8a43dfc670830218e0cee5f1e9b817e2fcf921e2b2079d301a3f56e9",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IN.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00000_948abae0de1b.json",
+   "bytes": 2211288,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:28.515874+00:00",
+   "sha256": "71c562cb27daeb0bc0fac11c5001738494df7aa1309890c5db8b67a834343ac7",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000166%7CQ1000383%7CQ1000446%7CQ1000887%7CQ1001036%7CQ1001424%7CQ1004248%7CQ1005059%7CQ1009384%7CQ1009416%7CQ1010264%7CQ1011073%7CQ1011133%7CQ1011138%7CQ1011201%7CQ1012620%7CQ1013814%7CQ1014384%7CQ1015132%7CQ1015805%7CQ1015823%7CQ1015925%7CQ1016730%7CQ1017607%7CQ1020474%7CQ1022278%7CQ1022980%7CQ1022984%7CQ1023682%7CQ1023729%7CQ1023774%7CQ1023793%7CQ1023796%7CQ1023909%7CQ1023910%7CQ1023920%7CQ1023923%7CQ1024662%7CQ1024736%7CQ1025031%7CQ1025345%7CQ1025428%7CQ1025444%7CQ1025448%7CQ1025799%7CQ1026894%7CQ1027004%7CQ1028091%7CQ1028157%7CQ103905&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/shared_00050_a2b6e54208c0.json",
+   "bytes": 3192894,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:32.828141+00:00",
+   "sha256": "cc14b1f7174b193cb56fc806385aed58c3579d4e8e849b7423bbd7affac7ce02",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1062018%7CQ106766%7CQ1068972%7CQ1083091%7CQ11114344%7CQ1115715%7CQ111689%7CQ111707%7CQ1130165%7CQ117542%7CQ1179105%7CQ1179881%7CQ1185150%7CQ1187144%7CQ1198038%7CQ1198379%7CQ1198787%7CQ1198819%7CQ1200170%7CQ1205127%7CQ1207027%7CQ1207037%7CQ1207051%7CQ1207058%7CQ1207076%7CQ1207099%7CQ1207108%7CQ1207131%7CQ1209118%7CQ1209135%7CQ1209143%7CQ1231461%7CQ123163%7CQ1241371%7CQ1241830%7CQ1253949%7CQ126661%7CQ1278514%7CQ1285102%7CQ128674%7CQ129610%7CQ1296644%7CQ13025368%7CQ1311267%7CQ131416%7CQ1320784%7CQ1321612%7CQ132200%7CQ132540%7CQ1331388&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "8806e19057a2a86e405dda1e3397b68190b3370d45b312cb0772de00f27398ad",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IE.json"
+  },
+  {
+   "audit_artifact": "sources/parents0_00050_8d0a8880c0a7.json",
+   "bytes": 2743295,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:17.362980+00:00",
+   "sha256": "bd713a409c2ea959ded37feff7527236f4f69dfd2a721519e2eb9ab71f385968",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q13726%7CQ13806%7CQ13809%7CQ138870299%7CQ1425078%7CQ1444404%7CQ144663%7CQ1464380%7CQ147187%7CQ1473%7CQ1477270%7CQ15182%7CQ15200%7CQ1532373%7CQ1585944%7CQ1619433%7CQ163104%7CQ16525480%7CQ1652671%7CQ16638631%7CQ16638648%7CQ16696572%7CQ16723276%7CQ16798851%7CQ170322%7CQ17081785%7CQ17095354%7CQ172363%7CQ172391%7CQ1740529%7CQ1740542%7CQ1743926%7CQ1764490%7CQ1772822%7CQ1797306%7CQ1797383%7CQ1797389%7CQ1817425%7CQ182852%7CQ18361499%7CQ1914938%7CQ19837099%7CQ199957%7CQ20081681%7CQ202981%7CQ203509%7CQ20658741%7CQ208606%7CQ2087361%7CQ2089115&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "222f7f2d886aa6d7a9e55baaea7a85fe42197d78ecd8bf557462eb63e0f46083",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PY.json"
+  },
+  {
+   "audit_artifact": "sources/replacement_candidates_00000_a6ac9542f12b.json",
+   "bytes": 577668,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:31.596836+00:00",
+   "sha256": "5488784072c2101f70f68218c0e2ad30a83618ea327211e65e185f54d6323b00",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1010137%7CQ102446300%7CQ113772542%7CQ153407%7CQ16350054%7CQ1654927%7CQ1756329%7CQ2139155%7CQ2223247%7CQ23690106%7CQ23789657%7CQ2395317%7CQ2445863%7CQ2473939%7CQ2620113%7CQ2620746%7CQ26792211%7CQ27754042%7CQ27754087%7CQ2884592%7CQ2995775%7CQ3044571%7CQ3044642%7CQ3044683%7CQ31550532%7CQ31891881%7CQ31963361%7CQ3408330%7CQ3419053%7CQ3524672%7CQ419544%7CQ49357477%7CQ5030%7CQ5089562%7CQ524984%7CQ752257%7CQ962724%7CQ986384&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "f3be7e10aa2f14c6d741bfef18be30202b2b0a4c4e696b7075d434a57748eaad",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IL.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "48f6a7a4613824d8e42f5504e271b188f53f0172476cc0a863aca38037e040f2",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/BA.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_005.json",
+   "bytes": 50779,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:10.972056+00:00",
+   "sha256": "41d4321f16afb4bb1223e0f5b51850f9ed30518294c155e6d4c115a221713add",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2828.58333+49.91667%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Berdychivskyy+Rayon%22%2C+%22%D0%91%D0%B5%D1%80%D0%B4%D0%B8%D1%87%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28109371+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-66.88333+-14.16667%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Santa+Rosa%22%29%29+BIND%2810025+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-14.38531+19.74657%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Akjoujt%22%2C+%22%D8%A3%D9%83%D8%AC%D9%88%D8%AC%D8%AA%22%29%29+BIND%2867744+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-13.91312+17.05314%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Aleg%22%2C+%22%D8%A3%D9%84%D9%8A%D8%AC%22%29%29+BIND%2867745+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-7.25649+16.61702%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22N%C3%A9ma%22%2C+%22%D9%86%D9%8A%D9%85%D8%A7%22%29%29+BIND%2867752+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "9c4f1ab51080dcb7ce9580a14ed79cc51c4fbb7e5e54dba2c34b0f351eeeb40f",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/BO.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "a7349ea6a2ce167972aab245371de6dc923728957419a2306fe7dd38d1acd108",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/MR.json"
+  },
+  {
+   "audit_artifact": "sources/shared_00200_78922b855e0a.json",
+   "bytes": 2797528,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:18:48.836454+00:00",
+   "sha256": "93d4b1a4edb9c8a3cc01dc756b32d8db2cd0029070156ba5abeb5dd2efc9d282",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1756003%7CQ1760305%7CQ1763289%7CQ1773455%7CQ1781849%7CQ1795259%7CQ1796657%7CQ1802671%7CQ180294%7CQ1811159%7CQ1812809%7CQ1815223%7CQ1828744%7CQ18334640%7CQ184184%7CQ187225%7CQ187861%7CQ1880935%7CQ1884385%7CQ1887813%7CQ1889017%7CQ189685%7CQ191636%7CQ1920318%7CQ1929695%7CQ1935461%7CQ194916%7CQ1953653%7CQ1968523%7CQ196964%7CQ197377%7CQ197495%7CQ197524%7CQ197560%7CQ197919%7CQ198159%7CQ198184%7CQ198222%7CQ198240%7CQ198266%7CQ1986600%7CQ1987306%7CQ1999900%7CQ2000244%7CQ2003745%7CQ2004387%7CQ2013180%7CQ2013238%7CQ20217922%7CQ20235108&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "audit_artifact": "sources/parents0_00300_5f4eb13b5d2c.json",
+   "bytes": 2279100,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:38.288803+00:00",
+   "sha256": "575e63258d2240d9814a1b96fef6368873a1206acc579d554757bb3dc9424117",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q746558%7CQ74881%7CQ74957%7CQ75110%7CQ75150%7CQ75336%7CQ7586505%7CQ763069%7CQ768332%7CQ76880%7CQ76926%7CQ775761%7CQ776213%7CQ7908%7CQ7924238%7CQ793553%7CQ8071375%7CQ812564%7CQ820296%7CQ83618%7CQ848127%7CQ853741%7CQ855054%7CQ85988609%7CQ868046%7CQ874334%7CQ906%7CQ92161%7CQ92277%7CQ92348%7CQ92381%7CQ934698%7CQ934821%7CQ946647%7CQ954%7CQ97055892%7CQ97454599%7CQ980608%7CQ98637562%7CQ989898%7CQ999102&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "408851be918b8e0f8b3e70ca5774228b58d03fef71356a8515714f46762c6f6f",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/AU.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "5f06c95373201b6ae63b86680d27b7cc76575c694990c11c851e96c926c7e94f",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/BJ.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_010.json",
+   "bytes": 31175,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:14.259089+00:00",
+   "sha256": "dfe6f9d0d5f9ff7db3a575a849c4024b2f49410506e1d56442c9ddfedf877c24",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%282.35566+6.44852%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Abomey-Calavi%22%29%29+BIND%289780+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28106.0+57.0%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ust%E2%80%99-Kutskiy+Rayon%22%2C+%22%D0%A3%D1%81%D1%82%D1%8C-%D0%9A%D1%83%D1%82%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28105954+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-13.97102+17.0105%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22%D9%82%D9%84%D8%A8+%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84%22%2C+%22%E2%80%99Elb+el+Jmel%22%29%29+BIND%2867757+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-80.07556+22.80667%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Sagua+la+Grande%22%29%29+BIND%2821957+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-13.5037+16.15027%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ka%C3%A9di%22%2C+%22%D9%83%D8%A7%D8%AF%D9%8A%22%29%29+BIND%2867749+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c580a7c2cf32fde2a6a544db1d81d7d0969766fa85df8a3017c3888dcdc90214",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/AL.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0d982a6f96a6e4d74368c6fe5e1a60ac87d65f3b3a4da54702fa581790f997fa",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CO.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "ee4dac98a36134efc7b2d5f264931df12b02f3a0045bbb307eb2d7df1dddbc68",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/BY.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "02dd87459ab2f2138b861d35843bffac53c65243306d739e8106e6e7f9758e5d",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/SE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "2cb36c76fc8932714db42694b3f928f1386b9461c9fc08621da71cae07708aa5",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GM.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "2965644ccbe45d17ac5670b5104c6dbc682bc9aaa7d4f18a5557586f901fcf58",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/RO.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c56839aa87067504a05425bef72654294e3b0de8a81bb091eae9e74212b6189c",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CU.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "d7d95d180c9cceb2a6030d44ba87c09e0edc9966f390b01a7e130266e703e4ae",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/NE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "67bd11450c4ec00e55015e75f1153b95ac4a89d6f885d63c50583fe9796560da",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/NL.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_015.json",
+   "bytes": 9013,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:17.358864+00:00",
+   "sha256": "bbfbde00b60ed8644ee71e904918fcac68e06cceab45667d5eb8a0587fd9c650",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28130.85048+45.76347%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Taihecun%22%2C+%22%E5%A4%AA%E5%92%8C%E6%9D%91%22%29%29+BIND%2820156+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-74.48306+4.87881%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Guayabal+de+Siquima%22%29%29+BIND%2820921+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-5.58603+34.79759%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ouezzane+Province%22%2C+%22%D8%A5%D9%82%D9%84%D9%8A%D9%85+%D9%88%D8%B2%D8%A7%D9%86%22%29%29+BIND%2867184+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2831.64146+-17.12366%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Shamva+District%22%2C+%22Shamva+district%22%29%29+BIND%28131501+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-12.49849+16.64039%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Bark%C3%A9wol%22%2C+%22%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%88%D9%84%22%29%29+BIND%2867747+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "588c6c0df2b880c6831a73010a4e8607920ca57826709e2899eff3fd82c60198",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/ZW.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "238721ebc1cef36740d69cb706e4dca7ab931c506a6e12b7efcd02489d9fbc87",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GB.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "d1564266de5904b1f821e29244bfaf87c3fa1f4878ef032b6a58a65718241c95",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/KP.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "4f8b7cfba72259498ecdf740bbe534f0c993853a8ddea844bc3695861d8f5a42",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/LC.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "9bf46005830f2caab3a58360540c9510261e998e7c6eaf12ebd095dd8c572b7c",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/FM.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c9fa30af4798ac4e5f8abf75b1424194dea47605f9d379c77cbdb84d47aa28f3",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PG.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "8a2faa1e9b09e6228dafe8428b9ee77d4a96038e92ff33e9b18eede7a5376bd7",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/DE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "a25509a4515c91e74a60141e61f28d5d68bbf7d9d0a4b23ff1820c3db6d32e13",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/BR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c16896c75b9acfbabfd15b112d897a84e70f4791123589429b8a83a7f90b758e",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GP.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "ca0d2fdf8f2d52226bd92b8a35a739fa339a6ed62ee55bee17849d9c3bce8097",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/KZ.json"
+  },
+  {
+   "audit_artifact": "prior_duplicates.json",
+   "licence": "Wikidata CC0",
+   "sha256": "492fc36b48fbe22b107b14acc98ffb701ba148524e98815b58a9c5260f4a1953",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/pull/2005"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "015515c9e7a52cc25ea576fc18c4179cf4b9ef49a335c1bac490208c82067063",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "d7365c5a55fc463309a56298fd8502e75406a69368d4aad707e580a02b9744dd",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/ES.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_020.json",
+   "bytes": 15094,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:22.263513+00:00",
+   "sha256": "cf713318ec6a234d0b77434c4a0357342068be569793257c537c77e74f6d05fe",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-12.1843+15.15846%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22S%C3%A9libaby%22%2C+%22%D8%B3%D9%8A%D9%84%D9%8A%D8%A8%D8%A7%D8%A8%D9%8A%22%29%29+BIND%2867754+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-15.34866+16.60175%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22T%C3%A9kane%22%2C+%22%D8%AA%D9%8A%D9%83%D8%A7%D9%86%D9%8A%22%29%29+BIND%2867755+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2831.303+-17.2123%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Bindura+District%22%29%29+BIND%28131406+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2828.65983+-16.91011%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Kariba+District%22%29%29+BIND%28131455+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2830.40046+-18.13097%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Chegutu+District%22%29%29+BIND%28131416+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "5e264f942196d5cec1b865a2ef80c83b41a0530be8bddbcf889a3e43448f61d6",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/HU.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "92a42588d10bd37791316aca3e931c8b4eb8b4ae5dedf8dd933384b340ff70ee",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GR.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c9c6762906b80927bd9abdb2b5e947ac3241d79229ffc9b51c7eb9bc9bfb5a2d",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GW.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "734211aa2dfb1d05b42ba99f581b8409bcd0b9d9b17f53959830f9887b678454",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/VE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "fa380c3a1f078c8742e96d6b063738d76740d94703a34359e1c5949dfdf23ede",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/KW.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "bc5e0d45354619d78334e2df32275b2e3dfb21e9122a17d279f58d78d0a4def5",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/LT.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0c64f03036a5860d71b910cb9e52b7ef1f24f9f4b0c5441d29274143c6dbe2b1",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/NI.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "897f6bfd9cbb3facd19d13d7c27c91fd12f7b89355a75aa4cce91d54f3cdd707",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/RE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "51d86b8e8c7ba2166a5430af729de9cb1a3f59432e34d1dbcea30876102d9ae3",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/UZ.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "51fd075a127bd29d2cb187cf19e5755571087e2db1d1283b790029172a8030c6",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/SL.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "1d4a67976c3956d83b4e8f414bbb767381392d7db64e0e7134cb5cbb9ce58316",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/NO.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_025.json",
+   "bytes": 6779,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:25.860298+00:00",
+   "sha256": "f61a8ea536be5d683351a055dd40b3ef0e4117ae9d88e0e9cdc79277fd8048c1",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2831.83083+-17.80057%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Murehwa+District%22%29%29+BIND%28131479+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-4.37187+5.79488%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Agnby-tiassa%22%2C+%22Agn%C3%A9by-Tiassa%22%29%29+BIND%2818868+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-7.58142+33.26582%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Berrechid+Province%22%2C+%22%D8%A5%D9%82%D9%84%D9%8A%D9%85+%D8%A8%D8%B1%D8%B4%D9%8A%D8%AF%22%29%29+BIND%2867082+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2817.02164+51.17093%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Widawa-Lipa+Piotrowska-Polanowice%22%29%29+BIND%2888495+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2888.24639+22.77778%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ramnagar%22%2C+%22%E0%A4%B0%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A4%97%E0%A4%B0%22%29%29+BIND%28142075+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "audit_artifact": "sources/parents2_00000_1ab696229fd9.json",
+   "bytes": 2951125,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:20:55.496768+00:00",
+   "sha256": "b2ee6c68a6b7009bbe553c38adeb81baa9ccb6da6496992cc7edaf537abeb75d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1027991%7CQ1157215%7CQ1376747%7CQ145%7CQ1501831%7CQ2305208%7CQ2332797%7CQ243610%7CQ2600170%7CQ27%7CQ277861%7CQ34%7CQ604758%7CQ7507055%7CQ788875%7CQ808013&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "7303949a79b0780b71bec05e56f1105df3a869b91a429318b01e9fba717853aa",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PK.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "39ecafdee0e96e5ef43c488fb33b088f7fb318b7c1fcc6e4075edfdffee08199",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/SI.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "28d584a9a9611db5ce4750736ae5a02884eaa43615ae0e0a3cc3321ad219abdc",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CI.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "92b444c7b61a32e723433fab8dd1a7485f7806703c6d42a7173d7d3df3686ccc",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/SN.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "40f1f9b75837fb98e44970356a2f21d8df57a6c5c557787df4e6b2dabf041cc5",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CV.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "ef3d3d1036fcd864169b364ec5ec2b87e2a0415fb4f2e54499fb4f50aba3c5bd",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/HT.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "0368427250ee80321ded0d2297c9e4ac9cced5eca4a134abf32523e4cb37dd65",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/TL.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "6aca2a04191167517949bbe0836187f7901849b9f72d727bc2526e79f274fc12",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IQ.json"
+  },
+  {
+   "audit_artifact": "sources/replacements_030.json",
+   "bytes": 7320,
+   "licence": "CC0 1.0",
+   "retrieved_at": "2026-10-24T11:24:28.522373+00:00",
+   "sha256": "7c697a0a7b165b7e2a13885ac750baab61e657c8b2e62afb66168e95853100f1",
+   "status": 200,
+   "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Frow+%3Fitem+%3Flabel+%3Fpoint+WHERE+%7B+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2828.33333+51.08333%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Luhyny+Raion%22%2C+%22%D0%9B%D1%83%D0%B3%D0%B8%D0%BD%D1%81%D1%8C%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%22%29%29+BIND%28109942+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-15.4766+15.3338%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ndib%C3%A8ne+Dahra%22%29%29+BIND%28104739+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%2819.94983+40.69997%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Bashkia+Berat%22%29%29+BIND%28154+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-13.96667+15.3%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Ran%C3%A9rou%22%29%29+BIND%28104753+AS+%3Frow%29+%7D+UNION+%7B+SERVICE+wikibase%3Aaround+%7B+%3Fitem+wdt%3AP625+%3Fpoint+.+bd%3AserviceParam+wikibase%3Acenter+%22Point%28-16.52167+12.78556%29%22%5E%5Egeo%3AwktLiteral%3B+wikibase%3Aradius+%2210%22+.+%7D+%3Fitem+rdfs%3Alabel+%3Flabel+.+FILTER%28STR%28%3Flabel%29+IN+%28%22Tionk+Essil%22%29%29+BIND%28104767+AS+%3Frow%29+%7D+%7D&format=json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "c7f1f95e8f9daa8eee11b8eda64c8fa5e6dd7faf92250af0824f9c41d5b3e2b0",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/IM.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "bb8bb8520afdf2f530461a6a9af03bb8c9a47c38b11a213daade742832824f89",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/MY.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "fd69a72b34de866cd0e7bd95d6e9f64049f054f9dfe6ffaee282f97113c1085d",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/TN.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "2f0733c510ba501b5696eb8205285f26bfb63f7bb569fe61dcb818f35b0d5a3f",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/TD.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "a1dfed0541fd8491bd0a0145665b0d0b2df82100426acba3e42787114e9c3290",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/KM.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "32ee25b5aeb86da1e24d1806375902d6978d603deb63e69e80a7f43314a4327b",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/JO.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "d642e3453a311c0116693b9d056c25e1790a0bb6673efb8ab6c55723105a0db7",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/PS.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "30e8da1b5637050632fd5422ccda4be53b63b14159a7a04cdecba7fa6fe9c56b",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/AE.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "3ae4387ed826480ed73647b42e54f0f540b116a0e5507813b85776992940f411",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/TZ.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "b40e227521fbba6beff4ef34eb66099eef154b0c80db046a42d240531bdeeb44",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/VI.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "f16b796e9987dcdedceb2980f7305b4a2cc8097734e99b408fbdc7409381acd1",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/TH.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "80fd7c238bff08359528d062f8929414f1407ed9a39b425d667375b044a4cc57",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/MX.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "184ddf4f19aa57ed5f88c6d9ee2ba9d0a2f2881c394f8300bad2fb944a095b70",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CH.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "24bb7b9c4768bbb385a8b5bcee4400cca5d5b90521e6a076e4e571ef483eb9b8",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/CM.json"
+  },
+  {
+   "licence": "CSC source data; pinned input, no copied source values added",
+   "sha256": "48265a4d27b4463fba7fe797ef274bd2aab7adc6070a5a3d128e9c4461e88e2d",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/e787e5d9d872cba43d7a63ec0317dd4ea01d3591/contributions/cities/GE.json"
+  }
+ ]
+}
