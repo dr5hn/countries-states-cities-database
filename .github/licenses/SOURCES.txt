@@ -1483,3 +1483,17 @@ Dataset and licence statement: https://datos.ine.gob.gt/dataset/censo-2018-lugar
 Exact licence quote: "Creative Commons Attribution"; CKAN license_id "cc-by"; licence URL http://www.opendefinition.org/licenses/cc-by
 Retrieved: 2026-10-23T14:55:39Z. Exact file SHA-256 and per-record cell pointers retained in the latam_pop_v5x ledger and sources.csv in the audit delivery.
 Modifications: selected same-entity municipio totals, reformatted integer counts and added population_year 2018. No agency endorsement implied.
+
+Stats NZ — nz_pop_v5x
+Datasets: Subnational population estimates (urban rural), by age and sex, at 30 June 1996–2025 (2025 boundaries), POPES_SUB_009 version 1.0; selected 30 June 2025 provisional total residents. Urban Rural Areas 2023 and 2026, Regional Council 2025: identity and point screening only.
+Data: https://explore.data.stats.govt.nz/ ; https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/POPES_SUB_009/1.0 ; https://www.stats.govt.nz/information-releases/subnational-population-estimates-at-30-june-2025/ .
+Exact licence statement: “Unless otherwise specified, content we produce is licensed under the Creative Commons Attribution 4.0 International licence.”
+Boundary item licence statement: “Creative Commons Attribution 4.0 International (CC BY 4.0)”
+Terms: https://www.stats.govt.nz/about-us/copyright/ ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: This work is based on/includes Stats NZ's data which are licensed by Stats NZ for reuse under the Creative Commons Attribution 4.0 International licence. Selected total sexes and ages for existing same-entity urban codes, normalized integer population and added reference year 2025. Held conflicting/unproved identities; no district, regional or SA2 substitution. No agency endorsement.
+
+Wikidata contributors — nz_pop_v5x
+Dataset: archived literal own-item labels, P31, P131, country, codes and parent chains; capture dates and body hashes retained.
+Exact licence statement: “All structured data (i.e. the main, Property, Lexeme, and EntitySchema namespaces) is released into the public domain under Creative Commons Zero .”
+Terms: https://www.wikidata.org/wiki/Wikidata:Licensing ; https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: Selected geographic identity claims for same-entity screening; no Wikidata population used.
