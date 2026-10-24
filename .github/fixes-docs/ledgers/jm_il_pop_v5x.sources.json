@@ -1,0 +1,391 @@
+{
+ "ledger": "jm_il_pop_v5x.jsonl",
+ "records": 995,
+ "base_commit": [
+  "90b8783af5f00fd0e7f02b9c64493d1a34017ea1"
+ ],
+ "full_ledger_sha256": "a22113315436408dcec52fb3024b27503fa0803a53209616061347799c4845e9",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "IL: raw GeoJSON odd-even ring containment; no geometry repair or substitution; every own point and record point must lie inside the exact code unit. JM: no boundary computation; separately restricted layer excluded.",
+  "Guard only files actually written by SHA-256, each full canonical row, and each field presence/value/type before staging any write. Preserve JSON formatting, key order, newline and every other field. Accept any later HEAD with byte-identical guarded files. Provenance has its own guarded before bytes. Positive --pr replaces event_pr 0 only when applying reviewed events in a selected worktree.",
+  "Raw odd-even GeoJSON ring containment, holes respected, exact-edge contacts held; no geometry repair, boundary dissolution, coordinate or point replacement. Jamaican ArcGIS 2022 community geometry has a separate reproduction/redistribution permission restriction: excluded entirely, no geometry computation or population attributes used; all JM rows held for absent admissible boundary proof. CBS 2021 locality boundaries by exact SEMEL_YISH CBS code; service item explicitly subjects use to the same CBS end-user licence. Historical geometry is corroboration, not legal boundary authority or evidence of a different/latest territorial unit.",
+  "Require own literal Wikidata item with current P31 and P131 chain to exact stored state, compatible row type/type_local/level/parent_id, and both unchanged row point and own-item point inside raw official boundary. JM: exact unsplit community name, parish and own label with pre-existing locality/community typing. Town/urban-area/neighbourhood/parish scopes remain held. IL: own P3466 CBS code must equal literal locality workbook code, native name, geometry code and official district. No council or district totals, no replacements, and no identity inferred from a name or containment alone.",
+  "Owner per-office rule from terms_screen2_v5x: both agencies explicitly permit commercial copying/derived redistribution. Only the screened published STATIN and CBS datasets supply population values. Custom/noncommercial extracts are excluded. Archive exact deciding quotes, original links and dates. Credits disclose selection/reformatting/year and rounding modifications. CBS acknowledgement exception for changed selection/arrangement is quoted; no false assertion of as-is reproduction.",
+  "Use immutable unresolved baseline plus later identity events. Any changed unresolved key must retain provable original v4.0 identity and receive a reviewed ordinary classification event, unequal before/after full-row hashes, event_pr 0 and repo compact ledger path/SHA-256. No decision_only. This delivery admits no unresolved keys; all 68 target unresolved keys remain unchanged.",
+  "JM: published STATIN Population and Dwelling Counts by Community, Preliminary 2022 Census, reference 12 September 2022; latest public census index still links this table and refreshed body hash matches the archive. Select only the exact own unsplit community cell, excluding parish subtotals and cross-parish parts. IL: CBS August 2026 preliminary estimates, reference 31 August 2026, sheet1 localities of 2,000 or more, H column total persons (not I Israeli-only persons); store Decimal nearest-person ROUND_HALF_UP and retain the literal raw decimal and cell address. Never use council sheets or published geometry population attributes.",
+  "Use latest public office release and reference year; stored newer population_year or a dated own-item P1082 claim matching stored population after the selected reference date causes a hold. No source count is inferred from a missing table entry, a regional total, or geometry attributes.",
+  "Check every IL stored/own point against OCHA West Bank and Syria reference boundaries and every vertex of the matching raw CBS locality polygon until three positive contacts prove a conservative hold; rows with no contact check all vertices. Raw ring edges are indexed by latitude without alteration; index results match the unindexed method on all stored points. Scope includes East Jerusalem citywide count, Lapid point, and seven border-contact holds; border contacts are uncertainty holds, not jurisdiction claims. Hold all Golan Heights, West Bank or East Jerusalem place identities independently of any count. No disputed-area total is adopted. Every record is either changed with proof, already agreeing, or held; only population and population_year may change."
+ ],
+ "sources": [
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/JM_terms.body",
+   "retrieved_at": "2026-10-24T13:14:13.461456+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "2ba44341a50dd10bb1c918a4feabc46acc47432a341efc3678d186ebc728283b",
+   "status": 200,
+   "url": "https://new.statinja.gov.jm/terms-of-use.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/JM_community.body",
+   "retrieved_at": "2026-10-24T13:15:48.190887+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "a98c4e559a8309b43560a302299a034b208008e208fafad80dfc918de8e16b3d",
+   "status": 200,
+   "url": "https://new.statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/JM_census_current",
+   "retrieved_at": "2026-10-24T13:28:53.080755+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "4436d861cba94d7ebe331dc2fb191bd680a4d24c0ac738aa92e1f70dea0b2d0a",
+   "status": 200,
+   "url": "https://new.statinja.gov.jm/Census/PopCensus/Popcensus2022Index.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/JM_community_current",
+   "retrieved_at": "2026-10-24T13:29:37.421385+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "a98c4e559a8309b43560a302299a034b208008e208fafad80dfc918de8e16b3d",
+   "status": 200,
+   "url": "https://new.statinja.gov.jm/PopCensus/Census2022/Population%20and%20Dwelling%20counts%20by%20Community.aspx"
+  },
+  {
+   "edition": "Public GOJ ArcGIS item; provenance to inspect",
+   "path": "sources/communities2022_item.json",
+   "retrieved_at": "2026-10-10T15:31:14.692778+00:00",
+   "role": "EXCLUDED: separate reproduction/redistribution permission restriction; geometry and counts NOT used",
+   "sha256": "ac7c64a64654c247f2b2af99456c88e435504ab69c2e8dc16d9865fb868f9f94",
+   "status": 200,
+   "url": "https://www.arcgis.com/sharing/rest/content/items/b3be6bcb1944450db22c0452aac8b871?f=pjson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_04.json",
+   "retrieved_at": "2026-10-24T13:29:00.084768+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "82e2836e8737a999e4142fbbb98323b8b15051451d027cbbbe8ad42c78ca7aca",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q430776%7CQ4711348%7CQ471886%7CQ4732659%7CQ4752772%7CQ4849741%7CQ4897936%7CQ501543%7CQ5025321%7CQ5073143%7CQ5129612%7CQ522341%7CQ525649%7CQ5256997%7CQ5327515%7CQ5423103%7CQ5490729%7CQ55632757%7CQ5579519%7CQ5585918%7CQ5602694%7CQ567350%7CQ592526%7CQ602783%7CQ60956%7CQ612483%7CQ630692%7CQ637555%7CQ6385816%7CQ644663%7CQ667103%7CQ6745042%7CQ6747609%7CQ6772362%7CQ6794237%7CQ685357%7CQ6908245%7CQ7099213%7CQ7128290%7CQ732433&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_01.json",
+   "retrieved_at": "2026-10-24T13:31:41.706020+00:00",
+   "role": "P31 class definitions / CBS P3466 property definition, CC0",
+   "sha256": "ba4f3851b3206bbf3f9d5ada554eb04d5b24277a2ccf355c39bc2cbf90fc4120",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q188336%7CQ188781%7CQ188785%7CQ189942%7CQ1915911%7CQ192232%7CQ192811%7CQ194689%7CQ195968%7CQ1965822%7CQ20616831%7CQ2202509%7CQ2212935%7CQ22674925%7CQ2305374%7CQ2640094%7CQ2678908%7CQ269770%7CQ27554677%7CQ2914961%7CQ2983893%7CQ3154693%7CQ319233%7CQ33935%7CQ34692%7CQ3505887%7CQ3934822%7CQ3957%7CQ4145971%7CQ41621%7CQ430776%7CQ4783288%7CQ486972%7CQ491507%7CQ5148521%7CQ515%7CQ51929311%7CQ5283469%7CQ5283479%7CQ532&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_00.json",
+   "retrieved_at": "2026-10-24T13:28:53.083962+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "09e5973eabb36a7f2bb0443445a59c2e6acb13a97ce37c73a38d723f44c3ac8d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000887%7CQ1001895%7CQ1008008%7CQ1009864%7CQ1011497%7CQ1011538%7CQ1018875%7CQ1018884%7CQ1022481%7CQ1025294%7CQ1026821%7CQ1127696%7CQ1166379%7CQ1186956%7CQ1218%7CQ123196%7CQ126084%7CQ1265469%7CQ134762%7CQ135421%7CQ135432%7CQ135434%7CQ135485%7CQ1383013%7CQ1394786%7CQ1423367%7CQ14946812%7CQ151920%7CQ15222994%7CQ152368%7CQ152374%7CQ152379%7CQ152385%7CQ152387%7CQ152396%7CQ152399%7CQ152406%7CQ152413%7CQ152418%7CQ152436&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_02.json",
+   "retrieved_at": "2026-10-24T13:28:54.096000+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "2fda7e865a61efd5f0d6a2a299b1766b5a3f3b50d2ae9906f4b030dfd5d365e5",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q17284979%7CQ1753236%7CQ180294%7CQ1807660%7CQ1827268%7CQ1880599%7CQ188336%7CQ190828%7CQ1914736%7CQ192213%7CQ192225%7CQ192807%7CQ1943917%7CQ198399%7CQ19947158%7CQ201051%7CQ207350%7CQ207540%7CQ208725%7CQ2095241%7CQ2105480%7CQ2125159%7CQ2175977%7CQ22092374%7CQ2213440%7CQ221447%7CQ2222888%7CQ2304754%7CQ2389508%7CQ2390257%7CQ2475182%7CQ2509463%7CQ2570492%7CQ2576600%7CQ2604424%7CQ2614192%7CQ2615322%7CQ2632879%7CQ2633158%7CQ2640074&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_05.json",
+   "retrieved_at": "2026-10-24T13:29:00.175716+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "2d412f0dd8ed33845cc506db756bb6554802072078fe9e882cd89e809452ec51",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7570765%7CQ757398%7CQ769578%7CQ7698551%7CQ771267%7CQ7843010%7CQ814900%7CQ845866%7CQ846939%7CQ880512%7CQ890358%7CQ921505%7CQ924849%7CQ930847%7CQ934904%7CQ950347%7CQ952186%7CQ974239&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_03.json",
+   "retrieved_at": "2026-10-24T13:28:54.784306+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "29720742f1d443012a8931f04bc529deffe886aa6a6f6bb84b6c8b78c820984d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q265115%7CQ2651477%7CQ2652222%7CQ2655024%7CQ2655682%7CQ27119483%7CQ27119544%7CQ2776759%7CQ2888680%7CQ2889270%7CQ2889401%7CQ2890554%7CQ2910964%7CQ2915526%7CQ2915534%7CQ2915542%7CQ2915758%7CQ2915760%7CQ2915935%7CQ2916599%7CQ2917294%7CQ2917297%7CQ2920123%7CQ2920239%7CQ2920289%7CQ2920311%7CQ2979369%7CQ304448%7CQ305508%7CQ309164%7CQ327413%7CQ3338970%7CQ335023%7CQ33935%7CQ34692%7CQ3529961%7CQ377111%7CQ41621%7CQ41843%7CQ429741&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_00.json",
+   "retrieved_at": "2026-10-24T13:31:41.710479+00:00",
+   "role": "P31 class definitions / CBS P3466 property definition, CC0",
+   "sha256": "805447909e33c3b4dba3d5702d7ebe7d5f83b491fb025fcdf32799812e903079",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=P3466%7CQ1003997%7CQ1074523%7CQ108178728%7CQ1095557%7CQ1123340%7CQ1131779%7CQ1135201%7CQ116291578%7CQ116291627%7CQ1200957%7CQ1218%7CQ12232785%7CQ123705%7CQ12403757%7CQ124080466%7CQ124176341%7CQ125148%7CQ128843%7CQ1288520%7CQ1326284%7CQ138019182%7CQ138027176%7CQ138036281%7CQ1421939%7CQ1422332%7CQ1440250%7CQ1444669%7CQ1473646%7CQ1473663%7CQ1473680%7CQ1501046%7CQ15239622%7CQ15284%7CQ1530274%7CQ1549591%7CQ15661340%7CQ1674675%7CQ1822040%7CQ185845&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_01.json",
+   "retrieved_at": "2026-10-24T13:28:53.438669+00:00",
+   "role": "literal own Wikidata claims, CC0",
+   "sha256": "16c12951370734a610e73e71b324828842063b8f881bfe89b99483e139d1acdd",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q152449%7CQ152462%7CQ152467%7CQ152473%7CQ152491%7CQ152501%7CQ152567%7CQ152602%7CQ152641%7CQ152659%7CQ1527236%7CQ15427117%7CQ1550881%7CQ1589806%7CQ1615560%7CQ162782%7CQ1632220%7CQ1638374%7CQ1651059%7CQ167582%7CQ167594%7CQ167617%7CQ167632%7CQ167649%7CQ167659%7CQ167677%7CQ1676894%7CQ1677434%7CQ167749%7CQ168162%7CQ168176%7CQ168202%7CQ168215%7CQ168245%7CQ168330%7CQ168337%7CQ1687708%7CQ171639%7CQ1721086%7CQ17279028&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_02.json",
+   "retrieved_at": "2026-10-24T13:31:41.710556+00:00",
+   "role": "P31 class definitions / CBS P3466 property definition, CC0",
+   "sha256": "9f5e9c7748b717b9deea2b1ad2c107f317e82924fad1dccf70a6e7cb222b1aea",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5419070%7CQ5422629%7CQ5422648%7CQ5422653%7CQ5423089%7CQ5423103%7CQ5423411%7CQ5423414%7CQ5423623%7CQ5423629%7CQ55502%7CQ56061%7CQ633565%7CQ65073769%7CQ651453%7CQ655593%7CQ6573597%7CQ702492%7CQ755017%7CQ766%7CQ7930989%7CQ795067%7CQ799284%7CQ801%7CQ917146%7CQ920496%7CQ941828&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_he.body",
+   "retrieved_at": "2026-10-24T13:15:48.188705+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "2124bf1558f8f24199674bebb61aa0ec7985949c4b74a4061c3c451f1c4dc86b",
+   "status": 200,
+   "url": "https://www.cbs.gov.il/he/Pages/%D7%A8%D7%99%D7%A9%D7%99%D7%95%D7%9F-%D7%A9%D7%99%D7%9E%D7%95%D7%A9.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_english_licence.body",
+   "retrieved_at": "2026-10-24T13:17:11.888238+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "451fe889dffa0dee9b3c754c1c857b19e6cfcf6af8dadb84a2239413947f3c4e",
+   "status": 200,
+   "url": "https://www.cbs.gov.il/en/Pages/Enduser-license.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_latest_xlsx.body",
+   "retrieved_at": "2026-10-24T13:19:33.970000+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "fd7220754693cf00e0291a9db8bb77781966a4b2e7f7264c13735e4af1572930",
+   "status": 200,
+   "url": "https://www.cbs.gov.il/he/publications/DocLib/2026/arai/%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%99%D7%94%20%D7%90%D7%A8%D7%A2%D7%99%D7%AA%20%D7%9C%D7%A1%D7%95%D7%A3%20%D7%90%D7%95%D7%92%D7%95%D7%A1%D7%98%202026.xlsx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_latest.body",
+   "retrieved_at": "2026-10-24T13:15:48.191002+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "c3a0387f6399e490077ff7ed418f1d25651497410184db06f27be317b1920a4e",
+   "status": 200,
+   "url": "https://www.cbs.gov.il/en/publications/Pages/2026/Population-in-localities-and-regional-councils---preliminary-estimates-2025-2026.aspx"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_filelist.body",
+   "retrieved_at": "2026-10-24T13:19:09.144306+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "8355e84fe70ad3ab3085a0c7ec5a3e11055341e374a88b99ba23adbf6e5d7603",
+   "status": 200,
+   "url": "https://www.cbs.gov.il/he/publications/_api/web/GetFolderByServerRelativeUrl('DocLib/2026/arai')/Files?$select=*,ServerRelativeUrl,Title&$expand=ListItemAllFields"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_item.json",
+   "retrieved_at": "2026-10-24T13:30:26.677388+00:00",
+   "role": "agency licence / official count and current catalogue / geometry terms",
+   "sha256": "79ad60408bab85e7008ba40a68971fa8ea8e679fbbbae4e2e28abefe5ccebb49",
+   "status": 200,
+   "url": "https://www.arcgis.com/sharing/rest/content/items/542a86795a8d40b7b3a13ec93aa7aea5?f=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_raw_0.geojson",
+   "retrieved_at": "2026-10-24T13:31:10.109614+00:00",
+   "role": "raw CBS 2021 locality boundary; same exact CBS locality code",
+   "sha256": "b9589b51507cdb4d2ef08ae1d837e33c0646f1fdf23855715e600f8c0858beaf",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/SOEC_SetlBord_2021_Dissolve/FeatureServer/2/query?where=SEMEL_YISH+in+%28472%2C473%2C1342%2C1375%2C652%2C182%2C400%2C3793%2C2710%2C1358%2C31%2C2400%2C1020%2C3760%2C565%2C1330%2C797%2C2600%2C478%2C1359%2C3579%2C3604%2C41%2C1309%2C3618%2C3750%2C3560%2C529%2C3650%2C3570%2C70%2C7100%2C6000%2C1376%2C2530%2C9000%2C482%2C4001%2C998%2C1348%2C3574%2C3652%2C480%2C466%2C1050%2C326%2C9200%2C2610%2C3780%2C6100%2C1066%2C9800%2C1326%2C944%2C483%2C3744%2C3710%2C3654%2C2038%2C1319%29&outFields=OBJECTID%2CSEMEL_YISH&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_Setl_Point_raw_0.geojson",
+   "retrieved_at": "2026-10-24T13:31:10.115303+00:00",
+   "role": "official locality code/name/district; no population copied",
+   "sha256": "5acdb2cd11a5176d63621c002abfea4d3e43254d3634d72f2b18499955040d81",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/Setl_Point/FeatureServer/0/query?where=SETL_CODE+in+%28472%2C473%2C1342%2C1375%2C652%2C182%2C400%2C3793%2C2710%2C1358%2C31%2C2400%2C1020%2C3760%2C565%2C1330%2C797%2C2600%2C478%2C1359%2C3579%2C3604%2C41%2C1309%2C3618%2C3750%2C3560%2C529%2C3650%2C3570%2C70%2C7100%2C6000%2C1376%2C2530%2C9000%2C482%2C4001%2C998%2C1348%2C3574%2C3652%2C480%2C466%2C1050%2C326%2C9200%2C2610%2C3780%2C6100%2C1066%2C9800%2C1326%2C944%2C483%2C3744%2C3710%2C3654%2C2038%2C1319%29&outFields=OBJECTID%2CSETL_CODE%2CHEB_NAME%2CENG_NAME%2CDISTRICT%2CSUB_DISTRI%2CMUNICI_STA&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/UN_OCHA_PSE.geojson.zip",
+   "retrieved_at": "2026-10-24T13:42:04.870534+00:00",
+   "role": "OCHA CC BY-IGO territorial reference; scope exclusion only, no population",
+   "sha256": "b2fb9ea8d2919aa645fae115519e3ec732f8e17a6fdb0b6e3e34a59fdc3b6b1d",
+   "status": 200,
+   "url": "https://data.humdata.org/dataset/2caf8373-816f-458c-9913-71bddb9cab7c/resource/ca372385-4c79-4378-abf1-cb506fb98023/download/pse_admin_boundaries.geojson.zip"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/UN_OCHA_SYR.geojson.zip",
+   "retrieved_at": "2026-10-24T13:43:46.434826+00:00",
+   "role": "OCHA CC BY-IGO territorial reference; scope exclusion only, no population",
+   "sha256": "448f0603d6c2866c095bf684ba7c7d3875656a3a145a7bba1cd5516ffcf7ee29",
+   "status": 200,
+   "url": "https://data.humdata.org/dataset/356a63e9-90aa-4b9c-a938-58ef24469c00/resource/ab4b6f19-3854-4b2b-8f5c-b5dc474a4c0c/download/syr_admin_boundaries.geojson.zip"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/UN_OCHA_PSE_catalogue.json",
+   "retrieved_at": "2026-10-24T13:40:35.777238+00:00",
+   "role": "OCHA reference-boundary edition and CC BY-IGO licence metadata; scope only",
+   "sha256": "d4bd4874c00d991995b407b7820dfb037ba034f29602b2a46eac4e1e76409d97",
+   "status": 200,
+   "url": "https://data.humdata.org/api/3/action/package_show?id=cod-ab-pse"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/UN_OCHA_SYR_catalogue.json",
+   "retrieved_at": "2026-10-24T13:42:41.253205+00:00",
+   "role": "OCHA reference-boundary edition and CC BY-IGO licence metadata; scope only",
+   "sha256": "bc27c9fc588e3e8447b6b0fffec1809d85b6e1da8e1369dd0b86cbeb7ffad39e",
+   "status": 200,
+   "url": "https://data.humdata.org/api/3/action/package_show?id=cod-ab-syr"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_04.json",
+   "retrieved_at": "2026-10-24T13:29:00.084768+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "82e2836e8737a999e4142fbbb98323b8b15051451d027cbbbe8ad42c78ca7aca",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q430776%7CQ4711348%7CQ471886%7CQ4732659%7CQ4752772%7CQ4849741%7CQ4897936%7CQ501543%7CQ5025321%7CQ5073143%7CQ5129612%7CQ522341%7CQ525649%7CQ5256997%7CQ5327515%7CQ5423103%7CQ5490729%7CQ55632757%7CQ5579519%7CQ5585918%7CQ5602694%7CQ567350%7CQ592526%7CQ602783%7CQ60956%7CQ612483%7CQ630692%7CQ637555%7CQ6385816%7CQ644663%7CQ667103%7CQ6745042%7CQ6747609%7CQ6772362%7CQ6794237%7CQ685357%7CQ6908245%7CQ7099213%7CQ7128290%7CQ732433&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_raw_3.geojson",
+   "retrieved_at": "2026-10-24T13:31:12.470652+00:00",
+   "role": "raw CBS 2021 locality boundary; same exact CBS locality code",
+   "sha256": "bcac8b109f06ca46411f001ce444fc6cc6a47c36f874cec7084bf5e80d49cc9f",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/SOEC_SetlBord_2021_Dissolve/FeatureServer/2/query?where=SEMEL_YISH+in+%281284%2C3726%2C447%2C522%2C523%2C3655%2C351%2C7200%2C3787%2C7300%2C2500%2C246%2C7400%2C525%2C587%2C526%2C7500%2C1245%2C1360%2C4501%2C528%2C666%2C530%2C511%2C532%2C521%2C4502%2C7600%2C3765%2C3727%2C3660%2C534%2C7700%2C3617%2C531%2C2560%2C637%2C1192%2C53%2C3768%2C537%2C3659%2C535%2C536%2C7800%2C171%2C7900%2C3791%2C1113%2C1345%2C276%2C8000%2C3557%2C195%2C1167%2C638%2C1243%2C1347%2C4100%2C2620%29&outFields=OBJECTID%2CSEMEL_YISH&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_Setl_Point_raw_3.geojson",
+   "retrieved_at": "2026-10-24T13:31:13.866996+00:00",
+   "role": "official locality code/name/district; no population copied",
+   "sha256": "93f189602cb70794b0d164fccbd31aa29f746d3b4e1037461790a2fe831a6b5f",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/Setl_Point/FeatureServer/0/query?where=SETL_CODE+in+%281284%2C3726%2C447%2C522%2C523%2C3655%2C351%2C7200%2C3787%2C7300%2C2500%2C246%2C7400%2C525%2C587%2C526%2C7500%2C1245%2C1360%2C4501%2C528%2C666%2C530%2C511%2C532%2C521%2C4502%2C7600%2C3765%2C3727%2C3660%2C534%2C7700%2C3617%2C531%2C2560%2C637%2C1192%2C53%2C3768%2C537%2C3659%2C535%2C536%2C7800%2C171%2C7900%2C3791%2C1113%2C1345%2C276%2C8000%2C3557%2C195%2C1167%2C638%2C1243%2C1347%2C4100%2C2620%29&outFields=OBJECTID%2CSETL_CODE%2CHEB_NAME%2CENG_NAME%2CDISTRICT%2CSUB_DISTRI%2CMUNICI_STA&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_00.json",
+   "retrieved_at": "2026-10-24T13:31:41.710479+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "805447909e33c3b4dba3d5702d7ebe7d5f83b491fb025fcdf32799812e903079",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=P3466%7CQ1003997%7CQ1074523%7CQ108178728%7CQ1095557%7CQ1123340%7CQ1131779%7CQ1135201%7CQ116291578%7CQ116291627%7CQ1200957%7CQ1218%7CQ12232785%7CQ123705%7CQ12403757%7CQ124080466%7CQ124176341%7CQ125148%7CQ128843%7CQ1288520%7CQ1326284%7CQ138019182%7CQ138027176%7CQ138036281%7CQ1421939%7CQ1422332%7CQ1440250%7CQ1444669%7CQ1473646%7CQ1473663%7CQ1473680%7CQ1501046%7CQ15239622%7CQ15284%7CQ1530274%7CQ1549591%7CQ15661340%7CQ1674675%7CQ1822040%7CQ185845&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_02.json",
+   "retrieved_at": "2026-10-24T13:31:41.710556+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "9f5e9c7748b717b9deea2b1ad2c107f317e82924fad1dccf70a6e7cb222b1aea",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5419070%7CQ5422629%7CQ5422648%7CQ5422653%7CQ5423089%7CQ5423103%7CQ5423411%7CQ5423414%7CQ5423623%7CQ5423629%7CQ55502%7CQ56061%7CQ633565%7CQ65073769%7CQ651453%7CQ655593%7CQ6573597%7CQ702492%7CQ755017%7CQ766%7CQ7930989%7CQ795067%7CQ799284%7CQ801%7CQ917146%7CQ920496%7CQ941828&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_context_01.json",
+   "retrieved_at": "2026-10-24T13:31:41.706020+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "ba4f3851b3206bbf3f9d5ada554eb04d5b24277a2ccf355c39bc2cbf90fc4120",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q188336%7CQ188781%7CQ188785%7CQ189942%7CQ1915911%7CQ192232%7CQ192811%7CQ194689%7CQ195968%7CQ1965822%7CQ20616831%7CQ2202509%7CQ2212935%7CQ22674925%7CQ2305374%7CQ2640094%7CQ2678908%7CQ269770%7CQ27554677%7CQ2914961%7CQ2983893%7CQ3154693%7CQ319233%7CQ33935%7CQ34692%7CQ3505887%7CQ3934822%7CQ3957%7CQ4145971%7CQ41621%7CQ430776%7CQ4783288%7CQ486972%7CQ491507%7CQ5148521%7CQ515%7CQ51929311%7CQ5283469%7CQ5283479%7CQ532&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_raw_1.geojson",
+   "retrieved_at": "2026-10-24T13:31:10.115491+00:00",
+   "role": "raw CBS 2021 locality boundary; same exact CBS locality code",
+   "sha256": "785091772bc8fcdb060a629e394d28ef011d3983dd4cb278cc160c9d725a70e6",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/SOEC_SetlBord_2021_Dissolve/FeatureServer/2/query?where=SEMEL_YISH+in+%286200%2C3794%2C1292%2C485%2C627%2C541%2C487%2C628%2C3763%2C1293%2C147%2C3730%2C681%2C6300%2C2550%2C166%2C1274%2C3823%2C229%2C494%2C489%2C490%2C492%2C2200%2C9700%2C3769%2C6400%2C9300%2C1290%2C975%2C6500%2C6600%2C1303%2C496%2C4000%2C2034%2C1247%2C3770%2C6700%2C962%2C498%2C2730%2C497%2C2720%2C2100%2C3788%2C8900%2C1295%2C46%2C2660%2C577%2C9400%2C29%2C499%2C3749%2C3647%2C240%2C831%2C3000%2C502%29&outFields=OBJECTID%2CSEMEL_YISH&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_Setl_Point_raw_1.geojson",
+   "retrieved_at": "2026-10-24T13:31:10.115670+00:00",
+   "role": "official locality code/name/district; no population copied",
+   "sha256": "d7ae3087ec39367b34d8f40ffd01858670f3f1dc5616494cff929ec6b9f6f76a",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/Setl_Point/FeatureServer/0/query?where=SETL_CODE+in+%286200%2C3794%2C1292%2C485%2C627%2C541%2C487%2C628%2C3763%2C1293%2C147%2C3730%2C681%2C6300%2C2550%2C166%2C1274%2C3823%2C229%2C494%2C489%2C490%2C492%2C2200%2C9700%2C3769%2C6400%2C9300%2C1290%2C975%2C6500%2C6600%2C1303%2C496%2C4000%2C2034%2C1247%2C3770%2C6700%2C962%2C498%2C2730%2C497%2C2720%2C2100%2C3788%2C8900%2C1295%2C46%2C2660%2C577%2C9400%2C29%2C499%2C3749%2C3647%2C240%2C831%2C3000%2C502%29&outFields=OBJECTID%2CSETL_CODE%2CHEB_NAME%2CENG_NAME%2CDISTRICT%2CSUB_DISTRI%2CMUNICI_STA&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_raw_4.geojson",
+   "retrieved_at": "2026-10-24T13:31:14.862004+00:00",
+   "role": "raw CBS 2021 locality boundary; same exact CBS locality code",
+   "sha256": "7364a5d3e4ff0a3975bcd07e5b724e161877550b8d325826ffd18fd6fe1c0573",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/SOEC_SetlBord_2021_Dissolve/FeatureServer/2/query?where=SEMEL_YISH+in+%283611%2C6800%2C9500%2C2630%2C2300%2C9600%2C1137%2C8200%2C1034%2C469%2C2800%2C3640%2C543%2C2640%2C26%2C8300%2C3795%2C1161%2C997%2C8400%2C542%2C922%2C8500%2C8600%2C2650%2C122%2C8700%2C913%2C1286%2C1031%2C1304%2C658%2C3641%2C812%2C1337%2C538%2C856%2C3826%2C8800%2C763%2C5000%2C154%2C3815%2C1054%2C709%2C3563%29&outFields=OBJECTID%2CSEMEL_YISH&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_Setl_Point_raw_4.geojson",
+   "retrieved_at": "2026-10-24T13:31:14.862700+00:00",
+   "role": "official locality code/name/district; no population copied",
+   "sha256": "e756f48058befbbb0a2595b71e454fbcb648433d1325e9949e701d5b605f7434",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/Setl_Point/FeatureServer/0/query?where=SETL_CODE+in+%283611%2C6800%2C9500%2C2630%2C2300%2C9600%2C1137%2C8200%2C1034%2C469%2C2800%2C3640%2C543%2C2640%2C26%2C8300%2C3795%2C1161%2C997%2C8400%2C542%2C922%2C8500%2C8600%2C2650%2C122%2C8700%2C913%2C1286%2C1031%2C1304%2C658%2C3641%2C812%2C1337%2C538%2C856%2C3826%2C8800%2C763%2C5000%2C154%2C3815%2C1054%2C709%2C3563%29&outFields=OBJECTID%2CSETL_CODE%2CHEB_NAME%2CENG_NAME%2CDISTRICT%2CSUB_DISTRI%2CMUNICI_STA&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_03.json",
+   "retrieved_at": "2026-10-24T13:28:54.784306+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "29720742f1d443012a8931f04bc529deffe886aa6a6f6bb84b6c8b78c820984d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q265115%7CQ2651477%7CQ2652222%7CQ2655024%7CQ2655682%7CQ27119483%7CQ27119544%7CQ2776759%7CQ2888680%7CQ2889270%7CQ2889401%7CQ2890554%7CQ2910964%7CQ2915526%7CQ2915534%7CQ2915542%7CQ2915758%7CQ2915760%7CQ2915935%7CQ2916599%7CQ2917294%7CQ2917297%7CQ2920123%7CQ2920239%7CQ2920289%7CQ2920311%7CQ2979369%7CQ304448%7CQ305508%7CQ309164%7CQ327413%7CQ3338970%7CQ335023%7CQ33935%7CQ34692%7CQ3529961%7CQ377111%7CQ41621%7CQ41843%7CQ429741&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_02.json",
+   "retrieved_at": "2026-10-24T13:28:54.096000+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "2fda7e865a61efd5f0d6a2a299b1766b5a3f3b50d2ae9906f4b030dfd5d365e5",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q17284979%7CQ1753236%7CQ180294%7CQ1807660%7CQ1827268%7CQ1880599%7CQ188336%7CQ190828%7CQ1914736%7CQ192213%7CQ192225%7CQ192807%7CQ1943917%7CQ198399%7CQ19947158%7CQ201051%7CQ207350%7CQ207540%7CQ208725%7CQ2095241%7CQ2105480%7CQ2125159%7CQ2175977%7CQ22092374%7CQ2213440%7CQ221447%7CQ2222888%7CQ2304754%7CQ2389508%7CQ2390257%7CQ2475182%7CQ2509463%7CQ2570492%7CQ2576600%7CQ2604424%7CQ2614192%7CQ2615322%7CQ2632879%7CQ2633158%7CQ2640074&props=claims%7Clabels&languages=en%7Che&format=json"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_SOEC_SetlBord_2021_Dissolve_raw_2.geojson",
+   "retrieved_at": "2026-10-24T13:31:11.431262+00:00",
+   "role": "raw CBS 2021 locality boundary; same exact CBS locality code",
+   "sha256": "39b5cca8b736e615f598da7db39e98505534c989a02c32d50c15fa67f853c4af",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/SOEC_SetlBord_2021_Dissolve/FeatureServer/2/query?where=SEMEL_YISH+in+%28504%2C505%2C3564%2C1224%2C3779%2C1059%2C1296%2C978%2C3638%2C633%2C3796%2C190%2C1263%2C696%2C507%2C168%2C508%2C509%2C510%2C512%2C6900%2C634%2C654%2C47%2C1139%2C1271%2C7000%2C1060%2C3709%2C1015%2C516%2C4201%2C481%2C65%2C874%2C3797%2C1200%2C635%2C28%2C517%2C43%2C1268%2C1343%2C4203%2C694%2C518%2C3616%2C3608%2C3651%2C1327%2C1063%2C3576%2C99%2C1098%2C520%2C1315%2C524%2C9100%2C3725%2C1061%29&outFields=OBJECTID%2CSEMEL_YISH&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/IL_Setl_Point_raw_2.geojson",
+   "retrieved_at": "2026-10-24T13:31:11.526959+00:00",
+   "role": "official locality code/name/district; no population copied",
+   "sha256": "e8f6109faf7699ab01202570d8c7604bfb2c9cfe0e808b3800d941cc3e01de31",
+   "status": 200,
+   "url": "https://services2.arcgis.com/xMRYm7cNgdR5RN6F/ArcGIS/rest/services/Setl_Point/FeatureServer/0/query?where=SETL_CODE+in+%28504%2C505%2C3564%2C1224%2C3779%2C1059%2C1296%2C978%2C3638%2C633%2C3796%2C190%2C1263%2C696%2C507%2C168%2C508%2C509%2C510%2C512%2C6900%2C634%2C654%2C47%2C1139%2C1271%2C7000%2C1060%2C3709%2C1015%2C516%2C4201%2C481%2C65%2C874%2C3797%2C1200%2C635%2C28%2C517%2C43%2C1268%2C1343%2C4203%2C694%2C518%2C3616%2C3608%2C3651%2C1327%2C1063%2C3576%2C99%2C1098%2C520%2C1315%2C524%2C9100%2C3725%2C1061%29&outFields=OBJECTID%2CSETL_CODE%2CHEB_NAME%2CENG_NAME%2CDISTRICT%2CSUB_DISTRI%2CMUNICI_STA&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  {
+   "edition": "Archived public release; see dataset title and per-record cell",
+   "path": "sources/wd_own_00.json",
+   "retrieved_at": "2026-10-24T13:28:53.083962+00:00",
+   "role": "own P131 chain to stored state",
+   "sha256": "09e5973eabb36a7f2bb0443445a59c2e6acb13a97ce37c73a38d723f44c3ac8d",
+   "status": 200,
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000887%7CQ1001895%7CQ1008008%7CQ1009864%7CQ1011497%7CQ1011538%7CQ1018875%7CQ1018884%7CQ1022481%7CQ1025294%7CQ1026821%7CQ1127696%7CQ1166379%7CQ1186956%7CQ1218%7CQ123196%7CQ126084%7CQ1265469%7CQ134762%7CQ135421%7CQ135432%7CQ135434%7CQ135485%7CQ1383013%7CQ1394786%7CQ1423367%7CQ14946812%7CQ151920%7CQ15222994%7CQ152368%7CQ152374%7CQ152379%7CQ152385%7CQ152387%7CQ152396%7CQ152399%7CQ152406%7CQ152413%7CQ152418%7CQ152436&props=claims%7Clabels&languages=en%7Che&format=json"
+  }
+ ]
+}
