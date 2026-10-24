@@ -1484,6 +1484,34 @@ Exact licence quote: "Creative Commons Attribution"; CKAN license_id "cc-by"; li
 Retrieved: 2026-10-23T14:55:39Z. Exact file SHA-256 and per-record cell pointers retained in the latam_pop_v5x ledger and sources.csv in the audit delivery.
 Modifications: selected same-entity municipio totals, reformatted integer counts and added population_year 2018. No agency endorsement implied.
 
+Hungarian Central Statistical Office (KSH / HCSO) — terms_pop_v5x
+Datasets: Detailed Gazetteer of Hungary: Localities and Settlement-parts
+Edition/reference date: 2026 gazetteer, sheets Localities 01.01.2026. and Settlement-parts 01.01.2026.; 2026-01-01
+Dataset URLs: https://www.ksh.hu/docs/helysegnevtar/dgh_download_2026.xlsx
+Exact deciding licence clause: “HCSO uses standardised international licence Creative Commons Attribution 4.0 International (CC BY 4.0)”
+Terms: https://www.ksh.hu/copyright | https://www.ksh.hu/copyright_eng
+Required credit: Source: HCSO / https://www.ksh.hu/ . CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Identity support: KSH TIMEA published locality boundary data, ksh_vazterkep MapServer layer 7, retrieved 24 October 2026; no base-map images or illustrations reused.
+Modifications: selected own-locality resident counts from the 1 January 2026 gazetteer, normalized integers, matched own HCSO codes and derived point-containment checks; added reference year 2026. This derived selection is not an unchanged HCSO publication. No endorsement implied.
+
+Statistical Office of the Republic of Slovenia (SURS) — terms_pop_v5x
+Datasets: Population by sex and by age, municipalities and settlements, annually; SiStat 05C5003S
+Edition/reference date: Final 2026 data; release/update 2026-06-11; 2026-01-01
+Dataset URLs: https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C5003S.px/ | https://pxweb.stat.si/SiStatData/api/v1/en/Data/05C5003S.px
+Exact deciding licence clause: “to adapt, modify, and create derivative works and incorporate them into other products and services”
+Terms: https://www.stat.si/StatWeb/StaticPages/Index/copyright | https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright
+Required credit: Source: SURS, SiStat 05C5003S, population at 1 January 2026, final data released 11 June 2026.
+Identity geometry credit: Geodetska uprava Republike Slovenije, Register prostorskih enot – naselja, database snapshot retrieved 24 October 2026; per-feature DATUM_SYS retained in the ledger. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Exact supporting-data clause: “Dovoljeno je tako deljenje kot predelovanje podatkov.” https://www.e-prostor.gov.si/dostopi/javni-dostop/
+Modifications: selected own six-digit settlement totals, decoded public CSV as Windows-1250, matched UTF-8 official labels and original points to own official settlement polygons, normalized integers and added year 2026. Derived matching/containment and this selected database are not an unchanged SURS/GURS publication. No endorsement implied.
+
+Statistical Office of the Republic of Serbia (RZS / SORS) — terms_pop_v5x
+Datasets: 2022 Census of Population, Households and Dwellings, total population by settlements (0_ukupan-broj-stanovnika-naselja.xlsx); GeoCensus PS22_IND1_NAS / PS22_IND1_OPS for identity checks only
+Edition/reference date: 2022 Census; reference date 30 September 2022
+Dataset URLs: https://popis2022.stat.gov.rs/media/31355/0_ukupan-broj-stanovnika-naselja.xlsx | https://gis.stat.gov.rs/server/rest/services/Hosted/Indikatori_popis_stanivnistva_2022_1/FeatureServer
+Exact deciding licence clause: “Files and statistical data from this website may be downloaded, reproduced, distributed, shared, and used for commercial and non-commercial purposes”
+Terms: https://www.stat.gov.rs/sr-cyrl/copyright/ | https://www.stat.gov.rs/en-US/copyright/ | https://opendata.stat.gov.rs/odata/?id=en-us
+Required credit: Statistical Office of the Republic of Serbia (RZS/SORS), https://www.stat.gov.rs/ , 2022 Census, Total population by settlements; public settlement workbook and GeoCensus PS22_IND1_NAS/OPS, retrieved 24 October 2026.
+Modifications: selected and matched own settlement census counts, checked workbook against the public census feature service, normalized integers, derived original-point containment and added reference year 2022. No municipal 2025 estimate is assigned to a seat settlement. This derived selection is not an unchanged RZS publication. No endorsement implied.
+
 Stats NZ — nz_pop_v5x
 Datasets: Subnational population estimates (urban rural), by age and sex, at 30 June 1996–2025 (2025 boundaries), POPES_SUB_009 version 1.0; selected 30 June 2025 provisional total residents. Urban Rural Areas 2023 and 2026, Regional Council 2025: identity and point screening only.
 Data: https://explore.data.stats.govt.nz/ ; https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/POPES_SUB_009/1.0 ; https://www.stats.govt.nz/information-releases/subnational-population-estimates-at-30-june-2025/ .
