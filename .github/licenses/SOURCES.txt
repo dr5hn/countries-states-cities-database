@@ -1550,3 +1550,15 @@ Acknowledgement template in the licence (for preservation of original selection/
 Exact exception: "When using data extracted from the Information in a manner that does not preserve the originality on the selection or arrangement of the data in its source, you shall not acknowledge the source." This database selects and rearranges facts; the template is recorded as a licence requirement, not asserted as an as-is reproduction credit. The links above document audit provenance.
 Retrieved: 24 October 2026; original downloaded workbook SHA-256 reverified, linked folder confirms latest August 2026 release.
 Modifications: selected same-entity locality totals, converted decimal preliminary estimates to integer persons using Decimal ROUND_HALF_UP, added population_year 2026 and rearranged records into the existing database. Raw estimates and exact cells remain in the ledger. No council totals or disputed-area counts are used. No CBS endorsement is implied.
+
+timezone-boundary-builder — city timezone audit
+Publisher: Evan Siroky and timezone-boundary-builder contributors; © OpenStreetMap contributors.
+Edition: 2026e, timezones.geojson.zip (land, all zones), aligned with IANA tzdata 2026e.
+Source: https://github.com/evansiroky/timezone-boundary-builder/releases/tag/2026e
+Licence: Open Database License 1.0 (ODbL), https://opendatacommons.org/licenses/odbl/1-0/
+OSM credit and licence: https://www.openstreetmap.org/copyright
+Changes by CSC: mapped each stored city point to polygons; changed only timezone where safely inside a single
+country-compatible zone; normalized old or foreign names to country-specific zone.tab names, retaining country-listed links. Border, identity, state and territory holds stay unchanged.
+Reuse: retain attribution, source and licence notices; comply with ODbL attribution and share-alike requirements.
+IANA tzdata 2026e country tables and backward links: https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz
+IANA data is public domain except material explicitly noted in its accompanying LICENSE.
