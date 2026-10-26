@@ -1562,3 +1562,16 @@ country-compatible zone; normalized old or foreign names to country-specific zon
 Reuse: retain attribution, source and licence notices; comply with ODbL attribution and share-alike requirements.
 IANA tzdata 2026e country tables and backward links: https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz
 IANA data is public domain except material explicitly noted in its accompanying LICENSE.
+
+Rosstat — ru_pop_v5x
+Source: Federal State Statistics Service (Rosstat), Численность постоянного населения, designated open dataset 7708234640-population, 2015 release. Total residents of an individual settlement; 2015 is the observation year, not the archive or download year.
+Publisher: https://rosstat.gov.ru/opendata/7708234640-population
+Exact release: https://rosstat.gov.ru/opendata/7708234640-population/data-20151101-structure-20141013.csv
+Archived passport: https://web.archive.org/web/20200821213716/https://rosstat.gov.ru/opendata/7708234640-population
+Archived release: https://web.archive.org/web/20200821233508/https://rosstat.gov.ru/opendata/7708234640-population/data-20151101-structure-20141013.csv
+Deciding scope quote: “Деление по Российской Федерации, федеральным округам, субъектам Российской Федерации, муниципальным образованиям, городским населённым пунктам, категории населения, годам”. The passport is in Открытые данные and links its exact CSV and the standard open-data conditions at https://data.gov.ru/information-usage .
+Rosstat terms: https://rosstat.gov.ru/opendata/ ; https://rosstat.gov.ru/storage/2018/08-23/6RswQtD5/usl-od.pdf .
+Deciding reuse clause: “копировать, публиковать, распространять открытые данные, видоизменять открытые данные и объединять их с другой информацией, использовать открытые данные в некоммерческих и коммерческих целях”. Required conditions: lawful use, no distortion, and “сохранять ссылку на источник информации при использовании открытых данных”.
+Modifications: selected separately identified settlement totals; filled missing counts only, and added population_year=2015. Other differing stored counts were preserved for owner review. Municipal district and urban okrug aggregates were excluded. This is an older covered edition; no claim of current population or agency endorsement. No change to names, types, identifiers, parents or coordinates.
+geoBoundaries / original boundary contributors: https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/RUS/ADM1/geoBoundaries-RUS-ADM1.geojson ; Open Data Commons Open Database License 1.0, https://opendatacommons.org/licenses/odbl/1-0/ . Original points screened against the 83-subject geometry; outside-reference points held. Geometry is used only for identity screening.
+Wikidata contributors: https://www.wikidata.org/wiki/Wikidata:Licensing ; CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ . Only identity claims, labels, codes, administrative chains and coordinates selected from archived literal own items. P1082 consulted solely to preserve an existing value matching a post-2015 statement; no P1082 number or year assigned. Captures retain original retrieval dates.
