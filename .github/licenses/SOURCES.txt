@@ -1576,6 +1576,64 @@ Modifications: selected separately identified settlement totals; filled missing 
 geoBoundaries / original boundary contributors: https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/RUS/ADM1/geoBoundaries-RUS-ADM1.geojson ; Open Data Commons Open Database License 1.0, https://opendatacommons.org/licenses/odbl/1-0/ . Original points screened against the 83-subject geometry; outside-reference points held. Geometry is used only for identity screening.
 Wikidata contributors: https://www.wikidata.org/wiki/Wikidata:Licensing ; CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ . Only identity claims, labels, codes, administrative chains and coordinates selected from archived literal own items. P1082 consulted solely to preserve an existing value matching a post-2015 statement; no P1082 number or year assigned. Captures retain original retrieval dates.
 
+KZ / Bureau of National Statistics, Kazakhstan population facts
+Credit / data source: Bureau of National Statistics, Kazakhstan.
+
+Dataset: Population of the Republic of Kazakhstan by gender and type of locality; Table 3 regions, cities, districts, district centres and settlements (XLSX); edition: Published 14 August 2026; latest detailed release found; reference: 2026-07-01; republican cities additionally available at 2026-09-01.
+Source: https://stat.gov.kz/api/iblock/element/511983/file/en/
+Terms / licence: https://stat.gov.kz/en/description/
+Exact deciding clause: "Users may use official statistical information for any purposes (including reusing it in full) freely, free of charge, perpetually, and without territorial restrictions, including copying, publishing, distributing with a reference to the source, modifying, combining it with other information, as well as using it for the creation of software products and applications."
+Retrieved: 2026-10-27T08:35:55.929184+00:00; archived source SHA-256 verified against terms_screen3_v5x and recorded in the ledger sources.
+Modifications: selected existing same-entity population totals, reformatted into database integers, and added the reference year. Integer persons copied from the total-persons column; no population rounding. Unit totals are not transferred to seat settlements; special-area rows are held. No provider endorsement is implied.
+
+MA / Haut-Commissariat au Plan (HCP), Morocco population facts
+Credit / data source: Haut-Commissariat au Plan (HCP), Morocco.
+
+Dataset: Population légale du Royaume du Maroc selon les résultats du RGPH 2024 (XLSX); edition: RGPH 2024; released 7 November 2024; reference: 2024-09-01.
+Source: https://www.hcp.ma/file/242341/
+Terms / licence: https://www.hcp.ma/Conditions-generales-d-utilisation-Version-1-0_a2194.html
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Exact deciding clause: "En conformité avec les dispositions et normes internationales d’ouverture des données et notamment les dispositions de la licence
+CC BY 4.0
+, vous êtes autorisés à télécharger les indicateurs du site hcp.ma et bds.hcp.ma librement sauf spécification contraire et à les réutiliser, y compris à des fins commerciales."
+Retrieved: 2026-10-27T08:36:32.392601+00:00; archived source SHA-256 verified against terms_screen3_v5x and recorded in the ledger sources.
+Modifications: selected existing same-entity population totals, reformatted into database integers, and added the reference year. Integer persons copied from the total-persons column; no population rounding. Unit totals are not transferred to seat settlements; special-area rows are held. No provider endorsement is implied.
+
+GE / National Statistics Office of Georgia (Geostat) population facts
+Credit / data source: National Statistics Office of Georgia (Geostat).
+Source: Geostat.
+Dataset: Population as of 1 January by cities and boroughs; companion regions/self-governed units (XLSX); edition: 2015–2026 cities/boroughs series; 2026 latest annual column; reference: 2026-01-01.
+Source: https://geostat.ge/media/78358/1-3-population-by-cities-and-boroughs.xlsx
+Terms / licence: https://www.geostat.ge/en/page/monacemta-gamoyenebis-pirobebi
+Exact deciding clause: "The National Statistics Office of Georgia (GEOSTAT) allows its users, with the exception listed below the right to download, use, adapt, modify, create derivative works of, disseminate, copy, and share to the third parties, for any purpose, including commercial and non-commercial use, without restriction, statistical data, metadata, official publications and other published documents placed on GEOSTAT website without prior permission."
+Retrieved: 2026-10-27T08:35:56.245810+00:00; archived source SHA-256 verified against terms_screen3_v5x and recorded in the ledger sources.
+Modifications: selected existing same-entity population totals, reformatted into database integers, and added the reference year. Published thousands multiplied by 1000, nearest whole person ROUND_HALF_UP to remove XLSX binary representation artifacts; raw values and cells are recorded. Unit totals are not transferred to seat settlements; special-area rows are held. No provider endorsement is implied.
+
+MD / National Bureau of Statistics of the Republic of Moldova population facts
+Credit / data source: National Bureau of Statistics of the Republic of Moldova.
+Source: National Bureau of Statistics of the Republic of Moldova.
+Dataset: 2024 Population and Housing Census final results: distribution by localities, Annex 8.3 (XLSX); edition: Final locality release, 26 March 2026; census 2024; reference: 2024-04-08.
+Source: https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Localitati_RPL2024.xlsx
+Terms / licence: https://statistica.gov.md/en/terms-and-conditions-139_4417.html
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Exact deciding clause: "copy and redistribute the material in any medium or format;
+remix, transform, and build upon the material;
+use it for commercial and non-commercial purposes."
+Retrieved: 2026-10-27T08:37:44.669154+00:00; archived source SHA-256 verified against terms_screen3_v5x and recorded in the ledger sources.
+Modifications: selected existing same-entity population totals, reformatted into database integers, and added the reference year. Integer persons copied from the total-persons column; no population rounding. Unit totals are not transferred to seat settlements; special-area rows are held. No provider endorsement is implied.
+
+MY / Department of Statistics Malaysia / OpenDOSM population facts
+Credit / data source: Department of Statistics Malaysia / OpenDOSM.
+Data source: Department of Statistics Malaysia.
+Dataset: Population Table: Administrative Districts (CSV; population in thousands); edition: Updated 7 October 2026, annual series 2020–2026; reference: 2026 mid-year estimate; date column 2026-01-01 is an annual-series label, NOT census/reference day.
+Source: https://storage.dosm.gov.my/population/population_district.csv
+Terms / licence: https://www.dosm.gov.my/portal-main/article/term-of-use
+Dataset-specific CC BY 4.0 licence: https://open.dosm.gov.my/data-catalogue/population_district
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Exact deciding clause: "This data is made open under the Creative Commons Attribution 4.0 International License (CC BY 4.0)."
+Retrieved: 2026-10-27T08:39:43.046910+00:00; archived source SHA-256 verified against terms_screen3_v5x and recorded in the ledger sources.
+Modifications: selected existing same-entity population totals, reformatted into database integers, and added the reference year. Published thousands rounded to one decimal multiplied by 1000: population rounded to nearest 100 persons, not an exact headcount; reference is mid-year 2026, not the CSV annual label 2026-01-01. Unit totals are not transferred to seat settlements; special-area rows are held. No provider endorsement is implied.
+
 Census 2021 parish and community populations (gb_parish_pop_v5x)
 Datasets: ONS/Nomis PP002 - Sex (all persons, Census Day 21 March 2021); ONS Parishes December 2021 and December 2022 full-resolution boundaries; Parishes and Non-Civil Parished Areas May 2026 register; Parish to Ward to LAD December 2021 lookup (V2); Ward to LAD to County December 2021 lookup; Ward to LAD to CTYUA May 2026 lookup; Counties and Unitary Authorities December 2021 boundaries; Code History Database June 2026; Nomis Census 2011 KS101EW - Usual resident population (same-code earlier-count equality).
 Source: Office for National Statistics licensed under the Open Government Licence v.3.0
