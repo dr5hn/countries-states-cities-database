@@ -1307,6 +1307,19 @@ Modifications: selected and linked official register entries to existing FR/ES/I
 
 Destatis GV-ISys 30.09.2026 and GV100AD class codes; dl-de/by-2-0. Statistics Canada Census 2021 CSD attributes, boundaries and 2025 register; Statistics Canada Open Licence (OGL-Canada). INEGI ITER 2020 and current locality catalogue; Términos de Libre Uso. Wikidata own-item statements: CC0. Modifications: selected existing same-entity type, type_local and level facts; no endorsement. Per-row evidence: .github/fixes-docs/ledgers/types_decamx_v5x.jsonl and sibling .sources.json.
 
+Central Statistical Bureau of Latvia — lvnz_pop_v5x
+Datasets: IRD081, Population by sex and age group in regions, cities, municipalities, towns, rural territories, neighbourhoods and densely populated areas at the beginning of year 1970–2026; 2026-01-01 total persons, updated 1 October 2026. IRS031 consulted for cross-reference.
+Data: https://api.stat.gov.lv/api/v2/tables/IRD081/metadata?lang=en ; https://api.stat.gov.lv/api/v2/tables/IRS031/metadata?lang=en .
+Exact licence statement: “Data is sourced from official statistical databases and is provided free of charge under the CC BY 4.0 license. The servers are hosted on government infrastructure in Latvia.”
+Terms: https://mcp.stat.gov.lv/?lang=en ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: Selected total persons using the existing row's own active ATVK code; normalized integer population and added reference year 2026. No municipal or densely populated area total assigned to a different town entity. Boundary archive download failed and was not used. Derived work; no endorsement implied.
+
+Wikidata contributors — lvnz_pop_v5x
+Dataset: archived literal own-item claims, labels, points and parent municipality identifiers; original capture dates retained.
+Exact licence statement: “All structured data (i.e. the main, Property, Lexeme, and EntitySchema namespaces) is released into the public domain under Creative Commons Zero .”
+Terms: https://www.wikidata.org/wiki/Wikidata:Licensing ; https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: Selected active P31, P131, P1115, P300 and P625 for identity binding; no Wikidata population used.
+
 Central Statistics Office (Ireland) — ie_nz_pop_v5x
 Dataset: Census 2022 Small Area Population Statistics, Built Up Areas, SAPS_2022_BUA_270923.csv (27 September 2023); https://www.cso.ie/en/census/census2022/census2022smallareapopulationstatistics/ .
 Exact licence statement: “Statistical information on this website is accessible free of charge and licensed under Creative Commons Attribution (CC BY 4.0).”
@@ -1427,3 +1440,138 @@ Dataset: Limites administratives du Grand-Duché de Luxembourg, 5 October 2026, 
 Publisher page and exact licence statement: https://data.public.lu/fr/datasets/limites-administratives-du-grand-duche-de-luxembourg/ — “Creative Commons Zero (CC0)”.
 Licence: CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ .
 Modifications: CSC tested unchanged record points against official commune polygons and retained commune/canton codes; no original geometry is distributed in CSC city records.
+
+State Statistics Service of Ukraine — ua_pop_v5x
+Dataset: Number of Present Population of Ukraine, as of January 1, 2022; table 5 (settlements).
+Publication: https://stat.gov.ua/uk/publications/chyselnist-nayavnoho-naselennya-ukrayiny
+PDF: https://stat.gov.ua/sites/default/files/2026-09/zb_chnas_22.pdf
+Licence: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ .
+Exact publisher licence statement: “© 2026 Весь контент доступний за ліцензією Creative Commons Attribution 4.0 International license, якщо не зазначено інше.”
+Modifications: Selected city and urban-type settlement present-population estimates, matched to existing CSC settlement identities, normalized integers and added reference year 2022. Derived CSC data; no endorsement implied. No 2001 census or Russian-published population used.
+
+Istituto Nazionale di Statistica (ISTAT) — Italian locality populations (it_pop2_v5x)
+Datasets: Località puntuali italiane 2021 (POP21 resident population, 31 December 2021), Località italiane 2021 polygons, and administrative boundaries 1 January 2026.
+Dataset page: https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/
+Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ .
+Exact agency licence statement: “Salvo diversa indicazione, tutti i contenuti pubblicati su questo sito sono soggetti alla licenza Creative Commons – Attribuzione – versione 4.0.” https://www.istat.it/note-legali/
+Modifications: selected own-locality POP21 observations; matched official locality codes and boundaries to existing CSC rows, normalized integers and added the 2021 reference year. Derived data and matching are not an unchanged ISTAT publication. No endorsement implied.
+
+Asia miscellaneous population v5.x / TW
+Provider: Ministry of the Interior, Taiwan; Department of Household Registration and National Land Surveying and Mapping Center.
+Datasets: 現住人口數按性別及原住民身分分（新增區域代碼） (ODRP013), September 2026 household-registration population, total persons; VILLAGE_NLSC_1150817 village administrative boundaries (17 August 2026), identity containment only.
+Population dataset and latest period catalogue: https://www.ris.gov.tw/rs-opendata/api/Main/docs/v1
+Population URL: https://www.ris.gov.tw/rs-opendata/api/v1/datastore/ODRP013/11509 (all four pages).
+Boundary metadata: https://data.gov.tw/dataset/7438
+Licence: Open Government Data License, version 1.0; https://data.gov.tw/license
+Exact agency licence declaration: "採政府資料開放授權條款－第 1 版發布"; https://www.ris.gov.tw/app/portal/133
+Exact licence clause 4.2 quote: "The License is compatible with the Creative Commons Attribution License 4.0 International."
+Retrieved: population and agency terms 23 October 2026; boundary source archive 11 October 2026, SHA-256 verified on reuse. Exact timestamps and hashes: sources.csv.
+Modifications: selected same-entity totals, summed the published village totals by exact official unit code, reformatted counts and added population_year 2026. No names, points, types, ids or units changed. No endorsement by the agency is implied.
+Identity corroboration: Wikidata structured own-item claims, CC0 1.0; literal revisions captured 23 October 2026. No Wikidata population is copied.
+
+Istituto Nazionale di Statistica (ISTAT) — Italian comune populations (it_comuni_v5x)
+Datasets: Popolazione residente per età e sesso al 1° gennaio 2026 (stima), POSAS_2026_it_Comuni; administrative boundaries 1 January 2026; SITUAS administrative variations (1991–8 October 2026).
+Dataset pages: https://demo.istat.it/app/?a=2026&i=POS&l=it and https://situas.istat.it/web/#/home/in-evidenza?id=129&dateFrom=1991-01-01
+Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ .
+Exact agency licence statement: “Salvo diversa indicazione, tutti i contenuti pubblicati su questo sito sono soggetti alla licenza Creative Commons – Attribuzione – versione 4.0.” https://www.istat.it/note-legali/
+Modifications: selected own-comune all-age resident totals (age code 999), normalized integers, linked documented January 2026 province/code recodings and official boundaries to existing CSC entities, and added reference year 2026. Derived matching and selections are not an unchanged ISTAT publication. No endorsement implied.
+
+Latin America population v5.x / Guatemala
+Agency: Instituto Nacional de Estadística (INE), Guatemala.
+Dataset: Censo 2018, Lugares Poblados; Cuadro A1.2, población total censada por municipio (column E); A1.3 and populated-place centroids consulted for scope.
+Dataset and licence statement: https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados
+Exact licence quote: "Creative Commons Attribution"; CKAN license_id "cc-by"; licence URL http://www.opendefinition.org/licenses/cc-by
+Retrieved: 2026-10-23T14:55:39Z. Exact file SHA-256 and per-record cell pointers retained in the latam_pop_v5x ledger and sources.csv in the audit delivery.
+Modifications: selected same-entity municipio totals, reformatted integer counts and added population_year 2018. No agency endorsement implied.
+
+Hungarian Central Statistical Office (KSH / HCSO) — terms_pop_v5x
+Datasets: Detailed Gazetteer of Hungary: Localities and Settlement-parts
+Edition/reference date: 2026 gazetteer, sheets Localities 01.01.2026. and Settlement-parts 01.01.2026.; 2026-01-01
+Dataset URLs: https://www.ksh.hu/docs/helysegnevtar/dgh_download_2026.xlsx
+Exact deciding licence clause: “HCSO uses standardised international licence Creative Commons Attribution 4.0 International (CC BY 4.0)”
+Terms: https://www.ksh.hu/copyright | https://www.ksh.hu/copyright_eng
+Required credit: Source: HCSO / https://www.ksh.hu/ . CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Identity support: KSH TIMEA published locality boundary data, ksh_vazterkep MapServer layer 7, retrieved 24 October 2026; no base-map images or illustrations reused.
+Modifications: selected own-locality resident counts from the 1 January 2026 gazetteer, normalized integers, matched own HCSO codes and derived point-containment checks; added reference year 2026. This derived selection is not an unchanged HCSO publication. No endorsement implied.
+
+Statistical Office of the Republic of Slovenia (SURS) — terms_pop_v5x
+Datasets: Population by sex and by age, municipalities and settlements, annually; SiStat 05C5003S
+Edition/reference date: Final 2026 data; release/update 2026-06-11; 2026-01-01
+Dataset URLs: https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C5003S.px/ | https://pxweb.stat.si/SiStatData/api/v1/en/Data/05C5003S.px
+Exact deciding licence clause: “to adapt, modify, and create derivative works and incorporate them into other products and services”
+Terms: https://www.stat.si/StatWeb/StaticPages/Index/copyright | https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright
+Required credit: Source: SURS, SiStat 05C5003S, population at 1 January 2026, final data released 11 June 2026.
+Identity geometry credit: Geodetska uprava Republike Slovenije, Register prostorskih enot – naselja, database snapshot retrieved 24 October 2026; per-feature DATUM_SYS retained in the ledger. CC BY 4.0: https://creativecommons.org/licenses/by/4.0/ . Exact supporting-data clause: “Dovoljeno je tako deljenje kot predelovanje podatkov.” https://www.e-prostor.gov.si/dostopi/javni-dostop/
+Modifications: selected own six-digit settlement totals, decoded public CSV as Windows-1250, matched UTF-8 official labels and original points to own official settlement polygons, normalized integers and added year 2026. Derived matching/containment and this selected database are not an unchanged SURS/GURS publication. No endorsement implied.
+
+Statistical Office of the Republic of Serbia (RZS / SORS) — terms_pop_v5x
+Datasets: 2022 Census of Population, Households and Dwellings, total population by settlements (0_ukupan-broj-stanovnika-naselja.xlsx); GeoCensus PS22_IND1_NAS / PS22_IND1_OPS for identity checks only
+Edition/reference date: 2022 Census; reference date 30 September 2022
+Dataset URLs: https://popis2022.stat.gov.rs/media/31355/0_ukupan-broj-stanovnika-naselja.xlsx | https://gis.stat.gov.rs/server/rest/services/Hosted/Indikatori_popis_stanivnistva_2022_1/FeatureServer
+Exact deciding licence clause: “Files and statistical data from this website may be downloaded, reproduced, distributed, shared, and used for commercial and non-commercial purposes”
+Terms: https://www.stat.gov.rs/sr-cyrl/copyright/ | https://www.stat.gov.rs/en-US/copyright/ | https://opendata.stat.gov.rs/odata/?id=en-us
+Required credit: Statistical Office of the Republic of Serbia (RZS/SORS), https://www.stat.gov.rs/ , 2022 Census, Total population by settlements; public settlement workbook and GeoCensus PS22_IND1_NAS/OPS, retrieved 24 October 2026.
+Modifications: selected and matched own settlement census counts, checked workbook against the public census feature service, normalized integers, derived original-point containment and added reference year 2022. No municipal 2025 estimate is assigned to a seat settlement. This derived selection is not an unchanged RZS publication. No endorsement implied.
+
+Stats NZ — nz_pop_v5x
+Datasets: Subnational population estimates (urban rural), by age and sex, at 30 June 1996–2025 (2025 boundaries), POPES_SUB_009 version 1.0; selected 30 June 2025 provisional total residents. Urban Rural Areas 2023 and 2026, Regional Council 2025: identity and point screening only.
+Data: https://explore.data.stats.govt.nz/ ; https://api.data.stats.govt.nz/rest/dataflow/STATSNZ/POPES_SUB_009/1.0 ; https://www.stats.govt.nz/information-releases/subnational-population-estimates-at-30-june-2025/ .
+Exact licence statement: “Unless otherwise specified, content we produce is licensed under the Creative Commons Attribution 4.0 International licence.”
+Boundary item licence statement: “Creative Commons Attribution 4.0 International (CC BY 4.0)”
+Terms: https://www.stats.govt.nz/about-us/copyright/ ; https://creativecommons.org/licenses/by/4.0/ .
+Modifications: This work is based on/includes Stats NZ's data which are licensed by Stats NZ for reuse under the Creative Commons Attribution 4.0 International licence. Selected total sexes and ages for existing same-entity urban codes, normalized integer population and added reference year 2025. Held conflicting/unproved identities; no district, regional or SA2 substitution. No agency endorsement.
+
+Wikidata contributors — nz_pop_v5x
+Dataset: archived literal own-item labels, P31, P131, country, codes and parent chains; capture dates and body hashes retained.
+Exact licence statement: “All structured data (i.e. the main, Property, Lexeme, and EntitySchema namespaces) is released into the public domain under Creative Commons Zero .”
+Terms: https://www.wikidata.org/wiki/Wikidata:Licensing ; https://creativecommons.org/publicdomain/zero/1.0/ .
+Modifications: Selected geographic identity claims for same-entity screening; no Wikidata population used.
+
+Philippine Statistics Authority (PSA) — Philippine populations (ph_pop_v5x)
+Datasets: 2024 Census of Population (POPCEN), population counts as of 1 July 2024, declared official in 2025; Table B Population and Annual Population Growth Rate by Province, City, and Municipality; Total Population by Province, City, Municipality, and Barangay, regional detail tables.
+Files contributing values: 3_Table B - Population and Annual PGR by Province, City, and Municipality - By Region - rev_0.xlsx; BARMM_1.xlsx; CALABARZON_0.xlsx; CAR_0.xlsx; Caraga_0.xlsx; MIMAROPA_1.xlsx; NCR_2.xlsx; NIR_0.xlsx; Region III_1.xlsx; Region II_1.xlsx; Region IX_1.xlsx; Region I_1.xlsx; Region VIII_0.xlsx; Region VII_1.xlsx; Region VI_1.xlsx; Region V_1.xlsx; Region XII_1.xlsx; Region XI_1.xlsx; Region X_0.xlsx.
+Source: https://psa.gov.ph/content/2024-census-population-popcen-population-counts-declared-official-president
+Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ . Terms: https://psa.gov.ph/terms-of-use
+Exact deciding licence and attribution clause:
+The statistical tables (or datasets) including documents (collectively as material) on this site are classified under Open Data with Creative Commons Attribution License (cc-by). This means that you are free to share (copy and redistribute) the material in any medium or format; remix, transform and build upon the material for any purpose, non-commercial and even commercially under the following conditions:
+1. Attribution - you must give appropriate credit by acknowledging the Philippine Statistics Authority (PSA) or the source agency as indicated in the datasets, provide a link to this page, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the PSA or the source agency endorses you or your use. In addition, all technical notes or explanations needed for better understanding the data should be incorporated.
+2. No additional restrictions - you may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+Credit: Source: Philippine Statistics Authority (PSA), 2024 Census of Population (2024 POPCEN).
+Modifications: selected own-entity population counts, normalized integer values and linked them to existing CSC entities, adding population_year 2024. Derived selections and identity matching are not an unchanged PSA publication. No PSA endorsement is implied. No additional restrictions apply.
+Technical notes: reference date is 1 July 2024, not the declaration year. Counts are total population, not households. Municipality/city totals and barangay counts are distinct scopes. Municipality totals were cross-checked against Table B and regional barangay sums. Manila district subtotals are excluded from barangay sums. Makati/Taguig transfer and changed SGA territorial scopes are held pending further review. All source workbook notes are retained in the audit technical_notes.json and original workbooks.
+
+Israel / CBS population facts (licensing and audit provenance)
+Provider: Israel Central Bureau of Statistics (CBS); licensed material rights remain with the State of Israel.
+Dataset: Population in Localities and Regional Councils — Preliminary Estimates, end of August 2026; only first-sheet localities of 2,000 or more, total population column H. Reference 31 August 2026. Identity only: CBS SOEC_SetlBord_2021_Dissolve locality boundaries (2021), same CBS end-user licence explicitly linked by the service item; locality codes and district metadata from CBS Setl_Point.
+Source: https://www.cbs.gov.il/he/publications/DocLib/2026/arai/%D7%90%D7%95%D7%9B%D7%9C%D7%95%D7%A1%D7%99%D7%99%D7%94%20%D7%90%D7%A8%D7%A2%D7%99%D7%AA%20%D7%9C%D7%A1%D7%95%D7%A3%20%D7%90%D7%95%D7%92%D7%95%D7%A1%D7%98%202026.xlsx
+Licence: CBS Open End-User License v2.1 (3 January 2016); https://www.cbs.gov.il/en/Pages/Enduser-license.aspx
+Exact deciding clauses: "You may copy the Information, distribute it, make it available to the public, broadcast it and use it to create derivative works and adaptations - in any medium or format.
+You may make commercial and non-commercial use of the Information."
+Acknowledgement template in the licence (for preservation of original selection/arrangement): "The Central Bureau of Statistics (CBS), [file name / product], [(date of access)], available online: [link to the Information] copied and distributed as is - as is - according to the CBS license at the website [link to the terms of use]."
+Exact exception: "When using data extracted from the Information in a manner that does not preserve the originality on the selection or arrangement of the data in its source, you shall not acknowledge the source." This database selects and rearranges facts; the template is recorded as a licence requirement, not asserted as an as-is reproduction credit. The links above document audit provenance.
+Retrieved: 24 October 2026; original downloaded workbook SHA-256 reverified, linked folder confirms latest August 2026 release.
+Modifications: selected same-entity locality totals, converted decimal preliminary estimates to integer persons using Decimal ROUND_HALF_UP, added population_year 2026 and rearranged records into the existing database. Raw estimates and exact cells remain in the ledger. No council totals or disputed-area counts are used. No CBS endorsement is implied.
+
+timezone-boundary-builder — city timezone audit
+Publisher: Evan Siroky and timezone-boundary-builder contributors; © OpenStreetMap contributors.
+Edition: 2026e, timezones.geojson.zip (land, all zones), aligned with IANA tzdata 2026e.
+Source: https://github.com/evansiroky/timezone-boundary-builder/releases/tag/2026e
+Licence: Open Database License 1.0 (ODbL), https://opendatacommons.org/licenses/odbl/1-0/
+OSM credit and licence: https://www.openstreetmap.org/copyright
+Changes by CSC: mapped each stored city point to polygons; changed only timezone where safely inside a single
+country-compatible zone; normalized old or foreign names to country-specific zone.tab names, retaining country-listed links. Border, identity, state and territory holds stay unchanged.
+Reuse: retain attribution, source and licence notices; comply with ODbL attribution and share-alike requirements.
+IANA tzdata 2026e country tables and backward links: https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz
+IANA data is public domain except material explicitly noted in its accompanying LICENSE.
+
+Rosstat — ru_pop_v5x
+Source: Federal State Statistics Service (Rosstat), Численность постоянного населения, designated open dataset 7708234640-population, 2015 release. Total residents of an individual settlement; 2015 is the observation year, not the archive or download year.
+Publisher: https://rosstat.gov.ru/opendata/7708234640-population
+Exact release: https://rosstat.gov.ru/opendata/7708234640-population/data-20151101-structure-20141013.csv
+Archived passport: https://web.archive.org/web/20200821213716/https://rosstat.gov.ru/opendata/7708234640-population
+Archived release: https://web.archive.org/web/20200821233508/https://rosstat.gov.ru/opendata/7708234640-population/data-20151101-structure-20141013.csv
+Deciding scope quote: “Деление по Российской Федерации, федеральным округам, субъектам Российской Федерации, муниципальным образованиям, городским населённым пунктам, категории населения, годам”. The passport is in Открытые данные and links its exact CSV and the standard open-data conditions at https://data.gov.ru/information-usage .
+Rosstat terms: https://rosstat.gov.ru/opendata/ ; https://rosstat.gov.ru/storage/2018/08-23/6RswQtD5/usl-od.pdf .
+Deciding reuse clause: “копировать, публиковать, распространять открытые данные, видоизменять открытые данные и объединять их с другой информацией, использовать открытые данные в некоммерческих и коммерческих целях”. Required conditions: lawful use, no distortion, and “сохранять ссылку на источник информации при использовании открытых данных”.
+Modifications: selected separately identified settlement totals; filled missing counts only, and added population_year=2015. Other differing stored counts were preserved for owner review. Municipal district and urban okrug aggregates were excluded. This is an older covered edition; no claim of current population or agency endorsement. No change to names, types, identifiers, parents or coordinates.
+geoBoundaries / original boundary contributors: https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/RUS/ADM1/geoBoundaries-RUS-ADM1.geojson ; Open Data Commons Open Database License 1.0, https://opendatacommons.org/licenses/odbl/1-0/ . Original points screened against the 83-subject geometry; outside-reference points held. Geometry is used only for identity screening.
+Wikidata contributors: https://www.wikidata.org/wiki/Wikidata:Licensing ; CC0 1.0, https://creativecommons.org/publicdomain/zero/1.0/ . Only identity claims, labels, codes, administrative chains and coordinates selected from archived literal own items. P1082 consulted solely to preserve an existing value matching a post-2015 statement; no P1082 number or year assigned. Captures retain original retrieval dates.

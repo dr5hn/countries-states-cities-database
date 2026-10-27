@@ -354,3 +354,10 @@ where available — a non-null `population`.
 - [Administrative structure policy](ADMINISTRATIVE_STRUCTURE.md) (official categories, `type_local`, `level`, `parent_id`, the counties dataset)
 - [Multi-level territories policy](MULTI_LEVEL_TERRITORIES.md)
 - [Disputed and special territories](DISPUTED_AND_SPECIAL_TERRITORIES.md)
+
+### China city hierarchy depth
+
+CN city `level` follows depth in the official hierarchy: prefecture 2, county-level unit 3, township 4.
+County-level units directly under a province-level municipality or a province are 2 (for example the districts and counties of Beijing, Tianjin, Shanghai and Chongqing, and Hainan's directly administered county-level cities and counties); their townships are 3, as are townships directly under no-county prefectures such as Dongguan and Zhongshan.
+Unproved tiers, own-item/type conflicts and excluded territories remain held in the [per-record ledger](.github/fixes-docs/ledgers/cn_levels_v5x.jsonl).
+Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 58 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019, and Jiangmen, Dongguan and Zhongshan in Guangdong.

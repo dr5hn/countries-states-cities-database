@@ -1,0 +1,237 @@
+{
+ "ledger": "latam_pop_v5x.jsonl",
+ "records": 515,
+ "base_commit": [
+  "47289b1ed4ad6a67e0d5380d72fb207fe3a34953"
+ ],
+ "full_ledger_sha256": "6be268e58ee50cf6cffdc43458b82bc0546d0dde45ccc7d835f2f990ed9c06b4",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Compute covers on the unmodified raw official polygon geometries at the exact stored longitude/latitude; both agency editions must agree. Geometry is consulted only to corroborate identity, not redistributed or used to set a value. Raw geometry licences not established; census licence is separately established on its own CKAN record.",
+  "Admit only literal own Q1872284 municipal items with a unique archived own-item official-code/name join, correct department, null city parent, compatible stored type, no shared QID and stored point covered by the same code in both raw SEGEPLAN and IGN2021 official boundaries. Combined city/municipality items, absent own items and conflicts are held. Same-name counts never establish identity.",
+  "For unresolved baseline plus later events, require the v4.0 name, own item, state and exact point to remain identical and independently bind that literal item to its own municipio. Otherwise hold. Ordinary reviewed classification event changes population/year and therefore has unequal full-row hashes; event_pr 0 pending --pr N.",
+  "INE Censo 2018 A1.2 column E is the municipio total, A1.3 column G is the individual populated-place total. Never substitute either scope for the other. Hold stored populations with own-item matching counts dated later than 2018. No post-2022 Ecuador projections are used. Ecuador preferred census and own item requests returned HTTP 403; no block workaround attempted."
+ ],
+ "sources": [
+  {
+   "edition": "INEC revisión 2024; estimates through 2022; projections excluded",
+   "licence": "CC BY 4.0",
+   "licence_quote": "Licencia Creative Commons Atribución 4.0 Internacional",
+   "licence_url": "https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/",
+   "path": "sources/EC_dataset.body",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "6e782a5be4c46aa050ed23c906b8d03b256b9b0a2325f53e99699a0e82f110f7",
+   "url": ""
+  },
+  {
+   "edition": "INEC revisión 2024; estimates through 2022; projections excluded",
+   "licence": "CC BY 4.0",
+   "licence_quote": "Licencia Creative Commons Atribución 4.0 Internacional",
+   "licence_url": "https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/",
+   "path": "sources/EC_dataset_file.body",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "35dba440e116cad9e606d58960c1c27affc690392f6a29eacf651309bc5e01cd",
+   "url": ""
+  },
+  {
+   "edition": "INEC revisión 2024; estimates through 2022; projections excluded",
+   "licence": "CC BY 4.0",
+   "licence_quote": "Licencia Creative Commons Atribución 4.0 Internacional",
+   "licence_url": "https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/",
+   "path": "sources/EC_census_current.html.meta.json",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "4f900ba172e6b28a56694bb18ecd08eee8d2ad0937abd2f11205e1b40dfac4ec",
+   "url": ""
+  },
+  {
+   "edition": "INEC revisión 2024; estimates through 2022; projections excluded",
+   "licence": "CC BY 4.0",
+   "licence_quote": "Licencia Creative Commons Atribución 4.0 Internacional",
+   "licence_url": "https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/",
+   "path": "sources/EC_own_0.json.meta.json",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "0473037f89fa260b5113e606919b062537de6df3bab28c92aa6e34fa8adfc05f",
+   "url": ""
+  },
+  {
+   "edition": "INE Censo 2018, Lugares Poblados, A1.2/A1.3",
+   "licence": "CC BY",
+   "licence_quote": "Creative Commons Attribution",
+   "licence_url": "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados",
+   "path": "sources/GT_cuadro-a1-poblacion-total-censada-por-sexo-grupos-quinquenal.xlsx",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "b4dfbc6a0373373e8f35827ef5a8d5ed07db5d035225a271061b1869769e96d9",
+   "url": "https://datos.ine.gob.gt/dataset/78019333-d80b-45e8-b694-fb3b8d65e19e/resource/4b9c7220-ca0c-41a9-a121-348f533b070e/download/cuadro-a1-poblacion-total-censada-por-sexo-grupos-quinquenales-de-edad-y-area.xlsx"
+  },
+  {
+   "edition": "INE Censo 2018, Lugares Poblados, A1.2/A1.3",
+   "licence": "CC BY",
+   "licence_quote": "Creative Commons Attribution",
+   "licence_url": "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados",
+   "path": "sources/GT_centroides-de-lugares-poblados-de-la-republica-de-guatemala..xlsx",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "b8ea8fea33e6d606e102e8d96ed692deacec660c028ffcf673f84459bcafe14e",
+   "url": "https://datos.ine.gob.gt/dataset/78019333-d80b-45e8-b694-fb3b8d65e19e/resource/053dfa99-b3f9-4b1f-a99f-fc933ef00da4/download/centroides-de-lugares-poblados-de-la-republica-de-guatemala.-censo-2018.xlsx"
+  },
+  {
+   "edition": "INE Censo 2018, Lugares Poblados, A1.2/A1.3",
+   "licence": "CC BY",
+   "licence_quote": "Creative Commons Attribution",
+   "licence_url": "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados",
+   "path": "sources/GT_ckan_package.json",
+   "retrieved_at": "2026-10-23T14:55:39Z",
+   "sha256": "4b9c528633cef58e763e4bae7effb8cb651b3bc24b5ce6b5d171eb6472c002a1",
+   "url": "https://datos.ine.gob.gt/dataset/censo-2018-lugares-poblados"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_00.json",
+   "retrieved_at": "2026-10-11T04:48:45.331644+00:00",
+   "sha256": "e47f64ea877957d6a07187faba99cc82eb3a3473e419a6bd6c9f1e5582a783ba",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q1002552%7CQ1005008%7CQ1005733%7CQ1015941%7CQ1018584%7CQ1020130%7CQ1020153%7CQ1020409%7CQ1020416%7CQ1020572%7CQ1020799%7CQ1023359%7CQ1023655%7CQ1023981%7CQ1023983%7CQ1025536%7CQ1027001%7CQ1113394%7CQ1124580%7CQ119252%7CQ1192713%7CQ1246149%7CQ1254201%7CQ1254233%7CQ1254234%7CQ1254653%7CQ1266746%7CQ127622%7CQ129369%7CQ1440507%7CQ1517461%7CQ1523937%7CQ1523943%7CQ1523949%7CQ1523955%7CQ1555%7CQ1572856%7CQ1573447%7CQ1573465%7CQ1634223%7CQ164481%7CQ1671882%7CQ168622%7CQ174266%7CQ1748359"
+  },
+  {
+   "edition": "IGN 2021 / SEGEPLAN archived raw official boundaries",
+   "licence": "not established; identity corroboration only; no geometry or roster values copied",
+   "licence_quote": "",
+   "licence_url": "https://ideg.segeplan.gob.gt/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=agrip%3A04_Limites_municipales_340&srsName=EPSG%3A4326&outputFormat=application%2Fjson&maxFeatures=1000",
+   "path": "sources/segeplan_municipios.geojson",
+   "retrieved_at": "2026-10-11T04:50:56.641846+00:00",
+   "sha256": "f32d98224995aeb61a13e0b3923707b6d7c801a1148ada87fc27f5a42fd047df",
+   "url": "https://ideg.segeplan.gob.gt/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=agrip%3A04_Limites_municipales_340&srsName=EPSG%3A4326&outputFormat=application%2Fjson&maxFeatures=1000"
+  },
+  {
+   "edition": "IGN 2021 / SEGEPLAN archived raw official boundaries",
+   "licence": "not established; identity corroboration only; no geometry or roster values copied",
+   "licence_quote": "",
+   "licence_url": "https://ideg.segeplan.gob.gt/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mapa_base%3ALimites_Municipales_IGN_2021&srsName=EPSG%3A4326&outputFormat=application%2Fjson&maxFeatures=1000",
+   "path": "sources/segeplan_IGN2021.geojson",
+   "retrieved_at": "2026-10-11T04:52:16.609133+00:00",
+   "sha256": "6452266b5a988745d9c99549c6314ed7751718874e991673129ae0338994988b",
+   "url": "https://ideg.segeplan.gob.gt/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mapa_base%3ALimites_Municipales_IGN_2021&srsName=EPSG%3A4326&outputFormat=application%2Fjson&maxFeatures=1000"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_03_retry1.json",
+   "retrieved_at": "2026-10-11T04:50:18.189970+00:00",
+   "sha256": "5064bc1e73565d839b6382002ae8ea834e305b066eb54f5f9e32f3f4aeaa4f28",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q2402177%7CQ2402186%7CQ2402198%7CQ2402199%7CQ2402348%7CQ2402363%7CQ2402369%7CQ2402387%7CQ2402391%7CQ2402403%7CQ2402405%7CQ2402417%7CQ2402432%7CQ2402447%7CQ2402459%7CQ2402472%7CQ2402484%7CQ2402499%7CQ2402509%7CQ2402524%7CQ2402566%7CQ2402581%7CQ2402599%7CQ2402611%7CQ2402624%7CQ2402766%7CQ2402778%7CQ2402793%7CQ2402809%7CQ2402824%7CQ2403007%7CQ2403022%7CQ2403031%7CQ2403493%7CQ2403501%7CQ2403612%7CQ2403627%7CQ2422887%7CQ2426806%7CQ2445821%7CQ2445843%7CQ246164%7CQ25175887%7CQ2548707%7CQ2548726"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_05_retry1.json",
+   "retrieved_at": "2026-10-11T04:50:31.380325+00:00",
+   "sha256": "9bb0b5d887e9b105a27c70c3bad9a37907bb13c37b08fa05103ce828cd338ba5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q275800%7CQ275804%7CQ275883%7CQ275980%7CQ275983%7CQ284529%7CQ284830%7CQ3058634%7CQ3123016%7CQ3132625%7CQ317380%7CQ317414%7CQ317444%7CQ3177464%7CQ325586%7CQ325793%7CQ3306697%7CQ332059%7CQ332072%7CQ334577%7CQ3472669%7CQ348201%7CQ348216%7CQ371216%7CQ371987%7CQ385588%7CQ3879296%7CQ3884406%7CQ388686%7CQ391295%7CQ3925380%7CQ3943212%7CQ3946742%7CQ3947493%7CQ3949243%7CQ404550%7CQ41804%7CQ455760%7CQ509612%7CQ523244%7CQ531288%7CQ532226%7CQ536249%7CQ539311%7CQ568999"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_04_retry1.json",
+   "retrieved_at": "2026-10-11T04:50:24.400334+00:00",
+   "sha256": "4ae86e3dd83700bd8cd66d6ca87c07fecdc1b6cce1432418afc5f52be1f1a9c6",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q2574245%7CQ2574268%7CQ2607781%7CQ2607797%7CQ2607954%7CQ2608186%7CQ2608214%7CQ2608234%7CQ2608367%7CQ2608408%7CQ2608428%7CQ2608447%7CQ2608452%7CQ2608585%7CQ2608636%7CQ2608644%7CQ2608718%7CQ2608750%7CQ2608965%7CQ2608975%7CQ2608981%7CQ2609036%7CQ2609056%7CQ2609240%7CQ2609248%7CQ2609256%7CQ2609261%7CQ2609266%7CQ2609270%7CQ2621511%7CQ2621539%7CQ2644237%7CQ2716888%7CQ2716941%7CQ2716950%7CQ2717583%7CQ2717716%7CQ2717990%7CQ2717997%7CQ2718095%7CQ2718157%7CQ2718316%7CQ2723903%7CQ275678%7CQ275791"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_02.json",
+   "retrieved_at": "2026-10-11T04:48:46.029549+00:00",
+   "sha256": "53cf70d54430916b852579e8d4accddc8c2ca9e68a37adc816764cd35220bb4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q2025266%7CQ2025333%7CQ2034094%7CQ2050264%7CQ2121567%7CQ212773%7CQ2226684%7CQ2295832%7CQ230166%7CQ2305570%7CQ2372941%7CQ2390990%7CQ2400650%7CQ2400752%7CQ2400763%7CQ2400778%7CQ2401045%7CQ2401074%7CQ2401093%7CQ2401685%7CQ2401701%7CQ2401748%7CQ2401769%7CQ2401814%7CQ2401833%7CQ2401849%7CQ2401852%7CQ2401869%7CQ2401870%7CQ2401883%7CQ2401885%7CQ2401893%7CQ2401903%7CQ2401917%7CQ2401930%7CQ2401933%7CQ2401953%7CQ2401971%7CQ2402097%7CQ2402108%7CQ2402116%7CQ2402120%7CQ2402134%7CQ2402150%7CQ2402153"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_global_literals_00.json",
+   "retrieved_at": "2026-10-11T04:59:16.733521+00:00",
+   "sha256": "0ab96e4158069ee664190b566e4fbaa33172cb16a60683feda3199785e1846a5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q1005750%7CQ1018078%7CQ1020422%7CQ1020568%7CQ1020827%7CQ139179%7CQ1552683%7CQ1954351%7CQ203970%7CQ20966094%7CQ2403579%7CQ25175768%7CQ25185666%7CQ25185667%7CQ25185669%7CQ2608473%7CQ275734%7CQ275951%7CQ4005975%7CQ593520%7CQ7525555%7CQ973059%7CQ984445"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_01.json",
+   "retrieved_at": "2026-10-11T04:48:45.533377+00:00",
+   "sha256": "e2c49f14767cb2083129ebdc57662dcb436c76818794c3887b60425f18ee6524",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q1748570%7CQ1748573%7CQ1748582%7CQ1748599%7CQ1748611%7CQ1748616%7CQ1748654%7CQ1748668%7CQ1748669%7CQ1748683%7CQ1748755%7CQ1748759%7CQ1748767%7CQ1748770%7CQ1748775%7CQ1748787%7CQ1748790%7CQ1748795%7CQ1748818%7CQ1748820%7CQ1748824%7CQ1748849%7CQ1748852%7CQ1748856%7CQ1748857%7CQ1748860%7CQ1748863%7CQ1748865%7CQ1748868%7CQ1748870%7CQ1748873%7CQ1748875%7CQ1748953%7CQ1749094%7CQ1749098%7CQ1749101%7CQ1749104%7CQ1749697%7CQ1757603%7CQ178569%7CQ1954342%7CQ1954363%7CQ1981317%7CQ1981325%7CQ202128"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_own_06_retry1.json",
+   "retrieved_at": "2026-10-11T04:50:37.545873+00:00",
+   "sha256": "ff2a70411d509b2e4711a5f4a4daf84c8f195310b0d03a03bc459c0942d64822",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q579733%7CQ590722%7CQ599455%7CQ602423%7CQ603423%7CQ611941%7CQ615633%7CQ630216%7CQ676590%7CQ679383%7CQ686756%7CQ693140%7CQ734440%7CQ739778%7CQ741169%7CQ743437%7CQ769939%7CQ780771%7CQ796492%7CQ796634%7CQ837035%7CQ845976%7CQ867077%7CQ921966%7CQ938168%7CQ948953%7CQ951729%7CQ958349%7CQ962529%7CQ962852%7CQ978109%7CQ979193%7CQ984863%7CQ989812%7CQ991400"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_candidates_08.json",
+   "retrieved_at": "2026-10-11T04:54:39.634401+00:00",
+   "sha256": "c3cbb316491ed7cf7c071c7ef2374af742c4e0095f3c28e3c472254473697d0b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q2608785%7CQ2610825%7CQ261613%7CQ2689111%7CQ3049691%7CQ31873317%7CQ332147%7CQ3495535%7CQ466061%7CQ504637%7CQ504647%7CQ508804%7CQ537812%7CQ541819%7CQ5659136%7CQ669802%7CQ693658%7CQ695660%7CQ753037%7CQ765975%7CQ765984%7CQ795441%7CQ795587%7CQ795591%7CQ842266%7CQ844502%7CQ883734%7CQ883907%7CQ885644%7CQ885656%7CQ888307%7CQ976725%7CQ984828"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_candidates_00.json",
+   "retrieved_at": "2026-10-11T04:53:52.855342+00:00",
+   "sha256": "5dccaad5a150dad42d8528d01a5562a2db5116b76f36e3ccedc452e4e0fd48f9",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q1023364%7CQ1023393%7CQ109408857%7CQ1656846%7CQ1727528%7CQ178136%7CQ2402136%7CQ2402377%7CQ2403641%7CQ25173669%7CQ25173708%7CQ25173713%7CQ25173824%7CQ25173885%7CQ25173889%7CQ25173922%7CQ25173924%7CQ25174157%7CQ25174177%7CQ25174203%7CQ25174245%7CQ25174582%7CQ25174602%7CQ25174603%7CQ25174615%7CQ25174625%7CQ25174626%7CQ25174627%7CQ25174650%7CQ25174652%7CQ25174658%7CQ25174691%7CQ25174696%7CQ25174697%7CQ25174703%7CQ25174842%7CQ25174843%7CQ25174845%7CQ25174851%7CQ25174852"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_candidates_06.json",
+   "retrieved_at": "2026-10-11T04:54:27.761681+00:00",
+   "sha256": "d52387bcaf2a7efa8691a9ad976efa531b5f9ff60b68efc4659e0fda4288320d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q25179653%7CQ25179664%7CQ25179689%7CQ25179739%7CQ25179789%7CQ25179815%7CQ25179816%7CQ25179877%7CQ25179907%7CQ25179921%7CQ25179953%7CQ25179982%7CQ25180011%7CQ25180021%7CQ25180031%7CQ25180032%7CQ25180035%7CQ25180050%7CQ25180066%7CQ25180106%7CQ25180112%7CQ25180120%7CQ25180157%7CQ25180163%7CQ25180190%7CQ25180215%7CQ25180226%7CQ25180229%7CQ25180230%7CQ25180231%7CQ25180234%7CQ25180247%7CQ25180253%7CQ25180261%7CQ25180288%7CQ25180351%7CQ25180365%7CQ25180385%7CQ25181823%7CQ25181835"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_candidates_02.json",
+   "retrieved_at": "2026-10-11T04:54:04.498501+00:00",
+   "sha256": "cac11bd97934f6eea8e2fe083f1c23ff60d1efe7342f96834492a9b37dc18310",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q25175689%7CQ25175690%7CQ25175691%7CQ25175693%7CQ25175694%7CQ25175695%7CQ25175696%7CQ25175698%7CQ25175701%7CQ25175703%7CQ25175704%7CQ25175705%7CQ25175707%7CQ25175711%7CQ25175717%7CQ25175718%7CQ25175719%7CQ25175725%7CQ25175728%7CQ25175736%7CQ25175737%7CQ25175738%7CQ25175739%7CQ25175742%7CQ25175749%7CQ25175752%7CQ25175756%7CQ25175757%7CQ25175761%7CQ25175763%7CQ25175764%7CQ25175766%7CQ25175780%7CQ25175781%7CQ25175782%7CQ25175783%7CQ25175784%7CQ25175785%7CQ25175786%7CQ25175788"
+  },
+  {
+   "edition": "Wikidata literal archived revision",
+   "licence": "CC0 1.0",
+   "licence_quote": "Creative Commons CC0 License",
+   "licence_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+   "path": "sources/wd_candidates_01.json",
+   "retrieved_at": "2026-10-11T04:53:58.633344+00:00",
+   "sha256": "1e26f9fc8da8aa3cf4e8da62b7ef34f261a98b33d6a979af2335077f1e758a57",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=info%7Clabels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&ids=Q25174853%7CQ25174854%7CQ25174855%7CQ25174856%7CQ25174859%7CQ25174868%7CQ25174869%7CQ25174870%7CQ25174871%7CQ25174873%7CQ25174874%7CQ25174875%7CQ25174877%7CQ25174884%7CQ25174888%7CQ25174889%7CQ25174890%7CQ25174895%7CQ25174896%7CQ25174900%7CQ25174905%7CQ25174919%7CQ25174948%7CQ25174955%7CQ25175523%7CQ25175525%7CQ25175547%7CQ25175553%7CQ25175593%7CQ25175602%7CQ25175603%7CQ25175649%7CQ25175655%7CQ25175669%7CQ25175672%7CQ25175673%7CQ25175674%7CQ25175675%7CQ25175677%7CQ25175678"
+  }
+ ]
+}
