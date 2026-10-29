@@ -125,8 +125,9 @@ For reviewed rows, INEGI catalogue AMBITO U/R maps to `locality / localidad urba
 In `PL.json`, `municipality` is a gmina (`gmina wiejska` or `gmina miejsko-wiejska`), the council area at level 3,
 not a town. An urban-rural gmina and its town can share a name (Krobia, Nowogrodziec), and the gmina's population
 includes the town's, so do not add the two. An urban gmina (`gmina miejska`) is the town itself and is typed `city`.
-Villages (`village` / `wieś`) and towns (`city` / `miasto`) are level 4, linked to their gmina by `parent_id`.
-To list only settlements in Poland, leave out `municipality`.
+Villages (`village` / `wieś`) and towns (`city` / `miasto`) are level 4, linked by `parent_id` to their gmina where
+the gmina has a reviewed row (474 are not yet linked). This describes reviewed rows: 88 legacy `adm3` and 4 `adm2` rows
+are not yet reviewed and can also be gminy. To list only settlements in Poland, leave out `municipality`, `adm2` and `adm3`.
 
 ### Greece
 
