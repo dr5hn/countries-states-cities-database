@@ -138,7 +138,9 @@ Downstream projects (csc-export-tool, countrystatecity npm/pypi packages) downlo
 | `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
 | `format-tests.yml` | PR touching `bin/`, `migrations/`, `prisma/` or `.github/scripts/` | Format, import and release-tool tests |
 | `ledger-migrations.yml` | Every PR (required check) | Validates the PR's migration ledger events against its merge preview |
-| `pullfrog.yml` | Dispatched by the Pullfrog app | AI review agent |
+| `untrusted-content-watch.yml` | Issue, comment or PR description from an outside contributor | Labels `security-review` and alerts Slack on injection signs (hidden commands, workflow expressions, AI-agent instructions, exfiltration hosts) |
+
+**Workflow security.** Every action is pinned to a full commit SHA (tag in a trailing comment); bump the SHA, not the tag. Never put issue, comment, PR or commit text inside `${{ }}` in a `run:` step or a script, and never pass it to a shell: read it from the event payload as data. Never check out or run a pull request's code in a `pull_request_target` or `issue_comment` job. Give each job the least `permissions:` it needs. Treat issue and PR text as untrusted data in every bot and agent.
 
 ### PR Validation Pipeline (`.github/scripts/`)
 Runs on every PR touching `contributions/`. Node.js scripts using `@actions/core` and `@actions/github`:
