@@ -131,9 +131,10 @@ there is no duplicate municipio row in cities. Existing names, IDs and points ar
 the 33 names beginning "Municipio de" and San Germán (the Urbano Noris municipio row).
 Unknown item scopes, unavailable or conflicting points and the Guantánamo Bay naval base area remain held.
 The [compact ledger](.github/fixes-docs/ledgers/cu_munis_v5x.jsonl) and its sources sidecar record
-each changed row, archived evidence, point checks and held cases. New names follow ONEI's literal
-table spelling; Wikidata CC0 supplies their own-item points. geoBoundaries/OSM ODbL geometry is
-checking evidence only. No ONEI population is imported. Merge this correction after v5.1.0.
+each changed row, archived evidence, point checks and held cases. New names use the standard Spanish
+form with diacritics (the municipio's own Wikidata Spanish label where it is the same name), not ONEI's table
+typography; Wikidata CC0 supplies their own-item points. geoBoundaries/OSM ODbL geometry is
+checking evidence only. No ONEI population is imported.
 
 ### Greece
 
