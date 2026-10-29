@@ -120,6 +120,14 @@ appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexi
 
 For reviewed rows, INEGI catalogue AMBITO U/R maps to `locality / localidad urbana` or `locality / localidad rural` at level 3; cabecera is a seat role and does not itself establish urban class. A legacy place-typed row is corrected to `municipality / municipio` at level 2 only when its literal v4 own item is the municipio (own P3801 and municipality class), the official code/name/state and current municipal polygon agree, and the unchanged point lies inside that territory. An item naming the seat cannot take its municipality's class.
 
+### Poland
+
+In `PL.json`, `municipality` is a gmina (`gmina wiejska` or `gmina miejsko-wiejska`), the council area at level 3,
+not a town. An urban-rural gmina and its town can share a name (Krobia, Nowogrodziec), and the gmina's population
+includes the town's, so do not add the two. An urban gmina (`gmina miejska`) is the town itself and is typed `city`.
+Villages (`village` / `wieś`) and towns (`city` / `miasto`) are level 4, linked to their gmina by `parent_id`.
+To list only settlements in Poland, leave out `municipality`.
+
 ### Greece
 
 In `GR.json`, `municipality` is a municipal territory (e.g. Lake Plastiras, Pangaio), not a town, and Mount
