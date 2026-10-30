@@ -57,36 +57,52 @@ jobs:
             }
 
             // Invisible format characters (Cf: zero-width, bidi controls, U+061C ...) can split a command; strip them first.
-            const raw = text;
-            text = text.replace(/\p{Cf}/gu, '');
-            const command = /\b(curl|wget|bash|sh\s+-c|zsh|powershell|pwsh|iex|invoke-expression|base64|eval|exec|python3?\s+-c|node\s+-e|perl\s+-e|nc\s+-|ncat|socat|printenv|env\b|export\s+\w+=|chmod\s+\+x|\/dev\/tcp\/|GITHUB_TOKEN|ACTIONS_\w+|secrets\.)/i;
-            const checks = [
-              ['shell command hidden in an HTML comment', () =>
-                [...text.matchAll(/<!--([\s\S]*?)(?:-->|$)/g)].some(m => command.test(m[1]) || /\$\(|`[^`]+`/.test(m[1]))],
-              ['workflow expression syntax', () => /\$\{\{[\s\S]*?\}\}/.test(text)],
-              ['pipe-to-shell or encoded payload', () =>
-                /(curl|wget)[^\n]{0,300}\|\s*(sudo\s+)?(ba|z)?sh\b/i.test(text) ||
-                /\b(base64\s+(-d|--decode)|\/dev\/tcp\/|powershell\s+-(e|enc)\b|iex\s*\(|eval\s*\(\s*atob)/i.test(text)],
-              ['invisible or direction-changing Unicode', () =>
-                /[\p{Bidi_Control}\u200B-\u200D\u2060-\u2064\uFEFF\u180E]/u.test(raw)],
-              ['instructions aimed at an AI agent', () =>
-                /(ignore\s+(all\s+)?(previous|prior|above|earlier)\s+instructions|disregard\s+(the\s+)?(previous|above)|system\s+prompt|<\/?\s*(system|assistant|instructions?)\s*>|you\s+are\s+now\s+|as\s+an\s+ai\s+(agent|assistant))/i.test(text)],
-              ['known exfiltration endpoint', () =>
-                /(webhook\.site|requestbin|pipedream\.net|ngrok(-free)?\.(io|app|dev)|interact\.sh|\boast\.(fun|me|pro|site|online|live)\b|burpcollaborator|transfer\.sh|pastebin\.com\/raw|hookbin|beeceptor)/i.test(text)],
-            ];
-            const reasons = checks.filter(([, test]) => { try { return test(); } catch (e) { return false; } }).map(([name]) => name);
+            // Returns the injection signs found in a piece of text.
+            const analyse = (input) => {
+              // Invisible format characters (Cf: zero-width, bidi controls, U+061C ...) can split a command; strip them first.
+              const raw = String(input || '');
+              const t = raw.replace(/\p{Cf}/gu, '');
+              const command = /\b(curl|wget|bash|sh\s+-c|zsh|powershell|pwsh|iex|invoke-expression|base64|eval|exec|python3?\s+-c|node\s+-e|perl\s+-e|nc\s+-|ncat|socat|printenv|env\b|export\s+\w+=|chmod\s+\+x|\/dev\/tcp\/|GITHUB_TOKEN|ACTIONS_\w+|secrets\.)/i;
+              const checks = [
+                ['shell command hidden in an HTML comment', () =>
+                  [...t.matchAll(/<!--([\s\S]*?)(?:-->|$)/g)].some(m => command.test(m[1]) || /\$\(|`[^`]+`/.test(m[1]))],
+                ['workflow expression syntax', () => /\$\{\{[\s\S]*?\}\}/.test(t)],
+                ['pipe-to-shell or encoded payload', () =>
+                  /(curl|wget)[^\n]{0,300}\|\s*(sudo\s+)?(ba|z)?sh\b/i.test(t) ||
+                  /\b(base64\s+(-d|--decode)|\/dev\/tcp\/|powershell\s+-(e|enc)\b|iex\s*\(|eval\s*\(\s*atob)/i.test(t)],
+                ['invisible or direction-changing Unicode', () =>
+                  /[\p{Bidi_Control}\u200B-\u200D\u2060-\u2064\uFEFF\u180E]/u.test(raw)],
+                ['instructions aimed at an AI agent', () =>
+                  /(ignore\s+(all\s+)?(previous|prior|above|earlier)\s+instructions|disregard\s+(the\s+)?(previous|above)|system\s+prompt|<\/?\s*(system|assistant|instructions?)\s*>|you\s+are\s+now\s+|as\s+an\s+ai\s+(agent|assistant))/i.test(t)],
+                ['known exfiltration endpoint', () =>
+                  /(webhook\.site|requestbin|pipedream\.net|ngrok(-free)?\.(io|app|dev)|interact\.sh|\boast\.(fun|me|pro|site|online|live)\b|burpcollaborator|transfer\.sh|pastebin\.com\/raw|hookbin|beeceptor)/i.test(t)],
+              ];
+              return checks.filter(([, test]) => { try { return test(); } catch (e) { return false; } }).map(([name]) => name);
+            };
+
+            const reasons = analyse(text);
             if (reasons.length === 0) {
               core.info(`Clean: ${kind} #${item.number} by ${author}`);
               return;
             }
+            // Dedupe on content, not on the item: new issues, comments and PRs always alert. An edit alerts only when it
+            // adds a sign the previous version (sent by GitHub in payload.changes) did not have, so repeat edits of the
+            // same text stay quiet while a new payload slipped in by editing still alerts.
+            if (p.action === 'edited') {
+              const ch = p.changes || {};
+              const prevText = context.eventName === 'issue_comment'
+                ? (ch.body ? ch.body.from : text)
+                : `${ch.title ? ch.title.from : (item.title || '')}\n${ch.body ? ch.body.from : (item.body || '')}`;
+              const before = new Set(analyse(prevText));
+              const added = reasons.filter(r => !before.has(r));
+              if (added.length === 0) {
+                core.info(`Edit adds no new sign to ${kind} #${item.number}; no new alert`);
+                return;
+              }
+            }
 
             core.warning(`${kind} #${item.number} by ${author} (${association}): ${reasons.join('; ')}`);
             const label = 'security-review';
-            // The label is the persistent record: an item already labelled was alerted before, so repeated edits stay quiet.
-            if ((item.labels || []).some(l => (l.name || l) === label)) {
-              core.info(`Already labelled ${label}; no new alert`);
-              return;
-            }
             let labelled = true;
             try {
               try {
