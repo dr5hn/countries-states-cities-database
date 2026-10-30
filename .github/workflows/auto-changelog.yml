@@ -25,6 +25,8 @@ jobs:
             if (!webhookUrl) return;
 
             const https = require('https');
+            // Slack mrkdwn treats <...> as links and mentions (<!channel>); escape &, < and > in any text from users.
+            const slackEscape = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             const pr = context.payload.pull_request;
 
             const payload = {
@@ -38,8 +40,8 @@ jobs:
                   {
                     type: 'section',
                     fields: [
-                      { type: 'mrkdwn', text: `*PR:* <${pr.html_url}|#${pr.number}> ${pr.title}` },
-                      { type: 'mrkdwn', text: `*Author:* @${pr.user.login}` },
+                      { type: 'mrkdwn', text: `*PR:* <${pr.html_url}|#${pr.number}> ${slackEscape(pr.title)}` },
+                      { type: 'mrkdwn', text: `*Author:* @${slackEscape(pr.user.login)}` },
                     ],
                   },
                 ],

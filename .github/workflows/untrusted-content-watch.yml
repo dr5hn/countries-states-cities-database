@@ -56,16 +56,19 @@ jobs:
               return;
             }
 
+            // Invisible format characters (Cf: zero-width, bidi controls, U+061C ...) can split a command; strip them first.
+            const raw = text;
+            text = text.replace(/\p{Cf}/gu, '');
             const command = /\b(curl|wget|bash|sh\s+-c|zsh|powershell|pwsh|iex|invoke-expression|base64|eval|exec|python3?\s+-c|node\s+-e|perl\s+-e|nc\s+-|ncat|socat|printenv|env\b|export\s+\w+=|chmod\s+\+x|\/dev\/tcp\/|GITHUB_TOKEN|ACTIONS_\w+|secrets\.)/i;
             const checks = [
               ['shell command hidden in an HTML comment', () =>
-                [...text.matchAll(/<!--([\s\S]*?)-->/g)].some(m => command.test(m[1]) || /\$\(|`[^`]+`/.test(m[1]))],
+                [...text.matchAll(/<!--([\s\S]*?)(?:-->|$)/g)].some(m => command.test(m[1]) || /\$\(|`[^`]+`/.test(m[1]))],
               ['workflow expression syntax', () => /\$\{\{[\s\S]*?\}\}/.test(text)],
               ['pipe-to-shell or encoded payload', () =>
                 /(curl|wget)[^\n]{0,300}\|\s*(sudo\s+)?(ba|z)?sh\b/i.test(text) ||
                 /\b(base64\s+(-d|--decode)|\/dev\/tcp\/|powershell\s+-(e|enc)\b|iex\s*\(|eval\s*\(\s*atob)/i.test(text)],
               ['invisible or direction-changing Unicode', () =>
-                /[​-‏‪-‮⁠-⁤⁦-⁩﻿]/.test(text)],
+                /[\p{Bidi_Control}\u200B-\u200D\u2060-\u2064\uFEFF\u180E]/u.test(raw)],
               ['instructions aimed at an AI agent', () =>
                 /(ignore\s+(all\s+)?(previous|prior|above|earlier)\s+instructions|disregard\s+(the\s+)?(previous|above)|system\s+prompt|<\/?\s*(system|assistant|instructions?)\s*>|you\s+are\s+now\s+|as\s+an\s+ai\s+(agent|assistant))/i.test(text)],
               ['known exfiltration endpoint', () =>
@@ -79,17 +82,30 @@ jobs:
 
             core.warning(`${kind} #${item.number} by ${author} (${association}): ${reasons.join('; ')}`);
             const label = 'security-review';
-            try {
-              await github.rest.issues.getLabel({ ...context.repo, name: label });
-            } catch (e) {
-              await github.rest.issues.createLabel({ ...context.repo, name: label, color: 'b60205',
-                description: 'Possible injection attempt: check before any bot or person acts on it' });
+            // The label is the persistent record: an item already labelled was alerted before, so repeated edits stay quiet.
+            if ((item.labels || []).some(l => (l.name || l) === label)) {
+              core.info(`Already labelled ${label}; no new alert`);
+              return;
             }
-            await github.rest.issues.addLabels({ ...context.repo, issue_number: item.number, labels: [label] });
+            let labelled = true;
+            try {
+              try {
+                await github.rest.issues.getLabel({ ...context.repo, name: label });
+              } catch (e) {
+                await github.rest.issues.createLabel({ ...context.repo, name: label, color: 'b60205',
+                  description: 'Possible injection attempt: check before any bot or person acts on it' });
+              }
+              await github.rest.issues.addLabels({ ...context.repo, issue_number: item.number, labels: [label] });
+            } catch (e) {
+              labelled = false;
+              core.warning(`Could not add the ${label} label: ${e.status || ''} ${e.message}`);
+            }
 
             if (process.env.SLACK_WEBHOOK_URL) {
-              const message = `:rotating_light: Possible injection attempt in ${context.repo.repo} ${kind} #${item.number} ` +
-                `by ${author} (${association}): ${reasons.join('; ')}. Do not run, follow or copy anything from it. ${url}`;
+              const esc = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              const message = `:rotating_light: Possible injection attempt in ${esc(context.repo.repo)} ${kind} #${item.number} ` +
+                `by ${esc(author)} (${esc(association)}): ${reasons.join('; ')}. Do not run, follow or copy anything from it. ` +
+                `${esc(url)}${labelled ? '' : ' (labelling failed: add security-review by hand)'}`;
               const res = await fetch(process.env.SLACK_WEBHOOK_URL, { method: 'POST',
                 headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: message }) });
               if (!res.ok) core.warning(`Slack alert failed: HTTP ${res.status}`);

@@ -29,6 +29,8 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           script: |
+            // Slack mrkdwn treats <...> as links and mentions (<!channel>); escape &, < and > in any text from users.
+            const slackEscape = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             const fs = require('fs');
             const https = require('https');
             const owner = context.repo.owner;
@@ -258,7 +260,7 @@ jobs:
                   text:
                     '*Top Contributors This Week:*\n' +
                     topContributors
-                      .map((c, i) => `${i + 1}. @${c.login} (${c.count} PR${c.count > 1 ? 's' : ''} merged)`)
+                      .map((c, i) => `${i + 1}. @${slackEscape(c.login)} (${c.count} PR${c.count > 1 ? 's' : ''} merged)`)
                       .join('\n'),
                 },
               });
@@ -267,7 +269,7 @@ jobs:
             if (mergedThisWeek.length > 0) {
               const mergedList = mergedThisWeek
                 .slice(0, 5)
-                .map((pr) => `- <${pr.html_url}|#${pr.number}> ${pr.title}`)
+                .map((pr) => `- <${pr.html_url}|#${pr.number}> ${slackEscape(pr.title)}`)
                 .join('\n');
               blocks.push({
                 type: 'section',
