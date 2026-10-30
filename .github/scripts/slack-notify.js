@@ -7,6 +7,9 @@
 const https = require('https');
 const core = require('@actions/core');
 
+/** Escape text from users (PR titles, logins, file paths) for Slack mrkdwn, where <...> makes links and mentions. */
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 /**
  * Send a message to Slack via webhook.
  * @param {string} webhookUrl - Slack incoming webhook URL
@@ -68,15 +71,15 @@ function buildCriticalAlert({ prNumber, prTitle, prUrl, author, reasons }) {
           {
             type: 'section',
             fields: [
-              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${prTitle}` },
-              { type: 'mrkdwn', text: `*Author:* ${author}` },
+              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${esc(prTitle)}` },
+              { type: 'mrkdwn', text: `*Author:* ${esc(author)}` },
             ],
           },
           {
             type: 'section',
             text: {
               type: 'mrkdwn',
-              text: `*Reason:*\n${reasons.map((r) => `- ${r}`).join('\n')}`,
+              text: `*Reason:*\n${reasons.map((r) => `- ${esc(r)}`).join('\n')}`,
             },
           },
           {
@@ -112,13 +115,13 @@ function buildMergedNotification({ prNumber, prTitle, prUrl, author, summary }) 
           {
             type: 'section',
             fields: [
-              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${prTitle}` },
-              { type: 'mrkdwn', text: `*Author:* ${author}` },
+              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${esc(prTitle)}` },
+              { type: 'mrkdwn', text: `*Author:* ${esc(author)}` },
             ],
           },
           {
             type: 'section',
-            text: { type: 'mrkdwn', text: summary },
+            text: { type: 'mrkdwn', text: esc(summary) },
           },
         ],
       },
@@ -142,8 +145,8 @@ function buildLargeContributionWarning({ prNumber, prTitle, prUrl, author, recor
           {
             type: 'section',
             fields: [
-              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${prTitle}` },
-              { type: 'mrkdwn', text: `*Author:* ${author}` },
+              { type: 'mrkdwn', text: `*PR:* <${prUrl}|#${prNumber}> ${esc(prTitle)}` },
+              { type: 'mrkdwn', text: `*Author:* ${esc(author)}` },
               { type: 'mrkdwn', text: `*Records:* ${recordCount}` },
               { type: 'mrkdwn', text: `*Status:* Manual review required` },
             ],
@@ -192,7 +195,7 @@ function buildWeeklyDigest(stats) {
                     text:
                       '*Top Contributors:*\n' +
                       stats.topContributors
-                        .map((c, i) => `${i + 1}. @${c.login} (${c.count} PR${c.count > 1 ? 's' : ''})`)
+                        .map((c, i) => `${i + 1}. @${esc(c.login)} (${c.count} PR${c.count > 1 ? 's' : ''})`)
                         .join('\n'),
                   },
                 },
