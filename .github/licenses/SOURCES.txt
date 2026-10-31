@@ -1118,6 +1118,20 @@ OpenStreetMap: © OpenStreetMap contributors, https://www.openstreetmap.org/copy
 Modifications: validate literal full-code formats and complete object geometry in an assembled valid country polygon, reject contrary country tags, retain only supported legacy identities, unanimous city/place labels, and medians from at least two distinct numbered address signatures >=10m apart with <=1km conservative spread. No single-address point or guessed administrative/city join. No routing guarantee.
 Distribution: retain the complete notice in .github/licenses/pc_rebuild_7-distribution-notices.txt.
 
+87. Pakistani postal code dump
+Publisher: GeoNames
+Edition: Downloaded 29 October 2026
+Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://creativecommons.org/licenses/by/4.0/
+Credit: Source: GeoNames, Pakistani postal code dump, Downloaded 29 October 2026.
+Source:
+https://download.geonames.org/export/zip/PK.zip
+Changes by CSC: CSC imported the dump as a new country postcode file, mapped GeoNames admin1 codes to CSC
+states (02→BA, 03→KP, 04→PB, 05→SD, 06→JK, 07→GB, 08→IS), and left city_id null on every row. Points are
+GeoNames' estimates. Pakistan Post's published directory was not used.
+Reuse: Credit the source, retain the licence link and supplied notices, and identify changes; do not imply
+endorsement.
+
 Sources under review
 The redistribution basis for 233 further sources remains under review; this notice does not certify those
 sources as cleared.
