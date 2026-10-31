@@ -114,6 +114,8 @@ identifier, parent or table change is authorized by this type correction.
 
 ### Mexico
 
+Localidades at level 3 link by `parent_id` to their own level-2 municipio or Mexico City alcaldía city row; an official cabecera point may represent a municipio only when it lies inside that municipio, and its population is the municipio total.
+
 In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoNames PPLA2) and
 `municipality` the municipal territory itself (GeoNames ADM2), so a municipality and its seat town can both
 appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexico, leave out `municipality`.
