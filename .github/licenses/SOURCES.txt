@@ -1646,12 +1646,18 @@ Wikidata contributors — ru_years_v5x
 Source: https://www.wikidata.org/ ; licensing: https://www.wikidata.org/wiki/Wikidata:Licensing ; CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/ .
 Only population dates (P585 on the own item's exact equal P1082 statement) are added; population counts were already stored and are retained without alteration. Identity claims, coordinates and administrative paths are used solely for screening. The changed-only ledger records statement identifiers, original amount, P585 and P459 where present; archived response bytes, capture dates and SHA-256 hashes are retained in the audit workspace. No agency endorsement is implied.
 
-NG / Open Admin Data Nigeria (open-admin-data/nigeria-administrative-divisions)
-Credit / data source: Open Admin Data Nigeria (derived from OCHA COD-AB and INEC).
+NG / Nigeria Subnational Administrative Boundaries (UN OCHA COD-AB) & Open Admin Data Nigeria
+Primary data source / contributors: United Nations Office for the Coordination of Humanitarian Affairs (OCHA) / OCHA Nigeria, Office of the Surveyor General of the Federation of Nigeria (OSGOF), eHealth Africa, Information Technology Outreach Services (ITOS) - University of Georgia, Independent National Electoral Commission (INEC).
+Dataset: Nigeria - Subnational Administrative Boundaries (Common Operational Datasets - COD-AB; Admin 0, Admin 1, Admin 2 [774 Local Government Areas]).
+Source URL: https://data.humdata.org/dataset/cod-ab-nga
+Terms / licence: Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO 3.0)
+Licence link: https://creativecommons.org/licenses/by/3.0/igo/
+
+Derived secondary source: Open Admin Data Nigeria (open-admin-data/nigeria-administrative-divisions)
 Source: https://github.com/open-admin-data/nigeria-administrative-divisions
 Portal: https://openadmindata.org/ng/
 Terms / licence: Creative Commons Attribution 4.0 International (CC-BY-4.0)
 CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
-Dataset: 37 States and 774 Local Government Areas (LGAs) of Nigeria (JSON); edition: master.
+Dataset: 37 States and 774 Local Government Areas (LGAs) of Nigeria (JSON); edition: 2026.06 (master).
 Retrieved: 2026-10-30T00:00:00Z.
-Modifications: selected LGA administrative division records with verified geo coordinates, remapped to CSC state IDs, typed as municipality at level 2 (type_local: local government area), and enriched with IANA Africa/Lagos timezone. No provider endorsement is implied.
+Modifications: selected LGA administrative division records with OCHA COD-AB boundary centres via Open Admin Data, remapped to CSC state IDs, typed as municipality at level 2 (type_local: local government area; area council for FCT), and enriched with IANA Africa/Lagos timezone. Point ledger: NG_lga_points_2026-10.csv. No provider endorsement is implied.
