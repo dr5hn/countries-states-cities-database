@@ -54,7 +54,7 @@ jobs:
       # They also need the repository variable EXPORT_PRODUCTION_ENABLED = true, unset while exports are paused.
       - name: Require the current master commit
         if: env.MODE == 'production'
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
         with:
@@ -74,7 +74,7 @@ jobs:
             }
 
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 1
           submodules: true
@@ -83,7 +83,7 @@ jobs:
           lfs: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           php-version: ${{ matrix.php-version }}
           extensions: intl #optional
@@ -91,14 +91,14 @@ jobs:
           ini-values: "post_max_size=256M, memory_limit=512M" #optional
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: nmig/package-lock.json
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: bin/vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('bin/composer.lock') }}
@@ -124,7 +124,7 @@ jobs:
           sudo -u postgres psql -c "\l"
 
       - name: Setup MongoDB
-        uses: supercharge/mongodb-github-action@1.10.0
+        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # 1.10.0
         with:
           mongodb-version: '6.0'
           mongodb-replica-set: rs0
@@ -684,7 +684,7 @@ jobs:
           echo "current_date=${current_date}" >> "$GITHUB_OUTPUT"
 
       - name: Keep the build as a workflow artifact (candidate runs end here; nothing is published)
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: ${{ steps.meta.outputs.artifact }}
           path: |
@@ -722,7 +722,7 @@ jobs:
       data_version: ${{ steps.generate.outputs.data_version }}
     steps:
       - name: Checkout the source commit with its full history and tags
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           ref: ${{ github.sha }}
           fetch-depth: 0
@@ -742,7 +742,7 @@ jobs:
             "$RUNNER_TEMP/migrations/release_meta.json" >> "$GITHUB_OUTPUT"
 
       - name: Keep the migration files as a workflow artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: ${{ steps.generate.outputs.artifact }}
           path: |
@@ -775,7 +775,7 @@ jobs:
 
     steps:
       - name: Checkout the source commit
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           ref: ${{ github.sha }}
           fetch-depth: 1
@@ -783,7 +783,7 @@ jobs:
           lfs: false
 
       - name: Download this run's build
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
         with:
           name: ${{ needs.export.outputs.artifact }}
           path: ${{ runner.temp }}/build
@@ -804,7 +804,7 @@ jobs:
           echo "placed $n exports and the small files"
 
       - name: Download and verify this run's migration files
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
         with:
           name: ${{ needs.migrations.outputs.artifact }}
           path: ${{ runner.temp }}/migrations
@@ -818,7 +818,7 @@ jobs:
           echo "verified $n migration archive(s)"
 
       - name: Create GitHub Release with exports
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           EXPORT_PRODUCTION_ENABLED: ${{ vars.EXPORT_PRODUCTION_ENABLED }}
           MIGRATIONS_DATA_VERSION: ${{ needs.migrations.outputs.data_version }}
@@ -1071,7 +1071,7 @@ jobs:
             core.info(`Release published with all export assets and ${noticeAssets.length} notices.`);
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           base: master
           commit-message: |
