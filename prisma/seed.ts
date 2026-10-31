@@ -1,8 +1,11 @@
 import { gunzipSync } from 'node:zlib';
 import { PrismaClient } from '@prisma/client';
+import { PrismaMariaDb } from '@prisma/adapter-mariadb';
 import { countyStates, localStateIds, seedCityRow } from './city-state.ts';
 
-const prisma = new PrismaClient();
+const databaseUrl = process.env.DATABASE_URL;
+if (!databaseUrl) throw new Error('DATABASE_URL is required');
+const prisma = new PrismaClient({ adapter: new PrismaMariaDb(databaseUrl) });
 const API_BASE = 'https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/json/';
 // Large exports are not in git: they are assets of each export release (json-<name>.json.gz).
 const RELEASE_BASE = 'https://github.com/dr5hn/countries-states-cities-database/releases/latest/download/';
