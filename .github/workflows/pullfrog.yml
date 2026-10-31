@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: Run agent
-        uses: pullfrog/pullfrog@4cf5433d7a8e27257f75657a6112f4c478639476 # v0 (v0.1.108); bump the SHA to update
+        uses: pullfrog/pullfrog@4cf5433d7a8e27257f75657a6112f4c478639476 # v0.1.108
         with:
           prompt: ${{ inputs.prompt }}
         # No env: Pullfrog reads untrusted PRs and issues: give it no credential it does not need. On the OSS plan it runs on
