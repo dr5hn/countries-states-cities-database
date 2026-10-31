@@ -120,6 +120,22 @@ appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexi
 
 For reviewed rows, INEGI catalogue AMBITO U/R maps to `locality / localidad urbana` or `locality / localidad rural` at level 3; cabecera is a seat role and does not itself establish urban class. A legacy place-typed row is corrected to `municipality / municipio` at level 2 only when its literal v4 own item is the municipio (own P3801 and municipality class), the official code/name/state and current municipal polygon agree, and the unchanged point lies inside that territory. An item naming the seat cannot take its municipality's class.
 
+### Cuba
+
+In `CU.json`, a reviewed municipio is a city-table row `municipality / municipio` at level 2,
+directly under its province (state, level 1), with `parent_id: null`. Its seat town is a separate entity.
+Reviewed towns retain their types, use level 3, and link by `parent_id` only when their own item's
+P131 or an official source names the municipio and their unchanged point lies within it.
+To list only settlements in Cuba, leave out `municipality`. Isla de la Juventud is the state CU-99;
+there is no duplicate municipio row in cities. Existing names, IDs and points are preserved, including
+the 33 names beginning "Municipio de" and San Germán (the Urbano Noris municipio row).
+Unknown item scopes, unavailable or conflicting points and the Guantánamo Bay naval base area remain held.
+The [compact ledger](.github/fixes-docs/ledgers/cu_munis_v5x.jsonl) and its sources sidecar record
+each changed row, archived evidence, point checks and held cases. New names use the standard Spanish
+form with diacritics (the municipio's own Wikidata Spanish label where it is the same name), not ONEI's table
+typography; Wikidata CC0 supplies their own-item points. geoBoundaries/OSM ODbL geometry is
+checking evidence only. No ONEI population is imported.
+
 ### Greece
 
 In `GR.json`, `municipality` is a municipal territory (e.g. Lake Plastiras, Pangaio), not a town, and Mount
@@ -289,7 +305,7 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Mexico and Greece, also exclude `municipality` (the municipal territory; see [Mexico](#mexico), [Greece](#greece)).
+In Cuba, Mexico and Greece, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece)).
 In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
 `đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
@@ -308,7 +324,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- MX/GR/VN municipality = territory
+AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN municipality = territory
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -331,7 +347,7 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // MX/GR/VN municipality = territory
+    && !(['CU', 'MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN municipality = territory
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );

@@ -1,0 +1,4072 @@
+{
+  "ledger": "cu_munis_v5x.jsonl",
+  "records": 164,
+  "base_commit": [
+    "ab6633bd59c87813c07109ef9c1cf684358d6af5"
+  ],
+  "full_ledger_sha256": "df54f5d25417a01b016fc4ec0c86b4f382082e9fdeff880e87f186bc9b67d1a7",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "The town own item P131 names this municipio; its original point is inside that exact municipio geometry in the same province. Set null parent_id and level 3; preserve town type and all other fields.",
+    "The retained own municipio item or independently matched GeoNames ADM2 row and ONEI province/name identify the same existing territorial row; type, local type and level only. Existing name, point, ID, population, item and ancestry are unchanged.",
+    "The unchanged Pinar del Río point/name and matched PPLA2 source row identify the seat town. Q555956 has P131 Santiago de Cuba Province; Q1817531 belongs to the separately represented Pinar municipio. Clear the copied wrong item; do not assign the municipio item to the town.",
+    "ONEI table 2.7.1 municipio/province with conventional Spanish name from its own matching Wikidata Spanish label, else ONEI with standard accents and capitalisation; names.csv records the decision; no existing municipio row in the reviewed inventory; own Wikidata municipality item and a unique literal Earth P625, unchanged except decimal formatting, strictly inside its own geoBoundaries ADM2 geometry. No population is copied. Latin own labels else ONEI name; pt independent of pt-br; non-Latin own labels only, Chinese simplified with ICU Hans. Multiple or unavailable points and uncertain scopes held."
+  ],
+  "sources": [
+    {
+      "bytes": 1924566,
+      "edition": "Wikidata entity revision 2520758321",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:55.746364+00:00",
+      "sha256": "62c4a071108193e27b0937ebb9908bf1c319b3cc14f9c73c90e248f10e34a623",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/c76488ebf4b602a5fab0_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23735189%7CQ23736977%7CQ23742002%7CQ23762304%7CQ23793608%7CQ23794731%7CQ23795053%7CQ23796070%7CQ23796097%7CQ23797650%7CQ23798614%7CQ23804595%7CQ23805305%7CQ23806009%7CQ23955761%7CQ24041555%7CQ24045809%7CQ25337079%7CQ25349031%7CQ25397570%7CQ26780991%7CQ27125599%7CQ27222303%7CQ27222398%7CQ27347097%7CQ27350591%7CQ27352595%7CQ27352739%7CQ27357540%7CQ27697441%7CQ27698203%7CQ27699683%7CQ27763686%7CQ27763713%7CQ28729532%7CQ28870916%7CQ29578870%7CQ30016638%7CQ31457654%7CQ31461065%7CQ31478483%7CQ31481082%7CQ31485466%7CQ31488818%7CQ31494148%7CQ31498094%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31503957&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 4402459,
+      "edition": "geoBoundaries CUB-ADM2-75667366; 2017 represented; 2023-12-12 build; commit 9469f09",
+      "kind": "primary archive",
+      "licence": "ODbL 1.0; OpenStreetMap contributors / Wambacher; checking evidence only",
+      "retrieved_at": "2026-10-29T11:09:43.755552+00:00",
+      "sha256": "99a7958a4f31e8aadec390cea397973e526563f65090c295c1a5043ec3cb68a1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/gbADM2.geojson",
+      "url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/CUB/ADM2/geoBoundaries-CUB-ADM2.geojson"
+    },
+    {
+      "bytes": 22946,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:23:55.697842+00:00",
+      "sha256": "f520e1bd6186f43e30d6470737473d2b3cc69acb44bb2ac163d5c516b03032a6",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q1936063"
+    },
+    {
+      "bytes": 1172001,
+      "edition": "GeoNames CU snapshot retained on 2026-10-29",
+      "kind": "primary archive",
+      "licence": "CC BY 4.0; checking existing feature identity only",
+      "retrieved_at": "2026-10-29T11:09:39.381490+00:00",
+      "sha256": "5393d0bfe4c4b5a448088f6248974cc296fd6592d0da480624ea596f67e859ae",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/geonames_CU.zip",
+      "url": "https://download.geonames.org/export/dump/CU.zip"
+    },
+    {
+      "bytes": 7936873,
+      "edition": "ONEI Anuario demográfico 2024, July 2025, table 2.7.1 printed pp.45-51",
+      "kind": "primary archive",
+      "licence": "Official names/list only; population not imported; unrestricted reuse terms not established",
+      "retrieved_at": "2026-10-29T11:09:39.763876+00:00",
+      "sha256": "4ce6b2df9f03f94f6a0874e0762ed0c1c2b65d31b7d9cc074cc3ba0f93f6054d",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/onei_demografico2024.pdf",
+      "url": "https://rotativo.com.mx/files/88746/00-anuario-demografico-2024.pdf"
+    },
+    {
+      "bytes": 1579209,
+      "edition": "Wikidata entity revision 2530833720",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:23.147221+00:00",
+      "sha256": "615f81709c3398db0edb02ff6b50c0e47f6a8d57a800c6cd8b65c9a1529a3171",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/93360c10b22e731e0cf3_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1822718%7CQ1822845%7CQ1828744%7CQ1831291%7CQ1835785%7CQ1851848%7CQ1854679%7CQ1861984%7CQ1864884%7CQ1870997%7CQ1877120%7CQ1878274%7CQ1880895%7CQ1880935%7CQ1881641%7CQ1883766%7CQ1884385%7CQ1885248%7CQ1887813%7CQ1888230%7CQ1889017%7CQ1892074%7CQ1896205%7CQ1902692%7CQ1910231%7CQ1915327%7CQ1920318%7CQ1923195%7CQ1925363%7CQ1928835%7CQ1929695%7CQ1935461%7CQ1935474%7CQ1936053%7CQ1936076%7CQ1940853%7CQ1940909%7CQ1942303%7CQ1944245%7CQ1945304%7CQ1945748%7CQ1947352%7CQ1953653%7CQ1954407%7CQ1956442%7CQ1956454%7CQ1962843%7CQ1965256%7CQ1967911%7CQ1968523&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22946,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:23:55.697842+00:00",
+      "sha256": "f520e1bd6186f43e30d6470737473d2b3cc69acb44bb2ac163d5c516b03032a6",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q571968"
+    },
+    {
+      "bytes": 1924566,
+      "edition": "Wikidata entity revision 2405120051",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:55.746364+00:00",
+      "sha256": "62c4a071108193e27b0937ebb9908bf1c319b3cc14f9c73c90e248f10e34a623",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/c76488ebf4b602a5fab0_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23735189%7CQ23736977%7CQ23742002%7CQ23762304%7CQ23793608%7CQ23794731%7CQ23795053%7CQ23796070%7CQ23796097%7CQ23797650%7CQ23798614%7CQ23804595%7CQ23805305%7CQ23806009%7CQ23955761%7CQ24041555%7CQ24045809%7CQ25337079%7CQ25349031%7CQ25397570%7CQ26780991%7CQ27125599%7CQ27222303%7CQ27222398%7CQ27347097%7CQ27350591%7CQ27352595%7CQ27352739%7CQ27357540%7CQ27697441%7CQ27698203%7CQ27699683%7CQ27763686%7CQ27763713%7CQ28729532%7CQ28870916%7CQ29578870%7CQ30016638%7CQ31457654%7CQ31461065%7CQ31478483%7CQ31481082%7CQ31485466%7CQ31488818%7CQ31494148%7CQ31498094%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31503957&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22946,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:23:55.697842+00:00",
+      "sha256": "f520e1bd6186f43e30d6470737473d2b3cc69acb44bb2ac163d5c516b03032a6",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q1816192"
+    },
+    {
+      "bytes": 2161872,
+      "edition": "Wikidata entity revision 2277972863",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:00.589332+00:00",
+      "sha256": "3b8b4abf1d49eca9c6573c9680eefee9894502cd71cc1f75fe9a835a3f375c48",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/1ad09f04e52ceb32c832_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q799788%7CQ799794%7CQ799808%7CQ799843%7CQ802142%7CQ803712%7CQ804035%7CQ805946%7CQ806935%7CQ809538%7CQ813337%7CQ814594%7CQ814616%7CQ814826%7CQ814900%7CQ815053%7CQ816163%7CQ817280%7CQ818106%7CQ819314%7CQ819572%7CQ819678%7CQ820082%7CQ820280%7CQ822815%7CQ823493%7CQ825272%7CQ825818%7CQ826566%7CQ836527%7CQ837161%7CQ837425%7CQ840962%7CQ841029%7CQ843560%7CQ843980%7CQ844138%7CQ845994%7CQ846502%7CQ847315%7CQ847562%7CQ847610%7CQ847677%7CQ848403%7CQ848638%7CQ848853%7CQ849152%7CQ849354%7CQ850373%7CQ850395&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22946,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:23:55.697842+00:00",
+      "sha256": "f520e1bd6186f43e30d6470737473d2b3cc69acb44bb2ac163d5c516b03032a6",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q814979"
+    },
+    {
+      "bytes": 1579209,
+      "edition": "Wikidata entity revision 2552917084",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:23.147221+00:00",
+      "sha256": "615f81709c3398db0edb02ff6b50c0e47f6a8d57a800c6cd8b65c9a1529a3171",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/93360c10b22e731e0cf3_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1822718%7CQ1822845%7CQ1828744%7CQ1831291%7CQ1835785%7CQ1851848%7CQ1854679%7CQ1861984%7CQ1864884%7CQ1870997%7CQ1877120%7CQ1878274%7CQ1880895%7CQ1880935%7CQ1881641%7CQ1883766%7CQ1884385%7CQ1885248%7CQ1887813%7CQ1888230%7CQ1889017%7CQ1892074%7CQ1896205%7CQ1902692%7CQ1910231%7CQ1915327%7CQ1920318%7CQ1923195%7CQ1925363%7CQ1928835%7CQ1929695%7CQ1935461%7CQ1935474%7CQ1936053%7CQ1936076%7CQ1940853%7CQ1940909%7CQ1942303%7CQ1944245%7CQ1945304%7CQ1945748%7CQ1947352%7CQ1953653%7CQ1954407%7CQ1956442%7CQ1956454%7CQ1962843%7CQ1965256%7CQ1967911%7CQ1968523&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 19440,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:23:58.868600+00:00",
+      "sha256": "baa2b865ad3e58a0b938208f91813512e72d01d5db01677ce387f9f4137227a4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q281104"
+    },
+    {
+      "bytes": 2427065,
+      "edition": "Wikidata entity revision 2549827508",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:44.608065+00:00",
+      "sha256": "f1ab44e1da5f2769e90752c6a5cd1fad079f5f444bc7288d61f4ed7f850c75c8",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/39ef4653d7015ed92da2_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q255578%7CQ255780%7CQ267695%7CQ268656%7CQ269070%7CQ270041%7CQ270535%7CQ271619%7CQ272471%7CQ273775%7CQ273828%7CQ274313%7CQ275015%7CQ275295%7CQ275862%7CQ275910%7CQ277159%7CQ277886%7CQ277966%7CQ278847%7CQ279106%7CQ279871%7CQ279995%7CQ280533%7CQ280628%7CQ281213%7CQ282347%7CQ282908%7CQ283043%7CQ284257%7CQ286266%7CQ287635%7CQ289328%7CQ289747%7CQ289802%7CQ290569%7CQ290849%7CQ291729%7CQ298357%7CQ302201%7CQ302912%7CQ304266%7CQ305259%7CQ307442%7CQ309475%7CQ310892%7CQ311204%7CQ311312%7CQ311946%7CQ312357&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 23291,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:12.780263+00:00",
+      "sha256": "acf7137b6b867c8f163ceaea3b9f01cfe055096f322c6c2df9f7685305e2c62f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Col_n.txt",
+      "url": "https://www.wikidata.org/wiki/Q4999"
+    },
+    {
+      "bytes": 3204001,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:00.930113+00:00",
+      "sha256": "07da4acf7f7f1b7ded3c36ffe222d5d4bec9d113c4986241a1d279110794beb0",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0020.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q109374%7CQ110218%7CQ111739%7CQ112657%7CQ112813%7CQ115006%7CQ115329%7CQ115382%7CQ115465%7CQ115527%7CQ115723%7CQ118152%7CQ118901%7CQ118958%7CQ118995%7CQ119559%7CQ120103%7CQ122892%7CQ123360%7CQ125080%7CQ125293%7CQ125646%7CQ125652%7CQ126124%7CQ126668%7CQ127043%7CQ127063%7CQ128282%7CQ128295%7CQ128321%7CQ128349%7CQ128361%7CQ128643%7CQ128891%7CQ129610%7CQ129649%7CQ129952%7CQ129960%7CQ130014%7CQ130069%7CQ130191%7CQ130242%7CQ130246%7CQ130272%7CQ130281%7CQ130304%7CQ130391%7CQ130469%7CQ130800%7CQ130994&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 2427065,
+      "edition": "Wikidata entity revision 2538349575",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:44.608065+00:00",
+      "sha256": "f1ab44e1da5f2769e90752c6a5cd1fad079f5f444bc7288d61f4ed7f850c75c8",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/39ef4653d7015ed92da2_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q255578%7CQ255780%7CQ267695%7CQ268656%7CQ269070%7CQ270041%7CQ270535%7CQ271619%7CQ272471%7CQ273775%7CQ273828%7CQ274313%7CQ275015%7CQ275295%7CQ275862%7CQ275910%7CQ277159%7CQ277886%7CQ277966%7CQ278847%7CQ279106%7CQ279871%7CQ279995%7CQ280533%7CQ280628%7CQ281213%7CQ282347%7CQ282908%7CQ283043%7CQ284257%7CQ286266%7CQ287635%7CQ289328%7CQ289747%7CQ289802%7CQ290569%7CQ290849%7CQ291729%7CQ298357%7CQ302201%7CQ302912%7CQ304266%7CQ305259%7CQ307442%7CQ309475%7CQ310892%7CQ311204%7CQ311312%7CQ311946%7CQ312357&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22841,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:26.638007+00:00",
+      "sha256": "379a211d40cf3ab5eab2fd8d69eb7e1d5fd81e246da5bbc45191943b2f1ec469",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q1054312"
+    },
+    {
+      "bytes": 22841,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:26.638007+00:00",
+      "sha256": "379a211d40cf3ab5eab2fd8d69eb7e1d5fd81e246da5bbc45191943b2f1ec469",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q1055715"
+    },
+    {
+      "bytes": 1034697,
+      "edition": "Wikidata entity revision 2530444063",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:10.273003+00:00",
+      "sha256": "4e27e227a9b9d8eccef792d67ee921df62d476c09d639b04fcdff8b4e55d4abc",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/0fb4c3611eba2b588605_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1029650%7CQ1034638%7CQ1035648%7CQ1035651%7CQ1042609%7CQ1044689%7CQ1046268%7CQ1046498%7CQ1047089%7CQ1048700%7CQ1050731%7CQ1052090%7CQ1053702%7CQ1059565%7CQ1060403%7CQ1060628%7CQ1062018%7CQ1067172%7CQ1068972%7CQ1069990%7CQ1070175%7CQ1070673%7CQ1070678%7CQ1075057%7CQ1083091%7CQ1092820%7CQ1093421%7CQ1100817%7CQ1101913%7CQ1102140%7CQ1102546%7CQ1105427%7CQ1106689%7CQ1109422%7CQ1109870%7CQ1114885%7CQ1115715%7CQ1119754%7CQ1125479%7CQ1129122%7CQ1129877%7CQ1130165%7CQ1134454%7CQ1143002%7CQ1150895%7CQ1153061%7CQ1153291%7CQ1153740%7CQ1154985%7CQ1155053&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 2800,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:40.063667+00:00",
+      "sha256": "8d7130fb1bafccb0676efec308020a514cf3a42a8b8eac79a5e5dc8c05202b1a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Ciro_Redondo.txt",
+      "url": "https://www.wikidata.org/wiki/Q1020273"
+    },
+    {
+      "bytes": 829354,
+      "edition": "Wikidata entity revision 2427226142",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:37.419296+00:00",
+      "sha256": "21ed0bd9b5be225ec2b1db5ba87bb180c46f9d8d1f78b7c833a3bbc1d73f3f40",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/df6af99ac7de18064a99_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2673456%7CQ2676569%7CQ2677372%7CQ2682057%7CQ2682922%7CQ2702755%7CQ2703974%7CQ2708312%7CQ2708342%7CQ2708675%7CQ2708780%7CQ2711053%7CQ2711224%7CQ2711238%7CQ2714615%7CQ2715680%7CQ2715717%7CQ2716197%7CQ2716570%7CQ2717321%7CQ2717429%7CQ2717487%7CQ2717615%7CQ2717644%7CQ2717652%7CQ2717803%7CQ2718070%7CQ2718126%7CQ2718227%7CQ2718672%7CQ2718702%7CQ2718737%7CQ2718780%7CQ2718839%7CQ2719107%7CQ2724380%7CQ2724633%7CQ2725364%7CQ2726292%7CQ2732976%7CQ2733455%7CQ2733738%7CQ2734216%7CQ2734240%7CQ2734471%7CQ2734562%7CQ2734950%7CQ2737155%7CQ2737160%7CQ2737321&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1034697,
+      "edition": "Wikidata entity revision 2474273967",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:10.273003+00:00",
+      "sha256": "4e27e227a9b9d8eccef792d67ee921df62d476c09d639b04fcdff8b4e55d4abc",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/0fb4c3611eba2b588605_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1029650%7CQ1034638%7CQ1035648%7CQ1035651%7CQ1042609%7CQ1044689%7CQ1046268%7CQ1046498%7CQ1047089%7CQ1048700%7CQ1050731%7CQ1052090%7CQ1053702%7CQ1059565%7CQ1060403%7CQ1060628%7CQ1062018%7CQ1067172%7CQ1068972%7CQ1069990%7CQ1070175%7CQ1070673%7CQ1070678%7CQ1075057%7CQ1083091%7CQ1092820%7CQ1093421%7CQ1100817%7CQ1101913%7CQ1102140%7CQ1102546%7CQ1105427%7CQ1106689%7CQ1109422%7CQ1109870%7CQ1114885%7CQ1115715%7CQ1119754%7CQ1125479%7CQ1129122%7CQ1129877%7CQ1130165%7CQ1134454%7CQ1143002%7CQ1150895%7CQ1153061%7CQ1153291%7CQ1153740%7CQ1154985%7CQ1155053&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 30044,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:50.069257+00:00",
+      "sha256": "39e9d756f035ab39856396ccc5b16b0002ea053ba3b10b2156375c0e4e60c039",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Mayar_.txt",
+      "url": "https://www.wikidata.org/wiki/Q280984"
+    },
+    {
+      "bytes": 6651436,
+      "edition": "Wikidata entity revision 2537910884",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:27.907888+00:00",
+      "sha256": "41ee5176e90df7878df3b27dca4a81ee9c3d1e23f28148818dfa562839b4a011",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/bf34ec3361d8de0f2b67_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11909%7CQ1218%7CQ1353%7CQ15190%7CQ1520%7CQ15245%7CQ1563%7CQ1640%7CQ16520%7CQ16572%7CQ1663%7CQ1710%7CQ172%7CQ1725%7CQ1773%7CQ18108%7CQ1848%7CQ1850%7CQ1867%7CQ1874%7CQ1963%7CQ2187%7CQ2211%7CQ270%7CQ2868%7CQ2900%7CQ3001%7CQ3551%7CQ3768%7CQ3799%7CQ3820%7CQ3831%7CQ3832%7CQ3833%7CQ3834%7CQ3835%7CQ3836%7CQ3838%7CQ3839%7CQ3840%7CQ4454%7CQ5008%7CQ5044%7CQ5196%7CQ5217%7CQ5395%7CQ7657%7CQ900%7CQ9310%7CQ9733&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1158957,
+      "edition": "Wikidata entity revision 2530470494",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:30.897260+00:00",
+      "sha256": "1781a5a7adf2ca91846540e55cdd18708dbac41967608aba90181915cda09ebe",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/1dc723f3b5a2c97eca33_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2373404%7CQ2374413%7CQ2378015%7CQ2380860%7CQ2382197%7CQ2389168%7CQ2390425%7CQ2390910%7CQ2391279%7CQ2391391%7CQ2391850%7CQ2393606%7CQ2397948%7CQ2399843%7CQ2400714%7CQ2407798%7CQ2409805%7CQ2410335%7CQ2413209%7CQ2415330%7CQ2415345%7CQ2416554%7CQ2422035%7CQ2423455%7CQ2424642%7CQ2427660%7CQ2428058%7CQ2428308%7CQ2429122%7CQ2430177%7CQ2430230%7CQ2431181%7CQ2434300%7CQ2442016%7CQ2443778%7CQ2443901%7CQ2444484%7CQ2445046%7CQ2445448%7CQ2445471%7CQ2446345%7CQ2449175%7CQ2449425%7CQ2449803%7CQ2452207%7CQ2452778%7CQ2453330%7CQ2453339%7CQ2453418%7CQ2453443&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1700941,
+      "edition": "Wikidata entity revision 2540264501",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:05.376417+00:00",
+      "sha256": "4f4c804ed757b70fd76916ee28a363d06a5edac33734c93ac3ec988c705e1875",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/a60b152afe12d3d9f602_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000075%7CQ1000143%7CQ1000166%7CQ1000383%7CQ1000446%7CQ1000852%7CQ1000883%7CQ1000887%7CQ1001036%7CQ1001424%7CQ1001440%7CQ1001823%7CQ1002560%7CQ1002607%7CQ1002916%7CQ1004248%7CQ1004306%7CQ1004332%7CQ1004686%7CQ1005059%7CQ1006076%7CQ1006137%7CQ1007469%7CQ1007702%7CQ1009199%7CQ1009384%7CQ1009416%7CQ1010264%7CQ1010754%7CQ1011073%7CQ1011133%7CQ1011138%7CQ1011190%7CQ994167%7CQ994203%7CQ994406%7CQ995163%7CQ995221%7CQ995238%7CQ995752%7CQ997351%7CQ997398%7CQ997404%7CQ997469%7CQ997478%7CQ997593%7CQ997623%7CQ997767%7CQ997838%7CQ999070&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1924566,
+      "edition": "Wikidata entity revision 2424057580",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:55.746364+00:00",
+      "sha256": "62c4a071108193e27b0937ebb9908bf1c319b3cc14f9c73c90e248f10e34a623",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/c76488ebf4b602a5fab0_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23735189%7CQ23736977%7CQ23742002%7CQ23762304%7CQ23793608%7CQ23794731%7CQ23795053%7CQ23796070%7CQ23796097%7CQ23797650%7CQ23798614%7CQ23804595%7CQ23805305%7CQ23806009%7CQ23955761%7CQ24041555%7CQ24045809%7CQ25337079%7CQ25349031%7CQ25397570%7CQ26780991%7CQ27125599%7CQ27222303%7CQ27222398%7CQ27347097%7CQ27350591%7CQ27352595%7CQ27352739%7CQ27357540%7CQ27697441%7CQ27698203%7CQ27699683%7CQ27763686%7CQ27763713%7CQ28729532%7CQ28870916%7CQ29578870%7CQ30016638%7CQ31457654%7CQ31461065%7CQ31478483%7CQ31481082%7CQ31485466%7CQ31488818%7CQ31494148%7CQ31498094%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31503957&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1924566,
+      "edition": "Wikidata entity revision 2242052593",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:55.746364+00:00",
+      "sha256": "62c4a071108193e27b0937ebb9908bf1c319b3cc14f9c73c90e248f10e34a623",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/c76488ebf4b602a5fab0_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23735189%7CQ23736977%7CQ23742002%7CQ23762304%7CQ23793608%7CQ23794731%7CQ23795053%7CQ23796070%7CQ23796097%7CQ23797650%7CQ23798614%7CQ23804595%7CQ23805305%7CQ23806009%7CQ23955761%7CQ24041555%7CQ24045809%7CQ25337079%7CQ25349031%7CQ25397570%7CQ26780991%7CQ27125599%7CQ27222303%7CQ27222398%7CQ27347097%7CQ27350591%7CQ27352595%7CQ27352739%7CQ27357540%7CQ27697441%7CQ27698203%7CQ27699683%7CQ27763686%7CQ27763713%7CQ28729532%7CQ28870916%7CQ29578870%7CQ30016638%7CQ31457654%7CQ31461065%7CQ31478483%7CQ31481082%7CQ31485466%7CQ31488818%7CQ31494148%7CQ31498094%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31503957&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1579209,
+      "edition": "Wikidata entity revision 2429834927",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:23.147221+00:00",
+      "sha256": "615f81709c3398db0edb02ff6b50c0e47f6a8d57a800c6cd8b65c9a1529a3171",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/93360c10b22e731e0cf3_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1822718%7CQ1822845%7CQ1828744%7CQ1831291%7CQ1835785%7CQ1851848%7CQ1854679%7CQ1861984%7CQ1864884%7CQ1870997%7CQ1877120%7CQ1878274%7CQ1880895%7CQ1880935%7CQ1881641%7CQ1883766%7CQ1884385%7CQ1885248%7CQ1887813%7CQ1888230%7CQ1889017%7CQ1892074%7CQ1896205%7CQ1902692%7CQ1910231%7CQ1915327%7CQ1920318%7CQ1923195%7CQ1925363%7CQ1928835%7CQ1929695%7CQ1935461%7CQ1935474%7CQ1936053%7CQ1936076%7CQ1940853%7CQ1940909%7CQ1942303%7CQ1944245%7CQ1945304%7CQ1945748%7CQ1947352%7CQ1953653%7CQ1954407%7CQ1956442%7CQ1956454%7CQ1962843%7CQ1965256%7CQ1967911%7CQ1968523&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22903,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:29.749892+00:00",
+      "sha256": "0a24f52cd657f136ea24fa6369a89768e2f7464f18c0a176d4ae6cbe50974f9f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q1566695"
+    },
+    {
+      "bytes": 1332400,
+      "edition": "Wikidata entity revision 2543558947",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:13.359159+00:00",
+      "sha256": "cef31e801108a8e0cf3f14aa9725534525f9bc896e8e942ef91230e77b64785c",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/cb162f9f585690d1dca1_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1270862%7CQ1277723%7CQ1277854%7CQ1277889%7CQ1278514%7CQ1280049%7CQ1280321%7CQ1280363%7CQ1280373%7CQ1281285%7CQ1282207%7CQ1285102%7CQ1286233%7CQ1286247%7CQ1286502%7CQ1294439%7CQ1296644%7CQ1299852%7CQ1311267%7CQ1315249%7CQ1316141%7CQ1316415%7CQ1317145%7CQ1317264%7CQ1318833%7CQ1319580%7CQ1320456%7CQ1320784%7CQ1320989%7CQ1321612%7CQ1324653%7CQ1325602%7CQ1325725%7CQ1325760%7CQ1331388%7CQ1331447%7CQ1332144%7CQ1333077%7CQ1333417%7CQ1335331%7CQ1337399%7CQ1337641%7CQ1339683%7CQ1341194%7CQ1341574%7CQ1342853%7CQ1343673%7CQ1344661%7CQ1344683%7CQ1344702&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 3684576,
+      "edition": "Wikidata entity revision 2551145626",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:39.876915+00:00",
+      "sha256": "4b52c79f6bba00404f09310552851ba56174f5a1081e7943fa679e26cee8747b",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/58ee7d066b3fb4575ef8_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q158799%7CQ158928%7CQ162083%7CQ162084%7CQ162548%7CQ163619%7CQ163888%7CQ165243%7CQ165264%7CQ165444%7CQ166327%7CQ167864%7CQ168140%7CQ168337%7CQ168965%7CQ170047%7CQ170115%7CQ170366%7CQ170421%7CQ170663%7CQ170688%7CQ170722%7CQ170817%7CQ171882%7CQ173449%7CQ173532%7CQ174091%7CQ174123%7CQ174185%7CQ174468%7CQ174684%7CQ174689%7CQ175163%7CQ175283%7CQ175480%7CQ175596%7CQ177141%7CQ178373%7CQ179290%7CQ179701%7CQ180078%7CQ180294%7CQ180755%7CQ180921%7CQ181376%7CQ181557%7CQ184184%7CQ185336%7CQ185340%7CQ185345&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1585779,
+      "edition": "Wikidata entity revision 2549157089",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:50.626849+00:00",
+      "sha256": "fec91b1d661060d13fcdcb5888e26657fdc2af51545401a4ffb4e669f5a06f11",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/9a1c94dc397e617ae258_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q569634%7CQ569800%7CQ571051%7CQ572000%7CQ572899%7CQ573771%7CQ576368%7CQ577336%7CQ577415%7CQ578567%7CQ581179%7CQ581480%7CQ581562%7CQ582783%7CQ582949%7CQ583756%7CQ583767%7CQ584054%7CQ584823%7CQ584880%7CQ584900%7CQ584935%7CQ585742%7CQ585750%7CQ586566%7CQ586673%7CQ587080%7CQ587114%7CQ588045%7CQ588587%7CQ588701%7CQ588787%7CQ589854%7CQ589902%7CQ590060%7CQ591872%7CQ591884%7CQ593616%7CQ594557%7CQ594843%7CQ595689%7CQ597458%7CQ598667%7CQ598740%7CQ599887%7CQ600105%7CQ602426%7CQ602772%7CQ603331%7CQ603400&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22903,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:29.749892+00:00",
+      "sha256": "0a24f52cd657f136ea24fa6369a89768e2f7464f18c0a176d4ae6cbe50974f9f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q1165566"
+    },
+    {
+      "bytes": 22744,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:02.096972+00:00",
+      "sha256": "a95cec99576e7571fc7f3c2c04892437b8be8de02c3f4a9645574460dfa88402",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q861630"
+    },
+    {
+      "bytes": 22744,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:02.096972+00:00",
+      "sha256": "a95cec99576e7571fc7f3c2c04892437b8be8de02c3f4a9645574460dfa88402",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q5045"
+    },
+    {
+      "bytes": 958313,
+      "edition": "Wikidata entity revision 2530474697",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:38.747194+00:00",
+      "sha256": "694871d4af6708b5847f6ad836d823c9b812dd4b51461f7836781758138372ea",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/499c8e65e8aeb759b4ab_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2737469%7CQ2738371%7CQ2738436%7CQ2738731%7CQ2739446%7CQ2743148%7CQ2767924%7CQ2784057%7CQ2802663%7CQ2828134%7CQ2841553%7CQ2861086%7CQ2868400%7CQ2874307%7CQ2876264%7CQ2876387%7CQ2884525%7CQ2891912%7CQ2892151%7CQ2909998%7CQ2915071%7CQ2916300%7CQ2919593%7CQ2919962%7CQ2921055%7CQ2922170%7CQ2929225%7CQ2929807%7CQ2934594%7CQ2946720%7CQ2980705%7CQ2981190%7CQ2990830%7CQ2991904%7CQ2995584%7CQ2996129%7CQ2996236%7CQ2997217%7CQ3001462%7CQ3012892%7CQ3015844%7CQ3023364%7CQ3031893%7CQ3032740%7CQ3033365%7CQ3033674%7CQ3034185%7CQ3039520%7CQ3039971%7CQ3040628&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22744,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:02.096972+00:00",
+      "sha256": "a95cec99576e7571fc7f3c2c04892437b8be8de02c3f4a9645574460dfa88402",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q911750"
+    },
+    {
+      "bytes": 22744,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:02.096972+00:00",
+      "sha256": "a95cec99576e7571fc7f3c2c04892437b8be8de02c3f4a9645574460dfa88402",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q2234381"
+    },
+    {
+      "bytes": 19314,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:05.544809+00:00",
+      "sha256": "3c4c0b85b896d6fac4d6646b70dd5640e586b3b04a69ef3b73d51b1276a757a4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q2573328"
+    },
+    {
+      "bytes": 1924566,
+      "edition": "Wikidata entity revision 2242051999",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:55.746364+00:00",
+      "sha256": "62c4a071108193e27b0937ebb9908bf1c319b3cc14f9c73c90e248f10e34a623",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/c76488ebf4b602a5fab0_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23735189%7CQ23736977%7CQ23742002%7CQ23762304%7CQ23793608%7CQ23794731%7CQ23795053%7CQ23796070%7CQ23796097%7CQ23797650%7CQ23798614%7CQ23804595%7CQ23805305%7CQ23806009%7CQ23955761%7CQ24041555%7CQ24045809%7CQ25337079%7CQ25349031%7CQ25397570%7CQ26780991%7CQ27125599%7CQ27222303%7CQ27222398%7CQ27347097%7CQ27350591%7CQ27352595%7CQ27352739%7CQ27357540%7CQ27697441%7CQ27698203%7CQ27699683%7CQ27763686%7CQ27763713%7CQ28729532%7CQ28870916%7CQ29578870%7CQ30016638%7CQ31457654%7CQ31461065%7CQ31478483%7CQ31481082%7CQ31485466%7CQ31488818%7CQ31494148%7CQ31498094%7CQ31498202%7CQ31500716%7CQ31502038%7CQ31503957&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 19314,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:05.544809+00:00",
+      "sha256": "3c4c0b85b896d6fac4d6646b70dd5640e586b3b04a69ef3b73d51b1276a757a4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q995690"
+    },
+    {
+      "bytes": 3684576,
+      "edition": "Wikidata entity revision 2544893806",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:39.876915+00:00",
+      "sha256": "4b52c79f6bba00404f09310552851ba56174f5a1081e7943fa679e26cee8747b",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/58ee7d066b3fb4575ef8_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q158799%7CQ158928%7CQ162083%7CQ162084%7CQ162548%7CQ163619%7CQ163888%7CQ165243%7CQ165264%7CQ165444%7CQ166327%7CQ167864%7CQ168140%7CQ168337%7CQ168965%7CQ170047%7CQ170115%7CQ170366%7CQ170421%7CQ170663%7CQ170688%7CQ170722%7CQ170817%7CQ171882%7CQ173449%7CQ173532%7CQ174091%7CQ174123%7CQ174185%7CQ174468%7CQ174684%7CQ174689%7CQ175163%7CQ175283%7CQ175480%7CQ175596%7CQ177141%7CQ178373%7CQ179290%7CQ179701%7CQ180078%7CQ180294%7CQ180755%7CQ180921%7CQ181376%7CQ181557%7CQ184184%7CQ185336%7CQ185340%7CQ185345&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22721,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:18.039921+00:00",
+      "sha256": "fbfbfa38ee5d332d8c8af1405576e626ed9b5df87396d2fc0e743766d0463a36",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q806424"
+    },
+    {
+      "bytes": 22721,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:18.039921+00:00",
+      "sha256": "fbfbfa38ee5d332d8c8af1405576e626ed9b5df87396d2fc0e743766d0463a36",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q114970"
+    },
+    {
+      "bytes": 22721,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:18.039921+00:00",
+      "sha256": "fbfbfa38ee5d332d8c8af1405576e626ed9b5df87396d2fc0e743766d0463a36",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q862728"
+    },
+    {
+      "bytes": 4194982,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:21.079286+00:00",
+      "sha256": "bb854cb50074ce9dfb63d321b02b18bd7368b102d228447087887e03a3993a41",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0027.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q185672%7CQ185678%7CQ185721%7CQ186115%7CQ186237%7CQ186349%7CQ186441%7CQ186557%7CQ186702%7CQ186935%7CQ187153%7CQ187205%7CQ187346%7CQ187593%7CQ187805%7CQ187895%7CQ187911%7CQ187945%7CQ188022%7CQ188033%7CQ188082%7CQ188155%7CQ188179%7CQ188496%7CQ188511%7CQ188673%7CQ188743%7CQ188776%7CQ188780%7CQ188878%7CQ188894%7CQ188904%7CQ189043%7CQ189059%7CQ189134%7CQ189138%7CQ189546%7CQ189602%7CQ189685%7CQ189960%7CQ190005%7CQ190118%7CQ190583%7CQ190774%7CQ190827%7CQ191066%7CQ191097%7CQ191119%7CQ191126%7CQ191130&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 22882,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:22.023157+00:00",
+      "sha256": "344d5f8858aee058d51262819af22a1b8e433018930419f9ef97e041c305d3ae",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q1127452"
+    },
+    {
+      "bytes": 22882,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:22.023157+00:00",
+      "sha256": "344d5f8858aee058d51262819af22a1b8e433018930419f9ef97e041c305d3ae",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q986387"
+    },
+    {
+      "bytes": 22882,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:22.023157+00:00",
+      "sha256": "344d5f8858aee058d51262819af22a1b8e433018930419f9ef97e041c305d3ae",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q643617"
+    },
+    {
+      "bytes": 22882,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:22.023157+00:00",
+      "sha256": "344d5f8858aee058d51262819af22a1b8e433018930419f9ef97e041c305d3ae",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q114977"
+    },
+    {
+      "bytes": 22728,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:26.041265+00:00",
+      "sha256": "7ad038d8635f344204d065f47bfaab1bf083a9c20123cde0df9ffb11cf5f648f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q535537"
+    },
+    {
+      "bytes": 4455869,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:16.024861+00:00",
+      "sha256": "5d25f6dbb84dfa9c827c4bb2ea5080a5a2bd753bb5c8be3413588bc4c60c2b66",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0026.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q180215%7CQ180233%7CQ180717%7CQ180871%7CQ181056%7CQ181269%7CQ181285%7CQ181306%7CQ181314%7CQ181704%7CQ181725%7CQ181854%7CQ181886%7CQ181946%7CQ182009%7CQ182092%7CQ182299%7CQ182521%7CQ182744%7CQ182872%7CQ182957%7CQ183111%7CQ183124%7CQ183199%7CQ183303%7CQ183405%7CQ183557%7CQ183910%7CQ184023%7CQ184154%7CQ184159%7CQ184184%7CQ184359%7CQ184371%7CQ184392%7CQ184587%7CQ184775%7CQ184851%7CQ184883%7CQ185066%7CQ185084%7CQ185156%7CQ185157%7CQ185280%7CQ185323%7CQ185336%7CQ185458%7CQ185582%7CQ185591%7CQ185609&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 22728,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:26.041265+00:00",
+      "sha256": "7ad038d8635f344204d065f47bfaab1bf083a9c20123cde0df9ffb11cf5f648f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q270297"
+    },
+    {
+      "bytes": 2751338,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:46.002031+00:00",
+      "sha256": "a98dcea9117e88fa0e6f00802fbc27fe62a5c46cde48dbfec6bb2210cb10e87c",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0035.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q233129%7CQ233467%7CQ233892%7CQ234053%7CQ234056%7CQ235004%7CQ235190%7CQ236744%7CQ237512%7CQ237847%7CQ239121%7CQ239870%7CQ240702%7CQ241611%7CQ241808%7CQ242733%7CQ242895%7CQ242995%7CQ243293%7CQ243325%7CQ243327%7CQ243766%7CQ244004%7CQ244139%7CQ244146%7CQ244154%7CQ244236%7CQ244509%7CQ246069%7CQ246163%7CQ246685%7CQ246693%7CQ246956%7CQ248723%7CQ249166%7CQ249175%7CQ249226%7CQ249829%7CQ249884%7CQ251678%7CQ251689%7CQ251691%7CQ252098%7CQ252214%7CQ252457%7CQ252772%7CQ252949%7CQ253003%7CQ253119%7CQ253435&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 27840,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:31.568065+00:00",
+      "sha256": "c33d899455804f9014919518940801378ad146c14e0791d183026f0d1e402b94",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Yaguajay.txt",
+      "url": "https://www.wikidata.org/wiki/Q861575"
+    },
+    {
+      "bytes": 22728,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:26.041265+00:00",
+      "sha256": "7ad038d8635f344204d065f47bfaab1bf083a9c20123cde0df9ffb11cf5f648f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q2234325"
+    },
+    {
+      "bytes": 22891,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:29.964567+00:00",
+      "sha256": "3af0b8750b120b1ae53d87675cf8dacb794d8f3f8f5a2f779dfae9ca6c7073c4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q1870561"
+    },
+    {
+      "bytes": 22891,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:29.964567+00:00",
+      "sha256": "3af0b8750b120b1ae53d87675cf8dacb794d8f3f8f5a2f779dfae9ca6c7073c4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q115403"
+    },
+    {
+      "bytes": 22891,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:29.964567+00:00",
+      "sha256": "3af0b8750b120b1ae53d87675cf8dacb794d8f3f8f5a2f779dfae9ca6c7073c4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q116156"
+    },
+    {
+      "bytes": 2427065,
+      "edition": "Wikidata entity revision 2510789684",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:44.608065+00:00",
+      "sha256": "f1ab44e1da5f2769e90752c6a5cd1fad079f5f444bc7288d61f4ed7f850c75c8",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/39ef4653d7015ed92da2_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q255578%7CQ255780%7CQ267695%7CQ268656%7CQ269070%7CQ270041%7CQ270535%7CQ271619%7CQ272471%7CQ273775%7CQ273828%7CQ274313%7CQ275015%7CQ275295%7CQ275862%7CQ275910%7CQ277159%7CQ277886%7CQ277966%7CQ278847%7CQ279106%7CQ279871%7CQ279995%7CQ280533%7CQ280628%7CQ281213%7CQ282347%7CQ282908%7CQ283043%7CQ284257%7CQ286266%7CQ287635%7CQ289328%7CQ289747%7CQ289802%7CQ290569%7CQ290849%7CQ291729%7CQ298357%7CQ302201%7CQ302912%7CQ304266%7CQ305259%7CQ307442%7CQ309475%7CQ310892%7CQ311204%7CQ311312%7CQ311946%7CQ312357&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22891,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:29.964567+00:00",
+      "sha256": "3af0b8750b120b1ae53d87675cf8dacb794d8f3f8f5a2f779dfae9ca6c7073c4",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_12.txt",
+      "url": "https://www.wikidata.org/wiki/Q959528"
+    },
+    {
+      "bytes": 22831,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:33.352880+00:00",
+      "sha256": "c294187bea7b30038d55a8242a2e20b422c264f19f20898341803559728f8da1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q972546"
+    },
+    {
+      "bytes": 22831,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:33.352880+00:00",
+      "sha256": "c294187bea7b30038d55a8242a2e20b422c264f19f20898341803559728f8da1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q643081"
+    },
+    {
+      "bytes": 22831,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:33.352880+00:00",
+      "sha256": "c294187bea7b30038d55a8242a2e20b422c264f19f20898341803559728f8da1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q742835"
+    },
+    {
+      "bytes": 22831,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:33.352880+00:00",
+      "sha256": "c294187bea7b30038d55a8242a2e20b422c264f19f20898341803559728f8da1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q861701"
+    },
+    {
+      "bytes": 12213,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:18:36.477731+00:00",
+      "sha256": "6f6e3c4ff64b5e2494feab330653b38bce3f8c364052fcbc4e8b9f60cbcdb7fc",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_items_20.txt",
+      "url": "https://www.wikidata.org/wiki/Q559801"
+    },
+    {
+      "bytes": 2307970,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:01:41.435923+00:00",
+      "sha256": "13aef053c27313d82c691a2d402a7efcbb29a5f3aca66ac51b39b3342802538a",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0059.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q843043%7CQ843980%7CQ843999%7CQ844042%7CQ844091%7CQ844423%7CQ844430%7CQ844546%7CQ845461%7CQ845623%7CQ845666%7CQ845720%7CQ845754%7CQ846170%7CQ846502%7CQ846653%7CQ846877%7CQ847295%7CQ847584%7CQ847610%7CQ847677%7CQ848287%7CQ848638%7CQ848672%7CQ848999%7CQ849141%7CQ849292%7CQ849434%7CQ849561%7CQ849835%7CQ849859%7CQ850031%7CQ850676%7CQ850972%7CQ851838%7CQ852276%7CQ852363%7CQ852469%7CQ852550%7CQ852577%7CQ852591%7CQ852645%7CQ852714%7CQ852725%7CQ852735%7CQ853945%7CQ854913%7CQ855016%7CQ855052%7CQ855122&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 3804657,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:36.591306+00:00",
+      "sha256": "11853f4a853b60d7587467d84d7db76d84201083c38372411c7bdb7631226fe0",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0032.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q208793%7CQ208794%7CQ208860%7CQ208899%7CQ209016%7CQ209093%7CQ209109%7CQ209126%7CQ209128%7CQ209270%7CQ209393%7CQ209766%7CQ209770%7CQ209773%7CQ209777%7CQ209790%7CQ209795%7CQ209802%7CQ209810%7CQ209821%7CQ209834%7CQ209838%7CQ209840%7CQ209862%7CQ209925%7CQ209978%7CQ210087%7CQ210229%7CQ210365%7CQ210742%7CQ210760%7CQ210763%7CQ210769%7CQ210772%7CQ210776%7CQ210886%7CQ211055%7CQ211227%7CQ211463%7CQ211563%7CQ211590%7CQ211703%7CQ211760%7CQ211805%7CQ211870%7CQ212274%7CQ212280%7CQ212289%7CQ212352%7CQ212420&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 2854588,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T04:53:27.104028+00:00",
+      "sha256": "b65557b06f78f2d8f68f81846fb310541ff1e4559008346e7d7df6fd6cc6710e",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_targets_0021.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q114257%7CQ115117%7CQ115276%7CQ115323%7CQ116341%7CQ116417%7CQ117040%7CQ117181%7CQ117485%7CQ117493%7CQ117513%7CQ117605%7CQ119219%7CQ120718%7CQ120783%7CQ121157%7CQ121395%7CQ121561%7CQ122044%7CQ122563%7CQ122803%7CQ122872%7CQ123067%7CQ123329%7CQ123369%7CQ123709%7CQ123766%7CQ124739%7CQ125163%7CQ125905%7CQ125934%7CQ126269%7CQ126321%7CQ126365%7CQ126758%7CQ127506%7CQ127623%7CQ128069%7CQ128147%7CQ128244%7CQ128306%7CQ128334%7CQ128499%7CQ128849%7CQ129976%7CQ129980%7CQ129989%7CQ129992%7CQ130063%7CQ130074&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=5"
+    },
+    {
+      "bytes": 3577113,
+      "edition": "Wikidata entity revision 2550483511",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:46.508364+00:00",
+      "sha256": "827595cbc69d3ccf80e5672473baeec9e6eefc8a0020fa2c1e95d600ad1a0142",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/00e3686a1d8dd7f685f1_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q314393%7CQ314438%7CQ314468%7CQ314864%7CQ314965%7CQ316019%7CQ317145%7CQ319272%7CQ319858%7CQ320049%7CQ320623%7CQ322917%7CQ322986%7CQ323986%7CQ324293%7CQ328030%7CQ328510%7CQ328661%7CQ328975%7CQ329984%7CQ335141%7CQ335518%7CQ340034%7CQ349340%7CQ349979%7CQ356607%7CQ360702%7CQ363166%7CQ366010%7CQ367624%7CQ367639%7CQ368526%7CQ369880%7CQ371640%7CQ372414%7CQ373759%7CQ377111%7CQ378225%7CQ379338%7CQ383218%7CQ385375%7CQ388398%7CQ390260%7CQ390564%7CQ390783%7CQ391033%7CQ391691%7CQ393309%7CQ393593%7CQ394257&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 756241,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:04:40.473142+00:00",
+      "sha256": "94a1101da8eb7c1f9cf648d6befd0faa8373d37423f29eca795e0d83ea1672b1",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0156.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q23711810%7CQ23731282%7CQ23735189%7CQ23743609%7CQ23778911%7CQ23792936%7CQ23858165%7CQ23870027%7CQ23875490%7CQ23877505%7CQ23878704%7CQ23880274%7CQ23882516%7CQ23885206%7CQ23885548%7CQ23890459%7CQ23890468%7CQ23890528%7CQ23890555%7CQ23890602%7CQ23890605%7CQ23903049%7CQ23951808%7CQ23955406%7CQ23955475%7CQ23984135%7CQ24004403%7CQ24004404%7CQ24004405%7CQ24009568%7CQ24012681%7CQ24012711%7CQ24012719%7CQ24012739%7CQ24012785%7CQ24012786%7CQ24014203%7CQ24014650%7CQ24019772%7CQ24045859%7CQ24076693%7CQ24205498%7CQ24265015%7CQ24271891%7CQ24342199%7CQ24695054%7CQ24695673%7CQ24698122%7CQ24818396%7CQ24818425&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 1581606,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:04:15.443170+00:00",
+      "sha256": "cd210df903399a87b2386751b910d8d4287761dfdaf610e0ad3fb59689a375b3",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0138.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q12699641%7CQ12714367%7CQ12715142%7CQ12716151%7CQ12716720%7CQ12717516%7CQ12724969%7CQ12750430%7CQ12750439%7CQ12754610%7CQ12760042%7CQ12796938%7CQ12800872%7CQ12802914%7CQ12803734%7CQ12810684%7CQ12825018%7CQ12826255%7CQ12828350%7CQ12829733%7CQ12829865%7CQ12875777%7CQ12891494%7CQ12895071%7CQ12896967%7CQ12898552%7CQ12899232%7CQ12912434%7CQ12912940%7CQ12956644%7CQ12956645%7CQ12958961%7CQ12981900%7CQ13025398%7CQ13058909%7CQ13100072%7CQ13103610%7CQ13107298%7CQ13123165%7CQ13139252%7CQ13189044%7CQ13191114%7CQ13220435%7CQ13365880%7CQ13365883%7CQ13365892%7CQ13365904%7CQ13370246%7CQ13377731%7CQ13377747&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 6651436,
+      "edition": "Wikidata entity revision 2520577098",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:27.907888+00:00",
+      "sha256": "41ee5176e90df7878df3b27dca4a81ee9c3d1e23f28148818dfa562839b4a011",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/bf34ec3361d8de0f2b67_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q11909%7CQ1218%7CQ1353%7CQ15190%7CQ1520%7CQ15245%7CQ1563%7CQ1640%7CQ16520%7CQ16572%7CQ1663%7CQ1710%7CQ172%7CQ1725%7CQ1773%7CQ18108%7CQ1848%7CQ1850%7CQ1867%7CQ1874%7CQ1963%7CQ2187%7CQ2211%7CQ270%7CQ2868%7CQ2900%7CQ3001%7CQ3551%7CQ3768%7CQ3799%7CQ3820%7CQ3831%7CQ3832%7CQ3833%7CQ3834%7CQ3835%7CQ3836%7CQ3838%7CQ3839%7CQ3840%7CQ4454%7CQ5008%7CQ5044%7CQ5196%7CQ5217%7CQ5395%7CQ7657%7CQ900%7CQ9310%7CQ9733&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22838,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:09.461366+00:00",
+      "sha256": "668721c98230a3d0ec3fba1f70f89782aed0cb685426f929446037fa2ed00942",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q178931"
+    },
+    {
+      "bytes": 2427065,
+      "edition": "Wikidata entity revision 2539463640",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:44.608065+00:00",
+      "sha256": "f1ab44e1da5f2769e90752c6a5cd1fad079f5f444bc7288d61f4ed7f850c75c8",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/39ef4653d7015ed92da2_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q255578%7CQ255780%7CQ267695%7CQ268656%7CQ269070%7CQ270041%7CQ270535%7CQ271619%7CQ272471%7CQ273775%7CQ273828%7CQ274313%7CQ275015%7CQ275295%7CQ275862%7CQ275910%7CQ277159%7CQ277886%7CQ277966%7CQ278847%7CQ279106%7CQ279871%7CQ279995%7CQ280533%7CQ280628%7CQ281213%7CQ282347%7CQ282908%7CQ283043%7CQ284257%7CQ286266%7CQ287635%7CQ289328%7CQ289747%7CQ289802%7CQ290569%7CQ290849%7CQ291729%7CQ298357%7CQ302201%7CQ302912%7CQ304266%7CQ305259%7CQ307442%7CQ309475%7CQ310892%7CQ311204%7CQ311312%7CQ311946%7CQ312357&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 4155102,
+      "edition": "Wikidata entity revision 2549927468",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:36.059870+00:00",
+      "sha256": "74091315a42aefc1164f9a555ab9a098a695deccee021cf080ffad98b8a7e394",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/a2a1169f723e8cc466be_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q100067%7CQ100082%7CQ101825%7CQ103466%7CQ103905%7CQ104367%7CQ105284%7CQ106766%7CQ109336%7CQ109356%7CQ109374%7CQ109386%7CQ111689%7CQ111707%7CQ113560%7CQ114984%7CQ115256%7CQ115276%7CQ117542%7CQ120514%7CQ121561%7CQ123163%7CQ126661%7CQ127419%7CQ127792%7CQ128674%7CQ130238%7CQ130514%7CQ131301%7CQ131350%7CQ131416%7CQ131495%7CQ131955%7CQ132043%7CQ132200%7CQ132540%7CQ132830%7CQ133089%7CQ133448%7CQ134740%7CQ135421%7CQ135696%7CQ79980%7CQ80298%7CQ81020%7CQ81490%7CQ81909%7CQ92324%7CQ93347%7CQ94789&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 27319,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:58.388133+00:00",
+      "sha256": "bbe2979cfd289e6bf79f6609fe5e7c0c4e2e5f5a6c579548f9273d5f8bdb9fca",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Urbano_Noris.txt",
+      "url": "https://www.wikidata.org/wiki/Q280929"
+    },
+    {
+      "bytes": 1510543,
+      "edition": "Wikidata entity revision 2551447797",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:49.649092+00:00",
+      "sha256": "caf48a98666412552e74eb521563d98d61dc44078bfa0be4f8ce5b112cbdf138",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/33cb911104f0d9931599_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q498968%7CQ499470%7CQ500217%7CQ501656%7CQ502042%7CQ502212%7CQ503612%7CQ504058%7CQ505807%7CQ505930%7CQ513678%7CQ514136%7CQ514165%7CQ515947%7CQ516769%7CQ517693%7CQ520600%7CQ521105%7CQ521322%7CQ524250%7CQ525649%7CQ525954%7CQ526757%7CQ526822%7CQ527268%7CQ528432%7CQ529834%7CQ532883%7CQ533157%7CQ536797%7CQ536870%7CQ537308%7CQ538753%7CQ541435%7CQ541522%7CQ542833%7CQ546011%7CQ546318%7CQ546955%7CQ549736%7CQ549807%7CQ554047%7CQ554294%7CQ555622%7CQ555956%7CQ556095%7CQ556590%7CQ557934%7CQ564781%7CQ567193&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 29165,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:30:13.864995+00:00",
+      "sha256": "4c5d9058f2dd14e835efb794e2c66a678b90de9da88356d7ba2eb8e5f3eae50e",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_SanLuis_pinar.txt",
+      "url": "https://www.wikidata.org/wiki/Q1817531"
+    },
+    {
+      "bytes": 1170019,
+      "edition": "Wikidata entity revision 2530468157",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:27.367684+00:00",
+      "sha256": "1bfc094cb7c8478853906ad7710609b9b3e84920f9b14e8c8089848403402a01",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/31fa37e15150cc97eb8b_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2221651%7CQ2222328%7CQ2222431%7CQ2222448%7CQ2222874%7CQ2223918%7CQ2228620%7CQ2228906%7CQ2229438%7CQ2231121%7CQ2231200%7CQ2231416%7CQ2232941%7CQ2233371%7CQ2233889%7CQ2234072%7CQ2234391%7CQ2234599%7CQ2234676%7CQ2235607%7CQ2237516%7CQ2237983%7CQ2238005%7CQ2238070%7CQ2238993%7CQ2239007%7CQ2241499%7CQ2241549%7CQ2248468%7CQ2249065%7CQ2249295%7CQ2250574%7CQ2251637%7CQ2256742%7CQ2256948%7CQ2257485%7CQ2259583%7CQ2261703%7CQ2264128%7CQ2269015%7CQ2269248%7CQ2271950%7CQ2273718%7CQ2281629%7CQ2281643%7CQ2283709%7CQ2286310%7CQ2287007%7CQ2287115%7CQ2287252&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 765074,
+      "edition": "Wikidata entity revision 2528882818",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:51.434981+00:00",
+      "sha256": "6ef06888a3d755b693f43c3212e23633b43b4f18efb90dee9524092d9cd482cf",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/70903820ae8efe8f0c5e_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10378793%7CQ10600392%7CQ10600995%7CQ10719398%7CQ10860191%7CQ10861438%7CQ10938567%7CQ10949718%7CQ10996011%7CQ11011907%7CQ11114344%7CQ11155122%7CQ11360899%7CQ11584779%7CQ11753375%7CQ11929863%7CQ12111069%7CQ12225643%7CQ12492866%7CQ12532833%7CQ12551053%7CQ12555151%7CQ12561247%7CQ12683379%7CQ12698776%7CQ12731755%7CQ12896967%7CQ12912434%7CQ13025368%7CQ13105654%7CQ13123059%7CQ13123273%7CQ13123849%7CQ13124271%7CQ13124414%7CQ13124592%7CQ14842846%7CQ15148890%7CQ15212080%7CQ7818691%7CQ7846193%7CQ7846552%7CQ7908901%7CQ7917870%7CQ7930938%7CQ8032610%7CQ8075286%7CQ8214642%7CQ8239185%7CQ9368476&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 1359837,
+      "edition": "Wikidata entity revision 2554216587",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:05:20.816250+00:00",
+      "sha256": "df42879a59462508bd7ee68e1d8ee582eaf5b8339f09c101742f238823636df8",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/38f02f08701491270561_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1721808%7CQ1722298%7CQ1722889%7CQ1724990%7CQ1727215%7CQ1728955%7CQ1738741%7CQ1740527%7CQ1747267%7CQ1747725%7CQ1748735%7CQ1751103%7CQ1751168%7CQ1752584%7CQ1755397%7CQ1755744%7CQ1756003%7CQ1759567%7CQ1759693%7CQ1760305%7CQ1763289%7CQ1768027%7CQ1771693%7CQ1771794%7CQ1771829%7CQ1771884%7CQ1772369%7CQ1772378%7CQ1773455%7CQ1774733%7CQ1776192%7CQ1778860%7CQ1781849%7CQ1785358%7CQ1786696%7CQ1789890%7CQ1795259%7CQ1796657%7CQ1797372%7CQ1799624%7CQ1802671%7CQ1804166%7CQ1806486%7CQ1811159%7CQ1812809%7CQ1814480%7CQ1814865%7CQ1815223%7CQ1817745%7CQ1821030&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22838,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:09.461366+00:00",
+      "sha256": "668721c98230a3d0ec3fba1f70f89782aed0cb685426f929446037fa2ed00942",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q537161"
+    },
+    {
+      "bytes": 856414,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:04:31.831944+00:00",
+      "sha256": "0290c970beda1d022a86bc5f5d7e0eb4a296061376f60150c760102a24223570",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0148.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q20295499%7CQ20296265%7CQ20297739%7CQ20365127%7CQ20443568%7CQ20460195%7CQ20600096%7CQ20625093%7CQ20652586%7CQ20669646%7CQ20669647%7CQ20669651%7CQ20669653%7CQ20707515%7CQ20751460%7CQ20795016%7CQ20922893%7CQ20922895%7CQ20924972%7CQ20925743%7CQ20968980%7CQ20969217%7CQ20980352%7CQ20980363%7CQ20980365%7CQ20980366%7CQ20980371%7CQ20980374%7CQ20986417%7CQ20986421%7CQ20986424%7CQ20988114%7CQ20989106%7CQ20991246%7CQ20991250%7CQ21002161%7CQ21002356%7CQ21003640%7CQ21008210%7CQ21012735%7CQ21025295%7CQ21039640%7CQ21042279%7CQ21052164%7CQ21052380%7CQ21053552%7CQ21053575%7CQ21053606%7CQ21053615%7CQ21053638&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 22838,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:24:09.461366+00:00",
+      "sha256": "668721c98230a3d0ec3fba1f70f89782aed0cb685426f929446037fa2ed00942",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_more_rows_16.txt",
+      "url": "https://www.wikidata.org/wiki/Q593830"
+    },
+    {
+      "bytes": 1484439,
+      "edition": "Wikidata entity revision 2551145621",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-13T07:04:53.977631+00:00",
+      "sha256": "993a1fe78fef23a8af959235d2f72c052eda0c38ca37da461e9724d1def38eca",
+      "source_id": "research/wd_repair/work_wd_shared_1/entities/527bd24c8ae1d7f2da5d_m15.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q638124%7CQ638697%7CQ639428%7CQ639518%7CQ639674%7CQ639808%7CQ640728%7CQ641130%7CQ641992%7CQ643047%7CQ643112%7CQ643386%7CQ643929%7CQ645183%7CQ646684%7CQ646756%7CQ646865%7CQ646886%7CQ647877%7CQ651101%7CQ652202%7CQ654259%7CQ657052%7CQ658024%7CQ658240%7CQ658886%7CQ660299%7CQ662452%7CQ662799%7CQ663062%7CQ664445%7CQ664550%7CQ666700%7CQ667343%7CQ667576%7CQ671704%7CQ672921%7CQ673185%7CQ674599%7CQ675798%7CQ676046%7CQ683938%7CQ685112%7CQ685121%7CQ688716%7CQ690052%7CQ690255%7CQ690421%7CQ691747%7CQ693093&props=info%7Cclaims%7Clabels%7Caliases%7Cdescriptions%7Csitelinks&format=json&maxlag=15&redirects=yes&maxage=0&smaxage=0"
+    },
+    {
+      "bytes": 22903,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:29.749892+00:00",
+      "sha256": "0a24f52cd657f136ea24fa6369a89768e2f7464f18c0a176d4ae6cbe50974f9f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q2066897"
+    },
+    {
+      "bytes": 22702,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:33.690785+00:00",
+      "sha256": "9427ed4a0e1055eae94ccd92298878e6a20eaadb7a9dcadf5e9d67825e98ef2b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q2099152"
+    },
+    {
+      "bytes": 22702,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:33.690785+00:00",
+      "sha256": "9427ed4a0e1055eae94ccd92298878e6a20eaadb7a9dcadf5e9d67825e98ef2b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q2553350"
+    },
+    {
+      "bytes": 22702,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:33.690785+00:00",
+      "sha256": "9427ed4a0e1055eae94ccd92298878e6a20eaadb7a9dcadf5e9d67825e98ef2b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q3648399"
+    },
+    {
+      "bytes": 22702,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:20:33.690785+00:00",
+      "sha256": "9427ed4a0e1055eae94ccd92298878e6a20eaadb7a9dcadf5e9d67825e98ef2b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_row_items_8.txt",
+      "url": "https://www.wikidata.org/wiki/Q3646457"
+    },
+    {
+      "bytes": 1631313,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:02:44.517243+00:00",
+      "sha256": "fcf9038fdf66df56cf6815e7ca9ff29d030d8345ede9f132edd8137be73b9c4b",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0090.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1934124%7CQ1934167%7CQ1935137%7CQ1935454%7CQ1935565%7CQ1936263%7CQ1936273%7CQ1937201%7CQ1938748%7CQ1938857%7CQ1938896%7CQ1938932%7CQ1938964%7CQ1939252%7CQ1940449%7CQ1940505%7CQ1940564%7CQ1942303%7CQ1943693%7CQ1944216%7CQ1944227%7CQ1944238%7CQ1944245%7CQ1944257%7CQ1944266%7CQ1944276%7CQ1944288%7CQ1944299%7CQ1944312%7CQ1944325%7CQ1944337%7CQ1944347%7CQ1944356%7CQ1944431%7CQ1945263%7CQ1945413%7CQ1946253%7CQ1946579%7CQ1946640%7CQ1946669%7CQ1947116%7CQ1947477%7CQ1947893%7CQ1947910%7CQ1947926%7CQ1947944%7CQ1947960%7CQ1947973%7CQ1948003%7CQ1948019&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 818051,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:03:56.249835+00:00",
+      "sha256": "7da9e0c2e68f2cac10ba6f0fed27cdc08a270d044813b91c071c57ee8cb1eafd",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0127.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q5251164%7CQ5264884%7CQ5264978%7CQ5269617%7CQ5269834%7CQ5272866%7CQ5273898%7CQ5276367%7CQ5283252%7CQ5283458%7CQ5288592%7CQ5288605%7CQ5288769%7CQ5295979%7CQ5303662%7CQ5328283%7CQ5332366%7CQ5347528%7CQ5350399%7CQ5351001%7CQ5351002%7CQ5351066%7CQ5351148%7CQ5378985%7CQ5393050%7CQ5395800%7CQ5398211%7CQ5405099%7CQ5436812%7CQ5444365%7CQ5460542%7CQ5460915%7CQ5478122%7CQ5507236%7CQ5516926%7CQ5521296%7CQ5526456%7CQ5526526%7CQ5531702%7CQ5531728%7CQ5531788%7CQ5531935%7CQ5531985%7CQ5532104%7CQ5540604%7CQ5555986%7CQ5556982%7CQ5557516%7CQ5559486%7CQ5564220&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 29981,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:14:43.377285+00:00",
+      "sha256": "f27e21d96fa6aebdbb2a9425de741b1d67d25a38d5c5488b30e3854c368ccedb",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_missing_search1.txt",
+      "url": "https://www.wikidata.org/wiki/Q567769"
+    },
+    {
+      "bytes": 536511,
+      "edition": "Wikidata own-item Spanish label and scope capture",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-29T14:05:22.463574+00:00",
+      "sha256": "b635c68cc02617ef73a04f35ec1317dbd0deba2fbd89804e1e498cdb2626ee98",
+      "source_id": "runs/specs/cu_munis_v5x/work/sources/wikidata_es_1.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q567769%7CQ2213002%7CQ1180693%7CQ244139%7CQ1817531%7CQ1716152%7CQ559793%7CQ603115%7CQ603163%7CQ603136%7CQ1683722%7CQ270302%7CQ270581%7CQ270090%7CQ270305%7CQ2123580%7CQ5054%7CQ5029%7CQ5001%7CQ2573404%7CQ2245897%7CQ5002%7CQ60827097%7CQ2245914%7CQ2573424%7CQ5006%7CQ5030%7CQ280795%7CQ2245934%7CQ765438%7CQ5003%7CQ2245953%7CQ5004%7CQ5042%7CQ9046572%7CQ862734%7CQ861489%7CQ526001%7CQ1886040%7CQ603146&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=es&format=json"
+    },
+    {
+      "bytes": 27972,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:38:50.274694+00:00",
+      "sha256": "f2ec2550c6835b1475df18abed0e9fdf560961dd2cb01882a09673d21da9cb5a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Mantua.txt",
+      "url": "https://www.wikidata.org/wiki/Q2213002"
+    },
+    {
+      "bytes": 29312,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:38:50.446034+00:00",
+      "sha256": "82cb4c84008c627575c46a7041218d7f687ca2f1fea2b3aa0569f58aca4c821a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Vi_ales.txt",
+      "url": "https://www.wikidata.org/wiki/Q1180693"
+    },
+    {
+      "bytes": 29981,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:14:43.377285+00:00",
+      "sha256": "f27e21d96fa6aebdbb2a9425de741b1d67d25a38d5c5488b30e3854c368ccedb",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_missing_search1.txt",
+      "url": "https://www.wikidata.org/wiki/Q1716152"
+    },
+    {
+      "bytes": 11177,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:22:52.653208+00:00",
+      "sha256": "2f2839e754e5c356358d1608e6281a261367ec1c4a0f7f829851916285b69925",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_missing_final.txt",
+      "url": "https://www.wikidata.org/wiki/Q559793"
+    },
+    {
+      "bytes": 22910,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:42:13.831741+00:00",
+      "sha256": "9e3820c5b1ded7b36457f82581498d01338277da7c1aeadd2b99bb8dcb97323b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_roster_final_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q603115"
+    },
+    {
+      "bytes": 9297,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:38:57.537391+00:00",
+      "sha256": "0ec9df7aeb26388de19b8a0a8ae4996ace1cfaec311d003338797cb44fb6787f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Alqu_zar.txt",
+      "url": "https://www.wikidata.org/wiki/Q603163"
+    },
+    {
+      "bytes": 10669,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:46:06.345074+00:00",
+      "sha256": "9f1d5078484431c7d44379c43480f56716c5657b9416c2041dee3379b7a0c216",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_Candelaria_item.txt",
+      "url": "https://www.wikidata.org/wiki/Q603136"
+    },
+    {
+      "bytes": 10050,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:38:57.341701+00:00",
+      "sha256": "7cad49791f8f788ad94e8d9eda46e32f28a1e1b67b643692df9ba402c4de36bb",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Jaruco.txt",
+      "url": "https://www.wikidata.org/wiki/Q1683722"
+    },
+    {
+      "bytes": 10050,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:38:57.341701+00:00",
+      "sha256": "7cad49791f8f788ad94e8d9eda46e32f28a1e1b67b643692df9ba402c4de36bb",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Jaruco.txt",
+      "url": "https://www.wikidata.org/wiki/Q270302"
+    },
+    {
+      "bytes": 5835,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:18.160381+00:00",
+      "sha256": "4f3d24e3d3989599c456133c6a5639c47183310dad7ab726d13f8dd1fbf072d8",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Nueva_Paz.txt",
+      "url": "https://www.wikidata.org/wiki/Q270581"
+    },
+    {
+      "bytes": 3777,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:06.313217+00:00",
+      "sha256": "4b1696f56f58333df4d59dafcf20b24267a95c08693cd7d7b554d6d9421bf931",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_San_Nicol_s.txt",
+      "url": "https://www.wikidata.org/wiki/Q270090"
+    },
+    {
+      "bytes": 12674,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:06.536951+00:00",
+      "sha256": "4c4ab9dff32f19935b88a6d117a8bef3c86514f03291bc04f10a91e836e2ca71",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Bataban_.txt",
+      "url": "https://www.wikidata.org/wiki/Q270305"
+    },
+    {
+      "bytes": 4122,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:12.590559+00:00",
+      "sha256": "71badbd591ca8a4c2bfe0db074fc32d02e63ce160694def6361e679e4c38368a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Quivic_n.txt",
+      "url": "https://www.wikidata.org/wiki/Q2123580"
+    },
+    {
+      "bytes": 23291,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:12.780263+00:00",
+      "sha256": "acf7137b6b867c8f163ceaea3b9f01cfe055096f322c6c2df9f7685305e2c62f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Col_n.txt",
+      "url": "https://www.wikidata.org/wiki/Q5054"
+    },
+    {
+      "bytes": 22910,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:42:13.831741+00:00",
+      "sha256": "9e3820c5b1ded7b36457f82581498d01338277da7c1aeadd2b99bb8dcb97323b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_roster_final_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q5029"
+    },
+    {
+      "bytes": 14510,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:17.084565+00:00",
+      "sha256": "4fedc0aefde9f18aa7b2fcf81ecf96ea9d06af0be3f8b5037a7986cd8f349b5e",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Jovellanos.txt",
+      "url": "https://www.wikidata.org/wiki/Q5001"
+    },
+    {
+      "bytes": 14510,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:17.084565+00:00",
+      "sha256": "4fedc0aefde9f18aa7b2fcf81ecf96ea9d06af0be3f8b5037a7986cd8f349b5e",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Jovellanos.txt",
+      "url": "https://www.wikidata.org/wiki/Q2573404"
+    },
+    {
+      "bytes": 23291,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:12.780263+00:00",
+      "sha256": "acf7137b6b867c8f163ceaea3b9f01cfe055096f322c6c2df9f7685305e2c62f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Col_n.txt",
+      "url": "https://www.wikidata.org/wiki/Q2245897"
+    },
+    {
+      "bytes": 14393,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:17.084425+00:00",
+      "sha256": "5432cf8fbda2ece937e4177721fe486e5ccb9a4838ee30c43d726ff91b682276",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Uni_n_de_Reyes.txt",
+      "url": "https://www.wikidata.org/wiki/Q5002"
+    },
+    {
+      "bytes": 15885,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:19:25.439345+00:00",
+      "sha256": "1b8c4d990f925c76216cae8a883393712e4dc9ce665962607305680dd69a7d4f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_missing_items_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q60827097"
+    },
+    {
+      "bytes": 2661,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:22.048889+00:00",
+      "sha256": "d80567be7f2b26edb65a371fc4b306f98e726b838b3ed58d008412ab13f5382a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Los_Arabos.txt",
+      "url": "https://www.wikidata.org/wiki/Q2245914"
+    },
+    {
+      "bytes": 4991,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:22.249418+00:00",
+      "sha256": "2a0d599d469788f13b28846858fe79e76e4a0bcbf7d1eaca7fe5b164c1f6cbba",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Corralillo.txt",
+      "url": "https://www.wikidata.org/wiki/Q2573424"
+    },
+    {
+      "bytes": 3569,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:22.434167+00:00",
+      "sha256": "c9fbf788b26bcb4afab45d85435fb41798cf2744d59b282f506ae6319d6b5874",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Quemado_de_G_ines.txt",
+      "url": "https://www.wikidata.org/wiki/Q5006"
+    },
+    {
+      "bytes": 17305,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:22.621290+00:00",
+      "sha256": "79eccf5199e03543faff2aec10f71d754106610109ac90f6cbabb4b0e2e0b226",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Sagua_La_Grande.txt",
+      "url": "https://www.wikidata.org/wiki/Q5030"
+    },
+    {
+      "bytes": 2191379,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:00:49.908246+00:00",
+      "sha256": "b6b6f963c4f9590758cc96dd9b97d0a17b6610952e077aafe7ff5b75a8ce61da",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0037.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q275951%7CQ276119%7CQ277062%7CQ277162%7CQ277201%7CQ277211%7CQ277708%7CQ278017%7CQ278746%7CQ279009%7CQ279951%7CQ280491%7CQ280709%7CQ280795%7CQ281057%7CQ281205%7CQ282335%7CQ283885%7CQ284503%7CQ284604%7CQ284855%7CQ285420%7CQ285599%7CQ286068%7CQ286753%7CQ287756%7CQ288685%7CQ288781%7CQ290634%7CQ293558%7CQ295367%7CQ300577%7CQ302144%7CQ302313%7CQ302511%7CQ302654%7CQ303044%7CQ304266%7CQ304976%7CQ305029%7CQ305203%7CQ309343%7CQ309345%7CQ309355%7CQ309475%7CQ310117%7CQ310622%7CQ310626%7CQ310772%7CQ311098&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 3211,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:27.067543+00:00",
+      "sha256": "fd04555fd67d337056117357c8aab8f1c9905a1f929c85af121c422051b99a7e",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Cifuentes.txt",
+      "url": "https://www.wikidata.org/wiki/Q2245934"
+    },
+    {
+      "bytes": 27229,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:27.428058+00:00",
+      "sha256": "b9a7031a7d0a4ea3fbd76e9b6db313c62ab14b24f19dafedf2e322eacff493f6",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Santo_Domingo.txt",
+      "url": "https://www.wikidata.org/wiki/Q765438"
+    },
+    {
+      "bytes": 5404,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:26.857389+00:00",
+      "sha256": "2b0eda38ba81e7aff269c210153c7421f13627958b41ba7b528b69c0541efb09",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Ranchuelo.txt",
+      "url": "https://www.wikidata.org/wiki/Q5003"
+    },
+    {
+      "bytes": 11897,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:31.335624+00:00",
+      "sha256": "8ae1f0bfd3522b0147c7e179e6010e9032c445e4a3a451ec473e943c4627356f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Aguada_de_Pasajeros.txt",
+      "url": "https://www.wikidata.org/wiki/Q2245953"
+    },
+    {
+      "bytes": 22473,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:30.615858+00:00",
+      "sha256": "b35cae24ad54510a6dc7aa96879c1578034f93e8bcbf42ca8c0a9862be3cf10b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Rodas.txt",
+      "url": "https://www.wikidata.org/wiki/Q5004"
+    },
+    {
+      "bytes": 22045,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:33.712339+00:00",
+      "sha256": "dd9fd6873be979fe3c123199b7693f666f9e5b0bcdae11d695ee84c05dbfab6d",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Cruces.txt",
+      "url": "https://www.wikidata.org/wiki/Q5042"
+    },
+    {
+      "bytes": 27406,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:41:42.236807+00:00",
+      "sha256": "b396d19f70ebaad08046d75955a4b2ce5b3881bab237140d5509156f5df2c858",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_general_Yaguajay.txt",
+      "url": "https://www.wikidata.org/wiki/Q9046572"
+    },
+    {
+      "bytes": 1544456,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:01:44.228464+00:00",
+      "sha256": "175c8c31b7325df218ec4d15d0b46c6829f8137087be2d5066b5feb51e064281",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0060.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q855717%7CQ855724%7CQ855976%7CQ855986%7CQ856171%7CQ856390%7CQ856772%7CQ856841%7CQ858323%7CQ858423%7CQ858713%7CQ859621%7CQ860452%7CQ860689%7CQ861160%7CQ861230%7CQ861580%7CQ862508%7CQ862511%7CQ862516%7CQ862658%7CQ862734%7CQ863741%7CQ863744%7CQ863758%7CQ864109%7CQ864675%7CQ865808%7CQ865828%7CQ865928%7CQ867077%7CQ867111%7CQ867579%7CQ867586%7CQ867603%7CQ867615%7CQ868198%7CQ868203%7CQ868205%7CQ869571%7CQ870103%7CQ871209%7CQ871285%7CQ873521%7CQ874197%7CQ876315%7CQ876483%7CQ876526%7CQ876549%7CQ876557&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 27886,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:40.207995+00:00",
+      "sha256": "eae4e6fdd7b3da03f2c1e5f4dad946d8470d4022aa3649400d1f01972bfc0098",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Fomento.txt",
+      "url": "https://www.wikidata.org/wiki/Q861489"
+    },
+    {
+      "bytes": 1790923,
+      "edition": "Wikidata entity revision not retained",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-11T05:01:13.491932+00:00",
+      "sha256": "45d1137cdb367d182dfaddb35b9b0d2ae575eb882173b8106aeb9a26e1712b17",
+      "source_id": "research/tiers/work_tiers_1/sources/wd_repair_0046.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q520338%7CQ521512%7CQ521692%7CQ522541%7CQ522620%7CQ522912%7CQ523642%7CQ524407%7CQ524984%7CQ525425%7CQ525532%7CQ525632%7CQ525954%7CQ526001%7CQ526760%7CQ526822%7CQ527127%7CQ527318%7CQ527441%7CQ528086%7CQ528416%7CQ528432%7CQ528679%7CQ530052%7CQ530241%7CQ530634%7CQ530644%7CQ530794%7CQ530895%7CQ532057%7CQ532102%7CQ532408%7CQ532527%7CQ532572%7CQ532776%7CQ533416%7CQ533432%7CQ534409%7CQ535482%7CQ535674%7CQ535747%7CQ536249%7CQ536759%7CQ536797%7CQ537214%7CQ538088%7CQ538953%7CQ539466%7CQ540844%7CQ541850&props=claims%7Clabels%7Cdescriptions%7Caliases&format=json&maxlag=10"
+    },
+    {
+      "bytes": 9148,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:50.585271+00:00",
+      "sha256": "77941c3afe4fc467bb31bbed89f0784aae36730428986f2b24b463c9f5174369",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Majagua.txt",
+      "url": "https://www.wikidata.org/wiki/Q1886040"
+    },
+    {
+      "bytes": 30929,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:16.934054+00:00",
+      "sha256": "ef3b3b0c3b68ef868118c096189092c37c96e7a1e11456858c1968a692eedce3",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Carlos_Manuel_de_C_spedes_municipality.txt",
+      "url": "https://www.wikidata.org/wiki/Q603146"
+    },
+    {
+      "bytes": 28707,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:26.322858+00:00",
+      "sha256": "0a10b1ade4d12146609f7458990c411fcc439322b76fc971e17e2334dfbfe930",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Sierra_de_Cubitas.txt",
+      "url": "https://www.wikidata.org/wiki/Q643074"
+    },
+    {
+      "bytes": 302240,
+      "edition": "Wikidata own-item Spanish label and scope capture",
+      "kind": "primary archive",
+      "licence": "CC0 1.0",
+      "retrieved_at": "2026-10-29T14:05:24.357523+00:00",
+      "sha256": "92911dd57a385709356dabe6b3f884c245d32608c27707e87d60e41ed03ed1cf",
+      "source_id": "runs/specs/cu_munis_v5x/work/sources/wikidata_es_2.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q643074%7CQ643052%7CQ643059%7CQ643028%7CQ643313%7CQ1938772%7CQ1332168%7CQ281057%7CQ2246518%7CQ281205%7CQ1020314%7CQ280950%7CQ2061386%7CQ1332135%7CQ1935438%7CQ658207%7CQ1193189%7CQ1193899%7CQ1193882%7CQ1026982%7CQ1026971%7CQ94775%7CQ1025873&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=es&format=json"
+    },
+    {
+      "bytes": 28707,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:26.322858+00:00",
+      "sha256": "0a10b1ade4d12146609f7458990c411fcc439322b76fc971e17e2334dfbfe930",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Sierra_de_Cubitas.txt",
+      "url": "https://www.wikidata.org/wiki/Q643052"
+    },
+    {
+      "bytes": 3219,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:40.354579+00:00",
+      "sha256": "b05d306ed6a152d6e35311df1319df11cc7dcd5fc11599a98eb0e69c4ca91c8c",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Gu_imaro.txt",
+      "url": "https://www.wikidata.org/wiki/Q643059"
+    },
+    {
+      "bytes": 27077,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:25.236157+00:00",
+      "sha256": "f04b02374af945f5a687e7ecb333358d57ebd0d95295863c76166cbf6a2183bb",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Najasa.txt",
+      "url": "https://www.wikidata.org/wiki/Q643028"
+    },
+    {
+      "bytes": 3969,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:39.903335+00:00",
+      "sha256": "caff464e367dd7e89d1bff50c40d8e2cb67087e20843032cddae8860962a2441",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Santa_Cruz_del_Sur.txt",
+      "url": "https://www.wikidata.org/wiki/Q643313"
+    },
+    {
+      "bytes": 22820,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:42:17.948982+00:00",
+      "sha256": "973baaf7ec7fcd60eb273031edec9ba3187e3341e826d05a50af5e6b9bf0d26f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_roster_final_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q1938772"
+    },
+    {
+      "bytes": 9329,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:25.486582+00:00",
+      "sha256": "c5cda05368d2f19be3bc100d1bd2963baddab49f4966c8d1d5bb33f1da5b18c8",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Majibacoa.txt",
+      "url": "https://www.wikidata.org/wiki/Q1332168"
+    },
+    {
+      "bytes": 27419,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:26.073984+00:00",
+      "sha256": "bd9ca8bd623d3ac58eefe64d4c79f9e5b3213fe40b403309d1f0541a269a8799",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Antilla_Cuba.txt",
+      "url": "https://www.wikidata.org/wiki/Q2246518"
+    },
+    {
+      "bytes": 30044,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:50.069257+00:00",
+      "sha256": "39e9d756f035ab39856396ccc5b16b0002ea053ba3b10b2156375c0e4e60c039",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Mayar_.txt",
+      "url": "https://www.wikidata.org/wiki/Q1020314"
+    },
+    {
+      "bytes": 28797,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:50.832336+00:00",
+      "sha256": "531deef201a35b1f2f22ed5fbbb19dac973fdc984b2678c5bc93bcf8d9daff5d",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Frank_Pa_s.txt",
+      "url": "https://www.wikidata.org/wiki/Q280950"
+    },
+    {
+      "bytes": 22820,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:42:17.948982+00:00",
+      "sha256": "973baaf7ec7fcd60eb273031edec9ba3187e3341e826d05a50af5e6b9bf0d26f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_roster_final_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q2061386"
+    },
+    {
+      "bytes": 3654,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:39:54.212129+00:00",
+      "sha256": "e21c11652b9211c5e883b07ce214310409d28628c99a50dd9fbca0756ce01eb1",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/roster_Campechuela.txt",
+      "url": "https://www.wikidata.org/wiki/Q1332135"
+    },
+    {
+      "bytes": 24805,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:57.887338+00:00",
+      "sha256": "478bb919b37b3cd020998f5efaf6da423d79e2c9dc1d796ac0d7b9425820f99a",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Buey_Arriba.txt",
+      "url": "https://www.wikidata.org/wiki/Q1935438"
+    },
+    {
+      "bytes": 22410,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:15:58.860370+00:00",
+      "sha256": "9d90583da6c24b9708bc3f632971010b669d5c56416e805edc3fcb1bd27e529b",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Mella_Cuba.txt",
+      "url": "https://www.wikidata.org/wiki/Q658207"
+    },
+    {
+      "bytes": 9872,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:19:21.542986+00:00",
+      "sha256": "727fc4d6b029cacb3b32595968c855e53d6e20680c28e9ebadd2d9d82b4b4b8d",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_missing_items_0.txt",
+      "url": "https://www.wikidata.org/wiki/Q1193189"
+    },
+    {
+      "bytes": 29062,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:16:05.163101+00:00",
+      "sha256": "fb129e4d701f8e6f0280d7eedea11874c9b9b159ceb0597036d8072488e4cf91",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Songo_La_Maya.txt",
+      "url": "https://www.wikidata.org/wiki/Q1193899"
+    },
+    {
+      "bytes": 22100,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:16:04.734730+00:00",
+      "sha256": "c6448d66cc968d5ad6520f88a3443dd7aed8fb0419f206ce72a971bc38369ff3",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Tercer_Frente.txt",
+      "url": "https://www.wikidata.org/wiki/Q1193882"
+    },
+    {
+      "bytes": 4249,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:16:13.142616+00:00",
+      "sha256": "b5e7d5ed3839b36cb5ed31443d4e0d9599a4092b6171fafcb1f137fe90673d37",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_El_Salvador_Guant_namo.txt",
+      "url": "https://www.wikidata.org/wiki/Q1026982"
+    },
+    {
+      "bytes": 19505,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:16:16.490670+00:00",
+      "sha256": "dcda26543cb08c3497ac7b807d15115b67a8ee006eb78abac77f2b6ded348e18",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Yateras.txt",
+      "url": "https://www.wikidata.org/wiki/Q1026971"
+    },
+    {
+      "bytes": 22820,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:42:17.948982+00:00",
+      "sha256": "973baaf7ec7fcd60eb273031edec9ba3187e3341e826d05a50af5e6b9bf0d26f",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/web_roster_final_4.txt",
+      "url": "https://www.wikidata.org/wiki/Q94775"
+    },
+    {
+      "bytes": 26431,
+      "edition": "Indexed primary page; original crawl age in retained text; live state unknown",
+      "kind": "search-index primary-page capture",
+      "licence": "CC0 1.0 (Wikidata statements)",
+      "retrieved_at": "2026-10-29T11:16:03.718628+00:00",
+      "sha256": "c80897f98fb56c3c8921b37a36168e4aba0411c849ece8e3ddd8cf958e969406",
+      "source_id": "runs/specs/cu_check_v5x/work/sources/wdsearch_Caimanera.txt",
+      "url": "https://www.wikidata.org/wiki/Q1025873"
+    }
+  ],
+  "compact_ledger_sha256": "f8213ecbec978a01487bbe4944a80c84472db439b0ed2a6e5bc6bd649c058444",
+  "held_by_reason": {
+    "Isla_de_la_Juventud_is_state_no_city_municipio_parent": [
+      {
+        "kind": "town",
+        "id": 21937,
+        "province": "Isla de la Juventud",
+        "name": "Nueva Gerona",
+        "municipio": ""
+      }
+    ],
+    "ambiguous_own_item_P625": [
+      {
+        "kind": "municipio",
+        "id": "21952",
+        "province": "La Habana",
+        "name": "Regla",
+        "municipio": "Regla"
+      },
+      {
+        "kind": "municipio",
+        "id": "21870",
+        "province": "Matanzas",
+        "name": "Jaguey Grande",
+        "municipio": "Jaguey Grande"
+      }
+    ],
+    "existing_municipio_point_outside_boundary": [
+      {
+        "kind": "existing_point",
+        "id": 21916,
+        "province": "Guantánamo",
+        "name": "Guantánamo",
+        "municipio": "Guantánamo"
+      }
+    ],
+    "naval_base_area_not_admitted": [
+      {
+        "kind": "excluded_area",
+        "id": "",
+        "province": "Guantánamo",
+        "name": "Guantánamo Bay naval base",
+        "municipio": "Caimanera"
+      }
+    ],
+    "own_P131_no_unique_municipio": [
+      {
+        "kind": "town",
+        "id": 21800,
+        "province": "Cienfuegos",
+        "name": "Abreus",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21839,
+        "province": "Sancti Spíritus",
+        "name": "Condado",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21849,
+        "province": "Santiago de Cuba",
+        "name": "El Cobre",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21867,
+        "province": "La Habana",
+        "name": "Havana",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21871,
+        "province": "Mayabeque",
+        "name": "Jamaica",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21946,
+        "province": "Pinar del Río",
+        "name": "Puerto Esperanza",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21950,
+        "province": "Villa Clara",
+        "name": "Rancho Veloz",
+        "municipio": ""
+      }
+    ],
+    "own_item_point_outside_municipio": [
+      {
+        "kind": "municipio",
+        "id": "21888",
+        "province": "Mayabeque",
+        "name": "Madruga",
+        "municipio": "Madruga"
+      }
+    ],
+    "own_municipio_item_scope_unavailable": [
+      {
+        "kind": "municipio",
+        "id": "21850",
+        "province": "Villa Clara",
+        "name": "Encrucijada",
+        "municipio": "Encrucijada"
+      },
+      {
+        "kind": "municipio",
+        "id": "",
+        "province": "Holguín",
+        "name": "Calixto García",
+        "municipio": "Calixto García"
+      },
+      {
+        "kind": "municipio",
+        "id": "21875",
+        "province": "Granma",
+        "name": "Jiguaní",
+        "municipio": "Jiguaní"
+      },
+      {
+        "kind": "municipio",
+        "id": "",
+        "province": "Santiago de Cuba",
+        "name": "Guamá",
+        "municipio": "Guamá"
+      },
+      {
+        "kind": "municipio",
+        "id": "",
+        "province": "Guantánamo",
+        "name": "Manuel Támes",
+        "municipio": "Manuel Támes"
+      },
+      {
+        "kind": "municipio",
+        "id": "",
+        "province": "Guantánamo",
+        "name": "Imías",
+        "municipio": "Imías"
+      },
+      {
+        "kind": "municipio",
+        "id": "",
+        "province": "Guantánamo",
+        "name": "Niceto Pérez",
+        "municipio": "Niceto Pérez"
+      }
+    ],
+    "town_own_item_or_official_municipio_binding_unavailable": [
+      {
+        "kind": "town",
+        "id": 21801,
+        "province": "Cienfuegos",
+        "name": "Aguada de Pasajeros",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21803,
+        "province": "La Habana",
+        "name": "Alamar",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21804,
+        "province": "Artemisa",
+        "name": "Alquízar",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21807,
+        "province": "Artemisa",
+        "name": "Artemisa",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21810,
+        "province": "Guantánamo",
+        "name": "Baracoa",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21813,
+        "province": "Mayabeque",
+        "name": "Batabanó",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21814,
+        "province": "Artemisa",
+        "name": "Bauta",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21815,
+        "province": "Granma",
+        "name": "Bayamo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21819,
+        "province": "Sancti Spíritus",
+        "name": "Cabaiguán",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21823,
+        "province": "Villa Clara",
+        "name": "Calabazar de Sagua",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21827,
+        "province": "Granma",
+        "name": "Campechuela",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21828,
+        "province": "Artemisa",
+        "name": "Candelaria",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21833,
+        "province": "Ciego de Ávila",
+        "name": "Ciego de Ávila",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21834,
+        "province": "Cienfuegos",
+        "name": "Cienfuegos",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21835,
+        "province": "Villa Clara",
+        "name": "Cifuentes",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21838,
+        "province": "Matanzas",
+        "name": "Colón",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21840,
+        "province": "Pinar del Río",
+        "name": "Consolación del Sur",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21842,
+        "province": "Villa Clara",
+        "name": "Corralillo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21843,
+        "province": "Cienfuegos",
+        "name": "Cruces",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21846,
+        "province": "Matanzas",
+        "name": "Cárdenas",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21848,
+        "province": "Camagüey",
+        "name": "El Caney",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21850,
+        "province": "Villa Clara",
+        "name": "Encrucijada",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21851,
+        "province": "Camagüey",
+        "name": "Esmeralda",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21854,
+        "province": "Camagüey",
+        "name": "Florida",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21855,
+        "province": "Sancti Spíritus",
+        "name": "Fomento",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21858,
+        "province": "Artemisa",
+        "name": "Guanajay",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21860,
+        "province": "Guantánamo",
+        "name": "Guantánamo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21863,
+        "province": "Camagüey",
+        "name": "Guáimaro",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21864,
+        "province": "Mayabeque",
+        "name": "Güines",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21865,
+        "province": "Artemisa",
+        "name": "Güira de Melena",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21868,
+        "province": "Holguín",
+        "name": "Holguín",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21869,
+        "province": "Villa Clara",
+        "name": "Isabela de Sagua",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21870,
+        "province": "Matanzas",
+        "name": "Jagüey Grande",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21872,
+        "province": "Mayabeque",
+        "name": "Jaruco",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21873,
+        "province": "Sancti Spíritus",
+        "name": "Jatibonico",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21875,
+        "province": "Granma",
+        "name": "Jiguaní",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21877,
+        "province": "Holguín",
+        "name": "Jobabo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21879,
+        "province": "Matanzas",
+        "name": "Jovellanos",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21886,
+        "province": "Matanzas",
+        "name": "Los Arabos",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21887,
+        "province": "Pinar del Río",
+        "name": "Los Palacios",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21888,
+        "province": "Mayabeque",
+        "name": "Madruga",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21894,
+        "province": "Granma",
+        "name": "Manzanillo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21895,
+        "province": "Artemisa",
+        "name": "Mariel",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21896,
+        "province": "Matanzas",
+        "name": "Martí",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21897,
+        "province": "Matanzas",
+        "name": "Matanzas",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21902,
+        "province": "Ciego de Ávila",
+        "name": "Morón",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21936,
+        "province": "Granma",
+        "name": "Niquero",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21941,
+        "province": "Matanzas",
+        "name": "Pedro Betancourt",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21942,
+        "province": "Matanzas",
+        "name": "Perico",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21943,
+        "province": "Pinar del Río",
+        "name": "Pinar del Río",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21944,
+        "province": "Villa Clara",
+        "name": "Placetas",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21947,
+        "province": "Las Tunas",
+        "name": "Puerto Padre",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21948,
+        "province": "Villa Clara",
+        "name": "Quemado de Güines",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21949,
+        "province": "Mayabeque",
+        "name": "Quivicán",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21951,
+        "province": "Villa Clara",
+        "name": "Ranchuelo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21952,
+        "province": "La Habana",
+        "name": "Regla",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21953,
+        "province": "Cienfuegos",
+        "name": "Rodas",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21957,
+        "province": "Villa Clara",
+        "name": "Sagua la Grande",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21960,
+        "province": "Artemisa",
+        "name": "San Cristobal",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21965,
+        "province": "Pinar del Río",
+        "name": "San Luis",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21967,
+        "province": "Mayabeque",
+        "name": "San Nicolás de Bari",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21968,
+        "province": "Sancti Spíritus",
+        "name": "Sancti Spíritus",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21969,
+        "province": "Villa Clara",
+        "name": "Santa Clara",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21971,
+        "province": "Camagüey",
+        "name": "Santa Cruz del Sur",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21972,
+        "province": "Santiago de Cuba",
+        "name": "Santiago de Cuba",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21974,
+        "province": "Villa Clara",
+        "name": "Santo Domingo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21983,
+        "province": "Pinar del Río",
+        "name": "Viñales",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21984,
+        "province": "Sancti Spíritus",
+        "name": "Yaguajay",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21985,
+        "province": "Granma",
+        "name": "Yara",
+        "municipio": ""
+      }
+    ],
+    "town_own_item_scope_unavailable": [
+      {
+        "kind": "town",
+        "id": 21817,
+        "province": "Matanzas",
+        "name": "Bolondrón",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21820,
+        "province": "Artemisa",
+        "name": "Cabañas",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21852,
+        "province": "Villa Clara",
+        "name": "Esperanza",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21861,
+        "province": "Sancti Spíritus",
+        "name": "Guayos",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21881,
+        "province": "Mayabeque",
+        "name": "La Salud",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21891,
+        "province": "Matanzas",
+        "name": "Manguito",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21955,
+        "province": "Guantánamo",
+        "name": "Río Guayabal de Yateras",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21961,
+        "province": "Pinar del Río",
+        "name": "San Diego de Los Baños",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21976,
+        "province": "Artemisa",
+        "name": "Soroa",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21977,
+        "province": "Sancti Spíritus",
+        "name": "Topes de Collantes",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21978,
+        "province": "Sancti Spíritus",
+        "name": "Trinidad",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21980,
+        "province": "Matanzas",
+        "name": "Varadero",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21986,
+        "province": "Sancti Spíritus",
+        "name": "Zaza del Medio",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 164608,
+        "province": "La Habana",
+        "name": "Cojímar",
+        "municipio": ""
+      }
+    ],
+    "unknown_existing_item_scope": [
+      {
+        "kind": "municipio",
+        "id": "21900",
+        "province": "Pinar del Río",
+        "name": "Minas de Matahambre",
+        "municipio": "Minas de Matahambre"
+      },
+      {
+        "kind": "municipio",
+        "id": "21963",
+        "province": "Mayabeque",
+        "name": "San José de las Lajas",
+        "municipio": "San José de las Lajas"
+      },
+      {
+        "kind": "municipio",
+        "id": "21856",
+        "province": "Holguín",
+        "name": "Gibara",
+        "municipio": "Gibara"
+      },
+      {
+        "kind": "municipio",
+        "id": "21829",
+        "province": "Granma",
+        "name": "Cauto Cristo",
+        "municipio": "Cauto Cristo"
+      }
+    ],
+    "unknown_row_scope_municipio_or_town": [
+      {
+        "kind": "town",
+        "id": 21829,
+        "province": "Granma",
+        "name": "Cauto Cristo",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21856,
+        "province": "Holguín",
+        "name": "Gibara",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21900,
+        "province": "Pinar del Río",
+        "name": "Minas de Matahambre",
+        "municipio": ""
+      },
+      {
+        "kind": "town",
+        "id": 21963,
+        "province": "Mayabeque",
+        "name": "San José de las Lajas",
+        "municipio": ""
+      }
+    ]
+  },
+  "roster_coverage": [
+    {
+      "province": "Pinar del Río",
+      "municipio": "Sandino",
+      "official_name": "Sandino",
+      "status": "added",
+      "table": "cities",
+      "id": 174001,
+      "own_item": "Q567769",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Mantua",
+      "official_name": "Mantua",
+      "status": "added",
+      "table": "cities",
+      "id": 174002,
+      "own_item": "Q2213002",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Minas de Matahambre",
+      "official_name": "Minas de Matahambre",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q2204246",
+      "reason": "unknown_existing_item_scope"
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Viñales",
+      "official_name": "Viñales",
+      "status": "added",
+      "table": "cities",
+      "id": 174003,
+      "own_item": "Q1180693",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "La Palma",
+      "official_name": "La Palma",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21920,
+      "own_item": "Q2234325",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Los Palacios",
+      "official_name": "Los Palacios",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21921,
+      "own_item": "Q1870561",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Consolación del Sur",
+      "official_name": "Consolación del Sur",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21911,
+      "own_item": "Q1127452",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Pinar del Río",
+      "official_name": "Pinar del Río",
+      "status": "added",
+      "table": "cities",
+      "id": 174004,
+      "own_item": "Q244139",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "San Luis",
+      "official_name": "San Luis",
+      "status": "added",
+      "table": "cities",
+      "id": 174005,
+      "own_item": "Q1817531",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "San Juan y Martínez",
+      "official_name": "San Juan y Martínez",
+      "status": "added",
+      "table": "cities",
+      "id": 174006,
+      "own_item": "Q1716152",
+      "reason": null
+    },
+    {
+      "province": "Pinar del Río",
+      "municipio": "Guane",
+      "official_name": "Guane",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21915,
+      "own_item": "Q535537",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Bahía Honda",
+      "official_name": "Bahía Honda",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21808,
+      "own_item": "Q571968",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Mariel",
+      "official_name": "Mariel",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21923,
+      "own_item": "Q116156",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Guanajay",
+      "official_name": "Guanajay",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21914,
+      "own_item": "Q114977",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Caimito",
+      "official_name": "Caimito",
+      "status": "added",
+      "table": "cities",
+      "id": 174007,
+      "own_item": "Q559793",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Bauta",
+      "official_name": "Bauta",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21906,
+      "own_item": "Q114970",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "San Antonio de los Baños",
+      "official_name": "San Antonio de los Baños",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21959,
+      "own_item": "Q114984",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Güira de Melena",
+      "official_name": "Güira de Melena",
+      "status": "added",
+      "table": "cities",
+      "id": 174008,
+      "own_item": "Q603115",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Alquízar",
+      "official_name": "Alquizar",
+      "status": "added",
+      "table": "cities",
+      "id": 174009,
+      "own_item": "Q603163",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Artemisa",
+      "official_name": "Artemisa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21904,
+      "own_item": "Q115006",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "Candelaria",
+      "official_name": "Candelaria",
+      "status": "added",
+      "table": "cities",
+      "id": 174010,
+      "own_item": "Q603136",
+      "reason": null
+    },
+    {
+      "province": "Artemisa",
+      "municipio": "San Cristóbal",
+      "official_name": "San Cristóbal",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21931,
+      "own_item": "Q559801",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Playa",
+      "official_name": "Playa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 163978,
+      "own_item": "Q2066897",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Plaza de la Revolución",
+      "official_name": "Plaza de la Revolución",
+      "status": "retyped",
+      "table": "cities",
+      "id": 163979,
+      "own_item": "Q2099152",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Centro Habana",
+      "official_name": "Centro Habana",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21830,
+      "own_item": "Q1054312",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Habana Vieja",
+      "official_name": "Habana Vieja",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21880,
+      "own_item": "Q1165566",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Regla",
+      "official_name": "Regla",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q2066278",
+      "reason": "ambiguous_own_item_P625"
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Habana del Este",
+      "official_name": "Habana del Este",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21866,
+      "own_item": "Q1566695",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Guanabacoa",
+      "official_name": "Guanabacoa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21857,
+      "own_item": "Q23796070",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "San Miguel del Padrón",
+      "official_name": "San Miguel del Padrón",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21966,
+      "own_item": "Q2234391",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Diez de Octubre",
+      "official_name": "Diez de Octubre",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21847,
+      "own_item": "Q2397948",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Cerro",
+      "official_name": "Cerro",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21831,
+      "own_item": "Q1055715",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Marianao",
+      "official_name": "Marianao",
+      "status": "retyped",
+      "table": "cities",
+      "id": 163980,
+      "own_item": "Q2553350",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "La Lisa",
+      "official_name": "La Lisa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 163981,
+      "own_item": "Q3648399",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Boyeros",
+      "official_name": "Boyeros",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21818,
+      "own_item": "Q1936076",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Arroyo Naranjo",
+      "official_name": "Arroyo Naranjo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21806,
+      "own_item": "Q1936053",
+      "reason": null
+    },
+    {
+      "province": "La Habana",
+      "municipio": "Cotorro",
+      "official_name": "Cotorro",
+      "status": "retyped",
+      "table": "cities",
+      "id": 163982,
+      "own_item": "Q3646457",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Bejucal",
+      "official_name": "Bejucal",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21816,
+      "own_item": "Q814979",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "San José de las Lajas",
+      "official_name": "San José de las Lajas",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q1001941",
+      "reason": "unknown_existing_item_scope"
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Jaruco",
+      "official_name": "Jaruco",
+      "status": "added",
+      "table": "cities",
+      "id": 174011,
+      "own_item": "Q1683722",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Santa Cruz del Norte",
+      "official_name": "Santa Cruz del Norte",
+      "status": "added",
+      "table": "cities",
+      "id": 174012,
+      "own_item": "Q270302",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Madruga",
+      "official_name": "Madruga",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q270290",
+      "reason": "own_item_point_outside_municipio"
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Nueva Paz",
+      "official_name": "Nueva Paz",
+      "status": "added",
+      "table": "cities",
+      "id": 174013,
+      "own_item": "Q270581",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "San Nicolás",
+      "official_name": "San Nicolás",
+      "status": "added",
+      "table": "cities",
+      "id": 174014,
+      "own_item": "Q270090",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Güines",
+      "official_name": "Güines",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21917,
+      "own_item": "Q270297",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Melena del Sur",
+      "official_name": "Melena del Sur",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21925,
+      "own_item": "Q270310",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Batabanó",
+      "official_name": "Batabanó",
+      "status": "added",
+      "table": "cities",
+      "id": 174015,
+      "own_item": "Q270305",
+      "reason": null
+    },
+    {
+      "province": "Mayabeque",
+      "municipio": "Quivicán",
+      "official_name": "Quivicán",
+      "status": "added",
+      "table": "cities",
+      "id": 174016,
+      "own_item": "Q2123580",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Matanzas",
+      "official_name": "Matanzas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21924,
+      "own_item": "Q272471",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Cárdenas",
+      "official_name": "Cárdenas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21912,
+      "own_item": "Q986387",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Martí",
+      "official_name": "Martí",
+      "status": "added",
+      "table": "cities",
+      "id": 174017,
+      "own_item": "Q5054",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Colón",
+      "official_name": "Colón",
+      "status": "added",
+      "table": "cities",
+      "id": 174018,
+      "own_item": "Q5029",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Perico",
+      "official_name": "Perico",
+      "status": "added",
+      "table": "cities",
+      "id": 174019,
+      "own_item": "Q5001",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Jovellanos",
+      "official_name": "Jovellanos",
+      "status": "added",
+      "table": "cities",
+      "id": 174020,
+      "own_item": "Q2573404",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Pedro Betancourt",
+      "official_name": "Pedro Betancourt",
+      "status": "added",
+      "table": "cities",
+      "id": 174021,
+      "own_item": "Q2245897",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Limonar",
+      "official_name": "Limonar",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21885,
+      "own_item": "Q2737469",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Unión de Reyes",
+      "official_name": "Unión de Reyes",
+      "status": "added",
+      "table": "cities",
+      "id": 174022,
+      "own_item": "Q5002",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Ciénaga de Zapata",
+      "official_name": "Ciénaga de Zapata",
+      "status": "added",
+      "table": "cities",
+      "id": 174023,
+      "own_item": "Q60827097",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Jaguey Grande",
+      "official_name": "Jaguey Grande",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q2573456",
+      "reason": "ambiguous_own_item_P625"
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Calimete",
+      "official_name": "Calimete",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21824,
+      "own_item": "Q4999",
+      "reason": null
+    },
+    {
+      "province": "Matanzas",
+      "municipio": "Los Arabos",
+      "official_name": "Los Arabos",
+      "status": "added",
+      "table": "cities",
+      "id": 174024,
+      "own_item": "Q2245914",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Corralillo",
+      "official_name": "Corralillo",
+      "status": "added",
+      "table": "cities",
+      "id": 174025,
+      "own_item": "Q2573424",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Quemado de Güines",
+      "official_name": "Quemado de Güines",
+      "status": "added",
+      "table": "cities",
+      "id": 174026,
+      "own_item": "Q5006",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Sagua La Grande",
+      "official_name": "Sagua La Grande",
+      "status": "added",
+      "table": "cities",
+      "id": 174027,
+      "own_item": "Q5030",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Encrucijada",
+      "official_name": "Encrucijada",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q20593168",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Camajuaní",
+      "official_name": "Camajuaní",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21826,
+      "own_item": "Q280628",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Caibarién",
+      "official_name": "Caibarién",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21822,
+      "own_item": "Q289328",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Remedios",
+      "official_name": "Remedios",
+      "status": "added",
+      "table": "cities",
+      "id": 174028,
+      "own_item": "Q280795",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Placetas",
+      "official_name": "Placetas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21930,
+      "own_item": "Q861701",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Santa Clara",
+      "official_name": "Santa Clara",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21933,
+      "own_item": "Q211590",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Cifuentes",
+      "official_name": "Cifuentes",
+      "status": "added",
+      "table": "cities",
+      "id": 174029,
+      "own_item": "Q2245934",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Santo Domingo",
+      "official_name": "Santo Domingo",
+      "status": "added",
+      "table": "cities",
+      "id": 174030,
+      "own_item": "Q765438",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Ranchuelo",
+      "official_name": "Ranchuelo",
+      "status": "added",
+      "table": "cities",
+      "id": 174031,
+      "own_item": "Q5003",
+      "reason": null
+    },
+    {
+      "province": "Villa Clara",
+      "municipio": "Manicaragua",
+      "official_name": "Manicaragua",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21892,
+      "own_item": "Q2573328",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Aguada de Pasajeros",
+      "official_name": "Aguada de Pasajeros",
+      "status": "added",
+      "table": "cities",
+      "id": 174032,
+      "own_item": "Q2245953",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Rodas",
+      "official_name": "Rodas",
+      "status": "added",
+      "table": "cities",
+      "id": 174033,
+      "own_item": "Q5004",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Palmira",
+      "official_name": "Palmira",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21940,
+      "own_item": "Q5008",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Lajas",
+      "official_name": "Lajas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21883,
+      "own_item": "Q5045",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Cruces",
+      "official_name": "Cruces",
+      "status": "added",
+      "table": "cities",
+      "id": 174034,
+      "own_item": "Q5042",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Cumanayagua",
+      "official_name": "Cumanayagua",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21845,
+      "own_item": "Q5044",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Cienfuegos",
+      "official_name": "Cienfuegos",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21910,
+      "own_item": "Q190005",
+      "reason": null
+    },
+    {
+      "province": "Cienfuegos",
+      "municipio": "Abreus",
+      "official_name": "Abreus",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21903,
+      "own_item": "Q331384",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Yaguajay",
+      "official_name": "Yaguajay",
+      "status": "added",
+      "table": "cities",
+      "id": 174035,
+      "own_item": "Q9046572",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Jatibonico",
+      "official_name": "Jatibonico",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21919,
+      "own_item": "Q861575",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Taguasco",
+      "official_name": "Taguasco",
+      "status": "added",
+      "table": "cities",
+      "id": 174036,
+      "own_item": "Q862734",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Cabaiguán",
+      "official_name": "Cabaiguán",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21908,
+      "own_item": "Q862728",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Fomento",
+      "official_name": "Fomento",
+      "status": "added",
+      "table": "cities",
+      "id": 174037,
+      "own_item": "Q861489",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Trinidad",
+      "official_name": "Trinidad",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21935,
+      "own_item": "Q319272",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "Sancti Spíritus",
+      "official_name": "Sancti Spíritus",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21932,
+      "own_item": "Q845720",
+      "reason": null
+    },
+    {
+      "province": "Sancti Spíritus",
+      "municipio": "La Sierpe",
+      "official_name": "La Sierpe",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21882,
+      "own_item": "Q861630",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Chambas",
+      "official_name": "Chambas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21832,
+      "own_item": "Q1060628",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Morón",
+      "official_name": "Morón",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21926,
+      "own_item": "Q959528",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Bolivia",
+      "official_name": "Bolivia",
+      "status": "added",
+      "table": "cities",
+      "id": 174038,
+      "own_item": "Q526001",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Primero de Enero",
+      "official_name": "1ro de Enero",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21945,
+      "own_item": "Q1020104",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Ciro Redondo",
+      "official_name": "Ciro Redondo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21836,
+      "own_item": "Q1020273",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Florencia",
+      "official_name": "Florencia",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21853,
+      "own_item": "Q1007702",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Majagua",
+      "official_name": "Majagua",
+      "status": "added",
+      "table": "cities",
+      "id": 174039,
+      "own_item": "Q1886040",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Ciego de Ávila",
+      "official_name": "Ciego de Ávila",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21909,
+      "own_item": "Q115465",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Venezuela",
+      "official_name": "Venezuela",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21981,
+      "own_item": "Q593830",
+      "reason": null
+    },
+    {
+      "province": "Ciego de Ávila",
+      "municipio": "Baraguá",
+      "official_name": "Baraguá",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21811,
+      "own_item": "Q1816192",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Carlos Manuel de Céspedes",
+      "official_name": "Carlos Manuel de Céspedes",
+      "status": "added",
+      "table": "cities",
+      "id": 174040,
+      "own_item": "Q603146",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Esmeralda",
+      "official_name": "Esmeralda",
+      "status": "added",
+      "table": "cities",
+      "id": 174041,
+      "own_item": "Q643074",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Sierra de Cubitas",
+      "official_name": "Sierra de Cubitas",
+      "status": "added",
+      "table": "cities",
+      "id": 174042,
+      "own_item": "Q643052",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Minas",
+      "official_name": "Minas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21899,
+      "own_item": "Q643025",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Nuevitas",
+      "official_name": "Nuevitas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21928,
+      "own_item": "Q643081",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Guáimaro",
+      "official_name": "Guáimaro",
+      "status": "added",
+      "table": "cities",
+      "id": 174043,
+      "own_item": "Q643059",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Sibanicú",
+      "official_name": "Sibanicú",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21975,
+      "own_item": "Q537161",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Camagüey",
+      "official_name": "Camagüey",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21825,
+      "own_item": "Q115329",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Florida",
+      "official_name": "Florida",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21913,
+      "own_item": "Q643617",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Vertientes",
+      "official_name": "Vertientes",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21982,
+      "own_item": "Q643047",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Jimaguayú",
+      "official_name": "Jimaguayú",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21876,
+      "own_item": "Q179701",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Najasa",
+      "official_name": "Najasa",
+      "status": "added",
+      "table": "cities",
+      "id": 174044,
+      "own_item": "Q643028",
+      "reason": null
+    },
+    {
+      "province": "Camagüey",
+      "municipio": "Santa Cruz del Sur",
+      "official_name": "Santa Cruz del Sur",
+      "status": "added",
+      "table": "cities",
+      "id": 174045,
+      "own_item": "Q643313",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Manatí",
+      "official_name": "Manatí",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21890,
+      "own_item": "Q2234381",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Puerto Padre",
+      "official_name": "Puerto Padre",
+      "status": "added",
+      "table": "cities",
+      "id": 174046,
+      "own_item": "Q1938772",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Jesús Menéndez",
+      "official_name": "Jesús Menéndez",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21874,
+      "own_item": "Q1332144",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Majibacoa",
+      "official_name": "Majibacoa",
+      "status": "added",
+      "table": "cities",
+      "id": 174047,
+      "own_item": "Q1332168",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Las Tunas",
+      "official_name": "Las Tunas",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21884,
+      "own_item": "Q115527",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Jobabo",
+      "official_name": "Jobabo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21878,
+      "own_item": "Q600105",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Colombia",
+      "official_name": "Colombia",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21837,
+      "own_item": "Q2733738",
+      "reason": null
+    },
+    {
+      "province": "Las Tunas",
+      "municipio": "Amancio",
+      "official_name": "Amancio",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21805,
+      "own_item": "Q1936063",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Gibara",
+      "official_name": "Gibara",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q281016",
+      "reason": "unknown_existing_item_scope"
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Rafael Freyre",
+      "official_name": "Rafael Freyre",
+      "status": "added",
+      "table": "cities",
+      "id": 174048,
+      "own_item": "Q281057",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Banes",
+      "official_name": "Banes",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21905,
+      "own_item": "Q806424",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Antilla",
+      "official_name": "Antillas",
+      "status": "added",
+      "table": "cities",
+      "id": 174049,
+      "own_item": "Q2246518",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Báguanos",
+      "official_name": "Báguanos",
+      "status": "added",
+      "table": "cities",
+      "id": 174050,
+      "own_item": "Q281205",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Holguín",
+      "official_name": "Holguín",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21918,
+      "own_item": "Q244154",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Calixto García",
+      "official_name": "Calixto García",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q281186",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Cacocúm",
+      "official_name": "Cacocúm",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21821,
+      "own_item": "Q281104",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Urbano Noris",
+      "official_name": "Urbano Noris",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21962,
+      "own_item": "Q280929",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Cueto",
+      "official_name": "Cueto",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21844,
+      "own_item": "Q280984",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Mayarí",
+      "official_name": "Mayarí",
+      "status": "added",
+      "table": "cities",
+      "id": 174051,
+      "own_item": "Q1020314",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Frank País",
+      "official_name": "Frank País",
+      "status": "added",
+      "table": "cities",
+      "id": 174052,
+      "own_item": "Q280950",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Sagua de Tánamo",
+      "official_name": "Sagua de Tánamo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21956,
+      "own_item": "Q281213",
+      "reason": null
+    },
+    {
+      "province": "Holguín",
+      "municipio": "Moa",
+      "official_name": "Moa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21901,
+      "own_item": "Q168965",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Río Cauto",
+      "official_name": "Río Cauto",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21954,
+      "own_item": "Q178931",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Cauto Cristo",
+      "official_name": "Cauto Cristo",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q1332179",
+      "reason": "unknown_existing_item_scope"
+    },
+    {
+      "province": "Granma",
+      "municipio": "Jiguaní",
+      "official_name": "Jiguaní",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q2234347",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Granma",
+      "municipio": "Bayamo",
+      "official_name": "Bayamo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21907,
+      "own_item": "Q115382",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Yara",
+      "official_name": "Yara",
+      "status": "added",
+      "table": "cities",
+      "id": 174053,
+      "own_item": "Q2061386",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Manzanillo",
+      "official_name": "Manzanillo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21922,
+      "own_item": "Q115403",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Campechuela",
+      "official_name": "Campechuela",
+      "status": "added",
+      "table": "cities",
+      "id": 174054,
+      "own_item": "Q1332135",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Media Luna",
+      "official_name": "Media Luna",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21898,
+      "own_item": "Q995690",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Niquero",
+      "official_name": "Niquero",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21927,
+      "own_item": "Q972546",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Pilón",
+      "official_name": "Pilón",
+      "status": "retyped",
+      "table": "cities",
+      "id": 164607,
+      "own_item": "Q1935454",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Bartolomé Masó",
+      "official_name": "Bartolomé Masó",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21812,
+      "own_item": "Q809538",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Buey Arriba",
+      "official_name": "Buey Arriba",
+      "status": "added",
+      "table": "cities",
+      "id": 174055,
+      "own_item": "Q1935438",
+      "reason": null
+    },
+    {
+      "province": "Granma",
+      "municipio": "Guisa",
+      "official_name": "Guisa",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21862,
+      "own_item": "Q1935474",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Contramaestre",
+      "official_name": "Contramaestre",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21841,
+      "own_item": "Q1129122",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Mella",
+      "official_name": "Mella",
+      "status": "added",
+      "table": "cities",
+      "id": 174056,
+      "own_item": "Q658207",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "San Luis",
+      "official_name": "San Luis",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21964,
+      "own_item": "Q555956",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Segundo Frente",
+      "official_name": "II Frente",
+      "status": "added",
+      "table": "cities",
+      "id": 174057,
+      "own_item": "Q1193189",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Songo-La Maya",
+      "official_name": "Songo - La Maya",
+      "status": "added",
+      "table": "cities",
+      "id": 174058,
+      "own_item": "Q1193899",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Santiago de Cuba",
+      "official_name": "Santiago de Cuba",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21934,
+      "own_item": "Q117040",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Palma Soriano",
+      "official_name": "Palma Soriano",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21929,
+      "own_item": "Q742835",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Tercer Frente",
+      "official_name": "III Frente",
+      "status": "added",
+      "table": "cities",
+      "id": 174059,
+      "own_item": "Q1193882",
+      "reason": null
+    },
+    {
+      "province": "Santiago de Cuba",
+      "municipio": "Guamá",
+      "official_name": "Guamá",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q1193164",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "El Salvador",
+      "official_name": "El Salvador",
+      "status": "added",
+      "table": "cities",
+      "id": 174060,
+      "own_item": "Q1026982",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Manuel Támes",
+      "official_name": "Manuel Támes",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q751418",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Yateras",
+      "official_name": "Yateras",
+      "status": "added",
+      "table": "cities",
+      "id": 174061,
+      "own_item": "Q1026971",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Baracoa",
+      "official_name": "Baracoa",
+      "status": "added",
+      "table": "cities",
+      "id": 174062,
+      "own_item": "Q94775",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Maisí",
+      "official_name": "Maisí",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21889,
+      "own_item": "Q911750",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Imías",
+      "official_name": "Imías",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q287136",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "San Antonio del Sur",
+      "official_name": "San Antonio del Sur",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21958,
+      "own_item": "Q167235",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Caimanera",
+      "official_name": "Caimanera",
+      "status": "added",
+      "table": "cities",
+      "id": 174063,
+      "own_item": "Q1025873",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Guantánamo",
+      "official_name": "Guantánamo",
+      "status": "retyped",
+      "table": "cities",
+      "id": 21916,
+      "own_item": "Q185156",
+      "reason": null
+    },
+    {
+      "province": "Guantánamo",
+      "municipio": "Niceto Pérez",
+      "official_name": "Niceto Pérez",
+      "status": "held",
+      "table": "cities",
+      "id": null,
+      "own_item": "Q1026991",
+      "reason": "own_municipio_item_scope_unavailable"
+    },
+    {
+      "province": "Isla de la Juventud",
+      "municipio": "Isla de la Juventud",
+      "status": "matched_state",
+      "table": "states",
+      "id": 278,
+      "own_item": "Q115027"
+    }
+  ],
+  "identity_gate": {
+    "unresolved_CU_keys": 0,
+    "later_CU_identity_events": 0,
+    "event_count": 0
+  },
+  "policy": {
+    "release": "After v5.1.0; ordinary corrections and additions only",
+    "point_source": "Wikidata CC0; geoBoundaries/OSM geometry used only for checking",
+    "names": "Conventional Spanish names: own matching municipio Spanish label, else standardised ONEI; names.csv records all 63 checks; existing names and all translations preserved",
+    "population": "No additions populated; existing values untouched",
+    "archives": "Reused dated captures; no live Wikidata or ONEI state asserted",
+    "naval_base": "Excluded area; do not infer administration from polygon containment"
+  }
+}

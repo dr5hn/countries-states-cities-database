@@ -1645,3 +1645,9 @@ Modifications: selected Census 2021 all-person usual-resident estimates; matched
 Wikidata contributors — ru_years_v5x
 Source: https://www.wikidata.org/ ; licensing: https://www.wikidata.org/wiki/Wikidata:Licensing ; CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/ .
 Only population dates (P585 on the own item's exact equal P1082 statement) are added; population counts were already stored and are retained without alteration. Identity claims, coordinates and administrative paths are used solely for screening. The changed-only ledger records statement identifiers, original amount, P585 and P459 where present; archived response bytes, capture dates and SHA-256 hashes are retained in the audit workspace. No agency endorsement is implied.
+
+Cuba municipios (cu_munis_v5x; #2139, #1643; release after v5.1.0):
+- Wikidata, https://www.wikidata.org/ — own-item P625, administrative statements and labels, CC0 1.0. Dated source captures and exact response hashes are in cu_munis_v5x.sources.json.
+- geoBoundaries CUB ADM2 CUB-ADM2-75667366 (2017, build 2023-12-12), https://www.geoboundaries.org/ ; OpenStreetMap contributors and Wambacher, ODbL 1.0, https://www.openstreetmap.org/copyright . Geometry is used only to check points; no geometry or geometry-derived points enter city rows.
+- ONEI, Anuario demográfico de Cuba 2024, July 2025, table 2.7.1, pp.45-51, official list of municipio names and provinces; retained public mirror https://rotativo.com.mx/files/88746/00-anuario-demografico-2024.pdf . No population imported: unrestricted commercial reuse terms are not established; an older ONEI edition permits non-commercial reproduction.
+- GeoNames Cuba, https://download.geonames.org/export/dump/CU.zip , CC BY 4.0, used as checking evidence for the identities of existing municipal administrative rows and the San Luis seat town.
