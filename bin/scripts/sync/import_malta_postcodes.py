@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Malta -> contributions/postcodes/MT.json importer for #1039.
+"""RETIRED. Malta -> contributions/postcodes/MT.json importer for #1039.
+
+Retired on 14 October 2026: Malta postcodes now come from OpenStreetMap (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Malta and China: postcodes from GeoNames and OpenStreetMap"). The
+redistribution basis of the lucamuscat/Scrape_Malta_Addresses copy below was not established, so this script refuses to run. It is kept
+for the record of how the earlier rows were made.
 
 Source data
 -----------
@@ -64,6 +69,9 @@ def fetch_json(url: str) -> dict:
 
 
 def main() -> int:
+    print("[ERROR] retired: MT postcodes come from OpenStreetMap now; rerunning this would reimport the "
+          "lucamuscat/Scrape_Malta_Addresses copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None)
     parser.add_argument("--dry-run", action="store_true")

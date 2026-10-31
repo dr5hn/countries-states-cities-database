@@ -24,8 +24,11 @@ import os
 import sys
 import argparse
 from typing import List, Dict, Any, Set
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from city_states import check_counties, check_references  # noqa: E402
 import mysql.connector
 from collections import OrderedDict
+from decimal import Decimal
 
 
 class MySQLToJSONSync:
@@ -91,9 +94,9 @@ class MySQLToJSONSync:
                     result[col] = json.loads(value)
                 except json.JSONDecodeError:
                     result[col] = value
-            # Convert Decimal to string for coordinates
+            # Convert Decimal to fixed-point text for coordinates: str() writes an exact zero, Decimal('0E-8'), as '0E-8'
             elif col in ['latitude', 'longitude']:
-                result[col] = str(value) if value is not None else None
+                result[col] = format(value, 'f') if isinstance(value, Decimal) else str(value)
             # Convert integer fields
             elif col == 'id' or col.endswith('_id') or col in ['level', 'population', 'gdp']:
                 result[col] = int(value) if value is not None else None
@@ -161,20 +164,48 @@ class MySQLToJSONSync:
         # Ensure cities directory exists
         os.makedirs(cities_dir, exist_ok=True)
 
+        # Build every country's file first, check all of it, and only then write: a bad pair leaves the files untouched
+        outputs = []
         for country_code in country_codes:
             # Fetch all cities for this country
             query = f"SELECT * FROM cities WHERE country_code = %s ORDER BY id"
             self.cursor.execute(query, (country_code,))
             rows = self.cursor.fetchall()
 
+            output_file = os.path.join(cities_dir, f'{country_code}.json')
+            existing = {}
+            original_text = ''
+            if os.path.exists(output_file):
+                with open(output_file, encoding='utf-8') as f:
+                    original_text = f.read()
+                existing = {r['id']: r for r in json.loads(original_text) if r.get('id') is not None}
             cities = []
             for row in rows:
-                cities.append(self.process_row(row, columns, excluded))
+                # Preserve contribution field order and omitted null fields on round trips.
+                old = existing.get(row['id'])
+                fields = [c for c in old if c in columns] if old else list(columns)
+                fields += [c for c in columns if c not in fields and row[c] is not None]
+                fields += [c for c in ('state_id', 'state_code') if c in columns and c not in fields]   # required, even when null (v5)
+                city = self.process_row(row, fields, excluded)
+                if city.get('county_id') is None:
+                    city.pop('county_id', None)
+                cities.append(city)
+            outputs.append((country_code, output_file, original_text, cities))
 
+        self.cursor.execute("SELECT id, iso2 FROM countries")
+        countries = self.cursor.fetchall()
+        self.cursor.execute("SELECT id, country_id, country_code, iso2 FROM states")
+        states = self.cursor.fetchall()
+        errors = check_references(countries, states, [c for *_, cities in outputs for c in cities])
+        if errors:
+            raise ValueError(f"{len(errors)} reference problems; no city file was written: " + '; '.join(errors[:20]))
+
+        for country_code, output_file, original_text, cities in outputs:
             # Save to country-specific JSON file
-            output_file = os.path.join(cities_dir, f'{country_code}.json')
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(cities, f, ensure_ascii=False, indent=2)
+                if original_text.endswith('\n'):
+                    f.write('\n')
 
             print(f"  ✓ {country_code}: {len(cities):,} cities → {output_file}")
             total_cities += len(cities)
@@ -231,6 +262,97 @@ class MySQLToJSONSync:
 
         print(f"  ✓ Synced {len(subregions)} subregions to {output_file}")
         return len(subregions)
+
+    def sync_counties(self):
+        """Sync counties to contributions/counties/<COUNTRY_CODE>.json files (issue #1303). A county of several regions
+        gets its states list from county_states (v5); every file is checked before any is written."""
+        print("\n📦 Syncing counties...")
+
+        # Skip gracefully if the counties table doesn't exist (migration not run)
+        self.cursor.execute("SHOW TABLES LIKE 'counties'")
+        if not self.cursor.fetchone():
+            print("  ⚠ Table 'counties' does not exist — skipping")
+            return 0
+
+        columns = self.get_table_columns('counties')
+        excluded = {'created_at', 'updated_at', 'flag'}
+
+        # One file per country (mirrors the cities/ pattern)
+        self.cursor.execute("SELECT DISTINCT country_code FROM counties ORDER BY country_code")
+        country_codes = [row['country_code'] for row in self.cursor.fetchall()]
+
+        if not country_codes:
+            print("  ⚠ No counties in database — skipping file writes")
+            return 0
+
+        self.cursor.execute("SELECT id, iso2 FROM countries")
+        countries = self.cursor.fetchall()
+        self.cursor.execute("SELECT id, country_id, country_code, iso2 FROM states")
+        states = self.cursor.fetchall()
+        code_of = {s['id']: s['iso2'] for s in states}
+        regions = {}
+        self.cursor.execute("SHOW TABLES LIKE 'county_states'")
+        if self.cursor.fetchone():
+            self.cursor.execute("SELECT county_id, state_id FROM county_states ORDER BY county_id, state_id")
+            for r in self.cursor.fetchall():
+                regions.setdefault(int(r['county_id']), []).append(int(r['state_id']))
+
+        counties_dir = os.path.join('contributions', 'counties')
+        outputs = []
+        for country_code in country_codes:
+            self.cursor.execute(
+                "SELECT * FROM counties WHERE country_code = %s ORDER BY id",
+                (country_code,)
+            )
+            rows = self.cursor.fetchall()
+
+            output_file = os.path.join(counties_dir, f'{country_code}.json')
+            # Keep existing field order, omitted nullable fields, and trailing newline.
+            original_text = ''
+            existing = {}
+            if os.path.exists(output_file):
+                with open(output_file, encoding='utf-8') as f:
+                    original_text = f.read()
+                existing = {
+                    (r['name'], r['state_id']): r for r in json.loads(original_text)
+                }
+            records = []
+            for row in rows:
+                old = existing.get((row['name'], row['state_id']))
+                fields = ['id'] + [c for c in (old or row) if c != 'id' and c not in excluded]
+                if old:
+                    fields += [c for c in columns if c not in fields and c not in excluded and row[c] is not None]
+                # Preserve source-only fields; database columns still take precedence.
+                record = self.process_row({**(old or {}), **row}, fields, excluded)
+                # states always comes from county_states, never from the old file
+                record.pop('states', None)
+                listed = [{'state_id': sid, 'state_code': code_of.get(sid)} for sid in sorted(regions.get(int(row['id']), []))]
+                if listed:
+                    items = list(record.items())
+                    at = next((i + 1 for i, (k, _) in enumerate(items) if k == 'state_code'), len(items))
+                    record = OrderedDict(items[:at] + [('states', listed)] + items[at:])
+                records.append(record)
+            outputs.append((country_code, output_file, original_text, records))
+
+        self.cursor.execute("SELECT id, name, country_id, country_code, state_id, county_id FROM cities WHERE county_id IS NOT NULL")
+        linked = self.cursor.fetchall()
+        errors = check_counties(countries, states, [r for *_, records in outputs for r in records], linked)
+        if errors:
+            raise ValueError(f"{len(errors)} county problems; no county file was written: " + '; '.join(errors[:20]))
+
+        os.makedirs(counties_dir, exist_ok=True)
+        total = 0
+        for country_code, output_file, original_text, records in outputs:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(records, f, ensure_ascii=False, indent=2)
+                if original_text.endswith('\n'):
+                    f.write('\n')
+
+            print(f"  ✓ {country_code}: {len(records):,} counties → {output_file}")
+            total += len(records)
+
+        print(f"\n  ✓ Total: {total:,} counties synced to {len(country_codes)} files")
+        return total
 
     def sync_postcodes(self):
         """Sync postcodes table to contributions/postcodes/<COUNTRY_CODE>.json files (issue #1039)."""
@@ -293,7 +415,14 @@ class MySQLToJSONSync:
 
         # Tables to export (in correct order respecting foreign keys).
         # postcodes is included only if it exists, since older databases may not have run the migration.
-        tables = ['regions', 'subregions', 'countries', 'states', 'cities']
+        tables = ['regions', 'subregions', 'countries', 'states']
+        self.cursor.execute("SHOW TABLES LIKE 'counties'")
+        if self.cursor.fetchone():
+            tables.append('counties')
+        self.cursor.execute("SHOW TABLES LIKE 'county_states'")
+        if self.cursor.fetchone():
+            tables.append('county_states')   # v5: counties of several regions
+        tables.append('cities')
         self.cursor.execute("SHOW TABLES LIKE 'postcodes'")
         if self.cursor.fetchone():
             tables.append('postcodes')
@@ -417,6 +546,7 @@ def main():
         subregions_count = syncer.sync_subregions()
         countries_count = syncer.sync_countries()
         states_count = syncer.sync_states()
+        counties_count = syncer.sync_counties()
         cities_count = syncer.sync_cities()
         postcodes_count = syncer.sync_postcodes()
 
@@ -427,6 +557,7 @@ def main():
         print(f"   📍 Subregions: {subregions_count}")
         print(f"   📍 Countries: {countries_count}")
         print(f"   📍 States: {states_count}")
+        print(f"   📍 Counties: {counties_count:,}")
         print(f"   📍 Cities: {cities_count:,}")
         print(f"   📍 Postcodes: {postcodes_count:,}")
         print("\n💡 Next steps:")

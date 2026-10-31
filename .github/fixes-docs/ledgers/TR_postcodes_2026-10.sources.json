@@ -1,0 +1,19 @@
+{
+  "country_code": "TR",
+  "identity": "postcode and district",
+  "source_tag": "geonames-postal",
+  "state_mapping": "GeoNames admin1 mapped to ISO numbers (e.g. 81 -> 01 Adana, 68 -> 06 Ankara); every retained row passes the postal-prefix check",
+  "rows_kept": 1423,
+  "queued_for_v5_removal": 1348,
+  "consumer_consequence": "Turkey retains 1,423 supported code/district IDs, queues 1,348 unsupported IDs in v5, and offers 767 published estimates with no city links.",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "260562d0948553de60bd7754e7889c536b1662a6521965f2467610c34fc8a16a",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Turkish postal code dump, 13 October 2026."
+}

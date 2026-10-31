@@ -1,8 +1,31 @@
 import json
+import re
 from pathlib import Path
+
+# The quoting rules of the TOON reference encoder (@toon-format/toon 4.4.0, isSafeUnquoted and escapeString): a string
+# is written bare only when the reader gives it back as the same string. "1" or "-38.86700000" unquoted would read back
+# as numbers, "null" as null.
+NUMERIC_LIKE = re.compile(r"^[+-]?\d+(?:\.\d+)?(?:e[+-]?\d+)?$", re.I | re.ASCII)   # JavaScript \d: ASCII digits only
+
+
+def is_safe_unquoted(s: str, delimiter: str) -> bool:
+    """Whether a string can be written without quotes and read back as the same string."""
+    return not (not s or s[0] in " \t" or s[-1] in " \t" or s in ("true", "false", "null") or NUMERIC_LIKE.match(s)
+                or ":" in s or '"' in s or "\\" in s or re.search(r"[\[\]{}]", s) or re.search(r"[\x00-\x1f]", s)
+                or delimiter in s or s.startswith(("-", "#")))
+
+
+def escape_string(s: str) -> str:
+    """Backslash escapes inside a quoted TOON string, as the reference encoder writes them."""
+    s = s.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n").replace("\r", "\\r").replace("\t", "\\t")
+    return re.sub(r"[\x00-\x1f]", lambda m: f"\\u{ord(m.group(0)):04x}", s)
+
 
 def json_to_toon(json_text: str, delimiter: str = ",") -> str:
     data = json.loads(json_text)
+
+    if data == []:
+        return "[]"   # TOON spec 9.1: an empty root array is "[]"; the legacy [0]: form must not be emitted
 
     if not isinstance(data, list) or not data:
         raise ValueError("Expected non-empty top-level JSON array")
@@ -12,19 +35,15 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
 
     def format_value(v):
         if isinstance(v, bool):
-            s = "true" if v else "false"
-        elif v is None:
-            s = ""
-        else:
-            s = str(v)
-
-        if not s:
+            return "true" if v else "false"
+        if v is None:
+            return "null"   # TOON's null literal; a blank cell decodes as an empty string (v5: null city states)
+        if isinstance(v, (int, float)):
+            return str(v)
+        s = str(v)
+        if is_safe_unquoted(s, delimiter):
             return s
-
-        if s[0].isspace() or s[-1].isspace() or delimiter in s or "\n" in s:
-            s = s.replace('"', '\\"')
-            return f'"{s}"'
-        return s
+        return '"' + escape_string(s) + '"'   # a string that would read back as another type or break the row
 
     def encode_row(obj):
         vals = []
@@ -34,6 +53,8 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
             if isinstance(v, dict):
                 inner = "|".join(f"{k}={v[k]}" for k in v)
                 vals.append(format_value(inner))
+            elif isinstance(v, list):   # a county's states (v5): compact JSON text, as in Parquet
+                vals.append(format_value(json.dumps(v, ensure_ascii=False, separators=(",", ":"))))
             else:
                 vals.append(format_value(v))
         return delimiter.join(vals)
@@ -41,7 +62,7 @@ def json_to_toon(json_text: str, delimiter: str = ",") -> str:
     lines = []
     lines.append(f"[{len(data)}]" + "{" + ",".join(columns) + "}:")
     for row in data:
-        lines.append(encode_row(row))
+        lines.append("  " + encode_row(row))   # rows sit one level below their header (TOON spec 9.3)
 
     return "\n".join(lines)
 
@@ -74,10 +95,12 @@ if __name__ == "__main__":
     toon_dir = Path("../toon")
 
     # List of base filenames (without extension)
-    files = ["countries", "cities", "states"]
+    files = ["countries", "cities", "states", "counties"]
 
     for name in files:
         json_path = json_dir / f"{name}.json"
+        if name == "counties" and not json_path.exists():
+            continue
         toon_path = toon_dir / f"{name}.toon"
 
         json_file_to_toon_file(json_path, toon_path)

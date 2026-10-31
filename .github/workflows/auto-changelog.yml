@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Slack notification
-        uses: actions/github-script@v8
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
@@ -25,6 +25,8 @@ jobs:
             if (!webhookUrl) return;
 
             const https = require('https');
+            // Slack mrkdwn treats <...> as links and mentions (<!channel>); escape &, < and > in any text from users.
+            const slackEscape = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
             const pr = context.payload.pull_request;
 
             const payload = {
@@ -38,8 +40,8 @@ jobs:
                   {
                     type: 'section',
                     fields: [
-                      { type: 'mrkdwn', text: `*PR:* <${pr.html_url}|#${pr.number}> ${pr.title}` },
-                      { type: 'mrkdwn', text: `*Author:* @${pr.user.login}` },
+                      { type: 'mrkdwn', text: `*PR:* <${pr.html_url}|#${pr.number}> ${slackEscape(pr.title)}` },
+                      { type: 'mrkdwn', text: `*Author:* @${slackEscape(pr.user.login)}` },
                     ],
                   },
                 ],

@@ -1,0 +1,19 @@
+{
+  "country_code": "PL",
+  "product": "GeoNames postal code dump",
+  "url": "https://download.geonames.org/export/zip/PL.zip",
+  "last_modified": "Tue, 13 Oct 2026 02:03:55 GMT",
+  "bytes": 987914,
+  "sha256": "7776614a062cd77d3938651f195fceb0f28680103d0a18bc54589489e7d3f48d",
+  "retrieved_at_utc": "2026-10-14T00:41:26.083192+00:00",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, Polish postal code dump, 13 October 2026.",
+  "identity": "one row per postcode; a row is kept when the dump lists its code",
+  "changes_by_csc": "Existing rows the dump lists were kept and took its locality name, point and state; a field the dump's rows disagree on is left empty; points formatted to eight decimals; no new codes added.",
+  "state_mapping": "GeoNames admin1 number (72-87) to the CSC state iso2 by the provider table https://www.geonames.org/PL/administrative-division-poland.html",
+  "rows_kept": 19394,
+  "queued_for_v5_removal": 2696,
+  "new_codes_not_added": 905
+}

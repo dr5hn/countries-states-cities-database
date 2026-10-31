@@ -1,0 +1,1496 @@
+{
+ "ledger": "baltic_pop_v5x.jsonl",
+ "records": 940,
+ "base_commit": [
+  "7795d77d6a801543b9bb90d97a182c885f44c458"
+ ],
+ "full_ledger_sha256": "987112c7b6dcfc90c81f8a2e93f93af750f7537a3a90444f03988bd4afd1fe15",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Pin unresolved_baseline.jsonl and later identity events. Retained baseline unresolved counts: EE 5, SI 213, SK 86. Later PR 2063 classification events resolve 3 EE and 195 SI keys. SK has no subsequent identity event. No unresolved key changes in this delivery; no new identity events.",
+  "No population/year changes to any held row. EE BY-SA excluded by owner allowlist; SI unnamed attribution permission fails owner named-licence gate; LT licence passes but access-block response prevents count use; LV counts retained as candidates but national geometry downloads timed out. Source failures are not absence evidence.",
+  "Latest same-entity municipal count: MAN10001 Q2 2026 at 30 June, publisher-rounded: tens above 50 and fives at 50 or below; MAN02005 at 1 January 2026 only where Q2 names a successor rather than this entity. Exact official name plus municipal timeline code, current own municipality P31, own label, row/state name or ISO code, both points in date-valid national polygon. Post-original municipal codes held as potential successors.",
+  "Same entity only. Require own literal Wikidata claims, own municipality code (SK P782) or exact Icelandic official municipality name and timeline code, compatible scope, same state, original record point and own-item point inside the same official boundary. Original unresolved keys stay held; no decision_only event on a changed row.",
+  "All admitted reference dates are latest available dates in the captured official tables for that same entity. No stored population_year is newer. Inspect own-item dated P1082 for a newer stored official value; do not equate a higher undated number to a more recent same-entity estimate.",
+  "Only population and population_year may change. Per-field before presence/value, full canonical row hashes, exact changed-data-file bytes and exact provenance-file bytes are guarded. Later Git commits with identical guarded inputs are accepted.",
+  "STATdata om7101mr: TOTAL sex, UNIT_PERS, U_OM_0057 end-of-period population, 2026, month 7. Complete published catalogue of 1,424 cubes inspected; July 2026 is latest municipal population period. Exact own P782 equals e_nuts15 acronym; six-digit suffix equals national INSPIRE AU nationalCode. Official municipality-district-region hierarchy and own P131 state path both checked. Urban parts also require recorded parent_id equal own P131 item. Published district qualifier accepted only when equal to the polygon official district name.",
+  "Iceland timeline geometries are used in original EPSG:4326. For invalid rings, standard Shapely make_valid is only a diagnostic: admit if it produces valid topology, relative area difference is below 1e-12 and both original and repaired geometries give identical containment for both points. No geometry, point or boundary is written to the repository. Larger differences remain held.",
+  "Latest same-entity official municipal total: Q2 2026, or January 2026 only when Q2 denotes a named successor rather than this original municipality."
+ ],
+ "sources": [
+  {
+   "path": "sources/EE_terms",
+   "retrieved_at": "2026-10-22T10:17:04.406359+00:00",
+   "sha256": "878847f7f82e8534c4fcc6988a761a494a4cb2ba64195e00cd47c776894e3afb",
+   "url": "https://andmed.stat.ee/en/help"
+  },
+  {
+   "path": "sources/archive/WD_existing_07.json",
+   "retrieved_at": "2026-10-13T06:39:39.940154+00:00",
+   "sha256": "837642ebce1f4d904a2aa316dc456f758fefcafad41c81ee6a6763cf29c8c2bc",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3162598%7CQ31926891%7CQ319787%7CQ321074%7CQ321784%7CQ327977%7CQ337440%7CQ337478%7CQ338528%7CQ339239%7CQ339642%7CQ340205%7CQ341490%7CQ3434276%7CQ3434908%7CQ3437411%7CQ3437803%7CQ3438143%7CQ3438923%7CQ3439195%7CQ3440936%7CQ3443694%7CQ3443700%7CQ3443710%7CQ3444661%7CQ3449377%7CQ3451126%7CQ3451173%7CQ3451312%7CQ3451465%7CQ3453560%7CQ3455136%7CQ3458520%7CQ3459381%7CQ3462156%7CQ3468713%7CQ3468727%7CQ3469834%7CQ3470336%7CQ3470339%7CQ3470533%7CQ3470888%7CQ3472643%7CQ3477357%7CQ3477375%7CQ3477447%7CQ3477487%7CQ3477614%7CQ3477635%7CQ3499613&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "licence": "CC BY-SA 4.0; not on owner allowlist",
+   "path": "sources/EE_terms",
+   "quote": "Statistics Estonia’s open data can be shared under Creative Commons (CC) licence BY-SA 4.0",
+   "sha256": "878847f7f82e8534c4fcc6988a761a494a4cb2ba64195e00cd47c776894e3afb",
+   "source_role": "country licence gate",
+   "status": "held",
+   "url": "https://andmed.stat.ee/en/help"
+  },
+  {
+   "path": "sources/archive/WD_existing_00.json",
+   "retrieved_at": "2026-10-13T06:39:19.530794+00:00",
+   "sha256": "6a04b9cf1f7a6634e2d25c37089b752a7990133f53012810d5b8756f0b3025d2",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1001607%7CQ1009353%7CQ1009362%7CQ1010572%7CQ1010576%7CQ1010581%7CQ1010597%7CQ1010606%7CQ1012%7CQ1012996%7CQ1013773%7CQ1015%7CQ1015849%7CQ1018%7CQ1018396%7CQ1018469%7CQ1018598%7CQ1019999%7CQ1020068%7CQ1020142%7CQ1020183%7CQ1020204%7CQ1020253%7CQ1021%7CQ102158%7CQ102365%7CQ1023750%7CQ1024196%7CQ1024708%7CQ1035167%7CQ1043463%7CQ1068179%7CQ1070645%7CQ1071509%7CQ1091685%7CQ1091714%7CQ1091778%7CQ1146736%7CQ117513%7CQ11857%7CQ1187936%7CQ1192851%7CQ12068719%7CQ120718%7CQ122317%7CQ1230519%7CQ1251740%7CQ1252424%7CQ1255557%7CQ1265463&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_09.json",
+   "retrieved_at": "2026-10-13T06:39:45.033301+00:00",
+   "sha256": "a11eeafceecf29c3a1a8eb16b960d6c7c7e679fcd271613c2eb9d1ad1f1a0e27",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q462840%7CQ465312%7CQ46690%7CQ4806360%7CQ481528%7CQ481564%7CQ4863532%7CQ4863552%7CQ4982372%7CQ502264%7CQ506693%7CQ509715%7CQ510040%7CQ5101569%7CQ511695%7CQ512771%7CQ513989%7CQ5160619%7CQ516578%7CQ519824%7CQ5266%7CQ531445%7CQ532137%7CQ532555%7CQ537778%7CQ539732%7CQ539934%7CQ539979%7CQ543631%7CQ545706%7CQ546630%7CQ546693%7CQ548293%7CQ548619%7CQ549849%7CQ550271%7CQ550357%7CQ556151%7CQ556210%7CQ556358%7CQ564988%7CQ565175%7CQ565204%7CQ568249%7CQ572748%7CQ578686%7CQ586056%7CQ589309%7CQ5903623%7CQ590660&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_01.json",
+   "retrieved_at": "2026-10-13T06:39:22.250127+00:00",
+   "sha256": "545b9d38c9ef49cef1684d40ec011e82da9dbf947ed56b5c676312d3b037fa5b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1266078%7CQ12751744%7CQ12800872%7CQ12803710%7CQ12806958%7CQ1292940%7CQ12958961%7CQ13377759%7CQ13377820%7CQ13378177%7CQ13378345%7CQ135647%7CQ135727%7CQ135818%7CQ1382%7CQ13972%7CQ141796%7CQ143742%7CQ1445105%7CQ14468504%7CQ144983%7CQ145002%7CQ1483558%7CQ1503436%7CQ15092085%7CQ15450218%7CQ154994%7CQ155066%7CQ15853%7CQ15854%7CQ15855%7CQ15858%7CQ15860%7CQ15861%7CQ15865%7CQ15867%7CQ15868%7CQ15870%7CQ15871%7CQ15875%7CQ15876%7CQ15877%7CQ15883%7CQ15885%7CQ15886%7CQ15889%7CQ15890%7CQ15896%7CQ15898%7CQ15899&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_06.json",
+   "retrieved_at": "2026-10-13T06:39:37.791686+00:00",
+   "sha256": "8df107c223c7cbf326c042703980a7b2af97fb1d96fb963226cbdbf592d7b8e5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2671709%7CQ2672913%7CQ2674893%7CQ267888%7CQ2682358%7CQ268463%7CQ27001%7CQ2713033%7CQ272040%7CQ2725971%7CQ2736866%7CQ2740759%7CQ2749254%7CQ2751186%7CQ2752423%7CQ27541%7CQ2754111%7CQ276362%7CQ2766344%7CQ2775780%7CQ2788051%7CQ279005%7CQ27907%7CQ279490%7CQ2797858%7CQ280424%7CQ2805176%7CQ2806140%7CQ282702%7CQ2917822%7CQ2928996%7CQ2979890%7CQ2980650%7CQ2989844%7CQ2989890%7CQ301179%7CQ301318%7CQ3023218%7CQ302787%7CQ3043378%7CQ3044100%7CQ305226%7CQ3053683%7CQ3058505%7CQ3117761%7CQ3117773%7CQ3124698%7CQ3125242%7CQ3130501%7CQ3139373&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_10.json",
+   "retrieved_at": "2026-10-13T06:41:21.773065+00:00",
+   "sha256": "e40504ce760ccfc9aa7a43bd642754705f0c9b62751088ac9dca098a7d8852f1",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q595935%7CQ596044%7CQ599361%7CQ60038%7CQ600666%7CQ604194%7CQ604504%7CQ605059%7CQ605521%7CQ6122752%7CQ612516%7CQ613714%7CQ614140%7CQ617868%7CQ618103%7CQ627667%7CQ630081%7CQ631387%7CQ632906%7CQ633617%7CQ634654%7CQ635831%7CQ636864%7CQ638284%7CQ639899%7CQ642660%7CQ644115%7CQ6453800%7CQ646393%7CQ649076%7CQ650575%7CQ650577%7CQ650672%7CQ650698%7CQ651878%7CQ653326%7CQ654941%7CQ655156%7CQ6565933%7CQ659424%7CQ6612742%7CQ664187%7CQ665066%7CQ668333%7CQ673741%7CQ678429%7CQ6810577%7CQ684125%7CQ687009%7CQ690807&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_11.json",
+   "retrieved_at": "2026-10-13T06:41:29.320404+00:00",
+   "sha256": "4e2d798b193476c2e0ad8f7b3befb32f796800ce190cd7fa59e2882067f6c661",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6916913%7CQ6961265%7CQ6961712%7CQ6962554%7CQ719969%7CQ720023%7CQ723372%7CQ724294%7CQ728965%7CQ730707%7CQ737665%7CQ740469%7CQ746119%7CQ747926%7CQ750407%7CQ750413%7CQ750416%7CQ750419%7CQ750423%7CQ750439%7CQ752081%7CQ754768%7CQ754773%7CQ754776%7CQ754788%7CQ754790%7CQ756075%7CQ756077%7CQ756658%7CQ756660%7CQ756662%7CQ756665%7CQ756667%7CQ756899%7CQ761574%7CQ762646%7CQ768310%7CQ769661%7CQ771710%7CQ775484%7CQ775860%7CQ775875%7CQ777394%7CQ777963%7CQ782928%7CQ784394%7CQ787824%7CQ788753%7CQ790494%7CQ791591&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_03.json",
+   "retrieved_at": "2026-10-13T06:39:29.777566+00:00",
+   "sha256": "0481bced3bff5207d5fd6a3800d9d3a83ec3741fc657f69d0946321420d2da43",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q191889%7CQ193905%7CQ1944509%7CQ1970070%7CQ1972051%7CQ1998318%7CQ2000244%7CQ2006351%7CQ2006948%7CQ201391%7CQ2018453%7CQ2019579%7CQ202852%7CQ2028864%7CQ2028872%7CQ2036306%7CQ204091%7CQ205271%7CQ2059110%7CQ206555%7CQ2068203%7CQ2068600%7CQ207226%7CQ207275%7CQ207748%7CQ2078772%7CQ2079963%7CQ208110%7CQ2085029%7CQ208750%7CQ2091787%7CQ2094435%7CQ2095150%7CQ2097770%7CQ2097814%7CQ210796%7CQ211059%7CQ2113343%7CQ2115226%7CQ2125054%7CQ2127005%7CQ213071%7CQ213178%7CQ2134569%7CQ2135530%7CQ2136425%7CQ213740%7CQ2139428%7CQ2142859%7CQ2143232&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_02.json",
+   "retrieved_at": "2026-10-13T06:39:25.052775+00:00",
+   "sha256": "72f54d2bd061e46980beb8f27c9c2cd8a421dece16c1c1cacefd1e60abdbe752",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q15901%7CQ15905%7CQ15906%7CQ15908%7CQ15911%7CQ15914%7CQ15915%7CQ15916%7CQ15917%7CQ15918%7CQ15919%7CQ15921%7CQ15922%7CQ15926%7CQ15928%7CQ15930%7CQ15933%7CQ1618489%7CQ1618559%7CQ1639142%7CQ1640282%7CQ1640556%7CQ16469%7CQ165937%7CQ167001%7CQ1695213%7CQ171333%7CQ172263%7CQ1753141%7CQ1753813%7CQ1755634%7CQ1770%7CQ1780%7CQ1805635%7CQ1809468%7CQ1809612%7CQ1809670%7CQ1810670%7CQ1823066%7CQ1828426%7CQ182903%7CQ1845117%7CQ1854978%7CQ1858063%7CQ1860460%7CQ188179%7CQ1883359%7CQ1895190%7CQ191106%7CQ1917707&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_08.json",
+   "retrieved_at": "2026-10-13T06:39:42.307548+00:00",
+   "sha256": "196bec5815ce40453cb35e82787636fd4f73de6e5ae2a2d7d42fbe6d0fb49b2d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q3499878%7CQ3501344%7CQ3501699%7CQ3502521%7CQ3503148%7CQ3542993%7CQ3618115%7CQ370161%7CQ370242%7CQ370445%7CQ373739%7CQ373881%7CQ374095%7CQ375497%7CQ376987%7CQ377650%7CQ379320%7CQ382727%7CQ387789%7CQ388888%7CQ389397%7CQ3897892%7CQ389942%7CQ390946%7CQ391068%7CQ391361%7CQ392192%7CQ392704%7CQ393421%7CQ393435%7CQ393479%7CQ393609%7CQ393925%7CQ394340%7CQ4165497%7CQ42307965%7CQ426207%7CQ43266354%7CQ43281004%7CQ4355982%7CQ437%7CQ438%7CQ44792192%7CQ44840%7CQ4489175%7CQ45100%7CQ45114%7CQ4589815%7CQ460767%7CQ460925&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_05.json",
+   "retrieved_at": "2026-10-13T06:39:35.099278+00:00",
+   "sha256": "c6518df737c8742f3ad2c3c10c0a6b13fedcc7338f9a331c32a857b7556d1e36",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2438219%7CQ2443435%7CQ2459309%7CQ2468912%7CQ2469185%7CQ247240%7CQ247620%7CQ2478647%7CQ2478784%7CQ2480068%7CQ2484071%7CQ249613%7CQ249935%7CQ2511250%7CQ2527695%7CQ2528962%7CQ2529766%7CQ25409%7CQ2545094%7CQ256301%7CQ2566089%7CQ256846%7CQ2573748%7CQ25797%7CQ2582859%7CQ258481%7CQ2596325%7CQ259694%7CQ2604576%7CQ2605582%7CQ2610065%7CQ26119%7CQ2613333%7CQ26175%7CQ262165%7CQ2627587%7CQ2633508%7CQ2638131%7CQ26393%7CQ26397%7CQ2640043%7CQ2643657%7CQ264708%7CQ2647743%7CQ2656228%7CQ2668988%7CQ266939%7CQ2670409%7CQ2671086%7CQ2671246&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_04.json",
+   "retrieved_at": "2026-10-13T06:39:32.211072+00:00",
+   "sha256": "beb8fdc1091899ea6dfd29a2b2ac99f024223fe407b09fa6d2c1dc5190b9b086",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2159378%7CQ215971%7CQ216119%7CQ2169191%7CQ2176450%7CQ217682%7CQ2181301%7CQ2188264%7CQ2188414%7CQ2189853%7CQ2191620%7CQ2195203%7CQ2201568%7CQ220968%7CQ2219733%7CQ2219904%7CQ2227842%7CQ2230682%7CQ2232206%7CQ2233861%7CQ2239459%7CQ2262884%7CQ2265297%7CQ2296057%7CQ2306502%7CQ2307788%7CQ2311705%7CQ2316241%7CQ2321016%7CQ2327227%7CQ2327320%7CQ2331195%7CQ2348978%7CQ2354085%7CQ2354591%7CQ2355438%7CQ2359769%7CQ2362916%7CQ2362950%7CQ2367062%7CQ2381766%7CQ23890484%7CQ23890528%7CQ23890603%7CQ239637%7CQ2409882%7CQ241125%7CQ241462%7CQ2418986%7CQ242478&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_13.json",
+   "retrieved_at": "2026-10-13T06:47:03.858117+00:00",
+   "sha256": "a0551b3174e9a1617c042da5151524482d26f0f570f8fe1d6a759f091914a0cc",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q847350%7CQ851946%7CQ852318%7CQ852324%7CQ855820%7CQ856402%7CQ86206%7CQ871557%7CQ898476%7CQ9009660%7CQ9014531%7CQ9015044%7CQ902737%7CQ906079%7CQ907388%7CQ907800%7CQ908023%7CQ909301%7CQ909333%7CQ911359%7CQ923853%7CQ923869%7CQ932854%7CQ940174%7CQ942421%7CQ966592%7CQ969326%7CQ971156%7CQ985464%7CQ990067%7CQ991076%7CQ992974%7CQ993014%7CQ993036&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/archive/WD_existing_12.json",
+   "retrieved_at": "2026-10-13T06:41:36.989583+00:00",
+   "sha256": "5bac966edbf9414eb15ecd3aafb247720d88e57d1271aac02bda0cee7d1f2a9d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7938065%7CQ8005236%7CQ8009642%7CQ8009692%7CQ8009736%7CQ8011202%7CQ8011223%7CQ8082833%7CQ816927%7CQ819395%7CQ819514%7CQ829812%7CQ830982%7CQ830991%7CQ830995%7CQ831001%7CQ833845%7CQ836179%7CQ836182%7CQ836194%7CQ836201%7CQ836205%7CQ837456%7CQ837460%7CQ837464%7CQ837478%7CQ837865%7CQ837868%7CQ837871%7CQ837874%7CQ837877%7CQ837884%7CQ837888%7CQ837891%7CQ837894%7CQ837897%7CQ842005%7CQ842011%7CQ842018%7CQ842021%7CQ842028%7CQ842557%7CQ846424%7CQ846431%7CQ846434%7CQ846440%7CQ846444%7CQ847118%7CQ847213%7CQ847336&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Cinfo&languages=en%7Csk%7Csl%7Cet&format=json"
+  },
+  {
+   "path": "sources/LV_IRD081_meta",
+   "retrieved_at": "2026-10-22T10:23:30.363644+00:00",
+   "sha256": "750d315d08b785bf54b5a7344c697996e02f6990d397fb191102be7bd47aeb90",
+   "url": "https://api.stat.gov.lv/api/v2/tables/IRD081/metadata?lang=en"
+  },
+  {
+   "path": "sources/LV_IRD081_data_all",
+   "retrieved_at": "2026-10-22T10:30:37.979324+00:00",
+   "sha256": "998f24a3b59d473fcf080b610c4caa44cd4b97c206c94d97ca18ef3e490f2ea2",
+   "url": "https://api.stat.gov.lv/api/v2/tables/IRD081/data?lang=en&outputFormat=json-stat2&valueCodes%5BSEX%5D=T&valueCodes%5BAgeGroup%5D=TOTAL&valueCodes%5BAREA%5D=%2A&valueCodes%5BContentsCode%5D=IRD081&valueCodes%5BTIME%5D=2026"
+  },
+  {
+   "path": "sources/LV_meta_v2",
+   "retrieved_at": "2026-10-22T10:21:25.462484+00:00",
+   "sha256": "8165dc6795b713680078c78c714c85cca71f04e040c70e7a7b19937a797429c5",
+   "url": "https://api.stat.gov.lv/api/v2/tables/IRS031/metadata?lang=en"
+  },
+  {
+   "path": "sources/LV_data",
+   "retrieved_at": "2026-10-22T10:22:12.478019+00:00",
+   "sha256": "0a23edeafdc3fb27b81faea135554bf6a436ee1c34d16450f3f5f2044b7abf86",
+   "url": "https://api.stat.gov.lv/api/v2/tables/IRS031/data?lang=en&outputFormat=json-stat2&valueCodes%5BINDICATOR%5D=%2A&valueCodes%5BAREA%5D=%2A&valueCodes%5BContentsCode%5D=%2A&valueCodes%5BTIME%5D=2026"
+  },
+  {
+   "path": "sources/LV_mcp_licence",
+   "retrieved_at": "2026-10-22T10:23:13.312109+00:00",
+   "sha256": "91e8a31f3f1d328dc046a4a721f151683bb17d0b780dfab3fd60eb3ff5c10a32",
+   "url": "https://mcp.stat.gov.lv/?lang=en"
+  },
+  {
+   "path": "sources/wd_retry_0.json",
+   "retrieved_at": "2026-10-22T10:27:40.396873+00:00",
+   "sha256": "8c67753c0d18a93fd491c14c5994e94045b17c0c005ae6893d430ef03438f112",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q420730%7CQ886944%7CQ893528%7CQ893531%7CQ276537%7CQ431733%7CQ921052%7CQ765521%7CQ729833%7CQ665474%7CQ472822%7CQ337924%7CQ829859%7CQ831718%7CQ2066213%7CQ2140997%7CQ2296228%7CQ979864%7CQ628888%7CQ9368476%7CQ252482%7CQ291780%7CQ292970%7CQ335596%7CQ372999&format=json"
+  },
+  {
+   "licence": "CC BY 4.0",
+   "path": "sources/LV_mcp_licence",
+   "quote": "Data is sourced from official statistical databases and is provided free of charge under the CC BY 4.0 license.",
+   "sha256": "91e8a31f3f1d328dc046a4a721f151683bb17d0b780dfab3fd60eb3ff5c10a32",
+   "source_role": "country licence gate",
+   "status": "pass",
+   "url": "https://mcp.stat.gov.lv/?lang=en"
+  },
+  {
+   "path": "sources/wd_retry_1.json",
+   "retrieved_at": "2026-10-22T10:27:44.494753+00:00",
+   "sha256": "c57e013a0836f6901a569d9b547509b1ab240625575d6a1cdbf2e7c1b1f2f053",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q405931%7CQ411715%7CQ659019%7CQ432829%7CQ291333%7CQ618119%7CQ758578%7CQ789351%7CQ757043%7CQ805759%7CQ218402%7CQ2385722%7CQ757050%7CQ757101%7CQ80021%7CQ962653%7CQ757049%7CQ753010%7CQ580373%7CQ835771%7CQ849152%7CQ987208%7CQ504681%7CQ745661%7CQ638592&format=json"
+  },
+  {
+   "path": "sources/wd_Q420333.json",
+   "retrieved_at": "2026-10-22T10:20:51.145400+00:00",
+   "sha256": "fd9cf632f7e1960cc287b59333b3a6abf49cf7d0773faceb8182d609bf2b7241",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q420333.json"
+  },
+  {
+   "path": "sources/wd_Q498256.json",
+   "retrieved_at": "2026-10-22T10:20:52.774886+00:00",
+   "sha256": "8a822e906d4dbffb6285e8fe4e445a7e48c008d7b92ec6633f2fa5ae133c91b6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q498256.json"
+  },
+  {
+   "path": "sources/wd_Q840836.json",
+   "retrieved_at": "2026-10-22T10:21:01.596926+00:00",
+   "sha256": "d451136faacd72568f3cfd96221010e6a86710d21a703916de02cb9ca00fc62c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q840836.json"
+  },
+  {
+   "path": "sources/wd_Q1044023.json",
+   "retrieved_at": "2026-10-22T10:20:06.952402+00:00",
+   "sha256": "bd41139195b9089c0cbb87a1999b355725dc4ce9184f9f9dae20619af4a66846",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1044023.json"
+  },
+  {
+   "path": "sources/wd_Q1018485.json",
+   "retrieved_at": "2026-10-22T10:20:01.224186+00:00",
+   "sha256": "d2994eb68317736b31f47cb76f0da5a70a1fa58af3e103a54a14952def9470dd",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1018485.json"
+  },
+  {
+   "path": "sources/wd_Q107582.json",
+   "retrieved_at": "2026-10-22T10:20:09.272750+00:00",
+   "sha256": "74f540a107a9820953d5547458b1b84b311eafcf967b2b4ba1b8335b2e6e3bf5",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q107582.json"
+  },
+  {
+   "path": "sources/wd_Q1172924.json",
+   "retrieved_at": "2026-10-22T10:20:11.670776+00:00",
+   "sha256": "dfac3612ac014debdbfe1c0994260e20702e5f900b42b72d5e5261aafe0f9850",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1172924.json"
+  },
+  {
+   "path": "sources/wd_Q729447.json",
+   "retrieved_at": "2026-10-22T10:20:57.418861+00:00",
+   "sha256": "0ebcebf34ac2d261bcfe2d96ec2664cd3efffa27e22e504fc8494e228ddd4a36",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q729447.json"
+  },
+  {
+   "path": "sources/wd_Q1023733.json",
+   "retrieved_at": "2026-10-22T10:20:03.340728+00:00",
+   "sha256": "9e8a0c44af66854bdd2edd8bdab4a16a28a62a3908bf4fcc9d398bb9adde3d01",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023733.json"
+  },
+  {
+   "path": "sources/wd_Q1006622.json",
+   "retrieved_at": "2026-10-22T10:20:00.629317+00:00",
+   "sha256": "7b56bdbc03c9ef2e6748ce17b3daf14904ec779076437bd26d12e3e756cf0b44",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1006622.json"
+  },
+  {
+   "path": "sources/wd_Q1023764.json",
+   "retrieved_at": "2026-10-22T10:20:04.699207+00:00",
+   "sha256": "e8b00cff500991501bbf47b86361266bd84e5434b6c40208ed8bc7a428d15883",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023764.json"
+  },
+  {
+   "path": "sources/wd_Q987170.json",
+   "retrieved_at": "2026-10-22T10:21:05.848694+00:00",
+   "sha256": "42abbe677eb6ddfb0b275fcb169dcf03a5ca93b2e89b177e43a399121f758786",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q987170.json"
+  },
+  {
+   "path": "sources/wd_Q1684136.json",
+   "retrieved_at": "2026-10-22T10:20:25.990076+00:00",
+   "sha256": "7f56f9feff80b01f6794abf14f043dbca46be7e59c452e4c0e4986b01954be67",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1684136.json"
+  },
+  {
+   "path": "sources/wd_Q15219041.json",
+   "retrieved_at": "2026-10-22T10:20:22.080354+00:00",
+   "sha256": "6bfc500093441223ff0f64970d71ef3abfbaaee4c1fb50905d390ce5ce360967",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15219041.json"
+  },
+  {
+   "path": "sources/wd_Q191120.json",
+   "retrieved_at": "2026-10-22T10:20:31.921355+00:00",
+   "sha256": "9b97f301d488e9249911051d1afcc95eee15999e2c32f6d9265b37245160469e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q191120.json"
+  },
+  {
+   "path": "sources/wd_Q178382.json",
+   "retrieved_at": "2026-10-22T10:20:29.415264+00:00",
+   "sha256": "63834993e99d972b597e327d36ee53d14d11378d679f53e95205cbc554f64efb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q178382.json"
+  },
+  {
+   "path": "sources/wd_Q155281.json",
+   "retrieved_at": "2026-10-22T10:20:23.121082+00:00",
+   "sha256": "3aec05237bca49e8538b9c5ffcdb15364f1fdb53dd704ee10fcebab915234876",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q155281.json"
+  },
+  {
+   "path": "sources/wd_retry_2.json",
+   "retrieved_at": "2026-10-22T10:27:48.833898+00:00",
+   "sha256": "4a4a003a99c3797a99cd5475b30f2fe816375724dd58e1c126270f1c62ce263b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q597346%7CQ6544506%7CQ844477%7CQ744259%7CQ849156%7CQ586048%7CQ844468%7CQ987175%7CQ985288%7CQ987161%7CQ987165%7CQ731915%7CQ838491%7CQ4363090%7CQ858476%7CQ908683%7CQ840717%7CQ567747%7CQ942401%7CQ987180%7CQ650475%7CQ732986%7CQ744247%7CQ840823%7CQ465698&format=json"
+  },
+  {
+   "path": "sources/wd_Q167668.json",
+   "retrieved_at": "2026-10-22T10:20:25.691714+00:00",
+   "sha256": "ad0cb7355b2719b70eb08d3b45b6c4efafd08b4f3fcbaf0ac0d1141b026391cc",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q167668.json"
+  },
+  {
+   "path": "sources/wd_Q166684.json",
+   "retrieved_at": "2026-10-22T10:20:25.081929+00:00",
+   "sha256": "0f17348cfd3b9354c97ad30f0d491448be180866c785a2c5c943889a28fa071f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q166684.json"
+  },
+  {
+   "path": "sources/wd_Q1926523.json",
+   "retrieved_at": "2026-10-22T10:20:32.548538+00:00",
+   "sha256": "d4b5ea88e6eb596f72949d8c257911bbb5fcc26efbcb9e0f6b34cd1766dc4bdb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1926523.json"
+  },
+  {
+   "path": "sources/wd_Q1023743.json",
+   "retrieved_at": "2026-10-22T10:20:04.010117+00:00",
+   "sha256": "782b6bb9485cd05ba880023529ae3e931969cad5483902e487069d2efeb0cb29",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023743.json"
+  },
+  {
+   "path": "sources/wd_Q1712746.json",
+   "retrieved_at": "2026-10-22T10:20:26.521734+00:00",
+   "sha256": "6e79621209ded2b674fca95791b6abc3792ff17e729486d61c5b6cfa4294944b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1712746.json"
+  },
+  {
+   "path": "sources/wd_Q1023747.json",
+   "retrieved_at": "2026-10-22T10:20:04.319740+00:00",
+   "sha256": "90a5f1ba9c169e296f015d8c9ca1b65fa82023a1e3974ca3fd1b0b93fe2e2a17",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023747.json"
+  },
+  {
+   "path": "sources/wd_Q1027033.json",
+   "retrieved_at": "2026-10-22T10:20:05.552304+00:00",
+   "sha256": "626d393d3bf732397ca43c110929c62c76c4cb57a1abfa008cd28970292a1f92",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1027033.json"
+  },
+  {
+   "path": "sources/wd_Q1240381.json",
+   "retrieved_at": "2026-10-22T10:20:13.604883+00:00",
+   "sha256": "99b9f5782b3727f8c0fa3093e9adc34a529dd1c75f46cca2d59e794ad3a67d3c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1240381.json"
+  },
+  {
+   "path": "sources/wd_Q1493534.json",
+   "retrieved_at": "2026-10-22T10:20:21.473091+00:00",
+   "sha256": "6ec15c8e83559835453930399a150be2a3e924ceb9915046bd2dbc2aef64d9b8",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1493534.json"
+  },
+  {
+   "path": "sources/wd_Q1773.json",
+   "retrieved_at": "2026-10-22T10:20:28.930346+00:00",
+   "sha256": "ec157f9922ea45ee4e59cd7de37d9b4491db82ad395bda43a7fb14ca4291f4bb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1773.json"
+  },
+  {
+   "path": "sources/wd_Q120761.json",
+   "retrieved_at": "2026-10-22T10:20:13.471713+00:00",
+   "sha256": "f3046b01376fa4d7c828a64b66bbf639c5a63acf446970cc707cb2022c862367",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120761.json"
+  },
+  {
+   "path": "sources/wd_Q2174949.json",
+   "retrieved_at": "2026-10-22T10:20:37.255263+00:00",
+   "sha256": "1bd04527c7e5f5444e5f58945a37870422a488dfa86591c7c11a86b3959d7b85",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2174949.json"
+  },
+  {
+   "path": "sources/wd_Q180379.json",
+   "retrieved_at": "2026-10-22T10:20:30.538857+00:00",
+   "sha256": "7ea944958e1d1968f0e55ec4158d28aca304bff261d5b01a2d80503c85989220",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q180379.json"
+  },
+  {
+   "path": "sources/wd_Q765976.json",
+   "retrieved_at": "2026-10-22T10:20:59.801338+00:00",
+   "sha256": "422c382c0f4fe903d0f8cc2ebdb2f4187fc9352c02bade8cad8f7dd8fbe7cefd",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q765976.json"
+  },
+  {
+   "path": "sources/wd_Q659665.json",
+   "retrieved_at": "2026-10-22T10:20:56.874197+00:00",
+   "sha256": "92a14fa99bbbf5bfc1d49b2be7dbed7c394656487d6be572d75234deb9634b28",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q659665.json"
+  },
+  {
+   "path": "sources/wd_Q578527.json",
+   "retrieved_at": "2026-10-22T10:20:54.621955+00:00",
+   "sha256": "f7bfe31e0486a1c192b2f97817ffb0261f1a2590396ebea433377d2d33ad280e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q578527.json"
+  },
+  {
+   "path": "sources/wd_Q267871.json",
+   "retrieved_at": "2026-10-22T10:20:42.039277+00:00",
+   "sha256": "2a5e5aba8703800da6987fd27f1e632f8cdcdf76288240e098ad3bb3b1744c0c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q267871.json"
+  },
+  {
+   "path": "sources/wd_Q1023755.json",
+   "retrieved_at": "2026-10-22T10:20:04.550781+00:00",
+   "sha256": "fb9edd03fd4c93ffef9dc32e2c1683d8a09e58f4eaebc513d1e0b4307521839a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023755.json"
+  },
+  {
+   "path": "sources/wd_retry_3.json",
+   "retrieved_at": "2026-10-22T10:27:53.338389+00:00",
+   "sha256": "6eda21568494ba6cf38f529804f7133f145807d7bbf766bce26010764d28d786",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q840806%7CQ7546838%7CQ844464%7CQ7597217%7CQ909654%7CQ851399%7CQ520405%7CQ636935%7CQ27486331%7CQ846341%7CQ849832%7CQ849141%7CQ7917870%7CQ641220%7CQ5764708%7CQ344621%7CQ344608%7CQ27007%7CQ946655%7CQ604664%7CQ2869148%7CQ27485851%7CQ450625%7CQ27485494%7CQ2667459&format=json"
+  },
+  {
+   "path": "sources/wd_Q1973559.json",
+   "retrieved_at": "2026-10-22T10:20:33.686027+00:00",
+   "sha256": "e21815c5f075c48703d9512e12a56ca3c2403024a9ccba86965c8e47871d02a4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1973559.json"
+  },
+  {
+   "path": "sources/wd_Q1027029.json",
+   "retrieved_at": "2026-10-22T10:20:05.539039+00:00",
+   "sha256": "b17229d1f2cb6d0f46e1c4e84f3d1abb35ff08826a71836ca73af2a1644d4fa2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1027029.json"
+  },
+  {
+   "path": "sources/wd_Q1023741.json",
+   "retrieved_at": "2026-10-22T10:20:03.488761+00:00",
+   "sha256": "a5c529d10db795bc61dc4438e9108a46b42bbe87f27fab6bf1228dc9fe637fcd",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023741.json"
+  },
+  {
+   "path": "sources/wd_Q323774.json",
+   "retrieved_at": "2026-10-22T10:20:45.514140+00:00",
+   "sha256": "c2eafda2ab569c4112913e076248f2f3f3b53bc4090630ab424d10ad7fc92b80",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q323774.json"
+  },
+  {
+   "path": "sources/wd_Q108037.json",
+   "retrieved_at": "2026-10-22T10:20:09.806283+00:00",
+   "sha256": "aceeca40574b82af014c7113f4bc32f1ce4e0770f9b7e84791d36db7f5add56f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q108037.json"
+  },
+  {
+   "path": "sources/wd_Q1006029.json",
+   "retrieved_at": "2026-10-22T10:20:00.092600+00:00",
+   "sha256": "2793a5f735934eb98e6d44fab1ead937049a4d64fa034cf13affbf2af48f3f29",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1006029.json"
+  },
+  {
+   "path": "sources/wd_Q1027053.json",
+   "retrieved_at": "2026-10-22T10:20:06.229482+00:00",
+   "sha256": "5ff6f1d1fbfb204c9d796bd362cb7175bf04827757e908a07aff1035a9f42a1f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1027053.json"
+  },
+  {
+   "path": "sources/wd_Q26441.json",
+   "retrieved_at": "2026-10-22T10:20:41.420777+00:00",
+   "sha256": "16d9ccd5a8ecb13620edc890f84cd770500b078b2c1800b09efe530f3a88c1e2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q26441.json"
+  },
+  {
+   "path": "sources/wd_Q836513.json",
+   "retrieved_at": "2026-10-22T10:21:00.983984+00:00",
+   "sha256": "7acee2ab06f4ff9eee9e0a39101ed2b5e693415562af24c79a9f8b16a0fc249f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q836513.json"
+  },
+  {
+   "path": "sources/wd_Q203375.json",
+   "retrieved_at": "2026-10-22T10:20:34.377824+00:00",
+   "sha256": "721424feb96433bada4192a086a7207d094a0c5c711dc7dbfd4f38f6a2178003",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q203375.json"
+  },
+  {
+   "path": "sources/agency_web_receipts.json",
+   "retrieved_at": "2026-10-22T10:32:28.902778+00:00",
+   "sha256": "709b1ab200184fdac5a8685f649ee4c11ff4f3c011256c60ed8f3d72770a2551",
+   "url": "https://data.gov.lt/datasets/2938/?resource_version=327 ; https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright"
+  },
+  {
+   "path": "sources/LT_access_block.html",
+   "sha256": "3e7b3669b0d7dd21593d47c2bd9f238ca8b9a4f34d10689ff0ddd44949677879"
+  },
+  {
+   "licence": "CC BY 4.0",
+   "path": "sources/agency_web_receipts.json",
+   "quote": "Creative Commons Attribution 4.0",
+   "sha256": "709b1ab200184fdac5a8685f649ee4c11ff4f3c011256c60ed8f3d72770a2551",
+   "source_role": "country licence gate",
+   "status": "pass; source access held",
+   "url": "https://data.gov.lt/datasets/2938/?resource_version=327"
+  },
+  {
+   "path": "sources/wd_Q1023041.json",
+   "retrieved_at": "2026-10-22T10:20:03.263030+00:00",
+   "sha256": "6b82ed8e254c822b4cd8bd197f012961fd7a9293adaefb95f57462df36e3e0d5",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023041.json"
+  },
+  {
+   "path": "sources/wd_Q1004320.json",
+   "retrieved_at": "2026-10-22T10:19:59.139378+00:00",
+   "sha256": "3eeb71d4f37ff42dfc51ad916588a4609760bf3af0594e20689051f21477c4a9",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004320.json"
+  },
+  {
+   "path": "sources/wd_retry_4.json",
+   "retrieved_at": "2026-10-22T10:27:57.729975+00:00",
+   "sha256": "02f7817938842742e61d9836fc6d6034ab6ead223ebbf1f3d6e570b799564d8f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q804035%7CQ27485543%7CQ2356406%7CQ58880%7CQ286554%7CQ3284738%7CQ950639%7CQ47068%7CQ6314474%7CQ2089815%7CQ4115712%7CQ945473%7CQ776965%7CQ277936%7CQ2097414%7CQ27484028%7CQ835856%7CQ923393%7CQ27484102%7CQ957530%7CQ835848%7CQ9305847%7CQ977255%7CQ768416%7CQ384446&format=json"
+  },
+  {
+   "path": "sources/wd_Q1261509.json",
+   "retrieved_at": "2026-10-22T10:20:14.158738+00:00",
+   "sha256": "9016858af1844d89ec26d4ce4cd9721dea33993d2a56d6a36bf2f5c1fcee7e67",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1261509.json"
+  },
+  {
+   "path": "sources/wd_Q2044597.json",
+   "retrieved_at": "2026-10-22T10:20:34.745638+00:00",
+   "sha256": "c9af1ecbb61293f212b414e20e886e7db5336c480782f4bb304d836476528645",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2044597.json"
+  },
+  {
+   "path": "sources/wd_Q1390465.json",
+   "retrieved_at": "2026-10-22T10:20:18.749871+00:00",
+   "sha256": "c3f50b50e1a0f44aee5a94c16776a6ad6a89c8ccaf0c0551ed70ed7c93f26794",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1390465.json"
+  },
+  {
+   "path": "sources/wd_Q1004312.json",
+   "retrieved_at": "2026-10-22T10:19:58.566644+00:00",
+   "sha256": "7cb0f619f6e2d54ce27bc289d5ce467393b05023e0e8436511107cc1d9e0d3d0",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004312.json"
+  },
+  {
+   "path": "sources/wd_Q1351768.json",
+   "retrieved_at": "2026-10-22T10:20:16.263659+00:00",
+   "sha256": "17cfbdfb650df706dd8732b65e461ec188204f99d6f74c46bf487e19a74f2e6a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1351768.json"
+  },
+  {
+   "path": "sources/wd_Q1260423.json",
+   "retrieved_at": "2026-10-22T10:20:13.971478+00:00",
+   "sha256": "03111d3cc7a159e20bfa82cc13d9db1554abb49ba3577cafd50638a79402c234",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1260423.json"
+  },
+  {
+   "path": "sources/wd_Q1004298.json",
+   "retrieved_at": "2026-10-22T10:19:58.562671+00:00",
+   "sha256": "05c4646cf72ab3d99058245bdc30e69ee65059ed0236d22a2d5206b81bfabc1f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004298.json"
+  },
+  {
+   "path": "sources/wd_Q1461987.json",
+   "retrieved_at": "2026-10-22T10:20:20.742718+00:00",
+   "sha256": "3c145bb571ce8b50f997a4d6529ca1be15c13c4b84318962e9b6106d16b4918d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1461987.json"
+  },
+  {
+   "path": "sources/wd_Q1734094.json",
+   "retrieved_at": "2026-10-22T10:20:27.702742+00:00",
+   "sha256": "affd1a13e8c10981301af18d7da6ec6671c7c5106c8e1d23f0cc95a9c71a787a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1734094.json"
+  },
+  {
+   "path": "sources/wd_Q1461972.json",
+   "retrieved_at": "2026-10-22T10:20:20.525968+00:00",
+   "sha256": "3e5ff39bdcbea4c567bba89f12f4ae820c7fc41c7b53683fe4ae14493e490379",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1461972.json"
+  },
+  {
+   "path": "sources/wd_Q1788115.json",
+   "retrieved_at": "2026-10-22T10:20:29.881016+00:00",
+   "sha256": "c65e0766d0e3cad9c1c6f33082a9ac5900a13523304c6e4812b542076037e7e2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1788115.json"
+  },
+  {
+   "path": "sources/wd_Q1004295.json",
+   "retrieved_at": "2026-10-22T10:19:58.561249+00:00",
+   "sha256": "cb91e326c89e3430f3243af450c44e7755742076622e99106ca60ab533b8ca59",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004295.json"
+  },
+  {
+   "path": "sources/wd_Q46786.json",
+   "retrieved_at": "2026-10-22T10:20:52.240939+00:00",
+   "sha256": "ca32fc2e022f4f9afac27f94c788b6be6f2eb9abfac10a712a9b1988e395fc21",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q46786.json"
+  },
+  {
+   "path": "sources/wd_Q1646619.json",
+   "retrieved_at": "2026-10-22T10:20:24.312151+00:00",
+   "sha256": "04e467ac7e8d1c807f2586e3e0726532e17650beddedb0abe4b3bf15f53ca40b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1646619.json"
+  },
+  {
+   "path": "sources/wd_Q1656462.json",
+   "retrieved_at": "2026-10-22T10:20:24.910293+00:00",
+   "sha256": "bbf37eb36dd8e08e44d194171f4d23e3296ca6740a4efdaaa4d5a13a07e79a59",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1656462.json"
+  },
+  {
+   "path": "sources/wd_Q1351046.json",
+   "retrieved_at": "2026-10-22T10:20:16.056021+00:00",
+   "sha256": "9e975782c96a8299cbe249972681e7fe08f18fb6b8259a2c57f815e7265f732e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1351046.json"
+  },
+  {
+   "path": "sources/wd_Q2089785.json",
+   "retrieved_at": "2026-10-22T10:20:35.943758+00:00",
+   "sha256": "461bf3bc0b088efafb3fd63e225b39d882769824a14c81bb059975bb9276dda4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2089785.json"
+  },
+  {
+   "path": "sources/wd_Q118910.json",
+   "retrieved_at": "2026-10-22T10:20:12.965752+00:00",
+   "sha256": "b541f7775abfe290d1e482bcafb0a3315ca07306535962ed404cf7e77518d44f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q118910.json"
+  },
+  {
+   "path": "sources/wd_Q1004306.json",
+   "retrieved_at": "2026-10-22T10:19:58.562767+00:00",
+   "sha256": "434b510a461a303f37bfb0c8cebc25c5998cbf3d5bbf375e6f80031e1f5773f8",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004306.json"
+  },
+  {
+   "path": "sources/wd_Q1004328.json",
+   "retrieved_at": "2026-10-22T10:19:59.673471+00:00",
+   "sha256": "d230aad90b647efd3c775ca81274eab2d9a0e774152df0eb3644860266e84450",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004328.json"
+  },
+  {
+   "path": "sources/wd_Q2283574.json",
+   "retrieved_at": "2026-10-22T10:20:37.772198+00:00",
+   "sha256": "cf15d03e21de747c728a032227310118caedc58c53b9cc3626895bac6d4b187c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2283574.json"
+  },
+  {
+   "path": "sources/wd_Q1657116.json",
+   "retrieved_at": "2026-10-22T10:20:25.005454+00:00",
+   "sha256": "92a21b7447656aa8ddb5298d619c76228cc219686e716dbcbeccfdebc7b852d2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1657116.json"
+  },
+  {
+   "path": "sources/wd_Q2047414.json",
+   "retrieved_at": "2026-10-22T10:20:35.295740+00:00",
+   "sha256": "84a516f32a3b9dfa9e780e62e687a52fd1f59c610aeee88cf207c3a9126eebf6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2047414.json"
+  },
+  {
+   "path": "sources/wd_Q1719466.json",
+   "retrieved_at": "2026-10-22T10:20:27.529317+00:00",
+   "sha256": "df0759544ef9dff69fe65231e2d239374df7dd33bc3e4189bdb83690d90c6735",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1719466.json"
+  },
+  {
+   "path": "sources/wd_Q1351758.json",
+   "retrieved_at": "2026-10-22T10:20:16.263404+00:00",
+   "sha256": "e7195cf081b88db98addfffff63ac9bed5f7b03330c51172fb53f90ae4e62106",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1351758.json"
+  },
+  {
+   "path": "sources/wd_Q1028246.json",
+   "retrieved_at": "2026-10-22T10:20:06.763715+00:00",
+   "sha256": "df587503b96d59441dc65a15f13c3c104d4edcf39ddf93ff4576d91683aa358b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1028246.json"
+  },
+  {
+   "path": "sources/wd_Q318686.json",
+   "retrieved_at": "2026-10-22T10:20:44.800063+00:00",
+   "sha256": "dbc1991d4fda7f3c4ad4229049b1f31347534b91b39d03cd9b900ed91b8c934e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q318686.json"
+  },
+  {
+   "path": "sources/wd_retry_5.json",
+   "retrieved_at": "2026-10-22T10:28:02.268341+00:00",
+   "sha256": "79717d037b599951fc8266085ccd0fe8388b9368f8bef783aaa1cab42b4e8fd3",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2089619%7CQ2069355%7CQ2094071%7CQ712011%7CQ58790%7CQ394756%7CQ3446896%7CQ391626%7CQ5247193%7CQ2222616%7CQ2044626%7CQ379669%7CQ2577081%7CQ216%7CQ2356396%7CQ2455066%7CQ392772%7CQ393332%7CQ4178675&format=json"
+  },
+  {
+   "path": "sources/wd_Q157516.json",
+   "retrieved_at": "2026-10-22T10:20:23.361125+00:00",
+   "sha256": "ec5d909055b65443a13bb2eee1fa0da13915d30a9f88577727a78c971f0b1e62",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q157516.json"
+  },
+  {
+   "path": "sources/wd_Q1892074.json",
+   "retrieved_at": "2026-10-22T10:20:31.586687+00:00",
+   "sha256": "3bb364402f3c829c7be38a424b0f5c49c457b7369ab8b4f3db9f26260ad92bb1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1892074.json"
+  },
+  {
+   "path": "sources/wd_Q193787.json",
+   "retrieved_at": "2026-10-22T10:20:32.959157+00:00",
+   "sha256": "0c911726108e412be88ad498800ec5d0f9fe3b20bdd344751d207e667064429c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q193787.json"
+  },
+  {
+   "path": "sources/wd_Q191015.json",
+   "retrieved_at": "2026-10-22T10:20:31.688127+00:00",
+   "sha256": "e28753686496bc47ed33f59ceadddf4c5b36593db6297a014a6ea56c45b42707",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q191015.json"
+  },
+  {
+   "path": "sources/wd_Q213127.json",
+   "retrieved_at": "2026-10-22T10:20:36.585020+00:00",
+   "sha256": "6cee19093c0380da0e8280c4cea821979cf5084365179d564fbef2a2addab513",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q213127.json"
+  },
+  {
+   "path": "sources/wd_Q189157.json",
+   "retrieved_at": "2026-10-22T10:20:31.473420+00:00",
+   "sha256": "a399d7143465c314a279161b55a4e2d21b3dfaa723e0cb8ecb9b0093bc6c1b23",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q189157.json"
+  },
+  {
+   "path": "sources/wd_Q2000579.json",
+   "retrieved_at": "2026-10-22T10:20:33.748098+00:00",
+   "sha256": "c4de22410ea143538086848569bdb4c14e42db523a1d35e111380af31ba7bed6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2000579.json"
+  },
+  {
+   "path": "sources/wd_Q621181.json",
+   "retrieved_at": "2026-10-22T10:20:55.829976+00:00",
+   "sha256": "f88db1356f99946c98a0f93d9d708b82054c0beaca216b393b0a3f40c55838d6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q621181.json"
+  },
+  {
+   "path": "sources/wd_Q1104010.json",
+   "retrieved_at": "2026-10-22T10:20:10.681587+00:00",
+   "sha256": "5b44045466bedb77b9df679243b6e1951f84ed7e44d98cfc58d0ef655e9ce957",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1104010.json"
+  },
+  {
+   "path": "sources/wd_Q1004332.json",
+   "retrieved_at": "2026-10-22T10:19:59.777928+00:00",
+   "sha256": "b7503be4f38ae462f06a1c65359dae1db21fc7e69a4cad84523bb52baabdcd84",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1004332.json"
+  },
+  {
+   "path": "sources/wd_Q1994818.json",
+   "retrieved_at": "2026-10-22T10:20:33.729292+00:00",
+   "sha256": "ab3a84283cbe0eb7ea92d7014ea0f968d68cca4ce67cde83ec41e2d605ec1c8e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1994818.json"
+  },
+  {
+   "path": "sources/wd_Q118903.json",
+   "retrieved_at": "2026-10-22T10:20:12.756496+00:00",
+   "sha256": "0b122499561305c8e1f735c3aba5403122564aae1bc76919835e33cecf0c55ce",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q118903.json"
+  },
+  {
+   "path": "sources/wd_Q1024673.json",
+   "retrieved_at": "2026-10-22T10:20:04.700733+00:00",
+   "sha256": "f2240576d277c22ff70da43144fae73865c470e8da1d6695fc0824923ecacf85",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1024673.json"
+  },
+  {
+   "path": "sources/wd_Q203892.json",
+   "retrieved_at": "2026-10-22T10:20:34.446729+00:00",
+   "sha256": "7453a3d5acffc6c7f5d7417c6a472874132109ba0ee6568395a57aaefcb4c835",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q203892.json"
+  },
+  {
+   "path": "sources/wd_Q134712.json",
+   "retrieved_at": "2026-10-22T10:20:14.894374+00:00",
+   "sha256": "c7be475df9e2ae4c3a7b46355153b1b0452bdfd333eee570465048db8ac617da",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q134712.json"
+  },
+  {
+   "path": "sources/wd_Q393828.json",
+   "retrieved_at": "2026-10-22T10:20:50.582788+00:00",
+   "sha256": "df814dbcfc81dd0916af53350cae1cc053d3fc37b08e62115ae5da118295f80c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q393828.json"
+  },
+  {
+   "path": "sources/SI_px_table",
+   "retrieved_at": "2026-10-22T10:18:48.556083+00:00",
+   "sha256": "1610e1c8197da4f9caccc105e289040a3696f82d4f46c9317f1c3814453cfe90",
+   "url": "https://pxweb.stat.si/SiStatData/pxweb/en/Data/-/05C5002S.px"
+  },
+  {
+   "licence": "No named allowed licence in SURS copyright terms",
+   "path": "sources/agency_web_receipts.json",
+   "quote": "available royalty-free and are given for free use to all users",
+   "sha256": "709b1ab200184fdac5a8685f649ee4c11ff4f3c011256c60ed8f3d72770a2551",
+   "source_role": "country licence gate",
+   "status": "held",
+   "url": "https://www.stat.si/StatWeb/en/StaticPages/Index/Copyright"
+  },
+  {
+   "path": "sources/SK_monthly_info",
+   "retrieved_at": "2026-10-22T10:52:35.301110+00:00",
+   "sha256": "bef5d870f0524604f9c751422afbca0c645e1800c8a4d7d824add564a06e6de8",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/om7101mr/info"
+  },
+  {
+   "path": "sources/SK_monthly_codes_e_nuts15",
+   "retrieved_at": "2026-10-22T10:52:47.441808+00:00",
+   "sha256": "fdfbbbead3eaa5ec66aa2c89fffe8650b8dd995ee63fd967f220d4eb42285167",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/657fbf90-fe37-4c94-bfef-c89a42af6761/om7101mr/dimensionItemsInCube"
+  },
+  {
+   "path": "sources/SK_monthly_codes_e_indic",
+   "retrieved_at": "2026-10-22T10:52:46.874492+00:00",
+   "sha256": "6df21b51bd2ee29f0d66b43beac654f83a7bed013d9f9047b2631b0655a93312",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/999525c0-203e-4222-9474-dbad4291c6b5/om7101mr/dimensionItemsInCube"
+  },
+  {
+   "path": "sources/SK_monthly_codes_e_year",
+   "retrieved_at": "2026-10-22T10:52:47.489813+00:00",
+   "sha256": "bf82ba99b43feea8c246b39e9246cfa2f253f31972996b1157ad03d3a6867445",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/517b615c-547f-42b0-a180-2e33a09a7351/om7101mr/dimensionItemsInCube"
+  },
+  {
+   "path": "sources/SK_monthly_codes_e_month",
+   "retrieved_at": "2026-10-22T10:52:46.874533+00:00",
+   "sha256": "56c4cdb6e97afddd1d09fec71c6a311522607fd01699341243180bd457efe710",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/cf031806-9e84-4776-9dad-349152ff45a8/om7101mr/dimensionItemsInCube"
+  },
+  {
+   "path": "sources/SK_selected_end2026July",
+   "retrieved_at": "2026-10-22T10:53:10.184078+00:00",
+   "sha256": "22f1a07f64c6ba53697ed02ed64d4e52e01e530548aedbc94c2fd4d28ccd85db",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/om7101mr/EN"
+  },
+  {
+   "path": "sources/SK_geometry_licence",
+   "retrieved_at": "2026-10-22T10:29:34.468628+00:00",
+   "sha256": "5b008ce9bbf66f5bdd847182c0d116f51ff6dca6d843aefab4612f88c37bae9f",
+   "url": "https://www.skgeodesy.sk/geoportal-en/inspire/download-data/?forceBrowserDetector=blind"
+  },
+  {
+   "path": "sources/SK_boundaries_gpkg.zip",
+   "retrieved_at": "2026-10-22T10:31:08.706768+00:00",
+   "sha256": "5af228ff012fcc5c964de11345f84960292fe6166a5aeea3f84adb4c080241c6",
+   "url": "https://opendata.skgeodesy.sk/static/INSPIRE/Administrative_units/inspire_au_gpkg.zip"
+  },
+  {
+   "path": "sources/SK_terms",
+   "retrieved_at": "2026-10-22T10:18:24.343503+00:00",
+   "sha256": "f421239de8e5f0a47b3d5af5a10ffdd04ef529ec4bd98e2045d8d7df4e1daa20",
+   "url": "https://statdat.statistics.sk/help/accessibility.html"
+  },
+  {
+   "path": "sources/SK_catalogue_page0",
+   "retrieved_at": "2026-10-22T10:51:30.276481+00:00",
+   "sha256": "8a5620e0334e258dfde13073b619fbaa68654bf7d3f63eb9caf52c4f24e3e9f0",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page1",
+   "retrieved_at": "2026-10-22T10:51:30.275078+00:00",
+   "sha256": "4df9d9ab470e8264749dea4800bfaad396d21f0b7d8ebb17e1ea14ddaa4c5370",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page2",
+   "retrieved_at": "2026-10-22T10:51:30.276567+00:00",
+   "sha256": "a8905f23cd04ab9eb6706403a386c161f0c12cd4c0c4b9b838f77834d4fd8996",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page3",
+   "retrieved_at": "2026-10-22T10:51:30.276425+00:00",
+   "sha256": "30b96ecf7213a97f4480fac2bd6fac22b30a03c7a5d4cfe3131eb84c4ef362fe",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page4",
+   "retrieved_at": "2026-10-22T10:51:31.485266+00:00",
+   "sha256": "9ccdc220d53e8abae8dc6e86319ecd116c17b2a0593c4d562eb91c750e0db764",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page5",
+   "retrieved_at": "2026-10-22T10:51:31.485437+00:00",
+   "sha256": "95a7d5a28b849217a8453bb8007133cc55389a7ac5de08dd112666c4d8acf81a",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page6",
+   "retrieved_at": "2026-10-22T10:51:31.490490+00:00",
+   "sha256": "e3443231fb80f87f8b9db28ef3149520e2d8208c96d049804f939dd73ab1fb66",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/SK_catalogue_page7",
+   "retrieved_at": "2026-10-22T10:51:31.495859+00:00",
+   "sha256": "8c6923d736ca29d1715b01173de869f630af6c6d28605b2f96a5c8da8c348415",
+   "url": "https://statdata.statistics.sk/public/api/dc/public"
+  },
+  {
+   "path": "sources/wd_Q144983.json",
+   "retrieved_at": "2026-10-22T10:20:19.845286+00:00",
+   "sha256": "59f3b8155d88b9b51198495f494e5c1ea125ced1caef62ad03bfeca261a8e96d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q144983.json"
+  },
+  {
+   "licence": "CC BY 4.0",
+   "path": "sources/SK_terms",
+   "quote": "Creative Commons Attribution License (cc-by) 4.0",
+   "sha256": "f421239de8e5f0a47b3d5af5a10ffdd04ef529ec4bd98e2045d8d7df4e1daa20",
+   "source_role": "country licence gate",
+   "status": "pass",
+   "url": "https://statdat.statistics.sk/help/accessibility.html"
+  },
+  {
+   "path": "sources/SK_selected_end2026July_page1",
+   "retrieved_at": "2026-10-22T10:53:11.370906+00:00",
+   "sha256": "943b15fa719a39df18206b591f570e8c86d7bb355837ea25912596697612a09f",
+   "url": "https://statdata.statistics.sk/public/api/dc/public/om7101mr/EN"
+  },
+  {
+   "path": "sources/wd_Q1780.json",
+   "retrieved_at": "2026-10-22T10:20:29.022646+00:00",
+   "sha256": "bb6e61e380a3f97542d4917a36db4a2b3bf8d9f6a15d7fd2e300b8f08bf09e3f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1780.json"
+  },
+  {
+   "path": "sources/wd_Q1091778.json",
+   "retrieved_at": "2026-10-22T10:20:10.678245+00:00",
+   "sha256": "d35c925642aa129dec0efb9b319e15b5705cb0a2e8836a1c4f241e1ea265d332",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1091778.json"
+  },
+  {
+   "path": "sources/wd_Q135818.json",
+   "retrieved_at": "2026-10-22T10:20:17.736051+00:00",
+   "sha256": "612bc5fce9df36d08f8ba1f2be0b0a05709515bf78c4ee90f01d0aad8de266b0",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q135818.json"
+  },
+  {
+   "path": "sources/wd_Q1035167.json",
+   "retrieved_at": "2026-10-22T10:20:06.799482+00:00",
+   "sha256": "d07ef9c199730d0edaa655a2b56cce3d8fcc5d332b136644561bf866394c3bd4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1035167.json"
+  },
+  {
+   "path": "sources/wd_Q11857.json",
+   "retrieved_at": "2026-10-22T10:20:11.929063+00:00",
+   "sha256": "ca0b737e7a839bafb6cbb095215f2819c7b7d88e1cef0d6b4714badb8f6c1b60",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11857.json"
+  },
+  {
+   "path": "sources/wd_Q531445.json",
+   "retrieved_at": "2026-10-22T10:20:53.975748+00:00",
+   "sha256": "74caec1b03e4d0bb71f777f038457e3ecd805cf0c50a04b092bafafeade6f386",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q531445.json"
+  },
+  {
+   "path": "sources/wd_Q911359.json",
+   "retrieved_at": "2026-10-22T10:21:04.062215+00:00",
+   "sha256": "7a79851eb2f52044c8fe3240fdae2037677bdc086090afb9c43675f7d323932e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q911359.json"
+  },
+  {
+   "path": "sources/wd_Q646393.json",
+   "retrieved_at": "2026-10-22T10:20:56.339114+00:00",
+   "sha256": "5fe39caf1b2d576387d076b584e41d2270e420acd49f548597998b585cc9556f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q646393.json"
+  },
+  {
+   "path": "sources/wd_Q389397.json",
+   "retrieved_at": "2026-10-22T10:20:49.005440+00:00",
+   "sha256": "93b96c569e7c8f5c68ba4580d86651a713bdd32fa524aeef394de34cfd8ab476",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q389397.json"
+  },
+  {
+   "path": "sources/wd_Q460767.json",
+   "retrieved_at": "2026-10-22T10:20:51.674919+00:00",
+   "sha256": "deddd47db33e1e680fb3f412c4afdc3dce3ed9fcc72a1cde984af0b8f3b6b104",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q460767.json"
+  },
+  {
+   "path": "sources/wd_Q846424.json",
+   "retrieved_at": "2026-10-22T10:21:02.264519+00:00",
+   "sha256": "ef6cfba61bd135861354509f2400438ee4851289022861ee986c2bc448b2ed66",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q846424.json"
+  },
+  {
+   "path": "sources/wd_Q754773.json",
+   "retrieved_at": "2026-10-22T10:20:58.597818+00:00",
+   "sha256": "6698d3a9ae5373f20848ce4d58fe1ffc53c3ee7b0f137fa874dd07a000a88978",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q754773.json"
+  },
+  {
+   "path": "sources/wd_Q1020068.json",
+   "retrieved_at": "2026-10-22T10:20:01.970520+00:00",
+   "sha256": "1aa7abd226670f46ac2b513d7413b9dccb1821ddcefe26ba9b0fa97779f71b7b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1020068.json"
+  },
+  {
+   "path": "sources/wd_Q339642.json",
+   "retrieved_at": "2026-10-22T10:20:47.209722+00:00",
+   "sha256": "2a19d0839bebe1cff8df19c1c5e1fe0b803a0f8c6e4aafa5651bdb20e1071cc6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q339642.json"
+  },
+  {
+   "path": "sources/wd_Q374095.json",
+   "retrieved_at": "2026-10-22T10:20:48.318033+00:00",
+   "sha256": "1d9e9d95b9c5d5a35f8c36f4faa7a9d18051e38a09419ce619d5f711ed825c28",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q374095.json"
+  },
+  {
+   "path": "sources/wd_Q262165.json",
+   "retrieved_at": "2026-10-22T10:20:40.856724+00:00",
+   "sha256": "ab3b57fcc045b7a16eae06b539ca8d4485cacc317929b276b284599e29bc214c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q262165.json"
+  },
+  {
+   "path": "sources/wd_Q25409.json",
+   "retrieved_at": "2026-10-22T10:20:39.009425+00:00",
+   "sha256": "21b83a9200e5ac4329c6d7107dabe8fccf5b85bfa03bdf083cc8fea276fdce3b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q25409.json"
+  },
+  {
+   "path": "sources/wd_Q1071509.json",
+   "retrieved_at": "2026-10-22T10:20:09.019549+00:00",
+   "sha256": "9ef1e7b42f7f4441c908b793dc6b67791eeee744d8cba4ede0919d83701d232e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1071509.json"
+  },
+  {
+   "path": "sources/wd_Q756667.json",
+   "retrieved_at": "2026-10-22T10:20:59.204861+00:00",
+   "sha256": "d2dbf588f658d37509334edb0c1fc55379b893c0f573706de9ce7c78df3727aa",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q756667.json"
+  },
+  {
+   "path": "sources/wd_Q1070300.json",
+   "retrieved_at": "2026-10-22T10:20:08.188208+00:00",
+   "sha256": "8897012b41179bc0a0abb3dcb2c9a70d784ad79d7787edcca3a5de189051a933",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1070300.json"
+  },
+  {
+   "path": "sources/wd_Q242478.json",
+   "retrieved_at": "2026-10-22T10:20:38.392630+00:00",
+   "sha256": "dad4f6b382c4c44bdd877ee6b1d04e90481298a90f5bc41c530b5fcb965fd21f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q242478.json"
+  },
+  {
+   "path": "sources/wd_Q272040.json",
+   "retrieved_at": "2026-10-22T10:20:42.564018+00:00",
+   "sha256": "99ee2e832b4eddf4a55955bb20de15606e20ac69a3072ca7d904f9ee6109b523",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q272040.json"
+  },
+  {
+   "path": "sources/wd_Q1068179.json",
+   "retrieved_at": "2026-10-22T10:20:08.038977+00:00",
+   "sha256": "bc715ea44e6982317b85dad53bb67a4b0603cc496ba2e7e5a00362404672e696",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1068179.json"
+  },
+  {
+   "path": "sources/wd_Q135727.json",
+   "retrieved_at": "2026-10-22T10:20:17.395091+00:00",
+   "sha256": "1ef14092d82cd99836eac762182eef468ee40f214a6d27bc5297f1f891903244",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q135727.json"
+  },
+  {
+   "path": "sources/wd_Q942639.json",
+   "retrieved_at": "2026-10-22T10:21:04.771111+00:00",
+   "sha256": "afa7c2ed4545fac1612929285ff7e037fc3efba1fd567c6d12bfce1345d756d5",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q942639.json"
+  },
+  {
+   "path": "sources/wd_Q1091685.json",
+   "retrieved_at": "2026-10-22T10:20:09.824426+00:00",
+   "sha256": "2ca6f7d8879e0cccb5e7b53bef5e0cc5ceaa72d400a3e5cd149bce36b9219f46",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1091685.json"
+  },
+  {
+   "path": "sources/wd_Q852324.json",
+   "retrieved_at": "2026-10-22T10:21:03.426462+00:00",
+   "sha256": "ef7b1758db1b8064ee144f8c036cca97a038b659d6296fc5b5e9b54cd03742cc",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q852324.json"
+  },
+  {
+   "path": "sources/wd_Q26119.json",
+   "retrieved_at": "2026-10-22T10:20:40.331492+00:00",
+   "sha256": "72978cb846008d399e0b7f27e0842efc9f825dcef614db9ed765b68cf8bfa4f2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q26119.json"
+  },
+  {
+   "path": "sources/wd_Q1091714.json",
+   "retrieved_at": "2026-10-22T10:20:09.969964+00:00",
+   "sha256": "f7d3b088f337eebf5d06a4c6dd8a26e91255831081e582a76ba2a5902c2c621e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1091714.json"
+  },
+  {
+   "path": "sources/wd_Q847213.json",
+   "retrieved_at": "2026-10-22T10:21:02.835374+00:00",
+   "sha256": "6e1ea434403de010c1c79a47c37321ded1f06f33bafb6b4ba1462e6a7c9f6647",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q847213.json"
+  },
+  {
+   "path": "sources/wd_Q1020253.json",
+   "retrieved_at": "2026-10-22T10:20:02.533889+00:00",
+   "sha256": "47c4592068fc516d4b473a4204d8f70b803614feb16d44b2ec41a1e48fc8703d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1020253.json"
+  },
+  {
+   "path": "sources/wd_Q1070645.json",
+   "retrieved_at": "2026-10-22T10:20:08.581611+00:00",
+   "sha256": "e9c3d5c4efda608caa5ad2a45c0e2eecaa8cb92efd382ea155e4412e20e576d4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1070645.json"
+  },
+  {
+   "path": "sources/wd_Q145002.json",
+   "retrieved_at": "2026-10-22T10:20:19.937038+00:00",
+   "sha256": "b8031040e25033111d82f04a2a69de62e2bff2a038f029edf7b53e12d4cabe2a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q145002.json"
+  },
+  {
+   "path": "sources/wd_Q182903.json",
+   "retrieved_at": "2026-10-22T10:20:30.590997+00:00",
+   "sha256": "e9ea2fb2c9a288b4ed372a11a75897deab1d49f8ac3a5619aa8254d71b572279",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q182903.json"
+  },
+  {
+   "path": "sources/wd_Q135647.json",
+   "retrieved_at": "2026-10-22T10:20:16.740372+00:00",
+   "sha256": "06194a6579ea4924d691dc5cec23244c12ec6e9d1b094d41149aee5c060e0c74",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q135647.json"
+  },
+  {
+   "path": "sources/wd_Q1187936.json",
+   "retrieved_at": "2026-10-22T10:20:12.153904+00:00",
+   "sha256": "9c786f619d9311b726c29d62de1b26cf547d25c31e9c522ad4537bedca79af9a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1187936.json"
+  },
+  {
+   "path": "sources/wd_Q746119.json",
+   "retrieved_at": "2026-10-22T10:20:57.954511+00:00",
+   "sha256": "dce1ff324ef5d7352b101aabbb2759d5104bb38b3291c1fe0966cd16b7202499",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q746119.json"
+  },
+  {
+   "path": "sources/wd_Q11874.json",
+   "retrieved_at": "2026-10-22T10:20:12.022627+00:00",
+   "sha256": "76a21f4100afdf2d083e80c377db3cc82ed14540f2d174166dcc4c29617e2be4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11874.json"
+  },
+  {
+   "path": "sources/wd_Q337478.json",
+   "retrieved_at": "2026-10-22T10:20:46.647931+00:00",
+   "sha256": "65bea1c9037f579a8dfa73eca3265daff1bb970b9019b66223d410a9d90e376f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q337478.json"
+  },
+  {
+   "path": "sources/wd_Q1192851.json",
+   "retrieved_at": "2026-10-22T10:20:12.973084+00:00",
+   "sha256": "5f4ee2bf27acd2e7e4ec622c90bb6ec38828f99c1f319977a1158858113650b9",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1192851.json"
+  },
+  {
+   "path": "sources/wd_Q344678.json",
+   "retrieved_at": "2026-10-22T10:20:47.699844+00:00",
+   "sha256": "3ccb35e9f13683f5c1714cebd533607f1254ba30a0f82a156cf33f0ed5ffbe6e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q344678.json"
+  },
+  {
+   "path": "sources/wd_Q392704.json",
+   "retrieved_at": "2026-10-22T10:20:49.556588+00:00",
+   "sha256": "301218c7b6a8e6ad123d615339441cb050300e533d91aab69565e2c4ee75228e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q392704.json"
+  },
+  {
+   "path": "sources/wd_Q393421.json",
+   "retrieved_at": "2026-10-22T10:20:50.069783+00:00",
+   "sha256": "7223184b0193e96d262d932daa11b5c55b0f4648986d7d72a82288520d4336a5",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q393421.json"
+  },
+  {
+   "path": "sources/wd_Q25797.json",
+   "retrieved_at": "2026-10-22T10:20:39.364191+00:00",
+   "sha256": "9eba78c5646bdfd4a6ef4df037bcf5e52da3bb42218a3212980412f7b39152a3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q25797.json"
+  },
+  {
+   "licence": "CC BY 4.0",
+   "path": "sources/IS_licence",
+   "quote": "Creative Commons Attribution 4.0 International (CC BY 4.0) license.",
+   "sha256": "4e79958de7dd429df7f002f092888549330e8280a22286bb458cba86d05fdf81",
+   "source_role": "country licence gate",
+   "status": "pass",
+   "url": "https://statice.is/publications/open-data-access/"
+  },
+  {
+   "path": "sources/wd_Q107398.json",
+   "retrieved_at": "2026-10-22T10:20:09.189310+00:00",
+   "sha256": "f9bc8f11f20e6bb3be9a9d860a9057b4afca2de8173b74cbb394a884389871b1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q107398.json"
+  },
+  {
+   "path": "sources/wd_Q29042.json",
+   "retrieved_at": "2026-10-22T10:20:44.321036+00:00",
+   "sha256": "e1d88cdef592f0e986bc15a5c10f6423251d64d7e0b7a96bb16f624cd0299039",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q29042.json"
+  },
+  {
+   "path": "sources/IS_licence",
+   "retrieved_at": "2026-10-22T10:18:24.343327+00:00",
+   "sha256": "4e79958de7dd429df7f002f092888549330e8280a22286bb458cba86d05fdf81",
+   "url": "https://statice.is/publications/open-data-access/"
+  },
+  {
+   "path": "sources/IS_timeline_metadata",
+   "retrieved_at": "2026-10-22T10:44:46.712285+00:00",
+   "sha256": "8c7fa1ab5409abd98882361eb4411850751ea73de8e4c3ea223f9685fcac1213",
+   "url": "https://geoportal.gis.is/geonetwork/srv/api/records/%7BC544E41F-CDEF-4BA0-AE14-294152F2E91A%7D/formatters/xml"
+  },
+  {
+   "path": "sources/IS_natt_open_data",
+   "retrieved_at": "2026-10-22T10:46:26.382367+00:00",
+   "sha256": "3766f2b670118584d23e7c41c3998b9d0e5f1bb2d706ddf30e043b015c3718d2",
+   "url": "https://www.natt.is/is/midlun/opin-gogn"
+  },
+  {
+   "path": "sources/IS_timeline_bounds",
+   "retrieved_at": "2026-10-22T10:24:52.307876+00:00",
+   "sha256": "ae953ca210489ca1489f66205291809330b40e4ec1f4679f0d059167aa07e1c3",
+   "url": "https://gis.lmi.is/geoserver/wfs?service=WFS&request=GetFeature&version=2.0.0&typeNames=LMI_vektor:Sveitarfelog_timalina&outputFormat=application%2Fjson&srsName=EPSG%3A4326"
+  },
+  {
+   "path": "sources/IS_quarter_data",
+   "retrieved_at": "2026-10-22T10:22:12.076792+00:00",
+   "sha256": "2a005729bf7269198e47efe197048766490ca0b96dd5ff3caad7bb1cf905ad37",
+   "url": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN10001.px"
+  },
+  {
+   "path": "sources/IS_quarter_meta",
+   "retrieved_at": "2026-10-22T10:20:24.796126+00:00",
+   "sha256": "c82aed76a55a65d9cc62f037a59b6b8a4f5aae43742a9e8c98d8a56db2b2adab",
+   "url": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN10001.px"
+  },
+  {
+   "path": "sources/IS_quarter_page",
+   "retrieved_at": "2026-10-22T10:44:15.095768+00:00",
+   "sha256": "6e63e0289d0dc842a1d097de04a8025f1dd024b9878ef6bbc88c1e114be40da8",
+   "url": "https://px.hagstofa.is/pxen/pxweb/en/Ibuar/Ibuar__mannfjoldi__2_byggdir__sveitarfelog/MAN10001.px/"
+  },
+  {
+   "path": "sources/IS_muni_data",
+   "retrieved_at": "2026-10-22T10:22:12.330538+00:00",
+   "sha256": "aaa73cb4fdce88af56f2f492f04f395dc50d632fa3b81d71274b6d87b7df3c11",
+   "url": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px"
+  },
+  {
+   "path": "sources/IS_muni_meta",
+   "retrieved_at": "2026-10-22T10:20:24.795996+00:00",
+   "sha256": "a7ee09a3a777d7f87892380480aa994b37a083eb595bac44d01a6be199ba1f38",
+   "url": "https://px.hagstofa.is/pxen/api/v1/en/Ibuar/mannfjoldi/2_byggdir/sveitarfelog/MAN02005.px"
+  },
+  {
+   "path": "sources/wd_Q1157787.json",
+   "retrieved_at": "2026-10-22T10:20:11.079375+00:00",
+   "sha256": "4249d3b51639280212e72ffebd2fef33907577e62c5b3be161099a34d6ad19cc",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1157787.json"
+  },
+  {
+   "path": "sources/wd_Q1158104.json",
+   "retrieved_at": "2026-10-22T10:20:11.410593+00:00",
+   "sha256": "288794e9f523a6ea728984064803f858de536315e97e3bf49499e22d30bce6c7",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1158104.json"
+  },
+  {
+   "path": "sources/wd_Q14453.json",
+   "retrieved_at": "2026-10-22T10:20:19.496423+00:00",
+   "sha256": "85f2fadbb6c69c783f1202ae164bca8cdbb5ae8d4ee8c178328ae19339a83f4d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q14453.json"
+  },
+  {
+   "path": "sources/wd_Q1385816.json",
+   "retrieved_at": "2026-10-22T10:20:18.033978+00:00",
+   "sha256": "a092e58cfb2b45f6afe06f64b6a848b8873e5ee5ff06fb90a94ce7b8f4f73b3a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1385816.json"
+  },
+  {
+   "path": "sources/wd_Q510141.json",
+   "retrieved_at": "2026-10-22T10:20:53.310001+00:00",
+   "sha256": "1367e13d0259f93c2618a1af364d741ef78990f02f0f5558379d083b0297773a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q510141.json"
+  },
+  {
+   "path": "sources/wd_Q1146805.json",
+   "retrieved_at": "2026-10-22T10:20:10.746725+00:00",
+   "sha256": "eb8ff2ee7b24397f4af61d67bf75c3edd59f02196651e4e6b4f7dd4675c85842",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1146805.json"
+  },
+  {
+   "path": "sources/wd_Q1429028.json",
+   "retrieved_at": "2026-10-22T10:20:18.791488+00:00",
+   "sha256": "15d32baa42040adfa1c8a857d27815cca567d3e505a7efb97c1589f108724266",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1429028.json"
+  },
+  {
+   "path": "sources/wd_Q962730.json",
+   "retrieved_at": "2026-10-22T10:21:05.327320+00:00",
+   "sha256": "ae7e507221f5237ff484339eca7e6bd310e1aa72c99094a2df29c0c5f33ce8a0",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q962730.json"
+  },
+  {
+   "path": "sources/wd_Q186142.json",
+   "retrieved_at": "2026-10-22T10:20:30.955853+00:00",
+   "sha256": "a5227cfa0be2049860ee60269ebbbfe967ab92c4091cb57f357bbb114912ba2a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q186142.json"
+  },
+  {
+   "path": "sources/wd_Q1495025.json",
+   "retrieved_at": "2026-10-22T10:20:22.023547+00:00",
+   "sha256": "a0f2f30ad0f4a5f6a91eb3be5b0d804a594cfc312e0229a5b18da0c78fe69faf",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1495025.json"
+  },
+  {
+   "path": "sources/wd_Q1551596.json",
+   "retrieved_at": "2026-10-22T10:20:22.696514+00:00",
+   "sha256": "5ba2d27f7d5094202caaf8f031d63100b6398032cb2c0f765a0b27ebc2bcb887",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1551596.json"
+  },
+  {
+   "path": "sources/wd_Q103725.json",
+   "retrieved_at": "2026-10-22T10:20:06.838223+00:00",
+   "sha256": "aef51af5c5a7fcaad87d00dd86a23aad2583d65c70a2256ef7d1b630afa3f432",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q103725.json"
+  },
+  {
+   "path": "sources/wd_Q1602357.json",
+   "retrieved_at": "2026-10-22T10:20:23.363540+00:00",
+   "sha256": "ea37211d5d8da66b8b6cec079a9095bd1056d94db773587113d572d10ecf2030",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1602357.json"
+  },
+  {
+   "path": "sources/wd_Q1300938.json",
+   "retrieved_at": "2026-10-22T10:20:14.206209+00:00",
+   "sha256": "badc281397b3a0b7cff97c725bd3386748182979e2a12375a36cbaa1a00d3f7c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1300938.json"
+  },
+  {
+   "path": "sources/wd_Q278600.json",
+   "retrieved_at": "2026-10-22T10:20:43.817944+00:00",
+   "sha256": "d4c81e3401ed7ef9bd9623106e02bfae25e3f9d0de6e4466dcad6273c4750263",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q278600.json"
+  },
+  {
+   "path": "sources/wd_Q1025701.json",
+   "retrieved_at": "2026-10-22T10:20:05.328143+00:00",
+   "sha256": "0248cdfb8aa19e045b3989873dd4a0eae70b315ebe20eb63c4825d1d68a1c96a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1025701.json"
+  },
+  {
+   "path": "sources/wd_Q817118.json",
+   "retrieved_at": "2026-10-22T10:21:00.427711+00:00",
+   "sha256": "2cf1fc6f88f3be9cae4b77624f07c7449208826dcdef27a1be06639e29029d53",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q817118.json"
+  },
+  {
+   "path": "sources/wd_Q1432846.json",
+   "retrieved_at": "2026-10-22T10:20:19.089059+00:00",
+   "sha256": "5e8943bba78f8fa7980e824299bd676489924ef554adb77be8e9205739c3ee3b",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1432846.json"
+  },
+  {
+   "path": "sources/wd_Q1652058.json",
+   "retrieved_at": "2026-10-22T10:20:24.671031+00:00",
+   "sha256": "4a30b7afaec6098d34470816c06729aab22d3a2fac8d694c5acecaf0e9e0d4d8",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1652058.json"
+  },
+  {
+   "path": "sources/wd_Q1533546.json",
+   "retrieved_at": "2026-10-22T10:20:22.342192+00:00",
+   "sha256": "15dc39ecb7b0533a0c5cddaa340b289ad4b9f37258e7991c52edb3ab8e4f8c8c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1533546.json"
+  },
+  {
+   "path": "sources/wd_Q170693.json",
+   "retrieved_at": "2026-10-22T10:20:26.109498+00:00",
+   "sha256": "224901c1053f9f8b8857aa09729b9677dabcc6b58553b6d73b5e475af5b591a6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q170693.json"
+  },
+  {
+   "path": "sources/wd_Q1744094.json",
+   "retrieved_at": "2026-10-22T10:20:27.958910+00:00",
+   "sha256": "90ca0ca47a989766e8da0f33f51416c2f93416049e9435bf44292e3438d3a20f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1744094.json"
+  },
+  {
+   "path": "sources/wd_Q163852.json",
+   "retrieved_at": "2026-10-22T10:20:23.966690+00:00",
+   "sha256": "9205e9954180ba3cbc85db97e31e2165ea0378e9682474aa786e07d6d43095b1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q163852.json"
+  },
+  {
+   "path": "sources/wd_Q1713264.json",
+   "retrieved_at": "2026-10-22T10:20:27.311255+00:00",
+   "sha256": "36d7659bf6b25ac14c5bd97bb7ae5d42391bb093265d737d4e2a04493cd98217",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1713264.json"
+  },
+  {
+   "path": "sources/wd_Q1486343.json",
+   "retrieved_at": "2026-10-22T10:20:21.334483+00:00",
+   "sha256": "cf0b0fe58c399c14d13a5c1c70329600a60e002fc510ec0be854ef1a7792dd27",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1486343.json"
+  },
+  {
+   "path": "sources/wd_Q176728.json",
+   "retrieved_at": "2026-10-22T10:20:28.845386+00:00",
+   "sha256": "84b038c48fb726e8a4a4c0ed2862bd74fb6f0b318361f0551fe48a03dd6ccfdb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q176728.json"
+  },
+  {
+   "path": "sources/wd_Q1727215.json",
+   "retrieved_at": "2026-10-22T10:20:27.674099+00:00",
+   "sha256": "a44ccfb660163fe29d9c02ed28ca3605563723fac55fbcc7c33a1a057e606a44",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1727215.json"
+  },
+  {
+   "path": "sources/wd_Q1764.json",
+   "retrieved_at": "2026-10-22T10:20:28.744819+00:00",
+   "sha256": "2fbf7be95a80dedebe487d9d371f1d4bb4832fbee08d99266bfa26b5bf8902a2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1764.json"
+  },
+  {
+   "path": "sources/wd_Q1019443.json",
+   "retrieved_at": "2026-10-22T10:20:01.295983+00:00",
+   "sha256": "4257f9b9ae34d42fd10dee429fe5ba72f3d9d62ee60abe7c74bd1d6bc9d78ccc",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019443.json"
+  },
+  {
+   "path": "sources/wd_Q1019466.json",
+   "retrieved_at": "2026-10-22T10:20:01.877377+00:00",
+   "sha256": "00ad8db02edd4916e34aa7b0bb0f02aeaedb57034487797235775848e1babe9a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019466.json"
+  },
+  {
+   "path": "sources/wd_Q192898.json",
+   "retrieved_at": "2026-10-22T10:20:32.678985+00:00",
+   "sha256": "dd259f899f1b371ed32e530d152f02db56454208ad6f18bc10eaab931e417364",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q192898.json"
+  },
+  {
+   "path": "sources/wd_Q1887662.json",
+   "retrieved_at": "2026-10-22T10:20:31.335017+00:00",
+   "sha256": "c40434dd6e0ff3257e60380a4b867d04ecd6906ba4997cda6914d6d3ccc11868",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1887662.json"
+  },
+  {
+   "path": "sources/wd_Q591081.json",
+   "retrieved_at": "2026-10-22T10:20:55.202649+00:00",
+   "sha256": "f8397612924c3ee36ccf2b0770cd15e3baf5286dabc478151660984e99c76573",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q591081.json"
+  },
+  {
+   "path": "sources/wd_Q1310512.json",
+   "retrieved_at": "2026-10-22T10:20:14.418578+00:00",
+   "sha256": "41a7d5512e63dc385ce226f5baab783852cb0de1973c89032ebb1af0e386edb1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1310512.json"
+  },
+  {
+   "path": "sources/wd_Q1314540.json",
+   "retrieved_at": "2026-10-22T10:20:14.821341+00:00",
+   "sha256": "ca70f69158660ae42b75dd8d55651f63ab15d6d522a2fda6dd973b889b798b5c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1314540.json"
+  },
+  {
+   "path": "sources/wd_Q1019452.json",
+   "retrieved_at": "2026-10-22T10:20:01.789059+00:00",
+   "sha256": "99cb0fad718893280f86f2a89c3836bf3dda0090c9791938e9618001427d51ab",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019452.json"
+  },
+  {
+   "path": "sources/wd_Q1225664.json",
+   "retrieved_at": "2026-10-22T10:20:13.592556+00:00",
+   "sha256": "3dfb06f1127448a6668a8c8d434685217ec3feec0ad7908a3d454d53f0fbf60c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1225664.json"
+  },
+  {
+   "path": "sources/wd_Q1549436.json",
+   "retrieved_at": "2026-10-22T10:20:22.549567+00:00",
+   "sha256": "c4224388b209d74b0b699df34e1d2150d7ad13575d6e28d89afbbf8e86d56deb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1549436.json"
+  },
+  {
+   "path": "sources/wd_Q1798705.json",
+   "retrieved_at": "2026-10-22T10:20:30.112903+00:00",
+   "sha256": "d057c445aa569cdce9bcfd96d0d0fb2966755d620a8d89ad6583dcaf03d1b5ff",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1798705.json"
+  },
+  {
+   "path": "sources/wd_Q1019448.json",
+   "retrieved_at": "2026-10-22T10:20:01.334690+00:00",
+   "sha256": "0519617c9c867db653b843e53546aa55ac4ee3808f353ab9c6ab0cab2711fdce",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019448.json"
+  },
+  {
+   "path": "sources/wd_Q139045.json",
+   "retrieved_at": "2026-10-22T10:20:18.215352+00:00",
+   "sha256": "1c0fc1f8e71e6628a09aecfff2fd109c2d9c6ed5b3704836f64d2dc1b2f8fae7",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q139045.json"
+  },
+  {
+   "path": "sources/wd_Q106896.json",
+   "retrieved_at": "2026-10-22T10:20:08.152865+00:00",
+   "sha256": "090db439a5518ea2f11f358dcfa445f7b8ec8e13e1102208a94f9ca804e5a049",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q106896.json"
+  },
+  {
+   "path": "sources/wd_Q335325.json",
+   "retrieved_at": "2026-10-22T10:20:46.152464+00:00",
+   "sha256": "95f04358cdcd0520bd53e3c96b38d69c8b73a7ec08d7ea7e83ff332423cb53f5",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q335325.json"
+  },
+  {
+   "path": "sources/wd_Q1602650.json",
+   "retrieved_at": "2026-10-22T10:20:23.870950+00:00",
+   "sha256": "021a14b9ad6e843ecfe15da33d859c4eef30d18f6ed3dd6385a43b0a8a8161af",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1602650.json"
+  }
+ ]
+}

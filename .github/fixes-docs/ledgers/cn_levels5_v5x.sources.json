@@ -1,0 +1,2260 @@
+{
+ "ledger": "cn_levels5_v5x.jsonl",
+ "records": 15,
+ "base_commit": [
+  "cfb2353ac2f92e419d7fc884b8836f3041b59ac4"
+ ],
+ "full_ledger_sha256": "cdd04b33cb53f4c0bf26ca9acd8d52759db05c27bbe388d9383d2e60fdf83489",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "own current P31 statutory tier, retained from archived own item",
+  "unchanged explicit administrative category and existing prefecture/province ancestry",
+  "Acquired provincial register selects the same unit by native/Chinese name, stored category, unchanged immediate prefecture, and independent county representation; county tier 3 agrees with printed county column/code. No conflicting own item or duplicate same-category child; change level only.",
+  "No proved consistent tier for this entity; retain the entire group.",
+  "stored prefecture, own item and provincial table of 21 prefecture-level cities",
+  "own current P442 division-code tier in archived literal item",
+  "Fresh own subject is a mountain range or an ancient Southeast Asian kingdom, not the stored Chinese administrative unit; a level-only release cannot repair identity.",
+  "stored explicit administrative category plus existing prefecture/province ancestry",
+  "review 2108 exact native/code candidate and disambiguated parent path in archived 12-digit mirror; township digits and provincial hierarchy establish depth",
+  "own literal P442 and P131 identify statutory tier; province table confirms no-county exceptions",
+  "same stored administrative native/category and existing prefecture identity; independently represented county tier and parent; exact secondary six-digit code corroborates, without adding a county link",
+  "existing county_id authoritative administrative tier and stored section type_local 区",
+  "previous own-item/category proof retained against current master",
+  "Fresh own subject still has no P31, P131 or P442 claims; English label Mianchi alone cannot prove the tier.",
+  "Official table proves the unit tier but the same-named existing city row has a unit item and/or authoritative county binding. These unchanged keys are not independently distinguished as separate verified unit/place roles; a level-only release cannot resolve a duplicate or seat identity.",
+  "Own subject is Pingyao ancient town; its P131 is the separate Pingyao County Q618687 (P442 140728). County tier cannot be substituted for the seat key.",
+  "Fresh own subject is a human settlement with province-level P131 only; the official Nang County record cannot prove this settlement is that administrative unit.",
+  "Out-of-scope broken child and its parent are unchanged; no rule-6 exception claimed."
+ ],
+ "sources": [
+  {
+   "edition": "cfb2353ac2f92e419d7fc884b8836f3041b59ac4",
+   "licence": "ODbL-1.0; same-entity administrative depth facts only",
+   "retrieved_at": "2026-10-26",
+   "sha256": "f48a089b734550e6456077fa4842f0ae68f9c8ae38ce9e3f8e905e48348fdd14",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/cfb2353ac2f92e419d7fc884b8836f3041b59ac4/contributions/cities/CN.json"
+  },
+  {
+   "edition": "cfb2353ac2f92e419d7fc884b8836f3041b59ac4",
+   "licence": "ODbL-1.0; same-entity administrative depth facts only",
+   "retrieved_at": "2026-10-26",
+   "sha256": "6b0d2c7e149226483c76a92beef6fe9b85eaf9f3d087da2aa3f0333d76c78a80",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/cfb2353ac2f92e419d7fc884b8836f3041b59ac4/ADMINISTRATIVE_STRUCTURE.md"
+  },
+  {
+   "edition": "cfb2353ac2f92e419d7fc884b8836f3041b59ac4",
+   "licence": "ODbL-1.0; same-entity administrative depth facts only",
+   "retrieved_at": "2026-10-26",
+   "sha256": "e6eff09c634b171864df563a976b3090725045a9e28dd4071ed713a9e15118f4",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/cfb2353ac2f92e419d7fc884b8836f3041b59ac4/contributions/counties/CN.json"
+  },
+  {
+   "edition": "8e1ef729a8bab462697b540de202586bfe138996",
+   "licence": "ODbL-1.0; same-entity depth facts only",
+   "retrieved_at": "2026-10-24",
+   "sha256": "54cc4b5ef419c36e4fe87928f407304c670d9e8ec3a3ea213e498abb79b93ef6",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/8e1ef729a8bab462697b540de202586bfe138996/contributions/cities/CN.json"
+  },
+  {
+   "edition": "8e1ef729a8bab462697b540de202586bfe138996",
+   "licence": "ODbL-1.0; same-entity depth facts only",
+   "retrieved_at": "2026-10-24",
+   "sha256": "6b0d2c7e149226483c76a92beef6fe9b85eaf9f3d087da2aa3f0333d76c78a80",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/8e1ef729a8bab462697b540de202586bfe138996/ADMINISTRATIVE_STRUCTURE.md"
+  },
+  {
+   "edition": "8e1ef729a8bab462697b540de202586bfe138996",
+   "licence": "ODbL-1.0; same-entity depth facts only",
+   "retrieved_at": "2026-10-24",
+   "sha256": "e6eff09c634b171864df563a976b3090725045a9e28dd4071ed713a9e15118f4",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/8e1ef729a8bab462697b540de202586bfe138996/contributions/counties/CN.json"
+  },
+  {
+   "edition": "8e1ef729a8bab462697b540de202586bfe138996",
+   "licence": "ODbL-1.0; same-entity depth facts only",
+   "retrieved_at": "2026-10-24",
+   "sha256": "9e33934363c6949a6fed495c596056bae9e9a5571b927636b96747f81b20ae30",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/8e1ef729a8bab462697b540de202586bfe138996/.github/fixes-docs/ledgers/cn_levels_v5x.jsonl"
+  },
+  {
+   "edition": "uiwjs/province-city-china a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc; underlying edition unproved; secondary only",
+   "retrieved_utc": "2026-10-23T13:02:39.062940+00:00",
+   "sha256": "c286dffaf5d8b28316f77a343d3d0bba01efbc0570780bc90ef81a71fc73dca1",
+   "url": "https://raw.githubusercontent.com/uiwjs/province-city-china/a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc/packages/core/dist/area.json"
+  },
+  {
+   "edition": "MCA Order 79, promulgated 2025-06-30, effective 2025-09-01; official local-government republication 2026-03-24",
+   "licence_or_legal_basis": "Official legal/administrative instrument, PRC Copyright Law Article 5(1); reference-only tier facts, no names/geometry/points copied",
+   "locator": "Articles 7–11 and 19; province, prefecture, county, township codes; direct provincial county rule",
+   "retrieved_at": "2026-10-12T12:01:48.152199+00:00",
+   "sha256": "9e8436ac5f4db99bee51ab63e38fd5ba7d4aaddb63f61689c76a96d4e7518802",
+   "url": "https://www.huitong.gov.cn/huitong/c117763/202603/5ca415529a3440c09f0f2c52a1ec789c.shtml"
+  },
+  {
+   "archived_revision": 2526610347,
+   "edition": "2026-08-03T03:42:08Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q210365%7CQ210493%7CQ215664%7CQ22177547%7CQ2594950%7CQ26306026%7CQ263281%7CQ264818%7CQ26678563%7CQ283300%7CQ299247%7CQ31358%7CQ319804%7CQ354573%7CQ358323%7CQ362865%7CQ372791%7CQ38968%7CQ392081%7CQ400401%7CQ404599%7CQ40900%7CQ419011%7CQ42200%7CQ423254%7CQ423260%7CQ426996%7CQ439562%7CQ453744%7CQ4843224%7CQ4848510%7CQ496837%7CQ511654%7CQ533985%7CQ543588%7CQ55204845%7CQ552093%7CQ568108%7CQ571652%7CQ571712&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:03:36.402674+00:00",
+   "sha256": "a1e3d03661242fce1a283c3243b2b15b6ee80f2a3f3e02b38cafa6f0717be3f1",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q210365%7CQ210493%7CQ215664%7CQ22177547%7CQ2594950%7CQ26306026%7CQ263281%7CQ264818%7CQ26678563%7CQ283300%7CQ299247%7CQ31358%7CQ319804%7CQ354573%7CQ358323%7CQ362865%7CQ372791%7CQ38968%7CQ392081%7CQ400401%7CQ404599%7CQ40900%7CQ419011%7CQ42200%7CQ423254%7CQ423260%7CQ426996%7CQ439562%7CQ453744%7CQ4843224%7CQ4848510%7CQ496837%7CQ511654%7CQ533985%7CQ543588%7CQ55204845%7CQ552093%7CQ568108%7CQ571652%7CQ571712&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo"
+  },
+  {
+   "edition": "cfb2353ac2f92e419d7fc884b8836f3041b59ac4",
+   "licence": "ODbL-1.0; same-entity administrative depth facts only",
+   "retrieved_at": "2026-10-26",
+   "sha256": "28c2860d8b60661726459b6f865881176710c4c53b7716a1522169a8d7e25edf",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/cfb2353ac2f92e419d7fc884b8836f3041b59ac4/.github/fixes-docs/ledgers/cn_levels4_v5x.jsonl"
+  },
+  {
+   "edition": "2025 annual edition; publication 2026-01-27",
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction.",
+   "locator": {},
+   "retrieved_at": "2026-10-13T00:09:39.624767+00:00",
+   "sha256": "44b0844bfa62854cfc007bd4d2996c8793054c4e0e54b18289b84faaaa1617b2",
+   "url": "https://mz.hainan.gov.cn/smzt/0400/202601/a1452ed0822745babf246f405371277b/files/9df1a27d265c4d43b84a5462ffe2905a.xls"
+  },
+  {
+   "edition": "30 June 2026; Jiangxi Civil Affairs WeChat publication 6 July; ifeng republication 8 July 2026",
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction.",
+   "locator": {},
+   "retrieved_at": "2026-10-13T00:19:52.558123+00:00",
+   "sha256": "10cb9df0f596d51725a6839ed6eb9eb7a39c8f2fafcbaf530fdf10fbaed63876",
+   "url": "https://x0.ifengimg.com/ucms/2026_28/108A0C0F38499EA65706F3AEDFC37A8C60BD5B5E_size176_w1080_h1393.jpg",
+   "visual_check": "Original image page 28: county column 丰城市 360981, prefecture 宜春市 360900; inspected in this run."
+  },
+  {
+   "edition": "2025-06-30",
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction.",
+   "locator": {},
+   "retrieved_at": null,
+   "sha256": "33dfb9b4cd7c1746ca39e29bf54a886b760a35d2882d26a743fd4f8cb5008ab0",
+   "url": "https://web.archive.org/web/20251205135158id_/https://ynmz.yn.gov.cn/cms/quhuadaima.html"
+  },
+  {
+   "state_code": "SC",
+   "url": "https://mzt.sc.gov.cn/scmzt/quhuaxinxi/2026/7/24/3e9fade9afb548958c2387ed44b5f29a.shtml",
+   "retrieved_at": "2026-10-26T15:32:38.641828+00:00",
+   "role": "candidate register, not accepted tier evidence without inspected contents",
+   "error": "<urlopen error timed out>"
+  },
+  {
+   "archived_revision": 2555091796,
+   "edition": "2026-10-08T18:01:22Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2546654229,
+   "edition": "2026-09-16T12:59:08Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q198256%7CQ204696%7CQ2060398%7CQ20818753%7CQ224603%7CQ237228%7CQ238944%7CQ244211%7CQ266014%7CQ282948%7CQ28994%7CQ304848%7CQ30705459%7CQ3178600%7CQ324293%7CQ3481548%7CQ352419%7CQ3528051%7CQ355635%7CQ358371%7CQ359286%7CQ360769%7CQ362959%7CQ37527588%7CQ38927%7CQ404529%7CQ404763%7CQ423253%7CQ423273%7CQ423457%7CQ423486%7CQ423917%7CQ424214%7CQ424850%7CQ428587%7CQ438747%7CQ446686%7CQ446770%7CQ448536%7CQ45313059&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:19:35.283805+00:00",
+   "sha256": "070411b1a903de7b04828199db8e310b899dfc87d0aac4d845269a2daef7e07b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q198256%7CQ204696%7CQ2060398%7CQ20818753%7CQ224603%7CQ237228%7CQ238944%7CQ244211%7CQ266014%7CQ282948%7CQ28994%7CQ304848%7CQ30705459%7CQ3178600%7CQ324293%7CQ3481548%7CQ352419%7CQ3528051%7CQ355635%7CQ358371%7CQ359286%7CQ360769%7CQ362959%7CQ37527588%7CQ38927%7CQ404529%7CQ404763%7CQ423253%7CQ423273%7CQ423457%7CQ423486%7CQ423917%7CQ424214%7CQ424850%7CQ428587%7CQ438747%7CQ446686%7CQ446770%7CQ448536%7CQ45313059&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "state_code": "HA",
+   "url": "https://mzt.henan.gov.cn/2026/01-27/3314289.html",
+   "retrieved_at": "2026-10-26T15:32:38.643762+00:00",
+   "role": "candidate register, not accepted tier evidence without inspected contents",
+   "error": "HTTP Error 403: Forbidden"
+  },
+  {
+   "archived_revision": 2526610505,
+   "edition": "2026-08-03T03:42:30Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2539141191,
+   "edition": "2026-09-01T18:11:28Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q46862%7CQ47097%7CQ485918%7CQ486149%7CQ486235%7CQ486319%7CQ5104691%7CQ514608%7CQ526244%7CQ531259%7CQ5316865%7CQ5443422%7CQ5509438%7CQ557934%7CQ5615532%7CQ566535%7CQ570937%7CQ571652%7CQ577415%7CQ5869%7CQ58695%7CQ59223%7CQ59233%7CQ6191962%7CQ625554%7CQ630681%7CQ6347954%7CQ651101%7CQ65367%7CQ71204%7CQ71227%7CQ71247%7CQ71266%7CQ71284%7CQ71305%7CQ71323%7CQ713307%7CQ713327%7CQ71339%7CQ71355&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:19:35.302553+00:00",
+   "sha256": "3013128d8223d05268eccad660472df3a0937b3abd05702f0ac1022f4a8884e5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q46862%7CQ47097%7CQ485918%7CQ486149%7CQ486235%7CQ486319%7CQ5104691%7CQ514608%7CQ526244%7CQ531259%7CQ5316865%7CQ5443422%7CQ5509438%7CQ557934%7CQ5615532%7CQ566535%7CQ570937%7CQ571652%7CQ577415%7CQ5869%7CQ58695%7CQ59223%7CQ59233%7CQ6191962%7CQ625554%7CQ630681%7CQ6347954%7CQ651101%7CQ65367%7CQ71204%7CQ71227%7CQ71247%7CQ71266%7CQ71284%7CQ71305%7CQ71323%7CQ713307%7CQ713327%7CQ71339%7CQ71355&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "state_code": "GZ",
+   "url": "https://mzt.guizhou.gov.cn/",
+   "retrieved_at": "2026-10-26T15:32:38.644132+00:00",
+   "role": "candidate register, not accepted tier evidence without inspected contents",
+   "error": "<urlopen error timed out>"
+  },
+  {
+   "archived_revision": 2526610533,
+   "edition": "2026-08-03T03:42:34Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205307+00:00",
+   "sha256": "29ed5eb249e1b7d87d567aca212af8fd3b155b7287f99fd63d40cd04f3365ba7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526615641,
+   "edition": "2026-08-03T03:57:41Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:46.433018+00:00",
+   "sha256": "70793ec7cc63d08523572a5440f49b7350e947b79c4b11d196082a4cff5f4482",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2550094590,
+   "edition": "2026-09-27T16:35:49Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:57.657227+00:00",
+   "sha256": "8e0deefe448374e7cf1cd730221b05ec7c12ba02f0f019e130f1da878f02151c",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2549828529,
+   "edition": "2026-09-27T00:13:52Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205307+00:00",
+   "sha256": "29ed5eb249e1b7d87d567aca212af8fd3b155b7287f99fd63d40cd04f3365ba7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526576464,
+   "edition": "2026-08-03T02:11:56Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.203000+00:00",
+   "sha256": "7a9e3fb84b9e34bea98f9f5e0291b06a50b646549dd7a0fd91f0841325f1f3d0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2559853854,
+   "edition": "2026-10-23T04:48:04Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T12:59:11.639839+00:00",
+   "retrieved_utc": "2026-10-23T12:59:11.639839+00:00",
+   "sha256": "e48aa2ab099e07008b7d2dff06891eba7b4d155b6202a1ea266ecf7fe8358c57",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59218.json"
+  },
+  {
+   "archived_revision": 2526581546,
+   "edition": "2026-08-03T02:23:06Z",
+   "licence": "CC0",
+   "retrieved_utc": "2026-10-23T12:59:07.306772+00:00",
+   "sha256": "ed93d40b11e871e462536546c5a69bc74ea4b451277ecc97a356fda912206fd3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1343673.json"
+  },
+  {
+   "archived_revision": 2526610524,
+   "edition": "2026-08-03T03:42:33Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2554842976,
+   "edition": "2026-10-08T03:27:59Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q405622|Q412795|Q419694|Q424060|Q42635|Q426756|Q426996|Q427557|Q42780|Q42956|Q43407|Q439056|Q444615|Q447167|Q449870|Q453169|Q4696877|Q476833|Q478700|Q489631|Q4970|Q5072098|Q514796|Q524160|Q525925|Q5274071|Q527463|Q530133|Q532560|Q535534|Q55196|Q562234|Q568514|Q577713|Q582413|Q5826|Q58401|Q58422|Q58695|Q58710|Q59173|Q59184|Q594416|Q594843|Q598098&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458485+00:00",
+   "sha256": "fad1ee2194333cf97d9e6f0ac0b1500e2e0f99d83810df19813de15c9d4a9a36",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q405622|Q412795|Q419694|Q424060|Q42635|Q426756|Q426996|Q427557|Q42780|Q42956|Q43407|Q439056|Q444615|Q447167|Q449870|Q453169|Q4696877|Q476833|Q478700|Q489631|Q4970|Q5072098|Q514796|Q524160|Q525925|Q5274071|Q527463|Q530133|Q532560|Q535534|Q55196|Q562234|Q568514|Q577713|Q582413|Q5826|Q58401|Q58422|Q58695|Q58710|Q59173|Q59184|Q594416|Q594843|Q598098&format=json"
+  },
+  {
+   "state_code": "HL",
+   "url": "https://mzt.hlj.gov.cn/mzt/c109882/202601/c00_31908649.shtml",
+   "retrieved_at": "2026-10-26T15:32:38.643586+00:00",
+   "role": "candidate register, not accepted tier evidence without inspected contents",
+   "error": "HTTP Error 502: Bad Gateway"
+  },
+  {
+   "archived_revision": 2559906542,
+   "edition": "2026-10-23T07:50:46Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526610453,
+   "edition": "2026-08-03T03:42:22Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2549978239,
+   "edition": "2026-09-27T10:49:55Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205192+00:00",
+   "sha256": "d1c11dc87541d4c2d7627e6b892ad0d6b9781502947f0cf8ad54df835fa5da67",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526610514,
+   "edition": "2026-08-03T03:42:31Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q28794737%7CQ28798351%7CQ28798448%7CQ28798456%7CQ28798470%7CQ28798582%7CQ28798586%7CQ28831810%7CQ28831848%7CQ28832297%7CQ28835343%7CQ28853927%7CQ28857624%7CQ28927710%7CQ28943828%7CQ29603421%7CQ29613771%7CQ29613788%7CQ29613819%7CQ29613858%7CQ29613904%7CQ29613976%7CQ29614108%7CQ29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ3011612%7CQ332166%7CQ34412%7CQ34793163%7CQ3571554%7CQ360178%7CQ360268%7CQ378776%7CQ38927%7CQ396156%7CQ404529&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.916025+00:00",
+   "sha256": "1881daba3c28728f69955e18b3ddafc2a4f8b5aa48ec9fbed215d066041c9f4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q28794737%7CQ28798351%7CQ28798448%7CQ28798456%7CQ28798470%7CQ28798582%7CQ28798586%7CQ28831810%7CQ28831848%7CQ28832297%7CQ28835343%7CQ28853927%7CQ28857624%7CQ28927710%7CQ28943828%7CQ29603421%7CQ29613771%7CQ29613788%7CQ29613819%7CQ29613858%7CQ29613904%7CQ29613976%7CQ29614108%7CQ29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ3011612%7CQ332166%7CQ34412%7CQ34793163%7CQ3571554%7CQ360178%7CQ360268%7CQ378776%7CQ38927%7CQ396156%7CQ404529&format=json"
+  },
+  {
+   "archived_revision": 2526610509,
+   "edition": "2026-08-03T03:42:30Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205307+00:00",
+   "sha256": "29ed5eb249e1b7d87d567aca212af8fd3b155b7287f99fd63d40cd04f3365ba7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2554076669,
+   "edition": "2026-10-06T18:06:40Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q28186869%7CQ36034%7CQ500061%7CQ6963559%7CQ867782&props=labels%7Cdescriptions%7Cclaims%7Cinfo&format=json",
+   "retrieved_at": "2026-10-26T15:29:29.510018+00:00",
+   "edition": "live public entity revisions, not an official division register",
+   "licence": "CC0-1.0",
+   "status": 200,
+   "sha256": "9761afee3f6a26a2e75c06d4b86e0c6193807835f8fa54cbbae2bdf433f74311"
+  },
+  {
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q17269%7CQ40956%7CQ618687&props=labels%7Cdescriptions%7Cclaims%7Cinfo&format=json",
+   "retrieved_at": "2026-10-26T15:29:34.120204+00:00",
+   "edition": "live public entity revisions, not an official division register",
+   "licence": "CC0-1.0",
+   "status": 200,
+   "sha256": "3db7634133cf6bd6d95aa43f8355920981deea90f30d3b20f17a06cef52155fb"
+  },
+  {
+   "archived_revision": 2549831213,
+   "edition": "2026-09-27T00:29:28Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q5350133%7CQ535534%7CQ569907%7CQ570768%7CQ570829%7CQ570884%7CQ570937%7CQ571033%7CQ571126%7CQ571208%7CQ571219%7CQ573124%7CQ57448%7CQ594069%7CQ604385%7CQ604517%7CQ604625%7CQ608239%7CQ609421%7CQ615634%7CQ616941%7CQ623454%7CQ6312698%7CQ6362644%7CQ661113%7CQ671949%7CQ674791%7CQ686862%7CQ690255%7CQ691645%7CQ716484%7CQ717743%7CQ72877%7CQ735537%7CQ736956%7CQ740914%7CQ765765%7CQ783151%7CQ848127%7CQ8895769%7CQ8897662%7CQ890671%7CQ922785%7CQ938707%7CQ938997&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:03:48.029912+00:00",
+   "sha256": "68fcc39ca89586542d9ece29f5b7b0584db7a9c8b5cc8cf63e189b5a2c506b09",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q5350133%7CQ535534%7CQ569907%7CQ570768%7CQ570829%7CQ570884%7CQ570937%7CQ571033%7CQ571126%7CQ571208%7CQ571219%7CQ573124%7CQ57448%7CQ594069%7CQ604385%7CQ604517%7CQ604625%7CQ608239%7CQ609421%7CQ615634%7CQ616941%7CQ623454%7CQ6312698%7CQ6362644%7CQ661113%7CQ671949%7CQ674791%7CQ686862%7CQ690255%7CQ691645%7CQ716484%7CQ717743%7CQ72877%7CQ735537%7CQ736956%7CQ740914%7CQ765765%7CQ783151%7CQ848127%7CQ8895769%7CQ8897662%7CQ890671%7CQ922785%7CQ938707%7CQ938997&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2526611317,
+   "edition": "2026-08-03T03:45:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:12:22.848486+00:00",
+   "sha256": "61a634d8f3b8caa2b4fcdd4859e766a202f4ac6c3aa31576a132515a92320179",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json"
+  },
+  {
+   "archived_revision": 2526609610,
+   "edition": "2026-08-03T03:40:03Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2526612792,
+   "edition": "2026-08-03T03:49:24Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49688139|Q5072131|Q5119941|Q519810|Q527525|Q5278178|Q532981|Q540493|Q545479|Q557934|Q56062054|Q5621799|Q5638970|Q568639|Q570829|Q570937|Q571652|Q574675|Q57719|Q577434|Q58294|Q58401|Q58422|Q58650|Q5895839|Q59132|Q59227|Q59233|Q594843|Q596174|Q604609|Q613653|Q613672|Q613673|Q625554|Q629080|Q639862|Q643069|Q645183|Q648969|Q651101|Q6539928|Q660328|Q664864|Q666884|Q6673866|Q6702567|Q6705974|Q675319|Q678927&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205417+00:00",
+   "sha256": "acc347e70713a8b38f849fc10bbaa46cac9365793c7c6972236d213e3df21e03",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49688139|Q5072131|Q5119941|Q519810|Q527525|Q5278178|Q532981|Q540493|Q545479|Q557934|Q56062054|Q5621799|Q5638970|Q568639|Q570829|Q570937|Q571652|Q574675|Q57719|Q577434|Q58294|Q58401|Q58422|Q58650|Q5895839|Q59132|Q59227|Q59233|Q594843|Q596174|Q604609|Q613653|Q613672|Q613673|Q625554|Q629080|Q639862|Q643069|Q645183|Q648969|Q651101|Q6539928|Q660328|Q664864|Q666884|Q6673866|Q6702567|Q6705974|Q675319|Q678927&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526614059,
+   "edition": "2026-08-03T03:53:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q34800%7CQ38927%7CQ42392%7CQ46913%7CQ61985%7CQ72778%7CQ72877%7CQ72907%7CQ72945%7CQ72990%7CQ73020%7CQ73045%7CQ73073%7CQ73119%7CQ73156%7CQ73186%7CQ119463%7CQ123462%7CQ131962%7CQ139097%7CQ164397%7CQ166383%7CQ174034%7CQ183584%7CQ186006%7CQ197104%7CQ197146%7CQ197375%7CQ197400%7CQ197402%7CQ197686%7CQ197754%7CQ197759%7CQ197931%7CQ198160%7CQ198205%7CQ219466%7CQ230205%7CQ230215%7CQ241058&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:53.433473+00:00",
+   "sha256": "83404d2ec3ea4f3b26f099f5161b4782bbff5c9942a5c5dacdcada96beb5736b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q34800%7CQ38927%7CQ42392%7CQ46913%7CQ61985%7CQ72778%7CQ72877%7CQ72907%7CQ72945%7CQ72990%7CQ73020%7CQ73045%7CQ73073%7CQ73119%7CQ73156%7CQ73186%7CQ119463%7CQ123462%7CQ131962%7CQ139097%7CQ164397%7CQ166383%7CQ174034%7CQ183584%7CQ186006%7CQ197104%7CQ197146%7CQ197375%7CQ197400%7CQ197402%7CQ197686%7CQ197754%7CQ197759%7CQ197931%7CQ198160%7CQ198205%7CQ219466%7CQ230205%7CQ230215%7CQ241058&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2550839165,
+   "edition": "2026-09-29T11:09:47Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q148%7CQ5869%7CQ15174%7CQ16959%7CQ17269%7CQ34800%7CQ42200%7CQ43684%7CQ45833%7CQ69060%7CQ72877%7CQ92297%7CQ92381%7CQ115594%7CQ116656%7CQ128674%7CQ130023%7CQ130886%7CQ138360%7CQ140091%7CQ146601%7CQ163156%7CQ167842%7CQ170521%7CQ175773%7CQ178440%7CQ180494%7CQ192564%7CQ197128%7CQ197143%7CQ197508%7CQ197776%7CQ197827%7CQ206292%7CQ218345%7CQ228723%7CQ228788%7CQ229146%7CQ235389%7CQ240239&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:46.431841+00:00",
+   "sha256": "16d259972fae3ea23735fe1520c33ffdc785387be43798c3d2e86ca21cadeeed",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q148%7CQ5869%7CQ15174%7CQ16959%7CQ17269%7CQ34800%7CQ42200%7CQ43684%7CQ45833%7CQ69060%7CQ72877%7CQ92297%7CQ92381%7CQ115594%7CQ116656%7CQ128674%7CQ130023%7CQ130886%7CQ138360%7CQ140091%7CQ146601%7CQ163156%7CQ167842%7CQ170521%7CQ175773%7CQ178440%7CQ180494%7CQ192564%7CQ197128%7CQ197143%7CQ197508%7CQ197776%7CQ197827%7CQ206292%7CQ218345%7CQ228723%7CQ228788%7CQ229146%7CQ235389%7CQ240239&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2531814420,
+   "edition": "2026-08-16T00:51:59Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2526542330,
+   "edition": "2026-08-03T00:51:24Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.743747+00:00",
+   "sha256": "91e5917d48ed18895c607422c7c4b46fa0f2004cc743785af641557cd14baeb9",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526541716,
+   "edition": "2026-08-03T00:49:42Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012419%7CQ1012428%7CQ1012430%7CQ1012460%7CQ1012465%7CQ1013643%7CQ1015823%7CQ1016896%7CQ1017170%7CQ1023056%7CQ1023063%7CQ1023067%7CQ1023068%7CQ1023070%7CQ1023074%7CQ1023079%7CQ1023082%7CQ1023087%7CQ1023090%7CQ1023091%7CQ1023095%7CQ1023098%7CQ1023102%7CQ1023106%7CQ1023107%7CQ1023110%7CQ1023116%7CQ1023118%7CQ1023120%7CQ1023121%7CQ1023123%7CQ1023159%7CQ1023160%7CQ1023162%7CQ1023165%7CQ1023167%7CQ1023479%7CQ1023497%7CQ1023678%7CQ1024018&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.734065+00:00",
+   "sha256": "cb26db273029f9cbaab8a4e71cda6d0c33e41b91eac1cc5f3d7c33c19cae1bf4",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012419%7CQ1012428%7CQ1012430%7CQ1012460%7CQ1012465%7CQ1013643%7CQ1015823%7CQ1016896%7CQ1017170%7CQ1023056%7CQ1023063%7CQ1023067%7CQ1023068%7CQ1023070%7CQ1023074%7CQ1023079%7CQ1023082%7CQ1023087%7CQ1023090%7CQ1023091%7CQ1023095%7CQ1023098%7CQ1023102%7CQ1023106%7CQ1023107%7CQ1023110%7CQ1023116%7CQ1023118%7CQ1023120%7CQ1023121%7CQ1023123%7CQ1023159%7CQ1023160%7CQ1023162%7CQ1023165%7CQ1023167%7CQ1023479%7CQ1023497%7CQ1023678%7CQ1024018&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2549816702,
+   "edition": "2026-09-26T23:11:05Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012419%7CQ1012428%7CQ1012430%7CQ1012460%7CQ1012465%7CQ1013643%7CQ1015823%7CQ1016896%7CQ1017170%7CQ1023056%7CQ1023063%7CQ1023067%7CQ1023068%7CQ1023070%7CQ1023074%7CQ1023079%7CQ1023082%7CQ1023087%7CQ1023090%7CQ1023091%7CQ1023095%7CQ1023098%7CQ1023102%7CQ1023106%7CQ1023107%7CQ1023110%7CQ1023116%7CQ1023118%7CQ1023120%7CQ1023121%7CQ1023123%7CQ1023159%7CQ1023160%7CQ1023162%7CQ1023165%7CQ1023167%7CQ1023479%7CQ1023497%7CQ1023678%7CQ1024018&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.734065+00:00",
+   "sha256": "cb26db273029f9cbaab8a4e71cda6d0c33e41b91eac1cc5f3d7c33c19cae1bf4",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012419%7CQ1012428%7CQ1012430%7CQ1012460%7CQ1012465%7CQ1013643%7CQ1015823%7CQ1016896%7CQ1017170%7CQ1023056%7CQ1023063%7CQ1023067%7CQ1023068%7CQ1023070%7CQ1023074%7CQ1023079%7CQ1023082%7CQ1023087%7CQ1023090%7CQ1023091%7CQ1023095%7CQ1023098%7CQ1023102%7CQ1023106%7CQ1023107%7CQ1023110%7CQ1023116%7CQ1023118%7CQ1023120%7CQ1023121%7CQ1023123%7CQ1023159%7CQ1023160%7CQ1023162%7CQ1023165%7CQ1023167%7CQ1023479%7CQ1023497%7CQ1023678%7CQ1024018&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2550387535,
+   "edition": "2026-09-28T08:02:51Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205192+00:00",
+   "sha256": "d1c11dc87541d4c2d7627e6b892ad0d6b9781502947f0cf8ad54df835fa5da67",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2546711113,
+   "edition": "2026-09-16T16:02:51Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q68481|Q68534|Q68579|Q68614|Q68695|Q68744|Q687952|Q68814|Q68862|Q68919|Q71204|Q71247|Q71284|Q713323|Q713327|Q71339|Q71355|Q71373|Q7195820|Q7246023|Q7267847|Q72907|Q73020|Q73186|Q733046|Q739890|Q740280|Q744258|Q7496210|Q75110|Q75150|Q75268|Q762724|Q763069|Q7650621|Q766619|Q767284|Q774508|Q776550|Q777171|Q781559|Q785966|Q8048939|Q8059383|Q8060267|Q807070|Q814711|Q814826|Q814903|Q827040&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205498+00:00",
+   "sha256": "caf664e79944806f299c8f7312fc33a97d6d443ecc32c56cf6485dcbe1025b19",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q68481|Q68534|Q68579|Q68614|Q68695|Q68744|Q687952|Q68814|Q68862|Q68919|Q71204|Q71247|Q71284|Q713323|Q713327|Q71339|Q71355|Q71373|Q7195820|Q7246023|Q7267847|Q72907|Q73020|Q73186|Q733046|Q739890|Q740280|Q744258|Q7496210|Q75110|Q75150|Q75268|Q762724|Q763069|Q7650621|Q766619|Q767284|Q774508|Q776550|Q777171|Q781559|Q785966|Q8048939|Q8059383|Q8060267|Q807070|Q814711|Q814826|Q814903|Q827040&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526609171,
+   "edition": "2026-08-03T03:38:43Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q210365%7CQ210493%7CQ215664%7CQ22177547%7CQ2594950%7CQ26306026%7CQ263281%7CQ264818%7CQ26678563%7CQ283300%7CQ299247%7CQ31358%7CQ319804%7CQ354573%7CQ358323%7CQ362865%7CQ372791%7CQ38968%7CQ392081%7CQ400401%7CQ404599%7CQ40900%7CQ419011%7CQ42200%7CQ423254%7CQ423260%7CQ426996%7CQ439562%7CQ453744%7CQ4843224%7CQ4848510%7CQ496837%7CQ511654%7CQ533985%7CQ543588%7CQ55204845%7CQ552093%7CQ568108%7CQ571652%7CQ571712&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:03:36.402674+00:00",
+   "sha256": "a1e3d03661242fce1a283c3243b2b15b6ee80f2a3f3e02b38cafa6f0717be3f1",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q210365%7CQ210493%7CQ215664%7CQ22177547%7CQ2594950%7CQ26306026%7CQ263281%7CQ264818%7CQ26678563%7CQ283300%7CQ299247%7CQ31358%7CQ319804%7CQ354573%7CQ358323%7CQ362865%7CQ372791%7CQ38968%7CQ392081%7CQ400401%7CQ404599%7CQ40900%7CQ419011%7CQ42200%7CQ423254%7CQ423260%7CQ426996%7CQ439562%7CQ453744%7CQ4843224%7CQ4848510%7CQ496837%7CQ511654%7CQ533985%7CQ543588%7CQ55204845%7CQ552093%7CQ568108%7CQ571652%7CQ571712&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2550633764,
+   "edition": "2026-09-28T21:09:59Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q602936%7CQ607423%7CQ615115%7CQ625554%7CQ626525%7CQ630450%7CQ630755%7CQ643714%7CQ644863%7CQ648696%7CQ650585%7CQ658240%7CQ659837%7CQ668353%7CQ669708%7CQ681637%7CQ685453%7CQ713343%7CQ731985%7CQ739890%7CQ745302%7CQ746115%7CQ746315%7CQ762509%7CQ765059%7CQ769114%7CQ776550%7CQ777171%7CQ778120%7CQ784474%7CQ787317%7CQ791640%7CQ803765%7CQ803861%7CQ803870%7CQ803904%7CQ806139%7CQ808309%7CQ812050%7CQ812060&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:46.432921+00:00",
+   "sha256": "d393cfd138266df4fdea172ae1456e67c216565ee88a9307adf5ce13d37cd08d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q602936%7CQ607423%7CQ615115%7CQ625554%7CQ626525%7CQ630450%7CQ630755%7CQ643714%7CQ644863%7CQ648696%7CQ650585%7CQ658240%7CQ659837%7CQ668353%7CQ669708%7CQ681637%7CQ685453%7CQ713343%7CQ731985%7CQ739890%7CQ745302%7CQ746115%7CQ746315%7CQ762509%7CQ765059%7CQ769114%7CQ776550%7CQ777171%7CQ778120%7CQ784474%7CQ787317%7CQ791640%7CQ803765%7CQ803861%7CQ803870%7CQ803904%7CQ806139%7CQ808309%7CQ812050%7CQ812060&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2527991339,
+   "edition": "2026-08-06T07:00:30Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.915913+00:00",
+   "sha256": "274da72ff2cbc40eb2823fe21d913759afa23af5d87ae1676b91c1e0de78ff64",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json"
+  },
+  {
+   "archived_revision": 2526610502,
+   "edition": "2026-08-03T03:42:29Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205307+00:00",
+   "sha256": "29ed5eb249e1b7d87d567aca212af8fd3b155b7287f99fd63d40cd04f3365ba7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q290888|Q30340|Q3484147|Q349973|Q352234|Q356836|Q356980|Q357488|Q358314|Q359286|Q359990|Q360150|Q360178|Q360769|Q360870|Q373687|Q375173|Q38927|Q38968|Q401325|Q404484|Q404599|Q404763|Q416544|Q416669|Q416748|Q416922|Q416988|Q41705|Q420477|Q421130|Q423260|Q423278|Q423473|Q424045|Q424212|Q425804|Q42635|Q426644|Q426756|Q427488|Q443231|Q444615|Q446149|Q447390|Q447775|Q448103|Q45761|Q485918|Q486149&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2531428041,
+   "edition": "2026-08-14T19:11:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q28794737%7CQ28798351%7CQ28798448%7CQ28798456%7CQ28798470%7CQ28798582%7CQ28798586%7CQ28831810%7CQ28831848%7CQ28832297%7CQ28835343%7CQ28853927%7CQ28857624%7CQ28927710%7CQ28943828%7CQ29603421%7CQ29613771%7CQ29613788%7CQ29613819%7CQ29613858%7CQ29613904%7CQ29613976%7CQ29614108%7CQ29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ3011612%7CQ332166%7CQ34412%7CQ34793163%7CQ3571554%7CQ360178%7CQ360268%7CQ378776%7CQ38927%7CQ396156%7CQ404529&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.916025+00:00",
+   "sha256": "1881daba3c28728f69955e18b3ddafc2a4f8b5aa48ec9fbed215d066041c9f4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q28794737%7CQ28798351%7CQ28798448%7CQ28798456%7CQ28798470%7CQ28798582%7CQ28798586%7CQ28831810%7CQ28831848%7CQ28832297%7CQ28835343%7CQ28853927%7CQ28857624%7CQ28927710%7CQ28943828%7CQ29603421%7CQ29613771%7CQ29613788%7CQ29613819%7CQ29613858%7CQ29613904%7CQ29613976%7CQ29614108%7CQ29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ3011612%7CQ332166%7CQ34412%7CQ34793163%7CQ3571554%7CQ360178%7CQ360268%7CQ378776%7CQ38927%7CQ396156%7CQ404529&format=json"
+  },
+  {
+   "state_code": "GX",
+   "url": "https://mzt.gxzf.gov.cn/gg/P020260123658536937994.xls",
+   "retrieved_at": "2026-10-26T15:32:38.643993+00:00",
+   "role": "candidate register, not accepted tier evidence without inspected contents",
+   "error": "<urlopen error _ssl.c:1126: The handshake operation timed out>"
+  },
+  {
+   "archived_revision": 2547837210,
+   "edition": "2026-09-20T01:11:39Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404599%7CQ426996%7CQ4415297%7CQ443250%7CQ44376150%7CQ444354%7CQ453169%7CQ498004%7CQ532560%7CQ533836%7CQ533985%7CQ553934%7CQ554491%7CQ572089%7CQ572153%7CQ5749042%7CQ57958%7CQ58401%7CQ588451%7CQ590891%7CQ59095%7CQ59100%7CQ59107%7CQ59144%7CQ59164%7CQ59173%7CQ59184%7CQ59189%7CQ59205%7CQ59209%7CQ59213%7CQ59218%7CQ59223%7CQ59227%7CQ59233%7CQ5926586%7CQ593266%7CQ596229%7CQ599514%7CQ603151&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.916126+00:00",
+   "sha256": "6b9e01ccb9527444f8b3c4abbffc9d325515e10dc540100775ef1d69ce6e5052",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404599%7CQ426996%7CQ4415297%7CQ443250%7CQ44376150%7CQ444354%7CQ453169%7CQ498004%7CQ532560%7CQ533836%7CQ533985%7CQ553934%7CQ554491%7CQ572089%7CQ572153%7CQ5749042%7CQ57958%7CQ58401%7CQ588451%7CQ590891%7CQ59095%7CQ59100%7CQ59107%7CQ59144%7CQ59164%7CQ59173%7CQ59184%7CQ59189%7CQ59205%7CQ59209%7CQ59213%7CQ59218%7CQ59223%7CQ59227%7CQ59233%7CQ5926586%7CQ593266%7CQ596229%7CQ599514%7CQ603151&format=json"
+  },
+  {
+   "archived_revision": 2530540826,
+   "edition": "2026-08-12T19:14:04Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526610517,
+   "edition": "2026-08-03T03:42:32Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2557515503,
+   "edition": "2026-10-16T01:47:05Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2539492214,
+   "edition": "2026-09-02T16:40:15Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2540822551,
+   "edition": "2026-09-06T03:56:49Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526614978,
+   "edition": "2026-08-03T03:55:50Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:35.748206+00:00",
+   "sha256": "04283f6f5e4327fa11d670e9f46df52f882d1a6c9ea7657513c29b77d7961cce",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6202295%7CQ67942748%7CQ8053732%7CQ855220%7CQ867782&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2539390135,
+   "edition": "2026-09-02T09:01:00Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526608921,
+   "edition": "2026-08-03T03:38:01Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:19:44.315983+00:00",
+   "sha256": "c21ffadd5f0b1438fa6d5ab8f70f6be21a527c87513e59ce3a9e8a1fcd9f3ec0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car"
+  },
+  {
+   "archived_revision": 2538952063,
+   "edition": "2026-09-01T06:33:01Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q943710%7CQ950944%7CQ955461%7CQ968183%7CQ974580%7CQ975264%7CQ996211%7CQ1001396%7CQ1012462%7CQ1026164%7CQ1069975%7CQ1070000%7CQ1070002%7CQ1070010%7CQ1070025%7CQ1074599%7CQ1114832%7CQ1151652%7CQ1157514%7CQ1159535%7CQ1169571%7CQ1172649%7CQ1173592%7CQ1196856%7CQ1196894%7CQ1196900%7CQ1196908%7CQ1196928%7CQ1196978%7CQ1196989%7CQ1196995%7CQ1197001%7CQ1197006%7CQ1197009%7CQ1197024%7CQ1197030%7CQ1197034%7CQ1197064%7CQ1197069%7CQ1197075&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:53.435591+00:00",
+   "sha256": "9fe3cd28950b2739ddcf5da968510e88bddb4ba8ef7fa8ca014a90244a4060ea",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q943710%7CQ950944%7CQ955461%7CQ968183%7CQ974580%7CQ975264%7CQ996211%7CQ1001396%7CQ1012462%7CQ1026164%7CQ1069975%7CQ1070000%7CQ1070002%7CQ1070010%7CQ1070025%7CQ1074599%7CQ1114832%7CQ1151652%7CQ1157514%7CQ1159535%7CQ1169571%7CQ1172649%7CQ1173592%7CQ1196856%7CQ1196894%7CQ1196900%7CQ1196908%7CQ1196928%7CQ1196978%7CQ1196989%7CQ1196995%7CQ1197001%7CQ1197006%7CQ1197009%7CQ1197024%7CQ1197030%7CQ1197034%7CQ1197064%7CQ1197069%7CQ1197075&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2544881546,
+   "edition": "2026-09-13T05:30:19Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2541013103,
+   "edition": "2026-09-06T10:29:30Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526614033,
+   "edition": "2026-08-03T03:53:16Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601115|Q609421|Q614877|Q616048|Q633692|Q635541|Q6377648|Q63854696|Q644863|Q649215|Q6501416|Q651101|Q666700|Q666884|Q669533|Q68445327|Q68458666|Q68461285|Q68461882|Q68462195|Q6894093|Q691159|Q71227|Q71284|Q713349|Q71339|Q72877|Q73073|Q736129|Q745725|Q749267|Q75091|Q75150|Q761859|Q769855|Q776550|Q777171|Q777503|Q777960|Q782730|Q787402|Q787982|Q8053666|Q807075|Q812096&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:28.813456+00:00",
+   "sha256": "e18243e07d9acf577083647e4033061ef7535936805c37835860da2554108147",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601115|Q609421|Q614877|Q616048|Q633692|Q635541|Q6377648|Q63854696|Q644863|Q649215|Q6501416|Q651101|Q666700|Q666884|Q669533|Q68445327|Q68458666|Q68461285|Q68461882|Q68462195|Q6894093|Q691159|Q71227|Q71284|Q713349|Q71339|Q72877|Q73073|Q736129|Q745725|Q749267|Q75091|Q75150|Q761859|Q769855|Q776550|Q777171|Q777503|Q777960|Q782730|Q787402|Q787982|Q8053666|Q807075|Q812096&format=json"
+  },
+  {
+   "archived_revision": 2542884427,
+   "edition": "2026-09-09T20:29:50Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2539853992,
+   "edition": "2026-09-03T23:47:06Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538456394,
+   "edition": "2026-08-31T03:48:29Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538369858,
+   "edition": "2026-08-30T22:56:07Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2392482|Q241003|Q24199967|Q245760|Q24835960|Q252959|Q257744|Q2600431|Q266052|Q268384|Q277617|Q278257|Q28186869|Q283672|Q286266|Q28996|Q29109964|Q2944249|Q30340|Q30705328|Q3091317|Q30948900|Q324293|Q3335654|Q335040|Q337034|Q340150|Q349976|Q354573|Q356177|Q358310|Q360268|Q362865|Q377777|Q383992|Q386212|Q404116|Q404301|Q404362|Q404429&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:17.531609+00:00",
+   "sha256": "3fbc63fb7973e779c44f03f2c3d0b15f34977e119b7e0f661bbd48a2ed70d03f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2392482|Q241003|Q24199967|Q245760|Q24835960|Q252959|Q257744|Q2600431|Q266052|Q268384|Q277617|Q278257|Q28186869|Q283672|Q286266|Q28996|Q29109964|Q2944249|Q30340|Q30705328|Q3091317|Q30948900|Q324293|Q3335654|Q335040|Q337034|Q340150|Q349976|Q354573|Q356177|Q358310|Q360268|Q362865|Q377777|Q383992|Q386212|Q404116|Q404301|Q404362|Q404429&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2540899446,
+   "edition": "2026-09-06T06:35:13Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538784822,
+   "edition": "2026-08-31T22:46:53Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2556716175,
+   "edition": "2026-10-13T23:15:28Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2544886251,
+   "edition": "2026-09-13T05:46:43Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:19:44.315983+00:00",
+   "sha256": "c21ffadd5f0b1438fa6d5ab8f70f6be21a527c87513e59ce3a9e8a1fcd9f3ec0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car"
+  },
+  {
+   "archived_revision": 2539089259,
+   "edition": "2026-09-01T14:50:40Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.442541+00:00",
+   "sha256": "fd82afb08675f0829343782926ba2e0f4b7d3a66fd288a8b31639c34c274ce90",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json"
+  },
+  {
+   "archived_revision": 2538491044,
+   "edition": "2026-08-31T05:05:47Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:57.657227+00:00",
+   "sha256": "8e0deefe448374e7cf1cd730221b05ec7c12ba02f0f019e130f1da878f02151c",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2538504676,
+   "edition": "2026-08-31T05:42:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:57.657227+00:00",
+   "sha256": "8e0deefe448374e7cf1cd730221b05ec7c12ba02f0f019e130f1da878f02151c",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2538791138,
+   "edition": "2026-08-31T23:02:44Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q198256%7CQ204696%7CQ2060398%7CQ20818753%7CQ224603%7CQ237228%7CQ238944%7CQ244211%7CQ266014%7CQ282948%7CQ28994%7CQ304848%7CQ30705459%7CQ3178600%7CQ324293%7CQ3481548%7CQ352419%7CQ3528051%7CQ355635%7CQ358371%7CQ359286%7CQ360769%7CQ362959%7CQ37527588%7CQ38927%7CQ404529%7CQ404763%7CQ423253%7CQ423273%7CQ423457%7CQ423486%7CQ423917%7CQ424214%7CQ424850%7CQ428587%7CQ438747%7CQ446686%7CQ446770%7CQ448536%7CQ45313059&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:19:35.283805+00:00",
+   "sha256": "070411b1a903de7b04828199db8e310b899dfc87d0aac4d845269a2daef7e07b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q198256%7CQ204696%7CQ2060398%7CQ20818753%7CQ224603%7CQ237228%7CQ238944%7CQ244211%7CQ266014%7CQ282948%7CQ28994%7CQ304848%7CQ30705459%7CQ3178600%7CQ324293%7CQ3481548%7CQ352419%7CQ3528051%7CQ355635%7CQ358371%7CQ359286%7CQ360769%7CQ362959%7CQ37527588%7CQ38927%7CQ404529%7CQ404763%7CQ423253%7CQ423273%7CQ423457%7CQ423486%7CQ423917%7CQ424214%7CQ424850%7CQ428587%7CQ438747%7CQ446686%7CQ446770%7CQ448536%7CQ45313059&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538491328,
+   "edition": "2026-08-31T05:07:10Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2558969063,
+   "edition": "2026-10-19T23:15:47Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T12:59:10.800861+00:00",
+   "retrieved_utc": "2026-10-23T12:59:10.800861+00:00",
+   "sha256": "30f7720b36255f419d89daa12a01c7d4b538ae6860d37dd68e45bd714f56e008",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59173.json"
+  },
+  {
+   "archived_revision": 2539797363,
+   "edition": "2026-09-03T19:58:32Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1366676|Q1367572|Q1375638|Q1376051|Q1376078|Q140154|Q142130|Q14905247|Q152111|Q1688899|Q1689594|Q174091|Q179608|Q1822775|Q185940|Q186788|Q197397|Q197411|Q197524|Q197566|Q197732|Q197753|Q197903|Q198159|Q208471|Q210493|Q216077|Q217681|Q224603|Q2600431|Q260745|Q262521|Q268555|Q278429|Q278654|Q282929|Q289495|Q28996|Q293764|Q304848&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T21:27:32.831704+00:00",
+   "sha256": "f755fb4e310b8244ce29f3a69b335af542b215e60737bbb24b13986fae25bf11",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1366676|Q1367572|Q1375638|Q1376051|Q1376078|Q140154|Q142130|Q14905247|Q152111|Q1688899|Q1689594|Q174091|Q179608|Q1822775|Q185940|Q186788|Q197397|Q197411|Q197524|Q197566|Q197732|Q197753|Q197903|Q198159|Q208471|Q210493|Q216077|Q217681|Q224603|Q2600431|Q260745|Q262521|Q268555|Q278429|Q278654|Q282929|Q289495|Q28996|Q293764|Q304848&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2547283532,
+   "edition": "2026-09-18T05:12:27Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2544883142,
+   "edition": "2026-09-13T05:35:32Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2539085042,
+   "edition": "2026-09-01T14:33:43Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2551495175,
+   "edition": "2026-09-30T21:59:23Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526580665,
+   "edition": "2026-08-03T02:21:15Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457960+00:00",
+   "sha256": "df08b56d989985c33b810fb591ad6543427629ca4e9ce30a340de61d72cd720f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json"
+  },
+  {
+   "archived_revision": 2541944893,
+   "edition": "2026-09-07T22:23:36Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:35.748206+00:00",
+   "sha256": "04283f6f5e4327fa11d670e9f46df52f882d1a6c9ea7657513c29b77d7961cce",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6202295%7CQ67942748%7CQ8053732%7CQ855220%7CQ867782&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538780746,
+   "edition": "2026-08-31T22:35:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:19:44.315983+00:00",
+   "sha256": "c21ffadd5f0b1438fa6d5ab8f70f6be21a527c87513e59ce3a9e8a1fcd9f3ec0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q197735%7CQ197739%7CQ197773%7CQ198072%7CQ198251%7CQ198383%7CQ206992%7CQ207026%7CQ207030%7CQ207075%7CQ216077%7CQ228217%7CQ257817%7CQ2600688%7CQ263072%7CQ27862386%7CQ279604%7CQ280060%7CQ28150883%7CQ282764%7CQ289465%7CQ299247%7CQ29966455%7CQ34405%7CQ354573%7CQ355635%7CQ3573279%7CQ362865%7CQ362959%7CQ363076%7CQ363166%7CQ363262%7CQ363479%7CQ373687%7CQ39009%7CQ413277%7CQ416669%7CQ417144%7CQ423278%7CQ424045%7CQ424920%7CQ443270%7CQ445521%7CQ449870%7CQ47974&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo&languages=zh%7Czh-cn%7Czh-hans%7Cen%7Cja%7Cko%7Cde%7Cfr%7Ces%7Cit%7Cpt%7Cpt-br%7Cnl%7Cbr%7Chr%7Cfa%7Ctr%7Cru%7Cuk%7Cpl%7Chi%7Car"
+  },
+  {
+   "archived_revision": 2515886471,
+   "edition": "2026-07-10T14:02:55Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:35.748206+00:00",
+   "sha256": "04283f6f5e4327fa11d670e9f46df52f882d1a6c9ea7657513c29b77d7961cce",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6202295%7CQ67942748%7CQ8053732%7CQ855220%7CQ867782&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526541932,
+   "edition": "2026-08-03T00:50:15Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2544951608,
+   "edition": "2026-09-13T08:53:08Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2546811073,
+   "edition": "2026-09-16T22:06:41Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:35.748206+00:00",
+   "sha256": "04283f6f5e4327fa11d670e9f46df52f882d1a6c9ea7657513c29b77d7961cce",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6202295%7CQ67942748%7CQ8053732%7CQ855220%7CQ867782&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2544285893,
+   "edition": "2026-09-12T01:09:44Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:29.112681+00:00",
+   "sha256": "fe6762c7e2b47d2749d276c4a12f100f7a8fc4f85819ac34209e180fd02d4404",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21921753%7CQ27788660%7CQ28109579%7CQ28123528%7CQ3068371%7CQ340120%7CQ354595%7CQ360069%7CQ360235%7CQ360326&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2540894986,
+   "edition": "2026-09-06T06:27:01Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2538851154,
+   "edition": "2026-09-01T01:42:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q532981%7CQ533157%7CQ533432%7CQ533764%7CQ533985%7CQ539323%7CQ546056%7CQ566535%7CQ567195%7CQ570324%7CQ571766%7CQ580097%7CQ581940%7CQ582762%7CQ601240%7CQ612136%7CQ614208%7CQ618687%7CQ632997%7CQ638136%7CQ653608%7CQ676073%7CQ676843%7CQ684912%7CQ685804%7CQ686771%7CQ693353%7CQ728606%7CQ729562%7CQ751011%7CQ768485%7CQ769598%7CQ769781%7CQ777617%7CQ778318%7CQ778751%7CQ788127%7CQ804044%7CQ807061%7CQ929190&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:53.435506+00:00",
+   "sha256": "6b20ac3edfd5d523edf244a05af41cd92f282798a4c5790bf87b357477d1a0c4",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q532981%7CQ533157%7CQ533432%7CQ533764%7CQ533985%7CQ539323%7CQ546056%7CQ566535%7CQ567195%7CQ570324%7CQ571766%7CQ580097%7CQ581940%7CQ582762%7CQ601240%7CQ612136%7CQ614208%7CQ618687%7CQ632997%7CQ638136%7CQ653608%7CQ676073%7CQ676843%7CQ684912%7CQ685804%7CQ686771%7CQ693353%7CQ728606%7CQ729562%7CQ751011%7CQ768485%7CQ769598%7CQ769781%7CQ777617%7CQ778318%7CQ778751%7CQ788127%7CQ804044%7CQ807061%7CQ929190&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2541005470,
+   "edition": "2026-09-06T10:08:30Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:35.748206+00:00",
+   "sha256": "04283f6f5e4327fa11d670e9f46df52f882d1a6c9ea7657513c29b77d7961cce",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6202295%7CQ67942748%7CQ8053732%7CQ855220%7CQ867782&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526609606,
+   "edition": "2026-08-03T03:40:02Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458320+00:00",
+   "sha256": "48e58d2e535f8f26336f703e1296e90a8a2373b939354d9ded96e94d26948ebe",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q240239|Q246791|Q257744|Q263106|Q266014|Q277233|Q281015|Q289051|Q28979|Q29003|Q290059|Q304848|Q31466|Q32112|Q332753|Q34412|Q34761|Q349973|Q349976|Q349979|Q349982|Q349983|Q349985|Q3515161|Q356826|Q357464|Q358314|Q360178|Q360374|Q360584|Q362865|Q371640|Q372414|Q372791|Q373023|Q373101|Q373234|Q373346|Q373461|Q373564|Q373687|Q379189|Q38968|Q3959380|Q404763&format=json"
+  },
+  {
+   "archived_revision": 2527550650,
+   "edition": "2026-08-05T08:52:14Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2553465614,
+   "edition": "2026-10-05T13:39:22Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:25.706560+00:00",
+   "sha256": "e45467ed5fa755705d2d53f98ed403d1833029340a45a59aced6742ab7b3a2f7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1018527%7CQ1022909%7CQ113510477%7CQ1175889%7CQ1198031%7CQ1237831%7CQ12502782%7CQ1689576%7CQ185684%7CQ1878351&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-12T18:03:10.749990+00:00",
+   "sha256": "577efb4e280099b818ca1418de02d4f98612e1b4aba88c8c030c0596c4c01b74",
+   "url": "https://mzt.fujian.gov.cn/gk/tzgg/202607/t20260710_7176497.htm"
+  },
+  {
+   "url": "https://mzt.fujian.gov.cn/gk/tzgg/202607/t20260710_7176497.htm",
+   "sha256": "577efb4e280099b818ca1418de02d4f98612e1b4aba88c8c030c0596c4c01b74",
+   "retrieved_at": "2026-10-12T18:03:10.749990+00:00",
+   "edition": "2026-06-30",
+   "locator": {},
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction."
+  },
+  {
+   "archived_revision": 2548226290,
+   "edition": "2026-09-21T23:33:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205192+00:00",
+   "sha256": "d1c11dc87541d4c2d7627e6b892ad0d6b9781502947f0cf8ad54df835fa5da67",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q162588|Q162880|Q16460423|Q16462408|Q16666|Q170322|Q174091|Q182511|Q187136|Q188427|Q192271|Q194531|Q194942|Q197378|Q197379|Q197391|Q197421|Q197680|Q197696|Q197762|Q197783|Q197787|Q197829|Q197919|Q198058|Q198217|Q198240|Q198261|Q198266|Q204827|Q205349|Q206996|Q207030|Q210493|Q212233|Q215755|Q235389|Q241877|Q249007|Q249870|Q2600703|Q262208|Q266014|Q268703|Q28027303|Q28043683|Q281811|Q283126|Q28804379|Q28996&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2538802238,
+   "edition": "2026-08-31T23:38:07Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526610529,
+   "edition": "2026-08-03T03:42:34Z",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-23T15:26:32.693102+00:00",
+   "sha256": "62e78bba9bd561fb3ec45f1156bf1b08bbf0bdbc92bf91b8b89e25baa8b50018",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q36034%7CQ360702%7CQ360942%7CQ385913%7CQ419683%7CQ447152%7CQ5071958%7CQ5296079%7CQ5312684%7CQ5622926&props=claims%7Clabels%7Cinfo&format=json"
+  },
+  {
+   "edition": "as of 30 June 2026",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {
+    "page": 16
+   },
+   "retrieved_at": "2026-10-12T16:09:15.054917+00:00",
+   "sha256": "082d0d605acefd2e6e0701a06b0f91427d884e9c185b25672dfd7e491bee4743",
+   "url": "https://smzt.gd.gov.cn/attachment/0/619/619623/4924190.pdf"
+  },
+  {
+   "archived_revision": 2552135273,
+   "edition": "2026-10-02T11:29:59Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404599%7CQ426996%7CQ4415297%7CQ443250%7CQ44376150%7CQ444354%7CQ453169%7CQ498004%7CQ532560%7CQ533836%7CQ533985%7CQ553934%7CQ554491%7CQ572089%7CQ572153%7CQ5749042%7CQ57958%7CQ58401%7CQ588451%7CQ590891%7CQ59095%7CQ59100%7CQ59107%7CQ59144%7CQ59164%7CQ59173%7CQ59184%7CQ59189%7CQ59205%7CQ59209%7CQ59213%7CQ59218%7CQ59223%7CQ59227%7CQ59233%7CQ5926586%7CQ593266%7CQ596229%7CQ599514%7CQ603151&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.916126+00:00",
+   "sha256": "6b9e01ccb9527444f8b3c4abbffc9d325515e10dc540100775ef1d69ce6e5052",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404599%7CQ426996%7CQ4415297%7CQ443250%7CQ44376150%7CQ444354%7CQ453169%7CQ498004%7CQ532560%7CQ533836%7CQ533985%7CQ553934%7CQ554491%7CQ572089%7CQ572153%7CQ5749042%7CQ57958%7CQ58401%7CQ588451%7CQ590891%7CQ59095%7CQ59100%7CQ59107%7CQ59144%7CQ59164%7CQ59173%7CQ59184%7CQ59189%7CQ59205%7CQ59209%7CQ59213%7CQ59218%7CQ59223%7CQ59227%7CQ59233%7CQ5926586%7CQ593266%7CQ596229%7CQ599514%7CQ603151&format=json"
+  },
+  {
+   "archived_revision": 2526542207,
+   "edition": "2026-08-03T00:51:03Z",
+   "licence": "CC0",
+   "retrieved_utc": "2026-10-23T12:59:04.287699+00:00",
+   "sha256": "907ff28078efad32db5282b18df5207d0c43e2c98b7e530adb9b1fb41a608e5c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023921.json"
+  },
+  {
+   "archived_revision": 2526578918,
+   "edition": "2026-08-03T02:17:26Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:20:04.440384+00:00",
+   "sha256": "fd638b853cbe8a7f3b193dc001edbf871d7b6159642f8f33df22550d13945c9f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526579002,
+   "edition": "2026-08-03T02:17:36Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:20:04.440384+00:00",
+   "sha256": "fd638b853cbe8a7f3b193dc001edbf871d7b6159642f8f33df22550d13945c9f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2526579565,
+   "edition": "2026-08-03T02:18:53Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:20:04.440384+00:00",
+   "sha256": "fd638b853cbe8a7f3b193dc001edbf871d7b6159642f8f33df22550d13945c9f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200485%7CQ1200529%7CQ1200533%7CQ1200553%7CQ1200556%7CQ1200562%7CQ1200567%7CQ1200577%7CQ1200584%7CQ1200585%7CQ1200595%7CQ1200607%7CQ1200618%7CQ1200619%7CQ1200641%7CQ1200646%7CQ1200741%7CQ1205133%7CQ1207027%7CQ122504%7CQ1236870%7CQ132436%7CQ1336372%7CQ1337056%7CQ1337131%7CQ1337154%7CQ1337284%7CQ1337329%7CQ1337362%7CQ1337497%7CQ1337631%7CQ1339246%7CQ1339828%7CQ1339875%7CQ1339926%7CQ1339938%7CQ1340007%7CQ1340045%7CQ1340078%7CQ1340721&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo&format=json"
+  },
+  {
+   "archived_revision": 2549816758,
+   "edition": "2026-09-26T23:11:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1001424%7CQ1005059%7CQ1015132%7CQ1019538%7CQ1022249%7CQ1022262%7CQ1022271%7CQ1023898%7CQ1023901%7CQ1023910%7CQ1027316%7CQ1027323%7CQ1027336%7CQ1027734%7CQ1028080%7CQ1028107%7CQ1028273%7CQ1033232%7CQ1043292%7CQ1054501%7CQ1062205%7CQ1070053%7CQ11061040%7CQ11180967%7CQ114045%7CQ1157507%7CQ1179105%7CQ1181380%7CQ1198819%7CQ1201560%7CQ1201707%7CQ1201963%7CQ1201988%7CQ1202232%7CQ1208489%7CQ1209053%7CQ1209064%7CQ1209098%7CQ1220154%7CQ1221459&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:03:34.221243+00:00",
+   "sha256": "fd5b26132d70b99a644d63bdd9580dc1c0e2ffcb382e04c6e9e65c50ca1f0ff2",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1001424%7CQ1005059%7CQ1015132%7CQ1019538%7CQ1022249%7CQ1022262%7CQ1022271%7CQ1023898%7CQ1023901%7CQ1023910%7CQ1027316%7CQ1027323%7CQ1027336%7CQ1027734%7CQ1028080%7CQ1028107%7CQ1028273%7CQ1033232%7CQ1043292%7CQ1054501%7CQ1062205%7CQ1070053%7CQ11061040%7CQ11180967%7CQ114045%7CQ1157507%7CQ1179105%7CQ1181380%7CQ1198819%7CQ1201560%7CQ1201707%7CQ1201963%7CQ1201988%7CQ1202232%7CQ1208489%7CQ1209053%7CQ1209064%7CQ1209098%7CQ1220154%7CQ1221459&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2526605453,
+   "edition": "2026-08-03T03:27:49Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457960+00:00",
+   "sha256": "df08b56d989985c33b810fb591ad6543427629ca4e9ce30a340de61d72cd720f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json"
+  },
+  {
+   "archived_revision": 2526540988,
+   "edition": "2026-08-03T00:47:51Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.442541+00:00",
+   "sha256": "fd82afb08675f0829343782926ba2e0f4b7d3a66fd288a8b31639c34c274ce90",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json"
+  },
+  {
+   "archived_revision": 2526615044,
+   "edition": "2026-08-03T03:55:59Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q814616|Q814744|Q814826|Q835660|Q848127|Q863489|Q863540|Q86776|Q891343|Q894428|Q895684|Q909881|Q917158|Q921293|Q92297|Q935724|Q946513|Q94674|Q959009|Q962688|Q966612|Q979215|Q984457|Q989898|Q999145&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:28.820237+00:00",
+   "sha256": "1fb3533a123815ec82d5765a1f548c0a604db75beade654a76dd38c4b086de61",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q814616|Q814744|Q814826|Q835660|Q848127|Q863489|Q863540|Q86776|Q891343|Q894428|Q895684|Q909881|Q917158|Q921293|Q92297|Q935724|Q946513|Q94674|Q959009|Q962688|Q966612|Q979215|Q984457|Q989898|Q999145&format=json"
+  },
+  {
+   "archived_revision": 2526614900,
+   "edition": "2026-08-03T03:55:37Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601115|Q609421|Q614877|Q616048|Q633692|Q635541|Q6377648|Q63854696|Q644863|Q649215|Q6501416|Q651101|Q666700|Q666884|Q669533|Q68445327|Q68458666|Q68461285|Q68461882|Q68462195|Q6894093|Q691159|Q71227|Q71284|Q713349|Q71339|Q72877|Q73073|Q736129|Q745725|Q749267|Q75091|Q75150|Q761859|Q769855|Q776550|Q777171|Q777503|Q777960|Q782730|Q787402|Q787982|Q8053666|Q807075|Q812096&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:28.813456+00:00",
+   "sha256": "e18243e07d9acf577083647e4033061ef7535936805c37835860da2554108147",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601115|Q609421|Q614877|Q616048|Q633692|Q635541|Q6377648|Q63854696|Q644863|Q649215|Q6501416|Q651101|Q666700|Q666884|Q669533|Q68445327|Q68458666|Q68461285|Q68461882|Q68462195|Q6894093|Q691159|Q71227|Q71284|Q713349|Q71339|Q72877|Q73073|Q736129|Q745725|Q749267|Q75091|Q75150|Q761859|Q769855|Q776550|Q777171|Q777503|Q777960|Q782730|Q787402|Q787982|Q8053666|Q807075|Q812096&format=json"
+  },
+  {
+   "archived_revision": 2526541849,
+   "edition": "2026-08-03T00:50:03Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.442541+00:00",
+   "sha256": "fd82afb08675f0829343782926ba2e0f4b7d3a66fd288a8b31639c34c274ce90",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json"
+  },
+  {
+   "archived_revision": 2526577558,
+   "edition": "2026-08-03T02:14:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.456527+00:00",
+   "sha256": "a69f9bd422527485818f16a17f93d61a727322022d7011b361d842a0b8c9d0d6",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json"
+  },
+  {
+   "archived_revision": 2526577574,
+   "edition": "2026-08-03T02:14:23Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.456527+00:00",
+   "sha256": "a69f9bd422527485818f16a17f93d61a727322022d7011b361d842a0b8c9d0d6",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json"
+  },
+  {
+   "archived_revision": 2526542025,
+   "edition": "2026-08-03T00:50:35Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.442541+00:00",
+   "sha256": "fd82afb08675f0829343782926ba2e0f4b7d3a66fd288a8b31639c34c274ce90",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000142|Q1012450|Q1014635|Q1015925|Q1020474|Q1022983|Q1023793|Q1023923|Q1024736|Q1025031|Q1025345|Q1026399|Q1027304|Q1027307|Q1027311|Q1027397|Q1027409|Q1027430|Q1033215|Q1040078|Q104636437|Q1061949|Q106204967|Q1062070|Q1062112|Q1062186|Q1070034|Q1070059|Q1074561|Q10870219|Q1124262|Q1129297|Q1157717|Q1165422|Q1171436|Q11720|Q1172643|Q117542|Q1178972|Q1181813|Q1186021|Q1190853|Q1191007|Q1197326|Q1197347&format=json"
+  },
+  {
+   "archived_revision": 2526614913,
+   "edition": "2026-08-03T03:55:39Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q814616|Q814744|Q814826|Q835660|Q848127|Q863489|Q863540|Q86776|Q891343|Q894428|Q895684|Q909881|Q917158|Q921293|Q92297|Q935724|Q946513|Q94674|Q959009|Q962688|Q966612|Q979215|Q984457|Q989898|Q999145&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:28.820237+00:00",
+   "sha256": "1fb3533a123815ec82d5765a1f548c0a604db75beade654a76dd38c4b086de61",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q814616|Q814744|Q814826|Q835660|Q848127|Q863489|Q863540|Q86776|Q891343|Q894428|Q895684|Q909881|Q917158|Q921293|Q92297|Q935724|Q946513|Q94674|Q959009|Q962688|Q966612|Q979215|Q984457|Q989898|Q999145&format=json"
+  },
+  {
+   "archived_revision": 2526582180,
+   "edition": "2026-08-03T02:24:49Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457960+00:00",
+   "sha256": "df08b56d989985c33b810fb591ad6543427629ca4e9ce30a340de61d72cd720f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json"
+  },
+  {
+   "archived_revision": 2526580071,
+   "edition": "2026-08-03T02:20:01Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209156|Q1209378|Q1209464|Q1210329|Q1210448|Q1231461|Q1236898|Q1241426|Q1241830|Q1243756|Q1244722|Q1267404|Q1278514|Q1283517|Q1301752|Q1321612|Q1322039|Q1331447|Q1332600|Q1332616|Q1332641|Q1332668|Q1332765|Q1332785|Q1332811|Q1332826|Q1332842|Q1333100|Q1333106|Q1333131|Q1333142|Q1333192|Q1333204|Q1333214|Q1333240|Q1333360|Q1333392|Q1333401|Q1333430|Q1333444|Q1333465|Q1333857|Q1334022|Q1334072|Q1334083&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457805+00:00",
+   "sha256": "421e505003a57523a3fe0b22a1bb6773ede6830134986702ae3d83f5b515096a",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209156|Q1209378|Q1209464|Q1210329|Q1210448|Q1231461|Q1236898|Q1241426|Q1241830|Q1243756|Q1244722|Q1267404|Q1278514|Q1283517|Q1301752|Q1321612|Q1322039|Q1331447|Q1332600|Q1332616|Q1332641|Q1332668|Q1332765|Q1332785|Q1332811|Q1332826|Q1332842|Q1333100|Q1333106|Q1333131|Q1333142|Q1333192|Q1333204|Q1333214|Q1333240|Q1333360|Q1333392|Q1333401|Q1333430|Q1333444|Q1333465|Q1333857|Q1334022|Q1334072|Q1334083&format=json"
+  },
+  {
+   "archived_revision": 2526584128,
+   "edition": "2026-08-03T02:29:46Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457960+00:00",
+   "sha256": "df08b56d989985c33b810fb591ad6543427629ca4e9ce30a340de61d72cd720f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1334907|Q1336195|Q1337083|Q1337190|Q1337346|Q1337399|Q1337409|Q1337479|Q1337609|Q1337641|Q1337692|Q1341533|Q1344668|Q1344683|Q1344820|Q1344863|Q1348844|Q1348851|Q1348900|Q1357774|Q1357984|Q1359073|Q1360058|Q1360089|Q1360781|Q1361161|Q1362055|Q1362431|Q1362976|Q1371350|Q138519|Q142125|Q145263|Q145942|Q147187|Q1473218|Q16071567|Q1612702|Q162880|Q163094|Q16461469|Q16463616|Q16666|Q1675243|Q16800447&format=json"
+  },
+  {
+   "archived_revision": 2526579818,
+   "edition": "2026-08-03T02:19:19Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209156|Q1209378|Q1209464|Q1210329|Q1210448|Q1231461|Q1236898|Q1241426|Q1241830|Q1243756|Q1244722|Q1267404|Q1278514|Q1283517|Q1301752|Q1321612|Q1322039|Q1331447|Q1332600|Q1332616|Q1332641|Q1332668|Q1332765|Q1332785|Q1332811|Q1332826|Q1332842|Q1333100|Q1333106|Q1333131|Q1333142|Q1333192|Q1333204|Q1333214|Q1333240|Q1333360|Q1333392|Q1333401|Q1333430|Q1333444|Q1333465|Q1333857|Q1334022|Q1334072|Q1334083&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457805+00:00",
+   "sha256": "421e505003a57523a3fe0b22a1bb6773ede6830134986702ae3d83f5b515096a",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209156|Q1209378|Q1209464|Q1210329|Q1210448|Q1231461|Q1236898|Q1241426|Q1241830|Q1243756|Q1244722|Q1267404|Q1278514|Q1283517|Q1301752|Q1321612|Q1322039|Q1331447|Q1332600|Q1332616|Q1332641|Q1332668|Q1332765|Q1332785|Q1332811|Q1332826|Q1332842|Q1333100|Q1333106|Q1333131|Q1333142|Q1333192|Q1333204|Q1333214|Q1333240|Q1333360|Q1333392|Q1333401|Q1333430|Q1333444|Q1333465|Q1333857|Q1334022|Q1334072|Q1334083&format=json"
+  },
+  {
+   "archived_revision": 2526611940,
+   "edition": "2026-08-03T03:47:02Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q405622|Q412795|Q419694|Q424060|Q42635|Q426756|Q426996|Q427557|Q42780|Q42956|Q43407|Q439056|Q444615|Q447167|Q449870|Q453169|Q4696877|Q476833|Q478700|Q489631|Q4970|Q5072098|Q514796|Q524160|Q525925|Q5274071|Q527463|Q530133|Q532560|Q535534|Q55196|Q562234|Q568514|Q577713|Q582413|Q5826|Q58401|Q58422|Q58695|Q58710|Q59173|Q59184|Q594416|Q594843|Q598098&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458485+00:00",
+   "sha256": "fad1ee2194333cf97d9e6f0ac0b1500e2e0f99d83810df19813de15c9d4a9a36",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q405622|Q412795|Q419694|Q424060|Q42635|Q426756|Q426996|Q427557|Q42780|Q42956|Q43407|Q439056|Q444615|Q447167|Q449870|Q453169|Q4696877|Q476833|Q478700|Q489631|Q4970|Q5072098|Q514796|Q524160|Q525925|Q5274071|Q527463|Q530133|Q532560|Q535534|Q55196|Q562234|Q568514|Q577713|Q582413|Q5826|Q58401|Q58422|Q58695|Q58710|Q59173|Q59184|Q594416|Q594843|Q598098&format=json"
+  },
+  {
+   "archived_revision": 2526614920,
+   "edition": "2026-08-03T03:55:40Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q75110|Q7676011|Q7683149|Q775784|Q7980391|Q8039404|Q804031|Q807063|Q812667|Q812672|Q814657|Q814702|Q814883|Q848555|Q877609|Q879235|Q887296|Q894763|Q895976|Q9026659|Q906919|Q92297|Q925681|Q92768612|Q930724|Q939420|Q949432|Q952585|Q953801|Q965091|Q965215|Q966411|Q989898|Q997623|Q998306&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:25:20.944286+00:00",
+   "sha256": "c135576e5af0167291c06b0f1b2d785723b59c877821797ed1d281fe2541aaaa",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q75110|Q7676011|Q7683149|Q775784|Q7980391|Q8039404|Q804031|Q807063|Q812667|Q812672|Q814657|Q814702|Q814883|Q848555|Q877609|Q879235|Q887296|Q894763|Q895976|Q9026659|Q906919|Q92297|Q925681|Q92768612|Q930724|Q939420|Q949432|Q952585|Q953801|Q965091|Q965215|Q966411|Q989898|Q997623|Q998306&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526578330,
+   "edition": "2026-08-03T02:16:05Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:13.134368+00:00",
+   "sha256": "c3edb475000deab3d0756d4d41f506d9ce3f7937489a0ccec9b16e92e844c9d8",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2531605428,
+   "edition": "2026-08-15T07:52:49Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:13.134368+00:00",
+   "sha256": "c3edb475000deab3d0756d4d41f506d9ce3f7937489a0ccec9b16e92e844c9d8",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2531866830,
+   "edition": "2026-08-16T06:11:03Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:13.134368+00:00",
+   "sha256": "c3edb475000deab3d0756d4d41f506d9ce3f7937489a0ccec9b16e92e844c9d8",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198765|Q1198768|Q1198775|Q1198777|Q1198783|Q1198785|Q1198787|Q1198793|Q1198801|Q1198806|Q1198819|Q1198833|Q1198845|Q1198848|Q1198882|Q1198890|Q1198911|Q1198930|Q1198943|Q1198957|Q1198958|Q1198967|Q1198968|Q1198978|Q1198981|Q1198984|Q1198987|Q1198988|Q1198995|Q1198998|Q1199000|Q1199003|Q1199008|Q1199018|Q1199052|Q1199064|Q1199067|Q1199069|Q1199071|Q1199078&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2531607214,
+   "edition": "2026-08-15T08:08:35Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000135|Q1001402|Q1001408|Q1005074|Q1014384|Q1015480|Q1016715|Q1016726|Q1022935|Q1023796|Q1024662|Q1025509|Q1027301|Q1027327|Q1045322|Q1061855|Q1062018|Q1062076|Q1062184|Q1062213|Q1069879|Q1069944|Q1076119|Q1089044|Q10902975|Q1091343|Q109346655|Q11064245|Q1116821|Q111908401|Q1126063|Q1152014|Q1152166|Q1152171|Q1152555|Q1152561|Q1152604|Q1156638|Q1156678|Q1168628&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:08.498091+00:00",
+   "sha256": "9bd84f221a11c750685d2e5cd4a5f7ded1bcb1a3aa29d24943064c7355b8a3db",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000135|Q1001402|Q1001408|Q1005074|Q1014384|Q1015480|Q1016715|Q1016726|Q1022935|Q1023796|Q1024662|Q1025509|Q1027301|Q1027327|Q1045322|Q1061855|Q1062018|Q1062076|Q1062184|Q1062213|Q1069879|Q1069944|Q1076119|Q1089044|Q10902975|Q1091343|Q109346655|Q11064245|Q1116821|Q111908401|Q1126063|Q1152014|Q1152166|Q1152171|Q1152555|Q1152561|Q1152604|Q1156638|Q1156678|Q1168628&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2535669391,
+   "edition": "2026-08-24T04:12:54Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404484|Q404529|Q404599|Q404636|Q404763|Q404817|Q404873|Q411431|Q416669|Q422780|Q423273|Q424060|Q424207|Q424847|Q425195|Q425415|Q425804|Q426130|Q432146|Q43684|Q448103|Q472857|Q474923|Q475255|Q47545414|Q486319|Q4881412|Q489291|Q507655|Q51760139|Q520582|Q5212549|Q524014|Q526664|Q5361871|Q5361939|Q5362333|Q544241|Q5613704|Q5620883&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:18.014201+00:00",
+   "sha256": "b1f0346f4147dae21cf329bd8c83433f3104ee184af869d7cf5bdb85927ecc2a",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q404484|Q404529|Q404599|Q404636|Q404763|Q404817|Q404873|Q411431|Q416669|Q422780|Q423273|Q424060|Q424207|Q424847|Q425195|Q425415|Q425804|Q426130|Q432146|Q43684|Q448103|Q472857|Q474923|Q475255|Q47545414|Q486319|Q4881412|Q489291|Q507655|Q51760139|Q520582|Q5212549|Q524014|Q526664|Q5361871|Q5361939|Q5362333|Q544241|Q5613704|Q5620883&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 1776299845,
+   "edition": "2022-11-21T08:43:40Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2392482|Q241003|Q24199967|Q245760|Q24835960|Q252959|Q257744|Q2600431|Q266052|Q268384|Q277617|Q278257|Q28186869|Q283672|Q286266|Q28996|Q29109964|Q2944249|Q30340|Q30705328|Q3091317|Q30948900|Q324293|Q3335654|Q335040|Q337034|Q340150|Q349976|Q354573|Q356177|Q358310|Q360268|Q362865|Q377777|Q383992|Q386212|Q404116|Q404301|Q404362|Q404429&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:17.531609+00:00",
+   "sha256": "3fbc63fb7973e779c44f03f2c3d0b15f34977e119b7e0f661bbd48a2ed70d03f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2392482|Q241003|Q24199967|Q245760|Q24835960|Q252959|Q257744|Q2600431|Q266052|Q268384|Q277617|Q278257|Q28186869|Q283672|Q286266|Q28996|Q29109964|Q2944249|Q30340|Q30705328|Q3091317|Q30948900|Q324293|Q3335654|Q335040|Q337034|Q340150|Q349976|Q354573|Q356177|Q358310|Q360268|Q362865|Q377777|Q383992|Q386212|Q404116|Q404301|Q404362|Q404429&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526580133,
+   "edition": "2026-08-03T02:20:09Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1199097|Q1199100|Q1199103|Q1207058|Q1207090|Q1207131|Q1208465|Q1208943|Q1209143|Q1209464|Q122007|Q122792123|Q122792246|Q122811107|Q122828034|Q123144583|Q123424220|Q1237536|Q1241382|Q127277|Q127281|Q127297|Q1285102|Q1296644|Q1311267|Q132368|Q132381|Q1331055|Q1331063|Q1331341|Q1331397|Q1331582|Q1331611|Q1331650|Q1331674|Q1331690|Q1331742|Q1332180|Q1332204|Q1332278&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T22:24:13.192404+00:00",
+   "sha256": "fe84413d226c17bbf0bc61ffb1551e0faf70995deab9517ff6cf165a7969a0d7",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1199097|Q1199100|Q1199103|Q1207058|Q1207090|Q1207131|Q1208465|Q1208943|Q1209143|Q1209464|Q122007|Q122792123|Q122792246|Q122811107|Q122828034|Q123144583|Q123424220|Q1237536|Q1241382|Q127277|Q127281|Q127297|Q1285102|Q1296644|Q1311267|Q132368|Q132381|Q1331055|Q1331063|Q1331341|Q1331397|Q1331582|Q1331611|Q1331650|Q1331674|Q1331690|Q1331742|Q1332180|Q1332204|Q1332278&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526578270,
+   "edition": "2026-08-03T02:15:54Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198223|Q1198224|Q1198228|Q1198229|Q1198232|Q1198234|Q1198245|Q1198251|Q1198257|Q1198258|Q1198262|Q1198263|Q1198271|Q1198276|Q1198286|Q1198294|Q1198297|Q1198307|Q1198314|Q1198334|Q1198335|Q1198343|Q1198349|Q1198358|Q1198369|Q1198373|Q1198379|Q1198396|Q1198406|Q1198415|Q1198429|Q1198464|Q1198495|Q1198528|Q1198559|Q1198819|Q11996703|Q120017310|Q1207037|Q1207049|Q1207076|Q1207099|Q1208752|Q1209090|Q1209143&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457666+00:00",
+   "sha256": "553362081c5ec3598975c3337111c9538d5c687bbbbeabc6db2e0b9bc8b8875d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198223|Q1198224|Q1198228|Q1198229|Q1198232|Q1198234|Q1198245|Q1198251|Q1198257|Q1198258|Q1198262|Q1198263|Q1198271|Q1198276|Q1198286|Q1198294|Q1198297|Q1198307|Q1198314|Q1198334|Q1198335|Q1198343|Q1198349|Q1198358|Q1198369|Q1198373|Q1198379|Q1198396|Q1198406|Q1198415|Q1198429|Q1198464|Q1198495|Q1198528|Q1198559|Q1198819|Q11996703|Q120017310|Q1207037|Q1207049|Q1207076|Q1207099|Q1208752|Q1209090|Q1209143&format=json"
+  },
+  {
+   "url": "https://mzt.hubei.gov.cn/ywzc/ywzc/qhc/202601/P020260112578515467143.xlsx",
+   "retrieved_at": "2026-10-12T23:18:01.724454+00:00",
+   "status": 200,
+   "final_url": "https://mzt.hubei.gov.cn/ywzc/ywzc/qhc/202601/P020260112578515467143.xlsx",
+   "sha256": "84abda454508280ce14262673b1547acede071c1f68f5f4c394a409ecaf40403",
+   "bytes": 41784,
+   "edition": "2025 annual; published 2026-01-12",
+   "locator": {
+    "sheet": "Sheet1",
+    "name": "A1228",
+    "code": "B1228"
+   },
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction."
+  },
+  {
+   "archived_revision": 2555690318,
+   "edition": "2026-10-10T21:32:28Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T21:27:32.832021+00:00",
+   "sha256": "d817cbe36edf60a4c548e0eba8ea8af62dccdb585ecda15cf55c769ddda74b41",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "url": "https://mzt.jl.gov.cn/mztyw_74291/qhdm/fgwj/202607/P020260728378611285065.xls",
+   "sha256": "fcf96c64ec639490ccb4c716a65f92861639fad48278fd54236066b68145612d",
+   "retrieved_at": "2026-10-12T21:26:30.020782+00:00",
+   "edition": "2026-07-28",
+   "locator": {
+    "source_cell": {
+     "sheet": "Sheet1",
+     "name": "C890",
+     "code": "E890"
+    }
+   },
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction."
+  },
+  {
+   "archived_revision": 2532200507,
+   "edition": "2026-08-17T04:32:47Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T21:27:32.832021+00:00",
+   "sha256": "d817cbe36edf60a4c548e0eba8ea8af62dccdb585ecda15cf55c769ddda74b41",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2540275253,
+   "edition": "2026-09-04T22:24:16Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209373|Q1209380|Q1209395|Q1209464|Q1226387|Q124392|Q125499481|Q128674|Q128883|Q130023|Q1301199|Q1305377|Q1331447|Q1335168|Q1335184|Q1337069|Q1337260|Q1337399|Q1337432|Q1337471|Q1337641|Q1337852|Q1337868|Q1337882|Q1337894|Q1337912|Q1337926|Q1337942|Q1337959|Q1337969|Q1338032|Q1338058|Q1338099|Q1338127|Q1338146|Q1338180|Q1338218|Q1338228|Q1338259|Q1338275|Q1338309|Q1338324|Q1338337|Q1338353|Q1338482|Q1338495|Q1338516|Q1338527|Q1338555|Q1338571&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.204921+00:00",
+   "sha256": "4b99f2ba5b53d6fa908a277409bdb6f8095120dc31e3c8ed9f1b16fd0d0d7022",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1209373|Q1209380|Q1209395|Q1209464|Q1226387|Q124392|Q125499481|Q128674|Q128883|Q130023|Q1301199|Q1305377|Q1331447|Q1335168|Q1335184|Q1337069|Q1337260|Q1337399|Q1337432|Q1337471|Q1337641|Q1337852|Q1337868|Q1337882|Q1337894|Q1337912|Q1337926|Q1337942|Q1337959|Q1337969|Q1338032|Q1338058|Q1338099|Q1338127|Q1338146|Q1338180|Q1338218|Q1338228|Q1338259|Q1338275|Q1338309|Q1338324|Q1338337|Q1338353|Q1338482|Q1338495|Q1338516|Q1338527|Q1338555|Q1338571&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "url": "https://mzt.jl.gov.cn/mztyw_74291/qhdm/fgwj/202607/P020260728378611285065.xls",
+   "sha256": "fcf96c64ec639490ccb4c716a65f92861639fad48278fd54236066b68145612d",
+   "retrieved_at": "2026-10-12T21:26:30.020782+00:00",
+   "edition": "2026-07-28",
+   "locator": {
+    "source_cell": {
+     "sheet": "Sheet1",
+     "name": "C931",
+     "code": "E931"
+    }
+   },
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction."
+  },
+  {
+   "archived_revision": 2532202052,
+   "edition": "2026-08-17T04:43:50Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T21:27:32.832021+00:00",
+   "sha256": "d817cbe36edf60a4c548e0eba8ea8af62dccdb585ecda15cf55c769ddda74b41",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q609980|Q616048|Q623329|Q6377648|Q645113|Q657554|Q674014|Q674765|Q68534|Q699125|Q699138|Q700652|Q71204|Q713307|Q713323|Q713327|Q713340|Q713362|Q71339|Q71401|Q71415|Q714984|Q727268|Q73186|Q739938|Q74881|Q74957|Q75026|Q75091|Q75110|Q75150|Q75203|Q75230|Q7525784|Q75268|Q75336|Q75379|Q770507|Q8044778|Q8053885&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526615117,
+   "edition": "2026-08-03T03:56:10Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:46.433018+00:00",
+   "sha256": "70793ec7cc63d08523572a5440f49b7350e947b79c4b11d196082a4cff5f4482",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526542260,
+   "edition": "2026-08-03T00:51:10Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.203000+00:00",
+   "sha256": "7a9e3fb84b9e34bea98f9f5e0291b06a50b646549dd7a0fd91f0841325f1f3d0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "edition": "2025-12-31",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {
+    "source_cell": {
+     "code": "B180",
+     "name": "A180",
+     "sheet": "全省行政区划设置"
+    }
+   },
+   "retrieved_at": "2026-10-12T19:33:09.230244+00:00",
+   "sha256": "3d47b9920d368805df4c21ebfe55bdc6be5f92039e145c1c7fbd7479be794dbf",
+   "url": "http://mzt.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=0c285b0786be4214900d50958175c102.xlsx"
+  },
+  {
+   "edition": "2025-12-31",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {
+    "source_cell": {
+     "code": "B195",
+     "name": "A195",
+     "sheet": "全省行政区划设置"
+    }
+   },
+   "retrieved_at": "2026-10-12T19:33:09.230244+00:00",
+   "sha256": "3d47b9920d368805df4c21ebfe55bdc6be5f92039e145c1c7fbd7479be794dbf",
+   "url": "http://mzt.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=0c285b0786be4214900d50958175c102.xlsx"
+  },
+  {
+   "archived_revision": 2526608326,
+   "edition": "2026-08-03T03:36:17Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16868077|Q1688906|Q169140|Q170247|Q170322|Q1739755|Q174123|Q1741962|Q1751862|Q1810698|Q181352|Q182023|Q182982|Q183584|Q19206|Q197368|Q197392|Q197408|Q197495|Q197517|Q197521|Q197522|Q197524|Q197526|Q197919|Q198053|Q198061|Q198184|Q198370|Q198408|Q203738|Q205922|Q2060398|Q20756216|Q210287|Q210493|Q2119128|Q217646|Q217681|Q217698|Q224603|Q225872|Q227034|Q227061|Q228217&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458185+00:00",
+   "sha256": "c7d2cb7a0b1f85c4fc63c2b90fec2320bdcb9fcdb57dddc67788b83e6744886d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16868077|Q1688906|Q169140|Q170247|Q170322|Q1739755|Q174123|Q1741962|Q1751862|Q1810698|Q181352|Q182023|Q182982|Q183584|Q19206|Q197368|Q197392|Q197408|Q197495|Q197517|Q197521|Q197522|Q197524|Q197526|Q197919|Q198053|Q198061|Q198184|Q198370|Q198408|Q203738|Q205922|Q2060398|Q20756216|Q210287|Q210493|Q2119128|Q217646|Q217681|Q217698|Q224603|Q225872|Q227034|Q227061|Q228217&format=json"
+  },
+  {
+   "edition": "2025-12-31",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {
+    "source_cell": {
+     "code": "B275",
+     "name": "A275",
+     "sheet": "全省行政区划设置"
+    }
+   },
+   "retrieved_at": "2026-10-12T19:33:09.230244+00:00",
+   "sha256": "3d47b9920d368805df4c21ebfe55bdc6be5f92039e145c1c7fbd7479be794dbf",
+   "url": "http://mzt.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=0c285b0786be4214900d50958175c102.xlsx"
+  },
+  {
+   "url": "http://mzt.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=0c285b0786be4214900d50958175c102.xlsx",
+   "sha256": "3d47b9920d368805df4c21ebfe55bdc6be5f92039e145c1c7fbd7479be794dbf",
+   "retrieved_at": "2026-10-12T19:33:09.230244+00:00",
+   "edition": "2025-12-31",
+   "locator": {
+    "source_cell": {
+     "sheet": "全省行政区划设置",
+     "name": "A291",
+     "code": "B291"
+    }
+   },
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction."
+  },
+  {
+   "archived_revision": 2526608816,
+   "edition": "2026-08-03T03:37:43Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16868077|Q1688906|Q169140|Q170247|Q170322|Q1739755|Q174123|Q1741962|Q1751862|Q1810698|Q181352|Q182023|Q182982|Q183584|Q19206|Q197368|Q197392|Q197408|Q197495|Q197517|Q197521|Q197522|Q197524|Q197526|Q197919|Q198053|Q198061|Q198184|Q198370|Q198408|Q203738|Q205922|Q2060398|Q20756216|Q210287|Q210493|Q2119128|Q217646|Q217681|Q217698|Q224603|Q225872|Q227034|Q227061|Q228217&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.458185+00:00",
+   "sha256": "c7d2cb7a0b1f85c4fc63c2b90fec2320bdcb9fcdb57dddc67788b83e6744886d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16868077|Q1688906|Q169140|Q170247|Q170322|Q1739755|Q174123|Q1741962|Q1751862|Q1810698|Q181352|Q182023|Q182982|Q183584|Q19206|Q197368|Q197392|Q197408|Q197495|Q197517|Q197521|Q197522|Q197524|Q197526|Q197919|Q198053|Q198061|Q198184|Q198370|Q198408|Q203738|Q205922|Q2060398|Q20756216|Q210287|Q210493|Q2119128|Q217646|Q217681|Q217698|Q224603|Q225872|Q227034|Q227061|Q228217&format=json"
+  },
+  {
+   "archived_revision": 2526577817,
+   "edition": "2026-08-03T02:14:58Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.456527+00:00",
+   "sha256": "a69f9bd422527485818f16a17f93d61a727322022d7011b361d842a0b8c9d0d6",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1197387|Q1197393|Q1197432|Q1197435|Q1197461|Q1197476|Q1197481|Q1197484|Q1197488|Q1197493|Q1197497|Q1197498|Q1197506|Q1197507|Q1197517|Q1197538|Q1197540|Q1197619|Q1197629|Q1197917|Q1197940|Q1197949|Q1197955|Q1197959|Q1197974|Q1197981|Q1197998|Q1198004|Q1198023|Q1198034|Q1198038|Q1198052|Q1198065|Q1198070|Q1198076|Q1198087|Q1198123|Q1198158|Q1198168|Q1198182|Q1198189|Q1198197|Q1198208|Q1198211|Q1198216&format=json"
+  },
+  {
+   "archived_revision": 2526615396,
+   "edition": "2026-08-03T03:57:01Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q943710%7CQ950944%7CQ955461%7CQ968183%7CQ974580%7CQ975264%7CQ996211%7CQ1001396%7CQ1012462%7CQ1026164%7CQ1069975%7CQ1070000%7CQ1070002%7CQ1070010%7CQ1070025%7CQ1074599%7CQ1114832%7CQ1151652%7CQ1157514%7CQ1159535%7CQ1169571%7CQ1172649%7CQ1173592%7CQ1196856%7CQ1196894%7CQ1196900%7CQ1196908%7CQ1196928%7CQ1196978%7CQ1196989%7CQ1196995%7CQ1197001%7CQ1197006%7CQ1197009%7CQ1197024%7CQ1197030%7CQ1197034%7CQ1197064%7CQ1197069%7CQ1197075&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:53.435591+00:00",
+   "sha256": "9fe3cd28950b2739ddcf5da968510e88bddb4ba8ef7fa8ca014a90244a4060ea",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q943710%7CQ950944%7CQ955461%7CQ968183%7CQ974580%7CQ975264%7CQ996211%7CQ1001396%7CQ1012462%7CQ1026164%7CQ1069975%7CQ1070000%7CQ1070002%7CQ1070010%7CQ1070025%7CQ1074599%7CQ1114832%7CQ1151652%7CQ1157514%7CQ1159535%7CQ1169571%7CQ1172649%7CQ1173592%7CQ1196856%7CQ1196894%7CQ1196900%7CQ1196908%7CQ1196928%7CQ1196978%7CQ1196989%7CQ1196995%7CQ1197001%7CQ1197006%7CQ1197009%7CQ1197024%7CQ1197030%7CQ1197034%7CQ1197064%7CQ1197069%7CQ1197075&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2556200956,
+   "edition": "2026-10-12T09:18:57Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q249007%7CQ256594%7CQ257744%7CQ264922%7CQ278408%7CQ279301%7CQ284275%7CQ284998%7CQ319114%7CQ356845%7CQ358117%7CQ358319%7CQ362959%7CQ363166%7CQ372630%7CQ374171%7CQ403047%7CQ417504%7CQ421446%7CQ423247%7CQ424192%7CQ424839%7CQ425492%7CQ427557%7CQ443219%7CQ444615%7CQ446869%7CQ464563%7CQ473451%7CQ477154%7CQ477646%7CQ492094%7CQ492100%7CQ500061%7CQ517930%7CQ519605%7CQ519810%7CQ522796%7CQ532560%7CQ532776&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:53.435384+00:00",
+   "sha256": "f9fc36f63f3816ef7c179ed21d482029bb7c4d0641cbf0baaf2105fbeefe5f3b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q249007%7CQ256594%7CQ257744%7CQ264922%7CQ278408%7CQ279301%7CQ284275%7CQ284998%7CQ319114%7CQ356845%7CQ358117%7CQ358319%7CQ362959%7CQ363166%7CQ372630%7CQ374171%7CQ403047%7CQ417504%7CQ421446%7CQ423247%7CQ424192%7CQ424839%7CQ425492%7CQ427557%7CQ443219%7CQ444615%7CQ446869%7CQ464563%7CQ473451%7CQ477154%7CQ477646%7CQ492094%7CQ492100%7CQ500061%7CQ517930%7CQ519605%7CQ519810%7CQ522796%7CQ532560%7CQ532776&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526582170,
+   "edition": "2026-08-03T02:24:46Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1210231%7CQ1272863%7CQ1285102%7CQ1318786%7CQ1330568%7CQ1331388%7CQ1331408%7CQ1332080%7CQ1332111%7CQ1332210%7CQ1333527%7CQ1333589%7CQ1333633%7CQ1333647%7CQ1333680%7CQ1333710%7CQ1334358%7CQ1338336%7CQ1339439%7CQ1339645%7CQ1339849%7CQ1339965%7CQ1340114%7CQ1340683%7CQ1341348%7CQ1341574%7CQ1355016%7CQ1359204%7CQ1362530%7CQ1363661%7CQ1364651%7CQ1365033%7CQ2095641%7CQ3503783%7CQ3528051%7CQ3572541%7CQ5091379%7CQ5219654%7CQ5926306%7CQ6429256&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:47:57.855096+00:00",
+   "sha256": "8e0e7608d0999ce5c05dc99ee25f31c15dfc0e2e19277b6fef06705e849d85c6",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1210231%7CQ1272863%7CQ1285102%7CQ1318786%7CQ1330568%7CQ1331388%7CQ1331408%7CQ1332080%7CQ1332111%7CQ1332210%7CQ1333527%7CQ1333589%7CQ1333633%7CQ1333647%7CQ1333680%7CQ1333710%7CQ1334358%7CQ1338336%7CQ1339439%7CQ1339645%7CQ1339849%7CQ1339965%7CQ1340114%7CQ1340683%7CQ1341348%7CQ1341574%7CQ1355016%7CQ1359204%7CQ1362530%7CQ1363661%7CQ1364651%7CQ1365033%7CQ2095641%7CQ3503783%7CQ3528051%7CQ3572541%7CQ5091379%7CQ5219654%7CQ5926306%7CQ6429256&props=info%7Clabels%7Cdescriptions%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526612997,
+   "edition": "2026-08-03T03:50:00Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601717|Q606261|Q607961|Q609421|Q612631|Q612790|Q614322|Q644582|Q651101|Q666884|Q668534|Q6702797|Q6744520|Q677700|Q6827679|Q693612|Q713343|Q71373|Q727628|Q73186|Q748400|Q7496644|Q75026|Q75268|Q764359|Q764900|Q766073|Q767684|Q772935|Q773926|Q774508|Q788585|Q7980434|Q8044185|Q8044351|Q8044757|Q8053611|Q807084|Q808243|Q812667&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:18:01.946048+00:00",
+   "sha256": "a7d9f730ca6cc04d6cb182bcc8a73d95e07cf9b8b770b1f374982fe246349014",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q601717|Q606261|Q607961|Q609421|Q612631|Q612790|Q614322|Q644582|Q651101|Q666884|Q668534|Q6702797|Q6744520|Q677700|Q6827679|Q693612|Q713343|Q71373|Q727628|Q73186|Q748400|Q7496644|Q75026|Q75268|Q764359|Q764900|Q766073|Q767684|Q772935|Q773926|Q774508|Q788585|Q7980434|Q8044185|Q8044351|Q8044757|Q8053611|Q807084|Q808243|Q812667&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526582034,
+   "edition": "2026-08-03T02:24:24Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356056|Q1356079|Q1359300|Q1359454|Q1359879|Q1360011|Q1360027|Q1360118|Q1363661|Q1364693|Q1374948|Q14138|Q145996|Q147187|Q1472480|Q1493729|Q1627053|Q165727|Q16666|Q1688875|Q171955|Q177308|Q178945|Q181904|Q182852|Q1832806|Q1873885|Q189823|Q1900262|Q197417|Q197496|Q197514|Q197519|Q19770|Q197724|Q197751|Q197754|Q197757|Q197863|Q203054&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:56.318060+00:00",
+   "sha256": "2a21151a8e53a24dd7550e7c2cf83fc74b8817711cb296698d9e36dcec6b93d5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356056|Q1356079|Q1359300|Q1359454|Q1359879|Q1360011|Q1360027|Q1360118|Q1363661|Q1364693|Q1374948|Q14138|Q145996|Q147187|Q1472480|Q1493729|Q1627053|Q165727|Q16666|Q1688875|Q171955|Q177308|Q178945|Q181904|Q182852|Q1832806|Q1873885|Q189823|Q1900262|Q197417|Q197496|Q197514|Q197519|Q19770|Q197724|Q197751|Q197754|Q197757|Q197863|Q203054&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526609635,
+   "edition": "2026-08-03T03:40:11Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:57.657227+00:00",
+   "sha256": "8e0deefe448374e7cf1cd730221b05ec7c12ba02f0f019e130f1da878f02151c",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2030923|Q205914|Q206329|Q207030|Q207069|Q208471|Q218429|Q224603|Q231697|Q237565|Q239497|Q240516|Q252760|Q253212|Q253276|Q256779|Q258426|Q259751|Q264357|Q2674764|Q27788134|Q278372|Q29015|Q29392701|Q29413|Q30002|Q30091|Q304204|Q3179249|Q338033|Q34412|Q349979|Q354541|Q354573|Q357448|Q357464|Q358450|Q360693|Q360870|Q360951&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526581818,
+   "edition": "2026-08-03T02:23:50Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1339237|Q1339415|Q1339425|Q1339451|Q1339694|Q1339706|Q1339716|Q1339761|Q1339792|Q1339805|Q1339949|Q1339981|Q1340145|Q1340400|Q1340714|Q134110|Q1341853|Q1341912|Q1341978|Q1342007|Q1342115|Q1342169|Q1342211|Q1342252|Q1343254|Q1343654|Q1343670|Q1345456|Q1345481|Q1347069|Q1347079|Q1347089|Q1347116|Q1354733|Q1355705|Q1355890|Q1355899|Q1355911|Q1355944|Q1355972&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:54.436075+00:00",
+   "sha256": "423ed0b792585baeab2a9f9bc409b8179db65fb0469f3796730ae2ee8a17986e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1339237|Q1339415|Q1339425|Q1339451|Q1339694|Q1339706|Q1339716|Q1339761|Q1339792|Q1339805|Q1339949|Q1339981|Q1340145|Q1340400|Q1340714|Q134110|Q1341853|Q1341912|Q1341978|Q1342007|Q1342115|Q1342169|Q1342211|Q1342252|Q1343254|Q1343654|Q1343670|Q1345456|Q1345481|Q1347069|Q1347079|Q1347089|Q1347116|Q1354733|Q1355705|Q1355890|Q1355899|Q1355911|Q1355944|Q1355972&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526582047,
+   "edition": "2026-08-03T02:24:26Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356056|Q1356079|Q1359300|Q1359454|Q1359879|Q1360011|Q1360027|Q1360118|Q1363661|Q1364693|Q1374948|Q14138|Q145996|Q147187|Q1472480|Q1493729|Q1627053|Q165727|Q16666|Q1688875|Q171955|Q177308|Q178945|Q181904|Q182852|Q1832806|Q1873885|Q189823|Q1900262|Q197417|Q197496|Q197514|Q197519|Q19770|Q197724|Q197751|Q197754|Q197757|Q197863|Q203054&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:56.318060+00:00",
+   "sha256": "2a21151a8e53a24dd7550e7c2cf83fc74b8817711cb296698d9e36dcec6b93d5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356056|Q1356079|Q1359300|Q1359454|Q1359879|Q1360011|Q1360027|Q1360118|Q1363661|Q1364693|Q1374948|Q14138|Q145996|Q147187|Q1472480|Q1493729|Q1627053|Q165727|Q16666|Q1688875|Q171955|Q177308|Q178945|Q181904|Q182852|Q1832806|Q1873885|Q189823|Q1900262|Q197417|Q197496|Q197514|Q197519|Q19770|Q197724|Q197751|Q197754|Q197757|Q197863|Q203054&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526579771,
+   "edition": "2026-08-03T02:19:14Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198223|Q1198224|Q1198228|Q1198229|Q1198232|Q1198234|Q1198245|Q1198251|Q1198257|Q1198258|Q1198262|Q1198263|Q1198271|Q1198276|Q1198286|Q1198294|Q1198297|Q1198307|Q1198314|Q1198334|Q1198335|Q1198343|Q1198349|Q1198358|Q1198369|Q1198373|Q1198379|Q1198396|Q1198406|Q1198415|Q1198429|Q1198464|Q1198495|Q1198528|Q1198559|Q1198819|Q11996703|Q120017310|Q1207037|Q1207049|Q1207076|Q1207099|Q1208752|Q1209090|Q1209143&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T19:31:26.457666+00:00",
+   "sha256": "553362081c5ec3598975c3337111c9538d5c687bbbbeabc6db2e0b9bc8b8875d",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1198223|Q1198224|Q1198228|Q1198229|Q1198232|Q1198234|Q1198245|Q1198251|Q1198257|Q1198258|Q1198262|Q1198263|Q1198271|Q1198276|Q1198286|Q1198294|Q1198297|Q1198307|Q1198314|Q1198334|Q1198335|Q1198343|Q1198349|Q1198358|Q1198369|Q1198373|Q1198379|Q1198396|Q1198406|Q1198415|Q1198429|Q1198464|Q1198495|Q1198528|Q1198559|Q1198819|Q11996703|Q120017310|Q1207037|Q1207049|Q1207076|Q1207099|Q1208752|Q1209090|Q1209143&format=json"
+  },
+  {
+   "archived_revision": 2526543147,
+   "edition": "2026-08-03T00:53:10Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012450|Q1012620|Q1013814|Q1014399|Q1014635|Q1015140|Q1015823|Q1016730|Q1018208|Q1023762|Q1023900|Q1027358|Q1027369|Q1028157|Q1028262|Q1030615|Q1033226|Q1033239|Q104883935|Q104887127|Q1062091|Q1062103|Q1062584|Q1076195|Q1089057|Q1090087|Q10946652|Q1118110|Q114045|Q114367|Q1152610|Q1152613|Q1152620|Q1152646|Q1152679|Q1152698|Q1152904|Q1152912|Q1152918|Q1153214&props=labels|descriptions|claims|info&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T23:17:49.379182+00:00",
+   "sha256": "ccf1187a529da24df2feb0ba35edac5c9467c9a6f0560013379b0b27d8ad9446",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012450|Q1012620|Q1013814|Q1014399|Q1014635|Q1015140|Q1015823|Q1016730|Q1018208|Q1023762|Q1023900|Q1027358|Q1027369|Q1028157|Q1028262|Q1030615|Q1033226|Q1033239|Q104883935|Q104887127|Q1062091|Q1062103|Q1062584|Q1076195|Q1089057|Q1090087|Q10946652|Q1118110|Q114045|Q114367|Q1152610|Q1152613|Q1152620|Q1152646|Q1152679|Q1152698|Q1152904|Q1152912|Q1152918|Q1153214&props=labels|descriptions|claims|info&format=json"
+  },
+  {
+   "archived_revision": 2526614451,
+   "edition": "2026-08-03T03:54:22Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q68481|Q68534|Q68579|Q68614|Q68695|Q68744|Q687952|Q68814|Q68862|Q68919|Q71204|Q71247|Q71284|Q713323|Q713327|Q71339|Q71355|Q71373|Q7195820|Q7246023|Q7267847|Q72907|Q73020|Q73186|Q733046|Q739890|Q740280|Q744258|Q7496210|Q75110|Q75150|Q75268|Q762724|Q763069|Q7650621|Q766619|Q767284|Q774508|Q776550|Q777171|Q781559|Q785966|Q8048939|Q8059383|Q8060267|Q807070|Q814711|Q814826|Q814903|Q827040&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205498+00:00",
+   "sha256": "caf664e79944806f299c8f7312fc33a97d6d443ecc32c56cf6485dcbe1025b19",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q68481|Q68534|Q68579|Q68614|Q68695|Q68744|Q687952|Q68814|Q68862|Q68919|Q71204|Q71247|Q71284|Q713323|Q713327|Q71339|Q71355|Q71373|Q7195820|Q7246023|Q7267847|Q72907|Q73020|Q73186|Q733046|Q739890|Q740280|Q744258|Q7496210|Q75110|Q75150|Q75268|Q762724|Q763069|Q7650621|Q766619|Q767284|Q774508|Q776550|Q777171|Q781559|Q785966|Q8048939|Q8059383|Q8060267|Q807070|Q814711|Q814826|Q814903|Q827040&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2537974000,
+   "edition": "2026-08-30T01:07:43Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012620%7CQ1016730%7CQ1023762%7CQ1028262%7CQ1033239%7CQ1062091%7CQ1090087%7CQ1118110%7CQ1152610%7CQ1152613%7CQ1152620%7CQ1152646%7CQ1152904%7CQ1152912%7CQ1153238%7CQ1153253%7CQ1153265%7CQ1157390%7CQ1179094%7CQ1200363%7CQ1200391%7CQ1200396%7CQ1200400%7CQ1200418%7CQ1200460%7CQ1200499%7CQ1200512%7CQ1200542%7CQ1200551%7CQ1200571%7CQ1200581%7CQ1200596%7CQ1200602%7CQ1200609%7CQ1200623%7CQ1200635%7CQ1200656%7CQ1200663%7CQ1200674%7CQ1200687&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:43:41.939318+00:00",
+   "sha256": "3190b1eb20f55e8b26cd79eca0146624e98e882ab1fc1ed416116224e1a317fc",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1012620%7CQ1016730%7CQ1023762%7CQ1028262%7CQ1033239%7CQ1062091%7CQ1090087%7CQ1118110%7CQ1152610%7CQ1152613%7CQ1152620%7CQ1152646%7CQ1152904%7CQ1152912%7CQ1153238%7CQ1153253%7CQ1153265%7CQ1157390%7CQ1179094%7CQ1200363%7CQ1200391%7CQ1200396%7CQ1200400%7CQ1200418%7CQ1200460%7CQ1200499%7CQ1200512%7CQ1200542%7CQ1200551%7CQ1200571%7CQ1200581%7CQ1200596%7CQ1200602%7CQ1200609%7CQ1200623%7CQ1200635%7CQ1200656%7CQ1200663%7CQ1200674%7CQ1200687&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json"
+  },
+  {
+   "archived_revision": 2551266095,
+   "edition": "2026-09-30T10:10:20Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:12:22.848486+00:00",
+   "sha256": "61a634d8f3b8caa2b4fcdd4859e766a202f4ac6c3aa31576a132515a92320179",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json"
+  },
+  {
+   "archived_revision": 2526576998,
+   "edition": "2026-08-03T02:13:07Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1011103%7CQ1011138%7CQ1011201%7CQ1022464%7CQ1023774%7CQ1023793%7CQ1023799%7CQ1023800%7CQ1023802%7CQ1026451%7CQ1026471%7CQ1026476%7CQ1027331%7CQ1027910%7CQ1062122%7CQ1062178%7CQ10867194%7CQ10868399%7CQ10888146%7CQ1089534%7CQ10902489%7CQ10903675%7CQ10948802%7CQ11039740%7CQ11066906%7CQ11082735%7CQ11101770%7CQ11113110%7CQ11145522%7CQ11181489%7CQ1157663%7CQ11736%7CQ1191987%7CQ1197840%7CQ1198090%7CQ1204548%7CQ1205847%7CQ1226419%7CQ1285102%7CQ1334124&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:12:20.080151+00:00",
+   "sha256": "c7645dd7374da5207fa01c8c52a420bb307bfb0a7bce1e053e787d5df0c21bc3",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1011103%7CQ1011138%7CQ1011201%7CQ1022464%7CQ1023774%7CQ1023793%7CQ1023799%7CQ1023800%7CQ1023802%7CQ1026451%7CQ1026471%7CQ1026476%7CQ1027331%7CQ1027910%7CQ1062122%7CQ1062178%7CQ10867194%7CQ10868399%7CQ10888146%7CQ1089534%7CQ10902489%7CQ10903675%7CQ10948802%7CQ11039740%7CQ11066906%7CQ11082735%7CQ11101770%7CQ11113110%7CQ11145522%7CQ11181489%7CQ1157663%7CQ11736%7CQ1191987%7CQ1197840%7CQ1198090%7CQ1204548%7CQ1205847%7CQ1226419%7CQ1285102%7CQ1334124&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json"
+  },
+  {
+   "edition": "2025 annual; exact cutoff not printed",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-12T20:45:45.874636+00:00",
+   "sha256": "aa9c8be7ab387287b8819f82d4f021feebedab564bb0c7093c25a4644a01e028",
+   "url": "https://www.hzzx.gov.cn/cshz/images/2026-01/08/4dcd1a33-e9d2-41ae-9e12-b601ca5de402.jpeg"
+  },
+  {
+   "archived_revision": 2526612417,
+   "edition": "2026-08-03T03:48:18Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T01:12:22.848486+00:00",
+   "sha256": "61a634d8f3b8caa2b4fcdd4859e766a202f4ac6c3aa31576a132515a92320179",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q29617010%7CQ29620863%7CQ29621037%7CQ29624959%7CQ29625227%7CQ29625859%7CQ34793163%7CQ3571554%7CQ42635%7CQ42664%7CQ42666%7CQ42780%7CQ4970%7CQ513077%7CQ5210069%7CQ524250%7CQ551437%7CQ5749042%7CQ58178%7CQ58210%7CQ58235%7CQ58273%7CQ58294%7CQ58324%7CQ592727%7CQ63213317%7CQ6849907%7CQ699777%7CQ701024%7CQ701865%7CQ701879%7CQ702249%7CQ702254%7CQ702404%7CQ703806%7CQ703818%7CQ703873%7CQ706161%7CQ706228%7CQ707965&props=labels%7Cdescriptions%7Cclaims%7Cinfo%7Caliases&format=json"
+  },
+  {
+   "archived_revision": 2550632885,
+   "edition": "2026-09-28T21:07:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q571766%7CQ571808%7CQ571949%7CQ572014%7CQ572089%7CQ572140%7CQ572231%7CQ57970%7CQ59223%7CQ592665%7CQ59775%7CQ59923%7CQ59927%7CQ60082%7CQ6191811%7CQ625554%7CQ635817%7CQ6557242%7CQ680314%7CQ68695%7CQ7195789%7CQ72417%7CQ72419%7CQ72421%7CQ72517%7CQ72907%7CQ8044576%7CQ807080%7CQ8072910%7CQ814748%7CQ864098%7CQ867732%7CQ888373%7CQ90987538%7CQ90987675%7CQ912485%7CQ944242%7CQ944615%7CQ951789%7CQ955348&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T00:03:37.729650+00:00",
+   "sha256": "f9025189e0344a11aa1e2228216039f5d94048eaefcafd0394f9e1aeeecc6156",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q571766%7CQ571808%7CQ571949%7CQ572014%7CQ572089%7CQ572140%7CQ572231%7CQ57970%7CQ59223%7CQ592665%7CQ59775%7CQ59923%7CQ59927%7CQ60082%7CQ6191811%7CQ625554%7CQ635817%7CQ6557242%7CQ680314%7CQ68695%7CQ7195789%7CQ72417%7CQ72419%7CQ72421%7CQ72517%7CQ72907%7CQ8044576%7CQ807080%7CQ8072910%7CQ814748%7CQ864098%7CQ867732%7CQ888373%7CQ90987538%7CQ90987675%7CQ912485%7CQ944242%7CQ944615%7CQ951789%7CQ955348&format=json&props=labels%7Cdescriptions%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2526581564,
+   "edition": "2026-08-03T02:23:08Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:03:48.029745+00:00",
+   "sha256": "6cf3dc494c0c52b9fd93b287b5401806f04192aec427e8ed1c10cc7cb824fd4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2552131483,
+   "edition": "2026-10-02T11:19:02Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q5350133%7CQ535534%7CQ569907%7CQ570768%7CQ570829%7CQ570884%7CQ570937%7CQ571033%7CQ571126%7CQ571208%7CQ571219%7CQ573124%7CQ57448%7CQ594069%7CQ604385%7CQ604517%7CQ604625%7CQ608239%7CQ609421%7CQ615634%7CQ616941%7CQ623454%7CQ6312698%7CQ6362644%7CQ661113%7CQ671949%7CQ674791%7CQ686862%7CQ690255%7CQ691645%7CQ716484%7CQ717743%7CQ72877%7CQ735537%7CQ736956%7CQ740914%7CQ765765%7CQ783151%7CQ848127%7CQ8895769%7CQ8897662%7CQ890671%7CQ922785%7CQ938707%7CQ938997&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:03:48.029912+00:00",
+   "sha256": "68fcc39ca89586542d9ece29f5b7b0584db7a9c8b5cc8cf63e189b5a2c506b09",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q5350133%7CQ535534%7CQ569907%7CQ570768%7CQ570829%7CQ570884%7CQ570937%7CQ571033%7CQ571126%7CQ571208%7CQ571219%7CQ573124%7CQ57448%7CQ594069%7CQ604385%7CQ604517%7CQ604625%7CQ608239%7CQ609421%7CQ615634%7CQ616941%7CQ623454%7CQ6312698%7CQ6362644%7CQ661113%7CQ671949%7CQ674791%7CQ686862%7CQ690255%7CQ691645%7CQ716484%7CQ717743%7CQ72877%7CQ735537%7CQ736956%7CQ740914%7CQ765765%7CQ783151%7CQ848127%7CQ8895769%7CQ8897662%7CQ890671%7CQ922785%7CQ938707%7CQ938997&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2526541500,
+   "edition": "2026-08-03T00:49:08Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.203000+00:00",
+   "sha256": "7a9e3fb84b9e34bea98f9f5e0291b06a50b646549dd7a0fd91f0841325f1f3d0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1005059|Q1009416|Q1010264|Q1011138|Q1012419|Q1014635|Q1015823|Q1020474|Q1023774|Q1023796|Q1023886|Q1023913|Q1023917|Q1023923|Q1025031|Q1025342|Q1025345|Q1025424|Q1025428|Q1025430|Q1025433|Q1025438|Q1025442|Q1025444|Q1025448|Q1025451|Q1033221|Q1040416|Q1043292|Q1059745|Q1062120|Q1062148|Q1062151|Q1069937|Q1070012|Q1070036|Q10726562|Q10865686|Q1091936|Q10941201|Q11065285|Q1110036|Q1119521|Q114045|Q114434998|Q1149660|Q1152183|Q115261094|Q1165386|Q1168209&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526605451,
+   "edition": "2026-08-03T03:27:49Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:03:48.029745+00:00",
+   "sha256": "6cf3dc494c0c52b9fd93b287b5401806f04192aec427e8ed1c10cc7cb824fd4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo"
+  },
+  {
+   "archived_revision": 2526581712,
+   "edition": "2026-08-03T02:23:32Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:03:48.029745+00:00",
+   "sha256": "6cf3dc494c0c52b9fd93b287b5401806f04192aec427e8ed1c10cc7cb824fd4e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1341562%7CQ1341574%7CQ1341586%7CQ1342442%7CQ1342454%7CQ1342466%7CQ1342477%7CQ1342486%7CQ1342502%7CQ1342508%7CQ1342519%7CQ1342571%7CQ1342668%7CQ1342680%7CQ1342685%7CQ1342739%7CQ1343810%7CQ1343865%7CQ1345005%7CQ1345013%7CQ1345024%7CQ1345134%7CQ1345148%7CQ1345174%7CQ1350686%7CQ1354003%7CQ1354017%7CQ1354108%7CQ1354131%7CQ1354147%7CQ1354163%7CQ1354171%7CQ1354185%7CQ1354194%7CQ1354643%7CQ1354654%7CQ1354680%7CQ1354720%7CQ1367222%7CQ1367251%7CQ1367263%7CQ1373095%7CQ1378088%7CQ14199689%7CQ145015&props=labels%7Cdescriptions%7Caliases%7Cclaims%7Cinfo"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:15:27.538700+00:00",
+   "sha256": "b746b510993af9133ad769d5eecdafaf1cb9d44d6762bb3de8474ed57162dcf9",
+   "url": "https://mzt.xizang.gov.cn/zxzx/tzgg/202607/t20260729_551733.html"
+  },
+  {
+   "archived_revision": 2523463528,
+   "edition": "2026-07-27T14:53:27Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356972%7CQ1364610%7CQ1364619%7CQ1364627%7CQ1364635%7CQ1364642%7CQ1364660%7CQ1364668%7CQ1364679%7CQ1364702%7CQ1364731%7CQ1364751%7CQ1365188%7CQ1365196%7CQ1365206%7CQ1365213%7CQ1365242%7CQ1365251%7CQ1689575%7CQ1888748%7CQ1904028%7CQ1936722%7CQ2401071%7CQ2481257%7CQ2516441%7CQ3317232%7CQ3573184%7CQ3831480%7CQ3916439%7CQ4023785%7CQ4257206%7CQ4881494%7CQ5103019%7CQ5247247%7CQ5313292%7CQ5520619%7CQ5581744%7CQ5581750%7CQ5616428%7CQ5623920&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.802004+00:00",
+   "sha256": "8b23f9e89952bcf8c2bf5a8910e53def773002a6b4261dd0ca03e2a3b30d04bd",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356972%7CQ1364610%7CQ1364619%7CQ1364627%7CQ1364635%7CQ1364642%7CQ1364660%7CQ1364668%7CQ1364679%7CQ1364702%7CQ1364731%7CQ1364751%7CQ1365188%7CQ1365196%7CQ1365206%7CQ1365213%7CQ1365242%7CQ1365251%7CQ1689575%7CQ1888748%7CQ1904028%7CQ1936722%7CQ2401071%7CQ2481257%7CQ2516441%7CQ3317232%7CQ3573184%7CQ3831480%7CQ3916439%7CQ4023785%7CQ4257206%7CQ4881494%7CQ5103019%7CQ5247247%7CQ5313292%7CQ5520619%7CQ5581744%7CQ5581750%7CQ5616428%7CQ5623920&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2217831518,
+   "edition": "2024-08-01T04:57:57Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:50.693867+00:00",
+   "sha256": "ae082a3866cb87325938ee80bf33634efa42273c2f949dd194a9a536fcead151",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2523466986,
+   "edition": "2026-07-27T15:01:29Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:50.693867+00:00",
+   "sha256": "ae082a3866cb87325938ee80bf33634efa42273c2f949dd194a9a536fcead151",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2523467533,
+   "edition": "2026-07-27T15:02:56Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:50.693867+00:00",
+   "sha256": "ae082a3866cb87325938ee80bf33634efa42273c2f949dd194a9a536fcead151",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q6362790%7CQ6927772%7CQ6961939%7CQ6963559%7CQ7070805%7CQ7198300%7CQ7267700%7CQ7267909%7CQ7380172%7CQ7418122%7CQ7450621%7CQ7488791%7CQ7504915%7CQ7801006%7CQ7814253%7CQ8039333%7CQ8042839%7CQ8044544%7CQ8044760%7CQ8048945%7CQ8061134%7CQ8070826%7CQ9435117%7CQ10565907%7CQ10891862%7CQ10930847%7CQ14051150%7CQ14290559%7CQ15946269%7CQ16295564%7CQ16462030%7CQ17507086%7CQ18651998%7CQ22348867%7CQ22704998%7CQ29139190%7CQ48441512%7CQ54461927%7CQ105300298%7CQ115446401&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526542329,
+   "edition": "2026-08-03T00:51:23Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.743747+00:00",
+   "sha256": "91e5917d48ed18895c607422c7c4b46fa0f2004cc743785af641557cd14baeb9",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526542356,
+   "edition": "2026-08-03T00:51:29Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:48.743747+00:00",
+   "sha256": "91e5917d48ed18895c607422c7c4b46fa0f2004cc743785af641557cd14baeb9",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1025031%7CQ1025041%7CQ1026050%7CQ1026076%7CQ1026088%7CQ1026091%7CQ1026094%7CQ1026100%7CQ1026103%7CQ1026105%7CQ1026106%7CQ1026109%7CQ1026112%7CQ1026114%7CQ1026117%7CQ1026121%7CQ1026128%7CQ1026134%7CQ1026143%7CQ1026147%7CQ1026152%7CQ1026156%7CQ1026159%7CQ1026170%7CQ1027340%7CQ1027381%7CQ1028101%7CQ1028124%7CQ1028130%7CQ1028137%7CQ1028172%7CQ1028177%7CQ1070037%7CQ1070058%7CQ1072293%7CQ1113237%7CQ1123521%7CQ1131718%7CQ1156418%7CQ1166385&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2526609075,
+   "edition": "2026-08-03T03:38:21Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.915913+00:00",
+   "sha256": "274da72ff2cbc40eb2823fe21d913759afa23af5d87ae1676b91c1e0de78ff64",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json"
+  },
+  {
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124556834024.png",
+   "sha256": "3bb8127277044ce316b3bc61dc3750946a372309fb4fa3f86650cb86f4f697f5",
+   "retrieved_at": "2026-10-13T03:16:44.973010+00:00",
+   "edition": "2026-06-30",
+   "locator": {},
+   "licence_or_legal_basis": "Published administrative facts only; no point, geometry, or expressive table reproduction.",
+   "visual_check": "Original page 24: county column 库车市 652902, township codes 652902001 etc; inspected in this run."
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:17:07.331202+00:00",
+   "sha256": "81b177072c970f63870d257a94a2e916b9c6a8e10ae7cf3f3284505bfdd28782",
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124558447043.png"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:17:11.284553+00:00",
+   "sha256": "20e3e699699bb9e85fc879575dc61ebb3422674010757f32d80cd8702bb1d9e4",
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124558721044.png"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:17:12.060831+00:00",
+   "sha256": "ae90edfdb734d0e032fccbc874c92f3b222f6a3373636906efcf49ff980b52ce",
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124559965045.png"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:17:12.349590+00:00",
+   "sha256": "cdcce909b5722a34fcdfe0ce8ab07b65c90098485f3b40eaebe54af9a9be8ecb",
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124559623046.png"
+  },
+  {
+   "edition": "2026-06-30",
+   "licence_or_legal_basis": "Published administrative facts, reference only; no point or geometry reused",
+   "locator": {},
+   "retrieved_at": "2026-10-13T03:17:16.182337+00:00",
+   "sha256": "c50d1698a6bdc80ea23d3cfb15813336b4e5259d3b384140de6cf489ea5af269",
+   "url": "https://mzt.xinjiang.gov.cn/xjmzt/c112990/202607/d4e25e9ed58e4371a1798d6e623ffc3d/images/20260730124559257047.png"
+  },
+  {
+   "archived_revision": 2547135888,
+   "edition": "2026-09-17T19:51:57Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-13T03:22:46.433018+00:00",
+   "sha256": "70793ec7cc63d08523572a5440f49b7350e947b79c4b11d196082a4cff5f4482",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q812564%7CQ814946%7CQ837425%7CQ848127%7CQ848555%7CQ848680%7CQ857618%7CQ858250%7CQ861035%7CQ865936%7CQ866021%7CQ868527%7CQ874291%7CQ874334%7CQ877381%7CQ890926%7CQ892024%7CQ894256%7CQ910078%7CQ911737%7CQ914411%7CQ922190%7CQ922669%7CQ929803%7CQ939065%7CQ943518%7CQ944547%7CQ955403%7CQ956796%7CQ984788%7CQ989606%7CQ989885%7CQ989892%7CQ989898%7CQ991171%7CQ994523%7CQ997577%7CQ1004882%7CQ1010270%7CQ1011138&props=info%7Clabels%7Cdescriptions%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "archived_revision": 2523411947,
+   "edition": "2026-07-27T12:57:13Z",
+   "licence": "CC0",
+   "retrieved_utc": "2026-10-23T12:59:05.398025+00:00",
+   "sha256": "c5fa75db71b069f2ec986b358ed65d11eb8b81c6d5f4f0d9cffb23a69fe0e77f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10928810.json"
+  },
+  {
+   "archived_revision": 2550601845,
+   "edition": "2026-09-28T19:32:32Z",
+   "licence": "CC0",
+   "retrieved_utc": "2026-10-23T12:59:12.483378+00:00",
+   "sha256": "0df1d7b2743564912239cecf2db8753e23e8e55dd1e8725ed39a172dcecf8ef1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7496512.json"
+  },
+  {
+   "archived_revision": 2550898582,
+   "edition": "2026-09-29T14:59:11Z",
+   "licence": "CC0",
+   "retrieved_utc": "2026-10-23T12:59:05.528032+00:00",
+   "sha256": "b5f7053e4ce159e2f5f77ed7b0e8503c34db3d784c4182aadab8b5b624778506",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10907343.json"
+  }
+ ],
+ "held_by_reason": {
+  "atomic_group_hold": [
+   19271,
+   19274,
+   19284,
+   19290,
+   19338,
+   19341,
+   19351,
+   19387,
+   19401,
+   19410,
+   19467,
+   19489,
+   19491,
+   19525,
+   19601,
+   19607,
+   19610,
+   19625,
+   19636,
+   19640,
+   19680,
+   19689,
+   19694,
+   19699,
+   19716,
+   19751,
+   19933,
+   19957,
+   19966,
+   20016,
+   20036,
+   20074,
+   20083,
+   20160,
+   20234,
+   20331,
+   20398,
+   20451,
+   157019,
+   157020,
+   157021,
+   157145,
+   157146,
+   157148,
+   157149,
+   157151,
+   157152,
+   157153,
+   157154,
+   157156,
+   157158,
+   157159,
+   157160,
+   157162,
+   157163,
+   157164,
+   157165,
+   157166,
+   157170,
+   157171,
+   157173,
+   157175,
+   157176,
+   157178,
+   157179,
+   157181,
+   157184,
+   157185,
+   157187,
+   157189,
+   157192,
+   157193,
+   157194,
+   157195,
+   157196,
+   157197,
+   157200,
+   157203,
+   157204,
+   157206,
+   157209,
+   157210,
+   157212,
+   157213,
+   157214,
+   157216,
+   157217,
+   157218,
+   157221,
+   157222,
+   157223,
+   157224,
+   157225,
+   157226,
+   157228,
+   157229,
+   157231,
+   157232,
+   157233,
+   157234,
+   157235,
+   157236,
+   157237,
+   157239,
+   157241,
+   157243,
+   157244,
+   157245,
+   157248,
+   157249,
+   157270,
+   157288,
+   157289,
+   157290,
+   157291,
+   157330,
+   157467,
+   157468,
+   157469,
+   157470,
+   157471,
+   157472,
+   157473,
+   157588,
+   157589,
+   157590,
+   157591,
+   157592,
+   157593,
+   157594,
+   157606,
+   157608,
+   157609,
+   157610,
+   157611,
+   157612,
+   157613,
+   157614,
+   157615,
+   157617,
+   157618,
+   157619,
+   157620,
+   157621,
+   157622,
+   157623,
+   157624,
+   157625,
+   157626,
+   157627,
+   157628,
+   157629,
+   157630,
+   157631,
+   157632,
+   157633,
+   157635,
+   157636,
+   157637,
+   157638,
+   157639,
+   157640,
+   157641,
+   157642,
+   157643,
+   157644,
+   157655,
+   157839,
+   157840,
+   157841,
+   157842,
+   157843,
+   157844,
+   157845,
+   157846,
+   157847,
+   157848,
+   157849,
+   157850,
+   157851,
+   157852,
+   157853,
+   157854,
+   157855,
+   157882,
+   157917,
+   157918,
+   157919,
+   157920,
+   157921,
+   157922,
+   157923,
+   157941,
+   157942,
+   157943,
+   157944,
+   157945,
+   157957,
+   157963,
+   157964,
+   158011,
+   158012,
+   158013,
+   158014,
+   158016,
+   158017,
+   158018,
+   158053,
+   158054,
+   158055,
+   158056,
+   158058,
+   158064,
+   158065,
+   158066,
+   158068,
+   158069,
+   158070,
+   158218,
+   158219,
+   158220,
+   158221,
+   158222,
+   158223,
+   158603,
+   158604,
+   158606,
+   158607,
+   158609,
+   158610,
+   158611,
+   158755,
+   158757,
+   158759,
+   158760,
+   158761,
+   158888,
+   158889,
+   158893,
+   158894,
+   158896,
+   158897,
+   159060,
+   159061,
+   159062,
+   159063,
+   159064,
+   159065,
+   159066,
+   159067,
+   159069,
+   159070,
+   159128,
+   159129,
+   159130,
+   159131,
+   159132,
+   159133,
+   159134,
+   159135,
+   159136,
+   159137,
+   159138,
+   159139,
+   159140,
+   159141,
+   159142,
+   159144,
+   159145,
+   159146,
+   159147,
+   159266,
+   159267,
+   159268,
+   159269,
+   159270,
+   159271,
+   159272,
+   159273,
+   159274,
+   159276,
+   159277,
+   159398,
+   159400,
+   159401,
+   159402,
+   159403,
+   159404,
+   159405,
+   159406,
+   159408,
+   159409,
+   159410,
+   159445,
+   159446,
+   159491,
+   159492,
+   159493,
+   159602,
+   159603,
+   159604,
+   159605,
+   159606,
+   159700,
+   159701,
+   159702,
+   159703,
+   159704,
+   159705,
+   159706,
+   159707,
+   159708,
+   159709,
+   159710,
+   159711,
+   159713,
+   159760,
+   159761,
+   159762,
+   159764,
+   159796,
+   159798,
+   159803,
+   159804,
+   159805,
+   159806,
+   159807,
+   159808,
+   159810,
+   159812,
+   159815,
+   159816,
+   159818,
+   159820,
+   159821,
+   159822,
+   159823,
+   159824,
+   159825,
+   159829,
+   159830,
+   159831,
+   159875,
+   159876,
+   159877,
+   159878,
+   159879,
+   159880,
+   159897,
+   159898,
+   159899,
+   159900,
+   159901,
+   159902,
+   159903,
+   159924,
+   159925,
+   159926,
+   159927,
+   159928,
+   159929,
+   159930,
+   159931,
+   159960,
+   164575,
+   164577,
+   164580
+  ],
+  "own_item_stored_type_tier_conflict": [
+   19365,
+   19631,
+   19775,
+   19812,
+   20152,
+   157157,
+   157169,
+   157202,
+   157247,
+   159490,
+   159763,
+   159817,
+   159819
+  ],
+  "own_item_seat_unit_conflict_review_2108_F01_F06": [
+   19490
+  ],
+  "own_item_nonadministrative_entity_conflict": [
+   19656,
+   157201,
+   157220
+  ],
+  "own_item_retired_entity_scope_unproved": [
+   19790
+  ],
+  "excluded_disputed_or_boundary_unit": [
+   20056,
+   159797,
+   159799,
+   159809,
+   159811,
+   159826,
+   159827,
+   159828
+  ],
+  "archived_evidence_does_not_prove_entity_tier": [
+   20101,
+   20103,
+   20299
+  ],
+  "own_item_disambiguation": [
+   157147,
+   157150,
+   157155,
+   157161,
+   157167,
+   157168,
+   157172,
+   157174,
+   157177,
+   157180,
+   157182,
+   157183,
+   157186,
+   157188,
+   157190,
+   157191,
+   157198,
+   157199,
+   157205,
+   157207,
+   157208,
+   157211,
+   157215,
+   157219,
+   157227,
+   157230,
+   157238,
+   157240,
+   157242,
+   157246,
+   157329
+  ],
+  "excluded_disputed_or_special_territory": [
+   157292
+  ],
+  "abolished_2019_jiayuguan_district_group_held_after_review_2113": [
+   157342,
+   157343,
+   157344
+  ],
+  "nonstatutory_area_tier_unproved_no_urban_containment_exception": [
+   157532,
+   157534,
+   157535,
+   157536,
+   157537,
+   157538,
+   157539,
+   157540
+  ],
+  "entity_tier_unproved": [
+   157595,
+   157607,
+   157616,
+   157634,
+   157856,
+   157924,
+   157925,
+   157946,
+   157962,
+   158019,
+   158057,
+   158756,
+   159143,
+   159265,
+   159712,
+   159961
+  ],
+  "legacy_seat_or_nonstandard_scope_unproved": [
+   157657,
+   157958,
+   157959,
+   157960,
+   157961,
+   158762
+  ],
+  "own_item_tier_unproved": [
+   158067,
+   159800
+  ],
+  "duplicate_or_seat_scope_unproved": [
+   158217,
+   158605,
+   158608,
+   158895,
+   159399,
+   159444,
+   159896
+  ],
+  "own_item_seat_unit_conflict": [
+   159068
+  ],
+  "unresolved_identity_binding_not_proved": [
+   159600
+  ],
+  "synthetic_direct_admin_group_not_official_prefecture": [
+   159959
+  ],
+  "preexisting_broken_parent_link_outside_scope": [
+   158507,
+   158508,
+   158509,
+   158510,
+   158511,
+   158512,
+   158513,
+   158514,
+   158515
+  ]
+ },
+ "held_records": 482,
+ "coverage": {
+  "groups": 61,
+  "group_rows": 488,
+  "new_blockers_proved": 13,
+  "outside_scope_broken_children": 9
+ }
+}

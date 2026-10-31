@@ -14,6 +14,7 @@ const {
   haversineDistance,
   levenshteinDistance,
   normalizePostcodeCode,
+  listChangedFiles,
 } = require('./utils');
 
 const NAME_DISTANCE_THRESHOLD = 2;
@@ -78,12 +79,7 @@ async function run() {
   }
 
   // Get changed files
-  const { data: files } = await octokit.rest.pulls.listFiles({
-    owner: github.context.repo.owner,
-    repo: github.context.repo.repo,
-    pull_number: pr.number,
-    per_page: 300,
-  });
+  const files = await listChangedFiles(octokit, github.context, pr);
 
   const contributionFiles = files.filter(
     (f) =>
@@ -152,6 +148,10 @@ async function run() {
       if (entityType === 'cities' && record.state_id) {
         candidates = existingData.filter(
           (e) => Number(e.state_id) === Number(record.state_id)
+        );
+      } else if (entityType === 'cities' && record.state_id === null) {   // v5: cities of a country with no states
+        candidates = existingData.filter(
+          (e) => e.state_id === null && Number(e.country_id) === Number(record.country_id)
         );
       } else if (entityType === 'states' && record.country_id) {
         candidates = existingData.filter(

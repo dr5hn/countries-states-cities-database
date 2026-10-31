@@ -44,7 +44,7 @@ If the issue involves specific data entities, add:
 
 ### Step 4: Determine Action
 
-**Auto-fixable issues** (label `auto-fix`, assign to @copilot):
+**Auto-fixable issues** (label `auto-fix`; assignment to @copilot is manual, no workflow does it):
 - Simple coordinate corrections with source provided
 - Missing optional fields that can be looked up
 - Formatting issues in existing data

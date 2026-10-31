@@ -19,6 +19,7 @@ class ExportCsv extends Command
         'cities' => ['from' => '/json/cities.json', 'to' => '/csv/cities.csv'],
         'regions' => ['from' => '/json/regions.json', 'to' => '/csv/regions.csv'],
         'subregions' => ['from' => '/json/subregions.json', 'to' => '/csv/subregions.csv'],
+        'counties' => ['from' => '/json/counties.json', 'to' => '/csv/counties.csv'],
         'postcodes' => ['from' => '/json/postcodes.json', 'to' => '/csv/postcodes.csv'],
     ];
 
@@ -26,6 +27,7 @@ class ExportCsv extends Command
         'countries' => ['from' => '/json/countries.json', 'place_type' => 'country'],
         'states' => ['from' => '/json/states.json', 'place_type' => 'state'],
         'cities' => ['from' => '/json/cities.json', 'place_type' => 'city'],
+        'counties' => ['from' => '/json/counties.json', 'place_type' => 'county'],
         'regions' => ['from' => '/json/regions.json', 'place_type' => 'region'],
         'subregions' => ['from' => '/json/subregions.json', 'place_type' => 'subregion'],
     ];
@@ -54,6 +56,11 @@ class ExportCsv extends Command
             foreach (self::FILES as $root => $v) {
                 $io->section("Processing: $root");
 
+                if ($root === 'counties' && !$this->filesystem->exists($rootDir . $v['from'])) {
+                    $io->note('Skipping counties (source missing)');
+                    continue;
+                }
+
                 $jsonData = $this->filesystem->exists($rootDir . $v['from'])
                     ? file_get_contents($rootDir . $v['from'])
                     : throw new \RuntimeException("JSON file not found: {$v['from']}");
@@ -74,7 +81,7 @@ class ExportCsv extends Command
 
                 // Set headings
                 $headings = $csc[0];
-                unset($headings['translations']);
+                unset($headings['translations'], $headings['states']);   // nested lists get their own CSV files
                 fputcsv($fp, array_keys($headings));
 
                 // Write data
@@ -84,7 +91,7 @@ class ExportCsv extends Command
                         $row['timezones'] = preg_replace('/"/', "'", $row['timezones']);
                         $row['timezones'] = preg_replace("/'([a-zA-Z]+[a-zA-Z0-9_]*)':/", '$1:', $row['timezones']);
                     }
-                    unset($row['translations']);
+                    unset($row['translations'], $row['states']);
                     fputcsv($fp, $row);
                 }
 
@@ -96,11 +103,35 @@ class ExportCsv extends Command
             $io->section("Processing: translations");
             $this->exportTranslations($rootDir, $io);
 
+            // v5: the regions of each county of several regions, one row per (county_id, state_id)
+            if ($this->filesystem->exists($rootDir . self::FILES['counties']['from'])) {
+                $io->section("Processing: county_states");
+                $this->exportCountyStates($rootDir, $io);
+            }
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
             $io->error("Export failed: {$e->getMessage()}");
             return Command::FAILURE;
         }
+    }
+
+    /** Write csv/county_states.csv (county_id, state_id, state_code) from the states lists in json/counties.json. */
+    private function exportCountyStates(string $rootDir, SymfonyStyle $io): void
+    {
+        $counties = json_decode(file_get_contents($rootDir . self::FILES['counties']['from']), true);
+        if (!is_array($counties)) {
+            throw new \RuntimeException('Invalid JSON in ' . self::FILES['counties']['from']);
+        }
+        $fp = fopen($rootDir . '/csv/county_states.csv', 'w');
+        fputcsv($fp, ['county_id', 'state_id', 'state_code']);
+        foreach ($counties as $county) {
+            foreach ($county['states'] ?? [] as $region) {
+                fputcsv($fp, [$county['id'], $region['state_id'], $region['state_code']]);
+            }
+        }
+        fclose($fp);
+        $io->success('Exported county_states to CSV');
     }
 
     private function exportTranslations(string $rootDir, SymfonyStyle $io): void
@@ -113,12 +144,17 @@ class ExportCsv extends Command
 
         // Process each file type that has translations
         foreach (self::TRANSLATION_FILES as $root => $config) {
+            if ($root === 'counties' && !$this->filesystem->exists($rootDir . $config['from'])) {
+                continue;
+            }
             $jsonData = $this->filesystem->exists($rootDir . $config['from'])
                 ? file_get_contents($rootDir . $config['from'])
                 : throw new \RuntimeException("JSON file not found: {$config['from']}");
 
-            $data = json_decode($jsonData, true)
-                ?: throw new \RuntimeException("Invalid JSON in {$config['from']}");
+            $data = json_decode($jsonData, true);
+            if (!is_array($data)) {
+                throw new \RuntimeException("Invalid JSON in {$config['from']}");
+            }
 
             foreach ($data as $item) {
                 if (isset($item['translations']) && is_array($item['translations'])) {

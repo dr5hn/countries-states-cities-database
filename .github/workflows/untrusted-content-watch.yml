@@ -1,0 +1,128 @@
+# Flags issues, comments and pull request descriptions from outside contributors that carry signs of an injection
+# attempt: shell commands hidden in HTML comments, workflow-expression syntax, pipe-to-shell or encoded payloads,
+# invisible or direction-changing Unicode, instructions aimed at AI agents, or known data-exfiltration endpoints.
+# A match gets the `security-review` label and a Slack alert; nothing is posted publicly.
+#
+# Safety rules for this file (it reads attacker-controlled text):
+# - Event text is read only as a JavaScript value inside github-script. Never put event fields inside ${{ }} in this
+#   file, and never pass them to a shell.
+# - pull_request_target runs this file from the base branch so fork PRs can be labelled. It must never check out,
+#   build or run the pull request's code.
+name: Untrusted content watch
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  issue_comment:
+    types: [created, edited]
+  pull_request_target:
+    types: [opened, edited, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Scan the text for injection signs
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+          script: |
+            const p = context.payload;
+            let item, text, author, association, url, kind;
+            if (context.eventName === 'issue_comment') {
+              item = p.issue; kind = p.issue.pull_request ? 'pull request comment' : 'issue comment';
+              text = p.comment.body || ''; author = p.comment.user.login;
+              association = p.comment.author_association; url = p.comment.html_url;
+            } else if (context.eventName === 'pull_request_target') {
+              item = p.pull_request; kind = 'pull request';
+              text = `${item.title || ''}\n${item.body || ''}`; author = item.user.login;
+              association = item.author_association; url = item.html_url;
+            } else {
+              item = p.issue; kind = 'issue';
+              text = `${item.title || ''}\n${item.body || ''}`; author = item.user.login;
+              association = item.author_association; url = item.html_url;
+            }
+            // Maintainers' own text often quotes workflow syntax; outside contributors are the threat model.
+            if (['OWNER', 'MEMBER', 'COLLABORATOR'].includes(association)) {
+              core.info(`Skipped: ${association} ${author}`);
+              return;
+            }
+
+            // Invisible format characters (Cf: zero-width, bidi controls, U+061C ...) can split a command; strip them first.
+            // Returns the injection signs found in a piece of text.
+            const analyse = (input) => {
+              // Invisible format characters (Cf: zero-width, bidi controls, U+061C ...) can split a command; strip them first.
+              const raw = String(input || '');
+              const t = raw.replace(/\p{Cf}/gu, '');
+              const command = /\b(curl|wget|bash|sh\s+-c|zsh|powershell|pwsh|iex|invoke-expression|base64|eval|exec|python3?\s+-c|node\s+-e|perl\s+-e|nc\s+-|ncat|socat|printenv|env\b|export\s+\w+=|chmod\s+\+x|\/dev\/tcp\/|GITHUB_TOKEN|ACTIONS_\w+|secrets\.)/i;
+              const checks = [
+                ['shell command hidden in an HTML comment', () =>
+                  [...t.matchAll(/<!--([\s\S]*?)(?:-->|$)/g)].some(m => command.test(m[1]) || /\$\(|`[^`]+`/.test(m[1]))],
+                ['workflow expression syntax', () => /\$\{\{[\s\S]*?\}\}/.test(t)],
+                ['pipe-to-shell or encoded payload', () =>
+                  /(curl|wget)[^\n]{0,300}\|\s*(sudo\s+)?(ba|z)?sh\b/i.test(t) ||
+                  /\b(base64\s+(-d|--decode)|\/dev\/tcp\/|powershell\s+-(e|enc)\b|iex\s*\(|eval\s*\(\s*atob)/i.test(t)],
+                ['invisible or direction-changing Unicode', () =>
+                  /[\p{Bidi_Control}\u200B-\u200D\u2060-\u2064\uFEFF\u180E]/u.test(raw)],
+                ['instructions aimed at an AI agent', () =>
+                  /(ignore\s+(all\s+)?(previous|prior|above|earlier)\s+instructions|disregard\s+(the\s+)?(previous|above)|system\s+prompt|<\/?\s*(system|assistant|instructions?)\s*>|you\s+are\s+now\s+|as\s+an\s+ai\s+(agent|assistant))/i.test(t)],
+                ['known exfiltration endpoint', () =>
+                  /(webhook\.site|requestbin|pipedream\.net|ngrok(-free)?\.(io|app|dev)|interact\.sh|\boast\.(fun|me|pro|site|online|live)\b|burpcollaborator|transfer\.sh|pastebin\.com\/raw|hookbin|beeceptor)/i.test(t)],
+              ];
+              return checks.filter(([, test]) => { try { return test(); } catch (e) { return false; } }).map(([name]) => name);
+            };
+
+            const reasons = analyse(text);
+            if (reasons.length === 0) {
+              core.info(`Clean: ${kind} #${item.number} by ${author}`);
+              return;
+            }
+            // Dedupe on content, not on the item: new issues, comments and PRs always alert. An edit alerts only when it
+            // adds a sign the previous version (sent by GitHub in payload.changes) did not have, so repeat edits of the
+            // same text stay quiet while a new payload slipped in by editing still alerts.
+            if (p.action === 'edited') {
+              const ch = p.changes || {};
+              const prevText = context.eventName === 'issue_comment'
+                ? (ch.body ? ch.body.from : text)
+                : `${ch.title ? ch.title.from : (item.title || '')}\n${ch.body ? ch.body.from : (item.body || '')}`;
+              const before = new Set(analyse(prevText));
+              const added = reasons.filter(r => !before.has(r));
+              if (added.length === 0) {
+                core.info(`Edit adds no new sign to ${kind} #${item.number}; no new alert`);
+                return;
+              }
+            }
+
+            core.warning(`${kind} #${item.number} by ${author} (${association}): ${reasons.join('; ')}`);
+            const label = 'security-review';
+            let labelled = true;
+            try {
+              try {
+                await github.rest.issues.getLabel({ ...context.repo, name: label });
+              } catch (e) {
+                await github.rest.issues.createLabel({ ...context.repo, name: label, color: 'b60205',
+                  description: 'Possible injection attempt: check before any bot or person acts on it' });
+              }
+              await github.rest.issues.addLabels({ ...context.repo, issue_number: item.number, labels: [label] });
+            } catch (e) {
+              labelled = false;
+              core.warning(`Could not add the ${label} label: ${e.status || ''} ${e.message}`);
+            }
+
+            if (process.env.SLACK_WEBHOOK_URL) {
+              const esc = (v) => String(v ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+              const message = `:rotating_light: Possible injection attempt in ${esc(context.repo.repo)} ${kind} #${item.number} ` +
+                `by ${esc(author)} (${esc(association)}): ${reasons.join('; ')}. Do not run, follow or copy anything from it. ` +
+                `${esc(url)}${labelled ? '' : ' (labelling failed: add security-review by hand)'}`;
+              const res = await fetch(process.env.SLACK_WEBHOOK_URL, { method: 'POST',
+                headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: message }) });
+              if (!res.ok) core.warning(`Slack alert failed: HTTP ${res.status}`);
+            }

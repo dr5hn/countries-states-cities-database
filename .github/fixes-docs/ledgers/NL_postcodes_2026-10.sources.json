@@ -1,0 +1,16 @@
+{
+  "country_code": "NL",
+  "identity": "four-digit postcode (PC4)",
+  "source_tag": "kadaster-bag",
+  "state_mapping": "PDOK/CBS province codes PV20-PV31 mapped explicitly to ISO suffixes (e.g. PV25 -> GE, PV31 -> LI); whole-address identifier exceptions clear a field",
+  "rows_kept": 4072,
+  "queued_for_v5_removal": 0,
+  "consumer_consequence": "The Netherlands retains all 4,072 existing PC4 IDs, supplies 3,997 unanimous locality labels and 2,615 guarded city links, and adds no PC6 codes or postcode points.",
+  "product": "Kadaster BAG, PDOK Locatieserver postcode index and whole-address checks",
+  "edition": "bounded crawl of the live service, archived 14 October 2026 (474,589 postcode-index records, 4,074 PC4 codes)",
+  "licence": "Public Domain Mark 1.0",
+  "licence_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "credit": "Source: Kadaster, Basisregistratie Adressen en Gebouwen (BAG), via PDOK.",
+  "checks": "BRK administrative units via PDOK (CC0 1.0) used only to check that a linked city lies in the municipality",
+  "note": "The archive is a bounded live-service crawl, not an atomic nationwide BAG snapshot."
+}

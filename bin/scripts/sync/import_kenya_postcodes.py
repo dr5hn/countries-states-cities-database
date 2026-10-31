@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Kenya -> contributions/postcodes/KE.json importer for #1039.
+"""RETIRED. Kenya -> contributions/postcodes/KE.json importer for #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: KE: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger.
+Legacy source tags: posta-kenya-via-njoguamos. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -54,6 +60,8 @@ def fetch_json(url: str) -> List[dict]:
 
 
 def main() -> int:
+    print("[ERROR] retired: KE: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy posta-kenya-via-njoguamos. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None)
     parser.add_argument("--dry-run", action="store_true")

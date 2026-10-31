@@ -15,7 +15,7 @@ class ExportMongoDB extends Command
     protected static $defaultName = 'export:mongodb';
     protected static $defaultDescription = 'Export data to MongoDB format';
 
-    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'cities', 'postcodes'];
+    private const COLLECTIONS = ['regions', 'subregions', 'countries', 'states', 'counties', 'cities', 'postcodes'];
     private Filesystem $filesystem;
     private array $dataCache = [];
 
@@ -48,6 +48,10 @@ class ExportMongoDB extends Command
             foreach (self::COLLECTIONS as $collection) {
                 $jsonFile = "$rootDir/json/$collection.json";
 
+                if ($collection === 'counties' && !$this->filesystem->exists($jsonFile)) {
+                    $this->dataCache[$collection] = [];
+                    continue;
+                }
                 if (!$this->filesystem->exists($jsonFile)) {
                     throw new \RuntimeException("JSON file not found: $jsonFile");
                 }
@@ -66,6 +70,7 @@ class ExportMongoDB extends Command
             $this->processSubregions($io, $rootDir);
             $this->processCountries($io, $rootDir);
             $this->processStates($io, $rootDir);
+            $this->processCounties($io, $rootDir);
             $this->processCities($io, $rootDir);
             $this->processPostcodes($io, $rootDir);
 
@@ -257,6 +262,10 @@ class ExportMongoDB extends Command
                 $processedCity['translations'] = json_decode($processedCity['translations'], true);
             }
 
+            if (isset($processedCity['county_id'])) {
+                $processedCity['county'] = ['$ref' => 'counties', '$id' => (int)$processedCity['county_id']];
+            }
+
             // Add state reference
             if (isset($processedCity['state_id'])) {
                 $processedCity['state'] = [
@@ -286,6 +295,59 @@ class ExportMongoDB extends Command
 
         $this->saveCollection($rootDir, 'cities', $processedCities);
         $io->info('Cities exported to MongoDB format');
+    }
+
+    private function processCounties(SymfonyStyle $io, string $rootDir): void
+    {
+        $io->section('Processing counties');
+
+        $counties = $this->dataCache['counties'] ?? [];
+        $countries = $this->dataCache['countries'] ?? [];
+        $states = $this->dataCache['states'] ?? [];
+
+        $countryById = [];
+        foreach ($countries as $c) {
+            $countryById[(int) $c['id']] = $c;
+        }
+        $stateById = [];
+        foreach ($states as $s) {
+            $stateById[(int) $s['id']] = $s;
+        }
+
+        $processed = [];
+        foreach ($counties as $p) {
+            $row = $p;
+            $row['_id'] = (int) $p['id'];
+            unset($row['id']);
+
+            if (!empty($p['country_id']) && isset($countryById[(int) $p['country_id']])) {
+                $row['country'] = [
+                    '$ref' => 'countries',
+                    '$id'  => (int) $p['country_id'],
+                ];
+            }
+            if (!empty($p['state_id']) && isset($stateById[(int) $p['state_id']])) {
+                $row['state'] = [
+                    '$ref' => 'states',
+                    '$id'  => (int) $p['state_id'],
+                ];
+            }
+
+            if (isset($p['latitude'], $p['longitude']) && $p['latitude'] !== null && $p['longitude'] !== null) {
+                $row['location'] = [
+                    'type'        => 'Point',
+                    'coordinates' => [(float) $p['longitude'], (float) $p['latitude']],
+                ];
+            }
+
+            if (!empty($p['parent_id'])) {
+                $row['parent'] = ['$ref' => 'counties', '$id' => (int)$p['parent_id']];
+            }
+            $processed[] = $row;
+        }
+
+        $this->saveCollection($rootDir, 'counties', $processed);
+        $io->info('Counties exported to MongoDB format');
     }
 
     private function processPostcodes(SymfonyStyle $io, string $rootDir): void

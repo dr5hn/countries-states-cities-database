@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Czech Republic -> contributions/postcodes/CZ.json importer for issue #1039.
+"""RETIRED. Czech Republic -> contributions/postcodes/CZ.json importer for issue #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: CZ: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger.
+Legacy source tags: ceska-posta-via-1nfinity84. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -103,6 +109,8 @@ def _primary_obec(value: Union[str, List[str], None]) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: CZ: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy ceska-posta-via-1nfinity84. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local JSON (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

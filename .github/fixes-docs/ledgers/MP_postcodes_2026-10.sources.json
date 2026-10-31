@@ -1,0 +1,128 @@
+{
+  "country_code": "MP",
+  "identity": "code",
+  "source_tag": "geonames-postal",
+  "legacy_source_tag": "manual",
+  "original_disposition": "b",
+  "state_mapping": [
+    {
+      "source_admin1": "100",
+      "source_admin2": "",
+      "names": [
+        [
+          "Rota",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 1,
+      "proof": []
+    },
+    {
+      "source_admin1": "110",
+      "source_admin2": "",
+      "names": [
+        [
+          "Saipan",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 1,
+      "proof": []
+    },
+    {
+      "source_admin1": "120",
+      "source_admin2": "",
+      "names": [
+        [
+          "Tinian",
+          ""
+        ]
+      ],
+      "resolved_iso2": [],
+      "held_source_rows": 1,
+      "proof": []
+    }
+  ],
+  "rows_kept": 3,
+  "queued_for_v5_removal": 0,
+  "consumer_consequence": "Northern Mariana Islands retains 3 same-scope postcode IDs (3 codes), queues 0 IDs for v5, retains 3 fresh labels, 3 source-supported point pairs and 0 state links, and clears 0 existing city links on kept rows.",
+  "product": "GeoNames postal snapshot 13 October 2026",
+  "counts": {
+    "rows_on_master": 3,
+    "unique_codes_on_master": 3,
+    "replacement_rows": 3,
+    "replacement_unique_codes": 3,
+    "kept": 3,
+    "state_links_changed": 0,
+    "state_links_cleared": 0,
+    "state_links_added": 0,
+    "state_links_reassigned": 0,
+    "nonnull_after_locality_name": 3,
+    "nonnull_after_latitude": 3,
+    "nonnull_after_longitude": 3,
+    "nonnull_after_state_id": 0,
+    "nonnull_after_state_code": 0,
+    "nonnull_after_city_id": 0,
+    "nonnull_after_source": 3,
+    "nonnull_after_wikiDataId": 0,
+    "queued": 0,
+    "queued_code_absent": 0,
+    "queued_code_present": 0,
+    "queued_product_unverified": 0,
+    "new_codes_not_added": 0,
+    "kept_unique_codes": 3,
+    "master_repeated_code_groups": 0
+  },
+  "changed_field_counts": {
+    "locality_name": 0,
+    "latitude": 3,
+    "longitude": 3,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 3,
+    "wikiDataId": 0
+  },
+  "cleared_nonnull_field_counts": {
+    "locality_name": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "state_id": 0,
+    "state_code": 0,
+    "city_id": 0,
+    "source": 0,
+    "wikiDataId": 0
+  },
+  "city_links": {
+    "null_unchanged": 3,
+    "kept": 0,
+    "changed": 0,
+    "cleared": 0,
+    "newly_linked": 0
+  },
+  "field_hold_row_counts": {
+    "Missing, ambiguous, inconsistent or coarser administrative scope; no old-state candidate selection": 3,
+    "Postal administrative namespace unresolved, missing, inconsistent or outside current CSC state scope": 3,
+    "No replacement product identifier and geographic city-scope predicate established for this source; city link cleared or remains null": 3
+  },
+  "identity_scope_note": null,
+  "replacement_coverage_measured": true,
+  "distribution_notices": ".github/licenses/pc_rebuild_7-distribution-notices.txt",
+  "research_master_sha": "cdb667f14d90838f7fd04a63f26541f4e2366f73",
+  "queue_policy": "v5 major only; no_successor; IDs reserved in research only; no redirects or edits here",
+  "point_scope": "GeoNames published estimates, TW administrative centres and guarded multi-object OSM medians; no postal centroid or current routing certification",
+  "field_scope": "Unanimous fresh same-identity values; null on disagreement/missing scope; no old-field grandfathering or old-state candidate selection",
+  "city_scope": "A positive source-specific identifier and geographic same-entity predicate were not established from these inputs; alias existence alone cannot preserve an old link.",
+  "url": "https://download.geonames.org/export/zip/allCountries.zip",
+  "edition": "snapshot of 13 October 2026 (allCountries.zip)",
+  "archive_sha256": "983d9f56ad43ee198baa49d86c5e3201e4751cad7f968ecef9ccb5604859104d",
+  "retrieved_at_utc": "2026-10-13T15:38:24.716007+00:00",
+  "country_subset_sha256": "efb4360e9455b4e189db9eb1f2ac0234cefe4cfd90819af4e2a7070974961656",
+  "licence": "CC BY 4.0",
+  "licence_url": "https://creativecommons.org/licenses/by/4.0/",
+  "readme": "https://download.geonames.org/export/zip/readme.txt",
+  "credit": "Source: GeoNames, MP postal code dump, 13 October 2026.",
+  "note": "Published estimates only, with the research precision holds; no current routing certification."
+}

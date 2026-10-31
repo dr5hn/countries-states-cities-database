@@ -268,8 +268,8 @@
     "subregion_id": 22,
     "nationality": "American Samoan",
     "area_sq_km": 199.0,
-    "postal_code_format": "#####-####",
-    "postal_code_regex": "96799",
+    "postal_code_format": "96799|96799-####",
+    "postal_code_regex": "^96799(?:-[0-9]{4})?$",
     "timezones": [
       {
         "zoneName": "Pacific/Pago_Pago",
@@ -842,8 +842,8 @@
     "subregion_id": 11,
     "nationality": "Armenian",
     "area_sq_km": 29800.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "####",
+    "postal_code_regex": "^[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Asia/Yerevan",
@@ -2673,7 +2673,7 @@
       "uk": "Камерун",
       "pl": "Kamerun",
       "hi": "कैमरून",
-      "ar": " "
+      "ar": "الكاميرون"
     },
     "latitude": "6.00000000",
     "longitude": "12.00000000",
@@ -2787,10 +2787,10 @@
       },
       {
         "zoneName": "America/Inuvik",
-        "gmtOffset": -25200,
-        "gmtOffsetName": "UTC-07:00",
-        "abbreviation": "MST",
-        "tzName": "Mountain Standard Time (North America)"
+        "gmtOffset": -21600,
+        "gmtOffsetName": "UTC-06:00",
+        "abbreviation": "CST",
+        "tzName": "Central Standard Time (North America)"
       },
       {
         "zoneName": "America/Iqaluit",
@@ -3142,8 +3142,8 @@
     "subregion_id": 2,
     "nationality": "Chadian",
     "area_sq_km": 1284000.0,
-    "postal_code_format": "TKCA 1ZZ",
-    "postal_code_regex": "^(TKCA 1ZZ)$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Africa/Ndjamena",
@@ -3705,7 +3705,7 @@
       "hi": "कांगो लोकतांत्रिक गणराज्य",
       "ar": "جمهورية الكونغو الديمقراطية"
     },
-    "latitude": "0E-8",
+    "latitude": "0.00000000",
     "longitude": "25.00000000",
     "emoji": "🇨🇩",
     "emojiU": "U+1F1E8 U+1F1E9",
@@ -3984,7 +3984,7 @@
     "nationality": "Cuban",
     "area_sq_km": 110860.0,
     "postal_code_format": "CP #####",
-    "postal_code_regex": "^(?:CP)*(\\d{5})$",
+    "postal_code_regex": "^(?:CP ?)?[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "America/Havana",
@@ -4077,7 +4077,7 @@
       "ja": "キプロス",
       "it": "Cipro",
       "zh-CN": "塞浦路斯",
-      "tr": "Kuzey Kıbrıs Türk Cumhuriyeti",
+      "tr": "Kıbrıs",
       "ru": "Кипр",
       "uk": "Кіпр",
       "pl": "Cypr",
@@ -4617,8 +4617,8 @@
     "subregion_id": 9,
     "nationality": "Salvadoran",
     "area_sq_km": 21040.0,
-    "postal_code_format": "CP ####",
-    "postal_code_regex": "^(?:CP)*(\\d{4})$",
+    "postal_code_format": "####",
+    "postal_code_regex": "^(?:CP ?)?[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "America/El_Salvador",
@@ -5817,7 +5817,7 @@
     "nationality": "Greek, Hellenic",
     "area_sq_km": 131940.0,
     "postal_code_format": "### ##",
-    "postal_code_regex": "^(\\d{5})$",
+    "postal_code_regex": "^[0-9]{3} ?[0-9]{2}$",
     "timezones": [
       {
         "zoneName": "Europe/Athens",
@@ -6581,8 +6581,8 @@
     "subregion_id": 9,
     "nationality": "Honduran",
     "area_sq_km": 112090.0,
-    "postal_code_format": "#####",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "#####|@@####",
+    "postal_code_regex": "^(?:[0-9]{5}|[A-Z]{2}[0-9]{4})$",
     "timezones": [
       {
         "zoneName": "America/Tegucigalpa",
@@ -6643,8 +6643,8 @@
     "subregion_id": 12,
     "nationality": "Hong Kong, Hong Kongese",
     "area_sq_km": 1092.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Hong_Kong",
@@ -7098,7 +7098,7 @@
     "nationality": "Irish",
     "area_sq_km": 70280.0,
     "postal_code_format": "@@@ @@@@",
-    "postal_code_regex": "^(D6W|[AC-FHKNPRTV-Y][0-9]{2})\\s?([AC-FHKNPRTV-Y0-9]{4})",
+    "postal_code_regex": "^(?:D6W|[AC-FHKNPRTV-Y][0-9]{2}) ?[AC-FHKNPRTV-Y0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Europe/Dublin",
@@ -7531,8 +7531,8 @@
     "subregion_id": 10,
     "nationality": "Kazakhstani, Kazakh",
     "area_sq_km": 2717300.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "######|@##@#@#",
+    "postal_code_regex": "^(?:[0-9]{6}|[A-Z][0-9]{2}[A-Z][0-9][A-Z][0-9])$",
     "timezones": [
       {
         "zoneName": "Asia/Almaty",
@@ -7773,8 +7773,8 @@
     "subregion_id": 12,
     "nationality": "North Korean",
     "area_sq_km": 120540.0,
-    "postal_code_format": "###-###",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Pyongyang",
@@ -7791,7 +7791,7 @@
       "pt": "Coreia do Norte",
       "nl": "Noord-Korea",
       "hr": "Sjeverna Koreja",
-      "fa": "کره جنوبی",
+      "fa": "کرهٔ شمالی",
       "de": "Nordkorea",
       "es": "Corea del Norte",
       "fr": "Corée du Nord",
@@ -7853,7 +7853,7 @@
       "pt": "Coreia do Sul",
       "nl": "Zuid-Korea",
       "hr": "Južna Koreja",
-      "fa": "کره شمالی",
+      "fa": "کرهٔ جنوبی",
       "de": "Südkorea",
       "es": "Corea del Sur",
       "fr": "Corée du Sud",
@@ -8084,7 +8084,7 @@
     "nationality": "Latvian",
     "area_sq_km": 64589.0,
     "postal_code_format": "LV-####",
-    "postal_code_regex": "^(?:LV)*(\\d{4})$",
+    "postal_code_regex": "^(?:LV-)?[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Europe/Riga",
@@ -8146,7 +8146,7 @@
     "nationality": "Lebanese",
     "area_sq_km": 10400.0,
     "postal_code_format": "#### ####|####",
-    "postal_code_regex": "^(\\d{4}(\\d{4})?)$",
+    "postal_code_regex": "^[0-9]{4}(?: ?[0-9]{4})?$",
     "timezones": [
       {
         "zoneName": "Asia/Beirut",
@@ -8456,7 +8456,7 @@
     "nationality": "Lithuanian",
     "area_sq_km": 65200.0,
     "postal_code_format": "LT-#####",
-    "postal_code_regex": "^(?:LT)*(\\d{5})$",
+    "postal_code_regex": "^(?:LT-)?[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "Europe/Vilnius",
@@ -8579,8 +8579,8 @@
     "subregion_id": 12,
     "nationality": "Macanese, Chinese",
     "area_sq_km": 254.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Macau",
@@ -10447,7 +10447,7 @@
     ],
     "translations": {
       "br": "Izelvroioù",
-      "ko": "네덜란드 ",
+      "ko": "네덜란드",
       "pt-BR": "Holanda",
       "pt": "Países Baixos",
       "nl": "Nederland",
@@ -10627,8 +10627,8 @@
     "subregion_id": 9,
     "nationality": "Nicaraguan",
     "area_sq_km": 129494.0,
-    "postal_code_format": "###-###-#",
-    "postal_code_regex": "^(\\d{7})$",
+    "postal_code_format": "#####",
+    "postal_code_regex": "^[0-9]{5}$",
     "timezones": [
       {
         "zoneName": "America/Managua",
@@ -11235,7 +11235,7 @@
   },
   {
     "id": 169,
-    "name": "Palestinian Territory Occupied",
+    "name": "Palestine",
     "iso3": "PSE",
     "numeric_code": "275",
     "iso2": "PS",
@@ -11274,10 +11274,10 @@
     ],
     "translations": {
       "br": "Palestina",
-      "ko": "팔레스타인 영토",
+      "ko": "팔레스타인",
       "pt-BR": "Palestina",
       "pt": "Palestina",
-      "nl": "Palestijnse gebieden",
+      "nl": "Palestina",
       "hr": "Palestina",
       "fa": "فلسطین",
       "de": "Palästina",
@@ -11287,11 +11287,11 @@
       "it": "Palestina",
       "zh-CN": "巴勒斯坦",
       "tr": "Filistin",
-      "ru": "Оккупированная палестинская территория",
-      "uk": "Окупована палестинська територія",
-      "pl": "Okupowane terytorium palestyńskie",
-      "hi": "अधिकृत फ़िलिस्तीन क्षेत्र",
-      "ar": "احتلت الأراضي الفلسطينية"
+      "ru": "Палестина",
+      "uk": "Палестина",
+      "pl": "Palestyna",
+      "hi": "फ़िलिस्तीन",
+      "ar": "فلسطين"
     },
     "latitude": "31.90000000",
     "longitude": "35.20000000",
@@ -11323,8 +11323,8 @@
     "subregion_id": 9,
     "nationality": "Panamanian",
     "area_sq_km": 78200.0,
-    "postal_code_format": "@####",
-    "postal_code_regex": "^([A-Z]\\d{4})$",
+    "postal_code_format": "@@@@@-@@@@@|@####|####",
+    "postal_code_regex": "^(?:[A-Z0-9]{5}-?[A-Z0-9]{5}|[A-Z][0-9]{4}|[0-9]{4})$",
     "timezones": [
       {
         "zoneName": "America/Panama",
@@ -12820,8 +12820,8 @@
     "subregion_id": 22,
     "nationality": "Samoan",
     "area_sq_km": 2944.0,
-    "postal_code_format": "AS 96799",
-    "postal_code_regex": "AS 96799",
+    "postal_code_format": "WS####",
+    "postal_code_regex": "^WS[0-9]{4}$",
     "timezones": [
       {
         "zoneName": "Pacific/Apia",
@@ -13564,8 +13564,8 @@
     "subregion_id": 4,
     "nationality": "Somali, Somalian",
     "area_sq_km": 637657.0,
-    "postal_code_format": "@@ ##### or ####|#####",
-    "postal_code_regex": "^([A-Z]{2}\\s*\\d{5}|\\d{4,5})$",
+    "postal_code_format": "@@ #####|####|#####",
+    "postal_code_regex": "^(?:[A-Z]{2} {0,2}[0-9]{5}|[0-9]{4,5})$",
     "timezones": [
       {
         "zoneName": "Africa/Mogadishu",
@@ -14406,9 +14406,9 @@
       "de": "Taiwan",
       "es": "Taiwán",
       "fr": "Taïwan",
-      "ja": "台湾（中華民国）",
+      "ja": "台湾",
       "it": "Taiwan",
-      "zh-CN": "中国台湾",
+      "zh-CN": "台湾",
       "tr": "Tayvan",
       "ru": "Тайвань",
       "uk": "Тайвань",
@@ -15335,8 +15335,8 @@
     "subregion_id": 11,
     "nationality": "Emirati, Emirian, Emiri",
     "area_sq_km": 82880.0,
-    "postal_code_format": "##### #####",
-    "postal_code_regex": "^\\d{5}-\\d{5}$",
+    "postal_code_format": null,
+    "postal_code_regex": null,
     "timezones": [
       {
         "zoneName": "Asia/Dubai",
@@ -15756,8 +15756,8 @@
       "hi": "यूनाइटेड स्टेट्स माइनर आउटिंग आइलैंड्स",
       "ar": "الولايات المتحدة الجزر البعيدة الصغرى"
     },
-    "latitude": "0E-8",
-    "longitude": "0E-8",
+    "latitude": "19.30000000",
+    "longitude": "166.63333300",
     "emoji": "🇺🇲",
     "emojiU": "U+1F1FA U+1F1F2",
     "created_at": "2018-07-21T23:41:03",
@@ -16103,8 +16103,8 @@
     "subregion_id": 13,
     "nationality": "Vietnamese",
     "area_sq_km": 329560.0,
-    "postal_code_format": "######",
-    "postal_code_regex": "^(\\d{6})$",
+    "postal_code_format": "#####|######",
+    "postal_code_regex": "^[0-9]{5,6}$",
     "timezones": [
       {
         "zoneName": "Asia/Ho_Chi_Minh",
@@ -16368,7 +16368,7 @@
       "pt": "Saara Ocidental",
       "nl": "Westelijke Sahara",
       "hr": "Zapadna Sahara",
-      "fa": "جمهوری دموکراتیک عربی صحرا",
+      "fa": "صحرای غربی",
       "de": "Westsahara",
       "es": "Sahara Occidental",
       "fr": "Sahara Occidental",

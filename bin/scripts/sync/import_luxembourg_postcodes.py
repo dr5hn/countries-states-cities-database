@@ -71,9 +71,9 @@ SOURCE_TO_ISO2: Dict[str, str] = {
     "DIEKIRCH": "DI",
     "ECHTERNACH": "EC",
     "ESCH-SUR-ALZETTE": "ES",
-    "GREVENMACHER": "G",
-    "LUXEMBOURG": "L",
-    "LUXEMBOURG-VILLE": "L",  # capital-city administrative sub-entity
+    "GREVENMACHER": "GR",
+    "LUXEMBOURG": "LU",
+    "LUXEMBOURG-VILLE": "LU",  # capital-city administrative sub-entity
     "MERSCH": "ME",
     "REDANGE": "RD",
     "REMICH": "RM",

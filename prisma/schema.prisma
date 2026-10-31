@@ -13,7 +13,7 @@ generator client {
 model Region {
   id           Int        @id @default(autoincrement()) @db.UnsignedMediumInt
   name         String     @db.VarChar(255)
-  translations Json?      @db.Text
+  translations String?    @db.Text
   wikiDataId   String?    @db.VarChar(255)
   flag         Boolean    @default(true) @db.TinyInt
   createdAt    DateTime   @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -28,7 +28,7 @@ model Region {
 model Subregion {
   id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
   name         String    @db.VarChar(255)
-  translations Json?     @db.Text
+  translations String?   @db.Text
   wikiDataId   String?   @db.VarChar(255)
   flag         Boolean   @default(true) @db.TinyInt
   createdAt    DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -60,8 +60,8 @@ model Country {
   region          String?   @db.VarChar(255)
   subregion       String?   @db.VarChar(255)
   nationality     String?   @db.VarChar(255)
-  timezones       Json?     @db.Text
-  translations    Json?     @db.Text
+  timezones       String?   @db.Text
+  translations    String?   @db.Text
   latitude        Decimal?  @db.Decimal(10, 8)
   longitude       Decimal?  @db.Decimal(11, 8)
   emoji           String?   @db.VarChar(191)
@@ -78,6 +78,7 @@ model Country {
 
   states           State[]
   cities           City[]
+  counties         County[]
 
   @@index([regionId])
   @@index([subregionId])
@@ -92,13 +93,14 @@ model State {
   iso2        String?   @db.VarChar(255)
   iso3166_2   String?   @db.VarChar(255)
   type        String?   @db.VarChar(191)
+  typeLocal   String?   @map("type_local") @db.VarChar(191)
   level       Int?      @db.Int
   parentId    Int?      @map("parent_id") @db.UnsignedMediumInt
   native      String?   @db.VarChar(255)
   latitude    Decimal?  @db.Decimal(10, 8)
   longitude   Decimal?  @db.Decimal(11, 8)
   timezone    String?   @db.VarChar(255)
-  translations Json?   @db.Text
+  translations String? @db.Text
   wikiDataId  String?   @db.VarChar(255)
   flag        Boolean   @default(true) @db.TinyInt
   createdAt   DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
@@ -107,6 +109,8 @@ model State {
   country    Country  @relation(fields: [countryId], references: [id])
   countryId  Int      @map("country_id") @db.UnsignedMediumInt
   cities     City[]
+  counties   County[]
+  countyRegions CountyState[]
 
   @@index([countryId])
   @@map("states")
@@ -115,24 +119,77 @@ model State {
 model City {
   id          Int      @id @default(autoincrement()) @db.UnsignedMediumInt
   name        String   @db.VarChar(255)
-  stateCode   String   @map("state_code") @db.VarChar(255)
+  stateCode   String?  @map("state_code") @db.VarChar(255)   // null only for a city of a country with no states (v5)
   countryCode String   @map("country_code") @db.Char(2)
   latitude    Decimal  @db.Decimal(10, 8)
   longitude   Decimal  @db.Decimal(11, 8)
   native      String?  @db.VarChar(255)
+  typeLocal   String?  @map("type_local") @db.VarChar(191)
+  populationYear Int?  @map("population_year") @db.UnsignedSmallInt
   timezone    String?  @db.VarChar(255)
-  translations Json?   @db.Text
+  translations String? @db.Text
   wikiDataId  String?  @db.VarChar(255)
   flag        Boolean  @default(true) @db.TinyInt
   createdAt   DateTime @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
   updatedAt   DateTime @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
 
-  state       State    @relation(fields: [stateId], references: [id])
-  stateId     Int      @map("state_id") @db.UnsignedMediumInt
+  county      County?  @relation(fields: [countyId], references: [id], onDelete: SetNull)
+  countyId    Int?     @map("county_id") @db.UnsignedMediumInt
+  state       State?   @relation(fields: [stateId], references: [id], onDelete: Restrict)   // as the MySQL foreign key: a used state cannot be deleted
+  stateId     Int?     @map("state_id") @db.UnsignedMediumInt
   country     Country  @relation(fields: [countryId], references: [id])
   countryId   Int      @map("country_id") @db.UnsignedMediumInt
 
   @@index([stateId])
   @@index([countryId])
+  @@index([countyId])
   @@map("cities")
+}
+
+model County {
+  id           Int       @id @default(autoincrement()) @db.UnsignedMediumInt
+  name         String    @db.VarChar(255)
+  // v5 (decision B6): null for a county of several regions, which lists them in regions (county_states)
+  stateId      Int?      @map("state_id") @db.UnsignedMediumInt
+  stateCode    String?   @map("state_code") @db.VarChar(255)
+  countryId    Int       @map("country_id") @db.UnsignedMediumInt
+  countryCode  String    @map("country_code") @db.Char(2)
+  type         String?   @db.VarChar(191)
+  typeLocal    String?   @map("type_local") @db.VarChar(191)
+  level        Int?
+  parentId     Int?      @map("parent_id") @db.UnsignedMediumInt
+  latitude     Decimal   @db.Decimal(10, 8)
+  longitude    Decimal   @db.Decimal(11, 8)
+  native       String?   @db.VarChar(255)
+  population   BigInt?   @db.UnsignedBigInt
+  timezone     String?   @db.VarChar(255)
+  translations String?   @db.Text
+  wikiDataId   String?   @db.VarChar(255)
+  createdAt    DateTime  @default(dbgenerated("'2014-01-01 12:01:01'")) @map("created_at") @db.Timestamp(0)
+  updatedAt    DateTime  @default(now()) @updatedAt @map("updated_at") @db.Timestamp(0)
+  flag         Boolean   @default(true)
+
+  state        State?    @relation(fields: [stateId], references: [id], onDelete: Restrict)   // as the MySQL foreign key
+  country      Country   @relation(fields: [countryId], references: [id])
+  parent       County?   @relation("CountyHierarchy", fields: [parentId], references: [id], onDelete: SetNull)
+  children     County[]  @relation("CountyHierarchy")
+  cities       City[]
+  regions      CountyState[]
+
+  @@index([stateId])
+  @@index([countryId])
+  @@index([parentId])
+  @@map("counties")
+}
+
+/// v5 (decision B6): the regions of a county of several regions, one row per (county, state)
+model CountyState {
+  countyId Int    @map("county_id") @db.UnsignedMediumInt
+  stateId  Int    @map("state_id") @db.UnsignedMediumInt
+  county   County @relation(fields: [countyId], references: [id], onDelete: Cascade)
+  state    State  @relation(fields: [stateId], references: [id])
+
+  @@id([countyId, stateId])
+  @@index([stateId])
+  @@map("county_states")
 }

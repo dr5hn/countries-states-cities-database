@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Colombia -> contributions/postcodes/CO.json importer for issue #1039.
+"""RETIRED. Colombia -> contributions/postcodes/CO.json importer for issue #1039.
+
+Retired on 14 October 2026: Colombia postcodes are now re-derived from 4-72's official postal code product (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy JohaAlarcon/Load_postal_code copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -103,6 +108,9 @@ def fetch_csv(url: str) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: CO postcodes come from 4-72's official postal code product now; rerunning this would reimport the "
+          "legacy JohaAlarcon/Load_postal_code copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local CSV (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

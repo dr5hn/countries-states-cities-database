@@ -1,0 +1,19 @@
+{
+ "event_pr": 2108,
+ "full_ledger_sha256": "0a976a8569f69c4dbae31db76c37e1b6109ef06977e138f54dfb3235cdd6515f",
+ "ledger": "cn_gd_parents_v5x.jsonl",
+ "merge_commit": "229ba689ccccea4873ef88723e1f73cf8d16cb8b",
+ "note": "Changed rows only. #2108 (contributor, MCA division table) linked these 18 district rows to their prefecture; each key is unresolved, and the link restores its v4.0 parent_id exactly.",
+ "records": 18,
+ "sources": [
+  {
+   "commit": "2c53ff6e6cb178051d725251412c5e02bf947f4e",
+   "name": "CSC v4.0 release",
+   "path": "contributions/cities/CN.json"
+  },
+  {
+   "name": "PR #2108",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/pull/2108"
+  }
+ ]
+}

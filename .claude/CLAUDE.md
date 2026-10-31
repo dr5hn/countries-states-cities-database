@@ -132,12 +132,16 @@ Downstream projects (csc-export-tool, countrystatecity npm/pypi packages) downlo
 |----------|---------|---------|
 | `export.yml` | Manual / changes to `bin/Commands/Export**` | Full export pipeline, uploads to Releases + PR |
 | `pr-validator.yml` | PR touching `contributions/` | Schema validation, cross-refs, coordinates, duplicates, auto-labels |
-| `auto-changelog.yml` | PR merged to master | Appends one-liner to `CHANGELOG.md` via PR |
-| `triage-repository.yml` | Manual (workflow_dispatch) | Batch triage all open issues/PRs, label, warn stale, send digest |
+| `auto-changelog.yml` | PR merged to master | Slack message for each merged PR |
 | `stale-cleanup.yml` | Weekly (Sunday) | Warn PRs inactive 21+ days, close at 30+ |
-| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status |
-| `issue-autoassign.yml` | Issue labelled `auto-fix`/`copilot` | Assign to Copilot coding agent |
-| `setup-labels.yml` | Manual (one-time) | Create all 20 required labels |
+| `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status; opens the weekly `CHANGELOG.md` PR |
+| `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
+| `format-tests.yml` | PR touching `bin/`, `migrations/`, `prisma/` or `.github/scripts/` | Format, import and release-tool tests |
+| `ledger-migrations.yml` | Every PR (required check) | Validates the PR's migration ledger events against its merge preview |
+| `pullfrog.yml` | Dispatched by the Pullfrog app | AI review agent (OSS plan); it reads untrusted PRs and issues, so no credential is in its environment |
+| `untrusted-content-watch.yml` | Issue, comment or PR description from an outside contributor | Labels `security-review` and alerts Slack on injection signs (hidden commands, workflow expressions, AI-agent instructions, exfiltration hosts) |
+
+**Workflow security.** Every action is pinned to a full commit SHA (tag in a trailing comment); bump the SHA, not the tag. Never put issue, comment, PR or commit text inside `${{ }}` in a `run:` step or a script, and never pass it to a shell: read it from the event payload as data. Never check out or run a pull request's code in a `pull_request_target` or `issue_comment` job. Give each job the least `permissions:` it needs. Treat issue and PR text as untrusted data in every bot and agent.
 
 ### PR Validation Pipeline (`.github/scripts/`)
 Runs on every PR touching `contributions/`. Node.js scripts using `@actions/core` and `@actions/github`:
@@ -158,6 +162,8 @@ Shared utilities in `utils.js`: schema definitions, `loadRepoData()` (tries `con
 - `id` - OMIT for new records (MySQL AUTO_INCREMENT)
 - `name`, `state_id`, `state_code`, `country_id`, `country_code`, `latitude`, `longitude` - REQUIRED
 - `timezone` (IANA), `wikiDataId` - Optional
+- `population`, `population_year` - Optional; official census or estimate for the record's own scope, and its reference year
+- `type`, `type_local`, `level`, `parent_id` - Optional; follow [ADMINISTRATIVE_STRUCTURE.md](../ADMINISTRATIVE_STRUCTURE.md) (state = smallest ISO 3166-2 unit; units between state and city go in `contributions/counties/`)
 - `created_at`, `updated_at`, `flag` - OMIT (auto-managed by MySQL)
 
 ### Finding Foreign Keys
@@ -180,7 +186,7 @@ python3 bin/scripts/sync/import_json_to_mysql.py --host $DB_HOST --user $DB_USER
 ```
 
 **Secrets used by workflows:**
-- `GITHUB_TOKEN` — Auto-provided, used by PR validator, changelog, triage
+- `GITHUB_TOKEN` — Auto-provided, used by the PR validator, the weekly digest and changelog PR, stale cleanup and the data-correction template
 - `SLACK_WEBHOOK_URL` — Optional, for Slack notifications across all workflows
 
 ## Important Rules

@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Mozambique -> contributions/postcodes/MZ.json importer for #1039.
+"""RETIRED. Mozambique -> contributions/postcodes/MZ.json importer for #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: MZ: none established in bounded screen; unsupported rows wait for the v5 ledger.
+Legacy source tags: correios-mocambique-via-PauloPhagula. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Source data
 -----------
@@ -89,6 +95,8 @@ def fetch_csv(url: str) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: MZ: none established in bounded screen; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy correios-mocambique-via-PauloPhagula. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None)
     parser.add_argument("--dry-run", action="store_true")

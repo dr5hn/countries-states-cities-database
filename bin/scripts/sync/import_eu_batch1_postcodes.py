@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
-"""SK + RO + SI batch importer for issue #1039.
+"""RETIRED. SK + RO + SI batch importer for issue #1039.
+
+Retired on 14 October 2026: the final postcode rebuild replaces supported rows from open sources.
+Open replacement status: SI, SK: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger.
+Legacy source tags: postcode-si, psc-json. Their redistribution basis was not established, so this
+script refuses to run. It is kept for the record of how the earlier rows were made. See
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Final postcode rebuild".
 
 Bundles three small-to-medium European countries with confirmed
 redistributable postcode mirrors into a single pipeline:
 
   Slovakia (SK)   - FeroVolar/PSC-JSON (community redistribution of
                     Slovenská pošta data)        ~4,000 records
-  Romania  (RO)   - alexionegit/coduripostaleRomaniaPS
-                    (community CSV with judete)   ~13,750 records
+  Romania  (RO)   - RETIRED on 14 October 2026: RO postcodes are now re-derived from the GeoNames
+                    postal code dump (see .github/fixes-docs/FIX_1039_SUMMARY.md); the RO step
+                    refuses to run, since the redistribution basis of the alexionegit/
+                    coduripostaleRomaniaPS copy was not established.
   Slovenia (SI)   - dlabs/postcode_si
                     (community Posta Slovenije CSV) ~600 records
 
@@ -129,6 +137,9 @@ def build_ro_judet_map(states: List[dict]) -> Dict[str, str]:
 
 
 def import_romania(project_root: Path, src: Path, country: dict, states: List[dict]) -> int:
+    print("  RO: [ERROR] retired: RO postcodes come from the GeoNames postal code dump now; this step would "
+          "reimport the coduripostaleRomaniaPS copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 0
     judet_to_iso2 = build_ro_judet_map(states)
     state_by_iso2 = {s.get("iso2"): s for s in states if s.get("iso2")}
 
@@ -242,6 +253,8 @@ def write_records(target: Path, records: List[dict]) -> None:
 
 
 def main() -> int:
+    print("[ERROR] retired: SI, SK: GeoNames postal snapshot 13 October 2026; unsupported rows wait for the v5 ledger; rerunning this would reimport legacy postcode-si, psc-json. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sk-input", default="/tmp/sk_obce.json")
     parser.add_argument("--ro-input", default="/tmp/ro_coduri.csv")

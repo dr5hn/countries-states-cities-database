@@ -1,0 +1,4801 @@
+{
+ "ledger": "us_places_v5x.jsonl",
+ "base_commit": "126aeb116ed09ef5bbc5b7813d4559ec3a8a2672",
+ "records": 17317,
+ "full_ledger_sha256": "d90ac41ed454ddc7eb867ed9532a6d5f5c53a373f580672847fc0f1601aa6050",
+ "methods_and_source_files": [
+  "Own undissolved ACS2024 TIGER polygon covers existing point",
+  "Existing year is 2020 or later; outside replacement trigger",
+  "2024_Gaz_place_national.zip",
+  "tiger24_GA_28.json",
+  "wikidata_class_0000.json",
+  "wikidata_class_0001.json",
+  "wikidata_class_0003.json",
+  "wikidata_own_0025.json",
+  "tiger24_LA_28.json",
+  "Entire own ACS2024 place polygon covered by exactly one ACS2024 county polygon; no centroid or majority-county inference",
+  "2024_Gaz_counties_national.zip",
+  "tiger24_SC_28.json",
+  "tiger24_SC_82.json",
+  "wikidata_own_0198.json",
+  "tiger24_AL_28.json",
+  "wikidata_own_0013.json",
+  "PopulatedPlaces_National_Text.zip",
+  "wikidata_class_0002.json",
+  "pl2020_WI",
+  "tiger24_WI_28.json",
+  "wikidata_own_0175.json",
+  "2010_Gaz_places_national.zip",
+  "tiger24_PA_28.json",
+  "v4_US",
+  "wikidata_own_0147.json",
+  "wikidata_own_0306.json",
+  "pl2020_MD",
+  "tiger24_MD_28.json",
+  "tiger24_MS_28.json",
+  "wikidata_own_0136.json",
+  "wikidata_class_0004.json",
+  "wikidata_own_0051.json",
+  "pl2020_IN",
+  "tiger24_IN_30.json",
+  "wikidata_own_0312.json",
+  "tiger24_SD_28.json",
+  "wikidata_own_0021.json",
+  "pl2020_ID",
+  "tiger24_ID_28.json",
+  "wikidata_own_0052.json",
+  "tiger24_MD_30.json",
+  "pl2020_TX",
+  "tiger24_TX_28.json",
+  "tiger24_KS_28.json",
+  "wikidata_own_0017.json",
+  "tiger24_VA_28.json",
+  "wikidata_own_0018.json",
+  "pl2020_IL",
+  "tiger24_IL_28.json",
+  "wikidata_own_0046.json",
+  "2024_Gaz_cousubs_national.zip",
+  "pl2020_MA",
+  "tiger24_MA_22.json",
+  "wikidata_own_0199.json",
+  "pl2020_LA",
+  "wikidata_own_0283.json",
+  "tiger24_TX_30.json",
+  "wikidata_own_0322.json",
+  "pl2020_MT",
+  "tiger24_MT_30.json",
+  "wikidata_own_0074.json",
+  "pl2020_NJ",
+  "tiger24_NJ_28.json",
+  "pl2020_CA",
+  "tiger24_CA_30.json",
+  "wikidata_own_0066.json",
+  "wikidata_own_0163.json",
+  "wikidata_own_0236.json",
+  "pl2020_IA",
+  "tiger24_IA_28.json",
+  "wikidata_own_0057.json",
+  "pl2020_CO",
+  "tiger24_CO_30.json",
+  "wikidata_own_0184.json",
+  "pl2020_ME",
+  "tiger24_ME_22.json",
+  "wikidata_own_0301.json",
+  "wikidata_own_0247.json",
+  "tiger24_MA_30.json",
+  "tiger24_MN_28.json",
+  "wikidata_own_0189.json",
+  "pl2020_GA",
+  "pl2020_NY",
+  "tiger24_NY_22.json",
+  "wikidata_own_0246.json",
+  "wikidata_own_0174.json",
+  "tiger24_NY_30.json",
+  "wikidata_own_0180.json",
+  "wikidata_own_0210.json",
+  "wikidata_own_0305.json",
+  "pl2020_PA",
+  "pl2020_TN",
+  "tiger24_TN_28.json",
+  "wikidata_own_0211.json",
+  "wikidata_own_0014.json",
+  "wikidata_own_0248.json",
+  "wikidata_own_0026.json",
+  "wikidata_own_0084.json",
+  "tiger24_WI_22.json",
+  "wikidata_own_0225.json",
+  "pl2020_VT",
+  "tiger24_VT_22.json",
+  "wikidata_own_0019.json",
+  "tiger24_CA_28.json",
+  "wikidata_own_0067.json",
+  "pl2020_MO",
+  "tiger24_MO_28.json",
+  "tiger24_MI_28.json",
+  "pl2020_MN",
+  "wikidata_own_0228.json",
+  "wikidata_own_0027.json",
+  "pl2020_NC",
+  "tiger24_NC_30.json",
+  "pl2020_VA",
+  "tiger24_VA_30.json",
+  "tiger24_MO_30.json",
+  "pl2020_OK",
+  "tiger24_OK_28.json",
+  "wikidata_own_0059.json",
+  "wikidata_own_0028.json",
+  "wikidata_own_0044.json",
+  "GNIS point within 250 metres",
+  "wikidata_own_0275.json",
+  "wikidata_own_0288.json",
+  "pl2020_NM",
+  "tiger24_NM_30.json",
+  "tiger24_NC_28.json",
+  "pl2020_WA",
+  "tiger24_WA_30.json",
+  "wikidata_own_0169.json",
+  "wikidata_own_0295.json",
+  "pl2020_HI",
+  "tiger24_HI_30.json",
+  "wikidata_own_0216.json",
+  "tiger24_NE_28.json",
+  "wikidata_own_0222.json",
+  "tiger24_NY_28.json",
+  "wikidata_own_0224.json",
+  "tiger24_WA_28.json",
+  "wikidata_own_0167.json",
+  "wikidata_own_0227.json",
+  "pl2020_AZ",
+  "tiger24_AZ_30.json",
+  "wikidata_own_0190.json",
+  "tiger24_IN_28.json",
+  "wikidata_own_0233.json",
+  "wikidata_own_0257.json",
+  "tiger24_CO_28.json",
+  "wikidata_own_0009.json",
+  "wikidata_own_0304.json",
+  "wikidata_own_0117.json",
+  "pl2020_FL",
+  "tiger24_FL_30.json",
+  "wikidata_own_0033.json",
+  "wikidata_own_0135.json",
+  "wikidata_own_0112.json",
+  "wikidata_own_0286.json",
+  "pl2020_NV",
+  "tiger24_NV_30.json",
+  "wikidata_own_0115.json",
+  "tiger24_NM_28.json",
+  "wikidata_own_0030.json",
+  "wikidata_own_0128.json",
+  "wikidata_own_0024.json",
+  "tiger24_KY_28.json",
+  "wikidata_own_0126.json",
+  "wikidata_own_0104.json",
+  "wikidata_own_0250.json",
+  "wikidata_own_0238.json",
+  "wikidata_own_0085.json",
+  "wikidata_own_0001.json",
+  "wikidata_own_0264.json",
+  "wikidata_own_0058.json",
+  "tiger24_OR_28.json",
+  "wikidata_own_0037.json",
+  "wikidata_own_0081.json",
+  "wikidata_own_0267.json",
+  "wikidata_own_0080.json",
+  "wikidata_own_0201.json",
+  "wikidata_own_0232.json",
+  "wikidata_own_0292.json",
+  "pl2020_MI",
+  "wikidata_own_0087.json",
+  "tiger24_PA_82.json",
+  "wikidata_own_0145.json",
+  "wikidata_own_0002.json",
+  "wikidata_own_0298.json",
+  "pl2020_WV",
+  "tiger24_WV_28.json",
+  "wikidata_own_0202.json",
+  "wikidata_own_0171.json",
+  "wikidata_own_0101.json",
+  "wikidata_own_0106.json",
+  "pl2020_AR",
+  "tiger24_AR_28.json",
+  "wikidata_own_0242.json",
+  "pl2020_AL",
+  "wikidata_own_0012.json",
+  "pl2020_KY",
+  "wikidata_own_0123.json",
+  "wikidata_own_0000.json",
+  "tiger24_AL_30.json",
+  "wikidata_own_0039.json",
+  "pl2020_NH",
+  "tiger24_NH_22.json",
+  "wikidata_own_0133.json",
+  "wikidata_own_0245.json",
+  "wikidata_own_0220.json",
+  "wikidata_own_0173.json",
+  "wikidata_own_0055.json",
+  "wikidata_own_0036.json",
+  "wikidata_own_0271.json",
+  "wikidata_own_0065.json",
+  "wikidata_own_0239.json",
+  "wikidata_own_0062.json",
+  "wikidata_own_0110.json",
+  "wikidata_own_0307.json",
+  "wikidata_own_0050.json",
+  "wikidata_own_0086.json",
+  "wikidata_own_0177.json",
+  "wikidata_own_0272.json",
+  "wikidata_own_0016.json",
+  "tiger24_PA_30.json",
+  "wikidata_own_0072.json",
+  "wikidata_own_0182.json",
+  "tiger24_MI_30.json",
+  "tiger24_NJ_82.json",
+  "wikidata_own_0137.json",
+  "wikidata_own_0034.json",
+  "wikidata_own_0140.json",
+  "wikidata_own_0096.json",
+  "wikidata_own_0023.json",
+  "tiger24_NJ_30.json",
+  "wikidata_own_0302.json",
+  "wikidata_own_0300.json",
+  "wikidata_own_0010.json",
+  "wikidata_own_0253.json",
+  "wikidata_own_0251.json",
+  "wikidata_own_0273.json",
+  "wikidata_own_0095.json",
+  "wikidata_own_0107.json",
+  "pl2020_OR",
+  "tiger24_OR_30.json",
+  "wikidata_own_0231.json",
+  "wikidata_own_0061.json",
+  "wikidata_own_0130.json",
+  "wikidata_own_0143.json",
+  "wikidata_own_0215.json",
+  "pl2020_UT",
+  "tiger24_UT_28.json",
+  "wikidata_own_0265.json",
+  "wikidata_own_0235.json",
+  "wikidata_own_0188.json",
+  "wikidata_own_0029.json",
+  "wikidata_own_0043.json",
+  "pl2020_KS",
+  "wikidata_own_0278.json",
+  "wikidata_own_0183.json",
+  "wikidata_own_0282.json",
+  "wikidata_own_0230.json",
+  "tiger24_FL_28.json",
+  "wikidata_own_0161.json",
+  "wikidata_own_0176.json",
+  "wikidata_own_0070.json",
+  "wikidata_own_0109.json",
+  "wikidata_own_0194.json",
+  "wikidata_own_0113.json",
+  "wikidata_own_0297.json",
+  "wikidata_own_0125.json",
+  "tiger24_LA_30.json",
+  "wikidata_own_0244.json",
+  "wikidata_own_0005.json",
+  "wikidata_own_0144.json",
+  "wikidata_own_0003.json",
+  "wikidata_own_0261.json",
+  "tiger24_ND_28.json",
+  "wikidata_own_0022.json",
+  "wikidata_own_0241.json",
+  "wikidata_own_0146.json",
+  "pl2020_MS",
+  "wikidata_own_0077.json",
+  "wikidata_own_0032.json",
+  "wikidata_own_0004.json",
+  "wikidata_own_0260.json",
+  "wikidata_own_0020.json",
+  "pl2020_AK",
+  "tiger24_AK_30.json",
+  "tiger24_AK_28.json",
+  "wikidata_own_0266.json",
+  "wikidata_own_0092.json",
+  "pl2020_SC",
+  "wikidata_own_0148.json",
+  "wikidata_own_0206.json",
+  "wikidata_own_0279.json",
+  "wikidata_own_0048.json",
+  "wikidata_own_0040.json",
+  "wikidata_own_0053.json",
+  "wikidata_own_0139.json",
+  "wikidata_own_0011.json",
+  "tiger24_KY_30.json",
+  "wikidata_own_0269.json",
+  "pl2020_CT",
+  "tiger24_CT_28.json",
+  "wikidata_own_0229.json",
+  "wikidata_own_0185.json",
+  "wikidata_own_0103.json",
+  "wikidata_own_0042.json",
+  "wikidata_own_0234.json",
+  "wikidata_own_0212.json",
+  "wikidata_own_0285.json",
+  "tiger24_AZ_28.json",
+  "wikidata_own_0299.json",
+  "tiger24_TN_30.json",
+  "wikidata_own_0221.json",
+  "wikidata_own_0249.json",
+  "pl2020_NE",
+  "wikidata_own_0091.json",
+  "pl2020_WY",
+  "tiger24_WY_30.json",
+  "wikidata_own_0287.json",
+  "wikidata_own_0054.json",
+  "tiger24_SC_30.json",
+  "wikidata_own_0038.json",
+  "wikidata_own_0047.json",
+  "wikidata_own_0100.json",
+  "wikidata_own_0259.json",
+  "wikidata_own_0294.json",
+  "wikidata_own_0007.json",
+  "wikidata_own_0256.json",
+  "wikidata_own_0258.json",
+  "wikidata_own_0254.json",
+  "wikidata_own_0326.json",
+  "wikidata_own_0213.json",
+  "wikidata_own_0124.json",
+  "wikidata_own_0223.json",
+  "wikidata_own_0268.json",
+  "wikidata_own_0045.json",
+  "wikidata_own_0191.json",
+  "wikidata_own_0097.json",
+  "tiger24_MS_30.json",
+  "wikidata_own_0323.json",
+  "wikidata_own_0069.json",
+  "wikidata_own_0262.json",
+  "wikidata_own_0049.json",
+  "wikidata_own_0006.json",
+  "wikidata_own_0008.json",
+  "pl2020_RI",
+  "tiger24_RI_30.json",
+  "wikidata_own_0243.json",
+  "wikidata_own_0276.json",
+  "wikidata_own_0015.json",
+  "wikidata_own_0060.json",
+  "wikidata_own_0132.json",
+  "wikidata_own_0056.json",
+  "wikidata_own_0160.json",
+  "wikidata_own_0093.json",
+  "wikidata_own_0127.json",
+  "wikidata_own_0064.json",
+  "wikidata_own_0063.json",
+  "tiger24_MA_28.json",
+  "wikidata_own_0274.json",
+  "wikidata_own_0164.json",
+  "wikidata_own_0290.json",
+  "wikidata_own_0158.json",
+  "wikidata_own_0141.json",
+  "wikidata_own_0178.json",
+  "wikidata_own_0196.json",
+  "wikidata_own_0208.json",
+  "wikidata_own_0263.json",
+  "tiger24_ME_28.json",
+  "wikidata_own_0090.json",
+  "wikidata_own_0138.json",
+  "wikidata_own_0186.json",
+  "wikidata_own_0170.json",
+  "wikidata_own_0179.json",
+  "wikidata_own_0071.json",
+  "wikidata_own_0205.json",
+  "wikidata_own_0303.json",
+  "wikidata_own_0217.json",
+  "wikidata_own_0321.json",
+  "wikidata_own_0277.json",
+  "tiger24_MT_28.json",
+  "wikidata_own_0089.json",
+  "wikidata_own_0149.json",
+  "wikidata_own_0207.json",
+  "wikidata_own_0284.json",
+  "wikidata_own_0281.json",
+  "wikidata_own_0293.json",
+  "wikidata_own_0159.json",
+  "tiger24_CT_30.json",
+  "pl2020_SD",
+  "wikidata_own_0219.json",
+  "tiger24_WY_28.json",
+  "wikidata_own_0134.json",
+  "wikidata_own_0270.json",
+  "wikidata_own_0094.json",
+  "wikidata_own_0114.json",
+  "wikidata_own_0187.json",
+  "wikidata_own_0280.json",
+  "wikidata_own_0120.json",
+  "wikidata_own_0165.json",
+  "wikidata_own_0325.json",
+  "wikidata_own_0073.json",
+  "wikidata_own_0035.json",
+  "wikidata_own_0193.json",
+  "wikidata_own_0209.json",
+  "wikidata_own_0291.json",
+  "wikidata_own_0105.json",
+  "wikidata_own_0203.json",
+  "pl2020_DE",
+  "tiger24_DE_30.json",
+  "wikidata_own_0068.json",
+  "wikidata_own_0142.json",
+  "tiger24_WV_30.json",
+  "2024 MCD GEOID county prefix",
+  "2010_Gaz_cousubs_national.zip",
+  "tiger24_NJ_22.json",
+  "tiger24_PA_22.json",
+  "pl2020_ND",
+  "tiger24_ND_30.json",
+  "wikidata_own_0218.json",
+  "wikidata_own_0204.json",
+  "wikidata_own_0240.json",
+  "wikidata_own_0181.json",
+  "wikidata_own_0098.json",
+  "tiger24_VT_28.json",
+  "wikidata_own_0162.json",
+  "tiger24_GA_30.json",
+  "wikidata_own_0099.json",
+  "tiger24_UT_30.json",
+  "wikidata_own_0200.json",
+  "wikidata_own_0168.json",
+  "tiger24_NH_28.json",
+  "wikidata_own_0108.json",
+  "tiger24_ME_30.json",
+  "wikidata_own_0226.json",
+  "tiger24_DE_28.json",
+  "ct_cou_to_cousub_crosswalk.txt",
+  "tiger24_CT_22.json",
+  "wikidata_own_0076.json",
+  "wikidata_own_0310.json",
+  "wikidata_own_0192.json",
+  "wikidata_own_0255.json",
+  "wikidata_own_0252.json",
+  "wikidata_own_0166.json",
+  "wikidata_own_0078.json",
+  "wikidata_own_0041.json",
+  "tiger24_SD_30.json",
+  "wikidata_own_0289.json",
+  "wikidata_own_0031.json",
+  "tiger24_WI_30.json",
+  "wikidata_own_0079.json",
+  "wikidata_own_0195.json",
+  "ALAND-scaled distance: d <= sqrt(ALAND/pi); extent screening, not polygon containment",
+  "tiger24_NV_28.json",
+  "tiger24_IL_30.json",
+  "wikidata_own_0102.json",
+  "wikidata_own_0111.json",
+  "tiger24_VT_30.json",
+  "wikidata_own_0075.json",
+  "wikidata_own_0308.json",
+  "tiger24_RI_22.json",
+  "wikidata_own_0082.json",
+  "wikidata_own_0237.json",
+  "wikidata_own_0118.json",
+  "wikidata_own_0121.json",
+  "wikidata_own_0122.json",
+  "wikidata_own_0119.json",
+  "wikidata_own_0313.json",
+  "wikidata_own_0116.json",
+  "wikidata_own_0131.json",
+  "wikidata_own_0172.json",
+  "wikidata_own_0317.json",
+  "tiger24_OK_30.json",
+  "wikidata_own_0088.json",
+  "wikidata_own_0214.json",
+  "wikidata_own_0083.json",
+  "wikidata_own_0129.json",
+  "wikidata_own_0197.json",
+  "wikidata_own_0324.json",
+  "tiger24_RI_28.json",
+  "tiger24_NE_30.json",
+  "wikidata_own_0309.json",
+  "tiger24_MI_22.json",
+  "tiger24_NH_30.json",
+  "wikidata_own_0311.json",
+  "wikidata_own_0329.json",
+  "tiger24_IL_22.json",
+  "wikidata_own_0151.json",
+  "wikidata_own_0327.json",
+  "tiger24_AR_30.json",
+  "tiger24_MN_30.json",
+  "wikidata_own_0296.json",
+  "tiger24_ID_30.json",
+  "wikidata_own_0150.json",
+  "wikidata_own_0152.json",
+  "wikidata_own_0156.json",
+  "wikidata_own_0157.json",
+  "wikidata_own_0154.json",
+  "wikidata_own_0155.json",
+  "tiger24_NE_22.json",
+  "wikidata_own_0153.json",
+  "tiger24_HI_82.json",
+  "tiger24_HI_28.json",
+  "wikidata_own_0314.json",
+  "wikidata_own_0315.json",
+  "wikidata_own_0316.json",
+  "tiger24_IA_30.json",
+  "tiger24_KS_30.json",
+  "wikidata_own_0318.json",
+  "wikidata_own_0320.json",
+  "wikidata_own_0328.json",
+  "wikidata_own_0319.json",
+  "tiger24_CA_82.json",
+  "tiger24_MO_82.json",
+  "pl2020_OH",
+  "tiger24_OH_28.json",
+  "tiger24_OH_30.json"
+ ],
+ "sources": [
+  {
+   "edition": "2010 Gazetteer, POP10 added 2012-08-22",
+   "file": "sources/2010_Gaz_cousubs_national.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:04:44.164107+00:00",
+   "sha256": "a135d64543798b45a812f409814246a7a0951f9c062942c4ec2ac3d2ab434725",
+   "source_id": "2010_Gaz_cousubs_national.zip",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_cousubs_national.zip"
+  },
+  {
+   "edition": "2010 Gazetteer, POP10 added 2012-08-22",
+   "file": "sources/2010_Gaz_places_national.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:04:43.658165+00:00",
+   "sha256": "db63b4ef027f2118221c057b9e4911a4bbda09975bdc4aac7d0c0ba286e04c76",
+   "source_id": "2010_Gaz_places_national.zip",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/Gaz_places_national.zip"
+  },
+  {
+   "edition": "Census 2024 Gazetteer / official crosswalk",
+   "file": "sources/2024_Gaz_counties_national.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T08:58:33.170973+00:00",
+   "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+   "source_id": "2024_Gaz_counties_national.zip",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip"
+  },
+  {
+   "edition": "Census 2024 Gazetteer / official crosswalk",
+   "file": "sources/2024_Gaz_cousubs_national.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T08:58:34.029278+00:00",
+   "sha256": "5b9404979bdd978f6eaf6b37dc2bd995f9aedbdbfac1fe7c98c407bc1a337f75",
+   "source_id": "2024_Gaz_cousubs_national.zip",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_cousubs_national.zip"
+  },
+  {
+   "edition": "Census 2024 Gazetteer / official crosswalk",
+   "file": "sources/2024_Gaz_place_national.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T08:58:33.854242+00:00",
+   "sha256": "cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06",
+   "source_id": "2024_Gaz_place_national.zip",
+   "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip"
+  },
+  {
+   "edition": "GNIS national topical snapshot; HTTP Last-Modified Wed, 02 Sep 2026 15:12:14 GMT",
+   "file": "sources/PopulatedPlaces_National_Text.zip",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:06:02.679149+00:00",
+   "sha256": "919fac887628b8547ec1b24fae319522a9481a56909c3914d1e0a2b56783147c",
+   "source_id": "PopulatedPlaces_National_Text.zip",
+   "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip"
+  },
+  {
+   "edition": "Census 2024 Gazetteer / official crosswalk",
+   "file": "sources/ct_cou_to_cousub_crosswalk.txt",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T08:59:50.807323+00:00",
+   "sha256": "13ad002564e30e6dcd1df112fdaa985f2cd0cdb908f7f3017cd2723db294cff8",
+   "source_id": "ct_cou_to_cousub_crosswalk.txt",
+   "url": "https://www2.census.gov/geo/docs/reference/ct_change/ct_cou_to_cousub_crosswalk.txt"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography akgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_AK.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:39.718839+00:00",
+   "sha256": "ff9b72510102bd78841bd538932bce150c952ebb21038f30158240f84bf549df",
+   "source_id": "pl2020_AK",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Alaska/ak2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography algeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_AL.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:31.562599+00:00",
+   "sha256": "fb05786db0d6570a727b180fd28c5c1f267517f7389ea4f2bf9b5bcd8e1bad23",
+   "source_id": "pl2020_AL",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Alabama/al2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography argeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_AR.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:17.692715+00:00",
+   "sha256": "3c1a4f0824e276e67255090c114b44ff3e15170dfdd2536293ce02e263985f9f",
+   "source_id": "pl2020_AR",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Arkansas/ar2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography azgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_AZ.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:08.811811+00:00",
+   "sha256": "47e66e3b83d5e367f4e2aa21a495c0f1da34c083c12dc591f2a7b685f866baba",
+   "source_id": "pl2020_AZ",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Arizona/az2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography cageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_CA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:52.461705+00:00",
+   "sha256": "b85307fa2c215ce11d20f35a8c2d3381739a8b64fec544fef73af5a52096536a",
+   "source_id": "pl2020_CA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/California/ca2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography cogeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_CO.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:22.436595+00:00",
+   "sha256": "c1f58044faea13a2b2b7220494c696d27ddd8f285e374bfb39597567b87a4560",
+   "source_id": "pl2020_CO",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Colorado/co2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ctgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_CT.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:09.109030+00:00",
+   "sha256": "6b9e9f72679f1851ed97128a492c9d6fea0d95e06ba4164d6d1a7f2ab7d51f9c",
+   "source_id": "pl2020_CT",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Connecticut/ct2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography degeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_DE.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:39.423009+00:00",
+   "sha256": "db93befb8f73c202471953179137221b9330aec8c0d3f8ff90f6bb97f20024bd",
+   "source_id": "pl2020_DE",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Delaware/de2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography flgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_FL.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:12.051950+00:00",
+   "sha256": "e2f4dc91b9cf73432ea1b1f76adb85bdf8e450c56188ab956fd6a94561142c34",
+   "source_id": "pl2020_FL",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Florida/fl2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography gageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_GA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:31.746833+00:00",
+   "sha256": "63b4713ba18f76e8ec72be1a56dced9a7ede6977521801b16d5811363dbae769",
+   "source_id": "pl2020_GA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Georgia/ga2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography higeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_HI.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:46.320621+00:00",
+   "sha256": "31cd61a0e56c5102fa3bb47e323fbbd7b501bb3462495a9c707f33c39a72dda5",
+   "source_id": "pl2020_HI",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Hawaii/hi2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography iageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_IA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:36.186513+00:00",
+   "sha256": "f4a6bb6a1dc1e6655bcdf0d0be0a7c77e4ca81e419ebd8d0bcd18d7e34c1523a",
+   "source_id": "pl2020_IA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Iowa/ia2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography idgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_ID.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:35.746925+00:00",
+   "sha256": "f98bb39b4ea2b4c8234770a5cca938f633b19a073d763953eacd54854db5a454",
+   "source_id": "pl2020_ID",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Idaho/id2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ilgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_IL.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:05.501315+00:00",
+   "sha256": "e8a1f82eec70a3333b59b93eedbe662fee504ec068aecc693d28eeab1e525aac",
+   "source_id": "pl2020_IL",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Illinois/il2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ingeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_IN.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:13.735254+00:00",
+   "sha256": "0d5e7e58c78bac07461608081ac3e0e64d9f679faee4ee15166d555c9a3f6278",
+   "source_id": "pl2020_IN",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Indiana/in2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ksgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_KS.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:43.814628+00:00",
+   "sha256": "4fea0726d2f4ef66c966b719d5c9e9c165321a3a79166c8198d36df89da77e21",
+   "source_id": "pl2020_KS",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Kansas/ks2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography kygeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_KY.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:54.712618+00:00",
+   "sha256": "9c26133227ce617924664b65c79418497641c67d65d4f58d6c131006902e3118",
+   "source_id": "pl2020_KY",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Kentucky/ky2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography lageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_LA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:32.900302+00:00",
+   "sha256": "1b22acbdfff43cb7a1eaa13346f57c97d3d69293fe8c2dcdea63be1ac3b58860",
+   "source_id": "pl2020_LA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Louisiana/la2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography mageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:08.141309+00:00",
+   "sha256": "182eee2efe2df3a7733042d94d8ba09abb00bf428aac92ea71947ca9aa44b07e",
+   "source_id": "pl2020_MA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Massachusetts/ma2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography mdgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MD.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:40.398338+00:00",
+   "sha256": "4f69bb798de6b90cce616ca71f1e51b2e8394834dc25a1ccde4869d819f6534d",
+   "source_id": "pl2020_MD",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Maryland/md2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography megeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_ME.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:25.864001+00:00",
+   "sha256": "61b5acc721c18b567f1dd7876b0dc707ba0240a2e1c598a616ab90cd0c533c45",
+   "source_id": "pl2020_ME",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Maine/me2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography migeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MI.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:02.221503+00:00",
+   "sha256": "1fd501cb579857c0184fbd06c95a74bead74a4d86b5dae31ec326dcb956b59e6",
+   "source_id": "pl2020_MI",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Michigan/mi2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography mngeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MN.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:57.167743+00:00",
+   "sha256": "9e8032a619f43f83aa569ea02a503d1c95d9dd8d6bf3da5e2de7144a785237e3",
+   "source_id": "pl2020_MN",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Minnesota/mn2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography mogeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MO.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:25.111497+00:00",
+   "sha256": "fffe78e40170c0fdb1d0d2641017b27b28f90cee538fa70790a6dfd53df296ba",
+   "source_id": "pl2020_MO",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Missouri/mo2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography msgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MS.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:06.142311+00:00",
+   "sha256": "468bdcf987aeba9b381323244fcefd30ad88f18adf03ec7a3da74603a87ef38d",
+   "source_id": "pl2020_MS",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Mississippi/ms2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography mtgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_MT.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:18.692996+00:00",
+   "sha256": "365f89a4110d6f80b676337baca611980d795e9d2dd7758579146207cebe74ab",
+   "source_id": "pl2020_MT",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Montana/mt2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ncgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NC.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:21.681940+00:00",
+   "sha256": "b9425bf60fe259c5b5ce8ea81de5129f59338d380c69d197852b3568e1612cc5",
+   "source_id": "pl2020_NC",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/North_Carolina/nc2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ndgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_ND.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:53.350157+00:00",
+   "sha256": "7a98242d0c1f1a3675fddca38648a2266b27a78865b8523b9a2bc184cbb13dc2",
+   "source_id": "pl2020_ND",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/North_Dakota/nd2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography negeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NE.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:44.623407+00:00",
+   "sha256": "617b879c9ff116238069ef71798058335df75f136ad896d7a90e448bc6efa864",
+   "source_id": "pl2020_NE",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Nebraska/ne2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography nhgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NH.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:39.837538+00:00",
+   "sha256": "848226507c7c851a8bbdb64be967c3ccd9365ceca5361bbac4afe94fd4cf4d33",
+   "source_id": "pl2020_NH",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Hampshire/nh2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography njgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NJ.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:53.650195+00:00",
+   "sha256": "5bfa4f4671c189f000d375befc506f07752daede6aebdbf2ce4334503d7cee4b",
+   "source_id": "pl2020_NJ",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Jersey/nj2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography nmgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NM.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:58.623959+00:00",
+   "sha256": "39e4f6dac61ff3c566fe584683de85870d366667e5cf5b388aa24e5b81506aa8",
+   "source_id": "pl2020_NM",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_Mexico/nm2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography nvgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NV.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:33.152880+00:00",
+   "sha256": "fa43e4228081f22e5a51099c9e69f6a4c5a6951cdc66c7972a044bd11aa1e128",
+   "source_id": "pl2020_NV",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Nevada/nv2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography nygeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_NY.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:29.371637+00:00",
+   "sha256": "6418e5dc7bc7fad5daa126b270283225f42b45fba9902f0b9ccf1d23cf078d0e",
+   "source_id": "pl2020_NY",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/New_York/ny2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography ohgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_OH.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:41.135980+00:00",
+   "sha256": "d5384de6a1c4d8c69fb180d8dd90a8c17090d0ca095b02069aa0052d0738c857",
+   "source_id": "pl2020_OH",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Ohio/oh2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography okgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_OK.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:57.881414+00:00",
+   "sha256": "42c06bc421746dbf7175a190433ebfeffbaee9ba3ff05510702221d1719001f1",
+   "source_id": "pl2020_OK",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Oklahoma/ok2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography orgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_OR.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:49.538523+00:00",
+   "sha256": "c623d3a28a42fb1b86987d38f6efcae9539ef79a84a61b123c00581855670963",
+   "source_id": "pl2020_OR",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Oregon/or2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography pageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_PA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:00.432828+00:00",
+   "sha256": "b18fc031208b2f9e132194054197302c044fa56d559ad7b520ac5673fda9a369",
+   "source_id": "pl2020_PA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Pennsylvania/pa2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography rigeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_RI.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:36.098136+00:00",
+   "sha256": "c337b9c293e34cf49cc0d77f643782597295a29649502582edd45abd62397073",
+   "source_id": "pl2020_RI",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Rhode_Island/ri2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography scgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_SC.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:16.385854+00:00",
+   "sha256": "c8ca77c3a89ab71ecf6acff64a25acaa4a561540b743d78d03876620abd1fb9c",
+   "source_id": "pl2020_SC",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/South_Carolina/sc2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography sdgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_SD.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:17.978041+00:00",
+   "sha256": "e30c54790cf5403cd95e089d190f6c41b64e3578e48cde061f15f2062c26fa61",
+   "source_id": "pl2020_SD",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/South_Dakota/sd2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography tngeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_TN.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:28.728272+00:00",
+   "sha256": "acac943a777f6f2b107524e45e6fc952ec5f9c059b2d793595b945f3f3ba8882",
+   "source_id": "pl2020_TN",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Tennessee/tn2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography txgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_TX.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:49.758735+00:00",
+   "sha256": "eb5694e9bda3cf416f55d40ac7afb1c590cf75234634dbf0e870f1001591748f",
+   "source_id": "pl2020_TX",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Texas/tx2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography utgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_UT.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:48.440539+00:00",
+   "sha256": "1b44c9602139b235f4e10e567239b85067045464bff0f085c5fa3f26059d173d",
+   "source_id": "pl2020_UT",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Utah/ut2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography vageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_VA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:03.469559+00:00",
+   "sha256": "f1cc48a4438eb8878c9a5c89cb6cede7ed9223e2f6f33b20ec06c3b54977c2ad",
+   "source_id": "pl2020_VA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Virginia/va2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography vtgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_VT.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:00:43.621680+00:00",
+   "sha256": "6e51da016fafa73855e8599269285c783761eb7b4271817142093595549f1601",
+   "source_id": "pl2020_VT",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Vermont/vt2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography wageo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_WA.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:38.282641+00:00",
+   "sha256": "e85412c97ef26a2cd569eb63d89886385d80a25b8248ddf16abb593af725248e",
+   "source_id": "pl2020_WA",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Washington/wa2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography wigeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_WI.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:15.040528+00:00",
+   "sha256": "1befd00ba49ed65a180172f1d6ba1f7b141d473260448bb4940b3a17a103c691",
+   "source_id": "pl2020_WI",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Wisconsin/wi2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography wvgeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_WV.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:03.771344+00:00",
+   "sha256": "387b2c891af7d6bdf268bbd499bf05710c1355d0bb4ff34c4037b3a9e661fb61",
+   "source_id": "pl2020_WV",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/West_Virginia/wv2020.pl.zip"
+  },
+  {
+   "edition": "2020 Census PL94-171 geography wygeo2020.pl; POP100 field 91 (P1 total population)",
+   "file": "sources/pl2020_WY.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:01:13.970871+00:00",
+   "sha256": "b927ffebb79d67529cdebe2585709798be6cccafadeb8b668737ba2db7c55317",
+   "source_id": "pl2020_WY",
+   "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Wyoming/wy2020.pl.zip"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AK_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:27:00.385380+00:00",
+   "sha256": "ab7dccf9b8a3602eeafea5bf34a0c38e6615c242d117f30972379f4ddd877079",
+   "source_id": "tiger24_AK_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2702%27&outFields=%2A&outSR=4326&returnGeometry=true&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AK_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:27:33.612471+00:00",
+   "sha256": "7bfc7ba865275706739d15432877530ff347aa88b526c9847fd89d32064aac5a",
+   "source_id": "tiger24_AK_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2702%27&outFields=%2A&outSR=4326&returnGeometry=true&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AL_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:21.186702+00:00",
+   "sha256": "76a26861051774214111965206171b3eb8cd16e06755d96b3704a6a1a89e12f1",
+   "source_id": "tiger24_AL_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2701%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AL_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:32:44.504069+00:00",
+   "sha256": "5d2591bbe47490b882a2aeda91707f0473bb11fd7bc39e38c8b9b5dc336cb6f8",
+   "source_id": "tiger24_AL_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2701%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AR_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:32:54.295979+00:00",
+   "sha256": "27b069c703a975f7c3944d5388adf1dec5745e2d13afe03cecf4b45eb07ba0d6",
+   "source_id": "tiger24_AR_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2705%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AR_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:27:16.164302+00:00",
+   "sha256": "9c1020363e5ff08686a9c13cedaa8c22fa0575160ed376ad0aad6def5d517e25",
+   "source_id": "tiger24_AR_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2705%27&outFields=%2A&outSR=4326&returnGeometry=true&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AZ_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:32:48.008892+00:00",
+   "sha256": "cb3f9de65924113abdccc9fac8d866b9edec30bd9aabf3a66d6b8c1a532cb096",
+   "source_id": "tiger24_AZ_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2704%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_AZ_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:01.078009+00:00",
+   "sha256": "d231220af0f22e50c6aa505c3d83d17bd55d34aa386d8c0da6cf54833f942b3a",
+   "source_id": "tiger24_AZ_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2704%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:32.435524+00:00",
+   "sha256": "6a3bacb538bfcff205bc3d84142f74bfe12d9b2588aa9a4af8f34c68888f3047",
+   "source_id": "tiger24_CA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2706%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:54.692023+00:00",
+   "sha256": "29e76e9df7a677edba504fdeb4fd4cc2d0a6d79e8365df44b47862188cac9d9d",
+   "source_id": "tiger24_CA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2706%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CA_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:16.114068+00:00",
+   "sha256": "b4ab3ba65b504ac41659e0385fefd35903b511ef59fa43c79212d2e75cdf2dca",
+   "source_id": "tiger24_CA_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2706%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CO_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:23.444909+00:00",
+   "sha256": "53f352ccc605f6e402fbc1543ecdbfaef30a554dc50aa918bd9d668db7b6d8ed",
+   "source_id": "tiger24_CO_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2708%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CO_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:31.248111+00:00",
+   "sha256": "2a0b0d4ab73e8a08e1f63b2af0b9c94c638d8df3281024c1718f2a55bab59178",
+   "source_id": "tiger24_CO_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2708%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CT_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:48:52.833686+00:00",
+   "sha256": "8eb5ff0c721e29b41d3b275390b39786118705ace19367b6409ff24984fc2b65",
+   "source_id": "tiger24_CT_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2709%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CT_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:48:46.931860+00:00",
+   "sha256": "6208cee3a685dc9ebaf4604e377619432c3b5387add57cd8e347ef5f37f9d799",
+   "source_id": "tiger24_CT_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2709%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_CT_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:48:51.574044+00:00",
+   "sha256": "9fb29caee528814e5503b3c14caf4c800ed0d7a1d36f43ca04a738887b07ac05",
+   "source_id": "tiger24_CT_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2709%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_DE_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:30.713452+00:00",
+   "sha256": "20cdaafa85bd94715710967e0519d5bdc649a13a7f00912a64162ff48aff4729",
+   "source_id": "tiger24_DE_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2710%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_DE_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:33.180260+00:00",
+   "sha256": "61a9c57578e3576a6eed26b619dfbbbf3e94a6dd3ccfdce71e7e851c457ecb1d",
+   "source_id": "tiger24_DE_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2710%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_FL_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:18.664598+00:00",
+   "sha256": "b38d50290baaaa039e341aacc2da39e0ebe51573a4b81389e38518ddd692a8e7",
+   "source_id": "tiger24_FL_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2712%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_FL_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:57.550588+00:00",
+   "sha256": "9817deacdab47812277a4206a0daa9381767cbace9d2d85492b73a3ca061ce03",
+   "source_id": "tiger24_FL_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2712%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_GA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:19.648331+00:00",
+   "sha256": "059dedc23e4cbec684c31b94b1db0892fecfb813220f816d9139b8672887faeb",
+   "source_id": "tiger24_GA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2713%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_GA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:00.600150+00:00",
+   "sha256": "537bc72a7d8a434c7b1a162fea6d8c98ae8d3a4d27a198c4fa7b382d40420a16",
+   "source_id": "tiger24_GA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2713%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_HI_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:33:58.745199+00:00",
+   "sha256": "ed778c73ea51338d6576fb5992b189f2b94d9f3d5e199f46c1af520d6b0b3e6c",
+   "source_id": "tiger24_HI_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2715%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_HI_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:06.598951+00:00",
+   "sha256": "fc68c94ed3ea76952d961c09f7e0d057700d710c809f83e96ee05115fdc4e0ca",
+   "source_id": "tiger24_HI_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2715%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_HI_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:08.986425+00:00",
+   "sha256": "08180edfc6e52ebc478610b14f03853ed0353e61a3ada59a4940a920e3950a14",
+   "source_id": "tiger24_HI_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2715%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:20.849328+00:00",
+   "sha256": "d65170336cf20ed933f4bae87387adfd01d343e82a2a1df22671aab4b5620790",
+   "source_id": "tiger24_IA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2719%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:09.091505+00:00",
+   "sha256": "9902ff8fb3dae647cd54dd1edd1584f8635581b5ec8e065f7e33dde4f93729c4",
+   "source_id": "tiger24_IA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2719%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ID_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:28.503679+00:00",
+   "sha256": "bef12643b1a1caa0a76625776176a13e7a837eaa00d5e7157a1769ed66e6e7fd",
+   "source_id": "tiger24_ID_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2716%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ID_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:22.609837+00:00",
+   "sha256": "ce9d60362e6e9dc16a7a112bde48e4d554a3a4dc77a1489f897aaf728e618934",
+   "source_id": "tiger24_ID_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2716%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IL_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:39.240374+00:00",
+   "sha256": "9f750e582ba07df7f148b9cca5d5c67f8656da7ad41c257778193a68a9aa9ca1",
+   "source_id": "tiger24_IL_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2717%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IL_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:24.206364+00:00",
+   "sha256": "4e3f423fda476d458d148bde592508dbbfe87e64ce3d866333be69dcf77adeb5",
+   "source_id": "tiger24_IL_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2717%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IL_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:26.505217+00:00",
+   "sha256": "de3a80d87fd7902bb26188c851323c16f16710aec8efd9babe2aa18703ee1db9",
+   "source_id": "tiger24_IL_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2717%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IN_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:46.524104+00:00",
+   "sha256": "e651de37e96696b6c620e64d72b349797dbde6ec82a53ea1c17c34e3e7fa1a53",
+   "source_id": "tiger24_IN_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2718%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_IN_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:34:54.150785+00:00",
+   "sha256": "9566e2b1aaa8d447db17f391c59cdea7e0b59867cd9128341b857fc5036fda0b",
+   "source_id": "tiger24_IN_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2718%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_KS_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:14.856934+00:00",
+   "sha256": "72e014411a6be5fe4f1754993ff0c8da94be9a8a6bc5e5bebc615c5e43f7eef4",
+   "source_id": "tiger24_KS_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2720%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_KS_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:17.780780+00:00",
+   "sha256": "e1824a0b461a06dbe02a3b2094117834872289bb6f28ed04bf6d537ba3dddd40",
+   "source_id": "tiger24_KS_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2720%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_KY_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:48.518930+00:00",
+   "sha256": "e05b2cb0208e0d3279d3bd76d9bcff2bc9fc0f9c8ebc86a1b1ef332872b7a190",
+   "source_id": "tiger24_KY_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2721%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_KY_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:41.964791+00:00",
+   "sha256": "7bfb97a795ad1e469f962495997d73de62724428ea144bf18ca34a3d52ebcd14",
+   "source_id": "tiger24_KY_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2721%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_LA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:55.183226+00:00",
+   "sha256": "febbb2738108c0df9bf4a8ff6ed82f42aad6929605f1a58239560706a8267a68",
+   "source_id": "tiger24_LA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2722%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_LA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:48.939895+00:00",
+   "sha256": "7459bfd245e31cd93a11e2872a80bb968cfeb19790da30672c757ccef6b273bf",
+   "source_id": "tiger24_LA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2722%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MA_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:05.866821+00:00",
+   "sha256": "2a53aae1f09b143181414e66526cb9af56210b4dfd9633aa7198372a3fefb7a4",
+   "source_id": "tiger24_MA_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2725%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:48:56.078771+00:00",
+   "sha256": "5db45b80e65be2f502d382e86d5b5a79fa079f2425fb6d8eb46f58c4462a19e6",
+   "source_id": "tiger24_MA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2725%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:02.901531+00:00",
+   "sha256": "c1dd61c3001a624edee107647da99547cd18a3d98995942c9a2e51ce1cea9455",
+   "source_id": "tiger24_MA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2725%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MD_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:35:58.596899+00:00",
+   "sha256": "b90cd697f7a2779de54fa6677b3cc34233dfb93eebb8d21df146a28e3d7b6bac",
+   "source_id": "tiger24_MD_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2724%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MD_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:08.081601+00:00",
+   "sha256": "7046e2083c22c9d49e17124e5e3ae7f72ed53a84ad6256c5962641e5c6cc0f8a",
+   "source_id": "tiger24_MD_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2724%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ME_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:32.045321+00:00",
+   "sha256": "adc774cf9a7810076cde9154a0ede9f49e8caba1dfdd1bf011a1aaa40c599a8b",
+   "source_id": "tiger24_ME_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2723%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ME_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:05.869068+00:00",
+   "sha256": "16a97f4136ed2341edd59317f165140c2b5e3a5501fecf8ecafd6c4744e409b0",
+   "source_id": "tiger24_ME_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2723%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ME_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:11.178389+00:00",
+   "sha256": "a9dbf646be1b6917303c4cf24204dab9981272519e2928daaf5360b54d8a61d8",
+   "source_id": "tiger24_ME_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2723%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MI_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:49.702047+00:00",
+   "sha256": "25617c0870d59f9981a990a1f01825a921911c873a551f7e7f06b00ba65ca00e",
+   "source_id": "tiger24_MI_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2726%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MI_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:07.206632+00:00",
+   "sha256": "c84eb2557efa5cfc1d4a645602864a76cfa03a03cb0ab048d39894fdb7d7c7a3",
+   "source_id": "tiger24_MI_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2726%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MI_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:04.356221+00:00",
+   "sha256": "db9cb6113fe5581e12acd8bb9a47b35ec6cf6fbbf0d29aaa70f01f52c960da2c",
+   "source_id": "tiger24_MI_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2726%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MN_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:32.448609+00:00",
+   "sha256": "24b2628a796a9b2acbdc8f5df141220502e6e428fee0715dfc3e5dcaab36ed68",
+   "source_id": "tiger24_MN_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2727%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MN_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:11.222345+00:00",
+   "sha256": "2a344012dbcb68ce81e8d151f8c2153979965e46f722f16df0e6d0947c7eb993",
+   "source_id": "tiger24_MN_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2727%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MO_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:49.287819+00:00",
+   "sha256": "f95f3b78bea217190689bea834a84e47756d69e02d3470dcddacf8701b178387",
+   "source_id": "tiger24_MO_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2729%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MO_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:37.064770+00:00",
+   "sha256": "ae6b1be5106501760e1b6bd9e0738b80eaa7169ed5155daac6050e2b7849758a",
+   "source_id": "tiger24_MO_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2729%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MO_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:23.759846+00:00",
+   "sha256": "7b2e2b3afcd059c6561799a0cdf37d30e02657a997025263d6ef2be391815d41",
+   "source_id": "tiger24_MO_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2729%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MS_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:00.472278+00:00",
+   "sha256": "5d7bf9136285cf2862a6750a7164b40294dc2203db8931947d293715ab937d8d",
+   "source_id": "tiger24_MS_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2728%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MS_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:36:56.486140+00:00",
+   "sha256": "73c09e9edd92e73c09b726f659e30b276c0c0df6c3505683d067dc50fd563276",
+   "source_id": "tiger24_MS_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2728%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MT_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:04.641706+00:00",
+   "sha256": "c64faa1a9c95ac449b5b0e3db3e648db05ebe51a21d82b582d64c87c1887070f",
+   "source_id": "tiger24_MT_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2730%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_MT_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:17.286251+00:00",
+   "sha256": "7200b2820e9106157f4979e990d5b778a7e4d5c93d33682b8add34e7d28a6d44",
+   "source_id": "tiger24_MT_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2730%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NC_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:18.125439+00:00",
+   "sha256": "7d55b52ab10bebe2f66772d8eea1353fcf595a7343d51320103d108f1f537e37",
+   "source_id": "tiger24_NC_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2737%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NC_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:31.688444+00:00",
+   "sha256": "849b93d18b1b63dd4e2db057d9c645d7e95f61d33b4850e233cef36f1ebbd438",
+   "source_id": "tiger24_NC_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2737%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ND_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:38.206683+00:00",
+   "sha256": "0518fbb16b7873f9a027637423a18e25e88a75424993dccc99581735d8dfb24f",
+   "source_id": "tiger24_ND_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2738%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_ND_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:40.410282+00:00",
+   "sha256": "0c2d046372b6d6cf8607f1b2a56a75a1c1cfdb460ed5a551b2b77744c65d4e84",
+   "source_id": "tiger24_ND_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2738%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NE_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:39.483971+00:00",
+   "sha256": "db78f739507c741be55e23f0204d9721db739d80b789b087715624b1da354d79",
+   "source_id": "tiger24_NE_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2731%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NE_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:01.816557+00:00",
+   "sha256": "d83aebb34589d87df9944cd75fc58aa7ec0cf0e69bf4ed5d2aa8a2cefbd7a570",
+   "source_id": "tiger24_NE_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2731%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NE_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:37:54.969770+00:00",
+   "sha256": "dd162dbc5f83dcee2ef4f033730ad9f58431797b974b09916122fb3a9b0daa62",
+   "source_id": "tiger24_NE_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2731%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NH_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:18.367631+00:00",
+   "sha256": "c6ba7153d9a5e424bd75e60c0d124d03478f8b7781c70ad99e7f09da1faac3ad",
+   "source_id": "tiger24_NH_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2733%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NH_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:13.035458+00:00",
+   "sha256": "44c68351872a55466ca69a6699f524ded146d91c807222e4fd18c8e99eefee01",
+   "source_id": "tiger24_NH_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2733%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NH_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:16.723311+00:00",
+   "sha256": "c0175b3d39a7f2677be34d6e38f8f975cf3383fa1ebba3696be79e12bc9be515",
+   "source_id": "tiger24_NH_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2733%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NJ_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:05.764409+00:00",
+   "sha256": "1d11eabee3d8e163c45acf41f4de44615feaeaf22d412aa1630cb4f8deed6b21",
+   "source_id": "tiger24_NJ_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2734%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NJ_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:18.607243+00:00",
+   "sha256": "59b70f7a1498231f331edf506863271df0ba8433ccbdbace608e868c7c81baab",
+   "source_id": "tiger24_NJ_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2734%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NJ_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:33.664136+00:00",
+   "sha256": "7a00700ef2c6e776eac75e330bb855777e7c0c798e3c1ebc4d031f883f779619",
+   "source_id": "tiger24_NJ_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2734%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NJ_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:40.986075+00:00",
+   "sha256": "2104beac1a3a380e6519926cc5e57dad3cdc0ba9c737767eb687837dfd51caa1",
+   "source_id": "tiger24_NJ_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2734%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NM_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:37.466229+00:00",
+   "sha256": "0c3d4ea66aa4ac7423624f406a73919460e4fa7f4b1e227cf3a6365b3da8673b",
+   "source_id": "tiger24_NM_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2735%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NM_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:51.054704+00:00",
+   "sha256": "a74ff4d7fad3661fdfefc6064ebe4696e5cf2edb816b13a777b2b7511e2e5484",
+   "source_id": "tiger24_NM_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2735%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NV_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:41.940318+00:00",
+   "sha256": "d02aa936f5ef448ef8b8ce5ade88807126be9d5996ba6dfef94e6c1864b78a3d",
+   "source_id": "tiger24_NV_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2732%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NV_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:46.638310+00:00",
+   "sha256": "597442dec77211918f990734d26ddfa919fd628b52d7a5437990f05153cf1859",
+   "source_id": "tiger24_NV_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2732%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NY_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:38.166479+00:00",
+   "sha256": "1604d7f0c6347bbd5dfb07504ca9d6e885c5b705dcd61a361f8e9c828f46594c",
+   "source_id": "tiger24_NY_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2736%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NY_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:38:56.125672+00:00",
+   "sha256": "075cb4d570bf3dafd91f582280e20310a9fc83bd29dbc408de211069b6e4fe48",
+   "source_id": "tiger24_NY_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2736%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_NY_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:06.199488+00:00",
+   "sha256": "d14e08c478045fe6a1509b6db8108dddad76feb543ced66330af79230ed78e28",
+   "source_id": "tiger24_NY_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2736%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OH_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:30.053596+00:00",
+   "sha256": "ea54beca03e53aea097e60714c8c00dee9712cccea9a3379d79683ed54b76b08",
+   "source_id": "tiger24_OH_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2739%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OH_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:14.275131+00:00",
+   "sha256": "b2c44c019623b26d41f9a9fb67d2e1f089f372ff5bacc9ed6a96ef2d9a93ddac",
+   "source_id": "tiger24_OH_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2739%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OK_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:35.689915+00:00",
+   "sha256": "b19ad3f3905d6922e2d0c7d3ecedcd859c7510c9ecf059a3683db8d1cd4b07af",
+   "source_id": "tiger24_OK_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2740%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OK_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:39.543731+00:00",
+   "sha256": "68e075867796d8d24499f3aca8f815be2be3c885c460a749e014ded5a1a3ebc4",
+   "source_id": "tiger24_OK_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2740%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OR_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:49.961984+00:00",
+   "sha256": "f58c24a06eedfe9b037be62027283f5cf275da164a67a312a87beed78fcdad89",
+   "source_id": "tiger24_OR_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2741%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_OR_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:39:49.026209+00:00",
+   "sha256": "a2ed3f97484e10c44a24c949d7cb6b48d57a5cbf9a44818c1c8d6013d890197e",
+   "source_id": "tiger24_OR_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2741%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_PA_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:30.429264+00:00",
+   "sha256": "1b54fb4823f99133e9b18fdf4e8fa2978e0df85f916779223ba1c546efc6e4f5",
+   "source_id": "tiger24_PA_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2742%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_PA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:02.172613+00:00",
+   "sha256": "bbb8496afef11b344d009d62d6dedc250776d67f308178cebedb700e51101db3",
+   "source_id": "tiger24_PA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2742%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_PA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:14.243307+00:00",
+   "sha256": "03391570756a580203c8631ad8fcb6884908314324ba205b5340d9af910f77c7",
+   "source_id": "tiger24_PA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2742%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_PA_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:43:09.946842+00:00",
+   "sha256": "c4011e9cb020f178c2c0197a7985ccfec3bfdd189fc55f60c3fe4a1e439d8580",
+   "source_id": "tiger24_PA_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2742%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_RI_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:21.136504+00:00",
+   "sha256": "f1fe9df2ed5bba6facf1dc31d619411bbd95074c7edd223d34de3ed3a9d0f1d1",
+   "source_id": "tiger24_RI_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2744%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_RI_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:20.783032+00:00",
+   "sha256": "da6c870f2faa9fbb341f01c47862eb17c43fc4f6f60c91f235a2f8eef01f64de",
+   "source_id": "tiger24_RI_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2744%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_RI_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:24.360509+00:00",
+   "sha256": "6b38a5b0b12e9e966fc95a158a90c8b384b5bacd20e9aaa8ea66a1b590d2407c",
+   "source_id": "tiger24_RI_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2744%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_SC_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:55.817856+00:00",
+   "sha256": "5d7b20ed609f905405b805861490901c877d3ea80331fbad45dfeff1ab1cda7c",
+   "source_id": "tiger24_SC_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2745%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_SC_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:23.698913+00:00",
+   "sha256": "6f9ea855749e26c9d65ef7a59f273bef38fd741265c9a12074212ea630cb5ba8",
+   "source_id": "tiger24_SC_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2745%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_SC_82.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:43:21.561136+00:00",
+   "sha256": "7cad72b94df3c15f2219ba38872ee22266a40034a4fdfb0ae87d8e64e5c3cd37",
+   "source_id": "tiger24_SC_82.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/82/query?where=STATE%3D%2745%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_SD_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:25.809263+00:00",
+   "sha256": "75e9c20b70f750ce7535d8b3dba49f38b27192181fcff89868f08ddf28365ffd",
+   "source_id": "tiger24_SD_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2746%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_SD_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:40:28.266855+00:00",
+   "sha256": "ec832d951dc5214abee1ba51d894c5769e54a3e4a6305b807d7c99d34382ccf9",
+   "source_id": "tiger24_SD_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2746%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_TN_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:11.878962+00:00",
+   "sha256": "857143078ba3c41cf6a38579fa2f1c29807d81d9326f0e3df04fa28275be8743",
+   "source_id": "tiger24_TN_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2747%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_TN_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:04.286044+00:00",
+   "sha256": "1b3c1aefe1bc3eb90dde2a08a7597d00e3ba2eeb65e4fc56e49b9872fbb5ffb4",
+   "source_id": "tiger24_TN_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2747%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_TX_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:29.473832+00:00",
+   "sha256": "810b79cad17dc6964b2e6fc90f2b4bb6bf6e524656d60da5ce2bddabe9a0bcbc",
+   "source_id": "tiger24_TX_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2748%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_TX_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:26.369047+00:00",
+   "sha256": "1493949589bcea9a62f85b16e76ea61579c38fd4eae560780c955d8ae9133ca2",
+   "source_id": "tiger24_TX_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2748%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_UT_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:39.648631+00:00",
+   "sha256": "8cb7cd1fceb2ed55fecf30bfb30b5cbaa1f392c1376fa196f40a4bb147ea1d79",
+   "source_id": "tiger24_UT_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2749%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_UT_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:37.292537+00:00",
+   "sha256": "ecf0312e30f4583fecef1f39fddd72838f231e82d65f67b5929f34dfef31937a",
+   "source_id": "tiger24_UT_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2749%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_VA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:44.648599+00:00",
+   "sha256": "523e8bd7fcfd2bfb2bf6745c827fd485e4f2d082aa3f9ec2a284ec1f295a8050",
+   "source_id": "tiger24_VA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2751%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_VA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:03.625455+00:00",
+   "sha256": "4d294a649d6618166cd36040cc300d7435f7a2813357c0a99f1bd8301d93ca14",
+   "source_id": "tiger24_VA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2751%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_VT_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:29.882664+00:00",
+   "sha256": "dd27f79edce1dff195807585a7922d3390adeac5ad859c2799381c3b00ea9398",
+   "source_id": "tiger24_VT_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2750%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_VT_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:26.722954+00:00",
+   "sha256": "250b8d5b88c7155b7098fd956fbc891b6a9325b73510858ef7a8947d2cf996f4",
+   "source_id": "tiger24_VT_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2750%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_VT_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T09:49:32.044976+00:00",
+   "sha256": "e5f5e1abaa6101497b913f5159651e1cd42524499572681e6594e0181e6337f6",
+   "source_id": "tiger24_VT_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2750%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WA_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:55.699789+00:00",
+   "sha256": "b12c0261a3d84388b17aa11cdaf75e541e6764e9e324b6e4bab60c4e06ccb5f1",
+   "source_id": "tiger24_WA_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2753%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WA_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:41:58.818165+00:00",
+   "sha256": "7ca87ab375050713a1db943da47a767598e0f1cdb4b8f241734719fd194cf72b",
+   "source_id": "tiger24_WA_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2753%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WI_22.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:43:21.315465+00:00",
+   "sha256": "0d1f2087c941c33c34217658b093bba5bb0ca1a139a6ff263401107aff48804c",
+   "source_id": "tiger24_WI_22.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2755%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WI_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:25.625496+00:00",
+   "sha256": "dc4f072a9eafe87ed4f40550198a7ded5832b1dba768395b358d3cd2465600e6",
+   "source_id": "tiger24_WI_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2755%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WI_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:05.081306+00:00",
+   "sha256": "f93b30e3088bc74604af713c2b3e2bcac5e5316be26a530853ee3e567f7f7d50",
+   "source_id": "tiger24_WI_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2755%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WV_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:15.331366+00:00",
+   "sha256": "e746a18ca5dbaca6f9aa4024a51a190f75b9f48976797bfa904537c5fca4d5d0",
+   "source_id": "tiger24_WV_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2754%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WV_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:23.004832+00:00",
+   "sha256": "adf459c86f521881f274550c0004201952e8757e1e3418cdc3b4365ce7a04d86",
+   "source_id": "tiger24_WV_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2754%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WY_28.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:28.136452+00:00",
+   "sha256": "28c208e473cd1a3b8f1764851f0b70711c7d5b758fd723296171b8c24f15ea3f",
+   "source_id": "tiger24_WY_28.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/28/query?where=STATE%3D%2756%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "edition": "TIGERweb ACS 2024",
+   "file": "sources/tiger24_WY_30.json",
+   "licence": "US federal work; public domain under 17 USC 105",
+   "retrieved_at": "2026-10-19T13:42:32.395592+00:00",
+   "sha256": "36e4ad046b5d132740f0373da52bddd0dd578e4a8e5db610a2f3ee6ed379788d",
+   "source_id": "tiger24_WY_30.json",
+   "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/30/query?where=STATE%3D%2756%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q62049"
+   ],
+   "file": "sources/wikidata_class_0000.json",
+   "sha256": "79328081c57980376428b19ee1e1f297603bf4b0c3f9aaa322794bae566182dc",
+   "source_id": "wikidata_class_0000.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1093829"
+   ],
+   "file": "sources/wikidata_class_0001.json",
+   "sha256": "44def6bde7b9ef3aee2c5d96db3156c4f27ea9074851a069dfdb0eac7f5b9057",
+   "source_id": "wikidata_class_0001.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q13414765"
+   ],
+   "file": "sources/wikidata_class_0002.json",
+   "sha256": "702ce1aeabcb9d3d89f76a6a81ecd9e1efe933e2cacd0a29e29cd73b831d1952",
+   "source_id": "wikidata_class_0002.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q76514543"
+   ],
+   "file": "sources/wikidata_class_0003.json",
+   "sha256": "88201f38a7e22c371091479e84b3b94d727341ab0701e75a7f231217baf6bad9",
+   "source_id": "wikidata_class_0003.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q132680629"
+   ],
+   "file": "sources/wikidata_class_0004.json",
+   "sha256": "4d6fa5b296e132bb05b59135bd7ce9c7ca06ceb4233c42be8a8bb9d190447d9d",
+   "source_id": "wikidata_class_0004.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q88"
+   ],
+   "file": "sources/wikidata_own_0000.json",
+   "sha256": "7771a0a3db873933b3485d7b2ca8364289de77424eb6f5f81409527749375d36",
+   "source_id": "wikidata_own_0000.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q24861"
+   ],
+   "file": "sources/wikidata_own_0001.json",
+   "sha256": "5829cd578dea2ca96483bfd68a0ed908b54a99a6bd2be0ba3eac6701d55aa2fd",
+   "source_id": "wikidata_own_0001.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q34804"
+   ],
+   "file": "sources/wikidata_own_0002.json",
+   "sha256": "b182cc533beaf04b88c5dd3e8ef7be0da4af59cc130ec225f5f6a0cebf7c1422",
+   "source_id": "wikidata_own_0002.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q49164"
+   ],
+   "file": "sources/wikidata_own_0003.json",
+   "sha256": "276fa58885ca2d630e07d977b65c1746161062ff880d7a29c5aa9ce2483da441",
+   "source_id": "wikidata_own_0003.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q49247"
+   ],
+   "file": "sources/wikidata_own_0004.json",
+   "sha256": "b9725c48c6f80f9319ff6a503963b8f2a025d094bba2eaa77efd8b8d53a71dbf",
+   "source_id": "wikidata_own_0004.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q51691"
+   ],
+   "file": "sources/wikidata_own_0005.json",
+   "sha256": "811878d4ee55004c897bdbff16870066195ed103bf338edc5efa28857bece248",
+   "source_id": "wikidata_own_0005.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q62475"
+   ],
+   "file": "sources/wikidata_own_0006.json",
+   "sha256": "8d30435dd4bdf2cd04c4947bb014bd1f19b2b803443be2f77b363eec543aaf26",
+   "source_id": "wikidata_own_0006.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q67419"
+   ],
+   "file": "sources/wikidata_own_0007.json",
+   "sha256": "656d9fbcccc3e37e7c1dda6ac212daa8f9de48dc2def6d8320204b35fe2f3cda",
+   "source_id": "wikidata_own_0007.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79300"
+   ],
+   "file": "sources/wikidata_own_0008.json",
+   "sha256": "d46840623323ba08cc94d093738f50d6e401e50046d28ae3d902b998388d8b81",
+   "source_id": "wikidata_own_0008.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79354"
+   ],
+   "file": "sources/wikidata_own_0009.json",
+   "sha256": "c73b55ac12bc9cb82274023b7f0733f9da59ceeebf4e04f498f7d3990ef04fda",
+   "source_id": "wikidata_own_0009.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79440"
+   ],
+   "file": "sources/wikidata_own_0010.json",
+   "sha256": "b5b94d7bcdc2d54f888c03bbfe882d723ac95e7a15e2f002209cb5a5b6e397d8",
+   "source_id": "wikidata_own_0010.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79474"
+   ],
+   "file": "sources/wikidata_own_0011.json",
+   "sha256": "da61db777c76122e1eec81097c1e6ecf090a12ea71cf6c997ec73e377f066493",
+   "source_id": "wikidata_own_0011.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79663"
+   ],
+   "file": "sources/wikidata_own_0012.json",
+   "sha256": "179474b09b4a14386af5908241b5f2ca85b14de9864fd11d12a6faffb19fb866",
+   "source_id": "wikidata_own_0012.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79806"
+   ],
+   "file": "sources/wikidata_own_0013.json",
+   "sha256": "12b51720a14062d7b5f4cfc48e9756282018bc906f5378b933366b444273d404",
+   "source_id": "wikidata_own_0013.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q79989"
+   ],
+   "file": "sources/wikidata_own_0014.json",
+   "sha256": "199544a5cbd93ec6759619239ab7f0368d10f180f30d95ab42827aa16a30dc6c",
+   "source_id": "wikidata_own_0014.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q80080"
+   ],
+   "file": "sources/wikidata_own_0015.json",
+   "sha256": "5f0e0d288cd08402415495ae548ee6f6d79cc22ac59b5f6896587ade44945a3a",
+   "source_id": "wikidata_own_0015.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q94791"
+   ],
+   "file": "sources/wikidata_own_0016.json",
+   "sha256": "339abf5f81e4b051eb0e2f7324af27317769b3ff40cb52910f04776aa23035e1",
+   "source_id": "wikidata_own_0016.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q128295"
+   ],
+   "file": "sources/wikidata_own_0017.json",
+   "sha256": "fac69904176ded2ba82ab7abfea495ee420cd79ca849fe94ab6b5c4799d6776a",
+   "source_id": "wikidata_own_0017.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q137919"
+   ],
+   "file": "sources/wikidata_own_0018.json",
+   "sha256": "5fb25786877a6a44771e2b39662a0b2775a5cca51065c70bc97644754c40df28",
+   "source_id": "wikidata_own_0018.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q165718"
+   ],
+   "file": "sources/wikidata_own_0019.json",
+   "sha256": "fb62914323d101bfdee6e4032729aee51b2d27e1b3fc5558e246cec22b9b9951",
+   "source_id": "wikidata_own_0019.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q204982"
+   ],
+   "file": "sources/wikidata_own_0020.json",
+   "sha256": "9b1a7bc6253ada229e95a4682457a50473b242853f4b864495dc1b2e30e6f561",
+   "source_id": "wikidata_own_0020.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q236713"
+   ],
+   "file": "sources/wikidata_own_0021.json",
+   "sha256": "8e5a8bb0e3e5e8d94a1e785474b2a099dd0ec7d15739ac52c930f8e56550270c",
+   "source_id": "wikidata_own_0021.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q255802"
+   ],
+   "file": "sources/wikidata_own_0022.json",
+   "sha256": "7b5fb0e76ddfdcd5edd6f1620bad1e85f3c8cb4af468b2398c37899d4bb5eb50",
+   "source_id": "wikidata_own_0022.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q281220"
+   ],
+   "file": "sources/wikidata_own_0023.json",
+   "sha256": "7da2999deb271238aad13b0f6f5b954a8c599771785ddb0f1cfd644cdfbf4941",
+   "source_id": "wikidata_own_0023.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q285599"
+   ],
+   "file": "sources/wikidata_own_0024.json",
+   "sha256": "265ebc01a3659015b84b61de0af8fdb65d8d1c6bc7e301e0fdbd782e6412f738",
+   "source_id": "wikidata_own_0024.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q306318"
+   ],
+   "file": "sources/wikidata_own_0025.json",
+   "sha256": "864ab62eb46dd693612b18d50d5429a7c4efaa053fc37b796f8f7b8a551b2885",
+   "source_id": "wikidata_own_0025.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q353089"
+   ],
+   "file": "sources/wikidata_own_0026.json",
+   "sha256": "423c2bf61c669c6bfc208f48ca2489b47d40302f269565a7e3d665b8cbc99b10",
+   "source_id": "wikidata_own_0026.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q379156"
+   ],
+   "file": "sources/wikidata_own_0027.json",
+   "sha256": "05149acae420960a783f10373f2e8b49da14be56844937f014b70fa4cf2bc07d",
+   "source_id": "wikidata_own_0027.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q389436"
+   ],
+   "file": "sources/wikidata_own_0028.json",
+   "sha256": "f40dfd91e30bb99a5aa11e7d5c8d4de7b79b094283f43b4503ceb69dd7ecf7b2",
+   "source_id": "wikidata_own_0028.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q433701"
+   ],
+   "file": "sources/wikidata_own_0029.json",
+   "sha256": "bbf4e8bb755dac9a986a26f32920701232ae48be3430346397062047f498aecd",
+   "source_id": "wikidata_own_0029.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q467617"
+   ],
+   "file": "sources/wikidata_own_0030.json",
+   "sha256": "474d2d19064bb37e90486510ee94c68e628e174bf54d08895a27ca8aacc00759",
+   "source_id": "wikidata_own_0030.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q482962"
+   ],
+   "file": "sources/wikidata_own_0031.json",
+   "sha256": "c4463c7d11998407f6719f827c0efdf349c62433876e751c7c53d60bbfd558f9",
+   "source_id": "wikidata_own_0031.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q483539"
+   ],
+   "file": "sources/wikidata_own_0032.json",
+   "sha256": "7bfa51047da6590a9110adb84ed17564ddf0d39ef8d57eedcb289635c6b9962b",
+   "source_id": "wikidata_own_0032.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q490744"
+   ],
+   "file": "sources/wikidata_own_0033.json",
+   "sha256": "9ce660515d87024acb27a194ab281cec4eb2a073a9936aa52ac9658f5baf0f42",
+   "source_id": "wikidata_own_0033.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q497824"
+   ],
+   "file": "sources/wikidata_own_0034.json",
+   "sha256": "f3251034a296ec2b862b12484200dee41e4d8b8594151c5e7eb6ebef310e3fbe",
+   "source_id": "wikidata_own_0034.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q507197"
+   ],
+   "file": "sources/wikidata_own_0035.json",
+   "sha256": "148c4ce98bf61048d6c0cd0b0d031d5dcd57e29f14508b05c8220a57079caa72",
+   "source_id": "wikidata_own_0035.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q514836"
+   ],
+   "file": "sources/wikidata_own_0036.json",
+   "sha256": "eea6da207c8fa1dd17b14fde56fb5776b2604b0e7bb63fa5bcda4c2f723fb272",
+   "source_id": "wikidata_own_0036.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q516817"
+   ],
+   "file": "sources/wikidata_own_0037.json",
+   "sha256": "dd81c4c6cb441e6a8caeb421ab2edef265552861a0af678192cc4631c23b2424",
+   "source_id": "wikidata_own_0037.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q534536"
+   ],
+   "file": "sources/wikidata_own_0038.json",
+   "sha256": "66a43eca955f50c750a46206284a4a1c0e3482d271615627ab330d5296ff3846",
+   "source_id": "wikidata_own_0038.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q538210"
+   ],
+   "file": "sources/wikidata_own_0039.json",
+   "sha256": "e01e0f9b6ce5da032985ad405a9df5f35b6642d0d1041dcc30949cdb1c85625b",
+   "source_id": "wikidata_own_0039.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q556989"
+   ],
+   "file": "sources/wikidata_own_0040.json",
+   "sha256": "bab82a016617ccb82b25b6dc08fcbd9cd7ef579d1f7ca6ea841d160d8d16e799",
+   "source_id": "wikidata_own_0040.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q570406"
+   ],
+   "file": "sources/wikidata_own_0041.json",
+   "sha256": "172700bfbc2826c22d35b8a884a18126667eb38d8321477448478b0fdf340ddc",
+   "source_id": "wikidata_own_0041.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q575361"
+   ],
+   "file": "sources/wikidata_own_0042.json",
+   "sha256": "6bc53fb43de399b455fcea3f88e5280238a58eefd66cb393ee35dbad38a19c5a",
+   "source_id": "wikidata_own_0042.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q575636"
+   ],
+   "file": "sources/wikidata_own_0043.json",
+   "sha256": "bcc90a6009fd0e6373d9dbdbe5d4bd06b3b0fae9a989060dd89586d589a5e34d",
+   "source_id": "wikidata_own_0043.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q577215"
+   ],
+   "file": "sources/wikidata_own_0044.json",
+   "sha256": "efcf68d297eab524257783f30029042ff0277aa514e5cf752f2d7897b3e5aab4",
+   "source_id": "wikidata_own_0044.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q578195"
+   ],
+   "file": "sources/wikidata_own_0045.json",
+   "sha256": "09918b7a8362e27d5d20175266fe3ea884abe4692f9b5ff676934c003c365f64",
+   "source_id": "wikidata_own_0045.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q579672"
+   ],
+   "file": "sources/wikidata_own_0046.json",
+   "sha256": "4be516d9c752449c6957297f638eb054679b45b0d8ab34fe6785adf605e63f14",
+   "source_id": "wikidata_own_0046.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q581328"
+   ],
+   "file": "sources/wikidata_own_0047.json",
+   "sha256": "12362041b2b33bbae630d37c72d5b73c4500345bb6d9161a1a1d42066c6e438d",
+   "source_id": "wikidata_own_0047.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q587097"
+   ],
+   "file": "sources/wikidata_own_0048.json",
+   "sha256": "3140fc40b1f22039c02c2ba1e21b9cc9cbfdf4b55a3ec1b24e2177d71bad355d",
+   "source_id": "wikidata_own_0048.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q590849"
+   ],
+   "file": "sources/wikidata_own_0049.json",
+   "sha256": "609ad5fa29d411f46f9bb0931d7477d402e59a3629f02bca374fc2679fe08620",
+   "source_id": "wikidata_own_0049.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q599716"
+   ],
+   "file": "sources/wikidata_own_0050.json",
+   "sha256": "67724a2640a736f6ff3ab24f7702987951e951431c92712d4372a8f8d9a068f2",
+   "source_id": "wikidata_own_0050.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q607120"
+   ],
+   "file": "sources/wikidata_own_0051.json",
+   "sha256": "b5aadcee03717eca045f7bc64e2d1d90b19cfb2f855f0c2a500e0fcfdc498475",
+   "source_id": "wikidata_own_0051.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q611872"
+   ],
+   "file": "sources/wikidata_own_0052.json",
+   "sha256": "c8c96922af51ce8d1745a05da903d14746cb84c584d85e9aabc50592489e01e3",
+   "source_id": "wikidata_own_0052.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q620328"
+   ],
+   "file": "sources/wikidata_own_0053.json",
+   "sha256": "86c42698b2e11e748c45b79972ba3fed04beba716615cbc7a39fd0b1c3f8201e",
+   "source_id": "wikidata_own_0053.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q630838"
+   ],
+   "file": "sources/wikidata_own_0054.json",
+   "sha256": "4c2ced804cd9f54bf5887c13f035f1fc68741b29d39879805f48fa1c444e553c",
+   "source_id": "wikidata_own_0054.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q646484"
+   ],
+   "file": "sources/wikidata_own_0055.json",
+   "sha256": "30514ebf6be4c0fc18047178700c44bee6b864eb6e035aadf4571750abb40ada",
+   "source_id": "wikidata_own_0055.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q652679"
+   ],
+   "file": "sources/wikidata_own_0056.json",
+   "sha256": "29dc4d94e1235c7109505c009efd5587f33a45b1d2b1252799257038808b5903",
+   "source_id": "wikidata_own_0056.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q669853"
+   ],
+   "file": "sources/wikidata_own_0057.json",
+   "sha256": "b84d67b85c205a8b46efc0f009ad4dbc2be6bf768b633cb7943e77a116adf95f",
+   "source_id": "wikidata_own_0057.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q671480"
+   ],
+   "file": "sources/wikidata_own_0058.json",
+   "sha256": "5ce336711816fb9f0e2e92265f69478a0195cfc741e1a623baa84bfd25529ce3",
+   "source_id": "wikidata_own_0058.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q692740"
+   ],
+   "file": "sources/wikidata_own_0059.json",
+   "sha256": "4ac6c818e90920671014db8a9ba6dc839670db0fd75a2d4cc186c86ca7f9bd27",
+   "source_id": "wikidata_own_0059.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q725046"
+   ],
+   "file": "sources/wikidata_own_0060.json",
+   "sha256": "0a62fec0219864d11617f7d636f6789b3936f10e5c7202d2a01bdd6c44fa2bbc",
+   "source_id": "wikidata_own_0060.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q742631"
+   ],
+   "file": "sources/wikidata_own_0061.json",
+   "sha256": "c3036e54ae08c8e9310ed719df5ef0d771c008d8cd516b5a80b674b2ba2aaa93",
+   "source_id": "wikidata_own_0061.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q752681"
+   ],
+   "file": "sources/wikidata_own_0062.json",
+   "sha256": "c60f6f760074b0c2750f9d0b14829e7782fe81a95d8aeebfb6d37f57db677d64",
+   "source_id": "wikidata_own_0062.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q753733"
+   ],
+   "file": "sources/wikidata_own_0063.json",
+   "sha256": "bb375851c285a12af979b7588d9a763838dbcab66f82083c6621264454203a1b",
+   "source_id": "wikidata_own_0063.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q754081"
+   ],
+   "file": "sources/wikidata_own_0064.json",
+   "sha256": "24cc703c136e8250fa195eb0dd419daa08398c408bccfb0338f46f7bc8e95dbe",
+   "source_id": "wikidata_own_0064.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q754683"
+   ],
+   "file": "sources/wikidata_own_0065.json",
+   "sha256": "817a67766fe78af028ef8e4d7fde9ed4df0752eb0c5e7a8969da5bad9f1eec66",
+   "source_id": "wikidata_own_0065.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q754782"
+   ],
+   "file": "sources/wikidata_own_0066.json",
+   "sha256": "6f03e53f100b9779751efade7c3ba5290e09e123d7aaaafcecdc559b95355751",
+   "source_id": "wikidata_own_0066.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q755153"
+   ],
+   "file": "sources/wikidata_own_0067.json",
+   "sha256": "cc6306d606e47093c8eabc5de4d6fd02802ebb27ac8c93aa8315ba56ed65f331",
+   "source_id": "wikidata_own_0067.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q755632"
+   ],
+   "file": "sources/wikidata_own_0068.json",
+   "sha256": "18b585037efc5e8380827aceab19f14658160d007abcedcb3e591e160bfd93e4",
+   "source_id": "wikidata_own_0068.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q766339"
+   ],
+   "file": "sources/wikidata_own_0069.json",
+   "sha256": "a2c3b6b1920f72315b2ea8aeb6e9d50b8d4681f329da7b9ad982f23c00ffc41e",
+   "source_id": "wikidata_own_0069.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q775500"
+   ],
+   "file": "sources/wikidata_own_0070.json",
+   "sha256": "0b299c6f830ff33936024e118150e43f9f9ccb33be6e46ed8a37d18992480192",
+   "source_id": "wikidata_own_0070.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q780944"
+   ],
+   "file": "sources/wikidata_own_0071.json",
+   "sha256": "171810a06174284768bceb11d8706048588bf0c25f02f9ff5f771fbb76da3de8",
+   "source_id": "wikidata_own_0071.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q795403"
+   ],
+   "file": "sources/wikidata_own_0072.json",
+   "sha256": "6a5a35904c31b26ce2faade1427b1c5536d84ac5833eb0a5c9c89ebee6591393",
+   "source_id": "wikidata_own_0072.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q810776"
+   ],
+   "file": "sources/wikidata_own_0073.json",
+   "sha256": "03ea29e6759fd659bdbc2f5d0e3aa3b130a32d906ae302f02ca0ba3d6c12b92c",
+   "source_id": "wikidata_own_0073.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q832600"
+   ],
+   "file": "sources/wikidata_own_0074.json",
+   "sha256": "5579c19a17e4485c6b406634d33b81c43029d0ba6fb2753bb29062e862d26569",
+   "source_id": "wikidata_own_0074.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q846426"
+   ],
+   "file": "sources/wikidata_own_0075.json",
+   "sha256": "0f309683afee5ce2c838d3915605490740bc84376da39995d23858100537e474",
+   "source_id": "wikidata_own_0075.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q851806"
+   ],
+   "file": "sources/wikidata_own_0076.json",
+   "sha256": "86d652bcfdf82d1e47ccae0076995c5bc459ca9d4f91b6a3fd6354f9152e4dca",
+   "source_id": "wikidata_own_0076.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q867503"
+   ],
+   "file": "sources/wikidata_own_0077.json",
+   "sha256": "6dd4875e09896d2b852edc195dcdbcccd0d6a118cdf3b14e02df09e66f44aa19",
+   "source_id": "wikidata_own_0077.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q880153"
+   ],
+   "file": "sources/wikidata_own_0078.json",
+   "sha256": "60f28733cd302bb2107a720ace582153b006eb876fd8979551133a28c444c041",
+   "source_id": "wikidata_own_0078.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q892613"
+   ],
+   "file": "sources/wikidata_own_0079.json",
+   "sha256": "b810fe00d7a3ea10c7f35ace8a1ef86d200b2b8f4632299c7504aec2fe47289e",
+   "source_id": "wikidata_own_0079.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q913476"
+   ],
+   "file": "sources/wikidata_own_0080.json",
+   "sha256": "65d5942007053166fab68f54bb0ff6ff321c63f712c193a558a4e8657e57c947",
+   "source_id": "wikidata_own_0080.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q921689"
+   ],
+   "file": "sources/wikidata_own_0081.json",
+   "sha256": "925ec9503b6c35ca5ab41b1163a6968f47f2179e6d5497ec6ccb6d2d85354754",
+   "source_id": "wikidata_own_0081.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q928211"
+   ],
+   "file": "sources/wikidata_own_0082.json",
+   "sha256": "e19406feaa70102bd0d6f0bd1a7b4ebc99cdd8ab531ca3054801ffb0b6ebecd7",
+   "source_id": "wikidata_own_0082.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q931778"
+   ],
+   "file": "sources/wikidata_own_0083.json",
+   "sha256": "e5d73f2750c1460de26b4b23aefb9a727b49bffd13d64569bc522240772c946a",
+   "source_id": "wikidata_own_0083.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q940269"
+   ],
+   "file": "sources/wikidata_own_0084.json",
+   "sha256": "8b9335edec8305308ad4222f25c34c2eb13099936aea5b3dd582270358ff9f89",
+   "source_id": "wikidata_own_0084.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q945046"
+   ],
+   "file": "sources/wikidata_own_0085.json",
+   "sha256": "ba765e17b25f34199d6b32e3e7a9e6fe1f2bd01957dd952e1678713ed28a8da6",
+   "source_id": "wikidata_own_0085.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q948231"
+   ],
+   "file": "sources/wikidata_own_0086.json",
+   "sha256": "ddcd8e1f96c77cceb5a3697478bbddd2798cf574ed4fdab12e17b1f0be94ee80",
+   "source_id": "wikidata_own_0086.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q952859"
+   ],
+   "file": "sources/wikidata_own_0087.json",
+   "sha256": "9d15a3984648a9c8e0cd27839dd634ea9945c2d58c545b8dd996e80486e3d001",
+   "source_id": "wikidata_own_0087.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q955151"
+   ],
+   "file": "sources/wikidata_own_0088.json",
+   "sha256": "cfffaa2c547a50efd9b72b118e35d8b44001f5d54dcd01035f9aec2a942a48da",
+   "source_id": "wikidata_own_0088.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q955228"
+   ],
+   "file": "sources/wikidata_own_0089.json",
+   "sha256": "08eef9c09e8831849dd6e033b4b746e6def7ce31c8e7c93b32cfe931ef18aeb8",
+   "source_id": "wikidata_own_0089.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q957669"
+   ],
+   "file": "sources/wikidata_own_0090.json",
+   "sha256": "76f2d8d4b223a3c90db9477f4d42828bec43a7248d07201f08d30aaa10edb0c4",
+   "source_id": "wikidata_own_0090.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q958488"
+   ],
+   "file": "sources/wikidata_own_0091.json",
+   "sha256": "e663f7bc25ed021d881f90162338b50893f0c345807ffb519e5c209009b2d17c",
+   "source_id": "wikidata_own_0091.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q959704"
+   ],
+   "file": "sources/wikidata_own_0092.json",
+   "sha256": "bf13c41ad8ca85e07ff92e37c710ceadb8f5d5cea2a6f805440ba00d15a88066",
+   "source_id": "wikidata_own_0092.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q960877"
+   ],
+   "file": "sources/wikidata_own_0093.json",
+   "sha256": "39e219268c3215eb2352d672c3e0b36c25bbf353a1ce785ed72a304e2791fe5d",
+   "source_id": "wikidata_own_0093.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q962862"
+   ],
+   "file": "sources/wikidata_own_0094.json",
+   "sha256": "14994492eaf50f6058d345c4bd3bd64ea9e35c5b77d0a5753ddd8a1946ca1234",
+   "source_id": "wikidata_own_0094.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q963116"
+   ],
+   "file": "sources/wikidata_own_0095.json",
+   "sha256": "c67f009cf971cd0f95d23bd570a98fd042aa30756e8fa84d48ef9a418a1793c9",
+   "source_id": "wikidata_own_0095.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q964529"
+   ],
+   "file": "sources/wikidata_own_0096.json",
+   "sha256": "0154a8321df81eaf423c04d16335ef72f5ff6d8bf83816cef2e48c5c28959025",
+   "source_id": "wikidata_own_0096.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q966457"
+   ],
+   "file": "sources/wikidata_own_0097.json",
+   "sha256": "2ed21b9d36be1c48f36c5c3cfee7d9655a883079f29b8b25aa941e50c7c0da68",
+   "source_id": "wikidata_own_0097.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q967897"
+   ],
+   "file": "sources/wikidata_own_0098.json",
+   "sha256": "2f7021e1a1e7ac05fbe9dde3fe5c7b275388ccb5ed2c05c9a9be9924a947d0f6",
+   "source_id": "wikidata_own_0098.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q969736"
+   ],
+   "file": "sources/wikidata_own_0099.json",
+   "sha256": "a0989ce56ede41b8e169a23647bae8b83076aa73710edbeb0b1e103896549436",
+   "source_id": "wikidata_own_0099.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q969898"
+   ],
+   "file": "sources/wikidata_own_0100.json",
+   "sha256": "df8617f38b2e56fdc1d979b76a33e7c2b4c9db29cc0331ffcedc774673f0b674",
+   "source_id": "wikidata_own_0100.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q972657"
+   ],
+   "file": "sources/wikidata_own_0101.json",
+   "sha256": "b699b6e718b93148fe97c0a25e9c800fca7d32bbdc60f61744e5884dcdc2c5c5",
+   "source_id": "wikidata_own_0101.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q973724"
+   ],
+   "file": "sources/wikidata_own_0102.json",
+   "sha256": "19bc205f2823bba3b45c99839c9a33a6adbe19a5c1ec0211237bbafd0a7ac450",
+   "source_id": "wikidata_own_0102.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q974714"
+   ],
+   "file": "sources/wikidata_own_0103.json",
+   "sha256": "4286b0e89c8261e99ad297c3580b3f9fa3ab1f69cd50da0421fc3b06dec2c039",
+   "source_id": "wikidata_own_0103.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q976217"
+   ],
+   "file": "sources/wikidata_own_0104.json",
+   "sha256": "a003b7ce4d4868acb05b1866e5b39b753713270b8306c5c58354f98487367641",
+   "source_id": "wikidata_own_0104.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q977128"
+   ],
+   "file": "sources/wikidata_own_0105.json",
+   "sha256": "7e648e2769af44019ee66ad1b131ca228f4e7bb230285824aacac2880cc973fc",
+   "source_id": "wikidata_own_0105.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q978699"
+   ],
+   "file": "sources/wikidata_own_0106.json",
+   "sha256": "0edc3dc7a5b817914bc1e9724e02b645f82fc8ad60231cc1bccb4ded37c59482",
+   "source_id": "wikidata_own_0106.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q979471"
+   ],
+   "file": "sources/wikidata_own_0107.json",
+   "sha256": "7964737e6fd99f92797a8e43af97ea28778b62bdf83984fd2256da811a2d3250",
+   "source_id": "wikidata_own_0107.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q979662"
+   ],
+   "file": "sources/wikidata_own_0108.json",
+   "sha256": "0dc31c9f17b43d54794addd53a13e9215ab5cae1fb21a5753a2659f0b391e46a",
+   "source_id": "wikidata_own_0108.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q980543"
+   ],
+   "file": "sources/wikidata_own_0109.json",
+   "sha256": "3a3776901f6ab9e74ff272b3bf7f8aa59c2690fb5807ad198976c3ef332176a8",
+   "source_id": "wikidata_own_0109.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q981528"
+   ],
+   "file": "sources/wikidata_own_0110.json",
+   "sha256": "8077309da826879621954948fe31609cf3405717592e5563158359cce774266a",
+   "source_id": "wikidata_own_0110.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q981872"
+   ],
+   "file": "sources/wikidata_own_0111.json",
+   "sha256": "16e92e2c506b68416818ec6159bfbf0bd24532d2b2c5b486e72fae92119841d1",
+   "source_id": "wikidata_own_0111.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q981989"
+   ],
+   "file": "sources/wikidata_own_0112.json",
+   "sha256": "17addd429f5fc2c88ee78c74d8d345912bbebc9606e458cd7db1924174461392",
+   "source_id": "wikidata_own_0112.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q982279"
+   ],
+   "file": "sources/wikidata_own_0113.json",
+   "sha256": "dbe17e0e76b268bd500e779a646dd8ef836a5f200b9d6033d05484d7c067c9f0",
+   "source_id": "wikidata_own_0113.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q982542"
+   ],
+   "file": "sources/wikidata_own_0114.json",
+   "sha256": "27cdcfa10c2a7dcc5d4923de73bd49ac09973620b01c8bf011ee2ea5a3f62380",
+   "source_id": "wikidata_own_0114.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q982814"
+   ],
+   "file": "sources/wikidata_own_0115.json",
+   "sha256": "ab941e2475f473d007a2e4c9eeb4bceabeae3272aca40d67fa03be70c243afef",
+   "source_id": "wikidata_own_0115.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q984825"
+   ],
+   "file": "sources/wikidata_own_0116.json",
+   "sha256": "590e923e030c72abb7245170b1c694478ea424370cc1bf298eb0c8cbe02c6429",
+   "source_id": "wikidata_own_0116.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q985175"
+   ],
+   "file": "sources/wikidata_own_0117.json",
+   "sha256": "b748c9b930ee587931768791ac0f8a76620922b3d6ce36c4ec5b6a61fbbfaf06",
+   "source_id": "wikidata_own_0117.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q985677"
+   ],
+   "file": "sources/wikidata_own_0118.json",
+   "sha256": "ae3af19a96fb166c3df849594695310c346fdfa25e915b27b44e829777020ee6",
+   "source_id": "wikidata_own_0118.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q986528"
+   ],
+   "file": "sources/wikidata_own_0119.json",
+   "sha256": "62d33e158608ec2e1a66209b90fcd8fce45ed5eb26a71a191d3ef6f08a20a0bc",
+   "source_id": "wikidata_own_0119.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q988558"
+   ],
+   "file": "sources/wikidata_own_0120.json",
+   "sha256": "ebce09d52e6da15ff40a9f3bcb8449a41c4a4432a1b24242937fdcd6c243474e",
+   "source_id": "wikidata_own_0120.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q990622"
+   ],
+   "file": "sources/wikidata_own_0121.json",
+   "sha256": "4b714d6e6e5fc749a92da4d60e0be1bc49781e801db454482734697d3079a67b",
+   "source_id": "wikidata_own_0121.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q991019"
+   ],
+   "file": "sources/wikidata_own_0122.json",
+   "sha256": "83f12e2b89cc38e19030bc9e5031f26c2969434ed13ee8e0f98800c502f071a9",
+   "source_id": "wikidata_own_0122.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q994809"
+   ],
+   "file": "sources/wikidata_own_0123.json",
+   "sha256": "665593deacd2f2ca90d369b5cc3fc51d9b9f2eb0982c84e729957c2a39ce2374",
+   "source_id": "wikidata_own_0123.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q997132"
+   ],
+   "file": "sources/wikidata_own_0124.json",
+   "sha256": "7cacfd0d77945b69bdcf64deff243be3936dccdc22c9378690141f2bab5a7bfe",
+   "source_id": "wikidata_own_0124.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q998914"
+   ],
+   "file": "sources/wikidata_own_0125.json",
+   "sha256": "20e46439c09f18cddf4a444125e3cf4be90d2cf3f21b3dc3676ee1d5dbe6625e",
+   "source_id": "wikidata_own_0125.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1003658"
+   ],
+   "file": "sources/wikidata_own_0126.json",
+   "sha256": "14420716fd515e9807668f5d322f63c54c6946da586a10893c983c49b69dedd4",
+   "source_id": "wikidata_own_0126.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1006582"
+   ],
+   "file": "sources/wikidata_own_0127.json",
+   "sha256": "4fa6b3e4c67488ae00e450e8f5cf65fcf4e283a90dbbd3d32203148ad7a48904",
+   "source_id": "wikidata_own_0127.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1010247"
+   ],
+   "file": "sources/wikidata_own_0128.json",
+   "sha256": "21ba9a62b5009fbf6bfbc70995ff6ce62800f2937f898f3b7c8dbef56962e492",
+   "source_id": "wikidata_own_0128.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1010699"
+   ],
+   "file": "sources/wikidata_own_0129.json",
+   "sha256": "964bad4add4da49e0fd313edbd2ff81faeeae326c07feacf2ac8d4c1db8a5b60",
+   "source_id": "wikidata_own_0129.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1012455"
+   ],
+   "file": "sources/wikidata_own_0130.json",
+   "sha256": "f2d7adc0e1633e568cf55616c04eafe8e1420f99bab729c5b1aa24908b74e9a0",
+   "source_id": "wikidata_own_0130.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1016628"
+   ],
+   "file": "sources/wikidata_own_0131.json",
+   "sha256": "6a77a6c5fa250c3476106497bffc548655eefa09c5df12da8157e9483075af73",
+   "source_id": "wikidata_own_0131.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1019239"
+   ],
+   "file": "sources/wikidata_own_0132.json",
+   "sha256": "40854b3285317e772c0200580668c69bfec22c4e1206f746ae16aa68dc5a49a4",
+   "source_id": "wikidata_own_0132.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1022942"
+   ],
+   "file": "sources/wikidata_own_0133.json",
+   "sha256": "29fecce12a634d4a02e4843655f7148f06a87a714e4342971319217b112c1c1e",
+   "source_id": "wikidata_own_0133.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1023544"
+   ],
+   "file": "sources/wikidata_own_0134.json",
+   "sha256": "3ba41a041bfbba7f96d076e5543b591a381e2def82217d4c91797ef3aae27e26",
+   "source_id": "wikidata_own_0134.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1027763"
+   ],
+   "file": "sources/wikidata_own_0135.json",
+   "sha256": "9301747a008679f2123a3d701e923aecd379d77370be54a2f2cd8b7d9905e3e1",
+   "source_id": "wikidata_own_0135.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1065452"
+   ],
+   "file": "sources/wikidata_own_0136.json",
+   "sha256": "c747dcd0a30968ebc4498bb833ed082bd8ba80efeb68345a9366fa6a558644bb",
+   "source_id": "wikidata_own_0136.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1082510"
+   ],
+   "file": "sources/wikidata_own_0137.json",
+   "sha256": "69e6c094a2ef5f35b2abd266b12f46807af4fe247a9f9f5cd5dfac30adbd252c",
+   "source_id": "wikidata_own_0137.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1083703"
+   ],
+   "file": "sources/wikidata_own_0138.json",
+   "sha256": "bc913cb5b9b4375d7e7ea692bcda5c2c493f022f9e02a3151680503fe4971b9d",
+   "source_id": "wikidata_own_0138.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1084050"
+   ],
+   "file": "sources/wikidata_own_0139.json",
+   "sha256": "9efbde0a59802a51f6f16e3a04c328b46f652b3f8a4fd24d0a21ce19441b7f40",
+   "source_id": "wikidata_own_0139.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1085875"
+   ],
+   "file": "sources/wikidata_own_0140.json",
+   "sha256": "d7c550507d6821aae6105ac5fa18914a9a6bfc584e18e606773f3d49581d1570",
+   "source_id": "wikidata_own_0140.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1088122"
+   ],
+   "file": "sources/wikidata_own_0141.json",
+   "sha256": "5deab7edec5839f6ee4c6a6939129e1c9a78925ca13a0d93433f1a62e55504ee",
+   "source_id": "wikidata_own_0141.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1089101"
+   ],
+   "file": "sources/wikidata_own_0142.json",
+   "sha256": "800fbca3c51dc2b6138d74e6f10b7c71afe759527a7d99b2f999b3e6bd2d8a6c",
+   "source_id": "wikidata_own_0142.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1093442"
+   ],
+   "file": "sources/wikidata_own_0143.json",
+   "sha256": "33ac5609efd5f31bc9565fccd37209144f6aab955490d511817ae561c581d451",
+   "source_id": "wikidata_own_0143.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1130536"
+   ],
+   "file": "sources/wikidata_own_0144.json",
+   "sha256": "44d9976a9af6e5f55fc2dffe17833c5cda887735e919cd4cf250c207c44d914e",
+   "source_id": "wikidata_own_0144.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1131364"
+   ],
+   "file": "sources/wikidata_own_0145.json",
+   "sha256": "47245e0ef8e3cf5ec5a6a9f3bb423a737cd27269944d6b92d496adc842bb0fd8",
+   "source_id": "wikidata_own_0145.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1132282"
+   ],
+   "file": "sources/wikidata_own_0146.json",
+   "sha256": "a80ff952a8699e9a76c5fa83914ca6e1998b09139093969480e809454615bb18",
+   "source_id": "wikidata_own_0146.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1133516"
+   ],
+   "file": "sources/wikidata_own_0147.json",
+   "sha256": "b308809c9a3fc22ca21d9c74a2f24ebdf3c8776239c2fa4065f2eeb071a6c582",
+   "source_id": "wikidata_own_0147.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1150893"
+   ],
+   "file": "sources/wikidata_own_0148.json",
+   "sha256": "c053cdb12709f4638db3267875123562c71ad01bc59dc3a2be56d61263f9e051",
+   "source_id": "wikidata_own_0148.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1152219"
+   ],
+   "file": "sources/wikidata_own_0149.json",
+   "sha256": "3f49b4c81692fed8ed381c0c7b5761ea62fee95a042eb9252c4dd0b940873359",
+   "source_id": "wikidata_own_0149.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1181353"
+   ],
+   "file": "sources/wikidata_own_0150.json",
+   "sha256": "198fb6851db950d678a931f606278203fe05d9076dfc6fe095551c7444f166cf",
+   "source_id": "wikidata_own_0150.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1182481"
+   ],
+   "file": "sources/wikidata_own_0151.json",
+   "sha256": "1c1b83ee3d33d23e631acc0032617033ee5c7917cf7345110804d5aa991735c9",
+   "source_id": "wikidata_own_0151.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1182761"
+   ],
+   "file": "sources/wikidata_own_0152.json",
+   "sha256": "695cc5cbe300d556485d5cbdd20201f8168f693a00ea93cc62245de985c27857",
+   "source_id": "wikidata_own_0152.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1183945"
+   ],
+   "file": "sources/wikidata_own_0153.json",
+   "sha256": "ed6e09d062f207df691587066b4d3bdc96c363db14187ca577eb433dad2b9db6",
+   "source_id": "wikidata_own_0153.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1184336"
+   ],
+   "file": "sources/wikidata_own_0154.json",
+   "sha256": "1de752b626e4839d8ebd76da189a3d1e4688cf60964777d4acf9a77a375dbb1e",
+   "source_id": "wikidata_own_0154.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1185373"
+   ],
+   "file": "sources/wikidata_own_0155.json",
+   "sha256": "afb1b4662d6181d1831440752f9e744dbc07fc92051cec5dff8e94895c421cfb",
+   "source_id": "wikidata_own_0155.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1185903"
+   ],
+   "file": "sources/wikidata_own_0156.json",
+   "sha256": "186778be942b27fbe9847101ab41e4132f7841515f97d0f951037f5eed3839ac",
+   "source_id": "wikidata_own_0156.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1187073"
+   ],
+   "file": "sources/wikidata_own_0157.json",
+   "sha256": "047752fc93b6a7034da50927f4b60436d322fcf7f5d395960fed771e9b8c2900",
+   "source_id": "wikidata_own_0157.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1190594"
+   ],
+   "file": "sources/wikidata_own_0158.json",
+   "sha256": "e47f58124cd572477706585b823b669e287e74412f21a9df489a46a44b95f787",
+   "source_id": "wikidata_own_0158.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1261613"
+   ],
+   "file": "sources/wikidata_own_0159.json",
+   "sha256": "2e5eed0ee59f5dcb559bc6c4a9edb9b16ddbbcb933e2cc1c3d2e4103ce41d21f",
+   "source_id": "wikidata_own_0159.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1362736"
+   ],
+   "file": "sources/wikidata_own_0160.json",
+   "sha256": "99559ddabeff24234d4e26ea079bfcb867d42b5624d1e3429d19fc19f4845e13",
+   "source_id": "wikidata_own_0160.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1373836"
+   ],
+   "file": "sources/wikidata_own_0161.json",
+   "sha256": "ee80c34c9087ca20839b82cd25e7aecf9ab3b4d8af4f59ab36d1bd66ca1d7a14",
+   "source_id": "wikidata_own_0161.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1375005"
+   ],
+   "file": "sources/wikidata_own_0162.json",
+   "sha256": "1e57514ce89d7a670cf1b4dd38e09eefa4d90e312f08f476ca09ffbd6988e277",
+   "source_id": "wikidata_own_0162.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1376150"
+   ],
+   "file": "sources/wikidata_own_0163.json",
+   "sha256": "6d67b36af017ca5c1bcdbb27640eaf60c176edc869f2f55c0953bd362ad7b976",
+   "source_id": "wikidata_own_0163.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1376326"
+   ],
+   "file": "sources/wikidata_own_0164.json",
+   "sha256": "1e32cd23a988fc793d1104d6e7b3670f8161ca147fb572c1d78425623b3121f8",
+   "source_id": "wikidata_own_0164.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1377121"
+   ],
+   "file": "sources/wikidata_own_0165.json",
+   "sha256": "ad2debe66b8900c28c9246cbd12dfa35ed43369146cff9171b70868f0fefcd38",
+   "source_id": "wikidata_own_0165.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1439363"
+   ],
+   "file": "sources/wikidata_own_0166.json",
+   "sha256": "53c3627d632a57eff0099744ea3b57142c094a6a19cfea9ab5ae84f67c1a585b",
+   "source_id": "wikidata_own_0166.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1502110"
+   ],
+   "file": "sources/wikidata_own_0167.json",
+   "sha256": "a24744f818c7f9e2a9d470880733693c47ab60efa5cf4afb4e43f5866846311d",
+   "source_id": "wikidata_own_0167.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1504090"
+   ],
+   "file": "sources/wikidata_own_0168.json",
+   "sha256": "52d941c7043bbd0c2b86a5130971f2760c77bc88ed84146a611b7c1a52f5f326",
+   "source_id": "wikidata_own_0168.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1510200"
+   ],
+   "file": "sources/wikidata_own_0169.json",
+   "sha256": "7e9c6e56910aebcc216c50999cb90cc700f39b98179f7f367fa662ede268606e",
+   "source_id": "wikidata_own_0169.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1512908"
+   ],
+   "file": "sources/wikidata_own_0170.json",
+   "sha256": "9cff55e18c567b9de7bd238a6115f1ff6e57fde78a96cc30d04782009107ef3d",
+   "source_id": "wikidata_own_0170.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1515783"
+   ],
+   "file": "sources/wikidata_own_0171.json",
+   "sha256": "92c80073e5b9858f6b05e603c439371ee85401153e51d3935a0fc3cf1e4ab5d5",
+   "source_id": "wikidata_own_0171.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1550922"
+   ],
+   "file": "sources/wikidata_own_0172.json",
+   "sha256": "a3e3ae974e9ff39c844fb537ad06c99727e9f50dcd3f9e397a6429501b3d75b3",
+   "source_id": "wikidata_own_0172.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1569498"
+   ],
+   "file": "sources/wikidata_own_0173.json",
+   "sha256": "c9e9399b29019007c57e0ef0c746cd1be92da0947ef0e41c457efddd5c22303e",
+   "source_id": "wikidata_own_0173.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1570396"
+   ],
+   "file": "sources/wikidata_own_0174.json",
+   "sha256": "48a7a1907befa7e84319fb57649e0a0b5f34db39eb1c15d72e2f6184a2dac4f1",
+   "source_id": "wikidata_own_0174.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1570511"
+   ],
+   "file": "sources/wikidata_own_0175.json",
+   "sha256": "07797e701b1ee04cfd2ec5a072174cb35096f14d519bf30ea29bacf6b4030304",
+   "source_id": "wikidata_own_0175.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1657605"
+   ],
+   "file": "sources/wikidata_own_0176.json",
+   "sha256": "8dcccc0abae3db4f4748a9c1bb1ab4c347cd0eef5f99ad761b11e1f33561c081",
+   "source_id": "wikidata_own_0176.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1660549"
+   ],
+   "file": "sources/wikidata_own_0177.json",
+   "sha256": "7d8b2b5632305cb6822a21757e2212e3354c9ccf864ee3c83c89beb0dbf61f4b",
+   "source_id": "wikidata_own_0177.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1778101"
+   ],
+   "file": "sources/wikidata_own_0178.json",
+   "sha256": "c120f3d01b8b933eea340937a1908e56e33b4731df841cfcd88f700e15b55d10",
+   "source_id": "wikidata_own_0178.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1780008"
+   ],
+   "file": "sources/wikidata_own_0179.json",
+   "sha256": "8b16edd35bc22e5a38539bdebccd99df410fd45e098c3230d36f7beef5c8dc0b",
+   "source_id": "wikidata_own_0179.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1812896"
+   ],
+   "file": "sources/wikidata_own_0180.json",
+   "sha256": "acba30e16516d0097fd0b9d85b56d343b8b9e9f76a23c4a893468a70beabde11",
+   "source_id": "wikidata_own_0180.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1825758"
+   ],
+   "file": "sources/wikidata_own_0181.json",
+   "sha256": "53e8c180a7db86961ebf852bbd7552b54a6954adae699cd76991908b25cf02b7",
+   "source_id": "wikidata_own_0181.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1851247"
+   ],
+   "file": "sources/wikidata_own_0182.json",
+   "sha256": "26f5cdbb0d2a20d9db6629f26b5280773a4019fe342cfb1469295314f50f270e",
+   "source_id": "wikidata_own_0182.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1860352"
+   ],
+   "file": "sources/wikidata_own_0183.json",
+   "sha256": "cc0d51e085cfe7ed6a576de6cf0baf7fbebed260f6a6b50ca81350cedd2ab1f6",
+   "source_id": "wikidata_own_0183.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1868131"
+   ],
+   "file": "sources/wikidata_own_0184.json",
+   "sha256": "a5582a6bc6d482de31495e0e0e9982a031375c8595d8d711c1248cb4e0669a74",
+   "source_id": "wikidata_own_0184.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1887976"
+   ],
+   "file": "sources/wikidata_own_0185.json",
+   "sha256": "d53ed6ece4c827d129d128e1a24a37aa212cc27a0ee9809224c6cb81ceebe2fb",
+   "source_id": "wikidata_own_0185.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1898100"
+   ],
+   "file": "sources/wikidata_own_0186.json",
+   "sha256": "cd570935abebc45adb3e76b4be325faf6391d6536d85b1f5eb3b93da865dc798",
+   "source_id": "wikidata_own_0186.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1910500"
+   ],
+   "file": "sources/wikidata_own_0187.json",
+   "sha256": "33790068e0bdda02b3f5c470f4eea2cfa8b809b7efcd68c70a6163c442c76122",
+   "source_id": "wikidata_own_0187.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1913550"
+   ],
+   "file": "sources/wikidata_own_0188.json",
+   "sha256": "76d8e33ce0b996e0b1e20715b7465b15c485108090cfec6153a76f4dafbb6e57",
+   "source_id": "wikidata_own_0188.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1915560"
+   ],
+   "file": "sources/wikidata_own_0189.json",
+   "sha256": "fcb870d08091a0a45196ccd30f1d2bad0cec2d5b514e71ef61154833eefc67b7",
+   "source_id": "wikidata_own_0189.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1922723"
+   ],
+   "file": "sources/wikidata_own_0190.json",
+   "sha256": "d6a17991ab80e032529c8d638499d90efafd4386b8ca269a435b014425ed9747",
+   "source_id": "wikidata_own_0190.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1926579"
+   ],
+   "file": "sources/wikidata_own_0191.json",
+   "sha256": "349b71c8bd13d7da6736da2011811b1dadf3125fa4f33ca37d0093daed32c34d",
+   "source_id": "wikidata_own_0191.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1931425"
+   ],
+   "file": "sources/wikidata_own_0192.json",
+   "sha256": "37afbf50c4c9fb97daf9c245e3af00ff642ee5a18da50370bad6fde0ea04c9ea",
+   "source_id": "wikidata_own_0192.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1933795"
+   ],
+   "file": "sources/wikidata_own_0193.json",
+   "sha256": "577673e013166e5f5d5b29d6be1f8da5421fd9c40f60bf1c309ff9e4998b24de",
+   "source_id": "wikidata_own_0193.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1947745"
+   ],
+   "file": "sources/wikidata_own_0194.json",
+   "sha256": "932aa9fdfbf55edc137ae5668b891039ef99c92f516e366db801a48c7df59ed7",
+   "source_id": "wikidata_own_0194.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1965078"
+   ],
+   "file": "sources/wikidata_own_0195.json",
+   "sha256": "9bbe93f549e75dd897a03e325de983ef0855206808599e085602afaa4dd228fc",
+   "source_id": "wikidata_own_0195.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1973449"
+   ],
+   "file": "sources/wikidata_own_0196.json",
+   "sha256": "3c07a0d69e48d1d05b667b2d8b033a5404b30ec2e4844f05ca02dee7c0fd5ffb",
+   "source_id": "wikidata_own_0196.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1986227"
+   ],
+   "file": "sources/wikidata_own_0197.json",
+   "sha256": "e6f2cd047e43c905187b1a151c045e0338ddebb4a53632d97d6ac3ef72e6377b",
+   "source_id": "wikidata_own_0197.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1989375"
+   ],
+   "file": "sources/wikidata_own_0198.json",
+   "sha256": "56f92bff7621d81875796f203abeabcd471ab4cbf9631cf55b716d760a85fb4f",
+   "source_id": "wikidata_own_0198.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q1996418"
+   ],
+   "file": "sources/wikidata_own_0199.json",
+   "sha256": "aa90329d12d60a1ee0662c11bf9f6344b84ab53f8552cefad538a8f7188f5ae4",
+   "source_id": "wikidata_own_0199.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2007316"
+   ],
+   "file": "sources/wikidata_own_0200.json",
+   "sha256": "fc0a4a62fe5e89b55dddd15aa62b040844f2819d2d1828a0d84e83f6df9ace5f",
+   "source_id": "wikidata_own_0200.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2009839"
+   ],
+   "file": "sources/wikidata_own_0201.json",
+   "sha256": "b6c2311ba3372ce8cd6d8062959f45613425da8efbec6b0bac4c9225d8710740",
+   "source_id": "wikidata_own_0201.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2019793"
+   ],
+   "file": "sources/wikidata_own_0202.json",
+   "sha256": "072ad838f0fc6a119e5bb7db771acf6ff285d2d5c9c98f1c2dd9f4ac5af01f6c",
+   "source_id": "wikidata_own_0202.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2024162"
+   ],
+   "file": "sources/wikidata_own_0203.json",
+   "sha256": "c22c0e8f105fae5e1b15565131b5e1f8c69dc75eb21248c0904c10008f49fff6",
+   "source_id": "wikidata_own_0203.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2025327"
+   ],
+   "file": "sources/wikidata_own_0204.json",
+   "sha256": "39129dbb0191455ff0cf8aac1b78232aeb871e66706097526bcfb6ddf0f9f126",
+   "source_id": "wikidata_own_0204.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2027035"
+   ],
+   "file": "sources/wikidata_own_0205.json",
+   "sha256": "ae18c3bf41b81fca24763060a1c5410dd0ea78ee69d44259233f01ace42f3cf7",
+   "source_id": "wikidata_own_0205.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2029028"
+   ],
+   "file": "sources/wikidata_own_0206.json",
+   "sha256": "7c3ba009f2447fba6dc2f4b295d184a66eb556beb4047177ee360f75cb97d0c1",
+   "source_id": "wikidata_own_0206.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2029412"
+   ],
+   "file": "sources/wikidata_own_0207.json",
+   "sha256": "345fdbe09d7501e78e82a1e88ecefa0e4c7cde0b4c620ae692b8b58374ea4655",
+   "source_id": "wikidata_own_0207.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2037404"
+   ],
+   "file": "sources/wikidata_own_0208.json",
+   "sha256": "be063ee4ddcf6b7e0f1ca44559a671199d72925fc8195bef2990eb3f6360b180",
+   "source_id": "wikidata_own_0208.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2045671"
+   ],
+   "file": "sources/wikidata_own_0209.json",
+   "sha256": "6682029af5eee3c66729b50e4f4337b0ada221a2542bbd0cf5faa674f46a3cd3",
+   "source_id": "wikidata_own_0209.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2057409"
+   ],
+   "file": "sources/wikidata_own_0210.json",
+   "sha256": "c1269a0fca6ca78f6b6e9f251895c9ca19e5e4fe893ea17af448a076e41d2739",
+   "source_id": "wikidata_own_0210.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2072328"
+   ],
+   "file": "sources/wikidata_own_0211.json",
+   "sha256": "394ace22dede4f26db94e922c977f672a638f939ff657f6f65eae57748dca71a",
+   "source_id": "wikidata_own_0211.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2076351"
+   ],
+   "file": "sources/wikidata_own_0212.json",
+   "sha256": "e94938ae3b7a230b365f7e862955af67f5dd0373149b671a9fe9a9392f09d9f7",
+   "source_id": "wikidata_own_0212.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2090461"
+   ],
+   "file": "sources/wikidata_own_0213.json",
+   "sha256": "7b056d0c562ef6b3d88c3d25defeaa6111717a256972608ae2d19c2e7ccd7b1b",
+   "source_id": "wikidata_own_0213.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2103349"
+   ],
+   "file": "sources/wikidata_own_0214.json",
+   "sha256": "f72702132384589b1f3b65d0d10ddbdc19f2d301af5e719b92470f0beeddcede",
+   "source_id": "wikidata_own_0214.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2114785"
+   ],
+   "file": "sources/wikidata_own_0215.json",
+   "sha256": "416035cb9855851929022b724ee5eaf341406b834db77677926892686df9f4de",
+   "source_id": "wikidata_own_0215.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2120855"
+   ],
+   "file": "sources/wikidata_own_0216.json",
+   "sha256": "0f482b3185e7d8edd315a011d1598e5b15a8427d3aabc49513201a907228dbcf",
+   "source_id": "wikidata_own_0216.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2139303"
+   ],
+   "file": "sources/wikidata_own_0217.json",
+   "sha256": "4c0307079317c904605f6ab6511a9884dd58f1a551f69c6d47265989459b0e83",
+   "source_id": "wikidata_own_0217.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2150417"
+   ],
+   "file": "sources/wikidata_own_0218.json",
+   "sha256": "2609aeb13e87f3a60a8d43caa17cd0334ae0ab7bbbaef689921227749c7154d1",
+   "source_id": "wikidata_own_0218.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2155167"
+   ],
+   "file": "sources/wikidata_own_0219.json",
+   "sha256": "318d633a5ec259dfc142009674395039219f77075a53da5ea27f21f0e6f19c21",
+   "source_id": "wikidata_own_0219.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2166832"
+   ],
+   "file": "sources/wikidata_own_0220.json",
+   "sha256": "294d04a4d167b802baafbfd7b2513e7865b475cde97a8d45fc4f800aea488345",
+   "source_id": "wikidata_own_0220.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2172289"
+   ],
+   "file": "sources/wikidata_own_0221.json",
+   "sha256": "ada9b48a2b0420f94c2bffe70f7f636eb3cff74362680d4aa2bab2911887996c",
+   "source_id": "wikidata_own_0221.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2190340"
+   ],
+   "file": "sources/wikidata_own_0222.json",
+   "sha256": "9f299ce6c1a98b7b22684e71d4de2a877af984e3f00732e471f56aa6bad9c1bf",
+   "source_id": "wikidata_own_0222.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2199016"
+   ],
+   "file": "sources/wikidata_own_0223.json",
+   "sha256": "292e397879ef9bbbd012b66be01b567bdf0259b507597790a309ce37d76f7eda",
+   "source_id": "wikidata_own_0223.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2210910"
+   ],
+   "file": "sources/wikidata_own_0224.json",
+   "sha256": "2d7b2d20dad4b413af4af73317a995d83a987d5102224f0a3abf941f93d5a03e",
+   "source_id": "wikidata_own_0224.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2219309"
+   ],
+   "file": "sources/wikidata_own_0225.json",
+   "sha256": "75ea94f38c9cf4c29f865c12d0de57c5c6e352dcb331a819fcf0169a4ea03352",
+   "source_id": "wikidata_own_0225.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2230049"
+   ],
+   "file": "sources/wikidata_own_0226.json",
+   "sha256": "dcabb43779e7316df033977bd252fe3e77942199a3860f16cf58a0a82d8e8c59",
+   "source_id": "wikidata_own_0226.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2232157"
+   ],
+   "file": "sources/wikidata_own_0227.json",
+   "sha256": "9ce22cffc0b49a82ed870a2f48b8921fd3a64325ba09f1d4d73f01518ef4907d",
+   "source_id": "wikidata_own_0227.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2233241"
+   ],
+   "file": "sources/wikidata_own_0228.json",
+   "sha256": "f648027c9cabe15fea8d0d919358bb35e7ed757781d0bd12ac2cebe989054525",
+   "source_id": "wikidata_own_0228.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2246298"
+   ],
+   "file": "sources/wikidata_own_0229.json",
+   "sha256": "20f271b405ec4d496628b487690887043b3406e6ea734738eb6103fc62070cc1",
+   "source_id": "wikidata_own_0229.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2260547"
+   ],
+   "file": "sources/wikidata_own_0230.json",
+   "sha256": "4da42b22611e1f1133a63e97a8a750cc2deda34b885f93b07ea90a09c3cb4be7",
+   "source_id": "wikidata_own_0230.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2272266"
+   ],
+   "file": "sources/wikidata_own_0231.json",
+   "sha256": "b9971b68f4ee9135fa33d3e9317426f4ce417482661d278f7dfa07e7d27b584c",
+   "source_id": "wikidata_own_0231.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2278271"
+   ],
+   "file": "sources/wikidata_own_0232.json",
+   "sha256": "7e6e8b2fd32f14479775a06d72a266e2c28762c6cda5453156b75dc52de46002",
+   "source_id": "wikidata_own_0232.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2290421"
+   ],
+   "file": "sources/wikidata_own_0233.json",
+   "sha256": "a1286576b5e1b9f7bc84d931c6d4b16ad0de522dfba490c4c5dba20349b168a4",
+   "source_id": "wikidata_own_0233.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2296329"
+   ],
+   "file": "sources/wikidata_own_0234.json",
+   "sha256": "b21ac8a8e46d777bbd2b5cf03e81bedd1edb33d6a0d638b83d5b8f7e74a7b434",
+   "source_id": "wikidata_own_0234.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2306403"
+   ],
+   "file": "sources/wikidata_own_0235.json",
+   "sha256": "ec87ae1ca8da636cd791d3db16f66c185de4e4ac706efe6f4e31ff927f8bbc98",
+   "source_id": "wikidata_own_0235.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2310766"
+   ],
+   "file": "sources/wikidata_own_0236.json",
+   "sha256": "3472cdb1b8b6b3cb11a8e55380d14531d0fbe11e81e2d44df6ec237752c694dd",
+   "source_id": "wikidata_own_0236.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2322312"
+   ],
+   "file": "sources/wikidata_own_0237.json",
+   "sha256": "d20fd67b7fdc94bc7a6a257b1cd5f667806873134d0106ae92fd906bbdbe2553",
+   "source_id": "wikidata_own_0237.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2334586"
+   ],
+   "file": "sources/wikidata_own_0238.json",
+   "sha256": "b630d95af18001a3ad12d8b387e49c4a5b676afdd9ee0d6d5a444e592cc0232f",
+   "source_id": "wikidata_own_0238.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2352573"
+   ],
+   "file": "sources/wikidata_own_0239.json",
+   "sha256": "0c19b1d12311224d00044bdde773b8cd358dde7d094b8031e758d400dcf9a809",
+   "source_id": "wikidata_own_0239.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2363017"
+   ],
+   "file": "sources/wikidata_own_0240.json",
+   "sha256": "7cc262bfde48924146c6ecff387e6ab9ade3c6c7456a50032070354b7b740522",
+   "source_id": "wikidata_own_0240.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2368711"
+   ],
+   "file": "sources/wikidata_own_0241.json",
+   "sha256": "99b5c3682dc3d4c499e1e48b62f1604d5af7608f04d735998e05c325fe2a4a48",
+   "source_id": "wikidata_own_0241.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2380525"
+   ],
+   "file": "sources/wikidata_own_0242.json",
+   "sha256": "08a841388e24fed869539d33a155d5eba44fae03c40b4f3ab67c1741a62ed850",
+   "source_id": "wikidata_own_0242.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2396088"
+   ],
+   "file": "sources/wikidata_own_0243.json",
+   "sha256": "87cda80e98e75b07b5bbf6d781e806ef90e2a96e605cccd44fa48f7765588235",
+   "source_id": "wikidata_own_0243.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2411458"
+   ],
+   "file": "sources/wikidata_own_0244.json",
+   "sha256": "c093478932e114c8b15803c8fd5ab7150eed3ae89029d63277e500237bbd4da9",
+   "source_id": "wikidata_own_0244.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2414602"
+   ],
+   "file": "sources/wikidata_own_0245.json",
+   "sha256": "7dd4386562e3a70f1b31e2155707107af097027e7fc743283e388d751e1ded63",
+   "source_id": "wikidata_own_0245.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2417063"
+   ],
+   "file": "sources/wikidata_own_0246.json",
+   "sha256": "7ead1fa52c4190894e87a935f8244c51edaa704eb63f47c7fbda256373d9a907",
+   "source_id": "wikidata_own_0246.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2426530"
+   ],
+   "file": "sources/wikidata_own_0247.json",
+   "sha256": "0736243834dfe2e62f09014318160f8b4f295c815eb4c7e86f686cc6df8ac527",
+   "source_id": "wikidata_own_0247.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2429127"
+   ],
+   "file": "sources/wikidata_own_0248.json",
+   "sha256": "73d59c3eb21e5419d80e14185d4d557363f54126c9fa78473f14f5d5de6ecad2",
+   "source_id": "wikidata_own_0248.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2432184"
+   ],
+   "file": "sources/wikidata_own_0249.json",
+   "sha256": "4ddff56d8e2b781daf02a6c74889e19598e4c6aeafad9701ee9bd013085ca436",
+   "source_id": "wikidata_own_0249.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2447108"
+   ],
+   "file": "sources/wikidata_own_0250.json",
+   "sha256": "34623f541fb5a07bb6f2cfdee544e17c03f6d37cbeade23dba13349d6538381c",
+   "source_id": "wikidata_own_0250.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2461619"
+   ],
+   "file": "sources/wikidata_own_0251.json",
+   "sha256": "610139df5039f31f242e669a1323bb96dcc34a71d43a0de5390bae86104c49a8",
+   "source_id": "wikidata_own_0251.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2472136"
+   ],
+   "file": "sources/wikidata_own_0252.json",
+   "sha256": "c6ad4258c0518c6b62b42a1b18dfd70a8808d39627650282508ada0d4d2ef1c8",
+   "source_id": "wikidata_own_0252.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2478924"
+   ],
+   "file": "sources/wikidata_own_0253.json",
+   "sha256": "d2cd90aacf77ff6301c1f0230faace34e586fd28aef6c0c795f247f6ec2928d9",
+   "source_id": "wikidata_own_0253.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2508961"
+   ],
+   "file": "sources/wikidata_own_0254.json",
+   "sha256": "c0c0436d95a35423b0de3c78e1fb41f534f553097a1bec5556c15c1833f486dd",
+   "source_id": "wikidata_own_0254.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2532244"
+   ],
+   "file": "sources/wikidata_own_0255.json",
+   "sha256": "9a9fb1a65aedd6e8d1f0fd80ada52535ff49ecc7b9f7b0a40310e662b36abe84",
+   "source_id": "wikidata_own_0255.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2534063"
+   ],
+   "file": "sources/wikidata_own_0256.json",
+   "sha256": "813717a6d56c957184b3e5a559c6ee84dd2d214c8556801a7506f8653e4cefba",
+   "source_id": "wikidata_own_0256.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2538400"
+   ],
+   "file": "sources/wikidata_own_0257.json",
+   "sha256": "a601ae2a6744e7f686d247edefa595eeb737455297ff1088158e61a16d561f1f",
+   "source_id": "wikidata_own_0257.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2567888"
+   ],
+   "file": "sources/wikidata_own_0258.json",
+   "sha256": "9925e815aa3288b0d6d587fe02347c34fdbd43e7aa65503b7897b17ae9074dab",
+   "source_id": "wikidata_own_0258.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2576715"
+   ],
+   "file": "sources/wikidata_own_0259.json",
+   "sha256": "a9894397e389e96bd10ac6fd97008c72148e060a7fa5fa46ab0619415f0041e6",
+   "source_id": "wikidata_own_0259.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2588377"
+   ],
+   "file": "sources/wikidata_own_0260.json",
+   "sha256": "6afcf3049780685167b0e0c3af0ec34fa427489c70b658974ba5e0c18bf6f6ce",
+   "source_id": "wikidata_own_0260.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2610159"
+   ],
+   "file": "sources/wikidata_own_0261.json",
+   "sha256": "a906d1034b9350f2488e163be9020a24f983051981081c3d90188be5b1d89be0",
+   "source_id": "wikidata_own_0261.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2612059"
+   ],
+   "file": "sources/wikidata_own_0262.json",
+   "sha256": "de4b6d35cbe9a3a848275e9e6e1170d4b7bb202e756aaaaf4461f2baabb0e7ed",
+   "source_id": "wikidata_own_0262.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2630853"
+   ],
+   "file": "sources/wikidata_own_0263.json",
+   "sha256": "ab6ee4f257fbe5c1f8195d171aa3411a4f49c705d968494068d4af458f7bb38d",
+   "source_id": "wikidata_own_0263.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2662297"
+   ],
+   "file": "sources/wikidata_own_0264.json",
+   "sha256": "f95e7492d2cca9c54f93b96976fc7f5277f6536096f2d5226b82ef86ebc0ee13",
+   "source_id": "wikidata_own_0264.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2668403"
+   ],
+   "file": "sources/wikidata_own_0265.json",
+   "sha256": "e40782d046182783ce218161baf8cc148fd8ace7111cc6521adc949dd96255e3",
+   "source_id": "wikidata_own_0265.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2671217"
+   ],
+   "file": "sources/wikidata_own_0266.json",
+   "sha256": "e0f8761085d13f396a27f85e08d6989685431da57b338dce1789e27aa9869a37",
+   "source_id": "wikidata_own_0266.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2671564"
+   ],
+   "file": "sources/wikidata_own_0267.json",
+   "sha256": "2e6ce9ff11f4a4e8e450687e1ec0fac78d40810c42cf28dcc73a2d6e3c0386b7",
+   "source_id": "wikidata_own_0267.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2673381"
+   ],
+   "file": "sources/wikidata_own_0268.json",
+   "sha256": "16241fcdb0c4b378f93a3a5ce3250ab1b20f6f34c0d288a2ea5181b2a08a717d",
+   "source_id": "wikidata_own_0268.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2684825"
+   ],
+   "file": "sources/wikidata_own_0269.json",
+   "sha256": "653e807148f31ad320c2fa3e2d6c34b28e73fd6615eefd75d9da04a77e22e8c6",
+   "source_id": "wikidata_own_0269.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2703504"
+   ],
+   "file": "sources/wikidata_own_0270.json",
+   "sha256": "3af0a661b90212ca19243f025242cd7660ddd96964c51ba939ff01233a8b0202",
+   "source_id": "wikidata_own_0270.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2731289"
+   ],
+   "file": "sources/wikidata_own_0271.json",
+   "sha256": "94961e2f397d360eadef90155144a20e1ad9da037b1c47c60546a9b06951847c",
+   "source_id": "wikidata_own_0271.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2733200"
+   ],
+   "file": "sources/wikidata_own_0272.json",
+   "sha256": "52b8fa8c9b20d7ea5938c264852be37ab789cf3e655815ebe0964f7a6a25eff3",
+   "source_id": "wikidata_own_0272.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2745140"
+   ],
+   "file": "sources/wikidata_own_0273.json",
+   "sha256": "462b0e388c421879eea2741ae820736e0b1fee016578a0b54743090157ee30c1",
+   "source_id": "wikidata_own_0273.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2791349"
+   ],
+   "file": "sources/wikidata_own_0274.json",
+   "sha256": "45a0e137f1534ffecbfc8d8a67fb86f204df91948cf543fa0c8878d77f8b7a32",
+   "source_id": "wikidata_own_0274.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2827313"
+   ],
+   "file": "sources/wikidata_own_0275.json",
+   "sha256": "20ed70f0ce20800edcfec1dd8bc5998da5acf66ddc91a12fd5bed3fc4f9d6dad",
+   "source_id": "wikidata_own_0275.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2866484"
+   ],
+   "file": "sources/wikidata_own_0276.json",
+   "sha256": "613447ff98865cc047c87d32a13062eadd0b873d73b0e20667a55f5fd7d783eb",
+   "source_id": "wikidata_own_0276.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2879945"
+   ],
+   "file": "sources/wikidata_own_0277.json",
+   "sha256": "40c267fafc2a77932932fcd336351fcf82b1124620fea77b05f2b33a4eb29092",
+   "source_id": "wikidata_own_0277.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2901407"
+   ],
+   "file": "sources/wikidata_own_0278.json",
+   "sha256": "3d96ead200adb43bbc0a091215a672225921554db6bf9510a033dd483b92d30c",
+   "source_id": "wikidata_own_0278.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q2929499"
+   ],
+   "file": "sources/wikidata_own_0279.json",
+   "sha256": "9b09f212e0ba148c965bef7f0ab6cdc47f058234bced1d4b3219a2d027f71e03",
+   "source_id": "wikidata_own_0279.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3043608"
+   ],
+   "file": "sources/wikidata_own_0280.json",
+   "sha256": "aadb5aab38150f9bdd5fd8f26770272670b18ef60c70b64f116c0bd450178853",
+   "source_id": "wikidata_own_0280.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3108301"
+   ],
+   "file": "sources/wikidata_own_0281.json",
+   "sha256": "c33a85aff427facf94da2d5a2b3462b2b27a0034a67f9dde5bb8324437db7041",
+   "source_id": "wikidata_own_0281.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3164563"
+   ],
+   "file": "sources/wikidata_own_0282.json",
+   "sha256": "cc2d7760c0b73e9e21a988fa7eae419559d90d932055e90d6e644a84f2d16238",
+   "source_id": "wikidata_own_0282.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3193360"
+   ],
+   "file": "sources/wikidata_own_0283.json",
+   "sha256": "82ec266424124cee19b7b90937e476a16ee7dc19c4e35a6a2141dd189ee462f2",
+   "source_id": "wikidata_own_0283.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3260942"
+   ],
+   "file": "sources/wikidata_own_0284.json",
+   "sha256": "4c62b7156d828345a35c4b3440d5a9872dfb5626df10682725c9265947626719",
+   "source_id": "wikidata_own_0284.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3287188"
+   ],
+   "file": "sources/wikidata_own_0285.json",
+   "sha256": "e33ac641cf3bd0a29fb516bc88c66dd8dc8c41ce45aa18eb50381cddc4d0729f",
+   "source_id": "wikidata_own_0285.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3291137"
+   ],
+   "file": "sources/wikidata_own_0286.json",
+   "sha256": "c7d187500384b0c84b0aac5b4a2a767d9539b1bc89eec95bfe707009b9da3bc0",
+   "source_id": "wikidata_own_0286.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3306160"
+   ],
+   "file": "sources/wikidata_own_0287.json",
+   "sha256": "573460fb1ef8c0caac1ce8483ae55f15b58319fc62209e0b2b21d2ea397af7e1",
+   "source_id": "wikidata_own_0287.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3314474"
+   ],
+   "file": "sources/wikidata_own_0288.json",
+   "sha256": "00662beca924ff2fe0f40bff46b6ae68519e66edf0b181ff517f2b42992f4a57",
+   "source_id": "wikidata_own_0288.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3316562"
+   ],
+   "file": "sources/wikidata_own_0289.json",
+   "sha256": "ffd997bf47d2b7d0917052e997596576002f3d8109eb93db0040ae5c1ca8372b",
+   "source_id": "wikidata_own_0289.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3349760"
+   ],
+   "file": "sources/wikidata_own_0290.json",
+   "sha256": "96597dd115f6e239520fc275bd6e5ec6cabe28c5c4348942db11c883bc607dcb",
+   "source_id": "wikidata_own_0290.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3448844"
+   ],
+   "file": "sources/wikidata_own_0291.json",
+   "sha256": "57e305aa185766b28f6dc02200dfe5847ae6d94e757f1b7a5e37b78e923eca82",
+   "source_id": "wikidata_own_0291.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3451700"
+   ],
+   "file": "sources/wikidata_own_0292.json",
+   "sha256": "0c2dd0a46551a2cb38e90fa06ab94bc0e4ed81ca8112c62d1f7693efd7b05466",
+   "source_id": "wikidata_own_0292.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3452317"
+   ],
+   "file": "sources/wikidata_own_0293.json",
+   "sha256": "5d39ec9d3770d0ba900b4d6bee1883825f543c7d010a416171037599ca47c9db",
+   "source_id": "wikidata_own_0293.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3458180"
+   ],
+   "file": "sources/wikidata_own_0294.json",
+   "sha256": "36881165831ea9db74c3ebdab2901b429c5af0f96bf4c58377ba5df59c7f1154",
+   "source_id": "wikidata_own_0294.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3458725"
+   ],
+   "file": "sources/wikidata_own_0295.json",
+   "sha256": "3ce56a0bedb5a857c758d55ad23ef8a7b9599ca1bb8200fca1d155e95ec44a3f",
+   "source_id": "wikidata_own_0295.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3460316"
+   ],
+   "file": "sources/wikidata_own_0296.json",
+   "sha256": "d777f3b12d3f36d099bf0e5e3a006ea587eade8a8fd935dd8b4fac809c63141c",
+   "source_id": "wikidata_own_0296.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3461009"
+   ],
+   "file": "sources/wikidata_own_0297.json",
+   "sha256": "8e3d578e890ebf5cecfbba3b59c842ea373dfa574205950617cd341951fc694f",
+   "source_id": "wikidata_own_0297.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3461376"
+   ],
+   "file": "sources/wikidata_own_0298.json",
+   "sha256": "7b7c8e5b765e83cb13e8d59fbd47b0d9f4f9166cba7b72dc4b812038727387e9",
+   "source_id": "wikidata_own_0298.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3462062"
+   ],
+   "file": "sources/wikidata_own_0299.json",
+   "sha256": "70a2fd10e059e3b21e8b0b7e2f2c884efb5c383685ad56a2fe2d139ea65b8693",
+   "source_id": "wikidata_own_0299.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3473472"
+   ],
+   "file": "sources/wikidata_own_0300.json",
+   "sha256": "d8805df421d80d7b84bae5ff9d9e0e5b1074bbe87ee0b658b84bd66b927f46ad",
+   "source_id": "wikidata_own_0300.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3475953"
+   ],
+   "file": "sources/wikidata_own_0301.json",
+   "sha256": "8061528db710b0c90d55552a8bd3b270a60222a00805c833b77300f6d88b83a6",
+   "source_id": "wikidata_own_0301.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3476956"
+   ],
+   "file": "sources/wikidata_own_0302.json",
+   "sha256": "a3923bf0d9be22e42ff4d5a3d6c4ff0852990543c048f3d22c3dfc57a1054bd7",
+   "source_id": "wikidata_own_0302.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3477456"
+   ],
+   "file": "sources/wikidata_own_0303.json",
+   "sha256": "b74ea9d2d54782ed62cbf88302ae559724aa9c2d06e75a17d7564b44e9663d66",
+   "source_id": "wikidata_own_0303.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3709658"
+   ],
+   "file": "sources/wikidata_own_0304.json",
+   "sha256": "0cbde55b17a4247502ec7698a441e383fcd250d76701c848de0390cf289167cd",
+   "source_id": "wikidata_own_0304.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q3886989"
+   ],
+   "file": "sources/wikidata_own_0305.json",
+   "sha256": "452f0e005ebf2468f4d6e071556a3bece0f1160913aef7762efeefc12fcc180b",
+   "source_id": "wikidata_own_0305.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q4666865"
+   ],
+   "file": "sources/wikidata_own_0306.json",
+   "sha256": "19f78cd58cf82ef5e2c5e7b34fbbcbd6ceea875d2be5442bb3f4fdbd87c02f50",
+   "source_id": "wikidata_own_0306.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q4726383"
+   ],
+   "file": "sources/wikidata_own_0307.json",
+   "sha256": "f662aa0c62948727c71ebc53222fa0ec3c7a08ea25351552b2fe537923c61b2a",
+   "source_id": "wikidata_own_0307.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q4961883"
+   ],
+   "file": "sources/wikidata_own_0308.json",
+   "sha256": "a03efb581b0e113002d973e5673a1d969fcd0bbdddb46f2615c4a054b483586f",
+   "source_id": "wikidata_own_0308.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5122899"
+   ],
+   "file": "sources/wikidata_own_0309.json",
+   "sha256": "9159b8e2c04c0585807713b1788b71b7695dd9e22986eb10853f9a793bb2d67e",
+   "source_id": "wikidata_own_0309.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5411770"
+   ],
+   "file": "sources/wikidata_own_0310.json",
+   "sha256": "1a3f764db1e0202a0191238428af7fe2d0d1082b6e0367033c4d9277700400b3",
+   "source_id": "wikidata_own_0310.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5561217"
+   ],
+   "file": "sources/wikidata_own_0311.json",
+   "sha256": "ba46152504777ff54c7e6c1724416bf6ee27cc9c34d6ccf20e7982d5b1a8400b",
+   "source_id": "wikidata_own_0311.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5655033"
+   ],
+   "file": "sources/wikidata_own_0312.json",
+   "sha256": "da016bfe838e58c3ed9e5610cf124092f48deef9b1b9eb6317281dcf27ba5533",
+   "source_id": "wikidata_own_0312.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5735636"
+   ],
+   "file": "sources/wikidata_own_0313.json",
+   "sha256": "848d6d238676eeff916ea0005ba19d8d013b171588403fa73f6c088838df6df2",
+   "source_id": "wikidata_own_0313.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q5944006"
+   ],
+   "file": "sources/wikidata_own_0314.json",
+   "sha256": "d5b64f4bcbf7411ab46755cdb0d8c5f268c5ba6ce00b10b3484e76d0d4603f61",
+   "source_id": "wikidata_own_0314.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q6034589"
+   ],
+   "file": "sources/wikidata_own_0315.json",
+   "sha256": "0f8d97a5d1eefe005ce13ef9ec1e84f7a48eda67849e8d88660209af41b71c20",
+   "source_id": "wikidata_own_0315.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q6136614"
+   ],
+   "file": "sources/wikidata_own_0316.json",
+   "sha256": "2c4d833cd1a19df6ade92926f80d1c512f5d03e1195505a102a8d860d9370f43",
+   "source_id": "wikidata_own_0316.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q6178257"
+   ],
+   "file": "sources/wikidata_own_0317.json",
+   "sha256": "a5e1b507645ea958df143f4beb81e24f3bac2583bffb53e39fabb5af5eb43b3f",
+   "source_id": "wikidata_own_0317.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q6802032"
+   ],
+   "file": "sources/wikidata_own_0318.json",
+   "sha256": "31c9fb32a4ac07c1575a86f233a27c84562f47dfd160f3391286521020795b42",
+   "source_id": "wikidata_own_0318.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q7163520"
+   ],
+   "file": "sources/wikidata_own_0319.json",
+   "sha256": "e5fabd752d11eb61c93ff4300854cad7de6bee99596b84984ba5c33115a3dab5",
+   "source_id": "wikidata_own_0319.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q7545681"
+   ],
+   "file": "sources/wikidata_own_0320.json",
+   "sha256": "bd06eae122d592481a389667e0870ac76b0ea8847885368194b8ea47a53a6a52",
+   "source_id": "wikidata_own_0320.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q8239616"
+   ],
+   "file": "sources/wikidata_own_0321.json",
+   "sha256": "c18603084d84a5a34c423b690d0b6075b89d74cc92d0e1c2343d02cedcc9c6ed",
+   "source_id": "wikidata_own_0321.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q12626505"
+   ],
+   "file": "sources/wikidata_own_0322.json",
+   "sha256": "b8b216a53f4037c144fe772ff4f4144a388021c39dbb5cd2ba56933de502ed9c",
+   "source_id": "wikidata_own_0322.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q16086588"
+   ],
+   "file": "sources/wikidata_own_0323.json",
+   "sha256": "60fd3d4ec85f23abfe34304d77c5980f0fd01aae115d1922ca0712b50b8bc10d",
+   "source_id": "wikidata_own_0323.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q33428769"
+   ],
+   "file": "sources/wikidata_own_0324.json",
+   "sha256": "ec9200f0ce1aa6aea63c55668d626742d530b16c04e842e9510e3ae57176894f",
+   "source_id": "wikidata_own_0324.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q34676391"
+   ],
+   "file": "sources/wikidata_own_0325.json",
+   "sha256": "98e7d4f734dc467771cc230cc3cfec92770c8bcdd45cd07e0789ba8b834d5064",
+   "source_id": "wikidata_own_0325.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q49279759"
+   ],
+   "file": "sources/wikidata_own_0326.json",
+   "sha256": "1385197046610fd2cfa7376d1cf37b7465391ff4fac32901f7f2aede3fa72b89",
+   "source_id": "wikidata_own_0326.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q49349426"
+   ],
+   "file": "sources/wikidata_own_0327.json",
+   "sha256": "25501da07dc75481ca911a2612c0c671e543adf1f0e581a6a61f34aa419ef15e",
+   "source_id": "wikidata_own_0327.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q49359925"
+   ],
+   "file": "sources/wikidata_own_0328.json",
+   "sha256": "062b0670d4899fd917a1f98fcd31176b4662c53e3edf1b5075ff63d5ce77fdf6",
+   "source_id": "wikidata_own_0328.json"
+  },
+  {
+   "entity_urls": [
+    "https://www.wikidata.org/wiki/Q107451782"
+   ],
+   "file": "sources/wikidata_own_0329.json",
+   "sha256": "1d99348465b2ff63acab1bda6656ca23219d1a0cba35c132c3164e8cbaf961a6",
+   "source_id": "wikidata_own_0329.json"
+  },
+  {
+   "edition": "v4.0 2c53ff6e6cb178051d725251412c5e02bf947f4e",
+   "file": "v4_US.json",
+   "licence": "CSC ODbL 1.0; baseline comparison only",
+   "retrieved_at": "2026-10-19",
+   "sha256": "f91bc00791987b3b3602c120447f923ee027e75192d148a8dd94aaa89213e256",
+   "source_id": "v4_US",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/2c53ff6e6cb178051d725251412c5e02bf947f4e/contributions/cities/US.json"
+  }
+ ]
+}

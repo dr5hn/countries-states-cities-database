@@ -1,0 +1,138 @@
+name: Format and import tests
+
+# Unit tests for the import, sync, export converters, export checkers, PR validator scripts and Prisma mapping, and a
+# round trip of a test-only city with no state and of a real county of several regions (v5) through MySQL and every
+# export format. It also runs on draft PRs, which
+# the PR Validator skips. Read-only: no commits, releases or comments.
+on:
+  pull_request:
+    paths:
+      - 'bin/**'
+      - 'migrations/**'
+      - 'prisma/**'
+      - '.github/scripts/**'
+      - '.github/workflows/format-tests.yml'
+      - '.github/workflows/pr-validator.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Python dependencies
+        run: pip install mysql-connector-python pyyaml pandas pyarrow
+
+      - name: Import and sync tests
+        run: python -m unittest discover -s bin/scripts/sync -p 'test_*.py'
+
+      - name: Release migration tests
+        run: python -m unittest discover -s bin/scripts/release -p 'test_*.py'
+
+      - name: Export converter tests
+        run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '26'   # as the PR Validator; its lock needs >=22 (content-type 3)
+
+      - name: TOON reference reader (used by the export checker and the read-back test)
+        run: npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0
+
+      - name: Export checker tests
+        run: python -m unittest discover -s bin/db/tests -p 'test_*.py'
+
+      - name: PR validator script tests
+        working-directory: .github/scripts
+        run: npm ci --omit=dev && npm test
+
+      - name: Prisma state mapping tests
+        run: node --test prisma/city-state.test.ts
+
+      - name: TOON read back with the reference reader
+        run: node --test bin/scripts/export/toon_readback.test.mjs
+
+  round-trip:
+    name: MySQL round trip and export formats
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
+        with:
+          php-version: '8.2'
+
+      - name: PHP dependencies
+        working-directory: bin
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+
+      - name: Python dependencies
+        run: pip install mysql-connector-python pyyaml pandas pyarrow
+
+      - name: Start MySQL
+        run: |
+          sudo systemctl start mysql.service
+          until mysqladmin ping -h127.0.0.1 -uroot -proot --silent; do sleep 1; done
+
+      - name: Migration up, down and refused down
+        env:
+          MYSQL_PASSWORD: root
+        run: |
+          php bin/db/tests/test_nullable_city_state_migration.php
+          php bin/db/tests/test_county_states_migration.php
+
+      - name: Import the data with a test-only city that has no state
+        run: |
+          # TEST DATA ONLY: written in this runner, never committed
+          printf '%s\n' '[{"id": 999001, "name": "TEST ONLY stateless city", "state_id": null, "state_code": null,' \
+            '"country_id": 244, "country_code": "EH", "latitude": "26.73900000", "longitude": "-11.67100000"}]' \
+            > contributions/cities/EH.json
+          # what the import receives, fixture included: the round trip is compared with this copy
+          cp -R contributions "$RUNNER_TEMP/contributions-imported"
+          mysql -uroot -proot -e "CREATE DATABASE world CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+          mysql -uroot -proot world < bin/db/schema.sql
+          python3 bin/scripts/sync/import_json_to_mysql.py --host 127.0.0.1 --user root --password root --database world
+
+      - name: Sync back and compare
+        run: |
+          python3 bin/scripts/sync/sync_mysql_to_json.py --host 127.0.0.1 --user root --password root --database world
+          python3 bin/scripts/sync/check_round_trip.py --snapshot "$RUNNER_TEMP/contributions-imported"
+
+      - name: Export every format
+        working-directory: bin
+        run: |
+          for command in export:json export:csv export:xml export:yaml export:mongodb export:sql-server; do php console "$command"; done
+          python3 scripts/export/json_to_toon.py
+          cd .. && python3 bin/scripts/export/export_plist.py && python3 bin/scripts/export/json_to_parquet.py --tables cities counties
+
+      - name: Check the city with no state in each format
+        run: python3 bin/db/tests/check_null_state_exports.py 999001 EH
+
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: '26'
+
+      - name: Check a county of several regions in each format (Taupō District, four regions)
+        run: |
+          npm install --no-save --no-audit --no-fund --prefix bin/scripts/export @toon-format/toon@4.4.0   # the checker reads TOON with it
+          python3 bin/db/tests/check_county_states_exports.py 14024
+          python3 bin/scripts/export/check_county_states_csv.py

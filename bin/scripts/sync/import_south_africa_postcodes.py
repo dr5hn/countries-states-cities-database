@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""South Africa -> contributions/postcodes/ZA.json importer for #1039.
+"""RETIRED. South Africa -> contributions/postcodes/ZA.json importer for #1039.
+
+Retired on 14 October 2026: South Africa postcodes are now re-derived from the GeoNames postal code dump (see
+.github/fixes-docs/FIX_1039_SUMMARY.md, "Ten countries: postcodes from open sources"). The redistribution basis of the
+legacy raramuridesign-cc/South-African-Postal-Codes copy below was not established, so this script refuses to run. It is kept for the record of how
+the earlier rows were made.
 
 Source data
 -----------
@@ -66,6 +71,9 @@ def fetch_csv(url: str) -> str:
 
 
 def main() -> int:
+    print("[ERROR] retired: ZA postcodes come from the GeoNames postal code dump now; rerunning this would reimport the "
+          "legacy raramuridesign-cc/South-African-Postal-Codes copy. See .github/fixes-docs/FIX_1039_SUMMARY.md.", file=sys.stderr)
+    return 1
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=None, help="local CSV (skip fetch)")
     parser.add_argument("--dry-run", action="store_true")

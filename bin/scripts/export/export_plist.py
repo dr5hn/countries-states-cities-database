@@ -11,8 +11,12 @@ files = [
     './csv/countries.csv',
     './csv/states.csv',
     './csv/cities.csv',
+    './csv/counties.csv',
+    './csv/county_states.csv',   # v5: regions of counties of several regions
     './csv/postcodes.csv',
 ]
+
+os.makedirs('./plist', exist_ok=True)
 
 for csv_file in files:
     if not os.path.exists(csv_file):

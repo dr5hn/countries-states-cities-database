@@ -1,0 +1,435 @@
+{
+ "ledger": "cn_gd_levels_v5x.jsonl",
+ "records": 213,
+ "base_commit": [
+  "a006c0649e8ca601bc95246f5033c956778edfe0"
+ ],
+ "full_ledger_sha256": "0e7ea75e6e709b91cd75da6ed72c1615747ccea9f8b440f6828e73d73549062a",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "review 2108 exact native/code candidate and disambiguated parent path in archived 12-digit mirror; township digits and provincial hierarchy establish depth",
+  "stored prefecture, own item and provincial table of 21 prefecture-level cities",
+  "previous own-item/category proof retained against current master",
+  "own literal P442 and P131 identify statutory tier; province table confirms no-county exceptions",
+  "stored city identity and exact native six-digit county code in review 2108 and official province table",
+  "existing county_id authoritative administrative tier and stored section type_local 区",
+  "unchanged administrative category, native and existing prefecture identity; exact provincial-table county and unique six-digit code under that prefecture; county representation corroborates tier",
+  "Outside-GD child and its parent remain byte-identical; pre-existing nonconsecutive link is not repaired in this round."
+ ],
+ "sources": [
+  {
+   "edition": "2025-12-31 provincial table",
+   "retrieved_at": null,
+   "sha256": "d6fcb2cf1f2b1310190f0958506c57f453156aa4b88a9cd8222ed4d54a791f3b",
+   "url": "https://smzt.gd.gov.cn/img/1/1573/1573773/4849400.jpg"
+  },
+  {
+   "edition": "2025-12-31 provincial table",
+   "retrieved_at": "2026-10-23T12:59:03.957851+00:00",
+   "sha256": "d3f6684d87fe12afa0cdd320272719bec325778d8a07604ae0ae7229b5578868",
+   "url": "https://smzt.gd.gov.cn/qhgk/gsqh/2025nd/content/post_4849400.html"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T13:02:39.062940+00:00",
+   "sha256": "c286dffaf5d8b28316f77a343d3d0bba01efbc0570780bc90ef81a71fc73dca1",
+   "url": "https://raw.githubusercontent.com/uiwjs/province-city-china/a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc/packages/core/dist/area.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T13:02:41.591674+00:00",
+   "sha256": "d78f1ca26348b80b45b3c3bdadee694ea9bd0bd1b9382ec0addbd8691cf64bb7",
+   "url": "https://raw.githubusercontent.com/uiwjs/province-city-china/a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc/packages/core/dist/town.json"
+  },
+  {
+   "edition": "a006c0649e8ca601bc95246f5033c956778edfe0",
+   "sha256": "e6eff09c634b171864df563a976b3090725045a9e28dd4071ed713a9e15118f4",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/a006c0649e8ca601bc95246f5033c956778edfe0/contributions/counties/CN.json"
+  },
+  {
+   "edition": "a006c0649e8ca601bc95246f5033c956778edfe0",
+   "sha256": "6b0d2c7e149226483c76a92beef6fe9b85eaf9f3d087da2aa3f0333d76c78a80",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/a006c0649e8ca601bc95246f5033c956778edfe0/ADMINISTRATIVE_STRUCTURE.md"
+  },
+  {
+   "edition": "MCA Order 79, promulgated 2025-06-30, effective 2025-09-01; official local-government republication 2026-03-24",
+   "licence_or_legal_basis": "Official legal/administrative instrument, PRC Copyright Law Article 5(1); reference-only tier facts, no names/geometry/points copied",
+   "locator": "Articles 7–11 and 19; province, prefecture, county, township codes; direct provincial county rule",
+   "retrieved_at": "2026-10-12T12:01:48.152199+00:00",
+   "sha256": "9e8436ac5f4db99bee51ab63e38fd5ba7d4aaddb63f61689c76a96d4e7518802",
+   "url": "https://www.huitong.gov.cn/huitong/c117763/202603/5ca415529a3440c09f0f2c52a1ec789c.shtml"
+  },
+  {
+   "archived_revision": 2549291641,
+   "edition": "2026-09-25T15:38:25Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49688139|Q5072131|Q5119941|Q519810|Q527525|Q5278178|Q532981|Q540493|Q545479|Q557934|Q56062054|Q5621799|Q5638970|Q568639|Q570829|Q570937|Q571652|Q574675|Q57719|Q577434|Q58294|Q58401|Q58422|Q58650|Q5895839|Q59132|Q59227|Q59233|Q594843|Q596174|Q604609|Q613653|Q613672|Q613673|Q625554|Q629080|Q639862|Q643069|Q645183|Q648969|Q651101|Q6539928|Q660328|Q664864|Q666884|Q6673866|Q6702567|Q6705974|Q675319|Q678927&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T18:04:26.205417+00:00",
+   "sha256": "acc347e70713a8b38f849fc10bbaa46cac9365793c7c6972236d213e3df21e03",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49688139|Q5072131|Q5119941|Q519810|Q527525|Q5278178|Q532981|Q540493|Q545479|Q557934|Q56062054|Q5621799|Q5638970|Q568639|Q570829|Q570937|Q571652|Q574675|Q57719|Q577434|Q58294|Q58401|Q58422|Q58650|Q5895839|Q59132|Q59227|Q59233|Q594843|Q596174|Q604609|Q613653|Q613672|Q613673|Q625554|Q629080|Q639862|Q643069|Q645183|Q648969|Q651101|Q6539928|Q660328|Q664864|Q666884|Q6673866|Q6702567|Q6705974|Q675319|Q678927&props=info%7Clabels%7Caliases%7Cclaims%7Csitelinks&format=json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.639839+00:00",
+   "sha256": "e48aa2ab099e07008b7d2dff06891eba7b4d155b6202a1ea266ecf7fe8358c57",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59218.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:05.519519+00:00",
+   "sha256": "773dad80ea985eec391a4586ad53942f869d3726b137bb8a73b5131665bbd778",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1025345.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.306772+00:00",
+   "sha256": "ed93d40b11e871e462536546c5a69bc74ea4b451277ecc97a356fda912206fd3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1343673.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:09.276959+00:00",
+   "sha256": "1a8884d016476a50060376907018d8a6eb07e4c0d754a19e2cde7dcfa6821114",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q34412.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:03.802996+00:00",
+   "sha256": "bda7dd2013e9f851155f0f7e34c436d8be4e267594dffeb63c7e3c3130c1395a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023913.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:06.714182+00:00",
+   "sha256": "460758850a633362e8dcaf39fdf31fb365181ae140c17776475aed2deea07139",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1209135.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:09.148228+00:00",
+   "sha256": "b3238ac8074670160a0d3bca876637d38303b19265278d2253ce0269e9516bed",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16572.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.528655+00:00",
+   "sha256": "56b3de60ca05ea247afd75df726e31413364d79b70af1d05a7bde44a2c0ac9cb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59205.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.545593+00:00",
+   "sha256": "57819294b01d8ae12e82ae70e6b4e904f927636423cb465b67fff32f4b5cf862",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374792.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.800861+00:00",
+   "sha256": "30f7720b36255f419d89daa12a01c7d4b538ae6860d37dd68e45bd714f56e008",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59173.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:09.581900+00:00",
+   "sha256": "4182e2f509ca9002333d4f852cc5d50f6e71f2a166d366fa812031464ee55468",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59132.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:08.302109+00:00",
+   "sha256": "9264ab283e331887206d75430229595230d38c525436c3a9837dbb864476b1be",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q26323.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:03.576997+00:00",
+   "sha256": "3ebced083c74e759712c071cd8c0dacb31cb12095f1a2ca89d710d068f220812",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023909.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.271144+00:00",
+   "sha256": "89b19ce7cc60073c0c7ef9a74cdf3b278d3fee1f12c89ccf80d5719915578464",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374728.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:03.738943+00:00",
+   "sha256": "27583a2fa920ff843b905296ed1a39e74756a75acc68b11e944f15a8927c2f07",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023910.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:02.646852+00:00",
+   "sha256": "3ce1020f3b4f25ef0d8f8f79c165c308fe3437f408543bf152485e3adda98ed1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1022980.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:09.380980+00:00",
+   "sha256": "f3317655b312881677737a39b83d7b162375440d400d6141f42c4a43bf89399c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q38927.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.042873+00:00",
+   "sha256": "f7b80f4f6209600c8396813f3703705696731f237fd9ccd7bf3f9dc89a7ed2f4",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59184.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.080316+00:00",
+   "sha256": "1637f5dd70bc3d9cd17065766e27b22a5bb2118dd6a4288fa3c2723fc8206935",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1346536.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.249406+00:00",
+   "sha256": "4f8722b2cd8f63274e1f7f5627a042d2571307a3fd7540b9e5374f9ccfeca7d3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59213.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.277518+00:00",
+   "sha256": "b857a647471e2b6fe57c2a5a2abdebdb3369fb164693b3d4578b9491074a0c9c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59100.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.915108+00:00",
+   "sha256": "47cc3d36a3c908a60a3037cf938b57b6631a6283b91f41f4f3ca355d2578dd85",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59189.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.236395+00:00",
+   "sha256": "00f2bf777c691a6049730aa4bd7f33dd430119d33dffaedab6aa557aa818115d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59107.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:08.738435+00:00",
+   "sha256": "4e8fbecdd538739a1a82ddd3bea99f5d06e65e8afbf4c20a8279271ca59d7096",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15174.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:08.780595+00:00",
+   "sha256": "89dde9607ed02fe1269776c033ee3860a0230e10d37ae7222d2903436cf61f21",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q164904.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:12.523237+00:00",
+   "sha256": "9c1ca36e944e82f3404717f24b90b0636ecc8e2b3118b6b7a33c53c8a1f8202a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q690255.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:04.581434+00:00",
+   "sha256": "a243e1b4f3c447122ba956bd26e4604506df75ec3fa9c1926a701a7277cc80e6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023920.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:02.604976+00:00",
+   "sha256": "f2a2524557da2b501b10ea371779ed7fe30a696ad9a13f40f872fa619bdb9f13",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023896.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:12.208707+00:00",
+   "sha256": "6c5cb7728c69ab4705fe1a0bbd4c978ce6167d1febb4b7b96705a3738344d0af",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q934465.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:04.946756+00:00",
+   "sha256": "6007ed27a9bf3fd362dfbd66fe847caa1b5ae569579f92b7d3b0a76c3af640ff",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023923.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.047695+00:00",
+   "sha256": "34f8ccb214fe0c4be80699767ffe50213905924a612cf220eb6cd297e81e28eb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59209.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:04.852684+00:00",
+   "sha256": "cd7e0683c40aa12db3cbfe4b89ead759879fe738bbe74ce0b5f4f9f614ad7f7d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1028091.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.614561+00:00",
+   "sha256": "06a05f63d1c0601574a5eace5e654722d1feaa3d95cd4296fa211875edba0043",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59233.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.256031+00:00",
+   "sha256": "7460992d98a32eca7893b6e0b97da47217c89d6db376d091e1c8ab1f2393c318",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59144.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:10.101101+00:00",
+   "sha256": "2b24dba510fc0138aefea156c0e9f726a6a62a8a6098893c012ed8c533b4079f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59164.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:11.772447+00:00",
+   "sha256": "beb52067aebabba7de92299214503603301b59cb715db96d2894eb3b29e8899f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59223.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:08.955749+00:00",
+   "sha256": "4b5ebd1a9b9c4c5163e1a71030379d4077414f4e6bcdb5d49237aabacba67c5e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q59095.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:12.659081+00:00",
+   "sha256": "da4cc5945095e51e8481fbe61f4814a030e74ae66b7888cf6966a288229d5cb6",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q599514.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:04.287699+00:00",
+   "sha256": "907ff28078efad32db5282b18df5207d0c43e2c98b7e530adb9b1fb41a608e5c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023921.json"
+  },
+  {
+   "archived_revision": 2554777351,
+   "edition": "2026-10-08T00:19:16Z",
+   "final_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374540.json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:13:49.355092+00:00",
+   "sha256": "ba2c835dec0b64b5920a7df7f26ab735a6681303f685d41b2b87ee8481fa4c90",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374540.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:06.714227+00:00",
+   "sha256": "c25cb9c8b4b897d8f692feeab4823d4c46892d4b8753f916d8561c8d3d5c7c0d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1209167.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:06.078137+00:00",
+   "sha256": "3a8d09072c2daa96477de5d62769823d23787739e3abb31155054c8fadf45c19",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1209153.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.858537+00:00",
+   "sha256": "71433257587a9b86f7b3bfa825a51373b33c54d308ff3d986ca9361efd42e90c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374972.json"
+  },
+  {
+   "archived_revision": 2526615254,
+   "edition": "2026-08-03T03:56:37Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q807049%7CQ80946%7CQ889471%7CQ917049%7CQ919149%7CQ924542%7CQ934465%7CQ945428%7CQ948245&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.916297+00:00",
+   "sha256": "d9979ff28415c376514321636c3668c698902a1f09e67f3bd41c26055ed8babf",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q807049%7CQ80946%7CQ889471%7CQ917049%7CQ919149%7CQ924542%7CQ934465%7CQ945428%7CQ948245&format=json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:07.686919+00:00",
+   "sha256": "21cabd97cd672bc1164d989a4dcf84ea655b4ae8c383fea9f3cd77479229c774",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1374525.json"
+  },
+  {
+   "archived_revision": 2526608750,
+   "edition": "2026-08-03T03:37:30Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.915913+00:00",
+   "sha256": "274da72ff2cbc40eb2823fe21d913759afa23af5d87ae1676b91c1e0de78ff64",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json"
+  },
+  {
+   "archived_revision": 2550559104,
+   "edition": "2026-09-28T16:51:04Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1346567%7CQ1346606%7CQ1346610%7CQ1346617%7CQ1346650%7CQ1351500%7CQ1355986%7CQ1355997%7CQ1356011%7CQ1356029%7CQ1356042%7CQ1356111%7CQ1359226%7CQ1362013%7CQ1362044%7CQ1362558%7CQ1363494%7CQ1365459%7CQ1365505%7CQ13667923%7CQ13670233%7CQ13670501%7CQ13670894%7CQ13674705%7CQ13674944%7CQ13678836%7CQ13681405%7CQ13681561%7CQ13682023%7CQ13683271%7CQ13683363%7CQ13685378%7CQ13687377%7CQ13688056%7CQ13699888%7CQ1371311%7CQ1374514%7CQ1374525%7CQ1374567%7CQ1374598&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.913526+00:00",
+   "sha256": "f1341689d983ad191d43514e88a558b0a0c3742d5052c37251f2c5cf01317c06",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1346567%7CQ1346606%7CQ1346610%7CQ1346617%7CQ1346650%7CQ1351500%7CQ1355986%7CQ1355997%7CQ1356011%7CQ1356029%7CQ1356042%7CQ1356111%7CQ1359226%7CQ1362013%7CQ1362044%7CQ1362558%7CQ1363494%7CQ1365459%7CQ1365505%7CQ13667923%7CQ13670233%7CQ13670501%7CQ13670894%7CQ13674705%7CQ13674944%7CQ13678836%7CQ13681405%7CQ13681561%7CQ13682023%7CQ13683271%7CQ13683363%7CQ13685378%7CQ13687377%7CQ13688056%7CQ13699888%7CQ1371311%7CQ1374514%7CQ1374525%7CQ1374567%7CQ1374598&format=json"
+  },
+  {
+   "archived_revision": 2526581656,
+   "edition": "2026-08-03T02:23:22Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1346567%7CQ1346606%7CQ1346610%7CQ1346617%7CQ1346650%7CQ1351500%7CQ1355986%7CQ1355997%7CQ1356011%7CQ1356029%7CQ1356042%7CQ1356111%7CQ1359226%7CQ1362013%7CQ1362044%7CQ1362558%7CQ1363494%7CQ1365459%7CQ1365505%7CQ13667923%7CQ13670233%7CQ13670501%7CQ13670894%7CQ13674705%7CQ13674944%7CQ13678836%7CQ13681405%7CQ13681561%7CQ13682023%7CQ13683271%7CQ13683363%7CQ13685378%7CQ13687377%7CQ13688056%7CQ13699888%7CQ1371311%7CQ1374514%7CQ1374525%7CQ1374567%7CQ1374598&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.913526+00:00",
+   "sha256": "f1341689d983ad191d43514e88a558b0a0c3742d5052c37251f2c5cf01317c06",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1346567%7CQ1346606%7CQ1346610%7CQ1346617%7CQ1346650%7CQ1351500%7CQ1355986%7CQ1355997%7CQ1356011%7CQ1356029%7CQ1356042%7CQ1356111%7CQ1359226%7CQ1362013%7CQ1362044%7CQ1362558%7CQ1363494%7CQ1365459%7CQ1365505%7CQ13667923%7CQ13670233%7CQ13670501%7CQ13670894%7CQ13674705%7CQ13674944%7CQ13678836%7CQ13681405%7CQ13681561%7CQ13682023%7CQ13683271%7CQ13683363%7CQ13685378%7CQ13687377%7CQ13688056%7CQ13699888%7CQ1371311%7CQ1374514%7CQ1374525%7CQ1374567%7CQ1374598&format=json"
+  },
+  {
+   "archived_revision": 2526579933,
+   "edition": "2026-08-03T02:19:39Z",
+   "final_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1241513.json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:13:45.605927+00:00",
+   "sha256": "37ed7e7b6263f595830b57ce3a847273740f367166b1eff8ba221292bce073ba",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1241513.json"
+  },
+  {
+   "archived_revision": 2526581070,
+   "edition": "2026-08-03T02:22:07Z",
+   "final_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1338625.json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:13:47.050345+00:00",
+   "sha256": "aa3ecf03d41a7d7b65c08b1b67f01df6558407c4c9412fa77be16e20eb0e5a27",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1338625.json"
+  },
+  {
+   "archived_revision": 2527892787,
+   "edition": "2026-08-06T00:49:20Z",
+   "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:15:10.915913+00:00",
+   "sha256": "274da72ff2cbc40eb2823fe21d913759afa23af5d87ae1676b91c1e0de78ff64",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1374728%7CQ1374770%7CQ1374780%7CQ1374792%7CQ1374972%7CQ1378010%7CQ1378017%7CQ14447%7CQ1493802%7CQ15174%7CQ15897817%7CQ1607523%7CQ164904%7CQ164910%7CQ16767%7CQ178945%7CQ179000%7CQ182866%7CQ189529%7CQ197715%7CQ197804%7CQ199422%7CQ201723%7CQ202844%7CQ2097427%7CQ233441%7CQ2388808%7CQ240239%7CQ249712%7CQ26323%7CQ276983%7CQ277067%7CQ277696%7CQ284031%7CQ285241%7CQ286151%7CQ287273%7CQ287547%7CQ28794613%7CQ28794636&format=json"
+  },
+  {
+   "archived_revision": 2528630852,
+   "edition": "2026-08-08T02:04:52Z",
+   "final_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023908.json",
+   "licence": "CC0",
+   "retrieved_at": "2026-10-12T16:13:39.105092+00:00",
+   "sha256": "5b7ad8ad5d15a7fa4472b2ff4bcd97a26b1d06177fd5c5f8ebaf9adc64cd96e2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023908.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:05.398025+00:00",
+   "sha256": "c5fa75db71b069f2ec986b358ed65d11eb8b81c6d5f4f0d9cffb23a69fe0e77f",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10928810.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:12.483378+00:00",
+   "sha256": "0df1d7b2743564912239cecf2db8753e23e8e55dd1e8725ed39a172dcecf8ef1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7496512.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:05.528032+00:00",
+   "sha256": "b5f7053e4ce159e2f5f77ed7b0e8503c34db3d784c4182aadab8b5b624778506",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10907343.json"
+  },
+  {
+   "edition": "archived review 2108; mirror pinned a708f0df0ebdb68f09f5fcf6345367f7d5e9a7dc",
+   "retrieved_at": "2026-10-23T12:59:06.096831+00:00",
+   "sha256": "a21a9dd6285a1e1b7be552b3fd53a9a6255aa6b3dd02adcadb8ff92493d70871",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10946960.json"
+  }
+ ]
+}

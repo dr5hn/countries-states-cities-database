@@ -1,0 +1,507 @@
+{
+  "schema_version": 1,
+  "audit_manifest_root": "csc-data-audit/runs/specs/pt_pop_v5x/work/",
+  "repository_inputs": {
+    "PT.json": "d4859a9c801dae12d3ec498db034d2eb69f5e364f9030ddff153cbc7d7cceb38",
+    "PT.v4.json": "e18de39c14b049d13c5653fb0512fe14090201640ac835f936e9b808be089060",
+    "migrations/unresolved_baseline.jsonl": "91dfb632238d5597f32c22eedd147522446bc61690dfdfac0085d84bbc5f4a48",
+    "migrations/events.jsonl": "1e2c0ea3874ce3d0e8c613c9590507e5b7861b03541c2afc48531ae2eef1c8f7",
+    "ine_register2025.json": "851998d33b6bb86fb097d87c710a2ed3b374ee621d32473a5d459d43ef4263b9"
+  },
+  "pin": "1035792b48e7edef0029eb9b2fc3e6399c41ad64",
+  "sources": [
+    {
+      "id": "FS2021SeccaoTot.zip",
+      "url": "https://mapas.ine.pt/download/2021FicheiroSintese/FS2021SeccaoTot.zip",
+      "edition": "Censos 2021 final BGRI/Lugares",
+      "retrieved_utc": "2026-10-20T09:46:38.210761+00:00",
+      "sha256": "db23635ed08890215789b3b4b141f4ed7214b3d01d021fc3bc9dffac5346214f",
+      "bytes": 13392427,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/FS2021SeccaoTot.zip"
+    },
+    {
+      "id": "bgri_download.html",
+      "url": "https://mapas.ine.pt/download/index2021.phtml",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:46:16.443278+00:00",
+      "sha256": "3f19d5f2b19f0a8c899f7c4267328f16f62912c8d48afecd633fcf8213d806b5",
+      "bytes": 69505,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/bgri_download.html"
+    },
+    {
+      "id": "classes.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q56046844|Q19833170|Q15647906|Q3257686|Q15303838|Q66626342|Q113594123|Q210272|Q2202509&props=labels|claims&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:59.376065+00:00",
+      "sha256": "413122c010b3c3961d6668cf8f19977ffa029d5a02b2db64cb8ab6740cce1b9f",
+      "bytes": 76585,
+      "licence": "CC0",
+      "path": "sources/classes.json"
+    },
+    {
+      "id": "ine_cda2025.pdf",
+      "url": "https://files.diariodarepublica.pt/2s/2025/05/097000000/0002500132.pdf",
+      "edition": "INE CDA Revisão2025 adopted 2025-04-09; published 2025-05-21; effect from 2025-03-14",
+      "retrieved_utc": "2026-10-09T10:57:59.725412+00:00",
+      "sha256": "347d3d91217c0fbd2789668837204c5df837fdfb502084bd803a7b59973c50c3",
+      "bytes": 1651994,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/ine_cda2025.pdf"
+    },
+    {
+      "id": "ine_terms.html",
+      "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_cont_inst&INST=3585857",
+      "edition": "Live terms at retrieval",
+      "retrieved_utc": "2026-10-09T11:00:39.463742+00:00",
+      "sha256": "f1f210ad0d0f22f453f8222c7c773630afa75d8972fba6ec18f870c6452b7ffc",
+      "bytes": 49255,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/ine_terms.html"
+    },
+    {
+      "id": "lugares.html",
+      "url": "https://mapas.ine.pt/download/index2021Lugares.phtml",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:46:35.574913+00:00",
+      "sha256": "667ce08a85f9162ef5bff458141eb5728eaa9020d471273439a9ffcd1c5b87f2",
+      "bytes": 10064,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/lugares.html"
+    },
+    {
+      "id": "lugares2021.zip",
+      "url": "https://mapas.ine.pt/download/filesGPG/2021localities/LUGARES21_PORTUGAL.zip",
+      "edition": "Censos 2021 final BGRI/Lugares",
+      "retrieved_utc": "2026-10-20T09:47:10.400750+00:00",
+      "sha256": "b7b642b3e7e54b8a30108ff24a5538084b868a0418b01443289621ec4eb95b58",
+      "bytes": 61645845,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/lugares2021.zip"
+    },
+    {
+      "id": "metadata.html",
+      "url": "https://mapas.ine.pt/download/metadados/bgri.html",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:46:35.579644+00:00",
+      "sha256": "95157d4751f6e9d41a53e6e620288e937dc41582aeb8803e0450be42bff15f59",
+      "bytes": 18078,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/metadata.html"
+    },
+    {
+      "id": "parents_0000.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000125|Q1009474|Q1013287|Q1016673|Q1016684|Q1019004|Q1019708|Q1019730|Q1021377|Q1021442|Q1022630|Q1023184|Q1023213|Q1023368|Q1023424|Q1024159|Q1024857|Q1024992|Q1025525|Q1025551|Q1026358|Q1027140|Q10358780|Q10376043|Q10390970|Q1054738|Q1146314|Q1149837|Q1248507|Q1252756|Q1269630|Q1285681|Q1327055|Q1339040|Q1340615|Q1407642|Q14638417|Q14756023|Q1500660|Q1501301&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:12.784663+00:00",
+      "sha256": "0253be2ea40d5e1c95e6924487840a67ab84424494a577e63c71a387fac7a3b1",
+      "bytes": 437151,
+      "licence": "CC0",
+      "path": "sources/parents_0000.json"
+    },
+    {
+      "id": "parents_0040.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1503171|Q15041623|Q1532333|Q154212|Q1553765|Q15614011|Q15950910|Q1598898|Q16142886|Q16487416|Q1677202|Q168266|Q1710091|Q17166815|Q17294176|Q17294191|Q17294199|Q17294200|Q17294205|Q17294213|Q17294261|Q17294285|Q1730870|Q17310952|Q17419079|Q17419943|Q1749915|Q17510081|Q17510561|Q17510713|Q17510867|Q17510870|Q17511485|Q17512300|Q17513713|Q17514286|Q17514476|Q17514645|Q17514753|Q17989472&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:19.828921+00:00",
+      "sha256": "054caf39f1e39f43e042f1a184a05b47c55e1dbfd9739d87754a496deaec4897",
+      "bytes": 342384,
+      "licence": "CC0",
+      "path": "sources/parents_0040.json"
+    },
+    {
+      "id": "parents_0080.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q17989476|Q1802854|Q18164933|Q1817065|Q1822474|Q1826465|Q1829265|Q18343566|Q18343676|Q18354998|Q18355583|Q18356251|Q18356885|Q18357963|Q18388655|Q18389925|Q18393363|Q18393915|Q18467924|Q18467937|Q18467974|Q18468041|Q18468060|Q18468075|Q18468107|Q18468132|Q18468147|Q18468177|Q18468208|Q18468243|Q18468261|Q18468266|Q18468276|Q18468278|Q18468302|Q18468306|Q18468627|Q18468683|Q18468816|Q18468834&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:26.826157+00:00",
+      "sha256": "9c6e15ad560aa6c007393bf0edb439869d3824c83c630345a3cd2e62ee64404c",
+      "bytes": 347506,
+      "licence": "CC0",
+      "path": "sources/parents_0080.json"
+    },
+    {
+      "id": "parents_0120.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q18468970|Q18469013|Q18469038|Q18469165|Q18469458|Q18500330|Q1867212|Q1886457|Q1894274|Q1896472|Q191133|Q191135|Q1915481|Q19309757|Q19309896|Q19478593|Q1982948|Q1994398|Q1997577|Q1998305|Q1998360|Q1999510|Q1999770|Q20059426|Q20059620|Q2030878|Q206933|Q20716658|Q207199|Q2078929|Q210527|Q2117368|Q213251|Q22162581|Q2229479|Q225189|Q2252215|Q2257038|Q2258611|Q2258773&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:34.113987+00:00",
+      "sha256": "8a1dec51cc5a822999146ade9c319934d0a7714d6e45925362aedb9299f2d177",
+      "bytes": 552637,
+      "licence": "CC0",
+      "path": "sources/parents_0120.json"
+    },
+    {
+      "id": "parents_0160.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2258795|Q2258976|Q2259347|Q2259943|Q2286504|Q2296635|Q2351599|Q2378888|Q2392329|Q2392859|Q241731|Q2420011|Q2430699|Q244510|Q244512|Q244517|Q244521|Q2451729|Q2452445|Q2453696|Q2453743|Q25263|Q25438581|Q25438945|Q25439000|Q25439437|Q25439589|Q25439837|Q25440060|Q25440365|Q25440409|Q25440912|Q25440974|Q25441198|Q25444872|Q25444964|Q26253|Q2629775|Q2652644|Q2652681&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:41.050978+00:00",
+      "sha256": "6b96dd00ae419311c5f7b2155a496f4aab0b91ca22e800eded9d5ab8cf0004be",
+      "bytes": 558435,
+      "licence": "CC0",
+      "path": "sources/parents_0160.json"
+    },
+    {
+      "id": "parents_0200.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2652989|Q265402|Q2681647|Q26831|Q26884130|Q2696039|Q273525|Q273529|Q273533|Q273877|Q274109|Q274118|Q321455|Q322792|Q326203|Q326214|Q36433|Q3645|Q369458|Q373528|Q373720|Q379372|Q388117|Q404261|Q4068849|Q4218301|Q4264583|Q4407267|Q443376|Q449552|Q45412|Q45815|Q474000|Q485581|Q490302|Q507373|Q551669|Q552011|Q565287|Q5740098&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:48.689214+00:00",
+      "sha256": "6ec21f2e5f50152210c9bea57e896f9ec3b8d6d6691ccc78d1e7b0b5594dd294",
+      "bytes": 1229353,
+      "licence": "CC0",
+      "path": "sources/parents_0200.json"
+    },
+    {
+      "id": "parents_0240.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q597|Q598662|Q612054|Q612791|Q616008|Q623736|Q633233|Q634735|Q637283|Q637946|Q644592|Q651997|Q658088|Q658823|Q663644|Q693243|Q699457|Q7136679|Q727920|Q73046|Q732548|Q742117|Q747780|Q74854|Q790121|Q791051|Q804036|Q805552|Q807903|Q817079|Q841235|Q841299|Q849026|Q891360|Q893339|Q897643|Q913298|Q920477|Q926672|Q960331&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:51:55.737796+00:00",
+      "sha256": "7710695a986ca765d31661d5cd493442069f7f215f2113bb94abff38dbf7050f",
+      "bytes": 903614,
+      "licence": "CC0",
+      "path": "sources/parents_0240.json"
+    },
+    {
+      "id": "parents_0280.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q9608393|Q9707109|Q986021|Q986107|Q991698&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:52:01.835482+00:00",
+      "sha256": "d9d8aa2ea09887cec3100fd548e63063eb77459f74695d33186bebcaeea7a2fd",
+      "bytes": 76726,
+      "licence": "CC0",
+      "path": "sources/parents_0280.json"
+    },
+    {
+      "id": "portugal2021.zip",
+      "url": "https://mapas.ine.pt/download/filesGPG/2021/portugal2021.zip",
+      "edition": "Censos 2021 final BGRI/Lugares",
+      "retrieved_utc": "2026-10-20T09:47:11.021234+00:00",
+      "sha256": "a14d08143b4d3b7b91cef8d82aeaedc5b5cfb6bbbc5273ac6194df379b570113",
+      "bytes": 258635420,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/portugal2021.zip"
+    },
+    {
+      "id": "terms.html",
+      "url": "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_copyright",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:50.680604+00:00",
+      "sha256": "4855ad22704a2eb8edb2dfc94b037b86e6d68a96e87f61650a575a680fb12370",
+      "bytes": 122,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/terms.html"
+    },
+    {
+      "id": "variables.csv",
+      "url": "https://mapas.ine.pt/download/C2021_FSINTESE_VARIAVEIS.csv",
+      "edition": "Censos 2021 final BGRI/Lugares",
+      "retrieved_utc": "2026-10-20T09:46:35.579475+00:00",
+      "sha256": "66deaac0264e7ad591b6627b0dfb088cf73220f3245a069242d01392905ee7a9",
+      "bytes": 2638,
+      "licence": "CC BY 4.0 (INE statistical data); see ine_terms.html",
+      "path": "sources/variables.csv"
+    },
+    {
+      "id": "wd_0000.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1000041|Q1000052|Q1000093|Q1000099|Q1002565|Q1003060|Q1003126|Q1003134|Q1003140|Q1003146|Q1003157|Q1003164|Q1003172|Q1005038|Q1005090|Q1005105|Q1005121|Q1005138|Q1006372|Q1006378|Q1006385|Q1006389|Q1006397|Q1006408|Q1006418|Q1006836|Q1010176|Q1010463|Q1010466|Q1010468|Q1010659|Q1010908|Q1012522|Q1012710|Q1012714|Q1012719|Q1012723|Q1013094|Q1013111|Q1013140&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:52.032429+00:00",
+      "sha256": "0d0f1e51a7bf485f6ee8adc38721c8fb9aaffb18f4beb740c20c70a050ada033",
+      "bytes": 1173997,
+      "licence": "CC0",
+      "path": "sources/wd_0000.json"
+    },
+    {
+      "id": "wd_0040.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1013271|Q1013294|Q1013623|Q1013628|Q1017927|Q1018765|Q1018782|Q1019047|Q1019053|Q1020811|Q1020815|Q1020821|Q1020826|Q1020833|Q1020836|Q1020848|Q1021359|Q1021364|Q1021452|Q1021763|Q1022265|Q1023518|Q1023960|Q1024149|Q1024249|Q1024258|Q1024717|Q1024768|Q1024772|Q1024775|Q1024799|Q1024811|Q1024823|Q1024828|Q1024836|Q1024837|Q1024850|Q1024864|Q1024927|Q1024945&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:51.849381+00:00",
+      "sha256": "c49d53c322beccfbdd92a554236190e36c9351981bd9ffe9162f98acb70709a1",
+      "bytes": 600591,
+      "licence": "CC0",
+      "path": "sources/wd_0040.json"
+    },
+    {
+      "id": "wd_0080.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1024948|Q1024954|Q1024960|Q1024961|Q1024966|Q1024973|Q1024976|Q1024979|Q1024983|Q1024986|Q1024994|Q1025009|Q1025011|Q1025044|Q1025066|Q1026353|Q1026664|Q1026670|Q1026716|Q1027809|Q1028029|Q1029544|Q1030123|Q1031527|Q10323868|Q1035405|Q1035417|Q1044020|Q1044862|Q1044914|Q1046073|Q1046217|Q1046744|Q1046749|Q1048511|Q1048590|Q1048661|Q1048970|Q1048976|Q1052741&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:52.636896+00:00",
+      "sha256": "d5a34558f389008a7aed03cf4b0746106b87ee045e74d5925bc9c48005e20fa0",
+      "bytes": 429580,
+      "licence": "CC0",
+      "path": "sources/wd_0080.json"
+    },
+    {
+      "id": "wd_0120.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1054894|Q1067627|Q1090906|Q1107053|Q1107623|Q1135381|Q1135623|Q1135661|Q1145109|Q1147364|Q1150896|Q117591|Q117676|Q119690|Q1233617|Q1234975|Q1242414|Q1245694|Q1257752|Q126158|Q1265336|Q126681|Q1267023|Q1270529|Q1279919|Q1284330|Q1285555|Q12899232|Q1304376|Q132190475|Q132191599|Q132235775|Q13225053|Q132251342|Q1328618|Q133760938|Q133772596|Q133777387|Q133820324|Q133821964&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:53.964082+00:00",
+      "sha256": "9b1d48852c704003f8e3ed69f4c13adcb2bf19670bb972dba57b5f67a64a76c4",
+      "bytes": 463461,
+      "licence": "CC0",
+      "path": "sources/wd_0120.json"
+    },
+    {
+      "id": "wd_0160.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q134393592|Q134513936|Q134547288|Q134570941|Q134580949|Q134581306|Q134581806|Q134587856|Q134726703|Q1362590|Q1362994|Q1366789|Q1379990|Q138300065|Q1384914|Q1385363|Q138830|Q1395657|Q1397371|Q1399148|Q1399236|Q1405376|Q1416473|Q1422129|Q1430189|Q1430269|Q1432562|Q1435387|Q1437869|Q1438943|Q1445758|Q144683|Q1452082|Q1452112|Q1452343|Q1454635|Q1454968|Q1454978|Q1466131|Q1469748&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:53.703132+00:00",
+      "sha256": "7b2505f46b7f2c139b0b5024f9319486e65fa1df65d89ee79db2f71bd955d787",
+      "bytes": 319381,
+      "licence": "CC0",
+      "path": "sources/wd_0160.json"
+    },
+    {
+      "id": "wd_0200.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1476935|Q1478690|Q1479607|Q1484005|Q1498704|Q1507986|Q1518830|Q1520260|Q1523604|Q1526603|Q1528245|Q1534106|Q1541256|Q1543139|Q1546770|Q1556707|Q1566520|Q1566702|Q1575170|Q159457|Q1600659|Q1602794|Q1617626|Q1618787|Q1630175|Q1631359|Q1631953|Q164434|Q1645165|Q1648341|Q1661925|Q1664151|Q1667932|Q1668791|Q168332|Q168690|Q1687150|Q1688175|Q1690801|Q1696865&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:54.686659+00:00",
+      "sha256": "2a0328fcae1e6a841a0e0da6cece3b7c50904756fccb2f72eaaaba81d6c4b018",
+      "bytes": 474888,
+      "licence": "CC0",
+      "path": "sources/wd_0200.json"
+    },
+    {
+      "id": "wd_0240.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1704986|Q170903|Q1709134|Q1717071|Q1725783|Q173699|Q1740339|Q174800|Q1752948|Q175373|Q1755149|Q1757340|Q1759365|Q1759782|Q1767492|Q177403|Q1786370|Q1786376|Q1786384|Q1786389|Q1786397|Q1786417|Q1786429|Q1786435|Q179045|Q1794739|Q179487|Q1800786|Q1801513|Q1803493|Q1803660|Q180972|Q1817021|Q1817058|Q1817090|Q182737|Q1850950|Q1850958|Q1850965|Q1861972&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:55.691260+00:00",
+      "sha256": "b0dd1684ac611506a2401f0df3350693fd3967b69e47d2d843cd56ba57425208",
+      "bytes": 529493,
+      "licence": "CC0",
+      "path": "sources/wd_0240.json"
+    },
+    {
+      "id": "wd_0280.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1863492|Q1870321|Q1872318|Q1872343|Q188050|Q1886957|Q1890230|Q189166|Q1893823|Q1893997|Q1894283|Q1894295|Q1898548|Q1899169|Q1899234|Q1901338|Q190187|Q1902992|Q1907450|Q1908045|Q1932382|Q193402|Q193677|Q1943011|Q1943106|Q1945710|Q1945916|Q1946059|Q1947512|Q1947515|Q1950406|Q1953936|Q1954238|Q1956170|Q1961840|Q1971893|Q1972321|Q1975409|Q1982979|Q1990826&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:56.040512+00:00",
+      "sha256": "cb803ae0d892cf5ac3712334b024aada15b346340726dadcf85b4c5e6deec5a8",
+      "bytes": 580455,
+      "licence": "CC0",
+      "path": "sources/wd_0280.json"
+    },
+    {
+      "id": "wd_0320.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1997694|Q1997739|Q1999047|Q1999450|Q2002595|Q200414|Q200459|Q2005054|Q2015920|Q2019798|Q2023873|Q2035277|Q2035325|Q2035332|Q2041940|Q2041942|Q2047784|Q2051680|Q2052148|Q2057078|Q206320|Q2065632|Q2068343|Q2068574|Q2068885|Q2070111|Q2070415|Q2071644|Q208149|Q208158|Q2093255|Q2094565|Q2095755|Q2103898|Q2107245|Q2117134|Q2118692|Q2118819|Q2118840|Q2119101&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:56.193552+00:00",
+      "sha256": "856d19f722b0fbe3a88cc40e49b8445904e2da4f17b70fb9a36428e33aaa0d44",
+      "bytes": 587691,
+      "licence": "CC0",
+      "path": "sources/wd_0320.json"
+    },
+    {
+      "id": "wd_0360.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2119125|Q2119131|Q2119138|Q2119144|Q2119181|Q2119190|Q2119224|Q2119745|Q2119966|Q2119982|Q2119991|Q2120011|Q2120259|Q2120268|Q2120278|Q2120294|Q2120303|Q2120310|Q2120319|Q2120360|Q2120370|Q2120411|Q2120421|Q2120429|Q2120434|Q2120440|Q2120448|Q2120455|Q2120463|Q2120471|Q2120488|Q2120496|Q2120504|Q2120515|Q2121936|Q2131324|Q2135181|Q2142313|Q2142894|Q217394&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:44:57.650503+00:00",
+      "sha256": "f1b667639f1e7f24eadbdfc3fdc1078e989361c9be92e77b6305fd1d3981a23b",
+      "bytes": 365477,
+      "licence": "CC0",
+      "path": "sources/wd_0360.json"
+    },
+    {
+      "id": "wd_0400.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2223528|Q2233176|Q224591|Q2257537|Q2258063|Q2296644|Q2296653|Q2296664|Q2297859|Q2302141|Q2341999|Q23978|Q23980|Q23984|Q23989|Q23993|Q23996|Q23999|Q24001|Q24003|Q24005|Q24008|Q24010|Q24013|Q24018|Q24020|Q24022|Q24023|Q24025|Q24029|Q24033|Q24035|Q24123|Q24125|Q24127|Q24133|Q24136|Q24140|Q24142|Q24145&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:02.463467+00:00",
+      "sha256": "a884b66f9bc120bb57a3926fab63359125ca2ee055470008fb41c81744061a59",
+      "bytes": 318268,
+      "licence": "CC0",
+      "path": "sources/wd_0400.json"
+    },
+    {
+      "id": "wd_0440.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q24147|Q24181|Q24191|Q24193|Q241974|Q24201|Q24203|Q24205|Q24207|Q24209|Q24212|Q2427281|Q243849|Q2452531|Q2453756|Q246559|Q249788|Q249827|Q249906|Q253045|Q25444|Q2623372|Q2632134|Q2652576|Q2652799|Q2652869|Q2652876|Q2652888|Q266202|Q2671865|Q267405|Q2683168|Q2687695|Q273059|Q27320|Q275689|Q275862|Q289852|Q291745|Q2991238&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:03.337390+00:00",
+      "sha256": "16458f39f1416e7916613964a35d1e3cab4e8989a78986e3e1c04a39390f98d3",
+      "bytes": 794039,
+      "licence": "CC0",
+      "path": "sources/wd_0440.json"
+    },
+    {
+      "id": "wd_0480.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q300626|Q300627|Q304139|Q304464|Q31877390|Q31877422|Q31877466|Q31877477|Q31877572|Q31877731|Q31877755|Q31878333|Q31879046|Q31879382|Q31879456|Q31880703|Q31880872|Q31880915|Q31881200|Q31884098|Q31886714|Q31887166|Q31887240|Q31887272|Q31887734|Q31887846|Q31889379|Q31889400|Q31893496|Q31893706|Q31893832|Q31894609|Q31894654|Q31894809|Q31897433|Q31909395|Q31910854|Q31910871|Q31911628|Q31912265&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:01.963772+00:00",
+      "sha256": "63fbc1db41e0d2b27242b5ec6452f2dfffb922eda456d2e63b2340abc08a7a90",
+      "bytes": 297746,
+      "licence": "CC0",
+      "path": "sources/wd_0480.json"
+    },
+    {
+      "id": "wd_0520.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q31913149|Q31913383|Q31914083|Q31917267|Q31924170|Q31924457|Q31925314|Q31925680|Q32561|Q32563|Q32565|Q32567|Q32569|Q32571|Q32574|Q32575|Q32576|Q32578|Q32580|Q32581|Q32582|Q32583|Q32585|Q32612|Q32628|Q32638|Q32639|Q32643|Q32644|Q32646|Q32647|Q32648|Q32649|Q32651|Q32652|Q32653|Q32654|Q32655|Q32658|Q32659&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:03.791082+00:00",
+      "sha256": "f1b58409ec2be9376f332b5834762195852bc8109f4080be8f6e5a5c8335e283",
+      "bytes": 271167,
+      "licence": "CC0",
+      "path": "sources/wd_0520.json"
+    },
+    {
+      "id": "wd_0560.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q32664|Q32665|Q32668|Q32669|Q32670|Q32671|Q32672|Q32673|Q32675|Q32676|Q32684|Q32688|Q32691|Q32692|Q32694|Q32701|Q32705|Q32708|Q32711|Q32712|Q328015|Q331191|Q33210|Q3344424|Q3344440|Q3344926|Q3344946|Q3348464|Q3348715|Q3348861|Q3349006|Q3349324|Q3349362|Q33502976|Q33502987|Q33503040|Q33503054|Q33503069|Q33503088|Q33503101&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:04.373238+00:00",
+      "sha256": "6b9062009c4a6228f415e67686ef317ad1ea6352439fad19cd2dcb5a7d763680",
+      "bytes": 491948,
+      "licence": "CC0",
+      "path": "sources/wd_0560.json"
+    },
+    {
+      "id": "wd_0600.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q33503173|Q33503188|Q33503213|Q33503226|Q33503252|Q33505889|Q33506118|Q33508796|Q33510420|Q33510757|Q33511090|Q33511098|Q33511110|Q33511276|Q33511559|Q33511589|Q33511692|Q33511726|Q33511815|Q33511837|Q33511853|Q33511867|Q33511892|Q33512261|Q33512640|Q33529444|Q33661928|Q33690701|Q33707919|Q337431|Q33801000|Q338043|Q33852278|Q33858375|Q33862485|Q34787544|Q34789094|Q34789102|Q34789245|Q34789250&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:05.365730+00:00",
+      "sha256": "68fec830d8e6109e3f4f4dc445961d2aa6b9db7b7d8d9724f80a42bd97233403",
+      "bytes": 306335,
+      "licence": "CC0",
+      "path": "sources/wd_0600.json"
+    },
+    {
+      "id": "wd_0640.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q34789263|Q34789334|Q34789497|Q34789546|Q34789552|Q34789683|Q34789702|Q34789729|Q34789734|Q34789837|Q34790026|Q34790160|Q34790334|Q34790997|Q34792022|Q34796743|Q34796808|Q34797275|Q34798089|Q34799706|Q35710384|Q35711021|Q35711970|Q35712820|Q35712828|Q35716314|Q35716323|Q35718617|Q35719316|Q35719701|Q35719737|Q35721286|Q35721498|Q35722040|Q35722090|Q35722148|Q35722279|Q35723684|Q35724951|Q35725662&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:05.582763+00:00",
+      "sha256": "1abfb018b55820fd02e9b8b39fb680b4032abebd2663be06d9fbdc1f0d5e5fba",
+      "bytes": 271600,
+      "licence": "CC0",
+      "path": "sources/wd_0640.json"
+    },
+    {
+      "id": "wd_0680.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q35727654|Q35729849|Q35729856|Q35729864|Q35732069|Q35732321|Q35732663|Q35732679|Q35733554|Q35733707|Q35734150|Q368655|Q368867|Q370187|Q372840|Q372922|Q373475|Q374030|Q375205|Q377823|Q377919|Q381337|Q381340|Q387982|Q388896|Q395919|Q395953|Q397379|Q397872|Q40234338|Q404220|Q405241|Q405252|Q413311|Q425410|Q425817|Q426136|Q426945|Q428459|Q429713&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:06.220246+00:00",
+      "sha256": "69dc482100e75ecaf57b578fc7963757f5639e2fda3e986ca5cca1807e516085",
+      "bytes": 797781,
+      "licence": "CC0",
+      "path": "sources/wd_0680.json"
+    },
+    {
+      "id": "wd_0720.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q430228|Q431690|Q432607|Q4346748|Q438263|Q443627|Q448229|Q448231|Q449526|Q449532|Q455012|Q45799|Q45800|Q45801|Q45806|Q45807|Q45866|Q45876|Q45878|Q45879|Q45882|Q45884|Q45887|Q45890|Q45893|Q45895|Q45897|Q45899|Q45903|Q45905|Q45907|Q45910|Q45913|Q45915|Q45916|Q45920|Q461261|Q474039|Q489105|Q490180&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:07.310285+00:00",
+      "sha256": "a8731b8d7b96c01eb51e18bb2d813651e1abb913f72437fd97c063380f531581",
+      "bytes": 494493,
+      "licence": "CC0",
+      "path": "sources/wd_0720.json"
+    },
+    {
+      "id": "wd_0760.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q491484|Q491888|Q492475|Q49280913|Q49292311|Q49343987|Q49344006|Q49344139|Q49344405|Q49344656|Q49347217|Q49347629|Q49349843|Q49349878|Q49350011|Q49350043|Q49350135|Q49350137|Q49350155|Q49350156|Q49350450|Q49350690|Q49350714|Q49350760|Q49350805|Q49351116|Q49351560|Q49352679|Q49354018|Q49355583|Q49358045|Q49358048|Q49358759|Q49358832|Q49358931|Q49358934|Q49358935|Q49358938|Q49358940|Q49359643&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:45:07.563549+00:00",
+      "sha256": "c588849a664990052a45b4a5ba356811589fd6cf3126720557ef925dc801940a",
+      "bytes": 333438,
+      "licence": "CC0",
+      "path": "sources/wd_0760.json"
+    },
+    {
+      "id": "wd_0800.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49359892|Q49360003|Q49360154|Q49360292|Q49360293|Q49360358|Q49360424|Q49361444|Q49361861|Q49361870|Q49361889|Q49362017|Q49362020|Q49362263|Q49362272|Q49362874|Q49362876|Q49362878|Q49363043|Q49363085|Q49363374|Q49363569|Q49363702|Q49363709|Q49363712|Q49363713|Q49363784|Q49363788|Q49364106|Q49364193|Q49364942|Q49366795|Q49366838|Q49366935|Q49366944|Q49366995|Q49366997|Q49366999|Q49367001|Q49367020&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:47:41.869864+00:00",
+      "sha256": "6366c52027cf7b92d754fc24b3d56738c9a8f735fb44ec1e8a257d309620101a",
+      "bytes": 248126,
+      "licence": "CC0",
+      "path": "sources/wd_0800.json"
+    },
+    {
+      "id": "wd_0840.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49367029|Q49367030|Q49367032|Q49367033|Q49367336|Q49367383|Q49367404|Q49367430|Q49367433|Q49367775|Q49367778|Q49367967|Q49367968|Q49367971|Q49368183|Q49368184|Q497179|Q503856|Q504580|Q511708|Q513049|Q519052|Q523596|Q534230|Q537471|Q538407|Q543542|Q543993|Q5465145|Q550963|Q551048|Q551056|Q551059|Q551080|Q551103|Q551109|Q551464|Q551502|Q551507|Q551639&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:47:50.221355+00:00",
+      "sha256": "58252bf4fc86b60def2d7b1cf351a37bd5c5ec09b7b14fef3b7113b7dd00cb5f",
+      "bytes": 940932,
+      "licence": "CC0",
+      "path": "sources/wd_0840.json"
+    },
+    {
+      "id": "wd_0880.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q551649|Q551653|Q551658|Q551662|Q551666|Q551672|Q551676|Q551680|Q551684|Q551693|Q551696|Q551955|Q552015|Q552556|Q552580|Q558610|Q564759|Q564762|Q564813|Q565290|Q565302|Q565312|Q565726|Q569929|Q571140|Q576924|Q578737|Q582153|Q586722|Q590276|Q591694|Q595642|Q597789|Q599317|Q600284|Q6022399|Q602368|Q604262|Q604302|Q605319&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:47:58.427611+00:00",
+      "sha256": "fd168ac3026dc98ebe118d22136e316148468f4dd04a3b18987c7e9af5eba262",
+      "bytes": 1245133,
+      "licence": "CC0",
+      "path": "sources/wd_0880.json"
+    },
+    {
+      "id": "wd_0920.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q61088024|Q611889|Q612059|Q616959|Q61742386|Q617889|Q618141|Q622686|Q622817|Q622819|Q625157|Q626815|Q628312|Q631788|Q634164|Q635165|Q637142|Q641715|Q64444|Q644782|Q646044|Q647467|Q647956|Q651803|Q663893|Q664597|Q670426|Q674653|Q679642|Q680029|Q686717|Q686868|Q687504|Q687790|Q699141|Q699206|Q700311|Q703854|Q712064|Q726910&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:06.599194+00:00",
+      "sha256": "3325f7685bbd691158656c3ec883bb6a9731dafc1f9f947cfa5ce93531729956",
+      "bytes": 820068,
+      "licence": "CC0",
+      "path": "sources/wd_0920.json"
+    },
+    {
+      "id": "wd_0960.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q731589|Q734336|Q738803|Q740845|Q746308|Q748055|Q749180|Q749351|Q750578|Q750594|Q753268|Q7565244|Q757078|Q757856|Q757858|Q757860|Q76017|Q768261|Q769062|Q770211|Q771546|Q780374|Q786334|Q787763|Q790339|Q790340|Q790400|Q791134|Q793072|Q796656|Q796938|Q804064|Q807296|Q808848|Q81139|Q815283|Q816115|Q816746|Q820659|Q826511&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:14.912610+00:00",
+      "sha256": "906a616ba0365e8f348a95ef896b2fbc72f48f52db470a71950f61f178d997fb",
+      "bytes": 995833,
+      "licence": "CC0",
+      "path": "sources/wd_0960.json"
+    },
+    {
+      "id": "wd_1000.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q841304|Q850697|Q850837|Q850855|Q861199|Q861208|Q861464|Q861584|Q861589|Q861592|Q862822|Q863692|Q863744|Q866595|Q888361|Q894746|Q895329|Q915093|Q917319|Q917326|Q917330|Q917335|Q917535|Q919362|Q919898|Q923784|Q924723|Q926700|Q928716|Q932115|Q932771|Q933912|Q93497|Q934992|Q93629|Q936904|Q936943|Q938288|Q941958|Q944452&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:22.948609+00:00",
+      "sha256": "29c4d16de83942ac4a8c63fe6b951ca00a08a71ac7425df15c755d0f3bcbdad2",
+      "bytes": 1059362,
+      "licence": "CC0",
+      "path": "sources/wd_1000.json"
+    },
+    {
+      "id": "wd_1040.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q946398|Q950399|Q951481|Q954974|Q955793|Q957663|Q959668|Q960058|Q961456|Q963573|Q966825|Q969311|Q972747|Q978535|Q983483|Q984656|Q985519|Q986017|Q986019|Q986079|Q986093|Q986095|Q986419|Q986741|Q987964|Q988667|Q988830|Q988846|Q990177|Q990335|Q990365|Q990381|Q990403|Q990418|Q990422|Q990433|Q990439|Q990448|Q990460|Q992328&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:31.043818+00:00",
+      "sha256": "c4b1570a3469dd9d35456ab9e5b74e9873c4eee1bd3fc812f553720f90c7d6ad",
+      "bytes": 1074772,
+      "licence": "CC0",
+      "path": "sources/wd_1040.json"
+    },
+    {
+      "id": "wd_1080.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q992645|Q994626|Q995176|Q995183|Q995188|Q995202|Q995297|Q997608|Q997658|Q999446&props=claims|labels&languages=pt|en&format=json",
+      "edition": "live retrieval",
+      "retrieved_utc": "2026-10-20T09:48:38.903564+00:00",
+      "sha256": "a30910d5e9e29e0b4c5211bfafb90f5e10c4652908a7d10a83ba121aabf175d6",
+      "bytes": 282201,
+      "licence": "CC0",
+      "path": "sources/wd_1080.json"
+    }
+  ],
+  "methods": {
+    "F": "Same current explicit freguesia on literal own Wikidata item, unique active P6324 DICOFRE, same 2021 and 2025 code/name; stored and own-item points both in that BGRI parish, same ISO district/region, own P131 and stored parent checked for municipality conflicts. Count=sum N_INDIVIDUOS over unique BGRI subsections, independently equal to section-workbook sum. No aggregation across successor boundaries.",
+    "L": "Literal own item has explicit settlement class, no active/current/former parish or municipality class and no own administrative code. Stored name and own label match one official 2021 LUG21DESIG; both stored and own-item points in that unique LUG21COD polygon, same concelho and ISO district/region. A coded immediate own P131 parent must corroborate that concelho; stored parent cannot conflict. Count=whole-lugar NRES_LG; never a parish count or a clipped fragment. Legal cidades and vilas additionally held pending statistical-unit territorial-equivalence proof; matching names and points do not establish that a lugar covers a legal town.",
+    "H": "Any failed binding, unresolved legacy identity, unsupported geometry, reform continuity or latest-estimate acquisition gate stays unchanged. Municipalities held because a current same-entity estimate could not be verified. No latest-count agreement is claimed for a held row.",
+    "identity": "Baseline plus subsequent reviewed identity events in first-parent order. All retained unresolved keys held; no decision-only event necessary. v4.0 row retained in full ledger for every row. Code or point alone is not identity proof."
+  },
+  "coverage": {
+    "total": 1276,
+    "held": 1040,
+    "population_set": 35,
+    "F": 13,
+    "changed": 38,
+    "unchanged": 198,
+    "L": 22,
+    "year_only": 3
+  },
+  "caveats": [
+    "Municipality latest estimates unavailable; all municipality rows held.",
+    "No cidade estatística or legal vila equivalence assumed from lugar name/point.",
+    "Unresolved retained keys held; no identity event invented.",
+    "INE reuse terms and CDA2025 archived on 2026-10-09, with original receipts; live portal unavailable.",
+    "National lugares population sum excludes isolated population outside named lugares; never rescaled."
+  ]
+}
