@@ -7,6 +7,8 @@ name: Format and import tests
 on:
   pull_request:
     paths:
+      # data PRs too: #2141 and #2146 reached master failing the round trip because data-only PRs skipped it
+      - 'contributions/**'
       - 'bin/**'
       - 'migrations/**'
       - 'prisma/**'

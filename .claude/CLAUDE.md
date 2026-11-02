@@ -136,7 +136,7 @@ Downstream projects (csc-export-tool, countrystatecity npm/pypi packages) downlo
 | `stale-cleanup.yml` | Weekly (Sunday) | Warn PRs inactive 21+ days, close at 30+ |
 | `weekly-digest.yml` | Weekly (Monday 9am IST) | Slack summary of repo status; opens the weekly `CHANGELOG.md` PR |
 | `issue-autoassign.yml` | Issue labelled `data-correction` | Comment a checklist on a sparse report, add `help-wanted` |
-| `format-tests.yml` | PR touching `bin/`, `migrations/`, `prisma/` or `.github/scripts/` | Format, import and release-tool tests |
+| `format-tests.yml` | PR touching `contributions/`, `bin/`, `migrations/`, `prisma/` or `.github/scripts/` | Format, import and release-tool tests, including the MySQL round trip (new rows must omit a null `county_id`) |
 | `ledger-migrations.yml` | Every PR (required check) | Validates the PR's migration ledger events against its merge preview |
 | `pullfrog.yml` | Dispatched by the Pullfrog app | AI review agent (OSS plan); it reads untrusted PRs and issues, so no credential is in its environment |
 | `untrusted-content-watch.yml` | Issue, comment or PR description from an outside contributor | Labels `security-review` and alerts Slack on injection signs (hidden commands, workflow expressions, AI-agent instructions, exfiltration hosts) |
