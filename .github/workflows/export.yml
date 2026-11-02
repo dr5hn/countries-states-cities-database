@@ -181,6 +181,9 @@ jobs:
         run: |
           cp nmig.config.json nmig/config/config.json
           cd nmig
+          # NMIG 6dee39f3 can drop its state table while the cities table is still building its constraints;
+          # the patch waits for every table (see .github/patches/nmig-constraints-race.patch). Fails the run if it no longer applies.
+          git apply --verbose ../.github/patches/nmig-constraints-race.patch
           npm install
           npm run build
           npm start
