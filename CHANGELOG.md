@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11
+- **2026-10-31** - PR [#1674](https://github.com/dr5hn/countries-states-cities-database/pull/1674): Updated countries (by @dr5hn)
+- **2026-10-29** - PR [#2144](https://github.com/dr5hn/countries-states-cities-database/pull/2144): Updated cities (BA, BJ, BO, CO, CR) (by @dr5hn)
+- **2026-10-29** - PR [#2142](https://github.com/dr5hn/countries-states-cities-database/pull/2142): Updated cities (US) (by @dr5hn)
+- **2026-10-29** - PR [#2137](https://github.com/dr5hn/countries-states-cities-database/pull/2137): Updated cities (RU) (by @dr5hn)
+- **2026-10-29** - PR [#2108](https://github.com/dr5hn/countries-states-cities-database/pull/2108): Updated cities (CN) (by @sunshang-hl)
+- **2026-10-27** - PR [#2135](https://github.com/dr5hn/countries-states-cities-database/pull/2135): Updated cities (IE) (by @dr5hn)
+- **2026-10-27** - PR [#2134](https://github.com/dr5hn/countries-states-cities-database/pull/2134): Updated cities (US) (by @dr5hn)
+- **2026-10-27** - PR [#2132](https://github.com/dr5hn/countries-states-cities-database/pull/2132): Updated cities (GB) (by @dr5hn)
+- **2026-10-27** - PR [#2133](https://github.com/dr5hn/countries-states-cities-database/pull/2133): Updated cities (GE, KZ, MA, MD, MY) (by @dr5hn)
+- **2026-10-26** - PR [#2131](https://github.com/dr5hn/countries-states-cities-database/pull/2131): Updated cities (CN) (by @dr5hn)
+- **2026-10-26** - PR [#2130](https://github.com/dr5hn/countries-states-cities-database/pull/2130): Updated cities (AR, AU, BR, CL, MX) (by @dr5hn)
+- **2026-10-26** - PR [#2128](https://github.com/dr5hn/countries-states-cities-database/pull/2128): Updated cities (RU) (by @dr5hn)
+- **2026-10-26** - PR [#2127](https://github.com/dr5hn/countries-states-cities-database/pull/2127): Updated cities (PH) (by @dr5hn)
+- **2026-10-26** - PR [#2126](https://github.com/dr5hn/countries-states-cities-database/pull/2126): Updated cities (AR, AU, BR, CA, ID) (by @dr5hn)
+- **2026-10-26** - PR [#2125](https://github.com/dr5hn/countries-states-cities-database/pull/2125): Updated cities (AR, AU, BR, CA, KI) (by @dr5hn)
+
 ## v4.0 — 2026-10-09
 
 Major release: official administrative structure for 11 countries, a new counties dataset, and six months of data
