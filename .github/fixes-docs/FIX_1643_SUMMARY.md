@@ -158133,3 +158133,9 @@ India 20, 77; France 46, 2) it is a whole-degree approximate point, and it lies 
 
 ### Rollback
 Revert the PR (squash commit).
+
+## Manitoba on permanent UTC−5 (tzdata 2026e)
+
+Manitoba moves to permanent UTC−5 on 2026-10-31 (IANA tzdata 2026e). Canada's `America/Winnipeg` and
+`America/Rainy_River` entries in `countries.json` (standard offsets) change from −21600 / UTC−06:00 / CST to
+−18000 / UTC−05:00 / EST. Rollback: revert the PR. Files: `contributions/countries/countries.json` (2 entries).
