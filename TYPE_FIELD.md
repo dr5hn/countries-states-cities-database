@@ -114,11 +114,22 @@ identifier, parent or table change is authorized by this type correction.
 
 ### Mexico
 
+Localidades at level 3 link by `parent_id` to their own level-2 municipio or Mexico City alcaldía city row; an official cabecera point may represent a municipio only when it lies inside that municipio, and its population is the municipio total.
+
 In `MX.json`, `adm1` is a state-capital town, `adm2` a municipal-seat town (GeoNames PPLA2) and
 `municipality` the municipal territory itself (GeoNames ADM2), so a municipality and its seat town can both
 appear (e.g. Medellín and Medellín de Bravo). To list only settlements in Mexico, leave out `municipality`.
 
 For reviewed rows, INEGI catalogue AMBITO U/R maps to `locality / localidad urbana` or `locality / localidad rural` at level 3; cabecera is a seat role and does not itself establish urban class. A legacy place-typed row is corrected to `municipality / municipio` at level 2 only when its literal v4 own item is the municipio (own P3801 and municipality class), the official code/name/state and current municipal polygon agree, and the unchanged point lies inside that territory. An item naming the seat cannot take its municipality's class.
+
+### Poland
+
+In `PL.json`, `municipality` is a gmina (`gmina wiejska` or `gmina miejsko-wiejska`), the council area at level 3,
+not a town. An urban-rural gmina and its town can share a name (Krobia, Nowogrodziec), and the gmina's population
+includes the town's, so do not add the two. An urban gmina (`gmina miejska`) is the town itself and is typed `city`.
+Villages (`village` / `wieś`) and towns (`city` / `miasto`) are level 4, linked by `parent_id` to their gmina where
+the gmina has a reviewed row (474 are not yet linked). This describes reviewed rows: 88 legacy `adm3` and 4 `adm2` rows
+are not yet reviewed and can also be gminy. To list only settlements in Poland, leave out `municipality`, `adm2` and `adm3`.
 
 ### Cuba
 
