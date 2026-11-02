@@ -1,0 +1,40 @@
+--- a/src/data-pipe-manager.ts
++++ b/src/data-pipe-manager.ts
+@@ -163,20 +163,30 @@
+         return resolve(conversion);
+       }
+ 
++      // Tables whose constraints are still being processed. Without this count, the last table to finish loading
++      // resolves the pipe while a larger table (e.g. cities) is still creating indexes and comments, and its later
++      // state update fails once the state-logs table has been dropped (countries-states-cities-database patch).
++      let pendingConstraints = 0;
++
+       // Register a listener for the "tableLoadingFinished" event.
+       DataPipeManager.eventEmitter.on(
+         DataPipeManager.tableLoadingFinishedEvent,
+         async (tableName: string): Promise<void> => {
+-          await processConstraintsPerTable(
+-            conversion,
+-            tableName,
+-            conversion.shouldMigrateOnlyData(),
+-          );
++          pendingConstraints++;
++          try {
++            await processConstraintsPerTable(
++              conversion,
++              tableName,
++              conversion.shouldMigrateOnlyData(),
++            );
++          } finally {
++            pendingConstraints--;
++          }
+ 
+           // Check a number of active reader processes on the event of "tableLoadingFinished".
+           // If no active reader processes found, then all the data is transferred,
+-          // hence Nmig can proceed to the next step.
+-          if (DataPipeManager.readerProcessesCount === 0) {
++          // hence Nmig can proceed to the next step, once no table's constraints are still in progress.
++          if (DataPipeManager.readerProcessesCount === 0 && pendingConstraints === 0) {
+             await migrationStateManager.set(conversion, 'per_table_constraints_loaded');
+             return resolve(conversion);
+           }
