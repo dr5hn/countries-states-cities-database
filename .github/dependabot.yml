@@ -1,0 +1,15 @@
+# Keeps the commit-SHA pins in .github/workflows current. Once a week Dependabot opens one PR that moves every
+# action to its newest release that is at least 7 days old: the wait gives a hijacked release time to be caught
+# before it reaches us. Pins stay full SHAs with the version in a trailing comment, as the repo's
+# sha_pinning_required setting demands. Read the release notes in the PR before merging; they are untrusted text.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      actions:
+        patterns: ['*']
