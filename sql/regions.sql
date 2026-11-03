@@ -51,4 +51,4 @@ INSERT INTO `regions` (`id`, `name`, `translations`, `created_at`, `updated_at`,
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-11-02  7:39:04
+-- Dump completed on 2026-11-03  8:01:52
