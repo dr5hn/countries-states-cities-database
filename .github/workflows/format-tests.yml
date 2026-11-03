@@ -7,6 +7,8 @@ name: Format and import tests
 on:
   pull_request:
     paths:
+      # data PRs too: #2141 and #2146 reached master failing the round trip because data-only PRs skipped it
+      - 'contributions/**'
       - 'bin/**'
       - 'migrations/**'
       - 'prisma/**'
@@ -24,11 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
 
@@ -44,7 +46,7 @@ jobs:
       - name: Export converter tests
         run: python -m unittest discover -s bin/scripts/export -p 'test_*.py'
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'   # as the PR Validator; its lock needs >=22 (content-type 3)
 
@@ -69,11 +71,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
-      - uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
         with:
           php-version: '8.2'
 
@@ -81,7 +83,7 @@ jobs:
         working-directory: bin
         run: composer install --no-interaction --prefer-dist --no-progress
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.12'
 
@@ -127,7 +129,7 @@ jobs:
       - name: Check the city with no state in each format
         run: python3 bin/db/tests/check_null_state_exports.py 999001 EH
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '26'
 

@@ -549,6 +549,13 @@ redistribution basis. Row identity: `code_locality`. Recorded replacement: GeoNa
 (GeoNames [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); credit "Source: GeoNames"). Philippines retains 1373 same-scope postcode IDs (1254 codes), queues 18 IDs for v5, retains 1373 fresh labels, 1373 source-supported point pairs and 994 state links, and clears 0 existing city links on kept rows. Queued rows keep their current values until the v5 ledger.
 Edition ledger: `.github/fixes-docs/ledgers/PH_postcodes_2026-10.sources.json`.
 
+**Pakistan (October 2026):** new postcode file sourced from the GeoNames postal code dump of 29 October 2026
+(`geonames-postal`; [CC BY 4.0](https://download.geonames.org/export/zip/readme.txt)). Credit: "Source: GeoNames,
+Pakistani postal code dump, 29 October 2026". Modification: GeoNames admin1 codes mapped to CSC states
+(`02`→BA, `03`→KP, `04`→PB, `05`→SD, `06`→JK, `07`→GB, `08`→IS); `city_id` left null on every row. Points are
+GeoNames' estimates, not delivery-area centroids. 2,563 code/locality rows. Pakistan Post's published directory was
+not used; its redistribution terms were not established for bulk reuse.
+
 **Saint Pierre and Miquelon (final rebuild, October 2026):** the earlier `manual` copy had no established
 redistribution basis. Row identity: `code`. Recorded replacement: GeoNames postal snapshot 13 October 2026
 (GeoNames [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); credit "Source: GeoNames"). Saint Pierre and Miquelon retains 1 same-scope postcode IDs (1 codes), queues 0 IDs for v5, retains 0 fresh labels, 0 source-supported point pairs and 0 state links, and clears 0 existing city links on kept rows. Queued rows keep their current values until the v5 ledger.
