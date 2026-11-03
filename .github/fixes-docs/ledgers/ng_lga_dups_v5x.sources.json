@@ -1,0 +1,437 @@
+{
+ "ledger": "ng_lga_dups_v5x.jsonl",
+ "records": 36,
+ "base_commit": [
+  "c8a236645ee4ac5ce3d1a1d6b07ab701a120a5ec"
+ ],
+ "full_ledger_sha256": "cffd8732797ebbd488d0e681e6670c1fb81c87f69fc3a6024375912ab0364c70",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "v4.0 Aba has the exact name and unchanged point/population of its GeoNames source: 2353151, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701374 Aba South with the same GeoNames admin codes. Both stored points lie in OCHA NG001002 Aba South; INEC ABIA 02 - ABA SOUTH identifies that LGA. The v4.0 item Q202162 independently corroborates the settlement through P1566=2353151; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174202 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "Build 2: use generic settlement type city for all 36; no population or Wikidata class threshold. Preserve literal v4.0 type_local absence/null. Build 1 identity reason is retained verbatim as requested; its category wording is superseded by these explicit after values.",
+  "v4.0 Afikpo has the exact name and unchanged point/population of its GeoNames source: 2352250, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7730004 Afikpo North with the same GeoNames admin codes. Both stored points lie in OCHA NG011002 Afikpo; INEC EBONYI 02 - AFIKPO identifies that LGA. The v4.0 item Q4689247 independently corroborates the settlement through P1566=2352250; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174215 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Agenebode has the exact name and unchanged point/population of its GeoNames source: 2351927, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636773 Etsako East with the same GeoNames admin codes. Both stored points lie in OCHA NG012008 Etsako East; INEC EDO 08 - ETSAKO EAST identifies that LGA. The v4.0 item Q3509527 independently corroborates the settlement through P1566=2351927; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174361 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Auchi has the exact name and unchanged point/population of its GeoNames source: 2348892, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636774 Etsako West with the same GeoNames admin codes. Both stored points lie in OCHA NG012009 Etsako West; INEC EDO 09 - ETSAKO  WEST identifies that LGA. The v4.0 item Q3509036 independently corroborates the settlement through P1566=2348892; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174362 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Azare has the exact name and unchanged point/population of its GeoNames source: 2348595, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8634300 Katagum with the same GeoNames admin codes. Both stored points lie in OCHA NG005012 Katagum; INEC BAUCHI 12 - KATAGUM identifies that LGA. The v4.0 item Q793588 independently corroborates the settlement through P1566=2348595; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174518 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Bukuru has the exact name and unchanged point/population of its GeoNames source: 2346561, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8634513 Jos South with the same GeoNames admin codes. Both stored points lie in OCHA NG032006 Jos South; INEC PLATEAU 06 - JOS SOUTH identifies that LGA. The v4.0 item Q4987153 independently corroborates the settlement through P1566=2346561; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174497 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Damasak has the exact name and unchanged point/population of its GeoNames source: 2345526, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8659823 Mobbar with the same GeoNames admin codes. Both stored points lie in OCHA NG008023 Mobbar; INEC BORNO 23 - MOBBAR identifies that LGA. The v4.0 item Q15043598 independently corroborates the settlement through P1566=2345526; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174578 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Efon-Alaaye has the exact name and unchanged point/population of its GeoNames source: 2343983, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636730 Efon with the same GeoNames admin codes. Both stored points lie in OCHA NG013003 Efon; INEC EKITI 02 - EFON identifies that LGA. The v4.0 item Q1296439 independently corroborates the settlement through P1566=2343983; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174333 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ekpoma has the exact name and unchanged point/population of its GeoNames source: 2343641, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636766 Esan West with the same GeoNames admin codes. Both stored points lie in OCHA NG012006 Esan West; INEC EDO 06 - ESAN WEST identifies that LGA. The v4.0 item Q3511311 independently corroborates the settlement through P1566=2343641; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174355 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Emure-Ekiti has the exact name and unchanged point/population of its GeoNames source: 2343299, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636742 Emure with the same GeoNames admin codes. Both stored points lie in OCHA NG013007 Emure; INEC EKITI 06 - EMURE identifies that LGA. The v4.0 item Q3511311 is Ekpoma (P1566 2343641), a wrong inherited identifier, already cleared at the pin; it does not establish Emure LGA identity. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174348 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Gashua has the exact name and unchanged point/population of its GeoNames source: 2341656, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8659866 Barde with the same GeoNames admin codes. Both stored points lie in OCHA NG036001 Bade; INEC YOBE 01 - BADE identifies that LGA. The v4.0 item Q5526456 independently corroborates the settlement through P1566=2341656; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174267 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Igbo-Ora has the exact name and unchanged point/population of its GeoNames source: 2338669, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636319 Ibarapa Central with the same GeoNames admin codes. Both stored points lie in OCHA NG031011 Ibarapa Central; INEC OYO 11 - IBARAPA CENTRAL identifies that LGA. The v4.0 item Q5991559 independently corroborates the settlement through P1566=2338669; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174411 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Igboho has the exact name and unchanged point/population of its GeoNames source: 2338711, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701492 Orelope with the same GeoNames admin codes. Both stored points lie in OCHA NG031027 Orelope; INEC OYO 27 - OORELOPE identifies that LGA. The v4.0 item Q5991613 independently corroborates the settlement through P1566=2338711; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174659 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ijebu-Jesa has the exact name and unchanged point/population of its GeoNames source: 2338401, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701483 Oriade with the same GeoNames admin codes. Both stored points lie in OCHA NG030028 Oriade; INEC OSUN 28 - ORIADE identifies that LGA. The v4.0 item Q3509424 independently corroborates the settlement through P1566=2338401; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174662 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ikire has the exact name and unchanged point/population of its GeoNames source: 2338273, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701477 Irewole with the same GeoNames admin codes. Both stored points lie in OCHA NG030021 Irewole; INEC OSUN 21 - IREWOLE identifies that LGA. The v4.0 item Q2749233 independently corroborates the settlement through P1566=2338273; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174469 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ikirun has the exact name and unchanged point/population of its GeoNames source: 2338269, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701474 Ifelodun with the same GeoNames admin codes. Both stored points lie in OCHA NG030016 Ifelodun; INEC OSUN 14 - IFELODUN identifies that LGA. The v4.0 item Q3511297 independently corroborates the settlement through P1566=2338269; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174427 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ila Orangun has the exact name and unchanged point/population of its GeoNames source: 2337765, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701475 Ila with the same GeoNames admin codes. Both stored points lie in OCHA NG030017 Ila; INEC OSUN 17 - ILA identifies that LGA. The v4.0 item Q3498903 independently corroborates the settlement through P1566=2337765; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174452 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ilaro has the exact name and unchanged point/population of its GeoNames source: 2337759, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636324 Egbado South with the same GeoNames admin codes. Both stored points lie in OCHA NG028005 Yewa South; INEC OGUN 05 - YEWA SOUTH identifies that LGA. The v4.0 item Q5997200 independently corroborates the settlement through P1566=2337759; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174335 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ilesa has the exact name and unchanged point/population of its GeoNames source: 2337704, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636375 Ilesha West with the same GeoNames admin codes. Both stored points lie in OCHA NG030019 Ilesha West; INEC OSUN 19 - ILESA WEST identifies that LGA. The v4.0 item Q763595 independently corroborates the settlement through P1566=2337704; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174457 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ilobu has the exact name and unchanged point/population of its GeoNames source: 2337659, offset 0.2153 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701476 Irepodun with the same GeoNames admin codes. Both stored points lie in OCHA NG030020 Irepodun; INEC OSUN 20 - IREPODUN identifies that LGA. The v4.0 item Q3845161 independently corroborates the settlement through P1566=2337659; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174467 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ise-Ekiti has the exact name and unchanged point/population of its GeoNames source: 2337207, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636743 Ise/Orun with the same GeoNames admin codes. Both stored points lie in OCHA NG013014 Ise/Orun; INEC EKITI 14 - ISE / ORUN identifies that LGA. The v4.0 item Q3140630 independently corroborates the settlement through P1566=2337207; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174471 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Mubi has the exact name and unchanged point/population of its GeoNames source: 2329821, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8659799 Mubi North with the same GeoNames admin codes. Both stored points lie in OCHA NG002014 Mubi North; INEC ADAMAWA 14 - MUBI NORTH identifies that LGA. The v4.0 item Q1951627 independently corroborates the settlement through P1566=2329821; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174582 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Nnewi has the exact name and unchanged point/population of its GeoNames source: 2328765, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8638038 Nnewi North with the same GeoNames admin codes. Both stored points lie in OCHA NG004014 Nnewi North; INEC ANAMBRA 14 - NNEWI NORTH identifies that LGA. The v4.0 item Q2750772 independently corroborates the settlement through P1566=2328765; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174601 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Obiaruku has the exact name and unchanged point/population of its GeoNames source: 2328276, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7729940 Ukwuani with the same GeoNames admin codes. Both stored points lie in OCHA NG010021 Ukwuani; INEC DELTA 21 - UKWUANI identifies that LGA. The v4.0 item Q7074926 independently corroborates the settlement through P1566=2328276; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174753 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Oyo has the exact name and unchanged point/population of its GeoNames source: 2325200, offset 0.1719 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7730062 Oyo West with the same GeoNames admin codes. Both stored points lie in OCHA NG031030 Oyo West; INEC OYO 30 - OYO WEST identifies that LGA. The v4.0 item Q1023703 independently corroborates the settlement through P1566=2325200; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174685 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Saki has the exact name and unchanged point/population of its GeoNames source: 2323390, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7730066 Saki West with the same GeoNames admin codes. Both stored points lie in OCHA NG031032 Saki West; INEC OYO 32 - SAKI WEST identifies that LGA. The v4.0 item Q3500788 independently corroborates the settlement through P1566=2323390; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174705 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ugep has the exact name and unchanged point/population of its GeoNames source: 2320831, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8638546 Yakurr with the same GeoNames admin codes. Both stored points lie in OCHA NG009018 Yakurr; INEC CROSS RIVER 17 - YAKURR identifies that LGA. The v4.0 item Q3084715 independently corroborates the settlement through P1566=2320831; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174777 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ughelli has the exact name and unchanged point/population of its GeoNames source: 2320829, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7729938 Ughelli North with the same GeoNames admin codes. Both stored points lie in OCHA NG010019 Ughelli North; INEC DELTA 19 - UGHELLI NORTH identifies that LGA. The v4.0 item Q3509166 independently corroborates the settlement through P1566=2320829; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174746 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ahoada has the exact name and unchanged point/population of its GeoNames source: 2351657, offset 0.0628 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8638107 Ahoada East with the same GeoNames admin codes. Both stored points lie in OCHA NG033002 Ahoada East; INEC RIVERS 02 - AHOADA EAST identifies that LGA. The v4.0 item Q3510354 independently corroborates the settlement through P1566=2351657; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174222 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ilawe-Ekiti has the exact name and unchanged point/population of its GeoNames source: 2337749, offset 0.4522 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636745 Ekiti South-West with the same GeoNames admin codes. Both stored points lie in OCHA NG013005 Ekiti South West; INEC EKITI 05 - EKITI SOUTH WEST identifies that LGA. The v4.0 item Q3509400 independently corroborates the settlement through P1566=2337749; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174343 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Abagana has the exact name and unchanged point/population of its GeoNames source: 2353122, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701533 Njikoka with the same GeoNames admin codes. Both stored points lie in OCHA NG004013 Njikoka; INEC ANAMBRA 13 - NJIKOKA identifies that LGA. The v4.0 item Q89380599 independently corroborates the settlement through P1566=2353122; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174597 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Dikenafai has the exact name and unchanged point/population of its GeoNames source: 2344861, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8638294 Ideato South with the same GeoNames admin codes. Both stored points lie in OCHA NG017006 Ideato South; INEC IMO 06 - IDEATO SOUTH identifies that LGA. The v4.0 item Q25105778 independently corroborates the settlement through own settlement name and P31, with no separate LGA class; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174415 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ibokun has the exact name and unchanged point/population of its GeoNames source: 2339220, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 8636374 Obokun with the same GeoNames admin codes. Both stored points lie in OCHA NG030024 Obokun; INEC OSUN 24 - OBOKUN identifies that LGA. The v4.0 item Q17153133 independently corroborates the settlement through own settlement name and P31, with no separate LGA class; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174611 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 New Bussa has the exact name and unchanged point/population of its GeoNames source: 2329132, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7729987 Borgu with the same GeoNames admin codes. Both stored points lie in OCHA NG027004 Borgu; INEC NIGER 04 - BORGU identifies that LGA. The v4.0 item Q3509196 independently corroborates the settlement through P1566=2329132; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174296 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Ozoro has the exact name and unchanged point/population of its GeoNames source: 2319597, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7729922 Isoko North with the same GeoNames admin codes. Both stored points lie in OCHA NG010009 Isoko North; INEC DELTA 09 - ISOKO NORTH identifies that LGA. The v4.0 item Q7116654 independently corroborates the settlement through P1566=2319597; existing item value is retained. Same-entity classification corrects type to city, type_local to town and level to 3; parent_id=174480 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred.",
+  "v4.0 Umunze has the exact name and unchanged point/population of its GeoNames source: 2343269, offset 0.0 km (null population retained where source has 0), class P/PPLA2 (headquarters settlement), distinct from A/ADM2 7701537 Orumba South with the same GeoNames admin codes. Both stored points lie in OCHA NG004020 Orumba South; INEC ANAMBRA 20 - ORUMBA  SOUTH identifies that LGA. The v4.0 item Q7881858 independently corroborates the settlement through own settlement name and P31, with no separate LGA class; existing item value is retained. Same-entity classification corrects type to town, type_local to town and level to 3; parent_id=174668 links the distinct level-2 LGA. Retain original id, name, point and population; the populated-place population matches exactly, or the existing null is retained rather than converting source zero to a count; it is not proved to be an LGA total. No population year inferred."
+ ],
+ "sources": [
+  {
+   "archive": "runs/review_2148/geonames_ng.zip",
+   "licence": "CC BY 4.0",
+   "sha256": "8fcda2c6e7a67aaf11e7f3556dfc4c21bf8aba21f0490c2a8fbb4cc1b3d59b3b",
+   "url": "https://download.geonames.org/export/dump/NG.zip"
+  },
+  {
+   "archive": "runs/review_2148/ocha_boundaries.zip",
+   "credit": "OSGOF, Ehealth, UNCS; UN OCHA",
+   "edition": "adm2 valid_on 2019-04-17; v01",
+   "licence": "CC BY-IGO 3.0",
+   "sha256": "40180271a90a545153f97eee044db1c46ec67cba51788529df9a25918abd1d92",
+   "url": "https://data.humdata.org/dataset/cod-ab-nga"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/NG_lga_points_2026-10.csv",
+   "credit": "OCHA COD-AB / Open Admin Data Nigeria",
+   "licence": "CC BY-IGO 3.0 / CC BY 4.0",
+   "sha256": "2e6ae470edf0a00196f85312103def105d8c6028817637301afac483080a1ae1",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/blob/c8a236645ee4ac5ce3d1a1d6b07ab701a120a5ec/.github/fixes-docs/ledgers/NG_lga_points_2026-10.csv"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_01.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "aea0aa26068ce1cd43dbe8a853b4315518d7f374c63531b03aeb6bd16448c122",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=1"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q202162.json",
+   "licence": "CC0",
+   "revision": 2532331197,
+   "sha256": "76727a55c6b107abaf08060636f798946111124c6df3ef5b89442d1478087f1d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q202162.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/geonames_featurecodes.txt",
+   "licence": "CC BY 4.0",
+   "sha256": "d44f129c1cffdeabf759c99fe7ea5b84f615c7f3e7366fb76ccf990f408f6af7",
+   "url": "https://download.geonames.org/export/dump/featureCodes_en.txt"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_11.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "eb688fd26956dd122b3007c4580627e191cf5df249922522b1a0bc4214b334aa",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=11"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q4689247.json",
+   "licence": "CC0",
+   "revision": 2521349450,
+   "sha256": "157a92b7688f147254d2cff2d68e49116576739a4161381e5d88f63e409bdf14",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4689247.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_12.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "a30b4da4b35b2a95290f5b939ca49d6327eced17cb62a08d1dca86f4ebf3a2f1",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=12"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509527.json",
+   "licence": "CC0",
+   "revision": 2521349366,
+   "sha256": "a557438f1c2966e366dcf7cb8a0ff69e4cd341f170ea11d5093a65880c9d9431",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509527.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509036.json",
+   "licence": "CC0",
+   "revision": 2495116867,
+   "sha256": "c6e90beb8f6ae964de95663b43918e99f0dd0ef8e2120bc02ed0409faec9a201",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509036.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_05.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "e86b548adaeaacc72826233b10d96f89a871ad5875de5cf3a86a08fc034e6e95",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=5"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q793588.json",
+   "licence": "CC0",
+   "revision": 2532381508,
+   "sha256": "a55b2803bc8bd2d64303bdbe915d3358cb568c931123024a93ad130c64ca9dbc",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q793588.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_31.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "3c56c4cfd3374a985c472116306d8ea5c7e3281890ea90f21e280eed359eb020",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=32"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q4987153.json",
+   "licence": "CC0",
+   "revision": 2521349667,
+   "sha256": "5dd89924caaba2429d364f17d2a13be8e3a56516bba0642dd98ede8c44f3416d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4987153.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_08.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "bfd01326e4dcc796a4a408d049b8d9eab05ad648b53b977b87c0987c807c2e74",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=8"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q15043598.json",
+   "licence": "CC0",
+   "revision": 2521348299,
+   "sha256": "90a1404fb35363f85d94f159ba9562ed7114ded6bc2ddf6bc75b7a3b36f48c2e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q15043598.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_13.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "f1b2a4c01d82f98ae0670b0a744cfa76828d03a1aa8c7ecbad2f1dba3f77f624",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=13"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q1296439.json",
+   "licence": "CC0",
+   "revision": 2522971698,
+   "sha256": "ea3eb53bd2cad443d0c98810306c622d0488734cbd510c154b837d2f13f93844",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1296439.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3511311.json",
+   "licence": "CC0",
+   "revision": 2521349399,
+   "sha256": "51d65aca4d8df0f0645ad1d372f0ed8b905864f0071dbf1c842d64e40ae24e57",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3511311.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_35.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "03deaf42388ed47038aef95289cd420fc06f641779af8c5abd342141d1ab11b4",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=36"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q5526456.json",
+   "licence": "CC0",
+   "revision": 2548048618,
+   "sha256": "ce0307c07adccdf9496a5e52d71155177872ccb04f9298f76a1af0d8d1c621ab",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5526456.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_30.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "efe51e20f9b6bcf4fe6a5358b8aefadcfecb16175055a6a9f2bef25d4e5b09c6",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=31"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q5991559.json",
+   "licence": "CC0",
+   "revision": 2521350091,
+   "sha256": "60fe7b1d4228b1ea7523d14a628c89a700b531da6565a54579d5aa5b828b0bd9",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5991559.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q5991613.json",
+   "licence": "CC0",
+   "revision": 2521350101,
+   "sha256": "3a45b61799f17978796918357a6543d592c0beb1d28b84f83f74d4844b3c7482",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5991613.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_29.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "230bc7a73ede251105cf519d82098f34cc8cf52ca5105333dd58214e0a3ca830",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=30"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509424.json",
+   "licence": "CC0",
+   "revision": 2495114532,
+   "sha256": "153f67a56f6fb7c337e0dc9d4d61ea9bfbbf0373a9c1181b2dc3cbce6a5df61d",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509424.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q2749233.json",
+   "licence": "CC0",
+   "revision": 2521348866,
+   "sha256": "25fb31a0994ad1d326663885433d55474ab411c7d2ca405d69a8f6bfb5e8ad50",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2749233.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3511297.json",
+   "licence": "CC0",
+   "revision": 2521349393,
+   "sha256": "308d332bf313580252a3463d5817c90fff0c394e514d783e6a81859116eadef7",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3511297.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3498903.json",
+   "licence": "CC0",
+   "revision": 2503580672,
+   "sha256": "68031b653120eab66e45c8f72683c156d66b56b84bf499c1d6df8929a3bd8265",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3498903.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/osun_ila.html",
+   "finding": "Town and headquarters of Ila Local Government",
+   "licence": "official factual verification; no content relicensing",
+   "sha256": "62dda5d6cae1bc88ae61a6a9c26d89448a8cbb103a669a3e7d91677ec6119ca2",
+   "url": "https://www.osunstate.gov.ng/about/major-towns/ila-orangun/"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_27.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "8f34fa37c83bf1e2cf4ce775136e1e0c9f21544c1978aadfea63cc1e85dfb3ee",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=28"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q5997200.json",
+   "licence": "CC0",
+   "revision": 2538558474,
+   "sha256": "cf762f5faf935e4b6957eb1cc436d2bdd5c23dcb9f4d446494c9e9e243b09490",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5997200.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q763595.json",
+   "licence": "CC0",
+   "revision": 2532336267,
+   "sha256": "1093bf4c2c0d6e6d3a3854f3f6057054480954069243dccf91bb7a6abdc7838a",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q763595.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3845161.json",
+   "licence": "CC0",
+   "revision": 2521349415,
+   "sha256": "92c2dfab88d28f71cb13feef3d52dadbb823f20fa033ac7f09b2edb652776277",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3845161.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3140630.json",
+   "licence": "CC0",
+   "revision": 2549827890,
+   "sha256": "24e7936061be88aebf553a19cf4bcee4a6dc6c9b79cb906f168e71f3d8373c7e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3140630.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_02.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "ed50cd2ac85d1015c55a42e3c71ada1cb3b00579fae55044742094b5935f7ca1",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=2"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q1951627.json",
+   "licence": "CC0",
+   "revision": 2555990626,
+   "sha256": "c2fd7023d801fba4505523d53bf78d485508708a878b4d513d4ba0ced2178eb3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1951627.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_04.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "39645ea5593587d7d0008cd7aee46817dba72487930671e9b017c797fd7ae4a7",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=4"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q2750772.json",
+   "licence": "CC0",
+   "revision": 2555605919,
+   "sha256": "b52445aabe25e013fd8409c759e6757de8113320cc4abbbea57403e5babfa0b0",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2750772.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_10.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "8b84e3aa70a79193005e2132b84c40955a871caae717624f13d579695b845d73",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=10"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q7074926.json",
+   "licence": "CC0",
+   "revision": 2521350599,
+   "sha256": "b90edafd8b09c3daf4706d4bc8064f14377490210fbba222e803a7c9dabf3bc1",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7074926.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q1023703.json",
+   "licence": "CC0",
+   "revision": 2535707095,
+   "sha256": "bf011dde26491cc964d1f7b7d9b2f58b208687d1a5d178cbc5cb485408699c09",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1023703.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3500788.json",
+   "licence": "CC0",
+   "revision": 2527843939,
+   "sha256": "9eb6dffabc465ceb7b0e31334448ce0a134b4d900a2f3acf0cb54a1550da4e84",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3500788.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_09.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "d3da496b6bd6cd5474c8e2f485de07cfa128d3542e473d06cad63f26b2616970",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=9"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3084715.json",
+   "licence": "CC0",
+   "revision": 2521348911,
+   "sha256": "6078eb9ad15ee23c096f79c4461cd720b72c8ab69baf48178e90242d2ee003ef",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3084715.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509166.json",
+   "licence": "CC0",
+   "revision": 2521349354,
+   "sha256": "80591e6275fbc52b3f6e6ed30cac9393c1b02cc86be34c17e63552493bc36ce2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509166.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_32.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "564a97bbd5ea53ea62e244ce193e2d4648222fe5d6ff917d79f0b5f3e28170f5",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=33"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3510354.json",
+   "licence": "CC0",
+   "revision": 2551388699,
+   "sha256": "e560423bba84053fc88044d9e41b51aef02476f83dd709d22c9989c93ff97feb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3510354.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509400.json",
+   "licence": "CC0",
+   "revision": 2521349362,
+   "sha256": "1b7db9569fea57fe9c7f8c1383c6ad37ef41930fc81487416137d38104bc614c",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509400.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q89380599.json",
+   "licence": "CC0",
+   "revision": 2498035314,
+   "sha256": "8ec89b3b17ab00aa4baeb4c6cbdcefae341a0ab9abff82fcff7c6b983dc626bb",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q89380599.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_16.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "5d7a0cf723a6991c0018e83e99ba31bae40f079c2d4831ef683c484acc35104c",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=17"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q25105778.json",
+   "licence": "CC0",
+   "revision": 2521348850,
+   "sha256": "a689cc45e2407005fb5432fbd9c8e32d4037f94a136a685fcb8e3353cc37ff98",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q25105778.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q17153133.json",
+   "licence": "CC0",
+   "revision": 2521348719,
+   "sha256": "bf1c9f8e617a3914d03eeff201abcb63011a49462f41ac6691bfa5274f1562ef",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17153133.json"
+  },
+  {
+   "archive": "runs/review_2148/current_inec_lgas_state_26.json",
+   "licence": "official roster, factual identifier/name verification",
+   "sha256": "0950ce379cd290d0e198ba091225b987aaa26b81b89e32a8d680e2013d3586ff",
+   "url": "https://cvr.inecnigeria.org/PublicApi/lgas/1/Search?data%5BSearch%5D%5Bstate_id%5D=27"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q3509196.json",
+   "licence": "CC0",
+   "revision": 2521349358,
+   "sha256": "2138bad2bec90d7dca55bf2aaebee2eb78279c3e35ba5ae3632e5d8cf19e3afa",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3509196.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q7116654.json",
+   "licence": "CC0",
+   "revision": 2532335619,
+   "sha256": "00caef289d1a570a8ab6b7ae33d02fcc76535799fa6ffa0206018b15ee927b23",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7116654.json"
+  },
+  {
+   "archive": "runs/specs/ng_lga_dups_v5x/work/sources/wd_Q7881858.json",
+   "licence": "CC0",
+   "revision": 2521351148,
+   "sha256": "8ca002dd3db95d41ed468af333eba4357b0ef95013c3cea688f80a23104652c3",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7881858.json"
+  }
+ ]
+}
