@@ -388,3 +388,7 @@ CN city `level` follows depth in the official hierarchy: prefecture 2, county-le
 County-level units directly under a province-level municipality or a province are 2 (for example the districts and counties of Beijing, Tianjin, Shanghai and Chongqing, and Hainan's directly administered county-level cities and counties); their townships are 3, as are townships directly under no-county prefectures such as Dongguan and Zhongshan.
 Unproved tiers, own-item/type conflicts and excluded territories remain held in the [per-record ledger](.github/fixes-docs/ledgers/cn_levels_v5x.jsonl).
 Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 58 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019, and Jiangmen, Dongguan and Zhongshan in Guangdong.
+
+### Romania
+
+A UAT (unitate administrativ-teritorială) is a level 2 city-table row under its județ: a comună has type `municipality` and type_local `comună`, an oraș has type `town` and type_local `oraș`, and a municipiu has type `city` and type_local `municipiu`. Its parent_id is null. Villages (`village`, sat) and localities (`locality`) are level 3 and link to their UAT by parent_id. A seat village and its same-named commune are distinct entities. To list only settlements, leave out Romanian rows of type `municipality`.
