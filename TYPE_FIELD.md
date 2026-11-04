@@ -301,6 +301,34 @@ licence **CC-BY 4.0**. DGT's exact licence statement is preserved in the sources
 reuse is free, with attribution to Direção-Geral do Território. Island containment uses
 Esri Portugal's CAOP2025 mirror under CC-BY-4.0; no geometry or points are copied into rows.
 
+### Morocco
+
+In `MA.json`, a reviewed commune is `municipality / جماعة`, bound by its own HCP RGPH 2024 legal register code
+(Wikidata P11958). The commune is the territorial unit, not its seat village or town, which can share its name.
+The urban or rural subtype is set only where the register proves it. Levels, points and ancestry are unchanged.
+These rows were `adm3` before, and the settlement filter below returns them as it did then; Morocco has no
+documented exclusion.
+
+### Serbia
+
+In `RS.json`, a reviewed opština is `municipality / opština`, bound by its own RZS register code (Wikidata P3727).
+The municipality is the territory, not its seat: the census lists Lapovo municipality, Lapovo varošica and Lapovo
+selo separately. A row whose v4.0 identity is unresolved changes only with a reviewed classification event.
+The settlement filter returns these rows as it did when they were `adm3`; Serbia has no documented exclusion.
+
+### Taiwan
+
+In `TW.json`, an ordinary district (區) of a special municipality or provincial city is `section / 區` at level 2,
+under its level-1 municipality, bound by its own MOI township code. Mountain indigenous districts, which have their
+own councils, are not covered by this rule. #1935 typed the first 163 city districts this way. The settlement filter
+includes both `district` and `section`, so its result is unchanged.
+
+### United Kingdom (Scotland)
+
+A Scottish NRS locality (own S19 code) sits at level 3: Scotland (level 1), council area (level 2), locality
+(level 3). Historic parishes are not a current tier, so they do not add a level. Only the level changes; type and
+links are kept, and village status is not inferred from the locality code.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
