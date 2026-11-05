@@ -1,0 +1,313 @@
+{
+  "ledger": "own_types_v5x.jsonl",
+  "records": 6,
+  "base_commit": [
+    "bc3dfd484154b400208d46da9bdac4a466f7afc7"
+  ],
+  "full_ledger_sha256": "f6622a5d8dea787e979b577c4d9e2d92dbdcce7b1458da3fe4561ae610121890",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Classify only the unchanged own entity by exact official code; retain direct national depth without changing ancestry. Registers supply categories only. Stored coordinates and all nonclassification fields remain byte-value identical."
+  ],
+  "sources": [
+    {
+      "bytes": 118579200,
+      "retained_path": "runs/specs/de_pop_v5x/work/sources/DE_VG250.gpkg",
+      "sha256": "25dfeadf75c9d03939144a43e0a073b5311fdf2b72ae3097e31b3abda3edefcb"
+    },
+    {
+      "bytes": 3551807,
+      "retained_path": "runs/specs/de_pop_v5x/work/sources/GV100AD_30092026.txt",
+      "sha256": "44076d993883df50780a9b811f0f04d289a4df5b546386e0262cc283506f8dd6"
+    },
+    {
+      "bytes": 78231,
+      "edition": "current Open Data terms",
+      "licence": "dl-de/by-2-0",
+      "retained_path": "runs/specs/de_pop_v5x/work/sources/destatis_license.html",
+      "retrieved_at": "2026-10-20T09:20:58.808304+00:00",
+      "sha256": "45d455bacb31a6d141ed9287d32407ac2b33bdf4df1df60ae5000c2b1327c81c",
+      "url": "https://www.destatis.de/DE/Service/OpenData/_inhalt.html"
+    },
+    {
+      "bytes": 4392891,
+      "edition": "Mid-2020 settlements and localities",
+      "licence": "Open Government Licence v3.0",
+      "retained_path": "runs/specs/gb_pop_v5x/work/sources/gb1_nrs_shapes.zip",
+      "retrieved_at": "2026-10-10T02:16:40.399691+00:00",
+      "sha256": "9086a0814304314cbf35e482388d420a1b3f19164e695018bafd5afe83ed086b",
+      "url": "https://www.nrscotland.gov.uk/media/2hsoadnx/shapefiles.zip"
+    },
+    {
+      "bytes": 1812706,
+      "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1000105%7CQ100094%7CQ1009416%7CQ1009805%7CQ1013617%7CQ1013733%7CQ1018425%7CQ1019166%7CQ1022731%7CQ1075327%7CQ1086430%7CQ1089143%7CQ1106459%7CQ1183397%7CQ1184329%7CQ1188933%7CQ1195210%7CQ12272087%7CQ1258159%7CQ12724846%7CQ1272595%7CQ14458%7CQ1457512%7CQ1512951%7CQ1550492%7CQ15962%7CQ16018%7CQ1605449%7CQ1641454%7CQ1642781%7CQ1650421%7CQ168576%7CQ16858912%7CQ16898639%7CQ170315%7CQ1728955%7CQ17369%7CQ1751212%7CQ1786384%7CQ1797006%7CQ1804048%7CQ1805819%7CQ184147%7CQ18439645%7CQ18465414%7CQ1921059%7CQ1922530%7CQ193016%7CQ1935454%7CQ1973538&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5",
+      "licence": "CC0 structured data",
+      "retained_path": "research/sample/work_sample_cities_g/sources/wd_sample_00.json",
+      "retrieved_at_utc": "2026-11-03T07:57:22.469722+00:00",
+      "sha256": "66ab419af2c1661fd30d503f9a24bb59798714359a994ee0dc055127ac2ec7c7",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1000105%7CQ100094%7CQ1009416%7CQ1009805%7CQ1013617%7CQ1013733%7CQ1018425%7CQ1019166%7CQ1022731%7CQ1075327%7CQ1086430%7CQ1089143%7CQ1106459%7CQ1183397%7CQ1184329%7CQ1188933%7CQ1195210%7CQ12272087%7CQ1258159%7CQ12724846%7CQ1272595%7CQ14458%7CQ1457512%7CQ1512951%7CQ1550492%7CQ15962%7CQ16018%7CQ1605449%7CQ1641454%7CQ1642781%7CQ1650421%7CQ168576%7CQ16858912%7CQ16898639%7CQ170315%7CQ1728955%7CQ17369%7CQ1751212%7CQ1786384%7CQ1797006%7CQ1804048%7CQ1805819%7CQ184147%7CQ18439645%7CQ18465414%7CQ1921059%7CQ1922530%7CQ193016%7CQ1935454%7CQ1973538&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5"
+    },
+    {
+      "bytes": 166693,
+      "final_url": "https://www.hcp.ma/file/242341/",
+      "licence": "HCP CC BY 4.0",
+      "retained_path": "runs/specs/own_types_v5x/work/sources/ma_population.xlsx",
+      "retrieved_at": "2026-11-04T11:34:12.504684+00:00",
+      "sha256": "7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca",
+      "url": "https://www.hcp.ma/file/242341/"
+    },
+    {
+      "bytes": 46378,
+      "evidence": "sources/MA_terms.body",
+      "final_url": "https://www.hcp.ma/Conditions-generales-d-utilisation-Version-1-0_a2194.html",
+      "retained_path": "runs/specs/terms_screen3_v5x/work/sources/MA_terms.body",
+      "retrieved": "2026-10-27T08:36:32.392601+00:00",
+      "sha256": "737aa75e8c78453d4fc9d280435054a3065bc0195de3fa7970d99c758f1fd4f8",
+      "status": 200,
+      "url": "https://www.hcp.ma/Conditions-generales-d-utilisation-Version-1-0_a2194.html"
+    },
+    {
+      "bytes": 1621002,
+      "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q20209205%7CQ20237068%7CQ20277814%7CQ2028637%7CQ20286542%7CQ2041698%7CQ2059513%7CQ207625%7CQ215832%7CQ2180579%7CQ21841723%7CQ2220839%7CQ2234580%7CQ22396%7CQ2279903%7CQ2289234%7CQ2341367%7CQ2362440%7CQ2450004%7CQ2475111%7CQ2501279%7CQ2575916%7CQ2580077%7CQ2604557%7CQ2626792%7CQ2633279%7CQ2650143%7CQ265972%7CQ269476%7CQ270858%7CQ2719100%7CQ2719488%7CQ2721836%7CQ273670%7CQ276042%7CQ2833497%7CQ2841%7CQ2860899%7CQ294814%7CQ2966000%7CQ3049704%7CQ31475068%7CQ32236665%7CQ32665%7CQ3331113%7CQ3447884%7CQ3483238%7CQ3483653%7CQ37958667%7CQ3891718&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5",
+      "licence": "CC0 structured data",
+      "retained_path": "research/sample/work_sample_cities_h/sources/wd_sample_01.json",
+      "retrieved_at_utc": "2026-11-03T07:56:21.494556+00:00",
+      "sha256": "93e7e84a3f8cac5bcdfbd1b8006fdb5d6a135b5a4028fb8588e0cc8c87c7da82",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q20209205%7CQ20237068%7CQ20277814%7CQ2028637%7CQ20286542%7CQ2041698%7CQ2059513%7CQ207625%7CQ215832%7CQ2180579%7CQ21841723%7CQ2220839%7CQ2234580%7CQ22396%7CQ2279903%7CQ2289234%7CQ2341367%7CQ2362440%7CQ2450004%7CQ2475111%7CQ2501279%7CQ2575916%7CQ2580077%7CQ2604557%7CQ2626792%7CQ2633279%7CQ2650143%7CQ265972%7CQ269476%7CQ270858%7CQ2719100%7CQ2719488%7CQ2721836%7CQ273670%7CQ276042%7CQ2833497%7CQ2841%7CQ2860899%7CQ294814%7CQ2966000%7CQ3049704%7CQ31475068%7CQ32236665%7CQ32665%7CQ3331113%7CQ3447884%7CQ3483238%7CQ3483653%7CQ37958667%7CQ3891718&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5"
+    },
+    {
+      "bytes": 18810,
+      "final_url": "https://www.stat.gov.rs/media/412350/sifarnikgradovi-opstine-tekucestanje.xlsx",
+      "licence": "RZS attribution terms",
+      "retained_path": "runs/specs/own_types_v5x/work/sources/rs_units.xlsx",
+      "retrieved_at": "2026-11-04T11:33:18.811129+00:00",
+      "sha256": "3a7790a65c77a537da848a66c71ba1495c5e0bdfe1021587979a551dcb7ebafa",
+      "url": "https://www.stat.gov.rs/media/412350/sifarnikgradovi-opstine-tekucestanje.xlsx"
+    },
+    {
+      "bytes": 3717,
+      "final_url": "https://api.nlsc.gov.tw/other/ListTown1/B",
+      "licence": "Open Government Data License 1.0",
+      "retained_path": "runs/specs/own_types_v5x/work/sources/tw_B.xml",
+      "retrieved_at": "2026-11-04T11:33:17.242978+00:00",
+      "sha256": "ba1110730823460041413d814c96fd1285608644b78cc47b97f0023f5c68f642",
+      "url": "https://api.nlsc.gov.tw/other/ListTown1/B"
+    },
+    {
+      "bytes": 305,
+      "edition": "live MOI/NLSC household-registration point query at baseline coordinates",
+      "final_url": "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/120.68100000/24.15760000/4326",
+      "licence": "Open Government Data License 1.0; compatible with CC BY 4.0 (https://data.gov.tw/license)",
+      "retained_path": "research/tw_pilot/work_tw_pilot_1/sources/point_before_164146.xml",
+      "retrieved_at": "2026-10-11T17:26:14.675786+00:00",
+      "sha256": "6a383d2f9b3dd8c6d2d5e0750a86a66fc7b106607930c16147688207025591a9",
+      "url": "https://api.nlsc.gov.tw/other/TownVillagePointQuery1/120.68100000/24.15760000/4326"
+    },
+    {
+      "bytes": 1626396,
+      "final_url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q3915152%7CQ397415%7CQ4105429%7CQ4117799%7CQ4241123%7CQ4276075%7CQ4358642%7CQ46749%7CQ472331%7CQ4749594%7CQ47687%7CQ4782417%7CQ4803660%7CQ4855732%7CQ4921700%7CQ49354416%7CQ49369%7CQ49865943%7CQ49974125%7CQ50007332%7CQ504179%7CQ505564%7CQ5112591%7CQ51697%7CQ5215951%7CQ52631%7CQ52900%7CQ53526%7CQ545655%7CQ5484139%7CQ55083%7CQ553650%7CQ56091%7CQ568132%7CQ569469%7CQ569952%7CQ574761%7CQ576938%7CQ580487%7CQ587738%7CQ594928%7CQ5997545%7CQ6048498%7CQ613689%7CQ626729%7CQ635620%7CQ640046%7CQ6406988%7CQ6475160%7CQ667224&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5",
+      "licence": "CC0 structured data",
+      "retained_path": "research/sample/work_sample_cities_h/sources/wd_sample_02.json",
+      "retrieved_at_utc": "2026-11-03T07:56:24.910995+00:00",
+      "sha256": "4c56429da821be6046dd94e2f654cb423bb32c2c4b0ec627d225648b783dd0b6",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q3915152%7CQ397415%7CQ4105429%7CQ4117799%7CQ4241123%7CQ4276075%7CQ4358642%7CQ46749%7CQ472331%7CQ4749594%7CQ47687%7CQ4782417%7CQ4803660%7CQ4855732%7CQ4921700%7CQ49354416%7CQ49369%7CQ49865943%7CQ49974125%7CQ50007332%7CQ504179%7CQ505564%7CQ5112591%7CQ51697%7CQ5215951%7CQ52631%7CQ52900%7CQ53526%7CQ545655%7CQ5484139%7CQ55083%7CQ553650%7CQ56091%7CQ568132%7CQ569469%7CQ569952%7CQ574761%7CQ576938%7CQ580487%7CQ587738%7CQ594928%7CQ5997545%7CQ6048498%7CQ613689%7CQ626729%7CQ635620%7CQ640046%7CQ6406988%7CQ6475160%7CQ667224&props=labels%7Caliases%7Cdescriptions%7Cclaims%7Csitelinks&languages=en%7Cfr%7Cde%7Cit%7Ces%7Cpt%7Cro%7Cpl%7Cru%7Cuk%7Czh%7Cja%7Car%7Cnl&maxlag=5"
+    },
+    {
+      "bytes": 165094,
+      "edition": "consolidated Local Government Act on retrieval",
+      "final_url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=A0040003",
+      "licence": "Government law text; facts only",
+      "retained_path": "research/tw_pilot/work_tw_pilot_1/sources/local_government_act.html",
+      "retrieved_at": "2026-10-11T17:20:02.414781+00:00",
+      "sha256": "5ec742125aa94cf09132667a1367ffb36d7a97d9d8e6adc306f43d8cbe613771",
+      "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=A0040003"
+    }
+  ],
+  "held_ids_by_reason": {
+    "boundary_conflict": [
+      4856
+    ],
+    "conflicting_own_identifier": [
+      119347,
+      154534
+    ],
+    "finer_category_unproved": [
+      49091
+    ],
+    "literal_evidence_missing": [
+      101657
+    ],
+    "multi_township_depth_unproved": [
+      113799,
+      119874
+    ],
+    "native_category_unproved": [
+      31883
+    ],
+    "official_code_and_parent_unproved": [
+      82858
+    ],
+    "official_code_not_proved": [
+      6,
+      155,
+      284,
+      15844,
+      49611,
+      51569,
+      100859,
+      150618,
+      150645
+    ],
+    "official_code_or_licence_unproved": [
+      8242,
+      48146,
+      106941,
+      130645,
+      130657,
+      153760
+    ],
+    "parent_state_change_required": [
+      60575
+    ],
+    "unit_place_scope_unproved": [
+      8052,
+      20082
+    ],
+    "unresolved_v4_municipal_scope": [
+      57833,
+      131816,
+      132186,
+      133434,
+      133726
+    ],
+    "level_deferred_to_expansion_depth_proof": [
+      67068,
+      67210,
+      97269
+    ]
+  },
+  "held_fields_by_id": {
+    "6": [
+      "level",
+      "type"
+    ],
+    "155": [
+      "level"
+    ],
+    "284": [
+      "level"
+    ],
+    "4856": [
+      "level",
+      "type"
+    ],
+    "8052": [
+      "type"
+    ],
+    "8242": [
+      "level",
+      "type"
+    ],
+    "15844": [
+      "level"
+    ],
+    "20082": [
+      "type"
+    ],
+    "31883": [
+      "type"
+    ],
+    "48146": [
+      "level",
+      "type"
+    ],
+    "49091": [
+      "type"
+    ],
+    "49611": [
+      "type"
+    ],
+    "51569": [
+      "level",
+      "type"
+    ],
+    "57833": [
+      "type"
+    ],
+    "60575": [
+      "level",
+      "type"
+    ],
+    "82858": [
+      "level",
+      "type"
+    ],
+    "100859": [
+      "type"
+    ],
+    "101657": [
+      "type"
+    ],
+    "106941": [
+      "level",
+      "type"
+    ],
+    "113799": [
+      "level"
+    ],
+    "119347": [
+      "level",
+      "type"
+    ],
+    "119874": [
+      "level"
+    ],
+    "130645": [
+      "type"
+    ],
+    "130657": [
+      "type"
+    ],
+    "131816": [
+      "type"
+    ],
+    "132186": [
+      "type"
+    ],
+    "133434": [
+      "type"
+    ],
+    "133726": [
+      "type"
+    ],
+    "150618": [
+      "type"
+    ],
+    "150645": [
+      "type"
+    ],
+    "153760": [
+      "type"
+    ],
+    "154534": [
+      "level",
+      "type"
+    ],
+    "67068": [
+      "level"
+    ],
+    "67210": [
+      "level"
+    ],
+    "97269": [
+      "level"
+    ]
+  },
+  "sample_reconciliation": {
+    "expected_type": 32,
+    "actual_type": 32,
+    "reported_level": 13,
+    "actual_level": 18,
+    "level_difference": 5
+  }
+}

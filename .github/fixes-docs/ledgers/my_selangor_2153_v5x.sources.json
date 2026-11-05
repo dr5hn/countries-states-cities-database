@@ -1,0 +1,37 @@
+{
+ "base_commit": "bc3dfd484154b400208d46da9bdac4a466f7afc7",
+ "full_ledger_sha256": "b7bfe2dc0a8d07f30334238f033bddb5bdf4ba762692639af09e800dcf2d0fd7",
+ "ledger": "my_selangor_2153_v5x.jsonl",
+ "note": "Changed rows only. Both rows came from issue #1323 (merged via #1371), whose only source was Wikipedia's Category:Towns in Selangor; both names were articles in it before the import. The imported points had no source and lay 29.0 km and 42.2 km from the articles' places. Namesakes (Bukit Lagong forest and mountain, estates, villages, Sungai Tengi river, GeoNames 1742557 Sungai Tinggi) are separate places. Type and level unchanged (no Malaysia section in TYPE_FIELD.md).",
+ "pr": 2174,
+ "records": 2,
+ "sources": [
+  {
+   "licence": "CC0 1.0",
+   "name": "Wikidata (items and P625)"
+  },
+  {
+   "name": "Issue #2153",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/issues/2153"
+  },
+  {
+   "name": "Issue #1323",
+   "url": "https://github.com/dr5hn/countries-states-cities-database/issues/1323"
+  },
+  {
+   "name": "Lagong article rev 1226813944",
+   "url": "https://en.wikipedia.org/w/index.php?title=Lagong&oldid=1226813944",
+   "use": "identity only"
+  },
+  {
+   "name": "Sungai Tengi article rev 1344425408",
+   "url": "https://en.wikipedia.org/w/index.php?title=Sungai_Tengi&oldid=1344425408",
+   "use": "identity only"
+  },
+  {
+   "licence": "CC BY 4.0",
+   "name": "GeoNames MY dump",
+   "use": "namesake check only"
+  }
+ ]
+}
