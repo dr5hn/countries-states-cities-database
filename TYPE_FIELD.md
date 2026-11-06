@@ -161,10 +161,10 @@ municipality's own publication, with no current municipal text calling it a vill
 `type_local` `woonplaats`. This is a documented identity, not a legal status, as the Netherlands has no statutory city
 category today. Older `city` records outside the woonplaats set (Eindhoven, Delft) were not reviewed, so `type = 'city'`
 alone is not a complete list of Dutch cities; use the settlement filter below. Most
-gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. 22 records named
-"Gemeente …" (Gemeente Groningen, Gemeente Stadskanaal …) are the municipal territory beside a separate record for the
-town (Groningen, Stadskanaal). To list only settlements in the Netherlands, leave out the records whose name starts
-with "Gemeente ".
+gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. Records named
+"Gemeente …" (Gemeente Groningen, Gemeente Smallingerland …) are the municipal territory beside separate records for
+its places: a town of the same name (Groningen) or places with other names (Drachten, in Smallingerland). To list
+only settlements in the Netherlands, leave out the records whose name starts with "Gemeente ".
 
 ### New Zealand
 
