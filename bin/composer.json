@@ -7,17 +7,17 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "mashape/unirest-php": "^3.0",
-        "spatie/array-to-xml": "^3.3.0",
-        "symfony/yaml": "~7",
-        "nesbot/carbon": "^3.6",
-        "symfony/console": "~7",
-        "hassankhan/config": "^3.1",
-        "monolog/monolog": "^3.7",
-        "vlucas/phpdotenv": "^5.6",
-        "robmorgan/phinx": "^0.16.1",
-        "symfony/process": "^7.0",
-        "symfony/filesystem": "^7.0"
+        "mashape/unirest-php": "^3.0.4",
+        "spatie/array-to-xml": "^3.4.4",
+        "symfony/yaml": "^7.4.22",
+        "nesbot/carbon": "^3.15.1",
+        "symfony/console": "^7.4.22",
+        "hassankhan/config": "^3.2.0",
+        "monolog/monolog": "^3.12.1",
+        "vlucas/phpdotenv": "^5.8.0",
+        "robmorgan/phinx": "^0.16.12",
+        "symfony/process": "^7.4.22",
+        "symfony/filesystem": "^7.4.21"
     },
     "autoload": {
         "psr-4": { "bin\\": ["../bin"] }

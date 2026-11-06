@@ -7,7 +7,7 @@
     "scripts": {
       "generate": "prisma generate",
       "db:push": "prisma db push",
-      "seed": "tsc --project tsconfig.json && node seed.ts"
+      "seed": "tsc --project tsconfig.json && node --env-file-if-exists=.env seed.ts"
     },
     "keywords": [
       "prisma",
@@ -21,11 +21,12 @@
     "author": "Darshan Gada",
     "license": "MIT",
     "dependencies": {
-      "@prisma/client": "^4.16.2"
+      "@prisma/adapter-mariadb": "^7.10.1",
+      "@prisma/client": "^7.10.1"
     },
     "devDependencies": {
-      "@types/node": "^26.6.5",
-      "prisma": "^4.16.2",
+      "@types/node": "^26.6.6",
+      "prisma": "^7.10.1",
       "typescript": "^7.0.2"
     }
   }
