@@ -19,9 +19,9 @@ Total Sub Regions : 22 <br>
 Total Countries : 250 <br>
 Total States/Regions/Municipalities : 5,299 <br>
 Total Cities/Towns/Districts : 153,765 <br>
-Total Postcodes : 725993 (116 countries) <br>
+Total Postcodes : 728556 (117 countries) <br>
 Total Timezones : 427 (100% IANA coverage) <br>
-Last Updated On: November 02, 2026
+Last Updated On: November 03, 2026
 
 ---
 

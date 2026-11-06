@@ -1,0 +1,149 @@
+{
+  "ledger": "own_types_gb_v5x.jsonl",
+  "records": 84,
+  "base_commit": [
+    "0c3be2f91a1eec30848c85f34ba782772423554c"
+  ],
+  "full_ledger_sha256": "1d93ca548c75f32709dfa42be244f1f582e7405b600a787a347cd87479a1b5c0",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Own official code binds the unchanged entity; v4 name/item/point/state continuity is checked individually. GB removed ambiguous items and previously corrected states are independently bound by the same v4 name and original point to the exact NRS locality code. Only type, type_local and proved depth change. No seat substitution, new links or finer subtype is inferred."
+  ],
+  "sources": [
+    {
+      "bytes": 4392891,
+      "edition": "Mid-2020 settlements and localities; same edition as pilot",
+      "final_url": "https://www.nrscotland.gov.uk/media/2hsoadnx/shapefiles.zip",
+      "licence": "OGL v3.0",
+      "retained_path": "runs/specs/own_types_expand/work/sources/gb_shapes.zip",
+      "retrieved_at": "2026-11-04T14:15:16.133163+00:00",
+      "sha256": "9086a0814304314cbf35e482388d420a1b3f19164e695018bafd5afe83ed086b",
+      "url": "https://www.nrscotland.gov.uk/media/2hsoadnx/shapefiles.zip"
+    },
+    {
+      "bytes": 683451,
+      "edition": "Mid-2020 settlements and localities; same edition as pilot",
+      "final_url": "https://www.nrscotland.gov.uk/media/wtwjdfuo/data-tables.xlsx",
+      "licence": "OGL v3.0",
+      "retained_path": "runs/specs/own_types_expand/work/sources/gb_tables.xlsx",
+      "retrieved_at": "2026-11-04T14:15:16.649789+00:00",
+      "sha256": "1c0806c6504c0462b69014f8cca74fbcdb662add22de53e8e9a7fbb04866e325",
+      "url": "https://www.nrscotland.gov.uk/media/wtwjdfuo/data-tables.xlsx"
+    },
+    {
+      "bytes": 296,
+      "edition": "ISO GB-ABE to GSS council-code crosswalk, 4 November 2026",
+      "final_url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+WHERE+%7B+%3Fitem+wdt%3AP300+%22GB-ABE%22%3B+wdt%3AP836+%3Fcode+%7D&format=json",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/own_types_expand/work/sources/gb_abe_crosswalk.json",
+      "retrieved_at": "2026-11-04T14:22:02.448176+00:00",
+      "sha256": "630cdc147512af09344d7f16acb53d74c1b337aee488366100f2e06374472032",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+WHERE+%7B+%3Fitem+wdt%3AP300+%22GB-ABE%22%3B+wdt%3AP836+%3Fcode+%7D&format=json"
+    }
+  ],
+  "held_ids_by_reason": {
+    "current_direct_chain_unproved": [
+      51439
+    ]
+  },
+  "held_fields_by_id": {
+    "51439": [
+      "level"
+    ]
+  },
+  "reviewed_reach_ids": [
+    48201,
+    48216,
+    48272,
+    48374,
+    48376,
+    48383,
+    48407,
+    48439,
+    48463,
+    48513,
+    48526,
+    48590,
+    48592,
+    48680,
+    48697,
+    48745,
+    48836,
+    48858,
+    48871,
+    48872,
+    48917,
+    48989,
+    49020,
+    49043,
+    49046,
+    49048,
+    49200,
+    49206,
+    49265,
+    49361,
+    49369,
+    49414,
+    49450,
+    49514,
+    49680,
+    49698,
+    49743,
+    49972,
+    50061,
+    50096,
+    50121,
+    50139,
+    50234,
+    50248,
+    50258,
+    50281,
+    50291,
+    50292,
+    50315,
+    50375,
+    50377,
+    50463,
+    50523,
+    50533,
+    50558,
+    50566,
+    50588,
+    50590,
+    50595,
+    50617,
+    50621,
+    50622,
+    50655,
+    50699,
+    50717,
+    50731,
+    50794,
+    50803,
+    50901,
+    50933,
+    51050,
+    51051,
+    51060,
+    51062,
+    51149,
+    51192,
+    51334,
+    51438,
+    51439,
+    51478,
+    51602,
+    51718,
+    51850,
+    51926,
+    51942
+  ],
+  "pilot_depth_ids": [],
+  "retained_prior_holds": {
+    "finer_village_category_unproved": [
+      49091
+    ]
+  },
+  "prior_hold_scope": "Retained untouched; not additional reach candidates. All other unproved pilot or country rows also remain outside the patch.",
+  "source_notice": "Same sources and editions credited by #2176 in .github/licenses/SOURCES.txt; public refreshes and Wikidata CC0 claims retained with exact hashes. No added source notice needed."
+}

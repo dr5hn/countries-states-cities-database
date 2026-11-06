@@ -1,0 +1,1654 @@
+{
+ "ledger": "fr_muni_items_v5x.jsonl",
+ "records": 273,
+ "base_commit": [
+  "43a1b4864cd590203bd7b1cd3e7a5344f1078592"
+ ],
+ "full_ledger_sha256": "3c3a7b7501e5ee3bffca4566818b0a9b22e198af556420e3f1dcb0038cf71a89",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "Independently bind the row to the exact current official register name and department/canton/Land. Require the unchanged row point inside the own-code municipality boundary, which is used only to check. The literal stored item has settlement-only own P31; the replacement has municipality P31 and exactly the same own official code. Reject targets used by any CSC city, county or state. Unresolved keys additionally require v4.0 municipality or matching national municipal admin-level scope and unchanged name, state, point and item. Only wikiDataId changes."
+ ],
+ "sources": [
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_COG2026.zip",
+   "bytes": 1961824,
+   "edition": "COG 2026",
+   "file": "COG2026.zip",
+   "final_url": "https://www.insee.fr/fr/statistiques/fichier/8740222/cog_ensemble_2026_csv.zip",
+   "licence": "Licence Ouverte 2.0",
+   "retrieved_at": "2026-10-20T10:17:24.141899+00:00",
+   "reused_from": "runs/specs/fr_pop_v5x/work/sources/COG2026.zip",
+   "sha256": "5c037e2977c9d476cfe2e7b7f923bbe09a87cbe448c59e492a71ef6a917aa53f",
+   "status": 200,
+   "success": true,
+   "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/cog_ensemble_2026_csv.zip"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_0a9a71b5dbc4c7b9.json",
+   "bytes": 449635,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:04:59.080496+00:00",
+   "sha256": "fc1dee4f8762012278615fab9b84eaf9e5d17d2a9b4870a2375e64c33acd8f9f",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q34789604%7CQ34789780%7CQ34789980%7CQ34790021%7CQ34790063%7CQ34790241%7CQ34790575%7CQ34790675%7CQ34790803%7CQ34791049%7CQ34791312%7CQ34791424%7CQ34791453%7CQ34791601%7CQ34791649%7CQ34791656%7CQ34791662%7CQ34791682%7CQ34791801%7CQ34791843%7CQ34791855%7CQ34791953%7CQ34791996%7CQ34792060%7CQ34792110%7CQ34792116%7CQ34792129%7CQ34792253%7CQ34792263%7CQ34792419%7CQ34792839%7CQ34794231%7CQ34794413%7CQ34794420%7CQ34794428%7CQ34794433%7CQ34794450%7CQ34794462%7CQ34794472%7CQ34794502%7CQ34794543%7CQ34795149%7CQ34795198%7CQ34795752%7CQ34795760%7CQ34795797%7CQ34795806%7CQ34795812%7CQ34796047%7CQ34796185&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_d4c92febfd706380.json",
+   "bytes": 2973373,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:17.493546+00:00",
+   "sha256": "04fa41b2cf5b00c51663c49786dc4826923c939ce1f85a0f4e0ed62cd99059ba",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q327368%7CQ333619%7CQ334678%7CQ339255%7CQ368089%7CQ372691%7CQ374876%7CQ379050%7CQ379163%7CQ379680%7CQ379892%7CQ380027%7CQ381253%7CQ381275%7CQ381512%7CQ381514%7CQ382023%7CQ383233%7CQ383345%7CQ383472%7CQ385231%7CQ419367%7CQ425952%7CQ427238%7CQ430487%7CQ43248%7CQ432528%7CQ433372%7CQ440661%7CQ455271%7CQ456809%7CQ456814%7CQ457086%7CQ457696%7CQ46710%7CQ469225%7CQ471321%7CQ474443%7CQ474475%7CQ474756%7CQ475519%7CQ475547%7CQ475587%7CQ475612%7CQ477772%7CQ478%7CQ489250%7CQ490442%7CQ490902%7CQ491965&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_2A001.json",
+   "bytes": 9638,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:09:38.898504+00:00",
+   "sha256": "d1b21f3d5ff6b7fbd509b5293c1e15ead56e82c979d199cdb392606fa4170486",
+   "url": "https://geo.api.gouv.fr/communes/2A001?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_7119fbbe6fcf15ec.json",
+   "bytes": 3016957,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:31.135966+00:00",
+   "sha256": "cc6a6f1f12dac4c1ad4d874b985d89e220d8d092da275d6bb55c5569e9786ab3",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q70152%7CQ70176%7CQ70201%7CQ70222%7CQ70473%7CQ70491%7CQ70499%7CQ70743%7CQ70751%7CQ708928%7CQ70925%7CQ70983%7CQ71043%7CQ71048%7CQ71088%7CQ71115%7CQ71283%7CQ71331%7CQ71573%7CQ71576%7CQ71588990%7CQ71657%7CQ71689%7CQ71735%7CQ71742%7CQ720197%7CQ72234%7CQ727728%7CQ729457%7CQ730043%7CQ736949%7CQ741386%7CQ741542%7CQ745022%7CQ746192%7CQ748026%7CQ748701%7CQ749444%7CQ750936%7CQ751770%7CQ752757%7CQ760628%7CQ765020%7CQ779192%7CQ817881%7CQ818294%7CQ818583%7CQ818599%7CQ82197%7CQ829808&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_64009.json",
+   "bytes": 6455,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:09:45.220776+00:00",
+   "sha256": "d3e0873e1b34515d19c6b43793ec7d605dfd869f5aae9cb293c10ef4a78e2bdf",
+   "url": "https://geo.api.gouv.fr/communes/64009?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_1f03fee98951d079.json",
+   "bytes": 1803409,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:34.022530+00:00",
+   "sha256": "1bc6cbe8670038845d728dcb70009893ad9c61bc10df12e24da8ceee1509e267",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q831028%7CQ832065%7CQ833334%7CQ834912%7CQ835513%7CQ839753%7CQ840195%7CQ840597%7CQ840817%7CQ840923%7CQ841686%7CQ843484%7CQ846716%7CQ857699%7CQ858017%7CQ860686%7CQ861768%7CQ861863%7CQ861972%7CQ868451%7CQ868530%7CQ871850%7CQ900283%7CQ925847%7CQ939911%7CQ943940%7CQ944518%7CQ947487%7CQ947709%7CQ956935%7CQ958633%7CQ968116&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_79003.json",
+   "bytes": 7410,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:09:52.404370+00:00",
+   "sha256": "edb0410386aac42b681d098b4efdd20c8dc7ca34648b10e42a27df5c38440f77",
+   "url": "https://geo.api.gouv.fr/communes/79003?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_e811bcff367d9b08.json",
+   "bytes": 2846144,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:06.712373+00:00",
+   "sha256": "b2482ec8da5bd25ac4d3bfaab2d33b778eda5888aec47aed8f535ec9b73d901a",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q1001956%7CQ1003329%7CQ1004094%7CQ1004486%7CQ1007427%7CQ1007657%7CQ1007706%7CQ1010968%7CQ1011045%7CQ1011050%7CQ1020140%7CQ1028474%7CQ1059504%7CQ1060889%7CQ1061348%7CQ1062610%7CQ1063072%7CQ1063120%7CQ1066202%7CQ1066482%7CQ1069629%7CQ1074602%7CQ1079449%7CQ1080198%7CQ1087461%7CQ1087700%7CQ10903%7CQ10941%7CQ1101594%7CQ1101653%7CQ1101800%7CQ1104137%7CQ1104174%7CQ11046%7CQ1105506%7CQ1106930%7CQ1108916%7CQ1111032%7CQ11126%7CQ1113897%7CQ1115712%7CQ1140773%7CQ1146300%7CQ1149102%7CQ1157708%7CQ1163348%7CQ1163582%7CQ1164126%7CQ1165092%7CQ117551&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44002.json",
+   "bytes": 6919,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:09:48.348149+00:00",
+   "sha256": "4f37b297218edc701788313a2f7ee572dc771c70abcab8e0dc1acc3549f07a81",
+   "url": "https://geo.api.gouv.fr/communes/44002?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_2A006.json",
+   "bytes": 16704,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:09:55.279444+00:00",
+   "sha256": "a80c984dd4fe36c5fb483dde5978101c4fd63be92ea16e5e91f226dbd23f8d09",
+   "url": "https://geo.api.gouv.fr/communes/2A006?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_69003.json",
+   "bytes": 2786,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:00.772620+00:00",
+   "sha256": "95a07a2e6a9f431311d38a0b9defb61cb71fad0db2c91c1c707277ca40fd02e3",
+   "url": "https://geo.api.gouv.fr/communes/69003?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_765702a58e643855.json",
+   "bytes": 570834,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:05:01.431760+00:00",
+   "sha256": "248aceb88a1468d9e6c841895daba3b3166a0c7c6b418a05b53556a672243ed5",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q34796224%7CQ34796260%7CQ34796293%7CQ34796347%7CQ34796384%7CQ34796402%7CQ34796414%7CQ34796568%7CQ34796576%7CQ34796671%7CQ34796736%7CQ34796761%7CQ34796802%7CQ34796877%7CQ34796921%7CQ34797047%7CQ34797074%7CQ34797076%7CQ34797175%7CQ34797181%7CQ34797186%7CQ34797235%7CQ34797247%7CQ34797336%7CQ34797343%7CQ34797356%7CQ34797368%7CQ34797390%7CQ34797557%7CQ34797571%7CQ34797816%7CQ34797830%7CQ34797837%7CQ34797849%7CQ34798060%7CQ34798066%7CQ34798074%7CQ34799744%7CQ34799763%7CQ34799779%7CQ34800409%7CQ34801384%7CQ34801561%7CQ34801864%7CQ34801963%7CQ348807%7CQ35145944%7CQ35618610%7CQ35694872%7CQ35707479&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49002.json",
+   "bytes": 11262,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:11.842470+00:00",
+   "sha256": "2822e88da810ff499531f9aa19d8d6aa6770c4f4da98bc3680bea8a2dfeaa239",
+   "url": "https://geo.api.gouv.fr/communes/49002?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_80c72e30d76434a1.json",
+   "bytes": 2777067,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:23.331648+00:00",
+   "sha256": "0f9280cef5293074c1e583bf1e2bf61ce4c37dea65956649fc077683d32e2854",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q512734%7CQ513143%7CQ513780%7CQ514374%7CQ515841%7CQ516301%7CQ516371%7CQ517588%7CQ518138%7CQ520854%7CQ521253%7CQ532016%7CQ534441%7CQ534494%7CQ536382%7CQ546610%7CQ548367%7CQ548499%7CQ550682%7CQ552346%7CQ556449%7CQ559908%7CQ566922%7CQ572178%7CQ572182%7CQ572576%7CQ578425%7CQ59539288%7CQ59539709%7CQ607079%7CQ60809934%7CQ611877%7CQ61715%7CQ618034%7CQ6219%7CQ622478%7CQ622482%7CQ622731%7CQ625747%7CQ626589%7CQ627191%7CQ627437%7CQ627472%7CQ627500%7CQ627545%7CQ627571%7CQ62815%7CQ628406%7CQ628734%7CQ62883&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56002.json",
+   "bytes": 25364,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:04.407007+00:00",
+   "sha256": "798070fdb0583fffa9f5689d58ac04b5258ec0fb3bcdc7e93cf6367e8d12d976",
+   "url": "https://geo.api.gouv.fr/communes/56002?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53003.json",
+   "bytes": 15241,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:11.034498+00:00",
+   "sha256": "63ef883b915303e02d02f774a268429259c473c9e6d31ade0ceeb6fda98b2893",
+   "url": "https://geo.api.gouv.fr/communes/53003?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_c90767d02c2fd4c8.json",
+   "bytes": 2526144,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:10.288172+00:00",
+   "sha256": "d0a6a20af02a4499841862a7ae5e4af08a70ff900b66aebcd38b57fbd880e722",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q123240592%7CQ124317972%7CQ125117191%7CQ127647%7CQ127747%7CQ128431%7CQ1345178%7CQ1345489%7CQ1383260%7CQ1384646%7CQ1384761%7CQ1384767%7CQ1384976%7CQ1415675%7CQ1418929%7CQ142147%7CQ1429053%7CQ1440247%7CQ14570%7CQ1460330%7CQ1470408%7CQ1471362%7CQ14939%7CQ14943%7CQ155549%7CQ1600691%7CQ162976%7CQ163017%7CQ163068%7CQ170162%7CQ179923%7CQ180990%7CQ181877%7CQ181981%7CQ182174%7CQ182286%7CQ182426%7CQ182471%7CQ183262%7CQ185352%7CQ187577%7CQ188735%7CQ188864%7CQ189579%7CQ193694%7CQ194265%7CQ194524%7CQ199511%7CQ200177%7CQ200247&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_45004.json",
+   "bytes": 10456,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:15.111290+00:00",
+   "sha256": "244af8904051f0338baa145327c826b1d9bee45d3df523fca845028937aa4eb9",
+   "url": "https://geo.api.gouv.fr/communes/45004?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_40002.json",
+   "bytes": 12197,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:23.767324+00:00",
+   "sha256": "6e1b6a0abece376f975b9101a8b7f7930e53055a77323d5c4e85884c1fdecee1",
+   "url": "https://geo.api.gouv.fr/communes/40002?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_c2accbf41b55101a.json",
+   "bytes": 640169,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:04:56.510187+00:00",
+   "sha256": "cc4f228e4e5bcc7f641446e5dad1a59b805ca37f539fcaf7bf7099c9bfa3b559",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q32273373%7CQ32273906%7CQ32274297%7CQ32274880%7CQ32280925%7CQ32282662%7CQ32283596%7CQ32283815%7CQ32285567%7CQ32290598%7CQ32296746%7CQ32298823%7CQ32299313%7CQ329103%7CQ333093%7CQ33421177%7CQ33423127%7CQ33427742%7CQ33427886%7CQ33427924%7CQ33433427%7CQ33434199%7CQ33435454%7CQ33436449%7CQ33437329%7CQ33438119%7CQ33440552%7CQ33441285%7CQ33451961%7CQ33464978%7CQ33465306%7CQ33471776%7CQ33477076%7CQ33477191%7CQ33482607%7CQ33483328%7CQ33487044%7CQ33506445%7CQ33513356%7CQ33514445%7CQ33514780%7CQ33517632%7CQ3387646%7CQ34561197%7CQ34622051%7CQ34787402%7CQ34787407%7CQ34788481%7CQ34788506%7CQ34789149&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_50074.json",
+   "bytes": 18319,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:25.163005+00:00",
+   "sha256": "56b8f735a99c1bf8084207371bc28f8b184feccd176b183e89df1cc7b0ab9d82",
+   "url": "https://geo.api.gouv.fr/communes/50074?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35039.json",
+   "bytes": 8348,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:34.849558+00:00",
+   "sha256": "764a0e2dd060a4c4b893fcd4e81795fd79a390a246f672687f139209a576d501",
+   "url": "https://geo.api.gouv.fr/communes/35039?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49026.json",
+   "bytes": 18042,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:26.223412+00:00",
+   "sha256": "d755d72c553195ebf8d513c0f5b2abbe743949c0b2dbc7b9380c70a3f7afd985",
+   "url": "https://geo.api.gouv.fr/communes/49026?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56011.json",
+   "bytes": 12692,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:34.473117+00:00",
+   "sha256": "4f9b64ca613360b0db19ef028a6635cddb458e77ea8b48e0cb9a9c34e30042a1",
+   "url": "https://geo.api.gouv.fr/communes/56011?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_1d3685e4b9c90f9f.json",
+   "bytes": 2735746,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:27.158043+00:00",
+   "sha256": "1b54f062b231ef118cd68f5efcc8fa6e9943c973bb46f2397248c469ca721526",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q63015%7CQ630186%7CQ631274%7CQ632445%7CQ632481%7CQ633475%7CQ634108%7CQ634970%7CQ635135%7CQ636220%7CQ638171%7CQ638782%7CQ639618%7CQ644206%7CQ644513%7CQ645112%7CQ64627%7CQ648737%7CQ649782%7CQ65065%7CQ65195%7CQ65232637%7CQ658337%7CQ659638%7CQ664772%7CQ665525%7CQ666021%7CQ667376%7CQ668708%7CQ668834%7CQ669957%7CQ670063%7CQ670245%7CQ674700%7CQ67519%7CQ676944%7CQ677325%7CQ68195%7CQ683107%7CQ684046%7CQ684374%7CQ687348%7CQ68760%7CQ692901%7CQ69292%7CQ69481%7CQ69665%7CQ69742%7CQ69915%7CQ70050&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56028.json",
+   "bytes": 16369,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:43.584042+00:00",
+   "sha256": "5d9128837c4827ccb94442dcddd6df0e18ccc9f1afd0ef258651f8c68f249c5f",
+   "url": "https://geo.api.gouv.fr/communes/56028?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56032.json",
+   "bytes": 15707,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:43.161692+00:00",
+   "sha256": "21e29a142e319ae5f24e2f659ea531ffcdae6e1fcf3bcba621baa59dfeede176",
+   "url": "https://geo.api.gouv.fr/communes/56032?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49055.json",
+   "bytes": 8612,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:43.660442+00:00",
+   "sha256": "a3983bd15ba98d773f4b5a9857453c3eea95b141516c83b0f5f94289227b10e5",
+   "url": "https://geo.api.gouv.fr/communes/49055?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_33862464e6ae61db.json",
+   "bytes": 2716161,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:13.781275+00:00",
+   "sha256": "7ea3f8bf93701e96eae2d5af352de438bc2d105002385cf827ef4594efb0c9ec",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q200256%7CQ200743%7CQ200836%7CQ205551%7CQ207154%7CQ208325%7CQ210164%7CQ212947%7CQ216824%7CQ21763%7CQ218250%7CQ219644%7CQ220732%7CQ22271%7CQ225385%7CQ240887%7CQ243177%7CQ244718%7CQ245466%7CQ24688%7CQ252426%7CQ2530207%7CQ254310%7CQ255106%7CQ255217%7CQ255642%7CQ256113%7CQ256260%7CQ256518%7CQ257338%7CQ259263%7CQ259662%7CQ260902%7CQ262193%7CQ262656%7CQ262790%7CQ263291%7CQ275168%7CQ275391%7CQ275731%7CQ28012056%7CQ2809%7CQ28211286%7CQ28212099%7CQ2834%7CQ28464251%7CQ28464404%7CQ30051100%7CQ320260%7CQ327267&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56033.json",
+   "bytes": 28806,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:53.885035+00:00",
+   "sha256": "40024c13309843af1a7d667b61cc227b40ab7faf7de90229f392ad8da03cbc5a",
+   "url": "https://geo.api.gouv.fr/communes/56033?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56034.json",
+   "bytes": 20155,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:10:56.182200+00:00",
+   "sha256": "0a550f6e00daa0b70b462c1b11ed6edf6c4e3e95366e204b1e34f3b1bb4ed6fd",
+   "url": "https://geo.api.gouv.fr/communes/56034?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56035.json",
+   "bytes": 15861,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:16.537005+00:00",
+   "sha256": "722942209566dd0efdd3922c72012312b2529efea35cb680cab1a3cb8d7821d2",
+   "url": "https://geo.api.gouv.fr/communes/56035?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44027.json",
+   "bytes": 10145,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:06.885176+00:00",
+   "sha256": "629477e9a46cc73f7ea4a46d5ad2de5888d75302fe2d3b9a89ab6bee85c4bbbb",
+   "url": "https://geo.api.gouv.fr/communes/44027?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22034.json",
+   "bytes": 17002,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:15.368232+00:00",
+   "sha256": "78a336b6ad1eca12a7ec89abcec06a5578174c4a4fd0f0b90a6c7fdbd52c6755",
+   "url": "https://geo.api.gouv.fr/communes/22034?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_79061.json",
+   "bytes": 12632,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:19.042756+00:00",
+   "sha256": "d2409bcef269c9945950569093e14d42419c87ab1ad54780c2cd620d70526242",
+   "url": "https://geo.api.gouv.fr/communes/79061?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_50111.json",
+   "bytes": 15088,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:16.229358+00:00",
+   "sha256": "c2931234e0719a42c3fb963ef6a66d5605ae4688c308095dac18df2adf2dbfa7",
+   "url": "https://geo.api.gouv.fr/communes/50111?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53048.json",
+   "bytes": 19732,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:22.614481+00:00",
+   "sha256": "2df65cf117c14dd02e95fc2618f569f71c5df480ea22d27549788480f150257d",
+   "url": "https://geo.api.gouv.fr/communes/53048?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_89074.json",
+   "bytes": 5136,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:23.141513+00:00",
+   "sha256": "7587a607d5070f9a0502994000fe0032556739c190f9586b4aa5483ee9c83791",
+   "url": "https://geo.api.gouv.fr/communes/89074?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_61091.json",
+   "bytes": 19144,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:42.948946+00:00",
+   "sha256": "70d528c310fc41e1ae62f6927238f8c06b782a3637f0d48397fff3136c7c5757",
+   "url": "https://geo.api.gouv.fr/communes/61091?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49068.json",
+   "bytes": 17673,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:39.862828+00:00",
+   "sha256": "ca4558df2e19e9a7d33181b1b81942341b64331aeff62cf576b9ecda623c27b1",
+   "url": "https://geo.api.gouv.fr/communes/49068?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53054.json",
+   "bytes": 24037,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:50.267117+00:00",
+   "sha256": "7b1cb6cc63bab7db343d9ded8e9752f9a7d479c30a80325b54b667eb9d9418fd",
+   "url": "https://geo.api.gouv.fr/communes/53054?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35054.json",
+   "bytes": 11329,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:51.879936+00:00",
+   "sha256": "f4e207c3362f5070c47ea479b970e7fd8eb784991f2083f1cb0f84b6a95bc81e",
+   "url": "https://geo.api.gouv.fr/communes/35054?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_77085.json",
+   "bytes": 3508,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:00.495364+00:00",
+   "sha256": "7fac03a5ca816c6f5392fd053fdbc50109e799bce424dd635022f48d17b3095e",
+   "url": "https://geo.api.gouv.fr/communes/77085?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_02163.json",
+   "bytes": 10903,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:11:55.518852+00:00",
+   "sha256": "8a69e49f80c8e522adf772482d8cf3137c95e4b1e70465eebd5b822dab5c457e",
+   "url": "https://geo.api.gouv.fr/communes/02163?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35066.json",
+   "bytes": 8165,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:09.082123+00:00",
+   "sha256": "5e46636457fab00e411f3bb84fe67146a01574b915976819f3db23aced58616f",
+   "url": "https://geo.api.gouv.fr/communes/35066?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35067.json",
+   "bytes": 12205,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:01.305532+00:00",
+   "sha256": "bccc1a30817b8c62393a88e1a0a234d6c3330f18554f10fb82b8fbc5cb2333a7",
+   "url": "https://geo.api.gouv.fr/communes/35067?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_16085.json",
+   "bytes": 10676,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:05.222231+00:00",
+   "sha256": "4edc39ece79c8e629f19a839027001392503e2e06899fec66304230f5021d4af",
+   "url": "https://geo.api.gouv.fr/communes/16085?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_16088.json",
+   "bytes": 6743,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:06.880669+00:00",
+   "sha256": "2f114e11559122348950464ee7ac7909331eb15205af97ed1cd07292279ceaf1",
+   "url": "https://geo.api.gouv.fr/communes/16088?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44038.json",
+   "bytes": 10208,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:13:18.779251+00:00",
+   "sha256": "f3549fd6bc2d326905f799c8179512b6db9caf448a9fc61f6cb1452a7f500cc2",
+   "url": "https://geo.api.gouv.fr/communes/44038?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35076.json",
+   "bytes": 9770,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:12.206592+00:00",
+   "sha256": "df7a0f772a565af25532088f6708ad03a41529be1f937a7123893838f4a72c4f",
+   "url": "https://geo.api.gouv.fr/communes/35076?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53066.json",
+   "bytes": 14801,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:23.002376+00:00",
+   "sha256": "a0e7eacb20e1404871c59c5917af73a039a8e1db334519ef3a0797cfabcd79d9",
+   "url": "https://geo.api.gouv.fr/communes/53066?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35079.json",
+   "bytes": 6964,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:26.759701+00:00",
+   "sha256": "f04cb963605679db44983865045387c4b3536a2fd05aed3116be8f82c33baf9f",
+   "url": "https://geo.api.gouv.fr/communes/35079?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_16089.json",
+   "bytes": 5001,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:32.196923+00:00",
+   "sha256": "f23f6146ede3857f91f54456930f415db4fee93f6b3a1e877f1a422f59d2d020",
+   "url": "https://geo.api.gouv.fr/communes/16089?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35068.json",
+   "bytes": 9551,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:28.243646+00:00",
+   "sha256": "65f41e358c23e85959e97636b80c3cd682988b4b9e8276ddf8cae4c72c819788",
+   "url": "https://geo.api.gouv.fr/communes/35068?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35069.json",
+   "bytes": 9859,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:37.850257+00:00",
+   "sha256": "1dd239f3b40fc9a0a0ef47dc589ab6b87806bd9977e9d7f4977cb6b68d4d22d0",
+   "url": "https://geo.api.gouv.fr/communes/35069?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_42053.json",
+   "bytes": 7681,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:33.265111+00:00",
+   "sha256": "bf63b245be3c2aa531cc4d017da042f8afbf3341bec777754e57cd6619043f4e",
+   "url": "https://geo.api.gouv.fr/communes/42053?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29027.json",
+   "bytes": 20218,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:34.211120+00:00",
+   "sha256": "9f4f10798613b89a7fd2894699831c5f9806af500983be7849298992560f9e1f",
+   "url": "https://geo.api.gouv.fr/communes/29027?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_17094.json",
+   "bytes": 5309,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:12:49.736543+00:00",
+   "sha256": "e7761d7415975e77760ffdc353660e9f8390ba91a825edf3736b1abe9d02afdb",
+   "url": "https://geo.api.gouv.fr/communes/17094?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_92020.json",
+   "bytes": 2615,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:13:01.037473+00:00",
+   "sha256": "02849c92b648b965b795e591c546955bf3a46b707b3eb2552bc06a0ea7986d1a",
+   "url": "https://geo.api.gouv.fr/communes/92020?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44043.json",
+   "bytes": 10946,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:13:11.236656+00:00",
+   "sha256": "d581a21585339648ea54ef6f824bb4337226892284ad149497872d3e537d9028",
+   "url": "https://geo.api.gouv.fr/communes/44043?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29031.json",
+   "bytes": 31309,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:42.124098+00:00",
+   "sha256": "090c00ea9082d14b04aabae4871d9fa5f30d68bb2405773a6d7bafbf06f62a49",
+   "url": "https://geo.api.gouv.fr/communes/29031?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29029.json",
+   "bytes": 14795,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:13:19.785671+00:00",
+   "sha256": "ada50b74e90864bf4f91414bfd7f8d5e8570a7a4437a9dfe46673ce87ab4bb78",
+   "url": "https://geo.api.gouv.fr/communes/29029?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56040.json",
+   "bytes": 21510,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:51.372017+00:00",
+   "sha256": "51446633c2fb95ed60795685ab2dbf79f39af43c86f7f856432a7db8647a46af",
+   "url": "https://geo.api.gouv.fr/communes/56040?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_79096.json",
+   "bytes": 15551,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:13:56.206517+00:00",
+   "sha256": "b313b44d1360fd07f4cf4820e123d7f5eaee056bae67edfeda53bf332518aacc",
+   "url": "https://geo.api.gouv.fr/communes/79096?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53072.json",
+   "bytes": 10507,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:13.371392+00:00",
+   "sha256": "6d28d3753d87b67d0b363f0f3e7499ab224e1be7b760d6842dc6213919c07898",
+   "url": "https://geo.api.gouv.fr/communes/53072?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_15054.json",
+   "bytes": 17356,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:22.916135+00:00",
+   "sha256": "709e4ab16bae7ca291069b026f26c292fbceaa839cae394b58426e77887a754b",
+   "url": "https://geo.api.gouv.fr/communes/15054?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53073.json",
+   "bytes": 15679,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:24.315800+00:00",
+   "sha256": "6c8a90287c1bbcdf39c59cee64276be8d5799eb211b22a9d24a73965deccf414",
+   "url": "https://geo.api.gouv.fr/communes/53073?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44044.json",
+   "bytes": 10237,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:24.942581+00:00",
+   "sha256": "79163db174cf3da301bd6cde3a41e0ff9871f5fe630686011cc8a9c98f62719a",
+   "url": "https://geo.api.gouv.fr/communes/44044?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44045.json",
+   "bytes": 15166,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:34.720468+00:00",
+   "sha256": "e81284f4b7c3ae91a58ae3c92d2351673170284230ce2915730de495975fa560",
+   "url": "https://geo.api.gouv.fr/communes/44045?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_74089.json",
+   "bytes": 12246,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:44.215029+00:00",
+   "sha256": "10d9520001d74a714ef26802e228ef3bfca54bebde8294da7a28f408ce1ec70c",
+   "url": "https://geo.api.gouv.fr/communes/74089?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22048.json",
+   "bytes": 25744,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:52.573188+00:00",
+   "sha256": "d5bf315e470e1182d88bf463983b4d45a688f91a1c275e866cbcf943e51d695d",
+   "url": "https://geo.api.gouv.fr/communes/22048?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49110.json",
+   "bytes": 8940,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:44.703704+00:00",
+   "sha256": "2259586b8f69537ec326100e827ad39777958b0b9f7a844a1bdc3b9d19fc2d81",
+   "url": "https://geo.api.gouv.fr/communes/49110?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_02217.json",
+   "bytes": 4089,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:45.336930+00:00",
+   "sha256": "9fcce5dcb51ca1182ae9e7f3d6ffb5840c9d16f68c8e12c0dee8b021d3c6a003",
+   "url": "https://geo.api.gouv.fr/communes/02217?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53083.json",
+   "bytes": 16425,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:55.720314+00:00",
+   "sha256": "b462cd36e9dbf11a59b833346e501e4720f466633ca1ac72497e769b35cc0a7b",
+   "url": "https://geo.api.gouv.fr/communes/53083?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_77139.json",
+   "bytes": 2498,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:47.589766+00:00",
+   "sha256": "c4f2345b055dc5baa1b7a78670864da31669a696240827b562da991f6fd5bfc2",
+   "url": "https://geo.api.gouv.fr/communes/77139?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_17127.json",
+   "bytes": 6885,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:14:53.105702+00:00",
+   "sha256": "a17994e7233e12f93ed9c13d59c86636f07d4b42100683bd1cdf3ac104414d41",
+   "url": "https://geo.api.gouv.fr/communes/17127?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_39173.json",
+   "bytes": 4943,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:15:02.910541+00:00",
+   "sha256": "67e8a789a25d5c0c3afe3b519bf06376b3bf87b1232c99457497ecf28593acfa",
+   "url": "https://geo.api.gouv.fr/communes/39173?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44047.json",
+   "bytes": 16902,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:07.246710+00:00",
+   "sha256": "bbdf3afe8838cc395f4ff4ac601e13efb9e5ecb339c1eef1843c44757f07d71c",
+   "url": "https://geo.api.gouv.fr/communes/44047?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_17131.json",
+   "bytes": 9025,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:15:03.578998+00:00",
+   "sha256": "3e6e06fd0c1189d7fd765e80946d576c7b5f8189c01e68d17e60fe8384502fef",
+   "url": "https://geo.api.gouv.fr/communes/17131?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35082.json",
+   "bytes": 13207,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:26.795779+00:00",
+   "sha256": "74e2dd3de1e3ce50a36ca7af212a41e594da1fa30e552cee7446df5a4a7157b3",
+   "url": "https://geo.api.gouv.fr/communes/35082?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22044.json",
+   "bytes": 10828,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:08.688240+00:00",
+   "sha256": "845129408166f3da43e5be2feb8852e0aad18dd185317c2643f0f005ae66a6e4",
+   "url": "https://geo.api.gouv.fr/communes/22044?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56046.json",
+   "bytes": 20182,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:56.472058+00:00",
+   "sha256": "ce53eece41c2ea75003f7169ff29fa5cba270883a3bf4233731e726c5b04c871",
+   "url": "https://geo.api.gouv.fr/communes/56046?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_57160.json",
+   "bytes": 8018,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:36.767921+00:00",
+   "sha256": "d743d4e1ebcbfbd72d0d93ba76eef943ce6af26fca0c748db8bbf6c0a7f25f43",
+   "url": "https://geo.api.gouv.fr/communes/57160?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35090.json",
+   "bytes": 5672,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:46.868057+00:00",
+   "sha256": "bdce0b5da681b6f29dc59b9458a4591290d6ba83157c3c8f749d78e97ce2221e",
+   "url": "https://geo.api.gouv.fr/communes/35090?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_50151.json",
+   "bytes": 11354,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:56.844816+00:00",
+   "sha256": "3b11837dba9e48d37e0cd6f3255e15a8b0c451ecff7da3f9a6184cd987e3188f",
+   "url": "https://geo.api.gouv.fr/communes/50151?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33140.json",
+   "bytes": 6130,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:58.416039+00:00",
+   "sha256": "163ff38614f66bff2c883b7650643636a5906e167eb39a8a5086da0bc7ad0ab8",
+   "url": "https://geo.api.gouv.fr/communes/33140?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_02238.json",
+   "bytes": 5904,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:16:58.941881+00:00",
+   "sha256": "46f3187eefb4d27f4c114f749b613cb12ddebb91d38ff7d3246f333ac11eb70f",
+   "url": "https://geo.api.gouv.fr/communes/02238?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_87054.json",
+   "bytes": 12621,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:08.215858+00:00",
+   "sha256": "8c54a99645050a3d75bdeea5c94da895ce93ea1595125349773192853ad00671",
+   "url": "https://geo.api.gouv.fr/communes/87054?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33146.json",
+   "bytes": 5378,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:01.486592+00:00",
+   "sha256": "bdce0c2011108a544e46983a464e3fed553957ba477f180dc6d89cd9f0cd21d5",
+   "url": "https://geo.api.gouv.fr/communes/33146?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_43084.json",
+   "bytes": 8807,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:12.974791+00:00",
+   "sha256": "cd9b853fa00988760709230ed0c4dfd3b03c71110aa6f9f3d2d9494cdaea0e2e",
+   "url": "https://geo.api.gouv.fr/communes/43084?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_77065.json",
+   "bytes": 4072,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:08.738998+00:00",
+   "sha256": "1f81928462a79cbac25cd863e600562e4d851f8117ab26e7a704a5a02b26f908",
+   "url": "https://geo.api.gouv.fr/communes/77065?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33120.json",
+   "bytes": 3513,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:20.269728+00:00",
+   "sha256": "0c26adf17f2822369763553d74ad01504d4d55c3b7ff9583ad92db0070049e8c",
+   "url": "https://geo.api.gouv.fr/communes/33120?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33123.json",
+   "bytes": 17236,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:23.084170+00:00",
+   "sha256": "11dc038c68d2c82b6767897e9efcc94b6cf5ae4ec5540e8c1bae163eda2a076e",
+   "url": "https://geo.api.gouv.fr/communes/33123?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29043.json",
+   "bytes": 11960,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:29.533007+00:00",
+   "sha256": "0ff29866f2a987c1009de375614e8b2bb9469796274c21b1fce1097b2768133a",
+   "url": "https://geo.api.gouv.fr/communes/29043?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/municipality_55d5e7e56815bac3.json",
+   "bytes": 2852065,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:09:20.408096+00:00",
+   "sha256": "9c18e440c06ddb7671e4ff29ca78d9ec55867a9db770b700f3f517e757aabe7e",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q494957%7CQ495647%7CQ496275%7CQ496282%7CQ501812%7CQ502596%7CQ502817%7CQ503413%7CQ503428%7CQ503437%7CQ503445%7CQ503464%7CQ503617%7CQ503689%7CQ503699%7CQ503752%7CQ503757%7CQ503784%7CQ503920%7CQ504015%7CQ504048%7CQ504813%7CQ504892%7CQ505140%7CQ505363%7CQ505408%7CQ505536%7CQ505542%7CQ505578%7CQ505762%7CQ505823%7CQ505905%7CQ505915%7CQ506206%7CQ506603%7CQ506948%7CQ507780%7CQ508471%7CQ508611%7CQ508640%7CQ508714%7CQ508771%7CQ509375%7CQ509557%7CQ510035%7CQ511469%7CQ511477%7CQ511523%7CQ512083%7CQ512204&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49120.json",
+   "bytes": 9526,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:23.845339+00:00",
+   "sha256": "62d3f9ddb828efbb1d4cb7abf1bc35a20f36ee7f0c03afce3cd5f2c33594ebab",
+   "url": "https://geo.api.gouv.fr/communes/49120?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44051.json",
+   "bytes": 18831,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:27.502755+00:00",
+   "sha256": "d71438f6559019f8e51e1c4317b1e07c69f062b77f3ffec88d2287009b32c856",
+   "url": "https://geo.api.gouv.fr/communes/44051?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35094.json",
+   "bytes": 19335,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:36.868210+00:00",
+   "sha256": "ee6c66bd5f6fbddeb9e35c31d45363e57da44ffa47203dcc95d54c212df3365e",
+   "url": "https://geo.api.gouv.fr/communes/35094?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49123.json",
+   "bytes": 8433,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:38.656672+00:00",
+   "sha256": "2286068def255b20349e9d39274fe0ff10475e8eb289356a38dfe6cfe2ec8c4a",
+   "url": "https://geo.api.gouv.fr/communes/49123?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29091.json",
+   "bytes": 22335,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:46.255114+00:00",
+   "sha256": "e043f7101dc43a1d3d1ff88b209eff8d4d6bca394670e95b335198ff7177f615",
+   "url": "https://geo.api.gouv.fr/communes/29091?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85025.json",
+   "bytes": 14480,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:44.007528+00:00",
+   "sha256": "7c146ced8ed144d14d2bcef0bf8ed6ff4ea884b950033ef40150879f43e832ee",
+   "url": "https://geo.api.gouv.fr/communes/85025?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_9f684b090725c990.json",
+   "bytes": 476966,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:05:03.329178+00:00",
+   "sha256": "25d76ba258e3d6c4b6963bdb6a95c1d2032b979f430206de2c77963ef7a47ed4",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q35707527%7CQ35707593%7CQ35707765%7CQ35707773%7CQ35707893%7CQ35707917%7CQ35708107%7CQ35708170%7CQ35708178%7CQ35708273%7CQ35708383%7CQ35708431%7CQ35708439%7CQ35708506%7CQ35708522%7CQ35708536%7CQ35708568%7CQ35708584%7CQ35708592%7CQ35708600%7CQ35708694%7CQ35708775%7CQ35708869%7CQ35708877%7CQ35708917%7CQ35708942%7CQ35708975%7CQ35708991%7CQ35708999%7CQ35709007%7CQ35709039%7CQ35709254%7CQ35709270%7CQ35709332%7CQ35709369%7CQ35709481%7CQ35709593%7CQ35709672%7CQ35709712%7CQ35709750%7CQ35709767%7CQ35709971%7CQ35710062%7CQ35710358%7CQ35710367%7CQ35711103%7CQ35711167%7CQ35711198%7CQ35711261%7CQ35711296&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35034.json",
+   "bytes": 12308,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:53.642316+00:00",
+   "sha256": "24e8b1be27d2d750990770fc4e5d4f6afefedd69ef66f9060ac49ffb147f5327",
+   "url": "https://geo.api.gouv.fr/communes/35034?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44032.json",
+   "bytes": 9425,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:55.765518+00:00",
+   "sha256": "a096d82e409b20ead6ec9d4b9c21b2fc9062f5f6e4daddf53e7c31abcdd7461d",
+   "url": "https://geo.api.gouv.fr/communes/44032?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44033.json",
+   "bytes": 11745,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:17:59.339005+00:00",
+   "sha256": "00390f92e4123ed992e162092d6e46f1f0a098b6e42b3adf9bdcf5277c1a9f28",
+   "url": "https://geo.api.gouv.fr/communes/44033?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35059.json",
+   "bytes": 5867,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:05.561309+00:00",
+   "sha256": "eeca0de56210b7108870280b356e11c0f66fd70099d4e552633ab20f2c152296",
+   "url": "https://geo.api.gouv.fr/communes/35059?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44030.json",
+   "bytes": 4989,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:02.284595+00:00",
+   "sha256": "feb19a30fc545e98d53224867eb7c6139a7b182a0ceffbd1c0e0433836ae4ff3",
+   "url": "https://geo.api.gouv.fr/communes/44030?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44041.json",
+   "bytes": 8588,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:10.662517+00:00",
+   "sha256": "78581df6dca0e2e1db5e229c5a1d21d7bbc52b384a30dbb79bab48bec3d2176e",
+   "url": "https://geo.api.gouv.fr/communes/44041?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85059.json",
+   "bytes": 8946,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:12.444774+00:00",
+   "sha256": "6e3e6fc58a1d1c8080a6c7e2abcfbc81b6f4ec66f29ef1d3d3fe3dfac8161295",
+   "url": "https://geo.api.gouv.fr/communes/85059?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_17121.json",
+   "bytes": 10724,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:06.179163+00:00",
+   "sha256": "34d84bf894d6ba78510baf0a5787adcef636217473da392b9034b98877214e38",
+   "url": "https://geo.api.gouv.fr/communes/17121?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35098.json",
+   "bytes": 13822,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:17.215013+00:00",
+   "sha256": "24b3ac4551c2117ebb9c5f8e0e65ee4e0e251ccdb205472aaff3e973bd92e831",
+   "url": "https://geo.api.gouv.fr/communes/35098?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85089.json",
+   "bytes": 22069,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:37.570732+00:00",
+   "sha256": "90da1d5ef86885ff9eb0a3d57c012219a8606790e6726fae2a18c9d7032625f2",
+   "url": "https://geo.api.gouv.fr/communes/85089?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_61163.json",
+   "bytes": 5754,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:21.619696+00:00",
+   "sha256": "fd139be33b6f617c2e8a6267221c14d711123543c9c654e418009e6c45ed0df1",
+   "url": "https://geo.api.gouv.fr/communes/61163?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_17161.json",
+   "bytes": 9408,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:26.861759+00:00",
+   "sha256": "baa5df153388f76fed0c9f868b6f9d4838eeb66880a7c13b39187263f37386b0",
+   "url": "https://geo.api.gouv.fr/communes/17161?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29056.json",
+   "bytes": 9579,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:31.052506+00:00",
+   "sha256": "03a8ae61588a42eea11a3f1a2ba0f90459d8f32a3f1ee9796b884f58ec5e6ca0",
+   "url": "https://geo.api.gouv.fr/communes/29056?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29057.json",
+   "bytes": 19467,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:39.261090+00:00",
+   "sha256": "e1dce0273f50d69298bb1a2f6be353ec88e92e50cd0d8d9569f05d4c2b91f5bb",
+   "url": "https://geo.api.gouv.fr/communes/29057?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_35116.json",
+   "bytes": 7619,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:39.197019+00:00",
+   "sha256": "2942af078196329dd4c48524251fe642687f38a9a02bbdfdc33dfedba0312f3a",
+   "url": "https://geo.api.gouv.fr/communes/35116?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56061.json",
+   "bytes": 23803,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:38.174409+00:00",
+   "sha256": "999177df145182850de4bff6e973aaaff68dfcb585a66475429b0cdb38a42c6e",
+   "url": "https://geo.api.gouv.fr/communes/56061?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_83062.json",
+   "bytes": 8049,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:51.132542+00:00",
+   "sha256": "1c3707936f28650c854a1aba103681cd6236650eb8325c62067632d67bae0b01",
+   "url": "https://geo.api.gouv.fr/communes/83062?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85096.json",
+   "bytes": 21670,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:46.949656+00:00",
+   "sha256": "20c75ab12ecf0152d10e55c12e124d386c577c6c7ee68d799c6b523b571280fd",
+   "url": "https://geo.api.gouv.fr/communes/85096?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_50237.json",
+   "bytes": 12052,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:49.993690+00:00",
+   "sha256": "5bb16924baa2edc7d5dae7ca136766c24cc4a2fa964d0d34f5847b37b10ba88f",
+   "url": "https://geo.api.gouv.fr/communes/50237?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_61218.json",
+   "bytes": 8648,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:49.414378+00:00",
+   "sha256": "5e51bd8eb8a996477ce1f1235631c8bdb300dab8bdc1ffde907f972d64318100",
+   "url": "https://geo.api.gouv.fr/communes/61218?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33219.json",
+   "bytes": 6768,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:53.250379+00:00",
+   "sha256": "aaf247b9b785775f243956f1fb94deb553180ab6e90df1513e0be058df97f5f7",
+   "url": "https://geo.api.gouv.fr/communes/33219?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44083.json",
+   "bytes": 13070,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:27.842487+00:00",
+   "sha256": "8df3158506fc17d5f2e4c765ce9cf414307bdc2458545d4122759d5c38bec7ca",
+   "url": "https://geo.api.gouv.fr/communes/44083?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_27378.json",
+   "bytes": 7198,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:01.705102+00:00",
+   "sha256": "e99b1fb274fcd20fa92219230d73502ebfdaa7e790e810582bb64d1a19a03f29",
+   "url": "https://geo.api.gouv.fr/communes/27378?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_50297.json",
+   "bytes": 8582,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:56.750219+00:00",
+   "sha256": "28d4534b23096eef0b3ec3812e5a2343726f46fd5a5c14aa82e5d54a89eb45df",
+   "url": "https://geo.api.gouv.fr/communes/50297?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85140.json",
+   "bytes": 20011,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:54.990702+00:00",
+   "sha256": "1a15a1277cfa05685c582e6bc8bed9d78aa6d0d96f573bdeefaef1bf0351d676",
+   "url": "https://geo.api.gouv.fr/communes/85140?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44095.json",
+   "bytes": 9444,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:02.511855+00:00",
+   "sha256": "762cf6e42807425e7c0fe3462ccc08e2fbc4ba26fe061cc832e4662ef64c52e1",
+   "url": "https://geo.api.gouv.fr/communes/44095?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_37151.json",
+   "bytes": 8514,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:12.707226+00:00",
+   "sha256": "90105d81bb9fa8bd9e09461738fe5455254e34fa56aedf60e64fe5c386d83937",
+   "url": "https://geo.api.gouv.fr/communes/37151?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44101.json",
+   "bytes": 3631,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:54.767295+00:00",
+   "sha256": "54832a683cab119b9fb2b6ad160336318d6bb75df3b692d65ff6079ed910f148",
+   "url": "https://geo.api.gouv.fr/communes/44101?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_79208.json",
+   "bytes": 16731,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:38.497913+00:00",
+   "sha256": "867874e993219ae2c363cba54fcc9ef3e06b04f2e4beb48ff64662ae93c49f14",
+   "url": "https://geo.api.gouv.fr/communes/79208?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44126.json",
+   "bytes": 11870,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:48.786680+00:00",
+   "sha256": "851f9163bfdff47e158fad34c0897256126c220a97bfc5b578fc68052009d171",
+   "url": "https://geo.api.gouv.fr/communes/44126?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49247.json",
+   "bytes": 5648,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:49.469991+00:00",
+   "sha256": "a860bf414cd13f15f578c4aaa0660d59dde83caa9b767d10b03f2916cc74f021",
+   "url": "https://geo.api.gouv.fr/communes/49247?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44140.json",
+   "bytes": 12696,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:56.142678+00:00",
+   "sha256": "c07064132355fb0036c4c9924a83715e1f83809b1cea646c07515f3b6bd41229",
+   "url": "https://geo.api.gouv.fr/communes/44140?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49260.json",
+   "bytes": 13967,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:55.707658+00:00",
+   "sha256": "8a810c6988455970d8e2960c46edcabb35898357ae7aecba0e3662f54f2ff1a8",
+   "url": "https://geo.api.gouv.fr/communes/49260?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33505.json",
+   "bytes": 9925,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:03.507485+00:00",
+   "sha256": "c93e425bff62cec910cc0699ed0ebe067c75c72b969b9b1b72537c7555808444",
+   "url": "https://geo.api.gouv.fr/communes/33505?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_49343.json",
+   "bytes": 19534,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:56.830832+00:00",
+   "sha256": "02463556c1b63cd25d562af1001864664d0af1991f160d37c81370779d303a9f",
+   "url": "https://geo.api.gouv.fr/communes/49343?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_85294.json",
+   "bytes": 13573,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:04.892350+00:00",
+   "sha256": "ef79d10e4780b5fd7af015b305ff7c0a6b067ea40801a669cbd419e7aba89f7c",
+   "url": "https://geo.api.gouv.fr/communes/85294?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56258.json",
+   "bytes": 10072,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:13.483381+00:00",
+   "sha256": "d2c4f6a70da6b59dd65d38826c4153ca61e797a2f36ff01e3ee84d17a9d1c500",
+   "url": "https://geo.api.gouv.fr/communes/56258?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_44211.json",
+   "bytes": 15229,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:14.994324+00:00",
+   "sha256": "97e1c8ef0296dc7ce1ce0723499b61c1ccc6eb8b181607bc1bf588f7d3ba1dbf",
+   "url": "https://geo.api.gouv.fr/communes/44211?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_40132.json",
+   "bytes": 15244,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:25.227492+00:00",
+   "sha256": "75a39a0cc8d0133ff2c64902214212269426fb8516e2573906cb880c91fe11c9",
+   "url": "https://geo.api.gouv.fr/communes/40132?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33214.json",
+   "bytes": 14248,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:26.307950+00:00",
+   "sha256": "4a49857f1ed6c26987020450468488c0ad51dac140cc37a8fcc5973dcc4ad96e",
+   "url": "https://geo.api.gouv.fr/communes/33214?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_64301.json",
+   "bytes": 12039,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:35.732580+00:00",
+   "sha256": "b9d4ae8e90a83b5880eb3e9a2c8cb8d36280297c3dc7c9d26b5f557d548c6f23",
+   "url": "https://geo.api.gouv.fr/communes/64301?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33218.json",
+   "bytes": 14215,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:45.272914+00:00",
+   "sha256": "56077db02dedc616132e2ba37fdc2ce873b680d6c5657c5c1873a32b8e812214",
+   "url": "https://geo.api.gouv.fr/communes/33218?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29097.json",
+   "bytes": 13308,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:46.517522+00:00",
+   "sha256": "de1d728a215bc42777cf657573ca0da9b57fd3fd8e9ae83f1ea8e659097aa2a3",
+   "url": "https://geo.api.gouv.fr/communes/29097?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56096.json",
+   "bytes": 13459,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:56.424247+00:00",
+   "sha256": "a32e8b13555e470b1ecc026f7062ee2a5a268e4366c12113e00fac0b57b0e68d",
+   "url": "https://geo.api.gouv.fr/communes/56096?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29102.json",
+   "bytes": 11860,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:06.763310+00:00",
+   "sha256": "24f9788b93607bca3d89ddff67adc3059610ba29ce6c7e3503e12d1d13804b12",
+   "url": "https://geo.api.gouv.fr/communes/29102?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33225.json",
+   "bytes": 15523,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:07.412942+00:00",
+   "sha256": "ea825b826c904d55cf80cb3b254518e30265b697f7108424936e950038526918",
+   "url": "https://geo.api.gouv.fr/communes/33225?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_53125.json",
+   "bytes": 28230,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:17.931244+00:00",
+   "sha256": "a995cd036682dcfe9e8d56d4e46d6f1e10a9ea747ed190754530b63a08961d1a",
+   "url": "https://geo.api.gouv.fr/communes/53125?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_2f199c8125e10a52.json",
+   "bytes": 464636,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:05:05.998249+00:00",
+   "sha256": "32570221fcc796568f554caff521d1d9ce5262c640b2797652c139324a2604be",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q35711349%7CQ35711365%7CQ35711389%7CQ35711397%7CQ35711404%7CQ35711491%7CQ35711499%7CQ35711514%7CQ35711522%7CQ35711585%7CQ35711792%7CQ35711841%7CQ35711848%7CQ35711868%7CQ35711891%7CQ35711898%7CQ35711906%7CQ35712041%7CQ35712081%7CQ35712134%7CQ35712548%7CQ35712997%7CQ35713063%7CQ35713102%7CQ35713173%7CQ35713279%7CQ35713304%7CQ35713329%7CQ35713344%7CQ35713537%7CQ35713567%7CQ35713575%7CQ35714051%7CQ35714075%7CQ35714115%7CQ35714139%7CQ35714163%7CQ35714191%7CQ35714232%7CQ35714257%7CQ35714273%7CQ35714329%7CQ35714368%7CQ35714383%7CQ35714510%7CQ35714534%7CQ35714612%7CQ35714696%7CQ35715469%7CQ35715540&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29108.json",
+   "bytes": 16683,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:30.544789+00:00",
+   "sha256": "077d8d2a03de3f5a500bc08fcf88318c0db684d4af53e5f8c5effe8c53399e0a",
+   "url": "https://geo.api.gouv.fr/communes/29108?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29109.json",
+   "bytes": 24434,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:36.671145+00:00",
+   "sha256": "455d055776b96f2eaebbbc0a37f6d062dede88838948c730e654387b1d47ffa0",
+   "url": "https://geo.api.gouv.fr/communes/29109?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22098.json",
+   "bytes": 8608,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:40.845203+00:00",
+   "sha256": "02d22f58e7c8ad21b0de46a6dc37c7a6a5b9f7ae1b34d9ab40fca3cd1524fbee",
+   "url": "https://geo.api.gouv.fr/communes/22098?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56097.json",
+   "bytes": 16768,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:47.132481+00:00",
+   "sha256": "1581e86743123e114e78fcfea3e1843e4b80b739dfcf7149079b30f5bd13bb7d",
+   "url": "https://geo.api.gouv.fr/communes/56097?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22101.json",
+   "bytes": 21290,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:51.506070+00:00",
+   "sha256": "ccf9a6da75c261dfd69666ff39bd3b179b4b5dbd51052d0b73b68b6f4ce6e898",
+   "url": "https://geo.api.gouv.fr/communes/22101?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33226.json",
+   "bytes": 6548,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:57.995941+00:00",
+   "sha256": "75dddb09492d33dcec57ccb52bfa3754ad9139839cfc86bf306c9b0438610156",
+   "url": "https://geo.api.gouv.fr/communes/33226?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33227.json",
+   "bytes": 9264,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:01.362155+00:00",
+   "sha256": "99391c8807cd377db147ffd8c9c997737cd721bcc939ae752bd384f068595455",
+   "url": "https://geo.api.gouv.fr/communes/33227?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56100.json",
+   "bytes": 34845,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:14.867783+00:00",
+   "sha256": "8fdd9ba45831db05ad26b55e369e1d6a70c80d7b5444d8de6e0c7f774162678a",
+   "url": "https://geo.api.gouv.fr/communes/56100?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29119.json",
+   "bytes": 10669,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:11.904414+00:00",
+   "sha256": "0e73440fdd278725fe93cf44a43524001790a6927e462c9d808b14e1381de439",
+   "url": "https://geo.api.gouv.fr/communes/29119?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22117.json",
+   "bytes": 13695,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:12.818801+00:00",
+   "sha256": "4b431b61935c163ebe913102af955bfda249bb7023659fe3e59c603bfb5c2e38",
+   "url": "https://geo.api.gouv.fr/communes/22117?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_33229.json",
+   "bytes": 16117,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:23.181486+00:00",
+   "sha256": "07a55ed58e2aba378aa3b74e132d958671da6afef4852e4972b6e70528aac052",
+   "url": "https://geo.api.gouv.fr/communes/33229?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_22.json",
+   "bytes": 5005312,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:06.223964+00:00",
+   "sha256": "b120eb44f21386495e3f475d9772988e837789b30c46451c6b2e441797f59bd2",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=22&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_22121.json",
+   "bytes": 8225,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:26.535297+00:00",
+   "sha256": "fbda0a6fc7ce9d407ea0ef4c8b1d8cde9fd4512a23fb80dcfd532aef74eeebb8",
+   "url": "https://geo.api.gouv.fr/communes/22121?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_56.json",
+   "bytes": 3994308,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:18:33.921723+00:00",
+   "sha256": "e6835424148d700c37ed1aff1b7081d851f5c20ec9f960217c5f01d3676eb3dc",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=56&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_29120.json",
+   "bytes": 18007,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:25.075084+00:00",
+   "sha256": "900fc904fdd07fe0a1e4038ba0c7354e6d3427b0f5521ff197d0a535f774720b",
+   "url": "https://geo.api.gouv.fr/communes/29120?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_boundary_56106.json",
+   "bytes": 13740,
+   "licence": "Etalab/DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:35.030242+00:00",
+   "sha256": "56e2ad9361d778ade06cb4678b407fda96d3db221081d960cebdfffb09aecd69",
+   "url": "https://geo.api.gouv.fr/communes/56106?fields=nom,code,codeDepartement,contour&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_64.json",
+   "bytes": 4560868,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:51.909948+00:00",
+   "sha256": "105885ddd581e68d6f4a919abe08865c90bff40299edb8defabee2f9413a83b9",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=64&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_35.json",
+   "bytes": 3689218,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:31.765090+00:00",
+   "sha256": "b26dbc9b37a1650c276171aab725ac91026cb2dadc9b4b55af487aa639baf967",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=35&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_33.json",
+   "bytes": 3865300,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:11.346826+00:00",
+   "sha256": "8b1606a182644a137dde2ba74f9134157f4e287c7eadfb5725cc4f4ebfdc09ac",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=33&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_85.json",
+   "bytes": 3626176,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:51.504710+00:00",
+   "sha256": "4328df56a56f37f09a6b6b4b457f5a6e5c684b05d924f907f335f2613008a6aa",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=85&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_83.json",
+   "bytes": 2195229,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:22.856490+00:00",
+   "sha256": "39d39989efec26d3f009cb292e1ffea18abc96bb9cb4d121be5710c2b6b2a22f",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=83&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_43.json",
+   "bytes": 2915725,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:49.310974+00:00",
+   "sha256": "290010e5c759a78a06a9fb0761b64a65292383d6e9a96ef8010db7b436830baa",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=43&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_28.json",
+   "bytes": 2173432,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:59.330614+00:00",
+   "sha256": "491f8a7abca2ba143d11753d0b36493f904f2488f30260841e0bc50d5357b4ba",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=28&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_44.json",
+   "bytes": 2651357,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:03.811309+00:00",
+   "sha256": "778e72d16f4807a9591cec35312c0c465c63a48f08554746c060dffe8c19773d",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=44&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_29.json",
+   "bytes": 5185220,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:09.007800+00:00",
+   "sha256": "a5620dbc7c591e1b4ea17fa70960b90f65ed69a80b2e4b13daf8b50578ec5b02",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=29&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_38.json",
+   "bytes": 3682310,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:33.799790+00:00",
+   "sha256": "947540e8cf8bcc49fea69652f91443f90e268d82f609190e60af4d5fc5aaf67e",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=38&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_69.json",
+   "bytes": 1906707,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:53.169952+00:00",
+   "sha256": "e8efc9c95d1333d491e38ead4c85593a6526e5e0dde1e71e0093408f0ce2e835",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=69&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_79.json",
+   "bytes": 2833742,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:05.431086+00:00",
+   "sha256": "676503c91e15911151139aaeb2ed72f57f6e912751b45801d77a3a027425d4ad",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=79&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_49.json",
+   "bytes": 2540774,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:15.666274+00:00",
+   "sha256": "2b2f9b77aa725cdbea191f74836e3f2b3d56323c227c5d24a01f26bc5bf5d15e",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=49&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_81.json",
+   "bytes": 3096721,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:45.486288+00:00",
+   "sha256": "fbcb87606041a54748cd7a3ea980934b47e1920ad493093ae70ce7b945701efe",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=81&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_50.json",
+   "bytes": 5114947,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:27.539276+00:00",
+   "sha256": "583e4a7255a2f706c1902f10f94af305f3dcf7c4b99299b7b340ef3242d1f22d",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=50&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_594c9f8cc9a0fc11.json",
+   "bytes": 517801,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:05:08.437284+00:00",
+   "sha256": "541b0bb0b9e421d50936aa2172b061217bf5f599d48ce457a544a7b4bec3466b",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q35715556%7CQ35715697%7CQ35715920%7CQ35715927%7CQ35716593%7CQ35716886%7CQ35716960%7CQ35717169%7CQ35717185%7CQ35717444%7CQ35718180%7CQ35718291%7CQ35718696%7CQ35718710%7CQ35718732%7CQ35718738%7CQ35718823%7CQ35718874%7CQ35719226%7CQ35719274%7CQ35719500%7CQ35719571%7CQ35719679%7CQ35719765%7CQ35719800%7CQ35719807%7CQ35719864%7CQ35720622%7CQ35720908%7CQ35721062%7CQ35721253%7CQ35721506%7CQ35721531%7CQ35722006%7CQ35722618%7CQ35723288%7CQ35723423%7CQ35723445%7CQ35724273%7CQ35724370%7CQ35724385%7CQ35725148%7CQ35725230%7CQ35725435%7CQ35725550%7CQ35726137%7CQ35726296%7CQ35726367%7CQ35726786%7CQ35726800&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_31.json",
+   "bytes": 3815383,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:19.196412+00:00",
+   "sha256": "4de87987123e9c19be747e24db54c959d17313940af30d368fc21f8934a6dffc",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=31&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_02.json",
+   "bytes": 3490444,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:43.383709+00:00",
+   "sha256": "863c78ed5e2b87a4f2908fd110aed8cb0c7958b022cce8b13b2c91fcf348d5b4",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=02&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_18.json",
+   "bytes": 2153555,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:49.375974+00:00",
+   "sha256": "2481693f7a235bdfef9a80bdd401147b96364216074248a8e61f5464acfa6afb",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=18&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_78.json",
+   "bytes": 1203414,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:08.561389+00:00",
+   "sha256": "2a35952861fb99246177c1071d8d1a11175923ef12a8374763fa23bd06ed60f1",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=78&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_40.json",
+   "bytes": 2953857,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:20:35.699279+00:00",
+   "sha256": "0d2b88c4cb775651de4562d45e12d3420ae266a505eb2edea9566b7e5f9cdc42",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=40&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_53.json",
+   "bytes": 3029380,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:35.693889+00:00",
+   "sha256": "40837173cdff043993cd29b8dee434b8d9ddf92c5527a4d6df0177493eccb88a",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=53&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_12.json",
+   "bytes": 4275102,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:47.690839+00:00",
+   "sha256": "28f28d6a7e237328eef5a23c6fe9d78d7d3bfcb0580b18c23d58fe8cf76697fd",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=12&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_77.json",
+   "bytes": 2889395,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:03.730761+00:00",
+   "sha256": "5af8436362aab2b912bc8358427971bb97ac98d61ab4f75e1b306ba83ed1db40",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=77&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_17.json",
+   "bytes": 3997907,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:56.906978+00:00",
+   "sha256": "d9f5c4da2b41d21ed9679c55c8baf350d7e2ab82613729feeb1f7f6f1bc7e313",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=17&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_59.json",
+   "bytes": 3351937,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:48.056370+00:00",
+   "sha256": "ca2cfba7f008dea95f5a81c7c9401a8e6aca662b10a6c483abb2802c0c1c792e",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=59&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_57.json",
+   "bytes": 4008903,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:38.378125+00:00",
+   "sha256": "6a3edca73df481a04cfa6864b3ebb25c8c8e2031fdbbc0f84fdf9d8cdd5d228a",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=57&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_34.json",
+   "bytes": 3139613,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:24.439055+00:00",
+   "sha256": "9e7748621afc86666e6f35e00816e8c4fcca4d4f59e35e84454f098a9bc71055",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=34&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/own_747fc0016638bcbf.json",
+   "bytes": 457110,
+   "licence": "Wikidata CC0",
+   "retrieved_at": "2026-11-03T10:05:10.737430+00:00",
+   "sha256": "e1ccb8e159c3d1b9d9b7227bfc791725b1d1a8fd57be82ed71ab28de71ac1c4a",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=Q35727638%7CQ35727750%7CQ35727766%7CQ35727797%7CQ35727805%7CQ35727854%7CQ35728093%7CQ35728194%7CQ35728229%7CQ35728278%7CQ35728317%7CQ35728325%7CQ35728364%7CQ35730110%7CQ35730118%7CQ35730204%7CQ35730319%7CQ35732227%7CQ35732297%7CQ35732344%7CQ35732359%7CQ35732375%7CQ35732383%7CQ35732687%7CQ35732702%7CQ35732710%7CQ35732732%7CQ35732776%7CQ35732816%7CQ35732875%7CQ35732930%7CQ35733032%7CQ35733369%7CQ35733517%7CQ35733524%7CQ35733807%7CQ35734014%7CQ35734549%7CQ35734588%7CQ35734967%7CQ35735005%7CQ35735036%7CQ35735096%7CQ35735815%7CQ35736025%7CQ35736453%7CQ35736461%7CQ35736574%7CQ363159%7CQ3640144&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=en%7Cfr%7Cde%7Cit&maxlag=5"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_21.json",
+   "bytes": 4691967,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:19:57.322408+00:00",
+   "sha256": "4fb8fe3a28576b798d24f68810e634367b2b652c56ba0451642882c37ec8e200",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=21&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_62.json",
+   "bytes": 4140505,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:50.357905+00:00",
+   "sha256": "cbb4173b03f1cdd3376e53618822c94a7f4a5b55bb0c5a407d4fdf2cacec2ea4",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=62&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_82.json",
+   "bytes": 1947148,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:22:10.616937+00:00",
+   "sha256": "f3b7d1ebc5063dee8f8ed86052f7437cebcb837c35a78687f1aec0402aab3707",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=82&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_72.json",
+   "bytes": 3186074,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:21:54.324482+00:00",
+   "sha256": "4fdd3ae7a190cf96eed8bcdeb026e8290c56f2eb0473da89646f9a9278857f13",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=72&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  },
+  {
+   "audit_path": "runs/specs/muni_items_v5x/work/sources/fr_department_84.json",
+   "bytes": 1213572,
+   "licence": "IGN ADMIN EXPRESS via DINUM Geo API; Licence Ouverte 2.0",
+   "retrieved_at": "2026-11-03T10:23:38.294639+00:00",
+   "sha256": "388de738084de27e4423029ca0bd0ce6c2d18bb7e03cf9e861d6ff24cb927848",
+   "url": "https://geo.api.gouv.fr/communes?codeDepartement=84&fields=nom,code,codeDepartement&format=geojson&geometry=contour"
+  }
+ ],
+ "country": "FR",
+ "held_ids_by_reason": {
+  "own_P31_missing_or_item_unavailable": [
+   40631,
+   41127
+  ],
+  "point_outside_or_invalid_municipality_boundary": [
+   40704,
+   40750,
+   40973,
+   43979,
+   44148,
+   44413
+  ]
+ },
+ "candidate_count": 281,
+ "changed_count": 273,
+ "held_count": 8,
+ "scope_screen": {
+  "path": "runs/specs/muni_items_v5x/work/screen.json",
+  "sha256": "22256831b38e82c15d838c633f3442649bde3e6dd9fc64dd2fbb0ca76423d6f4",
+  "exclusions_path": "runs/specs/muni_items_v5x/work/excluded.json",
+  "exclusions_sha256": "7a7341db449109593ac7a5dafad66e6c4928bbbd05d06f9401ec279fca9da139",
+  "note": "Municipal own-P31 exclusions use dated retained population-audit evidence when the literal stored item is unchanged. Unknown and nonmunicipal items were refreshed via wbgetentities. Missing stored items and unproved literal items are explicit holds."
+ },
+ "review_path": "runs/specs/muni_items_v5x/work/fr/review.json"
+}

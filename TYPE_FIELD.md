@@ -301,6 +301,34 @@ licence **CC-BY 4.0**. DGT's exact licence statement is preserved in the sources
 reuse is free, with attribution to Direção-Geral do Território. Island containment uses
 Esri Portugal's CAOP2025 mirror under CC-BY-4.0; no geometry or points are copied into rows.
 
+### Morocco
+
+In `MA.json`, a reviewed commune is `municipality / جماعة`, bound by its own HCP RGPH 2024 legal register code
+(Wikidata P11958). The commune is the territorial unit, not its seat village or town, which can share its name.
+The urban or rural subtype is set only where the register proves it. Levels, points and ancestry are unchanged.
+These rows were `adm3` before, and the settlement filter below returns them as it did then; Morocco has no
+documented exclusion.
+
+### Serbia
+
+In `RS.json`, a reviewed opština is `municipality / opština`, bound by its own RZS register code (Wikidata P3727).
+The municipality is the territory, not its seat: the census lists Lapovo municipality, Lapovo varošica and Lapovo
+selo separately. A row whose v4.0 identity is unresolved changes only with a reviewed classification event.
+The settlement filter returns these rows as it did when they were `adm3`; Serbia has no documented exclusion.
+
+### Taiwan
+
+In `TW.json`, an ordinary district (區) of a special municipality or provincial city is `section / 區` at level 2,
+under its level-1 municipality, bound by its own MOI township code. Mountain indigenous districts, which have their
+own councils, are not covered by this rule. #1935 typed the first 163 city districts this way. The settlement filter
+includes both `district` and `section`, so its result is unchanged.
+
+### United Kingdom (Scotland)
+
+A Scottish NRS locality (own S19 code) sits at level 3: Scotland (level 1), council area (level 2), locality
+(level 3). Historic parishes are not a current tier, so they do not add a level. Only the level changes; type and
+links are kept, and village status is not inferred from the locality code.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
@@ -388,3 +416,7 @@ CN city `level` follows depth in the official hierarchy: prefecture 2, county-le
 County-level units directly under a province-level municipality or a province are 2 (for example the districts and counties of Beijing, Tianjin, Shanghai and Chongqing, and Hainan's directly administered county-level cities and counties); their townships are 3, as are townships directly under no-county prefectures such as Dongguan and Zhongshan.
 Unproved tiers, own-item/type conflicts and excluded territories remain held in the [per-record ledger](.github/fixes-docs/ledgers/cn_levels_v5x.jsonl).
 Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 58 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019, and Jiangmen, Dongguan and Zhongshan in Guangdong.
+
+### Romania
+
+A UAT (unitate administrativ-teritorială) is a level 2 city-table row under its județ: a comună has type `municipality` and type_local `comună`, an oraș has type `town` and type_local `oraș`, and a municipiu has type `city` and type_local `municipiu`. Its parent_id is null. Villages (`village`, sat) and localities (`locality`) are level 3 and link to their UAT by parent_id. A seat village and its same-named commune are distinct entities. To list only settlements, leave out Romanian rows of type `municipality`.
