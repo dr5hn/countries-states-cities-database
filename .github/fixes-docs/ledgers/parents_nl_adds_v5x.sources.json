@@ -1,0 +1,178 @@
+{
+  "ledger": "parents_nl_adds_v5x.jsonl",
+  "records": 13,
+  "base_commit": "198b0321b3e5535ebba41d2c2cd51df3b420d8ec",
+  "full_ledger_sha256": "66a0ae208a52b493116a8172d81034490ca4c2a7efb5f10f973fdd94667dab4b",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Official own code/state and immediate direct tier; strict raw-parent point containment; current complete-row and incoming-edge guards; existing non-null parent/county links preserved. New territorial records are excluded by the unchanged settlement queries."
+  ],
+  "sources": [
+    {
+      "bytes": 23508,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/NL_parents_00.json",
+      "retrieved_at": "2026-11-06T10:27:01.663677+00:00",
+      "sha256": "97801f9295e6513fc14fe2c3d935dc46130853c7c32d0b8e1c9c99fcbc203772",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%220090%22+%220106%22+%220268%22+%220307%22+%220513%22+%220523%22+%220537%22+%220575%22+%220637%22+%220687%22+%220772%22+%220855%22+%220984%22+%221883%22+%221916%22+%221961%22+%221979%22+%7D+%3Fitem+wdt%3AP382+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 140192,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0090.json",
+      "retrieved_at": "2026-11-06T10:28:19.743971+00:00",
+      "sha256": "b7f06d499aa30d467f34a5a0ca28ce3db56303eb962842c310180d154712d918",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/6db40967-8270-5205-a4a1-c05e3f2b3649?f=json"
+    },
+    {
+      "bytes": 31060216,
+      "edition": "live daily BAG",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_38adaf52d673_bag_woonplaats_000.json",
+      "retrieved_at": "2026-10-09T06:31:38.665593+00:00",
+      "sha256": "38adaf52d6736a9d4107eecf4bf3505da853eb218285b83422111b5b4480fa11",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2/collections/woonplaats/items?f=json&limit=1000"
+    },
+    {
+      "bytes": 28100914,
+      "edition": "BAG collection updated 2026-10-08; daily current at retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_b48d3675a9ac_bag_woonplaats_001.json",
+      "retrieved_at": "2026-10-09T06:34:19.007825+00:00",
+      "sha256": "b48d3675a9accb713e72435c7763fa5451b1608f5248f961768464d4cc732984",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2/collections/woonplaats/items?cursor=A-k%7CIpfKxA&f=json&limit=1000"
+    },
+    {
+      "bytes": 17463407,
+      "edition": "BAG collection updated 2026-10-08; daily current at retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_ac211d4f6a0d_bag_woonplaats_002.json",
+      "retrieved_at": "2026-10-09T06:34:39.828890+00:00",
+      "sha256": "ac211d4f6a0d81a84e9556d0c9dc4c0d88329d975d0f8a41c8ef85ae3f6a619b",
+      "url": "https://api.pdok.nl/kadaster/bag/ogc/v2/collections/woonplaats/items?cursor=B9E%7CIpfKxA&f=json&limit=1000"
+    },
+    {
+      "bytes": 122232,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0106.json",
+      "retrieved_at": "2026-11-06T10:28:17.722880+00:00",
+      "sha256": "71ed723d8272a73b5b444c25a6832a1f51c6ea8188cd607e06204de7a83d05bb",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/0c0cd420-a7e5-5d15-ba94-a87485e83ee2?f=json"
+    },
+    {
+      "bytes": 83540,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0268.json",
+      "retrieved_at": "2026-11-06T10:28:18.842413+00:00",
+      "sha256": "cf781595f09ca4516ac17de49a6b59c935b519f0e9fbf89495431828c866d094",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/737b0d46-0d53-5a93-96f3-c7b226d5cd9a?f=json"
+    },
+    {
+      "bytes": 123884,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0307.json",
+      "retrieved_at": "2026-11-06T10:28:18.569457+00:00",
+      "sha256": "b0284651df1728fc7c5f458c71aacae9c3f8dc84bb4f08781e37eb7e1cc10b64",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/4558967e-051f-50c3-9bba-591d862343e9?f=json"
+    },
+    {
+      "bytes": 48602,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0537.json",
+      "retrieved_at": "2026-11-06T10:28:17.723688+00:00",
+      "sha256": "51911ddb6de01a265e6d12811b82f3acf17336ec84356dd3d1299132a19f12b6",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/418c9618-05e1-5677-a287-aa4716615128?f=json"
+    },
+    {
+      "bytes": 31847,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0575.json",
+      "retrieved_at": "2026-11-06T10:28:19.118881+00:00",
+      "sha256": "5db85abc32c40be392ca490fcf55f7fbb42d3dbaf47dcf773cceeb7e3f62a610",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/a6eab333-7d0a-5c69-a22c-941a7a704b13?f=json"
+    },
+    {
+      "bytes": 78003,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0687.json",
+      "retrieved_at": "2026-11-06T10:28:19.626525+00:00",
+      "sha256": "16392374eec1ba631c9249727cd70e3a90230f82a252c4ab55ec692c9172a8f8",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/b761d5be-df06-53cf-b013-0cdd87066352?f=json"
+    },
+    {
+      "bytes": 91570,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0855.json",
+      "retrieved_at": "2026-11-06T10:28:20.684488+00:00",
+      "sha256": "cc1b91fa20e8590fe31cc075ddd7216f6db56b39fc3c35825cf38976b76c5ba9",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/dce2d44a-9cd6-5432-a6eb-137f8ebf07d1?f=json"
+    },
+    {
+      "bytes": 65283,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_0984.json",
+      "retrieved_at": "2026-11-06T10:28:21.222724+00:00",
+      "sha256": "0dbf41792031137f438ba25650e1d5d31e28652ac09352263b41df0973e99c3d",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/16f51a9b-a8a4-579c-8846-f56f4a8456fa?f=json"
+    },
+    {
+      "bytes": 65468,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_1883.json",
+      "retrieved_at": "2026-11-06T10:28:17.723939+00:00",
+      "sha256": "b2044b4aeb8811f11be53b98b738b1348dc9a1ae8bfc9b1a0972217bda084f01",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/061fa07d-ae88-5f6f-a0a7-51606597583d?f=json"
+    },
+    {
+      "bytes": 66127,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_1916.json",
+      "retrieved_at": "2026-11-06T10:28:22.103414+00:00",
+      "sha256": "999e47701d4e59610b1ab3147c63908dddc00eba40950324d7cf4c7d762660c6",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/1eea98a9-0324-5eb4-b472-2c5935064232?f=json"
+    },
+    {
+      "bytes": 88106,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_1961.json",
+      "retrieved_at": "2026-11-06T10:28:20.429464+00:00",
+      "sha256": "7661c67316f15312dd8e7a5edd3f0e2f460156db11b7705b752644b8d58fb3c9",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/13749a6e-c730-52cb-843b-26fa3a6b00df?f=json"
+    },
+    {
+      "bytes": 117135,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/nl_gemeente_1979.json",
+      "retrieved_at": "2026-11-06T10:28:20.435636+00:00",
+      "sha256": "05fbcf4358bd85ec0e1f78f4ccb8a1622e05c2601ba5e6e867761ca39296594b",
+      "url": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/collections/gemeentegebied/items/8a74f5db-f8a3-5ba7-b7ec-0d87d415f0e0?f=json"
+    }
+  ],
+  "cohort": "nl_adds",
+  "candidate_count": 17,
+  "held_by_reason": {
+    "single_woonplaats_gemeente_requires_plain_name_filter_review": [
+      "GM0513",
+      "GM0523",
+      "GM0637",
+      "GM0772"
+    ]
+  },
+  "source_currentness": "Official ABS SAL 2021/LGA 2025, ISTAT 2021 localities/2026 boundaries, refreshed CBS 2026/PDOK and literal Wikidata parent statements. INEGI ordinary direct endpoints timed out on 6 Nov 2026; retained June/August 2026 catalogues keep original 12 Oct capture dates. No live-current INEGI claim or access workaround.",
+  "scope_exclusions": "1395 AU/IT addition-dependent reach children and 21 pilot holds remain outside all seven cohorts; full disposition in work/excluded_scope.json.",
+  "identity_event_policy": "Current active unresolved keys require explicit reviewed v4 continuity; no structural reach implies identity approval."
+}
