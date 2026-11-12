@@ -97,7 +97,8 @@ Stored ids remain valid; no automatic redirect is required for these 776 rows.
 Do not sum territorial populations with those of their contained places.
 1,478 released territorial-town rows keep their published type and remain in the
 filter results; see the US section and its per-id inventory before treating a
-result as a settlement. No other country's filter is changed by this release.
+result as a settlement. Apart from the United States, Romania and Poland, no country's filter is changed by
+this release.
 
 Attach and verify the migration archive at the release commit. The release
 wrapper's contract-6 cumulative base is the newest published prior-major feature

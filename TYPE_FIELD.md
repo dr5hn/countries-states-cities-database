@@ -389,7 +389,7 @@ WHERE (
   )
 )
 AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'RO', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/RO/US municipality = territory
-AND NOT (country_code = 'PL' AND type IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
+AND (country_code <> 'PL' OR type IS NULL OR type NOT IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
