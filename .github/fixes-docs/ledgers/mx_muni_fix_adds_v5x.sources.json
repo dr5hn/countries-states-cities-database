@@ -1,7 +1,9 @@
 {
   "ledger": "mx_muni_fix_adds_v5x.jsonl",
   "records": 1,
-  "base_commit": "30fcbf267d538f96dafd0e4e451f5e43b2989700",
+  "base_commit": [
+    "30fcbf267d538f96dafd0e4e451f5e43b2989700"
+  ],
   "full_ledger_sha256": "67e87ed641acf4a7c63cca68a710c2e6dfabe0673fee0e7902ea82209fc44303",
   "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
   "methods": [
