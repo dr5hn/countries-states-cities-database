@@ -1,13 +1,13 @@
 {
   "ledger": "mx_muni_fix_links_v5x.jsonl",
-  "records": 47,
+  "records": 55,
   "base_commit": [
-    "b3ffbd82088c6c912cacc0f270194f9b6b8e9701"
+    "3a7672dc617dff2cd5a505dc189a200a4652738e"
   ],
-  "full_ledger_sha256": "fa4547f0d1c58bc780a9e886dd2d9a1cc66a5685a4d9316034cc0d6bf5c63bce",
+  "full_ledger_sha256": "dc8e62508c22d4a6afee0dd032d23328b4b8cde38cc565e8f248dd6a794462ae",
   "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
   "methods": [
-    "Original entity scope is reviewed separately from containment and stored type. Only own CC0 Wikidata P625 or own CC BY 4.0 GeoNames ADM2 points are copied, and raw INEGI geometry must strictly contain the final point. Municipio population is the 2020 ITER LOC=0000 total, never the seat. Full-row and incoming-edge guards protect current state."
+    "Bind own nondeprecated P1976 and direct P131 to the active INEGI localidad and same-state municipio. Require v4 continuity, no unresolved identity, strict original-polygon containment and stored point within 2 km of the official register point. Preserve settlement filter membership and all other fields."
   ],
   "sources": [
     {
@@ -29,13 +29,25 @@
       "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPLOCAGEML/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F08%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1"
     },
     {
-      "bytes": 36615814,
-      "edition": "INEGI Censo 2020 ITER; municipio LOC=0000 and seat LOC=0001 retained separately",
-      "licence": "INEGI Terms of Free Use; copying, adaptation and commercial use permitted with product/source attribution and transformation notice",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/MX.census.zip",
-      "retrieved_at": "2026-10-11T09:51:38.800401+00:00",
-      "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
-      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+      "bytes": 534452,
+      "edition": "Pinned current master 3a7672dc617dff2cd5a505dc189a200a4652738e",
+      "retained_path": ".github/fixes-docs/ledgers/mx_munis_v5x.sources.json",
+      "sha256": "b34117b832b6669eb7a7d5229211b2cbc7023a5f0199bb6b40786b5c22e68d9a",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/3a7672dc617dff2cd5a505dc189a200a4652738e/.github/fixes-docs/ledgers/mx_munis_v5x.sources.json"
+    },
+    {
+      "bytes": 1385196,
+      "edition": "Pinned current master 3a7672dc617dff2cd5a505dc189a200a4652738e",
+      "retained_path": ".github/fixes-docs/ledgers/mx_pop_v5x.jsonl",
+      "sha256": "f77b0a6b260a0743e1a03d295a9d32ba6dc02856b675903a8b524183675c2e47",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/3a7672dc617dff2cd5a505dc189a200a4652738e/.github/fixes-docs/ledgers/mx_pop_v5x.jsonl"
+    },
+    {
+      "bytes": 470862,
+      "edition": "Pinned current master 3a7672dc617dff2cd5a505dc189a200a4652738e",
+      "retained_path": ".github/fixes-docs/ledgers/mx_pop_v5x.sources.json",
+      "sha256": "2cbb026f47326e25261cb2b92115da34fb957e61ee49e55c876203c32c2773ac",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/3a7672dc617dff2cd5a505dc189a200a4652738e/.github/fixes-docs/ledgers/mx_pop_v5x.sources.json"
     },
     {
       "bytes": 1480804,
@@ -83,67 +95,22 @@
       "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
     },
     {
-      "bytes": 11136,
+      "bytes": 5047,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/children_1.json",
-      "retrieved_at": "2026-11-06T14:19:30.548297+00:00",
-      "sha256": "0e49dfd9c7c6c30c6810c31143f488ca8e8e4b422bbb5105addcfdb5e5b11bf7",
-      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fmunicipio+%3Fparent+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ20247299+wd%3AQ20252268+wd%3AQ20252854+wd%3AQ20275490+wd%3AQ20276399+wd%3AQ20277539+wd%3AQ20277596+wd%3AQ20277795+wd%3AQ20279928+wd%3AQ20281669+wd%3AQ20285768+wd%3AQ20286876+wd%3AQ20291183+wd%3AQ20292969+wd%3AQ20294708+wd%3AQ20296010+wd%3AQ20296675+wd%3AQ49845363+wd%3AQ49849478+wd%3AQ49860452+wd%3AQ49936168+wd%3AQ49937468+wd%3AQ49937476+wd%3AQ49939022+wd%3AQ49940698+wd%3AQ49941223+wd%3AQ49997976+wd%3AQ49997983+wd%3AQ49998006+wd%3AQ49998904+wd%3AQ50007427+wd%3AQ50007595+wd%3AQ50007625+wd%3AQ50007633+wd%3AQ50008957+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1976+%3Fcode+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP3801+%3Fmunicipio+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+%7D&format=json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49849478.json",
+      "retrieved_at": "2026-11-12T11:05:56.342467+00:00",
+      "sha256": "65b2aa4ccecc2b9dcbf79377001a9dfd047d28a3f66ad40e6e78a54b9dac80b0",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49849478.json"
     },
     {
-      "bytes": 11450,
+      "bytes": 25557,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/children_0.json",
-      "retrieved_at": "2026-11-06T14:19:30.097794+00:00",
-      "sha256": "25f0b5b249b323f12f69fbd2ad6a3fab3ac2fb22810d6082457c7e394fd3fa8a",
-      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fmunicipio+%3Fparent+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ189128+wd%3AQ1971351+wd%3AQ20129863+wd%3AQ20132405+wd%3AQ20133523+wd%3AQ20134092+wd%3AQ20135415+wd%3AQ20137429+wd%3AQ20137979+wd%3AQ20139767+wd%3AQ20139999+wd%3AQ20141489+wd%3AQ20141538+wd%3AQ20143598+wd%3AQ20143676+wd%3AQ20146762+wd%3AQ20206023+wd%3AQ20208864+wd%3AQ20209361+wd%3AQ20209988+wd%3AQ20217900+wd%3AQ20218000+wd%3AQ20218641+wd%3AQ20218799+wd%3AQ20241304+wd%3AQ20241573+wd%3AQ20241590+wd%3AQ20241718+wd%3AQ20241841+wd%3AQ20242314+wd%3AQ20243719+wd%3AQ20244154+wd%3AQ20244390+wd%3AQ20244892+wd%3AQ20244939+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1976+%3Fcode+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP3801+%3Fmunicipio+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+%7D&format=json"
-    },
-    {
-      "bytes": 2593052,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.shp",
-      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
-      "sha256": "359eb71af654ab3fe9353d23148566efdaa1d450cad25adc8146ada5e2837349",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
-    },
-    {
-      "bytes": 636,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.shx",
-      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
-      "sha256": "9655929f8db496d8be154e858f10474a4ce3c7f03eb2d20926587bf5c2201883",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
-    },
-    {
-      "bytes": 6258,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.dbf",
-      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
-      "sha256": "21e393188e911eee6995d5d292e0ce5af220d89a4a75321fda3bf4957688da4c",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
-    },
-    {
-      "bytes": 648,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.prj",
-      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
-      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
-    },
-    {
-      "bytes": 12,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.cpg",
-      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
-      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q9022143.json",
+      "retrieved_at": "2026-11-12T11:05:59.835064+00:00",
+      "sha256": "b15ed535e37f9678a5483a3a9c9e89c4368f5966c4d1b417e5de174cf70e21ac",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q9022143.json"
     },
     {
       "bytes": 429188,
@@ -191,13 +158,436 @@
       "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
     },
     {
-      "bytes": 2005,
+      "bytes": 17328,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/children_2.json",
-      "retrieved_at": "2026-11-06T14:19:30.915553+00:00",
-      "sha256": "8e3de3b3fca71b063e863b5eacdf60d6806890531c45025a8cd1913c78ee1153",
-      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fmunicipio+%3Fparent+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ50010670+wd%3AQ50010690+wd%3AQ6107379+wd%3AQ61241083+wd%3AQ61287508+wd%3AQ7414771+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1976+%3Fcode+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP3801+%3Fmunicipio+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+%7D&format=json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q3849668.json",
+      "retrieved_at": "2026-11-12T11:05:55.887548+00:00",
+      "sha256": "bbbf05064a424598a4fc7e7cbdbfa308544f07a55ac5f33047c9c8b13cec7364",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3849668.json"
+    },
+    {
+      "bytes": 20670,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q10732549.json",
+      "retrieved_at": "2026-11-12T11:05:49.619325+00:00",
+      "sha256": "46740e45db64a3fe3b0e82231ef958f32aa293160e10d8419c7bb0a412ae4f10",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10732549.json"
+    },
+    {
+      "bytes": 4593,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49860452.json",
+      "retrieved_at": "2026-11-12T11:05:56.689072+00:00",
+      "sha256": "ed75b125dc99ad90482f1fa27f0d24cfd9c31e343d7299fb8bcd246b41b2cf58",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49860452.json"
+    },
+    {
+      "bytes": 6424,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q61287491.json",
+      "retrieved_at": "2026-11-12T11:05:59.320203+00:00",
+      "sha256": "b29daaafca7c2f672d07ec2f250e120ae3235f95d41eccd3975a7748895a5004",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287491.json"
+    },
+    {
+      "bytes": 8404,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20276399.json",
+      "retrieved_at": "2026-11-12T11:05:53.037439+00:00",
+      "sha256": "4ec55d669ceb4fb311c85493cd605f4e934479c2de44ba715e1ce66863b9bbc5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20276399.json"
+    },
+    {
+      "bytes": 7882,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20206023.json",
+      "retrieved_at": "2026-11-12T11:05:51.594198+00:00",
+      "sha256": "f9fd62805d85a144d386ed6b8123f69edfb82e8bb21b2fee3deaf2ada1d27dd7",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20206023.json"
+    },
+    {
+      "bytes": 6743,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20277795.json",
+      "retrieved_at": "2026-11-12T11:05:53.545164+00:00",
+      "sha256": "6626cd9bc7d01652e039adfb1dd297c1b4b8a3548636f17256a918d4d6d53ace",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20277795.json"
+    },
+    {
+      "bytes": 6360,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49855999.json",
+      "retrieved_at": "2026-11-12T11:05:56.434687+00:00",
+      "sha256": "1c7bf1c5945aecf63891321590d0f5bd1825eeaedd5ab3852c4f362e76bdcbb5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49855999.json"
+    },
+    {
+      "bytes": 4002,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49936168.json",
+      "retrieved_at": "2026-11-12T11:05:56.816242+00:00",
+      "sha256": "66c803e9f5d7f09194a8ee4e605257fd9d1fdd5c794e8ea486ace72bf81970fa",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49936168.json"
+    },
+    {
+      "bytes": 4808,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49998904.json",
+      "retrieved_at": "2026-11-12T11:05:58.674584+00:00",
+      "sha256": "c7045ebb0ccf9622b17ae4423a932edc54e5c04482efb4ea79f874316cad56c2",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49998904.json"
+    },
+    {
+      "bytes": 9046,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20136324.json",
+      "retrieved_at": "2026-11-12T11:05:50.292811+00:00",
+      "sha256": "351e42f56c76304db349a4c42355064718c96d06e18144f374111619646c4387",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20136324.json"
+    },
+    {
+      "bytes": 7597,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20139999.json",
+      "retrieved_at": "2026-11-12T11:05:51.128292+00:00",
+      "sha256": "a41c381bd10ca0cf00453048ae491676a3c51b5c7d8ce47c1d5ae957bb226d7d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20139999.json"
+    },
+    {
+      "bytes": 62558,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q189128.json",
+      "retrieved_at": "2026-11-12T11:05:49.621873+00:00",
+      "sha256": "681890774eb78cda2a3200b202acdc2539ee3a20f9b6643ae52b1ed7e13ac64c",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q189128.json"
+    },
+    {
+      "bytes": 4028,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49998006.json",
+      "retrieved_at": "2026-11-12T11:05:58.275699+00:00",
+      "sha256": "922258b3ea2f36e38d8f0d443340612de8c8eecb93281343ffe691f2176a4d8d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49998006.json"
+    },
+    {
+      "bytes": 5011,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49939022.json",
+      "retrieved_at": "2026-11-12T11:05:57.228323+00:00",
+      "sha256": "2b4c54a1bcbf7459780bc35e81b9e92bd2a42abf9e5dee462f566e785a7a4f0b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49939022.json"
+    },
+    {
+      "bytes": 4460,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49940698.json",
+      "retrieved_at": "2026-11-12T11:05:57.277745+00:00",
+      "sha256": "f0a0a7f4272da74e7b0fc9f91696e8e46c6d4513ede4f963f7fd6b3fefe4b876",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49940698.json"
+    },
+    {
+      "bytes": 9283,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20208864.json",
+      "retrieved_at": "2026-11-12T11:05:51.608529+00:00",
+      "sha256": "92c83131ead85be1e866248e2caf9b57ab0765efc8b5658912b71f017491b8f6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20208864.json"
+    },
+    {
+      "bytes": 11107,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20286876.json",
+      "retrieved_at": "2026-11-12T11:05:54.109141+00:00",
+      "sha256": "21329bdf2b8d8e7cdedf02f7e9adea78b770810c994c41825f6b46b0d19f5651",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20286876.json"
+    },
+    {
+      "bytes": 2593052,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.shp",
+      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
+      "sha256": "359eb71af654ab3fe9353d23148566efdaa1d450cad25adc8146ada5e2837349",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "bytes": 636,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.shx",
+      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
+      "sha256": "9655929f8db496d8be154e858f10474a4ce3c7f03eb2d20926587bf5c2201883",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "bytes": 6258,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.dbf",
+      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
+      "sha256": "21e393188e911eee6995d5d292e0ce5af220d89a4a75321fda3bf4957688da4c",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.prj",
+      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/08mun.cpg",
+      "retrieved_at": "2026-10-09T01:57:21.094983+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "bytes": 27209,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q1971351.json",
+      "retrieved_at": "2026-11-12T11:05:49.622101+00:00",
+      "sha256": "324c974de0dfdf00d923287808355377890d5dd7ef390b67c2519a5aae5eb4c7",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1971351.json"
+    },
+    {
+      "bytes": 28676,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q2913712.json",
+      "retrieved_at": "2026-11-12T11:05:55.116768+00:00",
+      "sha256": "282ee4b76751e406c6c5814fe172dfce72f72fd252fd021c52be690bd3542474",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2913712.json"
+    },
+    {
+      "bytes": 5801,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q61287426.json",
+      "retrieved_at": "2026-11-12T11:05:59.308054+00:00",
+      "sha256": "7a14dfd13909511a36762ed50c33d157fdd8b7213acabd4fb3e108f7dc6a1ff9",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287426.json"
+    },
+    {
+      "bytes": 11391,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20209361.json",
+      "retrieved_at": "2026-11-12T11:05:51.968669+00:00",
+      "sha256": "36b11fee9f48557ae0ea5bea8a7ea01dbf728bf78dd025844d5ce1a30ae38ea3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20209361.json"
+    },
+    {
+      "bytes": 4783,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49997970.json",
+      "retrieved_at": "2026-11-12T11:05:57.534713+00:00",
+      "sha256": "6d8199eb1127f6ada18500c20943887003c3b4d5b7d95202878360e66975f49f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49997970.json"
+    },
+    {
+      "bytes": 5807,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49997983.json",
+      "retrieved_at": "2026-11-12T11:05:58.258364+00:00",
+      "sha256": "d5ee4df756e20bb015d0052dba77d56fa05fab7c88be73c8194491c6c2f03b5a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49997983.json"
+    },
+    {
+      "bytes": 4704088,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shp",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 4660,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shx",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 52031,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.dbf",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.prj",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.cpg",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 8026,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q6107379.json",
+      "retrieved_at": "2026-11-12T11:05:58.903319+00:00",
+      "sha256": "0cfd059911df9fb56b71794efac3b140c1bb0e1c5ca8251351628cb64100daf5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6107379.json"
+    },
+    {
+      "bytes": 8490,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20209988.json",
+      "retrieved_at": "2026-11-12T11:05:52.084688+00:00",
+      "sha256": "4e23c00a581f1c167e760b37c8c9cba03e3e3f9859828e9ec64a3d13ed214fa8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20209988.json"
+    },
+    {
+      "bytes": 7050,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49998106.json",
+      "retrieved_at": "2026-11-12T11:05:58.375625+00:00",
+      "sha256": "0255c1fe45ea93f7fe0422c5bfee924d159e024d85065e52b54a22d141009ad5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49998106.json"
+    },
+    {
+      "bytes": 7311,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q61287449.json",
+      "retrieved_at": "2026-11-12T11:05:59.319750+00:00",
+      "sha256": "2aec9e24360d46bbcaec94b79b9ad60c97c58e837da969809ba6665fc5ad34a8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287449.json"
+    },
+    {
+      "bytes": 5506,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49997976.json",
+      "retrieved_at": "2026-11-12T11:05:57.777495+00:00",
+      "sha256": "818de888062ea42abb41bfe1c6006c904a01fb50c8e81c2e62e0c5134da850bc",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49997976.json"
+    },
+    {
+      "bytes": 6082,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q61287508.json",
+      "retrieved_at": "2026-11-12T11:05:59.436961+00:00",
+      "sha256": "d3448943b9ae70de883bbb9b664028bb557791945e5c61e698b6cd417f0a5eef",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287508.json"
+    },
+    {
+      "bytes": 9754,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20141489.json",
+      "retrieved_at": "2026-11-12T11:05:51.267208+00:00",
+      "sha256": "bc84a2638c88eaeb13f02c6dfb8b770ee83bbb1c40a2deca9efc67ce5135b482",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20141489.json"
+    },
+    {
+      "bytes": 4906,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49941223.json",
+      "retrieved_at": "2026-11-12T11:05:57.410017+00:00",
+      "sha256": "eb3b5285112026320b3c8279f5da4aaf3efcf20693e985014049db319eebda6d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49941223.json"
+    },
+    {
+      "bytes": 4581,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49937468.json",
+      "retrieved_at": "2026-11-12T11:05:56.909235+00:00",
+      "sha256": "93de3bb76bd2dba7acdc6362a876b22fde4129f530765fab58be8f0613072571",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49937468.json"
+    },
+    {
+      "bytes": 4453,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q49937476.json",
+      "retrieved_at": "2026-11-12T11:05:57.036910+00:00",
+      "sha256": "c8c236b587117ca08bb534fb5ef8bdf5501ccf36dd8ccfbb284f53cf16469bfe",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49937476.json"
+    },
+    {
+      "bytes": 9915,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20147758.json",
+      "retrieved_at": "2026-11-12T11:05:51.294399+00:00",
+      "sha256": "514a0254fd16597b91e2c8484acd475299ccfa6f493bf11207e406cb8c94d1a8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20147758.json"
+    },
+    {
+      "bytes": 8076,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20296010.json",
+      "retrieved_at": "2026-11-12T11:05:54.592469+00:00",
+      "sha256": "894c0fce5f1543fe50c8bf4b479b6b08544ce5f70e9667dc5dbc761427504e8c",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20296010.json"
+    },
+    {
+      "bytes": 10866,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20240512.json",
+      "retrieved_at": "2026-11-12T11:05:52.291192+00:00",
+      "sha256": "3af4a6f1aab4806ba449393b59173aebe46b41405af6d92a266051fcd523f653",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20240512.json"
+    },
+    {
+      "bytes": 9164,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20240657.json",
+      "retrieved_at": "2026-11-12T11:05:52.539769+00:00",
+      "sha256": "3ba09ac609a0a3d46956d2335b1417b10c7a4b105b5b1d97e8ad74a449cc0627",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20240657.json"
     },
     {
       "bytes": 5111644,
@@ -245,117 +635,253 @@
       "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
     },
     {
-      "bytes": 6424,
+      "bytes": 7309,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q61287491.json",
-      "retrieved_at": "2026-11-06T15:08:02.015373+00:00",
-      "sha256": "b29daaafca7c2f672d07ec2f250e120ae3235f95d41eccd3975a7748895a5004",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287491.json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20275490.json",
+      "retrieved_at": "2026-11-12T11:05:53.019468+00:00",
+      "sha256": "0a8109e38ad43c5ad05874fa064fe28c4396bd921d73afd90172ca6dead9991a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20275490.json"
     },
     {
-      "bytes": 9046,
+      "bytes": 37136,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q20136324.json",
-      "retrieved_at": "2026-11-06T15:08:02.018152+00:00",
-      "sha256": "351e42f56c76304db349a4c42355064718c96d06e18144f374111619646c4387",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20136324.json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q3311224.json",
+      "retrieved_at": "2026-11-12T11:05:55.492729+00:00",
+      "sha256": "a4fef64b8d5e9e27abb9653c6deb347b32f8a471fcda1cf580631587a12ffb2e",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3311224.json"
     },
     {
-      "bytes": 5801,
+      "bytes": 7935,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q61287426.json",
-      "retrieved_at": "2026-11-06T15:08:02.018369+00:00",
-      "sha256": "7a14dfd13909511a36762ed50c33d157fdd8b7213acabd4fb3e108f7dc6a1ff9",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287426.json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20129863.json",
+      "retrieved_at": "2026-11-12T11:05:49.622157+00:00",
+      "sha256": "1e299112162bc4f70443567076901326073bdfbd49b2bdd241181c2ba84f834f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20129863.json"
     },
     {
-      "bytes": 7311,
+      "bytes": 7409,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q61287449.json",
-      "retrieved_at": "2026-11-06T15:08:02.018551+00:00",
-      "sha256": "2aec9e24360d46bbcaec94b79b9ad60c97c58e837da969809ba6665fc5ad34a8",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61287449.json"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20218799.json",
+      "retrieved_at": "2026-11-12T11:05:52.089940+00:00",
+      "sha256": "57deea9e8e5508a162d57b011358a606b4ba830e15279ce7c66afabb55ee35db",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20218799.json"
+    },
+    {
+      "bytes": 7217,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20137979.json",
+      "retrieved_at": "2026-11-12T11:05:50.635973+00:00",
+      "sha256": "f246f0e4b59a3405e83c89d5002af774e7316759bf231367e1c7cfc2d39eb0b2",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20137979.json"
+    },
+    {
+      "bytes": 9488,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20241820.json",
+      "retrieved_at": "2026-11-12T11:05:52.550103+00:00",
+      "sha256": "b079ce3e280a2c9ed456b3b71e71f71431d101563d71647e019abd0922ed3c5d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20241820.json"
+    },
+    {
+      "bytes": 9542,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20242233.json",
+      "retrieved_at": "2026-11-12T11:22:23.815051+00:00",
+      "sha256": "86eb96b7266f16c91cd0aef08f76886ee92dc7cddef7eea17cd1d83d28d1c513",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20242233.json"
+    },
+    {
+      "bytes": 10827,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20280793.json",
+      "retrieved_at": "2026-11-12T11:05:53.888873+00:00",
+      "sha256": "469138bd757912132060f5cae833712078cc0577e3db32dd6078520deee1e1a6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20280793.json"
+    },
+    {
+      "bytes": 8231,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20281669.json",
+      "retrieved_at": "2026-11-12T11:05:54.094224+00:00",
+      "sha256": "fe6d17d40b32dfc0789d8245136742fb148153494283d70fdb6d2bd385a319fa",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20281669.json"
+    },
+    {
+      "bytes": 7676,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20244892.json",
+      "retrieved_at": "2026-11-12T11:05:52.556320+00:00",
+      "sha256": "4271f5852109f4ef276d4aa6ebab918ead6a248492815b2343a9f08df777aa13",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20244892.json"
+    },
+    {
+      "bytes": 7411,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20252854.json",
+      "retrieved_at": "2026-11-12T11:05:53.019335+00:00",
+      "sha256": "9516a77fd7611ec08395e29a325305586eaca9ff42b53aa75d33c77b1e792be6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20252854.json"
+    },
+    {
+      "bytes": 7361,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20293131.json",
+      "retrieved_at": "2026-11-12T11:05:54.591472+00:00",
+      "sha256": "cdd71ea64877345165249a07aa36b30a3c0bbbdd469eb71a73906bf3760f0e12",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20293131.json"
+    },
+    {
+      "bytes": 7298,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20137429.json",
+      "retrieved_at": "2026-11-12T11:05:50.634769+00:00",
+      "sha256": "72421e1603e1b618341c4b632f463bdcb709523260d7b8964a2cb39ad03e895f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20137429.json"
+    },
+    {
+      "bytes": 7112,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20139767.json",
+      "retrieved_at": "2026-11-12T11:05:51.120947+00:00",
+      "sha256": "9a464b3386d152535c4bd20df5ffd5aa58e4d21727e8008e962a50fcb552b6b1",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20139767.json"
+    },
+    {
+      "bytes": 11194,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20247299.json",
+      "retrieved_at": "2026-11-12T11:05:52.832241+00:00",
+      "sha256": "041b6b96637ed6a1f8d9859d1c936cf3fb71c0a192c0deec8df68a181f955be8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20247299.json"
+    },
+    {
+      "bytes": 6441,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q50010690.json",
+      "retrieved_at": "2026-11-12T11:05:58.800187+00:00",
+      "sha256": "fa09a1e40036f105695de2745f808f3e64fda8ab6dd74e0ece002cde0a20097f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50010690.json"
+    },
+    {
+      "bytes": 6348,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q50010670.json",
+      "retrieved_at": "2026-11-12T11:05:58.797269+00:00",
+      "sha256": "a297329a38807b9ea73252778f6b62772fe14856348737a115f23ad3621bcfbb",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50010670.json"
+    },
+    {
+      "bytes": 10389,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20294708.json",
+      "retrieved_at": "2026-11-12T11:05:54.592393+00:00",
+      "sha256": "a3a3c36a239c67e070bbfe5a50c0501dbdadeb595196541d20adb495ee226591",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20294708.json"
     },
     {
       "bytes": 9915,
       "edition": "Snapshot at original retrieval",
       "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q20147758.json",
-      "retrieved_at": "2026-11-06T15:08:02.878496+00:00",
-      "sha256": "514a0254fd16597b91e2c8484acd475299ccfa6f493bf11207e406cb8c94d1a8",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20147758.json"
-    },
-    {
-      "bytes": 10866,
-      "edition": "Snapshot at original retrieval",
-      "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q20240512.json",
-      "retrieved_at": "2026-11-06T15:08:02.878293+00:00",
-      "sha256": "3af4a6f1aab4806ba449393b59173aebe46b41405af6d92a266051fcd523f653",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20240512.json"
-    },
-    {
-      "bytes": 9164,
-      "edition": "Snapshot at original retrieval",
-      "licence": "CC0 1.0",
-      "retained_path": "runs/specs/mx_muni_fix/work2/sources/Q20240657.json",
-      "retrieved_at": "2026-11-06T15:08:02.879635+00:00",
-      "sha256": "3ba09ac609a0a3d46956d2335b1417b10c7a4b105b5b1d97e8ad74a449cc0627",
-      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20240657.json"
-    },
-    {
-      "bytes": 4704088,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shp",
-      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
-      "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
-    },
-    {
-      "bytes": 4660,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shx",
-      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
-      "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
-    },
-    {
-      "bytes": 52031,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.dbf",
-      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
-      "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
-    },
-    {
-      "bytes": 648,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.prj",
-      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
-      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
-    },
-    {
-      "bytes": 12,
-      "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026; raw geometry",
-      "licence": "INEGI Términos de Libre Uso",
-      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.cpg",
-      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
-      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
-      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+      "retained_path": "runs/specs/mx_muni_fix/work3/links/sources/Q20296675.json",
+      "retrieved_at": "2026-11-12T11:05:55.116269+00:00",
+      "sha256": "3922063dd6af15217e0f9d68ed623d8b73032ee10f7cf1b5d4d5f646468029c6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20296675.json"
     }
   ],
-  "cohort": "links",
-  "held": 7,
-  "changed": 40,
-  "source_currentness": "Scoped own/seat items freshly fetched; bounded child queries retained from same-day build_1. Official INEGI and GeoNames editions are retained and hash verified, not certified live-current.",
-  "scope_conflict": "Seven incoming Amealco municipio edges are independently audited in links."
+  "base_note": "Rebuilt on current master after merged stacked PRs #2190 (rows) and #2192 (Amealco municipio addition); replaces #2193 after its three paths are restored to this master. No unmerged stack required.",
+  "changed": 44,
+  "held": 11,
+  "held_by_reason": {
+    "parent_held: seat_row_missing": [
+      73103,
+      142334,
+      142335,
+      142398,
+      142631,
+      142662,
+      142714,
+      142784
+    ],
+    "population_cohort_hold: binding_checks_failed:name; same-entity point/name proof remains unresolved; no link inferred from containment": [
+      142688
+    ],
+    "population_cohort_hold: binding_checks_failed:point; same-entity point/name proof remains unresolved; no link inferred from containment": [
+      70650,
+      142475
+    ]
+  },
+  "coverage": {
+    "previous_updates": 40,
+    "previous_holds": 7,
+    "omitted_candidates": 7,
+    "amealco_seat": 1,
+    "total": 55
+  },
+  "source_currentness": "Own items refreshed 2026-11-12 with hash-verified capture metadata. Official INEGI catalogue and raw geometry are retained editions, not certified live-current. Population holds preserved conservatively.",
+  "parents": {
+    "08052": {
+      "id": 72479,
+      "item": "Q2913712",
+      "own_P3801": [
+        "08052"
+      ],
+      "own_P31": [
+        "Q1952852",
+        "Q902814"
+      ],
+      "row_sha256": "84cd33dbcc1c30ff1685b1f30931a6dd2a629095a6676a22d993d816c8856aa3"
+    },
+    "11020": {
+      "id": 71666,
+      "item": "Q9022143",
+      "own_P3801": [
+        "11020"
+      ],
+      "own_P31": [
+        "Q1952852",
+        "Q56061"
+      ],
+      "row_sha256": "5ed2760bcde9f0a0604f5117725ec9042f36a986d40e738801f04fe85b1f98eb"
+    },
+    "14066": {
+      "id": 142801,
+      "item": "Q3311224",
+      "own_P3801": [
+        "14066"
+      ],
+      "own_P31": [
+        "Q1952852"
+      ],
+      "row_sha256": "8c960d4a3ba82ce37ebeca8e50c6caf65600485b003a8c9595acd63e652d66ff"
+    },
+    "22001": {
+      "id": 194309,
+      "item": "Q10732549",
+      "own_P3801": [
+        "22001"
+      ],
+      "own_P31": [
+        "Q1952852"
+      ],
+      "row_sha256": "fb0c6191dcb914cd9691f0c1cdff474a772db472aa5c3df10f95952dc0cb8eea"
+    }
+  }
 }
