@@ -1,9 +1,7 @@
 {
   "ledger": "mx_muni_fix_adds_v5x.jsonl",
   "records": 1,
-  "base_commit": [
-    "b3ffbd82088c6c912cacc0f270194f9b6b8e9701"
-  ],
+  "base_commit": "30fcbf267d538f96dafd0e4e451f5e43b2989700",
   "full_ledger_sha256": "67e87ed641acf4a7c63cca68a710c2e6dfabe0673fee0e7902ea82209fc44303",
   "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
   "methods": [
@@ -123,5 +121,6 @@
   "held": 0,
   "changed": 1,
   "source_currentness": "Scoped own/seat items freshly fetched; bounded child queries retained from same-day build_1. Official INEGI and GeoNames editions are retained and hash verified, not certified live-current.",
-  "scope_conflict": "Seven incoming Amealco municipio edges are independently audited in links."
+  "scope_conflict": "Seven incoming Amealco municipio edges are independently audited in links.",
+  "base_note": "Built on b3ffbd82 with the #2190 rows cohort applied first; 30fcbf26 is that rows cohort merged (#2190), where seat row 68251 matches existing_seat_sha256."
 }
