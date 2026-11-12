@@ -44,7 +44,7 @@ approximate.
 | `prefecture` | 369 | ❌ | Prefecture-level admin division |
 | `locality` | 319 | ✅ | Named populated place |
 | `capital` | 281 | ✅ | National/regional capital |
-| `municipality` | 209 | ✅ | Municipality |
+| `municipality` | 209 | ⚠️ | Municipality; US territorial units are excluded below, as are the other country exceptions |
 | `parish` | 80 | ❌ | Louisiana-style parish (= county) |
 | `banner` | 52 | ❌ | Inner Mongolia *banner* — admin division |
 | `town` | 48 | ✅ | Town |
@@ -209,11 +209,34 @@ LSAD 25 is `city / city`, 43 `town / town`, 47 `village / village`, and
 `locality / census designated place`, including large CDPs. Puerto Rico's
 statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`); all Puerto Rico
 rows remain held here because municipio versus town identity is not proved.
-Functioning minor civil divisions use their own legal category: towns, cities,
-boroughs and villages as above; townships and plantations use `municipality`
-with `type_local` `township` or `plantation`. These reviewed entities are level 3
-under the state/county framework. GNIS populated-place names alone do not establish
-legal incorporation or authorize a containing town's population.
+Under contract 6, reviewed US territorial units use `municipality`, with their legal
+category in `type_local`: `town`, `township`, `charter township` or `plantation`.
+A territorial town is not its seat or its contained village/CDP. The 776 New York
+territorial towns added in #2170 (never published under contract 5) are therefore
+`municipality / town`; all 6,298 territories added by that PR are `municipality`.
+Their contained places keep separate rows and their own place categories. Reviewed
+incorporated places (including a city, borough or village coextensive with an MCD)
+keep their place category; a county-subdivision code alone does not authorize retyping
+a settlement. These reviewed units are level 3 under the state/county framework.
+GNIS populated-place names alone do not establish legal incorporation or authorize
+a containing town's population.
+
+**Upgrade the settlement filter:** also exclude US `municipality` rows, including
+`municipality / town`. A unit's population includes its contained settlements; do
+not add the unit and place totals together. This rule changes in v6.0.0. The
+[review ledger](.github/fixes-docs/ledgers/v6_contract.jsonl) binds each retyped NY row to #2170's
+creation record, Census county subdivision and unchanged full row.
+
+**Released-row exception:** 1,478 older rows with reviewed territorial-town
+bindings still retain their published `town / town` classification in this bounded
+release. They are inventoried by id in the adjacent [sources registry](.github/fixes-docs/ledgers/v6_contract.sources.json)
+and await v7 review; this patch does not retype them. Consequently, the filter below
+still returns those legacy territories. One released incorporated place, Bethel Park,
+PA (112287, Census LSAD 37), is typed `municipality` for its Pennsylvania legal class, so
+the US exclusion leaves it out; retyping a released row waits for v7. It is a documented
+starting filter, not a verified complete list of US settlements. Never exclude every `town / town` row:
+incorporated place towns use that pair too; use reviewed entity identities for any
+stricter application-specific selection.
 
 A village or CDP inside a same-named town is a separate entity. Each binding must
 agree with its row's own Wikidata GNIS (P590), FIPS (P774), or explicit instance
@@ -344,7 +367,9 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Cuba, Mexico and Greece, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece)).
+In Cuba, Mexico, Greece, Romania and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [Romania](#romania), [United States](#united-states)).
+In Poland, also exclude `municipality`, `adm2` and `adm3` (gminy and not-yet-reviewed units; see [Poland](#poland)).
+US legacy territorial towns retained as `town`, and Bethel Park, PA (112287), are explicit limitations; see the US section.
 In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
 `đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
@@ -363,7 +388,8 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN municipality = territory
+AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'RO', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/RO/US municipality = territory
+AND (country_code <> 'PL' OR type IS NULL OR type NOT IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -386,7 +412,8 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['CU', 'MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN municipality = territory
+    && !(['CU', 'MX', 'GR', 'VN', 'RO', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/RO/US municipality = territory
+    && !(c.country_code === 'PL' && ['municipality', 'adm2', 'adm3'].includes(c.type)) // PL gminy and not-yet-reviewed units
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
@@ -394,7 +421,9 @@ const settlements = cities.filter(
 
 This keeps all `city`/`adm*`/`town`/`village`/`section`/`locality`-style rows
 (including admin seats like Dallas and Sydney) while dropping pure
-administrative units and defunct places.
+administrative units and defunct places under the exclusions above. US legacy
+territorial towns still typed `town` remain included; the filter cannot establish
+settlement identity for unreviewed rows.
 
 ### Records with no type
 
