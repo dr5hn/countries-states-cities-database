@@ -231,8 +231,10 @@ creation record, Census county subdivision and unchanged full row.
 bindings still retain their published `town / town` classification in this bounded
 release. They are inventoried by id in the adjacent [sources registry](.github/fixes-docs/ledgers/v6_contract.sources.json)
 and await v7 review; this patch does not retype them. Consequently, the filter below
-still returns those legacy territories. It is a documented starting filter, not a
-verified complete list of US settlements. Never exclude every `town / town` row:
+still returns those legacy territories. One released incorporated place, Bethel Park,
+PA (112287, Census LSAD 37), is typed `municipality` for its Pennsylvania legal class, so
+the US exclusion leaves it out; retyping a released row waits for v7. It is a documented
+starting filter, not a verified complete list of US settlements. Never exclude every `town / town` row:
 incorporated place towns use that pair too; use reviewed entity identities for any
 stricter application-specific selection.
 
@@ -365,8 +367,9 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Cuba, Mexico, Greece and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [United States](#united-states)).
-US legacy territorial towns retained as `town` are an explicit limitation; see the US section.
+In Cuba, Mexico, Greece, Romania and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [Romania](#romania), [United States](#united-states)).
+In Poland, also exclude `municipality`, `adm2` and `adm3` (gminy and not-yet-reviewed units; see [Poland](#poland)).
+US legacy territorial towns retained as `town`, and Bethel Park, PA (112287), are explicit limitations; see the US section.
 In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
 `đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
@@ -385,7 +388,8 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/US municipality = territory
+AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'RO', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/RO/US municipality = territory
+AND NOT (country_code = 'PL' AND type IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -408,7 +412,8 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['CU', 'MX', 'GR', 'VN', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/US municipality = territory
+    && !(['CU', 'MX', 'GR', 'VN', 'RO', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/RO/US municipality = territory
+    && !(c.country_code === 'PL' && ['municipality', 'adm2', 'adm3'].includes(c.type)) // PL gminy and not-yet-reviewed units
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
