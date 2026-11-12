@@ -1,0 +1,284 @@
+{
+  "ledger": "own_types_ma_v5x.jsonl",
+  "records": 44,
+  "base_commit": [
+    "0c3be2f91a1eec30848c85f34ba782772423554c"
+  ],
+  "full_ledger_sha256": "0ac03b01e4372219e713009de50fd01e8f63e8616f4e4219a562234dde3cd482",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Own official code binds the unchanged entity; v4 name/item/point/state continuity is checked individually. GB removed ambiguous items and previously corrected states are independently bound by the same v4 name and original point to the exact NRS locality code. Only type, type_local and proved depth change. No seat substitution, new links or finer subtype is inferred."
+  ],
+  "sources": [
+    {
+      "bytes": 166693,
+      "edition": "RGPH 2024 legal territorial population register; same edition as pilot",
+      "final_url": "https://www.hcp.ma/file/242341/",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/own_types_expand/work/sources/ma_population.xlsx",
+      "retrieved_at": "2026-11-04T14:15:15.026877+00:00",
+      "sha256": "7e9d3d402cc2fd0d9c4fc941c4f23c6a5e5ddcbefbba80b7540267f8e2728dca",
+      "url": "https://www.hcp.ma/file/242341/"
+    },
+    {
+      "bytes": 30769,
+      "edition": "Own item code and class refresh, 4 November 2026",
+      "final_url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Fitem+%3Fcode+%3Fclass+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ144416+wd%3AQ178172+wd%3AQ2152433+wd%3AQ2294847+wd%3AQ2544597+wd%3AQ2676569+wd%3AQ280853+wd%3AQ2827329+wd%3AQ2857997+wd%3AQ2858000+wd%3AQ2859627+wd%3AQ2860899+wd%3AQ2925553+wd%3AQ2929225+wd%3AQ3015955+wd%3AQ3156016+wd%3AQ3195491+wd%3AQ3358491+wd%3AQ3483238+wd%3AQ3486986+wd%3AQ3513742+wd%3AQ3514599+wd%3AQ3514885+wd%3AQ3514940+wd%3AQ3530003+wd%3AQ3915278+wd%3AQ3991198+wd%3AQ4663230+wd%3AQ4680871+wd%3AQ4690968+wd%3AQ4733854+wd%3AQ4949231+wd%3AQ4949512+wd%3AQ5261728+wd%3AQ5518168+wd%3AQ5557478+wd%3AQ6088172+wd%3AQ621472+wd%3AQ6726176+wd%3AQ6918958+wd%3AQ7508814+wd%3AQ7681643+wd%3AQ7684336+wd%3AQ7702998+wd%3AQ8074648+wd%3AQ984312+%7D+%3Fitem+wdt%3AP11958+%3Fcode.+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/own_types_expand/work/sources/ma_own.json",
+      "retrieved_at": "2026-11-04T14:15:17.965068+00:00",
+      "sha256": "af5a0db651b513f2d71b0108d72f79dc7af26736a1bf1c7c2bf7034b66031dde",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+DISTINCT+%3Fitem+%3Fcode+%3Fclass+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ144416+wd%3AQ178172+wd%3AQ2152433+wd%3AQ2294847+wd%3AQ2544597+wd%3AQ2676569+wd%3AQ280853+wd%3AQ2827329+wd%3AQ2857997+wd%3AQ2858000+wd%3AQ2859627+wd%3AQ2860899+wd%3AQ2925553+wd%3AQ2929225+wd%3AQ3015955+wd%3AQ3156016+wd%3AQ3195491+wd%3AQ3358491+wd%3AQ3483238+wd%3AQ3486986+wd%3AQ3513742+wd%3AQ3514599+wd%3AQ3514885+wd%3AQ3514940+wd%3AQ3530003+wd%3AQ3915278+wd%3AQ3991198+wd%3AQ4663230+wd%3AQ4680871+wd%3AQ4690968+wd%3AQ4733854+wd%3AQ4949231+wd%3AQ4949512+wd%3AQ5261728+wd%3AQ5518168+wd%3AQ5557478+wd%3AQ6088172+wd%3AQ621472+wd%3AQ6726176+wd%3AQ6918958+wd%3AQ7508814+wd%3AQ7681643+wd%3AQ7684336+wd%3AQ7702998+wd%3AQ8074648+wd%3AQ984312+%7D+%3Fitem+wdt%3AP11958+%3Fcode.+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    }
+  ],
+  "held_ids_by_reason": {
+    "direct_province_chain_unproved": [
+      67062,
+      67071,
+      67093,
+      67166,
+      67201,
+      67267
+    ],
+    "official_intermediate_cercle": [
+      67044,
+      67045,
+      67047,
+      67050,
+      67059,
+      67060,
+      67061,
+      67063,
+      67066,
+      67068,
+      67088,
+      67091,
+      67095,
+      67096,
+      67103,
+      67106,
+      67124,
+      67125,
+      67133,
+      67138,
+      67139,
+      67148,
+      67157,
+      67171,
+      67192,
+      67207,
+      67210,
+      67213,
+      67221,
+      67223,
+      67225,
+      67228,
+      67230,
+      67231,
+      67233,
+      67236,
+      67249,
+      67251,
+      67260,
+      67270
+    ]
+  },
+  "held_fields_by_id": {
+    "67044": [
+      "level"
+    ],
+    "67045": [
+      "level"
+    ],
+    "67047": [
+      "level"
+    ],
+    "67050": [
+      "level"
+    ],
+    "67059": [
+      "level"
+    ],
+    "67060": [
+      "level"
+    ],
+    "67061": [
+      "level"
+    ],
+    "67062": [
+      "level"
+    ],
+    "67063": [
+      "level"
+    ],
+    "67066": [
+      "level"
+    ],
+    "67068": [
+      "level"
+    ],
+    "67071": [
+      "level"
+    ],
+    "67088": [
+      "level"
+    ],
+    "67091": [
+      "level"
+    ],
+    "67093": [
+      "level"
+    ],
+    "67095": [
+      "level"
+    ],
+    "67096": [
+      "level"
+    ],
+    "67103": [
+      "level"
+    ],
+    "67106": [
+      "level"
+    ],
+    "67124": [
+      "level"
+    ],
+    "67125": [
+      "level"
+    ],
+    "67133": [
+      "level"
+    ],
+    "67138": [
+      "level"
+    ],
+    "67139": [
+      "level"
+    ],
+    "67148": [
+      "level"
+    ],
+    "67157": [
+      "level"
+    ],
+    "67166": [
+      "level"
+    ],
+    "67171": [
+      "level"
+    ],
+    "67192": [
+      "level"
+    ],
+    "67201": [
+      "level"
+    ],
+    "67207": [
+      "level"
+    ],
+    "67210": [
+      "level"
+    ],
+    "67213": [
+      "level"
+    ],
+    "67221": [
+      "level"
+    ],
+    "67223": [
+      "level"
+    ],
+    "67225": [
+      "level"
+    ],
+    "67228": [
+      "level"
+    ],
+    "67230": [
+      "level"
+    ],
+    "67231": [
+      "level"
+    ],
+    "67233": [
+      "level"
+    ],
+    "67236": [
+      "level"
+    ],
+    "67249": [
+      "level"
+    ],
+    "67251": [
+      "level"
+    ],
+    "67260": [
+      "level"
+    ],
+    "67267": [
+      "level"
+    ],
+    "67270": [
+      "level"
+    ]
+  },
+  "reviewed_reach_ids": [
+    67044,
+    67045,
+    67047,
+    67050,
+    67059,
+    67060,
+    67061,
+    67062,
+    67063,
+    67066,
+    67071,
+    67088,
+    67091,
+    67093,
+    67095,
+    67096,
+    67103,
+    67106,
+    67124,
+    67125,
+    67133,
+    67138,
+    67139,
+    67148,
+    67157,
+    67166,
+    67171,
+    67192,
+    67201,
+    67207,
+    67213,
+    67221,
+    67223,
+    67225,
+    67228,
+    67230,
+    67231,
+    67233,
+    67236,
+    67249,
+    67251,
+    67260,
+    67267,
+    67270
+  ],
+  "pilot_depth_ids": [
+    67068,
+    67210
+  ],
+  "retained_prior_holds": {
+    "rural_subtype_unproved": [
+      67068,
+      67210
+    ]
+  },
+  "prior_hold_scope": "Retained untouched; not additional reach candidates. All other unproved pilot or country rows also remain outside the patch.",
+  "source_notice": "Same sources and editions credited by #2176 in .github/licenses/SOURCES.txt; public refreshes and Wikidata CC0 claims retained with exact hashes. No added source notice needed."
+}

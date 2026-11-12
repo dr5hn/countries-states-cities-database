@@ -44,7 +44,7 @@ approximate.
 | `prefecture` | 369 | ❌ | Prefecture-level admin division |
 | `locality` | 319 | ✅ | Named populated place |
 | `capital` | 281 | ✅ | National/regional capital |
-| `municipality` | 209 | ✅ | Municipality |
+| `municipality` | 209 | ⚠️ | Municipality; US territorial units are excluded below, as are the other country exceptions |
 | `parish` | 80 | ❌ | Louisiana-style parish (= county) |
 | `banner` | 52 | ❌ | Inner Mongolia *banner* — admin division |
 | `town` | 48 | ✅ | Town |
@@ -161,10 +161,10 @@ municipality's own publication, with no current municipal text calling it a vill
 `type_local` `woonplaats`. This is a documented identity, not a legal status, as the Netherlands has no statutory city
 category today. Older `city` records outside the woonplaats set (Eindhoven, Delft) were not reviewed, so `type = 'city'`
 alone is not a complete list of Dutch cities; use the settlement filter below. Most
-gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. Eight records named
-"Gemeente …" (Gemeente Groningen, Gemeente Stadskanaal …) are the municipal territory beside a separate record for the
-town (Groningen, Stadskanaal). To list only settlements in the Netherlands, leave out the records whose name starts
-with "Gemeente ".
+gemeente records are also the place itself (Haarlem, Hilversum) and belong in a settlement list. Records named
+"Gemeente …" (Gemeente Groningen, Gemeente Smallingerland …) are the municipal territory beside separate records for
+its places: a town of the same name (Groningen) or places with other names (Drachten, in Smallingerland). To list
+only settlements in the Netherlands, leave out the records whose name starts with "Gemeente ".
 
 ### New Zealand
 
@@ -209,11 +209,34 @@ LSAD 25 is `city / city`, 43 `town / town`, 47 `village / village`, and
 `locality / census designated place`, including large CDPs. Puerto Rico's
 statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`); all Puerto Rico
 rows remain held here because municipio versus town identity is not proved.
-Functioning minor civil divisions use their own legal category: towns, cities,
-boroughs and villages as above; townships and plantations use `municipality`
-with `type_local` `township` or `plantation`. These reviewed entities are level 3
-under the state/county framework. GNIS populated-place names alone do not establish
-legal incorporation or authorize a containing town's population.
+Under contract 6, reviewed US territorial units use `municipality`, with their legal
+category in `type_local`: `town`, `township`, `charter township` or `plantation`.
+A territorial town is not its seat or its contained village/CDP. The 776 New York
+territorial towns added in #2170 (never published under contract 5) are therefore
+`municipality / town`; all 6,298 territories added by that PR are `municipality`.
+Their contained places keep separate rows and their own place categories. Reviewed
+incorporated places (including a city, borough or village coextensive with an MCD)
+keep their place category; a county-subdivision code alone does not authorize retyping
+a settlement. These reviewed units are level 3 under the state/county framework.
+GNIS populated-place names alone do not establish legal incorporation or authorize
+a containing town's population.
+
+**Upgrade the settlement filter:** also exclude US `municipality` rows, including
+`municipality / town`. A unit's population includes its contained settlements; do
+not add the unit and place totals together. This rule changes in v6.0.0. The
+[review ledger](.github/fixes-docs/ledgers/v6_contract.jsonl) binds each retyped NY row to #2170's
+creation record, Census county subdivision and unchanged full row.
+
+**Released-row exception:** 1,478 older rows with reviewed territorial-town
+bindings still retain their published `town / town` classification in this bounded
+release. They are inventoried by id in the adjacent [sources registry](.github/fixes-docs/ledgers/v6_contract.sources.json)
+and await v7 review; this patch does not retype them. Consequently, the filter below
+still returns those legacy territories. One released incorporated place, Bethel Park,
+PA (112287, Census LSAD 37), is typed `municipality` for its Pennsylvania legal class, so
+the US exclusion leaves it out; retyping a released row waits for v7. It is a documented
+starting filter, not a verified complete list of US settlements. Never exclude every `town / town` row:
+incorporated place towns use that pair too; use reviewed entity identities for any
+stricter application-specific selection.
 
 A village or CDP inside a same-named town is a separate entity. Each binding must
 agree with its row's own Wikidata GNIS (P590), FIPS (P774), or explicit instance
@@ -301,6 +324,34 @@ licence **CC-BY 4.0**. DGT's exact licence statement is preserved in the sources
 reuse is free, with attribution to Direção-Geral do Território. Island containment uses
 Esri Portugal's CAOP2025 mirror under CC-BY-4.0; no geometry or points are copied into rows.
 
+### Morocco
+
+In `MA.json`, a reviewed commune is `municipality / جماعة`, bound by its own HCP RGPH 2024 legal register code
+(Wikidata P11958). The commune is the territorial unit, not its seat village or town, which can share its name.
+The urban or rural subtype is set only where the register proves it. Levels, points and ancestry are unchanged.
+These rows were `adm3` before, and the settlement filter below returns them as it did then; Morocco has no
+documented exclusion.
+
+### Serbia
+
+In `RS.json`, a reviewed opština is `municipality / opština`, bound by its own RZS register code (Wikidata P3727).
+The municipality is the territory, not its seat: the census lists Lapovo municipality, Lapovo varošica and Lapovo
+selo separately. A row whose v4.0 identity is unresolved changes only with a reviewed classification event.
+The settlement filter returns these rows as it did when they were `adm3`; Serbia has no documented exclusion.
+
+### Taiwan
+
+In `TW.json`, an ordinary district (區) of a special municipality or provincial city is `section / 區` at level 2,
+under its level-1 municipality, bound by its own MOI township code. Mountain indigenous districts, which have their
+own councils, are not covered by this rule. #1935 typed the first 163 city districts this way. The settlement filter
+includes both `district` and `section`, so its result is unchanged.
+
+### United Kingdom (Scotland)
+
+A Scottish NRS locality (own S19 code) sits at level 3: Scotland (level 1), council area (level 2), locality
+(level 3). Historic parishes are not a current tier, so they do not add a level. Only the level changes; type and
+links are kept, and village status is not inferred from the locality code.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
@@ -316,7 +367,9 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Cuba, Mexico and Greece, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece)).
+In Cuba, Mexico, Greece, Romania and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [Romania](#romania), [United States](#united-states)).
+In Poland, also exclude `municipality`, `adm2` and `adm3` (gminy and not-yet-reviewed units; see [Poland](#poland)).
+US legacy territorial towns retained as `town`, and Bethel Park, PA (112287), are explicit limitations; see the US section.
 In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
 `đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
@@ -335,7 +388,8 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN municipality = territory
+AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'RO', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/RO/US municipality = territory
+AND (country_code <> 'PL' OR type IS NULL OR type NOT IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -358,7 +412,8 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['CU', 'MX', 'GR', 'VN'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN municipality = territory
+    && !(['CU', 'MX', 'GR', 'VN', 'RO', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/RO/US municipality = territory
+    && !(c.country_code === 'PL' && ['municipality', 'adm2', 'adm3'].includes(c.type)) // PL gminy and not-yet-reviewed units
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
@@ -366,7 +421,9 @@ const settlements = cities.filter(
 
 This keeps all `city`/`adm*`/`town`/`village`/`section`/`locality`-style rows
 (including admin seats like Dallas and Sydney) while dropping pure
-administrative units and defunct places.
+administrative units and defunct places under the exclusions above. US legacy
+territorial towns still typed `town` remain included; the filter cannot establish
+settlement identity for unreviewed rows.
 
 ### Records with no type
 
@@ -387,7 +444,7 @@ where available — a non-null `population`.
 CN city `level` follows depth in the official hierarchy: prefecture 2, county-level unit 3, township 4.
 County-level units directly under a province-level municipality or a province are 2 (for example the districts and counties of Beijing, Tianjin, Shanghai and Chongqing, and Hainan's directly administered county-level cities and counties); their townships are 3, as are townships directly under no-county prefectures such as Dongguan and Zhongshan.
 Unproved tiers, own-item/type conflicts and excluded territories remain held in the [per-record ledger](.github/fixes-docs/ledgers/cn_levels_v5x.jsonl).
-Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 58 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019, and Jiangmen, Dongguan and Zhongshan in Guangdong.
+Where any row of a linked prefecture group was not proved, the whole group keeps its older levels (prefecture 1, county-level 2) for now, so no parent link skips or repeats a level; 56 of the 335 prefecture rows are in such groups, including Jiayuguan, whose three districts were abolished in 2019, and Jiangmen, Dongguan and Zhongshan in Guangdong.
 
 ### Romania
 
