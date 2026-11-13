@@ -1,7 +1,7 @@
 {
-  "base_commit": "d6900eb9436c9e9045c59d64de5ca1e7cbd390dc",
+  "base_commit": "1ac7dcead105f60240e95b9919592ae531acf8ea",
   "ledger": ".github/fixes-docs/ledgers/us_townships_ne_v6x.jsonl",
-  "ledger_sha256": "690d16d5e0305bb5b178c7faf7d5aaf45a835539cccc146272ffbea07b6427e9",
+  "ledger_sha256": "2bb0f9f54cb75f67ad076571ebf1d439960aa0dc9ab03c5ee918e6a4fbc98053",
   "sources": [
     {
       "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_cousubs_national.zip",
@@ -365,7 +365,7 @@
     ".github/fixes-docs/ledgers/ne_towns_v5.jsonl": "7d597759fcf75bd1f95f8c3846f68f6c651baaba2b41ed1b71ac31597b33c67e",
     ".github/fixes-docs/ledgers/us_mcd_links_v5x.jsonl": "4046dffa87169b8c3f3b13a23e725f79130080c307868ce469336a2bbd88c391"
   },
-  "method": "2020 FUNCSTAT A town/township/charter township/plantation inventory union newly active 2024 units. Match reviewed own GEOID, own-item P774/P882, or exact normalized name/county/valid polygon point with no namesake place; ambiguous candidates held. 2024 Gazetteer internal point checked inside unmodified valid ACS2024 own MCD; exact 2020 PL060 POP100. Village/CDP/borough links use all PL750 blocks including water and empty blocks; entire statewide relation must have one MCD. No existing nonnull conflicting parent replaced.",
+  "method": "2020 FUNCSTAT A town/township/charter township/plantation inventory union newly active 2024 units. Match reviewed own GEOID, own-item P774/P882, or exact normalized name/county/valid polygon point with no namesake place; ambiguous candidates held. 2024 Gazetteer internal point checked inside unmodified valid ACS2024 own MCD; exact 2020 PL060 POP100. Village/CDP/borough links use all PL750 blocks including water and empty blocks; entire statewide relation must have one MCD. No existing nonnull conflicting parent replaced. Build 6 removes the NAME suffix admission filter: every FUNCSTAT A GEOID in either Gazetteer has a disposition. Previously omitted identities are explicitly held for review. All related existing place classes receive dispositions, retaining split block parts.",
   "timezone": {
     "package": "timezonefinder 9.2.0; timezonefinder-data 4.2026.6",
     "licence": "Timezone boundary data ODbL 1.0, based on OpenStreetMap; database shares CSC ODbL licence",
@@ -521,17 +521,16 @@
     ]
   },
   "coverage": {
-    "subdivisions": 347,
+    "subdivisions": 352,
     "matched": 0,
     "added": 310,
-    "held_subdivisions": 37,
-    "place_rows": 4,
+    "held_subdivisions": 42,
+    "place_rows": 13,
     "linked": 4,
-    "held_place_rows": 0,
+    "held_place_rows": 9,
     "already_linked": 0,
     "typed_place_spatial_review_count": 27
   },
-  "port_stack": [
-    "MO_v6r"
-  ]
+  "port_stack": [],
+  "derived_relationship_sha256": "fd756a36a216a273f578fff31d86bc5c2d5fb1deae13b8857c6dd242cf2d047f"
 }
