@@ -78,10 +78,10 @@ recorded. Removing a key or moving it to another table waits for the next major.
 ## Transition from contract 5 to contract 6 (v6.0.0)
 
 v6.0.0 ships the merged additions and factual corrections since v5.2.0 and one
-incompatible documented query change: settlement selection also excludes US and
-Romanian `municipality` rows and Polish `municipality`, `adm2` and `adm3` rows. For
-Romania and Poland the country sections of TYPE_FIELD.md already said so; the SQL and
-JavaScript examples now match them. The 776 never-released New York territorial towns from #2170
+incompatible documented query change: settlement selection also excludes US
+`municipality` rows. Romanian comune and Polish gminy and legacy `adm2` and `adm3` rows
+stay in the examples: many of their seats have no row of their own yet, and some of
+the Polish rows are towns, so their review waits for v7. The 776 never-released New York territorial towns from #2170
 change from `town / town` to `municipality / town`; functioning townships already
 use `municipality / township` or `municipality / charter township`. These keys
 continue to denote the same territorial units. The schema stays at version 5;
@@ -89,15 +89,15 @@ contract version is 6. No key is removed, moved to another table or repurposed b
 this transition. All other query-rule changes and every removal wait for v7.
 
 Consumers must pin their exact snapshot, refresh the data, and upgrade their
-settlement query together: add `US` and `RO` to the country-specific `municipality`
-exclusion and add the Poland line, in both [TYPE_FIELD.md](TYPE_FIELD.md) examples. A type whitelist that
+settlement query together: add `US` to the country-specific `municipality`
+exclusion in both [TYPE_FIELD.md](TYPE_FIELD.md) examples. A type whitelist that
 keeps `town` is insufficient on the old master data. Use the reviewed NY ids if
 migrating that unpublished snapshot; do not retype every `town / town` row.
 Stored ids remain valid; no automatic redirect is required for these 776 rows.
 Do not sum territorial populations with those of their contained places.
 1,478 released territorial-town rows keep their published type and remain in the
 filter results; see the US section and its per-id inventory before treating a
-result as a settlement. Apart from the United States, Romania and Poland, no country's filter is changed by
+result as a settlement. Apart from the United States, no country's filter is changed by
 this release.
 
 Attach and verify the migration archive at the release commit. The release
