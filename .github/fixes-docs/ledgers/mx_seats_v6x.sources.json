@@ -1,0 +1,203 @@
+{
+ "ledger": "mx_seats_v6x.jsonl",
+ "records": 5,
+ "base_commit": [
+  "3fa5318a6633aeced39af859ba78975dd500f619"
+ ],
+ "full_ledger_sha256": "425c814108a36ea9dcab70032084d5732b49e42881e12f1abd9d7b6260d0b42a",
+ "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+ "methods": [
+  "All MX own items and archived bound localidad codes, plus accent-folded names/native/translations; same-name candidates individually reviewed as separate municipios or other states"
+ ],
+ "sources": [
+  {
+   "bytes": 15122038,
+   "edition": "GeoNames MX capture 6 November 2026, CC BY 4.0",
+   "licence": "CC BY 4.0",
+   "retained_path": "runs/specs/parents_v5x/work/sources/geonames_MX.zip",
+   "retrieved_at": "2026-11-06T08:53:40.951983+00:00",
+   "sha256": "adbeb5f458faf2d2cc14b7b703cab2231090d4a33eab9b61236d9e925174b98f",
+   "url": "https://download.geonames.org/export/dump/MX.zip"
+  },
+  {
+   "bytes": 8843,
+   "edition": "retained snapshot",
+   "licence": "CC BY 4.0",
+   "retained_path": "runs/specs/parents_v5x/work/sources/geonames_readme.txt",
+   "retrieved_at": "2026-11-06T08:54:44.153564+00:00",
+   "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+   "url": "https://download.geonames.org/export/dump/readme.txt"
+  },
+  {
+   "bytes": 276252,
+   "edition": "AGEEML June 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/ageeml_municipios.csv",
+   "retrieved_at": "2026-10-12T04:06:32.405906+00:00",
+   "sha256": "2f2d08c8a13b037203b8fd6822983d242f79cf787b904a1f9df101635f557387",
+   "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPMUNAGEM/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F06%2F2026&forNom=3&ri=0&rf=4000&orden=0+asc&union=0&type_=2&encodingType=1"
+  },
+  {
+   "bytes": 70143464,
+   "edition": "AGEEML August 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/ageeml_localidades_with_bajas.csv",
+   "retrieved_at": "2026-10-12T04:08:03.071116+00:00",
+   "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+   "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPLOCAGEML/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F08%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1"
+  },
+  {
+   "bytes": 36615814,
+   "edition": "INEGI Censo 2020 ITER, reference 2020-03-15",
+   "licence": "INEGI Terms of Free Use; copying, adaptation and commercial use permitted with product/source attribution and transformation notice",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/MX.census.zip",
+   "retrieved_at": "2026-10-11T09:51:38.800401+00:00",
+   "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+   "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+  },
+  {
+   "bytes": 5111644,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/14mun.shp",
+   "retrieved_at": "2026-10-09T01:58:35.693979+00:00",
+   "sha256": "18e34b6e0545d604ed081c494ed6ee77509c3788e4a0e17b3b321334dd0ffba0",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+  },
+  {
+   "bytes": 1100,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/14mun.shx",
+   "retrieved_at": "2026-10-09T01:58:35.693979+00:00",
+   "sha256": "d84198fbb5ad793d87b5c6f62d2a75392f3ec7aeb2e5f64dede85a1edb3828d2",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+  },
+  {
+   "bytes": 11536,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/14mun.dbf",
+   "retrieved_at": "2026-10-09T01:58:35.693979+00:00",
+   "sha256": "49d1a02d4e43c42365986596efc65286a9fcec491d47b12a7c3d0c4269c8fe8a",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+  },
+  {
+   "bytes": 648,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/14mun.prj",
+   "retrieved_at": "2026-10-09T01:58:35.693979+00:00",
+   "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+  },
+  {
+   "bytes": 12,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/14mun.cpg",
+   "retrieved_at": "2026-10-09T01:58:35.693979+00:00",
+   "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+  },
+  {
+   "bytes": 4704088,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shp",
+   "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+   "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+  },
+  {
+   "bytes": 4660,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shx",
+   "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+   "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+  },
+  {
+   "bytes": 52031,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.dbf",
+   "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+   "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+  },
+  {
+   "bytes": 648,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.prj",
+   "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+   "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+  },
+  {
+   "bytes": 12,
+   "edition": "INEGI Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+   "licence": "INEGI Términos de Libre Uso",
+   "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.cpg",
+   "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+   "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+   "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+  },
+  {
+   "bytes": 25684,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q20249244.json",
+   "retrieved_at": "2026-11-13T18:28:25.235974+00:00",
+   "sha256": "56f71237b59ec137ca1a5826106d9dcd86c361b4741608b418b30054ce02e977",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20249244.json"
+  },
+  {
+   "bytes": 8760,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q54920087.json",
+   "retrieved_at": "2026-11-13T18:28:24.604746+00:00",
+   "sha256": "737b37fc56788e906678a1a6396ba11ff313e22a4e5fee954668897990d4cdd2",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q54920087.json"
+  },
+  {
+   "bytes": 22952,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q3891277.json",
+   "retrieved_at": "2026-11-13T18:28:24.801724+00:00",
+   "sha256": "582acd1b2b19120186115fb8ee68cdbb3b92c23822cc72b3c1f42834b1932920",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3891277.json"
+  },
+  {
+   "bytes": 37136,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q3311224.json",
+   "retrieved_at": "2026-11-13T18:28:26.160890+00:00",
+   "sha256": "a4fef64b8d5e9e27abb9653c6deb347b32f8a471fcda1cf580631587a12ffb2e",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3311224.json"
+  },
+  {
+   "bytes": 36585,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q3175253.json",
+   "retrieved_at": "2026-11-13T18:28:25.380405+00:00",
+   "sha256": "8efcbd94812dd27d2adf018f2b13d1bc2e06e01c61b632797b516aa412264d15",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3175253.json"
+  },
+  {
+   "bytes": 24495,
+   "edition": "retained snapshot",
+   "licence": "CC0 1.0",
+   "retained_path": "runs/specs/mx_seats/work2/sources/Q20296317.json",
+   "retrieved_at": "2026-11-13T18:28:25.445136+00:00",
+   "sha256": "60dddcb136de14d0762c443d072258199efe6004d44b2670d2a848bebc3b97f7",
+   "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20296317.json"
+  }
+ ]
+}
