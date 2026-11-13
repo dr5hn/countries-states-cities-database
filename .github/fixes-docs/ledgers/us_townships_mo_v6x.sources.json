@@ -1,0 +1,472 @@
+{
+  "base_commit": "d6900eb9436c9e9045c59d64de5ca1e7cbd390dc",
+  "ledger": ".github/fixes-docs/ledgers/us_townships_mo_v6x.jsonl",
+  "ledger_sha256": "7d78a22bd97095dbb15053a6600b2ad30c89748674a97dc5b00133765d5cb0ab",
+  "sources": [
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_cousubs_national.zip",
+      "retrieved_at": "2026-10-27T10:06:08.626364+00:00",
+      "sha256": "2225787f98a05729614a0827c805c19e2a3a79b69d62bd94ea1e07a6d4530c66",
+      "edition": "2020 Census Gazetteer national 2020_Gaz_cousubs_national.zip",
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "file": "sources/2020_Gaz_cousubs_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_cousubs_national.zip",
+      "retrieved_at": "2026-10-19T08:58:34.029278+00:00",
+      "sha256": "5b9404979bdd978f6eaf6b37dc2bd995f9aedbdbfac1fe7c98c407bc1a337f75",
+      "members": [
+        "2024_Gaz_cousubs_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_cousubs_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_place_national.zip",
+      "retrieved_at": "2026-10-27T10:06:06.843072+00:00",
+      "sha256": "6e5745b3e1adf7a1e024a988301d484697e2a0f25b3cf10114eef676f09d5c18",
+      "edition": "2020 Census Gazetteer national 2020_Gaz_place_national.zip",
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "file": "sources/2020_Gaz_place_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip",
+      "retrieved_at": "2026-10-19T08:58:33.854242+00:00",
+      "sha256": "cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06",
+      "members": [
+        "2024_Gaz_place_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_place_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip",
+      "retrieved_at": "2026-10-19T08:58:33.170973+00:00",
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "members": [
+        "2024_Gaz_counties_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_counties_national.zip"
+    },
+    {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2729%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson",
+      "edition": "TIGERweb ACS 2024",
+      "retrieved_at": "2026-10-19T13:37:51.176931+00:00",
+      "sha256": "2105797f95a1d0f9b7afd0365d6516eb33147b89c652cdadf6c3791f7d844966",
+      "licence": "US Government work; public domain (17 USC 105)",
+      "feature_count": 1394,
+      "inventory_check": {
+        "gazetteer_missing": [],
+        "tiger_extra": [],
+        "exceededTransferLimit": false
+      },
+      "file": "sources/tiger24_MO_22.json"
+    },
+    {
+      "retrieved_at": "2026-10-19T09:01:25.111497+00:00",
+      "raw_sha256": "e48172d42cc5ee7aebaa0efb651d67dc9e09e11df82c90deb36c5e957a70e2b1",
+      "retained_sha256": "fffe78e40170c0fdb1d0d2641017b27b28f90cee538fa70790a6dfd53df296ba",
+      "state": "MO",
+      "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/Missouri/mo2020.pl.zip",
+      "member": "mogeo2020.pl",
+      "crc32": "e7aa52bf",
+      "compressed_bytes": 15499864,
+      "uncompressed_bytes": 144301843,
+      "compressed_sha256": "66156e64fd847c89b74cabedea1690a84de46b64dad4ba5a630fc4b62a3a2156",
+      "retained_rows": 3746,
+      "summary_level_counts": {
+        "040": 1,
+        "050": 115,
+        "060": 1394,
+        "140": 1654,
+        "150": 5031,
+        "155": 1154,
+        "160": 1082,
+        "500": 8,
+        "510": 124,
+        "511": 1757,
+        "512": 124,
+        "521": 1434,
+        "531": 1130,
+        "532": 1122,
+        "570": 86,
+        "571": 8,
+        "572": 543,
+        "610": 34,
+        "612": 130,
+        "613": 1472,
+        "614": 1203,
+        "617": 115,
+        "618": 34,
+        "619": 659,
+        "620": 163,
+        "622": 297,
+        "623": 1833,
+        "624": 1526,
+        "627": 262,
+        "628": 163,
+        "629": 1073,
+        "630": 4712,
+        "631": 1828,
+        "635": 5168,
+        "636": 2528,
+        "640": 130,
+        "641": 297,
+        "642": 1172,
+        "643": 1388,
+        "700": 4604,
+        "701": 6716,
+        "706": 4908,
+        "707": 4604,
+        "708": 6905,
+        "709": 8849,
+        "710": 5944,
+        "720": 8086,
+        "730": 13089,
+        "740": 19450,
+        "750": 253632,
+        "950": 72,
+        "970": 446
+      },
+      "first_row": [
+        "PLST",
+        "MO",
+        "040",
+        "00",
+        "00",
+        "000",
+        "00",
+        "0000001",
+        "0400000US29",
+        "29",
+        "2",
+        "4",
+        "29",
+        "01779791",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "178052563675",
+        "2487215790",
+        "Missouri",
+        "Missouri",
+        "A",
+        "",
+        "6154913",
+        "2786621",
+        "+38.3507500",
+        "-092.4567826",
+        "00",
+        "",
+        ""
+      ],
+      "sha256": "66156e64fd847c89b74cabedea1690a84de46b64dad4ba5a630fc4b62a3a2156",
+      "licence": "US Census Bureau public domain, 17 USC 105",
+      "file": "sources/pl2020_MO.deflate"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q964448%7CQ964529%7CQ964543%7CQ964578%7CQ964591%7CQ964649%7CQ964654%7CQ964678%7CQ964707%7CQ964732%7CQ964747%7CQ964749%7CQ964761%7CQ964772%7CQ964799%7CQ964827%7CQ964844%7CQ964886%7CQ964914%7CQ964928%7CQ964958%7CQ964968%7CQ965063%7CQ965070%7CQ965079%7CQ965095%7CQ965100%7CQ965101%7CQ965114%7CQ965125%7CQ965170%7CQ965184%7CQ965206%7CQ965219%7CQ965343%7CQ965391%7CQ965421%7CQ965425%7CQ965440%7CQ965452%7CQ965585%7CQ965612%7CQ965643%7CQ965657%7CQ965679%7CQ965683%7CQ965698%7CQ965735%7CQ965760%7CQ965773&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=10",
+      "ids": [
+        "Q964448",
+        "Q964529",
+        "Q964543",
+        "Q964578",
+        "Q964591",
+        "Q964649",
+        "Q964654",
+        "Q964678",
+        "Q964707",
+        "Q964732",
+        "Q964747",
+        "Q964749",
+        "Q964761",
+        "Q964772",
+        "Q964799",
+        "Q964827",
+        "Q964844",
+        "Q964886",
+        "Q964914",
+        "Q964928",
+        "Q964958",
+        "Q964968",
+        "Q965063",
+        "Q965070",
+        "Q965079",
+        "Q965095",
+        "Q965100",
+        "Q965101",
+        "Q965114",
+        "Q965125",
+        "Q965170",
+        "Q965184",
+        "Q965206",
+        "Q965219",
+        "Q965343",
+        "Q965391",
+        "Q965421",
+        "Q965425",
+        "Q965440",
+        "Q965452",
+        "Q965585",
+        "Q965612",
+        "Q965643",
+        "Q965657",
+        "Q965679",
+        "Q965683",
+        "Q965698",
+        "Q965735",
+        "Q965760",
+        "Q965773"
+      ],
+      "edition": "Wikidata live item statements; P590/P774/P31",
+      "retrieved_at": "2026-10-19T14:25:19.306769+00:00",
+      "sha256": "0154a8321df81eaf423c04d16335ef72f5ff6d8bf83816cef2e48c5c28959025",
+      "user_agent": "CSC-US-identity-audit/2.0 (https://github.com/dr5hn/countries-states-cities-database; research evidence)",
+      "licence": "Wikidata structured data CC0",
+      "file": "sources/wikidata_own_0096.json"
+    }
+  ],
+  "reviewed_ledger_guards": {
+    ".github/fixes-docs/ledgers/us_places_v5x.jsonl": "1e66364164cc1c793b3cf61c637d618406e7acebb0379179514d6c84feeaacfe",
+    ".github/fixes-docs/ledgers/us_places2_v5x.jsonl": "dee6bb692445d746ccae5bba10aeb56997f68bbad34af8125cbb338a31f63f7a",
+    ".github/fixes-docs/ledgers/ne_towns_v5.jsonl": "7d597759fcf75bd1f95f8c3846f68f6c651baaba2b41ed1b71ac31597b33c67e",
+    ".github/fixes-docs/ledgers/us_mcd_links_v5x.jsonl": "4046dffa87169b8c3f3b13a23e725f79130080c307868ce469336a2bbd88c391"
+  },
+  "method": "2020 FUNCSTAT A town/township/charter township/plantation inventory union newly active 2024 units. Match reviewed own GEOID, own-item P774/P882, or exact normalized name/county/valid polygon point with no namesake place; ambiguous candidates held. 2024 Gazetteer internal point checked inside unmodified valid ACS2024 own MCD; exact 2020 PL060 POP100. Village/CDP/borough links use all PL750 blocks including water and empty blocks; entire statewide relation must have one MCD. No existing nonnull conflicting parent replaced.",
+  "timezone": {
+    "package": "timezonefinder 9.2.0; timezonefinder-data 4.2026.6",
+    "licence": "Timezone boundary data ODbL 1.0, based on OpenStreetMap; database shares CSC ODbL licence",
+    "url": "https://github.com/jannikmi/timezonefinder",
+    "method": "Timezone lookup at Census internal point only; no coordinates copied from timezone data.",
+    "data_manifest_sha256": "2788e58d0a78eaba9312f94db860949f2c7421aa99cf9fbcd98b4bdbc38e3d67",
+    "data_files": [
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/__init__.py",
+        "sha256": "01bec55165cb7a6f6e5676fe33acc76d3ed93c48a25b0b6cf25bba09f4956874",
+        "bytes": 1486
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_bases.npy",
+        "sha256": "2b6a5d70f26722aad1e7a390d198a5f51bc8b8ea6d6574204b2b42e0dd557d07",
+        "bytes": 254160
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_offsets.npy",
+        "sha256": "e582e019d6a04558eeabbcc8f53191e9d94d055156990165b62965ca156979b4",
+        "bytes": 5556
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_ranges.npy",
+        "sha256": "db704813bb61b9e9e9216cfb25ba1f3b41f0a81ab2bc2b09d3f4c73e149def67",
+        "bytes": 508192
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_widths.npy",
+        "sha256": "2ee5492113adcca897a621ae4f2e483648f84edae774824b507279c0364992cf",
+        "bytes": 127144
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/coordinates.bin",
+        "sha256": "d727a8ffa9d2330316fd335d69f11a975579ebd9ead2ee73c1b83db243f02b7f",
+        "bytes": 32135984
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/nr_vertices.npy",
+        "sha256": "22e30c0d05070d1fd4ed95e741e7ca5deab87d8a47044953e63635dee5241700",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/xmax.npy",
+        "sha256": "8d7d9160ac9e04102ee0e68fa43d3b366ade1c4eb2aad4f81e35513553f53268",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/xmin.npy",
+        "sha256": "28a5791223af55c8fb86d9005a9c06160011362a555c6caf142c4a63440c8ff8",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/ymax.npy",
+        "sha256": "52bfab6c332c6d386daeab878dde8bdfe1c7ecb14652ed3b6b2804e2ac6347e9",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/ymin.npy",
+        "sha256": "e6da02592c22d11e42d28c69271a111fb43e4db94471691666a09a7990a13d20",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/data_version.txt",
+        "sha256": "9f9a9e6bfd18cd6a0a4d65764931072577edcbb731981a068ef52bba6615b1de",
+        "bytes": 6
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/hole_registry.json",
+        "sha256": "14a16c89a94d615066e2d3c450bf41037413ba4e178b9d71584155cad20d1cc1",
+        "bytes": 3162
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_bases.npy",
+        "sha256": "0804d038803103803f71b306d9894e87f0ff3723d0811cf329f4fedc76147d4f",
+        "bytes": 836
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_offsets.npy",
+        "sha256": "c6803f6b47e8f60f612a2de0942e6f65db5ccd5f5f1c0b2db0599662001dc6b6",
+        "bytes": 244
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_ranges.npy",
+        "sha256": "41f85c750fbe831aee5ad6077c8aea988033bbd7c0c7a99994ed629cc0ad4008",
+        "bytes": 1544
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_widths.npy",
+        "sha256": "5c79ae37f52e3f99615c2591afc16c0136a1932a34cd6feb6ddb9c10f5171035",
+        "bytes": 482
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/coordinates.bin",
+        "sha256": "953be0beac49ffef01e3462d5917a6a111dfcb582f1613b16b0182282b2b6f5e",
+        "bytes": 95220
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/nr_vertices.npy",
+        "sha256": "e726d83f11e15a4fb8b22a475e6792dcac1b75435ab0f87adca9c38a217ef3f6",
+        "bytes": 240
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/poly_ref.npy",
+        "sha256": "dfb4256a1eb2ffe0a729f4cdaf0cc1f7b41b146775f84c8c90c264e41b1eac4d",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/xmax.npy",
+        "sha256": "356aaec9a0a808d46ab6bd3c85975ebb0126e324d23a48a90c0f693ff079d5a0",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/xmin.npy",
+        "sha256": "44ad2d9d73deb9069d84f4e7c0d65b57d98df2e297fae2a8fb7ed63d227c3c4e",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/ymax.npy",
+        "sha256": "04df4cdba17836772d9062d5569a024743cbf6830738ef2fbf49a4e71340493d",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/ymin.npy",
+        "sha256": "fbafba55e8306b5b4b88fcf27385d733a89885b6789233df64d855c58cdfc939",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/schemas/polygons.fbs",
+        "sha256": "b9a0d198b4e22ce5fa33b607822162562403119d13e35e5cf06707de52e95c0a",
+        "bytes": 533
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/shortcuts.bin",
+        "sha256": "a6b4d1df1e83138593dca6e2f1f0d88f294f945395545bccc3d368dd3102683c",
+        "bytes": 694560
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/timezone_names.txt",
+        "sha256": "8625e551d30b2b56842c5d4bcb461ca2d3254dd04ba3c4e4b243e93f2594cda6",
+        "bytes": 7149
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/zone_ids.npy",
+        "sha256": "8b72ce2b6b77276ca61fb7d6a84657d114848c98ac84480b1aa8b0f54e57fab5",
+        "bytes": 2840
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/zone_positions.npy",
+        "sha256": "5a81107f975eb13ddd540a5dd7083eab835183fb3ed39b97775477f514518af3",
+        "bytes": 1018
+      }
+    ]
+  },
+  "coverage": {
+    "subdivisions": 282,
+    "matched": 0,
+    "added": 281,
+    "held_subdivisions": 1,
+    "place_rows": 0,
+    "linked": 0,
+    "held_place_rows": 0,
+    "already_linked": 0,
+    "typed_place_spatial_review_count": 34
+  }
+}
