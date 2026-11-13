@@ -128,8 +128,11 @@ In `PL.json`, `municipality` is a gmina (`gmina wiejska` or `gmina miejsko-wiejs
 not a town. An urban-rural gmina and its town can share a name (Krobia, Nowogrodziec), and the gmina's population
 includes the town's, so do not add the two. An urban gmina (`gmina miejska`) is the town itself and is typed `city`.
 Villages (`village` / `wieś`) and towns (`city` / `miasto`) are level 4, linked by `parent_id` to their gmina where
-the gmina has a reviewed row (474 are not yet linked). This describes reviewed rows: 88 legacy `adm3` and 4 `adm2` rows
-are not yet reviewed and can also be gminy. To list only settlements in Poland, leave out `municipality`, `adm2` and `adm3`.
+the gmina has a reviewed row (474 are not yet linked). This describes reviewed rows. The 88 legacy `adm3` and 4 `adm2` rows are not yet
+reviewed: some are towns, such as Bielsko-Biała (85861) and Jastrzębie-Zdrój (86528), and others carry a gmina's
+Wikidata item, so keep them in a settlement list. Many gminy have no separate row for their seat yet, so leaving out
+`municipality` would drop that place too. The settlement filter below keeps Polish rows until v7 reviews them, so its
+results include gminy.
 
 ### Cuba
 
@@ -367,8 +370,8 @@ administrative zone, region, abandoned, historical, destroyed, religious,
 historical_capital
 ```
 
-In Cuba, Mexico, Greece, Romania and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [Romania](#romania), [United States](#united-states)).
-In Poland, also exclude `municipality`, `adm2` and `adm3` (gminy and not-yet-reviewed units; see [Poland](#poland)).
+In Cuba, Mexico, Greece and the United States, also exclude `municipality` (the municipal territory; see [Cuba](#cuba), [Mexico](#mexico), [Greece](#greece), [United States](#united-states)).
+Romanian comune and Polish gminy stay in until v7 reviews their seats, because many seats have no row of their own yet; see [Romania](#romania) and [Poland](#poland).
 US legacy territorial towns retained as `town`, and Bethel Park, PA (112287), are explicit limitations; see the US section.
 In Vietnam, also exclude `municipality`: since the July 2025 reform it is a commune, ward or special zone (`xã`, `phường`,
 `đặc khu`) directly under the province, a territory formed from several old units; former cities and towns stay as
@@ -388,8 +391,7 @@ WHERE (
     'abandoned', 'historical', 'destroyed', 'religious', 'historical_capital'
   )
 )
-AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'RO', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/RO/US municipality = territory
-AND (country_code <> 'PL' OR type IS NULL OR type NOT IN ('municipality', 'adm2', 'adm3'))  -- PL gminy and not-yet-reviewed units
+AND (country_code NOT IN ('CU', 'MX', 'GR', 'VN', 'US') OR type IS NULL OR type <> 'municipality')  -- CU/MX/GR/VN/US municipality = territory
 AND NOT (country_code = 'NL' AND name LIKE 'Gemeente %')  -- NL municipal territory beside its town
 AND latitude IS NOT NULL
 AND longitude IS NOT NULL;
@@ -412,8 +414,7 @@ const EXCLUDED_TYPES = new Set([
 
 const settlements = cities.filter(
   (c) => !EXCLUDED_TYPES.has(c.type)
-    && !(['CU', 'MX', 'GR', 'VN', 'RO', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/RO/US municipality = territory
-    && !(c.country_code === 'PL' && ['municipality', 'adm2', 'adm3'].includes(c.type)) // PL gminy and not-yet-reviewed units
+    && !(['CU', 'MX', 'GR', 'VN', 'US'].includes(c.country_code) && c.type === 'municipality') // CU/MX/GR/VN/US municipality = territory
     && !(c.country_code === 'NL' && c.name.startsWith('Gemeente ')) // NL municipal territory beside its town
     && c.latitude != null && c.longitude != null
 );
@@ -422,7 +423,7 @@ const settlements = cities.filter(
 This keeps all `city`/`adm*`/`town`/`village`/`section`/`locality`-style rows
 (including admin seats like Dallas and Sydney) while dropping pure
 administrative units and defunct places under the exclusions above. US legacy
-territorial towns still typed `town` remain included; the filter cannot establish
+territorial towns still typed `town`, Romanian comune and Polish gminy remain included; the filter cannot establish
 settlement identity for unreviewed rows.
 
 ### Records with no type
@@ -448,4 +449,4 @@ Where any row of a linked prefecture group was not proved, the whole group keeps
 
 ### Romania
 
-A UAT (unitate administrativ-teritorială) is a level 2 city-table row under its județ: a comună has type `municipality` and type_local `comună`, an oraș has type `town` and type_local `oraș`, and a municipiu has type `city` and type_local `municipiu`. Its parent_id is null. Villages (`village`, sat) and localities (`locality`) are level 3 and link to their UAT by parent_id. A seat village and its same-named commune are distinct entities. To list only settlements, leave out Romanian rows of type `municipality`.
+A UAT (unitate administrativ-teritorială) is a level 2 city-table row under its județ: a comună has type `municipality` and type_local `comună`, an oraș has type `town` and type_local `oraș`, and a municipiu has type `city` and type_local `municipiu`. Its parent_id is null. Villages (`village`, sat) and localities (`locality`) are level 3 and link to their UAT by parent_id. A seat village and its same-named commune are distinct entities, and the commune's population includes its villages', so do not add the two. Some seat villages have no row of their own yet, so leaving out `municipality` would drop that place too; the settlement filter keeps comune until v7 reviews their seats.
