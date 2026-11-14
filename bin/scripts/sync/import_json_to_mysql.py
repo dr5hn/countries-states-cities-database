@@ -606,7 +606,8 @@ class JSONToMySQLImporter:
             inserted += self._batch_insert_records('counties', records_without_id, insert_columns_no_id)
 
         if parents:
-            self.cursor.executemany("UPDATE counties SET parent_id = %s WHERE id = %s", parents)
+            # Restoring a forward parent link must not overwrite the source timestamp.
+            self.cursor.executemany("UPDATE counties SET parent_id = %s, updated_at = updated_at WHERE id = %s", parents)
             self.conn.commit()
 
         # A county of several regions: one county_states row per listed region (checked in the preflight)
