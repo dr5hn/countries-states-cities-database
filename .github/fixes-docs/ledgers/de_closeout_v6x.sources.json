@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "base_commit": "a4171ddb04abbe8785b00b8b4172e04af349d6bf",
+  "base_commit": "d43e645a1f761ff5d5b08594de12479a4390ce9f",
   "territorial_date": "2026-09-30",
   "population_reference_date": "2025-12-31",
   "sources": {
@@ -188,6 +188,15 @@
       "sha256": "65843e1a3718377878a1eee384f810f82e97463cbc114bf9937b019b7d2518fc",
       "bytes": 436543
     },
+    "vg250_curl.zip": {
+      "url": "https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.gpkg.ebenen.zip",
+      "edition": "01.01.2026",
+      "retrieved_at": "2026-10-09T03:46:34.542521+00:00",
+      "sha256": "6b096eb4862b4eafda9294e425fb5a6d0e7773eb5815a4d4edc78b639ec2728f",
+      "bytes": 70630747,
+      "licence": "dl-de/by-2-0",
+      "reused_from": "research/de_pilot/work_de_pilot_1/sources/vg250_curl.zip"
+    },
     "register_index.html": {
       "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
       "edition": "latest index at retrieval",
@@ -236,5 +245,5 @@
       "reused_from": "research/de_pilot/work_de_pilot_1/sources/vg250_curl.zip"
     }
   },
-  "method": "Literal own current P439 or own P1388 -> exact register key; same Land, name/own alias, scope, unique item and point containment; register classes and enumerated Regierungsbezirk/Kreis determine depth. No parent key inheritance. v4 continuity required for unresolved identities. Unknown stored count dates do not prevent replacing a count of the independently proved SAME Gemeinde. Parts and all unproved identities held."
+  "method": "Literal own current P439 or own P1388 -> exact register key; same Land, name/own alias, scope, unique item and point containment; register classes and Land-specific active tiers determine depth; only BW/BY/HE/NW have Regierungsbezirk tiers, excluding statistical register placeholders in other Laender. No parent key inheritance. v4 continuity required for unresolved identities. Unknown stored count dates do not prevent replacing a count of the independently proved SAME Gemeinde. Parts and all unproved identities held."
 }
