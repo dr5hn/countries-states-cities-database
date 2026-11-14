@@ -1,0 +1,5100 @@
+{
+  "schema_version": 1,
+  "base_commit": "f442c75640f174ce45e032da29b58c3d13a759c7",
+  "register_territorial_date": "2026-09-30",
+  "sources": {
+    "berlin_capabilities.xml": {
+      "url": "https://gdi.berlin.de/services/wfs/alkis_ortsteile?service=WFS&request=GetCapabilities",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:25:08.629779+00:00",
+      "sha256": "28f2d7211ef3f67cc41dc9a5be921ea954454f6e70905ebe84f1ce32351df170",
+      "bytes": 95317
+    },
+    "own_022.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q880749%7CQ882100%7CQ882731%7CQ8829%7CQ883068%7CQ883320%7CQ883741%7CQ885299%7CQ8893%7CQ896276%7CQ896928%7CQ906106%7CQ9169094%7CQ921024%7CQ93211%7CQ93243%7CQ93253%7CQ93285%7CQ93295%7CQ938559%7CQ956694%7CQ96654328%7CQ991571&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:28:31.690238+00:00",
+      "sha256": "65843e1a3718377878a1eee384f810f82e97463cbc114bf9937b019b7d2518fc",
+      "bytes": 436543
+    },
+    "berlin_metadata.xml": {
+      "url": "https://gdi.berlin.de/geonetwork/srv/ger/csw?service=CSW&request=GetRecordById&version=2.0.2&outputschema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=61bd3084-c4b0-34e4-9a00-01daabb315f5",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:25:56.369400+00:00",
+      "sha256": "da48d06f5ec77ced85c467ec60dc27c2a18878505591c226baa7720fd3d7ee83",
+      "bytes": 37935
+    },
+    "vg250_curl.zip": {
+      "url": "https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_0101/aktuell/vg250_01-01.utm32s.gpkg.ebenen.zip",
+      "edition": "01.01.2026",
+      "retrieved_at": "2026-10-09T03:46:34.542521+00:00",
+      "sha256": "6b096eb4862b4eafda9294e425fb5a6d0e7773eb5815a4d4edc78b639ec2728f",
+      "bytes": 70630747,
+      "licence": "dl-de/by-2-0",
+      "reused_from": "research/de_pilot/work_de_pilot_1/sources/vg250_curl.zip"
+    },
+    "own_021.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7926%7CQ7927%7CQ7928%7CQ7931%7CQ7932%7CQ798686%7CQ798710%7CQ798730%7CQ798758%7CQ80032%7CQ80508%7CQ806001%7CQ80683%7CQ814665%7CQ81488%7CQ8170%7CQ8172%7CQ818898%7CQ818993%7CQ818998%7CQ819026%7CQ81905%7CQ819063%7CQ819221%7CQ821089%7CQ821101%7CQ8215%7CQ822088%7CQ822148%7CQ822173%7CQ8239%7CQ82539%7CQ826545%7CQ827261%7CQ82920%7CQ831989%7CQ83314%7CQ833733%7CQ83377%7CQ836702%7CQ836717%7CQ836932%7CQ851534%7CQ865412%7CQ866142%7CQ874314%7CQ8744%7CQ878220%7CQ880142%7CQ880292&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:28:29.805492+00:00",
+      "sha256": "5430e017cac7cdee0777c06c52c47e31c5fae495ba470984a72e4c802f90cf28",
+      "bytes": 1190304
+    },
+    "bochum_stadtteile_archive.json": {
+      "url": "https://bochum.opendata.ruhr/dataset/5d2d8a7e-8537-4f55-beb3-666f82871a31/resource/a7eb4af4-ffeb-40e4-8145-289c81c7960d/download/statistische_bezirke.geojson",
+      "licence": "dl-de-zero-2.0",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:28:18.073683+00:00",
+      "sha256": "f7e27a60c41edd80e94fa466bb5c9959cdca6ead2884e27e9c775c081cd16ca5",
+      "bytes": 1980806
+    },
+    "register_index.html": {
+      "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html",
+      "edition": "latest index at retrieval",
+      "licence": "Destatis terms",
+      "retrieved_at": "2026-11-14T08:24:27.498723+00:00",
+      "sha256": "a74639b9aaf39a666eb588c112ce0b15f9130a3e1c116f87ef6e586016142227",
+      "bytes": 176206
+    },
+    "berlin_ortsteile.json": {
+      "url": "https://gdi.berlin.de/services/wfs/alkis_ortsteile?service=WFS&version=2.0.0&request=GetFeature&typeNames=alkis_ortsteile:ortsteile&outputFormat=application/json&srsName=EPSG:4326",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:26:00.392103+00:00",
+      "sha256": "7a11ec431bf6f6581d40201593bf1080cfbe04a57006d67711690cb1b094d619",
+      "bytes": 2155819
+    },
+    "own_020.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q701881%7CQ701886%7CQ702034%7CQ702067%7CQ702094%7CQ702137%7CQ702517%7CQ702521%7CQ702572%7CQ702621%7CQ702804%7CQ702829%7CQ702853%7CQ702944%7CQ703135%7CQ703140%7CQ703218%7CQ703487%7CQ703680%7CQ703777%7CQ703821%7CQ703831%7CQ703853%7CQ703859%7CQ703864%7CQ703877%7CQ703880%7CQ704102%7CQ704109%7CQ704165%7CQ704407%7CQ704419%7CQ704442%7CQ705011%7CQ705271%7CQ705414%7CQ705627%7CQ706249%7CQ706395%7CQ707933%7CQ708720%7CQ709065%7CQ71017%7CQ759411%7CQ773152%7CQ78002039%7CQ783466%7CQ7920%7CQ7923%7CQ7924&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:28:27.104907+00:00",
+      "sha256": "c289719d5ef216dd89e511fd14c94fd568880d602540842c503b1a7fd17002d3",
+      "bytes": 851102
+    },
+    "own_009.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q32266509%7CQ32266950%7CQ32269227%7CQ32273365%7CQ32273576%7CQ32276895%7CQ32278322%7CQ32278387%7CQ32278417%7CQ32280560%7CQ32281242%7CQ32282420%7CQ32285412%7CQ32288744%7CQ32290518%7CQ32291781%7CQ32296699%7CQ32296737%7CQ32297288%7CQ32298727%7CQ32298846%7CQ324402%7CQ328672%7CQ328714%7CQ329707%7CQ33424214%7CQ33425275%7CQ33427519%7CQ33432999%7CQ33437435%7CQ33438119%7CQ33438660%7CQ33441461%7CQ33447148%7CQ33451961%7CQ33452143%7CQ334596%7CQ33462881%7CQ33465161%7CQ33465306%7CQ33469783%7CQ33470886%7CQ33475245%7CQ33476445%7CQ33477076%7CQ33482829%7CQ33496389%7CQ33507394%7CQ33510632%7CQ33510745&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:02.547374+00:00",
+      "sha256": "ed81aa4276e3a1d6ac19531ad0791147035db95bce558bc71191dfbca48b8f59",
+      "bytes": 497307
+    },
+    "gv_2026_q3.xlsx": {
+      "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GVAuszugQ/AuszugGV3QAktuell.xlsx?__blob=publicationFile",
+      "edition": "30.09.2026",
+      "licence": "dl-de/by-2-0",
+      "retrieved_at": "2026-11-14T08:24:19.506912+00:00",
+      "sha256": "45e979afe2e4354758e52f7b5b0c2a8167dd9db4a13585cec6acf17211f3b5f3",
+      "bytes": 1872608
+    },
+    "gv_2026_q3.zip": {
+      "url": "https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/Administrativ/Archiv/GV100ADQ/GV100AD3QAktuell.zip?__blob=publicationFile",
+      "edition": "30.09.2026",
+      "licence": "dl-de/by-2-0",
+      "retrieved_at": "2026-11-14T08:24:20.890112+00:00",
+      "sha256": "23fbb0854c4a141952b161699877de4f00758597136c098f96c5b64f13a1f60a",
+      "bytes": 406629
+    },
+    "own_001.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1355991%7CQ136744%7CQ1377259%7CQ1387060%7CQ1395453%7CQ1397170%7CQ1399888%7CQ1402836%7CQ140926%7CQ1411025%7CQ141158094%7CQ1412212%7CQ1422901%7CQ1445126%7CQ1453469%7CQ1463438%7CQ1468653%7CQ147479%7CQ14912778%7CQ14932%7CQ1493967%7CQ1496648%7CQ1504270%7CQ15276466%7CQ1532713%7CQ153908%7CQ1544858%7CQ1547889%7CQ1548027%7CQ1549275%7CQ1549375%7CQ1549432%7CQ1549804%7CQ1551614%7CQ155211%7CQ1552242%7CQ1554%7CQ1556%7CQ155981%7CQ1560%7CQ1564%7CQ1569331%7CQ1570%7CQ1572272%7CQ1573%7CQ157480%7CQ1580%7CQ15944730%7CQ1594579%7CQ1597&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:55.956167+00:00",
+      "sha256": "ddcdf0920148f4b952f7f5d9afd32761656dbb946922a02ca2b200a1c2682c92",
+      "bytes": 934386
+    },
+    "own_014.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q572891%7CQ573466%7CQ573500%7CQ573537%7CQ574451%7CQ574468%7CQ575676%7CQ576653%7CQ577046%7CQ57711%7CQ57714%7CQ57717%7CQ57729%7CQ57731%7CQ57786%7CQ57822%7CQ579006%7CQ57911%7CQ57916%7CQ579812%7CQ58000%7CQ580115%7CQ58015%7CQ58022%7CQ581220%7CQ582690%7CQ585774%7CQ587077%7CQ588635%7CQ59096%7CQ595513%7CQ59775093%7CQ599484%7CQ59974%7CQ599776%7CQ599941%7CQ602159%7CQ604160%7CQ608020%7CQ6089%7CQ612203%7CQ612722%7CQ614664%7CQ618378%7CQ62170%7CQ622136%7CQ622209%7CQ622569%7CQ623516%7CQ624241&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:06.330754+00:00",
+      "sha256": "6c99b963a831fc75474cd33b722ff909ab0758ffd047f01f435e2a77fd62f24d",
+      "bytes": 1235977
+    },
+    "fresh_002.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q569866%7CQ569895%7CQ573466%7CQ576653%7CQ57714%7CQ57731%7CQ582690%7CQ587077%7CQ59775093%7CQ599941%7CQ602159%7CQ614664%7CQ622136%7CQ622209%7CQ623516%7CQ624241%7CQ625894%7CQ628421%7CQ628840%7CQ629947%7CQ630383%7CQ630969%7CQ633148%7CQ633518%7CQ637911%7CQ638909%7CQ64%7CQ641467%7CQ641472%7CQ641689%7CQ641926%7CQ643857%7CQ644062%7CQ644350%7CQ644363%7CQ644380%7CQ644396%7CQ644410%7CQ644448%7CQ648000%7CQ648245%7CQ649947%7CQ651009%7CQ651767%7CQ652134%7CQ652602%7CQ653875%7CQ655012%7CQ655303%7CQ659451&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "licence": "CC0",
+      "edition": "literal own item at retrieval",
+      "retrieved_at": "2026-11-14T11:28:16.744348+00:00",
+      "sha256": "3e7bf3cb1305a260b4dbc844ea0755736b9e4968d5d1d00873e2b9999a5899e8",
+      "bytes": 1791240
+    },
+    "bochum_meta.json": {
+      "url": "https://opendata.ruhr/api/3/action/package_search?q=stadtgebiet%20statistische%20bezirke",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:25:10.325046+00:00",
+      "sha256": "322c662a489eae2bda476a49a9c94d73426fd86fe66892459f7ae8952035c413",
+      "bytes": 164266
+    },
+    "own_013.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q556518%7CQ556781%7CQ556807%7CQ557790%7CQ558556%7CQ558584%7CQ558607%7CQ559199%7CQ559222%7CQ559556%7CQ559694%7CQ559715%7CQ559841%7CQ559966%7CQ559982%7CQ560550%7CQ560850%7CQ561282%7CQ561871%7CQ561880%7CQ562450%7CQ563528%7CQ563573%7CQ563583%7CQ563588%7CQ563664%7CQ563692%7CQ563837%7CQ564347%7CQ564913%7CQ565018%7CQ5657%7CQ565928%7CQ566271%7CQ566387%7CQ566437%7CQ567307%7CQ568927%7CQ569626%7CQ569634%7CQ569827%7CQ569866%7CQ569895%7CQ570028%7CQ571423%7CQ571998%7CQ572568%7CQ572576%7CQ572589%7CQ572595&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:05.081605+00:00",
+      "sha256": "62493448970cdbe6b0039127b8b00a0e4f197ae6dd32d380d3e8944dbcda534e",
+      "bytes": 1363453
+    },
+    "own_006.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q31911187%7CQ31911413%7CQ31911781%7CQ31912124%7CQ31912426%7CQ31914651%7CQ31916167%7CQ31917321%7CQ31918446%7CQ31920973%7CQ31921016%7CQ31921717%7CQ31923065%7CQ31923146%7CQ31923168%7CQ31924277%7CQ31925602%7CQ31925980%7CQ31926098%7CQ31928603%7CQ31951124%7CQ31953930%7CQ31971282%7CQ31981554%7CQ31981839%7CQ31982566%7CQ31987709%7CQ31994476%7CQ31995210%7CQ31999248%7CQ32000235%7CQ32006991%7CQ32016272%7CQ32018650%7CQ32020588%7CQ32021538%7CQ32030338%7CQ32030580%7CQ32034335%7CQ32035515%7CQ32035907%7CQ32040112%7CQ32046052%7CQ32048627%7CQ32048902%7CQ32052292%7CQ32053289%7CQ32053323%7CQ32053384%7CQ32053546&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:00.565080+00:00",
+      "sha256": "be5c19ba630f15ed6c576ea1fff93a97eca687a313eb78737c8f18e57733999e",
+      "bytes": 367385
+    },
+    "own_007.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q32053776%7CQ32054294%7CQ32054451%7CQ32055492%7CQ32055810%7CQ32057165%7CQ32058476%7CQ32058875%7CQ32059330%7CQ32060045%7CQ32060343%7CQ32060408%7CQ32060421%7CQ32061542%7CQ32063009%7CQ32063121%7CQ32063375%7CQ32063873%7CQ32064103%7CQ32064544%7CQ32064788%7CQ32065157%7CQ32065542%7CQ32066000%7CQ32066705%7CQ32066745%7CQ32067805%7CQ32068203%7CQ32068747%7CQ32072207%7CQ32084506%7CQ32085232%7CQ32086298%7CQ32091947%7CQ32093011%7CQ32094851%7CQ32094857%7CQ32095409%7CQ32110632%7CQ32117045%7CQ32127820%7CQ32136858%7CQ32147513%7CQ32162982%7CQ32174609%7CQ32177709%7CQ32178784%7CQ321792%7CQ32180245%7CQ32180501&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:00.723508+00:00",
+      "sha256": "decf43c653dc2d27a6958568cbc5aafab4c9f057c2a614a4a1d9498e2b892907",
+      "bytes": 426274
+    },
+    "own_012.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q522584%7CQ525838%7CQ525896%7CQ526566%7CQ527328%7CQ529761%7CQ529787%7CQ529842%7CQ530059%7CQ537241%7CQ537429%7CQ538413%7CQ538615%7CQ538887%7CQ539158%7CQ539801%7CQ540107%7CQ542047%7CQ542078%7CQ542116%7CQ542849%7CQ543184%7CQ544870%7CQ544931%7CQ545814%7CQ546691%7CQ546707%7CQ546726%7CQ548529%7CQ549731%7CQ550175%7CQ550572%7CQ550866%7CQ551387%7CQ552134%7CQ552142%7CQ552508%7CQ552690%7CQ552810%7CQ552908%7CQ553761%7CQ554129%7CQ554166%7CQ554695%7CQ554935%7CQ555597%7CQ555638%7CQ555790%7CQ556021%7CQ556468&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:05.181923+00:00",
+      "sha256": "76d4450beb3c9b2e6d947e4dcee323d5dda58b9a027c0e481ba24709967cb4fb",
+      "bytes": 1915439
+    },
+    "fresh_003.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q664879%7CQ665953%7CQ666141%7CQ669091%7CQ670751%7CQ671474%7CQ671766%7CQ674988%7CQ675015%7CQ675118%7CQ675164%7CQ675187%7CQ677833%7CQ677917%7CQ678200%7CQ682175%7CQ685210%7CQ692390%7CQ693521%7CQ693540%7CQ693582%7CQ693628%7CQ694034%7CQ695777%7CQ699800%7CQ700055%7CQ700184%7CQ700211%7CQ700541%7CQ702517%7CQ702521%7CQ702621%7CQ703218%7CQ709065%7CQ80508%7CQ80683%7CQ821089%7CQ821101%7CQ82539%7CQ82920%7CQ9169094%7CQ93253%7CQ93285&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "licence": "CC0",
+      "edition": "literal own item at retrieval",
+      "retrieved_at": "2026-11-14T11:28:15.993206+00:00",
+      "sha256": "30c1d7ee2a37512df24030356c68956d4bbc92b6fef23dfdb0004acf363bc6a2",
+      "bytes": 1202662
+    },
+    "own_015.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q624645%7CQ624854%7CQ625281%7CQ625894%7CQ627659%7CQ627747%7CQ627879%7CQ628013%7CQ628366%7CQ628382%7CQ628421%7CQ628626%7CQ628741%7CQ628840%7CQ629094%7CQ629947%7CQ630264%7CQ630383%7CQ630969%7CQ631101%7CQ631108%7CQ631408%7CQ631428%7CQ631546%7CQ631886%7CQ631922%7CQ632250%7CQ632402%7CQ633148%7CQ633518%7CQ633531%7CQ633543%7CQ633869%7CQ634495%7CQ634653%7CQ634731%7CQ634743%7CQ634746%7CQ634918%7CQ635357%7CQ635635%7CQ636321%7CQ637352%7CQ637363%7CQ637466%7CQ637507%7CQ637559%7CQ637597%7CQ637911%7CQ638063&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:07.723132+00:00",
+      "sha256": "12b2bed2109efcd99c9507913bc8762ed8c34a662b772200ad8ad592d1d34c0f",
+      "bytes": 1315266
+    },
+    "own_000.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1015640%7CQ1016278%7CQ10547%7CQ10551%7CQ10554%7CQ10555%7CQ10557%7CQ10559%7CQ10562%7CQ1069519%7CQ1069559%7CQ10741%7CQ10747%7CQ10749%7CQ10753%7CQ10929%7CQ10946%7CQ1105177%7CQ112937%7CQ1138%7CQ1148%7CQ1157%7CQ1163%7CQ1167%7CQ1175%7CQ1183074%7CQ118546%7CQ119311%7CQ1200929%7CQ1201495%7CQ120404876%7CQ12042%7CQ12048%7CQ1221448%7CQ122170869%7CQ1235702%7CQ124024798%7CQ1243845%7CQ1250657%7CQ1257549%7CQ1272046%7CQ1272237%7CQ1278606%7CQ1284571%7CQ1289784%7CQ1297333%7CQ1301754%7CQ1312730%7CQ131301662%7CQ1313119&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:55.798403+00:00",
+      "sha256": "4bcab5aa64a91d4686621ed9c63c0da8c7c87dd03d4add2eba81954ff79aae0a",
+      "bytes": 1138001
+    },
+    "own_008.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q32180519%7CQ32180851%7CQ32181008%7CQ32181363%7CQ32181559%7CQ32182740%7CQ32182759%7CQ32182796%7CQ32188173%7CQ32189647%7CQ32192624%7CQ32198836%7CQ32199232%7CQ32203688%7CQ32204655%7CQ32206933%7CQ32208345%7CQ32209201%7CQ32210952%7CQ32211150%7CQ32211352%7CQ32211566%7CQ32215042%7CQ32219848%7CQ32221799%7CQ32222134%7CQ32222400%7CQ32222605%7CQ32223549%7CQ32225859%7CQ32233952%7CQ32242730%7CQ32243269%7CQ32244428%7CQ32245923%7CQ32247714%7CQ32251647%7CQ32251721%7CQ32251794%7CQ32252408%7CQ32254209%7CQ32254724%7CQ32254731%7CQ32261974%7CQ32262124%7CQ32262352%7CQ32262386%7CQ32262614%7CQ32263553%7CQ32264698&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:00.827341+00:00",
+      "sha256": "cf0a27a55f1d4613ebe35fba9b23d0c30d1d3076fb1e6a3d6825c4c7970bea15",
+      "bytes": 425305
+    },
+    "ruhr_koeln_search.json": {
+      "url": "https://opendata.ruhr/api/3/action/package_search?q=koeln%20stadtteile",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:26:36.199639+00:00",
+      "sha256": "5fba6368372aa11c6cda317f8fa63f7939dfcd23c3118f599a7b8ba0b4b7bd5e",
+      "bytes": 213
+    },
+    "own_017.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q668907%7CQ668985%7CQ669004%7CQ669091%7CQ669478%7CQ670751%7CQ671474%7CQ671766%7CQ673016%7CQ673082%7CQ673096%7CQ673108%7CQ673176%7CQ673201%7CQ673343%7CQ673436%7CQ674988%7CQ675015%7CQ675118%7CQ675164%7CQ675187%7CQ675740%7CQ675910%7CQ675920%7CQ676926%7CQ677833%7CQ677917%7CQ678200%7CQ679276%7CQ679561%7CQ679812%7CQ681125%7CQ682175%7CQ682215%7CQ683292%7CQ684246%7CQ684626%7CQ684733%7CQ684876%7CQ685210%7CQ685220%7CQ685375%7CQ685657%7CQ685939%7CQ686363%7CQ686386%7CQ686432%7CQ686853%7CQ686889%7CQ687563&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:08.833264+00:00",
+      "sha256": "61f5e3f3ee09d4e91bee68c404ff8e8f038b9f45b7c079f64deea474259dc7c8",
+      "bytes": 1003054
+    },
+    "own_002.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16008%7CQ1602%7CQ1602039%7CQ16026%7CQ16041%7CQ16071%7CQ16074%7CQ160797%7CQ1609%7CQ1615197%7CQ1616956%7CQ1620424%7CQ162049%7CQ162089%7CQ1621%7CQ1621773%7CQ1626%7CQ1627%7CQ1628288%7CQ1630%7CQ1632%7CQ1635%7CQ1637%7CQ164009%7CQ1641%7CQ1642511%7CQ1643935%7CQ1648323%7CQ165607%7CQ1656236%7CQ1666065%7CQ1666816%7CQ1669717%7CQ169492%7CQ1699891%7CQ170243%7CQ1742671%7CQ1747024%7CQ17578814%7CQ1760551%7CQ1769078%7CQ177585%7CQ178949%7CQ1790204%7CQ1795734%7CQ1795774%7CQ1799686%7CQ18018048%7CQ1805522%7CQ1806&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:55.838026+00:00",
+      "sha256": "0eaed24b00242677a8f2ceeeca0bb64a3c9311cd84d2c2627db3122cf986353b",
+      "bytes": 1162238
+    },
+    "own_005.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q263260%7CQ266024%7CQ2678141%7CQ269010%7CQ2694018%7CQ276150%7CQ2789462%7CQ27998%7CQ282294%7CQ282704%7CQ287431%7CQ2874431%7CQ28777566%7CQ289874%7CQ29561600%7CQ3005%7CQ300691%7CQ3007%7CQ302632%7CQ303979%7CQ306234%7CQ310955%7CQ311849%7CQ313186%7CQ31434814%7CQ315005%7CQ315138%7CQ315215%7CQ31644%7CQ316601%7CQ317056%7CQ317644%7CQ317697%7CQ31868004%7CQ31869952%7CQ31872166%7CQ31875571%7CQ3187639%7CQ31876736%7CQ31877196%7CQ31879228%7CQ31883208%7CQ31886561%7CQ31886858%7CQ31887013%7CQ31896182%7CQ31897498%7CQ31903502%7CQ31906529%7CQ31909048&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:58.599720+00:00",
+      "sha256": "1cc6e0c67f1f42256998feefe1b7b423a07cd7d37aa45ef222f55daa799b50f3",
+      "bytes": 1087585
+    },
+    "own_010.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q33513997%7CQ33514095%7CQ33514780%7CQ33522007%7CQ33527122%7CQ3510657%7CQ356229%7CQ3621%7CQ363830%7CQ370074%7CQ370757%7CQ377642%7CQ377676%7CQ378737%7CQ3802%7CQ3823%7CQ3830%7CQ3853%7CQ389752%7CQ389803%7CQ402941%7CQ427582%7CQ428846%7CQ431886%7CQ436639%7CQ436954%7CQ437062%7CQ437140%7CQ437358%7CQ445539%7CQ447986%7CQ458242%7CQ462094%7CQ46753%7CQ46784%7CQ46828%7CQ468363%7CQ46880%7CQ46885%7CQ46895%7CQ47040%7CQ4707648%7CQ47525111%7CQ484870%7CQ487070%7CQ488612%7CQ49006126%7CQ49006130%7CQ490960%7CQ49281551&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:02.816546+00:00",
+      "sha256": "eecf2e710fcdc708e1e6d5d846eb3bdb14a10818a90306cc35686b2aa05ee5d5",
+      "bytes": 1299506
+    },
+    "fresh_001.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q511656%7CQ512959%7CQ513099%7CQ515832%7CQ519632%7CQ521521%7CQ522584%7CQ525838%7CQ526566%7CQ527328%7CQ529761%7CQ537241%7CQ537429%7CQ538615%7CQ542849%7CQ544870%7CQ546691%7CQ548529%7CQ551387%7CQ552134%7CQ552810%7CQ553761%7CQ554129%7CQ554166%7CQ555597%7CQ555638%7CQ557790%7CQ559222%7CQ559556%7CQ560550%7CQ561282%7CQ561871%7CQ561880%7CQ562450%7CQ563528%7CQ563573%7CQ563583%7CQ563588%7CQ563664%7CQ563692%7CQ563837%7CQ564347%7CQ564913%7CQ565018%7CQ566387%7CQ566437%7CQ568927%7CQ569626%7CQ569634%7CQ569827&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "licence": "CC0",
+      "edition": "literal own item at retrieval",
+      "retrieved_at": "2026-11-14T11:28:16.424843+00:00",
+      "sha256": "21069352c369ec40397769e1a1276a7764767e7b23354f3158ad1d32b2512a1e",
+      "bytes": 1916323
+    },
+    "own_018.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q687880%7CQ687903%7CQ687916%7CQ687995%7CQ688074%7CQ688238%7CQ688246%7CQ688276%7CQ688580%7CQ688602%7CQ688622%7CQ688629%7CQ688656%7CQ688685%7CQ688691%7CQ689545%7CQ689552%7CQ689571%7CQ689577%7CQ689757%7CQ689924%7CQ689946%7CQ689982%7CQ690003%7CQ690151%7CQ692390%7CQ693521%7CQ693540%7CQ693582%7CQ693628%7CQ694034%7CQ694558%7CQ694943%7CQ694947%7CQ694968%7CQ695535%7CQ695555%7CQ695574%7CQ695583%7CQ695600%7CQ695620%7CQ695636%7CQ695777%7CQ695956%7CQ695969%7CQ696085%7CQ696239%7CQ696352%7CQ696361%7CQ696436&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:10.079345+00:00",
+      "sha256": "9b3159da22b621b40268ecb0919edec1402d01f10e20fefc9778951bed42ef4b",
+      "bytes": 798249
+    },
+    "fresh_000.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q10741%7CQ10929%7CQ118546%7CQ155211%7CQ16041%7CQ162049%7CQ162089%7CQ169492%7CQ1760551%7CQ182947%7CQ189241%7CQ1949%7CQ198831%7CQ2013767%7CQ2103%7CQ21135%7CQ22531%7CQ22985%7CQ266024%7CQ282294%7CQ2874431%7CQ300691%7CQ313186%7CQ317056%7CQ324402%7CQ328672%7CQ328714%7CQ3510657%7CQ363830%7CQ370074%7CQ377642%7CQ3802%7CQ427582%7CQ428846%7CQ437358%7CQ4707648%7CQ488612%7CQ498560%7CQ502108%7CQ502617%7CQ502692%7CQ503280%7CQ504880%7CQ505591%7CQ505727%7CQ505842%7CQ507364%7CQ509293%7CQ509368%7CQ511126&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "licence": "CC0",
+      "edition": "literal own item at retrieval",
+      "retrieved_at": "2026-11-14T11:28:16.397981+00:00",
+      "sha256": "0916a17dd08d201305c9ccac90ba56fdc7bb85a754082966970af916346fb43e",
+      "bytes": 2068108
+    },
+    "own_019.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q696531%7CQ696566%7CQ696842%7CQ696853%7CQ696881%7CQ696912%7CQ697010%7CQ697215%7CQ697349%7CQ697464%7CQ697580%7CQ697622%7CQ697959%7CQ698213%7CQ698748%7CQ698858%7CQ698870%7CQ698893%7CQ699039%7CQ699082%7CQ699124%7CQ699129%7CQ699133%7CQ699137%7CQ699210%7CQ699351%7CQ699800%7CQ700055%7CQ700184%7CQ700211%7CQ700388%7CQ700434%7CQ700500%7CQ700505%7CQ700541%7CQ700681%7CQ701018%7CQ701114%7CQ701125%7CQ701129%7CQ701140%7CQ701263%7CQ701275%7CQ701343%7CQ701356%7CQ701380%7CQ7014%7CQ701826%7CQ701856%7CQ701866&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:28:25.028188+00:00",
+      "sha256": "80e03bd8318b44fa56d13991b908c476c5885d032ce29dd7b4e912d64d0d765b",
+      "bytes": 848402
+    },
+    "destatis_license.html": {
+      "url": "https://www.destatis.de/DE/Service/OpenData/_inhalt.html",
+      "edition": "current Open Data terms",
+      "licence": "dl-de/by-2-0",
+      "retrieved_at": "2026-11-14T08:24:21.886853+00:00",
+      "sha256": "ae7d9c8413622fe3f7d6ab6bb1814926b215e92ed903a4ded49462831d7b35c0",
+      "bytes": 81906
+    },
+    "own_011.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q49288278%7CQ49289366%7CQ498560%7CQ502108%7CQ502508%7CQ502524%7CQ502615%7CQ502617%7CQ502631%7CQ502692%7CQ502696%7CQ502794%7CQ503280%7CQ503422%7CQ503423%7CQ504019%7CQ504034%7CQ504173%7CQ504768%7CQ504820%7CQ504880%7CQ504884%7CQ505468%7CQ505578%7CQ505582%7CQ505591%7CQ505727%7CQ505842%7CQ507364%7CQ508015%7CQ50867%7CQ50877%7CQ50894%7CQ509131%7CQ509293%7CQ509368%7CQ509522%7CQ509783%7CQ511126%7CQ511656%7CQ512959%7CQ513099%7CQ515678%7CQ515832%7CQ518258%7CQ518275%7CQ518287%7CQ519182%7CQ519632%7CQ521521&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:03.597757+00:00",
+      "sha256": "aba0448e0426c8734db96980885cfa79eee0c9c9ccb11a4452599f1b28f7b732",
+      "bytes": 1890007
+    },
+    "own_004.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q21013404%7CQ21039796%7CQ2107890%7CQ21103602%7CQ21135%7CQ21160%7CQ21162566%7CQ2134384%7CQ21405656%7CQ2141265%7CQ2152552%7CQ2153289%7CQ2160109%7CQ2160228%7CQ2194016%7CQ2217773%7CQ22531%7CQ2264721%7CQ2268705%7CQ227216%7CQ227237%7CQ227238%7CQ227296%7CQ227297%7CQ22985%7CQ2335714%7CQ2340856%7CQ2352469%7CQ23560546%7CQ2359472%7CQ2379599%7CQ2408679%7CQ2473066%7CQ247875%7CQ248360%7CQ251778%7CQ252664%7CQ252772%7CQ2532251%7CQ254449%7CQ2554197%7CQ2556963%7CQ2561873%7CQ256364%7CQ256731%7CQ2587931%7CQ2593375%7CQ260769%7CQ26254880%7CQ262669&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:58.518607+00:00",
+      "sha256": "1bc91c3ff81ee76067f6e03a54accc843ea4c80b1f97004b9b9a844a9eb98ec7",
+      "bytes": 1008582
+    },
+    "own_003.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1807393%7CQ1808%7CQ1810%7CQ1815%7CQ1816%7CQ1818%7CQ1819107%7CQ1821%7CQ1824%7CQ182947%7CQ1833%7CQ1836%7CQ1837%7CQ1843556%7CQ184873%7CQ186280%7CQ186557%7CQ1867313%7CQ187043%7CQ187500%7CQ1875415%7CQ1876731%7CQ1879603%7CQ189241%7CQ1905587%7CQ1917485%7CQ1918809%7CQ1919056%7CQ1926121%7CQ1942391%7CQ1949%7CQ196996%7CQ1979311%7CQ1979660%7CQ1981060%7CQ1984932%7CQ198831%7CQ19962319%7CQ2009209%7CQ2010494%7CQ2010811%7CQ201280%7CQ2013767%7CQ2014884%7CQ205800%7CQ20646%7CQ20667881%7CQ20767%7CQ2091660%7CQ2094135&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:25:58.241886+00:00",
+      "sha256": "608ef56f312517804fc14e973de9a76944eecb4fcfc872f2d869c0fd77af56d9",
+      "bytes": 952711
+    },
+    "own_016.json": {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q638070%7CQ638071%7CQ638909%7CQ639403%7CQ641467%7CQ641472%7CQ641689%7CQ641926%7CQ643857%7CQ644062%7CQ644350%7CQ644363%7CQ644380%7CQ644396%7CQ644410%7CQ644448%7CQ645311%7CQ648000%7CQ648245%7CQ649035%7CQ649091%7CQ649102%7CQ649244%7CQ649947%7CQ651009%7CQ651220%7CQ651767%7CQ652134%7CQ652602%7CQ653875%7CQ654323%7CQ655012%7CQ655303%7CQ656322%7CQ656987%7CQ659100%7CQ659451%7CQ661700%7CQ663684%7CQ663696%7CQ664811%7CQ664879%7CQ665765%7CQ665797%7CQ665813%7CQ665953%7CQ666141%7CQ668201%7CQ668396%7CQ668499&props=info%7Cclaims%7Clabels%7Cdescriptions%7Caliases&languages=de%7Cen%7Cmul&format=json",
+      "edition": "literal own items at retrieval",
+      "licence": "CC0",
+      "retrieved_at": "2026-11-14T08:26:07.705670+00:00",
+      "sha256": "5f6ce6b829708e96afce17e03b90c3eb937c3a4da57ecfaacf73d451375fa34c",
+      "bytes": 1185655
+    },
+    "nrw_stadtteile_meta.json": {
+      "url": "https://opendata.ruhr/api/3/action/package_search?q=stadtteile&rows=100",
+      "licence": "pending verification",
+      "edition": "at retrieval",
+      "retrieved_at": "2026-11-14T11:26:55.813162+00:00",
+      "sha256": "a1b397e27df39b0f89b5443b856ad9ccd0ce8d61113294e9f3167531268231ae",
+      "bytes": 728090
+    }
+  },
+  "licences": {
+    "register": "Destatis dl-de/by-2-0",
+    "geometry": "© GeoBasis-DE / BKG 2026, dl-de/by-2-0",
+    "identity": "Wikidata CC0",
+    "Bochum": "Stadt Bochum, dl-de-zero-2.0; own Stadtteil facts reused",
+    "Berlin": "ALKIS Berlin Ortsteile, dl-de-zero-2.0; conflicting points held, no facts reused"
+  },
+  "input_provenance": {
+    "runs/specs/top15_de/work/summary.md": "9e61ca392c96c3e33d599a821c13d1d5a66be629b528791f4ed54e51ebe0aaea",
+    "runs/specs/top15_de/work/held.csv": "8c0ed19cdc2b8eaf3b6329f1de1005fe2e74b571fd330289557509c995b4f14b",
+    "runs/specs/top15_de/work/review_records.json": "645182bf9551e92a6f19a2ee822a0f6b432b688bb9ae2c862121feef90732301",
+    "runs/specs/top15_de/work/de_closeout_v6x.jsonl": "5d9f443d9fc09717ffbf50f9b9a018dd10840b131edb657e2797570b1c0c9ca4",
+    "runs/specs/top15_de/work/held_followup_sources.csv": "ec58ae4c72a92a68240e5de2498eb3ca044f3e37d1ee23a674cf7f4efe33f36d",
+    "runs/specs/top15/work/gaps.csv": "c532f12863204632d2bea8b6bc202de847a5d29faea794f3afb9331a6cc95e8f"
+  },
+  "method": "600 current missing-type_local/level rows partitioned; original v4 name/item/point/Land continuity, own current key, own raw VG250 point and municipal register class. Explicit name bridges only. Classification events for every changed row. Bochum own published Stadtteile use documented urban containment. No parent key inheritance, no coordinate/name/population/id changes; all unproved designations, depths and identities held.",
+  "parent_proofs": [
+    {
+      "id": 24193,
+      "before_row_sha256": "332c7c96f3176276a46a90f605ecc61ccb1c932936eca52921e81044d7dc231f",
+      "own_item": "Q2103",
+      "own_source": "fresh_000.json",
+      "own_revision": 2567933990,
+      "register": {
+        "ags": "05911000",
+        "ars": "059110000000",
+        "name": "Bochum, Stadt",
+        "status": "61",
+        "sheet": "Onlineprodukt_Gemeinden30092026",
+        "row": 3423,
+        "level": 3
+      },
+      "checks": {
+        "unique_own_key": true,
+        "own_ARS": true,
+        "Land": true,
+        "point_inside": true,
+        "Kreis": true,
+        "Regierungsbezirk": true,
+        "register_class": true
+      }
+    }
+  ],
+  "held_rows": [
+    {
+      "id": 23462,
+      "name": "Aach",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 23465,
+      "name": "Abbesbüttel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23481,
+      "name": "Adelsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23489,
+      "name": "Adenstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23499,
+      "name": "Aham",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23515,
+      "name": "Ahsen-Oetzen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23537,
+      "name": "Albertstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23540,
+      "name": "Albshausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23556,
+      "name": "Allendorf an der Lahn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23578,
+      "name": "Alt Wallmoden",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23580,
+      "name": "Alt-Sanitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23581,
+      "name": "Alt-Treptow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23588,
+      "name": "Alten Buseck",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23599,
+      "name": "Altendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23602,
+      "name": "Altengottern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23606,
+      "name": "Altenkrempe",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 23608,
+      "name": "Altenmarkt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23618,
+      "name": "Alterhofen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23619,
+      "name": "Altes Lager",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23625,
+      "name": "Altkirchen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23635,
+      "name": "Altstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23664,
+      "name": "Anrode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23681,
+      "name": "Aresing",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23726,
+      "name": "Auerbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23739,
+      "name": "Auma",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23755,
+      "name": "Bach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23834,
+      "name": "Bad Meinberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23872,
+      "name": "Bad Suderode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23896,
+      "name": "Badenhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23915,
+      "name": "Balzfeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23922,
+      "name": "Banteln",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23926,
+      "name": "Barchfeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23984,
+      "name": "Beerfelden",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23990,
+      "name": "Behringen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 23991,
+      "name": "Bei der Höhne",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23992,
+      "name": "Beierfeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 23998,
+      "name": "Belgern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24011,
+      "name": "Benneckenstein",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24012,
+      "name": "Bennewitz",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 24016,
+      "name": "Bennungen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24025,
+      "name": "Berg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24029,
+      "name": "Berga",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24055,
+      "name": "Berlin Treptow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding",
+        "old_Treptow_scope_not_one_current_Ortsteil"
+      ]
+    },
+    {
+      "id": 24069,
+      "name": "Bernsbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24081,
+      "name": "Betheln",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24086,
+      "name": "Beuern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24087,
+      "name": "Beuna",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24090,
+      "name": "Bevenrode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24095,
+      "name": "Biberach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24110,
+      "name": "Biere",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24138,
+      "name": "Birkenwerder",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24145,
+      "name": "Bischofferode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24154,
+      "name": "Bismark",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24188,
+      "name": "Bobbau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24194,
+      "name": "Bochum-Hordel",
+      "reasons": [
+        "failed_v4_name_item_point_Land_continuity"
+      ]
+    },
+    {
+      "id": 24213,
+      "name": "Boffzen",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24220,
+      "name": "Bokholt-Hanredder",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24223,
+      "name": "Boll",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24228,
+      "name": "Bomlitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24246,
+      "name": "Borkheide",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24276,
+      "name": "Bramstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24282,
+      "name": "Brandshagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24299,
+      "name": "Brehna",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24303,
+      "name": "Breitbrunn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24307,
+      "name": "Breitenbrunn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24332,
+      "name": "Briesen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24336,
+      "name": "Britten",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24346,
+      "name": "Bromskirchen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24359,
+      "name": "Brunn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24360,
+      "name": "Brunnen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24370,
+      "name": "Brüggen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24380,
+      "name": "Buch am Ahorn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24392,
+      "name": "Buchholz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24397,
+      "name": "Buckow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24399,
+      "name": "Bufleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24447,
+      "name": "Busdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24459,
+      "name": "Bärenstein",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24478,
+      "name": "Bösdorf",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24492,
+      "name": "Büddenstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24499,
+      "name": "Bühren",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24520,
+      "name": "Camburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24527,
+      "name": "Cavertitz",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 24531,
+      "name": "Charlottenburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24532,
+      "name": "Charlottenburg-Nord",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24558,
+      "name": "Crawinkel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24561,
+      "name": "Creuzburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24566,
+      "name": "Crostau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24608,
+      "name": "Dedelstorf",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 24651,
+      "name": "Dettingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24657,
+      "name": "Deuna",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24672,
+      "name": "Dierkow-Neu",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24673,
+      "name": "Dierkow-West",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24674,
+      "name": "Diesdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24725,
+      "name": "Domersleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24734,
+      "name": "Dorfchemnitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24741,
+      "name": "Dorndorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24748,
+      "name": "Dorum",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24754,
+      "name": "Drangstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24762,
+      "name": "Dreikirchen",
+      "reasons": [
+        "failed_no_scope_conflict",
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24815,
+      "name": "Dürrröhrsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24818,
+      "name": "Düsseldorf District",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24819,
+      "name": "Düsseldorf-Pempelfort",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24832,
+      "name": "Ebersbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24837,
+      "name": "Ebersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24850,
+      "name": "Eckersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24876,
+      "name": "Eggersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24883,
+      "name": "Eging",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24895,
+      "name": "Eibau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24908,
+      "name": "Eickendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24922,
+      "name": "Eisdorf am Harz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24940,
+      "name": "Elbingerode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 24948,
+      "name": "Ellerau",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 24959,
+      "name": "Elmenhorst",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 24969,
+      "name": "Elster",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25000,
+      "name": "Engeln",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25019,
+      "name": "Eppelheim",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25056,
+      "name": "Erlenbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25081,
+      "name": "Eschenlohe",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25118,
+      "name": "Eutingen an der Enz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25125,
+      "name": "Fachbach",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25157,
+      "name": "Feldstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25175,
+      "name": "Finsterbergen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25190,
+      "name": "Flessau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25216,
+      "name": "Frankenstein",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25228,
+      "name": "Fraueneuharting",
+      "reasons": [
+        "failed_name_bridge"
+      ]
+    },
+    {
+      "id": 25241,
+      "name": "Freiburg",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_no_scope_conflict",
+        "failed_not_dissolved"
+      ]
+    },
+    {
+      "id": 25242,
+      "name": "Freiburg Region",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25278,
+      "name": "Friedersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25292,
+      "name": "Friedrichstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25316,
+      "name": "Fuldatal",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25317,
+      "name": "Furth",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25323,
+      "name": "Föritz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25328,
+      "name": "Fürstenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25329,
+      "name": "Fürstenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25330,
+      "name": "Fürsteneck",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25332,
+      "name": "Fürstenhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25344,
+      "name": "Gadheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25352,
+      "name": "Gallus",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25361,
+      "name": "Garbsen-Mitte",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25371,
+      "name": "Gartenstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25419,
+      "name": "Gemeinde Friedland",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25435,
+      "name": "Geraberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25436,
+      "name": "Gerabronn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25466,
+      "name": "Gerwisch",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25469,
+      "name": "Geschwenda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25470,
+      "name": "Gesees",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25477,
+      "name": "Geusa",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25498,
+      "name": "Gittelde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25504,
+      "name": "Glashütten",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 25506,
+      "name": "Glattbach",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25512,
+      "name": "Glienicke",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25514,
+      "name": "Glindenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25529,
+      "name": "Goldbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25554,
+      "name": "Goßwitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25565,
+      "name": "Grafenhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25574,
+      "name": "Gramkow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25588,
+      "name": "Greffern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25600,
+      "name": "Greppin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25633,
+      "name": "Groß Oesingen",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 25637,
+      "name": "Groß Rodensleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25639,
+      "name": "Groß Santersleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25655,
+      "name": "Großbodungen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25662,
+      "name": "Großenehrich",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25663,
+      "name": "Großengottern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25699,
+      "name": "Großreuth bei Schweinau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25716,
+      "name": "Grub",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25723,
+      "name": "Gräfenhain",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25725,
+      "name": "Gräfenroda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25739,
+      "name": "Grünhain",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25765,
+      "name": "Gutach im Breisgau",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25767,
+      "name": "Gutenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25773,
+      "name": "Gägelow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25803,
+      "name": "Gützkow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25813,
+      "name": "Hadmersleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25834,
+      "name": "Hain-Gründau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25835,
+      "name": "Haina",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25848,
+      "name": "Halensee",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25854,
+      "name": "Halle Neustadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25863,
+      "name": "Hamberge",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25878,
+      "name": "Hammerbrücke",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25887,
+      "name": "Hangard",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25889,
+      "name": "Hankensbüttel",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 25923,
+      "name": "Haselbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25928,
+      "name": "Haslach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 25931,
+      "name": "Hassel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25932,
+      "name": "Hasselfelde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25938,
+      "name": "Hattersheim",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25942,
+      "name": "Hattstedt",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 25954,
+      "name": "Hauswalde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25957,
+      "name": "Haverlah",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25972,
+      "name": "Hedersleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25988,
+      "name": "Heidesheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 25990,
+      "name": "Heidstock",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26006,
+      "name": "Heimbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26012,
+      "name": "Heinböckel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26016,
+      "name": "Heinsen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26021,
+      "name": "Heldrungen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26068,
+      "name": "Herforst",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26075,
+      "name": "Hermannsburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26081,
+      "name": "Hermsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26093,
+      "name": "Herschdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26131,
+      "name": "Hiddensee",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26143,
+      "name": "Hillerse",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26169,
+      "name": "Hirzenhain",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26175,
+      "name": "Hochfeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26193,
+      "name": "Hohberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26202,
+      "name": "Hohendodeleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26241,
+      "name": "Holzdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26249,
+      "name": "Holzweißig",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26262,
+      "name": "Horka",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26264,
+      "name": "Horn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26269,
+      "name": "Hornhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26271,
+      "name": "Horrenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26283,
+      "name": "Humboldtkolonie",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26285,
+      "name": "Hunderdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26286,
+      "name": "Hundeshagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26294,
+      "name": "Huy-Neinstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26309,
+      "name": "Höhenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26312,
+      "name": "Höhnstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26319,
+      "name": "Hörnsheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26320,
+      "name": "Hörselgau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26330,
+      "name": "Hüffelsheim",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26354,
+      "name": "Ifta",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26379,
+      "name": "Immelborn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26407,
+      "name": "Irsch",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26414,
+      "name": "Isernhagen Farster Bauerschaft",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26431,
+      "name": "Jarplund-Weding",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26459,
+      "name": "Judenbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26460,
+      "name": "Jugenheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26466,
+      "name": "Jöhlingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26489,
+      "name": "Kalk",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26504,
+      "name": "Kamsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26521,
+      "name": "Karlsruhe Region",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26545,
+      "name": "Kaulsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26549,
+      "name": "Kayna",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26553,
+      "name": "Keitum",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26574,
+      "name": "Kessin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26624,
+      "name": "Kirchheim bei München",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 26644,
+      "name": "Kirschau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26645,
+      "name": "Kirschweiler",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26656,
+      "name": "Klausdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26659,
+      "name": "Klein Gusborn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26662,
+      "name": "Klein Reken",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26664,
+      "name": "Klein Rönnau",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26665,
+      "name": "Klein Schwülper",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26666,
+      "name": "Klein Wanzleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26673,
+      "name": "Kleinkahl",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26681,
+      "name": "Kleinwenden",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26684,
+      "name": "Klieken",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26688,
+      "name": "Klingenstein",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26724,
+      "name": "Korntal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26729,
+      "name": "Kossa",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26742,
+      "name": "Krauschwitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26745,
+      "name": "Krebeck",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26747,
+      "name": "Kreiensen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26754,
+      "name": "Kreut",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26766,
+      "name": "Kromsdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26769,
+      "name": "Kronberg",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_no_scope_conflict",
+        "failed_unique_own_item"
+      ]
+    },
+    {
+      "id": 26770,
+      "name": "Kronberg Tal",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_no_scope_conflict",
+        "failed_unique_own_item"
+      ]
+    },
+    {
+      "id": 26788,
+      "name": "Kubschütz",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 26797,
+      "name": "Kunreuth",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26804,
+      "name": "Kurort Oybin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26813,
+      "name": "Ködnitz",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 26840,
+      "name": "Könitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26847,
+      "name": "Kötzschau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26848,
+      "name": "Kötzting",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26851,
+      "name": "Kührstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26863,
+      "name": "Laar",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26868,
+      "name": "Lachen-Speyerdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26903,
+      "name": "Langen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26908,
+      "name": "Langenbach bei Marienberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26936,
+      "name": "Langewiesen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26943,
+      "name": "Langula",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26968,
+      "name": "Lauenburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26973,
+      "name": "Laufdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 26981,
+      "name": "Lautenbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 26982,
+      "name": "Lauter",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27016,
+      "name": "Leichlingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27018,
+      "name": "Leiferde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27040,
+      "name": "Lengefeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27072,
+      "name": "Lewenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27074,
+      "name": "Lichte",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27077,
+      "name": "Lichtenau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27103,
+      "name": "Lindau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27107,
+      "name": "Lindenberg",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 27118,
+      "name": "Lintig",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27155,
+      "name": "Lower Bavaria",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27162,
+      "name": "Ludweiler-Warndt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27172,
+      "name": "Luisenthal",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 27173,
+      "name": "Luisenthal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27175,
+      "name": "Lunestedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27180,
+      "name": "Lutter am Barenberge",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27186,
+      "name": "Löbejün",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27187,
+      "name": "Löberitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27191,
+      "name": "Löcknitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27214,
+      "name": "Lüdersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27224,
+      "name": "Lützelbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27284,
+      "name": "Markersbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27292,
+      "name": "Marksuhl",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27329,
+      "name": "Martinhagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27355,
+      "name": "Mechterstädt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27373,
+      "name": "Mehltheuer",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27378,
+      "name": "Mehringen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27380,
+      "name": "Meiderich",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27394,
+      "name": "Mellenbach-Glasbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27407,
+      "name": "Mengenich",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27408,
+      "name": "Mengersgereuth-Hämmern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27412,
+      "name": "Menteroda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27446,
+      "name": "Meuselbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27448,
+      "name": "Meyenburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27458,
+      "name": "Midlum",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27464,
+      "name": "Mihla",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27479,
+      "name": "Mittegroßefehn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27485,
+      "name": "Mittelschöntal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27536,
+      "name": "Muldenstein",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27590,
+      "name": "Mühlanger",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27600,
+      "name": "Mühlheim am Bach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27603,
+      "name": "Mühltroff",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27648,
+      "name": "Nauendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27655,
+      "name": "Nauwalde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27694,
+      "name": "Neu-Pattern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27696,
+      "name": "Neualbenreuth",
+      "reasons": [
+        "failed_name_bridge"
+      ]
+    },
+    {
+      "id": 27702,
+      "name": "Neubrück",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27706,
+      "name": "Neuburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27715,
+      "name": "Neue Neustadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27721,
+      "name": "Neuenkirchen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27730,
+      "name": "Neuerburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27731,
+      "name": "Neufahrn",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27734,
+      "name": "Neufra",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27735,
+      "name": "Neufraunhofen",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 27736,
+      "name": "Neugersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27738,
+      "name": "Neuharlingersiel",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 27739,
+      "name": "Neuhaus",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27744,
+      "name": "Neuhaus-Schierschnitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27760,
+      "name": "Neukirchen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27782,
+      "name": "Neunkirchen am Main",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27826,
+      "name": "Nieder-Gründau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27827,
+      "name": "Nieder-Ingelheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27836,
+      "name": "Niedercunnersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27839,
+      "name": "Niederdorla",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27857,
+      "name": "Niedermerz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27867,
+      "name": "Niederrad",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27869,
+      "name": "Niederroßla",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27882,
+      "name": "Niederwerth",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 27892,
+      "name": "Nienburg",
+      "reasons": [
+        "failed_fresh_own_evidence",
+        "failed_name_bridge",
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 27894,
+      "name": "Nienhagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27899,
+      "name": "Nikolassee",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "named_Ortsteil_and_unchanged_point_conflict",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27901,
+      "name": "Nippes",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27922,
+      "name": "Nordholz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27945,
+      "name": "Nöbdenitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27961,
+      "name": "Ober-Saulheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27974,
+      "name": "Oberdorla",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 27982,
+      "name": "Oberhaid",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27988,
+      "name": "Oberjettingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 27997,
+      "name": "Obermehler",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28053,
+      "name": "Oberweißbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28066,
+      "name": "Ockenfels",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28108,
+      "name": "Oldendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28110,
+      "name": "Oldisleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28123,
+      "name": "Oranienbaum",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28149,
+      "name": "Ostercappeln",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28151,
+      "name": "Osterhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28165,
+      "name": "Ostrau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28175,
+      "name": "Ostseebad Zinnowitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28180,
+      "name": "Ottenhofen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28221,
+      "name": "Kleinschmalkalden",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28236,
+      "name": "Paulsstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28238,
+      "name": "Pausa",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28265,
+      "name": "Petershagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28267,
+      "name": "Pettendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28297,
+      "name": "Philippsthal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28333,
+      "name": "Plötzky",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28334,
+      "name": "Plößberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28337,
+      "name": "Pockau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28344,
+      "name": "Polleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28365,
+      "name": "Pouch",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28366,
+      "name": "Poxdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28379,
+      "name": "Prettin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28381,
+      "name": "Pretzier",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28382,
+      "name": "Pretzsch",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28414,
+      "name": "Pöhl",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28431,
+      "name": "Quern",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28434,
+      "name": "Quitzdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28454,
+      "name": "Raisdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28464,
+      "name": "Ramsau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28466,
+      "name": "Ramsin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28477,
+      "name": "Raschau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28484,
+      "name": "Rath",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28516,
+      "name": "Regierungsbezirk Arnsberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28517,
+      "name": "Regierungsbezirk Darmstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28518,
+      "name": "Regierungsbezirk Detmold",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28519,
+      "name": "Regierungsbezirk Gießen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28520,
+      "name": "Regierungsbezirk Kassel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28521,
+      "name": "Regierungsbezirk Köln",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28522,
+      "name": "Regierungsbezirk Mittelfranken",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28523,
+      "name": "Regierungsbezirk Münster",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28524,
+      "name": "Regierungsbezirk Stuttgart",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28525,
+      "name": "Regierungsbezirk Unterfranken",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28548,
+      "name": "Reichertshausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28556,
+      "name": "Reinberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28571,
+      "name": "Rellingen",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28573,
+      "name": "Remlingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28593,
+      "name": "Reut",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28594,
+      "name": "Reuth",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28595,
+      "name": "Reuth",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28597,
+      "name": "Reußen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28602,
+      "name": "Rhede",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28603,
+      "name": "Rheden",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28626,
+      "name": "Ried",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28633,
+      "name": "Rieder",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28646,
+      "name": "Rieschweiler-Mühlbach",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28651,
+      "name": "Rietheim-Weilheim",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28662,
+      "name": "Ringleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28669,
+      "name": "Rittersgrün",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28675,
+      "name": "Rodenbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28689,
+      "name": "Rohrbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28716,
+      "name": "Rot",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28722,
+      "name": "Rothenberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28729,
+      "name": "Rott",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28738,
+      "name": "Rottleberode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28742,
+      "name": "Roßhaupten",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28743,
+      "name": "Roßla",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28759,
+      "name": "Ruhstorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28772,
+      "name": "Räckelwitz",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28775,
+      "name": "Röchling-Höhe",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28797,
+      "name": "Rübeland",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28823,
+      "name": "Sachsenhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 28843,
+      "name": "Salzmünde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28849,
+      "name": "Sand",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28853,
+      "name": "Sandersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28854,
+      "name": "Sandersleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28857,
+      "name": "Sandstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28860,
+      "name": "Sankt Andreasberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28871,
+      "name": "Sankt Julian",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 28872,
+      "name": "Sankt Katharinen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28875,
+      "name": "Sankt Leonhard am Wonneberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28891,
+      "name": "Satow-Oberhagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28911,
+      "name": "Scharfenstein",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28924,
+      "name": "Schelfstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28945,
+      "name": "Schildau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28946,
+      "name": "Schillig",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28952,
+      "name": "Schirgiswalde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28958,
+      "name": "Schladen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28961,
+      "name": "Schlaitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28995,
+      "name": "Schmiedefeld",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 28996,
+      "name": "Schmiedefeld am Rennsteig",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29041,
+      "name": "Schwabhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29055,
+      "name": "Schwalmtal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29064,
+      "name": "Schwarza",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29065,
+      "name": "Schwarzach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29067,
+      "name": "Schwarzenbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29114,
+      "name": "Schönburg",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29120,
+      "name": "Schöneiche",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29122,
+      "name": "Schönewalde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29130,
+      "name": "Schönstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29137,
+      "name": "Schülp",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29142,
+      "name": "Seebach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29144,
+      "name": "Seebad Bansin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29152,
+      "name": "Seehausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29168,
+      "name": "Sehlem",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29180,
+      "name": "Sellin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29185,
+      "name": "Selters",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29193,
+      "name": "Sennewitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29203,
+      "name": "Seyda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29228,
+      "name": "Sigmarszell",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29244,
+      "name": "Sinnersdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29306,
+      "name": "Sprakensehl",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 29335,
+      "name": "Stallwang",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29337,
+      "name": "Stammham",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29345,
+      "name": "Staufen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29364,
+      "name": "Steinbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29415,
+      "name": "Stolberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29421,
+      "name": "Storkow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29427,
+      "name": "Strasburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29436,
+      "name": "Stromberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29440,
+      "name": "Ströbeck",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29446,
+      "name": "Stuttgart Mühlhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29457,
+      "name": "Stützerbach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29458,
+      "name": "Suddendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29474,
+      "name": "Sulzdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29485,
+      "name": "Swabia",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29487,
+      "name": "Sylt-Ost",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29488,
+      "name": "Syrau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29500,
+      "name": "Süderstapel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29505,
+      "name": "Süplingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29508,
+      "name": "Süstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29546,
+      "name": "Teicha",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29550,
+      "name": "Teisnach",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29567,
+      "name": "Teuchel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29578,
+      "name": "Thalheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29608,
+      "name": "Tiddische",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 29611,
+      "name": "Tiefenort",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29616,
+      "name": "Tinnum",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29647,
+      "name": "Travemünde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29649,
+      "name": "Trebendorf",
+      "reasons": [
+        "failed_name_bridge",
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29651,
+      "name": "Trebitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29667,
+      "name": "Triebes",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29685,
+      "name": "Trusetal",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29688,
+      "name": "Tucheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29693,
+      "name": "Tutow",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 29705,
+      "name": "Tübingen Region",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29718,
+      "name": "Uebigau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29732,
+      "name": "Uftrungen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29743,
+      "name": "Ummern",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 29750,
+      "name": "Unseburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29751,
+      "name": "Unter-Abtsteinach",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29763,
+      "name": "Unterhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29764,
+      "name": "Unterjettingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29766,
+      "name": "Unterkrozingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29768,
+      "name": "Unterlüß",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29786,
+      "name": "Upper Bavaria",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29787,
+      "name": "Upper Franconia",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29788,
+      "name": "Upper Palatinate",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29791,
+      "name": "Urbach-Überdorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29802,
+      "name": "Uthlede",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29809,
+      "name": "Vagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29847,
+      "name": "Viernau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29864,
+      "name": "Vockerode",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29876,
+      "name": "Volkstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29891,
+      "name": "Völkershausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29906,
+      "name": "Wackernheim",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29907,
+      "name": "Wackerow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 29921,
+      "name": "Wahrenholz",
+      "reasons": [
+        "failed_no_scope_conflict"
+      ]
+    },
+    {
+      "id": 29971,
+      "name": "Walldorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29974,
+      "name": "Wallendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 29989,
+      "name": "Wallwitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30007,
+      "name": "Wanna",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 30011,
+      "name": "Wanzleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30020,
+      "name": "Warnemünde",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30032,
+      "name": "Wasserburg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30055,
+      "name": "Weferlingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30115,
+      "name": "Weiten",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30138,
+      "name": "Weißig",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30147,
+      "name": "Welsleben",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30171,
+      "name": "Werdervorstadt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30173,
+      "name": "Werftpfuhl",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30205,
+      "name": "Westeregeln",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30217,
+      "name": "Westhagen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30227,
+      "name": "Wettin",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30229,
+      "name": "Wetzendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30238,
+      "name": "Wieda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30242,
+      "name": "Wiederstedt",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30250,
+      "name": "Wieren",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30252,
+      "name": "Wiesa",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30312,
+      "name": "Windeby",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 30317,
+      "name": "Windhausen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30369,
+      "name": "Witzmannsberg",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30404,
+      "name": "Worbis",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30408,
+      "name": "Wremen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30417,
+      "name": "Wulsbüttel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30431,
+      "name": "Wustrow",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30440,
+      "name": "Wölfis",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30443,
+      "name": "Wörlitz",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30452,
+      "name": "Wössingen",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30457,
+      "name": "Wünschendorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30465,
+      "name": "Zahna",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30484,
+      "name": "Zell",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30491,
+      "name": "Zeltingen-Rachtig",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 30498,
+      "name": "Zeulenroda",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30514,
+      "name": "Zorge",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "literal_own_item_unavailable",
+        "no_unique_current_own_Gemeinde_binding",
+        "v4_identity_continuity_not_proved"
+      ]
+    },
+    {
+      "id": 30521,
+      "name": "Zscherndorf",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30538,
+      "name": "Zwochau",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 30547,
+      "name": "Ölbronn-Dürrn",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 153781,
+      "name": "Rosenthal am Rennsteig",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 153784,
+      "name": "Neulingen",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 154477,
+      "name": "Issigau",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 154478,
+      "name": "Gefell",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 154479,
+      "name": "Ziegenrück",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 154480,
+      "name": "Hirschberg",
+      "reasons": [
+        "failed_point_inside"
+      ]
+    },
+    {
+      "id": 163983,
+      "name": "Au",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 163984,
+      "name": "Bensersiel",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    },
+    {
+      "id": 163985,
+      "name": "Burhave",
+      "reasons": [
+        "licensed_own_part_designation_and_parent_not_proved",
+        "no_unique_current_own_Gemeinde_binding"
+      ]
+    }
+  ]
+}
