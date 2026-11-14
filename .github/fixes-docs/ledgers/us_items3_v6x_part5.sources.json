@@ -5,9 +5,14 @@
   "part_count": 8,
   "applies_after": "part4",
   "ledger": ".github/fixes-docs/ledgers/us_items3_v6x_part5.jsonl",
-  "ledger_sha256": "81cd93ede13a59103cbd73858a38eff3de38668c90329e713114e77685cc600a",
+  "ledger_sha256": "ac0a3e3f9815e3e1094764fed4d5bdc4b20103a5732b655982e295a8a9db8855",
   "admitted": 1770,
   "held": 0,
+  "held_rows_recorded_in": {
+    "ledger": ".github/fixes-docs/ledgers/us_items3_v6x_part8.jsonl",
+    "note": "\"held\" counts this part's own ledger only. The build writes every held row, for all states, into part 8's ledger (merged in #2248). For this part's states it lists 32 held rows: ND 13, NE 2, NJ 17, each with its failing gate.",
+    "count": 32
+  },
   "states": [
     "ND",
     "NE",
