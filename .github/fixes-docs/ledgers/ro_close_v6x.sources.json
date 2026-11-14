@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "ledger": "ro_close_v6x.jsonl",
+  "records": 25,
+  "fixed": 23,
+  "held": 2,
+  "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+  "full_ledger_sha256": "33a3fff551d82317e319ede9c8f3340662daf1deb4e3c77e00320e6dc9ba7b06",
+  "sources": [
+    {
+      "publisher": "Institutul Național de Statistică, România",
+      "edition": "SIRUTA S1 2026",
+      "url": "https://data.gov.ro/dataset/721c9059-5f87-4c79-9854-a1d5c18f58d5",
+      "licence": "CC BY 4.0",
+      "file": "sources/siruta_2026_official.csv",
+      "sha256": "f443e49af2f9c9dce8ea515ae53090a18fb476547466b6cd804051424eaf72c6"
+    },
+    {
+      "publisher": "Wikidata contributors",
+      "licence": "CC0 1.0",
+      "url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "captures": [
+        {
+          "file": "live_00.json",
+          "sha256": "29295924d24ccaf5e5d2208b50eedf53e17285874b5507690090a22c328f533d",
+          "receipt": "live_00.json.receipt.json"
+        },
+        {
+          "file": "live_01.json",
+          "sha256": "cf90a6cfaeab5c34e2fe583b6a3e01bc7229b876b1c54d1193e2ef796cdc125f",
+          "receipt": "live_01.json.receipt.json"
+        },
+        {
+          "file": "live_02.json",
+          "sha256": "76386fadc03217b06cd9d7a258f99be23a3e4038ad953e9857fa5340f6930c57",
+          "receipt": "live_02.json.receipt.json"
+        },
+        {
+          "file": "live_03.json",
+          "sha256": "5584cba25ea2dcd20ba3d0fcc635e869c236a347e9b7cb29e4f7b6045fc8757e",
+          "receipt": "live_03.json.receipt.json"
+        }
+      ]
+    },
+    {
+      "publisher": "GeoNames",
+      "edition": "RO country dump fetched 14 November 2026",
+      "url": "https://download.geonames.org/export/dump/RO.zip",
+      "licence": "CC BY 4.0",
+      "sha256": "8cbc96fcb2053327c2411f73e37cc85ae1a2d2f95ef4d47da0e8de3cc3c79132",
+      "modifications": "Two literal own P1566-bound settlement points rounded to eight decimals; no population copied."
+    },
+    {
+      "publisher": "Institutul Național de Statistică, România",
+      "edition": "RPL2021 definitive Table 1.22, 1 December 2021",
+      "url": "https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.22.xlsx",
+      "sha256": "3f866efe829107bc42f804889197e884c394b8a1e8d4ee58d67c522e5379f983",
+      "reuse": "Law 226/2009 article 32(5), attribution; Six own-sector totals copied with attribution; reference year 2021; other census evidence used for holds only."
+    }
+  ],
+  "methods": [
+    "Own item active SIRUTA code and official name/county/class; own P1566 or own Earth P625 points only; source coordinate retained, rounded eight decimals.",
+    "Arșița SIRUTA 117444 -> Hodac SIRSUP 117426 -> existing own UAT id 175101. Parent row guarded in full.",
+    "No type/level change, identity change, addition, removal, repurposing or settlement-query departure. No classification event required."
+  ]
+}
