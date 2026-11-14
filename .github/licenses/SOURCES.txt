@@ -1779,3 +1779,12 @@ Sources: https://www.istat.it/storage/cartografia/basi_territoriali/2021/Localit
 Licence: Creative Commons Attribution 4.0 (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ ; agency terms https://www.istat.it/note-legali/ .
 Modifications: selected own-entity observations, normalized integer counts, matched existing CSC rows by own code/name/point and added observation years. Original points retained. Derived matching is not an unchanged ISTAT publication; no endorsement implied.
 Wikidata structured claims and labels: CC0, https://www.wikidata.org/wiki/Wikidata:Licensing ; dated archives and fresh literal own-item captures retain their dates and hashes.
+
+France own-unit RP2023 close-out (fr_closeout_v6x)
+Source : Insee — Populations de référence 2023, population municipale (PMUN), published/updated 18 December 2025; geography 1 January 2025; effective 1 January 2026.
+https://www.insee.fr/fr/statistiques/8680726
+Download: https://www.insee.fr/fr/statistiques/fichier/8680726/ensemble.zip
+Reuse: Licence Ouverte / Open Licence version 2.0 (Etalab); https://www.insee.fr/fr/information/2008466 ; https://www.data.gouv.fr/pages/legal/licences/etalab-2-0
+Modifications: selected own COM figures from donnees_communes.csv and own COMD/COMA figures from donnees_communes_deleguees.csv, linked to existing same-entity records, and recorded reference year 2023. Commune déléguée/associée figures are their own component counts, never the commune nouvelle total.
+COG 2025/2026 (Insee, same licence) verifies scope and changes; Wikidata (CC0) verifies literal own items/codes. No endorsement by Insee is implied.
+Review and before/after facts: .github/fixes-docs/ledgers/fr_closeout_v6x.jsonl and fr_closeout_v6x.sources.json.
