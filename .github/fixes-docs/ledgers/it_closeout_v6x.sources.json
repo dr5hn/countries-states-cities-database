@@ -1,10 +1,10 @@
 {
  "ledger": "it_closeout_v6x.jsonl",
- "records": 654,
+ "records": 1144,
  "base_commit": [
   "a7da1d3b66286201e958858374625717bf6ca2cf"
  ],
- "full_ledger_sha256": "e857aadbe55280a95ad223e6e9bcf127612957a1b25972a3b3b32bbac3c631a9",
+ "full_ledger_sha256": "34486731742317899647469b6179ff22063b3d18e7d8edfd6ce14cc7c8694fa9",
  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
  "methods": [
   "Use own ISTAT 2021 POP21 for localities and own 1 January 2026 POSAS all-age estimate for comuni. Recheck current original row, exact official or captured literal own-item alias name, unique reviewed code, own valid polygon containing unchanged point, own scope and Italy levels. Own locality code is an independent identity route when Wikidata is unavailable; fresh captured scope/parent/code contradictions remain held. Comuni state reconciliation uses only same-name same-cadastral-code January 2026 AP/RN recodes and official polygon UTS; unresolved EDR chains remain held. No identity, point, parent, type or level is changed.",
@@ -242,6 +242,15 @@
    "sha256": "4c2d4ea53e47b2111e84dd5d0b1f8829833010869d11d38554389584e57b0895",
    "status": 200,
    "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q386989%7CQ387019%7CQ387039%7CQ387181%7CQ387187%7CQ387222%7CQ387452%7CQ387507%7CQ387576%7CQ387598%7CQ387631%7CQ387672%7CQ387706%7CQ387730%7CQ388085%7CQ388189%7CQ388211%7CQ388309%7CQ388325%7CQ388381%7CQ388413%7CQ388440%7CQ388456%7CQ388485%7CQ388533%7CQ388571%7CQ388616%7CQ388756%7CQ388786%7CQ389247%7CQ389264%7CQ389275%7CQ389292%7CQ389304%7CQ389339%7CQ389355%7CQ389369%7CQ389383%7CQ389401%7CQ389453%7CQ390108%7CQ390138%7CQ390160%7CQ390187%7CQ390241%7CQ390280%7CQ390450%7CQ390601%7CQ390609%7CQ390616&props=claims%7Clabels%7Cdescriptions&languages=it%7Cen&format=json"
+  },
+  {
+   "bytes": 770746,
+   "edition": "own item claims at retrieval",
+   "licence": "CC0",
+   "path": "sources/comune_own_002.json",
+   "retrieved_at": "2026-10-23T09:19:19.065505+00:00",
+   "sha256": "ad13606a8dc1ff31231d20737e03f61ef0940eceb234591d4b7237b1f93c87b0",
+   "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q16533137%7CQ16536116%7CQ16536208%7CQ16537681%7CQ16542958%7CQ16545374%7CQ16556993%7CQ16566532%7CQ16576875%7CQ16577419%7CQ16579263%7CQ16580141%7CQ16585747%7CQ16590048%7CQ16599800%7CQ16600206%7CQ16600234%7CQ16608491%7CQ16620210%7CQ166282%7CQ16866834%7CQ1692101%7CQ16965%7CQ1710080%7CQ17127503%7CQ17154445%7CQ17318%7CQ17351%7CQ17367%7CQ17377%7CQ17435929%7CQ17624532%7CQ17628202%7CQ17636589%7CQ17638%7CQ17638895%7CQ176443%7CQ17651457%7CQ17652434%7CQ177161%7CQ17838%7CQ17873%7CQ179092%7CQ18037%7CQ18051%7CQ18077%7CQ18087%7CQ1811799%7CQ18151%7CQ18166&props=claims%7Clabels%7Cdescriptions&languages=it%7Cen&format=json"
   }
  ]
 }
