@@ -1,0 +1,529 @@
+{
+  "supplemental_identity_sources": [
+    {
+      "path": "supplemental_wikidata_0.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q9283985|Q9390753&props=claims&format=json",
+      "sha256": "cabae1d2ed896b700edf9f6203940799cdb029d68150985d4d1298c416532bbb"
+    }
+  ],
+  "base_commit": "0c8b78c85a231de171758a2a184cce4fbc944cce",
+  "research_commit": "9263c4bc4c01fb42d12ee6f037419daa71bf7395",
+  "sources": [
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/new_entities.json",
+      "bytes": 59043181,
+      "sha256": "a6b6b1f47f5435a2c6ea1444b700848f4adc4ddddc5a3b1b93f4b66950f592d0"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.cpg.meta.json",
+      "bytes": 749,
+      "sha256": "cb24afd2a5f0f844efd947c36917b382d94dc85f1e18d4950fcd753e474acaa2"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.dbf",
+      "bytes": 3114554,
+      "sha256": "8158ebba602d395d20979331ea2a8ccc9b6b011839b0c4acd6ff9ab785350f62"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.dbf.meta.json",
+      "bytes": 756,
+      "sha256": "777c4d0d8a1527cf6dbfa3a74d61be168edae4492b4f26f40e1af74fb770550c"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.prj",
+      "bytes": 147,
+      "sha256": "1d73d2a118be0020575764d43a69c16a11d0cecfae4a5a6499179943a5343486"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.prj.meta.json",
+      "bytes": 751,
+      "sha256": "1a060901a9f1a0cc7d6042571e8f327823e5dddbdd680bf63f9a6310c634c46c"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shp",
+      "bytes": 83485764,
+      "sha256": "1ad3461c774625ede261e183dcc841605eab76b82185f7831c392bcb60233ac5"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shp.meta.json",
+      "bytes": 757,
+      "sha256": "dac235ba4dfa0575082740747bc687244edb62ce3dd2b89268e1e3dcf621ea17"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shx",
+      "bytes": 19932,
+      "sha256": "b39239b7d4987671bee89f98422a078869e40fae6edbcf94754d7c9f6d4d43d2"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shx.meta.json",
+      "bytes": 754,
+      "sha256": "36048173fe4be712b2a21f2d25109acdd099acfb5992e94c207f82797ec07754"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/simc_current.zip",
+      "bytes": 3349777,
+      "sha256": "d33bea2f9f5f01dd088ab074cb95cc85b5a1a378f4d3944ba3a9fd6a365e1830"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/terc_current.zip",
+      "bytes": 132055,
+      "sha256": "6b5c4cce90121de7a736fbd61398caebc3274e9825fcc382aa0afecc00aa7cfc"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/identity_entities.json",
+      "bytes": 73723227,
+      "sha256": "b48d098c53b24eae6da11b1d8c1967e9975faa3d3153551a648cccbd6e050801"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_014.json",
+      "bytes": 10776,
+      "sha256": "48cf3e5e9827041cd4b6648d0d8fe55a175ae2f1b43689d874c66f3633c6fa5a"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_021.json",
+      "bytes": 10834,
+      "sha256": "80762ab657aa2d97cbae4df7f28515db8ce36146b50f1debfbd8471fffdfe33e"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_022.json",
+      "bytes": 10890,
+      "sha256": "89b59517ae251ab3473ad35ac510c8c335bbaeba8e2ff4153883a415ec6bc7fb"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2021_stat.zip",
+      "bytes": 4530590,
+      "sha256": "1b7db3fd7af3391c8e387092164253732f3d0ce2f2a07c43e9f1dcba3b8e28fd"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2026.zip",
+      "bytes": 3349779,
+      "sha256": "a83f8b13f4baee60933e78d7911ada7c4dc19eaef686d68dac7187da3d70a0ee"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_counties.json",
+      "bytes": 158988,
+      "sha256": "9d252bfb298da7077b74d0f0756be7b6a5ec0661b913ffe78b0c7190cf6e9569"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_seats_2017.pdf",
+      "sha256": "25647323113857f04cbcf5490c1b3117907d944500d1d8dae9dbe2985e4f77c1",
+      "bytes": 1327371
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_seats_2017.txt",
+      "sha256": "089d75d49f7125fd60a3c3239620313463c8a756877f0942380282d8b8df0b28",
+      "bytes": 215085
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/geonames_readme.txt",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "bytes": 8843
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_001.json",
+      "bytes": 729156,
+      "sha256": "174dcd07846220b6d994d3818dc7b4c0cf261f07cedeee7693373463ef14bb5d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_001.meta.json",
+      "bytes": 687,
+      "sha256": "69c9412f5bfdc98110f46b7eef358eb95dc3563219e11384a19d82b5a57d7644"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_002.json",
+      "bytes": 691110,
+      "sha256": "3e615ac9fc3fb93c05571cdfb0419ee92443882d87ff2e62025c959b114c9c6d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_002.meta.json",
+      "bytes": 686,
+      "sha256": "f8f791fca1f04bcdc842e369459bed18dfc56f7a596b16d10226cd9e5620398b"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_003.json",
+      "bytes": 749004,
+      "sha256": "6d68a10bf9d938bc0faf09cdc8ba209becc90528af85282cae32f0fbcf1c9ecb"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_003.meta.json",
+      "bytes": 666,
+      "sha256": "32e763effee0f0b1d8c4655f64fce72f50a951e98912e89dcf17ad70b0ab3192"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_004.json",
+      "bytes": 647466,
+      "sha256": "eee707fc389a77aa21a0374451eac9a9d35e8802d34933face2be92894137a06"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_004.meta.json",
+      "bytes": 664,
+      "sha256": "db27c7eda151456451b9318c0c03fa4adceca68f9747ddd7371e797035d09c54"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_005.json",
+      "bytes": 662062,
+      "sha256": "d980519ce9f4b0c125debc3f687eda2f249ab8d209dd2280c8faae1acdf1b417"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_005.meta.json",
+      "bytes": 648,
+      "sha256": "9b56843d92efbe0d559d462f3c0b50ee5ad8729d21825bcef4fb94630436d615"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_006.json",
+      "bytes": 499983,
+      "sha256": "40ffb977c51d32b80b85bf451f7e43a6b3ede5e2226fc62f018584430352b5b0"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_006.meta.json",
+      "bytes": 527,
+      "sha256": "e979ab1ebd4271b019b886c1a37c0e1e52b3adee640bb4566c1842ae36fcdae8"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_round2_000.json",
+      "bytes": 149781,
+      "sha256": "0382e10566f6f2ebd3d3f15737a9f0591501bb408d4b792e81575419e0000704"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_round2_000.meta.json",
+      "bytes": 368,
+      "sha256": "0f838ea46dd87219d79265d786a4356300884fb4813827a5e03cf075c9ead3e5"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_000.json",
+      "bytes": 809800,
+      "sha256": "3e99e69e70d6c2318eac2a1ab02fdbf0db2a345eccaab092c92c6d2954d52f3b"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_000.meta.json",
+      "bytes": 709,
+      "sha256": "495b3e21aa15f056419c5d2778cf3cc5702557b603d593518f9afc0c7ac87981"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_001.json",
+      "bytes": 740875,
+      "sha256": "f2a26fa1f832f53b09adaf3e24ed9147fe47f80bce8e20c419730c3a9e6622d3"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_001.meta.json",
+      "bytes": 718,
+      "sha256": "834045155c9a8479ff881ce18c157534710a91bb2cfb0a7308465d805337e46d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_002.json",
+      "bytes": 861889,
+      "sha256": "5649558c907a65ccb343bb637fce77f873d69d4969ad799cfcac5cb93d9c7d8a"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_002.meta.json",
+      "bytes": 716,
+      "sha256": "b026f8dcf6afde50fb6d54212acc426feb1fd5947d45847bc238b7391b9ce438"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_003.json",
+      "bytes": 746310,
+      "sha256": "94c90cd22236eaad1bb7add41bc7689fa017001a8db1936d68a8fc9c4da0af1a"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_003.meta.json",
+      "bytes": 686,
+      "sha256": "701ebe961d018b06555b0eb94e8d2257a5a2dd30abc5ffbc3b76e8cb35a75703"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_004.json",
+      "bytes": 727887,
+      "sha256": "6b1afcd924f88cb2333dcc588138364725a698c200bb4f006107d57ab35a0af1"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_004.meta.json",
+      "bytes": 681,
+      "sha256": "27c4a355e10b8ee4b8db7943480767585d3858a9db09cc892f7ebd081c466646"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_005.json",
+      "bytes": 714897,
+      "sha256": "5b736cd2bd7f14587414af8245e934a42d362d81f65073b8f76a83ed02525707"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_005.meta.json",
+      "bytes": 673,
+      "sha256": "a184b6aacdda42e16560f54437aff1c9d56f000922e248b8c533648613ed1759"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_006.json",
+      "bytes": 838922,
+      "sha256": "2be074480288f135bca01b860f3b94b20ef58af3999329fbaf9ce1ab78052e1d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_006.meta.json",
+      "bytes": 651,
+      "sha256": "88971a6b7cf9ee4d4743cb5d37ac66245e4b8a376c113e156ea62fac3ef8937f"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_007.json",
+      "bytes": 772860,
+      "sha256": "7ae6ba28c526754b068bfe2563e486349057ac1e59218bdbaf35463df76ccc40"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_007.meta.json",
+      "bytes": 647,
+      "sha256": "86d312980b912bd9e185b6aab96cae88ee412b211fecf7ddcc5d8b9911b5365f"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_008.json",
+      "bytes": 251983,
+      "sha256": "447ea8339bcd56bc7f2b3e99197584fddf978dafaa249a270f698bd396f10dde"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_008.meta.json",
+      "bytes": 357,
+      "sha256": "2f642216801fb1677cb62973de5becf4e9b1f3c75011bafa40843773216c9ff7"
+    },
+    {
+      "path": "runs/specs/v6_filter_places/work/PL_geonames.meta.json",
+      "bytes": 217,
+      "sha256": "43edf2bf9fcfe5de1e6c06b55ccb1c5caf60462ff822d0e33a26c395364108aa"
+    },
+    {
+      "path": "runs/specs/v6_filter_places/work/PL_geonames.zip",
+      "bytes": 2044806,
+      "sha256": "a37445875577f7e354e5b8f16376352ddfecb28ea9e119472d5bfe2ae22d1c4a"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/simc_current.zip.meta.json",
+      "bytes": 399,
+      "sha256": "38b2e9beef878b762202b4030fcb704000f092f3326abd042107abb04eba26ba"
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/terc_current.zip.meta.json",
+      "bytes": 398,
+      "sha256": "f946e80ce41bb8a791608635a0239660596bb09d8c897e33a692ae59dbe9e2e3"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_014.json.meta.json",
+      "bytes": 1054,
+      "sha256": "ebc5645b0eb08df09c3dd611aef4210c5081a081d1d51dc58937195794dc8271"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_021.json.meta.json",
+      "bytes": 1054,
+      "sha256": "7829a0b3140610d10b982c07ac0f1ed1d81be81756386fb777282e1cb780b922"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0606_022.json.meta.json",
+      "bytes": 1054,
+      "sha256": "11e05d2379cff2673c7dd6e96ffcc09c5d1ece5d251ea1ea3be5d7574c76899e"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2021_stat.zip.meta.json",
+      "bytes": 1013,
+      "sha256": "464198586ecb368be0a55769108cf7e2114652b37a3371ae6def9db4820c358c"
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2026.zip.meta.json",
+      "bytes": 1007,
+      "sha256": "9590a90c6e0b0d048cc0df96cd5a6147115e0a29dc8e820a31d28b8b8ceb4d45"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/PL.json",
+      "bytes": 4650933,
+      "sha256": "d6230e1ee6784edd6d13024ec2158c9f8593508e47af0ddd86dc92e46082831a"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q1872162.json",
+      "bytes": 21554,
+      "sha256": "1b246a5dd4eb99298f6de561846254299295edcc0f0363b52736ad06c7951cae"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q1872162.meta.json",
+      "bytes": 211,
+      "sha256": "c9bbd341b8006f056e8d940f6850c2c2a96e7f3ef41296c7b07e68fdd2b44a32"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q1873726.json",
+      "bytes": 25827,
+      "sha256": "9ff81a7183ff7e40eed66b3d15ddfa78de3deb42e1af9e440fb39ba4103c1e12"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q1873726.meta.json",
+      "bytes": 211,
+      "sha256": "05181a7dfd2dea532d73fb6c57fbfa5b31f624c85c977aab28df4d18f284a461"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q3692486.json",
+      "bytes": 29127,
+      "sha256": "7ad1f38b8bacf8b8698f73134875ad35605fed90b6bc421ca51adf3bf1b6c67c"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q3692486.meta.json",
+      "bytes": 211,
+      "sha256": "74752d6fdadbc51225a8846411cbe63db78597c140138175753b31b0a236b6b7"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q5291241.json",
+      "bytes": 17345,
+      "sha256": "0ebdf2712fa6a6b1f8811c39545bc900f34eb593b02407cf036e54dc941a6c13"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q5291241.meta.json",
+      "bytes": 211,
+      "sha256": "89cbaa05ad98e5afa5331ead3ee10de60031927a16e29bd637138a970f709b9f"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q6100645.json",
+      "bytes": 24099,
+      "sha256": "0f33a126c8f2a8375d300227f45602682e47dba2acfb82667fcc23413add32cf"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q6100645.meta.json",
+      "bytes": 211,
+      "sha256": "ad3ef77f77d812b624b27076ef8469b3e98cfbf3f038ccc096e0ce5a577ad31b"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q6930236.json",
+      "bytes": 10426,
+      "sha256": "ef854d37510fdd7ceff741f533191b41692619a9d638534c9a77bf0a496961bd"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q6930236.meta.json",
+      "bytes": 211,
+      "sha256": "4d87970a8763073fe657ffb3859826d3d354257baeccbcf572905e2f9954097f"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q770160.json",
+      "bytes": 18149,
+      "sha256": "7df2a36956691166d4dcfc1b356a69fbb43b87304b173aa30189b9c9be3eb497"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/Q770160.meta.json",
+      "bytes": 210,
+      "sha256": "d86e314903afeae8ddc18671f996a79e194a9e35bd3f6615e9c249efacd4fb32"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/dominow_osm.json",
+      "bytes": 843,
+      "sha256": "7a4cabe5cab2f869956b6d1acbc8108eb3ea2ea1bf24c1c8d61eb12e241396e0"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/dominow_osm.meta.json",
+      "bytes": 338,
+      "sha256": "ca95eeac2d4d96aeb5ad046ead0d2174dd6b59d0de96635d792c499cd7b639d0"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_000.json",
+      "bytes": 849763,
+      "sha256": "0ff0f8863818f499f7bd7cfa7d49c7101c254cce68f35a2c384ab18661b27530"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_000.meta.json",
+      "bytes": 697,
+      "sha256": "849f5a3ad64e96eed5c751a9a54f90511c96e233590478180e9f1416bd0a7ec1"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_001.json",
+      "bytes": 852964,
+      "sha256": "112d7d0aeff8960d44d49defe518f2dbe4b2c8e274063993d37774aa71b8ed27"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_001.meta.json",
+      "bytes": 696,
+      "sha256": "4b9a4a3b690ea58f7bec49eb826a1d0fc87a2091578e2234dc5fffdd77b2f133"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_002.json",
+      "bytes": 821089,
+      "sha256": "828cb4d473b3c14351f7c92282c3fb83db43df28036a165e9bcc721c5727b3d9"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_002.meta.json",
+      "bytes": 701,
+      "sha256": "e2b496c106ad0bbd37f78e81ab800fd4c2580430796cf1c33a56bc99a2cc3388"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_003.json",
+      "bytes": 880935,
+      "sha256": "fdd37c81378e62341e5613a0715d48d5eb3f5a2852f96c080a69b8c837f23926"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_003.meta.json",
+      "bytes": 680,
+      "sha256": "a69a3297b96ae4f6b7ab2bc6b431af91b9d6efa3f7874c125161a9b6ceae74ce"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_004.json",
+      "bytes": 551523,
+      "sha256": "fe566be8e859bbcd13ca416714b959d2a80d36855f6289a8a344a3ce82ac434d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_004.meta.json",
+      "bytes": 709,
+      "sha256": "340dfed84a79fc0ea1c9c9498469e8290544bb9263160c9320060f699f60bcca"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_005.json",
+      "bytes": 747287,
+      "sha256": "d65564f2bc4241136a04b398fdc4c04fdda2fbafd1964485d543b38f51c371c1"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_005.meta.json",
+      "bytes": 702,
+      "sha256": "a4906ff52ce0e562e0e4ea60ca107a492ba8fc160d04b735eba284e6d30be2d9"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_006.json",
+      "bytes": 825518,
+      "sha256": "7ef9c465a950624aa52fa3ac477827ea665a95bd51635816690f9f6c7ef826f4"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_006.meta.json",
+      "bytes": 696,
+      "sha256": "2e12195472c0bd5743653797f76da0c77981f994296eb558edabdfd51a35045b"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_007.json",
+      "bytes": 736269,
+      "sha256": "fd8bc6a7a3d41068e042c80195ae8e1a17f3da5a81f2b589f9af531ce1a6721a"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_007.meta.json",
+      "bytes": 692,
+      "sha256": "e05619b9a94a9524ed660ea8414da73746c080f9cd8a2124d5ecd3501926c32d"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_008.json",
+      "bytes": 765281,
+      "sha256": "c20686d9d9e2d2296784b97d1e3bbb9bba38e3e3b1176857cc87705ad7a301cf"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_008.meta.json",
+      "bytes": 696,
+      "sha256": "ebb2d8e2cb3efcd02bb6851a9dc1779c8e945eab8985e7fca462ab4e849386e6"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_010.json",
+      "bytes": 684712,
+      "sha256": "77bc43ec5ec347af6c12c35bdef42a05adc1ee58be06801e56b05ca7bf0629b7"
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work2/sources/entities_010.meta.json",
+      "bytes": 697,
+      "sha256": "a69af89eaf805f7832a64ec15ad69fde464ac5359d781c14d67857bf07711779"
+    }
+  ],
+  "input_sha256": {
+    "runs/specs/ro_pl_seats/work2/candidates.json": "4bf0a4e061e84130c3ca129460fb660e86dbec489553e36aacb9d99f1b88f853",
+    "runs/specs/ro_pl_seats/work2/crosswalk.json": "73de1eccc59f80d16473e360d2c73b554ce6c0f9cffe67ca98951b2d0d7ab790",
+    "runs/specs/ro_pl_seats/work/facts.json": "8e5006ae5689b6b6a8944bdcbcc910ecd3bbbb35bee72e099db23f478011c534",
+    "runs/specs/ro_pl_seats/work2/source_hashes.json": "0e3e96757f33024423574f5e9b5d2265dd8a37d406bb6ca13366d7967e352ed9",
+    "runs/specs/ro_pl_seats/work2/corrections.json": "a49b8b63a9c62e726f7d7ae51d9745aed888ebe9661a9e7d5107eedde0b63cb6"
+  },
+  "records": 13,
+  "attribution": "GUS TERYT TERC/current SIMC registers and legal seat list (source attribution); Wikidata contributors (P1653/P36/P4046/P625/P1082, CC0 1.0); GUS NSP2021 own-locality census tables (source attribution); GeoNames (CC BY 4.0, fallback settlement points only); OpenStreetMap contributors (ODbL 1.0, Dominów settlement point, https://www.openstreetmap.org/copyright)",
+  "pr": 2217,
+  "full_ledger_sha256": "6a2726f61b8e132fe5e0476f16c3d5de08cefa8c42010304a1d299482b938786"
+}
