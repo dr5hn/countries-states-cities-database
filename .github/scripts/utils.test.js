@@ -157,9 +157,12 @@ test('real canonical US county records produce no warnings', () => {
   }
 });
 
-test('partial county managed fields warn, including ID-only rows', () => {
+test('an ID-only county (a new child county) does not warn; other partial sets do', () => {
   const record = require('../../contributions/counties/US.json')[0];
-  for (const fields of [['id'], ['id', 'flag'], ['id', 'created_at', 'flag']]) {
+  const idOnly = { ...record };
+  for (const key of ['created_at', 'updated_at', 'flag']) delete idOnly[key];
+  assert.doesNotMatch(validateRecord(idOnly, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+  for (const fields of [['id', 'flag'], ['id', 'created_at', 'flag']]) {
     const partial = { ...record };
     for (const key of ['id', 'created_at', 'updated_at', 'flag']) {
       if (!fields.includes(key)) delete partial[key];
