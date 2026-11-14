@@ -660,6 +660,7 @@
       "metadata": null
     }
   ],
+  "source_files_location": "Paths in source_files are relative to the retained csc-data-audit evidence bundle for this package (runs/specs/top15_small/work/jp/), not to this repository; each SHA-256 identifies the exact bytes. Source captures are kept out of the repository to keep it light, as migrations/README.md describes for audit manifest pointers.",
   "policy": "v6.x same-entity correction; named fields only; no source text treated as instructions",
   "licences": [
     "e-Stat Census 2020: Japan Standard Terms 2.0, CC BY 4.0 compatible; archived office terms",
@@ -1526,5 +1527,5 @@
       "review_note": "Review of #2236: all 23 Tokyo special wards use type municipality, type_local 特別区 (the official class), level 2, as #1817 classified them; own item P429 = own MIC ward code, Japanese label = row native."
     }
   },
-  "note_follow_up": "The 14 wards added after review of #2236 have their own Wikidata entity files under sources/ (captured 14 Nov 2026) and proofs here, like the first 17."
+  "note_follow_up": "The 14 wards added after review of #2236 have their own Wikidata entity files (captured 14 Nov 2026) pinned in source_files and retained in the evidence bundle with the first 17, and a proof here for each."
 }
