@@ -1,0 +1,376 @@
+{
+  "ledger": "ro_closeout_v6x.jsonl",
+  "records": 203,
+  "base_commit": "a7da1d3b66286201e958858374625717bf6ca2cf",
+  "methods": [
+    "Own active P843/SIRUTA; exact UAT legal class/name/county; Table 1.22 own total; identical census and S1 2026 subordinate code membership. This is a dated census observation, not a current population estimate; no geometry redrawn."
+  ],
+  "sources": [
+    {
+      "url": "https://www.recensamantromania.ro/wp-content/uploads/2023/05/Tabel-1.22.xlsx",
+      "sha256": "3f866efe829107bc42f804889197e884c394b8a1e8d4ee58d67c522e5379f983",
+      "reference_date": "2021-12-01",
+      "publisher": "Institutul Național de Statistică, România"
+    },
+    {
+      "url": "https://legislatie.just.ro/Public/DetaliiDocument/187473",
+      "terms": "Law 226/2009 article 32(5): republication requires attribution; \"se face numai cu indicarea sursei.\"",
+      "licence": "Official-statistics attribution route accepted by owner 24 October; no CC grant inferred."
+    },
+    {
+      "url": "https://data.gov.ro/dataset/721c9059-5f87-4c79-9854-a1d5c18f58d5",
+      "edition": "SIRUTA S1 2026",
+      "evidence": {
+        "runs/specs/top15/work3/row_partition.csv": {
+          "retained": "sources/row_partition.csv",
+          "sha256": "d4cf5cf9d218cbcdf67519f1c3404afe01de362900f51d90e0f3f3ca4be5f8f6"
+        },
+        "runs/specs/top15/work3/feasibility.csv": {
+          "retained": "sources/feasibility.csv",
+          "sha256": "68aab4a0979110c2559d63b689be904875e9590b0963c4ca5195d076730673c5"
+        },
+        "runs/specs/top15/work3/report.md": {
+          "retained": "sources/report.md",
+          "sha256": "eb64243202f18a411b3f203acd746aac344e068620e58716af02e42b743d23ab"
+        },
+        "runs/specs/top15/work3/input-manifest.json": {
+          "retained": "sources/input-manifest.json",
+          "sha256": "7a4e871e6576e832fb82952a6f677dbb0cf8e9a93ff5da58c175c7fd839bc2d8"
+        },
+        "research/ro_pilot/work_ro_pilot_1/siruta_2026_official.csv": {
+          "retained": "sources/siruta_2026_official.csv",
+          "sha256": "f443e49af2f9c9dce8ea515ae53090a18fb476547466b6cd804051424eaf72c6"
+        },
+        "research/ro_pilot/work_ro_pilot_1/siruta_2026_official.csv.acquisition.json": {
+          "retained": "sources/siruta_2026_official.csv.acquisition.json",
+          "sha256": "943518b4fbde1248546c2a6c986d8238be100dcb81e29bc9d0ea6a3f7f828b95"
+        },
+        "runs/specs/top15/work3/sources/ro_2021.xlsx": {
+          "retained": "sources/ro_2021.xlsx",
+          "sha256": "3f866efe829107bc42f804889197e884c394b8a1e8d4ee58d67c522e5379f983"
+        },
+        "runs/specs/top15/work3/sources/ro_2021.xlsx.receipt.json": {
+          "retained": "sources/ro_2021.xlsx.receipt.json",
+          "sha256": "b17024e43c8c2dca421ee312ec32e805c6d9fd14b360181b669daa80db3d5206"
+        },
+        "runs/specs/top15/work3/sources/ro_terms_evidence.json": {
+          "retained": "sources/ro_terms_evidence.json",
+          "sha256": "c5bec69783c2f63f7d0545e34ed369e7c3f616788d8169f0d1678f2d308550a9"
+        },
+        "research/ro_pilot/work_ro_pilot_1/legend.txt": {
+          "retained": "sources/legend.txt",
+          "sha256": "d59cf5eb8bc528b366b703df2e7692f290ea60fbdb08e2b3f12b2c3a18e40688"
+        },
+        "research/ro_pilot/work_ro_pilot_1/legend_official.xml": {
+          "retained": "sources/legend_official.xml",
+          "sha256": "6a246fddfd8ce881ff37af5e667550e9d9e7f6c914cd008d0bd8c4fab4a5cfad"
+        },
+        "research/ro_pilot/work_ro_pilot_1/legend_official.xml.acquisition.json": {
+          "retained": "sources/legend_official.xml.acquisition.json",
+          "sha256": "a8d240692011c4ef028ca0988da554f9b12f1354e72474a82b5463f310fb0a5e"
+        },
+        "runs/specs/top15/work3/sources/ro_communes_v5x.jsonl": {
+          "retained": "sources/ro_communes_v5x.jsonl",
+          "sha256": "f52e9fac8a3e23ad9229db1f64d20ae6cb3c6e323c8939565206ab8c142077cb"
+        },
+        "runs/specs/top15/work3/sources/ro_communes_v5x.sources.json": {
+          "retained": "sources/ro_communes_v5x.sources.json",
+          "sha256": "84df581e58bcd8e6cdc2de418700c57e5f9f0ee68a1c2b174b7ac7fcc5b0521e"
+        },
+        "runs/specs/top15/work3/sources/ro_commune_links_v5x.jsonl": {
+          "retained": "sources/ro_commune_links_v5x.jsonl",
+          "sha256": "4d9e7346b0d169fe5372f330a4e2a7a81012a4ca19e94ca9f8fa1758835cc147"
+        },
+        "runs/specs/top15/work3/sources/ro_commune_links_v5x.sources.json": {
+          "retained": "sources/ro_commune_links_v5x.sources.json",
+          "sha256": "536b31dfee98145801636cda17ec18b826ae8c0d14e745fa2c4691b37296fbc2"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_001.json": {
+          "retained": "sources/batch_001.json",
+          "sha256": "7be130d1600154663dfe165fb6897da69b736fb5dc1d91a64b95bcc4c54aa6c6"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_008.json": {
+          "retained": "sources/batch_008.json",
+          "sha256": "7bff2c51e81d204d981098da43682b1f41693e87a63707aff8ee5e064acb2235"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_009.json": {
+          "retained": "sources/batch_009.json",
+          "sha256": "0d361d21090c1007a05c97e2feaf53c236f76e4b0618f92718c7e28a2c9ca5c7"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_010.json": {
+          "retained": "sources/batch_010.json",
+          "sha256": "e2d75b08df951e7d049ab5d62ed8c68fd7c067cd7ad8d0fd82725d75f4eeea6d"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_014.json": {
+          "retained": "sources/batch_014.json",
+          "sha256": "06a80a9352ad2f8247e0d0a73d2beb82ff5b777efa2916f5da6bd81bad91f315"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_015.json": {
+          "retained": "sources/batch_015.json",
+          "sha256": "cbf5f6afeca717eb8c531f1848219dd2d40db38971411524c37d902f21517776"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_022.json": {
+          "retained": "sources/batch_022.json",
+          "sha256": "19d0724c12b34f8f3f76ff054d8bf2294674125829fb4cb4831c621b2d1b18a7"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_023.json": {
+          "retained": "sources/batch_023.json",
+          "sha256": "60fcebaaef3dbac6b60c85c3eadee260ee582a6bc08bbd5861b4b28935fc5a2b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_033.json": {
+          "retained": "sources/batch_033.json",
+          "sha256": "3fa8b063197ffe1579bd141a32e6951346de3719aa1ce8f6d124124cb5ed096d"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_035.json": {
+          "retained": "sources/batch_035.json",
+          "sha256": "c0c437ae1e29c19d185a977f186e39978a9cd119beff3f1ae62438113892422a"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_041.json": {
+          "retained": "sources/batch_041.json",
+          "sha256": "0d14ed1a777a1de42e221c3a8d5a31ffca51eea109bc2b4caae33ad6442c695c"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_042.json": {
+          "retained": "sources/batch_042.json",
+          "sha256": "7287e4154c7b5e0c3bb29971e22c87d29c8edb9a260d2e9cb37fab909814e44c"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_043.json": {
+          "retained": "sources/batch_043.json",
+          "sha256": "9000f86c870c681cd0703aa2b9bad9621159cd32824eb8977a0f1e788e5d1e8c"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_045.json": {
+          "retained": "sources/batch_045.json",
+          "sha256": "6e8803e1853086200ac6fe5df8c78dc0ca2082497819ef62f452c96d35003cb5"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_047.json": {
+          "retained": "sources/batch_047.json",
+          "sha256": "18f54e29faf57beeef0602890c644be1660ee2bd05c1e2aaeb57abf0b7adf54b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_050.json": {
+          "retained": "sources/batch_050.json",
+          "sha256": "df6a2a18b3087cf6ea6de580ed1cbbf38d105a6624f8de63c1a59e31d77e9013"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_054.json": {
+          "retained": "sources/batch_054.json",
+          "sha256": "820677dad4ca030ca9d6be7842558706a24e26506b849dc8998df77b9f520c98"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_056.json": {
+          "retained": "sources/batch_056.json",
+          "sha256": "0d544a2597e3832c2c0da57c85730cbb869b74f1eb833600a1702c1245f82142"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_059.json": {
+          "retained": "sources/batch_059.json",
+          "sha256": "457d0841d0c32e8b1dceb6448fb79e895bbf318a2866da48c74c017ab7ceeeb9"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_060.json": {
+          "retained": "sources/batch_060.json",
+          "sha256": "90dc049942a6f37ed53b6a9bd9057edfd3280e0effa55d3f61c8c28848764d2b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_061.json": {
+          "retained": "sources/batch_061.json",
+          "sha256": "743c79dbd09fd83547c1f7fb08613384b7ce56b701c4112ecf1bc7c773252fb4"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_062.json": {
+          "retained": "sources/batch_062.json",
+          "sha256": "21fde0ab2f480afb48ff4967ebed25811dcf65c9aa79a9c57a8bc98dc82eab9a"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_065.json": {
+          "retained": "sources/batch_065.json",
+          "sha256": "43a4c985fbc7cf5a61b99ad7c0811922bb18d5c64cf1b41c8ad63019c01a7307"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_066.json": {
+          "retained": "sources/batch_066.json",
+          "sha256": "ceb2d14e3e70913fd5c9aaeb5ee056770d806034e0b4d6d53331bda8bc5ca5fc"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_068.json": {
+          "retained": "sources/batch_068.json",
+          "sha256": "de1417046cde76da46d43611670141b1e54160ed0ad20d55108e85dc9fd6c757"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_070.json": {
+          "retained": "sources/batch_070.json",
+          "sha256": "107188a64fca74192419043f491a48f8c39932d9c741ad36ee2dc00650bb8b4c"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_071.json": {
+          "retained": "sources/batch_071.json",
+          "sha256": "752e9c778034688e72454b93d4f02b63fa2d3addf3c1366d1f88352ed15463ed"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_072.json": {
+          "retained": "sources/batch_072.json",
+          "sha256": "2e7c81c5ec19b4b68b511658a6e9cdc73bc61c089b9814c0dd525364ff61c37b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_073.json": {
+          "retained": "sources/batch_073.json",
+          "sha256": "261c196c165b53e99d4904fb4b59119b1ddc0a973b5a4ca9c30b334cd233ad90"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_075.json": {
+          "retained": "sources/batch_075.json",
+          "sha256": "fa15dde6cc1bc029afd084f1281f0d473ebe5eebad7203de6e410f452c356936"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_077.json": {
+          "retained": "sources/batch_077.json",
+          "sha256": "490c7e3b7d8a53be3fa7c9fb1119ba86257eb17bf509e428f93f8036dd86d5c8"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_081.json": {
+          "retained": "sources/batch_081.json",
+          "sha256": "ce8e12c3de35f5c962b106049e90349bd2a4de67dcaa17a71e8ff405b75e2f4d"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_082.json": {
+          "retained": "sources/batch_082.json",
+          "sha256": "1de8cb3aa69caf677b3848272157861bf40b53878dcdf55a11010c194fec8c2f"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_083.json": {
+          "retained": "sources/batch_083.json",
+          "sha256": "87ef4f1880f0c4e2123c734e26236552ba3f50bd93304a3b5b97d072dc287e71"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_084.json": {
+          "retained": "sources/batch_084.json",
+          "sha256": "18154f384bd9fd16e3e9867aea3ccc08c07f4adff78c3e217a5fb88b2da23c46"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_085.json": {
+          "retained": "sources/batch_085.json",
+          "sha256": "cae14f857889831b950bbf38e618d26d2981993d2b926f41b4af5be0a36add1d"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_086.json": {
+          "retained": "sources/batch_086.json",
+          "sha256": "2645280ef0ac9078d1e2e8e0ca8bbeab8072ce2261dfd96fa5006500ae90ed64"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_088.json": {
+          "retained": "sources/batch_088.json",
+          "sha256": "88c21fbee63aabd6ce7d90b32d079860bc263e5a0e8c5000683b0326af46275b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_089.json": {
+          "retained": "sources/batch_089.json",
+          "sha256": "9fef5c6ac5ff41ef2931fb1f2f7a3f6aeeb5fb53d2649f2882aea01bc1f23fc8"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_091.json": {
+          "retained": "sources/batch_091.json",
+          "sha256": "83a7377872783538d530f4b1c75504a928e25381d8b20b57fc1b1c804b5d7ae1"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_092.json": {
+          "retained": "sources/batch_092.json",
+          "sha256": "7cf2ac6062d754fe80a641f404bf257b7a9d05dfea811f1d29b6f8f888d81757"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_094.json": {
+          "retained": "sources/batch_094.json",
+          "sha256": "1f0e0d2f783f88da7f214ca3eef17812c9e63586bcbe9f6355346d0d457e9dac"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_096.json": {
+          "retained": "sources/batch_096.json",
+          "sha256": "bb84aae9750b5505f96570e105d8e9aee18e66d03d760ac3ab2e4dbae23a9d4a"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_098.json": {
+          "retained": "sources/batch_098.json",
+          "sha256": "6995382298522054928df4094cbb22bb826d7904396a628993bbcad4e70a5ecb"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_115.json": {
+          "retained": "sources/batch_115.json",
+          "sha256": "0477b4aeb7243354f7980f72fd8389c73ec2a8f3f6bbe785b93de38127f3f8f7"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_120.json": {
+          "retained": "sources/batch_120.json",
+          "sha256": "269e6bbbb7eadd35a2206f973ab5b2dc11bc83fa60a32cb0687e9d14e31e900e"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_122.json": {
+          "retained": "sources/batch_122.json",
+          "sha256": "4b96a5f8207cbc3315c74ed6c4933516209c92527f8ec0f81964bbed7e12a12a"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_126.json": {
+          "retained": "sources/batch_126.json",
+          "sha256": "93d812bf2abf6375dcc3aa4ed1fb24fa8d3207370b34cb53d29b0bef710a6017"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_127.json": {
+          "retained": "sources/batch_127.json",
+          "sha256": "3e39f63b7db8004e36cb74bb1a1e04c38ffabd39b6241beadf4723e52c3e2d55"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_128.json": {
+          "retained": "sources/batch_128.json",
+          "sha256": "882c3a157ac882504f774300d65d1e56d3bc9af936e35f26552b78e518b848e3"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_129.json": {
+          "retained": "sources/batch_129.json",
+          "sha256": "27673f243b81abb216c397287ccf215daf84f821b1b9e8f8059d0f975c8cc274"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_130.json": {
+          "retained": "sources/batch_130.json",
+          "sha256": "30b16b7716e049e7184489abf1a2bc4efc1eff8523ecaefcac4b8dbeda0a733f"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_131.json": {
+          "retained": "sources/batch_131.json",
+          "sha256": "0a81435caabb6f2b6a9fcafc7a1134d1cf5dd34b01e0221c21c7507a1ce461db"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_132.json": {
+          "retained": "sources/batch_132.json",
+          "sha256": "7c565d24b9565aba38ccea3df959f2a4845ad5a71f11ea25eb113ac8c3cd711b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_133.json": {
+          "retained": "sources/batch_133.json",
+          "sha256": "38fc430503b906f31fa0b9562c5f68ae308a3a991cc9042ccaeeeb1f8d234b5a"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_134.json": {
+          "retained": "sources/batch_134.json",
+          "sha256": "8b2c233d0e663c6ed8315b946e8a10579d9b228933af3b0b625993abbfd26c77"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_135.json": {
+          "retained": "sources/batch_135.json",
+          "sha256": "eb9c2d962fdce32a7a8588f835972d609534f34f0215e384d7e221b29e7b5554"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_136.json": {
+          "retained": "sources/batch_136.json",
+          "sha256": "65359642d4044d9cf8cd9b708b4f51b6680a92abfd399645bba48ba927945e5b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_137.json": {
+          "retained": "sources/batch_137.json",
+          "sha256": "7d085ddff13c6e40f8ff8d9a78f369696d546d9fc671576d31917a59f1f4c34e"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_142.json": {
+          "retained": "sources/batch_142.json",
+          "sha256": "df1a7c74c0bdcf9a33d23ce0d24aef58ad91602312470ec0bb0f7f52faf2d030"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_143.json": {
+          "retained": "sources/batch_143.json",
+          "sha256": "d8fb27fff4d55d428d877d74e9114188765669569cb9d624ebecd5997756fbcb"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_145.json": {
+          "retained": "sources/batch_145.json",
+          "sha256": "90c4d490dfdb184119e5736d41bb2d1188c13237297a65b8738048e59cf1b31f"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_146.json": {
+          "retained": "sources/batch_146.json",
+          "sha256": "75ed4237826051a6ee0a59400107b38a0c6ffa37b889dbab79eb341a17db2e56"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_147.json": {
+          "retained": "sources/batch_147.json",
+          "sha256": "38024202986f3cf5aab19dd31c3a4fa4f6ca812843355d5f1121439c0b04678c"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_149.json": {
+          "retained": "sources/batch_149.json",
+          "sha256": "85ef375767418b6888f9b7d3b532c37c89b5f59d60177304ad6f5ebe64dc566b"
+        },
+        "research/ro_pilot/work_ro_pilot_1/wikidata/batch_151.json": {
+          "retained": "sources/batch_151.json",
+          "sha256": "8d72e4f5cca7b7fd65a266351d7f052c8f0d9c1da7d980afa42ae2c0d3daaaf9"
+        },
+        "runs/specs/ro_communes_v5x/work/sources/uat_000.json": {
+          "retained": "sources/uat_000.json",
+          "sha256": "82f05e6916c5ee9e66fcfcb557d40bbf240a8d8ddeeb58d68547b382a967e344"
+        },
+        "runs/specs/ro_communes_v5x/work/sources/uat_001.json": {
+          "retained": "sources/uat_001.json",
+          "sha256": "c63abd9e55f623ee8ef34376e32cbbceb73ea0a1153109e30676a368d4728ed0"
+        },
+        "runs/specs/ro_communes_v5x/work/sources/uat_002.json": {
+          "retained": "sources/uat_002.json",
+          "sha256": "e1e1a6b53478ade22cd28b84cecceca3b3ad297ee3a8cdae7a9ec0149b891cbc"
+        },
+        "runs/specs/ro_communes_v5x/work/sources/uat_003.json": {
+          "retained": "sources/uat_003.json",
+          "sha256": "31f99361cb6efaafec5c44f07d84e030d6c53b65ae16c409ac9821ae6d876a64"
+        },
+        "runs/specs/ro_communes_v5x/work/sources/uat_004.json": {
+          "retained": "sources/uat_004.json",
+          "sha256": "f21061c2a2a113a211dd95b36600cf98fd4285caf6ea5f7d23a0f56aa01ff8de"
+        }
+      }
+    }
+  ],
+  "full_ledger_sha256": "2b11b1d42edd163f65a9aaaa27cb899b81e4c2e96f8285b1be97417dfe95318a"
+}
