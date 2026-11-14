@@ -1792,3 +1792,12 @@ Reuse: official-statistics attribution route, Law 226/2009 article 32(5): "se fa
 Own SIRUTA UAT totals only; no seat-village substitution. See .github/fixes-docs/ledgers/ro_closeout_v6x.jsonl and ro_closeout_v6x.sources.json.
 
 Germany types v6.x (de_types_v6x): Statistisches Bundesamt (Destatis), GV-ISys 30.09.2026 / GV100AD, dl-de/by-2-0, https://www.destatis.de/DE/Themen/Laender-Regionen/Regionales/Gemeindeverzeichnis/_inhalt.html ; unchanged-point checks: © GeoBasis-DE / BKG (2026), VG250 01.01.2026, dl-de/by-2-0, https://www.govdata.de/dl-de/by-2-0 ; Wikidata structured identity data CC0. Stadt Bochum, Stadtgebiet - Statistische Bezirke (Stadtteile), dl-de-zero-2.0, https://opendata.ruhr/dataset/bochum-stadtbezirksgliederung_statistische_bezirke ; selected Hordel designation/urban-parent facts adapted to existing records, no geometry or points copied. Per-row proof and held reasons: .github/fixes-docs/ledgers/de_types_v6x.jsonl and .sources.json. Population, names, IDs and points unchanged.
+
+France own-unit RP2023 close-out (fr_closeout_v6x)
+Source : Insee — Populations de référence 2023, population municipale (PMUN), published/updated 18 December 2025; geography 1 January 2025; effective 1 January 2026.
+https://www.insee.fr/fr/statistiques/8680726
+Download: https://www.insee.fr/fr/statistiques/fichier/8680726/ensemble.zip
+Reuse: Licence Ouverte / Open Licence version 2.0 (Etalab); https://www.insee.fr/fr/information/2008466 ; https://www.data.gouv.fr/pages/legal/licences/etalab-2-0
+Modifications: selected own COM figures from donnees_communes.csv and own COMD/COMA figures from donnees_communes_deleguees.csv, linked to existing same-entity records, and recorded reference year 2023. Commune déléguée/associée figures are their own component counts, never the commune nouvelle total.
+COG 2025/2026 (Insee, same licence) verifies scope and changes; Wikidata (CC0) verifies literal own items/codes. No endorsement by Insee is implied.
+Review and before/after facts: .github/fixes-docs/ledgers/fr_closeout_v6x.jsonl and fr_closeout_v6x.sources.json.
