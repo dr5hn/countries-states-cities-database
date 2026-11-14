@@ -8,6 +8,11 @@
   "ledger_sha256": "6a595db5131b93d6cb1b311b6518fd119ad9d99c9a3540fa25a0e3113e7f0783",
   "admitted": 1851,
   "held": 0,
+  "held_rows_recorded_in": {
+    "ledger": ".github/fixes-docs/ledgers/us_items3_v6x_part8.jsonl",
+    "note": "\"held\" counts this part's own ledger only. The build writes every held row, for all states, into part 8's ledger (merged in #2248). For this part's states it lists 11 held rows: IL 6, IN 5, each with its failing gate.",
+    "count": 11
+  },
   "states": [
     "IL",
     "IN"
