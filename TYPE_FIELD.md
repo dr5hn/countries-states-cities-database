@@ -255,6 +255,8 @@ and the [per-record evidence ledger](.github/fixes-docs/ledgers/us_places_v5x.js
 
 Reviewed rows bind a 2020 Census place only through their own P774 equal to its GEOID, their own P590 equal to its ANSI code, or an own P31 incorporated-place or CDP class with one same-name, same-kind place in the same state; every route requires strict stored-point containment. Any conflicting own P774 or explicit township or other county-subdivision P31 blocks a place binding, including township-only items and mixed township/place classes. LSAD 25/43/47/21/57 supplies the existing place classification at level 3, and every accepted place binding with no population year of 2010 or later receives that place’s 2020 P1 total and population_year 2020. Class-bound rows additionally require every own P590 to equal the ANSI code or identify a GNIS feature strictly inside the polygon. Retained own-item neighborhoods and unincorporated communities keep their proved classifications. Additional nonhistorical own GNIS Populated Place bindings use `locality / unincorporated community / 3` outside incorporated places or `section / neighborhood` inside one independently proved incorporated parent, with parent_id empty or already that parent and level equal to parent level + 1. Historical names, former CDPs without a 2020 CDP, Puerto Rico and ambiguous bindings remain held in the combined [US type ledger](.github/fixes-docs/ledgers/us_tld_v6x.jsonl).
 
+The [US item and former-CDP ledger](.github/fixes-docs/ledgers/us_fix3_v6x.jsonl) applies the preceding binding veto to both current and proposed own items before correcting or supplying an item through a same-name, same-state 2020 Census place with strict stored-point containment and an exact own P774 GEOID or P590 ANSI code, or through an own P590 for the unique same-name GNIS Populated Place within 1 km with no other within 5 km, uses the preceding classification and population rules for accepted Census bindings, and permits the formerly held former-CDP rows as `locality / unincorporated community / 3` only with a nonhistorical own GNIS Populated Place, no same-name 2020 place in the state and a point outside every 2020 incorporated place and CDP; Puerto Rico, abandoned missing-item rows, conflicting identifiers, township or county-subdivision classes and ambiguous bindings remain held.
+
 ### Uruguay
 
 In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or
@@ -475,3 +477,21 @@ A commune déléguée or associée links by `parent_id` to its COG `COMPARENT` c
 IGN BD TOPO v3 `zone_d_habitation` supplies populated-place designations for places without their own government: `Lieu-dit habité` maps to `locality / lieu-dit habité`, and `Quartier` to `section / quartier`. Other natures stay unresolved. A match requires the same name after case, accent, hyphen, apostrophe and leading-article normalization, the stored point within 1 km of the feature, and no other same-name feature within 5 km. Its `insee_commune` must bind a CSC `municipality / commune / 4` by that row's own Wikidata P374 or exact COG LIBELLE in the same department. The place links to that row and is one level below it (level 5 under a commune). Missing communes may be added only after independent current COG identity, own Wikidata code, open point containment, population scope and duplicate checks; ambiguous identities remain held.
 
 Sources: [Insee COG](https://www.insee.fr/fr/information/2560452), [IGN BD TOPO](https://www.data.gouv.fr/datasets/bd-topo-r) (Licence Ouverte / Open Licence 2.0), and literal own-item [Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing) claims and labels (CC0). The [France ledger](.github/fixes-docs/ledgers/fr_tld2_v6x.jsonl) records changed and held rows. French communes remain included by the settlement filter above.
+
+### Brazil
+
+BR rows carry `municipality / município / 2`, `section / distrito / 3`,
+`section / bairro / 4`, and `locality / vila`, `povoado` or `outras localidades` at level 4.
+The estado is level 1. A município has a null city `parent_id`; its state is recorded separately.
+These classes require evidence for the place itself, rather than a population threshold or a generic settlement class.
+For the [Brazil ledger](.github/fixes-docs/ledgers/br_tld_v6x.jsonl), a city row is bound to the município only through
+a unique current IBGE name or live-item alias in the same estado, no existing CSC owner, its unchanged point strictly
+inside the original municipal polygon, and a live município item's own P1585 (IBGE code).
+A seat item's identifier is corrected to that município item as the same-place scalar correction; row ID,
+population, coordinates and state remain unchanged. This rule is specific to this reviewed Brazil cohort.
+Brasília/DF and Fernando de Noronha are municipal equivalents rather than municípios and remain held;
+ambiguous names, points outside the named município and unsupported locality classes also remain held.
+Sources: [IBGE DTB 2025](https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip),
+[IBGE Malha Municipal 2025](https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip),
+under the CC BY 4.0 compatible boundary licence stated in the [technical note, printed page 9](https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf),
+and Wikidata structured facts (CC0). The [source sidecar](.github/fixes-docs/ledgers/br_tld_v6x.sources.json) records licences and capture hashes.

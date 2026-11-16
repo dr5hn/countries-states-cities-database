@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "base_commit": "11ccdf0487518223137eb5cb650eee0d5506062d",
+  "ledger": ".github/fixes-docs/ledgers/br_tld_v6x.jsonl",
+  "ledger_sha256": "84f927d0a9b0f0d4ca14d531000cf04fad59592c020928bf766786024c6c51cb",
+  "considered_ids": [
+    10187,
+    10395,
+    10516,
+    10551,
+    10555,
+    10560,
+    10592,
+    10618,
+    10743,
+    10776,
+    10806,
+    10852,
+    10904,
+    11003,
+    11019,
+    11023,
+    11157,
+    11226,
+    11275,
+    11305,
+    11335,
+    11711,
+    11726,
+    11807,
+    11808,
+    11890,
+    11980,
+    11981,
+    12011,
+    12018,
+    12057,
+    12097,
+    12182,
+    12184,
+    12207,
+    12292,
+    12375,
+    12400,
+    12508,
+    12565,
+    12628,
+    12710,
+    12729,
+    12759,
+    12773,
+    12804,
+    12844,
+    12856,
+    12937,
+    12981,
+    12988,
+    13186,
+    13245,
+    13283,
+    13353,
+    13522,
+    13561,
+    13623,
+    13654,
+    13661,
+    13675,
+    13727,
+    13871,
+    13934,
+    14123,
+    14174,
+    14202,
+    14569,
+    14585,
+    14589,
+    14604,
+    14660,
+    14668,
+    14725,
+    14743,
+    14795,
+    14875,
+    15048,
+    15078,
+    15334,
+    15477,
+    15486,
+    15642,
+    142980
+  ],
+  "attribution": "Instituto Brasileiro de Geografia e Estatística (IBGE), DTB 2025 and Malha Municipal 2025. Boundary extracts retain original unmodified geometry. Wikidata structured data CC0.",
+  "boundary_licence": {
+    "licence": "CC BY 4.0 compatible, explicitly granted by IBGE",
+    "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf",
+    "evidence": "sources/Malha_2025_technical.pdf",
+    "printed_page": 9,
+    "pdf_page": 11,
+    "checked_utc": "2026-11-16",
+    "render": "sources/licence_page.png"
+  },
+  "register_licence": "Public IBGE register used as factual reference; no separate standardized licence asserted for DTB.",
+  "identity_precedents": [
+    "#2241-#2248: own-code item field corrections without identity substitution",
+    "#1637: wikiDataId replacement as scalar correction, no row redirect"
+  ],
+  "method": "Full same-state names, punctuation/diacritic folding only; alias candidates discovered through QLever and verified literally live. Own active P1585 and Q3184121 município class, no dissolution, strict valid polygon containment, no CSC same-item or typed-name owner. Stored settlement item points also checked inside. DF/Noronha and unsupported locality classes held.",
+  "coordinate_method": "IBGE original SIRGAS 2000 geographic EPSG:4674; CSC geographic lon/lat treated as compatible at town-point precision. Strict contains, no buffer or repair; not a legal demarcation.",
+  "sources": [
+    {
+      "path": "sources/BR_Municipios_2025.zip",
+      "bytes": 237062431,
+      "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd"
+    },
+    {
+      "path": "sources/BR_Municipios_2025.zip.meta.json",
+      "bytes": 1027,
+      "sha256": "c6475ebf066e3c7acac6e1e7a68db72c8adb93fa4d4c121479952be54931d11a"
+    },
+    {
+      "path": "sources/DTB_2025.zip",
+      "bytes": 1635600,
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27"
+    },
+    {
+      "path": "sources/DTB_2025.zip.meta.json",
+      "bytes": 1077,
+      "sha256": "46761315376ec2655d776a96a1105ae0f8fec3a42798852fc31cb0a974b6773b"
+    },
+    {
+      "path": "sources/DTB_2025_live.headers",
+      "bytes": 324,
+      "sha256": "54e06b087c52115e0255dc60630dfc592b31f8e3a2078e2cb1aaed6bd8302db0"
+    },
+    {
+      "path": "sources/DTB_2025_live.zip",
+      "bytes": 1635600,
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27"
+    },
+    {
+      "path": "sources/DTB_2025_live.zip.receipt.json",
+      "bytes": 311,
+      "sha256": "ab8c3e82de44226fb3ac838a085ef1101771bbef1d821f9a1f6292a9816d201a"
+    },
+    {
+      "path": "sources/Malha_2025_technical.pdf",
+      "bytes": 707028,
+      "sha256": "bc88c44624c8852b4796b72b525f9092cd770415403c1a3486a8d48bcefc9e89"
+    },
+    {
+      "path": "sources/Malha_2025_technical.pdf.receipt.json",
+      "bytes": 346,
+      "sha256": "e01cb5480731114c331a4ecf9e68643665d15a7e167d5a3e14ee16b6a71fdabd"
+    },
+    {
+      "path": "sources/Malha_2025_technical.txt",
+      "bytes": 138735,
+      "sha256": "fc55c5b182bd9b1a79dfa7a1cf99f67ce8ce1ddb6d4bc3c90013ba77fac6cc14"
+    },
+    {
+      "path": "sources/RELATORIO_DTB_BRASIL_2025_DISTRITOS.ods.rows.json",
+      "bytes": 2122437,
+      "sha256": "803d27aaa2d5a823eb38d860d1dda45ed3edaec85568d46f65b2cabc5abf8f26"
+    },
+    {
+      "path": "sources/RELATORIO_DTB_BRASIL_2025_MUNICIPIOS.ods.rows.json",
+      "bytes": 836643,
+      "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253"
+    },
+    {
+      "path": "sources/licence_page.png",
+      "bytes": 245814,
+      "sha256": "27ad8cde9462d29b51b7bdf557c60fe11ca0e9bcdfb868810f8ccdee2b15108a"
+    },
+    {
+      "path": "sources/municipal_0000.json",
+      "bytes": 2982546,
+      "sha256": "75ad90deb86d5937d5b0699249c9ae590172c040c3dba439fe075050b380173a"
+    },
+    {
+      "path": "sources/municipal_0000.json.receipt.json",
+      "bytes": 956,
+      "sha256": "020ebbe94b3991a535f72c6e1c3257d80a8a3c4dc7dbef5619c7a0561633e1d9"
+    },
+    {
+      "path": "sources/municipal_0050.json",
+      "bytes": 321130,
+      "sha256": "6d6a3560fe74c937f147cf0d6e0d338f7b757fbc52fa892bc4873bdf987157ad"
+    },
+    {
+      "path": "sources/municipal_0050.json.receipt.json",
+      "bytes": 464,
+      "sha256": "2874ec9008a49ac3566dc3826be9b023c1d7c8ab2e79c171e72125d984cec9be"
+    },
+    {
+      "path": "sources/municipal_alias_0000.json",
+      "bytes": 251828,
+      "sha256": "7f8f40390b167f8e453ddf09fca21a23bfcd02bf9dc9d7c0543e02e6cc5f3bf5"
+    },
+    {
+      "path": "sources/municipal_alias_0000.json.receipt.json",
+      "bytes": 457,
+      "sha256": "3b6b354feaf2db84f5cd3fe9b6067f2c39134e7f7599eadf7621eb32a3c1e8d3"
+    },
+    {
+      "path": "sources/own_0000.json",
+      "bytes": 671001,
+      "sha256": "c39f94d8a5ac72076995d26a10bde2aecf7d6d19dcd6693175179c5d97cd4d84"
+    },
+    {
+      "path": "sources/own_0000.json.receipt.json",
+      "bytes": 1007,
+      "sha256": "0fe493d05b8c9b70470f5357c131a455c32a87a8e1a6424e9d97c0d09ff27313"
+    },
+    {
+      "path": "sources/own_0050.json",
+      "bytes": 446538,
+      "sha256": "90e0cbf50a3f0efaf89c70086da52ad90af6ab2c0bdd34221a03772a64ecf5da"
+    },
+    {
+      "path": "sources/own_0050.json.receipt.json",
+      "bytes": 720,
+      "sha256": "9cdc1fa123657c13cf210fc3fa23714606260e1f14cae4e1ffe423ae4f12ee1f"
+    },
+    {
+      "path": "sources/qlever_names.json",
+      "bytes": 2767983,
+      "sha256": "28fea8a420380307da7620852407adb92d1759f6267ee179b1af7a3616ff005c"
+    },
+    {
+      "path": "sources/qlever_names.json.receipt.json",
+      "bytes": 872,
+      "sha256": "5f4ca555f069ba59a4c8eb83d0bc3da8488239fe4175efd290cb58613dcdeb2a"
+    },
+    {
+      "path": "sources/qlever_names.rq",
+      "bytes": 376,
+      "sha256": "d3d1846bb4821514fb25ae3d2acd8bb2b248ed0bdab041aad0249d068dd51f9a"
+    },
+    {
+      "path": "sources/qlever_p1585.json",
+      "bytes": 656116,
+      "sha256": "bb3dd9838c34f3c6630d809d328c5dd69b3f81dbab326ccfa977f33bcbc443a5"
+    },
+    {
+      "path": "sources/qlever_p1585.json.receipt.json",
+      "bytes": 488,
+      "sha256": "030e95778e0b951b1935c60ae9d1acf8090e1757d9dd29a038e645306b8a18bb"
+    },
+    {
+      "path": "sources/qlever_p1585.rq",
+      "bytes": 101,
+      "sha256": "51f4c48f2217fd230caaf19490619e7850539a86b1ba1e7332b51defd934d684"
+    },
+    {
+      "path": "sources/register.json",
+      "bytes": 3748384,
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e"
+    },
+    {
+      "path": "sources/selected_boundaries.geojson",
+      "bytes": 13301797,
+      "sha256": "5ed6a0e424eb0c33180e57e2ec27820250f4f704dcdbc4a1a6a4e0fbc76b0428"
+    }
+  ]
+}
