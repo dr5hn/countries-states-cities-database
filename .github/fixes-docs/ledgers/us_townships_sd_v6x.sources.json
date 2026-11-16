@@ -1,0 +1,553 @@
+{
+  "base_commit": "1ac7dcead105f60240e95b9919592ae531acf8ea",
+  "ledger": ".github/fixes-docs/ledgers/us_townships_sd_v6x.jsonl",
+  "ledger_sha256": "1167763ab531d70b4d8584834ec22844478579cb30f0c14fdc598029e05dd1d6",
+  "sources": [
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_cousubs_national.zip",
+      "retrieved_at": "2026-10-27T10:06:08.626364+00:00",
+      "sha256": "2225787f98a05729614a0827c805c19e2a3a79b69d62bd94ea1e07a6d4530c66",
+      "edition": "2020 Census Gazetteer national 2020_Gaz_cousubs_national.zip",
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "file": "sources/2020_Gaz_cousubs_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_cousubs_national.zip",
+      "retrieved_at": "2026-10-19T08:58:34.029278+00:00",
+      "sha256": "5b9404979bdd978f6eaf6b37dc2bd995f9aedbdbfac1fe7c98c407bc1a337f75",
+      "members": [
+        "2024_Gaz_cousubs_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_cousubs_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_place_national.zip",
+      "retrieved_at": "2026-10-27T10:06:06.843072+00:00",
+      "sha256": "6e5745b3e1adf7a1e024a988301d484697e2a0f25b3cf10114eef676f09d5c18",
+      "edition": "2020 Census Gazetteer national 2020_Gaz_place_national.zip",
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "file": "sources/2020_Gaz_place_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_place_national.zip",
+      "retrieved_at": "2026-10-19T08:58:33.854242+00:00",
+      "sha256": "cf262fc92b2326f7a8c62a89d156a60eb17d64d6d35f7a62310c43bb08972c06",
+      "members": [
+        "2024_Gaz_place_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_place_national.zip"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip",
+      "retrieved_at": "2026-10-19T08:58:33.170973+00:00",
+      "sha256": "3c337402b5c6e8d5aa26b4278ccf4edc8989f2683765b3ffbf22296cdb2df3a0",
+      "members": [
+        "2024_Gaz_counties_national.txt"
+      ],
+      "licence": "US Census Bureau; public domain (17 USC 105)",
+      "edition": "Census Gazetteer / TIGERweb ACS2024",
+      "file": "sources/2024_Gaz_counties_national.zip"
+    },
+    {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_ACS2024/MapServer/22/query?where=STATE%3D%2746%27&outFields=%2A&outSR=4326&returnGeometry=true&geometryPrecision=6&f=geojson",
+      "edition": "TIGERweb ACS 2024",
+      "retrieved_at": "2026-10-19T13:41:28.918372+00:00",
+      "sha256": "c28812c5b08c7f522ab34bea2e01cfc4e41ab5cab37b42bceb731382c6f80fe6",
+      "licence": "US Government work; public domain (17 USC 105)",
+      "feature_count": 1327,
+      "inventory_check": {
+        "gazetteer_missing": [
+          "4608969700"
+        ],
+        "tiger_extra": [],
+        "exceededTransferLimit": false
+      },
+      "file": "sources/tiger24_SD_22.json"
+    },
+    {
+      "retrieved_at": "2026-10-19T09:01:17.978041+00:00",
+      "raw_sha256": "0806bda6f2bdb1d27d1e4bc21cbafbda7cce191a103d30fab45c1adc1232ad9b",
+      "retained_sha256": "e30c54790cf5403cd95e089d190f6c41b64e3578e48cde061f15f2062c26fa61",
+      "state": "SD",
+      "url": "https://www2.census.gov/programs-surveys/decennial/2020/data/01-Redistricting_File--PL_94-171/South_Dakota/sd2020.pl.zip",
+      "member": "sdgeo2020.pl",
+      "crc32": "14a91832",
+      "compressed_bytes": 4376194,
+      "uncompressed_bytes": 39806996,
+      "compressed_sha256": "ad94130d5aed09de814d9ebe7da5df0d4ac9718f2f2a901735b05dd6531b9418",
+      "retained_rows": 2381,
+      "summary_level_counts": {
+        "040": 1,
+        "050": 66,
+        "060": 1331,
+        "140": 242,
+        "150": 694,
+        "155": 497,
+        "160": 486,
+        "280": 12,
+        "281": 52,
+        "282": 32,
+        "283": 9,
+        "285": 21,
+        "286": 7,
+        "288": 14,
+        "500": 1,
+        "510": 66,
+        "511": 242,
+        "512": 66,
+        "521": 1331,
+        "531": 487,
+        "532": 486,
+        "550": 12,
+        "553": 52,
+        "570": 1,
+        "571": 1,
+        "572": 149,
+        "610": 35,
+        "612": 90,
+        "613": 1384,
+        "614": 547,
+        "616": 20,
+        "617": 35,
+        "618": 35,
+        "619": 294,
+        "620": 37,
+        "622": 90,
+        "623": 1384,
+        "624": 549,
+        "626": 21,
+        "627": 37,
+        "628": 37,
+        "629": 297,
+        "630": 831,
+        "631": 343,
+        "633": 62,
+        "635": 831,
+        "636": 343,
+        "638": 62,
+        "640": 90,
+        "641": 90,
+        "642": 513,
+        "643": 513,
+        "700": 785,
+        "701": 1443,
+        "703": 150,
+        "704": 227,
+        "706": 785,
+        "707": 785,
+        "708": 1345,
+        "709": 1266,
+        "710": 2106,
+        "720": 2314,
+        "730": 2864,
+        "740": 3829,
+        "750": 71383,
+        "970": 149
+      },
+      "first_row": [
+        "PLST",
+        "SD",
+        "040",
+        "00",
+        "00",
+        "000",
+        "00",
+        "0000001",
+        "0400000US46",
+        "46",
+        "2",
+        "4",
+        "46",
+        "01785534",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "196345992286",
+        "3383664203",
+        "South Dakota",
+        "South Dakota",
+        "A",
+        "",
+        "886667",
+        "393375",
+        "+44.4467957",
+        "-100.2381762",
+        "00",
+        "",
+        ""
+      ],
+      "sha256": "ad94130d5aed09de814d9ebe7da5df0d4ac9718f2f2a901735b05dd6531b9418",
+      "licence": "US Census Bureau public domain, 17 USC 105",
+      "file": "sources/pl2020_SD.deflate"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2155683%7CQ2155798%7CQ2155823%7CQ2155868%7CQ2155989%7CQ2156015%7CQ2156023%7CQ2156221%7CQ2156427%7CQ2156477%7CQ2156646%7CQ2157194%7CQ2157216%7CQ2157263%7CQ2157330%7CQ2157385%7CQ2157798%7CQ2159033%7CQ2159100%7CQ2159534%7CQ2159614%7CQ2159630%7CQ2159997%7CQ2160280%7CQ2160410%7CQ2160527%7CQ2160623%7CQ2161311%7CQ2161532%7CQ2161723%7CQ2161743%7CQ2162101%7CQ2162290%7CQ2163499%7CQ2163978%7CQ2164076%7CQ2164294%7CQ2164776%7CQ2165375%7CQ2165400%7CQ2165520%7CQ2165777%7CQ2166035%7CQ2166239%7CQ2166527%7CQ2166633%7CQ2166789%7CQ2166832%7CQ2166838%7CQ2166903&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=10",
+      "ids": [
+        "Q2155683",
+        "Q2155798",
+        "Q2155823",
+        "Q2155868",
+        "Q2155989",
+        "Q2156015",
+        "Q2156023",
+        "Q2156221",
+        "Q2156427",
+        "Q2156477",
+        "Q2156646",
+        "Q2157194",
+        "Q2157216",
+        "Q2157263",
+        "Q2157330",
+        "Q2157385",
+        "Q2157798",
+        "Q2159033",
+        "Q2159100",
+        "Q2159534",
+        "Q2159614",
+        "Q2159630",
+        "Q2159997",
+        "Q2160280",
+        "Q2160410",
+        "Q2160527",
+        "Q2160623",
+        "Q2161311",
+        "Q2161532",
+        "Q2161723",
+        "Q2161743",
+        "Q2162101",
+        "Q2162290",
+        "Q2163499",
+        "Q2163978",
+        "Q2164076",
+        "Q2164294",
+        "Q2164776",
+        "Q2165375",
+        "Q2165400",
+        "Q2165520",
+        "Q2165777",
+        "Q2166035",
+        "Q2166239",
+        "Q2166527",
+        "Q2166633",
+        "Q2166789",
+        "Q2166832",
+        "Q2166838",
+        "Q2166903"
+      ],
+      "edition": "Wikidata live item statements; P590/P774/P31",
+      "retrieved_at": "2026-10-19T14:29:04.700511+00:00",
+      "sha256": "294d04a4d167b802baafbfd7b2513e7865b475cde97a8d45fc4f800aea488345",
+      "user_agent": "CSC-US-identity-audit/2.0 (https://github.com/dr5hn/countries-states-cities-database; research evidence)",
+      "licence": "Wikidata structured data CC0",
+      "file": "sources/wikidata_own_0220.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2628383%7CQ2628682%7CQ2629463%7CQ2629803%7CQ2630045%7CQ2630395%7CQ2630411%7CQ2630701%7CQ2630853%7CQ2634302%7CQ2635000%7CQ2635319%7CQ2636741%7CQ2637332%7CQ2637921%7CQ2638305%7CQ2638395%7CQ2638417%7CQ2638470%7CQ2639776%7CQ2640064%7CQ2640145%7CQ2640228%7CQ2640552%7CQ2640843%7CQ2641162%7CQ2641272%7CQ2641897%7CQ2641980%7CQ2642177%7CQ2644015%7CQ2644229%7CQ2644347%7CQ2646414%7CQ2646550%7CQ2647229%7CQ2648039%7CQ2648220%7CQ2648248%7CQ2648622%7CQ2648949%7CQ2649652%7CQ2649771%7CQ2650031%7CQ2650126%7CQ2650963%7CQ2651428%7CQ2651543%7CQ2651630%7CQ2651966&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=10",
+      "ids": [
+        "Q2628383",
+        "Q2628682",
+        "Q2629463",
+        "Q2629803",
+        "Q2630045",
+        "Q2630395",
+        "Q2630411",
+        "Q2630701",
+        "Q2630853",
+        "Q2634302",
+        "Q2635000",
+        "Q2635319",
+        "Q2636741",
+        "Q2637332",
+        "Q2637921",
+        "Q2638305",
+        "Q2638395",
+        "Q2638417",
+        "Q2638470",
+        "Q2639776",
+        "Q2640064",
+        "Q2640145",
+        "Q2640228",
+        "Q2640552",
+        "Q2640843",
+        "Q2641162",
+        "Q2641272",
+        "Q2641897",
+        "Q2641980",
+        "Q2642177",
+        "Q2644015",
+        "Q2644229",
+        "Q2644347",
+        "Q2646414",
+        "Q2646550",
+        "Q2647229",
+        "Q2648039",
+        "Q2648220",
+        "Q2648248",
+        "Q2648622",
+        "Q2648949",
+        "Q2649652",
+        "Q2649771",
+        "Q2650031",
+        "Q2650126",
+        "Q2650963",
+        "Q2651428",
+        "Q2651543",
+        "Q2651630",
+        "Q2651966"
+      ],
+      "edition": "Wikidata live item statements; P590/P774/P31",
+      "retrieved_at": "2026-10-19T14:30:17.268834+00:00",
+      "sha256": "ab6ee4f257fbe5c1f8195d171aa3411a4f49c705d968494068d4af458f7bb38d",
+      "user_agent": "CSC-US-identity-audit/2.0 (https://github.com/dr5hn/countries-states-cities-database; research evidence)",
+      "licence": "Wikidata structured data CC0",
+      "file": "sources/wikidata_own_0263.json"
+    }
+  ],
+  "reviewed_ledger_guards": {
+    ".github/fixes-docs/ledgers/us_places_v5x.jsonl": "1e66364164cc1c793b3cf61c637d618406e7acebb0379179514d6c84feeaacfe",
+    ".github/fixes-docs/ledgers/us_places2_v5x.jsonl": "dee6bb692445d746ccae5bba10aeb56997f68bbad34af8125cbb338a31f63f7a",
+    ".github/fixes-docs/ledgers/ne_towns_v5.jsonl": "7d597759fcf75bd1f95f8c3846f68f6c651baaba2b41ed1b71ac31597b33c67e",
+    ".github/fixes-docs/ledgers/us_mcd_links_v5x.jsonl": "4046dffa87169b8c3f3b13a23e725f79130080c307868ce469336a2bbd88c391"
+  },
+  "method": "2020 FUNCSTAT A town/township/charter township/plantation inventory union newly active 2024 units. Match reviewed own GEOID, own-item P774/P882, or exact normalized name/county/valid polygon point with no namesake place; ambiguous candidates held. 2024 Gazetteer internal point checked inside unmodified valid ACS2024 own MCD; exact 2020 PL060 POP100. Village/CDP/borough links use all PL750 blocks including water and empty blocks; entire statewide relation must have one MCD. No existing nonnull conflicting parent replaced. Build 6 removes the NAME suffix admission filter: every FUNCSTAT A GEOID in either Gazetteer has a disposition. Previously omitted identities are explicitly held for review. All related existing place classes receive dispositions, retaining split block parts.",
+  "timezone": {
+    "package": "timezonefinder 9.2.0; timezonefinder-data 4.2026.6",
+    "licence": "Timezone boundary data ODbL 1.0, based on OpenStreetMap; database shares CSC ODbL licence",
+    "url": "https://github.com/jannikmi/timezonefinder",
+    "method": "Timezone lookup at Census internal point only; no coordinates copied from timezone data.",
+    "data_manifest_sha256": "2788e58d0a78eaba9312f94db860949f2c7421aa99cf9fbcd98b4bdbc38e3d67",
+    "data_files": [
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/__init__.py",
+        "sha256": "01bec55165cb7a6f6e5676fe33acc76d3ed93c48a25b0b6cf25bba09f4956874",
+        "bytes": 1486
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_bases.npy",
+        "sha256": "2b6a5d70f26722aad1e7a390d198a5f51bc8b8ea6d6574204b2b42e0dd557d07",
+        "bytes": 254160
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_offsets.npy",
+        "sha256": "e582e019d6a04558eeabbcc8f53191e9d94d055156990165b62965ca156979b4",
+        "bytes": 5556
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_ranges.npy",
+        "sha256": "db704813bb61b9e9e9216cfb25ba1f3b41f0a81ab2bc2b09d3f4c73e149def67",
+        "bytes": 508192
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/block_widths.npy",
+        "sha256": "2ee5492113adcca897a621ae4f2e483648f84edae774824b507279c0364992cf",
+        "bytes": 127144
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/coordinates.bin",
+        "sha256": "d727a8ffa9d2330316fd335d69f11a975579ebd9ead2ee73c1b83db243f02b7f",
+        "bytes": 32135984
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/nr_vertices.npy",
+        "sha256": "22e30c0d05070d1fd4ed95e741e7ca5deab87d8a47044953e63635dee5241700",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/xmax.npy",
+        "sha256": "8d7d9160ac9e04102ee0e68fa43d3b366ade1c4eb2aad4f81e35513553f53268",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/xmin.npy",
+        "sha256": "28a5791223af55c8fb86d9005a9c06160011362a555c6caf142c4a63440c8ff8",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/ymax.npy",
+        "sha256": "52bfab6c332c6d386daeab878dde8bdfe1c7ecb14652ed3b6b2804e2ac6347e9",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/boundaries/ymin.npy",
+        "sha256": "e6da02592c22d11e42d28c69271a111fb43e4db94471691666a09a7990a13d20",
+        "bytes": 5552
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/data_version.txt",
+        "sha256": "9f9a9e6bfd18cd6a0a4d65764931072577edcbb731981a068ef52bba6615b1de",
+        "bytes": 6
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/hole_registry.json",
+        "sha256": "14a16c89a94d615066e2d3c450bf41037413ba4e178b9d71584155cad20d1cc1",
+        "bytes": 3162
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_bases.npy",
+        "sha256": "0804d038803103803f71b306d9894e87f0ff3723d0811cf329f4fedc76147d4f",
+        "bytes": 836
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_offsets.npy",
+        "sha256": "c6803f6b47e8f60f612a2de0942e6f65db5ccd5f5f1c0b2db0599662001dc6b6",
+        "bytes": 244
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_ranges.npy",
+        "sha256": "41f85c750fbe831aee5ad6077c8aea988033bbd7c0c7a99994ed629cc0ad4008",
+        "bytes": 1544
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/block_widths.npy",
+        "sha256": "5c79ae37f52e3f99615c2591afc16c0136a1932a34cd6feb6ddb9c10f5171035",
+        "bytes": 482
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/coordinates.bin",
+        "sha256": "953be0beac49ffef01e3462d5917a6a111dfcb582f1613b16b0182282b2b6f5e",
+        "bytes": 95220
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/nr_vertices.npy",
+        "sha256": "e726d83f11e15a4fb8b22a475e6792dcac1b75435ab0f87adca9c38a217ef3f6",
+        "bytes": 240
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/poly_ref.npy",
+        "sha256": "dfb4256a1eb2ffe0a729f4cdaf0cc1f7b41b146775f84c8c90c264e41b1eac4d",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/xmax.npy",
+        "sha256": "356aaec9a0a808d46ab6bd3c85975ebb0126e324d23a48a90c0f693ff079d5a0",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/xmin.npy",
+        "sha256": "44ad2d9d73deb9069d84f4e7c0d65b57d98df2e297fae2a8fb7ed63d227c3c4e",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/ymax.npy",
+        "sha256": "04df4cdba17836772d9062d5569a024743cbf6830738ef2fbf49a4e71340493d",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/holes/ymin.npy",
+        "sha256": "fbafba55e8306b5b4b88fcf27385d733a89885b6789233df64d855c58cdfc939",
+        "bytes": 3296
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/schemas/polygons.fbs",
+        "sha256": "b9a0d198b4e22ce5fa33b607822162562403119d13e35e5cf06707de52e95c0a",
+        "bytes": 533
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/shortcuts.bin",
+        "sha256": "a6b4d1df1e83138593dca6e2f1f0d88f294f945395545bccc3d368dd3102683c",
+        "bytes": 694560
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/timezone_names.txt",
+        "sha256": "8625e551d30b2b56842c5d4bcb461ca2d3254dd04ba3c4e4b243e93f2594cda6",
+        "bytes": 7149
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/zone_ids.npy",
+        "sha256": "8b72ce2b6b77276ca61fb7d6a84657d114848c98ac84480b1aa8b0f54e57fab5",
+        "bytes": 2840
+      },
+      {
+        "file": "venv/lib/python3.15/site-packages/timezonefinder_data/data/zone_positions.npy",
+        "sha256": "5a81107f975eb13ddd540a5dd7083eab835183fb3ed39b97775477f514518af3",
+        "bytes": 1018
+      }
+    ]
+  },
+  "coverage": {
+    "subdivisions": 906,
+    "matched": 0,
+    "added": 889,
+    "held_subdivisions": 17,
+    "place_rows": 1,
+    "linked": 1,
+    "held_place_rows": 0,
+    "already_linked": 0,
+    "typed_place_spatial_review_count": 11
+  },
+  "port_stack": [
+    "NE_v6b"
+  ],
+  "derived_relationship_sha256": "6903fd892f309828c89fa2f767020d3699f01f68dd31c5fd02ad1eb36ea058a8"
+}

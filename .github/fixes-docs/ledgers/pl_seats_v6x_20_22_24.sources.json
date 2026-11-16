@@ -1,0 +1,358 @@
+{
+  "supplemental_identity_sources": [
+    {
+      "path": "supplemental_wikidata_0.json",
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q9283985|Q9390753&props=claims&format=json",
+      "sha256": "cabae1d2ed896b700edf9f6203940799cdb029d68150985d4d1298c416532bbb"
+    }
+  ],
+  "base_commit": "13be8952ca0c71317671f4162507e65d93b84eb6",
+  "research_commit": "3fa5318a6633aeced39af859ba78975dd500f619",
+  "sources": [
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/new_entities.json",
+      "sha256": "a6b6b1f47f5435a2c6ea1444b700848f4adc4ddddc5a3b1b93f4b66950f592d0",
+      "bytes": 59043181
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.cpg",
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "bytes": 5
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.cpg.meta.json",
+      "sha256": "cb24afd2a5f0f844efd947c36917b382d94dc85f1e18d4950fcd753e474acaa2",
+      "bytes": 749
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.dbf",
+      "sha256": "8158ebba602d395d20979331ea2a8ccc9b6b011839b0c4acd6ff9ab785350f62",
+      "bytes": 3114554
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.dbf.meta.json",
+      "sha256": "777c4d0d8a1527cf6dbfa3a74d61be168edae4492b4f26f40e1af74fb770550c",
+      "bytes": 756
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.prj",
+      "sha256": "1d73d2a118be0020575764d43a69c16a11d0cecfae4a5a6499179943a5343486",
+      "bytes": 147
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.prj.meta.json",
+      "sha256": "1a060901a9f1a0cc7d6042571e8f327823e5dddbdd680bf63f9a6310c634c46c",
+      "bytes": 751
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shp",
+      "sha256": "1ad3461c774625ede261e183dcc841605eab76b82185f7831c392bcb60233ac5",
+      "bytes": 83485764
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shp.meta.json",
+      "sha256": "dac235ba4dfa0575082740747bc687244edb62ce3dd2b89268e1e3dcf621ea17",
+      "bytes": 757
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shx",
+      "sha256": "b39239b7d4987671bee89f98422a078869e40fae6edbcf94754d7c9f6d4d43d2",
+      "bytes": 19932
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/prg_members/A03_Granice_gmin.shx.meta.json",
+      "sha256": "36048173fe4be712b2a21f2d25109acdd099acfb5992e94c207f82797ec07754",
+      "bytes": 754
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/simc_current.zip",
+      "sha256": "d33bea2f9f5f01dd088ab074cb95cc85b5a1a378f4d3944ba3a9fd6a365e1830",
+      "bytes": 3349777
+    },
+    {
+      "path": "runs/specs/pl_gminy_v5x/work/sources/terc_current.zip",
+      "sha256": "6b5c4cce90121de7a736fbd61398caebc3274e9825fcc382aa0afecc00aa7cfc",
+      "bytes": 132055
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/identity_entities.json",
+      "sha256": "b48d098c53b24eae6da11b1d8c1967e9975faa3d3153551a648cccbd6e050801",
+      "bytes": 73723227
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/population2026_normalized.json",
+      "sha256": "559e091bdc17e19e9f5c45895ead8615e0fb3a0e124156cccf31c52cca41714a",
+      "bytes": 854989
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_000.json",
+      "sha256": "58d07d5b83422cfb0ad8deedf8cb636ac5bccde5e419bf036e6499803ef4de88",
+      "bytes": 10545
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_001.json",
+      "sha256": "feeae6f9e6841bb40594827f5dc2da8673de8dda778e71ae2612bae846ffb04f",
+      "bytes": 10628
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_004.json",
+      "sha256": "b02029618eda0b16580786120c74df6c8012eec78a204f1a456fb93a3cc413c4",
+      "bytes": 10626
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_006.json",
+      "sha256": "466a24f3fa58c1c52be1d456526da126241a052a4ab9b6981f6c2d8ef93016a6",
+      "bytes": 10601
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_007.json",
+      "sha256": "9d55eaa61e62f50161cc0a688b551bb55f84d951e575091df0f2ab3edd536cab",
+      "bytes": 10658
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_008.json",
+      "sha256": "a1f7b73b263de13226704b63fbc73727ceba0232cbc01ea347e11ed15174d52b",
+      "bytes": 10642
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_009.json",
+      "sha256": "2e7f3ed75e1eb154a1a54433a4e9c5fa0e7f5b8a6b3d3d8591d8bf7ac4455d81",
+      "bytes": 10700
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/census_0124_010.json",
+      "sha256": "dac35c0bca40b873a1fb4e66fe2d6a03a93767f5b7f98a7eeb0a9c1da61dfa33",
+      "bytes": 10610
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/population2026.zip",
+      "sha256": "e2dbf0869c9423f4986b8994eb39c8b45ead0fc09d025df8f570bd8563c03741",
+      "bytes": 10358403
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2021_stat.zip",
+      "sha256": "1b7db3fd7af3391c8e387092164253732f3d0ce2f2a07c43e9f1dcba3b8e28fd",
+      "bytes": 4530590
+    },
+    {
+      "path": "runs/specs/pl_pop_v5x/work/sources/simc2026.zip",
+      "sha256": "a83f8b13f4baee60933e78d7911ada7c4dc19eaef686d68dac7187da3d70a0ee",
+      "bytes": 3349779
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL.json",
+      "sha256": "7ba36b9161e7a0a91ba29ef466ac870c8ca05bcafb8daa89475346ff96e6f257",
+      "bytes": 4390729
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_counties.json",
+      "sha256": "9d252bfb298da7077b74d0f0756be7b6a5ec0661b913ffe78b0c7190cf6e9569",
+      "bytes": 158988
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_seats_2017.pdf",
+      "sha256": "25647323113857f04cbcf5490c1b3117907d944500d1d8dae9dbe2985e4f77c1",
+      "bytes": 1327371
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/PL_seats_2017.txt",
+      "sha256": "089d75d49f7125fd60a3c3239620313463c8a756877f0942380282d8b8df0b28",
+      "bytes": 215085
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/geonames_readme.txt",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "bytes": 8843
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_000.json",
+      "sha256": "be536fe0f7d7c2b085bf75cbfef63be6f2008d19901fa7b62bff204a33103d13",
+      "bytes": 714482
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_000.meta.json",
+      "sha256": "c5cb8e0a1fa6ed0ee9f7e2f45c50d19dcafaa8197cc312b78da813f7855cf01e",
+      "bytes": 682
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_001.json",
+      "sha256": "174dcd07846220b6d994d3818dc7b4c0cf261f07cedeee7693373463ef14bb5d",
+      "bytes": 729156
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_001.meta.json",
+      "sha256": "69c9412f5bfdc98110f46b7eef358eb95dc3563219e11384a19d82b5a57d7644",
+      "bytes": 687
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_002.json",
+      "sha256": "3e615ac9fc3fb93c05571cdfb0419ee92443882d87ff2e62025c959b114c9c6d",
+      "bytes": 691110
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_002.meta.json",
+      "sha256": "f8f791fca1f04bcdc842e369459bed18dfc56f7a596b16d10226cd9e5620398b",
+      "bytes": 686
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_003.json",
+      "sha256": "6d68a10bf9d938bc0faf09cdc8ba209becc90528af85282cae32f0fbcf1c9ecb",
+      "bytes": 749004
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_003.meta.json",
+      "sha256": "32e763effee0f0b1d8c4655f64fce72f50a951e98912e89dcf17ad70b0ab3192",
+      "bytes": 666
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_004.json",
+      "sha256": "eee707fc389a77aa21a0374451eac9a9d35e8802d34933face2be92894137a06",
+      "bytes": 647466
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_004.meta.json",
+      "sha256": "db27c7eda151456451b9318c0c03fa4adceca68f9747ddd7371e797035d09c54",
+      "bytes": 664
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_005.json",
+      "sha256": "d980519ce9f4b0c125debc3f687eda2f249ab8d209dd2280c8faae1acdf1b417",
+      "bytes": 662062
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_005.meta.json",
+      "sha256": "9b56843d92efbe0d559d462f3c0b50ee5ad8729d21825bcef4fb94630436d615",
+      "bytes": 648
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_006.json",
+      "sha256": "40ffb977c51d32b80b85bf451f7e43a6b3ede5e2226fc62f018584430352b5b0",
+      "bytes": 499983
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_006.meta.json",
+      "sha256": "e979ab1ebd4271b019b886c1a37c0e1e52b3adee640bb4566c1842ae36fcdae8",
+      "bytes": 527
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_round2_000.json",
+      "sha256": "0382e10566f6f2ebd3d3f15737a9f0591501bb408d4b792e81575419e0000704",
+      "bytes": 149781
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_codeitems_round2_000.meta.json",
+      "sha256": "0f838ea46dd87219d79265d786a4356300884fb4813827a5e03cf075c9ead3e5",
+      "bytes": 368
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_000.json",
+      "sha256": "3e99e69e70d6c2318eac2a1ab02fdbf0db2a345eccaab092c92c6d2954d52f3b",
+      "bytes": 809800
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_000.meta.json",
+      "sha256": "495b3e21aa15f056419c5d2778cf3cc5702557b603d593518f9afc0c7ac87981",
+      "bytes": 709
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_001.json",
+      "sha256": "f2a26fa1f832f53b09adaf3e24ed9147fe47f80bce8e20c419730c3a9e6622d3",
+      "bytes": 740875
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_001.meta.json",
+      "sha256": "834045155c9a8479ff881ce18c157534710a91bb2cfb0a7308465d805337e46d",
+      "bytes": 718
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_002.json",
+      "sha256": "5649558c907a65ccb343bb637fce77f873d69d4969ad799cfcac5cb93d9c7d8a",
+      "bytes": 861889
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_002.meta.json",
+      "sha256": "b026f8dcf6afde50fb6d54212acc426feb1fd5947d45847bc238b7391b9ce438",
+      "bytes": 716
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_003.json",
+      "sha256": "94c90cd22236eaad1bb7add41bc7689fa017001a8db1936d68a8fc9c4da0af1a",
+      "bytes": 746310
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_003.meta.json",
+      "sha256": "701ebe961d018b06555b0eb94e8d2257a5a2dd30abc5ffbc3b76e8cb35a75703",
+      "bytes": 686
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_004.json",
+      "sha256": "6b1afcd924f88cb2333dcc588138364725a698c200bb4f006107d57ab35a0af1",
+      "bytes": 727887
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_004.meta.json",
+      "sha256": "27c4a355e10b8ee4b8db7943480767585d3858a9db09cc892f7ebd081c466646",
+      "bytes": 681
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_005.json",
+      "sha256": "5b736cd2bd7f14587414af8245e934a42d362d81f65073b8f76a83ed02525707",
+      "bytes": 714897
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_005.meta.json",
+      "sha256": "a184b6aacdda42e16560f54437aff1c9d56f000922e248b8c533648613ed1759",
+      "bytes": 673
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_006.json",
+      "sha256": "2be074480288f135bca01b860f3b94b20ef58af3999329fbaf9ce1ab78052e1d",
+      "bytes": 838922
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_006.meta.json",
+      "sha256": "88971a6b7cf9ee4d4743cb5d37ac66245e4b8a376c113e156ea62fac3ef8937f",
+      "bytes": 651
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_007.json",
+      "sha256": "7ae6ba28c526754b068bfe2563e486349057ac1e59218bdbaf35463df76ccc40",
+      "bytes": 772860
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_007.meta.json",
+      "sha256": "86d312980b912bd9e185b6aab96cae88ee412b211fecf7ddcc5d8b9911b5365f",
+      "bytes": 647
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_008.json",
+      "sha256": "447ea8339bcd56bc7f2b3e99197584fddf978dafaa249a270f698bd396f10dde",
+      "bytes": 251983
+    },
+    {
+      "path": "runs/specs/ro_pl_seats/work/sources/wd_seats_008.meta.json",
+      "sha256": "2f642216801fb1677cb62973de5becf4e9b1f3c75011bafa40843773216c9ff7",
+      "bytes": 357
+    },
+    {
+      "path": "runs/specs/v6_filter_places/work/PL_geonames.meta.json",
+      "sha256": "43edf2bf9fcfe5de1e6c06b55ccb1c5caf60462ff822d0e33a26c395364108aa",
+      "bytes": 217
+    },
+    {
+      "path": "runs/specs/v6_filter_places/work/PL_geonames.zip",
+      "sha256": "a37445875577f7e354e5b8f16376352ddfecb28ea9e119472d5bfe2ae22d1c4a",
+      "bytes": 2044806
+    }
+  ],
+  "input_sha256": {
+    "addition_candidates.json": "2ea453661e8ae0d43839f4dd836fb3f891bf16a85b0b382c08a0f93224c05cab",
+    "crosswalk.json": "7b36d56460c58623eab16b40b06731adef08714c294ed29a5c217edb33292b3b",
+    "facts.json": "8e5006ae5689b6b6a8944bdcbcc910ecd3bbbb35bee72e099db23f478011c534",
+    "source_hashes.json": "d120100f95c920a958e9dab79df7a11435cf77d280673c07c109413bc65c559a"
+  },
+  "records": 74,
+  "attribution": "GUS TERYT TERC/current SIMC registers and legal seat list (source attribution); Wikidata contributors (P1653/P36/P4046/P625/P1082, CC0 1.0); GUS NSP2021 own-locality census tables (source attribution); GUS 2026 own town-component population tables (source attribution); GeoNames (CC BY 4.0, fallback settlement points only)",
+  "pr": 2214,
+  "full_ledger_sha256": "724e127440eabd504108a21b9e0f851c02d0f29c8ca14fa6d4d72f98fa70828e"
+}

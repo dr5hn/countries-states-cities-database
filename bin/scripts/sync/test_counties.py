@@ -135,6 +135,12 @@ class CountySyncTests(unittest.TestCase):
         self.assertEqual(self.importer.import_counties(), 1)
         self.assertNotIn('state_name', stored[0])
         stored[0]['latitude'] = '31.00000000'
+        for field in ('created_at', 'updated_at'):
+            if field in source:
+                from datetime import datetime
+                stored[0][field] = datetime.fromisoformat(source[field])
+        if 'flag' in source:
+            stored[0]['flag'] = 1
         syncer = MySQLToJSONSync.__new__(MySQLToJSONSync)
         syncer.cursor = Mock()
         answers = {'DISTINCT': [{'country_code': 'US'}], 'FROM countries': self.countries, 'FROM states': self.states,
@@ -148,6 +154,28 @@ class CountySyncTests(unittest.TestCase):
         self.assertEqual(json.loads(self.file.read_text()), [dict(source, latitude='31.00000000')])
         self.assertTrue(self.file.read_text().endswith('\n'))
 
+
+    def test_source_dates_survive_import_and_sync(self):
+        """Importer passes source dates; sync serializes MySQL datetime values without losing flag."""
+        self.county.update(created_at='2019-01-25T06:12:21', updated_at='2026-10-08T10:17:06', flag=1)
+        self.importer.get_table_columns.return_value = {key: '' for key in self.county}
+        self.test_import_sync_round_trip_preserves_non_database_fields()
+
+    def test_missing_dates_keep_existing_default(self):
+        """A new county without dates still receives the existing importer timestamp default."""
+        from datetime import datetime
+        with patch.object(importer_module, 'datetime') as clock:
+            clock.now.return_value = datetime(2026, 11, 14, 12, 0, 0)
+            for field in ('created_at', 'updated_at'):
+                self.assertEqual(self.importer.prepare_value(None, field), '2026-11-14 12:00:00')
+                self.assertEqual(self.importer.prepare_value('2019-01-25T06:12:21', field), '2019-01-25T06:12:21')
+
+    def test_parent_restoration_preserves_source_updated_at(self):
+        """The second pass links parents without triggering the ON UPDATE timestamp."""
+        self.county.update(parent_id=2)
+        self.importer.import_counties([self.county])
+        self.importer.cursor.executemany.assert_any_call(
+            'UPDATE counties SET parent_id = %s, updated_at = updated_at WHERE id = %s', [(2, 1)])
 
 if __name__ == '__main__':
     unittest.main()

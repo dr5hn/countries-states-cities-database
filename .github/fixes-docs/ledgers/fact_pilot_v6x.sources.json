@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q54920087.json",
+      "sha256": "737b37fc56788e906678a1a6396ba11ff313e22a4e5fee954668897990d4cdd2",
+      "bytes": 8760,
+      "retrieved_at": "2026-11-14T03:22:07.322634+00:00",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/fact_pilot/work/sources/Q54920087.json"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q207625.json",
+      "sha256": "3904200197cfff540ba9d9ea01dce82f8017ea8b774725d99876a677a43525e2",
+      "bytes": 57848,
+      "retrieved_at": "2026-11-14T03:22:07.594829+00:00",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/fact_pilot/work/sources/Q207625.json"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4855732.json",
+      "sha256": "b242a7e5e5e01f3d1970db37552bbd0bbea77e4d0c57a425940e7d2d96042ba4",
+      "bytes": 8597,
+      "retrieved_at": "2026-11-14T03:22:07.322812+00:00",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/fact_pilot/work/sources/Q4855732.json"
+    },
+    {
+      "url": "https://data.iana.org/time-zones/tzdb/zone.tab",
+      "sha256": "e2e8e31c4e10f44576c79345e76060591dbb3eef6ce14e006afc8a373caa9593",
+      "bytes": 18809,
+      "retrieved_at": "2026-11-14T03:22:07.381550+00:00",
+      "licence": "Public domain",
+      "retained_path": "runs/specs/fact_pilot/work/sources/zone.tab"
+    },
+    {
+      "url": "https://data.iana.org/time-zones/tzdb/LICENSE",
+      "sha256": "0613408568889f5739e5ae252b722a2659c02002839ad970a63dc5e9174b27cf",
+      "bytes": 252,
+      "retrieved_at": "2026-11-14T03:22:07.037415+00:00",
+      "licence": "Public domain",
+      "retained_path": "runs/specs/fact_pilot/work/sources/tz-LICENSE"
+    },
+    {
+      "url": "https://www.gazzettaufficiale.it/eli/id/2021/06/16/21G00091/sg",
+      "sha256": "dc6ae730b159e1521c9fe77709d56dc493de6661d8b0f60b278d5afd3b3478e6",
+      "bytes": 17634,
+      "retrieved_at": "2026-11-14T03:22:46.155445+00:00",
+      "licence": "Italian official legislative text; factual legal citation only, no points",
+      "retained_path": "runs/specs/fact_pilot/work/sources/law-detail.html"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/MX.zip",
+      "final_url": "https://download.geonames.org/export/dump/MX.zip",
+      "status": 200,
+      "retrieved_at": "2026-11-06T08:53:40.951983+00:00",
+      "licence": "CC BY 4.0",
+      "sha256": "adbeb5f458faf2d2cc14b7b703cab2231090d4a33eab9b61236d9e925174b98f",
+      "bytes": 15122038,
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 08:53:37 GMT",
+        "Last-Modified": "Fri, 06 Nov 2026 02:47:37 GMT",
+        "ETag": "\"e6be76-65f92a290f74c\"",
+        "Content-Type": "application/zip"
+      },
+      "retained_path": "runs/specs/fact_pilot/work/sources/geonames_MX.zip"
+    },
+    {
+      "url": "https://download.geonames.org/export/dump/readme.txt",
+      "final_url": "https://download.geonames.org/export/dump/readme.txt",
+      "status": 200,
+      "retrieved_at": "2026-11-06T08:54:44.153564+00:00",
+      "licence": "CC BY 4.0",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "bytes": 8843,
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 08:54:44 GMT",
+        "Last-Modified": "Fri, 06 Nov 2026 02:41:22 GMT",
+        "ETag": "\"228b-65f928c3c7cf0\"",
+        "Content-Type": "text/plain; charset=utf-8"
+      },
+      "retained_path": "runs/specs/fact_pilot/work/sources/geonames_readme.txt"
+    },
+    {
+      "file": "ageeml_localidades_with_bajas.csv",
+      "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPLOCAGEML/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F08%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1",
+      "retrieval_started_at": "2026-10-12T04:06:30.379033+00:00",
+      "transport": "European Data Portal public download proxy",
+      "transport_url": "https://data.europa.eu/proxy?uri=https%3A%2F%2Fwww.inegi.org.mx%2Fapp%2Fapi%2Fcateml%2FcatuniAPI%2FEXPLOCAGEML%2F%3Fnquery%3D1%26entidad%3D00%26busqueda%3Dcve_ent%253D00%26fecha%3D01%252F08%252F2026%26forNom%3D3%26ri%3D0%26rf%3D600000%26orden%3D0%2Basc%26union%3D1%26type_%3D2%26encodingType%3D1",
+      "status": 200,
+      "content_type": "text/csv",
+      "bytes": 70143464,
+      "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+      "retrieval_finished_at": "2026-10-12T04:08:03.071116+00:00",
+      "source_id": "ageeml_localidades_with_bajas.csv",
+      "path": "sources/ageeml_localidades_with_bajas.csv",
+      "retained_from": "research/mx_pilot/work_mx_pilot_3/ageeml_localidades_with_bajas.csv",
+      "retrieved_at": "2026-10-12T04:08:03.071116+00:00",
+      "licence": "INEGI Terms of Free Use; spelling and own-code evidence only; no point copied",
+      "retained_path": "runs/specs/fact_pilot/work/sources/ageeml_localidades_with_bajas.csv"
+    },
+    {
+      "url": "https://situas.istat.it/web/#/home/in-evidenza?id=129&dateFrom=1991-01-01",
+      "retrieved_at": "2026-10-08 (archived original retrieval date)",
+      "edition": "1991-01-01 through 2026-10-08",
+      "sha256": "174d0610a94354c67033d4a99089c6012b2fa421143b292d39a0fcc4678d4157",
+      "bytes": 1775954,
+      "licence": "ISTAT CC BY 4.0; administrative variation facts only; no point copied",
+      "retained_path": "runs/specs/fact_pilot/work/sources/situas_variations.json"
+    }
+  ],
+  "point_policy": "No coordinate changed or copied. All original points retained."
+}

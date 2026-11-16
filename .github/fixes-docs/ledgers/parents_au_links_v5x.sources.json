@@ -1,0 +1,47 @@
+{
+  "ledger": "parents_au_links_v5x.jsonl",
+  "records": 411,
+  "base_commit": "198b0321b3e5535ebba41d2c2cd51df3b420d8ec",
+  "full_ledger_sha256": "3091a58b693015bd1db20b39974d818bcaa2fed7f3c5b7ab9f1b185a7655a56c",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Official own code/state and immediate direct tier; strict raw-parent point containment; current complete-row and incoming-edge guards; existing non-null parent/county links preserved. New territorial records are excluded by the unchanged settlement queries.",
+    "Current raw official own-code/name/state/point proof identifies the entity. Original v4 name/state/country/point identify the same place even where a later reviewed item correction changed its item; alternatively the unchanged own item/name/state/country identifies the same entity across reviewed point corrections. Saint/St is the sole explicit name abbreviation.",
+    "Literal SAL/LGA own-item codes, state and raw geometry disambiguate official display names. Strip only the ABS state/area qualifier and LGA legal designators, The/and, or South East/Se; retain complete official names in the ledger."
+  ],
+  "sources": [
+    {
+      "bytes": 40731005,
+      "edition": "ASGS Edition 3 LGA 2025",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_acc3015a0ac7_archive_LGA_2025.zip",
+      "retrieved_at": "2026-10-09T06:32:04.397736+00:00",
+      "sha256": "acc3015a0ac78ade978c41a2e4110269b5219b60d6a56cbb70393ae647f31b15",
+      "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/LGA_2025_AUST_GDA2020.zip"
+    },
+    {
+      "bytes": 104064114,
+      "edition": "ASGS Edition 3 SAL 2021",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_1284f6aa4a5e_SAL_2021.zip",
+      "retrieved_at": "2026-10-09T06:32:08.595402+00:00",
+      "sha256": "1284f6aa4a5eedbe6d0b8c71099494f634d59f1500532c1944b8227b4d1474ca",
+      "url": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/SAL_2021_AUST_GDA2020_SHP.zip"
+    },
+    {
+      "bytes": 6310633,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/AU_reach_query.json",
+      "retrieved_at": "2026-11-06T08:30:32.326401+00:00",
+      "sha256": "e0356946d1f10225e7d4aa8f3bbe43e8aa05b5dcf662efbc71cf90ecfd90c75c",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fparent+%3FparentCode+WHERE+%7B+%3Fitem+wdt%3AP10112+%3Fcode%3B+wdt%3AP131+%3Fparent.+%3Fparent+wdt%3AP10112+%3FparentCode.+FILTER%28STRSTARTS%28%3Fcode%2C%22SAL%22%29+%26%26+STRSTARTS%28%3FparentCode%2C%22LGA%22%29%29+%7D&format=json"
+    }
+  ],
+  "cohort": "au_links",
+  "candidate_count": 411,
+  "held_by_reason": {},
+  "source_currentness": "Official ABS SAL 2021/LGA 2025, ISTAT 2021 localities/2026 boundaries, refreshed CBS 2026/PDOK and literal Wikidata parent statements. INEGI ordinary direct endpoints timed out on 6 Nov 2026; retained June/August 2026 catalogues keep original 12 Oct capture dates. No live-current INEGI claim or access workaround.",
+  "scope_exclusions": "1395 AU/IT addition-dependent reach children and 21 pilot holds remain outside all seven cohorts; full disposition in work/excluded_scope.json.",
+  "identity_event_policy": "Current active unresolved keys require explicit reviewed v4 continuity; no structural reach implies identity approval."
+}

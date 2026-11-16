@@ -1,0 +1,1645 @@
+{
+  "schema_version": 1,
+  "title": "top15_items_build_1",
+  "country": "CN",
+  "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+  "ledger": ".github/fixes-docs/ledgers/cn_items_v6x.jsonl",
+  "ledger_sha256": "c3a4e26831ba43bd8960f0e659f315a0621d3b8be08035ae0f27fd5e1b8d3ef8",
+  "counts": {
+    "country": "cn",
+    "total": 4104,
+    "looked_up": 2679,
+    "coded": 1124,
+    "before_items": 1425,
+    "admitted": 31,
+    "held": 2648,
+    "before_pct": 34.72222222222222,
+    "after_pct": 35.4775828460039,
+    "gates": {
+      "same_item_proposed_for_multiple_rows": 4,
+      "no_recorded_own_official_code": 1555,
+      "item_already_used_by_another_CSC_row": 966,
+      "no_admissible_independent_own_code_binding": 89,
+      "no_nondeprecated_global_exact_code_item": 10,
+      "P31_not_proved_to_match_own_row_type": 1,
+      "item_point_missing_or_exceeds_recorded_threshold": 101,
+      "live_own_code_not_confirmed": 1,
+      "multiple_global_exact_code_items": 1,
+      "live_P131_ancestry_incomplete_or_deprecated": 12
+    }
+  },
+  "licence": "Wikidata structured data CC0 1.0; only wikiDataId values copied. Official register/geometry used as identity reference only; no share-alike source admitted, no SOURCES block.",
+  "method": "Global exact own-code statement discovery on QLever; deprecated ranks excluded; no parent or name-only code binding. Unique literal own code, current matching own P31 class, current same-state P131 chain, every Earth point inside retained unrepaired own official polygon or within the explicit per-row distance threshold; no ownership in any CSC table, duplicate proposal, redirect, merge or dissolution. All failed gates held. Ended/future-start ancestry statements excluded.",
+  "sources": [
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1437%7CQ1467%7CQ1505%7CQ11725%7CQ13580%7CQ13753%7CQ13840%7CQ15342%7CQ19770%7CQ29015%7CQ30002%7CQ42505%7CQ178945%7CQ207030%7CQ315771%7CQ315851%7CQ316197%7CQ316350%7CQ316370%7CQ404854%7CQ404951%7CQ405088%7CQ406015%7CQ425415%7CQ425492%7CQ425996%7CQ426130%7CQ426237%7CQ426644%7CQ426756%7CQ426868%7CQ426996%7CQ427097%7CQ427265%7CQ427367%7CQ427488%7CQ427557%7CQ854861%7CQ928959%7CQ1030918%7CQ1204549%7CQ1353354%7CQ1356097%7CQ1419703%7CQ1535742%7CQ1772832%7CQ2085310%7CQ2125592%7CQ2429655%7CQ2562532&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "e27d03397503fb8d57d6e8b0992ad981bded696cc2557fd4512c51adcafbf8bf",
+      "request_started_at": "2026-11-14T16:48:22.990367+00:00",
+      "retrieved_at": "2026-11-14T16:48:26.963635+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1437",
+        "Q1467",
+        "Q1505",
+        "Q11725",
+        "Q13580",
+        "Q13753",
+        "Q13840",
+        "Q15342",
+        "Q19770",
+        "Q29015",
+        "Q30002",
+        "Q42505",
+        "Q178945",
+        "Q207030",
+        "Q315771",
+        "Q315851",
+        "Q316197",
+        "Q316350",
+        "Q316370",
+        "Q404854",
+        "Q404951",
+        "Q405088",
+        "Q406015",
+        "Q425415",
+        "Q425492",
+        "Q425996",
+        "Q426130",
+        "Q426237",
+        "Q426644",
+        "Q426756",
+        "Q426868",
+        "Q426996",
+        "Q427097",
+        "Q427265",
+        "Q427367",
+        "Q427488",
+        "Q427557",
+        "Q854861",
+        "Q928959",
+        "Q1030918",
+        "Q1204549",
+        "Q1353354",
+        "Q1356097",
+        "Q1419703",
+        "Q1535742",
+        "Q1772832",
+        "Q2085310",
+        "Q2125592",
+        "Q2429655",
+        "Q2562532"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:23 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_1_46d3a7313ee84e17.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2577644%7CQ2734067%7CQ2980652%7CQ3361889%7CQ6814191%7CQ9461671%7CQ9517490%7CQ9574194%7CQ10393317%7CQ10436761%7CQ10475986%7CQ10519559%7CQ10519751%7CQ10520019%7CQ10538797%7CQ10547370%7CQ10551883%7CQ10565748%7CQ10565789%7CQ11074659%7CQ11102168%7CQ11106614%7CQ11486661%7CQ12934744%7CQ15690158%7CQ15894621%7CQ15907803%7CQ15916380%7CQ16891632%7CQ17005861%7CQ17024983%7CQ19806523%7CQ19851769%7CQ19851906%7CQ19852384%7CQ24841064%7CQ25566304%7CQ25566321%7CQ25566540%7CQ25566607%7CQ25566615%7CQ28408618%7CQ42957396%7CQ58347683%7CQ58378088%7CQ59915861%7CQ59939836%7CQ60192843%7CQ65317270%7CQ92161826&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "64459247d09f62c333b11a04f5d681e8913968adf592262014b83ca2c690a342",
+      "request_started_at": "2026-11-14T16:48:26.965636+00:00",
+      "retrieved_at": "2026-11-14T16:48:28.985121+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q2577644",
+        "Q2734067",
+        "Q2980652",
+        "Q3361889",
+        "Q6814191",
+        "Q9461671",
+        "Q9517490",
+        "Q9574194",
+        "Q10393317",
+        "Q10436761",
+        "Q10475986",
+        "Q10519559",
+        "Q10519751",
+        "Q10520019",
+        "Q10538797",
+        "Q10547370",
+        "Q10551883",
+        "Q10565748",
+        "Q10565789",
+        "Q11074659",
+        "Q11102168",
+        "Q11106614",
+        "Q11486661",
+        "Q12934744",
+        "Q15690158",
+        "Q15894621",
+        "Q15907803",
+        "Q15916380",
+        "Q16891632",
+        "Q17005861",
+        "Q17024983",
+        "Q19806523",
+        "Q19851769",
+        "Q19851906",
+        "Q19852384",
+        "Q24841064",
+        "Q25566304",
+        "Q25566321",
+        "Q25566540",
+        "Q25566607",
+        "Q25566615",
+        "Q28408618",
+        "Q42957396",
+        "Q58347683",
+        "Q58378088",
+        "Q59915861",
+        "Q59939836",
+        "Q60192843",
+        "Q65317270",
+        "Q92161826"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:27 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_1_c4477d73fa7bf599.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q22774394%7CQ24837796%7CQ27614841%7CQ27897618%7CQ28169753%7CQ28169761%7CQ28170184%7CQ110714854%7CQ110714857%7CQ110714859%7CQ110714860%7CQ113956160&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "2308c3081641c15ba596c86d0f364a6317fe1293f975a73fd8f441e925e655d7",
+      "request_started_at": "2026-11-14T16:48:32.883282+00:00",
+      "retrieved_at": "2026-11-14T16:48:33.500837+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q22774394",
+        "Q24837796",
+        "Q27614841",
+        "Q27897618",
+        "Q28169753",
+        "Q28169761",
+        "Q28170184",
+        "Q110714854",
+        "Q110714857",
+        "Q110714859",
+        "Q110714860",
+        "Q113956160"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:33 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_2_9ecbd7be8c64ba36.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q148%7CQ668%7CQ928%7CQ1159%7CQ1186%7CQ13650%7CQ13669%7CQ13690%7CQ13752%7CQ13786%7CQ15212%7CQ15213%7CQ15338%7CQ15373%7CQ15380%7CQ15386%7CQ15388%7CQ15394%7CQ15399%7CQ15404%7CQ150056%7CQ150058%7CQ320925%7CQ591781%7CQ743077%7CQ815464%7CQ854846%7CQ956387%7CQ1069905%7CQ1308627%7CQ1430830%7CQ1538311%7CQ1557788%7CQ1661796%7CQ1772596%7CQ1910231%7CQ2618458%7CQ3960459%7CQ4066154%7CQ4860143%7CQ5763489%7CQ10433486%7CQ10899120%7CQ10924826%7CQ11074660%7CQ13426199%7CQ15938598%7CQ15941956%7CQ15944535%7CQ17024994&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "aa9e50db528bba4686fa59911c3f2a81a3196d01b3b6b1a3a06a3fd2e31ad7d2",
+      "request_started_at": "2026-11-14T16:48:29.025691+00:00",
+      "retrieved_at": "2026-11-14T16:48:32.881915+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q148",
+        "Q668",
+        "Q928",
+        "Q1159",
+        "Q1186",
+        "Q13650",
+        "Q13669",
+        "Q13690",
+        "Q13752",
+        "Q13786",
+        "Q15212",
+        "Q15213",
+        "Q15338",
+        "Q15373",
+        "Q15380",
+        "Q15386",
+        "Q15388",
+        "Q15394",
+        "Q15399",
+        "Q15404",
+        "Q150056",
+        "Q150058",
+        "Q320925",
+        "Q591781",
+        "Q743077",
+        "Q815464",
+        "Q854846",
+        "Q956387",
+        "Q1069905",
+        "Q1308627",
+        "Q1430830",
+        "Q1538311",
+        "Q1557788",
+        "Q1661796",
+        "Q1772596",
+        "Q1910231",
+        "Q2618458",
+        "Q3960459",
+        "Q4066154",
+        "Q4860143",
+        "Q5763489",
+        "Q10433486",
+        "Q10899120",
+        "Q10924826",
+        "Q11074660",
+        "Q13426199",
+        "Q15938598",
+        "Q15941956",
+        "Q15944535",
+        "Q17024994"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:29 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_2_c7d698c8b25636b6.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1164%7CQ1188%7CQ9903%7CQ42392%7CQ43194%7CQ47097%7CQ129286%7CQ266923%7CQ319460%7CQ677037%7CQ815447%7CQ891827%7CQ1131900%7CQ1147043%7CQ1240096%7CQ1357083%7CQ2627082%7CQ3374892%7CQ4494730%7CQ16920711%7CQ29257278&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "48865065943e60584db4e283deaf6626cc9250b2d2faa655f712592e0deff2b6",
+      "request_started_at": "2026-11-14T16:49:00.415529+00:00",
+      "retrieved_at": "2026-11-14T16:49:02.483158+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1164",
+        "Q1188",
+        "Q9903",
+        "Q42392",
+        "Q43194",
+        "Q47097",
+        "Q129286",
+        "Q266923",
+        "Q319460",
+        "Q677037",
+        "Q815447",
+        "Q891827",
+        "Q1131900",
+        "Q1147043",
+        "Q1240096",
+        "Q1357083",
+        "Q2627082",
+        "Q3374892",
+        "Q4494730",
+        "Q16920711",
+        "Q29257278"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:00 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_3_d0acaff874f8de2e.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1185%7CQ808013%7CQ1775277%7CQ2001966&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "e9b00f0888f463ab84cb47a074d8356b7b510859bd032d9c68cc526cbf4f6796",
+      "request_started_at": "2026-11-14T16:49:02.486046+00:00",
+      "retrieved_at": "2026-11-14T16:49:03.580361+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1185",
+        "Q808013",
+        "Q1775277",
+        "Q2001966"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:02 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_4_c48921056c857006.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1356%7CQ817165&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "eb33ae94ae7b8f554d421f3c89039b9eaf803152425bea475000ab9f39b72b59",
+      "request_started_at": "2026-11-14T16:49:04.544313+00:00",
+      "retrieved_at": "2026-11-14T16:49:05.867100+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1356",
+        "Q817165"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:04 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P131_5_57d7270afd17c477.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q141810807%7CQ141814105&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "579148efb44c12e431083e0651e475692c38281b14187ba791a14ef1a3de35ba",
+      "request_started_at": "2026-11-14T16:50:04.520638+00:00",
+      "retrieved_at": "2026-11-14T16:50:04.971890+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q141810807",
+        "Q141814105"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:50:04 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_10_48cbda162673ca77.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q141810788&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "3ee81c7f851d803ebc1dcc15c35a3dbd5b98d063a5cf9654dc360709f1c84ef6",
+      "request_started_at": "2026-11-14T16:50:06.579955+00:00",
+      "retrieved_at": "2026-11-14T16:50:07.176946+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q141810788"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:50:06 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_11_0aa692029ddfb6eb.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q515%7CQ3957%7CQ15284%7CQ24764%7CQ56061%7CQ61878%7CQ104157%7CQ486972%7CQ788104%7CQ1065118%7CQ1070990%7CQ1074523%7CQ1289426%7CQ1336099%7CQ1549591%7CQ6621940%7CQ6958514%7CQ16830604%7CQ17514239%7CQ29946056%7CQ51929311%7CQ56436498%7CQ58339518&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "e45e88c254c44e9666b4f34b65790920a73956a3b93f90b6c979a414070f7cdc",
+      "request_started_at": "2026-11-14T16:49:06.594735+00:00",
+      "retrieved_at": "2026-11-14T16:49:08.081386+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q515",
+        "Q3957",
+        "Q15284",
+        "Q24764",
+        "Q56061",
+        "Q61878",
+        "Q104157",
+        "Q486972",
+        "Q788104",
+        "Q1065118",
+        "Q1070990",
+        "Q1074523",
+        "Q1289426",
+        "Q1336099",
+        "Q1549591",
+        "Q6621940",
+        "Q6958514",
+        "Q16830604",
+        "Q17514239",
+        "Q29946056",
+        "Q51929311",
+        "Q56436498",
+        "Q58339518"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:06 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_1_be30b35c37ac3a04.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q532%7CQ43229%7CQ149621%7CQ155076%7CQ587144%7CQ701632%7CQ1048835%7CQ1208927%7CQ1350310%7CQ1414991%7CQ1761572%7CQ2221906%7CQ2365748%7CQ2659904%7CQ6501447%7CQ7930989%7CQ9316670%7CQ10541491%7CQ12357832%7CQ12357920%7CQ14757767%7CQ18247357%7CQ113414331%7CQ115871265%7CQ120893611%7CQ123964505%7CQ124250988%7CQ125855456%7CQ126379235%7CQ141104744&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "97db3e706e1750937ddba677a37c3ab8017c8777a0fc7a814d0fecb414b693fd",
+      "request_started_at": "2026-11-14T16:49:08.649969+00:00",
+      "retrieved_at": "2026-11-14T16:49:10.400898+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q532",
+        "Q43229",
+        "Q149621",
+        "Q155076",
+        "Q587144",
+        "Q701632",
+        "Q1048835",
+        "Q1208927",
+        "Q1350310",
+        "Q1414991",
+        "Q1761572",
+        "Q2221906",
+        "Q2365748",
+        "Q2659904",
+        "Q6501447",
+        "Q7930989",
+        "Q9316670",
+        "Q10541491",
+        "Q12357832",
+        "Q12357920",
+        "Q14757767",
+        "Q18247357",
+        "Q113414331",
+        "Q115871265",
+        "Q120893611",
+        "Q123964505",
+        "Q124250988",
+        "Q125855456",
+        "Q126379235",
+        "Q141104744"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:08 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_2_dbb8e1b2d5777274.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7188%7CQ50231%7CQ82794%7CQ123705%7CQ788176%7CQ811430%7CQ854457%7CQ895526%7CQ1549152%7CQ1639378%7CQ1799794%7CQ2532278%7CQ3257686%7CQ3268571%7CQ3778211%7CQ4358176%7CQ4835091%7CQ10354598%7CQ10553309%7CQ13011949%7CQ15042037%7CQ17489659%7CQ27096213%7CQ27096235%7CQ61964280%7CQ66661745%7CQ99018632%7CQ106559804%7CQ106668099%7CQ131085629%7CQ140753329%7CQ141104747%7CQ141149247%7CQ141403457&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "d037355011ada15f8448a23c262ef24fd2407874ae70c22befd120d8eeac96bb",
+      "request_started_at": "2026-11-14T16:49:10.708660+00:00",
+      "retrieved_at": "2026-11-14T16:49:12.470862+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q7188",
+        "Q50231",
+        "Q82794",
+        "Q123705",
+        "Q788176",
+        "Q811430",
+        "Q854457",
+        "Q895526",
+        "Q1549152",
+        "Q1639378",
+        "Q1799794",
+        "Q2532278",
+        "Q3257686",
+        "Q3268571",
+        "Q3778211",
+        "Q4358176",
+        "Q4835091",
+        "Q10354598",
+        "Q10553309",
+        "Q13011949",
+        "Q15042037",
+        "Q17489659",
+        "Q27096213",
+        "Q27096235",
+        "Q61964280",
+        "Q66661745",
+        "Q99018632",
+        "Q106559804",
+        "Q106668099",
+        "Q131085629",
+        "Q140753329",
+        "Q141104747",
+        "Q141149247",
+        "Q141403457"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:11 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_3_4a290ae7da00a75a.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q58778%7CQ175185%7CQ386724%7CQ488383%7CQ618123%7CQ897395%7CQ948571%7CQ1752346%7CQ3622002%7CQ4406616%7CQ8205328%7CQ15642541%7CQ16334295%7CQ16686448%7CQ16887380%7CQ18810687%7CQ24229398%7CQ25404640%7CQ48907157%7CQ61961344%7CQ65683458%7CQ98929991%7CQ99527517%7CQ123349660%7CQ124711467%7CQ124711484%7CQ141182323%7CQ141186854%7CQ141250146%7CQ141751717%7CQ141865851&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "6b1aeb59fa7787f32e04447df672e3d2ac9b443869aa22b743a5178561c8cb6f",
+      "request_started_at": "2026-11-14T16:49:12.767514+00:00",
+      "retrieved_at": "2026-11-14T16:49:14.525706+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q58778",
+        "Q175185",
+        "Q386724",
+        "Q488383",
+        "Q618123",
+        "Q897395",
+        "Q948571",
+        "Q1752346",
+        "Q3622002",
+        "Q4406616",
+        "Q8205328",
+        "Q15642541",
+        "Q16334295",
+        "Q16686448",
+        "Q16887380",
+        "Q18810687",
+        "Q24229398",
+        "Q25404640",
+        "Q48907157",
+        "Q61961344",
+        "Q65683458",
+        "Q98929991",
+        "Q99527517",
+        "Q123349660",
+        "Q124711467",
+        "Q124711484",
+        "Q141182323",
+        "Q141186854",
+        "Q141250146",
+        "Q141751717",
+        "Q141865851"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:13 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_4_0376e1a2479b84e8.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q35120%7CQ178706%7CQ223557%7CQ327333%7CQ6502323%7CQ13196193%7CQ28813620%7CQ53617407%7CQ53617489%7CQ56369191%7CQ98119401%7CQ134261520%7CQ134601727%7CQ136490012%7CQ141158817%7CQ141159271%7CQ141159298%7CQ141183644%7CQ141445610%7CQ141447391%7CQ141493485%7CQ141537802%7CQ141681465%7CQ141751599%7CQ141756646%7CQ141756664%7CQ141756883%7CQ141905832%7CQ141913309&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "d461d2803b0ccf2aeca74783f587dae132f37f81259f34caef3850e42a0026ff",
+      "request_started_at": "2026-11-14T16:49:14.818383+00:00",
+      "retrieved_at": "2026-11-14T16:49:16.507561+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q35120",
+        "Q178706",
+        "Q223557",
+        "Q327333",
+        "Q6502323",
+        "Q13196193",
+        "Q28813620",
+        "Q53617407",
+        "Q53617489",
+        "Q56369191",
+        "Q98119401",
+        "Q134261520",
+        "Q134601727",
+        "Q136490012",
+        "Q141158817",
+        "Q141159271",
+        "Q141159298",
+        "Q141183644",
+        "Q141445610",
+        "Q141447391",
+        "Q141493485",
+        "Q141537802",
+        "Q141681465",
+        "Q141751599",
+        "Q141756646",
+        "Q141756664",
+        "Q141756883",
+        "Q141905832",
+        "Q141913309"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:15 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_5_c6856ba757d79c79.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q211606%7CQ12352399%7CQ16334298%7CQ103940464%7CQ132907471%7CQ134601875%7CQ134602505%7CQ141148364%7CQ141159595%7CQ141204587%7CQ141204632%7CQ141445716%7CQ141447513%7CQ141501601%7CQ141533852%7CQ141642415%7CQ141817791%7CQ141905635&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "c3eaa1e6f366a605a6e58db8b98530f31dbc46a4d6fa95ab653c3c04888a61a2",
+      "request_started_at": "2026-11-14T16:49:16.877531+00:00",
+      "retrieved_at": "2026-11-14T16:49:18.246753+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q211606",
+        "Q12352399",
+        "Q16334298",
+        "Q103940464",
+        "Q132907471",
+        "Q134601875",
+        "Q134602505",
+        "Q141148364",
+        "Q141159595",
+        "Q141204587",
+        "Q141204632",
+        "Q141445716",
+        "Q141447513",
+        "Q141501601",
+        "Q141533852",
+        "Q141642415",
+        "Q141817791",
+        "Q141905635"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:17 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_6_c75e4df6a5901fdd.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q7551287%7CQ21871294%7CQ124711658%7CQ134602526%7CQ136433660%7CQ140919303%7CQ141222889%7CQ141438998%7CQ141445704%7CQ141594779%7CQ141817786%7CQ142124367&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "2e560117732df4f55fa61e37a8d7d904cfa7ab189fae279d058fa084dc79d093",
+      "request_started_at": "2026-11-14T16:49:18.935885+00:00",
+      "retrieved_at": "2026-11-14T16:49:20.280995+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q7551287",
+        "Q21871294",
+        "Q124711658",
+        "Q134602526",
+        "Q136433660",
+        "Q140919303",
+        "Q141222889",
+        "Q141438998",
+        "Q141445704",
+        "Q141594779",
+        "Q141817786",
+        "Q142124367"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:49:19 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_7_dec4f38e7913f8d3.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q137023128%7CQ141156634%7CQ141159342%7CQ141214836%7CQ141438987%7CQ141750218%7CQ141810753%7CQ141905953&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "f3466abe1943cac1d1b5a8548b984cb1bbe9e55873de283f8a6f4845f81bf420",
+      "request_started_at": "2026-11-14T16:50:00.417159+00:00",
+      "retrieved_at": "2026-11-14T16:50:01.594125+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q137023128",
+        "Q141156634",
+        "Q141159342",
+        "Q141214836",
+        "Q141438987",
+        "Q141750218",
+        "Q141810753",
+        "Q141905953"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:50:00 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_8_39d18ee0cdf92267.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q2364925%7CQ141665417%7CQ141814138%7CQ141905891&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "cb6daef80cb6c1c10a096425fa926d958f89e7c1593648f30409fde3624c6f72",
+      "request_started_at": "2026-11-14T16:50:02.468958+00:00",
+      "retrieved_at": "2026-11-14T16:50:03.272674+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q2364925",
+        "Q141665417",
+        "Q141814138",
+        "Q141905891"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:50:02 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_P279_9_a154ccfc6397ac56.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1475%7CQ1478%7CQ17175%7CQ29413%7CQ30651%7CQ75875%7CQ114367%7CQ117066%7CQ128104%7CQ145996%7CQ171955%7CQ177308%7CQ181904%7CQ197496%7CQ197863%7CQ203054%7CQ207069%7CQ218429%7CQ239497%7CQ264357%7CQ338033%7CQ357053%7CQ369371%7CQ379436%7CQ386092%7CQ431374%7CQ482365%7CQ531703%7CQ549700%7CQ589493%7CQ589709%7CQ612790%7CQ644582%7CQ666884%7CQ677700%7CQ693612%7CQ713343%7CQ807084%7CQ812670%7CQ814653%7CQ914156%7CQ934017%7CQ1012450%7CQ1014399%7CQ1015140%7CQ1018208%7CQ1023900%7CQ1027358%7CQ1027369%7CQ1033226&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "ef52d998542b82461dcc68dffcdf47434a0292840bfb0adb3713905d3ddaf16b",
+      "request_started_at": "2026-11-14T16:48:13.793321+00:00",
+      "retrieved_at": "2026-11-14T16:48:16.439221+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1475",
+        "Q1478",
+        "Q17175",
+        "Q29413",
+        "Q30651",
+        "Q75875",
+        "Q114367",
+        "Q117066",
+        "Q128104",
+        "Q145996",
+        "Q171955",
+        "Q177308",
+        "Q181904",
+        "Q197496",
+        "Q197863",
+        "Q203054",
+        "Q207069",
+        "Q218429",
+        "Q239497",
+        "Q264357",
+        "Q338033",
+        "Q357053",
+        "Q369371",
+        "Q379436",
+        "Q386092",
+        "Q431374",
+        "Q482365",
+        "Q531703",
+        "Q549700",
+        "Q589493",
+        "Q589709",
+        "Q612790",
+        "Q644582",
+        "Q666884",
+        "Q677700",
+        "Q693612",
+        "Q713343",
+        "Q807084",
+        "Q812670",
+        "Q814653",
+        "Q914156",
+        "Q934017",
+        "Q1012450",
+        "Q1014399",
+        "Q1015140",
+        "Q1018208",
+        "Q1023900",
+        "Q1027358",
+        "Q1027369",
+        "Q1033226"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:14 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_items_3aceae0e0f02ff78.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1200093%7CQ1200097%7CQ1200100%7CQ1200101%7CQ1200112%7CQ1200125%7CQ1200130%7CQ1200151%7CQ1200155%7CQ1200157%7CQ1200165%7CQ1200248%7CQ1200266%7CQ1200280%7CQ1200282%7CQ1200291%7CQ1200311%7CQ1200322%7CQ1200327%7CQ1200331%7CQ1200336%7CQ1200339%7CQ1200342%7CQ1200345%7CQ1208513%7CQ1209106%7CQ1267430%7CQ1270795%7CQ1293709%7CQ1339230%7CQ1339237%7CQ1339415%7CQ1339425%7CQ1339706%7CQ1339981%7CQ1341853%7CQ1341912%7CQ1341978%7CQ1342115%7CQ1342169%7CQ1342211%7CQ1342252%7CQ1343254%7CQ1345456%7CQ1345481%7CQ1355890%7CQ1355972%7CQ1356056%7CQ1356079%7CQ1360027&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "eded164b2441743263f6a52cbab93b5e83d98a0907aa620cb53ff891fc082a7a",
+      "request_started_at": "2026-11-14T16:48:18.642266+00:00",
+      "retrieved_at": "2026-11-14T16:48:20.929424+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1200093",
+        "Q1200097",
+        "Q1200100",
+        "Q1200101",
+        "Q1200112",
+        "Q1200125",
+        "Q1200130",
+        "Q1200151",
+        "Q1200155",
+        "Q1200157",
+        "Q1200165",
+        "Q1200248",
+        "Q1200266",
+        "Q1200280",
+        "Q1200282",
+        "Q1200291",
+        "Q1200311",
+        "Q1200322",
+        "Q1200327",
+        "Q1200331",
+        "Q1200336",
+        "Q1200339",
+        "Q1200342",
+        "Q1200345",
+        "Q1208513",
+        "Q1209106",
+        "Q1267430",
+        "Q1270795",
+        "Q1293709",
+        "Q1339230",
+        "Q1339237",
+        "Q1339415",
+        "Q1339425",
+        "Q1339706",
+        "Q1339981",
+        "Q1341853",
+        "Q1341912",
+        "Q1341978",
+        "Q1342115",
+        "Q1342169",
+        "Q1342211",
+        "Q1342252",
+        "Q1343254",
+        "Q1345456",
+        "Q1345481",
+        "Q1355890",
+        "Q1355972",
+        "Q1356056",
+        "Q1356079",
+        "Q1360027"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:18 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_items_5161ff55b51ba676.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1364693%7CQ1623188%7CQ1707290%7CQ2446357%7CQ2566460%7CQ2673715%7CQ3418936%7CQ3425896%7CQ4302142%7CQ6431158%7CQ6732721%7CQ7124124%7CQ8913088%7CQ10762115%7CQ11650962%7CQ12997851%7CQ13008117%7CQ13111314%7CQ13112063%7CQ13112080%7CQ13112532%7CQ13112956%7CQ13113462%7CQ15691218%7CQ16039783%7CQ16136859%7CQ16136960%7CQ25562337%7CQ26763510%7CQ26772457%7CQ26780580%7CQ26783833%7CQ26789867%7CQ26791684%7CQ28419072%7CQ28477184%7CQ28550546%7CQ28823952%7CQ28823955%7CQ28842108%7CQ28924796%7CQ28943985%7CQ60817810%7CQ63255038%7CQ65666408%7CQ66457379%7CQ66457928%7CQ94607067%7CQ98822150%7CQ126680807&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "26894907f5aab172facab94ec80ea0f593b31ee2b3854705a7d129c3b34ab6a0",
+      "request_started_at": "2026-11-14T16:48:20.930580+00:00",
+      "retrieved_at": "2026-11-14T16:48:22.940798+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1364693",
+        "Q1623188",
+        "Q1707290",
+        "Q2446357",
+        "Q2566460",
+        "Q2673715",
+        "Q3418936",
+        "Q3425896",
+        "Q4302142",
+        "Q6431158",
+        "Q6732721",
+        "Q7124124",
+        "Q8913088",
+        "Q10762115",
+        "Q11650962",
+        "Q12997851",
+        "Q13008117",
+        "Q13111314",
+        "Q13112063",
+        "Q13112080",
+        "Q13112532",
+        "Q13112956",
+        "Q13113462",
+        "Q15691218",
+        "Q16039783",
+        "Q16136859",
+        "Q16136960",
+        "Q25562337",
+        "Q26763510",
+        "Q26772457",
+        "Q26780580",
+        "Q26783833",
+        "Q26789867",
+        "Q26791684",
+        "Q28419072",
+        "Q28477184",
+        "Q28550546",
+        "Q28823952",
+        "Q28823955",
+        "Q28842108",
+        "Q28924796",
+        "Q28943985",
+        "Q60817810",
+        "Q63255038",
+        "Q65666408",
+        "Q66457379",
+        "Q66457928",
+        "Q94607067",
+        "Q98822150",
+        "Q126680807"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:21 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_items_9fcc1a5a9ffff8f0.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=Q1062103%7CQ1152679%7CQ1152698%7CQ1152918%7CQ1153228%7CQ1153233%7CQ1153243%7CQ1156332%7CQ1156369%7CQ1164309%7CQ1165396%7CQ1167079%7CQ1169539%7CQ1178908%7CQ1179111%7CQ1179113%7CQ1179298%7CQ1181789%7CQ1199433%7CQ1199511%7CQ1199523%7CQ1199580%7CQ1199611%7CQ1199630%7CQ1199645%7CQ1199654%7CQ1199663%7CQ1199702%7CQ1199707%7CQ1199723%7CQ1199727%7CQ1199804%7CQ1199812%7CQ1199818%7CQ1199829%7CQ1199861%7CQ1199878%7CQ1199888%7CQ1199891%7CQ1199897%7CQ1199908%7CQ1199916%7CQ1199921%7CQ1200041%7CQ1200051%7CQ1200054%7CQ1200060%7CQ1200064%7CQ1200071%7CQ1200078&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "c0ec970afb5210561d8ffb44a104472721901f778ed331775214158267a6d3a5",
+      "request_started_at": "2026-11-14T16:48:16.440669+00:00",
+      "retrieved_at": "2026-11-14T16:48:18.640544+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "Q1062103",
+        "Q1152679",
+        "Q1152698",
+        "Q1152918",
+        "Q1153228",
+        "Q1153233",
+        "Q1153243",
+        "Q1156332",
+        "Q1156369",
+        "Q1164309",
+        "Q1165396",
+        "Q1167079",
+        "Q1169539",
+        "Q1178908",
+        "Q1179111",
+        "Q1179113",
+        "Q1179298",
+        "Q1181789",
+        "Q1199433",
+        "Q1199511",
+        "Q1199523",
+        "Q1199580",
+        "Q1199611",
+        "Q1199630",
+        "Q1199645",
+        "Q1199654",
+        "Q1199663",
+        "Q1199702",
+        "Q1199707",
+        "Q1199723",
+        "Q1199727",
+        "Q1199804",
+        "Q1199812",
+        "Q1199818",
+        "Q1199829",
+        "Q1199861",
+        "Q1199878",
+        "Q1199888",
+        "Q1199891",
+        "Q1199897",
+        "Q1199908",
+        "Q1199916",
+        "Q1199921",
+        "Q1200041",
+        "Q1200051",
+        "Q1200054",
+        "Q1200060",
+        "Q1200064",
+        "Q1200071",
+        "Q1200078"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:16 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_items_f1bc980f9c614fdd.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=P442%7CP13971%7CP429%7CP836%7CP988%7CP5578%7CP6425%7CP12745%7CP2588%7CP6895%7CP4530&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "a2a33d67403e815701c4dbfb1c17d77281a5847971c87b8d5177fae4c60fa12f",
+      "request_started_at": "2026-11-14T16:43:54.893733+00:00",
+      "retrieved_at": "2026-11-14T16:43:56.613491+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "P442",
+        "P13971",
+        "P429",
+        "P836",
+        "P988",
+        "P5578",
+        "P6425",
+        "P12745",
+        "P2588",
+        "P6895",
+        "P4530"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:43:55 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_properties_65a6d7be8a46e70c.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=wbgetentities&ids=P14503&props=claims%7Clabels%7Cdescriptions&languages=en&format=json&maxlag=5",
+      "sha256": "8e72a5fe418c9b7a912ae612555d533fa348712c285c437fa2d0c29b65c89514",
+      "request_started_at": "2026-11-14T16:48:09.675240+00:00",
+      "retrieved_at": "2026-11-14T16:48:10.557798+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "ids": [
+        "P14503"
+      ],
+      "request_method": "GET",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:10 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/live_property_ocha_1666b5d86905ac72.json"
+    },
+    {
+      "url": "https://qlever.cs.uni-freiburg.de/api/wikidata",
+      "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?property ?label ?description WHERE { ?property a wikibase:Property ; rdfs:label ?label . FILTER(LANG(?label)=\"en\") FILTER(REGEX(?label,\"(China|Chinese|Philippine|Japanese|GSS|ONS|India|Indian|Nigeria|Indonesia|Pakistan|Bangladesh|Ethiopia|Congo|Egypt).*(code|ID)|municipality code\", \"i\")) OPTIONAL { ?property schema:description ?description . FILTER(LANG(?description)=\"en\") } }",
+      "query_sha256": "9f5b71c0a1b789dc36fd625a2278d70f01aaefc9b93969e82912f79eb7bab4be",
+      "sha256": "bb23b3c6a64f9849877f887211d6d8bc125d644eb9dd6f93a451701ce7f09979",
+      "retrieved_at": "2026-11-14T16:41:22.644933+00:00",
+      "request_method": "POST",
+      "rows": 258,
+      "resolved_url": "https://qlever.dev/api/wikidata",
+      "licence": "Wikidata structured data CC0",
+      "index_stats": "sources/qlever_stats.json",
+      "headers": {
+        "Date": "Sat, 14 Nov 2026 16:41:22 GMT",
+        "Content-Type": "application/sparql-results+json"
+      },
+      "path": "sources/property_discovery.json"
+    },
+    {
+      "url": "https://qlever.cs.uni-freiburg.de/api/wikidata",
+      "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?property ?label ?description WHERE { ?property a wikibase:Property ; rdfs:label ?label . FILTER(LANG(?label)=\"en\") FILTER(REGEX(?label,\"(local (government|body)|LGD|BPS|Kemendagri|administrative.*code|division.*code|ONS|geographic.*code)\",\"i\")) OPTIONAL { ?property schema:description ?description . FILTER(LANG(?description)=\"en\") } }",
+      "query_sha256": "32671cefec674a3d0fe17d54b8cea6cf743ad5a767f9484babe09ed465e051bd",
+      "sha256": "88c6b11f8cd0ef82de0efc2236f08dad3aeaf625c99476dd2ba4e384745c586e",
+      "retrieved_at": "2026-11-14T16:42:20.198561+00:00",
+      "request_method": "POST",
+      "rows": 261,
+      "resolved_url": "https://qlever.dev/api/wikidata",
+      "licence": "Wikidata structured data CC0",
+      "index_stats": "sources/qlever_stats.json",
+      "headers": {
+        "Date": "Sat, 14 Nov 2026 16:42:19 GMT",
+        "Content-Type": "application/sparql-results+json"
+      },
+      "path": "sources/property_discovery2.json"
+    },
+    {
+      "url": "https://qlever.cs.uni-freiburg.de/api/wikidata",
+      "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?property ?label ?description WHERE { ?property a wikibase:Property ; rdfs:label ?label . FILTER(LANG(?label)=\"en\") OPTIONAL { ?property schema:description ?description . FILTER(LANG(?description)=\"en\") } FILTER(REGEX(CONCAT(?label,COALESCE(?description,\"\")),\"(OCHA|Nigeria|p-code|humanitarian|Pakistan|Ethiopi|Egypt|PSGC|local government code)\",\"i\")) }",
+      "query_sha256": "49efb2cbda1dc9bf94000d1caf4aa41f6d49315be9bf5758c7da84e1e10a48d2",
+      "sha256": "40812d5cc021067399c862786748bea22329d3259bc6935cb999b8c77edad731",
+      "retrieved_at": "2026-11-14T16:43:46.310450+00:00",
+      "request_method": "POST",
+      "rows": 23,
+      "resolved_url": "https://qlever.dev/api/wikidata",
+      "licence": "Wikidata structured data CC0",
+      "index_stats": "sources/qlever_stats.json",
+      "headers": {
+        "Date": "Sat, 14 Nov 2026 16:43:46 GMT",
+        "Content-Type": "application/sparql-results+json"
+      },
+      "path": "sources/property_ocha.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP12745&prop=text&format=json&maxlag=5",
+      "sha256": "ec1df228c28b1f00911f6265eefc60c88d950bf1261e13a6206ab8c69cb6560a",
+      "request_started_at": "2026-11-14T16:44:11.344244+00:00",
+      "retrieved_at": "2026-11-14T16:44:12.406838+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P12745",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P12745",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:11 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P12745.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP13971&prop=text&format=json&maxlag=5",
+      "sha256": "3ff1c204f1245437e3a42423eab4a59a5c882bf772889ab4e629bf0dc7b31393",
+      "request_started_at": "2026-11-14T16:43:59.006686+00:00",
+      "retrieved_at": "2026-11-14T16:43:59.986964+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P13971",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P13971",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:43:59 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P13971.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP14503&prop=text&format=json&maxlag=5",
+      "sha256": "a29b8e5a5105cee7b8757b3ca0023124274ab84d071da5ef3a42e4feaaafd819",
+      "request_started_at": "2026-11-14T16:48:11.734954+00:00",
+      "retrieved_at": "2026-11-14T16:48:12.707977+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P14503",
+      "page_url": "https://www.wikidata.org/wiki/Property:P14503",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:48:11 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P14503.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP2588&prop=text&format=json&maxlag=5",
+      "sha256": "56b3094c55b54deb7856c4827c8d82bb9ca68e30832472eec092acbcb1fa5c0c",
+      "request_started_at": "2026-11-14T16:44:13.396229+00:00",
+      "retrieved_at": "2026-11-14T16:44:14.728506+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P2588",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P2588",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:13 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P2588.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP429&prop=text&format=json&maxlag=5",
+      "sha256": "69051573699c745b563540f6624ea437ab28af1c7df68dc09c2af39a45070a41",
+      "request_started_at": "2026-11-14T16:44:01.061959+00:00",
+      "retrieved_at": "2026-11-14T16:44:01.810626+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P429",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P429",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:01 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P429.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP442&prop=text&format=json&maxlag=5",
+      "sha256": "b883af8d3f62796e055f0eab79618449a4943c6a8e89c0afbb95be84ee802c0e",
+      "request_started_at": "2026-11-14T16:43:56.953819+00:00",
+      "retrieved_at": "2026-11-14T16:43:57.663476+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P442",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P442",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:43:57 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P442.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP4530&prop=text&format=json&maxlag=5",
+      "sha256": "e24a457c13e1a40160997394619aebb6b5b7ed4346487b6415a22f25fb172c0e",
+      "request_started_at": "2026-11-14T16:44:17.505586+00:00",
+      "retrieved_at": "2026-11-14T16:44:18.480957+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P4530",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P4530",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:17 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P4530.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP5578&prop=text&format=json&maxlag=5",
+      "sha256": "0dfbf872e927d0979c8c3607bd07b1ecfcd0fb8811fbb17b80673db0dc79b186",
+      "request_started_at": "2026-11-14T16:44:07.238669+00:00",
+      "retrieved_at": "2026-11-14T16:44:08.327946+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P5578",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P5578",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:07 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P5578.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP6425&prop=text&format=json&maxlag=5",
+      "sha256": "0fce7228a354452fc2e1de478b9ec4d8e1fa4c890b63da60ccbca686dba2dc13",
+      "request_started_at": "2026-11-14T16:44:09.293249+00:00",
+      "retrieved_at": "2026-11-14T16:44:10.311201+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P6425",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P6425",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:09 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P6425.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP6895&prop=text&format=json&maxlag=5",
+      "sha256": "7c38862932e30850fde3c71fb72a562ffb244a034e9bc495c0ea9cae0872dced",
+      "request_started_at": "2026-11-14T16:44:15.453538+00:00",
+      "retrieved_at": "2026-11-14T16:44:16.493954+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P6895",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P6895",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:15 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P6895.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP836&prop=text&format=json&maxlag=5",
+      "sha256": "eafd465ec60b252d07a404d2d23d2e0da67c5e5cd73b623c196597b4c440a11d",
+      "request_started_at": "2026-11-14T16:44:03.119709+00:00",
+      "retrieved_at": "2026-11-14T16:44:03.857597+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P836",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P836",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:03 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P836.json"
+    },
+    {
+      "url": "https://www.wikidata.org/w/api.php?action=parse&page=Property%3AP988&prop=text&format=json&maxlag=5",
+      "sha256": "6174b79c54585e0d2e7087941b1e9792e9098e289a26e953e1b63b308b79c410",
+      "request_started_at": "2026-11-14T16:44:05.178720+00:00",
+      "retrieved_at": "2026-11-14T16:44:06.269676+00:00",
+      "user_agent": "GeographicIdentityClient/2.0 (public geographic identity research)",
+      "licence": "Wikidata structured data CC0",
+      "property": "P988",
+      "request_method": "GET",
+      "page_url": "https://www.wikidata.org/wiki/Property:P988",
+      "headers": {
+        "date": "Sat, 14 Nov 2026 16:44:05 GMT",
+        "content-type": "application/json; charset=utf-8"
+      },
+      "path": "sources/property_page_P988.json"
+    },
+    {
+      "url": "https://qlever.cs.uni-freiburg.de/api/wikidata",
+      "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?item ?literal ?rank WHERE { ?item p:P13971 ?statement . ?statement ps:P13971 ?literal ; wikibase:rank ?rank . }",
+      "query_sha256": "0d17090d05cef57b2c5c3f1a5f2e2128fe98eea375152cf32035ed560da355b3",
+      "sha256": "6f886a9304fdc792c63d6020917b06e8332a462c4d8085369f7147f6fcef33ec",
+      "retrieved_at": "2026-11-14T16:46:26.303951+00:00",
+      "request_method": "POST",
+      "rows": 39383,
+      "resolved_url": "https://qlever.dev/api/wikidata",
+      "licence": "Wikidata structured data CC0",
+      "index_stats": "sources/qlever_stats.json",
+      "headers": {
+        "Date": "Sat, 14 Nov 2026 16:46:24 GMT",
+        "Content-Type": "application/sparql-results+json"
+      },
+      "path": "sources/qlever_P13971_000.json"
+    },
+    {
+      "url": "https://qlever.cs.uni-freiburg.de/api/wikidata",
+      "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX p: <http://www.wikidata.org/prop/> PREFIX ps: <http://www.wikidata.org/prop/statement/> PREFIX wikibase: <http://wikiba.se/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX schema: <http://schema.org/> SELECT ?item ?literal ?rank WHERE { ?item p:P442 ?statement . ?statement ps:P442 ?literal ; wikibase:rank ?rank . }",
+      "query_sha256": "bce4ad2bc962aa0b279a5d622c3a108467939eb10992fe915dd8e506e2abf21b",
+      "sha256": "79354b502aa84e9220e994b163a9dcb6f035eeb0100c059d5e8759166d1ff57c",
+      "retrieved_at": "2026-11-14T16:46:58.603608+00:00",
+      "request_method": "POST",
+      "rows": 753710,
+      "resolved_url": "https://qlever.dev/api/wikidata",
+      "licence": "Wikidata structured data CC0",
+      "index_stats": "sources/qlever_stats.json",
+      "headers": {
+        "Date": "Sat, 14 Nov 2026 16:46:30 GMT",
+        "Content-Type": "application/sparql-results+json"
+      },
+      "path": "sources/qlever_P442_000.json"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase10_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase10_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "b37cf629b5c638291c4a89e43ba091c84482f5869687de3b3046b34825498df5",
+      "target_rows": 50
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase10_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase10_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "b37cf629b5c638291c4a89e43ba091c84482f5869687de3b3046b34825498df5"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase11_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase11_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "49128f0222661e9095104ba61f29309383f6bf8de7580815b37069164ae55fdd",
+      "target_rows": 9
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase11_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase11_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "49128f0222661e9095104ba61f29309383f6bf8de7580815b37069164ae55fdd"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase12_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase12_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "8ae47592050c96205deae89c3ff6ad57a1c0e772735ca620d9e83ac506e7221f",
+      "target_rows": 32
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase12_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase12_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "8ae47592050c96205deae89c3ff6ad57a1c0e772735ca620d9e83ac506e7221f"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase13_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase13_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "a9a894086ee9219bf3df9d68e8cc894190883a7b054b691f22e9084211a44d79",
+      "target_rows": 54
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase13_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase13_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "a9a894086ee9219bf3df9d68e8cc894190883a7b054b691f22e9084211a44d79"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase14_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase14_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "a38aaa6bc293840053f379f7a6b957dd946f1196afe911440fde4cbb8cdfb813",
+      "target_rows": 14
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase14_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase14_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "a38aaa6bc293840053f379f7a6b957dd946f1196afe911440fde4cbb8cdfb813"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase15_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase15_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "3a11d773159ee3dba18b63bc3e7e3153a24ea7451992cccc154541d22f99fbe9",
+      "target_rows": 26
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase15_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase15_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "3a11d773159ee3dba18b63bc3e7e3153a24ea7451992cccc154541d22f99fbe9"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase16_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase16_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "726653554a90eb3b7ccb7a3066675ac7f894173459ec3486bbd91342d5aa53a4",
+      "target_rows": 10
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase16_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase16_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "726653554a90eb3b7ccb7a3066675ac7f894173459ec3486bbd91342d5aa53a4"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase17_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase17_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "bf033d6d69964ed3d732bb39ac91a5193762f0432691202bb76c1f465b512079",
+      "target_rows": 52
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase17_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase17_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "bf033d6d69964ed3d732bb39ac91a5193762f0432691202bb76c1f465b512079"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase18_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase18_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "b843f1980397667b7c199f15203549d288291ac7d193a1bbcccd28a349f368ab",
+      "target_rows": 79
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase18_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase18_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "b843f1980397667b7c199f15203549d288291ac7d193a1bbcccd28a349f368ab"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase2_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase2_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "6d90e1eb158d498382e94627004a1f0253cc67a2bcd03bc6d66fb8a7c09d00c0",
+      "target_rows": 89
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase2_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase2_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "6d90e1eb158d498382e94627004a1f0253cc67a2bcd03bc6d66fb8a7c09d00c0"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase3_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase3_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "4efa5b62d808e09329c2ef31f861fdeb40e863ecaab63ff0e8b763fb7269fcce",
+      "target_rows": 68
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase3_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase3_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "4efa5b62d808e09329c2ef31f861fdeb40e863ecaab63ff0e8b763fb7269fcce"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase4_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase4_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "60340061a335df73b579a32dd984f72354c4f00f69d53e61d002c20c1ed6a48c",
+      "target_rows": 57
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase4_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase4_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "60340061a335df73b579a32dd984f72354c4f00f69d53e61d002c20c1ed6a48c"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase5_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase5_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "9f29adf6aa92aee51ab170f9a8eed8794bc15d2623588de209ca5c7b9df8849e",
+      "target_rows": 51
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase5_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase5_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "9f29adf6aa92aee51ab170f9a8eed8794bc15d2623588de209ca5c7b9df8849e"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase6_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase6_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "361300669dc8286f05a02b5dda9ac48ee6d8619ca43ac28c87a6662d51a7610a",
+      "target_rows": 83
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase6_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase6_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "361300669dc8286f05a02b5dda9ac48ee6d8619ca43ac28c87a6662d51a7610a"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase8_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase8_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "e011dbd49eac5369109b0fcef4ecefe234b0cac39ecafe4824e70f3f7a183469",
+      "target_rows": 43
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_phase8_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_phase8_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "e011dbd49eac5369109b0fcef4ecefe234b0cac39ecafe4824e70f3f7a183469"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_pilot_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_pilot_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "d85ea20adbb809957fcf4f7e1f4c5b373d84bf1f2b03e70dd3e66b6a01300c1b",
+      "target_rows": 36
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/CN_pilot_points_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/CN_pilot_points_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "d85ea20adbb809957fcf4f7e1f4c5b373d84bf1f2b03e70dd3e66b6a01300c1b"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/WD_shared_item_clears_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/WD_shared_item_clears_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "9bc1ef6dc816a78faf1bcb2e845f1e2596bc3cbf074e9755a3440be3bd5e91d1",
+      "target_rows": 2
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/WD_shared_item_clears_2026-10.csv",
+      "git_path": ".github/fixes-docs/ledgers/WD_shared_item_clears_2026-10.csv",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "9bc1ef6dc816a78faf1bcb2e845f1e2596bc3cbf074e9755a3440be3bd5e91d1"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gd_levels_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_gd_levels_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "adedc1b3c74a620aeacbc77199bab019b5ccba4237a68268cffaf7934868de25",
+      "target_rows": 138
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gd_levels_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_gd_levels_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "98123582e10beded2682761d445a07026df9e685e1beb667592d0930bcad332d"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gd_parents_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_gd_parents_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "0a976a8569f69c4dbae31db76c37e1b6109ef06977e138f54dfb3235cdd6515f",
+      "target_rows": 18
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gd_parents_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_gd_parents_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "55f9072bce1b7712c61e838d16cb5c42cb66f85a8fdd67f9d817e07568ba4589"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gx_levels_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_gx_levels_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "7a0def798f9495efcf919dddbb335469b4dfe859f0bbd3cda6f0f271d3a375e6",
+      "target_rows": 105
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_gx_levels_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_gx_levels_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "b13a392e5292c0c3b47ca91b5181c22184ae8866f182ce86410dd1c21dce890b"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels4_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels4_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "28c2860d8b60661726459b6f865881176710c4c53b7716a1522169a8d7e25edf",
+      "target_rows": 605
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels4_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels4_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "e0b696912866521a9427fa536404dad3e3670863da7ca402a53c3aed7f4f425a"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels5_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels5_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "da64ca373dfb1aa67d6e8970e7920fc0c1bb9bd2d7155febc9946e8857d82a84",
+      "target_rows": 14
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels5_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels5_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "57487e2c81ab1b616f271309fb0357cf2b350c548f34c6289b1fea4a51ffaff6"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "9e33934363c6949a6fed495c596056bae9e9a5571b927636b96747f81b20ae30",
+      "target_rows": 2679
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_levels_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_levels_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "476f43e68fcee71fa61d422ad5125be07c4e671e7bc89dbe7daaf7ee9ad0f54c"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_sc_levels_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/cn_sc_levels_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "c2f246a3babcbda3e92a7ebb2e2bad64cd9f530010eeaab3175ca2bc913d6ea4",
+      "target_rows": 159
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/cn_sc_levels_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/cn_sc_levels_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "13ea09465bd1fa0f6cf2507ffbb944b5eb2ef0061b9cfa6206bd4c00b3be7388"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/items_gn2_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/items_gn2_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "de161510c4d9cef2e6079ff3180c2e2339cc90d1ede902713516e6084fc5bd08",
+      "target_rows": 2678
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/items_gn2_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/items_gn2_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "3272c121161661d7ef7b15501033572de47c360fd64d4ce3e508e6c3985961ed"
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/shared_items_v5x.jsonl",
+      "git_path": ".github/fixes-docs/ledgers/shared_items_v5x.jsonl",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "20f14259e7acd9c6129873007d2feffab9347d95d7ae1794b1e81de0c4152b85",
+      "target_rows": 1
+    },
+    {
+      "path": "inputs/.github/fixes-docs/ledgers/shared_items_v5x.sources.json",
+      "git_path": ".github/fixes-docs/ledgers/shared_items_v5x.sources.json",
+      "base_commit": "c32694be68fd8c9aee3369d2bf764f2e6e2ebfa2",
+      "sha256": "bdd5cc7a1022cf265448e4609c23e935f9b3ba0c6f575d59f40cdadbb92b10b1"
+    },
+    {
+      "path": "code_cohort.json",
+      "sha256": "2260c95505856165178f7d570557f61cff72a8d2d29fb82a5d3672f52381c166",
+      "role": "Derived per-row evidence, raw-source references retained inside"
+    },
+    {
+      "path": "code_index.json",
+      "sha256": "f802625021e835c9c515bad993989dff539ac48f90d1efd1156540764e143669",
+      "role": "Derived per-row evidence, raw-source references retained inside"
+    },
+    {
+      "path": "decisions.json",
+      "sha256": "b003e4e38cfa6587f963fc2b73aa985670cde450104f8d79c66e7c46d3833dd1",
+      "role": "Derived per-row evidence, raw-source references retained inside"
+    }
+  ],
+  "guards": "Canonical target-row hashes and country file formatting only; byte-splice rows in place. Exact guards on all nine read policy files. No contribution whole-file byte guard or payload. No other data fields or migration events change.",
+  "parts": 1,
+  "maximum_changed_rows_per_part": 2000,
+  "lookups": "Every empty-item city row on pinned master, including no-code and out-of-scope holds. Dispositions do not resolve existing unresolved migration identity decisions."
+}

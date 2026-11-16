@@ -157,9 +157,18 @@ test('real canonical US county records produce no warnings', () => {
   }
 });
 
-test('other partial county managed fields still warn', () => {
+test('an ID-only county (a new child county) does not warn; other partial sets do', () => {
   const record = require('../../contributions/counties/US.json')[0];
-  assert.match(validateRecord({ ...record, flag: 1 }, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+  const idOnly = { ...record };
+  for (const key of ['created_at', 'updated_at', 'flag']) delete idOnly[key];
+  assert.doesNotMatch(validateRecord(idOnly, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+  for (const fields of [['id', 'flag'], ['id', 'created_at', 'flag']]) {
+    const partial = { ...record };
+    for (const key of ['id', 'created_at', 'updated_at', 'flag']) {
+      if (!fields.includes(key)) delete partial[key];
+    }
+    assert.match(validateRecord(partial, 'counties', 0).warnings.join('\n'), /partial auto-managed/);
+  }
 });
 
 // v5: cities without a state (countries with no states, e.g. Western Sahara)
@@ -192,7 +201,7 @@ test('a set state pair keeps its rules (positive id, non-empty code)', () => {
 
 // v5 (decision B6): a county of several regions has no state of its own and lists its regions
 const nzCounty = (extra) => ({ id: 9, name: 'Waitomo District', state_id: null, state_code: null, country_id: 158, country_code: 'NZ',
-  latitude: '-38.35', longitude: '175.18', ...extra });
+  latitude: '-38.35', longitude: '175.18', created_at: '2026-10-13T08:29:06', updated_at: '2026-10-13T08:29:06', flag: 1, ...extra });
 const regions = [{ state_id: 4060, state_code: 'MWT' }, { state_id: 4061, state_code: 'WKO' }];
 
 test('a county with no state needs two or more regions in states', () => {

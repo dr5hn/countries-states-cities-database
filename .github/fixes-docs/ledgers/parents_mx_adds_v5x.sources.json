@@ -1,0 +1,1154 @@
+{
+  "ledger": "parents_mx_adds_v5x.jsonl",
+  "records": 102,
+  "base_commit": "78eb76a6b753991a03d3a842aac7f1c1ab0a235f",
+  "full_ledger_sha256": "3ed581b439e46d2836b7a97e40047a22640aaaf7bcab3615f2bf42d098e2c0a2",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Reproved official own code/state and immediate tier; unchanged stored point strictly inside raw own municipio polygon; complete in-state identity scan independent of points suppresses existing municipio entities; numeric 2020 municipio LOC=0000 population on additions; current full-row/incoming-edge guards; v4 continuity for child links."
+  ],
+  "sources": [
+    {
+      "bytes": 29558,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work2/sources/MX_parents_00.json",
+      "retrieved_at": "2026-11-06T12:55:34.377105+00:00",
+      "sha256": "35d816e5ed238c5e8ebcb1de6e2cbc507d9648ae4ea4ddb0ffdcd4d7a54b60c4",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2202007%22+%2204013%22+%2207080%22+%2207123%22+%2208052%22+%2209004%22+%2210032%22+%2210033%22+%2211007%22+%2211020%22+%2211032%22+%2211046%22+%2212023%22+%2212077%22+%2212082%22+%2212083%22+%2212085%22+%2214011%22+%2214017%22+%2214026%22+%2214048%22+%2214050%22+%2214052%22+%2214054%22+%2214065%22+%2214066%22+%2214069%22+%2214081%22+%2214088%22+%2214096%22+%2214105%22+%2214106%22+%2214107%22+%2214110%22+%2214112%22+%2214122%22+%2215016%22+%2215023%22+%2215044%22+%2215045%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 36394,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work2/sources/MX_parents_01.json",
+      "retrieved_at": "2026-11-06T12:55:34.378841+00:00",
+      "sha256": "a6d3bb59039e5ca2104cd37e4d8933732800432790936a11502ec5b9a835660b",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2215068%22+%2215108%22+%2216010%22+%2216036%22+%2216059%22+%2216067%22+%2216089%22+%2216102%22+%2216103%22+%2216108%22+%2217010%22+%2218011%22+%2219003%22+%2219006%22+%2219027%22+%2219034%22+%2220016%22+%2220020%22+%2220026%22+%2220033%22+%2220055%22+%2220057%22+%2220059%22+%2220064%22+%2220077%22+%2220096%22+%2220098%22+%2220108%22+%2220115%22+%2220124%22+%2220125%22+%2220153%22+%2220163%22+%2220205%22+%2220211%22+%2220260%22+%2220281%22+%2220304%22+%2220327%22+%2220343%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 28173,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work2/sources/MX_parents_02.json",
+      "retrieved_at": "2026-11-06T12:55:34.378977+00:00",
+      "sha256": "0c0a15822387d91c8871e9a867e9644a0f06536c6fcb6292a0db9886c3672190",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2220378%22+%2220417%22+%2220427%22+%2220458%22+%2220473%22+%2220551%22+%2220570%22+%2221046%22+%2221076%22+%2221084%22+%2221088%22+%2221109%22+%2221126%22+%2221135%22+%2221143%22+%2221149%22+%2221215%22+%2221216%22+%2222001%22+%2222008%22+%2222016%22+%2223001%22+%2223008%22+%2224001%22+%2224005%22+%2224011%22+%2224018%22+%2224026%22+%2224027%22+%2224032%22+%2224043%22+%2224051%22+%2224059%22+%2225015%22+%2225019%22+%2225020%22+%2226029%22+%2229001%22+%2229011%22+%2229028%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 13590,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work2/sources/MX_parents_03.json",
+      "retrieved_at": "2026-11-06T12:55:34.379094+00:00",
+      "sha256": "ba6549c1b54ea7aaed2a3314cc00297f65427ea34d5f9996d7fc9a968a0db4fe",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2229049%22+%2229059%22+%2230011%22+%2230024%22+%2230028%22+%2230053%22+%2230089%22+%2230101%22+%2230107%22+%2230129%22+%2230135%22+%2230138%22+%2230150%22+%2230152%22+%2230154%22+%2230188%22+%2230189%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 276252,
+      "edition": "AGEEML municipios June 2026; original capture 2026-10-12",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/ageeml_municipios.csv",
+      "retrieved_at": "2026-10-12T04:06:32.405906+00:00",
+      "sha256": "2f2d08c8a13b037203b8fd6822983d242f79cf787b904a1f9df101635f557387",
+      "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPMUNAGEM/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F06%2F2026&forNom=3&ri=0&rf=4000&orden=0+asc&union=0&type_=2&encodingType=1"
+    },
+    {
+      "bytes": 70143464,
+      "edition": "AGEEML localidades August 2026; original capture 2026-10-12",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/ageeml_localidades_with_bajas.csv",
+      "retrieved_at": "2026-10-12T04:08:03.071116+00:00",
+      "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+      "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPLOCAGEML/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F08%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1"
+    },
+    {
+      "bytes": 279620,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/09mun.shp",
+      "retrieved_at": "2026-10-09T01:57:47.366252+00:00",
+      "sha256": "ccdc4762d74a0cd665ed4191a8c3e956aa25dc31a52b75f35d02713a5338050b",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "bytes": 228,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/09mun.shx",
+      "retrieved_at": "2026-10-09T01:57:47.366252+00:00",
+      "sha256": "a80c46ecfe7b3015fe9c3ba2e2c171ef2dc4fc5ebe1b43f9388525af4f1ab36a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "bytes": 1617,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/09mun.dbf",
+      "retrieved_at": "2026-10-09T01:57:47.366252+00:00",
+      "sha256": "5c1333a3ff1f641c021dfd8057b34dd8f34ed4c5217500a5e123cb34cff9c0f7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/09mun.prj",
+      "retrieved_at": "2026-10-09T01:57:47.366252+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/09mun.cpg",
+      "retrieved_at": "2026-10-09T01:57:47.366252+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "bytes": 15122038,
+      "edition": "GeoNames MX dump captured 6 November 2026",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_v5x/work/sources/geonames_MX.zip",
+      "retrieved_at": "2026-11-06T08:53:40.951983+00:00",
+      "sha256": "adbeb5f458faf2d2cc14b7b703cab2231090d4a33eab9b61236d9e925174b98f",
+      "url": "https://download.geonames.org/export/dump/MX.zip"
+    },
+    {
+      "bytes": 8843,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC BY 4.0",
+      "retained_path": "runs/specs/parents_v5x/work/sources/geonames_readme.txt",
+      "retrieved_at": "2026-11-06T08:54:44.153564+00:00",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "url": "https://download.geonames.org/export/dump/readme.txt"
+    },
+    {
+      "bytes": 36615814,
+      "edition": "Censo de Población y Vivienda 2020, ITER, 2020-03-15 reference date",
+      "licence": "INEGI Terms of Free Use; copying, adaptation and commercial use permitted with product/source attribution and transformation notice",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/MX.census.zip",
+      "retrieved_at": "2026-10-11T09:51:38.800401+00:00",
+      "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+    },
+    {
+      "bytes": 1324204,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/10mun.shp",
+      "retrieved_at": "2026-10-09T01:58:02.528153+00:00",
+      "sha256": "8792a3f9c04999d1647ede8eb108f65bb92ef4f4a6ce69d9064d48589470a9f8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "bytes": 412,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/10mun.shx",
+      "retrieved_at": "2026-10-09T01:58:02.528153+00:00",
+      "sha256": "1cfa5905ef91524e37fca8849a3a5da446711ad29951df4a259c425e2ff73e4f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "bytes": 3710,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/10mun.dbf",
+      "retrieved_at": "2026-10-09T01:58:02.528153+00:00",
+      "sha256": "2222987062cdc359bad3f0b091f8aefb4f8c67ced342fad107bebe1a977ccff8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/10mun.prj",
+      "retrieved_at": "2026-10-09T01:58:02.528153+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/10mun.cpg",
+      "retrieved_at": "2026-10-09T01:58:02.528153+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "bytes": 1480804,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/11mun.shp",
+      "retrieved_at": "2026-10-09T01:57:54.531702+00:00",
+      "sha256": "500041928fe17c2f1fda3ffd6ec14a6c106dc5275b65c48628fac43ec48c56e8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "bytes": 468,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/11mun.shx",
+      "retrieved_at": "2026-10-09T01:57:54.531702+00:00",
+      "sha256": "fadf5a5376bea13d2a471429ac40926b8e0878ae778a1e24ab06288c197b430d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "bytes": 4347,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/11mun.dbf",
+      "retrieved_at": "2026-10-09T01:57:54.531702+00:00",
+      "sha256": "41e01f4c74acfbf2c7c7eed63fc610e9a312661fea38eefedf3bd6f9192d65d7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/11mun.prj",
+      "retrieved_at": "2026-10-09T01:57:54.531702+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/11mun.cpg",
+      "retrieved_at": "2026-10-09T01:57:54.531702+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "bytes": 2462372,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/12mun.shp",
+      "retrieved_at": "2026-10-09T01:58:12.998739+00:00",
+      "sha256": "799e8a7070ce5f314a186e774aa9ab33f3c02b6d241c8078afc1cf22f2b0e220",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "bytes": 780,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/12mun.shx",
+      "retrieved_at": "2026-10-09T01:58:12.998739+00:00",
+      "sha256": "826e24887155609bd5eaf620c6f7bc4aeb390ff0cec3242b31abf7c4e9e4a7cb",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "bytes": 7896,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/12mun.dbf",
+      "retrieved_at": "2026-10-09T01:58:12.998739+00:00",
+      "sha256": "2433ad93b139f409a631ad5bc5b9c910d6b1d3ff9fa438156f7a1c74b3f5189a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/12mun.prj",
+      "retrieved_at": "2026-10-09T01:58:12.998739+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/12mun.cpg",
+      "retrieved_at": "2026-10-09T01:58:12.998739+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "bytes": 2757344,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/15mun.shp",
+      "retrieved_at": "2026-10-09T01:58:59.829031+00:00",
+      "sha256": "3a6316a46e9a5f28f9be55c3bdfab8f957688a45ad3d0a657e01b24eb7d0fc81",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "bytes": 1100,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/15mun.shx",
+      "retrieved_at": "2026-10-09T01:58:59.829031+00:00",
+      "sha256": "2e639b9182acffcb78b265cb499d8772941a256c0e610eec6d7656212e6d5cdf",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "bytes": 11536,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/15mun.dbf",
+      "retrieved_at": "2026-10-09T01:58:59.829031+00:00",
+      "sha256": "af967448b85fed26064d1f615474e1207c643b47816acb85e2b901b0b485bc62",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/15mun.prj",
+      "retrieved_at": "2026-10-09T01:58:59.829031+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/15mun.cpg",
+      "retrieved_at": "2026-10-09T01:58:59.829031+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "bytes": 3372564,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/16mun.shp",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "7568307188238e3dd3bd474166e5c97d44b2c73d09bf6f2232e130d709c5de56",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 1004,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/16mun.shx",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "180ae9906631dc821cc9f7d51b4d9c1cc02c283fe954fc5d3708a9776edd3412",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 10444,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/16mun.dbf",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "8bc7c97ef32fa0030b0f3959c3cb8854178e2058ecc6a10543228d72480d5382",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/16mun.prj",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/16mun.cpg",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 676036,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/17mun.shp",
+      "retrieved_at": "2026-10-09T02:05:07.491892+00:00",
+      "sha256": "18e6c9e9a68713f6f5601d3126f8d352cfc42af93bd1e455bb5dc5e5049e9452",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "bytes": 388,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/17mun.shx",
+      "retrieved_at": "2026-10-09T02:05:07.491892+00:00",
+      "sha256": "4c92b2f3683cfab72c433e9daf4f3f6eaa56ee32a02422d55d385084c3c042cf",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "bytes": 3437,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/17mun.dbf",
+      "retrieved_at": "2026-10-09T02:05:07.491892+00:00",
+      "sha256": "2ab554fe1cd0c5e4d2e39d597bfb1263018f4d74ea51a09caf46b9725402d482",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/17mun.prj",
+      "retrieved_at": "2026-10-09T02:05:07.491892+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/17mun.cpg",
+      "retrieved_at": "2026-10-09T02:05:07.491892+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "bytes": 1027340,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/18mun.shp",
+      "retrieved_at": "2026-10-09T01:59:27.764485+00:00",
+      "sha256": "b00c52d07d486b028fffae449f640d2729b57d230a2e01c379524f6c013fca5b",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "bytes": 260,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/18mun.shx",
+      "retrieved_at": "2026-10-09T01:59:27.764485+00:00",
+      "sha256": "572a555f324eef755eafce3d592b1cd5a2c866c6cc58ad9cf6e720ee5adeb2e7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "bytes": 1981,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/18mun.dbf",
+      "retrieved_at": "2026-10-09T01:59:27.764485+00:00",
+      "sha256": "a89e39a522a9804a7291014ead9ec7c38fd99f5de79cbc105baa1b5332606178",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/18mun.prj",
+      "retrieved_at": "2026-10-09T01:59:27.764485+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/18mun.cpg",
+      "retrieved_at": "2026-10-09T01:59:27.764485+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "bytes": 1327280,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/19mun.shp",
+      "retrieved_at": "2026-10-09T01:59:38.476195+00:00",
+      "sha256": "bcccdbde3502d3d5648388c629f18db945e3bb9bcf2d311927acac83f1f72c95",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "bytes": 508,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/19mun.shx",
+      "retrieved_at": "2026-10-09T01:59:38.476195+00:00",
+      "sha256": "55c5b297e43e06f069a9200f9a35fe999ef2e9a51a102666826acfdfbe4247a4",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "bytes": 4802,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/19mun.dbf",
+      "retrieved_at": "2026-10-09T01:59:38.476195+00:00",
+      "sha256": "cacb6c396feef3518b6214ce82142c53dad22db85458d8e46e01302a7595393d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/19mun.prj",
+      "retrieved_at": "2026-10-09T01:59:38.476195+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/19mun.cpg",
+      "retrieved_at": "2026-10-09T01:59:38.476195+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "bytes": 4704088,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shp",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 4660,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.shx",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 52031,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.dbf",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.prj",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/20mun.cpg",
+      "retrieved_at": "2026-10-09T01:59:51.047739+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "bytes": 5732160,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/21mun.shp",
+      "retrieved_at": "2026-10-09T02:00:11.901731+00:00",
+      "sha256": "0b754037b408bb162dec6e67c24094ee72b0f7cdf059ebf9ffa00c4e3985b4f8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "bytes": 1836,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/21mun.shx",
+      "retrieved_at": "2026-10-09T02:00:11.901731+00:00",
+      "sha256": "d7d6b5634aac5942c96ad5d1181ba8e269e02fd921d89eb046a20ac7931eecb5",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "bytes": 19908,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/21mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:11.901731+00:00",
+      "sha256": "4cc17ffcaa91e34685c5fc4926e7378e0e9d7a8664519d48f92106116ff22be4",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/21mun.prj",
+      "retrieved_at": "2026-10-09T02:00:11.901731+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/21mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:11.901731+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "bytes": 429188,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/22mun.shp",
+      "retrieved_at": "2026-10-09T02:00:13.596386+00:00",
+      "sha256": "f2bac43f427cd214ebb005f868a0720ecdef1d651270a12230ffe6f6a179f235",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "bytes": 244,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/22mun.shx",
+      "retrieved_at": "2026-10-09T02:00:13.596386+00:00",
+      "sha256": "cd3c9c12663ff407ef26b3cbb07fc3462884a4f7c92b4832e5301936b83b7585",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "bytes": 1799,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/22mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:13.596386+00:00",
+      "sha256": "7b79f451d0a04c9fe663ff6ce1f4d16c63b39c4e5c10b39b72a132c943fcbdc1",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/22mun.prj",
+      "retrieved_at": "2026-10-09T02:00:13.596386+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/22mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:13.596386+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "bytes": 757244,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/23mun.shp",
+      "retrieved_at": "2026-10-09T02:00:28.077738+00:00",
+      "sha256": "f6e231e9e515ff948494b45adb89546e1bb51b7ece3c9eaf5a6b90fa9f4b08b0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "bytes": 188,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/23mun.shx",
+      "retrieved_at": "2026-10-09T02:00:28.077738+00:00",
+      "sha256": "d4801a56ce53377e9860f416a6e0dd16415683a31c002c50c13bbf152e6e4a6d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "bytes": 1162,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/23mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:28.077738+00:00",
+      "sha256": "8ed000f05e96102fffe5a2580904f79f2b23f0efd09c68dad147f6a287f8c3ea",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/23mun.prj",
+      "retrieved_at": "2026-10-09T02:00:28.077738+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/23mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:28.077738+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "bytes": 883004,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/24mun.shp",
+      "retrieved_at": "2026-10-09T02:00:27.590530+00:00",
+      "sha256": "831af8e229a64f0cbd84dd1ab58d7cb8041bca948b9a5bdab15f074288da83a8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "bytes": 572,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/24mun.shx",
+      "retrieved_at": "2026-10-09T02:00:27.590530+00:00",
+      "sha256": "08fce6d58c938ec11a2235a6089628192112d5f481d3fd2ac2eea3c75d047605",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "bytes": 5530,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/24mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:27.590530+00:00",
+      "sha256": "5926d4134f55baa335c3b0e9ca3fe1f6248627b4748e26f52b0ffe68b3261fcc",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/24mun.prj",
+      "retrieved_at": "2026-10-09T02:00:27.590530+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/24mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:27.590530+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "bytes": 1160652,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/25mun.shp",
+      "retrieved_at": "2026-10-09T02:00:55.543728+00:00",
+      "sha256": "0735782bc060bd568d1d3f00fec8ff716c7c9954b2f1ccdf0d23a237bcd0d9ee",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "bytes": 260,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/25mun.shx",
+      "retrieved_at": "2026-10-09T02:00:55.543728+00:00",
+      "sha256": "631f3f66407a104c8259f8845bebe0f9c871de7f918ac740de868306048e32f2",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "bytes": 1981,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/25mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:55.543728+00:00",
+      "sha256": "7a4c1eb83c77219e5aa557647fdb5862fa259110509013154ca2647dddd3cb5a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/25mun.prj",
+      "retrieved_at": "2026-10-09T02:00:55.543728+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/25mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:55.543728+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "bytes": 1555400,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/26mun.shp",
+      "retrieved_at": "2026-10-09T02:00:58.826847+00:00",
+      "sha256": "1ce0d507f89d453a553b2d746eb8bb610dfbfb34819b49ab8730fde473f50ed7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "bytes": 676,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/26mun.shx",
+      "retrieved_at": "2026-10-09T02:00:58.826847+00:00",
+      "sha256": "a64eda89684986fe84fbc9908942954fe0f3ecb5f5055e4b4988b3e10d90fcd1",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "bytes": 6713,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/26mun.dbf",
+      "retrieved_at": "2026-10-09T02:00:58.826847+00:00",
+      "sha256": "d94ce30d0ed9ac7b5ba30fddb736182ebd8b7e7990988af132d3a0323c98fbd0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/26mun.prj",
+      "retrieved_at": "2026-10-09T02:00:58.826847+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/26mun.cpg",
+      "retrieved_at": "2026-10-09T02:00:58.826847+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "bytes": 1091628,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/29mun.shp",
+      "retrieved_at": "2026-10-09T02:01:31.453132+00:00",
+      "sha256": "2a65a12ac8008621679b012a6fe5a5b3391403016f6370768c109635d7815663",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "bytes": 580,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/29mun.shx",
+      "retrieved_at": "2026-10-09T02:01:31.453132+00:00",
+      "sha256": "ddd7d6c97e89639bbb477450e63335579bfa1811768835094a38f0062f343e83",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "bytes": 5621,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/29mun.dbf",
+      "retrieved_at": "2026-10-09T02:01:31.453132+00:00",
+      "sha256": "bf1d606a8427746c31e26298deaa663a04ed807f02d68ea4054d168caa12226f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/29mun.prj",
+      "retrieved_at": "2026-10-09T02:01:31.453132+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/29mun.cpg",
+      "retrieved_at": "2026-10-09T02:01:31.453132+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "bytes": 6024468,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/30mun.shp",
+      "retrieved_at": "2026-10-09T02:01:45.963609+00:00",
+      "sha256": "89aa8d1490f1c36310f6ebd6949602276c21d8522c91729fbc1b090547fbebac",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "bytes": 1796,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/30mun.shx",
+      "retrieved_at": "2026-10-09T02:01:45.963609+00:00",
+      "sha256": "c0e5dccb02b39873519517dd4ba8419d45c7e54d6efd18a6b44167107fb396e8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "bytes": 19453,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/30mun.dbf",
+      "retrieved_at": "2026-10-09T02:01:45.963609+00:00",
+      "sha256": "feae79422166f2f5600b06cb469f56a1a33416bfe542a7322ce423765b4b6e43",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/30mun.prj",
+      "retrieved_at": "2026-10-09T02:01:45.963609+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/mx_munis_v5x/work/sources/retained/geometry/30mun.cpg",
+      "retrieved_at": "2026-10-09T02:01:45.963609+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    }
+  ],
+  "cohort": "mx_adds",
+  "candidate_count": 137,
+  "rebuilt_from_pr": 2187,
+  "rebuilt_from_head": "34f3ddd18628b3a6276d48a6c94e4b83928fca58",
+  "held_by_reason": {
+    "ambiguous_or_missing_own_municipio_item": [
+      {
+        "id": "INEGI:25019",
+        "existing_ids": [],
+        "code": "25019"
+      },
+      {
+        "id": "INEGI:25020",
+        "existing_ids": [],
+        "code": "25020"
+      }
+    ],
+    "existing_municipio_row_same_entity": [
+      {
+        "id": "INEGI:08052",
+        "existing_ids": [
+          72479
+        ],
+        "code": "08052"
+      },
+      {
+        "id": "INEGI:11020",
+        "existing_ids": [
+          71666
+        ],
+        "code": "11020"
+      },
+      {
+        "id": "INEGI:14011",
+        "existing_ids": [
+          142190
+        ],
+        "code": "14011"
+      },
+      {
+        "id": "INEGI:14017",
+        "existing_ids": [
+          142202
+        ],
+        "code": "14017"
+      },
+      {
+        "id": "INEGI:14026",
+        "existing_ids": [
+          142321
+        ],
+        "code": "14026"
+      },
+      {
+        "id": "INEGI:14048",
+        "existing_ids": [
+          142584
+        ],
+        "code": "14048"
+      },
+      {
+        "id": "INEGI:14050",
+        "existing_ids": [
+          142589
+        ],
+        "code": "14050"
+      },
+      {
+        "id": "INEGI:14052",
+        "existing_ids": [
+          142956
+        ],
+        "code": "14052"
+      },
+      {
+        "id": "INEGI:14054",
+        "existing_ids": [
+          142414
+        ],
+        "code": "14054"
+      },
+      {
+        "id": "INEGI:14065",
+        "existing_ids": [
+          142799
+        ],
+        "code": "14065"
+      },
+      {
+        "id": "INEGI:14066",
+        "existing_ids": [
+          142801
+        ],
+        "code": "14066"
+      },
+      {
+        "id": "INEGI:14069",
+        "existing_ids": [
+          142811
+        ],
+        "code": "14069"
+      },
+      {
+        "id": "INEGI:14081",
+        "existing_ids": [
+          142885
+        ],
+        "code": "14081"
+      },
+      {
+        "id": "INEGI:14088",
+        "existing_ids": [
+          142903
+        ],
+        "code": "14088"
+      },
+      {
+        "id": "INEGI:14096",
+        "existing_ids": [
+          142920
+        ],
+        "code": "14096"
+      },
+      {
+        "id": "INEGI:14105",
+        "existing_ids": [
+          142930
+        ],
+        "code": "14105"
+      },
+      {
+        "id": "INEGI:14106",
+        "existing_ids": [
+          142934
+        ],
+        "code": "14106"
+      },
+      {
+        "id": "INEGI:14107",
+        "existing_ids": [
+          142935
+        ],
+        "code": "14107"
+      },
+      {
+        "id": "INEGI:14110",
+        "existing_ids": [
+          142939
+        ],
+        "code": "14110"
+      },
+      {
+        "id": "INEGI:14112",
+        "existing_ids": [
+          142943
+        ],
+        "code": "14112"
+      },
+      {
+        "id": "INEGI:14122",
+        "existing_ids": [
+          142962
+        ],
+        "code": "14122"
+      },
+      {
+        "id": "INEGI:19003",
+        "existing_ids": [
+          149797
+        ],
+        "code": "19003"
+      },
+      {
+        "id": "INEGI:20115",
+        "existing_ids": [
+          73401
+        ],
+        "code": "20115"
+      },
+      {
+        "id": "INEGI:22001",
+        "existing_ids": [
+          68251
+        ],
+        "code": "22001"
+      }
+    ],
+    "no_official_2020_municipio_population": [
+      {
+        "id": "INEGI:02007",
+        "existing_ids": [],
+        "code": "02007"
+      },
+      {
+        "id": "INEGI:04013",
+        "existing_ids": [],
+        "code": "04013"
+      }
+    ],
+    "no_unambiguous_open_own_point_inside_municipio": [
+      {
+        "id": "INEGI:07080",
+        "existing_ids": [],
+        "code": "07080"
+      },
+      {
+        "id": "INEGI:07123",
+        "existing_ids": [],
+        "code": "07123"
+      },
+      {
+        "id": "INEGI:12023",
+        "existing_ids": [],
+        "code": "12023"
+      },
+      {
+        "id": "INEGI:12083",
+        "existing_ids": [],
+        "code": "12083"
+      },
+      {
+        "id": "INEGI:12085",
+        "existing_ids": [],
+        "code": "12085"
+      }
+    ],
+    "own_municipio_point_timezone_not_reproved": [
+      {
+        "id": "INEGI:12082",
+        "existing_ids": [],
+        "code": "12082"
+      },
+      {
+        "id": "INEGI:24059",
+        "existing_ids": [],
+        "code": "24059"
+      }
+    ]
+  },
+  "source_currentness": "Wikidata re-read in work2 with fresh receipts. Official catalogue/geometry and 2020 census are hash-verified retained editions at their original capture dates; ordinary direct INEGI refresh failed (receipts in work2/sources). No live-current INEGI claim.",
+  "duplicate_scan": {
+    "path": "runs/specs/parents_expand/work2/municipio_identity_scan.json",
+    "sha256": "52120eb7ccd0dcc65014e6531c9a7db7a4d110f37ac96d213c51874a67225812",
+    "point_independent": true
+  },
+  "population_policy": "Every kept addition uses numeric AGEEML POB_TOTAL equal to 2020 ITER municipio LOC=0000 POBTOT. Missing totals are held; no seat totals, zeros, nulls or estimates substituted.",
+  "dropped_pr_ids": [
+    194204,
+    194205,
+    194213
+  ]
+}

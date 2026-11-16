@@ -1,0 +1,136 @@
+{
+  "ledger": "parents_mx_reuse_v5x.jsonl",
+  "records": 1,
+  "base_commit": "198b0321b3e5535ebba41d2c2cd51df3b420d8ec",
+  "full_ledger_sha256": "e10f600a1e831cfa7f757a384abbd7bb7f3f9adb7ce11d2da5d1d41ef457d4b7",
+  "note": "In the ledger, `sources` holds indices into `sources` below, and method fields hold indices into `methods`.",
+  "methods": [
+    "Official own code/state and immediate direct tier; strict raw-parent point containment; current complete-row and incoming-edge guards; existing non-null parent/county links preserved. New territorial records are excluded by the unchanged settlement queries.",
+    "Current raw official own-code/name/state/point proof identifies the entity. Original v4 name/state/country/point identify the same place even where a later reviewed item correction changed its item; alternatively the unchanged own item/name/state/country identifies the same entity across reviewed point corrections. Saint/St is the sole explicit name abbreviation."
+  ],
+  "sources": [
+    {
+      "bytes": 276252,
+      "edition": "AGEEML municipios June 2026; original capture 2026-10-12",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_2f2d08c8a13b_ageeml_municipios.csv",
+      "retrieved_at": "2026-10-12T04:06:32.405906+00:00",
+      "sha256": "2f2d08c8a13b037203b8fd6822983d242f79cf787b904a1f9df101635f557387",
+      "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPMUNAGEM/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F06%2F2026&forNom=3&ri=0&rf=4000&orden=0+asc&union=0&type_=2&encodingType=1"
+    },
+    {
+      "bytes": 70143464,
+      "edition": "AGEEML localidades August 2026; original capture 2026-10-12",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_59a63e2c164b_ageeml_localidades_with_bajas.csv",
+      "retrieved_at": "2026-10-12T04:08:03.071116+00:00",
+      "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+      "url": "https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPLOCAGEML/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F08%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1"
+    },
+    {
+      "bytes": 3372564,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_756830718823_16mun.shp",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "7568307188238e3dd3bd474166e5c97d44b2c73d09bf6f2232e130d709c5de56",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 1004,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_180ae9906631_16mun.shx",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "180ae9906631dc821cc9f7d51b4d9c1cc02c283fe954fc5d3708a9776edd3412",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 10444,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_8bc7c97ef32f_16mun.dbf",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "8bc7c97ef32fa0030b0f3959c3cb8854178e2058ecc6a10543228d72480d5382",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 648,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_df540d82c2de_16mun.prj",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 12,
+      "edition": "Marco Geoestadístico Encuesta Intercensal 2025, edition 2026",
+      "licence": "INEGI Términos de Libre Uso",
+      "retained_path": "runs/specs/parents_expand/work/sources/retained_6338217cd653_16mun.cpg",
+      "retrieved_at": "2026-10-09T01:58:55.057529+00:00",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "bytes": 13020,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/MX_children_05.json",
+      "retrieved_at": "2026-11-06T10:44:39.831226+00:00",
+      "sha256": "afb820c2a7358ec678b94adf18d738ae719a8220d7237a6b0917cbc00c7262a2",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fmunicipio+%3Fparent+WHERE+%7B+VALUES+%3Fitem+%7B+wd%3AQ20289437+wd%3AQ20289450+wd%3AQ20289627+wd%3AQ20290897+wd%3AQ20291183+wd%3AQ20292969+wd%3AQ20293736+wd%3AQ20294708+wd%3AQ20295485+wd%3AQ20295737+wd%3AQ20295970+wd%3AQ20296010+wd%3AQ20296094+wd%3AQ20296283+wd%3AQ20296675+wd%3AQ20296920+wd%3AQ20297174+wd%3AQ20895287+wd%3AQ2447248+wd%3AQ2465593+wd%3AQ2652084+wd%3AQ27767804+wd%3AQ27768051+wd%3AQ27769275+wd%3AQ27779660+wd%3AQ27901808+wd%3AQ27901937+wd%3AQ27925782+wd%3AQ28034495+wd%3AQ28664090+wd%3AQ2885816+wd%3AQ3311360+wd%3AQ3311372+wd%3AQ3311727+wd%3AQ3311914+wd%3AQ3846850+wd%3AQ3846886+wd%3AQ3888543+wd%3AQ3892861+wd%3AQ399270+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1976+%3Fcode+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP3801+%3Fmunicipio+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 32944,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/MX_parents_00.json",
+      "retrieved_at": "2026-11-06T10:27:01.665512+00:00",
+      "sha256": "c5ee19f65bcb2a8a36fe9cdcb85086c672d6b8b51b06539ecbc8d09363f017e5",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2202007%22+%2204013%22+%2207080%22+%2207123%22+%2208052%22+%2209004%22+%2210032%22+%2210033%22+%2211007%22+%2211020%22+%2211032%22+%2211046%22+%2212023%22+%2212077%22+%2212082%22+%2212083%22+%2212085%22+%2214004%22+%2214011%22+%2214017%22+%2214026%22+%2214048%22+%2214050%22+%2214052%22+%2214054%22+%2214065%22+%2214066%22+%2214069%22+%2214081%22+%2214088%22+%2214096%22+%2214099%22+%2214104%22+%2214105%22+%2214106%22+%2214107%22+%2214110%22+%2214112%22+%2214122%22+%2215016%22+%2215023%22+%2215044%22+%2215045%22+%2215068%22+%2215108%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 39742,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/MX_parents_01.json",
+      "retrieved_at": "2026-11-06T10:27:01.665680+00:00",
+      "sha256": "209cb50600e789407173e07ef0a9f5cef59c2ab22508eeec62a99a8bf3a4e56c",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2216010%22+%2216036%22+%2216059%22+%2216067%22+%2216089%22+%2216091%22+%2216102%22+%2216103%22+%2216108%22+%2217010%22+%2218011%22+%2219003%22+%2219006%22+%2219027%22+%2219034%22+%2220016%22+%2220020%22+%2220026%22+%2220033%22+%2220055%22+%2220057%22+%2220059%22+%2220064%22+%2220077%22+%2220096%22+%2220098%22+%2220108%22+%2220115%22+%2220124%22+%2220125%22+%2220153%22+%2220163%22+%2220205%22+%2220211%22+%2220260%22+%2220281%22+%2220304%22+%2220327%22+%2220343%22+%2220378%22+%2220417%22+%2220427%22+%2220458%22+%2220473%22+%2220551%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 32254,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/MX_parents_02.json",
+      "retrieved_at": "2026-11-06T10:27:01.666264+00:00",
+      "sha256": "cedfbb8211836b51a03229d42134d88e6da0fa93b86e26b44d9540a0ad1a49d6",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2220570%22+%2221046%22+%2221076%22+%2221084%22+%2221088%22+%2221109%22+%2221126%22+%2221135%22+%2221143%22+%2221149%22+%2221215%22+%2221216%22+%2222001%22+%2222008%22+%2222016%22+%2223001%22+%2223008%22+%2224001%22+%2224005%22+%2224011%22+%2224018%22+%2224026%22+%2224027%22+%2224032%22+%2224043%22+%2224051%22+%2224059%22+%2225015%22+%2225019%22+%2225020%22+%2226029%22+%2229001%22+%2229011%22+%2229028%22+%2229049%22+%2229059%22+%2230011%22+%2230024%22+%2230028%22+%2230053%22+%2230089%22+%2230101%22+%2230107%22+%2230129%22+%2230135%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    },
+    {
+      "bytes": 5491,
+      "edition": "Snapshot at original retrieval",
+      "licence": "CC0 1.0",
+      "retained_path": "runs/specs/parents_expand/work/sources/MX_parents_03.json",
+      "retrieved_at": "2026-11-06T10:27:02.804783+00:00",
+      "sha256": "567c6f006d23571c6f8a0f3ec70e38e5d2a3a706deb1f7af5cb5fc0cbcc9a381",
+      "url": "https://query.wikidata.org/sparql?query=SELECT+%3Fitem+%3Fcode+%3Fpoint+%3Fgn+%3Fparent+%3Fclass+WHERE+%7B+VALUES+%3Fcode+%7B+%2230138%22+%2230150%22+%2230152%22+%2230154%22+%2230188%22+%2230189%22+%7D+%3Fitem+wdt%3AP3801+%3Fcode+.+OPTIONAL+%7B+%3Fitem+p%3AP625+%3Fcs+.+%3Fcs+ps%3AP625+%3Fpoint+%3B+wikibase%3Arank+%3Frank+.+FILTER%28%3Frank+%21%3D+wikibase%3ADeprecatedRank%29+FILTER+NOT+EXISTS+%7B+%3Fcs+pq%3AP582+%3Fended+%7D+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP1566+%3Fgn+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP131+%3Fparent+%7D+OPTIONAL+%7B+%3Fitem+wdt%3AP31+%3Fclass+%7D+%7D&format=json"
+    }
+  ],
+  "cohort": "mx_reuse",
+  "candidate_count": 7,
+  "held_by_reason": {
+    "parent_held:existing_parent_unchanged_point_outside_or_invalid_municipio": [
+      142160,
+      142330,
+      142446,
+      142568,
+      142907,
+      142913
+    ]
+  },
+  "source_currentness": "Official ABS SAL 2021/LGA 2025, ISTAT 2021 localities/2026 boundaries, refreshed CBS 2026/PDOK and literal Wikidata parent statements. INEGI ordinary direct endpoints timed out on 6 Nov 2026; retained June/August 2026 catalogues keep original 12 Oct capture dates. No live-current INEGI claim or access workaround.",
+  "scope_exclusions": "1395 AU/IT addition-dependent reach children and 21 pilot holds remain outside all seven cohorts; full disposition in work/excluded_scope.json.",
+  "identity_event_policy": "Current active unresolved keys require explicit reviewed v4 continuity; no structural reach implies identity approval."
+}

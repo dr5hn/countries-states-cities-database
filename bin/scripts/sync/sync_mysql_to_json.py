@@ -275,7 +275,7 @@ class MySQLToJSONSync:
             return 0
 
         columns = self.get_table_columns('counties')
-        excluded = {'created_at', 'updated_at', 'flag'}
+        excluded = self.get_excluded_columns()
 
         # One file per country (mirrors the cities/ pattern)
         self.cursor.execute("SELECT DISTINCT country_code FROM counties ORDER BY country_code")
