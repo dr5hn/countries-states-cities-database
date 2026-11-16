@@ -452,3 +452,24 @@ Where any row of a linked prefecture group was not proved, the whole group keeps
 ### Romania
 
 A UAT (unitate administrativ-teritorială) is a level 2 city-table row under its județ: a comună has type `municipality` and type_local `comună`, an oraș has type `town` and type_local `oraș`, and a municipiu has type `city` and type_local `municipiu`. Its parent_id is null. Villages (`village`, sat) and localities (`locality`) are level 3 and link to their UAT by parent_id. A seat village and its same-named commune are distinct entities, and the commune's population includes its villages', so do not add the two. Some seat villages have no row of their own yet, so leaving out `municipality` would drop that place too; the settlement filter keeps comune until v7 reviews their seats.
+
+### France
+
+France uses Insee's Code officiel géographique (COG 2026) for the current legal unit and its own code:
+
+| Unit | `type` | `type_local` | `level` |
+|---|---|---|---|
+| Commune | `municipality` | `commune` | 4 |
+| Commune déléguée | `section` | `commune déléguée` | 5 |
+| Commune associée | `section` | `commune associée` | 5 |
+| Arrondissement municipal | `section` | `arrondissement municipal` | 5 |
+| Quartier | `section` | `quartier` | Parent's level + 1 |
+| Inhabited named place | `locality` | `lieu-dit habité` | Parent's level + 1 |
+
+Communes in overseas collectivities without departments and arrondissements, such as Nouméa in New Caledonia, stay unclassified until an overseas level model is documented.
+
+A commune déléguée or associée links by `parent_id` to its COG `COMPARENT` commune where that commune has an independently proved CSC row. An unresolved parent remains null. A former commune keeps its own identity and population; a code reused by a successor does not transfer the successor's class or population.
+
+IGN BD TOPO v3 `zone_d_habitation` supplies populated-place designations for places without their own government: `Lieu-dit habité` maps to `locality / lieu-dit habité`, and `Quartier` to `section / quartier`. Other natures stay unresolved. A match requires the same name after case, accent, hyphen, apostrophe and leading-article normalization, the stored point within 1 km of the feature, and no other same-name feature within 5 km. Its `insee_commune` must bind a CSC `municipality / commune / 4` by that row's own Wikidata P374 or exact COG LIBELLE in the same department. The place links to that row and is one level below it (level 5 under a commune). Missing communes are held rather than added.
+
+Sources: [Insee COG](https://www.insee.fr/fr/information/2560452), [IGN BD TOPO](https://www.data.gouv.fr/datasets/bd-topo-r) (Licence Ouverte / Open Licence 2.0), and literal own-item [Wikidata](https://www.wikidata.org/wiki/Wikidata:Licensing) claims and labels (CC0). The [France ledger](.github/fixes-docs/ledgers/fr_tld2_v6x.jsonl) records changed and held rows. French communes remain included by the settlement filter above.
