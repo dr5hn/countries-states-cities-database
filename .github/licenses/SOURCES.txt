@@ -1844,3 +1844,16 @@ US item corrections, missing items and former CDPs (us_fix3_v6x, #1643):
 - Complete scanned/changed/held ledger: .github/fixes-docs/ledgers/us_fix3_v6x.jsonl and us_fix3_v6x.sources.json
 
 Italy type/depth closeout (it_tld_v6x): ISTAT Località puntuali 2021 (POP21), confini amministrativi 1 January 2026 and SITUAS variations, CC BY 4.0; Wikidata own-item claims, CC0. https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/ https://www.istat.it/note-legali/ https://www.wikidata.org/
+
+France close sample points (fr_close_v6x)
+Publisher: IGN; Wikidata contributors; GeoNames; Insee
+Edition: IGN ADMIN EXPRESS COG 2026 (January 2026 geography), WFS retrieved 16 November 2026; Wikidata literal item revisions and GeoNames archive dates in fr_close_v6x.sources.json.
+Source: https://www.data.gouv.fr/datasets/admin-express/
+Service: https://data.geopf.fr/wfs/ows
+Licence: IGN/Insee Licence Ouverte / Open Licence 2.0; Wikidata structured data CC0; GeoNames CC BY 4.0.
+Terms: https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+Terms: https://www.wikidata.org/wiki/Wikidata:Licensing
+Terms: https://www.geonames.org/export/
+Credit: Source: IGN, ADMIN EXPRESS COG 2026; Insee, COG 2026; Wikidata contributors; GeoNames.
+Changes by CSC: select own chef-lieu or own P625 inside its own territory, format coordinate pairs to eight decimals, fill two current own commune item identifiers and two own arrondissement links; no population, year, class, depth or identity transfer.
+Per-row point feature, revision, before/after values, sample holds and capture hashes: .github/fixes-docs/ledgers/fr_close_v6x.jsonl and .sources.json.

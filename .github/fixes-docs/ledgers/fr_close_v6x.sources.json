@@ -1,0 +1,1514 @@
+{
+  "schema_version": 1,
+  "ledger": ".github/fixes-docs/ledgers/fr_close_v6x.jsonl",
+  "ledger_sha256": "cd4fd9a27f7e5175468b16199a5bb5580ea2db24098de79dd2c2edc32d9eb67a",
+  "base_commit": "01abc0f5fc3f614f67e06f69ee04a62ee393479b",
+  "method": "Official own COG code/name/scope and raw IGN 2026 geometry. Sample emptiness is failure, zero exceptions. Point/count licences are proved separately. Existing exact GeoNames points re-attributed, never claimed originally sourced. QLever bulk plus bounded paced maxlag=5 live sample/current items. Scalar same-entity corrections, no class/depth change.",
+  "sources": [
+    {
+      "path": "sources/COG2025.zip",
+      "sha256": "89329a7fc6669e215f90d557b123a7eb83cb926cdb769946b1a9a8bf19bc12d9",
+      "bytes": 1943027
+    },
+    {
+      "path": "sources/COG2025.zip.receipt.json",
+      "sha256": "7236c42922f11db8e5173eac57073cad52ecbe23838b3c30d3732cfd4805700f",
+      "bytes": 497
+    },
+    {
+      "path": "sources/COG2026.zip",
+      "sha256": "5c037e2977c9d476cfe2e7b7f923bbe09a87cbe448c59e492a71ef6a917aa53f",
+      "bytes": 1961824
+    },
+    {
+      "path": "sources/COG2026.zip.receipt.json",
+      "sha256": "a19b0ee8c07f50942823a61e903b0901f8b4038fe2b719b3f70472dfe5a898aa",
+      "bytes": 497
+    },
+    {
+      "path": "sources/admin_express_catalogue.json",
+      "sha256": "984170b4bbed755343e94a1dc62fe17bffbcc7fb178bd0f89a357f5c1fe7b37f",
+      "bytes": 610183
+    },
+    {
+      "path": "sources/admin_express_catalogue.json.receipt.json",
+      "sha256": "4e8eb5afa53584ae962082161b493c0d5187ec55023e8c84409ba68a5dd07916",
+      "bytes": 545
+    },
+    {
+      "path": "sources/cities1000.zip",
+      "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+      "bytes": 11095530
+    },
+    {
+      "path": "sources/cities1000.zip.receipt.json",
+      "sha256": "db13a0db733ec7c9678ef2bce9e27e965f215110db9e6bc90e3b1f3ee6c63498",
+      "bytes": 584
+    },
+    {
+      "path": "sources/etalab.html",
+      "sha256": "96f21690e27a7b25f2a0eba6d136879958a9ce976630c314878ab1b083b12065",
+      "bytes": 92310
+    },
+    {
+      "path": "sources/etalab.html.receipt.json",
+      "sha256": "807ff1dad84fe8053d569d5665c41c071340dfe3d262562028104ed16904b2db",
+      "bytes": 439
+    },
+    {
+      "path": "sources/geo_centres.json",
+      "sha256": "91d3d8d697375465d025e71db5d34f242645425bc75f03da094d81c09e434b42",
+      "bytes": 4125546
+    },
+    {
+      "path": "sources/geo_centres.json.receipt.json",
+      "sha256": "2403e42161913424fca0ac671f4d2a8309a06104c8a4aad353b8387a83886d5c",
+      "bytes": 538
+    },
+    {
+      "path": "sources/geonames-readme.txt",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "bytes": 8843
+    },
+    {
+      "path": "sources/geonames-readme.txt.receipt.json",
+      "sha256": "34bba374336858fe814b65c2b2fbeed61009418fd49b79bd10138956c8c6b371",
+      "bytes": 580
+    },
+    {
+      "path": "sources/geonames-terms.html",
+      "sha256": "d93b90224e48e2f27a6d7d60719b45ea5e99c82f8277343a4f254d2f0d09c417",
+      "bytes": 30795
+    },
+    {
+      "path": "sources/geonames-terms.html.receipt.json",
+      "sha256": "6e87d433eeac3e2c4110dd716264908ecc27cbaacc736a9a31b4c8f4b56d7817",
+      "bytes": 563
+    },
+    {
+      "path": "sources/gn_FR.zip",
+      "sha256": "7d4b98f0eefa2b12e7108c2e716408f0381a6fd3d9302624d3ee52115f68fc37",
+      "bytes": 7306644
+    },
+    {
+      "path": "sources/gn_FR.zip.meta.json",
+      "sha256": "b8c60d0716a1b9cf01a4ef7eb133e84a32729edd14ddaa913085fb74ecc05131",
+      "bytes": 414
+    },
+    {
+      "path": "sources/ign_164721.json",
+      "sha256": "9942e3acc085e9da6c8d40601401969fef5cdef14e20813b14b9c0877b859e34",
+      "bytes": 129017
+    },
+    {
+      "path": "sources/ign_164721.json.receipt.json",
+      "sha256": "676a0768175d70146bdf5ace26c7ee5890d21e1e15d2fafce70c923fd1a4ac0c",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_39371.json",
+      "sha256": "ab4bad7f814ade9d1ffb36a4e00e05ac36594961c9b05ed792f24f5d08a4fe59",
+      "bytes": 313420
+    },
+    {
+      "path": "sources/ign_39371.json.receipt.json",
+      "sha256": "3045fb6ac7238780341640ff845431f4d76dcbc2ff4cafec63d35a758131e66f",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_39512.json",
+      "sha256": "f4b9c53ef6a23dcbee6c460ef0a1f9b2f6f5ce4e499e09a7ceac38a11e77614f",
+      "bytes": 159843
+    },
+    {
+      "path": "sources/ign_39512.json.receipt.json",
+      "sha256": "824fa1b73c45eb5dc5ae396c0bc1c6eb5981889c5037437b199170f9681e0efe",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_39789.json",
+      "sha256": "07f690d8d4ef911aeef203808a11f6bb0f717681a17ee3e30f1fe8dd25e3aa11",
+      "bytes": 151908
+    },
+    {
+      "path": "sources/ign_39789.json.receipt.json",
+      "sha256": "12d9d6f3f668fc4199c27adfae106009cc9b2a2d1ddb439a1e5af9906626ecbb",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_39868.json",
+      "sha256": "72676bf789c0792a2cec93ac1d2bcb9ebeb29606defadbdda39be44ccdeeb1ef",
+      "bytes": 154786
+    },
+    {
+      "path": "sources/ign_39868.json.receipt.json",
+      "sha256": "eac5a3633fa2e67c8b1ed4519efeced55c39dc3b38ab2aa5197812619dd227bb",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_39911.json",
+      "sha256": "d9b4dce8b63ef78433a8b483cc0fc3812f2e81e6f63b99aa18af4e1befb8f326",
+      "bytes": 202384
+    },
+    {
+      "path": "sources/ign_39911.json.receipt.json",
+      "sha256": "d22fe319a5c977e2104771f50488264c918f96bbba15ffac84fd5f46551e14f2",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_39944.json",
+      "sha256": "03e1170c0be89fabc7e549e869231de75cec6d0adf56df79c2a08688600e1dde",
+      "bytes": 129141
+    },
+    {
+      "path": "sources/ign_39944.json.receipt.json",
+      "sha256": "56bfa2b3227601222414abe96a54593d77219b2ae9bbbe0ba5870c09bba9759b",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_39990.json",
+      "sha256": "3592e8425adb9a11cb9fbb4d7d136f4785f2ead8114978e8e02c1cb34f5b7268",
+      "bytes": 378412
+    },
+    {
+      "path": "sources/ign_39990.json.receipt.json",
+      "sha256": "6fa3ec03fa28a273d8c90972b478c75354e5a9d77ddb5c97bb16590a911e520f",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_40011.json",
+      "sha256": "d079d303289130811925a303e2bb6cefc6ca60c7469fac9bedcf94edec238215",
+      "bytes": 90594
+    },
+    {
+      "path": "sources/ign_40011.json.receipt.json",
+      "sha256": "ad7c2e2936e6a46cf2d135ee3b589725bfb7e1c164f50399ed737c921d43bf10",
+      "bytes": 1053
+    },
+    {
+      "path": "sources/ign_40240.json",
+      "sha256": "2dcba11d331c1afb5c1786ba5034d9b9842727b4424706266a0fd02d0890aabc",
+      "bytes": 86761
+    },
+    {
+      "path": "sources/ign_40240.json.receipt.json",
+      "sha256": "4f1057228de2d56b6405e16d123e56e970383e39f79b6b1f2564e76c3598eecd",
+      "bytes": 1059
+    },
+    {
+      "path": "sources/ign_40267.json",
+      "sha256": "de58cd62a125d5be5305414725f9a6ea302c921017df3cea9a6c3ea9c4866864",
+      "bytes": 247436
+    },
+    {
+      "path": "sources/ign_40267.json.receipt.json",
+      "sha256": "b6dc4abac7ca44235e549dfb7463a9ffe4b8b144ebcb0276b7b5ca8ef03f08d4",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_40515.json",
+      "sha256": "f6ba0a3dd8aee611c2de1183c57b7f0289592cebb3817a25eeeb07e58362891d",
+      "bytes": 193179
+    },
+    {
+      "path": "sources/ign_40515.json.receipt.json",
+      "sha256": "6935b49d15bb7dab65dd1a61c7b4606fd9f84e192e6e3e3847058e02008f4386",
+      "bytes": 1068
+    },
+    {
+      "path": "sources/ign_40519.json",
+      "sha256": "d6e4ff92435bff5bcbf12bc0a3d42636de9f36aa82a51d45cb36be632dbb2aff",
+      "bytes": 238225
+    },
+    {
+      "path": "sources/ign_40519.json.receipt.json",
+      "sha256": "1d6caf91d320254ab8401b30e2cff3b230b3a69e6a95dc6ac0a9a145516df8c1",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_40541.json",
+      "sha256": "18d4bf30c887e043eb1efd68db1433c1e28a487c41bb1ff14f69177d24f8021c",
+      "bytes": 165706
+    },
+    {
+      "path": "sources/ign_40541.json.receipt.json",
+      "sha256": "7f42e3a2e0bc130e48e47be97da44ea74ae1d7ae339caf84b65c67bbf8b0343e",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_40752.json",
+      "sha256": "b3e9590ba1a0a258b27c6873a1917a8390a150221bf86665fceafdfd397ed200",
+      "bytes": 371494
+    },
+    {
+      "path": "sources/ign_40752.json.receipt.json",
+      "sha256": "8f053ecc622a1b3c52daca5f81d327eb47bf4ed3be1800112b7c313271e2af6e",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_40870.json",
+      "sha256": "e003313fcd7f8617db0f7ce06bfda4df8b2c3a4a9c18277e0c6a393e07667cf5",
+      "bytes": 215059
+    },
+    {
+      "path": "sources/ign_40870.json.receipt.json",
+      "sha256": "f2ef56a6cfc51adb78bfdd99a436555b48a92a985759e827e8f29f37d2d4b36e",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_40875.json",
+      "sha256": "8bbee9157ca99b49ce618a502acc902ad0d200e3883a4354573b74f852ae945b",
+      "bytes": 64553
+    },
+    {
+      "path": "sources/ign_40875.json.receipt.json",
+      "sha256": "52e770581714bbf239a62c3049f7507c468e97576b94b656eb910d5f697cc391",
+      "bytes": 1057
+    },
+    {
+      "path": "sources/ign_40948.json",
+      "sha256": "3937b499f3ecc96474c102c9ee379553dbcb88b0d5ced7250aae7a2831336632",
+      "bytes": 309858
+    },
+    {
+      "path": "sources/ign_40948.json.receipt.json",
+      "sha256": "6d7b3f91acffc668bd914bad82f4ca25a1afdee0a9747a1b6accf54bffe56724",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_41051.json",
+      "sha256": "b1c9a23533ed17396042e0a4a2893d8fd123623266b5a389641d2bfd39d362bb",
+      "bytes": 71420
+    },
+    {
+      "path": "sources/ign_41051.json.receipt.json",
+      "sha256": "20033af6f61537bc5ce8eef060f69f5a18f9766350d8fc1ac1ce992d891de65c",
+      "bytes": 1055
+    },
+    {
+      "path": "sources/ign_41061.json",
+      "sha256": "c78894efee3bea7fbcf247e57a86927bb92880d7ec65123f0749913c4b2ed80f",
+      "bytes": 183412
+    },
+    {
+      "path": "sources/ign_41061.json.receipt.json",
+      "sha256": "bff7f7ce02e2dffb81f1cb0ed7ab8f73a7b2a947fb9761472863319535ff5f16",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_41117.json",
+      "sha256": "95a8d71bcfb9493805ec303fe01112f154a46941817bd5f444229643915182e8",
+      "bytes": 312879
+    },
+    {
+      "path": "sources/ign_41117.json.receipt.json",
+      "sha256": "63a1670073886a6dcb4daf41dcf8b37810bb56695b8bfc6d93c61b9ddb7ee7b3",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41249.json",
+      "sha256": "e2d0b89cbe94a9adab5f36866535fe8209af69b0adbd5249a05953d26530e07b",
+      "bytes": 335391
+    },
+    {
+      "path": "sources/ign_41249.json.receipt.json",
+      "sha256": "af850a5b91ac3c821064b02128f34eb76692251540296a5868aada3a9cea2770",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41267.json",
+      "sha256": "f8bdd9183117ed363b717c35fde9e96b2e75d5d003ef73ec0b970b49d990534e",
+      "bytes": 184278
+    },
+    {
+      "path": "sources/ign_41267.json.receipt.json",
+      "sha256": "4612494aea6408064aba5440ed45d229254d8c37d65f7d742a467572483c989c",
+      "bytes": 1066
+    },
+    {
+      "path": "sources/ign_41310.json",
+      "sha256": "8577bc059188b126520d58a08cd674889ab60cac4bdef5240fac909190f9bb4d",
+      "bytes": 179711
+    },
+    {
+      "path": "sources/ign_41310.json.receipt.json",
+      "sha256": "7e82647ab1d9d6983eface7e09bd4985cc83bd55c8a998183e248d3d7f1fb93b",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_41377.json",
+      "sha256": "a9a64852b6783f515498445b11f27d576e8d35f78dd79be099539fdeb932437c",
+      "bytes": 292149
+    },
+    {
+      "path": "sources/ign_41377.json.receipt.json",
+      "sha256": "1b4ab9ff8d9b94922364ba074ab6b705d6e8ee129cf7c1f037201e68400db7bc",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_41425.json",
+      "sha256": "a3625bdcc10ca273ab911bb662769ae60bb574ac4e2e6ce210bab936127e252c",
+      "bytes": 161901
+    },
+    {
+      "path": "sources/ign_41425.json.receipt.json",
+      "sha256": "33825101bbabdcd4ce63c4898f847113915bc4448a2e4cc9cf7a9830280eb48a",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41548.json",
+      "sha256": "15eff1f1b3c98383389c54621e6343a1fef41020b120d9ba43a4b3b3133c21e9",
+      "bytes": 213433
+    },
+    {
+      "path": "sources/ign_41548.json.receipt.json",
+      "sha256": "6c8e42e64ee5dca8fede460d6194ed5cd906fa637a01836f038235800d09f43c",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41572.json",
+      "sha256": "94a1f37838d555c4478b8e83569f8295b848266399175d59af2992539ff5e6b8",
+      "bytes": 161545
+    },
+    {
+      "path": "sources/ign_41572.json.receipt.json",
+      "sha256": "93beb9c9f84bb3500a9aa0a98f41a675ee2486e37f54de3f488a77fb61f100b4",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41578.json",
+      "sha256": "c6bd515b094af8d097e6091d97e320399e44ef8b056ecf442f906d03ccb38f35",
+      "bytes": 267365
+    },
+    {
+      "path": "sources/ign_41578.json.receipt.json",
+      "sha256": "d2d884b18d281d84aad574ee031e3eb766bd828ffbe839238ac3f150f00efcf8",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_41782.json",
+      "sha256": "d5190565d0266bed99e7a13a029cb73e0f18e01769244b2105d2ac24cada40fa",
+      "bytes": 163609
+    },
+    {
+      "path": "sources/ign_41782.json.receipt.json",
+      "sha256": "5bf4f93a8c324560ef1b8efaeb38e66352efb5bc35469d684f6cd5319cd4db9a",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_41860.json",
+      "sha256": "cbec78660c473aca080feb9257701b92799fd05465465be839725923697bb656",
+      "bytes": 83776
+    },
+    {
+      "path": "sources/ign_41860.json.receipt.json",
+      "sha256": "7b2ee308cb86396530c0cf7d46c21a7db54993b5452e030ea53cb115e17e48e7",
+      "bytes": 1057
+    },
+    {
+      "path": "sources/ign_41892.json",
+      "sha256": "e7d604bd3868c6b9dbb0f8e2c6105b0d9c6accf3b625059999f597eaf42f2df3",
+      "bytes": 111457
+    },
+    {
+      "path": "sources/ign_41892.json.receipt.json",
+      "sha256": "237d65077df921055a1530be15a991ad373e473b658448038cecca8115e0c454",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_42183.json",
+      "sha256": "fd9afda5032dbacf6be7d1933e13020baf6e08b4a8e01f9bfe724379bd7e6d31",
+      "bytes": 192297
+    },
+    {
+      "path": "sources/ign_42183.json.receipt.json",
+      "sha256": "a9dbc9c2d31258b706425ef9e10762c7ad69598de14c4f93c24edc53dda12285",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_42267.json",
+      "sha256": "8464794dcf67a5402fe0ac160d1561f53b72f046c2d445a15762a14fafa15829",
+      "bytes": 264639
+    },
+    {
+      "path": "sources/ign_42267.json.receipt.json",
+      "sha256": "4342cfdc1d69f0f6b81c20a130de3bdb91b56e706956ca8fe67deb6461f8235c",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_42488.json",
+      "sha256": "bfd1524bab4ce9917ccc5e759c45921eeaff7833f4de7568fb2b4f2222fb92f1",
+      "bytes": 342181
+    },
+    {
+      "path": "sources/ign_42488.json.receipt.json",
+      "sha256": "4a8d17c0e70c6d49a2024877bb2411b546cfbc248ec897d5c658836d66bc6b3d",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_42582.json",
+      "sha256": "1e78ba9f9ed87a0991a019b6447706621a9f9918d72a879ad314db17ea583002",
+      "bytes": 348649
+    },
+    {
+      "path": "sources/ign_42582.json.receipt.json",
+      "sha256": "4bd696386ae6879b28bdad74538711852807e2d5769a850519d4abebc89d1c3f",
+      "bytes": 1068
+    },
+    {
+      "path": "sources/ign_42677.json",
+      "sha256": "d0b6d243bc6e946be797f85c9ddd822e0aadcb8351019cdd729284c8c76da6aa",
+      "bytes": 216389
+    },
+    {
+      "path": "sources/ign_42677.json.receipt.json",
+      "sha256": "bf4ecf883dd7ed2d2bcf861f4eb05b7f0ff56528eafb35cb4ab4b2d156d108cc",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_42683.json",
+      "sha256": "5d12217bc8b0de87b4caab7aca63a9115cd57c976c4e11596abf5dded9276a77",
+      "bytes": 150978
+    },
+    {
+      "path": "sources/ign_42683.json.receipt.json",
+      "sha256": "f70ccd0d02ff8732203e2e853d9a9c802426f371907cebe19fb55012c3bba964",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_42699.json",
+      "sha256": "cb2216a1618aee48fc5ee832ed30b7fb210f4e3f11f89c1743d6972fc1adf487",
+      "bytes": 325814
+    },
+    {
+      "path": "sources/ign_42699.json.receipt.json",
+      "sha256": "c2cef5e39ee94469effe25f8f8032aca74a563eb27c224a2412d39a17781627b",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_42728.json",
+      "sha256": "d633f1a13cfc1b807ab650975479cf5f32ce989a87d8caf53a0dc96702adb47b",
+      "bytes": 786136
+    },
+    {
+      "path": "sources/ign_42728.json.receipt.json",
+      "sha256": "85dae06f6566b3c6b9cc0a02fe5811edd72bb0fab3f56e45dbd2239c3b852585",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_42810.json",
+      "sha256": "818f962c9d1b2145bf8455cb36adf25018e379df08fac64fb282dba02a6c9139",
+      "bytes": 214467
+    },
+    {
+      "path": "sources/ign_42810.json.receipt.json",
+      "sha256": "0d722e1cfa71767f787c2a74f0b1d844e287bdb65d7f491578e3414b5d218627",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_42906.json",
+      "sha256": "6302bbdd992f92d20128f75508e3c4509fc8f91ac2d834cd01eea92638f2e305",
+      "bytes": 400349
+    },
+    {
+      "path": "sources/ign_42906.json.receipt.json",
+      "sha256": "a2f2bb37117ac72286ceb1e5169504ab9c2f5d8a6784d4b195db3ad2abadc13b",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_42911.json",
+      "sha256": "cd19af8f6316464107443f126772d77f87dd8d651b9c69f205ce50e1f8aacc64",
+      "bytes": 198551
+    },
+    {
+      "path": "sources/ign_42911.json.receipt.json",
+      "sha256": "b7834d6192cd668ba4fbff2aa52f717235865c169c1c975bb3266119e2ef62a6",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_42968.json",
+      "sha256": "31ba703a5b47b3e881fdca420ed2ce2326ecd98f7a83c618c0ee518e40b3557d",
+      "bytes": 557135
+    },
+    {
+      "path": "sources/ign_42968.json.receipt.json",
+      "sha256": "9aa192b57dc733abf3cc3eb925563798cf63c7d5c020cffb91e38c8e68258dd7",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_42971.json",
+      "sha256": "df2e1ea60e08641a6cffc0a7ef9a3130318fcc6eb65769e0598a21e5c277687f",
+      "bytes": 112885
+    },
+    {
+      "path": "sources/ign_42971.json.receipt.json",
+      "sha256": "d3bb3ce0ddbe14a02106eeb15dba2941602f0aefff6bd7584c28ad11a2141b14",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_43002.json",
+      "sha256": "fefbb24fc78afcc64f0b34fe12bbd49d4a7ed08c1967c13a79f2458616823127",
+      "bytes": 275171
+    },
+    {
+      "path": "sources/ign_43002.json.receipt.json",
+      "sha256": "9c645dc68e7ab605abaef3a39d2267daec55b25ba1d51808cbfcd9ffe006010b",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_43135.json",
+      "sha256": "84869f2078b2736c64c4d61d8937ab7ca65968e65b3402019751ddd9c435e936",
+      "bytes": 254481
+    },
+    {
+      "path": "sources/ign_43135.json.receipt.json",
+      "sha256": "5da5061ed555fa928d4d4d7b88bae94994b613ced4451baf9a9e33551f2b603e",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_43156.json",
+      "sha256": "4b5d09e9ed43687476a20b18508d1a813b2baa69b78cfc8b409a8f410275b64f",
+      "bytes": 110910
+    },
+    {
+      "path": "sources/ign_43156.json.receipt.json",
+      "sha256": "42f1ad97c12e7c41ebc896856caefe4347b99fac59b990cb736c740fad377691",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_43319.json",
+      "sha256": "e66f706a04130773c6bd1146688926494a203b8375e33281764f67ed9a2d7df1",
+      "bytes": 298940
+    },
+    {
+      "path": "sources/ign_43319.json.receipt.json",
+      "sha256": "5c0d9334f500ab7e4d99b1d2cf4faf3f617c88764e9c1dcd27b97d90ed75a75a",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_43507.json",
+      "sha256": "fb1ec4464b6dc04fbb3f409bd578fd12915b60363c36ce96190de93b2b1d5a20",
+      "bytes": 308940
+    },
+    {
+      "path": "sources/ign_43507.json.receipt.json",
+      "sha256": "67fbb6a2741723365aa370fffd2b4f787da4bffbb78ce7a8afd67711927ab41a",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_43534.json",
+      "sha256": "2bcec739cab69d43b7575b6adb498ecd58b81920c030dbd88149a4482bad3747",
+      "bytes": 338013
+    },
+    {
+      "path": "sources/ign_43534.json.receipt.json",
+      "sha256": "cc93fee7065ebc9c5abe1667100cd508a7bfb74100230396b2fc9bce70b00bf0",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_43600.json",
+      "sha256": "eab678d7f3d74985b217dceeb622232a81ff31288849882759ac0353b37d228c",
+      "bytes": 205789
+    },
+    {
+      "path": "sources/ign_43600.json.receipt.json",
+      "sha256": "040b64a57b65f1cd98ae6bbe15b70c118bb0399d94697897ddf89a3cef1e093c",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_43796.json",
+      "sha256": "a575dc1018e15d022a7e666263a35989f21ce09dbce822d208d226d8e4f8cbee",
+      "bytes": 342285
+    },
+    {
+      "path": "sources/ign_43796.json.receipt.json",
+      "sha256": "96e4428e91a7bb1d8d1d52c614ecc63a215814037d4b0b1d5324243752d6bfed",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_43832.json",
+      "sha256": "95c37a66368ec18e27c17d3026799044b1453080cc66ce859b4b3358d274b0af",
+      "bytes": 213212
+    },
+    {
+      "path": "sources/ign_43832.json.receipt.json",
+      "sha256": "db61c89d0f4b1278fd0bd722ea845851227cb8f6768422654c4fcf9964d08b86",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_44171.json",
+      "sha256": "3ce62a9d335ae466f3f4102ea22f2aa8a408b4f67a34c72b73c6c8bba6dd5b20",
+      "bytes": 172987
+    },
+    {
+      "path": "sources/ign_44171.json.receipt.json",
+      "sha256": "ec566a68dbd093ddf6ac8fae318f4ae3731e3414c49bbe99a28742db6ab673a7",
+      "bytes": 1050
+    },
+    {
+      "path": "sources/ign_44212.json",
+      "sha256": "cd95a43fb07e565071c9e24d8e1c10065b803c6e7178bd7b6a7ec46d8021b11d",
+      "bytes": 258808
+    },
+    {
+      "path": "sources/ign_44212.json.receipt.json",
+      "sha256": "b1304b96a5116131cfda96aef7b14573cc50d533f563ec7839f1f8d263f0cad8",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_44234.json",
+      "sha256": "e95d1272e05090d114e8a053881502bf6b346d0e9de85c2178d6454996cfe2a7",
+      "bytes": 553433
+    },
+    {
+      "path": "sources/ign_44234.json.receipt.json",
+      "sha256": "f3cbea5eeab4f2c434ceac21fde562be9d6f0a7fed4acc173a8741b15e6505ef",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_44346.json",
+      "sha256": "cde9acd53398ed89d16aaf00e63a1767356d966f4e73f80a362119d87fc7e7f3",
+      "bytes": 81662
+    },
+    {
+      "path": "sources/ign_44346.json.receipt.json",
+      "sha256": "131b3546b9c539ae77f2de0a05fce00ac910b33cc63f08a1008df10814816670",
+      "bytes": 1063
+    },
+    {
+      "path": "sources/ign_44517.json",
+      "sha256": "773cb247641579085d0ed6b8117c6e3e0a8fcdeb1b02781efc2a3aa7b76bd4fc",
+      "bytes": 193803
+    },
+    {
+      "path": "sources/ign_44517.json.receipt.json",
+      "sha256": "601107be17654fb6fb9840773b4ae9afe01f837e86d9b013c9972d054ff9d764",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_44558.json",
+      "sha256": "06e33f1ee0a7bc8ef34ddba8482f3712f32e143a6448d083130d53d80b8aedbd",
+      "bytes": 83031
+    },
+    {
+      "path": "sources/ign_44558.json.receipt.json",
+      "sha256": "a33c97dc582cae1ebd144f0ad7d24e913b1c9be9c2249f6a34c357ffda8467b6",
+      "bytes": 1059
+    },
+    {
+      "path": "sources/ign_44610.json",
+      "sha256": "2747ac74ea81f5153077063a7da93f00fd93c214deac228a3ca987ba1ef695ab",
+      "bytes": 59342
+    },
+    {
+      "path": "sources/ign_44610.json.receipt.json",
+      "sha256": "721ad2d74017f0edb4c484f7a0858bfa5272effc0a2eb582bbc8428dc20c4bed",
+      "bytes": 1051
+    },
+    {
+      "path": "sources/ign_44712.json",
+      "sha256": "ba1cb3212745db747cbde3997701e245c3c581c5b5031d449abbb9f6ddabf7e6",
+      "bytes": 361925
+    },
+    {
+      "path": "sources/ign_44712.json.receipt.json",
+      "sha256": "ba60823be7eecbaa1762915bfb41dcf499b87dbe2fa053484e14152eb6385c7b",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_44719.json",
+      "sha256": "c6574aafd29638ecb88c8696dc8b2eec747d489be45563bb6b9030c49518461d",
+      "bytes": 139209
+    },
+    {
+      "path": "sources/ign_44719.json.receipt.json",
+      "sha256": "81d2087679091700fc8e46a4dbd28bf87d387444d378f6b59a909eb38567337e",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_44737.json",
+      "sha256": "fcd2f4122a0b594e103304d38fb1cefb4cec8cbe295d7bb3ad8547e1c15c6426",
+      "bytes": 288687
+    },
+    {
+      "path": "sources/ign_44737.json.receipt.json",
+      "sha256": "a32c52af5009647a28dad524fa2bf271dc106c5b628e53968c15c972188ebff4",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_44770.json",
+      "sha256": "902d257e0bf70c7211ea6395165d49903b5d9f4b5d13cd7ed426f16feb108f39",
+      "bytes": 131494
+    },
+    {
+      "path": "sources/ign_44770.json.receipt.json",
+      "sha256": "78e031aa9dd153d23d74ed10bb2b6affe3ac9574ab36dec49d5edf425746ee4a",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_44938.json",
+      "sha256": "0588beae9584aa802892ce6ad7e6fc19a0d296f9ea3cbe6d94cf7745b22685ef",
+      "bytes": 138296
+    },
+    {
+      "path": "sources/ign_44938.json.receipt.json",
+      "sha256": "882b6fe7364dc76d74259bee1f4ccd6c87321a343b48d3317b0ba87b4511d22e",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_44966.json",
+      "sha256": "6ecf5a95bc6acc7b8e6474eb8dc97cd490288d08a090cf6aed47eaab7fd21c30",
+      "bytes": 364559
+    },
+    {
+      "path": "sources/ign_44966.json.receipt.json",
+      "sha256": "fe4f37399bbac87ee1856bfc9f1d4f1d66fb21db1c331c7ccba16b3975e4a93a",
+      "bytes": 1052
+    },
+    {
+      "path": "sources/ign_45111.json",
+      "sha256": "835cb101897b150e4a7f669279a8e6ade4203223992045c035fb285821369629",
+      "bytes": 256445
+    },
+    {
+      "path": "sources/ign_45111.json.receipt.json",
+      "sha256": "bee774bc2c2d0a55b81466d06005891e405cba707d01eb794df05dec6b5e81a5",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_45194.json",
+      "sha256": "d5ca2d6ca6165b6e747dd74c41eca017c725e73ca1385d6cc5163f40b6fd2a10",
+      "bytes": 214860
+    },
+    {
+      "path": "sources/ign_45194.json.receipt.json",
+      "sha256": "5713d397b4c7517df520faf97dd629c071feead09602e0511f350cf50550b584",
+      "bytes": 1068
+    },
+    {
+      "path": "sources/ign_45210.json",
+      "sha256": "d8101aefcf7d4ea2cde64749836e9a927a824464876ef5380867acca9a65d368",
+      "bytes": 348794
+    },
+    {
+      "path": "sources/ign_45210.json.receipt.json",
+      "sha256": "a86ff45ac9cf1309e375d53766848c3f8a6144bebfd23db9c0bcf426d0467983",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_45226.json",
+      "sha256": "739230f4d004b378052dd5c79ad96ea625ff475cae789d1ed98bfcb6daf97662",
+      "bytes": 102812
+    },
+    {
+      "path": "sources/ign_45226.json.receipt.json",
+      "sha256": "384cb54f849ab3afdc31da06c2a56f2c366a73618b89148a5baadb4d43c466bf",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_45415.json",
+      "sha256": "fd2365901552412c077f71fbbbefe46b32992f05ebb5094cf190cee44c44e297",
+      "bytes": 228518
+    },
+    {
+      "path": "sources/ign_45415.json.receipt.json",
+      "sha256": "9c281ef5767407092ca5efc31570dc918dfa695e84ac238d0e1973b7bd0b6b13",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_45495.json",
+      "sha256": "f423bb498791e34c4d0ad3bd6ef9e32193128e74d8e285049d3d4337d258e00e",
+      "bytes": 284863
+    },
+    {
+      "path": "sources/ign_45495.json.receipt.json",
+      "sha256": "58300d00ed40f27f6746dc063aaa1238d862a95a832ad6bfe1c2b2626558cdd4",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_45692.json",
+      "sha256": "c9fe6184f2e55c26735c4b06df294ed31ee2fb922f484bf0a45bd78fad45c068",
+      "bytes": 283819
+    },
+    {
+      "path": "sources/ign_45692.json.receipt.json",
+      "sha256": "0827ec69277db87753482283f92772db18d75ae96bf9050192812ed5aa4110e5",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_45881.json",
+      "sha256": "3a0c91ed36a243d51dbd86453625e2bd80050f4fbbffba06ccd07cb99e820513",
+      "bytes": 291519
+    },
+    {
+      "path": "sources/ign_45881.json.receipt.json",
+      "sha256": "3eadeadef58e8393d12ddba0b0d2587dea062021886e62fa0c703157387e353d",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_45902.json",
+      "sha256": "b4a5e43b1c36ccc3871a9a3046a8f277a333709a08b80ceec4f0ca34a9dc1fa7",
+      "bytes": 168403
+    },
+    {
+      "path": "sources/ign_45902.json.receipt.json",
+      "sha256": "3e18e5d1653e7856a94b5d6d2dfd618a4c0a4857914080d24c6a654c4f1ebd29",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46027.json",
+      "sha256": "4a0e3ad37d32e9481f9544c31b02ec75582dc91ec73105398ba059024f8e4a68",
+      "bytes": 554963
+    },
+    {
+      "path": "sources/ign_46027.json.receipt.json",
+      "sha256": "21485586896e4877f69141df0323fcc552da64cea263fbb4f6a12bcea92066d5",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_46046.json",
+      "sha256": "32606bf211abecc826a9add08a0abf2b23e040653c01ff2261ef7f331ef0e916",
+      "bytes": 321412
+    },
+    {
+      "path": "sources/ign_46046.json.receipt.json",
+      "sha256": "58c16a96f5782eec0e51d47962139a194c51f230c59d42f0614c6f64a11f1902",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_46050.json",
+      "sha256": "aba9ad2070a96e5921862d31bf4fe5784cf708c9cdafd2bca58ac60bbfbd317c",
+      "bytes": 314205
+    },
+    {
+      "path": "sources/ign_46050.json.receipt.json",
+      "sha256": "ce2354aaa5831baa565f48b44c97495c80d427b0ad8a03317ed766305d2b9cd2",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_46059.json",
+      "sha256": "dab1fff2ca57cb0254161284e3647d00667685a7f2cdd4acfe6b17a653be84f0",
+      "bytes": 201261
+    },
+    {
+      "path": "sources/ign_46059.json.receipt.json",
+      "sha256": "fa71b57c8b1b380d82118d63127979e5b95edf5a1711cb540ef4280931596469",
+      "bytes": 1062
+    },
+    {
+      "path": "sources/ign_46150.json",
+      "sha256": "3957f421d528c3f88fb484b416e967d1e8abdac7b9670b3de2f9e8bfaaa1f278",
+      "bytes": 179411
+    },
+    {
+      "path": "sources/ign_46150.json.receipt.json",
+      "sha256": "a69131654509e3bf5c4e4e3962f869bffe01b531ea262f4838fb14e594643c94",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46267.json",
+      "sha256": "4fe860b3e589bb6a5fbb5b42f6f65ab4fe10448bec6e46e514ac48124dadf7d7",
+      "bytes": 260333
+    },
+    {
+      "path": "sources/ign_46267.json.receipt.json",
+      "sha256": "cd926292d80d7861352bc3b5dc3984abfbc29355dc7ea1bc8755b3f3e40d4d77",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46302.json",
+      "sha256": "6d9fd735b4f4aa517f84d2de7e33cba09e7ca41db7a1a1cdb5e7212afbff4c55",
+      "bytes": 126624
+    },
+    {
+      "path": "sources/ign_46302.json.receipt.json",
+      "sha256": "db49b51f47a105a90c3b8cff3d759f4d3d8d65ba6394744292e1a95510a091b8",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_46694.json",
+      "sha256": "a374afa2cc9e83333d8fad2f4e1a422e88623d4ebb660213553d350187abd488",
+      "bytes": 113782
+    },
+    {
+      "path": "sources/ign_46694.json.receipt.json",
+      "sha256": "1570ea2d7281adf7cdf65ce93d7ddcdd14aa9778d1f7cb63a0004179c10d4dcc",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46709.json",
+      "sha256": "5c53528200d98bd3edaf933c3abb7d76ba81c6f702b6f5e9d17b44463d2fc5bf",
+      "bytes": 327752
+    },
+    {
+      "path": "sources/ign_46709.json.receipt.json",
+      "sha256": "c788655054598802abfa3067d9ff4e9775be530036199d173a9cd05b3ef81b78",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_46737.json",
+      "sha256": "628d320a08a584f465bca4c22e83de76446075bbb4f85aaa319e8afddcde9a2a",
+      "bytes": 174520
+    },
+    {
+      "path": "sources/ign_46737.json.receipt.json",
+      "sha256": "f6eef7aebf366f2ac8461e0ef40858355d7ddeb40f226adfa58aafc690c55cc7",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46782.json",
+      "sha256": "1d8ba83b27fe7dde207b966d7283f7dc873ba53caef8f612be34b7f224500102",
+      "bytes": 71922
+    },
+    {
+      "path": "sources/ign_46782.json.receipt.json",
+      "sha256": "71ce733207d6084a5915c80645953922334ad84187e72251c2731c0b09b183d4",
+      "bytes": 1055
+    },
+    {
+      "path": "sources/ign_46817.json",
+      "sha256": "417d50148b5630da071e195d85345b48c50a04238c413e566b275461c4821643",
+      "bytes": 215144
+    },
+    {
+      "path": "sources/ign_46817.json.receipt.json",
+      "sha256": "940fd34cebc19ab19c21e8fb81e73b7a28e6a7ca25c12dabbaadb1b4d90af6e6",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_46935.json",
+      "sha256": "92c310ea5e20341ab7a513f2b7a801ceddf972809044d107145c39ab729fef40",
+      "bytes": 128153
+    },
+    {
+      "path": "sources/ign_46935.json.receipt.json",
+      "sha256": "50c43cc9775070caa7a757550bfc2be637fcec1a0217bd5179731152eafb0f1e",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_47184.json",
+      "sha256": "d9bd6afa3a163ce706909b72ac83efc618c4393107bb382db18168319d3334d4",
+      "bytes": 261717
+    },
+    {
+      "path": "sources/ign_47184.json.receipt.json",
+      "sha256": "d0bc8459cc05798217c73b4cbe7f5e22a21351e7512a2c22b4bc5fd4f6f5540f",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_47189.json",
+      "sha256": "9d9394b7e2c0faa03ee3f1645574c515913b4cc74d888c128ae40ba0aaf13ce2",
+      "bytes": 178693
+    },
+    {
+      "path": "sources/ign_47189.json.receipt.json",
+      "sha256": "d47b19f393f8a3948f0ca92b882545f8b2b642987c43b0731f85e672f3aa9794",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_47212.json",
+      "sha256": "44f6fd3a51eef064a1b64235f83969db67f6cb907ed045176dc9ca6d7719e464",
+      "bytes": 311447
+    },
+    {
+      "path": "sources/ign_47212.json.receipt.json",
+      "sha256": "6ee321f8d8c6aaa6861c4ff48a2e63238880d3028f845b17de7f48d493d5a89c",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_47213.json",
+      "sha256": "d9ec5d5548e161df9b701b52a3563d0f5b88874f3be268e6a2bcefdf77db8415",
+      "bytes": 316719
+    },
+    {
+      "path": "sources/ign_47213.json.receipt.json",
+      "sha256": "9d382cc061e1976697390edf2a1736b6f907cd4ef96fc912a4b908df5c487159",
+      "bytes": 1064
+    },
+    {
+      "path": "sources/ign_47221.json",
+      "sha256": "f4363c730778194da4cfdc764a9e58e4b6c6207992e19e920bb16d539a8adfb7",
+      "bytes": 274500
+    },
+    {
+      "path": "sources/ign_47221.json.receipt.json",
+      "sha256": "32ac5fa0f2a3eadfb47e20fdb49504bc2b213f136f226ccb6abdd83bd2f04cce",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_47257.json",
+      "sha256": "4eaee1211f198f1b8e714908820da32f80217d567f34c5bb62c03601ddbb517a",
+      "bytes": 272859
+    },
+    {
+      "path": "sources/ign_47257.json.receipt.json",
+      "sha256": "82aefcbff736151cded5206850a5906f8faf597854e6218d98ccdf3a07d78204",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_47411.json",
+      "sha256": "0ea82911041b1061c40f9e50863430550197a154f2986ca2473417565f4da400",
+      "bytes": 432152
+    },
+    {
+      "path": "sources/ign_47411.json.receipt.json",
+      "sha256": "b60e2eb267a05ea7a0a0a8a98fd99c3b5dd151e2642770e9b3192fef3a390953",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_47419.json",
+      "sha256": "439f4c86a53cc3c057adbe82deb09c889f7c49e9daa0fc827111a297df2ab82b",
+      "bytes": 132293
+    },
+    {
+      "path": "sources/ign_47419.json.receipt.json",
+      "sha256": "53a5c34460375dc9bb3c28096591d14357b504969e176b8eb3ca1171599e8171",
+      "bytes": 1054
+    },
+    {
+      "path": "sources/ign_47450.json",
+      "sha256": "3ee7844630a28b0ed77b138abd182a2a01b60a2b79346b8f11126f75b9e978d3",
+      "bytes": 48121
+    },
+    {
+      "path": "sources/ign_47450.json.receipt.json",
+      "sha256": "aa55e60ae23f318a3e91d6fb2a53e911abd76946f8f6d1176c31ae992419476d",
+      "bytes": 1053
+    },
+    {
+      "path": "sources/ign_47461.json",
+      "sha256": "b5bc00047baf834e91325486201b452ce23f68fe3f1c9ebf80e7ec7590179dd4",
+      "bytes": 93042
+    },
+    {
+      "path": "sources/ign_47461.json.receipt.json",
+      "sha256": "55873681499920b7ccadc37e4532e8f51eec5edc8cc0a93941db91a8c1cc99e1",
+      "bytes": 1053
+    },
+    {
+      "path": "sources/ign_47482.json",
+      "sha256": "ce4ee752f3f9f2108111e5fc50529c6c3f16071092f24124d1f10d6ecc6f7161",
+      "bytes": 110174
+    },
+    {
+      "path": "sources/ign_47482.json.receipt.json",
+      "sha256": "4aa43b806c9b0edc858f86dcb57376e092813051d1a9d752681b621cdd99faa9",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_47487.json",
+      "sha256": "646b40ec90a32db641461889cf6852dde98cfdad1685c8bfababf01407c1a40d",
+      "bytes": 121975
+    },
+    {
+      "path": "sources/ign_47487.json.receipt.json",
+      "sha256": "4f920058cd96a103aa449d102a0bb19571d0706e69d9feb5f6da57a3e66fd661",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/ign_47491.json",
+      "sha256": "eaeacf1c3c0c1f04596d25d78f85a5093f9eb68f86640822b17a071d9b6c371c",
+      "bytes": 249428
+    },
+    {
+      "path": "sources/ign_47491.json.receipt.json",
+      "sha256": "53f545b27c2a4b7383f59a22d8b2b53b296672c2574d4afb0fc5895a7209567b",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/ign_47595.json",
+      "sha256": "3ae373cf7338a184bfedf968c41b6ca58b38d201c51a8ea8f1e7594448b51a03",
+      "bytes": 98995
+    },
+    {
+      "path": "sources/ign_47595.json.receipt.json",
+      "sha256": "0ddd2fcdb695b34fee7b89b2ab52fe1abf6cf7a8b0dd769855b35b11d2c6d4e8",
+      "bytes": 1053
+    },
+    {
+      "path": "sources/ign_47862.json",
+      "sha256": "06111c2f6ce55768aa521a22982fd44807e01492f2669f50b02cd19228129a27",
+      "bytes": 214015
+    },
+    {
+      "path": "sources/ign_47862.json.receipt.json",
+      "sha256": "29b4c3fc3e382e71bd657bc0472dd7a84fdb663c9a5734ce5420cd8cb3b2e23e",
+      "bytes": 1050
+    },
+    {
+      "path": "sources/ign_47936.json",
+      "sha256": "a695568023de7e93de3b3780bd9fb79c8a8c88a05c1163bc3592a580fdc6777a",
+      "bytes": 92919
+    },
+    {
+      "path": "sources/ign_47936.json.receipt.json",
+      "sha256": "2196018b7645b74d337a613a295704511278df9914e1222dca2ca6139d8b0ddd",
+      "bytes": 1059
+    },
+    {
+      "path": "sources/ign_48069.json",
+      "sha256": "44a87849818944acb5d31ef5869f0a32ab4d7e1b5c8727afbe66d3f65f00b44a",
+      "bytes": 497040
+    },
+    {
+      "path": "sources/ign_48069.json.receipt.json",
+      "sha256": "361961204fd12988ca5c0af90c7bc4eb4b4673046756b16fb9873840a0a1c4a6",
+      "bytes": 1050
+    },
+    {
+      "path": "sources/ign_48125.json",
+      "sha256": "9b8366d601be266600ee654ad1ef1e46f26a0c0f6c89a93e3c68f27b75aa9fbd",
+      "bytes": 384008
+    },
+    {
+      "path": "sources/ign_48125.json.receipt.json",
+      "sha256": "e95a95936cdf72f20e070127cc2b12f3e45a0dd380eabbb4ff7ff02c6d2edb6e",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_berck_parent.json",
+      "sha256": "6f30ad5709ab3846b20843ee003ffdf4344d94a0cfe609cbdd3c8bda34d0db12",
+      "bytes": 29122
+    },
+    {
+      "path": "sources/ign_berck_parent.json.receipt.json",
+      "sha256": "af72a189c9677bf664f0c0226326a7d8dc98beec7c5070baed9f2a4ff73b26e1",
+      "bytes": 765
+    },
+    {
+      "path": "sources/ign_catalogue.json",
+      "sha256": "f2267a14c4972df7be103d56ed1141d526a915230df061fbc10c0856f65983a3",
+      "bytes": 341440
+    },
+    {
+      "path": "sources/ign_catalogue.json.receipt.json",
+      "sha256": "d1dd3dccda1306e55bf76259b45b2413bb5678fc2becd2ee946ac6dbb39b21de",
+      "bytes": 348
+    },
+    {
+      "path": "sources/ign_chef_example.json",
+      "sha256": "9d0d16a1562b2edb843beeb12e0350dc02f2f4aa7451df25ec5d75de426c1668",
+      "bytes": 752
+    },
+    {
+      "path": "sources/ign_chef_example.json.receipt.json",
+      "sha256": "62ec55512110229cb68951c7656b22fdad36e2779b159baee5482b76a2faf539",
+      "bytes": 711
+    },
+    {
+      "path": "sources/ign_chef_schema.xml",
+      "sha256": "9f3877fd58740b88f06554e41dc061372b1b3d0e7090743671247a0a9f8233e5",
+      "bytes": 2098
+    },
+    {
+      "path": "sources/ign_chef_schema.xml.receipt.json",
+      "sha256": "62d1664c22ddf0d4f72e2044871aa99da4c1d65cf411737afbb0cfd8dcc0212d",
+      "bytes": 610
+    },
+    {
+      "path": "sources/ign_commune_example.json",
+      "sha256": "c5bc341148fec9f2c97f431b9b6bb10dffdb168506385ffde81c4c2ea7d92e49",
+      "bytes": 23991
+    },
+    {
+      "path": "sources/ign_commune_example.json.receipt.json",
+      "sha256": "9190541bc6113c65404aecc582b50fc2ddd6594921b3453a0d4ff8bcd3bcc581",
+      "bytes": 687
+    },
+    {
+      "path": "sources/ign_commune_schema.xml",
+      "sha256": "a5d91b65af78d055cd10fd225ff2a0d7a6c041d05065dc4d2311fa9243cc039e",
+      "bytes": 2710
+    },
+    {
+      "path": "sources/ign_commune_schema.xml.receipt.json",
+      "sha256": "a69ac5622966c49c6373082740cdfa7c9a5164468fbbbfc0217108f7f54d3395",
+      "bytes": 584
+    },
+    {
+      "path": "sources/ign_component_example.json",
+      "sha256": "6c2d71e55f3236c77c7fec245aff13e28c99373570b6050c7b57c05844eb26f2",
+      "bytes": 5446
+    },
+    {
+      "path": "sources/ign_component_example.json.receipt.json",
+      "sha256": "99c31596aaf35820f28b05bc3396c3d55dea7446226955754ec414c743f35711",
+      "bytes": 728
+    },
+    {
+      "path": "sources/ign_component_schema.xml",
+      "sha256": "db4c28ef47ca71d4c9c4df02eb6d53de5a530560777dda5e8864d866863fd60e",
+      "bytes": 1971
+    },
+    {
+      "path": "sources/ign_component_schema.xml.receipt.json",
+      "sha256": "3a9f2b85fc0e446b6b728a3948be4f4b6bb04040f7247ec615ca6916b128381c",
+      "bytes": 626
+    },
+    {
+      "path": "sources/ign_marseille_arm.json",
+      "sha256": "8da50842e4c473ce9c496c25977f51e841a257d5122d0a361970222f53eba3ff",
+      "bytes": 1202155
+    },
+    {
+      "path": "sources/ign_marseille_arm.json.receipt.json",
+      "sha256": "a1e5a3d16686bc5cdff755e2f27ab95e88eb20b1b4ddc606c204ed3c045c16c6",
+      "bytes": 1231
+    },
+    {
+      "path": "sources/ign_marseille_places.json",
+      "sha256": "6bd00b167d625d81d3dfda129d44fa8e5fe1429fb2c2b4d4f2f1af4c6642ec58",
+      "bytes": 3786468
+    },
+    {
+      "path": "sources/ign_marseille_places.json.receipt.json",
+      "sha256": "18e921c4148325874d3de49ed5fbdefba392a56408f90926036fcdee656febd0",
+      "bytes": 891
+    },
+    {
+      "path": "sources/ign_morannes_chef.json.receipt.json",
+      "sha256": "59e331098b60b710d636217c7ccb1423202fdaaa40aa0763babbae7db70f87b5",
+      "bytes": 873
+    },
+    {
+      "path": "sources/ign_place_39944.json",
+      "sha256": "03e1170c0be89fabc7e549e869231de75cec6d0adf56df79c2a08688600e1dde",
+      "bytes": 129141
+    },
+    {
+      "path": "sources/ign_place_39944.json.receipt.json",
+      "sha256": "56bfa2b3227601222414abe96a54593d77219b2ae9bbbe0ba5870c09bba9759b",
+      "bytes": 1060
+    },
+    {
+      "path": "sources/ign_product.html",
+      "sha256": "00699ae78cbc684bd21d071c099d3ee484979872c8b85e05c152f9fbf086356f",
+      "bytes": 115512
+    },
+    {
+      "path": "sources/ign_product.html.receipt.json",
+      "sha256": "01e6f4d5de60719b0fbfc69558ba6444b8637832812b74fe064731cf7932ffd8",
+      "bytes": 346
+    },
+    {
+      "path": "sources/ign_sample_chefs.json",
+      "sha256": "963f25b7a44d04956f5b1de67adbc59e5339141d0c5fae681b74177cdf59a661",
+      "bytes": 32013
+    },
+    {
+      "path": "sources/ign_sample_chefs.json.receipt.json",
+      "sha256": "ac76b2809f002530bd4961ab7736f00ccc2d222b464d866d0ec44f17fc6a27e0",
+      "bytes": 2455
+    },
+    {
+      "path": "sources/ign_sample_communes.json",
+      "sha256": "9491aaf26a124fa220683795c8bd27c490c1e01ac12413836eb12c0d91e8eb80",
+      "bytes": 1711520
+    },
+    {
+      "path": "sources/ign_sample_communes.json.receipt.json",
+      "sha256": "b80413a391eaa1f044597a77b06ddb768fa57e069c726e65592f2348b1ea7166",
+      "bytes": 2403
+    },
+    {
+      "path": "sources/ign_sample_components.json",
+      "sha256": "0f7d9584c4886366bcb642e911d3d2e5a686e84e14f3506fe55b9cd5e8d2eea4",
+      "bytes": 32549
+    },
+    {
+      "path": "sources/ign_sample_components.json.receipt.json",
+      "sha256": "b33e22a546dbcbdc30f45b46cc4b366d2bb318feac0a8afaebe89b84dd68db62",
+      "bytes": 807
+    },
+    {
+      "path": "sources/licence.html",
+      "sha256": "df50278ce8a7036424cfafb68978ce440869ebde1ee6da85f2fa1469afffeb58",
+      "bytes": 55588
+    },
+    {
+      "path": "sources/licence.html.receipt.json",
+      "sha256": "a1944567c9d8c5392899d17e8e158eddde02952781660a1f19129af767e4e3e3",
+      "bytes": 413
+    },
+    {
+      "path": "sources/live_0000.json",
+      "sha256": "c0a429ee114a3dd207713f04f3ddbf6e10e1c628c2e370bafdcd132855a548be",
+      "bytes": 2798724
+    },
+    {
+      "path": "sources/live_0000.json.receipt.json",
+      "sha256": "b405e6c643c7b19963097ab620f49d745ebff2e2e401dfd19da46e547064d882",
+      "bytes": 2162
+    },
+    {
+      "path": "sources/live_0050.json",
+      "sha256": "64183754d83f743e771055ec41beaedbf1d652e5b79e84197aeb05e59a073e0d",
+      "bytes": 1953991
+    },
+    {
+      "path": "sources/live_0050.json.receipt.json",
+      "sha256": "8ac90d2bd2a5ad69ef2abbadc164e4240dbf66c8fc63d691b267bdc3dc9d33bf",
+      "bytes": 2132
+    },
+    {
+      "path": "sources/live_0100.json",
+      "sha256": "93a6bf271f46edbee201e9dd75c41aca94b335bce3e393cbe8eb0a0aa2369947",
+      "bytes": 503241
+    },
+    {
+      "path": "sources/live_0100.json.receipt.json",
+      "sha256": "63b6dac6fc5e1fe2aebda17c1179c9533f3f8b2347149dcd867b839275641df0",
+      "bytes": 710
+    },
+    {
+      "path": "sources/live_missing_0000.json",
+      "sha256": "7c304cc2a84ee9924cc1e3e59713126af2474c0941ae4fe3d324154e3e54a6ed",
+      "bytes": 161553
+    },
+    {
+      "path": "sources/live_missing_0000.json.receipt.json",
+      "sha256": "f00bfee6d9f13f76e38bf4ce16069263a979c268a5df77324abadb01a1424d02",
+      "bytes": 638
+    },
+    {
+      "path": "sources/open_licence_2.md",
+      "sha256": "a1deb9d7554ad10e041dbd7440b3dec0ac0d3679f9e1655ee9d850908b015995",
+      "bytes": 8026
+    },
+    {
+      "path": "sources/open_licence_2.md.receipt.json",
+      "sha256": "a3d87968824c7664fdebd52197a0946db5cffd932919cdb9c6f7e7dd0e53ea39",
+      "bytes": 384
+    },
+    {
+      "path": "sources/population2023.zip",
+      "sha256": "5174fc225398a4c072fb8bb5298b7ccf30c017834c7a4171f44787379d83b3f5",
+      "bytes": 1032385
+    },
+    {
+      "path": "sources/population2023.zip.receipt.json",
+      "sha256": "d65ad55f79f1738799a7f6b17d2cb41fdfd637ab05e41d385e05cf4c337635e7",
+      "bytes": 498
+    },
+    {
+      "path": "sources/population_page.html",
+      "sha256": "e52f6bf353c0b131224f7e4a4a2f23451dae289f6cd7acd70b5d00a4bb259b3c",
+      "bytes": 61650
+    },
+    {
+      "path": "sources/population_page.html.receipt.json",
+      "sha256": "7ade26b6149362e2e01c6d30c6377e8b69107b9cb3926ce41fe6654f572ef1b9",
+      "bytes": 426
+    },
+    {
+      "path": "sources/qlever_counties.json",
+      "sha256": "65f920251893201404715ccaad4095d1f7080dcadcfc8a45b936515379cd362c",
+      "bytes": 66205
+    },
+    {
+      "path": "sources/qlever_counties.json.receipt.json",
+      "sha256": "10d8546abb316b8a532ca6faf26bf3b0409b563bad266fb01bb49f68cff8021e",
+      "bytes": 5072
+    },
+    {
+      "path": "sources/qlever_counties.rq",
+      "sha256": "911d28b3d7a4a551c12e1af5fbabdaf5feb91f4099629f100db3f7e7fdd0288f",
+      "bytes": 3897
+    },
+    {
+      "path": "sources/qlever_identity.json",
+      "sha256": "3f2a1f8eeea84b11be11c5b11704bd494d0c56a7bec959bc7277b01997750e89",
+      "bytes": 2127746
+    },
+    {
+      "path": "sources/qlever_identity.json.receipt.json",
+      "sha256": "2956e13753dc1fbdd4feb9d17de404f282724625fb2802c7b26b00c383397d0f",
+      "bytes": 136078
+    },
+    {
+      "path": "sources/qlever_identity.rq",
+      "sha256": "c50e65bba86b6c3f0f55a12f0f6b4ccc349918f02bbca7df2345bd5ec4d23f00",
+      "bytes": 115148
+    },
+    {
+      "path": "sources/qlever_missing.json",
+      "sha256": "cc89c0a242bbbdc937de0006fa324657d7253bd868b9b4b0e62817f3f12d12c5",
+      "bytes": 1260
+    },
+    {
+      "path": "sources/qlever_missing.json.receipt.json",
+      "sha256": "2b6dcc37ffd8421e9f13559c6f5a3bc26db456ef64a2dbe20f8e540d89d1a2bb",
+      "bytes": 670
+    },
+    {
+      "path": "sources/qlever_missing.rq",
+      "sha256": "32b4cadf0d399177bc59aff6a7d5f223a5c6850091a587dbb0f6bdf3ecbcbbab",
+      "bytes": 174
+    },
+    {
+      "path": "sources/qlever_places.json",
+      "sha256": "9e728be4d708fa45212f793b582d241045c00f8b2d7a6d065cc9ccc3265c5b2e",
+      "bytes": 341426
+    },
+    {
+      "path": "sources/qlever_places.json.receipt.json",
+      "sha256": "c5861bd4abeccc7fd449164199005eba20c6af1e16fa352e78ffcb134e2ed71d",
+      "bytes": 5731
+    },
+    {
+      "path": "sources/qlever_places.rq",
+      "sha256": "ac89a2fd50968979f6dec69e7eef07cff29063aec85691a6efede9f746370eb2",
+      "bytes": 4483
+    },
+    {
+      "path": "sources/qlever_stats.json",
+      "sha256": "49ff13b00952fa68b5059c7506e41abde8fcd9edd1b3b425a37fed9ada444483",
+      "bytes": 760
+    },
+    {
+      "path": "sources/qlever_stats.json.receipt.json",
+      "sha256": "d349ca3d6fd14c71446e9f62c308c5763fcc881e48c3fdb31e537571936e16ee",
+      "bytes": 402
+    },
+    {
+      "path": "sources/tbb-DATA_LICENSE",
+      "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+      "bytes": 26030
+    },
+    {
+      "path": "sources/tbb-release.json",
+      "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+      "bytes": 31761
+    },
+    {
+      "path": "sources/timezones.geojson.zip",
+      "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+      "bytes": 51940158
+    },
+    {
+      "path": "sources/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+      "bytes": 481989
+    },
+    {
+      "path": "sources/wfs_capabilities.xml",
+      "sha256": "51d9096ffaf4869dcb5a327f7bb015c68f112a4539feca9a9a024424fab717d6",
+      "bytes": 5387870
+    },
+    {
+      "path": "sources/wfs_capabilities.xml.receipt.json",
+      "sha256": "2965c4825337626444b9fa635ff8d5306ded07b4af372e1b0b5fffccc298837f",
+      "bytes": 495
+    },
+    {
+      "path": "sources/wikidata_licensing.html",
+      "sha256": "38673d7feb652e8d300cd09b3540d9ab09873efbd97dd0f19f67154ca42a41dd",
+      "bytes": 64923
+    },
+    {
+      "path": "sources/wikidata_licensing.html.receipt.json",
+      "sha256": "e2da790348eec5f7d1d122a38fa843feb28bd58ae3eb65937fb68f6e602c2603",
+      "bytes": 431
+    }
+  ]
+}
