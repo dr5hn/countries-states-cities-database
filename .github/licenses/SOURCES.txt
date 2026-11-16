@@ -1821,3 +1821,11 @@ US type/level review (us_tld_v6x, #1643):
 - USGS GNIS Populated Places national download (US government work, public domain): https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip
 - Wikidata structured statements (CC0), literal own-item IDs and independently verified parent rows: https://www.wikidata.org/wiki/Wikidata:Licensing
 - Complete changed/held review: .github/fixes-docs/ledgers/us_tld_v6x.jsonl and us_tld_v6x.sources.json
+
+Brazil municipality binding (br_tld_v6x)
+Instituto Brasileiro de Geografia e Estatística (IBGE): DTB 2025 (reference 31 December 2025) and Malha Municipal Digital 2025, retrieved/rechecked 16 November 2026.
+https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip
+https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip
+IBGE explicitly licenses the municipal boundary product under a licence compatible with Creative Commons BY 4.0; technical note 01/2026, printed page 9 (PDF page 11): https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf
+Original geometry retained; selected extracts are reference containment checks, not legal demarcation. The DTB register is factual reference; no separate standardized DTB licence is asserted.
+Wikidata structured identifiers, labels, aliases and claims: CC0, QLever bulk discovery then paced live wbgetentities with maxlag=5. Per-row source captures and complete changed/held decisions: .github/fixes-docs/ledgers/br_tld_v6x.jsonl and br_tld_v6x.sources.json.
