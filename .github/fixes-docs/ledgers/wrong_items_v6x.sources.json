@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "base_commit": "60bb428af25460c54c4138ac3d56de77585275f0",
+  "ledger_sha256": "7be8de57188b858a2090d38c47d2233611af422e9796662dea76a736d1e03112",
+  "targets": 50,
+  "sources": [
+    {
+      "path": "sources/AU/2021_GCP_SAL_for_AUS_short-header.zip",
+      "sha256": "940c57082442cad68e7399ab7c5eab6fd690ec8e8b68ce9799b02d69b9b7bdba",
+      "bytes": 102626503,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/2021_GCP_SAL_for_AUS_short-header.zip"
+    },
+    {
+      "path": "sources/AU/SAL_2021.zip",
+      "sha256": "1284f6aa4a5eedbe6d0b8c71099494f634d59f1500532c1944b8227b4d1474ca",
+      "bytes": 104064114,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/SAL_2021.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_act_localities.zip",
+      "sha256": "2b5b2c0a5d9429a0352dff0366071461dbf1bd1ffac672285253c5d71836b49e",
+      "bytes": 340673,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_act_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_nsw_localities.zip",
+      "sha256": "ea4b90cdea2895708cd4ddf22a91093f3b564271ba06c93dd610aa0fade98e98",
+      "bytes": 66587487,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_nsw_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_nt_localities.zip",
+      "sha256": "961a9a668a23509117342b3ad06560f2542e68175c9e60b5a2c696806659fbc7",
+      "bytes": 1135376,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_nt_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_other_localities.zip",
+      "sha256": "b59993a46c78f241f30d0707ebff97a0adb033ac43706684d4e8c9a8327bfb46",
+      "bytes": 346758,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_other_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_qld_localities.zip",
+      "sha256": "2714a1cb64b472d2223700b207bc3bf382dfae89692c4e3c5bf9e911a8c84584",
+      "bytes": 16850674,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_qld_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_sa_localities.zip",
+      "sha256": "0ea80b18d996fd4f473b55cd4ac159fc44bb3cc51a3b61c6ffb39166f4786f21",
+      "bytes": 12567382,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_sa_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_tas_localities.zip",
+      "sha256": "1eab4b0d180358d0159389f3b7b430f9b647b77b320a582a04097f10c3c85e94",
+      "bytes": 24727399,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_tas_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_vic_localities.zip",
+      "sha256": "1ac91f520b2001feb3f2f052e016bca5a330fa439298171f2c26548038734341",
+      "bytes": 23132666,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_vic_localities.zip"
+    },
+    {
+      "path": "sources/AU/geoscape_wa_localities.zip",
+      "sha256": "f5200b312dcb03b5aa67756859f183d8d007844c54b802dabf5839c06ec045c6",
+      "bytes": 21059438,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/geoscape_wa_localities.zip"
+    },
+    {
+      "path": "sources/AU/inventory.json",
+      "sha256": "2e3153415fd40ab04bcb92388f70aa7dd8f30a108524539b68428ce3e8ff0a8d",
+      "bytes": 216589,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/inventory.json"
+    },
+    {
+      "path": "sources/AU/vic_locality_definition.html",
+      "sha256": "5647bfe35d22e2fcc0bf85a6f98e8bd385dd6ac28070260e0db55ce060a4dc5c",
+      "bytes": 356393,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/vic_locality_definition.html"
+    },
+    {
+      "path": "sources/AU/wa_admin_definition.html",
+      "sha256": "b27d40fcbf6f1e3d4f7cc9735fbf0de73d0240b2086cb8849548e26411a77975",
+      "bytes": 153630,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_au/work_tld2/sources/wa_admin_definition.html"
+    },
+    {
+      "path": "sources/MX/MX.census.zip",
+      "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+      "bytes": 36615814,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/MX.census.zip"
+    },
+    {
+      "path": "sources/MX/MX.census.zip.meta.json",
+      "sha256": "d0e2fd954956cba0be9365ff3157894796fd52363af63b6c259ded89469c17a8",
+      "bytes": 1063,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/MX.census.zip.meta.json"
+    },
+    {
+      "path": "sources/MX/ageeml_localidades_with_bajas.csv",
+      "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+      "bytes": 70143464,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/ageeml_localidades_with_bajas.csv"
+    },
+    {
+      "path": "sources/MX/ageeml_localidades_with_bajas.csv.meta.json",
+      "sha256": "8d6c23be410dbc1d81287941ff374ff6c6481752d41f8d6f1952f8bce17ad478",
+      "bytes": 1158,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/ageeml_localidades_with_bajas.csv.meta.json"
+    },
+    {
+      "path": "sources/MX/current_mun.csv",
+      "sha256": "2f2d08c8a13b037203b8fd6822983d242f79cf787b904a1f9df101635f557387",
+      "bytes": 276252,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/current_mun.csv"
+    },
+    {
+      "path": "sources/MX/current_mun.csv.receipt.json",
+      "sha256": "d92b80132940899c4c1d6a5f387c105fd8333bbdf73d87e1f413aa25cdddcd2b",
+      "bytes": 1115,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/current_mun.csv.receipt.json"
+    },
+    {
+      "path": "sources/MX/geometry/14/14mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/14mun.cpg"
+    },
+    {
+      "path": "sources/MX/geometry/14/14mun.dbf",
+      "sha256": "49d1a02d4e43c42365986596efc65286a9fcec491d47b12a7c3d0c4269c8fe8a",
+      "bytes": 11536,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/14mun.dbf"
+    },
+    {
+      "path": "sources/MX/geometry/14/14mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/14mun.prj"
+    },
+    {
+      "path": "sources/MX/geometry/14/14mun.shp",
+      "sha256": "18e34b6e0545d604ed081c494ed6ee77509c3788e4a0e17b3b321334dd0ffba0",
+      "bytes": 5111644,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/14mun.shp"
+    },
+    {
+      "path": "sources/MX/geometry/14/14mun.shx",
+      "sha256": "d84198fbb5ad793d87b5c6f62d2a75392f3ec7aeb2e5f64dede85a1edb3828d2",
+      "bytes": 1100,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/14mun.shx"
+    },
+    {
+      "path": "sources/MX/geometry/14/complete.json",
+      "sha256": "b9f54be86645fd7f3000a98e6b0380f4f2fd46823e96a66818e99dc078474a39",
+      "bytes": 18386,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/14/complete.json"
+    },
+    {
+      "path": "sources/MX/geometry/30/30mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/30mun.cpg"
+    },
+    {
+      "path": "sources/MX/geometry/30/30mun.dbf",
+      "sha256": "feae79422166f2f5600b06cb469f56a1a33416bfe542a7322ce423765b4b6e43",
+      "bytes": 19453,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/30mun.dbf"
+    },
+    {
+      "path": "sources/MX/geometry/30/30mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/30mun.prj"
+    },
+    {
+      "path": "sources/MX/geometry/30/30mun.shp",
+      "sha256": "89aa8d1490f1c36310f6ebd6949602276c21d8522c91729fbc1b090547fbebac",
+      "bytes": 6024468,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/30mun.shp"
+    },
+    {
+      "path": "sources/MX/geometry/30/30mun.shx",
+      "sha256": "c0e5dccb02b39873519517dd4ba8419d45c7e54d6efd18a6b44167107fb396e8",
+      "bytes": 1796,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/30mun.shx"
+    },
+    {
+      "path": "sources/MX/geometry/30/complete.json",
+      "sha256": "344775784e6d245f00c15ce31f73de37b63805cef388c3fd9d3e64108a56e59d",
+      "bytes": 18828,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_mx/work_tld2/sources/geometry/30/complete.json"
+    },
+    {
+      "path": "sources/US/2020_Gaz_place_national.zip",
+      "sha256": "6e5745b3e1adf7a1e024a988301d484697e2a0f25b3cf10114eef676f09d5c18",
+      "bytes": 1206088,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/2020_Gaz_place_national.zip"
+    },
+    {
+      "path": "sources/US/2020_Gaz_place_national.zip.receipt.json",
+      "sha256": "2f33b3820033e6bbbf74af76b159e7b6dbc02d7fef712056d760eeb93eb99681",
+      "bytes": 386,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/2020_Gaz_place_national.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/cb_2020_us_place_500k.zip",
+      "sha256": "0d177eb93798cfbc88cdcbafed401dc0a3e6d9b062f80a3d431d4f903a0fc0e4",
+      "bytes": 24224446,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/cb_2020_us_place_500k.zip"
+    },
+    {
+      "path": "sources/US/cb_2020_us_place_500k.zip.receipt.json",
+      "sha256": "f8c80231d198cd6dd0a048e96e7446e0bb9c7ae53f57d2ed89d4ab66e956a629",
+      "bytes": 1850,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/cb_2020_us_place_500k.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/pl2020_CA.json",
+      "sha256": "b85307fa2c215ce11d20f35a8c2d3381739a8b64fec544fef73af5a52096536a",
+      "bytes": 2063484,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_CA.json"
+    },
+    {
+      "path": "sources/US/pl2020_CA_provenance.json",
+      "sha256": "3ac0d9bc833f3652b7c87893e30299cdd82c7761be81904253d671817b36701d",
+      "bytes": 2668,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_CA_provenance.json"
+    },
+    {
+      "path": "sources/US/pl2020_MT.json",
+      "sha256": "365f89a4110d6f80b676337baca611980d795e9d2dd7758579146207cebe74ab",
+      "bytes": 696211,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_MT.json"
+    },
+    {
+      "path": "sources/US/pl2020_MT_provenance.json",
+      "sha256": "8f6c2e0a05eb5c3e2de421070fc98dfdb77ca4369d53c6c66bd6b79ca2a9eaaf",
+      "bytes": 2715,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_MT_provenance.json"
+    },
+    {
+      "path": "sources/US/pl2020_NJ.json",
+      "sha256": "5bfa4f4671c189f000d375befc506f07752daede6aebdbf2ce4334503d7cee4b",
+      "bytes": 1133626,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_NJ.json"
+    },
+    {
+      "path": "sources/US/pl2020_NJ_provenance.json",
+      "sha256": "08e65bb8015784cb61abafc39f24bdb3d36c157a9b8032b280a69ac7d2da6516",
+      "bytes": 2539,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_NJ_provenance.json"
+    },
+    {
+      "path": "sources/US/pl2020_NY.json",
+      "sha256": "6418e5dc7bc7fad5daa126b270283225f42b45fba9902f0b9ccf1d23cf078d0e",
+      "bytes": 2078437,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_NY.json"
+    },
+    {
+      "path": "sources/US/pl2020_NY_provenance.json",
+      "sha256": "dad2614635fc179b361e8553d1daf312c4f7b7d90e4f4d7607a8491e50bff036",
+      "bytes": 2569,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_NY_provenance.json"
+    },
+    {
+      "path": "sources/US/pl2020_WA.json",
+      "sha256": "e85412c97ef26a2cd569eb63d89886385d80a25b8248ddf16abb593af725248e",
+      "bytes": 877811,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_WA.json"
+    },
+    {
+      "path": "sources/US/pl2020_WA_provenance.json",
+      "sha256": "665031e10fd0e38d0f5be6cd2f6ed322f67854f70c14737c4525cb5bd04f1fa0",
+      "bytes": 2620,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/pl2020_WA_provenance.json"
+    },
+    {
+      "path": "sources/US/tl_2020_06_place.zip",
+      "sha256": "ac6e5df9062d9768585e53cd93059b13e7377edf8e18a17b9ff56dad183e5fbd",
+      "bytes": 9587555,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_06_place.zip"
+    },
+    {
+      "path": "sources/US/tl_2020_06_place.zip.receipt.json",
+      "sha256": "290f74c1903503ad17d4a017dad7693aec6a6548ecb56019a67617007facd2ff",
+      "bytes": 1847,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_06_place.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/tl_2020_30_place.zip",
+      "sha256": "ae43d819e49906df0816b5b70da07088a0e95ae5f76134e59959ea3807c5b538",
+      "bytes": 2214404,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_30_place.zip"
+    },
+    {
+      "path": "sources/US/tl_2020_30_place.zip.receipt.json",
+      "sha256": "813a5f1dc2e6adca2ee2244069d33b1e01fb36c622704d562e19a5e9a7b43cf6",
+      "bytes": 1847,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_30_place.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/tl_2020_34_place.zip",
+      "sha256": "ff1d6afa2f1e08361099847f991b8b5d5a3e7e368ae383db46683553cba0ce12",
+      "bytes": 2855806,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_34_place.zip"
+    },
+    {
+      "path": "sources/US/tl_2020_34_place.zip.receipt.json",
+      "sha256": "6a626b1c5efc95a0c5587a5183879d8f0cc0987bcb84b38438a0377cb5bc2265",
+      "bytes": 1845,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_34_place.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/tl_2020_36_place.zip",
+      "sha256": "53e18de521985dbd69c2ad1c62aa5143dec0411ca122f4eaa395ff61f40b10b5",
+      "bytes": 3249998,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_36_place.zip"
+    },
+    {
+      "path": "sources/US/tl_2020_36_place.zip.receipt.json",
+      "sha256": "262696dcd168844ea04b037f48debd78c6c60cacbce1d46ea3af9dc33a56a328",
+      "bytes": 1847,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_36_place.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/tl_2020_53_place.zip",
+      "sha256": "f2000e0d5b7b38a0ff401b16a10d9c1084c1cabbf38dd852af1ec21cd7fa726e",
+      "bytes": 2826224,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_53_place.zip"
+    },
+    {
+      "path": "sources/US/tl_2020_53_place.zip.receipt.json",
+      "sha256": "ada3d44d0295a58e9501094db7715105d54d95d0594f0e895ee942d34035fd9a",
+      "bytes": 1847,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/top15_us_tld/work3c/sources/tl_2020_53_place.zip.receipt.json"
+    },
+    {
+      "path": "sources/US/pl2020_PR.json",
+      "sha256": "03de62a1318c219f12005065d4cda2e7dbe2d6c9f3c0ab7feea9af3a0e5449ec",
+      "bytes": 921630,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/us_places_v5x/work/sources/pl2020_PR.json"
+    },
+    {
+      "path": "sources/US/pl2020_PR_provenance.json",
+      "sha256": "85fc859c2cdd8313c7fdabb47a6f59ab6d57a87317b19bda592d4a486a9a6c15",
+      "bytes": 2493,
+      "reused_from": "/Users/darshan/Personal/projects/csc-ecosystem/csc-data-audit/runs/specs/us_places_v5x/work/sources/pl2020_PR_provenance.json"
+    },
+    {
+      "path": "sources/live_items_0a951eea73cf.json",
+      "sha256": "c4578e5479ef3b4dae74de80dc164b792b078bbb97c44843e3f0367eee778ff6",
+      "bytes": 1009601
+    },
+    {
+      "path": "sources/live_items_0a951eea73cf.receipt.json",
+      "sha256": "8d28b7b961cdf080042c88f1d58d9fae8a9c0c65f60332f3f6b3181da204af72",
+      "bytes": 3233
+    },
+    {
+      "path": "sources/live_items_499d692d00a1.json",
+      "sha256": "b118aaeb76348661a7b68f103c6cd9a28f230fd224376736207a13c6095ee29d",
+      "bytes": 1020750
+    },
+    {
+      "path": "sources/live_items_499d692d00a1.receipt.json",
+      "sha256": "8d728c8f4153d7fa9b8033d3e8bb3bdec7a943a266ff65c8dece4bdf3bcdc39a",
+      "bytes": 3227
+    },
+    {
+      "path": "sources/live_items_4f9e83c5772b.json",
+      "sha256": "80cdca88155c3f71bea10ae9231d2b0ad7aecd4181299302064207d75e05999a",
+      "bytes": 618807
+    },
+    {
+      "path": "sources/live_items_4f9e83c5772b.receipt.json",
+      "sha256": "c341083eadc4b67b36ff8e41e9da61638c41b38b5ea756e7c346cc3fb84fe8cb",
+      "bytes": 2816
+    },
+    {
+      "path": "sources/live_items_669648cba251.json",
+      "sha256": "c77a352bc6d88f27a641f58848a9da78dac27f63c43cd34911115a57b76ca1d2",
+      "bytes": 967726
+    },
+    {
+      "path": "sources/live_items_669648cba251.receipt.json",
+      "sha256": "5ca23fcc171d4b409d1751ecfe477fff170afc48a65cb50dc99aa004e70ee2df",
+      "bytes": 2850
+    },
+    {
+      "path": "sources/live_items_758dd14ec3a8.json",
+      "sha256": "a797017ac94c0cecb10e5d1153a0b8e62c4995ef9550f3a086233832ea3b98a9",
+      "bytes": 1022284
+    },
+    {
+      "path": "sources/live_items_758dd14ec3a8.receipt.json",
+      "sha256": "c1a0409176b3ed6ebff240b51b633c3a337db8013551d7cc437618a640c6e7d7",
+      "bytes": 3229
+    },
+    {
+      "path": "sources/live_items_c66fd9b1db68.json",
+      "sha256": "9cd266ad6391a37bce3c608f21e2d109fd4161905eebb51707f5a3fe39d936d4",
+      "bytes": 628795
+    },
+    {
+      "path": "sources/live_items_c66fd9b1db68.receipt.json",
+      "sha256": "5778a81c8a832303c6a52d6bfcf83cd81662609c921ccd5f3e35778873f9d82a",
+      "bytes": 2838
+    },
+    {
+      "path": "sources/live_items_ca14913f2d40.json",
+      "sha256": "82a5c425647585b81fd6f3b411b05097d5995f8fba9f7639bcdce121043caf6d",
+      "bytes": 1014967
+    },
+    {
+      "path": "sources/live_items_ca14913f2d40.receipt.json",
+      "sha256": "fc54ab20fb1b14eff102066739deed1a37c27ae9a6f5829ebe5e29c782c2df5f",
+      "bytes": 3223
+    },
+    {
+      "path": "sources/live_items_d3867d2b0756.json",
+      "sha256": "09589fbbafda993b65cdcae218be6f08eff12a99d5ca4151ae57f6d540006207",
+      "bytes": 589802
+    },
+    {
+      "path": "sources/live_items_d3867d2b0756.receipt.json",
+      "sha256": "68c8a2658515d6778425feb2df755595f7e1add524efb26974755e92a16a2cda",
+      "bytes": 2724
+    },
+    {
+      "path": "sources/live_items_e57b3f78967d.json",
+      "sha256": "1275313ef80b6c37e8ed5b5e720b41e7b6abf2473c29b12a8144255492239ea8",
+      "bytes": 1005507
+    },
+    {
+      "path": "sources/live_items_e57b3f78967d.receipt.json",
+      "sha256": "9930bbbc91e8f63fd72208b05334d9f12856d2724dabc93775c132e56de30075",
+      "bytes": 3227
+    },
+    {
+      "path": "sources/live_items_e97ce7ec66cf.json",
+      "sha256": "ac575d00bbbed98ad5b4b8906d176b35962a3a06ebf55c042ba16a40f88e1be1",
+      "bytes": 1005492
+    },
+    {
+      "path": "sources/live_items_e97ce7ec66cf.receipt.json",
+      "sha256": "d12ede42232e46f5a4dae0e3bcf662b760c08af732513a6b463a667b310e3fc9",
+      "bytes": 2893
+    },
+    {
+      "path": "sources/live_parents_be37e07613ec.json",
+      "sha256": "63901d28b9696c50eb430fad29e8691ea55717bdb4ad92b78c079f9d1cfd92e2",
+      "bytes": 46965
+    },
+    {
+      "path": "sources/live_parents_be37e07613ec.receipt.json",
+      "sha256": "a0f4d92569898fed3aeb68a8e95fbd6aed00bd43a56de6645a5af4f340c3abda",
+      "bytes": 2141
+    },
+    {
+      "path": "sources/qlever_au_names.json",
+      "sha256": "97f5ffb908cb4039785abe5cc7e5114f7c6a66c936f5a6bcf484f0ff83365746",
+      "bytes": 194737
+    },
+    {
+      "path": "sources/qlever_au_names.receipt.json",
+      "sha256": "af8188110207d0a9e03e9286194fca582d90dfb03e9bfe348485b2f1c2bde8c8",
+      "bytes": 1767
+    },
+    {
+      "path": "sources/qlever_au_names.rq",
+      "sha256": "f618f83c4509c5ba6ae16185737d869e2ac9a42c309b8ba0cc7b8def747cd90c",
+      "bytes": 727
+    },
+    {
+      "path": "sources/qlever_codes.json",
+      "sha256": "4709b1084f945565fdd62d04074054563c06abfd8f9864e0f9db74353934699e",
+      "bytes": 2896
+    },
+    {
+      "path": "sources/qlever_codes.receipt.json",
+      "sha256": "dca101c135eeaf0272c6df762baea44f0f5c9b7e0cfc2f0158e8588c880cf94f",
+      "bytes": 2247
+    },
+    {
+      "path": "sources/qlever_codes.rq",
+      "sha256": "b7744996d2102889897ca27dad1aedad3e773aa4b97b6a69bb20c601362c448a",
+      "bytes": 1225
+    },
+    {
+      "path": "sources/qlever_codes_v2.json",
+      "sha256": "522f80ef7a4c39b9baecfbd92967d9dfd3c017e2621cb84ac7901393543dadce",
+      "bytes": 3692
+    },
+    {
+      "path": "sources/qlever_codes_v2.receipt.json",
+      "sha256": "5b00b911d05cb7af87d4ddb578c800935a089b2a128347f6ebe9d1dbdce3ef8b",
+      "bytes": 2415
+    },
+    {
+      "path": "sources/qlever_codes_v2.rq",
+      "sha256": "b7744996d2102889897ca27dad1aedad3e773aa4b97b6a69bb20c601362c448a",
+      "bytes": 1225
+    },
+    {
+      "path": "sources/qlever_codes_v3.json",
+      "sha256": "6f95a6619298b62d2e02a24302931d4a76296306a69a4a98d0800100856a351d",
+      "bytes": 4280
+    },
+    {
+      "path": "sources/qlever_codes_v3.receipt.json",
+      "sha256": "219fe454ea79069e96cd35ea2167b2911d7d49138e45e25a1369fe125e953528",
+      "bytes": 2460
+    },
+    {
+      "path": "sources/qlever_codes_v3.rq",
+      "sha256": "99dc4bf287e54990014025b7c795e24fe7a84191333d7ed80d5cd7dd726c7813",
+      "bytes": 1258
+    },
+    {
+      "path": "sources/qlever_codes_v4.json",
+      "sha256": "26788d4bd8d9cb96599b52e65b55c8a1e29ba4e7b84f796ec48b6516cf5717ba",
+      "bytes": 4857
+    },
+    {
+      "path": "sources/qlever_codes_v4.receipt.json",
+      "sha256": "5797fb8a258f5e73dd537e11b273fc5f4f92abc933a06b1c94a625afa6757512",
+      "bytes": 2576
+    },
+    {
+      "path": "sources/qlever_codes_v4.rq",
+      "sha256": "282fd46d85e3b8614035519d55a8247b2d3156ef6dea007a0e3dc22fd1c34f3e",
+      "bytes": 1342
+    },
+    {
+      "path": "sources/qlever_codes_v5.json",
+      "sha256": "8f4522080635645f8d3510da6234759735c33776a644ccc4d54fd0eb7ae731e9",
+      "bytes": 5057
+    },
+    {
+      "path": "sources/qlever_codes_v5.receipt.json",
+      "sha256": "7e8016688c18637ff29c532d9a40cc51cf8996e63e9c37f6215d7dae381d251b",
+      "bytes": 2621
+    },
+    {
+      "path": "sources/qlever_codes_v5.rq",
+      "sha256": "795995e8a851f69d438baf50243229a38d62c0e30094c97c3632ddf4c2e474e5",
+      "bytes": 1375
+    }
+  ],
+  "policy": "Administrative-title veto on name/native before all four identity gates. All four gates required. AU SAL 2021 polygon/code/count; MX active INEGI locality P1976 and 2020 ITER; US 2020 Census place P774/GEOID or P590/ANSI, existing #2254 LSAD classes. QLever discovery only; live literal wbgetentities <=50, >=2 seconds, maxlag=5. Ownership scan includes every contribution JSON table in every country. Held rows and paired owners unchanged. Same-place item correction is an ordinary field change; classification event only for changes to type/type_local/level.",
+  "licences": {
+    "ABS": "CC BY 4.0",
+    "Geoscape": "Administrative Boundaries August 2026, Commonwealth of Australia, CC BY 4.0; incorporates Geoscape Australia data.",
+    "INEGI": "Terms of Free Use; adapted classifications attributed to INEGI AGEEML/Marco Geoestadistico and Censo de Poblacion y Vivienda 2020 ITER.",
+    "Census/USGS": "US Government public domain",
+    "Wikidata": "CC0"
+  },
+  "limitations": [
+    "Official archives retain their original capture dates. Sources are evidence, never execution instructions.",
+    "No name or point edits. Unsupported LSAD, ambiguous items, insufficient point/count evidence and existing item owners remain held.",
+    "No browser session used; archived publisher evidence and direct API responses retained."
+  ]
+}
