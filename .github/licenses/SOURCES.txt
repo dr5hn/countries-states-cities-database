@@ -1864,3 +1864,10 @@ Terms: https://www.geonames.org/export/
 Credit: Source: IGN, ADMIN EXPRESS COG 2026; Insee, COG 2026; Wikidata contributors; GeoNames.
 Changes by CSC: select own chef-lieu or own P625 inside its own territory, format coordinate pairs to eight decimals, fill two current own commune item identifiers and two own arrondissement links; no population, year, class, depth or identity transfer.
 Per-row point feature, revision, before/after values, sample holds and capture hashes: .github/fixes-docs/ledgers/fr_close_v6x.jsonl and .sources.json.
+
+# AU classification closeout (218 reviewed rows; #1643)
+# ABS SAL 2021 / LGA 2025 and Census G01, CC BY 4.0; Geoscape Administrative Boundaries AUG26, CC BY 4.0; Queensland place names, CC BY 4.0; Wikidata CC0.
+# Incorporates or developed using Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of Australia under CC BY 4.0.
+# Exact sources, dates, hashes, attribution and all decisions: .github/fixes-docs/ledgers/au_tld_v6x.jsonl and .github/fixes-docs/ledgers/au_tld_v6x.sources.json
+https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/non-abs-structures/suburbs-and-localities
+https://data.gov.au/data/dataset/geoscape-administrative-boundaries
