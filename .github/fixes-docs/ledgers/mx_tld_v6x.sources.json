@@ -1,0 +1,3314 @@
+{
+  "schema_version": 1,
+  "title": "top15_mx_build_tld2",
+  "base_commit": "01abc0f5fc3f614f67e06f69ee04a62ee393479b",
+  "ledger_sha256": "3fbb8a18584e30f4302f24accae41172e2c904e4b64a98775d473f4266a6305a",
+  "sources": [
+    {
+      "path": "sources/MX.census.zip",
+      "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+      "bytes": 36615814
+    },
+    {
+      "path": "sources/MX.census.zip.meta.json",
+      "sha256": "d0e2fd954956cba0be9365ff3157894796fd52363af63b6c259ded89469c17a8",
+      "bytes": 1063
+    },
+    {
+      "path": "sources/ageeml_localidades_with_bajas.csv",
+      "sha256": "59a63e2c164b036944ef6c50ed7d731da1b6a83c0e0c8a2a2a595319827736bb",
+      "bytes": 70143464
+    },
+    {
+      "path": "sources/ageeml_localidades_with_bajas.csv.meta.json",
+      "sha256": "8d6c23be410dbc1d81287941ff374ff6c6481752d41f8d6f1952f8bce17ad478",
+      "bytes": 1158
+    },
+    {
+      "path": "sources/census_extract.json",
+      "sha256": "bf964d47b5c208c1d28a35a8219312f5cc0dbd272d20839a3971e9660dd074af",
+      "bytes": 92140
+    },
+    {
+      "path": "sources/code_owners.json",
+      "sha256": "2d5ad4fd31046899b55d9ae4da37c474345d435344f8d11d1427345bdbc338ad",
+      "bytes": 270909
+    },
+    {
+      "path": "sources/confirmation_loc_000.csv",
+      "sha256": "65f27731764aa8da282ab9a09273de0f91a3b819cf8a80e30247364d0e52cd45",
+      "bytes": 4195
+    },
+    {
+      "path": "sources/confirmation_loc_000.csv.receipt.json",
+      "sha256": "7ee0c2a7e84356c22cfc923e806a610110e9c9614ce01037c8cd819d7bc28c18",
+      "bytes": 3551
+    },
+    {
+      "path": "sources/confirmation_loc_020.csv",
+      "sha256": "3e36c27385fe0147806e9e5fd65cf701a8e5827f9bd9e868771c51b65655c162",
+      "bytes": 2012
+    },
+    {
+      "path": "sources/confirmation_loc_020.csv.receipt.json",
+      "sha256": "e7c5820c2dbd9d698b82e564d90fa217f1b3d45c6100f77bfb8b16dc311cbe1e",
+      "bytes": 2011
+    },
+    {
+      "path": "sources/current_mun.csv",
+      "sha256": "2f2d08c8a13b037203b8fd6822983d242f79cf787b904a1f9df101635f557387",
+      "bytes": 276252
+    },
+    {
+      "path": "sources/current_mun.csv.receipt.json",
+      "sha256": "d92b80132940899c4c1d6a5f387c105fd8333bbdf73d87e1f413aa25cdddcd2b",
+      "bytes": 1115
+    },
+    {
+      "path": "sources/geometry/01/01mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/01/01mun.dbf",
+      "sha256": "6b8b9a332df4d114f1f74666d4203ab22bd103564a00ef7b8e97b5516dd1b94e",
+      "bytes": 1162
+    },
+    {
+      "path": "sources/geometry/01/01mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/01/01mun.shp",
+      "sha256": "b1e6ca1dc3ce61c8e2e4ec377cdd81f61ace061131f1442f76a777e80c1e9db8",
+      "bytes": 227340
+    },
+    {
+      "path": "sources/geometry/01/01mun.shx",
+      "sha256": "2e3fed19db586a455a547d65b67f7d955e4c6ddaa22a0b64f48c1630660a9bdf",
+      "bytes": 188
+    },
+    {
+      "path": "sources/geometry/01/complete.json",
+      "sha256": "816b727fa8e05fd0d6b6d6fa6306cd98b34a569579eb37e9255bbae7014dd692",
+      "bytes": 18558
+    },
+    {
+      "path": "sources/geometry/02/02mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/02/02mun.dbf",
+      "sha256": "a7d72beb0005ea2c3eb18d8ae37c0f654b364406c5e9eb5a1b3253c3d885e3f3",
+      "bytes": 798
+    },
+    {
+      "path": "sources/geometry/02/02mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/02/02mun.shp",
+      "sha256": "00f0c4bff99bfe34ed6ebc471f94f9d4f8a7f7102817225d474ffb1ba313bdec",
+      "bytes": 1539228
+    },
+    {
+      "path": "sources/geometry/02/02mun.shx",
+      "sha256": "e4095c6f9c7a404fcc54e876b3c6dc7a84a15944e5f9cebcb89ae11dcd1f26dc",
+      "bytes": 156
+    },
+    {
+      "path": "sources/geometry/02/complete.json",
+      "sha256": "66f44c2d3699bcf600a011f906a3d0191fdfd9e988da072c9b78784cbaa7db31",
+      "bytes": 18561
+    },
+    {
+      "path": "sources/geometry/03/03mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/03/03mun.dbf",
+      "sha256": "e11165bbe6c6a3d40f16488eabd44965341e7271eac022cd132745c6ff6c54df",
+      "bytes": 616
+    },
+    {
+      "path": "sources/geometry/03/03mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/03/03mun.shp",
+      "sha256": "fd0c9166220614a07f83f3300956a40bac32a0dd2ccd61c953209671808f7e9f",
+      "bytes": 2786404
+    },
+    {
+      "path": "sources/geometry/03/03mun.shx",
+      "sha256": "d154c96692744bc0c016aac0da0e2c941d42ef3f2ccb30ef5ae065a25df5af4c",
+      "bytes": 140
+    },
+    {
+      "path": "sources/geometry/03/complete.json",
+      "sha256": "1209271d0a32a8d4f0d68302dd73849aa50fa07bc91b003613db337c93198380",
+      "bytes": 18635
+    },
+    {
+      "path": "sources/geometry/04/04mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/04/04mun.dbf",
+      "sha256": "61841795636cc15c2b72a87708a4857c80e906846caa7e17a4a83924ca547b51",
+      "bytes": 1344
+    },
+    {
+      "path": "sources/geometry/04/04mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/04/04mun.shp",
+      "sha256": "41f052d7c52df47777efd2067693a9606805e1713b6050e077e7e9932edf9a88",
+      "bytes": 978136
+    },
+    {
+      "path": "sources/geometry/04/04mun.shx",
+      "sha256": "1da63d3081bf6862368d43b381a5cb39235f2b2a40a6ae8c282752c52342949f",
+      "bytes": 204
+    },
+    {
+      "path": "sources/geometry/04/complete.json",
+      "sha256": "e3d91355155b3d1d4776355650ef843caf499379dd2322b0ed375d8b67553cb3",
+      "bytes": 18403
+    },
+    {
+      "path": "sources/geometry/05/05mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/05/05mun.dbf",
+      "sha256": "1a4fb7f898c18df0a49b7d7df1fdfb63acfc547cbce5520401ede3aa97396334",
+      "bytes": 3619
+    },
+    {
+      "path": "sources/geometry/05/05mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/05/05mun.shp",
+      "sha256": "4674b7827770b84a1da146868b78ef6675c7f537a2f2a8fd5710dfca4f558453",
+      "bytes": 553080
+    },
+    {
+      "path": "sources/geometry/05/05mun.shx",
+      "sha256": "e6ffe944be88f70460a40ff8588535f9d0ba039d5f59817fb4b78510f2eb10d3",
+      "bytes": 404
+    },
+    {
+      "path": "sources/geometry/05/complete.json",
+      "sha256": "8ddf61358a885974f09fc93a2dae7b0ad6dd952bb36e0a43dbab5e758f7fcf6b",
+      "bytes": 18666
+    },
+    {
+      "path": "sources/geometry/07/07mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/07/07mun.dbf",
+      "sha256": "45cba083c4495e6a60f40fdef2e3edb473ae9e76bc059b6d2f79f496b02ecffa",
+      "bytes": 11445
+    },
+    {
+      "path": "sources/geometry/07/07mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/07/07mun.shp",
+      "sha256": "409b69d700240730e93b809129794ed87aa5a424b8cd39c20d9371210a109453",
+      "bytes": 2472280
+    },
+    {
+      "path": "sources/geometry/07/07mun.shx",
+      "sha256": "c67c9e3d37143035c868815798cd4e1a7870efd096778aad915cf862305bd5f7",
+      "bytes": 1092
+    },
+    {
+      "path": "sources/geometry/07/complete.json",
+      "sha256": "cf975037696794114596fdcb16a84db0053feccdb8d2cdab377ebff2f32f694c",
+      "bytes": 18385
+    },
+    {
+      "path": "sources/geometry/08/08mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/08/08mun.dbf",
+      "sha256": "21e393188e911eee6995d5d292e0ce5af220d89a4a75321fda3bf4957688da4c",
+      "bytes": 6258
+    },
+    {
+      "path": "sources/geometry/08/08mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/08/08mun.shp",
+      "sha256": "359eb71af654ab3fe9353d23148566efdaa1d450cad25adc8146ada5e2837349",
+      "bytes": 2593052
+    },
+    {
+      "path": "sources/geometry/08/08mun.shx",
+      "sha256": "9655929f8db496d8be154e858f10474a4ce3c7f03eb2d20926587bf5c2201883",
+      "bytes": 636
+    },
+    {
+      "path": "sources/geometry/08/complete.json",
+      "sha256": "2c628785127f82b15ff17bd5a7650eef1e28db4782e6c0702b656ccce225796e",
+      "bytes": 18435
+    },
+    {
+      "path": "sources/geometry/09/09mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/09/09mun.dbf",
+      "sha256": "5c1333a3ff1f641c021dfd8057b34dd8f34ed4c5217500a5e123cb34cff9c0f7",
+      "bytes": 1617
+    },
+    {
+      "path": "sources/geometry/09/09mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/09/09mun.shp",
+      "sha256": "ccdc4762d74a0cd665ed4191a8c3e956aa25dc31a52b75f35d02713a5338050b",
+      "bytes": 279620
+    },
+    {
+      "path": "sources/geometry/09/09mun.shx",
+      "sha256": "a80c46ecfe7b3015fe9c3ba2e2c171ef2dc4fc5ebe1b43f9388525af4f1ab36a",
+      "bytes": 228
+    },
+    {
+      "path": "sources/geometry/09/complete.json",
+      "sha256": "f16e0cacfb2886f409823c5568cfda874714f0c8fb53a3bf8f3ac624aa689324",
+      "bytes": 18554
+    },
+    {
+      "path": "sources/geometry/11/11mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/11/11mun.dbf",
+      "sha256": "41e01f4c74acfbf2c7c7eed63fc610e9a312661fea38eefedf3bd6f9192d65d7",
+      "bytes": 4347
+    },
+    {
+      "path": "sources/geometry/11/11mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/11/11mun.shp",
+      "sha256": "500041928fe17c2f1fda3ffd6ec14a6c106dc5275b65c48628fac43ec48c56e8",
+      "bytes": 1480804
+    },
+    {
+      "path": "sources/geometry/11/11mun.shx",
+      "sha256": "fadf5a5376bea13d2a471429ac40926b8e0878ae778a1e24ab06288c197b430d",
+      "bytes": 468
+    },
+    {
+      "path": "sources/geometry/11/complete.json",
+      "sha256": "81cf599f7078577f3ae8c9a269be00950f45fae06c21f680438b15d66e88140c",
+      "bytes": 18460
+    },
+    {
+      "path": "sources/geometry/12/12mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/12/12mun.dbf",
+      "sha256": "2433ad93b139f409a631ad5bc5b9c910d6b1d3ff9fa438156f7a1c74b3f5189a",
+      "bytes": 7896
+    },
+    {
+      "path": "sources/geometry/12/12mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/12/12mun.shp",
+      "sha256": "799e8a7070ce5f314a186e774aa9ab33f3c02b6d241c8078afc1cf22f2b0e220",
+      "bytes": 2462372
+    },
+    {
+      "path": "sources/geometry/12/12mun.shx",
+      "sha256": "826e24887155609bd5eaf620c6f7bc4aeb390ff0cec3242b31abf7c4e9e4a7cb",
+      "bytes": 780
+    },
+    {
+      "path": "sources/geometry/12/complete.json",
+      "sha256": "a75ec4b089c263b3a6388ecd6c355e0fb9091a0ee39e4cafb84185620c031153",
+      "bytes": 18409
+    },
+    {
+      "path": "sources/geometry/14/14mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/14/14mun.dbf",
+      "sha256": "49d1a02d4e43c42365986596efc65286a9fcec491d47b12a7c3d0c4269c8fe8a",
+      "bytes": 11536
+    },
+    {
+      "path": "sources/geometry/14/14mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/14/14mun.shp",
+      "sha256": "18e34b6e0545d604ed081c494ed6ee77509c3788e4a0e17b3b321334dd0ffba0",
+      "bytes": 5111644
+    },
+    {
+      "path": "sources/geometry/14/14mun.shx",
+      "sha256": "d84198fbb5ad793d87b5c6f62d2a75392f3ec7aeb2e5f64dede85a1edb3828d2",
+      "bytes": 1100
+    },
+    {
+      "path": "sources/geometry/14/complete.json",
+      "sha256": "b9f54be86645fd7f3000a98e6b0380f4f2fd46823e96a66818e99dc078474a39",
+      "bytes": 18386
+    },
+    {
+      "path": "sources/geometry/15/15mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/15/15mun.dbf",
+      "sha256": "af967448b85fed26064d1f615474e1207c643b47816acb85e2b901b0b485bc62",
+      "bytes": 11536
+    },
+    {
+      "path": "sources/geometry/15/15mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/15/15mun.shp",
+      "sha256": "3a6316a46e9a5f28f9be55c3bdfab8f957688a45ad3d0a657e01b24eb7d0fc81",
+      "bytes": 2757344
+    },
+    {
+      "path": "sources/geometry/15/15mun.shx",
+      "sha256": "2e639b9182acffcb78b265cb499d8772941a256c0e610eec6d7656212e6d5cdf",
+      "bytes": 1100
+    },
+    {
+      "path": "sources/geometry/15/complete.json",
+      "sha256": "b652d06d80443d8a64db9d869092fc17fcd89c6bad5cec7f0d936431f186cb0d",
+      "bytes": 18358
+    },
+    {
+      "path": "sources/geometry/16/16mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/16/16mun.dbf",
+      "sha256": "8bc7c97ef32fa0030b0f3959c3cb8854178e2058ecc6a10543228d72480d5382",
+      "bytes": 10444
+    },
+    {
+      "path": "sources/geometry/16/16mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/16/16mun.shp",
+      "sha256": "7568307188238e3dd3bd474166e5c97d44b2c73d09bf6f2232e130d709c5de56",
+      "bytes": 3372564
+    },
+    {
+      "path": "sources/geometry/16/16mun.shx",
+      "sha256": "180ae9906631dc821cc9f7d51b4d9c1cc02c283fe954fc5d3708a9776edd3412",
+      "bytes": 1004
+    },
+    {
+      "path": "sources/geometry/16/complete.json",
+      "sha256": "e22a2f56ccbf556c1cfedbd07aed973d868815eb1931acdfc75c16847d2a2a9d",
+      "bytes": 18644
+    },
+    {
+      "path": "sources/geometry/17/17mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/17/17mun.dbf",
+      "sha256": "2ab554fe1cd0c5e4d2e39d597bfb1263018f4d74ea51a09caf46b9725402d482",
+      "bytes": 3437
+    },
+    {
+      "path": "sources/geometry/17/17mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/17/17mun.shp",
+      "sha256": "18e6c9e9a68713f6f5601d3126f8d352cfc42af93bd1e455bb5dc5e5049e9452",
+      "bytes": 676036
+    },
+    {
+      "path": "sources/geometry/17/17mun.shx",
+      "sha256": "4c92b2f3683cfab72c433e9daf4f3f6eaa56ee32a02422d55d385084c3c042cf",
+      "bytes": 388
+    },
+    {
+      "path": "sources/geometry/17/complete.json",
+      "sha256": "426d4767c858229242fa4157a21554e7e6a97b01d11595353beb7e4c28fe279c",
+      "bytes": 15333
+    },
+    {
+      "path": "sources/geometry/18/18mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/18/18mun.dbf",
+      "sha256": "a89e39a522a9804a7291014ead9ec7c38fd99f5de79cbc105baa1b5332606178",
+      "bytes": 1981
+    },
+    {
+      "path": "sources/geometry/18/18mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/18/18mun.sbn",
+      "sha256": "d4b1a9dabeb1ad8da596a2788f00df8ea89e2906223ba5279930f4b371db9b58",
+      "bytes": 316
+    },
+    {
+      "path": "sources/geometry/18/18mun.sbx",
+      "sha256": "eed35467943bfd53e9a89472de7a1d8d3669a0c3a513b9f8084c92260bbc3182",
+      "bytes": 132
+    },
+    {
+      "path": "sources/geometry/18/18mun.shp",
+      "sha256": "b00c52d07d486b028fffae449f640d2729b57d230a2e01c379524f6c013fca5b",
+      "bytes": 1027340
+    },
+    {
+      "path": "sources/geometry/18/18mun.shx",
+      "sha256": "572a555f324eef755eafce3d592b1cd5a2c866c6cc58ad9cf6e720ee5adeb2e7",
+      "bytes": 260
+    },
+    {
+      "path": "sources/geometry/18/complete.json",
+      "sha256": "b5ae9b1d48fdac64a2902c31febbda2cb5475706239b44bbf8f1739ce3786cb0",
+      "bytes": 19782
+    },
+    {
+      "path": "sources/geometry/19/19mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/19/19mun.dbf",
+      "sha256": "cacb6c396feef3518b6214ce82142c53dad22db85458d8e46e01302a7595393d",
+      "bytes": 4802
+    },
+    {
+      "path": "sources/geometry/19/19mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/19/19mun.shp",
+      "sha256": "bcccdbde3502d3d5648388c629f18db945e3bb9bcf2d311927acac83f1f72c95",
+      "bytes": 1327280
+    },
+    {
+      "path": "sources/geometry/19/19mun.shx",
+      "sha256": "55c5b297e43e06f069a9200f9a35fe999ef2e9a51a102666826acfdfbe4247a4",
+      "bytes": 508
+    },
+    {
+      "path": "sources/geometry/19/complete.json",
+      "sha256": "2d03e14e8a69eb4b58c2c54c1bd95c25dd02e829e8c57172f668100f9b1bc1dc",
+      "bytes": 18433
+    },
+    {
+      "path": "sources/geometry/20/20mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/20/20mun.dbf",
+      "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
+      "bytes": 52031
+    },
+    {
+      "path": "sources/geometry/20/20mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/20/20mun.sbn",
+      "sha256": "36bb176a673b8877f47fe830bbdeb72239fb884c50a9ff8ba6e37516854ec025",
+      "bytes": 6084
+    },
+    {
+      "path": "sources/geometry/20/20mun.sbx",
+      "sha256": "a1cf474ed0230ed93a07d485866903a010976a8b4ea3f387626f99b69f86aac4",
+      "bytes": 556
+    },
+    {
+      "path": "sources/geometry/20/20mun.shp",
+      "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
+      "bytes": 4704088
+    },
+    {
+      "path": "sources/geometry/20/20mun.shx",
+      "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
+      "bytes": 4660
+    },
+    {
+      "path": "sources/geometry/20/complete.json",
+      "sha256": "29eed09a4a318f54cf93736af088f00d295ac087a527b75d2110fe52e76931fa",
+      "bytes": 19762
+    },
+    {
+      "path": "sources/geometry/21/21mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/21/21mun.dbf",
+      "sha256": "4cc17ffcaa91e34685c5fc4926e7378e0e9d7a8664519d48f92106116ff22be4",
+      "bytes": 19908
+    },
+    {
+      "path": "sources/geometry/21/21mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/21/21mun.shp",
+      "sha256": "0b754037b408bb162dec6e67c24094ee72b0f7cdf059ebf9ffa00c4e3985b4f8",
+      "bytes": 5732160
+    },
+    {
+      "path": "sources/geometry/21/21mun.shx",
+      "sha256": "d7d6b5634aac5942c96ad5d1181ba8e269e02fd921d89eb046a20ac7931eecb5",
+      "bytes": 1836
+    },
+    {
+      "path": "sources/geometry/21/complete.json",
+      "sha256": "752161327f40c78b3d8f49aae3e6f9537640bb4c7408fa9ac8fa2b6130fe1f9e",
+      "bytes": 18359
+    },
+    {
+      "path": "sources/geometry/22/22mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/22/22mun.dbf",
+      "sha256": "7b79f451d0a04c9fe663ff6ce1f4d16c63b39c4e5c10b39b72a132c943fcbdc1",
+      "bytes": 1799
+    },
+    {
+      "path": "sources/geometry/22/22mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/22/22mun.shp",
+      "sha256": "f2bac43f427cd214ebb005f868a0720ecdef1d651270a12230ffe6f6a179f235",
+      "bytes": 429188
+    },
+    {
+      "path": "sources/geometry/22/22mun.shx",
+      "sha256": "cd3c9c12663ff407ef26b3cbb07fc3462884a4f7c92b4832e5301936b83b7585",
+      "bytes": 244
+    },
+    {
+      "path": "sources/geometry/22/complete.json",
+      "sha256": "eb81174474ec00fb156fcd79add16fdfc46d9262d3e9d3644a5374777e160715",
+      "bytes": 18428
+    },
+    {
+      "path": "sources/geometry/24/24mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/24/24mun.dbf",
+      "sha256": "5926d4134f55baa335c3b0e9ca3fe1f6248627b4748e26f52b0ffe68b3261fcc",
+      "bytes": 5530
+    },
+    {
+      "path": "sources/geometry/24/24mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/24/24mun.shp",
+      "sha256": "831af8e229a64f0cbd84dd1ab58d7cb8041bca948b9a5bdab15f074288da83a8",
+      "bytes": 883004
+    },
+    {
+      "path": "sources/geometry/24/24mun.shx",
+      "sha256": "08fce6d58c938ec11a2235a6089628192112d5f481d3fd2ac2eea3c75d047605",
+      "bytes": 572
+    },
+    {
+      "path": "sources/geometry/24/complete.json",
+      "sha256": "cb792656e371ef13da5bb3eba15e7168bbfb311c58dc42d80904464d8e3e062f",
+      "bytes": 18536
+    },
+    {
+      "path": "sources/geometry/25/25mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/25/25mun.dbf",
+      "sha256": "7a4c1eb83c77219e5aa557647fdb5862fa259110509013154ca2647dddd3cb5a",
+      "bytes": 1981
+    },
+    {
+      "path": "sources/geometry/25/25mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/25/25mun.shp",
+      "sha256": "0735782bc060bd568d1d3f00fec8ff716c7c9954b2f1ccdf0d23a237bcd0d9ee",
+      "bytes": 1160652
+    },
+    {
+      "path": "sources/geometry/25/25mun.shx",
+      "sha256": "631f3f66407a104c8259f8845bebe0f9c871de7f918ac740de868306048e32f2",
+      "bytes": 260
+    },
+    {
+      "path": "sources/geometry/25/complete.json",
+      "sha256": "b10d9e45b55b70dc1d1cd870730283a8f09ee5a32faebf46dce8f1c68fdbe9dc",
+      "bytes": 18383
+    },
+    {
+      "path": "sources/geometry/26/26mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/26/26mun.dbf",
+      "sha256": "d94ce30d0ed9ac7b5ba30fddb736182ebd8b7e7990988af132d3a0323c98fbd0",
+      "bytes": 6713
+    },
+    {
+      "path": "sources/geometry/26/26mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/26/26mun.shp",
+      "sha256": "1ce0d507f89d453a553b2d746eb8bb610dfbfb34819b49ab8730fde473f50ed7",
+      "bytes": 1555400
+    },
+    {
+      "path": "sources/geometry/26/26mun.shx",
+      "sha256": "a64eda89684986fe84fbc9908942954fe0f3ecb5f5055e4b4988b3e10d90fcd1",
+      "bytes": 676
+    },
+    {
+      "path": "sources/geometry/26/complete.json",
+      "sha256": "d395311675e15b45c308718e26e6ce7a190b9ede71c442ee90b6b68577323b50",
+      "bytes": 18355
+    },
+    {
+      "path": "sources/geometry/27/27mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/27/27mun.dbf",
+      "sha256": "435d03d82bd8424dfad461bc69f3c5cf409049816c57b9c294478544feb666a5",
+      "bytes": 1708
+    },
+    {
+      "path": "sources/geometry/27/27mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/27/27mun.shp",
+      "sha256": "32c1424c2a752ed7ecac30f593a0f5e0da3122b47717dff53542107dbc32e5c0",
+      "bytes": 1039148
+    },
+    {
+      "path": "sources/geometry/27/27mun.shx",
+      "sha256": "dbdd4db710576221e4b7c15ab181898b48e3bab10b02a15e45f4e2416d7b7936",
+      "bytes": 236
+    },
+    {
+      "path": "sources/geometry/27/complete.json",
+      "sha256": "3e4a43a510881db5a38840777b34de02c8814371101737206238996586055926",
+      "bytes": 18379
+    },
+    {
+      "path": "sources/geometry/28/28mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/28/28mun.dbf",
+      "sha256": "a8f402e6c79535922db2e6e3b6d2a46dc6339e4df0bf58d7ccb951c7368fa367",
+      "bytes": 4074
+    },
+    {
+      "path": "sources/geometry/28/28mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/28/28mun.shp",
+      "sha256": "b64bbfd8e369d9d3cdbd4fc5896b31399c1748a11ebc4afa9e857c055693a6d9",
+      "bytes": 1050444
+    },
+    {
+      "path": "sources/geometry/28/28mun.shx",
+      "sha256": "a5974c148c439b8fa8ceba9ab271cf2fdc15c0ac427d86e1d91a7304c1be9f1f",
+      "bytes": 444
+    },
+    {
+      "path": "sources/geometry/28/complete.json",
+      "sha256": "e91cd8cfcc8366d01797473b993f7cf83c65d694d03b03e1de60578d25827cbc",
+      "bytes": 18460
+    },
+    {
+      "path": "sources/geometry/29/29mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/29/29mun.dbf",
+      "sha256": "bf1d606a8427746c31e26298deaa663a04ed807f02d68ea4054d168caa12226f",
+      "bytes": 5621
+    },
+    {
+      "path": "sources/geometry/29/29mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/29/29mun.shp",
+      "sha256": "2a65a12ac8008621679b012a6fe5a5b3391403016f6370768c109635d7815663",
+      "bytes": 1091628
+    },
+    {
+      "path": "sources/geometry/29/29mun.shx",
+      "sha256": "ddd7d6c97e89639bbb477450e63335579bfa1811768835094a38f0062f343e83",
+      "bytes": 580
+    },
+    {
+      "path": "sources/geometry/29/complete.json",
+      "sha256": "bc6aea0b8a4d41118fd7c1b50b526989431a1ed2e42ca199ed9c8319a9403422",
+      "bytes": 18404
+    },
+    {
+      "path": "sources/geometry/30/30mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/30/30mun.dbf",
+      "sha256": "feae79422166f2f5600b06cb469f56a1a33416bfe542a7322ce423765b4b6e43",
+      "bytes": 19453
+    },
+    {
+      "path": "sources/geometry/30/30mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/30/30mun.shp",
+      "sha256": "89aa8d1490f1c36310f6ebd6949602276c21d8522c91729fbc1b090547fbebac",
+      "bytes": 6024468
+    },
+    {
+      "path": "sources/geometry/30/30mun.shx",
+      "sha256": "c0e5dccb02b39873519517dd4ba8419d45c7e54d6efd18a6b44167107fb396e8",
+      "bytes": 1796
+    },
+    {
+      "path": "sources/geometry/30/complete.json",
+      "sha256": "344775784e6d245f00c15ce31f73de37b63805cef388c3fd9d3e64108a56e59d",
+      "bytes": 18828
+    },
+    {
+      "path": "sources/geometry/31/31mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/31/31mun.dbf",
+      "sha256": "dd7a4b9e7b403ecd62708a49024b543653a1946631b103a7edb3cec0f4a8e3a3",
+      "bytes": 9807
+    },
+    {
+      "path": "sources/geometry/31/31mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/31/31mun.sbn",
+      "sha256": "0f7748e3596ddc127019f289adf7a598d160c8901c66d36bf665d3979ce03e54",
+      "bytes": 1116
+    },
+    {
+      "path": "sources/geometry/31/31mun.sbx",
+      "sha256": "4de9130d3bbc7d450e85dfefbb3c2959df44a2bba9cbcc5be5a26ce399334993",
+      "bytes": 180
+    },
+    {
+      "path": "sources/geometry/31/31mun.shp",
+      "sha256": "ac882fff6db2643050d7ec5efda1dc1c4055677eae1505d77eeb94175ddb0527",
+      "bytes": 1068428
+    },
+    {
+      "path": "sources/geometry/31/31mun.shx",
+      "sha256": "cffb2d9cd55201c4c2a5f9b06c49439c5bf30cff5a922671da4fb22b697bec93",
+      "bytes": 948
+    },
+    {
+      "path": "sources/geometry/31/complete.json",
+      "sha256": "4d15ad45dfe928548b9311116e2e78aa22ae6be35a5a1c8568d7daef49f2b505",
+      "bytes": 21177
+    },
+    {
+      "path": "sources/geometry/32/32mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "bytes": 12
+    },
+    {
+      "path": "sources/geometry/32/32mun.dbf",
+      "sha256": "be4acab438f207090edde0d8fb754c107205032a19f7261b07f1ea4fc4af200d",
+      "bytes": 5439
+    },
+    {
+      "path": "sources/geometry/32/32mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "bytes": 648
+    },
+    {
+      "path": "sources/geometry/32/32mun.shp",
+      "sha256": "289f3ca8663126fe57a6a259a3aa17c8f50d7e1dc6719d79b6e9dff3cd5db81d",
+      "bytes": 1803492
+    },
+    {
+      "path": "sources/geometry/32/32mun.shx",
+      "sha256": "cc35552a5beefb811dfed591c26d2531abc2a93a3309a6e88c2c486217ababe0",
+      "bytes": 564
+    },
+    {
+      "path": "sources/geometry/32/complete.json",
+      "sha256": "b917adff4aab1c9631e2c319d02f8ea61937aeab3ac288be1b4a500c5495c25f",
+      "bytes": 18433
+    },
+    {
+      "path": "sources/live_dates_loc.json",
+      "sha256": "6435c4c0caaa0607d0cf85f3fcb16bca8c383d1c13c020f3605ffd6daddb2fe2",
+      "bytes": 54897
+    },
+    {
+      "path": "sources/live_dates_loc.json.receipt.json",
+      "sha256": "afd1c36afef5f69dbe3633c4e6bd3376b2f20043142d2c7ecd147c45633ae5fc",
+      "bytes": 513
+    },
+    {
+      "path": "sources/live_dates_mun.json",
+      "sha256": "d074da2ed775b1d94c30cec3dc4550351d60b881eaa22bf775c2b0afd6a63ed9",
+      "bytes": 21460
+    },
+    {
+      "path": "sources/live_dates_mun.json.receipt.json",
+      "sha256": "77a454999dadd7a047e727503ad39e240a87d53a672d966a2e7363595a4ef526",
+      "bytes": 513
+    },
+    {
+      "path": "sources/locality_point_checks.json",
+      "sha256": "5aed100d95ed1685005ea1d1b92b21143c4ad4a64ef92d742a982ac2f2773b0e",
+      "bytes": 56637
+    },
+    {
+      "path": "sources/merged_ledgers/mx_closeout_v6x.jsonl",
+      "sha256": "b9e8408d52d173de0639713a297607665827f0115cd72ef1ec37da20197e5318",
+      "bytes": 2020561
+    },
+    {
+      "path": "sources/merged_ledgers/mx_closeout_v6x.sources.json",
+      "sha256": "ab30c81bacbcafa279ef2910679a4b4fc08e88589907be9a1b9b1ef428664c31",
+      "bytes": 242063
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_adds_v5x.jsonl",
+      "sha256": "3386cdecb51b3e44f9bb5d631d308be4e22a32254b8392ceae1c64057cc9e0ac",
+      "bytes": 2691
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_adds_v5x.sources.json",
+      "sha256": "5268675f7249f0b41363891cd1b813191575df1194bced74879669efce5b9c26",
+      "bytes": 7583
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_links_v5x.jsonl",
+      "sha256": "193424139ccb0f854744bd8aeb2103c00b27ad17963978e7e9e79d5a4577f094",
+      "bytes": 105382
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_links_v5x.sources.json",
+      "sha256": "478704481c49dff66f84f14a98fbedc51ae3dd83adb80246b929a0a8d0ef2683",
+      "bytes": 44412
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_rows_v5x.jsonl",
+      "sha256": "ebb89aa6d5a30499bcb7261a281b6525a76647e44622609733c1be7290b05c9c",
+      "bytes": 69294
+    },
+    {
+      "path": "sources/merged_ledgers/mx_muni_fix_rows_v5x.sources.json",
+      "sha256": "3be25b59d626a2757a47ffbedc725ddd37a949f38fa2bd1e39c1c28cfc7b2aba",
+      "bytes": 24253
+    },
+    {
+      "path": "sources/merged_ledgers/mx_munis_v5x.jsonl",
+      "sha256": "80dc97bdac0183e89c2cef7110f0a4e2bc98f6e8a9827a3e0882b8e8d3038382",
+      "bytes": 2355425
+    },
+    {
+      "path": "sources/merged_ledgers/mx_munis_v5x.sources.json",
+      "sha256": "b34117b832b6669eb7a7d5229211b2cbc7023a5f0199bb6b40786b5c22e68d9a",
+      "bytes": 534452
+    },
+    {
+      "path": "sources/merged_ledgers/mx_pop_v5x.jsonl",
+      "sha256": "f77b0a6b260a0743e1a03d295a9d32ba6dc02856b675903a8b524183675c2e47",
+      "bytes": 1385196
+    },
+    {
+      "path": "sources/merged_ledgers/mx_pop_v5x.sources.json",
+      "sha256": "2cbb026f47326e25261cb2b92115da34fb957e61ee49e55c876203c32c2773ac",
+      "bytes": 470862
+    },
+    {
+      "path": "sources/merged_ledgers/mx_seats_v6x.jsonl",
+      "sha256": "c5daed591cbb910b29cd9255841c31c49388a5718eaa90ada94de89e4d2c4175",
+      "bytes": 38858
+    },
+    {
+      "path": "sources/merged_ledgers/mx_seats_v6x.sources.json",
+      "sha256": "b8c362d6fc5f7c7bac8ac2e78d6f021e750683a57dd5cb68e6af884090580219",
+      "bytes": 10540
+    },
+    {
+      "path": "sources/municipal_owners.json",
+      "sha256": "4c8d68f8773383d1617877f590351b74757223d48d06fcb0055b24d5480ba790",
+      "bytes": 70568
+    },
+    {
+      "path": "sources/municipal_point_checks.json",
+      "sha256": "19e593a86817908808820d53caf5523ee350d28af556d70d4e1a797397f3e22e",
+      "bytes": 11148
+    },
+    {
+      "path": "sources/own_entities.json",
+      "sha256": "44c1163879019dd6ab9821a9f58c5d241edf8690a419ea527331452539ce5471",
+      "bytes": 76328255
+    },
+    {
+      "path": "sources/own_entities.provenance.json",
+      "sha256": "2b79479f48879ed1528d3eadd24a8c4754ecf0e22abb4048f76cec072925974c",
+      "bytes": 652254
+    },
+    {
+      "path": "sources/pr_2171.json",
+      "sha256": "f086e2637e552c2a80a5f1b395baac3f23c2385f579ad2144ab4e65d968d9266",
+      "bytes": 33281
+    },
+    {
+      "path": "sources/pr_2231.json",
+      "sha256": "0ddc9afe9ffc3f5ae7eea4b69f82f7ae7cf77b9e8eef0dcc8f269273198c6bd6",
+      "bytes": 21451
+    },
+    {
+      "path": "sources/pr_2233.json",
+      "sha256": "4a35c2dce8886da537e3bf760b5e3cd0b7824d1b9eb18daeb1904fef6ea4ed05",
+      "bytes": 22683
+    },
+    {
+      "path": "sources/pr_2236.json",
+      "sha256": "ae5934b0b3121f25f24336f30c944d97ce82a981ddcd562b44132beab7c494b9",
+      "bytes": 22498
+    },
+    {
+      "path": "sources/pr_2251.json",
+      "sha256": "58da3315589270942ae959ae460edaf6be7c048f071aedd7b5c53cfc280cfda3",
+      "bytes": 22931
+    },
+    {
+      "path": "sources/pr_2253.json",
+      "sha256": "be964b147effbba350b5a2a2c3949793ea74b52f89318c6e92a6b9215ef9ae31",
+      "bytes": 26172
+    },
+    {
+      "path": "sources/pr_2254.json",
+      "sha256": "6b6cee12b6281d76adea09f139546b873e9703d5993d189709f9058bd54ef822",
+      "bytes": 26358
+    },
+    {
+      "path": "sources/pr_2256.json",
+      "sha256": "f4b449d445b8176dca6ce0334df89c71b3cd45f77e5ec8779880ea9d5b394d09",
+      "bytes": 24459
+    },
+    {
+      "path": "sources/terms.html",
+      "sha256": "97e97599169f75f455877e85edffcf941d512f56c5c00197ebfec783d802c67a",
+      "bytes": 10442
+    },
+    {
+      "path": "sources/terms.html.receipt.json",
+      "sha256": "274cb466bccc0a4f2c51cac0fba6ba7fd668b109fab5ae64a8574da092fb6332",
+      "bytes": 614
+    },
+    {
+      "path": "sources/wd_000.json",
+      "sha256": "240321c0bedc352d7fb0a326b69b054b51ecfbc5eb837e0cc9f58387e33eb9db",
+      "bytes": 338531
+    },
+    {
+      "path": "sources/wd_000.json.receipt.json",
+      "sha256": "2f3e1d987c24bc6c3d63302dac7641b5861aff86edcd0b2ef455e48e6587c24b",
+      "bytes": 1610
+    },
+    {
+      "path": "sources/wd_040.json",
+      "sha256": "0489a5ddd0bb710a0675d313e742a02d290975214d91d82580b0940f8d044c3c",
+      "bytes": 243752
+    },
+    {
+      "path": "sources/wd_040.json.receipt.json",
+      "sha256": "5d56c0b26bb8a3636ecfdd39c4bf364e15f577e2c96bc5016b331340e050f0f9",
+      "bytes": 1624
+    },
+    {
+      "path": "sources/wd_080.json",
+      "sha256": "16a363b6964c33fc24c3af61f54fb4b9b1aa8948142820f9efbb31db3ca7960d",
+      "bytes": 241437
+    },
+    {
+      "path": "sources/wd_080.json.receipt.json",
+      "sha256": "4a53b99700c4c5bf6aa9661c84833443ca05b928edd647f92470a87545cc976e",
+      "bytes": 1626
+    },
+    {
+      "path": "sources/wd_120.json",
+      "sha256": "e5b92351749d11d1847fa5207a9e592103b5020bd6684e03b870553fffd81b8c",
+      "bytes": 853409
+    },
+    {
+      "path": "sources/wd_120.json.receipt.json",
+      "sha256": "db7b9e12590e943f82d0bf0b3c3ea74d2f9166244d908a20e5962808215cdba2",
+      "bytes": 1562
+    },
+    {
+      "path": "sources/wd_160.json",
+      "sha256": "3f54fca6822438fb9e91cff2694ff5d0753d9c67c1614b4266b272e501571824",
+      "bytes": 383180
+    },
+    {
+      "path": "sources/wd_160.json.receipt.json",
+      "sha256": "d76173b3bc63b0f4db61dbbbf7e90716ffcfca810479fc050e200179bdc450e7",
+      "bytes": 2267
+    },
+    {
+      "path": "sources/wd_200.json",
+      "sha256": "2a7145913ac91b8ffad6eb640045acb38bcc1b5ecb4a8746dbf010a9024855d6",
+      "bytes": 266058
+    },
+    {
+      "path": "sources/wd_200.json.receipt.json",
+      "sha256": "ba68de78e1cd3546d53fea5171ad045e5c78badcea2904cae5e88c914280dd1d",
+      "bytes": 1718
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_000.json",
+      "sha256": "396e351a8c32dc6c0e1ea8c988c3d0ce3e87eff263f199989592538b3688ea0e",
+      "bytes": 887545
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_000.json.acquisition.json",
+      "sha256": "1dc580ff5aa6b014906fd0d1c5fac7d4926c1e94e58b3012551bb5262469d285",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_001.json",
+      "sha256": "ce8a4216e4378a4ce262222c13699c730f22b10028f80869abce255eda9059bf",
+      "bytes": 687565
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_001.json.acquisition.json",
+      "sha256": "ab99704f30b0a66ad6e3b89f15b2f8133e058146e83566335bd9301f595e6bc0",
+      "bytes": 1070
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_002.json",
+      "sha256": "2c3aed2f14ed50d0d50b62faefd451919d5cefda6e175560cffcc0ccf3586738",
+      "bytes": 1028000
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_002.json.acquisition.json",
+      "sha256": "ce489bec8f4ed03946039a6a9f5f7630a5561514b30cf4d7720354a5101aaea0",
+      "bytes": 1047
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_003.json",
+      "sha256": "24e3fa436a6cb5ea98fa5721499474262875ba15b151c3f861e5f0edf1b075bf",
+      "bytes": 787404
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_003.json.acquisition.json",
+      "sha256": "de86a6316b34fa02b3320a5bc6b6561691eb288544cd1ed8a1e1a68bb2554080",
+      "bytes": 1061
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_004.json",
+      "sha256": "b26bf1a09141516af6d13b27c53672d3b49010992c5c3f8eee781d5d35053354",
+      "bytes": 819222
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_004.json.acquisition.json",
+      "sha256": "0d4af683bcf4d2fcf48712e16b020156326d5b5bcdf6f4d0604b2504e5a0f20a",
+      "bytes": 1058
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_005.json",
+      "sha256": "14224b0cfbeba24fe1b34827ac7d49908b7a174c1cc63bcb4651185abfc7bc36",
+      "bytes": 931810
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_005.json.acquisition.json",
+      "sha256": "2aa11ab5af1805147e10b77c675ea5e3b9952b95b31a2ae2e71aad14e8ca853c",
+      "bytes": 1043
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_006.json",
+      "sha256": "8882dbde1d47c886daaeaccb176be5e395f882e82594444c8d49508e6497b809",
+      "bytes": 1020813
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_006.json.acquisition.json",
+      "sha256": "d07490602c0e72323e1acb79b2962a768adae086e6768a4951a0046539a8783b",
+      "bytes": 1035
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_007.json",
+      "sha256": "740916dc3fe290f879f3914bd29253f545c37ff2d8c5e32655d69f931d357612",
+      "bytes": 746414
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_007.json.acquisition.json",
+      "sha256": "0295c7bcec4b5aae1b3aedeab1d8e41feb33b4ac6c6175d9ad91c9522e183092",
+      "bytes": 1040
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_008.json",
+      "sha256": "97b526a82a945f91a64e8d837f37b8317869a2757cedb7bc7ec205a87902f9b0",
+      "bytes": 374523
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_008.json.acquisition.json",
+      "sha256": "b3aad7c6774279f78b2f8e5447ffffc632b53588fe45281247109ab6e8789136",
+      "bytes": 1077
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_009.json",
+      "sha256": "dce83d68eeee24de8dbd8d3f76cbe90e1ef31d4a815b86d49e11c1b0c84ed761",
+      "bytes": 337211
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_009.json.acquisition.json",
+      "sha256": "ac6f171b961c4c06f4809058475decd216f4a2b5fdfd2ad4ffe2fd75268ee222",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_010.json",
+      "sha256": "7935b1093be62f8fdbd95b0290a3c428ffe91b25c71a8fb5e24bf0f5923b25ae",
+      "bytes": 348151
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_010.json.acquisition.json",
+      "sha256": "195e9a1fb31aa147c197622b5a41685b4f7138ecf3764ecf4bc52bf08b5dfebe",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_011.json",
+      "sha256": "e5fb9397264fc1b6fff0aef09a73cae22d17f13ac8a3a8224dda64a32b902ef7",
+      "bytes": 329533
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_011.json.acquisition.json",
+      "sha256": "587d37e2d02d86afc51573d42007b8f5c2e5e9d8eb3e8de9fb6015bfc52d85ce",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_012.json",
+      "sha256": "8016902e22eaa12cc52b96e8df1cf1a7dfd9192fd057c29acb67ae55af52108c",
+      "bytes": 335766
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_012.json.acquisition.json",
+      "sha256": "4c7febc539c1e9f4746ff7d15b839ff0995fddb58bdb9d597932d1deeaecfa68",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_013.json",
+      "sha256": "2b7854ad94bb09c70abcebf1e9aea1ebcab0fb80f33613cf259f138e80cd7ee0",
+      "bytes": 325699
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_013.json.acquisition.json",
+      "sha256": "798cf0b2dde539a6f764aeea4466250bb4374db9d96941980913afa4f8f5802c",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_014.json",
+      "sha256": "dcb18782cb0d6d1723e946a9aa7d84b1f0d55c33b815ba6c03c95087655a9c92",
+      "bytes": 329614
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_014.json.acquisition.json",
+      "sha256": "15054df73e027e8f1055a479ee92bceb1f1e485af579c6f9b4d4207d0f474afe",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_015.json",
+      "sha256": "0b835db85e01f9e96e5cbb8b2dfc4bb595e69319ab0a26246ab146b4f791b45f",
+      "bytes": 330091
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_015.json.acquisition.json",
+      "sha256": "15efdcf360db7b1a448fae55b57cf5488baa7920d3535b2895f5753b01b2a3f3",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_016.json",
+      "sha256": "d35ec8d2a89a57478a5640e27f44d3441426a4c7f5948dc0f812cc22b9a737c6",
+      "bytes": 329460
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_016.json.acquisition.json",
+      "sha256": "2d0b8bc93b98a855c2558c5a47fb5633ebaff98a0e1835feecdbeb9cf577c2b3",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_017.json",
+      "sha256": "565cbe4d902a5e92258cc075a3029fd4c108ac308e5e0ee1104d2c2dac8b2ce4",
+      "bytes": 322049
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_017.json.acquisition.json",
+      "sha256": "808a7be7b5deaf9b83549ab7275be7f343baa823789b84616e6164848453651e",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_018.json",
+      "sha256": "8d73c0e0aa65be301c1ed6c1b9663bfa19a0caca9c34ae3b6db9cb74607cfbb3",
+      "bytes": 314327
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_018.json.acquisition.json",
+      "sha256": "47274e57e7ae45f47c6afaf64655d471571770c9598036acd3f7c1a0462eb63f",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_019.json",
+      "sha256": "871c7923e4f5897c652b335db5726140345bf282456ee19da855ba323a522c6d",
+      "bytes": 377315
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_019.json.acquisition.json",
+      "sha256": "860e6c64e9b70a5bf68e3675ea02687fdd3b668b10699c62e0f5af81f4b64d02",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_020.json",
+      "sha256": "119458bae4187d6184037f77aada01806db5bed74146a540d40f85247e68cfd1",
+      "bytes": 320096
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_020.json.acquisition.json",
+      "sha256": "8586f69a428c6c2fa7bb8b036d24de93e44fe4d01c93b403491a47d6621f103a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_021.json",
+      "sha256": "fc2981e58deedd6d1677cdf16267e75704f7e6b46503a67b5b255e38e98c1218",
+      "bytes": 357984
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_021.json.acquisition.json",
+      "sha256": "7739710b3c51da606541590269ff6b439560fd6930f8ba7185c241cf242c3bd0",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_022.json",
+      "sha256": "d9488c3f50bdd2b85cab62332a2556a2a7955ec9ff4fdfeda7286d01d3a6a8e6",
+      "bytes": 336856
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_022.json.acquisition.json",
+      "sha256": "f0f34da40d221ea3ab9719ff898ed85a8cc62384dbea0056fced12e87c5ddca2",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_023.json",
+      "sha256": "a2bb953e8ef9c26520262ef503b3c207b5e0a15f7c53eed5715035c281059ac3",
+      "bytes": 378346
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_023.json.acquisition.json",
+      "sha256": "5bef6d5d2b6ea36cd66810b7be820ba99d25f60e7565169bc95c87c800f83945",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_024.json",
+      "sha256": "bbf0d5de2cfbca2d1f3d1f263c2ee8f2b332c45f1299848870e039a2f95a6228",
+      "bytes": 377767
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_024.json.acquisition.json",
+      "sha256": "4b08c87adc7da447925f24560fe515a836bf427719d83220cc2545dccb22cf63",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_025.json",
+      "sha256": "9f7161d8967efb5efe04815e10e635aa6d9c8d64eb79639aac4d83d2dffe7d87",
+      "bytes": 360111
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_025.json.acquisition.json",
+      "sha256": "38530781774138a8f6500592720b40c6c12897457696cd89b626901d82c9a5e5",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_026.json",
+      "sha256": "756fd34e2e9144f7d7d2e9d9bd51eb80631635e893aa91eb3d1e5ea006921390",
+      "bytes": 316224
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_026.json.acquisition.json",
+      "sha256": "b538488d3e7f5891ca827a9e4e8ad281aff749d9aca7bf0078cd10d8945c868b",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_027.json",
+      "sha256": "5333fcedcccf97624314325017c8b5fcb8f3af4f96862a66a8dd1862e6573abf",
+      "bytes": 346205
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_027.json.acquisition.json",
+      "sha256": "ae876ce7a28e44f3f79ae03ff8e49305e6070f47e31b3a3eb4b9c9d6d6f4bcbb",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_028.json",
+      "sha256": "e003eb115c12e852f065b9eb79f3dfb396d94c6914eb7d713b3487ca934c0282",
+      "bytes": 359983
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_028.json.acquisition.json",
+      "sha256": "39500b1e902b652f4426117dbb250843ae40f433169ba1bac388032a15a168ae",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_029.json",
+      "sha256": "07bc0e0fd82ec7f78ff6753921f846a41bce501f0f7592da43efd5f5d198c7e0",
+      "bytes": 301922
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_029.json.acquisition.json",
+      "sha256": "551ab037a108757c8f21b0f6972e901e92a977d0f97308004ff1bcb1306e8f3a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_030.json",
+      "sha256": "5cc290069279bfff6c890751ddacd24cc0ac261b976d6d8891bb4b7b7819dc00",
+      "bytes": 345906
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_030.json.acquisition.json",
+      "sha256": "2b236ae039ebbf53a2c624599673012415a26e246b36c34f2a3125e2495988a6",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_031.json",
+      "sha256": "e99097630a105c4c11e52b8b04342dc40ef0002194be752cac0b26af99dbf50f",
+      "bytes": 334807
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_031.json.acquisition.json",
+      "sha256": "91b634acc81456a9b230021f6aae00d4c5a8f0e9849d5e083a94cfd703052485",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_032.json",
+      "sha256": "30b2e1c725cbc0475e66322041b5cedc849b18779b8b0e1a98193ee18951e01c",
+      "bytes": 368766
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_032.json.acquisition.json",
+      "sha256": "07007937002b8fb7b8db1783fca287e80650b1e0632583cfc1505ffdef39e42d",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_033.json",
+      "sha256": "9fa9bce9e7139097ac7389ed2f4806e721ea5cbcc7e29d6fe595b656b05392b5",
+      "bytes": 386613
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_033.json.acquisition.json",
+      "sha256": "71d6993bb20b41a92e818f8ac1ef3a48cbfee37eb9820668f1838acff8cf2c49",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_034.json",
+      "sha256": "c6d01e88aa2cc7b5298ce8df1a341c6e52cf9494af31255e2f0bcba0573d55de",
+      "bytes": 337763
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_034.json.acquisition.json",
+      "sha256": "db78ffd0dbbd9e81599e439eea8b9c4185b23d52754689e8ef216b4132fa533a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_035.json",
+      "sha256": "d664be94e8d2f111122200268a8f63c91022a1790077ad5ff90c0af3559f71cb",
+      "bytes": 362107
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_035.json.acquisition.json",
+      "sha256": "5831db644f9b68092d6d7ffd0ac7458ede0bc5b4a024eb4ae50aa476a0420f55",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_036.json",
+      "sha256": "d5a4314d64bd05747417593f7063526a19f0d5f1db8e53c2cd2ff31cf7f86d75",
+      "bytes": 370446
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_036.json.acquisition.json",
+      "sha256": "4630665bed8f35c8b7a80906a586754f47ab7460587e506b4b5af038f3cf4a21",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_037.json",
+      "sha256": "aa90a849250aae35180342a441ca85cad19b8fa0a546a812939eb591ad8d81ca",
+      "bytes": 351266
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_037.json.acquisition.json",
+      "sha256": "5c6b66e281073e21638035880f23305ae64e74f76baeb20d273fae49cb621d4d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_038.json",
+      "sha256": "16703e79a5204cfa4980d28c63a9fccc971cf18c938fd56c51cb16a78c30edd7",
+      "bytes": 350680
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_038.json.acquisition.json",
+      "sha256": "d3d767dc982d10b0f2f7204c21ae3a2a0db098191eb9709688aa68390e529e93",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_039.json",
+      "sha256": "cf8a18a4e28c0b27cb5b54b2b3adedc8831a888a504648582f5af5b8a8afac2b",
+      "bytes": 358588
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_039.json.acquisition.json",
+      "sha256": "d985539adef78873d40817512ef31b85a5378d5f4b9bb0e54192e97cafaaec54",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_040.json",
+      "sha256": "826ab964cfe9df8300e2b3dba73170cafd4d3368f8c9df3132f1bb900437b9d4",
+      "bytes": 348349
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_040.json.acquisition.json",
+      "sha256": "fe76466d7f299f879d0a735900a47f682acce7327e68e9c72f62547e629820d2",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_041.json",
+      "sha256": "2bf8f1f83c7d147c2f7ff9cfa90079c5d3ce0ac30b598307b8c442c8fe6501ec",
+      "bytes": 302625
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_041.json.acquisition.json",
+      "sha256": "79d8fd65d746623a8074811de254334bf526f5d7f78bebd6c97c5c64a8dc1cc2",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_042.json",
+      "sha256": "36109a7c8f2ab2b4d3da1ebeb4f43423ce503f425dd331a09ccdd48cc20d0cc2",
+      "bytes": 335551
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_042.json.acquisition.json",
+      "sha256": "146a7fc461b28bde00cd783f02a9c49be7bc658443388d5a478e0464d387a4de",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_043.json",
+      "sha256": "e5c0621872cb951ca14ac594cd61b5fb9329161aae2b64af2b55320e0e0da737",
+      "bytes": 376630
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_043.json.acquisition.json",
+      "sha256": "4435959e4474d00d8cda2d25a3e70ed2df450417d796c2cdb9657ac5d52a4872",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_044.json",
+      "sha256": "99855668dc24e17af270a6adcc28a67268fed8aeab52e0b544612728ad5f1faf",
+      "bytes": 349687
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_044.json.acquisition.json",
+      "sha256": "7fbb21601d35021f5e42d02b3dd83e7a8025ea7d4bbe58c597526ae73e7ce6b6",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_045.json",
+      "sha256": "03192fc83e4ae7aaaa9eca47c721d74cfbbd83d3ae38f297f941e5d9d38a2bb4",
+      "bytes": 346920
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_045.json.acquisition.json",
+      "sha256": "e84a257ddb8714b96cddb6c3135e52ce7c0ad9a0a34cd08dcfe322fba69f893d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_046.json",
+      "sha256": "eaf2d4c46ba9188e129e5e2a3a731a408a050a879e42a2fa1fb4ee75d4d29cf6",
+      "bytes": 378100
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_046.json.acquisition.json",
+      "sha256": "c2302f15c40445743775a2d63a45eb4165172e93f3f2fa485ffebc4ed36f9690",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_047.json",
+      "sha256": "e94b56d47527711267cb4a634d32c56f32302cc67146f2cbf838d90ba2b8008a",
+      "bytes": 340506
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_047.json.acquisition.json",
+      "sha256": "e350544e4a883a080686798df94aed3b2649032bfe4a77aa83727fe6d8d828bf",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_048.json",
+      "sha256": "7f14f534f27eb94f81be496cb1116dbc258eef6ea75cdf6c4afa1a5cc6bd5374",
+      "bytes": 356079
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_048.json.acquisition.json",
+      "sha256": "8e5c071e079067bb36d30e1405c322a4b822182542ad0acfab09b4d4f56964d9",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_049.json",
+      "sha256": "c4193e20a824d117e616c4f280118c0fa76b63557bdd07a2694ebd1e216e048b",
+      "bytes": 309231
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_049.json.acquisition.json",
+      "sha256": "38b7ce0eb106bed8258103c0efb34dd6330f8042a99b50d414e7368f21f53fb6",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_050.json",
+      "sha256": "35e8681577e4de76c42f2e6f9f89f3697a3167fca098c764a9f90e21799170f5",
+      "bytes": 321434
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_050.json.acquisition.json",
+      "sha256": "24c821e901dc741feba8e8794192b560941a46200c80eb0e0eb7134abc777a5e",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_051.json",
+      "sha256": "77118653d25aaf5ed2265052a498bf15c6470a64bef7677918a454050133cf84",
+      "bytes": 299602
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_051.json.acquisition.json",
+      "sha256": "1924f9f1a7773971f582faf45f29c6b6ef9cbd852755cd3debfde2a7e9385c20",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_052.json",
+      "sha256": "2560ab17aea6b493471dae938f38c05b7467c139a2ec63ec371e6f3a6ca96cac",
+      "bytes": 309476
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_052.json.acquisition.json",
+      "sha256": "7abbf4589f292cd7206ebe09b694cce7f714ed3d35b8b934c51e61384dab89a1",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_053.json",
+      "sha256": "cd8aa726911abf186795410b68939aefd74a162f4d5e119a2d9e88fdc7acad57",
+      "bytes": 375172
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_053.json.acquisition.json",
+      "sha256": "25d13fa1a032cb4aa5a71fc2dd9a7e58f635cefd056fd6d8247b47e557c6531d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_054.json",
+      "sha256": "07c7c00e6d6f6f2f7352fe3ff1c36ceae8a9548efd859de37b4e064d7cf5c9c5",
+      "bytes": 311106
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_054.json.acquisition.json",
+      "sha256": "bf736530c5ebcdde0d61b13f193315f10b588220829896a56d038ac74d3ab933",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_055.json",
+      "sha256": "38146e7441c40569c87ba9a22e38481b8f0b7c12ab25afdc70f54ea4691ffe42",
+      "bytes": 342718
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_055.json.acquisition.json",
+      "sha256": "81b1399accbe30ed030274503e352a9a1319a63593dcd65c0292e6f39b5f6e58",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_056.json",
+      "sha256": "88ae81b0d73cd7159ea63936039607bc71db304d387a69527b879f6796df5636",
+      "bytes": 428646
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_056.json.acquisition.json",
+      "sha256": "9aed006bac8870e5d3439b96455863646372affd8d4b71e117142e78dcf55428",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_057.json",
+      "sha256": "5a7961158d6a470422a30ecf1d10fe61d2ecf621b7101fe2538480300853154d",
+      "bytes": 348707
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_057.json.acquisition.json",
+      "sha256": "7d741b8c113124764989fff842787d8c6827856e49ee627978210e10bb6fa124",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_058.json",
+      "sha256": "63bd5daa366d67e0973776c3aad93e761d335cb7a014d1784c94b275edd0a7ea",
+      "bytes": 346365
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_058.json.acquisition.json",
+      "sha256": "2582a320521c4b91263189485319a940572660d7a9f36154960ba49762efe1c9",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_059.json",
+      "sha256": "a076c1135919e1a04dc7573caaaca394ee2de1a6fbd4aadc6869ff18f1ba7c04",
+      "bytes": 322616
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_059.json.acquisition.json",
+      "sha256": "83bab308ced6a62e896a25f1a3c4d0d6a5ee3e31812862cd7b69fe4ae6175a35",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_060.json",
+      "sha256": "df9887e58a1e7009663da76d650ce2b62db1f9803f58e3456f071ca81bc59cad",
+      "bytes": 378752
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_060.json.acquisition.json",
+      "sha256": "8e08e1b6845af94101a8723ed785653b3d2acb451151b38ee76459a8449972bc",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_061.json",
+      "sha256": "5b998799c5703e85b28e9caae02ed6098c49e200d2fd680700b52b65a9da9ce5",
+      "bytes": 396590
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_061.json.acquisition.json",
+      "sha256": "fd9b762bc792d54194ee4c4234535fcc1140051a53bccc351f43b29879ff3038",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_062.json",
+      "sha256": "a6d5fe61e20340cf6d32bf46fb69faecf233657657ac0a2a733363b49957cee7",
+      "bytes": 356426
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_062.json.acquisition.json",
+      "sha256": "9ea0221cd4f50cc86bf4dca2cd287bc596792250e7b9b7b10704603344f18f57",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_063.json",
+      "sha256": "a219489ef5a358c1fa210ebd405d1825434e713eca9640f4edd64a603ef8b6d1",
+      "bytes": 345920
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_063.json.acquisition.json",
+      "sha256": "626562e60d95523baf10ce9e4c0f74df443f7e6af2bc0bc846508667e799f4f7",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_064.json",
+      "sha256": "e27182b0473abacd1b5dbb67169dafaa8b9bff9096ed00133d931d6dd2594260",
+      "bytes": 348050
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_064.json.acquisition.json",
+      "sha256": "d5dca7a0ca788bfa81a8b55ad2edf01012970ecea79529bf309c409267575826",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_065.json",
+      "sha256": "3b8dc721fffc4bbc43b1cf49d30af15006b78b8c26b799170dc6c913cc661ffa",
+      "bytes": 348095
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_065.json.acquisition.json",
+      "sha256": "aa33b683a6b5e1e0af2b1dc46d57070ca2de3b1fc4d25d8d72ef8bc0291ec316",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_066.json",
+      "sha256": "4f281b72388bf0e9bc2d616d91eb9de771e73d25802775e0a300bc0201aa6375",
+      "bytes": 380661
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_066.json.acquisition.json",
+      "sha256": "d1b2b279676468b00e8ec604216049e59db3ca81b2498f9459b9368e046fb04f",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_067.json",
+      "sha256": "f4525f8c48bb2494ac4047d48fcc081c4a8d357b7b0b48655678728923d795f5",
+      "bytes": 352453
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_067.json.acquisition.json",
+      "sha256": "b02935f6deafdddf91686201bd4ebb629f7552eef97a39095af4efb3da9ac575",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_068.json",
+      "sha256": "d09ddaa8a81c8b81ab448c465245bf3000d80a3cce0940f1256263e9a3f7870d",
+      "bytes": 349952
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_068.json.acquisition.json",
+      "sha256": "3613f60538907badd014548c8cdfa285277a9a20d580ca2b07642d9758fa9a43",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_069.json",
+      "sha256": "8bf483f9a13b310bb6ed1e35882caaee266b7791c8c1bba6553cc6c63c004a9a",
+      "bytes": 368408
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_069.json.acquisition.json",
+      "sha256": "efffea4c82d60c53d9da9e541e1a7c05d1d1c6929f5e3bca67a5a010104dab18",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_070.json",
+      "sha256": "dbfd576c0514cf77779a2486d854562e33d2b15f371e7265e60c7e45ddab193d",
+      "bytes": 374832
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_070.json.acquisition.json",
+      "sha256": "4898659a938d2920b77591f52272c980dae078f2cf5e8150ca2447a5f880a3c8",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_071.json",
+      "sha256": "d0557ac65a1bf37add545be36116ea1f7e45bf0df27bee8e5d3312df6915ddb2",
+      "bytes": 333334
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_071.json.acquisition.json",
+      "sha256": "5974a0102acb048bb79f4d12c21fc1dace4076b11aae474a68feea5d0f24fc6d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_072.json",
+      "sha256": "57e3469a35b16897a6dd244646c7a6a3077d54152e23eac2e5ef184a2d445269",
+      "bytes": 292697
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_072.json.acquisition.json",
+      "sha256": "668a3b12f9b29474662ad68462e926f3b6e462c55a72e9a1f8331ad886207446",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_073.json",
+      "sha256": "21c4368c697943fb4d461002810ae840705e8489d1f924576510952d36ab5da3",
+      "bytes": 311625
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_073.json.acquisition.json",
+      "sha256": "de20437ac409088a7e77ff574555d01d861676f8f7fbb63a4c50e9db554e39d5",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_074.json",
+      "sha256": "941faf4b65571fdcee6488a49c5e87f5d3eed4dcdcd84635d34be72579541aa6",
+      "bytes": 348637
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_074.json.acquisition.json",
+      "sha256": "be883f5e12db1190008bedc9d7e2dbf20b9683fde2f29d4de5808d08ddfb1f00",
+      "bytes": 1080
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_075.json",
+      "sha256": "ca8a63cfbb6ea513b3035a83d6f042780d6639d802886f25c458511268236443",
+      "bytes": 372981
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_075.json.acquisition.json",
+      "sha256": "1dd11799257e09c04b69fcdeb1f64f8d1e001216365f086f49d58ec00ea022e4",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_076.json",
+      "sha256": "8924d33a1c90221f5a15d43444fd93cf1af7d6907c9bc421ee1e68d3a359d60c",
+      "bytes": 333524
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_076.json.acquisition.json",
+      "sha256": "e4f57ed30cb6e2e440007fe72812e50002bb03b9fdce0a6fa4061b477d8aa0ef",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_077.json",
+      "sha256": "b20a8637c991602d1dcf4a621475ea06fa5eb805ffa4c79b13dc5bd4c0c94298",
+      "bytes": 346517
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_077.json.acquisition.json",
+      "sha256": "bc0f2694ffe8a8adb6e4e67c07e77c8d2b1cb054320247140edb83aa975449c0",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_078.json",
+      "sha256": "edfd4b6f9f693249bdc37e97d95dec46a41e03bb5028985f561ee7a337fcc054",
+      "bytes": 376035
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_078.json.acquisition.json",
+      "sha256": "525a8195140419f94bb675a585206795917d9575f2aa9a0b54be91c174a164b7",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_079.json",
+      "sha256": "2e79b218c56b6d26bd54e732275d1e781ce679b3b2fdad2a1862c0d9b7f2a730",
+      "bytes": 348443
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_079.json.acquisition.json",
+      "sha256": "8f3707b44d7ec7afe75282ee5c3b655a3936fa49c60fb7daf2a4877e2d38ea79",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_080.json",
+      "sha256": "7d14831fd005f80e974a7a2490bc3c4e73728ca21de66f862f27721f780dfc84",
+      "bytes": 359517
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_080.json.acquisition.json",
+      "sha256": "c89699b1f36ec44b563e8f963165fae9ed4f57dbd8686cb4ee4b4c1446f74324",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_081.json",
+      "sha256": "21d6589626f4f520ced411d96c0d24ab96802ca62db4857a5959ae72eba2d8d7",
+      "bytes": 348119
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_081.json.acquisition.json",
+      "sha256": "2217d887ccc065c6ba4ce1bcd034c17f8ea9cc40e79efc14ca0fcf3310411941",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_082.json",
+      "sha256": "a3e711ca0c84694021dd8d36717b26e67d187d5005d03f91f80fbae8b5049da5",
+      "bytes": 358004
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_082.json.acquisition.json",
+      "sha256": "f35dc0fdf1144dbba123c8bcbe88a3b8c1801bec7b9405fc124169437ce4ca83",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_083.json",
+      "sha256": "973e12dbdbdcaf0aebeab9d8c5f8dacb4a0297fc3218ecbf720b781796dcb7c2",
+      "bytes": 334695
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_083.json.acquisition.json",
+      "sha256": "35f1dd903635b76d7d0b26195a21b7b54372f5d0ec96493288eb303a9551176f",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_084.json",
+      "sha256": "6824f811ef6a069d410166f3995b1f24d6df6bfb513bd8f915cbf4274fbdccca",
+      "bytes": 342384
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_084.json.acquisition.json",
+      "sha256": "8dec7aa2712c09bf1d1bc53f6986b40794b92f6cd64ead719bc3a846c1b87bf0",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_085.json",
+      "sha256": "bf65597898fb22767dec5388791b1e09b393d63cc6f437c9a3581124daaf6d2e",
+      "bytes": 334506
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_085.json.acquisition.json",
+      "sha256": "c615e8b0538102532e776b21b6ac27bc38802bf9a9b44f3e36dfdf34947a3414",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_086.json",
+      "sha256": "02d9f9c2091b42b8aa09e6e7b2d7610185993ca9d6a061c39654009bf5176b7c",
+      "bytes": 352911
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_086.json.acquisition.json",
+      "sha256": "f93ab5fbf92d39e100b08303a846fc877e9d73f6b6c86a89936fc248c610ef54",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_087.json",
+      "sha256": "4b2d32bcb65f3a3916d734f4b5fc4127150050e8330a952a52b6052e215e91f1",
+      "bytes": 644476
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_087.json.acquisition.json",
+      "sha256": "408a55eaec5b3104c82feedb8193a60f5c39886795066b6431f2fdf8ccab180d",
+      "bytes": 1065
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_088.json",
+      "sha256": "d5eb4237234a9f59367406a2fd2541b5f4508011787b30d8d6680e6e797784e9",
+      "bytes": 911539
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_088.json.acquisition.json",
+      "sha256": "b19c02f47b81eeb6d4f4e73e9f8eddaad54ebf7b30ccad685e61c0799ca51cf1",
+      "bytes": 1046
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_089.json",
+      "sha256": "8cbd124db1cf7c722c02d6a8e6c47137547ef07f642c613cc16d2fd2d2cb8890",
+      "bytes": 777024
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_089.json.acquisition.json",
+      "sha256": "ecf88c7a7b309e41a248af3bebf03f52e8a02c5bf5c9df833f906900a0c0f3e0",
+      "bytes": 1040
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_090.json",
+      "sha256": "d7eacebf60be47908c2f96b609380320fb1fd4f2947e6283cf526a08e14ad52f",
+      "bytes": 826179
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_090.json.acquisition.json",
+      "sha256": "831f2375ff9b32ecc0973f4105bf9508a1f56dabc603d5e0a5bb75d7299e2873",
+      "bytes": 1037
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_091.json",
+      "sha256": "a9267e5a054d19111698a694914d70b5f02e1bceea48bb5c165c84190c64a085",
+      "bytes": 1017689
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_091.json.acquisition.json",
+      "sha256": "c226ddcaeb8032fbeaa97dd001159b025fc98ff4a934fa6ea6b170d84177d1f1",
+      "bytes": 1038
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_092.json",
+      "sha256": "d8c40ddde8c6e86239c71dab2fbc48ea7b7dee3ba3e8047d5ecc1c4f0f6b4326",
+      "bytes": 805399
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_092.json.acquisition.json",
+      "sha256": "b73823d74024b28acb066db2f1dab24864a13ee63c627e87811efcf5adc2d5a5",
+      "bytes": 1032
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_093.json",
+      "sha256": "ee66fa377bf38775871a5fa054e9044f04723b2b9c58f90a1e91e8425a00f6ef",
+      "bytes": 639158
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_093.json.acquisition.json",
+      "sha256": "0a19ab615de746dbd54832d89ac607851a738b3dc349ccd6ffb8c826e3a67400",
+      "bytes": 1065
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_094.json",
+      "sha256": "9907eeada3d2b4edfa888ee825c2e77f5667adcbc8b4e58750dfea7cd5ab4e61",
+      "bytes": 643557
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_094.json.acquisition.json",
+      "sha256": "81103a3c8d8f823299012e026284db19b8f8c2fd7b69242c22424c867921724a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_095.json",
+      "sha256": "32cb4727d45d54430b99d513e09e108be9e3f32c8371a710fdbe4d03ffc5fd8a",
+      "bytes": 499865
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_095.json.acquisition.json",
+      "sha256": "a1d03614bf827136b0d803e20d2e8e3179c04a643d667e08f550d9c1b2ea8582",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_096.json",
+      "sha256": "d4a32127061a39e0532b3dba79de35ba9022e2c2fd51eb34fd5909102beaba01",
+      "bytes": 587060
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_096.json.acquisition.json",
+      "sha256": "deb58713e85f6af08a05b9aa6c7acf0ff9c2d3ca5cf7a24611e2a1071e781724",
+      "bytes": 1055
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_097.json",
+      "sha256": "52d5628eb4a4e9b8397284ccfbd5076f58e77c0eab9949f844a08570ea3956fb",
+      "bytes": 914396
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_097.json.acquisition.json",
+      "sha256": "cc00d40178036323d1b1efad554d0368ccc61554f906b66e49bef3620fffcb12",
+      "bytes": 1038
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_098.json",
+      "sha256": "54b2af66375e1cd68fea80465cb6cd54e203aa72cd0d2ffd47705ee0011c2dfc",
+      "bytes": 984398
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_098.json.acquisition.json",
+      "sha256": "93ddd8589262e80c6e4fe6605ddd79d9395e583f88cb9f3cb4dc456c6442dc9a",
+      "bytes": 1039
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_099.json",
+      "sha256": "4bfa7cce4ffc791710f018aec85cada1ac6bdf847a055f686ad9ddf4af9d2cd2",
+      "bytes": 938746
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_099.json.acquisition.json",
+      "sha256": "40860ca5e135cc68c022dae894035b17d6f167c0e93b6191e55b5ae8961b5ecf",
+      "bytes": 1032
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_100.json",
+      "sha256": "0a89736b4ef15336d6b79cbd71690c7596b86a8b6f813689e260c97cac383a6b",
+      "bytes": 781190
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_100.json.acquisition.json",
+      "sha256": "ebd74817b9835374833a3c451e3ed7d994fc7446b2f80234bc03298c86a34cb7",
+      "bytes": 1035
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_101.json",
+      "sha256": "93d125c64d76fa92ac7133dcee6d5c184525215c754d646ba5bdc13cd012f65f",
+      "bytes": 777774
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_101.json.acquisition.json",
+      "sha256": "7b9332ed303fa9e0d031f79e2fefe9698434cbff55119a37832f3e358e69dc4c",
+      "bytes": 1032
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_102.json",
+      "sha256": "a1299e67febfee298705533eacec5352f0a81fd76d914f72b5062959113ce3d5",
+      "bytes": 746789
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_102.json.acquisition.json",
+      "sha256": "d9c9513409b00a361b29b741c9d900e559864d2048cf5948b7a2f7a8d0e487b6",
+      "bytes": 1029
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_103.json",
+      "sha256": "221dfb549e6700dff834c2aaf7a84c7973122f6f3e78aa9a5c8805e5412936eb",
+      "bytes": 662742
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_103.json.acquisition.json",
+      "sha256": "89d35fdec0d5b2f76d249ffb5339f900d3e64c01e61309df5a1b358fd5559d1e",
+      "bytes": 1032
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_104.json",
+      "sha256": "fd612d9d4ac546670bfc053717acb18170387ac0e6fd55e2ff1f97c9966c010b",
+      "bytes": 657846
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_104.json.acquisition.json",
+      "sha256": "8166ff5d40e2b669e3433a995b50218b78a2368ff7214cfd09c292e4c446260c",
+      "bytes": 1028
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_105.json",
+      "sha256": "24d6c6419dc6b77aa37dcbe58f94b8a6b0933679820ddef592240d67b28f0316",
+      "bytes": 665624
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_105.json.acquisition.json",
+      "sha256": "28a56a07ca07f8cf97ad439e134c38ef7a6423c7175f1e9823da9fcc2992cc42",
+      "bytes": 1033
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_106.json",
+      "sha256": "0ac1372f85f3f2a162eecdc3a906c1bd9f836145434cf7cc78cc4dbe861dff7f",
+      "bytes": 700419
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_106.json.acquisition.json",
+      "sha256": "a93e121914cea43728a572e9815d5a5b7e8e969836882fd2cf2cb7710c5c314b",
+      "bytes": 1033
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_107.json",
+      "sha256": "c1761f958cb13587a346e91b2c45bf7483214e8efbb86841e4ceff850e443e85",
+      "bytes": 660001
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_107.json.acquisition.json",
+      "sha256": "2ddbe54bf417536fd3bdb221835913160988f7eb43caf4361f155503fc0a3687",
+      "bytes": 1035
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_108.json",
+      "sha256": "915fbf94d71c00fc13c4f92cac726db16406633051627f7c060946ad3dce0e5d",
+      "bytes": 467526
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_108.json.acquisition.json",
+      "sha256": "416ec900bc354787ec9096905708c0fc665c3d8f32c152285d4c17aaf29e1da7",
+      "bytes": 1050
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_109.json",
+      "sha256": "d0b0f78d57492a95ed8c30dec17c7129e278ebb4b22aee06bb191e74fc87ce68",
+      "bytes": 231514
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_109.json.acquisition.json",
+      "sha256": "005e012d24bd857f91b76ef41241065582af76cce911f88a8a003baa21dcfdd5",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_110.json",
+      "sha256": "5e378d1dbf6174d253068bea3a01bebc5e52b22efb8a173ebadbd2a719f9fb32",
+      "bytes": 243759
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_110.json.acquisition.json",
+      "sha256": "6341b7df54993cb3230bbafa55e00a5089d7084bfac21c4a39be83e9efa0f919",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_111.json",
+      "sha256": "5def7964cda73e230e4b35b49e4b2f58d539edf40f991b6ef6c1d7c001f34f89",
+      "bytes": 240373
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_111.json.acquisition.json",
+      "sha256": "a77e3847a2e0748319c4ea709231a241d66b11dbd3c3db2d79dc6c2fccedd402",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_112.json",
+      "sha256": "7dbc6f9a5545a8244c5b060eb2a10a1caf0bdf9cd58302223ab09f3b9f1cca39",
+      "bytes": 246529
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_112.json.acquisition.json",
+      "sha256": "ef54d0024bd9e354a0e95385cbf5efe54cf7e6e8ac97e8269ff677749b0c4bc2",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_113.json",
+      "sha256": "7a7252814bbc5581e3c428bca9da05c28527e5ab49788a7f783e49ca0e7fc470",
+      "bytes": 252585
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_113.json.acquisition.json",
+      "sha256": "7b61939c42e317e25584bd6bd0ea084e89d9430d7489a93d436790d4f58a3eaa",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_114.json",
+      "sha256": "38d7169b4187b464230b020575f2b1df6c236570462d08e01adb46ea1d1617f3",
+      "bytes": 234959
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_114.json.acquisition.json",
+      "sha256": "23763f635cf3738c39ea3651a8c001e8760a49854059a352fb1c970d7fb97709",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_115.json",
+      "sha256": "ce14360a2943ae15523d7a4d1b0a2e019ab32ae8fe43ec1d26348526a6b66baf",
+      "bytes": 211706
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_115.json.acquisition.json",
+      "sha256": "a613e628c5ea9977020f32859e6efc3ddaeed5ae09cec3b57ed02190b938b8e6",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_116.json",
+      "sha256": "a63d9c1a76c2f12aff0e7ed7e6d9894cba48894140a3d1560b1852a791af81ec",
+      "bytes": 215112
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_116.json.acquisition.json",
+      "sha256": "7e90117b2506aefb1225e580dfb9c17bf32ad4c067a5b098bbbeeb74102cc3d2",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_117.json",
+      "sha256": "4d296267cabef2ab517691681c775ae3de5c9b2e9bb893c94205eca8cc34842b",
+      "bytes": 247491
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_117.json.acquisition.json",
+      "sha256": "8f1547545c33904b1d9f7ef91700ce4ee979146cd1aea898dc750415af07892a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_118.json",
+      "sha256": "f76a46c5f0c4b9bd4abd9d56fd5c6d234b59e80230070f1522d44fb0bcf5e794",
+      "bytes": 219897
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_118.json.acquisition.json",
+      "sha256": "841579f0092d2fd357f1e58e539740d9968a3d6a6366ebcdc6d045a6fb0b3e1b",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_119.json",
+      "sha256": "d4181ec71b7d7ee29920b99eaa6a6d47fff91ef73366fc96193e1b3c9bbe2a75",
+      "bytes": 213086
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_119.json.acquisition.json",
+      "sha256": "a41c8c5d42c08195c49b9b1454f646d1d469326e0d8c7e597db00a842fcc4def",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_120.json",
+      "sha256": "5fc74fd3fac32a0e0141bc09a8aa3efbfd077dd74227051d8ac27a70511d186d",
+      "bytes": 214847
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_120.json.acquisition.json",
+      "sha256": "23f5b0fd99d1cf3a220219996403966caa0544d23b988b075e46853be39b4fca",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_121.json",
+      "sha256": "9420363d37f90b6bd5dbc272516001b27d28b5f58a43fa3455e5690a01e245c4",
+      "bytes": 212492
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_121.json.acquisition.json",
+      "sha256": "898d59f0a4eefb52a6ad1d2899a05a0940f1740bd33120bc8af69f49ad2b442d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_122.json",
+      "sha256": "7aeee7ce9cef1b63aae4bd0419014eed4ca39d44d23240441c997f96ccb11ab5",
+      "bytes": 191063
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_122.json.acquisition.json",
+      "sha256": "082df1f553df31c88e9eab91b17212686e52a830244ca88624b0f90f37f3854d",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_123.json",
+      "sha256": "f8a7bae2e88090ac5f0ae97f5aa2312adec1fead887d1c9ac70238f32d93fea1",
+      "bytes": 193428
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_123.json.acquisition.json",
+      "sha256": "fa4d8cb6a70f7c88ec81610b50191771d3093d4a955117c5c9d1f0f9dc7d38a3",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_124.json",
+      "sha256": "a71a6e87e590181216c1a6b0da67cee510a4527c4b68571ffb66c265b241998e",
+      "bytes": 210694
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_124.json.acquisition.json",
+      "sha256": "eaf84e14b6aa2a3d2f869b35516921aa10e7482fa535b2a6c1de0d82c9d95650",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_125.json",
+      "sha256": "a6cc430fdce8d428950cb7e35c4693d50faf6896c4e79f02f46187e09c1fc206",
+      "bytes": 287562
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_125.json.acquisition.json",
+      "sha256": "c2bb2c4a3ca8758b7727c6d6b3cc8dd4f3469ff5c8866841b2afcd9a291ddb59",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_126.json",
+      "sha256": "5daef8906b630bebeb16f342d6e7606dd49c307686abfdd46a1519eac4544b24",
+      "bytes": 237362
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_126.json.acquisition.json",
+      "sha256": "090bb65c7ea37a17f837c22c994628f311bcaee714167d31a274efa254c6ed51",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_127.json",
+      "sha256": "89612f9ac00b63898a0491e00a9b1b71b7d75bd7252941d742a1dc80758ef3bd",
+      "bytes": 253650
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_127.json.acquisition.json",
+      "sha256": "cf06bd343f99f1029524642183f0b15691c92297d87a8cd73f69c0efa0316f52",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_128.json",
+      "sha256": "fe31cc2fa2af17d8e5367f09172b21146f524e0a7c5158f7c3d7c061e0fa04a9",
+      "bytes": 212051
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_128.json.acquisition.json",
+      "sha256": "0126bcdab0f99af2290d84d6dc8db455e022385a80fc5c2b709cd870691cd3f5",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_129.json",
+      "sha256": "a9edf78ea361232fbc09f3b0b382aced4c2c72f44ac4647da212381bcab1917e",
+      "bytes": 206887
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_129.json.acquisition.json",
+      "sha256": "aa2153e8c1af790656f5468ed6c5ef2b0458fab690f261104ef730c51ae12611",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_130.json",
+      "sha256": "be393e0a25e0d1be3e0ee35f0229c251492279e881b647a412d9d3ecea3a8169",
+      "bytes": 250454
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_130.json.acquisition.json",
+      "sha256": "492b28a505c0fc4a736ec03c037e8dfc7e5ddd8e82b25b932be96e08dc5b7311",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_131.json",
+      "sha256": "7ff1d4d6ef32e84661469f15123fa4f49f09241ba61da0fb75956671c5482928",
+      "bytes": 334666
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_131.json.acquisition.json",
+      "sha256": "a4b8727d87fe4b7ce6bf14fe6ff440deb2c49d27734c2fa6fe690b6e00d1f0ac",
+      "bytes": 1068
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_132.json",
+      "sha256": "7c895fe7aa12f65139070c075a731ffc758a307168daa8aec14d5a427aa7d76f",
+      "bytes": 696284
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_132.json.acquisition.json",
+      "sha256": "0742bbf7ef233ba9ca5789e2792c628f598359fbc674c713ce70da9dc7c4a0b3",
+      "bytes": 1024
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_133.json",
+      "sha256": "3ae4fd3bf51e826ea6b725b0003f35ebb58cb1df8a3d184dd0f0a1608c79aea2",
+      "bytes": 540366
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_133.json.acquisition.json",
+      "sha256": "e1dfbc9adaef1ba0c77aa74d52b929fd4d6e7f0c8946e88ee0866653269a61d8",
+      "bytes": 1034
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_134.json",
+      "sha256": "47401d33eb8184d5fe14f0d34ce38221462f2afe2e66ea5182bd17b78805397b",
+      "bytes": 438795
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_134.json.acquisition.json",
+      "sha256": "30bcc9e13e64d30d408baadb97fe970f36761a41788362ad8a4fe831f86d56b0",
+      "bytes": 1046
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_135.json",
+      "sha256": "18362197c6658dcca51e05f9a48292c6f6bc5ce2f3c3abbbd98b18a82647a824",
+      "bytes": 503690
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_135.json.acquisition.json",
+      "sha256": "68afc0f2a66ac070f8cbc603b644f45a3e4e79edcd3147303f9f392200c71dcd",
+      "bytes": 1029
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_136.json",
+      "sha256": "3beec0b6b13afb934ee66bf4070542905132d1ad76e2ed541182f339a24eecdc",
+      "bytes": 509114
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_136.json.acquisition.json",
+      "sha256": "38781de34f5c24107c01bf54776735e34857421358fb3c6b8ff492ad93aaa6f7",
+      "bytes": 1021
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_137.json",
+      "sha256": "d116efad710b85add35fcd940f6560f4802795e47acf15640baf2a6a7b0cdf46",
+      "bytes": 416925
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_137.json.acquisition.json",
+      "sha256": "286184a92ef5ea0f96cc975b9d48f0ab68b3412eb8abf0adf9be129c23ed9d69",
+      "bytes": 1031
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_138.json",
+      "sha256": "15aa8cc091412aa9f9dbe13deeac2f48ee863f73425a4c3c819e7b634633bf5c",
+      "bytes": 494774
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_138.json.acquisition.json",
+      "sha256": "7714013b3547588dec9596afa449159df89bda9f77c78f24cea3dd7a8f807a5d",
+      "bytes": 1028
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_139.json",
+      "sha256": "0a9fad050207844afe1631fd21a752787feba3327b02935362e147da049d7509",
+      "bytes": 392309
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_139.json.acquisition.json",
+      "sha256": "a123911c6e18e3dc558c4311897a156da5937caffe05afaedb37e4c01c9d2273",
+      "bytes": 1032
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_140.json",
+      "sha256": "50d226f0f83375cc923b82ff8d5a2964a38e74bbe52588b693a0a1a8159258dd",
+      "bytes": 268692
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_140.json.acquisition.json",
+      "sha256": "7d285862f5aeb77fb3112462e1fa88616ea03fd38a11e917b6fe5495afd2f537",
+      "bytes": 1072
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_141.json",
+      "sha256": "d1ae7f394b4c4bf779d7b80cca03d4b83358b0d7ca72099640d0b3502d9c5b9c",
+      "bytes": 230344
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_141.json.acquisition.json",
+      "sha256": "d9557dbbd05e60d41fd78e4135550efb9b6870b5afc34385b41746ebbe50b3ef",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_142.json",
+      "sha256": "ee13cc20e5e503f4eb24802e67de07c0e4acc6acbdc3a9abe99c6ba4e31067c5",
+      "bytes": 255041
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_142.json.acquisition.json",
+      "sha256": "74812f2cac9842a68525ad43c10e432f32a36cfa2361873f5ad44de68f3cd9cc",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_143.json",
+      "sha256": "79189ff6e6f058ea6e5d481b4aeb3287c277bdd2e05d7325288f64658cf44540",
+      "bytes": 290389
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_143.json.acquisition.json",
+      "sha256": "7d3c48b68c80dfe354694ba61927d1a469110702aafc1bc52dab1536eb2987ba",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_144.json",
+      "sha256": "d1dd5dac125d7efddf0bc08d23b304a8e6e97d4345338077daa24dd248556203",
+      "bytes": 243208
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_144.json.acquisition.json",
+      "sha256": "5f3c3b3ecb714309e4d721e4f14bad965a69f6f3edf03a4c2c03046411f20f0b",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_145.json",
+      "sha256": "f4bc1d47f24c5715d4e2df082a16da131d89c60077da7fd92921448d8e65b844",
+      "bytes": 243519
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_145.json.acquisition.json",
+      "sha256": "2ab267da55d39a540d5805aeedd4fed72f97a5c5e8b302e3d517529fdd96ebc8",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_146.json",
+      "sha256": "6ce42bcf5706925a3ee286b770f065548eb89c8d347179c1f2acd9950c59ca70",
+      "bytes": 216115
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_146.json.acquisition.json",
+      "sha256": "8327230245d4004e097eadf7b0970925275ccf8e2464168399050ebbaf8b25f1",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_147.json",
+      "sha256": "96555b0b7c160811ca8ed66ea85aa038014e0c92aacb292852e3f3e1f677d41f",
+      "bytes": 235659
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_147.json.acquisition.json",
+      "sha256": "f9feb585ca2be7dc282763dfd479ffdf1460a66e5857cf6659e769970e876784",
+      "bytes": 1080
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_148.json",
+      "sha256": "373a62a87fdc94fc57bea6f956c1237a2b3848c2541bcfb6fdb537feed1a5c36",
+      "bytes": 225497
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_148.json.acquisition.json",
+      "sha256": "34e6f970fe7f5a9e8a1395c5f93c98ca395bcd1356074e775be636b0e8d83b15",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_149.json",
+      "sha256": "477a1e80d748d3308498bb45e12e07dbf25c18b64ccd6eeb06fc9d3e1ac980d6",
+      "bytes": 224168
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_149.json.acquisition.json",
+      "sha256": "f730523fa0b76426ce8506cf7af5b58c747d5bd7d4e4b36e0df58764a3906f0b",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_150.json",
+      "sha256": "c827c036ffef247c87416b16990afa21ce796c66db599a647baba54afe516a1d",
+      "bytes": 207947
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_150.json.acquisition.json",
+      "sha256": "1ece5c9595970adea4cd16e5462d1c033bed55f673c80bbaf199eeb3108f8a0e",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_151.json",
+      "sha256": "2712c576f60d9c416d263fd2c29e60a71d437de8abbb9b24d8093cc84043c37e",
+      "bytes": 213690
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_151.json.acquisition.json",
+      "sha256": "c4a4ad7c93ad35cc63516f734e3e1fbbcafdcfb7d833bab2130a2ab285ff1efd",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_152.json",
+      "sha256": "768fc40225d342ceac132659d356383dabf17d2a92cdb7c335e00de428808387",
+      "bytes": 223896
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_152.json.acquisition.json",
+      "sha256": "f31a8db1b52b2751b3f374cf989f3ac8fa8f70458a6c9e4cd9be6795de24cf01",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_153.json",
+      "sha256": "c9952a68b14ac926b4c340300fd4d76583e8184d44863546b81092ee5b88f575",
+      "bytes": 250895
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_153.json.acquisition.json",
+      "sha256": "e2f16a46eea9743666f6a326875516ca7a564fa90f393615d11ce4c3098ca9a6",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_154.json",
+      "sha256": "b966337d8cf9b2025d819a3bccdb0b08d53294f95d4283b7ad3ac2966bdc8df6",
+      "bytes": 226347
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_154.json.acquisition.json",
+      "sha256": "6cad531e763c09ff7815507b28fc844c4fb15ba78f44de4e4bb565291da51444",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_155.json",
+      "sha256": "1f186de817f3b92957da2a9773549ed2ff5752708f9e10dacff6de5316c980a0",
+      "bytes": 227936
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_155.json.acquisition.json",
+      "sha256": "37b34251377068d8101d994a884cb2652c86d3d23bc4c21104a89b3ba3dcf545",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_156.json",
+      "sha256": "d6789df4146fa17e30f32e9c4032c4816df459467e4a4c7022b087bdacddfd1e",
+      "bytes": 236412
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_156.json.acquisition.json",
+      "sha256": "cbd251abcf24ec9a8450dd6c43e1123aae1bc78f270738b0e7c6c1a3364c3079",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_157.json",
+      "sha256": "3ec143b0725b6377232f882f8d94c8ce6d6cd828f789842231a93546803f8852",
+      "bytes": 227585
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_157.json.acquisition.json",
+      "sha256": "89aa5fa8a3d99aa6b9ae63e5607b98e35abab850b7b93d77fe4a702117ab7e9d",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_158.json",
+      "sha256": "770e3f22d11efe58a1269a159ff7cf3196fdff913aa8997ba0874ca8c23446c9",
+      "bytes": 225250
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_158.json.acquisition.json",
+      "sha256": "ec564c2dcc8a8c9d543fe709e90040ed71fe286ff7ee6416e53f4c488fa7af7a",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_159.json",
+      "sha256": "d0b132ce6059b8676008322c33d898b0c03e7a9b43480370b3f618bc14f784a6",
+      "bytes": 257089
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_159.json.acquisition.json",
+      "sha256": "d9a6b6e5b0e66a1077616b3309b78aef0454f5a0f9b41a53783475775c548cbc",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_160.json",
+      "sha256": "c660e8e3f1ca50af2427bc16f18dc773baafa7958bbbbaf806c401c795a2c6bd",
+      "bytes": 227537
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_160.json.acquisition.json",
+      "sha256": "ea8f8f43451e369cb032ca2256b90e02964f1d99f8e07bc3e8fd952275d03970",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_161.json",
+      "sha256": "1f6eef84d6bda5741ecd0ef0dcc541c47cfd35370814f542bfd3e980e6fdbb57",
+      "bytes": 230886
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_161.json.acquisition.json",
+      "sha256": "6a4806899cff8cd9f584a559f9f5afa3bac14c32d2fbcd0182dec2730a8d5943",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_162.json",
+      "sha256": "e9dc2dab6fdeb7ccae0c400f1b18f2e2da2a9fc40d2040b615070874f13b21a1",
+      "bytes": 233555
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_162.json.acquisition.json",
+      "sha256": "bfc2ec2e8b6f5959bf6834e9b42d892bcdcb69baf9dc3c88dc1b48adb7258054",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_163.json",
+      "sha256": "267af36cc1b59674f31cec150dc660f58ea874e3f9470f3e4dae904e91e89ea1",
+      "bytes": 218429
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_163.json.acquisition.json",
+      "sha256": "58812e5e813daf743eba92b58c31a384ce7b8a71231aed979fd99b718a289ced",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_164.json",
+      "sha256": "6276901ef10e5ae7165f05e575146f432e5a1c7f1efadd5ad64d5fe6af4f07b6",
+      "bytes": 219440
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_164.json.acquisition.json",
+      "sha256": "e0333a55acbf90388fce21e28711d7fe515a3c11d2eb9af76679dcd24b31cb23",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_165.json",
+      "sha256": "feafe8a127787848be58ce1cabcc9dabd8101a5c021fa877b5dfc75f94065155",
+      "bytes": 217571
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_165.json.acquisition.json",
+      "sha256": "6c7badeba592263e861e7d5c3c91d9d3dcc3140b24f01d1ce579eb37d4e6bdd1",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_166.json",
+      "sha256": "20f915f5804eb99f22e9ea437366c8cddb4d7a423385cddc8c6e798f35d4ec4d",
+      "bytes": 221165
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_166.json.acquisition.json",
+      "sha256": "d1fb1730f79150a31a9d3c6cc1ac9f7e4b78b6c62d8aad6d736158e4884844fe",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_167.json",
+      "sha256": "d77ee87f3146eff8df10a21f4d59a4499de3f7585db720d8273cf0141a2493d8",
+      "bytes": 217078
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_167.json.acquisition.json",
+      "sha256": "3ecf78016a765a826efc2a5d42e34ad0a6f6bc65b7d59a6b3350c49c66036682",
+      "bytes": 1082
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_168.json",
+      "sha256": "421ee7471ba9865f36caa985aff1c610848eb43966068ea5bb501b7e0ee9dcfb",
+      "bytes": 282308
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_168.json.acquisition.json",
+      "sha256": "72f9b11909c95cf473106b8d664abd0a3476999b7c60520fb7f6b56f5158782b",
+      "bytes": 1076
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_169.json",
+      "sha256": "1b80a5dc511a7aea2d9773a5edbd3425dffaf71ba85dd613a918a00887c62f55",
+      "bytes": 208801
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_169.json.acquisition.json",
+      "sha256": "fc46e4f1bdefb1e59f8de6a2f5f1c2015f7923dfad39e2b577bf585142072a15",
+      "bytes": 1081
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_170.json",
+      "sha256": "1f0da89620709cb1dab30faf41241270129439464a1fc74ee0f0975f742b8738",
+      "bytes": 344903
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_170.json.acquisition.json",
+      "sha256": "4b4a2c41ed9fb21a0fdcb3dec3d27eaedd393650ade0ab119edbd1d22d009b46",
+      "bytes": 1076
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_171.json",
+      "sha256": "d526ce29109e89b7246e686bb1938144b29f05e151a950baea170f8430be9215",
+      "bytes": 507588
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_171.json.acquisition.json",
+      "sha256": "8402bbbbe3849e811dace9d7f48d9817cdd905f981c155de7e51692b275e6650",
+      "bytes": 1029
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_172.json",
+      "sha256": "176113316b4500910e4f64753704b49606aa5d3fe868a84cb5e91a3c6cb1f6a5",
+      "bytes": 589856
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_172.json.acquisition.json",
+      "sha256": "3704edd9b4f3b1efeff8b1e5105efd4a7f0f33c2523b011dd7da10b860277e94",
+      "bytes": 1022
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_173.json",
+      "sha256": "3a848111a3faa1c2cdf4f6103678e4a6a6b0b2d12db5bddda78d61d3125cc8c0",
+      "bytes": 648767
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_173.json.acquisition.json",
+      "sha256": "901efbd917660011446b6e2949b8d8d2bd36f7566652a194530828e7e1c5bee0",
+      "bytes": 1024
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_174.json",
+      "sha256": "d327895cff35797c931a2a1936ead77ee5950de55f699727cc6bc5a4bc7f4d91",
+      "bytes": 669698
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_174.json.acquisition.json",
+      "sha256": "d1ff69c5da8c4a7c7a96a2e407ac3738e71df8635da6845da66e4fe35bc60212",
+      "bytes": 1029
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_175.json",
+      "sha256": "d18caf49438b62c8c0e6dad1a2c72c1c137fd982eec3f0abd30e25f7f52037ea",
+      "bytes": 613844
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_175.json.acquisition.json",
+      "sha256": "ee7174225caacc629ee0fc9df28da76f6f9aa40587d7ede82d77e27af057305c",
+      "bytes": 1022
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_176.json",
+      "sha256": "756338df388d8ce289d459a72b89fc9864e132fc5c49818bebfa77ac37105e9f",
+      "bytes": 951116
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_176.json.acquisition.json",
+      "sha256": "30defb75f88a23d886886c11670bf26b244de76c6044b3264987b3f489a624be",
+      "bytes": 1018
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_177.json",
+      "sha256": "2e9737a9bf7190d46944b461f8294f67e492afd37bb5af99252951d348dcec0a",
+      "bytes": 974395
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_177.json.acquisition.json",
+      "sha256": "06df5d9c003336dcc8e0c2cbcf37a73acc7aa28726d496ef48c4f876fa1bf4a5",
+      "bytes": 1007
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_178.json",
+      "sha256": "c6646b0b41512ef10da37ccb913faf85cf13356c3884782933b48a156f1a2a77",
+      "bytes": 859556
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_1/batch_178.json.acquisition.json",
+      "sha256": "663e03ccfca49986200706ca4f0bf4db4ad629b4e29912aedb1d753a0442513c",
+      "bytes": 886
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_000.json",
+      "sha256": "a900e765b9edbafa43f3c6c13d36c77b00e9e251d52ffc3106f614cf8036ffa1",
+      "bytes": 684530
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_000.json.acquisition.json",
+      "sha256": "fb800ba8d0fb318ac08ebcaf2389b5af21e8abedff581cda1212617984a68d93",
+      "bytes": 1084
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_001.json",
+      "sha256": "2994afb7ea4bf3a74c7ecf98b8c89d394be9d82f3f7e2b7cf5409b71b5a2e213",
+      "bytes": 648102
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_001.json.acquisition.json",
+      "sha256": "f676dc9f3e913bb80f41f4d91a7416c8d580f6b4bbe603b32d684f45e3b21091",
+      "bytes": 1075
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_002.json",
+      "sha256": "b7ee35e3e6664a9687799167fb620e2c3880aae2738a738c5b31fed8e725001c",
+      "bytes": 1189662
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_002.json.acquisition.json",
+      "sha256": "2eb2a7bf936bfe845552a2d287eedb34076ba2096ac36217eb93d4e143ec8cfd",
+      "bytes": 1046
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_003.json",
+      "sha256": "483d7318e54dc99ff96b496362d610847e68091c41cd05464c22aeec2a670d91",
+      "bytes": 788996
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_003.json.acquisition.json",
+      "sha256": "ae010c4f9ac70514099dda8813ff4f09f4c71e75c473b0d9bc983c8f38c9e51d",
+      "bytes": 1041
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_004.json",
+      "sha256": "407684b59d45627a6dfe57d07a585163935237375522795dda3c8b491aa45e8d",
+      "bytes": 368786
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_004.json.acquisition.json",
+      "sha256": "d64cd51471bc68835c5f506f730d99a17ccbd68fa279ab1c7627aeb221aed6dc",
+      "bytes": 1078
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_005.json",
+      "sha256": "009b738ef06671f4f5374e30948efc89a62ed830a2604d85e336dd53ada20bc8",
+      "bytes": 481915
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_005.json.acquisition.json",
+      "sha256": "3d7bfa66c4cbbcbef947c03c5a81dc7662added27ea93a0616ba226bfbff0ea2",
+      "bytes": 1056
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_006.json",
+      "sha256": "884afceb3202ecbb5785e5a2bcee15905fd37a9afc1ee119b6b27a862cd1642a",
+      "bytes": 400292
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_006.json.acquisition.json",
+      "sha256": "38f9971780cfc4db0b335f30abd40d4c87fa81c1cea5f5f2cb6b6fa2e9e38c48",
+      "bytes": 1072
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_007.json",
+      "sha256": "89dce47f371164a0f6fe73465bd1ad2bf99cb793296efecf3d138600afd525e6",
+      "bytes": 504990
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/candidate_007.json.acquisition.json",
+      "sha256": "28d4810daa5dc43787b8b8c4abfc86d0aaa7558bbd827de44c792a3eee8c17a9",
+      "bytes": 782
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_000.json",
+      "sha256": "5658f0939b1389da902da03b1fabe7280087d55c287035ca6336cc9af4346096",
+      "bytes": 627722
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_000.json.acquisition.json",
+      "sha256": "86640891993cefcd6c6563c1fec43597e36f7c82ada0dff79df1b6b5de0c990b",
+      "bytes": 1071
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_001.json",
+      "sha256": "1e478e37f6064fd09c7d6792711eb9a6177fbe4922b6d7bf61869a20ad592d80",
+      "bytes": 399967
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_001.json.acquisition.json",
+      "sha256": "69ce56626c72d64d21e4aedc76faa731e30e35e253e13702df66ac8ca3a5718c",
+      "bytes": 1087
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_002.json",
+      "sha256": "098b758a30bd3115b4a31f1b34b9810c6e7749cadde2e97e644889cf60d80ba5",
+      "bytes": 358812
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_002.json.acquisition.json",
+      "sha256": "8a31860f4b4399316eca11fde23123617253e32c9334476717ea4c418390e476",
+      "bytes": 1086
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_003.json",
+      "sha256": "c6d5fa6e9c3f883e0a6fce399730314d988680e9c047f003a27caac2ce9260f6",
+      "bytes": 388571
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_003.json.acquisition.json",
+      "sha256": "e9706bc5d4f93e77b17ae3fd8407e06a592f5efa86f7e7f9ec01d53f6b1b200f",
+      "bytes": 1087
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_004.json",
+      "sha256": "e2a2693b9a589011d6b2bdb67c72c75586487d107411d56c7028f1d09ae63045",
+      "bytes": 380156
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_004.json.acquisition.json",
+      "sha256": "4ec20428dd2c80592e054e77b9e7055ebb7a12d4646c639b9547fa0c67d160bd",
+      "bytes": 1087
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_005.json",
+      "sha256": "7d6d9179cbbfa8e17d8d9f98d56c7084aafbc9c4e19e5a41b1593aa5a60eb03c",
+      "bytes": 435039
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_005.json.acquisition.json",
+      "sha256": "e2b64312254dca64c6653ba9bcd6a8f31ca136b0e2590fd147de98ea50a58f44",
+      "bytes": 1087
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_006.json",
+      "sha256": "d46bfe8f5a9c0c6c59162c5f72f187f7bd0945511af3b19e595b05e588d2e9f8",
+      "bytes": 378619
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_006.json.acquisition.json",
+      "sha256": "b012ac8220be1d565c2de05993c1abc19d4aa321d3483244c0a05c264199c966",
+      "bytes": 1087
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_007.json",
+      "sha256": "2aa5c16c42a33f5b778aa6ce44c8b371d6055a324d2778217114b394a403bbcd",
+      "bytes": 851422
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_007.json.acquisition.json",
+      "sha256": "a1075800c1faeb06711ae100a58136b94ca0896b474a034d65e45eb4d48d8a62",
+      "bytes": 1059
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_008.json",
+      "sha256": "c3bfb7a63fa6e6d58279911403c47c266df0e52e7229eaf5ce8df4642bb7b61f",
+      "bytes": 991905
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_008.json.acquisition.json",
+      "sha256": "3d21f8d6bdfa763011912150bc01a0f92d92e06081230b6bff3212108963ad86",
+      "bytes": 1059
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_009.json",
+      "sha256": "61d30867245f0f8a24f18e1c10836869fc1ba9f1bfa847eefd658f03e067f736",
+      "bytes": 1062871
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_009.json.acquisition.json",
+      "sha256": "64dfb579a842f737b810654026b165003d38be2c5c6e0ee5c4c8bb53c819163b",
+      "bytes": 1037
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_010.json",
+      "sha256": "7c88ead800373247e0bbf09cb8fdbfef0bb4b06c09c43ac38fc54d9e5daff55e",
+      "bytes": 600250
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_010.json.acquisition.json",
+      "sha256": "98d48e523e82412fb99911199f049799efc305f1c171bb987d417fa53c820a44",
+      "bytes": 1044
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_011.json",
+      "sha256": "83c615760bd4f9c7fe619758c496058ecc674989cfb7fc49f7c9b0219cb926ac",
+      "bytes": 374840
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_011.json.acquisition.json",
+      "sha256": "642e0a347c947c37831906df28e210dfefae052542061a626eb97b910c205e46",
+      "bytes": 1065
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_012.json",
+      "sha256": "159a52d0255e1fc85a06e5d7e1d4877bad3e1c87bf82ad36ea0b0edf2c4528ed",
+      "bytes": 580596
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_012.json.acquisition.json",
+      "sha256": "7db6e672078de2f5e6932b4ea89be8db88ecf2acd2bb97df8d2340900369cb56",
+      "bytes": 1042
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_013.json",
+      "sha256": "a0ef9ad95a9a66929980428dbc389722388796f53c9342534850e2db25f4a8f3",
+      "bytes": 203833
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_2/own_013.json.acquisition.json",
+      "sha256": "23a8c1c54c42bec7b9cc4cc709bce606ee85c870a2f28aa8ecfe8e95bd217726",
+      "bytes": 593
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/additional_000.json",
+      "sha256": "3d5890c7c5ea7ac76a46ac262e53bda3a12d986ec22dde9a635e3d9b76d9e875",
+      "bytes": 146539
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/additional_000.json.acquisition.json",
+      "sha256": "15e486b0ffc7034ab59eeccf222743ecf0d5ffbc39ce61ea3282bafcef722434",
+      "bytes": 632
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/candidate_000.json",
+      "sha256": "b1b6830030a7294bb9f9530bac16a86d993bd2ed193ab2fa86cad86a530247a9",
+      "bytes": 631816
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/candidate_000.json.acquisition.json",
+      "sha256": "a783ef9d45452c845d42aacfe11e48c14314ca21186eacc2202134e2f87c95a5",
+      "bytes": 1085
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/candidate_001.json",
+      "sha256": "514fefa4a29b9a0164ed488829397447969d9fa60300e988dc2f5c0cd47f93d1",
+      "bytes": 418955
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/candidate_001.json.acquisition.json",
+      "sha256": "ddc42174356112ea2430b0b8bf25c9929f74e46a16aca8390b3d1125c4c499e3",
+      "bytes": 968
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_000.json",
+      "sha256": "d044a3261399ceea16b1d99a9f98d2f8d603392e827784d619e40fcc0047ab70",
+      "bytes": 459184
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_000.json.acquisition.json",
+      "sha256": "fa6b1abd9d9c659bbe39614241a36ea88059741bfe3948e1ecc58fce04f7099a",
+      "bytes": 1089
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_001.json",
+      "sha256": "fae90eb6661595f9681f70a55775cac8aa27f93d9ebd1d458141b41c2773e76f",
+      "bytes": 349580
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_001.json.acquisition.json",
+      "sha256": "3c45ab0445a45c2f9889cd5a630ca2e39f29a08068a3a9762c2eb1e2710fa3af",
+      "bytes": 1098
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_002.json",
+      "sha256": "fd07a99a258a179e1efbef502f54a815e954fb8db3cf7e5f69cb8e33dff87a16",
+      "bytes": 387330
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_002.json.acquisition.json",
+      "sha256": "cbe23ad2154946afb79165c17db419c9c06c538f980dc0964ee4e25296bf497a",
+      "bytes": 1099
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_003.json",
+      "sha256": "b542c5fa0824940e0e54eaea97badc20ab761967ef5cea8b59af1427a72ed699",
+      "bytes": 721802
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_003.json.acquisition.json",
+      "sha256": "70ac77536fe73717a6ecc88fb64e1d9ec4583b242a3694763a2bf3df6081970c",
+      "bytes": 1083
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_004.json",
+      "sha256": "d2e1aa2af11a6efe4bd10d72df1d4e93af6f675500db74769ab4b172d2791260",
+      "bytes": 818076
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_004.json.acquisition.json",
+      "sha256": "c27e9bd6e4c42be462662831bca6e503b4d2a87a89b2d3a1e950443eb7cd2985",
+      "bytes": 1055
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_005.json",
+      "sha256": "17e9afacdf7c8710cbe16cdc3292d6a7c00c80b1bd34aa91c6e756856208c1bc",
+      "bytes": 454690
+    },
+    {
+      "path": "sources/wikidata_archive/work_mx_pilot_3/own_005.json.acquisition.json",
+      "sha256": "64446d708afeeb2381b20612850ae0b034912a8fc4a276a2b49518104e5f807f",
+      "bytes": 1074
+    }
+  ],
+  "counts": {
+    "total": 11146,
+    "targets": 480,
+    "localities": 15,
+    "municipios": 12,
+    "populations": 15,
+    "held": 453,
+    "type_local_before": 10666,
+    "type_local_after": 10693,
+    "pop_year_before": 10248,
+    "pop_year_after": 10263,
+    "held_reasons": {
+      "no_exact_same_state_locality_within_1km": 216,
+      "stored_population_not_proved_municipal_total_no_seat_count_transfer": 15,
+      "own_item_missing_or_redirect": 5,
+      "own_locality_withdrawn_baja": 85,
+      "wrong_own_item_namesake_point_outside_locality_and_municipio": 14,
+      "own_locality_code_conflicts_with_stored_state": 19,
+      "section_without_own_open_locality_evidence": 9,
+      "exact_ITER_locality_not_active_in_AGEEML": 7,
+      "exact_official_name_point_outside_1km": 51,
+      "own_item_has_both_municipal_and_locality_scope": 1,
+      "multiple_same_name_localities_within_5km": 1,
+      "own_item_is_Montemorelos_not_stored_Mazatlan_identity_ambiguous": 1,
+      "capital_explicit_hold": 1,
+      "duplicate_own_locality_code_pair_v7": 2,
+      "unchanged_point_not_strictly_inside_own_municipio": 26
+    },
+    "parents": 14,
+    "gate_99_percent": false
+  },
+  "methods": {
+    "locality": "Every binding requires stored point <=1 km from locality point or strictly inside that locality municipio. Far own-code bindings are wrong-item namesake findings and held with item unchanged. Literal own P1976 active code in same stored state; otherwise exact full name ignoring case/accents and square/round bracket style, same state, <=1km, no second same-name code <=5km, using ITER and AGEEML names. Active U/R only. Withdrawn codes, wrong states and duplicates held.",
+    "population": "Only own ITER2020 POBTOT, never LOC0000/9998/9999; numeric count and name agree with active AGEEML before replacing undated/pre2010 population.",
+    "municipality": "Own P3801, own municipality class Q1952852, current code/state, no competing CSC owner and strictly interior unchanged point in hash-verified INEGI 2026 municipal polygons. Stored non-null population must equal official municipal total; otherwise held to avoid carrying seat counts.",
+    "parents": "Existing empty parent only, one level2 municipality proved by own P3801 or exact full municipal name in state.",
+    "duplicates": "Both IDs listed with unchanged canonical hashes for v7; counterpart outside 480 remains untouched.",
+    "events": "One reviewed identity/classification event per changed row, dynamic event_pr from applier --pr.",
+    "format": "In-place row replacements, canonical full-row guards on all 480, append-only source/events prefixes; TYPE_FIELD.md untouched."
+  },
+  "reuse": {
+    "author": "INEGI",
+    "products": [
+      "Censo de Población y Vivienda 2020 ITER, reference 15 March 2020",
+      "AGEEML August 2026 localities and June 2026 municipios",
+      "Marco Geoestadístico Encuesta Intercensal 2025, 2026 edition published 22 September 2026"
+    ],
+    "terms": "https://www.inegi.org.mx/inegi/terminos.html",
+    "licence": "INEGI Términos de Libre Uso de la Información",
+    "transformation": "Independent selection, normalization, classification and population corrections; no INEGI endorsement. Wikidata structured data CC0."
+  }
+}

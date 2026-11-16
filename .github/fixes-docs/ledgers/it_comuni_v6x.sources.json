@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "base_commit": "01abc0f5fc3f614f67e06f69ee04a62ee393479b",
+  "ledger": ".github/fixes-docs/ledgers/it_comuni_v6x.jsonl",
+  "ledger_sha256": "d1414864f368ed029a637e552dcb47b2740f843f7f5953ac1af8128e7e45a53b",
+  "method": "Current ISTAT name/province, own live literal current P635 and own P625 CC0 inside ISTAT boundary; own POSAS 1 January 2026 total. Same identity and seat-package ambiguity holds. Child rule identical to work_tld; no identity event for new rows, generator derives added_ids.",
+  "licences": {
+    "Wikidata": "CC0 1.0",
+    "ISTAT_boundaries": "CC BY 4.0 per retained ISTAT note-legali general grant; catalogue and description contain no different grant. Task stated CC BY 3.0 IT; legal page has a legacy empty 3.0 link, but operative grant is 4.0.",
+    "ISTAT_general": "CC BY 4.0"
+  },
+  "sources": [
+    {
+      "path": "sources/POSAS_2026_it_Comuni.zip",
+      "bytes": 4579670,
+      "sha256": "910639e5f7b1bb8256637eee824655ba76fb8459670c9559fea1ac0922667eac"
+    },
+    {
+      "path": "sources/boundary_catalogue.html",
+      "bytes": 132496,
+      "sha256": "056a30f7a369dd0739711716dc2aecb2b60a9cde109841341d4edd837f7a718a"
+    },
+    {
+      "path": "sources/boundary_catalogue.html.receipt.json",
+      "bytes": 1078,
+      "sha256": "27996a3136e223c323b079bdd1659be5303fc78d6d776b35a4f4bf2d81dc5ff7"
+    },
+    {
+      "path": "sources/boundary_description.pdf",
+      "bytes": 869826,
+      "sha256": "ec9cdba4998090da611bc2f23434007884ef30b9f74bea2f992990a4a67dd435"
+    },
+    {
+      "path": "sources/boundary_description.pdf.receipt.json",
+      "bytes": 1202,
+      "sha256": "0667dcb6bcba4765a4b00c0f52ba902700b81414e63fef545dccd878711c47f1"
+    },
+    {
+      "path": "sources/boundary_description.txt",
+      "bytes": 32576,
+      "sha256": "3e47e59ba6b961ca284d12268dd67e2fa12051c41e8b3e763e4f435130444aac"
+    },
+    {
+      "path": "sources/candidates.json",
+      "bytes": 494924,
+      "sha256": "4c792378bca948cfa711dc7344e612968a01caed5e4751af1e95cd1cf9396e7e"
+    },
+    {
+      "path": "sources/comune_boundaries2026.zip",
+      "bytes": 10450609,
+      "sha256": "b011a590656c3a3ebc297fba80726a376aa843b6f164641cf6a4a990021a81d6"
+    },
+    {
+      "path": "sources/comuni.json",
+      "bytes": 2736997,
+      "sha256": "3ce048300c6ae638861134538cb8d0b80fda2f286d5b20e54d041b324e83da1b"
+    },
+    {
+      "path": "sources/it_tld_v6x.jsonl",
+      "bytes": 715425,
+      "sha256": "9a9516060890e4254c1dd5238ca393b15916544cbc062291154cbc8b9079c4d0"
+    },
+    {
+      "path": "sources/it_tld_v6x.sources.json",
+      "bytes": 31358,
+      "sha256": "d4de2b55557179618f236d3e184e21745462e2b2ed490c0e18178aa4a3d4f5b1"
+    },
+    {
+      "path": "sources/licence.html",
+      "bytes": 109168,
+      "sha256": "cd4feeb62d15193e497809177afe0802a1ce5c764d977ecc47a925a1781b0673"
+    },
+    {
+      "path": "sources/locality2021.zip",
+      "bytes": 20976441,
+      "sha256": "67ba8a957b9c1ea21ed6144cc33ec1ac3c3a0b1370ba4443452e63ae37e2b9f9"
+    },
+    {
+      "path": "sources/missing_successor_comuni.json",
+      "bytes": 26744,
+      "sha256": "5623ed1b79d8ea87c70efc9df4c2649dec6fc5f379d1407c050e78e342448795"
+    },
+    {
+      "path": "sources/own_000.json",
+      "bytes": 728376,
+      "sha256": "1407be99fde831be022db7e3ec70e3ad3ea3f82ec89099655515e049dc617fbe"
+    },
+    {
+      "path": "sources/own_000.json.receipt.json",
+      "bytes": 2249,
+      "sha256": "e29041f954a8cb1580b33e2abcf19b94de9e61e0eb290bced8d23b26f52a45ca"
+    },
+    {
+      "path": "sources/qlever_P635.json",
+      "bytes": 975189,
+      "sha256": "0ad567ba8f311eab68ca6dfde045401c9d18787b92796c1a7f6062149f1f0b26"
+    },
+    {
+      "path": "sources/qlever_P635.receipt.json",
+      "bytes": 1289,
+      "sha256": "871dc9619022d997df768fe47e59f22a813b297c8b74d62ab42b8beb546c638e"
+    },
+    {
+      "path": "sources/qlever_comuni.json",
+      "bytes": 2098,
+      "sha256": "5c04f8c353a9a0f2bb2e15a3e00be558357fdf3f08b9fe4f35011f57c417d6ac"
+    },
+    {
+      "path": "sources/qlever_comuni.json.receipt.json",
+      "bytes": 1191,
+      "sha256": "ea0240dbea7fad3143438266bcd019794861d25b4cc7c87f9001973a19b1d8f1"
+    },
+    {
+      "path": "sources/qlever_comuni.rq",
+      "bytes": 355,
+      "sha256": "b9e8681607f177c9358632bb196f6ea30dad978779e2e63485603ce89c92be24"
+    },
+    {
+      "path": "sources/selected_boundaries.geojson",
+      "bytes": 118523,
+      "sha256": "9190863441b3d1e691d52b157a0d394fc0572d0ecc3c075c50185f8774e4486e"
+    },
+    {
+      "path": "sources/situas_variations.json",
+      "bytes": 1775954,
+      "sha256": "174d0610a94354c67033d4a99089c6012b2fa421143b292d39a0fcc4678d4157"
+    },
+    {
+      "path": "sources/typing_analysis.json",
+      "bytes": 10575487,
+      "sha256": "b2bcf8cefd3e8a27a2284171e22d00d731d7cea6af0ac7cfbf512b1d6642a357"
+    }
+  ]
+}
