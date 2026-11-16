@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "ledger": ".github/fixes-docs/ledgers/br_pop_v6x.jsonl",
+  "ledger_sha256": "ac0441bec16dcae6227dbc69c3148854d476ea98e19438f423c5bece848a884f",
+  "base_reference": "2f2877e9914555813bb9f301ed228009a94d4754",
+  "guard_method": "Canonical full-row SHA-256; no commit identity requirement at apply time",
+  "census": {
+    "url": "https://apisidra.ibge.gov.br/values/t/4714/n6/all/v/93/p/2022",
+    "retrieved_utc": "2026-11-16T08:27:26.766634+00:00",
+    "sha256": "ec3c169ff4e6f59641c3ec681aabe2b96b65edf2273e2f319eaa37d565413558",
+    "bytes": 1447059,
+    "status": 200
+  },
+  "rights": "Owner's 24 Oct rule for official census sources: usable after a full terms check showing redistribution and changes with credit are allowed; applied after the research and browser read of the two blocked IBGE pages (browser_terms_check.md). Credit IBGE and disclose CSC selection and joining.",
+  "inputs": [
+    {
+      "path": "sources/4714_population_2022.json",
+      "sha256": "ec3c169ff4e6f59641c3ec681aabe2b96b65edf2273e2f319eaa37d565413558",
+      "bytes": 1447059
+    },
+    {
+      "path": "sources/4714_population_2022.json.receipt.json",
+      "sha256": "13e28e8a872beedea293cd44d1a8036c412654e75dae53ef7e45c280a34b5145",
+      "bytes": 249
+    },
+    {
+      "path": "sources/BR.base.json",
+      "sha256": "100b87e9a5c9e937f65f5c0ce0b673ce491dbf5dbd8e5fd2e9388fc379f4fe43",
+      "bytes": 6745653
+    },
+    {
+      "path": "sources/br_tld_v6x.jsonl",
+      "sha256": "84f927d0a9b0f0d4ca14d531000cf04fad59592c020928bf766786024c6c51cb",
+      "bytes": 210550
+    },
+    {
+      "path": "sources/browser_terms_check.md",
+      "sha256": "72505593b590f972499469c7173ba92f727e2be7f4637e1e912bff116da3b947",
+      "bytes": 1793
+    },
+    {
+      "path": "sources/changed_rows.json",
+      "sha256": "b5df7e435495221d4fa22f58e4ad02c22aa50536e3a7ed54cb4ca2a3e634612f",
+      "bytes": 10732
+    },
+    {
+      "path": "sources/decree_8777_original_senado.html",
+      "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+      "bytes": 64004
+    },
+    {
+      "path": "sources/decree_8777_original_senado.html.receipt.json",
+      "sha256": "5aa480c4c3038a1fa9ee51478569b1e3446f28da93b2fc4774bf2e33402288b2",
+      "bytes": 5502
+    },
+    {
+      "path": "sources/decree_9903_publication.html",
+      "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+      "bytes": 48331
+    },
+    {
+      "path": "sources/decree_9903_publication.html.receipt.json",
+      "sha256": "5960c4bc220e158fc002a4a55b43dd970e25b7455eb5eefef1bb3fb78ed5beb9",
+      "bytes": 5506
+    },
+    {
+      "path": "sources/first_results_total.ods",
+      "sha256": "0ee97d3a20b523f5148388e736747cd1cf3c96511027bd173e408ad825f37235",
+      "bytes": 309453
+    },
+    {
+      "path": "sources/first_results_total.ods.receipt.json",
+      "sha256": "ffdabbfc8899e247c796cbf19241f2e5d96c8d713ad1428cd362ef574ba898c3",
+      "bytes": 1069
+    },
+    {
+      "path": "sources/municipal_binding_extract.json",
+      "sha256": "6380f2a316eacd78970c25a37dbe0af370d44f257f49400001c9fbec4ae2c192",
+      "bytes": 1795180
+    },
+    {
+      "path": "sources/own_0000.json",
+      "sha256": "72f5060011e95a162715068dad33ceeb97d159e49165dffdf511cdb999c50aec",
+      "bytes": 2073246
+    },
+    {
+      "path": "sources/own_0000.json.receipt.json",
+      "sha256": "86bd2ecdd558ea470138df7c38334b2eeb3aaa640a6bc71c2df9ff8e434a9bc6",
+      "bytes": 758
+    },
+    {
+      "path": "sources/own_0040.json",
+      "sha256": "d3e23c31075414a8c507691be1b1eed773255f3e9852834113ae931ae1c0560b",
+      "bytes": 1542329
+    },
+    {
+      "path": "sources/own_0040.json.receipt.json",
+      "sha256": "c8bebb9310066a7465100c0ce3ae44e99fdca9fa0f520f1a7754339f6b832e69",
+      "bytes": 643
+    },
+    {
+      "path": "sources/pda_2024_2025.txt",
+      "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+      "bytes": 148346
+    },
+    {
+      "path": "sources/qlever_names.json",
+      "sha256": "28fea8a420380307da7620852407adb92d1759f6267ee179b1af7a3616ff005c",
+      "bytes": 2767983
+    },
+    {
+      "path": "sources/qlever_names.json.receipt.json",
+      "sha256": "5f4ca555f069ba59a4c8eb83d0bc3da8488239fe4175efd290cb58613dcdeb2a",
+      "bytes": 872
+    },
+    {
+      "path": "sources/qlever_p1585.json",
+      "sha256": "bb3dd9838c34f3c6630d809d328c5dd69b3f81dbab326ccfa977f33bcbc443a5",
+      "bytes": 656116
+    },
+    {
+      "path": "sources/qlever_p1585.json.receipt.json",
+      "sha256": "030e95778e0b951b1935c60ae9d1acf8090e1757d9dd29a038e645306b8a18bb",
+      "bytes": 488
+    },
+    {
+      "path": "sources/register.json",
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+      "bytes": 3748384
+    },
+    {
+      "path": "sources/row_decisions.json",
+      "sha256": "0de42823d6d2edc250632934262966d1c2b36fa31827901ac493bf42d6d07119",
+      "bytes": 227091
+    }
+  ]
+}

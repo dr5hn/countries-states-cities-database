@@ -1829,3 +1829,18 @@ https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_
 IBGE explicitly licenses the municipal boundary product under a licence compatible with Creative Commons BY 4.0; technical note 01/2026, printed page 9 (PDF page 11): https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf
 Original geometry retained; selected extracts are reference containment checks, not legal demarcation. The DTB register is factual reference; no separate standardized DTB licence is asserted.
 Wikidata structured identifiers, labels, aliases and claims: CC0, QLever bulk discovery then paced live wbgetentities with maxlag=5. Per-row source captures and complete changed/held decisions: .github/fixes-docs/ledgers/br_tld_v6x.jsonl and br_tld_v6x.sources.json.
+
+Brazil 2022 resident population (br_pop_v6x)
+Source: Instituto Brasileiro de Geografia e Estatística (IBGE), Censo Demográfico 2022, SIDRA table 4714, territorial level N6 Município, variable 93 População residente, period 2022 (Pessoas), current revised counts.
+https://apisidra.ibge.gov.br/values/t/4714/n6/all/v/93/p/2022
+Retrieved: 2026-11-16T08:27:26.766634+00:00; source SHA-256: ec3c169ff4e6f59641c3ec681aabe2b96b65edf2273e2f319eaa37d565413558.
+Reuse basis: Decreto 8.777/2016 art. 3 IV and art. 4 as amended by Decreto 9.903/2019 (unrestricted reuse and free use of published federal data); IBGE open-data plan lists Censo Demográfico 2022. No standardized census CC licence asserted.
+CSC selected the counts, joined them by each município’s own IBGE code, and converted the format.
+
+US item corrections, missing items and former CDPs (us_fix3_v6x, #1643):
+- US Census Bureau, 2020 national place Gazetteer, full-resolution TIGER/Line boundaries and P.L. 94-171 P1 total, exact LOGRECNO join (US government work, public domain): https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2020.html
+- USGS GNIS Populated Places national download (US government work, public domain): https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip
+- Wikidata literal structured statements, CC0: https://www.wikidata.org/wiki/Wikidata:Licensing
+- Complete scanned/changed/held ledger: .github/fixes-docs/ledgers/us_fix3_v6x.jsonl and us_fix3_v6x.sources.json
+
+Italy type/depth closeout (it_tld_v6x): ISTAT Località puntuali 2021 (POP21), confini amministrativi 1 January 2026 and SITUAS variations, CC BY 4.0; Wikidata own-item claims, CC0. https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/ https://www.istat.it/note-legali/ https://www.wikidata.org/
