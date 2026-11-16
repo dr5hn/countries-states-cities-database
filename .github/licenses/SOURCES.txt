@@ -1871,3 +1871,11 @@ Per-row point feature, revision, before/after values, sample holds and capture h
 # Exact sources, dates, hashes, attribution and all decisions: .github/fixes-docs/ledgers/au_tld_v6x.jsonl and .github/fixes-docs/ledgers/au_tld_v6x.sources.json
 https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/non-abs-structures/suburbs-and-localities
 https://data.gov.au/data/dataset/geoscape-administrative-boundaries
+
+Wrong Wikidata items, AU/MX/US (#1643, v6.x):
+ABS SAL 2021/G01 Census, CC BY 4.0: https://www.abs.gov.au/census/find-census-data/datapacks
+Incorporates Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of Australia, CC BY 4.0: https://data.gov.au/data/dataset/geoscape-administrative-boundaries
+INEGI AGEEML/Marco Geoestadistico and Censo de Poblacion y Vivienda 2020 ITER, Terms of Free Use: https://www.inegi.org.mx/programas/ccpv/2020/
+US Census Bureau 2020 Gazetteer/TIGER/P.L. 94-171, US Government public domain: https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2020.html
+Wikidata structured data CC0: https://www.wikidata.org/wiki/Wikidata:Licensing
+Complete decisions, dates, hashes and transformations: .github/fixes-docs/ledgers/wrong_items_v6x.jsonl and .github/fixes-docs/ledgers/wrong_items_v6x.sources.json
