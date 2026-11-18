@@ -15,7 +15,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 - **Find your country file** (e.g., `US.json` for United States, `IN.json` for India)
 - **Add or edit cities** in easy-to-read JSON format
 
-**Adding a NEW city** (omit the `id` field):
+**Adding a NEW city** (omit the `id` field; a maintainer gives the new row its id before merging):
 ```json
 {
     "name": "New City",
@@ -55,7 +55,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 
 **What happens next:**
 1. Maintainers review your JSON changes
-2. GitHub Actions automatically imports to MySQL (IDs are auto-assigned)
+2. A maintainer gives each new row its id before merging. The Ledger migrations check needs an id on every row, so it fails on a new row until then. That's expected, and you don't need to fix it.
 3. All export formats are regenerated from the MySQL database
 4. Your PR is updated with all export files
 
@@ -105,7 +105,7 @@ You don't need to worry about these formats - they're automatically generated fr
 ### countries.sql
 | Column | Data type | Explanation | Required |
 | ----------------- | --------------- | -------------- | ------------------- |
-| `id` | integer | Unique ID - omit for new countries (auto-assigned) | Auto
+| `id` | integer | Unique ID - omit for new countries (a maintainer adds it before merging) | Maintainer
 | `name` | string | The official name of the country. Use WikiData or Wikipedia or some other legitimate source. | required
 | `iso3` | string | [ISO3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3) code of the country |
 | `numeric_code` | string | [ISO 3166-1 numeric](https://www.iso.org/obp/ui/#search) code, three digits with leading zeros (e.g. `020` Andorra). It is also the country's UN M49 code: to group countries by the UN geoscheme, join it to the [UN M49 table](https://unstats.un.org/unsd/methodology/m49/) instead of using `region` and `subregion`. Taiwan (`158`) is not in that table, and Kosovo's `926` is not a UN code |
@@ -138,7 +138,7 @@ You don't need to worry about these formats - they're automatically generated fr
 ### states.sql
 | Column | Data type | Explanation | Required |
 | ----------------- | --------------- | -------------- | -------------- |
-| `id` | integer | Unique ID - omit for new states (auto-assigned) | Auto |
+| `id` | integer | Unique ID - omit for new states (a maintainer adds it before merging) | Maintainer |
 | `name` | string | The official name of the state. Use WikiData or Wikipedia or some other legitimate source. | required |
 | `state_code` | string | State/province code (e.g., "CA" for California) | required |
 | `country_id` | integer | Unique id of parent country from `countries.sql` | required |
@@ -163,7 +163,7 @@ You don't need to worry about these formats - they're automatically generated fr
 ### cities.sql
 | Column | Data type | Explanation | Required |
 | ----------------- | --------------- | -------------- | -------------- |
-| `id` | integer | Unique ID - omit for new cities (auto-assigned) | Auto
+| `id` | integer | Unique ID - omit for new cities (a maintainer adds it before merging) | Maintainer
 | `name` | string | The official name of the city. Use WikiData or Wikipedia or some other legitimate source. | required
 | `state_id` | integer | Unique id of parent state from `states.sql` | required
 | `state_code` | string | ISO code of the parent state | required

@@ -42,7 +42,7 @@ contributions/
 }
 ```
 
-**⚠️ Important: Do NOT include an `id` field for new cities!** The build system will automatically assign IDs.
+**⚠️ Important: Do NOT include an `id` field for new cities!** A maintainer gives each new row its id before merging. Until then the Ledger migrations check fails on the new row; that's expected.
 
 ### Editing an Existing City
 
@@ -74,7 +74,7 @@ Edit `contributions/countries/countries.json` and add your country:
 }
 ```
 
-**Note:** Omit the `id` field for new countries - it will be auto-assigned.
+**Note:** Omit the `id` field for new countries - a maintainer adds it before merging (the Ledger migrations check fails until then; that's expected).
 
 ### Adding a New State/Province
 
@@ -90,7 +90,7 @@ Edit `contributions/states/states.json` and add your state:
 }
 ```
 
-**Note:** Omit the `id` field for new states - it will be auto-assigned.
+**Note:** Omit the `id` field for new states - a maintainer adds it before merging (the Ledger migrations check fails until then; that's expected).
 
 ### Adding a New Region
 
@@ -131,7 +131,7 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 **What happens after you submit:**
 1. ✅ Maintainers review your JSON changes
-2. ✅ GitHub Actions imports to MySQL (IDs auto-assigned by database)
+2. ✅ A maintainer gives new rows their ids before merging (the Ledger migrations check needs an id on every row)
 3. ✅ All export formats (JSON, CSV, SQL, XML, YAML) are regenerated
 4. ✅ Your PR is automatically updated with all exports
 
@@ -147,7 +147,7 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 | Field | Required | Description | Example |
 |-------|----------|-------------|---------|
-| `id` | Auto | Unique identifier (omit for new cities) | `1234` |
+| `id` | Maintainer | Unique identifier (omit for new cities; a maintainer adds it) | `1234` |
 | `name` | ✅ Yes | Official city name | `"San Francisco"` |
 | `state_id` | ✅ Yes | ID of parent state; `null` only for a city of a country with no states (e.g. Western Sahara), together with `state_code` | `1416` |
 | `state_code` | ✅ Yes | ISO code of parent state; `null` exactly when `state_id` is `null` | `"CA"` |
