@@ -1910,3 +1910,9 @@ https://www.inegi.org.mx/inegi/terminos.html
 https://www.nomisweb.co.uk/home/copyright.asp
 https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 Modifications: population and population_year only, own or previously recorded official codes, strict stored-point containment, unique bound row and matching unit kind; dual settlement/parish items held for owner. No counts aggregated; no source endorsement. Evidence: pop_codeproved_v6x.jsonl and pop_codeproved_v6x.sources.json, retained delivery sources.
+
+# wrong_items_clear_2 — live-confirmed Wikidata item corrections
+# Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing ; https://www.wikidata.org/wiki/Special:EntityData/ ; https://qlever.dev/api/wikidata
+# Special:EntityData one item per request, >=1.05 seconds between starts; QLever complete P279 ancestry.
+# Per-row live claims, official code-and-point evidence and source hashes: .github/fixes-docs/ledgers/items_clear_v6x.jsonl and .github/fixes-docs/ledgers/items_clear_v6x.sources.json.
+# Base c0b0b1b02102e686fd1bfddde49439cab8ecf577; 360 cleared, 30 corrected, 5096 held; wikiDataId only; no identity events.
