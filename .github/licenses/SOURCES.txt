@@ -1902,3 +1902,11 @@ Fuente: INEGI, Censo de Población y Vivienda 2020, ITER POBTOT; reference 15 Ma
 # Australian Bureau of Statistics 2021 Census G01 Tot_P_P and SAL/LGA 2021 polygons, CC BY 4.0; Wikidata CC0.
 # Original archive dates, evidence file hashes, bindings and holds: .github/fixes-docs/ledgers/au_pop3_v6x.sources.json
 https://www.abs.gov.au/census/find-census-data/datapacks
+
+Code-proved dated population corrections (pop_codeproved_v6x), issue #1643.
+ISTAT Località 2021 POP21 and POSAS 1 January 2026 resident estimate (Prepotto), CC BY 4.0; INEGI Censo 2020 ITER POBTOT, Marco Geoestadístico, Términos de Libre Uso; ONS/Nomis PP002 All persons 2021 parish estimates, Open Government Licence v3.0. Wikidata identity statements CC0.
+https://www.istat.it/note-legali/
+https://www.inegi.org.mx/inegi/terminos.html
+https://www.nomisweb.co.uk/home/copyright.asp
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+Modifications: population and population_year only, own or previously recorded official codes, strict stored-point containment, unique bound row and matching unit kind; dual settlement/parish items held for owner. No counts aggregated; no source endorsement. Evidence: pop_codeproved_v6x.jsonl and pop_codeproved_v6x.sources.json, retained delivery sources.
