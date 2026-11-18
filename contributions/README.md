@@ -42,7 +42,7 @@ contributions/
 }
 ```
 
-**⚠️ Important: Do NOT include an `id` field for new cities!** The build system will automatically assign IDs.
+**⚠️ Important: Do NOT include an `id` field for new cities!** A maintainer gives each new row its id before merging. Until then the Ledger migrations check fails on the new row; that's expected.
 
 ### Editing an Existing City
 
@@ -131,7 +131,7 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 **What happens after you submit:**
 1. ✅ Maintainers review your JSON changes
-2. ✅ GitHub Actions imports to MySQL (IDs auto-assigned by database)
+2. ✅ A maintainer gives new rows their ids before merging (the Ledger migrations check needs an id on every row)
 3. ✅ All export formats (JSON, CSV, SQL, XML, YAML) are regenerated
 4. ✅ Your PR is automatically updated with all exports
 

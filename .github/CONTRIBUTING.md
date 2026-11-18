@@ -15,7 +15,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 - **Find your country file** (e.g., `US.json` for United States, `IN.json` for India)
 - **Add or edit cities** in easy-to-read JSON format
 
-**Adding a NEW city** (omit the `id` field):
+**Adding a NEW city** (omit the `id` field; a maintainer gives the new row its id before merging):
 ```json
 {
     "name": "New City",
@@ -55,7 +55,7 @@ We've made contributing easier! You can now edit simple JSON files organized by 
 
 **What happens next:**
 1. Maintainers review your JSON changes
-2. GitHub Actions automatically imports to MySQL (IDs are auto-assigned)
+2. A maintainer gives each new row its id before merging. The Ledger migrations check needs an id on every row, so it fails on a new row until then. That's expected, and you don't need to fix it.
 3. All export formats are regenerated from the MySQL database
 4. Your PR is updated with all export files
 
