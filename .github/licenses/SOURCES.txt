@@ -1917,3 +1917,9 @@ ONS/Nomis PP002 All persons, Value: usual residents 21 March 2021, December 2022
 https://www.nomisweb.co.uk/home/copyright.asp
 https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 Modifications: owner-designated existing village/parish rows retained as parishes; population and population_year only; code binding or unique normalized-name/point join, ownership checked. No count aggregation. Archived Wikidata identity statements: CC0.
+
+# wrong_items_clear_2 — live-confirmed Wikidata item corrections
+# Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing ; https://www.wikidata.org/wiki/Special:EntityData/ ; https://qlever.dev/api/wikidata
+# Special:EntityData one item per request, >=1.05 seconds between starts; QLever complete P279 ancestry.
+# Per-row live claims, official code-and-point evidence and source hashes: .github/fixes-docs/ledgers/items_clear_v6x.jsonl and .github/fixes-docs/ledgers/items_clear_v6x.sources.json.
+# Base c0b0b1b02102e686fd1bfddde49439cab8ecf577; 360 cleared, 30 corrected, 5096 held; wikiDataId only; no identity events.
