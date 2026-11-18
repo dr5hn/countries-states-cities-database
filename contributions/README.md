@@ -74,7 +74,7 @@ Edit `contributions/countries/countries.json` and add your country:
 }
 ```
 
-**Note:** Omit the `id` field for new countries - it will be auto-assigned.
+**Note:** Omit the `id` field for new countries - a maintainer adds it before merging (the Ledger migrations check fails until then; that's expected).
 
 ### Adding a New State/Province
 
@@ -90,7 +90,7 @@ Edit `contributions/states/states.json` and add your state:
 }
 ```
 
-**Note:** Omit the `id` field for new states - it will be auto-assigned.
+**Note:** Omit the `id` field for new states - a maintainer adds it before merging (the Ledger migrations check fails until then; that's expected).
 
 ### Adding a New Region
 
@@ -147,7 +147,7 @@ Simply create a pull request with your JSON changes! You don't need to run any b
 
 | Field | Required | Description | Example |
 |-------|----------|-------------|---------|
-| `id` | Auto | Unique identifier (omit for new cities) | `1234` |
+| `id` | Maintainer | Unique identifier (omit for new cities; a maintainer adds it) | `1234` |
 | `name` | ✅ Yes | Official city name | `"San Francisco"` |
 | `state_id` | ✅ Yes | ID of parent state; `null` only for a city of a country with no states (e.g. Western Sahara), together with `state_code` | `1416` |
 | `state_code` | ✅ Yes | ISO code of parent state; `null` exactly when `state_id` is `null` | `"CA"` |

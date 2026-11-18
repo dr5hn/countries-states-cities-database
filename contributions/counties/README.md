@@ -7,7 +7,7 @@ similar units. ISO-listed subdivisions stay in `states`; settlements stay in `ci
 
 | Field | Shape | Rule |
 | --- | --- | --- |
-| `id` | positive integer | Assigned by MySQL; retain it on existing records. Omit on new records. |
+| `id` | positive integer | Retain it on existing records. Omit on new records: a maintainer adds it before merging, and the Ledger migrations check fails until then. |
 | `name` | string, max 255 | Required. |
 | `state_id`, `state_code` | positive integer, string | Required keys; the smallest containing ISO 3166-2 state and its code. Both `null` only for a county of several regions (v5.0.0, below). |
 | `states` | list of `{state_id, state_code}` | Only on a county of several regions: every region it lies in, two or more, in `state_id` order. Absent on every other county. |
