@@ -1911,6 +1911,13 @@ https://www.nomisweb.co.uk/home/copyright.asp
 https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 Modifications: population and population_year only, own or previously recorded official codes, strict stored-point containment, unique bound row and matching unit kind; dual settlement/parish items held for owner. No counts aggregated; no source endorsement. Evidence: pop_codeproved_v6x.jsonl and pop_codeproved_v6x.sources.json, retained delivery sources.
 
+Census 2021 parish populations (gb_pop3_v6x)
+Source: Office for National Statistics licensed under the Open Government Licence v.3.0.
+ONS/Nomis PP002 All persons, Value: usual residents 21 March 2021, December 2022 parish geography; disclosure-controlled UPRN best-fit estimates.
+https://www.nomisweb.co.uk/home/copyright.asp
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+Modifications: owner-designated existing village/parish rows retained as parishes; population and population_year only; code binding or unique normalized-name/point join, ownership checked. No count aggregation. Archived Wikidata identity statements: CC0.
+
 # wrong_items_clear_2 — live-confirmed Wikidata item corrections
 # Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing ; https://www.wikidata.org/wiki/Special:EntityData/ ; https://qlever.dev/api/wikidata
 # Special:EntityData one item per request, >=1.05 seconds between starts; QLever complete P279 ancestry.
