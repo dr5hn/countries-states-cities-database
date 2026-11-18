@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "top15_mx_build_pop2b",
+  "title": "top15_mx_build_pop2c",
   "base_commit": "79cb17ae8c47c91f1b09e527f2c11144484da349",
   "counts": {
     "total": 11146,
@@ -27,7 +27,7 @@
       "no_own_or_earlier_municipio_code": 1
     }
   },
-  "ledger_sha256": "d9d0798d27f2826b49a845f668c39808fec0d9a3b8462358bd619ab224e88fda",
+  "ledger_sha256": "cfbb78511f9034dda0b6d5a2dd94a6282289a4aa7f9c4dbbd736cae213badd5d",
   "sources": [
     {
       "path": "sources/MX.census.zip",
@@ -1208,6 +1208,336 @@
       "path": "sources/pop2_census_extract.json",
       "sha256": "52b79722108274a350f5eba3a75b199b37282466df95093570bb7488cd53aadd",
       "bytes": 782644
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/asia_misc_pop_v5x.jsonl",
+      "sha256": "ea0c6afbf03ca9fd69abbd6a96dee48870a2dc89169291a398a5faab5da559c6",
+      "bytes": 1895281
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/at_pop_v5x.jsonl",
+      "sha256": "1fd12c48814caff850b702537dace291c04102853f6fe23d4777a35881109e91",
+      "bytes": 2315030
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/au_closeout_v6x.jsonl",
+      "sha256": "75905fb30ff740aba0bd30eee46bf924b80bd473a81eabc305604750c1f6c7ed",
+      "bytes": 1693133
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/au_pop_v5x.jsonl",
+      "sha256": "8e48599611a58bd5308d0f2013a18e782a556604d1e6bc0945969fa72c817eb3",
+      "bytes": 1778817
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/au_tld_v6x.jsonl",
+      "sha256": "4d5d924f9677b10c765bf06816f69b041a51a83bd1928e5fe35ad4cf427afeb9",
+      "bytes": 315091
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/br_pop_v6x.jsonl",
+      "sha256": "ac0441bec16dcae6227dbc69c3148854d476ea98e19438f423c5bece848a884f",
+      "bytes": 677534
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/de_c_v6x.jsonl",
+      "sha256": "868cb518a77bf8b89452cb76e2b1cfc4bab5c04fc6d2d0a51feac82da2b9dfa6",
+      "bytes": 22429
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/de_c_v6x.sources.json",
+      "sha256": "1530e05dabe10b7573a6d4d4c0501628afdf1232102c5e6008a5d8c41008b8b6",
+      "bytes": 62767
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/de_kreis_links_v5x.jsonl",
+      "sha256": "bb69db0add14ffcb78f6811b28aee663c158b62c34ffd7153fa147917ca81f8c",
+      "bytes": 183587
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/es_pop_v5x.jsonl",
+      "sha256": "d4bbf1629de2f0715597647432b5c2b2e4dee4caa56f496a57c08e6d64d6053d",
+      "bytes": 1954012
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/es_tld_v6x.jsonl",
+      "sha256": "2a5c55c6126821636f663a0e3acc39f8a9b8fc36d1988dc949f7fac0affdb28d",
+      "bytes": 305587
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/fr_close_v6x.jsonl",
+      "sha256": "cd4fd9a27f7e5175468b16199a5bb5580ea2db24098de79dd2c2edc32d9eb67a",
+      "bytes": 203327
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/fr_closeout_v6x.jsonl",
+      "sha256": "49c81a89c61f4dfba7b9abd20ef544fa5059a61251594de1ef745a63f8d889ef",
+      "bytes": 1607221
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/fr_counties_v6x.jsonl",
+      "sha256": "71ebbadf47f1136547b3eef0b5c9baace71ba3b3dde77b5bc1ab58dde9b3c9cf",
+      "bytes": 1737031
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/fr_pop_v5x.jsonl",
+      "sha256": "5f101f5375000935b6582bd897988419c0f7b7739598905bd4a79eb8f92744fc",
+      "bytes": 2290624
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ie_nz_pop_v5x.jsonl",
+      "sha256": "4cacdcc0914f4d7c82844efa344eb6ffd3988c63fc1c5d5cab8f135d90e5ff0c",
+      "bytes": 1088928
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_closeout_v6x.jsonl",
+      "sha256": "10bc398d9d462bde78a0bd0bcde21c3725563b64a514d63756c815f083642ca7",
+      "bytes": 2843223
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_comuni_v5x.jsonl",
+      "sha256": "204c8b8dcf39b893032cb2e4ef6cef7ca60e5fc19c45cf97a0840f3cdb891ef5",
+      "bytes": 1958875
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_comuni_v6x.jsonl",
+      "sha256": "d1414864f368ed029a637e552dcb47b2740f843f7f5953ac1af8128e7e45a53b",
+      "bytes": 91214
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_h_v6x.jsonl",
+      "sha256": "c5c5cdf45db8dc77b7b9a0e4f3a20e7ec016555d4d53e9bed212dcd7de95caab",
+      "bytes": 65956
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_h_v6x.sources.json",
+      "sha256": "b99bc93b673d2454efd78785fc5bca69a3b1a1a3f6eead2442cfa6fada69032a",
+      "bytes": 103084
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_pop2_v5x.jsonl",
+      "sha256": "704bcf146d9b460198f796bad46d6ac09f96e8a0de4c0b9b4caed900aaed7c85",
+      "bytes": 2235630
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_pop2_v6x.jsonl",
+      "sha256": "751a0eb8b14a8de135541e406a7fc528cdd49c761fef1d2865edb0edfa30f540",
+      "bytes": 3228383
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/it_tld_v6x.jsonl",
+      "sha256": "9a9516060890e4254c1dd5238ca393b15916544cbc062291154cbc8b9079c4d0",
+      "bytes": 715425
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/items_codes_v5x.jsonl",
+      "sha256": "43a01efddc879d507e3807c481403bcbe7c08ae259f58680b9fd71b11ec167db",
+      "bytes": 502659
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/jp_pop_v5x.jsonl",
+      "sha256": "c381d5bdca4fe5f95eca335c86612a6f440f428f3d02448c9af7551c5a89e446",
+      "bytes": 677047
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_closeout_v6x.jsonl",
+      "sha256": "b9e8408d52d173de0639713a297607665827f0115cd72ef1ec37da20197e5318",
+      "bytes": 2020561
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_closeout_v6x.sources.json",
+      "sha256": "ab30c81bacbcafa279ef2910679a4b4fc08e88589907be9a1b9b1ef428664c31",
+      "bytes": 242063
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_adds_v5x.jsonl",
+      "sha256": "3386cdecb51b3e44f9bb5d631d308be4e22a32254b8392ceae1c64057cc9e0ac",
+      "bytes": 2691
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_adds_v5x.sources.json",
+      "sha256": "5268675f7249f0b41363891cd1b813191575df1194bced74879669efce5b9c26",
+      "bytes": 7583
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_links_v5x.jsonl",
+      "sha256": "193424139ccb0f854744bd8aeb2103c00b27ad17963978e7e9e79d5a4577f094",
+      "bytes": 105382
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_links_v5x.sources.json",
+      "sha256": "478704481c49dff66f84f14a98fbedc51ae3dd83adb80246b929a0a8d0ef2683",
+      "bytes": 44412
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_rows_v5x.jsonl",
+      "sha256": "ebb89aa6d5a30499bcb7261a281b6525a76647e44622609733c1be7290b05c9c",
+      "bytes": 69294
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_muni_fix_rows_v5x.sources.json",
+      "sha256": "3be25b59d626a2757a47ffbedc725ddd37a949f38fa2bd1e39c1c28cfc7b2aba",
+      "bytes": 24253
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_munis_v5x.jsonl",
+      "sha256": "80dc97bdac0183e89c2cef7110f0a4e2bc98f6e8a9827a3e0882b8e8d3038382",
+      "bytes": 2355425
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_munis_v5x.sources.json",
+      "sha256": "b34117b832b6669eb7a7d5229211b2cbc7023a5f0199bb6b40786b5c22e68d9a",
+      "bytes": 534452
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_pop_v5x.jsonl",
+      "sha256": "f77b0a6b260a0743e1a03d295a9d32ba6dc02856b675903a8b524183675c2e47",
+      "bytes": 1385196
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_pop_v5x.sources.json",
+      "sha256": "2cbb026f47326e25261cb2b92115da34fb957e61ee49e55c876203c32c2773ac",
+      "bytes": 470862
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_seats_v6x.jsonl",
+      "sha256": "c5daed591cbb910b29cd9255841c31c49388a5718eaa90ada94de89e4d2c4175",
+      "bytes": 38858
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_seats_v6x.sources.json",
+      "sha256": "b8c362d6fc5f7c7bac8ac2e78d6f021e750683a57dd5cb68e6af884090580219",
+      "bytes": 10540
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_tld_v6x.jsonl",
+      "sha256": "3fbb8a18584e30f4302f24accae41172e2c904e4b64a98775d473f4266a6305a",
+      "bytes": 1487367
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/mx_tld_v6x.sources.json",
+      "sha256": "f5783058bf96033425f1667cd863daa81c7be0370c628476012b8294fc3841d8",
+      "bytes": 125582
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ng_lga_dups_v5x.jsonl",
+      "sha256": "7a408630846467d75e6e61dd8ed082bc90a2e8585580c9dbc2edc21b8d9005d5",
+      "bytes": 78676
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_au_links_v5x.jsonl",
+      "sha256": "7b913756a39abcdcb6f0f7cda08e982c9dae300aaf13a239c0feebf25bbbf413",
+      "bytes": 1466311
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_it_links_v5x.jsonl",
+      "sha256": "76e573a832f98c76a9f013ae4ad9e14c9a9d3c76d6e432c599fe26e39d0daf53",
+      "bytes": 887690
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_mx_adds_v5x.jsonl",
+      "sha256": "3ed581b439e46d2836b7a97e40047a22640aaaf7bcab3615f2bf42d098e2c0a2",
+      "bytes": 452142
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_mx_links_v5x.jsonl",
+      "sha256": "0c950253ed0fdccb1712f930880e036aa2e6dac1f9b03d60bdb994a1d9facdf5",
+      "bytes": 723455
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_mx_reuse_v5x.jsonl",
+      "sha256": "5add8c583bc699eeaa90367e70905cdfe1793bb447f57239968e2344e1c5e38c",
+      "bytes": 3062
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/parents_v5x.jsonl",
+      "sha256": "8c462d0ae6578af806fc5bc11655ce531c5d565d5a246b00e2c4465f9a4b486c",
+      "bytes": 46139
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/postcodes_open_v5_additions.jsonl",
+      "sha256": "24df6fe25e204f5e27a26e42252941b46188c8b4d8d27028916585820174e288",
+      "bytes": 5282031
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ro_close_v6x.jsonl",
+      "sha256": "33a3fff551d82317e319ede9c8f3340662daf1deb4e3c77e00320e6dc9ba7b06",
+      "bytes": 79371
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ro_closeout_v6x.jsonl",
+      "sha256": "8f9365937d6363d8a78bee3a6d5b688de721867a6ba808caa03a49a76b7ffdb9",
+      "bytes": 1099605
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ro_communes_v5x.jsonl",
+      "sha256": "f52e9fac8a3e23ad9229db1f64d20ae6cb3c6e323c8939565206ab8c142077cb",
+      "bytes": 1018317
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/ru_pop_v5x.jsonl",
+      "sha256": "3def72eeede1828c2d5a2a24de43a8a7a22c78a2895db823d15e9edf9eb8e6a9",
+      "bytes": 107855
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/shared_items_v5x.jsonl",
+      "sha256": "20f14259e7acd9c6129873007d2feffab9347d95d7ae1794b1e81de0c4152b85",
+      "bytes": 7179240
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/shared_units_v5x.jsonl",
+      "sha256": "09e29bd63d0eb1371d27e183d420c77d1c36dd4262da3342eeff09dad8c4caa9",
+      "bytes": 16378530
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/terms_pop_v5x.jsonl",
+      "sha256": "19f10f9efe29d702a9df5cd97d3110e0984513ec3f6cbea9b495536f1cdb3a54",
+      "bytes": 2486824
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/types_decamx_v5x.jsonl",
+      "sha256": "6d1f6ff68c7795085681614d1261e7fc56b63280b7121209d37a2f92cb2f98a1",
+      "bytes": 333801
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_items_v5x.jsonl",
+      "sha256": "814bc585e934b1c9f09cf4e61cb8ac3bcdffaf0f9434a9239acff914a47b306c",
+      "bytes": 4707367
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_pop_v6x.jsonl",
+      "sha256": "ebd3b4e684d41de81692ae8c68ce0b8d78ae1c8ea0525308ca6f607f93c3184e",
+      "bytes": 3212749
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_ks_v6x.jsonl",
+      "sha256": "b0dd115ee054815ac103a397a5d400792df98e916b43029a70a7c70f9b10610f",
+      "bytes": 926241
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_mi_v5x.jsonl",
+      "sha256": "630e466813a41691370c49d7635c5154ed84d71f4b6959bae002e0964c5fae96",
+      "bytes": 1011255
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_mn_v6x.jsonl",
+      "sha256": "d4bf3a22ebcc30235578bd98761f89f89ac15459bba19c0a566495ad79026e93",
+      "bytes": 1283183
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_ne_v6x.jsonl",
+      "sha256": "2bb0f9f54cb75f67ad076571ebf1d439960aa0dc9ab03c5ee918e6a4fbc98053",
+      "bytes": 242151
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_oh_v5x.jsonl",
+      "sha256": "fced74dba3c3e56e8ec93bb786322b2b58ae04b52dc2db6c5e57b14d40387cf6",
+      "bytes": 1190544
+    },
+    {
+      "path": "sources/pr2268_binding_manifests/us_townships_pa_v5x.jsonl",
+      "sha256": "ba03290b3ff67b781b06e64e4d3748db50315a633d171abd83942852bcf3f337",
+      "bytes": 1356935
     },
     {
       "path": "sources/pr_2171.json",
@@ -3430,7 +3760,7 @@
       "bytes": 1074
     }
   ],
-  "methods": "Replays retained work_pop2 identity decisions verbatim; only the symmetric population-fit gate is amended. Original ledger: inputs/work_pop2_ledger.jsonl. Population fields only. Municipio: own or earlier affirmative ledger code, strict polygon containment, unique owner. Locality: own/earlier code with <=1km or municipality containment, or exact name unique within 5km and <=1km. Every route census name/state (exact name, or both explicit Spanish/English names on the same own item for code routes only), own-item scope, unique owner, stored parent, active catalogue. Population fit max(stored,census) <= 1.5 * min(stored,census), implemented as 2*max <= 3*min. Never change an item, type, point or parent. ITER LOC0000 only for typed municipios. No migration events.",
+  "methods": "Replays retained work_pop2 identity decisions verbatim; only the symmetric population-fit gate is amended. Original ledger: inputs/work_pop2_ledger.jsonl. Population fields only. Municipio: own or earlier affirmative ledger code, strict polygon containment, unique owner. Locality: own/earlier code with <=1km or municipality containment, or exact name unique within 5km and <=1km. Every route census name/state (exact name, or both explicit Spanish/English names on the same own item for code routes only), own-item scope, unique owner, stored parent, active catalogue. Population fit max(stored,census) <= 1.5 * min(stored,census), implemented as 2*max <= 3*min. Never change an item, type, point or parent. ITER LOC0000 only for typed municipios. No migration events. Circular prior_bindings receipts are replaced by same-ID/code branch manifests where available, otherwise by the retained work-folder replay input with its actual hash; see receipt_rewiring.json.",
   "reuse": {
     "author": "INEGI",
     "products": [
@@ -3445,5 +3775,53 @@
       "#2232 work",
       "#2258 work_tld2"
     ]
-  }
+  },
+  "receipt_rewiring": {
+    "report": "receipt_rewiring.json",
+    "sha256": "eb4dcb77ff7564e91436ddf98fc029fdb4b99374fda3a22b9f551bd15a436d06",
+    "branch_head": "9efa07ff4dcb4338acf44aa9c4a0e69bdbd8af8a",
+    "origin_note": "Work-folder receipts cite the exact retained work_pop2 input replayed by work_pop2b (inputs/work_pop2_ledger.jsonl), not an in-repo affirmative identity record. Its inherited circular receipts are historical defects, not fresh evidence. The row/code and original proof route are retained; no binding or decision is independently re-established here. The old b19a5550 hash is not asserted to identify this input."
+  },
+  "inputs": [
+    {
+      "path": "inputs/.github__licenses__SOURCES.txt",
+      "sha256": "ee745961c0cc1f745653950274685d786aaed8237cc9c15914029409c039d02d",
+      "bytes": 181854
+    },
+    {
+      "path": "inputs/TYPE_FIELD.md",
+      "sha256": "41f21b8879d5d914b17a2a1bd62ed3722cd9c40caeed2647f5c7147329be1d20",
+      "bytes": 38546
+    },
+    {
+      "path": "inputs/contributions__cities__MX.json",
+      "sha256": "07fe985286189c627a3b64707a9eb81d53b5155e1a93d6b052b48c0426d9c581",
+      "bytes": 13632758
+    },
+    {
+      "path": "inputs/migrations__events.jsonl",
+      "sha256": "60420dc2dbb7519c75284eac5205cdec9edf8836881e8d8d29fa13e4d12b0342",
+      "bytes": 48171061
+    },
+    {
+      "path": "inputs/work_pop2_ledger.jsonl",
+      "sha256": "a3aef0019e15b4861a4e5bdbb8d4bba00721c820a9cb43449a0cd51b967cf528",
+      "bytes": 2541853
+    },
+    {
+      "path": "inputs/work_pop2b_artifact_hashes.json",
+      "sha256": "2bfded26ef87f279c03872e0d00124161bbc9208a5a3fc6a0f0a5e0925115fbb",
+      "bytes": 436
+    },
+    {
+      "path": "inputs/work_pop2b_ledger.jsonl",
+      "sha256": "d9d0798d27f2826b49a845f668c39808fec0d9a3b8462358bd619ab224e88fda",
+      "bytes": 2575407
+    },
+    {
+      "path": "inputs/work_pop2b_patch.json",
+      "sha256": "48bb3e7f4e9d50d42ed4a697f63148b69a4528f92aac55843c3aa7d96aab721b",
+      "bytes": 1005300
+    }
+  ]
 }
