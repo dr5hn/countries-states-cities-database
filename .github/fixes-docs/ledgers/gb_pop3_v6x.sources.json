@@ -74,6 +74,14 @@
       "licence": "local evidence derived from cited archived inputs"
     },
     {
+      "path": "sources/base_cohort.json",
+      "sha256": "79d6ba2f422f9cd2fe228ca220654191fcab2b7990fa3d0baf1044e3d3c9d837",
+      "bytes": 70222,
+      "url": null,
+      "retrieved_at": null,
+      "licence": "local evidence derived from cited archived inputs"
+    },
+    {
       "path": "sources/prior_pop2_ledger.jsonl",
       "sha256": "28e1357973ac08f95bd10bd3dcac0a24adfd03c9ca069b8ea79a898922933797",
       "bytes": 6539505,
@@ -690,14 +698,6 @@
       "licence": "Open Government Licence v3.0"
     },
     {
-      "path": "sources/parish22_geom_015.geojson",
-      "sha256": "3ec4141f51a2487e63fbb530921f02c67fe3480fe69181e3958f9227e6779ce8",
-      "bytes": 1073993,
-      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04004576%27%2C%27E04004586%27%2C%27E04004591%27%2C%27E04004606%27%2C%27E04004628%27%2C%27E04004653%27%2C%27E04004658%27%2C%27E04004663%27%2C%27E04004673%27%2C%27E04004687%27%2C%27E04004698%27%2C%27E04004703%27%2C%27E04004705%27%2C%27E04004720%27%2C%27E04004728%27%2C%27E04004744%27%2C%27E04004765%27%2C%27E04004767%27%2C%27E04004773%27%2C%27E04004781%27%2C%27E04004783%27%2C%27E04004789%27%2C%27E04004793%27%2C%27E04004806%27%2C%27E04004810%27%2C%27E04004811%27%2C%27E04004812%27%2C%27E04004822%27%2C%27E04004827%27%2C%27E04004834%27%2C%27E04004842%27%2C%27E04004855%27%2C%27E04004864%27%2C%27E04004867%27%2C%27E04004870%27%2C%27E04004871%27%2C%27E04004880%27%2C%27E04004884%27%2C%27E04004893%27%2C%27E04004901%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
-      "retrieved_at": "2026-10-27T08:50:43.105162+00:00",
-      "licence": "Open Government Licence v3.0"
-    },
-    {
       "path": "sources/parish_spelling_006.geojson",
       "sha256": "be86db352b394f42f2adaef7d278925732134d25c6f5e3d2de06f8db9490d037",
       "bytes": 799077,
@@ -719,6 +719,14 @@
       "bytes": 613680,
       "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04009079%27%2C%27E04009123%27%2C%27E04009152%27%2C%27E04009196%27%2C%27E04009294%27%2C%27E04009302%27%2C%27E04009424%27%2C%27E04009542%27%2C%27E04009581%27%2C%27E04009687%27%2C%27E04009857%27%2C%27E04009864%27%2C%27E04009899%27%2C%27E04009916%27%2C%27E04009950%27%2C%27E04010311%27%2C%27E04010374%27%2C%27E04010442%27%2C%27E04010461%27%2C%27E04010551%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
       "retrieved_at": "2026-11-18T09:29:45.687605+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    {
+      "path": "sources/parish22_geom_015.geojson",
+      "sha256": "3ec4141f51a2487e63fbb530921f02c67fe3480fe69181e3958f9227e6779ce8",
+      "bytes": 1073993,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04004576%27%2C%27E04004586%27%2C%27E04004591%27%2C%27E04004606%27%2C%27E04004628%27%2C%27E04004653%27%2C%27E04004658%27%2C%27E04004663%27%2C%27E04004673%27%2C%27E04004687%27%2C%27E04004698%27%2C%27E04004703%27%2C%27E04004705%27%2C%27E04004720%27%2C%27E04004728%27%2C%27E04004744%27%2C%27E04004765%27%2C%27E04004767%27%2C%27E04004773%27%2C%27E04004781%27%2C%27E04004783%27%2C%27E04004789%27%2C%27E04004793%27%2C%27E04004806%27%2C%27E04004810%27%2C%27E04004811%27%2C%27E04004812%27%2C%27E04004822%27%2C%27E04004827%27%2C%27E04004834%27%2C%27E04004842%27%2C%27E04004855%27%2C%27E04004864%27%2C%27E04004867%27%2C%27E04004870%27%2C%27E04004871%27%2C%27E04004880%27%2C%27E04004884%27%2C%27E04004893%27%2C%27E04004901%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-10-27T08:50:43.105162+00:00",
       "licence": "Open Government Licence v3.0"
     },
     {
@@ -970,6 +978,14 @@
       "licence": "Open Government Licence v3.0"
     },
     {
+      "path": "sources/parish_extra_pop3b.geojson",
+      "sha256": "65020d32d59e030e5982cc58aaeb9202d2dbe6e72dab01b410e6fa6cb8f715b1",
+      "bytes": 26325,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04000493%27%2C%27E04004732%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-18T12:18:44.488504+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    {
       "path": "sources/parish22_geom_021.geojson",
       "sha256": "ce15a5978708b4f41c8e6150e1282e2cc2b7e7466f1d5548526166c6d163d0d9",
       "bytes": 1355865,
@@ -987,6 +1003,6 @@
     }
   ],
   "method": "ONS/Nomis PP002 2021 All persons Value; usual residents, December 2022 parishes, disclosure-controlled UPRN best-fit; no aggregation",
-  "scope": "592 owner-designated combined village/parish rows; population and year only",
+  "scope": "594 owner-designated combined village/parish rows; population and year only",
   "identity_capture": "Hash-verified archived own items; no new live assertion"
 }
