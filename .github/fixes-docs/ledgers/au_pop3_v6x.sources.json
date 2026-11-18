@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "base_commit": "56c6b487ab651686bbd85a5836c42b1f105a83d9",
+  "base_commit": "aa0d3a71e79c47c371d74980a1bdbdd69013e53e",
   "sources": {
     "SAL_2021.zip": {
       "source_id": "SAL_2021.zip",
@@ -1436,5 +1436,12 @@
   "limitations": [
     "Own-item captures reused at their original dates; no fresh gazettal claim.",
     "No item is assigned when absent; SAL identity then rests on exact state/name/point and existing register-backed locality type."
-  ]
+  ],
+  "ledger_sha256": "8debdb8b0402502741453ed84cfbdb1ed8aa9f26f6bf52d71282cbfb32bac546",
+  "point_test_measurement": {
+    "LGA": {
+      "point_inside": "Original GDA2020 polygon covers stored WGS84 point transformed to EPSG:7844.",
+      "distance_to_boundary_m": "Distance to original polygon boundary in a point-centred GDA2020 azimuthal equidistant projection (GRS80); positive for interior points."
+    }
+  }
 }
