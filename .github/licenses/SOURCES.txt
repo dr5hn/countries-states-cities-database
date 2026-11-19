@@ -1937,3 +1937,20 @@ Wikidata contributors, structured data CC0; individual live Special:EntityData r
 
 Mexico own-code Censo 2020 municipio population fills (mx_pop3_v6x)
 Fuente: INEGI, Censo de Población y Vivienda 2020, ITER POBTOT LOC=0000; reference 15 March 2020. https://www.inegi.org.mx/programas/ccpv/2020/#datos_abiertos . Marco Geoestadístico, Encuesta Intercensal 2025, edition 2026. INEGI Términos de Libre Uso https://www.inegi.org.mx/inegi/terminos.html . Independent transformation: own literal municipio code, state, exact name (case/accents), strict point containment and exclusive ownership; replace undated figures with official 2020 total. No INEGI endorsement. Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing . Evidence and holds: .github/fixes-docs/ledgers/mx_pop3_v6x.jsonl and mx_pop3_v6x.sources.json.
+
+GB classification and dated settlement populations (gb_tld_v6x; #1643)
+Office for National Statistics: Built-up Areas December 2022, Census 2021 built-up-area characteristics (published counts rounded to five, England excluding London and Wales), Register of Geographic Codes June 2026 and Local Authority Districts May 2026 boundaries. Source: ONS licensed under the Open Government Licence v.3.0; Contains OS data Crown copyright and database right.
+National Records of Scotland: Settlements and Localities mid-2020 boundaries, locality relationships and all-age/all-sex population estimates. NRS Open Government Licence v3.0.
+Source: NISRA, Settlement Development Limits 2015 boundaries/bands and Census 2021 CT0046 settlement usual-resident counts, Open Government Licence v3.0.
+Cabinet Office: official list of UK cities, Open Government Licence v3.0. Wikidata own-item identity statements: CC0.
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+https://onsgeo.github.io/Built_Up_Areas/
+https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html
+Modifications: selected existing rows through literal own GSS code or exact official name and agreeing own class, strict unchanged-point containment and unique owner. Only type, type_local, level, population and population_year. Name-bound count changes require an old/new gap no greater than 1.5; own-code counts use the published total regardless of gap. No aggregation or geometry changes. No claim that 2011 BUA subdivisions are 2022 geography. Literal source URLs and exact response-file SHA-256 receipts are in gb_tld_v6x.sources.json and the row ledger.
+
+GB dual settlement/parish amendment (top15_gb_build_tld2)
+Owner rule dated 18 November: combined settlement/parish own items retained as parishes.
+ONS Register of Geographic Codes (June 2026), operation/termination dates select own E04/W04 code valid 21 March 2021; ONS December 2022 parish/community boundaries, contains OS data Crown copyright and database right. ONS/Nomis PP002 All persons Value, Census 2021 usual residents on December 2022 parish geography; disclosure-controlled UPRN best fit, no aggregation. Open Government Licence v3.0.
+https://www.nomisweb.co.uk/datasets/c2021pp002
+https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+Council names and styles from official councils' own sites, factual evidence retained with exact URL and SHA-256. Wikidata own items refreshed singly (CC0); original GB pilot responses reused only after SHA-256 verification for competing-code ownership. No BUA fallback for dual items; unproved rows held.
