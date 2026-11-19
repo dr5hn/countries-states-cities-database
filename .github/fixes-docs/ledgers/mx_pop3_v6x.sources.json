@@ -1,0 +1,2499 @@
+{
+  "schema_version": 1,
+  "title": "top15_mx_build_pop3",
+  "base_commit": "268ce005dd0164ee8181d043cf2c187b535a2702",
+  "counts": {
+    "total": 11146,
+    "targets": 106,
+    "filled": 44,
+    "redirect_filled": 0,
+    "held": 62,
+    "before": 10433,
+    "after": 10477,
+    "held_reasons": {
+      "own_item_opposite_scope": 60,
+      "own_item_absent_on_current_base": 2
+    }
+  },
+  "ledger_sha256": "3ab5186a2e31fcf23f3584fbe555a3344c52b80f42f3f5a31e28e71655c85462",
+  "sources": [
+    {
+      "path": "sources/MX.census.zip",
+      "sha256": "9342fdbd45bda5897f2b827a12904843b6f8fb85d4e72da299e09e4d2422ab60",
+      "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/datosabiertos/iter/iter_00_cpv2020_csv.zip"
+    },
+    {
+      "path": "sources/MX.census.zip.meta.json",
+      "sha256": "d0e2fd954956cba0be9365ff3157894796fd52363af63b6c259ded89469c17a8"
+    },
+    {
+      "path": "sources/census_municipios.json",
+      "sha256": "babf089b7df4988b90fae5e67dc07612dfa71b4a8bea1cae987bb5c045d6a51e"
+    },
+    {
+      "path": "sources/geographic_item_owners.json",
+      "sha256": "047fdf0d06f5e2d076fa17663f74c8f690c1f6df2b6bc6ef3761cf562f896b09"
+    },
+    {
+      "path": "sources/geometry/01/01mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/01_aguascalientes.zip"
+    },
+    {
+      "path": "sources/geometry/01/01mun.dbf",
+      "sha256": "6b8b9a332df4d114f1f74666d4203ab22bd103564a00ef7b8e97b5516dd1b94e",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/01_aguascalientes.zip"
+    },
+    {
+      "path": "sources/geometry/01/01mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/01_aguascalientes.zip"
+    },
+    {
+      "path": "sources/geometry/01/01mun.shp",
+      "sha256": "b1e6ca1dc3ce61c8e2e4ec377cdd81f61ace061131f1442f76a777e80c1e9db8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/01_aguascalientes.zip"
+    },
+    {
+      "path": "sources/geometry/01/01mun.shx",
+      "sha256": "2e3fed19db586a455a547d65b67f7d955e4c6ddaa22a0b64f48c1630660a9bdf",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/01_aguascalientes.zip"
+    },
+    {
+      "path": "sources/geometry/01/complete.json",
+      "sha256": "816b727fa8e05fd0d6b6d6fa6306cd98b34a569579eb37e9255bbae7014dd692"
+    },
+    {
+      "path": "sources/geometry/02/02mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/02_bajacalifornia.zip"
+    },
+    {
+      "path": "sources/geometry/02/02mun.dbf",
+      "sha256": "a7d72beb0005ea2c3eb18d8ae37c0f654b364406c5e9eb5a1b3253c3d885e3f3",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/02_bajacalifornia.zip"
+    },
+    {
+      "path": "sources/geometry/02/02mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/02_bajacalifornia.zip"
+    },
+    {
+      "path": "sources/geometry/02/02mun.shp",
+      "sha256": "00f0c4bff99bfe34ed6ebc471f94f9d4f8a7f7102817225d474ffb1ba313bdec",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/02_bajacalifornia.zip"
+    },
+    {
+      "path": "sources/geometry/02/02mun.shx",
+      "sha256": "e4095c6f9c7a404fcc54e876b3c6dc7a84a15944e5f9cebcb89ae11dcd1f26dc",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/02_bajacalifornia.zip"
+    },
+    {
+      "path": "sources/geometry/02/complete.json",
+      "sha256": "66f44c2d3699bcf600a011f906a3d0191fdfd9e988da072c9b78784cbaa7db31"
+    },
+    {
+      "path": "sources/geometry/03/03mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/03_bajacaliforniasur.zip"
+    },
+    {
+      "path": "sources/geometry/03/03mun.dbf",
+      "sha256": "e11165bbe6c6a3d40f16488eabd44965341e7271eac022cd132745c6ff6c54df",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/03_bajacaliforniasur.zip"
+    },
+    {
+      "path": "sources/geometry/03/03mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/03_bajacaliforniasur.zip"
+    },
+    {
+      "path": "sources/geometry/03/03mun.shp",
+      "sha256": "fd0c9166220614a07f83f3300956a40bac32a0dd2ccd61c953209671808f7e9f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/03_bajacaliforniasur.zip"
+    },
+    {
+      "path": "sources/geometry/03/03mun.shx",
+      "sha256": "d154c96692744bc0c016aac0da0e2c941d42ef3f2ccb30ef5ae065a25df5af4c",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/03_bajacaliforniasur.zip"
+    },
+    {
+      "path": "sources/geometry/03/complete.json",
+      "sha256": "1209271d0a32a8d4f0d68302dd73849aa50fa07bc91b003613db337c93198380"
+    },
+    {
+      "path": "sources/geometry/04/04mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/04_campeche.zip"
+    },
+    {
+      "path": "sources/geometry/04/04mun.dbf",
+      "sha256": "61841795636cc15c2b72a87708a4857c80e906846caa7e17a4a83924ca547b51",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/04_campeche.zip"
+    },
+    {
+      "path": "sources/geometry/04/04mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/04_campeche.zip"
+    },
+    {
+      "path": "sources/geometry/04/04mun.shp",
+      "sha256": "41f052d7c52df47777efd2067693a9606805e1713b6050e077e7e9932edf9a88",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/04_campeche.zip"
+    },
+    {
+      "path": "sources/geometry/04/04mun.shx",
+      "sha256": "1da63d3081bf6862368d43b381a5cb39235f2b2a40a6ae8c282752c52342949f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/04_campeche.zip"
+    },
+    {
+      "path": "sources/geometry/04/complete.json",
+      "sha256": "e3d91355155b3d1d4776355650ef843caf499379dd2322b0ed375d8b67553cb3"
+    },
+    {
+      "path": "sources/geometry/05/05mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/05_coahuiladezaragoza.zip"
+    },
+    {
+      "path": "sources/geometry/05/05mun.dbf",
+      "sha256": "1a4fb7f898c18df0a49b7d7df1fdfb63acfc547cbce5520401ede3aa97396334",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/05_coahuiladezaragoza.zip"
+    },
+    {
+      "path": "sources/geometry/05/05mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/05_coahuiladezaragoza.zip"
+    },
+    {
+      "path": "sources/geometry/05/05mun.shp",
+      "sha256": "4674b7827770b84a1da146868b78ef6675c7f537a2f2a8fd5710dfca4f558453",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/05_coahuiladezaragoza.zip"
+    },
+    {
+      "path": "sources/geometry/05/05mun.shx",
+      "sha256": "e6ffe944be88f70460a40ff8588535f9d0ba039d5f59817fb4b78510f2eb10d3",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/05_coahuiladezaragoza.zip"
+    },
+    {
+      "path": "sources/geometry/05/complete.json",
+      "sha256": "8ddf61358a885974f09fc93a2dae7b0ad6dd952bb36e0a43dbab5e758f7fcf6b"
+    },
+    {
+      "path": "sources/geometry/06/06mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/06_colima.zip"
+    },
+    {
+      "path": "sources/geometry/06/06mun.dbf",
+      "sha256": "81b3a3c1cb61bdd6d7f6412cba9b37918950aae9b1f0110fe44fe2a958627d91",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/06_colima.zip"
+    },
+    {
+      "path": "sources/geometry/06/06mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/06_colima.zip"
+    },
+    {
+      "path": "sources/geometry/06/06mun.shp",
+      "sha256": "8aa3fc63206df8fd209c92cd20ba16004c967dbb108163fb65ba538d36291919",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/06_colima.zip"
+    },
+    {
+      "path": "sources/geometry/06/06mun.shx",
+      "sha256": "0981328d8ce3f7a8a1aede6c008675295926fd8a1656f1449adf5e73b7854495",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/06_colima.zip"
+    },
+    {
+      "path": "sources/geometry/06/complete.json",
+      "sha256": "bb0753ac2fb4e47dce66960de4e4d134deb67ffe04c11b69b61ae9428fb35f3b"
+    },
+    {
+      "path": "sources/geometry/07/07mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/07_chiapas.zip"
+    },
+    {
+      "path": "sources/geometry/07/07mun.dbf",
+      "sha256": "45cba083c4495e6a60f40fdef2e3edb473ae9e76bc059b6d2f79f496b02ecffa",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/07_chiapas.zip"
+    },
+    {
+      "path": "sources/geometry/07/07mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/07_chiapas.zip"
+    },
+    {
+      "path": "sources/geometry/07/07mun.shp",
+      "sha256": "409b69d700240730e93b809129794ed87aa5a424b8cd39c20d9371210a109453",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/07_chiapas.zip"
+    },
+    {
+      "path": "sources/geometry/07/07mun.shx",
+      "sha256": "c67c9e3d37143035c868815798cd4e1a7870efd096778aad915cf862305bd5f7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/07_chiapas.zip"
+    },
+    {
+      "path": "sources/geometry/07/complete.json",
+      "sha256": "cf975037696794114596fdcb16a84db0053feccdb8d2cdab377ebff2f32f694c"
+    },
+    {
+      "path": "sources/geometry/08/08mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "path": "sources/geometry/08/08mun.dbf",
+      "sha256": "21e393188e911eee6995d5d292e0ce5af220d89a4a75321fda3bf4957688da4c",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "path": "sources/geometry/08/08mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "path": "sources/geometry/08/08mun.shp",
+      "sha256": "359eb71af654ab3fe9353d23148566efdaa1d450cad25adc8146ada5e2837349",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "path": "sources/geometry/08/08mun.shx",
+      "sha256": "9655929f8db496d8be154e858f10474a4ce3c7f03eb2d20926587bf5c2201883",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/08_chihuahua.zip"
+    },
+    {
+      "path": "sources/geometry/08/complete.json",
+      "sha256": "2c628785127f82b15ff17bd5a7650eef1e28db4782e6c0702b656ccce225796e"
+    },
+    {
+      "path": "sources/geometry/09/09mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "path": "sources/geometry/09/09mun.dbf",
+      "sha256": "5c1333a3ff1f641c021dfd8057b34dd8f34ed4c5217500a5e123cb34cff9c0f7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "path": "sources/geometry/09/09mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "path": "sources/geometry/09/09mun.shp",
+      "sha256": "ccdc4762d74a0cd665ed4191a8c3e956aa25dc31a52b75f35d02713a5338050b",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "path": "sources/geometry/09/09mun.shx",
+      "sha256": "a80c46ecfe7b3015fe9c3ba2e2c171ef2dc4fc5ebe1b43f9388525af4f1ab36a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/09_ciudaddemexico.zip"
+    },
+    {
+      "path": "sources/geometry/09/complete.json",
+      "sha256": "f16e0cacfb2886f409823c5568cfda874714f0c8fb53a3bf8f3ac624aa689324"
+    },
+    {
+      "path": "sources/geometry/10/10mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "path": "sources/geometry/10/10mun.dbf",
+      "sha256": "2222987062cdc359bad3f0b091f8aefb4f8c67ced342fad107bebe1a977ccff8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "path": "sources/geometry/10/10mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "path": "sources/geometry/10/10mun.shp",
+      "sha256": "8792a3f9c04999d1647ede8eb108f65bb92ef4f4a6ce69d9064d48589470a9f8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "path": "sources/geometry/10/10mun.shx",
+      "sha256": "1cfa5905ef91524e37fca8849a3a5da446711ad29951df4a259c425e2ff73e4f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/10_durango.zip"
+    },
+    {
+      "path": "sources/geometry/10/complete.json",
+      "sha256": "fdc8b50bdc1409699fc8ec2194c178dd7a6bf186aa896ba6bdfb626edd322efe"
+    },
+    {
+      "path": "sources/geometry/11/11mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "path": "sources/geometry/11/11mun.dbf",
+      "sha256": "41e01f4c74acfbf2c7c7eed63fc610e9a312661fea38eefedf3bd6f9192d65d7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "path": "sources/geometry/11/11mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "path": "sources/geometry/11/11mun.shp",
+      "sha256": "500041928fe17c2f1fda3ffd6ec14a6c106dc5275b65c48628fac43ec48c56e8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "path": "sources/geometry/11/11mun.shx",
+      "sha256": "fadf5a5376bea13d2a471429ac40926b8e0878ae778a1e24ab06288c197b430d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/11_guanajuato.zip"
+    },
+    {
+      "path": "sources/geometry/11/complete.json",
+      "sha256": "81cf599f7078577f3ae8c9a269be00950f45fae06c21f680438b15d66e88140c"
+    },
+    {
+      "path": "sources/geometry/12/12mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "path": "sources/geometry/12/12mun.dbf",
+      "sha256": "2433ad93b139f409a631ad5bc5b9c910d6b1d3ff9fa438156f7a1c74b3f5189a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "path": "sources/geometry/12/12mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "path": "sources/geometry/12/12mun.shp",
+      "sha256": "799e8a7070ce5f314a186e774aa9ab33f3c02b6d241c8078afc1cf22f2b0e220",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "path": "sources/geometry/12/12mun.shx",
+      "sha256": "826e24887155609bd5eaf620c6f7bc4aeb390ff0cec3242b31abf7c4e9e4a7cb",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/12_guerrero.zip"
+    },
+    {
+      "path": "sources/geometry/12/complete.json",
+      "sha256": "a75ec4b089c263b3a6388ecd6c355e0fb9091a0ee39e4cafb84185620c031153"
+    },
+    {
+      "path": "sources/geometry/13/13mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/13_hidalgo.zip"
+    },
+    {
+      "path": "sources/geometry/13/13mun.dbf",
+      "sha256": "79816035b13d2a36420e7e6277562cc603f94aa4c2456cd996bbfc5c50711801",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/13_hidalgo.zip"
+    },
+    {
+      "path": "sources/geometry/13/13mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/13_hidalgo.zip"
+    },
+    {
+      "path": "sources/geometry/13/13mun.shp",
+      "sha256": "2f1820bec2a59863f4bdcf9e9e23f6dd64b3637a3b9ad80e3716fc9e0fe1d53a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/13_hidalgo.zip"
+    },
+    {
+      "path": "sources/geometry/13/13mun.shx",
+      "sha256": "173d6e8b89081b4f531186df838b497d35a517904a159e6be7f6aa50b6472e3d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/13_hidalgo.zip"
+    },
+    {
+      "path": "sources/geometry/13/complete.json",
+      "sha256": "71a18505de7b8ba0c994fde837ae4352ccd5e6e2f0191354b4034a577baa3c0d"
+    },
+    {
+      "path": "sources/geometry/14/14mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+    },
+    {
+      "path": "sources/geometry/14/14mun.dbf",
+      "sha256": "49d1a02d4e43c42365986596efc65286a9fcec491d47b12a7c3d0c4269c8fe8a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+    },
+    {
+      "path": "sources/geometry/14/14mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+    },
+    {
+      "path": "sources/geometry/14/14mun.shp",
+      "sha256": "18e34b6e0545d604ed081c494ed6ee77509c3788e4a0e17b3b321334dd0ffba0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+    },
+    {
+      "path": "sources/geometry/14/14mun.shx",
+      "sha256": "d84198fbb5ad793d87b5c6f62d2a75392f3ec7aeb2e5f64dede85a1edb3828d2",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/14_jalisco.zip"
+    },
+    {
+      "path": "sources/geometry/14/complete.json",
+      "sha256": "b9f54be86645fd7f3000a98e6b0380f4f2fd46823e96a66818e99dc078474a39"
+    },
+    {
+      "path": "sources/geometry/15/15mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "path": "sources/geometry/15/15mun.dbf",
+      "sha256": "af967448b85fed26064d1f615474e1207c643b47816acb85e2b901b0b485bc62",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "path": "sources/geometry/15/15mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "path": "sources/geometry/15/15mun.shp",
+      "sha256": "3a6316a46e9a5f28f9be55c3bdfab8f957688a45ad3d0a657e01b24eb7d0fc81",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "path": "sources/geometry/15/15mun.shx",
+      "sha256": "2e639b9182acffcb78b265cb499d8772941a256c0e610eec6d7656212e6d5cdf",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/15_mexico.zip"
+    },
+    {
+      "path": "sources/geometry/15/complete.json",
+      "sha256": "b652d06d80443d8a64db9d869092fc17fcd89c6bad5cec7f0d936431f186cb0d"
+    },
+    {
+      "path": "sources/geometry/16/16mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "path": "sources/geometry/16/16mun.dbf",
+      "sha256": "8bc7c97ef32fa0030b0f3959c3cb8854178e2058ecc6a10543228d72480d5382",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "path": "sources/geometry/16/16mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "path": "sources/geometry/16/16mun.shp",
+      "sha256": "7568307188238e3dd3bd474166e5c97d44b2c73d09bf6f2232e130d709c5de56",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "path": "sources/geometry/16/16mun.shx",
+      "sha256": "180ae9906631dc821cc9f7d51b4d9c1cc02c283fe954fc5d3708a9776edd3412",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/16_michoacandeocampo.zip"
+    },
+    {
+      "path": "sources/geometry/16/complete.json",
+      "sha256": "e22a2f56ccbf556c1cfedbd07aed973d868815eb1931acdfc75c16847d2a2a9d"
+    },
+    {
+      "path": "sources/geometry/17/17mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "path": "sources/geometry/17/17mun.dbf",
+      "sha256": "2ab554fe1cd0c5e4d2e39d597bfb1263018f4d74ea51a09caf46b9725402d482",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "path": "sources/geometry/17/17mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "path": "sources/geometry/17/17mun.shp",
+      "sha256": "18e6c9e9a68713f6f5601d3126f8d352cfc42af93bd1e455bb5dc5e5049e9452",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "path": "sources/geometry/17/17mun.shx",
+      "sha256": "4c92b2f3683cfab72c433e9daf4f3f6eaa56ee32a02422d55d385084c3c042cf",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/17_morelos.zip?download=1"
+    },
+    {
+      "path": "sources/geometry/17/complete.json",
+      "sha256": "426d4767c858229242fa4157a21554e7e6a97b01d11595353beb7e4c28fe279c"
+    },
+    {
+      "path": "sources/geometry/18/18mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.dbf",
+      "sha256": "a89e39a522a9804a7291014ead9ec7c38fd99f5de79cbc105baa1b5332606178",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.sbn",
+      "sha256": "d4b1a9dabeb1ad8da596a2788f00df8ea89e2906223ba5279930f4b371db9b58",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.sbx",
+      "sha256": "eed35467943bfd53e9a89472de7a1d8d3669a0c3a513b9f8084c92260bbc3182",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.shp",
+      "sha256": "b00c52d07d486b028fffae449f640d2729b57d230a2e01c379524f6c013fca5b",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/18mun.shx",
+      "sha256": "572a555f324eef755eafce3d592b1cd5a2c866c6cc58ad9cf6e720ee5adeb2e7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/18_nayarit.zip"
+    },
+    {
+      "path": "sources/geometry/18/complete.json",
+      "sha256": "b5ae9b1d48fdac64a2902c31febbda2cb5475706239b44bbf8f1739ce3786cb0"
+    },
+    {
+      "path": "sources/geometry/19/19mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "path": "sources/geometry/19/19mun.dbf",
+      "sha256": "cacb6c396feef3518b6214ce82142c53dad22db85458d8e46e01302a7595393d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "path": "sources/geometry/19/19mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "path": "sources/geometry/19/19mun.shp",
+      "sha256": "bcccdbde3502d3d5648388c629f18db945e3bb9bcf2d311927acac83f1f72c95",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "path": "sources/geometry/19/19mun.shx",
+      "sha256": "55c5b297e43e06f069a9200f9a35fe999ef2e9a51a102666826acfdfbe4247a4",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/19_nuevoleon.zip"
+    },
+    {
+      "path": "sources/geometry/19/complete.json",
+      "sha256": "2d03e14e8a69eb4b58c2c54c1bd95c25dd02e829e8c57172f668100f9b1bc1dc"
+    },
+    {
+      "path": "sources/geometry/20/20mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.dbf",
+      "sha256": "6b27b744659e7c91f29e499bf1d8fd9bfc35101384914117060af58e009e41a8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.sbn",
+      "sha256": "36bb176a673b8877f47fe830bbdeb72239fb884c50a9ff8ba6e37516854ec025",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.sbx",
+      "sha256": "a1cf474ed0230ed93a07d485866903a010976a8b4ea3f387626f99b69f86aac4",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.shp",
+      "sha256": "19258dfe3679720d90377742dafbc7ca762a47faaf77efd59929c82aa1da4239",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/20mun.shx",
+      "sha256": "95bf645442c6b119d724a4fc42bd4518eea565a0f98f9eba6905ccb1a6de1fba",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/20_oaxaca.zip"
+    },
+    {
+      "path": "sources/geometry/20/complete.json",
+      "sha256": "29eed09a4a318f54cf93736af088f00d295ac087a527b75d2110fe52e76931fa"
+    },
+    {
+      "path": "sources/geometry/21/21mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "path": "sources/geometry/21/21mun.dbf",
+      "sha256": "4cc17ffcaa91e34685c5fc4926e7378e0e9d7a8664519d48f92106116ff22be4",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "path": "sources/geometry/21/21mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "path": "sources/geometry/21/21mun.shp",
+      "sha256": "0b754037b408bb162dec6e67c24094ee72b0f7cdf059ebf9ffa00c4e3985b4f8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "path": "sources/geometry/21/21mun.shx",
+      "sha256": "d7d6b5634aac5942c96ad5d1181ba8e269e02fd921d89eb046a20ac7931eecb5",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/21_puebla.zip"
+    },
+    {
+      "path": "sources/geometry/21/complete.json",
+      "sha256": "752161327f40c78b3d8f49aae3e6f9537640bb4c7408fa9ac8fa2b6130fe1f9e"
+    },
+    {
+      "path": "sources/geometry/22/22mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "path": "sources/geometry/22/22mun.dbf",
+      "sha256": "7b79f451d0a04c9fe663ff6ce1f4d16c63b39c4e5c10b39b72a132c943fcbdc1",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "path": "sources/geometry/22/22mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "path": "sources/geometry/22/22mun.shp",
+      "sha256": "f2bac43f427cd214ebb005f868a0720ecdef1d651270a12230ffe6f6a179f235",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "path": "sources/geometry/22/22mun.shx",
+      "sha256": "cd3c9c12663ff407ef26b3cbb07fc3462884a4f7c92b4832e5301936b83b7585",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/22_queretaro.zip"
+    },
+    {
+      "path": "sources/geometry/22/complete.json",
+      "sha256": "eb81174474ec00fb156fcd79add16fdfc46d9262d3e9d3644a5374777e160715"
+    },
+    {
+      "path": "sources/geometry/23/23mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "path": "sources/geometry/23/23mun.dbf",
+      "sha256": "8ed000f05e96102fffe5a2580904f79f2b23f0efd09c68dad147f6a287f8c3ea",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "path": "sources/geometry/23/23mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "path": "sources/geometry/23/23mun.shp",
+      "sha256": "f6e231e9e515ff948494b45adb89546e1bb51b7ece3c9eaf5a6b90fa9f4b08b0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "path": "sources/geometry/23/23mun.shx",
+      "sha256": "d4801a56ce53377e9860f416a6e0dd16415683a31c002c50c13bbf152e6e4a6d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/23_quintanaroo.zip"
+    },
+    {
+      "path": "sources/geometry/23/complete.json",
+      "sha256": "2486b93c4a3888164fbfbed3f700220f1ced0069d87e9dcc9d899ef08eda3203"
+    },
+    {
+      "path": "sources/geometry/24/24mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "path": "sources/geometry/24/24mun.dbf",
+      "sha256": "5926d4134f55baa335c3b0e9ca3fe1f6248627b4748e26f52b0ffe68b3261fcc",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "path": "sources/geometry/24/24mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "path": "sources/geometry/24/24mun.shp",
+      "sha256": "831af8e229a64f0cbd84dd1ab58d7cb8041bca948b9a5bdab15f074288da83a8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "path": "sources/geometry/24/24mun.shx",
+      "sha256": "08fce6d58c938ec11a2235a6089628192112d5f481d3fd2ac2eea3c75d047605",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/24_sanluispotosi.zip"
+    },
+    {
+      "path": "sources/geometry/24/complete.json",
+      "sha256": "cb792656e371ef13da5bb3eba15e7168bbfb311c58dc42d80904464d8e3e062f"
+    },
+    {
+      "path": "sources/geometry/25/25mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "path": "sources/geometry/25/25mun.dbf",
+      "sha256": "7a4c1eb83c77219e5aa557647fdb5862fa259110509013154ca2647dddd3cb5a",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "path": "sources/geometry/25/25mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "path": "sources/geometry/25/25mun.shp",
+      "sha256": "0735782bc060bd568d1d3f00fec8ff716c7c9954b2f1ccdf0d23a237bcd0d9ee",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "path": "sources/geometry/25/25mun.shx",
+      "sha256": "631f3f66407a104c8259f8845bebe0f9c871de7f918ac740de868306048e32f2",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/25_sinaloa.zip"
+    },
+    {
+      "path": "sources/geometry/25/complete.json",
+      "sha256": "b10d9e45b55b70dc1d1cd870730283a8f09ee5a32faebf46dce8f1c68fdbe9dc"
+    },
+    {
+      "path": "sources/geometry/26/26mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "path": "sources/geometry/26/26mun.dbf",
+      "sha256": "d94ce30d0ed9ac7b5ba30fddb736182ebd8b7e7990988af132d3a0323c98fbd0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "path": "sources/geometry/26/26mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "path": "sources/geometry/26/26mun.shp",
+      "sha256": "1ce0d507f89d453a553b2d746eb8bb610dfbfb34819b49ab8730fde473f50ed7",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "path": "sources/geometry/26/26mun.shx",
+      "sha256": "a64eda89684986fe84fbc9908942954fe0f3ecb5f5055e4b4988b3e10d90fcd1",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/26_sonora.zip"
+    },
+    {
+      "path": "sources/geometry/26/complete.json",
+      "sha256": "d395311675e15b45c308718e26e6ce7a190b9ede71c442ee90b6b68577323b50"
+    },
+    {
+      "path": "sources/geometry/27/27mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/27_tabasco.zip"
+    },
+    {
+      "path": "sources/geometry/27/27mun.dbf",
+      "sha256": "435d03d82bd8424dfad461bc69f3c5cf409049816c57b9c294478544feb666a5",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/27_tabasco.zip"
+    },
+    {
+      "path": "sources/geometry/27/27mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/27_tabasco.zip"
+    },
+    {
+      "path": "sources/geometry/27/27mun.shp",
+      "sha256": "32c1424c2a752ed7ecac30f593a0f5e0da3122b47717dff53542107dbc32e5c0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/27_tabasco.zip"
+    },
+    {
+      "path": "sources/geometry/27/27mun.shx",
+      "sha256": "dbdd4db710576221e4b7c15ab181898b48e3bab10b02a15e45f4e2416d7b7936",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/27_tabasco.zip"
+    },
+    {
+      "path": "sources/geometry/27/complete.json",
+      "sha256": "3e4a43a510881db5a38840777b34de02c8814371101737206238996586055926"
+    },
+    {
+      "path": "sources/geometry/28/28mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/28_tamaulipas.zip"
+    },
+    {
+      "path": "sources/geometry/28/28mun.dbf",
+      "sha256": "a8f402e6c79535922db2e6e3b6d2a46dc6339e4df0bf58d7ccb951c7368fa367",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/28_tamaulipas.zip"
+    },
+    {
+      "path": "sources/geometry/28/28mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/28_tamaulipas.zip"
+    },
+    {
+      "path": "sources/geometry/28/28mun.shp",
+      "sha256": "b64bbfd8e369d9d3cdbd4fc5896b31399c1748a11ebc4afa9e857c055693a6d9",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/28_tamaulipas.zip"
+    },
+    {
+      "path": "sources/geometry/28/28mun.shx",
+      "sha256": "a5974c148c439b8fa8ceba9ab271cf2fdc15c0ac427d86e1d91a7304c1be9f1f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/28_tamaulipas.zip"
+    },
+    {
+      "path": "sources/geometry/28/complete.json",
+      "sha256": "e91cd8cfcc8366d01797473b993f7cf83c65d694d03b03e1de60578d25827cbc"
+    },
+    {
+      "path": "sources/geometry/29/29mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "path": "sources/geometry/29/29mun.dbf",
+      "sha256": "bf1d606a8427746c31e26298deaa663a04ed807f02d68ea4054d168caa12226f",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "path": "sources/geometry/29/29mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "path": "sources/geometry/29/29mun.shp",
+      "sha256": "2a65a12ac8008621679b012a6fe5a5b3391403016f6370768c109635d7815663",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "path": "sources/geometry/29/29mun.shx",
+      "sha256": "ddd7d6c97e89639bbb477450e63335579bfa1811768835094a38f0062f343e83",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/29_tlaxcala.zip"
+    },
+    {
+      "path": "sources/geometry/29/complete.json",
+      "sha256": "bc6aea0b8a4d41118fd7c1b50b526989431a1ed2e42ca199ed9c8319a9403422"
+    },
+    {
+      "path": "sources/geometry/30/30mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "path": "sources/geometry/30/30mun.dbf",
+      "sha256": "feae79422166f2f5600b06cb469f56a1a33416bfe542a7322ce423765b4b6e43",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "path": "sources/geometry/30/30mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "path": "sources/geometry/30/30mun.shp",
+      "sha256": "89aa8d1490f1c36310f6ebd6949602276c21d8522c91729fbc1b090547fbebac",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "path": "sources/geometry/30/30mun.shx",
+      "sha256": "c0e5dccb02b39873519517dd4ba8419d45c7e54d6efd18a6b44167107fb396e8",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/30_veracruzignaciodelallave.zip"
+    },
+    {
+      "path": "sources/geometry/30/complete.json",
+      "sha256": "344775784e6d245f00c15ce31f73de37b63805cef388c3fd9d3e64108a56e59d"
+    },
+    {
+      "path": "sources/geometry/31/31mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.dbf",
+      "sha256": "dd7a4b9e7b403ecd62708a49024b543653a1946631b103a7edb3cec0f4a8e3a3",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.sbn",
+      "sha256": "0f7748e3596ddc127019f289adf7a598d160c8901c66d36bf665d3979ce03e54",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.sbx",
+      "sha256": "4de9130d3bbc7d450e85dfefbb3c2959df44a2bba9cbcc5be5a26ce399334993",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.shp",
+      "sha256": "ac882fff6db2643050d7ec5efda1dc1c4055677eae1505d77eeb94175ddb0527",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/31mun.shx",
+      "sha256": "cffb2d9cd55201c4c2a5f9b06c49439c5bf30cff5a922671da4fb22b697bec93",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/31_yucatan.zip"
+    },
+    {
+      "path": "sources/geometry/31/complete.json",
+      "sha256": "4d15ad45dfe928548b9311116e2e78aa22ae6be35a5a1c8568d7daef49f2b505"
+    },
+    {
+      "path": "sources/geometry/32/32mun.cpg",
+      "sha256": "6338217cd6532629ecd86cfedf3231cae1a20b7bc0421f5297e4ab9416789462",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/32_zacatecas.zip"
+    },
+    {
+      "path": "sources/geometry/32/32mun.dbf",
+      "sha256": "be4acab438f207090edde0d8fb754c107205032a19f7261b07f1ea4fc4af200d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/32_zacatecas.zip"
+    },
+    {
+      "path": "sources/geometry/32/32mun.prj",
+      "sha256": "df540d82c2de443ed11b28d813dd5631d81b9d5b1c5615d65106a597874bfb31",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/32_zacatecas.zip"
+    },
+    {
+      "path": "sources/geometry/32/32mun.shp",
+      "sha256": "289f3ca8663126fe57a6a259a3aa17c8f50d7e1dc6719d79b6e9dff3cd5db81d",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/32_zacatecas.zip"
+    },
+    {
+      "path": "sources/geometry/32/32mun.shx",
+      "sha256": "cc35552a5beefb811dfed591c26d2531abc2a93a3309a6e88c2c486217ababe0",
+      "url": "https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/geografia/marcogeo/794551196649/32_zacatecas.zip"
+    },
+    {
+      "path": "sources/geometry/32/complete.json",
+      "sha256": "b917adff4aab1c9631e2c319d02f8ea61937aeab3ac288be1b4a500c5495c25f"
+    },
+    {
+      "path": "sources/live/Q10758396.json",
+      "sha256": "1e927237934dca4331e6f40bc0c988f5092aeec1a9862f601cb5c7a02555cf6a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10758396.json"
+    },
+    {
+      "path": "sources/live/Q10758396.meta.json",
+      "sha256": "03158b91b94eeb1f4c9cfdd60aaa34f3c62d3a010ce620ff9cd634400252f093"
+    },
+    {
+      "path": "sources/live/Q10794740.json",
+      "sha256": "61ce08f851b485795ad52220f5e412c353dd0a0dffe5efb97e85718ed95d5da6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10794740.json"
+    },
+    {
+      "path": "sources/live/Q10794740.meta.json",
+      "sha256": "13f7a79862c185423611a06286538f290b3b026abb7b146ec91da848d952d84e"
+    },
+    {
+      "path": "sources/live/Q10801509.json",
+      "sha256": "cc9043dcffda349797488136c46f2707f4cd9d041533fb91f7ddd192ca0ec3e8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10801509.json"
+    },
+    {
+      "path": "sources/live/Q10801509.meta.json",
+      "sha256": "872da8a5ba9bbbde703f37709ada5e14a9f9fc970d2294301eb8b75b5ef40df3"
+    },
+    {
+      "path": "sources/live/Q10801832.json",
+      "sha256": "9df25c7a79618f9dcddf18d94e13017f1f47db9a192d93d2f69ae139374c166b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10801832.json"
+    },
+    {
+      "path": "sources/live/Q10801832.meta.json",
+      "sha256": "e738811626d466a860e4c0999352f3b5ac363df5c1dcdc3c5df468faca11970c"
+    },
+    {
+      "path": "sources/live/Q10824502.json",
+      "sha256": "c2be484e74746b182c59b8399ddf64a25ec92449cf9e301b4dc1de5e72b5fc1b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10824502.json"
+    },
+    {
+      "path": "sources/live/Q10824502.meta.json",
+      "sha256": "1bbebebb72af280b7468c5db0ddeaa84f23fb71cc100c137b8ff64cca244b42f"
+    },
+    {
+      "path": "sources/live/Q10862721.json",
+      "sha256": "3671fc6472ef4f58a356fa374ff2cd7d1fc02ae59e8ec915ee130a4c0a1e5f66",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10862721.json"
+    },
+    {
+      "path": "sources/live/Q10862721.meta.json",
+      "sha256": "7dfe5b481cf85934cfe078ec297c6fe365d238c898526c4f0d5711d6422554ad"
+    },
+    {
+      "path": "sources/live/Q12156482.json",
+      "sha256": "888729c9efb4c609d8b846e81e2129f1b123ac093cbee92ca55ab9287de5dcd4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12156482.json"
+    },
+    {
+      "path": "sources/live/Q12156482.meta.json",
+      "sha256": "25f1ff4bc8be6b3c4989120f2ff07e4b94b882138cd05105aa59932fb4c66fb7"
+    },
+    {
+      "path": "sources/live/Q16302486.json",
+      "sha256": "2e0adbbf21183b6b5b55099a4b36b767440279b0b934b0fc75f236c9c5af1c4b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16302486.json"
+    },
+    {
+      "path": "sources/live/Q16302486.meta.json",
+      "sha256": "40607c26dc901b503b2718e97316514be8b3309bffc93b80440fe78d0412edaa"
+    },
+    {
+      "path": "sources/live/Q17090231.json",
+      "sha256": "b49769fb1d9563823b49261b3ead5a6912240345836c821e498e91e206b31601",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17090231.json"
+    },
+    {
+      "path": "sources/live/Q17090231.meta.json",
+      "sha256": "a5652f7cbeaf715dd7427b20b14fa82f776a4b1e1ccd4dd921c911773894a881"
+    },
+    {
+      "path": "sources/live/Q18417583.json",
+      "sha256": "0caa404292f6059cbb7ece103cc22dbd40ab53f70d31f80271888cd0cffaf96e",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18417583.json"
+    },
+    {
+      "path": "sources/live/Q18417583.meta.json",
+      "sha256": "7238743a88439f6f33553fd0343f018ae2e5bb67eb20f59cbb330dfd1c550d14"
+    },
+    {
+      "path": "sources/live/Q18419347.json",
+      "sha256": "8b93c52658755444e29c508310c3aff0ba40a6a9157e5f5eba3b9d0aa8dc2574",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18419347.json"
+    },
+    {
+      "path": "sources/live/Q18419347.meta.json",
+      "sha256": "2990c8114f1c8ca7f9de6c6e54198fe7cf76f40ca334e03a9c25347ee9df3c5b"
+    },
+    {
+      "path": "sources/live/Q1845955.json",
+      "sha256": "e26ddf5ce7e53105e6a3ef2dc8981b7b09c1c4e7ab520e390df787b62ddd55f3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1845955.json"
+    },
+    {
+      "path": "sources/live/Q1845955.meta.json",
+      "sha256": "0d7c423e65e900cf889be4f82c1447f54c0260877892695db6a83747d7d68eed"
+    },
+    {
+      "path": "sources/live/Q18763683.json",
+      "sha256": "527e2429062f5bdbb2c9d04a9d981219a460a1057b4e893a8d475ce11e800a5d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18763683.json"
+    },
+    {
+      "path": "sources/live/Q18763683.meta.json",
+      "sha256": "78177651c00d0e81b6ef5ac728ad6ae1c9acab1a5e17b73ed87c2e35bf70b8e1"
+    },
+    {
+      "path": "sources/live/Q1925390.json",
+      "sha256": "e8dde2739c17e74bdd92f8c5d04aee089ebf3ab87f923c92cf34cad9b8a72c3a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1925390.json"
+    },
+    {
+      "path": "sources/live/Q1925390.meta.json",
+      "sha256": "bbeec8569131251818df1feb3c03539095d52f73dfa95b288b105b9f6f6fcb5f"
+    },
+    {
+      "path": "sources/live/Q1941734.json",
+      "sha256": "fb3c858092f3baf73766d732393ab6163e91bfeeea635e318af21cbc3fd863e9",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1941734.json"
+    },
+    {
+      "path": "sources/live/Q1941734.meta.json",
+      "sha256": "ee14239d72c32934d45faa1631c2fb2f8cacf22ce2f4d9dba0211d0d920c8e4d"
+    },
+    {
+      "path": "sources/live/Q1949370.json",
+      "sha256": "d474e30b79e2118eb42f13a890538d250c712d3a306dd1efcad539ff729ba8ca",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1949370.json"
+    },
+    {
+      "path": "sources/live/Q1949370.meta.json",
+      "sha256": "84ff24b2774fc6025cfb0b60c9750348a0b7ab7e39b577b96491e3284bb22215"
+    },
+    {
+      "path": "sources/live/Q2000748.json",
+      "sha256": "33d4b84a54d798ab40d608303bfbf2b5f1fbeb088f3f31f0cf834a56bc63e8ee",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2000748.json"
+    },
+    {
+      "path": "sources/live/Q2000748.meta.json",
+      "sha256": "c995dd11a83d83f0487d698232680822f3d218c2e38449000fc815ffdfa1f870"
+    },
+    {
+      "path": "sources/live/Q2001148.json",
+      "sha256": "c5faf46bfae9ff591b6a2f5ab562bed94222fb369bb577d48622ad32e529c518",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2001148.json"
+    },
+    {
+      "path": "sources/live/Q2001148.meta.json",
+      "sha256": "9c35ae8e4764ef9e6492088c868261ca1c1af945a1749a93a1f9cc083c8c4258"
+    },
+    {
+      "path": "sources/live/Q2010445.json",
+      "sha256": "fafe96113f479b3041728e424e56509b2e15ec8b99cceda3b3ede1b42304c813",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2010445.json"
+    },
+    {
+      "path": "sources/live/Q2010445.meta.json",
+      "sha256": "2f4319f2e744b87b053d2dcebd4ac2455b53f63ce002dabc39fb01de1224675f"
+    },
+    {
+      "path": "sources/live/Q20129532.json",
+      "sha256": "a4a73378fe6d48983d4db337f78c305c1d7343be3507f50c027e2006c0de5ab4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20129532.json"
+    },
+    {
+      "path": "sources/live/Q20129532.meta.json",
+      "sha256": "26f9180edf3f5f813834da7a2dd9820289ab4e617b25eb0c27739092085d153e"
+    },
+    {
+      "path": "sources/live/Q20129713.json",
+      "sha256": "68e2abf1a2d63863e79328242af2bade8ca2d38389114706249f0d3b7beba076",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20129713.json"
+    },
+    {
+      "path": "sources/live/Q20129713.meta.json",
+      "sha256": "023bcced9b7e8a48751ba8c3f08074c9d2051f5bc5563ae1772f70a969010ee3"
+    },
+    {
+      "path": "sources/live/Q20134233.json",
+      "sha256": "e852fa54cedd0617855c02d856be25c2f8ec66d5436ed8450c91481f47886bc4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20134233.json"
+    },
+    {
+      "path": "sources/live/Q20134233.meta.json",
+      "sha256": "96a70581340417e94c23e8211925d8cfbfe35386e093979f1c161f9be6f5905e"
+    },
+    {
+      "path": "sources/live/Q20134267.json",
+      "sha256": "e852fa54cedd0617855c02d856be25c2f8ec66d5436ed8450c91481f47886bc4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20134267.json"
+    },
+    {
+      "path": "sources/live/Q20134267.meta.json",
+      "sha256": "6c640f4f6548301ef415a58a054ce79e1c47cf8b6009cde0cc2fc6ca701c881c"
+    },
+    {
+      "path": "sources/live/Q20135029.json",
+      "sha256": "cf7fb5035ec811e753241c72dcd28d6a7142b1cbb7aa1096d79885f2ac78d7c0",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20135029.json"
+    },
+    {
+      "path": "sources/live/Q20135029.meta.json",
+      "sha256": "d615ad39812278e66d123a8a5c1f5b9c5fe56771eba7612a5412f8b63a30ef27"
+    },
+    {
+      "path": "sources/live/Q20138554.json",
+      "sha256": "83acea1c26af3503790e3b63175b694d04a463d98fdbd0adb51b44e2a876dfa3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20138554.json"
+    },
+    {
+      "path": "sources/live/Q20138554.meta.json",
+      "sha256": "e2d1b62ba28e903c808f848a053259fc22fc33992ef0ea2dbd67bea3f03c7057"
+    },
+    {
+      "path": "sources/live/Q20139855.json",
+      "sha256": "8ec177afafcb2198f15f6110a15fba3303df4446d4f96ef07ac79192c492c86a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20139855.json"
+    },
+    {
+      "path": "sources/live/Q20139855.meta.json",
+      "sha256": "d8e78431d517ccb3e2b5c870abee9305b96745adc5091ca377e769c2fdf41993"
+    },
+    {
+      "path": "sources/live/Q20140723.json",
+      "sha256": "66e15b72d55d6726bce52606297bfe4020925927eb6bd78c4cb7d3a25d856a41",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20140723.json"
+    },
+    {
+      "path": "sources/live/Q20140723.meta.json",
+      "sha256": "d18b972c721921e2d60106ea85cfcb9e4c60a6dcd619a2bfcb52e20d746fc7c9"
+    },
+    {
+      "path": "sources/live/Q20144920.json",
+      "sha256": "7529dc9e371e37cb117f6b3733bcf93d99dcc967f69f99f99068660c3b2c7671",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20144920.json"
+    },
+    {
+      "path": "sources/live/Q20144920.meta.json",
+      "sha256": "a683178fb21792d9d8dbfca8a662d5b59d5b42e0b4b9633017c55ae85e6ddcf0"
+    },
+    {
+      "path": "sources/live/Q20146492.json",
+      "sha256": "fc1eecc44297b666ac67db093eef1c2b9fd4ea1989b1994c25d51bb122432003",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20146492.json"
+    },
+    {
+      "path": "sources/live/Q20146492.meta.json",
+      "sha256": "e6940c5aa93993500b2c2c307b595c4e5c10683acaba5f3edceebcf035270047"
+    },
+    {
+      "path": "sources/live/Q20147209.json",
+      "sha256": "7529dc9e371e37cb117f6b3733bcf93d99dcc967f69f99f99068660c3b2c7671",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20147209.json"
+    },
+    {
+      "path": "sources/live/Q20147209.meta.json",
+      "sha256": "18b057ac052eae09427f29455f5bd9970841e6ba9db1df7381285998e1a79088"
+    },
+    {
+      "path": "sources/live/Q20148531.json",
+      "sha256": "cafe3f167ee78af1c01bc44eb2685f1b2dfb569b7c6a3c236f282a061f819cb4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20148531.json"
+    },
+    {
+      "path": "sources/live/Q20148531.meta.json",
+      "sha256": "be566170539615a5b34583e8d5a392415ff313cce7bfd42aefc1d133b2e3aaca"
+    },
+    {
+      "path": "sources/live/Q20148565.json",
+      "sha256": "2e0adbbf21183b6b5b55099a4b36b767440279b0b934b0fc75f236c9c5af1c4b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20148565.json"
+    },
+    {
+      "path": "sources/live/Q20148565.meta.json",
+      "sha256": "6096002e772b098076f191e0ec4d80413242988870036c0c211d1bbc9ab14e8b"
+    },
+    {
+      "path": "sources/live/Q20148948.json",
+      "sha256": "065e68ad5be14d97b32cc6803f29215305260aaf247d78193783c6e3ee0848be",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20148948.json"
+    },
+    {
+      "path": "sources/live/Q20148948.meta.json",
+      "sha256": "1deb8cd4c5a41e8bafcb2b5e57284b1f6d5b410f9193378a4bb1b316dd4a3133"
+    },
+    {
+      "path": "sources/live/Q20149556.json",
+      "sha256": "04b1d56192722c6f7a95089882999da85dacef72cc13bde255019fc165d3d4d8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20149556.json"
+    },
+    {
+      "path": "sources/live/Q20149556.meta.json",
+      "sha256": "461420ad91f174ffe01edcc768fb469a64ff9d85c83a2d142af899bbb74e5bb2"
+    },
+    {
+      "path": "sources/live/Q20149594.json",
+      "sha256": "fb3c858092f3baf73766d732393ab6163e91bfeeea635e318af21cbc3fd863e9",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20149594.json"
+    },
+    {
+      "path": "sources/live/Q20149594.meta.json",
+      "sha256": "cf9cb3baff6f5da347d8d83f1811c5c6b4c56c4ff3def5e61caecb4da46a2360"
+    },
+    {
+      "path": "sources/live/Q20149648.json",
+      "sha256": "f5e94d7d435eb8af55534590dc6ff9c39f39c5876159029d6500dd606e85c55e",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20149648.json"
+    },
+    {
+      "path": "sources/live/Q20149648.meta.json",
+      "sha256": "d2965ab0483a882131a009ed4bd04fa4b4adcdbb24f690833311b63c306abcdc"
+    },
+    {
+      "path": "sources/live/Q20199402.json",
+      "sha256": "9c8fceb8dc32c30c0c0ec91027905703ba2c90fb08e6024e99f4bd13409bfca4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20199402.json"
+    },
+    {
+      "path": "sources/live/Q20199402.meta.json",
+      "sha256": "04d629f367ddb8c9f9aab03c8219c05c35da4ae1d5de7cd5de84635b2f06ec25"
+    },
+    {
+      "path": "sources/live/Q20214043.json",
+      "sha256": "7e156bc0f4e74f21d3290729fbac825228e3d7aed8d492b1cb2f68068677a47b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20214043.json"
+    },
+    {
+      "path": "sources/live/Q20214043.meta.json",
+      "sha256": "23993096c94148428c94cf295f64f57e066a589bafe09378952dee1aea9ea591"
+    },
+    {
+      "path": "sources/live/Q20220456.json",
+      "sha256": "888729c9efb4c609d8b846e81e2129f1b123ac093cbee92ca55ab9287de5dcd4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20220456.json"
+    },
+    {
+      "path": "sources/live/Q20220456.meta.json",
+      "sha256": "b63cc664a749fbc983596c98c921fcc508cddadf47ea3f0dd5e32c471b0895b6"
+    },
+    {
+      "path": "sources/live/Q20221840.json",
+      "sha256": "61ce08f851b485795ad52220f5e412c353dd0a0dffe5efb97e85718ed95d5da6",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20221840.json"
+    },
+    {
+      "path": "sources/live/Q20221840.meta.json",
+      "sha256": "008d3aa7e8b6000f499ce546d5753f698a0c1d7b0099e90be82c89d150573d5f"
+    },
+    {
+      "path": "sources/live/Q20224509.json",
+      "sha256": "5e4fa2d1f785b4c210a4f363c18891f5ec5362ebbdebba5707ca46bc309d05fd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20224509.json"
+    },
+    {
+      "path": "sources/live/Q20224509.meta.json",
+      "sha256": "a6d6093614bdf12af4029f2c6ebf7954e15e589872e29ab31d039305192c9115"
+    },
+    {
+      "path": "sources/live/Q20224658.json",
+      "sha256": "c5faf46bfae9ff591b6a2f5ab562bed94222fb369bb577d48622ad32e529c518",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20224658.json"
+    },
+    {
+      "path": "sources/live/Q20224658.meta.json",
+      "sha256": "047fe58a7878992f120e377e0051849c33b5ffe69ea9997aa36e6167801111d4"
+    },
+    {
+      "path": "sources/live/Q20227708.json",
+      "sha256": "5b82aa1d541e39714373e4c922cd78f54d43732a86b590e9d96291912569763d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20227708.json"
+    },
+    {
+      "path": "sources/live/Q20227708.meta.json",
+      "sha256": "57ef906b2d6c64346473e77ee0db88c3a37665396e112f8238e67ffb7f53bf3e"
+    },
+    {
+      "path": "sources/live/Q20229901.json",
+      "sha256": "1e3e46350a49ac5d27f6cbf2472670c04362c986214de810c0dbe92f8b56f887",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20229901.json"
+    },
+    {
+      "path": "sources/live/Q20229901.meta.json",
+      "sha256": "a3de489a8ba1aabc84f2d8446568fb289af47c49ffc3680222126b34245d94c2"
+    },
+    {
+      "path": "sources/live/Q20230171.json",
+      "sha256": "a093f924c5be3f03c2b90a5e940a3d13ec6dc1cca3a20bc640738dad1c0abb85",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20230171.json"
+    },
+    {
+      "path": "sources/live/Q20230171.meta.json",
+      "sha256": "8f42a7c23b3c92f59d9642cbdd21765cff413fa12023835222d490b7493008b9"
+    },
+    {
+      "path": "sources/live/Q20230237.json",
+      "sha256": "740f2131c1cc0847a2023fb0fc4e1f9ed52c760c711c9054324a935d3aeec0de",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20230237.json"
+    },
+    {
+      "path": "sources/live/Q20230237.meta.json",
+      "sha256": "c2267c7b2d7365aaabd493e5dfb4095c3957c5b0403fbd87cb8d2d87cca0db41"
+    },
+    {
+      "path": "sources/live/Q20231160.json",
+      "sha256": "b69a9867c4ddb4707c267964840d31516d6abc7a5baa9e3412fdbab80b16f361",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20231160.json"
+    },
+    {
+      "path": "sources/live/Q20231160.meta.json",
+      "sha256": "187e1c277de82e61ca0d1fbef7ce4199d4dbbc34d29772356f587ac1e0170a47"
+    },
+    {
+      "path": "sources/live/Q20233561.json",
+      "sha256": "9c8fceb8dc32c30c0c0ec91027905703ba2c90fb08e6024e99f4bd13409bfca4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20233561.json"
+    },
+    {
+      "path": "sources/live/Q20233561.meta.json",
+      "sha256": "afb6f12e9966ed5feeb8f611ddc35c4a49f425b3906da679d5afc83658410bea"
+    },
+    {
+      "path": "sources/live/Q20234951.json",
+      "sha256": "346e48f6772d54af4ded17e62b70f886319b5790cd783d93cc1aac4fb0939fb3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20234951.json"
+    },
+    {
+      "path": "sources/live/Q20234951.meta.json",
+      "sha256": "edd2862f4f94c6762f4aabbd80ae83aad7ee88f1cfd72b8ddc096f1bb6a82cfd"
+    },
+    {
+      "path": "sources/live/Q20237003.json",
+      "sha256": "1686f0c465dc760969f3b29767197534d60cc1ec55a3759fe96f3f8eea79245b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20237003.json"
+    },
+    {
+      "path": "sources/live/Q20237003.meta.json",
+      "sha256": "4a5812c58c743e8686ff7a415a1fd58a0a29f0979fe34bc47591b07dbf1db930"
+    },
+    {
+      "path": "sources/live/Q20244169.json",
+      "sha256": "48d864ab20049b02ba73c20fd4cea2bac82cd517e08a4f391a67f40f5a093b46",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20244169.json"
+    },
+    {
+      "path": "sources/live/Q20244169.meta.json",
+      "sha256": "c64829fc690f820ed004c4abbfa178853b706e00913e96351c0d0477b46b316a"
+    },
+    {
+      "path": "sources/live/Q20244201.json",
+      "sha256": "e48b964e8ef8ea996aa208cdb72d450104a939c2be785790532fecbbd20205c5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20244201.json"
+    },
+    {
+      "path": "sources/live/Q20244201.meta.json",
+      "sha256": "c917c9ff3bb38ad7ba9e1d60979be9d8d63ae85ba47357709b6d1f0091d8b123"
+    },
+    {
+      "path": "sources/live/Q20245080.json",
+      "sha256": "a5c0d568f9d0d5880c6e59c5819a3129b7b75beb5a283b13d010905c9c7a059d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20245080.json"
+    },
+    {
+      "path": "sources/live/Q20245080.meta.json",
+      "sha256": "29849d222c760859c3d1fc3c1d9c90cbee9782da201c2f3c61064b6f1b5a95de"
+    },
+    {
+      "path": "sources/live/Q20245210.json",
+      "sha256": "d474e30b79e2118eb42f13a890538d250c712d3a306dd1efcad539ff729ba8ca",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20245210.json"
+    },
+    {
+      "path": "sources/live/Q20245210.meta.json",
+      "sha256": "739f234df1475daaf5f0ea798ee6b30be58be5f0cb79e7363d98fc8c20f603d5"
+    },
+    {
+      "path": "sources/live/Q20245527.json",
+      "sha256": "1a2f5905a86f227507a4fcc9a946a6b953d1548d15dfe737067ebb2709bddfdd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20245527.json"
+    },
+    {
+      "path": "sources/live/Q20245527.meta.json",
+      "sha256": "822380ef764a75ecc33af7fd2e21a7fa06212f944f1171d6bb1403ecde87bf58"
+    },
+    {
+      "path": "sources/live/Q20255256.json",
+      "sha256": "cc9043dcffda349797488136c46f2707f4cd9d041533fb91f7ddd192ca0ec3e8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20255256.json"
+    },
+    {
+      "path": "sources/live/Q20255256.meta.json",
+      "sha256": "7df51a0a52babef688785e3034d6a0d625eb063591ae73bee65e21b9f821c46f"
+    },
+    {
+      "path": "sources/live/Q20257714.json",
+      "sha256": "9df25c7a79618f9dcddf18d94e13017f1f47db9a192d93d2f69ae139374c166b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20257714.json"
+    },
+    {
+      "path": "sources/live/Q20257714.meta.json",
+      "sha256": "bba8fa8d0595924f9b9f051ce7273a6b91b1b152f5582d9962c32607ffa1b83f"
+    },
+    {
+      "path": "sources/live/Q20260759.json",
+      "sha256": "e8dde2739c17e74bdd92f8c5d04aee089ebf3ab87f923c92cf34cad9b8a72c3a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20260759.json"
+    },
+    {
+      "path": "sources/live/Q20260759.meta.json",
+      "sha256": "58230d7fa2ced905f3272e13c5fc2a783d5a903c94203457fd6572bc30dc3404"
+    },
+    {
+      "path": "sources/live/Q20262909.json",
+      "sha256": "82d0f7bf221643c4e93b17e1e1e26f3f2ad7c56aa2487020d6f00e209430dc98",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20262909.json"
+    },
+    {
+      "path": "sources/live/Q20262909.meta.json",
+      "sha256": "5bbee27847cc06a22dfdc30f11f6c2a18affba130a9d981dfaf83a8b07756f98"
+    },
+    {
+      "path": "sources/live/Q20264841.json",
+      "sha256": "a67f29b4afafaf90429226aa44bcbfe9012d2c66e5b7bffe4cfd140b8d1f3255",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20264841.json"
+    },
+    {
+      "path": "sources/live/Q20264841.meta.json",
+      "sha256": "2b8d8e27f3d597ababf64f69c8f95c02798440d8b485c34b0fb7bcf22fb1021b"
+    },
+    {
+      "path": "sources/live/Q20265355.json",
+      "sha256": "e22ba35ee265f51943ac4aae0c4e4d046cf4b3df4b928089bd1bbbeca54449fa",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20265355.json"
+    },
+    {
+      "path": "sources/live/Q20265355.meta.json",
+      "sha256": "9cf03483fdcf91dabfffeced6cb1f045a60a49866dd19733ed600f28a2682577"
+    },
+    {
+      "path": "sources/live/Q20272661.json",
+      "sha256": "8b81e15987e5ef9fb31dab898ca85079780d0389ab7f4e73c451f096582ec048",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20272661.json"
+    },
+    {
+      "path": "sources/live/Q20272661.meta.json",
+      "sha256": "19e244e97800947656f3d7b4986b1004e880a74018d88016f4d823ee6d3e8428"
+    },
+    {
+      "path": "sources/live/Q20274418.json",
+      "sha256": "527e2429062f5bdbb2c9d04a9d981219a460a1057b4e893a8d475ce11e800a5d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20274418.json"
+    },
+    {
+      "path": "sources/live/Q20274418.meta.json",
+      "sha256": "5fffe109f4631317aec15e004c31e858889a8b43b3d6610240a18365a8fe51df"
+    },
+    {
+      "path": "sources/live/Q20275847.json",
+      "sha256": "fafe96113f479b3041728e424e56509b2e15ec8b99cceda3b3ede1b42304c813",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20275847.json"
+    },
+    {
+      "path": "sources/live/Q20275847.meta.json",
+      "sha256": "93fbb1ba8a24c59e6cfad98b800e98271b76e43b3a727b2118f64e513ce39e38"
+    },
+    {
+      "path": "sources/live/Q20284017.json",
+      "sha256": "ed333f8461fa994e56356a47fe2da7107b0205a6224e61dd47df0bacc7fa1adb",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20284017.json"
+    },
+    {
+      "path": "sources/live/Q20284017.meta.json",
+      "sha256": "27f0f4be441061413a91915636f4e425c9153206d2262ec3472a5575190c1d4d"
+    },
+    {
+      "path": "sources/live/Q20287999.json",
+      "sha256": "95c2ea07e13647eb55e7c477bac5461268bef9bcbdc8f738d99a89fbe40d2b50",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20287999.json"
+    },
+    {
+      "path": "sources/live/Q20287999.meta.json",
+      "sha256": "ea11f6ca171bdb7bcd112cf1162633ca0d924b3e8ab0dc12b3f733be9b63cd2b"
+    },
+    {
+      "path": "sources/live/Q20290328.json",
+      "sha256": "894faab5d73f3a6dcdf58d53f869ebc414557b4513abc480a316a1fe90ca0c0b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20290328.json"
+    },
+    {
+      "path": "sources/live/Q20290328.meta.json",
+      "sha256": "d1ec2f5f66aaf397047870c14b7e091fbbbcfa659ebb62d20a01403d591e8e2b"
+    },
+    {
+      "path": "sources/live/Q20290753.json",
+      "sha256": "7acf6a57e3ea8a181862b829468398d55f0ba092db3668393b180d477c786ef5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20290753.json"
+    },
+    {
+      "path": "sources/live/Q20290753.meta.json",
+      "sha256": "22a63568c15e8425748ef8cd6406c635459e95966e2777378f2bac831fcb1e87"
+    },
+    {
+      "path": "sources/live/Q20291216.json",
+      "sha256": "82f6e3159636d8850ecff6e695dca53d0a1f840c182f1cefc96add6ff08f2b9f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20291216.json"
+    },
+    {
+      "path": "sources/live/Q20291216.meta.json",
+      "sha256": "4cd7497df9c18e3b139eba5cab95b3d9e2a1a9a536206ab23145668f90dc9448"
+    },
+    {
+      "path": "sources/live/Q20291586.json",
+      "sha256": "a52568a7e49c2c8dc26c4159b220678e809a99e5ad55de2eb8ea5b05a8f87cc5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20291586.json"
+    },
+    {
+      "path": "sources/live/Q20291586.meta.json",
+      "sha256": "0174412ab617ad4845a7eb583293cbf0c68212391542f68172585f3bb7a6bf08"
+    },
+    {
+      "path": "sources/live/Q20293552.json",
+      "sha256": "88d95f5d6a83fb4d86a09c15789c0975bb86d858186c290149f2c0da05046f23",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20293552.json"
+    },
+    {
+      "path": "sources/live/Q20293552.meta.json",
+      "sha256": "c9087df2d6526c7b27e7de50a1e3fe93b77c30161628b986a3acb5c775d76a29"
+    },
+    {
+      "path": "sources/live/Q20295390.json",
+      "sha256": "f35fb45845c99b7e2916379c3fa96a5c21ad02f1bde862f3ac21a4b89ad5b726",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20295390.json"
+    },
+    {
+      "path": "sources/live/Q20295390.meta.json",
+      "sha256": "a9dd0f4b086036dc7e073dfb5424e465d18d92c11ed29e70818fd80a314f0fb6"
+    },
+    {
+      "path": "sources/live/Q20431243.json",
+      "sha256": "5b82aa1d541e39714373e4c922cd78f54d43732a86b590e9d96291912569763d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20431243.json"
+    },
+    {
+      "path": "sources/live/Q20431243.meta.json",
+      "sha256": "ba987d02ad74275dd4fe3701d4dcea8f96108fee608ca070859967de3cedc1bf"
+    },
+    {
+      "path": "sources/live/Q2116833.json",
+      "sha256": "04b1d56192722c6f7a95089882999da85dacef72cc13bde255019fc165d3d4d8",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2116833.json"
+    },
+    {
+      "path": "sources/live/Q2116833.meta.json",
+      "sha256": "0e7003b558301036e0b7c1180bb5887bec74b93b4aab854549deaab416a0e936"
+    },
+    {
+      "path": "sources/live/Q2282743.json",
+      "sha256": "cafe3f167ee78af1c01bc44eb2685f1b2dfb569b7c6a3c236f282a061f819cb4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2282743.json"
+    },
+    {
+      "path": "sources/live/Q2282743.meta.json",
+      "sha256": "6083717e7a01d9f4f785f47a3d09ada810a8654e4892582e970f0b90762c712c"
+    },
+    {
+      "path": "sources/live/Q23047418.json",
+      "sha256": "1686f0c465dc760969f3b29767197534d60cc1ec55a3759fe96f3f8eea79245b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23047418.json"
+    },
+    {
+      "path": "sources/live/Q23047418.meta.json",
+      "sha256": "cba965f80644fc796cf8bd311c60d80df5c57cb0850924565717baa2817c39ee"
+    },
+    {
+      "path": "sources/live/Q2348927.json",
+      "sha256": "7f31173489d9adc06f2c2c97e0f244933c32cd7410804cf900c66e7239d56866",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2348927.json"
+    },
+    {
+      "path": "sources/live/Q2348927.meta.json",
+      "sha256": "f7c60de216886f49015ca6eb80b19e776319961593e1b46b8065b4d3122584f4"
+    },
+    {
+      "path": "sources/live/Q2359444.json",
+      "sha256": "0e5b9ce79237e0dee0d55428d7b6d8270479842bf8823e0b96e8b2d2b166f999",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2359444.json"
+    },
+    {
+      "path": "sources/live/Q2359444.meta.json",
+      "sha256": "ed42b125271a2780e79ae56ff148a418d4b433909b4d33b65f7b3b429163a3c9"
+    },
+    {
+      "path": "sources/live/Q2448255.json",
+      "sha256": "83acea1c26af3503790e3b63175b694d04a463d98fdbd0adb51b44e2a876dfa3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2448255.json"
+    },
+    {
+      "path": "sources/live/Q2448255.meta.json",
+      "sha256": "5d935f9ab3f534b002d8ce428bc5cf260a34e6764136f0e0b800627f1534ed33"
+    },
+    {
+      "path": "sources/live/Q2466659.json",
+      "sha256": "cfa150e26fa4f364c2141336996f90ff64073b8eec003ddd4166095ce1e0848c",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2466659.json"
+    },
+    {
+      "path": "sources/live/Q2466659.meta.json",
+      "sha256": "18179fe58a22f3641773f67ae910c059009f095256f3de0fd04a6c211ee1d3cc"
+    },
+    {
+      "path": "sources/live/Q2576133.json",
+      "sha256": "1414c5b4adbc05b443d5e2dda81396dc3bf84107a865e78e721da1eeca3ebf9b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2576133.json"
+    },
+    {
+      "path": "sources/live/Q2576133.meta.json",
+      "sha256": "f9034dd1f95eaec0396044ac045ef3338b2b2c98cdce80d67fbffabaa8bf39ae"
+    },
+    {
+      "path": "sources/live/Q2606280.json",
+      "sha256": "126d84e335b46721ceb6513666373a71c74a761829453445101fbe7940e604a2",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2606280.json"
+    },
+    {
+      "path": "sources/live/Q2606280.meta.json",
+      "sha256": "23a8a4854ea3a23bd4341338475f6a751dcea8b8e03e29bb56914d530ee3f1bc"
+    },
+    {
+      "path": "sources/live/Q2651753.json",
+      "sha256": "07238b6fbb8ed54b45f311ffb70524d1a8a6a22026cda7033219c504867986bd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2651753.json"
+    },
+    {
+      "path": "sources/live/Q2651753.meta.json",
+      "sha256": "3ea8f88ad5497929caa6fb86f1652e099aaef9c3e446278a72190213b3d48c52"
+    },
+    {
+      "path": "sources/live/Q2656458.json",
+      "sha256": "0eb05d9123cadd2daa81fcfd2dfe84150713c994ed5f8f91f9fda8c08086a895",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2656458.json"
+    },
+    {
+      "path": "sources/live/Q2656458.meta.json",
+      "sha256": "d74e891dc302727f89398bf533f011c4e8c4f05b947d5bdfecbe9bc3479138f2"
+    },
+    {
+      "path": "sources/live/Q26590.json",
+      "sha256": "5f8c3c8c15442a6b5793c0200ab3b82ba929386c8f070a6179e8d29887239767",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q26590.json"
+    },
+    {
+      "path": "sources/live/Q26590.meta.json",
+      "sha256": "4289d09b2f2e2803813c7d713a29355ee8ddd8bae20df8ae8d463493c476df46"
+    },
+    {
+      "path": "sources/live/Q2669498.json",
+      "sha256": "d74d7bfd3cd6ee5ee50fb3348dbc37d74521cfd44d0eb8b2f3dedb410ae08a52",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2669498.json"
+    },
+    {
+      "path": "sources/live/Q2669498.meta.json",
+      "sha256": "c958d440e445987eb20ebcc94d5742e192e17769f89333d70eb65641b72069de"
+    },
+    {
+      "path": "sources/live/Q2670191.json",
+      "sha256": "1e927237934dca4331e6f40bc0c988f5092aeec1a9862f601cb5c7a02555cf6a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2670191.json"
+    },
+    {
+      "path": "sources/live/Q2670191.meta.json",
+      "sha256": "531714739b943d9eb84d24c47d79e7c8c4c057a3db29c34d72c64fdb7f2ac9a7"
+    },
+    {
+      "path": "sources/live/Q27767540.json",
+      "sha256": "82f6e3159636d8850ecff6e695dca53d0a1f840c182f1cefc96add6ff08f2b9f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27767540.json"
+    },
+    {
+      "path": "sources/live/Q27767540.meta.json",
+      "sha256": "c0c98f477516929ea979d89d9525e1f5decbb699d05fdbb9f51f477c882e3ad7"
+    },
+    {
+      "path": "sources/live/Q27767720.json",
+      "sha256": "a67f29b4afafaf90429226aa44bcbfe9012d2c66e5b7bffe4cfd140b8d1f3255",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27767720.json"
+    },
+    {
+      "path": "sources/live/Q27767720.meta.json",
+      "sha256": "93f1615dbbaecd730fbb34dc01ed6ef74066ca788d66ffddb7ff40c64ade1bc5"
+    },
+    {
+      "path": "sources/live/Q27767917.json",
+      "sha256": "88d95f5d6a83fb4d86a09c15789c0975bb86d858186c290149f2c0da05046f23",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27767917.json"
+    },
+    {
+      "path": "sources/live/Q27767917.meta.json",
+      "sha256": "3775d9285c6326ed5cdcd0a503eb5027e9e855dd822cb4f425ab3f9b0826f3e6"
+    },
+    {
+      "path": "sources/live/Q27767937.json",
+      "sha256": "065e68ad5be14d97b32cc6803f29215305260aaf247d78193783c6e3ee0848be",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27767937.json"
+    },
+    {
+      "path": "sources/live/Q27767937.meta.json",
+      "sha256": "83b46c79e15f2fbbabb78b5e9b52624bac176eab82ed49dae689c0a8f722cab2"
+    },
+    {
+      "path": "sources/live/Q27769681.json",
+      "sha256": "e26ddf5ce7e53105e6a3ef2dc8981b7b09c1c4e7ab520e390df787b62ddd55f3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27769681.json"
+    },
+    {
+      "path": "sources/live/Q27769681.meta.json",
+      "sha256": "7121c2884c73680706d41042f2375a0c16f7d435706cf2a44876dfe7a1618c83"
+    },
+    {
+      "path": "sources/live/Q27769955.json",
+      "sha256": "6f9d351e8bece12ea596179bc1f0ff4256fa24c14c05efa834055460d832fb49",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27769955.json"
+    },
+    {
+      "path": "sources/live/Q27769955.meta.json",
+      "sha256": "b8f7d39e5f158af9cdc5ca38482b63cf89d26b31fd8afeeae0add1f78d5373f5"
+    },
+    {
+      "path": "sources/live/Q27769965.json",
+      "sha256": "cf7fb5035ec811e753241c72dcd28d6a7142b1cbb7aa1096d79885f2ac78d7c0",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27769965.json"
+    },
+    {
+      "path": "sources/live/Q27769965.meta.json",
+      "sha256": "64360730848d41e0cb5fbc2286d5112684cfa48d0828151a0e8b58f7f4a7f222"
+    },
+    {
+      "path": "sources/live/Q27777438.json",
+      "sha256": "e48b964e8ef8ea996aa208cdb72d450104a939c2be785790532fecbbd20205c5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27777438.json"
+    },
+    {
+      "path": "sources/live/Q27777438.meta.json",
+      "sha256": "8feaafada8fe294148eec9e11da41ba86b8bc6494540f4f8753c36db9cf08a1d"
+    },
+    {
+      "path": "sources/live/Q27778063.json",
+      "sha256": "740f2131c1cc0847a2023fb0fc4e1f9ed52c760c711c9054324a935d3aeec0de",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27778063.json"
+    },
+    {
+      "path": "sources/live/Q27778063.meta.json",
+      "sha256": "821b4e3f3891295ba83a7e0d0c102f305aea85eb14191a9d630886c24dc32364"
+    },
+    {
+      "path": "sources/live/Q27779109.json",
+      "sha256": "346e48f6772d54af4ded17e62b70f886319b5790cd783d93cc1aac4fb0939fb3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27779109.json"
+    },
+    {
+      "path": "sources/live/Q27779109.meta.json",
+      "sha256": "5f32fb024fe047c25d88def6ad88d8426407ab1cc55f975699357690e0e1b229"
+    },
+    {
+      "path": "sources/live/Q27779799.json",
+      "sha256": "a093f924c5be3f03c2b90a5e940a3d13ec6dc1cca3a20bc640738dad1c0abb85",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27779799.json"
+    },
+    {
+      "path": "sources/live/Q27779799.meta.json",
+      "sha256": "38efe3edde1d8abf5f564f1290df66d791c23534d679f5ae91370a7e2278dc88"
+    },
+    {
+      "path": "sources/live/Q27784063.json",
+      "sha256": "a5c0d568f9d0d5880c6e59c5819a3129b7b75beb5a283b13d010905c9c7a059d",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27784063.json"
+    },
+    {
+      "path": "sources/live/Q27784063.meta.json",
+      "sha256": "23f64ecbaed3d679138bcb59871442427f64cdd65d43f311bc764e158405c797"
+    },
+    {
+      "path": "sources/live/Q27784467.json",
+      "sha256": "00be4bee0601ad96d469b28aaadfae5f5ed1ee8e17e37e6eb7208f4c571afdea",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27784467.json"
+    },
+    {
+      "path": "sources/live/Q27784467.meta.json",
+      "sha256": "7737d8bed3fcb9e2d65c962074f055bca1ac7231451f9e816cc7ff241b243079"
+    },
+    {
+      "path": "sources/live/Q27784496.json",
+      "sha256": "ed333f8461fa994e56356a47fe2da7107b0205a6224e61dd47df0bacc7fa1adb",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27784496.json"
+    },
+    {
+      "path": "sources/live/Q27784496.meta.json",
+      "sha256": "ca60fa52d3faf56df439711d55ee367f09d8fb4610e3809f34ffbaff591570a2"
+    },
+    {
+      "path": "sources/live/Q27796586.json",
+      "sha256": "95c2ea07e13647eb55e7c477bac5461268bef9bcbdc8f738d99a89fbe40d2b50",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27796586.json"
+    },
+    {
+      "path": "sources/live/Q27796586.meta.json",
+      "sha256": "8215f0d94138df6ab3faf1a7e206f5a52ee6e25f37d0b465d08af8715676cd8d"
+    },
+    {
+      "path": "sources/live/Q27796595.json",
+      "sha256": "48d864ab20049b02ba73c20fd4cea2bac82cd517e08a4f391a67f40f5a093b46",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27796595.json"
+    },
+    {
+      "path": "sources/live/Q27796595.meta.json",
+      "sha256": "66a582cb28964233746907adb8e6b32ba86c32dfe4ee634448db2ca937289bf1"
+    },
+    {
+      "path": "sources/live/Q27796600.json",
+      "sha256": "f35fb45845c99b7e2916379c3fa96a5c21ad02f1bde862f3ac21a4b89ad5b726",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27796600.json"
+    },
+    {
+      "path": "sources/live/Q27796600.meta.json",
+      "sha256": "68a3d24a59d25d8ec671c14a62e4c697982c45c9a4839e03eda4249b25bda800"
+    },
+    {
+      "path": "sources/live/Q27796636.json",
+      "sha256": "01de1bd3a2f03bc8d2bfa2b83f6724cb6348cc4d082c261df01437211dd7085b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27796636.json"
+    },
+    {
+      "path": "sources/live/Q27796636.meta.json",
+      "sha256": "9c4aadb9f02bce112469af1bbab29b7b6921aeb875c48ac20d75a1458cf62e8d"
+    },
+    {
+      "path": "sources/live/Q2816117.json",
+      "sha256": "67106adb7253c371a53f8d2d2987be95951e2503da46d538e3e621dd411f090a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2816117.json"
+    },
+    {
+      "path": "sources/live/Q2816117.meta.json",
+      "sha256": "a3b4c0207ad2325d482aff6bb16c80f16e386b2cd22b67e00a95cd4a8ea319ef"
+    },
+    {
+      "path": "sources/live/Q2841366.json",
+      "sha256": "8fbe1f2c082a62259d36386da05cca21722f4c06cf6797a1482d1b770894e66a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2841366.json"
+    },
+    {
+      "path": "sources/live/Q2841366.meta.json",
+      "sha256": "76e77a1232b4fdd30b480a4e6d5ace3a8965d5ce7826af5134362055c9443916"
+    },
+    {
+      "path": "sources/live/Q2878724.json",
+      "sha256": "4026f321647dc3ca349a5893efd8be734795002ab135b24174f346b4902fa498",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2878724.json"
+    },
+    {
+      "path": "sources/live/Q2878724.meta.json",
+      "sha256": "133223f5dbb57bd06cfe15db790e19d756aa9daef77bc977069f730a669878e3"
+    },
+    {
+      "path": "sources/live/Q2891808.json",
+      "sha256": "a3e08ac72c9c99dd3e062950894c249d1940e9f01483a19efde202eb879a36ae",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2891808.json"
+    },
+    {
+      "path": "sources/live/Q2891808.meta.json",
+      "sha256": "e8dfa7155f46ca0c56c3974308be808dea82f2574e2199b34367e7b2a5f11454"
+    },
+    {
+      "path": "sources/live/Q2991598.json",
+      "sha256": "00be4bee0601ad96d469b28aaadfae5f5ed1ee8e17e37e6eb7208f4c571afdea",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2991598.json"
+    },
+    {
+      "path": "sources/live/Q2991598.meta.json",
+      "sha256": "62b99df2a202963d485d00cceaebf9254bb5a248d17235312945c0cd168eb1e7"
+    },
+    {
+      "path": "sources/live/Q2997108.json",
+      "sha256": "b2eec89e5e3779c644d697152acb93831e9e4910353e71d0d251f1850519dec3",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2997108.json"
+    },
+    {
+      "path": "sources/live/Q2997108.meta.json",
+      "sha256": "0e3c7c188ead1124b62fbccfa210a860a0b12b2553019384565df82c40170a98"
+    },
+    {
+      "path": "sources/live/Q3099435.json",
+      "sha256": "4725740c895f204e24c3a90759dbb5720a28e219e464ee076902ab7cb02c415a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3099435.json"
+    },
+    {
+      "path": "sources/live/Q3099435.meta.json",
+      "sha256": "cd7c197b84b1415ab30c1a32bd3972a64cf41e956e2447b72c4e881bd1b1e72d"
+    },
+    {
+      "path": "sources/live/Q3174453.json",
+      "sha256": "1d441f699585cdddd988bb27e05a7e4632d9d75e9d9ca1620ad59fa1a9f48f69",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3174453.json"
+    },
+    {
+      "path": "sources/live/Q3174453.meta.json",
+      "sha256": "d90af03c1d211373c9d40ae9d72b6887a44b0105645e76abe4d19dce840382cc"
+    },
+    {
+      "path": "sources/live/Q3175306.json",
+      "sha256": "8014114f5f439e247993ae25b4d34b343faeb46ab462144a32d83ff1f029a202",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3175306.json"
+    },
+    {
+      "path": "sources/live/Q3175306.meta.json",
+      "sha256": "e50fbe49ead71d3892ec2229983c3924fe8e9096321f609326ef87e86747d003"
+    },
+    {
+      "path": "sources/live/Q3300440.json",
+      "sha256": "56029236b9427603615f5c42d2e243ac129818d1b969a698ecfcb7c0399cc672",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3300440.json"
+    },
+    {
+      "path": "sources/live/Q3300440.meta.json",
+      "sha256": "c7a50b826e23f86a5e00a652d19a6a0b4ebdb41960341bbb30c37440d154a438"
+    },
+    {
+      "path": "sources/live/Q3316709.json",
+      "sha256": "7e156bc0f4e74f21d3290729fbac825228e3d7aed8d492b1cb2f68068677a47b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3316709.json"
+    },
+    {
+      "path": "sources/live/Q3316709.meta.json",
+      "sha256": "c76f8a46148a9f0d52aec6e9bff83359d2c5cddfad6d33677af2138a8bea3346"
+    },
+    {
+      "path": "sources/live/Q3844258.json",
+      "sha256": "1e3e46350a49ac5d27f6cbf2472670c04362c986214de810c0dbe92f8b56f887",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3844258.json"
+    },
+    {
+      "path": "sources/live/Q3844258.meta.json",
+      "sha256": "037934e369478d11078c3ec67c98a07ba5b719e9371a07a6af832c870eff1de9"
+    },
+    {
+      "path": "sources/live/Q3844591.json",
+      "sha256": "2d3cb8cbf9a8b7d219f4dd723112e79a2ca7a1b36090f3eb9c8329520bbd3630",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3844591.json"
+    },
+    {
+      "path": "sources/live/Q3844591.meta.json",
+      "sha256": "021f387ff6773d7d84c67c7ae35ff9d3cb8d1272360ad44581974e8a08b8b509"
+    },
+    {
+      "path": "sources/live/Q3844956.json",
+      "sha256": "d1379ca12bc1e6d6d44ba0448952e80808641c76c0cfb5d96decd3df25d07002",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3844956.json"
+    },
+    {
+      "path": "sources/live/Q3844956.meta.json",
+      "sha256": "6f38f89c6eae2db5547998fbbf8e289d3c0b21fb3827b3a5a08cedb3e71b0fe0"
+    },
+    {
+      "path": "sources/live/Q3845619.json",
+      "sha256": "6cf76b141f563d212bdf20dda6b774dbbe1f8e137d9934ebf7d582c5488c9d59",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3845619.json"
+    },
+    {
+      "path": "sources/live/Q3845619.meta.json",
+      "sha256": "fffcb4d9182da9202638b10a46fdf70ddf746383b74aa44f8a5dc314d863da63"
+    },
+    {
+      "path": "sources/live/Q3845719.json",
+      "sha256": "1a6d18e963d443e1c26d42a087ce14c07bd39ff961b5aa527ec0d2269b019495",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3845719.json"
+    },
+    {
+      "path": "sources/live/Q3845719.meta.json",
+      "sha256": "f9ff84e3e4c723fc262b67cfa78b4c6ff12706ab21a547a1bb0f6390948bf355"
+    },
+    {
+      "path": "sources/live/Q3846541.json",
+      "sha256": "55d33dcb7e2ed52fa9efeb1fe955224178a6dc339f1e63d79e48c4867ee953ab",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3846541.json"
+    },
+    {
+      "path": "sources/live/Q3846541.meta.json",
+      "sha256": "1152b7981d91b1f015c59bffb898048fd1957fcd69f142604da3843ee814f9c5"
+    },
+    {
+      "path": "sources/live/Q3847133.json",
+      "sha256": "92944a78f99389b8cdf3308a6fd410f67583e790856d015c72921335183b8202",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3847133.json"
+    },
+    {
+      "path": "sources/live/Q3847133.meta.json",
+      "sha256": "dcb0aeede0c0e86b1eb2a46320e4f1d8d4fe9b4dd48c02e019e0d98b7f1757dc"
+    },
+    {
+      "path": "sources/live/Q3847312.json",
+      "sha256": "2b1c2f94020321a34c718aca2aea7c715e09d724ab2aa74f0742e56c600ed80a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3847312.json"
+    },
+    {
+      "path": "sources/live/Q3847312.meta.json",
+      "sha256": "38ec416843931676e99542aab8b2ee7250eec38a936c4d6c26aa69a330086558"
+    },
+    {
+      "path": "sources/live/Q3849472.json",
+      "sha256": "ba645fff654b011f5293b4a998df1ba617e9c1fc6862551ad8efacb020fc892b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3849472.json"
+    },
+    {
+      "path": "sources/live/Q3849472.meta.json",
+      "sha256": "75ee18514f37125d67d3af08c79d404477102379177280eb23312665ec7cf2d1"
+    },
+    {
+      "path": "sources/live/Q3851157.json",
+      "sha256": "e8f12664674e826fb6a74f5c451121506d3b71c2ba8d119fc29b45cc021e25ae",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3851157.json"
+    },
+    {
+      "path": "sources/live/Q3851157.meta.json",
+      "sha256": "cda2297be12093e61ea8ebec754a76558176fabad9b6349390b465503a89a9da"
+    },
+    {
+      "path": "sources/live/Q3892783.json",
+      "sha256": "e2df51ab84c46e5fa10026ef8d0102e3fa272231f8f8745440bf381a39b94a2e",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3892783.json"
+    },
+    {
+      "path": "sources/live/Q3892783.meta.json",
+      "sha256": "d05821da3d68c28d3bf45980a1bb81144d3f49bf1b589c7f32f6b17f738539f6"
+    },
+    {
+      "path": "sources/live/Q3942968.json",
+      "sha256": "fc1eecc44297b666ac67db093eef1c2b9fd4ea1989b1994c25d51bb122432003",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3942968.json"
+    },
+    {
+      "path": "sources/live/Q3942968.meta.json",
+      "sha256": "bb18bba9293e50fde1a60a70fe719da39aebe25ec4349204a117eed6b832ba9f"
+    },
+    {
+      "path": "sources/live/Q4059354.json",
+      "sha256": "a4a73378fe6d48983d4db337f78c305c1d7343be3507f50c027e2006c0de5ab4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4059354.json"
+    },
+    {
+      "path": "sources/live/Q4059354.meta.json",
+      "sha256": "60a2934c3c4bab079a51b5d605604b4f5cd1427ec8f5f859d33c5e1fecabbdd5"
+    },
+    {
+      "path": "sources/live/Q430781.json",
+      "sha256": "a07b4d3e2a8cc7211907d100bfcaed900e318a899f0df6496a0310f57eca5359",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q430781.json"
+    },
+    {
+      "path": "sources/live/Q430781.meta.json",
+      "sha256": "0842d7fa6363ce98793de92f6710b88ad02ebd9e277bdad867b8c8e10431ff31"
+    },
+    {
+      "path": "sources/live/Q4337293.json",
+      "sha256": "b69a9867c4ddb4707c267964840d31516d6abc7a5baa9e3412fdbab80b16f361",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4337293.json"
+    },
+    {
+      "path": "sources/live/Q4337293.meta.json",
+      "sha256": "1a9057c8aa6dd389855fdc445bad4717f34c9ac4d00c9150054810a32554573b"
+    },
+    {
+      "path": "sources/live/Q4459030.json",
+      "sha256": "0779b9d5d2b6a6622746810610c9c9c888271032d08ebad45890c680fc45ea62",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4459030.json"
+    },
+    {
+      "path": "sources/live/Q4459030.meta.json",
+      "sha256": "15b8eaf8f13fa4d64e9c9a2a5393468f1d1bffecea6e8c15826c136a9a51cc04"
+    },
+    {
+      "path": "sources/live/Q49907413.json",
+      "sha256": "55d33dcb7e2ed52fa9efeb1fe955224178a6dc339f1e63d79e48c4867ee953ab",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49907413.json"
+    },
+    {
+      "path": "sources/live/Q49907413.meta.json",
+      "sha256": "fdf37279bf7c9cbe7cdc5b933a4e78721541a05b4b834b4b609b1900499a7dd4"
+    },
+    {
+      "path": "sources/live/Q5141439.json",
+      "sha256": "ba275ddc3327039e6b28b8f0ba2f5202c921630c05eb97f29947080c469c6556",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5141439.json"
+    },
+    {
+      "path": "sources/live/Q5141439.meta.json",
+      "sha256": "a28fdb736fd96c8997dacdef23a431bfacbac0a0955ea99fc9ca242f8068e60c"
+    },
+    {
+      "path": "sources/live/Q5168294.json",
+      "sha256": "6fe75f14617943350db147fcf34ecc6a31b3a9ba372c8d90e2db2bb5907f41aa",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5168294.json"
+    },
+    {
+      "path": "sources/live/Q5168294.meta.json",
+      "sha256": "d5565df7d265c1bc9fa9c77659e4b1dab04ae8a9ea8d29cae273e70e19fe0c4f"
+    },
+    {
+      "path": "sources/live/Q5168311.json",
+      "sha256": "559623080c91e6b3c546457aec2ccdeef3337ed4a84cc64abc1cd66fcd028bfa",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5168311.json"
+    },
+    {
+      "path": "sources/live/Q5168311.meta.json",
+      "sha256": "164008486bf44c8288a4d2d75ea884ec4de060b6b6168d71c6ad01bc30f010e4"
+    },
+    {
+      "path": "sources/live/Q5191898.json",
+      "sha256": "4bd32eef57662b6ef03bf602546824862f52d55e7c21773a441708f87795cc98",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5191898.json"
+    },
+    {
+      "path": "sources/live/Q5191898.meta.json",
+      "sha256": "7731fca80d5d0ddfc994faaa288bb6757c66ea4b0cfb7907b3fb7dc5ed81e24e"
+    },
+    {
+      "path": "sources/live/Q5192589.json",
+      "sha256": "e8a09c0f94a9d9a5c762f2e9d591a79efb6cb40f9a77d46ed6ccf9d79feff210",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5192589.json"
+    },
+    {
+      "path": "sources/live/Q5192589.meta.json",
+      "sha256": "536aee6d946755be4ac4dff7db881737f50d56e16574abcaa65801f68a5bc1ee"
+    },
+    {
+      "path": "sources/live/Q528875.json",
+      "sha256": "66e15b72d55d6726bce52606297bfe4020925927eb6bd78c4cb7d3a25d856a41",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q528875.json"
+    },
+    {
+      "path": "sources/live/Q528875.meta.json",
+      "sha256": "f9ce4989993cd002aad4aa4c8d53868da555bc4c7d157563c5019c8c9e782311"
+    },
+    {
+      "path": "sources/live/Q539283.json",
+      "sha256": "f5e94d7d435eb8af55534590dc6ff9c39f39c5876159029d6500dd606e85c55e",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q539283.json"
+    },
+    {
+      "path": "sources/live/Q539283.meta.json",
+      "sha256": "aefa64424ecb82752f71b43c9ed7f4faaece736f48a021e8b6de1d75453747b2"
+    },
+    {
+      "path": "sources/live/Q5613554.json",
+      "sha256": "5c0b07d8772ba5af2ec3b81124bfb0044e83e2afc57868340b8777d9681cd18f",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5613554.json"
+    },
+    {
+      "path": "sources/live/Q5613554.meta.json",
+      "sha256": "eca2366f9ac8c25606f356a079106d44833618097bd06021bcd412a4568c80e6"
+    },
+    {
+      "path": "sources/live/Q568688.json",
+      "sha256": "1c6fdf49a4e3db120441e0ffa720c794021404ea5d904ed7348a61a84d795018",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q568688.json"
+    },
+    {
+      "path": "sources/live/Q568688.meta.json",
+      "sha256": "6080039dbaab75cc68667f52b2ad9f99f72c9dd1ab33f67c4f5955e42b0de941"
+    },
+    {
+      "path": "sources/live/Q5714736.json",
+      "sha256": "8ec177afafcb2198f15f6110a15fba3303df4446d4f96ef07ac79192c492c86a",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5714736.json"
+    },
+    {
+      "path": "sources/live/Q5714736.meta.json",
+      "sha256": "cf9709cb4f81ff056073682e68c645b32667c38925640e3433f54f5955e89768"
+    },
+    {
+      "path": "sources/live/Q5904328.json",
+      "sha256": "5e4fa2d1f785b4c210a4f363c18891f5ec5362ebbdebba5707ca46bc309d05fd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5904328.json"
+    },
+    {
+      "path": "sources/live/Q5904328.meta.json",
+      "sha256": "3bc2458d03fc9ecf341f85a0d0f6d972efce89211e7cbbda396648580afd2cfd"
+    },
+    {
+      "path": "sources/live/Q6051610.json",
+      "sha256": "894faab5d73f3a6dcdf58d53f869ebc414557b4513abc480a316a1fe90ca0c0b",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6051610.json"
+    },
+    {
+      "path": "sources/live/Q6051610.meta.json",
+      "sha256": "10efadb3a92f77088320e8a7bdcc0ad162a7263d1064da010d3c4cba4af9bb9a"
+    },
+    {
+      "path": "sources/live/Q6057403.json",
+      "sha256": "a52568a7e49c2c8dc26c4159b220678e809a99e5ad55de2eb8ea5b05a8f87cc5",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6057403.json"
+    },
+    {
+      "path": "sources/live/Q6057403.meta.json",
+      "sha256": "6e15211ab0e4984534e9e5ee5e033d328dccd8a774bb6a69d3416f590a2b8cf0"
+    },
+    {
+      "path": "sources/live/Q6087671.json",
+      "sha256": "032a00a9cba5411934bbed5a3efe13a60667e82e6c54997660ea7e8657a4f480",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6087671.json"
+    },
+    {
+      "path": "sources/live/Q6087671.meta.json",
+      "sha256": "0303fbdc1b968b31b4c1d1191f0891abc64b532577a7a0b4bdd8b902d524b005"
+    },
+    {
+      "path": "sources/live/Q6115183.json",
+      "sha256": "68e2abf1a2d63863e79328242af2bade8ca2d38389114706249f0d3b7beba076",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6115183.json"
+    },
+    {
+      "path": "sources/live/Q6115183.meta.json",
+      "sha256": "0fd11381f88e6f82155acb5eb57ad960cf14a58252bfcba4b6b5e98135f32a9c"
+    },
+    {
+      "path": "sources/live/Q61302794.json",
+      "sha256": "07238b6fbb8ed54b45f311ffb70524d1a8a6a22026cda7033219c504867986bd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61302794.json"
+    },
+    {
+      "path": "sources/live/Q61302794.meta.json",
+      "sha256": "706162a719f46743c34afc8ff2e0c3c65c007ec5a3f095877d0d4d579f440c8c"
+    },
+    {
+      "path": "sources/live/Q6140337.json",
+      "sha256": "1a2f5905a86f227507a4fcc9a946a6b953d1548d15dfe737067ebb2709bddfdd",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6140337.json"
+    },
+    {
+      "path": "sources/live/Q6140337.meta.json",
+      "sha256": "a1955d6321eb56bbf18452dd601a7aa3b153f30a93d58189ce229b75d7709f4a"
+    },
+    {
+      "path": "sources/live/Q7248518.json",
+      "sha256": "032a00a9cba5411934bbed5a3efe13a60667e82e6c54997660ea7e8657a4f480",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7248518.json"
+    },
+    {
+      "path": "sources/live/Q7248518.meta.json",
+      "sha256": "17b4e9ae1f70e7606aa486e3a2727bf171486a77af73aebf7438484f16cf2a15"
+    },
+    {
+      "path": "sources/live/Q7415378.json",
+      "sha256": "8b81e15987e5ef9fb31dab898ca85079780d0389ab7f4e73c451f096582ec048",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7415378.json"
+    },
+    {
+      "path": "sources/live/Q7415378.meta.json",
+      "sha256": "244dc63b9c613a61c1517a85c7d8810cdd92c5fe62bb0f01221f55f2d32ca756"
+    },
+    {
+      "path": "sources/live/Q7695265.json",
+      "sha256": "99908dac8b6861bf6edcdf4c3b0138cb3851ea5102d592587cfa90feaae0d9e4",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7695265.json"
+    },
+    {
+      "path": "sources/live/Q7695265.meta.json",
+      "sha256": "8f5ddfd66887031bc5234d07f88e0975dfc6ca059243ba45375817920ea16418"
+    },
+    {
+      "path": "sources/live/Q7706142.json",
+      "sha256": "7c261706787d2e25fe362294a4c32789200def31ea70ac3cc20329796e87b659",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7706142.json"
+    },
+    {
+      "path": "sources/live/Q7706142.meta.json",
+      "sha256": "417e0741d2acfc6619fe9948971d7242acadd95a31f08cb56ab05cef0c28698a"
+    },
+    {
+      "path": "sources/live/Q7810698.json",
+      "sha256": "f8891923136c7c6183da3aaff7e886249b961a814439b7905dac108749a499db",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7810698.json"
+    },
+    {
+      "path": "sources/live/Q7810698.meta.json",
+      "sha256": "26dbea7393eb91494ba6b2b1b61e76dcfc6a74a2542f68140085255753a5b8ca"
+    },
+    {
+      "path": "sources/live/Q7820760.json",
+      "sha256": "7309ec23d3c4636a34956efa70cc65f2627cbd218c615c365f41fd3fc873ce40",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7820760.json"
+    },
+    {
+      "path": "sources/live/Q7820760.meta.json",
+      "sha256": "ee221b5f0855b0e2f242e537231f112e2669221be4805990e25b4d556b9be5ae"
+    },
+    {
+      "path": "sources/live/Q8042859.json",
+      "sha256": "a3e08ac72c9c99dd3e062950894c249d1940e9f01483a19efde202eb879a36ae",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8042859.json"
+    },
+    {
+      "path": "sources/live/Q8042859.meta.json",
+      "sha256": "c821b62decfd13a8cd61016247a1662b7b769f7a651b9f11354d7d513baed172"
+    },
+    {
+      "path": "sources/live/Q8072845.json",
+      "sha256": "9616fffd2c642adb1f6c5cce3ae185842d4c4bd7f3d0dc9915fbabd045370a8c",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8072845.json"
+    },
+    {
+      "path": "sources/live/Q8072845.meta.json",
+      "sha256": "0b1802454a6d12da49c7039c300e2c54b46932d70245d7c9f13fd126238b7b2f"
+    },
+    {
+      "path": "sources/live/Q989492.json",
+      "sha256": "6f9d351e8bece12ea596179bc1f0ff4256fa24c14c05efa834055460d832fb49",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q989492.json"
+    },
+    {
+      "path": "sources/live/Q989492.meta.json",
+      "sha256": "0cd664ccadaf6ecefec33b11ca7664d1f0511729ffb6c22a4cd45ecfa0de5ba2"
+    },
+    {
+      "path": "sources/live/requests.jsonl",
+      "sha256": "568ae720384e661e81c274a33ef7454cdb39af17d0e6c1bb47733bf93ff4c4ac"
+    },
+    {
+      "path": "sources/municipio_code_owners.json",
+      "sha256": "73cc87d8425d27ee4d920a420653b0ac1984fca5935b20839ec21ac76c2f5e12"
+    },
+    {
+      "path": "sources/own_entities.json",
+      "sha256": "b2306e78fa04df94b661b7f7e07798a6d506a8df202bff7039a95fe8e4888fd2"
+    },
+    {
+      "path": "sources/own_entities.provenance.json",
+      "sha256": "2b79479f48879ed1528d3eadd24a8c4754ecf0e22abb4048f76cec072925974c"
+    },
+    {
+      "path": "sources/pr2268.json",
+      "sha256": "a7b701bf59e6b38e5cac3c596738a7ab4953c13f155e5a9967ee92641aa6f5bb"
+    },
+    {
+      "path": "sources/terms.html",
+      "sha256": "97e97599169f75f455877e85edffcf941d512f56c5c00197ebfec783d802c67a",
+      "url": "https://www.inegi.org.mx/inegi/terminos.html"
+    },
+    {
+      "path": "sources/terms.html.receipt.json",
+      "sha256": "274cb466bccc0a4f2c51cac0fba6ba7fd668b109fab5ae64a8574da092fb6332"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "inputs/.github__licenses__SOURCES.txt",
+      "sha256": "def199830ad310fca017f7441dab9ccbddc4033836d88efe51ab3184aabf2deb"
+    },
+    {
+      "path": "inputs/TYPE_FIELD.md",
+      "sha256": "41f21b8879d5d914b17a2a1bd62ed3722cd9c40caeed2647f5c7147329be1d20"
+    },
+    {
+      "path": "inputs/contributions__cities__MX.json",
+      "sha256": "07581cf3d7c946c4a50e90b6176c56f9ce95a9f60b8d17b0ae6c62ecf1bf4e8c"
+    },
+    {
+      "path": "inputs/migrations__events.jsonl",
+      "sha256": "6a73d5a4b4898c59b771d221b557f38ed785347f86ffb976dea60d3e44f20922"
+    },
+    {
+      "path": "inputs/pop2c.sources.json",
+      "sha256": "f9bd3de27cacaf58855a23094cf5624d1a70623646605d27a4eace1532748662"
+    },
+    {
+      "path": "inputs/prior_targets.json",
+      "sha256": "7bd27ca6c860f60e41d9926c6888059e42d702244a7138af4002fc30c42036ae"
+    },
+    {
+      "path": "inputs/verified_pr_commits_prior.jsonl",
+      "sha256": "9931ed47b767d0e2685650b62be4b1679f7c73cbcb414c00ed6f56ed7a8d589f"
+    }
+  ],
+  "method": "Current own item only: one literal five-digit INEGI municipio code; same state; strict polygon containment; name equals Censo 2020 name ignoring case and accents only; no other bound row. Redirect target must be unowned across all geographic files. Large population gaps do not reject official-code bindings under user-supplied 18 November owner ruling. Missing/deleted/opposite-scope/unproved items held. No name binding, events, type, point or parent changes.",
+  "reuse": {
+    "author": "INEGI",
+    "census": "Censo de Población y Vivienda 2020, reference 15 March 2020, national ITER POBTOT LOC=0000",
+    "geometry": "Marco Geoestadístico, Encuesta Intercensal 2025, edition 2026",
+    "terms": "https://www.inegi.org.mx/inegi/terminos.html",
+    "terms_receipt": {
+      "path": "sources/terms.html",
+      "sha256": "97e97599169f75f455877e85edffcf941d512f56c5c00197ebfec783d802c67a"
+    },
+    "licence": "INEGI Términos de Libre Uso de la Información; Wikidata CC0",
+    "notice": "Independent transformation; no INEGI endorsement; reused pop2c bytes verified before use."
+  }
+}
