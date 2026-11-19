@@ -1923,3 +1923,9 @@ Modifications: owner-designated existing village/parish rows retained as parishe
 # Special:EntityData one item per request, >=1.05 seconds between starts; QLever complete P279 ancestry.
 # Per-row live claims, official code-and-point evidence and source hashes: .github/fixes-docs/ledgers/items_clear_v6x.jsonl and .github/fixes-docs/ledgers/items_clear_v6x.sources.json.
 # Base c0b0b1b02102e686fd1bfddde49439cab8ecf577; 360 cleared, 30 corrected, 5096 held; wikiDataId only; no identity events.
+
+# wrong_items_clear_3: live-confirmed wrong-country Wikidata items (#1643)
+# Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing ; https://www.wikidata.org/wiki/Special:EntityData/
+# Tunisia envelope: https://github.com/datasets/geo-countries (Natural Earth, public domain).
+# Evidence and 25 guarded decisions: .github/fixes-docs/ledgers/items_clear3_v6x.jsonl and .github/fixes-docs/ledgers/items_clear3_v6x.sources.json
+# Base 268ce005dd0164ee8181d043cf2c187b535a2702; wikiDataId only; no identity events.
