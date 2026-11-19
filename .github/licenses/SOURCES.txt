@@ -1929,3 +1929,11 @@ Modifications: owner-designated existing village/parish rows retained as parishe
 # Tunisia envelope: https://github.com/datasets/geo-countries (Natural Earth, public domain).
 # Evidence and 25 guarded decisions: .github/fixes-docs/ledgers/items_clear3_v6x.jsonl and .github/fixes-docs/ledgers/items_clear3_v6x.sources.json
 # Base 268ce005dd0164ee8181d043cf2c187b535a2702; wikiDataId only; no identity events.
+
+Spain population-year package (es_pop_v6x; #1643).
+Elaboración propia con datos extraídos del sitio web del INE: www.ine.es. Padrón municipal and Nomenclátor, 1 January 2025, published 11 December 2025 / 28 January 2026. CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ . Changes: match existing Spain records to their own unit and set population and year; ambiguous identities held. INE does not endorse this reuse. https://www.ine.es/nomen2/index.do https://www.ine.es/pob_xls/pobmun.zip
+Obra derivada de BDLJE 2026-08-10 CC-BY 4.0 Instituto Geográfico Nacional (ign.es). Changes: municipal containment tests on unchanged CSC points.
+Wikidata contributors, structured data CC0; individual live Special:EntityData revisions retained. No item reassigned.
+
+Mexico own-code Censo 2020 municipio population fills (mx_pop3_v6x)
+Fuente: INEGI, Censo de Población y Vivienda 2020, ITER POBTOT LOC=0000; reference 15 March 2020. https://www.inegi.org.mx/programas/ccpv/2020/#datos_abiertos . Marco Geoestadístico, Encuesta Intercensal 2025, edition 2026. INEGI Términos de Libre Uso https://www.inegi.org.mx/inegi/terminos.html . Independent transformation: own literal municipio code, state, exact name (case/accents), strict point containment and exclusive ownership; replace undated figures with official 2020 total. No INEGI endorsement. Wikidata CC0 https://www.wikidata.org/wiki/Wikidata:Licensing . Evidence and holds: .github/fixes-docs/ledgers/mx_pop3_v6x.jsonl and mx_pop3_v6x.sources.json.
