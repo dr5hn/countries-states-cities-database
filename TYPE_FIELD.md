@@ -359,6 +359,45 @@ A Scottish NRS locality (own S19 code) sits at level 3: Scotland (level 1), coun
 (level 3). Historic parishes are not a current tier, so they do not add a level. Only the level changes; type and
 links are kept, and village status is not inferred from the locality code.
 
+### Italy
+
+Italy keeps municipal territories, historical territories and inhabited places distinct:
+
+| Entity | `type` | `type_local` | `level` |
+| --- | --- | --- | --- |
+| Current municipality | `municipality` | `comune` | 3 |
+| Census population centre | `locality` | `centro abitato` | 4 |
+| Census inhabited nucleus | `locality` | `nucleo abitato` | 4 |
+| Census productive locality | `locality` | `località produttiva` | 4 |
+| Urban neighbourhood | `section` | `quartiere` | 5 |
+| Comune abolished by merger, retained as its historical territory under the successor comune | `locality` | `ex comune` | 4 |
+| Named inhabited subdivision (frazione) of a current comune | `locality` | `frazione` | 4 |
+
+An `ex comune` represents the former municipal territory, not its capoluogo; it never
+takes a census-centre population. A frazione is not automatically identical to the
+census locality containing it: several named places can share one census centre.
+Existing census classes keep their established meanings. Level 4 is database depth
+below comune, not one uniform statutory tier. Set `parent_id` only to an independently
+and uniquely proved successor or containing comune row; leave it unchanged when that
+row is absent or ambiguous. A missing link does not change the represented entity.
+
+[ISTAT SITUAS](https://situas.istat.it/web/#/home/in-evidenza?id=129&dateFrom=1991-01-01)
+supplies extinction dates, successors and merger laws. [Census 2021 localities](https://www.istat.it/notizia/basi-territoriali-e-variabili-censuarie/)
+supply census names, classes and locality polygons; ISTAT's 1 January 2026 boundaries
+establish current comune containment. ISTAT data are reused under **CC BY 4.0** with
+attribution in [SOURCES.txt](.github/licenses/SOURCES.txt). Municipal and other official
+sources establish frazione names and membership; Wikidata's own items (CC0) corroborate
+identity. The [Italy ledger](.github/fixes-docs/ledgers/it_tld2_v6x.jsonl) records each
+decision, source edition and unresolved parent or identity.
+
+The documented SQL and JavaScript settlement filter returns all these Italian classes
+when coordinates are present, including `locality / ex comune` and `locality / frazione`.
+It also retains Italian comuni. This is a limitation for settlement-only use: an
+`ex comune` is a historical territory and its inclusion does not establish a current
+inhabited settlement. Consumers needing only inhabited places should additionally
+exclude `country_code = 'IT' AND type_local = 'ex comune'` and review municipal seats.
+This classification package does not alter the published filter.
+
 ## Filtering to genuine settlements
 
 For use cases like *"find the nearest city, town, or village to a location"*,
