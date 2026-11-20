@@ -1964,3 +1964,20 @@ https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026
 CSC joined estimated resident counts by each independently bound município municipal code; includes rural territory, not urban-seat or metropolitan population. Source response SHA-256: 2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73.
 Reuse: owner's existing IBGE decision under Decreto 8.777/2016 art.3 IV and art.4 as amended by Decreto 9.903/2019; IBGE PDA names table 6579. No invented estimate CC licence. IBGE DTB2025 checks current code/name/state; MMD2025 checks own point containment, under its compatible CC BY4.0 cartographic licence. No IBGE endorsement.
 Before/after values, row guards, bindings and holds: .github/fixes-docs/ledgers/br_pop2026_v6x.jsonl and .sources.json.
+
+Mexico Censo 2020 locality population fills (mx_pop4_v6x)
+Fuente: INEGI Censo de Población y Vivienda 2020, ITER POBTOT, reference 15 March 2020. https://www.inegi.org.mx/programas/ccpv/2020/#datos_abiertos . Marco Geoestadístico, Encuesta Intercensal 2025, edition 2026. https://www.inegi.org.mx/inegi/terminos.html . Independent transformation: own-code or exclusive locality-polygon bindings, population and year only. No INEGI endorsement. Wikidata CC0. Proofs and holds: .github/fixes-docs/ledgers/mx_pop4_v6x.jsonl and mx_pop4_v6x.sources.json.
+
+# AU section classifications and own SAL 2021 counts (#1643)
+# ABS ASGS SAL 2021 / Census G01, CC BY 4.0; Queensland place names, CC BY 4.0; Wikidata CC0.
+# Incorporates or developed using Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of Australia under CC BY 4.0. AUG26.
+# All 111 decisions, source dates, URLs, hashes and attribution: .github/fixes-docs/ledgers/au_tld3_v6x.jsonl and .github/fixes-docs/ledgers/au_tld3_v6x.sources.json
+https://www.abs.gov.au/census/find-census-data/datapacks
+https://data.gov.au/data/dataset/geoscape-administrative-boundaries
+
+# Own-item point corrections and existing AU/GB classifications/counts (#1643, v6.x)
+# Coordinates copied from Wikidata, CC0 1.0 Universal; own literal items, revisions, precision and exact response hashes in .github/fixes-docs/ledgers/points_own_item_v6x.jsonl and .sources.json.
+# ABS Census G01 / SAL 2021 CC BY 4.0; incorporates or developed using Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of Australia under CC BY 4.0. Queensland CC BY 4.0.
+# ONS, NRS, NISRA Open Government Licence v3.0; contains OS data © Crown copyright and database right.
+https://www.wikidata.org/wiki/Wikidata:Licensing
+https://www.abs.gov.au/census/find-census-data/datapacks
