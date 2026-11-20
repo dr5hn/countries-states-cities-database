@@ -1,0 +1,1354 @@
+{
+  "schema_version": 1,
+  "snapshot_commit": "f67dbbfec98930a81dd5c1d06b8d5f283c5e5f5f",
+  "ledger_sha256": "f843b89d8b52a81ec3bc7e3be7f01fb1b351bb70f4de1ef821a0051dbb276783",
+  "safe_changes": [
+    {
+      "table": "cities",
+      "id": "143005",
+      "name": "Boquerón Cabo Rojo",
+      "fields": "{\"country_code\":{\"after\":\"PR\",\"before\":\"US\"},\"country_id\":{\"after\":178,\"before\":233},\"state_code\":{\"after\":\"023\",\"before\":\"PR\"},\"state_id\":{\"after\":5145,\"before\":1449}}",
+      "basis": "Same proved place and city key retained; DATA_VERSIONING permits factual country/state moves in a regular release",
+      "row_sha256": "8c4fe9e2cff3df13c4449e04bc54ad5bb1aacbae8910cf0d7d95fd819c98861d",
+      "evidence": "{\"canonical_item\":\"Q8250813\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q8250813.json\",\"item\":\"Q8250813\",\"revision_id\":2525243750,\"sha256\":\"6fe85c155d9f45d9e6fe3a1fde8a08ca961027071a7e6b711168e82f24b133fd\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q8250813.json\"}"
+    },
+    {
+      "table": "cities",
+      "id": "143184",
+      "name": "Rio Lajas",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q7335269\"}}",
+      "basis": "Own item is Río Lajas river (P31 Q4022, GNIS 1612553), not a place. Same-name nearby Census CDP is only a candidate; clear wrong item, hold identity and replacement.",
+      "row_sha256": "8b7c2f83357ce5eb5848d3f52c2ad6e4de9602fef6c214ed2641f597392c2d68",
+      "evidence": "{\"canonical_item\":\"Q7335269\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q7335269.json\",\"item\":\"Q7335269\",\"revision_id\":2444903407,\"sha256\":\"a17ef0a1c5268f145ca4f7dca4516f7287e46e739030f784afc2061d556af399\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q7335269.json\"}"
+    },
+    {
+      "table": "cities",
+      "id": "143190",
+      "name": "Río Piedras",
+      "fields": "{\"country_code\":{\"after\":\"PR\",\"before\":\"US\"},\"country_id\":{\"after\":178,\"before\":233},\"state_code\":{\"after\":\"SJ\",\"before\":\"PR\"},\"state_id\":{\"after\":5075,\"before\":1449}}",
+      "basis": "Same proved place and city key retained; DATA_VERSIONING permits factual country/state moves in a regular release",
+      "row_sha256": "f04dd28f3ff1152b3737c157261ffef2d4abfac9293750c0fa5d01341ddb9109",
+      "evidence": "{\"canonical_item\":\"Q683206\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q683206.json\",\"item\":\"Q683206\",\"revision_id\":2541789357,\"sha256\":\"d3ee7c6e1ab58d4f497f46ceb57ae9a7048c0d1105fbd65f86eab2970912dcc5\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q683206.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5076",
+      "name": "Bayamon",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q16089204\"}}",
+      "basis": "Stored item is not this municipio: comunidad in Cidra, Puerto Rico; own class Q125778656",
+      "row_sha256": "dec33ab642783d66f1770eb11a90f4459bfac1e70025c093afd4a056b3862808",
+      "evidence": "{\"canonical_item\":\"Q16089204\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q16089204.json\",\"item\":\"Q16089204\",\"revision_id\":2530138416,\"sha256\":\"3f5e214aa736ec322859c8ebee1f1753cdf2277626fb48e479d6d55823570e78\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q16089204.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5135",
+      "name": "Aguada",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q365641\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "281d77feb18d8f800a5ed718610a53b66f8cbabd68930db7c282f4c1f86dcc72",
+      "evidence": "{\"canonical_item\":\"Q365641\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q365641.json\",\"item\":\"Q365641\",\"revision_id\":2538510724,\"sha256\":\"69b21ceec01205207e6bdaa98a0e66f8ee266dffe55eb441c283f4b3d7905774\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q365641.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5141",
+      "name": "Arroyo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q344528\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "680d995cf90ad51bd7c263568b62fda65931bc74772a388a1cb7808f8a584696",
+      "evidence": "{\"canonical_item\":\"Q344528\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q344528.json\",\"item\":\"Q344528\",\"revision_id\":2538470507,\"sha256\":\"9348572cc736c8e458be1b26880b760a7dfd5b70a8966413bf0ed16fddf48175\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q344528.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5142",
+      "name": "Barceloneta",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q526438\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "ef5903a4d84ee2a1aa8bbcc133eac4f635efde4ce00b50d05e04356ffc1e4f4f",
+      "evidence": "{\"canonical_item\":\"Q526438\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q526438.json\",\"item\":\"Q526438\",\"revision_id\":2569785000,\"sha256\":\"bb4b9740826a763ab98460a5dd92e134c66c8074efd111e534379fbdecddf5ed\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q526438.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5145",
+      "name": "Cabo Rojo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q396221\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "7ac29f7e9e84f82210da926995a337f90079e7dc961517f353dada0fb6e61ca3",
+      "evidence": "{\"canonical_item\":\"Q396221\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396221.json\",\"item\":\"Q396221\",\"revision_id\":2538525372,\"sha256\":\"da81c4f66ac4df99d56ca20482d46383d780b6671fd2a54ac329d0f3ceb80010\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396221.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5152",
+      "name": "Ceiba",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q284019\"}}",
+      "basis": "Stored item is not this municipio: genus of plants; own class Q16521",
+      "row_sha256": "9e682a24155cb96e6442aa30053fcdf7fec3aa3b6c2a553e59001977b05b2053",
+      "evidence": "{\"canonical_item\":\"Q284019\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q284019.json\",\"item\":\"Q284019\",\"revision_id\":2569005537,\"sha256\":\"4f131a2db37c12e0c7190af54d6d1a03419c62ef1aa82b4e5ad10a1fe72b7b64\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q284019.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5154",
+      "name": "Cidra",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q431138\"}}",
+      "basis": "Stored item is not this municipio: species of plant; own class Q16521",
+      "row_sha256": "dc27da87e23bb1515b9585ce059fed27f9985552dd0e00a7e5f0c66b558f9ca1",
+      "evidence": "{\"canonical_item\":\"Q431138\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q431138.json\",\"item\":\"Q431138\",\"revision_id\":2569185295,\"sha256\":\"e386cca1a9b1123798a7e1b25693e04110fff8a8bde78d7a98b1a91b4b9aba24\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q431138.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5157",
+      "name": "Corozal",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q451786\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "893cb593066f147b26ad087b05b1efbb28451c207f02594c37846d3fb99db74b",
+      "evidence": "{\"canonical_item\":\"Q451786\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q451786.json\",\"item\":\"Q451786\",\"revision_id\":2538806783,\"sha256\":\"54a7e653952db8dedae3cdd7256451939c6869ac952b34a0a4016a842cf80c94\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q451786.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5158",
+      "name": "Culebra",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q526402\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "334b800ea0b922107561d11d642cb321daa5ed061f3008ca2dfd4df0fe742f7f",
+      "evidence": "{\"canonical_item\":\"Q526402\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q526402.json\",\"item\":\"Q526402\",\"revision_id\":2538819396,\"sha256\":\"2e9faac1fed9999055dabe21a9ad28a6544614bf860a3a3831fab90ff6154958\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q526402.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5159",
+      "name": "Dorado",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q8837\"}}",
+      "basis": "Stored item is not this municipio: constellation in the southern celestial hemisphere; own class Q8928",
+      "row_sha256": "557373deacb04bb129349c5dc181cc0b7d60c1a29d09fab781cfc2e9d8f2bccf",
+      "evidence": "{\"canonical_item\":\"Q8837\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q8837.json\",\"item\":\"Q8837\",\"revision_id\":2570388788,\"sha256\":\"141fab86ca1749814d9e744d77b14abdc586fc5db8da412a73dbc62bccafdbcb\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q8837.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5166",
+      "name": "Gurabo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q396816\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "e28654bd2937d9dd141f2edf6137e5a23cc63ed5e72a989994acd7bfbce80cf9",
+      "evidence": "{\"canonical_item\":\"Q396816\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396816.json\",\"item\":\"Q396816\",\"revision_id\":2538529928,\"sha256\":\"c1078b001e1d49895763dfe9d66b29f8e9d0c2a772034668ec9f7977721f70a6\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396816.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5167",
+      "name": "Hatillo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q1179486\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "374c0ef4fbfd908e9463dbae1f3bf1145d5ec9e2529e0d4bbfcd72edd3b77b9b",
+      "evidence": "{\"canonical_item\":\"Q1179486\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q1179486.json\",\"item\":\"Q1179486\",\"revision_id\":2539090537,\"sha256\":\"1b88aad4a6c058e8e2d3a341e5342d9525efc6190d6d70c0db32e5a25a5becf6\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q1179486.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5170",
+      "name": "Isabela",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q230864\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "e9a4806780d50de96734e9e88cde5180a7b765001525a4f2d39e6c6732422a19",
+      "evidence": "{\"canonical_item\":\"Q230864\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q230864.json\",\"item\":\"Q230864\",\"revision_id\":2538303215,\"sha256\":\"a646c776a5f58d1a25ac56e762fcc989665b740a36f62260d4168da0510ef4ea\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q230864.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5174",
+      "name": "Lajas",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q396648\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "054fe6d6b6272e84139c86b35486ce2b2b14715ee42f346f107c9a4448bd9854",
+      "evidence": "{\"canonical_item\":\"Q396648\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396648.json\",\"item\":\"Q396648\",\"revision_id\":2538528649,\"sha256\":\"a8b7058715ebecf8be48e1b23542897ed40da357c96279b7dd5e7fc19ba3b79c\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q396648.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5175",
+      "name": "Lares",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q504377\"}}",
+      "basis": "Stored item is not this municipio: guardian deities in ancient Roman religion; own class ",
+      "row_sha256": "f059c31855314fc0242fe8b3266db9c38ac8e368a1b0686752e82455fb108d39",
+      "evidence": "{\"canonical_item\":\"Q504377\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q504377.json\",\"item\":\"Q504377\",\"revision_id\":2510737944,\"sha256\":\"ccc09ca3be868fdb73057038439c99c5b240cfb71105893327220b445f9c151e\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q504377.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5177",
+      "name": "Las Piedras",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q115308\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "2aa34a2465ca26007525a7c2eb0a9a2416f62918beedbe4f44702b30e42c7d9a",
+      "evidence": "{\"canonical_item\":\"Q115308\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q115308.json\",\"item\":\"Q115308\",\"revision_id\":2538198277,\"sha256\":\"2021064b89cdc2dafe86e5f0516a0937f95b05ff741bc2f52ec01220f4e89145\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q115308.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5182",
+      "name": "Maunabo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q3017679\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "0d04d8c64802cc08882be937e45a42ff9449f0f2ed24e854f6908f829056fbbe",
+      "evidence": "{\"canonical_item\":\"Q3017679\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q3017679.json\",\"item\":\"Q3017679\",\"revision_id\":2539846929,\"sha256\":\"6c241af984615497d2e72dc7365f3b8d300207f62f130d976832140e84b1634f\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q3017679.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5184",
+      "name": "Moca",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q439855\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "a3bc9454218739ec0ad6747ead2ac7175432c2c4d2bb7ded15bee6bddec64fc4",
+      "evidence": "{\"canonical_item\":\"Q439855\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q439855.json\",\"item\":\"Q439855\",\"revision_id\":2538796200,\"sha256\":\"b4978c3220130f9a2dbe5c70c64733ca691c3621556c77671dc47ccc3cb1ce2b\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q439855.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5187",
+      "name": "Naranjito",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q416476\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "abda868d592165f3bc65abdec8c388d04500e3e8369b9596c5c811de32ba7925",
+      "evidence": "{\"canonical_item\":\"Q416476\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q416476.json\",\"item\":\"Q416476\",\"revision_id\":2538778995,\"sha256\":\"64ff733359d8256645ca3468b54590ee907bb8a9b0ebabd71130f7318ec6cbd3\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q416476.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5193",
+      "name": "Rincón",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q294727\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "d72dd92a933bb9b7b572cfcac62dd9dbc22df25521c8bc98e68d8d4aae10ee03",
+      "evidence": "{\"canonical_item\":\"Q294727\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q294727.json\",\"item\":\"Q294727\",\"revision_id\":2538430472,\"sha256\":\"524e8e06ec81ef026120ffab82de458f5180aa962fb9fb603661d119f4a0e174\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q294727.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5195",
+      "name": "Sabana Grande",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q739870\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "fc1a4bf57d41cd6ba09a17e6fcf293abd340486f93ed67b5570305da5308d3bd",
+      "evidence": "{\"canonical_item\":\"Q739870\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q739870.json\",\"item\":\"Q739870\",\"revision_id\":2538864180,\"sha256\":\"3b37d3b9e46407bbd321959e966ac9b0d64d586fbd760481397872f16836abde\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q739870.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5196",
+      "name": "Salinas",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q229252\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "2a03e3c14f436af99785e047bf6d549af1f6f49d392065056429fb7111d0fffd",
+      "evidence": "{\"canonical_item\":\"Q229252\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q229252.json\",\"item\":\"Q229252\",\"revision_id\":2553438183,\"sha256\":\"87abfcecc9e17f478aac619badf980f546c66e25801ff6247f0192a0e900ca5b\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q229252.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5199",
+      "name": "San Lorenzo",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q225380\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "a01ac4fdddd98e12223c51342039c98220b0d9f27347cabbc4d6fcee60af9a05",
+      "evidence": "{\"canonical_item\":\"Q225380\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q225380.json\",\"item\":\"Q225380\",\"revision_id\":2538281964,\"sha256\":\"0f45d95502fff1e7605ac5cf06d99fd3209833fbabc7e30f79023d84aa7af37b\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q225380.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5201",
+      "name": "Santa Isabel",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q234744\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "970afd24c2098a15919f83fb782fc6bad42e368fb1bfff89f3a3a055336b4ad9",
+      "evidence": "{\"canonical_item\":\"Q234744\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q234744.json\",\"item\":\"Q234744\",\"revision_id\":2538319042,\"sha256\":\"2a5a800749c657b817ea3c894b4d33ffe463aaa36efddcfd6971c2e064e428e9\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q234744.json\"}"
+    },
+    {
+      "table": "states",
+      "id": "5209",
+      "name": "Villalba",
+      "fields": "{\"wikiDataId\":{\"after\":null,\"before\":\"Q299761\"}}",
+      "basis": "Stored item is not this municipio: Wikimedia disambiguation page; own class Q4167410",
+      "row_sha256": "4f98869a340e72a5bf25c472b9054462937428748000be0a13a7c2a01e924fa3",
+      "evidence": "{\"canonical_item\":\"Q299761\",\"canonical_url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q299761.json\",\"item\":\"Q299761\",\"revision_id\":2538447472,\"sha256\":\"c945f7cebcec3d5f6268d212ebf579b51541da1387e734af56237adab7b17e19\",\"url\":\"https://www.wikidata.org/wiki/Special:EntityData/Q299761.json\"}"
+    }
+  ],
+  "held_changes": [
+    {
+      "table": "cities",
+      "id": 143137,
+      "item": "Q2288079",
+      "revision": 2550895946,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143136
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143144,
+      "item": "Q2659720",
+      "revision": 2550899871,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153601
+        ],
+        [
+          "contributions/cities/US.json",
+          143143
+        ],
+        [
+          "contributions/states/states.json",
+          5186
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143177,
+      "item": "Q2057872",
+      "revision": 2555871091,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153607
+        ],
+        [
+          "contributions/cities/US.json",
+          143176
+        ],
+        [
+          "contributions/states/states.json",
+          5192
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143199,
+      "item": "Q1598808",
+      "revision": 2550549733,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153612
+        ],
+        [
+          "contributions/states/states.json",
+          5197
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143208,
+      "item": "Q2485604",
+      "revision": 2550542900,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143207
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143222,
+      "item": "Q1150895",
+      "revision": 2556257213,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153619
+        ],
+        [
+          "contributions/cities/US.json",
+          143221
+        ],
+        [
+          "contributions/states/states.json",
+          5084
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143231,
+      "item": "Q2192472",
+      "revision": 2550822151,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143230
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    }
+  ],
+  "live_verification": [
+    {
+      "table": "cities",
+      "id": 143005,
+      "item": "Q8250813",
+      "revision": 2525243750,
+      "claims_reconfirmed": true,
+      "point_inside_containing_state": true
+    },
+    {
+      "table": "cities",
+      "id": 143137,
+      "item": "Q2288079",
+      "revision": 2550895946,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143136
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143144,
+      "item": "Q2659720",
+      "revision": 2550899871,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153601
+        ],
+        [
+          "contributions/cities/US.json",
+          143143
+        ],
+        [
+          "contributions/states/states.json",
+          5186
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143177,
+      "item": "Q2057872",
+      "revision": 2555871091,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153607
+        ],
+        [
+          "contributions/cities/US.json",
+          143176
+        ],
+        [
+          "contributions/states/states.json",
+          5192
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143184,
+      "item": "Q7335269",
+      "revision": 2444903407,
+      "claims_reconfirmed": true,
+      "point_check": "Wrong river item; replacement held; coordinates unchanged"
+    },
+    {
+      "table": "cities",
+      "id": 143190,
+      "item": "Q683206",
+      "revision": 2541789357,
+      "claims_reconfirmed": true,
+      "point_inside_containing_state": true
+    },
+    {
+      "table": "cities",
+      "id": 143199,
+      "item": "Q1598808",
+      "revision": 2550549733,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153612
+        ],
+        [
+          "contributions/states/states.json",
+          5197
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143208,
+      "item": "Q2485604",
+      "revision": 2550542900,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143207
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143222,
+      "item": "Q1150895",
+      "revision": 2556257213,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/PR.json",
+          153619
+        ],
+        [
+          "contributions/cities/US.json",
+          143221
+        ],
+        [
+          "contributions/states/states.json",
+          5084
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "cities",
+      "id": 143231,
+      "item": "Q2192472",
+      "revision": 2550822151,
+      "claims_reconfirmed": true,
+      "other_owners": [
+        [
+          "contributions/cities/US.json",
+          143230
+        ]
+      ],
+      "owner_check": "FAIL: replacement already owned",
+      "point_inside_municipio": true
+    },
+    {
+      "table": "states",
+      "id": 5076,
+      "item": "Q16089204",
+      "revision": 2530138416,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 125778656,
+          "id": "Q125778656"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5135,
+      "item": "Q365641",
+      "revision": 2538510724,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5141,
+      "item": "Q344528",
+      "revision": 2538470507,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5142,
+      "item": "Q526438",
+      "revision": 2569785000,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5145,
+      "item": "Q396221",
+      "revision": 2538525372,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5152,
+      "item": "Q284019",
+      "revision": 2569005537,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 16521,
+          "id": "Q16521"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5154,
+      "item": "Q431138",
+      "revision": 2569185295,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 16521,
+          "id": "Q16521"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5157,
+      "item": "Q451786",
+      "revision": 2538806783,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5158,
+      "item": "Q526402",
+      "revision": 2538819396,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5159,
+      "item": "Q8837",
+      "revision": 2570388788,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 8928,
+          "id": "Q8928"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5166,
+      "item": "Q396816",
+      "revision": 2538529928,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5167,
+      "item": "Q1179486",
+      "revision": 2539090537,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5170,
+      "item": "Q230864",
+      "revision": 2538303215,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5174,
+      "item": "Q396648",
+      "revision": 2538528649,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5175,
+      "item": "Q504377",
+      "revision": 2510737944,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": []
+    },
+    {
+      "table": "states",
+      "id": 5177,
+      "item": "Q115308",
+      "revision": 2538198277,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5182,
+      "item": "Q3017679",
+      "revision": 2539846929,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5184,
+      "item": "Q439855",
+      "revision": 2538796200,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5187,
+      "item": "Q416476",
+      "revision": 2538778995,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5193,
+      "item": "Q294727",
+      "revision": 2538430472,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5195,
+      "item": "Q739870",
+      "revision": 2538864180,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5196,
+      "item": "Q229252",
+      "revision": 2553438183,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5199,
+      "item": "Q225380",
+      "revision": 2538281964,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5201,
+      "item": "Q234744",
+      "revision": 2538319042,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    },
+    {
+      "table": "states",
+      "id": 5209,
+      "item": "Q299761",
+      "revision": 2538447472,
+      "claims_reconfirmed": true,
+      "wrong_class_reconfirmed": [
+        {
+          "entity-type": "item",
+          "numeric-id": 4167410,
+          "id": "Q4167410"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "evidence/boqueron.geojson",
+      "sha256": "5f945f46babc219150d6495685e42808c6141e42c5bc99fd8f17cabacb15a50b",
+      "bytes": 30242
+    },
+    {
+      "path": "evidence/boqueron.geojson.receipt.json",
+      "sha256": "284fbbb01a3ad0dfe1cc68263bf83318de226de6ec99da8a443ecc6a1f211b89",
+      "bytes": 433
+    },
+    {
+      "path": "evidence/census_municipios.geojson",
+      "sha256": "e0419a2586c5376f0823cb17bcc4b9afe6caa4396182b7ea24aaa35b4d47e8a1",
+      "bytes": 5390594
+    },
+    {
+      "path": "evidence/census_municipios.geojson.receipt.json",
+      "sha256": "56fe7a552177b12da795dc1f3cca4dc188d2f300bf5e39b11a0645214765987f",
+      "bytes": 358
+    },
+    {
+      "path": "evidence/entities.json",
+      "sha256": "f0d0f4b799b848b638965e32dc5275d5d758b27b22a42346ab7d5f88938fb043",
+      "bytes": 847842
+    },
+    {
+      "path": "evidence/live/Q1150895.json",
+      "sha256": "2375f8542ba99528a0543d6d7f6a13fa3137860ab0d9328c3c2e4647b45749d0",
+      "bytes": 46322
+    },
+    {
+      "path": "evidence/live/Q1150895.meta.json",
+      "sha256": "f028098bae68d2470f9ce23bac28ce6086413fbd5a9d0a791945053d162e215a",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q115308.json",
+      "sha256": "2021064b89cdc2dafe86e5f0516a0937f95b05ff741bc2f52ec01220f4e89145",
+      "bytes": 21047
+    },
+    {
+      "path": "evidence/live/Q115308.meta.json",
+      "sha256": "33b33d0e8f9cfc40e3884b0c24e9227df874b49c2ed35983a77bcbdb02a47159",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q1179486.json",
+      "sha256": "1b88aad4a6c058e8e2d3a341e5342d9525efc6190d6d70c0db32e5a25a5becf6",
+      "bytes": 12061
+    },
+    {
+      "path": "evidence/live/Q1179486.meta.json",
+      "sha256": "0dee1d99eaed1b07fa459566951e8cad9e41c6204c3071938b93dba4fde5c57b",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q1598808.json",
+      "sha256": "cb94c09796f422563d903e9e20eb71952b4b7510eb3686d7359abf052dae625c",
+      "bytes": 43573
+    },
+    {
+      "path": "evidence/live/Q1598808.meta.json",
+      "sha256": "32ad34f5145b2390f9af50a5c16610de64d9aa43a05e4069013a19a0ebf8ed71",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q16089204.json",
+      "sha256": "3f5e214aa736ec322859c8ebee1f1753cdf2277626fb48e479d6d55823570e78",
+      "bytes": 15355
+    },
+    {
+      "path": "evidence/live/Q16089204.meta.json",
+      "sha256": "fb65302e1402a81f5d36bf88227e71819aaed0c96d354ca5280a64abef550d1d",
+      "bytes": 631
+    },
+    {
+      "path": "evidence/live/Q2057872.json",
+      "sha256": "09b37b9803f8e8795e679bfb16dbea43c98a7cf5db6ee7c1c99c972d81d02b86",
+      "bytes": 42076
+    },
+    {
+      "path": "evidence/live/Q2057872.meta.json",
+      "sha256": "d2504f7eb1f42dbc7877083c62c82a70b34e7996a8d38761169cdc07b1e32261",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q2192472.json",
+      "sha256": "a6b78dd6bbbf9f7d15fb56d8aae43a063fb8e85d5f27a43202f458f031573e59",
+      "bytes": 40164
+    },
+    {
+      "path": "evidence/live/Q2192472.meta.json",
+      "sha256": "32f48546af5c882dcba175a228953cd0fa95b40af26d88246b6db64871f617aa",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q225380.json",
+      "sha256": "0f45d95502fff1e7605ac5cf06d99fd3209833fbabc7e30f79023d84aa7af37b",
+      "bytes": 28718
+    },
+    {
+      "path": "evidence/live/Q225380.meta.json",
+      "sha256": "1b5e66b210d6a460e76d1b5904ce8dd117f6212f6e543fec119f4a000956055e",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q2288079.json",
+      "sha256": "7ce0535e0ec1ad6b1d16329b79f22464f7c50070df7638afe2e7a79ad832039c",
+      "bytes": 39632
+    },
+    {
+      "path": "evidence/live/Q2288079.meta.json",
+      "sha256": "e1abb4d0690cd5af52863ce3b7e7cb557e041ae4da44d219e545c7f73b784e60",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q229252.json",
+      "sha256": "87abfcecc9e17f478aac619badf980f546c66e25801ff6247f0192a0e900ca5b",
+      "bytes": 27825
+    },
+    {
+      "path": "evidence/live/Q229252.meta.json",
+      "sha256": "2c2771551af1785bd79ffa666abd696d10a2fbcf2c915e3ee9846acab60c26a2",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q230864.json",
+      "sha256": "a646c776a5f58d1a25ac56e762fcc989665b740a36f62260d4168da0510ef4ea",
+      "bytes": 18145
+    },
+    {
+      "path": "evidence/live/Q230864.meta.json",
+      "sha256": "3eeec21657929398b5a0cb8073a99549574388f1f4efd889c6e9e0f3486ceadc",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q234744.json",
+      "sha256": "2a5a800749c657b817ea3c894b4d33ffe463aaa36efddcfd6971c2e064e428e9",
+      "bytes": 24817
+    },
+    {
+      "path": "evidence/live/Q234744.meta.json",
+      "sha256": "c6e5698fe2680516e8244560ad38baa8cd730608862a900946d604c1d4398c55",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q2485604.json",
+      "sha256": "fdb593a8a16738759708644a0af264025bea42e63c264eacba62fe6a5504bd4a",
+      "bytes": 40222
+    },
+    {
+      "path": "evidence/live/Q2485604.meta.json",
+      "sha256": "ab24597e9305c20af45b60c8bcb195f13618f99f948a685de5e4aa31dfedd507",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q2659720.json",
+      "sha256": "547a02a8b297c149f2382bf0056e0edcd43617ee0504a3f59a4174854b9a811a",
+      "bytes": 42224
+    },
+    {
+      "path": "evidence/live/Q2659720.meta.json",
+      "sha256": "1da07c9a96ba75bb5680c13ab64101c61746086ccf13788a3791ecb802b5eb49",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q284019.json",
+      "sha256": "4f131a2db37c12e0c7190af54d6d1a03419c62ef1aa82b4e5ad10a1fe72b7b64",
+      "bytes": 44369
+    },
+    {
+      "path": "evidence/live/Q284019.meta.json",
+      "sha256": "f590678db510d3d50d1bde7ad0934038700fd749116ee513c7c212674de7d540",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q294727.json",
+      "sha256": "524e8e06ec81ef026120ffab82de458f5180aa962fb9fb603661d119f4a0e174",
+      "bytes": 23576
+    },
+    {
+      "path": "evidence/live/Q294727.meta.json",
+      "sha256": "1046289b79439ddbe5eb419ec647195ad9950b3664701d77bd398afe4089b448",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q299761.json",
+      "sha256": "c945f7cebcec3d5f6268d212ebf579b51541da1387e734af56237adab7b17e19",
+      "bytes": 20558
+    },
+    {
+      "path": "evidence/live/Q299761.meta.json",
+      "sha256": "c0f87683b424e1d134d4c9d748c8cef3d49a737ba8fb340a6a745d9f6cc5ffd8",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q3017679.json",
+      "sha256": "6c241af984615497d2e72dc7365f3b8d300207f62f130d976832140e84b1634f",
+      "bytes": 10958
+    },
+    {
+      "path": "evidence/live/Q3017679.meta.json",
+      "sha256": "bed0318a3b35243aa7acd62afc688ca8c079538b42c47e01f7f5ee240e5983bb",
+      "bytes": 627
+    },
+    {
+      "path": "evidence/live/Q33694327.error0.json",
+      "sha256": "7ce0535e0ec1ad6b1d16329b79f22464f7c50070df7638afe2e7a79ad832039c",
+      "bytes": 39632
+    },
+    {
+      "path": "evidence/live/Q33694327.error0.json.receipt.json",
+      "sha256": "154054f41e910628e829e135d07b2d8cf2610978eba6ddba54fa0c0068a6ca48",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33696459.error0.json",
+      "sha256": "547a02a8b297c149f2382bf0056e0edcd43617ee0504a3f59a4174854b9a811a",
+      "bytes": 42224
+    },
+    {
+      "path": "evidence/live/Q33696459.error0.json.receipt.json",
+      "sha256": "3782e42818fac0221dedab39f8ca8aa1ee9a2f2e6e0e3d3d322b3b5a54f06258",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33709913.error0.json",
+      "sha256": "09b37b9803f8e8795e679bfb16dbea43c98a7cf5db6ee7c1c99c972d81d02b86",
+      "bytes": 42076
+    },
+    {
+      "path": "evidence/live/Q33709913.error0.json.receipt.json",
+      "sha256": "c30ccd3ae64452835bc289420e400b4e7584dd945a5dc24f48c6e8f699fcac20",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33713968.error0.json",
+      "sha256": "cb94c09796f422563d903e9e20eb71952b4b7510eb3686d7359abf052dae625c",
+      "bytes": 43573
+    },
+    {
+      "path": "evidence/live/Q33713968.error0.json.receipt.json",
+      "sha256": "24f0d5905701b63f04a0bb210cd25dba5cb1773467b7c0246745d44e143c06f9",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33714607.error0.json",
+      "sha256": "fdb593a8a16738759708644a0af264025bea42e63c264eacba62fe6a5504bd4a",
+      "bytes": 40222
+    },
+    {
+      "path": "evidence/live/Q33714607.error0.json.receipt.json",
+      "sha256": "41baa3cdcd3ec6ecd06404ed89845d018401b7d567ba7b05fa3e6360493bc621",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33722059.error0.json",
+      "sha256": "2375f8542ba99528a0543d6d7f6a13fa3137860ab0d9328c3c2e4647b45749d0",
+      "bytes": 46322
+    },
+    {
+      "path": "evidence/live/Q33722059.error0.json.receipt.json",
+      "sha256": "11935ad2ccf6f7f3892d5c8575e3bb0ea932997bcb51074d02b699549f3ceb60",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q33724528.error0.json",
+      "sha256": "a6b78dd6bbbf9f7d15fb56d8aae43a063fb8e85d5f27a43202f458f031573e59",
+      "bytes": 40164
+    },
+    {
+      "path": "evidence/live/Q33724528.error0.json.receipt.json",
+      "sha256": "88cca4b323bf1bf260b06845a8a52cf53c16f8b6e37f46afc8b8f3b531558d04",
+      "bytes": 625
+    },
+    {
+      "path": "evidence/live/Q344528.json",
+      "sha256": "9348572cc736c8e458be1b26880b760a7dfd5b70a8966413bf0ed16fddf48175",
+      "bytes": 24266
+    },
+    {
+      "path": "evidence/live/Q344528.meta.json",
+      "sha256": "4972e1d0e9c2bf3330da30cefb63b672371c80d13d07703d8ea63fb1dedfe74c",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q365641.json",
+      "sha256": "69b21ceec01205207e6bdaa98a0e66f8ee266dffe55eb441c283f4b3d7905774",
+      "bytes": 15753
+    },
+    {
+      "path": "evidence/live/Q365641.meta.json",
+      "sha256": "98c405a90476d42cccda257a6eafe0c9b219946b0335b4b89b8228af02bafaf5",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q396221.json",
+      "sha256": "da81c4f66ac4df99d56ca20482d46383d780b6671fd2a54ac329d0f3ceb80010",
+      "bytes": 11756
+    },
+    {
+      "path": "evidence/live/Q396221.meta.json",
+      "sha256": "72ede50c2ef37c6dca2d2039d4ec2f84156575f040e4f3983e864257da12c5fc",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q396648.json",
+      "sha256": "a8b7058715ebecf8be48e1b23542897ed40da357c96279b7dd5e7fc19ba3b79c",
+      "bytes": 20902
+    },
+    {
+      "path": "evidence/live/Q396648.meta.json",
+      "sha256": "be857b52958641853d95aac72283c1cb422fe169876cdce63d6705d78b76d439",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q396816.json",
+      "sha256": "c1078b001e1d49895763dfe9d66b29f8e9d0c2a772034668ec9f7977721f70a6",
+      "bytes": 16571
+    },
+    {
+      "path": "evidence/live/Q396816.meta.json",
+      "sha256": "a0a7b082dfdef3347751b6973023c62ff314921df09877ad36b9cda823e6d821",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q416476.json",
+      "sha256": "64ff733359d8256645ca3468b54590ee907bb8a9b0ebabd71130f7318ec6cbd3",
+      "bytes": 21235
+    },
+    {
+      "path": "evidence/live/Q416476.meta.json",
+      "sha256": "ff58f1de2b3584aad08c78a81a6b913febf65a4cfcdc49f3f53d651aeb6b2a27",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q431138.json",
+      "sha256": "e386cca1a9b1123798a7e1b25693e04110fff8a8bde78d7a98b1a91b4b9aba24",
+      "bytes": 54482
+    },
+    {
+      "path": "evidence/live/Q431138.meta.json",
+      "sha256": "6fdf8c68c3792214db106a40d826b7b2d2c2716e5958e557e359e008ee4a5163",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q439855.json",
+      "sha256": "b4978c3220130f9a2dbe5c70c64733ca691c3621556c77671dc47ccc3cb1ce2b",
+      "bytes": 19171
+    },
+    {
+      "path": "evidence/live/Q439855.meta.json",
+      "sha256": "b154dd64e1915923bfb9b0bc6e663a18195b6959d6caa0b1cd0fd2e9e28a8455",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q451786.json",
+      "sha256": "54a7e653952db8dedae3cdd7256451939c6869ac952b34a0a4016a842cf80c94",
+      "bytes": 21757
+    },
+    {
+      "path": "evidence/live/Q451786.meta.json",
+      "sha256": "2844b7c6cbee42a0d82daa691852d362f998f58a2b1318657e246b3ce0753d8a",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q504377.json",
+      "sha256": "ccc09ca3be868fdb73057038439c99c5b240cfb71105893327220b445f9c151e",
+      "bytes": 24500
+    },
+    {
+      "path": "evidence/live/Q504377.meta.json",
+      "sha256": "144ede587864659e805858a8d08516992e29daa7daeb5af5d03b03eb78cd94d0",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q526402.json",
+      "sha256": "2e9faac1fed9999055dabe21a9ad28a6544614bf860a3a3831fab90ff6154958",
+      "bytes": 12686
+    },
+    {
+      "path": "evidence/live/Q526402.meta.json",
+      "sha256": "53032ea1376c6a03c5ffbf33627dcb4539921a087b9c7ae1d5514dd66c897a5e",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q526438.json",
+      "sha256": "bb4b9740826a763ab98460a5dd92e134c66c8074efd111e534379fbdecddf5ed",
+      "bytes": 15141
+    },
+    {
+      "path": "evidence/live/Q526438.meta.json",
+      "sha256": "03473bb5e3238fcbd0c78229a5d4a1da20183c551252482b10b8f12492245303",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q683206.json",
+      "sha256": "d3ee7c6e1ab58d4f497f46ceb57ae9a7048c0d1105fbd65f86eab2970912dcc5",
+      "bytes": 19661
+    },
+    {
+      "path": "evidence/live/Q683206.meta.json",
+      "sha256": "9a0b3a5c35ea8e070beb463ad01cffa53b6affecb401c6b5a6a19ec313bb957c",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q7335269.json",
+      "sha256": "a17ef0a1c5268f145ca4f7dca4516f7287e46e739030f784afc2061d556af399",
+      "bytes": 5918
+    },
+    {
+      "path": "evidence/live/Q7335269.meta.json",
+      "sha256": "6223815071120e4f0f1b35d70c7fea80a2ffa7fdf58923dc8d3220c9aed5c3f9",
+      "bytes": 626
+    },
+    {
+      "path": "evidence/live/Q739870.json",
+      "sha256": "3b37d3b9e46407bbd321959e966ac9b0d64d586fbd760481397872f16836abde",
+      "bytes": 12600
+    },
+    {
+      "path": "evidence/live/Q739870.meta.json",
+      "sha256": "c1a20b020b06a2a3e800cf473bc378819a5f33faa2c2b7130cae934985f2ccb0",
+      "bytes": 623
+    },
+    {
+      "path": "evidence/live/Q8250813.json",
+      "sha256": "6fe85c155d9f45d9e6fe3a1fde8a08ca961027071a7e6b711168e82f24b133fd",
+      "bytes": 8177
+    },
+    {
+      "path": "evidence/live/Q8250813.meta.json",
+      "sha256": "5afce529d31449f0fa5ce9ac67c47e15c98e7d10fb7d2b718b0b50b3de4b83bf",
+      "bytes": 626
+    },
+    {
+      "path": "evidence/live/Q8837.json",
+      "sha256": "141fab86ca1749814d9e744d77b14abdc586fc5db8da412a73dbc62bccafdbcb",
+      "bytes": 41986
+    },
+    {
+      "path": "evidence/live/Q8837.meta.json",
+      "sha256": "fbcad8ebb3941fa13466b8a5b022ca4be2bcb5db752e721bf65b404197925b88",
+      "bytes": 615
+    },
+    {
+      "path": "evidence/live/requests.jsonl",
+      "sha256": "f405ce7db64148441b49dd843f7d38322a509650e8e766680598a14fc4aeadd8",
+      "bytes": 11289
+    },
+    {
+      "path": "evidence/redirects.json",
+      "sha256": "b6c37bc33830d505fc4787ef901298fb8d3519f5b8a8f101cc36231c7870c947",
+      "bytes": 192
+    }
+  ]
+}
