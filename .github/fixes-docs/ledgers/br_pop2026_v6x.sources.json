@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "base_commit": "7b3cb720c65db838a9029d8ca0cdb95121d4c962",
+  "ledger": ".github/fixes-docs/ledgers/br_pop2026_v6x.jsonl",
+  "ledger_sha256": "f6b051592340a208ccd1fcb5452c5a5e420b16132ed215431de38ee3f9112936",
+  "binding_method": "Earlier BR per-row municipal_binding_audit ledger (16 Nov 2026), retained by the close audit as prior_municipal_bindings.json. No QLever-only code newly admitted. Row 10715 uses its newly assigned own item Q599288, live P1585 1703305, matching the earlier code; all other rows retain the earlier-ledger route.",
+  "sources": [
+    {
+      "path": "sources/6579_population_2026.json",
+      "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+      "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+      "bytes": 1508656,
+      "original_receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+        "request_body": null,
+        "started_utc": "2026-11-19T20:10:50.678100+00:00",
+        "retrieved_utc": "2026-11-19T20:10:51.943590+00:00",
+        "status": 200,
+        "headers": {
+          "Date": "Thu, 19 Nov 2026 20:10:51 GMT",
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Length": "1508656",
+          "Connection": "close",
+          "Cache-Control": "no-cache",
+          "Pragma": "no-cache",
+          "Expires": "-1",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-XSS-Protection": "1; mode=block",
+          "X-Content-Type-Options": "nosniff",
+          "cf-cache-status": "DYNAMIC",
+          "Server": "cloudflare",
+          "CF-RAY": "a5d1dc5329ea88e0-BOM"
+        },
+        "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+        "bytes": 1508656
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/6579_population_2026.json.receipt.json",
+      "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+      "sha256": "9a35072241f66de7f2723ce4b7bfa4f17177c7bdbbc5cf9a7980bd286fd5dec6",
+      "bytes": 1310,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/BR_Municipios_2025.zip",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+      "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+      "bytes": 237062431,
+      "original_receipt": {
+        "id": "BR_Municipios_2025.zip",
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "edition": "Malha Municipal 2025",
+        "retrieval_started_utc": "2026-10-09T03:42:30.733223+00:00",
+        "retrieved_at_utc": "2026-10-09T03:42:59.199669+00:00",
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+        "bytes": 237062431,
+        "status": 200,
+        "headers": {
+          "Date": "Fri, 09 Oct 2026 03:42:31 GMT",
+          "Server": "Apache/2.4.37 (centos) OpenSSL/1.1.1k",
+          "Last-Modified": "Thu, 26 Feb 2026 20:02:48 GMT",
+          "ETag": "\"e21491f-64bbf9ac98a00\"",
+          "Accept-Ranges": "bytes",
+          "Content-Length": "237062431",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET",
+          "Content-Type": "application/zip",
+          "Connection": "close"
+        },
+        "licence": "CC BY 4.0 compatible licence, explicitly stated by IBGE",
+        "licence_evidence": "Malha_2025_technical.pdf, printed page 9"
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/BR_Municipios_2025.zip.meta.json",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+      "sha256": "c6475ebf066e3c7acac6e1e7a68db72c8adb93fa4d4c121479952be54931d11a",
+      "bytes": 1027,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/DTB_2025.zip",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+      "bytes": 1635600,
+      "original_receipt": {
+        "id": "DTB_2025.zip",
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "edition": "DTB 2025",
+        "retrieval_started_utc": "2026-10-09T03:42:30.732193+00:00",
+        "retrieved_at_utc": "2026-10-09T03:42:34.006489+00:00",
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+        "bytes": 1635600,
+        "status": 200,
+        "headers": {
+          "Date": "Fri, 09 Oct 2026 03:42:31 GMT",
+          "Server": "Apache/2.4.37 (centos) OpenSSL/1.1.1k",
+          "Last-Modified": "Thu, 26 Mar 2026 21:07:36 GMT",
+          "ETag": "\"18f510-64df3c6163600\"",
+          "Accept-Ranges": "bytes",
+          "Content-Length": "1635600",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET",
+          "Content-Type": "application/zip",
+          "Connection": "close"
+        },
+        "licence": "Public IBGE open data (Decreto 8.777/2016 policy); no explicit standardized licence found in archive or DTB product page",
+        "licence_evidence": [
+          "DTB_index.html",
+          "DTB_product.html",
+          "IBGE_open_data.html"
+        ]
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/DTB_2025.zip.meta.json",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+      "sha256": "46761315376ec2655d776a96a1105ae0f8fec3a42798852fc31cb0a974b6773b",
+      "bytes": 1077,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/Malha_2025_technical.pdf",
+      "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf",
+      "sha256": "bc88c44624c8852b4796b72b525f9092cd770415403c1a3486a8d48bcefc9e89",
+      "bytes": 707028,
+      "original_receipt": {
+        "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf",
+        "request_body": null,
+        "started_utc": "2026-11-16T07:44:42.042387+00:00",
+        "retrieved_utc": "2026-11-16T07:44:43.284663+00:00",
+        "sha256": "bc88c44624c8852b4796b72b525f9092cd770415403c1a3486a8d48bcefc9e89",
+        "bytes": 707028,
+        "status": 200,
+        "attempts": []
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/Malha_2025_technical.pdf.receipt.json",
+      "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf",
+      "sha256": "e01cb5480731114c331a4ecf9e68643665d15a7e167d5a3e14ee16b6a71fdabd",
+      "bytes": 346,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/Q599288.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q599288.json",
+      "sha256": "61acee7ebbbc492ff114a8551f12406b1db2f914d7fdfd056f8471ea251443d0",
+      "bytes": 53637,
+      "original_receipt": {
+        "name": "Q599288",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q599288.json",
+        "ids": [
+          "Q599288"
+        ],
+        "request_started_at": "2026-11-19T20:44:31.603925+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-19T20:44:32.612462+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q599288.json",
+        "headers": {
+          "date": "Thu, 19 Nov 2026 20:44:32 GMT",
+          "server": "mw-web.codfw.main-77f7fd4fb5-clmvz",
+          "x-content-type-options": "nosniff",
+          "accept-ch": "",
+          "access-control-allow-origin": "*",
+          "x-frame-options": "DENY",
+          "last-modified": "Tue, 20 Oct 2026 19:07:50 GMT",
+          "content-type": "application/json; charset=UTF-8",
+          "age": "1",
+          "accept-ranges": "bytes",
+          "x-cache": "cp5018 miss, cp5018 pass",
+          "x-cache-status": "pass",
+          "strict-transport-security": "max-age=106384710; includeSubDomains; preload",
+          "report-to": "{ \"group\": \"wm_nel\", \"max_age\": 604800, \"endpoints\": [{ \"url\": \"https://intake-logging.wikimedia.org/v1/events?stream=w3c.reportingapi.network_error&schema_uri=/w3c/reportingapi/network_error/1.0.0\" }] }",
+          "nel": "{ \"report_to\": \"wm_nel\", \"max_age\": 604800, \"failure_fraction\": 0.05, \"success_fraction\": 0.0}",
+          "cache-control": "private, s-maxage=0, max-age=0, must-revalidate, no-transform",
+          "vary": "Accept-Encoding,User-Agent",
+          "transfer-encoding": "chunked",
+          "x-analytics": "",
+          "connection": "close"
+        },
+        "status": 200,
+        "sha256": "61acee7ebbbc492ff114a8551f12406b1db2f914d7fdfd056f8471ea251443d0",
+        "bytes": 53637,
+        "revision_id": 2559332762,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/Q599288.json.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q599288.json",
+      "sha256": "721c90b44962e53959e2335f1bcd6e7e92e2b5e3c8de8f5d6dd125dd649448d2",
+      "bytes": 2055,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/RELATORIO_DTB_BRASIL_2025_MUNICIPIOS.ods.rows.json",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+      "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+      "bytes": 836643,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/browser_terms_check.md",
+      "url": "https://www.ibge.gov.br/acesso-informacao/acoes-e-programas/politica-de-privacidade.html",
+      "sha256": "72505593b590f972499469c7173ba92f727e2be7f4637e1e912bff116da3b947",
+      "bytes": 1793,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/decree_8777_original_senado.html",
+      "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+      "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+      "bytes": 64004,
+      "original_receipt": {
+        "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+        "retrieved_at_utc": "2026-11-16T08:13:40.904660+00:00",
+        "final_url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 16 Nov 2026 08:13:42 GMT",
+          "Content-Type": "text/html;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "vary": "accept-encoding",
+          "content-language": "en-US",
+          "Age": "0",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Security-Policy": "default-src 'self' blob: *.senado.gov.br:* *.senado.leg.br:* wss://*.senado.gov.br:* wss://*.senado.leg.br:* wss://*.normas.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.qlikdataengineering.com *.googleapis.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net www.recaptcha.net use.typekit.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com grafana.com cdn.jsdelivr.net www.facebook.com connect.facebook.net cdn.datatables.net *.addthis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br graph.facebook.com www.facebook.com connect.facebook.net apis.google.com *.googleapis.com apex.oracle.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com maps.google.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net www.googletagmanager.com code.getmdl.io code.highcharts.com unpkg.com cdn.jsdelivr.net *.addthis.com v1.addthisedge.com z.moatads.com; style-src 'self' 'unsafe-inline' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.googleapis.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net use.typekit.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net code.getmdl.io cdn.quilljs.com ajax.aspnetcdn.com unpkg.com cdn.jsdelivr.net; img-src 'self' data: blob: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.interlegis.leg.br *.googleapis.com *.ggpht.com maps.google.com translate.google.com maps.gstatic.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com *.gravatar.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com stats.g.doubleclick.net ampcid.google.com p.typekit.net recaptcha.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net www.facebook.com web.facebook.com img.youtube.com validator.swagger.io online.swagger.io grafana.com *.tile.openstreetmap.org tiles.maps.opensearch.org maps.opensearch.org www.googletagmanager.com unpkg.com cdn.jsdelivr.net www.addthis.com; font-src 'self' data: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.googleapis.com fonts.gstatic.com *.fontawesome.com use.typekit.net *.bootstrapcdn.com cdnjs.cloudflare.com unpkg.com cdn.jsdelivr.net; object-src 'self' *.senado.gov.br:* *.senado.leg.br:*; frame-src 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.recaptcha.net recaptcha.net https://www.google.com/recaptcha/ https://recaptcha.google.com *.youtube.com www.youtube-nocookie.com www.youtube.com accounts.google.com www.facebook.com web.facebook.com m.facebook.com *.addthis.com; worker-src 'self' blob: *.senado.gov.br:* *.senado.leg.br:*; frame-ancestors 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br; form-action 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br senado.zoom.us; block-all-mixed-content; base-uri 'self' *.senado.gov.br:* *.senado.leg.br:*; manifest-src 'self' data: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br; upgrade-insecure-requests; report-uri https://adm.senado.gov.br/csp-report-collector/collect",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+          "Accept-Ranges": "bytes"
+        },
+        "bytes": 64004,
+        "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c"
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/decree_8777_original_senado.html.receipt.json",
+      "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+      "sha256": "5aa480c4c3038a1fa9ee51478569b1e3446f28da93b2fc4774bf2e33402288b2",
+      "bytes": 5502,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/decree_9903_publication.html",
+      "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+      "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+      "bytes": 48331,
+      "original_receipt": {
+        "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+        "retrieved_at_utc": "2026-11-16T08:15:07.809347+00:00",
+        "final_url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+        "status": 200,
+        "headers": {
+          "Server": "nginx",
+          "Date": "Mon, 16 Nov 2026 08:15:09 GMT",
+          "Content-Type": "text/html;charset=UTF-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "vary": "accept-encoding",
+          "content-language": "en-US",
+          "Age": "0",
+          "X-Content-Type-Options": "nosniff",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Security-Policy": "default-src 'self' blob: *.senado.gov.br:* *.senado.leg.br:* wss://*.senado.gov.br:* wss://*.senado.leg.br:* wss://*.normas.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.qlikdataengineering.com *.googleapis.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net www.recaptcha.net use.typekit.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com grafana.com cdn.jsdelivr.net www.facebook.com connect.facebook.net cdn.datatables.net *.addthis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br graph.facebook.com www.facebook.com connect.facebook.net apis.google.com *.googleapis.com apex.oracle.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com maps.google.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net www.googletagmanager.com code.getmdl.io code.highcharts.com unpkg.com cdn.jsdelivr.net *.addthis.com v1.addthisedge.com z.moatads.com; style-src 'self' 'unsafe-inline' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.googleapis.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com translate.google.com stats.g.doubleclick.net ampcid.google.com recaptcha.net use.typekit.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net code.getmdl.io cdn.quilljs.com ajax.aspnetcdn.com unpkg.com cdn.jsdelivr.net; img-src 'self' data: blob: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.interlegis.leg.br *.googleapis.com *.ggpht.com maps.google.com translate.google.com maps.gstatic.com *.bootstrapcdn.com cdnjs.cloudflare.com code.jquery.com *.fontawesome.com *.gravatar.com fonts.gstatic.com www.google-analytics.com ssl.google-analytics.com google-analytics.com analytics.google.com stats.g.doubleclick.net ampcid.google.com p.typekit.net recaptcha.net www.recaptcha.net www.gstatic.com www.google.com/recaptcha/ *.ytimg.com *.youtube.com cdn.datatables.net www.facebook.com web.facebook.com img.youtube.com validator.swagger.io online.swagger.io grafana.com *.tile.openstreetmap.org tiles.maps.opensearch.org maps.opensearch.org www.googletagmanager.com unpkg.com cdn.jsdelivr.net www.addthis.com; font-src 'self' data: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.googleapis.com fonts.gstatic.com *.fontawesome.com use.typekit.net *.bootstrapcdn.com cdnjs.cloudflare.com unpkg.com cdn.jsdelivr.net; object-src 'self' *.senado.gov.br:* *.senado.leg.br:*; frame-src 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br vlibras.gov.br *.vlibras.gov.br *.recaptcha.net recaptcha.net https://www.google.com/recaptcha/ https://recaptcha.google.com *.youtube.com www.youtube-nocookie.com www.youtube.com accounts.google.com www.facebook.com web.facebook.com m.facebook.com *.addthis.com; worker-src 'self' blob: *.senado.gov.br:* *.senado.leg.br:*; frame-ancestors 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br; form-action 'self' *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br senado.zoom.us; block-all-mixed-content; base-uri 'self' *.senado.gov.br:* *.senado.leg.br:*; manifest-src 'self' data: *.senado.gov.br:* *.senado.leg.br:* *.congressonacional.leg.br *.lexml.gov.br normas.leg.br *.normas.leg.br *.camara.leg.br; upgrade-insecure-requests; report-uri https://adm.senado.gov.br/csp-report-collector/collect",
+          "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+          "Accept-Ranges": "bytes"
+        },
+        "bytes": 48331,
+        "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852"
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/decree_9903_publication.html.receipt.json",
+      "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+      "sha256": "5960c4bc220e158fc002a4a55b43dd970e25b7455eb5eefef1bb3fb78ed5beb9",
+      "bytes": 5506,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/pda_2024_2025.pdf",
+      "url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Plano_de_Dados_Abertos_IBGE_2024_2025.pdf",
+      "sha256": "9c56d0c952a326d9489e2e829fa12795570ae8fb65d34633268f03b22b599e02",
+      "bytes": 982498,
+      "original_receipt": {
+        "url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Plano_de_Dados_Abertos_IBGE_2024_2025.pdf",
+        "retrieved_at_utc": "2026-11-16T08:08:03.975298+00:00",
+        "final_url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Plano_de_Dados_Abertos_IBGE_2024_2025.pdf",
+        "status": 200,
+        "headers": {
+          "Date": "Mon, 16 Nov 2026 08:08:04 GMT",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Last-Modified": "Thu, 28 Mar 2024 18:54:23 GMT",
+          "cf-cache-status": "EXPIRED",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+          "Cache-Control": "max-age=3600",
+          "Expires": "Mon, 16 Nov 2026 09:08:04 GMT",
+          "Vary": "Accept-Encoding,Origin",
+          "ETag": "W/\"efde2-614bd0d3ca452-gzip\"",
+          "Access-Control-Allow-Headers": "x-requested-with, Content-Type, origin, authorization, accept, client-security-token",
+          "Server": "cloudflare",
+          "CF-RAY": "a5b50171bd7740bd-BOM"
+        },
+        "bytes": 982498,
+        "sha256": "9c56d0c952a326d9489e2e829fa12795570ae8fb65d34633268f03b22b599e02"
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/pda_2024_2025.pdf.receipt.json",
+      "url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Plano_de_Dados_Abertos_IBGE_2024_2025.pdf",
+      "sha256": "c733167512f873f09b239ad900f52f0b6e0c98af21753581a100e860217414cb",
+      "bytes": 1148,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/pda_2024_2025.txt",
+      "url": "https://www.ibge.gov.br/np_download/novoportal/documentos_institucionais/Plano_de_Dados_Abertos_IBGE_2024_2025.pdf",
+      "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+      "bytes": 148346,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/prior_municipal_bindings.json",
+      "url": "file://csc-data-audit/runs/specs/top15_br/work_pop/municipal_binding_audit.json",
+      "sha256": "a1c25fc168aa27d697844d960f91db1594bcfbf429a79c24cded02becb664d0b",
+      "bytes": 1324049,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/qlever_p1585.json",
+      "url": "https://qlever.dev/api/wikidata",
+      "sha256": "bb3dd9838c34f3c6630d809d328c5dd69b3f81dbab326ccfa977f33bcbc443a5",
+      "bytes": 656116,
+      "original_receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "request_body": "query=PREFIX+wdt%3A+%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E+SELECT+%3Fitem+%3Fcode+WHERE+%7B+%3Fitem+wdt%3AP1585+%3Fcode+%7D&action=sparql_json_export&send=100000",
+        "started_utc": "2026-11-16T07:45:48.495517+00:00",
+        "retrieved_utc": "2026-11-16T07:45:50.216745+00:00",
+        "sha256": "bb3dd9838c34f3c6630d809d328c5dd69b3f81dbab326ccfa977f33bcbc443a5",
+        "bytes": 656116,
+        "status": 200,
+        "attempts": []
+      },
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/qlever_p1585.json.receipt.json",
+      "url": "https://qlever.dev/api/wikidata",
+      "sha256": "030e95778e0b951b1935c60ae9d1acf8090e1757d9dd29a038e645306b8a18bb",
+      "bytes": 488,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/register.json",
+      "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+      "bytes": 3748384,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    },
+    {
+      "path": "sources/requests.jsonl",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q599288.json",
+      "sha256": "569cccdfcae25b072d9a31b246622856e2e72b6dd7039d8f68cfaf1c3df5df5d",
+      "bytes": 228,
+      "original_receipt": null,
+      "provenance": "Retained archive; original retrieval date unchanged"
+    }
+  ],
+  "rights": "Owner existing IBGE decision under Decreto 8.777/2016; counts joined by municipal code; IBGE credited",
+  "datum_note": "Strict interior plus >0.00002 degree boundary margin; no snapping or point repair"
+}
