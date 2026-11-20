@@ -1,0 +1,2031 @@
+{
+  "schema_version": 1,
+  "base_commit": "131ba72c0d81565354a755e0d900053259bc250e",
+  "ledger": ".github/fixes-docs/ledgers/points_own_item_v6x.jsonl",
+  "ledger_sha256": "c328db6cd79372b4d2d4e825ebbd686fca4657ca557cae815e731d2517ea261a",
+  "target_count": 77,
+  "sources": {
+    "runs/specs/points_outside/work/analysis.json": {
+      "path": "sources/runs/specs/points_outside/work/analysis.json",
+      "sha256": "3695a565ced9f04ea14f0c82fa71de31546a95b1a1e473ef04cdd626f23c9f94",
+      "bytes": 437387
+    },
+    "runs/specs/points_outside/work/cohort.json": {
+      "path": "sources/runs/specs/points_outside/work/cohort.json",
+      "sha256": "446f0b6f3fe659d52192c4cb4f890e7c706031e5ed1aa19b3d1a6ba5e3ecc5b4",
+      "bytes": 2269292
+    },
+    "runs/specs/points_outside/work/units.json": {
+      "path": "sources/runs/specs/points_outside/work/units.json",
+      "sha256": "1656706880877b7b1d4fcde559348537218de6e6a9a1aa18d5a335b14d5b46e9",
+      "bytes": 10005621
+    },
+    "runs/specs/points_outside/work/analyze.py": {
+      "path": "sources/runs/specs/points_outside/work/analyze.py",
+      "sha256": "ad3d497b0e2757ffe82e0122c38cba1c37e5fe99df17e5c37b377d621bd80e91",
+      "bytes": 18394
+    },
+    "runs/specs/top15_au/work_tld3/rule_trace.md": {
+      "path": "sources/runs/specs/top15_au/work_tld3/rule_trace.md",
+      "sha256": "3fd8d616890c4611efc9791a8a9c832ac761980c755ca6cbab011565cbe93324",
+      "bytes": 2799
+    },
+    "runs/specs/top15_au/work_tld3/build.py": {
+      "path": "sources/runs/specs/top15_au/work_tld3/build.py",
+      "sha256": "ab9bb55d252dd33fad54eace60b13c993bc97061cddc589eaf75b84bfc481257",
+      "bytes": 10675
+    },
+    "runs/specs/top15_au/work_tld3/screen.py": {
+      "path": "sources/runs/specs/top15_au/work_tld3/screen.py",
+      "sha256": "6dfbeaad6b90f82f734c797ab406005c3c6d9b53a5c3586caaef8e14d6296548",
+      "bytes": 9084
+    },
+    "runs/specs/top15_gb/work_tld2/build_settlements.py": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/build_settlements.py",
+      "sha256": "bb8ee09d3291f5649e144a2271c3ef58f1564c22280c37bb4339f77592587f49",
+      "bytes": 22695
+    },
+    "runs/specs/top15_gb/work_tld2/official.py": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/official.py",
+      "sha256": "fbace0060822f0acbb910181e09c0c0b2636c284108d732cfa58f01d817fc2d0",
+      "bytes": 6787
+    },
+    "runs/specs/top15_au/work_tld3/au_tld3_v6x.sources.json": {
+      "path": "sources/runs/specs/top15_au/work_tld3/au_tld3_v6x.sources.json",
+      "sha256": "851c3a63f9e4607913b5ff8ae5005fcf533c4467261b6e13f54a4d9cbbdf18ed",
+      "bytes": 61571
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_07000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_07000.json",
+      "sha256": "f7cdb7bf39c35327b8f10f8380adf45c4bf1017558f07d06a5adacb9eb3a769b",
+      "bytes": 93959,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=7000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:38.072721+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00050.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00050.json",
+      "sha256": "043df4e2824ccde62b6b6915fe8dd51faf1af2b86f053cb45a07441181d031d9",
+      "bytes": 55886854,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=50&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:27:37.249404+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_005.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_005.geojson",
+      "sha256": "7fbb76a14178abbc8242232f95dd46da83f4f07059a9fa72053da30f81232c7a",
+      "bytes": 231950,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63001848%27%2C%27E63001882%27%2C%27E63001913%27%2C%27E63001926%27%2C%27E63001935%27%2C%27E63001965%27%2C%27E63001966%27%2C%27E63001980%27%2C%27E63001986%27%2C%27E63001990%27%2C%27E63002003%27%2C%27E63002008%27%2C%27E63002109%27%2C%27E63002121%27%2C%27E63002125%27%2C%27E63002146%27%2C%27E63002174%27%2C%27E63002195%27%2C%27E63002212%27%2C%27E63002227%27%2C%27E63002242%27%2C%27E63002252%27%2C%27E63002261%27%2C%27E63002283%27%2C%27E63002320%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:07.668124+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_015.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_015.geojson",
+      "sha256": "7f3648edb4f03506aea699f34ee3d5848dabb7d8109b3734d43416d82f36b091",
+      "bytes": 179557,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006834%27%2C%27E63006835%27%2C%27E63006857%27%2C%27E63006864%27%2C%27E63007021%27%2C%27E63007037%27%2C%27S45000018%27%2C%27S45000026%27%2C%27S45000027%27%2C%27S45000077%27%2C%27S45000088%27%2C%27S45000093%27%2C%27S45000094%27%2C%27S45000130%27%2C%27S45000132%27%2C%27S45000133%27%2C%27S45000221%27%2C%27S45000222%27%2C%27S45000223%27%2C%27S45000229%27%2C%27S45000230%27%2C%27S45000399%27%2C%27S45000505%27%2C%27S45000528%27%2C%27S45000594%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:11.282955+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nomis_pp002_def2.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nomis_pp002_def2.json",
+      "sha256": "186031ffd1f7809b63d2d0936a3be1b148e0508547d7eeeed4a389eae60a1251",
+      "bytes": 4061,
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2352_1.def.sdmx.json",
+      "retrieved_at": "2026-10-27T08:46:32.051842+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/pinned_counties_GB.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/pinned_counties_GB.json",
+      "sha256": "3f56756d197ac6e678715829b125dce2c154c9ed45ff785efc930c3b7578155c",
+      "bytes": 79587,
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/94b88f6ec6165b22868cd2093b623c081602c048/contributions/counties/GB.json",
+      "retrieved_at": "2026-11-19T18:24:53.867738+00:00",
+      "licence": "Repository provenance; unchanged pinned Git object"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nomis_copyright.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nomis_copyright.html",
+      "sha256": "2ac1486ab204b813202dae46fb063d3173978ce601169c3b2b9046a3cb1b70d8",
+      "bytes": 27371,
+      "url": "https://www.nomisweb.co.uk/home/copyright.asp",
+      "retrieved_at": "2026-11-18T08:04:38.839992+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/ons_classification.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/ons_classification.html",
+      "sha256": "ed9165b3f86d90d304df034c5175df1dfd97f4c974b1c8d2496960aad41b0425",
+      "bytes": 109387,
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/housing/articles/townsandcitiescharacteristicsofbuiltupareasenglandandwales/census2021",
+      "retrieved_at": "2026-10-11T08:45:27.221498+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nisra_ct0046.xlsx": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nisra_ct0046.xlsx",
+      "sha256": "be4a1f75c8ce345fdceeedceda4cdb495880a2f443200bca68563a64dea894e0",
+      "bytes": 184763,
+      "url": "https://www.nisra.gov.uk/system/files/statistics/census-2021-commissioned-table-ct0046.xlsx",
+      "retrieved_at": "2026-10-19T16:35:05.622836+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_004.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_004.geojson",
+      "sha256": "ef854c2360eb720d03eb393d25fe4c2748e2a92f021b28a4d57f7e34a43714f9",
+      "bytes": 499355,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04007276%27%2C%27E04008340%27%2C%27E04008405%27%2C%27E04009031%27%2C%27E04009449%27%2C%27E04009614%27%2C%27E04009616%27%2C%27E04009853%27%2C%27E04010044%27%2C%27E04010092%27%2C%27E04010207%27%2C%27E04010253%27%2C%27E04010258%27%2C%27E04010277%27%2C%27E04010455%27%2C%27E04010506%27%2C%27E04010530%27%2C%27E04010533%27%2C%27E04010538%27%2C%27E04010570%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:19.068295+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01200_5ec539ec4d7f.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01200_5ec539ec4d7f.json",
+      "sha256": "376acfcbe5877d9bb3fd012ee42cb67b80e2612b285b8088c31ab1d044bb0125",
+      "bytes": 2596360,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=3678%2C3682%2C3686%2C3687%2C3695%2C3696%2C3697%2C3698%2C3699%2C3708%2C3709%2C3712%2C3721%2C3728%2C3733%2C3736%2C3740%2C3747%2C3748%2C3759%2C3760%2C3762%2C3766%2C3767%2C3769%2C3770%2C3774%2C3775%2C3781%2C3783%2C3787%2C3791%2C3795%2C3798%2C3801%2C3805%2C3812%2C3813%2C3818%2C3825%2C3830%2C3831%2C3835%2C3840%2C3841%2C3842%2C3845%2C3846%2C3853%2C3857%2C3858%2C3865%2C3866%2C3871%2C3873%2C3882%2C3884%2C3888%2C3892%2C3897&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.876439+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02580_d9bc4237647a.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02580_d9bc4237647a.json",
+      "sha256": "5aaa4f16c9263367cf79d4a9a71651355b0d662ae7569b9b6e2d87b14651365b",
+      "bytes": 1757881,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7884%2C7886%2C7889%2C7891%2C7893%2C7898%2C7904%2C7906%2C7909%2C7910%2C7912%2C7915%2C7916%2C7921%2C7922%2C7923%2C7927%2C7931%2C7933%2C7935%2C7936%2C7938%2C7939%2C7943%2C7945%2C7947%2C7949%2C7951%2C7953%2C7954%2C7957%2C7958%2C7963%2C7966%2C7967%2C7973%2C7976%2C7977%2C7978%2C7983%2C7988%2C7991%2C7994%2C7996%2C7998%2C8001%2C8007%2C8010%2C8012%2C8013%2C8018%2C8021%2C8022%2C8033%2C8036%2C8037%2C8040%2C8043%2C8046%2C8048&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.843800+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/Register_of_Geographic_Codes_(June_2026)_UK.xlsx": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/Register_of_Geographic_Codes_(June_2026)_UK.xlsx",
+      "sha256": "8c2b581cfe0613fc7367eb532d1d0cde2df63af02772f2cc5e17e8b32ceb8294",
+      "bytes": 24318355,
+      "url": "https://www.arcgis.com/sharing/rest/content/items/ef9bb98c8c62471684aaf42b8898f220/data",
+      "retrieved_at": "2026-10-10T02:07:30.938432+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_begin_00040.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_begin_00040.json",
+      "sha256": "d4b5d5a216281a95c5ab3e2445bd71c73a111724d57b6e911d268e100e5b8ce3",
+      "bytes": 23591259,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&resultOffset=40&resultRecordCount=10&orderByFields=FID",
+      "retrieved_at": "2026-10-10T02:30:03.432359+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01560_2290b6047202.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01560_2290b6047202.json",
+      "sha256": "2de17a00b1f8c21f17db1ee80f57da05c26f4319b6754c16567f2034908f7253",
+      "bytes": 2894093,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=4923%2C4926%2C4932%2C4948%2C4949%2C4953%2C4954%2C4955%2C4957%2C4958%2C4959%2C4960%2C4961%2C4964%2C4966%2C4985%2C4989%2C4992%2C4993%2C4998%2C5000%2C5002%2C5006%2C5007%2C5009%2C5010%2C5014%2C5016%2C5017%2C5025%2C5028%2C5030%2C5040%2C5042%2C5046%2C5057%2C5058%2C5063%2C5074%2C5075%2C5077%2C5078%2C5084%2C5096%2C5098%2C5100%2C5101%2C5103%2C5106%2C5107%2C5109%2C5113%2C5118%2C5125%2C5127%2C5130%2C5132%2C5135%2C5145%2C5147&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.061482+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nisra_geography.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nisra_geography.html",
+      "sha256": "fb5f17fc363f5d979bb63fb54d71ce9e794731f5e65bac9ae0299c71c035fe88",
+      "bytes": 28667,
+      "url": "https://www.nisra.gov.uk/support/geography/urban-rural-classification",
+      "retrieved_at": "2026-10-11T08:45:27.079455+00:00",
+      "licence": "Open Government Licence v3.0; Source: NISRA; statistical settlement geography (per brief and NISRA Crown copyright terms), not OSNI branded base mapping"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00480_273fbd026353.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00480_273fbd026353.json",
+      "sha256": "b2288b610ed88980b6a9c47014922741e2479d44f251ada680f4d43539228309",
+      "bytes": 2380503,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1201%2C1203%2C1206%2C1207%2C1210%2C1212%2C1213%2C1214%2C1218%2C1219%2C1221%2C1222%2C1223%2C1226%2C1229%2C1232%2C1237%2C1240%2C1243%2C1247%2C1249%2C1250%2C1253%2C1254%2C1255%2C1258%2C1262%2C1263%2C1265%2C1266%2C1268%2C1272%2C1274%2C1278%2C1279%2C1283%2C1284%2C1285%2C1287%2C1288%2C1290%2C1291%2C1294%2C1295%2C1296%2C1297%2C1301%2C1302%2C1303%2C1307%2C1314%2C1318%2C1321%2C1326%2C1327%2C1334%2C1337%2C1343%2C1346%2C1347&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.335124+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02220_fef827db91ea.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02220_fef827db91ea.json",
+      "sha256": "d3d0dd4c8adeced66c5fe679172e31be03db04c5ee44495d7269b39331e4986c",
+      "bytes": 1730890,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7147%2C7148%2C7151%2C7154%2C7157%2C7160%2C7161%2C7164%2C7166%2C7167%2C7168%2C7169%2C7170%2C7171%2C7172%2C7173%2C7175%2C7176%2C7179%2C7180%2C7182%2C7183%2C7184%2C7185%2C7188%2C7192%2C7193%2C7197%2C7202%2C7205%2C7210%2C7211%2C7212%2C7223%2C7224%2C7225%2C7226%2C7230%2C7236%2C7237%2C7239%2C7240%2C7244%2C7245%2C7246%2C7247%2C7249%2C7251%2C7255%2C7256%2C7258%2C7260%2C7261%2C7263%2C7264%2C7268%2C7271%2C7272%2C7273%2C7275&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.546619+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02760_69525265cec8.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02760_69525265cec8.json",
+      "sha256": "6f6e142434bd6e61f4fc54b612088b92330d0ce2c4272ff76e443f6b919339b4",
+      "bytes": 2770416,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=8387%2C8393%2C8398%2C8399%2C8402%2C8403%2C8405%2C8407%2C8408%2C8410%2C8414%2C8416%2C8417%2C8421%2C8423%2C8424%2C8426%2C8427%2C8430%2C8433%2C8436%2C8441%2C8443%2C8446%2C8448%2C8449%2C8450%2C8453%2C8454%2C8457%2C8458%2C8460%2C8462%2C8463%2C8465%2C8468%2C8469%2C8470%2C8474%2C8476%2C8478%2C8483%2C8490%2C8495%2C8502%2C8503%2C8507%2C8509%2C8510%2C8514%2C8515%2C8519%2C8521%2C8528%2C8531%2C8532%2C8535%2C8537%2C8544&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.990894+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_003.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_003.geojson",
+      "sha256": "381b6a3da58d4c33e02c05d12d56cd8608b8efea5aa2d5ed49fd15beaf243bdf",
+      "bytes": 224809,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000998%27%2C%27E63001032%27%2C%27E63001046%27%2C%27E63001048%27%2C%27E63001068%27%2C%27E63001072%27%2C%27E63001075%27%2C%27E63001100%27%2C%27E63001119%27%2C%27E63001127%27%2C%27E63001135%27%2C%27E63001136%27%2C%27E63001144%27%2C%27E63001145%27%2C%27E63001176%27%2C%27E63001185%27%2C%27E63001214%27%2C%27E63001227%27%2C%27E63001249%27%2C%27E63001250%27%2C%27E63001272%27%2C%27E63001292%27%2C%27E63001327%27%2C%27E63001344%27%2C%27E63001352%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:42.158607+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_013.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_013.geojson",
+      "sha256": "156ba4dad550a9fe309486b646d3dbb2e499d5a086e795fd15a6e3a0ad801d2b",
+      "bytes": 202276,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63004126%27%2C%27E63004128%27%2C%27E63004139%27%2C%27E63004143%27%2C%27E63004144%27%2C%27E63004174%27%2C%27E63004192%27%2C%27E63004195%27%2C%27E63004206%27%2C%27E63004219%27%2C%27E63004229%27%2C%27E63004234%27%2C%27E63004237%27%2C%27E63004239%27%2C%27E63004247%27%2C%27E63004249%27%2C%27E63004250%27%2C%27E63004253%27%2C%27E63004272%27%2C%27E63004299%27%2C%27E63004314%27%2C%27E63004333%27%2C%27E63004351%27%2C%27E63004359%27%2C%27E63004369%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:47.729383+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nrs_shapes.zip": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nrs_shapes.zip",
+      "sha256": "9086a0814304314cbf35e482388d420a1b3f19164e695018bafd5afe83ed086b",
+      "bytes": 4392891,
+      "url": "https://www.nrscotland.gov.uk/media/2hsoadnx/shapefiles.zip",
+      "retrieved_at": "2026-10-10T02:16:40.399691+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/pinned_GB.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/pinned_GB.json",
+      "sha256": "5b70dc8aaec3284fdb508a861a030dcc1ed2d970fcb15df9060500dcdb98a71f",
+      "bytes": 4124653,
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/94b88f6ec6165b22868cd2093b623c081602c048/contributions/cities/GB.json",
+      "retrieved_at": "2026-11-19T18:24:53.925852+00:00",
+      "licence": "Repository provenance; unchanged pinned Git object"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00000_c4f4def2b237.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00000_c4f4def2b237.json",
+      "sha256": "c83ffa3290d9237dfe2afad8b1d33112f40df3a8c9ec59f40c11fc987c499c3f",
+      "bytes": 2361454,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1%2C5%2C7%2C8%2C10%2C11%2C13%2C14%2C15%2C16%2C17%2C19%2C20%2C21%2C24%2C25%2C29%2C31%2C33%2C35%2C37%2C39%2C41%2C42%2C44%2C47%2C48%2C51%2C53%2C56%2C57%2C61%2C62%2C63%2C64%2C67%2C73%2C74%2C76%2C77%2C82%2C85%2C87%2C88%2C89%2C90%2C92%2C93%2C94%2C96%2C97%2C98%2C106%2C111%2C112%2C120%2C121%2C124%2C125%2C126&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.984463+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_pop2__prior_gb_bindings.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_pop2__prior_gb_bindings.json",
+      "sha256": "436f621c69725cd38d59ba7ebcdab2f67ac7f82d21429878a61217cc585cf4e2",
+      "bytes": 4743540,
+      "url": null,
+      "retrieved_at": null
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02160_39df370ec72d.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02160_39df370ec72d.json",
+      "sha256": "7b3d18f6174fc34967238aaafa1b1e62d689eb01d5ae298e82b75d4cfcbe8bf0",
+      "bytes": 2082096,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=6961%2C6964%2C6965%2C6966%2C6968%2C6970%2C6979%2C6983%2C6986%2C6990%2C6998%2C6999%2C7003%2C7004%2C7015%2C7022%2C7030%2C7032%2C7038%2C7042%2C7044%2C7048%2C7051%2C7057%2C7062%2C7063%2C7065%2C7077%2C7080%2C7085%2C7090%2C7092%2C7098%2C7099%2C7102%2C7103%2C7104%2C7105%2C7107%2C7108%2C7110%2C7116%2C7117%2C7118%2C7120%2C7121%2C7122%2C7123%2C7124%2C7125%2C7126%2C7132%2C7134%2C7136%2C7138%2C7140%2C7141%2C7142%2C7143%2C7145&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.614334+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_begin_00000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_begin_00000.json",
+      "sha256": "20f84e6c72b09f8bd0ee0de701385a0bad9e16ab4d7dcb7d812f077378eb24e9",
+      "bytes": 2985660,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&resultOffset=0&resultRecordCount=10&orderByFields=FID",
+      "retrieved_at": "2026-10-10T02:29:42.035151+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01680_4d0cc2673bb0.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01680_4d0cc2673bb0.json",
+      "sha256": "b6d1c680dca5eacf28111500a0f56e0b4fa8d289421ccbe4d1aa2c220bfcc98b",
+      "bytes": 2366903,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=5318%2C5320%2C5322%2C5323%2C5331%2C5334%2C5336%2C5337%2C5342%2C5343%2C5347%2C5350%2C5355%2C5360%2C5363%2C5364%2C5367%2C5369%2C5371%2C5375%2C5377%2C5382%2C5384%2C5385%2C5386%2C5388%2C5392%2C5398%2C5399%2C5403%2C5404%2C5410%2C5412%2C5413%2C5416%2C5418%2C5419%2C5428%2C5430%2C5432%2C5437%2C5441%2C5445%2C5449%2C5450%2C5457%2C5458%2C5459%2C5461%2C5465%2C5466%2C5467%2C5468%2C5472%2C5474%2C5477%2C5481%2C5482%2C5485%2C5487&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.331078+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__ogl.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__ogl.html",
+      "sha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "bytes": 10450,
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "retrieved_at": "2026-11-18T08:04:39.634227+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_012.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_012.geojson",
+      "sha256": "8e7fcd10cfccefb84fcf638a05110df4441a80880d8776ddb8b33ed951b313ff",
+      "bytes": 219694,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63003787%27%2C%27E63003798%27%2C%27E63003839%27%2C%27E63003844%27%2C%27E63003857%27%2C%27E63003865%27%2C%27E63003871%27%2C%27E63003873%27%2C%27E63003892%27%2C%27E63003930%27%2C%27E63003932%27%2C%27E63003942%27%2C%27E63003944%27%2C%27E63003953%27%2C%27E63003983%27%2C%27E63003993%27%2C%27E63003997%27%2C%27E63004002%27%2C%27E63004008%27%2C%27E63004026%27%2C%27E63004028%27%2C%27E63004041%27%2C%27E63004055%27%2C%27E63004089%27%2C%27E63004096%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:47.793422+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02340_6b7d07216771.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02340_6b7d07216771.json",
+      "sha256": "84da404e3ebccff619c8ab36184ba47bf105a25cf1f902ba42ed974790b1f56c",
+      "bytes": 3079070,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7403%2C7406%2C7409%2C7413%2C7414%2C7416%2C7419%2C7420%2C7421%2C7422%2C7423%2C7424%2C7425%2C7426%2C7429%2C7434%2C7437%2C7441%2C7443%2C7445%2C7446%2C7447%2C7448%2C7449%2C7452%2C7453%2C7455%2C7458%2C7464%2C7465%2C7469%2C7475%2C7476%2C7477%2C7480%2C7483%2C7488%2C7489%2C7492%2C7494%2C7495%2C7496%2C7497%2C7502%2C7504%2C7505%2C7507%2C7508%2C7509%2C7510%2C7511%2C7512%2C7514%2C7516%2C7519%2C7521%2C7523%2C7524%2C7525%2C7527&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.756074+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_002.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_002.geojson",
+      "sha256": "6da59974777a46612a6479c16b246c41165752c7bd7cf2270bfd19df8db6e94e",
+      "bytes": 251412,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000783%27%2C%27E63000799%27%2C%27E63000810%27%2C%27E63000818%27%2C%27E63000832%27%2C%27E63000835%27%2C%27E63000837%27%2C%27E63000838%27%2C%27E63000839%27%2C%27E63000840%27%2C%27E63000849%27%2C%27E63000865%27%2C%27E63000880%27%2C%27E63000895%27%2C%27E63000896%27%2C%27E63000913%27%2C%27E63000924%27%2C%27E63000942%27%2C%27E63000944%27%2C%27E63000964%27%2C%27E63000975%27%2C%27E63000982%27%2C%27E63000984%27%2C%27E63000991%27%2C%27E63000996%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:43.545782+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_014.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_014.geojson",
+      "sha256": "0b442d6aa33d6c40ddc615b10138cef6a43a80970a4fec85cfbc9f9747a1dcef",
+      "bytes": 302373,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006395%27%2C%27E63006427%27%2C%27E63006487%27%2C%27E63006488%27%2C%27E63006515%27%2C%27E63006522%27%2C%27E63006540%27%2C%27E63006544%27%2C%27E63006564%27%2C%27E63006588%27%2C%27E63006610%27%2C%27E63006648%27%2C%27E63006691%27%2C%27E63006692%27%2C%27E63006696%27%2C%27E63006709%27%2C%27E63006717%27%2C%27E63006732%27%2C%27E63006736%27%2C%27E63006737%27%2C%27E63006743%27%2C%27E63006744%27%2C%27E63006747%27%2C%27E63006768%27%2C%27E63006800%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:11.844196+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_004.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_004.geojson",
+      "sha256": "3f7894fb64ab42608eee75e31672b52626fd7d1c98126a2137edce7ca8e7f679",
+      "bytes": 275098,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63001469%27%2C%27E63001471%27%2C%27E63001484%27%2C%27E63001499%27%2C%27E63001501%27%2C%27E63001513%27%2C%27E63001524%27%2C%27E63001529%27%2C%27E63001539%27%2C%27E63001556%27%2C%27E63001579%27%2C%27E63001588%27%2C%27E63001593%27%2C%27E63001599%27%2C%27E63001628%27%2C%27E63001728%27%2C%27E63001774%27%2C%27E63001793%27%2C%27E63001794%27%2C%27E63001812%27%2C%27E63001814%27%2C%27E63001829%27%2C%27E63001841%27%2C%27E63001843%27%2C%27E63001847%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:08.139646+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_06000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_06000.json",
+      "sha256": "bc61f2c1215fcf8752222e65f90fc8ebbba23411c5ad6e8f60b301a54b3a90c5",
+      "bytes": 95341,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=6000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:36.416860+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/pinned_TYPE_FIELD.md": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/pinned_TYPE_FIELD.md",
+      "sha256": "41f21b8879d5d914b17a2a1bd62ed3722cd9c40caeed2647f5c7147329be1d20",
+      "bytes": 38546,
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/94b88f6ec6165b22868cd2093b623c081602c048/TYPE_FIELD.md",
+      "retrieved_at": "2026-11-19T18:24:53.418346+00:00",
+      "licence": "Repository provenance; unchanged pinned Git object"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00250.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00250.json",
+      "sha256": "163caab7ac670cd2eb5003effa865ed755659bc8106aab72ee47605e4b31cb3a",
+      "bytes": 12903691,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=250&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:27:03.952348+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00840_310f3a2c1688.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00840_310f3a2c1688.json",
+      "sha256": "35bbacd28359fc4b5787e0d5362d25088107fa20cb9005d09408181a1c97707e",
+      "bytes": 2329824,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2431%2C2433%2C2444%2C2447%2C2448%2C2451%2C2452%2C2456%2C2458%2C2463%2C2465%2C2466%2C2472%2C2474%2C2477%2C2485%2C2488%2C2492%2C2494%2C2496%2C2505%2C2507%2C2509%2C2514%2C2515%2C2517%2C2522%2C2526%2C2527%2C2530%2C2532%2C2534%2C2535%2C2537%2C2541%2C2542%2C2545%2C2547%2C2550%2C2551%2C2557%2C2563%2C2566%2C2574%2C2587%2C2588%2C2589%2C2590%2C2592%2C2596%2C2597%2C2598%2C2602%2C2603%2C2607%2C2610%2C2611%2C2614%2C2616%2C2618&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.574355+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/pinned_FIX_1643_SUMMARY.md": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/pinned_FIX_1643_SUMMARY.md",
+      "sha256": "75ed2574cf3cedcf1c67272b418225bf8929aaaf4d7934eeafdd9e495ca4fea8",
+      "bytes": 4936167,
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/94b88f6ec6165b22868cd2093b623c081602c048/.github/fixes-docs/FIX_1643_SUMMARY.md",
+      "retrieved_at": "2026-11-19T18:24:53.742668+00:00",
+      "licence": "Repository provenance; unchanged pinned Git object"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_begin_00020.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_begin_00020.json",
+      "sha256": "41066b97cf249a52b720a1b6fab8b5ada42bd94e1653eb4357bd9d1f56c42012",
+      "bytes": 3876672,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&resultOffset=20&resultRecordCount=10&orderByFields=FID",
+      "retrieved_at": "2026-10-10T02:29:42.263673+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_005.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_005.geojson",
+      "sha256": "73e194328d0cc5abfeeb565e5e37e2dc4e9af825451b669381e6459609c26154",
+      "bytes": 901743,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04010591%27%2C%27E04010610%27%2C%27E04010632%27%2C%27E04010653%27%2C%27E04010703%27%2C%27E04010736%27%2C%27E04010856%27%2C%27E04010866%27%2C%27E04011145%27%2C%27E04011175%27%2C%27E04011194%27%2C%27E04011203%27%2C%27E04011313%27%2C%27E04011358%27%2C%27E04011433%27%2C%27E04011466%27%2C%27E04011495%27%2C%27E04011500%27%2C%27E04011505%27%2C%27E04011516%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:28.872682+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02040_eb14b78d70d4.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02040_eb14b78d70d4.json",
+      "sha256": "b10809e6d63e2efa5d83f9f8803ee48919545538fd6969610c8339fa10afbdcc",
+      "bytes": 2288063,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=6607%2C6611%2C6612%2C6613%2C6615%2C6618%2C6619%2C6622%2C6624%2C6626%2C6630%2C6636%2C6638%2C6646%2C6651%2C6654%2C6657%2C6662%2C6671%2C6673%2C6674%2C6676%2C6678%2C6679%2C6681%2C6683%2C6688%2C6695%2C6699%2C6700%2C6701%2C6711%2C6712%2C6714%2C6716%2C6718%2C6720%2C6721%2C6740%2C6742%2C6746%2C6748%2C6750%2C6751%2C6753%2C6755%2C6756%2C6757%2C6758%2C6760%2C6761%2C6767%2C6781%2C6785%2C6787%2C6790%2C6791%2C6793%2C6794%2C6795&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.452591+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00240_73f099d3415d.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00240_73f099d3415d.json",
+      "sha256": "3dd4868b30dbc69107d9de8c9308758ae12fc6ed634bbde360e9d2eed0d58791",
+      "bytes": 1607252,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=643%2C644%2C646%2C647%2C648%2C649%2C651%2C652%2C653%2C655%2C657%2C660%2C666%2C667%2C670%2C675%2C676%2C677%2C681%2C685%2C687%2C688%2C690%2C693%2C694%2C697%2C701%2C702%2C706%2C707%2C708%2C710%2C712%2C713%2C716%2C719%2C720%2C723%2C724%2C725%2C726%2C727%2C733%2C736%2C739%2C742%2C743%2C744%2C747%2C748%2C750%2C754%2C755%2C762%2C763%2C764%2C765%2C768%2C771%2C773&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.911124+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01380_74b296c0314d.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01380_74b296c0314d.json",
+      "sha256": "2cef9f3de0887c6aa63b18479725cdd8e10fb710a74b6d333567231363f719a8",
+      "bytes": 2993530,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=4321%2C4324%2C4326%2C4327%2C4332%2C4333%2C4336%2C4347%2C4349%2C4351%2C4353%2C4358%2C4359%2C4360%2C4362%2C4366%2C4367%2C4371%2C4374%2C4377%2C4390%2C4391%2C4398%2C4405%2C4407%2C4408%2C4409%2C4412%2C4413%2C4419%2C4421%2C4426%2C4427%2C4430%2C4435%2C4439%2C4441%2C4442%2C4443%2C4449%2C4458%2C4461%2C4466%2C4468%2C4470%2C4471%2C4476%2C4479%2C4484%2C4493%2C4514%2C4524%2C4526%2C4531%2C4535%2C4537%2C4541%2C4542%2C4543%2C4545&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.910546+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/cities_status_live.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/cities_status_live.html",
+      "sha256": "29250ca209fa3f7f0ca6874e3d65d569eb059c4ef604345b169d32cad26fe5b1",
+      "bytes": 69423,
+      "url": "https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html",
+      "retrieved_at": "2026-11-19T17:49:13.791167+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nomis_parish.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nomis_parish.html",
+      "sha256": "ee8a9d7f714c95178dd34c361eace569bb0d6e02f8573696ac0552fc48c15312",
+      "bytes": 38094,
+      "url": "https://www.nomisweb.co.uk/sources/census_2021_pp",
+      "retrieved_at": "2026-10-27T08:43:47.154508+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02100_82f8a8b7db15.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02100_82f8a8b7db15.json",
+      "sha256": "3ccce416611b334ed63cba1b00fdb9d1bcbe22a4f03639b8753a03f55ddcfb08",
+      "bytes": 2356270,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=6799%2C6801%2C6802%2C6803%2C6804%2C6806%2C6812%2C6815%2C6818%2C6819%2C6824%2C6825%2C6826%2C6827%2C6833%2C6837%2C6842%2C6844%2C6845%2C6846%2C6847%2C6849%2C6852%2C6861%2C6865%2C6867%2C6868%2C6869%2C6873%2C6881%2C6884%2C6887%2C6888%2C6889%2C6890%2C6892%2C6893%2C6895%2C6898%2C6904%2C6905%2C6906%2C6907%2C6910%2C6913%2C6915%2C6916%2C6917%2C6918%2C6924%2C6926%2C6932%2C6935%2C6936%2C6937%2C6945%2C6950%2C6956%2C6957%2C6959&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.573166+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_000.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_000.geojson",
+      "sha256": "f93f1a3d950e6785448b73980ee9204ac6b0b47ccf60873381d58b70e216ed65",
+      "bytes": 197731,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000005%27%2C%27E63000008%27%2C%27E63000013%27%2C%27E63000014%27%2C%27E63000016%27%2C%27E63000020%27%2C%27E63000024%27%2C%27E63000027%27%2C%27E63000044%27%2C%27E63000074%27%2C%27E63000082%27%2C%27E63000088%27%2C%27E63000112%27%2C%27E63000122%27%2C%27E63000154%27%2C%27E63000175%27%2C%27E63000177%27%2C%27E63000188%27%2C%27E63000190%27%2C%27E63000206%27%2C%27E63000224%27%2C%27E63000236%27%2C%27E63000243%27%2C%27E63000276%27%2C%27E63000289%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:41.305930+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_010.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_010.geojson",
+      "sha256": "e7ad9a859437029388397ddbecd523088c6c50523dd9905c0edfddd0ead3edf2",
+      "bytes": 216877,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63003126%27%2C%27E63003145%27%2C%27E63003146%27%2C%27E63003162%27%2C%27E63003189%27%2C%27E63003203%27%2C%27E63003205%27%2C%27E63003226%27%2C%27E63003249%27%2C%27E63003254%27%2C%27E63003259%27%2C%27E63003290%27%2C%27E63003296%27%2C%27E63003328%27%2C%27E63003365%27%2C%27E63003367%27%2C%27E63003373%27%2C%27E63003376%27%2C%27E63003402%27%2C%27E63003412%27%2C%27E63003461%27%2C%27E63003465%27%2C%27E63003470%27%2C%27E63003472%27%2C%27E63003478%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:46.300867+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00300_402dd458641f.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00300_402dd458641f.json",
+      "sha256": "ba474b730434fe950c93440661c89d27f666daebd3d96fd8eb36d4ecfb1be6ee",
+      "bytes": 2849314,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=778%2C780%2C783%2C784%2C786%2C788%2C789%2C790%2C791%2C792%2C793%2C795%2C796%2C799%2C800%2C801%2C803%2C804%2C810%2C811%2C814%2C817%2C818%2C819%2C821%2C823%2C825%2C833%2C834%2C835%2C837%2C838%2C840%2C841%2C842%2C843%2C847%2C848%2C849%2C852%2C856%2C858%2C860%2C861%2C864%2C867%2C875%2C890%2C895%2C896%2C898%2C899%2C900%2C903%2C905%2C906%2C907%2C908%2C910%2C913&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.981678+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/buasd11_layer.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/buasd11_layer.json",
+      "sha256": "6911973b302e5e1d623c53151e32b27a18c4bee6a37dcadb4d1689fc403e80b4",
+      "bytes": 9380,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Built_up_Area_Sub_Divisions_Dec_2011_Boundaries_2022/FeatureServer/0?f=json",
+      "retrieved_at": "2026-10-11T08:45:26.264270+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_04000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_04000.json",
+      "sha256": "4977750321c62febe27a20127720546e7bd1f6f6bb7b3525ad90b77887801db2",
+      "bytes": 96394,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=4000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:33.668912+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_006.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_006.geojson",
+      "sha256": "acbe61bead9b2a1acfe5c818144c949480235c999594b2de8a758756551c5cf8",
+      "bytes": 189575,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002361%27%2C%27E63002370%27%2C%27E63002378%27%2C%27E63002453%27%2C%27E63002455%27%2C%27E63002478%27%2C%27E63002481%27%2C%27E63002489%27%2C%27E63002499%27%2C%27E63002504%27%2C%27E63002519%27%2C%27E63002520%27%2C%27E63002560%27%2C%27E63002612%27%2C%27E63002661%27%2C%27E63002716%27%2C%27E63002767%27%2C%27E63002772%27%2C%27E63002781%27%2C%27E63002829%27%2C%27E63002834%27%2C%27E63002836%27%2C%27E63002848%27%2C%27E63002862%27%2C%27E63002880%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:07.764273+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_016.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_016.geojson",
+      "sha256": "9e60773b16c507ef0ecc42c1363631a47a8c1022c23244ecd48bf83c7ae5e832",
+      "bytes": 272791,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27S45000595%27%2C%27S45000690%27%2C%27S45000691%27%2C%27S45000710%27%2C%27S45000724%27%2C%27S45000733%27%2C%27S45000750%27%2C%27S45000752%27%2C%27S45000753%27%2C%27S45000766%27%2C%27S45000767%27%2C%27S45000768%27%2C%27S45000784%27%2C%27S45000813%27%2C%27S45000818%27%2C%27W45000041%27%2C%27W45000052%27%2C%27W45000094%27%2C%27W45000108%27%2C%27W45000133%27%2C%27W45000191%27%2C%27W45000195%27%2C%27W45000218%27%2C%27W45000220%27%2C%27W45000234%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:12.543885+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00200.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00200.json",
+      "sha256": "f8a6c75bc019dd48e0b37d2c1c08d6fd4b9ffd668c702d638b1766afef8925d5",
+      "bytes": 18047933,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=200&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:27:03.828489+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_007.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_007.geojson",
+      "sha256": "46bd3d9470f344f49acf2d6f12283779d46d8998fc092134bd331c6ba49e26ca",
+      "bytes": 801535,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04012233%27%2C%27E04012258%27%2C%27E04012598%27%2C%27E04012601%27%2C%27E04012603%27%2C%27E04012676%27%2C%27E04012687%27%2C%27E04012701%27%2C%27E04012764%27%2C%27E04012803%27%2C%27E04012806%27%2C%27E04012812%27%2C%27E04012814%27%2C%27E04012896%27%2C%27E04013033%27%2C%27E04013038%27%2C%27E04013047%27%2C%27E04013058%27%2C%27E04013070%27%2C%27E04013127%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:40.984166+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__ons_geo_licences.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__ons_geo_licences.html",
+      "sha256": "45fe085aa3cdcd0ba3465fbb7f410d18a823e6282f5e2f0c65db688e40772b18",
+      "bytes": 35418,
+      "url": "https://www.ons.gov.uk/methodology/geography/licences",
+      "retrieved_at": "2026-11-18T09:25:59.983915+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_019.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_019.geojson",
+      "sha256": "dc15de316cc74f9ad1a7c26532609fcde604ca7ac7e3e698d485727f0b6ba86e",
+      "bytes": 244348,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005811%27%2C%27E63005814%27%2C%27E63005827%27%2C%27E63005865%27%2C%27E63005871%27%2C%27E63005885%27%2C%27E63005886%27%2C%27E63005897%27%2C%27E63005917%27%2C%27E63005925%27%2C%27E63005929%27%2C%27E63005946%27%2C%27E63005951%27%2C%27E63005956%27%2C%27E63005965%27%2C%27E63005966%27%2C%27E63005971%27%2C%27E63006011%27%2C%27E63006027%27%2C%27E63006037%27%2C%27E63006042%27%2C%27E63006048%27%2C%27E63006052%27%2C%27E63006059%27%2C%27E63006068%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:50.886438+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_009.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_009.geojson",
+      "sha256": "d270eeb256954474bb02903d395b050641646c47edcf40c90b3afecfffd4ce8f",
+      "bytes": 213588,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002723%27%2C%27E63002730%27%2C%27E63002762%27%2C%27E63002775%27%2C%27E63002799%27%2C%27E63002808%27%2C%27E63002813%27%2C%27E63002821%27%2C%27E63002867%27%2C%27E63002898%27%2C%27E63002935%27%2C%27E63002939%27%2C%27E63002962%27%2C%27E63002968%27%2C%27E63002976%27%2C%27E63002989%27%2C%27E63003010%27%2C%27E63003040%27%2C%27E63003054%27%2C%27E63003058%27%2C%27E63003074%27%2C%27E63003080%27%2C%27E63003093%27%2C%27E63003106%27%2C%27E63003114%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:45.643332+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_layer.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_layer.json",
+      "sha256": "927c1b74d47898ff1a93fd38ec635b2198992436f0f4ab2cf2949f3586c0d544",
+      "bytes": 9392,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0?f=json",
+      "retrieved_at": "2026-11-18T09:25:28.079731+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_begin_00030.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_begin_00030.json",
+      "sha256": "f93f02847f102b6f44ecdc183c8ba6a954537012e1a643cae1abc3bb8b3d9a90",
+      "bytes": 2812757,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&resultOffset=30&resultRecordCount=10&orderByFields=FID",
+      "retrieved_at": "2026-10-10T02:29:44.914530+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01500_2dc3f76a6dd8.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01500_2dc3f76a6dd8.json",
+      "sha256": "8f9433e98741cbe2652e53ae74f6957592236f0a6d07db3786d2c8a85c98d680",
+      "bytes": 2942222,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=4747%2C4748%2C4752%2C4754%2C4757%2C4759%2C4763%2C4769%2C4770%2C4772%2C4775%2C4776%2C4784%2C4792%2C4799%2C4802%2C4804%2C4807%2C4810%2C4811%2C4812%2C4817%2C4820%2C4821%2C4823%2C4824%2C4834%2C4835%2C4838%2C4842%2C4843%2C4844%2C4845%2C4846%2C4851%2C4854%2C4860%2C4862%2C4864%2C4870%2C4875%2C4878%2C4879%2C4880%2C4883%2C4884%2C4888%2C4889%2C4892%2C4893%2C4895%2C4896%2C4897%2C4900%2C4912%2C4914%2C4916%2C4918%2C4919%2C4922&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.110410+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_017.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_017.geojson",
+      "sha256": "60568680cb610146a39aeb33cb8724e8360594de00d498ef90cee16ccac246b0",
+      "bytes": 277470,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27W45000237%27%2C%27W45000245%27%2C%27W45000273%27%2C%27W45000292%27%2C%27W45000299%27%2C%27W45000335%27%2C%27W45000350%27%2C%27W45000364%27%2C%27W45000434%27%2C%27W45000450%27%2C%27W45000496%27%2C%27W45000521%27%2C%27W45000557%27%2C%27W45000581%27%2C%27W45000610%27%2C%27W45000617%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:12.665268+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_007.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_007.geojson",
+      "sha256": "5c8c9f643481edde3ac73ddcc52e64db1a659faf7891a3c8e0f80db95e03798f",
+      "bytes": 228553,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002909%27%2C%27E63002947%27%2C%27E63002980%27%2C%27E63002994%27%2C%27E63003004%27%2C%27E63003009%27%2C%27E63003022%27%2C%27E63003039%27%2C%27E63003059%27%2C%27E63003081%27%2C%27E63003110%27%2C%27E63003117%27%2C%27E63003144%27%2C%27E63003147%27%2C%27E63003171%27%2C%27E63003178%27%2C%27E63003181%27%2C%27E63003206%27%2C%27E63003240%27%2C%27E63003243%27%2C%27E63003264%27%2C%27E63003274%27%2C%27E63003287%27%2C%27E63003288%27%2C%27E63003352%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:08.695511+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_05000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_05000.json",
+      "sha256": "773fda2e515fe15f8fb4b70222fd43b2cdf4194742fba0682ad328fbe4b1c53c",
+      "bytes": 95612,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=5000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:34.551203+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/pinned_states.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/pinned_states.json",
+      "sha256": "6eec2986ba9145a1359e8f45f7c6d63ddf1dd87fd5b176881bdf1a1016e5b28f",
+      "bytes": 5898138,
+      "url": "https://github.com/dr5hn/countries-states-cities-database/blob/94b88f6ec6165b22868cd2093b623c081602c048/contributions/states/states.json",
+      "retrieved_at": "2026-11-19T18:24:53.827062+00:00",
+      "licence": "Repository provenance; unchanged pinned Git object"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_006.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_006.geojson",
+      "sha256": "55a68ab3f76ee9ffc7a5e699e5646661c06ae859153c259fc963b9a290a2a607",
+      "bytes": 383975,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04011672%27%2C%27E04011769%27%2C%27E04011842%27%2C%27E04011854%27%2C%27E04011860%27%2C%27E04011894%27%2C%27E04011924%27%2C%27E04011925%27%2C%27E04011941%27%2C%27E04011950%27%2C%27E04011979%27%2C%27E04011988%27%2C%27E04012000%27%2C%27E04012002%27%2C%27E04012003%27%2C%27E04012005%27%2C%27E04012006%27%2C%27E04012074%27%2C%27E04012169%27%2C%27E04012196%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:30.164713+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_008.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_008.geojson",
+      "sha256": "a716d4d9c78c5048d668e725d374aee9e3d9cd952344f3b2900485e832529913",
+      "bytes": 205609,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002494%27%2C%27E63002541%27%2C%27E63002549%27%2C%27E63002563%27%2C%27E63002588%27%2C%27E63002590%27%2C%27E63002594%27%2C%27E63002597%27%2C%27E63002599%27%2C%27E63002602%27%2C%27E63002603%27%2C%27E63002607%27%2C%27E63002611%27%2C%27E63002614%27%2C%27E63002618%27%2C%27E63002621%27%2C%27E63002630%27%2C%27E63002631%27%2C%27E63002633%27%2C%27E63002638%27%2C%27E63002642%27%2C%27E63002643%27%2C%27E63002648%27%2C%27E63002702%27%2C%27E63002705%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:44.850989+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_018.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_018.geojson",
+      "sha256": "79e772cb238aa30213ab87eb6a5a3636ac4da77a2c680001bd7cddeadd3d068c",
+      "bytes": 260413,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005532%27%2C%27E63005533%27%2C%27E63005552%27%2C%27E63005559%27%2C%27E63005565%27%2C%27E63005569%27%2C%27E63005579%27%2C%27E63005581%27%2C%27E63005586%27%2C%27E63005589%27%2C%27E63005592%27%2C%27E63005603%27%2C%27E63005611%27%2C%27E63005613%27%2C%27E63005619%27%2C%27E63005642%27%2C%27E63005656%27%2C%27E63005715%27%2C%27E63005717%27%2C%27E63005727%27%2C%27E63005737%27%2C%27E63005740%27%2C%27E63005758%27%2C%27E63005786%27%2C%27E63005796%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:51.180495+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00000.json",
+      "sha256": "0d9c923a6df58810958166c3494e2d37a0aee3e51ae3f5aee1a9166bd74a77dc",
+      "bytes": 38443087,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=0&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:27:06.604976+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00360_819b2062c975.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00360_819b2062c975.json",
+      "sha256": "bf988b009da0b126e00c212e2aabdd264ba6055766a292024ffea82fda3d0f68",
+      "bytes": 2936571,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=916%2C918%2C925%2C926%2C927%2C930%2C932%2C936%2C937%2C938%2C939%2C942%2C944%2C945%2C947%2C948%2C957%2C958%2C959%2C962%2C964%2C965%2C967%2C970%2C971%2C978%2C979%2C980%2C982%2C983%2C984%2C985%2C991%2C992%2C994%2C995%2C996%2C998%2C1000%2C1004%2C1007%2C1008%2C1010%2C1013%2C1014%2C1017%2C1022%2C1026%2C1029%2C1030%2C1037%2C1040%2C1042%2C1045%2C1046%2C1048%2C1052%2C1054%2C1056%2C1057&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.263584+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01860_efb07943e6d7.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01860_efb07943e6d7.json",
+      "sha256": "fababd43dbf5e6577090f2bbc4f5c330030febfa66fc8259e7e7f352a3dfa58a",
+      "bytes": 2202691,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=5956%2C5963%2C5966%2C5971%2C5978%2C5982%2C5985%2C5986%2C5989%2C5993%2C5999%2C6003%2C6007%2C6011%2C6020%2C6021%2C6022%2C6026%2C6027%2C6038%2C6040%2C6042%2C6044%2C6045%2C6048%2C6052%2C6059%2C6061%2C6062%2C6064%2C6068%2C6073%2C6076%2C6083%2C6085%2C6087%2C6092%2C6094%2C6095%2C6103%2C6105%2C6108%2C6115%2C6132%2C6135%2C6148%2C6149%2C6150%2C6153%2C6154%2C6155%2C6159%2C6162%2C6170%2C6177%2C6182%2C6184%2C6185%2C6186%2C6198&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.382054+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01320_bd3f54bd27e4.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01320_bd3f54bd27e4.json",
+      "sha256": "b015a86544aeee465359d4a7cc48778801bde1fe65f8d79a1cdb275b35726e53",
+      "bytes": 2077135,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=4104%2C4105%2C4113%2C4118%2C4119%2C4128%2C4136%2C4139%2C4145%2C4147%2C4154%2C4157%2C4159%2C4165%2C4173%2C4174%2C4175%2C4179%2C4180%2C4182%2C4188%2C4192%2C4199%2C4206%2C4208%2C4211%2C4219%2C4221%2C4228%2C4229%2C4231%2C4234%2C4235%2C4237%2C4239%2C4247%2C4248%2C4249%2C4250%2C4253%2C4257%2C4260%2C4264%2C4265%2C4269%2C4270%2C4271%2C4272%2C4275%2C4277%2C4282%2C4294%2C4297%2C4299%2C4300%2C4305%2C4312%2C4314%2C4318%2C4320&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.839610+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/buasd11_item.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/buasd11_item.json",
+      "sha256": "cad8029488e6b35f7d4e210867df1e7beff14d9fc459372190083cdb9dab428f",
+      "bytes": 4687,
+      "url": "https://www.arcgis.com/sharing/rest/content/items/a9ccc7783f2c40f1a52e92d20daadb1f?f=json",
+      "retrieved_at": "2026-10-11T08:45:26.080122+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02520_a4852028d155.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02520_a4852028d155.json",
+      "sha256": "05ba6cb792a4dba456909fa5c15163451e798f735b8678344cd93eb602521ead",
+      "bytes": 1533890,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7737%2C7738%2C7739%2C7740%2C7741%2C7742%2C7744%2C7746%2C7747%2C7751%2C7752%2C7756%2C7758%2C7759%2C7762%2C7765%2C7768%2C7769%2C7774%2C7776%2C7777%2C7779%2C7780%2C7781%2C7782%2C7784%2C7786%2C7787%2C7788%2C7789%2C7793%2C7795%2C7798%2C7800%2C7801%2C7804%2C7805%2C7807%2C7808%2C7813%2C7828%2C7829%2C7830%2C7831%2C7832%2C7833%2C7835%2C7840%2C7841%2C7842%2C7845%2C7847%2C7856%2C7860%2C7864%2C7872%2C7874%2C7875%2C7880%2C7881&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.840703+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_011.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_011.geojson",
+      "sha256": "caa953682b33d31a3b1622f88dd6fc71193773a61d40a7a99f51c93bd748a66a",
+      "bytes": 182696,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63003481%27%2C%27E63003492%27%2C%27E63003499%27%2C%27E63003528%27%2C%27E63003537%27%2C%27E63003538%27%2C%27E63003553%27%2C%27E63003565%27%2C%27E63003576%27%2C%27E63003577%27%2C%27E63003583%27%2C%27E63003600%27%2C%27E63003609%27%2C%27E63003614%27%2C%27E63003621%27%2C%27E63003622%27%2C%27E63003654%27%2C%27E63003671%27%2C%27E63003678%27%2C%27E63003696%27%2C%27E63003733%27%2C%27E63003757%27%2C%27E63003759%27%2C%27E63003766%27%2C%27E63003774%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:46.332995+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_001.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_001.geojson",
+      "sha256": "2746ffbd3a94454b5b32ccc7e329fdad53f955e15cbe29bf005cc8567a059979",
+      "bytes": 175381,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000302%27%2C%27E63000303%27%2C%27E63000335%27%2C%27E63000503%27%2C%27E63000547%27%2C%27E63000550%27%2C%27E63000580%27%2C%27E63000597%27%2C%27E63000605%27%2C%27E63000606%27%2C%27E63000613%27%2C%27E63000638%27%2C%27E63000646%27%2C%27E63000662%27%2C%27E63000667%27%2C%27E63000683%27%2C%27E63000697%27%2C%27E63000698%27%2C%27E63000723%27%2C%27E63000739%27%2C%27E63000743%27%2C%27E63000755%27%2C%27E63000762%27%2C%27E63000771%27%2C%27E63000780%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:41.515290+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_begin_00010.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_begin_00010.json",
+      "sha256": "5f62bf9706a13e9f29a51b988bc5d488affbd38ae0ad2ebe023255a97f2d4df9",
+      "bytes": 5177303,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&resultOffset=10&resultRecordCount=10&orderByFields=FID",
+      "retrieved_at": "2026-10-10T02:29:42.333138+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00180_e42a779fc14a.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00180_e42a779fc14a.json",
+      "sha256": "839ed1b475a822735ce51a773b14b873f524862a3209416db67cc2453d8675a9",
+      "bytes": 1809408,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=474%2C475%2C476%2C477%2C479%2C491%2C494%2C496%2C501%2C505%2C508%2C510%2C514%2C517%2C520%2C523%2C530%2C533%2C534%2C539%2C546%2C547%2C550%2C551%2C554%2C558%2C560%2C563%2C571%2C572%2C581%2C582%2C586%2C588%2C589%2C596%2C597%2C600%2C601%2C602%2C603%2C604%2C605%2C606%2C607%2C611%2C613%2C615%2C616%2C617%2C619%2C620%2C624%2C629%2C631%2C633%2C636%2C638%2C639%2C642&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.983897+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nrs_data.xlsx": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nrs_data.xlsx",
+      "sha256": "1c0806c6504c0462b69014f8cca74fbcdb662add22de53e8e9a7fbb04866e325",
+      "bytes": 683451,
+      "url": "https://www.nrscotland.gov.uk/media/wtwjdfuo/data-tables.xlsx",
+      "retrieved_at": "2026-10-10T02:16:40.420870+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_004.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_004.geojson",
+      "sha256": "434cac3459c156d89f550a2d6290fb353df0776c619a78e84e3f61b0aff6dcc8",
+      "bytes": 244267,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63001356%27%2C%27E63001388%27%2C%27E63001409%27%2C%27E63001410%27%2C%27E63001416%27%2C%27E63001444%27%2C%27E63001452%27%2C%27E63001474%27%2C%27E63001475%27%2C%27E63001505%27%2C%27E63001509%27%2C%27E63001542%27%2C%27E63001572%27%2C%27E63001580%27%2C%27E63001618%27%2C%27E63001624%27%2C%27E63001655%27%2C%27E63001656%27%2C%27E63001676%27%2C%27E63001680%27%2C%27E63001684%27%2C%27E63001701%27%2C%27E63001702%27%2C%27E63001724%27%2C%27E63001760%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:43.402379+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_014.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_014.geojson",
+      "sha256": "95a367a51cfae902f834c2256e6e8bca92b680c188069ebba08f13b5d07d5c45",
+      "bytes": 284213,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63004383%27%2C%27E63004390%27%2C%27E63004406%27%2C%27E63004407%27%2C%27E63004412%27%2C%27E63004422%27%2C%27E63004470%27%2C%27E63004476%27%2C%27E63004479%27%2C%27E63004525%27%2C%27E63004535%27%2C%27E63004550%27%2C%27E63004581%27%2C%27E63004583%27%2C%27E63004586%27%2C%27E63004603%27%2C%27E63004625%27%2C%27E63004631%27%2C%27E63004633%27%2C%27E63004661%27%2C%27E63004663%27%2C%27E63004668%27%2C%27E63004683%27%2C%27E63004711%27%2C%27E63004728%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:49.169206+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00420_b6ee21c5ef18.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00420_b6ee21c5ef18.json",
+      "sha256": "53d9d98b4376e42a025f0bbca971b5048688aabe1ff29ad116bd46acdce9a98e",
+      "bytes": 2614948,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1062%2C1063%2C1068%2C1069%2C1070%2C1073%2C1075%2C1077%2C1081%2C1082%2C1083%2C1086%2C1087%2C1088%2C1089%2C1095%2C1100%2C1101%2C1106%2C1108%2C1110%2C1112%2C1115%2C1118%2C1121%2C1123%2C1124%2C1127%2C1128%2C1130%2C1131%2C1134%2C1135%2C1136%2C1142%2C1143%2C1144%2C1146%2C1149%2C1151%2C1152%2C1153%2C1154%2C1155%2C1160%2C1166%2C1167%2C1172%2C1173%2C1176%2C1177%2C1179%2C1181%2C1185%2C1187%2C1191%2C1192%2C1195%2C1197%2C1198&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.228794+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00780_f0333137b284.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00780_f0333137b284.json",
+      "sha256": "885f5c10f9093e762769713ab84fb81a2beab95fabd9930bb4f04f55976ffbaa",
+      "bytes": 1998653,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2224%2C2229%2C2230%2C2234%2C2238%2C2239%2C2245%2C2251%2C2256%2C2259%2C2260%2C2262%2C2264%2C2266%2C2269%2C2272%2C2273%2C2275%2C2278%2C2279%2C2284%2C2285%2C2286%2C2291%2C2294%2C2295%2C2297%2C2300%2C2304%2C2312%2C2313%2C2316%2C2317%2C2319%2C2323%2C2331%2C2336%2C2338%2C2339%2C2351%2C2357%2C2360%2C2362%2C2366%2C2374%2C2375%2C2377%2C2389%2C2393%2C2395%2C2399%2C2400%2C2401%2C2408%2C2415%2C2417%2C2419%2C2425%2C2427%2C2428&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.514906+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00540_8df7badaa6f5.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00540_8df7badaa6f5.json",
+      "sha256": "1796b0653caafbd901533a7776c8f823fc76d970569b47814673e48b12b48163",
+      "bytes": 3888534,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1349%2C1350%2C1352%2C1356%2C1358%2C1362%2C1363%2C1364%2C1365%2C1374%2C1378%2C1382%2C1384%2C1388%2C1389%2C1393%2C1395%2C1397%2C1400%2C1403%2C1407%2C1409%2C1410%2C1411%2C1415%2C1416%2C1418%2C1421%2C1422%2C1423%2C1424%2C1425%2C1429%2C1432%2C1435%2C1437%2C1444%2C1447%2C1452%2C1453%2C1454%2C1460%2C1462%2C1464%2C1466%2C1468%2C1470%2C1474%2C1481%2C1485%2C1487%2C1489%2C1491%2C1496%2C1505%2C1506%2C1509%2C1517%2C1518%2C1523&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.335525+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_003.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_003.geojson",
+      "sha256": "a9dbbe5085ed990c2150dee2ebaa5ba9cf579f2d16483b655024907ff4b37c89",
+      "bytes": 262836,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04002284%27%2C%27E04002296%27%2C%27E04002337%27%2C%27E04002359%27%2C%27E04003000%27%2C%27E04003398%27%2C%27E04003533%27%2C%27E04003660%27%2C%27E04003705%27%2C%27E04003712%27%2C%27E04003719%27%2C%27E04003758%27%2C%27E04003777%27%2C%27E04004149%27%2C%27E04004321%27%2C%27E04004734%27%2C%27E04005126%27%2C%27E04006927%27%2C%27E04006994%27%2C%27E04007234%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:11.963697+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00150.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00150.json",
+      "sha256": "6584418a8deb5bb0508c4d6d4611b8422920399bbfa182090c7353c38292d9d0",
+      "bytes": 25214877,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=150&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:26:57.446303+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_022.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_022.geojson",
+      "sha256": "3c1d79a6718cef481355a4b9d1f50670ff5fb6c036e321ae0149d9fbe94928f3",
+      "bytes": 190517,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006630%27%2C%27E63006636%27%2C%27E63006651%27%2C%27E63006657%27%2C%27E63006662%27%2C%27E63006683%27%2C%27E63006688%27%2C%27E63006695%27%2C%27E63006711%27%2C%27E63006714%27%2C%27E63006746%27%2C%27E63006751%27%2C%27E63006753%27%2C%27E63006757%27%2C%27E63006758%27%2C%27E63006767%27%2C%27E63006776%27%2C%27E63006788%27%2C%27E63006790%27%2C%27E63006795%27%2C%27E63006823%27%2C%27E63006853%27%2C%27E63006867%27%2C%27E63006893%27%2C%27E63006898%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:53.218468+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_002.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_002.geojson",
+      "sha256": "cd188ff3cc08f30cf622e99be433f14af3b9d2762a61c988e598a6c8a23b77fd",
+      "bytes": 543116,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000829%27%2C%27E63000830%27%2C%27E63000836%27%2C%27E63000859%27%2C%27E63000869%27%2C%27E63000873%27%2C%27E63000891%27%2C%27E63000901%27%2C%27E63000912%27%2C%27E63000974%27%2C%27E63000988%27%2C%27E63001012%27%2C%27E63001018%27%2C%27E63001021%27%2C%27E63001028%27%2C%27E63001041%27%2C%27E63001060%27%2C%27E63001061%27%2C%27E63001071%27%2C%27E63001074%27%2C%27E63001085%27%2C%27E63001097%27%2C%27E63001098%27%2C%27E63001104%27%2C%27E63001109%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:06.264277+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_012.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_012.geojson",
+      "sha256": "3088ef90b198c469fe84e30dd354bac2abc2464b23d8e964adb2477cfa0bd327",
+      "bytes": 421626,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005324%27%2C%27E63005327%27%2C%27E63005335%27%2C%27E63005338%27%2C%27E63005442%27%2C%27E63005443%27%2C%27E63005486%27%2C%27E63005549%27%2C%27E63005567%27%2C%27E63005574%27%2C%27E63005598%27%2C%27E63005605%27%2C%27E63005620%27%2C%27E63005632%27%2C%27E63005636%27%2C%27E63005653%27%2C%27E63005662%27%2C%27E63005675%27%2C%27E63005679%27%2C%27E63005722%27%2C%27E63005746%27%2C%27E63005776%27%2C%27E63005832%27%2C%27E63005907%27%2C%27E63005919%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:10.547827+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_00000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_00000.json",
+      "sha256": "fbe9a06a2dff44e4529e4fc038b650635f1aeb9286990dcee2a6bcb0f07473e2",
+      "bytes": 94242,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=0&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:29.331242+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01080_dbd806ce2ac4.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01080_dbd806ce2ac4.json",
+      "sha256": "033e3f780fbb6942dcf84a3c179a5ac81ae7d2674991fb8bd0e373e896ff82c3",
+      "bytes": 2043854,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=3231%2C3235%2C3236%2C3244%2C3249%2C3250%2C3251%2C3254%2C3260%2C3267%2C3268%2C3276%2C3278%2C3283%2C3285%2C3289%2C3290%2C3295%2C3296%2C3308%2C3311%2C3313%2C3318%2C3319%2C3321%2C3322%2C3324%2C3328%2C3330%2C3331%2C3337%2C3339%2C3342%2C3346%2C3347%2C3351%2C3354%2C3356%2C3358%2C3360%2C3365%2C3373%2C3376%2C3384%2C3385%2C3389%2C3390%2C3396%2C3402%2C3412%2C3414%2C3415%2C3419%2C3422%2C3426%2C3430%2C3434%2C3439%2C3445%2C3447&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.833131+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02400_4086e0bedd9c.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02400_4086e0bedd9c.json",
+      "sha256": "48caa149479d6bba32b5bdd312fdd1006b43e05f156123dd754437cc85bce06c",
+      "bytes": 2320485,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7528%2C7530%2C7531%2C7534%2C7536%2C7538%2C7539%2C7540%2C7541%2C7542%2C7543%2C7544%2C7545%2C7546%2C7548%2C7549%2C7550%2C7551%2C7553%2C7554%2C7557%2C7558%2C7561%2C7562%2C7564%2C7566%2C7567%2C7568%2C7569%2C7570%2C7572%2C7575%2C7576%2C7578%2C7581%2C7582%2C7584%2C7586%2C7587%2C7590%2C7592%2C7593%2C7594%2C7595%2C7596%2C7597%2C7600%2C7601%2C7602%2C7603%2C7604%2C7605%2C7607%2C7609%2C7610%2C7611%2C7614%2C7615%2C7619%2C7622&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.797164+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_002.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_002.geojson",
+      "sha256": "c2b0bad63b8d896ed1821c6a2f351c2b701c5131a513b6198f24022c2419bc2d",
+      "bytes": 287365,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04001207%27%2C%27E04001265%27%2C%27E04001268%27%2C%27E04001279%27%2C%27E04001300%27%2C%27E04001319%27%2C%27E04001327%27%2C%27E04001328%27%2C%27E04001346%27%2C%27E04001368%27%2C%27E04001375%27%2C%27E04001380%27%2C%27E04001397%27%2C%27E04001433%27%2C%27E04001559%27%2C%27E04001960%27%2C%27E04002068%27%2C%27E04002164%27%2C%27E04002209%27%2C%27E04002256%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:09.964040+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_012.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_012.geojson",
+      "sha256": "f2e51d593edfc7bcdfad1e24fb776ec157bdfec44b9eb2fb19d303bfaaf4831c",
+      "bytes": 121373,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27W04001029%27%2C%27W04001032%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:58.834786+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nomis_population.csv": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nomis_population.csv",
+      "sha256": "b2d8f01d8beb17839ac4bf7402961c283bf2b1bcbc3928d578b60aa4d0c708e6",
+      "bytes": 977645,
+      "url": "https://www.nomisweb.co.uk/api/v01/dataset/NM_2352_1.data.csv?geography=TYPE160&date=latest&c_sex=0&measures=20100&select=date_name%2Cgeography_name%2Cgeography_code%2Cc_sex_name%2Cmeasures_name%2Cobs_value%2Cobs_status%2Cobs_status_name%2Crecord_count",
+      "retrieved_at": "2026-10-27T08:48:11.488314+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01140_7df9c6415d0b.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01140_7df9c6415d0b.json",
+      "sha256": "53a056689162dec569c9294b0599a19f13723c604f78d0d1df1f13e069a3a82f",
+      "bytes": 1467422,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=3455%2C3459%2C3461%2C3462%2C3465%2C3470%2C3472%2C3474%2C3478%2C3481%2C3490%2C3491%2C3496%2C3499%2C3502%2C3507%2C3513%2C3524%2C3526%2C3527%2C3530%2C3532%2C3533%2C3540%2C3544%2C3552%2C3553%2C3554%2C3563%2C3565%2C3569%2C3576%2C3577%2C3581%2C3585%2C3588%2C3590%2C3595%2C3597%2C3598%2C3600%2C3609%2C3611%2C3612%2C3614%2C3618%2C3619%2C3621%2C3622%2C3623%2C3626%2C3629%2C3638%2C3643%2C3649%2C3650%2C3653%2C3664%2C3671%2C3676&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.875712+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00120_866c0f3ee218.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00120_866c0f3ee218.json",
+      "sha256": "a544f6748ac57f3f1097bbba51f661a7b3630581134a2f5d86b0173f9fc3a51e",
+      "bytes": 2293600,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=295%2C298%2C300%2C302%2C306%2C307%2C309%2C310%2C311%2C312%2C321%2C323%2C324%2C325%2C326%2C327%2C328%2C329%2C334%2C335%2C336%2C337%2C338%2C339%2C349%2C352%2C353%2C356%2C361%2C362%2C366%2C375%2C377%2C381%2C382%2C383%2C386%2C389%2C390%2C393%2C394%2C396%2C398%2C400%2C403%2C404%2C405%2C417%2C422%2C425%2C435%2C436%2C449%2C450%2C453%2C454%2C458%2C468%2C470%2C472&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.891310+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01620_2bc5fc6e6d48.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01620_2bc5fc6e6d48.json",
+      "sha256": "edd04b18b6b9bab8f0324e48e88c80f843a423360b382277acb8b0e55fa1b963",
+      "bytes": 3069456,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=5149%2C5152%2C5156%2C5159%2C5160%2C5161%2C5164%2C5166%2C5168%2C5169%2C5172%2C5173%2C5177%2C5179%2C5181%2C5182%2C5188%2C5190%2C5192%2C5194%2C5198%2C5199%2C5203%2C5206%2C5207%2C5212%2C5214%2C5217%2C5221%2C5224%2C5226%2C5227%2C5232%2C5233%2C5235%2C5237%2C5238%2C5240%2C5243%2C5246%2C5252%2C5254%2C5260%2C5263%2C5265%2C5267%2C5268%2C5271%2C5275%2C5276%2C5277%2C5278%2C5279%2C5281%2C5285%2C5290%2C5296%2C5303%2C5312%2C5317&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.111040+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_01000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_01000.json",
+      "sha256": "292500ee01567ab7d48478861036a624fdc3f33988d4de6ca1c7ddb45b9f0a21",
+      "bytes": 95988,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=1000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:30.146140+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00900_412a845ee630.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00900_412a845ee630.json",
+      "sha256": "161d568abe3c367eaeda6872ffa78dcbb9ac975ad1e3e160074835d59d4af3e6",
+      "bytes": 2459043,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2619%2C2622%2C2626%2C2628%2C2630%2C2633%2C2634%2C2635%2C2636%2C2637%2C2638%2C2640%2C2644%2C2647%2C2650%2C2651%2C2656%2C2663%2C2664%2C2665%2C2666%2C2672%2C2681%2C2682%2C2683%2C2684%2C2685%2C2691%2C2692%2C2694%2C2695%2C2698%2C2699%2C2705%2C2709%2C2713%2C2714%2C2720%2C2721%2C2723%2C2730%2C2731%2C2733%2C2734%2C2740%2C2747%2C2748%2C2753%2C2757%2C2762%2C2780%2C2782%2C2783%2C2786%2C2787%2C2790%2C2799%2C2801%2C2804%2C2806&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.535864+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02280_ab80cf3aecef.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02280_ab80cf3aecef.json",
+      "sha256": "caf8ca35b27857c582d2e3a5e76b941630ddc983e3a7b41466fedf20aa05fdac",
+      "bytes": 2232560,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7280%2C7281%2C7282%2C7283%2C7285%2C7289%2C7290%2C7292%2C7294%2C7298%2C7301%2C7302%2C7304%2C7305%2C7306%2C7307%2C7312%2C7316%2C7326%2C7332%2C7334%2C7336%2C7337%2C7339%2C7341%2C7344%2C7345%2C7346%2C7347%2C7348%2C7349%2C7350%2C7352%2C7357%2C7358%2C7360%2C7363%2C7364%2C7365%2C7367%2C7369%2C7371%2C7375%2C7378%2C7379%2C7380%2C7381%2C7383%2C7384%2C7385%2C7386%2C7387%2C7389%2C7392%2C7395%2C7396%2C7397%2C7400%2C7401%2C7402&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.613904+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_census2021.xlsx": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_census2021.xlsx",
+      "sha256": "48bbff9e6a8c42444e7274f4682d143c8527aee8e224b535d0b4d60ac0838a7a",
+      "bytes": 29676541,
+      "url": "https://www.ons.gov.uk/file?uri=%2Fpeoplepopulationandcommunity%2Fhousing%2Fdatasets%2Ftownsandcitiescharacteristicsofbuiltupareasenglandandwalescensus2021%2F2021%2Ftownsandcitiescharacteristicsofbuiltupareasenglandandwalescensus2021.xlsx",
+      "retrieved_at": "2026-11-18T09:25:32.335709+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_013.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_013.geojson",
+      "sha256": "dda3f35b25fd2356a78c54a9196b68437758d43127afb234685d1679175918f6",
+      "bytes": 214054,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005921%27%2C%27E63005940%27%2C%27E63005947%27%2C%27E63005994%27%2C%27E63006002%27%2C%27E63006006%27%2C%27E63006008%27%2C%27E63006018%27%2C%27E63006025%27%2C%27E63006053%27%2C%27E63006069%27%2C%27E63006084%27%2C%27E63006117%27%2C%27E63006156%27%2C%27E63006158%27%2C%27E63006191%27%2C%27E63006238%27%2C%27E63006243%27%2C%27E63006307%27%2C%27E63006335%27%2C%27E63006345%27%2C%27E63006351%27%2C%27E63006359%27%2C%27E63006380%27%2C%27E63006392%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:10.615286+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_003.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_003.geojson",
+      "sha256": "bfca70abb31777a2ceece8fa79b667fa1af1cb365cc8bb27e1cdc13acc4011c8",
+      "bytes": 482583,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63001126%27%2C%27E63001133%27%2C%27E63001156%27%2C%27E63001168%27%2C%27E63001169%27%2C%27E63001190%27%2C%27E63001208%27%2C%27E63001241%27%2C%27E63001246%27%2C%27E63001260%27%2C%27E63001273%27%2C%27E63001280%27%2C%27E63001281%27%2C%27E63001310%27%2C%27E63001320%27%2C%27E63001323%27%2C%27E63001325%27%2C%27E63001332%27%2C%27E63001369%27%2C%27E63001404%27%2C%27E63001413%27%2C%27E63001417%27%2C%27E63001426%27%2C%27E63001440%27%2C%27E63001455%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:06.620564+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00350.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00350.json",
+      "sha256": "3e763a18ace3574d724b2c0582385f1f1be85d707951964022b7d6f4eb647874",
+      "bytes": 4013258,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=350&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:27:25.482704+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_023.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_023.geojson",
+      "sha256": "c8b86826d14ff4a9291b714f5b146c5d00cadc00b4ccfbfe03c8db453bf91b03",
+      "bytes": 75024,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006910%27%2C%27E63006924%27%2C%27E63006964%27%2C%27E63006966%27%2C%27E63006968%27%2C%27E63006979%27%2C%27E63006986%27%2C%27E63007003%27%2C%27E63007042%27%2C%27K08000002%27%2C%27S45000092%27%2C%27S45000400%27%2C%27S45000807%27%2C%27W45000167%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:53.163192+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/cities_status.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/cities_status.html",
+      "sha256": "001b4ad44f322ae3a52cce7f3834c7c4367a38f30179405bb5462f9c86539d9f",
+      "bytes": 69423,
+      "url": "https://www.gov.uk/government/publications/list-of-cities/list-of-cities-html",
+      "retrieved_at": "2026-10-11T08:45:28.133913+00:00",
+      "licence": "Open Government Licence v3.0; Crown copyright; Source: Cabinet Office"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/ons_faq.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/ons_faq.html",
+      "sha256": "2b5dc6acba2a0ad9809c462f18c33f31da83fdc08cbcc4ab838afaa4ccd09e10",
+      "bytes": 11605,
+      "url": "https://onsgeo.github.io/Built_Up_Areas/",
+      "retrieved_at": "2026-10-11T08:45:26.971830+00:00",
+      "licence": "Official ONS methodology documentation; facts only; page reuse licence not separately verified"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_015.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_015.geojson",
+      "sha256": "3693b54f4ff4ba67d68727e690419b22d8fee9bfa4ac55951f752f6d594f1247",
+      "bytes": 241753,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63004738%27%2C%27E63004748%27%2C%27E63004770%27%2C%27E63004778%27%2C%27E63004792%27%2C%27E63004811%27%2C%27E63004824%27%2C%27E63004828%27%2C%27E63004835%27%2C%27E63004838%27%2C%27E63004845%27%2C%27E63004862%27%2C%27E63004914%27%2C%27E63004917%27%2C%27E63004919%27%2C%27E63004948%27%2C%27E63004949%27%2C%27E63004964%27%2C%27E63005000%27%2C%27E63005011%27%2C%27E63005054%27%2C%27E63005084%27%2C%27E63005101%27%2C%27E63005113%27%2C%27E63005118%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:48.631957+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_005.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_005.geojson",
+      "sha256": "77cd2709bc48a21de722d2c585ab43c34f5367ba19375f4cecf71b78d2f663fa",
+      "bytes": 244049,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63001785%27%2C%27E63001786%27%2C%27E63001800%27%2C%27E63001842%27%2C%27E63001861%27%2C%27E63001872%27%2C%27E63001880%27%2C%27E63001894%27%2C%27E63001897%27%2C%27E63001905%27%2C%27E63001909%27%2C%27E63001917%27%2C%27E63001919%27%2C%27E63001921%27%2C%27E63001925%27%2C%27E63001930%27%2C%27E63001932%27%2C%27E63001939%27%2C%27E63001940%27%2C%27E63001954%27%2C%27E63001975%27%2C%27E63001982%27%2C%27E63001987%27%2C%27E63002005%27%2C%27E63002006%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:43.352540+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02640_21763d890ee2.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02640_21763d890ee2.json",
+      "sha256": "14cc093ba4b8fccae0cf071da7e947c6f89307ed8d0ebab7f5d6384d0efc8f0e",
+      "bytes": 1443713,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=8049%2C8052%2C8053%2C8054%2C8057%2C8061%2C8066%2C8068%2C8073%2C8074%2C8077%2C8084%2C8089%2C8093%2C8097%2C8098%2C8099%2C8100%2C8106%2C8107%2C8109%2C8111%2C8112%2C8113%2C8117%2C8119%2C8120%2C8125%2C8128%2C8129%2C8133%2C8135%2C8144%2C8147%2C8148%2C8151%2C8154%2C8156%2C8162%2C8163%2C8165%2C8166%2C8174%2C8176%2C8178%2C8182%2C8192%2C8193%2C8201%2C8204%2C8205%2C8207%2C8208%2C8209%2C8210%2C8211%2C8223%2C8231%2C8232%2C8236&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.815641+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_08000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_08000.json",
+      "sha256": "a7b7d726ee6d32575f67726aa4b8f090e756d37142614a06176279a90a89c839",
+      "bytes": 52909,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=8000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:39.963313+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua11_count.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua11_count.json",
+      "sha256": "8824b75158af707c95befe3076aa4212ae66d04f3d3b89c01145deede049bf6f",
+      "bytes": 73,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Built_up_Areas_Dec_2011_Boundaries_V2_2022/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "retrieved_at": "2026-10-11T08:45:34.422884+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/ogl.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/ogl.html",
+      "sha256": "f5b2b9f2af63647cde889fa6c3508f5705925295b74912c68caa28dd37e64aa5",
+      "bytes": 10450,
+      "url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "retrieved_at": "2026-11-18T08:04:39.634227+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01980_860d044cd4a2.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01980_860d044cd4a2.json",
+      "sha256": "c0435b60e70b1c9386035ab374df3164d5d760f4801244be71be472363c59659",
+      "bytes": 2570026,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=6439%2C6440%2C6445%2C6447%2C6450%2C6451%2C6452%2C6457%2C6461%2C6463%2C6464%2C6470%2C6472%2C6474%2C6475%2C6478%2C6479%2C6482%2C6483%2C6485%2C6492%2C6493%2C6500%2C6501%2C6502%2C6505%2C6507%2C6510%2C6511%2C6512%2C6516%2C6520%2C6524%2C6525%2C6527%2C6530%2C6532%2C6538%2C6541%2C6547%2C6548%2C6549%2C6555%2C6557%2C6558%2C6562%2C6568%2C6572%2C6574%2C6575%2C6576%2C6579%2C6581%2C6586%2C6593%2C6600%2C6602%2C6603%2C6604%2C6605&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.481824+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00300.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00300.json",
+      "sha256": "820aff40efc114e14b86ce83f4849697a95d0f4000754338fdcf63f0ca23a6f6",
+      "bytes": 101403648,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=300&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:29:59.545736+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_010.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_010.geojson",
+      "sha256": "9476d84625db2da3667dded2d533adbf50c9c4640e7aa3e8a9b78a055d536eac",
+      "bytes": 478062,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27W04000461%27%2C%27W04000475%27%2C%27W04000477%27%2C%27W04000478%27%2C%27W04000494%27%2C%27W04000553%27%2C%27W04000562%27%2C%27W04000605%27%2C%27W04000609%27%2C%27W04000613%27%2C%27W04000618%27%2C%27W04000622%27%2C%27W04000626%27%2C%27W04000629%27%2C%27W04000632%27%2C%27W04000650%27%2C%27W04000667%27%2C%27W04000676%27%2C%27W04000678%27%2C%27W04000683%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:53.603236+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_000.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_000.geojson",
+      "sha256": "9dd9c3b6dadeb45f5d521c9f9aec28f608bd2a0428d6adbf913aaebeb93a5441",
+      "bytes": 540123,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04000008%27%2C%27E04000011%27%2C%27E04000019%27%2C%27E04000038%27%2C%27E04000050%27%2C%27E04000077%27%2C%27E04000092%27%2C%27E04000097%27%2C%27E04000165%27%2C%27E04000172%27%2C%27E04000185%27%2C%27E04000186%27%2C%27E04000204%27%2C%27E04000211%27%2C%27E04000213%27%2C%27E04000215%27%2C%27E04000232%27%2C%27E04000242%27%2C%27E04000246%27%2C%27E04000263%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:24:48.386690+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_001.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_001.geojson",
+      "sha256": "c3d06e9b2046c90f2f3b9671b07c1aab83ef0530aa5645bf6346173a2ea8b9cc",
+      "bytes": 235494,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000415%27%2C%27E63000428%27%2C%27E63000478%27%2C%27E63000500%27%2C%27E63000528%27%2C%27E63000532%27%2C%27E63000542%27%2C%27E63000556%27%2C%27E63000573%27%2C%27E63000591%27%2C%27E63000645%27%2C%27E63000658%27%2C%27E63000661%27%2C%27E63000669%27%2C%27E63000678%27%2C%27E63000699%27%2C%27E63000746%27%2C%27E63000751%27%2C%27E63000752%27%2C%27E63000756%27%2C%27E63000775%27%2C%27E63000785%27%2C%27E63000806%27%2C%27E63000812%27%2C%27E63000822%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:07.113486+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_011.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_011.geojson",
+      "sha256": "94ecb314ba53c35b9823aa001fea0a0c9787c3503e59bd0ff8e5af5a0d4ab12c",
+      "bytes": 328194,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63004925%27%2C%27E63004931%27%2C%27E63004997%27%2C%27E63005004%27%2C%27E63005012%27%2C%27E63005024%27%2C%27E63005031%27%2C%27E63005036%27%2C%27E63005045%27%2C%27E63005050%27%2C%27E63005076%27%2C%27E63005088%27%2C%27E63005119%27%2C%27E63005131%27%2C%27E63005142%27%2C%27E63005146%27%2C%27E63005163%27%2C%27E63005195%27%2C%27E63005204%27%2C%27E63005209%27%2C%27E63005216%27%2C%27E63005250%27%2C%27E63005257%27%2C%27E63005258%27%2C%27E63005306%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:10.057442+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_03000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_03000.json",
+      "sha256": "7dc58d96027276c39138e61e899b516c8f22ab119bc276e02f5e226d71b379a3",
+      "bytes": 95925,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=3000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:32.795260+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/sg_urban_rural_2020.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/sg_urban_rural_2020.html",
+      "sha256": "9d0c12dd885df39d0323869733d806f5c6d70378f253e8b0e0cc18913f5075da",
+      "bytes": 54048,
+      "url": "https://www.gov.scot/publications/scottish-government-urban-rural-classification-2020/pages/2/",
+      "retrieved_at": "2026-10-11T08:45:27.963154+00:00",
+      "licence": "Open Government Licence v3.0; Source: Scottish Government"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_021.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_021.geojson",
+      "sha256": "446381c20d9aea3a6afe033f4f72e463a7cdb39258180c7075e7a9f4f8565935",
+      "bytes": 216706,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006353%27%2C%27E63006362%27%2C%27E63006367%27%2C%27E63006372%27%2C%27E63006390%27%2C%27E63006393%27%2C%27E63006399%27%2C%27E63006413%27%2C%27E63006418%27%2C%27E63006421%27%2C%27E63006445%27%2C%27E63006450%27%2C%27E63006468%27%2C%27E63006475%27%2C%27E63006481%27%2C%27E63006493%27%2C%27E63006501%27%2C%27E63006521%27%2C%27E63006524%27%2C%27E63006535%27%2C%27E63006563%27%2C%27E63006572%27%2C%27E63006575%27%2C%27E63006605%27%2C%27E63006622%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:52.654490+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_count.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_count.json",
+      "sha256": "7cbce77db69428e113e4a4a49f1812d95a75ffcfd35de8e99f1a9d88406e653b",
+      "bytes": 14,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+      "retrieved_at": "2026-11-18T09:25:28.525500+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01020_27ab7bd6c646.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01020_27ab7bd6c646.json",
+      "sha256": "7bad5039bff36efd7530ee658aa0fcd029c92ea5e237bbc1afaeef80872476ca",
+      "bytes": 2315673,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2996%2C2997%2C2999%2C3003%2C3006%2C3010%2C3011%2C3014%2C3015%2C3016%2C3031%2C3035%2C3040%2C3049%2C3050%2C3052%2C3054%2C3057%2C3058%2C3060%2C3068%2C3070%2C3073%2C3082%2C3087%2C3088%2C3093%2C3098%2C3109%2C3111%2C3114%2C3129%2C3133%2C3134%2C3136%2C3141%2C3146%2C3151%2C3152%2C3153%2C3157%2C3158%2C3162%2C3168%2C3175%2C3177%2C3180%2C3183%2C3189%2C3192%2C3193%2C3198%2C3203%2C3204%2C3205%2C3217%2C3218%2C3219%2C3226%2C3230&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.683579+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00720_ec91e9425622.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00720_ec91e9425622.json",
+      "sha256": "a9e1d3c707f808920ce432c876cb58f055b37d61d25ae9a1acfe958bf549d97b",
+      "bytes": 2023367,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1983%2C1987%2C1992%2C1993%2C1997%2C2000%2C2006%2C2010%2C2012%2C2018%2C2020%2C2024%2C2030%2C2033%2C2043%2C2047%2C2051%2C2058%2C2065%2C2067%2C2069%2C2071%2C2074%2C2077%2C2078%2C2081%2C2082%2C2087%2C2093%2C2096%2C2097%2C2099%2C2100%2C2102%2C2111%2C2114%2C2115%2C2120%2C2130%2C2131%2C2136%2C2143%2C2144%2C2149%2C2151%2C2152%2C2161%2C2164%2C2167%2C2168%2C2183%2C2193%2C2194%2C2198%2C2199%2C2206%2C2214%2C2216%2C2222%2C2223&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.493620+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nrs_current_products.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nrs_current_products.html",
+      "sha256": "c30e3fcd275168415bd01e45684a02f622a6801c0b40dc8c5ca9f16df095b8c7",
+      "bytes": 62716,
+      "url": "https://www.nrscotland.gov.uk/statistics-and-data/geography-products/",
+      "retrieved_at": "2026-10-19T16:33:49.687689+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00960_a09d279342f4.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00960_a09d279342f4.json",
+      "sha256": "ed01ce3a28ef79bf2f8db0996f684bba20918638d219ca7d828d1e571722cc04",
+      "bytes": 2595744,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=2808%2C2812%2C2813%2C2814%2C2819%2C2820%2C2821%2C2822%2C2823%2C2827%2C2828%2C2833%2C2843%2C2847%2C2851%2C2864%2C2866%2C2867%2C2871%2C2876%2C2882%2C2883%2C2884%2C2886%2C2887%2C2889%2C2891%2C2898%2C2901%2C2903%2C2904%2C2906%2C2907%2C2910%2C2913%2C2914%2C2915%2C2918%2C2919%2C2922%2C2927%2C2929%2C2935%2C2939%2C2941%2C2944%2C2946%2C2951%2C2952%2C2956%2C2958%2C2959%2C2960%2C2962%2C2966%2C2968%2C2976%2C2990%2C2991%2C2995&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.578897+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nisra_shapes.zip": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nisra_shapes.zip",
+      "sha256": "fa880d3effb0e05923a7a27d2ae44191394737a926af0b61ed1e88c30f4b107c",
+      "bytes": 2544708,
+      "url": "https://www.nisra.gov.uk/files/nisra/publications/SDL15-ESRI_format.zip",
+      "retrieved_at": "2026-10-11T08:45:27.309544+00:00",
+      "licence": "Open Government Licence v3.0; Source: NISRA; statistical settlement geography (per brief and NISRA Crown copyright terms), not OSNI branded base mapping"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_009.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_009.geojson",
+      "sha256": "f645fb74f25bd8d17cd8345e7260cbfabb04de0e3945a6969c43ae61f48c9d0e",
+      "bytes": 895000,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27W04000165%27%2C%27W04000172%27%2C%27W04000174%27%2C%27W04000176%27%2C%27W04000182%27%2C%27W04000186%27%2C%27W04000192%27%2C%27W04000193%27%2C%27W04000197%27%2C%27W04000238%27%2C%27W04000242%27%2C%27W04000293%27%2C%27W04000305%27%2C%27W04000318%27%2C%27W04000357%27%2C%27W04000359%27%2C%27W04000363%27%2C%27W04000395%27%2C%27W04000421%27%2C%27W04000429%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:51.628107+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_007.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_007.geojson",
+      "sha256": "99ea704bd37636b138f11bb9d8cfd0f12f7b2a48c19b84ea18779a6d099a244f",
+      "bytes": 249787,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002239%27%2C%27E63002241%27%2C%27E63002248%27%2C%27E63002255%27%2C%27E63002260%27%2C%27E63002266%27%2C%27E63002273%27%2C%27E63002279%27%2C%27E63002286%27%2C%27E63002288%27%2C%27E63002291%27%2C%27E63002294%27%2C%27E63002297%27%2C%27E63002319%27%2C%27E63002357%27%2C%27E63002389%27%2C%27E63002415%27%2C%27E63002427%27%2C%27E63002428%27%2C%27E63002448%27%2C%27E63002451%27%2C%27E63002452%27%2C%27E63002458%27%2C%27E63002474%27%2C%27E63002492%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:44.882855+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_017.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_017.geojson",
+      "sha256": "a7a41a8afa30800902e924bc95bc8ef6bea28fa9d2b9c46486571818ca76f304",
+      "bytes": 266627,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005331%27%2C%27E63005333%27%2C%27E63005336%27%2C%27E63005347%27%2C%27E63005350%27%2C%27E63005351%27%2C%27E63005364%27%2C%27E63005369%27%2C%27E63005377%27%2C%27E63005380%27%2C%27E63005387%27%2C%27E63005393%27%2C%27E63005403%27%2C%27E63005416%27%2C%27E63005432%27%2C%27E63005437%27%2C%27E63005441%27%2C%27E63005458%27%2C%27E63005461%27%2C%27E63005467%27%2C%27E63005470%27%2C%27E63005472%27%2C%27E63005474%27%2C%27E63005485%27%2C%27E63005520%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:50.650717+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/nisra_method.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/nisra_method.html",
+      "sha256": "ce61ea2644dcef1b71c77bd8c403b3cf1592792572e5c6d07280973a58ead8a7",
+      "bytes": 21415,
+      "url": "https://www.nisra.gov.uk/publications/methodology-used-produce-settlement-data-census-2021-main-statistics-outputs",
+      "retrieved_at": "2026-10-19T16:34:15.299507+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02460_d3144aeadcdc.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02460_d3144aeadcdc.json",
+      "sha256": "b1ac83486b88ee27aaba3b25698116d028763acaa6af6933108486b66076cc13",
+      "bytes": 1753904,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=7623%2C7624%2C7625%2C7626%2C7628%2C7631%2C7635%2C7636%2C7637%2C7640%2C7641%2C7643%2C7645%2C7648%2C7649%2C7650%2C7652%2C7655%2C7656%2C7657%2C7658%2C7660%2C7661%2C7662%2C7665%2C7668%2C7670%2C7672%2C7675%2C7676%2C7677%2C7680%2C7682%2C7683%2C7689%2C7693%2C7694%2C7699%2C7700%2C7701%2C7702%2C7703%2C7704%2C7705%2C7706%2C7710%2C7713%2C7716%2C7717%2C7718%2C7719%2C7720%2C7724%2C7727%2C7728%2C7729%2C7731%2C7732%2C7733%2C7736&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.798030+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/buasd11_count.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/buasd11_count.json",
+      "sha256": "af756e636d4b43ee76de6cd099ca46656477b14b7f67a345a6bf492ca582d6df",
+      "bytes": 73,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Built_up_Area_Sub_Divisions_Dec_2011_Boundaries_2022/FeatureServer/0/query?f=json&where=1%3D1&returnCountOnly=true",
+      "retrieved_at": "2026-10-11T08:45:32.543173+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_008.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_008.geojson",
+      "sha256": "8fc0d98c88e563333ad4a3cbc48f9e704134a5f1ad448a381a6bd0a88e1271ac",
+      "bytes": 212405,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63003369%27%2C%27E63003429%27%2C%27E63003432%27%2C%27E63003443%27%2C%27E63003446%27%2C%27E63003471%27%2C%27E63003477%27%2C%27E63003493%27%2C%27E63003497%27%2C%27E63003514%27%2C%27E63003567%27%2C%27E63003607%27%2C%27E63003635%27%2C%27E63003647%27%2C%27E63003648%27%2C%27E63003663%27%2C%27E63003670%27%2C%27E63003674%27%2C%27E63003693%27%2C%27E63003720%27%2C%27E63003723%27%2C%27E63003751%27%2C%27E63003807%27%2C%27E63003808%27%2C%27E63003814%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:09.170149+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_item.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_item.json",
+      "sha256": "a8972a059c00a096dfe4d17579833c124a62d2f1784c62ed072af012876c4466",
+      "bytes": 3553,
+      "url": "https://www.arcgis.com/sharing/rest/content/items/ad30b234308f4b02b4bb9b0f4766f7bb?f=json",
+      "retrieved_at": "2026-11-18T09:25:28.001948+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_008.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_008.geojson",
+      "sha256": "59dde768bbe8a63f059cd897fb47caccac70909fa09f8bccd9c1c719640ed8fc",
+      "bytes": 341438,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04013132%27%2C%27E04013217%27%2C%27E04013256%27%2C%27E04013258%27%2C%27E04013428%27%2C%27E04013431%27%2C%27E04013472%27%2C%27E04013473%27%2C%27E04013487%27%2C%27E04013493%27%2C%27E04013540%27%2C%27E04013543%27%2C%27W04000049%27%2C%27W04000092%27%2C%27W04000097%27%2C%27W04000098%27%2C%27W04000100%27%2C%27W04000102%27%2C%27W04000106%27%2C%27W04000151%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:42.702799+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02700_2220fb650f8d.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_02700_2220fb650f8d.json",
+      "sha256": "f49a19cc36e20bea341f11cffe5fc4bab34089ee5afc97ff87ac98d332861f4f",
+      "bytes": 2257258,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=8239%2C8241%2C8243%2C8244%2C8245%2C8247%2C8248%2C8251%2C8255%2C8259%2C8264%2C8266%2C8270%2C8272%2C8275%2C8277%2C8280%2C8282%2C8284%2C8289%2C8292%2C8293%2C8294%2C8296%2C8298%2C8305%2C8307%2C8309%2C8311%2C8313%2C8318%2C8323%2C8324%2C8326%2C8327%2C8329%2C8332%2C8334%2C8336%2C8340%2C8343%2C8346%2C8351%2C8354%2C8356%2C8358%2C8361%2C8365%2C8366%2C8367%2C8368%2C8369%2C8370%2C8371%2C8375%2C8377%2C8382%2C8383%2C8384%2C8385&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.930579+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00660_5a066b58faf1.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00660_5a066b58faf1.json",
+      "sha256": "e64e179c97465d833b0386a30604bd482512239ce74ec0bf889e4cb06d88b71c",
+      "bytes": 2256933,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1750%2C1751%2C1754%2C1756%2C1759%2C1760%2C1770%2C1773%2C1775%2C1780%2C1785%2C1786%2C1788%2C1791%2C1792%2C1800%2C1801%2C1803%2C1804%2C1805%2C1808%2C1813%2C1823%2C1842%2C1845%2C1861%2C1862%2C1865%2C1871%2C1872%2C1878%2C1880%2C1887%2C1888%2C1889%2C1890%2C1894%2C1899%2C1905%2C1910%2C1911%2C1915%2C1917%2C1918%2C1925%2C1927%2C1928%2C1930%2C1931%2C1932%2C1939%2C1940%2C1943%2C1948%2C1952%2C1954%2C1958%2C1961%2C1974%2C1975&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.398386+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_016.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_016.geojson",
+      "sha256": "cfbcdb576eb49880c31cdce5d87a7d648414739605f14bfe238cc5a70bcd0cb6",
+      "bytes": 241383,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63005129%27%2C%27E63005143%27%2C%27E63005169%27%2C%27E63005170%27%2C%27E63005182%27%2C%27E63005188%27%2C%27E63005198%27%2C%27E63005199%27%2C%27E63005207%27%2C%27E63005208%27%2C%27E63005215%27%2C%27E63005217%27%2C%27E63005218%27%2C%27E63005224%27%2C%27E63005232%27%2C%27E63005233%27%2C%27E63005234%27%2C%27E63005237%27%2C%27E63005254%27%2C%27E63005263%27%2C%27E63005268%27%2C%27E63005275%27%2C%27E63005297%27%2C%27E63005317%27%2C%27E63005318%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:49.962536+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_006.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_006.geojson",
+      "sha256": "074674f9f5ab6d701f7fd4782e984025e5b77850da89311d347be425eb30957d",
+      "bytes": 248620,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63002020%27%2C%27E63002024%27%2C%27E63002026%27%2C%27E63002027%27%2C%27E63002030%27%2C%27E63002033%27%2C%27E63002043%27%2C%27E63002058%27%2C%27E63002065%27%2C%27E63002071%27%2C%27E63002074%27%2C%27E63002092%27%2C%27E63002093%27%2C%27E63002102%27%2C%27E63002130%27%2C%27E63002134%27%2C%27E63002150%27%2C%27E63002168%27%2C%27E63002194%27%2C%27E63002214%27%2C%27E63002216%27%2C%27E63002222%27%2C%27E63002230%27%2C%27E63002232%27%2C%27E63002238%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:43.914952+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01440_c6c70f2fa1c6.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01440_c6c70f2fa1c6.json",
+      "sha256": "2735b22ffacff22da14dc85a677b9bee7feca806da760e4038a195fb6d4d95ec",
+      "bytes": 2073294,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=4550%2C4552%2C4560%2C4569%2C4573%2C4576%2C4578%2C4579%2C4581%2C4583%2C4585%2C4586%2C4589%2C4592%2C4607%2C4610%2C4611%2C4612%2C4617%2C4618%2C4623%2C4624%2C4625%2C4631%2C4632%2C4633%2C4641%2C4645%2C4650%2C4655%2C4661%2C4663%2C4665%2C4668%2C4669%2C4670%2C4673%2C4678%2C4683%2C4685%2C4693%2C4697%2C4701%2C4708%2C4711%2C4713%2C4716%2C4717%2C4720%2C4721%2C4722%2C4727%2C4728%2C4731%2C4732%2C4734%2C4735%2C4738%2C4742%2C4744&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.270480+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_009.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_009.geojson",
+      "sha256": "7d160b4b33434ea5337d8a047b091d450a11120f327127a514a61d06365610a9",
+      "bytes": 177267,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63003856%27%2C%27E63003894%27%2C%27E63003916%27%2C%27E63003935%27%2C%27E63003937%27%2C%27E63003994%27%2C%27E63004016%27%2C%27E63004022%27%2C%27E63004024%27%2C%27E63004085%27%2C%27E63004103%27%2C%27E63004107%27%2C%27E63004112%27%2C%27E63004116%27%2C%27E63004130%27%2C%27E63004140%27%2C%27E63004148%27%2C%27E63004151%27%2C%27E63004201%27%2C%27E63004217%27%2C%27E63004258%27%2C%27E63004266%27%2C%27E63004273%27%2C%27E63004278%27%2C%27E63004313%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:08.975082+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01740_990308f03e25.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01740_990308f03e25.json",
+      "sha256": "9e828001212b459d7c1049a5f9b1c513c83978bb0dfb02a286197aaf1fdd903b",
+      "bytes": 2147583,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=5489%2C5491%2C5494%2C5495%2C5498%2C5502%2C5505%2C5507%2C5515%2C5516%2C5520%2C5528%2C5532%2C5533%2C5535%2C5536%2C5538%2C5546%2C5550%2C5552%2C5554%2C5558%2C5559%2C5560%2C5562%2C5565%2C5569%2C5571%2C5577%2C5580%2C5581%2C5584%2C5586%2C5591%2C5592%2C5603%2C5610%2C5611%2C5613%2C5619%2C5621%2C5624%2C5631%2C5635%2C5642%2C5652%2C5658%2C5663%2C5665%2C5666%2C5667%2C5669%2C5671%2C5680%2C5681%2C5682%2C5686%2C5687%2C5691%2C5692&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.271586+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_001.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_001.geojson",
+      "sha256": "4ce0225d436c1d6d3aa53ebe3ffb3c84b788ae7fb17b1cb0dbbf6cd6c4073a5e",
+      "bytes": 480313,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27E04000285%27%2C%27E04000380%27%2C%27E04000393%27%2C%27E04000401%27%2C%27E04000409%27%2C%27E04000416%27%2C%27E04000417%27%2C%27E04000452%27%2C%27E04000453%27%2C%27E04000502%27%2C%27E04000508%27%2C%27E04000511%27%2C%27E04000545%27%2C%27E04000566%27%2C%27E04000642%27%2C%27E04000661%27%2C%27E04000797%27%2C%27E04001073%27%2C%27E04001141%27%2C%27E04001143%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:24:50.867756+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01920_8b1cc5a6aed4.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01920_8b1cc5a6aed4.json",
+      "sha256": "b15a68abe33dcb2c6e7443f076d329ec15687bdcd9874ef0052e60dbfe57f08e",
+      "bytes": 1931638,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=6211%2C6216%2C6224%2C6226%2C6228%2C6231%2C6232%2C6239%2C6241%2C6249%2C6256%2C6262%2C6263%2C6266%2C6269%2C6271%2C6272%2C6275%2C6276%2C6277%2C6278%2C6280%2C6281%2C6282%2C6285%2C6305%2C6313%2C6321%2C6322%2C6325%2C6328%2C6329%2C6331%2C6340%2C6341%2C6342%2C6353%2C6365%2C6366%2C6367%2C6368%2C6370%2C6371%2C6372%2C6382%2C6386%2C6388%2C6390%2C6393%2C6399%2C6407%2C6412%2C6413%2C6416%2C6418%2C6420%2C6421%2C6423%2C6429%2C6430&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.375889+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01800_ebeb5ea9d20c.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01800_ebeb5ea9d20c.json",
+      "sha256": "4f36151e4d79cd5694a38982b887b20b7edcf1b41c3ba1950aebd4f843ced4e5",
+      "bytes": 2109894,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=5700%2C5707%2C5708%2C5717%2C5726%2C5727%2C5737%2C5739%2C5740%2C5741%2C5745%2C5747%2C5758%2C5759%2C5779%2C5781%2C5785%2C5786%2C5789%2C5791%2C5794%2C5796%2C5797%2C5811%2C5813%2C5814%2C5827%2C5834%2C5837%2C5843%2C5846%2C5848%2C5856%2C5860%2C5861%2C5865%2C5871%2C5876%2C5881%2C5882%2C5885%2C5889%2C5894%2C5897%2C5900%2C5912%2C5913%2C5914%2C5917%2C5925%2C5929%2C5931%2C5934%2C5937%2C5946%2C5948%2C5951%2C5952%2C5954%2C5955&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:15.375979+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/parish_own_011.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/parish_own_011.geojson",
+      "sha256": "0eb2917f9373dd09fff53da5b39631d0cd166dd15919d9c0d09ac555b041d28b",
+      "bytes": 552015,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Parishes_December_2022_EW_BFC/FeatureServer/0/query?where=PAR22CD+IN+%28%27W04000703%27%2C%27W04000708%27%2C%27W04000722%27%2C%27W04000725%27%2C%27W04000728%27%2C%27W04000730%27%2C%27W04000739%27%2C%27W04000813%27%2C%27W04000855%27%2C%27W04000877%27%2C%27W04000927%27%2C%27W04000941%27%2C%27W04000942%27%2C%27W04000944%27%2C%27W04000946%27%2C%27W04000957%27%2C%27W04000993%27%2C%27W04000995%27%2C%27W04001014%27%2C%27W04001027%27%29&outFields=%2A&returnGeometry=true&outSR=27700&f=geojson",
+      "retrieved_at": "2026-11-19T18:25:55.247596+00:00",
+      "licence": "Open Government Licence v3.0"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/ons_parish_release.html": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/ons_parish_release.html",
+      "sha256": "32b96ecf2d01b985b8e56d1a29561f4606edc0d1b28fd3930a1b993b4e3c4f48",
+      "bytes": 44269,
+      "url": "https://www.ons.gov.uk/releases/parishdataenglandandwalescensus2021",
+      "retrieved_at": "2026-10-27T08:43:32.486007+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01260_2bc84cfb7d1f.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_01260_2bc84cfb7d1f.json",
+      "sha256": "399aed377a942e1e9e70e394c7465be449832e12d719ba110d131ba1722dc7e0",
+      "bytes": 1345409,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=3898%2C3899%2C3902%2C3909%2C3911%2C3913%2C3917%2C3922%2C3926%2C3927%2C3932%2C3938%2C3942%2C3944%2C3946%2C3949%2C3953%2C3956%2C3957%2C3960%2C3961%2C3970%2C3975%2C3977%2C3979%2C3983%2C3985%2C3992%2C3993%2C3996%2C3997%2C4002%2C4005%2C4008%2C4009%2C4012%2C4013%2C4014%2C4018%2C4028%2C4029%2C4031%2C4035%2C4041%2C4042%2C4047%2C4049%2C4054%2C4062%2C4063%2C4066%2C4073%2C4081%2C4082%2C4086%2C4089%2C4090%2C4096%2C4097%2C4099&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.839539+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/lad_precision_00100.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/lad_precision_00100.json",
+      "sha256": "2e453cd0b86f5386300eef88cd4feda6d4671abf172a459178369fcf3ee6066f",
+      "bytes": 23896220,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/Local_Authority_Districts_May_2026_Boundaries_UK_BFC/FeatureServer/0/query?outFields=%2A&returnGeometry=true&outSR=4326&f=geojson&orderByFields=FID&where=1%3D1&resultOffset=100&resultRecordCount=50",
+      "retrieved_at": "2026-10-10T02:26:55.297156+00:00",
+      "licence": "Open Government Licence v3.0; OS and ONS copyright"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00060_d7a91f79fc25.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00060_d7a91f79fc25.json",
+      "sha256": "4761071f67d9d4e3703c98fa4cc9f57c2c630b31bca725f966ad442e4b2de885",
+      "bytes": 2171201,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=133%2C135%2C140%2C146%2C155%2C158%2C161%2C163%2C166%2C168%2C169%2C170%2C172%2C174%2C175%2C176%2C178%2C179%2C181%2C183%2C184%2C188%2C190%2C193%2C194%2C199%2C204%2C206%2C207%2C212%2C214%2C216%2C221%2C222%2C224%2C225%2C226%2C228%2C230%2C232%2C236%2C239%2C241%2C242%2C243%2C244%2C245%2C246%2C255%2C257%2C264%2C265%2C267%2C268%2C278%2C283%2C284%2C287%2C288%2C292&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:13.976700+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_020.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_geom_020.geojson",
+      "sha256": "4d17ab693d9945582ec665a163e27506c9a83b9889ed30942cad4e151fbc8406",
+      "bytes": 288084,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63006076%27%2C%27E63006085%27%2C%27E63006087%27%2C%27E63006105%27%2C%27E63006110%27%2C%27E63006135%27%2C%27E63006136%27%2C%27E63006145%27%2C%27E63006148%27%2C%27E63006149%27%2C%27E63006150%27%2C%27E63006155%27%2C%27E63006162%27%2C%27E63006184%27%2C%27E63006186%27%2C%27E63006216%27%2C%27E63006219%27%2C%27E63006224%27%2C%27E63006239%27%2C%27E63006245%27%2C%27E63006278%27%2C%27E63006285%27%2C%27E63006322%27%2C%27E63006340%27%2C%27E63006341%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-18T09:26:51.667361+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_02000.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/work_village__bua_index_02000.json",
+      "sha256": "9a941d98fd31ccb0711e0e520b6bf5ee9d22d76a0db0133c51766a214324097d",
+      "bytes": 95887,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=1%3D1&outFields=BUA22CD,BUA22NM,BUA22NMW,OBJECTID&returnGeometry=false&orderByFields=OBJECTID&resultOffset=2000&resultRecordCount=1000&f=json",
+      "retrieved_at": "2026-11-18T09:25:31.488734+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_010.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_010.geojson",
+      "sha256": "f9dd30deaf99dab170080b16f5e1e0d8ba9b2b5e9cf2bada38d2114d0a8d1191",
+      "bytes": 328325,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63004365%27%2C%27E63004387%27%2C%27E63004392%27%2C%27E63004401%27%2C%27E63004404%27%2C%27E63004417%27%2C%27E63004451%27%2C%27E63004464%27%2C%27E63004474%27%2C%27E63004501%27%2C%27E63004511%27%2C%27E63004513%27%2C%27E63004530%27%2C%27E63004547%27%2C%27E63004590%27%2C%27E63004600%27%2C%27E63004690%27%2C%27E63004692%27%2C%27E63004707%27%2C%27E63004710%27%2C%27E63004749%27%2C%27E63004831%27%2C%27E63004848%27%2C%27E63004867%27%2C%27E63004871%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:09.715627+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/bua_extra_000.geojson": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/bua_extra_000.geojson",
+      "sha256": "dcb76b7a0d44307f8288151cc2c145fed9fa36307598e182e54da9a3f6625606",
+      "bytes": 254070,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?where=BUA22CD+IN+%28%27E63000040%27%2C%27E63000050%27%2C%27E63000058%27%2C%27E63000060%27%2C%27E63000102%27%2C%27E63000109%27%2C%27E63000118%27%2C%27E63000153%27%2C%27E63000187%27%2C%27E63000192%27%2C%27E63000203%27%2C%27E63000211%27%2C%27E63000227%27%2C%27E63000231%27%2C%27E63000254%27%2C%27E63000271%27%2C%27E63000293%27%2C%27E63000296%27%2C%27E63000299%27%2C%27E63000317%27%2C%27E63000322%27%2C%27E63000341%27%2C%27E63000351%27%2C%27E63000360%27%2C%27E63000385%27%29&outFields=%2A&outSR=27700&f=geojson&returnGeometry=true",
+      "retrieved_at": "2026-11-19T17:47:06.097428+00:00"
+    },
+    "runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00600_258e0952f4aa.json": {
+      "path": "sources/runs/specs/top15_gb/work_tld2/sources/gb3_bua22_geom_00600_258e0952f4aa.json",
+      "sha256": "b33d5bc6aa21e491b0277ce1193abe696b09a3363f7e31fb3b5038bbb8c2ed27",
+      "bytes": 2401620,
+      "url": "https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/BUA_2022_GB/FeatureServer/0/query?f=geojson&objectIds=1526%2C1527%2C1535%2C1536%2C1541%2C1552%2C1554%2C1558%2C1559%2C1562%2C1565%2C1572%2C1574%2C1583%2C1589%2C1591%2C1592%2C1598%2C1603%2C1614%2C1616%2C1619%2C1624%2C1626%2C1629%2C1639%2C1640%2C1642%2C1643%2C1650%2C1656%2C1658%2C1659%2C1660%2C1663%2C1664%2C1665%2C1666%2C1667%2C1669%2C1676%2C1681%2C1682%2C1684%2C1685%2C1687%2C1688%2C1696%2C1704%2C1708%2C1715%2C1716%2C1717%2C1724%2C1731%2C1733%2C1738%2C1739%2C1740%2C1741&outFields=%2A&returnGeometry=true&outSR=4326",
+      "retrieved_at": "2026-10-11T08:49:14.334927+00:00",
+      "licence": "Open Government Licence v3.0; contains OS and National Statistics data, Crown copyright and database right"
+    },
+    "runs/specs/top15_au/work_tld3/sources/abs_sal.html": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/abs_sal.html",
+      "sha256": "70a843ae7af9b500c3353997e002f3b9e6a42ce0575fabd4e8f9ad7b5e1de195",
+      "bytes": 109681
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_nt_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_nt_localities.zip",
+      "sha256": "961a9a668a23509117342b3ad06560f2542e68175c9e60b5a2c696806659fbc7",
+      "bytes": 1135376
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_act_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_act_localities.zip",
+      "sha256": "2b5b2c0a5d9429a0352dff0366071461dbf1bd1ffac672285253c5d71836b49e",
+      "bytes": 340673
+    },
+    "runs/specs/top15_au/work_tld3/sources/wa_admin_definition.html": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/wa_admin_definition.html",
+      "sha256": "b27d40fcbf6f1e3d4f7cc9735fbf0de73d0240b2086cb8849548e26411a77975",
+      "bytes": 153630
+    },
+    "runs/specs/top15_au/work_tld3/sources/qld_current_localities_000.json": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/qld_current_localities_000.json",
+      "sha256": "3cf8aadf0921430ad43d45c8c4c51991b10b398eee29faa6d12ef29a079306ab",
+      "bytes": 579367
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_wa_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_wa_localities.zip",
+      "sha256": "f5200b312dcb03b5aa67756859f183d8d007844c54b802dabf5839c06ec045c6",
+      "bytes": 21059438
+    },
+    "runs/specs/top15_au/work_tld3/sources/qld_current_localities_001.json": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/qld_current_localities_001.json",
+      "sha256": "7f9b606fdf16194ae669e34071572d7ea40fdcc530a6747087d15b862118ec18",
+      "bytes": 384812
+    },
+    "runs/specs/top15_au/work_tld3/sources/abs_copyright.html": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/abs_copyright.html",
+      "sha256": "753d54830d1262dea34692f99a8266700f55d54706a345fa9b7676380f899d36",
+      "bytes": 99485
+    },
+    "runs/specs/top15_au/work_tld3/sources/vic_locality_definition.html": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/vic_locality_definition.html",
+      "sha256": "5647bfe35d22e2fcc0bf85a6f98e8bd385dd6ac28070260e0db55ce060a4dc5c",
+      "bytes": 356393
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_vic_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_vic_localities.zip",
+      "sha256": "1ac91f520b2001feb3f2f052e016bca5a330fa439298171f2c26548038734341",
+      "bytes": 23132666
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_qld_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_qld_localities.zip",
+      "sha256": "2714a1cb64b472d2223700b207bc3bf382dfae89692c4e3c5bf9e911a8c84584",
+      "bytes": 16850674
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_tas_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_tas_localities.zip",
+      "sha256": "1eab4b0d180358d0159389f3b7b430f9b647b77b320a582a04097f10c3c85e94",
+      "bytes": 24727399
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_nsw_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_nsw_localities.zip",
+      "sha256": "ea4b90cdea2895708cd4ddf22a91093f3b564271ba06c93dd610aa0fade98e98",
+      "bytes": 66587487
+    },
+    "runs/specs/top15_au/work_tld3/sources/SAL_2021.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/SAL_2021.zip",
+      "sha256": "1284f6aa4a5eedbe6d0b8c71099494f634d59f1500532c1944b8227b4d1474ca",
+      "bytes": 104064114
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_sa_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_sa_localities.zip",
+      "sha256": "0ea80b18d996fd4f473b55cd4ac159fc44bb3cc51a3b61c6ffb39166f4786f21",
+      "bytes": 12567382
+    },
+    "runs/specs/top15_au/work_tld3/sources/geoscape_other_localities.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/geoscape_other_localities.zip",
+      "sha256": "b59993a46c78f241f30d0707ebff97a0adb033ac43706684d4e8c9a8327bfb46",
+      "bytes": 346758
+    },
+    "runs/specs/top15_au/work_tld3/sources/2021_GCP_SAL_for_AUS_short-header.zip": {
+      "path": "sources/runs/specs/top15_au/work_tld3/sources/2021_GCP_SAL_for_AUS_short-header.zip",
+      "sha256": "940c57082442cad68e7399ab7c5eab6fd690ec8e8b68ce9799b02d69b9b7bdba",
+      "bytes": 102626503
+    }
+  },
+  "live_sources": [
+    {
+      "path": "live/Q1522731.json",
+      "receipt": "live/Q1522731.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1522731.json",
+      "sha256": "7f4dd42ec67882fc2f39ec16c8c1ec4ac0b788424c70c875043336dd9c41d75d",
+      "revision_id": 2569612572,
+      "response_received_at": "2026-11-19T23:27:10.979519+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q8023760.json",
+      "receipt": "live/Q8023760.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8023760.json",
+      "sha256": "ef61679a37fb8ea4e16b83b3231a4aa31f45da04999acc0acbedfb33a0076199",
+      "revision_id": 2382398599,
+      "response_received_at": "2026-11-19T23:27:50.289096+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5748399.json",
+      "receipt": "live/Q5748399.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5748399.json",
+      "sha256": "4466d0811d0ad65d88535961e070a768b7795b065e473161dc4d22b6071499d5",
+      "revision_id": 2510915863,
+      "response_received_at": "2026-11-19T23:26:36.898284+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q608356.json",
+      "receipt": "live/Q608356.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q608356.json",
+      "sha256": "f5cee95869693747b2efa603baca26d106554f757064994ae7b5170104728b53",
+      "revision_id": 2569411871,
+      "response_received_at": "2026-11-19T23:27:19.422209+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7354966.json",
+      "receipt": "live/Q7354966.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7354966.json",
+      "sha256": "c6b8c8179510270e11c9a6e506fe7ef1fcb87056458da223f84d4eb2083d4b38",
+      "revision_id": 2570942707,
+      "response_received_at": "2026-11-19T23:26:51.404205+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1221024.json",
+      "receipt": "live/Q1221024.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1221024.json",
+      "sha256": "64d3cf5492e90bec584142bc65801d23f7ee9d7d1ba5f60cdf2f388a91868610",
+      "revision_id": 2569400599,
+      "response_received_at": "2026-11-19T23:27:35.442393+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7137963.json",
+      "receipt": "live/Q7137963.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7137963.json",
+      "sha256": "ae15b9f7e120f38e1d96fc2291fee66f89200f25c1ba07852e58ad4a49c9b521",
+      "revision_id": 2567897724,
+      "response_received_at": "2026-11-19T23:26:48.678719+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1760747.json",
+      "receipt": "live/Q1760747.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1760747.json",
+      "sha256": "28c49fa802f231c9c3af67a80f788cf8ae5c58419dd9e7c04a9b336d5f128f9a",
+      "revision_id": 2569312843,
+      "response_received_at": "2026-11-19T23:27:28.232042+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q149542.json",
+      "receipt": "live/Q149542.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q149542.json",
+      "sha256": "05a4ae65768b0ea83b10dfea4646831704cc847df38df7c976eb1ecdac93f0db",
+      "revision_id": 2568856269,
+      "response_received_at": "2026-11-19T23:27:00.346045+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7133664.json",
+      "receipt": "live/Q7133664.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7133664.json",
+      "sha256": "bbd520a9fded6f34623c76dd8c7f06c7590ea74fb928452ae05cecee38a13837",
+      "revision_id": 2510917509,
+      "response_received_at": "2026-11-19T23:26:47.780517+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2736112.json",
+      "receipt": "live/Q2736112.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2736112.json",
+      "sha256": "e95ee617f6b37a24549e2c21765bc6392c0072f6aef50d5a369eac6e5f29211f",
+      "revision_id": 2569915417,
+      "response_received_at": "2026-11-19T23:27:16.475532+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2321329.json",
+      "receipt": "live/Q2321329.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2321329.json",
+      "sha256": "306f0c6883b526e89e2d7f4d6c59acd46757d82f953e6306d0205bf15c492c88",
+      "revision_id": 2534231282,
+      "response_received_at": "2026-11-19T23:27:34.555702+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2487258.json",
+      "receipt": "live/Q2487258.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2487258.json",
+      "sha256": "de9af80fd2c5b54b12a26d84bb375345ececa12996ac19e34d62cf1f275f0848",
+      "revision_id": 2571889945,
+      "response_received_at": "2026-11-19T23:27:47.226276+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q750000.json",
+      "receipt": "live/Q750000.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q750000.json",
+      "sha256": "333f22b6f2ac892b61e0a85bddd90664d1725b315d38323da0dcdbf0addfd67b",
+      "revision_id": 2534234018,
+      "response_received_at": "2026-11-19T23:27:31.410486+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6947762.json",
+      "receipt": "live/Q6947762.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6947762.json",
+      "sha256": "3b34aada5c262483723d573e507508673467342ed44692695fb4e58723e2e272",
+      "revision_id": 2508758162,
+      "response_received_at": "2026-11-19T23:27:29.074082+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q3244565.json",
+      "receipt": "live/Q3244565.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3244565.json",
+      "sha256": "0c7163897caec74584f0fd26b85abc69d5db242f1d214674ccee272eabff78cc",
+      "revision_id": 2570104705,
+      "response_received_at": "2026-11-19T23:26:59.322466+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2022710.json",
+      "receipt": "live/Q2022710.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2022710.json",
+      "sha256": "92668c827bb4c66c7e689ade81fb0b74cd86545609e8ba578da15af851199927",
+      "revision_id": 2569239672,
+      "response_received_at": "2026-11-19T23:27:18.499887+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6724673.json",
+      "receipt": "live/Q6724673.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6724673.json",
+      "sha256": "7b8833c7aefe3c6a012c60a8edd52f2415f68068e1905981c37f4911fc82139c",
+      "revision_id": 2520546842,
+      "response_received_at": "2026-11-19T23:26:41.163359+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5000037.json",
+      "receipt": "live/Q5000037.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5000037.json",
+      "sha256": "169616dcb1143b39d00e5348158db9adceb9c581eb395262492e10e1fc0a956a",
+      "revision_id": 2570497032,
+      "response_received_at": "2026-11-19T23:27:08.870326+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q31202466.json",
+      "receipt": "live/Q31202466.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q31202466.json",
+      "sha256": "0fa297eb057fc3327137d34464afe8ece315def6e29cc761a4f272464eaec734",
+      "revision_id": 2150760761,
+      "response_received_at": "2026-11-19T23:26:54.074103+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2706897.json",
+      "receipt": "live/Q2706897.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2706897.json",
+      "sha256": "f6a97467066ae735b290890ea4f9a248275953300a2669e251c0e3fd9d5bdc55",
+      "revision_id": 2570102750,
+      "response_received_at": "2026-11-19T23:27:02.492750+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q3399272.json",
+      "receipt": "live/Q3399272.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3399272.json",
+      "sha256": "e3b277885c2d460fd72e83453bba896ce325339b7e1d8cebb21d821ff46b8865",
+      "revision_id": 2569979689,
+      "response_received_at": "2026-11-19T23:27:32.294589+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7998220.json",
+      "receipt": "live/Q7998220.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7998220.json",
+      "sha256": "29df2550a963d4b7ea5685fc987ea2b99ebe7c3ba8609809b924f6c756182af8",
+      "revision_id": 2366445540,
+      "response_received_at": "2026-11-19T23:27:48.176704+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2464975.json",
+      "receipt": "live/Q2464975.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2464975.json",
+      "sha256": "5722e51d3b8bb34d2002c3eff36102415d42c942b75e3f42c4b131d2aa116ed9",
+      "revision_id": 2570057532,
+      "response_received_at": "2026-11-19T23:27:24.957368+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q913386.json",
+      "receipt": "live/Q913386.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q913386.json",
+      "sha256": "b8f44bcdf44e884b4cd700da9a8fbe0eb9ff7fabf563b6adbbe2fc8ed531040c",
+      "revision_id": 2569427711,
+      "response_received_at": "2026-11-19T23:27:41.852759+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7852544.json",
+      "receipt": "live/Q7852544.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7852544.json",
+      "sha256": "6c08d8483f6ebb4f3b91338c5e289b3d763c94fce0ce71c5a80a4d59d328e56d",
+      "revision_id": 2512953248,
+      "response_received_at": "2026-11-19T23:27:46.119697+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q3401149.json",
+      "receipt": "live/Q3401149.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3401149.json",
+      "sha256": "ee6e85ab39abdb0ffa79e64d6ae93ef76988646edb7fbe09729aff577e65ca3d",
+      "revision_id": 2570008073,
+      "response_received_at": "2026-11-19T23:27:30.722957+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2918789.json",
+      "receipt": "live/Q2918789.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2918789.json",
+      "sha256": "01822c189dd5ae28b18cfafa7cbde694e4480b2720cc5854902cc8fc9c4c6c6f",
+      "revision_id": 2550506943,
+      "response_received_at": "2026-11-19T23:26:56.238307+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1090857.json",
+      "receipt": "live/Q1090857.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1090857.json",
+      "sha256": "e8abc674c145fa48cf0ce152ebf5a690ef350b5e387b458bac9b2d7c5e62eba3",
+      "revision_id": 2550081824,
+      "response_received_at": "2026-11-19T23:26:58.280178+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1427991.json",
+      "receipt": "live/Q1427991.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1427991.json",
+      "sha256": "ee587a2d25d85e6cac37fb0a77eba6dfc7891c25e2658d3d353a68f176c8e9c8",
+      "revision_id": 2550609522,
+      "response_received_at": "2026-11-19T23:26:34.750109+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2390342.json",
+      "receipt": "live/Q2390342.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2390342.json",
+      "sha256": "b1d7e1f918b8ef4398a7becfff8693f4f29b27313cf034a74b865bae31eef70f",
+      "revision_id": 2569968187,
+      "response_received_at": "2026-11-19T23:27:06.793923+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1265794.json",
+      "receipt": "live/Q1265794.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1265794.json",
+      "sha256": "1e3f582446f1b44c9a80af8a13e014c88e18fe002021fd4a3843b5b45f5950fc",
+      "revision_id": 2569330825,
+      "response_received_at": "2026-11-19T23:27:15.438846+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q16889180.json",
+      "receipt": "live/Q16889180.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16889180.json",
+      "sha256": "f12fc3123dfda8721c7f3cc87b51770d1f40780bcd629940a5b5dddab729d417",
+      "revision_id": 2151146199,
+      "response_received_at": "2026-11-19T23:26:39.042465+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7618492.json",
+      "receipt": "live/Q7618492.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7618492.json",
+      "sha256": "68af5bb79f6e2aceee47cd7e5a6b90fb5bb81927ada1ea6c10046e83d042a792",
+      "revision_id": 2508723311,
+      "response_received_at": "2026-11-19T23:27:43.892208+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6801991.json",
+      "receipt": "live/Q6801991.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6801991.json",
+      "sha256": "bd4ae05f516b361f591017914edcd4728e2e828608fd52056b9ee60669ccd21a",
+      "revision_id": 2486003858,
+      "response_received_at": "2026-11-19T23:26:42.846459+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5658455.json",
+      "receipt": "live/Q5658455.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5658455.json",
+      "sha256": "e39c6a145dfcd33aac9829c0b5cc056145f6f7e7efae6872a05a6f74ea7f5022",
+      "revision_id": 2567885535,
+      "response_received_at": "2026-11-19T23:26:35.883952+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7432092.json",
+      "receipt": "live/Q7432092.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7432092.json",
+      "sha256": "fcf7b47ab5cb94e4c33e8e03f14c885512a5cf437f804056a3e7ec908098b03b",
+      "revision_id": 2386018631,
+      "response_received_at": "2026-11-19T23:27:40.714957+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6667138.json",
+      "receipt": "live/Q6667138.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6667138.json",
+      "sha256": "469c4eb7695ade65dbb07feb26ff88b77b2a4d111c63d67d4b9c27a87b797df7",
+      "revision_id": 2507904592,
+      "response_received_at": "2026-11-19T23:26:40.293090+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7321494.json",
+      "receipt": "live/Q7321494.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7321494.json",
+      "sha256": "cd71e496a38f373a592fa60beac83f03b5c6f166043d7820c1743b7ae6d4bb5c",
+      "revision_id": 2366444031,
+      "response_received_at": "2026-11-19T23:27:39.699909+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q609235.json",
+      "receipt": "live/Q609235.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q609235.json",
+      "sha256": "ff614a1644ec6be67c247e3363513ec588ca94de47017d645047becca023ef6d",
+      "revision_id": 2569548153,
+      "response_received_at": "2026-11-19T23:27:01.475901+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q4820049.json",
+      "receipt": "live/Q4820049.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4820049.json",
+      "sha256": "9a2ca81aa3ea12e7de2d969a70f74270ae5f5da554e4e638ff8410f584f17d54",
+      "revision_id": 2570573943,
+      "response_received_at": "2026-11-19T23:27:03.489107+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q13635786.json",
+      "receipt": "live/Q13635786.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q13635786.json",
+      "sha256": "cefa80a4e39d92657330c4c5a75ac6edbe9395c07c51056b8797f3b2bbe239cd",
+      "revision_id": 2512950444,
+      "response_received_at": "2026-11-19T23:27:22.236006+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1010428.json",
+      "receipt": "live/Q1010428.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1010428.json",
+      "sha256": "1de7387f8aaafb3d8ac947630e1537a219695ef90922276695062499138b4b18",
+      "revision_id": 2569278722,
+      "response_received_at": "2026-11-19T23:27:14.436271+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2975781.json",
+      "receipt": "live/Q2975781.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2975781.json",
+      "sha256": "d57e2d1ecee3b21e23615d4c4a27fbca9e1596b6f599306159092226fcf9f867",
+      "revision_id": 2348822805,
+      "response_received_at": "2026-11-19T23:26:57.260491+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q14935266.json",
+      "receipt": "live/Q14935266.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q14935266.json",
+      "sha256": "4ccb82c75f5ff9d8760693213c02e18b17cdf653c7f2de3a53bbf35d859dc600",
+      "revision_id": 2487137394,
+      "response_received_at": "2026-11-19T23:26:46.577821+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7432005.json",
+      "receipt": "live/Q7432005.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7432005.json",
+      "sha256": "5bff04ae84e4206fe24af3c9201a43577f1637b283692502c871525b4e39b42a",
+      "revision_id": 2496111860,
+      "response_received_at": "2026-11-19T23:26:51.939849+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q3542647.json",
+      "receipt": "live/Q3542647.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3542647.json",
+      "sha256": "37f8f924f17b7caa2380975ce9476f9808538debc3605517c56936f7948faf24",
+      "revision_id": 2569872811,
+      "response_received_at": "2026-11-19T23:26:53.330969+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1613441.json",
+      "receipt": "live/Q1613441.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1613441.json",
+      "sha256": "5c116482d1a325bc969418db5a107e63f339637baf9264cb4a9bd01844147f0b",
+      "revision_id": 2569519551,
+      "response_received_at": "2026-11-19T23:27:49.468096+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q58090.json",
+      "receipt": "live/Q58090.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q58090.json",
+      "sha256": "46ba4a77006973248743e0d061ef4e485a9e87dac0706cd77dc0dd25a7835abf",
+      "revision_id": 2568869874,
+      "response_received_at": "2026-11-19T23:27:38.641538+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1249441.json",
+      "receipt": "live/Q1249441.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1249441.json",
+      "sha256": "6ac2a8e0eee79723df8d589555b40636847fb81c183b4f6ce50b52d05a129ebe",
+      "revision_id": 2569292490,
+      "response_received_at": "2026-11-19T23:27:37.558477+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6936804.json",
+      "receipt": "live/Q6936804.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6936804.json",
+      "sha256": "474ef4de54592e4937cd71a07d68aa8d849fa98cc5ae948334baad311c768d8c",
+      "revision_id": 2510915891,
+      "response_received_at": "2026-11-19T23:26:45.528350+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q4179774.json",
+      "receipt": "live/Q4179774.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4179774.json",
+      "sha256": "bab06183ef280823e4d67869260d021009099796e89bd7f2f2eeaa574d30366c",
+      "revision_id": 2508411038,
+      "response_received_at": "2026-11-19T23:26:43.459855+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2460535.json",
+      "receipt": "live/Q2460535.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2460535.json",
+      "sha256": "24c12848c3b538e9e16e8693a8fa9f20883cc49f763a35756a2cd87eb2c477db",
+      "revision_id": 2569821579,
+      "response_received_at": "2026-11-19T23:27:13.255686+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6666880.json",
+      "receipt": "live/Q6666880.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6666880.json",
+      "sha256": "ac56a8829e5bde3e07567366cbecf655863499f55ee79f9e3409df253bad139c",
+      "revision_id": 2521661894,
+      "response_received_at": "2026-11-19T23:27:25.882988+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7605979.json",
+      "receipt": "live/Q7605979.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7605979.json",
+      "sha256": "c2fef04823668a51da30edfc327c1be7351904775673bdc95738ea92540a5ce8",
+      "revision_id": 2509239648,
+      "response_received_at": "2026-11-19T23:27:42.852899+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7335744.json",
+      "receipt": "live/Q7335744.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7335744.json",
+      "sha256": "937e51b6537539c90977a2e7792290f83be3b923e48b5ec1fb464d8daca953d0",
+      "revision_id": 2446587338,
+      "response_received_at": "2026-11-19T23:26:49.727178+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5133240.json",
+      "receipt": "live/Q5133240.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5133240.json",
+      "sha256": "e9e2d8a180c570b8963847c92bc31b0c334a51e6338057ba20970bccc9efe053",
+      "revision_id": 2550669252,
+      "response_received_at": "2026-11-19T23:26:33.793859+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q14935066.json",
+      "receipt": "live/Q14935066.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q14935066.json",
+      "sha256": "a80c583edf5bfa5a92b1765ffe2df1abf5abdc3b4034d8b9d96d4de585eb9cf5",
+      "revision_id": 2335774750,
+      "response_received_at": "2026-11-19T23:26:32.886319+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q209096.json",
+      "receipt": "live/Q209096.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q209096.json",
+      "sha256": "ef3d70529579bf89637765b260b094b1cfcf1799ae2564a993f48b55e47aad53",
+      "revision_id": 2534230928,
+      "response_received_at": "2026-11-19T23:27:08.016477+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q4860222.json",
+      "receipt": "live/Q4860222.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4860222.json",
+      "sha256": "6f1dcc571d2ea18ce59bee8ccef02aa508bcf5d9542704f2460d3e7a3deff68b",
+      "revision_id": 2570282920,
+      "response_received_at": "2026-11-19T23:27:04.570013+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5443668.json",
+      "receipt": "live/Q5443668.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5443668.json",
+      "sha256": "a8327d745f03aad9fc842dc0c90b996cb02743abe4e3384ac555c404d5409232",
+      "revision_id": 2521660491,
+      "response_received_at": "2026-11-19T23:27:17.449121+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6672450.json",
+      "receipt": "live/Q6672450.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6672450.json",
+      "sha256": "ba14e1fa3ee5f6e68b539fbeef9f11de41f4db08c0f09072bc70e2b541fc67b4",
+      "revision_id": 2445681200,
+      "response_received_at": "2026-11-19T23:27:26.934368+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5001296.json",
+      "receipt": "live/Q5001296.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5001296.json",
+      "sha256": "a227f721a0bd9d48a8cacad08bd9c03a88b5cfa4736c7206c3b1959b8496b237",
+      "revision_id": 2547467199,
+      "response_received_at": "2026-11-19T23:27:09.970628+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q14935775.json",
+      "receipt": "live/Q14935775.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q14935775.json",
+      "sha256": "cdf4997087553914643b704e016af3c74c11d52b807f3bc3794927cf4b04c328",
+      "revision_id": 2510917369,
+      "response_received_at": "2026-11-19T23:26:55.113150+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q893159.json",
+      "receipt": "live/Q893159.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q893159.json",
+      "sha256": "82ea49b74430b9faa70ea414084678d4b8b8fd9a7704631e3cd65d7bdd3fa978",
+      "revision_id": 2569445864,
+      "response_received_at": "2026-11-19T23:27:05.681873+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q1838543.json",
+      "receipt": "live/Q1838543.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1838543.json",
+      "sha256": "42a76527605ee4b62926db936da14f74bd0376746e4412884e839f6671ce2943",
+      "revision_id": 2569336191,
+      "response_received_at": "2026-11-19T23:27:12.008438+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q5899571.json",
+      "receipt": "live/Q5899571.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5899571.json",
+      "sha256": "85d9471f1e751909b0bff62b4108bee38782542ea87a6c9a201a76223cc25635",
+      "revision_id": 2550910157,
+      "response_received_at": "2026-11-19T23:26:37.991135+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q3400823.json",
+      "receipt": "live/Q3400823.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3400823.json",
+      "sha256": "99ad5d0d8aa2eb5e71602cb8f594a3ceb9ea4d403e4704221e4e2970e526fc60",
+      "revision_id": 2570120625,
+      "response_received_at": "2026-11-19T23:27:36.558035+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q7232404.json",
+      "receipt": "live/Q7232404.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7232404.json",
+      "sha256": "54983c6619877503e998006e9fdcf2110bd6a3312a61ac23399fdc618b2a52e8",
+      "revision_id": 2382307209,
+      "response_received_at": "2026-11-19T23:27:33.344047+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q2361606.json",
+      "receipt": "live/Q2361606.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2361606.json",
+      "sha256": "46cd735ec1eee6df2e75bd1c7ccdb3286206f96cbfdfb944082e4495f1c00b68",
+      "revision_id": 2569931116,
+      "response_received_at": "2026-11-19T23:27:45.238787+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q233539.json",
+      "receipt": "live/Q233539.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q233539.json",
+      "sha256": "08ab8169869e0a789245732d2112a635159bd52a29c691e84dcb96ac390aec82",
+      "revision_id": 2569005332,
+      "response_received_at": "2026-11-19T23:27:23.761697+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q6920515.json",
+      "receipt": "live/Q6920515.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6920515.json",
+      "sha256": "3a209b943c01a9ba8248ae75e8902c0c3b1f361a8c453a1df049706466a2816c",
+      "revision_id": 2499627022,
+      "response_received_at": "2026-11-19T23:26:44.602114+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q617188.json",
+      "receipt": "live/Q617188.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q617188.json",
+      "sha256": "1c0087f617e0f117fa08195d359822993cd4694feb81d4fb890ea8986f811b50",
+      "revision_id": 2569480724,
+      "response_received_at": "2026-11-19T23:27:22.897595+00:00",
+      "licence": "Wikidata CC0"
+    },
+    {
+      "path": "live/Q588684.json",
+      "receipt": "live/Q588684.meta.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q588684.json",
+      "sha256": "e3d5f8ab7122122ba1aab10a58555cc9222853bbdaa95822d17b88d088117158",
+      "revision_id": 2568939776,
+      "response_received_at": "2026-11-19T23:27:20.695540+00:00",
+      "licence": "Wikidata CC0"
+    }
+  ],
+  "rules": [
+    "Exact retained points_outside analyze.py gates; tld3 AU and tld2 GB class/count rules unchanged.",
+    "Require exactly one active nondeprecated Earth P625 on literal own item; raw and rounded point strictly inside original valid official boundary; no competing row anywhere in contributions.",
+    "AU code-bound counts regardless gap, boundary-bound max/min <= 1.5; GB code-bound counts or name-bound ratio <= 1.5 and no newer dated count overwritten."
+  ],
+  "attribution": {
+    "Wikidata": "Wikidata structured coordinates, CC0 1.0 Universal. https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "ABS": "ABS SAL 2021 and Census 2021 G01, CC BY 4.0",
+    "Geoscape": "Incorporates or developed using Administrative Boundaries © Geoscape Australia licensed by the Commonwealth of Australia under CC BY 4.0.",
+    "Queensland": "© State of Queensland, CC BY 4.0.",
+    "GB": "ONS, NRS, NISRA Open Government Licence v3.0; contains OS data © Crown copyright and database right."
+  }
+}
