@@ -1,0 +1,2833 @@
+{
+  "package": "pl_pop_v6x",
+  "base_commit": "67779318baf0305e7592718854198aa524603e53",
+  "owner_check": {
+    "ok": true,
+    "terms": "sources/gus_reuse.html",
+    "copyright": "sources/copyright.html",
+    "BDL": "sources/bdl_dataset_terms.json",
+    "boundary": "sources/prg_terms.json",
+    "rule": "Official redistribution and adaptations permitted with credit, source dates and processing notice; PRG unrestricted reuse with prescribed PZGiK attribution."
+  },
+  "editions": {
+    "locality": "NSP 2021, 31 March 2021; BDL P4182 variable 1639616, live metadata confirms only 2021",
+    "town_gmina": "GUS population 30 June 2026, published 15 October 2026, Tabela_III.xls",
+    "boundary": "PRG administrative boundaries resource 2355394, archive 30 July 2026; gmina layer in ETRS89"
+  },
+  "sources": [
+    {
+      "path": "sources/bdl_code.html",
+      "url": "https://bdl.stat.gov.pl/bdl/metadane/teryt/kod",
+      "sha256": "3653cbfc013d4247eb00d340f11c6aa1d253b95ac74ebb003793bf05d2b98e11",
+      "bytes": 47927,
+      "retrieved_at": "2026-10-20T07:58:29.933788+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_code.html.txt",
+      "url": "https://bdl.stat.gov.pl/bdl/metadane/teryt/kod",
+      "sha256": "9c485a045d68792bcffb3a5b2b0bd417cdb74698e221a31aae982706a96c7f07",
+      "bytes": 2928,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_dataset_terms.json",
+      "url": "https://api.dane.gov.pl/datasets/1036",
+      "sha256": "3250c8def2d33e8d88120ba9096a7ecbc4be9b53d6ebc22cad9521c0383f1795",
+      "bytes": 5182,
+      "retrieved_at": "2026-11-21T06:53:10.322047+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_license.html",
+      "url": "https://bdl.stat.gov.pl/bdl/pomoc/licencja",
+      "sha256": "7a2b1173aafe126c7c4131421d5e69a359a0f25b201997a147db59d99d1ecec0",
+      "bytes": 19685,
+      "retrieved_at": "2026-11-21T06:53:18.516995+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_license.html.txt",
+      "url": "https://bdl.stat.gov.pl/bdl/pomoc/licencja",
+      "sha256": "4af87e9d4e339bb130fcd50234ab8caee37553420280ba8257d4d4091255c150",
+      "bytes": 923,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_p4182.html",
+      "url": "https://bdl.stat.gov.pl/bdl/metadane/cechy/4182",
+      "sha256": "a773ab27b4bf0d426b4679d720d5b049922202ef605203161ccb9808e46b3cf2",
+      "bytes": 97946,
+      "retrieved_at": "2026-10-20T07:53:36.997893+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_terms.html",
+      "url": "https://bdl.stat.gov.pl/bdl/pomoc/warunki",
+      "sha256": "b9fb5cafcde2fe18c1c7a2635a7907f1a8c05ef97c655977d53959c43c16aa5b",
+      "bytes": 19685,
+      "retrieved_at": "2026-11-21T06:53:17.808911+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/bdl_terms.html.txt",
+      "url": "https://bdl.stat.gov.pl/bdl/pomoc/warunki",
+      "sha256": "4af87e9d4e339bb130fcd50234ab8caee37553420280ba8257d4d4091255c150",
+      "bytes": 923,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/ccby_legal.html",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode.en",
+      "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+      "bytes": 49582,
+      "retrieved_at": "2026-11-21T06:57:47.331703+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/census_0112_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json",
+      "sha256": "ef5f62c8c041af09ca736883b890cb97be329dc65ba7bd66adc1a0a476acfa4d",
+      "bytes": 10456,
+      "retrieved_at": "2026-10-20T08:11:38.719222+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "bcff1a983ffcca88c525be2cbf8d13783316af640b524895a7495b1f89c20d59",
+      "bytes": 10706,
+      "retrieved_at": "2026-10-20T08:11:40.309885+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "e4ecf010e75ffaeacfedb093e2d6819405255890db8d04299b92fd15d5462156",
+      "bytes": 10668,
+      "retrieved_at": "2026-10-20T08:11:41.946527+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "cc182ad407f8904a6d1ce2320c5a3018b5c7dde3942a9cf497a72f9f09dad5c3",
+      "bytes": 10688,
+      "retrieved_at": "2026-10-20T08:11:43.569992+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "a0de769cae723d5ee72c97babe2694b0cc2a6248ec2cc4b9e68e02e8d1085735",
+      "bytes": 10765,
+      "retrieved_at": "2026-10-20T08:11:45.327357+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "87e936a408d9cebeec8030c96735c886a6d0750e597a2ab35864f99ea2dd2268",
+      "bytes": 10657,
+      "retrieved_at": "2026-10-20T08:11:46.878514+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "76eba9dca73b2c5248931f4b175cf295f8faee4cacfbf321befd8651c089b0b0",
+      "bytes": 10633,
+      "retrieved_at": "2026-10-20T08:11:48.311355+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "9f80f8b067b20fc9d01fc641fd38b06b861e7ec8085d8f96c28dd811cbfcc0fb",
+      "bytes": 10714,
+      "retrieved_at": "2026-10-20T08:11:49.887486+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "37e73e60dc5dbd1a6d41be03c5ffe488ab24ec74ce9c5bd7ef465f89461fb546",
+      "bytes": 10557,
+      "retrieved_at": "2026-10-20T08:11:51.502665+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "94cbfe5f78d01dfcbc57f596cfe69582b0ec35fe581826712202e50d7644d17e",
+      "bytes": 10649,
+      "retrieved_at": "2026-10-20T08:11:52.934087+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "cc00cbbd1d695c872227b9996de3c03793064026cc574490990324366ccb221a",
+      "bytes": 10638,
+      "retrieved_at": "2026-10-20T08:11:54.439077+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "9998194f31524058b531e7f366b72c9727bf0d812dab248347b75db9fcc88553",
+      "bytes": 10683,
+      "retrieved_at": "2026-10-20T08:11:56.000003+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "3b918f89f5ea1201e38d6c186337cc059d722603ce8b4ebca6be784f96fbe5ca",
+      "bytes": 10635,
+      "retrieved_at": "2026-10-20T08:11:57.675033+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "8e5c4181998f8e42e103ca0affa91da165ef6de02453da00600187a9276978c6",
+      "bytes": 10651,
+      "retrieved_at": "2026-10-20T08:11:59.166970+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "aa4c078d4e98280bb78fc545a66aef802215f0ca8b90c2aa8df2be9561487000",
+      "bytes": 10690,
+      "retrieved_at": "2026-10-20T08:12:00.765806+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "bc767fddfd62819080c5a5490aec55c02bebe20605bf287c847fed30bcbc54c8",
+      "bytes": 10701,
+      "retrieved_at": "2026-10-20T08:12:02.392290+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_016.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=16",
+      "sha256": "c4bc0a0cc2859efe48623a321478ba2fd28c39e57ac3101a1676bb812da4f4dd",
+      "bytes": 10760,
+      "retrieved_at": "2026-10-20T08:12:03.901980+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_017.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=17",
+      "sha256": "8cd7ce99855c104ab1e030487e7a19ecd7dfa5ee5a845053112dd7412f03f9f2",
+      "bytes": 10666,
+      "retrieved_at": "2026-10-20T08:12:05.410446+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0112_018.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json&page=18",
+      "sha256": "e2db97bfd9ad5689f7f98f19963bc9bc1aa09ded353f095e91aa67b55cfd8db9",
+      "bytes": 9757,
+      "retrieved_at": "2026-10-20T08:12:07.110390+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json",
+      "sha256": "58d07d5b83422cfb0ad8deedf8cb636ac5bccde5e419bf036e6499803ef4de88",
+      "bytes": 10545,
+      "retrieved_at": "2026-10-20T08:12:35.762141+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "feeae6f9e6841bb40594827f5dc2da8673de8dda778e71ae2612bae846ffb04f",
+      "bytes": 10628,
+      "retrieved_at": "2026-10-20T08:12:37.355381+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "fad0aa47b694e98bb9ab15cc328c3c03dc8ae1ec3c977bd31f6262b3e51a14bb",
+      "bytes": 10637,
+      "retrieved_at": "2026-10-20T08:12:38.832003+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "eb711757d9bab665a17c34adb84d9d607884c535681187626260de7dddf3ff84",
+      "bytes": 10550,
+      "retrieved_at": "2026-10-20T08:12:40.415830+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "b02029618eda0b16580786120c74df6c8012eec78a204f1a456fb93a3cc413c4",
+      "bytes": 10626,
+      "retrieved_at": "2026-10-20T08:12:41.928584+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "56fd969bc64772d87986b9a9b592240cd9eb69f21e8bf6c62645fa7fdf939bcf",
+      "bytes": 10662,
+      "retrieved_at": "2026-10-20T08:12:43.501315+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "466a24f3fa58c1c52be1d456526da126241a052a4ab9b6981f6c2d8ef93016a6",
+      "bytes": 10601,
+      "retrieved_at": "2026-10-20T08:12:45.155510+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "9d55eaa61e62f50161cc0a688b551bb55f84d951e575091df0f2ab3edd536cab",
+      "bytes": 10658,
+      "retrieved_at": "2026-10-20T08:12:46.743165+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "a1f7b73b263de13226704b63fbc73727ceba0232cbc01ea347e11ed15174d52b",
+      "bytes": 10642,
+      "retrieved_at": "2026-10-20T08:12:48.536262+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "2e7f3ed75e1eb154a1a54433a4e9c5fa0e7f5b8a6b3d3d8591d8bf7ac4455d81",
+      "bytes": 10700,
+      "retrieved_at": "2026-10-20T08:12:49.981983+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "dac35c0bca40b873a1fb4e66fe2d6a03a93767f5b7f98a7eeb0a9c1da61dfa33",
+      "bytes": 10610,
+      "retrieved_at": "2026-10-20T08:12:51.690569+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0124_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=012400000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "9aa7f8c61da2ccc528a6b5b102f0bea5b052daa86aaea256a838fc9d948ac9df",
+      "bytes": 2364,
+      "retrieved_at": "2026-10-20T08:12:53.464315+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json",
+      "sha256": "780a26dff5796295c0e83b24a962f4d66c2a81ce92ce828b416bd26895b75ab9",
+      "bytes": 10388,
+      "retrieved_at": "2026-10-20T08:00:55.840621+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "99964149e3592e37f81e61bdb4c0772767ffd7cee7481f3450dfacaa96b605a4",
+      "bytes": 10509,
+      "retrieved_at": "2026-10-20T08:00:57.318752+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "41b72b8022f9fbdb99d6a15068ce192ee6a7cc19d7c03f54c4f1266415d83337",
+      "bytes": 10492,
+      "retrieved_at": "2026-10-20T08:00:58.893864+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "7e2766c116ee173b829eb6c462729e37ead48bfc24778197fcdd16d1d74c7b71",
+      "bytes": 10507,
+      "retrieved_at": "2026-10-20T08:01:00.453759+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "35b06f2a336d99ece037cab59b59c18014678c29b167cb8726ecc497c59f068a",
+      "bytes": 10483,
+      "retrieved_at": "2026-10-20T08:01:02.135923+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "c6ed95d9c2fc691784deddfc64e984cc6a1c45d20900196e6c351a45b3bd096b",
+      "bytes": 10554,
+      "retrieved_at": "2026-10-20T08:01:03.668818+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "1e2895d50a19e31b34f3b843535f9f60c20320c4d33b5621b77481cfe71846e5",
+      "bytes": 10525,
+      "retrieved_at": "2026-10-20T08:01:05.229233+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "71d62197d606cd8c8b4adb6a6ac1e2228f06dd0963018ae8acaf7958142a4c4b",
+      "bytes": 10575,
+      "retrieved_at": "2026-10-20T08:01:06.793563+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "49203638f927921aa6a0e042e4f2a0e7f1736d8d51e162ab5ca934096484187b",
+      "bytes": 10563,
+      "retrieved_at": "2026-10-20T08:01:08.329652+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "e1ae7a2409f174c02ff073db664f2dc293a2e8336904fc4dcb6339e7e1e56786",
+      "bytes": 10481,
+      "retrieved_at": "2026-10-20T08:13:56.099295+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "96e1a195c2b7fb890d5feef92b127213480f0667124791047f90df0995b94874",
+      "bytes": 10614,
+      "retrieved_at": "2026-10-20T08:13:57.719214+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0208_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=020800000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "8df1461aa132ebfeb4d6c0ac68e2a269338876c4f5b0cc16d431d34e69fa9039",
+      "bytes": 1610,
+      "retrieved_at": "2026-10-20T08:13:59.436528+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json",
+      "sha256": "6b58b38f71307f1c028229aceb74acef334a7286211528918faec3d83f9a2979",
+      "bytes": 10500,
+      "retrieved_at": "2026-10-20T07:58:30.638380+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "0d8d271fa1d9487c208b10d7e0edeae4a605eff8b4d288e61dce3c9ff2529202",
+      "bytes": 10633,
+      "retrieved_at": "2026-10-20T07:58:32.707119+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "3ecd10ec56fe1ed4ad9975c14a4e08adda265ac91e260941b99c040815c04912",
+      "bytes": 10733,
+      "retrieved_at": "2026-10-20T07:58:34.272331+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "c24b7db99b41e7a960b8f6ba49cb1dd7a21e93f9380cd62b701ce9a3cd54e453",
+      "bytes": 10608,
+      "retrieved_at": "2026-10-20T07:58:35.791461+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "9e198eed16fb3224073ba1a1578ad6776f7266f1b3cdbeebf01f66f565327b3d",
+      "bytes": 10704,
+      "retrieved_at": "2026-10-20T07:58:37.359750+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "16c773a6ea909e9364e8f538458ef27ad52ff3faead6f280c8d8a838985e7646",
+      "bytes": 10585,
+      "retrieved_at": "2026-10-20T07:58:38.900990+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "d9d8b24664baf91a5170893d96d39a2a7626831df102118c6f8e1055d1515c9d",
+      "bytes": 10595,
+      "retrieved_at": "2026-10-20T07:58:40.479223+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "17c03699605c279d6b0128c6b3576b26e6aeb07838c5d7f95ef093d548f0fcb0",
+      "bytes": 10659,
+      "retrieved_at": "2026-10-20T07:58:42.399998+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "50af9e3bfe0aa5f47a599701d313e784e3550a03c4c05be18d92e17ffed0d298",
+      "bytes": 10538,
+      "retrieved_at": "2026-10-20T07:58:44.492422+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "ff6e031f276ce61d0f84edad13f11a49326524f208b6fe42ae6937ee678ccca0",
+      "bytes": 10667,
+      "retrieved_at": "2026-10-20T07:58:46.185079+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "f0442c4f04f79c3fe03ddb5a9d313054cdb533dd084b3ce9c7b12a084be5d9e6",
+      "bytes": 10624,
+      "retrieved_at": "2026-10-20T07:58:47.794429+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "8d954c2fc4fdbae5e2badea686ac7f7e920844631bd044afcba7d9276c5421b3",
+      "bytes": 10623,
+      "retrieved_at": "2026-10-20T07:58:49.447589+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "9ed373386bb2156a47832d1752e75c50f294b2f289ebc0bd940422f339b699a7",
+      "bytes": 10647,
+      "retrieved_at": "2026-10-20T07:58:51.176507+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "78360bfaf030f4c54abee27802faa304bbaac03cd24c0be44197f6be31b749f2",
+      "bytes": 10635,
+      "retrieved_at": "2026-10-20T07:58:52.725698+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "31e986959b22ccf3191c4bf030983cda53b1687149095cee3994a9562dd453cd",
+      "bytes": 10634,
+      "retrieved_at": "2026-10-20T07:58:54.311067+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "14500f86768f8f47f86626bc723253f9a422e356a8cb25860a4da1286acee9d0",
+      "bytes": 10654,
+      "retrieved_at": "2026-10-20T07:58:55.920076+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_016.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=16",
+      "sha256": "83a99a78ba2ccd3deb7866044e306d9eebd7c87f3a7df031194a79a5cc15b9c4",
+      "bytes": 10657,
+      "retrieved_at": "2026-10-20T07:58:57.489665+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_017.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=17",
+      "sha256": "227a32bc9d6ca17a11dc48d7f2a354a4d742e9bc4b3caea83cfdc70b3fb6489a",
+      "bytes": 10570,
+      "retrieved_at": "2026-10-20T07:58:59.296157+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_018.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=18",
+      "sha256": "e0b46a957c8f9cbdf8bee84144699a7b756db97ef158d38e8a08b3ab25620cdd",
+      "bytes": 10585,
+      "retrieved_at": "2026-10-20T07:59:00.866734+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_019.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=19",
+      "sha256": "366d465f29e4e3b18cedf72d5ae1b67e657a8c524deecc0f7a422e70412755bb",
+      "bytes": 10606,
+      "retrieved_at": "2026-10-20T07:59:02.442368+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_020.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=20",
+      "sha256": "87512989fe29211bc271e18499199bc96d3eac5ddcf1a460499fa8a917e61a8f",
+      "bytes": 10623,
+      "retrieved_at": "2026-10-20T07:59:04.010669+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_021.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=21",
+      "sha256": "e49a2355a09d11abb1527025311f65e2985a77aaddea808dd9f7f0b2e103fc48",
+      "bytes": 10632,
+      "retrieved_at": "2026-10-20T07:59:05.602127+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_022.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=22",
+      "sha256": "7a3f5346334f35edf824059eee920e3b7b22173b8268837e01a7525b18e19f3e",
+      "bytes": 10663,
+      "retrieved_at": "2026-10-20T07:59:06.961533+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_023.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=23",
+      "sha256": "7b51715de5add9b374161f161ef34d0a3fd7e8da409428b831183a2869a5ee52",
+      "bytes": 10700,
+      "retrieved_at": "2026-10-20T07:59:08.500742+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0302_024.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=030200000000&year=2021&page-size=100&format=json&page=24",
+      "sha256": "3045cb8a9d03a3ba0ed8a55afe7b766ea8be8033074370195cac68e7bf4351b5",
+      "bytes": 2454,
+      "retrieved_at": "2026-10-20T07:59:10.103384+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json",
+      "sha256": "ace01c7af0fbc30b683e661aef8201778a402cf89f9fe916ca2f21d87543f0fe",
+      "bytes": 10443,
+      "retrieved_at": "2026-10-20T07:59:12.181945+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "5f127abeb27cdb07f34e66c50c526027ee0c77025369beb032e58dcab14af444",
+      "bytes": 10578,
+      "retrieved_at": "2026-10-20T07:59:13.729007+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "6dda8f5c668ce15b883f95c88177ae177529aca014dc6e209f7908d1c08cf3df",
+      "bytes": 10630,
+      "retrieved_at": "2026-10-20T07:59:15.361008+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "4d5d06c7ceb5ae0c858d81cf90374ae68f5688c3acc26022ecd0470b17095c2c",
+      "bytes": 10585,
+      "retrieved_at": "2026-10-20T07:59:16.752441+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "86ec288eb945944adb77d4dcdb95244b87279bdd2edd0c15279e9b19d1afc2bf",
+      "bytes": 10564,
+      "retrieved_at": "2026-10-20T07:59:18.212936+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "610114b503641de7627246a7e220f9317639f86410b28e952c732a4fac51234b",
+      "bytes": 10524,
+      "retrieved_at": "2026-10-20T07:59:19.743725+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "f6dda42440a4a79c791a83335a2bbae20de51fe5738233512345c18c13d0fd67",
+      "bytes": 10590,
+      "retrieved_at": "2026-10-20T07:59:21.312301+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "6151b49b07ac90811906273b9cfb1c619ca67b6877b3764ec5763185a8631a7c",
+      "bytes": 10516,
+      "retrieved_at": "2026-10-20T07:59:22.906631+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "5c86af2dc16830c23c8e5e964acd7574d26b8314fba15904250599d1ed71489b",
+      "bytes": 10620,
+      "retrieved_at": "2026-10-20T07:59:24.326934+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "f14539c7b97a7c31fe9f929a4f22b48ca5db544b768cc9f97b5b3bd061d9c6a1",
+      "bytes": 10555,
+      "retrieved_at": "2026-10-20T07:59:26.034988+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "5075b9fac553e0390e0f6c006430118492f9f7cc675d6316f3652faa5539c7e3",
+      "bytes": 10554,
+      "retrieved_at": "2026-10-20T07:59:27.630017+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "7dacfe7b3e39fd46a0addf133fe272f7519a1f9c1dfdb897d7981ce8b06c8c9e",
+      "bytes": 10565,
+      "retrieved_at": "2026-10-20T07:59:29.180226+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "dcd32b39782768e8e8f5443461202f18c415c9c6f0e2671da9308f361e793797",
+      "bytes": 10535,
+      "retrieved_at": "2026-10-20T07:59:30.777819+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "ec15283d778ba6202bce9816f58ccf0b8314567f098c49a106020dd88c83990c",
+      "bytes": 10664,
+      "retrieved_at": "2026-10-20T07:59:32.211985+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "4746bee2dadc2d6e1fde24c3151ad8917b956ca5ab4e2b0fd10ed66b285520f8",
+      "bytes": 10637,
+      "retrieved_at": "2026-10-20T07:59:33.801629+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "72dae3d0ed6a6c969bb6933642977091e5b329a2f84b3bf0f954f5e4b4f2ab97",
+      "bytes": 10606,
+      "retrieved_at": "2026-10-20T07:59:35.378449+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_016.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=16",
+      "sha256": "03e89f9ad76afe72a1df1ec83312a39c13a9a57eda68abe4688d2e605ddba21d",
+      "bytes": 10596,
+      "retrieved_at": "2026-10-20T07:59:36.881286+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_017.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=17",
+      "sha256": "ceca63f7388582cce3d4e41f5bda9f82b536e0ae9487a9e72da939bfc025c431",
+      "bytes": 10510,
+      "retrieved_at": "2026-10-20T07:59:38.461072+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_018.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=18",
+      "sha256": "df0fd5f6ba8e8be65b116f5fb7a281e6baef4469fc158f1ca6c13b39b03cc1e0",
+      "bytes": 10577,
+      "retrieved_at": "2026-10-20T07:59:40.189658+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_019.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=19",
+      "sha256": "ae01179b9a2acc324e0562e33cc1c69eada51a2ef8b9f08a08b198c83dee8efe",
+      "bytes": 10555,
+      "retrieved_at": "2026-10-20T07:59:41.662206+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_020.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=20",
+      "sha256": "e20c0b88042914a7473346ab25479304357c4deea6873c09219dbb11297c9555",
+      "bytes": 10562,
+      "retrieved_at": "2026-10-20T07:59:43.334142+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_021.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=21",
+      "sha256": "cf507c6dfb7614a4a93caaadb58b15c0eb09675f4eb1df2ee5111ee9bfeeebea",
+      "bytes": 10598,
+      "retrieved_at": "2026-10-20T07:59:44.937958+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_022.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=22",
+      "sha256": "9e27db8fc99520c5541dd818f6eda7b239f219cce546491fca74beaa3c2abe84",
+      "bytes": 10612,
+      "retrieved_at": "2026-10-20T07:59:46.621450+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_023.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=23",
+      "sha256": "8fdc3331bede6f14e362960ec83c43bed4bd4b53bddee23679773dfeee73151a",
+      "bytes": 10539,
+      "retrieved_at": "2026-10-20T07:59:48.144816+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_024.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=24",
+      "sha256": "87157f446c79f38522452e19c739038465e48a0763b992faa4bd8ea6e347f1b9",
+      "bytes": 10504,
+      "retrieved_at": "2026-10-20T07:59:49.705764+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_025.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=25",
+      "sha256": "e08650ba6be9d7fb63a07bd33d0a1a2bf16a45447bb22ec07c26ce694fc2dc5c",
+      "bytes": 10553,
+      "retrieved_at": "2026-10-20T07:59:51.224922+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0404_026.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=040400000000&year=2021&page-size=100&format=json&page=26",
+      "sha256": "7f4076c0113995a00d5ec76aabe451d57f0278b41b600a338ec4969dc2faf603",
+      "bytes": 2062,
+      "retrieved_at": "2026-10-20T07:59:52.800937+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json",
+      "sha256": "26c010f2426f6ab2198b75febeb48f7dc948e3a1ab520161146390e87dc04296",
+      "bytes": 10490,
+      "retrieved_at": "2026-10-20T08:14:01.927152+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "99d04b8281df63251003ef52a4edd8a39050c87214dd78f85c70036cc305b548",
+      "bytes": 10728,
+      "retrieved_at": "2026-10-20T08:14:03.725704+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "08f5b8b61dcb1a5273fe688bc6d9bbeac459e917446a2dd1b2845f732cfbdc4d",
+      "bytes": 10755,
+      "retrieved_at": "2026-10-20T08:14:05.298326+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "58427e2144b4637e3cb71c0ffc1492ce22f0b991e572206f757b642a6073095a",
+      "bytes": 10651,
+      "retrieved_at": "2026-10-20T08:14:06.866975+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "7055cfea91c20a067b79ac8adb8c9b1d63e16b1589b33ebbb488596a2e86dd84",
+      "bytes": 10652,
+      "retrieved_at": "2026-10-20T08:14:08.532931+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "89b20b801d933d2e0610162fb475701a135a7c4cc47cd76da3128d954c19b711",
+      "bytes": 10585,
+      "retrieved_at": "2026-10-20T08:14:10.304003+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "b308af8a4c346ae530d1b4124b14cf308fe6869bfc36723618b0dcb0238d821c",
+      "bytes": 10583,
+      "retrieved_at": "2026-10-20T08:14:11.892869+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "182807aa1472134dd26a89f3ae1ae1a8a96edd3e41447402ac17f90de2048ddc",
+      "bytes": 10672,
+      "retrieved_at": "2026-10-20T08:14:13.684441+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "c54cc7262f1628f7ecd2fc78a71c4737b26c39e0c05374074f1c6c7270d4ca43",
+      "bytes": 10583,
+      "retrieved_at": "2026-10-20T08:14:15.256388+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "8ab493f418a8fca43a064d18e9c1c01d885e124c71dd9c211c7110fa27f52f6e",
+      "bytes": 10639,
+      "retrieved_at": "2026-10-20T08:14:16.831213+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "63b8addf9405c8baefb3efb3eddd444ad5a30ebfabc2acb1c865661058f472f0",
+      "bytes": 10607,
+      "retrieved_at": "2026-10-20T08:14:18.402564+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "c65b418abda186b55acdd3845066957ecd6231e53e5b82e8a5d6233db4770714",
+      "bytes": 10611,
+      "retrieved_at": "2026-10-20T08:14:19.978092+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "75ef7292510f1edd2961efff39653634ed8be5c87e6ad0cbf65740dc6fedb446",
+      "bytes": 10633,
+      "retrieved_at": "2026-10-20T08:14:21.563480+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "9996c14d89b29d61147cd48f7b89086111bbe9ab78d4d78a683c1e842315e3e4",
+      "bytes": 10654,
+      "retrieved_at": "2026-10-20T08:14:23.145306+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "7d0366f7bca3e66967a55322f45f408ea0a996f5f8a635f4e38c2430f50519c9",
+      "bytes": 10622,
+      "retrieved_at": "2026-10-20T08:14:24.729869+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "d1c00f8b58f94659d9625d3796aaa922dce0d6fc6da32baa3781f3d6c8a7ff20",
+      "bytes": 10638,
+      "retrieved_at": "2026-10-20T08:14:26.264868+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_016.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=16",
+      "sha256": "1fa26fd422b302928ba32a00954cfb5da4720741b2ded2d2814f72bada3fb26d",
+      "bytes": 10612,
+      "retrieved_at": "2026-10-20T08:14:27.846026+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_017.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=17",
+      "sha256": "3291411f02bc686515a8da1dc217faa60c2d4aeeeb69ea27b04df0e390489544",
+      "bytes": 10586,
+      "retrieved_at": "2026-10-20T08:14:29.410712+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_018.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=18",
+      "sha256": "3efcb933fcc7762e54567884cdc724568d08848628f12e834f1fb00d37407069",
+      "bytes": 10621,
+      "retrieved_at": "2026-10-20T08:14:30.983335+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_019.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=19",
+      "sha256": "5823d1ffc0c671962dfbfaf4d554bf9b3e375dda8cb19037dab681862b7247f5",
+      "bytes": 10624,
+      "retrieved_at": "2026-10-20T08:14:32.558730+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_020.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=20",
+      "sha256": "d530b492694229a542432a447b9a57c9f4e527eb4ce9a5ddb07364091dd7d681",
+      "bytes": 10569,
+      "retrieved_at": "2026-10-20T08:14:34.129485+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_021.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=21",
+      "sha256": "1c34ddf167a58c0d7c7b8c85b7a52e965bd6410ba9a09ac4c616249cc781730d",
+      "bytes": 10571,
+      "retrieved_at": "2026-10-20T08:14:35.570530+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_022.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=22",
+      "sha256": "b061972c212fbdb86d45495d6fe2da2c9afb39e7d0528ffe19fac649c37ffde0",
+      "bytes": 10652,
+      "retrieved_at": "2026-10-20T08:14:37.101242+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_023.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=23",
+      "sha256": "8976ba58708878fab68aafef202b25c7fed620edecda28c840d81b27bcf61c99",
+      "bytes": 10558,
+      "retrieved_at": "2026-10-20T08:14:38.668674+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_024.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=24",
+      "sha256": "4e635a427698f77decce7f41d4e3bee9698a6d7c5fc9f8b78e19938157d831ff",
+      "bytes": 10549,
+      "retrieved_at": "2026-10-20T08:14:40.462748+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_025.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=25",
+      "sha256": "4b731c058afc5bb7bdb6c78ae090cd0f8a51d246bb32d4596c2440760146ea25",
+      "bytes": 10545,
+      "retrieved_at": "2026-10-20T08:14:42.113298+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_026.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=26",
+      "sha256": "fba4823e5a56c7edd856d3eb4cb279baf8eb900676161c4651015eb6f4148b35",
+      "bytes": 10642,
+      "retrieved_at": "2026-10-20T08:14:43.734472+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_027.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=27",
+      "sha256": "d5d87fc675015333e49352003d4ae9bc6d25eb0595baad7ee2f3d344c6cce029",
+      "bytes": 10552,
+      "retrieved_at": "2026-10-20T08:14:45.307930+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_028.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=28",
+      "sha256": "f3268f3ba85ec72f3d221f32502026f0fba2256ce01668993cc313f0601f1be6",
+      "bytes": 10581,
+      "retrieved_at": "2026-10-20T08:14:46.894208+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_029.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=29",
+      "sha256": "17e562c6bae0e56097ecb2658fc015a982e28be26bf73e8b3e7741ffb7882623",
+      "bytes": 10607,
+      "retrieved_at": "2026-10-20T08:14:48.461038+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_030.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=30",
+      "sha256": "6dcefc6d1eaf527cf5e704d5018bd7630b447b178dfed34a1c83f23c99115abc",
+      "bytes": 10498,
+      "retrieved_at": "2026-10-20T08:14:50.017117+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_031.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=31",
+      "sha256": "b02a307490db73fba130eb21635c47795b181bbaa641b6083960ff1a065b13c0",
+      "bytes": 10589,
+      "retrieved_at": "2026-10-20T08:14:51.597202+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_032.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=32",
+      "sha256": "02c9237bc6ace6551dee3b96f727784f8cb6c4b547f646f8427c3061b0dc78f4",
+      "bytes": 10681,
+      "retrieved_at": "2026-10-20T08:14:53.168704+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_033.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=33",
+      "sha256": "ebdb23d5b1114d2542b71581698193f8087428764d24dd7c05a1267988cd08ac",
+      "bytes": 10643,
+      "retrieved_at": "2026-10-20T08:14:54.686581+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_034.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=34",
+      "sha256": "6c77fe195e3258eeef49f962df93fbde9b77ae76453416f7157c07def972c1b0",
+      "bytes": 10565,
+      "retrieved_at": "2026-10-20T08:14:56.169413+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_035.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=35",
+      "sha256": "390e93447bf16aee0a2853b5d2110da876bce81146eeca08c1f5f319f14fdda3",
+      "bytes": 10666,
+      "retrieved_at": "2026-10-20T08:14:57.760580+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_036.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=36",
+      "sha256": "6c3b5071d53b31752cbc7dc091b9b8f31fb7f95d35bd8b879c867f1ef2e4f8d6",
+      "bytes": 10670,
+      "retrieved_at": "2026-10-20T08:14:59.318248+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0510_037.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=051000000000&year=2021&page-size=100&format=json&page=37",
+      "sha256": "da8ed1bb61f4c1b38b3e681bd7186254890aaea88a537251250eacb094fa309b",
+      "bytes": 2077,
+      "retrieved_at": "2026-10-20T08:15:00.901014+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json",
+      "sha256": "59f1939c18b4041f3c6dbc6a0d333cb5d845eba099d694ecdfa144dacf2cb6e4",
+      "bytes": 10499,
+      "retrieved_at": "2026-10-20T07:59:54.870920+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "4e29ada4fb4b95565ad7aee9400c4a7ac5cf1812bd857060453fe9de46f22e45",
+      "bytes": 10627,
+      "retrieved_at": "2026-10-20T07:59:56.439508+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "b2422b106d831d9330be6c886dfc7c494ddeb3f2294137449953256584fec39c",
+      "bytes": 10698,
+      "retrieved_at": "2026-10-20T07:59:58.180631+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "6134a4bd8ef12721ff60b4d18f12cf6e15c9a0ef9cf2fb946341ff1075437943",
+      "bytes": 10536,
+      "retrieved_at": "2026-10-20T07:59:59.768203+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "c2a4f07607ee121b765ca714753ab0907f3c94b18ae53addea43c21d12c2f5ef",
+      "bytes": 10661,
+      "retrieved_at": "2026-10-20T08:00:01.260106+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "3693c5a63ad421f750927ee18681d50a8ef152bb818084672dd044de1eb81ef2",
+      "bytes": 10618,
+      "retrieved_at": "2026-10-20T08:00:02.812459+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "d96ab4ab7f0b63f4961a7e3e8e096594590cd856b71bfab2911ffc78b826c8f1",
+      "bytes": 10672,
+      "retrieved_at": "2026-10-20T08:00:04.462741+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "bd4c78519d4bccaf3158c9a8f8baf022e0dedeaf92d3da51307dae3a3d74878e",
+      "bytes": 10781,
+      "retrieved_at": "2026-10-20T08:00:05.976386+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "19d7a5c4d070eeb76649e838f2255fbca47928a900440dbb28642e69af5f9818",
+      "bytes": 10690,
+      "retrieved_at": "2026-10-20T08:00:07.600458+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "6b2ff795bea7a5013e394cebe37e061bb7d748e9adaf1d91a15a229dd04ac82c",
+      "bytes": 10655,
+      "retrieved_at": "2026-10-20T08:00:09.028711+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "6a8e57df52aeae4153f5fb9fc62d63915f673d69b31864aaad1c9eb324f086df",
+      "bytes": 10637,
+      "retrieved_at": "2026-10-20T08:00:10.598957+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "22e5e79294cdc18649026b4ec05c1afb85a8c2a5a6dcb1b8daee7a53dc93f188",
+      "bytes": 10622,
+      "retrieved_at": "2026-10-20T08:00:12.060063+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "e5d1eece7ac978d6075255cf0faa192c8c8243d00b9b82cf0f4e74adb882ddbd",
+      "bytes": 10656,
+      "retrieved_at": "2026-10-20T08:00:13.651441+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "5ae607851d60d3c2f703650d889943ca652338782c670cedea6b3e84eb77db91",
+      "bytes": 10725,
+      "retrieved_at": "2026-10-20T08:00:15.142257+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "48cf3e5e9827041cd4b6648d0d8fe55a175ae2f1b43689d874c66f3633c6fa5a",
+      "bytes": 10776,
+      "retrieved_at": "2026-10-20T08:00:18.253692+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "f0ff827e6f95b2450c5ea9feb5359db3cfc9930b64fe7fd9df3bfa5577e8066b",
+      "bytes": 10734,
+      "retrieved_at": "2026-10-20T08:00:19.867585+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_016.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=16",
+      "sha256": "662581af570af051ea9721b6b5433bc3b054791efd61610af6262aa842b3914d",
+      "bytes": 10632,
+      "retrieved_at": "2026-10-20T08:00:21.678954+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_017.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=17",
+      "sha256": "8a8c53af8b83cfdd0fdab84f6cdfe1f816be4910b166f0889eaab2a71503726f",
+      "bytes": 10774,
+      "retrieved_at": "2026-10-20T08:00:23.246476+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_018.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=18",
+      "sha256": "5813d68d8976d7da4282adeaeb86e38c984971fee306e67d19f4dcfd5a9604eb",
+      "bytes": 10837,
+      "retrieved_at": "2026-10-20T08:00:24.930041+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_019.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=19",
+      "sha256": "1be79a6d8d6835e9a10e8e53ae9a2d063b4fcc6e7fe218d383ae33d4d8c5cb22",
+      "bytes": 10716,
+      "retrieved_at": "2026-10-20T08:00:26.479081+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_020.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=20",
+      "sha256": "716e3ec4194e95aa7b42b0e27f40edbeeb0f8031ed0f35d3347907ab2081b140",
+      "bytes": 10711,
+      "retrieved_at": "2026-10-20T08:00:28.070335+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_021.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=21",
+      "sha256": "80762ab657aa2d97cbae4df7f28515db8ce36146b50f1debfbd8471fffdfe33e",
+      "bytes": 10834,
+      "retrieved_at": "2026-10-20T08:00:29.562888+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_022.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=22",
+      "sha256": "89b59517ae251ab3473ad35ac510c8c335bbaeba8e2ff4153883a415ec6bc7fb",
+      "bytes": 10890,
+      "retrieved_at": "2026-10-20T08:00:31.149534+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_023.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=23",
+      "sha256": "d44b4fba56fa37009908b8047fb59fd0abb0db95896eced031d9cdeeb21c5e1a",
+      "bytes": 10907,
+      "retrieved_at": "2026-10-20T08:00:32.681997+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_024.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=24",
+      "sha256": "90781e9519b22abf247d2104e793612ab911a8d829e74c3c7ee5aeba26d3952d",
+      "bytes": 10826,
+      "retrieved_at": "2026-10-20T08:00:34.299010+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_025.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=25",
+      "sha256": "e71136ff5eb1ed0e0d8f2c5c00125a9fa718879bf1bb867d8d968f903226f322",
+      "bytes": 10765,
+      "retrieved_at": "2026-10-20T08:00:35.869516+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_026.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=26",
+      "sha256": "c504eef1e8a5feb4effe79bbcf2e3e0879a8a85556d8edfce57a17752699a3b2",
+      "bytes": 10805,
+      "retrieved_at": "2026-10-20T08:00:37.417234+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_027.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=27",
+      "sha256": "e03966fc50e08540bb9f084949a79d76dfc3ace895aca15fec61bc0e647ac2ed",
+      "bytes": 10714,
+      "retrieved_at": "2026-10-20T08:00:39.053088+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_028.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=28",
+      "sha256": "66feba7672c7a5c07dc6f7596c7a4fa2d768546a04deaebecda488046810ee61",
+      "bytes": 10949,
+      "retrieved_at": "2026-10-20T08:00:40.805004+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_029.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=29",
+      "sha256": "552a312d76ecf12e601ec813bfceecbb3df91d36647e40fab3b1ae4fd7ef2768",
+      "bytes": 10645,
+      "retrieved_at": "2026-10-20T08:00:42.462582+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_030.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=30",
+      "sha256": "4c8f9e6ffb8f31db07909c30af2b64cd7e141e8c0f99fbadf3ca826ecb8a53d7",
+      "bytes": 10658,
+      "retrieved_at": "2026-10-20T08:00:44.488718+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_031.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=31",
+      "sha256": "a2cb2a9117801f6acc6ba2f4f27cf90c28bae74080f5677f1c994f4d81333ade",
+      "bytes": 10680,
+      "retrieved_at": "2026-10-20T08:00:46.105625+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_032.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=32",
+      "sha256": "10e044c6bdb653c8b1907a12f07130e2793d786d71e1735caa70f888831aa8fe",
+      "bytes": 10773,
+      "retrieved_at": "2026-10-20T08:00:47.679469+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_033.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=33",
+      "sha256": "dac1079dd5e8c412ab359bb69afcc4253d4253fb0bca7e30e6ae73999eaf2ac0",
+      "bytes": 10606,
+      "retrieved_at": "2026-10-20T08:00:49.397606+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_034.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=34",
+      "sha256": "5a38e882ae74024d12a4b509904209b9145f97423283b3360ce50049b3c6951f",
+      "bytes": 10560,
+      "retrieved_at": "2026-10-20T08:00:51.174260+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0606_035.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=060600000000&year=2021&page-size=100&format=json&page=35",
+      "sha256": "76db86cb5498cc4a022c4461336a00a6e93b79ad6172d281bdc6a38b09cf103c",
+      "bytes": 9369,
+      "retrieved_at": "2026-10-20T08:00:53.746358+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json",
+      "sha256": "00984f25104c4a85eada45ce75a9e2072bbb045b72afcda1dd534bcada066e60",
+      "bytes": 10489,
+      "retrieved_at": "2026-10-20T08:12:09.130197+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "05177bb5edc7cfa65b3c8d13559e9b659b5d66c37875ebf03743dd30d50df4b1",
+      "bytes": 10645,
+      "retrieved_at": "2026-10-20T08:12:10.850987+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "f0cf529bb428c35c3fe3d32d3a7fb73056629c9d76ba0badde33fd324defb131",
+      "bytes": 10658,
+      "retrieved_at": "2026-10-20T08:12:13.504894+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "3cf331e8154ccd0feb72562c524919dd56d3bcdd29b3787b4dd5d0baa6a499fa",
+      "bytes": 10556,
+      "retrieved_at": "2026-10-20T08:12:15.032643+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_004.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=4",
+      "sha256": "b240e5b4d92f5430d728b07c577639fc673040a3a62f988f3c04d7a026e7a982",
+      "bytes": 10547,
+      "retrieved_at": "2026-10-20T08:12:16.577478+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_005.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=5",
+      "sha256": "60845833f77811a9e5dd2e567b6cc14a0b2df750c35f086faaa58bb4c247c5c1",
+      "bytes": 10706,
+      "retrieved_at": "2026-10-20T08:12:18.069232+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_006.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=6",
+      "sha256": "7d2848722ff78b3941142c8b0126347560a36a7643ee9b0df9b5078e7fefa137",
+      "bytes": 10687,
+      "retrieved_at": "2026-10-20T08:12:19.647355+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_007.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=7",
+      "sha256": "6e4be184088a1a2a28bc0d4ed25b26cccaab94b0802ad8147174d1f5cec69724",
+      "bytes": 10555,
+      "retrieved_at": "2026-10-20T08:12:21.264151+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_008.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=8",
+      "sha256": "992e458c2514675ac84c7a615a1951cdf86ee57c6f0e1b3500bf13327b600e0b",
+      "bytes": 10754,
+      "retrieved_at": "2026-10-20T08:12:22.734500+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_009.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=9",
+      "sha256": "f605ed56bb5771587a8b001947e90d2256c8645cd4df8727dca58690d9de57a1",
+      "bytes": 10673,
+      "retrieved_at": "2026-10-20T08:12:24.346886+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_010.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=10",
+      "sha256": "9b03168049ba10620ccea09f7993a77c60c5888b06c61f13284cd56c06602cc1",
+      "bytes": 10761,
+      "retrieved_at": "2026-10-20T08:12:25.907625+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_011.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=11",
+      "sha256": "00bd7f264ad1e8f874c94bab421d907b49e56d72c4ee72f8ef09b1c842ea999e",
+      "bytes": 10668,
+      "retrieved_at": "2026-10-20T08:12:27.379720+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_012.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=12",
+      "sha256": "bccda39cfd7ae2b6be88b4f0083dcc8158da504f0240aa5c22066d084a8c261f",
+      "bytes": 10710,
+      "retrieved_at": "2026-10-20T08:12:28.934928+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_013.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=13",
+      "sha256": "5e2315ffcbf780824d306bfd0dfa33f97802591225cd3c549ad3db046c6271c3",
+      "bytes": 10628,
+      "retrieved_at": "2026-10-20T08:12:30.452636+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_014.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=14",
+      "sha256": "44f6a4d132430f247cc0679b8a41eaaa1ef717fe74181f603ad25c5bba574a65",
+      "bytes": 10732,
+      "retrieved_at": "2026-10-20T08:12:32.074910+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0618_015.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=061800000000&year=2021&page-size=100&format=json&page=15",
+      "sha256": "2ceb8a1f027d072fbfc2165517605f8d025d9717e6d70a0e4a5434d6d885b34b",
+      "bytes": 4646,
+      "retrieved_at": "2026-10-20T08:12:33.741438+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0714_000.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=071400000000&year=2021&page-size=100&format=json",
+      "sha256": "6a6ba71b19af9ff059a44043a124ee5633c0e4e255c14f6c948d5288ce592cd8",
+      "bytes": 10645,
+      "retrieved_at": "2026-10-20T08:15:02.863713+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0714_001.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=071400000000&year=2021&page-size=100&format=json&page=1",
+      "sha256": "6fcf9bb4e2b2b6f0392a125ddcc881401609f762f4a81e842718fc54847a4b18",
+      "bytes": 10666,
+      "retrieved_at": "2026-10-20T11:15:56.001814+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0714_002.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=071400000000&year=2021&page-size=100&format=json&page=2",
+      "sha256": "30b459431f81ac0c96f51680a25ff804d05992762d79fd4e9117d2ae3dd3cae2",
+      "bytes": 10552,
+      "retrieved_at": "2026-10-20T08:16:25.144534+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_0714_003.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=071400000000&year=2021&page-size=100&format=json&page=3",
+      "sha256": "d4e9d20b21dadb067e9e328aa9277a2632f59d0cb2ba6e12eba216a88a609708",
+      "bytes": 10585,
+      "retrieved_at": "2026-10-20T08:16:26.856685+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_exact_0000715.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-unit/071413021035-0000715?var-id=1639616&year=2021&format=json",
+      "sha256": "48c91e950d76ea7789209e76dd04861e0f8f024a9cb1bff40be8b94c63337676",
+      "bytes": 223,
+      "retrieved_at": "2026-11-21T06:58:56.989100+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_exact_0000738.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-unit/071413021035-0000738?var-id=1639616&year=2021&format=json",
+      "sha256": "f85748ead2fdbea6b0891863593af6ecac36e5cc45947bf17912cc8b1298cf5a",
+      "bytes": 223,
+      "retrieved_at": "2026-11-21T06:58:58.627287+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_exact_0025810.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-unit/062013805032-0025810?var-id=1639616&year=2021&format=json",
+      "sha256": "53fcc2116be54c6968c396a9c67c2a02d81093df65682a099a2553f0691ce10f",
+      "bytes": 223,
+      "retrieved_at": "2026-11-21T06:58:51.786336+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_exact_0477498.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-unit/042815608032-0477498?var-id=1639616&year=2021&format=json",
+      "sha256": "4a3767bfe3eefd82566915801eb4a1695ec5217febd7994b46cdb07c5c3cb93d",
+      "bytes": 221,
+      "retrieved_at": "2026-11-21T06:58:55.234244+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_exact_0774530.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-unit/023216614042-0774530?var-id=1639616&year=2021&format=json",
+      "sha256": "b663d4c1a50ac6dd14b0fcd971ca79cd5fddc014c72f71934ddc5fc37cd6b334",
+      "bytes": 220,
+      "retrieved_at": "2026-11-21T06:58:53.493738+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_metadata.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/variables/1639616?format=json",
+      "sha256": "2951eb7986df02236526a26910dea6da934262a6950cc0439f6234fcad6c2917",
+      "bytes": 120,
+      "retrieved_at": "2026-11-21T06:51:34.371578+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_page_live.html",
+      "url": "https://bdl.stat.gov.pl/bdl/dane/podgrup/temat/3/7/4182",
+      "sha256": "7c23b01186c27352cce28cf938ae661120e8b399adb5d2bbe5a85204076097fc",
+      "bytes": 89565,
+      "retrieved_at": "2026-11-21T07:01:12.443333+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_parent_test.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/data/localities/by-variable/1639616?unit-parent-id=011200000000&year=2021&page-size=100&format=json",
+      "sha256": "ef5f62c8c041af09ca736883b890cb97be329dc65ba7bd66adc1a0a476acfa4d",
+      "bytes": 10456,
+      "retrieved_at": "2026-10-20T07:56:51.660150+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/census_subject.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/subjects/P4182?format=json",
+      "sha256": "76469ebe1c76855b8359f83d7accc5a4a4a749b4d021d06d56fca8fd7ad3d67f",
+      "bytes": 322,
+      "retrieved_at": "2026-11-21T06:53:13.468035+00:00",
+      "edition": "NSP2021 at 2021-03-31"
+    },
+    {
+      "path": "sources/copyright.html",
+      "url": "https://stat.gov.pl/copyright?contrast=default",
+      "sha256": "5eea00a116e88c9b9d9e1b5c567ca7eb98ecffb62d25056b0d0f0a8ccfe2d39e",
+      "bytes": 37400,
+      "retrieved_at": "2026-11-21T06:51:32.809709+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/gus_reuse.html",
+      "url": "https://bip.stat.gov.pl/kontakt/ponowne-wykorzystywanie-informacji-sektora-publicznego/",
+      "sha256": "b15e06f25b2182adbf4b99592fd34b13fc9edc95d6b7fcffd8084f905c299f6e",
+      "bytes": 35445,
+      "retrieved_at": "2026-11-21T06:51:31.379513+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q11044638.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11044638.json",
+      "sha256": "164aa25db43ad0a31177e96eb640422fd7564b70c48fd7445f2bc7f600309fe7",
+      "bytes": 10797,
+      "retrieved_at": "2026-11-21T06:55:28.733867+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q1837259.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1837259.json",
+      "sha256": "c43fdaf8dbaba2992aadbfcc72bc533610435d936a2790deab8b7098c3b7b9e9",
+      "bytes": 20257,
+      "retrieved_at": "2026-11-21T06:53:57.300216+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q1866859.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1866859.json",
+      "sha256": "902bc07c4d25641b6a3cdfa3669b58cea7c4425977cdd7738544b25cf32d89ff",
+      "bytes": 18356,
+      "retrieved_at": "2026-11-21T06:55:21.518617+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q1953165.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1953165.json",
+      "sha256": "d9b28847808d21fcd3f28820d54299ce170dfe6573b224eb5e3211998957be97",
+      "bytes": 19562,
+      "retrieved_at": "2026-11-21T06:55:07.790480+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q1959173.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1959173.json",
+      "sha256": "cda1974c3ea597022a5be7297574e9ddcf7245650778ad2294ab6e8ea223ddcd",
+      "bytes": 19134,
+      "retrieved_at": "2026-11-21T06:54:45.739953+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2137359.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2137359.json",
+      "sha256": "b5c1c3b6cf49e9db226382afe2e35184c8ed8e73a579aedd72c11a71ffea6180",
+      "bytes": 21853,
+      "retrieved_at": "2026-11-21T06:54:53.428515+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2148267.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2148267.json",
+      "sha256": "f8eea08695f9301cc896b11f4fd76a9fde7a8d8b2e34887fe3ed2dc9fe6b123e",
+      "bytes": 17951,
+      "retrieved_at": "2026-11-21T06:55:19.037843+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2169150.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2169150.json",
+      "sha256": "cf38487933de194ed657ef0eae950be040d2d79cd371aa01e07bc377e0d8d086",
+      "bytes": 20332,
+      "retrieved_at": "2026-11-21T06:54:20.572035+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2179399.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2179399.json",
+      "sha256": "93cadd414709d49177bdc08d221926f69a188171696b0981dab4f747e287ef70",
+      "bytes": 18188,
+      "retrieved_at": "2026-11-21T06:54:01.024661+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2241673.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2241673.json",
+      "sha256": "9ab799a036b657fe96433f2378a17e5aa3d630124489cb34cd067f54bcef54e1",
+      "bytes": 16543,
+      "retrieved_at": "2026-11-21T06:54:31.626529+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2273114.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2273114.json",
+      "sha256": "ec4721c3e35d44490f29501cb047a93adf8f9b81869de1512eeba4e7401f7fa7",
+      "bytes": 17859,
+      "retrieved_at": "2026-11-21T06:55:16.238795+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2277800.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2277800.json",
+      "sha256": "6f544a04e7de3cf2ec5f255a228c0533ef4dceb86a8dbaaf9628cd7680132e0f",
+      "bytes": 17755,
+      "retrieved_at": "2026-11-21T06:53:49.210750+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2284958.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2284958.json",
+      "sha256": "f994c2dce5cb5b670861feea0b72aed46952decadce753e3ed0affcd8ae13db3",
+      "bytes": 19033,
+      "retrieved_at": "2026-11-21T06:54:36.563908+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2285653.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2285653.json",
+      "sha256": "e8cdf8823618a1c6b1e5775cacc43164840d96a0dbd243e54991832cbbfd64f4",
+      "bytes": 17720,
+      "retrieved_at": "2026-11-21T06:55:09.710233+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2293624.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2293624.json",
+      "sha256": "97c4baebb95d7d3636b6eafc0ccd8ba0c5f3e18c078fe84c572796b152196ee2",
+      "bytes": 17818,
+      "retrieved_at": "2026-11-21T06:54:54.254590+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2326486.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2326486.json",
+      "sha256": "1721b547b49afb72ce902ab52dff33967d8067672883b351406218e65cb31f47",
+      "bytes": 19244,
+      "retrieved_at": "2026-11-21T06:55:23.628531+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2328514.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2328514.json",
+      "sha256": "21c24110c4d1b1581d60676e3af52c9ac5188ea4120ec801384788a89df781b2",
+      "bytes": 15906,
+      "retrieved_at": "2026-11-21T06:55:20.594161+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2328621.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2328621.json",
+      "sha256": "ff474fdb2466b58d70dfdef5e1afb8cb8555456dc0e568d5908ac63b819e4770",
+      "bytes": 19549,
+      "retrieved_at": "2026-11-21T06:54:45.105439+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2328720.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2328720.json",
+      "sha256": "3cd75a73dc8c21e72d6eece06d9971289af5e877c6505cbcf021bf3fd215054b",
+      "bytes": 17133,
+      "retrieved_at": "2026-11-21T06:54:18.663427+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2332206.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2332206.json",
+      "sha256": "83296c2079f7ce938ab7ee95b88317ec0e94da5a7b21a0f2ac32d70fac585295",
+      "bytes": 15289,
+      "retrieved_at": "2026-11-21T06:53:50.292025+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2402841.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2402841.json",
+      "sha256": "09bd3ff7e448d5f0bdcc5d673f8ba5e54fac96c8e05e07fb96c12eb93070baad",
+      "bytes": 17826,
+      "retrieved_at": "2026-11-21T06:54:42.064793+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2437662.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2437662.json",
+      "sha256": "97c209d13ea9e76aa49732ddcef3d308b0ec047119f941098848cda8a8995d05",
+      "bytes": 20125,
+      "retrieved_at": "2026-11-21T06:55:04.614773+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2457726.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2457726.json",
+      "sha256": "395114ef4e1443ce1e3cc2d96fb226fcd2a5b3eb55bb1b6db14c1f1114e3d1a4",
+      "bytes": 17555,
+      "retrieved_at": "2026-11-21T06:54:04.325482+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2459184.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2459184.json",
+      "sha256": "b69fc52f24388ef4bb2e84e58972462a705401f0d9288e497b6360ec69bad686",
+      "bytes": 17971,
+      "retrieved_at": "2026-11-21T06:55:37.147056+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2461486.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2461486.json",
+      "sha256": "bf7decd57a1507bf6339e59272b501b15b2fc6b9b75310aa225ee7de2bde22ae",
+      "bytes": 19297,
+      "retrieved_at": "2026-11-21T06:55:24.441197+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2461567.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2461567.json",
+      "sha256": "467d25c677dd5a9129e2a1986c0a3565ffbae3da544750ec7548ade6d548d35f",
+      "bytes": 14786,
+      "retrieved_at": "2026-11-21T06:55:12.693502+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2462922.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2462922.json",
+      "sha256": "d1f2061584f9d89cd6939d0bc65596dcdae68f817faa348d6f409531cc7b153a",
+      "bytes": 15818,
+      "retrieved_at": "2026-11-21T06:54:21.623976+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2463043.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2463043.json",
+      "sha256": "9c67ac70b0234fffeae4357d9bf44d7773d018142d3fb92132b44096af078696",
+      "bytes": 17709,
+      "retrieved_at": "2026-11-21T06:54:41.350865+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2467166.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2467166.json",
+      "sha256": "182df5da6bf70b9951dd5419c5599e9e839c65387e27d57e7c72a094d5fa2420",
+      "bytes": 15428,
+      "retrieved_at": "2026-11-21T06:54:56.340884+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2467269.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2467269.json",
+      "sha256": "5c0ee8ecf23ed9afac4bb965d2c5480215af575e53d3444b7d480adc616d0714",
+      "bytes": 16015,
+      "retrieved_at": "2026-11-21T06:54:38.403586+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q2606206.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2606206.json",
+      "sha256": "f8041505555a40497edca3b8f3e2a84dc578d2b02c3c13aa706c268f14e21ac5",
+      "bytes": 20301,
+      "retrieved_at": "2026-11-21T06:53:51.380945+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q3692486.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3692486.json",
+      "sha256": "7ad1f38b8bacf8b8698f73134875ad35605fed90b6bc421ca51adf3bf1b6c67c",
+      "bytes": 29127,
+      "retrieved_at": "2026-11-21T06:55:25.651884+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q389125.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q389125.json",
+      "sha256": "1e471724d58b1454b91d3dd08c86a3674b22a07b04b5e69bd97bc43a29ddf03b",
+      "bytes": 18785,
+      "retrieved_at": "2026-11-21T06:55:03.399769+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q515216.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q515216.json",
+      "sha256": "0560822fbb15fa6a2cfd24136d6a0940a13e32cda408187ab97aed50b829e044",
+      "bytes": 18421,
+      "retrieved_at": "2026-11-21T06:54:15.098708+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q531545.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q531545.json",
+      "sha256": "9aac1956498fb62761f78d7d09cae156310f55bc776ddc4f4961f7383cae083d",
+      "bytes": 16714,
+      "retrieved_at": "2026-11-21T06:54:43.643770+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q553948.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q553948.json",
+      "sha256": "79e772ac33ec0830b676964344261e1d8cbf31a258d449f139a9ad84e7e2b299",
+      "bytes": 20069,
+      "retrieved_at": "2026-11-21T06:55:01.649558+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q553976.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q553976.json",
+      "sha256": "d81048cac2bd93fb5bbe7c103bf64c342cd0c210ff9ae756e6e5b40f3ef879c8",
+      "bytes": 14929,
+      "retrieved_at": "2026-11-21T06:54:47.965391+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q553986.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q553986.json",
+      "sha256": "2121871ce5ef588d0c27a09598b80c984f7558cac8160881e561b1eb2058028a",
+      "bytes": 16842,
+      "retrieved_at": "2026-11-21T06:55:17.304340+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q554223.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q554223.json",
+      "sha256": "08018d2ea4aaad8af23de066dc26cf72a3b4ee7493a13af36e5158be31ca4821",
+      "bytes": 19463,
+      "retrieved_at": "2026-11-21T06:55:06.557796+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q554294.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q554294.json",
+      "sha256": "49b821238e6ccd71cf6342f1dcb108bad797367ab7418e7c34f2eb7e4b1e29d9",
+      "bytes": 23770,
+      "retrieved_at": "2026-11-21T06:55:22.621999+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q554897.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q554897.json",
+      "sha256": "4cea7f4dec38fe8e5ab7457a98bbe4486e2cbddcc63b6266ceeb132c7a2c8f46",
+      "bytes": 19372,
+      "retrieved_at": "2026-11-21T06:53:52.458627+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q555317.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q555317.json",
+      "sha256": "58121008753cd48bc23fad0e60a068279d03bc4d858e5ff8b82ad6b6239b078a",
+      "bytes": 16661,
+      "retrieved_at": "2026-11-21T06:55:15.625254+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q555369.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q555369.json",
+      "sha256": "bebb952ea12e042dcf839a8c9552438d7be923edf84c3ec6ad59a3fd26e07274",
+      "bytes": 17959,
+      "retrieved_at": "2026-11-21T06:54:49.042762+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q555564.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q555564.json",
+      "sha256": "0f5f8fed5e8a644e16f556be95c9a1347e132c39c9df45b8310499c03832f8b7",
+      "bytes": 20539,
+      "retrieved_at": "2026-11-21T06:55:02.347286+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q555765.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q555765.json",
+      "sha256": "d48e4ddc3c5098475175ea5d3c9141cd55cd333ff6176a09d464dcd00e87fdc5",
+      "bytes": 19032,
+      "retrieved_at": "2026-11-21T06:54:29.884104+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q556572.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q556572.json",
+      "sha256": "d77b0103541ed41bd903282a84393ec319733f29fb0b94e7035968cbeb8cb16c",
+      "bytes": 20658,
+      "retrieved_at": "2026-11-21T06:54:26.056379+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557085.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557085.json",
+      "sha256": "9e3df84b7041e2e4ef3560b3868e8d256f2f532269339bc07add8562306c2424",
+      "bytes": 16012,
+      "retrieved_at": "2026-11-21T06:55:36.263808+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557358.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557358.json",
+      "sha256": "c13dd99a3dbe9c4aca5bad35b10292cccc0fbf255c9a66e1aaa3946e2e8b54f7",
+      "bytes": 14548,
+      "retrieved_at": "2026-11-21T06:55:27.586626+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557365.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557365.json",
+      "sha256": "1de0671bb5772716d9f964874f1875f466d6dc318025286b2644d6a833e640e5",
+      "bytes": 20559,
+      "retrieved_at": "2026-11-21T06:53:56.156135+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557530.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557530.json",
+      "sha256": "0c75e859e51dc442310f6a04371ae000b2143b97b3e1cd2d9ff60f597db2d26f",
+      "bytes": 17359,
+      "retrieved_at": "2026-11-21T06:54:05.209765+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557568.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557568.json",
+      "sha256": "2fce390f469f797a382524c1891f5abb68eb11fcc257cef6c10f1bca9c06f0f0",
+      "bytes": 19093,
+      "retrieved_at": "2026-11-21T06:55:38.344026+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q557633.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q557633.json",
+      "sha256": "9436a7dbe4750cf7e49e37b3c2e24c2ad693fcc9665de536ede1cfcec43f37d4",
+      "bytes": 20726,
+      "retrieved_at": "2026-11-21T06:55:39.368204+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q558777.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q558777.json",
+      "sha256": "7d17dab98c380f5f4707e213297d520a55f9138fdd13c34cf165e74ce078c458",
+      "bytes": 16390,
+      "retrieved_at": "2026-11-21T06:54:19.201679+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q558813.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q558813.json",
+      "sha256": "28b4431f7fa72d7111f5d651112deb8945b1777db478b234e222d03054389782",
+      "bytes": 16946,
+      "retrieved_at": "2026-11-21T06:55:40.265662+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q558816.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q558816.json",
+      "sha256": "d5e45e9a11498a253c64befe6fcd3a1c8bf26d1247c30660fe6925e9fb1d381c",
+      "bytes": 16680,
+      "retrieved_at": "2026-11-21T06:55:35.025862+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q594248.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q594248.json",
+      "sha256": "071857d89c94d35cc6c2302957202f1f5508de8735e3204bc8f49b36f1eb753d",
+      "bytes": 17860,
+      "retrieved_at": "2026-11-21T06:55:13.584311+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q610732.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q610732.json",
+      "sha256": "b190800db53ab12e13133faea73e7b3849e262bdcdcab10637e99ff6c97e2083",
+      "bytes": 19627,
+      "retrieved_at": "2026-11-21T06:54:00.364422+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q615436.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q615436.json",
+      "sha256": "d6dcd3b4ec02ea359ccd7ff3ebcd656092d13f053775e9c5ef4d04f4a89c8fda",
+      "bytes": 22736,
+      "retrieved_at": "2026-11-21T06:54:24.363641+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q617826.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q617826.json",
+      "sha256": "bf5b30a6960f0287a7987aa04cc1237328a5905e7955e878065f1e6eee14ed32",
+      "bytes": 20115,
+      "retrieved_at": "2026-11-21T06:54:16.529311+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q618176.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q618176.json",
+      "sha256": "89e33e26faca438ed9dc03631d5d930e739888323fd4c1e1f3a03856b0963c3a",
+      "bytes": 17141,
+      "retrieved_at": "2026-11-21T06:54:32.248727+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q618418.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q618418.json",
+      "sha256": "28e8574a9d8964523dc8400ca2f0bca6739e2c91509458bf83ad7607e5a00a59",
+      "bytes": 17757,
+      "retrieved_at": "2026-11-21T06:54:55.435470+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q629429.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q629429.json",
+      "sha256": "25b677db82944e6579258ca8bf89d86ad8dbd6c619dbaccf6dd8bbfa32fdfe34",
+      "bytes": 22082,
+      "retrieved_at": "2026-11-21T06:55:10.760041+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q736201.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q736201.json",
+      "sha256": "32763a40be2d8495f5b2ed2a6e81ad6427efb5f82870c485328acec61036128a",
+      "bytes": 15970,
+      "retrieved_at": "2026-11-21T06:54:26.893461+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q782659.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q782659.json",
+      "sha256": "6f23690d588ae95db9d21e07ee79782f4940d8a9090a54d156b97a2740b2fb2c",
+      "bytes": 16442,
+      "retrieved_at": "2026-11-21T06:54:59.644804+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q917605.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q917605.json",
+      "sha256": "5167342a9f68816535484e1fc42daa4f793304af4ecdd5735857736baed1ddec",
+      "bytes": 12993,
+      "retrieved_at": "2026-11-21T06:55:26.532130+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q923798.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q923798.json",
+      "sha256": "87f01b45ba947fd15785c37d6a0d483fc7784484c5fb985dddbfcf7467a6d7c9",
+      "bytes": 15810,
+      "retrieved_at": "2026-11-21T06:54:58.866919+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q946365.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q946365.json",
+      "sha256": "d098d93c7944bf0cda34243b76f9341ee783bde33d7b85bab338e0f642f120af",
+      "bytes": 18073,
+      "retrieved_at": "2026-11-21T06:54:46.787341+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q976219.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q976219.json",
+      "sha256": "02ed5f21197b33e0bd3b50817194d96bc5892c1ad272e95ad376c24bc1ce2f0e",
+      "bytes": 18899,
+      "retrieved_at": "2026-11-21T06:55:08.416854+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/live/Q980004.json",
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q980004.json",
+      "sha256": "e38cb46feec2b8ba7f813cc99fea76267e371f803d2cb7b6094fdd24265ed09e",
+      "bytes": 19771,
+      "retrieved_at": "2026-11-21T06:54:14.320344+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population2026.zip",
+      "url": "https://stat.gov.pl/download/gfx/portalinformacyjny/pl/defaultaktualnosci/5468/6/41/1/ludnosc_stan_i_struktura_30.06.2026.zip",
+      "sha256": "e2dbf0869c9423f4986b8994eb39c8b45ead0fc09d025df8f570bd8563c03741",
+      "bytes": 10358403,
+      "retrieved_at": "2026-10-20T07:59:29.221834+00:00",
+      "edition": "GUS/TERYT 2026-06-30"
+    },
+    {
+      "path": "sources/population_index.html",
+      "url": "https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/",
+      "sha256": "7c4f0a7c4f68681f17bd649a90720ca2c6b035b4cf1df7d07329858f3428f340",
+      "bytes": 81677,
+      "retrieved_at": "2026-11-21T06:53:13.992974+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population_index.html.txt",
+      "url": "https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/",
+      "sha256": "668d5d6dcbb8f4d442e1e70f297992ba330166e64a39535d1f9d018195227a02",
+      "bytes": 6414,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population_index_head.html",
+      "url": "https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/",
+      "sha256": "7c4f0a7c4f68681f17bd649a90720ca2c6b035b4cf1df7d07329858f3428f340",
+      "bytes": 81677,
+      "retrieved_at": "2026-11-21T07:01:13.385244+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population_page.html",
+      "url": "https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/ludnosc-stan-i-struktura-oraz-ruch-naturalny-w-przekroju-terytorialnym-w-2026-r-stan-w-dniu-30-czerwca,6,41.html",
+      "sha256": "061428b853347942bfa44c3c37d22d6dce7a5e1ee33f786b06806db40044f181",
+      "bytes": 80236,
+      "retrieved_at": "2026-11-21T06:53:16.616731+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population_page.html.txt",
+      "url": "https://stat.gov.pl/obszary-tematyczne/ludnosc/ludnosc/ludnosc-stan-i-struktura-oraz-ruch-naturalny-w-przekroju-terytorialnym-w-2026-r-stan-w-dniu-30-czerwca,6,41.html",
+      "sha256": "d0d55642fd93c4cd36e994d4f47f83ef2175e852047a44018a0b8e2ad0dbbdd3",
+      "bytes": 7002,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/population_subjects.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/subjects?parent-id=G7&page-size=100&format=json",
+      "sha256": "58fcf427d95580fc744e1404f0a7dfb7ed2a63e9093cd7ef0abcca13a029988a",
+      "bytes": 3356,
+      "retrieved_at": "2026-11-21T06:57:46.762047+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/pr_2277.json",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/pull/2277",
+      "sha256": "b9ca1e63f45aaac897c88a5c48fc09bf423cfb9bbd811c3c1f6fe0d6b2f187c5",
+      "bytes": 259,
+      "retrieved_at": "2026-11-21T07:02:25.406975+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/pr_2278.json",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/pull/2278",
+      "sha256": "ff9a2f45a6060a4418fd2441c3d712917ff37fa1c4a2a7edf90ba2878be4b02b",
+      "bytes": 259,
+      "retrieved_at": "2026-11-21T07:02:25.441276+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/pr_2283.json",
+      "url": "https://github.com/dr5hn/countries-states-cities-database/pull/2283",
+      "sha256": "1e4ddccd96b98ac5905082e28fe31539b3c7e1d1126b7a89e0daaa9ed6117967",
+      "bytes": 259,
+      "retrieved_at": "2026-11-21T07:02:25.469968+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/prg/A03_Granice_gmin.cpg",
+      "url": "https://api.dane.gov.pl/media/resources/20260730/00_jednostki_administracyjne_c8fa66ca.zip",
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "bytes": 5,
+      "retrieved_at": "2026-10-09T05:11:21.052003+00:00",
+      "edition": "official PRG resource 2355394 dated 2026-08-03"
+    },
+    {
+      "path": "sources/prg/A03_Granice_gmin.dbf",
+      "url": "https://api.dane.gov.pl/media/resources/20260730/00_jednostki_administracyjne_c8fa66ca.zip",
+      "sha256": "8158ebba602d395d20979331ea2a8ccc9b6b011839b0c4acd6ff9ab785350f62",
+      "bytes": 3114554,
+      "retrieved_at": "2026-10-09T05:11:21.056561+00:00",
+      "edition": "official PRG resource 2355394 dated 2026-08-03"
+    },
+    {
+      "path": "sources/prg/A03_Granice_gmin.prj",
+      "url": "https://api.dane.gov.pl/media/resources/20260730/00_jednostki_administracyjne_c8fa66ca.zip",
+      "sha256": "1d73d2a118be0020575764d43a69c16a11d0cecfae4a5a6499179943a5343486",
+      "bytes": 147,
+      "retrieved_at": "2026-10-09T05:11:21.065425+00:00",
+      "edition": "official PRG resource 2355394 dated 2026-08-03"
+    },
+    {
+      "path": "sources/prg/A03_Granice_gmin.shp",
+      "url": "https://api.dane.gov.pl/media/resources/20260730/00_jednostki_administracyjne_c8fa66ca.zip",
+      "sha256": "1ad3461c774625ede261e183dcc841605eab76b82185f7831c392bcb60233ac5",
+      "bytes": 83485764,
+      "retrieved_at": "2026-10-09T05:11:21.399889+00:00",
+      "edition": "official PRG resource 2355394 dated 2026-08-03"
+    },
+    {
+      "path": "sources/prg/A03_Granice_gmin.shx",
+      "url": "https://api.dane.gov.pl/media/resources/20260730/00_jednostki_administracyjne_c8fa66ca.zip",
+      "sha256": "b39239b7d4987671bee89f98422a078869e40fae6edbcf94754d7c9f6d4d43d2",
+      "bytes": 19932,
+      "retrieved_at": "2026-10-09T05:11:21.444838+00:00",
+      "edition": "official PRG resource 2355394 dated 2026-08-03"
+    },
+    {
+      "path": "sources/prg_terms.json",
+      "url": "https://api.dane.gov.pl/datasets/726",
+      "sha256": "f73ffb1c5bcbe4e3c76286346a2f7c4cfbd88e3d2de397140f5553aa66534246",
+      "bytes": 4981,
+      "retrieved_at": "2026-11-21T06:53:04.197533+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/prior/pl_gminy_v5x.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_gminy_v5x.jsonl",
+      "sha256": "35719df9e94b55469de71ee8eb7b03a962228ca6d674e4b8923fa944e414f783",
+      "bytes": 2450546,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_pop_v5x.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_pop_v5x.jsonl",
+      "sha256": "7f56502da025352fd291078d65272b6595ff3a9a25ef7c19ed66b231be40568c",
+      "bytes": 1726092,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_02_04.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_02_04.jsonl",
+      "sha256": "fca886c568f8da936eb8784ab10e8fc36ec775a73699a29f03b7cd92cf921bcc",
+      "bytes": 242015,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_06_08.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_06_08.jsonl",
+      "sha256": "521ac56508367ab75daa5c0a9b830bf56cf204c35c1c31bc780be1134346ddfb",
+      "bytes": 228897,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_10_12.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_10_12.jsonl",
+      "sha256": "f487ae77f3c7e1a4b1d1bf83d10dfc75e28303a3c799f30d166491bd47b03187",
+      "bytes": 303950,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_14_16_18.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_14_16_18.jsonl",
+      "sha256": "efa203b5e76c1c3701e22bf9006eabaa8e386d0419b1db445da22fc993b41516",
+      "bytes": 284664,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_20_22_24.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_20_22_24.jsonl",
+      "sha256": "724e127440eabd504108a21b9e0f851c02d0f29c8ca14fa6d4d72f98fa70828e",
+      "bytes": 276926,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_26_28_30_32.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_26_28_30_32.jsonl",
+      "sha256": "952763b2967abf274274908e2216dcb13d062dc7e42d2ed958df65c7caf882c1",
+      "bytes": 356072,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/prior/pl_seats_v6x_residual.jsonl",
+      "url": "https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/67779318baf0305e7592718854198aa524603e53/.github/fixes-docs/ledgers/pl_seats_v6x_residual.jsonl",
+      "sha256": "a74aaae72b9330a9a7d90d7ebba49b955330e35fcdedff1e9cc13924fc99440d",
+      "bytes": 57126,
+      "retrieved_at": null,
+      "edition": "67779318baf0305e7592718854198aa524603e53"
+    },
+    {
+      "path": "sources/simc2021_stat.zip",
+      "url": "https://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/pobieranie/pliki_pelne.aspx",
+      "sha256": "1b7db3fd7af3391c8e387092164253732f3d0ce2f2a07c43e9f1dcba3b8e28fd",
+      "bytes": 4530590,
+      "retrieved_at": "2026-10-20T07:55:26.437600+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/simc2026.zip",
+      "url": "https://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/pobieranie/pliki_pelne.aspx",
+      "sha256": "a83f8b13f4baee60933e78d7911ada7c4dc19eaef686d68dac7187da3d70a0ee",
+      "bytes": 3349779,
+      "retrieved_at": "2026-10-20T07:58:56.328885+00:00",
+      "edition": "GUS/TERYT 2026-06-30"
+    },
+    {
+      "path": "sources/statistical_locality.html",
+      "url": "https://bdl.stat.gov.pl/bdl/metadane/teryt/miejscowosc",
+      "sha256": "2b682321683e8062b014d875ff0a835eb845236a9db99f6de395f27ea06d4b01",
+      "bytes": 49794,
+      "retrieved_at": "2026-10-20T07:55:32.222782+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/statistical_locality.html.txt",
+      "url": "https://bdl.stat.gov.pl/bdl/metadane/teryt/miejscowosc",
+      "sha256": "6ae6b83e22b0ef05ed780fcf2b84dcd76afc0b2c3df118e32059be8066491b88",
+      "bytes": 4667,
+      "retrieved_at": null,
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/terc2026.zip",
+      "url": "https://eteryt.stat.gov.pl/eTeryt/rejestr_teryt/udostepnianie_danych/baza_teryt/uzytkownicy_indywidualni/pobieranie/pliki_pelne.aspx",
+      "sha256": "bee14e41af381bd49a2f8ca8e0de9a857de389b637cbf5052d0ec94422aadd72",
+      "bytes": 132057,
+      "retrieved_at": "2026-10-20T07:58:58.011467+00:00",
+      "edition": "GUS/TERYT 2026-06-30"
+    },
+    {
+      "path": "sources/units100_0.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json",
+      "sha256": "8691c723c6ad54234157d9bfb0b07c32e4ca5a23b667b73bf0f7090d500007a8",
+      "bytes": 12037,
+      "retrieved_at": "2026-11-21T06:57:08.526593+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_1.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=1",
+      "sha256": "9a0d5343038420d1f93a7ca423ab04588ebf416c2f2f7e3007bbd8d49293c79f",
+      "bytes": 12089,
+      "retrieved_at": "2026-11-21T06:57:10.357990+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_10.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=10",
+      "sha256": "c5a334de708f1554cead1800493e6595168ac47f045f49db9e369e6701f64abd",
+      "bytes": 12188,
+      "retrieved_at": "2026-11-21T06:57:27.434096+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_11.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=11",
+      "sha256": "1b11099538d8e0f7f67f9c4a805d43797d91a525ea058eac145a6af34f9f9d0b",
+      "bytes": 12199,
+      "retrieved_at": "2026-11-21T06:57:29.231250+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_12.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=12",
+      "sha256": "a68c4b76a0a3cb030d8e9e81c9353b0d093d4abfddef9339934c0e77425a1301",
+      "bytes": 12163,
+      "retrieved_at": "2026-11-21T06:57:31.116737+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_13.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=13",
+      "sha256": "417858800a097acb93a929bbdfcb8f7b8e76b672d45a0f1c8a7fed8b2e962c71",
+      "bytes": 12230,
+      "retrieved_at": "2026-11-21T06:57:32.917859+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_14.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=14",
+      "sha256": "2989e530b60096eb6630b81f988f1090877f5818a7a4bb9e37fd59049da5ec15",
+      "bytes": 12094,
+      "retrieved_at": "2026-11-21T06:57:34.795419+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_15.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=15",
+      "sha256": "a38f9e8028724d113e69aad023033ea2a980a24635bf51d0afb0142a090f06ae",
+      "bytes": 12424,
+      "retrieved_at": "2026-11-21T06:57:36.557162+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_16.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=16",
+      "sha256": "7f8716ae49b8efe63882ead780d2edf629880fb836291afe883993a3e54fea7f",
+      "bytes": 12256,
+      "retrieved_at": "2026-11-21T06:57:38.297192+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_17.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=17",
+      "sha256": "2fe8992ad9f3e8357eea2c39d0a77f041064e1861dd5617afdcb236366dd0a3f",
+      "bytes": 12236,
+      "retrieved_at": "2026-11-21T06:57:40.086979+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_18.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=18",
+      "sha256": "b3bdc6863d06aa3f0db8a0f9a40b1ca3fb72157dec9d3a28b4f74e98b1cd7b7c",
+      "bytes": 12055,
+      "retrieved_at": "2026-11-21T06:57:41.975239+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_19.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=19",
+      "sha256": "1810db5236996ad2a6425c319faea580fcfaaf125018e4f7577c70747e55edf8",
+      "bytes": 12286,
+      "retrieved_at": "2026-11-21T06:57:43.696514+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_2.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=2",
+      "sha256": "8ae52cb352e8e19eaa2c9c98995c8451efabc1820efdd03d97fb309b79b05152",
+      "bytes": 12066,
+      "retrieved_at": "2026-11-21T06:57:12.227460+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_20.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=20",
+      "sha256": "bbb8ace1171572cc0fd86cfaff0c97b141bd73b28880ee4e8ffba30e7450969f",
+      "bytes": 12004,
+      "retrieved_at": "2026-11-21T06:57:45.423177+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_21.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=21",
+      "sha256": "e8fd385cf83ed3962d440c7f0f9f3fd214eaf27b0710320647f2c19cdb8caa3e",
+      "bytes": 11902,
+      "retrieved_at": "2026-11-21T06:57:48.254665+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_22.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=22",
+      "sha256": "3a9bd49fcb482f1c12c83af4a2c529cdc061d335081456eefb815a42dd83bd9e",
+      "bytes": 11889,
+      "retrieved_at": "2026-11-21T06:57:49.968524+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_23.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=23",
+      "sha256": "a83af0962a6476002bf1a1d3b7ae5c01b197ac959e8c5226b5186b1fabd19a00",
+      "bytes": 12126,
+      "retrieved_at": "2026-11-21T06:57:51.766158+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_24.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=24",
+      "sha256": "a8f79ca66a93505e764eff51e467aa08a438b972cb438f59917adc087db96d52",
+      "bytes": 11913,
+      "retrieved_at": "2026-11-21T06:57:53.647542+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_25.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=25",
+      "sha256": "c27ba96ccb37286166f7440aaeecedb1d4ab06ed38af6ab504ca5e0c42045e10",
+      "bytes": 11995,
+      "retrieved_at": "2026-11-21T06:57:55.385477+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_26.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=26",
+      "sha256": "1635f5af7f7d74ad762f40225441a878c4be27a667052e482eb28d8cfd794b98",
+      "bytes": 11975,
+      "retrieved_at": "2026-11-21T06:57:57.180551+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_27.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=27",
+      "sha256": "a4b4f1849d0ca8ff203d8b319b1216e31e3307accbb9f73b43b8312396aae36e",
+      "bytes": 12164,
+      "retrieved_at": "2026-11-21T06:57:58.937814+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_28.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=28",
+      "sha256": "88d3174880684b8a52330ecab756b61e756cd774f49d2a5f317da4c2bc34c7ef",
+      "bytes": 12132,
+      "retrieved_at": "2026-11-21T06:58:00.699123+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_29.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=29",
+      "sha256": "abcf135ce6f7a27cd9d8319b94259f15cb4b2651d18d4f53d2766243c85ed1db",
+      "bytes": 11938,
+      "retrieved_at": "2026-11-21T06:58:02.561802+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_3.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=3",
+      "sha256": "936d34dd87e21e59be279df733a39d63c3119220638d9dc2ae8f36459cebd050",
+      "bytes": 11907,
+      "retrieved_at": "2026-11-21T06:57:13.968644+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_30.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=30",
+      "sha256": "7134b27c71c43eb9c6537c6d181befc0432cddd86672ef5ac1eba506cd015f64",
+      "bytes": 11978,
+      "retrieved_at": "2026-11-21T06:58:04.246013+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_31.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=31",
+      "sha256": "d8ea6ec1dad11ae162545a94a4700da76bc4059e565064d05a64410a0b43e003",
+      "bytes": 12014,
+      "retrieved_at": "2026-11-21T06:58:06.086502+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_32.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=32",
+      "sha256": "d0057e4fc6de95f5f07c7cbcbbc45020c366e4c58ef9052fead24a490f2b4a3f",
+      "bytes": 11945,
+      "retrieved_at": "2026-11-21T06:58:07.883099+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_33.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=33",
+      "sha256": "a97dbb629a85ebb819fb7e39d0968ddc7bba2e8bb62103a6bc5c242233388c55",
+      "bytes": 12028,
+      "retrieved_at": "2026-11-21T06:58:09.747248+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_34.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=34",
+      "sha256": "21b9c337114684bca00f4c93a6f9fad6a8a4b1308b1aada8d088cd7885d4e8a3",
+      "bytes": 12201,
+      "retrieved_at": "2026-11-21T06:58:11.470002+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_35.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=35",
+      "sha256": "9e74be193244d9a2e5fa9fc2247da7583ca9fe5f90f06c94d8ac94203a60aad1",
+      "bytes": 12030,
+      "retrieved_at": "2026-11-21T06:58:13.237966+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_36.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=36",
+      "sha256": "3a1158922a47d4d7b04bdcf911f8abcf152bde3325bd20d6968825482fbe190f",
+      "bytes": 12249,
+      "retrieved_at": "2026-11-21T06:58:15.019981+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_37.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=37",
+      "sha256": "e5aca2fb180a716c51a3960c732c4e9c27898941075a935de9161a1ec6ccb048",
+      "bytes": 12129,
+      "retrieved_at": "2026-11-21T06:58:17.753478+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_38.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=38",
+      "sha256": "01749b57a146937f1a6d4e5a29abcb4f6343e9c3590199aeb4c60f4c2c8506a8",
+      "bytes": 12027,
+      "retrieved_at": "2026-11-21T06:58:19.552867+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_39.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=39",
+      "sha256": "d2b3c7e292f40e3b80edd229cad98851219bf7d9fc9edf21a0b9490624adaf8c",
+      "bytes": 12107,
+      "retrieved_at": "2026-11-21T06:58:21.433283+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_4.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=4",
+      "sha256": "cafec5812dbe7d419a765fcb9418c6de480c061ee41d5edf6662718c4de32b68",
+      "bytes": 11993,
+      "retrieved_at": "2026-11-21T06:57:15.768358+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_40.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=40",
+      "sha256": "c9a31967ccc1cb29e537495e9ce92cd6fe1629d2d1c70d1c1e8f16292e4753df",
+      "bytes": 11925,
+      "retrieved_at": "2026-11-21T06:58:23.153841+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_41.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=41",
+      "sha256": "0aa1fb9cde52896b7f9e4bdeba3f0bdbb797fd223a98f7899bef7975c2ce6837",
+      "bytes": 11627,
+      "retrieved_at": "2026-11-21T06:58:24.954258+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_5.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=5",
+      "sha256": "01d0dd79f7de7e6121c928d798fc026ca8af36f26ad7d70611ef38d026e20de5",
+      "bytes": 12171,
+      "retrieved_at": "2026-11-21T06:57:18.517035+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_6.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=6",
+      "sha256": "466cb01b79cba74c09707cfdd9b37ea5985fc456f0df41eec2c622ae52b46c63",
+      "bytes": 12171,
+      "retrieved_at": "2026-11-21T06:57:20.283727+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_7.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=7",
+      "sha256": "432cd312b0d3cf36362e15549a7a8e409b6946f09e265ae5a1db9221d914b590",
+      "bytes": 12167,
+      "retrieved_at": "2026-11-21T06:57:22.040164+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_8.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=8",
+      "sha256": "678e0e0e3a3e52971b39c30dce8b22ff41ad1dee87a9feaa84f4d51e8304f7f3",
+      "bytes": 12054,
+      "retrieved_at": "2026-11-21T06:57:23.800301+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units100_9.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=100&format=json&page=9",
+      "sha256": "170e1c4a62873ac7e256c13af2b937fc7690889531745606c87c34a7507308f0",
+      "bytes": 12292,
+      "retrieved_at": "2026-11-21T06:57:25.605510+00:00",
+      "edition": "retained publisher response; see source metadata"
+    },
+    {
+      "path": "sources/units_0.json",
+      "url": "https://bdl.stat.gov.pl/api/v1/units?level=6&page-size=1000&format=json",
+      "sha256": "438e367db71f01a6ede9d5e44c7e3142dd3588f876086c56cde1ef90f7a80e8b",
+      "bytes": 408,
+      "retrieved_at": "2026-11-21T06:54:33.116726+00:00",
+      "edition": "retained publisher response; see source metadata"
+    }
+  ],
+  "limitations": [
+    "No population/year inference from Wikidata. Earlier ledgers prove codes, not current population.",
+    "Integral parts of one basic locality may enter its census total; any other basic locality forces a hold.",
+    "Local MySQL cannot start after Homebrew upgraded the binary beyond the data-folder version; MySQL check skipped, no repair/initialisation attempted.",
+    "BDL help terms/license URLs return an unavailable-page body; those are not relied on as terms. Full GUS reuse and copyright pages plus official BDL dataset licence are the reuse evidence."
+  ]
+}
