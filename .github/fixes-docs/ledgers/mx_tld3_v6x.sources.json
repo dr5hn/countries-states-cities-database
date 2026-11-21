@@ -2,7 +2,7 @@
   "schema_version": 1,
   "title": "top15_mx_build_tld3",
   "base_commit": "7e61278303690bac32b3be4cc2663453832d81af",
-  "ledger_sha256": "b3fad3aa67b8ffa86447aca1cd2dcbf0753ef4c6f5828df0a2fb33c5a9fc91ef",
+  "ledger_sha256": "afb17ebb264e3cb2282fab590b45129217f04403a57d7817d6139ca02907c5c9",
   "counts": {
     "total": 11146,
     "targets": 450,
@@ -19,12 +19,12 @@
     "pop_after": 10495,
     "held_reasons": {
       "no_unique_same_name_urban_containing_polygon": 283,
-      "name_mismatch_case_accents_only": 104,
+      "name_mismatch_case_accents_only": 21,
       "own_item_unavailable_or_redirect": 5,
       "own_code_geometry_disagrees_with_stored_point": 8,
       "code_state_mismatch": 20,
       "multiple_literal_INEGI_codes": 1,
-      "locality_absent_or_withdrawn_in_catalogue": 2,
+      "locality_absent_or_withdrawn_in_catalogue": 85,
       "code_bound_to_another_row": 1,
       "stored_point_outside_own_municipio_polygon": 24
     }
