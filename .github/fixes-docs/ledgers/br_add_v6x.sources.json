@@ -1,0 +1,311 @@
+{
+  "schema_version": 1,
+  "base": "76a6e1a60eaea25fad54710b0981b461c0629c2c",
+  "sources": [
+    {
+      "file": "sources/6579_population_2026.json",
+      "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+      "bytes": 1508656,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+        "retrieved_utc": "2026-11-19T20:10:51.943590+00:00",
+        "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+        "bytes": 1508656,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/BR_Municipios_2025.zip",
+      "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+      "bytes": 237062431,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+        "bytes": 237062431,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/DTB_2025.zip",
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+      "bytes": 1635600,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": "2026-11-20T07:54:44.243056+00:00",
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+        "bytes": 1635600,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/Localidades_Brasil_shp.zip",
+      "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+      "bytes": 4511488,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/Localidades_Brasil_shp.zip",
+        "retrieved_utc": "2026-11-20T07:56:31.960820+00:00",
+        "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+        "bytes": 4511488,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/Q123021065.json",
+      "sha256": "216f2f196c4b07b016fc7b8883914237491361c0460ccbadc94ebb10175114ba",
+      "bytes": 13144,
+      "receipt": {}
+    },
+    {
+      "file": "sources/Q3136609.json",
+      "sha256": "8c75b83ad85a676a75586bf175b90cba62dd6d1e85f0e324a593c32df9bd2d79",
+      "bytes": 41138,
+      "receipt": {}
+    },
+    {
+      "file": "sources/RELATORIO_DTB_BRASIL_2025_MUNICIPIOS.ods.rows.json",
+      "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+      "bytes": 836643,
+      "receipt": {
+        "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+        "bytes": 836643,
+        "mode": "retained exact public evidence; rehashed 2026-11-23",
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "provenance": "Derived DTB table; both target code/name pairs independently reverified against original ODS in retained DTB_2025.zip"
+      }
+    },
+    {
+      "file": "sources/cities1000.zip",
+      "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+      "bytes": 11095530,
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/cities1000.zip",
+        "retrieved_utc": "2026-11-14T08:12:04.457147+00:00",
+        "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+        "bytes": 11095530,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/decree_8777_original_senado.html",
+      "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+      "bytes": 64004,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+        "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+        "bytes": 64004,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/decree_9903_publication.html",
+      "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+      "bytes": 48331,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+        "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+        "bytes": 48331,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/gn_wikidata.json",
+      "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+      "bytes": 130006,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-20T08:20:29.809146+00:00",
+        "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+        "bytes": 130006,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/issue1643.json",
+      "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+      "bytes": 1972,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/issues/1643",
+        "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+        "bytes": 1972,
+        "mode": "live GitHub read 2026-11-23; selected public fields only"
+      }
+    },
+    {
+      "file": "sources/pda_2024_2025.txt",
+      "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+      "bytes": 148346,
+      "receipt": {
+        "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+        "bytes": 148346,
+        "mode": "retained exact public evidence; rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/pr2269.json",
+      "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+      "bytes": 936,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2269",
+        "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+        "bytes": 936,
+        "mode": "live GitHub read 2026-11-23; selected public fields only"
+      }
+    },
+    {
+      "file": "sources/qlever_current.json",
+      "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+      "bytes": 1549287,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+        "bytes": 1549287,
+        "mode": "retained public evidence rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/register.json",
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+      "bytes": 3748384,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+        "bytes": 3748384,
+        "mode": "retained exact public evidence; rehashed 2026-11-23",
+        "provenance": "Derived DTB table; both target code/name pairs independently reverified against original ODS in retained DTB_2025.zip"
+      }
+    },
+    {
+      "file": "sources/rio_codes.json",
+      "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
+      "bytes": 214328,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
+        "retrieved_utc": "2026-11-23T08:27:01.082984+00:00",
+        "status": 200,
+        "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
+        "bytes": 214328
+      }
+    },
+    {
+      "file": "sources/rio_item.json",
+      "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
+      "bytes": 3458,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/894753c5397b45588921c931cd01130f?f=json",
+        "retrieved_utc": "2026-11-23T08:27:01.488129+00:00",
+        "status": 200,
+        "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
+        "bytes": 3458
+      }
+    },
+    {
+      "file": "sources/rio_layer.json",
+      "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
+      "bytes": 22113,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0?f=json",
+        "retrieved_utc": "2026-11-23T08:26:59.178497+00:00",
+        "status": 200,
+        "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
+        "bytes": 22113
+      }
+    },
+    {
+      "file": "sources/rio_population_item.json",
+      "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
+      "bytes": 5147,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/1df0079668254699b83a56dac4d8ed56?f=json",
+        "retrieved_utc": "2026-11-23T08:35:07.569887+00:00",
+        "status": 200,
+        "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
+        "bytes": 5147
+      }
+    },
+    {
+      "file": "sources/rio_population_map_item.json",
+      "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
+      "bytes": 4334,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/fd354740f1934bf5bf8e9b0e2b509aa9?f=json",
+        "retrieved_utc": "2026-11-23T08:35:07.868119+00:00",
+        "status": 200,
+        "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
+        "bytes": 4334
+      }
+    },
+    {
+      "file": "sources/rio_service.json",
+      "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
+      "bytes": 3821,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer?f=json",
+        "retrieved_utc": "2026-11-23T08:26:58.629125+00:00",
+        "status": 200,
+        "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
+        "bytes": 3821
+      }
+    },
+    {
+      "file": "sources/tbb-DATA_LICENSE",
+      "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+      "bytes": 26030,
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/blob/2026e/DATA_LICENSE",
+        "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+        "bytes": 26030,
+        "mode": "retained public evidence rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/tbb-release.json",
+      "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+      "bytes": 31761,
+      "receipt": {
+        "url": "https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/tags/2026e",
+        "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+        "bytes": 31761,
+        "mode": "retained public evidence rehashed 2026-11-23"
+      }
+    },
+    {
+      "file": "sources/timezones.geojson.zip",
+      "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+      "bytes": 51940158,
+      "receipt": {
+        "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+        "bytes": 51940158,
+        "mode": "retained exact public evidence; rehashed 2026-11-23",
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip"
+      }
+    },
+    {
+      "file": "sources/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+      "bytes": 481989,
+      "receipt": {
+        "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+        "bytes": 481989,
+        "mode": "retained exact public evidence; rehashed 2026-11-23",
+        "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+        "provenance": "Retained exact tz_v5x source archive; no new retrieval date claimed"
+      }
+    }
+  ],
+  "licences": {
+    "wikidata": "CC0",
+    "IBGE_population": "Owner accepted Decreto 8.777/2016 arts 3 IV and 4, amended Decreto 9.903/2019; SIDRA 6579 in IBGE PDA; attribute IBGE; municipality estimate including rural area",
+    "IBGE_boundaries": "IBGE Malha 2025 CC BY 4.0; reference containment only",
+    "timezone_boundary_builder": "ODbL; polygon check only; IANA zone.tab public domain"
+  },
+  "id_allocation": {
+    "current_max": 202853,
+    "proposed_ids": [
+      202854,
+      202855
+    ],
+    "reserved_and_retired_checked": true,
+    "maintainer_must_recheck_before_merge": true
+  },
+  "addition_events": "None: fresh ids are derived from history by migrations.py; no addition event schema exists. Placeholder 9999895 used in local migration simulation."
+}
