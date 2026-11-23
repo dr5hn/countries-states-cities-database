@@ -175,78 +175,6 @@
       }
     },
     {
-      "file": "sources/rio_codes.json",
-      "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
-      "bytes": 214328,
-      "receipt": {
-        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
-        "retrieved_utc": "2026-11-23T08:27:01.082984+00:00",
-        "status": 200,
-        "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
-        "bytes": 214328
-      }
-    },
-    {
-      "file": "sources/rio_item.json",
-      "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
-      "bytes": 3458,
-      "receipt": {
-        "url": "https://www.arcgis.com/sharing/rest/content/items/894753c5397b45588921c931cd01130f?f=json",
-        "retrieved_utc": "2026-11-23T08:27:01.488129+00:00",
-        "status": 200,
-        "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
-        "bytes": 3458
-      }
-    },
-    {
-      "file": "sources/rio_layer.json",
-      "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
-      "bytes": 22113,
-      "receipt": {
-        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0?f=json",
-        "retrieved_utc": "2026-11-23T08:26:59.178497+00:00",
-        "status": 200,
-        "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
-        "bytes": 22113
-      }
-    },
-    {
-      "file": "sources/rio_population_item.json",
-      "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
-      "bytes": 5147,
-      "receipt": {
-        "url": "https://www.arcgis.com/sharing/rest/content/items/1df0079668254699b83a56dac4d8ed56?f=json",
-        "retrieved_utc": "2026-11-23T08:35:07.569887+00:00",
-        "status": 200,
-        "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
-        "bytes": 5147
-      }
-    },
-    {
-      "file": "sources/rio_population_map_item.json",
-      "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
-      "bytes": 4334,
-      "receipt": {
-        "url": "https://www.arcgis.com/sharing/rest/content/items/fd354740f1934bf5bf8e9b0e2b509aa9?f=json",
-        "retrieved_utc": "2026-11-23T08:35:07.868119+00:00",
-        "status": 200,
-        "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
-        "bytes": 4334
-      }
-    },
-    {
-      "file": "sources/rio_service.json",
-      "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
-      "bytes": 3821,
-      "receipt": {
-        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer?f=json",
-        "retrieved_utc": "2026-11-23T08:26:58.629125+00:00",
-        "status": 200,
-        "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
-        "bytes": 3821
-      }
-    },
-    {
       "file": "sources/tbb-DATA_LICENSE",
       "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
       "bytes": 26030,
@@ -307,5 +235,5 @@
     "reserved_and_retired_checked": true,
     "maintainer_must_recheck_before_merge": true
   },
-  "addition_events": "None: fresh ids are derived from history by migrations.py; no addition event schema exists. Placeholder 9999895 used in local migration simulation."
+  "addition_events": "None: fresh ids are derived from history by migrations.py; no addition event schema exists. Recorded under PR 2291."
 }
