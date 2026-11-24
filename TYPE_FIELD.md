@@ -257,6 +257,22 @@ Reviewed rows bind a 2020 Census place only through their own P774 equal to its 
 
 The [US item and former-CDP ledger](.github/fixes-docs/ledgers/us_fix3_v6x.jsonl) applies the preceding binding veto to both current and proposed own items before correcting or supplying an item through a same-name, same-state 2020 Census place with strict stored-point containment and an exact own P774 GEOID or P590 ANSI code, or through an own P590 for the unique same-name GNIS Populated Place within 1 km with no other within 5 km, uses the preceding classification and population rules for accepted Census bindings, and permits the formerly held former-CDP rows as `locality / unincorporated community / 3` only with a nonhistorical own GNIS Populated Place, no own item P774 or P590 matching any 2020 Census place or county subdivision, no same-name 2020 place in the state and a point outside every 2020 incorporated place and CDP; Items already owned by another CSC row and county or independent-city duplicate records remain unchanged for v7; Puerto Rico, abandoned missing-item rows, conflicting identifiers, township or county-subdivision classes and ambiguous bindings remain held.
 
+### Spain
+
+Spanish municipios are `municipality / municipio / 3`; INE singular population entities are
+`locality / entidad singular de población / 4`, and núcleos are `locality / núcleo de población / 5`.
+These are separate scopes: a settlement keeps its own item and population when a municipio is added.
+Official municipal districts use `section / distrito / 4` (`districte` in Barcelona), under their
+municipio. Neighbourhoods use `section / barrio` (`barri` in Barcelona, `barriada` in Palma), at level 5
+under a verified district row. Barcelona, Pamplona, Burgos, Palma and Zaragoza document rule 6's
+urban-containment model for the reviewed neighbourhoods whose district row is absent: level 4 under
+their municipio. Madrid uses district ancestry for Costillares (the Pinar de Chamartín row) and the
+urban-containment model for Las Tablas, a municipally recognised functional barrio rather than an
+administrative barrio. A missing verified parent remains null; no settlement row substitutes for a
+municipio. The Centro district retains row 33695 and item Q1763376. See the
+[Spain scope ledger](.github/fixes-docs/ledgers/es_scope_v6x.jsonl) for per-row class, hierarchy,
+official city source, identity and population decisions.
+
 ### Uruguay
 
 In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or
