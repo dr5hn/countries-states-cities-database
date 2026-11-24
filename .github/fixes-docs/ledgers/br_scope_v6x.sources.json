@@ -1,0 +1,854 @@
+{
+  "schema_version": 1,
+  "base_commit": "86d05a803542589b580cf1e3ed5b3827ae9f2693",
+  "ledger_sha256": "870a050049dfa4f28df151200413c1c822ec0ae75259fc3ec77db026827d3550",
+  "sources": [
+    {
+      "path": "sources/4714_population_2022.json",
+      "sha256": "ec3c169ff4e6f59641c3ec681aabe2b96b65edf2273e2f319eaa37d565413558",
+      "bytes": 1447059,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/4714/n6/all/v/93/p/2022",
+        "retrieved_utc": "2026-11-16T08:27:26.766634+00:00",
+        "sha256": "ec3c169ff4e6f59641c3ec681aabe2b96b65edf2273e2f319eaa37d565413558",
+        "bytes": 1447059,
+        "status": 200,
+        "retained_hash_checked_utc": "2026-11-24T08:28:22.277819+00:00"
+      }
+    },
+    {
+      "path": "sources/6579_population_2025.json",
+      "sha256": "3a2be712c79be2c8c50bd16527cd5cfcf14a58b0ab4c80bef379dc0f7c7e262d",
+      "bytes": 1508654,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2025",
+        "retrieved_utc": "2026-11-19T20:08:46.268252+00:00",
+        "status": 200,
+        "sha256": "3a2be712c79be2c8c50bd16527cd5cfcf14a58b0ab4c80bef379dc0f7c7e262d",
+        "bytes": 1508654,
+        "retained_hash_checked_utc": "2026-11-24T08:28:22.292902+00:00"
+      }
+    },
+    {
+      "path": "sources/6579_population_2026.json",
+      "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+      "bytes": 1508656,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+        "retrieved_utc": "2026-11-19T20:10:51.943590+00:00",
+        "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+        "bytes": 1508656,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.638530+00:00"
+      }
+    },
+    {
+      "path": "sources/BR_Municipios_2025.zip",
+      "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+      "bytes": 237062431,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+        "bytes": 237062431,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.593105+00:00"
+      }
+    },
+    {
+      "path": "sources/DTB_2025.zip",
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+      "bytes": 1635600,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": "2026-11-20T07:54:44.243056+00:00",
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+        "bytes": 1635600,
+        "retained_hash_checked_utc": "2026-11-24T08:25:08.545059+00:00"
+      }
+    },
+    {
+      "path": "sources/Localidades_Brasil_shp.zip",
+      "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+      "bytes": 4511488,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/Localidades_Brasil_shp.zip",
+        "retrieved_utc": "2026-11-20T07:56:31.960820+00:00",
+        "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+        "bytes": 4511488,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.966116+00:00"
+      }
+    },
+    {
+      "path": "sources/Malha_2025_technical.pdf",
+      "sha256": "bc88c44624c8852b4796b72b525f9092cd770415403c1a3486a8d48bcefc9e89",
+      "bytes": 707028,
+      "receipt": {
+        "url": "https://biblioteca.ibge.gov.br/visualizacao/livros/liv102268.pdf",
+        "retrieved_utc": "2026-11-16T07:44:43.284663+00:00",
+        "sha256": "bc88c44624c8852b4796b72b525f9092cd770415403c1a3486a8d48bcefc9e89",
+        "bytes": 707028,
+        "status": 200,
+        "retained_hash_checked_utc": "2026-11-24T08:34:56.094989+00:00"
+      }
+    },
+    {
+      "path": "sources/Q1008300.json",
+      "sha256": "c96b7b1bd8fbf700616eb177811de7d636b670f7703971522b22312e135edbb6",
+      "bytes": 63426,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q10854988.json",
+      "sha256": "1674ee8d945bdf9f91b00c33c8e493c4d4c99a6a378ad353184f8eeb2db6b572",
+      "bytes": 63208,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q14209562.json",
+      "sha256": "8beba6590aa5d55efaa8953d9b5edecfc9387d8ee58161c17f1be986e347c09d",
+      "bytes": 5914,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1638397.json",
+      "sha256": "12401e32972ea0015b7e07e8f2e4b5feee3970c4e20af9f597b36241b45eab4a",
+      "bytes": 66242,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q173849.json",
+      "sha256": "8fcf8aa50cadbc15389d92e0ffe7041f1a652c3729f0e28c99731b6f8dacf6ab",
+      "bytes": 72731,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1750090.json",
+      "sha256": "f1f39df7cfce2a6bb88726a9fe73dce6225b8b418fd2a520c1c08549a3053ab4",
+      "bytes": 59241,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1763270.json",
+      "sha256": "80601bb8d40b35f85d86dd38e0bb8c5b3c7a6d86ab44f25b75503ef744823a20",
+      "bytes": 60138,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1784242.json",
+      "sha256": "26c81e3726d3e2a19d8e14e3f40394d90920a6f2149d68ae17700fc60aa19d65",
+      "bytes": 64342,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1793156.json",
+      "sha256": "a3454ebc4a4f2760ce405ab31ef47aa50ec20caa2f25c77203b774a81c82b65d",
+      "bytes": 61058,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1793368.json",
+      "sha256": "9aea8faa5c81c9c1b7c2305a1dd246477ae09432800f5783a467e625b57ba689",
+      "bytes": 61196,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1793568.json",
+      "sha256": "b16c75113727b72ab52ca2a53a9724707528ea5f1084c59a068d0d582002c5d0",
+      "bytes": 58500,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1793833.json",
+      "sha256": "c200dc2e793629afecb9e5bab6b6051148caa9a767eec32d4183e414c7e3963f",
+      "bytes": 63106,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1794400.json",
+      "sha256": "9427419b9cf06b988385b792ebee978de4230f7046564c5df022a3bd1875d1b3",
+      "bytes": 61782,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1798824.json",
+      "sha256": "f7582b8dfb453a86ad3788eb9455e724ec3d72480387b834f199c8b93c07a96b",
+      "bytes": 54965,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1798829.json",
+      "sha256": "30b57e5a7cb0ade556f712aa80e565aff09289acd1ac48b8a87ec3e62f44e2b1",
+      "bytes": 63681,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1801542.json",
+      "sha256": "bd57468a2e7fe0a32dd7fa0d02b0bf40250ce5a72785d460a4970db156c66b21",
+      "bytes": 59767,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1805412.json",
+      "sha256": "9b66f50be2fd1498a51648a4e683fa4a33f3788eaad48772dc7d29a9b2466d8b",
+      "bytes": 71729,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1806340.json",
+      "sha256": "75cb00f8aaf9ff1f544702e10aa17e98e33affbe377e51dcb5bfb584d23d55ba",
+      "bytes": 64843,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q1808440.json",
+      "sha256": "183112d8f83666f5d7bc2484c7180d98b4531746ca9b6b3a974d858a611c01fe",
+      "bytes": 56614,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2009097.json",
+      "sha256": "49601f08ea78c05bc74e5edb14d45b5ca827746aab64c95ad870ef7ea177a27a",
+      "bytes": 62278,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2018997.json",
+      "sha256": "bec7ddcb789bb0a8f998ec8342e2552df8809393fd55e23c9b7a38309f81a113",
+      "bytes": 61921,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2019063.json",
+      "sha256": "dfba57acdb6ce16b94d628e9e5cfa1ba88d8ab7b46892f3e1fbf7eb166c7bba4",
+      "bytes": 59442,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2064956.json",
+      "sha256": "73c0c0ccd3ff5e3a5c5ee7292d3b6d0df5c07d3043aaaef6535a9b517c93b9b6",
+      "bytes": 62498,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2065202.json",
+      "sha256": "0d567f0db0c89c8baa3799db784bb1f9f77b31fe53836b18b1ff012f02b7e7e6",
+      "bytes": 53602,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2068823.json",
+      "sha256": "2fdc5887f52fe6e87ead8dcc8d5368b8dafa499777da3dbc0248233321a6a300",
+      "bytes": 63344,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2068863.json",
+      "sha256": "59a0ffd67a87284a4ea310f53f0a4b542f41e8423f8d668b5f648928d7a76972",
+      "bytes": 59593,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2078937.json",
+      "sha256": "d31d5a087eba9236dac23799517794aee4f5ebca3b3c02d3d357b42adbbb6a77",
+      "bytes": 62082,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2090942.json",
+      "sha256": "b41c19563d4b00e8ef9c7e2eccfb96d7f009c119a34bf50ab0e81c7ed417a256",
+      "bytes": 66587,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q218646.json",
+      "sha256": "6e353aab96d1e21c1ae65cb724a6abb6eef25ac084d21626fe23151272d9ed14",
+      "bytes": 12125,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22013968.json",
+      "sha256": "55b937715bb87eca6c9164cd1aa8a3ca3f516171883ed7bf95d7cb2ca91a9bea",
+      "bytes": 7857,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22014132.json",
+      "sha256": "913fd28f60fe891edb0a8f0c916f94477349acd10deb0d7a8b65643a4b7a9f88",
+      "bytes": 6220,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22014945.json",
+      "sha256": "675a885f4efee496649b2094d0b4a06b45ae1bf4696f925c67bc362afd262cdb",
+      "bytes": 7970,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22014990.json",
+      "sha256": "07a516e581fe0428f329df9d8e4d897152fc608dac2c19579781aad4599aad44",
+      "bytes": 7621,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22015964.json",
+      "sha256": "490032291122e2c73020c132d4fd45aede92b47384f6d814c3b9df5bce926625",
+      "bytes": 8432,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22018312.json",
+      "sha256": "a617d3bea140ed2b066bab31801210be865fedb4f304f7449bba1be6b8205284",
+      "bytes": 7246,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22020773.json",
+      "sha256": "af915c825bbfb2afd1c24c2db524607494ebcce42c7c6c10125d72cba7b75c0c",
+      "bytes": 6709,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22021608.json",
+      "sha256": "e7e8c6e79720d6295caf9f75a31cf024c6404f811bdde8969317ff1c7278ef9f",
+      "bytes": 7269,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22023546.json",
+      "sha256": "cd44432a459438298890361b19ad1f330c09b46f0fb6e53c7d0336841e951437",
+      "bytes": 7663,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22024027.json",
+      "sha256": "0d10a2a1146e63f448913860b219ce720fc63621339a322a06b95aa8ae57d592",
+      "bytes": 6869,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22025015.json",
+      "sha256": "1994dee1b11d9ec213a7daa964bd60905bc5cb57af48c689d93b2a0c11de4965",
+      "bytes": 7199,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22032938.json",
+      "sha256": "d816cdefda15ea1b11a4c276160f692f0306f203092ef64c118b774af3da171f",
+      "bytes": 8454,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22034774.json",
+      "sha256": "3faac458297e61a134115f2f423886f4128652b7c5af23f31fc156ce06fec5ab",
+      "bytes": 7458,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22035103.json",
+      "sha256": "fb65aa1569e63ba62f3fd817253bd1a2a2d2e2eeb21400e1cc7e0c1d9451ebd5",
+      "bytes": 6063,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22035261.json",
+      "sha256": "56e76809db776017ae4d67aae6ac5f03f7d0754c5b39d7e51837e49b8f38b40b",
+      "bytes": 6825,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22038377.json",
+      "sha256": "bf598c81d0546a1ab9c1d551d17763819dfacc441119e4af560ce758db191924",
+      "bytes": 7732,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22038543.json",
+      "sha256": "7e32e66a85459ec23e74b232cf78c0e527aa157c26f88917710359a35714beda",
+      "bytes": 6502,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22040135.json",
+      "sha256": "bdee676e74d5b001668c884174f6609387a3dd74f1a6eed5c43a6ce6729ccba1",
+      "bytes": 6542,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22042268.json",
+      "sha256": "5d1d3922eecc37b54aea4abacfb525d32b29bfcd5ba327084f5c33679ce04084",
+      "bytes": 6212,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22044973.json",
+      "sha256": "2e023d5a736ae85ea78e310e1d688ebe1a2f3c868649e472a573c38fa8e1dee5",
+      "bytes": 5250,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22047120.json",
+      "sha256": "a6eae2e79cae9f48079fd377054753b717de91d45dab87f9939d4bbc4c4f0d75",
+      "bytes": 4734,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22054061.json",
+      "sha256": "21b68242dc9008cf916052afc9ebd184a27df2c0e12853ea90192249eb5d62f2",
+      "bytes": 6622,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22054605.json",
+      "sha256": "392b5b764979ea504557d53b38dd3ea19dfbfe91d34c937d7833cf2d45810f98",
+      "bytes": 5280,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22055824.json",
+      "sha256": "86ed42a0ad08f522043b82d7fe20b4b125738f488b89df78f7c39decb255e9ca",
+      "bytes": 7890,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22057033.json",
+      "sha256": "529aae49be92ac41c0c7523a405f9cc95af22a5c2795988fccb0d2d930c93ae8",
+      "bytes": 6686,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22065072.json",
+      "sha256": "13d0b881084828186b785e33c863fb6d67755729e4066df2721c73d4717e4e97",
+      "bytes": 5265,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22067433.error0.json",
+      "sha256": "1674ee8d945bdf9f91b00c33c8e493c4d4c99a6a378ad353184f8eeb2db6b572",
+      "bytes": 63208,
+      "receipt": {
+        "name": "Q22067433",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22067433.json",
+        "ids": [
+          "Q22067433"
+        ],
+        "request_started_at": "2026-11-24T08:27:39.908911+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:27:40.931121+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22067433.json",
+        "headers": {
+          "date": "Tue, 24 Nov 2026 08:27:40 GMT",
+          "server": "mw-web.codfw.main-66bbf74fbf-slwf4",
+          "x-content-type-options": "nosniff",
+          "accept-ch": "",
+          "access-control-allow-origin": "*",
+          "x-frame-options": "DENY",
+          "last-modified": "Fri, 20 Nov 2026 07:08:34 GMT",
+          "content-type": "application/json; charset=UTF-8",
+          "age": "0",
+          "x-cache": "cp5018 miss, cp5018 pass",
+          "x-cache-status": "pass",
+          "strict-transport-security": "max-age=106384710; includeSubDomains; preload",
+          "report-to": "{ \"group\": \"wm_nel\", \"max_age\": 604800, \"endpoints\": [{ \"url\": \"https://intake-logging.wikimedia.org/v1/events?stream=w3c.reportingapi.network_error&schema_uri=/w3c/reportingapi/network_error/1.0.0\" }] }",
+          "nel": "{ \"report_to\": \"wm_nel\", \"max_age\": 604800, \"failure_fraction\": 0.05, \"success_fraction\": 0.0}",
+          "cache-control": "private, s-maxage=0, max-age=0, must-revalidate, no-transform",
+          "vary": "Accept-Encoding,User-Agent",
+          "transfer-encoding": "chunked",
+          "x-analytics": "",
+          "connection": "close"
+        },
+        "status": 200,
+        "sha256": "1674ee8d945bdf9f91b00c33c8e493c4d4c99a6a378ad353184f8eeb2db6b572",
+        "bytes": 63208,
+        "revision_id": null,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "path": "sources/Q22067433.redirect.json",
+      "sha256": "21e700b28ecea6d63fd96ed124d655e01d99f7244789c7a0242c0860382e95a1",
+      "bytes": 97,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q22074324.error0.json",
+      "sha256": "8beba6590aa5d55efaa8953d9b5edecfc9387d8ee58161c17f1be986e347c09d",
+      "bytes": 5914,
+      "receipt": {
+        "name": "Q22074324",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22074324.json",
+        "ids": [
+          "Q22074324"
+        ],
+        "request_started_at": "2026-11-24T08:45:07.112438+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:45:08.357363+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22074324.json",
+        "headers": {
+          "date": "Tue, 24 Nov 2026 08:45:08 GMT",
+          "server": "mw-web.codfw.main-66bbf74fbf-8b7xc",
+          "x-content-type-options": "nosniff",
+          "accept-ch": "",
+          "access-control-allow-origin": "*",
+          "x-frame-options": "DENY",
+          "last-modified": "Thu, 02 Nov 2023 05:40:33 GMT",
+          "content-type": "application/json; charset=UTF-8",
+          "age": "1",
+          "accept-ranges": "bytes",
+          "x-cache": "cp5018 miss, cp5018 pass",
+          "x-cache-status": "pass",
+          "strict-transport-security": "max-age=106384710; includeSubDomains; preload",
+          "report-to": "{ \"group\": \"wm_nel\", \"max_age\": 604800, \"endpoints\": [{ \"url\": \"https://intake-logging.wikimedia.org/v1/events?stream=w3c.reportingapi.network_error&schema_uri=/w3c/reportingapi/network_error/1.0.0\" }] }",
+          "nel": "{ \"report_to\": \"wm_nel\", \"max_age\": 604800, \"failure_fraction\": 0.05, \"success_fraction\": 0.0}",
+          "cache-control": "private, s-maxage=0, max-age=0, must-revalidate, no-transform",
+          "vary": "Accept-Encoding,User-Agent",
+          "transfer-encoding": "chunked",
+          "x-analytics": "",
+          "connection": "close"
+        },
+        "status": 200,
+        "sha256": "8beba6590aa5d55efaa8953d9b5edecfc9387d8ee58161c17f1be986e347c09d",
+        "bytes": 5914,
+        "revision_id": null,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "path": "sources/Q22074324.redirect.json",
+      "sha256": "38fb7f7b37fd26965c0181264a48c8895d2adc215d6b227bf5ce832f04321255",
+      "bytes": 97,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q2283757.json",
+      "sha256": "671d52c238b43302cc0e50659bbda3a4ab889348bedfb5a96d293790cbcccea9",
+      "bytes": 63294,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q646901.json",
+      "sha256": "c4b91e854992450ec02381528636ad96f52505092f13271d7c60fd6d83a316d3",
+      "bytes": 58130,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q672837.json",
+      "sha256": "51dd156cc5002ce90c8a77c2876796cd2080f074f3d56cdde2c14e183ddda3cb",
+      "bytes": 56855,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q689868.json",
+      "sha256": "14ce79c3f6852fe5602ab74cb0ba89a33ecec58b25c29ee38d534dd5020dd3d7",
+      "bytes": 83680,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q779064.json",
+      "sha256": "a9bf40c0a1d556bdf3959cc2caa912642b689f3e27e736b3e180859e5a3b8b5b",
+      "bytes": 67024,
+      "receipt": null
+    },
+    {
+      "path": "sources/Q988684.json",
+      "sha256": "cd07386a64cbed07c3572830a5a22899aec7037e3e1cd1b894366dc0b52e7723",
+      "bytes": 60927,
+      "receipt": null
+    },
+    {
+      "path": "sources/RELATORIO_DTB_BRASIL_2025_MUNICIPIOS.ods.rows.json",
+      "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+      "bytes": 836643,
+      "receipt": {
+        "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+        "bytes": 836643,
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.624915+00:00"
+      }
+    },
+    {
+      "path": "sources/cities1000.zip",
+      "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+      "bytes": 11095530,
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/cities1000.zip",
+        "retrieved_utc": "2026-11-14T08:12:04.457147+00:00",
+        "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+        "bytes": 11095530,
+        "retained_hash_checked_utc": "2026-11-24T08:25:10.050385+00:00"
+      }
+    },
+    {
+      "path": "sources/decree_8777_original_senado.html",
+      "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+      "bytes": 64004,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+        "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+        "bytes": 64004,
+        "retained_hash_checked_utc": "2026-11-24T08:34:55.875473+00:00"
+      }
+    },
+    {
+      "path": "sources/decree_9903_publication.html",
+      "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+      "bytes": 48331,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+        "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+        "bytes": 48331,
+        "retained_hash_checked_utc": "2026-11-24T08:34:55.934960+00:00"
+      }
+    },
+    {
+      "path": "sources/gn_wikidata.json",
+      "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+      "bytes": 130006,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-20T08:20:29.809146+00:00",
+        "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+        "bytes": 130006,
+        "retained_hash_checked_utc": "2026-11-24T08:25:10.074291+00:00"
+      }
+    },
+    {
+      "path": "sources/issue1643.json",
+      "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+      "bytes": 1972,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/issues/1643",
+        "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+        "bytes": 1972,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.911957+00:00"
+      }
+    },
+    {
+      "path": "sources/own_codes.json",
+      "sha256": "1a013f2987b6f380a06f45c76ee0ca6d538abca2af7dd2c00757497bbe756802",
+      "bytes": 622312,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "resolved_url": "https://qlever.dev/api/wikidata",
+        "status": 200,
+        "sha256": "1a013f2987b6f380a06f45c76ee0ca6d538abca2af7dd2c00757497bbe756802",
+        "bytes": 622312,
+        "query_sha256": "82e8795456a00b1a2472b82e2012e0f52e0232ecd9aac141c9c806a3086331b9",
+        "retrieved_utc": "2026-11-24T08:26:37.132271+00:00"
+      }
+    },
+    {
+      "path": "sources/own_codes.rq",
+      "sha256": "b05f73fff888c47dca04f321b5d04e7afdc0e070ef403363220fdf8d7d7764c2",
+      "bytes": 225295,
+      "receipt": null
+    },
+    {
+      "path": "sources/pda_2024_2025.txt",
+      "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+      "bytes": 148346,
+      "receipt": {
+        "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+        "bytes": 148346,
+        "retained_hash_checked_utc": "2026-11-24T08:34:55.964641+00:00"
+      }
+    },
+    {
+      "path": "sources/pr2258.json",
+      "sha256": "664558bee49081a64edf6d47035a9b90d1684800012f0b754754053a1599d9bb",
+      "bytes": 25789,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2258",
+        "resolved_url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2258",
+        "status": 200,
+        "sha256": "664558bee49081a64edf6d47035a9b90d1684800012f0b754754053a1599d9bb",
+        "bytes": 25789,
+        "retrieved_utc": "2026-11-24T08:34:57.103906+00:00"
+      }
+    },
+    {
+      "path": "sources/pr2269.json",
+      "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+      "bytes": 936,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2269",
+        "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+        "bytes": 936,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.927296+00:00"
+      }
+    },
+    {
+      "path": "sources/pr2291.json",
+      "sha256": "b5a39d52db9b792f12c37c5fb58057aab6a81add98be6b7aac704bc0c6cd654c",
+      "bytes": 24292,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2291",
+        "resolved_url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2291",
+        "status": 200,
+        "sha256": "b5a39d52db9b792f12c37c5fb58057aab6a81add98be6b7aac704bc0c6cd654c",
+        "bytes": 24292,
+        "retrieved_utc": "2026-11-24T08:34:57.553596+00:00"
+      }
+    },
+    {
+      "path": "sources/prior_municipal_bindings.json",
+      "sha256": "a1c25fc168aa27d697844d960f91db1594bcfbf429a79c24cded02becb664d0b",
+      "bytes": 1324049,
+      "receipt": {
+        "sha256": "a1c25fc168aa27d697844d960f91db1594bcfbf429a79c24cded02becb664d0b",
+        "bytes": 1324049,
+        "provenance": "Hash checked work_pop2026b source manifest; derived reviewed municipal bindings"
+      }
+    },
+    {
+      "path": "sources/qlever_current.json",
+      "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+      "bytes": 1549287,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+        "bytes": 1549287,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.759413+00:00"
+      }
+    },
+    {
+      "path": "sources/register.json",
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+      "bytes": 3748384,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+        "bytes": 3748384,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.611289+00:00"
+      }
+    },
+    {
+      "path": "sources/requests.jsonl",
+      "sha256": "7975f21743e46dcda3c54d36d9653197cadd8458d1b31646039f244d8367c196",
+      "bytes": 16026,
+      "receipt": null
+    },
+    {
+      "path": "sources/sidra200_estreito.json",
+      "sha256": "e4a4e059e0280cf750a3dccd2f3188b70fc908d7e9ae90fbbadd3a80938b2603",
+      "bytes": 2408,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/200/n6/2104057/v/93/p/all",
+        "resolved_url": "https://apisidra.ibge.gov.br/values/t/200/n6/2104057/v/93/p/all",
+        "status": 200,
+        "sha256": "e4a4e059e0280cf750a3dccd2f3188b70fc908d7e9ae90fbbadd3a80938b2603",
+        "bytes": 2408,
+        "retrieved_utc": "2026-11-24T08:28:56.466054+00:00"
+      }
+    },
+    {
+      "path": "sources/sidra200_scope.json",
+      "sha256": "dbc758b1092505872fe1860244498a9e407d5f79d404a5578c23d98a9d0e05ab",
+      "bytes": 58367,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/200/n6/1100288,1301506,1301654,1302801,1304401,1706001,1720499,2104057,2105708,2109452,2314003,2407807,2412500,2515500,2603900,2701308,2911808,2918803,2922250,2922300,2928208,2929107,2930774,3102506,3165206,3301009,4116703,4216602,4307807,5000807,5101407/v/93/p/all",
+        "resolved_url": "https://apisidra.ibge.gov.br/values/t/200/n6/1100288,1301506,1301654,1302801,1304401,1706001,1720499,2104057,2105708,2109452,2314003,2407807,2412500,2515500,2603900,2701308,2911808,2918803,2922250,2922300,2928208,2929107,2930774,3102506,3165206,3301009,4116703,4216602,4307807,5000807,5101407/v/93/p/all",
+        "status": 200,
+        "sha256": "dbc758b1092505872fe1860244498a9e407d5f79d404a5578c23d98a9d0e05ab",
+        "bytes": 58367,
+        "retrieved_utc": "2026-11-24T08:29:55.816021+00:00"
+      }
+    },
+    {
+      "path": "sources/sidra200_six.json",
+      "sha256": "9f3dfd9013f41a13d8bdad167f9e951a08a61f4a338d07de0a44395f8e8d7cfc",
+      "bytes": 11722,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/200/n6/2104057,2314003,4216602,4307807,2701308,1100288/v/93/p/all",
+        "resolved_url": "https://apisidra.ibge.gov.br/values/t/200/n6/2104057,2314003,4216602,4307807,2701308,1100288/v/93/p/all",
+        "status": 200,
+        "sha256": "9f3dfd9013f41a13d8bdad167f9e951a08a61f4a338d07de0a44395f8e8d7cfc",
+        "bytes": 11722,
+        "retrieved_utc": "2026-11-24T08:29:30.380738+00:00"
+      }
+    },
+    {
+      "path": "sources/tbb-DATA_LICENSE",
+      "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+      "bytes": 26030,
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/blob/2026e/DATA_LICENSE",
+        "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+        "bytes": 26030,
+        "retained_hash_checked_utc": "2026-11-24T08:34:55.995935+00:00"
+      }
+    },
+    {
+      "path": "sources/tbb-release.json",
+      "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+      "bytes": 31761,
+      "receipt": {
+        "url": "https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/tags/2026e",
+        "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+        "bytes": 31761,
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.891545+00:00"
+      }
+    },
+    {
+      "path": "sources/timezones.geojson.zip",
+      "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+      "bytes": 51940158,
+      "receipt": {
+        "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+        "bytes": 51940158,
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip",
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.864955+00:00"
+      }
+    },
+    {
+      "path": "sources/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+      "bytes": 481989,
+      "receipt": {
+        "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+        "bytes": 481989,
+        "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+        "retained_hash_checked_utc": "2026-11-24T08:25:09.878558+00:00"
+      }
+    }
+  ],
+  "rights": {
+    "Wikidata": "CC0",
+    "IBGE": "Owner existing Decreto 8.777/2016 art.3 IV and art.4 as amended by Decreto 9.903/2019; IBGE attribution; municipal population includes rural territory",
+    "Malha_2025": "CC BY 4.0; containment only",
+    "timezone_boundary_builder": "ODbL; reference containment only",
+    "IANA": "zone.tab public domain"
+  },
+  "id_allocation": {
+    "base_max": 202914,
+    "new_ids": [
+      202915,
+      202916,
+      202917,
+      202918,
+      202919,
+      202920,
+      202921,
+      202922,
+      202923,
+      202924,
+      202925,
+      202926,
+      202927,
+      202928,
+      202929,
+      202930,
+      202931,
+      202932,
+      202933,
+      202934,
+      202935
+    ],
+    "reserved_retired_checked": true
+  },
+  "coverage_method": "All 5571 DTB rows joined to class-unfiltered own P1585 QLever snapshot, plus same-row reviewed municipal bindings (id/name/state/item guards); every proposed own item checked live",
+  "population_clear_rule": "Distinct item and stored point agree within 1 km outside same-name município; municipal official count within factor 1.5; no dated official own-locality count found in saved own item and official locality schema."
+}
