@@ -1,0 +1,2621 @@
+{
+  "schema_version": 1,
+  "base": "b6509aebd1bf26e7b0fb4366498fadb5bb47a9ec",
+  "sources": [
+    {
+      "file": "sources/6579_population_2026.json",
+      "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+      "bytes": 1508656,
+      "receipt": {
+        "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026",
+        "retrieved_utc": "2026-11-19T20:10:51.943590+00:00",
+        "sha256": "2af3c54c40389e6aa25a347ae4ac023e9b1c0b5d7da7eccf76ccd85fd6716a73",
+        "bytes": 1508656,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.505515+00:00"
+      }
+    },
+    {
+      "file": "sources/BR_Municipios_2025.zip",
+      "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+      "bytes": 237062431,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+        "bytes": 237062431,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.804323+00:00"
+      }
+    },
+    {
+      "file": "sources/DTB_2025.zip",
+      "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+      "bytes": 1635600,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": "2026-11-20T07:54:44.243056+00:00",
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27",
+        "bytes": 1635600,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.906072+00:00"
+      }
+    },
+    {
+      "file": "sources/Localidades_Brasil_shp.zip",
+      "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+      "bytes": 4511488,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/Localidades_Brasil_shp.zip",
+        "retrieved_utc": "2026-11-20T07:56:31.960820+00:00",
+        "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9",
+        "bytes": 4511488,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.829967+00:00"
+      }
+    },
+    {
+      "file": "sources/Q1002818.json",
+      "sha256": "89b57b733631682e1c9023d8bd80ef7fa43d23be65fb8d9c146aec6c9ab97f57",
+      "bytes": 18823,
+      "receipt": {
+        "name": "Q1002818",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1002818.json",
+        "ids": [
+          "Q1002818"
+        ],
+        "request_started_at": "2026-11-24T08:00:39.098864+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:40.750818+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1002818.json",
+        "status": 200,
+        "sha256": "89b57b733631682e1c9023d8bd80ef7fa43d23be65fb8d9c146aec6c9ab97f57",
+        "bytes": 18823,
+        "revision_id": 2496724251,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q10374583.json",
+      "sha256": "dc3097d0f096cc42ebc7b708c516c0298c4f67a67a29dee0dc4d143883f382e8",
+      "bytes": 3768,
+      "receipt": {
+        "name": "Q10374583",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10374583.json",
+        "ids": [
+          "Q10374583"
+        ],
+        "request_started_at": "2026-11-24T08:06:52.115734+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:52.604961+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q10374583.json",
+        "status": 200,
+        "sha256": "dc3097d0f096cc42ebc7b708c516c0298c4f67a67a29dee0dc4d143883f382e8",
+        "bytes": 3768,
+        "revision_id": 2372177743,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038261.json",
+      "sha256": "61f974660186e8adc23e1849753197631b9367b959cef22d2ae3017e074e0e4d",
+      "bytes": 3793,
+      "receipt": {
+        "name": "Q112038261",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038261.json",
+        "ids": [
+          "Q112038261"
+        ],
+        "request_started_at": "2026-11-24T08:07:03.707090+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:07:04.675709+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038261.json",
+        "status": 200,
+        "sha256": "61f974660186e8adc23e1849753197631b9367b959cef22d2ae3017e074e0e4d",
+        "bytes": 3793,
+        "revision_id": 2432483683,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038519.json",
+      "sha256": "5316d00e83b3383b79e96330aad3be04d925e7346f886acebfab37c3614865a9",
+      "bytes": 2333,
+      "receipt": {
+        "name": "Q112038519",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038519.json",
+        "ids": [
+          "Q112038519"
+        ],
+        "request_started_at": "2026-11-24T08:07:00.546595+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:07:01.025987+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038519.json",
+        "status": 200,
+        "sha256": "5316d00e83b3383b79e96330aad3be04d925e7346f886acebfab37c3614865a9",
+        "bytes": 2333,
+        "revision_id": 1639656292,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038520.json",
+      "sha256": "a1a2a601137ae0b5abbbf7075eb1df38a82e4320e58d1449763130e795400000",
+      "bytes": 2341,
+      "receipt": {
+        "name": "Q112038520",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038520.json",
+        "ids": [
+          "Q112038520"
+        ],
+        "request_started_at": "2026-11-24T08:06:35.138239+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:35.648408+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038520.json",
+        "status": 200,
+        "sha256": "a1a2a601137ae0b5abbbf7075eb1df38a82e4320e58d1449763130e795400000",
+        "bytes": 2341,
+        "revision_id": 1639656386,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038526.json",
+      "sha256": "58c38ff72b24d9f989793ecdd0dcec375212f6f752fed60b3f6c381bd5f70bfc",
+      "bytes": 2329,
+      "receipt": {
+        "name": "Q112038526",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038526.json",
+        "ids": [
+          "Q112038526"
+        ],
+        "request_started_at": "2026-11-24T08:06:45.672881+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:46.656146+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038526.json",
+        "status": 200,
+        "sha256": "58c38ff72b24d9f989793ecdd0dcec375212f6f752fed60b3f6c381bd5f70bfc",
+        "bytes": 2329,
+        "revision_id": 1639656338,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038527.json",
+      "sha256": "7ac106bb25f4f53c9410191720e47b3db0d3b94220696a0159814242a1627d6d",
+      "bytes": 2333,
+      "receipt": {
+        "name": "Q112038527",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038527.json",
+        "ids": [
+          "Q112038527"
+        ],
+        "request_started_at": "2026-11-24T08:06:50.008254+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:50.497327+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038527.json",
+        "status": 200,
+        "sha256": "7ac106bb25f4f53c9410191720e47b3db0d3b94220696a0159814242a1627d6d",
+        "bytes": 2333,
+        "revision_id": 1639656326,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038528.json",
+      "sha256": "f63d92dad8dc7ecfea63b65fda891582c8e06a268b434a532625a45a25773a4c",
+      "bytes": 2698,
+      "receipt": {
+        "name": "Q112038528",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038528.json",
+        "ids": [
+          "Q112038528"
+        ],
+        "request_started_at": "2026-11-24T08:06:41.457458+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:42.099715+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038528.json",
+        "status": 200,
+        "sha256": "f63d92dad8dc7ecfea63b65fda891582c8e06a268b434a532625a45a25773a4c",
+        "bytes": 2698,
+        "revision_id": 2254435791,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038530.json",
+      "sha256": "ebc83061903100a9c696aa873083334006e65d9834327dec63d88d0322ae89b7",
+      "bytes": 2369,
+      "receipt": {
+        "name": "Q112038530",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038530.json",
+        "ids": [
+          "Q112038530"
+        ],
+        "request_started_at": "2026-11-24T08:06:53.170801+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:53.653532+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038530.json",
+        "status": 200,
+        "sha256": "ebc83061903100a9c696aa873083334006e65d9834327dec63d88d0322ae89b7",
+        "bytes": 2369,
+        "revision_id": 1639656288,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038602.json",
+      "sha256": "157a8db8e52d3b6dd848d4704234dd00234928facaa4c6414447c2cf5eadd8fb",
+      "bytes": 1862,
+      "receipt": {
+        "name": "Q112038602",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038602.json",
+        "ids": [
+          "Q112038602"
+        ],
+        "request_started_at": "2026-11-24T08:06:36.193296+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:37.093875+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038602.json",
+        "status": 200,
+        "sha256": "157a8db8e52d3b6dd848d4704234dd00234928facaa4c6414447c2cf5eadd8fb",
+        "bytes": 1862,
+        "revision_id": 1639654181,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038603.json",
+      "sha256": "4d2be03c3307677f8b6156e97769eccb86b28190825312ed608eaf248035749a",
+      "bytes": 2004,
+      "receipt": {
+        "name": "Q112038603",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038603.json",
+        "ids": [
+          "Q112038603"
+        ],
+        "request_started_at": "2026-11-24T08:06:42.512483+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:43.148917+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038603.json",
+        "status": 200,
+        "sha256": "4d2be03c3307677f8b6156e97769eccb86b28190825312ed608eaf248035749a",
+        "bytes": 2004,
+        "revision_id": 2170427142,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038604.json",
+      "sha256": "f804139ea7c617e170dcd4afe2171d7ccdce79afe31fec4aed6256f36d0448d2",
+      "bytes": 1862,
+      "receipt": {
+        "name": "Q112038604",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038604.json",
+        "ids": [
+          "Q112038604"
+        ],
+        "request_started_at": "2026-11-24T08:06:54.224583+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:54.684501+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038604.json",
+        "status": 200,
+        "sha256": "f804139ea7c617e170dcd4afe2171d7ccdce79afe31fec4aed6256f36d0448d2",
+        "bytes": 1862,
+        "revision_id": 1639654186,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038608.json",
+      "sha256": "4f09897a68bf032f28934ea7ca716e818a0c101fdbb92dabcec7c07703ce77e0",
+      "bytes": 1862,
+      "receipt": {
+        "name": "Q112038608",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038608.json",
+        "ids": [
+          "Q112038608"
+        ],
+        "request_started_at": "2026-11-24T08:07:01.597000+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:07:02.103371+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038608.json",
+        "status": 200,
+        "sha256": "4f09897a68bf032f28934ea7ca716e818a0c101fdbb92dabcec7c07703ce77e0",
+        "bytes": 1862,
+        "revision_id": 1639654426,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q112038747.json",
+      "sha256": "08476551867ee43b250a0b65422be13ddfddfa68734e957af3bc3a87ec2d3b70",
+      "bytes": 2527,
+      "receipt": {
+        "name": "Q112038747",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038747.json",
+        "ids": [
+          "Q112038747"
+        ],
+        "request_started_at": "2026-11-24T08:06:34.084490+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:34.597646+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038747.json",
+        "status": 200,
+        "sha256": "08476551867ee43b250a0b65422be13ddfddfa68734e957af3bc3a87ec2d3b70",
+        "bytes": 2527,
+        "revision_id": 2523496813,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q1158712.json",
+      "sha256": "a25448fc04d55c4700533c59358948c1c9c435fd8a1ec158b06771e69980d4be",
+      "bytes": 15305,
+      "receipt": {
+        "name": "Q1158712",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1158712.json",
+        "ids": [
+          "Q1158712"
+        ],
+        "request_started_at": "2026-11-24T08:06:28.237196+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:29.054617+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1158712.json",
+        "status": 200,
+        "sha256": "a25448fc04d55c4700533c59358948c1c9c435fd8a1ec158b06771e69980d4be",
+        "bytes": 15305,
+        "revision_id": 2499597220,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q119158.json",
+      "sha256": "82fca3a1366441989e79f5e56b7b2faeac240dd99d8299eab756b0b573d38b86",
+      "bytes": 102526,
+      "receipt": {
+        "name": "Q119158",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q119158.json",
+        "ids": [
+          "Q119158"
+        ],
+        "request_started_at": "2026-11-24T08:06:29.292241+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:30.605497+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q119158.json",
+        "status": 200,
+        "sha256": "82fca3a1366441989e79f5e56b7b2faeac240dd99d8299eab756b0b573d38b86",
+        "bytes": 102526,
+        "revision_id": 2570386863,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q123021065.json",
+      "sha256": "216f2f196c4b07b016fc7b8883914237491361c0460ccbadc94ebb10175114ba",
+      "bytes": 13144,
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q123021065.json",
+        "response_received_at": "2026-11-23T08:25:04.339721+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q123021065.json",
+        "status": 200,
+        "sha256": "216f2f196c4b07b016fc7b8883914237491361c0460ccbadc94ebb10175114ba",
+        "bytes": 13144,
+        "licence": "Wikidata CC0",
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.814628+00:00"
+      }
+    },
+    {
+      "file": "sources/Q1238732.json",
+      "sha256": "26fb991ec781fadda4f7f3974952553a80d0d0291e859e4b494b500f9c4b68f1",
+      "bytes": 16175,
+      "receipt": {
+        "name": "Q1238732",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1238732.json",
+        "ids": [
+          "Q1238732"
+        ],
+        "request_started_at": "2026-11-24T08:00:40.754844+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:41.611537+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1238732.json",
+        "status": 200,
+        "sha256": "26fb991ec781fadda4f7f3974952553a80d0d0291e859e4b494b500f9c4b68f1",
+        "bytes": 16175,
+        "revision_id": 2505003810,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q1452004.json",
+      "sha256": "30b91ef3241e1858d276158c5e7a7858584ef3fd8d1ed9b7812ba33009b1cbb1",
+      "bytes": 8054,
+      "receipt": {
+        "name": "Q1452004",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1452004.json",
+        "ids": [
+          "Q1452004"
+        ],
+        "request_started_at": "2026-11-24T08:08:21.193322+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:22.091013+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1452004.json",
+        "status": 200,
+        "sha256": "30b91ef3241e1858d276158c5e7a7858584ef3fd8d1ed9b7812ba33009b1cbb1",
+        "bytes": 8054,
+        "revision_id": 2520454424,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q17479367.json",
+      "sha256": "f05cdd67da5b4dbb8c87cdec68e1c32dd17312876f81c03117452da157a08dd2",
+      "bytes": 15272,
+      "receipt": {
+        "name": "Q17479367",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q17479367.json",
+        "ids": [
+          "Q17479367"
+        ],
+        "request_started_at": "2026-11-24T08:06:31.856975+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:32.384327+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q17479367.json",
+        "status": 200,
+        "sha256": "f05cdd67da5b4dbb8c87cdec68e1c32dd17312876f81c03117452da157a08dd2",
+        "bytes": 15272,
+        "revision_id": 2523496878,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q1754633.json",
+      "sha256": "16d1418759001063a4ca800b689ebbe79e0ae85ff849e44da2cfd55f63c7f003",
+      "bytes": 11590,
+      "receipt": {
+        "name": "Q1754633",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754633.json",
+        "ids": [
+          "Q1754633"
+        ],
+        "request_started_at": "2026-11-24T08:00:41.809729+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:42.271111+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754633.json",
+        "status": 200,
+        "sha256": "16d1418759001063a4ca800b689ebbe79e0ae85ff849e44da2cfd55f63c7f003",
+        "bytes": 11590,
+        "revision_id": 2397022728,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q1764503.json",
+      "sha256": "cc799f339e87478dae281704efdb54895e9f1e781ab1527470ef68811879ec58",
+      "bytes": 6240,
+      "receipt": {
+        "name": "Q1764503",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1764503.json",
+        "ids": [
+          "Q1764503"
+        ],
+        "request_started_at": "2026-11-24T08:00:42.864778+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:43.353773+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1764503.json",
+        "status": 200,
+        "sha256": "cc799f339e87478dae281704efdb54895e9f1e781ab1527470ef68811879ec58",
+        "bytes": 6240,
+        "revision_id": 2128532148,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q1772658.json",
+      "sha256": "dc1cbc32714a21802618e3e6676a6fd62bd1b419d2a53c236de877035484b726",
+      "bytes": 66578,
+      "receipt": {
+        "name": "Q1772658",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772658.json",
+        "ids": [
+          "Q1772658"
+        ],
+        "request_started_at": "2026-11-24T08:06:38.297876+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:39.099145+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772658.json",
+        "status": 200,
+        "sha256": "dc1cbc32714a21802618e3e6676a6fd62bd1b419d2a53c236de877035484b726",
+        "bytes": 66578,
+        "revision_id": 2558862057,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q18486144.json",
+      "sha256": "9960776857e63478d9821c4150185888b337a2bf05736d4b144793cc7fd21474",
+      "bytes": 4168,
+      "receipt": {
+        "name": "Q18486144",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q18486144.json",
+        "ids": [
+          "Q18486144"
+        ],
+        "request_started_at": "2026-11-24T08:06:44.621539+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:45.246843+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q18486144.json",
+        "status": 200,
+        "sha256": "9960776857e63478d9821c4150185888b337a2bf05736d4b144793cc7fd21474",
+        "bytes": 4168,
+        "revision_id": 2547630481,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q187817.json",
+      "sha256": "e9b38492e9385885a8818e871729cb850e9999c3bf51cf7c6b28bf9a41f81bab",
+      "bytes": 25803,
+      "receipt": {
+        "name": "Q187817",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q187817.json",
+        "ids": [
+          "Q187817"
+        ],
+        "request_started_at": "2026-11-24T08:00:43.919809+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:44.462364+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q187817.json",
+        "status": 200,
+        "sha256": "e9b38492e9385885a8818e871729cb850e9999c3bf51cf7c6b28bf9a41f81bab",
+        "bytes": 25803,
+        "revision_id": 2491672228,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q2041340.json",
+      "sha256": "12946c13617aaee23a03ad47af979d3cca8b5fa9ab4d1419df5325925899194b",
+      "bytes": 9761,
+      "receipt": {
+        "name": "Q2041340",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2041340.json",
+        "ids": [
+          "Q2041340"
+        ],
+        "request_started_at": "2026-11-24T08:08:29.649130+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:30.541586+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2041340.json",
+        "status": 200,
+        "sha256": "12946c13617aaee23a03ad47af979d3cca8b5fa9ab4d1419df5325925899194b",
+        "bytes": 9761,
+        "revision_id": 2520454428,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q20683285.json",
+      "sha256": "13076c2837aa335d97b90e06260468dbee9293bfafc9696547a6a24998468fa2",
+      "bytes": 3234,
+      "receipt": {
+        "name": "Q20683285",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20683285.json",
+        "ids": [
+          "Q20683285"
+        ],
+        "request_started_at": "2026-11-24T08:06:30.803192+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:31.715571+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q20683285.json",
+        "status": 200,
+        "sha256": "13076c2837aa335d97b90e06260468dbee9293bfafc9696547a6a24998468fa2",
+        "bytes": 3234,
+        "revision_id": 2530464635,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q22047109.json",
+      "sha256": "248aea86dea3deee7ce434bc6f837d1a943a2be18483e3f9d0cf2f219865d5d4",
+      "bytes": 6069,
+      "receipt": {
+        "name": "Q22047109",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22047109.json",
+        "ids": [
+          "Q22047109"
+        ],
+        "request_started_at": "2026-11-24T08:00:44.971025+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:45.453131+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q22047109.json",
+        "status": 200,
+        "sha256": "248aea86dea3deee7ce434bc6f837d1a943a2be18483e3f9d0cf2f219865d5d4",
+        "bytes": 6069,
+        "revision_id": 1979171247,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q225060.json",
+      "sha256": "9450847192e5bf227330003ea2a5a5e7e014958cc16aa8feb5f9101b56b8e9b5",
+      "bytes": 11318,
+      "receipt": {
+        "name": "Q225060",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q225060.json",
+        "ids": [
+          "Q225060"
+        ],
+        "request_started_at": "2026-11-24T08:00:46.021440+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:46.989978+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q225060.json",
+        "status": 200,
+        "sha256": "9450847192e5bf227330003ea2a5a5e7e014958cc16aa8feb5f9101b56b8e9b5",
+        "bytes": 11318,
+        "revision_id": 2302911216,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q2540325.json",
+      "sha256": "085df2256c29e2b4848e55417db7031a48101f4c399541f61063d67e12eabd83",
+      "bytes": 10031,
+      "receipt": {
+        "name": "Q2540325",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2540325.json",
+        "ids": [
+          "Q2540325"
+        ],
+        "request_started_at": "2026-11-24T08:00:47.072321+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:47.570350+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2540325.json",
+        "status": 200,
+        "sha256": "085df2256c29e2b4848e55417db7031a48101f4c399541f61063d67e12eabd83",
+        "bytes": 10031,
+        "revision_id": 2525225224,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q2572868.json",
+      "sha256": "68fe9c2859b076d7d44ce92be079b17712f555749ace3f251989aac2c895562d",
+      "bytes": 11878,
+      "receipt": {
+        "name": "Q2572868",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2572868.json",
+        "ids": [
+          "Q2572868"
+        ],
+        "request_started_at": "2026-11-24T08:00:48.125783+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:48.581670+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q2572868.json",
+        "status": 200,
+        "sha256": "68fe9c2859b076d7d44ce92be079b17712f555749ace3f251989aac2c895562d",
+        "bytes": 11878,
+        "revision_id": 2126370670,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q30938870.json",
+      "sha256": "3b1782fc99c78d1548281df62c5a0f87b4cf8195eedff6b0290243ea26cde9d0",
+      "bytes": 5425,
+      "receipt": {
+        "name": "Q30938870",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q30938870.json",
+        "ids": [
+          "Q30938870"
+        ],
+        "request_started_at": "2026-11-24T08:06:51.060919+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:51.537539+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q30938870.json",
+        "status": 200,
+        "sha256": "3b1782fc99c78d1548281df62c5a0f87b4cf8195eedff6b0290243ea26cde9d0",
+        "bytes": 5425,
+        "revision_id": 2483963997,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3136609.json",
+      "sha256": "8c75b83ad85a676a75586bf175b90cba62dd6d1e85f0e324a593c32df9bd2d79",
+      "bytes": 41138,
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3136609.json",
+        "response_received_at": "2026-11-23T08:25:03.806646+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3136609.json",
+        "status": 200,
+        "sha256": "8c75b83ad85a676a75586bf175b90cba62dd6d1e85f0e324a593c32df9bd2d79",
+        "bytes": 41138,
+        "licence": "Wikidata CC0",
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.848559+00:00"
+      }
+    },
+    {
+      "file": "sources/Q3257686.json",
+      "sha256": "f86fe1125885a2486e50d5d22ae23b57c284f8619f77b0b1f9978bef998f8bdc",
+      "bytes": 28873,
+      "receipt": {
+        "name": "Q3257686",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3257686.json",
+        "ids": [
+          "Q3257686"
+        ],
+        "request_started_at": "2026-11-24T08:06:37.245842+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:37.842427+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3257686.json",
+        "status": 200,
+        "sha256": "f86fe1125885a2486e50d5d22ae23b57c284f8619f77b0b1f9978bef998f8bdc",
+        "bytes": 28873,
+        "revision_id": 2572807249,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3375019.json",
+      "sha256": "14fe59a63ceed0b9d7a130eadb732b889ff89255e14200289b3c0fd5fffce474",
+      "bytes": 11522,
+      "receipt": {
+        "name": "Q3375019",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3375019.json",
+        "ids": [
+          "Q3375019"
+        ],
+        "request_started_at": "2026-11-24T08:06:56.334652+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:56.858926+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3375019.json",
+        "status": 200,
+        "sha256": "14fe59a63ceed0b9d7a130eadb732b889ff89255e14200289b3c0fd5fffce474",
+        "bytes": 11522,
+        "revision_id": 2462989156,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3421820.json",
+      "sha256": "0657d2c21802acb171e590303ae7abf80e5e98c68251988466fcaecf1a7a9999",
+      "bytes": 12315,
+      "receipt": {
+        "name": "Q3421820",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3421820.json",
+        "ids": [
+          "Q3421820"
+        ],
+        "request_started_at": "2026-11-24T08:08:36.082279+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:36.770932+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3421820.json",
+        "status": 200,
+        "sha256": "0657d2c21802acb171e590303ae7abf80e5e98c68251988466fcaecf1a7a9999",
+        "bytes": 12315,
+        "revision_id": 2378647574,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3576964.json",
+      "sha256": "e3607d1247cb9126009eda0bce99190941c43de61bf472a3a218e29ee264f3c6",
+      "bytes": 13126,
+      "receipt": {
+        "name": "Q3576964",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3576964.json",
+        "ids": [
+          "Q3576964"
+        ],
+        "request_started_at": "2026-11-24T08:08:30.709158+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:31.176336+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3576964.json",
+        "status": 200,
+        "sha256": "e3607d1247cb9126009eda0bce99190941c43de61bf472a3a218e29ee264f3c6",
+        "bytes": 13126,
+        "revision_id": 2062327534,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3603915.json",
+      "sha256": "cb1558aafadc1263c33a1dec7ebd358bbe35bc5a94d98499bffeba6d53a35a70",
+      "bytes": 10520,
+      "receipt": {
+        "name": "Q3603915",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3603915.json",
+        "ids": [
+          "Q3603915"
+        ],
+        "request_started_at": "2026-11-24T08:00:49.180874+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:49.638683+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3603915.json",
+        "status": 200,
+        "sha256": "cb1558aafadc1263c33a1dec7ebd358bbe35bc5a94d98499bffeba6d53a35a70",
+        "bytes": 10520,
+        "revision_id": 2550075759,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3624938.json",
+      "sha256": "dfbb7d408a70c7ff60355b65b2b4a1a85c09ce2f6f0f9682dcbc04a48e159ff3",
+      "bytes": 6414,
+      "receipt": {
+        "name": "Q3624938",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3624938.json",
+        "ids": [
+          "Q3624938"
+        ],
+        "request_started_at": "2026-11-24T08:06:25.073020+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:25.984217+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3624938.json",
+        "status": 200,
+        "sha256": "dfbb7d408a70c7ff60355b65b2b4a1a85c09ce2f6f0f9682dcbc04a48e159ff3",
+        "bytes": 6414,
+        "revision_id": 2522558181,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3643980.json",
+      "sha256": "8cb392056fc76d2c608101a9c2b65735787474358eeea2cdf2536ae6d8337a0d",
+      "bytes": 12405,
+      "receipt": {
+        "name": "Q3643980",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3643980.json",
+        "ids": [
+          "Q3643980"
+        ],
+        "request_started_at": "2026-11-24T08:00:50.232266+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:50.708036+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3643980.json",
+        "status": 200,
+        "sha256": "8cb392056fc76d2c608101a9c2b65735787474358eeea2cdf2536ae6d8337a0d",
+        "bytes": 12405,
+        "revision_id": 2520454407,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3649413.json",
+      "sha256": "5b748d4c85c5f0485424422e805bed5ca06350458cbdd79d4cfcb637594f443b",
+      "bytes": 6387,
+      "receipt": {
+        "name": "Q3649413",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3649413.json",
+        "ids": [
+          "Q3649413"
+        ],
+        "request_started_at": "2026-11-24T08:00:51.284265+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:51.757531+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3649413.json",
+        "status": 200,
+        "sha256": "5b748d4c85c5f0485424422e805bed5ca06350458cbdd79d4cfcb637594f443b",
+        "bytes": 6387,
+        "revision_id": 2126787093,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3655167.json",
+      "sha256": "133dd4eaf0d7ad6d828497538413ec46fdd42077c1923591c403f90022e8f6e7",
+      "bytes": 8986,
+      "receipt": {
+        "name": "Q3655167",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3655167.json",
+        "ids": [
+          "Q3655167"
+        ],
+        "request_started_at": "2026-11-24T08:08:20.139532+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:20.618478+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3655167.json",
+        "status": 200,
+        "sha256": "133dd4eaf0d7ad6d828497538413ec46fdd42077c1923591c403f90022e8f6e7",
+        "bytes": 8986,
+        "revision_id": 2520454436,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3676550.json",
+      "sha256": "fdc81e0993a0196ce3872dc9fe9f8a7080ec13803e1addd97131c88468f5ba4b",
+      "bytes": 6622,
+      "receipt": {
+        "name": "Q3676550",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3676550.json",
+        "ids": [
+          "Q3676550"
+        ],
+        "request_started_at": "2026-11-24T08:00:52.339051+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:53.281298+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3676550.json",
+        "status": 200,
+        "sha256": "fdc81e0993a0196ce3872dc9fe9f8a7080ec13803e1addd97131c88468f5ba4b",
+        "bytes": 6622,
+        "revision_id": 2137904524,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3693428.json",
+      "sha256": "e371c3f7dca09c9b3628c7cad38534745d306f4fb86e1f86210a3d867d3e23ba",
+      "bytes": 9307,
+      "receipt": {
+        "name": "Q3693428",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3693428.json",
+        "ids": [
+          "Q3693428"
+        ],
+        "request_started_at": "2026-11-24T08:00:53.392568+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:54.331656+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3693428.json",
+        "status": 200,
+        "sha256": "e371c3f7dca09c9b3628c7cad38534745d306f4fb86e1f86210a3d867d3e23ba",
+        "bytes": 9307,
+        "revision_id": 2424699253,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3698803.json",
+      "sha256": "c74d9723f67f1577e1ff59e5ecf53694eb3d147f932cbd2bfb5fcb3f66f5d117",
+      "bytes": 8003,
+      "receipt": {
+        "name": "Q3698803",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3698803.json",
+        "ids": [
+          "Q3698803"
+        ],
+        "request_started_at": "2026-11-24T08:08:33.964251+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:34.472363+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3698803.json",
+        "status": 200,
+        "sha256": "c74d9723f67f1577e1ff59e5ecf53694eb3d147f932cbd2bfb5fcb3f66f5d117",
+        "bytes": 8003,
+        "revision_id": 1834155700,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3757943.json",
+      "sha256": "253d9ca8a4f4ff73c589463ff624fd4c2e9cbe3296f0fb6e67c07f1e7a03cdc4",
+      "bytes": 10542,
+      "receipt": {
+        "name": "Q3757943",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3757943.json",
+        "ids": [
+          "Q3757943"
+        ],
+        "request_started_at": "2026-11-24T08:00:54.446803+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:54.915248+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3757943.json",
+        "status": 200,
+        "sha256": "253d9ca8a4f4ff73c589463ff624fd4c2e9cbe3296f0fb6e67c07f1e7a03cdc4",
+        "bytes": 10542,
+        "revision_id": 2137897416,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3778442.json",
+      "sha256": "1b7a73cb273eb54c0096c50da5738b517849625df1081e22105b9725485c15fe",
+      "bytes": 9515,
+      "receipt": {
+        "name": "Q3778442",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3778442.json",
+        "ids": [
+          "Q3778442"
+        ],
+        "request_started_at": "2026-11-24T08:08:18.025976+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:18.946174+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3778442.json",
+        "status": 200,
+        "sha256": "1b7a73cb273eb54c0096c50da5738b517849625df1081e22105b9725485c15fe",
+        "bytes": 9515,
+        "revision_id": 2520175377,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3804504.json",
+      "sha256": "8f56b08d05ea0011f53a248538ef7ad8c2e282d30a1f7528d2a3d203bfdd9b50",
+      "bytes": 5444,
+      "receipt": {
+        "name": "Q3804504",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3804504.json",
+        "ids": [
+          "Q3804504"
+        ],
+        "request_started_at": "2026-11-24T08:08:23.305479+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:23.772761+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3804504.json",
+        "status": 200,
+        "sha256": "8f56b08d05ea0011f53a248538ef7ad8c2e282d30a1f7528d2a3d203bfdd9b50",
+        "bytes": 5444,
+        "revision_id": 1834265885,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3807308.json",
+      "sha256": "23fbced1a0b4f2082160998b5eb9d815085da8756d10154b1bfcceb395959a6a",
+      "bytes": 5949,
+      "receipt": {
+        "name": "Q3807308",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3807308.json",
+        "ids": [
+          "Q3807308"
+        ],
+        "request_started_at": "2026-11-24T08:08:25.417426+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:26.420793+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3807308.json",
+        "status": 200,
+        "sha256": "23fbced1a0b4f2082160998b5eb9d815085da8756d10154b1bfcceb395959a6a",
+        "bytes": 5949,
+        "revision_id": 1834272481,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3825755.json",
+      "sha256": "9834575ff4324898cf7b3b78c4ba9a3b0aaf30ab0c557572397b86ca0710fbef",
+      "bytes": 7537,
+      "receipt": {
+        "name": "Q3825755",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3825755.json",
+        "ids": [
+          "Q3825755"
+        ],
+        "request_started_at": "2026-11-24T08:08:24.365537+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:24.846642+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3825755.json",
+        "status": 200,
+        "sha256": "9834575ff4324898cf7b3b78c4ba9a3b0aaf30ab0c557572397b86ca0710fbef",
+        "bytes": 7537,
+        "revision_id": 2520454432,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3860678.json",
+      "sha256": "a4dd7a0c437554104b409540bbe694097c2cac0f7cf7aef908f03c61f718b79e",
+      "bytes": 8075,
+      "receipt": {
+        "name": "Q3860678",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3860678.json",
+        "ids": [
+          "Q3860678"
+        ],
+        "request_started_at": "2026-11-24T08:00:55.501845+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:56.036411+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3860678.json",
+        "status": 200,
+        "sha256": "a4dd7a0c437554104b409540bbe694097c2cac0f7cf7aef908f03c61f718b79e",
+        "bytes": 8075,
+        "revision_id": 2124839234,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3880035.json",
+      "sha256": "fc39e08e5173e70009ec32d6fccb6f3d1555f21a1ecc6cab4160f5537d3771b5",
+      "bytes": 12122,
+      "receipt": {
+        "name": "Q3880035",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3880035.json",
+        "ids": [
+          "Q3880035"
+        ],
+        "request_started_at": "2026-11-24T08:00:56.556915+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:57.058333+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3880035.json",
+        "status": 200,
+        "sha256": "fc39e08e5173e70009ec32d6fccb6f3d1555f21a1ecc6cab4160f5537d3771b5",
+        "bytes": 12122,
+        "revision_id": 2520454417,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3895255.json",
+      "sha256": "0444897e0bb402db9e3e00525ba81e044b093891478285c7715f59bc27956327",
+      "bytes": 11221,
+      "receipt": {
+        "name": "Q3895255",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3895255.json",
+        "ids": [
+          "Q3895255"
+        ],
+        "request_started_at": "2026-11-24T08:00:57.611946+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:58.106042+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3895255.json",
+        "status": 200,
+        "sha256": "0444897e0bb402db9e3e00525ba81e044b093891478285c7715f59bc27956327",
+        "bytes": 11221,
+        "revision_id": 2520454413,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3896114.json",
+      "sha256": "075f8f0fa5de5a014d2f64f2dafcdcf868c6b36a35651da0490546654eb67ca9",
+      "bytes": 5170,
+      "receipt": {
+        "name": "Q3896114",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3896114.json",
+        "ids": [
+          "Q3896114"
+        ],
+        "request_started_at": "2026-11-24T08:08:32.911045+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:33.630978+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3896114.json",
+        "status": 200,
+        "sha256": "075f8f0fa5de5a014d2f64f2dafcdcf868c6b36a35651da0490546654eb67ca9",
+        "bytes": 5170,
+        "revision_id": 1834398117,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3934199.json",
+      "sha256": "f1bf9ca21e20961d6281b6d360d0e655d9bf3bcfeb4dee1d87f484a900adc807",
+      "bytes": 5273,
+      "receipt": {
+        "name": "Q3934199",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3934199.json",
+        "ids": [
+          "Q3934199"
+        ],
+        "request_started_at": "2026-11-24T08:08:28.589194+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:29.070690+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3934199.json",
+        "status": 200,
+        "sha256": "f1bf9ca21e20961d6281b6d360d0e655d9bf3bcfeb4dee1d87f484a900adc807",
+        "bytes": 5273,
+        "revision_id": 2520454437,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3949105.json",
+      "sha256": "e55da692c2e24bd7b4abf25089bc8cf8432e4041dc9a0e7482cd8a3497e3d6ee",
+      "bytes": 9102,
+      "receipt": {
+        "name": "Q3949105",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3949105.json",
+        "ids": [
+          "Q3949105"
+        ],
+        "request_started_at": "2026-11-24T08:08:27.529109+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:28.471004+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3949105.json",
+        "status": 200,
+        "sha256": "e55da692c2e24bd7b4abf25089bc8cf8432e4041dc9a0e7482cd8a3497e3d6ee",
+        "bytes": 9102,
+        "revision_id": 2520454420,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3949480.json",
+      "sha256": "1705cd893af6db0ff3631b5fa683261ffbe91051afa3caecdfa64e881118c505",
+      "bytes": 10273,
+      "receipt": {
+        "name": "Q3949480",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3949480.json",
+        "ids": [
+          "Q3949480"
+        ],
+        "request_started_at": "2026-11-24T08:00:58.667000+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:00:59.162928+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3949480.json",
+        "status": 200,
+        "sha256": "1705cd893af6db0ff3631b5fa683261ffbe91051afa3caecdfa64e881118c505",
+        "bytes": 10273,
+        "revision_id": 2520452252,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3951222.json",
+      "sha256": "59924ba2192b49ae52fb18587fa00ff604f5fcbd093aa4e0432ae7587f8d5ea0",
+      "bytes": 11148,
+      "receipt": {
+        "name": "Q3951222",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3951222.json",
+        "ids": [
+          "Q3951222"
+        ],
+        "request_started_at": "2026-11-24T08:00:59.721777+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:00.224634+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3951222.json",
+        "status": 200,
+        "sha256": "59924ba2192b49ae52fb18587fa00ff604f5fcbd093aa4e0432ae7587f8d5ea0",
+        "bytes": 11148,
+        "revision_id": 2520452249,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3958292.json",
+      "sha256": "55ee6bf9c5811386b175fd2b142d02c096b44cf3f82f6a0f0cd31fa6e16d6fe5",
+      "bytes": 6828,
+      "receipt": {
+        "name": "Q3958292",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3958292.json",
+        "ids": [
+          "Q3958292"
+        ],
+        "request_started_at": "2026-11-24T08:08:22.253387+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:22.733262+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3958292.json",
+        "status": 200,
+        "sha256": "55ee6bf9c5811386b175fd2b142d02c096b44cf3f82f6a0f0cd31fa6e16d6fe5",
+        "bytes": 6828,
+        "revision_id": 1937990557,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3958293.json",
+      "sha256": "08877594650c4dd7e7f6a2757667b025b754de3f9340a4866731e4b5a582ce85",
+      "bytes": 15645,
+      "receipt": {
+        "name": "Q3958293",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3958293.json",
+        "ids": [
+          "Q3958293"
+        ],
+        "request_started_at": "2026-11-24T08:08:31.765349+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:32.893769+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3958293.json",
+        "status": 200,
+        "sha256": "08877594650c4dd7e7f6a2757667b025b754de3f9340a4866731e4b5a582ce85",
+        "bytes": 15645,
+        "revision_id": 1937990334,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q3979258.json",
+      "sha256": "80120cc7568c0e41bc4b11035fc651da68cfa83070200a1f46e0cda4a09bd65e",
+      "bytes": 9498,
+      "receipt": {
+        "name": "Q3979258",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3979258.json",
+        "ids": [
+          "Q3979258"
+        ],
+        "request_started_at": "2026-11-24T08:08:35.022222+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:35.570506+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q3979258.json",
+        "status": 200,
+        "sha256": "80120cc7568c0e41bc4b11035fc651da68cfa83070200a1f46e0cda4a09bd65e",
+        "bytes": 9498,
+        "revision_id": 2473371848,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q40080.json",
+      "sha256": "15256ef3ba282efa9338717ed5f0e28904ddef028e45a84b0cc146f5ce325857",
+      "bytes": 86479,
+      "receipt": {
+        "name": "Q40080",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q40080.json",
+        "ids": [
+          "Q40080"
+        ],
+        "request_started_at": "2026-11-24T08:06:26.128045+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:26.880950+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q40080.json",
+        "status": 200,
+        "sha256": "15256ef3ba282efa9338717ed5f0e28904ddef028e45a84b0cc146f5ce325857",
+        "bytes": 86479,
+        "revision_id": 2573866748,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q4008814.json",
+      "sha256": "8f1b961de33c6f72b6ee62073c59c522ed5c2a73109aae8dc072ab42d2c6c047",
+      "bytes": 4902,
+      "receipt": {
+        "name": "Q4008814",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4008814.json",
+        "ids": [
+          "Q4008814"
+        ],
+        "request_started_at": "2026-11-24T08:08:19.084904+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:19.520285+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q4008814.json",
+        "status": 200,
+        "sha256": "8f1b961de33c6f72b6ee62073c59c522ed5c2a73109aae8dc072ab42d2c6c047",
+        "bytes": 4902,
+        "revision_id": 2517101357,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q429284.json",
+      "sha256": "868d8d95f093302b93459763ac99bf423d13b8b64ab7e52b7e0a19485399d1ed",
+      "bytes": 12824,
+      "receipt": {
+        "name": "Q429284",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q429284.json",
+        "ids": [
+          "Q429284"
+        ],
+        "request_started_at": "2026-11-24T08:01:00.772359+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:01.236175+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q429284.json",
+        "status": 200,
+        "sha256": "868d8d95f093302b93459763ac99bf423d13b8b64ab7e52b7e0a19485399d1ed",
+        "bytes": 12824,
+        "revision_id": 2304665608,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q468540.json",
+      "sha256": "c788d9e8f41be29e200e9de39106ba1ae8ae1a8135571b71f31d3a7e8e7efc35",
+      "bytes": 27595,
+      "receipt": {
+        "name": "Q468540",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q468540.json",
+        "ids": [
+          "Q468540"
+        ],
+        "request_started_at": "2026-11-24T08:01:01.827508+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:02.359125+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q468540.json",
+        "status": 200,
+        "sha256": "c788d9e8f41be29e200e9de39106ba1ae8ae1a8135571b71f31d3a7e8e7efc35",
+        "bytes": 27595,
+        "revision_id": 2517875110,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q48878231.json",
+      "sha256": "7a4a0883e9d319504b09d591f72028e3785a5d0abe123125569226e13d7c15a2",
+      "bytes": 4240,
+      "receipt": {
+        "name": "Q48878231",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q48878231.json",
+        "ids": [
+          "Q48878231"
+        ],
+        "request_started_at": "2026-11-24T08:06:40.404361+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:41.053274+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q48878231.json",
+        "status": 200,
+        "sha256": "7a4a0883e9d319504b09d591f72028e3785a5d0abe123125569226e13d7c15a2",
+        "bytes": 4240,
+        "revision_id": 2451122749,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q48878268.json",
+      "sha256": "f13ccc0eb4d026eff378a6fc81d737976964f1b949fcad75ac0ccafcea1d131c",
+      "bytes": 3925,
+      "receipt": {
+        "name": "Q48878268",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q48878268.json",
+        "ids": [
+          "Q48878268"
+        ],
+        "request_started_at": "2026-11-24T08:06:59.495735+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:59.979962+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q48878268.json",
+        "status": 200,
+        "sha256": "f13ccc0eb4d026eff378a6fc81d737976964f1b949fcad75ac0ccafcea1d131c",
+        "bytes": 3925,
+        "revision_id": 2186582342,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134313.json",
+      "sha256": "e4e1788f530fb2bbfecac1603e878cc090f5dfba49c847c5be1c5a26c35798aa",
+      "bytes": 4615,
+      "receipt": {
+        "name": "Q50134313",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134313.json",
+        "ids": [
+          "Q50134313"
+        ],
+        "request_started_at": "2026-11-24T08:06:58.442556+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:58.925288+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134313.json",
+        "status": 200,
+        "sha256": "e4e1788f530fb2bbfecac1603e878cc090f5dfba49c847c5be1c5a26c35798aa",
+        "bytes": 4615,
+        "revision_id": 1639658940,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134321.json",
+      "sha256": "eb7e2570fc6731a7902b0cdd71be6063f0e6848ca252689cb0a6d0878dd86a5c",
+      "bytes": 3879,
+      "receipt": {
+        "name": "Q50134321",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134321.json",
+        "ids": [
+          "Q50134321"
+        ],
+        "request_started_at": "2026-11-24T08:07:02.652027+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:07:03.117198+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134321.json",
+        "status": 200,
+        "sha256": "eb7e2570fc6731a7902b0cdd71be6063f0e6848ca252689cb0a6d0878dd86a5c",
+        "bytes": 3879,
+        "revision_id": 1639658948,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134346.json",
+      "sha256": "22741b112c41c497e12ade994e7edc858b8b8a4033b812423bb463635a0f0f7d",
+      "bytes": 4923,
+      "receipt": {
+        "name": "Q50134346",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134346.json",
+        "ids": [
+          "Q50134346"
+        ],
+        "request_started_at": "2026-11-24T08:06:46.843062+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:47.328284+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134346.json",
+        "status": 200,
+        "sha256": "22741b112c41c497e12ade994e7edc858b8b8a4033b812423bb463635a0f0f7d",
+        "bytes": 4923,
+        "revision_id": 2477508173,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134351.json",
+      "sha256": "12ccc082906bff6f967dd35a7912aa152d688a064710ab93355ca2419cfbe9c7",
+      "bytes": 3272,
+      "receipt": {
+        "name": "Q50134351",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134351.json",
+        "ids": [
+          "Q50134351"
+        ],
+        "request_started_at": "2026-11-24T08:06:47.898122+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:48.767685+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134351.json",
+        "status": 200,
+        "sha256": "12ccc082906bff6f967dd35a7912aa152d688a064710ab93355ca2419cfbe9c7",
+        "bytes": 3272,
+        "revision_id": 2045600616,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134357.json",
+      "sha256": "18c056fc2549816c59d9ae7076ee4385807c1ebbbf66ce383483178361c67043",
+      "bytes": 4221,
+      "receipt": {
+        "name": "Q50134357",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134357.json",
+        "ids": [
+          "Q50134357"
+        ],
+        "request_started_at": "2026-11-24T08:06:57.387486+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:57.876234+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134357.json",
+        "status": 200,
+        "sha256": "18c056fc2549816c59d9ae7076ee4385807c1ebbbf66ce383483178361c67043",
+        "bytes": 4221,
+        "revision_id": 2397005062,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134380.json",
+      "sha256": "dc325acf52c8089b06a482d62ea9984b3782960faf1746e9626d108f81d0e3d8",
+      "bytes": 3713,
+      "receipt": {
+        "name": "Q50134380",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134380.json",
+        "ids": [
+          "Q50134380"
+        ],
+        "request_started_at": "2026-11-24T08:06:48.953203+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:49.413222+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134380.json",
+        "status": 200,
+        "sha256": "dc325acf52c8089b06a482d62ea9984b3782960faf1746e9626d108f81d0e3d8",
+        "bytes": 3713,
+        "revision_id": 2054191471,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50134397.json",
+      "sha256": "2f5aaa04f6c8ddc9f9b1c69a74aefe30c7d6ac42d625d05b1f73a70018ef27fa",
+      "bytes": 3875,
+      "receipt": {
+        "name": "Q50134397",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134397.json",
+        "ids": [
+          "Q50134397"
+        ],
+        "request_started_at": "2026-11-24T08:06:43.566653+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:44.557312+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50134397.json",
+        "status": 200,
+        "sha256": "2f5aaa04f6c8ddc9f9b1c69a74aefe30c7d6ac42d625d05b1f73a70018ef27fa",
+        "bytes": 3875,
+        "revision_id": 1639659135,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q50175672.json",
+      "sha256": "9c3e70d48343d369f2d0822f5a8809a0c78ce707b3be52c96c25ab5637bc0ad7",
+      "bytes": 3661,
+      "receipt": {
+        "name": "Q50175672",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q50175672.json",
+        "ids": [
+          "Q50175672"
+        ],
+        "request_started_at": "2026-11-24T08:06:39.349308+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:39.841488+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q50175672.json",
+        "status": 200,
+        "sha256": "9c3e70d48343d369f2d0822f5a8809a0c78ce707b3be52c96c25ab5637bc0ad7",
+        "bytes": 3661,
+        "revision_id": 2170426358,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q659450.json",
+      "sha256": "7bd9f8f12da31602f77c18aa50add7824c8cb98d2999ac7cc8ffaee1dda742d2",
+      "bytes": 87854,
+      "receipt": {
+        "name": "Q659450",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q659450.json",
+        "ids": [
+          "Q659450"
+        ],
+        "request_started_at": "2026-11-24T08:06:27.182177+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:27.931758+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q659450.json",
+        "status": 200,
+        "sha256": "7bd9f8f12da31602f77c18aa50add7824c8cb98d2999ac7cc8ffaee1dda742d2",
+        "bytes": 87854,
+        "revision_id": 2561161794,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q693827.json",
+      "sha256": "eedd6fd9a58ac41ce06d054eff83745e2cae183789b094cb5cec0897765ec440",
+      "bytes": 21133,
+      "receipt": {
+        "name": "Q693827",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q693827.json",
+        "ids": [
+          "Q693827"
+        ],
+        "request_started_at": "2026-11-24T08:06:55.279604+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:56.088843+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q693827.json",
+        "status": 200,
+        "sha256": "eedd6fd9a58ac41ce06d054eff83745e2cae183789b094cb5cec0897765ec440",
+        "bytes": 21133,
+        "revision_id": 2507553773,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q747028.json",
+      "sha256": "5208db007ffba3eca527aaaf62df3cd42c9199dc56e88527c690d0b1b7723798",
+      "bytes": 4883,
+      "receipt": {
+        "name": "Q747028",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q747028.json",
+        "ids": [
+          "Q747028"
+        ],
+        "request_started_at": "2026-11-24T08:08:26.469068+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:08:26.944265+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q747028.json",
+        "status": 200,
+        "sha256": "5208db007ffba3eca527aaaf62df3cd42c9199dc56e88527c690d0b1b7723798",
+        "bytes": 4883,
+        "revision_id": 1937829765,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q808789.json",
+      "sha256": "d03e85106b666be6b183f96b4e1eda4bdf91b78a0aeb6c4d97fd5bb58cd2f872",
+      "bytes": 23617,
+      "receipt": {
+        "name": "Q808789",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q808789.json",
+        "ids": [
+          "Q808789"
+        ],
+        "request_started_at": "2026-11-24T08:01:02.882530+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:03.987140+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q808789.json",
+        "status": 200,
+        "sha256": "d03e85106b666be6b183f96b4e1eda4bdf91b78a0aeb6c4d97fd5bb58cd2f872",
+        "bytes": 23617,
+        "revision_id": 2525243728,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q8678.json",
+      "sha256": "dd856921f82644f206fc5086e99ffc8c7db936e450ba315063eba37e8d390f09",
+      "bytes": 348618,
+      "receipt": {
+        "name": "Q8678",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8678.json",
+        "ids": [
+          "Q8678"
+        ],
+        "request_started_at": "2026-11-24T08:06:32.912050+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:06:34.073931+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q8678.json",
+        "status": 200,
+        "sha256": "dd856921f82644f206fc5086e99ffc8c7db936e450ba315063eba37e8d390f09",
+        "bytes": 348618,
+        "revision_id": 2558763303,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q894624.json",
+      "sha256": "2ae6164085a34be4cc54d1052481ced157041540ae8e6cc3ab6c8935aa499c20",
+      "bytes": 28557,
+      "receipt": {
+        "name": "Q894624",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q894624.json",
+        "ids": [
+          "Q894624"
+        ],
+        "request_started_at": "2026-11-24T08:01:03.988535+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:05.190727+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q894624.json",
+        "status": 200,
+        "sha256": "2ae6164085a34be4cc54d1052481ced157041540ae8e6cc3ab6c8935aa499c20",
+        "bytes": 28557,
+        "revision_id": 2487840792,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q93572.json",
+      "sha256": "aac3507f2c53df8047f0b38ec8c3192774e20ef46b1fd080b0d9f79d39363692",
+      "bytes": 15135,
+      "receipt": {
+        "name": "Q93572",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q93572.json",
+        "ids": [
+          "Q93572"
+        ],
+        "request_started_at": "2026-11-24T08:01:05.195743+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:05.863516+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q93572.json",
+        "status": 200,
+        "sha256": "aac3507f2c53df8047f0b38ec8c3192774e20ef46b1fd080b0d9f79d39363692",
+        "bytes": 15135,
+        "revision_id": 2542611911,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q980992.json",
+      "sha256": "4e80be8d6c9c908439f16c1ca9d90bb9c5c4881e252d8828b24320b3747b86c0",
+      "bytes": 16138,
+      "receipt": {
+        "name": "Q980992",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q980992.json",
+        "ids": [
+          "Q980992"
+        ],
+        "request_started_at": "2026-11-24T08:01:06.248013+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:06.910137+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q980992.json",
+        "status": 200,
+        "sha256": "4e80be8d6c9c908439f16c1ca9d90bb9c5c4881e252d8828b24320b3747b86c0",
+        "bytes": 16138,
+        "revision_id": 2529700948,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/Q991717.json",
+      "sha256": "5e2fcbe6db4995176346d331e9d248e0a3c7509995e8308870767f6b0bd8b3d6",
+      "bytes": 16211,
+      "receipt": {
+        "name": "Q991717",
+        "attempt": 0,
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q991717.json",
+        "ids": [
+          "Q991717"
+        ],
+        "request_started_at": "2026-11-24T08:01:07.302759+00:00",
+        "http_method": "GET",
+        "request_body": null,
+        "response_received_at": "2026-11-24T08:01:07.963190+00:00",
+        "resolved_url": "https://www.wikidata.org/wiki/Special:EntityData/Q991717.json",
+        "status": 200,
+        "sha256": "5e2fcbe6db4995176346d331e9d248e0a3c7509995e8308870767f6b0bd8b3d6",
+        "bytes": 16211,
+        "revision_id": 2270964079,
+        "minimum_interval_seconds": 1.05,
+        "licence": "Wikidata CC0"
+      }
+    },
+    {
+      "file": "sources/RELATORIO_DTB_BRASIL_2025_MUNICIPIOS.ods.rows.json",
+      "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+      "bytes": 836643,
+      "receipt": {
+        "sha256": "4dcd626ecb7a20298d4c99be99acae4fd0cb08b7ceea0ec07264521596f1a253",
+        "bytes": 836643,
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.916925+00:00"
+      }
+    },
+    {
+      "file": "sources/cc_by_40_legalcode.html",
+      "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+      "bytes": 49582,
+      "receipt": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:01:20.245590+00:00",
+        "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276",
+        "bytes": 49582
+      }
+    },
+    {
+      "file": "sources/cities1000.zip",
+      "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+      "bytes": 11095530,
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/cities1000.zip",
+        "retrieved_utc": "2026-11-14T08:12:04.457147+00:00",
+        "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab",
+        "bytes": 11095530,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.872315+00:00"
+      }
+    },
+    {
+      "file": "sources/decree_8777_original_senado.html",
+      "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+      "bytes": 64004,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/414686/publicacao/15632056",
+        "sha256": "0399a542a3b9f5dfa3ed7067a9e8680137eb98777c0730112aec4c3a7d212d1c",
+        "bytes": 64004,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.356889+00:00"
+      }
+    },
+    {
+      "file": "sources/decree_9903_publication.html",
+      "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+      "bytes": 48331,
+      "receipt": {
+        "url": "https://legis.senado.gov.br/norma/31172938/publicacao/31172949",
+        "sha256": "fda358a699aeae3dc02ae04b641fbbde8aa4009f3cc4b5e232096a2c81764852",
+        "bytes": 48331,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.376780+00:00"
+      }
+    },
+    {
+      "file": "sources/gdf_lc803.html",
+      "sha256": "77f206ee7fd1405c4783dc420ceabc17fd062d98ce7e64f387913622d88bdb6e",
+      "bytes": 25216,
+      "receipt": {
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/60256/Lei_Complementar_803_25_04_2009.html",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:06.169994+00:00",
+        "sha256": "77f206ee7fd1405c4783dc420ceabc17fd062d98ce7e64f387913622d88bdb6e",
+        "bytes": 25216
+      }
+    },
+    {
+      "file": "sources/gdf_lc803_correct.html",
+      "sha256": "4135e92a76370f01910deb2d9abfea06398684236454235dcc212fa40f55ada9",
+      "bytes": 712977,
+      "receipt": {
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/60298/LC_803.html",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:57.703977+00:00",
+        "sha256": "4135e92a76370f01910deb2d9abfea06398684236454235dcc212fa40f55ada9",
+        "bytes": 712977
+      }
+    },
+    {
+      "file": "sources/gdf_lc958.html",
+      "sha256": "0effb1f146e3ea11e34e86ccb63d342714c491516dc637d2570cd9ee1ccb2df2",
+      "bytes": 25499,
+      "receipt": {
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/0503ee8e9efd40eca1ffd183d4b50fd0/Lei_Complementar_958_20_12_2019.html",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:04:36.179260+00:00",
+        "sha256": "0effb1f146e3ea11e34e86ccb63d342714c491516dc637d2570cd9ee1ccb2df2",
+        "bytes": 25499
+      }
+    },
+    {
+      "file": "sources/gdf_lc958_annex.pdf",
+      "sha256": "c9c3bb2adb3ee2e2a7eec36588d3a98c77a9200f1933439a4d5dec9dec5283e0",
+      "bytes": 7815698,
+      "receipt": {
+        "url": "https://www.sinj.df.gov.br/sinj/Diario/0e000a66-ad68-3c1f-b980-6f910d2c24b0/DODF%20243%2023-12-2019%20SUPLEMENTO%20C.pdf",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:05:14.653589+00:00",
+        "sha256": "c9c3bb2adb3ee2e2a7eec36588d3a98c77a9200f1933439a4d5dec9dec5283e0",
+        "bytes": 7815698
+      }
+    },
+    {
+      "file": "sources/gdf_lc958_annex.txt",
+      "sha256": "4735dcb0a091d671000593e59ecc64fe823ebe3959d13b8e292d7984fab0a085",
+      "bytes": 1504402,
+      "receipt": {
+        "sha256": "4735dcb0a091d671000593e59ecc64fe823ebe3959d13b8e292d7984fab0a085",
+        "bytes": 1504402,
+        "derived_from": "gdf_lc958_annex.pdf",
+        "method": "pdftotext -layout; identity text only"
+      }
+    },
+    {
+      "file": "sources/gdf_organic_correct.html",
+      "sha256": "1f701437d8244fa469774453e6e2f7be2320d390c40ee070b3e606d038f97a81",
+      "bytes": 3401015,
+      "receipt": {
+        "url": "https://dflegis.df.gov.br/ato.php?co_data=15629&tipo=ato",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:04:56.910383+00:00",
+        "sha256": "1f701437d8244fa469774453e6e2f7be2320d390c40ee070b3e606d038f97a81",
+        "bytes": 3401015
+      }
+    },
+    {
+      "file": "sources/gdf_organic_law.html",
+      "sha256": "89e23ce9e1e13fffc9337981658d9a0692b3eaf44845437946b2ee49656a3806",
+      "bytes": 22376,
+      "receipt": {
+        "url": "https://www.sinj.df.gov.br/sinj/Norma/51112/Lei_Organica__08_06_1993.html",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:06.973678+00:00",
+        "sha256": "89e23ce9e1e13fffc9337981658d9a0692b3eaf44845437946b2ee49656a3806",
+        "bytes": 22376
+      }
+    },
+    {
+      "file": "sources/gdf_ra_history.json",
+      "sha256": "703c2cac276a081b90f7c736f7154568b590f059a971cfab7d5b3e85407d49f8",
+      "bytes": 15435,
+      "receipt": {
+        "url": "https://www.geoservicos.ide.df.gov.br/arcgis/rest/services/Aplicacoes/CONTROLADORIA_GDF/MapServer/layers?f=json",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:56.086130+00:00",
+        "sha256": "703c2cac276a081b90f7c736f7154568b590f059a971cfab7d5b3e85407d49f8",
+        "bytes": 15435
+      }
+    },
+    {
+      "file": "sources/gdf_ra_layer.json",
+      "sha256": "2fa627b615a2c83c9c9e5718f6d9ed27c4d66283c59edc112618a81f8ad30abf",
+      "bytes": 11605,
+      "receipt": {
+        "url": "https://www.geoservicos.ide.df.gov.br/arcgis/rest/services/Publico/LIMITES/MapServer/1?f=json",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:56.086065+00:00",
+        "sha256": "2fa627b615a2c83c9c9e5718f6d9ed27c4d66283c59edc112618a81f8ad30abf",
+        "bytes": 11605
+      }
+    },
+    {
+      "file": "sources/gdf_ra_polygons.geojson",
+      "sha256": "a89db06af2538eab3aa7abc3287ef02f33793ed4139f8cdb103a9dec8b0ac852",
+      "bytes": 4582645,
+      "receipt": {
+        "url": "https://www.geoservicos.ide.df.gov.br/arcgis/rest/services/Publico/LIMITES/MapServer/1/query?f=geojson&where=1%3D1&outFields=*&outSR=4326",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:04:01.523332+00:00",
+        "sha256": "a89db06af2538eab3aa7abc3287ef02f33793ed4139f8cdb103a9dec8b0ac852",
+        "bytes": 4582645
+      }
+    },
+    {
+      "file": "sources/geonames-readme.txt",
+      "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+      "bytes": 8843,
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/readme.txt",
+        "retrieved_utc": "2026-11-14T08:12:04.941681+00:00",
+        "sha256": "b1957379b6c1242c700c98ac9a8aa0a09f56c3c0a50ee72175527005f48ef2c5",
+        "bytes": 8843,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.993427+00:00"
+      }
+    },
+    {
+      "file": "sources/geonames_licence.html",
+      "sha256": "18329b78439603c9b5dbd3d0ac81488bbc867f5cd4952c1e7e3edbd93e67c6c3",
+      "bytes": 30597,
+      "receipt": {
+        "url": "https://www.geonames.org/export/",
+        "sha256": "18329b78439603c9b5dbd3d0ac81488bbc867f5cd4952c1e7e3edbd93e67c6c3",
+        "bytes": 30597,
+        "status": 200,
+        "retained_hash_checked_utc": "2026-11-24T08:00:39.064444+00:00"
+      }
+    },
+    {
+      "file": "sources/gn_wikidata.json",
+      "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+      "bytes": 130006,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-20T08:20:29.809146+00:00",
+        "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17",
+        "bytes": 130006,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.976474+00:00"
+      }
+    },
+    {
+      "file": "sources/issue1643.json",
+      "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+      "bytes": 1972,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/issues/1643",
+        "sha256": "163073cbeb33a0324cc3bad5d545d1fa9a709851ed6af2e0af5b2836142a7d5e",
+        "bytes": 1972,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.894975+00:00"
+      }
+    },
+    {
+      "file": "sources/municipal_units.json",
+      "sha256": "39fbc743b81f0a6018062967792de5c92ba6351059d222b8d92a07210e42c658",
+      "bytes": 5128886,
+      "receipt": {
+        "sha256": "39fbc743b81f0a6018062967792de5c92ba6351059d222b8d92a07210e42c658",
+        "bytes": 5128886,
+        "derived_from": "BR_Municipios_2025.zip",
+        "source_sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd",
+        "method": "Exact selected official geometries, no simplification; containment only"
+      }
+    },
+    {
+      "file": "sources/pda_2024_2025.txt",
+      "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+      "bytes": 148346,
+      "receipt": {
+        "sha256": "1514aa1c828ff946e70f80fe5f416dad25b3680df42297c30eeed6cb420d2571",
+        "bytes": 148346,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.487319+00:00"
+      }
+    },
+    {
+      "file": "sources/pr2269.json",
+      "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+      "bytes": 936,
+      "receipt": {
+        "url": "https://api.github.com/repos/dr5hn/countries-states-cities-database/pulls/2269",
+        "sha256": "1ab0e3f2ada1f97a008a5e325f50c1d2437aff67f1eca394e86a48cb0c0d3d89",
+        "bytes": 936,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.967241+00:00"
+      }
+    },
+    {
+      "file": "sources/qlever_current.json",
+      "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+      "bytes": 1549287,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "sha256": "c3aa2bbe1503fdeb447221fefa5af1e9fc8e73406136470949b6e4273d70cf7d",
+        "bytes": 1549287,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.348754+00:00"
+      }
+    },
+    {
+      "file": "sources/qlever_ra.json",
+      "sha256": "e7ecfd6d683faec4e8a09cc468dba2882a7e0117e7097c814809f232db9c1800",
+      "bytes": 10630,
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "http_method": "POST",
+        "query": "PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?item ?itemLabel ?class ?parent WHERE { ?item wdt:P31 wd:Q1158712 . OPTIONAL { ?item rdfs:label ?itemLabel FILTER(LANG(?itemLabel)=\"pt\") } OPTIONAL { ?item wdt:P31 ?class } OPTIONAL { ?item wdt:P131 ?parent } }",
+        "status": 200,
+        "sha256": "e7ecfd6d683faec4e8a09cc468dba2882a7e0117e7097c814809f232db9c1800",
+        "bytes": 10630,
+        "retrieved_utc": "2026-11-24T08:07:38.375648+00:00"
+      }
+    },
+    {
+      "file": "sources/register.json",
+      "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+      "bytes": 3748384,
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+        "bytes": 3748384,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.885241+00:00"
+      }
+    },
+    {
+      "file": "sources/research_options.md",
+      "sha256": "ed922232e4e379d2bfdcca565b1c573afaf8eef0668fc6e8868ba6811f9bc8f9",
+      "bytes": 6645,
+      "receipt": {
+        "sha256": "ed922232e4e379d2bfdcca565b1c573afaf8eef0668fc6e8868ba6811f9bc8f9",
+        "bytes": 6645,
+        "retained_from": "work_add/options.md",
+        "verified_against_prior_manifest": false
+      }
+    },
+    {
+      "file": "sources/research_other60.csv",
+      "sha256": "d8edcd60001ec920f20da7fd9fbe25eff7466e45e2681df7d01b8f61fb8ff248",
+      "bytes": 61724,
+      "receipt": {
+        "sha256": "d8edcd60001ec920f20da7fd9fbe25eff7466e45e2681df7d01b8f61fb8ff248",
+        "bytes": 61724,
+        "retained_from": "work_add/other60.csv",
+        "verified_against_prior_manifest": false
+      }
+    },
+    {
+      "file": "sources/rio_codes.json",
+      "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
+      "bytes": 214328,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
+        "retrieved_utc": "2026-11-23T08:27:01.082984+00:00",
+        "status": 200,
+        "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83",
+        "bytes": 214328,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.496760+00:00"
+      }
+    },
+    {
+      "file": "sources/rio_item.json",
+      "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
+      "bytes": 3458,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/894753c5397b45588921c931cd01130f?f=json",
+        "retrieved_utc": "2026-11-23T08:27:01.488129+00:00",
+        "status": 200,
+        "sha256": "31224df166f7f92f6743ba1559a911ecdb78f0aaf9e2e2e837f2a319c0323dc9",
+        "bytes": 3458,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.984592+00:00"
+      }
+    },
+    {
+      "file": "sources/rio_layer.json",
+      "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
+      "bytes": 22113,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0?f=json",
+        "retrieved_utc": "2026-11-23T08:26:59.178497+00:00",
+        "status": 200,
+        "sha256": "adc65296fed1842b44a73a83e4235bdecf1ec28da089a2292e9b1d93f71701b7",
+        "bytes": 22113,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.956647+00:00"
+      }
+    },
+    {
+      "file": "sources/rio_polygons.geojson",
+      "sha256": "ba51b5cbacfaedee7e67b22c083c72bf35296f12efcf2daebf4d8ee356660b79",
+      "bytes": 4886305,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=geojson&where=1%3D1&outFields=*&outSR=4326",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:01:11.860139+00:00",
+        "sha256": "ba51b5cbacfaedee7e67b22c083c72bf35296f12efcf2daebf4d8ee356660b79",
+        "bytes": 4886305
+      }
+    },
+    {
+      "file": "sources/rio_population_current_item.json",
+      "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c",
+      "bytes": 113,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/554c36237966407fbb674396ecc641f5?f=json",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:04.352867+00:00",
+        "sha256": "65915fb331b297e9907690d5a715a75062b6dc04c3bae84bfdae5fc17e705d5c",
+        "bytes": 113
+      }
+    },
+    {
+      "file": "sources/rio_population_item.json",
+      "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
+      "bytes": 5147,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/1df0079668254699b83a56dac4d8ed56?f=json",
+        "retrieved_utc": "2026-11-23T08:35:07.569887+00:00",
+        "status": 200,
+        "sha256": "f6b9a4baace81c7a0f44407a4387ef5330b2c4d6f2eb4ca614222a640b4cd1ca",
+        "bytes": 5147,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.365729+00:00"
+      }
+    },
+    {
+      "file": "sources/rio_population_layer.json",
+      "sha256": "ecfeb999124062c1bbc3d868724625511dcebacd4bdfb04ca295596ca7fa6225",
+      "bytes": 7901,
+      "receipt": {
+        "url": "https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Censo/Limites_administrativos_Censo_2022/MapServer/2?f=json",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:01:13.301259+00:00",
+        "sha256": "ecfeb999124062c1bbc3d868724625511dcebacd4bdfb04ca295596ca7fa6225",
+        "bytes": 7901
+      }
+    },
+    {
+      "file": "sources/rio_population_map_item.json",
+      "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
+      "bytes": 4334,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/fd354740f1934bf5bf8e9b0e2b509aa9?f=json",
+        "retrieved_utc": "2026-11-23T08:35:07.868119+00:00",
+        "status": 200,
+        "sha256": "47324f49d0f8bf8de6fc90a87b3bef97e11c64fd0748d4f95192aa8685106a90",
+        "bytes": 4334,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.925704+00:00"
+      }
+    },
+    {
+      "file": "sources/rio_population_map_item_current.json",
+      "sha256": "d10522cac3132da49e220b0089b282c70bf9342a4aedb3660bf781cb6f339564",
+      "bytes": 4334,
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/fd354740f1934bf5bf8e9b0e2b509aa9?f=json",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:03:04.355269+00:00",
+        "sha256": "d10522cac3132da49e220b0089b282c70bf9342a4aedb3660bf781cb6f339564",
+        "bytes": 4334
+      }
+    },
+    {
+      "file": "sources/rio_population_rows.json",
+      "sha256": "bf7d809feda720388eb0730918445c029f258c5582b5ae450644d6aff5e229d5",
+      "bytes": 72120,
+      "receipt": {
+        "url": "https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Censo/Limites_administrativos_Censo_2022/MapServer/2/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
+        "status": 200,
+        "retrieved_utc": "2026-11-24T08:01:16.965903+00:00",
+        "sha256": "bf7d809feda720388eb0730918445c029f258c5582b5ae450644d6aff5e229d5",
+        "bytes": 72120
+      }
+    },
+    {
+      "file": "sources/rio_service.json",
+      "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
+      "bytes": 3821,
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer?f=json",
+        "retrieved_utc": "2026-11-23T08:26:58.629125+00:00",
+        "status": 200,
+        "sha256": "bb62edeb279498c68c17991f58a057258c2745aa43f0db06659e72bf75ed7339",
+        "bytes": 3821,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.333446+00:00"
+      }
+    },
+    {
+      "file": "sources/tbb-DATA_LICENSE",
+      "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+      "bytes": 26030,
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/blob/2026e/DATA_LICENSE",
+        "sha256": "064dbcd9fdd0ffdf36742c40718a23596be8a51838cb43b397f45d383ba42440",
+        "bytes": 26030,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.839248+00:00"
+      }
+    },
+    {
+      "file": "sources/tbb-release.json",
+      "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+      "bytes": 31761,
+      "receipt": {
+        "url": "https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/tags/2026e",
+        "sha256": "740b3b46fd7e8bece1f44335a7e1509f8d5a51684a3ce96c5da04e3e19d7feb0",
+        "bytes": 31761,
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.946875+00:00"
+      }
+    },
+    {
+      "file": "sources/timezones.geojson.zip",
+      "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+      "bytes": 51940158,
+      "receipt": {
+        "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+        "bytes": 51940158,
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip",
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.473806+00:00"
+      }
+    },
+    {
+      "file": "sources/tzdata2026e.tar.gz",
+      "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+      "bytes": 481989,
+      "receipt": {
+        "sha256": "b26882805f26aac59d5b222978e6580484b834ccdc98be89df2f05a6dc53a652",
+        "bytes": 481989,
+        "url": "https://data.iana.org/time-zones/releases/tzdata2026e.tar.gz",
+        "retained_hash_checked_utc": "2026-11-24T08:00:38.936630+00:00"
+      }
+    }
+  ],
+  "id_allocation": {
+    "current_max": 202855,
+    "proposed_ids": [
+      202856,
+      202857,
+      202858,
+      202859,
+      202860,
+      202861,
+      202862,
+      202863,
+      202864,
+      202865,
+      202866,
+      202867,
+      202868,
+      202869,
+      202870,
+      202871,
+      202872,
+      202873,
+      202874,
+      202875,
+      202876,
+      202877,
+      202878,
+      202879,
+      202880,
+      202881,
+      202882,
+      202883,
+      202884,
+      202885,
+      202886,
+      202887,
+      202888,
+      202889,
+      202890,
+      202891,
+      202892,
+      202893,
+      202894,
+      202895,
+      202896,
+      202897,
+      202898,
+      202899,
+      202900,
+      202901,
+      202902,
+      202903,
+      202904,
+      202905,
+      202906,
+      202907,
+      202908,
+      202909,
+      202910,
+      202911,
+      202912,
+      202913,
+      202914
+    ],
+    "reserved_and_retired_checked": true,
+    "recheck_at_merge": true
+  },
+  "decisions": {
+    "owner_class_decision": "23 November; explicit user build instructions",
+    "population": "Only own IPP 2022 bairro totals under current CC BY 4.0 catalogue-to-layer link; other totals omitted",
+    "IPEDF": "No population copied; no reusable PDAD terms established",
+    "IBGE": "Owner-accepted Decreto 8.777/2016 arts 3 IV and 4 as amended by Decreto 9.903/2019; IBGE credited; no IBGE locality coordinates copied",
+    "translations": "omitted",
+    "new_events": 0
+  }
+}

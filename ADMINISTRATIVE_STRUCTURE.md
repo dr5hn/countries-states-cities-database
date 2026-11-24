@@ -62,7 +62,7 @@ API support and country-by-country link population follow separately.
    it has no government. **Urban-containment model:** for neighbourhoods a city publishes as parts of itself, the fix
    summary may record that the city is their parent, with `level` one below the city. This is a documented exception to
    rules 3 and 4, recorded per city (US neighbourhoods in #1967; Montevideo, a city at level 2 with its barrios at level
-   3 under it). Adding municipio or ward records later does not silently replace these urban parents; that ancestry is
+   3 under it; Rio de Janeiro, município row 14309 at level 2 with its official bairros at level 3 under it). Adding municipio or ward records later does not silently replace these urban parents; that ancestry is
    documented separately. A city spanning several units is not by itself a reason to use this model.
 7. **An intermediate unit and its place can both be kept, when both are verified.** Rules 1-2 decide where a unit goes;
    basic municipalities are not duplicated into counties. Where a unit is also a place people know as a city, as
@@ -85,6 +85,7 @@ API support and country-by-country link population follow separately.
 
 | `type` | Meaning | `type_local` examples |
 | --- | --- | --- |
+| `administrative region` | a division of a federal district with no municipalities | região administrativa (BR, Distrito Federal) |
 | `municipality` | basic unit of local government (a territory in MX and GR, see [TYPE_FIELD.md](TYPE_FIELD.md)) | commune (FR), comune (IT), Gemeinde (DE), municipio (ES), município (BR), gmina (PL) |
 | `city` | a place with official city status, or where the country has no finer category | Stadt (DE), city (US), shahr (IR) |
 | `town` | an official town category | town (US), oraș (RO) |
