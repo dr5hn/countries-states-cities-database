@@ -257,6 +257,24 @@ Reviewed rows bind a 2020 Census place only through their own P774 equal to its 
 
 The [US item and former-CDP ledger](.github/fixes-docs/ledgers/us_fix3_v6x.jsonl) applies the preceding binding veto to both current and proposed own items before correcting or supplying an item through a same-name, same-state 2020 Census place with strict stored-point containment and an exact own P774 GEOID or P590 ANSI code, or through an own P590 for the unique same-name GNIS Populated Place within 1 km with no other within 5 km, uses the preceding classification and population rules for accepted Census bindings, and permits the formerly held former-CDP rows as `locality / unincorporated community / 3` only with a nonhistorical own GNIS Populated Place, no own item P774 or P590 matching any 2020 Census place or county subdivision, no same-name 2020 place in the state and a point outside every 2020 incorporated place and CDP; Items already owned by another CSC row and county or independent-city duplicate records remain unchanged for v7; Puerto Rico, abandoned missing-item rows, conflicting identifiers, township or county-subdivision classes and ambiguous bindings remain held.
 
+### Spain
+
+Spanish municipios are `municipality / municipio / 3`; INE singular population entities are
+`locality / entidad singular de población / 4`, and núcleos are `locality / núcleo de población / 5`.
+These are separate scopes: a settlement keeps its own item and population when a municipio is added.
+Official municipal districts use `section / distrito / 4` (`districte` in Barcelona), under their
+municipio. Neighbourhoods use `section / barrio` (`barri` in Barcelona, `barriada` in Palma), at level 5
+under a verified district row. Barcelona, Pamplona, Burgos, Palma and Zaragoza document rule 6's
+urban-containment model for the reviewed neighbourhoods whose district row is absent: level 4 under
+their municipio. Madrid uses district ancestry for Costillares (the Pinar de Chamartín row) and the
+urban-containment model for Las Tablas, a municipally recognised functional barrio rather than an
+administrative barrio. A missing verified parent remains null; no settlement row substitutes for a
+municipio. The Centro district retains row 33695 and item Q1763376. See the
+[Spain scope ledger](.github/fixes-docs/ledgers/es_scope_v6x.jsonl) for per-row class, hierarchy,
+official city source, identity and population decisions.
+
+The reviewed Spain package has 8,962 rows: 661 new municipios and 104 reused existing municipio rows; eight unmerged duplicate additions were discarded. All 20 proposed population clears were rechecked: 9 master values restored and held, 9 exact other-unit totals cleared, La Vall d'Alcalà's 348,901 cleared, and Galera replaced with its own 2025 municipio count. Spain L/D is 99.43% and dated population is 96.54%.
+
 ### Uruguay
 
 In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or
@@ -421,11 +439,14 @@ In Vietnam, also exclude `municipality`: since the July 2025 reform it is a comm
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
-The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, so it can return a city and
-its parts together. A section's population is part of the population of the city or municipality that contains it, never
-extra: Rio de Janeiro's row carries the whole city's 6.7 million, and its bairros' own counts, Copacabana's 128,919
-among them, add up to about 6 million of those same people. To sum or rank populations, count a city or its sections,
-not both; the simplest way is to leave out rows with `type = 'section'`.
+The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, and in several countries it
+keeps both a municipality and the settlements inside it, so it can return a place and its parts together. A part's
+population is part of the population of the unit that contains it, never extra. Rio de Janeiro's row carries the whole
+city's 6.7 million, and its bairros' own counts, Copacabana's 128,919 among them, add up to about 6 million of those
+same people. In Spain a municipio and its main village (`locality / entidad singular de población`) often share a name
+and a point: Puigcerdà the municipio has 10,035 people and Puigcerdà the village 7,909 of them, so a name search returns
+both, told apart by `type`. To sum or rank populations, count a unit or its parts, not both: leave out rows whose `type`
+is `section`, and in Spain count the municipio rows.
 
 ### SQL
 

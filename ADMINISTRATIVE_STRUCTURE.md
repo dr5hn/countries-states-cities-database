@@ -62,7 +62,7 @@ API support and country-by-country link population follow separately.
    it has no government. **Urban-containment model:** for neighbourhoods a city publishes as parts of itself, the fix
    summary may record that the city is their parent, with `level` one below the city. This is a documented exception to
    rules 3 and 4, recorded per city (US neighbourhoods in #1967; Montevideo, a city at level 2 with its barrios at level
-   3 under it; Rio de Janeiro, município row 14309 at level 2 with its official bairros at level 3 under it). Adding municipio or ward records later does not silently replace these urban parents; that ancestry is
+   3 under it; Rio de Janeiro, município row 14309 at level 2 with its official bairros at level 3 under it; Spain: Madrid (functional Las Tablas), Barcelona, Pamplona, Burgos, Palma and Zaragoza, with reviewed neighbourhoods at level 4 under their municipio at level 3). Adding municipio or ward records later does not silently replace these urban parents; that ancestry is
    documented separately. A city spanning several units is not by itself a reason to use this model.
 7. **An intermediate unit and its place can both be kept, when both are verified.** Rules 1-2 decide where a unit goes;
    basic municipalities are not duplicated into counties. Where a unit is also a place people know as a city, as

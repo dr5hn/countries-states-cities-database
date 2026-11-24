@@ -2024,3 +2024,134 @@ IBGE DTB 2025 district classification: https://geoftp.ibge.gov.br/organizacao_do
 IBGE 2025 polygon containment: https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip
 GeoNames CC BY 4.0 identity and optional own point: https://download.geonames.org/export/dump/BR.zip
 timezone-boundary-builder 2026e ODbL reference containment: https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip
+
+Spain scope audit (es_scope_v6x; issue 1643)
+Elaboración propia con datos extraídos del sitio web del INE: www.ine.es.
+INE municipio register 1 January 2026 and current-year REL changes; Padrón and Nomenclátor 1 January 2025.
+Padrón published 11 December 2025; Nomenclátor published 28 January 2026. Statistical reuse: CC BY 4.0.
+Changes: complete missing-municipio inventory, preserved settlement identities, own-code and point-bound classifications, dated own-unit counts and explicit holds. INE does not endorse this reuse.
+Obra derivada de BDLJE 2026-08-10 CC-BY 4.0 Instituto Geográfico Nacional (ign.es). Changes: strict stored-point municipal containment; no official geometry redistributed in city rows.
+Wikidata contributors, structured data CC0; own-item EntityData and QLever captures with hashes.
+Timezone-boundary-builder 2026e, ODbL; point-in-polygon timezone assignment. Geometry not redistributed in city rows.
+Municipal lists and regulations establish terminology and ancestry only; no neighbourhood population is inferred from a parent total.
+Sources (saved retrieval receipts in es_scope_v6x.sources.json):
+https://contractaciopublica.cat/portal-api/descarrega-document-antic/84809168/b5553b5f983c9525f8e6bb8ae5fa3778
+https://programaseducativos.aytoburgos.es/en/web/ayuntamiento-de-burgos/-/reglamento-de-organizaci%C3%B3n-y-funcionamiento-de-los-distritos-municipales-de-la-ciudad-de-burgos-
+https://creativecommons.org/licenses/by/4.0/legalcode.es
+https://centrodedescargas.cnig.es/CentroDescargas/politica-datos
+https://www.ine.es/daco/daco42/codmun/26codmun.xlsx
+https://www.ine.es/daco/daco42/codmun/codmun_anual.htm
+https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177031&idp=1254735976614
+https://www.ine.es/nomen2/index.do
+https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177011&menu=resultados&idp=1254734710990
+https://www.ine.es/daco/daco42/codmun/diccionario26.xlsx
+https://qlever.dev/api/wikidata
+https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf
+https://www.ine.es/dyngs/AYU/index.htm?cid=125
+https://centrodedescargas.cnig.es/CentroDescargas/documentos/atom/au/lineas_limite_gml.zip
+https://www.wikidata.org/wiki/Special:EntityData/Q1001991.json
+https://www.wikidata.org/wiki/Special:EntityData/Q10305.json
+https://www.wikidata.org/wiki/Special:EntityData/Q10400.json
+https://www.wikidata.org/wiki/Special:EntityData/Q108064499.json
+https://www.wikidata.org/wiki/Special:EntityData/Q115769827.json
+https://www.wikidata.org/wiki/Special:EntityData/Q11681338.json
+https://www.wikidata.org/wiki/Special:EntityData/Q120171067.json
+https://www.wikidata.org/wiki/Special:EntityData/Q120171175.json
+https://www.wikidata.org/wiki/Special:EntityData/Q120171270.json
+https://www.wikidata.org/wiki/Special:EntityData/Q120172289.json
+https://www.wikidata.org/wiki/Special:EntityData/Q120173397.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1233485.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1233513.json
+https://www.wikidata.org/wiki/Special:EntityData/Q12392493.json
+https://www.wikidata.org/wiki/Special:EntityData/Q13049643.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1324017.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1353997.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1368938.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1489481.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1501940.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1631759.json
+https://www.wikidata.org/wiki/Special:EntityData/Q16518534.json
+https://www.wikidata.org/wiki/Special:EntityData/Q16558420.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1752987.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1763370.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1763376.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1763694.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1773540.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1928529.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1947988.json
+https://www.wikidata.org/wiki/Special:EntityData/Q1959105.json
+https://www.wikidata.org/wiki/Special:EntityData/Q197689.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2000929.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2001937.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2002296.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2003054.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2017682.json
+https://www.wikidata.org/wiki/Special:EntityData/Q20546326.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2076109.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2118556.json
+https://www.wikidata.org/wiki/Special:EntityData/Q22827659.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23977929.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23979490.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23979863.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23979871.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23980336.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23982941.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23988746.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23990751.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23992991.json
+https://www.wikidata.org/wiki/Special:EntityData/Q23993044.json
+https://www.wikidata.org/wiki/Special:EntityData/Q24001476.json
+https://www.wikidata.org/wiki/Special:EntityData/Q24003606.json
+https://www.wikidata.org/wiki/Special:EntityData/Q24009589.json
+https://www.wikidata.org/wiki/Special:EntityData/Q267946.json
+https://www.wikidata.org/wiki/Special:EntityData/Q27678714.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2842046.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2899165.json
+https://www.wikidata.org/wiki/Special:EntityData/Q2944737.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3095047.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3297924.json
+https://www.wikidata.org/wiki/Special:EntityData/Q331385.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3314337.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3649129.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3751386.json
+https://www.wikidata.org/wiki/Special:EntityData/Q3813816.json
+https://www.wikidata.org/wiki/Special:EntityData/Q430748.json
+https://www.wikidata.org/wiki/Special:EntityData/Q49562.json
+https://www.wikidata.org/wiki/Special:EntityData/Q52631.json
+https://www.wikidata.org/wiki/Special:EntityData/Q5483711.json
+https://www.wikidata.org/wiki/Special:EntityData/Q575644.json
+https://www.wikidata.org/wiki/Special:EntityData/Q576408.json
+https://www.wikidata.org/wiki/Special:EntityData/Q5821873.json
+https://www.wikidata.org/wiki/Special:EntityData/Q5823.json
+https://www.wikidata.org/wiki/Special:EntityData/Q589403.json
+https://www.wikidata.org/wiki/Special:EntityData/Q5970566.json
+https://www.wikidata.org/wiki/Special:EntityData/Q656196.json
+https://www.wikidata.org/wiki/Special:EntityData/Q794954.json
+https://www.wikidata.org/wiki/Special:EntityData/Q807230.json
+https://www.wikidata.org/wiki/Special:EntityData/Q816284.json
+https://www.wikidata.org/wiki/Special:EntityData/Q81802.json
+https://www.wikidata.org/wiki/Special:EntityData/Q8560730.json
+https://www.wikidata.org/wiki/Special:EntityData/Q8964986.json
+https://www.wikidata.org/wiki/Special:EntityData/Q9018307.json
+https://www.wikidata.org/wiki/Special:EntityData/Q9052125.json
+https://www.wikidata.org/wiki/Special:EntityData/Q919536.json
+https://www.wikidata.org/wiki/Special:EntityData/Q953368.json
+https://www.wikidata.org/wiki/Special:EntityData/Q970554.json
+https://www.wikidata.org/wiki/Special:EntityData/Q983564.json
+https://www.wikidata.org/wiki/Special:EntityData/Q985602.json
+https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Barrios/Barrios.csv
+https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Barrios/Barrios.kml
+https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Distritos/Distritos.kml
+https://datos.madrid.es/dataset/213583-0-cartografia-distritos-1-5000/downloads
+https://www-2.munimadrid.es/fsdescargas/VISAE_WEBPUB/NTI/135-2021-01281/contenido_no_modificable/docsExpdte/ES_L01280796_2021_0000000000000098024e4e051a6c83.pdf
+https://sedeelectronica.pamplona.es/FichaTramite.aspx?id=20-45713
+https://www.pamplona.es/sites/default/files/2022-11/plano-castellano-2023.pdf
+https://www.ine.es/nomen_files/nacional/es/Nacional_2025.zip
+https://www.ine.es/pob_xls/pobmun.zip
+https://tlr-palmajove.palma.cat/documents/39028/14879291/Firma_20240603_Acta_num_5_Junta_Mpal_Districte_Platja_de_Palma_i_Pla_de_Sant_Jordi_-_SEFYCU_3550760%2B%281%29.pdf/9d0d9567-69e3-4539-fa96-02e787e2ded1?t=1730969262070
+https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip
+https://zaragoza.es/sede/portal/bomberos/plan-emergencia/
+https://www.zaragoza.es/sede/servicio/normativa/109
+https://www.zaragoza.es/sede/portal/servicios-sociales/mujer/cultura/enlace/mujer/paseos/distrito-sur
+https://www.boe.es/boe/dias/1993/05/14/pdfs/A14700-14700.pdf
+Every missing municipio and every changed or held old row: .github/fixes-docs/ledgers/es_scope_v6x.jsonl.

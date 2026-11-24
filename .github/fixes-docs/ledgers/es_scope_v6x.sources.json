@@ -1,0 +1,2531 @@
+{
+  "base_commit": "4d03a736dacee674cd34dd166976ab00cdd92c10",
+  "schema_version": 1,
+  "ledger_sha256": "d0411b1afe02c0d2a2b6a28685d6060f91bbd8f214ddcfe04467c8bfab9b4f41",
+  "source_files": {
+    "base_ES.json": {
+      "size": 10014523,
+      "sha256": "cb9fe007ba3a233138e7c475eada043d9b27a42babfb312b259ad92b0627c767"
+    },
+    "bcn_barrios.csv": {
+      "size": 146,
+      "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864",
+      "receipt": {
+        "url": "https://opendata-ajuntament.barcelona.cat/data/dataset/808daafa-d9ce-48c0-925a-fa5afdb1ed41/resource/243d61ac-6e19-4999-93fa-a7d9e3d8f95a/download",
+        "retrieved_at": "2026-11-24T10:29:36.541089+00:00",
+        "status": 403,
+        "size": 146,
+        "sha256": "32f2fa940d4b4fe19aca1e53a24e5aac29c57b7c5ee78588325b87f1b649c864"
+      }
+    },
+    "bcn_barris_excerpt.json": {
+      "size": 25417,
+      "sha256": "8b59f69c87a19bfbbcc65cbc71e335399ccf7ac989876ff48c0e0ac7a02c5262",
+      "receipt": {
+        "url": "https://contractaciopublica.cat/portal-api/descarrega-document-antic/84809168/b5553b5f983c9525f8e6bb8ae5fa3778",
+        "retrieved_at": "2026-11-24T10:35:05.746237+00:00",
+        "status": "web_text_success",
+        "size": 25417,
+        "sha256": "8b59f69c87a19bfbbcc65cbc71e335399ccf7ac989876ff48c0e0ac7a02c5262"
+      }
+    },
+    "bcn_official.json": {
+      "size": 26318,
+      "sha256": "a9f20c05ee04e73531d1808e4b218ea61c04dd78309146513ac0bca55bd862e9",
+      "receipt": {
+        "url": "https://contractaciopublica.cat/portal-api/descarrega-document-antic/84809168/b5553b5f983c9525f8e6bb8ae5fa3778",
+        "retrieved_at": "2026-11-24T10:34:37.652994+00:00",
+        "status": "web_text_success",
+        "size": 26318,
+        "sha256": "a9f20c05ee04e73531d1808e4b218ea61c04dd78309146513ac0bca55bd862e9"
+      }
+    },
+    "bcn_style_web.json": {
+      "size": 375,
+      "sha256": "2ab185b0eedb3e3c0f92cf98a629d0857b49a3ca81142d66cc071d03f07c13be",
+      "receipt": {
+        "url": "https://bcnroc.ajuntament.barcelona.cat/jspui/bitstream/11703/145545/1/2022-gener-SL-Man-ManualEstilLinguistic.pdf",
+        "retrieved_at": "2026-11-24T10:31:20.150897+00:00",
+        "status": "web_text_error",
+        "size": 375,
+        "sha256": "2ab185b0eedb3e3c0f92cf98a629d0857b49a3ca81142d66cc071d03f07c13be"
+      }
+    },
+    "burgos_web.json": {
+      "size": 9256,
+      "sha256": "239035308fe479463b2fbb36baceee1baba2e54ca301061bd712a4de74e36bda",
+      "receipt": {
+        "url": "https://programaseducativos.aytoburgos.es/en/web/ayuntamiento-de-burgos/-/reglamento-de-organizaci%C3%B3n-y-funcionamiento-de-los-distritos-municipales-de-la-ciudad-de-burgos-",
+        "retrieved_at": "2026-11-24T10:31:20.156312+00:00",
+        "status": "web_text_success",
+        "size": 9256,
+        "sha256": "239035308fe479463b2fbb36baceee1baba2e54ca301061bd712a4de74e36bda"
+      }
+    },
+    "ccby.html": {
+      "size": 52718,
+      "sha256": "5be596d6652b3a44535061deac3c0ba5556d3257b65d7992bd438147afbc08c8",
+      "receipt": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode.es",
+        "retrieved_at": "2026-11-17T16:19:18.032835+00:00",
+        "status": 200,
+        "size": 52718,
+        "sha256": "5be596d6652b3a44535061deac3c0ba5556d3257b65d7992bd438147afbc08c8"
+      }
+    },
+    "cnig_terms.html": {
+      "size": 47364,
+      "sha256": "618af4da6735167a366898c75fe5d6c11fc716073cd65d9f346b90b7ffc968c0",
+      "receipt": {
+        "url": "https://centrodedescargas.cnig.es/CentroDescargas/politica-datos",
+        "retrieved_at": "2026-11-17T16:19:17.118962+00:00",
+        "status": 200,
+        "size": 47364,
+        "sha256": "618af4da6735167a366898c75fe5d6c11fc716073cd65d9f346b90b7ffc968c0"
+      }
+    },
+    "codmun26.xlsx": {
+      "size": 318222,
+      "sha256": "b4bea7c3cc1b295a73f7fa3ca68b2ef25c3a59833bd91ea5315ae25dcc1ca741",
+      "receipt": {
+        "url": "https://www.ine.es/daco/daco42/codmun/26codmun.xlsx",
+        "retrieved_at": "2026-11-24T10:26:52.634415+00:00",
+        "status": 200,
+        "size": 318222,
+        "sha256": "b4bea7c3cc1b295a73f7fa3ca68b2ef25c3a59833bd91ea5315ae25dcc1ca741"
+      }
+    },
+    "codmun_changes.html": {
+      "size": 26943,
+      "sha256": "f6265d98aa146fa075fb224f886be1b1e366016f5f2f6a66c2c76f15c527df45",
+      "receipt": {
+        "url": "https://www.ine.es/daco/daco42/codmun/codmun_anual.htm",
+        "retrieved_at": "2026-11-24T10:27:35.447914+00:00",
+        "status": 200,
+        "size": 26943,
+        "sha256": "f6265d98aa146fa075fb224f886be1b1e366016f5f2f6a66c2c76f15c527df45"
+      }
+    },
+    "codmun_current_page.html": {
+      "size": 32815,
+      "sha256": "8637b8fe243bcfc415e85504f0fdc567d9a602edf65f9aef75d6f1426af32ad7",
+      "receipt": {
+        "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177031&idp=1254735976614",
+        "retrieved_at": "2026-11-24T10:26:51.569783+00:00",
+        "status": 200,
+        "size": 32815,
+        "sha256": "8637b8fe243bcfc415e85504f0fdc567d9a602edf65f9aef75d6f1426af32ad7"
+      }
+    },
+    "codmun_index.html": {
+      "size": 19791,
+      "sha256": "af660734b2011999c65e3c35fe7352b5d3a87337daed41039049ea08e070dbd8",
+      "receipt": {
+        "url": "https://www.ine.es/daco/daco42/codmun/codmunmapa.htm",
+        "retrieved_at": "2026-11-24T10:25:41.658198+00:00",
+        "status": 404,
+        "size": 19791,
+        "sha256": "af660734b2011999c65e3c35fe7352b5d3a87337daed41039049ea08e070dbd8"
+      }
+    },
+    "current_nomen_page.html": {
+      "size": 48169,
+      "sha256": "9623a423b1ac3965cf5441368deeac846a10b1813eb0b02d13dfbe9e4bc44f89",
+      "receipt": {
+        "url": "https://www.ine.es/nomen2/index.do",
+        "retrieved_at": "2026-11-24T10:25:39.996854+00:00",
+        "status": 200,
+        "size": 48169,
+        "sha256": "9623a423b1ac3965cf5441368deeac846a10b1813eb0b02d13dfbe9e4bc44f89"
+      }
+    },
+    "current_padron_page.html": {
+      "size": 28339,
+      "sha256": "6701e607dd134c2144f4ea12f6339a0e6b9319cc6c771d3451a710c3ffb97085",
+      "receipt": {
+        "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177011&menu=resultados&idp=1254734710990",
+        "retrieved_at": "2026-11-24T10:25:38.723706+00:00",
+        "status": 200,
+        "size": 28339,
+        "sha256": "6701e607dd134c2144f4ea12f6339a0e6b9319cc6c771d3451a710c3ffb97085"
+      }
+    },
+    "diccionario26.xlsx": {
+      "size": 306819,
+      "sha256": "07f8e8d64eba73fe9d425196fe82f4e09a9886a287abd650e88ca8d98dd49052",
+      "receipt": {
+        "url": "https://www.ine.es/daco/daco42/codmun/diccionario26.xlsx",
+        "retrieved_at": "2026-11-24T10:27:33.588353+00:00",
+        "status": 200,
+        "size": 306819,
+        "sha256": "07f8e8d64eba73fe9d425196fe82f4e09a9886a287abd650e88ca8d98dd49052"
+      }
+    },
+    "duplicate_item_evidence.json": {
+      "size": 578896,
+      "sha256": "c798ac93b732ba0c6be8b9963f415d8e230a98499de376480082c52adbcb14be",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:47:02.590380+00:00",
+        "status": 200,
+        "size": 578896,
+        "sha256": "c798ac93b732ba0c6be8b9963f415d8e230a98499de376480082c52adbcb14be"
+      }
+    },
+    "duplicate_item_evidence.rq": {
+      "size": 7599,
+      "sha256": "ea126bf279ae0f468d426b1750a189799bb93a3371f3b5b5b4fc771bf7014da3"
+    },
+    "ign_licence.pdf": {
+      "size": 145381,
+      "sha256": "48b745c62276e4d5ae8870922b9db89d276e9b339f66e3d1f9eea6379f2957d9",
+      "receipt": {
+        "url": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf",
+        "retrieved_at": "2026-11-17T16:19:59.075614+00:00",
+        "status": 200,
+        "size": 145381,
+        "sha256": "48b745c62276e4d5ae8870922b9db89d276e9b339f66e3d1f9eea6379f2957d9"
+      }
+    },
+    "ine_terms.html": {
+      "size": 36409,
+      "sha256": "9028c23046c5f5770cfeef1af8a885070d99a7769dce115d7877765bd8e45677",
+      "receipt": {
+        "url": "https://www.ine.es/dyngs/AYU/index.htm?cid=125",
+        "retrieved_at": "2026-11-17T16:19:16.286413+00:00",
+        "status": 200,
+        "size": 36409,
+        "sha256": "9028c23046c5f5770cfeef1af8a885070d99a7769dce115d7877765bd8e45677"
+      }
+    },
+    "lineas_limite_gml.zip": {
+      "size": 66245318,
+      "sha256": "5bd73c530af995c05da8d9ff4e3d293f62d0dc91c5e48ee773fe881716c108a6",
+      "receipt": {
+        "url": "https://centrodedescargas.cnig.es/CentroDescargas/documentos/atom/au/lineas_limite_gml.zip",
+        "retrieved_at": "2026-11-24T10:24:32.670080+00:00",
+        "status": 200,
+        "size": 66245318,
+        "sha256": "5bd73c530af995c05da8d9ff4e3d293f62d0dc91c5e48ee773fe881716c108a6"
+      }
+    },
+    "live/Q1001991.json": {
+      "size": 32303,
+      "sha256": "3af6807508cc2ff127e6271f6f35291547c60902cd55129073e34170f9dd8945",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1001991.json",
+        "retrieved_at": "2026-11-24T10:27:59.578761+00:00",
+        "status": 200,
+        "size": 32303,
+        "sha256": "3af6807508cc2ff127e6271f6f35291547c60902cd55129073e34170f9dd8945"
+      }
+    },
+    "live/Q10305.json": {
+      "size": 181621,
+      "sha256": "c2cc740c1ddd99a53912fa5930dfedfdc0dba805b551a35a241935c91a08165f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10305.json",
+        "retrieved_at": "2026-11-24T10:37:58.260284+00:00",
+        "status": 200,
+        "size": 181621,
+        "sha256": "c2cc740c1ddd99a53912fa5930dfedfdc0dba805b551a35a241935c91a08165f"
+      }
+    },
+    "live/Q10400.json": {
+      "size": 149348,
+      "sha256": "ec1e1d7faa3191d56a3de4f227d873df47e9a3e59cd4ad631e7e7d28daa4b2b0",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10400.json",
+        "retrieved_at": "2026-11-24T10:37:50.710623+00:00",
+        "status": 200,
+        "size": 149348,
+        "sha256": "ec1e1d7faa3191d56a3de4f227d873df47e9a3e59cd4ad631e7e7d28daa4b2b0"
+      }
+    },
+    "live/Q108064499.json": {
+      "size": 9301,
+      "sha256": "0fecdaaf4b59452112a429c887ed150ace3e4df921547500c44000b4902fe8f5",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q108064499.json",
+        "retrieved_at": "2026-11-24T10:28:00.856434+00:00",
+        "status": 200,
+        "size": 9301,
+        "sha256": "0fecdaaf4b59452112a429c887ed150ace3e4df921547500c44000b4902fe8f5"
+      }
+    },
+    "live/Q115769827.json": {
+      "size": 4150,
+      "sha256": "1b7ff4c08eb479452d41ad66a51943c56e80f61a8a7cd86261bb8018fcf4528f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q115769827.json",
+        "retrieved_at": "2026-11-24T10:28:01.550991+00:00",
+        "status": 200,
+        "size": 4150,
+        "sha256": "1b7ff4c08eb479452d41ad66a51943c56e80f61a8a7cd86261bb8018fcf4528f"
+      }
+    },
+    "live/Q11681338.json": {
+      "size": 5936,
+      "sha256": "4fc726c0e8b818b7fa358501a7d3b8221b01271b6095dccc6f1011f050e6b2a7",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q11681338.json",
+        "retrieved_at": "2026-11-24T10:28:02.599490+00:00",
+        "status": 200,
+        "size": 5936,
+        "sha256": "4fc726c0e8b818b7fa358501a7d3b8221b01271b6095dccc6f1011f050e6b2a7"
+      }
+    },
+    "live/Q120171067.json": {
+      "size": 2206,
+      "sha256": "5db27d02e5d7573b7b0b4b07f3df51a258fe49aa06e5338196c135b427938c3b",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120171067.json",
+        "retrieved_at": "2026-11-24T10:28:04.049719+00:00",
+        "status": 200,
+        "size": 2206,
+        "sha256": "5db27d02e5d7573b7b0b4b07f3df51a258fe49aa06e5338196c135b427938c3b"
+      }
+    },
+    "live/Q120171175.json": {
+      "size": 2157,
+      "sha256": "8b59151b5496a50bd0086efb45dfadaf13d3575014920541be774733c42302c0",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120171175.json",
+        "retrieved_at": "2026-11-24T10:28:04.696692+00:00",
+        "status": 200,
+        "size": 2157,
+        "sha256": "8b59151b5496a50bd0086efb45dfadaf13d3575014920541be774733c42302c0"
+      }
+    },
+    "live/Q120171270.json": {
+      "size": 4611,
+      "sha256": "5fb2625cd1810c37867082fd010ea07d423727ca5e60679740ec719168f5e0f4",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120171270.json",
+        "retrieved_at": "2026-11-24T10:28:05.745213+00:00",
+        "status": 200,
+        "size": 4611,
+        "sha256": "5fb2625cd1810c37867082fd010ea07d423727ca5e60679740ec719168f5e0f4"
+      }
+    },
+    "live/Q120172289.json": {
+      "size": 11379,
+      "sha256": "8b728e5b8d76d8b0dc4c267aa505a6aad19ea5b500ea3b74f03636e12dbbbd73",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120172289.json",
+        "retrieved_at": "2026-11-24T10:28:06.804560+00:00",
+        "status": 200,
+        "size": 11379,
+        "sha256": "8b728e5b8d76d8b0dc4c267aa505a6aad19ea5b500ea3b74f03636e12dbbbd73"
+      }
+    },
+    "live/Q120173397.json": {
+      "size": 14882,
+      "sha256": "705fc6b4dcc0b132993864a84b69fe698d8003f432ff9a927ec1ab453b8b2fc3",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q120173397.json",
+        "retrieved_at": "2026-11-24T10:28:07.901050+00:00",
+        "status": 200,
+        "size": 14882,
+        "sha256": "705fc6b4dcc0b132993864a84b69fe698d8003f432ff9a927ec1ab453b8b2fc3"
+      }
+    },
+    "live/Q1233485.json": {
+      "size": 113778,
+      "sha256": "5917603584924eca7ce6cac860c773dd4be15c337b6f44f646439e29e3cace9f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1233485.json",
+        "retrieved_at": "2026-11-24T10:28:09.083930+00:00",
+        "status": 200,
+        "size": 113778,
+        "sha256": "5917603584924eca7ce6cac860c773dd4be15c337b6f44f646439e29e3cace9f"
+      }
+    },
+    "live/Q1233513.json": {
+      "size": 113069,
+      "sha256": "75e9e4336489e4ce2f573568db5c5d6ff4a40f6aa50a93c55c41f78e37043c09",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1233513.json",
+        "retrieved_at": "2026-11-24T10:28:10.135236+00:00",
+        "status": 200,
+        "size": 113069,
+        "sha256": "75e9e4336489e4ce2f573568db5c5d6ff4a40f6aa50a93c55c41f78e37043c09"
+      }
+    },
+    "live/Q12392493.json": {
+      "size": 18461,
+      "sha256": "4b445e71d6ba1080998e846e7dba1d7766f976e5235049296d9df2dd77d5549c",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q12392493.json",
+        "retrieved_at": "2026-11-24T10:28:10.989313+00:00",
+        "status": 200,
+        "size": 18461,
+        "sha256": "4b445e71d6ba1080998e846e7dba1d7766f976e5235049296d9df2dd77d5549c"
+      }
+    },
+    "live/Q13049643.json": {
+      "size": 5293,
+      "sha256": "daaa5898b8dce6808baf05387ba9ebb591cdc633442a7fbc86258ca3493aebc0",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q13049643.json",
+        "retrieved_at": "2026-11-24T10:28:12.055837+00:00",
+        "status": 200,
+        "size": 5293,
+        "sha256": "daaa5898b8dce6808baf05387ba9ebb591cdc633442a7fbc86258ca3493aebc0"
+      }
+    },
+    "live/Q1324017.json": {
+      "size": 7916,
+      "sha256": "4eed73316011f834946d9222c926bffa8a7d5846ec8471afd8ff018cf598fb15",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1324017.json",
+        "retrieved_at": "2026-11-24T10:28:13.086440+00:00",
+        "status": 200,
+        "size": 7916,
+        "sha256": "4eed73316011f834946d9222c926bffa8a7d5846ec8471afd8ff018cf598fb15"
+      }
+    },
+    "live/Q1353997.json": {
+      "size": 80819,
+      "sha256": "86ae6020e94dde7cea756002cf9a4231cf7959f5f38ca13ecf9167994a151de9",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1353997.json",
+        "retrieved_at": "2026-11-24T10:37:51.621751+00:00",
+        "status": 200,
+        "size": 80819,
+        "sha256": "86ae6020e94dde7cea756002cf9a4231cf7959f5f38ca13ecf9167994a151de9"
+      }
+    },
+    "live/Q1368938.json": {
+      "size": 42625,
+      "sha256": "958414cc8c0b9d3d52907d016c99f51f7c29c644e1711ed52ba7da6d1e07da41",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1368938.json",
+        "retrieved_at": "2026-11-24T10:28:14.658876+00:00",
+        "status": 200,
+        "size": 42625,
+        "sha256": "958414cc8c0b9d3d52907d016c99f51f7c29c644e1711ed52ba7da6d1e07da41"
+      }
+    },
+    "live/Q1489481.json": {
+      "size": 10906,
+      "sha256": "4f162bbd4dba96917431b8847e7b724d274addc4e5faf778ff3237b31d981428",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1489481.json",
+        "retrieved_at": "2026-11-24T10:28:15.188767+00:00",
+        "status": 200,
+        "size": 10906,
+        "sha256": "4f162bbd4dba96917431b8847e7b724d274addc4e5faf778ff3237b31d981428"
+      }
+    },
+    "live/Q1501940.json": {
+      "size": 32022,
+      "sha256": "f2104e9c24e63be74d7ddf7fc05ba431082eb72f95458637ffa320fdedc82234",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1501940.json",
+        "retrieved_at": "2026-11-24T10:28:16.339416+00:00",
+        "status": 200,
+        "size": 32022,
+        "sha256": "f2104e9c24e63be74d7ddf7fc05ba431082eb72f95458637ffa320fdedc82234"
+      }
+    },
+    "live/Q1631759.json": {
+      "size": 44029,
+      "sha256": "311cf59dbed9f82d8d72e7e0ff68a9675884a9c9cd9d71d79f1244ea00ad5a5d",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1631759.json",
+        "retrieved_at": "2026-11-24T10:28:17.371508+00:00",
+        "status": 200,
+        "size": 44029,
+        "sha256": "311cf59dbed9f82d8d72e7e0ff68a9675884a9c9cd9d71d79f1244ea00ad5a5d"
+      }
+    },
+    "live/Q16518534.json": {
+      "size": 14448,
+      "sha256": "040769fbb3561725dd0e2c135b977e808a283a54a2a07bffad0e0ec3018816ea",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16518534.json",
+        "retrieved_at": "2026-11-24T10:28:18.536362+00:00",
+        "status": 200,
+        "size": 14448,
+        "sha256": "040769fbb3561725dd0e2c135b977e808a283a54a2a07bffad0e0ec3018816ea"
+      }
+    },
+    "live/Q16558420.json": {
+      "size": 15452,
+      "sha256": "461597887ce61d8d088fd121bc46d64d7aa7c0ba8f34c2ad1c7f04fcca34d388",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16558420.json",
+        "retrieved_at": "2026-11-24T10:28:20.009444+00:00",
+        "status": 200,
+        "size": 15452,
+        "sha256": "461597887ce61d8d088fd121bc46d64d7aa7c0ba8f34c2ad1c7f04fcca34d388"
+      }
+    },
+    "live/Q1752987.json": {
+      "size": 61871,
+      "sha256": "eb4bed749c0483e685266c826f3eeefc00ca20efebf7e74703343a1d49c8f39b",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1752987.json",
+        "retrieved_at": "2026-11-24T10:37:56.771054+00:00",
+        "status": 200,
+        "size": 61871,
+        "sha256": "eb4bed749c0483e685266c826f3eeefc00ca20efebf7e74703343a1d49c8f39b"
+      }
+    },
+    "live/Q1763370.json": {
+      "size": 31856,
+      "sha256": "83fc8dcd90b96f704c64ed9ded2c75b12465439f5d8ef231fe9ba172df808917",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1763370.json",
+        "retrieved_at": "2026-11-24T10:28:21.187752+00:00",
+        "status": 200,
+        "size": 31856,
+        "sha256": "83fc8dcd90b96f704c64ed9ded2c75b12465439f5d8ef231fe9ba172df808917"
+      }
+    },
+    "live/Q1763376.json": {
+      "size": 34906,
+      "sha256": "749aa5afc6d0069d6c2ee45b2569fb8e187f9e31329f2e13ed13ce26c14e3d14",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1763376.json",
+        "retrieved_at": "2026-11-24T10:28:22.411946+00:00",
+        "status": 200,
+        "size": 34906,
+        "sha256": "749aa5afc6d0069d6c2ee45b2569fb8e187f9e31329f2e13ed13ce26c14e3d14"
+      }
+    },
+    "live/Q1763694.json": {
+      "size": 34009,
+      "sha256": "df277527ab6ce5b69262fba1cfb262f2745d8fd477ed095c0ad30f44c06306eb",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1763694.json",
+        "retrieved_at": "2026-11-24T10:28:23.049157+00:00",
+        "status": 200,
+        "size": 34009,
+        "sha256": "df277527ab6ce5b69262fba1cfb262f2745d8fd477ed095c0ad30f44c06306eb"
+      }
+    },
+    "live/Q1773540.json": {
+      "size": 29947,
+      "sha256": "d483656a394501dcc7a405d40dbbe75cb2d0a30764a98f2e80954c303e12571f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1773540.json",
+        "retrieved_at": "2026-11-24T10:28:24.170935+00:00",
+        "status": 200,
+        "size": 29947,
+        "sha256": "d483656a394501dcc7a405d40dbbe75cb2d0a30764a98f2e80954c303e12571f"
+      }
+    },
+    "live/Q1928529.json": {
+      "size": 29182,
+      "sha256": "67afe00548faff4e859c82d6a8001b0e068ce4b0f51fd7333d72ab8f06375bb9",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1928529.json",
+        "retrieved_at": "2026-11-24T10:28:25.369206+00:00",
+        "status": 200,
+        "size": 29182,
+        "sha256": "67afe00548faff4e859c82d6a8001b0e068ce4b0f51fd7333d72ab8f06375bb9"
+      }
+    },
+    "live/Q1947988.json": {
+      "size": 26606,
+      "sha256": "d7bbb0a1caf6b07a5810bd601a341445dccb3aa7c087217c224e23c2d2e5dcc0",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1947988.json",
+        "retrieved_at": "2026-11-24T10:28:26.261624+00:00",
+        "status": 200,
+        "size": 26606,
+        "sha256": "d7bbb0a1caf6b07a5810bd601a341445dccb3aa7c087217c224e23c2d2e5dcc0"
+      }
+    },
+    "live/Q1959105.json": {
+      "size": 81490,
+      "sha256": "616592ad97542b6e21688f0e05380a653a7297a8ec0f6131b54a7c13b42b5142",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1959105.json",
+        "retrieved_at": "2026-11-24T10:37:55.083997+00:00",
+        "status": 200,
+        "size": 81490,
+        "sha256": "616592ad97542b6e21688f0e05380a653a7297a8ec0f6131b54a7c13b42b5142"
+      }
+    },
+    "live/Q197689.json": {
+      "size": 61925,
+      "sha256": "5fcd676f63383de67a5057d7d76f14fc406ddf963666aeaa6ea0736677918749",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q197689.json",
+        "retrieved_at": "2026-11-24T10:28:27.477446+00:00",
+        "status": 200,
+        "size": 61925,
+        "sha256": "5fcd676f63383de67a5057d7d76f14fc406ddf963666aeaa6ea0736677918749"
+      }
+    },
+    "live/Q2000929.json": {
+      "size": 29051,
+      "sha256": "32ad34d3cc7b7051b08b542fc18061d2238675f54885ebd727a85b666c763d3b",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2000929.json",
+        "retrieved_at": "2026-11-24T10:28:28.392083+00:00",
+        "status": 200,
+        "size": 29051,
+        "sha256": "32ad34d3cc7b7051b08b542fc18061d2238675f54885ebd727a85b666c763d3b"
+      }
+    },
+    "live/Q2001937.json": {
+      "size": 30908,
+      "sha256": "7d8ee9fa07140b47af30d5e0f71e61f4db561222ea74840a8f89f1390c73b125",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2001937.json",
+        "retrieved_at": "2026-11-24T10:28:29.574605+00:00",
+        "status": 200,
+        "size": 30908,
+        "sha256": "7d8ee9fa07140b47af30d5e0f71e61f4db561222ea74840a8f89f1390c73b125"
+      }
+    },
+    "live/Q2002296.json": {
+      "size": 29533,
+      "sha256": "ba59f82fb2dd8823a091cd3ebaadd0b1093785d0b806ca87562452bb865af706",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2002296.json",
+        "retrieved_at": "2026-11-24T10:28:30.999848+00:00",
+        "status": 200,
+        "size": 29533,
+        "sha256": "ba59f82fb2dd8823a091cd3ebaadd0b1093785d0b806ca87562452bb865af706"
+      }
+    },
+    "live/Q2003054.json": {
+      "size": 30913,
+      "sha256": "c906bfe2dffe6e7db3de7b44f32550e407c2b667f5a1c3f62aafd91af5d6b47f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2003054.json",
+        "retrieved_at": "2026-11-24T10:28:32.733932+00:00",
+        "status": 200,
+        "size": 30913,
+        "sha256": "c906bfe2dffe6e7db3de7b44f32550e407c2b667f5a1c3f62aafd91af5d6b47f"
+      }
+    },
+    "live/Q2017682.json": {
+      "size": 35729,
+      "sha256": "21274b7980dc864ac0c378f0da5f7b5149dac5b0f93ac093ce52a0d9f06f1853",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2017682.json",
+        "retrieved_at": "2026-11-24T10:28:34.058475+00:00",
+        "status": 200,
+        "size": 35729,
+        "sha256": "21274b7980dc864ac0c378f0da5f7b5149dac5b0f93ac093ce52a0d9f06f1853"
+      }
+    },
+    "live/Q20546326.json": {
+      "size": 10220,
+      "sha256": "76c0c3adcdaa4eb415cecda90f06b67b69eed76bdb185d73a4cfd5836d9596fd",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q20546326.json",
+        "retrieved_at": "2026-11-24T10:28:34.583163+00:00",
+        "status": 200,
+        "size": 10220,
+        "sha256": "76c0c3adcdaa4eb415cecda90f06b67b69eed76bdb185d73a4cfd5836d9596fd"
+      }
+    },
+    "live/Q2076109.json": {
+      "size": 27590,
+      "sha256": "0417077ed83d79fca04a05f969f62aa5452e11defc713689d8704013acc24952",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2076109.json",
+        "retrieved_at": "2026-11-24T10:28:35.716140+00:00",
+        "status": 200,
+        "size": 27590,
+        "sha256": "0417077ed83d79fca04a05f969f62aa5452e11defc713689d8704013acc24952"
+      }
+    },
+    "live/Q2118556.json": {
+      "size": 7270,
+      "sha256": "2ababbbbb71666f91866cb6bd672693b3f719bc6dd25f5ae7afa8bda1247d7a1",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2118556.json",
+        "retrieved_at": "2026-11-24T10:28:36.680674+00:00",
+        "status": 200,
+        "size": 7270,
+        "sha256": "2ababbbbb71666f91866cb6bd672693b3f719bc6dd25f5ae7afa8bda1247d7a1"
+      }
+    },
+    "live/Q22827659.json": {
+      "size": 15298,
+      "sha256": "9da8e7d202f97887f779780f77af173a199678f9ddee096a29dc02917c9a5f9f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22827659.json",
+        "retrieved_at": "2026-11-24T10:28:37.751168+00:00",
+        "status": 200,
+        "size": 15298,
+        "sha256": "9da8e7d202f97887f779780f77af173a199678f9ddee096a29dc02917c9a5f9f"
+      }
+    },
+    "live/Q23977929.json": {
+      "size": 8554,
+      "sha256": "bc84992091ffefd88ab40d3ee7627518d8201a2a0890ad2db25868ffdf8ebbdf",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23977929.json",
+        "retrieved_at": "2026-11-24T10:28:38.776719+00:00",
+        "status": 200,
+        "size": 8554,
+        "sha256": "bc84992091ffefd88ab40d3ee7627518d8201a2a0890ad2db25868ffdf8ebbdf"
+      }
+    },
+    "live/Q23979490.json": {
+      "size": 9470,
+      "sha256": "cc3fd722ce3560ab9c0c98b8d1aaa24cf82654aff658e2af1f7c438faac88052",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23979490.json",
+        "retrieved_at": "2026-11-24T10:28:39.826601+00:00",
+        "status": 200,
+        "size": 9470,
+        "sha256": "cc3fd722ce3560ab9c0c98b8d1aaa24cf82654aff658e2af1f7c438faac88052"
+      }
+    },
+    "live/Q23979863.json": {
+      "size": 7222,
+      "sha256": "c78c50cc68c2b72656c2a1dbe4ebdda9c5e50cd96ea0d16707c2f2800684425b",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23979863.json",
+        "retrieved_at": "2026-11-24T10:28:40.880161+00:00",
+        "status": 200,
+        "size": 7222,
+        "sha256": "c78c50cc68c2b72656c2a1dbe4ebdda9c5e50cd96ea0d16707c2f2800684425b"
+      }
+    },
+    "live/Q23979871.json": {
+      "size": 8873,
+      "sha256": "eef54c5fe704559e0953442be96e6ffbbb1ab68d355833c215734f66102cf4f1",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23979871.json",
+        "retrieved_at": "2026-11-24T10:28:41.918971+00:00",
+        "status": 200,
+        "size": 8873,
+        "sha256": "eef54c5fe704559e0953442be96e6ffbbb1ab68d355833c215734f66102cf4f1"
+      }
+    },
+    "live/Q23980336.json": {
+      "size": 11978,
+      "sha256": "4310874d4f30476333d3460c29d97dde65dd22b8f30067537abd7d63c46eb360",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23980336.json",
+        "retrieved_at": "2026-11-24T10:28:42.971350+00:00",
+        "status": 200,
+        "size": 11978,
+        "sha256": "4310874d4f30476333d3460c29d97dde65dd22b8f30067537abd7d63c46eb360"
+      }
+    },
+    "live/Q23982941.json": {
+      "size": 9064,
+      "sha256": "ffb49dbed6f1e4a449b17648ca4dafea1549928d2bf95b1e026c81390096448c",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23982941.json",
+        "retrieved_at": "2026-11-24T10:28:44.019798+00:00",
+        "status": 200,
+        "size": 9064,
+        "sha256": "ffb49dbed6f1e4a449b17648ca4dafea1549928d2bf95b1e026c81390096448c"
+      }
+    },
+    "live/Q23988746.json": {
+      "size": 6525,
+      "sha256": "a7cc72482cfb243269dcd8715fc215dd1e0f1da7dc91d62313f65e4cae40bef2",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23988746.json",
+        "retrieved_at": "2026-11-24T10:28:45.592581+00:00",
+        "status": 200,
+        "size": 6525,
+        "sha256": "a7cc72482cfb243269dcd8715fc215dd1e0f1da7dc91d62313f65e4cae40bef2"
+      }
+    },
+    "live/Q23990751.json": {
+      "size": 4798,
+      "sha256": "93ed95a1139da589ebf978348b1dd671803f59a9c1837898ae1007808665c7a6",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23990751.json",
+        "retrieved_at": "2026-11-24T10:28:46.639599+00:00",
+        "status": 200,
+        "size": 4798,
+        "sha256": "93ed95a1139da589ebf978348b1dd671803f59a9c1837898ae1007808665c7a6"
+      }
+    },
+    "live/Q23992991.json": {
+      "size": 5622,
+      "sha256": "8537746409c00e9bc68c819eea65ecbdd1ee20c11ed3f10f243346e4d6c8a07b",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23992991.json",
+        "retrieved_at": "2026-11-24T10:28:47.257307+00:00",
+        "status": 200,
+        "size": 5622,
+        "sha256": "8537746409c00e9bc68c819eea65ecbdd1ee20c11ed3f10f243346e4d6c8a07b"
+      }
+    },
+    "live/Q23993044.json": {
+      "size": 7392,
+      "sha256": "f7cceb71533887ba34785aaa9a9d3a60eae76398cb0d8630888bd1b83bcf8fb8",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q23993044.json",
+        "retrieved_at": "2026-11-24T10:28:48.740257+00:00",
+        "status": 200,
+        "size": 7392,
+        "sha256": "f7cceb71533887ba34785aaa9a9d3a60eae76398cb0d8630888bd1b83bcf8fb8"
+      }
+    },
+    "live/Q24001476.json": {
+      "size": 5650,
+      "sha256": "1a661506b5d8760364c19fc1b0acb2ef8dda5118e4f372cd9377f1ced6823940",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q24001476.json",
+        "retrieved_at": "2026-11-24T10:28:49.313499+00:00",
+        "status": 200,
+        "size": 5650,
+        "sha256": "1a661506b5d8760364c19fc1b0acb2ef8dda5118e4f372cd9377f1ced6823940"
+      }
+    },
+    "live/Q24003606.json": {
+      "size": 7051,
+      "sha256": "a51e12f656e88d8b5794d4d32ccaa3640c9da5be19180f38551412b99d2e0e59",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q24003606.json",
+        "retrieved_at": "2026-11-24T10:28:50.334706+00:00",
+        "status": 200,
+        "size": 7051,
+        "sha256": "a51e12f656e88d8b5794d4d32ccaa3640c9da5be19180f38551412b99d2e0e59"
+      }
+    },
+    "live/Q24009589.json": {
+      "size": 29517,
+      "sha256": "e030598c820b80ea32fa8928cc5bbbccb7ea5b713491fbb8e8419555d94f0972",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q24009589.json",
+        "retrieved_at": "2026-11-24T10:28:52.408599+00:00",
+        "status": 200,
+        "size": 29517,
+        "sha256": "e030598c820b80ea32fa8928cc5bbbccb7ea5b713491fbb8e8419555d94f0972"
+      }
+    },
+    "live/Q267946.json": {
+      "size": 17270,
+      "sha256": "14fb77ef84d66a627e5da0229e50d590cbb651b4c63325d43d4dcb06f62dc387",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q267946.json",
+        "retrieved_at": "2026-11-24T10:28:52.933259+00:00",
+        "status": 200,
+        "size": 17270,
+        "sha256": "14fb77ef84d66a627e5da0229e50d590cbb651b4c63325d43d4dcb06f62dc387"
+      }
+    },
+    "live/Q27678714.json": {
+      "size": 14437,
+      "sha256": "722d0d2e540a3314bf8683332a099d506ddcd8fee263b6c8ba7525dbc8448444",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q27678714.json",
+        "retrieved_at": "2026-11-24T10:28:54.687949+00:00",
+        "status": 200,
+        "size": 14437,
+        "sha256": "722d0d2e540a3314bf8683332a099d506ddcd8fee263b6c8ba7525dbc8448444"
+      }
+    },
+    "live/Q2842046.json": {
+      "size": 9981,
+      "sha256": "7df154370fd3f0f5284424b50463a14c168d0436999eabe34bc2a1911881ed40",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2842046.json",
+        "retrieved_at": "2026-11-24T10:28:55.942542+00:00",
+        "status": 200,
+        "size": 9981,
+        "sha256": "7df154370fd3f0f5284424b50463a14c168d0436999eabe34bc2a1911881ed40"
+      }
+    },
+    "live/Q2899165.json": {
+      "size": 7719,
+      "sha256": "371cda9656280aa0955e4371b840901f362f7beb3444d7a3dc483ed296be32e3",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2899165.json",
+        "retrieved_at": "2026-11-24T10:28:56.909213+00:00",
+        "status": 200,
+        "size": 7719,
+        "sha256": "371cda9656280aa0955e4371b840901f362f7beb3444d7a3dc483ed296be32e3"
+      }
+    },
+    "live/Q2944737.json": {
+      "size": 8303,
+      "sha256": "d1c626c9c6364559f57b14d52c0909b80f1ed1401bbf8c150561c10c7b93112f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2944737.json",
+        "retrieved_at": "2026-11-24T10:28:58.083235+00:00",
+        "status": 200,
+        "size": 8303,
+        "sha256": "d1c626c9c6364559f57b14d52c0909b80f1ed1401bbf8c150561c10c7b93112f"
+      }
+    },
+    "live/Q3095047.json": {
+      "size": 9309,
+      "sha256": "f3fd17ff7b009262363bbba9ccf10c2d7c91b838df8c85811063ce15ed5d8a2a",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3095047.json",
+        "retrieved_at": "2026-11-24T10:28:58.701273+00:00",
+        "status": 200,
+        "size": 9309,
+        "sha256": "f3fd17ff7b009262363bbba9ccf10c2d7c91b838df8c85811063ce15ed5d8a2a"
+      }
+    },
+    "live/Q3297924.json": {
+      "size": 9382,
+      "sha256": "1c36398138e0c7cc4631cd2f051261b2455ec7e389416b9185821163869cfd98",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3297924.json",
+        "retrieved_at": "2026-11-24T10:28:59.801246+00:00",
+        "status": 200,
+        "size": 9382,
+        "sha256": "1c36398138e0c7cc4631cd2f051261b2455ec7e389416b9185821163869cfd98"
+      }
+    },
+    "live/Q331385.json": {
+      "size": 14937,
+      "sha256": "80a01f48eb1e3a5100681088c8d9be76e6fbefe0238eeb4cd96efd977e9f4ddd",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q331385.json",
+        "retrieved_at": "2026-11-24T10:29:01.138170+00:00",
+        "status": 200,
+        "size": 14937,
+        "sha256": "80a01f48eb1e3a5100681088c8d9be76e6fbefe0238eeb4cd96efd977e9f4ddd"
+      }
+    },
+    "live/Q3314337.json": {
+      "size": 21798,
+      "sha256": "2a18de9f9afc3ec13ca0e399c229d7c99603a6230fef7d118496a6ff75fa3e8e",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3314337.json",
+        "retrieved_at": "2026-11-24T10:29:02.078404+00:00",
+        "status": 200,
+        "size": 21798,
+        "sha256": "2a18de9f9afc3ec13ca0e399c229d7c99603a6230fef7d118496a6ff75fa3e8e"
+      }
+    },
+    "live/Q3649129.json": {
+      "size": 17203,
+      "sha256": "26be09b7920856c36d7e4e311c5355b73663bdd36157ded9f3e987ed2fad4906",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3649129.json",
+        "retrieved_at": "2026-11-24T10:29:03.499023+00:00",
+        "status": 200,
+        "size": 17203,
+        "sha256": "26be09b7920856c36d7e4e311c5355b73663bdd36157ded9f3e987ed2fad4906"
+      }
+    },
+    "live/Q3751386.json": {
+      "size": 14098,
+      "sha256": "b1114e29270c540f9e8edf56e00e3705e08cd87c57573e2bf05c3a41289606d3",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3751386.json",
+        "retrieved_at": "2026-11-24T10:29:04.666781+00:00",
+        "status": 200,
+        "size": 14098,
+        "sha256": "b1114e29270c540f9e8edf56e00e3705e08cd87c57573e2bf05c3a41289606d3"
+      }
+    },
+    "live/Q3813816.json": {
+      "size": 13146,
+      "sha256": "a115fd1a050856bf4fda69041f6d14559ed7943b06d935743748b70b0c5aec24",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3813816.json",
+        "retrieved_at": "2026-11-24T10:29:05.159103+00:00",
+        "status": 200,
+        "size": 13146,
+        "sha256": "a115fd1a050856bf4fda69041f6d14559ed7943b06d935743748b70b0c5aec24"
+      }
+    },
+    "live/Q430748.json": {
+      "size": 62242,
+      "sha256": "bc497aaa2630fa8ecab4bc6b56a21994c9d90fef29d7e1ea8baf0350ff1d04a8",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q430748.json",
+        "retrieved_at": "2026-11-24T10:37:56.034115+00:00",
+        "status": 200,
+        "size": 62242,
+        "sha256": "bc497aaa2630fa8ecab4bc6b56a21994c9d90fef29d7e1ea8baf0350ff1d04a8"
+      }
+    },
+    "live/Q49562.json": {
+      "size": 86543,
+      "sha256": "caaa388239c30353f9d9bf8fc376b5d6fe0048a758143d9e77ba9d0ae1103270",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q49562.json",
+        "retrieved_at": "2026-11-24T10:37:48.792015+00:00",
+        "status": 200,
+        "size": 86543,
+        "sha256": "caaa388239c30353f9d9bf8fc376b5d6fe0048a758143d9e77ba9d0ae1103270"
+      }
+    },
+    "live/Q52631.json": {
+      "size": 65088,
+      "sha256": "3a1145cf88290329ae98f3d9c4605e82ad53bcd21817865e6f72a75cb623daaa",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q52631.json",
+        "retrieved_at": "2026-11-24T10:29:06.733970+00:00",
+        "status": 200,
+        "size": 65088,
+        "sha256": "3a1145cf88290329ae98f3d9c4605e82ad53bcd21817865e6f72a75cb623daaa"
+      }
+    },
+    "live/Q5483711.json": {
+      "size": 5242,
+      "sha256": "643dd3f2cce8dd7eb69b0362adbbb8c2deaec8ae0413235bf678a6533ab585a3",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5483711.json",
+        "retrieved_at": "2026-11-24T10:29:07.242625+00:00",
+        "status": 200,
+        "size": 5242,
+        "sha256": "643dd3f2cce8dd7eb69b0362adbbb8c2deaec8ae0413235bf678a6533ab585a3"
+      }
+    },
+    "live/Q575644.json": {
+      "size": 71718,
+      "sha256": "a36e62022d185eb4bb3e940336a1075e4a395b95aadf5c3635289183d183e8b5",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q575644.json",
+        "retrieved_at": "2026-11-24T10:37:52.460235+00:00",
+        "status": 200,
+        "size": 71718,
+        "sha256": "a36e62022d185eb4bb3e940336a1075e4a395b95aadf5c3635289183d183e8b5"
+      }
+    },
+    "live/Q576408.json": {
+      "size": 18382,
+      "sha256": "3acee3ef15030be5ce7f2f813297fc6002b64203918b4c0c48b58304adce1dc1",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q576408.json",
+        "retrieved_at": "2026-11-24T10:29:08.659953+00:00",
+        "status": 200,
+        "size": 18382,
+        "sha256": "3acee3ef15030be5ce7f2f813297fc6002b64203918b4c0c48b58304adce1dc1"
+      }
+    },
+    "live/Q5821873.json": {
+      "size": 14328,
+      "sha256": "89caaf091c1149f72adf09c342dda9be88fe02b1095452d26af8ca64b5a18692",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5821873.json",
+        "retrieved_at": "2026-11-24T10:29:09.713928+00:00",
+        "status": 200,
+        "size": 14328,
+        "sha256": "89caaf091c1149f72adf09c342dda9be88fe02b1095452d26af8ca64b5a18692"
+      }
+    },
+    "live/Q5823.json": {
+      "size": 140617,
+      "sha256": "42443fa3fc87073fed258bb073e1c947f78e87f34b37c01af2f09eac2800670e",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5823.json",
+        "retrieved_at": "2026-11-24T10:38:00.023216+00:00",
+        "status": 200,
+        "size": 140617,
+        "sha256": "42443fa3fc87073fed258bb073e1c947f78e87f34b37c01af2f09eac2800670e"
+      }
+    },
+    "live/Q589403.json": {
+      "size": 26345,
+      "sha256": "041dfb1ebf4792b9251523297f5f512aab943d44559bf949a95f659cfe95234c",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q589403.json",
+        "retrieved_at": "2026-11-24T10:29:10.839687+00:00",
+        "status": 200,
+        "size": 26345,
+        "sha256": "041dfb1ebf4792b9251523297f5f512aab943d44559bf949a95f659cfe95234c"
+      }
+    },
+    "live/Q5970566.json": {
+      "size": 7481,
+      "sha256": "99828676ea51da05e47f5e4cc3ba81db4e7c1c0a1e03ef1b006f3a2c744377ba",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5970566.json",
+        "retrieved_at": "2026-11-24T10:29:11.498844+00:00",
+        "status": 200,
+        "size": 7481,
+        "sha256": "99828676ea51da05e47f5e4cc3ba81db4e7c1c0a1e03ef1b006f3a2c744377ba"
+      }
+    },
+    "live/Q656196.json": {
+      "size": 34566,
+      "sha256": "99bd136c28e0408d6b293eb04e33c7a3444d35d5881a2456247bd11f995fcd85",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q656196.json",
+        "retrieved_at": "2026-11-24T10:29:12.566966+00:00",
+        "status": 200,
+        "size": 34566,
+        "sha256": "99bd136c28e0408d6b293eb04e33c7a3444d35d5881a2456247bd11f995fcd85"
+      }
+    },
+    "live/Q794954.json": {
+      "size": 32249,
+      "sha256": "ef538c9311e20fe65bd5c81e9ddda63c45d5f184c1b8f8ec3f346e16ca1b4760",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q794954.json",
+        "retrieved_at": "2026-11-24T10:29:13.627452+00:00",
+        "status": 200,
+        "size": 32249,
+        "sha256": "ef538c9311e20fe65bd5c81e9ddda63c45d5f184c1b8f8ec3f346e16ca1b4760"
+      }
+    },
+    "live/Q807230.json": {
+      "size": 31542,
+      "sha256": "f88c0e1c1a2a0eacf09a8a55f5b8ab40c7110efd726cdeb591632866ec677a4e",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q807230.json",
+        "retrieved_at": "2026-11-24T10:29:14.954160+00:00",
+        "status": 200,
+        "size": 31542,
+        "sha256": "f88c0e1c1a2a0eacf09a8a55f5b8ab40c7110efd726cdeb591632866ec677a4e"
+      }
+    },
+    "live/Q816284.json": {
+      "size": 68744,
+      "sha256": "3a924b76d852245d2b1bd29dee071b20d0d18864258958d8a5b172f11304e942",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q816284.json",
+        "retrieved_at": "2026-11-24T10:37:53.511772+00:00",
+        "status": 200,
+        "size": 68744,
+        "sha256": "3a924b76d852245d2b1bd29dee071b20d0d18864258958d8a5b172f11304e942"
+      }
+    },
+    "live/Q81802.json": {
+      "size": 68158,
+      "sha256": "f944a851e8f959b44d9fb5a2236e10f6541b30b47451c193cc2925a76fbec852",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q81802.json",
+        "retrieved_at": "2026-11-24T10:29:16.256086+00:00",
+        "status": 200,
+        "size": 68158,
+        "sha256": "f944a851e8f959b44d9fb5a2236e10f6541b30b47451c193cc2925a76fbec852"
+      }
+    },
+    "live/Q8560730.json": {
+      "size": 10037,
+      "sha256": "ce6cb1fa3d508b2aae4f8e110da687a6d8668cc9d41c995ee9a9d611a2d43580",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8560730.json",
+        "retrieved_at": "2026-11-24T10:29:17.185926+00:00",
+        "status": 200,
+        "size": 10037,
+        "sha256": "ce6cb1fa3d508b2aae4f8e110da687a6d8668cc9d41c995ee9a9d611a2d43580"
+      }
+    },
+    "live/Q8964986.json": {
+      "size": 7914,
+      "sha256": "1db3b06deb232736568f772f1411d705bbf6fbfa65683cb73f1f5cd4c14909a3",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8964986.json",
+        "retrieved_at": "2026-11-24T10:29:17.830918+00:00",
+        "status": 200,
+        "size": 7914,
+        "sha256": "1db3b06deb232736568f772f1411d705bbf6fbfa65683cb73f1f5cd4c14909a3"
+      }
+    },
+    "live/Q9018307.json": {
+      "size": 6883,
+      "sha256": "a819955d4a503b084e21484e0ed3d09aeaaa487994357f17bacdfb3809dc2064",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q9018307.json",
+        "retrieved_at": "2026-11-24T10:29:18.810582+00:00",
+        "status": 200,
+        "size": 6883,
+        "sha256": "a819955d4a503b084e21484e0ed3d09aeaaa487994357f17bacdfb3809dc2064"
+      }
+    },
+    "live/Q9052125.json": {
+      "size": 8141,
+      "sha256": "a9a270910e55e42970d01f09b3bcf1e5156f492857b7f0a40d2b9b1cc3a475de",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q9052125.json",
+        "retrieved_at": "2026-11-24T10:29:19.886709+00:00",
+        "status": 200,
+        "size": 8141,
+        "sha256": "a9a270910e55e42970d01f09b3bcf1e5156f492857b7f0a40d2b9b1cc3a475de"
+      }
+    },
+    "live/Q919536.json": {
+      "size": 29741,
+      "sha256": "2d787f4b93a1ee0e15279b46f396f319485262caa608765c19137f28ae23d67a",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q919536.json",
+        "retrieved_at": "2026-11-24T10:29:21.244016+00:00",
+        "status": 200,
+        "size": 29741,
+        "sha256": "2d787f4b93a1ee0e15279b46f396f319485262caa608765c19137f28ae23d67a"
+      }
+    },
+    "live/Q953368.json": {
+      "size": 28100,
+      "sha256": "e91226c61a6b9a41f3ea0b4a5d66936c37b6fa2f8ca3c01d36f5d45671236256",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q953368.json",
+        "retrieved_at": "2026-11-24T10:29:22.067864+00:00",
+        "status": 200,
+        "size": 28100,
+        "sha256": "e91226c61a6b9a41f3ea0b4a5d66936c37b6fa2f8ca3c01d36f5d45671236256"
+      }
+    },
+    "live/Q970554.json": {
+      "size": 13626,
+      "sha256": "a9319c6953e70808ea56b5f539b2489778a4ac06a3c0946816b3b9857bb09468",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q970554.json",
+        "retrieved_at": "2026-11-24T10:29:23.382268+00:00",
+        "status": 200,
+        "size": 13626,
+        "sha256": "a9319c6953e70808ea56b5f539b2489778a4ac06a3c0946816b3b9857bb09468"
+      }
+    },
+    "live/Q983564.json": {
+      "size": 127341,
+      "sha256": "d90e71b8fd9c64b1d86a533611ce3c21a0dd22c61e9cfef433e208f257aa3b6f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q983564.json",
+        "retrieved_at": "2026-11-24T10:29:25.443549+00:00",
+        "status": 200,
+        "size": 127341,
+        "sha256": "d90e71b8fd9c64b1d86a533611ce3c21a0dd22c61e9cfef433e208f257aa3b6f"
+      }
+    },
+    "live/Q985602.json": {
+      "size": 111439,
+      "sha256": "f7ffd4ea76fc64cf0f1615f2852f096dfedb3e829463bf2149bf306cb6101e4f",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q985602.json",
+        "retrieved_at": "2026-11-24T10:29:26.486161+00:00",
+        "status": 200,
+        "size": 111439,
+        "sha256": "f7ffd4ea76fc64cf0f1615f2852f096dfedb3e829463bf2149bf306cb6101e4f"
+      }
+    },
+    "madrid_barrios.csv": {
+      "size": 11451,
+      "sha256": "e459d4157d59cad2caaa2995c97a4a8db64b092c745beaf0e84083fc8314db8b",
+      "receipt": {
+        "url": "https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Barrios/Barrios.csv",
+        "retrieved_at": "2026-11-24T10:29:32.900409+00:00",
+        "status": 200,
+        "size": 11451,
+        "sha256": "e459d4157d59cad2caaa2995c97a4a8db64b092c745beaf0e84083fc8314db8b"
+      }
+    },
+    "madrid_barrios.kml": {
+      "size": 2303,
+      "sha256": "fc269500fc0ed21c94ea1ef5e2ef09528ee4c48528dda2bd4a393c22ecfa2c33",
+      "receipt": {
+        "url": "https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Barrios/Barrios.kml",
+        "retrieved_at": "2026-11-24T10:29:32.900500+00:00",
+        "status": 200,
+        "size": 2303,
+        "sha256": "fc269500fc0ed21c94ea1ef5e2ef09528ee4c48528dda2bd4a393c22ecfa2c33"
+      }
+    },
+    "madrid_districts.kml": {
+      "size": 413308,
+      "sha256": "47e7b3ebd43eee6914b6f0f4dbc50d0450b1824fde707d70a30ad76f7fca7ba2",
+      "receipt": {
+        "url": "https://geoportal.madrid.es/fsdescargas/IDEAM_WBGEOPORTAL/LIMITES_ADMINISTRATIVOS/Distritos/Distritos.kml",
+        "retrieved_at": "2026-11-24T10:29:33.831302+00:00",
+        "status": 200,
+        "size": 413308,
+        "sha256": "47e7b3ebd43eee6914b6f0f4dbc50d0450b1824fde707d70a30ad76f7fca7ba2"
+      }
+    },
+    "madrid_districts_catalogue.html": {
+      "size": 127696,
+      "sha256": "70956f073eb662f21efe0fc9c5f515bb29fbd2c41ad20762d686e69dbd080a61",
+      "receipt": {
+        "url": "https://datos.madrid.es/dataset/213583-0-cartografia-distritos-1-5000/downloads",
+        "retrieved_at": "2026-11-24T10:29:32.898853+00:00",
+        "status": 200,
+        "size": 127696,
+        "sha256": "70956f073eb662f21efe0fc9c5f515bb29fbd2c41ad20762d686e69dbd080a61"
+      }
+    },
+    "madrid_planning.txt": {
+      "size": 61166,
+      "sha256": "95e629970cd9193354acf9e48a0a384a961fd909a30076db466d051f26c230de"
+    },
+    "municipal_00.data": {
+      "size": 430,
+      "sha256": "50fa531fa1fa9d89c84ff6769d16072bd85157172f85ad7d5c504c6bb9270a9c",
+      "receipt": {
+        "url": "https://www.madrid.es/portales/munimadrid/es/Inicio/Distritos/?vgnextchannel=f9792593e5d48810VgnVCM1000008a4a900aRCRD",
+        "retrieved_at": "2026-11-24T10:26:16.705472+00:00",
+        "status": 403,
+        "size": 430,
+        "sha256": "50fa531fa1fa9d89c84ff6769d16072bd85157172f85ad7d5c504c6bb9270a9c"
+      }
+    },
+    "municipal_02.data": {
+      "size": 624,
+      "sha256": "9468926adf11cf85aba7aa8c413d8cbb09687f733eaeab9ed6472e585ea621d1",
+      "receipt": {
+        "url": "https://www.madrid.es/portales/munimadrid/es/Inicio/El-Ayuntamiento/Notas-de-distrito/Conciertos-espectaculos-actividades-infantiles-y-talleres-en-las-fiestas-del-barrio-de-Las-Tablas/?vgnextchannel=532e3780653ce010VgnVCM1000000b205a0aRCRD&vgnextfmt=default&vgnextoid=8873deebba37e910VgnVCM100000891ecb1aRCRD",
+        "retrieved_at": "2026-11-24T10:26:17.011832+00:00",
+        "status": 403,
+        "size": 624,
+        "sha256": "9468926adf11cf85aba7aa8c413d8cbb09687f733eaeab9ed6472e585ea621d1"
+      }
+    },
+    "municipal_03.data": {
+      "size": 4201547,
+      "sha256": "91198069cc8468ebe526e683699c1e860e5c41a51475d8428eb4fda9ee556b76",
+      "receipt": {
+        "url": "https://www-2.munimadrid.es/fsdescargas/VISAE_WEBPUB/NTI/135-2021-01281/contenido_no_modificable/docsExpdte/ES_L01280796_2021_0000000000000098024e4e051a6c83.pdf",
+        "retrieved_at": "2026-11-24T10:26:17.242167+00:00",
+        "status": 200,
+        "size": 4201547,
+        "sha256": "91198069cc8468ebe526e683699c1e860e5c41a51475d8428eb4fda9ee556b76"
+      }
+    },
+    "municipal_07.data": {
+      "size": 23835,
+      "sha256": "e7e5891d491b3ed2da2f7c721f44379f2ca33398c79938affdd49eaf46bca3d2",
+      "receipt": {
+        "url": "https://sedeelectronica.pamplona.es/FichaTramite.aspx?id=20-45713",
+        "retrieved_at": "2026-11-24T10:28:57.685834+00:00",
+        "status": 200,
+        "size": 23835,
+        "sha256": "e7e5891d491b3ed2da2f7c721f44379f2ca33398c79938affdd49eaf46bca3d2"
+      }
+    },
+    "municipal_08.data": {
+      "size": 3603299,
+      "sha256": "ee94572d1f309ebabdf5f47c8ca2ea08fbf8e499b956785980bc378bbe67960d",
+      "receipt": {
+        "url": "https://www.pamplona.es/sites/default/files/2022-11/plano-castellano-2023.pdf",
+        "retrieved_at": "2026-11-24T10:29:00.005807+00:00",
+        "status": 200,
+        "size": 3603299,
+        "sha256": "ee94572d1f309ebabdf5f47c8ca2ea08fbf8e499b956785980bc378bbe67960d"
+      }
+    },
+    "municipal_details.json": {
+      "size": 4291809,
+      "sha256": "9f4c7410b02688bff641486165ecf43b3de410949e23f55b90b94bcb7f420f97",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:25:34.255687+00:00",
+        "status": 200,
+        "size": 4291809,
+        "sha256": "9f4c7410b02688bff641486165ecf43b3de410949e23f55b90b94bcb7f420f97"
+      }
+    },
+    "municipal_details.rq": {
+      "size": 524,
+      "sha256": "7b52654acd649b7ec217bdb8e0223ad078ce240cb8d718249c5f7e19518699c4"
+    },
+    "municipal_items.json": {
+      "size": 2528881,
+      "sha256": "c259bdc8e99788573fa555dbcbb26e29f725467e6fb6abf10737ebd20d3e9745",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:24:32.953532+00:00",
+        "status": 200,
+        "size": 2528881,
+        "sha256": "c259bdc8e99788573fa555dbcbb26e29f725467e6fb6abf10737ebd20d3e9745"
+      }
+    },
+    "municipal_items.rq": {
+      "size": 343,
+      "sha256": "5ba5078c44eb6fcafcb69fb5aa313b44117abf3646abb85163cd0eb315b4d2dd"
+    },
+    "municipal_items.timeout_error.json": {
+      "size": 655,
+      "sha256": "d67eb64a0c7d0778461efe574d2920ab08bc3fd745fe7514c7a20bacf12703a8",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:24:08.016439+00:00",
+        "status": 403,
+        "size": 655,
+        "sha256": "d67eb64a0c7d0778461efe574d2920ab08bc3fd745fe7514c7a20bacf12703a8"
+      }
+    },
+    "municipal_names.json": {
+      "size": 9540783,
+      "sha256": "9a90e846cb8448b9b6a5e18db12a4f7d2f43fdfec35cd637f1983f709ae4a017",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:26:54.967709+00:00",
+        "status": 200,
+        "size": 9540783,
+        "sha256": "9a90e846cb8448b9b6a5e18db12a4f7d2f43fdfec35cd637f1983f709ae4a017"
+      }
+    },
+    "municipal_names.rq": {
+      "size": 405,
+      "sha256": "a24e31c7d21066483de43908d058cdac14f96b105321df46fe43f24868d05743"
+    },
+    "nomen_page.html": {
+      "size": 48170,
+      "sha256": "dc5fef241156c0be08f8c0c3cd298c55b2be49bf468a68a93e37b58e58c7a58a",
+      "receipt": {
+        "url": "https://www.ine.es/nomen2/index.do",
+        "retrieved_at": "2026-11-17T16:19:20.092306+00:00",
+        "status": 200,
+        "size": 48170,
+        "sha256": "dc5fef241156c0be08f8c0c3cd298c55b2be49bf468a68a93e37b58e58c7a58a"
+      }
+    },
+    "nomenclator2025.zip": {
+      "size": 20973924,
+      "sha256": "960f268774cfb0c61d6b587d7822c0a943b004f6f01c130300b9be296b31c979",
+      "receipt": {
+        "url": "https://www.ine.es/nomen_files/nacional/es/Nacional_2025.zip",
+        "retrieved_at": "2026-10-20T08:17:27.987798+00:00",
+        "status": 200,
+        "size": 20973924,
+        "sha256": "960f268774cfb0c61d6b587d7822c0a943b004f6f01c130300b9be296b31c979"
+      }
+    },
+    "official.json": {
+      "size": 21573507,
+      "sha256": "c0ed8945213144d4a95ce47a8d084302ed5042ef33d54167a2738a0c5732b06d"
+    },
+    "padron.zip": {
+      "size": 10118293,
+      "sha256": "b4251c99ecb1319ddc8e49da12d00e3b0a2343ca4c8ac43ff3382532a221ffb4",
+      "receipt": {
+        "url": "https://www.ine.es/pob_xls/pobmun.zip",
+        "retrieved_at": "2026-10-20T08:16:28.715422+00:00",
+        "status": 200,
+        "size": 10118293,
+        "sha256": "b4251c99ecb1319ddc8e49da12d00e3b0a2343ca4c8ac43ff3382532a221ffb4"
+      }
+    },
+    "padron_page.html": {
+      "size": 28338,
+      "sha256": "47883886dd5ac147509ec4520cc9ee466557efabbd506195cc38c76ec2132e5a",
+      "receipt": {
+        "url": "https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177011&menu=resultados&idp=1254734710990",
+        "retrieved_at": "2026-11-17T16:19:19.042533+00:00",
+        "status": 200,
+        "size": 28338,
+        "sha256": "47883886dd5ac147509ec4520cc9ee466557efabbd506195cc38c76ec2132e5a"
+      }
+    },
+    "palma_excerpt.json": {
+      "size": 4703,
+      "sha256": "9342cc4fbc0957aa77058fc36dba6fbfd197a9949e9873ed044fbcfc2a094ed2",
+      "receipt": {
+        "url": "https://tlr-palmajove.palma.cat/documents/39028/14879291/Firma_20240603_Acta_num_5_Junta_Mpal_Districte_Platja_de_Palma_i_Pla_de_Sant_Jordi_-_SEFYCU_3550760%2B%281%29.pdf/9d0d9567-69e3-4539-fa96-02e787e2ded1?t=1730969262070",
+        "retrieved_at": "2026-11-24T10:34:37.674233+00:00",
+        "status": "web_search_excerpt",
+        "size": 4703,
+        "sha256": "9342cc4fbc0957aa77058fc36dba6fbfd197a9949e9873ed044fbcfc2a094ed2"
+      }
+    },
+    "palma_official.json": {
+      "size": 594,
+      "sha256": "1a9d4de6307093e3903975dce81333df44c621d13dcf3b273e66a0ee69c814ec",
+      "receipt": {
+        "url": "https://tlr-palmajove.palma.cat/documents/39028/14879291/Firma_20240603_Acta_num_5_Junta_Mpal_Districte_Platja_de_Palma_i_Pla_de_Sant_Jordi_-_SEFYCU_3550760%2B%281%29.pdf/9d0d9567-69e3-4539-fa96-02e787e2ded1?t=1730969262070",
+        "retrieved_at": "2026-11-24T10:34:37.678142+00:00",
+        "status": "web_text_error",
+        "size": 594,
+        "sha256": "1a9d4de6307093e3903975dce81333df44c621d13dcf3b273e66a0ee69c814ec"
+      }
+    },
+    "palma_web.json": {
+      "size": 593,
+      "sha256": "cb033f8d16135a55e488fb43aa982ae61b2aee2eef323827c81abb0d97d0e3f1",
+      "receipt": {
+        "url": "https://tlr-palmajove.palma.cat/documents/39028/14879291/Firma_20240603_Acta_num_5_Junta_Mpal_Districte_Platja_de_Palma_i_Pla_de_Sant_Jordi_-_SEFYCU_3550760%2B%281%29.pdf/9d0d9567-69e3-4539-fa96-02e787e2ded1?t=1730969262070",
+        "retrieved_at": "2026-11-24T10:31:20.161689+00:00",
+        "status": "web_text_error",
+        "size": 593,
+        "sha256": "cb033f8d16135a55e488fb43aa982ae61b2aee2eef323827c81abb0d97d0e3f1"
+      }
+    },
+    "pobmun25.xlsx": {
+      "size": 422268,
+      "sha256": "34d62a036d16dddac811e98b3edf341e3f9abe1fbf51f646c06f42947c5352da"
+    },
+    "polygons.json": {
+      "size": 143258333,
+      "sha256": "a7e7954203d948d284248cd4f8a55009752b26290c3453f9ae213f4e06f26f20"
+    },
+    "target_codes.json": {
+      "size": 48840,
+      "sha256": "50586048109e97d705755974df9f1b438bdaf3ff2a62352a5112ab34e10e687c",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_at": "2026-11-24T10:25:37.682388+00:00",
+        "status": 200,
+        "size": 48840,
+        "sha256": "50586048109e97d705755974df9f1b438bdaf3ff2a62352a5112ab34e10e687c"
+      }
+    },
+    "target_codes.rq": {
+      "size": 1366,
+      "sha256": "a213a028aad13061b3bf56097910ed073c35449a46e65b26c9f9308a5534e8a4"
+    },
+    "timezones.geojson.zip": {
+      "size": 51940158,
+      "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01",
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip",
+        "retrieved_at": "2026-11-24T10:47:27.014298+00:00",
+        "status": 200,
+        "size": 51940158,
+        "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01"
+      }
+    },
+    "timezones_es.json": {
+      "size": 1002360,
+      "sha256": "c3c89f586ae38ddbce503ec5c8590d3950109db8af8e28617536c008492169e8"
+    },
+    "zg_emergency_web.json": {
+      "size": 35826,
+      "sha256": "3884248a178af3d9f96a379f40a0012f80d0c2852e46569eeaa5ebc91f7be490",
+      "receipt": {
+        "url": "https://zaragoza.es/sede/portal/bomberos/plan-emergencia/",
+        "retrieved_at": "2026-11-24T10:31:20.144576+00:00",
+        "status": "web_text_success",
+        "size": 35826,
+        "sha256": "3884248a178af3d9f96a379f40a0012f80d0c2852e46569eeaa5ebc91f7be490"
+      }
+    },
+    "zg_regulation_web.json": {
+      "size": 35675,
+      "sha256": "8a3be06e180f0219421e684c89c2e2b27759b7af3b2ff71012f63195c032f63e",
+      "receipt": {
+        "url": "https://www.zaragoza.es/sede/servicio/normativa/109",
+        "retrieved_at": "2026-11-24T10:31:20.137582+00:00",
+        "status": "web_text_success",
+        "size": 35675,
+        "sha256": "8a3be06e180f0219421e684c89c2e2b27759b7af3b2ff71012f63195c032f63e"
+      }
+    },
+    "zg_sur_web.json": {
+      "size": 6985,
+      "sha256": "c123283b5671d63cecf5f4d8e30b0793aaeb3f0f99675768949183bf87d476ba",
+      "receipt": {
+        "url": "https://www.zaragoza.es/sede/portal/servicios-sociales/mujer/cultura/enlace/mujer/paseos/distrito-sur",
+        "retrieved_at": "2026-11-24T10:34:37.666042+00:00",
+        "status": "web_text_success",
+        "size": 6985,
+        "sha256": "c123283b5671d63cecf5f4d8e30b0793aaeb3f0f99675768949183bf87d476ba"
+      }
+    },
+    "zizur_rename_boe.pdf": {
+      "size": 29376,
+      "sha256": "78a5fed9cc11a9f3a8baf34b76d289ef2e5efccd859b19c0e51bc0492a23561e",
+      "receipt": {
+        "url": "https://www.boe.es/boe/dias/1993/05/14/pdfs/A14700-14700.pdf",
+        "retrieved_at": "2026-11-24T10:38:00.029851+00:00",
+        "status": 200,
+        "size": 29376,
+        "sha256": "78a5fed9cc11a9f3a8baf34b76d289ef2e5efccd859b19c0e51bc0492a23561e"
+      }
+    },
+    "zizur_rename_boe.txt": {
+      "size": 2099,
+      "sha256": "b43127063bb96055365ebaaebfdb5490c6d29fb2257b53fba9e7a5a50fc858ed"
+    }
+  },
+  "official_municipios": 8132,
+  "INE_register": "2026-01-01 dictionary plus current-year REL rename table; no new or removed codes",
+  "population_editions": "Padrón and Nomenclátor 2025-01-01",
+  "terms_status": "ok; reused terms check hash-verified",
+  "terms_review": "terms_review.md",
+  "boundary_derivation": "verify_official.py: official GML rebuilt; strict polygon interior, five recorded make_valid repairs",
+  "new_point_source": "own item CC0 P625 via QLever; rounded point independently rechecked inside its own INE municipio polygon",
+  "timezone_source": "timezone-boundary-builder 2026e polygon containing own point",
+  "web_text_note": "*_web.json and *_excerpt.json are exact serialized web-tool extracts, not raw HTTP bodies; their receipt status distinguishes text success, search excerpt, and fetch failure. Palma minutes are an indexed official-source excerpt; PDF fetch failed.",
+  "all_target_ids": [
+    152212,
+    152233,
+    152247,
+    152266,
+    152269,
+    152272,
+    152287,
+    152167,
+    152187,
+    31936,
+    151349,
+    151352,
+    152712,
+    152740,
+    151185,
+    151486,
+    151528,
+    151535,
+    151608,
+    151612,
+    152298,
+    151207,
+    34579,
+    152391,
+    152398,
+    152411,
+    152021,
+    152025,
+    151376,
+    32364,
+    151035,
+    151045,
+    151047,
+    151051,
+    151057,
+    151632,
+    151633,
+    151634,
+    151638,
+    151639,
+    151652,
+    151660,
+    151678,
+    151681,
+    151690,
+    151708,
+    151715,
+    151391,
+    151397,
+    152098,
+    151333,
+    151337,
+    153135,
+    153146,
+    153187,
+    151432,
+    151770,
+    151776,
+    151812,
+    151842,
+    151857,
+    151859,
+    152899,
+    151085,
+    153024,
+    153038,
+    153048,
+    153073,
+    153083,
+    153095,
+    153111,
+    153124,
+    153134,
+    152599,
+    152612,
+    152613,
+    152631,
+    152648,
+    151142,
+    151144,
+    152530,
+    151187,
+    151896,
+    151904,
+    151952,
+    151964,
+    151973,
+    151981,
+    151989,
+    37383,
+    151997,
+    152131,
+    152958,
+    152962,
+    152030,
+    152477,
+    32099,
+    32290,
+    32309,
+    32352,
+    32464,
+    32636,
+    33261,
+    33272,
+    33616,
+    33695,
+    33696,
+    33703,
+    33924,
+    33994,
+    33999,
+    34003,
+    34009,
+    34068,
+    34074,
+    34104,
+    34249,
+    34277,
+    34400,
+    34505,
+    34667,
+    34776,
+    34931,
+    34985,
+    34992,
+    35002,
+    35092,
+    35095,
+    35122,
+    35125,
+    35161,
+    35501,
+    35546,
+    35617,
+    35776,
+    35849,
+    35893,
+    35913,
+    36192,
+    36240,
+    36333,
+    36355,
+    36437,
+    36471,
+    36587,
+    36614,
+    36677,
+    36681,
+    36718,
+    36812,
+    36848,
+    36945,
+    37193,
+    37368,
+    37417,
+    37705,
+    37963,
+    38009,
+    38343,
+    38358,
+    38436,
+    151050,
+    151146,
+    151350,
+    151402,
+    151407,
+    151479,
+    151508,
+    151509,
+    151653,
+    151734,
+    151919,
+    151920,
+    151928,
+    151931,
+    151946,
+    151967,
+    151993,
+    151996,
+    152194,
+    152402,
+    152459,
+    152462,
+    152822,
+    152912,
+    152915,
+    153065,
+    153153,
+    164331
+  ],
+  "all_unrepresented_INE_codes": [
+    "01031",
+    "02011",
+    "02014",
+    "02032",
+    "02035",
+    "02038",
+    "02046",
+    "02065",
+    "02066",
+    "02068",
+    "02071",
+    "02086",
+    "03001",
+    "03007",
+    "03015",
+    "03041",
+    "03052",
+    "03056",
+    "03090",
+    "03099",
+    "03110",
+    "03134",
+    "03904",
+    "04003",
+    "04010",
+    "04013",
+    "04020",
+    "04043",
+    "04046",
+    "04047",
+    "04048",
+    "04055",
+    "04065",
+    "04073",
+    "04097",
+    "04904",
+    "05019",
+    "05022",
+    "05027",
+    "05036",
+    "05052",
+    "05053",
+    "05061",
+    "05096",
+    "05097",
+    "05100",
+    "05112",
+    "05113",
+    "05129",
+    "05130",
+    "05140",
+    "05175",
+    "05192",
+    "05195",
+    "05232",
+    "06033",
+    "06037",
+    "06039",
+    "06044",
+    "06058",
+    "06060",
+    "06071",
+    "06080",
+    "06114",
+    "06118",
+    "06124",
+    "06903",
+    "07002",
+    "07027",
+    "07039",
+    "07901",
+    "08005",
+    "08026",
+    "08043",
+    "08063",
+    "08078",
+    "08079",
+    "08111",
+    "08112",
+    "08130",
+    "08139",
+    "08141",
+    "08172",
+    "08180",
+    "08200",
+    "08252",
+    "08258",
+    "08263",
+    "08272",
+    "08278",
+    "08280",
+    "08284",
+    "09014",
+    "09034",
+    "09056",
+    "09063",
+    "09086",
+    "09113",
+    "09117",
+    "09124",
+    "09125",
+    "09166",
+    "09168",
+    "09219",
+    "09365",
+    "09384",
+    "09421",
+    "09422",
+    "10013",
+    "10023",
+    "10081",
+    "10085",
+    "10106",
+    "10128",
+    "10141",
+    "10144",
+    "10154",
+    "10195",
+    "10901",
+    "10904",
+    "10905",
+    "11015",
+    "11018",
+    "11903",
+    "12029",
+    "12068",
+    "12070",
+    "12074",
+    "12093",
+    "12096",
+    "12110",
+    "12120",
+    "12136",
+    "13001",
+    "13013",
+    "13015",
+    "13028",
+    "13034",
+    "13037",
+    "13040",
+    "13042",
+    "13051",
+    "13066",
+    "13070",
+    "13076",
+    "13089",
+    "13093",
+    "14011",
+    "14022",
+    "14032",
+    "14034",
+    "14053",
+    "14055",
+    "14064",
+    "14073",
+    "14901",
+    "14902",
+    "15002",
+    "15005",
+    "15015",
+    "15046",
+    "15055",
+    "15064",
+    "15073",
+    "15074",
+    "15078",
+    "15902",
+    "16019",
+    "16023",
+    "16051",
+    "16052",
+    "16053",
+    "16067",
+    "16078",
+    "16146",
+    "16156",
+    "16157",
+    "16159",
+    "16163",
+    "16172",
+    "16203",
+    "16204",
+    "16205",
+    "16206",
+    "16211",
+    "16212",
+    "16217",
+    "16218",
+    "16238",
+    "16242",
+    "16246",
+    "16253",
+    "16266",
+    "16278",
+    "17005",
+    "17006",
+    "17007",
+    "17011",
+    "17013",
+    "17018",
+    "17022",
+    "17025",
+    "17030",
+    "17034",
+    "17058",
+    "17061",
+    "17062",
+    "17073",
+    "17078",
+    "17083",
+    "17116",
+    "17117",
+    "17125",
+    "17141",
+    "17142",
+    "17160",
+    "17167",
+    "17182",
+    "17191",
+    "17195",
+    "17199",
+    "17232",
+    "18065",
+    "18077",
+    "18087",
+    "18106",
+    "18109",
+    "18114",
+    "18126",
+    "18154",
+    "18175",
+    "18193",
+    "18901",
+    "18906",
+    "18914",
+    "18915",
+    "18916",
+    "19001",
+    "19002",
+    "19009",
+    "19013",
+    "19044",
+    "19053",
+    "19099",
+    "19103",
+    "19106",
+    "19108",
+    "19110",
+    "19113",
+    "19122",
+    "19126",
+    "19130",
+    "19132",
+    "19147",
+    "19152",
+    "19161",
+    "19166",
+    "19167",
+    "19174",
+    "19176",
+    "19183",
+    "19190",
+    "19209",
+    "19220",
+    "19225",
+    "19235",
+    "19257",
+    "19274",
+    "19330",
+    "19332",
+    "20042",
+    "20051",
+    "20070",
+    "20080",
+    "21003",
+    "21013",
+    "21023",
+    "21048",
+    "21052",
+    "21054",
+    "21902",
+    "22003",
+    "22006",
+    "22007",
+    "22008",
+    "22009",
+    "22013",
+    "22021",
+    "22024",
+    "22052",
+    "22060",
+    "22066",
+    "22067",
+    "22069",
+    "22074",
+    "22078",
+    "22083",
+    "22086",
+    "22115",
+    "22125",
+    "22128",
+    "22130",
+    "22137",
+    "22143",
+    "22149",
+    "22160",
+    "22163",
+    "22173",
+    "22178",
+    "22189",
+    "22199",
+    "22206",
+    "22209",
+    "22222",
+    "22249",
+    "22902",
+    "23025",
+    "23030",
+    "23046",
+    "23060",
+    "23072",
+    "23076",
+    "23079",
+    "24012",
+    "24024",
+    "24030",
+    "24036",
+    "24094",
+    "24104",
+    "24160",
+    "24203",
+    "24215",
+    "25006",
+    "25009",
+    "25071",
+    "25086",
+    "25096",
+    "25146",
+    "25189",
+    "25212",
+    "25216",
+    "25240",
+    "26036",
+    "26080",
+    "26089",
+    "26098",
+    "26099",
+    "26105",
+    "26122",
+    "26123",
+    "26170",
+    "27030",
+    "27031",
+    "27046",
+    "27051",
+    "27054",
+    "27060",
+    "28016",
+    "28021",
+    "28045",
+    "28074",
+    "28085",
+    "28089",
+    "28095",
+    "28100",
+    "28121",
+    "28125",
+    "28131",
+    "28132",
+    "28134",
+    "28138",
+    "28148",
+    "28159",
+    "28160",
+    "28164",
+    "28165",
+    "28171",
+    "28176",
+    "28903",
+    "29007",
+    "29030",
+    "29031",
+    "29092",
+    "29099",
+    "29903",
+    "29904",
+    "30006",
+    "30010",
+    "30018",
+    "30024",
+    "30028",
+    "30035",
+    "31002",
+    "31011",
+    "31046",
+    "31047",
+    "31059",
+    "31061",
+    "31078",
+    "31089",
+    "31092",
+    "31095",
+    "31111",
+    "31119",
+    "31131",
+    "31133",
+    "31140",
+    "31173",
+    "31174",
+    "31185",
+    "31194",
+    "31212",
+    "31216",
+    "31222",
+    "31234",
+    "31243",
+    "31251",
+    "31252",
+    "31262",
+    "31908",
+    "32015",
+    "32034",
+    "32042",
+    "32068",
+    "32083",
+    "33026",
+    "33037",
+    "33040",
+    "33041",
+    "33059",
+    "33076",
+    "34003",
+    "34004",
+    "34009",
+    "34010",
+    "34018",
+    "34019",
+    "34047",
+    "34052",
+    "34059",
+    "34072",
+    "34081",
+    "34091",
+    "34093",
+    "34106",
+    "34109",
+    "34120",
+    "34140",
+    "34147",
+    "34157",
+    "34159",
+    "34167",
+    "34175",
+    "34204",
+    "34206",
+    "34220",
+    "34232",
+    "34904",
+    "35001",
+    "35013",
+    "35020",
+    "35024",
+    "35026",
+    "35028",
+    "36002",
+    "36008",
+    "36031",
+    "36034",
+    "36045",
+    "36060",
+    "36902",
+    "37011",
+    "37045",
+    "37054",
+    "37070",
+    "37073",
+    "37077",
+    "37090",
+    "37130",
+    "37131",
+    "37164",
+    "37174",
+    "37177",
+    "37268",
+    "37279",
+    "37292",
+    "37323",
+    "37325",
+    "37342",
+    "37346",
+    "37350",
+    "37371",
+    "37376",
+    "38006",
+    "38034",
+    "38052",
+    "38901",
+    "39021",
+    "39024",
+    "39067",
+    "39075",
+    "39087",
+    "39099",
+    "40057",
+    "40070",
+    "40076",
+    "40082",
+    "40086",
+    "40094",
+    "40103",
+    "40113",
+    "40161",
+    "40195",
+    "40230",
+    "40231",
+    "41007",
+    "41020",
+    "41024",
+    "41031",
+    "41056",
+    "41057",
+    "41063",
+    "41066",
+    "41069",
+    "41077",
+    "41078",
+    "41079",
+    "41080",
+    "41082",
+    "41090",
+    "41091",
+    "41102",
+    "41903",
+    "41904",
+    "42001",
+    "42014",
+    "42018",
+    "42051",
+    "42064",
+    "42076",
+    "42081",
+    "42083",
+    "42106",
+    "42141",
+    "42157",
+    "42160",
+    "42211",
+    "42218",
+    "43003",
+    "43018",
+    "43043",
+    "43044",
+    "43063",
+    "43085",
+    "43095",
+    "43107",
+    "43116",
+    "43131",
+    "43133",
+    "43136",
+    "43146",
+    "43148",
+    "43156",
+    "43158",
+    "43163",
+    "43901",
+    "44003",
+    "44006",
+    "44007",
+    "44008",
+    "44009",
+    "44013",
+    "44022",
+    "44025",
+    "44045",
+    "44047",
+    "44049",
+    "44050",
+    "44053",
+    "44059",
+    "44061",
+    "44067",
+    "44071",
+    "44077",
+    "44088",
+    "44092",
+    "44094",
+    "44108",
+    "44120",
+    "44123",
+    "44137",
+    "44146",
+    "44147",
+    "44173",
+    "44174",
+    "44178",
+    "44180",
+    "44185",
+    "44192",
+    "44193",
+    "44197",
+    "44210",
+    "44213",
+    "44216",
+    "44249",
+    "44260",
+    "44263",
+    "45040",
+    "45048",
+    "45065",
+    "45072",
+    "45076",
+    "45101",
+    "45102",
+    "45105",
+    "45108",
+    "45112",
+    "45113",
+    "45114",
+    "45128",
+    "45130",
+    "45132",
+    "45135",
+    "45136",
+    "45137",
+    "45138",
+    "45140",
+    "45144",
+    "45145",
+    "45155",
+    "45156",
+    "45158",
+    "45161",
+    "45165",
+    "45167",
+    "45169",
+    "45172",
+    "45174",
+    "45179",
+    "45182",
+    "45183",
+    "45184",
+    "45186",
+    "45191",
+    "45193",
+    "45198",
+    "45199",
+    "45200",
+    "45205",
+    "46016",
+    "46030",
+    "46036",
+    "46062",
+    "46110",
+    "46118",
+    "46122",
+    "46132",
+    "46135",
+    "46137",
+    "46161",
+    "46211",
+    "46212",
+    "46221",
+    "47040",
+    "47070",
+    "47073",
+    "47084",
+    "47085",
+    "47086",
+    "47099",
+    "47110",
+    "47148",
+    "47155",
+    "47162",
+    "47164",
+    "47177",
+    "47186",
+    "47196",
+    "47197",
+    "47203",
+    "47207",
+    "47214",
+    "47220",
+    "47221",
+    "47222",
+    "48050",
+    "48081",
+    "48916",
+    "49020",
+    "49035",
+    "49042",
+    "49071",
+    "49202",
+    "50001",
+    "50003",
+    "50004",
+    "50005",
+    "50006",
+    "50008",
+    "50009",
+    "50010",
+    "50016",
+    "50020",
+    "50031",
+    "50032",
+    "50034",
+    "50038",
+    "50045",
+    "50055",
+    "50058",
+    "50059",
+    "50060",
+    "50061",
+    "50063",
+    "50067",
+    "50070",
+    "50071",
+    "50072",
+    "50073",
+    "50076",
+    "50079",
+    "50081",
+    "50085",
+    "50091",
+    "50092",
+    "50095",
+    "50098",
+    "50106",
+    "50109",
+    "50120",
+    "50125",
+    "50126",
+    "50130",
+    "50132",
+    "50136",
+    "50155",
+    "50167",
+    "50168",
+    "50170",
+    "50173",
+    "50174",
+    "50178",
+    "50183",
+    "50186",
+    "50189",
+    "50192",
+    "50194",
+    "50201",
+    "50210",
+    "50219",
+    "50227",
+    "50230",
+    "50236",
+    "50245",
+    "50251",
+    "50252",
+    "50253",
+    "50257",
+    "50265",
+    "50267",
+    "50269",
+    "50270",
+    "50271",
+    "50275",
+    "50277",
+    "50280",
+    "50282",
+    "50297",
+    "50298",
+    "51001",
+    "52001"
+  ],
+  "scope3_incremental_base": "25b31e581feaed5270d711d7ace5bbc4c63c95e7",
+  "scope3_evidence_files": {
+    "scope3_issue209.json": {
+      "size": 178,
+      "sha256": "288c8346a87679094dbdcea0cda23b3e7a3af5e5ba3c3cfefa1084eacec716f4",
+      "receipt": {
+        "url": "https://github.com/dr5hn/countries-states-cities-database/issues/209#issuecomment-846541063",
+        "retrieved_at": "2026-11-24T12:37:20.378201+00:00",
+        "status": "github_connector_success",
+        "size": 178,
+        "sha256": "288c8346a87679094dbdcea0cda23b3e7a3af5e5ba3c3cfefa1084eacec716f4"
+      }
+    },
+    "scope3_original_municipios.sql": {
+      "size": 226411,
+      "sha256": "4acf4423b4968877eb7735b7076992de1b8f7ed8d170611722de1662b3b1bbed",
+      "receipt": {
+        "url": "https://github.com/oscarnovasf/ccaa-provincias-municipios/blob/master/sql/lista_municipios.sql",
+        "retrieved_at": "2026-11-24T12:37:45.192901+00:00",
+        "status": "github_connector_utf8_content",
+        "size": 226411,
+        "sha256": "4acf4423b4968877eb7735b7076992de1b8f7ed8d170611722de1662b3b1bbed"
+      }
+    },
+    "scope3_import_provenance.json": {
+      "size": 2077,
+      "sha256": "754ed7f43d1f453a8c73b1eeb57c17779cd546f2bcd1db5097e9558f52db0843"
+    }
+  }
+}
