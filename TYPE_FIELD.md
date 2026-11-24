@@ -437,11 +437,14 @@ In Vietnam, also exclude `municipality`: since the July 2025 reform it is a comm
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
-The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, so it can return a city and
-its parts together. A section's population is part of the population of the city or municipality that contains it, never
-extra: Rio de Janeiro's row carries the whole city's 6.7 million, and its bairros' own counts, Copacabana's 128,919
-among them, add up to about 6 million of those same people. To sum or rank populations, count a city or its sections,
-not both; the simplest way is to leave out rows with `type = 'section'`.
+The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, and in several countries it
+keeps both a municipality and the settlements inside it, so it can return a place and its parts together. A part's
+population is part of the population of the unit that contains it, never extra. Rio de Janeiro's row carries the whole
+city's 6.7 million, and its bairros' own counts, Copacabana's 128,919 among them, add up to about 6 million of those
+same people. In Spain a municipio and its main village (`locality / entidad singular de población`) often share a name
+and a point: Puigcerdà the municipio has 10,035 people and Puigcerdà the village 7,909 of them, so a name search returns
+both, told apart by `type`. To sum or rank populations, count a unit or its parts, not both: leave out rows whose `type`
+is `section`, and in Spain count the municipio rows.
 
 ### SQL
 
