@@ -273,6 +273,8 @@ municipio. The Centro district retains row 33695 and item Q1763376. See the
 [Spain scope ledger](.github/fixes-docs/ledgers/es_scope_v6x.jsonl) for per-row class, hierarchy,
 official city source, identity and population decisions.
 
+The reviewed Spain package has 8,962 rows: 661 new municipios and 104 reused existing municipio rows; eight unmerged duplicate additions were discarded. All 20 proposed population clears were rechecked: 10 master values restored and held, 9 exact other-unit totals cleared, and Galera replaced with its own 2025 municipio count. Spain L/D is 99.43% and dated population is 96.54%.
+
 ### Uruguay
 
 In `UY.json`, a centro poblado's legal category maps to `city / ciudad`, `town / villa` or

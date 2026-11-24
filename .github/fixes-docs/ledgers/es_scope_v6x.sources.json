@@ -1,7 +1,7 @@
 {
   "base_commit": "4d03a736dacee674cd34dd166976ab00cdd92c10",
   "schema_version": 1,
-  "ledger_sha256": "14f91beea8a8c56c8edcc22cee9ab599f42db6494cfa61a3431e7e98347c6c0c",
+  "ledger_sha256": "9c1801809eab60f156e671a9671930eb1e0faf426edc3329912b9571b5d4f25f",
   "source_files": {
     "base_ES.json": {
       "size": 10014523,
@@ -2498,5 +2498,34 @@
     "50298",
     "51001",
     "52001"
-  ]
+  ],
+  "scope3_incremental_base": "25b31e581feaed5270d711d7ace5bbc4c63c95e7",
+  "scope3_evidence_files": {
+    "scope3_issue209.json": {
+      "size": 178,
+      "sha256": "288c8346a87679094dbdcea0cda23b3e7a3af5e5ba3c3cfefa1084eacec716f4",
+      "receipt": {
+        "url": "https://github.com/dr5hn/countries-states-cities-database/issues/209#issuecomment-846541063",
+        "retrieved_at": "2026-11-24T12:37:20.378201+00:00",
+        "status": "github_connector_success",
+        "size": 178,
+        "sha256": "288c8346a87679094dbdcea0cda23b3e7a3af5e5ba3c3cfefa1084eacec716f4"
+      }
+    },
+    "scope3_original_municipios.sql": {
+      "size": 226411,
+      "sha256": "4acf4423b4968877eb7735b7076992de1b8f7ed8d170611722de1662b3b1bbed",
+      "receipt": {
+        "url": "https://github.com/oscarnovasf/ccaa-provincias-municipios/blob/master/sql/lista_municipios.sql",
+        "retrieved_at": "2026-11-24T12:37:45.192901+00:00",
+        "status": "github_connector_utf8_content",
+        "size": 226411,
+        "sha256": "4acf4423b4968877eb7735b7076992de1b8f7ed8d170611722de1662b3b1bbed"
+      }
+    },
+    "scope3_import_provenance.json": {
+      "size": 2077,
+      "sha256": "754ed7f43d1f453a8c73b1eeb57c17779cd546f2bcd1db5097e9558f52db0843"
+    }
+  }
 }
