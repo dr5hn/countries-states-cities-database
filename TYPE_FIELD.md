@@ -421,6 +421,12 @@ In Vietnam, also exclude `municipality`: since the July 2025 reform it is a comm
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
+The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, so it can return a city and
+its parts together. A section's population is part of the population of the city or municipality that contains it, never
+extra: Rio de Janeiro's row carries the whole city's 6.7 million, and its bairros' own counts, Copacabana's 128,919
+among them, add up to about 6 million of those same people. To sum or rank populations, count a city or its sections,
+not both; the simplest way is to leave out rows with `type = 'section'`.
+
 ### SQL
 
 ```sql
@@ -531,10 +537,20 @@ its município row 14309 is level 2 and its official `section / bairro` rows are
 Their statutory RA membership remains separate evidence; bairros never receive the município total.
 Other verified level-4 localities use their containing CSC distrito as parent when present, else null.
 The [addition ledger](.github/fixes-docs/ledgers/br_add2_v6x.jsonl) records the 60 places the Brazil recall audit found
-missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. It does not
-cover every RA or bairro: Taguatinga, Samambaia, Vicente Pires, Fercal, Sudoeste/Octogonal, Arniqueira and Sol
-Nascente/Pôr do Sol have no row yet, Planaltina (13934) is still typed `city`, and 141 of the 159 bairros in IPP's
-layer have no row.
+missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. The
+[remaining-register ledger](.github/fixes-docs/ledgers/br_rest_v6x.jsonl) then considers all 37 current GDF RAs: the 33
+of LC 958/2019, Arapoanga and Água Quente (Laws 7.190/2022 and 7.191/2022), and Ponte Alta and 26 de Setembro (Laws
+7.917/2026 and 7.918/2026). It adds 6 RAs with their own item and a contained point, and holds 6. Planaltina 13934 stays
+`city`, with its identity and old population kept, because the row stores no Wikidata item, so it cannot be proved to be
+the RA (an RA item, Q2577688, exists). 26 de Setembro and Ponte Alta have only bare Wikidata stubs with no class,
+location or point. Sol Nascente/Pôr do Sol, Arniqueira and Água Quente have no open point inside them. Plano Piloto
+stays represented by Brasília row 10776, unchanged.
+New RAs have no population, because no reusable dated count for an RA was found.
+Rio's register is the 165 bairros (codes 1-165) of IPP's Censo 2022 bairro base. 162 now have a row
+(139 added by that ledger and 5 in its follow-up); Santa Teresa, Ilha de Guaratiba and Barra Olímpica are held.
+The earlier IPSBairros indicator layer had 158 bairros plus a city-wide summary (code 999). Each new bairro has its
+own contained open point and IPP's preliminary Censo 2022 count (CC BY 4.0) with population_year 2022;
+no município total or polygon-derived point is used.
 These classes require evidence for the place itself, rather than a population threshold or a generic settlement class.
 For the [Brazil ledger](.github/fixes-docs/ledgers/br_tld_v6x.jsonl), a city row is bound to the município only through
 a unique current IBGE name or live-item alias in the same estado, no existing CSC owner, its unchanged point strictly

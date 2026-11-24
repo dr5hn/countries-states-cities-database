@@ -71,6 +71,11 @@ rules below. The first published export of a new major may include the changes a
 
 The results of an unchanged query may change when facts about the same entity are corrected.
 
+One known exception waits for v7. The JSON export, and the MongoDB dump built from it, write city and state `level` and
+`parent_id` as strings (`"4"`, `"172484"`), while the source files, the SQL exports and the other id and count fields in
+the JSON are integers. This has been so since v5.0.0. Changing a value's type is an incompatible schema change, so the
+fix ships in v7; until then, read both as integers and keep nulls as null.
+
 Between majors, existing keys stay lookupable. A record found to be a unit or invalid is classified or flagged only
 where the published model allows it; otherwise that change is held. Both keys of a duplicate stay, with the proof
 recorded. Removing a key or moving it to another table waits for the next major.
