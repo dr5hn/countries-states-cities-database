@@ -20,6 +20,14 @@ so they never list these four. To map any id from a v3.2 export, read the v4.0 f
 [`removed_ids_v3.2_to_v4.0_supplement.csv`](removed_ids_v3.2_to_v4.0_supplement.csv), which lists the four in the
 same columns. The supplement lives in this folder only; no release attaches it.
 
+Brazil has a related case where no id leaves the data.
+[#2294](https://github.com/dr5hn/countries-states-cities-database/pull/2294) added 21 municípios that had no row. For
+each, the only earlier row with that name is a different, smaller place, often hundreds of kilometres away, and several
+of those rows carried the município's population. They keep their ids and their meaning as the smaller place, so no
+migration file maps them. If you saved one of them meaning the município, such as 14938 São José (SC), check
+[`br_same_name_municipios.csv`](br_same_name_municipios.csv): it pairs each earlier row with its município row and gives
+the distance between them. It lives in this folder only; no release attaches it.
+
 ## The files
 
 | File | What it holds |
