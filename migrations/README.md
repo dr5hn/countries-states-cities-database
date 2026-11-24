@@ -5,10 +5,20 @@ release's, so you can update ids stored in your own systems. They are generated,
 [`bin/scripts/release/migrations.py`](../bin/scripts/release/migrations.py) from this folder's ledger and the git
 history of `contributions/`.
 
-**Status:** `events.jsonl` holds every removal since v4.0 (10,201) and the 1509 restoration, and every one is
+**Status:** `events.jsonl` holds every removal since v4.0 and the 1509 restoration, and every one is
 reviewed. The generator accepts the cumulative interval from v4.0, and the export workflow (below) attaches its files
 to each export release. A removal whose successor could not be proved is recorded as `no_successor` with no target;
 it claims nothing beyond that.
+
+For removals before v4.0, the v4.0 release carries `removed_ids_v3.2_to_v4.0.csv`. It compares the v3.2 tag with
+v4.0, so it misses ids added after the v3.2 tag and removed before v4.0. Four city ids fall in that gap, and only
+four in any table: 161665, 161678, 161784 and 162015, French communes published in v3.2-export.3 to v3.2-export.33
+and merged by [#1767](https://github.com/dr5hn/countries-states-cities-database/pull/1767) into 39474, 39762, 42375
+and 46477 the day before v4.0. `events.jsonl` records each as a reviewed removal at #1767's commit, with its
+successor and the proof. The release migration files only cover changes since their start release, from v4.0 on,
+so they never list these four. To map any id from a v3.2 export, read the v4.0 file together with
+[`removed_ids_v3.2_to_v4.0_supplement.csv`](removed_ids_v3.2_to_v4.0_supplement.csv), which lists the four in the
+same columns. The supplement lives in this folder only; no release attaches it.
 
 ## The files
 
@@ -282,7 +292,8 @@ python3 bin/scripts/release/migrations.py --from v4.0 --to "$MERGE_SHA" --pendin
 
 `--reserved` names every id that left the data before `--from` and must never return, as `{"table", "id"}` per
 line. Removals in ledger events before `--from` are added automatically. The list for v5.0.0 starts from v4.0's
-published `removed_ids_v3.2_to_v4.0.csv`: its 4,492 ids are in [`reserved_ids.jsonl`](reserved_ids.jsonl).
+published `removed_ids_v3.2_to_v4.0.csv`: its 4,492 ids are in [`reserved_ids.jsonl`](reserved_ids.jsonl). The
+four French ids that file missed (see the status above) are reserved through their ledger events.
 
 The importer (`bin/scripts/sync/import_json_to_mysql.py`) reads the same files, `events.jsonl` (its removals) and
 `migrations/reserved_ids.jsonl`, and starts the ids it assigns to new records above the highest retired or reserved id
