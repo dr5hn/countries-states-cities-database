@@ -530,7 +530,11 @@ For Rio de Janeiro, rule 6 of ADMINISTRATIVE_STRUCTURE.md documents the urban-co
 its município row 14309 is level 2 and its official `section / bairro` rows are level 3 with parent_id 14309.
 Their statutory RA membership remains separate evidence; bairros never receive the município total.
 Other verified level-4 localities use their containing CSC distrito as parent when present, else null.
-The [addition ledger](.github/fixes-docs/ledgers/br_add2_v6x.jsonl) records all 60 candidates, including holds.
+The [addition ledger](.github/fixes-docs/ledgers/br_add2_v6x.jsonl) records the 60 places the Brazil recall audit found
+missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. It does not
+cover every RA or bairro: Taguatinga, Samambaia, Vicente Pires, Fercal, Sudoeste/Octogonal, Arniqueira and Sol
+Nascente/Pôr do Sol have no row yet, Planaltina (13934) is still typed `city`, and 141 of the 159 bairros in IPP's
+layer have no row.
 These classes require evidence for the place itself, rather than a population threshold or a generic settlement class.
 For the [Brazil ledger](.github/fixes-docs/ledgers/br_tld_v6x.jsonl), a city row is bound to the município only through
 a unique current IBGE name or live-item alias in the same estado, no existing CSC owner, its unchanged point strictly
