@@ -546,9 +546,11 @@ the RA (an RA item, Q2577688, exists). 26 de Setembro and Ponte Alta have only b
 location or point. Sol Nascente/Pôr do Sol, Arniqueira and Água Quente have no open point inside them. Plano Piloto
 stays represented by Brasília row 10776, unchanged.
 New RAs have no population, because no reusable dated count for an RA was found.
-IPP's bairro layer holds 158 bairros plus one city-wide summary record (code 999), not 159 bairros. 157 of the 158 now
-have a row (139 added by that ledger); Santa Teresa is held. Each new bairro has its own contained open point and IPP's
-preliminary Censo 2022 count (CC BY 4.0) with population_year 2022; no município total or polygon-derived point is used.
+Rio's register is the 165 bairros (codes 1-165) of IPP's Censo 2022 bairro base. 162 now have a row
+(139 added by that ledger and 5 in its follow-up); Santa Teresa, Ilha de Guaratiba and Barra Olímpica are held.
+The earlier IPSBairros indicator layer had 158 bairros plus a city-wide summary (code 999). Each new bairro has its
+own contained open point and IPP's preliminary Censo 2022 count (CC BY 4.0) with population_year 2022;
+no município total or polygon-derived point is used.
 These classes require evidence for the place itself, rather than a population threshold or a generic settlement class.
 For the [Brazil ledger](.github/fixes-docs/ledgers/br_tld_v6x.jsonl), a city row is bound to the município only through
 a unique current IBGE name or live-item alias in the same estado, no existing CSC owner, its unchanged point strictly
