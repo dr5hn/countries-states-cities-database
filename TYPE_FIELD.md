@@ -421,6 +421,12 @@ In Vietnam, also exclude `municipality`: since the July 2025 reform it is a comm
 `city` / `đô thị loại II` and `town` / `đô thị loại III` urban places (#1977).
 In the Netherlands, exclude the records named "Gemeente …" (see [Netherlands](#netherlands)).
 
+The filter keeps `section` rows, the neighbourhoods, districts and other parts of a city, so it can return a city and
+its parts together. A section's population is part of the population of the city or municipality that contains it, never
+extra: Rio de Janeiro's row carries the whole city's 6.7 million, and its bairros' own counts, Copacabana's 128,919
+among them, add up to about 6 million of those same people. To sum or rank populations, count a city or its sections,
+not both; the simplest way is to leave out rows with `type = 'section'`.
+
 ### SQL
 
 ```sql
