@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "base": "390083cea5c78041b58d69ad3b94fbfcd8c317d7",
+  "licences": {
+    "Wikidata": "CC0 1.0",
+    "IGN Admin Express COG 2026": "Licence Ouverte / Open Licence 2.0 (Etalab); used only to check points",
+    "INSEE COG 2026": "Licence Ouverte / Open Licence 2.0 (Etalab)"
+  },
+  "sources": [
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q644728.json",
+      "retrieved_utc": "2026-11-24T07:14:22.624826+00:00",
+      "status": 200,
+      "bytes": 87585,
+      "sha256": "995856b0dfdcc3cb39f4980f60de749add7edc7c65dabf805692fccc7f192412"
+    },
+    {
+      "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=ADMINEXPRESS-COG.2026%3Acommune&outputFormat=application%2Fjson&srsName=EPSG%3A4326&filter=%3Cfes%3AFilter+xmlns%3Afes%3D%22http%3A%2F%2Fwww.opengis.net%2Ffes%2F2.0%22%3E%3Cfes%3APropertyIsEqualTo%3E%3Cfes%3AValueReference%3Ecode_insee%3C%2Ffes%3AValueReference%3E%3Cfes%3ALiteral%3E66008%3C%2Ffes%3ALiteral%3E%3C%2Ffes%3APropertyIsEqualTo%3E%3C%2Ffes%3AFilter%3E",
+      "retrieved_utc": "2026-11-24T07:14:23.581667+00:00",
+      "status": 200,
+      "bytes": 76972,
+      "sha256": "9f49eac3964a0d84caaf0703d7ccf059c89896cd3cbe217b42c74e9385aa8928"
+    },
+    {
+      "url": "https://www.insee.fr/fr/statistiques/fichier/8740222/cog_ensemble_2026_csv.zip",
+      "status": 200,
+      "bytes": 1961824,
+      "sha256": "5c037e2977c9d476cfe2e7b7f923bbe09a87cbe448c59e492a71ef6a917aa53f"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q6753.json",
+      "retrieved_utc": "2026-11-24T07:14:25.269002+00:00",
+      "status": 200,
+      "bytes": 82496,
+      "sha256": "160ed4021121a8151d248b0d0ce7a89076cd1a2ed733043e440c4e53f0e1325b"
+    },
+    {
+      "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=ADMINEXPRESS-COG.2026%3Acommune&outputFormat=application%2Fjson&srsName=EPSG%3A4326&filter=%3Cfes%3AFilter+xmlns%3Afes%3D%22http%3A%2F%2Fwww.opengis.net%2Ffes%2F2.0%22%3E%3Cfes%3APropertyIsEqualTo%3E%3Cfes%3AValueReference%3Ecode_insee%3C%2Ffes%3AValueReference%3E%3Cfes%3ALiteral%3E66016%3C%2Ffes%3ALiteral%3E%3C%2Ffes%3APropertyIsEqualTo%3E%3C%2Ffes%3AFilter%3E",
+      "retrieved_utc": "2026-11-24T07:14:26.329886+00:00",
+      "status": 200,
+      "bytes": 165916,
+      "sha256": "01b88ebc04fcd24b861724fb73f507b4f286dc5d2cb1cc08823ead45740fdf75"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q318078.json",
+      "retrieved_utc": "2026-11-24T07:14:28.317813+00:00",
+      "status": 200,
+      "bytes": 76814,
+      "sha256": "1d6b391dadf4cdac7f0f36e22f590eaf19f212b983c05aaf0177eeaaa1a23e6f"
+    },
+    {
+      "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=ADMINEXPRESS-COG.2026%3Acommune&outputFormat=application%2Fjson&srsName=EPSG%3A4326&filter=%3Cfes%3AFilter+xmlns%3Afes%3D%22http%3A%2F%2Fwww.opengis.net%2Ffes%2F2.0%22%3E%3Cfes%3APropertyIsEqualTo%3E%3Cfes%3AValueReference%3Ecode_insee%3C%2Ffes%3AValueReference%3E%3Cfes%3ALiteral%3E95306%3C%2Ffes%3ALiteral%3E%3C%2Ffes%3APropertyIsEqualTo%3E%3C%2Ffes%3AFilter%3E",
+      "retrieved_utc": "2026-11-24T07:14:28.834199+00:00",
+      "status": 200,
+      "bytes": 12629,
+      "sha256": "a175a60cd92f8958104282cb844bce66404ce7b63d268126de1e99d54a629d2b"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Special:EntityData/Q219665.json",
+      "retrieved_utc": "2026-11-24T07:14:30.503963+00:00",
+      "status": 200,
+      "bytes": 84677,
+      "sha256": "35b5e4952c02dbd9ac60708840af53295b76c4dba30f59c2aaf178c993354085"
+    },
+    {
+      "url": "https://data.geopf.fr/wfs/ows?service=WFS&version=2.0.0&request=GetFeature&typeNames=ADMINEXPRESS-COG.2026%3Acommune&outputFormat=application%2Fjson&srsName=EPSG%3A4326&filter=%3Cfes%3AFilter+xmlns%3Afes%3D%22http%3A%2F%2Fwww.opengis.net%2Ffes%2F2.0%22%3E%3Cfes%3APropertyIsEqualTo%3E%3Cfes%3AValueReference%3Ecode_insee%3C%2Ffes%3AValueReference%3E%3Cfes%3ALiteral%3E35306%3C%2Ffes%3ALiteral%3E%3C%2Ffes%3APropertyIsEqualTo%3E%3C%2Ffes%3AFilter%3E",
+      "retrieved_utc": "2026-11-24T07:14:31.198631+00:00",
+      "status": 200,
+      "bytes": 32972,
+      "sha256": "8aeeba560310303fd83cdf08ecac87bbe98785531b1462bcdb3961ef54661b03"
+    }
+  ]
+}
