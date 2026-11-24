@@ -1,0 +1,4032 @@
+{
+  "schema_version": 1,
+  "base": "24314cd724b8ba699de96fd8d881cab0d808216c",
+  "ledger_sha256": "12b3178b7a24d39d12634103747701f43eb6de0d1182184f8871cae5601c7106",
+  "sources": [
+    {
+      "file": "sources/BR.zip",
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/BR.zip",
+        "retrieved_utc": "2026-11-24T10:10:35.800612+00:00",
+        "status": 200,
+        "bytes": 7182858,
+        "sha256": "8e45443458fdfdc959e7093dbeb9eba516bd29fd161f122d5dec7385c9b8d386"
+      }
+    },
+    {
+      "file": "sources/BR_Municipios_2025.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "retrieved_utc": null,
+        "status": null,
+        "bytes": 237062431,
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd"
+      }
+    },
+    {
+      "file": "sources/DTB_2025.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": "2026-11-20T07:54:44.243056+00:00",
+        "status": null,
+        "bytes": 1635600,
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27"
+      }
+    },
+    {
+      "file": "sources/Localidades_Brasil_shp.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/Localidades_Brasil_shp.zip",
+        "retrieved_utc": "2026-11-20T07:56:31.960820+00:00",
+        "status": null,
+        "bytes": 4511488,
+        "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9"
+      }
+    },
+    {
+      "file": "sources/Q1003402.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1003402.json",
+        "retrieved_utc": "2026-11-24T11:32:36.926437+00:00",
+        "status": 200,
+        "bytes": 54533,
+        "sha256": "c975f883705e2e459d6635c254345bf8005e0bacf6254d838300d99c5fcf8e15"
+      }
+    },
+    {
+      "file": "sources/Q1006367.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1006367.json",
+        "retrieved_utc": "2026-11-24T11:38:12.304097+00:00",
+        "status": 200,
+        "bytes": 71009,
+        "sha256": "c5564be65cf7eaef89612968b8898b8bcfe0cfee94fc7e309ce738ee7e420a45"
+      }
+    },
+    {
+      "file": "sources/Q1008207.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1008207.json",
+        "retrieved_utc": "2026-11-24T11:32:37.798247+00:00",
+        "status": 200,
+        "bytes": 56753,
+        "sha256": "4d71531b7568c0558e513bd12f8c5a4aba1aefe8c38a3199103badf6327a489b"
+      }
+    },
+    {
+      "file": "sources/Q1008285.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1008285.json",
+        "retrieved_utc": "2026-11-24T11:32:39.154683+00:00",
+        "status": 200,
+        "bytes": 61005,
+        "sha256": "1e8411b72cd11ed256cd49f268808a6d9f2672ae30c813c99bfcb3abf3565f0a"
+      }
+    },
+    {
+      "file": "sources/Q1008317.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1008317.json",
+        "retrieved_utc": "2026-11-24T11:32:40.020439+00:00",
+        "status": 200,
+        "bytes": 63785,
+        "sha256": "78ed2c269cc6997adf2c85ddadb448c2bcd381e62493fe0a2c58adbb7059cd95"
+      }
+    },
+    {
+      "file": "sources/Q1019640.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019640.json",
+        "retrieved_utc": "2026-11-24T11:32:40.840324+00:00",
+        "status": 200,
+        "bytes": 61231,
+        "sha256": "8559581c752bbb814854c10dc25b6a01690e912d2eac3ecff67466d9c55bed50"
+      }
+    },
+    {
+      "file": "sources/Q1024894.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1024894.json",
+        "retrieved_utc": "2026-11-24T11:32:41.995168+00:00",
+        "status": 200,
+        "bytes": 62533,
+        "sha256": "2c55e327b0c97e53d257c46b16e40d6e56f1f2655447bbd3c0cd66fbcf1573a5"
+      }
+    },
+    {
+      "file": "sources/Q1025760.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1025760.json",
+        "retrieved_utc": "2026-11-24T11:32:43.203588+00:00",
+        "status": 200,
+        "bytes": 68061,
+        "sha256": "cc4b1bad99bba685d79d71c428fc09ddd97d7bfd0fbd2d403acca3db7ce8b1df"
+      }
+    },
+    {
+      "file": "sources/Q10854988.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q10854988.json",
+        "retrieved_utc": "2026-11-24T11:38:44.287080+00:00",
+        "status": 200,
+        "bytes": 63208,
+        "sha256": "1674ee8d945bdf9f91b00c33c8e493c4d4c99a6a378ad353184f8eeb2db6b572"
+      }
+    },
+    {
+      "file": "sources/Q1102558.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1102558.json",
+        "retrieved_utc": "2026-11-24T11:32:44.090071+00:00",
+        "status": 200,
+        "bytes": 55840,
+        "sha256": "f4a2dd06206f5da105922695bf8d00d64789ac02379d98e8fb29a3ee7f8a1edc"
+      }
+    },
+    {
+      "file": "sources/Q1112525.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1112525.json",
+        "retrieved_utc": "2026-11-24T11:32:45.246220+00:00",
+        "status": 200,
+        "bytes": 57828,
+        "sha256": "97a03afa217f4e3437c225d4c3a04a028d98ca8908fc052e83efbb40ad227d80"
+      }
+    },
+    {
+      "file": "sources/Q1117969.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1117969.json",
+        "retrieved_utc": "2026-11-24T11:32:46.490201+00:00",
+        "status": 200,
+        "bytes": 62920,
+        "sha256": "079970829e130e63decd1902b6682e243edabf27c7773bcda156a3dd81f2ffd0"
+      }
+    },
+    {
+      "file": "sources/Q112038261.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038261.json",
+        "retrieved_utc": "2026-11-24T11:38:12.851560+00:00",
+        "status": 200,
+        "bytes": 3793,
+        "sha256": "61f974660186e8adc23e1849753197631b9367b959cef22d2ae3017e074e0e4d"
+      }
+    },
+    {
+      "file": "sources/Q1122744.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1122744.json",
+        "retrieved_utc": "2026-11-24T11:32:47.232241+00:00",
+        "status": 200,
+        "bytes": 57665,
+        "sha256": "6ff66c676a499864656f0ef5ff37ade8fba68da17de7ad3fc5bc66ec65b11fa1"
+      }
+    },
+    {
+      "file": "sources/Q1638389.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1638389.json",
+        "retrieved_utc": "2026-11-24T11:32:48.676751+00:00",
+        "status": 200,
+        "bytes": 63829,
+        "sha256": "32e016fcb53b21e9fe36f9757b97820828044fe54952555bd5502d12e8552924"
+      }
+    },
+    {
+      "file": "sources/Q1645056.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1645056.json",
+        "retrieved_utc": "2026-11-24T11:32:49.607686+00:00",
+        "status": 200,
+        "bytes": 56839,
+        "sha256": "966a33867ff25860c73df6fb386e1133dd31c6d4da0c1885c1720850aa5573f9"
+      }
+    },
+    {
+      "file": "sources/Q171617.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q171617.json",
+        "retrieved_utc": "2026-11-24T11:32:51.171972+00:00",
+        "status": 200,
+        "bytes": 131473,
+        "sha256": "a233912a97f6561c48b0b3890208eb815deb069b27f28435aed7050477563601"
+      }
+    },
+    {
+      "file": "sources/Q172512.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q172512.json",
+        "retrieved_utc": "2026-11-24T11:32:52.904483+00:00",
+        "status": 200,
+        "bytes": 104055,
+        "sha256": "dd0024df4543a9a264daef579173fb52bbd2abaadce2d85a820ca410efb041a2"
+      }
+    },
+    {
+      "file": "sources/Q173849.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q173849.json",
+        "retrieved_utc": "2026-11-24T11:32:54.049223+00:00",
+        "status": 200,
+        "bytes": 72731,
+        "sha256": "8fcf8aa50cadbc15389d92e0ffe7041f1a652c3729f0e28c99731b6f8dacf6ab"
+      }
+    },
+    {
+      "file": "sources/Q174.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q174.json",
+        "retrieved_utc": "2026-11-24T11:32:55.221558+00:00",
+        "status": 200,
+        "bytes": 348511,
+        "sha256": "8b36a0cc5bdb2cd21371051c5416ade86b8649f761acffd24254faaee5e07a0a"
+      }
+    },
+    {
+      "file": "sources/Q1749857.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1749857.json",
+        "retrieved_utc": "2026-11-24T11:32:55.860771+00:00",
+        "status": 200,
+        "bytes": 63275,
+        "sha256": "f8643ec400eb664ee6439ea140be5bd61fc6535b7eb25da4e0ac577dd5387bbe"
+      }
+    },
+    {
+      "file": "sources/Q1750082.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1750082.json",
+        "retrieved_utc": "2026-11-24T11:32:57.722186+00:00",
+        "status": 200,
+        "bytes": 53658,
+        "sha256": "411fd13fb3b31299609dc49f45c567dcc5ed30091fc1808a1cf697a19b371d2d"
+      }
+    },
+    {
+      "file": "sources/Q1750199.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1750199.json",
+        "retrieved_utc": "2026-11-24T11:38:14.058545+00:00",
+        "status": 200,
+        "bytes": 65604,
+        "sha256": "44a9cf8197a2114d9d8ecbcf328961a0f6bba7abf077de995204d12c6452af2c"
+      }
+    },
+    {
+      "file": "sources/Q175057.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q175057.json",
+        "retrieved_utc": "2026-11-24T11:32:59.976087+00:00",
+        "status": 200,
+        "bytes": 107190,
+        "sha256": "44ed468583c396c9f577ef891002a9b09460ec7b34bb086b7c35be606a31ac8f"
+      }
+    },
+    {
+      "file": "sources/Q1751337.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1751337.json",
+        "retrieved_utc": "2026-11-24T11:33:01.608059+00:00",
+        "status": 200,
+        "bytes": 63047,
+        "sha256": "cd94eb037903a89f7b83b60eef428617900c95f4afbc93f2e6948e9f21db7842"
+      }
+    },
+    {
+      "file": "sources/Q1754403.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754403.json",
+        "retrieved_utc": "2026-11-24T11:33:02.440310+00:00",
+        "status": 200,
+        "bytes": 64883,
+        "sha256": "d8be55256d50fe0bbbbe93f904a8329dccc94b3668179f5b2e5a31b029f5b3a1"
+      }
+    },
+    {
+      "file": "sources/Q1754408.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754408.json",
+        "retrieved_utc": "2026-11-24T11:33:03.555092+00:00",
+        "status": 200,
+        "bytes": 55686,
+        "sha256": "9f1e1ae4958c77a8f5910122b24b171b985ce773fad7fbc215e211ae6896453c"
+      }
+    },
+    {
+      "file": "sources/Q1754413.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754413.json",
+        "retrieved_utc": "2026-11-24T11:33:04.942906+00:00",
+        "status": 200,
+        "bytes": 58179,
+        "sha256": "78f600cf8667d05a8ec655df66a3b46e0847d6febc88cdeb8bbcfe720dfb2af9"
+      }
+    },
+    {
+      "file": "sources/Q1754422.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754422.json",
+        "retrieved_utc": "2026-11-24T11:33:05.648064+00:00",
+        "status": 200,
+        "bytes": 53226,
+        "sha256": "bede70657797be25f809afaf98094e8a1aab9ab0004efcd5b9dab3029772bb6b"
+      }
+    },
+    {
+      "file": "sources/Q1754431.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754431.json",
+        "retrieved_utc": "2026-11-24T11:33:06.786938+00:00",
+        "status": 200,
+        "bytes": 61599,
+        "sha256": "8d2d3e2af9c094a8faabc146deaec5b2da075aef2ec9b8d5ca05a13ed5fcb803"
+      }
+    },
+    {
+      "file": "sources/Q1754600.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754600.json",
+        "retrieved_utc": "2026-11-24T11:33:07.797500+00:00",
+        "status": 200,
+        "bytes": 60018,
+        "sha256": "5e369e9b134919de1bc42ea12c23789284c7a43ecdfa32a561d33d406404eef1"
+      }
+    },
+    {
+      "file": "sources/Q1754917.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1754917.json",
+        "retrieved_utc": "2026-11-24T11:33:09.359692+00:00",
+        "status": 200,
+        "bytes": 53778,
+        "sha256": "808d92f396b9eedd846851e4e006c8176d82c89ea04341d096d6f4473319b354"
+      }
+    },
+    {
+      "file": "sources/Q1755991.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1755991.json",
+        "retrieved_utc": "2026-11-24T11:33:10.441071+00:00",
+        "status": 200,
+        "bytes": 56450,
+        "sha256": "f3991b0beb71f8d16b2a5780764a2e444ad9972fca9cc097a8554bd3ceec22ce"
+      }
+    },
+    {
+      "file": "sources/Q1756976.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1756976.json",
+        "retrieved_utc": "2026-11-24T11:33:11.106634+00:00",
+        "status": 200,
+        "bytes": 51372,
+        "sha256": "984f203de2ce54a4f3e9d19a2ce62bb2cc6906f95460378febcce4a5a73a8ca9"
+      }
+    },
+    {
+      "file": "sources/Q1757691.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1757691.json",
+        "retrieved_utc": "2026-11-24T11:38:15.574433+00:00",
+        "status": 200,
+        "bytes": 57554,
+        "sha256": "eec874fe2425105eb8f27c506bc2e6185c3a814f6f26bfb064fad9d2c12729e0"
+      }
+    },
+    {
+      "file": "sources/Q1757955.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1757955.json",
+        "retrieved_utc": "2026-11-24T11:33:12.538760+00:00",
+        "status": 200,
+        "bytes": 62190,
+        "sha256": "77231b5f329dc4c0c46769c27c32b7dc45c0c4c1a5b1820676cc82f61165f2bb"
+      }
+    },
+    {
+      "file": "sources/Q1758828.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1758828.json",
+        "retrieved_utc": "2026-11-24T11:33:13.544884+00:00",
+        "status": 200,
+        "bytes": 52395,
+        "sha256": "3d71c7b7fedd79449a34a6f27bf162e720675f64624921a63016bd3cd6b0a362"
+      }
+    },
+    {
+      "file": "sources/Q1759814.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1759814.json",
+        "retrieved_utc": "2026-11-24T11:33:14.499428+00:00",
+        "status": 200,
+        "bytes": 61327,
+        "sha256": "68f7a87bf2d744ccf1d9fa4932c07a5152b57229ec1e8d64e9c76788bdde093e"
+      }
+    },
+    {
+      "file": "sources/Q1760024.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1760024.json",
+        "retrieved_utc": "2026-11-24T11:33:15.639870+00:00",
+        "status": 200,
+        "bytes": 60813,
+        "sha256": "2ef518a0efa83c5381acf22bafa7110c6db1a233c3b8c97d4c188c882b2062bd"
+      }
+    },
+    {
+      "file": "sources/Q1760478.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1760478.json",
+        "retrieved_utc": "2026-11-24T11:38:16.188821+00:00",
+        "status": 200,
+        "bytes": 62040,
+        "sha256": "9eac0a982c205253665a312a9a0aaaeb4301d500c88e2b3cfad758dc08181a73"
+      }
+    },
+    {
+      "file": "sources/Q1761456.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761456.json",
+        "retrieved_utc": "2026-11-24T11:33:16.661693+00:00",
+        "status": 200,
+        "bytes": 60463,
+        "sha256": "71e51a1caf458ba0f6ba5a62086afadd886209632f9e048b0130eb698a5f33e1"
+      }
+    },
+    {
+      "file": "sources/Q1761765.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761765.json",
+        "retrieved_utc": "2026-11-24T11:33:18.490173+00:00",
+        "status": 200,
+        "bytes": 57163,
+        "sha256": "249e6e9d19725eaede22bf296a996b6dd7e32c85787e5faeb3d30238cbae3d89"
+      }
+    },
+    {
+      "file": "sources/Q1761788.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761788.json",
+        "retrieved_utc": "2026-11-24T11:33:19.741433+00:00",
+        "status": 200,
+        "bytes": 55243,
+        "sha256": "5eb87d857c49b912724f0b3248431840a6ef997c96da3381438818a3bf5218f9"
+      }
+    },
+    {
+      "file": "sources/Q1761827.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761827.json",
+        "retrieved_utc": "2026-11-24T11:33:20.880670+00:00",
+        "status": 200,
+        "bytes": 62509,
+        "sha256": "c5ff345c45c7cdb05e7eb3b8d6571b0a2ba3cb532356095a86ae3634d80500bb"
+      }
+    },
+    {
+      "file": "sources/Q1761906.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761906.json",
+        "retrieved_utc": "2026-11-24T11:33:21.649663+00:00",
+        "status": 200,
+        "bytes": 58780,
+        "sha256": "b1744582d362d135aadee93ee7630e61cbbfaaffc8714f9ab271a99cdabbf811"
+      }
+    },
+    {
+      "file": "sources/Q1761974.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1761974.json",
+        "retrieved_utc": "2026-11-24T11:33:22.571028+00:00",
+        "status": 200,
+        "bytes": 63203,
+        "sha256": "3e9def66a3d18bbe5c1cdba6e06eea4cd892203a94879397c59de703b254ecbe"
+      }
+    },
+    {
+      "file": "sources/Q1763240.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1763240.json",
+        "retrieved_utc": "2026-11-24T11:33:23.811288+00:00",
+        "status": 200,
+        "bytes": 63068,
+        "sha256": "f155f5d608f32aa2680b4c3b9b1a3de7eb0ca2778a0eba74b4cb14056a375ac1"
+      }
+    },
+    {
+      "file": "sources/Q1765034.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1765034.json",
+        "retrieved_utc": "2026-11-24T11:33:25.508361+00:00",
+        "status": 200,
+        "bytes": 54901,
+        "sha256": "a772be0c175af28afcccca1fb0bf3549b281aa7e236e34166ad4375ab2c3d5bb"
+      }
+    },
+    {
+      "file": "sources/Q1765043.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1765043.json",
+        "retrieved_utc": "2026-11-24T11:33:26.153510+00:00",
+        "status": 200,
+        "bytes": 63072,
+        "sha256": "5db93095304be4e11a975e9dfa63d2ab0bf1ffe48afd81e4b8e2c5c3b146c2a4"
+      }
+    },
+    {
+      "file": "sources/Q1772602.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772602.json",
+        "retrieved_utc": "2026-11-24T11:33:28.132500+00:00",
+        "status": 200,
+        "bytes": 58775,
+        "sha256": "bb9ac6639552c5d02e118ea79aa82e226292b7bea45ef94d49a2950ed6a59dad"
+      }
+    },
+    {
+      "file": "sources/Q1772606.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772606.json",
+        "retrieved_utc": "2026-11-24T11:38:17.245088+00:00",
+        "status": 200,
+        "bytes": 55947,
+        "sha256": "c6c9a8c94d1c936cd31d52d841199b217239e291849b303247bef2bd6ba858c4"
+      }
+    },
+    {
+      "file": "sources/Q1772625.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772625.json",
+        "retrieved_utc": "2026-11-24T11:33:28.783809+00:00",
+        "status": 200,
+        "bytes": 54226,
+        "sha256": "a3f1b8b911dd5f057afd4c81bb5e3d17243a9c2599e588ef9e21e5dff12c6fc3"
+      }
+    },
+    {
+      "file": "sources/Q1772675.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772675.json",
+        "retrieved_utc": "2026-11-24T11:33:30.319424+00:00",
+        "status": 200,
+        "bytes": 59170,
+        "sha256": "474843e09c25f87a1582dedd2eea755a60cbc51df1bfdce06efd6263af9018b5"
+      }
+    },
+    {
+      "file": "sources/Q1772681.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772681.json",
+        "retrieved_utc": "2026-11-24T11:33:31.178856+00:00",
+        "status": 200,
+        "bytes": 58951,
+        "sha256": "86421597b536b0b7fc6d2139ab33b0548b374c8244e5476f9f110cc0ff6c62f1"
+      }
+    },
+    {
+      "file": "sources/Q1772692.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1772692.json",
+        "retrieved_utc": "2026-11-24T11:33:32.487869+00:00",
+        "status": 200,
+        "bytes": 59455,
+        "sha256": "bfc9e74f8add9aa7696de9bb47dc567b79fec2471ddb220f9403665b5b1feb1f"
+      }
+    },
+    {
+      "file": "sources/Q1784242.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1784242.json",
+        "retrieved_utc": "2026-11-24T11:33:33.896215+00:00",
+        "status": 200,
+        "bytes": 64342,
+        "sha256": "26c81e3726d3e2a19d8e14e3f40394d90920a6f2149d68ae17700fc60aa19d65"
+      }
+    },
+    {
+      "file": "sources/Q1785860.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1785860.json",
+        "retrieved_utc": "2026-11-24T11:33:34.946049+00:00",
+        "status": 200,
+        "bytes": 53337,
+        "sha256": "d61317d4c29be7be20b1b3136fb326eb09dbcc1edefdba37e874201b588f5fb3"
+      }
+    },
+    {
+      "file": "sources/Q1786440.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1786440.json",
+        "retrieved_utc": "2026-11-24T11:33:35.770113+00:00",
+        "status": 200,
+        "bytes": 59778,
+        "sha256": "4f906f5fbbb30f8f2804b5adc31de7304a96b7de689964d5f0491e22c7c9a8e5"
+      }
+    },
+    {
+      "file": "sources/Q1786619.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1786619.json",
+        "retrieved_utc": "2026-11-24T11:33:36.632064+00:00",
+        "status": 200,
+        "bytes": 58765,
+        "sha256": "34cbf98d368d6be1c559ec649e705502faac03be5594aa17d30534d0078e9c86"
+      }
+    },
+    {
+      "file": "sources/Q178725.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q178725.json",
+        "retrieved_utc": "2026-11-24T11:38:18.593153+00:00",
+        "status": 200,
+        "bytes": 99754,
+        "sha256": "1d08c4ce0d207ba8681e839aa8f0ee11eba0b7015aa266c5a451e45f76d7fd25"
+      }
+    },
+    {
+      "file": "sources/Q1787681.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1787681.json",
+        "retrieved_utc": "2026-11-24T11:33:38.091807+00:00",
+        "status": 200,
+        "bytes": 61463,
+        "sha256": "9c5fd8bbdac22230af5d0558fab2c26a054bc1ddb7faf9170844a0094a4d0850"
+      }
+    },
+    {
+      "file": "sources/Q1787759.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1787759.json",
+        "retrieved_utc": "2026-11-24T11:33:38.729750+00:00",
+        "status": 200,
+        "bytes": 55138,
+        "sha256": "261374c760aad2232aea9cea3a8566a62e700184daf09d2a284aa8474e7c2701"
+      }
+    },
+    {
+      "file": "sources/Q1789213.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1789213.json",
+        "retrieved_utc": "2026-11-24T11:38:19.439275+00:00",
+        "status": 200,
+        "bytes": 62288,
+        "sha256": "0c90b21beb17b9150d8279d51c1326a798e5f10fa96b40ffee1d4d832e8f3474"
+      }
+    },
+    {
+      "file": "sources/Q1789633.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1789633.json",
+        "retrieved_utc": "2026-11-24T11:33:39.810834+00:00",
+        "status": 200,
+        "bytes": 63302,
+        "sha256": "dcb112822758b9ff158851086225096fbdf806cd4c7bf0e1689616c1807368d5"
+      }
+    },
+    {
+      "file": "sources/Q1790309.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1790309.json",
+        "retrieved_utc": "2026-11-24T11:33:41.236670+00:00",
+        "status": 200,
+        "bytes": 60817,
+        "sha256": "c0164a791195fce1a280a2b2cbdaabee705c538caf04aaeb373496e4a8b192ac"
+      }
+    },
+    {
+      "file": "sources/Q1791871.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1791871.json",
+        "retrieved_utc": "2026-11-24T11:33:42.341325+00:00",
+        "status": 200,
+        "bytes": 57008,
+        "sha256": "6deda249055b72241628952b9db10ad680fa4c82a4a4bea7d6a4db09dad99d80"
+      }
+    },
+    {
+      "file": "sources/Q1792069.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1792069.json",
+        "retrieved_utc": "2026-11-24T11:33:43.857563+00:00",
+        "status": 200,
+        "bytes": 54282,
+        "sha256": "d22970a96ecb753e94bdf1841395d81bd4c929a25b2afb6bf9aac2511acf6605"
+      }
+    },
+    {
+      "file": "sources/Q1793037.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1793037.json",
+        "retrieved_utc": "2026-11-24T11:33:44.977363+00:00",
+        "status": 200,
+        "bytes": 67031,
+        "sha256": "ca876152033c556996039e9ea2a7f6757d3ac909c92cdf7636e3163d5bc9fda6"
+      }
+    },
+    {
+      "file": "sources/Q1793274.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1793274.json",
+        "retrieved_utc": "2026-11-24T11:33:45.635328+00:00",
+        "status": 200,
+        "bytes": 52461,
+        "sha256": "5c299fd78d25ec509eedfa2dec922751db3edd0863a377e66d1aed89f179f745"
+      }
+    },
+    {
+      "file": "sources/Q1793323.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1793323.json",
+        "retrieved_utc": "2026-11-24T11:33:47.158380+00:00",
+        "status": 200,
+        "bytes": 65151,
+        "sha256": "57c751061422427ca7c129a662556307885d9d58423505e403aab36275f5ff35"
+      }
+    },
+    {
+      "file": "sources/Q1793620.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1793620.json",
+        "retrieved_utc": "2026-11-24T11:33:47.769808+00:00",
+        "status": 200,
+        "bytes": 65813,
+        "sha256": "3043d10a3e21b6c6b55ef5292d587fe8936f3fe1cf309e1b9998a12d49125a50"
+      }
+    },
+    {
+      "file": "sources/Q1794265.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1794265.json",
+        "retrieved_utc": "2026-11-24T11:33:49.245804+00:00",
+        "status": 200,
+        "bytes": 61860,
+        "sha256": "2995170dc06dca0ba7ccc747ca63c5c3f4c8837f764e50c5993bfb6b84f27fff"
+      }
+    },
+    {
+      "file": "sources/Q1794336.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1794336.json",
+        "retrieved_utc": "2026-11-24T11:33:50.039427+00:00",
+        "status": 200,
+        "bytes": 63339,
+        "sha256": "da7e5c9340d4a3756821abc0ca11802e4c62f8ab68806b3403136d39f9884d0a"
+      }
+    },
+    {
+      "file": "sources/Q1794374.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1794374.json",
+        "retrieved_utc": "2026-11-24T11:33:50.942517+00:00",
+        "status": 200,
+        "bytes": 61883,
+        "sha256": "259403ae3bea60926349b3cbff39b6b970b65c638a3faf063b9b5ba06d4268e6"
+      }
+    },
+    {
+      "file": "sources/Q1794435.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1794435.json",
+        "retrieved_utc": "2026-11-24T11:33:51.973180+00:00",
+        "status": 200,
+        "bytes": 60382,
+        "sha256": "1eacbc8b8ab84882757ee56204000350190dc57323e05c551e00db8688ab32c9"
+      }
+    },
+    {
+      "file": "sources/Q1794957.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1794957.json",
+        "retrieved_utc": "2026-11-24T11:33:53.300910+00:00",
+        "status": 200,
+        "bytes": 55458,
+        "sha256": "951885d2d91ad5589f2f0c73aca786864c9164bdfc7a7aee58f24293a5c1599e"
+      }
+    },
+    {
+      "file": "sources/Q1795086.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795086.json",
+        "retrieved_utc": "2026-11-24T11:33:54.496908+00:00",
+        "status": 200,
+        "bytes": 63067,
+        "sha256": "868688c7233805a6f941eded89e4730a99925b688373501f4a3d464ab98f9203"
+      }
+    },
+    {
+      "file": "sources/Q1795133.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795133.json",
+        "retrieved_utc": "2026-11-24T11:33:55.483014+00:00",
+        "status": 200,
+        "bytes": 56973,
+        "sha256": "6b9e69c806bc02f9b3207606c30d4d58e0be5e372f17613d82c4b7c1cad860d0"
+      }
+    },
+    {
+      "file": "sources/Q1795137.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795137.json",
+        "retrieved_utc": "2026-11-24T11:33:56.150965+00:00",
+        "status": 200,
+        "bytes": 54002,
+        "sha256": "e1b9907536c5b851744d4f800c09c13253cba4d55fd45bfe96940cd3ffbd712f"
+      }
+    },
+    {
+      "file": "sources/Q1795259.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795259.json",
+        "retrieved_utc": "2026-11-24T11:38:20.436048+00:00",
+        "status": 200,
+        "bytes": 60827,
+        "sha256": "a3fed2cb80139b1f51024210a9c4b7528b2df09e43728f1072d5aa638da153cb"
+      }
+    },
+    {
+      "file": "sources/Q1795342.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795342.json",
+        "retrieved_utc": "2026-11-24T11:33:57.332981+00:00",
+        "status": 200,
+        "bytes": 57840,
+        "sha256": "759747a82eae833cc77eca3b44c9f188ec4cb0efe0be0b328a99d5e9499aa4c6"
+      }
+    },
+    {
+      "file": "sources/Q1795815.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1795815.json",
+        "retrieved_utc": "2026-11-24T11:33:58.541338+00:00",
+        "status": 200,
+        "bytes": 60114,
+        "sha256": "1e3099860cc3ecb0b38d57bdd7080a3b0b58ad182d894a6e8b40c2eb61c7a42a"
+      }
+    },
+    {
+      "file": "sources/Q1797006.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1797006.json",
+        "retrieved_utc": "2026-11-24T11:33:59.589009+00:00",
+        "status": 200,
+        "bytes": 65135,
+        "sha256": "0dfafc41acfd89f0b3d09093269c1482be1bf8413f79881547c9bcf48f60d16d"
+      }
+    },
+    {
+      "file": "sources/Q1800628.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1800628.json",
+        "retrieved_utc": "2026-11-24T11:34:00.792533+00:00",
+        "status": 200,
+        "bytes": 56716,
+        "sha256": "ffcf59f9ba2a471475f096fa8d6999849b23e052c71f5926440427590cb2242b"
+      }
+    },
+    {
+      "file": "sources/Q1800793.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1800793.json",
+        "retrieved_utc": "2026-11-24T11:34:02.054105+00:00",
+        "status": 200,
+        "bytes": 52572,
+        "sha256": "a1923e87e0857f8d5837caba5a685feee7619459ff3a812fa04fdc71160d94ec"
+      }
+    },
+    {
+      "file": "sources/Q1800952.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1800952.json",
+        "retrieved_utc": "2026-11-24T11:34:02.928476+00:00",
+        "status": 200,
+        "bytes": 53594,
+        "sha256": "b4f64e23a49cde9ab9097f66c5810fafc262c5b39325806fa1a3eb3a51f6b396"
+      }
+    },
+    {
+      "file": "sources/Q1800961.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1800961.json",
+        "retrieved_utc": "2026-11-24T11:34:03.845240+00:00",
+        "status": 200,
+        "bytes": 59417,
+        "sha256": "ef98a1cc996256cba9f25a7714aa93d646a6f7952b798c9e630afe3ebc99ff16"
+      }
+    },
+    {
+      "file": "sources/Q1801080.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801080.json",
+        "retrieved_utc": "2026-11-24T11:34:04.891993+00:00",
+        "status": 200,
+        "bytes": 59222,
+        "sha256": "052a368a29c2c7e5334c0e9e5673e900410c37409b0e26f7be5271edbee65165"
+      }
+    },
+    {
+      "file": "sources/Q1801142.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801142.json",
+        "retrieved_utc": "2026-11-24T11:34:06.150120+00:00",
+        "status": 200,
+        "bytes": 54220,
+        "sha256": "4c5c8614a87c699611ddab954950078e44580e40155b7340d084a7ec718023bf"
+      }
+    },
+    {
+      "file": "sources/Q1801197.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801197.json",
+        "retrieved_utc": "2026-11-24T11:34:06.988606+00:00",
+        "status": 200,
+        "bytes": 60632,
+        "sha256": "9c2055a11d4ecfd74d9f06e7591b2e3e62a59f6e2e45af4532ed47e12edc80eb"
+      }
+    },
+    {
+      "file": "sources/Q1801199.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801199.json",
+        "retrieved_utc": "2026-11-24T11:34:08.503721+00:00",
+        "status": 200,
+        "bytes": 55936,
+        "sha256": "07edd1b1730cf5d7a3e74744aef808dad0d333afc4f0ca43bb00af1c73250674"
+      }
+    },
+    {
+      "file": "sources/Q1801204.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801204.json",
+        "retrieved_utc": "2026-11-24T11:38:21.857590+00:00",
+        "status": 200,
+        "bytes": 56069,
+        "sha256": "2e4898f3974d4e3fe5d51f374e38fc011fe078bc7f5aa7c420982100eedb127d"
+      }
+    },
+    {
+      "file": "sources/Q1801246.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801246.json",
+        "retrieved_utc": "2026-11-24T11:34:09.190198+00:00",
+        "status": 200,
+        "bytes": 64707,
+        "sha256": "859d888523334be68570c4e4144f57211c150c3aa8a48e807453ec4b94f67b54"
+      }
+    },
+    {
+      "file": "sources/Q1801535.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801535.json",
+        "retrieved_utc": "2026-11-24T11:34:10.420076+00:00",
+        "status": 200,
+        "bytes": 57733,
+        "sha256": "bf83b0975105764ae875bf01535de57883e33b61308729e873beb20bc93fd5e7"
+      }
+    },
+    {
+      "file": "sources/Q1801542.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801542.json",
+        "retrieved_utc": "2026-11-24T11:34:11.264883+00:00",
+        "status": 200,
+        "bytes": 59767,
+        "sha256": "bd57468a2e7fe0a32dd7fa0d02b0bf40250ce5a72785d460a4970db156c66b21"
+      }
+    },
+    {
+      "file": "sources/Q1801572.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801572.json",
+        "retrieved_utc": "2026-11-24T11:34:12.753219+00:00",
+        "status": 200,
+        "bytes": 60754,
+        "sha256": "aa041df97949b15737357797ebc6fd4c1e038f6ba465c113f444628a2e5bc312"
+      }
+    },
+    {
+      "file": "sources/Q1801591.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801591.json",
+        "retrieved_utc": "2026-11-24T11:34:13.333333+00:00",
+        "status": 200,
+        "bytes": 50951,
+        "sha256": "5e3c1025e40e638c603b1a1783b54f8208ae225546f6f72f895f1d281d70099a"
+      }
+    },
+    {
+      "file": "sources/Q1801637.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801637.json",
+        "retrieved_utc": "2026-11-24T11:34:15.317154+00:00",
+        "status": 200,
+        "bytes": 63467,
+        "sha256": "0a56fe0457be77fcb5f9bf8745878629262a45896babb0d89a904f04bbd0d717"
+      }
+    },
+    {
+      "file": "sources/Q1801703.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801703.json",
+        "retrieved_utc": "2026-11-24T11:34:15.996304+00:00",
+        "status": 200,
+        "bytes": 55854,
+        "sha256": "13f7a5cf3887bed984d821d6efabff36bb4fa931ee53a56d2242f61ea5203be5"
+      }
+    },
+    {
+      "file": "sources/Q1801753.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801753.json",
+        "retrieved_utc": "2026-11-24T11:34:17.004492+00:00",
+        "status": 200,
+        "bytes": 53247,
+        "sha256": "6748c9f3786ece6121f80992acb1e7ee5d6a87c0d70af6a94c5ea24a3fc32d6e"
+      }
+    },
+    {
+      "file": "sources/Q1801758.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801758.json",
+        "retrieved_utc": "2026-11-24T11:34:18.233419+00:00",
+        "status": 200,
+        "bytes": 62599,
+        "sha256": "2c827b8b74f12a4f8b3bdecf38bcf44358f2fb1feebe3ecec76bf80d5cdae6ad"
+      }
+    },
+    {
+      "file": "sources/Q1801778.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1801778.json",
+        "retrieved_utc": "2026-11-24T11:34:19.119376+00:00",
+        "status": 200,
+        "bytes": 53070,
+        "sha256": "b351002ef959b7ed4de97f75f8312358cdc4ee8da218c348c52a1cdd575475ea"
+      }
+    },
+    {
+      "file": "sources/Q1802095.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1802095.json",
+        "retrieved_utc": "2026-11-24T11:34:20.562941+00:00",
+        "status": 200,
+        "bytes": 57247,
+        "sha256": "db116c909cefb8de5a986f94da0262e346135cf24f5133893874dcb01e88418d"
+      }
+    },
+    {
+      "file": "sources/Q1802100.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1802100.json",
+        "retrieved_utc": "2026-11-24T11:38:22.611326+00:00",
+        "status": 200,
+        "bytes": 59426,
+        "sha256": "97fa640790b59444fe305240773f04bcc741c2e7ec3584582a90620f9daa42fa"
+      }
+    },
+    {
+      "file": "sources/Q1802123.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1802123.json",
+        "retrieved_utc": "2026-11-24T11:34:22.003613+00:00",
+        "status": 200,
+        "bytes": 56121,
+        "sha256": "e8330e2c113e859458984bf1be7e7f8efc71f696aa6da98966cd8569bc02f467"
+      }
+    },
+    {
+      "file": "sources/Q180215.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q180215.json",
+        "retrieved_utc": "2026-11-24T11:34:22.956852+00:00",
+        "status": 200,
+        "bytes": 110002,
+        "sha256": "013a4235945b43f1f00d2bdae1206f00dec954391fb6b47809b8ccb025d4b37c"
+      }
+    },
+    {
+      "file": "sources/Q1802624.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1802624.json",
+        "retrieved_utc": "2026-11-24T11:38:23.569279+00:00",
+        "status": 200,
+        "bytes": 57100,
+        "sha256": "a41029731d7f35267892269d7574723d233b24023b844dd4c402bfe6d0e67cdc"
+      }
+    },
+    {
+      "file": "sources/Q1803114.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1803114.json",
+        "retrieved_utc": "2026-11-24T11:34:24.230480+00:00",
+        "status": 200,
+        "bytes": 56596,
+        "sha256": "6e50eff8a9416d1610c62e6471485a29092827d6c09c62f4ceb188e649022d8f"
+      }
+    },
+    {
+      "file": "sources/Q1803135.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1803135.json",
+        "retrieved_utc": "2026-11-24T11:34:25.279225+00:00",
+        "status": 200,
+        "bytes": 55306,
+        "sha256": "786a07d8fb268f522362f585f78408214b944392f67499add15229e357c69fa4"
+      }
+    },
+    {
+      "file": "sources/Q1803189.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1803189.json",
+        "retrieved_utc": "2026-11-24T11:34:25.934650+00:00",
+        "status": 200,
+        "bytes": 66435,
+        "sha256": "090a86540cbe8d45eec9cd844579bfee71215cfa19047321557888df70fa8daf"
+      }
+    },
+    {
+      "file": "sources/Q1803210.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1803210.json",
+        "retrieved_utc": "2026-11-24T11:34:26.950621+00:00",
+        "status": 200,
+        "bytes": 55992,
+        "sha256": "dc83f5f468977a9227787abf9bbd597d3669d5926c6cbda8d6e17b74b473330c"
+      }
+    },
+    {
+      "file": "sources/Q1803269.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1803269.json",
+        "retrieved_utc": "2026-11-24T11:38:24.887315+00:00",
+        "status": 200,
+        "bytes": 55241,
+        "sha256": "0a2db0be1b44d4b1396b27a4e53d09500e5738a7ff1cef8a5722669a1ec5902e"
+      }
+    },
+    {
+      "file": "sources/Q1804119.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1804119.json",
+        "retrieved_utc": "2026-11-24T11:34:28.002075+00:00",
+        "status": 200,
+        "bytes": 55614,
+        "sha256": "404752e4a18a3a13784114e8e03a7955aa39182d874f799b2323e53f22faa774"
+      }
+    },
+    {
+      "file": "sources/Q1804377.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1804377.json",
+        "retrieved_utc": "2026-11-24T11:34:29.228502+00:00",
+        "status": 200,
+        "bytes": 63035,
+        "sha256": "c2c9dfd48e30bcde2d5a56e7bd5b37465eeeec282e7cc663dbd9674370c2f566"
+      }
+    },
+    {
+      "file": "sources/Q1804877.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1804877.json",
+        "retrieved_utc": "2026-11-24T11:34:30.120823+00:00",
+        "status": 200,
+        "bytes": 55618,
+        "sha256": "8219cc7c480dc3853684499ed0003a1d31e84f7c77cfabb1a45dd2c793342603"
+      }
+    },
+    {
+      "file": "sources/Q1804993.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1804993.json",
+        "retrieved_utc": "2026-11-24T11:34:31.747785+00:00",
+        "status": 200,
+        "bytes": 61700,
+        "sha256": "d1aba2645629f92afcb095977e5afe3098a8b4646247ed6e5e79f2bed1dfaf00"
+      }
+    },
+    {
+      "file": "sources/Q1805001.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805001.json",
+        "retrieved_utc": "2026-11-24T11:34:32.320218+00:00",
+        "status": 200,
+        "bytes": 59531,
+        "sha256": "8913e8f3cb9f731b1e8bbede647555d82691b14384cc16cd8ad1b936f5247237"
+      }
+    },
+    {
+      "file": "sources/Q1805278.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805278.json",
+        "retrieved_utc": "2026-11-24T11:34:33.518547+00:00",
+        "status": 200,
+        "bytes": 62873,
+        "sha256": "74808ef2f39e284bd380fb76d97cb004f1b016a79532d76d480bb06bb62af262"
+      }
+    },
+    {
+      "file": "sources/Q1805304.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805304.json",
+        "retrieved_utc": "2026-11-24T11:34:34.903135+00:00",
+        "status": 200,
+        "bytes": 61140,
+        "sha256": "430ad4e7d9c5d286146f6c12b3ff7b1ed105ba1e8b71fe4a8f5a0ad83ece3b9c"
+      }
+    },
+    {
+      "file": "sources/Q1805540.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805540.json",
+        "retrieved_utc": "2026-11-24T11:34:35.948612+00:00",
+        "status": 200,
+        "bytes": 61904,
+        "sha256": "e1a6e72cdcf4e845aad4d689f62d9b8c0c5d8a8f387dda3b8da9488c0e6552a7"
+      }
+    },
+    {
+      "file": "sources/Q1805557.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805557.json",
+        "retrieved_utc": "2026-11-24T11:34:37.462462+00:00",
+        "status": 200,
+        "bytes": 65859,
+        "sha256": "5ad8a9ef9f82c16bc0ecca5355dd664dbc227da86298f0d87f5a208aa012f7e6"
+      }
+    },
+    {
+      "file": "sources/Q1805562.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805562.json",
+        "retrieved_utc": "2026-11-24T11:34:38.116477+00:00",
+        "status": 200,
+        "bytes": 66118,
+        "sha256": "d4e3769e7da0ca41b9b386f2588dc0f6390e37ffac8690eb141cb8a62be57e32"
+      }
+    },
+    {
+      "file": "sources/Q1805569.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805569.json",
+        "retrieved_utc": "2026-11-24T11:34:39.118847+00:00",
+        "status": 200,
+        "bytes": 59688,
+        "sha256": "f1a484f8d30d400f9232eb9f360e60114e5ed98a42947bb2134d01e02376f038"
+      }
+    },
+    {
+      "file": "sources/Q1805601.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805601.json",
+        "retrieved_utc": "2026-11-24T11:34:40.615473+00:00",
+        "status": 200,
+        "bytes": 65043,
+        "sha256": "c1899a57d62ca05419e49229b90c3efc38c9473dadb414b2becfd4cf9466589a"
+      }
+    },
+    {
+      "file": "sources/Q1805608.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805608.json",
+        "retrieved_utc": "2026-11-24T11:34:41.281520+00:00",
+        "status": 200,
+        "bytes": 65854,
+        "sha256": "98b0d763cb86c9806c2c9fd77018c1eb79b838fb719f5b279d60bd4e3e396656"
+      }
+    },
+    {
+      "file": "sources/Q1805618.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805618.json",
+        "retrieved_utc": "2026-11-24T11:34:42.474847+00:00",
+        "status": 200,
+        "bytes": 66618,
+        "sha256": "4eee848e8c85c5675cfc5cb4449ae5c551cde5a0948bfdf89d299e66596e18f6"
+      }
+    },
+    {
+      "file": "sources/Q1805645.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805645.json",
+        "retrieved_utc": "2026-11-24T11:34:43.325242+00:00",
+        "status": 200,
+        "bytes": 61273,
+        "sha256": "e8130395d64899a2c0a2f11c484def69c79bc78793e137b6597d1d2b5e0526fd"
+      }
+    },
+    {
+      "file": "sources/Q1805671.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805671.json",
+        "retrieved_utc": "2026-11-24T11:34:44.790470+00:00",
+        "status": 200,
+        "bytes": 59305,
+        "sha256": "f63d0c1e4c2cb7852f046d4b372859fceb6c3aa5786d1f782217c4a0ff0c4b10"
+      }
+    },
+    {
+      "file": "sources/Q1805741.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805741.json",
+        "retrieved_utc": "2026-11-24T11:34:45.427970+00:00",
+        "status": 200,
+        "bytes": 55190,
+        "sha256": "f0fbd8a2698a8afd681342c9ce4b1b03bfed86bf18971e68ad6aba972140b97c"
+      }
+    },
+    {
+      "file": "sources/Q1805760.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805760.json",
+        "retrieved_utc": "2026-11-24T11:34:46.940993+00:00",
+        "status": 200,
+        "bytes": 64494,
+        "sha256": "7c005a1f7c6ba7d932b5ad8507ba1d6be2ab93d11854e2225d44f783356ae355"
+      }
+    },
+    {
+      "file": "sources/Q1805807.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805807.json",
+        "retrieved_utc": "2026-11-24T11:34:48.015549+00:00",
+        "status": 200,
+        "bytes": 61743,
+        "sha256": "a800c38147e1feaa1402f4b67db3d5efe2b901c13fc855fb2f8613075ddc9a8c"
+      }
+    },
+    {
+      "file": "sources/Q1805821.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805821.json",
+        "retrieved_utc": "2026-11-24T11:34:49.011959+00:00",
+        "status": 200,
+        "bytes": 66651,
+        "sha256": "59081f03ce322d7a5eced5a97c1bd139d959ae8ad213a68bc0c574fa9f162965"
+      }
+    },
+    {
+      "file": "sources/Q1805829.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1805829.json",
+        "retrieved_utc": "2026-11-24T11:34:49.709915+00:00",
+        "status": 200,
+        "bytes": 63948,
+        "sha256": "6c43a306df97b5a2a74cf27fd8df33ac5ebd5dfa8e6e48aadc3fb41f586633c3"
+      }
+    },
+    {
+      "file": "sources/Q1806340.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806340.json",
+        "retrieved_utc": "2026-11-24T11:34:51.181409+00:00",
+        "status": 200,
+        "bytes": 64843,
+        "sha256": "75cb00f8aaf9ff1f544702e10aa17e98e33affbe377e51dcb5bfb584d23d55ba"
+      }
+    },
+    {
+      "file": "sources/Q1806494.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806494.json",
+        "retrieved_utc": "2026-11-24T11:34:51.841345+00:00",
+        "status": 200,
+        "bytes": 61762,
+        "sha256": "184f1db2e93f5d4a9e6bdea5b27ed46dab0690b7bc7ceeb197f010a4d044642b"
+      }
+    },
+    {
+      "file": "sources/Q1806505.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806505.json",
+        "retrieved_utc": "2026-11-24T11:34:53.314359+00:00",
+        "status": 200,
+        "bytes": 66973,
+        "sha256": "80facd871032ac31ebbf5d973f738e9b220ed51bd2f64bdfee067ab7c011a2e4"
+      }
+    },
+    {
+      "file": "sources/Q1806509.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806509.json",
+        "retrieved_utc": "2026-11-24T11:34:54.275450+00:00",
+        "status": 200,
+        "bytes": 59738,
+        "sha256": "7fe1a919389626c3b7daa40c7b06e8c8bfa2d06c74d9a5486857d53fde407307"
+      }
+    },
+    {
+      "file": "sources/Q1806753.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806753.json",
+        "retrieved_utc": "2026-11-24T11:38:26.459856+00:00",
+        "status": 200,
+        "bytes": 58333,
+        "sha256": "23bdea52fc2cb5ef85cba8e35c419442281763b2587c3658fbe5592dcef242dd"
+      }
+    },
+    {
+      "file": "sources/Q1806762.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806762.json",
+        "retrieved_utc": "2026-11-24T11:38:27.508605+00:00",
+        "status": 200,
+        "bytes": 60257,
+        "sha256": "a6230d962f3bf655354491e60db81be770b45f25b254795da3354fb8a4ee624a"
+      }
+    },
+    {
+      "file": "sources/Q1806815.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806815.json",
+        "retrieved_utc": "2026-11-24T11:34:55.339433+00:00",
+        "status": 200,
+        "bytes": 62340,
+        "sha256": "b46357dda1d15324a73d4f3502812e13e235713d7117d190392199de65191ebc"
+      }
+    },
+    {
+      "file": "sources/Q1806886.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1806886.json",
+        "retrieved_utc": "2026-11-24T11:34:56.641597+00:00",
+        "status": 200,
+        "bytes": 58199,
+        "sha256": "6fd71b2a2e60defa62ab80036cccc6b951d3d10234d8d0944606e413a708e661"
+      }
+    },
+    {
+      "file": "sources/Q1807445.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1807445.json",
+        "retrieved_utc": "2026-11-24T11:34:57.787036+00:00",
+        "status": 200,
+        "bytes": 55428,
+        "sha256": "cad81650fb76ac8bd8277a8aaa0285b286d1243111f6b45d3c088c26d7ad257f"
+      }
+    },
+    {
+      "file": "sources/Q1807767.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1807767.json",
+        "retrieved_utc": "2026-11-24T11:34:58.835199+00:00",
+        "status": 200,
+        "bytes": 53658,
+        "sha256": "a9906f74f6a7f42aa072239cedf55e03fd9fbd7249808bfc78d058934fd169a3"
+      }
+    },
+    {
+      "file": "sources/Q1807858.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1807858.json",
+        "retrieved_utc": "2026-11-24T11:34:59.711267+00:00",
+        "status": 200,
+        "bytes": 62967,
+        "sha256": "f148196d20d814e04fbb96b326b496a720064f0b9dd48dda5dbc054c40e1934e"
+      }
+    },
+    {
+      "file": "sources/Q1807976.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1807976.json",
+        "retrieved_utc": "2026-11-24T11:35:00.931601+00:00",
+        "status": 200,
+        "bytes": 58762,
+        "sha256": "c4346892ee601fb30f44f15693bc6554b2a85933913ecc814a22b3448bc28ba6"
+      }
+    },
+    {
+      "file": "sources/Q1808448.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808448.json",
+        "retrieved_utc": "2026-11-24T11:35:01.670384+00:00",
+        "status": 200,
+        "bytes": 66679,
+        "sha256": "a474495b702cae86868975642928c1c98f00ebdbe5a0f516cccc9c12f21cfa6c"
+      }
+    },
+    {
+      "file": "sources/Q1808500.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808500.json",
+        "retrieved_utc": "2026-11-24T11:38:28.345056+00:00",
+        "status": 200,
+        "bytes": 58125,
+        "sha256": "2e7a2c897bb2db4a0c444606d80fd51bb16548f87891ec66863ee3ed9f3a6a7f"
+      }
+    },
+    {
+      "file": "sources/Q1808697.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808697.json",
+        "retrieved_utc": "2026-11-24T11:35:03.088054+00:00",
+        "status": 200,
+        "bytes": 70515,
+        "sha256": "13ca87b85feee43a633a218b1b445fe8324fea26d36e05ec8d9d9889d8d3a47d"
+      }
+    },
+    {
+      "file": "sources/Q1808745.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808745.json",
+        "retrieved_utc": "2026-11-24T11:35:04.205457+00:00",
+        "status": 200,
+        "bytes": 60079,
+        "sha256": "5201e5589d29f9e70789ea2812e8abef9a8c4503717ea4a27d78384c42ec8a08"
+      }
+    },
+    {
+      "file": "sources/Q1808935.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808935.json",
+        "retrieved_utc": "2026-11-24T11:35:04.833030+00:00",
+        "status": 200,
+        "bytes": 61486,
+        "sha256": "ed38d1c66af0921b2a9995fe0c89634013b5300e6a9bbcbeac05b7d83db6966d"
+      }
+    },
+    {
+      "file": "sources/Q1812998.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1812998.json",
+        "retrieved_utc": "2026-11-24T11:35:06.363631+00:00",
+        "status": 200,
+        "bytes": 62148,
+        "sha256": "3714e7dbc68aa6b848c6c3cea640277060c3a3bafee343399cc3536eb6685f7b"
+      }
+    },
+    {
+      "file": "sources/Q1814522.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1814522.json",
+        "retrieved_utc": "2026-11-24T11:35:07.394435+00:00",
+        "status": 200,
+        "bytes": 52098,
+        "sha256": "0115106e0b32c79cddd4863a482ebd54e61dbdf7b1e2093b7205d3ae5bb79ff9"
+      }
+    },
+    {
+      "file": "sources/Q1815669.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1815669.json",
+        "retrieved_utc": "2026-11-24T11:35:08.062701+00:00",
+        "status": 200,
+        "bytes": 61095,
+        "sha256": "abb2321f0332e77d01c610cabdba1969a223482b620d1339b6977b0a3183d632"
+      }
+    },
+    {
+      "file": "sources/Q1832376.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1832376.json",
+        "retrieved_utc": "2026-11-24T11:35:09.538094+00:00",
+        "status": 200,
+        "bytes": 55304,
+        "sha256": "1757a8642cb6b1a21948cc2495d270290f53f677745badd9d74d5941ae3c4d11"
+      }
+    },
+    {
+      "file": "sources/Q1833985.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1833985.json",
+        "retrieved_utc": "2026-11-24T11:35:10.171734+00:00",
+        "status": 200,
+        "bytes": 58914,
+        "sha256": "5030e29f063614dc3dfdb2871038c6c1d2632cbc160040ed8da472371d269140"
+      }
+    },
+    {
+      "file": "sources/Q1835499.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1835499.json",
+        "retrieved_utc": "2026-11-24T11:35:11.233953+00:00",
+        "status": 200,
+        "bytes": 73057,
+        "sha256": "f00b8df66fb9652769cccda564c7c9443b53b3c0a05d390a4e28381d98062b00"
+      }
+    },
+    {
+      "file": "sources/Q184409.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q184409.json",
+        "retrieved_utc": "2026-11-24T11:38:29.679215+00:00",
+        "status": 200,
+        "bytes": 90727,
+        "sha256": "a1d04bf4575f84401fac28b430dcde73f3cb22933fdfa714d26ca819ecec3d4d"
+      }
+    },
+    {
+      "file": "sources/Q1846576.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1846576.json",
+        "retrieved_utc": "2026-11-24T11:35:12.776196+00:00",
+        "status": 200,
+        "bytes": 52039,
+        "sha256": "4e82b10ae2812e270e87734de32b4aac3e1f4bc68a8a9e44628c9e6655142be1"
+      }
+    },
+    {
+      "file": "sources/Q1857809.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1857809.json",
+        "retrieved_utc": "2026-11-24T11:35:13.827835+00:00",
+        "status": 200,
+        "bytes": 62589,
+        "sha256": "f399145ea5400aacbd1777e3d9fcdda1ac6b31bb0c59feba545927360fd4e22d"
+      }
+    },
+    {
+      "file": "sources/Q1868533.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1868533.json",
+        "retrieved_utc": "2026-11-24T11:35:14.785845+00:00",
+        "status": 200,
+        "bytes": 60420,
+        "sha256": "9c8699af65ac22b5f13bb145afaa0f8b0f757ef39fb1184956a695c991cdd350"
+      }
+    },
+    {
+      "file": "sources/Q1869664.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1869664.json",
+        "retrieved_utc": "2026-11-24T11:35:16.034837+00:00",
+        "status": 200,
+        "bytes": 64110,
+        "sha256": "4a90caf8e1caed2b076eb722aa14d45226f33c71d80e9f4d36e4165d9ecf19d5"
+      }
+    },
+    {
+      "file": "sources/Q1875142.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1875142.json",
+        "retrieved_utc": "2026-11-24T11:35:16.767539+00:00",
+        "status": 200,
+        "bytes": 57656,
+        "sha256": "5df59ad0ea880b3984752d19448d5d8e030a7c93455127e3650827219c2c885f"
+      }
+    },
+    {
+      "file": "sources/Q1880608.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1880608.json",
+        "retrieved_utc": "2026-11-24T11:35:18.436148+00:00",
+        "status": 200,
+        "bytes": 65438,
+        "sha256": "fffade442223a53c5b83c7fe2d3e674079eb6c4b419e49593251b20270e1d1ac"
+      }
+    },
+    {
+      "file": "sources/Q1891475.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1891475.json",
+        "retrieved_utc": "2026-11-24T11:35:19.593811+00:00",
+        "status": 200,
+        "bytes": 65760,
+        "sha256": "42f74192a4a3f22f7be7871cab0b0b2d15dae16ca4dd14f63019dfbd260d9643"
+      }
+    },
+    {
+      "file": "sources/Q1899080.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1899080.json",
+        "retrieved_utc": "2026-11-24T11:35:20.414959+00:00",
+        "status": 200,
+        "bytes": 64666,
+        "sha256": "349b6de17e7df8081a63ccbe2aced91edccf045b0b58da79524f9d40bb70a14e"
+      }
+    },
+    {
+      "file": "sources/Q1915115.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1915115.json",
+        "retrieved_utc": "2026-11-24T11:35:21.904081+00:00",
+        "status": 200,
+        "bytes": 59056,
+        "sha256": "5d1f2ce24c45df488cbf30c1b01ae7427fc6e04358c7116829efb58b46c73638"
+      }
+    },
+    {
+      "file": "sources/Q1936298.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1936298.json",
+        "retrieved_utc": "2026-11-24T11:35:22.540375+00:00",
+        "status": 200,
+        "bytes": 61685,
+        "sha256": "76d4fc05dc1c2be50b12928b58727535374451a37a4025a25fddfeec6d90ab56"
+      }
+    },
+    {
+      "file": "sources/Q1937304.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1937304.json",
+        "retrieved_utc": "2026-11-24T11:38:30.797668+00:00",
+        "status": 200,
+        "bytes": 72117,
+        "sha256": "064c926060057bff90cef5120693919159e6fafac204f57574248dcd84385a64"
+      }
+    },
+    {
+      "file": "sources/Q1938896.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1938896.json",
+        "retrieved_utc": "2026-11-24T11:35:23.632395+00:00",
+        "status": 200,
+        "bytes": 59294,
+        "sha256": "870868c1665b2f632b460da074389e69808f86715eb5262eb42c56f3a74e6b4d"
+      }
+    },
+    {
+      "file": "sources/Q1938976.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1938976.json",
+        "retrieved_utc": "2026-11-24T11:35:24.675724+00:00",
+        "status": 200,
+        "bytes": 56342,
+        "sha256": "65640cdf1f3b90571bb7acc02d842b51a372fc0f27a5beb4c5480b494345e9f8"
+      }
+    },
+    {
+      "file": "sources/Q194507.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q194507.json",
+        "retrieved_utc": "2026-11-24T11:35:26.315255+00:00",
+        "status": 200,
+        "bytes": 55527,
+        "sha256": "c7f4756f1f6cf59aea50c54c71b272213bee6b8fd6c435c9ab3b3070e660766d"
+      }
+    },
+    {
+      "file": "sources/Q1948373.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1948373.json",
+        "retrieved_utc": "2026-11-24T11:35:27.359996+00:00",
+        "status": 200,
+        "bytes": 63005,
+        "sha256": "85a09304abb38a58bf39532f33ef5add487f3eb3cf38ccb1f7b900be9a108738"
+      }
+    },
+    {
+      "file": "sources/Q1964406.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1964406.json",
+        "retrieved_utc": "2026-11-24T11:35:28.054896+00:00",
+        "status": 200,
+        "bytes": 60874,
+        "sha256": "c7e4fa807909d42e9bac641bb38d2f2acf45b2025af1bc0929826cd9f749468c"
+      }
+    },
+    {
+      "file": "sources/Q1977528.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1977528.json",
+        "retrieved_utc": "2026-11-24T11:35:29.887398+00:00",
+        "status": 200,
+        "bytes": 62407,
+        "sha256": "fe4d6a98f821467dcdd75f6554ee40ae17920bb4584f4a3826bbb16afd6a0e39"
+      }
+    },
+    {
+      "file": "sources/Q1988205.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1988205.json",
+        "retrieved_utc": "2026-11-24T11:35:30.971659+00:00",
+        "status": 200,
+        "bytes": 68748,
+        "sha256": "a8ee61b99a5a3e853e701941d1c52866a1b1a5142e119704d475ade95a4925d0"
+      }
+    },
+    {
+      "file": "sources/Q2005059.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2005059.json",
+        "retrieved_utc": "2026-11-24T11:38:31.406442+00:00",
+        "status": 200,
+        "bytes": 59352,
+        "sha256": "04ba16a6d20963c1bafd9676ef4066a6bc9e4b218197e50d18915f991a47f196"
+      }
+    },
+    {
+      "file": "sources/Q2006399.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2006399.json",
+        "retrieved_utc": "2026-11-24T11:35:31.868278+00:00",
+        "status": 200,
+        "bytes": 62375,
+        "sha256": "0907a7d9e555338eb2d4c26dda04a688cc444a25610a210730b7f2217bd7a220"
+      }
+    },
+    {
+      "file": "sources/Q2007816.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2007816.json",
+        "retrieved_utc": "2026-11-24T11:35:32.922020+00:00",
+        "status": 200,
+        "bytes": 61065,
+        "sha256": "9199d87046135f2f65c424d18b9839e4f80b897a6f651032ad324c5bebfada0a"
+      }
+    },
+    {
+      "file": "sources/Q2008013.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008013.json",
+        "retrieved_utc": "2026-11-24T11:35:34.849494+00:00",
+        "status": 200,
+        "bytes": 51740,
+        "sha256": "d8268a6f04969e1d1fbbac60040cde660eebdcd32b0a35b328e7e162babfb8bb"
+      }
+    },
+    {
+      "file": "sources/Q2008095.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008095.json",
+        "retrieved_utc": "2026-11-24T11:38:32.511441+00:00",
+        "status": 200,
+        "bytes": 65072,
+        "sha256": "42c712f5fe8caae636f5fb8f05dc0bcbbf3830346b6c3c3ae41e46b2585a9a97"
+      }
+    },
+    {
+      "file": "sources/Q2008125.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008125.json",
+        "retrieved_utc": "2026-11-24T11:35:36.247681+00:00",
+        "status": 200,
+        "bytes": 55319,
+        "sha256": "9074ae60aca0dd35e86dfe0fcdb2e97580c9815f2b542801ad89a896eeca7b87"
+      }
+    },
+    {
+      "file": "sources/Q2008139.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008139.json",
+        "retrieved_utc": "2026-11-24T11:35:37.388424+00:00",
+        "status": 200,
+        "bytes": 54430,
+        "sha256": "d3992a6220f3a5090d40b68530a8e42366fe40952919f2953b6f7bb3fdeb3ea5"
+      }
+    },
+    {
+      "file": "sources/Q2008237.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008237.json",
+        "retrieved_utc": "2026-11-24T11:35:38.264078+00:00",
+        "status": 200,
+        "bytes": 60582,
+        "sha256": "532dec61e17164402bb079f108e926626c5d1abc074802be16aaf41896178784"
+      }
+    },
+    {
+      "file": "sources/Q2008249.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008249.json",
+        "retrieved_utc": "2026-11-24T11:35:39.277976+00:00",
+        "status": 200,
+        "bytes": 58366,
+        "sha256": "22465852342e326ed85c8d06d60badf311d1dc5e886939973e8ef94c42abf3f2"
+      }
+    },
+    {
+      "file": "sources/Q2008261.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008261.json",
+        "retrieved_utc": "2026-11-24T11:35:40.362597+00:00",
+        "status": 200,
+        "bytes": 59592,
+        "sha256": "11e39b2897bc816a3b122bf82cf3289ea2b44519a7dc159b5359d7585bc8d046"
+      }
+    },
+    {
+      "file": "sources/Q2008271.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008271.json",
+        "retrieved_utc": "2026-11-24T11:35:41.697190+00:00",
+        "status": 200,
+        "bytes": 54528,
+        "sha256": "c9a833ab08c7b875d6e099cf4e144586820ff75a3d9b5ec7125679fc2f5cd2e6"
+      }
+    },
+    {
+      "file": "sources/Q2008317.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008317.json",
+        "retrieved_utc": "2026-11-24T11:35:42.877186+00:00",
+        "status": 200,
+        "bytes": 59536,
+        "sha256": "66c40b72806a776b93daaf1c33cb2f4c2a49b9cb751f23369f74112beebb7953"
+      }
+    },
+    {
+      "file": "sources/Q2008512.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008512.json",
+        "retrieved_utc": "2026-11-24T11:35:43.924546+00:00",
+        "status": 200,
+        "bytes": 56186,
+        "sha256": "66b56b5fa69dd911e09a1188d6335cc807f8e55c5e49ef1e2a0a8e8f53babfe8"
+      }
+    },
+    {
+      "file": "sources/Q2008541.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008541.json",
+        "retrieved_utc": "2026-11-24T11:35:44.764751+00:00",
+        "status": 200,
+        "bytes": 57243,
+        "sha256": "222ba14f03430a6cbe6e6140c54bbfe205502bec662df3465236efa3143f1a2a"
+      }
+    },
+    {
+      "file": "sources/Q2008554.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008554.json",
+        "retrieved_utc": "2026-11-24T11:35:45.608449+00:00",
+        "status": 200,
+        "bytes": 65331,
+        "sha256": "345e378602014c5f4d2a3d4375a96611de5caf460b6de2dc29e3f21387e1bef2"
+      }
+    },
+    {
+      "file": "sources/Q2008573.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008573.json",
+        "retrieved_utc": "2026-11-24T11:35:46.664194+00:00",
+        "status": 200,
+        "bytes": 55503,
+        "sha256": "428c6f30c464d4ebcaa1d56ee1400c3d962e51ea5fb162a5042d69f8b1781abc"
+      }
+    },
+    {
+      "file": "sources/Q2008750.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008750.json",
+        "retrieved_utc": "2026-11-24T11:35:48.120538+00:00",
+        "status": 200,
+        "bytes": 56994,
+        "sha256": "2738da5f9f92dd88a9e51a333ffbe0a78d7f04550d6d634c6586f186e2893136"
+      }
+    },
+    {
+      "file": "sources/Q2008798.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2008798.json",
+        "retrieved_utc": "2026-11-24T11:35:49.355004+00:00",
+        "status": 200,
+        "bytes": 56812,
+        "sha256": "f8d3bb5279799751c55e00faf7c5b8cd78a9664633d67ef936b620d2c2e458cd"
+      }
+    },
+    {
+      "file": "sources/Q2009048.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009048.json",
+        "retrieved_utc": "2026-11-24T11:35:50.418036+00:00",
+        "status": 200,
+        "bytes": 54891,
+        "sha256": "1e1fb9ead1b58e1fb0e3ede2a700e4cbb94bed67e6f92f1ca54b08d710fee929"
+      }
+    },
+    {
+      "file": "sources/Q2009202.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009202.json",
+        "retrieved_utc": "2026-11-24T11:35:51.463829+00:00",
+        "status": 200,
+        "bytes": 56900,
+        "sha256": "172f99a2d0fb12bcf255b82bfab5559079690ad3ae602c7e7f20a59aa817dac1"
+      }
+    },
+    {
+      "file": "sources/Q2009212.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009212.json",
+        "retrieved_utc": "2026-11-24T11:35:52.702269+00:00",
+        "status": 200,
+        "bytes": 58795,
+        "sha256": "caf8af85fe93479d3349a2df2446c4311d6e403277dcad9c2c2ae754d90323ab"
+      }
+    },
+    {
+      "file": "sources/Q2009230.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009230.json",
+        "retrieved_utc": "2026-11-24T11:35:54.229285+00:00",
+        "status": 200,
+        "bytes": 52339,
+        "sha256": "9a1bb2bc43b023cb4b9b4449df66f8c10cd3f07c0898d45551433e17ef632078"
+      }
+    },
+    {
+      "file": "sources/Q2009409.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009409.json",
+        "retrieved_utc": "2026-11-24T11:35:54.989707+00:00",
+        "status": 200,
+        "bytes": 49329,
+        "sha256": "0ed798038839bb5f59dd010d52981b8538d48296a08d20da2f3817a2b9c713fe"
+      }
+    },
+    {
+      "file": "sources/Q2009474.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009474.json",
+        "retrieved_utc": "2026-11-24T11:35:56.794992+00:00",
+        "status": 200,
+        "bytes": 59077,
+        "sha256": "136366d7af214ecaf8fab53981381a205275983c758688435e6f9e70bf8e092e"
+      }
+    },
+    {
+      "file": "sources/Q2009519.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2009519.json",
+        "retrieved_utc": "2026-11-24T11:35:58.316199+00:00",
+        "status": 200,
+        "bytes": 53891,
+        "sha256": "e2e54ffcf1f041ef231bd5d456d7587e6da2cca3d848440232f64d7111f226e4"
+      }
+    },
+    {
+      "file": "sources/Q2010356.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2010356.json",
+        "retrieved_utc": "2026-11-24T11:35:59.339349+00:00",
+        "status": 200,
+        "bytes": 58455,
+        "sha256": "c99cc9c3a75dc095870e1eeb86f2def775116881f3d8f96e1a7840e7a4618b8e"
+      }
+    },
+    {
+      "file": "sources/Q2010845.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2010845.json",
+        "retrieved_utc": "2026-11-24T11:36:00.432592+00:00",
+        "status": 200,
+        "bytes": 59865,
+        "sha256": "f96c31d43b2e52dd87ffcce1b06a65deabbcc0b984104061c678dee64d9fd890"
+      }
+    },
+    {
+      "file": "sources/Q2010935.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2010935.json",
+        "retrieved_utc": "2026-11-24T11:36:01.427006+00:00",
+        "status": 200,
+        "bytes": 58583,
+        "sha256": "f3a416c03fd7c5a9c0661bdaaea71eee5186d4f02a24014f8dcf532eeda9cc50"
+      }
+    },
+    {
+      "file": "sources/Q2011603.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2011603.json",
+        "retrieved_utc": "2026-11-24T11:36:02.275171+00:00",
+        "status": 200,
+        "bytes": 51444,
+        "sha256": "4ee998fd9eb4b8208fb525887a6e8ed01c18dc52bb9b13bbd1d7ec0e5d12bfff"
+      }
+    },
+    {
+      "file": "sources/Q2011614.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2011614.json",
+        "retrieved_utc": "2026-11-24T11:36:03.216923+00:00",
+        "status": 200,
+        "bytes": 57437,
+        "sha256": "28bbf0a60da1ad1a3a3c8be90707e7cdcb1bc139d809067bb7588b367689bdf6"
+      }
+    },
+    {
+      "file": "sources/Q2011907.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2011907.json",
+        "retrieved_utc": "2026-11-24T11:36:05.055596+00:00",
+        "status": 200,
+        "bytes": 61813,
+        "sha256": "e6bdcba7c8920e76d5132aafc122a92ac1a24c3ebc2c7f0d2a422230528ac83f"
+      }
+    },
+    {
+      "file": "sources/Q2011944.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2011944.json",
+        "retrieved_utc": "2026-11-24T11:36:06.279691+00:00",
+        "status": 200,
+        "bytes": 62265,
+        "sha256": "8d4ba66b86b8c0a8dd8391a0ea0f46571279074846cf40b76842aab887f77b86"
+      }
+    },
+    {
+      "file": "sources/Q2012202.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012202.json",
+        "retrieved_utc": "2026-11-24T11:36:07.091745+00:00",
+        "status": 200,
+        "bytes": 60840,
+        "sha256": "48762c996b437c2533499fea145473a54997cce961858f97394a2e148976f29c"
+      }
+    },
+    {
+      "file": "sources/Q2012207.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012207.json",
+        "retrieved_utc": "2026-11-24T11:36:08.107099+00:00",
+        "status": 200,
+        "bytes": 62309,
+        "sha256": "9dc23e64507ae4cc147add18f35e95eadb5401b18bd662c20d42d2b5d324d9bd"
+      }
+    },
+    {
+      "file": "sources/Q2012258.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012258.json",
+        "retrieved_utc": "2026-11-24T11:38:33.598729+00:00",
+        "status": 200,
+        "bytes": 63536,
+        "sha256": "aa3f0d02b6b4bb79bd5fbc970d93d5e215e59be56880c9e84d62c47c9798dc1e"
+      }
+    },
+    {
+      "file": "sources/Q2012355.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012355.json",
+        "retrieved_utc": "2026-11-24T11:36:09.192678+00:00",
+        "status": 200,
+        "bytes": 62461,
+        "sha256": "a2a9ba40607552f39fecd93bca69cd477f9086344642bd1b246ab2a22349d327"
+      }
+    },
+    {
+      "file": "sources/Q2012385.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012385.json",
+        "retrieved_utc": "2026-11-24T11:36:10.400283+00:00",
+        "status": 200,
+        "bytes": 68368,
+        "sha256": "2cf7ee0ea5c29b8d4218b3c60e7d1225b6a8747cd3b8c51194f04075a8bf4e42"
+      }
+    },
+    {
+      "file": "sources/Q2012390.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012390.json",
+        "retrieved_utc": "2026-11-24T11:36:11.720704+00:00",
+        "status": 200,
+        "bytes": 65356,
+        "sha256": "7c711d6926c33bcd9affc401e66c85bde97aeadba7f586459b9eb41c9683582b"
+      }
+    },
+    {
+      "file": "sources/Q2012500.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012500.json",
+        "retrieved_utc": "2026-11-24T11:36:12.526421+00:00",
+        "status": 200,
+        "bytes": 56473,
+        "sha256": "78f52d4344d0500bf731d0a009ccda5acd0989177226fb5448f66be4d038f138"
+      }
+    },
+    {
+      "file": "sources/Q2012513.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012513.json",
+        "retrieved_utc": "2026-11-24T11:36:13.601631+00:00",
+        "status": 200,
+        "bytes": 59188,
+        "sha256": "d65613ca1d432b94260ce25e87ee022eb11845f8b6efe97d84342af65bb48502"
+      }
+    },
+    {
+      "file": "sources/Q2012522.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012522.json",
+        "retrieved_utc": "2026-11-24T11:36:14.440611+00:00",
+        "status": 200,
+        "bytes": 57763,
+        "sha256": "67d70afae7d620bd370ccdd7844aa198516c071a3de07e6bbcd6fed2b30f3c33"
+      }
+    },
+    {
+      "file": "sources/Q2012551.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012551.json",
+        "retrieved_utc": "2026-11-24T11:36:15.736609+00:00",
+        "status": 200,
+        "bytes": 55085,
+        "sha256": "b04e4f418058bfc68876b68da1e7f312d66b9d6c5d10fe5ace9ce19bb68717bd"
+      }
+    },
+    {
+      "file": "sources/Q2012566.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012566.json",
+        "retrieved_utc": "2026-11-24T11:36:16.645211+00:00",
+        "status": 200,
+        "bytes": 56201,
+        "sha256": "546cc5f98d3af4f4f5730d361c3d0c1e6392b68c0cd26db03af36b7ee6ea2c97"
+      }
+    },
+    {
+      "file": "sources/Q2012618.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2012618.json",
+        "retrieved_utc": "2026-11-24T11:36:18.003820+00:00",
+        "status": 200,
+        "bytes": 69144,
+        "sha256": "2e789c52c9473997499d1a654e6fb57e354321ee59131fbd8d254d045dd7de6b"
+      }
+    },
+    {
+      "file": "sources/Q2013187.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013187.json",
+        "retrieved_utc": "2026-11-24T11:36:19.177825+00:00",
+        "status": 200,
+        "bytes": 56963,
+        "sha256": "1f0d960ab8b875afab1541880d2392a5f3ed6dc22e2d623158c56c37e90dcaa9"
+      }
+    },
+    {
+      "file": "sources/Q2013248.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013248.json",
+        "retrieved_utc": "2026-11-24T11:36:20.857298+00:00",
+        "status": 200,
+        "bytes": 57105,
+        "sha256": "3a00630eac57b876034f090d7278802e189090ef9e4479af10c70ed25d9a22e3"
+      }
+    },
+    {
+      "file": "sources/Q2013267.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013267.json",
+        "retrieved_utc": "2026-11-24T11:36:21.845981+00:00",
+        "status": 200,
+        "bytes": 60998,
+        "sha256": "995759e38eb7479765936faef340fab8b0528e215800f2fa2375d64c890fb866"
+      }
+    },
+    {
+      "file": "sources/Q2013283.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013283.json",
+        "retrieved_utc": "2026-11-24T11:36:23.247701+00:00",
+        "status": 200,
+        "bytes": 53697,
+        "sha256": "b24b167b04f88878cbcc6e6566adb1745db1c3063361b008df5ac8b338e58226"
+      }
+    },
+    {
+      "file": "sources/Q2013324.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013324.json",
+        "retrieved_utc": "2026-11-24T11:36:24.072184+00:00",
+        "status": 200,
+        "bytes": 51986,
+        "sha256": "e5ede21b9718b91e105b139d4bde6f0bdeb8fa8e5d3ec640a4a5771233d9b996"
+      }
+    },
+    {
+      "file": "sources/Q2013332.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013332.json",
+        "retrieved_utc": "2026-11-24T11:36:25.342380+00:00",
+        "status": 200,
+        "bytes": 54322,
+        "sha256": "a299b8d0babd21a5346e15d6056af84e4382162aaa30631bd4f6d791b76d8021"
+      }
+    },
+    {
+      "file": "sources/Q2013406.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013406.json",
+        "retrieved_utc": "2026-11-24T11:36:26.918472+00:00",
+        "status": 200,
+        "bytes": 54193,
+        "sha256": "8a2cc01d3198122685d32f8ded3b0678b259be11b0601617af3390e235d34def"
+      }
+    },
+    {
+      "file": "sources/Q2013818.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2013818.json",
+        "retrieved_utc": "2026-11-24T11:38:34.580391+00:00",
+        "status": 200,
+        "bytes": 61518,
+        "sha256": "6480c2c7a1dd6349c455a387fd96fdc95eb3fc05ea52389563116075481a4754"
+      }
+    },
+    {
+      "file": "sources/Q2019037.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2019037.json",
+        "retrieved_utc": "2026-11-24T11:36:27.966408+00:00",
+        "status": 200,
+        "bytes": 57642,
+        "sha256": "af681bcd6539cd6b8fe15f0642debc7307de493b9584e2f1b1d272203ce09b13"
+      }
+    },
+    {
+      "file": "sources/Q2021405.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2021405.json",
+        "retrieved_utc": "2026-11-24T11:38:36.044313+00:00",
+        "status": 200,
+        "bytes": 62119,
+        "sha256": "f9feb05f111258ed5ab4c5b636c9cd878d295c4864fe7a1dc14fa1468265775c"
+      }
+    },
+    {
+      "file": "sources/Q2022558.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2022558.json",
+        "retrieved_utc": "2026-11-24T11:36:28.630105+00:00",
+        "status": 200,
+        "bytes": 59757,
+        "sha256": "7d08bf7e6fd0febc53d5d05c454245b68b5cd52c1612e2161fd17a8c3ab7a40b"
+      }
+    },
+    {
+      "file": "sources/Q2027295.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2027295.json",
+        "retrieved_utc": "2026-11-24T11:36:29.953535+00:00",
+        "status": 200,
+        "bytes": 62124,
+        "sha256": "343ba6286ef6059e2601c11465460c5a4a52c56303df7b5bdcf537eb4793d411"
+      }
+    },
+    {
+      "file": "sources/Q2027727.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2027727.json",
+        "retrieved_utc": "2026-11-24T11:36:30.722147+00:00",
+        "status": 200,
+        "bytes": 56611,
+        "sha256": "fdec3e56f76189e1ecd72677178182a752a9d2fb5d7f71315c6c626608575964"
+      }
+    },
+    {
+      "file": "sources/Q2028150.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2028150.json",
+        "retrieved_utc": "2026-11-24T11:36:32.057666+00:00",
+        "status": 200,
+        "bytes": 63363,
+        "sha256": "a66ecaa4b29340f36025284ee8c985a7501a63466e03a9704984b274f9482306"
+      }
+    },
+    {
+      "file": "sources/Q2028638.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2028638.json",
+        "retrieved_utc": "2026-11-24T11:36:33.007313+00:00",
+        "status": 200,
+        "bytes": 53827,
+        "sha256": "e674581469903fb2f9af64e6160cfac162fd3fda9dc206ea19741249e757c0e9"
+      }
+    },
+    {
+      "file": "sources/Q2028645.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2028645.json",
+        "retrieved_utc": "2026-11-24T11:36:33.922894+00:00",
+        "status": 200,
+        "bytes": 58525,
+        "sha256": "6b4971cfadf4daaee35df502a7ce6150735a67703634adfcd9a2da2a3e193c17"
+      }
+    },
+    {
+      "file": "sources/Q2028838.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2028838.json",
+        "retrieved_utc": "2026-11-24T11:36:35.110103+00:00",
+        "status": 200,
+        "bytes": 61295,
+        "sha256": "f4685b41dbe04075e9e50a3e4d2f58a928913da56d6a1b9003172507f264cbd2"
+      }
+    },
+    {
+      "file": "sources/Q2039418.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2039418.json",
+        "retrieved_utc": "2026-11-24T11:36:36.014546+00:00",
+        "status": 200,
+        "bytes": 69321,
+        "sha256": "677b1d4254c9e25d6b5cc492e3e0d475793685bea1eae913638aed3ba217625c"
+      }
+    },
+    {
+      "file": "sources/Q2049334.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2049334.json",
+        "retrieved_utc": "2026-11-24T11:36:37.290434+00:00",
+        "status": 200,
+        "bytes": 55154,
+        "sha256": "71b1921a27290b0e3c0f7756dc073ec6a67ca6e4c439d7553ff834212ca208f6"
+      }
+    },
+    {
+      "file": "sources/Q2064194.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2064194.json",
+        "retrieved_utc": "2026-11-24T11:36:38.101625+00:00",
+        "status": 200,
+        "bytes": 56994,
+        "sha256": "9f92ee56985496f3f26ac95e4d5b6a33dc5604211da80092369e60221332b49f"
+      }
+    },
+    {
+      "file": "sources/Q2064254.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2064254.json",
+        "retrieved_utc": "2026-11-24T11:36:39.383727+00:00",
+        "status": 200,
+        "bytes": 59785,
+        "sha256": "8bc382c037e283bf216d5ed7c0a8e1173059e180b3b2a30a6ef78173e513d461"
+      }
+    },
+    {
+      "file": "sources/Q2064949.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2064949.json",
+        "retrieved_utc": "2026-11-24T11:36:40.175701+00:00",
+        "status": 200,
+        "bytes": 57040,
+        "sha256": "dbe35eabae8d84feea54d078dfc4ad4a1809ca74be43183dcd93b92a2b6974af"
+      }
+    },
+    {
+      "file": "sources/Q2065020.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2065020.json",
+        "retrieved_utc": "2026-11-24T11:36:41.599853+00:00",
+        "status": 200,
+        "bytes": 52683,
+        "sha256": "11fc355c73d2326c24cfaa262f09ed9932ae0d4910fcfad68df31e23cdeefa51"
+      }
+    },
+    {
+      "file": "sources/Q2065041.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2065041.json",
+        "retrieved_utc": "2026-11-24T11:36:42.516462+00:00",
+        "status": 200,
+        "bytes": 69620,
+        "sha256": "18b2394c9e64406a6865fc7a2b7bd9ceecdcf9eae77df6cb22c87a94e0a055a0"
+      }
+    },
+    {
+      "file": "sources/Q2065076.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2065076.json",
+        "retrieved_utc": "2026-11-24T11:36:43.695452+00:00",
+        "status": 200,
+        "bytes": 60764,
+        "sha256": "97472b904c3356d8be9ed0f9bbb2f67d3669b90888a6c20486da776cd7c1c703"
+      }
+    },
+    {
+      "file": "sources/Q2065396.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2065396.json",
+        "retrieved_utc": "2026-11-24T11:36:44.552702+00:00",
+        "status": 200,
+        "bytes": 57909,
+        "sha256": "221bf1175c946ddeb2f7045fee6a8d61a47bde0b8e8c66d446c9bfd96c9e3e8e"
+      }
+    },
+    {
+      "file": "sources/Q2068246.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068246.json",
+        "retrieved_utc": "2026-11-24T11:36:46.314621+00:00",
+        "status": 200,
+        "bytes": 54575,
+        "sha256": "380abc65212b2c73bca6b1ee869a134f0545f971b0823f0b6aba0dfc63810d74"
+      }
+    },
+    {
+      "file": "sources/Q2068274.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068274.json",
+        "retrieved_utc": "2026-11-24T11:36:47.178826+00:00",
+        "status": 200,
+        "bytes": 53214,
+        "sha256": "5f6c774e115cbc15374f47fd2d51742a6b10b2d66083e4fc77973ea20a248f56"
+      }
+    },
+    {
+      "file": "sources/Q2068303.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068303.json",
+        "retrieved_utc": "2026-11-24T11:36:48.829371+00:00",
+        "status": 200,
+        "bytes": 52604,
+        "sha256": "52bbdce6dbde3b9a4f24fcd9782247fc69a24ef5d2f2234e36a6cc77d9f64857"
+      }
+    },
+    {
+      "file": "sources/Q2068814.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068814.json",
+        "retrieved_utc": "2026-11-24T11:36:49.888288+00:00",
+        "status": 200,
+        "bytes": 60270,
+        "sha256": "525a66d2d002959365ba317209ef2ba1293ae9c3e5c4638a11a09141bfbd63c4"
+      }
+    },
+    {
+      "file": "sources/Q2068889.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068889.json",
+        "retrieved_utc": "2026-11-24T11:36:50.634617+00:00",
+        "status": 200,
+        "bytes": 53242,
+        "sha256": "bd87998f52c4d7a906bbb1ccd4b5f0d53a84a099f016c105ad34880a1fa39f97"
+      }
+    },
+    {
+      "file": "sources/Q2068944.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068944.json",
+        "retrieved_utc": "2026-11-24T11:36:51.672463+00:00",
+        "status": 200,
+        "bytes": 55369,
+        "sha256": "aa2a84ca4562a8c5e88a35bdfa58ac97cb16cf1013d83939f8a81fdab6f39412"
+      }
+    },
+    {
+      "file": "sources/Q2077824.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2077824.json",
+        "retrieved_utc": "2026-11-24T11:36:53.251925+00:00",
+        "status": 200,
+        "bytes": 51715,
+        "sha256": "f3a2394ab24a36736f72ff53efc8968a694d3fb171de76beeadadcbfda1d2d55"
+      }
+    },
+    {
+      "file": "sources/Q2077884.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2077884.json",
+        "retrieved_utc": "2026-11-24T11:36:54.709105+00:00",
+        "status": 200,
+        "bytes": 55551,
+        "sha256": "9d8246670ae8bc4f651455310c88ba6fb549f940835cb018d0e20147a2c87323"
+      }
+    },
+    {
+      "file": "sources/Q2077944.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2077944.json",
+        "retrieved_utc": "2026-11-24T11:36:55.348064+00:00",
+        "status": 200,
+        "bytes": 59699,
+        "sha256": "51831646958750cd285553039893d9f90499abaa4e372956bf4f4861f62dac34"
+      }
+    },
+    {
+      "file": "sources/Q2078405.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2078405.json",
+        "retrieved_utc": "2026-11-24T11:36:56.804037+00:00",
+        "status": 200,
+        "bytes": 53960,
+        "sha256": "8578b0684342a28aaf28b80c99a755bee7ed21ff7671e2905f5ae4b30a21f626"
+      }
+    },
+    {
+      "file": "sources/Q2078647.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2078647.json",
+        "retrieved_utc": "2026-11-24T11:36:57.701862+00:00",
+        "status": 200,
+        "bytes": 57572,
+        "sha256": "518ee3b4ebdd1dddcb73e83b7e71b9b47e9894513a8ae4bb85170632178d5ae9"
+      }
+    },
+    {
+      "file": "sources/Q2078842.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2078842.json",
+        "retrieved_utc": "2026-11-24T11:36:58.516805+00:00",
+        "status": 200,
+        "bytes": 53152,
+        "sha256": "cff018a0fea70735965d70b9c4604302948c5cb1b71262f6950a82ec0ccdfc4a"
+      }
+    },
+    {
+      "file": "sources/Q2082853.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2082853.json",
+        "retrieved_utc": "2026-11-24T11:36:59.808554+00:00",
+        "status": 200,
+        "bytes": 58121,
+        "sha256": "1d94ebe2cfc31554361ecdd1d31c1f0b81e580de35edeab191d970ecd2a27bd6"
+      }
+    },
+    {
+      "file": "sources/Q2088956.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2088956.json",
+        "retrieved_utc": "2026-11-24T11:38:37.095142+00:00",
+        "status": 200,
+        "bytes": 60935,
+        "sha256": "a505a40b24fb0d7bd9883ce3696696cdb7c3e472b3ea625c97d0b67a71d67ca2"
+      }
+    },
+    {
+      "file": "sources/Q2089179.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2089179.json",
+        "retrieved_utc": "2026-11-24T11:37:01.109203+00:00",
+        "status": 200,
+        "bytes": 55140,
+        "sha256": "5dccf3faf523f7cfcdd26e2387830c51e5c4e1cf7a6da6443520ff4451f2ad54"
+      }
+    },
+    {
+      "file": "sources/Q2089195.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2089195.json",
+        "retrieved_utc": "2026-11-24T11:37:01.780417+00:00",
+        "status": 200,
+        "bytes": 56183,
+        "sha256": "a4177cb78e9b442d7e6d605541de40eac35008642a933b985ba39326329f73da"
+      }
+    },
+    {
+      "file": "sources/Q2089228.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2089228.json",
+        "retrieved_utc": "2026-11-24T11:37:03.351793+00:00",
+        "status": 200,
+        "bytes": 59337,
+        "sha256": "9d60050a340a4b21fd6fe901374f7ddad36655bec3e239c1284e30a147193e80"
+      }
+    },
+    {
+      "file": "sources/Q2089673.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2089673.json",
+        "retrieved_utc": "2026-11-24T11:37:04.143916+00:00",
+        "status": 200,
+        "bytes": 60855,
+        "sha256": "ad43fac11c9f7020458f46fb0d7ea130d9c1f2d82d3dde9c9d1fb92f7fa5c435"
+      }
+    },
+    {
+      "file": "sources/Q2097751.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2097751.json",
+        "retrieved_utc": "2026-11-24T11:38:38.140863+00:00",
+        "status": 200,
+        "bytes": 61073,
+        "sha256": "9fa500a986ed756ed4e2dec96778758afb0fd5795a1d6279bc3e36c3d9f7225f"
+      }
+    },
+    {
+      "file": "sources/Q2099666.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2099666.json",
+        "retrieved_utc": "2026-11-24T11:37:05.353820+00:00",
+        "status": 200,
+        "bytes": 60013,
+        "sha256": "4f70ca11be327cdf4dc1079c44cfb02c559d1ef626da691d924625299caf79f2"
+      }
+    },
+    {
+      "file": "sources/Q2103560.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2103560.json",
+        "retrieved_utc": "2026-11-24T11:37:06.243466+00:00",
+        "status": 200,
+        "bytes": 60108,
+        "sha256": "195598570dcae8db9d402bf22d1257c479b2eb982380288402b6625cbf26d7b1"
+      }
+    },
+    {
+      "file": "sources/Q2104116.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2104116.json",
+        "retrieved_utc": "2026-11-24T11:38:38.920385+00:00",
+        "status": 200,
+        "bytes": 62477,
+        "sha256": "de7e05f7373d00595c142e54a0cca500e480eb16db5f39c9dd96c73e9978e2d6"
+      }
+    },
+    {
+      "file": "sources/Q2104210.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2104210.json",
+        "retrieved_utc": "2026-11-24T11:38:40.239827+00:00",
+        "status": 200,
+        "bytes": 58149,
+        "sha256": "535243b044abc6602b5174c5f5eb12fe3c459e54d5a191535be28cb903c01c90"
+      }
+    },
+    {
+      "file": "sources/Q2106455.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2106455.json",
+        "retrieved_utc": "2026-11-24T11:37:08.052209+00:00",
+        "status": 200,
+        "bytes": 62672,
+        "sha256": "5a829bd7517f87f4ba6422e3de16ac2c67578066268fb614ef3214e9aadc0ef0"
+      }
+    },
+    {
+      "file": "sources/Q2116769.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2116769.json",
+        "retrieved_utc": "2026-11-24T11:37:09.185636+00:00",
+        "status": 200,
+        "bytes": 55800,
+        "sha256": "d0996220a668d38f613246b4469fb455bb0b3fb0d7aea441090d3e416f3501d3"
+      }
+    },
+    {
+      "file": "sources/Q22014773.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22014773.json",
+        "retrieved_utc": "2026-11-24T11:37:09.787871+00:00",
+        "status": 200,
+        "bytes": 7862,
+        "sha256": "0e52f9bc2ee42050ed483e1b2fe125dd4c2e5fb5fdb6082ac55e82689718336e"
+      }
+    },
+    {
+      "file": "sources/Q22015505.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22015505.json",
+        "retrieved_utc": "2026-11-24T11:37:10.815579+00:00",
+        "status": 200,
+        "bytes": 5322,
+        "sha256": "be6e32bbcb225dcc4a23422b713504ec51e41e79fe98b30a9c325b6e91272262"
+      }
+    },
+    {
+      "file": "sources/Q22016319.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22016319.json",
+        "retrieved_utc": "2026-11-24T11:37:11.887783+00:00",
+        "status": 200,
+        "bytes": 7194,
+        "sha256": "d12a305f8ad22858a0a368f81ee52b16aa307c61b7e7a643ba223d0e794b79ea"
+      }
+    },
+    {
+      "file": "sources/Q22016396.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22016396.json",
+        "retrieved_utc": "2026-11-24T11:37:12.930228+00:00",
+        "status": 200,
+        "bytes": 8160,
+        "sha256": "c3e8425e97cf84b35668f20d1a124182041625e8b558ff7f46a9b301a0c35edb"
+      }
+    },
+    {
+      "file": "sources/Q22016482.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22016482.json",
+        "retrieved_utc": "2026-11-24T11:37:13.978682+00:00",
+        "status": 200,
+        "bytes": 8267,
+        "sha256": "7c77e49cd44c8bc7f383c0c77c46549bd64d71849162ae8c4a4b4aac14ebfb1c"
+      }
+    },
+    {
+      "file": "sources/Q22018370.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22018370.json",
+        "retrieved_utc": "2026-11-24T11:37:15.024022+00:00",
+        "status": 200,
+        "bytes": 6615,
+        "sha256": "33931ac00a389796a40096cd8d355bacc100f135f821756a37d4373c1bd651a2"
+      }
+    },
+    {
+      "file": "sources/Q22020386.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22020386.json",
+        "retrieved_utc": "2026-11-24T11:37:16.203412+00:00",
+        "status": 200,
+        "bytes": 3581,
+        "sha256": "053ed6a3b6fd75c99ce8512cb5a30f135356e191a86db5c93a521973aeb9fa54"
+      }
+    },
+    {
+      "file": "sources/Q22021324.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22021324.json",
+        "retrieved_utc": "2026-11-24T11:37:17.251663+00:00",
+        "status": 200,
+        "bytes": 4416,
+        "sha256": "954e9402f8cf05673423b68333128d0c7828bf3314cee9b2c739236c3f7afd22"
+      }
+    },
+    {
+      "file": "sources/Q22027354.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22027354.json",
+        "retrieved_utc": "2026-11-24T11:37:18.298091+00:00",
+        "status": 200,
+        "bytes": 7695,
+        "sha256": "3ee63a4192b9ba5233d1e1a85099c4d6142413622b262b3c1aaa0af0e016fbb5"
+      }
+    },
+    {
+      "file": "sources/Q22027549.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22027549.json",
+        "retrieved_utc": "2026-11-24T11:37:19.350882+00:00",
+        "status": 200,
+        "bytes": 7513,
+        "sha256": "dbd1d4c055707caf1937933df79098e7fcfc8458a993a3e1dd7d55379f9b709b"
+      }
+    },
+    {
+      "file": "sources/Q22030934.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22030934.json",
+        "retrieved_utc": "2026-11-24T11:37:20.397529+00:00",
+        "status": 200,
+        "bytes": 6545,
+        "sha256": "663178b9d14b972c30f314c30c15a6f0d1c39e756e48473d3e04c5753b99b477"
+      }
+    },
+    {
+      "file": "sources/Q22033441.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22033441.json",
+        "retrieved_utc": "2026-11-24T11:37:21.447356+00:00",
+        "status": 200,
+        "bytes": 7819,
+        "sha256": "e3a01f45a75c92ba7f59c821471f5e1a72bba89eca159775264bb59fe7d16584"
+      }
+    },
+    {
+      "file": "sources/Q22033444.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22033444.json",
+        "retrieved_utc": "2026-11-24T11:37:22.492366+00:00",
+        "status": 200,
+        "bytes": 8457,
+        "sha256": "112d0a062966676330158e789025ecaf71715df7208499fc3d63e2dfe1cbbf4f"
+      }
+    },
+    {
+      "file": "sources/Q22034977.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22034977.json",
+        "retrieved_utc": "2026-11-24T11:37:23.446504+00:00",
+        "status": 200,
+        "bytes": 6601,
+        "sha256": "b28f8b18234436cab32c346d2202877701af5595fd19cb354e73399b49b0c82c"
+      }
+    },
+    {
+      "file": "sources/Q22036414.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22036414.json",
+        "retrieved_utc": "2026-11-24T11:37:24.592133+00:00",
+        "status": 200,
+        "bytes": 5823,
+        "sha256": "b7bce934020864d2c39d7b5d1dae66cb37e62f605190c08dc688e987521dd7d6"
+      }
+    },
+    {
+      "file": "sources/Q22044272.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22044272.json",
+        "retrieved_utc": "2026-11-24T11:37:25.546601+00:00",
+        "status": 200,
+        "bytes": 7722,
+        "sha256": "430234728a3cd8f19ab7e670cb47fd23ecafb65df450e81285764a5eb2cbdee1"
+      }
+    },
+    {
+      "file": "sources/Q22051452.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22051452.json",
+        "retrieved_utc": "2026-11-24T11:37:26.794668+00:00",
+        "status": 200,
+        "bytes": 5585,
+        "sha256": "216da2e0cc22f3ddfa96d0d751ae76970f0327d48ecdc63f4264a7b92aaa36ee"
+      }
+    },
+    {
+      "file": "sources/Q22060188.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22060188.json",
+        "retrieved_utc": "2026-11-24T11:37:27.863488+00:00",
+        "status": 200,
+        "bytes": 54696,
+        "sha256": "6c410b38964592873e22b35a9ccab3aee8ebf29e8ced44838be0c6ceb7a584df"
+      }
+    },
+    {
+      "file": "sources/Q22060661.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22060661.json",
+        "retrieved_utc": "2026-11-24T11:37:28.786489+00:00",
+        "status": 200,
+        "bytes": 5018,
+        "sha256": "17136d2bce02a26cfe1183a1fa19edca36156f8688ca34a8320e532bbc097c89"
+      }
+    },
+    {
+      "file": "sources/Q22062840.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22062840.json",
+        "retrieved_utc": "2026-11-24T11:37:30.358614+00:00",
+        "status": 200,
+        "bytes": 62092,
+        "sha256": "6fc889371034e534d9b1ad8a5d408a8fa982963648e2aa595d843c8b09c99e5a"
+      }
+    },
+    {
+      "file": "sources/Q22062856.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22062856.json",
+        "retrieved_utc": "2026-11-24T11:37:31.483730+00:00",
+        "status": 200,
+        "bytes": 59329,
+        "sha256": "53e79248cc7c1d39fc685f8f1b64d867ab96ef8d822aad61b7733feba5d71636"
+      }
+    },
+    {
+      "file": "sources/Q22064018.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22064018.json",
+        "retrieved_utc": "2026-11-24T11:38:41.461611+00:00",
+        "status": 200,
+        "bytes": 57248,
+        "sha256": "e7ad19f2e9a55b19c277a93b1e04d838a17391fab7dfa151aa3a5a3df2fa74d0"
+      }
+    },
+    {
+      "file": "sources/Q22066862.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22066862.json",
+        "retrieved_utc": "2026-11-24T11:38:42.476799+00:00",
+        "status": 200,
+        "bytes": 60985,
+        "sha256": "4dce1ebf7e9a6765c9731d95ddb9f59871f58af1164da94b15f71de1fa7b73b9"
+      }
+    },
+    {
+      "file": "sources/Q22067433.error0.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22067433.json",
+        "retrieved_utc": "2026-11-24T11:38:43.469664+00:00",
+        "status": 200,
+        "bytes": 63208,
+        "sha256": "1674ee8d945bdf9f91b00c33c8e493c4d4c99a6a378ad353184f8eeb2db6b572"
+      }
+    },
+    {
+      "file": "sources/Q22397700.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22397700.json",
+        "retrieved_utc": "2026-11-24T11:38:45.197186+00:00",
+        "status": 200,
+        "bytes": 4448,
+        "sha256": "1380337c992e0699abd2b79e9ed69d9fb6b2ef6c6558d9e664a7186271736646"
+      }
+    },
+    {
+      "file": "sources/Q2279959.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2279959.json",
+        "retrieved_utc": "2026-11-24T11:38:46.617463+00:00",
+        "status": 200,
+        "bytes": 62308,
+        "sha256": "f34845845e3ba728ec216acd3bc64f37ddfc5782f69a6f13c509791315b5c7b4"
+      }
+    },
+    {
+      "file": "sources/Q2329720.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2329720.json",
+        "retrieved_utc": "2026-11-24T11:38:47.684969+00:00",
+        "status": 200,
+        "bytes": 68063,
+        "sha256": "719246502a4c27f691bc12f9b59ada19fab3d06107a4202bfde9049d9bd3346a"
+      }
+    },
+    {
+      "file": "sources/Q2456298.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2456298.json",
+        "retrieved_utc": "2026-11-24T11:38:48.811339+00:00",
+        "status": 200,
+        "bytes": 60781,
+        "sha256": "34b8f0245f367fb5c15a8a400485ab729a719ac1fa46341d8a16941ce4d65cc6"
+      }
+    },
+    {
+      "file": "sources/Q2464842.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2464842.json",
+        "retrieved_utc": "2026-11-24T11:38:49.808092+00:00",
+        "status": 200,
+        "bytes": 66528,
+        "sha256": "032ceb829e3701a1c2ed6a36cd535f95839ab526e6e2a5f3a1425efce841b2b9"
+      }
+    },
+    {
+      "file": "sources/Q2472554.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2472554.json",
+        "retrieved_utc": "2026-11-24T11:38:50.685327+00:00",
+        "status": 200,
+        "bytes": 52788,
+        "sha256": "fa17d578d86132a7efe0763c8f058cf9bf1f2a14c5646c9179572f600751d2cb"
+      }
+    },
+    {
+      "file": "sources/Q2604168.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2604168.json",
+        "retrieved_utc": "2026-11-24T11:38:52.152201+00:00",
+        "status": 200,
+        "bytes": 55473,
+        "sha256": "5a0e8b087f126194e1e00c5931d0913fddd6e252d95db789d623ed112e08dcfd"
+      }
+    },
+    {
+      "file": "sources/Q271393.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q271393.json",
+        "retrieved_utc": "2026-11-24T11:38:52.933227+00:00",
+        "status": 200,
+        "bytes": 81838,
+        "sha256": "831e779e752c20efca8b44af32b3624afbf4cba400f2582d583fdef04bd11bbe"
+      }
+    },
+    {
+      "file": "sources/Q2844.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2844.json",
+        "retrieved_utc": "2026-11-24T11:38:54.637635+00:00",
+        "status": 200,
+        "bytes": 182817,
+        "sha256": "f2e9678372736e230d62b6d788002be5572aef08310583a7624ad119a1293954"
+      }
+    },
+    {
+      "file": "sources/Q301700.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q301700.json",
+        "retrieved_utc": "2026-11-24T11:38:55.900552+00:00",
+        "status": 200,
+        "bytes": 59431,
+        "sha256": "7bc316efa141210ad6c7ef97801319de701b39e66bb3a9e140629fce337f8a13"
+      }
+    },
+    {
+      "file": "sources/Q32136734.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q32136734.json",
+        "retrieved_utc": "2026-11-24T11:38:56.467574+00:00",
+        "status": 200,
+        "bytes": 5067,
+        "sha256": "6db011c9a65499b7cc38c4d8e62a6b0122c8b6439f0c214ca6e7207a28eee074"
+      }
+    },
+    {
+      "file": "sources/Q368933.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q368933.json",
+        "retrieved_utc": "2026-11-24T11:38:57.617094+00:00",
+        "status": 200,
+        "bytes": 51474,
+        "sha256": "5fadac22680d717e358e4dd16dea8b2cd4cb58e379718772e1cba5ec1e08b44a"
+      }
+    },
+    {
+      "file": "sources/Q369466.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q369466.json",
+        "retrieved_utc": "2026-11-24T11:38:59.077468+00:00",
+        "status": 200,
+        "bytes": 52465,
+        "sha256": "19d9ef762e42e15685fde31551cbe59860df5199413213b0e0b4ce973378df56"
+      }
+    },
+    {
+      "file": "sources/Q41115.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q41115.json",
+        "retrieved_utc": "2026-11-24T11:38:59.905601+00:00",
+        "status": 200,
+        "bytes": 306222,
+        "sha256": "2596aa79c5cbd477e1f276a01427b38761569ea34eefab6095b5329e3e97e59e"
+      }
+    },
+    {
+      "file": "sources/Q428892.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q428892.json",
+        "retrieved_utc": "2026-11-24T11:39:00.803752+00:00",
+        "status": 200,
+        "bytes": 55961,
+        "sha256": "d6b572c05961cf0ac78609a4a22e34de3e695ffcde00ef8f84dcec824b9b7099"
+      }
+    },
+    {
+      "file": "sources/Q431778.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q431778.json",
+        "retrieved_utc": "2026-11-24T11:39:01.904678+00:00",
+        "status": 200,
+        "bytes": 66051,
+        "sha256": "a128ad1ed9477e3692eea5851564adb1101e784c4f2bb992c39774da949ca9eb"
+      }
+    },
+    {
+      "file": "sources/Q43255.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q43255.json",
+        "retrieved_utc": "2026-11-24T11:39:04.210088+00:00",
+        "status": 200,
+        "bytes": 225661,
+        "sha256": "465c92f2a667eaba1e6a6ff9a7a92d5885da8100a341a88cf22d4786f918a268"
+      }
+    },
+    {
+      "file": "sources/Q453479.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q453479.json",
+        "retrieved_utc": "2026-11-24T11:39:05.784207+00:00",
+        "status": 200,
+        "bytes": 63369,
+        "sha256": "5400b0ed99f0bc8304637aa78fd067395b245187efe6b116ce76c4e326834c18"
+      }
+    },
+    {
+      "file": "sources/Q490022.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q490022.json",
+        "retrieved_utc": "2026-11-24T11:39:06.467906+00:00",
+        "status": 200,
+        "bytes": 65654,
+        "sha256": "5344f2a7090b4d241d1340fb7222a11e25c15dd33b9d17f3a88b47212763d244"
+      }
+    },
+    {
+      "file": "sources/Q509584.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q509584.json",
+        "retrieved_utc": "2026-11-24T11:39:07.524892+00:00",
+        "status": 200,
+        "bytes": 68882,
+        "sha256": "6dca7de1e13f7a9dbd138f4f07d9ea78d4b7b0a2d508889ae0f4bc5a3378ca23"
+      }
+    },
+    {
+      "file": "sources/Q510736.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q510736.json",
+        "retrieved_utc": "2026-11-24T11:39:08.519383+00:00",
+        "status": 200,
+        "bytes": 58362,
+        "sha256": "3a6c6ba94f8e462a19f5bc03a8f6eb01c6c574556c323ddb1cead29a5970b200"
+      }
+    },
+    {
+      "file": "sources/Q515107.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q515107.json",
+        "retrieved_utc": "2026-11-24T11:39:10.062697+00:00",
+        "status": 200,
+        "bytes": 60981,
+        "sha256": "2fb15c03f15d078e1c81cf54af1bbc9e1137454bd7d592f8f9b357f3beedb249"
+      }
+    },
+    {
+      "file": "sources/Q517607.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q517607.json",
+        "retrieved_utc": "2026-11-24T11:39:11.132658+00:00",
+        "status": 200,
+        "bytes": 54888,
+        "sha256": "155420cdf8e1f2429aeb18d914b9472f34a8bf5ee297c7a5d77174826fc78045"
+      }
+    },
+    {
+      "file": "sources/Q521452.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q521452.json",
+        "retrieved_utc": "2026-11-24T11:39:11.761687+00:00",
+        "status": 200,
+        "bytes": 55234,
+        "sha256": "35a699bdb5e73fc6cb8334c7015729c49fdc131471341f4871db8ae583d208bd"
+      }
+    },
+    {
+      "file": "sources/Q522587.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q522587.json",
+        "retrieved_utc": "2026-11-24T11:39:13.026313+00:00",
+        "status": 200,
+        "bytes": 55923,
+        "sha256": "9f18ec7ac24c1aac00eb7f5b028df1b1a403ec30dacf7af762a2e7959ab773b8"
+      }
+    },
+    {
+      "file": "sources/Q523587.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q523587.json",
+        "retrieved_utc": "2026-11-24T11:39:14.272752+00:00",
+        "status": 200,
+        "bytes": 56050,
+        "sha256": "25914dca48183843ba0849ad46251b8b14539fd2a20c509b7547ced3cd4de118"
+      }
+    },
+    {
+      "file": "sources/Q542347.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q542347.json",
+        "retrieved_utc": "2026-11-24T11:39:15.334700+00:00",
+        "status": 200,
+        "bytes": 64060,
+        "sha256": "4ed5604ff0a4e23e982f14825d370e34b2ac6c1dff2e9b42d111057d06b452df"
+      }
+    },
+    {
+      "file": "sources/Q548635.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q548635.json",
+        "retrieved_utc": "2026-11-24T11:39:16.268916+00:00",
+        "status": 200,
+        "bytes": 64610,
+        "sha256": "0bc913deb706d76f71dbb13d6760e538e059e199c9680ea9fa7726ef512366dd"
+      }
+    },
+    {
+      "file": "sources/Q549144.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q549144.json",
+        "retrieved_utc": "2026-11-24T11:39:17.066465+00:00",
+        "status": 200,
+        "bytes": 56381,
+        "sha256": "c27ff8b527ba3ca265f67b823a3baf8c01b070b5cc8c46caa56c186f132134be"
+      }
+    },
+    {
+      "file": "sources/Q549543.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q549543.json",
+        "retrieved_utc": "2026-11-24T11:39:18.157329+00:00",
+        "status": 200,
+        "bytes": 55501,
+        "sha256": "734c997819f812c534bf8c02c525b4f19fb041ae898697c0ce7d51445b5d1a79"
+      }
+    },
+    {
+      "file": "sources/Q574738.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q574738.json",
+        "retrieved_utc": "2026-11-24T11:39:19.414311+00:00",
+        "status": 200,
+        "bytes": 54384,
+        "sha256": "95fcf22c536ff8f39f6b19eb3945199d3ab0676b2fe4ff4b0d88b6feda4a5d25"
+      }
+    },
+    {
+      "file": "sources/Q584172.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q584172.json",
+        "retrieved_utc": "2026-11-24T11:39:20.182329+00:00",
+        "status": 200,
+        "bytes": 57757,
+        "sha256": "8515ef3f8ff5f97ee68c83fb180449fb11c2e400ce3c7c792079a7dd1f7cf311"
+      }
+    },
+    {
+      "file": "sources/Q586682.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q586682.json",
+        "retrieved_utc": "2026-11-24T11:39:21.223390+00:00",
+        "status": 200,
+        "bytes": 58999,
+        "sha256": "5b40197c90aa0aceb75f83eb85f5881a19e0cfc35316a79602a666c1f92ab523"
+      }
+    },
+    {
+      "file": "sources/Q594784.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q594784.json",
+        "retrieved_utc": "2026-11-24T11:39:22.375675+00:00",
+        "status": 200,
+        "bytes": 53864,
+        "sha256": "14a0fdc4561ec4c7af62ee87c93a6bdef27117f9cd4e3055a8df27b4c12436e7"
+      }
+    },
+    {
+      "file": "sources/Q596359.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q596359.json",
+        "retrieved_utc": "2026-11-24T11:39:23.761956+00:00",
+        "status": 200,
+        "bytes": 54645,
+        "sha256": "6632192909838d9260583e2ade66e184c49b3f309e9e207d6caa70424ec8acfc"
+      }
+    },
+    {
+      "file": "sources/Q602405.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q602405.json",
+        "retrieved_utc": "2026-11-24T11:39:24.372071+00:00",
+        "status": 200,
+        "bytes": 48426,
+        "sha256": "912674e08e704a469a8d42a14e25274aaf2e51b487764e1d27499c6fe20685d2"
+      }
+    },
+    {
+      "file": "sources/Q612610.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q612610.json",
+        "retrieved_utc": "2026-11-24T11:39:25.707431+00:00",
+        "status": 200,
+        "bytes": 57483,
+        "sha256": "1d74591cb60b9a3949f7eb871ef404e0bf02b01b25103620676959ff23b202e0"
+      }
+    },
+    {
+      "file": "sources/Q614428.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q614428.json",
+        "retrieved_utc": "2026-11-24T11:39:27.381351+00:00",
+        "status": 200,
+        "bytes": 50409,
+        "sha256": "886898d3b6d9156244810e9e0fd241aefef6d70135c9943f4cff5f9a053831be"
+      }
+    },
+    {
+      "file": "sources/Q628172.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q628172.json",
+        "retrieved_utc": "2026-11-24T11:39:28.108867+00:00",
+        "status": 200,
+        "bytes": 59597,
+        "sha256": "bc7c55b8d9d424f8f8a483e1fdf914c3b62c3262cec7796fbf95b7a2e795240f"
+      }
+    },
+    {
+      "file": "sources/Q628978.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q628978.json",
+        "retrieved_utc": "2026-11-24T11:39:29.184483+00:00",
+        "status": 200,
+        "bytes": 67183,
+        "sha256": "ffdcb8b1c9e6e4d14a301b97d0c0defd33de31487b8fe84e069cbf681712b11b"
+      }
+    },
+    {
+      "file": "sources/Q630661.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q630661.json",
+        "retrieved_utc": "2026-11-24T11:39:30.553381+00:00",
+        "status": 200,
+        "bytes": 54219,
+        "sha256": "b10e66068950328ae24c4965c7f0c935bebba2e1eede6ab88daf3b3b9ffd16d0"
+      }
+    },
+    {
+      "file": "sources/Q632744.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q632744.json",
+        "retrieved_utc": "2026-11-24T11:39:31.244500+00:00",
+        "status": 200,
+        "bytes": 55839,
+        "sha256": "f7a62b79c9dde9ace961dd6a9e5e42025bdd7efd969e5b77dd561989300008db"
+      }
+    },
+    {
+      "file": "sources/Q652959.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q652959.json",
+        "retrieved_utc": "2026-11-24T11:39:32.275737+00:00",
+        "status": 200,
+        "bytes": 53450,
+        "sha256": "b7dc25bf19b4864ca0a0c0b9e8f0864775e4ec4333c5e7c3c63ec3e95a7a0c1a"
+      }
+    },
+    {
+      "file": "sources/Q655097.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q655097.json",
+        "retrieved_utc": "2026-11-24T11:39:33.775891+00:00",
+        "status": 200,
+        "bytes": 66331,
+        "sha256": "ae540359fc73bd277517db4ada615e4e620d995fea9ab114956f6aab45dc941e"
+      }
+    },
+    {
+      "file": "sources/Q664219.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q664219.json",
+        "retrieved_utc": "2026-11-24T11:39:34.840132+00:00",
+        "status": 200,
+        "bytes": 67037,
+        "sha256": "399a70dc4fde7ab34f755461148feb9ab81b0027c668743c5ce03abbef60be0b"
+      }
+    },
+    {
+      "file": "sources/Q665638.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q665638.json",
+        "retrieved_utc": "2026-11-24T11:39:35.812328+00:00",
+        "status": 200,
+        "bytes": 55733,
+        "sha256": "fc08ae901bab7b7e6893edd87bf9ca8f0f621e566c14be46a3297d4ef0adccb8"
+      }
+    },
+    {
+      "file": "sources/Q668048.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q668048.json",
+        "retrieved_utc": "2026-11-24T11:39:37.046988+00:00",
+        "status": 200,
+        "bytes": 56188,
+        "sha256": "76141e1dbc5182742939e4207a41d2b08e4558aaa61c3ed3c71271146fe7859f"
+      }
+    },
+    {
+      "file": "sources/Q675175.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q675175.json",
+        "retrieved_utc": "2026-11-24T11:39:38.194924+00:00",
+        "status": 200,
+        "bytes": 55768,
+        "sha256": "e2764ea807f35c4bdd8e940dc3d12cbd736c46d5fd90a7e267418087f2cf142d"
+      }
+    },
+    {
+      "file": "sources/Q676719.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q676719.json",
+        "retrieved_utc": "2026-11-24T11:39:38.929881+00:00",
+        "status": 200,
+        "bytes": 62519,
+        "sha256": "fd6ae92d1e4fee37cdf916d78cd33d94399eb3999a143c66f814f15282013f5b"
+      }
+    },
+    {
+      "file": "sources/Q680275.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q680275.json",
+        "retrieved_utc": "2026-11-24T11:39:39.932878+00:00",
+        "status": 200,
+        "bytes": 55294,
+        "sha256": "3484caafb39b97f9b31a79687c66a6743e59a9fa8bfd31191933f9ed0305b66f"
+      }
+    },
+    {
+      "file": "sources/Q682185.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q682185.json",
+        "retrieved_utc": "2026-11-24T11:39:41.334473+00:00",
+        "status": 200,
+        "bytes": 56545,
+        "sha256": "024a480ca164a31c330325b6cba31ab5d94634cfd71a84b3a29c23e27776fbb0"
+      }
+    },
+    {
+      "file": "sources/Q685271.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q685271.json",
+        "retrieved_utc": "2026-11-24T11:39:42.829959+00:00",
+        "status": 200,
+        "bytes": 56187,
+        "sha256": "1ac7036fe8d3d3b68c1ccd231b0e651a78d9055a260d2ffae947ad447b9417f3"
+      }
+    },
+    {
+      "file": "sources/Q690299.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q690299.json",
+        "retrieved_utc": "2026-11-24T11:39:44.056261+00:00",
+        "status": 200,
+        "bytes": 58245,
+        "sha256": "c7274da0f0a9f2b2b3725793de0736fa8f385c194803a4eeff5b89d90ebb169d"
+      }
+    },
+    {
+      "file": "sources/Q693685.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q693685.json",
+        "retrieved_utc": "2026-11-24T11:39:44.973206+00:00",
+        "status": 200,
+        "bytes": 51616,
+        "sha256": "b9d81c12881b10f4982b1e2386859e8d1b53454df4a3cdddd4a86c3cc70b0697"
+      }
+    },
+    {
+      "file": "sources/Q729434.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q729434.json",
+        "retrieved_utc": "2026-11-24T11:39:45.854654+00:00",
+        "status": 200,
+        "bytes": 57972,
+        "sha256": "6f04c9f46ce7f4761ef9003cc1d5b6eb19a74fedfd59032e02bcb51713016373"
+      }
+    },
+    {
+      "file": "sources/Q730130.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q730130.json",
+        "retrieved_utc": "2026-11-24T11:39:47.051373+00:00",
+        "status": 200,
+        "bytes": 52025,
+        "sha256": "548634bb3086e4a7d98ce40c3d07347592442fbdc33f1364311c4811c0a62c84"
+      }
+    },
+    {
+      "file": "sources/Q746291.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q746291.json",
+        "retrieved_utc": "2026-11-24T11:39:48.405410+00:00",
+        "status": 200,
+        "bytes": 66076,
+        "sha256": "963baf6a92d46e1f84182e5f4a7485f4789ff1c9123beae2398c658fb4befb5a"
+      }
+    },
+    {
+      "file": "sources/Q749396.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q749396.json",
+        "retrieved_utc": "2026-11-24T11:39:49.474532+00:00",
+        "status": 200,
+        "bytes": 65944,
+        "sha256": "b0843aa7fe4403f6be88fe97d9d1e075cf2eec2b0f8e38bfa9b75b0349e51d75"
+      }
+    },
+    {
+      "file": "sources/Q753044.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q753044.json",
+        "retrieved_utc": "2026-11-24T11:39:50.736412+00:00",
+        "status": 200,
+        "bytes": 79042,
+        "sha256": "c7b06f22e2c1c2a61f37a72a91b9c33ef43d6316dee199cd47fae2b742bd2e0b"
+      }
+    },
+    {
+      "file": "sources/Q767395.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q767395.json",
+        "retrieved_utc": "2026-11-24T11:39:51.735749+00:00",
+        "status": 200,
+        "bytes": 58930,
+        "sha256": "eaffdb99ee530a82c58f6cbfea373a7c92a7fa9a552d57931047754c343205e1"
+      }
+    },
+    {
+      "file": "sources/Q769811.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q769811.json",
+        "retrieved_utc": "2026-11-24T11:39:53.309490+00:00",
+        "status": 200,
+        "bytes": 55344,
+        "sha256": "d0332aa62527d74c2568566a63a3343a9eef89f6381a7e8e3da332f10e61a4ca"
+      }
+    },
+    {
+      "file": "sources/Q773466.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q773466.json",
+        "retrieved_utc": "2026-11-24T11:39:54.225808+00:00",
+        "status": 200,
+        "bytes": 63002,
+        "sha256": "b0f684493b87d673c6e1bce5a9ec6c811f18f2dc8acf626bf3855564141f3885"
+      }
+    },
+    {
+      "file": "sources/Q775204.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q775204.json",
+        "retrieved_utc": "2026-11-24T11:39:55.592793+00:00",
+        "status": 200,
+        "bytes": 54832,
+        "sha256": "282a7cd3a3c6d697fc823210f401642d2ddf0ddc5b5e0fbdb1075d551d0adff2"
+      }
+    },
+    {
+      "file": "sources/Q790342.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q790342.json",
+        "retrieved_utc": "2026-11-24T11:39:56.766828+00:00",
+        "status": 200,
+        "bytes": 63218,
+        "sha256": "4ee4db96005d07d6a991bfd900d5cdd491ea596586047e0d163369d885020916"
+      }
+    },
+    {
+      "file": "sources/Q841222.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q841222.json",
+        "retrieved_utc": "2026-11-24T11:39:57.444582+00:00",
+        "status": 200,
+        "bytes": 71385,
+        "sha256": "03ac21d42214dae86d38322fdfe60dfa09e619cddac1927c2d2aca41bf08c68e"
+      }
+    },
+    {
+      "file": "sources/Q8678.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8678.json",
+        "retrieved_utc": "2026-11-24T11:39:59.567798+00:00",
+        "status": 200,
+        "bytes": 348618,
+        "sha256": "dd856921f82644f206fc5086e99ffc8c7db936e450ba315063eba37e8d390f09"
+      }
+    },
+    {
+      "file": "sources/Q891725.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q891725.json",
+        "retrieved_utc": "2026-11-24T11:40:00.557237+00:00",
+        "status": 200,
+        "bytes": 60322,
+        "sha256": "ff5bb4aeca2600586b717b2f9fb8427013de3e1b1c35763214ab7d386b1f8009"
+      }
+    },
+    {
+      "file": "sources/Q904782.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q904782.json",
+        "retrieved_utc": "2026-11-24T11:40:01.665550+00:00",
+        "status": 200,
+        "bytes": 68260,
+        "sha256": "4c82f13ebe64271c283afe50e9a7594578da544219e52e93d187b73d57b81ae7"
+      }
+    },
+    {
+      "file": "sources/Q906717.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q906717.json",
+        "retrieved_utc": "2026-11-24T11:40:02.531536+00:00",
+        "status": 200,
+        "bytes": 69722,
+        "sha256": "7278ee5b4063cb8e6e1388fdb8770d1f4fffd048118643e722827657bfc658b8"
+      }
+    },
+    {
+      "file": "sources/Q924503.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q924503.json",
+        "retrieved_utc": "2026-11-24T11:40:04.375773+00:00",
+        "status": 200,
+        "bytes": 56630,
+        "sha256": "1ef80f4236e36521957df26753527e3ae55ced26c458760d98a3938b4a03b821"
+      }
+    },
+    {
+      "file": "sources/Q927349.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q927349.json",
+        "retrieved_utc": "2026-11-24T11:40:05.141347+00:00",
+        "status": 200,
+        "bytes": 57452,
+        "sha256": "7efb6999d17d1358ac4527ffc6f9670219f6dcaa76cb971c882c69555cc38fc2"
+      }
+    },
+    {
+      "file": "sources/Q927504.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q927504.json",
+        "retrieved_utc": "2026-11-24T11:40:06.476002+00:00",
+        "status": 200,
+        "bytes": 69847,
+        "sha256": "844549602fa7ee313009694b6f40671fd01bd1a2ae5b33b40b56cd6857f32b41"
+      }
+    },
+    {
+      "file": "sources/Q928704.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q928704.json",
+        "retrieved_utc": "2026-11-24T11:40:07.257094+00:00",
+        "status": 200,
+        "bytes": 67276,
+        "sha256": "8b60d18882ebf961e017139545255e95d4c4976d2ced8eabe37c7b4e28c177b3"
+      }
+    },
+    {
+      "file": "sources/Q929116.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q929116.json",
+        "retrieved_utc": "2026-11-24T11:40:09.045944+00:00",
+        "status": 200,
+        "bytes": 61566,
+        "sha256": "cd199381adb4aa32745d42b5e761204031a6ccc3289212bf2ebf29a7caa37be9"
+      }
+    },
+    {
+      "file": "sources/Q930196.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q930196.json",
+        "retrieved_utc": "2026-11-24T11:40:10.342002+00:00",
+        "status": 200,
+        "bytes": 65169,
+        "sha256": "7cf21ac3e51f9344328e31c2d664032ee7683b6771a242bff010f1ce44386063"
+      }
+    },
+    {
+      "file": "sources/Q938084.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q938084.json",
+        "retrieved_utc": "2026-11-24T11:40:11.845717+00:00",
+        "status": 200,
+        "bytes": 65749,
+        "sha256": "75594f47db71ad343b605250c8b31955be0e5898d007de88b1a2b49db4eb599a"
+      }
+    },
+    {
+      "file": "sources/Q945469.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q945469.json",
+        "retrieved_utc": "2026-11-24T11:40:12.894901+00:00",
+        "status": 200,
+        "bytes": 58564,
+        "sha256": "f476a66b80cdf1332eb0f22f76b608a7291d237222b9cca020e4f70e8e245ee5"
+      }
+    },
+    {
+      "file": "sources/Q952830.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q952830.json",
+        "retrieved_utc": "2026-11-24T11:40:14.039020+00:00",
+        "status": 200,
+        "bytes": 67588,
+        "sha256": "d0d4448a734a542bc5734eab7daba40b13a0b309478fc36d97568861da3ee4d5"
+      }
+    },
+    {
+      "file": "sources/Q953086.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q953086.json",
+        "retrieved_utc": "2026-11-24T11:40:15.064542+00:00",
+        "status": 200,
+        "bytes": 58814,
+        "sha256": "4eacacfc89fd04eed6919951ca4108f7ee8d9cd4030ba862bf3c66bfa077a86f"
+      }
+    },
+    {
+      "file": "sources/Q959440.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q959440.json",
+        "retrieved_utc": "2026-11-24T11:40:16.133517+00:00",
+        "status": 200,
+        "bytes": 60154,
+        "sha256": "f3f6e904ffc50057fd454a9e5d6c8c81c8a2d18c1a65b1a86bc11f9414ad3d9b"
+      }
+    },
+    {
+      "file": "sources/Q960834.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q960834.json",
+        "retrieved_utc": "2026-11-24T11:40:17.215865+00:00",
+        "status": 200,
+        "bytes": 59006,
+        "sha256": "4b8f662a2536de820444de854d09bffc1e7a64fa1e5e51e0867c298ba56b8bd9"
+      }
+    },
+    {
+      "file": "sources/Q962587.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q962587.json",
+        "retrieved_utc": "2026-11-24T11:40:18.394383+00:00",
+        "status": 200,
+        "bytes": 73480,
+        "sha256": "8c37245ac8b90a15b59af425322b94077729473c906d8928a25088f962d22204"
+      }
+    },
+    {
+      "file": "sources/Q964725.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q964725.json",
+        "retrieved_utc": "2026-11-24T11:40:19.414433+00:00",
+        "status": 200,
+        "bytes": 57183,
+        "sha256": "23b8a45d6cc316a4278521c06b9cbc423a4536610f574bbb54b98c1d50224de5"
+      }
+    },
+    {
+      "file": "sources/Q965785.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q965785.json",
+        "retrieved_utc": "2026-11-24T11:40:20.351766+00:00",
+        "status": 200,
+        "bytes": 62160,
+        "sha256": "07d223a3f3099f0effd30d9ebd4e353515d74ea3ac1476d6f2ac56a6e33b4666"
+      }
+    },
+    {
+      "file": "sources/Q971568.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q971568.json",
+        "retrieved_utc": "2026-11-24T11:40:21.806324+00:00",
+        "status": 200,
+        "bytes": 60348,
+        "sha256": "82802c65a90a36367f6e845cde831216d18583383d41b944f0abb42ecdf6e820"
+      }
+    },
+    {
+      "file": "sources/Q972360.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q972360.json",
+        "retrieved_utc": "2026-11-24T11:40:22.551543+00:00",
+        "status": 200,
+        "bytes": 56702,
+        "sha256": "d2b2b634d35e1e02f3a688470e9b77fda15c0b522113c5df18e064a701d1d633"
+      }
+    },
+    {
+      "file": "sources/Q974915.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q974915.json",
+        "retrieved_utc": "2026-11-24T11:40:23.579551+00:00",
+        "status": 200,
+        "bytes": 57010,
+        "sha256": "42d0d397b911fefad3be262256e8ab183afe6c747e658ffc18c3e72aa1fc6d10"
+      }
+    },
+    {
+      "file": "sources/Q979443.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q979443.json",
+        "retrieved_utc": "2026-11-24T11:40:24.586597+00:00",
+        "status": 200,
+        "bytes": 56759,
+        "sha256": "4648f16fc3c405f2a74b4b5882e4ee19766d502187f1d232f7e70edae34a876d"
+      }
+    },
+    {
+      "file": "sources/Q980992.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q980992.json",
+        "retrieved_utc": "2026-11-24T11:40:25.781695+00:00",
+        "status": 200,
+        "bytes": 16138,
+        "sha256": "4e80be8d6c9c908439f16c1ca9d90bb9c5c4881e252d8828b24320b3747b86c0"
+      }
+    },
+    {
+      "file": "sources/Q985975.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q985975.json",
+        "retrieved_utc": "2026-11-24T11:40:27.197385+00:00",
+        "status": 200,
+        "bytes": 66094,
+        "sha256": "7ce39862090612ee098ed7abe58bdc1ae7579ddfe17d2427cc9fe4600bc43611"
+      }
+    },
+    {
+      "file": "sources/Q988677.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q988677.json",
+        "retrieved_utc": "2026-11-24T11:40:27.850471+00:00",
+        "status": 200,
+        "bytes": 64905,
+        "sha256": "1a337188c7d0f496d2bd6ced9e121b4a33cbb71ed5a8588b2b99f40bd196f2ed"
+      }
+    },
+    {
+      "file": "sources/Q988901.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q988901.json",
+        "retrieved_utc": "2026-11-24T11:40:29.746863+00:00",
+        "status": 200,
+        "bytes": 54687,
+        "sha256": "e2f33cdeeb307eccc2115028fce707bbee891020674a1a448c90831e32b2e85a"
+      }
+    },
+    {
+      "file": "sources/Q989519.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q989519.json",
+        "retrieved_utc": "2026-11-24T11:40:31.007359+00:00",
+        "status": 200,
+        "bytes": 53951,
+        "sha256": "4d73595690db5203b4cfd5ff71582a01be82dd2982c87eb98a96a3b83a2be604"
+      }
+    },
+    {
+      "file": "sources/Q991120.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q991120.json",
+        "retrieved_utc": "2026-11-24T11:40:31.928030+00:00",
+        "status": 200,
+        "bytes": 54867,
+        "sha256": "74955450b34e1a6e092c8faf8c4b25606e010f88d699887779eebe7b93710cd1"
+      }
+    },
+    {
+      "file": "sources/Q991134.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q991134.json",
+        "retrieved_utc": "2026-11-24T11:40:32.897440+00:00",
+        "status": 200,
+        "bytes": 57166,
+        "sha256": "609a2c4b99df82a04f30de18a7c302b7ec53cff67d0e3f09149936b59687155d"
+      }
+    },
+    {
+      "file": "sources/Q993507.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q993507.json",
+        "retrieved_utc": "2026-11-24T11:40:33.936180+00:00",
+        "status": 200,
+        "bytes": 57329,
+        "sha256": "976c36582529c33bf900184c3c444b3a5c902c93d0dc7d34aad8af633ef0d91a"
+      }
+    },
+    {
+      "file": "sources/Q993530.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q993530.json",
+        "retrieved_utc": "2026-11-24T11:40:34.970097+00:00",
+        "status": 200,
+        "bytes": 68576,
+        "sha256": "6202fbc4bcdde220e3c742a155d65309d68a3ee138ff0b27bc1ee6665a09f8fc"
+      }
+    },
+    {
+      "file": "sources/cities1000.zip",
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/cities1000.zip",
+        "retrieved_utc": "2026-11-14T08:12:04.457147+00:00",
+        "status": null,
+        "bytes": 11095530,
+        "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab"
+      }
+    },
+    {
+      "file": "sources/gn_wikidata.json",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-20T08:20:29.809146+00:00",
+        "status": 200,
+        "bytes": 130006,
+        "sha256": "0b2c2a797663de58ff43097a1b0ea307f420576a50c6865e561dd0b256b00e17"
+      }
+    },
+    {
+      "file": "sources/own_p625.json",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-24T11:09:27.636609+00:00",
+        "status": 200,
+        "bytes": 1362692,
+        "sha256": "af23bb61283646fa80fe2656a1002cd43ed3c3c3ba5bf99f7efe45c06df7132e"
+      }
+    },
+    {
+      "file": "sources/register.json",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": null,
+        "status": null,
+        "bytes": 3748384,
+        "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e"
+      }
+    },
+    {
+      "file": "sources/residual_bulk.json",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-24T11:33:06.645744+00:00",
+        "status": 200,
+        "bytes": 8462,
+        "sha256": "3ea3470f2a1efd48c37e7677fff1bd06b8d05e6555e364e93dd38b7257a750b5"
+      }
+    },
+    {
+      "file": "sources/rio_codes.json",
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
+        "retrieved_utc": "2026-11-23T08:27:01.082984+00:00",
+        "status": 200,
+        "bytes": 214328,
+        "sha256": "1c97b361e47b03ec7b93ae1adf813b45fcf859f5b6f5621e38fc34dd86ebda83"
+      }
+    },
+    {
+      "file": "sources/rio_polygons.geojson",
+      "receipt": {
+        "url": "https://services1.arcgis.com/OlP4dGNtIcnD3RYf/arcgis/rest/services/IPSBairros/FeatureServer/0/query?f=geojson&where=1%3D1&outFields=*&outSR=4326",
+        "retrieved_utc": "2026-11-24T08:01:11.860139+00:00",
+        "status": 200,
+        "bytes": 4886305,
+        "sha256": "ba51b5cbacfaedee7e67b22c083c72bf35296f12efcf2daebf4d8ee356660b79"
+      }
+    }
+  ],
+  "licences": {
+    "Wikidata": "CC0 structured facts",
+    "IBGE": "DTB/Localidades credited under existing owner-accepted open-data reuse decision; Malha CC BY 4.0 reference only",
+    "GeoNames": "CC BY 4.0; attribution already present; frozen and full dumps retained"
+  }
+}
