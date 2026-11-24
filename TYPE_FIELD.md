@@ -534,9 +534,11 @@ The [addition ledger](.github/fixes-docs/ledgers/br_add2_v6x.jsonl) records the 
 missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. The
 [remaining-register ledger](.github/fixes-docs/ledgers/br_rest_v6x.jsonl) then considers all 37 current GDF RAs: the 33
 of LC 958/2019, Arapoanga and Água Quente (Laws 7.190/2022 and 7.191/2022), and Ponte Alta and 26 de Setembro (Laws
-7.917/2026 and 7.918/2026). It adds 6 RAs with their own item and a contained point, and holds 6: Planaltina, Sol
-Nascente/Pôr do Sol, Arniqueira, Água Quente, 26 de Setembro and Ponte Alta. Plano Piloto stays represented by Brasília
-row 10776, unchanged. Planaltina 13934 stays `city` because it has no own item; its identity and old population are kept.
+7.917/2026 and 7.918/2026). It adds 6 RAs with their own item and a contained point, and holds 6. Planaltina 13934 stays
+`city`, with its identity and old population kept, because the row stores no Wikidata item, so it cannot be proved to be
+the RA (an RA item, Q2577688, exists). 26 de Setembro and Ponte Alta have only bare Wikidata stubs with no class,
+location or point. Sol Nascente/Pôr do Sol, Arniqueira and Água Quente have no open point inside them. Plano Piloto
+stays represented by Brasília row 10776, unchanged.
 New RAs have no population, because no reusable dated count for an RA was found.
 IPP's bairro layer holds 158 bairros plus one city-wide summary record (code 999), not 159 bairros. 157 of the 158 now
 have a row (139 added by that ledger); Santa Teresa is held. Each new bairro has its own contained open point and IPP's
