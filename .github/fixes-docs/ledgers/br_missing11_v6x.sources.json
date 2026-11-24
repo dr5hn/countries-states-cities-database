@@ -1,0 +1,489 @@
+{
+  "schema_version": 1,
+  "base": "4d03a736dacee674cd34dd166976ab00cdd92c10",
+  "ledger_sha256": "f4ef59e393e352bac86c6e6c1647a32ed583fab96fb872176a05a181b7cc953b",
+  "sources": [
+    {
+      "file": "sources/BR.zip",
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/BR.zip",
+        "retrieved_utc": "2026-11-24T10:10:35.800612+00:00",
+        "status": 200,
+        "bytes": 7182858,
+        "sha256": "8e45443458fdfdc959e7093dbeb9eba516bd29fd161f122d5dec7385c9b8d386"
+      }
+    },
+    {
+      "file": "sources/BR_Municipios_2025.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip",
+        "retrieved_utc": "2026-11-24T12:25:19.721904+00:00",
+        "status": 200,
+        "bytes": 237062431,
+        "sha256": "840bbe6f73726ef9d1460ce49fdfe01a278935c41180d3c893e25ca21db083bd"
+      }
+    },
+    {
+      "file": "sources/DTB_2025.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip",
+        "retrieved_utc": "2026-11-20T07:54:44.243056+00:00",
+        "status": 200,
+        "bytes": 1635600,
+        "sha256": "d077a0e48c36cf18bcc96268b4a436200c014c6b8522c1a62d894acaf39dad27"
+      }
+    },
+    {
+      "file": "sources/Localidades_Brasil_shp.zip",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/localidades/Localidades_do_Brasil/2022/Localidades_Brasil_shp.zip",
+        "retrieved_utc": "2026-11-20T07:56:31.960820+00:00",
+        "status": 200,
+        "bytes": 4511488,
+        "sha256": "1c0bec392891f6f284675e1b72c761f1b4a976599bdd3f0cb87fabf471382ca9"
+      }
+    },
+    {
+      "file": "sources/Q1019640.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1019640.json",
+        "retrieved_utc": "2026-11-24T12:22:54.786639+00:00",
+        "status": 200,
+        "bytes": 61231,
+        "sha256": "8559581c752bbb814854c10dc25b6a01690e912d2eac3ecff67466d9c55bed50"
+      }
+    },
+    {
+      "file": "sources/Q112038261.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q112038261.json",
+        "retrieved_utc": "2026-11-24T12:23:13.689397+00:00",
+        "status": 200,
+        "bytes": 3793,
+        "sha256": "61f974660186e8adc23e1849753197631b9367b959cef22d2ae3017e074e0e4d"
+      }
+    },
+    {
+      "file": "sources/Q1807858.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1807858.json",
+        "retrieved_utc": "2026-11-24T12:23:09.574090+00:00",
+        "status": 200,
+        "bytes": 62967,
+        "sha256": "f148196d20d814e04fbb96b326b496a720064f0b9dd48dda5dbc054c40e1934e"
+      }
+    },
+    {
+      "file": "sources/Q1808697.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1808697.json",
+        "retrieved_utc": "2026-11-24T12:22:53.103913+00:00",
+        "status": 200,
+        "bytes": 70515,
+        "sha256": "13ca87b85feee43a633a218b1b445fe8324fea26d36e05ec8d9d9889d8d3a47d"
+      }
+    },
+    {
+      "file": "sources/Q1812998.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1812998.json",
+        "retrieved_utc": "2026-11-24T12:22:57.298974+00:00",
+        "status": 200,
+        "bytes": 62148,
+        "sha256": "3714e7dbc68aa6b848c6c3cea640277060c3a3bafee343399cc3536eb6685f7b"
+      }
+    },
+    {
+      "file": "sources/Q2006399.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2006399.json",
+        "retrieved_utc": "2026-11-24T12:23:07.950389+00:00",
+        "status": 200,
+        "bytes": 62375,
+        "sha256": "0907a7d9e555338eb2d4c26dda04a688cc444a25610a210730b7f2217bd7a220"
+      }
+    },
+    {
+      "file": "sources/Q2068274.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2068274.json",
+        "retrieved_utc": "2026-11-24T12:23:01.090383+00:00",
+        "status": 200,
+        "bytes": 53214,
+        "sha256": "5f6c774e115cbc15374f47fd2d51742a6b10b2d66083e4fc77973ea20a248f56"
+      }
+    },
+    {
+      "file": "sources/Q22016396.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22016396.json",
+        "retrieved_utc": "2026-11-24T12:22:53.666654+00:00",
+        "status": 200,
+        "bytes": 8160,
+        "sha256": "c3e8425e97cf84b35668f20d1a124182041625e8b558ff7f46a9b301a0c35edb"
+      }
+    },
+    {
+      "file": "sources/Q22016482.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22016482.json",
+        "retrieved_utc": "2026-11-24T12:22:51.947310+00:00",
+        "status": 200,
+        "bytes": 8267,
+        "sha256": "7c77e49cd44c8bc7f383c0c77c46549bd64d71849162ae8c4a4b4aac14ebfb1c"
+      }
+    },
+    {
+      "file": "sources/Q22018370.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22018370.json",
+        "retrieved_utc": "2026-11-24T12:22:55.728828+00:00",
+        "status": 200,
+        "bytes": 6615,
+        "sha256": "33931ac00a389796a40096cd8d355bacc100f135f821756a37d4373c1bd651a2"
+      }
+    },
+    {
+      "file": "sources/Q22021324.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22021324.json",
+        "retrieved_utc": "2026-11-24T12:22:57.826304+00:00",
+        "status": 200,
+        "bytes": 4416,
+        "sha256": "954e9402f8cf05673423b68333128d0c7828bf3314cee9b2c739236c3f7afd22"
+      }
+    },
+    {
+      "file": "sources/Q22027354.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22027354.json",
+        "retrieved_utc": "2026-11-24T12:23:02.084888+00:00",
+        "status": 200,
+        "bytes": 7695,
+        "sha256": "3ee63a4192b9ba5233d1e1a85099c4d6142413622b262b3c1aaa0af0e016fbb5"
+      }
+    },
+    {
+      "file": "sources/Q22027549.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22027549.json",
+        "retrieved_utc": "2026-11-24T12:22:59.922210+00:00",
+        "status": 200,
+        "bytes": 7513,
+        "sha256": "dbd1d4c055707caf1937933df79098e7fcfc8458a993a3e1dd7d55379f9b709b"
+      }
+    },
+    {
+      "file": "sources/Q22030934.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22030934.json",
+        "retrieved_utc": "2026-11-24T12:23:04.210994+00:00",
+        "status": 200,
+        "bytes": 6545,
+        "sha256": "663178b9d14b972c30f314c30c15a6f0d1c39e756e48473d3e04c5753b99b477"
+      }
+    },
+    {
+      "file": "sources/Q22033441.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22033441.json",
+        "retrieved_utc": "2026-11-24T12:23:08.450937+00:00",
+        "status": 200,
+        "bytes": 7819,
+        "sha256": "e3a01f45a75c92ba7f59c821471f5e1a72bba89eca159775264bb59fe7d16584"
+      }
+    },
+    {
+      "file": "sources/Q22033444.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22033444.json",
+        "retrieved_utc": "2026-11-24T12:23:06.406206+00:00",
+        "status": 200,
+        "bytes": 8457,
+        "sha256": "112d0a062966676330158e789025ecaf71715df7208499fc3d63e2dfe1cbbf4f"
+      }
+    },
+    {
+      "file": "sources/Q22044272.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q22044272.json",
+        "retrieved_utc": "2026-11-24T12:23:10.497631+00:00",
+        "status": 200,
+        "bytes": 7722,
+        "sha256": "430234728a3cd8f19ab7e670cb47fd23ecafb65df450e81285764a5eb2cbdee1"
+      }
+    },
+    {
+      "file": "sources/Q431778.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q431778.json",
+        "retrieved_utc": "2026-11-24T12:23:12.135423+00:00",
+        "status": 200,
+        "bytes": 66051,
+        "sha256": "a128ad1ed9477e3692eea5851564adb1101e784c4f2bb992c39774da949ca9eb"
+      }
+    },
+    {
+      "file": "sources/Q490022.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q490022.json",
+        "retrieved_utc": "2026-11-24T12:23:05.370932+00:00",
+        "status": 200,
+        "bytes": 65654,
+        "sha256": "5344f2a7090b4d241d1340fb7222a11e25c15dd33b9d17f3a88b47212763d244"
+      }
+    },
+    {
+      "file": "sources/Q542347.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q542347.json",
+        "retrieved_utc": "2026-11-24T12:22:59.175639+00:00",
+        "status": 200,
+        "bytes": 64060,
+        "sha256": "4ed5604ff0a4e23e982f14825d370e34b2ac6c1dff2e9b42d111057d06b452df"
+      }
+    },
+    {
+      "file": "sources/Q664219.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q664219.json",
+        "retrieved_utc": "2026-11-24T12:23:03.722620+00:00",
+        "status": 200,
+        "bytes": 67037,
+        "sha256": "399a70dc4fde7ab34f755461148feb9ab81b0027c668743c5ce03abbef60be0b"
+      }
+    },
+    {
+      "file": "sources/Q980992.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q980992.json",
+        "retrieved_utc": "2026-11-24T12:23:12.680216+00:00",
+        "status": 200,
+        "bytes": 16138,
+        "sha256": "4e80be8d6c9c908439f16c1ca9d90bb9c5c4881e252d8828b24320b3747b86c0"
+      }
+    },
+    {
+      "file": "sources/cc_by_40_legalcode.html",
+      "receipt": {
+        "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+        "retrieved_utc": "2026-11-24T08:01:20.245590+00:00",
+        "status": 200,
+        "bytes": 49582,
+        "sha256": "0145a53ed209ac2d203f1bb3d774415576bad749074ce4bde0336afa074e6276"
+      }
+    },
+    {
+      "file": "sources/ce2022_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2022/UFs/CE/",
+        "retrieved_utc": "2026-11-24T12:27:35.180936+00:00",
+        "status": 200,
+        "bytes": 20856,
+        "sha256": "3ad7b2973f63fbb5ae637d9d673d283f5143b4639df973eb5efb0e8b50e869fc"
+      }
+    },
+    {
+      "file": "sources/ce_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/UFs/CE/",
+        "retrieved_utc": "2026-11-24T12:27:08.223059+00:00",
+        "status": 200,
+        "bytes": 20387,
+        "sha256": "ce99073f70365a692695dcd5f34116b63656ca9133773ef9fbb6c48e4ac52fd4"
+      }
+    },
+    {
+      "file": "sources/censo_bairros.geojson",
+      "receipt": {
+        "url": "https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Censo/Limites_administrativos_Censo_2022/MapServer/2/query?f=geojson&where=1%3D1&outFields=%2A&returnGeometry=true&outSR=4326",
+        "retrieved_utc": "2026-11-24T11:27:07.513139+00:00",
+        "status": 200,
+        "bytes": 4218126,
+        "sha256": "8b4e7995490c17e4aa4d8695ae0ea0eca271b59dbe6311c1c127dda269d8445c"
+      }
+    },
+    {
+      "file": "sources/cities1000.zip",
+      "receipt": {
+        "url": "https://download.geonames.org/export/dump/cities1000.zip",
+        "retrieved_utc": "2026-11-14T08:12:04.457147+00:00",
+        "status": null,
+        "bytes": 11095530,
+        "sha256": "9746156abe951d13c25631e876e620afb11fee5a987a22434351af2c19f1b3ab"
+      }
+    },
+    {
+      "file": "sources/fresh_rio_population_map_item_current.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/fd354740f1934bf5bf8e9b0e2b509aa9?f=json",
+        "retrieved_utc": "2026-11-24T10:10:51.623431+00:00",
+        "status": 200,
+        "bytes": 4334,
+        "sha256": "d10522cac3132da49e220b0089b282c70bf9342a4aedb3660bf781cb6f339564"
+      }
+    },
+    {
+      "file": "sources/geonames_licence.html",
+      "receipt": {
+        "url": "https://www.geonames.org/export/",
+        "retrieved_utc": "2026-11-24T12:26:27.373127+00:00",
+        "status": 200,
+        "bytes": 30597,
+        "sha256": "24a65536b7b417a4dc52175ba516e5b579bca0e8532fddb05a11830d5df836c8"
+      }
+    },
+    {
+      "file": "sources/jardim_district.geojson",
+      "receipt": {
+        "url": "https://servicodados.ibge.gov.br/api/v3/malhas/distritos/231020910?formato=application/vnd.geo%2Bjson&qualidade=maxima",
+        "retrieved_utc": "2026-11-24T12:27:59.717332+00:00",
+        "status": 404,
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "file": "sources/malhas_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/",
+        "retrieved_utc": "2026-11-24T12:23:26.191663+00:00",
+        "status": 200,
+        "bytes": 23329,
+        "sha256": "d67d94f2265b49c101c7c61f0687693d4cf445255e1d0ea957791293a810826e"
+      }
+    },
+    {
+      "file": "sources/municipio2022_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2022/",
+        "retrieved_utc": "2026-11-24T12:27:32.442208+00:00",
+        "status": 200,
+        "bytes": 20069,
+        "sha256": "db223ba5ff66f1c6168ab59bc2aa9309b06e5d6f696e4b9b99f387d640b6b8eb"
+      }
+    },
+    {
+      "file": "sources/municipio2025_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/",
+        "retrieved_utc": "2026-11-24T12:27:05.944236+00:00",
+        "status": 200,
+        "bytes": 19855,
+        "sha256": "233e0937ce14605863405f377e1ece5f5a546c72ed086c4717f3bb2215da9624"
+      }
+    },
+    {
+      "file": "sources/own_p625.json",
+      "receipt": {
+        "url": "https://qlever.dev/api/wikidata",
+        "retrieved_utc": "2026-11-24T11:09:27.636609+00:00",
+        "status": 200,
+        "bytes": 1362692,
+        "sha256": "af23bb61283646fa80fe2656a1002cd43ed3c3c3ba5bf99f7efe45c06df7132e"
+      }
+    },
+    {
+      "file": "sources/rio_population_layer.json",
+      "receipt": {
+        "url": "https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Censo/Limites_administrativos_Censo_2022/MapServer/2?f=json",
+        "retrieved_utc": "2026-11-24T08:01:13.301259+00:00",
+        "status": 200,
+        "bytes": 7901,
+        "sha256": "ecfeb999124062c1bbc3d868724625511dcebacd4bdfb04ca295596ca7fa6225"
+      }
+    },
+    {
+      "file": "sources/rio_population_rows.json",
+      "receipt": {
+        "url": "https://pgeo3.rio.rj.gov.br/arcgis/rest/services/Censo/Limites_administrativos_Censo_2022/MapServer/2/query?f=json&where=1%3D1&outFields=*&returnGeometry=false",
+        "retrieved_utc": "2026-11-24T08:01:16.965903+00:00",
+        "status": 200,
+        "bytes": 72120,
+        "sha256": "bf7d809feda720388eb0730918445c029f258c5582b5ae450644d6aff5e229d5"
+      }
+    },
+    {
+      "file": "sources/tbb-DATA_LICENSE",
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/blob/2026e/DATA_LICENSE",
+        "retrieved_utc": "2026-11-24T12:26:26.269007+00:00",
+        "status": 200,
+        "bytes": 399434,
+        "sha256": "4bdcc221342e2c5f7dcccd00c9856e7c41ba061cfa688f4fdca639a000d76a55"
+      }
+    },
+    {
+      "file": "sources/tbb-release.json",
+      "receipt": {
+        "url": "https://api.github.com/repos/evansiroky/timezone-boundary-builder/releases/tags/2026e",
+        "retrieved_utc": "2026-11-24T12:25:20.274576+00:00",
+        "status": 200,
+        "bytes": 31763,
+        "sha256": "af3e118c8f2445f372e1cbab586b5c9cb5adf5ebb0c5b17c6f55670fea755a95"
+      }
+    },
+    {
+      "file": "sources/timezones.geojson.zip",
+      "receipt": {
+        "url": "https://github.com/evansiroky/timezone-boundary-builder/releases/download/2026e/timezones.geojson.zip",
+        "retrieved_utc": "2026-11-24T12:27:04.374921+00:00",
+        "status": 200,
+        "bytes": 51940158,
+        "sha256": "a75361c760d6de2fc95c63e97e0b1086d5dfe6fdb2bc6d96efeb3a94673aaa01"
+      }
+    },
+    {
+      "file": "sources/ufs2022_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2022/UFs/",
+        "retrieved_utc": "2026-11-24T12:27:33.905446+00:00",
+        "status": 200,
+        "bytes": 25019,
+        "sha256": "65d95845c628a1dc5f1189c9c3a629b4fc18e68929cd8ce1feb042dbc436f5ca"
+      }
+    },
+    {
+      "file": "sources/ufs_directory.html",
+      "receipt": {
+        "url": "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/UFs/",
+        "retrieved_utc": "2026-11-24T12:27:07.217751+00:00",
+        "status": 200,
+        "bytes": 25019,
+        "sha256": "0cfd990409031d3714fdb1f00c72d2fe74f116f4db568fe68e354f22cbdfc344"
+      }
+    },
+    {
+      "file": "sources/Q929116.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q929116.json",
+        "retrieved_utc": "2026-11-24T12:31:22.844502+00:00",
+        "status": 200,
+        "bytes": 61566,
+        "sha256": "cd199381adb4aa32745d42b5e761204031a6ccc3289212bf2ebf29a7caa37be9"
+      }
+    },
+    {
+      "file": "sources/Q8678.json",
+      "receipt": {
+        "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8678.json",
+        "retrieved_utc": "2026-11-24T12:31:24.382134+00:00",
+        "status": 200,
+        "bytes": 348618,
+        "sha256": "dd856921f82644f206fc5086e99ffc8c7db936e450ba315063eba37e8d390f09"
+      }
+    }
+  ],
+  "derived_register": {
+    "file": "sources/register.json",
+    "sha256": "683362d6deccf927be9a2426243606ecb62349db851fa66a358486e92e1bf12e",
+    "provenance": "DTB_2025.zip; derived normalized registry, not an independent retrieval"
+  },
+  "licenses": {
+    "Wikidata": "CC0",
+    "GeoNames": "CC BY 4.0",
+    "IBGE": "Official code/name/category and polygon reference tests; existing IBGE attribution preserved",
+    "timezone_boundary_builder": "ODbL; reference timezone lookup only; no geometry redistributed",
+    "IPP": "CC BY 4.0; held Santa Teresa count only"
+  }
+}
