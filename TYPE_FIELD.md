@@ -531,10 +531,16 @@ its município row 14309 is level 2 and its official `section / bairro` rows are
 Their statutory RA membership remains separate evidence; bairros never receive the município total.
 Other verified level-4 localities use their containing CSC distrito as parent when present, else null.
 The [addition ledger](.github/fixes-docs/ledgers/br_add2_v6x.jsonl) records the 60 places the Brazil recall audit found
-missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. It does not
-cover every RA or bairro: Taguatinga, Samambaia, Vicente Pires, Fercal, Sudoeste/Octogonal, Arniqueira and Sol
-Nascente/Pôr do Sol have no row yet, Planaltina (13934) is still typed `city`, and 141 of the 159 bairros in IPP's
-layer have no row.
+missing (GeoNames places of 1,000 or more people with no same-name CSC row within 5 km), each added or held. The
+[remaining-register ledger](.github/fixes-docs/ledgers/br_rest_v6x.jsonl) then considers all 37 current GDF RAs: the 33
+of LC 958/2019, Arapoanga and Água Quente (Laws 7.190/2022 and 7.191/2022), and Ponte Alta and 26 de Setembro (Laws
+7.917/2026 and 7.918/2026). It adds 6 RAs with their own item and a contained point, and holds 6: Planaltina, Sol
+Nascente/Pôr do Sol, Arniqueira, Água Quente, 26 de Setembro and Ponte Alta. Plano Piloto stays represented by Brasília
+row 10776, unchanged. Planaltina 13934 stays `city` because it has no own item; its identity and old population are kept.
+New RAs have no population, because no reusable dated count for an RA was found.
+IPP's bairro layer holds 158 bairros plus one city-wide summary record (code 999), not 159 bairros. 157 of the 158 now
+have a row (139 added by that ledger); Santa Teresa is held. Each new bairro has its own contained open point and IPP's
+preliminary Censo 2022 count (CC BY 4.0) with population_year 2022; no município total or polygon-derived point is used.
 These classes require evidence for the place itself, rather than a population threshold or a generic settlement class.
 For the [Brazil ledger](.github/fixes-docs/ledgers/br_tld_v6x.jsonl), a city row is bound to the município only through
 a unique current IBGE name or live-item alias in the same estado, no existing CSC owner, its unchanged point strictly
