@@ -213,9 +213,9 @@ LSAD 25 is `city / city`, 43 `town / town`, 47 `village / village`, and
 statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`) and are level 3.
 A Puerto Rico municipio is a county equivalent (LSAD 13), typed `municipality / municipio / 2`
 only when its own item is classed as a municipio and its own GNIS code equals the Census
-county code. Nine are reviewed so far (#1643, `us_ld_v6x` ledger); as territorial units
-they leave the settlement filter below. Every other Puerto Rico row remains held, because
-municipio versus town identity is not proved.
+county code. This review (#1643, `us_ld_v6x`) covers nine municipios and Rio Lajas,
+the one `locality / comunidad / 3`. The nine municipios leave the settlement filter below.
+Other Puerto Rico rows remain held until their municipio or town identity is proved.
 Under contract 6, reviewed US territorial units use `municipality`, with their legal
 category in `type_local`: `town`, `township`, `charter township` or `plantation`.
 A territorial town is not its seat or its contained village/CDP. The 776 New York

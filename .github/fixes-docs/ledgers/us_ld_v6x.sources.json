@@ -1,16 +1,21 @@
 {
   "schema_version": 1,
-  "base_commit": "d52087dad8f560e758ba5931dc6f76cd51add9fa",
-  "ledger_sha256": "f6f67bca1b5bb279ca189c74a344d3d56d732eabe60356e30f3ae0bf4fa89889",
+  "base_commit": "36dd8a090f6e60fc52c90d50e3c3060481fb695f",
+  "ledger_sha256": "fb52498043b8e597cab6ee7fd0514da1b7d2bd07e9d52b99d797aced89a55e94",
   "rows": 515,
-  "changed": 90,
-  "held": 425,
-  "policy": "Same-entity Census LSAD and strict full-resolution TIGER containment. Subplaces retain their own identities under the documented US urban-containment model; NYC DCP exact labels within 2 km or literal live neighborhood class, own-item point agreement, and an independently code-proved Census city parent. No population, name, point, item, id or country changes.",
+  "changed": 86,
+  "held": 429,
+  "policy": "Master-relative 515-row ledger after PR 2304 review. Changed rows retain original evidence. Six reviewed neighbourhoods additionally bind city-published named areas within 1 km and permitted use. Four gaps restore all four master fields, including absent type_local. 52 NYC rows use 2014 DCP label matches within 2 km; Harlem uses 2020 NTA Harlem (South) containment. No id, name, point, item or population changes.",
   "licences": {
     "Census": "US government work, public domain",
     "USGS": "US government work, public domain",
     "Wikidata": "CC0 structured data",
-    "NYC DCP": "Reference checks only; attribution to NYC Department of City Planning, Population Division. No coordinate copied into CSC."
+    "NYC DCP": "Reference checks only; attribution to NYC Department of City Planning, Population Division. No coordinate copied into CSC.",
+    "DC Office of Planning": "CC BY 4.0; attribution retained; reference checks only",
+    "City of Los Angeles Bureau of Engineering": "CC BY 4.0; attribution retained; reference checks only",
+    "City of Cleveland Urban Analytics and Innovation": "ODbL; attribution retained; CSC remains ODbL; reference checks only",
+    "City of Norwalk GIS": "Published informational-use disclaimer; reference checks only, no source geometry or coordinate copied",
+    "NYC DCP 2020 NTAs": "Published informational-use disclaimer, metadata page 3; attribution retained; no source geometry or coordinate copied"
   },
   "assets": [
     {
@@ -4234,6 +4239,656 @@
       }
     },
     {
+      "path": "sources/city_chino_housing.pdf",
+      "receipt": {
+        "url": "https://chinohills.org/DocumentCenter/View/24794/ADOPTED---6th-Cycle-Housing-Element---February-8-2022",
+        "retrieved_at": "2026-11-28T12:47:08.998697+00:00",
+        "status": 200,
+        "size": 6157516,
+        "sha256": "89f9ab1b2eef14d3b862e37980aaa7720fc4b1301d9ecdab0ff0e65ad6962c26"
+      }
+    },
+    {
+      "path": "sources/city_chino_legal.html",
+      "receipt": {
+        "url": "https://www.chinohills.org/100/Disclaimer",
+        "retrieved_at": "2026-11-28T12:48:15.488262+00:00",
+        "status": 200,
+        "size": 97328,
+        "sha256": "5cbca36292921f665ae3dd09bc6c079af4f15f66f1e92574f2ab087b0552f835"
+      }
+    },
+    {
+      "path": "sources/city_chino_plan.pdf",
+      "receipt": {
+        "url": "https://www.chinohills.org/DocumentCenter/View/22078/ConPlan_Action-Plan",
+        "retrieved_at": "2026-11-28T12:46:29.131744+00:00",
+        "status": 404,
+        "size": 96479,
+        "sha256": "825462820a8abb8b7510db34bfd25a15818a90effd81a7832009d1f1e7762a57"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_b2a2da_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/b2a2da54401a41e78dd71563f01f5273?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:25.339278+00:00",
+        "status": 200,
+        "size": 4487,
+        "sha256": "af360f4750dc0df94239c1c74a6ed10e4e4737b3e69ae6c9bf1165177cc240db"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_f5f33b_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/f5f33bd5b74849798ea6a7bca6d1a5f9?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:25.864460+00:00",
+        "status": 200,
+        "size": 4387,
+        "sha256": "a0089d44610de54529a173c2e85015089ff40cb7a83d5cc613da63e9d3533d9b"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_f5f33b_layer.json",
+      "receipt": {
+        "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Cleveland_SPA_Neighborhoods_Salesforce/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:26.261540+00:00",
+        "status": 200,
+        "size": 4173,
+        "sha256": "dd8aac28af5098f13e136c5695a65cee7afad5830f20db1dc2b16499f3850c04"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_maps.html",
+      "receipt": {
+        "url": "https://www.clevelandohio.gov/city-hall/boards-commissions/planning/maps",
+        "retrieved_at": "2026-11-28T12:45:30.086854+00:00",
+        "status": 200,
+        "size": 143174,
+        "sha256": "fd72d5f70f4bc4f4f6f67dcd871415ee4291031f6fe234a6cc8334762bc13d8f"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_official.geojson",
+      "receipt": {
+        "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+        "status": 200,
+        "size": 1133221,
+        "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_official_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+        "status": 200,
+        "size": 4348,
+        "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_official_layer.json",
+      "receipt": {
+        "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:04.647481+00:00",
+        "status": 200,
+        "size": 4425,
+        "sha256": "38c07ab63f4200f1a13844eae409d2d77e62848ba049fedb4c226a69f621435a"
+      }
+    },
+    {
+      "path": "sources/city_cleveland_official_layer0.json",
+      "receipt": {
+        "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:36.936442+00:00",
+        "status": 200,
+        "size": 44994,
+        "sha256": "0b437aeabf4f39966ef5dbca7e6ad8700d5a17b77318d3e2d11a1353b7cc434e"
+      }
+    },
+    {
+      "path": "sources/city_dc_c4b0cd.geojson",
+      "receipt": {
+        "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/35/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:46:25.437468+00:00",
+        "status": 200,
+        "size": 49543,
+        "sha256": "e96c5e7b2779e2817e0e6e6de1062d8187af48c574bf31ed7b96b0c6c913e096"
+      }
+    },
+    {
+      "path": "sources/city_dc_c4b0cd_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/c4b0cd43d50949e98e57de9f22b455fc?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:24.295689+00:00",
+        "status": 200,
+        "size": 4559,
+        "sha256": "d139a42969a67e038cfbec64df714a09b903625cfb660d4c74e7ce275a986cdb"
+      }
+    },
+    {
+      "path": "sources/city_dc_c4b0cd_layer.json",
+      "receipt": {
+        "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/35?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:25.105717+00:00",
+        "status": 200,
+        "size": 7943,
+        "sha256": "3faf4da7b43ec49f9c0d24ab20b731ef6581095d29a7db5f95a06fb90456de79"
+      }
+    },
+    {
+      "path": "sources/city_dc_f6c703.geojson",
+      "receipt": {
+        "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:46:27.436218+00:00",
+        "status": 200,
+        "size": 1579068,
+        "sha256": "a204ffe5262b68ebb4a76068c5ec2b329c1aeac2020b85111200f07d16f04b44"
+      }
+    },
+    {
+      "path": "sources/city_dc_f6c703_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/f6c703ebe2534fc3800609a07bad8f5b?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:24.286400+00:00",
+        "status": 200,
+        "size": 4426,
+        "sha256": "6af15b03cabb5bea85aefbb19e620c92c85a7479383e357b4ea0bc9f18f4b692"
+      }
+    },
+    {
+      "path": "sources/city_dc_f6c703_layer.json",
+      "receipt": {
+        "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:25.105602+00:00",
+        "status": 200,
+        "size": 7559,
+        "sha256": "0df80e2cef398b1781604a7e6b90d0463f5a86d73c39bc89a2500a86d0e77d7d"
+      }
+    },
+    {
+      "path": "sources/city_dc_terms.html",
+      "receipt": {
+        "url": "https://opendata.dc.gov/pages/terms",
+        "retrieved_at": "2026-11-28T12:46:30.348071+00:00",
+        "status": 200,
+        "size": 155387,
+        "sha256": "1ed2aef499025df16969fa3c5a7816db82eccdfa3cd560c15359dcadec6e82b0"
+      }
+    },
+    {
+      "path": "sources/city_la_9c8639.geojson",
+      "receipt": {
+        "url": "https://maps.lacity.org/lahub/rest/services/Boundaries/MapServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:46:29.528673+00:00",
+        "status": 200,
+        "size": 2607291,
+        "sha256": "362c1e4509a3e19a95a9e1f4bf39affc129dbe7e754d60c5f882ac122f357513"
+      }
+    },
+    {
+      "path": "sources/city_la_9c8639_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/9c8639737e3a457a8c0f6a93f9c36974?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:24.582102+00:00",
+        "status": 200,
+        "size": 1742,
+        "sha256": "770e6c7f463ae33200f943d9e3dfa5f9dfcf5ed5a2183606bc8f66e4a7d45426"
+      }
+    },
+    {
+      "path": "sources/city_la_9c8639_layer.json",
+      "receipt": {
+        "url": "https://maps.lacity.org/lahub/rest/services/Boundaries/MapServer/18?f=pjson",
+        "retrieved_at": "2026-11-28T12:46:25.629853+00:00",
+        "status": 200,
+        "size": 71161,
+        "sha256": "79abfba130bf82e18fa859596122c8a54370f2b731b821f765e0c2a729279e49"
+      }
+    },
+    {
+      "path": "sources/city_miami_e30345.geojson",
+      "receipt": {
+        "url": "https://services1.arcgis.com/CvuPhqcTQpZPT9qY/arcgis/rest/services/NET%20Areas%20join/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:48:43.523086+00:00",
+        "status": 200,
+        "size": 146968,
+        "sha256": "5a5ba6077c197be93defb3123e5b97793be34fd2055de2673e13c243aa0ff92c"
+      }
+    },
+    {
+      "path": "sources/city_miami_e30345_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/e3034520ed8342439fa3490cf4a6570a?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:41.802929+00:00",
+        "status": 200,
+        "size": 1859,
+        "sha256": "a2a0f74009723030fa88d34f5db916689b0fff48f638aaa778b37ecb0f6ebac6"
+      }
+    },
+    {
+      "path": "sources/city_miami_e30345_layer.json",
+      "receipt": {
+        "url": "https://services1.arcgis.com/CvuPhqcTQpZPT9qY/arcgis/rest/services/NET%20Areas%20join/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:42.474613+00:00",
+        "status": 200,
+        "size": 4371,
+        "sha256": "ad8c9b6e3e96d15b8e0b513729959edc14290b872337e57bcf9db6e5d9a22aaa"
+      }
+    },
+    {
+      "path": "sources/city_miami_gis_portal.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/96955c2f9e794e219ee0271d1eb021e9?f=pjson",
+        "retrieved_at": "2026-11-28T12:55:49.796336+00:00",
+        "status": 200,
+        "size": 1511,
+        "sha256": "8dba1830565660675b5d4420dbd7fe34a7b2c6b6f147f11fbca28f635702a86f"
+      }
+    },
+    {
+      "path": "sources/city_miami_maps.html",
+      "receipt": {
+        "url": "https://www.miami.gov/Maps-Data",
+        "retrieved_at": "2026-11-28T12:55:49.501036+00:00",
+        "status": 403,
+        "size": 380,
+        "sha256": "9709f88ac5e70e8ea746150570943ec8e60996108f59ed8e8f004e0f2660d2dc"
+      }
+    },
+    {
+      "path": "sources/city_miami_terms.html",
+      "receipt": {
+        "url": "https://www.miami.gov/Legal-Notices",
+        "retrieved_at": "2026-11-28T12:46:29.340663+00:00",
+        "status": 403,
+        "size": 384,
+        "sha256": "7054cde6d2d117d8b25f12062a3d438e6444c0f8bba6c8616a1d92d156380d86"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_6678ae.geojson",
+      "receipt": {
+        "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods_2020/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:48:42.851983+00:00",
+        "status": 200,
+        "size": 277079,
+        "sha256": "dff911fefc7ee3b6ba6af1f7d80d1777cb3cea0998bee9f8fbef4829e38b07af"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_6678ae_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/6678ae078fec45b79c5303bccba35287?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:41.546946+00:00",
+        "status": 200,
+        "size": 4222,
+        "sha256": "6b93f5ca13fde990e882d50fd9eda2a08d47552799394f9bf2d2a0da1968ed34"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_6678ae_layer.json",
+      "receipt": {
+        "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods_2020/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:42.251160+00:00",
+        "status": 200,
+        "size": 4473,
+        "sha256": "0f92bef66cb79f0bab57158b67d67e217ddcb38f61b40e96cee4386fc5b29c76"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_faa28d.geojson",
+      "receipt": {
+        "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:48:43.524331+00:00",
+        "status": 200,
+        "size": 611614,
+        "sha256": "4de68fa54d5efdafc69cd3be21c13a0ff05e00ffc8d4fc0550c9b924de275557"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_faa28d_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/faa28d7a44f749c1a0b54d4e3a2aa309?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:41.548095+00:00",
+        "status": 200,
+        "size": 1648,
+        "sha256": "f3d81eb9911cb56fc3115e6bc971f15ea1432dd8a877af0facbb08afdd84ba6e"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_faa28d_layer.json",
+      "receipt": {
+        "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:48:42.282920+00:00",
+        "status": 200,
+        "size": 4453,
+        "sha256": "b6151fd45c0f728dbe300be2f8db05170476a1c93622e0aba9915476b691059e"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_gis.html",
+      "receipt": {
+        "url": "https://norwalkct.gov/1397/GIS-Mapping",
+        "retrieved_at": "2026-11-28T12:55:51.118319+00:00",
+        "status": 200,
+        "size": 115272,
+        "sha256": "1b14e8c8e48bef339c5295f51aaeedf48649a56120acb3fbb581621927bf5820"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_plan.html",
+      "receipt": {
+        "url": "https://www.norwalkct.gov/1893/East-Norwalk-TOD-Study",
+        "retrieved_at": "2026-11-28T12:46:28.897042+00:00",
+        "status": 404,
+        "size": 109929,
+        "sha256": "85e4efea054e2f07d18d7c2856402d366a5f89c439e05c98e2f52bf94e42c61a"
+      }
+    },
+    {
+      "path": "sources/city_norwalk_tod.html",
+      "receipt": {
+        "url": "https://norwalkct.gov/2670/East-Norwalk-Village-TOD-Zone",
+        "retrieved_at": "2026-11-28T12:47:38.096122+00:00",
+        "status": 200,
+        "size": 100953,
+        "sha256": "e66e8415ed41ae957c397093bfb5105499a4566936bb8f9847313966dde2c564"
+      }
+    },
+    {
+      "path": "sources/city_nyc_nta.geojson",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/resource/9nt8-h7nd.geojson?$where=ntaname%20like%20%27%25Harlem%25%27",
+        "retrieved_at": "2026-11-28T12:45:32.771745+00:00",
+        "status": 200,
+        "size": 44731,
+        "sha256": "79c6259dfe4a14414e6066bc56fd59890e91af5b5053bf467712d7d3d8c6cad6"
+      }
+    },
+    {
+      "path": "sources/city_nyc_nta_meta.json",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/api/views/9nt8-h7nd.json",
+        "retrieved_at": "2026-11-28T12:45:31.394134+00:00",
+        "status": 200,
+        "size": 21826,
+        "sha256": "1dfd39472b85b7309d12ca48ae2c5612649b987050d9ca34a56985e995103634"
+      }
+    },
+    {
+      "path": "sources/city_nyc_nta_metadata.pdf",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/api/assets/62d6a448-b579-4364-aca9-a1bd1cea23b9",
+        "retrieved_at": "2026-11-28T12:48:43.303907+00:00",
+        "status": 404,
+        "size": 76,
+        "sha256": "422e20084f4a5b45f80a0f014b5ee5c695cbcd5d52158c67de7ba1c2d91345da"
+      }
+    },
+    {
+      "path": "sources/city_nyc_nta_metadata2.pdf",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/api/views/9nt8-h7nd/files/62d6a448-b579-4364-aca9-a1bd1cea23b9?download=true&filename=nynta2020_metadata.pdf",
+        "retrieved_at": "2026-11-28T12:55:54.410316+00:00",
+        "status": 200,
+        "size": 384511,
+        "sha256": "c47aabed36938798903364bf29cb134ff797e936a04314738052a23bfdb26cfa"
+      }
+    },
+    {
+      "path": "sources/city_nyc_open_terms.html",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/terms-of-use",
+        "retrieved_at": "2026-11-28T12:48:20.277279+00:00",
+        "status": 404,
+        "size": 20,
+        "sha256": "59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2"
+      }
+    },
+    {
+      "path": "sources/city_nyc_open_terms2.html",
+      "receipt": {
+        "url": "https://data.cityofnewyork.us/stories/s/Terms-of-Use/k9k7-3cje",
+        "retrieved_at": "2026-11-28T12:55:50.834437+00:00",
+        "status": 200,
+        "size": 4213,
+        "sha256": "00c9c9e76a3892ca3b9f69be1fc95059665c8dab96f1c01c17b4b13aaae5a2f1"
+      }
+    },
+    {
+      "path": "sources/city_nyc_terms.html",
+      "receipt": {
+        "url": "https://opendata.cityofnewyork.us/overview/",
+        "retrieved_at": "2026-11-28T12:46:30.389344+00:00",
+        "status": 200,
+        "size": 505510,
+        "sha256": "6a93b53572347a037c85b6e50dae665b2d8e9458f2f0a963932d1b9dce0f1804"
+      }
+    },
+    {
+      "path": "sources/city_nyc_terms2.html",
+      "receipt": {
+        "url": "https://www.nyc.gov/main/terms-of-use",
+        "retrieved_at": "2026-11-28T12:47:04.759765+00:00",
+        "status": 200,
+        "size": 512434,
+        "sha256": "f9f1ae805439221ce559254b957d9ebe060f16ad8f42df3b763280a8537313e0"
+      }
+    },
+    {
+      "path": "sources/city_search_chino.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Los+Serranos&num=30",
+        "retrieved_at": "2026-11-28T12:45:28.483321+00:00",
+        "status": 200,
+        "size": 185096,
+        "sha256": "888970700083ba80eb97497487dbba8984dc28f0a98c3e888a558a43f12d1441"
+      }
+    },
+    {
+      "path": "sources/city_search_chino2.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Los+Serranos+AND+type%3A%22Feature+Service%22&num=30",
+        "retrieved_at": "2026-11-28T12:47:37.264708+00:00",
+        "status": 200,
+        "size": 48007,
+        "sha256": "4fd3c8df580f8e999241596e8b23339027854c57d6f8cc18a97a809eab8ee567"
+      }
+    },
+    {
+      "path": "sources/city_search_cleveland.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Statistical+Planning+Areas+Cleveland&num=30",
+        "retrieved_at": "2026-11-28T12:45:27.955269+00:00",
+        "status": 200,
+        "size": 117779,
+        "sha256": "5e5252d024db3f282dbcf0ad4bed6a2148060ac7a7c31fb075a72b42fb100f51"
+      }
+    },
+    {
+      "path": "sources/city_search_cleveland2.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=title%3ANeighborhoods+AND+owner%3AopendataCLE&num=50",
+        "retrieved_at": "2026-11-28T12:46:26.774892+00:00",
+        "status": 200,
+        "size": 24798,
+        "sha256": "8d75ed40f272fdf6761149490f4ce54a74cf70ce6b13c9af561e979dbaf63b87"
+      }
+    },
+    {
+      "path": "sources/city_search_dc.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Neighborhood+Clusters+DC&num=30",
+        "retrieved_at": "2026-11-28T12:45:28.504414+00:00",
+        "status": 200,
+        "size": 91706,
+        "sha256": "c5c92b0af2793cb98adc73dff35749bccf03823660f84649ebee33e90a2d6533"
+      }
+    },
+    {
+      "path": "sources/city_search_la.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Neighborhood+Councils+Los+Angeles&num=30",
+        "retrieved_at": "2026-11-28T12:45:28.505032+00:00",
+        "status": 200,
+        "size": 89197,
+        "sha256": "576795d6c2967d8b5efc739cd11413cfd53b9f5583d434c39962335b6a66678e"
+      }
+    },
+    {
+      "path": "sources/city_search_miami.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=NET+Areas+Miami&num=30",
+        "retrieved_at": "2026-11-28T12:47:36.518660+00:00",
+        "status": 200,
+        "size": 245849,
+        "sha256": "2dc1defd09a5dc590df0c8e244386d8bb5b3b7f6805d95e7ef167fbe4db80da6"
+      }
+    },
+    {
+      "path": "sources/city_search_miami2.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=title%3ANET+AND+orgid%3ACvuPhqcTQpZPT9qY&num=30",
+        "retrieved_at": "2026-11-28T12:48:13.113438+00:00",
+        "status": 200,
+        "size": 25142,
+        "sha256": "6aafce999c5e077a3173825757505d593facdf4f4d88039961e73a9e3fdd6593"
+      }
+    },
+    {
+      "path": "sources/city_search_norwalk.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=East+Norwalk&num=30",
+        "retrieved_at": "2026-11-28T12:45:28.504357+00:00",
+        "status": 200,
+        "size": 123898,
+        "sha256": "fd3a89f84502373c3141090ea72992460cd17876b5343017a6d59e826ada270e"
+      }
+    },
+    {
+      "path": "sources/city_search_norwalk2.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=title%3ANeighborhood+AND+orgid%3AHfsHDBmkGwb1UtID&num=30",
+        "retrieved_at": "2026-11-28T12:48:13.136852+00:00",
+        "status": 200,
+        "size": 16129,
+        "sha256": "60d626e459252a56217536f2fb732fe8f3cd4b9da19a0b6178d3d8391f55ecb0"
+      }
+    },
+    {
+      "path": "sources/city_search_stamford.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=Neighborhood+Stamford&num=30",
+        "retrieved_at": "2026-11-28T12:45:28.250860+00:00",
+        "status": 200,
+        "size": 251829,
+        "sha256": "57b26828b907d08e5c72be933cb8ad59369b12534237f05341a6d89199c31bab"
+      }
+    },
+    {
+      "path": "sources/city_search_stamford2.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/search?f=json&q=title%3ANeighborhood+AND+orgid%3AV28nrLFIbcYZbnPl&num=50",
+        "retrieved_at": "2026-11-28T12:46:26.518169+00:00",
+        "status": 200,
+        "size": 10240,
+        "sha256": "5e03d6a01d080b2f5b2f0de848ffb97fdf385b31ae7502d8407178fa3f989db7"
+      }
+    },
+    {
+      "path": "sources/city_stamford_app_data.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/b11f3ebc9a884f8caf0a58f96bfcb726/data?f=pjson",
+        "retrieved_at": "2026-11-28T12:56:58.998599+00:00",
+        "status": 200,
+        "size": 40957,
+        "sha256": "7a016530e98620fbe892cbf2e442a16210d1245be9862264a7804f5dce3a74b4"
+      }
+    },
+    {
+      "path": "sources/city_stamford_maps.html",
+      "receipt": {
+        "url": "https://www.stamfordct.gov/around-town/maps",
+        "retrieved_at": "2026-11-28T12:46:26.906660+00:00",
+        "status": 403,
+        "size": 396,
+        "sha256": "6e3081713b07f2b3e5b6bf7fa22e46898adc5f507a8f4935035f6d22ddc0339b"
+      }
+    },
+    {
+      "path": "sources/city_stamford_maps2.html",
+      "receipt": {
+        "url": "https://www.stamfordct.gov/government/operations/land-use-bureau-planning-zoning-housing-epb/maps",
+        "retrieved_at": "2026-11-28T12:47:03.947641+00:00",
+        "status": 403,
+        "size": 478,
+        "sha256": "1f6a71b04a51b96933df7fdec2ebbed4e1e3a642c3d1c07cb32e05d847f819a7"
+      }
+    },
+    {
+      "path": "sources/city_stamford_maps3.html",
+      "receipt": {
+        "url": "https://www.stamfordct.gov/government/operations/land-use-bureau-planning-zoning-housing-epb/maps?x=1",
+        "retrieved_at": "2026-11-28T12:48:42.531361+00:00",
+        "status": 403,
+        "size": 483,
+        "sha256": "ffa5c193e29ce43920c1df87cfc9ae8e4b2fa5a83869900ca571e0d79ee3ab6d"
+      }
+    },
+    {
+      "path": "sources/city_stamford_official.geojson",
+      "receipt": {
+        "url": "https://services3.arcgis.com/V28nrLFIbcYZbnPl/arcgis/rest/services/NSAs_10302019/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+        "retrieved_at": "2026-11-28T12:47:39.333234+00:00",
+        "status": 200,
+        "size": 1388466,
+        "sha256": "a505c28dc8d2f2cf8a43eae7d47aea23f7097903a67c11317956a4834ffc8a6e"
+      }
+    },
+    {
+      "path": "sources/city_stamford_official_item.json",
+      "receipt": {
+        "url": "https://www.arcgis.com/sharing/rest/content/items/b8a373ed1b234507ab1c11527e8f5466?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:04.505381+00:00",
+        "status": 200,
+        "size": 3692,
+        "sha256": "d2c65e475658941d810015bf020a3fbb1541f75392b422a8db38e7697cd2f035"
+      }
+    },
+    {
+      "path": "sources/city_stamford_official_layer.json",
+      "receipt": {
+        "url": "https://services3.arcgis.com/V28nrLFIbcYZbnPl/arcgis/rest/services/NSAs_10302019/FeatureServer?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:04.427912+00:00",
+        "status": 200,
+        "size": 4443,
+        "sha256": "add50c9bea4a5ee9685eb597ad7a8ce958b37700c4606acf6ac722888dccc148"
+      }
+    },
+    {
+      "path": "sources/city_stamford_official_layer0.json",
+      "receipt": {
+        "url": "https://services3.arcgis.com/V28nrLFIbcYZbnPl/arcgis/rest/services/NSAs_10302019/FeatureServer/0?f=pjson",
+        "retrieved_at": "2026-11-28T12:47:36.410833+00:00",
+        "status": 200,
+        "size": 19121,
+        "sha256": "2009b7385007983715b67182f1e58e79d7cd7eb08e80c7fbb1d66d2798d27895"
+      }
+    },
+    {
+      "path": "sources/city_stamford_terms.html",
+      "receipt": {
+        "url": "https://www.stamfordct.gov/government/operations/land-use-bureau-planning-zoning-housing-epb/maps/gis-disclaimer",
+        "retrieved_at": "2026-11-28T12:48:12.928243+00:00",
+        "status": 403,
+        "size": 501,
+        "sha256": "5a370d6b7bfd2df1bcbd34359e93072d959fbbcd050dfeb5b0929aa2844dfc1f"
+      }
+    },
+    {
       "path": "sources/nyc_neighborhood_metadata.pdf",
       "receipt": {
         "url": "https://www.nyc.gov/assets/planning/download/pdf/data-maps/open-data/meta_nhood.pdf",
@@ -5151,6 +5806,517 @@
         "status": 200,
         "size": 761319,
         "sha256": "32483d1f41d3852de44afb6d91d6d89c4fa7320c6b010b3766855c013df03d47"
+      }
+    }
+  ],
+  "followup_base_commit": "5f80c29556c08c0ac753c072222d4f92ec5c036b",
+  "followup_master_commit": "36dd8a090f6e60fc52c90d50e3c3060481fb695f",
+  "reviewed_city_bindings": [
+    {
+      "id": 111028,
+      "name": "Adams Morgan",
+      "status": "kept",
+      "evidence": {
+        "id": 111028,
+        "name": "Adams Morgan",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_dc_f6c703.geojson",
+          "receipt": {
+            "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:46:27.436218+00:00",
+            "status": 200,
+            "size": 1579068,
+            "sha256": "a204ffe5262b68ebb4a76068c5ec2b329c1aeac2020b85111200f07d16f04b44"
+          },
+          "name_field": "NBH_NAMES",
+          "matches": [
+            {
+              "feature_index": 38,
+              "label": "Kalorama Heights, Adams Morgan, Lanier Heights",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_dc_f6c703_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/f6c703ebe2534fc3800609a07bad8f5b?f=pjson",
+          "retrieved_at": "2026-11-28T12:46:24.286400+00:00",
+          "status": 200,
+          "size": 4426,
+          "sha256": "6af15b03cabb5bea85aefbb19e620c92c85a7479383e357b4ea0bc9f18f4b692"
+        },
+        "terms_and_identity_assessment": "CC BY 4.0; DC Office of Planning neighbourhood Cluster 1 explicitly names Adams Morgan. Attribution retained; polygon used for verification only.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    },
+    {
+      "id": 111177,
+      "name": "Allapattah",
+      "status": "held",
+      "evidence": {
+        "id": 111177,
+        "name": "Allapattah",
+        "status": "held",
+        "city_source": {
+          "asset": "sources/city_miami_e30345.geojson",
+          "receipt": {
+            "url": "https://services1.arcgis.com/CvuPhqcTQpZPT9qY/arcgis/rest/services/NET%20Areas%20join/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:48:43.523086+00:00",
+            "status": 200,
+            "size": 146968,
+            "sha256": "5a5ba6077c197be93defb3123e5b97793be34fd2055de2673e13c243aa0ff92c"
+          },
+          "name_field": "NETNAME",
+          "matches": [
+            {
+              "feature_index": 10,
+              "label": "Allapattah",
+              "inside": false,
+              "distance_km": 0.24875137596309435,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.24875137596309435,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_miami_e30345_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/e3034520ed8342439fa3490cf4a6570a?f=pjson",
+          "retrieved_at": "2026-11-28T12:48:41.802929+00:00",
+          "status": 200,
+          "size": 1859,
+          "sha256": "a2a0f74009723030fa88d34f5db916689b0fff48f638aaa778b37ecb0f6ebac6"
+        },
+        "terms_and_identity_assessment": "The public service names Allapattah, but its metadata has no reuse terms. The direct city GIS and legal pages were unavailable to the fetch client; permission for this dataset use remains unproved.",
+        "reason": "The public service names Allapattah, but its metadata has no reuse terms. The direct city GIS and legal pages were unavailable to the fetch client; permission for this dataset use remains unproved."
+      }
+    },
+    {
+      "id": 115723,
+      "name": "East Norwalk",
+      "status": "kept",
+      "evidence": {
+        "id": 115723,
+        "name": "East Norwalk",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_norwalk_6678ae.geojson",
+          "receipt": {
+            "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods_2020/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:48:42.851983+00:00",
+            "status": 200,
+            "size": 277079,
+            "sha256": "dff911fefc7ee3b6ba6af1f7d80d1777cb3cea0998bee9f8fbef4829e38b07af"
+          },
+          "name_field": "Neighborhood",
+          "matches": [
+            {
+              "feature_index": 21,
+              "label": "East Norwalk",
+              "inside": false,
+              "distance_km": 0.2065944461478112,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.2065944461478112,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_norwalk_6678ae_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/6678ae078fec45b79c5303bccba35287?f=pjson",
+          "retrieved_at": "2026-11-28T12:48:41.546946+00:00",
+          "status": 200,
+          "size": 4222,
+          "sha256": "6b93f5ca13fde990e882d50fd9eda2a08d47552799394f9bf2d2a0da1968ed34"
+        },
+        "terms_and_identity_assessment": "City of Norwalk GIS informational-use disclaimer. Reference check only, independently corroborated by Census city containment and own-item point; no source geometry, coordinate or map copied into CSC. Not a legal, engineering or surveying use.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    },
+    {
+      "id": 118023,
+      "name": "Harlem",
+      "status": "kept",
+      "evidence": {
+        "id": 118023,
+        "name": "Harlem",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_nyc_nta.geojson",
+          "receipt": {
+            "url": "https://data.cityofnewyork.us/resource/9nt8-h7nd.geojson?$where=ntaname%20like%20%27%25Harlem%25%27",
+            "retrieved_at": "2026-11-28T12:45:32.771745+00:00",
+            "status": 200,
+            "size": 44731,
+            "sha256": "79c6259dfe4a14414e6066bc56fd59890e91af5b5053bf467712d7d3d8c6cad6"
+          },
+          "name_field": "ntaname",
+          "matches": [
+            {
+              "feature_index": 1,
+              "label": "Harlem (South)",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 2,
+              "label": "Harlem (North)",
+              "inside": false,
+              "distance_km": 0.07243307302435661,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_nyc_nta_metadata2.pdf",
+        "terms_receipt": {
+          "url": "https://data.cityofnewyork.us/api/views/9nt8-h7nd/files/62d6a448-b579-4364-aca9-a1bd1cea23b9?download=true&filename=nynta2020_metadata.pdf",
+          "retrieved_at": "2026-11-28T12:55:54.410316+00:00",
+          "status": 200,
+          "size": 384511,
+          "sha256": "c47aabed36938798903364bf29cb134ff797e936a04314738052a23bfdb26cfa"
+        },
+        "terms_and_identity_assessment": "NYC DCP 2020 NTA metadata, Resource Constraints, PDF page 3: informational use with accuracy disclaimer. Stored Harlem point is inside Harlem (South), under MN10 Harlem. These statistical areas roughly correspond to neighbourhoods; they are not definitive neighbourhood boundaries. Reference check only; no source coordinate or polygon copied into CSC.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    },
+    {
+      "id": 120796,
+      "name": "Los Serranos",
+      "status": "held",
+      "evidence": {
+        "id": 120796,
+        "name": "Los Serranos",
+        "status": "held",
+        "city_source": {
+          "asset": "sources/city_chino_housing.pdf",
+          "receipt": {
+            "url": "https://chinohills.org/DocumentCenter/View/24794/ADOPTED---6th-Cycle-Housing-Element---February-8-2022",
+            "retrieved_at": "2026-11-28T12:47:08.998697+00:00",
+            "status": 200,
+            "size": 6157516,
+            "sha256": "89f9ab1b2eef14d3b862e37980aaa7720fc4b1301d9ecdab0ff0e65ad6962c26"
+          }
+        },
+        "terms_and_identity_assessment": "The adopted city Housing Element identifies Los Serranos as a city neighbourhood (housing-needs and fair-housing sections). I did not establish a reproducible city-published named area or label within 1 km of the stored point, or terms permitting this use. City containment and narrative mentions alone do not pass the requested test.",
+        "reason": "city_narrative_found_but_named_area_or_label_within_1km_and_use_terms_not_established"
+      }
+    },
+    {
+      "id": 123111,
+      "name": "North Stamford",
+      "status": "held",
+      "evidence": {
+        "id": 123111,
+        "name": "North Stamford",
+        "status": "held",
+        "city_source": {
+          "asset": "sources/city_stamford_official.geojson",
+          "receipt": {
+            "url": "https://services3.arcgis.com/V28nrLFIbcYZbnPl/arcgis/rest/services/NSAs_10302019/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:47:39.333234+00:00",
+            "status": 200,
+            "size": 1388466,
+            "sha256": "a505c28dc8d2f2cf8a43eae7d47aea23f7097903a67c11317956a4834ffc8a6e"
+          },
+          "name_field": "NSA",
+          "matches": [
+            {
+              "feature_index": 0,
+              "label": "North Stamford",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_stamford_app_data.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/b11f3ebc9a884f8caf0a58f96bfcb726/data?f=pjson",
+          "retrieved_at": "2026-11-28T12:56:58.998599+00:00",
+          "status": 200,
+          "size": 40957,
+          "sha256": "7a016530e98620fbe892cbf2e442a16210d1245be9862264a7804f5dce3a74b4"
+        },
+        "terms_and_identity_assessment": "City application splash terms prohibit giving digital data to a third party without prior written consent and restrict resulting reports to the individual. No permission for this use established; the geometric pass is not sufficient.",
+        "reason": "City application splash terms prohibit giving digital data to a third party without prior written consent and restrict resulting reports to the individual. No permission for this use established; the geometric pass is not sufficient."
+      }
+    },
+    {
+      "id": 128897,
+      "name": "West Hills",
+      "status": "kept",
+      "evidence": {
+        "id": 128897,
+        "name": "West Hills",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_la_9c8639.geojson",
+          "receipt": {
+            "url": "https://maps.lacity.org/lahub/rest/services/Boundaries/MapServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:46:29.528673+00:00",
+            "status": 200,
+            "size": 2607291,
+            "sha256": "362c1e4509a3e19a95a9e1f4bf39affc129dbe7e754d60c5f882ac122f357513"
+          },
+          "name_field": "NAME",
+          "matches": [
+            {
+              "feature_index": 86,
+              "label": "WEST HILLS NC",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_la_9c8639_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/9c8639737e3a457a8c0f6a93f9c36974?f=pjson",
+          "retrieved_at": "2026-11-28T12:46:24.582102+00:00",
+          "status": 200,
+          "size": 1742,
+          "sha256": "770e6c7f463ae33200f943d9e3dfa5f9dfcf5ed5a2183606bc8f66e4a7d45426"
+        },
+        "terms_and_identity_assessment": "CC BY 4.0; City of Los Angeles Bureau of Engineering certified neighbourhood council area. Attribution retained; polygon used for verification only.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    },
+    {
+      "id": 141220,
+      "name": "Clark-Fulton",
+      "status": "kept",
+      "evidence": {
+        "id": 141220,
+        "name": "Clark-Fulton",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_cleveland_official.geojson",
+          "receipt": {
+            "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+            "status": 200,
+            "size": 1133221,
+            "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+          },
+          "name_field": "NEIGHBORHOOD",
+          "matches": [
+            {
+              "feature_index": 74,
+              "label": "Clark-Fulton",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 90,
+              "label": "Clark-Fulton",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 106,
+              "label": "Clark-Fulton",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 122,
+              "label": "Clark-Fulton",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_cleveland_official_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+          "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+          "status": 200,
+          "size": 4348,
+          "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+        },
+        "terms_and_identity_assessment": "City of Cleveland Urban Analytics and Innovation Neighborhood Profiles; ODbL, matching the CSC database licence. Attribution and source retained; no ACS attributes or source geometry copied into CSC.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    },
+    {
+      "id": 141231,
+      "name": "Collinwood",
+      "status": "held",
+      "evidence": {
+        "id": 141231,
+        "name": "Collinwood",
+        "status": "held",
+        "city_source": {
+          "asset": "sources/city_cleveland_official.geojson",
+          "receipt": {
+            "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+            "status": 200,
+            "size": 1133221,
+            "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+          },
+          "name_field": "NEIGHBORHOOD",
+          "matches": [
+            {
+              "feature_index": 8,
+              "label": "North Shore Collinwood",
+              "inside": false,
+              "distance_km": 1.152170724128513,
+              "within_1km": false
+            },
+            {
+              "feature_index": 25,
+              "label": "North Shore Collinwood",
+              "inside": false,
+              "distance_km": 1.152170724128513,
+              "within_1km": false
+            },
+            {
+              "feature_index": 42,
+              "label": "North Shore Collinwood",
+              "inside": false,
+              "distance_km": 1.152170724128513,
+              "within_1km": false
+            },
+            {
+              "feature_index": 59,
+              "label": "North Shore Collinwood",
+              "inside": false,
+              "distance_km": 1.152170724128513,
+              "within_1km": false
+            },
+            {
+              "feature_index": 75,
+              "label": "Collinwood-Nottingham",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 91,
+              "label": "Collinwood-Nottingham",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 107,
+              "label": "Collinwood-Nottingham",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 123,
+              "label": "Collinwood-Nottingham",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_cleveland_official_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+          "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+          "status": 200,
+          "size": 4348,
+          "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+        },
+        "terms_and_identity_assessment": "ODbL permits use, but the city publishes Collinwood-Nottingham and North Shore Collinwood as distinct named areas. Their containment does not establish the stored generic Collinwood identity. No exact city-published Collinwood label or same-extent binding established; compound-name similarity is not treated as identity.",
+        "reason": "ODbL permits use, but the city publishes Collinwood-Nottingham and North Shore Collinwood as distinct named areas. Their containment does not establish the stored generic Collinwood identity. No exact city-published Collinwood label or same-extent binding established; compound-name similarity is not treated as identity."
+      }
+    },
+    {
+      "id": 141273,
+      "name": "Detroit-Shoreway",
+      "status": "kept",
+      "evidence": {
+        "id": 141273,
+        "name": "Detroit-Shoreway",
+        "status": "kept",
+        "city_source": {
+          "asset": "sources/city_cleveland_official.geojson",
+          "receipt": {
+            "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+            "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+            "status": 200,
+            "size": 1133221,
+            "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+          },
+          "name_field": "NEIGHBORHOOD",
+          "matches": [
+            {
+              "feature_index": 78,
+              "label": "Detroit Shoreway",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 94,
+              "label": "Detroit Shoreway",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 110,
+              "label": "Detroit Shoreway",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            },
+            {
+              "feature_index": 126,
+              "label": "Detroit Shoreway",
+              "inside": true,
+              "distance_km": 0.0,
+              "within_1km": true
+            }
+          ],
+          "minimum_distance_km": 0.0,
+          "within_1km": true,
+          "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+        },
+        "terms_asset": "sources/city_cleveland_official_item.json",
+        "terms_receipt": {
+          "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+          "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+          "status": 200,
+          "size": 4348,
+          "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+        },
+        "terms_and_identity_assessment": "City of Cleveland Urban Analytics and Innovation Neighborhood Profiles; ODbL, matching the CSC database licence. Hyphen versus space is punctuation-only normalization. Attribution and source retained; no ACS attributes or source geometry copied into CSC.",
+        "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
       }
     }
   ]
