@@ -2165,3 +2165,16 @@ https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_
 https://download.geonames.org/export/dump/BR.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Bairro_csv/Agregados_por_bairros_basico_BR_20260520.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Distrito_csv/Agregados_por_distritos_basico_BR_20260520.zip
+
+Spain close-out audit (es_close_v6x, #1643)
+Elaboración propia con datos extraídos del sitio web del INE: www.ine.es. Padrón municipal and Nomenclátor, 1 January 2025, published 11 December 2025 / 28 January 2026. CC BY4.0.
+https://www.ine.es/pob_xls/pobmun.zip
+https://www.ine.es/nomen_files/nacional/es/Nacional_2025.zip
+https://www.ine.es/dyngs/AYU/index.htm?cid=125
+Obra derivada de BDLJE 2026-08-10 CC-BY 4.0 Instituto Geográfico Nacional (ign.es). Municipal containment checks; geometry not copied into CSC.
+https://centrodedescargas.cnig.es/CentroDescargas/politica-datos
+Wikidata contributors, CC0 structured own-item P625; literal live revisions, receipts and global ownership checks retained. GeoNames, CC BY4.0; archived own-point witnesses, edition retained in the receipt.
+Ayuntamiento de Madrid, Estadística, Padrón Municipal de Habitantes, revisión a 1 de enero de 2026, approved 30 April 2026. Own named district figures; CC BY4.0/general municipal reuse terms.
+https://www.madrid.es/UnidadesDescentralizadas/UDCEstadistica/Nuevaweb/Demograf%C3%ADa%20y%20poblaci%C3%B3n/Cifras%20de%20poblaci%C3%B3n/PMH/Avance/Primeros_resultados_2026.pdf
+https://datos.madrid.es/pages/condiciones-de-uso
+Changes: CSC selected and joined own INE/Madrid population observations, corrected verified parent/depth and current municipio names, and replaced unproved/outside points only with literal own live CC0 P625 inside their own territory. No endorsement by the publishers. Per-record before/after evidence and all holds: .github/fixes-docs/ledgers/es_close_v6x.jsonl and .sources.json.
