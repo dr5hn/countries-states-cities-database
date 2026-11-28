@@ -2165,3 +2165,16 @@ https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_
 https://download.geonames.org/export/dump/BR.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Bairro_csv/Agregados_por_bairros_basico_BR_20260520.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Distrito_csv/Agregados_por_distritos_basico_BR_20260520.zip
+
+Native LATAM v6.x: native_latam_v6x (#1643)
+Publisher: INEGI (Mexico), IGN / INDEC BAHRA (Argentina), DANE DIVIPOLA (Colombia).
+Edition: INEGI current municipio cutoff 01/06/2026 and localidad cutoff 01/10/2026; BAHRA and DIVIPOLA live service snapshots.
+Sources:
+https://www.inegi.org.mx/app/api/cateml/catuniAPI/EXPMUNAGEM/?nquery=1&entidad=00&busqueda=cve_ent%3D00&fecha=01%2F06%2F2026&forNom=3&ri=0&rf=600000&orden=0+asc&union=1&type_=2&encodingType=1
+https://data.europa.eu/proxy?uri=https%3A%2F%2Fwww.inegi.org.mx%2Fapp%2Fapi%2Fcateml%2FcatuniAPI%2FEXPLOCAGEML%2F%3Fnquery%3D1%26entidad%3D01%26busqueda%3Dcve_ent%253D01%26fecha%3D01%252F10%252F2026%26forNom%3D3%26ri%3D0%26rf%3D600000%26orden%3D0%2Basc%26union%3D1%26type_%3D2%26encodingType%3D1
+https://wms.ign.gob.ar/geoserver/ign/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=ign%3Alocalidad_bahra&outputFormat=application%2Fjson&srsName=EPSG%3A4326
+https://services.arcgis.com/ioNRSZMYYlx0PUaB/arcgis/rest/services/MUNICIPIOS/FeatureServer/0/query?where=1%3D1&outFields=*&f=json
+Credit: Official place names from INEGI, IGN / INDEC and DANE. Wikidata own-item checks are CC0.
+Changes by CSC: I corrected native values only, using official record bindings and the same item Spanish label.
+Reuse: Retain the existing INEGI, IGN, DANE and Wikidata credits, notices and publisher terms in this source notice.
+Evidence: .github/fixes-docs/ledgers/native_latam_v6x.jsonl and native_latam_v6x.sources.json.
