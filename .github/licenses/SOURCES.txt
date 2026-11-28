@@ -2155,3 +2155,13 @@ https://www.zaragoza.es/sede/servicio/normativa/109
 https://www.zaragoza.es/sede/portal/servicios-sociales/mujer/cultura/enlace/mujer/paseos/distrito-sur
 https://www.boe.es/boe/dias/1993/05/14/pdfs/A14700-14700.pdf
 Every missing municipio and every changed or held old row: .github/fixes-docs/ledgers/es_scope_v6x.jsonl.
+
+Brazil close-out corrections (br_close2_v6x)
+IBGE: latest own whole-município estimates, SIDRA 6579 variable 9324, 2026 (including rural territory), joined by official DTB 2025 code/name/estado. Reuse: federal aggregate-data basis, Decreto 8.777/2016 arts 3 IV and 4, amended Decreto 9.903/2019; retained IBGE PDA and full terms review. No census/estimate CC licence invented. The latest publisher-listed own bairro and distrito basic aggregate files are the IBGE Censo 2022 edition dated 2026-05-20. Their V0001 field is Total de pessoas in the saved official dictionary. National IBGE codes are joined independently of IPP codes; the reference year stays 2022. Rio rows remain bound to the reviewed IPP Censo 2022 bairro polygons. I compare these with IBGE published Censo 2022 bairro polygons joined by CD_BAIRRO, using GRS80 ellipsoidal equal-area symmetric difference divided by IPP area, maximum 1%. Only passing rows receive IBGE counts. All other Rio targets retain master count and year as population holds; per-row measured areas are in the ledger. Other preliminary counts are preserved as held values, not silently accepted by the gate.
+Wikidata contributors: CC0 structured data, own identifiers and one own P625 point rounded to eight decimal places. GeoNames: CC BY4.0, own named/admin2 points used as independent witnesses. IBGE MMD2025 CC BY4.0-compatible geometry and timezone-boundary-builder 2026e ODbL geometry are reference checks only; no polygon-derived coordinates copied. CSC selected and joined these observations; changes and before-values are in .github/fixes-docs/ledgers/br_close2_v6x.jsonl and .sources.json. No endorsement.
+https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/2026
+https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2025/DTB_2025.zip
+https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2025/Brasil/BR_Municipios_2025.zip
+https://download.geonames.org/export/dump/BR.zip
+https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Bairro_csv/Agregados_por_bairros_basico_BR_20260520.zip
+https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Distrito_csv/Agregados_por_distritos_basico_BR_20260520.zip
