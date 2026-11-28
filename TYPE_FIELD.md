@@ -210,8 +210,13 @@ area description (LSAD), rather than population size or county-seat status:
 LSAD 25 is `city / city`, 43 `town / town`, 47 `village / village`, and
 21 `borough / borough`. A census-designated place (LSAD 57, FUNCSTAT S) is
 `locality / census designated place`, including large CDPs. Puerto Rico's
-statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`); all Puerto Rico
-rows remain held here because municipio versus town identity is not proved.
+statistical places have LSAD 55 (`comunidad`) or 62 (`zona urbana`) and are level 3.
+A Puerto Rico municipio is a county equivalent (LSAD 13), typed `municipality / municipio / 2`
+only when its own item is classed as a municipio and its own GNIS code equals the Census
+county code. This review (#1643, `us_ld_v6x`) covers Cidra, Gurabo, Hatillo, Lajas, Las Piedras,
+Maunabo, San Lorenzo, Santa Isabel and Villalba, plus Rio Lajas, the one `locality / comunidad / 3`.
+The nine municipios leave the settlement filter below.
+Other Puerto Rico rows remain held until their municipio or town identity is proved.
 Under contract 6, reviewed US territorial units use `municipality`, with their legal
 category in `type_local`: `town`, `township`, `charter township` or `plantation`.
 A territorial town is not its seat or its contained village/CDP. The 776 New York
