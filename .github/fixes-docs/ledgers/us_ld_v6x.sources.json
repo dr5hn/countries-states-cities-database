@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "base_commit": "36dd8a090f6e60fc52c90d50e3c3060481fb695f",
-  "ledger_sha256": "fb52498043b8e597cab6ee7fd0514da1b7d2bd07e9d52b99d797aced89a55e94",
+  "ledger_sha256": "668d125c8edf960f269d4ab6eea116821539171dad8e2047878eda5ea0da5c5a",
   "rows": 515,
   "changed": 86,
   "held": 429,
-  "policy": "Master-relative 515-row ledger after PR 2304 review. Changed rows retain original evidence. Six reviewed neighbourhoods additionally bind city-published named areas within 1 km and permitted use. Four gaps restore all four master fields, including absent type_local. 52 NYC rows use 2014 DCP label matches within 2 km; Harlem uses 2020 NTA Harlem (South) containment. No id, name, point, item or population changes.",
+  "policy": "Master-relative 515-row ledger. All 21 non-NYC neighbourhoods have explicit own-GNIS route A and municipal-publication route B tests. A is selected first when both pass. Four prior holds remain held. All 53 NYC rows and their evidence are unchanged. No identity, point or population changes.",
   "licences": {
     "Census": "US government work, public domain",
     "USGS": "US government work, public domain",
@@ -5809,7 +5809,7 @@
       }
     }
   ],
-  "followup_base_commit": "5f80c29556c08c0ac753c072222d4f92ec5c036b",
+  "followup_base_commit": "be4139afe230f482a6d83a722b67657a8c4b6ada",
   "followup_master_commit": "36dd8a090f6e60fc52c90d50e3c3060481fb695f",
   "reviewed_city_bindings": [
     {
@@ -6317,6 +6317,2513 @@
         },
         "terms_and_identity_assessment": "City of Cleveland Urban Analytics and Innovation Neighborhood Profiles; ODbL, matching the CSC database licence. Hyphen versus space is punctuation-only normalization. Attribution and source retained; no ACS attributes or source geometry copied into CSC.",
         "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+      }
+    }
+  ],
+  "non_NYC_route_counts": {
+    "tested": 21,
+    "kept": 21,
+    "restored": 0,
+    "route_A": 16,
+    "route_B": 5,
+    "route_A_passes": 16,
+    "route_B_passes": 7,
+    "both_pass": 2
+  },
+  "non_NYC_route_bindings": [
+    {
+      "id": 111028,
+      "name": "Adams Morgan",
+      "status": "kept",
+      "evidence": {
+        "id": 111028,
+        "name": "Adams Morgan",
+        "parent_id": 128587,
+        "status": "kept",
+        "selected_route": "B",
+        "route_A": {
+          "passes": false,
+          "own_P590": [],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2057409.json",
+            "retrieved_at": "2026-11-28T11:39:17.846012+00:00",
+            "status": 200,
+            "size": 18748,
+            "sha256": "3889cf5ce78fb66c51dcceec08fd680f0851264a029e7da8f429546ebc1192b5"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [],
+          "parent_proof": {
+            "id": 128587,
+            "name": "Washington D.C.",
+            "own_item": "Q61",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61.json",
+              "retrieved_at": "2026-11-28T11:42:54.174122+00:00",
+              "status": 200,
+              "size": 591593,
+              "sha256": "de56a3fd0d3708c014c4dc5551ea07eb97d8d5279aec610e5dd9555aeafd3185"
+            },
+            "own_codes": {
+              "P590": [
+                "2390665",
+                "531871"
+              ],
+              "P774": [
+                "1150000"
+              ]
+            },
+            "GEOID": "1150000",
+            "ANSICODE": "02390665",
+            "LSAD": "25",
+            "CLASSFP": "C5",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "N",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_11_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_11_place.zip",
+              "retrieved_at": "2026-11-16T06:29:47.115378+00:00",
+              "status": 200,
+              "size": 84312,
+              "sha256": "fdf452248609a770aa41447b4be5d7e9e498fda4335309d050c7f396d22f6479"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1150000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true,
+          "reason": "No own GNIS feature passes every identity, nonhistorical, unique incorporated-parent containment and level test."
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 111028,
+            "name": "Adams Morgan",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_dc_f6c703.geojson",
+              "receipt": {
+                "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:46:27.436218+00:00",
+                "status": 200,
+                "size": 1579068,
+                "sha256": "a204ffe5262b68ebb4a76068c5ec2b329c1aeac2020b85111200f07d16f04b44"
+              },
+              "name_field": "NBH_NAMES",
+              "matches": [
+                {
+                  "feature_index": 38,
+                  "label": "Kalorama Heights, Adams Morgan, Lanier Heights",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_dc_f6c703_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/f6c703ebe2534fc3800609a07bad8f5b?f=pjson",
+              "retrieved_at": "2026-11-28T12:46:24.286400+00:00",
+              "status": 200,
+              "size": 4426,
+              "sha256": "6af15b03cabb5bea85aefbb19e620c92c85a7479383e357b4ea0bc9f18f4b692"
+            },
+            "terms_and_identity_assessment": "CC BY 4.0; DC Office of Planning neighbourhood Cluster 1 explicitly names Adams Morgan. Attribution retained; polygon used for verification only.",
+            "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+          }
+        },
+        "reason": "route_B_passed"
+      }
+    },
+    {
+      "id": 111320,
+      "name": "Anderson Mill",
+      "status": "kept",
+      "evidence": {
+        "id": 111320,
+        "name": "Anderson Mill",
+        "parent_id": 111668,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1867541"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q980453.json",
+            "retrieved_at": "2026-11-28T11:43:51.397339+00:00",
+            "status": 200,
+            "size": 17482,
+            "sha256": "a3c89bd819127e31a65319f5c71d9df0db8b765b4f9abad1375cc942c2c9b1e0"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1867541",
+              "found_in_populated_places": true,
+              "feature_name": "Anderson Mill",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0004065732456251236,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "4805000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 111668,
+            "name": "Austin",
+            "own_item": "Q16559",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16559.json",
+              "retrieved_at": "2026-11-28T11:44:28.414478+00:00",
+              "status": 200,
+              "size": 207927,
+              "sha256": "3f36445a6de1da32cf5e66ec876956dca85cde8be1f9d4e21cfc8f7d0bd8f16c"
+            },
+            "own_codes": {
+              "P590": [
+                "1384879",
+                "2409761"
+              ],
+              "P774": [
+                "48-05000"
+              ]
+            },
+            "GEOID": "4805000",
+            "ANSICODE": "02409761",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_48_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_48_place.zip",
+              "retrieved_at": "2026-11-16T05:03:25.859305+00:00",
+              "status": 200,
+              "size": 8979278,
+              "sha256": "52dd19aef521cac977c3093d68267e4b1128448f002938a225550e84cd14ff6b"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "4805000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 112444,
+      "name": "Bloomingdale",
+      "status": "kept",
+      "evidence": {
+        "id": 112444,
+        "name": "Bloomingdale",
+        "parent_id": 128587,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "529278"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4928307.json",
+            "retrieved_at": "2026-11-28T11:42:22.925912+00:00",
+            "status": 200,
+            "size": 32578,
+            "sha256": "b63cea4aedaa753ab6716ba130c63f74405dba5c2ba6280eada1fa67bd54af92"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "529278",
+              "found_in_populated_places": true,
+              "feature_name": "Bloomingdale",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0004609947255609638,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1150000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 128587,
+            "name": "Washington D.C.",
+            "own_item": "Q61",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61.json",
+              "retrieved_at": "2026-11-28T11:42:54.174122+00:00",
+              "status": 200,
+              "size": 591593,
+              "sha256": "de56a3fd0d3708c014c4dc5551ea07eb97d8d5279aec610e5dd9555aeafd3185"
+            },
+            "own_codes": {
+              "P590": [
+                "2390665",
+                "531871"
+              ],
+              "P774": [
+                "1150000"
+              ]
+            },
+            "GEOID": "1150000",
+            "ANSICODE": "02390665",
+            "LSAD": "25",
+            "CLASSFP": "C5",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "N",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_11_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_11_place.zip",
+              "retrieved_at": "2026-11-16T06:29:47.115378+00:00",
+              "status": 200,
+              "size": 84312,
+              "sha256": "fdf452248609a770aa41447b4be5d7e9e498fda4335309d050c7f396d22f6479"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1150000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 112444,
+            "name": "Bloomingdale",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_dc_f6c703.geojson",
+              "receipt": {
+                "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:46:27.436218+00:00",
+                "status": 200,
+                "size": 1579068,
+                "sha256": "a204ffe5262b68ebb4a76068c5ec2b329c1aeac2020b85111200f07d16f04b44"
+              },
+              "name_field": "NBH_NAMES",
+              "matches": [
+                {
+                  "feature_index": 30,
+                  "label": "Edgewood, Bloomingdale, Truxton Circle, Eckington",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_dc_f6c703_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/f6c703ebe2534fc3800609a07bad8f5b?f=pjson",
+              "retrieved_at": "2026-11-28T12:46:24.286400+00:00",
+              "status": 200,
+              "size": 4426,
+              "sha256": "6af15b03cabb5bea85aefbb19e620c92c85a7479383e357b4ea0bc9f18f4b692"
+            },
+            "terms_and_identity_assessment": "DC Office of Planning Neighborhood Clusters explicitly names this neighbourhood; CC BY 4.0 permits reference use with attribution, retained in SOURCES.txt. No geometry or coordinate copied into CSC."
+          }
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 113003,
+      "name": "Buena Vista",
+      "status": "kept",
+      "evidence": {
+        "id": 113003,
+        "name": "Buena Vista",
+        "parent_id": 125816,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1853379"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3094060.json",
+            "retrieved_at": "2026-11-28T11:40:51.251930+00:00",
+            "status": 200,
+            "size": 17057,
+            "sha256": "c46e505a1ef8e513d7fe433e96371f1e10f18c149a9781f4d2adfce94fed549c"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1853379",
+              "found_in_populated_places": true,
+              "feature_name": "Buena Vista",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.00025478772035257536,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "0668000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 125816,
+            "name": "San Jose",
+            "own_item": "Q16553",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16553.json",
+              "retrieved_at": "2026-11-28T11:44:27.452713+00:00",
+              "status": 200,
+              "size": 205795,
+              "sha256": "935f5cdd4da10754984d8a97908859cff7b6678c9eaeb38731ec517384f9d63a"
+            },
+            "own_codes": {
+              "P590": [
+                "1654952",
+                "2411790"
+              ],
+              "P774": [
+                "06-68000"
+              ]
+            },
+            "GEOID": "0668000",
+            "ANSICODE": "02411790",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_06_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_06_place.zip",
+              "retrieved_at": "2026-11-16T05:02:39.755461+00:00",
+              "status": 200,
+              "size": 9587555,
+              "sha256": "ac6e5df9062d9768585e53cd93059b13e7377edf8e18a17b9ff56dad183e5fbd"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "0668000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 113167,
+      "name": "Cahaba Heights",
+      "status": "kept",
+      "evidence": {
+        "id": 113167,
+        "name": "Cahaba Heights",
+        "parent_id": 128212,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "115370"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q966493.json",
+            "retrieved_at": "2026-11-28T11:43:38.252757+00:00",
+            "status": 200,
+            "size": 17219,
+            "sha256": "70cd62662a6ce29e0654ecef1714c200f1a11496bce18016f244615d4a8de54b"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "115370",
+              "found_in_populated_places": true,
+              "feature_name": "Cahaba Heights",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0005610483030280546,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "0178552"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 128212,
+            "name": "Vestavia Hills",
+            "own_item": "Q79695",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q79695.json",
+              "retrieved_at": "2026-11-28T11:44:45.816900+00:00",
+              "status": 200,
+              "size": 52738,
+              "sha256": "d85738cb4abfd4e78f0ff25cd02e67325dd54c72c9d2bb706d2e678d9ef8507d"
+            },
+            "own_codes": {
+              "P590": [
+                "153841",
+                "2405646"
+              ],
+              "P774": [
+                "01-78552"
+              ]
+            },
+            "GEOID": "0178552",
+            "ANSICODE": "02405646",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_01_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_01_place.zip",
+              "retrieved_at": "2026-11-16T05:02:32.482805+00:00",
+              "status": 200,
+              "size": 4954870,
+              "sha256": "6441f037cf4740e070a1bf4734336ca5296da208c01c166c5a76b119fd6dfa36"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "0178552"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 113920,
+      "name": "Chevy Chase",
+      "status": "kept",
+      "evidence": {
+        "id": 113920,
+        "name": "Chevy Chase",
+        "parent_id": 128587,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "529471"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q4404091.json",
+            "retrieved_at": "2026-11-28T11:42:09.871313+00:00",
+            "status": 200,
+            "size": 31986,
+            "sha256": "2b0c43adf3bfb720a2750c90fb5e15210543267add305a7700e6aac743765d1f"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "529471",
+              "found_in_populated_places": true,
+              "feature_name": "Chevy Chase",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.00040157703788626375,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1150000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 128587,
+            "name": "Washington D.C.",
+            "own_item": "Q61",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q61.json",
+              "retrieved_at": "2026-11-28T11:42:54.174122+00:00",
+              "status": 200,
+              "size": 591593,
+              "sha256": "de56a3fd0d3708c014c4dc5551ea07eb97d8d5279aec610e5dd9555aeafd3185"
+            },
+            "own_codes": {
+              "P590": [
+                "2390665",
+                "531871"
+              ],
+              "P774": [
+                "1150000"
+              ]
+            },
+            "GEOID": "1150000",
+            "ANSICODE": "02390665",
+            "LSAD": "25",
+            "CLASSFP": "C5",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "N",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_11_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_11_place.zip",
+              "retrieved_at": "2026-11-16T06:29:47.115378+00:00",
+              "status": 200,
+              "size": 84312,
+              "sha256": "fdf452248609a770aa41447b4be5d7e9e498fda4335309d050c7f396d22f6479"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1150000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 113920,
+            "name": "Chevy Chase",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_dc_f6c703.geojson",
+              "receipt": {
+                "url": "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Administrative_Other_Boundaries_WebMercator/MapServer/17/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:46:27.436218+00:00",
+                "status": 200,
+                "size": 1579068,
+                "sha256": "a204ffe5262b68ebb4a76068c5ec2b329c1aeac2020b85111200f07d16f04b44"
+              },
+              "name_field": "NBH_NAMES",
+              "matches": [
+                {
+                  "feature_index": 16,
+                  "label": "Hawthorne, Barnaby Woods, Chevy Chase",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_dc_f6c703_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/f6c703ebe2534fc3800609a07bad8f5b?f=pjson",
+              "retrieved_at": "2026-11-28T12:46:24.286400+00:00",
+              "status": 200,
+              "size": 4426,
+              "sha256": "6af15b03cabb5bea85aefbb19e620c92c85a7479383e357b4ea0bc9f18f4b692"
+            },
+            "terms_and_identity_assessment": "DC Office of Planning Neighborhood Clusters explicitly names this neighbourhood; CC BY 4.0 permits reference use with attribution, retained in SOURCES.txt. No geometry or coordinate copied into CSC."
+          }
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 114362,
+      "name": "Coconut Grove",
+      "status": "kept",
+      "evidence": {
+        "id": 114362,
+        "name": "Coconut Grove",
+        "parent_id": 121746,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "280618"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1018680.json",
+            "retrieved_at": "2026-11-28T11:37:27.758412+00:00",
+            "status": 200,
+            "size": 22756,
+            "sha256": "fe9f10dc47a0b489c970a7e86bba5d6a9d6982f8c60ced6aa3c6f57c2e1f0136"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "280618",
+              "found_in_populated_places": true,
+              "feature_name": "Coconut Grove",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.000492556536687858,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1245000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 121746,
+            "name": "Miami",
+            "own_item": "Q8652",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q8652.json",
+              "retrieved_at": "2026-11-28T11:44:48.408213+00:00",
+              "status": 200,
+              "size": 307237,
+              "sha256": "9896952e0a6bc550bae8cf3c427279fe72176c9cd111467ad96e14185e3a2d4f"
+            },
+            "own_codes": {
+              "P590": [
+                "295004",
+                "2404247"
+              ],
+              "P774": [
+                "1245000"
+              ]
+            },
+            "GEOID": "1245000",
+            "ANSICODE": "02404247",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_12_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_12_place.zip",
+              "retrieved_at": "2026-11-16T05:02:44.404728+00:00",
+              "status": 200,
+              "size": 6427388,
+              "sha256": "ed71ffb09326a6ce28d2b7201b6fedc09ca202874638e7971f4ab877902cea54"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1245000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 115354,
+      "name": "Dishman",
+      "status": "kept",
+      "evidence": {
+        "id": 115354,
+        "name": "Dishman",
+        "parent_id": 126844,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1512151"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1513007.json",
+            "retrieved_at": "2026-11-28T11:38:31.054415+00:00",
+            "status": 200,
+            "size": 20007,
+            "sha256": "a199404958f9e06ba4fca6641a3e9d51ad13b3de0ea505d532cdc104be510816"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1512151",
+              "found_in_populated_places": true,
+              "feature_name": "Dishman",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.6545249919669426,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "5367167"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 126844,
+            "name": "Spokane Valley",
+            "own_item": "Q988065",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q988065.json",
+              "retrieved_at": "2026-11-28T11:44:49.944696+00:00",
+              "status": 200,
+              "size": 53733,
+              "sha256": "e66ce873645002bc05f03311d16e5701ad926d8754637a9c7289da691a641f44"
+            },
+            "own_codes": {
+              "P590": [
+                "1967430",
+                "2411957"
+              ],
+              "P774": [
+                "53-67167"
+              ]
+            },
+            "GEOID": "5367167",
+            "ANSICODE": "02411957",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_53_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_53_place.zip",
+              "retrieved_at": "2026-11-16T05:03:30.043043+00:00",
+              "status": 200,
+              "size": 2826224,
+              "sha256": "f2000e0d5b7b38a0ff401b16a10d9c1084c1cabbf38dd852af1ec21cd7fa726e"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "5367167"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 115712,
+      "name": "East Millcreek",
+      "status": "kept",
+      "evidence": {
+        "id": 115712,
+        "name": "East Millcreek",
+        "parent_id": 121875,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1427710",
+            "2408712"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2782610.json",
+            "retrieved_at": "2026-11-28T11:40:41.353512+00:00",
+            "status": 200,
+            "size": 17885,
+            "sha256": "e79bb5ebd79fd0e5673a47f26b185099b475c2f89883f93626f54c778a508a7c"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1427710",
+              "found_in_populated_places": true,
+              "feature_name": "East Millcreek",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.00033796063456454387,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "4950150"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            },
+            {
+              "feature_id": "2408712",
+              "found_in_populated_places": false,
+              "passes": false
+            }
+          ],
+          "parent_proof": {
+            "id": 121875,
+            "name": "Millcreek",
+            "own_item": "Q1829357",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1829357.json",
+              "retrieved_at": "2026-11-28T11:44:30.335463+00:00",
+              "status": 200,
+              "size": 40656,
+              "sha256": "859dce1914de0e5569a90492d91279768097ab4fc61585472d916453493cfbc1"
+            },
+            "own_codes": {
+              "P590": [
+                "1867579",
+                "2786012"
+              ],
+              "P774": [
+                "49-50150"
+              ]
+            },
+            "GEOID": "4950150",
+            "ANSICODE": "02786012",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_49_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_49_place.zip",
+              "retrieved_at": "2026-11-16T05:03:27.463094+00:00",
+              "status": 200,
+              "size": 1528554,
+              "sha256": "da3b69df46a4323c8c26a4fe8c56e12f579e0b8060afc121a9e07ae165be4858"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "4950150"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 115723,
+      "name": "East Norwalk",
+      "status": "kept",
+      "evidence": {
+        "id": 115723,
+        "name": "East Norwalk",
+        "parent_id": 123190,
+        "status": "kept",
+        "selected_route": "B",
+        "route_A": {
+          "passes": false,
+          "own_P590": [],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5329059.json",
+            "retrieved_at": "2026-11-28T11:42:48.215945+00:00",
+            "status": 200,
+            "size": 10695,
+            "sha256": "f385e57509a8b496f977180dbca3c33711be47d0d5da579251136b67d9320c43"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [],
+          "parent_proof": {
+            "id": 123190,
+            "name": "Norwalk",
+            "own_item": "Q54217",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q54217.json",
+              "retrieved_at": "2026-11-28T11:44:40.443903+00:00",
+              "status": 200,
+              "size": 87074,
+              "sha256": "9af308842c519af33ddf349bf369c55545c25348e8a4ec5655a0be9b637cf2c6"
+            },
+            "own_codes": {
+              "P590": [
+                "209405",
+                "2378288"
+              ],
+              "P774": [
+                "09-55990"
+              ]
+            },
+            "GEOID": "0955990",
+            "ANSICODE": "02378288",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_09_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_09_place.zip",
+              "retrieved_at": "2026-11-16T05:02:42.355917+00:00",
+              "status": 200,
+              "size": 867378,
+              "sha256": "f9b6012ea093c46c8e2af60c591eb9acadc571509e806182eefcd3d7752f72c9"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "0955990"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true,
+          "reason": "No own GNIS feature passes every identity, nonhistorical, unique incorporated-parent containment and level test."
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 115723,
+            "name": "East Norwalk",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_norwalk_6678ae.geojson",
+              "receipt": {
+                "url": "https://services2.arcgis.com/HfsHDBmkGwb1UtID/arcgis/rest/services/Neighborhoods_2020/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:48:42.851983+00:00",
+                "status": 200,
+                "size": 277079,
+                "sha256": "dff911fefc7ee3b6ba6af1f7d80d1777cb3cea0998bee9f8fbef4829e38b07af"
+              },
+              "name_field": "Neighborhood",
+              "matches": [
+                {
+                  "feature_index": 21,
+                  "label": "East Norwalk",
+                  "inside": false,
+                  "distance_km": 0.2065944461478112,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.2065944461478112,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_norwalk_6678ae_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/6678ae078fec45b79c5303bccba35287?f=pjson",
+              "retrieved_at": "2026-11-28T12:48:41.546946+00:00",
+              "status": 200,
+              "size": 4222,
+              "sha256": "6b93f5ca13fde990e882d50fd9eda2a08d47552799394f9bf2d2a0da1968ed34"
+            },
+            "terms_and_identity_assessment": "City of Norwalk GIS informational-use disclaimer. Reference check only, independently corroborated by Census city containment and own-item point; no source geometry, coordinate or map copied into CSC. Not a legal, engineering or surveying use.",
+            "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+          }
+        },
+        "reason": "route_B_passed"
+      }
+    },
+    {
+      "id": 115777,
+      "name": "Eastgate",
+      "status": "kept",
+      "evidence": {
+        "id": 115777,
+        "name": "Eastgate",
+        "parent_id": 112117,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1512174",
+            "2408040"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1508690.json",
+            "retrieved_at": "2026-11-28T11:38:24.686941+00:00",
+            "status": 200,
+            "size": 22139,
+            "sha256": "5481715717e9bab4c23f624491f531c0e9a2ed9ed39af665791d892ddb443be8"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1512174",
+              "found_in_populated_places": true,
+              "feature_name": "Eastgate",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0004024032120274626,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "5305210"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            },
+            {
+              "feature_id": "2408040",
+              "found_in_populated_places": false,
+              "passes": false
+            }
+          ],
+          "parent_proof": {
+            "id": 112117,
+            "name": "Bellevue",
+            "own_item": "Q214164",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q214164.json",
+              "retrieved_at": "2026-11-28T11:44:32.651168+00:00",
+              "status": 200,
+              "size": 94603,
+              "sha256": "b0c3e460e6247034ca2e38da3f02028687934d22e8dabc0f99dc0e47267c382a"
+            },
+            "own_codes": {
+              "P590": [
+                "1512000",
+                "2409821"
+              ],
+              "P774": [
+                "53-05210"
+              ]
+            },
+            "GEOID": "5305210",
+            "ANSICODE": "02409821",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_53_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_53_place.zip",
+              "retrieved_at": "2026-11-16T05:03:30.043043+00:00",
+              "status": 200,
+              "size": 2826224,
+              "sha256": "f2000e0d5b7b38a0ff401b16a10d9c1084c1cabbf38dd852af1ec21cd7fa726e"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "5305210"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 116001,
+      "name": "Elkhorn",
+      "status": "kept",
+      "evidence": {
+        "id": 116001,
+        "name": "Elkhorn",
+        "parent_id": 123463,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "829062"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q967547.json",
+            "retrieved_at": "2026-11-28T11:43:40.347963+00:00",
+            "status": 200,
+            "size": 22972,
+            "sha256": "57a3a5f5c98e7b92de46b73f531c9f16f686cd62f460165fa16ccf83d239ab62"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "829062",
+              "found_in_populated_places": true,
+              "feature_name": "Elkhorn",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.00033326634215330306,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "3137000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 123463,
+            "name": "Omaha",
+            "own_item": "Q43199",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q43199.json",
+              "retrieved_at": "2026-11-28T11:44:38.286205+00:00",
+              "status": 200,
+              "size": 136696,
+              "sha256": "eae9ea78fbd679813bebd208e30619ffc3d0f2e7e6b5b2a7c86a399c485c22df"
+            },
+            "own_codes": {
+              "P590": [
+                "835483",
+                "2396064"
+              ],
+              "P774": [
+                "31-37000"
+              ]
+            },
+            "GEOID": "3137000",
+            "ANSICODE": "02396064",
+            "LSAD": "25",
+            "CLASSFP": "C5",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_31_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_31_place.zip",
+              "retrieved_at": "2026-11-16T06:29:53.791402+00:00",
+              "status": 200,
+              "size": 734471,
+              "sha256": "02c4377b6fdc6ea430ca7d02cda82e7837397e85cab4b1bef8947beaeafebe0b"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "3137000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 121631,
+      "name": "Melrose Park",
+      "status": "kept",
+      "evidence": {
+        "id": 121631,
+        "name": "Melrose Park",
+        "parent_id": 116722,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "301161"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q990034.json",
+            "retrieved_at": "2026-11-28T11:43:57.156154+00:00",
+            "status": 200,
+            "size": 15585,
+            "sha256": "27c983e4d5d10d680e4499b6b65e3432039fb2010aaf1ec16aa6f7bd5cc3394d"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "301161",
+              "found_in_populated_places": true,
+              "feature_name": "Melrose Park",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 2.285609762698126e-05,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1224000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 116722,
+            "name": "Fort Lauderdale",
+            "own_item": "Q165972",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q165972.json",
+              "retrieved_at": "2026-11-28T11:44:29.168338+00:00",
+              "status": 200,
+              "size": 137403,
+              "sha256": "ad112d5fe02ec9f523d8db0ef8286470e2d3884f026843a38e055721fcf6f212"
+            },
+            "own_codes": {
+              "P590": [
+                "282693",
+                "2403640"
+              ],
+              "P774": [
+                "12-24000"
+              ]
+            },
+            "GEOID": "1224000",
+            "ANSICODE": "02403640",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_12_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_12_place.zip",
+              "retrieved_at": "2026-11-16T05:02:44.404728+00:00",
+              "status": 200,
+              "size": 6427388,
+              "sha256": "ed71ffb09326a6ce28d2b7201b6fedc09ca202874638e7971f4ab877902cea54"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1224000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 122372,
+      "name": "Mount Olympus",
+      "status": "kept",
+      "evidence": {
+        "id": 122372,
+        "name": "Mount Olympus",
+        "parent_id": 121875,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1867580"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q3306712.json",
+            "retrieved_at": "2026-11-28T11:41:00.607997+00:00",
+            "status": 200,
+            "size": 16619,
+            "sha256": "da270483359dc2ffa942ee88b6d51e54846c6a1114231dc543cdd29b860fc73b"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1867580",
+              "found_in_populated_places": true,
+              "feature_name": "Mount Olympus",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.00044286067224954927,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "4950150"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 121875,
+            "name": "Millcreek",
+            "own_item": "Q1829357",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1829357.json",
+              "retrieved_at": "2026-11-28T11:44:30.335463+00:00",
+              "status": 200,
+              "size": 40656,
+              "sha256": "859dce1914de0e5569a90492d91279768097ab4fc61585472d916453493cfbc1"
+            },
+            "own_codes": {
+              "P590": [
+                "1867579",
+                "2786012"
+              ],
+              "P774": [
+                "49-50150"
+              ]
+            },
+            "GEOID": "4950150",
+            "ANSICODE": "02786012",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_49_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_49_place.zip",
+              "retrieved_at": "2026-11-16T05:03:27.463094+00:00",
+              "status": 200,
+              "size": 1528554,
+              "sha256": "da3b69df46a4323c8c26a4fe8c56e12f579e0b8060afc121a9e07ae165be4858"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "4950150"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 123481,
+      "name": "Onion Creek",
+      "status": "kept",
+      "evidence": {
+        "id": 123481,
+        "name": "Onion Creek",
+        "parent_id": 111668,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1867559"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q973421.json",
+            "retrieved_at": "2026-11-28T11:43:43.479809+00:00",
+            "status": 200,
+            "size": 13899,
+            "sha256": "62477b85d3c82a7bda2e3312d9a335ab3f0a45c401386eec82ee2c61fa9d5d8b"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1867559",
+              "found_in_populated_places": true,
+              "feature_name": "Onion Creek",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.000188211932792408,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "4805000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 111668,
+            "name": "Austin",
+            "own_item": "Q16559",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q16559.json",
+              "retrieved_at": "2026-11-28T11:44:28.414478+00:00",
+              "status": 200,
+              "size": 207927,
+              "sha256": "3f36445a6de1da32cf5e66ec876956dca85cde8be1f9d4e21cfc8f7d0bd8f16c"
+            },
+            "own_codes": {
+              "P590": [
+                "1384879",
+                "2409761"
+              ],
+              "P774": [
+                "48-05000"
+              ]
+            },
+            "GEOID": "4805000",
+            "ANSICODE": "02409761",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_48_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_48_place.zip",
+              "retrieved_at": "2026-11-16T05:03:25.859305+00:00",
+              "status": 200,
+              "size": 8979278,
+              "sha256": "52dd19aef521cac977c3093d68267e4b1128448f002938a225550e84cd14ff6b"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "4805000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 123499,
+      "name": "Opportunity",
+      "status": "kept",
+      "evidence": {
+        "id": 123499,
+        "name": "Opportunity",
+        "parent_id": 126844,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1512530"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q1510586.json",
+            "retrieved_at": "2026-11-28T11:38:27.888546+00:00",
+            "status": 200,
+            "size": 21062,
+            "sha256": "73c5bc6f841438d4eaec14e0b9452ddd1464447076894635a3ba7f7abab8ed2e"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1512530",
+              "found_in_populated_places": true,
+              "feature_name": "Opportunity",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.8278364111195518,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "5367167"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 126844,
+            "name": "Spokane Valley",
+            "own_item": "Q988065",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q988065.json",
+              "retrieved_at": "2026-11-28T11:44:49.944696+00:00",
+              "status": 200,
+              "size": 53733,
+              "sha256": "e66ce873645002bc05f03311d16e5701ad926d8754637a9c7289da691a641f44"
+            },
+            "own_codes": {
+              "P590": [
+                "1967430",
+                "2411957"
+              ],
+              "P774": [
+                "53-67167"
+              ]
+            },
+            "GEOID": "5367167",
+            "ANSICODE": "02411957",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_53_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_53_place.zip",
+              "retrieved_at": "2026-11-16T05:03:30.043043+00:00",
+              "status": 200,
+              "size": 2826224,
+              "sha256": "f2000e0d5b7b38a0ff401b16a10d9c1084c1cabbf38dd852af1ec21cd7fa726e"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "5367167"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 123740,
+      "name": "Palm Aire",
+      "status": "kept",
+      "evidence": {
+        "id": 123740,
+        "name": "Palm Aire",
+        "parent_id": 116722,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1853272"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2262124.json",
+            "retrieved_at": "2026-11-28T11:39:43.010498+00:00",
+            "status": 200,
+            "size": 13363,
+            "sha256": "5a59a6ee820104d1f167624cb786b4ff2f4b3cb971423dc6d2fe73f6a863ee4f"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1853272",
+              "found_in_populated_places": true,
+              "feature_name": "Palm Aire",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0005805217369359914,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1224000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 116722,
+            "name": "Fort Lauderdale",
+            "own_item": "Q165972",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q165972.json",
+              "retrieved_at": "2026-11-28T11:44:29.168338+00:00",
+              "status": 200,
+              "size": 137403,
+              "sha256": "ad112d5fe02ec9f523d8db0ef8286470e2d3884f026843a38e055721fcf6f212"
+            },
+            "own_codes": {
+              "P590": [
+                "282693",
+                "2403640"
+              ],
+              "P774": [
+                "12-24000"
+              ]
+            },
+            "GEOID": "1224000",
+            "ANSICODE": "02403640",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_12_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_12_place.zip",
+              "retrieved_at": "2026-11-16T05:02:44.404728+00:00",
+              "status": 200,
+              "size": 6427388,
+              "sha256": "ed71ffb09326a6ce28d2b7201b6fedc09ca202874638e7971f4ab877902cea54"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1224000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 125282,
+      "name": "Rock Island",
+      "status": "kept",
+      "evidence": {
+        "id": 125282,
+        "name": "Rock Island",
+        "parent_id": 116722,
+        "status": "kept",
+        "selected_route": "A",
+        "route_A": {
+          "passes": true,
+          "own_P590": [
+            "1853282"
+          ],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q2283144.json",
+            "retrieved_at": "2026-11-28T11:39:43.939779+00:00",
+            "status": 200,
+            "size": 14163,
+            "sha256": "f1dbbd48e77d5e3abd1ca7e07fedd3b9924cc8f69af3bd2d4593afa9ba3b9ffb"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [
+            {
+              "feature_id": "1853282",
+              "found_in_populated_places": true,
+              "feature_name": "Rock Island",
+              "feature_class": "Populated Place",
+              "historical": false,
+              "historical_flag_method": "GNIS marks historical features with (historical) in feature_name; this topical export has no separate historical column.",
+              "same_state": true,
+              "same_normalized_name": true,
+              "stored_point_distance_km": 0.0005493163268933672,
+              "containment": {
+                "strictly_inside_GEOIDs": [
+                  "1224000"
+                ],
+                "boundary_GEOIDs": [],
+                "unique_parent": true
+              },
+              "passes": true
+            }
+          ],
+          "parent_proof": {
+            "id": 116722,
+            "name": "Fort Lauderdale",
+            "own_item": "Q165972",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q165972.json",
+              "retrieved_at": "2026-11-28T11:44:29.168338+00:00",
+              "status": 200,
+              "size": 137403,
+              "sha256": "ad112d5fe02ec9f523d8db0ef8286470e2d3884f026843a38e055721fcf6f212"
+            },
+            "own_codes": {
+              "P590": [
+                "282693",
+                "2403640"
+              ],
+              "P774": [
+                "12-24000"
+              ]
+            },
+            "GEOID": "1224000",
+            "ANSICODE": "02403640",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_12_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_12_place.zip",
+              "retrieved_at": "2026-11-16T05:02:44.404728+00:00",
+              "status": 200,
+              "size": 6427388,
+              "sha256": "ed71ffb09326a6ce28d2b7201b6fedc09ca202874638e7971f4ab877902cea54"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "1224000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true
+        },
+        "route_B": {
+          "passes": false,
+          "reason": "No independently proved municipal named-area/label distance and permitted-use binding in retained sources; no pass inferred from Wikidata class or city containment."
+        },
+        "reason": "route_A_passed"
+      }
+    },
+    {
+      "id": 128897,
+      "name": "West Hills",
+      "status": "kept",
+      "evidence": {
+        "id": 128897,
+        "name": "West Hills",
+        "parent_id": 120784,
+        "status": "kept",
+        "selected_route": "B",
+        "route_A": {
+          "passes": false,
+          "own_P590": [],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q7985390.json",
+            "retrieved_at": "2026-11-28T11:43:29.787813+00:00",
+            "status": 200,
+            "size": 24167,
+            "sha256": "e2c1171db486622253513c2f9cb01c07e58eb5524c9418c1122907a611cdf142"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [],
+          "parent_proof": {
+            "id": 120784,
+            "name": "Los Angeles",
+            "own_item": "Q65",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q65.json",
+              "retrieved_at": "2026-11-28T11:44:44.865532+00:00",
+              "status": 200,
+              "size": 395776,
+              "sha256": "03302f185a47daf229c1063e68c87454a41d57c12d732d636d4fb9bc2a47333d"
+            },
+            "own_codes": {
+              "P590": [
+                "1662328",
+                "2410877"
+              ],
+              "P774": [
+                "06-44000"
+              ]
+            },
+            "GEOID": "0644000",
+            "ANSICODE": "02410877",
+            "LSAD": "25",
+            "CLASSFP": "C1",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_06_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_06_place.zip",
+              "retrieved_at": "2026-11-16T05:02:39.755461+00:00",
+              "status": 200,
+              "size": 9587555,
+              "sha256": "ac6e5df9062d9768585e53cd93059b13e7377edf8e18a17b9ff56dad183e5fbd"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "0644000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true,
+          "reason": "No own GNIS feature passes every identity, nonhistorical, unique incorporated-parent containment and level test."
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 128897,
+            "name": "West Hills",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_la_9c8639.geojson",
+              "receipt": {
+                "url": "https://maps.lacity.org/lahub/rest/services/Boundaries/MapServer/18/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:46:29.528673+00:00",
+                "status": 200,
+                "size": 2607291,
+                "sha256": "362c1e4509a3e19a95a9e1f4bf39affc129dbe7e754d60c5f882ac122f357513"
+              },
+              "name_field": "NAME",
+              "matches": [
+                {
+                  "feature_index": 86,
+                  "label": "WEST HILLS NC",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_la_9c8639_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/9c8639737e3a457a8c0f6a93f9c36974?f=pjson",
+              "retrieved_at": "2026-11-28T12:46:24.582102+00:00",
+              "status": 200,
+              "size": 1742,
+              "sha256": "770e6c7f463ae33200f943d9e3dfa5f9dfcf5ed5a2183606bc8f66e4a7d45426"
+            },
+            "terms_and_identity_assessment": "CC BY 4.0; City of Los Angeles Bureau of Engineering certified neighbourhood council area. Attribution retained; polygon used for verification only.",
+            "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+          }
+        },
+        "reason": "route_B_passed"
+      }
+    },
+    {
+      "id": 141220,
+      "name": "Clark-Fulton",
+      "status": "kept",
+      "evidence": {
+        "id": 141220,
+        "name": "Clark-Fulton",
+        "parent_id": 141223,
+        "status": "kept",
+        "selected_route": "B",
+        "route_A": {
+          "passes": false,
+          "own_P590": [],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5127124.json",
+            "retrieved_at": "2026-11-28T11:42:37.664760+00:00",
+            "status": 200,
+            "size": 9427,
+            "sha256": "7294bf8e90385c2b05b445a2d478a7733d8e1f922a7a0336c1a79f575f9992b7"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [],
+          "parent_proof": {
+            "id": 141223,
+            "name": "Cleveland",
+            "own_item": "Q37320",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q37320.json",
+              "retrieved_at": "2026-11-28T11:44:35.370620+00:00",
+              "status": 200,
+              "size": 197253,
+              "sha256": "265f6848eac31934c40a8d166726605fd5ae1efc640440155baaf568d4ac89af"
+            },
+            "own_codes": {
+              "P590": [
+                "1066654",
+                "1085963"
+              ],
+              "P774": [
+                "39-16000"
+              ]
+            },
+            "GEOID": "3916000",
+            "ANSICODE": "01085963",
+            "LSAD": "25",
+            "CLASSFP": "C2",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_39_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_39_place.zip",
+              "retrieved_at": "2026-11-16T05:03:14.607367+00:00",
+              "status": 200,
+              "size": 3777800,
+              "sha256": "56033d7aaf4a6ce20ecbf860aab370101863475e9f21ad9c679a304c682edc79"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "3916000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true,
+          "reason": "No own GNIS feature passes every identity, nonhistorical, unique incorporated-parent containment and level test."
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 141220,
+            "name": "Clark-Fulton",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_cleveland_official.geojson",
+              "receipt": {
+                "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+                "status": 200,
+                "size": 1133221,
+                "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+              },
+              "name_field": "NEIGHBORHOOD",
+              "matches": [
+                {
+                  "feature_index": 74,
+                  "label": "Clark-Fulton",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 90,
+                  "label": "Clark-Fulton",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 106,
+                  "label": "Clark-Fulton",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 122,
+                  "label": "Clark-Fulton",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_cleveland_official_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+              "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+              "status": 200,
+              "size": 4348,
+              "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+            },
+            "terms_and_identity_assessment": "City of Cleveland Urban Analytics and Innovation Neighborhood Profiles; ODbL, matching the CSC database licence. Attribution and source retained; no ACS attributes or source geometry copied into CSC.",
+            "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+          }
+        },
+        "reason": "route_B_passed"
+      }
+    },
+    {
+      "id": 141273,
+      "name": "Detroit-Shoreway",
+      "status": "kept",
+      "evidence": {
+        "id": 141273,
+        "name": "Detroit-Shoreway",
+        "parent_id": 141223,
+        "status": "kept",
+        "selected_route": "B",
+        "route_A": {
+          "passes": false,
+          "own_P590": [],
+          "own_item_receipt": {
+            "url": "https://www.wikidata.org/wiki/Special:EntityData/Q5265832.json",
+            "retrieved_at": "2026-11-28T11:42:44.996807+00:00",
+            "status": 200,
+            "size": 8806,
+            "sha256": "60a942c302b88ecf2bf456ffe4ae9bc22331627b21e2f1f20b8b8ec0900d7ddb"
+          },
+          "GNIS_asset": "sources/PopulatedPlaces_National_Text.zip",
+          "GNIS_receipt": {
+            "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/Topical/PopulatedPlaces_National_Text.zip",
+            "retrieved_at": "2026-11-16T05:56:32.812471+00:00",
+            "status": 200,
+            "size": 7307224,
+            "sha256": "31c835c0512e4f1079f5ae6218aefa948743c61832dc5a21c656c9d2b71e9599"
+          },
+          "features": [],
+          "parent_proof": {
+            "id": 141223,
+            "name": "Cleveland",
+            "own_item": "Q37320",
+            "own_item_receipt": {
+              "url": "https://www.wikidata.org/wiki/Special:EntityData/Q37320.json",
+              "retrieved_at": "2026-11-28T11:44:35.370620+00:00",
+              "status": 200,
+              "size": 197253,
+              "sha256": "265f6848eac31934c40a8d166726605fd5ae1efc640440155baaf568d4ac89af"
+            },
+            "own_codes": {
+              "P590": [
+                "1066654",
+                "1085963"
+              ],
+              "P774": [
+                "39-16000"
+              ]
+            },
+            "GEOID": "3916000",
+            "ANSICODE": "01085963",
+            "LSAD": "25",
+            "CLASSFP": "C2",
+            "MTFCC": "G4110",
+            "FUNCSTAT": "A",
+            "independently_code_bound": true,
+            "incorporated_place": true,
+            "stored_parent_point_strictly_inside": true,
+            "polygon_asset": "sources/tl_2020_39_place.zip",
+            "polygon_receipt": {
+              "url": "https://www2.census.gov/geo/tiger/TIGER2020/PLACE/tl_2020_39_place.zip",
+              "retrieved_at": "2026-11-16T05:03:14.607367+00:00",
+              "status": 200,
+              "size": 3777800,
+              "sha256": "56033d7aaf4a6ce20ecbf860aab370101863475e9f21ad9c679a304c682edc79"
+            },
+            "level": 3
+          },
+          "stored_point_containment": {
+            "strictly_inside_GEOIDs": [
+              "3916000"
+            ],
+            "boundary_GEOIDs": [],
+            "unique_parent": true
+          },
+          "child_level": 4,
+          "parent_level": 3,
+          "level_equals_parent_plus_one": true,
+          "existing_parent_compatible": true,
+          "reason": "No own GNIS feature passes every identity, nonhistorical, unique incorporated-parent containment and level test."
+        },
+        "route_B": {
+          "passes": true,
+          "evidence": {
+            "id": 141273,
+            "name": "Detroit-Shoreway",
+            "status": "kept",
+            "city_source": {
+              "asset": "sources/city_cleveland_official.geojson",
+              "receipt": {
+                "url": "https://services3.arcgis.com/dty2kHktVXHrqO8i/arcgis/rest/services/Neighborhood_Characteristics/FeatureServer/0/query?where=1%3D1&outFields=%2A&outSR=4326&f=geojson",
+                "retrieved_at": "2026-11-28T12:47:38.030206+00:00",
+                "status": 200,
+                "size": 1133221,
+                "sha256": "0285eef0f602d5a8e3d77bfbce61b85eddea61fdffe53fdaa637117ccad9c068"
+              },
+              "name_field": "NEIGHBORHOOD",
+              "matches": [
+                {
+                  "feature_index": 78,
+                  "label": "Detroit Shoreway",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 94,
+                  "label": "Detroit Shoreway",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 110,
+                  "label": "Detroit Shoreway",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                },
+                {
+                  "feature_index": 126,
+                  "label": "Detroit Shoreway",
+                  "inside": true,
+                  "distance_km": 0.0,
+                  "within_1km": true
+                }
+              ],
+              "minimum_distance_km": 0.0,
+              "within_1km": true,
+              "method": "WGS84 point-centred azimuthal equidistant projection, metres; source geometry unchanged"
+            },
+            "terms_asset": "sources/city_cleveland_official_item.json",
+            "terms_receipt": {
+              "url": "https://www.arcgis.com/sharing/rest/content/items/f86ca66820b04bbfb616df2ee75c617b?f=pjson",
+              "retrieved_at": "2026-11-28T12:47:04.153222+00:00",
+              "status": 200,
+              "size": 4348,
+              "sha256": "cf972a133c5d594dca676ed2cd2918d70fb6fbf79fa9f2ac8ff1e93e6fb44396"
+            },
+            "terms_and_identity_assessment": "City of Cleveland Urban Analytics and Innovation Neighborhood Profiles; ODbL, matching the CSC database licence. Hyphen versus space is punctuation-only normalization. Attribution and source retained; no ACS attributes or source geometry copied into CSC.",
+            "reason": "city_published_named_part_within_1km_and_permitted_reference_use"
+          }
+        },
+        "reason": "route_B_passed"
       }
     }
   ]
