@@ -2165,3 +2165,9 @@ https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_
 https://download.geonames.org/export/dump/BR.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Bairro_csv/Agregados_por_bairros_basico_BR_20260520.zip
 https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/Agregados_por_Distrito_csv/Agregados_por_distritos_basico_BR_20260520.zip
+
+US residual local type and level (us_ld_v6x, #1643):
+- US Census Bureau, 2020 and 2025 place Gazetteers and full-resolution TIGER/Line boundaries (public domain US government work): https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_place_national.zip ; https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip ; Puerto Rico municipio county equivalents: https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1/query?where=STATE%3D%2772%27&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson
+- NYC Department of City Planning, Population Division, Neighborhood Name Centroids (2014): https://www.nyc.gov/assets/planning/download/zip/data-maps/open-data/nyc_nhoodsnames201408.zip ; reference checks only, no dataset coordinate changed.
+- Wikidata literal one-item EntityData statements, CC0; all item URLs, retrieval times and byte hashes in us_ld_v6x.sources.json.
+- Changed and held row evidence: .github/fixes-docs/ledgers/us_ld_v6x.jsonl and us_ld_v6x.sources.json.
